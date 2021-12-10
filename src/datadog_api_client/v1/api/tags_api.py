@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.host_tags import HostTags
@@ -175,9 +173,9 @@ class TagsApi(object):
         )
 
     def create_host_tags(self, host_name, body, **kwargs):
-        """Add tags to a host  # noqa: E501
+        """Add tags to a host
 
-        This endpoint allows you to add new tags to a host, optionally specifying where these tags come from.  # noqa: E501
+        This endpoint allows you to add new tags to a host, optionally specifying where these tags come from.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -221,9 +219,9 @@ class TagsApi(object):
         return self._create_host_tags_endpoint.call_with_http_info(**kwargs)
 
     def delete_host_tags(self, host_name, **kwargs):
-        """Remove host tags  # noqa: E501
+        """Remove host tags
 
-        This endpoint allows you to remove all user-assigned tags for a single host.  # noqa: E501
+        This endpoint allows you to remove all user-assigned tags for a single host.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -265,9 +263,9 @@ class TagsApi(object):
         return self._delete_host_tags_endpoint.call_with_http_info(**kwargs)
 
     def get_host_tags(self, host_name, **kwargs):
-        """Get host tags  # noqa: E501
+        """Get host tags
 
-        Return the list of tags that apply to a given host.  # noqa: E501
+        Return the list of tags that apply to a given host.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -309,9 +307,9 @@ class TagsApi(object):
         return self._get_host_tags_endpoint.call_with_http_info(**kwargs)
 
     def list_host_tags(self, **kwargs):
-        """Get Tags  # noqa: E501
+        """Get Tags
 
-        Return a mapping of tags to hosts for your whole infrastructure.  # noqa: E501
+        Return a mapping of tags to hosts for your whole infrastructure.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -350,9 +348,9 @@ class TagsApi(object):
         return self._list_host_tags_endpoint.call_with_http_info(**kwargs)
 
     def update_host_tags(self, host_name, body, **kwargs):
-        """Update host tags  # noqa: E501
+        """Update host tags
 
-        This endpoint allows you to update/replace all tags in an integration source with those supplied in the request.  # noqa: E501
+        This endpoint allows you to update/replace all tags in an integration source with those supplied in the request.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

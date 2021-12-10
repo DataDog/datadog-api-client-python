@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -160,8 +159,6 @@ class WidgetDefinition(ModelComposed):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -170,8 +167,6 @@ class WidgetDefinition(ModelComposed):
           as additional properties values.
 
     """
-
-    allowed_values = {}
 
     validations = {
         "requests": {
@@ -182,10 +177,6 @@ class WidgetDefinition(ModelComposed):
             "min_items": 1,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -199,14 +190,7 @@ class WidgetDefinition(ModelComposed):
         """
         return {}
 
-    discriminator = None
-
-    attribute_map = {}
-
-    read_only_vars = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """WidgetDefinition - a model defined in OpenAPI
 
         Keyword Args:
@@ -240,108 +224,107 @@ class WidgetDefinition(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            time (WidgetTime): [optional]  # noqa: E501
-            title (str): The title of the widget.. [optional]  # noqa: E501
-            title_align (WidgetTextAlign): [optional]  # noqa: E501
-            title_size (str): The size of the title.. [optional]  # noqa: E501
-            precision (int): Number of decimals to show. If not defined, the widget uses the raw value.. [optional]  # noqa: E501
-            text_align (WidgetTextAlign): [optional]  # noqa: E501
-            unit (str): Unit to display with the value.. [optional]  # noqa: E501
-            custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
-            group ([str]): List of tag prefixes to group by.. [optional]  # noqa: E501
-            tags ([str]): List of tags used to filter the groups reporting a cluster check.. [optional]  # noqa: E501
-            legend_size (str): Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".. [optional]  # noqa: E501
-            markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
-            show_legend (bool): Whether or not to display the legend on this widget.. [optional]  # noqa: E501
-            xaxis (WidgetAxis): [optional]  # noqa: E501
-            yaxis (WidgetAxis): [optional]  # noqa: E501
-            event_size (WidgetEventSize): [optional]  # noqa: E501
-            tags_execution (str): The execution method for multi-value filters. Can be either and or or.. [optional]  # noqa: E501
-            color (str): Color of the text.. [optional]  # noqa: E501
-            font_size (str): Size of the text.. [optional]  # noqa: E501
-            background_color (str): Background color of the note.. [optional]  # noqa: E501
-            banner_img (str): URL of image to display as a banner for the group.. [optional]  # noqa: E501
-            show_title (bool): Whether to show the title or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            events ([WidgetEvent]): List of widget events.. [optional]  # noqa: E501
-            no_group_hosts (bool): Whether to show the hosts that don’t fit in a group.. [optional]  # noqa: E501
-            no_metric_hosts (bool): Whether to show the hosts with no metrics.. [optional]  # noqa: E501
-            node_type (WidgetNodeType): [optional]  # noqa: E501
-            notes (str): Notes on the title.. [optional]  # noqa: E501
-            scope ([str]): List of tags used to filter the map.. [optional]  # noqa: E501
-            has_background (bool): Whether to display a background or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            has_border (bool): Whether to display a border or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            horizontal_align (WidgetHorizontalAlign): [optional]  # noqa: E501
-            margin (WidgetMargin): [optional]  # noqa: E501
-            sizing (WidgetImageSizing): [optional]  # noqa: E501
-            url_dark_theme (str): URL of the image in dark mode.. [optional]  # noqa: E501
-            vertical_align (WidgetVerticalAlign): [optional]  # noqa: E501
-            columns ([str]): Which columns to display on the widget.. [optional]  # noqa: E501
-            indexes ([str]): An array of index names to query in the stream. Use [] to query all indexes at once.. [optional]  # noqa: E501
-            logset (str): ID of the log set to use.. [optional]  # noqa: E501
-            message_display (WidgetMessageDisplay): [optional]  # noqa: E501
-            show_date_column (bool): Whether to show the date column or not. [optional]  # noqa: E501
-            show_message_column (bool): Whether to show the message column or not. [optional]  # noqa: E501
-            sort (WidgetMonitorSummarySort): [optional]  # noqa: E501
-            color_preference (WidgetColorPreference): [optional]  # noqa: E501
-            count (int): The number of monitors to display.. [optional]  # noqa: E501
-            display_format (WidgetServiceSummaryDisplayFormat): [optional]  # noqa: E501
-            hide_zero_counts (bool): Whether to show counts of 0 or not.. [optional]  # noqa: E501
-            show_last_triggered (bool): Whether to show the time that has elapsed since the monitor/group triggered.. [optional]  # noqa: E501
-            start (int): The start of the list. Typically 0.. [optional]  # noqa: E501
-            summary_type (WidgetSummaryType): [optional]  # noqa: E501
-            has_padding (bool): Whether to add padding or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            show_tick (bool): Whether to show a tick or not.. [optional]  # noqa: E501
-            tick_edge (WidgetTickEdge): [optional]  # noqa: E501
-            tick_pos (str): Where to position the tick on an edge.. [optional]  # noqa: E501
-            autoscale (bool): Whether to use auto-scaling or not.. [optional]  # noqa: E501
-            custom_unit (str): Display a unit of your choice on the widget.. [optional]  # noqa: E501
-            color_by_groups ([str]): List of groups used for colors.. [optional]  # noqa: E501
-            global_time_target (str): Defined global time target.. [optional]  # noqa: E501
-            show_error_budget (bool): Defined error budget.. [optional]  # noqa: E501
-            slo_id (str): ID of the SLO displayed.. [optional]  # noqa: E501
-            time_windows ([WidgetTimeWindows]): Times being monitored.. [optional]  # noqa: E501
-            view_mode (WidgetViewMode): [optional]  # noqa: E501
-            show_breakdown (bool): Whether to show the latency breakdown or not.. [optional]  # noqa: E501
-            show_distribution (bool): Whether to show the latency distribution or not.. [optional]  # noqa: E501
-            show_errors (bool): Whether to show the error metrics or not.. [optional]  # noqa: E501
-            show_hits (bool): Whether to show the hits metrics or not.. [optional]  # noqa: E501
-            show_latency (bool): Whether to show the latency metrics or not.. [optional]  # noqa: E501
-            show_resource_list (bool): Whether to show the resource list or not.. [optional]  # noqa: E501
-            size_format (WidgetSizeFormat): [optional]  # noqa: E501
-            has_search_bar (TableWidgetHasSearchBar): [optional]  # noqa: E501
-            legend_columns ([TimeseriesWidgetLegendColumn]): Columns displayed in the legend.. [optional]  # noqa: E501
-            legend_layout (TimeseriesWidgetLegendLayout): [optional]  # noqa: E501
-            right_yaxis (WidgetAxis): [optional]  # noqa: E501
-            alert_id (str): ID of the alert to use in the widget.. [optional]  # noqa: E501
-            type (FunnelWidgetDefinitionType): [optional]  # noqa: E501
-            viz_type (WidgetVizType): [optional]  # noqa: E501
-            requests ([FunnelWidgetRequest]): Request payload used to query items.. [optional]  # noqa: E501
-            check (str): Name of the check to use in the widget.. [optional]  # noqa: E501
-            group_by (TreeMapGroupBy): [optional]  # noqa: E501
-            grouping (WidgetGrouping): [optional]  # noqa: E501
-            query (str): Query to filter the monitors with.. [optional]  # noqa: E501
-            text (str): Text to display.. [optional]  # noqa: E501
-            style (HostMapWidgetDefinitionStyle): [optional]  # noqa: E501
-            view (GeomapWidgetDefinitionView): [optional]  # noqa: E501
-            layout_type (WidgetLayoutType): [optional]  # noqa: E501
-            widgets ([Widget]): List of widget groups.. [optional]  # noqa: E501
-            url (str): URL of the image.. [optional]  # noqa: E501
-            content (str): Content of the note.. [optional]  # noqa: E501
-            view_type (str): Type of view displayed by the widget.. [optional] if omitted the server will use the default value of "detail"  # noqa: E501
-            filters ([str]): Your environment and primary tag (or * if enabled for your account).. [optional]  # noqa: E501
-            service (str): APM service.. [optional]  # noqa: E501
-            env (str): APM environment.. [optional]  # noqa: E501
-            span_name (str): APM span name.. [optional]  # noqa: E501
-            color_by (TreeMapColorBy): [optional]  # noqa: E501
-            size_by (TreeMapSizeBy): [optional]  # noqa: E501
+            time (WidgetTime): [optional]
+            title (str): The title of the widget.. [optional]
+            title_align (WidgetTextAlign): [optional]
+            title_size (str): The size of the title.. [optional]
+            precision (int): Number of decimals to show. If not defined, the widget uses the raw value.. [optional]
+            text_align (WidgetTextAlign): [optional]
+            unit (str): Unit to display with the value.. [optional]
+            custom_links ([WidgetCustomLink]): List of custom links.. [optional]
+            group ([str]): List of tag prefixes to group by.. [optional]
+            tags ([str]): List of tags used to filter the groups reporting a cluster check.. [optional]
+            legend_size (str): Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".. [optional]
+            markers ([WidgetMarker]): List of markers.. [optional]
+            show_legend (bool): Whether or not to display the legend on this widget.. [optional]
+            xaxis (WidgetAxis): [optional]
+            yaxis (WidgetAxis): [optional]
+            event_size (WidgetEventSize): [optional]
+            tags_execution (str): The execution method for multi-value filters. Can be either and or or.. [optional]
+            color (str): Color of the text.. [optional]
+            font_size (str): Size of the text.. [optional]
+            background_color (str): Background color of the note.. [optional]
+            banner_img (str): URL of image to display as a banner for the group.. [optional]
+            show_title (bool): Whether to show the title or not.. [optional] if omitted the server will use the default value of True
+            events ([WidgetEvent]): List of widget events.. [optional]
+            no_group_hosts (bool): Whether to show the hosts that don’t fit in a group.. [optional]
+            no_metric_hosts (bool): Whether to show the hosts with no metrics.. [optional]
+            node_type (WidgetNodeType): [optional]
+            notes (str): Notes on the title.. [optional]
+            scope ([str]): List of tags used to filter the map.. [optional]
+            has_background (bool): Whether to display a background or not.. [optional] if omitted the server will use the default value of True
+            has_border (bool): Whether to display a border or not.. [optional] if omitted the server will use the default value of True
+            horizontal_align (WidgetHorizontalAlign): [optional]
+            margin (WidgetMargin): [optional]
+            sizing (WidgetImageSizing): [optional]
+            url_dark_theme (str): URL of the image in dark mode.. [optional]
+            vertical_align (WidgetVerticalAlign): [optional]
+            columns ([str]): Which columns to display on the widget.. [optional]
+            indexes ([str]): An array of index names to query in the stream. Use [] to query all indexes at once.. [optional]
+            logset (str): ID of the log set to use.. [optional]
+            message_display (WidgetMessageDisplay): [optional]
+            show_date_column (bool): Whether to show the date column or not. [optional]
+            show_message_column (bool): Whether to show the message column or not. [optional]
+            sort (WidgetMonitorSummarySort): [optional]
+            color_preference (WidgetColorPreference): [optional]
+            count (int): The number of monitors to display.. [optional]
+            display_format (WidgetServiceSummaryDisplayFormat): [optional]
+            hide_zero_counts (bool): Whether to show counts of 0 or not.. [optional]
+            show_last_triggered (bool): Whether to show the time that has elapsed since the monitor/group triggered.. [optional]
+            start (int): The start of the list. Typically 0.. [optional]
+            summary_type (WidgetSummaryType): [optional]
+            has_padding (bool): Whether to add padding or not.. [optional] if omitted the server will use the default value of True
+            show_tick (bool): Whether to show a tick or not.. [optional]
+            tick_edge (WidgetTickEdge): [optional]
+            tick_pos (str): Where to position the tick on an edge.. [optional]
+            autoscale (bool): Whether to use auto-scaling or not.. [optional]
+            custom_unit (str): Display a unit of your choice on the widget.. [optional]
+            color_by_groups ([str]): List of groups used for colors.. [optional]
+            global_time_target (str): Defined global time target.. [optional]
+            show_error_budget (bool): Defined error budget.. [optional]
+            slo_id (str): ID of the SLO displayed.. [optional]
+            time_windows ([WidgetTimeWindows]): Times being monitored.. [optional]
+            view_mode (WidgetViewMode): [optional]
+            show_breakdown (bool): Whether to show the latency breakdown or not.. [optional]
+            show_distribution (bool): Whether to show the latency distribution or not.. [optional]
+            show_errors (bool): Whether to show the error metrics or not.. [optional]
+            show_hits (bool): Whether to show the hits metrics or not.. [optional]
+            show_latency (bool): Whether to show the latency metrics or not.. [optional]
+            show_resource_list (bool): Whether to show the resource list or not.. [optional]
+            size_format (WidgetSizeFormat): [optional]
+            has_search_bar (TableWidgetHasSearchBar): [optional]
+            legend_columns ([TimeseriesWidgetLegendColumn]): Columns displayed in the legend.. [optional]
+            legend_layout (TimeseriesWidgetLegendLayout): [optional]
+            right_yaxis (WidgetAxis): [optional]
+            alert_id (str): ID of the alert to use in the widget.. [optional]
+            type (FunnelWidgetDefinitionType): [optional]
+            viz_type (WidgetVizType): [optional]
+            requests ([FunnelWidgetRequest]): Request payload used to query items.. [optional]
+            check (str): Name of the check to use in the widget.. [optional]
+            group_by (TreeMapGroupBy): [optional]
+            grouping (WidgetGrouping): [optional]
+            query (str): Query to filter the monitors with.. [optional]
+            text (str): Text to display.. [optional]
+            style (HostMapWidgetDefinitionStyle): [optional]
+            view (GeomapWidgetDefinitionView): [optional]
+            layout_type (WidgetLayoutType): [optional]
+            widgets ([Widget]): List of widget groups.. [optional]
+            url (str): URL of the image.. [optional]
+            content (str): Content of the note.. [optional]
+            view_type (str): Type of view displayed by the widget.. [optional] if omitted the server will use the default value of "detail"
+            filters ([str]): Your environment and primary tag (or * if enabled for your account).. [optional]
+            service (str): APM service.. [optional]
+            env (str): APM environment.. [optional]
+            span_name (str): APM span name.. [optional]
+            color_by (TreeMapColorBy): [optional]
+            size_by (TreeMapSizeBy): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(WidgetDefinition, cls)._from_openapi_data(kwargs)

@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -48,8 +47,6 @@ class IncidentTimelineCellCreateAttributes(ModelComposed):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -59,13 +56,7 @@ class IncidentTimelineCellCreateAttributes(ModelComposed):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -79,14 +70,7 @@ class IncidentTimelineCellCreateAttributes(ModelComposed):
         """
         return {}
 
-    discriminator = None
-
-    attribute_map = {}
-
-    read_only_vars = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """IncidentTimelineCellCreateAttributes - a model defined in OpenAPI
 
         Keyword Args:
@@ -120,17 +104,16 @@ class IncidentTimelineCellCreateAttributes(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            important (bool): A flag indicating whether the timeline cell is important and should be highlighted.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            cell_type (IncidentTimelineCellMarkdownContentType): [optional]  # noqa: E501
-            content (IncidentTimelineCellMarkdownCreateAttributesContent): [optional]  # noqa: E501
+            important (bool): A flag indicating whether the timeline cell is important and should be highlighted.. [optional] if omitted the server will use the default value of False
+            cell_type (IncidentTimelineCellMarkdownContentType): [optional]
+            content (IncidentTimelineCellMarkdownCreateAttributesContent): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(IncidentTimelineCellCreateAttributes, cls)._from_openapi_data(kwargs)

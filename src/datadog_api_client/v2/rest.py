@@ -3,7 +3,6 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-import io
 import json
 import logging
 import re
@@ -26,29 +25,13 @@ from datadog_api_client.v2.exceptions import (
 logger = logging.getLogger(__name__)
 
 
-class RESTResponse(io.IOBase):
-    def __init__(self, resp):
-        self.urllib3_response = resp
-        self.status = resp.status
-        self.reason = resp.reason
-        self.data = resp.data
-
-    def getheaders(self):
-        """Returns a dictionary of the response headers."""
-        return self.urllib3_response.getheaders()
-
-    def getheader(self, name, default=None):
-        """Returns a given response header."""
-        return self.urllib3_response.getheader(name, default)
-
-
 class RESTClientObject(object):
     def __init__(self, configuration, pools_size=4, maxsize=None):
         # urllib3.PoolManager will pass all kw parameters to connectionpool
-        # https://github.com/shazow/urllib3/blob/f9409436f83aeb79fbaf090181cd81b784f1b8ce/urllib3/poolmanager.py#L75  # noqa: E501
-        # https://github.com/shazow/urllib3/blob/f9409436f83aeb79fbaf090181cd81b784f1b8ce/urllib3/connectionpool.py#L680  # noqa: E501
-        # maxsize is the number of requests to host that are allowed in parallel  # noqa: E501
-        # Custom SSL certificates and client certificates: http://urllib3.readthedocs.io/en/latest/advanced-usage.html  # noqa: E501
+        # https://github.com/shazow/urllib3/blob/f9409436f83aeb79fbaf090181cd81b784f1b8ce/urllib3/poolmanager.py#L75
+        # https://github.com/shazow/urllib3/blob/f9409436f83aeb79fbaf090181cd81b784f1b8ce/urllib3/connectionpool.py#L680
+        # maxsize is the number of requests to host that are allowed in parallel
+        # Custom SSL certificates and client certificates: http://urllib3.readthedocs.io/en/latest/advanced-usage.html
 
         # cert_reqs
         if configuration.verify_ssl:
@@ -58,7 +41,7 @@ class RESTClientObject(object):
 
         addition_pool_args = {}
         if configuration.assert_hostname is not None:
-            addition_pool_args["assert_hostname"] = configuration.assert_hostname  # noqa: E501
+            addition_pool_args["assert_hostname"] = configuration.assert_hostname
 
         if configuration.retries is not None:
             addition_pool_args["retries"] = configuration.retries
@@ -136,7 +119,7 @@ class RESTClientObject(object):
 
         timeout = None
         if _request_timeout:
-            if isinstance(_request_timeout, (int, float)):  # noqa: E501,F821
+            if isinstance(_request_timeout, (int, float)):
                 timeout = urllib3.Timeout(total=_request_timeout)
             elif isinstance(_request_timeout, tuple) and len(_request_timeout) == 2:
                 timeout = urllib3.Timeout(connect=_request_timeout[0], read=_request_timeout[1])
@@ -166,7 +149,7 @@ class RESTClientObject(object):
                         timeout=timeout,
                         headers=headers,
                     )
-                elif headers["Content-Type"] == "application/x-www-form-urlencoded":  # noqa: E501
+                elif headers["Content-Type"] == "application/x-www-form-urlencoded":
                     r = self.pool_manager.request(
                         method,
                         url,
@@ -219,8 +202,6 @@ class RESTClientObject(object):
             raise ApiException(status=0, reason=msg)
 
         if _preload_content:
-            r = RESTResponse(r)
-
             # log response body
             logger.debug("response body: %s", r.data)
 

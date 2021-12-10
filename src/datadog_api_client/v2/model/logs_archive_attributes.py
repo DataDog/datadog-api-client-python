@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class LogsArchiveAttributes(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class LogsArchiveAttributes(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,31 +60,26 @@ class LogsArchiveAttributes(ModelNormal):
         """
         lazy_import()
         return {
-            "destination": (LogsArchiveDestination,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "query": (str,),  # noqa: E501
-            "include_tags": (bool,),  # noqa: E501
-            "rehydration_tags": ([str],),  # noqa: E501
-            "state": (LogsArchiveState,),  # noqa: E501
+            "destination": (LogsArchiveDestination,),
+            "include_tags": (bool,),
+            "name": (str,),
+            "query": (str,),
+            "rehydration_tags": ([str],),
+            "state": (LogsArchiveState,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "destination": "destination",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "query": "query",  # noqa: E501
-        "include_tags": "include_tags",  # noqa: E501
-        "rehydration_tags": "rehydration_tags",  # noqa: E501
-        "state": "state",  # noqa: E501
+        "destination": "destination",
+        "name": "name",
+        "query": "query",
+        "include_tags": "include_tags",
+        "rehydration_tags": "rehydration_tags",
+        "state": "state",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, destination, name, query, *args, **kwargs):  # noqa: E501
+    def __init__(self, destination, name, query, *args, **kwargs):
         """LogsArchiveAttributes - a model defined in OpenAPI
 
         Args:
@@ -132,9 +118,9 @@ class LogsArchiveAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            include_tags (bool): To store the tags in the archive, set the value \"true\". If it is set to \"false\", the tags will be deleted when the logs are sent to the archive.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            rehydration_tags ([str]): An array of tags to add to rehydrated logs from an archive.. [optional]  # noqa: E501
-            state (LogsArchiveState): [optional]  # noqa: E501
+            include_tags (bool): To store the tags in the archive, set the value \"true\". If it is set to \"false\", the tags will be deleted when the logs are sent to the archive.. [optional] if omitted the server will use the default value of False
+            rehydration_tags ([str]): An array of tags to add to rehydrated logs from an archive.. [optional]
+            state (LogsArchiveState): [optional]
         """
         super().__init__(kwargs)
 
@@ -145,8 +131,7 @@ class LogsArchiveAttributes(ModelNormal):
         self.query = query
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, destination, name, query, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, destination, name, query, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsArchiveAttributes, cls)._from_openapi_data(kwargs)

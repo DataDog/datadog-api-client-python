@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class SLOListResponse(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class SLOListResponse(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,25 +60,20 @@ class SLOListResponse(ModelNormal):
         """
         lazy_import()
         return {
-            "data": ([ServiceLevelObjective],),  # noqa: E501
-            "errors": ([str],),  # noqa: E501
-            "metadata": (SLOListResponseMetadata,),  # noqa: E501
+            "data": ([ServiceLevelObjective],),
+            "errors": ([str],),
+            "metadata": (SLOListResponseMetadata,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "data": "data",  # noqa: E501
-        "errors": "errors",  # noqa: E501
-        "metadata": "metadata",  # noqa: E501
+        "data": "data",
+        "errors": "errors",
+        "metadata": "metadata",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SLOListResponse - a model defined in OpenAPI
 
         Keyword Args:
@@ -121,17 +107,16 @@ class SLOListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([ServiceLevelObjective]): An array of service level objective objects.. [optional]  # noqa: E501
-            errors ([str]): An array of error messages. Each endpoint documents how/whether this field is used.. [optional]  # noqa: E501
-            metadata (SLOListResponseMetadata): [optional]  # noqa: E501
+            data ([ServiceLevelObjective]): An array of service level objective objects.. [optional]
+            errors ([str]): An array of error messages. Each endpoint documents how/whether this field is used.. [optional]
+            metadata (SLOListResponseMetadata): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SLOListResponse, cls)._from_openapi_data(kwargs)

@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -48,8 +47,6 @@ class QueryValueWidgetRequest(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -59,13 +56,7 @@ class QueryValueWidgetRequest(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -79,49 +70,44 @@ class QueryValueWidgetRequest(ModelNormal):
         """
         lazy_import()
         return {
-            "aggregator": (WidgetAggregator,),  # noqa: E501
-            "apm_query": (LogQueryDefinition,),  # noqa: E501
-            "audit_query": (LogQueryDefinition,),  # noqa: E501
-            "conditional_formats": ([WidgetConditionalFormat],),  # noqa: E501
-            "event_query": (LogQueryDefinition,),  # noqa: E501
-            "formulas": ([WidgetFormula],),  # noqa: E501
-            "log_query": (LogQueryDefinition,),  # noqa: E501
-            "network_query": (LogQueryDefinition,),  # noqa: E501
-            "process_query": (ProcessQueryDefinition,),  # noqa: E501
-            "profile_metrics_query": (LogQueryDefinition,),  # noqa: E501
-            "q": (str,),  # noqa: E501
-            "queries": ([FormulaAndFunctionQueryDefinition],),  # noqa: E501
-            "response_format": (FormulaAndFunctionResponseFormat,),  # noqa: E501
-            "rum_query": (LogQueryDefinition,),  # noqa: E501
-            "security_query": (LogQueryDefinition,),  # noqa: E501
+            "aggregator": (WidgetAggregator,),
+            "apm_query": (LogQueryDefinition,),
+            "audit_query": (LogQueryDefinition,),
+            "conditional_formats": ([WidgetConditionalFormat],),
+            "event_query": (LogQueryDefinition,),
+            "formulas": ([WidgetFormula],),
+            "log_query": (LogQueryDefinition,),
+            "network_query": (LogQueryDefinition,),
+            "process_query": (ProcessQueryDefinition,),
+            "profile_metrics_query": (LogQueryDefinition,),
+            "q": (str,),
+            "queries": ([FormulaAndFunctionQueryDefinition],),
+            "response_format": (FormulaAndFunctionResponseFormat,),
+            "rum_query": (LogQueryDefinition,),
+            "security_query": (LogQueryDefinition,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "aggregator": "aggregator",  # noqa: E501
-        "apm_query": "apm_query",  # noqa: E501
-        "audit_query": "audit_query",  # noqa: E501
-        "conditional_formats": "conditional_formats",  # noqa: E501
-        "event_query": "event_query",  # noqa: E501
-        "formulas": "formulas",  # noqa: E501
-        "log_query": "log_query",  # noqa: E501
-        "network_query": "network_query",  # noqa: E501
-        "process_query": "process_query",  # noqa: E501
-        "profile_metrics_query": "profile_metrics_query",  # noqa: E501
-        "q": "q",  # noqa: E501
-        "queries": "queries",  # noqa: E501
-        "response_format": "response_format",  # noqa: E501
-        "rum_query": "rum_query",  # noqa: E501
-        "security_query": "security_query",  # noqa: E501
+        "aggregator": "aggregator",
+        "apm_query": "apm_query",
+        "audit_query": "audit_query",
+        "conditional_formats": "conditional_formats",
+        "event_query": "event_query",
+        "formulas": "formulas",
+        "log_query": "log_query",
+        "network_query": "network_query",
+        "process_query": "process_query",
+        "profile_metrics_query": "profile_metrics_query",
+        "q": "q",
+        "queries": "queries",
+        "response_format": "response_format",
+        "rum_query": "rum_query",
+        "security_query": "security_query",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """QueryValueWidgetRequest - a model defined in OpenAPI
 
         Keyword Args:
@@ -155,29 +141,28 @@ class QueryValueWidgetRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aggregator (WidgetAggregator): [optional]  # noqa: E501
-            apm_query (LogQueryDefinition): [optional]  # noqa: E501
-            audit_query (LogQueryDefinition): [optional]  # noqa: E501
-            conditional_formats ([WidgetConditionalFormat]): List of conditional formats.. [optional]  # noqa: E501
-            event_query (LogQueryDefinition): [optional]  # noqa: E501
-            formulas ([WidgetFormula]): List of formulas that operate on queries. **This feature is currently in beta.**. [optional]  # noqa: E501
-            log_query (LogQueryDefinition): [optional]  # noqa: E501
-            network_query (LogQueryDefinition): [optional]  # noqa: E501
-            process_query (ProcessQueryDefinition): [optional]  # noqa: E501
-            profile_metrics_query (LogQueryDefinition): [optional]  # noqa: E501
-            q (str): TODO.. [optional]  # noqa: E501
-            queries ([FormulaAndFunctionQueryDefinition]): List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**. [optional]  # noqa: E501
-            response_format (FormulaAndFunctionResponseFormat): [optional]  # noqa: E501
-            rum_query (LogQueryDefinition): [optional]  # noqa: E501
-            security_query (LogQueryDefinition): [optional]  # noqa: E501
+            aggregator (WidgetAggregator): [optional]
+            apm_query (LogQueryDefinition): [optional]
+            audit_query (LogQueryDefinition): [optional]
+            conditional_formats ([WidgetConditionalFormat]): List of conditional formats.. [optional]
+            event_query (LogQueryDefinition): [optional]
+            formulas ([WidgetFormula]): List of formulas that operate on queries. **This feature is currently in beta.**. [optional]
+            log_query (LogQueryDefinition): [optional]
+            network_query (LogQueryDefinition): [optional]
+            process_query (ProcessQueryDefinition): [optional]
+            profile_metrics_query (LogQueryDefinition): [optional]
+            q (str): TODO.. [optional]
+            queries ([FormulaAndFunctionQueryDefinition]): List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**. [optional]
+            response_format (FormulaAndFunctionResponseFormat): [optional]
+            rum_query (LogQueryDefinition): [optional]
+            security_query (LogQueryDefinition): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(QueryValueWidgetRequest, cls)._from_openapi_data(kwargs)

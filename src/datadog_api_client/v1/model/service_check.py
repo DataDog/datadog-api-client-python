@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class ServiceCheck(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class ServiceCheck(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,31 +58,26 @@ class ServiceCheck(ModelNormal):
         """
         lazy_import()
         return {
-            "check": (str,),  # noqa: E501
-            "host_name": (str,),  # noqa: E501
-            "status": (ServiceCheckStatus,),  # noqa: E501
-            "tags": ([str],),  # noqa: E501
-            "message": (str,),  # noqa: E501
-            "timestamp": (int,),  # noqa: E501
+            "check": (str,),
+            "host_name": (str,),
+            "message": (str,),
+            "status": (ServiceCheckStatus,),
+            "tags": ([str],),
+            "timestamp": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "check": "check",  # noqa: E501
-        "host_name": "host_name",  # noqa: E501
-        "status": "status",  # noqa: E501
-        "tags": "tags",  # noqa: E501
-        "message": "message",  # noqa: E501
-        "timestamp": "timestamp",  # noqa: E501
+        "check": "check",
+        "host_name": "host_name",
+        "status": "status",
+        "tags": "tags",
+        "message": "message",
+        "timestamp": "timestamp",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, check, host_name, status, tags, *args, **kwargs):  # noqa: E501
+    def __init__(self, check, host_name, status, tags, *args, **kwargs):
         """ServiceCheck - a model defined in OpenAPI
 
         Args:
@@ -131,8 +117,8 @@ class ServiceCheck(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            message (str): Message containing check status.. [optional]  # noqa: E501
-            timestamp (int): Time of check.. [optional]  # noqa: E501
+            message (str): Message containing check status.. [optional]
+            timestamp (int): Time of check.. [optional]
         """
         super().__init__(kwargs)
 
@@ -144,8 +130,7 @@ class ServiceCheck(ModelNormal):
         self.tags = tags
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, check, host_name, status, tags, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, check, host_name, status, tags, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(ServiceCheck, cls)._from_openapi_data(kwargs)

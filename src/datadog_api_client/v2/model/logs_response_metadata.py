@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -40,8 +39,6 @@ class LogsResponseMetadata(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -51,13 +48,7 @@ class LogsResponseMetadata(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -71,29 +62,24 @@ class LogsResponseMetadata(ModelNormal):
         """
         lazy_import()
         return {
-            "elapsed": (int,),  # noqa: E501
-            "page": (LogsResponseMetadataPage,),  # noqa: E501
-            "request_id": (str,),  # noqa: E501
-            "status": (LogsAggregateResponseStatus,),  # noqa: E501
-            "warnings": ([LogsWarning],),  # noqa: E501
+            "elapsed": (int,),
+            "page": (LogsResponseMetadataPage,),
+            "request_id": (str,),
+            "status": (LogsAggregateResponseStatus,),
+            "warnings": ([LogsWarning],),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "elapsed": "elapsed",  # noqa: E501
-        "page": "page",  # noqa: E501
-        "request_id": "request_id",  # noqa: E501
-        "status": "status",  # noqa: E501
-        "warnings": "warnings",  # noqa: E501
+        "elapsed": "elapsed",
+        "page": "page",
+        "request_id": "request_id",
+        "status": "status",
+        "warnings": "warnings",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """LogsResponseMetadata - a model defined in OpenAPI
 
         Keyword Args:
@@ -127,19 +113,18 @@ class LogsResponseMetadata(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            elapsed (int): The time elapsed in milliseconds. [optional]  # noqa: E501
-            page (LogsResponseMetadataPage): [optional]  # noqa: E501
-            request_id (str): The identifier of the request. [optional]  # noqa: E501
-            status (LogsAggregateResponseStatus): [optional]  # noqa: E501
-            warnings ([LogsWarning]): A list of warnings (non fatal errors) encountered, partial results might be returned if warnings are present in the response.. [optional]  # noqa: E501
+            elapsed (int): The time elapsed in milliseconds. [optional]
+            page (LogsResponseMetadataPage): [optional]
+            request_id (str): The identifier of the request. [optional]
+            status (LogsAggregateResponseStatus): [optional]
+            warnings ([LogsWarning]): A list of warnings (non fatal errors) encountered, partial results might be returned if warnings are present in the response.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsResponseMetadata, cls)._from_openapi_data(kwargs)

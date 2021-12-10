@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
@@ -362,9 +360,9 @@ class RolesApi(object):
         )
 
     def add_permission_to_role(self, role_id, body, **kwargs):
-        """Grant permission to a role  # noqa: E501
+        """Grant permission to a role
 
-        Adds a permission to a role.  # noqa: E501
+        Adds a permission to a role.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -407,9 +405,9 @@ class RolesApi(object):
         return self._add_permission_to_role_endpoint.call_with_http_info(**kwargs)
 
     def add_user_to_role(self, role_id, body, **kwargs):
-        """Add a user to a role  # noqa: E501
+        """Add a user to a role
 
-        Adds a user to a role.  # noqa: E501
+        Adds a user to a role.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -452,9 +450,9 @@ class RolesApi(object):
         return self._add_user_to_role_endpoint.call_with_http_info(**kwargs)
 
     def create_role(self, body, **kwargs):
-        """Create role  # noqa: E501
+        """Create role
 
-        Create a new role for your organization.  # noqa: E501
+        Create a new role for your organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -495,9 +493,9 @@ class RolesApi(object):
         return self._create_role_endpoint.call_with_http_info(**kwargs)
 
     def delete_role(self, role_id, **kwargs):
-        """Delete role  # noqa: E501
+        """Delete role
 
-        Disables a role.  # noqa: E501
+        Disables a role.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -538,9 +536,9 @@ class RolesApi(object):
         return self._delete_role_endpoint.call_with_http_info(**kwargs)
 
     def get_role(self, role_id, **kwargs):
-        """Get a role  # noqa: E501
+        """Get a role
 
-        Get a role in the organization specified by the role’s `role_id`.  # noqa: E501
+        Get a role in the organization specified by the role’s `role_id`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -581,9 +579,9 @@ class RolesApi(object):
         return self._get_role_endpoint.call_with_http_info(**kwargs)
 
     def list_permissions(self, **kwargs):
-        """List permissions  # noqa: E501
+        """List permissions
 
-        Returns a list of all permissions, including name, description, and ID.  # noqa: E501
+        Returns a list of all permissions, including name, description, and ID.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -621,9 +619,9 @@ class RolesApi(object):
         return self._list_permissions_endpoint.call_with_http_info(**kwargs)
 
     def list_role_permissions(self, role_id, **kwargs):
-        """List permissions for a role  # noqa: E501
+        """List permissions for a role
 
-        Returns a list of all permissions for a single role.  # noqa: E501
+        Returns a list of all permissions for a single role.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -664,9 +662,9 @@ class RolesApi(object):
         return self._list_role_permissions_endpoint.call_with_http_info(**kwargs)
 
     def list_role_users(self, role_id, **kwargs):
-        """Get all users of a role  # noqa: E501
+        """Get all users of a role
 
-        Gets all users of a role.  # noqa: E501
+        Gets all users of a role.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -711,9 +709,9 @@ class RolesApi(object):
         return self._list_role_users_endpoint.call_with_http_info(**kwargs)
 
     def list_roles(self, **kwargs):
-        """List roles  # noqa: E501
+        """List roles
 
-        Returns all roles, including their names and IDs.  # noqa: E501
+        Returns all roles, including their names and IDs.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -755,9 +753,9 @@ class RolesApi(object):
         return self._list_roles_endpoint.call_with_http_info(**kwargs)
 
     def remove_permission_from_role(self, role_id, body, **kwargs):
-        """Revoke permission  # noqa: E501
+        """Revoke permission
 
-        Removes a permission from a role.  # noqa: E501
+        Removes a permission from a role.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -800,9 +798,9 @@ class RolesApi(object):
         return self._remove_permission_from_role_endpoint.call_with_http_info(**kwargs)
 
     def remove_user_from_role(self, role_id, body, **kwargs):
-        """Remove a user from a role  # noqa: E501
+        """Remove a user from a role
 
-        Removes a user from a role.  # noqa: E501
+        Removes a user from a role.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -845,9 +843,9 @@ class RolesApi(object):
         return self._remove_user_from_role_endpoint.call_with_http_info(**kwargs)
 
     def update_role(self, role_id, body, **kwargs):
-        """Update a role  # noqa: E501
+        """Update a role
 
-        Edit a role. Can only be used with application keys belonging to administrators.  # noqa: E501
+        Edit a role. Can only be used with application keys belonging to administrators.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

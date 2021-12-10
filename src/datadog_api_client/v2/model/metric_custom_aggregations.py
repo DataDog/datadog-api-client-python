@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -43,13 +42,7 @@ class MetricCustomAggregations(ModelSimple):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -66,23 +59,16 @@ class MetricCustomAggregations(ModelSimple):
             "value": ([MetricCustomAggregation],),
         }
 
-    discriminator = None
-
-    attribute_map = {}
-
-    _composed_schemas = None
-
-    @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):
         """MetricCustomAggregations - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] ([MetricCustomAggregation]): A list of queryable aggregation combinations for a count, rate, or gauge metric. By default, count and rate metrics require the (time: sum, space: sum) aggregation and Gauge metrics require the (time: avg, space: avg) aggregation. Additional time & space combinations are also available:  - time: avg, space: avg - time: avg, space: max - time: avg, space: min - time: avg, space: sum - time: count, space: sum - time: max, space: max - time: min, space: min - time: sum, space: avg - time: sum, space: sum  Can only be applied to metrics that have a `metric_type` of `count`, `rate`, or `gauge`..  # noqa: E501
+            args[0] ([MetricCustomAggregation]): A list of queryable aggregation combinations for a count, rate, or gauge metric. By default, count and rate metrics require the (time: sum, space: sum) aggregation and Gauge metrics require the (time: avg, space: avg) aggregation. Additional time & space combinations are also available:  - time: avg, space: avg - time: avg, space: max - time: avg, space: min - time: avg, space: sum - time: count, space: sum - time: max, space: max - time: min, space: min - time: sum, space: avg - time: sum, space: sum  Can only be applied to metrics that have a `metric_type` of `count`, `rate`, or `gauge`..
 
         Keyword Args:
-            value ([MetricCustomAggregation]): A list of queryable aggregation combinations for a count, rate, or gauge metric. By default, count and rate metrics require the (time: sum, space: sum) aggregation and Gauge metrics require the (time: avg, space: avg) aggregation. Additional time & space combinations are also available:  - time: avg, space: avg - time: avg, space: max - time: avg, space: min - time: avg, space: sum - time: count, space: sum - time: max, space: max - time: min, space: min - time: sum, space: avg - time: sum, space: sum  Can only be applied to metrics that have a `metric_type` of `count`, `rate`, or `gauge`..  # noqa: E501
+            value ([MetricCustomAggregation]): A list of queryable aggregation combinations for a count, rate, or gauge metric. By default, count and rate metrics require the (time: sum, space: sum) aggregation and Gauge metrics require the (time: avg, space: avg) aggregation. Additional time & space combinations are also available:  - time: avg, space: avg - time: avg, space: max - time: avg, space: min - time: avg, space: sum - time: count, space: sum - time: max, space: max - time: min, space: min - time: sum, space: avg - time: sum, space: sum  Can only be applied to metrics that have a `metric_type` of `count`, `rate`, or `gauge`..
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -135,7 +121,6 @@ class MetricCustomAggregations(ModelSimple):
         self._check_kw_args(kwargs)
 
     @classmethod
-    @convert_js_args_to_python_args
     def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
         return cls(*args, **kwargs)

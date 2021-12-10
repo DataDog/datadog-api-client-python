@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse
@@ -1112,9 +1110,9 @@ class UsageMeteringApi(object):
         )
 
     def get_daily_custom_reports(self, **kwargs):
-        """Get the list of available daily custom reports  # noqa: E501
+        """Get the list of available daily custom reports
 
-        Get daily custom reports.  # noqa: E501
+        Get daily custom reports.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1156,9 +1154,9 @@ class UsageMeteringApi(object):
         return self._get_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_incident_management(self, start_hr, **kwargs):
-        """Get hourly usage for incident management  # noqa: E501
+        """Get hourly usage for incident management
 
-        Get hourly usage for incident management.  # noqa: E501
+        Get hourly usage for incident management.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1200,9 +1198,9 @@ class UsageMeteringApi(object):
         return self._get_incident_management_endpoint.call_with_http_info(**kwargs)
 
     def get_ingested_spans(self, start_hr, **kwargs):
-        """Get hourly usage for ingested spans  # noqa: E501
+        """Get hourly usage for ingested spans
 
-        Get hourly usage for ingested spans.  # noqa: E501
+        Get hourly usage for ingested spans.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1244,9 +1242,9 @@ class UsageMeteringApi(object):
         return self._get_ingested_spans_endpoint.call_with_http_info(**kwargs)
 
     def get_monthly_custom_reports(self, **kwargs):
-        """Get the list of available monthly custom reports  # noqa: E501
+        """Get the list of available monthly custom reports
 
-        Get monthly custom reports.  # noqa: E501
+        Get monthly custom reports.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1288,9 +1286,9 @@ class UsageMeteringApi(object):
         return self._get_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_specified_daily_custom_reports(self, report_id, **kwargs):
-        """Get specified daily custom reports  # noqa: E501
+        """Get specified daily custom reports
 
-        Get specified daily custom reports.  # noqa: E501
+        Get specified daily custom reports.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1331,9 +1329,9 @@ class UsageMeteringApi(object):
         return self._get_specified_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_specified_monthly_custom_reports(self, report_id, **kwargs):
-        """Get specified monthly custom reports  # noqa: E501
+        """Get specified monthly custom reports
 
-        Get specified monthly custom reports.  # noqa: E501
+        Get specified monthly custom reports.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1374,9 +1372,9 @@ class UsageMeteringApi(object):
         return self._get_specified_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_analyzed_logs(self, start_hr, **kwargs):
-        """Get hourly usage for analyzed logs  # noqa: E501
+        """Get hourly usage for analyzed logs
 
-        Get hourly usage for analyzed logs (Security Monitoring).  # noqa: E501
+        Get hourly usage for analyzed logs (Security Monitoring).
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1418,9 +1416,9 @@ class UsageMeteringApi(object):
         return self._get_usage_analyzed_logs_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_attribution(self, start_month, fields, **kwargs):
-        """Get Usage Attribution  # noqa: E501
+        """Get Usage Attribution
 
-        Get Usage Attribution.  # noqa: E501
+        Get Usage Attribution.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1467,9 +1465,9 @@ class UsageMeteringApi(object):
         return self._get_usage_attribution_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_audit_logs(self, start_hr, **kwargs):
-        """Get hourly usage for audit logs  # noqa: E501
+        """Get hourly usage for audit logs
 
-        Get hourly usage for audit logs.  # noqa: E501
+        Get hourly usage for audit logs.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1511,9 +1509,9 @@ class UsageMeteringApi(object):
         return self._get_usage_audit_logs_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_billable_summary(self, **kwargs):
-        """Get billable usage across your account  # noqa: E501
+        """Get billable usage across your account
 
-        Get billable usage across your account.  # noqa: E501
+        Get billable usage across your account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1552,9 +1550,9 @@ class UsageMeteringApi(object):
         return self._get_usage_billable_summary_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_cloud_security_posture_management(self, start_hr, **kwargs):
-        """Get hourly usage for CSPM  # noqa: E501
+        """Get hourly usage for CSPM
 
-        Get hourly usage for Cloud Security Posture Management (CSPM).  # noqa: E501
+        Get hourly usage for Cloud Security Posture Management (CSPM).
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1596,9 +1594,9 @@ class UsageMeteringApi(object):
         return self._get_usage_cloud_security_posture_management_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_cws(self, start_hr, **kwargs):
-        """Get hourly usage for Cloud Workload Security  # noqa: E501
+        """Get hourly usage for Cloud Workload Security
 
-        Get hourly usage for Cloud Workload Security.  # noqa: E501
+        Get hourly usage for Cloud Workload Security.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1640,9 +1638,9 @@ class UsageMeteringApi(object):
         return self._get_usage_cws_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_dbm(self, start_hr, **kwargs):
-        """Get hourly usage for Database Monitoring  # noqa: E501
+        """Get hourly usage for Database Monitoring
 
-        Get hourly usage for Database Monitoring  # noqa: E501
+        Get hourly usage for Database Monitoring
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1684,9 +1682,9 @@ class UsageMeteringApi(object):
         return self._get_usage_dbm_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_fargate(self, start_hr, **kwargs):
-        """Get hourly usage for Fargate  # noqa: E501
+        """Get hourly usage for Fargate
 
-        Get hourly usage for [Fargate](https://docs.datadoghq.com/integrations/ecs_fargate/).  # noqa: E501
+        Get hourly usage for [Fargate](https://docs.datadoghq.com/integrations/ecs_fargate/).
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1728,9 +1726,9 @@ class UsageMeteringApi(object):
         return self._get_usage_fargate_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_hosts(self, start_hr, **kwargs):
-        """Get hourly usage for hosts and containers  # noqa: E501
+        """Get hourly usage for hosts and containers
 
-        Get hourly usage for hosts and containers.  # noqa: E501
+        Get hourly usage for hosts and containers.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1772,9 +1770,9 @@ class UsageMeteringApi(object):
         return self._get_usage_hosts_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_indexed_spans(self, start_hr, **kwargs):
-        """Get hourly usage for indexed spans  # noqa: E501
+        """Get hourly usage for indexed spans
 
-        Get hourly usage for indexed spans.  # noqa: E501
+        Get hourly usage for indexed spans.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1816,9 +1814,9 @@ class UsageMeteringApi(object):
         return self._get_usage_indexed_spans_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_internet_of_things(self, start_hr, **kwargs):
-        """Get hourly usage for IoT  # noqa: E501
+        """Get hourly usage for IoT
 
-        Get hourly usage for IoT.  # noqa: E501
+        Get hourly usage for IoT.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1860,9 +1858,9 @@ class UsageMeteringApi(object):
         return self._get_usage_internet_of_things_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_lambda(self, start_hr, **kwargs):
-        """Get hourly usage for Lambda  # noqa: E501
+        """Get hourly usage for Lambda
 
-        Get hourly usage for lambda.  # noqa: E501
+        Get hourly usage for lambda.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1904,9 +1902,9 @@ class UsageMeteringApi(object):
         return self._get_usage_lambda_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_logs(self, start_hr, **kwargs):
-        """Get hourly usage for Logs  # noqa: E501
+        """Get hourly usage for Logs
 
-        Get hourly usage for logs.  # noqa: E501
+        Get hourly usage for logs.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1948,9 +1946,9 @@ class UsageMeteringApi(object):
         return self._get_usage_logs_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_logs_by_index(self, start_hr, **kwargs):
-        """Get hourly usage for Logs by Index  # noqa: E501
+        """Get hourly usage for Logs by Index
 
-        Get hourly usage for logs by index.  # noqa: E501
+        Get hourly usage for logs by index.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1993,9 +1991,9 @@ class UsageMeteringApi(object):
         return self._get_usage_logs_by_index_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_logs_by_retention(self, start_hr, **kwargs):
-        """Get hourly logs usage by retention  # noqa: E501
+        """Get hourly logs usage by retention
 
-        Get hourly usage for indexed logs by retention period.  # noqa: E501
+        Get hourly usage for indexed logs by retention period.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2037,9 +2035,9 @@ class UsageMeteringApi(object):
         return self._get_usage_logs_by_retention_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_network_flows(self, start_hr, **kwargs):
-        """Get hourly usage for Network Flows  # noqa: E501
+        """Get hourly usage for Network Flows
 
-        Get hourly usage for network flows.  # noqa: E501
+        Get hourly usage for network flows.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2081,9 +2079,9 @@ class UsageMeteringApi(object):
         return self._get_usage_network_flows_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_network_hosts(self, start_hr, **kwargs):
-        """Get hourly usage for Network Hosts  # noqa: E501
+        """Get hourly usage for Network Hosts
 
-        Get hourly usage for network hosts.  # noqa: E501
+        Get hourly usage for network hosts.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2125,9 +2123,9 @@ class UsageMeteringApi(object):
         return self._get_usage_network_hosts_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_profiling(self, start_hr, **kwargs):
-        """Get hourly usage for profiled hosts  # noqa: E501
+        """Get hourly usage for profiled hosts
 
-        Get hourly usage for profiled hosts.  # noqa: E501
+        Get hourly usage for profiled hosts.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2169,9 +2167,9 @@ class UsageMeteringApi(object):
         return self._get_usage_profiling_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_rum_sessions(self, start_hr, **kwargs):
-        """Get hourly usage for RUM Sessions  # noqa: E501
+        """Get hourly usage for RUM Sessions
 
-        Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/) Sessions.  # noqa: E501
+        Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/) Sessions.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2214,9 +2212,9 @@ class UsageMeteringApi(object):
         return self._get_usage_rum_sessions_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_rum_units(self, start_hr, **kwargs):
-        """Get hourly usage for RUM Units  # noqa: E501
+        """Get hourly usage for RUM Units
 
-        Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/) Units.  # noqa: E501
+        Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/) Units.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2258,9 +2256,9 @@ class UsageMeteringApi(object):
         return self._get_usage_rum_units_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_sds(self, start_hr, **kwargs):
-        """Get hourly usage for Sensitive Data Scanner  # noqa: E501
+        """Get hourly usage for Sensitive Data Scanner
 
-        Get hourly usage for Sensitive Data Scanner.  # noqa: E501
+        Get hourly usage for Sensitive Data Scanner.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2302,9 +2300,9 @@ class UsageMeteringApi(object):
         return self._get_usage_sds_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_snmp(self, start_hr, **kwargs):
-        """Get hourly usage for SNMP devices  # noqa: E501
+        """Get hourly usage for SNMP devices
 
-        Get hourly usage for SNMP devices.  # noqa: E501
+        Get hourly usage for SNMP devices.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2346,9 +2344,9 @@ class UsageMeteringApi(object):
         return self._get_usage_snmp_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_summary(self, start_month, **kwargs):
-        """Get usage across your multi-org account  # noqa: E501
+        """Get usage across your multi-org account
 
-        Get usage across your multi-org account. You must have the multi-org feature enabled.  # noqa: E501
+        Get usage across your multi-org account. You must have the multi-org feature enabled.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2391,9 +2389,9 @@ class UsageMeteringApi(object):
         return self._get_usage_summary_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_synthetics(self, start_hr, **kwargs):
-        """Get hourly usage for Synthetics Checks  # noqa: E501
+        """Get hourly usage for Synthetics Checks
 
-        Get hourly usage for [Synthetics checks](https://docs.datadoghq.com/synthetics/).  # noqa: E501
+        Get hourly usage for [Synthetics checks](https://docs.datadoghq.com/synthetics/).
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2435,9 +2433,9 @@ class UsageMeteringApi(object):
         return self._get_usage_synthetics_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_synthetics_api(self, start_hr, **kwargs):
-        """Get hourly usage for Synthetics API Checks  # noqa: E501
+        """Get hourly usage for Synthetics API Checks
 
-        Get hourly usage for [synthetics API checks](https://docs.datadoghq.com/synthetics/).  # noqa: E501
+        Get hourly usage for [synthetics API checks](https://docs.datadoghq.com/synthetics/).
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2479,9 +2477,9 @@ class UsageMeteringApi(object):
         return self._get_usage_synthetics_api_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_synthetics_browser(self, start_hr, **kwargs):
-        """Get hourly usage for Synthetics Browser Checks  # noqa: E501
+        """Get hourly usage for Synthetics Browser Checks
 
-        Get hourly usage for synthetics browser checks.  # noqa: E501
+        Get hourly usage for synthetics browser checks.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2523,9 +2521,9 @@ class UsageMeteringApi(object):
         return self._get_usage_synthetics_browser_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_timeseries(self, start_hr, **kwargs):
-        """Get hourly usage for custom metrics  # noqa: E501
+        """Get hourly usage for custom metrics
 
-        Get hourly usage for [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/).  # noqa: E501
+        Get hourly usage for [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/).
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2567,9 +2565,9 @@ class UsageMeteringApi(object):
         return self._get_usage_timeseries_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_top_avg_metrics(self, **kwargs):
-        """Get all custom metrics by hourly average  # noqa: E501
+        """Get all custom metrics by hourly average
 
-        Get all [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average. Use the month parameter to get a month-to-date data resolution or use the day parameter to get a daily resolution. One of the two is required, and only one of the two is allowed.  # noqa: E501
+        Get all [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average. Use the month parameter to get a month-to-date data resolution or use the day parameter to get a daily resolution. One of the two is required, and only one of the two is allowed.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

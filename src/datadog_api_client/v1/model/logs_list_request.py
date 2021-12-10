@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class LogsListRequest(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,17 +46,11 @@ class LogsListRequest(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "limit": {
             "inclusive_maximum": 1000,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,31 +64,26 @@ class LogsListRequest(ModelNormal):
         """
         lazy_import()
         return {
-            "time": (LogsListRequestTime,),  # noqa: E501
-            "index": (str,),  # noqa: E501
-            "limit": (int,),  # noqa: E501
-            "query": (str,),  # noqa: E501
-            "sort": (LogsSort,),  # noqa: E501
-            "start_at": (str,),  # noqa: E501
+            "index": (str,),
+            "limit": (int,),
+            "query": (str,),
+            "sort": (LogsSort,),
+            "start_at": (str,),
+            "time": (LogsListRequestTime,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "time": "time",  # noqa: E501
-        "index": "index",  # noqa: E501
-        "limit": "limit",  # noqa: E501
-        "query": "query",  # noqa: E501
-        "sort": "sort",  # noqa: E501
-        "start_at": "startAt",  # noqa: E501
+        "time": "time",
+        "index": "index",
+        "limit": "limit",
+        "query": "query",
+        "sort": "sort",
+        "start_at": "startAt",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, time, *args, **kwargs):  # noqa: E501
+    def __init__(self, time, *args, **kwargs):
         """LogsListRequest - a model defined in OpenAPI
 
         Args:
@@ -134,11 +120,11 @@ class LogsListRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            index (str): The log index on which the request is performed. For multi-index organizations, the default is all live indexes. Historical indexes of rehydrated logs must be specified.. [optional]  # noqa: E501
-            limit (int): Number of logs return in the response.. [optional]  # noqa: E501
-            query (str): The search query - following the log search syntax.. [optional]  # noqa: E501
-            sort (LogsSort): [optional]  # noqa: E501
-            start_at (str): Hash identifier of the first log to return in the list, available in a log `id` attribute. This parameter is used for the pagination feature.  **Note**: This parameter is ignored if the corresponding log is out of the scope of the specified time window.. [optional]  # noqa: E501
+            index (str): The log index on which the request is performed. For multi-index organizations, the default is all live indexes. Historical indexes of rehydrated logs must be specified.. [optional]
+            limit (int): Number of logs return in the response.. [optional]
+            query (str): The search query - following the log search syntax.. [optional]
+            sort (LogsSort): [optional]
+            start_at (str): Hash identifier of the first log to return in the list, available in a log `id` attribute. This parameter is used for the pagination feature.  **Note**: This parameter is ignored if the corresponding log is out of the scope of the specified time window.. [optional]
         """
         super().__init__(kwargs)
 
@@ -147,8 +133,7 @@ class LogsListRequest(ModelNormal):
         self.time = time
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, time, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, time, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsListRequest, cls)._from_openapi_data(kwargs)

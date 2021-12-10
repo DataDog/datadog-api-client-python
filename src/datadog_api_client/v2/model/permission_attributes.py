@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class PermissionAttributes(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class PermissionAttributes(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,33 +51,28 @@ class PermissionAttributes(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "created": (datetime,),  # noqa: E501
-            "description": (str,),  # noqa: E501
-            "display_name": (str,),  # noqa: E501
-            "display_type": (str,),  # noqa: E501
-            "group_name": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "restricted": (bool,),  # noqa: E501
+            "created": (datetime,),
+            "description": (str,),
+            "display_name": (str,),
+            "display_type": (str,),
+            "group_name": (str,),
+            "name": (str,),
+            "restricted": (bool,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "created": "created",  # noqa: E501
-        "description": "description",  # noqa: E501
-        "display_name": "display_name",  # noqa: E501
-        "display_type": "display_type",  # noqa: E501
-        "group_name": "group_name",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "restricted": "restricted",  # noqa: E501
+        "created": "created",
+        "description": "description",
+        "display_name": "display_name",
+        "display_type": "display_type",
+        "group_name": "group_name",
+        "name": "name",
+        "restricted": "restricted",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """PermissionAttributes - a model defined in OpenAPI
 
         Keyword Args:
@@ -120,21 +106,20 @@ class PermissionAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created (datetime): Creation time of the permission.. [optional]  # noqa: E501
-            description (str): Description of the permission.. [optional]  # noqa: E501
-            display_name (str): Displayed name for the permission.. [optional]  # noqa: E501
-            display_type (str): Display type.. [optional]  # noqa: E501
-            group_name (str): Name of the permission group.. [optional]  # noqa: E501
-            name (str): Name of the permission.. [optional]  # noqa: E501
-            restricted (bool): Whether or not the permission is restricted.. [optional]  # noqa: E501
+            created (datetime): Creation time of the permission.. [optional]
+            description (str): Description of the permission.. [optional]
+            display_name (str): Displayed name for the permission.. [optional]
+            display_type (str): Display type.. [optional]
+            group_name (str): Name of the permission group.. [optional]
+            name (str): Name of the permission.. [optional]
+            restricted (bool): Whether or not the permission is restricted.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(PermissionAttributes, cls)._from_openapi_data(kwargs)

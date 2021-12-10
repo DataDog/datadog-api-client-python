@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.gcp_account import GCPAccount
@@ -109,9 +107,9 @@ class GCPIntegrationApi(object):
         )
 
     def create_gcp_integration(self, body, **kwargs):
-        """Create a GCP integration  # noqa: E501
+        """Create a GCP integration
 
-        Create a Datadog-GCP integration.  # noqa: E501
+        Create a Datadog-GCP integration.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -152,9 +150,9 @@ class GCPIntegrationApi(object):
         return self._create_gcp_integration_endpoint.call_with_http_info(**kwargs)
 
     def delete_gcp_integration(self, body, **kwargs):
-        """Delete a GCP integration  # noqa: E501
+        """Delete a GCP integration
 
-        Delete a given Datadog-GCP integration.  # noqa: E501
+        Delete a given Datadog-GCP integration.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -195,9 +193,9 @@ class GCPIntegrationApi(object):
         return self._delete_gcp_integration_endpoint.call_with_http_info(**kwargs)
 
     def list_gcp_integration(self, **kwargs):
-        """List all GCP integrations  # noqa: E501
+        """List all GCP integrations
 
-        List all Datadog-GCP integrations configured in your Datadog account.  # noqa: E501
+        List all Datadog-GCP integrations configured in your Datadog account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -235,9 +233,9 @@ class GCPIntegrationApi(object):
         return self._list_gcp_integration_endpoint.call_with_http_info(**kwargs)
 
     def update_gcp_integration(self, body, **kwargs):
-        """Update a GCP integration  # noqa: E501
+        """Update a GCP integration
 
-        Update a Datadog-GCP integrations host_filters and/or auto-mute. Requires a `project_id` and `client_email`, however these fields cannot be updated. If you need to update these fields, delete and use the create (`POST`) endpoint. The unspecified fields will keep their original values.  # noqa: E501
+        Update a Datadog-GCP integrations host_filters and/or auto-mute. Requires a `project_id` and `client_email`, however these fields cannot be updated. If you need to update these fields, delete and use the create (`POST`) endpoint. The unspecified fields will keep their original values.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

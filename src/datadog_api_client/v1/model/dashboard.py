@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -44,8 +43,6 @@ class Dashboard(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -55,13 +52,7 @@ class Dashboard(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -75,67 +66,62 @@ class Dashboard(ModelNormal):
         """
         lazy_import()
         return {
-            "layout_type": (DashboardLayoutType,),  # noqa: E501
-            "title": (str,),  # noqa: E501
-            "widgets": ([Widget],),  # noqa: E501
-            "author_handle": (str,),  # noqa: E501
-            "created_at": (datetime,),  # noqa: E501
+            "author_handle": (str,),
+            "created_at": (datetime,),
             "description": (
                 str,
                 none_type,
-            ),  # noqa: E501
-            "id": (str,),  # noqa: E501
-            "is_read_only": (bool,),  # noqa: E501
-            "modified_at": (datetime,),  # noqa: E501
+            ),
+            "id": (str,),
+            "is_read_only": (bool,),
+            "layout_type": (DashboardLayoutType,),
+            "modified_at": (datetime,),
             "notify_list": (
                 [str],
                 none_type,
-            ),  # noqa: E501
-            "reflow_type": (DashboardReflowType,),  # noqa: E501
-            "restricted_roles": ([str],),  # noqa: E501
+            ),
+            "reflow_type": (DashboardReflowType,),
+            "restricted_roles": ([str],),
             "template_variable_presets": (
                 [DashboardTemplateVariablePreset],
                 none_type,
-            ),  # noqa: E501
+            ),
             "template_variables": (
                 [DashboardTemplateVariable],
                 none_type,
-            ),  # noqa: E501
-            "url": (str,),  # noqa: E501
+            ),
+            "title": (str,),
+            "url": (str,),
+            "widgets": ([Widget],),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "layout_type": "layout_type",  # noqa: E501
-        "title": "title",  # noqa: E501
-        "widgets": "widgets",  # noqa: E501
-        "author_handle": "author_handle",  # noqa: E501
-        "created_at": "created_at",  # noqa: E501
-        "description": "description",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "is_read_only": "is_read_only",  # noqa: E501
-        "modified_at": "modified_at",  # noqa: E501
-        "notify_list": "notify_list",  # noqa: E501
-        "reflow_type": "reflow_type",  # noqa: E501
-        "restricted_roles": "restricted_roles",  # noqa: E501
-        "template_variable_presets": "template_variable_presets",  # noqa: E501
-        "template_variables": "template_variables",  # noqa: E501
-        "url": "url",  # noqa: E501
+        "layout_type": "layout_type",
+        "title": "title",
+        "widgets": "widgets",
+        "author_handle": "author_handle",
+        "created_at": "created_at",
+        "description": "description",
+        "id": "id",
+        "is_read_only": "is_read_only",
+        "modified_at": "modified_at",
+        "notify_list": "notify_list",
+        "reflow_type": "reflow_type",
+        "restricted_roles": "restricted_roles",
+        "template_variable_presets": "template_variable_presets",
+        "template_variables": "template_variables",
+        "url": "url",
     }
 
     read_only_vars = {
-        "author_handle",  # noqa: E501
-        "created_at",  # noqa: E501
-        "id",  # noqa: E501
-        "modified_at",  # noqa: E501
-        "url",  # noqa: E501
+        "author_handle",
+        "created_at",
+        "id",
+        "modified_at",
+        "url",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, layout_type, title, widgets, *args, **kwargs):  # noqa: E501
+    def __init__(self, layout_type, title, widgets, *args, **kwargs):
         """Dashboard - a model defined in OpenAPI
 
         Args:
@@ -174,18 +160,18 @@ class Dashboard(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            author_handle (str): Identifier of the dashboard author.. [optional]  # noqa: E501
-            created_at (datetime): Creation date of the dashboard.. [optional]  # noqa: E501
-            description (str, none_type): Description of the dashboard.. [optional]  # noqa: E501
-            id (str): ID of the dashboard.. [optional]  # noqa: E501
-            is_read_only (bool): Whether this dashboard is read-only. If True, only the author and admins can make changes to it. Prefer using `restricted_roles` to manage write authorization.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            modified_at (datetime): Modification date of the dashboard.. [optional]  # noqa: E501
-            notify_list ([str], none_type): List of handles of users to notify when changes are made to this dashboard.. [optional]  # noqa: E501
-            reflow_type (DashboardReflowType): [optional]  # noqa: E501
-            restricted_roles ([str]): A list of role identifiers. Only the author and users associated with at least one of these roles can edit this dashboard.. [optional]  # noqa: E501
-            template_variable_presets ([DashboardTemplateVariablePreset], none_type): Array of template variables saved views.. [optional]  # noqa: E501
-            template_variables ([DashboardTemplateVariable], none_type): List of template variables for this dashboard.. [optional]  # noqa: E501
-            url (str): The URL of the dashboard.. [optional]  # noqa: E501
+            author_handle (str): Identifier of the dashboard author.. [optional]
+            created_at (datetime): Creation date of the dashboard.. [optional]
+            description (str, none_type): Description of the dashboard.. [optional]
+            id (str): ID of the dashboard.. [optional]
+            is_read_only (bool): Whether this dashboard is read-only. If True, only the author and admins can make changes to it. Prefer using `restricted_roles` to manage write authorization.. [optional] if omitted the server will use the default value of False
+            modified_at (datetime): Modification date of the dashboard.. [optional]
+            notify_list ([str], none_type): List of handles of users to notify when changes are made to this dashboard.. [optional]
+            reflow_type (DashboardReflowType): [optional]
+            restricted_roles ([str]): A list of role identifiers. Only the author and users associated with at least one of these roles can edit this dashboard.. [optional]
+            template_variable_presets ([DashboardTemplateVariablePreset], none_type): Array of template variables saved views.. [optional]
+            template_variables ([DashboardTemplateVariable], none_type): List of template variables for this dashboard.. [optional]
+            url (str): The URL of the dashboard.. [optional]
         """
         super().__init__(kwargs)
 
@@ -196,8 +182,7 @@ class Dashboard(ModelNormal):
         self.widgets = widgets
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, layout_type, title, widgets, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, layout_type, title, widgets, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(Dashboard, cls)._from_openapi_data(kwargs)

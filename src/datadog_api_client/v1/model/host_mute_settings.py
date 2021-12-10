@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class HostMuteSettings(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class HostMuteSettings(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,25 +51,20 @@ class HostMuteSettings(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "end": (int,),  # noqa: E501
-            "message": (str,),  # noqa: E501
-            "override": (bool,),  # noqa: E501
+            "end": (int,),
+            "message": (str,),
+            "override": (bool,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "end": "end",  # noqa: E501
-        "message": "message",  # noqa: E501
-        "override": "override",  # noqa: E501
+        "end": "end",
+        "message": "message",
+        "override": "override",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """HostMuteSettings - a model defined in OpenAPI
 
         Keyword Args:
@@ -112,17 +98,16 @@ class HostMuteSettings(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            end (int): POSIX timestamp in seconds when the host is unmuted. If omitted, the host remains muted until explicitly unmuted.. [optional]  # noqa: E501
-            message (str): Message to associate with the muting of this host.. [optional]  # noqa: E501
-            override (bool): If true and the host is already muted, replaces existing host mute settings.. [optional]  # noqa: E501
+            end (int): POSIX timestamp in seconds when the host is unmuted. If omitted, the host remains muted until explicitly unmuted.. [optional]
+            message (str): Message to associate with the muting of this host.. [optional]
+            override (bool): If true and the host is already muted, replaces existing host mute settings.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(HostMuteSettings, cls)._from_openapi_data(kwargs)

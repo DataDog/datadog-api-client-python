@@ -1,5 +1,5 @@
-    allowed_values = {
 {{#isEnum}}
+    allowed_values = {
         'value': {
 {{#isNullable}}
             'None': None,
@@ -10,54 +10,38 @@
 {{/enumVars}}
 {{/allowableValues}}
         },
-{{/isEnum}}
-{{#requiredVars}}
-{{#isEnum}}
-        '{{name}}': {
-{{#isNullable}}
-            'None': None,
-{{/isNullable}}
-{{#allowableValues}}
-{{#enumVars}}
-            '{{name}}': {{{value}}},
-{{/enumVars}}
-{{/allowableValues}}
-        },
-{{/isEnum}}
-{{/requiredVars}}
-{{#optionalVars}}
-{{#isEnum}}
-        '{{name}}': {
-{{#isNullable}}
-            'None': None,
-{{/isNullable}}
-{{#allowableValues}}
-{{#enumVars}}
-            '{{name}}': {{{value}}},
-{{/enumVars}}
-{{/allowableValues}}
-        },
-{{/isEnum}}
-{{/optionalVars}}
     }
+{{/isEnum}}
+{{#hasEnums}}
+    allowed_values = {
+{{#vars}}
+{{#isEnum}}
+        '{{name}}': {
+{{#isNullable}}
+            'None': None,
+{{/isNullable}}
+{{#allowableValues}}
+{{#enumVars}}
+            '{{name}}': {{{value}}},
+{{/enumVars}}
+{{/allowableValues}}
+        },
+{{/isEnum}}
+{{/vars}}
+    }
+{{/hasEnums}}
 
     validations = {
 {{#hasValidation}}
         'value': {
 {{> model_templates/validations }}
 {{/hasValidation}}
-{{#requiredVars}}
+{{#vars}}
 {{#hasValidation}}
         '{{name}}': {
 {{> model_templates/validations }}
 {{/hasValidation}}
-{{/requiredVars}}
-{{#optionalVars}}
-{{#hasValidation}}
-        '{{name}}': {
-{{> model_templates/validations }}
-{{/hasValidation}}
-{{/optionalVars}}
+{{/vars}}
     }
 
 {{#additionalProperties}}
@@ -72,13 +56,10 @@
         lazy_import()
 {{/-first}}
 {{/imports}}
-        return ({{{dataType}}},)  # noqa: E501
-{{/additionalProperties}}
-{{^additionalProperties}}
-    additional_properties_type = None
+        return ({{{dataType}}},)
 {{/additionalProperties}}
 
-    _nullable = {{#isNullable}}True{{/isNullable}}{{^isNullable}}False{{/isNullable}}
+    {{#isNullable}}_nullable = True{{/isNullable}}
 
     @cached_property
     def openapi_types():
@@ -111,18 +92,12 @@
 {{#isArray}}
             'value': ({{{dataType}}},),
 {{/isArray}}
-{{#requiredVars}}
-            '{{name}}': ({{{dataType}}},),  # noqa: E501
-{{/requiredVars}}
-{{#optionalVars}}
-            '{{name}}': ({{{dataType}}},),  # noqa: E501
-{{/optionalVars}}
+{{#vars}}
+            '{{name}}': ({{{dataType}}},),
+{{/vars}}
         }
 {{/oneOf}}
 
-{{^discriminator}}
-    discriminator = None
-{{/discriminator}}
 {{#discriminator}}
     @cached_property
     def discriminator():

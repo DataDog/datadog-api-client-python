@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class HostMetrics(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class HostMetrics(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,25 +51,20 @@ class HostMetrics(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "cpu": (float,),  # noqa: E501
-            "iowait": (float,),  # noqa: E501
-            "load": (float,),  # noqa: E501
+            "cpu": (float,),
+            "iowait": (float,),
+            "load": (float,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "cpu": "cpu",  # noqa: E501
-        "iowait": "iowait",  # noqa: E501
-        "load": "load",  # noqa: E501
+        "cpu": "cpu",
+        "iowait": "iowait",
+        "load": "load",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """HostMetrics - a model defined in OpenAPI
 
         Keyword Args:
@@ -112,17 +98,16 @@ class HostMetrics(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            cpu (float): The percent of CPU used (everything but idle).. [optional]  # noqa: E501
-            iowait (float): The percent of CPU spent waiting on the IO (not reported for all platforms).. [optional]  # noqa: E501
-            load (float): The system load over the last 15 minutes.. [optional]  # noqa: E501
+            cpu (float): The percent of CPU used (everything but idle).. [optional]
+            iowait (float): The percent of CPU spent waiting on the IO (not reported for all platforms).. [optional]
+            load (float): The system load over the last 15 minutes.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(HostMetrics, cls)._from_openapi_data(kwargs)

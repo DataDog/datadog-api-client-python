@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -40,8 +39,6 @@ class WidgetFormula(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -51,13 +48,7 @@ class WidgetFormula(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -71,29 +62,24 @@ class WidgetFormula(ModelNormal):
         """
         lazy_import()
         return {
-            "formula": (str,),  # noqa: E501
-            "alias": (str,),  # noqa: E501
-            "cell_display_mode": (TableWidgetCellDisplayMode,),  # noqa: E501
-            "conditional_formats": ([WidgetConditionalFormat],),  # noqa: E501
-            "limit": (WidgetFormulaLimit,),  # noqa: E501
+            "alias": (str,),
+            "cell_display_mode": (TableWidgetCellDisplayMode,),
+            "conditional_formats": ([WidgetConditionalFormat],),
+            "formula": (str,),
+            "limit": (WidgetFormulaLimit,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "formula": "formula",  # noqa: E501
-        "alias": "alias",  # noqa: E501
-        "cell_display_mode": "cell_display_mode",  # noqa: E501
-        "conditional_formats": "conditional_formats",  # noqa: E501
-        "limit": "limit",  # noqa: E501
+        "formula": "formula",
+        "alias": "alias",
+        "cell_display_mode": "cell_display_mode",
+        "conditional_formats": "conditional_formats",
+        "limit": "limit",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, formula, *args, **kwargs):  # noqa: E501
+    def __init__(self, formula, *args, **kwargs):
         """WidgetFormula - a model defined in OpenAPI
 
         Args:
@@ -130,10 +116,10 @@ class WidgetFormula(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            alias (str): Expression alias.. [optional]  # noqa: E501
-            cell_display_mode (TableWidgetCellDisplayMode): [optional]  # noqa: E501
-            conditional_formats ([WidgetConditionalFormat]): List of conditional formats.. [optional]  # noqa: E501
-            limit (WidgetFormulaLimit): [optional]  # noqa: E501
+            alias (str): Expression alias.. [optional]
+            cell_display_mode (TableWidgetCellDisplayMode): [optional]
+            conditional_formats ([WidgetConditionalFormat]): List of conditional formats.. [optional]
+            limit (WidgetFormulaLimit): [optional]
         """
         super().__init__(kwargs)
 
@@ -142,8 +128,7 @@ class WidgetFormula(ModelNormal):
         self.formula = formula
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, formula, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, formula, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(WidgetFormula, cls)._from_openapi_data(kwargs)

@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class WidgetAxis(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class WidgetAxis(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,29 +51,24 @@ class WidgetAxis(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "include_zero": (bool,),  # noqa: E501
-            "label": (str,),  # noqa: E501
-            "max": (str,),  # noqa: E501
-            "min": (str,),  # noqa: E501
-            "scale": (str,),  # noqa: E501
+            "include_zero": (bool,),
+            "label": (str,),
+            "max": (str,),
+            "min": (str,),
+            "scale": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "include_zero": "include_zero",  # noqa: E501
-        "label": "label",  # noqa: E501
-        "max": "max",  # noqa: E501
-        "min": "min",  # noqa: E501
-        "scale": "scale",  # noqa: E501
+        "include_zero": "include_zero",
+        "label": "label",
+        "max": "max",
+        "min": "min",
+        "scale": "scale",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """WidgetAxis - a model defined in OpenAPI
 
         Keyword Args:
@@ -116,19 +102,18 @@ class WidgetAxis(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            include_zero (bool): True includes zero.. [optional]  # noqa: E501
-            label (str): The label of the axis to display on the graph.. [optional]  # noqa: E501
-            max (str): Specifies the maximum value to show on the y-axis. It takes a number, or auto for default behavior.. [optional] if omitted the server will use the default value of "auto"  # noqa: E501
-            min (str): Specifies minimum value to show on the y-axis. It takes a number, or auto for default behavior.. [optional] if omitted the server will use the default value of "auto"  # noqa: E501
-            scale (str): Specifies the scale type. Possible values are `linear`, `log`, `sqrt`, `pow##` (e.g. `pow2`, `pow0.5` etc.).. [optional] if omitted the server will use the default value of "linear"  # noqa: E501
+            include_zero (bool): True includes zero.. [optional]
+            label (str): The label of the axis to display on the graph.. [optional]
+            max (str): Specifies the maximum value to show on the y-axis. It takes a number, or auto for default behavior.. [optional] if omitted the server will use the default value of "auto"
+            min (str): Specifies minimum value to show on the y-axis. It takes a number, or auto for default behavior.. [optional] if omitted the server will use the default value of "auto"
+            scale (str): Specifies the scale type. Possible values are `linear`, `log`, `sqrt`, `pow##` (e.g. `pow2`, `pow0.5` etc.).. [optional] if omitted the server will use the default value of "linear"
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(WidgetAxis, cls)._from_openapi_data(kwargs)

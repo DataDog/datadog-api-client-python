@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class UsageCustomReportsAttributes(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class UsageCustomReportsAttributes(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,29 +51,24 @@ class UsageCustomReportsAttributes(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "computed_on": (str,),  # noqa: E501
-            "end_date": (str,),  # noqa: E501
-            "size": (int,),  # noqa: E501
-            "start_date": (str,),  # noqa: E501
-            "tags": ([str],),  # noqa: E501
+            "computed_on": (str,),
+            "end_date": (str,),
+            "size": (int,),
+            "start_date": (str,),
+            "tags": ([str],),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "computed_on": "computed_on",  # noqa: E501
-        "end_date": "end_date",  # noqa: E501
-        "size": "size",  # noqa: E501
-        "start_date": "start_date",  # noqa: E501
-        "tags": "tags",  # noqa: E501
+        "computed_on": "computed_on",
+        "end_date": "end_date",
+        "size": "size",
+        "start_date": "start_date",
+        "tags": "tags",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """UsageCustomReportsAttributes - a model defined in OpenAPI
 
         Keyword Args:
@@ -116,19 +102,18 @@ class UsageCustomReportsAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            computed_on (str): The date the specified custom report was computed.. [optional]  # noqa: E501
-            end_date (str): The ending date of custom report.. [optional]  # noqa: E501
-            size (int): size. [optional]  # noqa: E501
-            start_date (str): The starting date of custom report.. [optional]  # noqa: E501
-            tags ([str]): A list of tags to apply to custom reports.. [optional]  # noqa: E501
+            computed_on (str): The date the specified custom report was computed.. [optional]
+            end_date (str): The ending date of custom report.. [optional]
+            size (int): size. [optional]
+            start_date (str): The starting date of custom report.. [optional]
+            tags ([str]): A list of tags to apply to custom reports.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(UsageCustomReportsAttributes, cls)._from_openapi_data(kwargs)

@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class DashboardListItem(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,17 +46,11 @@ class DashboardListItem(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "popularity": {
             "inclusive_maximum": 5,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,53 +64,48 @@ class DashboardListItem(ModelNormal):
         """
         lazy_import()
         return {
-            "id": (str,),  # noqa: E501
-            "type": (DashboardType,),  # noqa: E501
-            "author": (Creator,),  # noqa: E501
-            "created": (datetime,),  # noqa: E501
-            "icon": (str,),  # noqa: E501
-            "is_favorite": (bool,),  # noqa: E501
-            "is_read_only": (bool,),  # noqa: E501
-            "is_shared": (bool,),  # noqa: E501
-            "modified": (datetime,),  # noqa: E501
-            "popularity": (int,),  # noqa: E501
-            "title": (str,),  # noqa: E501
-            "url": (str,),  # noqa: E501
+            "author": (Creator,),
+            "created": (datetime,),
+            "icon": (str,),
+            "id": (str,),
+            "is_favorite": (bool,),
+            "is_read_only": (bool,),
+            "is_shared": (bool,),
+            "modified": (datetime,),
+            "popularity": (int,),
+            "title": (str,),
+            "type": (DashboardType,),
+            "url": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "id": "id",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "author": "author",  # noqa: E501
-        "created": "created",  # noqa: E501
-        "icon": "icon",  # noqa: E501
-        "is_favorite": "is_favorite",  # noqa: E501
-        "is_read_only": "is_read_only",  # noqa: E501
-        "is_shared": "is_shared",  # noqa: E501
-        "modified": "modified",  # noqa: E501
-        "popularity": "popularity",  # noqa: E501
-        "title": "title",  # noqa: E501
-        "url": "url",  # noqa: E501
+        "id": "id",
+        "type": "type",
+        "author": "author",
+        "created": "created",
+        "icon": "icon",
+        "is_favorite": "is_favorite",
+        "is_read_only": "is_read_only",
+        "is_shared": "is_shared",
+        "modified": "modified",
+        "popularity": "popularity",
+        "title": "title",
+        "url": "url",
     }
 
     read_only_vars = {
-        "created",  # noqa: E501
-        "icon",  # noqa: E501
-        "is_favorite",  # noqa: E501
-        "is_read_only",  # noqa: E501
-        "is_shared",  # noqa: E501
-        "modified",  # noqa: E501
-        "popularity",  # noqa: E501
-        "title",  # noqa: E501
-        "url",  # noqa: E501
+        "created",
+        "icon",
+        "is_favorite",
+        "is_read_only",
+        "is_shared",
+        "modified",
+        "popularity",
+        "title",
+        "url",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, id, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, type, *args, **kwargs):
         """DashboardListItem - a model defined in OpenAPI
 
         Args:
@@ -157,16 +143,16 @@ class DashboardListItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            author (Creator): [optional]  # noqa: E501
-            created (datetime): Date of creation of the dashboard.. [optional]  # noqa: E501
-            icon (str): URL to the icon of the dashboard.. [optional]  # noqa: E501
-            is_favorite (bool): Whether or not the dashboard is in the favorites.. [optional]  # noqa: E501
-            is_read_only (bool): Whether or not the dashboard is read only.. [optional]  # noqa: E501
-            is_shared (bool): Whether the dashboard is publicly shared or not.. [optional]  # noqa: E501
-            modified (datetime): Date of last edition of the dashboard.. [optional]  # noqa: E501
-            popularity (int): Popularity of the dashboard.. [optional]  # noqa: E501
-            title (str): Title of the dashboard.. [optional]  # noqa: E501
-            url (str): URL path to the dashboard.. [optional]  # noqa: E501
+            author (Creator): [optional]
+            created (datetime): Date of creation of the dashboard.. [optional]
+            icon (str): URL to the icon of the dashboard.. [optional]
+            is_favorite (bool): Whether or not the dashboard is in the favorites.. [optional]
+            is_read_only (bool): Whether or not the dashboard is read only.. [optional]
+            is_shared (bool): Whether the dashboard is publicly shared or not.. [optional]
+            modified (datetime): Date of last edition of the dashboard.. [optional]
+            popularity (int): Popularity of the dashboard.. [optional]
+            title (str): Title of the dashboard.. [optional]
+            url (str): URL path to the dashboard.. [optional]
         """
         super().__init__(kwargs)
 
@@ -176,8 +162,7 @@ class DashboardListItem(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, id, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(DashboardListItem, cls)._from_openapi_data(kwargs)

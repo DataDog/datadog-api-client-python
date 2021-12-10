@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class ProcessSummaryAttributes(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class ProcessSummaryAttributes(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,35 +51,30 @@ class ProcessSummaryAttributes(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "cmdline": (str,),  # noqa: E501
-            "host": (str,),  # noqa: E501
-            "pid": (int,),  # noqa: E501
-            "ppid": (int,),  # noqa: E501
-            "start": (str,),  # noqa: E501
-            "tags": ([str],),  # noqa: E501
-            "timestamp": (str,),  # noqa: E501
-            "user": (str,),  # noqa: E501
+            "cmdline": (str,),
+            "host": (str,),
+            "pid": (int,),
+            "ppid": (int,),
+            "start": (str,),
+            "tags": ([str],),
+            "timestamp": (str,),
+            "user": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "cmdline": "cmdline",  # noqa: E501
-        "host": "host",  # noqa: E501
-        "pid": "pid",  # noqa: E501
-        "ppid": "ppid",  # noqa: E501
-        "start": "start",  # noqa: E501
-        "tags": "tags",  # noqa: E501
-        "timestamp": "timestamp",  # noqa: E501
-        "user": "user",  # noqa: E501
+        "cmdline": "cmdline",
+        "host": "host",
+        "pid": "pid",
+        "ppid": "ppid",
+        "start": "start",
+        "tags": "tags",
+        "timestamp": "timestamp",
+        "user": "user",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """ProcessSummaryAttributes - a model defined in OpenAPI
 
         Keyword Args:
@@ -122,22 +108,21 @@ class ProcessSummaryAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            cmdline (str): Process command line.. [optional]  # noqa: E501
-            host (str): Host running the process.. [optional]  # noqa: E501
-            pid (int): Process ID.. [optional]  # noqa: E501
-            ppid (int): Parent process ID.. [optional]  # noqa: E501
-            start (str): Time the process was started.. [optional]  # noqa: E501
-            tags ([str]): List of tags associated with the process.. [optional]  # noqa: E501
-            timestamp (str): Time the process was seen.. [optional]  # noqa: E501
-            user (str): Process owner.. [optional]  # noqa: E501
+            cmdline (str): Process command line.. [optional]
+            host (str): Host running the process.. [optional]
+            pid (int): Process ID.. [optional]
+            ppid (int): Parent process ID.. [optional]
+            start (str): Time the process was started.. [optional]
+            tags ([str]): List of tags associated with the process.. [optional]
+            timestamp (str): Time the process was seen.. [optional]
+            user (str): Process owner.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(ProcessSummaryAttributes, cls)._from_openapi_data(kwargs)

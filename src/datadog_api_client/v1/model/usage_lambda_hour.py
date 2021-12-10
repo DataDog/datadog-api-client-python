@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class UsageLambdaHour(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class UsageLambdaHour(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,25 +51,20 @@ class UsageLambdaHour(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "func_count": (int,),  # noqa: E501
-            "hour": (datetime,),  # noqa: E501
-            "invocations_sum": (int,),  # noqa: E501
+            "func_count": (int,),
+            "hour": (datetime,),
+            "invocations_sum": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "func_count": "func_count",  # noqa: E501
-        "hour": "hour",  # noqa: E501
-        "invocations_sum": "invocations_sum",  # noqa: E501
+        "func_count": "func_count",
+        "hour": "hour",
+        "invocations_sum": "invocations_sum",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """UsageLambdaHour - a model defined in OpenAPI
 
         Keyword Args:
@@ -112,17 +98,16 @@ class UsageLambdaHour(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            func_count (int): Contains the number of different functions for each region and AWS account.. [optional]  # noqa: E501
-            hour (datetime): The hour for the usage.. [optional]  # noqa: E501
-            invocations_sum (int): Contains the sum of invocations of all functions.. [optional]  # noqa: E501
+            func_count (int): Contains the number of different functions for each region and AWS account.. [optional]
+            hour (datetime): The hour for the usage.. [optional]
+            invocations_sum (int): Contains the sum of invocations of all functions.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(UsageLambdaHour, cls)._from_openapi_data(kwargs)

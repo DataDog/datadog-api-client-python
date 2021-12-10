@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class HTTPLogItem(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class HTTPLogItem(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,29 +51,24 @@ class HTTPLogItem(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "ddsource": (str,),  # noqa: E501
-            "ddtags": (str,),  # noqa: E501
-            "hostname": (str,),  # noqa: E501
-            "message": (str,),  # noqa: E501
-            "service": (str,),  # noqa: E501
+            "ddsource": (str,),
+            "ddtags": (str,),
+            "hostname": (str,),
+            "message": (str,),
+            "service": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "ddsource": "ddsource",  # noqa: E501
-        "ddtags": "ddtags",  # noqa: E501
-        "hostname": "hostname",  # noqa: E501
-        "message": "message",  # noqa: E501
-        "service": "service",  # noqa: E501
+        "ddsource": "ddsource",
+        "ddtags": "ddtags",
+        "hostname": "hostname",
+        "message": "message",
+        "service": "service",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """HTTPLogItem - a model defined in OpenAPI
 
         Keyword Args:
@@ -116,19 +102,18 @@ class HTTPLogItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ddsource (str): The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. See [reserved attributes](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes).. [optional]  # noqa: E501
-            ddtags (str): Tags associated with your logs.. [optional]  # noqa: E501
-            hostname (str): The name of the originating host of the log.. [optional]  # noqa: E501
-            message (str): The message [reserved attribute](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes) of your log. By default, Datadog ingests the value of the message attribute as the body of the log entry. That value is then highlighted and displayed in the Logstream, where it is indexed for full text search.. [optional]  # noqa: E501
-            service (str): The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products. See [reserved attributes](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes).. [optional]  # noqa: E501
+            ddsource (str): The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. See [reserved attributes](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes).. [optional]
+            ddtags (str): Tags associated with your logs.. [optional]
+            hostname (str): The name of the originating host of the log.. [optional]
+            message (str): The message [reserved attribute](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes) of your log. By default, Datadog ingests the value of the message attribute as the body of the log entry. That value is then highlighted and displayed in the Logstream, where it is indexed for full text search.. [optional]
+            service (str): The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products. See [reserved attributes](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes).. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(HTTPLogItem, cls)._from_openapi_data(kwargs)

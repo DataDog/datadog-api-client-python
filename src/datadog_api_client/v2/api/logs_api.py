@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.content_encoding import ContentEncoding
@@ -216,9 +214,9 @@ class LogsApi(object):
         )
 
     def aggregate_logs(self, body, **kwargs):
-        """Aggregate events  # noqa: E501
+        """Aggregate events
 
-        The API endpoint to aggregate events into buckets and compute metrics and timeseries.  # noqa: E501
+        The API endpoint to aggregate events into buckets and compute metrics and timeseries.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -259,9 +257,9 @@ class LogsApi(object):
         return self._aggregate_logs_endpoint.call_with_http_info(**kwargs)
 
     def list_logs(self, **kwargs):
-        """Search logs  # noqa: E501
+        """Search logs
 
-        List endpoint returns logs that match a log search query. [Results are paginated][1].  Use this endpoint to build complex logs filtering and search.  **If you are considering archiving logs for your organization, consider use of the Datadog archive capabilities instead of the log list API. See [Datadog Logs Archive documentation][2].**  [1]: /logs/guide/collect-multiple-logs-with-pagination [2]: https://docs.datadoghq.com/logs/archives  # noqa: E501
+        List endpoint returns logs that match a log search query. [Results are paginated][1].  Use this endpoint to build complex logs filtering and search.  **If you are considering archiving logs for your organization, consider use of the Datadog archive capabilities instead of the log list API. See [Datadog Logs Archive documentation][2].**  [1]: /logs/guide/collect-multiple-logs-with-pagination [2]: https://docs.datadoghq.com/logs/archives
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -300,9 +298,9 @@ class LogsApi(object):
         return self._list_logs_endpoint.call_with_http_info(**kwargs)
 
     def list_logs_get(self, **kwargs):
-        """Get a list of logs  # noqa: E501
+        """Get a list of logs
 
-        List endpoint returns logs that match a log search query. [Results are paginated][1].  Use this endpoint to see your latest logs.  **If you are considering archiving logs for your organization, consider use of the Datadog archive capabilities instead of the log list API. See [Datadog Logs Archive documentation][2].**  [1]: /logs/guide/collect-multiple-logs-with-pagination [2]: https://docs.datadoghq.com/logs/archives  # noqa: E501
+        List endpoint returns logs that match a log search query. [Results are paginated][1].  Use this endpoint to see your latest logs.  **If you are considering archiving logs for your organization, consider use of the Datadog archive capabilities instead of the log list API. See [Datadog Logs Archive documentation][2].**  [1]: /logs/guide/collect-multiple-logs-with-pagination [2]: https://docs.datadoghq.com/logs/archives
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -347,9 +345,9 @@ class LogsApi(object):
         return self._list_logs_get_endpoint.call_with_http_info(**kwargs)
 
     def submit_log(self, body, **kwargs):
-        """Send logs  # noqa: E501
+        """Send logs
 
-        Send your logs to your Datadog platform over HTTP. Limits per HTTP request are:  - Maximum content size per payload (uncompressed): 5MB - Maximum size for a single log: 1MB - Maximum array size if sending multiple logs in an array: 1000 entries  Any log exceeding 1MB is accepted and truncated by Datadog: - For a single log request, the API truncates the log at 1MB and returns a 2xx. - For a multi-logs request, the API processes all logs, truncates only logs larger than 1MB, and returns a 2xx.  Datadog recommends sending your logs compressed. Add the `Content-Encoding: gzip` header to the request when sending compressed logs.  The status codes answered by the HTTP API are: - 202: Accepted: the request has been accepted for processing - 400: Bad request (likely an issue in the payload formatting) - 401: Unauthorized (likely a missing API Key) - 403: Permission issue (likely using an invalid API Key) - 408: Request Timeout, request should be retried after some time - 413: Payload too large (batch is above 5MB uncompressed) - 429: Too Many Requests, request should be retried after some time - 500: Internal Server Error, the server encountered an unexpected condition that prevented it from fulfilling the request, request should be retried after some time - 503: Service Unavailable, the server is not ready to handle the request probably because it is overloaded, request should be retried after some time  # noqa: E501
+        Send your logs to your Datadog platform over HTTP. Limits per HTTP request are:  - Maximum content size per payload (uncompressed): 5MB - Maximum size for a single log: 1MB - Maximum array size if sending multiple logs in an array: 1000 entries  Any log exceeding 1MB is accepted and truncated by Datadog: - For a single log request, the API truncates the log at 1MB and returns a 2xx. - For a multi-logs request, the API processes all logs, truncates only logs larger than 1MB, and returns a 2xx.  Datadog recommends sending your logs compressed. Add the `Content-Encoding: gzip` header to the request when sending compressed logs.  The status codes answered by the HTTP API are: - 202: Accepted: the request has been accepted for processing - 400: Bad request (likely an issue in the payload formatting) - 401: Unauthorized (likely a missing API Key) - 403: Permission issue (likely using an invalid API Key) - 408: Request Timeout, request should be retried after some time - 413: Payload too large (batch is above 5MB uncompressed) - 429: Too Many Requests, request should be retried after some time - 500: Internal Server Error, the server encountered an unexpected condition that prevented it from fulfilling the request, request should be retried after some time - 503: Service Unavailable, the server is not ready to handle the request probably because it is overloaded, request should be retried after some time
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

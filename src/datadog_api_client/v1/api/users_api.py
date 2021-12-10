@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.user import User
@@ -145,9 +143,9 @@ class UsersApi(object):
         )
 
     def create_user(self, body, **kwargs):
-        """Create a user  # noqa: E501
+        """Create a user
 
-        Create a user for your organization.  **Note**: Users can only be created with the admin access role if application keys belong to administrators.  # noqa: E501
+        Create a user for your organization.  **Note**: Users can only be created with the admin access role if application keys belong to administrators.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -188,9 +186,9 @@ class UsersApi(object):
         return self._create_user_endpoint.call_with_http_info(**kwargs)
 
     def disable_user(self, user_handle, **kwargs):
-        """Disable a user  # noqa: E501
+        """Disable a user
 
-        Delete a user from an organization.  **Note**: This endpoint can only be used with application keys belonging to administrators.  # noqa: E501
+        Delete a user from an organization.  **Note**: This endpoint can only be used with application keys belonging to administrators.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -231,9 +229,9 @@ class UsersApi(object):
         return self._disable_user_endpoint.call_with_http_info(**kwargs)
 
     def get_user(self, user_handle, **kwargs):
-        """Get user details  # noqa: E501
+        """Get user details
 
-        Get a user's details.  # noqa: E501
+        Get a user's details.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -274,9 +272,9 @@ class UsersApi(object):
         return self._get_user_endpoint.call_with_http_info(**kwargs)
 
     def list_users(self, **kwargs):
-        """List all users  # noqa: E501
+        """List all users
 
-        List all users for your organization.  # noqa: E501
+        List all users for your organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -314,9 +312,9 @@ class UsersApi(object):
         return self._list_users_endpoint.call_with_http_info(**kwargs)
 
     def update_user(self, user_handle, body, **kwargs):
-        """Update a user  # noqa: E501
+        """Update a user
 
-        Update a user information.  **Note**: It can only be used with application keys belonging to administrators.  # noqa: E501
+        Update a user information.  **Note**: It can only be used with application keys belonging to administrators.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

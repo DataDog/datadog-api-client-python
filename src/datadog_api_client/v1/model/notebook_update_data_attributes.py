@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class NotebookUpdateDataAttributes(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,18 +50,12 @@ class NotebookUpdateDataAttributes(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "name": {
             "max_length": 80,
             "min_length": 0,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -78,29 +69,24 @@ class NotebookUpdateDataAttributes(ModelNormal):
         """
         lazy_import()
         return {
-            "cells": ([NotebookUpdateCell],),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "time": (NotebookGlobalTime,),  # noqa: E501
-            "metadata": (NotebookMetadata,),  # noqa: E501
-            "status": (NotebookStatus,),  # noqa: E501
+            "cells": ([NotebookUpdateCell],),
+            "metadata": (NotebookMetadata,),
+            "name": (str,),
+            "status": (NotebookStatus,),
+            "time": (NotebookGlobalTime,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "cells": "cells",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "time": "time",  # noqa: E501
-        "metadata": "metadata",  # noqa: E501
-        "status": "status",  # noqa: E501
+        "cells": "cells",
+        "name": "name",
+        "time": "time",
+        "metadata": "metadata",
+        "status": "status",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, cells, name, time, *args, **kwargs):  # noqa: E501
+    def __init__(self, cells, name, time, *args, **kwargs):
         """NotebookUpdateDataAttributes - a model defined in OpenAPI
 
         Args:
@@ -139,8 +125,8 @@ class NotebookUpdateDataAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            metadata (NotebookMetadata): [optional]  # noqa: E501
-            status (NotebookStatus): [optional]  # noqa: E501
+            metadata (NotebookMetadata): [optional]
+            status (NotebookStatus): [optional]
         """
         super().__init__(kwargs)
 
@@ -151,8 +137,7 @@ class NotebookUpdateDataAttributes(ModelNormal):
         self.time = time
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, cells, name, time, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, cells, name, time, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(NotebookUpdateDataAttributes, cls)._from_openapi_data(kwargs)

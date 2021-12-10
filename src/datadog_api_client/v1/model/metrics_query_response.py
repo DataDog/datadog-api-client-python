@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class MetricsQueryResponse(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class MetricsQueryResponse(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,47 +58,42 @@ class MetricsQueryResponse(ModelNormal):
         """
         lazy_import()
         return {
-            "error": (str,),  # noqa: E501
-            "from_date": (int,),  # noqa: E501
-            "group_by": ([str],),  # noqa: E501
-            "message": (str,),  # noqa: E501
-            "query": (str,),  # noqa: E501
-            "res_type": (str,),  # noqa: E501
-            "series": ([MetricsQueryMetadata],),  # noqa: E501
-            "status": (str,),  # noqa: E501
-            "to_date": (int,),  # noqa: E501
+            "error": (str,),
+            "from_date": (int,),
+            "group_by": ([str],),
+            "message": (str,),
+            "query": (str,),
+            "res_type": (str,),
+            "series": ([MetricsQueryMetadata],),
+            "status": (str,),
+            "to_date": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "error": "error",  # noqa: E501
-        "from_date": "from_date",  # noqa: E501
-        "group_by": "group_by",  # noqa: E501
-        "message": "message",  # noqa: E501
-        "query": "query",  # noqa: E501
-        "res_type": "res_type",  # noqa: E501
-        "series": "series",  # noqa: E501
-        "status": "status",  # noqa: E501
-        "to_date": "to_date",  # noqa: E501
+        "error": "error",
+        "from_date": "from_date",
+        "group_by": "group_by",
+        "message": "message",
+        "query": "query",
+        "res_type": "res_type",
+        "series": "series",
+        "status": "status",
+        "to_date": "to_date",
     }
 
     read_only_vars = {
-        "error",  # noqa: E501
-        "from_date",  # noqa: E501
-        "group_by",  # noqa: E501
-        "message",  # noqa: E501
-        "query",  # noqa: E501
-        "res_type",  # noqa: E501
-        "series",  # noqa: E501
-        "status",  # noqa: E501
-        "to_date",  # noqa: E501
+        "error",
+        "from_date",
+        "group_by",
+        "message",
+        "query",
+        "res_type",
+        "series",
+        "status",
+        "to_date",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """MetricsQueryResponse - a model defined in OpenAPI
 
         Keyword Args:
@@ -141,23 +127,22 @@ class MetricsQueryResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            error (str): Message indicating the errors if status is not `ok`.. [optional]  # noqa: E501
-            from_date (int): Start of requested time window, milliseconds since Unix epoch.. [optional]  # noqa: E501
-            group_by ([str]): List of tag keys on which to group.. [optional]  # noqa: E501
-            message (str): Message indicating `success` if status is `ok`.. [optional]  # noqa: E501
-            query (str): Query string. [optional]  # noqa: E501
-            res_type (str): Type of response.. [optional]  # noqa: E501
-            series ([MetricsQueryMetadata]): List of timeseries queried.. [optional]  # noqa: E501
-            status (str): Status of the query.. [optional]  # noqa: E501
-            to_date (int): End of requested time window, milliseconds since Unix epoch.. [optional]  # noqa: E501
+            error (str): Message indicating the errors if status is not `ok`.. [optional]
+            from_date (int): Start of requested time window, milliseconds since Unix epoch.. [optional]
+            group_by ([str]): List of tag keys on which to group.. [optional]
+            message (str): Message indicating `success` if status is `ok`.. [optional]
+            query (str): Query string. [optional]
+            res_type (str): Type of response.. [optional]
+            series ([MetricsQueryMetadata]): List of timeseries queried.. [optional]
+            status (str): Status of the query.. [optional]
+            to_date (int): End of requested time window, milliseconds since Unix epoch.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(MetricsQueryResponse, cls)._from_openapi_data(kwargs)

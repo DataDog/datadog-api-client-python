@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class UsageLogsByIndexHour(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class UsageLogsByIndexHour(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,29 +51,24 @@ class UsageLogsByIndexHour(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "event_count": (int,),  # noqa: E501
-            "hour": (datetime,),  # noqa: E501
-            "index_id": (str,),  # noqa: E501
-            "index_name": (str,),  # noqa: E501
-            "retention": (int,),  # noqa: E501
+            "event_count": (int,),
+            "hour": (datetime,),
+            "index_id": (str,),
+            "index_name": (str,),
+            "retention": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "event_count": "event_count",  # noqa: E501
-        "hour": "hour",  # noqa: E501
-        "index_id": "index_id",  # noqa: E501
-        "index_name": "index_name",  # noqa: E501
-        "retention": "retention",  # noqa: E501
+        "event_count": "event_count",
+        "hour": "hour",
+        "index_id": "index_id",
+        "index_name": "index_name",
+        "retention": "retention",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """UsageLogsByIndexHour - a model defined in OpenAPI
 
         Keyword Args:
@@ -116,19 +102,18 @@ class UsageLogsByIndexHour(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            event_count (int): The total number of indexed logs for the queried hour.. [optional]  # noqa: E501
-            hour (datetime): The hour for the usage.. [optional]  # noqa: E501
-            index_id (str): The index ID for this usage.. [optional]  # noqa: E501
-            index_name (str): The user specified name for this index ID.. [optional]  # noqa: E501
-            retention (int): The retention period (in days) for this index ID.. [optional]  # noqa: E501
+            event_count (int): The total number of indexed logs for the queried hour.. [optional]
+            hour (datetime): The hour for the usage.. [optional]
+            index_id (str): The index ID for this usage.. [optional]
+            index_name (str): The user specified name for this index ID.. [optional]
+            retention (int): The retention period (in days) for this index ID.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(UsageLogsByIndexHour, cls)._from_openapi_data(kwargs)

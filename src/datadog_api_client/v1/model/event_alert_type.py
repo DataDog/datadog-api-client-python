@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -51,10 +50,6 @@ class EventAlertType(ModelSimple):
 
     validations = {}
 
-    additional_properties_type = None
-
-    _nullable = False
-
     @cached_property
     def openapi_types():
         """
@@ -69,23 +64,16 @@ class EventAlertType(ModelSimple):
             "value": (str,),
         }
 
-    discriminator = None
-
-    attribute_map = {}
-
-    _composed_schemas = None
-
-    @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):
         """EventAlertType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): If an alert event is enabled, set its type. For example, `error`, `warning`, `info`, `success`, `user_update`, `recommendation`, and `snapshot`.., must be one of ["error", "warning", "info", "success", "user_update", "recommendation", "snapshot", ]  # noqa: E501
+            args[0] (str): If an alert event is enabled, set its type. For example, `error`, `warning`, `info`, `success`, `user_update`, `recommendation`, and `snapshot`.., must be one of ["error", "warning", "info", "success", "user_update", "recommendation", "snapshot"]
 
         Keyword Args:
-            value (str): If an alert event is enabled, set its type. For example, `error`, `warning`, `info`, `success`, `user_update`, `recommendation`, and `snapshot`.., must be one of ["error", "warning", "info", "success", "user_update", "recommendation", "snapshot", ]  # noqa: E501
+            value (str): If an alert event is enabled, set its type. For example, `error`, `warning`, `info`, `success`, `user_update`, `recommendation`, and `snapshot`.., must be one of ["error", "warning", "info", "success", "user_update", "recommendation", "snapshot"]
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -138,7 +126,6 @@ class EventAlertType(ModelSimple):
         self._check_kw_args(kwargs)
 
     @classmethod
-    @convert_js_args_to_python_args
     def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
         return cls(*args, **kwargs)

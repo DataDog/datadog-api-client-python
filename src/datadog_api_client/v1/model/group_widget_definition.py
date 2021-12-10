@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class GroupWidgetDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class GroupWidgetDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,35 +64,30 @@ class GroupWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "layout_type": (WidgetLayoutType,),  # noqa: E501
-            "type": (GroupWidgetDefinitionType,),  # noqa: E501
-            "widgets": ([Widget],),  # noqa: E501
-            "background_color": (str,),  # noqa: E501
-            "banner_img": (str,),  # noqa: E501
-            "show_title": (bool,),  # noqa: E501
-            "title": (str,),  # noqa: E501
-            "title_align": (WidgetTextAlign,),  # noqa: E501
+            "background_color": (str,),
+            "banner_img": (str,),
+            "layout_type": (WidgetLayoutType,),
+            "show_title": (bool,),
+            "title": (str,),
+            "title_align": (WidgetTextAlign,),
+            "type": (GroupWidgetDefinitionType,),
+            "widgets": ([Widget],),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "layout_type": "layout_type",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "widgets": "widgets",  # noqa: E501
-        "background_color": "background_color",  # noqa: E501
-        "banner_img": "banner_img",  # noqa: E501
-        "show_title": "show_title",  # noqa: E501
-        "title": "title",  # noqa: E501
-        "title_align": "title_align",  # noqa: E501
+        "layout_type": "layout_type",
+        "type": "type",
+        "widgets": "widgets",
+        "background_color": "background_color",
+        "banner_img": "banner_img",
+        "show_title": "show_title",
+        "title": "title",
+        "title_align": "title_align",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, layout_type, type, widgets, *args, **kwargs):  # noqa: E501
+    def __init__(self, layout_type, type, widgets, *args, **kwargs):
         """GroupWidgetDefinition - a model defined in OpenAPI
 
         Args:
@@ -140,11 +126,11 @@ class GroupWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            background_color (str): Background color of the group title.. [optional]  # noqa: E501
-            banner_img (str): URL of image to display as a banner for the group.. [optional]  # noqa: E501
-            show_title (bool): Whether to show the title or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            title (str): Title of the widget.. [optional]  # noqa: E501
-            title_align (WidgetTextAlign): [optional]  # noqa: E501
+            background_color (str): Background color of the group title.. [optional]
+            banner_img (str): URL of image to display as a banner for the group.. [optional]
+            show_title (bool): Whether to show the title or not.. [optional] if omitted the server will use the default value of True
+            title (str): Title of the widget.. [optional]
+            title_align (WidgetTextAlign): [optional]
         """
         super().__init__(kwargs)
 
@@ -155,8 +141,7 @@ class GroupWidgetDefinition(ModelNormal):
         self.widgets = widgets
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, layout_type, type, widgets, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, layout_type, type, widgets, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(GroupWidgetDefinition, cls)._from_openapi_data(kwargs)

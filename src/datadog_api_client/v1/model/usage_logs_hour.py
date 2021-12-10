@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class UsageLogsHour(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class UsageLogsHour(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,35 +51,30 @@ class UsageLogsHour(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "billable_ingested_bytes": (int,),  # noqa: E501
-            "hour": (datetime,),  # noqa: E501
-            "indexed_events_count": (int,),  # noqa: E501
-            "ingested_events_bytes": (int,),  # noqa: E501
-            "logs_live_indexed_count": (int,),  # noqa: E501
-            "logs_live_ingested_bytes": (int,),  # noqa: E501
-            "logs_rehydrated_indexed_count": (int,),  # noqa: E501
-            "logs_rehydrated_ingested_bytes": (int,),  # noqa: E501
+            "billable_ingested_bytes": (int,),
+            "hour": (datetime,),
+            "indexed_events_count": (int,),
+            "ingested_events_bytes": (int,),
+            "logs_live_indexed_count": (int,),
+            "logs_live_ingested_bytes": (int,),
+            "logs_rehydrated_indexed_count": (int,),
+            "logs_rehydrated_ingested_bytes": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "billable_ingested_bytes": "billable_ingested_bytes",  # noqa: E501
-        "hour": "hour",  # noqa: E501
-        "indexed_events_count": "indexed_events_count",  # noqa: E501
-        "ingested_events_bytes": "ingested_events_bytes",  # noqa: E501
-        "logs_live_indexed_count": "logs_live_indexed_count",  # noqa: E501
-        "logs_live_ingested_bytes": "logs_live_ingested_bytes",  # noqa: E501
-        "logs_rehydrated_indexed_count": "logs_rehydrated_indexed_count",  # noqa: E501
-        "logs_rehydrated_ingested_bytes": "logs_rehydrated_ingested_bytes",  # noqa: E501
+        "billable_ingested_bytes": "billable_ingested_bytes",
+        "hour": "hour",
+        "indexed_events_count": "indexed_events_count",
+        "ingested_events_bytes": "ingested_events_bytes",
+        "logs_live_indexed_count": "logs_live_indexed_count",
+        "logs_live_ingested_bytes": "logs_live_ingested_bytes",
+        "logs_rehydrated_indexed_count": "logs_rehydrated_indexed_count",
+        "logs_rehydrated_ingested_bytes": "logs_rehydrated_ingested_bytes",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """UsageLogsHour - a model defined in OpenAPI
 
         Keyword Args:
@@ -122,22 +108,21 @@ class UsageLogsHour(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            billable_ingested_bytes (int): Contains the number of billable log bytes ingested.. [optional]  # noqa: E501
-            hour (datetime): The hour for the usage.. [optional]  # noqa: E501
-            indexed_events_count (int): Contains the number of log events indexed.. [optional]  # noqa: E501
-            ingested_events_bytes (int): Contains the number of log bytes ingested.. [optional]  # noqa: E501
-            logs_live_indexed_count (int): Contains the number of live log events indexed (data available as of December 1, 2020).. [optional]  # noqa: E501
-            logs_live_ingested_bytes (int): Contains the number of live log bytes ingested (data available as of December 1, 2020).. [optional]  # noqa: E501
-            logs_rehydrated_indexed_count (int): Contains the number of rehydrated log events indexed (data available as of December 1, 2020).. [optional]  # noqa: E501
-            logs_rehydrated_ingested_bytes (int): Contains the number of rehydrated log bytes ingested (data available as of December 1, 2020).. [optional]  # noqa: E501
+            billable_ingested_bytes (int): Contains the number of billable log bytes ingested.. [optional]
+            hour (datetime): The hour for the usage.. [optional]
+            indexed_events_count (int): Contains the number of log events indexed.. [optional]
+            ingested_events_bytes (int): Contains the number of log bytes ingested.. [optional]
+            logs_live_indexed_count (int): Contains the number of live log events indexed (data available as of December 1, 2020).. [optional]
+            logs_live_ingested_bytes (int): Contains the number of live log bytes ingested (data available as of December 1, 2020).. [optional]
+            logs_rehydrated_indexed_count (int): Contains the number of rehydrated log events indexed (data available as of December 1, 2020).. [optional]
+            logs_rehydrated_ingested_bytes (int): Contains the number of rehydrated log bytes ingested (data available as of December 1, 2020).. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(UsageLogsHour, cls)._from_openapi_data(kwargs)

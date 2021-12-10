@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.graph_snapshot import GraphSnapshot
@@ -81,9 +79,9 @@ class SnapshotsApi(object):
         )
 
     def get_graph_snapshot(self, start, end, **kwargs):
-        """Take graph snapshots  # noqa: E501
+        """Take graph snapshots
 
-        Take graph snapshots. **Note**: When a snapshot is created, there is some delay before it is available.  # noqa: E501
+        Take graph snapshots. **Note**: When a snapshot is created, there is some delay before it is available.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

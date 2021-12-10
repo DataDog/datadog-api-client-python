@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.pager_duty_service import PagerDutyService
@@ -127,9 +125,9 @@ class PagerDutyIntegrationApi(object):
         )
 
     def create_pager_duty_integration_service(self, body, **kwargs):
-        """Create a new service object  # noqa: E501
+        """Create a new service object
 
-        Create a new service object in the PagerDuty integration.  # noqa: E501
+        Create a new service object in the PagerDuty integration.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -170,9 +168,9 @@ class PagerDutyIntegrationApi(object):
         return self._create_pager_duty_integration_service_endpoint.call_with_http_info(**kwargs)
 
     def delete_pager_duty_integration_service(self, service_name, **kwargs):
-        """Delete a single service object  # noqa: E501
+        """Delete a single service object
 
-        Delete a single service object in the Datadog-PagerDuty integration.  # noqa: E501
+        Delete a single service object in the Datadog-PagerDuty integration.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -213,9 +211,9 @@ class PagerDutyIntegrationApi(object):
         return self._delete_pager_duty_integration_service_endpoint.call_with_http_info(**kwargs)
 
     def get_pager_duty_integration_service(self, service_name, **kwargs):
-        """Get a single service object  # noqa: E501
+        """Get a single service object
 
-        Get service name in the Datadog-PagerDuty integration.  # noqa: E501
+        Get service name in the Datadog-PagerDuty integration.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -256,9 +254,9 @@ class PagerDutyIntegrationApi(object):
         return self._get_pager_duty_integration_service_endpoint.call_with_http_info(**kwargs)
 
     def update_pager_duty_integration_service(self, service_name, body, **kwargs):
-        """Update a single service object  # noqa: E501
+        """Update a single service object
 
-        Update a single service object in the Datadog-PagerDuty integration.  # noqa: E501
+        Update a single service object in the Datadog-PagerDuty integration.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

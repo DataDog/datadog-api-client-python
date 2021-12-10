@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.azure_account import AzureAccount
@@ -129,9 +127,9 @@ class AzureIntegrationApi(object):
         )
 
     def create_azure_integration(self, body, **kwargs):
-        """Create an Azure integration  # noqa: E501
+        """Create an Azure integration
 
-        Create a Datadog-Azure integration.  Using the `POST` method updates your integration configuration by adding your new configuration to the existing one in your Datadog organization.  Using the `PUT` method updates your integration configuration by replacing your current configuration with the new one sent to your Datadog organization.  # noqa: E501
+        Create a Datadog-Azure integration.  Using the `POST` method updates your integration configuration by adding your new configuration to the existing one in your Datadog organization.  Using the `PUT` method updates your integration configuration by replacing your current configuration with the new one sent to your Datadog organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -172,9 +170,9 @@ class AzureIntegrationApi(object):
         return self._create_azure_integration_endpoint.call_with_http_info(**kwargs)
 
     def delete_azure_integration(self, body, **kwargs):
-        """Delete an Azure integration  # noqa: E501
+        """Delete an Azure integration
 
-        Delete a given Datadog-Azure integration from your Datadog account.  # noqa: E501
+        Delete a given Datadog-Azure integration from your Datadog account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -215,9 +213,9 @@ class AzureIntegrationApi(object):
         return self._delete_azure_integration_endpoint.call_with_http_info(**kwargs)
 
     def list_azure_integration(self, **kwargs):
-        """List all Azure integrations  # noqa: E501
+        """List all Azure integrations
 
-        List all Datadog-Azure integrations configured in your Datadog account.  # noqa: E501
+        List all Datadog-Azure integrations configured in your Datadog account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -255,9 +253,9 @@ class AzureIntegrationApi(object):
         return self._list_azure_integration_endpoint.call_with_http_info(**kwargs)
 
     def update_azure_host_filters(self, body, **kwargs):
-        """Update Azure integration host filters  # noqa: E501
+        """Update Azure integration host filters
 
-        Update the defined list of host filters for a given Datadog-Azure integration.  # noqa: E501
+        Update the defined list of host filters for a given Datadog-Azure integration.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -298,9 +296,9 @@ class AzureIntegrationApi(object):
         return self._update_azure_host_filters_endpoint.call_with_http_info(**kwargs)
 
     def update_azure_integration(self, body, **kwargs):
-        """Update an Azure integration  # noqa: E501
+        """Update an Azure integration
 
-        Update a Datadog-Azure integration. Requires an existing `tenant_name` and `client_id`. Any other fields supplied will overwrite existing values. To overwrite `tenant_name` or `client_id`, use `new_tenant_name` and `new_client_id`. To leave a field unchanged, do not supply that field in the payload.  # noqa: E501
+        Update a Datadog-Azure integration. Requires an existing `tenant_name` and `client_id`. Any other fields supplied will overwrite existing values. To overwrite `tenant_name` or `client_id`, use `new_tenant_name` and `new_client_id`. To leave a field unchanged, do not supply that field in the payload.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

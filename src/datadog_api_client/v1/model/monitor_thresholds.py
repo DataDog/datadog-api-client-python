@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class MonitorThresholds(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class MonitorThresholds(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,46 +51,41 @@ class MonitorThresholds(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "critical": (float,),  # noqa: E501
+            "critical": (float,),
             "critical_recovery": (
                 float,
                 none_type,
-            ),  # noqa: E501
+            ),
             "ok": (
                 float,
                 none_type,
-            ),  # noqa: E501
+            ),
             "unknown": (
                 float,
                 none_type,
-            ),  # noqa: E501
+            ),
             "warning": (
                 float,
                 none_type,
-            ),  # noqa: E501
+            ),
             "warning_recovery": (
                 float,
                 none_type,
-            ),  # noqa: E501
+            ),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "critical": "critical",  # noqa: E501
-        "critical_recovery": "critical_recovery",  # noqa: E501
-        "ok": "ok",  # noqa: E501
-        "unknown": "unknown",  # noqa: E501
-        "warning": "warning",  # noqa: E501
-        "warning_recovery": "warning_recovery",  # noqa: E501
+        "critical": "critical",
+        "critical_recovery": "critical_recovery",
+        "ok": "ok",
+        "unknown": "unknown",
+        "warning": "warning",
+        "warning_recovery": "warning_recovery",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """MonitorThresholds - a model defined in OpenAPI
 
         Keyword Args:
@@ -133,20 +119,19 @@ class MonitorThresholds(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            critical (float): The monitor `CRITICAL` threshold.. [optional]  # noqa: E501
-            critical_recovery (float, none_type): The monitor `CRITICAL` recovery threshold.. [optional]  # noqa: E501
-            ok (float, none_type): The monitor `OK` threshold.. [optional]  # noqa: E501
-            unknown (float, none_type): The monitor UNKNOWN threshold.. [optional]  # noqa: E501
-            warning (float, none_type): The monitor `WARNING` threshold.. [optional]  # noqa: E501
-            warning_recovery (float, none_type): The monitor `WARNING` recovery threshold.. [optional]  # noqa: E501
+            critical (float): The monitor `CRITICAL` threshold.. [optional]
+            critical_recovery (float, none_type): The monitor `CRITICAL` recovery threshold.. [optional]
+            ok (float, none_type): The monitor `OK` threshold.. [optional]
+            unknown (float, none_type): The monitor UNKNOWN threshold.. [optional]
+            warning (float, none_type): The monitor `WARNING` threshold.. [optional]
+            warning_recovery (float, none_type): The monitor `WARNING` recovery threshold.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(MonitorThresholds, cls)._from_openapi_data(kwargs)

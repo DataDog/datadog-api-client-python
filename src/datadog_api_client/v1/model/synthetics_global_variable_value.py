@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class SyntheticsGlobalVariableValue(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class SyntheticsGlobalVariableValue(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,23 +51,18 @@ class SyntheticsGlobalVariableValue(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "secure": (bool,),  # noqa: E501
-            "value": (str,),  # noqa: E501
+            "secure": (bool,),
+            "value": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "secure": "secure",  # noqa: E501
-        "value": "value",  # noqa: E501
+        "secure": "secure",
+        "value": "value",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SyntheticsGlobalVariableValue - a model defined in OpenAPI
 
         Keyword Args:
@@ -110,16 +96,15 @@ class SyntheticsGlobalVariableValue(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            secure (bool): Determines if the value of the variable is hidden.. [optional]  # noqa: E501
-            value (str): Value of the global variable. When reading a global variable, the value will not be present if the variable is hidden with the `secure` property.. [optional]  # noqa: E501
+            secure (bool): Determines if the value of the variable is hidden.. [optional]
+            value (str): Value of the global variable. When reading a global variable, the value will not be present if the variable is hidden with the `secure` property.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsGlobalVariableValue, cls)._from_openapi_data(kwargs)

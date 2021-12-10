@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,37 +64,32 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "data_source": (FormulaAndFunctionProcessQueryDataSource,),  # noqa: E501
-            "metric": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "aggregator": (FormulaAndFunctionMetricAggregation,),  # noqa: E501
-            "is_normalized_cpu": (bool,),  # noqa: E501
-            "limit": (int,),  # noqa: E501
-            "sort": (QuerySortOrder,),  # noqa: E501
-            "tag_filters": ([str],),  # noqa: E501
-            "text_filter": (str,),  # noqa: E501
+            "aggregator": (FormulaAndFunctionMetricAggregation,),
+            "data_source": (FormulaAndFunctionProcessQueryDataSource,),
+            "is_normalized_cpu": (bool,),
+            "limit": (int,),
+            "metric": (str,),
+            "name": (str,),
+            "sort": (QuerySortOrder,),
+            "tag_filters": ([str],),
+            "text_filter": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "data_source": "data_source",  # noqa: E501
-        "metric": "metric",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "aggregator": "aggregator",  # noqa: E501
-        "is_normalized_cpu": "is_normalized_cpu",  # noqa: E501
-        "limit": "limit",  # noqa: E501
-        "sort": "sort",  # noqa: E501
-        "tag_filters": "tag_filters",  # noqa: E501
-        "text_filter": "text_filter",  # noqa: E501
+        "data_source": "data_source",
+        "metric": "metric",
+        "name": "name",
+        "aggregator": "aggregator",
+        "is_normalized_cpu": "is_normalized_cpu",
+        "limit": "limit",
+        "sort": "sort",
+        "tag_filters": "tag_filters",
+        "text_filter": "text_filter",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, data_source, metric, name, *args, **kwargs):  # noqa: E501
+    def __init__(self, data_source, metric, name, *args, **kwargs):
         """FormulaAndFunctionProcessQueryDefinition - a model defined in OpenAPI
 
         Args:
@@ -142,12 +128,12 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aggregator (FormulaAndFunctionMetricAggregation): [optional]  # noqa: E501
-            is_normalized_cpu (bool): Whether to normalize the CPU percentages.. [optional]  # noqa: E501
-            limit (int): Number of hits to return.. [optional]  # noqa: E501
-            sort (QuerySortOrder): [optional]  # noqa: E501
-            tag_filters ([str]): An array of tags to filter by.. [optional]  # noqa: E501
-            text_filter (str): Text to use as filter.. [optional]  # noqa: E501
+            aggregator (FormulaAndFunctionMetricAggregation): [optional]
+            is_normalized_cpu (bool): Whether to normalize the CPU percentages.. [optional]
+            limit (int): Number of hits to return.. [optional]
+            sort (QuerySortOrder): [optional]
+            tag_filters ([str]): An array of tags to filter by.. [optional]
+            text_filter (str): Text to use as filter.. [optional]
         """
         super().__init__(kwargs)
 
@@ -158,8 +144,7 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
         self.name = name
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, data_source, metric, name, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, data_source, metric, name, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(FormulaAndFunctionProcessQueryDefinition, cls)._from_openapi_data(kwargs)

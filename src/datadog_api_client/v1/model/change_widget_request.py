@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -52,8 +51,6 @@ class ChangeWidgetRequest(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -63,13 +60,7 @@ class ChangeWidgetRequest(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -83,55 +74,50 @@ class ChangeWidgetRequest(ModelNormal):
         """
         lazy_import()
         return {
-            "apm_query": (LogQueryDefinition,),  # noqa: E501
-            "change_type": (WidgetChangeType,),  # noqa: E501
-            "compare_to": (WidgetCompareTo,),  # noqa: E501
-            "event_query": (LogQueryDefinition,),  # noqa: E501
-            "formulas": ([WidgetFormula],),  # noqa: E501
-            "increase_good": (bool,),  # noqa: E501
-            "log_query": (LogQueryDefinition,),  # noqa: E501
-            "network_query": (LogQueryDefinition,),  # noqa: E501
-            "order_by": (WidgetOrderBy,),  # noqa: E501
-            "order_dir": (WidgetSort,),  # noqa: E501
-            "process_query": (ProcessQueryDefinition,),  # noqa: E501
-            "profile_metrics_query": (LogQueryDefinition,),  # noqa: E501
-            "q": (str,),  # noqa: E501
-            "queries": ([FormulaAndFunctionQueryDefinition],),  # noqa: E501
-            "response_format": (FormulaAndFunctionResponseFormat,),  # noqa: E501
-            "rum_query": (LogQueryDefinition,),  # noqa: E501
-            "security_query": (LogQueryDefinition,),  # noqa: E501
-            "show_present": (bool,),  # noqa: E501
+            "apm_query": (LogQueryDefinition,),
+            "change_type": (WidgetChangeType,),
+            "compare_to": (WidgetCompareTo,),
+            "event_query": (LogQueryDefinition,),
+            "formulas": ([WidgetFormula],),
+            "increase_good": (bool,),
+            "log_query": (LogQueryDefinition,),
+            "network_query": (LogQueryDefinition,),
+            "order_by": (WidgetOrderBy,),
+            "order_dir": (WidgetSort,),
+            "process_query": (ProcessQueryDefinition,),
+            "profile_metrics_query": (LogQueryDefinition,),
+            "q": (str,),
+            "queries": ([FormulaAndFunctionQueryDefinition],),
+            "response_format": (FormulaAndFunctionResponseFormat,),
+            "rum_query": (LogQueryDefinition,),
+            "security_query": (LogQueryDefinition,),
+            "show_present": (bool,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "apm_query": "apm_query",  # noqa: E501
-        "change_type": "change_type",  # noqa: E501
-        "compare_to": "compare_to",  # noqa: E501
-        "event_query": "event_query",  # noqa: E501
-        "formulas": "formulas",  # noqa: E501
-        "increase_good": "increase_good",  # noqa: E501
-        "log_query": "log_query",  # noqa: E501
-        "network_query": "network_query",  # noqa: E501
-        "order_by": "order_by",  # noqa: E501
-        "order_dir": "order_dir",  # noqa: E501
-        "process_query": "process_query",  # noqa: E501
-        "profile_metrics_query": "profile_metrics_query",  # noqa: E501
-        "q": "q",  # noqa: E501
-        "queries": "queries",  # noqa: E501
-        "response_format": "response_format",  # noqa: E501
-        "rum_query": "rum_query",  # noqa: E501
-        "security_query": "security_query",  # noqa: E501
-        "show_present": "show_present",  # noqa: E501
+        "apm_query": "apm_query",
+        "change_type": "change_type",
+        "compare_to": "compare_to",
+        "event_query": "event_query",
+        "formulas": "formulas",
+        "increase_good": "increase_good",
+        "log_query": "log_query",
+        "network_query": "network_query",
+        "order_by": "order_by",
+        "order_dir": "order_dir",
+        "process_query": "process_query",
+        "profile_metrics_query": "profile_metrics_query",
+        "q": "q",
+        "queries": "queries",
+        "response_format": "response_format",
+        "rum_query": "rum_query",
+        "security_query": "security_query",
+        "show_present": "show_present",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """ChangeWidgetRequest - a model defined in OpenAPI
 
         Keyword Args:
@@ -165,32 +151,31 @@ class ChangeWidgetRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            apm_query (LogQueryDefinition): [optional]  # noqa: E501
-            change_type (WidgetChangeType): [optional]  # noqa: E501
-            compare_to (WidgetCompareTo): [optional]  # noqa: E501
-            event_query (LogQueryDefinition): [optional]  # noqa: E501
-            formulas ([WidgetFormula]): List of formulas that operate on queries. **This feature is currently in beta.**. [optional]  # noqa: E501
-            increase_good (bool): Whether to show increase as good.. [optional]  # noqa: E501
-            log_query (LogQueryDefinition): [optional]  # noqa: E501
-            network_query (LogQueryDefinition): [optional]  # noqa: E501
-            order_by (WidgetOrderBy): [optional]  # noqa: E501
-            order_dir (WidgetSort): [optional]  # noqa: E501
-            process_query (ProcessQueryDefinition): [optional]  # noqa: E501
-            profile_metrics_query (LogQueryDefinition): [optional]  # noqa: E501
-            q (str): Query definition.. [optional]  # noqa: E501
-            queries ([FormulaAndFunctionQueryDefinition]): List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**. [optional]  # noqa: E501
-            response_format (FormulaAndFunctionResponseFormat): [optional]  # noqa: E501
-            rum_query (LogQueryDefinition): [optional]  # noqa: E501
-            security_query (LogQueryDefinition): [optional]  # noqa: E501
-            show_present (bool): Whether to show the present value.. [optional]  # noqa: E501
+            apm_query (LogQueryDefinition): [optional]
+            change_type (WidgetChangeType): [optional]
+            compare_to (WidgetCompareTo): [optional]
+            event_query (LogQueryDefinition): [optional]
+            formulas ([WidgetFormula]): List of formulas that operate on queries. **This feature is currently in beta.**. [optional]
+            increase_good (bool): Whether to show increase as good.. [optional]
+            log_query (LogQueryDefinition): [optional]
+            network_query (LogQueryDefinition): [optional]
+            order_by (WidgetOrderBy): [optional]
+            order_dir (WidgetSort): [optional]
+            process_query (ProcessQueryDefinition): [optional]
+            profile_metrics_query (LogQueryDefinition): [optional]
+            q (str): Query definition.. [optional]
+            queries ([FormulaAndFunctionQueryDefinition]): List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**. [optional]
+            response_format (FormulaAndFunctionResponseFormat): [optional]
+            rum_query (LogQueryDefinition): [optional]
+            security_query (LogQueryDefinition): [optional]
+            show_present (bool): Whether to show the present value.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(ChangeWidgetRequest, cls)._from_openapi_data(kwargs)

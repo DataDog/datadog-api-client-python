@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,33 +58,28 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
         """
         lazy_import()
         return {
-            "category": (SLOCorrectionCategory,),  # noqa: E501
-            "description": (str,),  # noqa: E501
-            "duration": (int,),  # noqa: E501
-            "end": (int,),  # noqa: E501
-            "rrule": (str,),  # noqa: E501
-            "start": (int,),  # noqa: E501
-            "timezone": (str,),  # noqa: E501
+            "category": (SLOCorrectionCategory,),
+            "description": (str,),
+            "duration": (int,),
+            "end": (int,),
+            "rrule": (str,),
+            "start": (int,),
+            "timezone": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "category": "category",  # noqa: E501
-        "description": "description",  # noqa: E501
-        "duration": "duration",  # noqa: E501
-        "end": "end",  # noqa: E501
-        "rrule": "rrule",  # noqa: E501
-        "start": "start",  # noqa: E501
-        "timezone": "timezone",  # noqa: E501
+        "category": "category",
+        "description": "description",
+        "duration": "duration",
+        "end": "end",
+        "rrule": "rrule",
+        "start": "start",
+        "timezone": "timezone",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SLOCorrectionUpdateRequestAttributes - a model defined in OpenAPI
 
         Keyword Args:
@@ -127,21 +113,20 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            category (SLOCorrectionCategory): [optional]  # noqa: E501
-            description (str): Description of the correction being made.. [optional]  # noqa: E501
-            duration (int): Length of time (in seconds) for a specified `rrule` recurring SLO correction.. [optional]  # noqa: E501
-            end (int): Ending time of the correction in epoch seconds.. [optional]  # noqa: E501
-            rrule (str): Recurrence rules as defined in the iCalendar RFC 5545.. [optional]  # noqa: E501
-            start (int): Starting time of the correction in epoch seconds.. [optional]  # noqa: E501
-            timezone (str): The timezone to display in the UI for the correction times (defaults to \"UTC\").. [optional]  # noqa: E501
+            category (SLOCorrectionCategory): [optional]
+            description (str): Description of the correction being made.. [optional]
+            duration (int): Length of time (in seconds) for a specified `rrule` recurring SLO correction.. [optional]
+            end (int): Ending time of the correction in epoch seconds.. [optional]
+            rrule (str): Recurrence rules as defined in the iCalendar RFC 5545.. [optional]
+            start (int): Starting time of the correction in epoch seconds.. [optional]
+            timezone (str): The timezone to display in the UI for the correction times (defaults to \"UTC\").. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SLOCorrectionUpdateRequestAttributes, cls)._from_openapi_data(kwargs)

@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class AlertGraphWidgetDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class AlertGraphWidgetDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,33 +64,28 @@ class AlertGraphWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "alert_id": (str,),  # noqa: E501
-            "type": (AlertGraphWidgetDefinitionType,),  # noqa: E501
-            "viz_type": (WidgetVizType,),  # noqa: E501
-            "time": (WidgetTime,),  # noqa: E501
-            "title": (str,),  # noqa: E501
-            "title_align": (WidgetTextAlign,),  # noqa: E501
-            "title_size": (str,),  # noqa: E501
+            "alert_id": (str,),
+            "time": (WidgetTime,),
+            "title": (str,),
+            "title_align": (WidgetTextAlign,),
+            "title_size": (str,),
+            "type": (AlertGraphWidgetDefinitionType,),
+            "viz_type": (WidgetVizType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "alert_id": "alert_id",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "viz_type": "viz_type",  # noqa: E501
-        "time": "time",  # noqa: E501
-        "title": "title",  # noqa: E501
-        "title_align": "title_align",  # noqa: E501
-        "title_size": "title_size",  # noqa: E501
+        "alert_id": "alert_id",
+        "type": "type",
+        "viz_type": "viz_type",
+        "time": "time",
+        "title": "title",
+        "title_align": "title_align",
+        "title_size": "title_size",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, alert_id, type, viz_type, *args, **kwargs):  # noqa: E501
+    def __init__(self, alert_id, type, viz_type, *args, **kwargs):
         """AlertGraphWidgetDefinition - a model defined in OpenAPI
 
         Args:
@@ -138,10 +124,10 @@ class AlertGraphWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            time (WidgetTime): [optional]  # noqa: E501
-            title (str): The title of the widget.. [optional]  # noqa: E501
-            title_align (WidgetTextAlign): [optional]  # noqa: E501
-            title_size (str): Size of the title.. [optional]  # noqa: E501
+            time (WidgetTime): [optional]
+            title (str): The title of the widget.. [optional]
+            title_align (WidgetTextAlign): [optional]
+            title_size (str): Size of the title.. [optional]
         """
         super().__init__(kwargs)
 
@@ -152,8 +138,7 @@ class AlertGraphWidgetDefinition(ModelNormal):
         self.viz_type = viz_type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, alert_id, type, viz_type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, alert_id, type, viz_type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(AlertGraphWidgetDefinition, cls)._from_openapi_data(kwargs)

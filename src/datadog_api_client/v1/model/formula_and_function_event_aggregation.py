@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -56,10 +55,6 @@ class FormulaAndFunctionEventAggregation(ModelSimple):
 
     validations = {}
 
-    additional_properties_type = None
-
-    _nullable = False
-
     @cached_property
     def openapi_types():
         """
@@ -74,23 +69,16 @@ class FormulaAndFunctionEventAggregation(ModelSimple):
             "value": (str,),
         }
 
-    discriminator = None
-
-    attribute_map = {}
-
-    _composed_schemas = None
-
-    @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):
         """FormulaAndFunctionEventAggregation - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Aggregation methods for event platform queries.., must be one of ["count", "cardinality", "median", "pc75", "pc90", "pc95", "pc98", "pc99", "sum", "min", "max", "avg", ]  # noqa: E501
+            args[0] (str): Aggregation methods for event platform queries.., must be one of ["count", "cardinality", "median", "pc75", "pc90", "pc95", "pc98", "pc99", "sum", "min", "max", "avg"]
 
         Keyword Args:
-            value (str): Aggregation methods for event platform queries.., must be one of ["count", "cardinality", "median", "pc75", "pc90", "pc95", "pc98", "pc99", "sum", "min", "max", "avg", ]  # noqa: E501
+            value (str): Aggregation methods for event platform queries.., must be one of ["count", "cardinality", "median", "pc75", "pc90", "pc95", "pc98", "pc99", "sum", "min", "max", "avg"]
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -143,7 +131,6 @@ class FormulaAndFunctionEventAggregation(ModelSimple):
         self._check_kw_args(kwargs)
 
     @classmethod
-    @convert_js_args_to_python_args
     def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
         return cls(*args, **kwargs)

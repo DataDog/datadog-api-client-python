@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class UsageAttributionValues(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class UsageAttributionValues(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,99 +51,94 @@ class UsageAttributionValues(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "api_percentage": (float,),  # noqa: E501
-            "api_usage": (float,),  # noqa: E501
-            "apm_host_percentage": (float,),  # noqa: E501
-            "apm_host_usage": (float,),  # noqa: E501
-            "browser_percentage": (float,),  # noqa: E501
-            "browser_usage": (float,),  # noqa: E501
-            "container_percentage": (float,),  # noqa: E501
-            "container_usage": (float,),  # noqa: E501
-            "cspm_container_percentage": (float,),  # noqa: E501
-            "cspm_container_usage": (float,),  # noqa: E501
-            "cspm_host_percentage": (float,),  # noqa: E501
-            "cspm_host_usage": (float,),  # noqa: E501
-            "custom_timeseries_percentage": (float,),  # noqa: E501
-            "custom_timeseries_usage": (float,),  # noqa: E501
-            "cws_container_percentage": (float,),  # noqa: E501
-            "cws_container_usage": (float,),  # noqa: E501
-            "cws_host_percentage": (float,),  # noqa: E501
-            "cws_host_usage": (float,),  # noqa: E501
-            "dbm_hosts_percentage": (float,),  # noqa: E501
-            "dbm_hosts_usage": (float,),  # noqa: E501
-            "dbm_queries_percentage": (float,),  # noqa: E501
-            "dbm_queries_usage": (float,),  # noqa: E501
-            "estimated_indexed_logs_percentage": (float,),  # noqa: E501
-            "estimated_indexed_logs_usage": (float,),  # noqa: E501
-            "infra_host_percentage": (float,),  # noqa: E501
-            "infra_host_usage": (float,),  # noqa: E501
-            "lambda_functions_percentage": (float,),  # noqa: E501
-            "lambda_functions_usage": (float,),  # noqa: E501
-            "lambda_invocations_percentage": (float,),  # noqa: E501
-            "lambda_invocations_usage": (float,),  # noqa: E501
-            "lambda_percentage": (float,),  # noqa: E501
-            "lambda_usage": (float,),  # noqa: E501
-            "npm_host_percentage": (float,),  # noqa: E501
-            "npm_host_usage": (float,),  # noqa: E501
-            "profiled_container_percentage": (float,),  # noqa: E501
-            "profiled_container_usage": (float,),  # noqa: E501
-            "profiled_hosts_percentage": (float,),  # noqa: E501
-            "profiled_hosts_usage": (float,),  # noqa: E501
-            "snmp_percentage": (float,),  # noqa: E501
-            "snmp_usage": (float,),  # noqa: E501
+            "api_percentage": (float,),
+            "api_usage": (float,),
+            "apm_host_percentage": (float,),
+            "apm_host_usage": (float,),
+            "browser_percentage": (float,),
+            "browser_usage": (float,),
+            "container_percentage": (float,),
+            "container_usage": (float,),
+            "cspm_container_percentage": (float,),
+            "cspm_container_usage": (float,),
+            "cspm_host_percentage": (float,),
+            "cspm_host_usage": (float,),
+            "custom_timeseries_percentage": (float,),
+            "custom_timeseries_usage": (float,),
+            "cws_container_percentage": (float,),
+            "cws_container_usage": (float,),
+            "cws_host_percentage": (float,),
+            "cws_host_usage": (float,),
+            "dbm_hosts_percentage": (float,),
+            "dbm_hosts_usage": (float,),
+            "dbm_queries_percentage": (float,),
+            "dbm_queries_usage": (float,),
+            "estimated_indexed_logs_percentage": (float,),
+            "estimated_indexed_logs_usage": (float,),
+            "infra_host_percentage": (float,),
+            "infra_host_usage": (float,),
+            "lambda_functions_percentage": (float,),
+            "lambda_functions_usage": (float,),
+            "lambda_invocations_percentage": (float,),
+            "lambda_invocations_usage": (float,),
+            "lambda_percentage": (float,),
+            "lambda_usage": (float,),
+            "npm_host_percentage": (float,),
+            "npm_host_usage": (float,),
+            "profiled_container_percentage": (float,),
+            "profiled_container_usage": (float,),
+            "profiled_hosts_percentage": (float,),
+            "profiled_hosts_usage": (float,),
+            "snmp_percentage": (float,),
+            "snmp_usage": (float,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "api_percentage": "api_percentage",  # noqa: E501
-        "api_usage": "api_usage",  # noqa: E501
-        "apm_host_percentage": "apm_host_percentage",  # noqa: E501
-        "apm_host_usage": "apm_host_usage",  # noqa: E501
-        "browser_percentage": "browser_percentage",  # noqa: E501
-        "browser_usage": "browser_usage",  # noqa: E501
-        "container_percentage": "container_percentage",  # noqa: E501
-        "container_usage": "container_usage",  # noqa: E501
-        "cspm_container_percentage": "cspm_container_percentage",  # noqa: E501
-        "cspm_container_usage": "cspm_container_usage",  # noqa: E501
-        "cspm_host_percentage": "cspm_host_percentage",  # noqa: E501
-        "cspm_host_usage": "cspm_host_usage",  # noqa: E501
-        "custom_timeseries_percentage": "custom_timeseries_percentage",  # noqa: E501
-        "custom_timeseries_usage": "custom_timeseries_usage",  # noqa: E501
-        "cws_container_percentage": "cws_container_percentage",  # noqa: E501
-        "cws_container_usage": "cws_container_usage",  # noqa: E501
-        "cws_host_percentage": "cws_host_percentage",  # noqa: E501
-        "cws_host_usage": "cws_host_usage",  # noqa: E501
-        "dbm_hosts_percentage": "dbm_hosts_percentage",  # noqa: E501
-        "dbm_hosts_usage": "dbm_hosts_usage",  # noqa: E501
-        "dbm_queries_percentage": "dbm_queries_percentage",  # noqa: E501
-        "dbm_queries_usage": "dbm_queries_usage",  # noqa: E501
-        "estimated_indexed_logs_percentage": "estimated_indexed_logs_percentage",  # noqa: E501
-        "estimated_indexed_logs_usage": "estimated_indexed_logs_usage",  # noqa: E501
-        "infra_host_percentage": "infra_host_percentage",  # noqa: E501
-        "infra_host_usage": "infra_host_usage",  # noqa: E501
-        "lambda_functions_percentage": "lambda_functions_percentage",  # noqa: E501
-        "lambda_functions_usage": "lambda_functions_usage",  # noqa: E501
-        "lambda_invocations_percentage": "lambda_invocations_percentage",  # noqa: E501
-        "lambda_invocations_usage": "lambda_invocations_usage",  # noqa: E501
-        "lambda_percentage": "lambda_percentage",  # noqa: E501
-        "lambda_usage": "lambda_usage",  # noqa: E501
-        "npm_host_percentage": "npm_host_percentage",  # noqa: E501
-        "npm_host_usage": "npm_host_usage",  # noqa: E501
-        "profiled_container_percentage": "profiled_container_percentage",  # noqa: E501
-        "profiled_container_usage": "profiled_container_usage",  # noqa: E501
-        "profiled_hosts_percentage": "profiled_hosts_percentage",  # noqa: E501
-        "profiled_hosts_usage": "profiled_hosts_usage",  # noqa: E501
-        "snmp_percentage": "snmp_percentage",  # noqa: E501
-        "snmp_usage": "snmp_usage",  # noqa: E501
+        "api_percentage": "api_percentage",
+        "api_usage": "api_usage",
+        "apm_host_percentage": "apm_host_percentage",
+        "apm_host_usage": "apm_host_usage",
+        "browser_percentage": "browser_percentage",
+        "browser_usage": "browser_usage",
+        "container_percentage": "container_percentage",
+        "container_usage": "container_usage",
+        "cspm_container_percentage": "cspm_container_percentage",
+        "cspm_container_usage": "cspm_container_usage",
+        "cspm_host_percentage": "cspm_host_percentage",
+        "cspm_host_usage": "cspm_host_usage",
+        "custom_timeseries_percentage": "custom_timeseries_percentage",
+        "custom_timeseries_usage": "custom_timeseries_usage",
+        "cws_container_percentage": "cws_container_percentage",
+        "cws_container_usage": "cws_container_usage",
+        "cws_host_percentage": "cws_host_percentage",
+        "cws_host_usage": "cws_host_usage",
+        "dbm_hosts_percentage": "dbm_hosts_percentage",
+        "dbm_hosts_usage": "dbm_hosts_usage",
+        "dbm_queries_percentage": "dbm_queries_percentage",
+        "dbm_queries_usage": "dbm_queries_usage",
+        "estimated_indexed_logs_percentage": "estimated_indexed_logs_percentage",
+        "estimated_indexed_logs_usage": "estimated_indexed_logs_usage",
+        "infra_host_percentage": "infra_host_percentage",
+        "infra_host_usage": "infra_host_usage",
+        "lambda_functions_percentage": "lambda_functions_percentage",
+        "lambda_functions_usage": "lambda_functions_usage",
+        "lambda_invocations_percentage": "lambda_invocations_percentage",
+        "lambda_invocations_usage": "lambda_invocations_usage",
+        "lambda_percentage": "lambda_percentage",
+        "lambda_usage": "lambda_usage",
+        "npm_host_percentage": "npm_host_percentage",
+        "npm_host_usage": "npm_host_usage",
+        "profiled_container_percentage": "profiled_container_percentage",
+        "profiled_container_usage": "profiled_container_usage",
+        "profiled_hosts_percentage": "profiled_hosts_percentage",
+        "profiled_hosts_usage": "profiled_hosts_usage",
+        "snmp_percentage": "snmp_percentage",
+        "snmp_usage": "snmp_usage",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """UsageAttributionValues - a model defined in OpenAPI
 
         Keyword Args:
@@ -186,54 +172,53 @@ class UsageAttributionValues(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            api_percentage (float): The percentage of synthetic API test usage by tag(s).. [optional]  # noqa: E501
-            api_usage (float): The synthetic API test usage by tag(s).. [optional]  # noqa: E501
-            apm_host_percentage (float): The percentage of APM host usage by tag(s).. [optional]  # noqa: E501
-            apm_host_usage (float): The APM host usage by tag(s).. [optional]  # noqa: E501
-            browser_percentage (float): The percentage of synthetic browser test usage by tag(s).. [optional]  # noqa: E501
-            browser_usage (float): The synthetic browser test usage by tag(s).. [optional]  # noqa: E501
-            container_percentage (float): The percentage of container usage by tag(s).. [optional]  # noqa: E501
-            container_usage (float): The container usage by tag(s).. [optional]  # noqa: E501
-            cspm_container_percentage (float): The percentage of Cloud Security Posture Management container usage by tag(s). [optional]  # noqa: E501
-            cspm_container_usage (float): The Cloud Security Posture Management container usage by tag(s). [optional]  # noqa: E501
-            cspm_host_percentage (float): The percentage of Cloud Security Posture Management host usage by tag(s). [optional]  # noqa: E501
-            cspm_host_usage (float): The Cloud Security Posture Management host usage by tag(s). [optional]  # noqa: E501
-            custom_timeseries_percentage (float): The percentage of custom metrics usage by tag(s).. [optional]  # noqa: E501
-            custom_timeseries_usage (float): The custom metrics usage by tag(s).. [optional]  # noqa: E501
-            cws_container_percentage (float): The percentage of Cloud Workload Security container usage by tag(s). [optional]  # noqa: E501
-            cws_container_usage (float): The Cloud Workload Security container usage by tag(s). [optional]  # noqa: E501
-            cws_host_percentage (float): The percentage of Cloud Workload Security host usage by tag(s). [optional]  # noqa: E501
-            cws_host_usage (float): The Cloud Workload Security host usage by tag(s). [optional]  # noqa: E501
-            dbm_hosts_percentage (float): The percentage of Database Monitoring host usage by tag(s).. [optional]  # noqa: E501
-            dbm_hosts_usage (float): The Database Monitoring host usage by tag(s).. [optional]  # noqa: E501
-            dbm_queries_percentage (float): The percentage of Database Monitoring normalized queries usage by tag(s).. [optional]  # noqa: E501
-            dbm_queries_usage (float): The Database Monitoring normalized queries usage by tag(s).. [optional]  # noqa: E501
-            estimated_indexed_logs_percentage (float): The percentage of estimated live indexed logs usage by tag(s). Note this field is in private beta.. [optional]  # noqa: E501
-            estimated_indexed_logs_usage (float): The estimated live indexed logs usage by tag(s). Note this field is in private beta.. [optional]  # noqa: E501
-            infra_host_percentage (float): The percentage of infrastructure host usage by tag(s).. [optional]  # noqa: E501
-            infra_host_usage (float): The infrastructure host usage by tag(s).. [optional]  # noqa: E501
-            lambda_functions_percentage (float): The percentage of Lambda function usage by tag(s).. [optional]  # noqa: E501
-            lambda_functions_usage (float): The Lambda function usage by tag(s).. [optional]  # noqa: E501
-            lambda_invocations_percentage (float): The percentage of Lambda invocation usage by tag(s).. [optional]  # noqa: E501
-            lambda_invocations_usage (float): The Lambda invocation usage by tag(s).. [optional]  # noqa: E501
-            lambda_percentage (float): The percentage of Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_percentage instead.. [optional]  # noqa: E501
-            lambda_usage (float): The Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_usage instead.. [optional]  # noqa: E501
-            npm_host_percentage (float): The percentage of network host usage by tag(s).. [optional]  # noqa: E501
-            npm_host_usage (float): The network host usage by tag(s).. [optional]  # noqa: E501
-            profiled_container_percentage (float): The percentage of profiled containers usage by tag(s).. [optional]  # noqa: E501
-            profiled_container_usage (float): The profiled container usage by tag(s).. [optional]  # noqa: E501
-            profiled_hosts_percentage (float): The percentage of profiled hosts usage by tag(s).. [optional]  # noqa: E501
-            profiled_hosts_usage (float): The profiled host usage by tag(s).. [optional]  # noqa: E501
-            snmp_percentage (float): The percentage of network device usage by tag(s).. [optional]  # noqa: E501
-            snmp_usage (float): The network device usage by tag(s).. [optional]  # noqa: E501
+            api_percentage (float): The percentage of synthetic API test usage by tag(s).. [optional]
+            api_usage (float): The synthetic API test usage by tag(s).. [optional]
+            apm_host_percentage (float): The percentage of APM host usage by tag(s).. [optional]
+            apm_host_usage (float): The APM host usage by tag(s).. [optional]
+            browser_percentage (float): The percentage of synthetic browser test usage by tag(s).. [optional]
+            browser_usage (float): The synthetic browser test usage by tag(s).. [optional]
+            container_percentage (float): The percentage of container usage by tag(s).. [optional]
+            container_usage (float): The container usage by tag(s).. [optional]
+            cspm_container_percentage (float): The percentage of Cloud Security Posture Management container usage by tag(s). [optional]
+            cspm_container_usage (float): The Cloud Security Posture Management container usage by tag(s). [optional]
+            cspm_host_percentage (float): The percentage of Cloud Security Posture Management host usage by tag(s). [optional]
+            cspm_host_usage (float): The Cloud Security Posture Management host usage by tag(s). [optional]
+            custom_timeseries_percentage (float): The percentage of custom metrics usage by tag(s).. [optional]
+            custom_timeseries_usage (float): The custom metrics usage by tag(s).. [optional]
+            cws_container_percentage (float): The percentage of Cloud Workload Security container usage by tag(s). [optional]
+            cws_container_usage (float): The Cloud Workload Security container usage by tag(s). [optional]
+            cws_host_percentage (float): The percentage of Cloud Workload Security host usage by tag(s). [optional]
+            cws_host_usage (float): The Cloud Workload Security host usage by tag(s). [optional]
+            dbm_hosts_percentage (float): The percentage of Database Monitoring host usage by tag(s).. [optional]
+            dbm_hosts_usage (float): The Database Monitoring host usage by tag(s).. [optional]
+            dbm_queries_percentage (float): The percentage of Database Monitoring normalized queries usage by tag(s).. [optional]
+            dbm_queries_usage (float): The Database Monitoring normalized queries usage by tag(s).. [optional]
+            estimated_indexed_logs_percentage (float): The percentage of estimated live indexed logs usage by tag(s). Note this field is in private beta.. [optional]
+            estimated_indexed_logs_usage (float): The estimated live indexed logs usage by tag(s). Note this field is in private beta.. [optional]
+            infra_host_percentage (float): The percentage of infrastructure host usage by tag(s).. [optional]
+            infra_host_usage (float): The infrastructure host usage by tag(s).. [optional]
+            lambda_functions_percentage (float): The percentage of Lambda function usage by tag(s).. [optional]
+            lambda_functions_usage (float): The Lambda function usage by tag(s).. [optional]
+            lambda_invocations_percentage (float): The percentage of Lambda invocation usage by tag(s).. [optional]
+            lambda_invocations_usage (float): The Lambda invocation usage by tag(s).. [optional]
+            lambda_percentage (float): The percentage of Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_percentage instead.. [optional]
+            lambda_usage (float): The Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_usage instead.. [optional]
+            npm_host_percentage (float): The percentage of network host usage by tag(s).. [optional]
+            npm_host_usage (float): The network host usage by tag(s).. [optional]
+            profiled_container_percentage (float): The percentage of profiled containers usage by tag(s).. [optional]
+            profiled_container_usage (float): The profiled container usage by tag(s).. [optional]
+            profiled_hosts_percentage (float): The percentage of profiled hosts usage by tag(s).. [optional]
+            profiled_hosts_usage (float): The profiled host usage by tag(s).. [optional]
+            snmp_percentage (float): The percentage of network device usage by tag(s).. [optional]
+            snmp_usage (float): The network device usage by tag(s).. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(UsageAttributionValues, cls)._from_openapi_data(kwargs)

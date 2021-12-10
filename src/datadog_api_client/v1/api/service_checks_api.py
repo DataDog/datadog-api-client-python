@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
@@ -52,9 +50,9 @@ class ServiceChecksApi(object):
         )
 
     def submit_service_check(self, body, **kwargs):
-        """Submit a Service Check  # noqa: E501
+        """Submit a Service Check
 
-        Submit a list of Service Checks.  **Notes**: - A valid API key is required. - Service checks can be submitted up to 10 minutes in the past.  # noqa: E501
+        Submit a list of Service Checks.  **Notes**: - A valid API key is required. - Service checks can be submitted up to 10 minutes in the past.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

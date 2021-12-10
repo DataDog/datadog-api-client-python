@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class UsageLogsByRetentionHour(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class UsageLogsByRetentionHour(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,27 +51,22 @@ class UsageLogsByRetentionHour(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "indexed_events_count": (int,),  # noqa: E501
-            "live_indexed_events_count": (int,),  # noqa: E501
-            "rehydrated_indexed_events_count": (int,),  # noqa: E501
-            "retention": (str,),  # noqa: E501
+            "indexed_events_count": (int,),
+            "live_indexed_events_count": (int,),
+            "rehydrated_indexed_events_count": (int,),
+            "retention": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "indexed_events_count": "indexed_events_count",  # noqa: E501
-        "live_indexed_events_count": "live_indexed_events_count",  # noqa: E501
-        "rehydrated_indexed_events_count": "rehydrated_indexed_events_count",  # noqa: E501
-        "retention": "retention",  # noqa: E501
+        "indexed_events_count": "indexed_events_count",
+        "live_indexed_events_count": "live_indexed_events_count",
+        "rehydrated_indexed_events_count": "rehydrated_indexed_events_count",
+        "retention": "retention",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """UsageLogsByRetentionHour - a model defined in OpenAPI
 
         Keyword Args:
@@ -114,18 +100,17 @@ class UsageLogsByRetentionHour(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            indexed_events_count (int): Total logs indexed with this retention period during a given hour.. [optional]  # noqa: E501
-            live_indexed_events_count (int): Live logs indexed with this retention period during a given hour.. [optional]  # noqa: E501
-            rehydrated_indexed_events_count (int): Rehydrated logs indexed with this retention period during a given hour.. [optional]  # noqa: E501
-            retention (str): The retention period in days or \"custom\" for all custom retention usage.. [optional]  # noqa: E501
+            indexed_events_count (int): Total logs indexed with this retention period during a given hour.. [optional]
+            live_indexed_events_count (int): Live logs indexed with this retention period during a given hour.. [optional]
+            rehydrated_indexed_events_count (int): Rehydrated logs indexed with this retention period during a given hour.. [optional]
+            retention (str): The retention period in days or \"custom\" for all custom retention usage.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(UsageLogsByRetentionHour, cls)._from_openapi_data(kwargs)

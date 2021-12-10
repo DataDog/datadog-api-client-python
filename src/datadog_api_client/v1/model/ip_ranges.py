@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -48,8 +47,6 @@ class IPRanges(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -59,13 +56,7 @@ class IPRanges(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -79,37 +70,32 @@ class IPRanges(ModelNormal):
         """
         lazy_import()
         return {
-            "agents": (IPPrefixesAgents,),  # noqa: E501
-            "api": (IPPrefixesAPI,),  # noqa: E501
-            "apm": (IPPrefixesAPM,),  # noqa: E501
-            "logs": (IPPrefixesLogs,),  # noqa: E501
-            "modified": (str,),  # noqa: E501
-            "process": (IPPrefixesProcess,),  # noqa: E501
-            "synthetics": (IPPrefixesSynthetics,),  # noqa: E501
-            "version": (int,),  # noqa: E501
-            "webhooks": (IPPrefixesWebhooks,),  # noqa: E501
+            "agents": (IPPrefixesAgents,),
+            "api": (IPPrefixesAPI,),
+            "apm": (IPPrefixesAPM,),
+            "logs": (IPPrefixesLogs,),
+            "modified": (str,),
+            "process": (IPPrefixesProcess,),
+            "synthetics": (IPPrefixesSynthetics,),
+            "version": (int,),
+            "webhooks": (IPPrefixesWebhooks,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "agents": "agents",  # noqa: E501
-        "api": "api",  # noqa: E501
-        "apm": "apm",  # noqa: E501
-        "logs": "logs",  # noqa: E501
-        "modified": "modified",  # noqa: E501
-        "process": "process",  # noqa: E501
-        "synthetics": "synthetics",  # noqa: E501
-        "version": "version",  # noqa: E501
-        "webhooks": "webhooks",  # noqa: E501
+        "agents": "agents",
+        "api": "api",
+        "apm": "apm",
+        "logs": "logs",
+        "modified": "modified",
+        "process": "process",
+        "synthetics": "synthetics",
+        "version": "version",
+        "webhooks": "webhooks",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """IPRanges - a model defined in OpenAPI
 
         Keyword Args:
@@ -143,23 +129,22 @@ class IPRanges(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            agents (IPPrefixesAgents): [optional]  # noqa: E501
-            api (IPPrefixesAPI): [optional]  # noqa: E501
-            apm (IPPrefixesAPM): [optional]  # noqa: E501
-            logs (IPPrefixesLogs): [optional]  # noqa: E501
-            modified (str): Date when last updated, in the form `YYYY-MM-DD-hh-mm-ss`.. [optional]  # noqa: E501
-            process (IPPrefixesProcess): [optional]  # noqa: E501
-            synthetics (IPPrefixesSynthetics): [optional]  # noqa: E501
-            version (int): Version of the IP list.. [optional]  # noqa: E501
-            webhooks (IPPrefixesWebhooks): [optional]  # noqa: E501
+            agents (IPPrefixesAgents): [optional]
+            api (IPPrefixesAPI): [optional]
+            apm (IPPrefixesAPM): [optional]
+            logs (IPPrefixesLogs): [optional]
+            modified (str): Date when last updated, in the form `YYYY-MM-DD-hh-mm-ss`.. [optional]
+            process (IPPrefixesProcess): [optional]
+            synthetics (IPPrefixesSynthetics): [optional]
+            version (int): Version of the IP list.. [optional]
+            webhooks (IPPrefixesWebhooks): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(IPRanges, cls)._from_openapi_data(kwargs)

@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -40,8 +39,6 @@ class ServiceLevelObjectiveRequest(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -51,13 +48,7 @@ class ServiceLevelObjectiveRequest(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -71,38 +62,33 @@ class ServiceLevelObjectiveRequest(ModelNormal):
         """
         lazy_import()
         return {
-            "name": (str,),  # noqa: E501
-            "thresholds": ([SLOThreshold],),  # noqa: E501
-            "type": (SLOType,),  # noqa: E501
             "description": (
                 str,
                 none_type,
-            ),  # noqa: E501
-            "groups": ([str],),  # noqa: E501
-            "monitor_ids": ([int],),  # noqa: E501
-            "query": (ServiceLevelObjectiveQuery,),  # noqa: E501
-            "tags": ([str],),  # noqa: E501
+            ),
+            "groups": ([str],),
+            "monitor_ids": ([int],),
+            "name": (str,),
+            "query": (ServiceLevelObjectiveQuery,),
+            "tags": ([str],),
+            "thresholds": ([SLOThreshold],),
+            "type": (SLOType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "name": "name",  # noqa: E501
-        "thresholds": "thresholds",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "description": "description",  # noqa: E501
-        "groups": "groups",  # noqa: E501
-        "monitor_ids": "monitor_ids",  # noqa: E501
-        "query": "query",  # noqa: E501
-        "tags": "tags",  # noqa: E501
+        "name": "name",
+        "thresholds": "thresholds",
+        "type": "type",
+        "description": "description",
+        "groups": "groups",
+        "monitor_ids": "monitor_ids",
+        "query": "query",
+        "tags": "tags",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, name, thresholds, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, thresholds, type, *args, **kwargs):
         """ServiceLevelObjectiveRequest - a model defined in OpenAPI
 
         Args:
@@ -141,11 +127,11 @@ class ServiceLevelObjectiveRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str, none_type): A user-defined description of the service level objective.  Always included in service level objective responses (but may be `null`). Optional in create/update requests.. [optional]  # noqa: E501
-            groups ([str]): A list of (up to 20) monitor groups that narrow the scope of a monitor service level objective.  Included in service level objective responses if it is not empty. Optional in create/update requests for monitor service level objectives, but may only be used when then length of the `monitor_ids` field is one.. [optional]  # noqa: E501
-            monitor_ids ([int]): A list of monitor ids that defines the scope of a monitor service level objective. **Required if type is `monitor`**.. [optional]  # noqa: E501
-            query (ServiceLevelObjectiveQuery): [optional]  # noqa: E501
-            tags ([str]): A list of tags associated with this service level objective. Always included in service level objective responses (but may be empty). Optional in create/update requests.. [optional]  # noqa: E501
+            description (str, none_type): A user-defined description of the service level objective.  Always included in service level objective responses (but may be `null`). Optional in create/update requests.. [optional]
+            groups ([str]): A list of (up to 20) monitor groups that narrow the scope of a monitor service level objective.  Included in service level objective responses if it is not empty. Optional in create/update requests for monitor service level objectives, but may only be used when then length of the `monitor_ids` field is one.. [optional]
+            monitor_ids ([int]): A list of monitor ids that defines the scope of a monitor service level objective. **Required if type is `monitor`**.. [optional]
+            query (ServiceLevelObjectiveQuery): [optional]
+            tags ([str]): A list of tags associated with this service level objective. Always included in service level objective responses (but may be empty). Optional in create/update requests.. [optional]
         """
         super().__init__(kwargs)
 
@@ -156,8 +142,7 @@ class ServiceLevelObjectiveRequest(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, thresholds, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, thresholds, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(ServiceLevelObjectiveRequest, cls)._from_openapi_data(kwargs)

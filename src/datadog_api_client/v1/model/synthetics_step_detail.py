@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -46,8 +45,6 @@ class SyntheticsStepDetail(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -57,13 +54,7 @@ class SyntheticsStepDetail(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -77,20 +68,20 @@ class SyntheticsStepDetail(ModelNormal):
         """
         lazy_import()
         return {
-            "browser_errors": ([SyntheticsBrowserError],),  # noqa: E501
-            "check_type": (SyntheticsCheckType,),  # noqa: E501
-            "description": (str,),  # noqa: E501
-            "duration": (float,),  # noqa: E501
-            "error": (str,),  # noqa: E501
-            "playing_tab": (SyntheticsPlayingTab,),  # noqa: E501
-            "screenshot_bucket_key": (bool,),  # noqa: E501
-            "skipped": (bool,),  # noqa: E501
-            "snapshot_bucket_key": (bool,),  # noqa: E501
-            "step_id": (int,),  # noqa: E501
-            "sub_test_step_details": ([SyntheticsStepDetail],),  # noqa: E501
-            "time_to_interactive": (float,),  # noqa: E501
-            "type": (SyntheticsStepType,),  # noqa: E501
-            "url": (str,),  # noqa: E501
+            "browser_errors": ([SyntheticsBrowserError],),
+            "check_type": (SyntheticsCheckType,),
+            "description": (str,),
+            "duration": (float,),
+            "error": (str,),
+            "playing_tab": (SyntheticsPlayingTab,),
+            "screenshot_bucket_key": (bool,),
+            "skipped": (bool,),
+            "snapshot_bucket_key": (bool,),
+            "step_id": (int,),
+            "sub_test_step_details": ([SyntheticsStepDetail],),
+            "time_to_interactive": (float,),
+            "type": (SyntheticsStepType,),
+            "url": (str,),
             "value": (
                 bool,
                 date,
@@ -101,39 +92,34 @@ class SyntheticsStepDetail(ModelNormal):
                 list,
                 str,
                 none_type,
-            ),  # noqa: E501
-            "vitals_metrics": ([SyntheticsCoreWebVitals],),  # noqa: E501
-            "warnings": ([SyntheticsStepDetailWarning],),  # noqa: E501
+            ),
+            "vitals_metrics": ([SyntheticsCoreWebVitals],),
+            "warnings": ([SyntheticsStepDetailWarning],),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "browser_errors": "browserErrors",  # noqa: E501
-        "check_type": "checkType",  # noqa: E501
-        "description": "description",  # noqa: E501
-        "duration": "duration",  # noqa: E501
-        "error": "error",  # noqa: E501
-        "playing_tab": "playingTab",  # noqa: E501
-        "screenshot_bucket_key": "screenshotBucketKey",  # noqa: E501
-        "skipped": "skipped",  # noqa: E501
-        "snapshot_bucket_key": "snapshotBucketKey",  # noqa: E501
-        "step_id": "stepId",  # noqa: E501
-        "sub_test_step_details": "subTestStepDetails",  # noqa: E501
-        "time_to_interactive": "timeToInteractive",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "url": "url",  # noqa: E501
-        "value": "value",  # noqa: E501
-        "vitals_metrics": "vitalsMetrics",  # noqa: E501
-        "warnings": "warnings",  # noqa: E501
+        "browser_errors": "browserErrors",
+        "check_type": "checkType",
+        "description": "description",
+        "duration": "duration",
+        "error": "error",
+        "playing_tab": "playingTab",
+        "screenshot_bucket_key": "screenshotBucketKey",
+        "skipped": "skipped",
+        "snapshot_bucket_key": "snapshotBucketKey",
+        "step_id": "stepId",
+        "sub_test_step_details": "subTestStepDetails",
+        "time_to_interactive": "timeToInteractive",
+        "type": "type",
+        "url": "url",
+        "value": "value",
+        "vitals_metrics": "vitalsMetrics",
+        "warnings": "warnings",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SyntheticsStepDetail - a model defined in OpenAPI
 
         Keyword Args:
@@ -167,31 +153,30 @@ class SyntheticsStepDetail(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            browser_errors ([SyntheticsBrowserError]): Array of errors collected for a browser test.. [optional]  # noqa: E501
-            check_type (SyntheticsCheckType): [optional]  # noqa: E501
-            description (str): Description of the test.. [optional]  # noqa: E501
-            duration (float): Total duration in millisecond of the test.. [optional]  # noqa: E501
-            error (str): Error returned by the test.. [optional]  # noqa: E501
-            playing_tab (SyntheticsPlayingTab): [optional]  # noqa: E501
-            screenshot_bucket_key (bool): Whether or not screenshots where collected by the test.. [optional]  # noqa: E501
-            skipped (bool): Whether or not to skip this step.. [optional]  # noqa: E501
-            snapshot_bucket_key (bool): Whether or not snapshots where collected by the test.. [optional]  # noqa: E501
-            step_id (int): The step ID.. [optional]  # noqa: E501
-            sub_test_step_details ([SyntheticsStepDetail]): If this steps include a sub-test. [Subtests documentation](https://docs.datadoghq.com/synthetics/browser_tests/advanced_options/#subtests).. [optional]  # noqa: E501
-            time_to_interactive (float): Time before starting the step.. [optional]  # noqa: E501
-            type (SyntheticsStepType): [optional]  # noqa: E501
-            url (str): URL to perform the step against.. [optional]  # noqa: E501
-            value (bool, date, datetime, dict, float, int, list, str, none_type): Value for the step.. [optional]  # noqa: E501
-            vitals_metrics ([SyntheticsCoreWebVitals]): Array of Core Web Vitals metrics for the step.. [optional]  # noqa: E501
-            warnings ([SyntheticsStepDetailWarning]): Warning collected that didn't failed the step.. [optional]  # noqa: E501
+            browser_errors ([SyntheticsBrowserError]): Array of errors collected for a browser test.. [optional]
+            check_type (SyntheticsCheckType): [optional]
+            description (str): Description of the test.. [optional]
+            duration (float): Total duration in millisecond of the test.. [optional]
+            error (str): Error returned by the test.. [optional]
+            playing_tab (SyntheticsPlayingTab): [optional]
+            screenshot_bucket_key (bool): Whether or not screenshots where collected by the test.. [optional]
+            skipped (bool): Whether or not to skip this step.. [optional]
+            snapshot_bucket_key (bool): Whether or not snapshots where collected by the test.. [optional]
+            step_id (int): The step ID.. [optional]
+            sub_test_step_details ([SyntheticsStepDetail]): If this steps include a sub-test. [Subtests documentation](https://docs.datadoghq.com/synthetics/browser_tests/advanced_options/#subtests).. [optional]
+            time_to_interactive (float): Time before starting the step.. [optional]
+            type (SyntheticsStepType): [optional]
+            url (str): URL to perform the step against.. [optional]
+            value (bool, date, datetime, dict, float, int, list, str, none_type): Value for the step.. [optional]
+            vitals_metrics ([SyntheticsCoreWebVitals]): Array of Core Web Vitals metrics for the step.. [optional]
+            warnings ([SyntheticsStepDetailWarning]): Warning collected that didn't failed the step.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsStepDetail, cls)._from_openapi_data(kwargs)

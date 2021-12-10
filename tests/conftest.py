@@ -512,7 +512,6 @@ def build_given(version, operation):
             }
             kwargs["_check_input_type"] = False
             result = operation_method(**kwargs)
-            client.last_response.urllib3_response.close()
 
             # register undo method
             context["undo_operations"].append(
@@ -575,7 +574,6 @@ def undo(package_name, undo_operations, client):
 
         try:
             method(*args)
-            client.last_response.urllib3_response.close()
         except exceptions.ApiException as e:
             warnings.warn(f"failed undo: {e}")
 
@@ -590,7 +588,6 @@ def execute_request(undo, context, client, api_version, _package):
 
     try:
         response = api_request["request"](*api_request["args"], **api_request["kwargs"])
-        client.last_response.urllib3_response.close()
         # Reserialise the response body to JSON to facilitate test assertions
         response_body_json = _package.api_client.ApiClient.sanitize_for_serialization(
             response[0]

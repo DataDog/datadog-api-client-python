@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class SLOHistoryMetricsSeriesMetadataUnit(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,11 +38,7 @@ class SLOHistoryMetricsSeriesMetadataUnit(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
 
     _nullable = True
 
@@ -60,37 +53,32 @@ class SLOHistoryMetricsSeriesMetadataUnit(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "family": (str,),  # noqa: E501
-            "id": (int,),  # noqa: E501
-            "name": (str,),  # noqa: E501
+            "family": (str,),
+            "id": (int,),
+            "name": (str,),
             "plural": (
                 str,
                 none_type,
-            ),  # noqa: E501
-            "scale_factor": (float,),  # noqa: E501
+            ),
+            "scale_factor": (float,),
             "short_name": (
                 str,
                 none_type,
-            ),  # noqa: E501
+            ),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "family": "family",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "plural": "plural",  # noqa: E501
-        "scale_factor": "scale_factor",  # noqa: E501
-        "short_name": "short_name",  # noqa: E501
+        "family": "family",
+        "id": "id",
+        "name": "name",
+        "plural": "plural",
+        "scale_factor": "scale_factor",
+        "short_name": "short_name",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SLOHistoryMetricsSeriesMetadataUnit - a model defined in OpenAPI
 
         Keyword Args:
@@ -124,20 +112,19 @@ class SLOHistoryMetricsSeriesMetadataUnit(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            family (str): The family of metric unit, for example `bytes` is the family for `kibibyte`, `byte`, and `bit` units.. [optional]  # noqa: E501
-            id (int): The ID of the metric unit.. [optional]  # noqa: E501
-            name (str): The unit of the metric, for instance `byte`.. [optional]  # noqa: E501
-            plural (str, none_type): The plural Unit of metric, for instance `bytes`.. [optional]  # noqa: E501
-            scale_factor (float): The scale factor of metric unit, for instance `1.0`.. [optional]  # noqa: E501
-            short_name (str, none_type): A shorter and abbreviated version of the metric unit, for instance `B`.. [optional]  # noqa: E501
+            family (str): The family of metric unit, for example `bytes` is the family for `kibibyte`, `byte`, and `bit` units.. [optional]
+            id (int): The ID of the metric unit.. [optional]
+            name (str): The unit of the metric, for instance `byte`.. [optional]
+            plural (str, none_type): The plural Unit of metric, for instance `bytes`.. [optional]
+            scale_factor (float): The scale factor of metric unit, for instance `1.0`.. [optional]
+            short_name (str, none_type): A shorter and abbreviated version of the metric unit, for instance `B`.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SLOHistoryMetricsSeriesMetadataUnit, cls)._from_openapi_data(kwargs)

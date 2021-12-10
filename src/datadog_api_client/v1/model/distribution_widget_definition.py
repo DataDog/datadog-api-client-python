@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -48,8 +47,6 @@ class DistributionWidgetDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -59,18 +56,12 @@ class DistributionWidgetDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "requests": {
             "max_items": 1,
             "min_items": 1,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -84,41 +75,36 @@ class DistributionWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "requests": ([DistributionWidgetRequest],),  # noqa: E501
-            "type": (DistributionWidgetDefinitionType,),  # noqa: E501
-            "legend_size": (str,),  # noqa: E501
-            "markers": ([WidgetMarker],),  # noqa: E501
-            "show_legend": (bool,),  # noqa: E501
-            "time": (WidgetTime,),  # noqa: E501
-            "title": (str,),  # noqa: E501
-            "title_align": (WidgetTextAlign,),  # noqa: E501
-            "title_size": (str,),  # noqa: E501
-            "xaxis": (DistributionWidgetXAxis,),  # noqa: E501
-            "yaxis": (DistributionWidgetYAxis,),  # noqa: E501
+            "legend_size": (str,),
+            "markers": ([WidgetMarker],),
+            "requests": ([DistributionWidgetRequest],),
+            "show_legend": (bool,),
+            "time": (WidgetTime,),
+            "title": (str,),
+            "title_align": (WidgetTextAlign,),
+            "title_size": (str,),
+            "type": (DistributionWidgetDefinitionType,),
+            "xaxis": (DistributionWidgetXAxis,),
+            "yaxis": (DistributionWidgetYAxis,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "requests": "requests",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "legend_size": "legend_size",  # noqa: E501
-        "markers": "markers",  # noqa: E501
-        "show_legend": "show_legend",  # noqa: E501
-        "time": "time",  # noqa: E501
-        "title": "title",  # noqa: E501
-        "title_align": "title_align",  # noqa: E501
-        "title_size": "title_size",  # noqa: E501
-        "xaxis": "xaxis",  # noqa: E501
-        "yaxis": "yaxis",  # noqa: E501
+        "requests": "requests",
+        "type": "type",
+        "legend_size": "legend_size",
+        "markers": "markers",
+        "show_legend": "show_legend",
+        "time": "time",
+        "title": "title",
+        "title_align": "title_align",
+        "title_size": "title_size",
+        "xaxis": "xaxis",
+        "yaxis": "yaxis",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, requests, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, requests, type, *args, **kwargs):
         """DistributionWidgetDefinition - a model defined in OpenAPI
 
         Args:
@@ -156,15 +142,15 @@ class DistributionWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            legend_size (str): (Deprecated) The widget legend was replaced by a tooltip and sidebar.. [optional]  # noqa: E501
-            markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
-            show_legend (bool): (Deprecated) The widget legend was replaced by a tooltip and sidebar.. [optional]  # noqa: E501
-            time (WidgetTime): [optional]  # noqa: E501
-            title (str): Title of the widget.. [optional]  # noqa: E501
-            title_align (WidgetTextAlign): [optional]  # noqa: E501
-            title_size (str): Size of the title.. [optional]  # noqa: E501
-            xaxis (DistributionWidgetXAxis): [optional]  # noqa: E501
-            yaxis (DistributionWidgetYAxis): [optional]  # noqa: E501
+            legend_size (str): (Deprecated) The widget legend was replaced by a tooltip and sidebar.. [optional]
+            markers ([WidgetMarker]): List of markers.. [optional]
+            show_legend (bool): (Deprecated) The widget legend was replaced by a tooltip and sidebar.. [optional]
+            time (WidgetTime): [optional]
+            title (str): Title of the widget.. [optional]
+            title_align (WidgetTextAlign): [optional]
+            title_size (str): Size of the title.. [optional]
+            xaxis (DistributionWidgetXAxis): [optional]
+            yaxis (DistributionWidgetYAxis): [optional]
         """
         super().__init__(kwargs)
 
@@ -174,8 +160,7 @@ class DistributionWidgetDefinition(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, requests, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, requests, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(DistributionWidgetDefinition, cls)._from_openapi_data(kwargs)

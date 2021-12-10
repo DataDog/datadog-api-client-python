@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -48,8 +47,6 @@ class OrganizationSettings(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -59,13 +56,7 @@ class OrganizationSettings(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -79,39 +70,34 @@ class OrganizationSettings(ModelNormal):
         """
         lazy_import()
         return {
-            "private_widget_share": (bool,),  # noqa: E501
-            "saml": (OrganizationSettingsSaml,),  # noqa: E501
-            "saml_autocreate_access_role": (AccessRole,),  # noqa: E501
-            "saml_autocreate_users_domains": (OrganizationSettingsSamlAutocreateUsersDomains,),  # noqa: E501
-            "saml_can_be_enabled": (bool,),  # noqa: E501
-            "saml_idp_endpoint": (str,),  # noqa: E501
-            "saml_idp_initiated_login": (OrganizationSettingsSamlIdpInitiatedLogin,),  # noqa: E501
-            "saml_idp_metadata_uploaded": (bool,),  # noqa: E501
-            "saml_login_url": (str,),  # noqa: E501
-            "saml_strict_mode": (OrganizationSettingsSamlStrictMode,),  # noqa: E501
+            "private_widget_share": (bool,),
+            "saml": (OrganizationSettingsSaml,),
+            "saml_autocreate_access_role": (AccessRole,),
+            "saml_autocreate_users_domains": (OrganizationSettingsSamlAutocreateUsersDomains,),
+            "saml_can_be_enabled": (bool,),
+            "saml_idp_endpoint": (str,),
+            "saml_idp_initiated_login": (OrganizationSettingsSamlIdpInitiatedLogin,),
+            "saml_idp_metadata_uploaded": (bool,),
+            "saml_login_url": (str,),
+            "saml_strict_mode": (OrganizationSettingsSamlStrictMode,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "private_widget_share": "private_widget_share",  # noqa: E501
-        "saml": "saml",  # noqa: E501
-        "saml_autocreate_access_role": "saml_autocreate_access_role",  # noqa: E501
-        "saml_autocreate_users_domains": "saml_autocreate_users_domains",  # noqa: E501
-        "saml_can_be_enabled": "saml_can_be_enabled",  # noqa: E501
-        "saml_idp_endpoint": "saml_idp_endpoint",  # noqa: E501
-        "saml_idp_initiated_login": "saml_idp_initiated_login",  # noqa: E501
-        "saml_idp_metadata_uploaded": "saml_idp_metadata_uploaded",  # noqa: E501
-        "saml_login_url": "saml_login_url",  # noqa: E501
-        "saml_strict_mode": "saml_strict_mode",  # noqa: E501
+        "private_widget_share": "private_widget_share",
+        "saml": "saml",
+        "saml_autocreate_access_role": "saml_autocreate_access_role",
+        "saml_autocreate_users_domains": "saml_autocreate_users_domains",
+        "saml_can_be_enabled": "saml_can_be_enabled",
+        "saml_idp_endpoint": "saml_idp_endpoint",
+        "saml_idp_initiated_login": "saml_idp_initiated_login",
+        "saml_idp_metadata_uploaded": "saml_idp_metadata_uploaded",
+        "saml_login_url": "saml_login_url",
+        "saml_strict_mode": "saml_strict_mode",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """OrganizationSettings - a model defined in OpenAPI
 
         Keyword Args:
@@ -145,24 +131,23 @@ class OrganizationSettings(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            private_widget_share (bool): Whether or not the organization users can share widgets outside of Datadog.. [optional]  # noqa: E501
-            saml (OrganizationSettingsSaml): [optional]  # noqa: E501
-            saml_autocreate_access_role (AccessRole): [optional]  # noqa: E501
-            saml_autocreate_users_domains (OrganizationSettingsSamlAutocreateUsersDomains): [optional]  # noqa: E501
-            saml_can_be_enabled (bool): Whether or not SAML can be enabled for this organization.. [optional]  # noqa: E501
-            saml_idp_endpoint (str): Identity provider endpoint for SAML authentication.. [optional]  # noqa: E501
-            saml_idp_initiated_login (OrganizationSettingsSamlIdpInitiatedLogin): [optional]  # noqa: E501
-            saml_idp_metadata_uploaded (bool): Whether or not a SAML identity provider metadata file was provided to the Datadog organization.. [optional]  # noqa: E501
-            saml_login_url (str): URL for SAML logging.. [optional]  # noqa: E501
-            saml_strict_mode (OrganizationSettingsSamlStrictMode): [optional]  # noqa: E501
+            private_widget_share (bool): Whether or not the organization users can share widgets outside of Datadog.. [optional]
+            saml (OrganizationSettingsSaml): [optional]
+            saml_autocreate_access_role (AccessRole): [optional]
+            saml_autocreate_users_domains (OrganizationSettingsSamlAutocreateUsersDomains): [optional]
+            saml_can_be_enabled (bool): Whether or not SAML can be enabled for this organization.. [optional]
+            saml_idp_endpoint (str): Identity provider endpoint for SAML authentication.. [optional]
+            saml_idp_initiated_login (OrganizationSettingsSamlIdpInitiatedLogin): [optional]
+            saml_idp_metadata_uploaded (bool): Whether or not a SAML identity provider metadata file was provided to the Datadog organization.. [optional]
+            saml_login_url (str): URL for SAML logging.. [optional]
+            saml_strict_mode (OrganizationSettingsSamlStrictMode): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(OrganizationSettings, cls)._from_openapi_data(kwargs)

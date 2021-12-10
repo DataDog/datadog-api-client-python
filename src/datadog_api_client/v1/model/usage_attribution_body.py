@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class UsageAttributionBody(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class UsageAttributionBody(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,33 +60,28 @@ class UsageAttributionBody(ModelNormal):
         """
         lazy_import()
         return {
-            "month": (datetime,),  # noqa: E501
-            "org_name": (str,),  # noqa: E501
-            "public_id": (str,),  # noqa: E501
-            "tag_config_source": (str,),  # noqa: E501
-            "tags": (UsageAttributionTagNames,),  # noqa: E501
-            "updated_at": (str,),  # noqa: E501
-            "values": (UsageAttributionValues,),  # noqa: E501
+            "month": (datetime,),
+            "org_name": (str,),
+            "public_id": (str,),
+            "tag_config_source": (str,),
+            "tags": (UsageAttributionTagNames,),
+            "updated_at": (str,),
+            "values": (UsageAttributionValues,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "month": "month",  # noqa: E501
-        "org_name": "org_name",  # noqa: E501
-        "public_id": "public_id",  # noqa: E501
-        "tag_config_source": "tag_config_source",  # noqa: E501
-        "tags": "tags",  # noqa: E501
-        "updated_at": "updated_at",  # noqa: E501
-        "values": "values",  # noqa: E501
+        "month": "month",
+        "org_name": "org_name",
+        "public_id": "public_id",
+        "tag_config_source": "tag_config_source",
+        "tags": "tags",
+        "updated_at": "updated_at",
+        "values": "values",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """UsageAttributionBody - a model defined in OpenAPI
 
         Keyword Args:
@@ -129,21 +115,20 @@ class UsageAttributionBody(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            month (datetime): Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM].. [optional]  # noqa: E501
-            org_name (str): The name of the organization.. [optional]  # noqa: E501
-            public_id (str): The organization public ID.. [optional]  # noqa: E501
-            tag_config_source (str): The source of the usage attribution tag configuration and the selected tags in the format `<source_org_name>:<selected tag 1>-<selected tag 2>-<selected tag 3>`.. [optional]  # noqa: E501
-            tags (UsageAttributionTagNames): [optional]  # noqa: E501
-            updated_at (str): Shows the the most recent hour in the current months for all organizations for which all usages were calculated.. [optional]  # noqa: E501
-            values (UsageAttributionValues): [optional]  # noqa: E501
+            month (datetime): Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM].. [optional]
+            org_name (str): The name of the organization.. [optional]
+            public_id (str): The organization public ID.. [optional]
+            tag_config_source (str): The source of the usage attribution tag configuration and the selected tags in the format `<source_org_name>:<selected tag 1>-<selected tag 2>-<selected tag 3>`.. [optional]
+            tags (UsageAttributionTagNames): [optional]
+            updated_at (str): Shows the the most recent hour in the current months for all organizations for which all usages were calculated.. [optional]
+            values (UsageAttributionValues): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(UsageAttributionBody, cls)._from_openapi_data(kwargs)

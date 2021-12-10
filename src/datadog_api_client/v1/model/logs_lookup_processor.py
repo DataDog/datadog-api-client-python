@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class LogsLookupProcessor(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class LogsLookupProcessor(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,33 +58,28 @@ class LogsLookupProcessor(ModelNormal):
         """
         lazy_import()
         return {
-            "lookup_table": ([str],),  # noqa: E501
-            "source": (str,),  # noqa: E501
-            "target": (str,),  # noqa: E501
-            "type": (LogsLookupProcessorType,),  # noqa: E501
-            "default_lookup": (str,),  # noqa: E501
-            "is_enabled": (bool,),  # noqa: E501
-            "name": (str,),  # noqa: E501
+            "default_lookup": (str,),
+            "is_enabled": (bool,),
+            "lookup_table": ([str],),
+            "name": (str,),
+            "source": (str,),
+            "target": (str,),
+            "type": (LogsLookupProcessorType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "lookup_table": "lookup_table",  # noqa: E501
-        "source": "source",  # noqa: E501
-        "target": "target",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "default_lookup": "default_lookup",  # noqa: E501
-        "is_enabled": "is_enabled",  # noqa: E501
-        "name": "name",  # noqa: E501
+        "lookup_table": "lookup_table",
+        "source": "source",
+        "target": "target",
+        "type": "type",
+        "default_lookup": "default_lookup",
+        "is_enabled": "is_enabled",
+        "name": "name",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, lookup_table, source, target, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, lookup_table, source, target, type, *args, **kwargs):
         """LogsLookupProcessor - a model defined in OpenAPI
 
         Args:
@@ -133,9 +119,9 @@ class LogsLookupProcessor(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            default_lookup (str): Value to set the target attribute if the source value is not found in the list.. [optional]  # noqa: E501
-            is_enabled (bool): Whether or not the processor is enabled.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            name (str): Name of the processor.. [optional]  # noqa: E501
+            default_lookup (str): Value to set the target attribute if the source value is not found in the list.. [optional]
+            is_enabled (bool): Whether or not the processor is enabled.. [optional] if omitted the server will use the default value of False
+            name (str): Name of the processor.. [optional]
         """
         super().__init__(kwargs)
 
@@ -147,8 +133,7 @@ class LogsLookupProcessor(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, lookup_table, source, target, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, lookup_table, source, target, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsLookupProcessor, cls)._from_openapi_data(kwargs)

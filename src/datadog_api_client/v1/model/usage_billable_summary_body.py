@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class UsageBillableSummaryBody(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class UsageBillableSummaryBody(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,33 +51,28 @@ class UsageBillableSummaryBody(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "account_billable_usage": (int,),  # noqa: E501
-            "elapsed_usage_hours": (int,),  # noqa: E501
-            "first_billable_usage_hour": (datetime,),  # noqa: E501
-            "last_billable_usage_hour": (datetime,),  # noqa: E501
-            "org_billable_usage": (int,),  # noqa: E501
-            "percentage_in_account": (float,),  # noqa: E501
-            "usage_unit": (str,),  # noqa: E501
+            "account_billable_usage": (int,),
+            "elapsed_usage_hours": (int,),
+            "first_billable_usage_hour": (datetime,),
+            "last_billable_usage_hour": (datetime,),
+            "org_billable_usage": (int,),
+            "percentage_in_account": (float,),
+            "usage_unit": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "account_billable_usage": "account_billable_usage",  # noqa: E501
-        "elapsed_usage_hours": "elapsed_usage_hours",  # noqa: E501
-        "first_billable_usage_hour": "first_billable_usage_hour",  # noqa: E501
-        "last_billable_usage_hour": "last_billable_usage_hour",  # noqa: E501
-        "org_billable_usage": "org_billable_usage",  # noqa: E501
-        "percentage_in_account": "percentage_in_account",  # noqa: E501
-        "usage_unit": "usage_unit",  # noqa: E501
+        "account_billable_usage": "account_billable_usage",
+        "elapsed_usage_hours": "elapsed_usage_hours",
+        "first_billable_usage_hour": "first_billable_usage_hour",
+        "last_billable_usage_hour": "last_billable_usage_hour",
+        "org_billable_usage": "org_billable_usage",
+        "percentage_in_account": "percentage_in_account",
+        "usage_unit": "usage_unit",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """UsageBillableSummaryBody - a model defined in OpenAPI
 
         Keyword Args:
@@ -120,21 +106,20 @@ class UsageBillableSummaryBody(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_billable_usage (int): The total account usage.. [optional]  # noqa: E501
-            elapsed_usage_hours (int): Elapsed usage hours for some billable product.. [optional]  # noqa: E501
-            first_billable_usage_hour (datetime): The first billable hour for the org.. [optional]  # noqa: E501
-            last_billable_usage_hour (datetime): The last billable hour for the org.. [optional]  # noqa: E501
-            org_billable_usage (int): The number of units used within the billable timeframe.. [optional]  # noqa: E501
-            percentage_in_account (float): The percentage of account usage the org represents.. [optional]  # noqa: E501
-            usage_unit (str): Units pertaining to the usage.. [optional]  # noqa: E501
+            account_billable_usage (int): The total account usage.. [optional]
+            elapsed_usage_hours (int): Elapsed usage hours for some billable product.. [optional]
+            first_billable_usage_hour (datetime): The first billable hour for the org.. [optional]
+            last_billable_usage_hour (datetime): The last billable hour for the org.. [optional]
+            org_billable_usage (int): The number of units used within the billable timeframe.. [optional]
+            percentage_in_account (float): The percentage of account usage the org represents.. [optional]
+            usage_unit (str): Units pertaining to the usage.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(UsageBillableSummaryBody, cls)._from_openapi_data(kwargs)

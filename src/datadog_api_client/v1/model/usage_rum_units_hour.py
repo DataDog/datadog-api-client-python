@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class UsageRumUnitsHour(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class UsageRumUnitsHour(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,38 +51,33 @@ class UsageRumUnitsHour(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "browser_rum_lite_session_count": (int,),  # noqa: E501
-            "browser_rum_replay_session_count": (int,),  # noqa: E501
-            "browser_rum_units": (int,),  # noqa: E501
-            "mobile_rum_lite_session_count": (int,),  # noqa: E501
-            "mobile_rum_units": (int,),  # noqa: E501
-            "org_name": (str,),  # noqa: E501
-            "public_id": (str,),  # noqa: E501
+            "browser_rum_lite_session_count": (int,),
+            "browser_rum_replay_session_count": (int,),
+            "browser_rum_units": (int,),
+            "mobile_rum_lite_session_count": (int,),
+            "mobile_rum_units": (int,),
+            "org_name": (str,),
+            "public_id": (str,),
             "rum_units": (
                 int,
                 none_type,
-            ),  # noqa: E501
+            ),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "browser_rum_lite_session_count": "browser_rum_lite_session_count",  # noqa: E501
-        "browser_rum_replay_session_count": "browser_rum_replay_session_count",  # noqa: E501
-        "browser_rum_units": "browser_rum_units",  # noqa: E501
-        "mobile_rum_lite_session_count": "mobile_rum_lite_session_count",  # noqa: E501
-        "mobile_rum_units": "mobile_rum_units",  # noqa: E501
-        "org_name": "org_name",  # noqa: E501
-        "public_id": "public_id",  # noqa: E501
-        "rum_units": "rum_units",  # noqa: E501
+        "browser_rum_lite_session_count": "browser_rum_lite_session_count",
+        "browser_rum_replay_session_count": "browser_rum_replay_session_count",
+        "browser_rum_units": "browser_rum_units",
+        "mobile_rum_lite_session_count": "mobile_rum_lite_session_count",
+        "mobile_rum_units": "mobile_rum_units",
+        "org_name": "org_name",
+        "public_id": "public_id",
+        "rum_units": "rum_units",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """UsageRumUnitsHour - a model defined in OpenAPI
 
         Keyword Args:
@@ -125,22 +111,21 @@ class UsageRumUnitsHour(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            browser_rum_lite_session_count (int): Number of browser RUM lite sessions.. [optional]  # noqa: E501
-            browser_rum_replay_session_count (int): Number of browser RUM replay sessions.. [optional]  # noqa: E501
-            browser_rum_units (int): The number of browser RUM units.. [optional]  # noqa: E501
-            mobile_rum_lite_session_count (int): Number of mobile RUM lite sessions.. [optional]  # noqa: E501
-            mobile_rum_units (int): The number of mobile RUM units.. [optional]  # noqa: E501
-            org_name (str): The organization name.. [optional]  # noqa: E501
-            public_id (str): The organization public ID.. [optional]  # noqa: E501
-            rum_units (int, none_type): Total RUM units across mobile and browser RUM.. [optional]  # noqa: E501
+            browser_rum_lite_session_count (int): Number of browser RUM lite sessions.. [optional]
+            browser_rum_replay_session_count (int): Number of browser RUM replay sessions.. [optional]
+            browser_rum_units (int): The number of browser RUM units.. [optional]
+            mobile_rum_lite_session_count (int): Number of mobile RUM lite sessions.. [optional]
+            mobile_rum_units (int): The number of mobile RUM units.. [optional]
+            org_name (str): The organization name.. [optional]
+            public_id (str): The organization public ID.. [optional]
+            rum_units (int, none_type): Total RUM units across mobile and browser RUM.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(UsageRumUnitsHour, cls)._from_openapi_data(kwargs)

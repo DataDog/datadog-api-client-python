@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class SLOHistoryMetrics(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class SLOHistoryMetrics(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,37 +58,30 @@ class SLOHistoryMetrics(ModelNormal):
         """
         lazy_import()
         return {
-            "denominator": (SLOHistoryMetricsSeries,),  # noqa: E501
-            "interval": (int,),  # noqa: E501
-            "numerator": (SLOHistoryMetricsSeries,),  # noqa: E501
-            "query": (str,),  # noqa: E501
-            "res_type": (str,),  # noqa: E501
-            "resp_version": (int,),  # noqa: E501
-            "times": ([float],),  # noqa: E501
-            "message": (str,),  # noqa: E501
+            "denominator": (SLOHistoryMetricsSeries,),
+            "interval": (int,),
+            "message": (str,),
+            "numerator": (SLOHistoryMetricsSeries,),
+            "query": (str,),
+            "res_type": (str,),
+            "resp_version": (int,),
+            "times": ([float],),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "denominator": "denominator",  # noqa: E501
-        "interval": "interval",  # noqa: E501
-        "numerator": "numerator",  # noqa: E501
-        "query": "query",  # noqa: E501
-        "res_type": "res_type",  # noqa: E501
-        "resp_version": "resp_version",  # noqa: E501
-        "times": "times",  # noqa: E501
-        "message": "message",  # noqa: E501
+        "denominator": "denominator",
+        "interval": "interval",
+        "numerator": "numerator",
+        "query": "query",
+        "res_type": "res_type",
+        "resp_version": "resp_version",
+        "times": "times",
+        "message": "message",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(
-        self, denominator, interval, numerator, query, res_type, resp_version, times, *args, **kwargs
-    ):  # noqa: E501
+    def __init__(self, denominator, interval, numerator, query, res_type, resp_version, times, *args, **kwargs):
         """SLOHistoryMetrics - a model defined in OpenAPI
 
         Args:
@@ -140,7 +124,7 @@ class SLOHistoryMetrics(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            message (str): Optional message if there are specific query issues/warnings.. [optional]  # noqa: E501
+            message (str): Optional message if there are specific query issues/warnings.. [optional]
         """
         super().__init__(kwargs)
 
@@ -155,10 +139,9 @@ class SLOHistoryMetrics(ModelNormal):
         self.times = times
 
     @classmethod
-    @convert_js_args_to_python_args
     def _from_openapi_data(
         cls, denominator, interval, numerator, query, res_type, resp_version, times, *args, **kwargs
-    ):  # noqa: E501
+    ):
         """Helper creating a new instance from a response."""
 
         self = super(SLOHistoryMetrics, cls)._from_openapi_data(kwargs)

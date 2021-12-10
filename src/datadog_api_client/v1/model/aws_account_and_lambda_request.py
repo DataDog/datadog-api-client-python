@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class AWSAccountAndLambdaRequest(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class AWSAccountAndLambdaRequest(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,23 +51,18 @@ class AWSAccountAndLambdaRequest(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "account_id": (str,),  # noqa: E501
-            "lambda_arn": (str,),  # noqa: E501
+            "account_id": (str,),
+            "lambda_arn": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "account_id": "account_id",  # noqa: E501
-        "lambda_arn": "lambda_arn",  # noqa: E501
+        "account_id": "account_id",
+        "lambda_arn": "lambda_arn",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, account_id, lambda_arn, *args, **kwargs):  # noqa: E501
+    def __init__(self, account_id, lambda_arn, *args, **kwargs):
         """AWSAccountAndLambdaRequest - a model defined in OpenAPI
 
         Args:
@@ -123,8 +109,7 @@ class AWSAccountAndLambdaRequest(ModelNormal):
         self.lambda_arn = lambda_arn
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, account_id, lambda_arn, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, account_id, lambda_arn, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(AWSAccountAndLambdaRequest, cls)._from_openapi_data(kwargs)

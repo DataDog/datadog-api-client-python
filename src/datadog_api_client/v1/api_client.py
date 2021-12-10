@@ -111,73 +111,20 @@ class ApiClient(object):
 
     def _call_api(
         self,
-        resource_path: str,
         method: str,
-        path_params: typing.Optional[typing.Dict[str, typing.Any]] = None,
+        url: str,
         query_params: typing.Optional[typing.List[typing.Tuple[str, typing.Any]]] = None,
         header_params: typing.Optional[typing.Dict[str, typing.Any]] = None,
         body: typing.Optional[typing.Any] = None,
         post_params: typing.Optional[typing.List[typing.Tuple[str, typing.Any]]] = None,
-        files: typing.Optional[typing.Dict[str, typing.List[io.IOBase]]] = None,
         response_type: typing.Optional[typing.Tuple[typing.Any]] = None,
-        auth_settings: typing.Optional[typing.List[str]] = None,
         _return_http_data_only: typing.Optional[bool] = None,
-        collection_formats: typing.Optional[typing.Dict[str, str]] = None,
         _preload_content: bool = True,
         _request_timeout: typing.Optional[typing.Union[int, float, typing.Tuple]] = None,
-        _host: typing.Optional[str] = None,
         _check_type: typing.Optional[bool] = None,
     ):
-
-        config = self.configuration
-
-        # header parameters
-        header_params = header_params or {}
-        header_params.update(self.default_headers)
-        if self.cookie:
-            header_params["Cookie"] = self.cookie
-        if header_params:
-            header_params = self.sanitize_for_serialization(header_params)
-            header_params = dict(self.parameters_to_tuples(header_params, collection_formats))
-
-        # path parameters
-        if path_params:
-            path_params = self.sanitize_for_serialization(path_params)
-            path_params = self.parameters_to_tuples(path_params, collection_formats)
-            for k, v in path_params:
-                # specified safe chars, encode everything
-                resource_path = resource_path.replace("{%s}" % k, quote(str(v), safe=config.safe_chars_for_path_param))
-
-        # query parameters
-        if query_params:
-            query_params = self.sanitize_for_serialization(query_params)
-            query_params = self.parameters_to_tuples(query_params, collection_formats)
-
-        # post parameters
-        if post_params or files:
-            post_params = post_params if post_params else []
-            post_params = self.sanitize_for_serialization(post_params)
-            post_params = self.parameters_to_tuples(post_params, collection_formats)
-            post_params.extend(self.files_parameters(files))
-            if header_params["Content-Type"].startswith("multipart"):
-                post_params = self.parameters_to_multipart(post_params, (dict,))
-
-                # body
-        if body:
-            body = self.sanitize_for_serialization(body)
-
-        # auth setting
-        self.update_params_for_auth(header_params, query_params, auth_settings, resource_path, method, body)
-
-        # request url
-        if _host is None:
-            url = self.configuration.host + resource_path
-        else:
-            # use server/host defined in path or operation instead
-            url = _host + resource_path
-
         # perform request and return response
-        response_data = self.rest_client.request(
+        response = self.rest_client.request(
             method,
             url,
             query_params=query_params,
@@ -188,32 +135,33 @@ class ApiClient(object):
             _request_timeout=_request_timeout,
         )
 
-        self.last_response = response_data
-
-        return_data = response_data
-
         if not _preload_content:
-            return return_data
+            return response
 
         # deserialize response data
         if response_type:
-            if response_type != (file_type,):
+            if response_type == (file_type,):
+                content_disposition = response.getheader("Content-Disposition")
+                return_data = deserialize_file(
+                    response.data, self.configuration, content_disposition=content_disposition
+                )
+            else:
                 encoding = "utf-8"
-                content_type = response_data.getheader("content-type")
+                content_type = response.getheader("content-type")
                 if content_type is not None:
                     match = re.search(r"charset=([a-zA-Z\-\d]+)[\s\;]?", content_type)
                     if match:
                         encoding = match.group(1)
-                response_data.data = response_data.data.decode(encoding)
+                response_data = response.data.decode(encoding)
 
-            return_data = self.deserialize(response_data, response_type, _check_type)
+                return_data = self.deserialize(response_data, response_type, _check_type)
         else:
             return_data = None
 
         if _return_http_data_only:
             return return_data
         else:
-            return (return_data, response_data.status, response_data.getheaders())
+            return (return_data, response.status, response.getheaders())
 
     def parameters_to_multipart(self, params, collection_types):
         """Get parameters as list of tuples, formatting as json if value is collection_types
@@ -225,7 +173,7 @@ class ApiClient(object):
         new_params = []
         if collection_types is None:
             collection_types = dict
-        for k, v in params.items() if isinstance(params, dict) else params:  # noqa: E501
+        for k, v in params.items() if isinstance(params, dict) else params:
             if isinstance(v, collection_types):  # v is instance of collection_type, formatting as application/json
                 v = json.dumps(v, ensure_ascii=False).encode("utf-8")
                 field = RequestField(k, v)
@@ -265,10 +213,10 @@ class ApiClient(object):
             return {key: cls.sanitize_for_serialization(val) for key, val in obj.items()}
         raise ApiValueError("Unable to prepare type {} for serialization".format(obj.__class__.__name__))
 
-    def deserialize(self, response, response_type, _check_type):
+    def deserialize(self, response_data, response_type, _check_type):
         """Deserializes response into an object.
 
-        :param response: RESTResponse object to be deserialized.
+        :param response_data: Response data to be deserialized.
         :param response_type: For the response, a tuple containing:
             valid classes
             a list containing valid classes (for list schemas)
@@ -285,17 +233,11 @@ class ApiClient(object):
 
         :return: deserialized object.
         """
-        # handle file downloading
-        # save response body into a tmp file and return the instance
-        if response_type == (file_type,):
-            content_disposition = response.getheader("Content-Disposition")
-            return deserialize_file(response.data, self.configuration, content_disposition=content_disposition)
-
         # fetch data from response object
         try:
-            received_data = json.loads(response.data)
+            received_data = json.loads(response_data)
         except ValueError:
-            received_data = response.data
+            received_data = response_data
 
         # store our data under the key of 'received_data' so users have some
         # context if they are deserializing a string and the data type is wrong
@@ -377,44 +319,81 @@ class ApiClient(object):
             If parameter async_req is False or missing,
             then the method will return the response directly.
         """
+        # header parameters
+        header_params = header_params or {}
+        header_params.update(self.default_headers)
+        if self.cookie:
+            header_params["Cookie"] = self.cookie
+        if header_params:
+            header_params = self.sanitize_for_serialization(header_params)
+            header_params = dict(self.parameters_to_tuples(header_params, collection_formats))
+
+        # path parameters
+        if path_params:
+            path_params = self.sanitize_for_serialization(path_params)
+            path_params = self.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                resource_path = resource_path.replace(
+                    "{%s}" % k, quote(str(v), safe=self.configuration.safe_chars_for_path_param)
+                )
+
+        # query parameters
+        if query_params:
+            query_params = self.sanitize_for_serialization(query_params)
+            query_params = self.parameters_to_tuples(query_params, collection_formats)
+
+        # post parameters
+        if post_params or files:
+            post_params = post_params if post_params else []
+            post_params = self.sanitize_for_serialization(post_params)
+            post_params = self.parameters_to_tuples(post_params, collection_formats)
+            post_params.extend(self.files_parameters(files))
+            if header_params["Content-Type"].startswith("multipart"):
+                post_params = self.parameters_to_multipart(post_params, (dict))
+
+        # body
+        if body:
+            body = self.sanitize_for_serialization(body)
+
+        # auth setting
+        self.update_params_for_auth(header_params, query_params, auth_settings, resource_path, method, body)
+
+        # request url
+        if _host is None:
+            url = self.configuration.host + resource_path
+        else:
+            # use server/host defined in path or operation instead
+            url = _host + resource_path
+
         if not async_req:
             return self._call_api(
-                resource_path,
                 method,
-                path_params,
+                url,
                 query_params,
                 header_params,
                 body,
                 post_params,
-                files,
                 response_type,
-                auth_settings,
                 _return_http_data_only,
-                collection_formats,
                 _preload_content,
                 _request_timeout,
-                _host,
                 _check_type,
             )
 
         return self.pool.apply_async(
             self._call_api,
             (
-                resource_path,
                 method,
-                path_params,
+                url,
                 query_params,
                 header_params,
                 body,
                 post_params,
-                files,
                 response_type,
-                auth_settings,
                 _return_http_data_only,
-                collection_formats,
                 _preload_content,
                 _request_timeout,
-                _host,
                 _check_type,
             ),
         )
@@ -429,7 +408,7 @@ class ApiClient(object):
         new_params = []
         if collection_formats is None:
             collection_formats = {}
-        for k, v in params.items() if isinstance(params, dict) else params:  # noqa: E501
+        for k, v in params.items() if isinstance(params, dict) else params:
             if k in collection_formats:
                 collection_format = collection_formats[k]
                 if collection_format == "multi":

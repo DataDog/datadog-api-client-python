@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -40,8 +39,6 @@ class LogQueryDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -51,13 +48,7 @@ class LogQueryDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -71,29 +62,24 @@ class LogQueryDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "compute": (LogsQueryCompute,),  # noqa: E501
-            "group_by": ([LogQueryDefinitionGroupBy],),  # noqa: E501
-            "index": (str,),  # noqa: E501
-            "multi_compute": ([LogsQueryCompute],),  # noqa: E501
-            "search": (LogQueryDefinitionSearch,),  # noqa: E501
+            "compute": (LogsQueryCompute,),
+            "group_by": ([LogQueryDefinitionGroupBy],),
+            "index": (str,),
+            "multi_compute": ([LogsQueryCompute],),
+            "search": (LogQueryDefinitionSearch,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "compute": "compute",  # noqa: E501
-        "group_by": "group_by",  # noqa: E501
-        "index": "index",  # noqa: E501
-        "multi_compute": "multi_compute",  # noqa: E501
-        "search": "search",  # noqa: E501
+        "compute": "compute",
+        "group_by": "group_by",
+        "index": "index",
+        "multi_compute": "multi_compute",
+        "search": "search",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """LogQueryDefinition - a model defined in OpenAPI
 
         Keyword Args:
@@ -127,19 +113,18 @@ class LogQueryDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            compute (LogsQueryCompute): [optional]  # noqa: E501
-            group_by ([LogQueryDefinitionGroupBy]): List of tag prefixes to group by in the case of a cluster check.. [optional]  # noqa: E501
-            index (str): A coma separated-list of index names. Use \"*\" query all indexes at once. [Multiple Indexes](https://docs.datadoghq.com/logs/indexes/#multiple-indexes). [optional]  # noqa: E501
-            multi_compute ([LogsQueryCompute]): This field is mutually exclusive with `compute`.. [optional]  # noqa: E501
-            search (LogQueryDefinitionSearch): [optional]  # noqa: E501
+            compute (LogsQueryCompute): [optional]
+            group_by ([LogQueryDefinitionGroupBy]): List of tag prefixes to group by in the case of a cluster check.. [optional]
+            index (str): A coma separated-list of index names. Use \"*\" query all indexes at once. [Multiple Indexes](https://docs.datadoghq.com/logs/indexes/#multiple-indexes). [optional]
+            multi_compute ([LogsQueryCompute]): This field is mutually exclusive with `compute`.. [optional]
+            search (LogQueryDefinitionSearch): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogQueryDefinition, cls)._from_openapi_data(kwargs)

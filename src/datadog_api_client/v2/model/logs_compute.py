@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class LogsCompute(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class LogsCompute(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,27 +60,22 @@ class LogsCompute(ModelNormal):
         """
         lazy_import()
         return {
-            "aggregation": (LogsAggregationFunction,),  # noqa: E501
-            "interval": (str,),  # noqa: E501
-            "metric": (str,),  # noqa: E501
-            "type": (LogsComputeType,),  # noqa: E501
+            "aggregation": (LogsAggregationFunction,),
+            "interval": (str,),
+            "metric": (str,),
+            "type": (LogsComputeType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "aggregation": "aggregation",  # noqa: E501
-        "interval": "interval",  # noqa: E501
-        "metric": "metric",  # noqa: E501
-        "type": "type",  # noqa: E501
+        "aggregation": "aggregation",
+        "interval": "interval",
+        "metric": "metric",
+        "type": "type",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, aggregation, *args, **kwargs):  # noqa: E501
+    def __init__(self, aggregation, *args, **kwargs):
         """LogsCompute - a model defined in OpenAPI
 
         Args:
@@ -126,9 +112,9 @@ class LogsCompute(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            interval (str): The time buckets' size (only used for type=timeseries) Defaults to a resolution of 150 points. [optional]  # noqa: E501
-            metric (str): The metric to use. [optional]  # noqa: E501
-            type (LogsComputeType): [optional]  # noqa: E501
+            interval (str): The time buckets' size (only used for type=timeseries) Defaults to a resolution of 150 points. [optional]
+            metric (str): The metric to use. [optional]
+            type (LogsComputeType): [optional]
         """
         super().__init__(kwargs)
 
@@ -137,8 +123,7 @@ class LogsCompute(ModelNormal):
         self.aggregation = aggregation
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, aggregation, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, aggregation, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsCompute, cls)._from_openapi_data(kwargs)

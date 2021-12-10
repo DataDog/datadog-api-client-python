@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class LogsAttributeRemapper(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class LogsAttributeRemapper(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,39 +60,34 @@ class LogsAttributeRemapper(ModelNormal):
         """
         lazy_import()
         return {
-            "sources": ([str],),  # noqa: E501
-            "target": (str,),  # noqa: E501
-            "type": (LogsAttributeRemapperType,),  # noqa: E501
-            "is_enabled": (bool,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "override_on_conflict": (bool,),  # noqa: E501
-            "preserve_source": (bool,),  # noqa: E501
-            "source_type": (str,),  # noqa: E501
-            "target_format": (TargetFormatType,),  # noqa: E501
-            "target_type": (str,),  # noqa: E501
+            "is_enabled": (bool,),
+            "name": (str,),
+            "override_on_conflict": (bool,),
+            "preserve_source": (bool,),
+            "source_type": (str,),
+            "sources": ([str],),
+            "target": (str,),
+            "target_format": (TargetFormatType,),
+            "target_type": (str,),
+            "type": (LogsAttributeRemapperType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "sources": "sources",  # noqa: E501
-        "target": "target",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "is_enabled": "is_enabled",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "override_on_conflict": "override_on_conflict",  # noqa: E501
-        "preserve_source": "preserve_source",  # noqa: E501
-        "source_type": "source_type",  # noqa: E501
-        "target_format": "target_format",  # noqa: E501
-        "target_type": "target_type",  # noqa: E501
+        "sources": "sources",
+        "target": "target",
+        "type": "type",
+        "is_enabled": "is_enabled",
+        "name": "name",
+        "override_on_conflict": "override_on_conflict",
+        "preserve_source": "preserve_source",
+        "source_type": "source_type",
+        "target_format": "target_format",
+        "target_type": "target_type",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, sources, target, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, sources, target, type, *args, **kwargs):
         """LogsAttributeRemapper - a model defined in OpenAPI
 
         Args:
@@ -140,13 +126,13 @@ class LogsAttributeRemapper(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            is_enabled (bool): Whether or not the processor is enabled.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            name (str): Name of the processor.. [optional]  # noqa: E501
-            override_on_conflict (bool): Override or not the target element if already set,. [optional] if omitted the server will use the default value of False  # noqa: E501
-            preserve_source (bool): Remove or preserve the remapped source element.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            source_type (str): Defines if the sources are from log `attribute` or `tag`.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
-            target_format (TargetFormatType): [optional]  # noqa: E501
-            target_type (str): Defines if the final attribute or tag name is from log `attribute` or `tag`.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
+            is_enabled (bool): Whether or not the processor is enabled.. [optional] if omitted the server will use the default value of False
+            name (str): Name of the processor.. [optional]
+            override_on_conflict (bool): Override or not the target element if already set,. [optional] if omitted the server will use the default value of False
+            preserve_source (bool): Remove or preserve the remapped source element.. [optional] if omitted the server will use the default value of False
+            source_type (str): Defines if the sources are from log `attribute` or `tag`.. [optional] if omitted the server will use the default value of "attribute"
+            target_format (TargetFormatType): [optional]
+            target_type (str): Defines if the final attribute or tag name is from log `attribute` or `tag`.. [optional] if omitted the server will use the default value of "attribute"
         """
         super().__init__(kwargs)
 
@@ -157,8 +143,7 @@ class LogsAttributeRemapper(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, sources, target, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, sources, target, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsAttributeRemapper, cls)._from_openapi_data(kwargs)

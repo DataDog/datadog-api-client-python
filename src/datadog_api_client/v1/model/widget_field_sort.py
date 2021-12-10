@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class WidgetFieldSort(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class WidgetFieldSort(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,23 +58,18 @@ class WidgetFieldSort(ModelNormal):
         """
         lazy_import()
         return {
-            "column": (str,),  # noqa: E501
-            "order": (WidgetSort,),  # noqa: E501
+            "column": (str,),
+            "order": (WidgetSort,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "column": "column",  # noqa: E501
-        "order": "order",  # noqa: E501
+        "column": "column",
+        "order": "order",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, column, order, *args, **kwargs):  # noqa: E501
+    def __init__(self, column, order, *args, **kwargs):
         """WidgetFieldSort - a model defined in OpenAPI
 
         Args:
@@ -130,8 +116,7 @@ class WidgetFieldSort(ModelNormal):
         self.order = order
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, column, order, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, column, order, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(WidgetFieldSort, cls)._from_openapi_data(kwargs)

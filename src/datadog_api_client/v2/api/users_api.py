@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
@@ -294,9 +292,9 @@ class UsersApi(object):
         )
 
     def create_service_account(self, body, **kwargs):
-        """Create a service account  # noqa: E501
+        """Create a service account
 
-        Create a service account for your organization.  # noqa: E501
+        Create a service account for your organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -337,9 +335,9 @@ class UsersApi(object):
         return self._create_service_account_endpoint.call_with_http_info(**kwargs)
 
     def create_user(self, body, **kwargs):
-        """Create a user  # noqa: E501
+        """Create a user
 
-        Create a user for your organization.  # noqa: E501
+        Create a user for your organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -380,9 +378,9 @@ class UsersApi(object):
         return self._create_user_endpoint.call_with_http_info(**kwargs)
 
     def disable_user(self, user_id, **kwargs):
-        """Disable a user  # noqa: E501
+        """Disable a user
 
-        Disable a user. Can only be used with an application key belonging to an administrator user.  # noqa: E501
+        Disable a user. Can only be used with an application key belonging to an administrator user.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -423,9 +421,9 @@ class UsersApi(object):
         return self._disable_user_endpoint.call_with_http_info(**kwargs)
 
     def get_invitation(self, user_invitation_uuid, **kwargs):
-        """Get a user invitation  # noqa: E501
+        """Get a user invitation
 
-        Returns a single user invitation by its UUID.  # noqa: E501
+        Returns a single user invitation by its UUID.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -466,9 +464,9 @@ class UsersApi(object):
         return self._get_invitation_endpoint.call_with_http_info(**kwargs)
 
     def get_user(self, user_id, **kwargs):
-        """Get user details  # noqa: E501
+        """Get user details
 
-        Get a user in the organization specified by the user’s `user_id`.  # noqa: E501
+        Get a user in the organization specified by the user’s `user_id`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -509,9 +507,9 @@ class UsersApi(object):
         return self._get_user_endpoint.call_with_http_info(**kwargs)
 
     def list_user_organizations(self, user_id, **kwargs):
-        """Get a user organization  # noqa: E501
+        """Get a user organization
 
-        Get a user organization. Returns the user information and all organizations joined by this user.  # noqa: E501
+        Get a user organization. Returns the user information and all organizations joined by this user.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -552,9 +550,9 @@ class UsersApi(object):
         return self._list_user_organizations_endpoint.call_with_http_info(**kwargs)
 
     def list_user_permissions(self, user_id, **kwargs):
-        """Get a user permissions  # noqa: E501
+        """Get a user permissions
 
-        Get a user permission set. Returns a list of the user’s permissions granted by the associated user's roles.  # noqa: E501
+        Get a user permission set. Returns a list of the user’s permissions granted by the associated user's roles.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -595,9 +593,9 @@ class UsersApi(object):
         return self._list_user_permissions_endpoint.call_with_http_info(**kwargs)
 
     def list_users(self, **kwargs):
-        """List all users  # noqa: E501
+        """List all users
 
-        Get the list of all users in the organization. This list includes all users even if they are deactivated or unverified.  # noqa: E501
+        Get the list of all users in the organization. This list includes all users even if they are deactivated or unverified.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -641,9 +639,9 @@ class UsersApi(object):
         return self._list_users_endpoint.call_with_http_info(**kwargs)
 
     def send_invitations(self, body, **kwargs):
-        """Send invitation emails  # noqa: E501
+        """Send invitation emails
 
-        Sends emails to one or more users inviting them to join the organization.  # noqa: E501
+        Sends emails to one or more users inviting them to join the organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -684,9 +682,9 @@ class UsersApi(object):
         return self._send_invitations_endpoint.call_with_http_info(**kwargs)
 
     def update_user(self, user_id, body, **kwargs):
-        """Update a user  # noqa: E501
+        """Update a user
 
-        Edit a user. Can only be used with an application key belonging to an administrator user.  # noqa: E501
+        Edit a user. Can only be used with an application key belonging to an administrator user.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class ApmStatsQueryDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class ApmStatsQueryDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,33 +60,28 @@ class ApmStatsQueryDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "env": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "primary_tag": (str,),  # noqa: E501
-            "row_type": (ApmStatsQueryRowType,),  # noqa: E501
-            "service": (str,),  # noqa: E501
-            "columns": ([ApmStatsQueryColumnType],),  # noqa: E501
-            "resource": (str,),  # noqa: E501
+            "columns": ([ApmStatsQueryColumnType],),
+            "env": (str,),
+            "name": (str,),
+            "primary_tag": (str,),
+            "resource": (str,),
+            "row_type": (ApmStatsQueryRowType,),
+            "service": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "env": "env",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "primary_tag": "primary_tag",  # noqa: E501
-        "row_type": "row_type",  # noqa: E501
-        "service": "service",  # noqa: E501
-        "columns": "columns",  # noqa: E501
-        "resource": "resource",  # noqa: E501
+        "env": "env",
+        "name": "name",
+        "primary_tag": "primary_tag",
+        "row_type": "row_type",
+        "service": "service",
+        "columns": "columns",
+        "resource": "resource",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, env, name, primary_tag, row_type, service, *args, **kwargs):  # noqa: E501
+    def __init__(self, env, name, primary_tag, row_type, service, *args, **kwargs):
         """ApmStatsQueryDefinition - a model defined in OpenAPI
 
         Args:
@@ -136,8 +122,8 @@ class ApmStatsQueryDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            columns ([ApmStatsQueryColumnType]): Column properties used by the front end for display.. [optional]  # noqa: E501
-            resource (str): Resource name.. [optional]  # noqa: E501
+            columns ([ApmStatsQueryColumnType]): Column properties used by the front end for display.. [optional]
+            resource (str): Resource name.. [optional]
         """
         super().__init__(kwargs)
 
@@ -150,8 +136,7 @@ class ApmStatsQueryDefinition(ModelNormal):
         self.service = service
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, env, name, primary_tag, row_type, service, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, env, name, primary_tag, row_type, service, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(ApmStatsQueryDefinition, cls)._from_openapi_data(kwargs)

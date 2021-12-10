@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class HostListResponse(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class HostListResponse(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,25 +58,20 @@ class HostListResponse(ModelNormal):
         """
         lazy_import()
         return {
-            "host_list": ([Host],),  # noqa: E501
-            "total_matching": (int,),  # noqa: E501
-            "total_returned": (int,),  # noqa: E501
+            "host_list": ([Host],),
+            "total_matching": (int,),
+            "total_returned": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "host_list": "host_list",  # noqa: E501
-        "total_matching": "total_matching",  # noqa: E501
-        "total_returned": "total_returned",  # noqa: E501
+        "host_list": "host_list",
+        "total_matching": "total_matching",
+        "total_returned": "total_returned",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """HostListResponse - a model defined in OpenAPI
 
         Keyword Args:
@@ -119,17 +105,16 @@ class HostListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            host_list ([Host]): Array of hosts.. [optional]  # noqa: E501
-            total_matching (int): Number of host matching the query.. [optional]  # noqa: E501
-            total_returned (int): Number of host returned.. [optional]  # noqa: E501
+            host_list ([Host]): Array of hosts.. [optional]
+            total_matching (int): Number of host matching the query.. [optional]
+            total_returned (int): Number of host returned.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(HostListResponse, cls)._from_openapi_data(kwargs)

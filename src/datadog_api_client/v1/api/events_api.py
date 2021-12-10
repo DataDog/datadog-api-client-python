@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.event_create_request import EventCreateRequest
@@ -142,9 +140,9 @@ class EventsApi(object):
         )
 
     def create_event(self, body, **kwargs):
-        """Post an event  # noqa: E501
+        """Post an event
 
-        This endpoint allows you to post events to the stream. Tag them, set priority and event aggregate them with other events.  # noqa: E501
+        This endpoint allows you to post events to the stream. Tag them, set priority and event aggregate them with other events.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -185,9 +183,9 @@ class EventsApi(object):
         return self._create_event_endpoint.call_with_http_info(**kwargs)
 
     def get_event(self, event_id, **kwargs):
-        """Get an event  # noqa: E501
+        """Get an event
 
-        This endpoint allows you to query for event details.  **Note**: If the event you’re querying contains markdown formatting of any kind, you may see characters such as `%`,`\\`,`n` in your output.  # noqa: E501
+        This endpoint allows you to query for event details.  **Note**: If the event you’re querying contains markdown formatting of any kind, you may see characters such as `%`,`\\`,`n` in your output.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -228,9 +226,9 @@ class EventsApi(object):
         return self._get_event_endpoint.call_with_http_info(**kwargs)
 
     def list_events(self, start, end, **kwargs):
-        """Query the event stream  # noqa: E501
+        """Query the event stream
 
-        The event stream can be queried and filtered by time, priority, sources and tags.  **Notes**: - If the event you’re querying contains markdown formatting of any kind, you may see characters such as `%`,`\\`,`n` in your output.  - This endpoint returns a maximum of `1000` most recent results. To return additional results, identify the last timestamp of the last result and set that as the `end` query time to paginate the results. You can also use the page parameter to specify which set of `1000` results to return.  # noqa: E501
+        The event stream can be queried and filtered by time, priority, sources and tags.  **Notes**: - If the event you’re querying contains markdown formatting of any kind, you may see characters such as `%`,`\\`,`n` in your output.  - This endpoint returns a maximum of `1000` most recent results. To return additional results, identify the last timestamp of the last result and set that as the `end` query time to paginate the results. You can also use the page parameter to specify which set of `1000` results to return.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

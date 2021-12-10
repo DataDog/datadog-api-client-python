@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class SyntheticsBrowserVariable(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class SyntheticsBrowserVariable(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,29 +58,24 @@ class SyntheticsBrowserVariable(ModelNormal):
         """
         lazy_import()
         return {
-            "name": (str,),  # noqa: E501
-            "type": (SyntheticsBrowserVariableType,),  # noqa: E501
-            "example": (str,),  # noqa: E501
-            "id": (str,),  # noqa: E501
-            "pattern": (str,),  # noqa: E501
+            "example": (str,),
+            "id": (str,),
+            "name": (str,),
+            "pattern": (str,),
+            "type": (SyntheticsBrowserVariableType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "name": "name",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "example": "example",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "pattern": "pattern",  # noqa: E501
+        "name": "name",
+        "type": "type",
+        "example": "example",
+        "id": "id",
+        "pattern": "pattern",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, name, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, type, *args, **kwargs):
         """SyntheticsBrowserVariable - a model defined in OpenAPI
 
         Args:
@@ -127,9 +113,9 @@ class SyntheticsBrowserVariable(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            example (str): Example for the variable.. [optional]  # noqa: E501
-            id (str): ID for the variable. Global variables require an ID.. [optional]  # noqa: E501
-            pattern (str): Pattern of the variable.. [optional]  # noqa: E501
+            example (str): Example for the variable.. [optional]
+            id (str): ID for the variable. Global variables require an ID.. [optional]
+            pattern (str): Pattern of the variable.. [optional]
         """
         super().__init__(kwargs)
 
@@ -139,8 +125,7 @@ class SyntheticsBrowserVariable(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsBrowserVariable, cls)._from_openapi_data(kwargs)

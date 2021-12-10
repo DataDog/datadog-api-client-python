@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.check_can_delete_slo_response import CheckCanDeleteSLOResponse
@@ -310,9 +308,9 @@ class ServiceLevelObjectivesApi(object):
         )
 
     def check_can_delete_slo(self, ids, **kwargs):
-        """Check if SLOs can be safely deleted  # noqa: E501
+        """Check if SLOs can be safely deleted
 
-        Check if an SLO can be safely deleted. For example, assure an SLO can be deleted without disrupting a dashboard.  # noqa: E501
+        Check if an SLO can be safely deleted. For example, assure an SLO can be deleted without disrupting a dashboard.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -353,9 +351,9 @@ class ServiceLevelObjectivesApi(object):
         return self._check_can_delete_slo_endpoint.call_with_http_info(**kwargs)
 
     def create_slo(self, body, **kwargs):
-        """Create an SLO object  # noqa: E501
+        """Create an SLO object
 
-        Create a service level objective object.  # noqa: E501
+        Create a service level objective object.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -396,9 +394,9 @@ class ServiceLevelObjectivesApi(object):
         return self._create_slo_endpoint.call_with_http_info(**kwargs)
 
     def delete_slo(self, slo_id, **kwargs):
-        """Delete an SLO  # noqa: E501
+        """Delete an SLO
 
-        Permanently delete the specified service level objective object.  If an SLO is used in a dashboard, the `DELETE /v1/slo/` endpoint returns a 409 conflict error because the SLO is referenced in a dashboard.  # noqa: E501
+        Permanently delete the specified service level objective object.  If an SLO is used in a dashboard, the `DELETE /v1/slo/` endpoint returns a 409 conflict error because the SLO is referenced in a dashboard.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -440,9 +438,9 @@ class ServiceLevelObjectivesApi(object):
         return self._delete_slo_endpoint.call_with_http_info(**kwargs)
 
     def delete_slo_timeframe_in_bulk(self, body, **kwargs):
-        """Bulk Delete SLO Timeframes  # noqa: E501
+        """Bulk Delete SLO Timeframes
 
-        Delete (or partially delete) multiple service level objective objects.  This endpoint facilitates deletion of one or more thresholds for one or more service level objective objects. If all thresholds are deleted, the service level objective object is deleted as well.  # noqa: E501
+        Delete (or partially delete) multiple service level objective objects.  This endpoint facilitates deletion of one or more thresholds for one or more service level objective objects. If all thresholds are deleted, the service level objective object is deleted as well.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -483,9 +481,9 @@ class ServiceLevelObjectivesApi(object):
         return self._delete_slo_timeframe_in_bulk_endpoint.call_with_http_info(**kwargs)
 
     def get_slo(self, slo_id, **kwargs):
-        """Get an SLO's details  # noqa: E501
+        """Get an SLO's details
 
-        Get a service level objective object.  # noqa: E501
+        Get a service level objective object.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -527,9 +525,9 @@ class ServiceLevelObjectivesApi(object):
         return self._get_slo_endpoint.call_with_http_info(**kwargs)
 
     def get_slo_corrections(self, slo_id, **kwargs):
-        """Get Corrections For an SLO  # noqa: E501
+        """Get Corrections For an SLO
 
-        Get corrections applied to an SLO  # noqa: E501
+        Get corrections applied to an SLO
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -570,9 +568,9 @@ class ServiceLevelObjectivesApi(object):
         return self._get_slo_corrections_endpoint.call_with_http_info(**kwargs)
 
     def get_slo_history(self, slo_id, from_ts, to_ts, **kwargs):
-        """Get an SLO's history  # noqa: E501
+        """Get an SLO's history
 
-        Get a specific SLO’s history, regardless of its SLO type.  The detailed history data is structured according to the source data type. For example, metric data is included for event SLOs that use the metric source, and monitor SLO types include the monitor transition history.  **Note:** There are different response formats for event based and time based SLOs. Examples of both are shown.  # noqa: E501
+        Get a specific SLO’s history, regardless of its SLO type.  The detailed history data is structured according to the source data type. For example, metric data is included for event SLOs that use the metric source, and monitor SLO types include the monitor transition history.  **Note:** There are different response formats for event based and time based SLOs. Examples of both are shown.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -619,9 +617,9 @@ class ServiceLevelObjectivesApi(object):
         return self._get_slo_history_endpoint.call_with_http_info(**kwargs)
 
     def list_slos(self, **kwargs):
-        """Get all SLOs  # noqa: E501
+        """Get all SLOs
 
-        Get a list of service level objective objects for your organization.  # noqa: E501
+        Get a list of service level objective objects for your organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -665,9 +663,9 @@ class ServiceLevelObjectivesApi(object):
         return self._list_slos_endpoint.call_with_http_info(**kwargs)
 
     def update_slo(self, slo_id, body, **kwargs):
-        """Update an SLO  # noqa: E501
+        """Update an SLO
 
-        Update the specified service level objective object.  # noqa: E501
+        Update the specified service level objective object.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

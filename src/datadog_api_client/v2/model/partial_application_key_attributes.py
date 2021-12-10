@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class PartialApplicationKeyAttributes(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,18 +38,12 @@ class PartialApplicationKeyAttributes(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "last4": {
             "max_length": 4,
             "min_length": 4,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -65,28 +56,23 @@ class PartialApplicationKeyAttributes(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "created_at": (str,),  # noqa: E501
-            "last4": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
+            "created_at": (str,),
+            "last4": (str,),
+            "name": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "created_at": "created_at",  # noqa: E501
-        "last4": "last4",  # noqa: E501
-        "name": "name",  # noqa: E501
+        "created_at": "created_at",
+        "last4": "last4",
+        "name": "name",
     }
 
     read_only_vars = {
-        "created_at",  # noqa: E501
-        "last4",  # noqa: E501
+        "created_at",
+        "last4",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """PartialApplicationKeyAttributes - a model defined in OpenAPI
 
         Keyword Args:
@@ -120,17 +106,16 @@ class PartialApplicationKeyAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created_at (str): Creation date of the application key.. [optional]  # noqa: E501
-            last4 (str): The last four characters of the application key.. [optional]  # noqa: E501
-            name (str): Name of the application key.. [optional]  # noqa: E501
+            created_at (str): Creation date of the application key.. [optional]
+            last4 (str): The last four characters of the application key.. [optional]
+            name (str): Name of the application key.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(PartialApplicationKeyAttributes, cls)._from_openapi_data(kwargs)

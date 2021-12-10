@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class SyntheticsBrowserTestResultData(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class SyntheticsBrowserTestResultData(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,41 +60,36 @@ class SyntheticsBrowserTestResultData(ModelNormal):
         """
         lazy_import()
         return {
-            "browser_type": (str,),  # noqa: E501
-            "browser_version": (str,),  # noqa: E501
-            "device": (SyntheticsDevice,),  # noqa: E501
-            "duration": (float,),  # noqa: E501
-            "error": (str,),  # noqa: E501
-            "passed": (bool,),  # noqa: E501
-            "received_email_count": (int,),  # noqa: E501
-            "start_url": (str,),  # noqa: E501
-            "step_details": ([SyntheticsStepDetail],),  # noqa: E501
-            "thumbnails_bucket_key": (bool,),  # noqa: E501
-            "time_to_interactive": (float,),  # noqa: E501
+            "browser_type": (str,),
+            "browser_version": (str,),
+            "device": (SyntheticsDevice,),
+            "duration": (float,),
+            "error": (str,),
+            "passed": (bool,),
+            "received_email_count": (int,),
+            "start_url": (str,),
+            "step_details": ([SyntheticsStepDetail],),
+            "thumbnails_bucket_key": (bool,),
+            "time_to_interactive": (float,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "browser_type": "browserType",  # noqa: E501
-        "browser_version": "browserVersion",  # noqa: E501
-        "device": "device",  # noqa: E501
-        "duration": "duration",  # noqa: E501
-        "error": "error",  # noqa: E501
-        "passed": "passed",  # noqa: E501
-        "received_email_count": "receivedEmailCount",  # noqa: E501
-        "start_url": "startUrl",  # noqa: E501
-        "step_details": "stepDetails",  # noqa: E501
-        "thumbnails_bucket_key": "thumbnailsBucketKey",  # noqa: E501
-        "time_to_interactive": "timeToInteractive",  # noqa: E501
+        "browser_type": "browserType",
+        "browser_version": "browserVersion",
+        "device": "device",
+        "duration": "duration",
+        "error": "error",
+        "passed": "passed",
+        "received_email_count": "receivedEmailCount",
+        "start_url": "startUrl",
+        "step_details": "stepDetails",
+        "thumbnails_bucket_key": "thumbnailsBucketKey",
+        "time_to_interactive": "timeToInteractive",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SyntheticsBrowserTestResultData - a model defined in OpenAPI
 
         Keyword Args:
@@ -137,25 +123,24 @@ class SyntheticsBrowserTestResultData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            browser_type (str): Type of browser device used for the browser test.. [optional]  # noqa: E501
-            browser_version (str): Browser version used for the browser test.. [optional]  # noqa: E501
-            device (SyntheticsDevice): [optional]  # noqa: E501
-            duration (float): Global duration in second of the browser test.. [optional]  # noqa: E501
-            error (str): Error returned for the browser test.. [optional]  # noqa: E501
-            passed (bool): Whether or not the browser test was conducted.. [optional]  # noqa: E501
-            received_email_count (int): The amount of email received during the browser test.. [optional]  # noqa: E501
-            start_url (str): Starting URL for the browser test.. [optional]  # noqa: E501
-            step_details ([SyntheticsStepDetail]): Array containing the different browser test steps.. [optional]  # noqa: E501
-            thumbnails_bucket_key (bool): Whether or not a thumbnail is associated with the browser test.. [optional]  # noqa: E501
-            time_to_interactive (float): Time in second to wait before the browser test starts after reaching the start URL.. [optional]  # noqa: E501
+            browser_type (str): Type of browser device used for the browser test.. [optional]
+            browser_version (str): Browser version used for the browser test.. [optional]
+            device (SyntheticsDevice): [optional]
+            duration (float): Global duration in second of the browser test.. [optional]
+            error (str): Error returned for the browser test.. [optional]
+            passed (bool): Whether or not the browser test was conducted.. [optional]
+            received_email_count (int): The amount of email received during the browser test.. [optional]
+            start_url (str): Starting URL for the browser test.. [optional]
+            step_details ([SyntheticsStepDetail]): Array containing the different browser test steps.. [optional]
+            thumbnails_bucket_key (bool): Whether or not a thumbnail is associated with the browser test.. [optional]
+            time_to_interactive (float): Time in second to wait before the browser test starts after reaching the start URL.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsBrowserTestResultData, cls)._from_openapi_data(kwargs)

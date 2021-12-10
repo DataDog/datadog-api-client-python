@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class LogsArithmeticProcessor(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class LogsArithmeticProcessor(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,31 +58,26 @@ class LogsArithmeticProcessor(ModelNormal):
         """
         lazy_import()
         return {
-            "expression": (str,),  # noqa: E501
-            "target": (str,),  # noqa: E501
-            "type": (LogsArithmeticProcessorType,),  # noqa: E501
-            "is_enabled": (bool,),  # noqa: E501
-            "is_replace_missing": (bool,),  # noqa: E501
-            "name": (str,),  # noqa: E501
+            "expression": (str,),
+            "is_enabled": (bool,),
+            "is_replace_missing": (bool,),
+            "name": (str,),
+            "target": (str,),
+            "type": (LogsArithmeticProcessorType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "expression": "expression",  # noqa: E501
-        "target": "target",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "is_enabled": "is_enabled",  # noqa: E501
-        "is_replace_missing": "is_replace_missing",  # noqa: E501
-        "name": "name",  # noqa: E501
+        "expression": "expression",
+        "target": "target",
+        "type": "type",
+        "is_enabled": "is_enabled",
+        "is_replace_missing": "is_replace_missing",
+        "name": "name",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, expression, target, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, expression, target, type, *args, **kwargs):
         """LogsArithmeticProcessor - a model defined in OpenAPI
 
         Args:
@@ -130,9 +116,9 @@ class LogsArithmeticProcessor(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            is_enabled (bool): Whether or not the processor is enabled.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            is_replace_missing (bool): If `true`, it replaces all missing attributes of expression by `0`, `false` skip the operation if an attribute is missing.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            name (str): Name of the processor.. [optional]  # noqa: E501
+            is_enabled (bool): Whether or not the processor is enabled.. [optional] if omitted the server will use the default value of False
+            is_replace_missing (bool): If `true`, it replaces all missing attributes of expression by `0`, `false` skip the operation if an attribute is missing.. [optional] if omitted the server will use the default value of False
+            name (str): Name of the processor.. [optional]
         """
         super().__init__(kwargs)
 
@@ -143,8 +129,7 @@ class LogsArithmeticProcessor(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, expression, target, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, expression, target, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsArithmeticProcessor, cls)._from_openapi_data(kwargs)

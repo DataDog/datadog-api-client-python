@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class UserInvitationDataAttributes(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class UserInvitationDataAttributes(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,27 +51,22 @@ class UserInvitationDataAttributes(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "created_at": (datetime,),  # noqa: E501
-            "expires_at": (datetime,),  # noqa: E501
-            "invite_type": (str,),  # noqa: E501
-            "uuid": (str,),  # noqa: E501
+            "created_at": (datetime,),
+            "expires_at": (datetime,),
+            "invite_type": (str,),
+            "uuid": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "created_at": "created_at",  # noqa: E501
-        "expires_at": "expires_at",  # noqa: E501
-        "invite_type": "invite_type",  # noqa: E501
-        "uuid": "uuid",  # noqa: E501
+        "created_at": "created_at",
+        "expires_at": "expires_at",
+        "invite_type": "invite_type",
+        "uuid": "uuid",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """UserInvitationDataAttributes - a model defined in OpenAPI
 
         Keyword Args:
@@ -114,18 +100,17 @@ class UserInvitationDataAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created_at (datetime): Creation time of the user invitation.. [optional]  # noqa: E501
-            expires_at (datetime): Time of invitation expiration.. [optional]  # noqa: E501
-            invite_type (str): Type of invitation.. [optional]  # noqa: E501
-            uuid (str): UUID of the user invitation.. [optional]  # noqa: E501
+            created_at (datetime): Creation time of the user invitation.. [optional]
+            expires_at (datetime): Time of invitation expiration.. [optional]
+            invite_type (str): Type of invitation.. [optional]
+            uuid (str): UUID of the user invitation.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(UserInvitationDataAttributes, cls)._from_openapi_data(kwargs)
