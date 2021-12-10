@@ -7,7 +7,7 @@ Feature: Incidents
     And a valid "appKeyAuth" key in the system
     And an instance of "Incidents" API
 
-  @generated @skip
+  @generated @skip @team:DataDog/incident-app
   Scenario: Create an incident returns "Bad Request" response
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
@@ -15,6 +15,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/incident-app
   Scenario: Create an incident returns "CREATED" response
     Given there is a valid "user" in the system
     And operation "CreateIncident" enabled
@@ -23,7 +24,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 201 CREATED
 
-  @generated @skip
+  @generated @skip @team:DataDog/incident-app
   Scenario: Create an incident returns "Not Found" response
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
@@ -31,7 +32,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
+  @generated @skip @team:DataDog/incident-app
   Scenario: Delete an existing incident returns "Bad Request" response
     Given operation "DeleteIncident" enabled
     And new "DeleteIncident" request
@@ -39,7 +40,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/incident-app
   Scenario: Delete an existing incident returns "Not Found" response
     Given operation "DeleteIncident" enabled
     And new "DeleteIncident" request
@@ -47,6 +48,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/incident-app
   Scenario: Delete an existing incident returns "OK" response
     Given operation "DeleteIncident" enabled
     And there is a valid "incident" in the system
@@ -55,20 +57,21 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/incident-app
   Scenario: Get a list of incidents returns "Bad Request" response
     Given operation "ListIncidents" enabled
     And new "ListIncidents" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/incident-app
   Scenario: Get a list of incidents returns "Not Found" response
     Given operation "ListIncidents" enabled
     And new "ListIncidents" request
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/incident-app
   Scenario: Get a list of incidents returns "OK" response
     Given operation "ListIncidents" enabled
     And there is a valid "incident" in the system
@@ -76,7 +79,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/incident-app
   Scenario: Get the details of an incident returns "Bad Request" response
     Given operation "GetIncident" enabled
     And new "GetIncident" request
@@ -84,7 +87,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/incident-app
   Scenario: Get the details of an incident returns "Not Found" response
     Given operation "GetIncident" enabled
     And new "GetIncident" request
@@ -92,6 +95,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/incident-app
   Scenario: Get the details of an incident returns "OK" response
     Given operation "GetIncident" enabled
     And there is a valid "incident" in the system
@@ -101,7 +105,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data.attributes.title" has the same value as "incident.data.attributes.title"
 
-  @generated @skip
+  @generated @skip @team:DataDog/incident-app
   Scenario: Update an existing incident returns "Bad Request" response
     Given operation "UpdateIncident" enabled
     And new "UpdateIncident" request
@@ -110,7 +114,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/incident-app
   Scenario: Update an existing incident returns "Not Found" response
     Given operation "UpdateIncident" enabled
     And new "UpdateIncident" request
@@ -119,6 +123,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/incident-app
   Scenario: Update an existing incident returns "OK" response
     Given operation "UpdateIncident" enabled
     And there is a valid "incident" in the system

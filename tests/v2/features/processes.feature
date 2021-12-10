@@ -9,11 +9,12 @@ Feature: Processes
     And an instance of "Processes" API
     And new "ListProcesses" request
 
-  @generated @skip
+  @generated @skip @team:DataDog/processes
   Scenario: Get all processes returns "Bad Request" response
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/processes
   Scenario: Get all processes returns "OK" response
     Given request contains "search" parameter with value "process-agent"
     And request contains "tags" parameter with value "testing:true"

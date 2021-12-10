@@ -11,7 +11,7 @@ Feature: Service Level Objective Corrections
     And a valid "appKeyAuth" key in the system
     And an instance of "ServiceLevelObjectiveCorrections" API
 
-  @skip
+  @skip @team:DataDog/slo-app
   Scenario: Create an SLO correction returns "Bad Request" response
     Given there is a valid "slo" in the system
     And operation "CreateSLOCorrection" enabled
@@ -20,6 +20,7 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/slo-app
   Scenario: Create an SLO correction returns "OK" response
     Given there is a valid "slo" in the system
     And operation "CreateSLOCorrection" enabled
@@ -28,7 +29,7 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 200 OK
 
-  @skip
+  @skip @team:DataDog/slo-app
   Scenario: Create an SLO correction returns "SLO Not Found" response
     Given operation "CreateSLOCorrection" enabled
     And new "CreateSLOCorrection" request
@@ -36,6 +37,7 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 404 SLO Not Found
 
+  @team:DataDog/slo-app
   Scenario: Create an SLO correction with rrule returns "OK" response
     Given there is a valid "slo" in the system
     And operation "CreateSLOCorrection" enabled
@@ -44,7 +46,7 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Delete an SLO correction returns "Not found" response
     Given operation "DeleteSLOCorrection" enabled
     And new "DeleteSLOCorrection" request
@@ -52,7 +54,7 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 404 Not found
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Delete an SLO correction returns "OK" response
     Given operation "DeleteSLOCorrection" enabled
     And new "DeleteSLOCorrection" request
@@ -60,6 +62,7 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 204 OK
 
+  @team:DataDog/slo-app
   Scenario: Get all SLO corrections returns "OK" response
     Given operation "ListSLOCorrection" enabled
     And there is a valid "slo" in the system
@@ -68,7 +71,7 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Get an SLO correction for an SLO returns "Bad Request" response
     Given operation "GetSLOCorrection" enabled
     And new "GetSLOCorrection" request
@@ -76,6 +79,7 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/slo-app
   Scenario: Get an SLO correction for an SLO returns "OK" response
     Given operation "GetSLOCorrection" enabled
     And there is a valid "slo" in the system
@@ -85,7 +89,7 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 200 OK
 
-  @skip
+  @skip @team:DataDog/slo-app
   Scenario: Update an SLO correction returns "Bad Request" response
     Given operation "UpdateSLOCorrection" enabled
     And there is a valid "slo" in the system
@@ -96,7 +100,7 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Update an SLO correction returns "Not Found" response
     Given operation "UpdateSLOCorrection" enabled
     And new "UpdateSLOCorrection" request
@@ -105,6 +109,7 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/slo-app
   Scenario: Update an SLO correction returns "OK" response
     Given there is a valid "slo" in the system
     And there is a valid "correction" for "slo"

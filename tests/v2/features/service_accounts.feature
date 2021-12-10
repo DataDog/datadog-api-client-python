@@ -7,7 +7,7 @@ Feature: Service Accounts
     And a valid "appKeyAuth" key in the system
     And an instance of "ServiceAccounts" API
 
-  @integration-only
+  @integration-only @team:DataDog/team-aaa
   Scenario: Create an app key for this service account returns "Created" response
     Given there is a valid "service_account_user" in the system
     And new "CreateServiceAccountApplicationKey" request
@@ -18,7 +18,7 @@ Feature: Service Accounts
     And the response "data.attributes.name" is equal to "{{ unique }}"
     And the response "data.relationships.owned_by.data.id" has the same value as "service_account_user.data.id"
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Create an application key for this service account returns "Bad Request" response
     Given request contains "service_account_id" parameter from "<PATH>"
     And new "CreateServiceAccountApplicationKey" request
@@ -26,7 +26,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Create an application key for this service account returns "Created" response
     Given request contains "service_account_id" parameter from "<PATH>"
     And new "CreateServiceAccountApplicationKey" request
@@ -34,7 +34,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 201 Created
 
-  @integration-only
+  @integration-only @team:DataDog/team-aaa
   Scenario: Delete an app key owned by this service account returns "No Content" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_application_key" for "service_account_user"
@@ -44,7 +44,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Delete an application key for this service account returns "No Content" response
     Given request contains "service_account_id" parameter from "<PATH>"
     And new "DeleteServiceAccountApplicationKey" request
@@ -52,7 +52,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Delete an application key for this service account returns "Not Found" response
     Given request contains "service_account_id" parameter from "<PATH>"
     And new "DeleteServiceAccountApplicationKey" request
@@ -60,7 +60,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 404 Not Found
 
-  @integration-only
+  @integration-only @team:DataDog/team-aaa
   Scenario: Edit an app key owned by this service account returns "OK" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_application_key" for "service_account_user"
@@ -72,7 +72,7 @@ Feature: Service Accounts
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{ service_account_application_key.data.attributes.name }}-updated"
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Edit an application key for this service account returns "Bad Request" response
     Given request contains "service_account_id" parameter from "<PATH>"
     And new "UpdateServiceAccountApplicationKey" request
@@ -81,7 +81,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Edit an application key for this service account returns "Not Found" response
     Given request contains "service_account_id" parameter from "<PATH>"
     And new "UpdateServiceAccountApplicationKey" request
@@ -90,7 +90,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Edit an application key for this service account returns "OK" response
     Given request contains "service_account_id" parameter from "<PATH>"
     And new "UpdateServiceAccountApplicationKey" request
@@ -99,7 +99,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 200 OK
 
-  @integration-only
+  @integration-only @team:DataDog/team-aaa
   Scenario: Get all app keys owned by this service account returns "OK" response
     Given there is a valid "service_account_user" in the system
     And new "ListServiceAccountApplicationKeys" request
@@ -107,7 +107,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 200 OK
 
-  @integration-only
+  @integration-only @team:DataDog/team-aaa
   Scenario: Get one app key owned by this service account returns "OK" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_application_key" for "service_account_user"
@@ -118,7 +118,7 @@ Feature: Service Accounts
     Then the response status is 200 OK
     And the response "data.attributes.name" has the same value as "service_account_application_key.data.attributes.name"
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Get one application key for this service account returns "Not Found" response
     Given request contains "service_account_id" parameter from "<PATH>"
     And new "GetServiceAccountApplicationKey" request
@@ -126,7 +126,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Get one application key for this service account returns "OK" response
     Given request contains "service_account_id" parameter from "<PATH>"
     And new "GetServiceAccountApplicationKey" request
@@ -134,21 +134,21 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: List application keys for this service account returns "Bad Request" response
     Given request contains "service_account_id" parameter from "<PATH>"
     And new "ListServiceAccountApplicationKeys" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: List application keys for this service account returns "Not Found" response
     Given request contains "service_account_id" parameter from "<PATH>"
     And new "ListServiceAccountApplicationKeys" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: List application keys for this service account returns "OK" response
     Given request contains "service_account_id" parameter from "<PATH>"
     And new "ListServiceAccountApplicationKeys" request

@@ -7,51 +7,56 @@ Feature: Security Monitoring
     And a valid "appKeyAuth" key in the system
     And an instance of "SecurityMonitoring" API
 
+  @team:DataDog/security-monitoring
   Scenario: Create a detection rule returns "Bad Request" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":""}],"cases":[{"status":"info"}],"options":{},"message":"Test rule","tags":[],"isEnabled":true}
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/security-monitoring
   Scenario: Create a detection rule returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true}
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/security-monitoring
   Scenario: Create a detection rule with type 'workload_security' returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":"", "agentRule":{"agentRuleId": "kernel_module_unlink_2", "expression": "(open.flags & ((O_CREAT|O_RDWR|O_WRONLY|O_TRUNC)) > 0)"}}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type": "workload_security"}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Create a security filter returns "Bad Request" response
     Given new "CreateSecurityFilter" request
     And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api"}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Create a security filter returns "Conflict" response
     Given new "CreateSecurityFilter" request
     And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api"}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 409 Conflict
 
+  @team:DataDog/security-monitoring
   Scenario: Create a security filter returns "OK" response
     Given new "CreateSecurityFilter" request
     And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "{{ unique }}", "query": "service:{{ unique_alnum }}"}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @skip
+  @skip @team:DataDog/security-monitoring
   Scenario: Delete a non existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
     And request contains "rule_id" parameter with value "ThisRuleIdProbablyDoesntExist"
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/security-monitoring
   Scenario: Delete a security filter returns "No Content" response
     Given there is a valid "security_filter" in the system
     And new "DeleteSecurityFilter" request
@@ -59,27 +64,28 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Delete a security filter returns "Not Found" response
     Given new "DeleteSecurityFilter" request
     And request contains "security_filter_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip
+  @skip @team:DataDog/security-monitoring
   Scenario: Delete a security filter returns "OK" response
     Given new "DeleteSecurityFilter" request
     And request contains "security_filter_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Delete an existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/security-monitoring
   Scenario: Delete an existing rule returns "OK" response
     Given there is a valid "security_rule" in the system
     And new "DeleteSecurityMonitoringRule" request
@@ -87,7 +93,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a list of security signals returns "Bad Request" response
     Given operation "SearchSecurityMonitoringSignals" enabled
     And new "SearchSecurityMonitoringSignals" request
@@ -95,7 +101,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a list of security signals returns "OK" response
     Given operation "SearchSecurityMonitoringSignals" enabled
     And new "SearchSecurityMonitoringSignals" request
@@ -103,41 +109,42 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a quick list of security signals returns "Bad Request" response
     Given operation "ListSecurityMonitoringSignals" enabled
     And new "ListSecurityMonitoringSignals" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a quick list of security signals returns "OK" response
     Given operation "ListSecurityMonitoringSignals" enabled
     And new "ListSecurityMonitoringSignals" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a rule's details returns "Not Found" response
     Given new "GetSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a rule's details returns "OK" response
     Given new "GetSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a security filter returns "Not Found" response
     Given new "GetSecurityFilter" request
     And request contains "security_filter_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/security-monitoring
   Scenario: Get a security filter returns "OK" response
     Given there is a valid "security_filter" in the system
     And new "GetSecurityFilter" request
@@ -145,24 +152,25 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/security-monitoring
   Scenario: Get all security filters returns "OK" response
     Given new "ListSecurityFilters" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: List rules returns "Bad Request" response
     Given new "ListSecurityMonitoringRules" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: List rules returns "OK" response
     Given new "ListSecurityMonitoringRules" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Update a security filter returns "Bad Request" response
     Given new "UpdateSecurityFilter" request
     And request contains "security_filter_id" parameter from "<PATH>"
@@ -170,7 +178,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Update a security filter returns "Concurrent Modification" response
     Given new "UpdateSecurityFilter" request
     And request contains "security_filter_id" parameter from "<PATH>"
@@ -178,7 +186,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Update a security filter returns "Not Found" response
     Given new "UpdateSecurityFilter" request
     And request contains "security_filter_id" parameter from "<PATH>"
@@ -186,6 +194,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/security-monitoring
   Scenario: Update a security filter returns "OK" response
     Given new "UpdateSecurityFilter" request
     And there is a valid "security_filter" in the system
@@ -194,7 +203,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Update an existing rule returns "Bad Request" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "<PATH>"
@@ -202,7 +211,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Update an existing rule returns "Not Found" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "<PATH>"
@@ -210,7 +219,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Update an existing rule returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "<PATH>"

@@ -13,7 +13,11 @@ try:
     if RECORD != "none":
         from ddtrace.internal.writer import AgentWriter
 
-        writer = AgentWriter(tracer.writer.agent_url, sync_mode=True, priority_sampler=tracer.priority_sampler)
+        writer = AgentWriter(
+            tracer.writer.agent_url,
+            sync_mode=True,
+            priority_sampler=tracer.priority_sampler,
+        )
         tracer.configure(writer)
 
     patch(urllib3=True)
@@ -85,6 +89,10 @@ def pytest_bdd_before_scenario(request, feature, scenario):
     span.set_tag("test.name", scenario.name)
     span.set_tag("test.suite", scenario.feature.filename.split("tests")[-1])
 
+    codeowners = [f"@{tag[5:]}" for tag in scenario.tags | scenario.feature.tags if tag.startswith("team:")]
+    if codeowners:
+        span.set_tag("test.codeowners", json.dumps(codeowners))
+
 
 def pytest_bdd_after_scenario(request, feature, scenario):
     ctx = request.getfixturevalue("context")
@@ -97,7 +105,11 @@ def pytest_bdd_before_step(request, feature, scenario, step, step_func):
         return
 
     span = tracer.start_span(
-        step.type, resource=step.name, span_type=step.type, child_of=tracer.current_span(), activate=True
+        step.type,
+        resource=step.name,
+        span_type=step.type,
+        child_of=tracer.current_span(),
+        activate=True,
     )
     setattr(step_func, "__dd_span__", span)
 
@@ -126,6 +138,8 @@ def pytest_bdd_apply_tag(tag, function):
     if tag in skip_tags:
         marker = pytest.mark.skip(reason=f"skipped because '{tag}' in {skip_tags}")
         marker(function)
+        return True
+    elif tag.startswith("team:"):
         return True
     elif tag.startswith("endpoint("):
         version = tag[len("endpoint(") : -1]
@@ -382,7 +396,11 @@ def api(context, package_name, client, name):
     """Return an API instance."""
     module_name = snake_case(name)
     package = importlib.import_module(f"{package_name}.api.{module_name}_api")
-    context["api"] = {"api": getattr(package, name + "Api")(client), "package": package_name, "calls": []}
+    context["api"] = {
+        "api": getattr(package, name + "Api")(client),
+        "package": package_name,
+        "calls": [],
+    }
 
 
 @given(parsers.parse('operation "{name}" enabled'))

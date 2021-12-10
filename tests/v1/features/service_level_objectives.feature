@@ -13,63 +13,67 @@ Feature: Service Level Objectives
     And a valid "appKeyAuth" key in the system
     And an instance of "ServiceLevelObjectives" API
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Bulk Delete SLO Timeframes returns "Bad Request" response
     Given new "DeleteSLOTimeframeInBulk" request
     And body with value {"id1": ["7d", "30d"], "id2": ["7d", "30d"]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Bulk Delete SLO Timeframes returns "OK" response
     Given new "DeleteSLOTimeframeInBulk" request
     And body with value {"id1": ["7d", "30d"], "id2": ["7d", "30d"]}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Check if SLOs can be safely deleted returns "Bad Request" response
     Given new "CheckCanDeleteSLO" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Check if SLOs can be safely deleted returns "Conflict" response
     Given new "CheckCanDeleteSLO" request
     When the request is sent
     Then the response status is 409 Conflict
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Check if SLOs can be safely deleted returns "OK" response
     Given new "CheckCanDeleteSLO" request
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/slo-app
   Scenario: Create an SLO object returns "Bad Request" response
     Given new "CreateSLO" request
     And body with value {"type":"monitor","name":"{{ unique }}","thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/slo-app
   Scenario: Create an SLO object returns "OK" response
     Given new "CreateSLO" request
     And body with value {"type":"metric","description":"string","groups":["env:test","role:mysql"],"monitor_ids":[],"name":"{{ unique }}","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"tags":["env:prod","app:core"],"thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Delete an SLO returns "Conflict" response
     Given new "DeleteSLO" request
     And request contains "slo_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 409 Conflict
 
+  @team:DataDog/slo-app
   Scenario: Delete an SLO returns "Not found" response
     Given new "DeleteSLO" request
     And request contains "slo_id" parameter with value "{{ unique_lower_alnum }}"
     When the request is sent
     Then the response status is 404 Not found
 
+  @team:DataDog/slo-app
   Scenario: Delete an SLO returns "OK" response
     Given there is a valid "slo" in the system
     And new "DeleteSLO" request
@@ -77,7 +81,7 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Get Corrections For an SLO returns "Bad Request" response
     Given operation "GetSLOCorrections" enabled
     And new "GetSLOCorrections" request
@@ -85,7 +89,7 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Get Corrections For an SLO returns "Not Found" response
     Given operation "GetSLOCorrections" enabled
     And new "GetSLOCorrections" request
@@ -93,6 +97,7 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/slo-app
   Scenario: Get Corrections For an SLO returns "OK" response
     Given operation "GetSLOCorrections" enabled
     And there is a valid "slo" in the system
@@ -103,39 +108,39 @@ Feature: Service Level Objectives
     Then the response status is 200 OK
     And the response "data" has length 1
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Get all SLOs returns "Bad Request" response
     Given new "ListSLOs" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Get all SLOs returns "Not Found" response
     Given new "ListSLOs" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Get all SLOs returns "OK" response
     Given new "ListSLOs" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Get an SLO's details returns "Not found" response
     Given new "GetSLO" request
     And request contains "slo_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not found
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Get an SLO's details returns "OK" response
     Given new "GetSLO" request
     And request contains "slo_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Get an SLO's history returns "Bad Request" response
     Given operation "GetSLOHistory" enabled
     And new "GetSLOHistory" request
@@ -143,7 +148,7 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Get an SLO's history returns "Not Found" response
     Given operation "GetSLOHistory" enabled
     And new "GetSLOHistory" request
@@ -151,7 +156,7 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Get an SLO's history returns "OK" response
     Given operation "GetSLOHistory" enabled
     And new "GetSLOHistory" request
@@ -159,6 +164,7 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/slo-app
   Scenario: Update an SLO returns "Bad Request" response
     Given new "UpdateSLO" request
     And there is a valid "slo" in the system
@@ -167,7 +173,7 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Update an SLO returns "Not Found" response
     Given new "UpdateSLO" request
     And request contains "slo_id" parameter from "<PATH>"
@@ -175,7 +181,7 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
+  @generated @skip @team:DataDog/slo-app
   Scenario: Update an SLO returns "OK" response
     Given new "UpdateSLO" request
     And request contains "slo_id" parameter from "<PATH>"
