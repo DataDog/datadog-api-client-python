@@ -21,35 +21,12 @@ class UsageBillableSummaryBody(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {}
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         return {
             "account_billable_usage": (int,),
             "elapsed_usage_hours": (int,),
@@ -76,43 +53,13 @@ class UsageBillableSummaryBody(ModelNormal):
         """UsageBillableSummaryBody - a model defined in OpenAPI
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            account_billable_usage (int): The total account usage.. [optional]
-            elapsed_usage_hours (int): Elapsed usage hours for some billable product.. [optional]
-            first_billable_usage_hour (datetime): The first billable hour for the org.. [optional]
-            last_billable_usage_hour (datetime): The last billable hour for the org.. [optional]
-            org_billable_usage (int): The number of units used within the billable timeframe.. [optional]
-            percentage_in_account (float): The percentage of account usage the org represents.. [optional]
-            usage_unit (str): Units pertaining to the usage.. [optional]
+            account_billable_usage (int): [optional] The total account usage.
+            elapsed_usage_hours (int): [optional] Elapsed usage hours for some billable product.
+            first_billable_usage_hour (datetime): [optional] The first billable hour for the org.
+            last_billable_usage_hour (datetime): [optional] The last billable hour for the org.
+            org_billable_usage (int): [optional] The number of units used within the billable timeframe.
+            percentage_in_account (float): [optional] The percentage of account usage the org represents.
+            usage_unit (str): [optional] Units pertaining to the usage.
         """
         super().__init__(kwargs)
 

@@ -29,35 +29,12 @@ class Host(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {}
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         lazy_import()
         return {
             "aliases": ([str],),
@@ -99,50 +76,20 @@ class Host(ModelNormal):
         """Host - a model defined in OpenAPI
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            aliases ([str]): Host aliases collected by Datadog.. [optional]
-            apps ([str]): The Datadog integrations reporting metrics for the host.. [optional]
-            aws_name (str): AWS name of your host.. [optional]
-            host_name (str): The host name.. [optional]
-            id (int): The host ID.. [optional]
-            is_muted (bool): If a host is muted or unmuted.. [optional]
-            last_reported_time (int): Last time the host reported a metric data point.. [optional]
+            aliases ([str]): [optional] Host aliases collected by Datadog.
+            apps ([str]): [optional] The Datadog integrations reporting metrics for the host.
+            aws_name (str): [optional] AWS name of your host.
+            host_name (str): [optional] The host name.
+            id (int): [optional] The host ID.
+            is_muted (bool): [optional] If a host is muted or unmuted.
+            last_reported_time (int): [optional] Last time the host reported a metric data point.
             meta (HostMeta): [optional]
             metrics (HostMetrics): [optional]
-            mute_timeout (int): Timeout of the mute applied to your host.. [optional]
-            name (str): The host name.. [optional]
-            sources ([str]): Source or cloud provider associated with your host.. [optional]
-            tags_by_source ({str: ([str],)}): List of tags for each source (AWS, Datadog Agent, Chef..).. [optional]
-            up (bool): Displays UP when the expected metrics are received and displays `???` if no metrics are received.. [optional]
+            mute_timeout (int): [optional] Timeout of the mute applied to your host.
+            name (str): [optional] The host name.
+            sources ([str]): [optional] Source or cloud provider associated with your host.
+            tags_by_source ({str: ([str],)}): [optional] List of tags for each source (AWS, Datadog Agent, Chef..).
+            up (bool): [optional] Displays UP when the expected metrics are received and displays `???` if no metrics are received.
         """
         super().__init__(kwargs)
 

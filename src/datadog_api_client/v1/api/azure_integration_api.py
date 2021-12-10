@@ -131,7 +131,7 @@ class AzureIntegrationApi(object):
 
         Create a Datadog-Azure integration.  Using the `POST` method updates your integration configuration by adding your new configuration to the existing one in your Datadog organization.  Using the `PUT` method updates your integration configuration by replacing your current configuration with the new one sent to your Datadog organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_azure_integration(body, async_req=True)
         >>> result = thread.get()
@@ -174,7 +174,7 @@ class AzureIntegrationApi(object):
 
         Delete a given Datadog-Azure integration from your Datadog account.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_azure_integration(body, async_req=True)
         >>> result = thread.get()
@@ -217,11 +217,10 @@ class AzureIntegrationApi(object):
 
         List all Datadog-Azure integrations configured in your Datadog account.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_azure_integration(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -257,7 +256,7 @@ class AzureIntegrationApi(object):
 
         Update the defined list of host filters for a given Datadog-Azure integration.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_azure_host_filters(body, async_req=True)
         >>> result = thread.get()
@@ -300,7 +299,7 @@ class AzureIntegrationApi(object):
 
         Update a Datadog-Azure integration. Requires an existing `tenant_name` and `client_id`. Any other fields supplied will overwrite existing values. To overwrite `tenant_name` or `client_id`, use `new_tenant_name` and `new_client_id`. To leave a field unchanged, do not supply that field in the payload.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_azure_integration(body, async_req=True)
         >>> result = thread.get()

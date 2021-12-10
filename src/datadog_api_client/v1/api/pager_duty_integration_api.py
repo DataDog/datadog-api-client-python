@@ -129,7 +129,7 @@ class PagerDutyIntegrationApi(object):
 
         Create a new service object in the PagerDuty integration.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_pager_duty_integration_service(body, async_req=True)
         >>> result = thread.get()
@@ -172,7 +172,7 @@ class PagerDutyIntegrationApi(object):
 
         Delete a single service object in the Datadog-PagerDuty integration.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_pager_duty_integration_service(service_name, async_req=True)
         >>> result = thread.get()
@@ -215,7 +215,7 @@ class PagerDutyIntegrationApi(object):
 
         Get service name in the Datadog-PagerDuty integration.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_pager_duty_integration_service(service_name, async_req=True)
         >>> result = thread.get()
@@ -258,7 +258,7 @@ class PagerDutyIntegrationApi(object):
 
         Update a single service object in the Datadog-PagerDuty integration.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_pager_duty_integration_service(service_name, body, async_req=True)
         >>> result = thread.get()

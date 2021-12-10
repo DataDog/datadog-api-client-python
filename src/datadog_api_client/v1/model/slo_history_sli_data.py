@@ -29,35 +29,12 @@ class SLOHistorySLIData(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {}
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         lazy_import()
         return {
             "error_budget_remaining": (SLOErrorBudgetRemainingData,),
@@ -95,48 +72,18 @@ class SLOHistorySLIData(ModelNormal):
         """SLOHistorySLIData - a model defined in OpenAPI
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
             error_budget_remaining (SLOErrorBudgetRemainingData): [optional]
-            errors ([SLOHistoryResponseErrorWithType]): An array of error objects returned while querying the history data for the service level objective.. [optional]
-            group (str): For groups in a grouped SLO, this is the group name.. [optional]
-            history ([[float]]): For `monitor` based SLOs, this includes the aggregated history as arrays that include time series and uptime data where `0=monitor` is in `OK` state and `1=monitor` is in `alert` state.. [optional]
-            monitor_modified (int): For `monitor` based SLOs, this is the last modified timestamp in epoch seconds of the monitor.. [optional]
-            monitor_type (str): For `monitor` based SLOs, this describes the type of monitor.. [optional]
-            name (str): For groups in a grouped SLO, this is the group name. For monitors in a multi-monitor SLO, this is the monitor name.. [optional]
-            precision ({str: (float,)}): A mapping of threshold `timeframe` to number of accurate decimals, regardless of the from && to timestamp.. [optional]
-            preview (bool): For `monitor` based SLOs, when `true` this indicates that a replay is in progress to give an accurate uptime calculation.. [optional]
-            sli_value (float): The current SLI value of the SLO over the history window.. [optional]
-            span_precision (float): The amount of decimal places the SLI value is accurate to for the given from `&&` to timestamp.. [optional]
-            uptime (float): Use `sli_value` instead.. [optional]
+            errors ([SLOHistoryResponseErrorWithType]): [optional] An array of error objects returned while querying the history data for the service level objective.
+            group (str): [optional] For groups in a grouped SLO, this is the group name.
+            history ([[float]]): [optional] For `monitor` based SLOs, this includes the aggregated history as arrays that include time series and uptime data where `0=monitor` is in `OK` state and `1=monitor` is in `alert` state.
+            monitor_modified (int): [optional] For `monitor` based SLOs, this is the last modified timestamp in epoch seconds of the monitor.
+            monitor_type (str): [optional] For `monitor` based SLOs, this describes the type of monitor.
+            name (str): [optional] For groups in a grouped SLO, this is the group name. For monitors in a multi-monitor SLO, this is the monitor name.
+            precision ({str: (float,)}): [optional] A mapping of threshold `timeframe` to number of accurate decimals, regardless of the from && to timestamp.
+            preview (bool): [optional] For `monitor` based SLOs, when `true` this indicates that a replay is in progress to give an accurate uptime calculation.
+            sli_value (float): [optional] The current SLI value of the SLO over the history window.
+            span_precision (float): [optional] The amount of decimal places the SLI value is accurate to for the given from `&&` to timestamp.
+            uptime (float): [optional] Use `sli_value` instead.
         """
         super().__init__(kwargs)
 

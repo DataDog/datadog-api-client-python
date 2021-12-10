@@ -713,7 +713,7 @@ class SyntheticsApi(object):
 
         Create a Synthetics global variable.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_global_variable(body, async_req=True)
         >>> result = thread.get()
@@ -756,7 +756,7 @@ class SyntheticsApi(object):
 
         Create a new Synthetics private location.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_private_location(body, async_req=True)
         >>> result = thread.get()
@@ -799,7 +799,7 @@ class SyntheticsApi(object):
 
         Create a Synthetic API test.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_synthetics_api_test(body, async_req=True)
         >>> result = thread.get()
@@ -842,7 +842,7 @@ class SyntheticsApi(object):
 
         Create a Synthetic browser test.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_synthetics_browser_test(body, async_req=True)
         >>> result = thread.get()
@@ -885,7 +885,7 @@ class SyntheticsApi(object):
 
         Delete a Synthetics global variable.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_global_variable(variable_id, async_req=True)
         >>> result = thread.get()
@@ -928,7 +928,7 @@ class SyntheticsApi(object):
 
         Delete a Synthetics private location.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_private_location(location_id, async_req=True)
         >>> result = thread.get()
@@ -971,7 +971,7 @@ class SyntheticsApi(object):
 
         Delete multiple Synthetic tests by ID.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_tests(body, async_req=True)
         >>> result = thread.get()
@@ -1014,7 +1014,7 @@ class SyntheticsApi(object):
 
         Edit a Synthetics global variable.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.edit_global_variable(variable_id, body, async_req=True)
         >>> result = thread.get()
@@ -1059,7 +1059,7 @@ class SyntheticsApi(object):
 
         Get the detailed configuration associated with a Synthetic API test.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_api_test(public_id, async_req=True)
         >>> result = thread.get()
@@ -1102,7 +1102,7 @@ class SyntheticsApi(object):
 
         Get the last 50 test results summaries for a given Synthetics API test.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_api_test_latest_results(public_id, async_req=True)
         >>> result = thread.get()
@@ -1111,9 +1111,9 @@ class SyntheticsApi(object):
             public_id (str): The public ID of the test for which to search results for.
 
         Keyword Args:
-            from_ts (int): Timestamp in milliseconds from which to start querying results.. [optional]
-            to_ts (int): Timestamp in milliseconds up to which to query results.. [optional]
-            probe_dc ([str]): Locations for which to query results.. [optional]
+            from_ts (int): [optional] Timestamp in milliseconds from which to start querying results.
+            to_ts (int): [optional] Timestamp in milliseconds up to which to query results.
+            probe_dc ([str]): [optional] Locations for which to query results.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1148,7 +1148,7 @@ class SyntheticsApi(object):
 
         Get a specific full result from a given (API) Synthetic test.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_api_test_result(public_id, result_id, async_req=True)
         >>> result = thread.get()
@@ -1193,7 +1193,7 @@ class SyntheticsApi(object):
 
         Get the detailed configuration (including steps) associated with a Synthetic browser test.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_browser_test(public_id, async_req=True)
         >>> result = thread.get()
@@ -1236,7 +1236,7 @@ class SyntheticsApi(object):
 
         Get the last 50 test results summaries for a given Synthetics Browser test.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_browser_test_latest_results(public_id, async_req=True)
         >>> result = thread.get()
@@ -1245,9 +1245,9 @@ class SyntheticsApi(object):
             public_id (str): The public ID of the browser test for which to search results for.
 
         Keyword Args:
-            from_ts (int): Timestamp in milliseconds from which to start querying results.. [optional]
-            to_ts (int): Timestamp in milliseconds up to which to query results.. [optional]
-            probe_dc ([str]): Locations for which to query results.. [optional]
+            from_ts (int): [optional] Timestamp in milliseconds from which to start querying results.
+            to_ts (int): [optional] Timestamp in milliseconds up to which to query results.
+            probe_dc ([str]): [optional] Locations for which to query results.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1282,7 +1282,7 @@ class SyntheticsApi(object):
 
         Get a specific full result from a given (browser) Synthetic test.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_browser_test_result(public_id, result_id, async_req=True)
         >>> result = thread.get()
@@ -1327,7 +1327,7 @@ class SyntheticsApi(object):
 
         Get the detailed configuration of a global variable.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_global_variable(variable_id, async_req=True)
         >>> result = thread.get()
@@ -1370,7 +1370,7 @@ class SyntheticsApi(object):
 
         Get a Synthetics private location.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_private_location(location_id, async_req=True)
         >>> result = thread.get()
@@ -1413,7 +1413,7 @@ class SyntheticsApi(object):
 
         Get a batch's updated details.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_synthetics_ci_batch(batch_id, async_req=True)
         >>> result = thread.get()
@@ -1456,7 +1456,7 @@ class SyntheticsApi(object):
 
         Get the detailed configuration associated with a Synthetics test.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_test(public_id, async_req=True)
         >>> result = thread.get()
@@ -1499,11 +1499,10 @@ class SyntheticsApi(object):
 
         Get the list of all Synthetics global variables.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_global_variables(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1539,11 +1538,10 @@ class SyntheticsApi(object):
 
         Get the list of public and private locations available for Synthetic tests. No arguments required.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_locations(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1579,11 +1577,10 @@ class SyntheticsApi(object):
 
         Get the list of all Synthetic tests.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_tests(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1619,7 +1616,7 @@ class SyntheticsApi(object):
 
         Trigger a set of Synthetics tests for continuous integration.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.trigger_ci_tests(body, async_req=True)
         >>> result = thread.get()
@@ -1662,7 +1659,7 @@ class SyntheticsApi(object):
 
         Trigger a set of Synthetics tests.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.trigger_tests(body, async_req=True)
         >>> result = thread.get()
@@ -1705,7 +1702,7 @@ class SyntheticsApi(object):
 
         Edit the configuration of a Synthetic API test.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_api_test(public_id, body, async_req=True)
         >>> result = thread.get()
@@ -1750,7 +1747,7 @@ class SyntheticsApi(object):
 
         Edit the configuration of a Synthetic browser test.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_browser_test(public_id, body, async_req=True)
         >>> result = thread.get()
@@ -1795,7 +1792,7 @@ class SyntheticsApi(object):
 
         Edit a Synthetics private location.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_private_location(location_id, body, async_req=True)
         >>> result = thread.get()
@@ -1840,7 +1837,7 @@ class SyntheticsApi(object):
 
         Pause or start a Synthetics test by changing the status.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_test_pause_status(public_id, body, async_req=True)
         >>> result = thread.get()

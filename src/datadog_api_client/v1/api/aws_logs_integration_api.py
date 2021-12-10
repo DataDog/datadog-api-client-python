@@ -171,7 +171,7 @@ class AWSLogsIntegrationApi(object):
 
         Test if permissions are present to add a log-forwarding triggers for the given services and AWS account. The input is the same as for Enable an AWS service log collection. Subsequent requests will always repeat the above, so this endpoint can be polled intermittently instead of blocking.  - Returns a status of 'created' when it's checking if the Lambda exists in the account. - Returns a status of 'waiting' while checking. - Returns a status of 'checked and ok' if the Lambda exists. - Returns a status of 'error' if the Lambda does not exist.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.check_aws_logs_lambda_async(body, async_req=True)
         >>> result = thread.get()
@@ -214,7 +214,7 @@ class AWSLogsIntegrationApi(object):
 
         Test if permissions are present to add log-forwarding triggers for the given services and AWS account. Input is the same as for `EnableAWSLogServices`. Done async, so can be repeatedly polled in a non-blocking fashion until the async request completes.  - Returns a status of `created` when it's checking if the permissions exists   in the AWS account. - Returns a status of `waiting` while checking. - Returns a status of `checked and ok` if the Lambda exists. - Returns a status of `error` if the Lambda does not exist.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.check_aws_logs_services_async(body, async_req=True)
         >>> result = thread.get()
@@ -257,7 +257,7 @@ class AWSLogsIntegrationApi(object):
 
         Attach the Lambda ARN of the Lambda created for the Datadog-AWS log collection to your AWS account ID to enable log collection.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_aws_lambda_arn(body, async_req=True)
         >>> result = thread.get()
@@ -300,7 +300,7 @@ class AWSLogsIntegrationApi(object):
 
         Delete a Datadog-AWS logs configuration by removing the specific Lambda ARN associated with a given AWS account.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_aws_lambda_arn(body, async_req=True)
         >>> result = thread.get()
@@ -343,7 +343,7 @@ class AWSLogsIntegrationApi(object):
 
         Enable automatic log collection for a list of services. This should be run after running `CreateAWSLambdaARN` to save the configuration.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.enable_aws_log_services(body, async_req=True)
         >>> result = thread.get()
@@ -386,11 +386,10 @@ class AWSLogsIntegrationApi(object):
 
         List all Datadog-AWS Logs integrations configured in your Datadog account.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_aws_logs_integrations(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -426,11 +425,10 @@ class AWSLogsIntegrationApi(object):
 
         Get the list of current AWS services that Datadog offers automatic log collection. Use returned service IDs with the services parameter for the Enable an AWS service log collection API endpoint.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_aws_logs_services(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status

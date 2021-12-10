@@ -237,7 +237,7 @@ class MetricsApi(object):
 
         Create and define a list of queryable tag keys for an existing count/gauge/rate/distribution metric. Optionally, include percentile aggregations on any distribution metric or configure custom aggregations on any count, rate, or gauge metric. Can only be used with application keys of users with the `Manage Tags for Metrics` permission.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_tag_configuration(metric_name, body, async_req=True)
         >>> result = thread.get()
@@ -282,7 +282,7 @@ class MetricsApi(object):
 
         Deletes a metric's tag configuration. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_tag_configuration(metric_name, async_req=True)
         >>> result = thread.get()
@@ -325,7 +325,7 @@ class MetricsApi(object):
 
         Returns the tag configuration for the given metric name.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_tag_configuration_by_name(metric_name, async_req=True)
         >>> result = thread.get()
@@ -368,19 +368,18 @@ class MetricsApi(object):
 
         Returns all configured count/gauge/rate/distribution metric names (with additional filters if specified).
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_tag_configurations(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            filter_configured (bool): Filter metrics that have configured tags.. [optional]
-            filter_tags_configured (str): Filter tag configurations by configured tags.. [optional]
-            filter_metric_type (MetricTagConfigurationMetricTypes): Filter tag configurations by metric type.. [optional]
-            filter_include_percentiles (bool): Filter distributions with additional percentile aggregations enabled or disabled.. [optional]
-            filter_tags (str): Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions. Cannot be combined with other filters.. [optional]
-            window_seconds (int): The number of seconds of look back (from now) to apply to a filter[tag] query. Defaults value is 3600 (1 hour), maximum value is 172,800 (2 days).. [optional]
+            filter_configured (bool): [optional] Filter metrics that have configured tags.
+            filter_tags_configured (str): [optional] Filter tag configurations by configured tags.
+            filter_metric_type (MetricTagConfigurationMetricTypes): [optional] Filter tag configurations by metric type.
+            filter_include_percentiles (bool): [optional] Filter distributions with additional percentile aggregations enabled or disabled.
+            filter_tags (str): [optional] Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions. Cannot be combined with other filters.
+            window_seconds (int): [optional] The number of seconds of look back (from now) to apply to a filter[tag] query. Defaults value is 3600 (1 hour), maximum value is 172,800 (2 days).
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -414,7 +413,7 @@ class MetricsApi(object):
 
         View indexed tag key-value pairs for a given metric name.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_tags_by_metric_name(metric_name, async_req=True)
         >>> result = thread.get()
@@ -457,7 +456,7 @@ class MetricsApi(object):
 
         View distinct metrics volumes for the given metric name.  Custom distribution metrics will return both ingested and indexed custom metric volumes. For Metrics without Limits&trade; beta customers, all metrics will return both ingested/indexed volumes. Custom metrics generated in-app from other products will return `null` for ingested volumes.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_volumes_by_metric_name(metric_name, async_req=True)
         >>> result = thread.get()
@@ -500,7 +499,7 @@ class MetricsApi(object):
 
         Update the tag configuration of a metric or percentile aggregations of a distribution metric or custom aggregations of a count, rate, or gauge metric. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_tag_configuration(metric_name, body, async_req=True)
         >>> result = thread.get()

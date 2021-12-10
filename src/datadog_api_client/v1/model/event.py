@@ -29,21 +29,6 @@ class Event(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {
@@ -54,14 +39,6 @@ class Event(ModelNormal):
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         lazy_import()
         return {
             "alert_type": (EventAlertType,),
@@ -106,49 +83,19 @@ class Event(ModelNormal):
         """Event - a model defined in OpenAPI
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
             alert_type (EventAlertType): [optional]
-            date_happened (int): POSIX timestamp of the event. Must be sent as an integer (i.e. no quotes). Limited to events no older than 7 days.. [optional]
-            device_name (str): A device name.. [optional]
-            host (str): Host name to associate with the event. Any tags associated with the host are also applied to this event.. [optional]
-            id (int): Integer ID of the event.. [optional]
-            id_str (str): Handling IDs as large 64-bit numbers can cause loss of accuracy issues with some programming languages. Instead, use the string representation of the Event ID to avoid losing accuracy.. [optional]
-            payload (str): Payload of the event.. [optional]
+            date_happened (int): [optional] POSIX timestamp of the event. Must be sent as an integer (i.e. no quotes). Limited to events no older than 7 days.
+            device_name (str): [optional] A device name.
+            host (str): [optional] Host name to associate with the event. Any tags associated with the host are also applied to this event.
+            id (int): [optional] Integer ID of the event.
+            id_str (str): [optional] Handling IDs as large 64-bit numbers can cause loss of accuracy issues with some programming languages. Instead, use the string representation of the Event ID to avoid losing accuracy.
+            payload (str): [optional] Payload of the event.
             priority (EventPriority): [optional]
-            source_type_name (str): The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).. [optional]
-            tags ([str]): A list of tags to apply to the event.. [optional]
-            text (str): The body of the event. Limited to 4000 characters. The text supports markdown. To use markdown in the event text, start the text block with `%%% \\n` and end the text block with `\\n %%%`. Use `msg_text` with the Datadog Ruby library.. [optional]
-            title (str): The event title.. [optional]
-            url (str): URL of the event.. [optional]
+            source_type_name (str): [optional] The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
+            tags ([str]): [optional] A list of tags to apply to the event.
+            text (str): [optional] The body of the event. Limited to 4000 characters. The text supports markdown. To use markdown in the event text, start the text block with `%%% \\n` and end the text block with `\\n %%%`. Use `msg_text` with the Datadog Ruby library.
+            title (str): [optional] The event title.
+            url (str): [optional] URL of the event.
         """
         super().__init__(kwargs)
 

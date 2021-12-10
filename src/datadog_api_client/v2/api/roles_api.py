@@ -364,7 +364,7 @@ class RolesApi(object):
 
         Adds a permission to a role.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.add_permission_to_role(role_id, body, async_req=True)
         >>> result = thread.get()
@@ -409,7 +409,7 @@ class RolesApi(object):
 
         Adds a user to a role.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.add_user_to_role(role_id, body, async_req=True)
         >>> result = thread.get()
@@ -454,7 +454,7 @@ class RolesApi(object):
 
         Create a new role for your organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_role(body, async_req=True)
         >>> result = thread.get()
@@ -497,7 +497,7 @@ class RolesApi(object):
 
         Disables a role.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_role(role_id, async_req=True)
         >>> result = thread.get()
@@ -540,7 +540,7 @@ class RolesApi(object):
 
         Get a role in the organization specified by the role’s `role_id`.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_role(role_id, async_req=True)
         >>> result = thread.get()
@@ -583,11 +583,10 @@ class RolesApi(object):
 
         Returns a list of all permissions, including name, description, and ID.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_permissions(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -623,7 +622,7 @@ class RolesApi(object):
 
         Returns a list of all permissions for a single role.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_role_permissions(role_id, async_req=True)
         >>> result = thread.get()
@@ -666,7 +665,7 @@ class RolesApi(object):
 
         Gets all users of a role.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_role_users(role_id, async_req=True)
         >>> result = thread.get()
@@ -675,10 +674,10 @@ class RolesApi(object):
             role_id (str): The ID of the role.
 
         Keyword Args:
-            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-            page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-            sort (str): User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `email`, `status`.. [optional] if omitted the server will use the default value of "name"
-            filter (str): Filter all users by the given string. Defaults to no filtering.. [optional]
+            page_size (int): [optional] Size for a given page. If omitted the server will use the default value of 10.
+            page_number (int): [optional] Specific page number to return. If omitted the server will use the default value of 0.
+            sort (str): [optional] User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `email`, `status`. If omitted the server will use the default value of "name".
+            filter (str): [optional] Filter all users by the given string. Defaults to no filtering.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -713,17 +712,16 @@ class RolesApi(object):
 
         Returns all roles, including their names and IDs.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_roles(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-            page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-            sort (RolesSort): Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: `sort=-name`.. [optional]
-            filter (str): Filter all roles by the given string.. [optional]
+            page_size (int): [optional] Size for a given page. If omitted the server will use the default value of 10.
+            page_number (int): [optional] Specific page number to return. If omitted the server will use the default value of 0.
+            sort (RolesSort): [optional] Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: `sort=-name`.
+            filter (str): [optional] Filter all roles by the given string.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -757,7 +755,7 @@ class RolesApi(object):
 
         Removes a permission from a role.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.remove_permission_from_role(role_id, body, async_req=True)
         >>> result = thread.get()
@@ -802,7 +800,7 @@ class RolesApi(object):
 
         Removes a user from a role.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.remove_user_from_role(role_id, body, async_req=True)
         >>> result = thread.get()
@@ -847,7 +845,7 @@ class RolesApi(object):
 
         Edit a role. Can only be used with application keys belonging to administrators.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_role(role_id, body, async_req=True)
         >>> result = thread.get()

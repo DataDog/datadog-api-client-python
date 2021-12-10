@@ -473,7 +473,7 @@ class KeyManagementApi(object):
 
         Create an API key.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_api_key(body, async_req=True)
         >>> result = thread.get()
@@ -516,7 +516,7 @@ class KeyManagementApi(object):
 
         Create an application key for current user
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_current_user_application_key(body, async_req=True)
         >>> result = thread.get()
@@ -559,7 +559,7 @@ class KeyManagementApi(object):
 
         Delete an API key.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_api_key(api_key_id, async_req=True)
         >>> result = thread.get()
@@ -602,7 +602,7 @@ class KeyManagementApi(object):
 
         Delete an application key
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_application_key(app_key_id, async_req=True)
         >>> result = thread.get()
@@ -645,7 +645,7 @@ class KeyManagementApi(object):
 
         Delete an application key owned by current user
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_current_user_application_key(app_key_id, async_req=True)
         >>> result = thread.get()
@@ -688,7 +688,7 @@ class KeyManagementApi(object):
 
         Get an API key.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_api_key(api_key_id, async_req=True)
         >>> result = thread.get()
@@ -697,7 +697,7 @@ class KeyManagementApi(object):
             api_key_id (str): The ID of the API key.
 
         Keyword Args:
-            include (str): Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`.. [optional]
+            include (str): [optional] Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -732,7 +732,7 @@ class KeyManagementApi(object):
 
         Get an application key for your org.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_application_key(app_key_id, async_req=True)
         >>> result = thread.get()
@@ -741,7 +741,7 @@ class KeyManagementApi(object):
             app_key_id (str): The ID of the application key.
 
         Keyword Args:
-            include (str): Resource path for related resources to include in the response. Only `owned_by` is supported.. [optional]
+            include (str): [optional] Resource path for related resources to include in the response. Only `owned_by` is supported.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -776,7 +776,7 @@ class KeyManagementApi(object):
 
         Get an application key owned by current user
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_current_user_application_key(app_key_id, async_req=True)
         >>> result = thread.get()
@@ -819,22 +819,21 @@ class KeyManagementApi(object):
 
         List all API keys available for your account.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_api_keys(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-            page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-            sort (APIKeysSort): API key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional]
-            filter (str): Filter API keys by the specified string.. [optional]
-            filter_created_at_start (str): Only include API keys created on or after the specified date.. [optional]
-            filter_created_at_end (str): Only include API keys created on or before the specified date.. [optional]
-            filter_modified_at_start (str): Only include API keys modified on or after the specified date.. [optional]
-            filter_modified_at_end (str): Only include API keys modified on or before the specified date.. [optional]
-            include (str): Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`.. [optional]
+            page_size (int): [optional] Size for a given page. If omitted the server will use the default value of 10.
+            page_number (int): [optional] Specific page number to return. If omitted the server will use the default value of 0.
+            sort (APIKeysSort): [optional] API key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.
+            filter (str): [optional] Filter API keys by the specified string.
+            filter_created_at_start (str): [optional] Only include API keys created on or after the specified date.
+            filter_created_at_end (str): [optional] Only include API keys created on or before the specified date.
+            filter_modified_at_start (str): [optional] Only include API keys modified on or after the specified date.
+            filter_modified_at_end (str): [optional] Only include API keys modified on or before the specified date.
+            include (str): [optional] Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -868,19 +867,18 @@ class KeyManagementApi(object):
 
         List all application keys available for your org
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_application_keys(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-            page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-            sort (ApplicationKeysSort): Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional]
-            filter (str): Filter application keys by the specified string.. [optional]
-            filter_created_at_start (str): Only include application keys created on or after the specified date.. [optional]
-            filter_created_at_end (str): Only include application keys created on or before the specified date.. [optional]
+            page_size (int): [optional] Size for a given page. If omitted the server will use the default value of 10.
+            page_number (int): [optional] Specific page number to return. If omitted the server will use the default value of 0.
+            sort (ApplicationKeysSort): [optional] Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.
+            filter (str): [optional] Filter application keys by the specified string.
+            filter_created_at_start (str): [optional] Only include application keys created on or after the specified date.
+            filter_created_at_end (str): [optional] Only include application keys created on or before the specified date.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -914,19 +912,18 @@ class KeyManagementApi(object):
 
         List all application keys available for current user
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_current_user_application_keys(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-            page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-            sort (ApplicationKeysSort): Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional]
-            filter (str): Filter application keys by the specified string.. [optional]
-            filter_created_at_start (str): Only include application keys created on or after the specified date.. [optional]
-            filter_created_at_end (str): Only include application keys created on or before the specified date.. [optional]
+            page_size (int): [optional] Size for a given page. If omitted the server will use the default value of 10.
+            page_number (int): [optional] Specific page number to return. If omitted the server will use the default value of 0.
+            sort (ApplicationKeysSort): [optional] Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.
+            filter (str): [optional] Filter application keys by the specified string.
+            filter_created_at_start (str): [optional] Only include application keys created on or after the specified date.
+            filter_created_at_end (str): [optional] Only include application keys created on or before the specified date.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -960,7 +957,7 @@ class KeyManagementApi(object):
 
         Update an API key.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_api_key(api_key_id, body, async_req=True)
         >>> result = thread.get()
@@ -1005,7 +1002,7 @@ class KeyManagementApi(object):
 
         Edit an application key
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_application_key(app_key_id, body, async_req=True)
         >>> result = thread.get()
@@ -1050,7 +1047,7 @@ class KeyManagementApi(object):
 
         Edit an application key owned by current user
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_current_user_application_key(app_key_id, body, async_req=True)
         >>> result = thread.get()

@@ -144,7 +144,7 @@ class EventsApi(object):
 
         This endpoint allows you to post events to the stream. Tag them, set priority and event aggregate them with other events.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_event(body, async_req=True)
         >>> result = thread.get()
@@ -187,7 +187,7 @@ class EventsApi(object):
 
         This endpoint allows you to query for event details.  **Note**: If the event you’re querying contains markdown formatting of any kind, you may see characters such as `%`,`\\`,`n` in your output.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_event(event_id, async_req=True)
         >>> result = thread.get()
@@ -230,7 +230,7 @@ class EventsApi(object):
 
         The event stream can be queried and filtered by time, priority, sources and tags.  **Notes**: - If the event you’re querying contains markdown formatting of any kind, you may see characters such as `%`,`\\`,`n` in your output.  - This endpoint returns a maximum of `1000` most recent results. To return additional results, identify the last timestamp of the last result and set that as the `end` query time to paginate the results. You can also use the page parameter to specify which set of `1000` results to return.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_events(start, end, async_req=True)
         >>> result = thread.get()
@@ -240,12 +240,12 @@ class EventsApi(object):
             end (int): POSIX timestamp.
 
         Keyword Args:
-            priority (EventPriority): Priority of your events, either `low` or `normal`.. [optional]
-            sources (str): A comma separated string of sources.. [optional]
-            tags (str): A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope.. [optional]
-            unaggregated (bool): Set unaggregated to `true` to return all events within the specified [`start`,`end`] timeframe. Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe, it won't be available in the output. Aggregated events with `is_aggregate=true` in the response will still be returned unless exclude_aggregate is set to `true.`. [optional]
-            exclude_aggregate (bool): Set `exclude_aggregate` to `true` to only return unaggregated events where `is_aggregate=false` in the response. If the `exclude_aggregate` parameter is set to `true`, then the unaggregated parameter is ignored and will be `true` by default.. [optional]
-            page (int): By default 1000 results are returned per request. Set page to the number of the page to return with `0` being the first page. The page parameter can only be used when either unaggregated or exclude_aggregate is set to `true.`. [optional]
+            priority (EventPriority): [optional] Priority of your events, either `low` or `normal`.
+            sources (str): [optional] A comma separated string of sources.
+            tags (str): [optional] A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope.
+            unaggregated (bool): [optional] Set unaggregated to `true` to return all events within the specified [`start`,`end`] timeframe. Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe, it won't be available in the output. Aggregated events with `is_aggregate=true` in the response will still be returned unless exclude_aggregate is set to `true.`
+            exclude_aggregate (bool): [optional] Set `exclude_aggregate` to `true` to only return unaggregated events where `is_aggregate=false` in the response. If the `exclude_aggregate` parameter is set to `true`, then the unaggregated parameter is ignored and will be `true` by default.
+            page (int): [optional] By default 1000 results are returned per request. Set page to the number of the page to return with `0` being the first page. The page parameter can only be used when either unaggregated or exclude_aggregate is set to `true.`
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

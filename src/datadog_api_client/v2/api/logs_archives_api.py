@@ -262,7 +262,7 @@ class LogsArchivesApi(object):
 
         Adds a read role to an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.add_read_role_to_archive(archive_id, body, async_req=True)
         >>> result = thread.get()
@@ -307,7 +307,7 @@ class LogsArchivesApi(object):
 
         Create an archive in your organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_logs_archive(body, async_req=True)
         >>> result = thread.get()
@@ -350,7 +350,7 @@ class LogsArchivesApi(object):
 
         Delete a given archive from your organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_logs_archive(archive_id, async_req=True)
         >>> result = thread.get()
@@ -393,7 +393,7 @@ class LogsArchivesApi(object):
 
         Get a specific archive from your organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_logs_archive(archive_id, async_req=True)
         >>> result = thread.get()
@@ -436,11 +436,10 @@ class LogsArchivesApi(object):
 
         Get the current order of your archives. This endpoint takes no JSON arguments.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_logs_archive_order(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -476,7 +475,7 @@ class LogsArchivesApi(object):
 
         Returns all read roles a given archive is restricted to.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_archive_read_roles(archive_id, async_req=True)
         >>> result = thread.get()
@@ -519,11 +518,10 @@ class LogsArchivesApi(object):
 
         Get the list of configured logs archives with their definitions.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_logs_archives(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -559,7 +557,7 @@ class LogsArchivesApi(object):
 
         Removes a role from an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.remove_role_from_archive(archive_id, body, async_req=True)
         >>> result = thread.get()
@@ -604,7 +602,7 @@ class LogsArchivesApi(object):
 
         Update a given archive configuration.  **Note**: Using this method updates your archive configuration by **replacing** your current configuration with the new one sent to your Datadog organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_logs_archive(archive_id, body, async_req=True)
         >>> result = thread.get()
@@ -649,7 +647,7 @@ class LogsArchivesApi(object):
 
         Update the order of your archives. Since logs are processed sequentially, reordering an archive may change the structure and content of the data processed by other archives.  **Note**: Using the `PUT` method updates your archive's order by replacing the current order with the new one.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_logs_archive_order(body, async_req=True)
         >>> result = thread.get()

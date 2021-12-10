@@ -21,35 +21,12 @@ class UsageAttributionValues(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {}
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         return {
             "api_percentage": (float,),
             "api_usage": (float,),
@@ -142,76 +119,46 @@ class UsageAttributionValues(ModelNormal):
         """UsageAttributionValues - a model defined in OpenAPI
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            api_percentage (float): The percentage of synthetic API test usage by tag(s).. [optional]
-            api_usage (float): The synthetic API test usage by tag(s).. [optional]
-            apm_host_percentage (float): The percentage of APM host usage by tag(s).. [optional]
-            apm_host_usage (float): The APM host usage by tag(s).. [optional]
-            browser_percentage (float): The percentage of synthetic browser test usage by tag(s).. [optional]
-            browser_usage (float): The synthetic browser test usage by tag(s).. [optional]
-            container_percentage (float): The percentage of container usage by tag(s).. [optional]
-            container_usage (float): The container usage by tag(s).. [optional]
-            cspm_container_percentage (float): The percentage of Cloud Security Posture Management container usage by tag(s). [optional]
-            cspm_container_usage (float): The Cloud Security Posture Management container usage by tag(s). [optional]
-            cspm_host_percentage (float): The percentage of Cloud Security Posture Management host usage by tag(s). [optional]
-            cspm_host_usage (float): The Cloud Security Posture Management host usage by tag(s). [optional]
-            custom_timeseries_percentage (float): The percentage of custom metrics usage by tag(s).. [optional]
-            custom_timeseries_usage (float): The custom metrics usage by tag(s).. [optional]
-            cws_container_percentage (float): The percentage of Cloud Workload Security container usage by tag(s). [optional]
-            cws_container_usage (float): The Cloud Workload Security container usage by tag(s). [optional]
-            cws_host_percentage (float): The percentage of Cloud Workload Security host usage by tag(s). [optional]
-            cws_host_usage (float): The Cloud Workload Security host usage by tag(s). [optional]
-            dbm_hosts_percentage (float): The percentage of Database Monitoring host usage by tag(s).. [optional]
-            dbm_hosts_usage (float): The Database Monitoring host usage by tag(s).. [optional]
-            dbm_queries_percentage (float): The percentage of Database Monitoring normalized queries usage by tag(s).. [optional]
-            dbm_queries_usage (float): The Database Monitoring normalized queries usage by tag(s).. [optional]
-            estimated_indexed_logs_percentage (float): The percentage of estimated live indexed logs usage by tag(s). Note this field is in private beta.. [optional]
-            estimated_indexed_logs_usage (float): The estimated live indexed logs usage by tag(s). Note this field is in private beta.. [optional]
-            infra_host_percentage (float): The percentage of infrastructure host usage by tag(s).. [optional]
-            infra_host_usage (float): The infrastructure host usage by tag(s).. [optional]
-            lambda_functions_percentage (float): The percentage of Lambda function usage by tag(s).. [optional]
-            lambda_functions_usage (float): The Lambda function usage by tag(s).. [optional]
-            lambda_invocations_percentage (float): The percentage of Lambda invocation usage by tag(s).. [optional]
-            lambda_invocations_usage (float): The Lambda invocation usage by tag(s).. [optional]
-            lambda_percentage (float): The percentage of Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_percentage instead.. [optional]
-            lambda_usage (float): The Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_usage instead.. [optional]
-            npm_host_percentage (float): The percentage of network host usage by tag(s).. [optional]
-            npm_host_usage (float): The network host usage by tag(s).. [optional]
-            profiled_container_percentage (float): The percentage of profiled containers usage by tag(s).. [optional]
-            profiled_container_usage (float): The profiled container usage by tag(s).. [optional]
-            profiled_hosts_percentage (float): The percentage of profiled hosts usage by tag(s).. [optional]
-            profiled_hosts_usage (float): The profiled host usage by tag(s).. [optional]
-            snmp_percentage (float): The percentage of network device usage by tag(s).. [optional]
-            snmp_usage (float): The network device usage by tag(s).. [optional]
+            api_percentage (float): [optional] The percentage of synthetic API test usage by tag(s).
+            api_usage (float): [optional] The synthetic API test usage by tag(s).
+            apm_host_percentage (float): [optional] The percentage of APM host usage by tag(s).
+            apm_host_usage (float): [optional] The APM host usage by tag(s).
+            browser_percentage (float): [optional] The percentage of synthetic browser test usage by tag(s).
+            browser_usage (float): [optional] The synthetic browser test usage by tag(s).
+            container_percentage (float): [optional] The percentage of container usage by tag(s).
+            container_usage (float): [optional] The container usage by tag(s).
+            cspm_container_percentage (float): [optional] The percentage of Cloud Security Posture Management container usage by tag(s)
+            cspm_container_usage (float): [optional] The Cloud Security Posture Management container usage by tag(s)
+            cspm_host_percentage (float): [optional] The percentage of Cloud Security Posture Management host usage by tag(s)
+            cspm_host_usage (float): [optional] The Cloud Security Posture Management host usage by tag(s)
+            custom_timeseries_percentage (float): [optional] The percentage of custom metrics usage by tag(s).
+            custom_timeseries_usage (float): [optional] The custom metrics usage by tag(s).
+            cws_container_percentage (float): [optional] The percentage of Cloud Workload Security container usage by tag(s)
+            cws_container_usage (float): [optional] The Cloud Workload Security container usage by tag(s)
+            cws_host_percentage (float): [optional] The percentage of Cloud Workload Security host usage by tag(s)
+            cws_host_usage (float): [optional] The Cloud Workload Security host usage by tag(s)
+            dbm_hosts_percentage (float): [optional] The percentage of Database Monitoring host usage by tag(s).
+            dbm_hosts_usage (float): [optional] The Database Monitoring host usage by tag(s).
+            dbm_queries_percentage (float): [optional] The percentage of Database Monitoring normalized queries usage by tag(s).
+            dbm_queries_usage (float): [optional] The Database Monitoring normalized queries usage by tag(s).
+            estimated_indexed_logs_percentage (float): [optional] The percentage of estimated live indexed logs usage by tag(s). Note this field is in private beta.
+            estimated_indexed_logs_usage (float): [optional] The estimated live indexed logs usage by tag(s). Note this field is in private beta.
+            infra_host_percentage (float): [optional] The percentage of infrastructure host usage by tag(s).
+            infra_host_usage (float): [optional] The infrastructure host usage by tag(s).
+            lambda_functions_percentage (float): [optional] The percentage of Lambda function usage by tag(s).
+            lambda_functions_usage (float): [optional] The Lambda function usage by tag(s).
+            lambda_invocations_percentage (float): [optional] The percentage of Lambda invocation usage by tag(s).
+            lambda_invocations_usage (float): [optional] The Lambda invocation usage by tag(s).
+            lambda_percentage (float): [optional] The percentage of Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_percentage instead.
+            lambda_usage (float): [optional] The Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_usage instead.
+            npm_host_percentage (float): [optional] The percentage of network host usage by tag(s).
+            npm_host_usage (float): [optional] The network host usage by tag(s).
+            profiled_container_percentage (float): [optional] The percentage of profiled containers usage by tag(s).
+            profiled_container_usage (float): [optional] The profiled container usage by tag(s).
+            profiled_hosts_percentage (float): [optional] The percentage of profiled hosts usage by tag(s).
+            profiled_hosts_usage (float): [optional] The profiled host usage by tag(s).
+            snmp_percentage (float): [optional] The percentage of network device usage by tag(s).
+            snmp_usage (float): [optional] The network device usage by tag(s).
         """
         super().__init__(kwargs)
 

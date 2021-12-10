@@ -65,21 +65,6 @@ class LogsProcessor(ModelComposed):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {
@@ -90,73 +75,35 @@ class LogsProcessor(ModelComposed):
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         return {}
 
     def __init__(self, *args, **kwargs):
         """LogsProcessor - a model defined in OpenAPI
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            is_enabled (bool): Whether or not the processor is enabled.. [optional] if omitted the server will use the default value of False
-            name (str): Name of the processor.. [optional]
-            samples ([str]): List of sample logs to test this grok parser.. [optional]
-            override_on_conflict (bool): Override or not the target element if already set,. [optional] if omitted the server will use the default value of False
-            preserve_source (bool): Remove or preserve the remapped source element.. [optional] if omitted the server will use the default value of False
-            source_type (str): Defines if the sources are from log `attribute` or `tag`.. [optional] if omitted the server will use the default value of "attribute"
+            is_enabled (bool): [optional] Whether or not the processor is enabled. If omitted the server will use the default value of False.
+            name (str): [optional] Name of the processor.
+            samples ([str]): [optional] List of sample logs to test this grok parser.
+            override_on_conflict (bool): [optional] Override or not the target element if already set, If omitted the server will use the default value of False.
+            preserve_source (bool): [optional] Remove or preserve the remapped source element. If omitted the server will use the default value of False.
+            source_type (str): [optional] Defines if the sources are from log `attribute` or `tag`. If omitted the server will use the default value of "attribute".
             target_format (TargetFormatType): [optional]
-            target_type (str): Defines if the final attribute or tag name is from log `attribute` or `tag`.. [optional] if omitted the server will use the default value of "attribute"
-            normalize_ending_slashes (bool, none_type): Normalize the ending slashes or not.. [optional] if omitted the server will use the default value of False
-            is_encoded (bool): Define if the source attribute is URL encoded or not.. [optional] if omitted the server will use the default value of False
-            is_replace_missing (bool): If true, it replaces all missing attributes of `template` by an empty string. If `false` (default), skips the operation for missing attributes.. [optional] if omitted the server will use the default value of False
+            target_type (str): [optional] Defines if the final attribute or tag name is from log `attribute` or `tag`. If omitted the server will use the default value of "attribute".
+            normalize_ending_slashes (bool, none_type): [optional] Normalize the ending slashes or not. If omitted the server will use the default value of False.
+            is_encoded (bool): [optional] Define if the source attribute is URL encoded or not. If omitted the server will use the default value of False.
+            is_replace_missing (bool): [optional] If true, it replaces all missing attributes of `template` by an empty string. If `false` (default), skips the operation for missing attributes. If omitted the server will use the default value of False.
             filter (LogsFilter): [optional]
-            processors ([LogsProcessor]): Ordered list of processors in this pipeline.. [optional]
-            default_lookup (str): Value to set the target attribute if the source value is not found in the list.. [optional]
+            processors ([LogsProcessor]): [optional] Ordered list of processors in this pipeline.
+            default_lookup (str): [optional] Value to set the target attribute if the source value is not found in the list.
             grok (LogsGrokParserRules): [optional]
-            source (str): Source attribute used to perform the lookup.. [optional]
+            source (str): [optional] Source attribute used to perform the lookup.
             type (LogsTraceRemapperType): [optional]
-            sources ([str]): Array of source attributes.. [optional] if omitted the server will use the default value of ["dd.trace_id"]
-            target (str): Name of the attribute that contains the corresponding value in the mapping list or the `default_lookup` if not found in the mapping list.. [optional]
-            categories ([LogsCategoryProcessorCategory]): Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.. [optional]
-            expression (str): Arithmetic operation between one or more log attributes.. [optional]
-            template (str): A formula with one or more attributes and raw text.. [optional]
-            lookup_table ([str]): Mapping table of values for the source attribute and their associated target attribute values, formatted as `[\"source_key1,target_value1\", \"source_key2,target_value2\"]`. [optional]
+            sources ([str]): [optional] Array of source attributes. If omitted the server will use the default value of ["dd.trace_id"].
+            target (str): [optional] Name of the attribute that contains the corresponding value in the mapping list or the `default_lookup` if not found in the mapping list.
+            categories ([LogsCategoryProcessorCategory]): [optional] Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.
+            expression (str): [optional] Arithmetic operation between one or more log attributes.
+            template (str): [optional] A formula with one or more attributes and raw text.
+            lookup_table ([str]): [optional] Mapping table of values for the source attribute and their associated target attribute values, formatted as `[\"source_key1,target_value1\", \"source_key2,target_value2\"]`
         """
         super().__init__(kwargs)
 

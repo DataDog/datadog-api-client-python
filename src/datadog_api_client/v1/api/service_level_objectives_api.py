@@ -312,7 +312,7 @@ class ServiceLevelObjectivesApi(object):
 
         Check if an SLO can be safely deleted. For example, assure an SLO can be deleted without disrupting a dashboard.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.check_can_delete_slo(ids, async_req=True)
         >>> result = thread.get()
@@ -355,7 +355,7 @@ class ServiceLevelObjectivesApi(object):
 
         Create a service level objective object.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_slo(body, async_req=True)
         >>> result = thread.get()
@@ -398,7 +398,7 @@ class ServiceLevelObjectivesApi(object):
 
         Permanently delete the specified service level objective object.  If an SLO is used in a dashboard, the `DELETE /v1/slo/` endpoint returns a 409 conflict error because the SLO is referenced in a dashboard.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_slo(slo_id, async_req=True)
         >>> result = thread.get()
@@ -407,7 +407,7 @@ class ServiceLevelObjectivesApi(object):
             slo_id (str): The ID of the service level objective.
 
         Keyword Args:
-            force (str): Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor).. [optional]
+            force (str): [optional] Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor).
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -442,7 +442,7 @@ class ServiceLevelObjectivesApi(object):
 
         Delete (or partially delete) multiple service level objective objects.  This endpoint facilitates deletion of one or more thresholds for one or more service level objective objects. If all thresholds are deleted, the service level objective object is deleted as well.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_slo_timeframe_in_bulk(body, async_req=True)
         >>> result = thread.get()
@@ -485,7 +485,7 @@ class ServiceLevelObjectivesApi(object):
 
         Get a service level objective object.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_slo(slo_id, async_req=True)
         >>> result = thread.get()
@@ -494,7 +494,7 @@ class ServiceLevelObjectivesApi(object):
             slo_id (str): The ID of the service level objective object.
 
         Keyword Args:
-            with_configured_alert_ids (bool): Get the IDs of SLO monitors that reference this SLO.. [optional]
+            with_configured_alert_ids (bool): [optional] Get the IDs of SLO monitors that reference this SLO.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -529,7 +529,7 @@ class ServiceLevelObjectivesApi(object):
 
         Get corrections applied to an SLO
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_slo_corrections(slo_id, async_req=True)
         >>> result = thread.get()
@@ -572,7 +572,7 @@ class ServiceLevelObjectivesApi(object):
 
         Get a specific SLO’s history, regardless of its SLO type.  The detailed history data is structured according to the source data type. For example, metric data is included for event SLOs that use the metric source, and monitor SLO types include the monitor transition history.  **Note:** There are different response formats for event based and time based SLOs. Examples of both are shown.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_slo_history(slo_id, from_ts, to_ts, async_req=True)
         >>> result = thread.get()
@@ -583,8 +583,8 @@ class ServiceLevelObjectivesApi(object):
             to_ts (int): The `to` timestamp for the query window in epoch seconds.
 
         Keyword Args:
-            target (float): The SLO target. If `target` is passed in, the response will include the remaining error budget and a timeframe value of `custom`.. [optional]
-            apply_correction (bool): Defaults to `true`. If any SLO corrections are applied and this parameter is set to `false`, then the corrections will not be applied and the SLI values will not be affected.. [optional]
+            target (float): [optional] The SLO target. If `target` is passed in, the response will include the remaining error budget and a timeframe value of `custom`.
+            apply_correction (bool): [optional] Defaults to `true`. If any SLO corrections are applied and this parameter is set to `false`, then the corrections will not be applied and the SLI values will not be affected.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -621,19 +621,18 @@ class ServiceLevelObjectivesApi(object):
 
         Get a list of service level objective objects for your organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_slos(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            ids (str): A comma separated list of the IDs of the service level objectives objects.. [optional]
-            query (str): The query string to filter results based on SLO names.. [optional]
-            tags_query (str): The query string to filter results based on a single SLO tag.. [optional]
-            metrics_query (str): The query string to filter results based on SLO numerator and denominator.. [optional]
-            limit (int): The number of SLOs to return in the response.. [optional]
-            offset (int): The specific offset to use as the beginning of the returned response.. [optional]
+            ids (str): [optional] A comma separated list of the IDs of the service level objectives objects.
+            query (str): [optional] The query string to filter results based on SLO names.
+            tags_query (str): [optional] The query string to filter results based on a single SLO tag.
+            metrics_query (str): [optional] The query string to filter results based on SLO numerator and denominator.
+            limit (int): [optional] The number of SLOs to return in the response.
+            offset (int): [optional] The specific offset to use as the beginning of the returned response.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -667,7 +666,7 @@ class ServiceLevelObjectivesApi(object):
 
         Update the specified service level objective object.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_slo(slo_id, body, async_req=True)
         >>> result = thread.get()

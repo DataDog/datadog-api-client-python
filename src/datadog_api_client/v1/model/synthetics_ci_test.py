@@ -35,35 +35,12 @@ class SyntheticsCITest(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {}
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         lazy_import()
         return {
             "allow_insecure_certificates": (bool,),
@@ -108,49 +85,19 @@ class SyntheticsCITest(ModelNormal):
             public_id (str): The public ID of the Synthetics test to trigger.
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            allow_insecure_certificates (bool): Disable certificate checks in API tests.. [optional]
+            allow_insecure_certificates (bool): [optional] Disable certificate checks in API tests.
             basic_auth (SyntheticsBasicAuth): [optional]
-            body (str): Body to include in the test.. [optional]
-            body_type (str): Type of the data sent in a synthetics API test.. [optional]
-            cookies (str): Cookies for the request.. [optional]
-            device_ids ([SyntheticsDeviceID]): For browser test, array with the different device IDs used to run the test.. [optional]
-            follow_redirects (bool): For API HTTP test, whether or not the test should follow redirects.. [optional]
+            body (str): [optional] Body to include in the test.
+            body_type (str): [optional] Type of the data sent in a synthetics API test.
+            cookies (str): [optional] Cookies for the request.
+            device_ids ([SyntheticsDeviceID]): [optional] For browser test, array with the different device IDs used to run the test.
+            follow_redirects (bool): [optional] For API HTTP test, whether or not the test should follow redirects.
             headers (SyntheticsTestHeaders): [optional]
-            locations ([str]): Array of locations used to run the test.. [optional]
+            locations ([str]): [optional] Array of locations used to run the test.
             metadata (SyntheticsCIBatchMetadata): [optional]
             retry (SyntheticsTestOptionsRetry): [optional]
-            start_url (str): Starting URL for the browser test.. [optional]
-            variables ({str: (str,)}): Variables to replace in the test.. [optional]
+            start_url (str): [optional] Starting URL for the browser test.
+            variables ({str: (str,)}): [optional] Variables to replace in the test.
         """
         super().__init__(kwargs)
 

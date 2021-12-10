@@ -141,7 +141,7 @@ class DashboardListsApi(object):
 
         Add dashboards to an existing dashboard list.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_dashboard_list_items(dashboard_list_id, body, async_req=True)
         >>> result = thread.get()
@@ -186,7 +186,7 @@ class DashboardListsApi(object):
 
         Delete dashboards from an existing dashboard list.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_dashboard_list_items(dashboard_list_id, body, async_req=True)
         >>> result = thread.get()
@@ -231,7 +231,7 @@ class DashboardListsApi(object):
 
         Fetch the dashboard list’s dashboard definitions.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_dashboard_list_items(dashboard_list_id, async_req=True)
         >>> result = thread.get()
@@ -274,7 +274,7 @@ class DashboardListsApi(object):
 
         Update dashboards of an existing dashboard list.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_dashboard_list_items(dashboard_list_id, body, async_req=True)
         >>> result = thread.get()

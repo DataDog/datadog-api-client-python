@@ -1114,17 +1114,16 @@ class UsageMeteringApi(object):
 
         Get daily custom reports.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_daily_custom_reports(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            page_size (int): The number of files to return in the response. `[default=60]`.. [optional]
-            page_number (int): The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`.. [optional]
-            sort_dir (UsageSortDirection): The direction to sort by: `[desc, asc]`.. [optional]
-            sort (UsageSort): The field to sort by: `[computed_on, size, start_date, end_date]`.. [optional]
+            page_size (int): [optional] The number of files to return in the response. `[default=60]`.
+            page_number (int): [optional] The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`.
+            sort_dir (UsageSortDirection): [optional] The direction to sort by: `[desc, asc]`.
+            sort (UsageSort): [optional] The field to sort by: `[computed_on, size, start_date, end_date]`.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1158,7 +1157,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for incident management.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_incident_management(start_hr, async_req=True)
         >>> result = thread.get()
@@ -1167,7 +1166,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1202,7 +1201,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for ingested spans.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_ingested_spans(start_hr, async_req=True)
         >>> result = thread.get()
@@ -1211,7 +1210,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1246,17 +1245,16 @@ class UsageMeteringApi(object):
 
         Get monthly custom reports.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_monthly_custom_reports(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            page_size (int): The number of files to return in the response `[default=60].`. [optional]
-            page_number (int): The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`.. [optional]
-            sort_dir (UsageSortDirection): The direction to sort by: `[desc, asc]`.. [optional]
-            sort (UsageSort): The field to sort by: `[computed_on, size, start_date, end_date]`.. [optional]
+            page_size (int): [optional] The number of files to return in the response `[default=60].`
+            page_number (int): [optional] The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`.
+            sort_dir (UsageSortDirection): [optional] The direction to sort by: `[desc, asc]`.
+            sort (UsageSort): [optional] The field to sort by: `[computed_on, size, start_date, end_date]`.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1290,7 +1288,7 @@ class UsageMeteringApi(object):
 
         Get specified daily custom reports.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_specified_daily_custom_reports(report_id, async_req=True)
         >>> result = thread.get()
@@ -1333,7 +1331,7 @@ class UsageMeteringApi(object):
 
         Get specified monthly custom reports.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_specified_monthly_custom_reports(report_id, async_req=True)
         >>> result = thread.get()
@@ -1376,7 +1374,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for analyzed logs (Security Monitoring).
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_analyzed_logs(start_hr, async_req=True)
         >>> result = thread.get()
@@ -1385,7 +1383,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1420,7 +1418,7 @@ class UsageMeteringApi(object):
 
         Get Usage Attribution.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_attribution(start_month, fields, async_req=True)
         >>> result = thread.get()
@@ -1430,10 +1428,10 @@ class UsageMeteringApi(object):
             fields (UsageAttributionSupportedMetrics): Comma-separated list of usage types to return, or `*` for all usage types.
 
         Keyword Args:
-            end_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.. [optional]
-            sort_direction (UsageSortDirection): The direction to sort by: `[desc, asc]`.. [optional]
-            sort_name (UsageAttributionSort): The field to sort by.. [optional]
-            include_descendants (bool): Include child org usage in the response. Defaults to false.. [optional] if omitted the server will use the default value of False
+            end_month (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.
+            sort_direction (UsageSortDirection): [optional] The direction to sort by: `[desc, asc]`.
+            sort_name (UsageAttributionSort): [optional] The field to sort by.
+            include_descendants (bool): [optional] Include child org usage in the response. Defaults to false. If omitted the server will use the default value of False.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1469,7 +1467,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for audit logs.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_audit_logs(start_hr, async_req=True)
         >>> result = thread.get()
@@ -1478,7 +1476,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1513,14 +1511,13 @@ class UsageMeteringApi(object):
 
         Get billable usage across your account.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_billable_summary(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage starting this month.. [optional]
+            month (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage starting this month.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1554,7 +1551,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for Cloud Security Posture Management (CSPM).
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_cloud_security_posture_management(start_hr, async_req=True)
         >>> result = thread.get()
@@ -1563,7 +1560,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1598,7 +1595,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for Cloud Workload Security.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_cws(start_hr, async_req=True)
         >>> result = thread.get()
@@ -1607,7 +1604,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1642,7 +1639,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for Database Monitoring
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_dbm(start_hr, async_req=True)
         >>> result = thread.get()
@@ -1651,7 +1648,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1686,7 +1683,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for [Fargate](https://docs.datadoghq.com/integrations/ecs_fargate/).
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_fargate(start_hr, async_req=True)
         >>> result = thread.get()
@@ -1695,7 +1692,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1730,7 +1727,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for hosts and containers.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_hosts(start_hr, async_req=True)
         >>> result = thread.get()
@@ -1739,7 +1736,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1774,7 +1771,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for indexed spans.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_indexed_spans(start_hr, async_req=True)
         >>> result = thread.get()
@@ -1783,7 +1780,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1818,7 +1815,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for IoT.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_internet_of_things(start_hr, async_req=True)
         >>> result = thread.get()
@@ -1827,7 +1824,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1862,7 +1859,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for lambda.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_lambda(start_hr, async_req=True)
         >>> result = thread.get()
@@ -1871,7 +1868,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1906,7 +1903,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for logs.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_logs(start_hr, async_req=True)
         >>> result = thread.get()
@@ -1915,7 +1912,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1950,7 +1947,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for logs by index.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_logs_by_index(start_hr, async_req=True)
         >>> result = thread.get()
@@ -1959,8 +1956,8 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-            index_name ([str]): Comma-separated list of log index names.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
+            index_name ([str]): [optional] Comma-separated list of log index names.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1995,7 +1992,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for indexed logs by retention period.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_logs_by_retention(start_hr, async_req=True)
         >>> result = thread.get()
@@ -2004,7 +2001,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2039,7 +2036,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for network flows.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_network_flows(start_hr, async_req=True)
         >>> result = thread.get()
@@ -2048,7 +2045,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2083,7 +2080,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for network hosts.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_network_hosts(start_hr, async_req=True)
         >>> result = thread.get()
@@ -2092,7 +2089,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2127,7 +2124,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for profiled hosts.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_profiling(start_hr, async_req=True)
         >>> result = thread.get()
@@ -2136,7 +2133,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2171,7 +2168,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/) Sessions.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_rum_sessions(start_hr, async_req=True)
         >>> result = thread.get()
@@ -2180,8 +2177,8 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-            type (str): RUM type: `[browser, mobile]`. Defaults to `browser`.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
+            type (str): [optional] RUM type: `[browser, mobile]`. Defaults to `browser`.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2216,7 +2213,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/) Units.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_rum_units(start_hr, async_req=True)
         >>> result = thread.get()
@@ -2225,7 +2222,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2260,7 +2257,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for Sensitive Data Scanner.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_sds(start_hr, async_req=True)
         >>> result = thread.get()
@@ -2269,7 +2266,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2304,7 +2301,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for SNMP devices.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_snmp(start_hr, async_req=True)
         >>> result = thread.get()
@@ -2313,7 +2310,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2348,7 +2345,7 @@ class UsageMeteringApi(object):
 
         Get usage across your multi-org account. You must have the multi-org feature enabled.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_summary(start_month, async_req=True)
         >>> result = thread.get()
@@ -2357,8 +2354,8 @@ class UsageMeteringApi(object):
             start_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
 
         Keyword Args:
-            end_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.. [optional]
-            include_org_details (bool): Include usage summaries for each sub-org.. [optional]
+            end_month (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.
+            include_org_details (bool): [optional] Include usage summaries for each sub-org.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2393,7 +2390,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for [Synthetics checks](https://docs.datadoghq.com/synthetics/).
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_synthetics(start_hr, async_req=True)
         >>> result = thread.get()
@@ -2402,7 +2399,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2437,7 +2434,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for [synthetics API checks](https://docs.datadoghq.com/synthetics/).
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_synthetics_api(start_hr, async_req=True)
         >>> result = thread.get()
@@ -2446,7 +2443,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2481,7 +2478,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for synthetics browser checks.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_synthetics_browser(start_hr, async_req=True)
         >>> result = thread.get()
@@ -2490,7 +2487,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2525,7 +2522,7 @@ class UsageMeteringApi(object):
 
         Get hourly usage for [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/).
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_timeseries(start_hr, async_req=True)
         >>> result = thread.get()
@@ -2534,7 +2531,7 @@ class UsageMeteringApi(object):
             start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
 
         Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2569,18 +2566,17 @@ class UsageMeteringApi(object):
 
         Get all [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average. Use the month parameter to get a month-to-date data resolution or use the day parameter to get a daily resolution. One of the two is required, and only one of the two is allowed.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_top_avg_metrics(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            month (datetime): Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour. (Either month or day should be specified, but not both). [optional]
-            day (datetime): Datetime in ISO-8601 format, UTC, precise to day: [YYYY-MM-DD] for usage beginning at this hour. (Either month or day should be specified, but not both). [optional]
-            names ([str]): Comma-separated list of metric names.. [optional]
-            limit (int): Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified.. [optional] if omitted the server will use the default value of 500
-            next_record_id (str): List following results with a next_record_id provided in the previous query.. [optional]
+            month (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour. (Either month or day should be specified, but not both)
+            day (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to day: [YYYY-MM-DD] for usage beginning at this hour. (Either month or day should be specified, but not both)
+            names ([str]): [optional] Comma-separated list of metric names.
+            limit (int): [optional] Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified. If omitted the server will use the default value of 500.
+            next_record_id (str): [optional] List following results with a next_record_id provided in the previous query.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

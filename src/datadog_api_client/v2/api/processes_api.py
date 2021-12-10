@@ -85,19 +85,18 @@ class ProcessesApi(object):
 
         Get all processes for your organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_processes(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            search (str): String to search processes by.. [optional]
-            tags (str): Comma-separated list of tags to filter processes by.. [optional]
-            _from (int): Unix timestamp (number of seconds since epoch) of the start of the query window. If not provided, the start of the query window will be 15 minutes before the `to` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.. [optional]
-            to (int): Unix timestamp (number of seconds since epoch) of the end of the query window. If not provided, the end of the query window will be 15 minutes after the `from` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.. [optional]
-            page_limit (int): Maximum number of results returned.. [optional] if omitted the server will use the default value of 1000
-            page_cursor (str): String to query the next page of results. This key is provided with each valid response from the API in `meta.page.after`.. [optional]
+            search (str): [optional] String to search processes by.
+            tags (str): [optional] Comma-separated list of tags to filter processes by.
+            _from (int): [optional] Unix timestamp (number of seconds since epoch) of the start of the query window. If not provided, the start of the query window will be 15 minutes before the `to` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.
+            to (int): [optional] Unix timestamp (number of seconds since epoch) of the end of the query window. If not provided, the end of the query window will be 15 minutes after the `from` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.
+            page_limit (int): [optional] Maximum number of results returned. If omitted the server will use the default value of 1000.
+            page_cursor (str): [optional] String to query the next page of results. This key is provided with each valid response from the API in `meta.page.after`.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

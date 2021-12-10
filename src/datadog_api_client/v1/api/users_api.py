@@ -147,7 +147,7 @@ class UsersApi(object):
 
         Create a user for your organization.  **Note**: Users can only be created with the admin access role if application keys belong to administrators.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_user(body, async_req=True)
         >>> result = thread.get()
@@ -190,7 +190,7 @@ class UsersApi(object):
 
         Delete a user from an organization.  **Note**: This endpoint can only be used with application keys belonging to administrators.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.disable_user(user_handle, async_req=True)
         >>> result = thread.get()
@@ -233,7 +233,7 @@ class UsersApi(object):
 
         Get a user's details.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_user(user_handle, async_req=True)
         >>> result = thread.get()
@@ -276,11 +276,10 @@ class UsersApi(object):
 
         List all users for your organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_users(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -316,7 +315,7 @@ class UsersApi(object):
 
         Update a user information.  **Note**: It can only be used with application keys belonging to administrators.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_user(user_handle, body, async_req=True)
         >>> result = thread.get()

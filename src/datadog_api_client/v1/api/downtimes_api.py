@@ -196,7 +196,7 @@ class DowntimesApi(object):
 
         Cancel a downtime.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.cancel_downtime(downtime_id, async_req=True)
         >>> result = thread.get()
@@ -239,7 +239,7 @@ class DowntimesApi(object):
 
         Delete all downtimes that match the scope of `X`.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.cancel_downtimes_by_scope(body, async_req=True)
         >>> result = thread.get()
@@ -282,7 +282,7 @@ class DowntimesApi(object):
 
         Schedule a downtime.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_downtime(body, async_req=True)
         >>> result = thread.get()
@@ -325,7 +325,7 @@ class DowntimesApi(object):
 
         Get downtime detail by `downtime_id`.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_downtime(downtime_id, async_req=True)
         >>> result = thread.get()
@@ -368,14 +368,13 @@ class DowntimesApi(object):
 
         Get all scheduled downtimes.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_downtimes(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            current_only (bool): Only return downtimes that are active when the request is made.. [optional]
+            current_only (bool): [optional] Only return downtimes that are active when the request is made.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -409,7 +408,7 @@ class DowntimesApi(object):
 
         Get all active downtimes for the specified monitor.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_monitor_downtimes(monitor_id, async_req=True)
         >>> result = thread.get()
@@ -452,7 +451,7 @@ class DowntimesApi(object):
 
         Update a single downtime by `downtime_id`.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_downtime(downtime_id, body, async_req=True)
         >>> result = thread.get()

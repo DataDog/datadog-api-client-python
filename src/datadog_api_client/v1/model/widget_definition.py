@@ -151,21 +151,6 @@ class WidgetDefinition(ModelComposed):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {
@@ -180,142 +165,104 @@ class WidgetDefinition(ModelComposed):
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         return {}
 
     def __init__(self, *args, **kwargs):
         """WidgetDefinition - a model defined in OpenAPI
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
             time (WidgetTime): [optional]
-            title (str): The title of the widget.. [optional]
+            title (str): [optional] The title of the widget.
             title_align (WidgetTextAlign): [optional]
-            title_size (str): The size of the title.. [optional]
-            precision (int): Number of decimals to show. If not defined, the widget uses the raw value.. [optional]
+            title_size (str): [optional] The size of the title.
+            precision (int): [optional] Number of decimals to show. If not defined, the widget uses the raw value.
             text_align (WidgetTextAlign): [optional]
-            unit (str): Unit to display with the value.. [optional]
-            custom_links ([WidgetCustomLink]): List of custom links.. [optional]
-            group ([str]): List of tag prefixes to group by.. [optional]
-            tags ([str]): List of tags used to filter the groups reporting a cluster check.. [optional]
-            legend_size (str): Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".. [optional]
-            markers ([WidgetMarker]): List of markers.. [optional]
-            show_legend (bool): Whether or not to display the legend on this widget.. [optional]
+            unit (str): [optional] Unit to display with the value.
+            custom_links ([WidgetCustomLink]): [optional] List of custom links.
+            group ([str]): [optional] List of tag prefixes to group by.
+            tags ([str]): [optional] List of tags used to filter the groups reporting a cluster check.
+            legend_size (str): [optional] Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".
+            markers ([WidgetMarker]): [optional] List of markers.
+            show_legend (bool): [optional] Whether or not to display the legend on this widget.
             xaxis (WidgetAxis): [optional]
             yaxis (WidgetAxis): [optional]
             event_size (WidgetEventSize): [optional]
-            tags_execution (str): The execution method for multi-value filters. Can be either and or or.. [optional]
-            color (str): Color of the text.. [optional]
-            font_size (str): Size of the text.. [optional]
-            background_color (str): Background color of the note.. [optional]
-            banner_img (str): URL of image to display as a banner for the group.. [optional]
-            show_title (bool): Whether to show the title or not.. [optional] if omitted the server will use the default value of True
-            events ([WidgetEvent]): List of widget events.. [optional]
-            no_group_hosts (bool): Whether to show the hosts that don’t fit in a group.. [optional]
-            no_metric_hosts (bool): Whether to show the hosts with no metrics.. [optional]
+            tags_execution (str): [optional] The execution method for multi-value filters. Can be either and or or.
+            color (str): [optional] Color of the text.
+            font_size (str): [optional] Size of the text.
+            background_color (str): [optional] Background color of the note.
+            banner_img (str): [optional] URL of image to display as a banner for the group.
+            show_title (bool): [optional] Whether to show the title or not. If omitted the server will use the default value of True.
+            events ([WidgetEvent]): [optional] List of widget events.
+            no_group_hosts (bool): [optional] Whether to show the hosts that don’t fit in a group.
+            no_metric_hosts (bool): [optional] Whether to show the hosts with no metrics.
             node_type (WidgetNodeType): [optional]
-            notes (str): Notes on the title.. [optional]
-            scope ([str]): List of tags used to filter the map.. [optional]
-            has_background (bool): Whether to display a background or not.. [optional] if omitted the server will use the default value of True
-            has_border (bool): Whether to display a border or not.. [optional] if omitted the server will use the default value of True
+            notes (str): [optional] Notes on the title.
+            scope ([str]): [optional] List of tags used to filter the map.
+            has_background (bool): [optional] Whether to display a background or not. If omitted the server will use the default value of True.
+            has_border (bool): [optional] Whether to display a border or not. If omitted the server will use the default value of True.
             horizontal_align (WidgetHorizontalAlign): [optional]
             margin (WidgetMargin): [optional]
             sizing (WidgetImageSizing): [optional]
-            url_dark_theme (str): URL of the image in dark mode.. [optional]
+            url_dark_theme (str): [optional] URL of the image in dark mode.
             vertical_align (WidgetVerticalAlign): [optional]
-            columns ([str]): Which columns to display on the widget.. [optional]
-            indexes ([str]): An array of index names to query in the stream. Use [] to query all indexes at once.. [optional]
-            logset (str): ID of the log set to use.. [optional]
+            columns ([str]): [optional] Which columns to display on the widget.
+            indexes ([str]): [optional] An array of index names to query in the stream. Use [] to query all indexes at once.
+            logset (str): [optional] ID of the log set to use.
             message_display (WidgetMessageDisplay): [optional]
-            show_date_column (bool): Whether to show the date column or not. [optional]
-            show_message_column (bool): Whether to show the message column or not. [optional]
+            show_date_column (bool): [optional] Whether to show the date column or not
+            show_message_column (bool): [optional] Whether to show the message column or not
             sort (WidgetMonitorSummarySort): [optional]
             color_preference (WidgetColorPreference): [optional]
-            count (int): The number of monitors to display.. [optional]
+            count (int): [optional] The number of monitors to display.
             display_format (WidgetServiceSummaryDisplayFormat): [optional]
-            hide_zero_counts (bool): Whether to show counts of 0 or not.. [optional]
-            show_last_triggered (bool): Whether to show the time that has elapsed since the monitor/group triggered.. [optional]
-            start (int): The start of the list. Typically 0.. [optional]
+            hide_zero_counts (bool): [optional] Whether to show counts of 0 or not.
+            show_last_triggered (bool): [optional] Whether to show the time that has elapsed since the monitor/group triggered.
+            start (int): [optional] The start of the list. Typically 0.
             summary_type (WidgetSummaryType): [optional]
-            has_padding (bool): Whether to add padding or not.. [optional] if omitted the server will use the default value of True
-            show_tick (bool): Whether to show a tick or not.. [optional]
+            has_padding (bool): [optional] Whether to add padding or not. If omitted the server will use the default value of True.
+            show_tick (bool): [optional] Whether to show a tick or not.
             tick_edge (WidgetTickEdge): [optional]
-            tick_pos (str): Where to position the tick on an edge.. [optional]
-            autoscale (bool): Whether to use auto-scaling or not.. [optional]
-            custom_unit (str): Display a unit of your choice on the widget.. [optional]
-            color_by_groups ([str]): List of groups used for colors.. [optional]
-            global_time_target (str): Defined global time target.. [optional]
-            show_error_budget (bool): Defined error budget.. [optional]
-            slo_id (str): ID of the SLO displayed.. [optional]
-            time_windows ([WidgetTimeWindows]): Times being monitored.. [optional]
+            tick_pos (str): [optional] Where to position the tick on an edge.
+            autoscale (bool): [optional] Whether to use auto-scaling or not.
+            custom_unit (str): [optional] Display a unit of your choice on the widget.
+            color_by_groups ([str]): [optional] List of groups used for colors.
+            global_time_target (str): [optional] Defined global time target.
+            show_error_budget (bool): [optional] Defined error budget.
+            slo_id (str): [optional] ID of the SLO displayed.
+            time_windows ([WidgetTimeWindows]): [optional] Times being monitored.
             view_mode (WidgetViewMode): [optional]
-            show_breakdown (bool): Whether to show the latency breakdown or not.. [optional]
-            show_distribution (bool): Whether to show the latency distribution or not.. [optional]
-            show_errors (bool): Whether to show the error metrics or not.. [optional]
-            show_hits (bool): Whether to show the hits metrics or not.. [optional]
-            show_latency (bool): Whether to show the latency metrics or not.. [optional]
-            show_resource_list (bool): Whether to show the resource list or not.. [optional]
+            show_breakdown (bool): [optional] Whether to show the latency breakdown or not.
+            show_distribution (bool): [optional] Whether to show the latency distribution or not.
+            show_errors (bool): [optional] Whether to show the error metrics or not.
+            show_hits (bool): [optional] Whether to show the hits metrics or not.
+            show_latency (bool): [optional] Whether to show the latency metrics or not.
+            show_resource_list (bool): [optional] Whether to show the resource list or not.
             size_format (WidgetSizeFormat): [optional]
             has_search_bar (TableWidgetHasSearchBar): [optional]
-            legend_columns ([TimeseriesWidgetLegendColumn]): Columns displayed in the legend.. [optional]
+            legend_columns ([TimeseriesWidgetLegendColumn]): [optional] Columns displayed in the legend.
             legend_layout (TimeseriesWidgetLegendLayout): [optional]
             right_yaxis (WidgetAxis): [optional]
-            alert_id (str): ID of the alert to use in the widget.. [optional]
+            alert_id (str): [optional] ID of the alert to use in the widget.
             type (FunnelWidgetDefinitionType): [optional]
             viz_type (WidgetVizType): [optional]
-            requests ([FunnelWidgetRequest]): Request payload used to query items.. [optional]
-            check (str): Name of the check to use in the widget.. [optional]
+            requests ([FunnelWidgetRequest]): [optional] Request payload used to query items.
+            check (str): [optional] Name of the check to use in the widget.
             group_by (TreeMapGroupBy): [optional]
             grouping (WidgetGrouping): [optional]
-            query (str): Query to filter the monitors with.. [optional]
-            text (str): Text to display.. [optional]
+            query (str): [optional] Query to filter the monitors with.
+            text (str): [optional] Text to display.
             style (HostMapWidgetDefinitionStyle): [optional]
             view (GeomapWidgetDefinitionView): [optional]
             layout_type (WidgetLayoutType): [optional]
-            widgets ([Widget]): List of widget groups.. [optional]
-            url (str): URL of the image.. [optional]
-            content (str): Content of the note.. [optional]
-            view_type (str): Type of view displayed by the widget.. [optional] if omitted the server will use the default value of "detail"
-            filters ([str]): Your environment and primary tag (or * if enabled for your account).. [optional]
-            service (str): APM service.. [optional]
-            env (str): APM environment.. [optional]
-            span_name (str): APM span name.. [optional]
+            widgets ([Widget]): [optional] List of widget groups.
+            url (str): [optional] URL of the image.
+            content (str): [optional] Content of the note.
+            view_type (str): [optional] Type of view displayed by the widget. If omitted the server will use the default value of "detail".
+            filters ([str]): [optional] Your environment and primary tag (or * if enabled for your account).
+            service (str): [optional] APM service.
+            env (str): [optional] APM environment.
+            span_name (str): [optional] APM span name.
             color_by (TreeMapColorBy): [optional]
             size_by (TreeMapSizeBy): [optional]
         """

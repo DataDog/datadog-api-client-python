@@ -184,7 +184,7 @@ class LogsPipelinesApi(object):
 
         Create a pipeline in your organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_logs_pipeline(body, async_req=True)
         >>> result = thread.get()
@@ -227,7 +227,7 @@ class LogsPipelinesApi(object):
 
         Delete a given pipeline from your organization. This endpoint takes no JSON arguments.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_logs_pipeline(pipeline_id, async_req=True)
         >>> result = thread.get()
@@ -270,7 +270,7 @@ class LogsPipelinesApi(object):
 
         Get a specific pipeline from your organization. This endpoint takes no JSON arguments.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_logs_pipeline(pipeline_id, async_req=True)
         >>> result = thread.get()
@@ -313,11 +313,10 @@ class LogsPipelinesApi(object):
 
         Get the current order of your pipelines. This endpoint takes no JSON arguments.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_logs_pipeline_order(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -353,11 +352,10 @@ class LogsPipelinesApi(object):
 
         Get all pipelines from your organization. This endpoint takes no JSON arguments.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_logs_pipelines(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -393,7 +391,7 @@ class LogsPipelinesApi(object):
 
         Update a given pipeline configuration to change it’s processors or their order.  **Note**: Using this method updates your pipeline configuration by **replacing** your current configuration with the new one sent to your Datadog organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_logs_pipeline(pipeline_id, body, async_req=True)
         >>> result = thread.get()
@@ -438,7 +436,7 @@ class LogsPipelinesApi(object):
 
         Update the order of your pipelines. Since logs are processed sequentially, reordering a pipeline may change the structure and content of the data processed by other pipelines and their processors.  **Note**: Using the `PUT` method updates your pipeline order by replacing your current order with the new one sent to your Datadog organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_logs_pipeline_order(body, async_req=True)
         >>> result = thread.get()

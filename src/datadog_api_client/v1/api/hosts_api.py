@@ -167,14 +167,13 @@ class HostsApi(object):
 
         This endpoint returns the total number of active and up hosts in your Datadog account. Active means the host has reported in the past hour, and up means it has reported in the past two hours.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_host_totals(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            _from (int): Number of seconds from which you want to get total number of active hosts.. [optional]
+            _from (int): [optional] Number of seconds from which you want to get total number of active hosts.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -208,21 +207,20 @@ class HostsApi(object):
 
         This endpoint allows searching for hosts by name, alias, or tag. Hosts live within the past 3 hours are included by default. Retention is 7 days. Results are paginated with a max of 1000 results at a time.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_hosts(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            filter (str): String to filter search results.. [optional]
-            sort_field (str): Sort hosts by this field.. [optional]
-            sort_dir (str): Direction of sort. Options include `asc` and `desc`.. [optional]
-            start (int): Host result to start search from.. [optional]
-            count (int): Number of hosts to return. Max 1000.. [optional]
-            _from (int): Number of seconds since UNIX epoch from which you want to search your hosts.. [optional]
-            include_muted_hosts_data (bool): Include information on the muted status of hosts and when the mute expires.. [optional]
-            include_hosts_metadata (bool): Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.).. [optional]
+            filter (str): [optional] String to filter search results.
+            sort_field (str): [optional] Sort hosts by this field.
+            sort_dir (str): [optional] Direction of sort. Options include `asc` and `desc`.
+            start (int): [optional] Host result to start search from.
+            count (int): [optional] Number of hosts to return. Max 1000.
+            _from (int): [optional] Number of seconds since UNIX epoch from which you want to search your hosts.
+            include_muted_hosts_data (bool): [optional] Include information on the muted status of hosts and when the mute expires.
+            include_hosts_metadata (bool): [optional] Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.).
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -256,7 +254,7 @@ class HostsApi(object):
 
         Mute a host.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.mute_host(host_name, body, async_req=True)
         >>> result = thread.get()
@@ -301,7 +299,7 @@ class HostsApi(object):
 
         Unmutes a host. This endpoint takes no JSON arguments.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.unmute_host(host_name, async_req=True)
         >>> result = thread.get()

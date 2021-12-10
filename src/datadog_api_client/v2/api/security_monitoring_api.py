@@ -346,7 +346,7 @@ class SecurityMonitoringApi(object):
 
         Create a security filter.  See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/) for more examples.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_security_filter(body, async_req=True)
         >>> result = thread.get()
@@ -389,7 +389,7 @@ class SecurityMonitoringApi(object):
 
         Create a detection rule.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_security_monitoring_rule(body, async_req=True)
         >>> result = thread.get()
@@ -432,7 +432,7 @@ class SecurityMonitoringApi(object):
 
         Delete a specific security filter.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_security_filter(security_filter_id, async_req=True)
         >>> result = thread.get()
@@ -475,7 +475,7 @@ class SecurityMonitoringApi(object):
 
         Delete an existing rule. Default rules cannot be deleted.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_security_monitoring_rule(rule_id, async_req=True)
         >>> result = thread.get()
@@ -518,7 +518,7 @@ class SecurityMonitoringApi(object):
 
         Get the details of a specific security filter.  See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/) for more examples.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_security_filter(security_filter_id, async_req=True)
         >>> result = thread.get()
@@ -561,7 +561,7 @@ class SecurityMonitoringApi(object):
 
         Get a rule's details.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_security_monitoring_rule(rule_id, async_req=True)
         >>> result = thread.get()
@@ -604,11 +604,10 @@ class SecurityMonitoringApi(object):
 
         Get the list of configured security filters with their definitions.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_security_filters(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -644,15 +643,14 @@ class SecurityMonitoringApi(object):
 
         List rules.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_security_monitoring_rules(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-            page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
+            page_size (int): [optional] Size for a given page. If omitted the server will use the default value of 10.
+            page_number (int): [optional] Specific page number to return. If omitted the server will use the default value of 0.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -686,19 +684,18 @@ class SecurityMonitoringApi(object):
 
         The list endpoint returns security signals that match a search query. Both this endpoint and the POST endpoint can be used interchangeably when listing security signals.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_security_monitoring_signals(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            filter_query (str): The search query for security signals.. [optional]
-            filter_from (datetime): The minimum timestamp for requested security signals.. [optional]
-            filter_to (datetime): The maximum timestamp for requested security signals.. [optional]
-            sort (SecurityMonitoringSignalsSort): The order of the security signals in results.. [optional]
-            page_cursor (str): A list of results using the cursor provided in the previous query.. [optional]
-            page_limit (int): The maximum number of security signals in the response.. [optional] if omitted the server will use the default value of 10
+            filter_query (str): [optional] The search query for security signals.
+            filter_from (datetime): [optional] The minimum timestamp for requested security signals.
+            filter_to (datetime): [optional] The maximum timestamp for requested security signals.
+            sort (SecurityMonitoringSignalsSort): [optional] The order of the security signals in results.
+            page_cursor (str): [optional] A list of results using the cursor provided in the previous query.
+            page_limit (int): [optional] The maximum number of security signals in the response. If omitted the server will use the default value of 10.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -732,11 +729,10 @@ class SecurityMonitoringApi(object):
 
         Returns security signals that match a search query. Both this endpoint and the GET endpoint can be used interchangeably for listing security signals.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.search_security_monitoring_signals(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             body (SecurityMonitoringSignalListRequest): [optional]
@@ -773,7 +769,7 @@ class SecurityMonitoringApi(object):
 
         Update a specific security filter. Returns the security filter object when the request is successful.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_security_filter(security_filter_id, body, async_req=True)
         >>> result = thread.get()
@@ -818,7 +814,7 @@ class SecurityMonitoringApi(object):
 
         Update an existing rule. When updating `cases`, `queries` or `options`, the whole field must be included. For example, when modifying a query all queries must be included. Default rules can only be updated to be enabled and to change notifications.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_security_monitoring_rule(rule_id, body, async_req=True)
         >>> result = thread.get()

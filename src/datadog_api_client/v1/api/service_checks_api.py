@@ -54,7 +54,7 @@ class ServiceChecksApi(object):
 
         Submit a list of Service Checks.  **Notes**: - A valid API key is required. - Service checks can be submitted up to 10 minutes in the past.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.submit_service_check(body, async_req=True)
         >>> result = thread.get()

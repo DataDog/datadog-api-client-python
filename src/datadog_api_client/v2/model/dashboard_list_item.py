@@ -29,21 +29,6 @@ class DashboardListItem(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {
@@ -54,14 +39,6 @@ class DashboardListItem(ModelNormal):
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         lazy_import()
         return {
             "author": (Creator,),
@@ -113,46 +90,16 @@ class DashboardListItem(ModelNormal):
             type (DashboardType):
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
             author (Creator): [optional]
-            created (datetime): Date of creation of the dashboard.. [optional]
-            icon (str): URL to the icon of the dashboard.. [optional]
-            is_favorite (bool): Whether or not the dashboard is in the favorites.. [optional]
-            is_read_only (bool): Whether or not the dashboard is read only.. [optional]
-            is_shared (bool): Whether the dashboard is publicly shared or not.. [optional]
-            modified (datetime): Date of last edition of the dashboard.. [optional]
-            popularity (int): Popularity of the dashboard.. [optional]
-            title (str): Title of the dashboard.. [optional]
-            url (str): URL path to the dashboard.. [optional]
+            created (datetime): [optional] Date of creation of the dashboard.
+            icon (str): [optional] URL to the icon of the dashboard.
+            is_favorite (bool): [optional] Whether or not the dashboard is in the favorites.
+            is_read_only (bool): [optional] Whether or not the dashboard is read only.
+            is_shared (bool): [optional] Whether the dashboard is publicly shared or not.
+            modified (datetime): [optional] Date of last edition of the dashboard.
+            popularity (int): [optional] Popularity of the dashboard.
+            title (str): [optional] Title of the dashboard.
+            url (str): [optional] URL path to the dashboard.
         """
         super().__init__(kwargs)
 

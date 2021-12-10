@@ -33,21 +33,6 @@ class SyntheticsTestRequest(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {
@@ -63,14 +48,6 @@ class SyntheticsTestRequest(ModelNormal):
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         lazy_import()
         return {
             "allow_insecure": (bool,),
@@ -122,55 +99,25 @@ class SyntheticsTestRequest(ModelNormal):
         """SyntheticsTestRequest - a model defined in OpenAPI
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            allow_insecure (bool): Allows loading insecure content for an HTTP request in a multistep test step.. [optional]
+            allow_insecure (bool): [optional] Allows loading insecure content for an HTTP request in a multistep test step.
             basic_auth (SyntheticsBasicAuth): [optional]
-            body (str): Body to include in the test.. [optional]
+            body (str): [optional] Body to include in the test.
             certificate (SyntheticsTestRequestCertificate): [optional]
-            dns_server (str): DNS server to use for DNS tests.. [optional]
-            dns_server_port (int): DNS server port to use for DNS tests.. [optional]
-            follow_redirects (bool): Specifies whether or not the request follows redirects.. [optional]
+            dns_server (str): [optional] DNS server to use for DNS tests.
+            dns_server_port (int): [optional] DNS server port to use for DNS tests.
+            follow_redirects (bool): [optional] Specifies whether or not the request follows redirects.
             headers (SyntheticsTestHeaders): [optional]
-            host (str): Host name to perform the test with.. [optional]
-            message (str): Message to send for UDP or WebSocket tests.. [optional]
+            host (str): [optional] Host name to perform the test with.
+            message (str): [optional] Message to send for UDP or WebSocket tests.
             method (HTTPMethod): [optional]
-            no_saving_response_body (bool): Determines whether or not to save the response body.. [optional]
-            number_of_packets (int): Number of pings to use per test.. [optional]
-            port (int): Port to use when performing the test.. [optional]
-            query (dict): Query to use for the test.. [optional]
-            servername (str): For SSL tests, it specifies on which server you want to initiate the TLS handshake, allowing the server to present one of multiple possible certificates on the same IP address and TCP port number.. [optional]
-            should_track_hops (bool): Turns on a traceroute probe to discover all gateways along the path to the host destination.. [optional]
-            timeout (float): Timeout in seconds for the test.. [optional]
-            url (str): URL to perform the test with.. [optional]
+            no_saving_response_body (bool): [optional] Determines whether or not to save the response body.
+            number_of_packets (int): [optional] Number of pings to use per test.
+            port (int): [optional] Port to use when performing the test.
+            query (dict): [optional] Query to use for the test.
+            servername (str): [optional] For SSL tests, it specifies on which server you want to initiate the TLS handshake, allowing the server to present one of multiple possible certificates on the same IP address and TCP port number.
+            should_track_hops (bool): [optional] Turns on a traceroute probe to discover all gateways along the path to the host destination.
+            timeout (float): [optional] Timeout in seconds for the test.
+            url (str): [optional] URL to perform the test with.
         """
         super().__init__(kwargs)
 

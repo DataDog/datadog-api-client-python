@@ -27,21 +27,6 @@ class DowntimeChild(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {
@@ -60,14 +45,6 @@ class DowntimeChild(ModelNormal):
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         lazy_import()
         return {
             "active": (bool,),
@@ -135,52 +112,22 @@ class DowntimeChild(ModelNormal):
         """DowntimeChild - a model defined in OpenAPI
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            active (bool): If a scheduled downtime currently exists.. [optional]
-            canceled (int, none_type): If a scheduled downtime is canceled.. [optional]
-            creator_id (int): User ID of the downtime creator.. [optional]
-            disabled (bool): If a downtime has been disabled.. [optional]
-            downtime_type (int): `0` for a downtime applied on `*` or all, `1` when the downtime is only scoped to hosts, or `2` when the downtime is scoped to anything but hosts.. [optional]
-            end (int, none_type): POSIX timestamp to end the downtime. If not provided, the downtime is in effect indefinitely until you cancel it.. [optional]
-            id (int): The downtime ID.. [optional]
-            message (str): A message to include with notifications for this downtime. Email notifications can be sent to specific users by using the same `@username` notation as events.. [optional]
-            monitor_id (int, none_type): A single monitor to which the downtime applies. If not provided, the downtime applies to all monitors.. [optional]
-            monitor_tags ([str]): A comma-separated list of monitor tags. For example, tags that are applied directly to monitors, not tags that are used in monitor queries (which are filtered by the scope parameter), to which the downtime applies. The resulting downtime applies to monitors that match ALL provided monitor tags. For example, `service:postgres` **AND** `team:frontend`.. [optional]
-            parent_id (int, none_type): ID of the parent Downtime.. [optional]
+            active (bool): [optional] If a scheduled downtime currently exists.
+            canceled (int, none_type): [optional] If a scheduled downtime is canceled.
+            creator_id (int): [optional] User ID of the downtime creator.
+            disabled (bool): [optional] If a downtime has been disabled.
+            downtime_type (int): [optional] `0` for a downtime applied on `*` or all, `1` when the downtime is only scoped to hosts, or `2` when the downtime is scoped to anything but hosts.
+            end (int, none_type): [optional] POSIX timestamp to end the downtime. If not provided, the downtime is in effect indefinitely until you cancel it.
+            id (int): [optional] The downtime ID.
+            message (str): [optional] A message to include with notifications for this downtime. Email notifications can be sent to specific users by using the same `@username` notation as events.
+            monitor_id (int, none_type): [optional] A single monitor to which the downtime applies. If not provided, the downtime applies to all monitors.
+            monitor_tags ([str]): [optional] A comma-separated list of monitor tags. For example, tags that are applied directly to monitors, not tags that are used in monitor queries (which are filtered by the scope parameter), to which the downtime applies. The resulting downtime applies to monitors that match ALL provided monitor tags. For example, `service:postgres` **AND** `team:frontend`.
+            parent_id (int, none_type): [optional] ID of the parent Downtime.
             recurrence (DowntimeRecurrence): [optional]
-            scope ([str]): The scope(s) to which the downtime applies. For example, `host:app2`. Provide multiple scopes as a comma-separated list like `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (`env:dev` **AND** `env:prod`).. [optional]
-            start (int): POSIX timestamp to start the downtime. If not provided, the downtime starts the moment it is created.. [optional]
-            timezone (str): The timezone in which to display the downtime's start and end times in Datadog applications.. [optional]
-            updater_id (int, none_type): ID of the last user that updated the downtime.. [optional]
+            scope ([str]): [optional] The scope(s) to which the downtime applies. For example, `host:app2`. Provide multiple scopes as a comma-separated list like `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (`env:dev` **AND** `env:prod`).
+            start (int): [optional] POSIX timestamp to start the downtime. If not provided, the downtime starts the moment it is created.
+            timezone (str): [optional] The timezone in which to display the downtime's start and end times in Datadog applications.
+            updater_id (int, none_type): [optional] ID of the last user that updated the downtime.
         """
         super().__init__(kwargs)
 

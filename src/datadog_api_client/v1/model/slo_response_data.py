@@ -33,35 +33,12 @@ class SLOResponseData(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {}
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         lazy_import()
         return {
             "configured_alert_ids": ([int],),
@@ -110,49 +87,19 @@ class SLOResponseData(ModelNormal):
         """SLOResponseData - a model defined in OpenAPI
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            configured_alert_ids ([int]): A list of SLO monitors IDs that reference this SLO. This field is returned only when `with_configured_alert_ids` parameter is true in query.. [optional]
-            created_at (int): Creation timestamp (UNIX time in seconds)  Always included in service level objective responses.. [optional]
+            configured_alert_ids ([int]): [optional] A list of SLO monitors IDs that reference this SLO. This field is returned only when `with_configured_alert_ids` parameter is true in query.
+            created_at (int): [optional] Creation timestamp (UNIX time in seconds)  Always included in service level objective responses.
             creator (Creator): [optional]
-            description (str, none_type): A user-defined description of the service level objective.  Always included in service level objective responses (but may be `null`). Optional in create/update requests.. [optional]
-            groups ([str]): A list of (up to 20) monitor groups that narrow the scope of a monitor service level objective.  Included in service level objective responses if it is not empty. Optional in create/update requests for monitor service level objectives, but may only be used when then length of the `monitor_ids` field is one.. [optional]
-            id (str): A unique identifier for the service level objective object.  Always included in service level objective responses.. [optional]
-            modified_at (int): Modification timestamp (UNIX time in seconds)  Always included in service level objective responses.. [optional]
-            monitor_ids ([int]): A list of monitor ids that defines the scope of a monitor service level objective. **Required if type is `monitor`**.. [optional]
-            monitor_tags ([str]): The union of monitor tags for all monitors referenced by the `monitor_ids` field. Always included in service level objective responses for monitor service level objectives (but may be empty). Ignored in create/update requests. Does not affect which monitors are included in the service level objective (that is determined entirely by the `monitor_ids` field).. [optional]
-            name (str): The name of the service level objective object.. [optional]
+            description (str, none_type): [optional] A user-defined description of the service level objective.  Always included in service level objective responses (but may be `null`). Optional in create/update requests.
+            groups ([str]): [optional] A list of (up to 20) monitor groups that narrow the scope of a monitor service level objective.  Included in service level objective responses if it is not empty. Optional in create/update requests for monitor service level objectives, but may only be used when then length of the `monitor_ids` field is one.
+            id (str): [optional] A unique identifier for the service level objective object.  Always included in service level objective responses.
+            modified_at (int): [optional] Modification timestamp (UNIX time in seconds)  Always included in service level objective responses.
+            monitor_ids ([int]): [optional] A list of monitor ids that defines the scope of a monitor service level objective. **Required if type is `monitor`**.
+            monitor_tags ([str]): [optional] The union of monitor tags for all monitors referenced by the `monitor_ids` field. Always included in service level objective responses for monitor service level objectives (but may be empty). Ignored in create/update requests. Does not affect which monitors are included in the service level objective (that is determined entirely by the `monitor_ids` field).
+            name (str): [optional] The name of the service level objective object.
             query (ServiceLevelObjectiveQuery): [optional]
-            tags ([str]): A list of tags associated with this service level objective. Always included in service level objective responses (but may be empty). Optional in create/update requests.. [optional]
-            thresholds ([SLOThreshold]): The thresholds (timeframes and associated targets) for this service level objective object.. [optional]
+            tags ([str]): [optional] A list of tags associated with this service level objective. Always included in service level objective responses (but may be empty). Optional in create/update requests.
+            thresholds ([SLOThreshold]): [optional] The thresholds (timeframes and associated targets) for this service level objective object.
             type (SLOType): [optional]
         """
         super().__init__(kwargs)

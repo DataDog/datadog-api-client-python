@@ -21,19 +21,6 @@ class UsageAttributionSupportedMetrics(ModelSimple):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     allowed_values = {
@@ -80,14 +67,6 @@ class UsageAttributionSupportedMetrics(ModelSimple):
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         return {
             "value": (str,),
         }
@@ -98,40 +77,10 @@ class UsageAttributionSupportedMetrics(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Supported fields for usage attribution requests (valid requests contain one or more metrics, or `*` for all).., must be one of ["custom_timeseries_usage", "container_usage", "snmp_percentage", "apm_host_usage", "browser_usage", "npm_host_percentage", "infra_host_usage", "custom_timeseries_percentage", "container_percentage", "lambda_usage", "api_usage", "apm_host_percentage", "infra_host_percentage", "snmp_usage", "browser_percentage", "api_percentage", "lambda_percentage", "npm_host_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "fargate_usage", "fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "profiled_container_usage", "profiled_container_percentage", "dbm_hosts_usage", "dbm_hosts_percentage", "dbm_queries_usage", "dbm_queries_percentage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "*"]
+            args[0] (str): Supported fields for usage attribution requests (valid requests contain one or more metrics, or `*` for all). Must be one of ["custom_timeseries_usage", "container_usage", "snmp_percentage", "apm_host_usage", "browser_usage", "npm_host_percentage", "infra_host_usage", "custom_timeseries_percentage", "container_percentage", "lambda_usage", "api_usage", "apm_host_percentage", "infra_host_percentage", "snmp_usage", "browser_percentage", "api_percentage", "lambda_percentage", "npm_host_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "fargate_usage", "fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "profiled_container_usage", "profiled_container_percentage", "dbm_hosts_usage", "dbm_hosts_percentage", "dbm_queries_usage", "dbm_queries_percentage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "*"].
 
         Keyword Args:
-            value (str): Supported fields for usage attribution requests (valid requests contain one or more metrics, or `*` for all).., must be one of ["custom_timeseries_usage", "container_usage", "snmp_percentage", "apm_host_usage", "browser_usage", "npm_host_percentage", "infra_host_usage", "custom_timeseries_percentage", "container_percentage", "lambda_usage", "api_usage", "apm_host_percentage", "infra_host_percentage", "snmp_usage", "browser_percentage", "api_percentage", "lambda_percentage", "npm_host_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "fargate_usage", "fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "profiled_container_usage", "profiled_container_percentage", "dbm_hosts_usage", "dbm_hosts_percentage", "dbm_queries_usage", "dbm_queries_percentage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "*"]
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
+            value (str): Supported fields for usage attribution requests (valid requests contain one or more metrics, or `*` for all). Must be one of ["custom_timeseries_usage", "container_usage", "snmp_percentage", "apm_host_usage", "browser_usage", "npm_host_percentage", "infra_host_usage", "custom_timeseries_percentage", "container_percentage", "lambda_usage", "api_usage", "apm_host_percentage", "infra_host_percentage", "snmp_usage", "browser_percentage", "api_percentage", "lambda_percentage", "npm_host_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "fargate_usage", "fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "profiled_container_usage", "profiled_container_percentage", "dbm_hosts_usage", "dbm_hosts_percentage", "dbm_queries_usage", "dbm_queries_percentage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "*"].
         """
         super().__init__(kwargs)
 
