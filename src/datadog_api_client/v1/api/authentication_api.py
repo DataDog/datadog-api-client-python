@@ -50,11 +50,10 @@ class AuthenticationApi(object):
 
         Check if the API key (not the APP key) is valid. If invalid, a 403 is returned.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.validate(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status

@@ -147,7 +147,7 @@ class LogsMetricsApi(object):
 
         Create a metric based on your ingested logs in your organization. Returns the log-based metric object from the request body when the request is successful.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_logs_metric(body, async_req=True)
         >>> result = thread.get()
@@ -190,7 +190,7 @@ class LogsMetricsApi(object):
 
         Delete a specific log-based metric from your organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_logs_metric(metric_id, async_req=True)
         >>> result = thread.get()
@@ -233,7 +233,7 @@ class LogsMetricsApi(object):
 
         Get a specific log-based metric from your organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_logs_metric(metric_id, async_req=True)
         >>> result = thread.get()
@@ -276,11 +276,10 @@ class LogsMetricsApi(object):
 
         Get the list of configured log-based metrics with their definitions.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_logs_metrics(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -316,7 +315,7 @@ class LogsMetricsApi(object):
 
         Update a specific log-based metric from your organization. Returns the log-based metric object from the request body when the request is successful.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_logs_metric(metric_id, body, async_req=True)
         >>> result = thread.get()

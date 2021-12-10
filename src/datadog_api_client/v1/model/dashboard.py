@@ -35,35 +35,12 @@ class Dashboard(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {}
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         lazy_import()
         return {
             "author_handle": (str,),
@@ -130,48 +107,18 @@ class Dashboard(ModelNormal):
             widgets ([Widget]): List of widgets to display on the dashboard.
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            author_handle (str): Identifier of the dashboard author.. [optional]
-            created_at (datetime): Creation date of the dashboard.. [optional]
-            description (str, none_type): Description of the dashboard.. [optional]
-            id (str): ID of the dashboard.. [optional]
-            is_read_only (bool): Whether this dashboard is read-only. If True, only the author and admins can make changes to it. Prefer using `restricted_roles` to manage write authorization.. [optional] if omitted the server will use the default value of False
-            modified_at (datetime): Modification date of the dashboard.. [optional]
-            notify_list ([str], none_type): List of handles of users to notify when changes are made to this dashboard.. [optional]
+            author_handle (str): [optional] Identifier of the dashboard author.
+            created_at (datetime): [optional] Creation date of the dashboard.
+            description (str, none_type): [optional] Description of the dashboard.
+            id (str): [optional] ID of the dashboard.
+            is_read_only (bool): [optional] Whether this dashboard is read-only. If True, only the author and admins can make changes to it. Prefer using `restricted_roles` to manage write authorization. If omitted the server will use the default value of False.
+            modified_at (datetime): [optional] Modification date of the dashboard.
+            notify_list ([str], none_type): [optional] List of handles of users to notify when changes are made to this dashboard.
             reflow_type (DashboardReflowType): [optional]
-            restricted_roles ([str]): A list of role identifiers. Only the author and users associated with at least one of these roles can edit this dashboard.. [optional]
-            template_variable_presets ([DashboardTemplateVariablePreset], none_type): Array of template variables saved views.. [optional]
-            template_variables ([DashboardTemplateVariable], none_type): List of template variables for this dashboard.. [optional]
-            url (str): The URL of the dashboard.. [optional]
+            restricted_roles ([str]): [optional] A list of role identifiers. Only the author and users associated with at least one of these roles can edit this dashboard.
+            template_variable_presets ([DashboardTemplateVariablePreset], none_type): [optional] Array of template variables saved views.
+            template_variables ([DashboardTemplateVariable], none_type): [optional] List of template variables for this dashboard.
+            url (str): [optional] The URL of the dashboard.
         """
         super().__init__(kwargs)
 

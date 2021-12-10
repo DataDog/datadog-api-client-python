@@ -218,7 +218,7 @@ class LogsApi(object):
 
         The API endpoint to aggregate events into buckets and compute metrics and timeseries.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.aggregate_logs(body, async_req=True)
         >>> result = thread.get()
@@ -261,11 +261,10 @@ class LogsApi(object):
 
         List endpoint returns logs that match a log search query. [Results are paginated][1].  Use this endpoint to build complex logs filtering and search.  **If you are considering archiving logs for your organization, consider use of the Datadog archive capabilities instead of the log list API. See [Datadog Logs Archive documentation][2].**  [1]: /logs/guide/collect-multiple-logs-with-pagination [2]: https://docs.datadoghq.com/logs/archives
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_logs(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             body (LogsListRequest): [optional]
@@ -302,20 +301,19 @@ class LogsApi(object):
 
         List endpoint returns logs that match a log search query. [Results are paginated][1].  Use this endpoint to see your latest logs.  **If you are considering archiving logs for your organization, consider use of the Datadog archive capabilities instead of the log list API. See [Datadog Logs Archive documentation][2].**  [1]: /logs/guide/collect-multiple-logs-with-pagination [2]: https://docs.datadoghq.com/logs/archives
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_logs_get(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            filter_query (str): Search query following logs syntax.. [optional]
-            filter_index (str): For customers with multiple indexes, the indexes to search Defaults to '*' which means all indexes. [optional]
-            filter_from (datetime): Minimum timestamp for requested logs.. [optional]
-            filter_to (datetime): Maximum timestamp for requested logs.. [optional]
-            sort (LogsSort): Order of logs in results.. [optional]
-            page_cursor (str): List following results with a cursor provided in the previous query.. [optional]
-            page_limit (int): Maximum number of logs in the response.. [optional] if omitted the server will use the default value of 10
+            filter_query (str): [optional] Search query following logs syntax.
+            filter_index (str): [optional] For customers with multiple indexes, the indexes to search Defaults to '*' which means all indexes
+            filter_from (datetime): [optional] Minimum timestamp for requested logs.
+            filter_to (datetime): [optional] Maximum timestamp for requested logs.
+            sort (LogsSort): [optional] Order of logs in results.
+            page_cursor (str): [optional] List following results with a cursor provided in the previous query.
+            page_limit (int): [optional] Maximum number of logs in the response. If omitted the server will use the default value of 10.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -349,7 +347,7 @@ class LogsApi(object):
 
         Send your logs to your Datadog platform over HTTP. Limits per HTTP request are:  - Maximum content size per payload (uncompressed): 5MB - Maximum size for a single log: 1MB - Maximum array size if sending multiple logs in an array: 1000 entries  Any log exceeding 1MB is accepted and truncated by Datadog: - For a single log request, the API truncates the log at 1MB and returns a 2xx. - For a multi-logs request, the API processes all logs, truncates only logs larger than 1MB, and returns a 2xx.  Datadog recommends sending your logs compressed. Add the `Content-Encoding: gzip` header to the request when sending compressed logs.  The status codes answered by the HTTP API are: - 202: Accepted: the request has been accepted for processing - 400: Bad request (likely an issue in the payload formatting) - 401: Unauthorized (likely a missing API Key) - 403: Permission issue (likely using an invalid API Key) - 408: Request Timeout, request should be retried after some time - 413: Payload too large (batch is above 5MB uncompressed) - 429: Too Many Requests, request should be retried after some time - 500: Internal Server Error, the server encountered an unexpected condition that prevented it from fulfilling the request, request should be retried after some time - 503: Service Unavailable, the server is not ready to handle the request probably because it is overloaded, request should be retried after some time
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.submit_log(body, async_req=True)
         >>> result = thread.get()
@@ -358,8 +356,8 @@ class LogsApi(object):
             body (HTTPLog): Log to send (JSON format).
 
         Keyword Args:
-            content_encoding (ContentEncoding): HTTP header used to compress the media-type.. [optional]
-            ddtags (str): Log tags can be passed as query parameters with `text/plain` content type.. [optional]
+            content_encoding (ContentEncoding): [optional] HTTP header used to compress the media-type.
+            ddtags (str): [optional] Log tags can be passed as query parameters with `text/plain` content type.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

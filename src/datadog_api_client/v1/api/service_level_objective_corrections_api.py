@@ -147,7 +147,7 @@ class ServiceLevelObjectiveCorrectionsApi(object):
 
         Create an SLO Correction.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_slo_correction(body, async_req=True)
         >>> result = thread.get()
@@ -190,7 +190,7 @@ class ServiceLevelObjectiveCorrectionsApi(object):
 
         Permanently delete the specified SLO correction object.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_slo_correction(slo_correction_id, async_req=True)
         >>> result = thread.get()
@@ -233,7 +233,7 @@ class ServiceLevelObjectiveCorrectionsApi(object):
 
         Get an SLO correction.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_slo_correction(slo_correction_id, async_req=True)
         >>> result = thread.get()
@@ -276,11 +276,10 @@ class ServiceLevelObjectiveCorrectionsApi(object):
 
         Get all Service Level Objective corrections.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_slo_correction(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -316,7 +315,7 @@ class ServiceLevelObjectiveCorrectionsApi(object):
 
         Update the specified SLO correction object object.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_slo_correction(slo_correction_id, body, async_req=True)
         >>> result = thread.get()

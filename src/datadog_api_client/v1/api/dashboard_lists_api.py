@@ -146,7 +146,7 @@ class DashboardListsApi(object):
 
         Create an empty dashboard list.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_dashboard_list(body, async_req=True)
         >>> result = thread.get()
@@ -189,7 +189,7 @@ class DashboardListsApi(object):
 
         Delete a dashboard list.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_dashboard_list(list_id, async_req=True)
         >>> result = thread.get()
@@ -232,7 +232,7 @@ class DashboardListsApi(object):
 
         Fetch an existing dashboard list's definition.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_dashboard_list(list_id, async_req=True)
         >>> result = thread.get()
@@ -275,11 +275,10 @@ class DashboardListsApi(object):
 
         Fetch all of your existing dashboard list definitions.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_dashboard_lists(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -315,7 +314,7 @@ class DashboardListsApi(object):
 
         Update the name of a dashboard list.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_dashboard_list(list_id, body, async_req=True)
         >>> result = thread.get()

@@ -296,7 +296,7 @@ class UsersApi(object):
 
         Create a service account for your organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_service_account(body, async_req=True)
         >>> result = thread.get()
@@ -339,7 +339,7 @@ class UsersApi(object):
 
         Create a user for your organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_user(body, async_req=True)
         >>> result = thread.get()
@@ -382,7 +382,7 @@ class UsersApi(object):
 
         Disable a user. Can only be used with an application key belonging to an administrator user.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.disable_user(user_id, async_req=True)
         >>> result = thread.get()
@@ -425,7 +425,7 @@ class UsersApi(object):
 
         Returns a single user invitation by its UUID.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_invitation(user_invitation_uuid, async_req=True)
         >>> result = thread.get()
@@ -468,7 +468,7 @@ class UsersApi(object):
 
         Get a user in the organization specified by the user’s `user_id`.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_user(user_id, async_req=True)
         >>> result = thread.get()
@@ -511,7 +511,7 @@ class UsersApi(object):
 
         Get a user organization. Returns the user information and all organizations joined by this user.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_user_organizations(user_id, async_req=True)
         >>> result = thread.get()
@@ -554,7 +554,7 @@ class UsersApi(object):
 
         Get a user permission set. Returns a list of the user’s permissions granted by the associated user's roles.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_user_permissions(user_id, async_req=True)
         >>> result = thread.get()
@@ -597,19 +597,18 @@ class UsersApi(object):
 
         Get the list of all users in the organization. This list includes all users even if they are deactivated or unverified.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_users(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-            page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-            sort (str): User attribute to order results by. Sort order is ascending by default. Sort order is descending if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `modified_at`, `user_count`.. [optional] if omitted the server will use the default value of "name"
-            sort_dir (QuerySortOrder): Direction of sort. Options: `asc`, `desc`.. [optional]
-            filter (str): Filter all users by the given string. Defaults to no filtering.. [optional]
-            filter_status (str): Filter on status attribute. Comma separated list, with possible values `Active`, `Pending`, and `Disabled`. Defaults to no filtering.. [optional]
+            page_size (int): [optional] Size for a given page. If omitted the server will use the default value of 10.
+            page_number (int): [optional] Specific page number to return. If omitted the server will use the default value of 0.
+            sort (str): [optional] User attribute to order results by. Sort order is ascending by default. Sort order is descending if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `modified_at`, `user_count`. If omitted the server will use the default value of "name".
+            sort_dir (QuerySortOrder): [optional] Direction of sort. Options: `asc`, `desc`.
+            filter (str): [optional] Filter all users by the given string. Defaults to no filtering.
+            filter_status (str): [optional] Filter on status attribute. Comma separated list, with possible values `Active`, `Pending`, and `Disabled`. Defaults to no filtering.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -643,7 +642,7 @@ class UsersApi(object):
 
         Sends emails to one or more users inviting them to join the organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.send_invitations(body, async_req=True)
         >>> result = thread.get()
@@ -686,7 +685,7 @@ class UsersApi(object):
 
         Edit a user. Can only be used with an application key belonging to an administrator user.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_user(user_id, body, async_req=True)
         >>> result = thread.get()

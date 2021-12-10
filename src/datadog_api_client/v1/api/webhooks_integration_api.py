@@ -229,7 +229,7 @@ class WebhooksIntegrationApi(object):
 
         Creates an endpoint with the name `<WEBHOOK_NAME>`.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_webhooks_integration(body, async_req=True)
         >>> result = thread.get()
@@ -272,7 +272,7 @@ class WebhooksIntegrationApi(object):
 
         Creates an endpoint with the name `<CUSTOM_VARIABLE_NAME>`.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_webhooks_integration_custom_variable(body, async_req=True)
         >>> result = thread.get()
@@ -315,7 +315,7 @@ class WebhooksIntegrationApi(object):
 
         Deletes the endpoint with the name `<WEBHOOK NAME>`.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_webhooks_integration(webhook_name, async_req=True)
         >>> result = thread.get()
@@ -358,7 +358,7 @@ class WebhooksIntegrationApi(object):
 
         Deletes the endpoint with the name `<CUSTOM_VARIABLE_NAME>`.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_webhooks_integration_custom_variable(custom_variable_name, async_req=True)
         >>> result = thread.get()
@@ -401,7 +401,7 @@ class WebhooksIntegrationApi(object):
 
         Gets the content of the webhook with the name `<WEBHOOK_NAME>`.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_webhooks_integration(webhook_name, async_req=True)
         >>> result = thread.get()
@@ -444,7 +444,7 @@ class WebhooksIntegrationApi(object):
 
         Shows the content of the custom variable with the name `<CUSTOM_VARIABLE_NAME>`.  If the custom variable is secret, the value does not return in the response payload.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_webhooks_integration_custom_variable(custom_variable_name, async_req=True)
         >>> result = thread.get()
@@ -487,7 +487,7 @@ class WebhooksIntegrationApi(object):
 
         Updates the endpoint with the name `<WEBHOOK_NAME>`.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_webhooks_integration(webhook_name, body, async_req=True)
         >>> result = thread.get()
@@ -532,7 +532,7 @@ class WebhooksIntegrationApi(object):
 
         Updates the endpoint with the name `<CUSTOM_VARIABLE_NAME>`.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_webhooks_integration_custom_variable(custom_variable_name, body, async_req=True)
         >>> result = thread.get()

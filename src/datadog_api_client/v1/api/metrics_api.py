@@ -208,7 +208,7 @@ class MetricsApi(object):
 
         Get metadata about a specific metric.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_metric_metadata(metric_name, async_req=True)
         >>> result = thread.get()
@@ -251,7 +251,7 @@ class MetricsApi(object):
 
         Get the list of actively reporting metrics from a given time until now.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_active_metrics(_from, async_req=True)
         >>> result = thread.get()
@@ -260,8 +260,8 @@ class MetricsApi(object):
             _from (int): Seconds since the Unix epoch.
 
         Keyword Args:
-            host (str): Hostname for filtering the list of metrics returned. If set, metrics retrieved are those with the corresponding hostname tag.. [optional]
-            tag_filter (str): Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions. Cannot be combined with other filters.. [optional]
+            host (str): [optional] Hostname for filtering the list of metrics returned. If set, metrics retrieved are those with the corresponding hostname tag.
+            tag_filter (str): [optional] Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions. Cannot be combined with other filters.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -296,7 +296,7 @@ class MetricsApi(object):
 
         Search for metrics from the last 24 hours in Datadog.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_metrics(q, async_req=True)
         >>> result = thread.get()
@@ -339,7 +339,7 @@ class MetricsApi(object):
 
         Query timeseries points.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.query_metrics(_from, to, query, async_req=True)
         >>> result = thread.get()
@@ -386,7 +386,7 @@ class MetricsApi(object):
 
         The metrics end-point allows you to post time-series data that can be graphed on Datadog’s dashboards. The maximum payload size is 3.2 megabytes (3200000 bytes). Compressed payloads must have a decompressed size of less than 62 megabytes (62914560 bytes).  If you’re submitting metrics directly to the Datadog API without using DogStatsD, expect:  - 64 bits for the timestamp - 32 bits for the value - 20 bytes for the metric names - 50 bytes for the timeseries - The full payload is approximately 100 bytes. However, with the DogStatsD API, compression is applied, which reduces the payload size.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.submit_metrics(body, async_req=True)
         >>> result = thread.get()
@@ -395,7 +395,7 @@ class MetricsApi(object):
             body (MetricsPayload):
 
         Keyword Args:
-            content_encoding (MetricContentEncoding): HTTP header used to compress the media-type.. [optional]
+            content_encoding (MetricContentEncoding): [optional] HTTP header used to compress the media-type.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -430,7 +430,7 @@ class MetricsApi(object):
 
         Edit metadata of a specific metric. Find out more about [supported types](https://docs.datadoghq.com/developers/metrics).
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_metric_metadata(metric_name, body, async_req=True)
         >>> result = thread.get()

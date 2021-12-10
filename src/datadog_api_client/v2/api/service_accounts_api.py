@@ -210,7 +210,7 @@ class ServiceAccountsApi(object):
 
         Create an application key for this service account.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_service_account_application_key(service_account_id, body, async_req=True)
         >>> result = thread.get()
@@ -255,7 +255,7 @@ class ServiceAccountsApi(object):
 
         Delete an application key owned by this service account.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_service_account_application_key(service_account_id, app_key_id, async_req=True)
         >>> result = thread.get()
@@ -300,7 +300,7 @@ class ServiceAccountsApi(object):
 
         Get an application key owned by this service account.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_service_account_application_key(service_account_id, app_key_id, async_req=True)
         >>> result = thread.get()
@@ -345,7 +345,7 @@ class ServiceAccountsApi(object):
 
         List all application keys available for this service account.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_service_account_application_keys(service_account_id, async_req=True)
         >>> result = thread.get()
@@ -354,12 +354,12 @@ class ServiceAccountsApi(object):
             service_account_id (str): The ID of the service account.
 
         Keyword Args:
-            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-            page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-            sort (ApplicationKeysSort): Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional]
-            filter (str): Filter application keys by the specified string.. [optional]
-            filter_created_at_start (str): Only include application keys created on or after the specified date.. [optional]
-            filter_created_at_end (str): Only include application keys created on or before the specified date.. [optional]
+            page_size (int): [optional] Size for a given page. If omitted the server will use the default value of 10.
+            page_number (int): [optional] Specific page number to return. If omitted the server will use the default value of 0.
+            sort (ApplicationKeysSort): [optional] Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.
+            filter (str): [optional] Filter application keys by the specified string.
+            filter_created_at_start (str): [optional] Only include application keys created on or after the specified date.
+            filter_created_at_end (str): [optional] Only include application keys created on or before the specified date.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -394,7 +394,7 @@ class ServiceAccountsApi(object):
 
         Edit an application key owned by this service account.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_service_account_application_key(service_account_id, app_key_id, body, async_req=True)
         >>> result = thread.get()

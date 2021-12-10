@@ -174,7 +174,7 @@ class IncidentTeamsApi(object):
 
         Creates a new incident team.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_incident_team(body, async_req=True)
         >>> result = thread.get()
@@ -217,7 +217,7 @@ class IncidentTeamsApi(object):
 
         Deletes an existing incident team.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_incident_team(team_id, async_req=True)
         >>> result = thread.get()
@@ -260,7 +260,7 @@ class IncidentTeamsApi(object):
 
         Get details of an incident team. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident teams.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_incident_team(team_id, async_req=True)
         >>> result = thread.get()
@@ -269,7 +269,7 @@ class IncidentTeamsApi(object):
             team_id (str): The ID of the incident team.
 
         Keyword Args:
-            include (IncidentRelatedObject): Specifies which types of related objects should be included in the response.. [optional]
+            include (IncidentRelatedObject): [optional] Specifies which types of related objects should be included in the response.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -304,17 +304,16 @@ class IncidentTeamsApi(object):
 
         Get all incident teams for the requesting user's organization. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident teams.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_incident_teams(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            include (IncidentRelatedObject): Specifies which types of related objects should be included in the response.. [optional]
-            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-            page_offset (int): Specific offset to use as the beginning of the returned page.. [optional] if omitted the server will use the default value of 0
-            filter (str): A search query that filters teams by name.. [optional]
+            include (IncidentRelatedObject): [optional] Specifies which types of related objects should be included in the response.
+            page_size (int): [optional] Size for a given page. If omitted the server will use the default value of 10.
+            page_offset (int): [optional] Specific offset to use as the beginning of the returned page. If omitted the server will use the default value of 0.
+            filter (str): [optional] A search query that filters teams by name.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -348,7 +347,7 @@ class IncidentTeamsApi(object):
 
         Updates an existing incident team. Only provide the attributes which should be updated as this request is a partial update.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_incident_team(team_id, body, async_req=True)
         >>> result = thread.get()

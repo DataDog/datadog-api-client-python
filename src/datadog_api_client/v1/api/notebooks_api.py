@@ -198,7 +198,7 @@ class NotebooksApi(object):
 
         Create a notebook using the specified options.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_notebook(body, async_req=True)
         >>> result = thread.get()
@@ -241,7 +241,7 @@ class NotebooksApi(object):
 
         Delete a notebook using the specified ID.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_notebook(notebook_id, async_req=True)
         >>> result = thread.get()
@@ -284,7 +284,7 @@ class NotebooksApi(object):
 
         Get a notebook using the specified notebook ID.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_notebook(notebook_id, async_req=True)
         >>> result = thread.get()
@@ -327,23 +327,22 @@ class NotebooksApi(object):
 
         Get all notebooks. This can also be used to search for notebooks with a particular `query` in the notebook `name` or author `handle`.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_notebooks(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            author_handle (str): Return notebooks created by the given `author_handle`.. [optional]
-            exclude_author_handle (str): Return notebooks not created by the given `author_handle`.. [optional]
-            start (int): The index of the first notebook you want returned.. [optional]
-            count (int): The number of notebooks to be returned.. [optional]
-            sort_field (str): Sort by field `modified`, `name`, or `created`.. [optional] if omitted the server will use the default value of "modified"
-            sort_dir (str): Sort by direction `asc` or `desc`.. [optional] if omitted the server will use the default value of "desc"
-            query (str): Return only notebooks with `query` string in notebook name or author handle.. [optional]
-            include_cells (bool): Value of `false` excludes the `cells` and global `time` for each notebook.. [optional] if omitted the server will use the default value of True
-            is_template (bool): True value returns only template notebooks. Default is false (returns only non-template notebooks).. [optional] if omitted the server will use the default value of False
-            type (str): If type is provided, returns only notebooks with that metadata type. Default does not have type filtering.. [optional]
+            author_handle (str): [optional] Return notebooks created by the given `author_handle`.
+            exclude_author_handle (str): [optional] Return notebooks not created by the given `author_handle`.
+            start (int): [optional] The index of the first notebook you want returned.
+            count (int): [optional] The number of notebooks to be returned.
+            sort_field (str): [optional] Sort by field `modified`, `name`, or `created`. If omitted the server will use the default value of "modified".
+            sort_dir (str): [optional] Sort by direction `asc` or `desc`. If omitted the server will use the default value of "desc".
+            query (str): [optional] Return only notebooks with `query` string in notebook name or author handle.
+            include_cells (bool): [optional] Value of `false` excludes the `cells` and global `time` for each notebook. If omitted the server will use the default value of True.
+            is_template (bool): [optional] True value returns only template notebooks. Default is false (returns only non-template notebooks). If omitted the server will use the default value of False.
+            type (str): [optional] If type is provided, returns only notebooks with that metadata type. Default does not have type filtering.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -377,7 +376,7 @@ class NotebooksApi(object):
 
         Update a notebook using the specified ID.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_notebook(notebook_id, body, async_req=True)
         >>> result = thread.get()

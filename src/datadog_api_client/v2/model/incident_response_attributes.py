@@ -29,35 +29,12 @@ class IncidentResponseAttributes(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {}
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         lazy_import()
         return {
             "created": (datetime,),
@@ -136,53 +113,23 @@ class IncidentResponseAttributes(ModelNormal):
             title (str): The title of the incident, which summarizes what happened.
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            created (datetime): Timestamp when the incident was created.. [optional]
-            customer_impact_duration (int): Length of the incident's customer impact in seconds. Equals the difference between `customer_impact_start` and `customer_impact_end`.. [optional]
-            customer_impact_end (datetime, none_type): Timestamp when customers were no longer impacted by the incident.. [optional]
-            customer_impact_scope (str, none_type): A summary of the impact customers experienced during the incident.. [optional]
-            customer_impact_start (datetime, none_type): Timestamp when customers began being impacted by the incident.. [optional]
-            customer_impacted (bool): A flag indicating whether the incident caused customer impact.. [optional]
-            detected (datetime, none_type): Timestamp when the incident was detected.. [optional]
-            fields ({str: (IncidentFieldAttributes,)}): A condensed view of the user-defined fields attached to incidents.. [optional]
-            modified (datetime): Timestamp when the incident was last modified.. [optional]
-            notification_handles ([IncidentNotificationHandle], none_type): Notification handles that will be notified of the incident during update.. [optional]
-            postmortem_id (str): The UUID of the postmortem object attached to the incident.. [optional]
-            public_id (int): The monotonically increasing integer ID for the incident.. [optional]
-            resolved (datetime, none_type): Timestamp when the incident's state was set to resolved.. [optional]
-            time_to_detect (int): The amount of time in seconds to detect the incident. Equals the difference between `customer_impact_start` and `detected`.. [optional]
-            time_to_internal_response (int): The amount of time in seconds to call incident after detection. Equals the difference of `detected` and `created`.. [optional]
-            time_to_repair (int): The amount of time in seconds to resolve customer impact after detecting the issue. Equals the difference between `customer_impact_end` and `detected`.. [optional]
-            time_to_resolve (int): The amount of time in seconds to resolve the incident after it was created. Equals the difference between `created` and `resolved`.. [optional]
+            created (datetime): [optional] Timestamp when the incident was created.
+            customer_impact_duration (int): [optional] Length of the incident's customer impact in seconds. Equals the difference between `customer_impact_start` and `customer_impact_end`.
+            customer_impact_end (datetime, none_type): [optional] Timestamp when customers were no longer impacted by the incident.
+            customer_impact_scope (str, none_type): [optional] A summary of the impact customers experienced during the incident.
+            customer_impact_start (datetime, none_type): [optional] Timestamp when customers began being impacted by the incident.
+            customer_impacted (bool): [optional] A flag indicating whether the incident caused customer impact.
+            detected (datetime, none_type): [optional] Timestamp when the incident was detected.
+            fields ({str: (IncidentFieldAttributes,)}): [optional] A condensed view of the user-defined fields attached to incidents.
+            modified (datetime): [optional] Timestamp when the incident was last modified.
+            notification_handles ([IncidentNotificationHandle], none_type): [optional] Notification handles that will be notified of the incident during update.
+            postmortem_id (str): [optional] The UUID of the postmortem object attached to the incident.
+            public_id (int): [optional] The monotonically increasing integer ID for the incident.
+            resolved (datetime, none_type): [optional] Timestamp when the incident's state was set to resolved.
+            time_to_detect (int): [optional] The amount of time in seconds to detect the incident. Equals the difference between `customer_impact_start` and `detected`.
+            time_to_internal_response (int): [optional] The amount of time in seconds to call incident after detection. Equals the difference of `detected` and `created`.
+            time_to_repair (int): [optional] The amount of time in seconds to resolve customer impact after detecting the issue. Equals the difference between `customer_impact_end` and `detected`.
+            time_to_resolve (int): [optional] The amount of time in seconds to resolve the incident after it was created. Equals the difference between `created` and `resolved`.
         """
         super().__init__(kwargs)
 

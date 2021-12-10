@@ -194,7 +194,7 @@ class DashboardsApi(object):
 
         Create a dashboard using the specified options. When defining queries in your widgets, take note of which queries should have the `as_count()` or `as_rate()` modifiers appended. Refer to the following [documentation](https://docs.datadoghq.com/developers/metrics/type_modifiers/?tab=count#in-application-modifiers) for more information on these modifiers.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_dashboard(body, async_req=True)
         >>> result = thread.get()
@@ -237,7 +237,7 @@ class DashboardsApi(object):
 
         Delete a dashboard using the specified ID.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_dashboard(dashboard_id, async_req=True)
         >>> result = thread.get()
@@ -280,7 +280,7 @@ class DashboardsApi(object):
 
         Delete dashboards using the specified IDs. If there are any failures, no dashboards will be deleted (partial success is not allowed).
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_dashboards(body, async_req=True)
         >>> result = thread.get()
@@ -323,7 +323,7 @@ class DashboardsApi(object):
 
         Get a dashboard using the specified ID.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_dashboard(dashboard_id, async_req=True)
         >>> result = thread.get()
@@ -366,14 +366,13 @@ class DashboardsApi(object):
 
         Get all dashboards.  **Note**: This query will only return custom created or cloned dashboards. This query will not return preset dashboards.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_dashboards(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            filter_shared (bool): When `true`, this query only returns shared custom created or cloned dashboards.. [optional]
+            filter_shared (bool): [optional] When `true`, this query only returns shared custom created or cloned dashboards.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -407,7 +406,7 @@ class DashboardsApi(object):
 
         Restore dashboards using the specified IDs. If there are any failures, no dashboards will be restored (partial success is not allowed).
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.restore_dashboards(body, async_req=True)
         >>> result = thread.get()
@@ -450,7 +449,7 @@ class DashboardsApi(object):
 
         Update a dashboard using the specified ID.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_dashboard(dashboard_id, body, async_req=True)
         >>> result = thread.get()

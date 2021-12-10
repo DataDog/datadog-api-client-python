@@ -29,35 +29,12 @@ class SyntheticsSSLCertificate(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {}
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         lazy_import()
         return {
             "cipher": (str,),
@@ -95,48 +72,18 @@ class SyntheticsSSLCertificate(ModelNormal):
         """SyntheticsSSLCertificate - a model defined in OpenAPI
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            cipher (str): Cipher used for the connection.. [optional]
-            exponent (float): Exponent associated to the certificate.. [optional]
-            ext_key_usage ([str]): Array of extensions and details used for the certificate.. [optional]
-            fingerprint (str): MD5 digest of the DER-encoded Certificate information.. [optional]
-            fingerprint256 (str): SHA-1 digest of the DER-encoded Certificate information.. [optional]
+            cipher (str): [optional] Cipher used for the connection.
+            exponent (float): [optional] Exponent associated to the certificate.
+            ext_key_usage ([str]): [optional] Array of extensions and details used for the certificate.
+            fingerprint (str): [optional] MD5 digest of the DER-encoded Certificate information.
+            fingerprint256 (str): [optional] SHA-1 digest of the DER-encoded Certificate information.
             issuer (SyntheticsSSLCertificateIssuer): [optional]
-            modulus (str): Modulus associated to the SSL certificate private key.. [optional]
-            protocol (str): TLS protocol used for the test.. [optional]
-            serial_number (str): Serial Number assigned by Symantec to the SSL certificate.. [optional]
+            modulus (str): [optional] Modulus associated to the SSL certificate private key.
+            protocol (str): [optional] TLS protocol used for the test.
+            serial_number (str): [optional] Serial Number assigned by Symantec to the SSL certificate.
             subject (SyntheticsSSLCertificateSubject): [optional]
-            valid_from (datetime): Date from which the SSL certificate is valid.. [optional]
-            valid_to (datetime): Date until which the SSL certificate is valid.. [optional]
+            valid_from (datetime): [optional] Date from which the SSL certificate is valid.
+            valid_to (datetime): [optional] Date until which the SSL certificate is valid.
         """
         super().__init__(kwargs)
 

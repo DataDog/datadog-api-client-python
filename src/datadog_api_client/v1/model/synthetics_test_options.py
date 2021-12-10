@@ -31,21 +31,6 @@ class SyntheticsTestOptions(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {
@@ -61,14 +46,6 @@ class SyntheticsTestOptions(ModelNormal):
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         lazy_import()
         return {
             "accept_self_signed": (bool,),
@@ -108,49 +85,19 @@ class SyntheticsTestOptions(ModelNormal):
         """SyntheticsTestOptions - a model defined in OpenAPI
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            accept_self_signed (bool): For SSL test, whether or not the test should allow self signed certificates.. [optional]
-            allow_insecure (bool): Allows loading insecure content for an HTTP request.. [optional]
-            device_ids ([SyntheticsDeviceID]): For browser test, array with the different device IDs used to run the test.. [optional]
-            disable_cors (bool): Whether or not to disable CORS mechanism.. [optional]
-            follow_redirects (bool): For API HTTP test, whether or not the test should follow redirects.. [optional]
-            min_failure_duration (int): Minimum amount of time in failure required to trigger an alert.. [optional]
-            min_location_failed (int): Minimum number of locations in failure required to trigger an alert.. [optional]
-            monitor_name (str): The monitor name is used for the alert title as well as for all monitor dashboard widgets and SLOs.. [optional]
+            accept_self_signed (bool): [optional] For SSL test, whether or not the test should allow self signed certificates.
+            allow_insecure (bool): [optional] Allows loading insecure content for an HTTP request.
+            device_ids ([SyntheticsDeviceID]): [optional] For browser test, array with the different device IDs used to run the test.
+            disable_cors (bool): [optional] Whether or not to disable CORS mechanism.
+            follow_redirects (bool): [optional] For API HTTP test, whether or not the test should follow redirects.
+            min_failure_duration (int): [optional] Minimum amount of time in failure required to trigger an alert.
+            min_location_failed (int): [optional] Minimum number of locations in failure required to trigger an alert.
+            monitor_name (str): [optional] The monitor name is used for the alert title as well as for all monitor dashboard widgets and SLOs.
             monitor_options (SyntheticsTestOptionsMonitorOptions): [optional]
-            monitor_priority (int): Integer from 1 (high) to 5 (low) indicating alert severity.. [optional]
-            no_screenshot (bool): Prevents saving screenshots of the steps.. [optional]
+            monitor_priority (int): [optional] Integer from 1 (high) to 5 (low) indicating alert severity.
+            no_screenshot (bool): [optional] Prevents saving screenshots of the steps.
             retry (SyntheticsTestOptionsRetry): [optional]
-            tick_every (int): The frequency at which to run the Synthetic test (in seconds).. [optional]
+            tick_every (int): [optional] The frequency at which to run the Synthetic test (in seconds).
         """
         super().__init__(kwargs)
 

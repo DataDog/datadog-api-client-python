@@ -176,7 +176,7 @@ class SlackIntegrationApi(object):
 
         Add a channel to your Datadog-Slack integration.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_slack_integration_channel(account_name, body, async_req=True)
         >>> result = thread.get()
@@ -221,7 +221,7 @@ class SlackIntegrationApi(object):
 
         Get a channel configured for your Datadog-Slack integration.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_slack_integration_channel(account_name, channel_name, async_req=True)
         >>> result = thread.get()
@@ -266,7 +266,7 @@ class SlackIntegrationApi(object):
 
         Get a list of all channels configured for your Datadog-Slack integration.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_slack_integration_channels(account_name, async_req=True)
         >>> result = thread.get()
@@ -309,7 +309,7 @@ class SlackIntegrationApi(object):
 
         Remove a channel from your Datadog-Slack integration.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.remove_slack_integration_channel(account_name, channel_name, async_req=True)
         >>> result = thread.get()
@@ -354,7 +354,7 @@ class SlackIntegrationApi(object):
 
         Update a channel used in your Datadog-Slack integration.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_slack_integration_channel(account_name, channel_name, body, async_req=True)
         >>> result = thread.get()

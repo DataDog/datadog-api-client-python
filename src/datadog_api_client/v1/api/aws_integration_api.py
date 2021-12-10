@@ -248,7 +248,7 @@ class AWSIntegrationApi(object):
 
         Create a Datadog-Amazon Web Services integration. Using the `POST` method updates your integration configuration by adding your new configuration to the existing one in your Datadog organization. A unique AWS Account ID for role based authentication.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_aws_account(body, async_req=True)
         >>> result = thread.get()
@@ -291,7 +291,7 @@ class AWSIntegrationApi(object):
 
         Set an AWS tag filter.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_aws_tag_filter(body, async_req=True)
         >>> result = thread.get()
@@ -334,7 +334,7 @@ class AWSIntegrationApi(object):
 
         Generate a new AWS external ID for a given AWS account ID and role name pair.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_new_aws_external_id(body, async_req=True)
         >>> result = thread.get()
@@ -377,7 +377,7 @@ class AWSIntegrationApi(object):
 
         Delete a Datadog-AWS integration matching the specified `account_id` and `role_name parameters`.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_aws_account(body, async_req=True)
         >>> result = thread.get()
@@ -420,7 +420,7 @@ class AWSIntegrationApi(object):
 
         Delete a tag filtering entry.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_aws_tag_filter(body, async_req=True)
         >>> result = thread.get()
@@ -463,11 +463,10 @@ class AWSIntegrationApi(object):
 
         List all namespace rules for a given Datadog-AWS integration. This endpoint takes no arguments.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_available_aws_namespaces(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -503,16 +502,15 @@ class AWSIntegrationApi(object):
 
         List all Datadog-AWS integrations available in your Datadog organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_aws_accounts(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            account_id (str): Only return AWS accounts that matches this `account_id`.. [optional]
-            role_name (str): Only return AWS accounts that matches this role_name.. [optional]
-            access_key_id (str): Only return AWS accounts that matches this `access_key_id`.. [optional]
+            account_id (str): [optional] Only return AWS accounts that matches this `account_id`.
+            role_name (str): [optional] Only return AWS accounts that matches this role_name.
+            access_key_id (str): [optional] Only return AWS accounts that matches this `access_key_id`.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -546,7 +544,7 @@ class AWSIntegrationApi(object):
 
         Get all AWS tag filters.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_aws_tag_filters(account_id, async_req=True)
         >>> result = thread.get()
@@ -589,7 +587,7 @@ class AWSIntegrationApi(object):
 
         Update a Datadog-Amazon Web Services integration.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_aws_account(body, async_req=True)
         >>> result = thread.get()
@@ -598,9 +596,9 @@ class AWSIntegrationApi(object):
             body (AWSAccount): AWS request object
 
         Keyword Args:
-            account_id (str): Only return AWS accounts that matches this `account_id`.. [optional]
-            role_name (str): Only return AWS accounts that match this `role_name`. Required if `account_id` is specified.. [optional]
-            access_key_id (str): Only return AWS accounts that matches this `access_key_id`. Required if none of the other two options are specified.. [optional]
+            account_id (str): [optional] Only return AWS accounts that matches this `account_id`.
+            role_name (str): [optional] Only return AWS accounts that match this `role_name`. Required if `account_id` is specified.
+            access_key_id (str): [optional] Only return AWS accounts that matches this `access_key_id`. Required if none of the other two options are specified.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

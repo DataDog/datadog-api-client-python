@@ -161,7 +161,7 @@ class LogsIndexesApi(object):
 
         Creates a new index. Returns the Index object passed in the request body when the request is successful.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_logs_index(body, async_req=True)
         >>> result = thread.get()
@@ -204,7 +204,7 @@ class LogsIndexesApi(object):
 
         Get one log index from your organization. This endpoint takes no JSON arguments.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_logs_index(name, async_req=True)
         >>> result = thread.get()
@@ -247,11 +247,10 @@ class LogsIndexesApi(object):
 
         Get the current order of your log indexes. This endpoint takes no JSON arguments.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_logs_index_order(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -287,11 +286,10 @@ class LogsIndexesApi(object):
 
         The Index object describes the configuration of a log index. This endpoint returns an array of the `LogIndex` objects of your organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_log_indexes(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -327,7 +325,7 @@ class LogsIndexesApi(object):
 
         Update an index as identified by its name. Returns the Index object passed in the request body when the request is successful.  Using the `PUT` method updates your index’s configuration by **replacing** your current configuration with the new one sent to your Datadog organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_logs_index(name, body, async_req=True)
         >>> result = thread.get()
@@ -372,7 +370,7 @@ class LogsIndexesApi(object):
 
         This endpoint updates the index order of your organization. It returns the index order object passed in the request body when the request is successful.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_logs_index_order(body, async_req=True)
         >>> result = thread.get()

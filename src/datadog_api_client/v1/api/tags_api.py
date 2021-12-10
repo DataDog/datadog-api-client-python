@@ -177,7 +177,7 @@ class TagsApi(object):
 
         This endpoint allows you to add new tags to a host, optionally specifying where these tags come from.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_host_tags(host_name, body, async_req=True)
         >>> result = thread.get()
@@ -187,7 +187,7 @@ class TagsApi(object):
             body (HostTags): Update host tags request body.
 
         Keyword Args:
-            source (str): The source of the tags. [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).. [optional]
+            source (str): [optional] The source of the tags. [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -223,7 +223,7 @@ class TagsApi(object):
 
         This endpoint allows you to remove all user-assigned tags for a single host.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_host_tags(host_name, async_req=True)
         >>> result = thread.get()
@@ -232,7 +232,7 @@ class TagsApi(object):
             host_name (str): This endpoint allows you to remove all user-assigned tags for a single host.
 
         Keyword Args:
-            source (str): The source of the tags (e.g. chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).. [optional]
+            source (str): [optional] The source of the tags (e.g. chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -267,7 +267,7 @@ class TagsApi(object):
 
         Return the list of tags that apply to a given host.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_host_tags(host_name, async_req=True)
         >>> result = thread.get()
@@ -276,7 +276,7 @@ class TagsApi(object):
             host_name (str): When specified, filters list of tags to those tags with the specified source.
 
         Keyword Args:
-            source (str): Source to filter.. [optional]
+            source (str): [optional] Source to filter.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -311,14 +311,13 @@ class TagsApi(object):
 
         Return a mapping of tags to hosts for your whole infrastructure.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_host_tags(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            source (str): When specified, filters host list to those tags with the specified source.. [optional]
+            source (str): [optional] When specified, filters host list to those tags with the specified source.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -352,7 +351,7 @@ class TagsApi(object):
 
         This endpoint allows you to update/replace all tags in an integration source with those supplied in the request.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_host_tags(host_name, body, async_req=True)
         >>> result = thread.get()
@@ -362,7 +361,7 @@ class TagsApi(object):
             body (HostTags): Add tags to host
 
         Keyword Args:
-            source (str): The source of the tags (e.g. chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value). [optional]
+            source (str): [optional] The source of the tags (e.g. chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value)
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

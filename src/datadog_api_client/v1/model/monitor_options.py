@@ -35,21 +35,6 @@ class MonitorOptions(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {
@@ -61,14 +46,6 @@ class MonitorOptions(ModelNormal):
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         lazy_import()
         return {
             "aggregation": (MonitorOptionsAggregation,),
@@ -165,60 +142,30 @@ class MonitorOptions(ModelNormal):
         """MonitorOptions - a model defined in OpenAPI
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
             aggregation (MonitorOptionsAggregation): [optional]
-            device_ids ([MonitorDeviceID]): IDs of the device the Synthetics monitor is running on.. [optional]
-            enable_logs_sample (bool): Whether or not to send a log sample when the log monitor triggers.. [optional]
-            escalation_message (str): We recommend using the [is_renotify](https://docs.datadoghq.com/monitors/notify/?tab=is_alert#renotify), block in the original message instead. A message to include with a re-notification. Supports the `@username` notification we allow elsewhere. Not applicable if `renotify_interval` is `None`.. [optional] if omitted the server will use the default value of "none"
-            evaluation_delay (int, none_type): Time (in seconds) to delay evaluation, as a non-negative integer. For example, if the value is set to `300` (5min), the timeframe is set to `last_5m` and the time is 7:00, the monitor evaluates data from 6:50 to 6:55. This is useful for AWS CloudWatch and other backfilled metrics to ensure the monitor always has data during evaluation.. [optional]
-            groupby_simple_monitor (bool): Whether the log alert monitor triggers a single alert or multiple alerts when any group breaches a threshold.. [optional]
-            include_tags (bool): A Boolean indicating whether notifications from this monitor automatically inserts its triggering tags into the title.  **Examples** - If `True`, `[Triggered on {host:h1}] Monitor Title` - If `False`, `[Triggered] Monitor Title`. [optional] if omitted the server will use the default value of True
-            locked (bool): Whether or not the monitor is locked (only editable by creator and admins).. [optional]
-            min_failure_duration (int, none_type): How long the test should be in failure before alerting (integer, number of seconds, max 7200).. [optional] if omitted the server will use the default value of 0
-            min_location_failed (int, none_type): The minimum number of locations in failure at the same time during at least one moment in the `min_failure_duration` period (`min_location_failed` and `min_failure_duration` are part of the advanced alerting rules - integer, >= 1).. [optional] if omitted the server will use the default value of 1
-            new_group_delay (int, none_type): Time (in seconds) to skip evaluations for new groups.  For example, this option can be used to skip evaluations for new hosts while they initialize.  Must be a non negative integer.. [optional]
-            new_host_delay (int, none_type): Time (in seconds) to allow a host to boot and applications to fully start before starting the evaluation of monitor results. Should be a non negative integer.  Use new_group_delay instead.. [optional] if omitted the server will use the default value of 300
-            no_data_timeframe (int, none_type): The number of minutes before a monitor notifies after data stops reporting. Datadog recommends at least 2x the monitor timeframe for query alerts or 2 minutes for service checks. If omitted, 2x the evaluation timeframe is used for query alerts, and 24 hours is used for service checks.. [optional]
-            notify_audit (bool): A Boolean indicating whether tagged users is notified on changes to this monitor.. [optional] if omitted the server will use the default value of False
-            notify_no_data (bool): A Boolean indicating whether this monitor notifies when data stops reporting.. [optional] if omitted the server will use the default value of False
-            renotify_interval (int, none_type): The number of minutes after the last notification before a monitor re-notifies on the current status. It only re-notifies if it’s not resolved.. [optional]
-            renotify_occurrences (int, none_type): The number of times re-notification messages should be sent on the current status at the provided re-notification interval.. [optional]
-            renotify_statuses ([MonitorRenotifyStatusType], none_type): The types of monitor statuses for which re-notification messages are sent.. [optional]
-            require_full_window (bool): A Boolean indicating whether this monitor needs a full window of data before it’s evaluated. We highly recommend you set this to `false` for sparse metrics, otherwise some evaluations are skipped. Default is false.. [optional]
-            silenced ({str: (int, none_type)}): Information about the downtime applied to the monitor.. [optional]
-            synthetics_check_id (str, none_type): ID of the corresponding Synthetic check.. [optional]
+            device_ids ([MonitorDeviceID]): [optional] IDs of the device the Synthetics monitor is running on.
+            enable_logs_sample (bool): [optional] Whether or not to send a log sample when the log monitor triggers.
+            escalation_message (str): [optional] We recommend using the [is_renotify](https://docs.datadoghq.com/monitors/notify/?tab=is_alert#renotify), block in the original message instead. A message to include with a re-notification. Supports the `@username` notification we allow elsewhere. Not applicable if `renotify_interval` is `None`. If omitted the server will use the default value of "none".
+            evaluation_delay (int, none_type): [optional] Time (in seconds) to delay evaluation, as a non-negative integer. For example, if the value is set to `300` (5min), the timeframe is set to `last_5m` and the time is 7:00, the monitor evaluates data from 6:50 to 6:55. This is useful for AWS CloudWatch and other backfilled metrics to ensure the monitor always has data during evaluation.
+            groupby_simple_monitor (bool): [optional] Whether the log alert monitor triggers a single alert or multiple alerts when any group breaches a threshold.
+            include_tags (bool): [optional] A Boolean indicating whether notifications from this monitor automatically inserts its triggering tags into the title.  **Examples** - If `True`, `[Triggered on {host:h1}] Monitor Title` - If `False`, `[Triggered] Monitor Title` If omitted the server will use the default value of True.
+            locked (bool): [optional] Whether or not the monitor is locked (only editable by creator and admins).
+            min_failure_duration (int, none_type): [optional] How long the test should be in failure before alerting (integer, number of seconds, max 7200). If omitted the server will use the default value of 0.
+            min_location_failed (int, none_type): [optional] The minimum number of locations in failure at the same time during at least one moment in the `min_failure_duration` period (`min_location_failed` and `min_failure_duration` are part of the advanced alerting rules - integer, >= 1). If omitted the server will use the default value of 1.
+            new_group_delay (int, none_type): [optional] Time (in seconds) to skip evaluations for new groups.  For example, this option can be used to skip evaluations for new hosts while they initialize.  Must be a non negative integer.
+            new_host_delay (int, none_type): [optional] Time (in seconds) to allow a host to boot and applications to fully start before starting the evaluation of monitor results. Should be a non negative integer.  Use new_group_delay instead. If omitted the server will use the default value of 300.
+            no_data_timeframe (int, none_type): [optional] The number of minutes before a monitor notifies after data stops reporting. Datadog recommends at least 2x the monitor timeframe for query alerts or 2 minutes for service checks. If omitted, 2x the evaluation timeframe is used for query alerts, and 24 hours is used for service checks.
+            notify_audit (bool): [optional] A Boolean indicating whether tagged users is notified on changes to this monitor. If omitted the server will use the default value of False.
+            notify_no_data (bool): [optional] A Boolean indicating whether this monitor notifies when data stops reporting. If omitted the server will use the default value of False.
+            renotify_interval (int, none_type): [optional] The number of minutes after the last notification before a monitor re-notifies on the current status. It only re-notifies if it’s not resolved.
+            renotify_occurrences (int, none_type): [optional] The number of times re-notification messages should be sent on the current status at the provided re-notification interval.
+            renotify_statuses ([MonitorRenotifyStatusType], none_type): [optional] The types of monitor statuses for which re-notification messages are sent.
+            require_full_window (bool): [optional] A Boolean indicating whether this monitor needs a full window of data before it’s evaluated. We highly recommend you set this to `false` for sparse metrics, otherwise some evaluations are skipped. Default is false.
+            silenced ({str: (int, none_type)}): [optional] Information about the downtime applied to the monitor.
+            synthetics_check_id (str, none_type): [optional] ID of the corresponding Synthetic check.
             threshold_windows (MonitorThresholdWindowOptions): [optional]
             thresholds (MonitorThresholds): [optional]
-            timeout_h (int, none_type): The number of hours of the monitor not reporting data before it automatically resolves from a triggered state. The minimum allowed value is 0 hours. The maximum allowed value is 24 hours.. [optional]
+            timeout_h (int, none_type): [optional] The number of hours of the monitor not reporting data before it automatically resolves from a triggered state. The minimum allowed value is 0 hours. The maximum allowed value is 24 hours.
         """
         super().__init__(kwargs)
 

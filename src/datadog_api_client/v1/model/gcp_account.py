@@ -21,35 +21,12 @@ class GCPAccount(ModelNormal):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {}
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         return {
             "auth_provider_x509_cert_url": (str,),
             "auth_uri": (str,),
@@ -88,49 +65,19 @@ class GCPAccount(ModelNormal):
         """GCPAccount - a model defined in OpenAPI
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            auth_provider_x509_cert_url (str): Should be `https://www.googleapis.com/oauth2/v1/certs`.. [optional]
-            auth_uri (str): Should be `https://accounts.google.com/o/oauth2/auth`.. [optional]
-            automute (bool): Silence monitors for expected GCE instance shutdowns.. [optional]
-            client_email (str): Your email found in your JSON service account key.. [optional]
-            client_id (str): Your ID found in your JSON service account key.. [optional]
-            client_x509_cert_url (str): Should be `https://www.googleapis.com/robot/v1/metadata/x509/<CLIENT_EMAIL>` where `<CLIENT_EMAIL>` is the email found in your JSON service account key.. [optional]
-            errors ([str]): An array of errors.. [optional]
-            host_filters (str): Limit the GCE instances that are pulled into Datadog by using tags. Only hosts that match one of the defined tags are imported into Datadog.. [optional]
-            private_key (str): Your private key name found in your JSON service account key.. [optional]
-            private_key_id (str): Your private key ID found in your JSON service account key.. [optional]
-            project_id (str): Your Google Cloud project ID found in your JSON service account key.. [optional]
-            token_uri (str): Should be `https://accounts.google.com/o/oauth2/token`.. [optional]
-            type (str): The value for service_account found in your JSON service account key.. [optional]
+            auth_provider_x509_cert_url (str): [optional] Should be `https://www.googleapis.com/oauth2/v1/certs`.
+            auth_uri (str): [optional] Should be `https://accounts.google.com/o/oauth2/auth`.
+            automute (bool): [optional] Silence monitors for expected GCE instance shutdowns.
+            client_email (str): [optional] Your email found in your JSON service account key.
+            client_id (str): [optional] Your ID found in your JSON service account key.
+            client_x509_cert_url (str): [optional] Should be `https://www.googleapis.com/robot/v1/metadata/x509/<CLIENT_EMAIL>` where `<CLIENT_EMAIL>` is the email found in your JSON service account key.
+            errors ([str]): [optional] An array of errors.
+            host_filters (str): [optional] Limit the GCE instances that are pulled into Datadog by using tags. Only hosts that match one of the defined tags are imported into Datadog.
+            private_key (str): [optional] Your private key name found in your JSON service account key.
+            private_key_id (str): [optional] Your private key ID found in your JSON service account key.
+            project_id (str): [optional] Your Google Cloud project ID found in your JSON service account key.
+            token_uri (str): [optional] Should be `https://accounts.google.com/o/oauth2/token`.
+            type (str): [optional] The value for service_account found in your JSON service account key.
         """
         super().__init__(kwargs)
 

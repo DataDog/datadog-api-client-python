@@ -83,7 +83,7 @@ class SnapshotsApi(object):
 
         Take graph snapshots. **Note**: When a snapshot is created, there is some delay before it is available.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_graph_snapshot(start, end, async_req=True)
         >>> result = thread.get()
@@ -93,10 +93,10 @@ class SnapshotsApi(object):
             end (int): The POSIX timestamp of the end of the query.
 
         Keyword Args:
-            metric_query (str): The metric query.. [optional]
-            event_query (str): A query that adds event bands to the graph.. [optional]
-            graph_def (str): A JSON document defining the graph. `graph_def` can be used instead of `metric_query`. The JSON document uses the [grammar defined here](https://docs.datadoghq.com/graphing/graphing_json/#grammar) and should be formatted to a single line then URL encoded.. [optional]
-            title (str): A title for the graph. If no title is specified, the graph does not have a title.. [optional]
+            metric_query (str): [optional] The metric query.
+            event_query (str): [optional] A query that adds event bands to the graph.
+            graph_def (str): [optional] A JSON document defining the graph. `graph_def` can be used instead of `metric_query`. The JSON document uses the [grammar defined here](https://docs.datadoghq.com/graphing/graphing_json/#grammar) and should be formatted to a single line then URL encoded.
+            title (str): [optional] A title for the graph. If no title is specified, the graph does not have a title.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

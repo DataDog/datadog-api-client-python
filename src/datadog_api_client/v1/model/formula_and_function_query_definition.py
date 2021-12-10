@@ -67,92 +67,39 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
     Ref: https://openapi-generator.tech
 
     Do not edit the class manually.
-
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-
     """
 
     validations = {}
 
     @cached_property
     def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
         return {}
 
     def __init__(self, *args, **kwargs):
         """FormulaAndFunctionQueryDefinition - a model defined in OpenAPI
 
         Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
             aggregator (FormulaAndFunctionMetricAggregation): [optional]
-            group_by ([str]): Array of fields to group results by.. [optional]
-            indexes ([str]): An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.. [optional]
+            group_by ([str]): [optional] Array of fields to group results by.
+            indexes ([str]): [optional] An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.
             search (FormulaAndFunctionEventQueryDefinitionSearch): [optional]
-            is_normalized_cpu (bool): Whether to normalize the CPU percentages.. [optional]
-            limit (int): Number of hits to return.. [optional]
+            is_normalized_cpu (bool): [optional] Whether to normalize the CPU percentages.
+            limit (int): [optional] Number of hits to return.
             sort (QuerySortOrder): [optional]
-            tag_filters ([str]): An array of tags to filter by.. [optional]
-            text_filter (str): Text to use as filter.. [optional]
-            is_upstream (bool): Determines whether stats for upstream or downstream dependencies should be queried.. [optional]
-            primary_tag_name (str): Name of the second primary tag used within APM. Required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog. [optional]
-            primary_tag_value (str): Value of the second primary tag by which to filter APM data. `primary_tag_name` must also be specified.. [optional]
+            tag_filters ([str]): [optional] An array of tags to filter by.
+            text_filter (str): [optional] Text to use as filter.
+            is_upstream (bool): [optional] Determines whether stats for upstream or downstream dependencies should be queried.
+            primary_tag_name (str): [optional] Name of the second primary tag used within APM. Required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog
+            primary_tag_value (str): [optional] Value of the second primary tag by which to filter APM data. `primary_tag_name` must also be specified.
             data_source (FormulaAndFunctionApmResourceStatsDataSource): [optional]
-            name (str): Name of this query to use in formulas.. [optional]
-            query (str): Metrics query definition.. [optional]
+            name (str): [optional] Name of this query to use in formulas.
+            query (str): [optional] Metrics query definition.
             compute (FormulaAndFunctionEventQueryDefinitionCompute): [optional]
-            metric (str): Process metric name.. [optional]
-            env (str): APM environment.. [optional]
-            operation_name (str): Name of operation on service.. [optional]
-            resource_name (str): APM resource name.. [optional]
-            service (str): APM service name.. [optional]
+            metric (str): [optional] Process metric name.
+            env (str): [optional] APM environment.
+            operation_name (str): [optional] Name of operation on service.
+            resource_name (str): [optional] APM resource name.
+            service (str): [optional] APM service name.
             stat (FormulaAndFunctionApmResourceStatName): [optional]
         """
         super().__init__(kwargs)

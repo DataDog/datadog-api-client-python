@@ -260,7 +260,7 @@ class KeyManagementApi(object):
 
         Creates an API key with a given name.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_api_key(body, async_req=True)
         >>> result = thread.get()
@@ -303,7 +303,7 @@ class KeyManagementApi(object):
 
         Create an application key with a given name.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_application_key(body, async_req=True)
         >>> result = thread.get()
@@ -346,7 +346,7 @@ class KeyManagementApi(object):
 
         Delete a given API key.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_api_key(key, async_req=True)
         >>> result = thread.get()
@@ -389,7 +389,7 @@ class KeyManagementApi(object):
 
         Delete a given application key.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_application_key(key, async_req=True)
         >>> result = thread.get()
@@ -432,7 +432,7 @@ class KeyManagementApi(object):
 
         Get a given API key.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_api_key(key, async_req=True)
         >>> result = thread.get()
@@ -475,7 +475,7 @@ class KeyManagementApi(object):
 
         Get a given application key.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_application_key(key, async_req=True)
         >>> result = thread.get()
@@ -518,11 +518,10 @@ class KeyManagementApi(object):
 
         Get all API keys available for your account.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_api_keys(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -558,11 +557,10 @@ class KeyManagementApi(object):
 
         Get all application keys available for your Datadog account.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_application_keys(async_req=True)
         >>> result = thread.get()
-
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -598,7 +596,7 @@ class KeyManagementApi(object):
 
         Edit an API key name.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_api_key(key, body, async_req=True)
         >>> result = thread.get()
@@ -643,7 +641,7 @@ class KeyManagementApi(object):
 
         Edit an application key name.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_application_key(key, body, async_req=True)
         >>> result = thread.get()

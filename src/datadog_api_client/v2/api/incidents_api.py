@@ -171,7 +171,7 @@ class IncidentsApi(object):
 
         Create an incident.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.create_incident(body, async_req=True)
         >>> result = thread.get()
@@ -214,7 +214,7 @@ class IncidentsApi(object):
 
         Deletes an existing incident from the users organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.delete_incident(incident_id, async_req=True)
         >>> result = thread.get()
@@ -257,7 +257,7 @@ class IncidentsApi(object):
 
         Get the details of an incident by `incident_id`.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_incident(incident_id, async_req=True)
         >>> result = thread.get()
@@ -266,7 +266,7 @@ class IncidentsApi(object):
             incident_id (str): The UUID the incident.
 
         Keyword Args:
-            include ([IncidentRelatedObject]): Specifies which types of related objects should be included in the response.. [optional]
+            include ([IncidentRelatedObject]): [optional] Specifies which types of related objects should be included in the response.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -301,16 +301,15 @@ class IncidentsApi(object):
 
         Get all incidents for the user's organization.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.list_incidents(async_req=True)
         >>> result = thread.get()
 
-
         Keyword Args:
-            include ([IncidentRelatedObject]): Specifies which types of related objects should be included in the response.. [optional]
-            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-            page_offset (int): Specific offset to use as the beginning of the returned page.. [optional] if omitted the server will use the default value of 0
+            include ([IncidentRelatedObject]): [optional] Specifies which types of related objects should be included in the response.
+            page_size (int): [optional] Size for a given page. If omitted the server will use the default value of 10.
+            page_offset (int): [optional] Specific offset to use as the beginning of the returned page. If omitted the server will use the default value of 0.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -344,7 +343,7 @@ class IncidentsApi(object):
 
         Updates an incident. Provide only the attributes that should be updated as this request is a partial update.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.update_incident(incident_id, body, async_req=True)
         >>> result = thread.get()
