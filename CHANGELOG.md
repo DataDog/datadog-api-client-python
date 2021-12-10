@@ -1,5 +1,31 @@
 # Changelog
 
+## 1.7.0 / 2021-12-10
+
+* [Added] [dashboards formulas and functions] Add formulas and functions support to change widget. See [#567](https://github.com/DataDog/datadog-api-client-python/pull/567).
+* [Added] Add RUM Units to usage metering API. See [#657](https://github.com/DataDog/datadog-api-client-python/pull/657).
+* [Added] Add trigger synthetics tests endpoint. See [#642](https://github.com/DataDog/datadog-api-client-python/pull/642).
+* [Added] [Synthetics] Add support for UDP API tests. See [#662](https://github.com/DataDog/datadog-api-client-python/pull/662).
+* [Added] Add support for `websocket` synthetics tests. See [#674](https://github.com/DataDog/datadog-api-client-python/pull/674).
+* [Added] Add support for profiled Fargate tasks in Usage API. See [#670](https://github.com/DataDog/datadog-api-client-python/pull/670).
+* [Added] Add 429 error responses. See [#675](https://github.com/DataDog/datadog-api-client-python/pull/675).
+* [Added] Document query in `MonitorSearchResult`. See [#690](https://github.com/DataDog/datadog-api-client-python/pull/690).
+* [Added] Expose `public_id` and `org_name` in Usage API response. See [#692](https://github.com/DataDog/datadog-api-client-python/pull/692).
+* [Added] Add endpoint to get corrections applied to an SLO. See [#689](https://github.com/DataDog/datadog-api-client-python/pull/689).
+* [Added] Expose estimated logs usage in Usage Attribution API. See [#700](https://github.com/DataDog/datadog-api-client-python/pull/700).
+* [Added] Add Limit Note for Hourly Requests. See [#699](https://github.com/DataDog/datadog-api-client-python/pull/699).
+* [Fixed] Fix type for `ratio_in_month` in usage metering. See [#652](https://github.com/DataDog/datadog-api-client-python/pull/652).
+* [Fixed] Change `UsageNetworkFlowsHour.indexed_event_count` to match actual API. See [#661](https://github.com/DataDog/datadog-api-client-python/pull/661).
+* [Fixed] SLO Correction attributes `rrule` and `duration` can be nullable. See [#665](https://github.com/DataDog/datadog-api-client-python/pull/665).
+* [Fixed] Mark `batch_id` in Synthetics Trigger CI response as nullable. See [#677](https://github.com/DataDog/datadog-api-client-python/pull/677).
+* [Fixed] Remove event title length constraint. See [#682](https://github.com/DataDog/datadog-api-client-python/pull/682).
+* [Fixed] Fix monitor `timeout_h` example and limits. See [#687](https://github.com/DataDog/datadog-api-client-python/pull/687).
+* [Fixed] Be more resilient to plain text errors. See [#696](https://github.com/DataDog/datadog-api-client-python/pull/696).
+* [Fixed] Make python fail properly on invalid header. See [#711](https://github.com/DataDog/datadog-api-client-python/pull/711).
+* [Fixed] Remove python unused conversion arguments calls. See [#714](https://github.com/DataDog/datadog-api-client-python/pull/714).
+* [Changed] [Synthetics] Fix required target in assertions and type in step results. See [#666](https://github.com/DataDog/datadog-api-client-python/pull/666).
+* [Changed] Reorganize python params_map. See [#710](https://github.com/DataDog/datadog-api-client-python/pull/710).
+
 ## 1.6.0 / 2021-11-09
 
 * [Added] Add support for Azure `automute` option. See [#647](https://github.com/DataDog/datadog-api-client-python/pull/647).
