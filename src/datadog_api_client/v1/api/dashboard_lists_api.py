@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.dashboard_list import DashboardList
@@ -144,9 +142,9 @@ class DashboardListsApi(object):
         )
 
     def create_dashboard_list(self, body, **kwargs):
-        """Create a dashboard list  # noqa: E501
+        """Create a dashboard list
 
-        Create an empty dashboard list.  # noqa: E501
+        Create an empty dashboard list.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -187,9 +185,9 @@ class DashboardListsApi(object):
         return self._create_dashboard_list_endpoint.call_with_http_info(**kwargs)
 
     def delete_dashboard_list(self, list_id, **kwargs):
-        """Delete a dashboard list  # noqa: E501
+        """Delete a dashboard list
 
-        Delete a dashboard list.  # noqa: E501
+        Delete a dashboard list.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -230,9 +228,9 @@ class DashboardListsApi(object):
         return self._delete_dashboard_list_endpoint.call_with_http_info(**kwargs)
 
     def get_dashboard_list(self, list_id, **kwargs):
-        """Get a dashboard list  # noqa: E501
+        """Get a dashboard list
 
-        Fetch an existing dashboard list's definition.  # noqa: E501
+        Fetch an existing dashboard list's definition.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -273,9 +271,9 @@ class DashboardListsApi(object):
         return self._get_dashboard_list_endpoint.call_with_http_info(**kwargs)
 
     def list_dashboard_lists(self, **kwargs):
-        """Get all dashboard lists  # noqa: E501
+        """Get all dashboard lists
 
-        Fetch all of your existing dashboard list definitions.  # noqa: E501
+        Fetch all of your existing dashboard list definitions.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -313,9 +311,9 @@ class DashboardListsApi(object):
         return self._list_dashboard_lists_endpoint.call_with_http_info(**kwargs)
 
     def update_dashboard_list(self, list_id, body, **kwargs):
-        """Update a dashboard list  # noqa: E501
+        """Update a dashboard list
 
-        Update the name of a dashboard list.  # noqa: E501
+        Update the name of a dashboard list.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

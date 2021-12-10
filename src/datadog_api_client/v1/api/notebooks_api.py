@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.notebook_create_request import NotebookCreateRequest
@@ -196,9 +194,9 @@ class NotebooksApi(object):
         )
 
     def create_notebook(self, body, **kwargs):
-        """Create a notebook  # noqa: E501
+        """Create a notebook
 
-        Create a notebook using the specified options.  # noqa: E501
+        Create a notebook using the specified options.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -239,9 +237,9 @@ class NotebooksApi(object):
         return self._create_notebook_endpoint.call_with_http_info(**kwargs)
 
     def delete_notebook(self, notebook_id, **kwargs):
-        """Delete a notebook  # noqa: E501
+        """Delete a notebook
 
-        Delete a notebook using the specified ID.  # noqa: E501
+        Delete a notebook using the specified ID.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -282,9 +280,9 @@ class NotebooksApi(object):
         return self._delete_notebook_endpoint.call_with_http_info(**kwargs)
 
     def get_notebook(self, notebook_id, **kwargs):
-        """Get a notebook  # noqa: E501
+        """Get a notebook
 
-        Get a notebook using the specified notebook ID.  # noqa: E501
+        Get a notebook using the specified notebook ID.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -325,9 +323,9 @@ class NotebooksApi(object):
         return self._get_notebook_endpoint.call_with_http_info(**kwargs)
 
     def list_notebooks(self, **kwargs):
-        """Get all notebooks  # noqa: E501
+        """Get all notebooks
 
-        Get all notebooks. This can also be used to search for notebooks with a particular `query` in the notebook `name` or author `handle`.  # noqa: E501
+        Get all notebooks. This can also be used to search for notebooks with a particular `query` in the notebook `name` or author `handle`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -375,9 +373,9 @@ class NotebooksApi(object):
         return self._list_notebooks_endpoint.call_with_http_info(**kwargs)
 
     def update_notebook(self, notebook_id, body, **kwargs):
-        """Update a notebook  # noqa: E501
+        """Update a notebook
 
-        Update a notebook using the specified ID.  # noqa: E501
+        Update a notebook using the specified ID.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

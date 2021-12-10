@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class CheckStatusWidgetDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class CheckStatusWidgetDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,39 +64,34 @@ class CheckStatusWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "check": (str,),  # noqa: E501
-            "grouping": (WidgetGrouping,),  # noqa: E501
-            "type": (CheckStatusWidgetDefinitionType,),  # noqa: E501
-            "group": (str,),  # noqa: E501
-            "group_by": ([str],),  # noqa: E501
-            "tags": ([str],),  # noqa: E501
-            "time": (WidgetTime,),  # noqa: E501
-            "title": (str,),  # noqa: E501
-            "title_align": (WidgetTextAlign,),  # noqa: E501
-            "title_size": (str,),  # noqa: E501
+            "check": (str,),
+            "group": (str,),
+            "group_by": ([str],),
+            "grouping": (WidgetGrouping,),
+            "tags": ([str],),
+            "time": (WidgetTime,),
+            "title": (str,),
+            "title_align": (WidgetTextAlign,),
+            "title_size": (str,),
+            "type": (CheckStatusWidgetDefinitionType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "check": "check",  # noqa: E501
-        "grouping": "grouping",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "group": "group",  # noqa: E501
-        "group_by": "group_by",  # noqa: E501
-        "tags": "tags",  # noqa: E501
-        "time": "time",  # noqa: E501
-        "title": "title",  # noqa: E501
-        "title_align": "title_align",  # noqa: E501
-        "title_size": "title_size",  # noqa: E501
+        "check": "check",
+        "grouping": "grouping",
+        "type": "type",
+        "group": "group",
+        "group_by": "group_by",
+        "tags": "tags",
+        "time": "time",
+        "title": "title",
+        "title_align": "title_align",
+        "title_size": "title_size",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, check, grouping, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, check, grouping, type, *args, **kwargs):
         """CheckStatusWidgetDefinition - a model defined in OpenAPI
 
         Args:
@@ -144,13 +130,13 @@ class CheckStatusWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            group (str): Group reporting a single check.. [optional]  # noqa: E501
-            group_by ([str]): List of tag prefixes to group by in the case of a cluster check.. [optional]  # noqa: E501
-            tags ([str]): List of tags used to filter the groups reporting a cluster check.. [optional]  # noqa: E501
-            time (WidgetTime): [optional]  # noqa: E501
-            title (str): Title of the widget.. [optional]  # noqa: E501
-            title_align (WidgetTextAlign): [optional]  # noqa: E501
-            title_size (str): Size of the title.. [optional]  # noqa: E501
+            group (str): Group reporting a single check.. [optional]
+            group_by ([str]): List of tag prefixes to group by in the case of a cluster check.. [optional]
+            tags ([str]): List of tags used to filter the groups reporting a cluster check.. [optional]
+            time (WidgetTime): [optional]
+            title (str): Title of the widget.. [optional]
+            title_align (WidgetTextAlign): [optional]
+            title_size (str): Size of the title.. [optional]
         """
         super().__init__(kwargs)
 
@@ -161,8 +147,7 @@ class CheckStatusWidgetDefinition(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, check, grouping, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, check, grouping, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(CheckStatusWidgetDefinition, cls)._from_openapi_data(kwargs)

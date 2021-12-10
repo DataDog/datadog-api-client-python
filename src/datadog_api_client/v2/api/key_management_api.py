@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.api_key_create_request import APIKeyCreateRequest
@@ -471,9 +469,9 @@ class KeyManagementApi(object):
         )
 
     def create_api_key(self, body, **kwargs):
-        """Create an API key  # noqa: E501
+        """Create an API key
 
-        Create an API key.  # noqa: E501
+        Create an API key.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -514,9 +512,9 @@ class KeyManagementApi(object):
         return self._create_api_key_endpoint.call_with_http_info(**kwargs)
 
     def create_current_user_application_key(self, body, **kwargs):
-        """Create an application key for current user  # noqa: E501
+        """Create an application key for current user
 
-        Create an application key for current user  # noqa: E501
+        Create an application key for current user
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -557,9 +555,9 @@ class KeyManagementApi(object):
         return self._create_current_user_application_key_endpoint.call_with_http_info(**kwargs)
 
     def delete_api_key(self, api_key_id, **kwargs):
-        """Delete an API key  # noqa: E501
+        """Delete an API key
 
-        Delete an API key.  # noqa: E501
+        Delete an API key.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -600,9 +598,9 @@ class KeyManagementApi(object):
         return self._delete_api_key_endpoint.call_with_http_info(**kwargs)
 
     def delete_application_key(self, app_key_id, **kwargs):
-        """Delete an application key  # noqa: E501
+        """Delete an application key
 
-        Delete an application key  # noqa: E501
+        Delete an application key
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -643,9 +641,9 @@ class KeyManagementApi(object):
         return self._delete_application_key_endpoint.call_with_http_info(**kwargs)
 
     def delete_current_user_application_key(self, app_key_id, **kwargs):
-        """Delete an application key owned by current user  # noqa: E501
+        """Delete an application key owned by current user
 
-        Delete an application key owned by current user  # noqa: E501
+        Delete an application key owned by current user
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -686,9 +684,9 @@ class KeyManagementApi(object):
         return self._delete_current_user_application_key_endpoint.call_with_http_info(**kwargs)
 
     def get_api_key(self, api_key_id, **kwargs):
-        """Get API key  # noqa: E501
+        """Get API key
 
-        Get an API key.  # noqa: E501
+        Get an API key.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -730,9 +728,9 @@ class KeyManagementApi(object):
         return self._get_api_key_endpoint.call_with_http_info(**kwargs)
 
     def get_application_key(self, app_key_id, **kwargs):
-        """Get an application key  # noqa: E501
+        """Get an application key
 
-        Get an application key for your org.  # noqa: E501
+        Get an application key for your org.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -774,9 +772,9 @@ class KeyManagementApi(object):
         return self._get_application_key_endpoint.call_with_http_info(**kwargs)
 
     def get_current_user_application_key(self, app_key_id, **kwargs):
-        """Get one application key owned by current user  # noqa: E501
+        """Get one application key owned by current user
 
-        Get an application key owned by current user  # noqa: E501
+        Get an application key owned by current user
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -817,9 +815,9 @@ class KeyManagementApi(object):
         return self._get_current_user_application_key_endpoint.call_with_http_info(**kwargs)
 
     def list_api_keys(self, **kwargs):
-        """Get all API keys  # noqa: E501
+        """Get all API keys
 
-        List all API keys available for your account.  # noqa: E501
+        List all API keys available for your account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -866,9 +864,9 @@ class KeyManagementApi(object):
         return self._list_api_keys_endpoint.call_with_http_info(**kwargs)
 
     def list_application_keys(self, **kwargs):
-        """Get all application keys  # noqa: E501
+        """Get all application keys
 
-        List all application keys available for your org  # noqa: E501
+        List all application keys available for your org
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -912,9 +910,9 @@ class KeyManagementApi(object):
         return self._list_application_keys_endpoint.call_with_http_info(**kwargs)
 
     def list_current_user_application_keys(self, **kwargs):
-        """Get all application keys owned by current user  # noqa: E501
+        """Get all application keys owned by current user
 
-        List all application keys available for current user  # noqa: E501
+        List all application keys available for current user
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -958,9 +956,9 @@ class KeyManagementApi(object):
         return self._list_current_user_application_keys_endpoint.call_with_http_info(**kwargs)
 
     def update_api_key(self, api_key_id, body, **kwargs):
-        """Edit an API key  # noqa: E501
+        """Edit an API key
 
-        Update an API key.  # noqa: E501
+        Update an API key.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1003,9 +1001,9 @@ class KeyManagementApi(object):
         return self._update_api_key_endpoint.call_with_http_info(**kwargs)
 
     def update_application_key(self, app_key_id, body, **kwargs):
-        """Edit an application key  # noqa: E501
+        """Edit an application key
 
-        Edit an application key  # noqa: E501
+        Edit an application key
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1048,9 +1046,9 @@ class KeyManagementApi(object):
         return self._update_application_key_endpoint.call_with_http_info(**kwargs)
 
     def update_current_user_application_key(self, app_key_id, body, **kwargs):
-        """Edit an application key owned by current user  # noqa: E501
+        """Edit an application key owned by current user
 
-        Edit an application key owned by current user  # noqa: E501
+        Edit an application key owned by current user
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

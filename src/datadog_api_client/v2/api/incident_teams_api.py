@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
@@ -172,9 +170,9 @@ class IncidentTeamsApi(object):
         )
 
     def create_incident_team(self, body, **kwargs):
-        """Create a new incident team  # noqa: E501
+        """Create a new incident team
 
-        Creates a new incident team.  # noqa: E501
+        Creates a new incident team.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -215,9 +213,9 @@ class IncidentTeamsApi(object):
         return self._create_incident_team_endpoint.call_with_http_info(**kwargs)
 
     def delete_incident_team(self, team_id, **kwargs):
-        """Delete an existing incident team  # noqa: E501
+        """Delete an existing incident team
 
-        Deletes an existing incident team.  # noqa: E501
+        Deletes an existing incident team.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -258,9 +256,9 @@ class IncidentTeamsApi(object):
         return self._delete_incident_team_endpoint.call_with_http_info(**kwargs)
 
     def get_incident_team(self, team_id, **kwargs):
-        """Get details of an incident team  # noqa: E501
+        """Get details of an incident team
 
-        Get details of an incident team. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident teams.  # noqa: E501
+        Get details of an incident team. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident teams.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -302,9 +300,9 @@ class IncidentTeamsApi(object):
         return self._get_incident_team_endpoint.call_with_http_info(**kwargs)
 
     def list_incident_teams(self, **kwargs):
-        """Get a list of all incident teams  # noqa: E501
+        """Get a list of all incident teams
 
-        Get all incident teams for the requesting user's organization. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident teams.  # noqa: E501
+        Get all incident teams for the requesting user's organization. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident teams.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -346,9 +344,9 @@ class IncidentTeamsApi(object):
         return self._list_incident_teams_endpoint.call_with_http_info(**kwargs)
 
     def update_incident_team(self, team_id, body, **kwargs):
-        """Update an existing incident team  # noqa: E501
+        """Update an existing incident team
 
-        Updates an existing incident team. Only provide the attributes which should be updated as this request is a partial update.  # noqa: E501
+        Updates an existing incident team. Only provide the attributes which should be updated as this request is a partial update.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

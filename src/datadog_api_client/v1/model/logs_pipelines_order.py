@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class LogsPipelinesOrder(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class LogsPipelinesOrder(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,21 +51,16 @@ class LogsPipelinesOrder(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "pipeline_ids": ([str],),  # noqa: E501
+            "pipeline_ids": ([str],),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "pipeline_ids": "pipeline_ids",  # noqa: E501
+        "pipeline_ids": "pipeline_ids",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, pipeline_ids, *args, **kwargs):  # noqa: E501
+    def __init__(self, pipeline_ids, *args, **kwargs):
         """LogsPipelinesOrder - a model defined in OpenAPI
 
         Args:
@@ -119,8 +105,7 @@ class LogsPipelinesOrder(ModelNormal):
         self.pipeline_ids = pipeline_ids
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, pipeline_ids, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, pipeline_ids, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsPipelinesOrder, cls)._from_openapi_data(kwargs)

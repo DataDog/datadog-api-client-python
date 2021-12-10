@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class WidgetMarker(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class WidgetMarker(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,27 +51,22 @@ class WidgetMarker(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "value": (str,),  # noqa: E501
-            "display_type": (str,),  # noqa: E501
-            "label": (str,),  # noqa: E501
-            "time": (str,),  # noqa: E501
+            "display_type": (str,),
+            "label": (str,),
+            "time": (str,),
+            "value": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "value": "value",  # noqa: E501
-        "display_type": "display_type",  # noqa: E501
-        "label": "label",  # noqa: E501
-        "time": "time",  # noqa: E501
+        "value": "value",
+        "display_type": "display_type",
+        "label": "label",
+        "time": "time",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, value, *args, **kwargs):  # noqa: E501
+    def __init__(self, value, *args, **kwargs):
         """WidgetMarker - a model defined in OpenAPI
 
         Args:
@@ -117,9 +103,9 @@ class WidgetMarker(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            display_type (str): Combination of:   - A severity error, warning, ok, or info   - A line type: dashed, solid, or bold In this case of a Distribution widget, this can be set to be `x_axis_percentile`. . [optional]  # noqa: E501
-            label (str): Label to display over the marker.. [optional]  # noqa: E501
-            time (str): Timestamp for the widget.. [optional]  # noqa: E501
+            display_type (str): Combination of:   - A severity error, warning, ok, or info   - A line type: dashed, solid, or bold In this case of a Distribution widget, this can be set to be `x_axis_percentile`. . [optional]
+            label (str): Label to display over the marker.. [optional]
+            time (str): Timestamp for the widget.. [optional]
         """
         super().__init__(kwargs)
 
@@ -128,8 +114,7 @@ class WidgetMarker(ModelNormal):
         self.value = value
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, value, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, value, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(WidgetMarker, cls)._from_openapi_data(kwargs)

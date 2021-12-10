@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -74,8 +73,6 @@ class LogsProcessor(ModelComposed):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -85,17 +82,11 @@ class LogsProcessor(ModelComposed):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "samples": {
             "max_items": 5,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -109,14 +100,7 @@ class LogsProcessor(ModelComposed):
         """
         return {}
 
-    discriminator = None
-
-    attribute_map = {}
-
-    read_only_vars = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """LogsProcessor - a model defined in OpenAPI
 
         Keyword Args:
@@ -150,37 +134,36 @@ class LogsProcessor(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            is_enabled (bool): Whether or not the processor is enabled.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            name (str): Name of the processor.. [optional]  # noqa: E501
-            samples ([str]): List of sample logs to test this grok parser.. [optional]  # noqa: E501
-            override_on_conflict (bool): Override or not the target element if already set,. [optional] if omitted the server will use the default value of False  # noqa: E501
-            preserve_source (bool): Remove or preserve the remapped source element.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            source_type (str): Defines if the sources are from log `attribute` or `tag`.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
-            target_format (TargetFormatType): [optional]  # noqa: E501
-            target_type (str): Defines if the final attribute or tag name is from log `attribute` or `tag`.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
-            normalize_ending_slashes (bool, none_type): Normalize the ending slashes or not.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            is_encoded (bool): Define if the source attribute is URL encoded or not.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            is_replace_missing (bool): If true, it replaces all missing attributes of `template` by an empty string. If `false` (default), skips the operation for missing attributes.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            filter (LogsFilter): [optional]  # noqa: E501
-            processors ([LogsProcessor]): Ordered list of processors in this pipeline.. [optional]  # noqa: E501
-            default_lookup (str): Value to set the target attribute if the source value is not found in the list.. [optional]  # noqa: E501
-            grok (LogsGrokParserRules): [optional]  # noqa: E501
-            source (str): Source attribute used to perform the lookup.. [optional]  # noqa: E501
-            type (LogsTraceRemapperType): [optional]  # noqa: E501
-            sources ([str]): Array of source attributes.. [optional] if omitted the server will use the default value of ["dd.trace_id"]  # noqa: E501
-            target (str): Name of the attribute that contains the corresponding value in the mapping list or the `default_lookup` if not found in the mapping list.. [optional]  # noqa: E501
-            categories ([LogsCategoryProcessorCategory]): Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.. [optional]  # noqa: E501
-            expression (str): Arithmetic operation between one or more log attributes.. [optional]  # noqa: E501
-            template (str): A formula with one or more attributes and raw text.. [optional]  # noqa: E501
-            lookup_table ([str]): Mapping table of values for the source attribute and their associated target attribute values, formatted as `[\"source_key1,target_value1\", \"source_key2,target_value2\"]`. [optional]  # noqa: E501
+            is_enabled (bool): Whether or not the processor is enabled.. [optional] if omitted the server will use the default value of False
+            name (str): Name of the processor.. [optional]
+            samples ([str]): List of sample logs to test this grok parser.. [optional]
+            override_on_conflict (bool): Override or not the target element if already set,. [optional] if omitted the server will use the default value of False
+            preserve_source (bool): Remove or preserve the remapped source element.. [optional] if omitted the server will use the default value of False
+            source_type (str): Defines if the sources are from log `attribute` or `tag`.. [optional] if omitted the server will use the default value of "attribute"
+            target_format (TargetFormatType): [optional]
+            target_type (str): Defines if the final attribute or tag name is from log `attribute` or `tag`.. [optional] if omitted the server will use the default value of "attribute"
+            normalize_ending_slashes (bool, none_type): Normalize the ending slashes or not.. [optional] if omitted the server will use the default value of False
+            is_encoded (bool): Define if the source attribute is URL encoded or not.. [optional] if omitted the server will use the default value of False
+            is_replace_missing (bool): If true, it replaces all missing attributes of `template` by an empty string. If `false` (default), skips the operation for missing attributes.. [optional] if omitted the server will use the default value of False
+            filter (LogsFilter): [optional]
+            processors ([LogsProcessor]): Ordered list of processors in this pipeline.. [optional]
+            default_lookup (str): Value to set the target attribute if the source value is not found in the list.. [optional]
+            grok (LogsGrokParserRules): [optional]
+            source (str): Source attribute used to perform the lookup.. [optional]
+            type (LogsTraceRemapperType): [optional]
+            sources ([str]): Array of source attributes.. [optional] if omitted the server will use the default value of ["dd.trace_id"]
+            target (str): Name of the attribute that contains the corresponding value in the mapping list or the `default_lookup` if not found in the mapping list.. [optional]
+            categories ([LogsCategoryProcessorCategory]): Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.. [optional]
+            expression (str): Arithmetic operation between one or more log attributes.. [optional]
+            template (str): A formula with one or more attributes and raw text.. [optional]
+            lookup_table ([str]): Mapping table of values for the source attribute and their associated target attribute values, formatted as `[\"source_key1,target_value1\", \"source_key2,target_value2\"]`. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsProcessor, cls)._from_openapi_data(kwargs)

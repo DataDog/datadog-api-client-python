@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -44,8 +43,6 @@ class MonitorUpdateRequest(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -55,18 +52,12 @@ class MonitorUpdateRequest(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "priority": {
             "inclusive_maximum": 5,
             "inclusive_minimum": 1,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -80,60 +71,55 @@ class MonitorUpdateRequest(ModelNormal):
         """
         lazy_import()
         return {
-            "created": (datetime,),  # noqa: E501
-            "creator": (Creator,),  # noqa: E501
+            "created": (datetime,),
+            "creator": (Creator,),
             "deleted": (
                 datetime,
                 none_type,
-            ),  # noqa: E501
-            "id": (int,),  # noqa: E501
-            "message": (str,),  # noqa: E501
-            "modified": (datetime,),  # noqa: E501
-            "multi": (bool,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "options": (MonitorOptions,),  # noqa: E501
-            "overall_state": (MonitorOverallStates,),  # noqa: E501
-            "priority": (int,),  # noqa: E501
-            "query": (str,),  # noqa: E501
-            "restricted_roles": ([str],),  # noqa: E501
-            "state": (MonitorState,),  # noqa: E501
-            "tags": ([str],),  # noqa: E501
-            "type": (MonitorType,),  # noqa: E501
+            ),
+            "id": (int,),
+            "message": (str,),
+            "modified": (datetime,),
+            "multi": (bool,),
+            "name": (str,),
+            "options": (MonitorOptions,),
+            "overall_state": (MonitorOverallStates,),
+            "priority": (int,),
+            "query": (str,),
+            "restricted_roles": ([str],),
+            "state": (MonitorState,),
+            "tags": ([str],),
+            "type": (MonitorType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "created": "created",  # noqa: E501
-        "creator": "creator",  # noqa: E501
-        "deleted": "deleted",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "message": "message",  # noqa: E501
-        "modified": "modified",  # noqa: E501
-        "multi": "multi",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "options": "options",  # noqa: E501
-        "overall_state": "overall_state",  # noqa: E501
-        "priority": "priority",  # noqa: E501
-        "query": "query",  # noqa: E501
-        "restricted_roles": "restricted_roles",  # noqa: E501
-        "state": "state",  # noqa: E501
-        "tags": "tags",  # noqa: E501
-        "type": "type",  # noqa: E501
+        "created": "created",
+        "creator": "creator",
+        "deleted": "deleted",
+        "id": "id",
+        "message": "message",
+        "modified": "modified",
+        "multi": "multi",
+        "name": "name",
+        "options": "options",
+        "overall_state": "overall_state",
+        "priority": "priority",
+        "query": "query",
+        "restricted_roles": "restricted_roles",
+        "state": "state",
+        "tags": "tags",
+        "type": "type",
     }
 
     read_only_vars = {
-        "created",  # noqa: E501
-        "deleted",  # noqa: E501
-        "id",  # noqa: E501
-        "modified",  # noqa: E501
-        "multi",  # noqa: E501
+        "created",
+        "deleted",
+        "id",
+        "modified",
+        "multi",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """MonitorUpdateRequest - a model defined in OpenAPI
 
         Keyword Args:
@@ -167,30 +153,29 @@ class MonitorUpdateRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created (datetime): Timestamp of the monitor creation.. [optional]  # noqa: E501
-            creator (Creator): [optional]  # noqa: E501
-            deleted (datetime, none_type): Whether or not the monitor is deleted. (Always `null`). [optional]  # noqa: E501
-            id (int): ID of this monitor.. [optional]  # noqa: E501
-            message (str): A message to include with notifications for this monitor.. [optional]  # noqa: E501
-            modified (datetime): Last timestamp when the monitor was edited.. [optional]  # noqa: E501
-            multi (bool): Whether or not the monitor is broken down on different groups.. [optional]  # noqa: E501
-            name (str): The monitor name.. [optional]  # noqa: E501
-            options (MonitorOptions): [optional]  # noqa: E501
-            overall_state (MonitorOverallStates): [optional]  # noqa: E501
-            priority (int): Integer from 1 (high) to 5 (low) indicating alert severity.. [optional]  # noqa: E501
-            query (str): The monitor query.. [optional]  # noqa: E501
-            restricted_roles ([str]): A list of role identifiers that can be pulled from the Roles API. Cannot be used with `locked` option.. [optional]  # noqa: E501
-            state (MonitorState): [optional]  # noqa: E501
-            tags ([str]): Tags associated to your monitor.. [optional]  # noqa: E501
-            type (MonitorType): [optional]  # noqa: E501
+            created (datetime): Timestamp of the monitor creation.. [optional]
+            creator (Creator): [optional]
+            deleted (datetime, none_type): Whether or not the monitor is deleted. (Always `null`). [optional]
+            id (int): ID of this monitor.. [optional]
+            message (str): A message to include with notifications for this monitor.. [optional]
+            modified (datetime): Last timestamp when the monitor was edited.. [optional]
+            multi (bool): Whether or not the monitor is broken down on different groups.. [optional]
+            name (str): The monitor name.. [optional]
+            options (MonitorOptions): [optional]
+            overall_state (MonitorOverallStates): [optional]
+            priority (int): Integer from 1 (high) to 5 (low) indicating alert severity.. [optional]
+            query (str): The monitor query.. [optional]
+            restricted_roles ([str]): A list of role identifiers that can be pulled from the Roles API. Cannot be used with `locked` option.. [optional]
+            state (MonitorState): [optional]
+            tags ([str]): Tags associated to your monitor.. [optional]
+            type (MonitorType): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(MonitorUpdateRequest, cls)._from_openapi_data(kwargs)

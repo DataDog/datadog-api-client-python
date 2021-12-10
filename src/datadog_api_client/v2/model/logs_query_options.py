@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class LogsQueryOptions(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class LogsQueryOptions(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,23 +51,18 @@ class LogsQueryOptions(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "time_offset": (int,),  # noqa: E501
-            "timezone": (str,),  # noqa: E501
+            "time_offset": (int,),
+            "timezone": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "time_offset": "timeOffset",  # noqa: E501
-        "timezone": "timezone",  # noqa: E501
+        "time_offset": "timeOffset",
+        "timezone": "timezone",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """LogsQueryOptions - a model defined in OpenAPI
 
         Keyword Args:
@@ -110,16 +96,15 @@ class LogsQueryOptions(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            time_offset (int): The time offset (in seconds) to apply to the query.. [optional]  # noqa: E501
-            timezone (str): The timezone can be specified both as an offset, for example: \"UTC+03:00\".. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            time_offset (int): The time offset (in seconds) to apply to the query.. [optional]
+            timezone (str): The timezone can be specified both as an offset, for example: \"UTC+03:00\".. [optional] if omitted the server will use the default value of "UTC"
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsQueryOptions, cls)._from_openapi_data(kwargs)

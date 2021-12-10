@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
@@ -344,9 +342,9 @@ class SecurityMonitoringApi(object):
         )
 
     def create_security_filter(self, body, **kwargs):
-        """Create a security filter  # noqa: E501
+        """Create a security filter
 
-        Create a security filter.  See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/) for more examples.  # noqa: E501
+        Create a security filter.  See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/) for more examples.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -387,9 +385,9 @@ class SecurityMonitoringApi(object):
         return self._create_security_filter_endpoint.call_with_http_info(**kwargs)
 
     def create_security_monitoring_rule(self, body, **kwargs):
-        """Create a detection rule  # noqa: E501
+        """Create a detection rule
 
-        Create a detection rule.  # noqa: E501
+        Create a detection rule.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -430,9 +428,9 @@ class SecurityMonitoringApi(object):
         return self._create_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
 
     def delete_security_filter(self, security_filter_id, **kwargs):
-        """Delete a security filter  # noqa: E501
+        """Delete a security filter
 
-        Delete a specific security filter.  # noqa: E501
+        Delete a specific security filter.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -473,9 +471,9 @@ class SecurityMonitoringApi(object):
         return self._delete_security_filter_endpoint.call_with_http_info(**kwargs)
 
     def delete_security_monitoring_rule(self, rule_id, **kwargs):
-        """Delete an existing rule  # noqa: E501
+        """Delete an existing rule
 
-        Delete an existing rule. Default rules cannot be deleted.  # noqa: E501
+        Delete an existing rule. Default rules cannot be deleted.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -516,9 +514,9 @@ class SecurityMonitoringApi(object):
         return self._delete_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
 
     def get_security_filter(self, security_filter_id, **kwargs):
-        """Get a security filter  # noqa: E501
+        """Get a security filter
 
-        Get the details of a specific security filter.  See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/) for more examples.  # noqa: E501
+        Get the details of a specific security filter.  See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/) for more examples.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -559,9 +557,9 @@ class SecurityMonitoringApi(object):
         return self._get_security_filter_endpoint.call_with_http_info(**kwargs)
 
     def get_security_monitoring_rule(self, rule_id, **kwargs):
-        """Get a rule's details  # noqa: E501
+        """Get a rule's details
 
-        Get a rule's details.  # noqa: E501
+        Get a rule's details.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -602,9 +600,9 @@ class SecurityMonitoringApi(object):
         return self._get_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
 
     def list_security_filters(self, **kwargs):
-        """Get all security filters  # noqa: E501
+        """Get all security filters
 
-        Get the list of configured security filters with their definitions.  # noqa: E501
+        Get the list of configured security filters with their definitions.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -642,9 +640,9 @@ class SecurityMonitoringApi(object):
         return self._list_security_filters_endpoint.call_with_http_info(**kwargs)
 
     def list_security_monitoring_rules(self, **kwargs):
-        """List rules  # noqa: E501
+        """List rules
 
-        List rules.  # noqa: E501
+        List rules.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -684,9 +682,9 @@ class SecurityMonitoringApi(object):
         return self._list_security_monitoring_rules_endpoint.call_with_http_info(**kwargs)
 
     def list_security_monitoring_signals(self, **kwargs):
-        """Get a quick list of security signals  # noqa: E501
+        """Get a quick list of security signals
 
-        The list endpoint returns security signals that match a search query. Both this endpoint and the POST endpoint can be used interchangeably when listing security signals.  # noqa: E501
+        The list endpoint returns security signals that match a search query. Both this endpoint and the POST endpoint can be used interchangeably when listing security signals.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -730,9 +728,9 @@ class SecurityMonitoringApi(object):
         return self._list_security_monitoring_signals_endpoint.call_with_http_info(**kwargs)
 
     def search_security_monitoring_signals(self, **kwargs):
-        """Get a list of security signals  # noqa: E501
+        """Get a list of security signals
 
-        Returns security signals that match a search query. Both this endpoint and the GET endpoint can be used interchangeably for listing security signals.  # noqa: E501
+        Returns security signals that match a search query. Both this endpoint and the GET endpoint can be used interchangeably for listing security signals.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -771,9 +769,9 @@ class SecurityMonitoringApi(object):
         return self._search_security_monitoring_signals_endpoint.call_with_http_info(**kwargs)
 
     def update_security_filter(self, security_filter_id, body, **kwargs):
-        """Update a security filter  # noqa: E501
+        """Update a security filter
 
-        Update a specific security filter. Returns the security filter object when the request is successful.  # noqa: E501
+        Update a specific security filter. Returns the security filter object when the request is successful.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -816,9 +814,9 @@ class SecurityMonitoringApi(object):
         return self._update_security_filter_endpoint.call_with_http_info(**kwargs)
 
     def update_security_monitoring_rule(self, rule_id, body, **kwargs):
-        """Update an existing rule  # noqa: E501
+        """Update an existing rule
 
-        Update an existing rule. When updating `cases`, `queries` or `options`, the whole field must be included. For example, when modifying a query all queries must be included. Default rules can only be updated to be enabled and to change notifications.  # noqa: E501
+        Update an existing rule. When updating `cases`, `queries` or `options`, the whole field must be included. For example, when modifying a query all queries must be included. Default rules can only be updated to be enabled and to change notifications.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

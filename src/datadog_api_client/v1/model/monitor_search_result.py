@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class MonitorSearchResult(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class MonitorSearchResult(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,57 +64,52 @@ class MonitorSearchResult(ModelNormal):
         """
         lazy_import()
         return {
-            "classification": (str,),  # noqa: E501
-            "creator": (Creator,),  # noqa: E501
-            "id": (int,),  # noqa: E501
+            "classification": (str,),
+            "creator": (Creator,),
+            "id": (int,),
             "last_triggered_ts": (
                 int,
                 none_type,
-            ),  # noqa: E501
-            "metrics": ([str],),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "notifications": ([MonitorSearchResultNotification],),  # noqa: E501
-            "org_id": (int,),  # noqa: E501
-            "query": (str,),  # noqa: E501
-            "scopes": ([str],),  # noqa: E501
-            "status": (MonitorOverallStates,),  # noqa: E501
-            "tags": ([str],),  # noqa: E501
-            "type": (MonitorType,),  # noqa: E501
+            ),
+            "metrics": ([str],),
+            "name": (str,),
+            "notifications": ([MonitorSearchResultNotification],),
+            "org_id": (int,),
+            "query": (str,),
+            "scopes": ([str],),
+            "status": (MonitorOverallStates,),
+            "tags": ([str],),
+            "type": (MonitorType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "classification": "classification",  # noqa: E501
-        "creator": "creator",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "last_triggered_ts": "last_triggered_ts",  # noqa: E501
-        "metrics": "metrics",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "notifications": "notifications",  # noqa: E501
-        "org_id": "org_id",  # noqa: E501
-        "query": "query",  # noqa: E501
-        "scopes": "scopes",  # noqa: E501
-        "status": "status",  # noqa: E501
-        "tags": "tags",  # noqa: E501
-        "type": "type",  # noqa: E501
+        "classification": "classification",
+        "creator": "creator",
+        "id": "id",
+        "last_triggered_ts": "last_triggered_ts",
+        "metrics": "metrics",
+        "name": "name",
+        "notifications": "notifications",
+        "org_id": "org_id",
+        "query": "query",
+        "scopes": "scopes",
+        "status": "status",
+        "tags": "tags",
+        "type": "type",
     }
 
     read_only_vars = {
-        "classification",  # noqa: E501
-        "id",  # noqa: E501
-        "last_triggered_ts",  # noqa: E501
-        "metrics",  # noqa: E501
-        "name",  # noqa: E501
-        "notifications",  # noqa: E501
-        "org_id",  # noqa: E501
-        "tags",  # noqa: E501
+        "classification",
+        "id",
+        "last_triggered_ts",
+        "metrics",
+        "name",
+        "notifications",
+        "org_id",
+        "tags",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """MonitorSearchResult - a model defined in OpenAPI
 
         Keyword Args:
@@ -157,27 +143,26 @@ class MonitorSearchResult(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            classification (str): Classification of the monitor.. [optional]  # noqa: E501
-            creator (Creator): [optional]  # noqa: E501
-            id (int): ID of the monitor.. [optional]  # noqa: E501
-            last_triggered_ts (int, none_type): Latest timestamp the monitor triggered.. [optional]  # noqa: E501
-            metrics ([str]): Metrics used by the monitor.. [optional]  # noqa: E501
-            name (str): The monitor name.. [optional]  # noqa: E501
-            notifications ([MonitorSearchResultNotification]): The notification triggered by the monitor.. [optional]  # noqa: E501
-            org_id (int): The ID of the organization.. [optional]  # noqa: E501
-            query (str): The monitor query.. [optional]  # noqa: E501
-            scopes ([str]): The scope(s) to which the downtime applies, e.g. `host:app2`. Provide multiple scopes as a comma-separated list, e.g. `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (i.e. `env:dev AND env:prod`), NOT any of them.. [optional]  # noqa: E501
-            status (MonitorOverallStates): [optional]  # noqa: E501
-            tags ([str]): Tags associated with the monitor.. [optional]  # noqa: E501
-            type (MonitorType): [optional]  # noqa: E501
+            classification (str): Classification of the monitor.. [optional]
+            creator (Creator): [optional]
+            id (int): ID of the monitor.. [optional]
+            last_triggered_ts (int, none_type): Latest timestamp the monitor triggered.. [optional]
+            metrics ([str]): Metrics used by the monitor.. [optional]
+            name (str): The monitor name.. [optional]
+            notifications ([MonitorSearchResultNotification]): The notification triggered by the monitor.. [optional]
+            org_id (int): The ID of the organization.. [optional]
+            query (str): The monitor query.. [optional]
+            scopes ([str]): The scope(s) to which the downtime applies, e.g. `host:app2`. Provide multiple scopes as a comma-separated list, e.g. `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (i.e. `env:dev AND env:prod`), NOT any of them.. [optional]
+            status (MonitorOverallStates): [optional]
+            tags ([str]): Tags associated with the monitor.. [optional]
+            type (MonitorType): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(MonitorSearchResult, cls)._from_openapi_data(kwargs)

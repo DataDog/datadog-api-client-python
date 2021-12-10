@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class DowntimeRecurrence(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,8 +38,6 @@ class DowntimeRecurrence(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "period": {
             "inclusive_maximum": 2147483647,
@@ -51,8 +46,6 @@ class DowntimeRecurrence(ModelNormal):
             "inclusive_maximum": 2147483647,
         },
     }
-
-    additional_properties_type = None
 
     _nullable = True
 
@@ -67,37 +60,32 @@ class DowntimeRecurrence(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "period": (int,),  # noqa: E501
-            "rrule": (str,),  # noqa: E501
-            "type": (str,),  # noqa: E501
+            "period": (int,),
+            "rrule": (str,),
+            "type": (str,),
             "until_date": (
                 int,
                 none_type,
-            ),  # noqa: E501
+            ),
             "until_occurrences": (
                 int,
                 none_type,
-            ),  # noqa: E501
-            "week_days": ([str],),  # noqa: E501
+            ),
+            "week_days": ([str],),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "period": "period",  # noqa: E501
-        "rrule": "rrule",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "until_date": "until_date",  # noqa: E501
-        "until_occurrences": "until_occurrences",  # noqa: E501
-        "week_days": "week_days",  # noqa: E501
+        "period": "period",
+        "rrule": "rrule",
+        "type": "type",
+        "until_date": "until_date",
+        "until_occurrences": "until_occurrences",
+        "week_days": "week_days",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """DowntimeRecurrence - a model defined in OpenAPI
 
         Keyword Args:
@@ -131,20 +119,19 @@ class DowntimeRecurrence(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            period (int): How often to repeat as an integer. For example, to repeat every 3 days, select a type of `days` and a period of `3`.. [optional]  # noqa: E501
-            rrule (str): The `RRULE` standard for defining recurring events (**requires to set \"type\" to rrule**) For example, to have a recurring event on the first day of each month, set the type to `rrule` and set the `FREQ` to `MONTHLY` and `BYMONTHDAY` to `1`. Most common `rrule` options from the [iCalendar Spec](https://tools.ietf.org/html/rfc5545) are supported.  **Note**: Attributes specifying the duration in `RRULE` are not supported (for example, `DTSTART`, `DTEND`, `DURATION`). More examples available in this [downtime guide](https://docs.datadoghq.com/monitors/guide/suppress-alert-with-downtimes/?tab=api). [optional]  # noqa: E501
-            type (str): The type of recurrence. Choose from `days`, `weeks`, `months`, `years`, `rrule`.. [optional]  # noqa: E501
-            until_date (int, none_type): The date at which the recurrence should end as a POSIX timestamp. `until_occurences` and `until_date` are mutually exclusive.. [optional]  # noqa: E501
-            until_occurrences (int, none_type): How many times the downtime is rescheduled. `until_occurences` and `until_date` are mutually exclusive.. [optional]  # noqa: E501
-            week_days ([str]): A list of week days to repeat on. Choose from `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat` or `Sun`. Only applicable when type is weeks. First letter must be capitalized.. [optional]  # noqa: E501
+            period (int): How often to repeat as an integer. For example, to repeat every 3 days, select a type of `days` and a period of `3`.. [optional]
+            rrule (str): The `RRULE` standard for defining recurring events (**requires to set \"type\" to rrule**) For example, to have a recurring event on the first day of each month, set the type to `rrule` and set the `FREQ` to `MONTHLY` and `BYMONTHDAY` to `1`. Most common `rrule` options from the [iCalendar Spec](https://tools.ietf.org/html/rfc5545) are supported.  **Note**: Attributes specifying the duration in `RRULE` are not supported (for example, `DTSTART`, `DTEND`, `DURATION`). More examples available in this [downtime guide](https://docs.datadoghq.com/monitors/guide/suppress-alert-with-downtimes/?tab=api). [optional]
+            type (str): The type of recurrence. Choose from `days`, `weeks`, `months`, `years`, `rrule`.. [optional]
+            until_date (int, none_type): The date at which the recurrence should end as a POSIX timestamp. `until_occurences` and `until_date` are mutually exclusive.. [optional]
+            until_occurrences (int, none_type): How many times the downtime is rescheduled. `until_occurences` and `until_date` are mutually exclusive.. [optional]
+            week_days ([str]): A list of week days to repeat on. Choose from `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat` or `Sun`. Only applicable when type is weeks. First letter must be capitalized.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(DowntimeRecurrence, cls)._from_openapi_data(kwargs)

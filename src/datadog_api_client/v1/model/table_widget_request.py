@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -54,8 +53,6 @@ class TableWidgetRequest(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -65,13 +62,7 @@ class TableWidgetRequest(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -85,57 +76,52 @@ class TableWidgetRequest(ModelNormal):
         """
         lazy_import()
         return {
-            "aggregator": (WidgetAggregator,),  # noqa: E501
-            "alias": (str,),  # noqa: E501
-            "apm_query": (LogQueryDefinition,),  # noqa: E501
-            "apm_stats_query": (ApmStatsQueryDefinition,),  # noqa: E501
-            "cell_display_mode": ([TableWidgetCellDisplayMode],),  # noqa: E501
-            "conditional_formats": ([WidgetConditionalFormat],),  # noqa: E501
-            "event_query": (LogQueryDefinition,),  # noqa: E501
-            "formulas": ([WidgetFormula],),  # noqa: E501
-            "limit": (int,),  # noqa: E501
-            "log_query": (LogQueryDefinition,),  # noqa: E501
-            "network_query": (LogQueryDefinition,),  # noqa: E501
-            "order": (WidgetSort,),  # noqa: E501
-            "process_query": (ProcessQueryDefinition,),  # noqa: E501
-            "profile_metrics_query": (LogQueryDefinition,),  # noqa: E501
-            "q": (str,),  # noqa: E501
-            "queries": ([FormulaAndFunctionQueryDefinition],),  # noqa: E501
-            "response_format": (FormulaAndFunctionResponseFormat,),  # noqa: E501
-            "rum_query": (LogQueryDefinition,),  # noqa: E501
-            "security_query": (LogQueryDefinition,),  # noqa: E501
+            "aggregator": (WidgetAggregator,),
+            "alias": (str,),
+            "apm_query": (LogQueryDefinition,),
+            "apm_stats_query": (ApmStatsQueryDefinition,),
+            "cell_display_mode": ([TableWidgetCellDisplayMode],),
+            "conditional_formats": ([WidgetConditionalFormat],),
+            "event_query": (LogQueryDefinition,),
+            "formulas": ([WidgetFormula],),
+            "limit": (int,),
+            "log_query": (LogQueryDefinition,),
+            "network_query": (LogQueryDefinition,),
+            "order": (WidgetSort,),
+            "process_query": (ProcessQueryDefinition,),
+            "profile_metrics_query": (LogQueryDefinition,),
+            "q": (str,),
+            "queries": ([FormulaAndFunctionQueryDefinition],),
+            "response_format": (FormulaAndFunctionResponseFormat,),
+            "rum_query": (LogQueryDefinition,),
+            "security_query": (LogQueryDefinition,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "aggregator": "aggregator",  # noqa: E501
-        "alias": "alias",  # noqa: E501
-        "apm_query": "apm_query",  # noqa: E501
-        "apm_stats_query": "apm_stats_query",  # noqa: E501
-        "cell_display_mode": "cell_display_mode",  # noqa: E501
-        "conditional_formats": "conditional_formats",  # noqa: E501
-        "event_query": "event_query",  # noqa: E501
-        "formulas": "formulas",  # noqa: E501
-        "limit": "limit",  # noqa: E501
-        "log_query": "log_query",  # noqa: E501
-        "network_query": "network_query",  # noqa: E501
-        "order": "order",  # noqa: E501
-        "process_query": "process_query",  # noqa: E501
-        "profile_metrics_query": "profile_metrics_query",  # noqa: E501
-        "q": "q",  # noqa: E501
-        "queries": "queries",  # noqa: E501
-        "response_format": "response_format",  # noqa: E501
-        "rum_query": "rum_query",  # noqa: E501
-        "security_query": "security_query",  # noqa: E501
+        "aggregator": "aggregator",
+        "alias": "alias",
+        "apm_query": "apm_query",
+        "apm_stats_query": "apm_stats_query",
+        "cell_display_mode": "cell_display_mode",
+        "conditional_formats": "conditional_formats",
+        "event_query": "event_query",
+        "formulas": "formulas",
+        "limit": "limit",
+        "log_query": "log_query",
+        "network_query": "network_query",
+        "order": "order",
+        "process_query": "process_query",
+        "profile_metrics_query": "profile_metrics_query",
+        "q": "q",
+        "queries": "queries",
+        "response_format": "response_format",
+        "rum_query": "rum_query",
+        "security_query": "security_query",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """TableWidgetRequest - a model defined in OpenAPI
 
         Keyword Args:
@@ -169,33 +155,32 @@ class TableWidgetRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aggregator (WidgetAggregator): [optional]  # noqa: E501
-            alias (str): The column name (defaults to the metric name).. [optional]  # noqa: E501
-            apm_query (LogQueryDefinition): [optional]  # noqa: E501
-            apm_stats_query (ApmStatsQueryDefinition): [optional]  # noqa: E501
-            cell_display_mode ([TableWidgetCellDisplayMode]): A list of display modes for each table cell.. [optional]  # noqa: E501
-            conditional_formats ([WidgetConditionalFormat]): List of conditional formats.. [optional]  # noqa: E501
-            event_query (LogQueryDefinition): [optional]  # noqa: E501
-            formulas ([WidgetFormula]): List of formulas that operate on queries. **This feature is currently in beta.**. [optional]  # noqa: E501
-            limit (int): For metric queries, the number of lines to show in the table. Only one request should have this property.. [optional]  # noqa: E501
-            log_query (LogQueryDefinition): [optional]  # noqa: E501
-            network_query (LogQueryDefinition): [optional]  # noqa: E501
-            order (WidgetSort): [optional]  # noqa: E501
-            process_query (ProcessQueryDefinition): [optional]  # noqa: E501
-            profile_metrics_query (LogQueryDefinition): [optional]  # noqa: E501
-            q (str): Query definition.. [optional]  # noqa: E501
-            queries ([FormulaAndFunctionQueryDefinition]): List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**. [optional]  # noqa: E501
-            response_format (FormulaAndFunctionResponseFormat): [optional]  # noqa: E501
-            rum_query (LogQueryDefinition): [optional]  # noqa: E501
-            security_query (LogQueryDefinition): [optional]  # noqa: E501
+            aggregator (WidgetAggregator): [optional]
+            alias (str): The column name (defaults to the metric name).. [optional]
+            apm_query (LogQueryDefinition): [optional]
+            apm_stats_query (ApmStatsQueryDefinition): [optional]
+            cell_display_mode ([TableWidgetCellDisplayMode]): A list of display modes for each table cell.. [optional]
+            conditional_formats ([WidgetConditionalFormat]): List of conditional formats.. [optional]
+            event_query (LogQueryDefinition): [optional]
+            formulas ([WidgetFormula]): List of formulas that operate on queries. **This feature is currently in beta.**. [optional]
+            limit (int): For metric queries, the number of lines to show in the table. Only one request should have this property.. [optional]
+            log_query (LogQueryDefinition): [optional]
+            network_query (LogQueryDefinition): [optional]
+            order (WidgetSort): [optional]
+            process_query (ProcessQueryDefinition): [optional]
+            profile_metrics_query (LogQueryDefinition): [optional]
+            q (str): Query definition.. [optional]
+            queries ([FormulaAndFunctionQueryDefinition]): List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**. [optional]
+            response_format (FormulaAndFunctionResponseFormat): [optional]
+            rum_query (LogQueryDefinition): [optional]
+            security_query (LogQueryDefinition): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(TableWidgetRequest, cls)._from_openapi_data(kwargs)

@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.idp_response import IdpResponse
@@ -150,9 +148,9 @@ class OrganizationsApi(object):
         )
 
     def create_child_org(self, body, **kwargs):
-        """Create a child organization  # noqa: E501
+        """Create a child organization
 
-        Create a child organization.  This endpoint requires the [multi-organization account](https://docs.datadoghq.com/account_management/multi_organization/) feature and must be enabled by [contacting support](https://docs.datadoghq.com/help/).  Once a new child organization is created, you can interact with it by using the `org.public_id`, `api_key.key`, and `application_key.hash` provided in the response.  # noqa: E501
+        Create a child organization.  This endpoint requires the [multi-organization account](https://docs.datadoghq.com/account_management/multi_organization/) feature and must be enabled by [contacting support](https://docs.datadoghq.com/help/).  Once a new child organization is created, you can interact with it by using the `org.public_id`, `api_key.key`, and `application_key.hash` provided in the response.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -193,9 +191,9 @@ class OrganizationsApi(object):
         return self._create_child_org_endpoint.call_with_http_info(**kwargs)
 
     def get_org(self, public_id, **kwargs):
-        """Get organization information  # noqa: E501
+        """Get organization information
 
-        Get organization information.  # noqa: E501
+        Get organization information.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -236,9 +234,9 @@ class OrganizationsApi(object):
         return self._get_org_endpoint.call_with_http_info(**kwargs)
 
     def list_orgs(self, **kwargs):
-        """List your managed organizations  # noqa: E501
+        """List your managed organizations
 
-        List your managed organizations.  # noqa: E501
+        List your managed organizations.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -276,9 +274,9 @@ class OrganizationsApi(object):
         return self._list_orgs_endpoint.call_with_http_info(**kwargs)
 
     def update_org(self, public_id, body, **kwargs):
-        """Update your organization  # noqa: E501
+        """Update your organization
 
-        Update your organization.  # noqa: E501
+        Update your organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -321,9 +319,9 @@ class OrganizationsApi(object):
         return self._update_org_endpoint.call_with_http_info(**kwargs)
 
     def upload_id_p_for_org(self, public_id, idp_file, **kwargs):
-        """Upload IdP metadata  # noqa: E501
+        """Upload IdP metadata
 
-        There are a couple of options for updating the Identity Provider (IdP) metadata from your SAML IdP.  * **Multipart Form-Data**: Post the IdP metadata file using a form post.  * **XML Body:** Post the IdP metadata file as the body of the request.  # noqa: E501
+        There are a couple of options for updating the Identity Provider (IdP) metadata from your SAML IdP.  * **Multipart Form-Data**: Post the IdP metadata file using a form post.  * **XML Body:** Post the IdP metadata file as the body of the request.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

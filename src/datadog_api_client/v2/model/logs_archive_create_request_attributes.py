@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class LogsArchiveCreateRequestAttributes(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class LogsArchiveCreateRequestAttributes(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,29 +58,24 @@ class LogsArchiveCreateRequestAttributes(ModelNormal):
         """
         lazy_import()
         return {
-            "destination": (LogsArchiveCreateRequestDestination,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "query": (str,),  # noqa: E501
-            "include_tags": (bool,),  # noqa: E501
-            "rehydration_tags": ([str],),  # noqa: E501
+            "destination": (LogsArchiveCreateRequestDestination,),
+            "include_tags": (bool,),
+            "name": (str,),
+            "query": (str,),
+            "rehydration_tags": ([str],),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "destination": "destination",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "query": "query",  # noqa: E501
-        "include_tags": "include_tags",  # noqa: E501
-        "rehydration_tags": "rehydration_tags",  # noqa: E501
+        "destination": "destination",
+        "name": "name",
+        "query": "query",
+        "include_tags": "include_tags",
+        "rehydration_tags": "rehydration_tags",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, destination, name, query, *args, **kwargs):  # noqa: E501
+    def __init__(self, destination, name, query, *args, **kwargs):
         """LogsArchiveCreateRequestAttributes - a model defined in OpenAPI
 
         Args:
@@ -128,8 +114,8 @@ class LogsArchiveCreateRequestAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            include_tags (bool): To store the tags in the archive, set the value \"true\". If it is set to \"false\", the tags will be deleted when the logs are sent to the archive.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            rehydration_tags ([str]): An array of tags to add to rehydrated logs from an archive.. [optional]  # noqa: E501
+            include_tags (bool): To store the tags in the archive, set the value \"true\". If it is set to \"false\", the tags will be deleted when the logs are sent to the archive.. [optional] if omitted the server will use the default value of False
+            rehydration_tags ([str]): An array of tags to add to rehydrated logs from an archive.. [optional]
         """
         super().__init__(kwargs)
 
@@ -140,8 +126,7 @@ class LogsArchiveCreateRequestAttributes(ModelNormal):
         self.query = query
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, destination, name, query, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, destination, name, query, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsArchiveCreateRequestAttributes, cls)._from_openapi_data(kwargs)

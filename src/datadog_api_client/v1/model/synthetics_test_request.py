@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class SyntheticsTestRequest(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -52,8 +49,6 @@ class SyntheticsTestRequest(ModelNormal):
           as additional properties values.
 
     """
-
-    allowed_values = {}
 
     validations = {
         "dns_server_port": {
@@ -65,10 +60,6 @@ class SyntheticsTestRequest(ModelNormal):
             "inclusive_minimum": 0,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -82,57 +73,52 @@ class SyntheticsTestRequest(ModelNormal):
         """
         lazy_import()
         return {
-            "allow_insecure": (bool,),  # noqa: E501
-            "basic_auth": (SyntheticsBasicAuth,),  # noqa: E501
-            "body": (str,),  # noqa: E501
-            "certificate": (SyntheticsTestRequestCertificate,),  # noqa: E501
-            "dns_server": (str,),  # noqa: E501
-            "dns_server_port": (int,),  # noqa: E501
-            "follow_redirects": (bool,),  # noqa: E501
-            "headers": (SyntheticsTestHeaders,),  # noqa: E501
-            "host": (str,),  # noqa: E501
-            "message": (str,),  # noqa: E501
-            "method": (HTTPMethod,),  # noqa: E501
-            "no_saving_response_body": (bool,),  # noqa: E501
-            "number_of_packets": (int,),  # noqa: E501
-            "port": (int,),  # noqa: E501
-            "query": (dict,),  # noqa: E501
-            "servername": (str,),  # noqa: E501
-            "should_track_hops": (bool,),  # noqa: E501
-            "timeout": (float,),  # noqa: E501
-            "url": (str,),  # noqa: E501
+            "allow_insecure": (bool,),
+            "basic_auth": (SyntheticsBasicAuth,),
+            "body": (str,),
+            "certificate": (SyntheticsTestRequestCertificate,),
+            "dns_server": (str,),
+            "dns_server_port": (int,),
+            "follow_redirects": (bool,),
+            "headers": (SyntheticsTestHeaders,),
+            "host": (str,),
+            "message": (str,),
+            "method": (HTTPMethod,),
+            "no_saving_response_body": (bool,),
+            "number_of_packets": (int,),
+            "port": (int,),
+            "query": (dict,),
+            "servername": (str,),
+            "should_track_hops": (bool,),
+            "timeout": (float,),
+            "url": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "allow_insecure": "allow_insecure",  # noqa: E501
-        "basic_auth": "basicAuth",  # noqa: E501
-        "body": "body",  # noqa: E501
-        "certificate": "certificate",  # noqa: E501
-        "dns_server": "dnsServer",  # noqa: E501
-        "dns_server_port": "dnsServerPort",  # noqa: E501
-        "follow_redirects": "follow_redirects",  # noqa: E501
-        "headers": "headers",  # noqa: E501
-        "host": "host",  # noqa: E501
-        "message": "message",  # noqa: E501
-        "method": "method",  # noqa: E501
-        "no_saving_response_body": "noSavingResponseBody",  # noqa: E501
-        "number_of_packets": "numberOfPackets",  # noqa: E501
-        "port": "port",  # noqa: E501
-        "query": "query",  # noqa: E501
-        "servername": "servername",  # noqa: E501
-        "should_track_hops": "shouldTrackHops",  # noqa: E501
-        "timeout": "timeout",  # noqa: E501
-        "url": "url",  # noqa: E501
+        "allow_insecure": "allow_insecure",
+        "basic_auth": "basicAuth",
+        "body": "body",
+        "certificate": "certificate",
+        "dns_server": "dnsServer",
+        "dns_server_port": "dnsServerPort",
+        "follow_redirects": "follow_redirects",
+        "headers": "headers",
+        "host": "host",
+        "message": "message",
+        "method": "method",
+        "no_saving_response_body": "noSavingResponseBody",
+        "number_of_packets": "numberOfPackets",
+        "port": "port",
+        "query": "query",
+        "servername": "servername",
+        "should_track_hops": "shouldTrackHops",
+        "timeout": "timeout",
+        "url": "url",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SyntheticsTestRequest - a model defined in OpenAPI
 
         Keyword Args:
@@ -166,33 +152,32 @@ class SyntheticsTestRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            allow_insecure (bool): Allows loading insecure content for an HTTP request in a multistep test step.. [optional]  # noqa: E501
-            basic_auth (SyntheticsBasicAuth): [optional]  # noqa: E501
-            body (str): Body to include in the test.. [optional]  # noqa: E501
-            certificate (SyntheticsTestRequestCertificate): [optional]  # noqa: E501
-            dns_server (str): DNS server to use for DNS tests.. [optional]  # noqa: E501
-            dns_server_port (int): DNS server port to use for DNS tests.. [optional]  # noqa: E501
-            follow_redirects (bool): Specifies whether or not the request follows redirects.. [optional]  # noqa: E501
-            headers (SyntheticsTestHeaders): [optional]  # noqa: E501
-            host (str): Host name to perform the test with.. [optional]  # noqa: E501
-            message (str): Message to send for UDP or WebSocket tests.. [optional]  # noqa: E501
-            method (HTTPMethod): [optional]  # noqa: E501
-            no_saving_response_body (bool): Determines whether or not to save the response body.. [optional]  # noqa: E501
-            number_of_packets (int): Number of pings to use per test.. [optional]  # noqa: E501
-            port (int): Port to use when performing the test.. [optional]  # noqa: E501
-            query (dict): Query to use for the test.. [optional]  # noqa: E501
-            servername (str): For SSL tests, it specifies on which server you want to initiate the TLS handshake, allowing the server to present one of multiple possible certificates on the same IP address and TCP port number.. [optional]  # noqa: E501
-            should_track_hops (bool): Turns on a traceroute probe to discover all gateways along the path to the host destination.. [optional]  # noqa: E501
-            timeout (float): Timeout in seconds for the test.. [optional]  # noqa: E501
-            url (str): URL to perform the test with.. [optional]  # noqa: E501
+            allow_insecure (bool): Allows loading insecure content for an HTTP request in a multistep test step.. [optional]
+            basic_auth (SyntheticsBasicAuth): [optional]
+            body (str): Body to include in the test.. [optional]
+            certificate (SyntheticsTestRequestCertificate): [optional]
+            dns_server (str): DNS server to use for DNS tests.. [optional]
+            dns_server_port (int): DNS server port to use for DNS tests.. [optional]
+            follow_redirects (bool): Specifies whether or not the request follows redirects.. [optional]
+            headers (SyntheticsTestHeaders): [optional]
+            host (str): Host name to perform the test with.. [optional]
+            message (str): Message to send for UDP or WebSocket tests.. [optional]
+            method (HTTPMethod): [optional]
+            no_saving_response_body (bool): Determines whether or not to save the response body.. [optional]
+            number_of_packets (int): Number of pings to use per test.. [optional]
+            port (int): Port to use when performing the test.. [optional]
+            query (dict): Query to use for the test.. [optional]
+            servername (str): For SSL tests, it specifies on which server you want to initiate the TLS handshake, allowing the server to present one of multiple possible certificates on the same IP address and TCP port number.. [optional]
+            should_track_hops (bool): Turns on a traceroute probe to discover all gateways along the path to the host destination.. [optional]
+            timeout (float): Timeout in seconds for the test.. [optional]
+            url (str): URL to perform the test with.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsTestRequest, cls)._from_openapi_data(kwargs)

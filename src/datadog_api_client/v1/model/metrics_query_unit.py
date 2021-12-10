@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class MetricsQueryUnit(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,11 +38,7 @@ class MetricsQueryUnit(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
 
     _nullable = True
 
@@ -60,35 +53,30 @@ class MetricsQueryUnit(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "family": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "plural": (str,),  # noqa: E501
-            "scale_factor": (float,),  # noqa: E501
-            "short_name": (str,),  # noqa: E501
+            "family": (str,),
+            "name": (str,),
+            "plural": (str,),
+            "scale_factor": (float,),
+            "short_name": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "family": "family",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "plural": "plural",  # noqa: E501
-        "scale_factor": "scale_factor",  # noqa: E501
-        "short_name": "short_name",  # noqa: E501
+        "family": "family",
+        "name": "name",
+        "plural": "plural",
+        "scale_factor": "scale_factor",
+        "short_name": "short_name",
     }
 
     read_only_vars = {
-        "family",  # noqa: E501
-        "name",  # noqa: E501
-        "plural",  # noqa: E501
-        "scale_factor",  # noqa: E501
-        "short_name",  # noqa: E501
+        "family",
+        "name",
+        "plural",
+        "scale_factor",
+        "short_name",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """MetricsQueryUnit - a model defined in OpenAPI
 
         Keyword Args:
@@ -122,19 +110,18 @@ class MetricsQueryUnit(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            family (str): Unit family, allows for conversion between units of the same family, for scaling.. [optional]  # noqa: E501
-            name (str): Unit name. [optional]  # noqa: E501
-            plural (str): Plural form of the unit name.. [optional]  # noqa: E501
-            scale_factor (float): Factor for scaling between units of the same family.. [optional]  # noqa: E501
-            short_name (str): Abbreviation of the unit.. [optional]  # noqa: E501
+            family (str): Unit family, allows for conversion between units of the same family, for scaling.. [optional]
+            name (str): Unit name. [optional]
+            plural (str): Plural form of the unit name.. [optional]
+            scale_factor (float): Factor for scaling between units of the same family.. [optional]
+            short_name (str): Abbreviation of the unit.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(MetricsQueryUnit, cls)._from_openapi_data(kwargs)

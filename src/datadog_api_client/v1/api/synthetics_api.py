@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
@@ -711,9 +709,9 @@ class SyntheticsApi(object):
         )
 
     def create_global_variable(self, body, **kwargs):
-        """Create a global variable  # noqa: E501
+        """Create a global variable
 
-        Create a Synthetics global variable.  # noqa: E501
+        Create a Synthetics global variable.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -754,9 +752,9 @@ class SyntheticsApi(object):
         return self._create_global_variable_endpoint.call_with_http_info(**kwargs)
 
     def create_private_location(self, body, **kwargs):
-        """Create a private location  # noqa: E501
+        """Create a private location
 
-        Create a new Synthetics private location.  # noqa: E501
+        Create a new Synthetics private location.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -797,9 +795,9 @@ class SyntheticsApi(object):
         return self._create_private_location_endpoint.call_with_http_info(**kwargs)
 
     def create_synthetics_api_test(self, body, **kwargs):
-        """Create an API test  # noqa: E501
+        """Create an API test
 
-        Create a Synthetic API test.  # noqa: E501
+        Create a Synthetic API test.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -840,9 +838,9 @@ class SyntheticsApi(object):
         return self._create_synthetics_api_test_endpoint.call_with_http_info(**kwargs)
 
     def create_synthetics_browser_test(self, body, **kwargs):
-        """Create a browser test  # noqa: E501
+        """Create a browser test
 
-        Create a Synthetic browser test.  # noqa: E501
+        Create a Synthetic browser test.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -883,9 +881,9 @@ class SyntheticsApi(object):
         return self._create_synthetics_browser_test_endpoint.call_with_http_info(**kwargs)
 
     def delete_global_variable(self, variable_id, **kwargs):
-        """Delete a global variable  # noqa: E501
+        """Delete a global variable
 
-        Delete a Synthetics global variable.  # noqa: E501
+        Delete a Synthetics global variable.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -926,9 +924,9 @@ class SyntheticsApi(object):
         return self._delete_global_variable_endpoint.call_with_http_info(**kwargs)
 
     def delete_private_location(self, location_id, **kwargs):
-        """Delete a private location  # noqa: E501
+        """Delete a private location
 
-        Delete a Synthetics private location.  # noqa: E501
+        Delete a Synthetics private location.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -969,9 +967,9 @@ class SyntheticsApi(object):
         return self._delete_private_location_endpoint.call_with_http_info(**kwargs)
 
     def delete_tests(self, body, **kwargs):
-        """Delete tests  # noqa: E501
+        """Delete tests
 
-        Delete multiple Synthetic tests by ID.  # noqa: E501
+        Delete multiple Synthetic tests by ID.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1012,9 +1010,9 @@ class SyntheticsApi(object):
         return self._delete_tests_endpoint.call_with_http_info(**kwargs)
 
     def edit_global_variable(self, variable_id, body, **kwargs):
-        """Edit a global variable  # noqa: E501
+        """Edit a global variable
 
-        Edit a Synthetics global variable.  # noqa: E501
+        Edit a Synthetics global variable.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1057,9 +1055,9 @@ class SyntheticsApi(object):
         return self._edit_global_variable_endpoint.call_with_http_info(**kwargs)
 
     def get_api_test(self, public_id, **kwargs):
-        """Get an API test  # noqa: E501
+        """Get an API test
 
-        Get the detailed configuration associated with a Synthetic API test.  # noqa: E501
+        Get the detailed configuration associated with a Synthetic API test.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1100,9 +1098,9 @@ class SyntheticsApi(object):
         return self._get_api_test_endpoint.call_with_http_info(**kwargs)
 
     def get_api_test_latest_results(self, public_id, **kwargs):
-        """Get an API test's latest results summaries  # noqa: E501
+        """Get an API test's latest results summaries
 
-        Get the last 50 test results summaries for a given Synthetics API test.  # noqa: E501
+        Get the last 50 test results summaries for a given Synthetics API test.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1146,9 +1144,9 @@ class SyntheticsApi(object):
         return self._get_api_test_latest_results_endpoint.call_with_http_info(**kwargs)
 
     def get_api_test_result(self, public_id, result_id, **kwargs):
-        """Get an API test result  # noqa: E501
+        """Get an API test result
 
-        Get a specific full result from a given (API) Synthetic test.  # noqa: E501
+        Get a specific full result from a given (API) Synthetic test.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1191,9 +1189,9 @@ class SyntheticsApi(object):
         return self._get_api_test_result_endpoint.call_with_http_info(**kwargs)
 
     def get_browser_test(self, public_id, **kwargs):
-        """Get a browser test  # noqa: E501
+        """Get a browser test
 
-        Get the detailed configuration (including steps) associated with a Synthetic browser test.  # noqa: E501
+        Get the detailed configuration (including steps) associated with a Synthetic browser test.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1234,9 +1232,9 @@ class SyntheticsApi(object):
         return self._get_browser_test_endpoint.call_with_http_info(**kwargs)
 
     def get_browser_test_latest_results(self, public_id, **kwargs):
-        """Get a browser test's latest results summaries  # noqa: E501
+        """Get a browser test's latest results summaries
 
-        Get the last 50 test results summaries for a given Synthetics Browser test.  # noqa: E501
+        Get the last 50 test results summaries for a given Synthetics Browser test.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1280,9 +1278,9 @@ class SyntheticsApi(object):
         return self._get_browser_test_latest_results_endpoint.call_with_http_info(**kwargs)
 
     def get_browser_test_result(self, public_id, result_id, **kwargs):
-        """Get a browser test result  # noqa: E501
+        """Get a browser test result
 
-        Get a specific full result from a given (browser) Synthetic test.  # noqa: E501
+        Get a specific full result from a given (browser) Synthetic test.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1325,9 +1323,9 @@ class SyntheticsApi(object):
         return self._get_browser_test_result_endpoint.call_with_http_info(**kwargs)
 
     def get_global_variable(self, variable_id, **kwargs):
-        """Get a global variable  # noqa: E501
+        """Get a global variable
 
-        Get the detailed configuration of a global variable.  # noqa: E501
+        Get the detailed configuration of a global variable.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1368,9 +1366,9 @@ class SyntheticsApi(object):
         return self._get_global_variable_endpoint.call_with_http_info(**kwargs)
 
     def get_private_location(self, location_id, **kwargs):
-        """Get a private location  # noqa: E501
+        """Get a private location
 
-        Get a Synthetics private location.  # noqa: E501
+        Get a Synthetics private location.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1411,9 +1409,9 @@ class SyntheticsApi(object):
         return self._get_private_location_endpoint.call_with_http_info(**kwargs)
 
     def get_synthetics_ci_batch(self, batch_id, **kwargs):
-        """Get details of batch  # noqa: E501
+        """Get details of batch
 
-        Get a batch's updated details.  # noqa: E501
+        Get a batch's updated details.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1454,9 +1452,9 @@ class SyntheticsApi(object):
         return self._get_synthetics_ci_batch_endpoint.call_with_http_info(**kwargs)
 
     def get_test(self, public_id, **kwargs):
-        """Get a test configuration  # noqa: E501
+        """Get a test configuration
 
-        Get the detailed configuration associated with a Synthetics test.  # noqa: E501
+        Get the detailed configuration associated with a Synthetics test.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1497,9 +1495,9 @@ class SyntheticsApi(object):
         return self._get_test_endpoint.call_with_http_info(**kwargs)
 
     def list_global_variables(self, **kwargs):
-        """Get all global variables  # noqa: E501
+        """Get all global variables
 
-        Get the list of all Synthetics global variables.  # noqa: E501
+        Get the list of all Synthetics global variables.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1537,9 +1535,9 @@ class SyntheticsApi(object):
         return self._list_global_variables_endpoint.call_with_http_info(**kwargs)
 
     def list_locations(self, **kwargs):
-        """Get all locations (public and private)  # noqa: E501
+        """Get all locations (public and private)
 
-        Get the list of public and private locations available for Synthetic tests. No arguments required.  # noqa: E501
+        Get the list of public and private locations available for Synthetic tests. No arguments required.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1577,9 +1575,9 @@ class SyntheticsApi(object):
         return self._list_locations_endpoint.call_with_http_info(**kwargs)
 
     def list_tests(self, **kwargs):
-        """Get the list of all tests  # noqa: E501
+        """Get the list of all tests
 
-        Get the list of all Synthetic tests.  # noqa: E501
+        Get the list of all Synthetic tests.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1617,9 +1615,9 @@ class SyntheticsApi(object):
         return self._list_tests_endpoint.call_with_http_info(**kwargs)
 
     def trigger_ci_tests(self, body, **kwargs):
-        """Trigger tests from CI/CD pipelines  # noqa: E501
+        """Trigger tests from CI/CD pipelines
 
-        Trigger a set of Synthetics tests for continuous integration.  # noqa: E501
+        Trigger a set of Synthetics tests for continuous integration.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1660,9 +1658,9 @@ class SyntheticsApi(object):
         return self._trigger_ci_tests_endpoint.call_with_http_info(**kwargs)
 
     def trigger_tests(self, body, **kwargs):
-        """Trigger Synthetics tests  # noqa: E501
+        """Trigger Synthetics tests
 
-        Trigger a set of Synthetics tests.  # noqa: E501
+        Trigger a set of Synthetics tests.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1703,9 +1701,9 @@ class SyntheticsApi(object):
         return self._trigger_tests_endpoint.call_with_http_info(**kwargs)
 
     def update_api_test(self, public_id, body, **kwargs):
-        """Edit an API test  # noqa: E501
+        """Edit an API test
 
-        Edit the configuration of a Synthetic API test.  # noqa: E501
+        Edit the configuration of a Synthetic API test.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1748,9 +1746,9 @@ class SyntheticsApi(object):
         return self._update_api_test_endpoint.call_with_http_info(**kwargs)
 
     def update_browser_test(self, public_id, body, **kwargs):
-        """Edit a browser test  # noqa: E501
+        """Edit a browser test
 
-        Edit the configuration of a Synthetic browser test.  # noqa: E501
+        Edit the configuration of a Synthetic browser test.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1793,9 +1791,9 @@ class SyntheticsApi(object):
         return self._update_browser_test_endpoint.call_with_http_info(**kwargs)
 
     def update_private_location(self, location_id, body, **kwargs):
-        """Edit a private location  # noqa: E501
+        """Edit a private location
 
-        Edit a Synthetics private location.  # noqa: E501
+        Edit a Synthetics private location.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1838,9 +1836,9 @@ class SyntheticsApi(object):
         return self._update_private_location_endpoint.call_with_http_info(**kwargs)
 
     def update_test_pause_status(self, public_id, body, **kwargs):
-        """Pause or start a test  # noqa: E501
+        """Pause or start a test
 
-        Pause or start a Synthetics test by changing the status.  # noqa: E501
+        Pause or start a Synthetics test by changing the status.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class MonitorGroupSearchResult(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class MonitorGroupSearchResult(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,43 +58,38 @@ class MonitorGroupSearchResult(ModelNormal):
         """
         lazy_import()
         return {
-            "group": (str,),  # noqa: E501
-            "group_tags": ([str],),  # noqa: E501
-            "last_nodata_ts": (int,),  # noqa: E501
+            "group": (str,),
+            "group_tags": ([str],),
+            "last_nodata_ts": (int,),
             "last_triggered_ts": (
                 int,
                 none_type,
-            ),  # noqa: E501
-            "monitor_id": (int,),  # noqa: E501
-            "monitor_name": (str,),  # noqa: E501
-            "status": (MonitorOverallStates,),  # noqa: E501
+            ),
+            "monitor_id": (int,),
+            "monitor_name": (str,),
+            "status": (MonitorOverallStates,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "group": "group",  # noqa: E501
-        "group_tags": "group_tags",  # noqa: E501
-        "last_nodata_ts": "last_nodata_ts",  # noqa: E501
-        "last_triggered_ts": "last_triggered_ts",  # noqa: E501
-        "monitor_id": "monitor_id",  # noqa: E501
-        "monitor_name": "monitor_name",  # noqa: E501
-        "status": "status",  # noqa: E501
+        "group": "group",
+        "group_tags": "group_tags",
+        "last_nodata_ts": "last_nodata_ts",
+        "last_triggered_ts": "last_triggered_ts",
+        "monitor_id": "monitor_id",
+        "monitor_name": "monitor_name",
+        "status": "status",
     }
 
     read_only_vars = {
-        "group",  # noqa: E501
-        "group_tags",  # noqa: E501
-        "last_nodata_ts",  # noqa: E501
-        "last_triggered_ts",  # noqa: E501
-        "monitor_id",  # noqa: E501
-        "monitor_name",  # noqa: E501
+        "group",
+        "group_tags",
+        "last_nodata_ts",
+        "last_triggered_ts",
+        "monitor_id",
+        "monitor_name",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """MonitorGroupSearchResult - a model defined in OpenAPI
 
         Keyword Args:
@@ -137,21 +123,20 @@ class MonitorGroupSearchResult(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            group (str): The name of the group.. [optional]  # noqa: E501
-            group_tags ([str]): The list of tags of the monitor group.. [optional]  # noqa: E501
-            last_nodata_ts (int): Latest timestamp the monitor group was in NO_DATA state.. [optional]  # noqa: E501
-            last_triggered_ts (int, none_type): Latest timestamp the monitor group triggered.. [optional]  # noqa: E501
-            monitor_id (int): The ID of the monitor.. [optional]  # noqa: E501
-            monitor_name (str): The name of the monitor.. [optional]  # noqa: E501
-            status (MonitorOverallStates): [optional]  # noqa: E501
+            group (str): The name of the group.. [optional]
+            group_tags ([str]): The list of tags of the monitor group.. [optional]
+            last_nodata_ts (int): Latest timestamp the monitor group was in NO_DATA state.. [optional]
+            last_triggered_ts (int, none_type): Latest timestamp the monitor group triggered.. [optional]
+            monitor_id (int): The ID of the monitor.. [optional]
+            monitor_name (str): The name of the monitor.. [optional]
+            status (MonitorOverallStates): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(MonitorGroupSearchResult, cls)._from_openapi_data(kwargs)

@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class SLOThreshold(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class SLOThreshold(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,29 +58,24 @@ class SLOThreshold(ModelNormal):
         """
         lazy_import()
         return {
-            "target": (float,),  # noqa: E501
-            "timeframe": (SLOTimeframe,),  # noqa: E501
-            "target_display": (str,),  # noqa: E501
-            "warning": (float,),  # noqa: E501
-            "warning_display": (str,),  # noqa: E501
+            "target": (float,),
+            "target_display": (str,),
+            "timeframe": (SLOTimeframe,),
+            "warning": (float,),
+            "warning_display": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "target": "target",  # noqa: E501
-        "timeframe": "timeframe",  # noqa: E501
-        "target_display": "target_display",  # noqa: E501
-        "warning": "warning",  # noqa: E501
-        "warning_display": "warning_display",  # noqa: E501
+        "target": "target",
+        "timeframe": "timeframe",
+        "target_display": "target_display",
+        "warning": "warning",
+        "warning_display": "warning_display",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, target, timeframe, *args, **kwargs):  # noqa: E501
+    def __init__(self, target, timeframe, *args, **kwargs):
         """SLOThreshold - a model defined in OpenAPI
 
         Args:
@@ -127,9 +113,9 @@ class SLOThreshold(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            target_display (str): A string representation of the target that indicates its precision. It uses trailing zeros to show significant decimal places (e.g. `98.00`).  Always included in service level objective responses. Ignored in create/update requests.. [optional]  # noqa: E501
-            warning (float): The warning value for the service level objective.. [optional]  # noqa: E501
-            warning_display (str): A string representation of the warning target (see the description of the `target_display` field for details).  Included in service level objective responses if a warning target exists. Ignored in create/update requests.. [optional]  # noqa: E501
+            target_display (str): A string representation of the target that indicates its precision. It uses trailing zeros to show significant decimal places (e.g. `98.00`).  Always included in service level objective responses. Ignored in create/update requests.. [optional]
+            warning (float): The warning value for the service level objective.. [optional]
+            warning_display (str): A string representation of the warning target (see the description of the `target_display` field for details).  Included in service level objective responses if a warning target exists. Ignored in create/update requests.. [optional]
         """
         super().__init__(kwargs)
 
@@ -139,8 +125,7 @@ class SLOThreshold(ModelNormal):
         self.timeframe = timeframe
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, target, timeframe, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, target, timeframe, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SLOThreshold, cls)._from_openapi_data(kwargs)

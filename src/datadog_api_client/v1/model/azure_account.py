@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class AzureAccount(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class AzureAccount(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,35 +51,30 @@ class AzureAccount(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "automute": (bool,),  # noqa: E501
-            "client_id": (str,),  # noqa: E501
-            "client_secret": (str,),  # noqa: E501
-            "errors": ([str],),  # noqa: E501
-            "host_filters": (str,),  # noqa: E501
-            "new_client_id": (str,),  # noqa: E501
-            "new_tenant_name": (str,),  # noqa: E501
-            "tenant_name": (str,),  # noqa: E501
+            "automute": (bool,),
+            "client_id": (str,),
+            "client_secret": (str,),
+            "errors": ([str],),
+            "host_filters": (str,),
+            "new_client_id": (str,),
+            "new_tenant_name": (str,),
+            "tenant_name": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "automute": "automute",  # noqa: E501
-        "client_id": "client_id",  # noqa: E501
-        "client_secret": "client_secret",  # noqa: E501
-        "errors": "errors",  # noqa: E501
-        "host_filters": "host_filters",  # noqa: E501
-        "new_client_id": "new_client_id",  # noqa: E501
-        "new_tenant_name": "new_tenant_name",  # noqa: E501
-        "tenant_name": "tenant_name",  # noqa: E501
+        "automute": "automute",
+        "client_id": "client_id",
+        "client_secret": "client_secret",
+        "errors": "errors",
+        "host_filters": "host_filters",
+        "new_client_id": "new_client_id",
+        "new_tenant_name": "new_tenant_name",
+        "tenant_name": "tenant_name",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """AzureAccount - a model defined in OpenAPI
 
         Keyword Args:
@@ -122,22 +108,21 @@ class AzureAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            automute (bool): Silence monitors for expected Azure VM shutdowns.. [optional]  # noqa: E501
-            client_id (str): Your Azure web application ID.. [optional]  # noqa: E501
-            client_secret (str): Your Azure web application secret key.. [optional]  # noqa: E501
-            errors ([str]): Errors in your configuration.. [optional]  # noqa: E501
-            host_filters (str): Limit the Azure instances that are pulled into Datadog by using tags. Only hosts that match one of the defined tags are imported into Datadog.. [optional]  # noqa: E501
-            new_client_id (str): Your New Azure web application ID.. [optional]  # noqa: E501
-            new_tenant_name (str): Your New Azure Active Directory ID.. [optional]  # noqa: E501
-            tenant_name (str): Your Azure Active Directory ID.. [optional]  # noqa: E501
+            automute (bool): Silence monitors for expected Azure VM shutdowns.. [optional]
+            client_id (str): Your Azure web application ID.. [optional]
+            client_secret (str): Your Azure web application secret key.. [optional]
+            errors ([str]): Errors in your configuration.. [optional]
+            host_filters (str): Limit the Azure instances that are pulled into Datadog by using tags. Only hosts that match one of the defined tags are imported into Datadog.. [optional]
+            new_client_id (str): Your New Azure web application ID.. [optional]
+            new_tenant_name (str): Your New Azure Active Directory ID.. [optional]
+            tenant_name (str): Your Azure Active Directory ID.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(AzureAccount, cls)._from_openapi_data(kwargs)

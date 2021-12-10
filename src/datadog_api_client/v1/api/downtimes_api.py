@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.cancel_downtimes_by_scope_request import CancelDowntimesByScopeRequest
@@ -194,9 +192,9 @@ class DowntimesApi(object):
         )
 
     def cancel_downtime(self, downtime_id, **kwargs):
-        """Cancel a downtime  # noqa: E501
+        """Cancel a downtime
 
-        Cancel a downtime.  # noqa: E501
+        Cancel a downtime.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -237,9 +235,9 @@ class DowntimesApi(object):
         return self._cancel_downtime_endpoint.call_with_http_info(**kwargs)
 
     def cancel_downtimes_by_scope(self, body, **kwargs):
-        """Cancel downtimes by scope  # noqa: E501
+        """Cancel downtimes by scope
 
-        Delete all downtimes that match the scope of `X`.  # noqa: E501
+        Delete all downtimes that match the scope of `X`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -280,9 +278,9 @@ class DowntimesApi(object):
         return self._cancel_downtimes_by_scope_endpoint.call_with_http_info(**kwargs)
 
     def create_downtime(self, body, **kwargs):
-        """Schedule a downtime  # noqa: E501
+        """Schedule a downtime
 
-        Schedule a downtime.  # noqa: E501
+        Schedule a downtime.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -323,9 +321,9 @@ class DowntimesApi(object):
         return self._create_downtime_endpoint.call_with_http_info(**kwargs)
 
     def get_downtime(self, downtime_id, **kwargs):
-        """Get a downtime  # noqa: E501
+        """Get a downtime
 
-        Get downtime detail by `downtime_id`.  # noqa: E501
+        Get downtime detail by `downtime_id`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -366,9 +364,9 @@ class DowntimesApi(object):
         return self._get_downtime_endpoint.call_with_http_info(**kwargs)
 
     def list_downtimes(self, **kwargs):
-        """Get all downtimes  # noqa: E501
+        """Get all downtimes
 
-        Get all scheduled downtimes.  # noqa: E501
+        Get all scheduled downtimes.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -407,9 +405,9 @@ class DowntimesApi(object):
         return self._list_downtimes_endpoint.call_with_http_info(**kwargs)
 
     def list_monitor_downtimes(self, monitor_id, **kwargs):
-        """Get all downtimes for a monitor  # noqa: E501
+        """Get all downtimes for a monitor
 
-        Get all active downtimes for the specified monitor.  # noqa: E501
+        Get all active downtimes for the specified monitor.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -450,9 +448,9 @@ class DowntimesApi(object):
         return self._list_monitor_downtimes_endpoint.call_with_http_info(**kwargs)
 
     def update_downtime(self, downtime_id, body, **kwargs):
-        """Update a downtime  # noqa: E501
+        """Update a downtime
 
-        Update a single downtime by `downtime_id`.  # noqa: E501
+        Update a single downtime by `downtime_id`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

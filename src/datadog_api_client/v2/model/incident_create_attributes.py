@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class IncidentCreateAttributes(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class IncidentCreateAttributes(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,29 +64,24 @@ class IncidentCreateAttributes(ModelNormal):
         """
         lazy_import()
         return {
-            "customer_impacted": (bool,),  # noqa: E501
-            "title": (str,),  # noqa: E501
-            "fields": ({str: (IncidentFieldAttributes,)},),  # noqa: E501
-            "initial_cells": ([IncidentTimelineCellCreateAttributes],),  # noqa: E501
-            "notification_handles": ([IncidentNotificationHandle],),  # noqa: E501
+            "customer_impacted": (bool,),
+            "fields": ({str: (IncidentFieldAttributes,)},),
+            "initial_cells": ([IncidentTimelineCellCreateAttributes],),
+            "notification_handles": ([IncidentNotificationHandle],),
+            "title": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "customer_impacted": "customer_impacted",  # noqa: E501
-        "title": "title",  # noqa: E501
-        "fields": "fields",  # noqa: E501
-        "initial_cells": "initial_cells",  # noqa: E501
-        "notification_handles": "notification_handles",  # noqa: E501
+        "customer_impacted": "customer_impacted",
+        "title": "title",
+        "fields": "fields",
+        "initial_cells": "initial_cells",
+        "notification_handles": "notification_handles",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, customer_impacted, title, *args, **kwargs):  # noqa: E501
+    def __init__(self, customer_impacted, title, *args, **kwargs):
         """IncidentCreateAttributes - a model defined in OpenAPI
 
         Args:
@@ -133,9 +119,9 @@ class IncidentCreateAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            fields ({str: (IncidentFieldAttributes,)}): A condensed view of the user-defined fields for which to create initial selections.. [optional]  # noqa: E501
-            initial_cells ([IncidentTimelineCellCreateAttributes]): An array of initial timeline cells to be placed at the beginning of the incident timeline.. [optional]  # noqa: E501
-            notification_handles ([IncidentNotificationHandle]): Notification handles that will be notified of the incident at creation.. [optional]  # noqa: E501
+            fields ({str: (IncidentFieldAttributes,)}): A condensed view of the user-defined fields for which to create initial selections.. [optional]
+            initial_cells ([IncidentTimelineCellCreateAttributes]): An array of initial timeline cells to be placed at the beginning of the incident timeline.. [optional]
+            notification_handles ([IncidentNotificationHandle]): Notification handles that will be notified of the incident at creation.. [optional]
         """
         super().__init__(kwargs)
 
@@ -145,8 +131,7 @@ class IncidentCreateAttributes(ModelNormal):
         self.title = title
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, customer_impacted, title, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, customer_impacted, title, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(IncidentCreateAttributes, cls)._from_openapi_data(kwargs)

@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -40,8 +39,6 @@ class EventTimelineWidgetDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -51,13 +48,7 @@ class EventTimelineWidgetDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -71,33 +62,28 @@ class EventTimelineWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "query": (str,),  # noqa: E501
-            "type": (EventTimelineWidgetDefinitionType,),  # noqa: E501
-            "tags_execution": (str,),  # noqa: E501
-            "time": (WidgetTime,),  # noqa: E501
-            "title": (str,),  # noqa: E501
-            "title_align": (WidgetTextAlign,),  # noqa: E501
-            "title_size": (str,),  # noqa: E501
+            "query": (str,),
+            "tags_execution": (str,),
+            "time": (WidgetTime,),
+            "title": (str,),
+            "title_align": (WidgetTextAlign,),
+            "title_size": (str,),
+            "type": (EventTimelineWidgetDefinitionType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "query": "query",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "tags_execution": "tags_execution",  # noqa: E501
-        "time": "time",  # noqa: E501
-        "title": "title",  # noqa: E501
-        "title_align": "title_align",  # noqa: E501
-        "title_size": "title_size",  # noqa: E501
+        "query": "query",
+        "type": "type",
+        "tags_execution": "tags_execution",
+        "time": "time",
+        "title": "title",
+        "title_align": "title_align",
+        "title_size": "title_size",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, query, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, query, type, *args, **kwargs):
         """EventTimelineWidgetDefinition - a model defined in OpenAPI
 
         Args:
@@ -135,11 +121,11 @@ class EventTimelineWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            tags_execution (str): The execution method for multi-value filters. Can be either and or or.. [optional]  # noqa: E501
-            time (WidgetTime): [optional]  # noqa: E501
-            title (str): Title of the widget.. [optional]  # noqa: E501
-            title_align (WidgetTextAlign): [optional]  # noqa: E501
-            title_size (str): Size of the title.. [optional]  # noqa: E501
+            tags_execution (str): The execution method for multi-value filters. Can be either and or or.. [optional]
+            time (WidgetTime): [optional]
+            title (str): Title of the widget.. [optional]
+            title_align (WidgetTextAlign): [optional]
+            title_size (str): Size of the title.. [optional]
         """
         super().__init__(kwargs)
 
@@ -149,8 +135,7 @@ class EventTimelineWidgetDefinition(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, query, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, query, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(EventTimelineWidgetDefinition, cls)._from_openapi_data(kwargs)

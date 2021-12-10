@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class SLOHistorySLIData(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class SLOHistorySLIData(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,43 +60,38 @@ class SLOHistorySLIData(ModelNormal):
         """
         lazy_import()
         return {
-            "error_budget_remaining": (SLOErrorBudgetRemainingData,),  # noqa: E501
-            "errors": ([SLOHistoryResponseErrorWithType],),  # noqa: E501
-            "group": (str,),  # noqa: E501
-            "history": ([[float]],),  # noqa: E501
-            "monitor_modified": (int,),  # noqa: E501
-            "monitor_type": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "precision": ({str: (float,)},),  # noqa: E501
-            "preview": (bool,),  # noqa: E501
-            "sli_value": (float,),  # noqa: E501
-            "span_precision": (float,),  # noqa: E501
-            "uptime": (float,),  # noqa: E501
+            "error_budget_remaining": (SLOErrorBudgetRemainingData,),
+            "errors": ([SLOHistoryResponseErrorWithType],),
+            "group": (str,),
+            "history": ([[float]],),
+            "monitor_modified": (int,),
+            "monitor_type": (str,),
+            "name": (str,),
+            "precision": ({str: (float,)},),
+            "preview": (bool,),
+            "sli_value": (float,),
+            "span_precision": (float,),
+            "uptime": (float,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "error_budget_remaining": "error_budget_remaining",  # noqa: E501
-        "errors": "errors",  # noqa: E501
-        "group": "group",  # noqa: E501
-        "history": "history",  # noqa: E501
-        "monitor_modified": "monitor_modified",  # noqa: E501
-        "monitor_type": "monitor_type",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "precision": "precision",  # noqa: E501
-        "preview": "preview",  # noqa: E501
-        "sli_value": "sli_value",  # noqa: E501
-        "span_precision": "span_precision",  # noqa: E501
-        "uptime": "uptime",  # noqa: E501
+        "error_budget_remaining": "error_budget_remaining",
+        "errors": "errors",
+        "group": "group",
+        "history": "history",
+        "monitor_modified": "monitor_modified",
+        "monitor_type": "monitor_type",
+        "name": "name",
+        "precision": "precision",
+        "preview": "preview",
+        "sli_value": "sli_value",
+        "span_precision": "span_precision",
+        "uptime": "uptime",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SLOHistorySLIData - a model defined in OpenAPI
 
         Keyword Args:
@@ -139,26 +125,25 @@ class SLOHistorySLIData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            error_budget_remaining (SLOErrorBudgetRemainingData): [optional]  # noqa: E501
-            errors ([SLOHistoryResponseErrorWithType]): An array of error objects returned while querying the history data for the service level objective.. [optional]  # noqa: E501
-            group (str): For groups in a grouped SLO, this is the group name.. [optional]  # noqa: E501
-            history ([[float]]): For `monitor` based SLOs, this includes the aggregated history as arrays that include time series and uptime data where `0=monitor` is in `OK` state and `1=monitor` is in `alert` state.. [optional]  # noqa: E501
-            monitor_modified (int): For `monitor` based SLOs, this is the last modified timestamp in epoch seconds of the monitor.. [optional]  # noqa: E501
-            monitor_type (str): For `monitor` based SLOs, this describes the type of monitor.. [optional]  # noqa: E501
-            name (str): For groups in a grouped SLO, this is the group name. For monitors in a multi-monitor SLO, this is the monitor name.. [optional]  # noqa: E501
-            precision ({str: (float,)}): A mapping of threshold `timeframe` to number of accurate decimals, regardless of the from && to timestamp.. [optional]  # noqa: E501
-            preview (bool): For `monitor` based SLOs, when `true` this indicates that a replay is in progress to give an accurate uptime calculation.. [optional]  # noqa: E501
-            sli_value (float): The current SLI value of the SLO over the history window.. [optional]  # noqa: E501
-            span_precision (float): The amount of decimal places the SLI value is accurate to for the given from `&&` to timestamp.. [optional]  # noqa: E501
-            uptime (float): Use `sli_value` instead.. [optional]  # noqa: E501
+            error_budget_remaining (SLOErrorBudgetRemainingData): [optional]
+            errors ([SLOHistoryResponseErrorWithType]): An array of error objects returned while querying the history data for the service level objective.. [optional]
+            group (str): For groups in a grouped SLO, this is the group name.. [optional]
+            history ([[float]]): For `monitor` based SLOs, this includes the aggregated history as arrays that include time series and uptime data where `0=monitor` is in `OK` state and `1=monitor` is in `alert` state.. [optional]
+            monitor_modified (int): For `monitor` based SLOs, this is the last modified timestamp in epoch seconds of the monitor.. [optional]
+            monitor_type (str): For `monitor` based SLOs, this describes the type of monitor.. [optional]
+            name (str): For groups in a grouped SLO, this is the group name. For monitors in a multi-monitor SLO, this is the monitor name.. [optional]
+            precision ({str: (float,)}): A mapping of threshold `timeframe` to number of accurate decimals, regardless of the from && to timestamp.. [optional]
+            preview (bool): For `monitor` based SLOs, when `true` this indicates that a replay is in progress to give an accurate uptime calculation.. [optional]
+            sli_value (float): The current SLI value of the SLO over the history window.. [optional]
+            span_precision (float): The amount of decimal places the SLI value is accurate to for the given from `&&` to timestamp.. [optional]
+            uptime (float): Use `sli_value` instead.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SLOHistorySLIData, cls)._from_openapi_data(kwargs)

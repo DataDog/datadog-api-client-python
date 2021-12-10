@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -44,8 +43,6 @@ class SyntheticsBrowserTest(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -55,13 +52,7 @@ class SyntheticsBrowserTest(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -75,44 +66,39 @@ class SyntheticsBrowserTest(ModelNormal):
         """
         lazy_import()
         return {
-            "message": (str,),  # noqa: E501
-            "config": (SyntheticsBrowserTestConfig,),  # noqa: E501
-            "locations": ([str],),  # noqa: E501
-            "monitor_id": (int,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "options": (SyntheticsTestOptions,),  # noqa: E501
-            "public_id": (str,),  # noqa: E501
-            "status": (SyntheticsTestPauseStatus,),  # noqa: E501
-            "steps": ([SyntheticsStep],),  # noqa: E501
-            "tags": ([str],),  # noqa: E501
-            "type": (SyntheticsBrowserTestType,),  # noqa: E501
+            "config": (SyntheticsBrowserTestConfig,),
+            "locations": ([str],),
+            "message": (str,),
+            "monitor_id": (int,),
+            "name": (str,),
+            "options": (SyntheticsTestOptions,),
+            "public_id": (str,),
+            "status": (SyntheticsTestPauseStatus,),
+            "steps": ([SyntheticsStep],),
+            "tags": ([str],),
+            "type": (SyntheticsBrowserTestType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "message": "message",  # noqa: E501
-        "config": "config",  # noqa: E501
-        "locations": "locations",  # noqa: E501
-        "monitor_id": "monitor_id",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "options": "options",  # noqa: E501
-        "public_id": "public_id",  # noqa: E501
-        "status": "status",  # noqa: E501
-        "steps": "steps",  # noqa: E501
-        "tags": "tags",  # noqa: E501
-        "type": "type",  # noqa: E501
+        "message": "message",
+        "config": "config",
+        "locations": "locations",
+        "monitor_id": "monitor_id",
+        "name": "name",
+        "options": "options",
+        "public_id": "public_id",
+        "status": "status",
+        "steps": "steps",
+        "tags": "tags",
+        "type": "type",
     }
 
     read_only_vars = {
-        "monitor_id",  # noqa: E501
-        "public_id",  # noqa: E501
+        "monitor_id",
+        "public_id",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, message, *args, **kwargs):  # noqa: E501
+    def __init__(self, message, *args, **kwargs):
         """SyntheticsBrowserTest - a model defined in OpenAPI
 
         Args:
@@ -149,16 +135,16 @@ class SyntheticsBrowserTest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            config (SyntheticsBrowserTestConfig): [optional]  # noqa: E501
-            locations ([str]): Array of locations used to run the test.. [optional]  # noqa: E501
-            monitor_id (int): The associated monitor ID.. [optional]  # noqa: E501
-            name (str): Name of the test.. [optional]  # noqa: E501
-            options (SyntheticsTestOptions): [optional]  # noqa: E501
-            public_id (str): The public ID of the test.. [optional]  # noqa: E501
-            status (SyntheticsTestPauseStatus): [optional]  # noqa: E501
-            steps ([SyntheticsStep]): The steps of the test.. [optional]  # noqa: E501
-            tags ([str]): Array of tags attached to the test.. [optional]  # noqa: E501
-            type (SyntheticsBrowserTestType): [optional]  # noqa: E501
+            config (SyntheticsBrowserTestConfig): [optional]
+            locations ([str]): Array of locations used to run the test.. [optional]
+            monitor_id (int): The associated monitor ID.. [optional]
+            name (str): Name of the test.. [optional]
+            options (SyntheticsTestOptions): [optional]
+            public_id (str): The public ID of the test.. [optional]
+            status (SyntheticsTestPauseStatus): [optional]
+            steps ([SyntheticsStep]): The steps of the test.. [optional]
+            tags ([str]): Array of tags attached to the test.. [optional]
+            type (SyntheticsBrowserTestType): [optional]
         """
         super().__init__(kwargs)
 
@@ -167,8 +153,7 @@ class SyntheticsBrowserTest(ModelNormal):
         self.message = message
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, message, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, message, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsBrowserTest, cls)._from_openapi_data(kwargs)

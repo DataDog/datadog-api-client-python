@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class LogsGrokParserRules(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class LogsGrokParserRules(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,23 +51,18 @@ class LogsGrokParserRules(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "match_rules": (str,),  # noqa: E501
-            "support_rules": (str,),  # noqa: E501
+            "match_rules": (str,),
+            "support_rules": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "match_rules": "match_rules",  # noqa: E501
-        "support_rules": "support_rules",  # noqa: E501
+        "match_rules": "match_rules",
+        "support_rules": "support_rules",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, match_rules, *args, **kwargs):  # noqa: E501
+    def __init__(self, match_rules, *args, **kwargs):
         """LogsGrokParserRules - a model defined in OpenAPI
 
         Args:
@@ -113,7 +99,7 @@ class LogsGrokParserRules(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            support_rules (str): List of support rules for the grok parser, separated by a new line.. [optional] if omitted the server will use the default value of ""  # noqa: E501
+            support_rules (str): List of support rules for the grok parser, separated by a new line.. [optional] if omitted the server will use the default value of ""
         """
         super().__init__(kwargs)
 
@@ -122,8 +108,7 @@ class LogsGrokParserRules(ModelNormal):
         self.match_rules = match_rules
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, match_rules, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, match_rules, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsGrokParserRules, cls)._from_openapi_data(kwargs)

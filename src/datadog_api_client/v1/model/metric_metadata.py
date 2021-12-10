@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class MetricMetadata(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class MetricMetadata(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,35 +51,30 @@ class MetricMetadata(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "description": (str,),  # noqa: E501
-            "integration": (str,),  # noqa: E501
-            "per_unit": (str,),  # noqa: E501
-            "short_name": (str,),  # noqa: E501
-            "statsd_interval": (int,),  # noqa: E501
-            "type": (str,),  # noqa: E501
-            "unit": (str,),  # noqa: E501
+            "description": (str,),
+            "integration": (str,),
+            "per_unit": (str,),
+            "short_name": (str,),
+            "statsd_interval": (int,),
+            "type": (str,),
+            "unit": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "description": "description",  # noqa: E501
-        "integration": "integration",  # noqa: E501
-        "per_unit": "per_unit",  # noqa: E501
-        "short_name": "short_name",  # noqa: E501
-        "statsd_interval": "statsd_interval",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "unit": "unit",  # noqa: E501
+        "description": "description",
+        "integration": "integration",
+        "per_unit": "per_unit",
+        "short_name": "short_name",
+        "statsd_interval": "statsd_interval",
+        "type": "type",
+        "unit": "unit",
     }
 
     read_only_vars = {
-        "integration",  # noqa: E501
+        "integration",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """MetricMetadata - a model defined in OpenAPI
 
         Keyword Args:
@@ -122,21 +108,20 @@ class MetricMetadata(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str): Metric description.. [optional]  # noqa: E501
-            integration (str): Name of the integration that sent the metric if applicable.. [optional]  # noqa: E501
-            per_unit (str): Per unit of the metric such as `second` in `bytes per second`.. [optional]  # noqa: E501
-            short_name (str): A more human-readable and abbreviated version of the metric name.. [optional]  # noqa: E501
-            statsd_interval (int): StatsD flush interval of the metric in seconds if applicable.. [optional]  # noqa: E501
-            type (str): Metric type such as `gauge` or `rate`.. [optional]  # noqa: E501
-            unit (str): Primary unit of the metric such as `byte` or `operation`.. [optional]  # noqa: E501
+            description (str): Metric description.. [optional]
+            integration (str): Name of the integration that sent the metric if applicable.. [optional]
+            per_unit (str): Per unit of the metric such as `second` in `bytes per second`.. [optional]
+            short_name (str): A more human-readable and abbreviated version of the metric name.. [optional]
+            statsd_interval (int): StatsD flush interval of the metric in seconds if applicable.. [optional]
+            type (str): Metric type such as `gauge` or `rate`.. [optional]
+            unit (str): Primary unit of the metric such as `byte` or `operation`.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(MetricMetadata, cls)._from_openapi_data(kwargs)

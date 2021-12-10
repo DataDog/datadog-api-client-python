@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class DashboardList(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class DashboardList(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,42 +58,37 @@ class DashboardList(ModelNormal):
         """
         lazy_import()
         return {
-            "name": (str,),  # noqa: E501
-            "author": (Creator,),  # noqa: E501
-            "created": (datetime,),  # noqa: E501
-            "dashboard_count": (int,),  # noqa: E501
-            "id": (int,),  # noqa: E501
-            "is_favorite": (bool,),  # noqa: E501
-            "modified": (datetime,),  # noqa: E501
-            "type": (str,),  # noqa: E501
+            "author": (Creator,),
+            "created": (datetime,),
+            "dashboard_count": (int,),
+            "id": (int,),
+            "is_favorite": (bool,),
+            "modified": (datetime,),
+            "name": (str,),
+            "type": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "name": "name",  # noqa: E501
-        "author": "author",  # noqa: E501
-        "created": "created",  # noqa: E501
-        "dashboard_count": "dashboard_count",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "is_favorite": "is_favorite",  # noqa: E501
-        "modified": "modified",  # noqa: E501
-        "type": "type",  # noqa: E501
+        "name": "name",
+        "author": "author",
+        "created": "created",
+        "dashboard_count": "dashboard_count",
+        "id": "id",
+        "is_favorite": "is_favorite",
+        "modified": "modified",
+        "type": "type",
     }
 
     read_only_vars = {
-        "created",  # noqa: E501
-        "dashboard_count",  # noqa: E501
-        "id",  # noqa: E501
-        "is_favorite",  # noqa: E501
-        "modified",  # noqa: E501
-        "type",  # noqa: E501
+        "created",
+        "dashboard_count",
+        "id",
+        "is_favorite",
+        "modified",
+        "type",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, name, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, *args, **kwargs):
         """DashboardList - a model defined in OpenAPI
 
         Args:
@@ -139,13 +125,13 @@ class DashboardList(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            author (Creator): [optional]  # noqa: E501
-            created (datetime): Date of creation of the dashboard list.. [optional]  # noqa: E501
-            dashboard_count (int): The number of dashboards in the list.. [optional]  # noqa: E501
-            id (int): The ID of the dashboard list.. [optional]  # noqa: E501
-            is_favorite (bool): Whether or not the list is in the favorites.. [optional]  # noqa: E501
-            modified (datetime): Date of last edition of the dashboard list.. [optional]  # noqa: E501
-            type (str): The type of dashboard list.. [optional]  # noqa: E501
+            author (Creator): [optional]
+            created (datetime): Date of creation of the dashboard list.. [optional]
+            dashboard_count (int): The number of dashboards in the list.. [optional]
+            id (int): The ID of the dashboard list.. [optional]
+            is_favorite (bool): Whether or not the list is in the favorites.. [optional]
+            modified (datetime): Date of last edition of the dashboard list.. [optional]
+            type (str): The type of dashboard list.. [optional]
         """
         super().__init__(kwargs)
 
@@ -154,8 +140,7 @@ class DashboardList(ModelNormal):
         self.name = name
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(DashboardList, cls)._from_openapi_data(kwargs)

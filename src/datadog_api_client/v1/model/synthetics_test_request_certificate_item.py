@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class SyntheticsTestRequestCertificateItem(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class SyntheticsTestRequestCertificateItem(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,25 +51,20 @@ class SyntheticsTestRequestCertificateItem(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "content": (str,),  # noqa: E501
-            "filename": (str,),  # noqa: E501
-            "updated_at": (str,),  # noqa: E501
+            "content": (str,),
+            "filename": (str,),
+            "updated_at": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "content": "content",  # noqa: E501
-        "filename": "filename",  # noqa: E501
-        "updated_at": "updatedAt",  # noqa: E501
+        "content": "content",
+        "filename": "filename",
+        "updated_at": "updatedAt",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SyntheticsTestRequestCertificateItem - a model defined in OpenAPI
 
         Keyword Args:
@@ -112,17 +98,16 @@ class SyntheticsTestRequestCertificateItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            content (str): Content of the certificate or key.. [optional]  # noqa: E501
-            filename (str): File name for the certificate or key.. [optional]  # noqa: E501
-            updated_at (str): Date of update of the certificate or key, ISO format.. [optional]  # noqa: E501
+            content (str): Content of the certificate or key.. [optional]
+            filename (str): File name for the certificate or key.. [optional]
+            updated_at (str): Date of update of the certificate or key, ISO format.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsTestRequestCertificateItem, cls)._from_openapi_data(kwargs)

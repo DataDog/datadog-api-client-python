@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class LogsIndex(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class LogsIndex(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,33 +60,28 @@ class LogsIndex(ModelNormal):
         """
         lazy_import()
         return {
-            "filter": (LogsFilter,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "daily_limit": (int,),  # noqa: E501
-            "exclusion_filters": ([LogsExclusion],),  # noqa: E501
-            "is_rate_limited": (bool,),  # noqa: E501
-            "num_retention_days": (int,),  # noqa: E501
+            "daily_limit": (int,),
+            "exclusion_filters": ([LogsExclusion],),
+            "filter": (LogsFilter,),
+            "is_rate_limited": (bool,),
+            "name": (str,),
+            "num_retention_days": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "filter": "filter",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "daily_limit": "daily_limit",  # noqa: E501
-        "exclusion_filters": "exclusion_filters",  # noqa: E501
-        "is_rate_limited": "is_rate_limited",  # noqa: E501
-        "num_retention_days": "num_retention_days",  # noqa: E501
+        "filter": "filter",
+        "name": "name",
+        "daily_limit": "daily_limit",
+        "exclusion_filters": "exclusion_filters",
+        "is_rate_limited": "is_rate_limited",
+        "num_retention_days": "num_retention_days",
     }
 
     read_only_vars = {
-        "is_rate_limited",  # noqa: E501
+        "is_rate_limited",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, filter, name, *args, **kwargs):  # noqa: E501
+    def __init__(self, filter, name, *args, **kwargs):
         """LogsIndex - a model defined in OpenAPI
 
         Args:
@@ -133,10 +119,10 @@ class LogsIndex(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            daily_limit (int): The number of log events you can send in this index per day before you are rate-limited.. [optional]  # noqa: E501
-            exclusion_filters ([LogsExclusion]): An array of exclusion objects. The logs are tested against the query of each filter, following the order of the array. Only the first matching active exclusion matters, others (if any) are ignored.. [optional]  # noqa: E501
-            is_rate_limited (bool): A boolean stating if the index is rate limited, meaning more logs than the daily limit have been sent. Rate limit is reset every-day at 2pm UTC.. [optional]  # noqa: E501
-            num_retention_days (int): The number of days before logs are deleted from this index. Available values depend on retention plans specified in your organization's contract/subscriptions.. [optional]  # noqa: E501
+            daily_limit (int): The number of log events you can send in this index per day before you are rate-limited.. [optional]
+            exclusion_filters ([LogsExclusion]): An array of exclusion objects. The logs are tested against the query of each filter, following the order of the array. Only the first matching active exclusion matters, others (if any) are ignored.. [optional]
+            is_rate_limited (bool): A boolean stating if the index is rate limited, meaning more logs than the daily limit have been sent. Rate limit is reset every-day at 2pm UTC.. [optional]
+            num_retention_days (int): The number of days before logs are deleted from this index. Available values depend on retention plans specified in your organization's contract/subscriptions.. [optional]
         """
         super().__init__(kwargs)
 
@@ -146,8 +132,7 @@ class LogsIndex(ModelNormal):
         self.name = name
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, filter, name, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, filter, name, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsIndex, cls)._from_openapi_data(kwargs)

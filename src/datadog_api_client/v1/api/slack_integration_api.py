@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.slack_integration_channel import SlackIntegrationChannel
@@ -174,9 +172,9 @@ class SlackIntegrationApi(object):
         )
 
     def create_slack_integration_channel(self, account_name, body, **kwargs):
-        """Create a Slack integration channel  # noqa: E501
+        """Create a Slack integration channel
 
-        Add a channel to your Datadog-Slack integration.  # noqa: E501
+        Add a channel to your Datadog-Slack integration.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -219,9 +217,9 @@ class SlackIntegrationApi(object):
         return self._create_slack_integration_channel_endpoint.call_with_http_info(**kwargs)
 
     def get_slack_integration_channel(self, account_name, channel_name, **kwargs):
-        """Get a Slack integration channel  # noqa: E501
+        """Get a Slack integration channel
 
-        Get a channel configured for your Datadog-Slack integration.  # noqa: E501
+        Get a channel configured for your Datadog-Slack integration.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -264,9 +262,9 @@ class SlackIntegrationApi(object):
         return self._get_slack_integration_channel_endpoint.call_with_http_info(**kwargs)
 
     def get_slack_integration_channels(self, account_name, **kwargs):
-        """Get all channels in a Slack integration  # noqa: E501
+        """Get all channels in a Slack integration
 
-        Get a list of all channels configured for your Datadog-Slack integration.  # noqa: E501
+        Get a list of all channels configured for your Datadog-Slack integration.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -307,9 +305,9 @@ class SlackIntegrationApi(object):
         return self._get_slack_integration_channels_endpoint.call_with_http_info(**kwargs)
 
     def remove_slack_integration_channel(self, account_name, channel_name, **kwargs):
-        """Remove a Slack integration channel  # noqa: E501
+        """Remove a Slack integration channel
 
-        Remove a channel from your Datadog-Slack integration.  # noqa: E501
+        Remove a channel from your Datadog-Slack integration.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -352,9 +350,9 @@ class SlackIntegrationApi(object):
         return self._remove_slack_integration_channel_endpoint.call_with_http_info(**kwargs)
 
     def update_slack_integration_channel(self, account_name, channel_name, body, **kwargs):
-        """Update a Slack integration channel  # noqa: E501
+        """Update a Slack integration channel
 
-        Update a channel used in your Datadog-Slack integration.  # noqa: E501
+        Update a channel used in your Datadog-Slack integration.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

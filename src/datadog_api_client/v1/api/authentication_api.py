@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.authentication_validation_response import AuthenticationValidationResponse
@@ -48,9 +46,9 @@ class AuthenticationApi(object):
         )
 
     def validate(self, **kwargs):
-        """Validate API key  # noqa: E501
+        """Validate API key
 
-        Check if the API key (not the APP key) is valid. If invalid, a 403 is returned.  # noqa: E501
+        Check if the API key (not the APP key) is valid. If invalid, a 403 is returned.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

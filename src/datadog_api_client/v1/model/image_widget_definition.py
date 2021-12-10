@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -44,8 +43,6 @@ class ImageWidgetDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -55,13 +52,7 @@ class ImageWidgetDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -75,37 +66,32 @@ class ImageWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "type": (ImageWidgetDefinitionType,),  # noqa: E501
-            "url": (str,),  # noqa: E501
-            "has_background": (bool,),  # noqa: E501
-            "has_border": (bool,),  # noqa: E501
-            "horizontal_align": (WidgetHorizontalAlign,),  # noqa: E501
-            "margin": (WidgetMargin,),  # noqa: E501
-            "sizing": (WidgetImageSizing,),  # noqa: E501
-            "url_dark_theme": (str,),  # noqa: E501
-            "vertical_align": (WidgetVerticalAlign,),  # noqa: E501
+            "has_background": (bool,),
+            "has_border": (bool,),
+            "horizontal_align": (WidgetHorizontalAlign,),
+            "margin": (WidgetMargin,),
+            "sizing": (WidgetImageSizing,),
+            "type": (ImageWidgetDefinitionType,),
+            "url": (str,),
+            "url_dark_theme": (str,),
+            "vertical_align": (WidgetVerticalAlign,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "type": "type",  # noqa: E501
-        "url": "url",  # noqa: E501
-        "has_background": "has_background",  # noqa: E501
-        "has_border": "has_border",  # noqa: E501
-        "horizontal_align": "horizontal_align",  # noqa: E501
-        "margin": "margin",  # noqa: E501
-        "sizing": "sizing",  # noqa: E501
-        "url_dark_theme": "url_dark_theme",  # noqa: E501
-        "vertical_align": "vertical_align",  # noqa: E501
+        "type": "type",
+        "url": "url",
+        "has_background": "has_background",
+        "has_border": "has_border",
+        "horizontal_align": "horizontal_align",
+        "margin": "margin",
+        "sizing": "sizing",
+        "url_dark_theme": "url_dark_theme",
+        "vertical_align": "vertical_align",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, type, url, *args, **kwargs):  # noqa: E501
+    def __init__(self, type, url, *args, **kwargs):
         """ImageWidgetDefinition - a model defined in OpenAPI
 
         Args:
@@ -143,13 +129,13 @@ class ImageWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            has_background (bool): Whether to display a background or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            has_border (bool): Whether to display a border or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            horizontal_align (WidgetHorizontalAlign): [optional]  # noqa: E501
-            margin (WidgetMargin): [optional]  # noqa: E501
-            sizing (WidgetImageSizing): [optional]  # noqa: E501
-            url_dark_theme (str): URL of the image in dark mode.. [optional]  # noqa: E501
-            vertical_align (WidgetVerticalAlign): [optional]  # noqa: E501
+            has_background (bool): Whether to display a background or not.. [optional] if omitted the server will use the default value of True
+            has_border (bool): Whether to display a border or not.. [optional] if omitted the server will use the default value of True
+            horizontal_align (WidgetHorizontalAlign): [optional]
+            margin (WidgetMargin): [optional]
+            sizing (WidgetImageSizing): [optional]
+            url_dark_theme (str): URL of the image in dark mode.. [optional]
+            vertical_align (WidgetVerticalAlign): [optional]
         """
         super().__init__(kwargs)
 
@@ -159,8 +145,7 @@ class ImageWidgetDefinition(ModelNormal):
         self.url = url
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, type, url, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, type, url, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(ImageWidgetDefinition, cls)._from_openapi_data(kwargs)

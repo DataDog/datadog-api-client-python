@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class SLOHistoryResponseErrorWithType(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class SLOHistoryResponseErrorWithType(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,23 +51,18 @@ class SLOHistoryResponseErrorWithType(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "error_message": (str,),  # noqa: E501
-            "error_type": (str,),  # noqa: E501
+            "error_message": (str,),
+            "error_type": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "error_message": "error_message",  # noqa: E501
-        "error_type": "error_type",  # noqa: E501
+        "error_message": "error_message",
+        "error_type": "error_type",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, error_message, error_type, *args, **kwargs):  # noqa: E501
+    def __init__(self, error_message, error_type, *args, **kwargs):
         """SLOHistoryResponseErrorWithType - a model defined in OpenAPI
 
         Args:
@@ -123,8 +109,7 @@ class SLOHistoryResponseErrorWithType(ModelNormal):
         self.error_type = error_type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, error_message, error_type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, error_message, error_type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SLOHistoryResponseErrorWithType, cls)._from_openapi_data(kwargs)

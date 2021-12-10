@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class FreeTextWidgetDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class FreeTextWidgetDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,29 +60,24 @@ class FreeTextWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "text": (str,),  # noqa: E501
-            "type": (FreeTextWidgetDefinitionType,),  # noqa: E501
-            "color": (str,),  # noqa: E501
-            "font_size": (str,),  # noqa: E501
-            "text_align": (WidgetTextAlign,),  # noqa: E501
+            "color": (str,),
+            "font_size": (str,),
+            "text": (str,),
+            "text_align": (WidgetTextAlign,),
+            "type": (FreeTextWidgetDefinitionType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "text": "text",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "color": "color",  # noqa: E501
-        "font_size": "font_size",  # noqa: E501
-        "text_align": "text_align",  # noqa: E501
+        "text": "text",
+        "type": "type",
+        "color": "color",
+        "font_size": "font_size",
+        "text_align": "text_align",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, text, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, text, type, *args, **kwargs):
         """FreeTextWidgetDefinition - a model defined in OpenAPI
 
         Args:
@@ -129,9 +115,9 @@ class FreeTextWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            color (str): Color of the text.. [optional]  # noqa: E501
-            font_size (str): Size of the text.. [optional]  # noqa: E501
-            text_align (WidgetTextAlign): [optional]  # noqa: E501
+            color (str): Color of the text.. [optional]
+            font_size (str): Size of the text.. [optional]
+            text_align (WidgetTextAlign): [optional]
         """
         super().__init__(kwargs)
 
@@ -141,8 +127,7 @@ class FreeTextWidgetDefinition(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, text, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, text, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(FreeTextWidgetDefinition, cls)._from_openapi_data(kwargs)

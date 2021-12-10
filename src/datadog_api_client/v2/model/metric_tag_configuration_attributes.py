@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class MetricTagConfigurationAttributes(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class MetricTagConfigurationAttributes(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,31 +60,26 @@ class MetricTagConfigurationAttributes(ModelNormal):
         """
         lazy_import()
         return {
-            "aggregations": (MetricCustomAggregations,),  # noqa: E501
-            "created_at": (datetime,),  # noqa: E501
-            "include_percentiles": (bool,),  # noqa: E501
-            "metric_type": (MetricTagConfigurationMetricTypes,),  # noqa: E501
-            "modified_at": (datetime,),  # noqa: E501
-            "tags": ([str],),  # noqa: E501
+            "aggregations": (MetricCustomAggregations,),
+            "created_at": (datetime,),
+            "include_percentiles": (bool,),
+            "metric_type": (MetricTagConfigurationMetricTypes,),
+            "modified_at": (datetime,),
+            "tags": ([str],),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "aggregations": "aggregations",  # noqa: E501
-        "created_at": "created_at",  # noqa: E501
-        "include_percentiles": "include_percentiles",  # noqa: E501
-        "metric_type": "metric_type",  # noqa: E501
-        "modified_at": "modified_at",  # noqa: E501
-        "tags": "tags",  # noqa: E501
+        "aggregations": "aggregations",
+        "created_at": "created_at",
+        "include_percentiles": "include_percentiles",
+        "metric_type": "metric_type",
+        "modified_at": "modified_at",
+        "tags": "tags",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """MetricTagConfigurationAttributes - a model defined in OpenAPI
 
         Keyword Args:
@@ -127,20 +113,19 @@ class MetricTagConfigurationAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aggregations (MetricCustomAggregations): [optional]  # noqa: E501
-            created_at (datetime): Timestamp when the tag configuration was created.. [optional]  # noqa: E501
-            include_percentiles (bool): Toggle to turn on/off percentile aggregations for distribution metrics. Only present when the `metric_type` is `distribution`.. [optional]  # noqa: E501
-            metric_type (MetricTagConfigurationMetricTypes): [optional]  # noqa: E501
-            modified_at (datetime): Timestamp when the tag configuration was last modified.. [optional]  # noqa: E501
-            tags ([str]): List of tag keys on which to group.. [optional]  # noqa: E501
+            aggregations (MetricCustomAggregations): [optional]
+            created_at (datetime): Timestamp when the tag configuration was created.. [optional]
+            include_percentiles (bool): Toggle to turn on/off percentile aggregations for distribution metrics. Only present when the `metric_type` is `distribution`.. [optional]
+            metric_type (MetricTagConfigurationMetricTypes): [optional]
+            modified_at (datetime): Timestamp when the tag configuration was last modified.. [optional]
+            tags ([str]): List of tag keys on which to group.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(MetricTagConfigurationAttributes, cls)._from_openapi_data(kwargs)

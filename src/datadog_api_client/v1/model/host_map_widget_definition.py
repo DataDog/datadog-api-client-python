@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -46,8 +45,6 @@ class HostMapWidgetDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -57,13 +54,7 @@ class HostMapWidgetDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -77,45 +68,40 @@ class HostMapWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "requests": (HostMapWidgetDefinitionRequests,),  # noqa: E501
-            "type": (HostMapWidgetDefinitionType,),  # noqa: E501
-            "custom_links": ([WidgetCustomLink],),  # noqa: E501
-            "group": ([str],),  # noqa: E501
-            "no_group_hosts": (bool,),  # noqa: E501
-            "no_metric_hosts": (bool,),  # noqa: E501
-            "node_type": (WidgetNodeType,),  # noqa: E501
-            "notes": (str,),  # noqa: E501
-            "scope": ([str],),  # noqa: E501
-            "style": (HostMapWidgetDefinitionStyle,),  # noqa: E501
-            "title": (str,),  # noqa: E501
-            "title_align": (WidgetTextAlign,),  # noqa: E501
-            "title_size": (str,),  # noqa: E501
+            "custom_links": ([WidgetCustomLink],),
+            "group": ([str],),
+            "no_group_hosts": (bool,),
+            "no_metric_hosts": (bool,),
+            "node_type": (WidgetNodeType,),
+            "notes": (str,),
+            "requests": (HostMapWidgetDefinitionRequests,),
+            "scope": ([str],),
+            "style": (HostMapWidgetDefinitionStyle,),
+            "title": (str,),
+            "title_align": (WidgetTextAlign,),
+            "title_size": (str,),
+            "type": (HostMapWidgetDefinitionType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "requests": "requests",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "custom_links": "custom_links",  # noqa: E501
-        "group": "group",  # noqa: E501
-        "no_group_hosts": "no_group_hosts",  # noqa: E501
-        "no_metric_hosts": "no_metric_hosts",  # noqa: E501
-        "node_type": "node_type",  # noqa: E501
-        "notes": "notes",  # noqa: E501
-        "scope": "scope",  # noqa: E501
-        "style": "style",  # noqa: E501
-        "title": "title",  # noqa: E501
-        "title_align": "title_align",  # noqa: E501
-        "title_size": "title_size",  # noqa: E501
+        "requests": "requests",
+        "type": "type",
+        "custom_links": "custom_links",
+        "group": "group",
+        "no_group_hosts": "no_group_hosts",
+        "no_metric_hosts": "no_metric_hosts",
+        "node_type": "node_type",
+        "notes": "notes",
+        "scope": "scope",
+        "style": "style",
+        "title": "title",
+        "title_align": "title_align",
+        "title_size": "title_size",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, requests, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, requests, type, *args, **kwargs):
         """HostMapWidgetDefinition - a model defined in OpenAPI
 
         Args:
@@ -153,17 +139,17 @@ class HostMapWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
-            group ([str]): List of tag prefixes to group by.. [optional]  # noqa: E501
-            no_group_hosts (bool): Whether to show the hosts that don’t fit in a group.. [optional]  # noqa: E501
-            no_metric_hosts (bool): Whether to show the hosts with no metrics.. [optional]  # noqa: E501
-            node_type (WidgetNodeType): [optional]  # noqa: E501
-            notes (str): Notes on the title.. [optional]  # noqa: E501
-            scope ([str]): List of tags used to filter the map.. [optional]  # noqa: E501
-            style (HostMapWidgetDefinitionStyle): [optional]  # noqa: E501
-            title (str): Title of the widget.. [optional]  # noqa: E501
-            title_align (WidgetTextAlign): [optional]  # noqa: E501
-            title_size (str): Size of the title.. [optional]  # noqa: E501
+            custom_links ([WidgetCustomLink]): List of custom links.. [optional]
+            group ([str]): List of tag prefixes to group by.. [optional]
+            no_group_hosts (bool): Whether to show the hosts that don’t fit in a group.. [optional]
+            no_metric_hosts (bool): Whether to show the hosts with no metrics.. [optional]
+            node_type (WidgetNodeType): [optional]
+            notes (str): Notes on the title.. [optional]
+            scope ([str]): List of tags used to filter the map.. [optional]
+            style (HostMapWidgetDefinitionStyle): [optional]
+            title (str): Title of the widget.. [optional]
+            title_align (WidgetTextAlign): [optional]
+            title_size (str): Size of the title.. [optional]
         """
         super().__init__(kwargs)
 
@@ -173,8 +159,7 @@ class HostMapWidgetDefinition(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, requests, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, requests, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(HostMapWidgetDefinition, cls)._from_openapi_data(kwargs)

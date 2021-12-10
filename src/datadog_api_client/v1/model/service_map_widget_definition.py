@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -40,8 +39,6 @@ class ServiceMapWidgetDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -51,17 +48,11 @@ class ServiceMapWidgetDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "filters": {
             "min_items": 1,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -75,33 +66,28 @@ class ServiceMapWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "filters": ([str],),  # noqa: E501
-            "service": (str,),  # noqa: E501
-            "type": (ServiceMapWidgetDefinitionType,),  # noqa: E501
-            "custom_links": ([WidgetCustomLink],),  # noqa: E501
-            "title": (str,),  # noqa: E501
-            "title_align": (WidgetTextAlign,),  # noqa: E501
-            "title_size": (str,),  # noqa: E501
+            "custom_links": ([WidgetCustomLink],),
+            "filters": ([str],),
+            "service": (str,),
+            "title": (str,),
+            "title_align": (WidgetTextAlign,),
+            "title_size": (str,),
+            "type": (ServiceMapWidgetDefinitionType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "filters": "filters",  # noqa: E501
-        "service": "service",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "custom_links": "custom_links",  # noqa: E501
-        "title": "title",  # noqa: E501
-        "title_align": "title_align",  # noqa: E501
-        "title_size": "title_size",  # noqa: E501
+        "filters": "filters",
+        "service": "service",
+        "type": "type",
+        "custom_links": "custom_links",
+        "title": "title",
+        "title_align": "title_align",
+        "title_size": "title_size",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, filters, service, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, filters, service, type, *args, **kwargs):
         """ServiceMapWidgetDefinition - a model defined in OpenAPI
 
         Args:
@@ -140,10 +126,10 @@ class ServiceMapWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
-            title (str): The title of your widget.. [optional]  # noqa: E501
-            title_align (WidgetTextAlign): [optional]  # noqa: E501
-            title_size (str): Size of the title.. [optional]  # noqa: E501
+            custom_links ([WidgetCustomLink]): List of custom links.. [optional]
+            title (str): The title of your widget.. [optional]
+            title_align (WidgetTextAlign): [optional]
+            title_size (str): Size of the title.. [optional]
         """
         super().__init__(kwargs)
 
@@ -154,8 +140,7 @@ class ServiceMapWidgetDefinition(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, filters, service, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, filters, service, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(ServiceMapWidgetDefinition, cls)._from_openapi_data(kwargs)

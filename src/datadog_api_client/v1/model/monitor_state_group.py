@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class MonitorStateGroup(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class MonitorStateGroup(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,31 +58,26 @@ class MonitorStateGroup(ModelNormal):
         """
         lazy_import()
         return {
-            "last_nodata_ts": (int,),  # noqa: E501
-            "last_notified_ts": (int,),  # noqa: E501
-            "last_resolved_ts": (int,),  # noqa: E501
-            "last_triggered_ts": (int,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "status": (MonitorOverallStates,),  # noqa: E501
+            "last_nodata_ts": (int,),
+            "last_notified_ts": (int,),
+            "last_resolved_ts": (int,),
+            "last_triggered_ts": (int,),
+            "name": (str,),
+            "status": (MonitorOverallStates,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "last_nodata_ts": "last_nodata_ts",  # noqa: E501
-        "last_notified_ts": "last_notified_ts",  # noqa: E501
-        "last_resolved_ts": "last_resolved_ts",  # noqa: E501
-        "last_triggered_ts": "last_triggered_ts",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "status": "status",  # noqa: E501
+        "last_nodata_ts": "last_nodata_ts",
+        "last_notified_ts": "last_notified_ts",
+        "last_resolved_ts": "last_resolved_ts",
+        "last_triggered_ts": "last_triggered_ts",
+        "name": "name",
+        "status": "status",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """MonitorStateGroup - a model defined in OpenAPI
 
         Keyword Args:
@@ -125,20 +111,19 @@ class MonitorStateGroup(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            last_nodata_ts (int): Latest timestamp the monitor was in NO_DATA state.. [optional]  # noqa: E501
-            last_notified_ts (int): Latest timestamp of the notification sent for this monitor group.. [optional]  # noqa: E501
-            last_resolved_ts (int): Latest timestamp the monitor group was resolved.. [optional]  # noqa: E501
-            last_triggered_ts (int): Latest timestamp the monitor group triggered.. [optional]  # noqa: E501
-            name (str): The name of the monitor.. [optional]  # noqa: E501
-            status (MonitorOverallStates): [optional]  # noqa: E501
+            last_nodata_ts (int): Latest timestamp the monitor was in NO_DATA state.. [optional]
+            last_notified_ts (int): Latest timestamp of the notification sent for this monitor group.. [optional]
+            last_resolved_ts (int): Latest timestamp the monitor group was resolved.. [optional]
+            last_triggered_ts (int): Latest timestamp the monitor group triggered.. [optional]
+            name (str): The name of the monitor.. [optional]
+            status (MonitorOverallStates): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(MonitorStateGroup, cls)._from_openapi_data(kwargs)

@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class FormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class FormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,25 +58,20 @@ class FormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
         """
         lazy_import()
         return {
-            "aggregation": (FormulaAndFunctionEventAggregation,),  # noqa: E501
-            "interval": (int,),  # noqa: E501
-            "metric": (str,),  # noqa: E501
+            "aggregation": (FormulaAndFunctionEventAggregation,),
+            "interval": (int,),
+            "metric": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "aggregation": "aggregation",  # noqa: E501
-        "interval": "interval",  # noqa: E501
-        "metric": "metric",  # noqa: E501
+        "aggregation": "aggregation",
+        "interval": "interval",
+        "metric": "metric",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, aggregation, *args, **kwargs):  # noqa: E501
+    def __init__(self, aggregation, *args, **kwargs):
         """FormulaAndFunctionEventQueryDefinitionCompute - a model defined in OpenAPI
 
         Args:
@@ -122,8 +108,8 @@ class FormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            interval (int): A time interval in milliseconds.. [optional]  # noqa: E501
-            metric (str): Measurable attribute to compute.. [optional]  # noqa: E501
+            interval (int): A time interval in milliseconds.. [optional]
+            metric (str): Measurable attribute to compute.. [optional]
         """
         super().__init__(kwargs)
 
@@ -132,8 +118,7 @@ class FormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
         self.aggregation = aggregation
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, aggregation, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, aggregation, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(FormulaAndFunctionEventQueryDefinitionCompute, cls)._from_openapi_data(kwargs)

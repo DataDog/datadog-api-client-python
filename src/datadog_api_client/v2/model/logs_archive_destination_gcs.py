@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class LogsArchiveDestinationGCS(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class LogsArchiveDestinationGCS(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,27 +60,22 @@ class LogsArchiveDestinationGCS(ModelNormal):
         """
         lazy_import()
         return {
-            "bucket": (str,),  # noqa: E501
-            "integration": (LogsArchiveIntegrationGCS,),  # noqa: E501
-            "type": (LogsArchiveDestinationGCSType,),  # noqa: E501
-            "path": (str,),  # noqa: E501
+            "bucket": (str,),
+            "integration": (LogsArchiveIntegrationGCS,),
+            "path": (str,),
+            "type": (LogsArchiveDestinationGCSType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "bucket": "bucket",  # noqa: E501
-        "integration": "integration",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "path": "path",  # noqa: E501
+        "bucket": "bucket",
+        "integration": "integration",
+        "type": "type",
+        "path": "path",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, bucket, integration, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, bucket, integration, type, *args, **kwargs):
         """LogsArchiveDestinationGCS - a model defined in OpenAPI
 
         Args:
@@ -128,7 +114,7 @@ class LogsArchiveDestinationGCS(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            path (str): The archive path.. [optional]  # noqa: E501
+            path (str): The archive path.. [optional]
         """
         super().__init__(kwargs)
 
@@ -139,8 +125,7 @@ class LogsArchiveDestinationGCS(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, bucket, integration, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, bucket, integration, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsArchiveDestinationGCS, cls)._from_openapi_data(kwargs)

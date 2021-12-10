@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class SyntheticsSSLCertificate(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class SyntheticsSSLCertificate(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,43 +60,38 @@ class SyntheticsSSLCertificate(ModelNormal):
         """
         lazy_import()
         return {
-            "cipher": (str,),  # noqa: E501
-            "exponent": (float,),  # noqa: E501
-            "ext_key_usage": ([str],),  # noqa: E501
-            "fingerprint": (str,),  # noqa: E501
-            "fingerprint256": (str,),  # noqa: E501
-            "issuer": (SyntheticsSSLCertificateIssuer,),  # noqa: E501
-            "modulus": (str,),  # noqa: E501
-            "protocol": (str,),  # noqa: E501
-            "serial_number": (str,),  # noqa: E501
-            "subject": (SyntheticsSSLCertificateSubject,),  # noqa: E501
-            "valid_from": (datetime,),  # noqa: E501
-            "valid_to": (datetime,),  # noqa: E501
+            "cipher": (str,),
+            "exponent": (float,),
+            "ext_key_usage": ([str],),
+            "fingerprint": (str,),
+            "fingerprint256": (str,),
+            "issuer": (SyntheticsSSLCertificateIssuer,),
+            "modulus": (str,),
+            "protocol": (str,),
+            "serial_number": (str,),
+            "subject": (SyntheticsSSLCertificateSubject,),
+            "valid_from": (datetime,),
+            "valid_to": (datetime,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "cipher": "cipher",  # noqa: E501
-        "exponent": "exponent",  # noqa: E501
-        "ext_key_usage": "extKeyUsage",  # noqa: E501
-        "fingerprint": "fingerprint",  # noqa: E501
-        "fingerprint256": "fingerprint256",  # noqa: E501
-        "issuer": "issuer",  # noqa: E501
-        "modulus": "modulus",  # noqa: E501
-        "protocol": "protocol",  # noqa: E501
-        "serial_number": "serialNumber",  # noqa: E501
-        "subject": "subject",  # noqa: E501
-        "valid_from": "validFrom",  # noqa: E501
-        "valid_to": "validTo",  # noqa: E501
+        "cipher": "cipher",
+        "exponent": "exponent",
+        "ext_key_usage": "extKeyUsage",
+        "fingerprint": "fingerprint",
+        "fingerprint256": "fingerprint256",
+        "issuer": "issuer",
+        "modulus": "modulus",
+        "protocol": "protocol",
+        "serial_number": "serialNumber",
+        "subject": "subject",
+        "valid_from": "validFrom",
+        "valid_to": "validTo",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SyntheticsSSLCertificate - a model defined in OpenAPI
 
         Keyword Args:
@@ -139,26 +125,25 @@ class SyntheticsSSLCertificate(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            cipher (str): Cipher used for the connection.. [optional]  # noqa: E501
-            exponent (float): Exponent associated to the certificate.. [optional]  # noqa: E501
-            ext_key_usage ([str]): Array of extensions and details used for the certificate.. [optional]  # noqa: E501
-            fingerprint (str): MD5 digest of the DER-encoded Certificate information.. [optional]  # noqa: E501
-            fingerprint256 (str): SHA-1 digest of the DER-encoded Certificate information.. [optional]  # noqa: E501
-            issuer (SyntheticsSSLCertificateIssuer): [optional]  # noqa: E501
-            modulus (str): Modulus associated to the SSL certificate private key.. [optional]  # noqa: E501
-            protocol (str): TLS protocol used for the test.. [optional]  # noqa: E501
-            serial_number (str): Serial Number assigned by Symantec to the SSL certificate.. [optional]  # noqa: E501
-            subject (SyntheticsSSLCertificateSubject): [optional]  # noqa: E501
-            valid_from (datetime): Date from which the SSL certificate is valid.. [optional]  # noqa: E501
-            valid_to (datetime): Date until which the SSL certificate is valid.. [optional]  # noqa: E501
+            cipher (str): Cipher used for the connection.. [optional]
+            exponent (float): Exponent associated to the certificate.. [optional]
+            ext_key_usage ([str]): Array of extensions and details used for the certificate.. [optional]
+            fingerprint (str): MD5 digest of the DER-encoded Certificate information.. [optional]
+            fingerprint256 (str): SHA-1 digest of the DER-encoded Certificate information.. [optional]
+            issuer (SyntheticsSSLCertificateIssuer): [optional]
+            modulus (str): Modulus associated to the SSL certificate private key.. [optional]
+            protocol (str): TLS protocol used for the test.. [optional]
+            serial_number (str): Serial Number assigned by Symantec to the SSL certificate.. [optional]
+            subject (SyntheticsSSLCertificateSubject): [optional]
+            valid_from (datetime): Date from which the SSL certificate is valid.. [optional]
+            valid_to (datetime): Date until which the SSL certificate is valid.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsSSLCertificate, cls)._from_openapi_data(kwargs)

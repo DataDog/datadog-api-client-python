@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.logs_archive import LogsArchive
@@ -260,9 +258,9 @@ class LogsArchivesApi(object):
         )
 
     def add_read_role_to_archive(self, archive_id, body, **kwargs):
-        """Grant role to an archive  # noqa: E501
+        """Grant role to an archive
 
-        Adds a read role to an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))  # noqa: E501
+        Adds a read role to an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -305,9 +303,9 @@ class LogsArchivesApi(object):
         return self._add_read_role_to_archive_endpoint.call_with_http_info(**kwargs)
 
     def create_logs_archive(self, body, **kwargs):
-        """Create an archive  # noqa: E501
+        """Create an archive
 
-        Create an archive in your organization.  # noqa: E501
+        Create an archive in your organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -348,9 +346,9 @@ class LogsArchivesApi(object):
         return self._create_logs_archive_endpoint.call_with_http_info(**kwargs)
 
     def delete_logs_archive(self, archive_id, **kwargs):
-        """Delete an archive  # noqa: E501
+        """Delete an archive
 
-        Delete a given archive from your organization.  # noqa: E501
+        Delete a given archive from your organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -391,9 +389,9 @@ class LogsArchivesApi(object):
         return self._delete_logs_archive_endpoint.call_with_http_info(**kwargs)
 
     def get_logs_archive(self, archive_id, **kwargs):
-        """Get an archive  # noqa: E501
+        """Get an archive
 
-        Get a specific archive from your organization.  # noqa: E501
+        Get a specific archive from your organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -434,9 +432,9 @@ class LogsArchivesApi(object):
         return self._get_logs_archive_endpoint.call_with_http_info(**kwargs)
 
     def get_logs_archive_order(self, **kwargs):
-        """Get archive order  # noqa: E501
+        """Get archive order
 
-        Get the current order of your archives. This endpoint takes no JSON arguments.  # noqa: E501
+        Get the current order of your archives. This endpoint takes no JSON arguments.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -474,9 +472,9 @@ class LogsArchivesApi(object):
         return self._get_logs_archive_order_endpoint.call_with_http_info(**kwargs)
 
     def list_archive_read_roles(self, archive_id, **kwargs):
-        """List read roles for an archive  # noqa: E501
+        """List read roles for an archive
 
-        Returns all read roles a given archive is restricted to.  # noqa: E501
+        Returns all read roles a given archive is restricted to.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -517,9 +515,9 @@ class LogsArchivesApi(object):
         return self._list_archive_read_roles_endpoint.call_with_http_info(**kwargs)
 
     def list_logs_archives(self, **kwargs):
-        """Get all archives  # noqa: E501
+        """Get all archives
 
-        Get the list of configured logs archives with their definitions.  # noqa: E501
+        Get the list of configured logs archives with their definitions.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -557,9 +555,9 @@ class LogsArchivesApi(object):
         return self._list_logs_archives_endpoint.call_with_http_info(**kwargs)
 
     def remove_role_from_archive(self, archive_id, body, **kwargs):
-        """Revoke role from an archive  # noqa: E501
+        """Revoke role from an archive
 
-        Removes a role from an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))  # noqa: E501
+        Removes a role from an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -602,9 +600,9 @@ class LogsArchivesApi(object):
         return self._remove_role_from_archive_endpoint.call_with_http_info(**kwargs)
 
     def update_logs_archive(self, archive_id, body, **kwargs):
-        """Update an archive  # noqa: E501
+        """Update an archive
 
-        Update a given archive configuration.  **Note**: Using this method updates your archive configuration by **replacing** your current configuration with the new one sent to your Datadog organization.  # noqa: E501
+        Update a given archive configuration.  **Note**: Using this method updates your archive configuration by **replacing** your current configuration with the new one sent to your Datadog organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -647,9 +645,9 @@ class LogsArchivesApi(object):
         return self._update_logs_archive_endpoint.call_with_http_info(**kwargs)
 
     def update_logs_archive_order(self, body, **kwargs):
-        """Update archive order  # noqa: E501
+        """Update archive order
 
-        Update the order of your archives. Since logs are processed sequentially, reordering an archive may change the structure and content of the data processed by other archives.  **Note**: Using the `PUT` method updates your archive's order by replacing the current order with the new one.  # noqa: E501
+        Update the order of your archives. Since logs are processed sequentially, reordering an archive may change the structure and content of the data processed by other archives.  **Note**: Using the `PUT` method updates your archive's order by replacing the current order with the new one.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

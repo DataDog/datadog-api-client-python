@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,39 +64,34 @@ class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "data_source": (FormulaAndFunctionApmResourceStatsDataSource,),  # noqa: E501
-            "env": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "service": (str,),  # noqa: E501
-            "stat": (FormulaAndFunctionApmResourceStatName,),  # noqa: E501
-            "group_by": ([str],),  # noqa: E501
-            "operation_name": (str,),  # noqa: E501
-            "primary_tag_name": (str,),  # noqa: E501
-            "primary_tag_value": (str,),  # noqa: E501
-            "resource_name": (str,),  # noqa: E501
+            "data_source": (FormulaAndFunctionApmResourceStatsDataSource,),
+            "env": (str,),
+            "group_by": ([str],),
+            "name": (str,),
+            "operation_name": (str,),
+            "primary_tag_name": (str,),
+            "primary_tag_value": (str,),
+            "resource_name": (str,),
+            "service": (str,),
+            "stat": (FormulaAndFunctionApmResourceStatName,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "data_source": "data_source",  # noqa: E501
-        "env": "env",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "service": "service",  # noqa: E501
-        "stat": "stat",  # noqa: E501
-        "group_by": "group_by",  # noqa: E501
-        "operation_name": "operation_name",  # noqa: E501
-        "primary_tag_name": "primary_tag_name",  # noqa: E501
-        "primary_tag_value": "primary_tag_value",  # noqa: E501
-        "resource_name": "resource_name",  # noqa: E501
+        "data_source": "data_source",
+        "env": "env",
+        "name": "name",
+        "service": "service",
+        "stat": "stat",
+        "group_by": "group_by",
+        "operation_name": "operation_name",
+        "primary_tag_name": "primary_tag_name",
+        "primary_tag_value": "primary_tag_value",
+        "resource_name": "resource_name",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, data_source, env, name, service, stat, *args, **kwargs):  # noqa: E501
+    def __init__(self, data_source, env, name, service, stat, *args, **kwargs):
         """FormulaAndFunctionApmResourceStatsQueryDefinition - a model defined in OpenAPI
 
         Args:
@@ -146,11 +132,11 @@ class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            group_by ([str]): Array of fields to group results by.. [optional]  # noqa: E501
-            operation_name (str): Name of operation on service.. [optional]  # noqa: E501
-            primary_tag_name (str): Name of the second primary tag used within APM. Required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog. [optional]  # noqa: E501
-            primary_tag_value (str): Value of the second primary tag by which to filter APM data. `primary_tag_name` must also be specified.. [optional]  # noqa: E501
-            resource_name (str): APM resource name.. [optional]  # noqa: E501
+            group_by ([str]): Array of fields to group results by.. [optional]
+            operation_name (str): Name of operation on service.. [optional]
+            primary_tag_name (str): Name of the second primary tag used within APM. Required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog. [optional]
+            primary_tag_value (str): Value of the second primary tag by which to filter APM data. `primary_tag_name` must also be specified.. [optional]
+            resource_name (str): APM resource name.. [optional]
         """
         super().__init__(kwargs)
 
@@ -163,8 +149,7 @@ class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
         self.stat = stat
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, data_source, env, name, service, stat, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, data_source, env, name, service, stat, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(FormulaAndFunctionApmResourceStatsQueryDefinition, cls)._from_openapi_data(kwargs)

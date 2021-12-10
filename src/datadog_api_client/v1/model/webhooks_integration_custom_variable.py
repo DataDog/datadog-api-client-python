@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class WebhooksIntegrationCustomVariable(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class WebhooksIntegrationCustomVariable(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,25 +51,20 @@ class WebhooksIntegrationCustomVariable(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "is_secret": (bool,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "value": (str,),  # noqa: E501
+            "is_secret": (bool,),
+            "name": (str,),
+            "value": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "is_secret": "is_secret",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "value": "value",  # noqa: E501
+        "is_secret": "is_secret",
+        "name": "name",
+        "value": "value",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, is_secret, name, value, *args, **kwargs):  # noqa: E501
+    def __init__(self, is_secret, name, value, *args, **kwargs):
         """WebhooksIntegrationCustomVariable - a model defined in OpenAPI
 
         Args:
@@ -127,8 +113,7 @@ class WebhooksIntegrationCustomVariable(ModelNormal):
         self.value = value
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, is_secret, name, value, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, is_secret, name, value, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(WebhooksIntegrationCustomVariable, cls)._from_openapi_data(kwargs)

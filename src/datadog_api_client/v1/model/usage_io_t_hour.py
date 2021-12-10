@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class UsageIoTHour(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class UsageIoTHour(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,23 +51,18 @@ class UsageIoTHour(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "hour": (datetime,),  # noqa: E501
-            "iot_device_count": (int,),  # noqa: E501
+            "hour": (datetime,),
+            "iot_device_count": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "hour": "hour",  # noqa: E501
-        "iot_device_count": "iot_device_count",  # noqa: E501
+        "hour": "hour",
+        "iot_device_count": "iot_device_count",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """UsageIoTHour - a model defined in OpenAPI
 
         Keyword Args:
@@ -110,16 +96,15 @@ class UsageIoTHour(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            hour (datetime): The hour for the usage.. [optional]  # noqa: E501
-            iot_device_count (int): The total number of IoT devices during a given hour.. [optional]  # noqa: E501
+            hour (datetime): The hour for the usage.. [optional]
+            iot_device_count (int): The total number of IoT devices during a given hour.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(UsageIoTHour, cls)._from_openapi_data(kwargs)

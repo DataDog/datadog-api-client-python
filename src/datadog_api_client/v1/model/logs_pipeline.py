@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class LogsPipeline(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class LogsPipeline(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,37 +60,32 @@ class LogsPipeline(ModelNormal):
         """
         lazy_import()
         return {
-            "name": (str,),  # noqa: E501
-            "filter": (LogsFilter,),  # noqa: E501
-            "id": (str,),  # noqa: E501
-            "is_enabled": (bool,),  # noqa: E501
-            "is_read_only": (bool,),  # noqa: E501
-            "processors": ([LogsProcessor],),  # noqa: E501
-            "type": (str,),  # noqa: E501
+            "filter": (LogsFilter,),
+            "id": (str,),
+            "is_enabled": (bool,),
+            "is_read_only": (bool,),
+            "name": (str,),
+            "processors": ([LogsProcessor],),
+            "type": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "name": "name",  # noqa: E501
-        "filter": "filter",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "is_enabled": "is_enabled",  # noqa: E501
-        "is_read_only": "is_read_only",  # noqa: E501
-        "processors": "processors",  # noqa: E501
-        "type": "type",  # noqa: E501
+        "name": "name",
+        "filter": "filter",
+        "id": "id",
+        "is_enabled": "is_enabled",
+        "is_read_only": "is_read_only",
+        "processors": "processors",
+        "type": "type",
     }
 
     read_only_vars = {
-        "id",  # noqa: E501
-        "is_read_only",  # noqa: E501
-        "type",  # noqa: E501
+        "id",
+        "is_read_only",
+        "type",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, name, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, *args, **kwargs):
         """LogsPipeline - a model defined in OpenAPI
 
         Args:
@@ -136,12 +122,12 @@ class LogsPipeline(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            filter (LogsFilter): [optional]  # noqa: E501
-            id (str): ID of the pipeline.. [optional]  # noqa: E501
-            is_enabled (bool): Whether or not the pipeline is enabled.. [optional]  # noqa: E501
-            is_read_only (bool): Whether or not the pipeline can be edited.. [optional]  # noqa: E501
-            processors ([LogsProcessor]): Ordered list of processors in this pipeline.. [optional]  # noqa: E501
-            type (str): Type of pipeline.. [optional]  # noqa: E501
+            filter (LogsFilter): [optional]
+            id (str): ID of the pipeline.. [optional]
+            is_enabled (bool): Whether or not the pipeline is enabled.. [optional]
+            is_read_only (bool): Whether or not the pipeline can be edited.. [optional]
+            processors ([LogsProcessor]): Ordered list of processors in this pipeline.. [optional]
+            type (str): Type of pipeline.. [optional]
         """
         super().__init__(kwargs)
 
@@ -150,8 +136,7 @@ class LogsPipeline(ModelNormal):
         self.name = name
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsPipeline, cls)._from_openapi_data(kwargs)

@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.process_summaries_response import ProcessSummariesResponse
@@ -83,9 +81,9 @@ class ProcessesApi(object):
         )
 
     def list_processes(self, **kwargs):
-        """Get all processes  # noqa: E501
+        """Get all processes
 
-        Get all processes for your organization.  # noqa: E501
+        Get all processes for your organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

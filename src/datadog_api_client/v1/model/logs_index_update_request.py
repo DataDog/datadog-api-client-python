@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class LogsIndexUpdateRequest(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class LogsIndexUpdateRequest(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,29 +60,24 @@ class LogsIndexUpdateRequest(ModelNormal):
         """
         lazy_import()
         return {
-            "filter": (LogsFilter,),  # noqa: E501
-            "daily_limit": (int,),  # noqa: E501
-            "disable_daily_limit": (bool,),  # noqa: E501
-            "exclusion_filters": ([LogsExclusion],),  # noqa: E501
-            "num_retention_days": (int,),  # noqa: E501
+            "daily_limit": (int,),
+            "disable_daily_limit": (bool,),
+            "exclusion_filters": ([LogsExclusion],),
+            "filter": (LogsFilter,),
+            "num_retention_days": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "filter": "filter",  # noqa: E501
-        "daily_limit": "daily_limit",  # noqa: E501
-        "disable_daily_limit": "disable_daily_limit",  # noqa: E501
-        "exclusion_filters": "exclusion_filters",  # noqa: E501
-        "num_retention_days": "num_retention_days",  # noqa: E501
+        "filter": "filter",
+        "daily_limit": "daily_limit",
+        "disable_daily_limit": "disable_daily_limit",
+        "exclusion_filters": "exclusion_filters",
+        "num_retention_days": "num_retention_days",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, filter, *args, **kwargs):  # noqa: E501
+    def __init__(self, filter, *args, **kwargs):
         """LogsIndexUpdateRequest - a model defined in OpenAPI
 
         Args:
@@ -128,10 +114,10 @@ class LogsIndexUpdateRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            daily_limit (int): The number of log events you can send in this index per day before you are rate-limited.. [optional]  # noqa: E501
-            disable_daily_limit (bool): If true, sets the `daily_limit` value to null and the index is not limited on a daily basis (any specified `daily_limit` value in the request is ignored). If false or omitted, the index's current `daily_limit` is maintained.. [optional]  # noqa: E501
-            exclusion_filters ([LogsExclusion]): An array of exclusion objects. The logs are tested against the query of each filter, following the order of the array. Only the first matching active exclusion matters, others (if any) are ignored.. [optional]  # noqa: E501
-            num_retention_days (int): The number of days before logs are deleted from this index. Available values depend on retention plans specified in your organization's contract/subscriptions.  **Note:** Changing the retention for an index adjusts the length of retention for all logs already in this index. It may also affect billing.. [optional]  # noqa: E501
+            daily_limit (int): The number of log events you can send in this index per day before you are rate-limited.. [optional]
+            disable_daily_limit (bool): If true, sets the `daily_limit` value to null and the index is not limited on a daily basis (any specified `daily_limit` value in the request is ignored). If false or omitted, the index's current `daily_limit` is maintained.. [optional]
+            exclusion_filters ([LogsExclusion]): An array of exclusion objects. The logs are tested against the query of each filter, following the order of the array. Only the first matching active exclusion matters, others (if any) are ignored.. [optional]
+            num_retention_days (int): The number of days before logs are deleted from this index. Available values depend on retention plans specified in your organization's contract/subscriptions.  **Note:** Changing the retention for an index adjusts the length of retention for all logs already in this index. It may also affect billing.. [optional]
         """
         super().__init__(kwargs)
 
@@ -140,8 +126,7 @@ class LogsIndexUpdateRequest(ModelNormal):
         self.filter = filter
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, filter, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, filter, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsIndexUpdateRequest, cls)._from_openapi_data(kwargs)

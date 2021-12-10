@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class SyntheticsBrowserError(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class SyntheticsBrowserError(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,27 +58,22 @@ class SyntheticsBrowserError(ModelNormal):
         """
         lazy_import()
         return {
-            "description": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "type": (SyntheticsBrowserErrorType,),  # noqa: E501
-            "status": (int,),  # noqa: E501
+            "description": (str,),
+            "name": (str,),
+            "status": (int,),
+            "type": (SyntheticsBrowserErrorType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "description": "description",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "status": "status",  # noqa: E501
+        "description": "description",
+        "name": "name",
+        "type": "type",
+        "status": "status",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, description, name, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, description, name, type, *args, **kwargs):
         """SyntheticsBrowserError - a model defined in OpenAPI
 
         Args:
@@ -126,7 +112,7 @@ class SyntheticsBrowserError(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            status (int): Status Code of the error.. [optional]  # noqa: E501
+            status (int): Status Code of the error.. [optional]
         """
         super().__init__(kwargs)
 
@@ -137,8 +123,7 @@ class SyntheticsBrowserError(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, description, name, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, description, name, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsBrowserError, cls)._from_openapi_data(kwargs)

@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class IncidentUpdateAttributes(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class IncidentUpdateAttributes(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -72,46 +63,41 @@ class IncidentUpdateAttributes(ModelNormal):
             "customer_impact_end": (
                 datetime,
                 none_type,
-            ),  # noqa: E501
-            "customer_impact_scope": (str,),  # noqa: E501
+            ),
+            "customer_impact_scope": (str,),
             "customer_impact_start": (
                 datetime,
                 none_type,
-            ),  # noqa: E501
-            "customer_impacted": (bool,),  # noqa: E501
+            ),
+            "customer_impacted": (bool,),
             "detected": (
                 datetime,
                 none_type,
-            ),  # noqa: E501
-            "fields": ({str: (IncidentFieldAttributes,)},),  # noqa: E501
-            "notification_handles": ([IncidentNotificationHandle],),  # noqa: E501
+            ),
+            "fields": ({str: (IncidentFieldAttributes,)},),
+            "notification_handles": ([IncidentNotificationHandle],),
             "resolved": (
                 datetime,
                 none_type,
-            ),  # noqa: E501
-            "title": (str,),  # noqa: E501
+            ),
+            "title": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "customer_impact_end": "customer_impact_end",  # noqa: E501
-        "customer_impact_scope": "customer_impact_scope",  # noqa: E501
-        "customer_impact_start": "customer_impact_start",  # noqa: E501
-        "customer_impacted": "customer_impacted",  # noqa: E501
-        "detected": "detected",  # noqa: E501
-        "fields": "fields",  # noqa: E501
-        "notification_handles": "notification_handles",  # noqa: E501
-        "resolved": "resolved",  # noqa: E501
-        "title": "title",  # noqa: E501
+        "customer_impact_end": "customer_impact_end",
+        "customer_impact_scope": "customer_impact_scope",
+        "customer_impact_start": "customer_impact_start",
+        "customer_impacted": "customer_impacted",
+        "detected": "detected",
+        "fields": "fields",
+        "notification_handles": "notification_handles",
+        "resolved": "resolved",
+        "title": "title",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """IncidentUpdateAttributes - a model defined in OpenAPI
 
         Keyword Args:
@@ -145,23 +131,22 @@ class IncidentUpdateAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            customer_impact_end (datetime, none_type): Timestamp when customers were no longer impacted by the incident.. [optional]  # noqa: E501
-            customer_impact_scope (str): A summary of the impact customers experienced during the incident.. [optional]  # noqa: E501
-            customer_impact_start (datetime, none_type): Timestamp when customers began being impacted by the incident.. [optional]  # noqa: E501
-            customer_impacted (bool): A flag indicating whether the incident caused customer impact.. [optional]  # noqa: E501
-            detected (datetime, none_type): Timestamp when the incident was detected.. [optional]  # noqa: E501
-            fields ({str: (IncidentFieldAttributes,)}): A condensed view of the user-defined fields for which to update selections.. [optional]  # noqa: E501
-            notification_handles ([IncidentNotificationHandle]): Notification handles that will be notified of the incident during update.. [optional]  # noqa: E501
-            resolved (datetime, none_type): Timestamp when the incident's state was set to resolved.. [optional]  # noqa: E501
-            title (str): The title of the incident, which summarizes what happened.. [optional]  # noqa: E501
+            customer_impact_end (datetime, none_type): Timestamp when customers were no longer impacted by the incident.. [optional]
+            customer_impact_scope (str): A summary of the impact customers experienced during the incident.. [optional]
+            customer_impact_start (datetime, none_type): Timestamp when customers began being impacted by the incident.. [optional]
+            customer_impacted (bool): A flag indicating whether the incident caused customer impact.. [optional]
+            detected (datetime, none_type): Timestamp when the incident was detected.. [optional]
+            fields ({str: (IncidentFieldAttributes,)}): A condensed view of the user-defined fields for which to update selections.. [optional]
+            notification_handles ([IncidentNotificationHandle]): Notification handles that will be notified of the incident during update.. [optional]
+            resolved (datetime, none_type): Timestamp when the incident's state was set to resolved.. [optional]
+            title (str): The title of the incident, which summarizes what happened.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(IncidentUpdateAttributes, cls)._from_openapi_data(kwargs)

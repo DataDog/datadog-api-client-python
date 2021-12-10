@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class IncidentResponseAttributes(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class IncidentResponseAttributes(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,81 +60,76 @@ class IncidentResponseAttributes(ModelNormal):
         """
         lazy_import()
         return {
-            "title": (str,),  # noqa: E501
-            "created": (datetime,),  # noqa: E501
-            "customer_impact_duration": (int,),  # noqa: E501
+            "created": (datetime,),
+            "customer_impact_duration": (int,),
             "customer_impact_end": (
                 datetime,
                 none_type,
-            ),  # noqa: E501
+            ),
             "customer_impact_scope": (
                 str,
                 none_type,
-            ),  # noqa: E501
+            ),
             "customer_impact_start": (
                 datetime,
                 none_type,
-            ),  # noqa: E501
-            "customer_impacted": (bool,),  # noqa: E501
+            ),
+            "customer_impacted": (bool,),
             "detected": (
                 datetime,
                 none_type,
-            ),  # noqa: E501
-            "fields": ({str: (IncidentFieldAttributes,)},),  # noqa: E501
-            "modified": (datetime,),  # noqa: E501
+            ),
+            "fields": ({str: (IncidentFieldAttributes,)},),
+            "modified": (datetime,),
             "notification_handles": (
                 [IncidentNotificationHandle],
                 none_type,
-            ),  # noqa: E501
-            "postmortem_id": (str,),  # noqa: E501
-            "public_id": (int,),  # noqa: E501
+            ),
+            "postmortem_id": (str,),
+            "public_id": (int,),
             "resolved": (
                 datetime,
                 none_type,
-            ),  # noqa: E501
-            "time_to_detect": (int,),  # noqa: E501
-            "time_to_internal_response": (int,),  # noqa: E501
-            "time_to_repair": (int,),  # noqa: E501
-            "time_to_resolve": (int,),  # noqa: E501
+            ),
+            "time_to_detect": (int,),
+            "time_to_internal_response": (int,),
+            "time_to_repair": (int,),
+            "time_to_resolve": (int,),
+            "title": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "title": "title",  # noqa: E501
-        "created": "created",  # noqa: E501
-        "customer_impact_duration": "customer_impact_duration",  # noqa: E501
-        "customer_impact_end": "customer_impact_end",  # noqa: E501
-        "customer_impact_scope": "customer_impact_scope",  # noqa: E501
-        "customer_impact_start": "customer_impact_start",  # noqa: E501
-        "customer_impacted": "customer_impacted",  # noqa: E501
-        "detected": "detected",  # noqa: E501
-        "fields": "fields",  # noqa: E501
-        "modified": "modified",  # noqa: E501
-        "notification_handles": "notification_handles",  # noqa: E501
-        "postmortem_id": "postmortem_id",  # noqa: E501
-        "public_id": "public_id",  # noqa: E501
-        "resolved": "resolved",  # noqa: E501
-        "time_to_detect": "time_to_detect",  # noqa: E501
-        "time_to_internal_response": "time_to_internal_response",  # noqa: E501
-        "time_to_repair": "time_to_repair",  # noqa: E501
-        "time_to_resolve": "time_to_resolve",  # noqa: E501
+        "title": "title",
+        "created": "created",
+        "customer_impact_duration": "customer_impact_duration",
+        "customer_impact_end": "customer_impact_end",
+        "customer_impact_scope": "customer_impact_scope",
+        "customer_impact_start": "customer_impact_start",
+        "customer_impacted": "customer_impacted",
+        "detected": "detected",
+        "fields": "fields",
+        "modified": "modified",
+        "notification_handles": "notification_handles",
+        "postmortem_id": "postmortem_id",
+        "public_id": "public_id",
+        "resolved": "resolved",
+        "time_to_detect": "time_to_detect",
+        "time_to_internal_response": "time_to_internal_response",
+        "time_to_repair": "time_to_repair",
+        "time_to_resolve": "time_to_resolve",
     }
 
     read_only_vars = {
-        "created",  # noqa: E501
-        "customer_impact_duration",  # noqa: E501
-        "modified",  # noqa: E501
-        "time_to_detect",  # noqa: E501
-        "time_to_internal_response",  # noqa: E501
-        "time_to_repair",  # noqa: E501
-        "time_to_resolve",  # noqa: E501
+        "created",
+        "customer_impact_duration",
+        "modified",
+        "time_to_detect",
+        "time_to_internal_response",
+        "time_to_repair",
+        "time_to_resolve",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, title, *args, **kwargs):  # noqa: E501
+    def __init__(self, title, *args, **kwargs):
         """IncidentResponseAttributes - a model defined in OpenAPI
 
         Args:
@@ -180,23 +166,23 @@ class IncidentResponseAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created (datetime): Timestamp when the incident was created.. [optional]  # noqa: E501
-            customer_impact_duration (int): Length of the incident's customer impact in seconds. Equals the difference between `customer_impact_start` and `customer_impact_end`.. [optional]  # noqa: E501
-            customer_impact_end (datetime, none_type): Timestamp when customers were no longer impacted by the incident.. [optional]  # noqa: E501
-            customer_impact_scope (str, none_type): A summary of the impact customers experienced during the incident.. [optional]  # noqa: E501
-            customer_impact_start (datetime, none_type): Timestamp when customers began being impacted by the incident.. [optional]  # noqa: E501
-            customer_impacted (bool): A flag indicating whether the incident caused customer impact.. [optional]  # noqa: E501
-            detected (datetime, none_type): Timestamp when the incident was detected.. [optional]  # noqa: E501
-            fields ({str: (IncidentFieldAttributes,)}): A condensed view of the user-defined fields attached to incidents.. [optional]  # noqa: E501
-            modified (datetime): Timestamp when the incident was last modified.. [optional]  # noqa: E501
-            notification_handles ([IncidentNotificationHandle], none_type): Notification handles that will be notified of the incident during update.. [optional]  # noqa: E501
-            postmortem_id (str): The UUID of the postmortem object attached to the incident.. [optional]  # noqa: E501
-            public_id (int): The monotonically increasing integer ID for the incident.. [optional]  # noqa: E501
-            resolved (datetime, none_type): Timestamp when the incident's state was set to resolved.. [optional]  # noqa: E501
-            time_to_detect (int): The amount of time in seconds to detect the incident. Equals the difference between `customer_impact_start` and `detected`.. [optional]  # noqa: E501
-            time_to_internal_response (int): The amount of time in seconds to call incident after detection. Equals the difference of `detected` and `created`.. [optional]  # noqa: E501
-            time_to_repair (int): The amount of time in seconds to resolve customer impact after detecting the issue. Equals the difference between `customer_impact_end` and `detected`.. [optional]  # noqa: E501
-            time_to_resolve (int): The amount of time in seconds to resolve the incident after it was created. Equals the difference between `created` and `resolved`.. [optional]  # noqa: E501
+            created (datetime): Timestamp when the incident was created.. [optional]
+            customer_impact_duration (int): Length of the incident's customer impact in seconds. Equals the difference between `customer_impact_start` and `customer_impact_end`.. [optional]
+            customer_impact_end (datetime, none_type): Timestamp when customers were no longer impacted by the incident.. [optional]
+            customer_impact_scope (str, none_type): A summary of the impact customers experienced during the incident.. [optional]
+            customer_impact_start (datetime, none_type): Timestamp when customers began being impacted by the incident.. [optional]
+            customer_impacted (bool): A flag indicating whether the incident caused customer impact.. [optional]
+            detected (datetime, none_type): Timestamp when the incident was detected.. [optional]
+            fields ({str: (IncidentFieldAttributes,)}): A condensed view of the user-defined fields attached to incidents.. [optional]
+            modified (datetime): Timestamp when the incident was last modified.. [optional]
+            notification_handles ([IncidentNotificationHandle], none_type): Notification handles that will be notified of the incident during update.. [optional]
+            postmortem_id (str): The UUID of the postmortem object attached to the incident.. [optional]
+            public_id (int): The monotonically increasing integer ID for the incident.. [optional]
+            resolved (datetime, none_type): Timestamp when the incident's state was set to resolved.. [optional]
+            time_to_detect (int): The amount of time in seconds to detect the incident. Equals the difference between `customer_impact_start` and `detected`.. [optional]
+            time_to_internal_response (int): The amount of time in seconds to call incident after detection. Equals the difference of `detected` and `created`.. [optional]
+            time_to_repair (int): The amount of time in seconds to resolve customer impact after detecting the issue. Equals the difference between `customer_impact_end` and `detected`.. [optional]
+            time_to_resolve (int): The amount of time in seconds to resolve the incident after it was created. Equals the difference between `created` and `resolved`.. [optional]
         """
         super().__init__(kwargs)
 
@@ -205,8 +191,7 @@ class IncidentResponseAttributes(ModelNormal):
         self.title = title
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, title, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, title, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(IncidentResponseAttributes, cls)._from_openapi_data(kwargs)

@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -48,10 +47,6 @@ class TargetFormatType(ModelSimple):
 
     validations = {}
 
-    additional_properties_type = None
-
-    _nullable = False
-
     @cached_property
     def openapi_types():
         """
@@ -66,23 +61,16 @@ class TargetFormatType(ModelSimple):
             "value": (str,),
         }
 
-    discriminator = None
-
-    attribute_map = {}
-
-    _composed_schemas = None
-
-    @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):
         """TargetFormatType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): If the `target_type` of the remapper is `attribute`, try to cast the value to a new specific type. If the cast is not possible, the original type is kept. `string`, `integer`, or `double` are the possible types. If the `target_type` is `tag`, this parameter may not be specified.., must be one of ["auto", "string", "integer", "double", ]  # noqa: E501
+            args[0] (str): If the `target_type` of the remapper is `attribute`, try to cast the value to a new specific type. If the cast is not possible, the original type is kept. `string`, `integer`, or `double` are the possible types. If the `target_type` is `tag`, this parameter may not be specified.., must be one of ["auto", "string", "integer", "double"]
 
         Keyword Args:
-            value (str): If the `target_type` of the remapper is `attribute`, try to cast the value to a new specific type. If the cast is not possible, the original type is kept. `string`, `integer`, or `double` are the possible types. If the `target_type` is `tag`, this parameter may not be specified.., must be one of ["auto", "string", "integer", "double", ]  # noqa: E501
+            value (str): If the `target_type` of the remapper is `attribute`, try to cast the value to a new specific type. If the cast is not possible, the original type is kept. `string`, `integer`, or `double` are the possible types. If the `target_type` is `tag`, this parameter may not be specified.., must be one of ["auto", "string", "integer", "double"]
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -135,7 +123,6 @@ class TargetFormatType(ModelSimple):
         self._check_kw_args(kwargs)
 
     @classmethod
-    @convert_js_args_to_python_args
     def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
         return cls(*args, **kwargs)

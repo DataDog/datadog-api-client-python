@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class User(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class User(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,36 +58,31 @@ class User(ModelNormal):
         """
         lazy_import()
         return {
-            "access_role": (AccessRole,),  # noqa: E501
-            "disabled": (bool,),  # noqa: E501
-            "email": (str,),  # noqa: E501
-            "handle": (str,),  # noqa: E501
-            "icon": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "verified": (bool,),  # noqa: E501
+            "access_role": (AccessRole,),
+            "disabled": (bool,),
+            "email": (str,),
+            "handle": (str,),
+            "icon": (str,),
+            "name": (str,),
+            "verified": (bool,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "access_role": "access_role",  # noqa: E501
-        "disabled": "disabled",  # noqa: E501
-        "email": "email",  # noqa: E501
-        "handle": "handle",  # noqa: E501
-        "icon": "icon",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "verified": "verified",  # noqa: E501
+        "access_role": "access_role",
+        "disabled": "disabled",
+        "email": "email",
+        "handle": "handle",
+        "icon": "icon",
+        "name": "name",
+        "verified": "verified",
     }
 
     read_only_vars = {
-        "icon",  # noqa: E501
-        "verified",  # noqa: E501
+        "icon",
+        "verified",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """User - a model defined in OpenAPI
 
         Keyword Args:
@@ -130,21 +116,20 @@ class User(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            access_role (AccessRole): [optional]  # noqa: E501
-            disabled (bool): The new disabled status of the user.. [optional]  # noqa: E501
-            email (str): The new email of the user.. [optional]  # noqa: E501
-            handle (str): The user handle, must be a valid email.. [optional]  # noqa: E501
-            icon (str): Gravatar icon associated to the user.. [optional]  # noqa: E501
-            name (str): The name of the user.. [optional]  # noqa: E501
-            verified (bool): Whether or not the user logged in Datadog at least once.. [optional]  # noqa: E501
+            access_role (AccessRole): [optional]
+            disabled (bool): The new disabled status of the user.. [optional]
+            email (str): The new email of the user.. [optional]
+            handle (str): The user handle, must be a valid email.. [optional]
+            icon (str): Gravatar icon associated to the user.. [optional]
+            name (str): The name of the user.. [optional]
+            verified (bool): Whether or not the user logged in Datadog at least once.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(User, cls)._from_openapi_data(kwargs)

@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.logs_metric_create_request import LogsMetricCreateRequest
@@ -145,9 +143,9 @@ class LogsMetricsApi(object):
         )
 
     def create_logs_metric(self, body, **kwargs):
-        """Create a log-based metric  # noqa: E501
+        """Create a log-based metric
 
-        Create a metric based on your ingested logs in your organization. Returns the log-based metric object from the request body when the request is successful.  # noqa: E501
+        Create a metric based on your ingested logs in your organization. Returns the log-based metric object from the request body when the request is successful.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -188,9 +186,9 @@ class LogsMetricsApi(object):
         return self._create_logs_metric_endpoint.call_with_http_info(**kwargs)
 
     def delete_logs_metric(self, metric_id, **kwargs):
-        """Delete a log-based metric  # noqa: E501
+        """Delete a log-based metric
 
-        Delete a specific log-based metric from your organization.  # noqa: E501
+        Delete a specific log-based metric from your organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -231,9 +229,9 @@ class LogsMetricsApi(object):
         return self._delete_logs_metric_endpoint.call_with_http_info(**kwargs)
 
     def get_logs_metric(self, metric_id, **kwargs):
-        """Get a log-based metric  # noqa: E501
+        """Get a log-based metric
 
-        Get a specific log-based metric from your organization.  # noqa: E501
+        Get a specific log-based metric from your organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -274,9 +272,9 @@ class LogsMetricsApi(object):
         return self._get_logs_metric_endpoint.call_with_http_info(**kwargs)
 
     def list_logs_metrics(self, **kwargs):
-        """Get all log-based metrics  # noqa: E501
+        """Get all log-based metrics
 
-        Get the list of configured log-based metrics with their definitions.  # noqa: E501
+        Get the list of configured log-based metrics with their definitions.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -314,9 +312,9 @@ class LogsMetricsApi(object):
         return self._list_logs_metrics_endpoint.call_with_http_info(**kwargs)
 
     def update_logs_metric(self, metric_id, body, **kwargs):
-        """Update a log-based metric  # noqa: E501
+        """Update a log-based metric
 
-        Update a specific log-based metric from your organization. Returns the log-based metric object from the request body when the request is successful.  # noqa: E501
+        Update a specific log-based metric from your organization. Returns the log-based metric object from the request body when the request is successful.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

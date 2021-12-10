@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class SyntheticsCoreWebVitals(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class SyntheticsCoreWebVitals(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,25 +51,20 @@ class SyntheticsCoreWebVitals(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "cls": (int,),  # noqa: E501
-            "lcp": (int,),  # noqa: E501
-            "url": (str,),  # noqa: E501
+            "cls": (int,),
+            "lcp": (int,),
+            "url": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "cls": "cls",  # noqa: E501
-        "lcp": "lcp",  # noqa: E501
-        "url": "url",  # noqa: E501
+        "cls": "cls",
+        "lcp": "lcp",
+        "url": "url",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SyntheticsCoreWebVitals - a model defined in OpenAPI
 
         Keyword Args:
@@ -112,17 +98,16 @@ class SyntheticsCoreWebVitals(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            cls (int): Cumulative Layout Shift.. [optional]  # noqa: E501
-            lcp (int): Largest Contentful Paint in milliseconds.. [optional]  # noqa: E501
-            url (str): URL attached to the metrics.. [optional]  # noqa: E501
+            cls (int): Cumulative Layout Shift.. [optional]
+            lcp (int): Largest Contentful Paint in milliseconds.. [optional]
+            url (str): URL attached to the metrics.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsCoreWebVitals, cls)._from_openapi_data(kwargs)

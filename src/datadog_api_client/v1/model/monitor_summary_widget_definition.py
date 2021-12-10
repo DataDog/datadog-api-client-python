@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -46,8 +45,6 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -57,13 +54,7 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -77,45 +68,40 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "query": (str,),  # noqa: E501
-            "type": (MonitorSummaryWidgetDefinitionType,),  # noqa: E501
-            "color_preference": (WidgetColorPreference,),  # noqa: E501
-            "count": (int,),  # noqa: E501
-            "display_format": (WidgetMonitorSummaryDisplayFormat,),  # noqa: E501
-            "hide_zero_counts": (bool,),  # noqa: E501
-            "show_last_triggered": (bool,),  # noqa: E501
-            "sort": (WidgetMonitorSummarySort,),  # noqa: E501
-            "start": (int,),  # noqa: E501
-            "summary_type": (WidgetSummaryType,),  # noqa: E501
-            "title": (str,),  # noqa: E501
-            "title_align": (WidgetTextAlign,),  # noqa: E501
-            "title_size": (str,),  # noqa: E501
+            "color_preference": (WidgetColorPreference,),
+            "count": (int,),
+            "display_format": (WidgetMonitorSummaryDisplayFormat,),
+            "hide_zero_counts": (bool,),
+            "query": (str,),
+            "show_last_triggered": (bool,),
+            "sort": (WidgetMonitorSummarySort,),
+            "start": (int,),
+            "summary_type": (WidgetSummaryType,),
+            "title": (str,),
+            "title_align": (WidgetTextAlign,),
+            "title_size": (str,),
+            "type": (MonitorSummaryWidgetDefinitionType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "query": "query",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "color_preference": "color_preference",  # noqa: E501
-        "count": "count",  # noqa: E501
-        "display_format": "display_format",  # noqa: E501
-        "hide_zero_counts": "hide_zero_counts",  # noqa: E501
-        "show_last_triggered": "show_last_triggered",  # noqa: E501
-        "sort": "sort",  # noqa: E501
-        "start": "start",  # noqa: E501
-        "summary_type": "summary_type",  # noqa: E501
-        "title": "title",  # noqa: E501
-        "title_align": "title_align",  # noqa: E501
-        "title_size": "title_size",  # noqa: E501
+        "query": "query",
+        "type": "type",
+        "color_preference": "color_preference",
+        "count": "count",
+        "display_format": "display_format",
+        "hide_zero_counts": "hide_zero_counts",
+        "show_last_triggered": "show_last_triggered",
+        "sort": "sort",
+        "start": "start",
+        "summary_type": "summary_type",
+        "title": "title",
+        "title_align": "title_align",
+        "title_size": "title_size",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, query, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, query, type, *args, **kwargs):
         """MonitorSummaryWidgetDefinition - a model defined in OpenAPI
 
         Args:
@@ -153,17 +139,17 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            color_preference (WidgetColorPreference): [optional]  # noqa: E501
-            count (int): The number of monitors to display.. [optional]  # noqa: E501
-            display_format (WidgetMonitorSummaryDisplayFormat): [optional]  # noqa: E501
-            hide_zero_counts (bool): Whether to show counts of 0 or not.. [optional]  # noqa: E501
-            show_last_triggered (bool): Whether to show the time that has elapsed since the monitor/group triggered.. [optional]  # noqa: E501
-            sort (WidgetMonitorSummarySort): [optional]  # noqa: E501
-            start (int): The start of the list. Typically 0.. [optional]  # noqa: E501
-            summary_type (WidgetSummaryType): [optional]  # noqa: E501
-            title (str): Title of the widget.. [optional]  # noqa: E501
-            title_align (WidgetTextAlign): [optional]  # noqa: E501
-            title_size (str): Size of the title.. [optional]  # noqa: E501
+            color_preference (WidgetColorPreference): [optional]
+            count (int): The number of monitors to display.. [optional]
+            display_format (WidgetMonitorSummaryDisplayFormat): [optional]
+            hide_zero_counts (bool): Whether to show counts of 0 or not.. [optional]
+            show_last_triggered (bool): Whether to show the time that has elapsed since the monitor/group triggered.. [optional]
+            sort (WidgetMonitorSummarySort): [optional]
+            start (int): The start of the list. Typically 0.. [optional]
+            summary_type (WidgetSummaryType): [optional]
+            title (str): Title of the widget.. [optional]
+            title_align (WidgetTextAlign): [optional]
+            title_size (str): Size of the title.. [optional]
         """
         super().__init__(kwargs)
 
@@ -173,8 +159,7 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, query, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, query, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(MonitorSummaryWidgetDefinition, cls)._from_openapi_data(kwargs)

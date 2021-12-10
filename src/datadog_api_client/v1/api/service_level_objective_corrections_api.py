@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.slo_correction_create_request import SLOCorrectionCreateRequest
@@ -145,9 +143,9 @@ class ServiceLevelObjectiveCorrectionsApi(object):
         )
 
     def create_slo_correction(self, body, **kwargs):
-        """Create an SLO correction  # noqa: E501
+        """Create an SLO correction
 
-        Create an SLO Correction.  # noqa: E501
+        Create an SLO Correction.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -188,9 +186,9 @@ class ServiceLevelObjectiveCorrectionsApi(object):
         return self._create_slo_correction_endpoint.call_with_http_info(**kwargs)
 
     def delete_slo_correction(self, slo_correction_id, **kwargs):
-        """Delete an SLO correction  # noqa: E501
+        """Delete an SLO correction
 
-        Permanently delete the specified SLO correction object.  # noqa: E501
+        Permanently delete the specified SLO correction object.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -231,9 +229,9 @@ class ServiceLevelObjectiveCorrectionsApi(object):
         return self._delete_slo_correction_endpoint.call_with_http_info(**kwargs)
 
     def get_slo_correction(self, slo_correction_id, **kwargs):
-        """Get an SLO correction for an SLO  # noqa: E501
+        """Get an SLO correction for an SLO
 
-        Get an SLO correction.  # noqa: E501
+        Get an SLO correction.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -274,9 +272,9 @@ class ServiceLevelObjectiveCorrectionsApi(object):
         return self._get_slo_correction_endpoint.call_with_http_info(**kwargs)
 
     def list_slo_correction(self, **kwargs):
-        """Get all SLO corrections  # noqa: E501
+        """Get all SLO corrections
 
-        Get all Service Level Objective corrections.  # noqa: E501
+        Get all Service Level Objective corrections.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -314,9 +312,9 @@ class ServiceLevelObjectiveCorrectionsApi(object):
         return self._list_slo_correction_endpoint.call_with_http_info(**kwargs)
 
     def update_slo_correction(self, slo_correction_id, body, **kwargs):
-        """Update an SLO correction  # noqa: E501
+        """Update an SLO correction
 
-        Update the specified SLO correction object object.  # noqa: E501
+        Update the specified SLO correction object object.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

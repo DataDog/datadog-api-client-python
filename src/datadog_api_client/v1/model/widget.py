@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class Widget(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class Widget(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,25 +60,20 @@ class Widget(ModelNormal):
         """
         lazy_import()
         return {
-            "definition": (WidgetDefinition,),  # noqa: E501
-            "id": (int,),  # noqa: E501
-            "layout": (WidgetLayout,),  # noqa: E501
+            "definition": (WidgetDefinition,),
+            "id": (int,),
+            "layout": (WidgetLayout,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "definition": "definition",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "layout": "layout",  # noqa: E501
+        "definition": "definition",
+        "id": "id",
+        "layout": "layout",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, definition, *args, **kwargs):  # noqa: E501
+    def __init__(self, definition, *args, **kwargs):
         """Widget - a model defined in OpenAPI
 
         Args:
@@ -124,8 +110,8 @@ class Widget(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (int): ID of the widget.. [optional]  # noqa: E501
-            layout (WidgetLayout): [optional]  # noqa: E501
+            id (int): ID of the widget.. [optional]
+            layout (WidgetLayout): [optional]
         """
         super().__init__(kwargs)
 
@@ -134,8 +120,7 @@ class Widget(ModelNormal):
         self.definition = definition
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, definition, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, definition, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(Widget, cls)._from_openapi_data(kwargs)

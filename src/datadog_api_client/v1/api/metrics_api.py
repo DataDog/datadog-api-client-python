@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
@@ -206,9 +204,9 @@ class MetricsApi(object):
         )
 
     def get_metric_metadata(self, metric_name, **kwargs):
-        """Get metric metadata  # noqa: E501
+        """Get metric metadata
 
-        Get metadata about a specific metric.  # noqa: E501
+        Get metadata about a specific metric.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -249,9 +247,9 @@ class MetricsApi(object):
         return self._get_metric_metadata_endpoint.call_with_http_info(**kwargs)
 
     def list_active_metrics(self, _from, **kwargs):
-        """Get active metrics list  # noqa: E501
+        """Get active metrics list
 
-        Get the list of actively reporting metrics from a given time until now.  # noqa: E501
+        Get the list of actively reporting metrics from a given time until now.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -294,9 +292,9 @@ class MetricsApi(object):
         return self._list_active_metrics_endpoint.call_with_http_info(**kwargs)
 
     def list_metrics(self, q, **kwargs):
-        """Search metrics  # noqa: E501
+        """Search metrics
 
-        Search for metrics from the last 24 hours in Datadog.  # noqa: E501
+        Search for metrics from the last 24 hours in Datadog.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -337,9 +335,9 @@ class MetricsApi(object):
         return self._list_metrics_endpoint.call_with_http_info(**kwargs)
 
     def query_metrics(self, _from, to, query, **kwargs):
-        """Query timeseries points  # noqa: E501
+        """Query timeseries points
 
-        Query timeseries points.  # noqa: E501
+        Query timeseries points.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -384,9 +382,9 @@ class MetricsApi(object):
         return self._query_metrics_endpoint.call_with_http_info(**kwargs)
 
     def submit_metrics(self, body, **kwargs):
-        """Submit metrics  # noqa: E501
+        """Submit metrics
 
-        The metrics end-point allows you to post time-series data that can be graphed on Datadog’s dashboards. The maximum payload size is 3.2 megabytes (3200000 bytes). Compressed payloads must have a decompressed size of less than 62 megabytes (62914560 bytes).  If you’re submitting metrics directly to the Datadog API without using DogStatsD, expect:  - 64 bits for the timestamp - 32 bits for the value - 20 bytes for the metric names - 50 bytes for the timeseries - The full payload is approximately 100 bytes. However, with the DogStatsD API, compression is applied, which reduces the payload size.  # noqa: E501
+        The metrics end-point allows you to post time-series data that can be graphed on Datadog’s dashboards. The maximum payload size is 3.2 megabytes (3200000 bytes). Compressed payloads must have a decompressed size of less than 62 megabytes (62914560 bytes).  If you’re submitting metrics directly to the Datadog API without using DogStatsD, expect:  - 64 bits for the timestamp - 32 bits for the value - 20 bytes for the metric names - 50 bytes for the timeseries - The full payload is approximately 100 bytes. However, with the DogStatsD API, compression is applied, which reduces the payload size.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -428,9 +426,9 @@ class MetricsApi(object):
         return self._submit_metrics_endpoint.call_with_http_info(**kwargs)
 
     def update_metric_metadata(self, metric_name, body, **kwargs):
-        """Edit metric metadata  # noqa: E501
+        """Edit metric metadata
 
-        Edit metadata of a specific metric. Find out more about [supported types](https://docs.datadoghq.com/developers/metrics).  # noqa: E501
+        Edit metadata of a specific metric. Find out more about [supported types](https://docs.datadoghq.com/developers/metrics).
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

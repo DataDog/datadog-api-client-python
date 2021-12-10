@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,17 +50,11 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "version": {
             "inclusive_maximum": 2147483647,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -77,39 +68,34 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         """
         lazy_import()
         return {
-            "cases": ([SecurityMonitoringRuleCase],),  # noqa: E501
-            "filters": ([SecurityMonitoringFilter],),  # noqa: E501
-            "has_extended_title": (bool,),  # noqa: E501
-            "is_enabled": (bool,),  # noqa: E501
-            "message": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "options": (SecurityMonitoringRuleOptions,),  # noqa: E501
-            "queries": ([SecurityMonitoringRuleQuery],),  # noqa: E501
-            "tags": ([str],),  # noqa: E501
-            "version": (int,),  # noqa: E501
+            "cases": ([SecurityMonitoringRuleCase],),
+            "filters": ([SecurityMonitoringFilter],),
+            "has_extended_title": (bool,),
+            "is_enabled": (bool,),
+            "message": (str,),
+            "name": (str,),
+            "options": (SecurityMonitoringRuleOptions,),
+            "queries": ([SecurityMonitoringRuleQuery],),
+            "tags": ([str],),
+            "version": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "cases": "cases",  # noqa: E501
-        "filters": "filters",  # noqa: E501
-        "has_extended_title": "hasExtendedTitle",  # noqa: E501
-        "is_enabled": "isEnabled",  # noqa: E501
-        "message": "message",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "options": "options",  # noqa: E501
-        "queries": "queries",  # noqa: E501
-        "tags": "tags",  # noqa: E501
-        "version": "version",  # noqa: E501
+        "cases": "cases",
+        "filters": "filters",
+        "has_extended_title": "hasExtendedTitle",
+        "is_enabled": "isEnabled",
+        "message": "message",
+        "name": "name",
+        "options": "options",
+        "queries": "queries",
+        "tags": "tags",
+        "version": "version",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SecurityMonitoringRuleUpdatePayload - a model defined in OpenAPI
 
         Keyword Args:
@@ -143,24 +129,23 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            cases ([SecurityMonitoringRuleCase]): Cases for generating signals.. [optional]  # noqa: E501
-            filters ([SecurityMonitoringFilter]): Additional queries to filter matched events before they are processed.. [optional]  # noqa: E501
-            has_extended_title (bool): Whether the notifications include the triggering group-by values in their title.. [optional]  # noqa: E501
-            is_enabled (bool): Whether the rule is enabled.. [optional]  # noqa: E501
-            message (str): Message for generated signals.. [optional]  # noqa: E501
-            name (str): Name of the rule.. [optional]  # noqa: E501
-            options (SecurityMonitoringRuleOptions): [optional]  # noqa: E501
-            queries ([SecurityMonitoringRuleQuery]): Queries for selecting logs which are part of the rule.. [optional]  # noqa: E501
-            tags ([str]): Tags for generated signals.. [optional]  # noqa: E501
-            version (int): The version of the rule being updated.. [optional]  # noqa: E501
+            cases ([SecurityMonitoringRuleCase]): Cases for generating signals.. [optional]
+            filters ([SecurityMonitoringFilter]): Additional queries to filter matched events before they are processed.. [optional]
+            has_extended_title (bool): Whether the notifications include the triggering group-by values in their title.. [optional]
+            is_enabled (bool): Whether the rule is enabled.. [optional]
+            message (str): Message for generated signals.. [optional]
+            name (str): Name of the rule.. [optional]
+            options (SecurityMonitoringRuleOptions): [optional]
+            queries ([SecurityMonitoringRuleQuery]): Queries for selecting logs which are part of the rule.. [optional]
+            tags ([str]): Tags for generated signals.. [optional]
+            version (int): The version of the rule being updated.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SecurityMonitoringRuleUpdatePayload, cls)._from_openapi_data(kwargs)

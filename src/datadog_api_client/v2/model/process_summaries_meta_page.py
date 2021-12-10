@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class ProcessSummariesMetaPage(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,18 +38,12 @@ class ProcessSummariesMetaPage(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "size": {
             "inclusive_maximum": 10000,
             "inclusive_minimum": 0,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -65,23 +56,18 @@ class ProcessSummariesMetaPage(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "after": (str,),  # noqa: E501
-            "size": (int,),  # noqa: E501
+            "after": (str,),
+            "size": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "after": "after",  # noqa: E501
-        "size": "size",  # noqa: E501
+        "after": "after",
+        "size": "size",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """ProcessSummariesMetaPage - a model defined in OpenAPI
 
         Keyword Args:
@@ -115,16 +101,15 @@ class ProcessSummariesMetaPage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            after (str): The cursor used to get the next results, if any. To make the next request, use the same parameters with the addition of the `page[cursor]`.. [optional]  # noqa: E501
-            size (int): Number of results returned.. [optional]  # noqa: E501
+            after (str): The cursor used to get the next results, if any. To make the next request, use the same parameters with the addition of the `page[cursor]`.. [optional]
+            size (int): Number of results returned.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(ProcessSummariesMetaPage, cls)._from_openapi_data(kwargs)

@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class LogsMetricResponseGroupBy(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class LogsMetricResponseGroupBy(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,23 +51,18 @@ class LogsMetricResponseGroupBy(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "path": (str,),  # noqa: E501
-            "tag_name": (str,),  # noqa: E501
+            "path": (str,),
+            "tag_name": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "path": "path",  # noqa: E501
-        "tag_name": "tag_name",  # noqa: E501
+        "path": "path",
+        "tag_name": "tag_name",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """LogsMetricResponseGroupBy - a model defined in OpenAPI
 
         Keyword Args:
@@ -110,16 +96,15 @@ class LogsMetricResponseGroupBy(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            path (str): The path to the value the log-based metric will be aggregated over.. [optional]  # noqa: E501
-            tag_name (str): Eventual name of the tag that gets created. By default, the path attribute is used as the tag name.. [optional]  # noqa: E501
+            path (str): The path to the value the log-based metric will be aggregated over.. [optional]
+            tag_name (str): Eventual name of the tag that gets created. By default, the path attribute is used as the tag name.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsMetricResponseGroupBy, cls)._from_openapi_data(kwargs)

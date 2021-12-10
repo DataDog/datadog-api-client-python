@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class LogsUserAgentParser(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class LogsUserAgentParser(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,39 +58,34 @@ class LogsUserAgentParser(ModelNormal):
         """
         lazy_import()
         return {
-            "sources": ([str],),  # noqa: E501
-            "target": (str,),  # noqa: E501
-            "type": (LogsUserAgentParserType,),  # noqa: E501
-            "is_enabled": (bool,),  # noqa: E501
-            "is_encoded": (bool,),  # noqa: E501
-            "name": (str,),  # noqa: E501
+            "is_enabled": (bool,),
+            "is_encoded": (bool,),
+            "name": (str,),
+            "sources": ([str],),
+            "target": (str,),
+            "type": (LogsUserAgentParserType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "sources": "sources",  # noqa: E501
-        "target": "target",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "is_enabled": "is_enabled",  # noqa: E501
-        "is_encoded": "is_encoded",  # noqa: E501
-        "name": "name",  # noqa: E501
+        "sources": "sources",
+        "target": "target",
+        "type": "type",
+        "is_enabled": "is_enabled",
+        "is_encoded": "is_encoded",
+        "name": "name",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, type, *args, **kwargs):
         """LogsUserAgentParser - a model defined in OpenAPI
 
         Args:
             type (LogsUserAgentParserType):
 
         Keyword Args:
-            sources ([str]): Array of source attributes.. defaults to ["http.useragent"]  # noqa: E501
-            target (str): Name of the parent attribute that contains all the extracted details from the `sources`.. defaults to "http.useragent_details"  # noqa: E501
+            sources ([str]): Array of source attributes.. defaults to ["http.useragent"]
+            target (str): Name of the parent attribute that contains all the extracted details from the `sources`.. defaults to "http.useragent_details"
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -130,9 +116,9 @@ class LogsUserAgentParser(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            is_enabled (bool): Whether or not the processor is enabled.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            is_encoded (bool): Define if the source attribute is URL encoded or not.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            name (str): Name of the processor.. [optional]  # noqa: E501
+            is_enabled (bool): Whether or not the processor is enabled.. [optional] if omitted the server will use the default value of False
+            is_encoded (bool): Define if the source attribute is URL encoded or not.. [optional] if omitted the server will use the default value of False
+            name (str): Name of the processor.. [optional]
         """
         super().__init__(kwargs)
 
@@ -146,8 +132,7 @@ class LogsUserAgentParser(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
         sources = kwargs.get("sources", ["http.useragent"])
         target = kwargs.get("target", "http.useragent_details")

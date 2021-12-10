@@ -3,13 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datetime import date, datetime  # noqa: F401
+from datetime import date, datetime
 import inspect
 import io
 import os
 import pprint
 import re
 import tempfile
+from types import MappingProxyType
 
 from dateutil.parser import parse
 
@@ -22,6 +23,7 @@ from datadog_api_client.v2.exceptions import (
 
 none_type = type(None)
 file_type = io.IOBase
+empty_dict = MappingProxyType({})
 
 
 def convert_js_args_to_python_args(fn):
@@ -113,6 +115,18 @@ def composed_model_input_classes(cls):
 
 class OpenApiModel(object):
     """The base class for all OpenAPIModels"""
+
+    _composed_schemas = empty_dict
+
+    additional_properties_type = None
+
+    attribute_map = empty_dict
+
+    _nullable = False
+
+    discriminator = None
+
+    allowed_values = empty_dict
 
     def set_attribute(self, name, value):
         # this is only used to set properties on self
@@ -1187,7 +1201,7 @@ def change_keys_js_to_python(input_dict, model_class):
     document).
     """
 
-    if getattr(model_class, "attribute_map", None) is None:
+    if not getattr(model_class, "attribute_map", None):
         return input_dict
     output_dict = {}
     reversed_attr_map = {value: key for key, value in model_class.attribute_map.items()}
@@ -1815,7 +1829,9 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
         try:
             if not single_value_input:
                 if constant_kwargs.get("_spec_property_naming"):
-                    oneof_instance = oneof_class._from_openapi_data(**model_kwargs, **constant_kwargs)
+                    oneof_instance = oneof_class._from_openapi_data(
+                        **change_keys_js_to_python(model_kwargs, oneof_class), **constant_kwargs
+                    )
                 else:
                     oneof_instance = oneof_class(**model_kwargs, **constant_kwargs)
                 if not oneof_instance._unparsed:
@@ -1991,21 +2007,9 @@ def validate_get_composed_info(constant_args, model_args, self):
 class UnparsedObject(ModelNormal):
     """A model for an oneOf we don't know about."""
 
-    allowed_values = {}
+    validations = empty_dict
 
-    validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
-
-    openapi_types = {}
-
-    discriminator = None
-
-    attribute_map = {}
-
-    _composed_schemas = {}
+    openapi_types = empty_dict
 
     required_properties = set(
         [
@@ -2014,7 +2018,6 @@ class UnparsedObject(ModelNormal):
         ]
     )
 
-    @convert_js_args_to_python_args
     def __init__(self, **kwargs):
 
         self._data_store = {}

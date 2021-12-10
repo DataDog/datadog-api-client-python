@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -50,10 +49,6 @@ class ApplicationKeysSort(ModelSimple):
 
     validations = {}
 
-    additional_properties_type = None
-
-    _nullable = False
-
     @cached_property
     def openapi_types():
         """
@@ -68,23 +63,16 @@ class ApplicationKeysSort(ModelSimple):
             "value": (str,),
         }
 
-    discriminator = None
-
-    attribute_map = {}
-
-    _composed_schemas = None
-
-    @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):
         """ApplicationKeysSort - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Sorting options. if omitted defaults to "name", must be one of ["created_at", "-created_at", "last4", "-last4", "name", "-name", ]  # noqa: E501
+            args[0] (str): Sorting options. if omitted defaults to "name", must be one of ["created_at", "-created_at", "last4", "-last4", "name", "-name"]
 
         Keyword Args:
-            value (str): Sorting options. if omitted defaults to "name", must be one of ["created_at", "-created_at", "last4", "-last4", "name", "-name", ]  # noqa: E501
+            value (str): Sorting options. if omitted defaults to "name", must be one of ["created_at", "-created_at", "last4", "-last4", "name", "-name"]
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -133,7 +121,6 @@ class ApplicationKeysSort(ModelSimple):
         self._check_kw_args(kwargs)
 
     @classmethod
-    @convert_js_args_to_python_args
     def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
         return cls(*args, **kwargs)

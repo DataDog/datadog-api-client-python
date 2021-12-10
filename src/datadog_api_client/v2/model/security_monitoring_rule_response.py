@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -44,8 +43,6 @@ class SecurityMonitoringRuleResponse(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -55,13 +52,7 @@ class SecurityMonitoringRuleResponse(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -75,53 +66,48 @@ class SecurityMonitoringRuleResponse(ModelNormal):
         """
         lazy_import()
         return {
-            "cases": ([SecurityMonitoringRuleCase],),  # noqa: E501
-            "created_at": (int,),  # noqa: E501
-            "creation_author_id": (int,),  # noqa: E501
-            "filters": ([SecurityMonitoringFilter],),  # noqa: E501
-            "has_extended_title": (bool,),  # noqa: E501
-            "id": (str,),  # noqa: E501
-            "is_default": (bool,),  # noqa: E501
-            "is_deleted": (bool,),  # noqa: E501
-            "is_enabled": (bool,),  # noqa: E501
-            "message": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "options": (SecurityMonitoringRuleOptions,),  # noqa: E501
-            "queries": ([SecurityMonitoringRuleQuery],),  # noqa: E501
-            "tags": ([str],),  # noqa: E501
-            "type": (SecurityMonitoringRuleTypeRead,),  # noqa: E501
-            "update_author_id": (int,),  # noqa: E501
-            "version": (int,),  # noqa: E501
+            "cases": ([SecurityMonitoringRuleCase],),
+            "created_at": (int,),
+            "creation_author_id": (int,),
+            "filters": ([SecurityMonitoringFilter],),
+            "has_extended_title": (bool,),
+            "id": (str,),
+            "is_default": (bool,),
+            "is_deleted": (bool,),
+            "is_enabled": (bool,),
+            "message": (str,),
+            "name": (str,),
+            "options": (SecurityMonitoringRuleOptions,),
+            "queries": ([SecurityMonitoringRuleQuery],),
+            "tags": ([str],),
+            "type": (SecurityMonitoringRuleTypeRead,),
+            "update_author_id": (int,),
+            "version": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "cases": "cases",  # noqa: E501
-        "created_at": "createdAt",  # noqa: E501
-        "creation_author_id": "creationAuthorId",  # noqa: E501
-        "filters": "filters",  # noqa: E501
-        "has_extended_title": "hasExtendedTitle",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "is_default": "isDefault",  # noqa: E501
-        "is_deleted": "isDeleted",  # noqa: E501
-        "is_enabled": "isEnabled",  # noqa: E501
-        "message": "message",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "options": "options",  # noqa: E501
-        "queries": "queries",  # noqa: E501
-        "tags": "tags",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "update_author_id": "updateAuthorId",  # noqa: E501
-        "version": "version",  # noqa: E501
+        "cases": "cases",
+        "created_at": "createdAt",
+        "creation_author_id": "creationAuthorId",
+        "filters": "filters",
+        "has_extended_title": "hasExtendedTitle",
+        "id": "id",
+        "is_default": "isDefault",
+        "is_deleted": "isDeleted",
+        "is_enabled": "isEnabled",
+        "message": "message",
+        "name": "name",
+        "options": "options",
+        "queries": "queries",
+        "tags": "tags",
+        "type": "type",
+        "update_author_id": "updateAuthorId",
+        "version": "version",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SecurityMonitoringRuleResponse - a model defined in OpenAPI
 
         Keyword Args:
@@ -155,31 +141,30 @@ class SecurityMonitoringRuleResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            cases ([SecurityMonitoringRuleCase]): Cases for generating signals.. [optional]  # noqa: E501
-            created_at (int): When the rule was created, timestamp in milliseconds.. [optional]  # noqa: E501
-            creation_author_id (int): User ID of the user who created the rule.. [optional]  # noqa: E501
-            filters ([SecurityMonitoringFilter]): Additional queries to filter matched events before they are processed.. [optional]  # noqa: E501
-            has_extended_title (bool): Whether the notifications include the triggering group-by values in their title.. [optional]  # noqa: E501
-            id (str): The ID of the rule.. [optional]  # noqa: E501
-            is_default (bool): Whether the rule is included by default.. [optional]  # noqa: E501
-            is_deleted (bool): Whether the rule has been deleted.. [optional]  # noqa: E501
-            is_enabled (bool): Whether the rule is enabled.. [optional]  # noqa: E501
-            message (str): Message for generated signals.. [optional]  # noqa: E501
-            name (str): The name of the rule.. [optional]  # noqa: E501
-            options (SecurityMonitoringRuleOptions): [optional]  # noqa: E501
-            queries ([SecurityMonitoringRuleQuery]): Queries for selecting logs which are part of the rule.. [optional]  # noqa: E501
-            tags ([str]): Tags for generated signals.. [optional]  # noqa: E501
-            type (SecurityMonitoringRuleTypeRead): [optional]  # noqa: E501
-            update_author_id (int): User ID of the user who updated the rule.. [optional]  # noqa: E501
-            version (int): The version of the rule.. [optional]  # noqa: E501
+            cases ([SecurityMonitoringRuleCase]): Cases for generating signals.. [optional]
+            created_at (int): When the rule was created, timestamp in milliseconds.. [optional]
+            creation_author_id (int): User ID of the user who created the rule.. [optional]
+            filters ([SecurityMonitoringFilter]): Additional queries to filter matched events before they are processed.. [optional]
+            has_extended_title (bool): Whether the notifications include the triggering group-by values in their title.. [optional]
+            id (str): The ID of the rule.. [optional]
+            is_default (bool): Whether the rule is included by default.. [optional]
+            is_deleted (bool): Whether the rule has been deleted.. [optional]
+            is_enabled (bool): Whether the rule is enabled.. [optional]
+            message (str): Message for generated signals.. [optional]
+            name (str): The name of the rule.. [optional]
+            options (SecurityMonitoringRuleOptions): [optional]
+            queries ([SecurityMonitoringRuleQuery]): Queries for selecting logs which are part of the rule.. [optional]
+            tags ([str]): Tags for generated signals.. [optional]
+            type (SecurityMonitoringRuleTypeRead): [optional]
+            update_author_id (int): User ID of the user who updated the rule.. [optional]
+            version (int): The version of the rule.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SecurityMonitoringRuleResponse, cls)._from_openapi_data(kwargs)

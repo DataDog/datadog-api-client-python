@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class LogContent(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class LogContent(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,31 +51,26 @@ class LogContent(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "attributes": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
-            "host": (str,),  # noqa: E501
-            "message": (str,),  # noqa: E501
-            "service": (str,),  # noqa: E501
-            "tags": ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
-            "timestamp": (datetime,),  # noqa: E501
+            "attributes": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+            "host": (str,),
+            "message": (str,),
+            "service": (str,),
+            "tags": ([bool, date, datetime, dict, float, int, list, str, none_type],),
+            "timestamp": (datetime,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "attributes": "attributes",  # noqa: E501
-        "host": "host",  # noqa: E501
-        "message": "message",  # noqa: E501
-        "service": "service",  # noqa: E501
-        "tags": "tags",  # noqa: E501
-        "timestamp": "timestamp",  # noqa: E501
+        "attributes": "attributes",
+        "host": "host",
+        "message": "message",
+        "service": "service",
+        "tags": "tags",
+        "timestamp": "timestamp",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """LogContent - a model defined in OpenAPI
 
         Keyword Args:
@@ -118,20 +104,19 @@ class LogContent(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): JSON object of attributes from your log.. [optional]  # noqa: E501
-            host (str): Name of the machine from where the logs are being sent.. [optional]  # noqa: E501
-            message (str): The message [reserved attribute](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes) of your log. By default, Datadog ingests the value of the message attribute as the body of the log entry. That value is then highlighted and displayed in the Logstream, where it is indexed for full text search.. [optional]  # noqa: E501
-            service (str): The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products.. [optional]  # noqa: E501
-            tags ([bool, date, datetime, dict, float, int, list, str, none_type]): Array of tags associated with your log.. [optional]  # noqa: E501
-            timestamp (datetime): Timestamp of your log.. [optional]  # noqa: E501
+            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): JSON object of attributes from your log.. [optional]
+            host (str): Name of the machine from where the logs are being sent.. [optional]
+            message (str): The message [reserved attribute](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes) of your log. By default, Datadog ingests the value of the message attribute as the body of the log entry. That value is then highlighted and displayed in the Logstream, where it is indexed for full text search.. [optional]
+            service (str): The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products.. [optional]
+            tags ([bool, date, datetime, dict, float, int, list, str, none_type]): Array of tags associated with your log.. [optional]
+            timestamp (datetime): Timestamp of your log.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogContent, cls)._from_openapi_data(kwargs)

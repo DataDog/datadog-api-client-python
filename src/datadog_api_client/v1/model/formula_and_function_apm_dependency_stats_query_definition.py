@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,41 +64,34 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "data_source": (FormulaAndFunctionApmDependencyStatsDataSource,),  # noqa: E501
-            "env": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "operation_name": (str,),  # noqa: E501
-            "resource_name": (str,),  # noqa: E501
-            "service": (str,),  # noqa: E501
-            "stat": (FormulaAndFunctionApmDependencyStatName,),  # noqa: E501
-            "is_upstream": (bool,),  # noqa: E501
-            "primary_tag_name": (str,),  # noqa: E501
-            "primary_tag_value": (str,),  # noqa: E501
+            "data_source": (FormulaAndFunctionApmDependencyStatsDataSource,),
+            "env": (str,),
+            "is_upstream": (bool,),
+            "name": (str,),
+            "operation_name": (str,),
+            "primary_tag_name": (str,),
+            "primary_tag_value": (str,),
+            "resource_name": (str,),
+            "service": (str,),
+            "stat": (FormulaAndFunctionApmDependencyStatName,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "data_source": "data_source",  # noqa: E501
-        "env": "env",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "operation_name": "operation_name",  # noqa: E501
-        "resource_name": "resource_name",  # noqa: E501
-        "service": "service",  # noqa: E501
-        "stat": "stat",  # noqa: E501
-        "is_upstream": "is_upstream",  # noqa: E501
-        "primary_tag_name": "primary_tag_name",  # noqa: E501
-        "primary_tag_value": "primary_tag_value",  # noqa: E501
+        "data_source": "data_source",
+        "env": "env",
+        "name": "name",
+        "operation_name": "operation_name",
+        "resource_name": "resource_name",
+        "service": "service",
+        "stat": "stat",
+        "is_upstream": "is_upstream",
+        "primary_tag_name": "primary_tag_name",
+        "primary_tag_value": "primary_tag_value",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(
-        self, data_source, env, name, operation_name, resource_name, service, stat, *args, **kwargs
-    ):  # noqa: E501
+    def __init__(self, data_source, env, name, operation_name, resource_name, service, stat, *args, **kwargs):
         """FormulaAndFunctionApmDependencyStatsQueryDefinition - a model defined in OpenAPI
 
         Args:
@@ -150,9 +134,9 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            is_upstream (bool): Determines whether stats for upstream or downstream dependencies should be queried.. [optional]  # noqa: E501
-            primary_tag_name (str): The name of the second primary tag used within APM; required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog.. [optional]  # noqa: E501
-            primary_tag_value (str): Filter APM data by the second primary tag. `primary_tag_name` must also be specified.. [optional]  # noqa: E501
+            is_upstream (bool): Determines whether stats for upstream or downstream dependencies should be queried.. [optional]
+            primary_tag_name (str): The name of the second primary tag used within APM; required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog.. [optional]
+            primary_tag_value (str): Filter APM data by the second primary tag. `primary_tag_name` must also be specified.. [optional]
         """
         super().__init__(kwargs)
 
@@ -167,10 +151,7 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
         self.stat = stat
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(
-        cls, data_source, env, name, operation_name, resource_name, service, stat, *args, **kwargs
-    ):  # noqa: E501
+    def _from_openapi_data(cls, data_source, env, name, operation_name, resource_name, service, stat, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(FormulaAndFunctionApmDependencyStatsQueryDefinition, cls)._from_openapi_data(kwargs)
