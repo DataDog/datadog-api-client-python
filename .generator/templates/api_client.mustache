@@ -65,7 +65,7 @@ class ApiClient(object):
         self.configuration = configuration
         self.pool_threads = pool_threads
 
-        self.rest_client = rest.RESTClientObject(configuration)
+        self.rest_client = self._build_rest_client()
         self.default_headers = {}
         if self.configuration.compress:
             self.default_headers["Accept-Encoding"] = "gzip"
@@ -86,6 +86,9 @@ class ApiClient(object):
             self._pool = None
             if hasattr(atexit, 'unregister'):
                 atexit.unregister(self.close)
+
+    def _build_rest_client(self):
+        return rest.RESTClientObject(self.configuration)
 
     @property
     def pool(self):
@@ -544,6 +547,68 @@ class ApiClient(object):
                     raise ApiValueError(
                         'Authentication token must be in `query` or `header`'
                     )
+
+
+class AsyncApiClient(ApiClient):
+
+    def _build_rest_client(self):
+        return rest.AsyncRESTClientObject(self.configuration)
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, _exc_type, exc, _tb):
+        if exc:
+            raise exc
+        await self.rest_client._client.shutdown()
+
+    async def _call_api(
+        self,
+        method: str,
+        url: str,
+        query_params: typing.Optional[typing.List[typing.Tuple[str, typing.Any]]] = None,
+        header_params: typing.Optional[typing.Dict[str, typing.Any]] = None,
+        body: typing.Optional[typing.Any] = None,
+        post_params: typing.Optional[typing.List[typing.Tuple[str, typing.Any]]] = None,
+        response_type: typing.Optional[typing.Tuple[typing.Any]] = None,
+        _return_http_data_only: typing.Optional[bool] = None,
+        _preload_content: bool = True,
+        _request_timeout: typing.Optional[typing.Union[int, float, typing.Tuple]] = None,
+        _check_type: typing.Optional[bool] = None,
+    ):
+
+        # perform request and return response
+        response = await self.rest_client.request(
+            method,
+            url,
+            query_params=query_params,
+            headers=header_params,
+            post_params=post_params,
+            body=body,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+
+        if not _preload_content:
+            return response
+
+        # deserialize response data
+        if response_type:
+            if response_type == (file_type,):
+                content_disposition = response.headers.get("Content-Disposition")
+                response_data = await response.content()
+                return_data = deserialize_file(response_data, self.configuration, content_disposition=content_disposition)
+            else:
+                response_data = await response.text()
+
+                return_data = self.deserialize(response_data, response_type, _check_type)
+        else:
+            return_data = None
+
+        if _return_http_data_only:
+            return return_data
+        else:
+            return (return_data, response.status_code, response.headers)
 
 
 class Endpoint(object):
