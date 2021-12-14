@@ -99,7 +99,7 @@ def pytest_bdd_before_scenario(request, feature, scenario):
     if RECORD != "false":
         skip_tags.add("replay-only")
 
-    skipped_tags = [tag for tag in scenario.tags | feature.tags if tag in skip_tags]
+    skipped_tags = [tag for tag in scenario.tags | scenario.feature.tags if tag in skip_tags]
     if skipped_tags:
         pytest.skip(f"skipped because of following tag(s): {', '.join(skipped_tags)}")
 
