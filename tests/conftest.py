@@ -82,16 +82,26 @@ def escape_reserved_keyword(word):
 
 
 def pytest_bdd_before_scenario(request, feature, scenario):
-    if tracer is None:
-        return
+    if tracer is not None:
+        span = tracer.current_span()
+        if span is not None:
+            span.set_tag("test.name", scenario.name)
+            span.set_tag("test.suite", scenario.feature.filename.split("tests")[-1])
 
-    span = tracer.current_span()
-    span.set_tag("test.name", scenario.name)
-    span.set_tag("test.suite", scenario.feature.filename.split("tests")[-1])
+            codeowners = [f"@{tag[5:]}" for tag in scenario.tags | scenario.feature.tags if tag.startswith("team:")]
+            if codeowners:
+                span.set_tag("test.codeowners", json.dumps(codeowners))
 
-    codeowners = [f"@{tag[5:]}" for tag in scenario.tags | scenario.feature.tags if tag.startswith("team:")]
-    if codeowners:
-        span.set_tag("test.codeowners", json.dumps(codeowners))
+    skip_tags = {"skip", "skip-python"}
+    if RECORD != "none":
+        # ignore integration-only scenarios if the recording is enabled
+        skip_tags.add("integration-only")
+    if RECORD != "false":
+        skip_tags.add("replay-only")
+
+    skipped_tags = [tag for tag in scenario.tags | scenario.feature.tags if tag in skip_tags]
+    if skipped_tags:
+        pytest.skip(f"skipped because of following tag(s): {', '.join(skipped_tags)}")
 
 
 def pytest_bdd_after_scenario(request, feature, scenario):
@@ -128,32 +138,8 @@ def pytest_bdd_step_error(request, feature, scenario, step, step_func, step_func
 
 
 def pytest_bdd_apply_tag(tag, function):
-    """Register tags as custom markers and skip test for '@skip' ones."""
-    skip_tags = {"skip", "skip-python"}
-    if RECORD != "none":
-        # ignore integration-only scenarios if the recording is enabled
-        skip_tags.add("integration-only")
-    if RECORD != "false":
-        skip_tags.add("replay-only")
-    if tag in skip_tags:
-        marker = pytest.mark.skip(reason=f"skipped because '{tag}' in {skip_tags}")
-        marker(function)
-        return True
-    elif tag.startswith("team:"):
-        return True
-    elif tag.startswith("endpoint("):
-        version = tag[len("endpoint(") : -1]
-        marker = pytest.mark.dd_tags(version=version)
-        marker(function)
-        return True
-    else:
-        from pytest_bdd.utils import CONFIG_STACK
-
-        config = CONFIG_STACK[-1]
-        config.addinivalue_line("markers", f"{tag}: marker from feature")
-
-        # Fall back to pytest-bdd's default behavior
-        return None
+    """Do not register tags as custom markers."""
+    return True
 
 
 def snake_case(value):
