@@ -28,6 +28,7 @@ class RoleCreateAttributes(ModelNormal):
     @cached_property
     def openapi_types():
         return {
+            "clone_from_uuid": (str,),
             "created_at": (datetime,),
             "modified_at": (datetime,),
             "name": (str,),
@@ -35,6 +36,7 @@ class RoleCreateAttributes(ModelNormal):
 
     attribute_map = {
         "name": "name",
+        "clone_from_uuid": "clone_from_uuid",
         "created_at": "created_at",
         "modified_at": "modified_at",
     }
@@ -51,6 +53,7 @@ class RoleCreateAttributes(ModelNormal):
             name (str): Name of the role.
 
         Keyword Args:
+            clone_from_uuid (str): [optional] UUID of the role to clone from.
             created_at (datetime): [optional] Creation time of the role.
             modified_at (datetime): [optional] Time of last role modification.
         """

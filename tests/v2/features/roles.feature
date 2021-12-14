@@ -39,10 +39,21 @@ Feature: Roles
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/team-aaa
+  Scenario: Create role from existing one returns "OK" response
+    Given there is a valid "role" in the system
+    And there is a valid "permission" in the system
+    And the "permission" is granted to the "role"
+    And new "CreateRole" request
+    And body with value {"data": {"type": "roles", "attributes": {"clone_from_uuid": "{{ role.data.id }}"}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.relationships.permissions[0].data[0].id" has the same value as "permission.data.id"
+
   @generated @skip @team:DataDog/team-aaa
   Scenario: Create role returns "Bad Request" response
     Given new "CreateRole" request
-    And body with value {"data": {"attributes": {"name": "developers"}, "relationships": {"permissions": {"data": [{"id": null, "type": "permissions"}]}, "users": {"data": []}}, "type": "roles"}}
+    And body with value {"data": {"attributes": {"clone_from_uuid": null, "name": "developers"}, "relationships": {"permissions": {"data": [{"id": null, "type": "permissions"}]}, "users": {"data": []}}, "type": "roles"}}
     When the request is sent
     Then the response status is 400 Bad Request
 

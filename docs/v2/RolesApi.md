@@ -196,6 +196,7 @@ with ApiClient(configuration) as api_client:
     body = RoleCreateRequest(
         data=RoleCreateData(
             attributes=RoleCreateAttributes(
+                clone_from_uuid="clone_from_uuid_example",
                 name="developers",
             ),
             relationships=RoleRelationships(
