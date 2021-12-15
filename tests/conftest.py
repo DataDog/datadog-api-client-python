@@ -526,7 +526,6 @@ def undo(package_name, undo_operations, client):
     """Clean after operation."""
     exceptions = importlib.import_module(package_name + ".exceptions")
 
-    @sleep_after_request
     def cleanup(api, version, operation_id, response, client=client):
         operation = undo_operations.get(version, {}).get(operation_id)
         if operation_id is None:
