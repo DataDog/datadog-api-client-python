@@ -562,7 +562,6 @@ def undo(package_name, undo_operations, client):
 
 
 @when("the request is sent")
-@sleep_after_request
 def execute_request(undo, context, client, api_version, _package):
     """Execute the prepared request."""
     api_request = context["api_request"]
