@@ -82,6 +82,7 @@ def sleep_after_request(f):
         result = f(*args, **kwargs)
         time.sleep(SLEEP_AFTER_REQUEST)
         return result
+
     return wrapper
 
 
