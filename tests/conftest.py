@@ -4,6 +4,7 @@
 import os
 
 RECORD = os.getenv("RECORD", "false").lower()
+SLEEP_AFTER_REQUEST = int(os.getenv("SLEEP_AFTER_REQUEST", "0"))
 
 # First patch urllib
 tracer = None
@@ -47,10 +48,12 @@ except ImportError:
         raise
 
 import importlib
+import functools
 import json
 import logging
 import pathlib
 import re
+import time
 import warnings
 from datetime import datetime
 
@@ -67,6 +70,19 @@ PATTERN_LEADING_ALPHA = re.compile(r"(.)([A-Z][a-z]+)")
 PATTERN_FOLLOWING_ALPHA = re.compile(r"([a-z0-9])([A-Z])")
 PATTERN_WHITESPACE = re.compile(r"\W")
 PATTERN_INDEX = re.compile(r"\[([0-9]*)\]")
+
+
+def sleep_after_request(f):
+    """Sleep after each request."""
+    if RECORD == "false" or SLEEP_AFTER_REQUEST <= 0:
+        return f
+
+    @functools.wraps(f)
+    def wrapper(*args, **kwargs):
+        result = f(*args, **kwargs)
+        time.sleep(SLEEP_AFTER_REQUEST)
+        return result
+    return wrapper
 
 
 def escape_reserved_keyword(word):
@@ -448,6 +464,7 @@ def request_parameter_with_value(context, name, value):
 
 
 def build_given(version, operation):
+    @sleep_after_request
     def wrapper(context, undo):
         name = operation["tag"].replace(" ", "")
         module_name = snake_case(operation["tag"])
