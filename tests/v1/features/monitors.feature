@@ -116,7 +116,7 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "id" has the same value as "monitor.id"
 
-  @team:DataDog/monitor-app
+  @replay-only @team:DataDog/monitor-app
   Scenario: Get a synthetics monitor's details
     Given there is a valid "synthetics_api_test" in the system
     And new "GetMonitor" request

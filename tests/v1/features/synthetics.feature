@@ -38,7 +38,7 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
-  @team:DataDog/synthetics-app
+  @replay-only @team:DataDog/synthetics-app
   Scenario: Create a browser test returns "OK - Returns the created test details." response
     Given new "CreateSyntheticsBrowserTest" request
     And body from file "synthetics_browser_test_payload.json"
@@ -95,7 +95,7 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
-  @team:DataDog/synthetics-app
+  @replay-only @team:DataDog/synthetics-app
   Scenario: Create an API test returns "OK - Returns the created test details." response
     Given new "CreateSyntheticsAPITest" request
     And body from file "synthetics_api_test_payload.json"
@@ -110,7 +110,7 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 402 Test quota is reached
 
-  @team:DataDog/synthetics-app
+  @replay-only @team:DataDog/synthetics-app
   Scenario: Create an API test with UDP subtype returns "OK - Returns the created test details." response
     Given new "CreateSyntheticsAPITest" request
     And body from file "synthetics_api_test_udp_payload.json"
@@ -118,7 +118,7 @@ Feature: Synthetics
     Then the response status is 200 OK - Returns the created test details.
     And the response "name" is equal to "{{ unique }}"
 
-  @team:DataDog/synthetics-app
+  @replay-only @team:DataDog/synthetics-app
   Scenario: Create an API test with WEBSOCKET subtype returns "OK - Returns the created test details." response
     Given new "CreateSyntheticsAPITest" request
     And body from file "synthetics_api_test_websocket_payload.json"
@@ -256,7 +256,7 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
-  @team:DataDog/synthetics-app
+  @replay-only @team:DataDog/synthetics-app
   Scenario: Edit an API test returns "OK" response
     Given there is a valid "synthetics_api_test" in the system
     And new "UpdateAPITest" request
@@ -465,7 +465,7 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/synthetics-app
+  @replay-only @team:DataDog/synthetics-app
   Scenario: Trigger Synthetics tests returns "OK" response
     Given there is a valid "synthetics_api_test" in the system
     And new "TriggerTests" request
