@@ -67,7 +67,7 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/security-monitoring
   Scenario: Delete a security filter returns "Not Found" response
     Given new "DeleteSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
+    And request contains "security_filter_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -81,7 +81,7 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/security-monitoring
   Scenario: Delete an existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "<PATH>"
+    And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -126,21 +126,21 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a rule's details returns "Not Found" response
     Given new "GetSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "<PATH>"
+    And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a rule's details returns "OK" response
     Given new "GetSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "<PATH>"
+    And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a security filter returns "Not Found" response
     Given new "GetSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
+    And request contains "security_filter_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -173,7 +173,7 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/security-monitoring
   Scenario: Update a security filter returns "Bad Request" response
     Given new "UpdateSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
+    And request contains "security_filter_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"exclusion_filters": [], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api", "version": 1}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -181,7 +181,7 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/security-monitoring
   Scenario: Update a security filter returns "Concurrent Modification" response
     Given new "UpdateSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
+    And request contains "security_filter_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"exclusion_filters": [], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api", "version": 1}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 409 Concurrent Modification
@@ -189,7 +189,7 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/security-monitoring
   Scenario: Update a security filter returns "Not Found" response
     Given new "UpdateSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
+    And request contains "security_filter_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"exclusion_filters": [], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api", "version": 1}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 404 Not Found
@@ -206,7 +206,7 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/security-monitoring
   Scenario: Update an existing rule returns "Bad Request" response
     Given new "UpdateSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "<PATH>"
+    And request contains "rule_id" parameter from "REPLACE.ME"
     And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "critical"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -214,7 +214,7 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/security-monitoring
   Scenario: Update an existing rule returns "Not Found" response
     Given new "UpdateSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "<PATH>"
+    And request contains "rule_id" parameter from "REPLACE.ME"
     And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "critical"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
     When the request is sent
     Then the response status is 404 Not Found
@@ -222,7 +222,7 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/security-monitoring
   Scenario: Update an existing rule returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "<PATH>"
+    And request contains "rule_id" parameter from "REPLACE.ME"
     And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "critical"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
     When the request is sent
     Then the response status is 200 OK

@@ -36,7 +36,7 @@ Feature: Incidents
   Scenario: Delete an existing incident returns "Bad Request" response
     Given operation "DeleteIncident" enabled
     And new "DeleteIncident" request
-    And request contains "incident_id" parameter from "<PATH>"
+    And request contains "incident_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -44,7 +44,7 @@ Feature: Incidents
   Scenario: Delete an existing incident returns "Not Found" response
     Given operation "DeleteIncident" enabled
     And new "DeleteIncident" request
-    And request contains "incident_id" parameter from "<PATH>"
+    And request contains "incident_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -83,7 +83,7 @@ Feature: Incidents
   Scenario: Get the details of an incident returns "Bad Request" response
     Given operation "GetIncident" enabled
     And new "GetIncident" request
-    And request contains "incident_id" parameter from "<PATH>"
+    And request contains "incident_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -91,7 +91,7 @@ Feature: Incidents
   Scenario: Get the details of an incident returns "Not Found" response
     Given operation "GetIncident" enabled
     And new "GetIncident" request
-    And request contains "incident_id" parameter from "<PATH>"
+    And request contains "incident_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -109,7 +109,7 @@ Feature: Incidents
   Scenario: Update an existing incident returns "Bad Request" response
     Given operation "UpdateIncident" enabled
     And new "UpdateIncident" request
-    And request contains "incident_id" parameter from "<PATH>"
+    And request contains "incident_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"customer_impact_end": null, "customer_impact_scope": "Example customer impact scope", "customer_impact_start": null, "customer_impacted": false, "detected": null, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "notification_handles": [{"display_name": "Jane Doe", "handle": "@test.user@test.com"}], "resolved": null, "title": "A test incident title"}, "id": "00000000-0000-0000-0000-000000000000", "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "created_by_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "integrations": {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "incident_integrations"}, {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_integrations"}]}, "last_modified_by_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "postmortem": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_postmortems"}}}, "type": "incidents"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -118,7 +118,7 @@ Feature: Incidents
   Scenario: Update an existing incident returns "Not Found" response
     Given operation "UpdateIncident" enabled
     And new "UpdateIncident" request
-    And request contains "incident_id" parameter from "<PATH>"
+    And request contains "incident_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"customer_impact_end": null, "customer_impact_scope": "Example customer impact scope", "customer_impact_start": null, "customer_impacted": false, "detected": null, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "notification_handles": [{"display_name": "Jane Doe", "handle": "@test.user@test.com"}], "resolved": null, "title": "A test incident title"}, "id": "00000000-0000-0000-0000-000000000000", "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "created_by_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "integrations": {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "incident_integrations"}, {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_integrations"}]}, "last_modified_by_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "postmortem": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_postmortems"}}}, "type": "incidents"}}
     When the request is sent
     Then the response status is 404 Not Found

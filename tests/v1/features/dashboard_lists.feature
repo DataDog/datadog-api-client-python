@@ -65,7 +65,7 @@ Feature: Dashboard Lists
   @generated @skip @team:DataDog/dashboards
   Scenario: Update a dashboard list returns "Bad Request" response
     Given new "UpdateDashboardList" request
-    And request contains "list_id" parameter from "<PATH>"
+    And request contains "list_id" parameter from "REPLACE.ME"
     And body with value {"name": "My Dashboard"}
     When the request is sent
     Then the response status is 400 Bad Request

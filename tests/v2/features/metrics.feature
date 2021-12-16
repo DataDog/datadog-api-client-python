@@ -18,7 +18,7 @@ Feature: Metrics
   Scenario: Create a tag configuration returns "Bad Request" response
     Given operation "CreateTagConfiguration" enabled
     And new "CreateTagConfiguration" request
-    And request contains "metric_name" parameter from "<PATH>"
+    And request contains "metric_name" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"include_percentiles": false, "metric_type": "distribution", "tags": ["app", "datacenter"]}, "id": "http.endpoint.request", "type": "manage_tags"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -27,7 +27,7 @@ Feature: Metrics
   Scenario: Create a tag configuration returns "Conflict" response
     Given operation "CreateTagConfiguration" enabled
     And new "CreateTagConfiguration" request
-    And request contains "metric_name" parameter from "<PATH>"
+    And request contains "metric_name" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"include_percentiles": false, "metric_type": "distribution", "tags": ["app", "datacenter"]}, "id": "http.endpoint.request", "type": "manage_tags"}}
     When the request is sent
     Then the response status is 409 Conflict
@@ -54,21 +54,21 @@ Feature: Metrics
   Scenario: Delete a tag configuration returns "Not found" response
     Given operation "DeleteTagConfiguration" enabled
     And new "DeleteTagConfiguration" request
-    And request contains "metric_name" parameter from "<PATH>"
+    And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
   @generated @skip @team:DataDog/points-aggregation
   Scenario: List distinct metric volumes by metric name returns "Bad Request" response
     Given new "ListVolumesByMetricName" request
-    And request contains "metric_name" parameter from "<PATH>"
+    And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/points-aggregation
   Scenario: List distinct metric volumes by metric name returns "Not Found" response
     Given new "ListVolumesByMetricName" request
-    And request contains "metric_name" parameter from "<PATH>"
+    And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -85,7 +85,7 @@ Feature: Metrics
   Scenario: List tag configuration by name returns "Not Found" response
     Given operation "ListTagConfigurationByName" enabled
     And new "ListTagConfigurationByName" request
-    And request contains "metric_name" parameter from "<PATH>"
+    And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -127,14 +127,14 @@ Feature: Metrics
   @generated @skip @team:DataDog/points-aggregation
   Scenario: List tags by metric name returns "Bad Request" response
     Given new "ListTagsByMetricName" request
-    And request contains "metric_name" parameter from "<PATH>"
+    And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/points-aggregation
   Scenario: List tags by metric name returns "Not Found" response
     Given new "ListTagsByMetricName" request
-    And request contains "metric_name" parameter from "<PATH>"
+    And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -151,7 +151,7 @@ Feature: Metrics
   Scenario: Update a tag configuration returns "Bad Request" response
     Given operation "UpdateTagConfiguration" enabled
     And new "UpdateTagConfiguration" request
-    And request contains "metric_name" parameter from "<PATH>"
+    And request contains "metric_name" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"group_by": ["app", "datacenter"], "include_percentiles": false}, "id": "http.endpoint.request", "type": "manage_tags"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -171,7 +171,7 @@ Feature: Metrics
   Scenario: Update a tag configuration returns "Unprocessable Entity" response
     Given operation "UpdateTagConfiguration" enabled
     And new "UpdateTagConfiguration" request
-    And request contains "metric_name" parameter from "<PATH>"
+    And request contains "metric_name" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"group_by": ["app", "datacenter"], "include_percentiles": false}, "id": "http.endpoint.request", "type": "manage_tags"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity

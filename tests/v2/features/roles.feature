@@ -16,7 +16,7 @@ Feature: Roles
   @generated @skip @team:DataDog/team-aaa
   Scenario: Add a user to a role returns "Bad Request" response
     Given new "AddUserToRole" request
-    And request contains "role_id" parameter from "<PATH>"
+    And request contains "role_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -24,7 +24,7 @@ Feature: Roles
   @generated @skip @team:DataDog/team-aaa
   Scenario: Add a user to a role returns "Not found" response
     Given new "AddUserToRole" request
-    And request contains "role_id" parameter from "<PATH>"
+    And request contains "role_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 404 Not found
@@ -57,7 +57,7 @@ Feature: Roles
   @generated @skip @team:DataDog/team-aaa
   Scenario: Delete role returns "Not found" response
     Given new "DeleteRole" request
-    And request contains "role_id" parameter from "<PATH>"
+    And request contains "role_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
@@ -72,7 +72,7 @@ Feature: Roles
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get a role returns "Not found" response
     Given new "GetRole" request
-    And request contains "role_id" parameter from "<PATH>"
+    And request contains "role_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
@@ -88,7 +88,7 @@ Feature: Roles
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get all users of a role returns "Not found" response
     Given new "ListRoleUsers" request
-    And request contains "role_id" parameter from "<PATH>"
+    And request contains "role_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
@@ -106,7 +106,7 @@ Feature: Roles
   @generated @skip @team:DataDog/team-aaa
   Scenario: Grant permission to a role returns "Bad Request" response
     Given new "AddPermissionToRole" request
-    And request contains "role_id" parameter from "<PATH>"
+    And request contains "role_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": null, "type": "permissions"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -114,7 +114,7 @@ Feature: Roles
   @generated @skip @team:DataDog/team-aaa
   Scenario: Grant permission to a role returns "Not found" response
     Given new "AddPermissionToRole" request
-    And request contains "role_id" parameter from "<PATH>"
+    And request contains "role_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": null, "type": "permissions"}}
     When the request is sent
     Then the response status is 404 Not found
@@ -132,7 +132,7 @@ Feature: Roles
   @generated @skip @team:DataDog/team-aaa
   Scenario: List permissions for a role returns "Not found" response
     Given new "ListRolePermissions" request
-    And request contains "role_id" parameter from "<PATH>"
+    And request contains "role_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
@@ -172,7 +172,7 @@ Feature: Roles
   @generated @skip @team:DataDog/team-aaa
   Scenario: Remove a user from a role returns "Bad Request" response
     Given new "RemoveUserFromRole" request
-    And request contains "role_id" parameter from "<PATH>"
+    And request contains "role_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -180,7 +180,7 @@ Feature: Roles
   @generated @skip @team:DataDog/team-aaa
   Scenario: Remove a user from a role returns "Not found" response
     Given new "RemoveUserFromRole" request
-    And request contains "role_id" parameter from "<PATH>"
+    And request contains "role_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 404 Not found
@@ -229,7 +229,7 @@ Feature: Roles
   @generated @skip @team:DataDog/team-aaa
   Scenario: Update a role returns "Bad Request" response
     Given new "UpdateRole" request
-    And request contains "role_id" parameter from "<PATH>"
+    And request contains "role_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -264,7 +264,7 @@ Feature: Roles
   @generated @skip @team:DataDog/team-aaa
   Scenario: Update a role returns "Unprocessable Entity" response
     Given new "UpdateRole" request
-    And request contains "role_id" parameter from "<PATH>"
+    And request contains "role_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity

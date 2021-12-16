@@ -40,7 +40,7 @@ Feature: Webhooks Integration
   @generated @skip @team:Datadog/web-integrations
   Scenario: Delete a custom variable returns "Item Not Found" response
     Given new "DeleteWebhooksIntegrationCustomVariable" request
-    And request contains "custom_variable_name" parameter from "<PATH>"
+    And request contains "custom_variable_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Item Not Found
 
@@ -55,7 +55,7 @@ Feature: Webhooks Integration
   @generated @skip @team:Datadog/web-integrations
   Scenario: Delete a webhook returns "Item Not Found" response
     Given new "DeleteWebhooksIntegration" request
-    And request contains "webhook_name" parameter from "<PATH>"
+    And request contains "webhook_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Item Not Found
 
@@ -70,35 +70,35 @@ Feature: Webhooks Integration
   @generated @skip @team:Datadog/web-integrations
   Scenario: Get a custom variable returns "Bad Request" response
     Given new "GetWebhooksIntegrationCustomVariable" request
-    And request contains "custom_variable_name" parameter from "<PATH>"
+    And request contains "custom_variable_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: Get a custom variable returns "Item Not Found" response
     Given new "GetWebhooksIntegrationCustomVariable" request
-    And request contains "custom_variable_name" parameter from "<PATH>"
+    And request contains "custom_variable_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Item Not Found
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: Get a custom variable returns "OK" response
     Given new "GetWebhooksIntegrationCustomVariable" request
-    And request contains "custom_variable_name" parameter from "<PATH>"
+    And request contains "custom_variable_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: Get a webhook integration returns "Bad Request" response
     Given new "GetWebhooksIntegration" request
-    And request contains "webhook_name" parameter from "<PATH>"
+    And request contains "webhook_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: Get a webhook integration returns "Item Not Found" response
     Given new "GetWebhooksIntegration" request
-    And request contains "webhook_name" parameter from "<PATH>"
+    And request contains "webhook_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Item Not Found
 
@@ -113,7 +113,7 @@ Feature: Webhooks Integration
   @generated @skip @team:Datadog/web-integrations
   Scenario: Update a custom variable returns "Bad Request" response
     Given new "UpdateWebhooksIntegrationCustomVariable" request
-    And request contains "custom_variable_name" parameter from "<PATH>"
+    And request contains "custom_variable_name" parameter from "REPLACE.ME"
     And body with value {"is_secret": null, "name": "CUSTOM_VARIABLE_NAME", "value": "CUSTOM_VARIABLE_VALUE"}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -121,7 +121,7 @@ Feature: Webhooks Integration
   @generated @skip @team:Datadog/web-integrations
   Scenario: Update a custom variable returns "Item Not Found" response
     Given new "UpdateWebhooksIntegrationCustomVariable" request
-    And request contains "custom_variable_name" parameter from "<PATH>"
+    And request contains "custom_variable_name" parameter from "REPLACE.ME"
     And body with value {"is_secret": null, "name": "CUSTOM_VARIABLE_NAME", "value": "CUSTOM_VARIABLE_VALUE"}
     When the request is sent
     Then the response status is 404 Item Not Found
@@ -138,7 +138,7 @@ Feature: Webhooks Integration
   @generated @skip @team:Datadog/web-integrations
   Scenario: Update a webhook returns "Bad Request" response
     Given new "UpdateWebhooksIntegration" request
-    And request contains "webhook_name" parameter from "<PATH>"
+    And request contains "webhook_name" parameter from "REPLACE.ME"
     And body with value {"custom_headers": null, "encode_as": "json", "name": "WEBHOOK_NAME", "payload": null, "url": "https://example.com/webhook"}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -146,7 +146,7 @@ Feature: Webhooks Integration
   @generated @skip @team:Datadog/web-integrations
   Scenario: Update a webhook returns "Item Not Found" response
     Given new "UpdateWebhooksIntegration" request
-    And request contains "webhook_name" parameter from "<PATH>"
+    And request contains "webhook_name" parameter from "REPLACE.ME"
     And body with value {"custom_headers": null, "encode_as": "json", "name": "WEBHOOK_NAME", "payload": null, "url": "https://example.com/webhook"}
     When the request is sent
     Then the response status is 404 Item Not Found

@@ -37,7 +37,7 @@ Feature: Incident Teams
   Scenario: Delete an existing incident team returns "Bad Request" response
     Given operation "DeleteIncidentTeam" enabled
     And new "DeleteIncidentTeam" request
-    And request contains "team_id" parameter from "<PATH>"
+    And request contains "team_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -45,7 +45,7 @@ Feature: Incident Teams
   Scenario: Delete an existing incident team returns "Not Found" response
     Given operation "DeleteIncidentTeam" enabled
     And new "DeleteIncidentTeam" request
-    And request contains "team_id" parameter from "<PATH>"
+    And request contains "team_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -87,7 +87,7 @@ Feature: Incident Teams
   Scenario: Get details of an incident team returns "Bad Request" response
     Given operation "GetIncidentTeam" enabled
     And new "GetIncidentTeam" request
-    And request contains "team_id" parameter from "<PATH>"
+    And request contains "team_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -95,7 +95,7 @@ Feature: Incident Teams
   Scenario: Get details of an incident team returns "Not Found" response
     Given operation "GetIncidentTeam" enabled
     And new "GetIncidentTeam" request
-    And request contains "team_id" parameter from "<PATH>"
+    And request contains "team_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -113,7 +113,7 @@ Feature: Incident Teams
   Scenario: Update an existing incident team returns "Bad Request" response
     Given operation "UpdateIncidentTeam" enabled
     And new "UpdateIncidentTeam" request
-    And request contains "team_id" parameter from "<PATH>"
+    And request contains "team_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"name": "team name"}, "id": "00000000-0000-0000-0000-000000000000", "type": "teams"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -122,7 +122,7 @@ Feature: Incident Teams
   Scenario: Update an existing incident team returns "Not Found" response
     Given operation "UpdateIncidentTeam" enabled
     And new "UpdateIncidentTeam" request
-    And request contains "team_id" parameter from "<PATH>"
+    And request contains "team_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"name": "team name"}, "id": "00000000-0000-0000-0000-000000000000", "type": "teams"}}
     When the request is sent
     Then the response status is 404 Not Found

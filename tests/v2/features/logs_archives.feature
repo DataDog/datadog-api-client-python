@@ -26,21 +26,21 @@ Feature: Logs Archives
   @generated @skip @team:DataDog/logs-backend
   Scenario: Delete an archive returns "Bad Request" response
     Given new "DeleteLogsArchive" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/logs-backend
   Scenario: Delete an archive returns "Not found" response
     Given new "DeleteLogsArchive" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
   @generated @skip @team:DataDog/logs-backend
   Scenario: Delete an archive returns "OK" response
     Given new "DeleteLogsArchive" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 OK
 
@@ -53,21 +53,21 @@ Feature: Logs Archives
   @generated @skip @team:DataDog/logs-backend
   Scenario: Get an archive returns "Bad Request" response
     Given new "GetLogsArchive" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/logs-backend
   Scenario: Get an archive returns "Not found" response
     Given new "GetLogsArchive" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
   @generated @skip @team:DataDog/logs-backend
   Scenario: Get an archive returns "OK" response
     Given new "GetLogsArchive" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -80,7 +80,7 @@ Feature: Logs Archives
   @generated @skip @team:DataDog/logs-backend
   Scenario: Grant role to an archive returns "Bad Request" response
     Given new "AddReadRoleToArchive" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -88,7 +88,7 @@ Feature: Logs Archives
   @generated @skip @team:DataDog/logs-backend
   Scenario: Grant role to an archive returns "Not found" response
     Given new "AddReadRoleToArchive" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}}
     When the request is sent
     Then the response status is 404 Not found
@@ -96,7 +96,7 @@ Feature: Logs Archives
   @generated @skip @team:DataDog/logs-backend
   Scenario: Grant role to an archive returns "OK" response
     Given new "AddReadRoleToArchive" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}}
     When the request is sent
     Then the response status is 204 OK
@@ -104,28 +104,28 @@ Feature: Logs Archives
   @generated @skip @team:DataDog/logs-backend
   Scenario: List read roles for an archive returns "Bad Request" response
     Given new "ListArchiveReadRoles" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/logs-backend
   Scenario: List read roles for an archive returns "Not found" response
     Given new "ListArchiveReadRoles" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
   @generated @skip @team:DataDog/logs-backend
   Scenario: List read roles for an archive returns "OK" response
     Given new "ListArchiveReadRoles" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/logs-backend
   Scenario: Revoke role from an archive returns "Bad Request" response
     Given new "RemoveRoleFromArchive" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -133,7 +133,7 @@ Feature: Logs Archives
   @generated @skip @team:DataDog/logs-backend
   Scenario: Revoke role from an archive returns "Not found" response
     Given new "RemoveRoleFromArchive" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}}
     When the request is sent
     Then the response status is 404 Not found
@@ -141,7 +141,7 @@ Feature: Logs Archives
   @generated @skip @team:DataDog/logs-backend
   Scenario: Revoke role from an archive returns "OK" response
     Given new "RemoveRoleFromArchive" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}}
     When the request is sent
     Then the response status is 204 OK
@@ -149,7 +149,7 @@ Feature: Logs Archives
   @generated @skip @team:DataDog/logs-backend
   Scenario: Update an archive returns "Bad Request" response
     Given new "UpdateLogsArchive" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"destination": {"container": "container-name", "integration": {"client_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa", "tenant_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa"}, "path": null, "region": null, "storage_account": "account-name", "type": "azure"}, "include_tags": false, "name": "Nginx Archive", "query": "source:nginx", "rehydration_tags": ["team:intake", "team:app"]}, "type": "archives"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -157,7 +157,7 @@ Feature: Logs Archives
   @generated @skip @team:DataDog/logs-backend
   Scenario: Update an archive returns "Not found" response
     Given new "UpdateLogsArchive" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"destination": {"container": "container-name", "integration": {"client_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa", "tenant_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa"}, "path": null, "region": null, "storage_account": "account-name", "type": "azure"}, "include_tags": false, "name": "Nginx Archive", "query": "source:nginx", "rehydration_tags": ["team:intake", "team:app"]}, "type": "archives"}}
     When the request is sent
     Then the response status is 404 Not found
@@ -165,7 +165,7 @@ Feature: Logs Archives
   @generated @skip @team:DataDog/logs-backend
   Scenario: Update an archive returns "OK" response
     Given new "UpdateLogsArchive" request
-    And request contains "archive_id" parameter from "<PATH>"
+    And request contains "archive_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"destination": {"container": "container-name", "integration": {"client_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa", "tenant_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa"}, "path": null, "region": null, "storage_account": "account-name", "type": "azure"}, "include_tags": false, "name": "Nginx Archive", "query": "source:nginx", "rehydration_tags": ["team:intake", "team:app"]}, "type": "archives"}}
     When the request is sent
     Then the response status is 200 OK

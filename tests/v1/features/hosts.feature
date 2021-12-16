@@ -35,7 +35,7 @@ Feature: Hosts
   @generated @skip @team:DataDog/core-index
   Scenario: Mute a host returns "Invalid Parameter Error" response
     Given new "MuteHost" request
-    And request contains "host_name" parameter from "<PATH>"
+    And request contains "host_name" parameter from "REPLACE.ME"
     And body with value {"end": 1579098130, "message": "Muting this host for a test!", "override": false}
     When the request is sent
     Then the response status is 400 Invalid Parameter Error
@@ -43,7 +43,7 @@ Feature: Hosts
   @generated @skip @team:DataDog/core-index
   Scenario: Mute a host returns "OK" response
     Given new "MuteHost" request
-    And request contains "host_name" parameter from "<PATH>"
+    And request contains "host_name" parameter from "REPLACE.ME"
     And body with value {"end": 1579098130, "message": "Muting this host for a test!", "override": false}
     When the request is sent
     Then the response status is 200 OK
@@ -51,13 +51,13 @@ Feature: Hosts
   @generated @skip @team:DataDog/core-index
   Scenario: Unmute a host returns "Invalid Parameter Error" response
     Given new "UnmuteHost" request
-    And request contains "host_name" parameter from "<PATH>"
+    And request contains "host_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Invalid Parameter Error
 
   @generated @skip @team:DataDog/core-index
   Scenario: Unmute a host returns "OK" response
     Given new "UnmuteHost" request
-    And request contains "host_name" parameter from "<PATH>"
+    And request contains "host_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
