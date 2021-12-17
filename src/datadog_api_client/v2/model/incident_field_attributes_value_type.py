@@ -46,10 +46,10 @@ class IncidentFieldAttributesValueType(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Type of the single value field definitions. If omitted defaults to "multiselect". Must be one of ["multiselect", "textarray", "metrictag", "autocomplete"].
+            args[0] (str): Type of the multiple value field definitions. If omitted defaults to "multiselect". Must be one of ["multiselect", "textarray", "metrictag", "autocomplete"].
 
         Keyword Args:
-            value (str): Type of the single value field definitions. If omitted defaults to "multiselect". Must be one of ["multiselect", "textarray", "metrictag", "autocomplete"].
+            value (str): Type of the multiple value field definitions. If omitted defaults to "multiselect". Must be one of ["multiselect", "textarray", "metrictag", "autocomplete"].
         """
         super().__init__(kwargs)
 
