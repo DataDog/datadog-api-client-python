@@ -105,6 +105,30 @@ If you want to enable requests tracing, set the `debug` flag on your configurati
 configuration.debug = True
 ```
 
+### Asyncio support
+
+The library supports asynchronous operations when using `AsyncApiClient` for the transport. When that client is used,
+the API methods will then return coroutines that you can wait for.
+
+To make async support available, you need to install the extra `async` qualifiers during installation: `pip install datadog-api-client[async]`.
+
+
+```python
+import asyncio
+
+from datadog_api_client.v1 import Configuration, AsyncApiClient
+from datadog_api_client.v1.api import dashboards_api
+
+async def main():
+    configuration = Configuration()
+    async with AsyncApiClient(configuration) as api_client:
+        api_instance = dashboards_api.DashboardsApi(api_client)
+        dashbooards = await api_instance.list_dashboards()
+        print(dashbooards)
+
+asyncio.run(main())
+```
+
 ## Documentation for API Endpoints and Models
 
 Documentation for API endpoints and models can be found under the docs subdirectories, in [v1](/docs/v1#documentation-for-api-endpoints) and [v2](/docs/v2#documentation-for-api-endpoints).
