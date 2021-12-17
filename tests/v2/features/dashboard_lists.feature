@@ -7,7 +7,7 @@ Feature: Dashboard Lists
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
     And an instance of "DashboardLists" API
-    And request contains "dashboard_list_id" parameter from "<PATH>"
+    And request contains "dashboard_list_id" parameter from "REPLACE.ME"
 
   @generated @skip @team:DataDog/dashboards
   Scenario: Add Items to a Dashboard List returns "Bad Request" response

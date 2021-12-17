@@ -37,7 +37,7 @@ Feature: Incident Services
   Scenario: Delete an existing incident service returns "Bad Request" response
     Given operation "DeleteIncidentService" enabled
     And new "DeleteIncidentService" request
-    And request contains "service_id" parameter from "<PATH>"
+    And request contains "service_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -45,7 +45,7 @@ Feature: Incident Services
   Scenario: Delete an existing incident service returns "Not Found" response
     Given operation "DeleteIncidentService" enabled
     And new "DeleteIncidentService" request
-    And request contains "service_id" parameter from "<PATH>"
+    And request contains "service_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -87,7 +87,7 @@ Feature: Incident Services
   Scenario: Get details of an incident service returns "Bad Request" response
     Given operation "GetIncidentService" enabled
     And new "GetIncidentService" request
-    And request contains "service_id" parameter from "<PATH>"
+    And request contains "service_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -95,7 +95,7 @@ Feature: Incident Services
   Scenario: Get details of an incident service returns "Not Found" response
     Given operation "GetIncidentService" enabled
     And new "GetIncidentService" request
-    And request contains "service_id" parameter from "<PATH>"
+    And request contains "service_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -113,7 +113,7 @@ Feature: Incident Services
   Scenario: Update an existing incident service returns "Bad Request" response
     Given operation "UpdateIncidentService" enabled
     And new "UpdateIncidentService" request
-    And request contains "service_id" parameter from "<PATH>"
+    And request contains "service_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"name": "an example service name"}, "id": "00000000-0000-0000-0000-000000000000", "type": "services"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -122,7 +122,7 @@ Feature: Incident Services
   Scenario: Update an existing incident service returns "Not Found" response
     Given operation "UpdateIncidentService" enabled
     And new "UpdateIncidentService" request
-    And request contains "service_id" parameter from "<PATH>"
+    And request contains "service_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"name": "an example service name"}, "id": "00000000-0000-0000-0000-000000000000", "type": "services"}}
     When the request is sent
     Then the response status is 404 Not Found

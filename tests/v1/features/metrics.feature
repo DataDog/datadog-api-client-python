@@ -17,7 +17,7 @@ Feature: Metrics
   Scenario: Edit metric metadata returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdateMetricMetadata" request
-    And request contains "metric_name" parameter from "<PATH>"
+    And request contains "metric_name" parameter from "REPLACE.ME"
     And body with value {"description": null, "per_unit": "second", "short_name": null, "statsd_interval": null, "type": "count", "unit": "byte"}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -26,7 +26,7 @@ Feature: Metrics
   Scenario: Edit metric metadata returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdateMetricMetadata" request
-    And request contains "metric_name" parameter from "<PATH>"
+    And request contains "metric_name" parameter from "REPLACE.ME"
     And body with value {"description": null, "per_unit": "second", "short_name": null, "statsd_interval": null, "type": "count", "unit": "byte"}
     When the request is sent
     Then the response status is 404 Not Found
@@ -35,7 +35,7 @@ Feature: Metrics
   Scenario: Edit metric metadata returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdateMetricMetadata" request
-    And request contains "metric_name" parameter from "<PATH>"
+    And request contains "metric_name" parameter from "REPLACE.ME"
     And body with value {"description": null, "per_unit": "second", "short_name": null, "statsd_interval": null, "type": "count", "unit": "byte"}
     When the request is sent
     Then the response status is 200 OK
@@ -58,7 +58,7 @@ Feature: Metrics
   Scenario: Get metric metadata returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "GetMetricMetadata" request
-    And request contains "metric_name" parameter from "<PATH>"
+    And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -66,7 +66,7 @@ Feature: Metrics
   Scenario: Get metric metadata returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "GetMetricMetadata" request
-    And request contains "metric_name" parameter from "<PATH>"
+    And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 

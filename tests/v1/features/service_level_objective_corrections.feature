@@ -50,7 +50,7 @@ Feature: Service Level Objective Corrections
   Scenario: Delete an SLO correction returns "Not found" response
     Given operation "DeleteSLOCorrection" enabled
     And new "DeleteSLOCorrection" request
-    And request contains "slo_correction_id" parameter from "<PATH>"
+    And request contains "slo_correction_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
@@ -58,7 +58,7 @@ Feature: Service Level Objective Corrections
   Scenario: Delete an SLO correction returns "OK" response
     Given operation "DeleteSLOCorrection" enabled
     And new "DeleteSLOCorrection" request
-    And request contains "slo_correction_id" parameter from "<PATH>"
+    And request contains "slo_correction_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 OK
 
@@ -75,7 +75,7 @@ Feature: Service Level Objective Corrections
   Scenario: Get an SLO correction for an SLO returns "Bad Request" response
     Given operation "GetSLOCorrection" enabled
     And new "GetSLOCorrection" request
-    And request contains "slo_correction_id" parameter from "<PATH>"
+    And request contains "slo_correction_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -104,7 +104,7 @@ Feature: Service Level Objective Corrections
   Scenario: Update an SLO correction returns "Not Found" response
     Given operation "UpdateSLOCorrection" enabled
     And new "UpdateSLOCorrection" request
-    And request contains "slo_correction_id" parameter from "<PATH>"
+    And request contains "slo_correction_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": null, "duration": 3600, "end": 1600000000, "rrule": "RRULE:FREQ=DAILY;INTERVAL=10;COUNT=5", "start": 1600000000, "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 404 Not Found

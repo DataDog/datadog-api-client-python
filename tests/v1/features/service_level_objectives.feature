@@ -62,7 +62,7 @@ Feature: Service Level Objectives
   @generated @skip @team:DataDog/slo-app
   Scenario: Delete an SLO returns "Conflict" response
     Given new "DeleteSLO" request
-    And request contains "slo_id" parameter from "<PATH>"
+    And request contains "slo_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -85,7 +85,7 @@ Feature: Service Level Objectives
   Scenario: Get Corrections For an SLO returns "Bad Request" response
     Given operation "GetSLOCorrections" enabled
     And new "GetSLOCorrections" request
-    And request contains "slo_id" parameter from "<PATH>"
+    And request contains "slo_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -93,7 +93,7 @@ Feature: Service Level Objectives
   Scenario: Get Corrections For an SLO returns "Not Found" response
     Given operation "GetSLOCorrections" enabled
     And new "GetSLOCorrections" request
-    And request contains "slo_id" parameter from "<PATH>"
+    And request contains "slo_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -129,14 +129,14 @@ Feature: Service Level Objectives
   @generated @skip @team:DataDog/slo-app
   Scenario: Get an SLO's details returns "Not found" response
     Given new "GetSLO" request
-    And request contains "slo_id" parameter from "<PATH>"
+    And request contains "slo_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
   @generated @skip @team:DataDog/slo-app
   Scenario: Get an SLO's details returns "OK" response
     Given new "GetSLO" request
-    And request contains "slo_id" parameter from "<PATH>"
+    And request contains "slo_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -144,7 +144,7 @@ Feature: Service Level Objectives
   Scenario: Get an SLO's history returns "Bad Request" response
     Given operation "GetSLOHistory" enabled
     And new "GetSLOHistory" request
-    And request contains "slo_id" parameter from "<PATH>"
+    And request contains "slo_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -152,7 +152,7 @@ Feature: Service Level Objectives
   Scenario: Get an SLO's history returns "Not Found" response
     Given operation "GetSLOHistory" enabled
     And new "GetSLOHistory" request
-    And request contains "slo_id" parameter from "<PATH>"
+    And request contains "slo_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -160,7 +160,7 @@ Feature: Service Level Objectives
   Scenario: Get an SLO's history returns "OK" response
     Given operation "GetSLOHistory" enabled
     And new "GetSLOHistory" request
-    And request contains "slo_id" parameter from "<PATH>"
+    And request contains "slo_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -176,7 +176,7 @@ Feature: Service Level Objectives
   @generated @skip @team:DataDog/slo-app
   Scenario: Update an SLO returns "Not Found" response
     Given new "UpdateSLO" request
-    And request contains "slo_id" parameter from "<PATH>"
+    And request contains "slo_id" parameter from "REPLACE.ME"
     And body with value null
     When the request is sent
     Then the response status is 404 Not Found
@@ -184,7 +184,7 @@ Feature: Service Level Objectives
   @generated @skip @team:DataDog/slo-app
   Scenario: Update an SLO returns "OK" response
     Given new "UpdateSLO" request
-    And request contains "slo_id" parameter from "<PATH>"
+    And request contains "slo_id" parameter from "REPLACE.ME"
     And body with value null
     When the request is sent
     Then the response status is 200 OK

@@ -33,7 +33,7 @@ Feature: Logs Metrics
   @generated @skip @team:DataDog/logs-backend
   Scenario: Delete a log-based metric returns "Not Found" response
     Given new "DeleteLogsMetric" request
-    And request contains "metric_id" parameter from "<PATH>"
+    And request contains "metric_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -48,7 +48,7 @@ Feature: Logs Metrics
   @generated @skip @team:DataDog/logs-backend
   Scenario: Get a log-based metric returns "Not Found" response
     Given new "GetLogsMetric" request
-    And request contains "metric_id" parameter from "<PATH>"
+    And request contains "metric_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -71,7 +71,7 @@ Feature: Logs Metrics
   @generated @skip @team:DataDog/logs-backend
   Scenario: Update a log-based metric returns "Bad Request" response
     Given new "UpdateLogsMetric" request
-    And request contains "metric_id" parameter from "<PATH>"
+    And request contains "metric_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"filter": {"query": "service:web* AND @http.status_code:[200 TO 299]"}, "group_by": [{"path": "@http.status_code", "tag_name": "status_code"}]}, "type": "logs_metrics"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -79,7 +79,7 @@ Feature: Logs Metrics
   @generated @skip @team:DataDog/logs-backend
   Scenario: Update a log-based metric returns "Not Found" response
     Given new "UpdateLogsMetric" request
-    And request contains "metric_id" parameter from "<PATH>"
+    And request contains "metric_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"filter": {"query": "service:web* AND @http.status_code:[200 TO 299]"}, "group_by": [{"path": "@http.status_code", "tag_name": "status_code"}]}, "type": "logs_metrics"}}
     When the request is sent
     Then the response status is 404 Not Found

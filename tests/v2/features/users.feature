@@ -48,7 +48,7 @@ Feature: Users
   @generated @skip @team:DataDog/team-aaa
   Scenario: Disable a user returns "Not found" response
     Given new "DisableUser" request
-    And request contains "user_id" parameter from "<PATH>"
+    And request contains "user_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
@@ -63,7 +63,7 @@ Feature: Users
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get a user invitation returns "Not found" response
     Given new "GetInvitation" request
-    And request contains "user_invitation_uuid" parameter from "<PATH>"
+    And request contains "user_invitation_uuid" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
@@ -79,21 +79,21 @@ Feature: Users
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get a user organization returns "Not found" response
     Given new "ListUserOrganizations" request
-    And request contains "user_id" parameter from "<PATH>"
+    And request contains "user_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get a user organization returns "OK" response
     Given new "ListUserOrganizations" request
-    And request contains "user_id" parameter from "<PATH>"
+    And request contains "user_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get a user permissions returns "Not found" response
     Given new "ListUserPermissions" request
-    And request contains "user_id" parameter from "<PATH>"
+    And request contains "user_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
@@ -116,14 +116,14 @@ Feature: Users
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get user details returns "Not found" response
     Given new "GetUser" request
-    And request contains "user_id" parameter from "<PATH>"
+    And request contains "user_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get user details returns "OK for get user" response
     Given new "GetUser" request
-    And request contains "user_id" parameter from "<PATH>"
+    And request contains "user_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK for get user
 
@@ -161,7 +161,7 @@ Feature: Users
   @generated @skip @team:DataDog/team-aaa
   Scenario: Update a user returns "Bad Request" response
     Given new "UpdateUser" request
-    And request contains "user_id" parameter from "<PATH>"
+    And request contains "user_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -199,7 +199,7 @@ Feature: Users
   @generated @skip @team:DataDog/team-aaa
   Scenario: Update a user returns "Unprocessable Entity" response
     Given new "UpdateUser" request
-    And request contains "user_id" parameter from "<PATH>"
+    And request contains "user_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity

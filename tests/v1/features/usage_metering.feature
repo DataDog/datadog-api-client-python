@@ -361,7 +361,7 @@ Feature: Usage Metering
   Scenario: Get specified daily custom reports returns "Not Found" response
     Given operation "GetSpecifiedDailyCustomReports" enabled
     And new "GetSpecifiedDailyCustomReports" request
-    And request contains "report_id" parameter from "<PATH>"
+    And request contains "report_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -369,7 +369,7 @@ Feature: Usage Metering
   Scenario: Get specified daily custom reports returns "OK" response
     Given operation "GetSpecifiedDailyCustomReports" enabled
     And new "GetSpecifiedDailyCustomReports" request
-    And request contains "report_id" parameter from "<PATH>"
+    And request contains "report_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -377,7 +377,7 @@ Feature: Usage Metering
   Scenario: Get specified monthly custom reports returns "Bad Request" response
     Given operation "GetSpecifiedMonthlyCustomReports" enabled
     And new "GetSpecifiedMonthlyCustomReports" request
-    And request contains "report_id" parameter from "<PATH>"
+    And request contains "report_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -385,7 +385,7 @@ Feature: Usage Metering
   Scenario: Get specified monthly custom reports returns "Not Found" response
     Given operation "GetSpecifiedMonthlyCustomReports" enabled
     And new "GetSpecifiedMonthlyCustomReports" request
-    And request contains "report_id" parameter from "<PATH>"
+    And request contains "report_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -393,7 +393,7 @@ Feature: Usage Metering
   Scenario: Get specified monthly custom reports returns "OK" response
     Given operation "GetSpecifiedMonthlyCustomReports" enabled
     And new "GetSpecifiedMonthlyCustomReports" request
-    And request contains "report_id" parameter from "<PATH>"
+    And request contains "report_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 

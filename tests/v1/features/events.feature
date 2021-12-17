@@ -13,7 +13,7 @@ Feature: Events
   Scenario: Get an event returns "Item Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "GetEvent" request
-    And request contains "event_id" parameter from "<PATH>"
+    And request contains "event_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Item Not Found
 
@@ -21,7 +21,7 @@ Feature: Events
   Scenario: Get an event returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "GetEvent" request
-    And request contains "event_id" parameter from "<PATH>"
+    And request contains "event_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 

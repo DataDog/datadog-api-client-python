@@ -31,35 +31,35 @@ Feature: Users
   @generated @skip @team:DataDog/team-aaa
   Scenario: Disable a user returns "Bad Request" response
     Given new "DisableUser" request
-    And request contains "user_handle" parameter from "<PATH>"
+    And request contains "user_handle" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Disable a user returns "Not Found" response
     Given new "DisableUser" request
-    And request contains "user_handle" parameter from "<PATH>"
+    And request contains "user_handle" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Disable a user returns "User disabled" response
     Given new "DisableUser" request
-    And request contains "user_handle" parameter from "<PATH>"
+    And request contains "user_handle" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 User disabled
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get user details returns "Not Found" response
     Given new "GetUser" request
-    And request contains "user_handle" parameter from "<PATH>"
+    And request contains "user_handle" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get user details returns "OK for get user" response
     Given new "GetUser" request
-    And request contains "user_handle" parameter from "<PATH>"
+    And request contains "user_handle" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK for get user
 
@@ -72,7 +72,7 @@ Feature: Users
   @generated @skip @team:DataDog/team-aaa
   Scenario: Update a user returns "Bad Request" response
     Given new "UpdateUser" request
-    And request contains "user_handle" parameter from "<PATH>"
+    And request contains "user_handle" parameter from "REPLACE.ME"
     And body with value {"access_role": "st", "disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -80,7 +80,7 @@ Feature: Users
   @generated @skip @team:DataDog/team-aaa
   Scenario: Update a user returns "Not Found" response
     Given new "UpdateUser" request
-    And request contains "user_handle" parameter from "<PATH>"
+    And request contains "user_handle" parameter from "REPLACE.ME"
     And body with value {"access_role": "st", "disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
     When the request is sent
     Then the response status is 404 Not Found
@@ -88,7 +88,7 @@ Feature: Users
   @generated @skip @team:DataDog/team-aaa
   Scenario: Update a user returns "User updated" response
     Given new "UpdateUser" request
-    And request contains "user_handle" parameter from "<PATH>"
+    And request contains "user_handle" parameter from "REPLACE.ME"
     And body with value {"access_role": "st", "disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
     When the request is sent
     Then the response status is 200 User updated

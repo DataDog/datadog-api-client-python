@@ -48,7 +48,7 @@ Feature: Monitors
   @generated @skip @team:DataDog/monitor-app
   Scenario: Delete a monitor returns "Bad Request" response
     Given new "DeleteMonitor" request
-    And request contains "monitor_id" parameter from "<PATH>"
+    And request contains "monitor_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -70,7 +70,7 @@ Feature: Monitors
   @generated @skip @team:DataDog/monitor-app
   Scenario: Edit a monitor returns "Bad Request" response
     Given new "UpdateMonitor" request
-    And request contains "monitor_id" parameter from "<PATH>"
+    And request contains "monitor_id" parameter from "REPLACE.ME"
     And body with value {"message": null, "name": null, "options": {"enable_logs_sample": null, "escalation_message": "none", "evaluation_delay": null, "groupby_simple_monitor": null, "include_tags": true, "locked": null, "min_failure_duration": 0, "min_location_failed": 1, "new_group_delay": null, "new_host_delay": 300, "no_data_timeframe": null, "notify_audit": false, "notify_no_data": false, "renotify_interval": "none", "renotify_occurrences": null, "renotify_statuses": ["alert"], "require_full_window": null, "silenced": null, "synthetics_check_id": null, "threshold_windows": {"recovery_window": null, "trigger_window": null}, "thresholds": {"critical": null, "critical_recovery": null, "ok": null, "unknown": null, "warning": null, "warning_recovery": null}, "timeout_h": "none"}, "priority": null, "query": null, "restricted_roles": [null], "tags": [null], "type": "query alert"}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -96,7 +96,7 @@ Feature: Monitors
   @generated @skip @team:DataDog/monitor-app
   Scenario: Get a monitor's details returns "Bad Request" response
     Given new "GetMonitor" request
-    And request contains "monitor_id" parameter from "<PATH>"
+    And request contains "monitor_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 

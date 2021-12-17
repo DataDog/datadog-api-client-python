@@ -151,14 +151,14 @@ Feature: Dashboards
   @generated @skip @team:DataDog/dashboards
   Scenario: Delete a dashboard returns "Dashboards Not Found" response
     Given new "DeleteDashboard" request
-    And request contains "dashboard_id" parameter from "<PATH>"
+    And request contains "dashboard_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Dashboards Not Found
 
   @generated @skip @team:DataDog/dashboards
   Scenario: Delete a dashboard returns "OK" response
     Given new "DeleteDashboard" request
-    And request contains "dashboard_id" parameter from "<PATH>"
+    And request contains "dashboard_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -187,14 +187,14 @@ Feature: Dashboards
   @generated @skip @team:DataDog/dashboards
   Scenario: Get a dashboard returns "Item Not Found" response
     Given new "GetDashboard" request
-    And request contains "dashboard_id" parameter from "<PATH>"
+    And request contains "dashboard_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Item Not Found
 
   @generated @skip @team:DataDog/dashboards
   Scenario: Get a dashboard returns "OK" response
     Given new "GetDashboard" request
-    And request contains "dashboard_id" parameter from "<PATH>"
+    And request contains "dashboard_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -230,7 +230,7 @@ Feature: Dashboards
   @generated @skip @team:DataDog/dashboards
   Scenario: Update a dashboard returns "Bad Request" response
     Given new "UpdateDashboard" request
-    And request contains "dashboard_id" parameter from "<PATH>"
+    And request contains "dashboard_id" parameter from "REPLACE.ME"
     And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [null], "reflow_type": "auto", "restricted_roles": [null], "template_variable_presets": [{"name": null, "template_variables": [{"name": null, "value": null}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -238,7 +238,7 @@ Feature: Dashboards
   @generated @skip @team:DataDog/dashboards
   Scenario: Update a dashboard returns "Item Not Found" response
     Given new "UpdateDashboard" request
-    And request contains "dashboard_id" parameter from "<PATH>"
+    And request contains "dashboard_id" parameter from "REPLACE.ME"
     And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [null], "reflow_type": "auto", "restricted_roles": [null], "template_variable_presets": [{"name": null, "template_variables": [{"name": null, "value": null}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 404 Item Not Found
@@ -246,7 +246,7 @@ Feature: Dashboards
   @generated @skip @team:DataDog/dashboards
   Scenario: Update a dashboard returns "OK" response
     Given new "UpdateDashboard" request
-    And request contains "dashboard_id" parameter from "<PATH>"
+    And request contains "dashboard_id" parameter from "REPLACE.ME"
     And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [null], "reflow_type": "auto", "restricted_roles": [null], "template_variable_presets": [{"name": null, "template_variables": [{"name": null, "value": null}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 200 OK

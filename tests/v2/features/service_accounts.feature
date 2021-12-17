@@ -20,7 +20,7 @@ Feature: Service Accounts
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Create an application key for this service account returns "Bad Request" response
-    Given request contains "service_account_id" parameter from "<PATH>"
+    Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "CreateServiceAccountApplicationKey" request
     And body with value {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "type": "application_keys"}}
     When the request is sent
@@ -28,7 +28,7 @@ Feature: Service Accounts
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Create an application key for this service account returns "Created" response
-    Given request contains "service_account_id" parameter from "<PATH>"
+    Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "CreateServiceAccountApplicationKey" request
     And body with value {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "type": "application_keys"}}
     When the request is sent
@@ -46,17 +46,17 @@ Feature: Service Accounts
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Delete an application key for this service account returns "No Content" response
-    Given request contains "service_account_id" parameter from "<PATH>"
+    Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "DeleteServiceAccountApplicationKey" request
-    And request contains "app_key_id" parameter from "<PATH>"
+    And request contains "app_key_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Delete an application key for this service account returns "Not Found" response
-    Given request contains "service_account_id" parameter from "<PATH>"
+    Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "DeleteServiceAccountApplicationKey" request
-    And request contains "app_key_id" parameter from "<PATH>"
+    And request contains "app_key_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -74,27 +74,27 @@ Feature: Service Accounts
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Edit an application key for this service account returns "Bad Request" response
-    Given request contains "service_account_id" parameter from "<PATH>"
+    Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "UpdateServiceAccountApplicationKey" request
-    And request contains "app_key_id" parameter from "<PATH>"
+    And request contains "app_key_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "application_keys"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Edit an application key for this service account returns "Not Found" response
-    Given request contains "service_account_id" parameter from "<PATH>"
+    Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "UpdateServiceAccountApplicationKey" request
-    And request contains "app_key_id" parameter from "<PATH>"
+    And request contains "app_key_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "application_keys"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Edit an application key for this service account returns "OK" response
-    Given request contains "service_account_id" parameter from "<PATH>"
+    Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "UpdateServiceAccountApplicationKey" request
-    And request contains "app_key_id" parameter from "<PATH>"
+    And request contains "app_key_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "application_keys"}}
     When the request is sent
     Then the response status is 200 OK
@@ -120,37 +120,37 @@ Feature: Service Accounts
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get one application key for this service account returns "Not Found" response
-    Given request contains "service_account_id" parameter from "<PATH>"
+    Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "GetServiceAccountApplicationKey" request
-    And request contains "app_key_id" parameter from "<PATH>"
+    And request contains "app_key_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get one application key for this service account returns "OK" response
-    Given request contains "service_account_id" parameter from "<PATH>"
+    Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "GetServiceAccountApplicationKey" request
-    And request contains "app_key_id" parameter from "<PATH>"
+    And request contains "app_key_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: List application keys for this service account returns "Bad Request" response
-    Given request contains "service_account_id" parameter from "<PATH>"
+    Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "ListServiceAccountApplicationKeys" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: List application keys for this service account returns "Not Found" response
-    Given request contains "service_account_id" parameter from "<PATH>"
+    Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "ListServiceAccountApplicationKeys" request
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: List application keys for this service account returns "OK" response
-    Given request contains "service_account_id" parameter from "<PATH>"
+    Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "ListServiceAccountApplicationKeys" request
     When the request is sent
     Then the response status is 200 OK
