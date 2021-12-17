@@ -30,7 +30,7 @@ class SecurityMonitoringSignalAttributes(ModelNormal):
         return {
             "attributes": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
             "message": (str,),
-            "tags": ([bool, date, datetime, dict, float, int, list, str, none_type],),
+            "tags": ([str],),
             "timestamp": (datetime,),
         }
 
@@ -49,7 +49,7 @@ class SecurityMonitoringSignalAttributes(ModelNormal):
         Keyword Args:
             attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional] A JSON object of attributes in the security signal.
             message (str): [optional] The message in the security signal defined by the rule that generated the signal.
-            tags ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional] An array of tags associated with the security signal.
+            tags ([str]): [optional] An array of tags associated with the security signal.
             timestamp (datetime): [optional] The timestamp of the security signal.
         """
         super().__init__(kwargs)
