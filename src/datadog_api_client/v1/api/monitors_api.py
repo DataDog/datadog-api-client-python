@@ -509,7 +509,7 @@ class MonitorsApi(object):
             tags (str): [optional] A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope. For example, `host:host0`.
             monitor_tags (str): [optional] A comma separated list indicating what service and/or custom tags, if any, should be used to filter the list of monitors. Tags created in the Datadog UI automatically have the service key prepended. For example, `service:my-app`.
             with_downtimes (bool): [optional] If this argument is set to true, then the returned data includes all current active downtimes for each monitor.
-            id_offset (int): [optional] Monitor ID offset.
+            id_offset (int): [optional] Use this parameter for paginating through large sets of monitors. Start with a value of zero, make a request, set the value to the last ID of result set, and then repeat until the response is empty.
             page (int): [optional] The page to start paginating from. If this argument is not specified, the request returns all monitors without pagination.
             page_size (int): [optional] The number of monitors to return per page. If the page argument is not specified, the default behavior returns all monitors without a `page_size` limit. However, if page is specified and `page_size` is not, the argument defaults to 100.
             _return_http_data_only (bool): response data without head status
