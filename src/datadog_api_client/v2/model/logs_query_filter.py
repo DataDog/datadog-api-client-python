@@ -47,10 +47,10 @@ class LogsQueryFilter(ModelNormal):
         """LogsQueryFilter - a model defined in OpenAPI
 
         Keyword Args:
-            _from (str): [optional] The minimum time for the requested logs, supports date math and regular timestamps If omitted the server will use the default value of "now-15m".
+            _from (str): [optional] The minimum time for the requested logs, supports date math and regular timestamps (milliseconds). If omitted the server will use the default value of "now-15m".
             indexes ([str]): [optional] For customers with multiple indexes, the indexes to search. Defaults to ['*'] which means all indexes. If omitted the server will use the default value of ["*"].
             query (str): [optional] The search query - following the log search syntax. If omitted the server will use the default value of "*".
-            to (str): [optional] The maximum time for the requested logs, supports date math and regular timestamps If omitted the server will use the default value of "now".
+            to (str): [optional] The maximum time for the requested logs, supports date math and regular timestamps (milliseconds). If omitted the server will use the default value of "now".
         """
         super().__init__(kwargs)
 
