@@ -540,22 +540,22 @@ def undo(package_name, undo_operations, client):
 
         operation_name = snake_case(operation["operationId"])
         method = getattr(api, operation_name)
-        args = []
+        kwargs = {}
         for parameter in operation.get("parameters", []):
             if "source" in parameter:
-                args.append(glom(response, parameter["source"]))
+                kwargs[parameter["name"]] = glom(response, parameter["source"])
             elif "template" in parameter:
                 variables = meta.find_undeclared_variables(Environment().parse(parameter["template"]))
                 ctx = {}
                 for var in variables:
                     ctx[var] = glom(response, var)
-                args.append(json.loads(Template(parameter["template"]).render(**ctx)))
+                kwargs[parameter["name"]] = json.loads(Template(parameter["template"]).render(**ctx))
 
         if operation_name in client.configuration.unstable_operations:
             client.configuration.unstable_operations[operation_name] = True
 
         try:
-            method(*args)
+            method(**kwargs)
         except exceptions.ApiException as e:
             warnings.warn(f"failed undo: {e}")
 
