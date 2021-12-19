@@ -90,7 +90,7 @@ class SLOCorrectionResponseAttributes(ModelNormal):
             end (int): [optional] Ending time of the correction in epoch seconds.
             modified_at (int): [optional] The epoch timestamp of when the correction was modified at
             modifier (SLOCorrectionResponseAttributesModifier): [optional]
-            rrule (str, none_type): [optional] Recurrence rules as defined in the iCalendar RFC 5545.
+            rrule (str, none_type): [optional] The recurrence rules as defined in the iCalendar RFC 5545. The supported rules for SLO corrections are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.
             slo_id (str): [optional] ID of the SLO that this correction will be applied to.
             start (int): [optional] Starting time of the correction in epoch seconds.
             timezone (str): [optional] The timezone to display in the UI for the correction times (defaults to \"UTC\").

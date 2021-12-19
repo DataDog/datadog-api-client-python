@@ -64,7 +64,7 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
             description (str): [optional] Description of the correction being made.
             duration (int): [optional] Length of time (in seconds) for a specified `rrule` recurring SLO correction.
             end (int): [optional] Ending time of the correction in epoch seconds.
-            rrule (str): [optional] Recurrence rules as defined in the iCalendar RFC 5545.
+            rrule (str): [optional] The recurrence rules as defined in the iCalendar RFC 5545. The supported rules for SLO corrections are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.
             start (int): [optional] Starting time of the correction in epoch seconds.
             timezone (str): [optional] The timezone to display in the UI for the correction times (defaults to \"UTC\").
         """

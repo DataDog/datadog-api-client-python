@@ -7610,8 +7610,11 @@ components:
           format: int64
           type: integer
         rrule:
-          description: Recurrence rules as defined in the iCalendar RFC 5545.
-          example: RRULE:FREQ=DAILY;INTERVAL=10;COUNT=5
+          description: 'The recurrence rules as defined in the iCalendar RFC 5545.
+            The supported rules for SLO corrections
+
+            are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.'
+          example: FREQ=DAILY;INTERVAL=10;COUNT=5
           type: string
         slo_id:
           description: ID of the SLO that this correction will be applied to.
@@ -7693,8 +7696,11 @@ components:
               type: string
           type: object
         rrule:
-          description: Recurrence rules as defined in the iCalendar RFC 5545.
-          example: RRULE:FREQ=DAILY;INTERVAL=10;COUNT=5
+          description: 'The recurrence rules as defined in the iCalendar RFC 5545.
+            The supported rules for SLO corrections
+
+            are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.'
+          example: FREQ=DAILY;INTERVAL=10;COUNT=5
           nullable: true
           type: string
         slo_id:
@@ -7752,8 +7758,11 @@ components:
           format: int64
           type: integer
         rrule:
-          description: Recurrence rules as defined in the iCalendar RFC 5545.
-          example: RRULE:FREQ=DAILY;INTERVAL=10;COUNT=5
+          description: 'The recurrence rules as defined in the iCalendar RFC 5545.
+            The supported rules for SLO corrections
+
+            are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.'
+          example: FREQ=DAILY;INTERVAL=10;COUNT=5
           type: string
         start:
           description: Starting time of the correction in epoch seconds.
