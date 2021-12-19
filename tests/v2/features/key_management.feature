@@ -17,14 +17,14 @@ Feature: Key Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Create an API key returns "Created" response
     Given new "CreateAPIKey" request
     And body with value {"data": {"type": "api_keys", "attributes": {"name": "{{ unique }}"}}}
     When the request is sent
     Then the response status is 201 Created
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Create an Application key for current user returns "Created" response
     Given new "CreateCurrentUserApplicationKey" request
     And body with value {"data": {"type": "application_keys", "attributes": {"name": "{{ unique }}"}}}
@@ -46,7 +46,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 201 Created
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Delete an API key returns "No Content" response
     Given there is a valid "api_key" in the system
     And new "DeleteAPIKey" request
@@ -61,7 +61,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Delete an Application key owned by current user returns "No Content" response
     Given there is a valid "application_key" in the system
     And new "DeleteCurrentUserApplicationKey" request
@@ -69,7 +69,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 204 No Content
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Delete an Application key returns "No Content" response
     Given there is a valid "application_key" in the system
     And new "DeleteApplicationKey" request
@@ -121,7 +121,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Edit an API key returns "OK" response
     Given there is a valid "api_key" in the system
     And new "UpdateAPIKey" request
@@ -146,7 +146,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Edit an application key owned by current user returns "OK" response
     Given there is a valid "application_key" in the system
     And new "UpdateCurrentUserApplicationKey" request
@@ -172,7 +172,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Edit an application key returns "OK" response
     Given there is a valid "application_key" in the system
     And new "UpdateApplicationKey" request
@@ -189,7 +189,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Get API key returns "OK" response
     Given there is a valid "api_key" in the system
     And new "GetAPIKey" request
@@ -203,7 +203,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Get all API keys returns "OK" response
     Given there is a valid "api_key" in the system
     And new "ListAPIKeys" request
@@ -211,13 +211,13 @@ Feature: Key Management
     When the request is sent
     Then the response status is 200 OK
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Get all Application keys owned by current user returns "OK" response
     Given new "ListCurrentUserApplicationKeys" request
     When the request is sent
     Then the response status is 200 OK
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Get all Application keys returns "OK" response
     Given there is a valid "application_key" in the system
     And new "ListApplicationKeys" request
@@ -274,7 +274,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Get an application key returns "OK" response
     Given there is a valid "application_key" in the system
     And new "GetApplicationKey" request
@@ -282,7 +282,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 200 OK
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Get one Application key owned by current user returns "OK" response
     Given there is a valid "application_key" in the system
     And new "GetCurrentUserApplicationKey" request

@@ -7,7 +7,7 @@ Feature: Service Accounts
     And a valid "appKeyAuth" key in the system
     And an instance of "ServiceAccounts" API
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Create an app key for this service account returns "Created" response
     Given there is a valid "service_account_user" in the system
     And new "CreateServiceAccountApplicationKey" request
@@ -34,7 +34,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 201 Created
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Delete an app key owned by this service account returns "No Content" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_application_key" for "service_account_user"
@@ -60,7 +60,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 404 Not Found
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Edit an app key owned by this service account returns "OK" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_application_key" for "service_account_user"
@@ -99,7 +99,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 200 OK
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Get all app keys owned by this service account returns "OK" response
     Given there is a valid "service_account_user" in the system
     And new "ListServiceAccountApplicationKeys" request
@@ -107,7 +107,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 200 OK
 
-  @integration-only @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Get one app key owned by this service account returns "OK" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_application_key" for "service_account_user"

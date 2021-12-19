@@ -1,0 +1,140 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Get_all_API_keys_returns_OK_response-1639757122"},"type":"api_keys"}}'
+    headers:
+      accept:
+      - '*/*'
+      connection:
+      - close
+      content-length:
+      - '105'
+      content-type:
+      - application/json
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-spec/scripts/bdd-runner
+      x-datadog-parent-id:
+      - '307687841352567763'
+      x-datadog-trace-id:
+      - '307687841352567763'
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/api_keys
+  response:
+    body:
+      string: '{"data":{"type":"api_keys","attributes":{"created_at":"2021-12-17T16:05:23.095699+00:00","key":"3b2f914da1feb5a9e12fc51683dd7479","last4":"beef","modified_at":"2021-12-17T16:05:23.095699+00:00","name":"Test-Get_all_API_keys_returns_OK_response-1639757122"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"427970f0-27c3-5692-8429-f44151d40394"}}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '487'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Fri, 17 Dec 2021 16:05:23 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-spec/scripts/bdd-runner
+      x-datadog-parent-id:
+      - '307687841352567763'
+      x-datadog-trace-id:
+      - '307687841352567763'
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/api_keys?filter=Test-Get_all_API_keys_returns_OK_response-1639757122
+  response:
+    body:
+      string: '{"meta":{"max_allowed":200,"page":{"total_filtered_count":1}},"data":[{"type":"api_keys","attributes":{"created_at":"2021-12-17T16:05:23.095699+00:00","last4":"beef","modified_at":"2021-12-17T16:05:23.095699+00:00","name":"Test-Get_all_API_keys_returns_OK_response-1639757122"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"427970f0-27c3-5692-8429-f44151d40394"}]}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '509'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Fri, 17 Dec 2021 16:05:23 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-spec/scripts/bdd-runner
+      x-datadog-parent-id:
+      - '307687841352567763'
+      x-datadog-trace-id:
+      - '307687841352567763'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/api_keys/427970f0-27c3-5692-8429-f44151d40394
+  response:
+    body:
+      string: ''
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      date:
+      - Fri, 17 Dec 2021 16:05:24 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 204
+      message: No Content
+version: 1

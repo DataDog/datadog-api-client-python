@@ -1,0 +1,144 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Edit_an_API_key_returns_OK_response-1639757117"},"type":"api_keys"}}'
+    headers:
+      accept:
+      - '*/*'
+      connection:
+      - close
+      content-length:
+      - '104'
+      content-type:
+      - application/json
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-spec/scripts/bdd-runner
+      x-datadog-parent-id:
+      - '307687841352567763'
+      x-datadog-trace-id:
+      - '307687841352567763'
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/api_keys
+  response:
+    body:
+      string: '{"data":{"type":"api_keys","attributes":{"created_at":"2021-12-17T16:05:17.966485+00:00","key":"dead4087c6b3d1ae4b5e22e77a98beef","last4":"beef","modified_at":"2021-12-17T16:05:17.966485+00:00","name":"Test-Edit_an_API_key_returns_OK_response-1639757117"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"cb7af5ff-e3ed-53a2-b519-eae7c2b47468"}}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '486'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Fri, 17 Dec 2021 16:05:17 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"type":"api_keys","id":"cb7af5ff-e3ed-53a2-b519-eae7c2b47468","attributes":{"name":"Test-Edit_an_API_key_returns_OK_response-1639757117"}}}'
+    headers:
+      accept:
+      - '*/*'
+      connection:
+      - close
+      content-length:
+      - '148'
+      content-type:
+      - application/json
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-spec/scripts/bdd-runner
+      x-datadog-parent-id:
+      - '307687841352567763'
+      x-datadog-trace-id:
+      - '307687841352567763'
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/api_keys/cb7af5ff-e3ed-53a2-b519-eae7c2b47468
+  response:
+    body:
+      string: '{"data":{"type":"api_keys","attributes":{"created_at":"2021-12-17T16:05:17.966485+00:00","key":"dead4087c6b3d1ae4b5e22e77a98beef","last4":"beef","modified_at":"2021-12-17T16:05:17.966485+00:00","name":"Test-Edit_an_API_key_returns_OK_response-1639757117"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"cb7af5ff-e3ed-53a2-b519-eae7c2b47468"}}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '486'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Fri, 17 Dec 2021 16:05:18 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-spec/scripts/bdd-runner
+      x-datadog-parent-id:
+      - '307687841352567763'
+      x-datadog-trace-id:
+      - '307687841352567763'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/api_keys/cb7af5ff-e3ed-53a2-b519-eae7c2b47468
+  response:
+    body:
+      string: ''
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      date:
+      - Fri, 17 Dec 2021 16:05:18 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 204
+      message: No Content
+version: 1
