@@ -224,7 +224,7 @@ with ApiClient(configuration) as api_client:
             config_variables=[
                 SyntheticsConfigVariable(
                     example="example_example",
-                    id="id_example",
+                    id="123abcd4-5678-44ab-c234-d56e9999ff22",
                     name="VARIABLE_NAME",
                     pattern="pattern_example",
                     type=SyntheticsConfigVariableType("text"),
@@ -432,7 +432,7 @@ with ApiClient(configuration) as api_client:
             config_variables=[
                 SyntheticsConfigVariable(
                     example="example_example",
-                    id="id_example",
+                    id="123abcd4-5678-44ab-c234-d56e9999ff22",
                     name="VARIABLE_NAME",
                     pattern="pattern_example",
                     type=SyntheticsConfigVariableType("text"),
@@ -1986,7 +1986,7 @@ with ApiClient(configuration) as api_client:
             config_variables=[
                 SyntheticsConfigVariable(
                     example="example_example",
-                    id="id_example",
+                    id="123abcd4-5678-44ab-c234-d56e9999ff22",
                     name="VARIABLE_NAME",
                     pattern="pattern_example",
                     type=SyntheticsConfigVariableType("text"),
@@ -2196,7 +2196,7 @@ with ApiClient(configuration) as api_client:
             config_variables=[
                 SyntheticsConfigVariable(
                     example="example_example",
-                    id="id_example",
+                    id="123abcd4-5678-44ab-c234-d56e9999ff22",
                     name="VARIABLE_NAME",
                     pattern="pattern_example",
                     type=SyntheticsConfigVariableType("text"),
