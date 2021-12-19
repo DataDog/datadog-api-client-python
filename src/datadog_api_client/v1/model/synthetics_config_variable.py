@@ -43,42 +43,44 @@ class SyntheticsConfigVariable(ModelNormal):
         }
 
     attribute_map = {
+        "id": "id",
         "name": "name",
         "type": "type",
         "example": "example",
-        "id": "id",
         "pattern": "pattern",
     }
 
     read_only_vars = {}
 
-    def __init__(self, name, type, *args, **kwargs):
+    def __init__(self, id, name, type, *args, **kwargs):
         """SyntheticsConfigVariable - a model defined in OpenAPI
 
         Args:
+            id (str): ID of the variable for global variables.
             name (str): Name of the variable.
             type (SyntheticsConfigVariableType):
 
         Keyword Args:
             example (str): [optional] Example for the variable.
-            id (str): [optional] ID of the variable for global variables.
             pattern (str): [optional] Pattern of the variable.
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
+        self.id = id
         self.name = name
         self.type = type
 
     @classmethod
-    def _from_openapi_data(cls, name, type, *args, **kwargs):
+    def _from_openapi_data(cls, id, name, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsConfigVariable, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
 
+        self.id = id
         self.name = name
         self.type = type
         return self
