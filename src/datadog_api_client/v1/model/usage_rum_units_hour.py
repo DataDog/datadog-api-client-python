@@ -28,10 +28,7 @@ class UsageRumUnitsHour(ModelNormal):
     @cached_property
     def openapi_types():
         return {
-            "browser_rum_lite_session_count": (int,),
-            "browser_rum_replay_session_count": (int,),
             "browser_rum_units": (int,),
-            "mobile_rum_lite_session_count": (int,),
             "mobile_rum_units": (int,),
             "org_name": (str,),
             "public_id": (str,),
@@ -42,10 +39,7 @@ class UsageRumUnitsHour(ModelNormal):
         }
 
     attribute_map = {
-        "browser_rum_lite_session_count": "browser_rum_lite_session_count",
-        "browser_rum_replay_session_count": "browser_rum_replay_session_count",
         "browser_rum_units": "browser_rum_units",
-        "mobile_rum_lite_session_count": "mobile_rum_lite_session_count",
         "mobile_rum_units": "mobile_rum_units",
         "org_name": "org_name",
         "public_id": "public_id",
@@ -58,10 +52,7 @@ class UsageRumUnitsHour(ModelNormal):
         """UsageRumUnitsHour - a model defined in OpenAPI
 
         Keyword Args:
-            browser_rum_lite_session_count (int): [optional] Number of browser RUM lite sessions.
-            browser_rum_replay_session_count (int): [optional] Number of browser RUM replay sessions.
             browser_rum_units (int): [optional] The number of browser RUM units.
-            mobile_rum_lite_session_count (int): [optional] Number of mobile RUM lite sessions.
             mobile_rum_units (int): [optional] The number of mobile RUM units.
             org_name (str): [optional] The organization name.
             public_id (str): [optional] The organization public ID.
