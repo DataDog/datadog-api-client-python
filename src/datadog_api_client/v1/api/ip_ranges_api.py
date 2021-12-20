@@ -41,7 +41,7 @@ class IPRangesApi(object):
                         "description": "No description provided",
                         "variables": {
                             "site": {
-                                "description": "The regional site for our customers.",
+                                "description": "The regional site for Datadog customers.",
                                 "default_value": "datadoghq.com",
                                 "enum_values": [
                                     "datadoghq.com",

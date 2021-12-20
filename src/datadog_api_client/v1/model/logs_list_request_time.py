@@ -49,7 +49,7 @@ class LogsListRequestTime(ModelNormal):
             to (datetime): Maximum timestamp for requested logs.
 
         Keyword Args:
-            timezone (str): [optional] Timezone can be specified both as an offset (e.g. \"UTC+03:00\") or a regional zone (e.g. \"Europe/Paris\").
+            timezone (str): [optional] Timezone can be specified both as an offset (for example \"UTC+03:00\") or a regional zone (for example \"Europe/Paris\").
         """
         super().__init__(kwargs)
 

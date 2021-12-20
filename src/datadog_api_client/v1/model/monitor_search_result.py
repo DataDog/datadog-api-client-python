@@ -99,7 +99,7 @@ class MonitorSearchResult(ModelNormal):
             notifications ([MonitorSearchResultNotification]): [optional] The notification triggered by the monitor.
             org_id (int): [optional] The ID of the organization.
             query (str): [optional] The monitor query.
-            scopes ([str]): [optional] The scope(s) to which the downtime applies, e.g. `host:app2`. Provide multiple scopes as a comma-separated list, e.g. `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (i.e. `env:dev AND env:prod`), NOT any of them.
+            scopes ([str]): [optional] The scope(s) to which the downtime applies, for example `host:app2`. Provide multiple scopes as a comma-separated list, for example `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (that is `env:dev AND env:prod`), NOT any of them.
             status (MonitorOverallStates): [optional]
             tags ([str]): [optional] Tags associated with the monitor.
             type (MonitorType): [optional]

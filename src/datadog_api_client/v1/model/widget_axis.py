@@ -53,7 +53,7 @@ class WidgetAxis(ModelNormal):
             label (str): [optional] The label of the axis to display on the graph.
             max (str): [optional] Specifies the maximum value to show on the y-axis. It takes a number, or auto for default behavior. If omitted the server will use the default value of "auto".
             min (str): [optional] Specifies minimum value to show on the y-axis. It takes a number, or auto for default behavior. If omitted the server will use the default value of "auto".
-            scale (str): [optional] Specifies the scale type. Possible values are `linear`, `log`, `sqrt`, `pow##` (e.g. `pow2`, `pow0.5` etc.). If omitted the server will use the default value of "linear".
+            scale (str): [optional] Specifies the scale type. Possible values are `linear`, `log`, `sqrt`, `pow##` (for example `pow2`, `pow0.5` etc.). If omitted the server will use the default value of "linear".
         """
         super().__init__(kwargs)
 

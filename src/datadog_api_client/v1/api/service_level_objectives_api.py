@@ -407,7 +407,7 @@ class ServiceLevelObjectivesApi(object):
             slo_id (str): The ID of the service level objective.
 
         Keyword Args:
-            force (str): [optional] Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor).
+            force (str): [optional] Delete the monitor even if it's referenced by other resources (for example SLO, composite monitor).
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

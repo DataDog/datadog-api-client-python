@@ -84,7 +84,7 @@ class Event(ModelNormal):
 
         Keyword Args:
             alert_type (EventAlertType): [optional]
-            date_happened (int): [optional] POSIX timestamp of the event. Must be sent as an integer (i.e. no quotes). Limited to events no older than 7 days.
+            date_happened (int): [optional] POSIX timestamp of the event. Must be sent as an integer (that is no quotes). Limited to events no older than 7 days.
             device_name (str): [optional] A device name.
             host (str): [optional] Host name to associate with the event. Any tags associated with the host are also applied to this event.
             id (int): [optional] Integer ID of the event.
