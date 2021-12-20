@@ -213,7 +213,7 @@ class _AioSonicResponseWrapper:
         self.reason = response.response_initial.get("reason")
         self.data = data
 
-    def getheaders(self):
+   def getheaders(self):
         return self.response.headers
 
 
