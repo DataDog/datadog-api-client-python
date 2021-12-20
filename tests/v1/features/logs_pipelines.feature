@@ -4,7 +4,7 @@ Feature: Logs Pipelines
   transforming them into structured attributes for easier querying.  - See
   the [pipelines configuration
   page](https://app.datadoghq.com/logs/pipelines)   for a list of the
-  pipelines and processors currently configured in our UI.  - Additional
+  pipelines and processors currently configured in web UI.  - Additional
   API-related information about processors can be found in the   [processors
   documentation](https://docs.datadoghq.com/logs/log_configuration/processor
   s/?tab=api#lookup-processor).  - For more information about Pipelines, see

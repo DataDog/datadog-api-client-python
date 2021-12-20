@@ -88,13 +88,13 @@ class EventCreateResponse(ModelNormal):
 
         Keyword Args:
             alert_type (EventAlertType): [optional]
-            date_happened (int): [optional] POSIX timestamp of the event. Must be sent as an integer (i.e. no quotes). Limited to events no older than 7 days.
+            date_happened (int): [optional] POSIX timestamp of the event. Must be sent as an integer (that is no quotes). Limited to events no older than 7 days.
             device_name (str): [optional] A device name.
             host (str): [optional] Host name to associate with the event. Any tags associated with the host are also applied to this event.
             id (int): [optional] Integer ID of the event.
             payload (str): [optional] Payload of the event.
             priority (EventPriority): [optional]
-            related_event_id (int): [optional] ID of the parent event. Must be sent as an integer (i.e. no quotes).
+            related_event_id (int): [optional] ID of the parent event. Must be sent as an integer (that is no quotes).
             source_type_name (str): [optional] The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
             status (str): [optional] A status.
             tags ([str]): [optional] A list of tags to apply to the event.

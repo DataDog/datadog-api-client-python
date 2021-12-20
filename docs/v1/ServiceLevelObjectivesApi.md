@@ -199,7 +199,7 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
     slo_id = "slo_id_example"  # str | The ID of the service level objective.
-    force = "force_example"  # str | Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor). (optional)
+    force = "force_example"  # str | Delete the monitor even if it's referenced by other resources (for example SLO, composite monitor). (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -221,10 +221,10 @@ with ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name       | Type    | Description                                                                                      | Notes      |
-| ---------- | ------- | ------------------------------------------------------------------------------------------------ | ---------- |
-| **slo_id** | **str** | The ID of the service level objective.                                                           |
-| **force**  | **str** | Delete the monitor even if it&#39;s referenced by other resources (e.g. SLO, composite monitor). | [optional] |
+| Name       | Type    | Description                                                                                             | Notes      |
+| ---------- | ------- | ------------------------------------------------------------------------------------------------------- | ---------- |
+| **slo_id** | **str** | The ID of the service level objective.                                                                  |
+| **force**  | **str** | Delete the monitor even if it&#39;s referenced by other resources (for example SLO, composite monitor). | [optional] |
 
 ### Return type
 

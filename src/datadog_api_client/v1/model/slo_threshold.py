@@ -60,7 +60,7 @@ class SLOThreshold(ModelNormal):
             timeframe (SLOTimeframe):
 
         Keyword Args:
-            target_display (str): [optional] A string representation of the target that indicates its precision. It uses trailing zeros to show significant decimal places (e.g. `98.00`).  Always included in service level objective responses. Ignored in create/update requests.
+            target_display (str): [optional] A string representation of the target that indicates its precision. It uses trailing zeros to show significant decimal places (for example `98.00`).  Always included in service level objective responses. Ignored in create/update requests.
             warning (float): [optional] The warning value for the service level objective.
             warning_display (str): [optional] A string representation of the warning target (see the description of the `target_display` field for details).  Included in service level objective responses if a warning target exists. Ignored in create/update requests.
         """
