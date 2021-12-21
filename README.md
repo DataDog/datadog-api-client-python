@@ -98,8 +98,9 @@ on your configuration object:
 configuration.compress = False
 ```
 
-### Enable requests tracing
-If you want to enable requests tracing, set the `debug` flag on your configuration object:
+### Enable requests logging
+
+If you want to enable requests logging, set the `debug` flag on your configuration object:
 
 ```python
 configuration.debug = True
