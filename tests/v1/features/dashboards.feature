@@ -138,6 +138,19 @@ Feature: Dashboards
     Then the response status is 200 OK
 
   @team:DataDog/dashboards
+  Scenario: Create a new dashboard with sunburst widget and metrics data
+    Given new "CreateDashboard" request
+    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "", "title_size": "16", "title_align": "left", "type": "sunburst", "requests": [ { "response_format": "scalar", "formulas": [ { "formula": "query1" } ], "queries": [ { "query": "sum:system.mem.used{*} by {service}", "data_source": "metrics", "name": "query1", "aggregator": "sum" } ] } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "scalar"
+    And the response "widgets[0].definition.requests[0].queries[0].query" is equal to "sum:system.mem.used{*} by {service}"
+    And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "metrics"
+    And the response "widgets[0].definition.requests[0].queries[0].name" is equal to "query1"
+    And the response "widgets[0].definition.requests[0].queries[0].aggregator" is equal to "sum"
+    And the response "widgets[0].definition.requests[0].formulas[0].formula" is equal to "query1"
+
+  @team:DataDog/dashboards
   Scenario: Create a new dashboard with timeseries widget containing style attributes
     Given new "CreateDashboard" request
     And body with value {"layout_type": "ordered", "title": "{{ unique }} with timeseries widget","widgets": [{"definition": {"type": "timeseries","requests": [{"q": "sum:trace.test.errors{env:prod,service:datadog-api-spec} by {resource_name}.as_count()","on_right_yaxis": false,"style": {"palette": "warm","line_type": "solid","line_width": "normal"},"display_type": "bars"}]}}]}

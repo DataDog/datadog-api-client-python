@@ -45,6 +45,8 @@ def lazy_import():
     from datadog_api_client.v1.model.service_map_widget_definition import ServiceMapWidgetDefinition
     from datadog_api_client.v1.model.service_summary_widget_definition import ServiceSummaryWidgetDefinition
     from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
+    from datadog_api_client.v1.model.sunburst_widget_definition import SunburstWidgetDefinition
+    from datadog_api_client.v1.model.sunburst_widget_legend import SunburstWidgetLegend
     from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
     from datadog_api_client.v1.model.table_widget_has_search_bar import TableWidgetHasSearchBar
     from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
@@ -109,6 +111,8 @@ def lazy_import():
     globals()["ScatterPlotWidgetDefinition"] = ScatterPlotWidgetDefinition
     globals()["ServiceMapWidgetDefinition"] = ServiceMapWidgetDefinition
     globals()["ServiceSummaryWidgetDefinition"] = ServiceSummaryWidgetDefinition
+    globals()["SunburstWidgetDefinition"] = SunburstWidgetDefinition
+    globals()["SunburstWidgetLegend"] = SunburstWidgetLegend
     globals()["TableWidgetDefinition"] = TableWidgetDefinition
     globals()["TableWidgetHasSearchBar"] = TableWidgetHasSearchBar
     globals()["TimeseriesWidgetDefinition"] = TimeseriesWidgetDefinition
@@ -239,6 +243,8 @@ class WidgetDefinition(ModelComposed):
             show_latency (bool): [optional] Whether to show the latency metrics or not.
             show_resource_list (bool): [optional] Whether to show the resource list or not.
             size_format (WidgetSizeFormat): [optional]
+            hide_total (bool): [optional] Show the total value in this widget.
+            legend (SunburstWidgetLegend): [optional]
             has_search_bar (TableWidgetHasSearchBar): [optional]
             legend_columns ([TimeseriesWidgetLegendColumn]): [optional] Columns displayed in the legend.
             legend_layout (TimeseriesWidgetLegendLayout): [optional]
@@ -318,6 +324,7 @@ class WidgetDefinition(ModelComposed):
                 ScatterPlotWidgetDefinition,
                 ServiceMapWidgetDefinition,
                 ServiceSummaryWidgetDefinition,
+                SunburstWidgetDefinition,
                 TableWidgetDefinition,
                 TimeseriesWidgetDefinition,
                 ToplistWidgetDefinition,
