@@ -384,6 +384,19 @@
       "type": "idempotent"
     }
   },
+  "CloneRole": {
+    "tag": "Roles",
+    "undo": {
+      "operationId": "DeleteRole",
+      "parameters": [
+        {
+          "name": "role_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "RemovePermissionFromRole": {
     "tag": "Roles",
     "undo": {

@@ -39,6 +39,42 @@ Feature: Roles
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/team-aaa
+  Scenario: Create a new role by cloning an existing role returns "Bad Request" response
+    Given there is a valid "role" in the system
+    And new "CloneRole" request
+    And request contains "role_id" parameter from "role.data.id"
+    And body with value {"data": {"attributes": {"name": "    "}, "type": "roles"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/team-aaa
+  Scenario: Create a new role by cloning an existing role returns "Conflict" response
+    Given there is a valid "role" in the system
+    And new "CloneRole" request
+    And request contains "role_id" parameter from "role.data.id"
+    And body with value {"data": {"attributes": {"name": "{{ role.data.attributes.name }}"}, "type": "roles"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/team-aaa
+  Scenario: Create a new role by cloning an existing role returns "Not found" response
+    Given new "CloneRole" request
+    And request contains "role_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "cloned-role"}, "type": "roles"}}
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @team:DataDog/team-aaa
+  Scenario: Create a new role by cloning an existing role returns "OK" response
+    Given there is a valid "role" in the system
+    And new "CloneRole" request
+    And request contains "role_id" parameter from "role.data.id"
+    And body with value {"data": {"attributes": {"name": "{{ unique }} clone"}, "type": "roles"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.name" is equal to "{{ unique }} clone"
+
   @generated @skip @team:DataDog/team-aaa
   Scenario: Create role returns "Bad Request" response
     Given new "CreateRole" request

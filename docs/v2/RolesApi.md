@@ -2,20 +2,21 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-| Method                                                                     | HTTP request                                   | Description                 |
-| -------------------------------------------------------------------------- | ---------------------------------------------- | --------------------------- |
-| [**add_permission_to_role**](RolesApi.md#add_permission_to_role)           | **POST** /api/v2/roles/{role_id}/permissions   | Grant permission to a role  |
-| [**add_user_to_role**](RolesApi.md#add_user_to_role)                       | **POST** /api/v2/roles/{role_id}/users         | Add a user to a role        |
-| [**create_role**](RolesApi.md#create_role)                                 | **POST** /api/v2/roles                         | Create role                 |
-| [**delete_role**](RolesApi.md#delete_role)                                 | **DELETE** /api/v2/roles/{role_id}             | Delete role                 |
-| [**get_role**](RolesApi.md#get_role)                                       | **GET** /api/v2/roles/{role_id}                | Get a role                  |
-| [**list_permissions**](RolesApi.md#list_permissions)                       | **GET** /api/v2/permissions                    | List permissions            |
-| [**list_role_permissions**](RolesApi.md#list_role_permissions)             | **GET** /api/v2/roles/{role_id}/permissions    | List permissions for a role |
-| [**list_role_users**](RolesApi.md#list_role_users)                         | **GET** /api/v2/roles/{role_id}/users          | Get all users of a role     |
-| [**list_roles**](RolesApi.md#list_roles)                                   | **GET** /api/v2/roles                          | List roles                  |
-| [**remove_permission_from_role**](RolesApi.md#remove_permission_from_role) | **DELETE** /api/v2/roles/{role_id}/permissions | Revoke permission           |
-| [**remove_user_from_role**](RolesApi.md#remove_user_from_role)             | **DELETE** /api/v2/roles/{role_id}/users       | Remove a user from a role   |
-| [**update_role**](RolesApi.md#update_role)                                 | **PATCH** /api/v2/roles/{role_id}              | Update a role               |
+| Method                                                                     | HTTP request                                   | Description                                   |
+| -------------------------------------------------------------------------- | ---------------------------------------------- | --------------------------------------------- |
+| [**add_permission_to_role**](RolesApi.md#add_permission_to_role)           | **POST** /api/v2/roles/{role_id}/permissions   | Grant permission to a role                    |
+| [**add_user_to_role**](RolesApi.md#add_user_to_role)                       | **POST** /api/v2/roles/{role_id}/users         | Add a user to a role                          |
+| [**clone_role**](RolesApi.md#clone_role)                                   | **POST** /api/v2/roles/{role_id}/clone         | Create a new role by cloning an existing role |
+| [**create_role**](RolesApi.md#create_role)                                 | **POST** /api/v2/roles                         | Create role                                   |
+| [**delete_role**](RolesApi.md#delete_role)                                 | **DELETE** /api/v2/roles/{role_id}             | Delete role                                   |
+| [**get_role**](RolesApi.md#get_role)                                       | **GET** /api/v2/roles/{role_id}                | Get a role                                    |
+| [**list_permissions**](RolesApi.md#list_permissions)                       | **GET** /api/v2/permissions                    | List permissions                              |
+| [**list_role_permissions**](RolesApi.md#list_role_permissions)             | **GET** /api/v2/roles/{role_id}/permissions    | List permissions for a role                   |
+| [**list_role_users**](RolesApi.md#list_role_users)                         | **GET** /api/v2/roles/{role_id}/users          | Get all users of a role                       |
+| [**list_roles**](RolesApi.md#list_roles)                                   | **GET** /api/v2/roles                          | List roles                                    |
+| [**remove_permission_from_role**](RolesApi.md#remove_permission_from_role) | **DELETE** /api/v2/roles/{role_id}/permissions | Revoke permission                             |
+| [**remove_user_from_role**](RolesApi.md#remove_user_from_role)             | **DELETE** /api/v2/roles/{role_id}/users       | Remove a user from a role                     |
+| [**update_role**](RolesApi.md#update_role)                                 | **PATCH** /api/v2/roles/{role_id}              | Update a role                                 |
 
 # **add_permission_to_role**
 
@@ -163,6 +164,84 @@ with ApiClient(configuration) as api_client:
 | **400**     | Bad Request          | -                |
 | **403**     | Authentication error | -                |
 | **404**     | Not found            | -                |
+| **429**     | Too many requests    | -                |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **clone_role**
+
+> RoleResponse clone_role(role_id, body)
+
+Clone an existing role
+
+### Example
+
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
+from datadog_api_client.v2.api import roles_api
+from datadog_api_client.v2.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = roles_api.RolesApi(api_client)
+    role_id = "role_id_example"  # str | The ID of the role.
+    body = RoleCloneRequest(
+        data=RoleClone(
+            attributes=RoleCloneAttributes(
+                name="cloned-role",
+            ),
+            type=RolesType("roles"),
+        ),
+    )  # RoleCloneRequest |
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create a new role by cloning an existing role
+        api_response = api_instance.clone_role(role_id, body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RolesApi->clone_role: %s\n" % e)
+```
+
+### Parameters
+
+| Name        | Type                                        | Description         | Notes |
+| ----------- | ------------------------------------------- | ------------------- | ----- |
+| **role_id** | **str**                                     | The ID of the role. |
+| **body**    | [**RoleCloneRequest**](RoleCloneRequest.md) |                     |
+
+### Return type
+
+[**RoleResponse**](RoleResponse.md)
+
+### Authorization
+
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Not found            | -                |
+| **409**     | Conflict             | -                |
 | **429**     | Too many requests    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

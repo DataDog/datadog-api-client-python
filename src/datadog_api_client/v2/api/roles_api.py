@@ -16,6 +16,7 @@ from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 from datadog_api_client.v2.model.relationship_to_permission import RelationshipToPermission
 from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
+from datadog_api_client.v2.model.role_clone_request import RoleCloneRequest
 from datadog_api_client.v2.model.role_create_request import RoleCreateRequest
 from datadog_api_client.v2.model.role_create_response import RoleCreateResponse
 from datadog_api_client.v2.model.role_response import RoleResponse
@@ -83,6 +84,32 @@ class RolesApi(object):
                 "body": {
                     "required": True,
                     "openapi_types": (RelationshipToUser,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._clone_role_endpoint = _Endpoint(
+            settings={
+                "response_type": (RoleResponse,),
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/roles/{role_id}/clone",
+                "operation_id": "clone_role",
+                "http_method": "POST",
+                "servers": None,
+            },
+            params_map={
+                "role_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "role_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (RoleCloneRequest,),
                     "location": "body",
                 },
             },
@@ -448,6 +475,51 @@ class RolesApi(object):
         kwargs["role_id"] = role_id
         kwargs["body"] = body
         return self._add_user_to_role_endpoint.call_with_http_info(**kwargs)
+
+    def clone_role(self, role_id, body, **kwargs):
+        """Create a new role by cloning an existing role
+
+        Clone an existing role
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True.
+
+        >>> thread = api.clone_role(role_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            role_id (str): The ID of the role.
+            body (RoleCloneRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            RoleResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._clone_role_endpoint.default_arguments(kwargs)
+        kwargs["role_id"] = role_id
+        kwargs["body"] = body
+        return self._clone_role_endpoint.call_with_http_info(**kwargs)
 
     def create_role(self, body, **kwargs):
         """Create role
