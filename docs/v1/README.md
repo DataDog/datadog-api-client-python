@@ -992,7 +992,7 @@ All URIs are relative to *https://api.datadoghq.com*
 - **dashboards_write**: The ability to create and change dashboards.
 - **events_read**: The ability to read events data.
 - **metrics_read**: The ability to view custom metrics.
-- **monitors_downtime**: The ability to set downtimes for your organization. A user with this permission can suppress alerts from any monitor using a downtime, even if they do not have permission to edit those monitors explicitly.
+- **monitors_downtime**: The ability to set downtimes to suppress alerts from any monitor in an organization. The ability to write monitors is not required to set downtimes.
 - **monitors_read**: The ability to view monitors.
 - **monitors_write**: The ability to change, mute, and delete individual monitors.
 - **synthetics_global_variable_read**: The ability to view, search and use in tests the list of global variables available for Synthetics.
@@ -1002,8 +1002,8 @@ All URIs are relative to *https://api.datadoghq.com*
 - **synthetics_write**: The ability to create, edit, and delete Synthetic tests.
 - **timeseries_query**: The ability to query timeseries data.
 - **usage_read**: The ability to view your organization's usage and usage attribution.
-- **user_access_invite**: Allows users to invite other users to your organization.
-- **user_access_manage**: Grants the permission to disable users, manage user roles and SAML-to-role mappings.
+- **user_access_invite**: The ability to invite other users to your organization.
+- **user_access_manage**: The ability to disable users, manage user roles, and manage SAML-to-role mappings.
 
 ## apiKeyAuth
 

@@ -22,11 +22,12 @@ def lazy_import():
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
     from datadog_api_client.v1.model.widget_formula import WidgetFormula
-    globals()['FormulaAndFunctionQueryDefinition'] = FormulaAndFunctionQueryDefinition
-    globals()['FormulaAndFunctionResponseFormat'] = FormulaAndFunctionResponseFormat
-    globals()['LogQueryDefinition'] = LogQueryDefinition
-    globals()['ProcessQueryDefinition'] = ProcessQueryDefinition
-    globals()['WidgetFormula'] = WidgetFormula
+
+    globals()["FormulaAndFunctionQueryDefinition"] = FormulaAndFunctionQueryDefinition
+    globals()["FormulaAndFunctionResponseFormat"] = FormulaAndFunctionResponseFormat
+    globals()["LogQueryDefinition"] = LogQueryDefinition
+    globals()["ProcessQueryDefinition"] = ProcessQueryDefinition
+    globals()["WidgetFormula"] = WidgetFormula
 
 
 class SunburstWidgetRequest(ModelNormal):
@@ -36,53 +37,44 @@ class SunburstWidgetRequest(ModelNormal):
     Do not edit the class manually.
     """
 
-
-    validations = {
-    }
-
-
-    
+    validations = {}
 
     @cached_property
     def openapi_types():
         lazy_import()
         return {
-            'apm_query': (LogQueryDefinition,),
-            'audit_query': (LogQueryDefinition,),
-            'event_query': (LogQueryDefinition,),
-            'formulas': ([WidgetFormula],),
-            'log_query': (LogQueryDefinition,),
-            'network_query': (LogQueryDefinition,),
-            'process_query': (ProcessQueryDefinition,),
-            'profile_metrics_query': (LogQueryDefinition,),
-            'q': (str,),
-            'queries': ([FormulaAndFunctionQueryDefinition],),
-            'response_format': (FormulaAndFunctionResponseFormat,),
-            'rum_query': (LogQueryDefinition,),
-            'security_query': (LogQueryDefinition,),
+            "apm_query": (LogQueryDefinition,),
+            "audit_query": (LogQueryDefinition,),
+            "event_query": (LogQueryDefinition,),
+            "formulas": ([WidgetFormula],),
+            "log_query": (LogQueryDefinition,),
+            "network_query": (LogQueryDefinition,),
+            "process_query": (ProcessQueryDefinition,),
+            "profile_metrics_query": (LogQueryDefinition,),
+            "q": (str,),
+            "queries": ([FormulaAndFunctionQueryDefinition],),
+            "response_format": (FormulaAndFunctionResponseFormat,),
+            "rum_query": (LogQueryDefinition,),
+            "security_query": (LogQueryDefinition,),
         }
 
-
-
-
     attribute_map = {
-        'apm_query': 'apm_query',
-        'audit_query': 'audit_query',
-        'event_query': 'event_query',
-        'formulas': 'formulas',
-        'log_query': 'log_query',
-        'network_query': 'network_query',
-        'process_query': 'process_query',
-        'profile_metrics_query': 'profile_metrics_query',
-        'q': 'q',
-        'queries': 'queries',
-        'response_format': 'response_format',
-        'rum_query': 'rum_query',
-        'security_query': 'security_query',
+        "apm_query": "apm_query",
+        "audit_query": "audit_query",
+        "event_query": "event_query",
+        "formulas": "formulas",
+        "log_query": "log_query",
+        "network_query": "network_query",
+        "process_query": "process_query",
+        "profile_metrics_query": "profile_metrics_query",
+        "q": "q",
+        "queries": "queries",
+        "response_format": "response_format",
+        "rum_query": "rum_query",
+        "security_query": "security_query",
     }
 
-    read_only_vars = {
-    }
+    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """SunburstWidgetRequest - a model defined in OpenAPI
@@ -104,12 +96,7 @@ class SunburstWidgetRequest(ModelNormal):
         """
         super().__init__(kwargs)
 
-
         self._check_pos_args(args)
-
-
-
-
 
     @classmethod
     def _from_openapi_data(cls, *args, **kwargs):
@@ -119,8 +106,4 @@ class SunburstWidgetRequest(ModelNormal):
 
         self._check_pos_args(args)
 
-
-
         return self
-
-
