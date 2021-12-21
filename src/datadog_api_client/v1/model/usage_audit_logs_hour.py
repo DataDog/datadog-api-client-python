@@ -30,11 +30,15 @@ class UsageAuditLogsHour(ModelNormal):
         return {
             "hour": (datetime,),
             "lines_indexed": (int,),
+            "org_name": (str,),
+            "public_id": (str,),
         }
 
     attribute_map = {
         "hour": "hour",
         "lines_indexed": "lines_indexed",
+        "org_name": "org_name",
+        "public_id": "public_id",
     }
 
     read_only_vars = {}
@@ -45,6 +49,8 @@ class UsageAuditLogsHour(ModelNormal):
         Keyword Args:
             hour (datetime): [optional] The hour for the usage.
             lines_indexed (int): [optional] The total number of audit logs lines indexed during a given hour.
+            org_name (str): [optional] The organization name.
+            public_id (str): [optional] The organization public ID.
         """
         super().__init__(kwargs)
 
