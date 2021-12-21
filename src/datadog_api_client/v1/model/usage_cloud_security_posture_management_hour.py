@@ -31,12 +31,16 @@ class UsageCloudSecurityPostureManagementHour(ModelNormal):
             "container_count": (int,),
             "host_count": (int,),
             "hour": (datetime,),
+            "org_name": (str,),
+            "public_id": (str,),
         }
 
     attribute_map = {
         "container_count": "container_count",
         "host_count": "host_count",
         "hour": "hour",
+        "org_name": "org_name",
+        "public_id": "public_id",
     }
 
     read_only_vars = {}
@@ -48,6 +52,8 @@ class UsageCloudSecurityPostureManagementHour(ModelNormal):
             container_count (int): [optional] The total number of Cloud Security Posture Management containers during a given hour.
             host_count (int): [optional] The total number of Cloud Security Posture Management hosts during a given hour.
             hour (datetime): [optional] The hour for the usage.
+            org_name (str): [optional] The organization name.
+            public_id (str): [optional] The organization public ID.
         """
         super().__init__(kwargs)
 

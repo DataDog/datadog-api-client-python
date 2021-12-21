@@ -31,12 +31,16 @@ class UsageDBMHour(ModelNormal):
             "dbm_host_count": (int,),
             "dbm_queries_count": (int,),
             "hour": (datetime,),
+            "org_name": (str,),
+            "public_id": (str,),
         }
 
     attribute_map = {
         "dbm_host_count": "dbm_host_count",
         "dbm_queries_count": "dbm_queries_count",
         "hour": "hour",
+        "org_name": "org_name",
+        "public_id": "public_id",
     }
 
     read_only_vars = {}
@@ -48,6 +52,8 @@ class UsageDBMHour(ModelNormal):
             dbm_host_count (int): [optional] The total number of Database Monitoring host hours from the start of the given hour’s month until the given hour.
             dbm_queries_count (int): [optional] The total number of normalized Database Monitoring queries from the start of the given hour’s month until the given hour.
             hour (datetime): [optional] The hour for the usage.
+            org_name (str): [optional] The organization name.
+            public_id (str): [optional] The organization public ID.
         """
         super().__init__(kwargs)
 
