@@ -278,6 +278,9 @@ from datadog_api_client.v2.model.relationship_to_users import RelationshipToUser
 from datadog_api_client.v2.model.response_meta_attributes import ResponseMetaAttributes
 from datadog_api_client.v2.model.role import Role
 from datadog_api_client.v2.model.role_attributes import RoleAttributes
+from datadog_api_client.v2.model.role_clone import RoleClone
+from datadog_api_client.v2.model.role_clone_attributes import RoleCloneAttributes
+from datadog_api_client.v2.model.role_clone_request import RoleCloneRequest
 from datadog_api_client.v2.model.role_create_attributes import RoleCreateAttributes
 from datadog_api_client.v2.model.role_create_data import RoleCreateData
 from datadog_api_client.v2.model.role_create_request import RoleCreateRequest
