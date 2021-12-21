@@ -15,7 +15,7 @@ from {{packageName}}.exceptions import ApiException, UnauthorizedException, Forb
 logger = logging.getLogger(__name__)
 
 
-class RESTClientObject(object):
+class RESTClientObject:
 
     def __init__(self, configuration, pools_size=4, maxsize=None):
         # urllib3.PoolManager will pass all kw parameters to connectionpool
@@ -203,3 +203,75 @@ class RESTClientObject(object):
             raise ApiException(http_resp=r)
 
         return r
+
+
+class _AioSonicResponseWrapper:
+
+   def __init__(self, response, data):
+        self.response = response
+        self.status = response.status_code
+        self.reason = response.response_initial.get("reason")
+        self.data = data
+
+   def getheaders(self):
+        return self.response.headers
+
+
+class AsyncRESTClientObject:
+    def __init__(self, configuration):
+        import aiosonic
+        self._client = aiosonic.HTTPClient()
+
+    async def request(
+        self,
+        method,
+        url,
+        query_params=None,
+        headers=None,
+        body=None,
+        post_params=None,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Perform requests.
+
+        :param method: http request method
+        :param url: http request url
+        :param query_params: query parameters in the url
+        :param headers: http request headers
+        :param body: request json body, for `application/json`
+        :param post_params: request post parameters,
+                            `application/x-www-form-urlencoded`
+                            and `multipart/form-data`
+        :param _preload_content: if False, the raw HTTP response object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        """
+        assert not post_params, "not supported for now"
+        response = await self._client.request(url, method, headers, query_params, body, timeouts=_request_timeout)
+
+        if not 200 <= response.status_code <= 299:
+            data = b""
+            if _preload_content:
+                data = await response.content()
+            r = _AioSonicResponseWrapper(response, data)
+
+            if response.status_code == 401:
+                raise UnauthorizedException(http_resp=r)
+
+            if response.status_code == 403:
+                raise ForbiddenException(http_resp=r)
+
+            if response.status_code == 404:
+                raise NotFoundException(http_resp=r)
+
+            if 500 <= response.status_code <= 599:
+                raise ServiceException(http_resp=r)
+
+            raise ApiException(http_resp=r)
+
+        return response

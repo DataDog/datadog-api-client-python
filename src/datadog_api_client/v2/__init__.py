@@ -8,7 +8,7 @@
 __version__ = "0.1.0"
 
 # import ApiClient
-from datadog_api_client.v2.api_client import ApiClient
+from datadog_api_client.v2.api_client import ApiClient, AsyncApiClient
 
 # import Configuration
 from datadog_api_client.v2.configuration import Configuration
