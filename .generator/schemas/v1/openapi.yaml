@@ -6191,6 +6191,7 @@ components:
       - slo alert
       - event-v2 alert
       - audit alert
+      - ci-pipelines alert
       example: query alert
       type: string
       x-enum-varnames:
@@ -6207,6 +6208,7 @@ components:
       - SLO_ALERT
       - EVENT_V2_ALERT
       - AUDIT_ALERT
+      - CI_PIPELINES_ALERT
     MonitorUpdateRequest:
       description: Object describing a monitor update request.
       properties:
@@ -20201,7 +20203,32 @@ paths:
 
 
         **NOTE** Only available on US1-FED and in closed beta on US1, EU, US3, and
-        US5.'
+        US5.
+
+
+        **CI Pipelines Alert Query**
+
+
+        Example: `ci-pipelines(query).rollup(rollup_method[, measure]).last(time_window)
+        operator #`
+
+
+        - **`query`** The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
+
+        - **`rollup_method`** The stats roll-up method - supports `count`, `avg`,
+        and `cardinality`.
+
+        - **`measure`** For `avg` and cardinality `rollup_method` - specify the measure
+        or the facet name you want to use.
+
+        - **`time_window`** #m (between 1 and 2880), #h (between 1 and 48).
+
+        - **`operator`** `<`, `<=`, `>`, `>=`, `==`, or `!=`.
+
+        - **`#`** an integer or decimal number used to set the threshold.
+
+
+        **NOTE** Only available in closed beta on US1, EU, US3 and US5.'
       operationId: CreateMonitor
       requestBody:
         content:

@@ -234,6 +234,19 @@ Example: `audits(query).rollup(rollup_method[, measure]).last(time_window) opera
 
 **NOTE** Only available on US1-FED and in closed beta on US1, EU, US3, and US5.
 
+**CI Pipelines Alert Query**
+
+Example: `ci-pipelines(query).rollup(rollup_method[, measure]).last(time_window) operator #`
+
+- **`query`** The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
+- **`rollup_method`** The stats roll-up method - supports `count`, `avg`, and `cardinality`.
+- **`measure`** For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
+- **`time_window`** #m (between 1 and 2880), #h (between 1 and 48).
+- **`operator`** `<`, `<=`, `>`, `>=`, `==`, or `!=`.
+- **`#`** an integer or decimal number used to set the threshold.
+
+**NOTE** Only available in closed beta on US1, EU, US3 and US5.
+
 ### Example
 
 - OAuth Authentication (AuthZ):

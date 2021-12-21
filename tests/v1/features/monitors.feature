@@ -31,6 +31,13 @@ Feature: Monitors
     Then the response status is 200 OK
 
   @team:DataDog/monitor-app
+  Scenario: Create a ci-pipelines monitor returns "OK" response
+    Given new "CreateMonitor" request
+    And body with value {"name": "{{ unique }}","type": "ci-pipelines alert","query": "ci-pipelines(\"ci_level:pipeline @git.branch:staging* @ci.status:error\").rollup(\"count\").by(\"@git.branch,@ci.pipeline.name\").last(\"5m\") >= 1","message": "some message Notify: @hipchat-channel",	"tags": ["test:{{ unique_lower_alnum }}", "env:ci"],"priority": 3,"options":{"thresholds":{"critical":1}}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/monitor-app
   Scenario: Create a monitor returns "Bad Request" response
     Given new "CreateMonitor" request
     And body with value {"type": "log alert", "query": "query"}
