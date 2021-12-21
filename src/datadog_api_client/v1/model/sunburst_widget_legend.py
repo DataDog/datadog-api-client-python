@@ -18,11 +18,14 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v1.model.sunburst_widget_legend_inline_automatic import SunburstWidgetLegendInlineAutomatic
-    from datadog_api_client.v1.model.sunburst_widget_legend_inline_automatic_type import SunburstWidgetLegendInlineAutomaticType
+    from datadog_api_client.v1.model.sunburst_widget_legend_inline_automatic_type import (
+        SunburstWidgetLegendInlineAutomaticType,
+    )
     from datadog_api_client.v1.model.sunburst_widget_legend_table import SunburstWidgetLegendTable
-    globals()['SunburstWidgetLegendInlineAutomatic'] = SunburstWidgetLegendInlineAutomatic
-    globals()['SunburstWidgetLegendInlineAutomaticType'] = SunburstWidgetLegendInlineAutomaticType
-    globals()['SunburstWidgetLegendTable'] = SunburstWidgetLegendTable
+
+    globals()["SunburstWidgetLegendInlineAutomatic"] = SunburstWidgetLegendInlineAutomatic
+    globals()["SunburstWidgetLegendInlineAutomaticType"] = SunburstWidgetLegendInlineAutomaticType
+    globals()["SunburstWidgetLegendTable"] = SunburstWidgetLegendTable
 
 
 class SunburstWidgetLegend(ModelComposed):
@@ -32,19 +35,11 @@ class SunburstWidgetLegend(ModelComposed):
     Do not edit the class manually.
     """
 
-
-    validations = {
-    }
-
-
-    
+    validations = {}
 
     @cached_property
     def openapi_types():
         return {}
-
-
-
 
     def __init__(self, *args, **kwargs):
         """SunburstWidgetLegend - a model defined in OpenAPI
@@ -56,23 +51,17 @@ class SunburstWidgetLegend(ModelComposed):
         """
         super().__init__(kwargs)
 
-
         self._check_pos_args(args)
-
-
 
     @classmethod
     def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
-
         self = super(SunburstWidgetLegend, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
 
-
         return self
-
 
     @cached_property
     def _composed_schemas():
@@ -85,13 +74,10 @@ class SunburstWidgetLegend(ModelComposed):
         # loading
         lazy_import()
         return {
-          'anyOf': [
-          ],
-          'allOf': [
-          ],
-          'oneOf': [
-              SunburstWidgetLegendInlineAutomatic,
-              SunburstWidgetLegendTable,
-          ],
+            "anyOf": [],
+            "allOf": [],
+            "oneOf": [
+                SunburstWidgetLegendInlineAutomatic,
+                SunburstWidgetLegendTable,
+            ],
         }
-
