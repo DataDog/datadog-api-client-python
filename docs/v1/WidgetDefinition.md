@@ -30,6 +30,7 @@
 | **ScatterPlotWidgetDefinition**    | [**ScatterPlotWidgetDefinition**](ScatterPlotWidgetDefinition.md)       | Container class of the relevant properties. |
 | **ServiceMapWidgetDefinition**     | [**ServiceMapWidgetDefinition**](ServiceMapWidgetDefinition.md)         | Container class of the relevant properties. |
 | **ServiceSummaryWidgetDefinition** | [**ServiceSummaryWidgetDefinition**](ServiceSummaryWidgetDefinition.md) | Container class of the relevant properties. |
+| **SunburstWidgetDefinition**       | [**SunburstWidgetDefinition**](SunburstWidgetDefinition.md)             | Container class of the relevant properties. |
 | **TableWidgetDefinition**          | [**TableWidgetDefinition**](TableWidgetDefinition.md)                   | Container class of the relevant properties. |
 | **TimeseriesWidgetDefinition**     | [**TimeseriesWidgetDefinition**](TimeseriesWidgetDefinition.md)         | Container class of the relevant properties. |
 | **ToplistWidgetDefinition**        | [**ToplistWidgetDefinition**](ToplistWidgetDefinition.md)               | Container class of the relevant properties. |
