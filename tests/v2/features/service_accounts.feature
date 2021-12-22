@@ -22,7 +22,7 @@ Feature: Service Accounts
   Scenario: Create an application key for this service account returns "Bad Request" response
     Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "CreateServiceAccountApplicationKey" request
-    And body with value {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "type": "application_keys"}}
+    And body with value {"data": {"attributes": {"name": "Application Key for managing dashboards", "scopes": ["dashboards_read", "dashboards_write", "dashboards_public_share"]}, "type": "application_keys"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -30,9 +30,21 @@ Feature: Service Accounts
   Scenario: Create an application key for this service account returns "Created" response
     Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "CreateServiceAccountApplicationKey" request
-    And body with value {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "type": "application_keys"}}
+    And body with value {"data": {"attributes": {"name": "Application Key for managing dashboards", "scopes": ["dashboards_read", "dashboards_write", "dashboards_public_share"]}, "type": "application_keys"}}
     When the request is sent
     Then the response status is 201 Created
+
+  @team:DataDog/team-aaa
+  Scenario: Create an application key with scopes for this service account returns "Created" response
+    Given there is a valid "service_account_user" in the system
+    And new "CreateServiceAccountApplicationKey" request
+    And request contains "service_account_id" parameter from "service_account_user.data.id"
+    And body with value {"data": {"attributes": {"name": "{{ unique }}", "scopes": ["dashboards_read", "dashboards_write", "dashboards_public_share"]}, "type": "application_keys"}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.attributes.scopes" is equal to ["dashboards_read", "dashboards_write", "dashboards_public_share"]
+    And the response "data.relationships.owned_by.data.id" has the same value as "service_account_user.data.id"
 
   @team:DataDog/team-aaa
   Scenario: Delete an app key owned by this service account returns "No Content" response
@@ -77,7 +89,7 @@ Feature: Service Accounts
     Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "UpdateServiceAccountApplicationKey" request
     And request contains "app_key_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "application_keys"}}
+    And body with value {"data": {"attributes": {"name": "Application Key for managing dashboards", "scopes": ["dashboards_read", "dashboards_write", "dashboards_public_share"]}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "application_keys"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -86,7 +98,7 @@ Feature: Service Accounts
     Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "UpdateServiceAccountApplicationKey" request
     And request contains "app_key_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "application_keys"}}
+    And body with value {"data": {"attributes": {"name": "Application Key for managing dashboards", "scopes": ["dashboards_read", "dashboards_write", "dashboards_public_share"]}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "application_keys"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -95,7 +107,7 @@ Feature: Service Accounts
     Given request contains "service_account_id" parameter from "REPLACE.ME"
     And new "UpdateServiceAccountApplicationKey" request
     And request contains "app_key_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "application_keys"}}
+    And body with value {"data": {"attributes": {"name": "Application Key for managing dashboards", "scopes": ["dashboards_read", "dashboards_write", "dashboards_public_share"]}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "application_keys"}}
     When the request is sent
     Then the response status is 200 OK
 

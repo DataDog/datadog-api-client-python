@@ -29,10 +29,15 @@ class ApplicationKeyCreateAttributes(ModelNormal):
     def openapi_types():
         return {
             "name": (str,),
+            "scopes": (
+                [str],
+                none_type,
+            ),
         }
 
     attribute_map = {
         "name": "name",
+        "scopes": "scopes",
     }
 
     read_only_vars = {}
@@ -44,6 +49,7 @@ class ApplicationKeyCreateAttributes(ModelNormal):
             name (str): Name of the application key.
 
         Keyword Args:
+            scopes ([str], none_type): [optional] Array of scopes to grant the application key. This feature is in private beta, please contact Datadog support to enable scopes for your application keys.
         """
         super().__init__(kwargs)
 

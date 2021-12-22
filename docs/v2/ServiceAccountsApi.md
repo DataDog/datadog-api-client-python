@@ -39,7 +39,8 @@ with ApiClient(configuration) as api_client:
     body = ApplicationKeyCreateRequest(
         data=ApplicationKeyCreateData(
             attributes=ApplicationKeyCreateAttributes(
-                name="Application Key for submitting metrics",
+                name="Application Key for managing dashboards",
+                scopes=["dashboards_read","dashboards_write","dashboards_public_share"],
             ),
             type=ApplicationKeysType("application_keys"),
         ),
@@ -338,7 +339,8 @@ with ApiClient(configuration) as api_client:
     body = ApplicationKeyUpdateRequest(
         data=ApplicationKeyUpdateData(
             attributes=ApplicationKeyUpdateAttributes(
-                name="Application Key for submitting metrics",
+                name="Application Key for managing dashboards",
+                scopes=["dashboards_read","dashboards_write","dashboards_public_share"],
             ),
             id="00112233-4455-6677-8899-aabbccddeeff",
             type=ApplicationKeysType("application_keys"),

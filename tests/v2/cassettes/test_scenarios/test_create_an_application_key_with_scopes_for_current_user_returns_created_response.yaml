@@ -1,0 +1,110 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Create_an_Application_key_with_scopes_for_current_user_returns_Created_response-1640128021","scopes":["dashboards_read","dashboards_write","dashboards_public_share"]},"type":"application_keys"}}'
+    headers:
+      accept:
+      - '*/*'
+      connection:
+      - close
+      content-length:
+      - '230'
+      content-type:
+      - application/json
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-spec/scripts/bdd-runner
+      x-datadog-parent-id:
+      - '241749884858511673'
+      x-datadog-trace-id:
+      - '241749884858511673'
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys
+  response:
+    body:
+      string: '{"data":{"type":"application_keys","id":"1cf08b29-b3ee-4b6a-a6fb-3f452b8bc371","attributes":{"name":"Test-Create_an_Application_key_with_scopes_for_current_user_returns_Created_response-1640128021","created_at":"2021-12-21T23:07:02.147605+00:00","last4":"beef","key":"dead937e0ace336ee45ed445a174fb065953beef","scopes":["dashboards_read","dashboards_write","dashboards_public_share"]},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '485'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Tue, 21 Dec 2021 23:07:02 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '400'
+      x-ratelimit-period:
+      - '3600'
+      x-ratelimit-remaining:
+      - '399'
+      x-ratelimit-reset:
+      - '3178'
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-spec/scripts/bdd-runner
+      x-datadog-parent-id:
+      - '241749884858511673'
+      x-datadog-trace-id:
+      - '241749884858511673'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/1cf08b29-b3ee-4b6a-a6fb-3f452b8bc371
+  response:
+    body:
+      string: ''
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      date:
+      - Tue, 21 Dec 2021 23:07:02 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '400'
+      x-ratelimit-period:
+      - '3600'
+      x-ratelimit-remaining:
+      - '398'
+      x-ratelimit-reset:
+      - '3178'
+    status:
+      code: 204
+      message: No Content
+version: 1
