@@ -1,0 +1,61 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json;datetime-format=rfc3339
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-spec/scripts/bdd-runner
+      x-datadog-parent-id:
+      - '8346895373953849084'
+      x-datadog-trace-id:
+      - '8346895373953849084'
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/usage/hourly-attribution?start_hr=2021-12-19T21%3A22%3A28.553Z&usage_type=infra_host_usage
+  response:
+    body:
+      string: '{"usage":[{"org_name":"DD Integration Tests (321813)","public_id":"fasjyydbcgwwc2uc","hour":"2021-12-19T21:00:00+00:00","tag_config_source":"DD
+        Integration Tests (321813):::project","tags":null,"total_usage_sum":17,"updated_at":"2021-12-20T17","usage_type":"infra_host_usage"},{"org_name":"DD
+        Integration Tests (321813)","public_id":"fasjyydbcgwwc2uc","hour":"2021-12-19T22:00:00+00:00","tag_config_source":"DD
+        Integration Tests (321813):::project","tags":null,"total_usage_sum":17,"updated_at":"2021-12-20T17","usage_type":"infra_host_usage"},{"org_name":"DD
+        Integration Tests (321813)","public_id":"fasjyydbcgwwc2uc","hour":"2021-12-19T23:00:00+00:00","tag_config_source":"DD
+        Integration Tests (321813):::project","tags":null,"total_usage_sum":17,"updated_at":"2021-12-20T17","usage_type":"infra_host_usage"}],"metadata":{"pagination":{"next_record_id":null}}}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '862'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Wed, 22 Dec 2021 21:22:29 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '1'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '0'
+      x-ratelimit-reset:
+      - '31'
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -264,6 +264,7 @@ All URIs are relative to *https://api.datadoghq.com*
 | _TagsApi_                             | [**list_host_tags**](TagsApi.md#list_host_tags)                                                                          | **GET** /api/v1/tags/hosts                                                                         | Get Tags                                          |
 | _TagsApi_                             | [**update_host_tags**](TagsApi.md#update_host_tags)                                                                      | **PUT** /api/v1/tags/hosts/{host_name}                                                             | Update host tags                                  |
 | _UsageMeteringApi_                    | [**get_daily_custom_reports**](UsageMeteringApi.md#get_daily_custom_reports)                                             | **GET** /api/v1/daily_custom_reports                                                               | Get the list of available daily custom reports    |
+| _UsageMeteringApi_                    | [**get_hourly_usage_attribution**](UsageMeteringApi.md#get_hourly_usage_attribution)                                     | **GET** /api/v1/usage/hourly-attribution                                                           | Get Hourly Usage Attribution                      |
 | _UsageMeteringApi_                    | [**get_incident_management**](UsageMeteringApi.md#get_incident_management)                                               | **GET** /api/v1/usage/incident-management                                                          | Get hourly usage for incident management          |
 | _UsageMeteringApi_                    | [**get_ingested_spans**](UsageMeteringApi.md#get_ingested_spans)                                                         | **GET** /api/v1/usage/ingested-spans                                                               | Get hourly usage for ingested spans               |
 | _UsageMeteringApi_                    | [**get_monthly_custom_reports**](UsageMeteringApi.md#get_monthly_custom_reports)                                         | **GET** /api/v1/monthly_custom_reports                                                             | Get the list of available monthly custom reports  |
@@ -457,6 +458,11 @@ All URIs are relative to *https://api.datadoghq.com*
 - [HostMuteSettings](HostMuteSettings.md)
 - [HostTags](HostTags.md)
 - [HostTotals](HostTotals.md)
+- [HourlyUsageAttributionBody](HourlyUsageAttributionBody.md)
+- [HourlyUsageAttributionMetadata](HourlyUsageAttributionMetadata.md)
+- [HourlyUsageAttributionPagination](HourlyUsageAttributionPagination.md)
+- [HourlyUsageAttributionResponse](HourlyUsageAttributionResponse.md)
+- [HourlyUsageAttributionUsageType](HourlyUsageAttributionUsageType.md)
 - [IFrameWidgetDefinition](IFrameWidgetDefinition.md)
 - [IFrameWidgetDefinitionType](IFrameWidgetDefinitionType.md)
 - [IPPrefixesAPI](IPPrefixesAPI.md)
