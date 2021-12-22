@@ -29,35 +29,36 @@ class ApplicationKeyUpdateAttributes(ModelNormal):
     def openapi_types():
         return {
             "name": (str,),
+            "scopes": (
+                [str],
+                none_type,
+            ),
         }
 
     attribute_map = {
         "name": "name",
+        "scopes": "scopes",
     }
 
     read_only_vars = {}
 
-    def __init__(self, name, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         """ApplicationKeyUpdateAttributes - a model defined in OpenAPI
 
-        Args:
-            name (str): Name of the application key.
-
         Keyword Args:
+            name (str): [optional] Name of the application key.
+            scopes ([str], none_type): [optional] Array of scopes to grant the application key. This feature is in private beta, please contact Datadog support to enable scopes for your application keys.
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
-        self.name = name
-
     @classmethod
-    def _from_openapi_data(cls, name, *args, **kwargs):
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(ApplicationKeyUpdateAttributes, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
 
-        self.name = name
         return self

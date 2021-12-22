@@ -36,12 +36,17 @@ class PartialApplicationKeyAttributes(ModelNormal):
             "created_at": (str,),
             "last4": (str,),
             "name": (str,),
+            "scopes": (
+                [str],
+                none_type,
+            ),
         }
 
     attribute_map = {
         "created_at": "created_at",
         "last4": "last4",
         "name": "name",
+        "scopes": "scopes",
     }
 
     read_only_vars = {
@@ -56,6 +61,7 @@ class PartialApplicationKeyAttributes(ModelNormal):
             created_at (str): [optional] Creation date of the application key.
             last4 (str): [optional] The last four characters of the application key.
             name (str): [optional] Name of the application key.
+            scopes ([str], none_type): [optional] Array of scopes to grant the application key. This feature is in private beta, please contact Datadog support to enable scopes for your application keys.
         """
         super().__init__(kwargs)
 
