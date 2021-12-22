@@ -163,10 +163,6 @@ with ApiClient(configuration) as api_client:
         ),
         queries=[
             SecurityMonitoringRuleQueryCreate(
-                agent_rule=SecurityMonitoringRuntimeAgentRule(
-                    agent_rule_id="etc_shadow",
-                    expression="expression_example",
-                ),
                 aggregation=SecurityMonitoringRuleQueryAggregation("count"),
                 distinct_fields=[
                     "distinct_fields_example",
@@ -936,10 +932,6 @@ with ApiClient(configuration) as api_client:
         ),
         queries=[
             SecurityMonitoringRuleQuery(
-                agent_rule=SecurityMonitoringRuntimeAgentRule(
-                    agent_rule_id="etc_shadow",
-                    expression="expression_example",
-                ),
                 aggregation=SecurityMonitoringRuleQueryAggregation("count"),
                 distinct_fields=[
                     "distinct_fields_example",

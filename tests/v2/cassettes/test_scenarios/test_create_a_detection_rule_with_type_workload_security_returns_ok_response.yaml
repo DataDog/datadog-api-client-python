@@ -1,34 +1,31 @@
 interactions:
 - request:
     body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
-      rule","name":"Test-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1629100140","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"agentRule":{"agentRuleId":"kernel_module_unlink_2","expression":"(open.flags
-      & ((O_CREAT|O_RDWR|O_WRONLY|O_TRUNC)) > 0)"},"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:true"}],"tags":[],"type":"workload_security"}'
+      rule","name":"Test-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1640190011","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:true"}],"tags":[],"type":"workload_security"}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - '*/*'
       connection:
       - close
       content-length:
-      - '573'
+      - '450'
       content-type:
       - application/json
       host:
       - api.datadoghq.com
       user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.4 (node 14.17.4; os Linux; arch x64)
+      - datadog-api-spec/scripts/bdd-runner
       x-datadog-parent-id:
-      - '6698455153852476541'
+      - '8108364429224444138'
       x-datadog-trace-id:
-      - '1792726140053302697'
+      - '2704165638157319877'
     method: POST
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
       string: '{"creationAuthorId":1445416,"tags":[],"isEnabled":true,"hasExtendedTitle":false,"message":"Test
-        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1629100140907,"filters":[],"queries":[{"distinctFields":[],"name":"","metric":"","aggregation":"count","groupByFields":[],"query":"@agent.rule_id:(Test_Create_a_detection_rule_with_type_workload_security_returns_OK_response_1629100140_kernel_module_unlink_2
-        OR kernel_module_unlink_2)","agentRule":{"expression":"(open.flags & ((O_CREAT|O_RDWR|O_WRONLY|O_TRUNC))
-        > 0)","agentRuleId":"kernel_module_unlink_2"}}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
-        > 0"}],"type":"workload_security","id":"csl-lpm-o3j","isDefault":false,"name":"Test-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1629100140"}'
+        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1640190012032,"filters":[],"queries":[{"distinctFields":[],"name":"","metric":"","aggregation":"count","groupByFields":[],"query":"@test:true"}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
+        > 0"}],"type":"workload_security","id":"h4i-5nf-xci","isDefault":false,"name":"Test-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1640190011"}'
     headers:
       cache-control:
       - no-cache
@@ -37,13 +34,13 @@ interactions:
       content-disposition:
       - inline
       content-length:
-      - '901'
+      - '635'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json;charset=utf-8
       date:
-      - Mon, 16 Aug 2021 07:49:00 GMT
+      - Wed, 22 Dec 2021 16:20:12 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -55,13 +52,13 @@ interactions:
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
-      - '600'
+      - '1000'
       x-ratelimit-period:
-      - '60'
+      - '10'
       x-ratelimit-remaining:
-      - '599'
+      - '999'
       x-ratelimit-reset:
-      - '60'
+      - '8'
     status:
       code: 200
       message: OK
@@ -69,19 +66,19 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - '*/*'
       connection:
       - close
       host:
       - api.datadoghq.com
       user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.4 (node 14.17.4; os Linux; arch x64)
+      - datadog-api-spec/scripts/bdd-runner
       x-datadog-parent-id:
-      - '2468041391897675304'
+      - '7513683422594914900'
       x-datadog-trace-id:
-      - '1792726140053302697'
+      - '2704165638157319877'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/csl-lpm-o3j
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/h4i-5nf-xci
   response:
     body:
       string: ''
@@ -92,28 +89,28 @@ interactions:
       - close
       content-disposition:
       - inline
-      content-length:
-      - '0'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       date:
-      - Mon, 16 Aug 2021 07:49:01 GMT
+      - Wed, 22 Dec 2021 16:20:12 GMT
       pragma:
       - no-cache
       strict-transport-security:
       - max-age=15724800;
+      vary:
+      - Accept-Encoding
       x-content-type-options:
       - nosniff
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
-      - '600'
+      - '1000'
       x-ratelimit-period:
-      - '60'
+      - '10'
       x-ratelimit-remaining:
-      - '598'
+      - '998'
       x-ratelimit-reset:
-      - '59'
+      - '8'
     status:
       code: 204
       message: No Content

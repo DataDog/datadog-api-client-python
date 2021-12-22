@@ -20,10 +20,8 @@ def lazy_import():
     from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
         SecurityMonitoringRuleQueryAggregation,
     )
-    from datadog_api_client.v2.model.security_monitoring_runtime_agent_rule import SecurityMonitoringRuntimeAgentRule
 
     globals()["SecurityMonitoringRuleQueryAggregation"] = SecurityMonitoringRuleQueryAggregation
-    globals()["SecurityMonitoringRuntimeAgentRule"] = SecurityMonitoringRuntimeAgentRule
 
 
 class SecurityMonitoringRuleQueryCreate(ModelNormal):
@@ -39,7 +37,6 @@ class SecurityMonitoringRuleQueryCreate(ModelNormal):
     def openapi_types():
         lazy_import()
         return {
-            "agent_rule": (SecurityMonitoringRuntimeAgentRule,),
             "aggregation": (SecurityMonitoringRuleQueryAggregation,),
             "distinct_fields": ([str],),
             "group_by_fields": ([str],),
@@ -50,7 +47,6 @@ class SecurityMonitoringRuleQueryCreate(ModelNormal):
 
     attribute_map = {
         "query": "query",
-        "agent_rule": "agentRule",
         "aggregation": "aggregation",
         "distinct_fields": "distinctFields",
         "group_by_fields": "groupByFields",
@@ -67,7 +63,6 @@ class SecurityMonitoringRuleQueryCreate(ModelNormal):
             query (str): Query to run on logs.
 
         Keyword Args:
-            agent_rule (SecurityMonitoringRuntimeAgentRule): [optional]
             aggregation (SecurityMonitoringRuleQueryAggregation): [optional]
             distinct_fields ([str]): [optional] Field for which the cardinality is measured. Sent as an array.
             group_by_fields ([str]): [optional] Fields to group by.

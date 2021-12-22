@@ -20,7 +20,6 @@ from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation impo
 from datadog_api_client.v2.model.security_monitoring_rule_query_create import SecurityMonitoringRuleQueryCreate
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
 from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
-from datadog_api_client.v2.model.security_monitoring_runtime_agent_rule import SecurityMonitoringRuntimeAgentRule
 
 body = SecurityMonitoringRuleCreatePayload(
     name="Example-Create_a_detection_rule_with_type_workload_security_returns_OK_response",
@@ -31,10 +30,6 @@ body = SecurityMonitoringRuleCreatePayload(
             group_by_fields=[],
             distinct_fields=[],
             metric="",
-            agent_rule=SecurityMonitoringRuntimeAgentRule(
-                agent_rule_id="kernel_module_unlink_2",
-                expression="(open.flags & ((O_CREAT|O_RDWR|O_WRONLY|O_TRUNC)) > 0)",
-            ),
         )
     ],
     filters=[],
