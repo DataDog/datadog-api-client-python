@@ -18,7 +18,8 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v2.model.role_clone import RoleClone
-    globals()['RoleClone'] = RoleClone
+
+    globals()["RoleClone"] = RoleClone
 
 
 class RoleCloneRequest(ModelNormal):
@@ -28,29 +29,20 @@ class RoleCloneRequest(ModelNormal):
     Do not edit the class manually.
     """
 
-
-    validations = {
-    }
-
-
-    
+    validations = {}
 
     @cached_property
     def openapi_types():
         lazy_import()
         return {
-            'data': (RoleClone,),
+            "data": (RoleClone,),
         }
 
-
-
-
     attribute_map = {
-        'data': 'data',
+        "data": "data",
     }
 
-    read_only_vars = {
-    }
+    read_only_vars = {}
 
     def __init__(self, data, *args, **kwargs):
         """RoleCloneRequest - a model defined in OpenAPI
@@ -62,13 +54,9 @@ class RoleCloneRequest(ModelNormal):
         """
         super().__init__(kwargs)
 
-
         self._check_pos_args(args)
 
-
-
         self.data = data
-
 
     @classmethod
     def _from_openapi_data(cls, data, *args, **kwargs):
@@ -78,9 +66,5 @@ class RoleCloneRequest(ModelNormal):
 
         self._check_pos_args(args)
 
-
-
         self.data = data
         return self
-
-
