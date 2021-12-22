@@ -18,7 +18,8 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v1.model.hourly_usage_attribution_pagination import HourlyUsageAttributionPagination
-    globals()['HourlyUsageAttributionPagination'] = HourlyUsageAttributionPagination
+
+    globals()["HourlyUsageAttributionPagination"] = HourlyUsageAttributionPagination
 
 
 class HourlyUsageAttributionMetadata(ModelNormal):
@@ -28,29 +29,20 @@ class HourlyUsageAttributionMetadata(ModelNormal):
     Do not edit the class manually.
     """
 
-
-    validations = {
-    }
-
-
-    
+    validations = {}
 
     @cached_property
     def openapi_types():
         lazy_import()
         return {
-            'pagination': (HourlyUsageAttributionPagination,),
+            "pagination": (HourlyUsageAttributionPagination,),
         }
 
-
-
-
     attribute_map = {
-        'pagination': 'pagination',
+        "pagination": "pagination",
     }
 
-    read_only_vars = {
-    }
+    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """HourlyUsageAttributionMetadata - a model defined in OpenAPI
@@ -60,12 +52,7 @@ class HourlyUsageAttributionMetadata(ModelNormal):
         """
         super().__init__(kwargs)
 
-
         self._check_pos_args(args)
-
-
-
-
 
     @classmethod
     def _from_openapi_data(cls, *args, **kwargs):
@@ -75,8 +62,4 @@ class HourlyUsageAttributionMetadata(ModelNormal):
 
         self._check_pos_args(args)
 
-
-
         return self
-
-

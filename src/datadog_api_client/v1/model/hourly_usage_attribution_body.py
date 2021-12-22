@@ -19,8 +19,9 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 def lazy_import():
     from datadog_api_client.v1.model.hourly_usage_attribution_usage_type import HourlyUsageAttributionUsageType
     from datadog_api_client.v1.model.usage_attribution_tag_names import UsageAttributionTagNames
-    globals()['HourlyUsageAttributionUsageType'] = HourlyUsageAttributionUsageType
-    globals()['UsageAttributionTagNames'] = UsageAttributionTagNames
+
+    globals()["HourlyUsageAttributionUsageType"] = HourlyUsageAttributionUsageType
+    globals()["UsageAttributionTagNames"] = UsageAttributionTagNames
 
 
 class HourlyUsageAttributionBody(ModelNormal):
@@ -30,43 +31,34 @@ class HourlyUsageAttributionBody(ModelNormal):
     Do not edit the class manually.
     """
 
-
-    validations = {
-    }
-
-
-    
+    validations = {}
 
     @cached_property
     def openapi_types():
         lazy_import()
         return {
-            'hour': (datetime,),
-            'org_name': (str,),
-            'public_id': (str,),
-            'tag_config_source': (str,),
-            'tags': (UsageAttributionTagNames,),
-            'total_usage_sum': (float,),
-            'updated_at': (str,),
-            'usage_type': (HourlyUsageAttributionUsageType,),
+            "hour": (datetime,),
+            "org_name": (str,),
+            "public_id": (str,),
+            "tag_config_source": (str,),
+            "tags": (UsageAttributionTagNames,),
+            "total_usage_sum": (float,),
+            "updated_at": (str,),
+            "usage_type": (HourlyUsageAttributionUsageType,),
         }
 
-
-
-
     attribute_map = {
-        'hour': 'hour',
-        'org_name': 'org_name',
-        'public_id': 'public_id',
-        'tag_config_source': 'tag_config_source',
-        'tags': 'tags',
-        'total_usage_sum': 'total_usage_sum',
-        'updated_at': 'updated_at',
-        'usage_type': 'usage_type',
+        "hour": "hour",
+        "org_name": "org_name",
+        "public_id": "public_id",
+        "tag_config_source": "tag_config_source",
+        "tags": "tags",
+        "total_usage_sum": "total_usage_sum",
+        "updated_at": "updated_at",
+        "usage_type": "usage_type",
     }
 
-    read_only_vars = {
-    }
+    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """HourlyUsageAttributionBody - a model defined in OpenAPI
@@ -83,12 +75,7 @@ class HourlyUsageAttributionBody(ModelNormal):
         """
         super().__init__(kwargs)
 
-
         self._check_pos_args(args)
-
-
-
-
 
     @classmethod
     def _from_openapi_data(cls, *args, **kwargs):
@@ -98,8 +85,4 @@ class HourlyUsageAttributionBody(ModelNormal):
 
         self._check_pos_args(args)
 
-
-
         return self
-
-
