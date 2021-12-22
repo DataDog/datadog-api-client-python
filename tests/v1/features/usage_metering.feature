@@ -14,6 +14,24 @@ Feature: Usage Metering
     And a valid "appKeyAuth" key in the system
     And an instance of "UsageMetering" API
 
+  @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get Hourly Usage Attribution returns "Bad Request" response
+    Given operation "GetHourlyUsageAttribution" enabled
+    And new "GetHourlyUsageAttribution" request
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "usage_type" parameter with value "not_a_product"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/red-zone-revenue-query
+  Scenario: Get Hourly Usage Attribution returns "OK" response
+    Given operation "GetHourlyUsageAttribution" enabled
+    And new "GetHourlyUsageAttribution" request
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "usage_type" parameter with value "infra_host_usage"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get Usage Attribution returns "OK" response
     Given operation "GetUsageAttribution" enabled

@@ -238,6 +238,7 @@ class Configuration(object):
             "get_slo_corrections": False,
             "get_slo_history": False,
             "get_daily_custom_reports": False,
+            "get_hourly_usage_attribution": False,
             "get_monthly_custom_reports": False,
             "get_specified_daily_custom_reports": False,
             "get_specified_monthly_custom_reports": False,

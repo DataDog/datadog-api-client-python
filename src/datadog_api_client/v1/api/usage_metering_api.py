@@ -13,6 +13,8 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     none_type,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.hourly_usage_attribution_response import HourlyUsageAttributionResponse
+from datadog_api_client.v1.model.hourly_usage_attribution_usage_type import HourlyUsageAttributionUsageType
 from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse
 from datadog_api_client.v1.model.usage_attribution_response import UsageAttributionResponse
 from datadog_api_client.v1.model.usage_attribution_sort import UsageAttributionSort
@@ -93,6 +95,51 @@ class UsageMeteringApi(object):
                 "sort": {
                     "openapi_types": (UsageSort,),
                     "attribute": "sort",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._get_hourly_usage_attribution_endpoint = _Endpoint(
+            settings={
+                "response_type": (HourlyUsageAttributionResponse,),
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/hourly-attribution",
+                "operation_id": "get_hourly_usage_attribution",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
+                },
+                "usage_type": {
+                    "required": True,
+                    "openapi_types": (HourlyUsageAttributionUsageType,),
+                    "attribute": "usage_type",
+                    "location": "query",
+                },
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
+                },
+                "next_record_id": {
+                    "openapi_types": (str,),
+                    "attribute": "next_record_id",
+                    "location": "query",
+                },
+                "tag_breakdown_keys": {
+                    "openapi_types": (str,),
+                    "attribute": "tag_breakdown_keys",
                     "location": "query",
                 },
             },
@@ -1151,6 +1198,54 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_daily_custom_reports_endpoint.default_arguments(kwargs)
         return self._get_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
+
+    def get_hourly_usage_attribution(self, start_hr, usage_type, **kwargs):
+        """Get Hourly Usage Attribution
+
+        Get Hourly Usage Attribution.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True.
+
+        >>> thread = api.get_hourly_usage_attribution(start_hr, usage_type, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+            usage_type (HourlyUsageAttributionUsageType): Usage type to retrieve.
+
+        Keyword Args:
+            end_hr (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+            next_record_id (str): [optional] List following results with a next_record_id provided in the previous query.
+            tag_breakdown_keys (str): [optional] Comma separated list of tags used to group usage. If no value is provided the usage will not be broken down by tags.
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            HourlyUsageAttributionResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_hourly_usage_attribution_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        kwargs["usage_type"] = usage_type
+        return self._get_hourly_usage_attribution_endpoint.call_with_http_info(**kwargs)
 
     def get_incident_management(self, start_hr, **kwargs):
         """Get hourly usage for incident management

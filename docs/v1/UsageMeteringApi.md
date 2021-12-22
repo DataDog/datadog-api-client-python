@@ -5,6 +5,7 @@ All URIs are relative to *https://api.datadoghq.com*
 | Method                                                                                                             | HTTP request                                       | Description                                      |
 | ------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------- | ------------------------------------------------ |
 | [**get_daily_custom_reports**](UsageMeteringApi.md#get_daily_custom_reports)                                       | **GET** /api/v1/daily_custom_reports               | Get the list of available daily custom reports   |
+| [**get_hourly_usage_attribution**](UsageMeteringApi.md#get_hourly_usage_attribution)                               | **GET** /api/v1/usage/hourly-attribution           | Get Hourly Usage Attribution                     |
 | [**get_incident_management**](UsageMeteringApi.md#get_incident_management)                                         | **GET** /api/v1/usage/incident-management          | Get hourly usage for incident management         |
 | [**get_ingested_spans**](UsageMeteringApi.md#get_ingested_spans)                                                   | **GET** /api/v1/usage/ingested-spans               | Get hourly usage for ingested spans              |
 | [**get_monthly_custom_reports**](UsageMeteringApi.md#get_monthly_custom_reports)                                   | **GET** /api/v1/monthly_custom_reports             | Get the list of available monthly custom reports |
@@ -96,6 +97,90 @@ with ApiClient(configuration) as api_client:
 ### Authorization
 
 [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;datetime-format=rfc3339, application/json
+
+### HTTP response details
+
+| Status code | Description                        | Response headers |
+| ----------- | ---------------------------------- | ---------------- |
+| **200**     | OK                                 | -                |
+| **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **get_hourly_usage_attribution**
+
+> HourlyUsageAttributionResponse get_hourly_usage_attribution(start_hr, usage_type)
+
+Get Hourly Usage Attribution.
+
+### Example
+
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
+from datadog_api_client.v1.api import usage_metering_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+configuration.unstable_operations["get_hourly_usage_attribution"] = True
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = usage_metering_api.UsageMeteringApi(api_client)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    usage_type = HourlyUsageAttributionUsageType("api_usage")  # HourlyUsageAttributionUsageType | Usage type to retrieve.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+    next_record_id = "next_record_id_example"  # str | List following results with a next_record_id provided in the previous query. (optional)
+    tag_breakdown_keys = "tag_breakdown_keys_example"  # str | Comma separated list of tags used to group usage. If no value is provided the usage will not be broken down by tags. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get Hourly Usage Attribution
+        api_response = api_instance.get_hourly_usage_attribution(start_hr, usage_type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_hourly_usage_attribution: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get Hourly Usage Attribution
+        api_response = api_instance.get_hourly_usage_attribution(start_hr, usage_type, end_hr=end_hr, next_record_id=next_record_id, tag_breakdown_keys=tag_breakdown_keys)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_hourly_usage_attribution: %s\n" % e)
+```
+
+### Parameters
+
+| Name                   | Type                                | Description                                                                                                           | Notes      |
+| ---------------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **start_hr**           | **datetime**                        | Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour.      |
+| **usage_type**         | **HourlyUsageAttributionUsageType** | Usage type to retrieve.                                                                                               |
+| **end_hr**             | **datetime**                        | Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour. | [optional] |
+| **next_record_id**     | **str**                             | List following results with a next_record_id provided in the previous query.                                          | [optional] |
+| **tag_breakdown_keys** | **str**                             | Comma separated list of tags used to group usage. If no value is provided the usage will not be broken down by tags.  | [optional] |
+
+### Return type
+
+[**HourlyUsageAttributionResponse**](HourlyUsageAttributionResponse.md)
+
+### Authorization
+
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 

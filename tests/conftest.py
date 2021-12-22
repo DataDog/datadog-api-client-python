@@ -192,7 +192,7 @@ def _get_prefix(request):
 def unique(request, freezer):
     prefix = _get_prefix(request)
     with freezer:
-        return f"{prefix}-{int(datetime.now().timestamp())}"
+        return f"{prefix}-{int(datetime.utcnow().timestamp())}"
 
 
 def relative_time(freezer, iso):
@@ -220,7 +220,9 @@ def relative_time(freezer, iso):
                     elif unit == "y":
                         ret += relativedelta(years=num)
                 if iso:
-                    return ret.isoformat(timespec="seconds")
+                    return ret  # return datetime object and not string
+                    # NOTE this is not a full ISO 8601 format, but it's enough for our needs
+                    # return ret.strftime('%Y-%m-%dT%H:%M:%S') + ret.strftime('.%f')[:4] + 'Z'
                 return int(ret.timestamp())
             return ""
 
