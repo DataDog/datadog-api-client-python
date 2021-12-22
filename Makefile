@@ -1,6 +1,6 @@
 .PHONY: all
 all: .generator .env
-	@docker-compose -f docker-compose.generator.yaml up
+	@./generate.sh
 	@mkdir -p docs/v1 docs/v2
 	@cp -r v1/datadog_api_client ./src/
 	@cp -r v2/datadog_api_client ./src/
