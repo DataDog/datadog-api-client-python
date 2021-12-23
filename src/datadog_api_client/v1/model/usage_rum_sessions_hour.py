@@ -29,6 +29,8 @@ class UsageRumSessionsHour(ModelNormal):
     def openapi_types():
         return {
             "hour": (datetime,),
+            "org_name": (str,),
+            "public_id": (str,),
             "session_count": (int,),
             "session_count_android": (int,),
             "session_count_ios": (int,),
@@ -36,6 +38,8 @@ class UsageRumSessionsHour(ModelNormal):
 
     attribute_map = {
         "hour": "hour",
+        "org_name": "org_name",
+        "public_id": "public_id",
         "session_count": "session_count",
         "session_count_android": "session_count_android",
         "session_count_ios": "session_count_ios",
@@ -48,6 +52,8 @@ class UsageRumSessionsHour(ModelNormal):
 
         Keyword Args:
             hour (datetime): [optional] The hour for the usage.
+            org_name (str): [optional] The organization name.
+            public_id (str): [optional] The organization public ID.
             session_count (int): [optional] Contains the number of RUM Sessions.
             session_count_android (int): [optional] Contains the number of mobile RUM Sessions on Android (data available beginning December 1, 2020).
             session_count_ios (int): [optional] Contains the number of mobile RUM Sessions on iOS (data available beginning December 1, 2020).
