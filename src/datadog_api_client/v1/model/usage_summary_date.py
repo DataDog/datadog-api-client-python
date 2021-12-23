@@ -79,6 +79,7 @@ class UsageSummaryDate(ModelNormal):
             "opentelemetry_host_top99p": (int,),
             "orgs": ([UsageSummaryDateOrg],),
             "profiling_host_top99p": (int,),
+            "rum_browser_and_mobile_session_count": (int,),
             "rum_session_count_sum": (int,),
             "rum_total_session_count_sum": (int,),
             "rum_units_sum": (int,),
@@ -136,6 +137,7 @@ class UsageSummaryDate(ModelNormal):
         "opentelemetry_host_top99p": "opentelemetry_host_top99p",
         "orgs": "orgs",
         "profiling_host_top99p": "profiling_host_top99p",
+        "rum_browser_and_mobile_session_count": "rum_browser_and_mobile_session_count",
         "rum_session_count_sum": "rum_session_count_sum",
         "rum_total_session_count_sum": "rum_total_session_count_sum",
         "rum_units_sum": "rum_units_sum",
@@ -198,6 +200,7 @@ class UsageSummaryDate(ModelNormal):
             opentelemetry_host_top99p (int): [optional] Shows the 99th percentile of all hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for all organizations.
             orgs ([UsageSummaryDateOrg]): [optional] Organizations associated with a user.
             profiling_host_top99p (int): [optional] Shows the 99th percentile of all profiled hosts over all hours in the current date for all organizations.
+            rum_browser_and_mobile_session_count (int): [optional] Shows the sum of all mobile sessions and all browser lite and legacy sessions over all hours in the current month for all organizations.
             rum_session_count_sum (int): [optional] Shows the sum of all browser RUM Sessions over all hours in the current date for all organizations
             rum_total_session_count_sum (int): [optional] Shows the sum of RUM Sessions (browser and mobile) over all hours in the current date for all organizations.
             rum_units_sum (int): [optional] Shows the sum of all browser and mobile RUM units over all hours in the current date for all organizations.
