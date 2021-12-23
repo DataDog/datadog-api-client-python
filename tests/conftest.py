@@ -122,7 +122,10 @@ def pytest_bdd_before_scenario(request, feature, scenario):
 
 
 def pytest_bdd_after_scenario(request, feature, scenario):
-    ctx = request.getfixturevalue("context")
+    try:
+        ctx = request.getfixturevalue("context")
+    except Exception:
+        return
     for undo in reversed(ctx["undo_operations"]):
         undo()
 
