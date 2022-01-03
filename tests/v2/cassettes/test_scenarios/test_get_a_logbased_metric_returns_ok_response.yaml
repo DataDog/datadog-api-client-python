@@ -4,62 +4,16 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '239'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '5095942047695828255'
-      x-datadog-trace-id:
-      - '5095942047695828255'
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/config/metrics
   response:
     body:
       string: '{"data":{"id":"Test_Get_a_log_based_metric_returns_OK_response_1618491721","attributes":{"filter":{"query":"source:Test-Get_a_log_based_metric_returns_OK_response-1618491721"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '253'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json;charset=utf-8
-      date:
-      - Thu, 15 Apr 2021 13:02:02 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - l8RQo2maZqJf6GFThBbKNE6dvthz6njusVtau3dPXJWL2RLFoN81H+BLPB/1xgs1
-      x-dd-version:
-      - '35.4318655'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '100'
-      x-ratelimit-period:
-      - '3600'
-      x-ratelimit-remaining:
-      - '94'
-      x-ratelimit-reset:
-      - '3478'
     status:
       code: 200
       message: OK
@@ -68,58 +22,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '5095942047695828255'
-      x-datadog-trace-id:
-      - '5095942047695828255'
     method: GET
     uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Get_a_log_based_metric_returns_OK_response_1618491721
   response:
     body:
       string: '{"data":{"id":"Test_Get_a_log_based_metric_returns_OK_response_1618491721","attributes":{"filter":{"query":"source:Test-Get_a_log_based_metric_returns_OK_response-1618491721"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '253'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json;charset=utf-8
-      date:
-      - Thu, 15 Apr 2021 13:02:05 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - B1nwy/pPNqX+q4pQT22cdp1QCexE35IF8qwSHy0Nf7IW0Y881qtn4tXN1lpmzaKc
-      x-dd-version:
-      - '35.4318655'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '5000'
-      x-ratelimit-period:
-      - '3600'
-      x-ratelimit-remaining:
-      - '4999'
-      x-ratelimit-reset:
-      - '3477'
     status:
       code: 200
       message: OK
@@ -128,56 +38,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '5095942047695828255'
-      x-datadog-trace-id:
-      - '5095942047695828255'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Get_a_log_based_metric_returns_OK_response_1618491721
   response:
     body:
       string: '{}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '2'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json;charset=utf-8
-      date:
-      - Thu, 15 Apr 2021 13:02:05 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - dPySkcOzIZtKyMKDAAzuysY3gNGGj6RtYogGuSb76E8mPvoqzREyRp6lPYm91hQU
-      x-dd-version:
-      - '35.4318655'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '100'
-      x-ratelimit-period:
-      - '3600'
-      x-ratelimit-remaining:
-      - '93'
-      x-ratelimit-reset:
-      - '3475'
     status:
       code: 200
       message: OK

@@ -5,20 +5,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '418'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.4 (node 14.17.5; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '4425955630342748850'
-      x-datadog-trace-id:
-      - '4894760210927799586'
     method: POST
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
@@ -27,36 +15,8 @@ interactions:
         rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1629359425373,"filters":[],"queries":[{"distinctFields":[],"name":"","metric":"","aggregation":"count","groupByFields":[],"query":"@test:true"}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
         > 0"}],"type":"log_detection","id":"zpf-hj4-sl6","isDefault":false,"name":"Test-Delete_an_existing_rule_returns_OK_response-1618572735"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '603'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json;charset=utf-8
-      date:
-      - Thu, 19 Aug 2021 07:50:25 GMT
-      pragma:
-      - no-cache
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '600'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '597'
-      x-ratelimit-reset:
-      - '35'
     status:
       code: 200
       message: OK
@@ -65,48 +25,12 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.4 (node 14.17.5; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '7845847526136989233'
-      x-datadog-trace-id:
-      - '4894760210927799586'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/zpf-hj4-sl6
   response:
     body:
       string: ''
-    headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '0'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      date:
-      - Thu, 19 Aug 2021 07:50:25 GMT
-      pragma:
-      - no-cache
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '600'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '596'
-      x-ratelimit-reset:
-      - '35'
+    headers: {}
     status:
       code: 204
       message: No Content
@@ -115,50 +39,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.4 (node 14.17.5; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '3749099268306567443'
-      x-datadog-trace-id:
-      - '4894760210927799586'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/zpf-hj4-sl6
   response:
     body:
       string: '{"errors":["Threat detection rule not found: zpf-hj4-sl6"]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '59'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Thu, 19 Aug 2021 07:50:25 GMT
-      pragma:
-      - no-cache
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '600'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '595'
-      x-ratelimit-reset:
-      - '35'
     status:
       code: 404
       message: Not Found

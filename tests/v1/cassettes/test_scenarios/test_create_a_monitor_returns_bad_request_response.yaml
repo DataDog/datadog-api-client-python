@@ -4,20 +4,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '36'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '473692364547282172'
-      x-datadog-trace-id:
-      - '4045044024035757101'
     method: POST
     uri: https://api.datadoghq.com/api/v1/monitor
   response:
@@ -25,34 +13,8 @@ interactions:
       string: '{"errors": ["The value provided for parameter ''query'' is invalid:
         invalid operator specified: "]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '97'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 19 Oct 2021 14:57:44 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '500'
-      x-ratelimit-period:
-      - '10'
-      x-ratelimit-remaining:
-      - '498'
-      x-ratelimit-reset:
-      - '6'
     status:
       code: 400
       message: Bad Request

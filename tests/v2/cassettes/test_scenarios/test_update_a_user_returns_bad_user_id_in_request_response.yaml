@@ -5,20 +5,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '155'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '1672218239621168094'
-      x-datadog-trace-id:
-      - '1905825888012411805'
     method: POST
     uri: https://api.datadoghq.com/api/v2/users
   response:
@@ -26,26 +14,8 @@ interactions:
       string: '{"data":{"type":"users","id":"ecc80030-30ec-11ec-925a-da7ad0900002","attributes":{"name":null,"handle":"test-update_a_user_returns_bad_user_id_in_request_response-1634655468@datadoghq.com","created_at":"2021-10-19T14:57:48.456922+00:00","modified_at":"2021-10-19T14:57:48.521324+00:00","email":"test-update_a_user_returns_bad_user_id_in_request_response-1634655468@datadoghq.com","icon":"https://secure.gravatar.com/avatar/d120aef118f28fb11d345f2cf7d8cd29?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '710'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 19 Oct 2021 14:57:48 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 201
       message: Created
@@ -54,46 +24,16 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '119'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '1354185731140578137'
-      x-datadog-trace-id:
-      - '1905825888012411805'
     method: PATCH
     uri: https://api.datadoghq.com/api/v2/users/ecc80030-30ec-11ec-925a-da7ad0900002
   response:
     body:
       string: '{"errors": ["UUID''s in the URL and request body do not match"]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '63'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 19 Oct 2021 14:57:48 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 422
       message: Unprocessable Entity
@@ -102,40 +42,12 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '659108951479737982'
-      x-datadog-trace-id:
-      - '1905825888012411805'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/users/ecc80030-30ec-11ec-925a-da7ad0900002
   response:
     body:
       string: ''
-    headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '0'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      date:
-      - Tue, 19 Oct 2021 14:57:49 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
+    headers: {}
     status:
       code: 204
       message: No Content

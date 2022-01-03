@@ -8,20 +8,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '731'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '4641129135985906005'
-      x-datadog-trace-id:
-      - '1351933999966401823'
     method: POST
     uri: https://api.datadoghq.com/api/v1/monitor
   response:
@@ -32,38 +20,8 @@ interactions:
         Data","type":"log alert","options":{"notify_audit":false,"locked":false,"timeout_h":24,"renotify_interval":60,"include_tags":true,"no_data_timeframe":null,"silenced":{},"new_host_delay":600,"require_full_window":true,"notify_no_data":false,"enable_logs_sample":true,"groupby_simple_monitor":true,"escalation_message":"the
         situation has escalated","evaluation_delay":700,"thresholds":{"critical":2.0,"warning":1.0}}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '1101'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 23 Nov 2021 19:51:31 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-envoy-upstream-service-time:
-      - '273'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '500'
-      x-ratelimit-period:
-      - '10'
-      x-ratelimit-remaining:
-      - '498'
-      x-ratelimit-reset:
-      - '9'
     status:
       code: 200
       message: OK
@@ -72,54 +30,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '5523881391226054211'
-      x-datadog-trace-id:
-      - '1351933999966401823'
     method: GET
     uri: https://api.datadoghq.com/api/v1/monitor/can_delete?monitor_ids=55498399
   response:
     body:
       string: '{"errors":null,"data":{"ok":[55498399]}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '40'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 23 Nov 2021 19:51:32 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-envoy-upstream-service-time:
-      - '112'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '12000'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '11999'
-      x-ratelimit-reset:
-      - '28'
     status:
       code: 200
       message: OK
@@ -128,46 +46,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '874060263845689187'
-      x-datadog-trace-id:
-      - '1351933999966401823'
     method: DELETE
     uri: https://api.datadoghq.com/api/v1/monitor/55498399
   response:
     body:
       string: '{"deleted_monitor_id":55498399}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '31'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 23 Nov 2021 19:51:32 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-envoy-upstream-service-time:
-      - '174'
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK

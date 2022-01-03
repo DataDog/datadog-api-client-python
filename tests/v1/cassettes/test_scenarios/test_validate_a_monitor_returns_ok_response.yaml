@@ -8,48 +8,16 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '705'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '3842702030734030874'
-      x-datadog-trace-id:
-      - '453425212175196308'
     method: POST
     uri: https://api.datadoghq.com/api/v1/monitor/validate
   response:
     body:
       string: '{}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '2'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 23 Nov 2021 16:30:01 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-envoy-upstream-service-time:
-      - '156'
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK

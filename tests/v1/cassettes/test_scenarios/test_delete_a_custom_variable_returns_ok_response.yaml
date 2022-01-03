@@ -4,47 +4,16 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '106'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.4+dev (node 16.3.0; os Darwin; arch
-        x64)
-      x-datadog-parent-id:
-      - '3089514925855613338'
-      x-datadog-trace-id:
-      - '3089514925855613338'
     method: POST
     uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables
   response:
     body:
       string: '{"is_secret":false,"name":"TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1628785713","value":"variable-value"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '106'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Thu, 12 Aug 2021 16:28:34 GMT
-      location:
-      - https://app.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1628785713
-      pragma:
-      - no-cache
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 201
       message: Created
@@ -53,43 +22,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.4+dev (node 16.3.0; os Darwin; arch
-        x64)
-      x-datadog-parent-id:
-      - '3089514925855613338'
-      x-datadog-trace-id:
-      - '3089514925855613338'
     method: DELETE
     uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1628785713
   response:
     body:
       string: '{}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '2'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Thu, 12 Aug 2021 16:28:34 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
@@ -98,43 +38,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.4+dev (node 16.3.0; os Darwin; arch
-        x64)
-      x-datadog-parent-id:
-      - '3089514925855613338'
-      x-datadog-trace-id:
-      - '3089514925855613338'
     method: DELETE
     uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1628785713
   response:
     body:
       string: '{"errors": ["Custom variable does not exist"]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '46'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Thu, 12 Aug 2021 16:28:35 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 400
       message: Bad Request

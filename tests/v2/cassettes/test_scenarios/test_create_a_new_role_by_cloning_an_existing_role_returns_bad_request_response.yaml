@@ -4,56 +4,16 @@ interactions:
     headers:
       accept:
       - '*/*'
-      connection:
-      - close
-      content-length:
-      - '140'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-spec/scripts/bdd-runner
-      x-datadog-parent-id:
-      - '5882917064409071607'
-      x-datadog-trace-id:
-      - '5013029190881370125'
     method: POST
     uri: https://api.datadoghq.com/api/v2/roles
   response:
     body:
       string: '{"data":{"type":"roles","id":"8eadd0f0-629d-11ec-af3f-da7ad0900002","attributes":{"name":"Test-Create_a_new_role_by_cloning_an_existing_role_returns_Bad_Request_response-1640118938","created_at":"2021-12-21T20:35:38.477734+00:00","modified_at":"2021-12-21T20:35:38.562460+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"},{"type":"permissions","id":"12efc20e-d36c-11eb-a9b8-da7ad0900002"},{"type":"permissions","id":"97971c1c-e895-11eb-b13c-da7ad0900002"},{"type":"permissions","id":"7605ef24-f376-11eb-b90b-da7ad0900002"}]}}}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '726'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 21 Dec 2021 20:35:38 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '500'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '499'
-      x-ratelimit-reset:
-      - '22'
     status:
       code: 200
       message: OK
@@ -62,48 +22,16 @@ interactions:
     headers:
       accept:
       - '*/*'
-      connection:
-      - close
-      content-length:
-      - '54'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-spec/scripts/bdd-runner
-      x-datadog-parent-id:
-      - '2838613727096632313'
-      x-datadog-trace-id:
-      - '5013029190881370125'
     method: POST
     uri: https://api.datadoghq.com/api/v2/roles/8eadd0f0-629d-11ec-af3f-da7ad0900002/clone
   response:
     body:
       string: '{"errors": ["Role names cannot be only whitespace"]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '52'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 21 Dec 2021 20:35:38 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 400
       message: Bad Request
@@ -112,48 +40,12 @@ interactions:
     headers:
       accept:
       - '*/*'
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-spec/scripts/bdd-runner
-      x-datadog-parent-id:
-      - '606368063604124071'
-      x-datadog-trace-id:
-      - '5013029190881370125'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/roles/8eadd0f0-629d-11ec-af3f-da7ad0900002
   response:
     body:
       string: ''
-    headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      date:
-      - Tue, 21 Dec 2021 20:35:38 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '500'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '497'
-      x-ratelimit-reset:
-      - '22'
+    headers: {}
     status:
       code: 204
       message: No Content

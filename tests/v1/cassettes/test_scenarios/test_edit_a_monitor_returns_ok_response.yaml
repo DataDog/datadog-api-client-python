@@ -8,20 +8,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '697'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '8409992582086277512'
-      x-datadog-trace-id:
-      - '2640242031619077350'
     method: POST
     uri: https://api.datadoghq.com/api/v1/monitor
   response:
@@ -32,38 +20,8 @@ interactions:
         Data","type":"log alert","options":{"notify_audit":false,"locked":false,"timeout_h":24,"renotify_interval":60,"include_tags":true,"no_data_timeframe":null,"silenced":{},"new_host_delay":600,"require_full_window":true,"notify_no_data":false,"enable_logs_sample":true,"groupby_simple_monitor":true,"escalation_message":"the
         situation has escalated","evaluation_delay":700,"thresholds":{"critical":2.0,"warning":1.0}}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '1067'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 23 Nov 2021 19:51:33 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-envoy-upstream-service-time:
-      - '140'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '500'
-      x-ratelimit-period:
-      - '10'
-      x-ratelimit-remaining:
-      - '496'
-      x-ratelimit-reset:
-      - '8'
     status:
       code: 200
       message: OK
@@ -72,20 +30,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '234'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '4030726966596157057'
-      x-datadog-trace-id:
-      - '2640242031619077350'
     method: PUT
     uri: https://api.datadoghq.com/api/v1/monitor/55498411
   response:
@@ -95,38 +41,8 @@ interactions:
         > 2","message":"some message Notify: @hipchat-channel","id":55498411,"multi":true,"name":"Test-Edit_a_monitor_returns_OK_response-1633076915-updated","created":"2021-11-23T19:51:33.052863+00:00","created_at":1637697093000,"org_id":321813,"modified":"2021-11-23T19:51:33.407692+00:00","priority":3,"overall_state_modified":null,"overall_state":"No
         Data","type":"log alert","options":{"notify_audit":false,"locked":false,"timeout_h":null,"silenced":{},"include_tags":true,"thresholds":{"critical":2.0},"new_host_delay":null,"notify_no_data":false,"renotify_interval":null,"groupby_simple_monitor":false,"new_group_delay":600,"evaluation_delay":null}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '865'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 23 Nov 2021 19:51:33 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-envoy-upstream-service-time:
-      - '147'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '500'
-      x-ratelimit-period:
-      - '10'
-      x-ratelimit-remaining:
-      - '499'
-      x-ratelimit-reset:
-      - '7'
     status:
       code: 200
       message: OK
@@ -135,46 +51,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '1630800869438972602'
-      x-datadog-trace-id:
-      - '2640242031619077350'
     method: DELETE
     uri: https://api.datadoghq.com/api/v1/monitor/55498411
   response:
     body:
       string: '{"deleted_monitor_id":55498411}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '31'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 23 Nov 2021 19:51:33 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-envoy-upstream-service-time:
-      - '189'
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK

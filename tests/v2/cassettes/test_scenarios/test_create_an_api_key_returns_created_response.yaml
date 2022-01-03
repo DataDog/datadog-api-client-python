@@ -4,48 +4,16 @@ interactions:
     headers:
       accept:
       - '*/*'
-      connection:
-      - close
-      content-length:
-      - '111'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-spec/scripts/bdd-runner
-      x-datadog-parent-id:
-      - '307687841352567763'
-      x-datadog-trace-id:
-      - '307687841352567763'
     method: POST
     uri: https://api.datadoghq.com/api/v2/api_keys
   response:
     body:
       string: '{"data":{"type":"api_keys","attributes":{"created_at":"2021-12-17T16:05:11.162599+00:00","key":"dead4087c6b3d1ae4b5e22e77a98beef","last4":"beef","modified_at":"2021-12-17T16:05:11.162599+00:00","name":"Test-Create_an_API_key_returns_Created_response-1639757110"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"b4826cba-c36e-5bb0-b789-a40a81b4acfa"}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '493'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Fri, 17 Dec 2021 16:05:11 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 201
       message: Created
@@ -54,40 +22,12 @@ interactions:
     headers:
       accept:
       - '*/*'
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-spec/scripts/bdd-runner
-      x-datadog-parent-id:
-      - '307687841352567763'
-      x-datadog-trace-id:
-      - '307687841352567763'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/api_keys/b4826cba-c36e-5bb0-b789-a40a81b4acfa
   response:
     body:
       string: ''
-    headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      date:
-      - Fri, 17 Dec 2021 16:05:11 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
+    headers: {}
     status:
       code: 204
       message: No Content

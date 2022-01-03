@@ -5,20 +5,8 @@ interactions:
     headers:
       accept:
       - '*/*'
-      connection:
-      - close
-      content-length:
-      - '450'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-spec/scripts/bdd-runner
-      x-datadog-parent-id:
-      - '8108364429224444138'
-      x-datadog-trace-id:
-      - '2704165638157319877'
     method: POST
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
@@ -27,38 +15,8 @@ interactions:
         rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1640190012032,"filters":[],"queries":[{"distinctFields":[],"name":"","metric":"","aggregation":"count","groupByFields":[],"query":"@test:true"}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
         > 0"}],"type":"workload_security","id":"h4i-5nf-xci","isDefault":false,"name":"Test-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1640190011"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '635'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json;charset=utf-8
-      date:
-      - Wed, 22 Dec 2021 16:20:12 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '1000'
-      x-ratelimit-period:
-      - '10'
-      x-ratelimit-remaining:
-      - '999'
-      x-ratelimit-reset:
-      - '8'
     status:
       code: 200
       message: OK
@@ -67,50 +25,12 @@ interactions:
     headers:
       accept:
       - '*/*'
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-spec/scripts/bdd-runner
-      x-datadog-parent-id:
-      - '7513683422594914900'
-      x-datadog-trace-id:
-      - '2704165638157319877'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/h4i-5nf-xci
   response:
     body:
       string: ''
-    headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      date:
-      - Wed, 22 Dec 2021 16:20:12 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '1000'
-      x-ratelimit-period:
-      - '10'
-      x-ratelimit-remaining:
-      - '998'
-      x-ratelimit-reset:
-      - '8'
+    headers: {}
     status:
       code: 204
       message: No Content

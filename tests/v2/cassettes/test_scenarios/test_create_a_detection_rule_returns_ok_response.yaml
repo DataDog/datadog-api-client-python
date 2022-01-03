@@ -5,20 +5,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '395'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '5095942047695828255'
-      x-datadog-trace-id:
-      - '5095942047695828255'
     method: POST
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
@@ -27,34 +15,8 @@ interactions:
         rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1618491769225,"filters":[],"queries":[{"distinctFields":[],"name":"","metric":"","aggregation":"count","groupByFields":[],"query":"@test:true","trackType":"logs"}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
         > 0"}],"type":"log_detection","id":"ihw-tnw-ivf","isDefault":false,"name":"Test-Create_a_detection_rule_returns_OK_response-1618491768"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '622'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json;charset=utf-8
-      date:
-      - Thu, 15 Apr 2021 13:02:49 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - tpRCH6w417YjBovRJ8VmtuXmNONVYiRp2c8d2AxjPdGBn8PCtgG4vAztrx3qUZAN
-      x-dd-version:
-      - '35.4318655'
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
@@ -63,46 +25,12 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '5095942047695828255'
-      x-datadog-trace-id:
-      - '5095942047695828255'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/ihw-tnw-ivf
   response:
     body:
       string: ''
-    headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '0'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      date:
-      - Thu, 15 Apr 2021 13:02:49 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - B1nwy/pPNqX+q4pQT22cdp1QCexE35IF8qwSHy0Nf7IW0Y881qtn4tXN1lpmzaKc
-      x-dd-version:
-      - '35.4318655'
-      x-frame-options:
-      - SAMEORIGIN
+    headers: {}
     status:
       code: 204
       message: No Content

@@ -5,20 +5,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '337'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '4541457145544045469'
-      x-datadog-trace-id:
-      - '5615542645610755717'
     method: POST
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters
   response:
@@ -26,34 +14,8 @@ interactions:
       string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Delete_a_security_filter_returns_No_Content_response-1620751632","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
         logs from staging"}],"version":1,"query":"service:TestDeleteasecurityfilterreturnsNoContentresponse1620751632","is_builtin":false},"type":"security_filters","id":"sqg-5rq-5qc"}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '387'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json;charset=utf-8
-      date:
-      - Wed, 12 May 2021 07:50:04 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - l8RQo2maZqJf6GFThBbKNE6dvthz6njusVtau3dPXJWL2RLFoN81H+BLPB/1xgs1
-      x-dd-version:
-      - '35.4512853'
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
@@ -62,46 +24,12 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '8462887404662965022'
-      x-datadog-trace-id:
-      - '5615542645610755717'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/sqg-5rq-5qc
   response:
     body:
       string: ''
-    headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '0'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      date:
-      - Wed, 12 May 2021 07:50:04 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - PhosSd3Ch1B6B0DXI71steKUi7XhPDttnPiIP1NdXTw0VJNWpoUnYyBmODS5ne3q
-      x-dd-version:
-      - '35.4512853'
-      x-frame-options:
-      - SAMEORIGIN
+    headers: {}
     status:
       code: 204
       message: No Content
@@ -110,46 +38,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '4032555497644175209'
-      x-datadog-trace-id:
-      - '5615542645610755717'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/sqg-5rq-5qc
   response:
     body:
       string: '{"errors":["not_found(Security filter with id ''sqg-5rq-5qc'' not found)"]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '73'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Wed, 12 May 2021 07:50:04 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-version:
-      - '35.4512853'
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 404
       message: Not Found

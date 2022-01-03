@@ -4,20 +4,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '319'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '5571625235413541261'
-      x-datadog-trace-id:
-      - '1846571273775628065'
     method: POST
     uri: https://api.datadoghq.com/api/v1/downtime
   response:
@@ -25,26 +13,8 @@ interactions:
       string: '{"errors": ["You must provide only provide one of (until_occurrences,
         until_date)"]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '84'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 19 Oct 2021 14:57:43 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 400
       message: Bad Request

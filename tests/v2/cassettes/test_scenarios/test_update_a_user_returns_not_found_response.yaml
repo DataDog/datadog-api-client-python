@@ -4,48 +4,16 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '117'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '919435690677727844'
-      x-datadog-trace-id:
-      - '3035309872379962866'
     method: PATCH
     uri: https://api.datadoghq.com/api/v2/users/00000000-dead-beef-dead-ffffffffffff
   response:
     body:
       string: '{"errors": ["00000000-dead-beef-dead-ffffffffffff not found"]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '62'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 19 Oct 2021 14:57:49 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 404
       message: Not Found

@@ -4,60 +4,16 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '143'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '2282340330001095403'
-      x-datadog-trace-id:
-      - '2282340330001095403'
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
   response:
     body:
       string: '{"meta":{"status":"done","request_id":"pddv1ChZocmNxWUhOUlM2YVlldlFVVE4weWpnIi0KHZuyJ0Izc6WTvx6409xTlRS_iRRFg3jYVKiLIjbAEgzPt5RlpUdFAOXBR30","elapsed":3},"data":{"buckets":[{"computes":{"c0":[{"value":1,"time":"2021-06-02T10:00:00.000Z"},{"value":6,"time":"2021-06-02T10:05:00.000Z"}]},"by":{}}]}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '297'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Wed, 02 Jun 2021 10:09:20 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - vdJ3/nHEY1ioXQ6pQrBVvsQK1s4yyc+wufBMPSoXql71qZVuP/xMdtNo6DafhOAk
-      x-dd-version:
-      - '35.4656181'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '300'
-      x-ratelimit-period:
-      - '300'
-      x-ratelimit-remaining:
-      - '296'
-      x-ratelimit-reset:
-      - '40'
     status:
       code: 200
       message: OK

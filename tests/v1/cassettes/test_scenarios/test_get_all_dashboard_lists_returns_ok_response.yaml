@@ -4,16 +4,6 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '8816272508573254439'
-      x-datadog-trace-id:
-      - '8439527189716614678'
     method: GET
     uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual
   response:
@@ -23,28 +13,8 @@ interactions:
         Test-Update_a_dashboard_list_returns_OK_response-1633075858","dashboard_count":0,"author":{"handle":"frog@datadoghq.com","name":null},"created":"2021-10-01T08:10:58.489385+00:00","type":"manual_dashboard_list","dashboards":null,"modified":"2021-10-01T08:10:58.877699+00:00","id":240504},{"is_favorite":false,"name":"updated
         Test-Update_a_dashboard_list_returns_OK_response-1633075932","dashboard_count":0,"author":{"handle":"frog@datadoghq.com","name":null},"created":"2021-10-01T08:12:12.424522+00:00","type":"manual_dashboard_list","dashboards":null,"modified":"2021-10-01T08:12:12.666891+00:00","id":240508}]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '3147'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Fri, 01 Oct 2021 08:28:31 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK

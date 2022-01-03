@@ -5,20 +5,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '255'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.17.6; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '5782734682886616747'
-      x-datadog-trace-id:
-      - '5152445150548192857'
     method: POST
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
@@ -26,26 +14,8 @@ interactions:
       string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"g9f-ifq-bnc","title":"Test-Create_a_new_dashboard_with_funnel_widget-1631888670
         with funnel widget","url":"/dashboard/g9f-ifq-bnc/test-createanewdashboardwithfunnelwidget-1631888670-with-funnel-widget","created_at":"2021-09-17T14:24:30.292231+00:00","modified_at":"2021-09-17T14:24:30.292231+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"query":{"query_string":"","data_source":"rum","steps":[]},"request_type":"funnel"}],"type":"funnel"},"id":2673423064633329}],"layout_type":"ordered"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '658'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Fri, 17 Sep 2021 14:24:30 GMT
-      pragma:
-      - no-cache
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
@@ -54,42 +24,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.17.6; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '7395425731045937515'
-      x-datadog-trace-id:
-      - '5152445150548192857'
     method: DELETE
     uri: https://api.datadoghq.com/api/v1/dashboard/g9f-ifq-bnc
   response:
     body:
       string: '{"deleted_dashboard_id":"g9f-ifq-bnc"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '38'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Fri, 17 Sep 2021 14:24:30 GMT
-      pragma:
-      - no-cache
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK

@@ -6,20 +6,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '419'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '6513831381695070861'
-      x-datadog-trace-id:
-      - '6520343188750172941'
     method: POST
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
@@ -28,32 +16,8 @@ interactions:
         with timeseries widget","url":"/dashboard/edw-vay-96u/test-createanewdashboardwithtimeserieswidgetcontainingstyleattributes-1618572731","created_at":"2021-04-16T11:32:11.338701+00:00","modified_at":"2021-04-16T11:32:11.338701+00:00","author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","widgets":[{"definition":{"requests":[{"q":"sum:trace.test.errors{env:prod,service:datadog-api-spec}
         by {resource_name}.as_count()","on_right_yaxis":false,"style":{"line_width":"normal","palette":"warm","line_type":"solid"},"display_type":"bars"}],"type":"timeseries"},"id":1125815002687389}],"layout_type":"ordered"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '836'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Fri, 16 Apr 2021 11:32:11 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - twvpGlmuom5y6A0pjGtXzTf554cmwJgTcCZ71fK4H/RDi+v5ehBK0zQiRcTJQG5C
-      x-dd-version:
-      - '35.4327367'
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
@@ -62,48 +26,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '7704306972974471993'
-      x-datadog-trace-id:
-      - '6520343188750172941'
     method: DELETE
     uri: https://api.datadoghq.com/api/v1/dashboard/edw-vay-96u
   response:
     body:
       string: '{"deleted_dashboard_id":"edw-vay-96u"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '38'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Fri, 16 Apr 2021 11:32:11 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - gYZcaADwbKcv7Hm19HJx6WsLoKuOijDWAt2viPeCfWqUgyKY+9e1xZdmMJeXV3YV
-      x-dd-version:
-      - '35.4327367'
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
