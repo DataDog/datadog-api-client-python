@@ -4,48 +4,16 @@ interactions:
     headers:
       accept:
       - '*/*'
-      connection:
-      - close
-      content-length:
-      - '100'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-spec/scripts/bdd-runner
-      x-datadog-parent-id:
-      - '307687841352567763'
-      x-datadog-trace-id:
-      - '307687841352567763'
     method: POST
     uri: https://api.datadoghq.com/api/v2/api_keys
   response:
     body:
       string: '{"data":{"type":"api_keys","attributes":{"created_at":"2021-12-17T16:05:21.803896+00:00","key":"dead4087c6b3d1ae4b5e22e77a98beef","last4":"beef","modified_at":"2021-12-17T16:05:21.803896+00:00","name":"Test-Get_API_key_returns_OK_response-1639757121"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"1ad16a21-500e-5793-87e5-03d1546500fb"}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '482'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Fri, 17 Dec 2021 16:05:21 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 201
       message: Created
@@ -54,44 +22,14 @@ interactions:
     headers:
       accept:
       - '*/*'
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-spec/scripts/bdd-runner
-      x-datadog-parent-id:
-      - '307687841352567763'
-      x-datadog-trace-id:
-      - '307687841352567763'
     method: GET
     uri: https://api.datadoghq.com/api/v2/api_keys/1ad16a21-500e-5793-87e5-03d1546500fb
   response:
     body:
       string: '{"data":{"type":"api_keys","attributes":{"created_at":"2021-12-17T16:05:21.803896+00:00","key":"7fd5893c73f9bd6a5d8504b9f4049d5e","last4":"beef","modified_at":"2021-12-17T16:05:21.803896+00:00","name":"Test-Get_API_key_returns_OK_response-1639757121"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"1ad16a21-500e-5793-87e5-03d1546500fb"}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '482'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Fri, 17 Dec 2021 16:05:22 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
@@ -100,40 +38,12 @@ interactions:
     headers:
       accept:
       - '*/*'
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-spec/scripts/bdd-runner
-      x-datadog-parent-id:
-      - '307687841352567763'
-      x-datadog-trace-id:
-      - '307687841352567763'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/api_keys/1ad16a21-500e-5793-87e5-03d1546500fb
   response:
     body:
       string: ''
-    headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      date:
-      - Fri, 17 Dec 2021 16:05:22 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
+    headers: {}
     status:
       code: 204
       message: No Content

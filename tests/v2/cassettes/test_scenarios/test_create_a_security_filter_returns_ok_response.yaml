@@ -4,20 +4,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '312'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '5020426605146906579'
-      x-datadog-trace-id:
-      - '6436630674961443633'
     method: POST
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters
   response:
@@ -25,34 +13,8 @@ interactions:
       string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Create_a_security_filter_returns_OK_response-1620751589","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
         staging"}],"version":1,"query":"service:TestCreateasecurityfilterreturnsOKresponse1620751589","is_builtin":false},"type":"security_filters","id":"tuz-sj9-ft0"}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '362'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json;charset=utf-8
-      date:
-      - Wed, 12 May 2021 07:50:04 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - 2328yjLSqI4XmR1pVqrPRR/SFcQsbafjEpPmZx7/3PfxUK1nJQQsX+wrMelyVyj+
-      x-dd-version:
-      - '35.4512853'
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
@@ -61,46 +23,12 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '297466005658640111'
-      x-datadog-trace-id:
-      - '6436630674961443633'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/tuz-sj9-ft0
   response:
     body:
       string: ''
-    headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '0'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      date:
-      - Wed, 12 May 2021 07:50:04 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - dPySkcOzIZtKyMKDAAzuysY3gNGGj6RtYogGuSb76E8mPvoqzREyRp6lPYm91hQU
-      x-dd-version:
-      - '35.4512853'
-      x-frame-options:
-      - SAMEORIGIN
+    headers: {}
     status:
       code: 204
       message: No Content

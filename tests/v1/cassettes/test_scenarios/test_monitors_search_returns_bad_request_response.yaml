@@ -4,16 +4,6 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '7060831856093393156'
-      x-datadog-trace-id:
-      - '7060831856093393156'
     method: GET
     uri: https://api.datadoghq.com/api/v1/monitor/search?query=status%3Anotastatus
   response:
@@ -21,36 +11,8 @@ interactions:
       string: '{"errors": ["Query parsing error: ''notastatus'' is not a valid monitor
         status"]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '79'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 25 May 2021 10:23:22 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-dd-version:
-      - '35.4600248'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '120'
-      x-ratelimit-period:
-      - '10'
-      x-ratelimit-remaining:
-      - '117'
-      x-ratelimit-reset:
-      - '8'
     status:
       code: 400
       message: Bad Request

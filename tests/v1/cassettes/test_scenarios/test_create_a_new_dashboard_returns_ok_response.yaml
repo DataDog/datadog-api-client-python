@@ -5,20 +5,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '426'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '5830080563978653823'
-      x-datadog-trace-id:
-      - '6208097067999596962'
     method: POST
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
@@ -26,30 +14,8 @@ interactions:
       string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"3bx-gkd-w2k","title":"Test-Create_a_new_dashboard_returns_OK_response-1638225032
         with Profile Metrics Query","url":"/dashboard/3bx-gkd-w2k/test-createanewdashboardreturnsokresponse-1638225032-with-profile-metrics-query","created_at":"2021-11-29T22:30:32.645351+00:00","modified_at":"2021-11-29T22:30:32.645351+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"id":4897053143473204}],"layout_type":"ordered"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '838'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Mon, 29 Nov 2021 22:30:32 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-envoy-upstream-service-time:
-      - '113'
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
@@ -58,46 +24,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '4203962888754522355'
-      x-datadog-trace-id:
-      - '6208097067999596962'
     method: DELETE
     uri: https://api.datadoghq.com/api/v1/dashboard/3bx-gkd-w2k
   response:
     body:
       string: '{"deleted_dashboard_id":"3bx-gkd-w2k"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '38'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Mon, 29 Nov 2021 22:30:32 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-envoy-upstream-service-time:
-      - '125'
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK

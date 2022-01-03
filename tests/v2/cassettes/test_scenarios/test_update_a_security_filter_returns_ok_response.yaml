@@ -5,20 +5,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '322'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '7054868099108239715'
-      x-datadog-trace-id:
-      - '5133501351020970758'
     method: POST
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters
   response:
@@ -26,34 +14,8 @@ interactions:
       string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Update_a_security_filter_returns_OK_response-1620751634","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
         logs from staging"}],"version":1,"query":"service:TestUpdateasecurityfilterreturnsOKresponse1620751634","is_builtin":false},"type":"security_filters","id":"8f3-mwd-7yk"}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '372'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json;charset=utf-8
-      date:
-      - Wed, 12 May 2021 07:50:05 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - /L+SFFO+m1pPY+hRCpk5325fvfrNl0KmiquUNJolBN/5hu3HIwflqjZSbJ6NxDFG
-      x-dd-version:
-      - '35.4512853'
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
@@ -62,54 +24,16 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '273'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '714903832313943354'
-      x-datadog-trace-id:
-      - '5133501351020970758'
     method: PATCH
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/8f3-mwd-7yk
   response:
     body:
       string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Update_a_security_filter_returns_OK_response-1620751634","filtered_data_type":"logs","exclusion_filters":[],"version":2,"query":"service:TestUpdateasecurityfilterreturnsOKresponse1620751634","is_builtin":false},"type":"security_filters","id":"8f3-mwd-7yk"}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '311'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json;charset=utf-8
-      date:
-      - Wed, 12 May 2021 07:50:05 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - nLnnBNvlCFDECRnZvzDb0z4sAO35G+IMidcAs8vrCKyjvsKWE8Yd9S3n6OjZ1qRN
-      x-dd-version:
-      - '35.4512853'
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
@@ -118,46 +42,12 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '6015953737111804211'
-      x-datadog-trace-id:
-      - '5133501351020970758'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/8f3-mwd-7yk
   response:
     body:
       string: ''
-    headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '0'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      date:
-      - Wed, 12 May 2021 07:50:05 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - HbtaOKlJ6OCrx9tMXO6ivMTrEM+g0c93HDp08trmOmgdHozC5J+vn10F0H4WPjCU
-      x-dd-version:
-      - '35.4512853'
-      x-frame-options:
-      - SAMEORIGIN
+    headers: {}
     status:
       code: 204
       message: No Content

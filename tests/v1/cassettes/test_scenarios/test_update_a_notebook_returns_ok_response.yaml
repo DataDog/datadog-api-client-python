@@ -5,20 +5,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '296'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '6155795697454066766'
-      x-datadog-trace-id:
-      - '6155795697454066766'
     method: POST
     uri: https://api.datadoghq.com/api/v1/notebooks
   response:
@@ -26,40 +14,8 @@ interactions:
       string: '{"data":{"type":"notebooks","id":774485,"attributes":{"name":"Test-Update_a_notebook_returns_OK_response-1620731122","cells":[{"attributes":{"definition":{"text":"#
         Test-Update_a_notebook_returns_OK_response-1620731122 notebook text","type":"markdown"}},"type":"notebook_cells","id":"fba7ha9z"}],"time":{"live_span":"1h"},"status":"published","modified":"2021-05-11T11:05:22.614667+00:00","created":"2021-05-11T11:05:22.614667+00:00","author":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '672'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 11 May 2021 11:05:22 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - l4HFlaRP3QwYSqoGKhzbYfv7zgkK63HIRR7YkyVYZspq0lGjjTBwoK8V/alf+XYt
-      x-dd-version:
-      - '35.4504344'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '30'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '29'
-      x-ratelimit-reset:
-      - '38'
     status:
       code: 200
       message: OK
@@ -69,20 +25,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '642'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '6155795697454066766'
-      x-datadog-trace-id:
-      - '6155795697454066766'
     method: PUT
     uri: https://api.datadoghq.com/api/v1/notebooks/774485
   response:
@@ -90,40 +34,8 @@ interactions:
       string: '{"data":{"type":"notebooks","id":774485,"attributes":{"name":"Test-Update_a_notebook_returns_OK_response-1620731122-updated","cells":[{"attributes":{"definition":{"text":"##
         Some test markdown\n\n```js\nvar x, y;\nx = 5;\ny = 6;\n```","type":"markdown"}},"type":"notebook_cells","id":"j5oy1chn"},{"attributes":{"definition":{"requests":[{"q":"avg:system.load.1{*}","style":{"line_width":"normal","palette":"dog_classic","line_type":"solid"},"display_type":"line"}],"type":"timeseries","show_legend":true,"yaxis":{"scale":"linear"}},"graph_size":"m","split_by":{"keys":[],"tags":[]},"time":null},"type":"notebook_cells","id":"8s9f0zci"}],"time":{"live_span":"1h"},"status":"published","modified":"2021-05-11T11:05:23.057423+00:00","created":"2021-05-11T11:05:22.614667+00:00","author":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '1013'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 11 May 2021 11:05:23 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - Um4CoU685QqAscnxhS5BD+goWu2yX1Jd4zCfGzSsEvPPIm1qURZaF8dlLl/OEY4I
-      x-dd-version:
-      - '35.4504344'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '30'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '29'
-      x-ratelimit-reset:
-      - '37'
     status:
       code: 200
       message: OK
@@ -132,54 +44,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '6155795697454066766'
-      x-datadog-trace-id:
-      - '6155795697454066766'
     method: DELETE
     uri: https://api.datadoghq.com/api/v1/notebooks/774485
   response:
     body:
       string: ''
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '0'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 11 May 2021 11:05:23 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - twvpGlmuom5y6A0pjGtXzTf554cmwJgTcCZ71fK4H/RDi+v5ehBK0zQiRcTJQG5C
-      x-dd-version:
-      - '35.4504344'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '30'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '29'
-      x-ratelimit-reset:
-      - '37'
     status:
       code: 204
       message: No Content

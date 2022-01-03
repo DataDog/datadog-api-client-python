@@ -4,56 +4,16 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '201'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.12.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '184200789673602245'
-      x-datadog-trace-id:
-      - '184200789673602245'
     method: POST
     uri: https://api.datadoghq.com/api/v1/slo
   response:
     body:
       string: '{"errors": ["Invalid payload: must specify monitor_ids or monitor_search"]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '75'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Wed, 14 Apr 2021 15:12:34 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-dd-version:
-      - '35.4310591'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '500'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '498'
-      x-ratelimit-reset:
-      - '26'
     status:
       code: 400
       message: Bad Request

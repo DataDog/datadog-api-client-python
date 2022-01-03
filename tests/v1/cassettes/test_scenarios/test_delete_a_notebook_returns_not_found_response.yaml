@@ -4,54 +4,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '471840153606093221'
-      x-datadog-trace-id:
-      - '471840153606093221'
     method: DELETE
     uri: https://api.datadoghq.com/api/v1/notebooks/123456
   response:
     body:
       string: '{"errors": ["Notebook not found"]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '34'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 11 May 2021 09:42:53 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-version:
-      - '35.4503153'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '30'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '29'
-      x-ratelimit-reset:
-      - '7'
     status:
       code: 404
       message: Not Found

@@ -4,17 +4,6 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - ip-ranges.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.4+dev (node 14.17.1; os Linux; arch
-        x64)
-      x-datadog-parent-id:
-      - '7040256429667386158'
-      x-datadog-trace-id:
-      - '7406540036055883853'
     method: GET
     uri: https://ip-ranges.datadoghq.com/
   response:
@@ -193,32 +182,8 @@ interactions:
         ,\n            \"52.73.176.69/32\",\n            \"54.163.84.196/32\"\n  \
         \      ],\n        \"prefixes_ipv6\": []\n    }\n}\n"
     headers:
-      accept-ranges:
-      - bytes
-      connection:
-      - close
-      content-length:
-      - '11868'
       content-type:
       - application/json
-      date:
-      - Tue, 06 Jul 2021 10:09:48 GMT
-      etag:
-      - '"ecb4ed42838b56fe91b86d372e2f1b0e"'
-      last-modified:
-      - Fri, 02 Apr 2021 15:14:33 GMT
-      server:
-      - AmazonS3
-      vary:
-      - Accept-Encoding
-      via:
-      - 1.1 40adc3dc2f5b304254d63ab3859fedd2.cloudfront.net (CloudFront)
-      x-amz-cf-id:
-      - f78CjN_czPWSTEdMgtXeukIyTg6Q-fKmZZ6cXxlUN6ddblnecFQmQg==
-      x-amz-cf-pop:
-      - IAD89-C2
-      x-cache:
-      - RefreshHit from cloudfront
     status:
       code: 200
       message: OK

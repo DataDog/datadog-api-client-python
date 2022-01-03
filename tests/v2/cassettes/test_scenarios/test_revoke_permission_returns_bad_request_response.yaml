@@ -4,56 +4,16 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '112'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '5516379887009913692'
-      x-datadog-trace-id:
-      - '6193664588531543271'
     method: POST
     uri: https://api.datadoghq.com/api/v2/roles
   response:
     body:
       string: '{"data":{"type":"roles","id":"ebaa4190-30ec-11ec-925a-da7ad0900002","attributes":{"name":"Test-Revoke_permission_returns_Bad_Request_response-1634655466","created_at":"2021-10-19T14:57:46.585408+00:00","modified_at":"2021-10-19T14:57:46.585408+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"},{"type":"permissions","id":"12efc20e-d36c-11eb-a9b8-da7ad0900002"},{"type":"permissions","id":"97971c1c-e895-11eb-b13c-da7ad0900002"},{"type":"permissions","id":"7605ef24-f376-11eb-b90b-da7ad0900002"}]}}}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '698'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 19 Oct 2021 14:57:46 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '500'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '499'
-      x-ratelimit-reset:
-      - '14'
     status:
       code: 200
       message: OK
@@ -62,16 +22,6 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '6004021629576790914'
-      x-datadog-trace-id:
-      - '6193664588531543271'
     method: GET
     uri: https://api.datadoghq.com/api/v2/permissions
   response:
@@ -248,28 +198,8 @@ interactions:
         User Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"26c79920-1703-11ec-85d2-da7ad0900002","attributes":{"name":"apm_generate_metrics","display_name":"Generate
         Metrics","description":"The ability to create custom metrics from spans.","created":"2021-09-16T15:31:24.458963+00:00","group_name":"APM","display_type":"other","restricted":false}}]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '26324'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 19 Oct 2021 14:57:47 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
@@ -278,54 +208,16 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '75'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '8444372277675782606'
-      x-datadog-trace-id:
-      - '6193664588531543271'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/roles/ebaa4190-30ec-11ec-925a-da7ad0900002/permissions
   response:
     body:
       string: '{"errors": ["Invalid permission id: 11111111-dead-beef-dead-ffffffffffff"]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '75'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 19 Oct 2021 14:57:47 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '500'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '498'
-      x-ratelimit-reset:
-      - '13'
     status:
       code: 400
       message: Bad Request
@@ -334,48 +226,12 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '6447215497182486088'
-      x-datadog-trace-id:
-      - '6193664588531543271'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/roles/ebaa4190-30ec-11ec-925a-da7ad0900002
   response:
     body:
       string: ''
-    headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '0'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      date:
-      - Tue, 19 Oct 2021 14:57:47 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '500'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '497'
-      x-ratelimit-reset:
-      - '13'
+    headers: {}
     status:
       code: 204
       message: No Content

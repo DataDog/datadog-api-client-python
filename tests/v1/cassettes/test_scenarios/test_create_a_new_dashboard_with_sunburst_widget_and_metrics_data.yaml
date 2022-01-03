@@ -5,20 +5,8 @@ interactions:
     headers:
       accept:
       - '*/*'
-      connection:
-      - close
-      content-length:
-      - '448'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-spec/scripts/bdd-runner
-      x-datadog-parent-id:
-      - '3731688405622988910'
-      x-datadog-trace-id:
-      - '4634661191740705811'
     method: POST
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
@@ -26,28 +14,8 @@ interactions:
       string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"mf6-iqg-ndj","title":"Test-Create_a_new_dashboard_with_sunburst_widget_and_metrics_data-1639987466","url":"/dashboard/mf6-iqg-ndj/test-createanewdashboardwithsunburstwidgetandmetricsdata-1639987466","created_at":"2021-12-20T08:04:27.129533+00:00","modified_at":"2021-12-20T08:04:27.129533+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"type":"sunburst","requests":[{"formulas":[{"formula":"query1"}],"response_format":"scalar","queries":[{"query":"sum:system.mem.used{*}
         by {service}","data_source":"metrics","name":"query1","aggregator":"sum"}]}],"title_align":"left","title_size":"16","title":""},"layout":{"y":0,"x":0,"height":4,"width":4},"id":7490235413759256}],"layout_type":"ordered"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '848'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Mon, 20 Dec 2021 08:04:27 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
@@ -56,44 +24,14 @@ interactions:
     headers:
       accept:
       - '*/*'
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-spec/scripts/bdd-runner
-      x-datadog-parent-id:
-      - '1474094457446758029'
-      x-datadog-trace-id:
-      - '4634661191740705811'
     method: DELETE
     uri: https://api.datadoghq.com/api/v1/dashboard/mf6-iqg-ndj
   response:
     body:
       string: '{"deleted_dashboard_id":"mf6-iqg-ndj"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '38'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Mon, 20 Dec 2021 08:04:27 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK

@@ -4,16 +4,6 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '2452765192949357355'
-      x-datadog-trace-id:
-      - '8617043352511752026'
     method: GET
     uri: https://api.datadoghq.com/api/v2/permissions
   response:
@@ -190,28 +180,8 @@ interactions:
         User Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"26c79920-1703-11ec-85d2-da7ad0900002","attributes":{"name":"apm_generate_metrics","display_name":"Generate
         Metrics","description":"The ability to create custom metrics from spans.","created":"2021-09-16T15:31:24.458963+00:00","group_name":"APM","display_type":"other","restricted":false}}]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '26324'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 19 Oct 2021 14:57:47 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
@@ -220,20 +190,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '75'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '9034603223404692504'
-      x-datadog-trace-id:
-      - '8617043352511752026'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/roles/00000000-dead-beef-dead-ffffffffffff/permissions
   response:
@@ -241,36 +199,8 @@ interactions:
       string: '{"errors": ["Missing Role 00000000-dead-beef-dead-ffffffffffff not
         found"]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '75'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 19 Oct 2021 14:57:47 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '500'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '496'
-      x-ratelimit-reset:
-      - '13'
     status:
       code: 404
       message: Not Found

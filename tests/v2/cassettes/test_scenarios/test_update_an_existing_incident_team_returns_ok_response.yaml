@@ -4,20 +4,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '118'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '2265332653188689978'
-      x-datadog-trace-id:
-      - '1340875832724262896'
     method: POST
     uri: https://api.datadoghq.com/api/v2/teams
   response:
@@ -25,38 +13,8 @@ interactions:
       string: '{"included":[{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","attributes":{"name":"CI
         Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","created_at":"2020-12-29T22:58:44.733921+00:00","modified_at":"2020-12-29T22:58:44.733937+00:00","email":"team-intg-tools-libs@datadoghq.com","icon":"https://secure.gravatar.com/avatar/bff625f8b50529c690eb616cd5e64167?s=48&d=retro","title":null,"verified":true,"service_account":true,"disabled":false,"allowed_login_methods":[],"status":"Active"},"relationships":{"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}],"data":{"type":"teams","id":"00a8c9c7-5e3e-5344-8dd3-a524ba8a2afb","attributes":{"name":"Test-Update_an_existing_incident_team_returns_OK_response-1618572733","created":"2021-04-16T11:32:13.886612+00:00","modified":"2021-04-16T11:32:13.886612+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}},"created_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '1039'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Fri, 16 Apr 2021 11:32:13 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - SY1h8ScsWq+kYmtbh63ltMLFAZsQjqfrgvdfAoRX+9TzT1sgMBRYaFRwfWWRRe9a
-      x-dd-version:
-      - '35.4327367'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '100'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '99'
-      x-ratelimit-reset:
-      - '47'
     status:
       code: 201
       message: Created
@@ -65,20 +23,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '126'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '2503292321130767759'
-      x-datadog-trace-id:
-      - '1340875832724262896'
     method: PATCH
     uri: https://api.datadoghq.com/api/v2/teams/00a8c9c7-5e3e-5344-8dd3-a524ba8a2afb
   response:
@@ -86,40 +32,8 @@ interactions:
       string: '{"included":[{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","attributes":{"name":"CI
         Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","created_at":"2020-12-29T22:58:44.733921+00:00","modified_at":"2020-12-29T22:58:44.733937+00:00","email":"team-intg-tools-libs@datadoghq.com","icon":"https://secure.gravatar.com/avatar/bff625f8b50529c690eb616cd5e64167?s=48&d=retro","title":null,"verified":true,"service_account":true,"disabled":false,"allowed_login_methods":[],"status":"Active"},"relationships":{"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}],"data":{"type":"teams","id":"00a8c9c7-5e3e-5344-8dd3-a524ba8a2afb","attributes":{"name":"Test-Update_an_existing_incident_team_returns_OK_response-1618572733-updated","created":"2021-04-16T11:32:13.886612+00:00","modified":"2021-04-16T11:32:13.985199+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}},"created_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '1047'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Fri, 16 Apr 2021 11:32:13 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - F5gm0Rce1/Abr9/0Fw8HAqWfiz0FdiH8er/AXnN6lOn3L6KyGgbsLCwgPlob1No8
-      x-dd-version:
-      - '35.4327367'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '100'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '99'
-      x-ratelimit-reset:
-      - '47'
     status:
       code: 200
       message: OK
@@ -128,54 +42,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '8400101364272733645'
-      x-datadog-trace-id:
-      - '1340875832724262896'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/teams/00a8c9c7-5e3e-5344-8dd3-a524ba8a2afb
   response:
     body:
       string: ''
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '0'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Fri, 16 Apr 2021 11:32:14 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - vdJ3/nHEY1ioXQ6pQrBVvsQK1s4yyc+wufBMPSoXql71qZVuP/xMdtNo6DafhOAk
-      x-dd-version:
-      - '35.4327367'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '100'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '99'
-      x-ratelimit-reset:
-      - '46'
     status:
       code: 204
       message: No Content

@@ -4,50 +4,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '9006914830130196790'
-      x-datadog-trace-id:
-      - '8850104610609194120'
     method: GET
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters
   response:
     body:
       string: '{"data":[{"attributes":{"is_enabled":true,"name":"all ingested logs","filtered_data_type":"logs","exclusion_filters":[],"version":1,"query":"*","is_builtin":true},"type":"security_filters","id":"bc0-fow-e4j"}]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '210'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json;charset=utf-8
-      date:
-      - Tue, 11 May 2021 16:46:31 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - PhosSd3Ch1B6B0DXI71steKUi7XhPDttnPiIP1NdXTw0VJNWpoUnYyBmODS5ne3q
-      x-dd-version:
-      - '35.4508212'
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK

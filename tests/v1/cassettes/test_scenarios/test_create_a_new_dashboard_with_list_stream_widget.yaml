@@ -5,20 +5,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '324'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.4 (node 14.17.3; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '6275969018838299015'
-      x-datadog-trace-id:
-      - '2817451468891403962'
     method: POST
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
@@ -26,28 +14,8 @@ interactions:
       string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"rtz-4te-n7p","title":"Test-Create_a_new_dashboard_with_list_stream_widget-1626780778
         with list_stream widget","url":"/dashboard/rtz-4te-n7p/test-createanewdashboardwithliststreamwidget-1626780778-with-liststream-widget","created_at":"2021-07-20T11:32:58.826427+00:00","modified_at":"2021-07-20T11:32:58.826427+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"query":{"query_string":"","data_source":"issue_stream"},"response_format":"event_list","columns":[{"field":"timestamp","width":"auto"}]}],"type":"list_stream"},"id":4221232261759602}],"layout_type":"ordered"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '735'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 20 Jul 2021 11:32:58 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
@@ -56,44 +24,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.4 (node 14.17.3; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '9004563642587437511'
-      x-datadog-trace-id:
-      - '2817451468891403962'
     method: DELETE
     uri: https://api.datadoghq.com/api/v1/dashboard/rtz-4te-n7p
   response:
     body:
       string: '{"deleted_dashboard_id":"rtz-4te-n7p"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '38'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Tue, 20 Jul 2021 11:32:58 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK

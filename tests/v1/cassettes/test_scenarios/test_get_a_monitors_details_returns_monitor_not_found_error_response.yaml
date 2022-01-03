@@ -4,54 +4,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '5095942047695828255'
-      x-datadog-trace-id:
-      - '5095942047695828255'
     method: GET
     uri: https://api.datadoghq.com/api/v1/monitor/12345
   response:
     body:
       string: '{"errors": ["Monitor not found"]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '33'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Thu, 15 Apr 2021 13:01:15 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-version:
-      - '35.4318655'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '3000'
-      x-ratelimit-period:
-      - '10'
-      x-ratelimit-remaining:
-      - '2999'
-      x-ratelimit-reset:
-      - '5'
     status:
       code: 404
       message: Not Found

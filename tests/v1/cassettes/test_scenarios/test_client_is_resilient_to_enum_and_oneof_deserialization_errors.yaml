@@ -4,17 +4,6 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.4 (node 15.11.0; os Darwin; arch
-        x64)
-      x-datadog-parent-id:
-      - '7301385942137946346'
-      x-datadog-trace-id:
-      - '7301385942137946346'
     method: GET
     uri: https://api.datadoghq.com/api/v1/synthetics/tests
   response:
@@ -32,36 +21,8 @@ interactions:
         non existent method","timeout":30},"assertions":[{"operator":"is","type":"statusCode","target":200}]},"options":{"tick_every":60}},{"status":"live","public_id":"g6d-gcm-pdq","tags":[],"locations":["aws:eu-central-1","aws:ap-northeast-1"],"message":"A
         fully valid test","name":"Check on www.10.0.0.1.xip.io","monitor_id":7464050,"type":"api","created_at":"2018-12-07T17:30:49.785089+00:00","modified_at":"2019-09-04T17:01:09.921070+00:00","subtype":"http","config":{"request":{"url":"https://www.10.0.0.1.xip.io","method":"GET","timeout":30},"assertions":[{"operator":"is","type":"statusCode","target":200}]},"options":{"tick_every":60}}]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '4308'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Fri, 23 Jul 2021 14:46:29 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '120'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '119'
-      x-ratelimit-reset:
-      - '31'
     status:
       code: 200
       message: OK

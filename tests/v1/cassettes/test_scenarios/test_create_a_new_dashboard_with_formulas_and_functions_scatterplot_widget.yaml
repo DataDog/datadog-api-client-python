@@ -6,20 +6,8 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '690'
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.17.6; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '1591784874407885829'
-      x-datadog-trace-id:
-      - '9074139019548996171'
     method: POST
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
@@ -28,26 +16,8 @@ interactions:
         by {service}"},{"aggregator":"avg","data_source":"metrics","name":"query2","query":"avg:system.mem.used{*}
         by {service}"}]}},"title_align":"left","title_size":"16","title":""},"layout":{"y":0,"width":4,"x":0,"height":2},"id":5346764334358972}],"layout_type":"ordered"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '1077'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Fri, 17 Sep 2021 10:08:56 GMT
-      pragma:
-      - no-cache
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
@@ -56,42 +26,14 @@ interactions:
     headers:
       accept:
       - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.17.6; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '3802476857581646005'
-      x-datadog-trace-id:
-      - '9074139019548996171'
     method: DELETE
     uri: https://api.datadoghq.com/api/v1/dashboard/psg-3ga-96v
   response:
     body:
       string: '{"deleted_dashboard_id":"psg-3ga-96v"}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '38'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Fri, 17 Sep 2021 10:08:56 GMT
-      pragma:
-      - no-cache
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 200
       message: OK
