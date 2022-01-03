@@ -44,6 +44,10 @@ class Dashboard(ModelNormal):
         lazy_import()
         return {
             "author_handle": (str,),
+            "author_name": (
+                str,
+                none_type,
+            ),
             "created_at": (datetime,),
             "description": (
                 str,
@@ -77,6 +81,7 @@ class Dashboard(ModelNormal):
         "title": "title",
         "widgets": "widgets",
         "author_handle": "author_handle",
+        "author_name": "author_name",
         "created_at": "created_at",
         "description": "description",
         "id": "id",
@@ -92,6 +97,7 @@ class Dashboard(ModelNormal):
 
     read_only_vars = {
         "author_handle",
+        "author_name",
         "created_at",
         "id",
         "modified_at",
@@ -108,6 +114,7 @@ class Dashboard(ModelNormal):
 
         Keyword Args:
             author_handle (str): [optional] Identifier of the dashboard author.
+            author_name (str, none_type): [optional] Name of the dashboard author.
             created_at (datetime): [optional] Creation date of the dashboard.
             description (str, none_type): [optional] Description of the dashboard.
             id (str): [optional] ID of the dashboard.

@@ -211,6 +211,15 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
 
+  @replay-only @team:DataDog/dashboards
+  Scenario: Get a dashboard returns 'author_name'
+    Given there is a valid "dashboard" in the system
+    And new "GetDashboard" request
+    And request contains "dashboard_id" parameter from "dashboard.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "author_name" is equal to "Frog Account"
+
   @team:DataDog/dashboards
   Scenario: Get all dashboards returns "OK" response
     Given new "ListDashboards" request
