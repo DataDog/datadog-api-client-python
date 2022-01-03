@@ -88,6 +88,7 @@ class UsageSummaryResponse(ModelNormal):
             "profiling_host_count_top99p_sum": (int,),
             "rehydrated_indexed_events_agg_sum": (int,),
             "rehydrated_ingested_bytes_agg_sum": (int,),
+            "rum_browser_and_mobile_session_count": (int,),
             "rum_session_count_agg_sum": (int,),
             "rum_total_session_count_agg_sum": (int,),
             "rum_units_agg_sum": (int,),
@@ -154,6 +155,7 @@ class UsageSummaryResponse(ModelNormal):
         "profiling_host_count_top99p_sum": "profiling_host_count_top99p_sum",
         "rehydrated_indexed_events_agg_sum": "rehydrated_indexed_events_agg_sum",
         "rehydrated_ingested_bytes_agg_sum": "rehydrated_ingested_bytes_agg_sum",
+        "rum_browser_and_mobile_session_count": "rum_browser_and_mobile_session_count",
         "rum_session_count_agg_sum": "rum_session_count_agg_sum",
         "rum_total_session_count_agg_sum": "rum_total_session_count_agg_sum",
         "rum_units_agg_sum": "rum_units_agg_sum",
@@ -225,6 +227,7 @@ class UsageSummaryResponse(ModelNormal):
             profiling_host_count_top99p_sum (int): [optional] Shows the 99th percentile of all profiled hosts over all hours in the current months for all organizations.
             rehydrated_indexed_events_agg_sum (int): [optional] Shows the sum of all rehydrated logs indexed over all hours in the current months for all organizations (data available as of December 1, 2020).
             rehydrated_ingested_bytes_agg_sum (int): [optional] Shows the sum of all rehydrated logs bytes ingested over all hours in the current months for all organizations (data available as of December 1, 2020).
+            rum_browser_and_mobile_session_count (int): [optional] Shows the sum of all mobile sessions and all browser lite and legacy sessions over all hours in the current month for all organizations.
             rum_session_count_agg_sum (int): [optional] Shows the sum of all browser RUM Sessions over all hours in the current months for all organizations.
             rum_total_session_count_agg_sum (int): [optional] Shows the sum of RUM Sessions (browser and mobile) over all hours in the current months for all organizations.
             rum_units_agg_sum (int): [optional] Shows the sum of all browser and mobile RUM units over all hours in the current months for all organizations.

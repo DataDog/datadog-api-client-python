@@ -501,7 +501,6 @@ All URIs are relative to *https://api.datadoghq.com*
 - [SecurityMonitoringRuleTypeCreate](SecurityMonitoringRuleTypeCreate.md)
 - [SecurityMonitoringRuleTypeRead](SecurityMonitoringRuleTypeRead.md)
 - [SecurityMonitoringRuleUpdatePayload](SecurityMonitoringRuleUpdatePayload.md)
-- [SecurityMonitoringRuntimeAgentRule](SecurityMonitoringRuntimeAgentRule.md)
 - [SecurityMonitoringSignal](SecurityMonitoringSignal.md)
 - [SecurityMonitoringSignalAttributes](SecurityMonitoringSignalAttributes.md)
 - [SecurityMonitoringSignalListRequest](SecurityMonitoringSignalListRequest.md)

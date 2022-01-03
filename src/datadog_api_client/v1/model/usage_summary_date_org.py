@@ -73,6 +73,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "opentelemetry_host_top99p": (int,),
             "profiling_host_top99p": (int,),
             "public_id": (str,),
+            "rum_browser_and_mobile_session_count": (int,),
             "rum_session_count_sum": (int,),
             "rum_total_session_count_sum": (int,),
             "rum_units_sum": (int,),
@@ -131,6 +132,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "opentelemetry_host_top99p": "opentelemetry_host_top99p",
         "profiling_host_top99p": "profiling_host_top99p",
         "public_id": "public_id",
+        "rum_browser_and_mobile_session_count": "rum_browser_and_mobile_session_count",
         "rum_session_count_sum": "rum_session_count_sum",
         "rum_total_session_count_sum": "rum_total_session_count_sum",
         "rum_units_sum": "rum_units_sum",
@@ -194,6 +196,7 @@ class UsageSummaryDateOrg(ModelNormal):
             opentelemetry_host_top99p (int): [optional] Shows the 99th percentile of all hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for the given org.
             profiling_host_top99p (int): [optional] Shows the 99th percentile of all profiled hosts over all hours in the current date for the given org.
             public_id (str): [optional] The organization public id.
+            rum_browser_and_mobile_session_count (int): [optional] Shows the sum of all mobile sessions and all browser lite and legacy sessions over all hours in the current date for the given org.
             rum_session_count_sum (int): [optional] Shows the sum of all browser RUM Sessions over all hours in the current date for the given org.
             rum_total_session_count_sum (int): [optional] Shows the sum of RUM Sessions (browser and mobile) over all hours in the current date for the given org.
             rum_units_sum (int): [optional] Shows the sum of all browser and mobile RUM units over all hours in the current date for the given org.
