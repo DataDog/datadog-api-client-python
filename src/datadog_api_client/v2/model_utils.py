@@ -1588,9 +1588,6 @@ def validate_and_convert_types(
             will be attempted.
         configuration: (Configuration): the configuration class to use
             when converting file_type items.
-            If passed, conversion will be attempted when possible
-            If not passed, no conversions will be attempted and
-            exceptions will be raised
 
     Returns:
         the correctly typed value
@@ -1604,21 +1601,17 @@ def validate_and_convert_types(
     input_class_simple = get_simple_class(input_value)
     valid_type = is_valid_type(input_class_simple, valid_classes)
     if not valid_type:
-        if configuration:
-            # if input_value is not valid_type try to convert it
-            converted_instance = attempt_convert_item(
-                input_value,
-                valid_classes,
-                path_to_item,
-                configuration,
-                spec_property_naming,
-                key_type=False,
-                must_convert=True,
-                check_type=_check_type,
-            )
-            return converted_instance
-        else:
-            raise get_type_error(input_value, path_to_item, valid_classes, key_type=False)
+        # if input_value is not valid_type try to convert it
+        return attempt_convert_item(
+            input_value,
+            valid_classes,
+            path_to_item,
+            configuration,
+            spec_property_naming,
+            key_type=False,
+            must_convert=True,
+            check_type=_check_type,
+        )
 
     # input_value's type is in valid_classes
     if len(valid_classes) > 1 and configuration:
@@ -1627,7 +1620,7 @@ def validate_and_convert_types(
             valid_classes, input_value, spec_property_naming, must_convert=False
         )
         if valid_classes_coercible:
-            converted_instance = attempt_convert_item(
+            return attempt_convert_item(
                 input_value,
                 valid_classes_coercible,
                 path_to_item,
@@ -1637,7 +1630,6 @@ def validate_and_convert_types(
                 must_convert=False,
                 check_type=_check_type,
             )
-            return converted_instance
 
     if child_req_types_by_current_type == {}:
         # all types are of the required types and there are no more inner
