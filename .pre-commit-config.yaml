@@ -33,3 +33,9 @@ repos:
   - id: black
     stages: [manual]
     entry: black --fast --line-length 120
+- repo: https://github.com/myint/autoflake
+  rev: v1.4
+  hooks:
+  - id: autoflake
+    stages: [manual]
+    entry: autoflake --remove-all-unused-imports --ignore-init-module-imports --in-place
