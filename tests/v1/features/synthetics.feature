@@ -126,6 +126,16 @@ Feature: Synthetics
     Then the response status is 200 OK - Returns the created test details.
     And the response "name" is equal to "{{ unique }}"
 
+  @team:DataDog/synthetics-app
+  Scenario: Create an API test with multi subtype returns "OK - Returns the created test details." response
+    Given new "CreateSyntheticsAPITest" request
+    And body from file "synthetics_api_test_multi_step_payload.json"
+    When the request is sent
+    Then the response status is 200 OK - Returns the created test details.
+    And the response "name" is equal to "{{ unique }}"
+    And the response "config.steps[0].retry.count" is equal to 5
+    And the response "config.steps[0].retry.interval" is equal to 1000
+
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Delete a global variable returns "JSON format is wrong" response
     Given new "DeleteGlobalVariable" request
