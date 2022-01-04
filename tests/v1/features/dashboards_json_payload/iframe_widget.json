@@ -1,0 +1,26 @@
+{
+   "title":"{{ unique }}",
+   "description":"",
+   "widgets":[
+      {
+         "layout":{
+            "x":0,
+            "y":0,
+            "width":12,
+            "height":12
+         },
+         "definition":{
+            "type":"iframe",
+            "url":"https://docs.datadoghq.com/api/latest/"
+         }
+      }
+   ],
+   "template_variables":[
+
+   ],
+   "layout_type":"free",
+   "is_read_only":false,
+   "notify_list":[
+
+   ]
+}

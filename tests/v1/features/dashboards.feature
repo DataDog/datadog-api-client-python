@@ -161,6 +161,197 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].display_type" is equal to "bars"
     And the response "widgets[0].definition.requests[0].q" is equal to "sum:trace.test.errors{env:prod,service:datadog-api-spec} by {resource_name}.as_count()"
 
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with alert_graph widget
+    Given there is a valid "monitor" in the system
+    And new "CreateDashboard" request
+    And body from file "dashboards_json_payload/alert_graph_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "alert_graph"
+    And the response "widgets[0].definition.viz_type" is equal to "timeseries"
+    And the response "widgets[0].definition.alert_id" is equal to "{{ monitor.id }}"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with alert_value widget
+    Given there is a valid "monitor" in the system
+    And new "CreateDashboard" request
+    And body from file "dashboards_json_payload/alert_value_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "alert_value"
+    And the response "widgets[0].definition.alert_id" is equal to "{{ monitor.id }}"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with check_status widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/check_status_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "check_status"
+    And the response "widgets[0].definition.check" is equal to "datadog.agent.up"
+    And the response "widgets[0].definition.grouping" is equal to "check"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with event_stream widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/event_stream_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "event_stream"
+    And the response "widgets[0].definition.query" is equal to "example-query"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with event_timeline widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/event_timeline_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "event_timeline"
+    And the response "widgets[0].definition.query" is equal to "status:error priority:all"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with free_text widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/free_text_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "free_text"
+    And the response "widgets[0].definition.text" is equal to "Example free text"
+    And the response "widgets[0].definition.color" is equal to "#4d4d4d"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with geomap widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/geomap_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "geomap"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with heatmap widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/heatmap_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "heatmap"
+    And the response "widgets[0].definition.requests[0].q" is equal to "avg:system.cpu.user{*} by {service}"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with hostmap widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/hostmap_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "hostmap"
+    And the response "widgets[0].definition.requests.fill.q" is equal to "avg:system.cpu.user{*} by {host}"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with iframe widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/iframe_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "iframe"
+    And the response "widgets[0].definition.url" is equal to "https://docs.datadoghq.com/api/latest/"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with image widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/image_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "image"
+    And the response "widgets[0].definition.url" is equal to "https://example.com/image.png"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with log_stream widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/log_stream_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "log_stream"
+    And the response "widgets[0].definition.query" is equal to ""
+    And the response "widgets[0].definition.indexes[0]" is equal to "main"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with manage_status widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/manage_status_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "manage_status"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with note widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/note_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "note"
+    And the response "widgets[0].definition.content" is equal to "# Example Note"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with query_value widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/query_value_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "query_value"
+    And the response "widgets[0].definition.requests[0].queries[0].query" is equal to "avg:system.cpu.user{*}"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with scatterplot widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/scatterplot_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "scatterplot"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with slo widget
+    Given there is a valid "slo" in the system
+    And new "CreateDashboard" request
+    And body from file "dashboards_json_payload/slo_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "slo"
+    And the response "widgets[0].definition.slo_id" is equal to "{{ slo.data[0].id }}"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with servicemap widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/servicemap_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "servicemap"
+    And the response "widgets[0].definition.filters" is equal to ["env:none","environment:*"]
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with trace_service widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/trace_service_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "trace_service"
+    And the response "widgets[0].definition.env" is equal to "none"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with query_table widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/query_table_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "query_table"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with toplist widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/toplist_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "toplist"
+
   @generated @skip @team:DataDog/dashboards
   Scenario: Delete a dashboard returns "Dashboards Not Found" response
     Given new "DeleteDashboard" request
