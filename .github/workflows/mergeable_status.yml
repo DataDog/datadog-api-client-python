@@ -11,7 +11,7 @@ on:
       - dismissed
 
 jobs:
-  send_status:
+  send_mergeable_status:
     runs-on: ubuntu-latest
     if: >
       github.event.pull_request.draft == false &&
@@ -29,7 +29,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Post PR review status check
-        uses: DataDog/github-actions/post-review-status@v1.0.0
+        uses: DataDog/github-actions/post-mergeable-status@sherz/mergeable-status
         with:
           github-token: ${{ steps.get_token.outputs.token }}
           repo: datadog-api-spec
