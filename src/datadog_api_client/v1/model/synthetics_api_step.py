@@ -20,11 +20,13 @@ def lazy_import():
     from datadog_api_client.v1.model.synthetics_api_step_subtype import SyntheticsAPIStepSubtype
     from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
     from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
+    from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
     from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
 
     globals()["SyntheticsAPIStepSubtype"] = SyntheticsAPIStepSubtype
     globals()["SyntheticsAssertion"] = SyntheticsAssertion
     globals()["SyntheticsParsingOptions"] = SyntheticsParsingOptions
+    globals()["SyntheticsTestOptionsRetry"] = SyntheticsTestOptionsRetry
     globals()["SyntheticsTestRequest"] = SyntheticsTestRequest
 
 
@@ -47,6 +49,7 @@ class SyntheticsAPIStep(ModelNormal):
             "is_critical": (bool,),
             "name": (str,),
             "request": (SyntheticsTestRequest,),
+            "retry": (SyntheticsTestOptionsRetry,),
             "subtype": (SyntheticsAPIStepSubtype,),
         }
 
@@ -57,6 +60,7 @@ class SyntheticsAPIStep(ModelNormal):
         "is_critical": "isCritical",
         "name": "name",
         "request": "request",
+        "retry": "retry",
         "subtype": "subtype",
     }
 
@@ -72,6 +76,7 @@ class SyntheticsAPIStep(ModelNormal):
             is_critical (bool): [optional] Determines whether or not to consider the entire test as failed if this step fails. Can be used only if `allowFailure` is `true`.
             name (str): [optional] The name of the step.
             request (SyntheticsTestRequest): [optional]
+            retry (SyntheticsTestOptionsRetry): [optional]
             subtype (SyntheticsAPIStepSubtype): [optional]
         """
         super().__init__(kwargs)
