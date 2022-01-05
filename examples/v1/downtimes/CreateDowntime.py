@@ -11,14 +11,14 @@ from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
 
 body = Downtime(
     message="Example-Schedule_a_downtime_returns_OK_response",
-    start=datetime.now().timestamp(),
+    start=int(datetime.now().timestamp()),
     timezone="Etc/UTC",
     scope=["test:examplescheduleadowntimereturnsokresponse"],
     recurrence=DowntimeRecurrence(
         type="weeks",
         period=1,
         week_days=["Mon", "Tue", "Wed", "Thu", "Fri"],
-        until_date=(datetime.now() + relativedelta(days=21)).timestamp(),
+        until_date=int((datetime.now() + relativedelta(days=21)).timestamp()),
     ),
 )
 
