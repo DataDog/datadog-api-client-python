@@ -50,8 +50,8 @@ Feature: Logs
     And new "ListLogsGet" request
     And request contains "filter[query]" parameter with value "datadog-agent"
     And request contains "filter[index]" parameter with value "main"
-    And request contains "filter[from]" parameter with value "2020-09-17T11:48:36+01:00"
-    And request contains "filter[to]" parameter with value "2020-09-17T12:48:36+01:00"
+    And request contains "filter[from]" parameter with value "2020-09-17T10:48:36Z"
+    And request contains "filter[to]" parameter with value "2020-09-17T11:48:36Z"
     And request contains "page[limit]" parameter with value 5
     When the request is sent
     Then the response status is 200 OK
