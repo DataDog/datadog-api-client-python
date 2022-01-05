@@ -29,13 +29,17 @@ class UsageAttributionPagination(ModelNormal):
     def openapi_types():
         return {
             "limit": (int,),
-            "next_record_id": (str,),
+            "offset": (int,),
+            "sort_direction": (str,),
+            "sort_name": (str,),
             "total_number_of_records": (int,),
         }
 
     attribute_map = {
         "limit": "limit",
-        "next_record_id": "next_record_id",
+        "offset": "offset",
+        "sort_direction": "sort_direction",
+        "sort_name": "sort_name",
         "total_number_of_records": "total_number_of_records",
     }
 
@@ -46,8 +50,10 @@ class UsageAttributionPagination(ModelNormal):
 
         Keyword Args:
             limit (int): [optional] Maximum amount of records to be returned.
-            next_record_id (str): [optional] The cursor to use to get the next results, if any. To make the next request, use the same parameters with the addition of this next_record_id.
-            total_number_of_records (int): [optional] Total number of records. (deprecated after May 1st, 2021)
+            offset (int): [optional] Records to be skipped before beginning to return.
+            sort_direction (str): [optional] Direction to sort by.
+            sort_name (str): [optional] Field to sort by.
+            total_number_of_records (int): [optional] Total number of records.
         """
         super().__init__(kwargs)
 

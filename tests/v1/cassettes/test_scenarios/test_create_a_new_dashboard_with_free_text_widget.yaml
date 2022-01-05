@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"description":null,"is_read_only":false,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_free_text_widget-1640284816","widgets":[{"definition":{"color":"#4d4d4d","font_size":"auto","text":"Example
+      free text","text_align":"left","type":"free_text"},"layout":{"height":6,"width":24,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":[],"description":null,"restricted_roles":[],"author_name":null,"template_variables":[],"is_read_only":false,"id":"dz4-c6g-zhv","title":"Test-Create_a_new_dashboard_with_free_text_widget-1640284816","url":"/dashboard/dz4-c6g-zhv/test-createanewdashboardwithfreetextwidget-1640284816","created_at":"2021-12-23T18:40:16.965728+00:00","modified_at":"2021-12-23T18:40:16.965728+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"color":"#4d4d4d","text":"Example
+        free text","font_size":"auto","text_align":"left","type":"free_text"},"layout":{"y":0,"width":24,"x":0,"height":6},"id":3879962790815938}],"layout_type":"free"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/dz4-c6g-zhv
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"dz4-c6g-zhv"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

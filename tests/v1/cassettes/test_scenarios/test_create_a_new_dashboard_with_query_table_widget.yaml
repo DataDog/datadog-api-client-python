@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"description":"","is_read_only":false,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_query_table_widget-1640210591","widgets":[{"definition":{"has_search_bar":"auto","requests":[{"formulas":[{"cell_display_mode":"bar","conditional_formats":[],"formula":"query1","limit":{"count":500,"order":"desc"}}],"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
+      by {host}"}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"query_table"},"layout":{"height":32,"width":54,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":[],"description":"","restricted_roles":[],"author_name":null,"template_variables":[],"is_read_only":false,"id":"95x-aer-iuw","title":"Test-Create_a_new_dashboard_with_query_table_widget-1640210591","url":"/dashboard/95x-aer-iuw/test-createanewdashboardwithquerytablewidget-1640210591","created_at":"2021-12-22T22:03:11.401486+00:00","modified_at":"2021-12-22T22:03:11.401486+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"title_size":"16","title":"","title_align":"left","has_search_bar":"auto","time":{},"requests":[{"formulas":[{"formula":"query1","cell_display_mode":"bar","limit":{"count":500,"order":"desc"},"conditional_formats":[]}],"response_format":"scalar","queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
+        by {host}"}]}],"type":"query_table"},"layout":{"y":0,"width":54,"x":0,"height":32},"id":883696987902791}],"layout_type":"free"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/95x-aer-iuw
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"95x-aer-iuw"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

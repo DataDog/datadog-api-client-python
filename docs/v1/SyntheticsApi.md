@@ -323,6 +323,10 @@ with ApiClient(configuration) as api_client:
                         timeout=3.14,
                         url="https://example.com",
                     ),
+                    retry=SyntheticsTestOptionsRetry(
+                        count=1,
+                        interval=3.14,
+                    ),
                     subtype=SyntheticsAPIStepSubtype("http"),
                 ),
             ],
@@ -2084,6 +2088,10 @@ with ApiClient(configuration) as api_client:
                         should_track_hops=True,
                         timeout=3.14,
                         url="https://example.com",
+                    ),
+                    retry=SyntheticsTestOptionsRetry(
+                        count=1,
+                        interval=3.14,
                     ),
                     subtype=SyntheticsAPIStepSubtype("http"),
                 ),
