@@ -175,8 +175,7 @@ def glom(value, path):
 
     # replace foo[index].bar by foo.index.bar
     path = PATTERN_INDEX.sub(r".\1", path)
-    # replace camelCase to snake_case
-    path = ".".join(snake_case(p) for p in path.split("."))
+
     return g(value, path)
 
 
