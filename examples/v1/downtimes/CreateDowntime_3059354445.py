@@ -13,8 +13,8 @@ body = Downtime(
     message="Example-Schedule_a_downtime_once_a_year",
     recurrence=DowntimeRecurrence(period=1, type="years"),
     scope=["*"],
-    start=datetime.now().timestamp(),
-    end=(datetime.now() + relativedelta(hours=1)).timestamp(),
+    start=int(datetime.now().timestamp()),
+    end=int((datetime.now() + relativedelta(hours=1)).timestamp()),
     timezone="Etc/UTC",
 )
 
