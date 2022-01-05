@@ -48,7 +48,10 @@ class DowntimeRecurrence(ModelNormal):
                 int,
                 none_type,
             ),
-            "week_days": ([str],),
+            "week_days": (
+                [str],
+                none_type,
+            ),
         }
 
     attribute_map = {
@@ -71,7 +74,7 @@ class DowntimeRecurrence(ModelNormal):
             type (str): [optional] The type of recurrence. Choose from `days`, `weeks`, `months`, `years`, `rrule`.
             until_date (int, none_type): [optional] The date at which the recurrence should end as a POSIX timestamp. `until_occurences` and `until_date` are mutually exclusive.
             until_occurrences (int, none_type): [optional] How many times the downtime is rescheduled. `until_occurences` and `until_date` are mutually exclusive.
-            week_days ([str]): [optional] A list of week days to repeat on. Choose from `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat` or `Sun`. Only applicable when type is weeks. First letter must be capitalized.
+            week_days ([str], none_type): [optional] A list of week days to repeat on. Choose from `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat` or `Sun`. Only applicable when type is weeks. First letter must be capitalized.
         """
         super().__init__(kwargs)
 
