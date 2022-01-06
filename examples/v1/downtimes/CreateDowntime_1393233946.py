@@ -15,8 +15,8 @@ body = Downtime(
         period=1, type="weeks", until_occurrences=3, week_days=["Mon", "Tue", "Wed", "Thu", "Fri"]
     ),
     scope=["*"],
-    start=datetime.now().timestamp(),
-    end=(datetime.now() + relativedelta(hours=1)).timestamp(),
+    start=int(datetime.now().timestamp()),
+    end=int((datetime.now() + relativedelta(hours=1)).timestamp()),
     timezone="Etc/UTC",
 )
 

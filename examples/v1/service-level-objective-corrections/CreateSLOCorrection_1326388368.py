@@ -21,7 +21,7 @@ body = SLOCorrectionCreateRequest(
             category=SLOCorrectionCategory("Scheduled Maintenance"),
             description="Example-Create_an_SLO_correction_with_rrule_returns_OK_response",
             slo_id=SLO_DATA_0_ID,
-            start=datetime.now().timestamp(),
+            start=int(datetime.now().timestamp()),
             duration=3600,
             rrule="FREQ=DAILY;INTERVAL=10;COUNT=5",
             timezone="UTC",

@@ -21,9 +21,9 @@ body = SLOCorrectionCreateRequest(
         attributes=SLOCorrectionCreateRequestAttributes(
             category=SLOCorrectionCategory("Scheduled Maintenance"),
             description="Example-Create_an_SLO_correction_returns_OK_response",
-            end=(datetime.now() + relativedelta(hours=1)).timestamp(),
+            end=int((datetime.now() + relativedelta(hours=1)).timestamp()),
             slo_id=SLO_DATA_0_ID,
-            start=datetime.now().timestamp(),
+            start=int(datetime.now().timestamp()),
             timezone="UTC",
         ),
         type=SLOCorrectionType("correction"),

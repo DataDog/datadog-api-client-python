@@ -14,12 +14,12 @@ body = Downtime(
     recurrence=DowntimeRecurrence(
         period=1,
         type="weeks",
-        until_date=(datetime.now() + relativedelta(days=21)).timestamp(),
+        until_date=int((datetime.now() + relativedelta(days=21)).timestamp()),
         week_days=["Mon", "Tue", "Wed", "Thu", "Fri"],
     ),
     scope=["*"],
-    start=datetime.now().timestamp(),
-    end=(datetime.now() + relativedelta(hours=1)).timestamp(),
+    start=int(datetime.now().timestamp()),
+    end=int((datetime.now() + relativedelta(hours=1)).timestamp()),
     timezone="Etc/UTC",
 )
 
