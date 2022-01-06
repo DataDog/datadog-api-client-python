@@ -3,16 +3,10 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v2.model_utils import (  # noqa: F401
+from datadog_api_client.v2.model_utils import (
     ApiTypeError,
-    ModelComposed,
-    ModelNormal,
     ModelSimple,
     cached_property,
-    date,
-    datetime,
-    file_type,
-    none_type,
 )
 
 

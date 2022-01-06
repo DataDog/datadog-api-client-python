@@ -3,16 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-import re  # noqa: F401
-
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
-from datadog_api_client.v1.model_utils import (  # noqa: F401
-    date,
-    datetime,
-    file_type,
-    none_type,
-)
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.check_can_delete_monitor_response import CheckCanDeleteMonitorResponse
 from datadog_api_client.v1.model.deleted_monitor import DeletedMonitor
 from datadog_api_client.v1.model.monitor import Monitor
