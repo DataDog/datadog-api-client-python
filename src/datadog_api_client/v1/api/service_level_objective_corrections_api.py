@@ -3,16 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-import re  # noqa: F401
-
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
-from datadog_api_client.v1.model_utils import (  # noqa: F401
-    date,
-    datetime,
-    file_type,
-    none_type,
-)
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.slo_correction_create_request import SLOCorrectionCreateRequest
 from datadog_api_client.v1.model.slo_correction_list_response import SLOCorrectionListResponse
 from datadog_api_client.v1.model.slo_correction_response import SLOCorrectionResponse

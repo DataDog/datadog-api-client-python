@@ -10,6 +10,7 @@ all: .generator .env
 	@cp v2/README.md ./docs/v2/
 	@rm -rf v1 v2
 	@pre-commit run --all-files --hook-stage=manual docs || echo "modified files"
+	@pre-commit run --all-files --hook-stage=manual autoflake || echo "modified files"
 	@pre-commit run --all-files --hook-stage=manual black || echo "modified files"
 
 .PHONY: .env

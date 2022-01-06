@@ -3,16 +3,10 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-import re  # noqa: F401
-
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
-from datadog_api_client.v1.model_utils import (  # noqa: F401
-    date,
+from datadog_api_client.v1.model_utils import (
     datetime,
-    file_type,
-    none_type,
 )
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.hourly_usage_attribution_response import HourlyUsageAttributionResponse
 from datadog_api_client.v1.model.hourly_usage_attribution_usage_type import HourlyUsageAttributionUsageType
 from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse

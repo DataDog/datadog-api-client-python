@@ -3,16 +3,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.model_utils import (  # noqa: F401
-    ApiTypeError,
-    ModelComposed,
+from datadog_api_client.v1.model_utils import (
     ModelNormal,
-    ModelSimple,
     cached_property,
-    date,
-    datetime,
-    file_type,
-    none_type,
 )
 
 

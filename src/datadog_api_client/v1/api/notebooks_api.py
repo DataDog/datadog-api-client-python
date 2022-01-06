@@ -3,16 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-import re  # noqa: F401
-
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
-from datadog_api_client.v1.model_utils import (  # noqa: F401
-    date,
-    datetime,
-    file_type,
-    none_type,
-)
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.notebook_create_request import NotebookCreateRequest
 from datadog_api_client.v1.model.notebook_response import NotebookResponse
 from datadog_api_client.v1.model.notebook_update_request import NotebookUpdateRequest

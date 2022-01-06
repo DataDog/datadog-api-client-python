@@ -3,19 +3,12 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-import re  # noqa: F401
-
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
-from datadog_api_client.v2.model_utils import (  # noqa: F401
-    date,
+from datadog_api_client.v2.model_utils import (
     datetime,
-    file_type,
-    none_type,
 )
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.content_encoding import ContentEncoding
 from datadog_api_client.v2.model.http_log import HTTPLog
-from datadog_api_client.v2.model.http_log_errors import HTTPLogErrors
 from datadog_api_client.v2.model.logs_aggregate_request import LogsAggregateRequest
 from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateResponse
 from datadog_api_client.v2.model.logs_list_request import LogsListRequest
