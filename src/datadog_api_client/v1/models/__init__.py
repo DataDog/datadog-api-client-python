@@ -27,6 +27,7 @@ from datadog_api_client.v1.model.aws_tag_filter_create_request import AWSTagFilt
 from datadog_api_client.v1.model.aws_tag_filter_delete_request import AWSTagFilterDeleteRequest
 from datadog_api_client.v1.model.aws_tag_filter_list_response import AWSTagFilterListResponse
 from datadog_api_client.v1.model.access_role import AccessRole
+from datadog_api_client.v1.model.agent_check import AgentCheck
 from datadog_api_client.v1.model.alert_graph_widget_definition import AlertGraphWidgetDefinition
 from datadog_api_client.v1.model.alert_graph_widget_definition_type import AlertGraphWidgetDefinitionType
 from datadog_api_client.v1.model.alert_value_widget_definition import AlertValueWidgetDefinition
@@ -174,6 +175,7 @@ from datadog_api_client.v1.model.host_map_widget_definition_requests import Host
 from datadog_api_client.v1.model.host_map_widget_definition_style import HostMapWidgetDefinitionStyle
 from datadog_api_client.v1.model.host_map_widget_definition_type import HostMapWidgetDefinitionType
 from datadog_api_client.v1.model.host_meta import HostMeta
+from datadog_api_client.v1.model.host_meta_install_method import HostMetaInstallMethod
 from datadog_api_client.v1.model.host_metrics import HostMetrics
 from datadog_api_client.v1.model.host_mute_response import HostMuteResponse
 from datadog_api_client.v1.model.host_mute_settings import HostMuteSettings
