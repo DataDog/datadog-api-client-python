@@ -13180,8 +13180,13 @@ components:
         public_id:
           description: The organization public ID.
           type: string
+        replay_session_count:
+          description: Contains the number of RUM Replay Sessions (data available
+            beginning November 1, 2021).
+          format: int64
+          type: integer
         session_count:
-          description: Contains the number of RUM Sessions.
+          description: Contains the number of browser RUM Lite Sessions.
           format: int64
           type: integer
         session_count_android:
@@ -13611,8 +13616,8 @@ components:
           format: int64
           type: integer
         rum_session_count_sum:
-          description: Shows the sum of all browser RUM Sessions over all hours in
-            the current date for all organizations
+          description: Shows the sum of all browser RUM Lite Sessions over all hours
+            in the current date for all organizations
           format: int64
           type: integer
         rum_total_session_count_sum:
@@ -13890,8 +13895,8 @@ components:
           format: int64
           type: integer
         rum_session_count_sum:
-          description: Shows the sum of all browser RUM Sessions over all hours in
-            the current date for the given org.
+          description: Shows the sum of all browser RUM Lite Sessions over all hours
+            in the current date for the given org.
           format: int64
           type: integer
         rum_total_session_count_sum:
@@ -14209,8 +14214,8 @@ components:
           format: int64
           type: integer
         rum_session_count_agg_sum:
-          description: Shows the sum of all browser RUM Sessions over all hours in
-            the current months for all organizations.
+          description: Shows the sum of all browser RUM Lite Sessions over all hours
+            in the current months for all organizations.
           format: int64
           type: integer
         rum_total_session_count_agg_sum:

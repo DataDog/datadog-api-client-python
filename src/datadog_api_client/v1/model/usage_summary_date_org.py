@@ -190,7 +190,7 @@ class UsageSummaryDateOrg(ModelNormal):
             profiling_host_top99p (int): [optional] Shows the 99th percentile of all profiled hosts over all hours in the current date for the given org.
             public_id (str): [optional] The organization public id.
             rum_browser_and_mobile_session_count (int): [optional] Shows the sum of all mobile sessions and all browser lite and legacy sessions over all hours in the current date for the given org.
-            rum_session_count_sum (int): [optional] Shows the sum of all browser RUM Sessions over all hours in the current date for the given org.
+            rum_session_count_sum (int): [optional] Shows the sum of all browser RUM Lite Sessions over all hours in the current date for the given org.
             rum_total_session_count_sum (int): [optional] Shows the sum of RUM Sessions (browser and mobile) over all hours in the current date for the given org.
             rum_units_sum (int): [optional] Shows the sum of all browser and mobile RUM units over all hours in the current date for the given org.
             sds_logs_scanned_bytes_sum (int): [optional] Shows the sum of all bytes scanned of logs usage by the Sensitive Data Scanner over all hours in the current month for the given org.
