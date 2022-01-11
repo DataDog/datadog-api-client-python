@@ -32,6 +32,24 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get Monthly Usage Attribution returns "Bad Request" response
+    Given operation "GetMonthlyUsageAttribution" enabled
+    And new "GetMonthlyUsageAttribution" request
+    And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "fields" parameter with value "not_a_product"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/red-zone-revenue-query
+  Scenario: Get Monthly Usage Attribution returns "OK" response
+    Given operation "GetMonthlyUsageAttribution" enabled
+    And new "GetMonthlyUsageAttribution" request
+    And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "fields" parameter with value "infra_host_usage"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get Usage Attribution returns "OK" response
     Given operation "GetUsageAttribution" enabled

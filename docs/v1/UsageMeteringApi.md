@@ -9,6 +9,7 @@ All URIs are relative to *https://api.datadoghq.com*
 | [**get_incident_management**](UsageMeteringApi.md#get_incident_management)                                         | **GET** /api/v1/usage/incident-management          | Get hourly usage for incident management         |
 | [**get_ingested_spans**](UsageMeteringApi.md#get_ingested_spans)                                                   | **GET** /api/v1/usage/ingested-spans               | Get hourly usage for ingested spans              |
 | [**get_monthly_custom_reports**](UsageMeteringApi.md#get_monthly_custom_reports)                                   | **GET** /api/v1/monthly_custom_reports             | Get the list of available monthly custom reports |
+| [**get_monthly_usage_attribution**](UsageMeteringApi.md#get_monthly_usage_attribution)                             | **GET** /api/v1/usage/monthly-attribution          | Get Monthly Usage Attribution                    |
 | [**get_specified_daily_custom_reports**](UsageMeteringApi.md#get_specified_daily_custom_reports)                   | **GET** /api/v1/daily_custom_reports/{report_id}   | Get specified daily custom reports               |
 | [**get_specified_monthly_custom_reports**](UsageMeteringApi.md#get_specified_monthly_custom_reports)               | **GET** /api/v1/monthly_custom_reports/{report_id} | Get specified monthly custom reports             |
 | [**get_usage_analyzed_logs**](UsageMeteringApi.md#get_usage_analyzed_logs)                                         | **GET** /api/v1/usage/analyzed_logs                | Get hourly usage for analyzed logs               |
@@ -101,7 +102,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -185,7 +186,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -262,7 +263,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -340,7 +341,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -414,7 +415,95 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
+
+### HTTP response details
+
+| Status code | Description                        | Response headers |
+| ----------- | ---------------------------------- | ---------------- |
+| **200**     | OK                                 | -                |
+| **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **get_monthly_usage_attribution**
+
+> MonthlyUsageAttributionResponse get_monthly_usage_attribution(start_month, fields)
+
+Get Monthly Usage Attribution.
+
+### Example
+
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
+from datadog_api_client.v1.api import usage_metering_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+configuration.unstable_operations["get_monthly_usage_attribution"] = True
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = usage_metering_api.UsageMeteringApi(api_client)
+    start_month = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
+    fields = MonthlyUsageAttributionSupportedMetrics("api_usage")  # MonthlyUsageAttributionSupportedMetrics | Comma-separated list of usage types to return, or `*` for all usage types.
+    end_month = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month. (optional)
+    sort_direction = UsageSortDirection("desc")  # UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
+    sort_name = MonthlyUsageAttributionSupportedMetrics("api_usage")  # MonthlyUsageAttributionSupportedMetrics | The field to sort by. (optional)
+    tag_breakdown_keys = "tag_breakdown_keys_example"  # str | Comma separated list of tags used to group usage. If no value is provided the usage will not be broken down by tags. (optional)
+    next_record_id = "next_record_id_example"  # str | List following results with a next_record_id provided in the previous query. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get Monthly Usage Attribution
+        api_response = api_instance.get_monthly_usage_attribution(start_month, fields)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_monthly_usage_attribution: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get Monthly Usage Attribution
+        api_response = api_instance.get_monthly_usage_attribution(start_month, fields, end_month=end_month, sort_direction=sort_direction, sort_name=sort_name, tag_breakdown_keys=tag_breakdown_keys, next_record_id=next_record_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_monthly_usage_attribution: %s\n" % e)
+```
+
+### Parameters
+
+| Name                   | Type                                        | Description                                                                                                                            | Notes      |
+| ---------------------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **start_month**        | **datetime**                                | Datetime in ISO-8601 format, UTC, precise to month: &#x60;[YYYY-MM]&#x60; for usage beginning in this month. Maximum of 15 months ago. |
+| **fields**             | **MonthlyUsageAttributionSupportedMetrics** | Comma-separated list of usage types to return, or &#x60;\*&#x60; for all usage types.                                                  |
+| **end_month**          | **datetime**                                | Datetime in ISO-8601 format, UTC, precise to month: &#x60;[YYYY-MM]&#x60; for usage ending this month.                                 | [optional] |
+| **sort_direction**     | **UsageSortDirection**                      | The direction to sort by: &#x60;[desc, asc]&#x60;.                                                                                     | [optional] |
+| **sort_name**          | **MonthlyUsageAttributionSupportedMetrics** | The field to sort by.                                                                                                                  | [optional] |
+| **tag_breakdown_keys** | **str**                                     | Comma separated list of tags used to group usage. If no value is provided the usage will not be broken down by tags.                   | [optional] |
+| **next_record_id**     | **str**                                     | List following results with a next_record_id provided in the previous query.                                                           | [optional] |
+
+### Return type
+
+[**MonthlyUsageAttributionResponse**](MonthlyUsageAttributionResponse.md)
+
+### Authorization
+
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -480,7 +569,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -547,7 +636,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -626,7 +715,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -713,7 +802,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -789,7 +878,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -857,7 +946,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -934,7 +1023,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -1012,7 +1101,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -1089,7 +1178,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -1167,7 +1256,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -1245,7 +1334,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -1323,7 +1412,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -1401,7 +1490,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -1479,7 +1568,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -1557,7 +1646,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -1639,7 +1728,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -1716,7 +1805,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -1794,7 +1883,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -1872,7 +1961,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -1950,7 +2039,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -2030,7 +2119,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -2108,7 +2197,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -2185,7 +2274,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -2263,7 +2352,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -2343,7 +2432,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -2421,7 +2510,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -2499,7 +2588,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -2577,7 +2666,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -2655,7 +2744,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
@@ -2733,7 +2822,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339, application/json
+- **Accept**: application/json;datetime-format=rfc3339
 
 ### HTTP response details
 
