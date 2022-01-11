@@ -418,6 +418,16 @@ class UsageMeteringApi(object):
                     "attribute": "include_descendants",
                     "location": "query",
                 },
+                "offset": {
+                    "openapi_types": (int,),
+                    "attribute": "offset",
+                    "location": "query",
+                },
+                "limit": {
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
@@ -1630,6 +1640,8 @@ class UsageMeteringApi(object):
             sort_direction (UsageSortDirection): [optional] The direction to sort by: `[desc, asc]`.
             sort_name (UsageAttributionSort): [optional] The field to sort by.
             include_descendants (bool): [optional] Include child org usage in the response. Defaults to false. If omitted the server will use the default value of False.
+            offset (int): [optional] Number of records to skip before beginning to return. If omitted the server will use the default value of 0.
+            limit (int): [optional] Maximum number of records to be returned. If omitted the server will use the default value of 5000.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
