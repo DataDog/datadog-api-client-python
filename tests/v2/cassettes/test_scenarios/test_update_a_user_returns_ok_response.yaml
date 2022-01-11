@@ -1,17 +1,17 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"email":"Test-Update_a_user_returns_OK_response-1618491790@datadoghq.com","title":"user
+    body: '{"data":{"attributes":{"email":"Test-Update_a_user_returns_OK_response-1641829920@datadoghq.com","title":"user
       title"},"type":"users"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"ee553cfa-9dea-11eb-9df5-da7ad0900002","attributes":{"name":null,"handle":"test-update_a_user_returns_ok_response-1618491790@datadoghq.com","created_at":"2021-04-15T13:03:11.139121+00:00","modified_at":"2021-04-15T13:03:11.175881+00:00","email":"test-update_a_user_returns_ok_response-1618491790@datadoghq.com","icon":"https://secure.gravatar.com/avatar/e8bb4b9b3ea7d2fec0b3f1bdc2aa8306?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"3f7c83ce-722d-11ec-b5d7-da7ad0900002","attributes":{"name":null,"handle":"test-update_a_user_returns_ok_response-1641829920@datadoghq.com","created_at":"2022-01-10T15:52:00.584727+00:00","modified_at":"2022-01-10T15:52:00.624917+00:00","email":"test-update_a_user_returns_ok_response-1641829920@datadoghq.com","icon":"https://secure.gravatar.com/avatar/f1bd4f4b2af07d78590b4c7dfc22f8c5?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       content-type:
@@ -20,17 +20,17 @@ interactions:
       code: 201
       message: Created
 - request:
-    body: '{"data":{"attributes":{"disabled":true,"name":"updated"},"id":"ee553cfa-9dea-11eb-9df5-da7ad0900002","type":"users"}}'
+    body: '{"data":{"attributes":{"disabled":true,"name":"updated"},"id":"3f7c83ce-722d-11ec-b5d7-da7ad0900002","type":"users"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/users/ee553cfa-9dea-11eb-9df5-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/3f7c83ce-722d-11ec-b5d7-da7ad0900002
   response:
     body:
-      string: '{"data":{"type":"users","id":"ee553cfa-9dea-11eb-9df5-da7ad0900002","attributes":{"name":"updated","handle":"test-update_a_user_returns_ok_response-1618491790@datadoghq.com","created_at":"2021-04-15T13:03:11.139121+00:00","modified_at":"2021-04-15T13:03:11.713046+00:00","email":"test-update_a_user_returns_ok_response-1618491790@datadoghq.com","icon":"https://secure.gravatar.com/avatar/e8bb4b9b3ea7d2fec0b3f1bdc2aa8306?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"3f7c83ce-722d-11ec-b5d7-da7ad0900002","attributes":{"name":"updated","handle":"test-update_a_user_returns_ok_response-1641829920@datadoghq.com","created_at":"2022-01-10T15:52:00.584727+00:00","modified_at":"2022-01-10T15:52:01.155946+00:00","email":"test-update_a_user_returns_ok_response-1641829920@datadoghq.com","icon":"https://secure.gravatar.com/avatar/f1bd4f4b2af07d78590b4c7dfc22f8c5?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":true,"allowed_login_methods":[],"status":"Disabled"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       content-type:
@@ -42,12 +42,12 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/ee553cfa-9dea-11eb-9df5-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/3f7c83ce-722d-11ec-b5d7-da7ad0900002
   response:
     body:
-      string: '{"errors": ["ee553cfa-9dea-11eb-9df5-da7ad0900002 not found"]}'
+      string: '{"errors": ["3f7c83ce-722d-11ec-b5d7-da7ad0900002 not found"]}'
     headers:
       content-type:
       - application/json

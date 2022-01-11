@@ -1,16 +1,16 @@
 interactions:
 - request:
-    body: '{"is_secret":false,"name":"TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1628785713","value":"variable-value"}'
+    body: '{"is_secret":false,"name":"TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1641833861","value":"variable-value"}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
     uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables
   response:
     body:
-      string: '{"is_secret":false,"name":"TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1628785713","value":"variable-value"}'
+      string: '{"is_secret":false,"name":"TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1641833861","value":"variable-value"}'
     headers:
       content-type:
       - application/json
@@ -21,9 +21,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1628785713
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1641833861
   response:
     body:
       string: '{}'
@@ -37,9 +37,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1628785713
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1641833861
   response:
     body:
       string: '{"errors": ["Custom variable does not exist"]}'
@@ -47,6 +47,6 @@ interactions:
       content-type:
       - application/json
     status:
-      code: 400
-      message: Bad Request
+      code: 404
+      message: Not Found
 version: 1

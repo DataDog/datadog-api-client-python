@@ -1,10 +1,10 @@
 interactions:
 - request:
     body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
-      rule","name":"Test-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1640190011","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:true"}],"tags":[],"type":"workload_security"}'
+      rule","name":"Test-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1641829886","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:true"}],"tags":[],"type":"workload_security"}'
     headers:
       accept:
-      - '*/*'
+      - application/json
       content-type:
       - application/json
     method: POST
@@ -12,8 +12,8 @@ interactions:
   response:
     body:
       string: '{"creationAuthorId":1445416,"tags":[],"isEnabled":true,"hasExtendedTitle":false,"message":"Test
-        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1640190012032,"filters":[],"queries":[{"distinctFields":[],"name":"","metric":"","aggregation":"count","groupByFields":[],"query":"@test:true"}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
-        > 0"}],"type":"workload_security","id":"h4i-5nf-xci","isDefault":false,"name":"Test-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1640190011"}'
+        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1641829886523,"filters":[],"queries":[{"distinctFields":[],"name":"","metric":"","aggregation":"count","groupByFields":[],"query":"@test:true"}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
+        > 0"}],"type":"workload_security","id":"0zm-idp-p44","isDefault":false,"name":"Test-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1641829886"}'
     headers:
       content-type:
       - application/json;charset=utf-8
@@ -24,9 +24,9 @@ interactions:
     body: null
     headers:
       accept:
-      - '*/*'
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/h4i-5nf-xci
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/0zm-idp-p44
   response:
     body:
       string: ''

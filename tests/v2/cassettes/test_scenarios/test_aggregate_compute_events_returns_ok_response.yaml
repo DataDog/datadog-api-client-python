@@ -3,14 +3,14 @@ interactions:
     body: '{"compute":[{"aggregation":"count","interval":"5m","type":"timeseries"}],"filter":{"from":"now-15m","indexes":["main"],"query":"*","to":"now"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
   response:
     body:
-      string: '{"meta":{"status":"done","request_id":"pddv1ChZocmNxWUhOUlM2YVlldlFVVE4weWpnIi0KHZuyJ0Izc6WTvx6409xTlRS_iRRFg3jYVKiLIjbAEgzPt5RlpUdFAOXBR30","elapsed":3},"data":{"buckets":[{"computes":{"c0":[{"value":1,"time":"2021-06-02T10:00:00.000Z"},{"value":6,"time":"2021-06-02T10:05:00.000Z"}]},"by":{}}]}}'
+      string: '{"meta":{"status":"done","request_id":"pddv1ChZ0Y2dJQVlDMVJOYWlYcjNJcDZfSnNnIiwKHJISw_RInEtZkOv0RnvMfFE5pDSf1A5hU7Jf6FISDPKeDBOH5N-0CxRhGA","elapsed":3},"data":{"buckets":[{"computes":{"c0":[{"value":1,"time":"2022-01-06T00:40:00.000Z"},{"value":1,"time":"2022-01-06T00:50:00.000Z"}]},"by":{}}]}}'
     headers:
       content-type:
       - application/json

@@ -3,7 +3,7 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: GET
     uri: https://api.datadoghq.com/api/v2/processes?search=process-agent&tags=testing%3Atrue&page%5Blimit%5D=2
   response:

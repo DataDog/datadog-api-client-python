@@ -1,9 +1,9 @@
 interactions:
 - request:
-    body: '[{"ddtags":"host:TestSendlogsreturnsResponsefromserveralways200emptyJSONresponse1618413148","message":"Test-Send_logs_returns_Response_from_server_always_200_empty_JSON_response-1618413148"}]'
+    body: '[{"ddtags":"host:TestSendlogsreturnsResponsefromserveralways200emptyJSONresponse1641430252","message":"Test-Send_logs_returns_Response_from_server_always_200_empty_JSON_response-1641430252"}]'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST

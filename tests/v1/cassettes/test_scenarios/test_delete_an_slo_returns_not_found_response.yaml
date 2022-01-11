@@ -3,12 +3,12 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/testdeleteansloreturnsnotfoundresponse1618491680
+    uri: https://api.datadoghq.com/api/v1/slo/testdeleteansloreturnsnotfoundresponse1641430270
   response:
     body:
-      string: '{"errors": ["SLO not found: testdeleteansloreturnsnotfoundresponse1618491680
+      string: '{"errors":["SLO not found: testdeleteansloreturnsnotfoundresponse1641430270
         not found"]}'
     headers:
       content-type:

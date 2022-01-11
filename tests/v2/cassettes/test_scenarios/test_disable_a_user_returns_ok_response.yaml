@@ -1,17 +1,17 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"email":"Test-Disable_a_user_returns_OK_response-1618491773@datadoghq.com","title":"user
+    body: '{"data":{"attributes":{"email":"Test-Disable_a_user_returns_OK_response-1641826593@datadoghq.com","title":"user
       title"},"type":"users"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"e3b24630-9dea-11eb-9df5-da7ad0900002","attributes":{"name":null,"handle":"test-disable_a_user_returns_ok_response-1618491773@datadoghq.com","created_at":"2021-04-15T13:02:53.294369+00:00","modified_at":"2021-04-15T13:02:53.332183+00:00","email":"test-disable_a_user_returns_ok_response-1618491773@datadoghq.com","icon":"https://secure.gravatar.com/avatar/e3ce12407bac4d97bee50c9ecdc8ad59?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"80726a36-7225-11ec-b5d3-da7ad0900002","attributes":{"name":null,"handle":"test-disable_a_user_returns_ok_response-1641826593@datadoghq.com","created_at":"2022-01-10T14:56:33.596225+00:00","modified_at":"2022-01-10T14:56:33.648991+00:00","email":"test-disable_a_user_returns_ok_response-1641826593@datadoghq.com","icon":"https://secure.gravatar.com/avatar/1abd8fd8ed99582e40d59125a77c8078?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       content-type:
@@ -23,15 +23,13 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/e3b24630-9dea-11eb-9df5-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/80726a36-7225-11ec-b5d3-da7ad0900002
   response:
     body:
       string: ''
-    headers:
-      content-type:
-      - application/json
+    headers: {}
     status:
       code: 204
       message: No Content
@@ -39,12 +37,12 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/e3b24630-9dea-11eb-9df5-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/80726a36-7225-11ec-b5d3-da7ad0900002
   response:
     body:
-      string: '{"errors": ["e3b24630-9dea-11eb-9df5-da7ad0900002 not found"]}'
+      string: '{"errors": ["80726a36-7225-11ec-b5d3-da7ad0900002 not found"]}'
     headers:
       content-type:
       - application/json
