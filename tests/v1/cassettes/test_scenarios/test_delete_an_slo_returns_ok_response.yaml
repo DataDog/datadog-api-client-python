@@ -1,16 +1,16 @@
 interactions:
 - request:
-    body: '{"name":"Test-Delete_an_SLO_returns_OK_response-1618491680","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
+    body: '{"name":"Test-Delete_an_SLO_returns_OK_response-1641430271","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
     uri: https://api.datadoghq.com/api/v1/slo
   response:
     body:
-      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"e14442711e255a92970f2050d05be95d","name":"Test-Delete_an_SLO_returns_OK_response-1618491680","created_at":1618491681,"tags":[],"modified_at":1618491681,"type":"metric"}],"error":null}'
+      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98,"warning_display":"98.","target":95,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"7c7a8700d1125ac99aa0ffa12f686b89","name":"Test-Delete_an_SLO_returns_OK_response-1641430271","created_at":1641430271,"tags":[],"modified_at":1641430271,"type":"metric"}],"error":null}'
     headers:
       content-type:
       - application/json
@@ -21,12 +21,12 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/e14442711e255a92970f2050d05be95d
+    uri: https://api.datadoghq.com/api/v1/slo/7c7a8700d1125ac99aa0ffa12f686b89
   response:
     body:
-      string: '{"data":["e14442711e255a92970f2050d05be95d"],"error":null}'
+      string: '{"data":["7c7a8700d1125ac99aa0ffa12f686b89"],"error":null}'
     headers:
       content-type:
       - application/json
@@ -37,12 +37,12 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/e14442711e255a92970f2050d05be95d
+    uri: https://api.datadoghq.com/api/v1/slo/7c7a8700d1125ac99aa0ffa12f686b89
   response:
     body:
-      string: '{"errors": ["SLO not found: e14442711e255a92970f2050d05be95d not found"]}'
+      string: '{"errors":["SLO not found: 7c7a8700d1125ac99aa0ffa12f686b89 not found"]}'
     headers:
       content-type:
       - application/json

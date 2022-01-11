@@ -3,14 +3,14 @@ interactions:
     body: '{"filter":{"from":"now-15m","indexes":["main"],"query":"*","to":"now"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
   response:
     body:
-      string: '{"meta":{"status":"done","request_id":"pddv1ChYtOGFfX0hkRFRzeVFxOUkxNFliWkh3IiwKHNZ2_uRW5V74g9U20qpKaJ5w2W333--lwIypXxoSDOtag8A05lWXfz4bnA","elapsed":3},"data":{"buckets":[{"computes":{"c0":7},"by":{}}]}}'
+      string: '{"meta":{"status":"done","request_id":"pddv1ChZqNnEtQ2hTU1M5dTYxbWtrUGtBMGFBIi0KHVny0iHoClVAOb_xrSWcwl_hHz3QjhOb8cLTslhGEgz4EiXPOZ8kQFQe2Zw","elapsed":5},"data":{"buckets":[{"computes":{"c0":2},"by":{}}]}}'
     headers:
       content-type:
       - application/json

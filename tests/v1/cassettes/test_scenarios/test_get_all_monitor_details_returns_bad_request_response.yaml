@@ -3,7 +3,7 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: GET
     uri: https://api.datadoghq.com/api/v1/monitor?group_states=notagroupstate
   response:

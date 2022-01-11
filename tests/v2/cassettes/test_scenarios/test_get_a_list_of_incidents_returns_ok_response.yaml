@@ -3,7 +3,7 @@ interactions:
     body: '{"data":{"attributes":{"customer_impacted":false,"title":"Test-Get_a_list_of_incidents_returns_OK_response-1618491709"},"type":"incidents"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
@@ -21,7 +21,7 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: GET
     uri: https://api.datadoghq.com/api/v2/incidents
   response:
@@ -37,7 +37,7 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/incidents/1289c84e-3b2e-5eab-a139-6b966a31becf
   response:

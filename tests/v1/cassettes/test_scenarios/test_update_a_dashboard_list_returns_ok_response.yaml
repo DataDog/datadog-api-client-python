@@ -1,16 +1,16 @@
 interactions:
 - request:
-    body: '{"name":"Test-Update_a_dashboard_list_returns_OK_response-1633076911"}'
+    body: '{"name":"Test-Update_a_dashboard_list_returns_OK_response-1641430223"}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
     uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual
   response:
     body:
-      string: '{"is_favorite":false,"name":"Test-Update_a_dashboard_list_returns_OK_response-1633076911","dashboard_count":0,"author":{"handle":"frog@datadoghq.com","name":null},"created":"2021-10-01T08:28:31.803012+00:00","type":"manual_dashboard_list","dashboards":null,"modified":"2021-10-01T08:28:31.803044+00:00","id":240517}'
+      string: '{"is_favorite":false,"name":"Test-Update_a_dashboard_list_returns_OK_response-1641430223","dashboard_count":0,"author":{"handle":"frog@datadoghq.com","name":null},"created":"2022-01-06T00:50:23.876774+00:00","type":"manual_dashboard_list","dashboards":null,"modified":"2022-01-06T00:50:23.876799+00:00","id":269882}'
     headers:
       content-type:
       - application/json
@@ -18,17 +18,17 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"name":"updated Test-Update_a_dashboard_list_returns_OK_response-1633076911"}'
+    body: '{"name":"updated Test-Update_a_dashboard_list_returns_OK_response-1641430223"}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual/240517
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual/269882
   response:
     body:
-      string: '{"is_favorite":false,"name":"updated Test-Update_a_dashboard_list_returns_OK_response-1633076911","dashboard_count":0,"author":{"handle":"frog@datadoghq.com","name":null},"created":"2021-10-01T08:28:31.803012+00:00","type":"manual_dashboard_list","dashboards":null,"modified":"2021-10-01T08:28:31.924633+00:00","id":240517}'
+      string: '{"is_favorite":false,"name":"updated Test-Update_a_dashboard_list_returns_OK_response-1641430223","dashboard_count":0,"author":{"handle":"frog@datadoghq.com","name":null},"created":"2022-01-06T00:50:23.876774+00:00","type":"manual_dashboard_list","dashboards":null,"modified":"2022-01-06T00:50:24.060886+00:00","id":269882}'
     headers:
       content-type:
       - application/json
@@ -39,12 +39,12 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual/240517
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual/269882
   response:
     body:
-      string: '{"deleted_dashboard_list_id":240517}'
+      string: '{"deleted_dashboard_list_id":269882}'
     headers:
       content-type:
       - application/json

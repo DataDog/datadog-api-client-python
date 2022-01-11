@@ -1,18 +1,18 @@
 interactions:
 - request:
     body: '{"config":{"assertions":[],"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"request":{"method":"GET","url":"https://datadoghq.com"},"setCookie":"name:test"},"locations":["aws:us-east-2"],"message":"Test
-      message","name":"Test-Create_a_browser_test_returns_OK_Returns_the_created_test_details_response-1637917237","options":{"accept_self_signed":false,"allow_insecure":true,"device_ids":["tablet"],"disableCors":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"noScreenshot":true,"retry":{"count":3,"interval":10},"tick_every":300},"tags":["testing:browser"],"type":"browser"}'
+      message","name":"Test-Create_a_browser_test_returns_OK_Returns_the_created_test_details_response-1641430273","options":{"accept_self_signed":false,"allow_insecure":true,"device_ids":["tablet"],"disableCors":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"noScreenshot":true,"retry":{"count":3,"interval":10},"tick_every":300},"tags":["testing:browser"],"type":"browser"}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/browser
   response:
     body:
-      string: '{"status":"paused","public_id":"b5z-q4p-q56","tags":["testing:browser"],"org_id":321813,"locations":["aws:us-east-2"],"message":"Test
-        message","deleted_at":null,"name":"Test-Create_a_browser_test_returns_OK_Returns_the_created_test_details_response-1637917237","monitor_id":55708825,"type":"browser","created_at":"2021-11-26T09:00:37.572914+00:00","modified_at":"2021-11-26T09:00:37.572914+00:00","config":{"setCookie":"name:test","request":{"url":"https://datadoghq.com","method":"GET"},"assertions":[],"configVariables":[{"pattern":"content-type","type":"text","example":"content-type","name":"PROPERTY"}]},"options":{"accept_self_signed":false,"retry":{"count":3,"interval":10},"min_location_failed":1,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"noScreenshot":true,"disableCors":true,"device_ids":["tablet"],"tick_every":300}}'
+      string: '{"status":"paused","public_id":"db9-2t7-rc6","tags":["testing:browser"],"org_id":321813,"locations":["aws:us-east-2"],"message":"Test
+        message","deleted_at":null,"name":"Test-Create_a_browser_test_returns_OK_Returns_the_created_test_details_response-1641430273","monitor_id":59800820,"type":"browser","created_at":"2022-01-06T00:51:13.906186+00:00","modified_at":"2022-01-06T00:51:13.906186+00:00","config":{"setCookie":"name:test","request":{"url":"https://datadoghq.com","method":"GET"},"assertions":[],"configVariables":[{"pattern":"content-type","type":"text","example":"content-type","name":"PROPERTY"}]},"options":{"accept_self_signed":false,"retry":{"count":3,"interval":10},"min_location_failed":1,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"noScreenshot":true,"disableCors":true,"device_ids":["tablet"],"tick_every":300}}'
     headers:
       content-type:
       - application/json
@@ -20,17 +20,17 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"public_ids":["b5z-q4p-q56"]}'
+    body: '{"public_ids":["db9-2t7-rc6"]}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
   response:
     body:
-      string: '{"deleted_tests":[{"deleted_at":"2021-11-26T09:00:37.991398+00:00","public_id":"b5z-q4p-q56"}]}'
+      string: '{"deleted_tests":[{"deleted_at":"2022-01-06T00:51:14.154081+00:00","public_id":"db9-2t7-rc6"}]}'
     headers:
       content-type:
       - application/json

@@ -3,12 +3,12 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: GET
     uri: https://api.datadoghq.com/api/v1/monitor/search?query=status%3Anotastatus
   response:
     body:
-      string: '{"errors": ["Query parsing error: ''notastatus'' is not a valid monitor
+      string: '{"errors":["Query parsing error: ''notastatus'' is not a valid monitor
         status"]}'
     headers:
       content-type:

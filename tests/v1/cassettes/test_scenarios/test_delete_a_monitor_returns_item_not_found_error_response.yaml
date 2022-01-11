@@ -3,12 +3,12 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
     uri: https://api.datadoghq.com/api/v1/monitor/0
   response:
     body:
-      string: '{"errors": ["Monitor not found"]}'
+      string: '{"errors":["Monitor not found"]}'
     headers:
       content-type:
       - application/json
