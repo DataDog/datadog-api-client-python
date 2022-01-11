@@ -1272,6 +1272,12 @@
       "type": "safe"
     }
   },
+  "GetMonthlyUsageAttribution": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageNetworkFlows": {
     "tag": "Usage Metering",
     "undo": {
