@@ -761,6 +761,8 @@ with ApiClient(configuration) as api_client:
     sort_direction = UsageSortDirection("desc")  # UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
     sort_name = UsageAttributionSort("custom_timeseries_usage")  # UsageAttributionSort | The field to sort by. (optional)
     include_descendants = False  # bool | Include child org usage in the response. Defaults to false. (optional) if omitted the server will use the default value of False
+    offset = 0  # int | Number of records to skip before beginning to return. (optional) if omitted the server will use the default value of 0
+    limit = 5000  # int | Maximum number of records to be returned. (optional) if omitted the server will use the default value of 5000
 
     # example passing only required values which don't have defaults set
     try:
@@ -774,7 +776,7 @@ with ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Usage Attribution
-        api_response = api_instance.get_usage_attribution(start_month, fields, end_month=end_month, sort_direction=sort_direction, sort_name=sort_name, include_descendants=include_descendants)
+        api_response = api_instance.get_usage_attribution(start_month, fields, end_month=end_month, sort_direction=sort_direction, sort_name=sort_name, include_descendants=include_descendants, offset=offset, limit=limit)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_attribution: %s\n" % e)
@@ -790,6 +792,8 @@ with ApiClient(configuration) as api_client:
 | **sort_direction**      | **UsageSortDirection**               | The direction to sort by: &#x60;[desc, asc]&#x60;.                                                                                     | [optional]                                                           |
 | **sort_name**           | **UsageAttributionSort**             | The field to sort by.                                                                                                                  | [optional]                                                           |
 | **include_descendants** | **bool**                             | Include child org usage in the response. Defaults to false.                                                                            | [optional] if omitted the server will use the default value of False |
+| **offset**              | **int**                              | Number of records to skip before beginning to return.                                                                                  | [optional] if omitted the server will use the default value of 0     |
+| **limit**               | **int**                              | Maximum number of records to be returned.                                                                                              | [optional] if omitted the server will use the default value of 5000  |
 
 ### Return type
 
