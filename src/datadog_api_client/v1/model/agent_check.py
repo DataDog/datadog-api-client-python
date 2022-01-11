@@ -5,16 +5,12 @@
 
 from datadog_api_client.v1.model_utils import (
     ApiTypeError,
-    ModelComposed,
-    ModelNormal,
     ModelSimple,
     cached_property,
     date,
     datetime,
-    file_type,
     none_type,
 )
-
 
 
 class AgentCheck(ModelSimple):
@@ -24,21 +20,13 @@ class AgentCheck(ModelSimple):
     Do not edit the class manually.
     """
 
-
-    validations = {
-    }
-
-
-    
+    validations = {}
 
     @cached_property
     def openapi_types():
         return {
-            'value': ([bool, date, datetime, dict, float, int, list, str, none_type],),
+            "value": ([bool, date, datetime, dict, float, int, list, str, none_type],),
         }
-
-
-
 
     def __init__(self, *args, **kwargs):
         """AgentCheck - a model defined in OpenAPI
@@ -53,8 +41,8 @@ class AgentCheck(ModelSimple):
         """
         super().__init__(kwargs)
 
-        if 'value' in kwargs:
-            value = kwargs.pop('value')
+        if "value" in kwargs:
+            value = kwargs.pop("value")
         elif args:
             args = list(args)
             value = args.pop(0)
@@ -67,15 +55,11 @@ class AgentCheck(ModelSimple):
 
         self._check_pos_args(args)
 
-
         self.value = value
 
         self._check_kw_args(kwargs)
-
 
     @classmethod
     def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
         return cls(*args, **kwargs)
-
-

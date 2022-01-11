@@ -4,17 +4,9 @@
 
 
 from datadog_api_client.v1.model_utils import (
-    ApiTypeError,
-    ModelComposed,
     ModelNormal,
-    ModelSimple,
     cached_property,
-    date,
-    datetime,
-    file_type,
-    none_type,
 )
-
 
 
 class HostMetaInstallMethod(ModelNormal):
@@ -24,32 +16,23 @@ class HostMetaInstallMethod(ModelNormal):
     Do not edit the class manually.
     """
 
-
-    validations = {
-    }
-
-
-    
+    validations = {}
 
     @cached_property
     def openapi_types():
         return {
-            'installer_version': (str,),
-            'tool': (str,),
-            'tool_version': (str,),
+            "installer_version": (str,),
+            "tool": (str,),
+            "tool_version": (str,),
         }
 
-
-
-
     attribute_map = {
-        'installer_version': 'installer_version',
-        'tool': 'tool',
-        'tool_version': 'tool_version',
+        "installer_version": "installer_version",
+        "tool": "tool",
+        "tool_version": "tool_version",
     }
 
-    read_only_vars = {
-    }
+    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """HostMetaInstallMethod - a model defined in OpenAPI
@@ -61,12 +44,7 @@ class HostMetaInstallMethod(ModelNormal):
         """
         super().__init__(kwargs)
 
-
         self._check_pos_args(args)
-
-
-
-
 
     @classmethod
     def _from_openapi_data(cls, *args, **kwargs):
@@ -76,8 +54,4 @@ class HostMetaInstallMethod(ModelNormal):
 
         self._check_pos_args(args)
 
-
-
         return self
-
-
