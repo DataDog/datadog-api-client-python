@@ -135,7 +135,7 @@ configuration.unstable_operations["delete_incident"] = True
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incidents_api.IncidentsApi(api_client)
-    incident_id = "incident_id_example"  # str | The UUID the incident.
+    incident_id = "incident_id_example"  # str | The UUID of the incident.
 
     # example passing only required values which don't have defaults set
     try:
@@ -147,9 +147,9 @@ with ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name            | Type    | Description            | Notes |
-| --------------- | ------- | ---------------------- | ----- |
-| **incident_id** | **str** | The UUID the incident. |
+| Name            | Type    | Description               | Notes |
+| --------------- | ------- | ------------------------- | ----- |
+| **incident_id** | **str** | The UUID of the incident. |
 
 ### Return type
 
@@ -204,7 +204,7 @@ configuration.unstable_operations["get_incident"] = True
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incidents_api.IncidentsApi(api_client)
-    incident_id = "incident_id_example"  # str | The UUID the incident.
+    incident_id = "incident_id_example"  # str | The UUID of the incident.
     include = [
         IncidentRelatedObject("users"),
     ]  # [IncidentRelatedObject] | Specifies which types of related objects should be included in the response. (optional)
@@ -231,7 +231,7 @@ with ApiClient(configuration) as api_client:
 
 | Name            | Type                                                    | Description                                                                  | Notes      |
 | --------------- | ------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------- |
-| **incident_id** | **str**                                                 | The UUID the incident.                                                       |
+| **incident_id** | **str**                                                 | The UUID of the incident.                                                    |
 | **include**     | [**[IncidentRelatedObject]**](IncidentRelatedObject.md) | Specifies which types of related objects should be included in the response. | [optional] |
 
 ### Return type
@@ -364,7 +364,7 @@ configuration.unstable_operations["update_incident"] = True
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incidents_api.IncidentsApi(api_client)
-    incident_id = "incident_id_example"  # str | The UUID the incident.
+    incident_id = "incident_id_example"  # str | The UUID of the incident.
     body = IncidentUpdateRequest(
         data=IncidentUpdateData(
             attributes=IncidentUpdateAttributes(
@@ -435,10 +435,10 @@ with ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name            | Type                                                  | Description            | Notes |
-| --------------- | ----------------------------------------------------- | ---------------------- | ----- |
-| **incident_id** | **str**                                               | The UUID the incident. |
-| **body**        | [**IncidentUpdateRequest**](IncidentUpdateRequest.md) | Incident Payload.      |
+| Name            | Type                                                  | Description               | Notes |
+| --------------- | ----------------------------------------------------- | ------------------------- | ----- |
+| **incident_id** | **str**                                               | The UUID of the incident. |
+| **body**        | [**IncidentUpdateRequest**](IncidentUpdateRequest.md) | Incident Payload.         |
 
 ### Return type
 
