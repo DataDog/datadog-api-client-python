@@ -10807,7 +10807,8 @@ components:
           readOnly: true
           type: string
         name:
-          description: Name of the global variable.
+          description: Name of the global variable. Unique across Synthetics global
+            variables.
           example: MY_VARIABLE
           type: string
         parse_test_options:
