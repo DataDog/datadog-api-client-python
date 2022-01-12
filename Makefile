@@ -1,6 +1,6 @@
 .PHONY: all
 all: .generator .env
-	@docker-compose -f docker-compose.generator.yaml up
+	@pre-commit run --all-files --hook-stage=manual openapi-generator || true
 	@mkdir -p docs/v1 docs/v2
 	@cp -r v1/datadog_api_client ./src/
 	@cp -r v2/datadog_api_client ./src/
