@@ -64,7 +64,7 @@ class SyntheticsGlobalVariable(ModelNormal):
 
         Args:
             description (str): Description of the global variable.
-            name (str): Name of the global variable.
+            name (str): Name of the global variable. Unique across Synthetics global variables.
             tags ([str]): Tags of the global variable.
             value (SyntheticsGlobalVariableValue):
 
