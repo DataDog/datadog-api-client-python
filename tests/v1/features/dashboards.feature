@@ -42,6 +42,19 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].formulas[1].formula" is equal to "query1"
 
   @team:DataDog/dashboards
+  Scenario: Create a new dashboard with a formulas and functions treemap widget
+    Given new "CreateDashboard" request
+    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "", "type": "treemap", "requests": [ { "formulas": [ { "formula": "hour_before(query1)" }, { "formula": "query1" } ], "queries": [ { "data_source": "logs", "name": "query1", "search": { "query": "" }, "indexes": [ "*" ], "compute": { "aggregation": "count" }, "group_by": [] } ], "response_format": "scalar" } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "scalar"
+    And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "logs"
+    And the response "widgets[0].definition.requests[0].queries[0].name" is equal to "query1"
+    And the response "widgets[0].definition.requests[0].queries[0].compute.aggregation" is equal to "count"
+    And the response "widgets[0].definition.requests[0].formulas[0].formula" is equal to "hour_before(query1)"
+    And the response "widgets[0].definition.requests[0].formulas[1].formula" is equal to "query1"
+
+  @team:DataDog/dashboards
   Scenario: Create a new dashboard with a query value widget using the percentile aggregator
     Given new "CreateDashboard" request
     And body with value {"layout_type": "ordered", "title": "{{ unique }} with QVW Percentile Aggregator", "widgets": [{"definition":{"title_size":"16","title":"","title_align":"left","precision":2,"time":{},"autoscale":true,"requests":[{"formulas":[{"formula":"query1"}],"response_format":"scalar","queries":[{"query":"p90:dist.dd.dogweb.latency{*}","data_source":"metrics","name":"query1","aggregator":"percentile"}]}],"type":"query_value"},"layout":{"y":0,"x":0,"height":2,"width":2}}]}

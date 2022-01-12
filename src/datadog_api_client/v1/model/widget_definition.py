@@ -177,6 +177,7 @@ class WidgetDefinition(ModelComposed):
             unit (str): [optional] Unit to display with the value.
             custom_links ([WidgetCustomLink]): [optional] List of custom links.
             group ([str]): [optional] List of tag prefixes to group by.
+            group_by (TreeMapGroupBy): [optional]
             tags ([str]): [optional] List of tags used to filter the groups reporting a cluster check.
             legend_size (str): [optional] Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".
             markers ([WidgetMarker]): [optional] List of markers.
@@ -242,12 +243,13 @@ class WidgetDefinition(ModelComposed):
             legend_columns ([TimeseriesWidgetLegendColumn]): [optional] Columns displayed in the legend.
             legend_layout (TimeseriesWidgetLegendLayout): [optional]
             right_yaxis (WidgetAxis): [optional]
+            color_by (TreeMapColorBy): [optional]
+            size_by (TreeMapSizeBy): [optional]
             alert_id (str): [optional] ID of the alert to use in the widget.
             type (FunnelWidgetDefinitionType): [optional]
             viz_type (WidgetVizType): [optional]
             requests ([FunnelWidgetRequest]): [optional] Request payload used to query items.
             check (str): [optional] Name of the check to use in the widget.
-            group_by (TreeMapGroupBy): [optional]
             grouping (WidgetGrouping): [optional]
             query (str): [optional] Query to filter the monitors with.
             text (str): [optional] Text to display.
@@ -262,8 +264,6 @@ class WidgetDefinition(ModelComposed):
             service (str): [optional] APM service.
             env (str): [optional] APM environment.
             span_name (str): [optional] APM span name.
-            color_by (TreeMapColorBy): [optional]
-            size_by (TreeMapSizeBy): [optional]
         """
         super().__init__(kwargs)
 

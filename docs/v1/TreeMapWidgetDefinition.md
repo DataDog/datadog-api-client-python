@@ -6,11 +6,11 @@ The treemap visualization found on the Host Dashboards comes from the output of 
 
 | Name         | Type                                                              | Description                       | Notes      |
 | ------------ | ----------------------------------------------------------------- | --------------------------------- | ---------- |
-| **color_by** | [**TreeMapColorBy**](TreeMapColorBy.md)                           |                                   |
-| **group_by** | [**TreeMapGroupBy**](TreeMapGroupBy.md)                           |                                   |
 | **requests** | [**[TreeMapWidgetRequest]**](TreeMapWidgetRequest.md)             | List of top list widget requests. |
-| **size_by**  | [**TreeMapSizeBy**](TreeMapSizeBy.md)                             |                                   |
 | **type**     | [**TreeMapWidgetDefinitionType**](TreeMapWidgetDefinitionType.md) |                                   |
+| **color_by** | [**TreeMapColorBy**](TreeMapColorBy.md)                           |                                   | [optional] |
+| **group_by** | [**TreeMapGroupBy**](TreeMapGroupBy.md)                           |                                   | [optional] |
+| **size_by**  | [**TreeMapSizeBy**](TreeMapSizeBy.md)                             |                                   | [optional] |
 | **title**    | **str**                                                           | Title of your widget.             | [optional] |
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
