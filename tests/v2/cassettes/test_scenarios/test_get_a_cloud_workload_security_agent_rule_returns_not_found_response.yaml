@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/abc-123-xyz
+  response:
+    body:
+      string: '{"errors":["not_found(Agent rule not found: agentRuleId=abc-123-xyz)"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1
