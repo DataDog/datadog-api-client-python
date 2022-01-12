@@ -1,16 +1,16 @@
 interactions:
 - request:
-    body: '{"is_secret":false,"name":"TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1628785718","value":"variable-value"}'
+    body: '{"is_secret":false,"name":"TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1641430286","value":"variable-value"}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
     uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables
   response:
     body:
-      string: '{"is_secret":false,"name":"TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1628785718","value":"variable-value"}'
+      string: '{"is_secret":false,"name":"TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1641430286","value":"variable-value"}'
     headers:
       content-type:
       - application/json
@@ -21,14 +21,14 @@ interactions:
     body: '{"value":"variable-updated"}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1628785718
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1641430286
   response:
     body:
-      string: '{"is_secret":false,"name":"TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1628785718","value":"variable-updated"}'
+      string: '{"is_secret":false,"name":"TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1641430286","value":"variable-updated"}'
     headers:
       content-type:
       - application/json
@@ -39,9 +39,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1628785718
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1641430286
   response:
     body:
       string: '{}'

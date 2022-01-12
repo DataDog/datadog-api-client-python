@@ -27,6 +27,7 @@ from datadog_api_client.v1.model.aws_tag_filter_create_request import AWSTagFilt
 from datadog_api_client.v1.model.aws_tag_filter_delete_request import AWSTagFilterDeleteRequest
 from datadog_api_client.v1.model.aws_tag_filter_list_response import AWSTagFilterListResponse
 from datadog_api_client.v1.model.access_role import AccessRole
+from datadog_api_client.v1.model.agent_check import AgentCheck
 from datadog_api_client.v1.model.alert_graph_widget_definition import AlertGraphWidgetDefinition
 from datadog_api_client.v1.model.alert_graph_widget_definition_type import AlertGraphWidgetDefinitionType
 from datadog_api_client.v1.model.alert_value_widget_definition import AlertValueWidgetDefinition
@@ -174,6 +175,7 @@ from datadog_api_client.v1.model.host_map_widget_definition_requests import Host
 from datadog_api_client.v1.model.host_map_widget_definition_style import HostMapWidgetDefinitionStyle
 from datadog_api_client.v1.model.host_map_widget_definition_type import HostMapWidgetDefinitionType
 from datadog_api_client.v1.model.host_meta import HostMeta
+from datadog_api_client.v1.model.host_meta_install_method import HostMetaInstallMethod
 from datadog_api_client.v1.model.host_metrics import HostMetrics
 from datadog_api_client.v1.model.host_mute_response import HostMuteResponse
 from datadog_api_client.v1.model.host_mute_settings import HostMuteSettings
@@ -303,6 +305,14 @@ from datadog_api_client.v1.model.monitor_threshold_window_options import Monitor
 from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
 from datadog_api_client.v1.model.monitor_type import MonitorType
 from datadog_api_client.v1.model.monitor_update_request import MonitorUpdateRequest
+from datadog_api_client.v1.model.monthly_usage_attribution_body import MonthlyUsageAttributionBody
+from datadog_api_client.v1.model.monthly_usage_attribution_metadata import MonthlyUsageAttributionMetadata
+from datadog_api_client.v1.model.monthly_usage_attribution_pagination import MonthlyUsageAttributionPagination
+from datadog_api_client.v1.model.monthly_usage_attribution_response import MonthlyUsageAttributionResponse
+from datadog_api_client.v1.model.monthly_usage_attribution_supported_metrics import (
+    MonthlyUsageAttributionSupportedMetrics,
+)
+from datadog_api_client.v1.model.monthly_usage_attribution_values import MonthlyUsageAttributionValues
 from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
 from datadog_api_client.v1.model.note_widget_definition_type import NoteWidgetDefinitionType
 from datadog_api_client.v1.model.notebook_absolute_time import NotebookAbsoluteTime

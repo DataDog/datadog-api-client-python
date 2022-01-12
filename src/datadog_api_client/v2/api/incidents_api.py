@@ -211,7 +211,7 @@ class IncidentsApi(object):
         >>> result = thread.get()
 
         Args:
-            incident_id (str): The UUID the incident.
+            incident_id (str): The UUID of the incident.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -254,7 +254,7 @@ class IncidentsApi(object):
         >>> result = thread.get()
 
         Args:
-            incident_id (str): The UUID the incident.
+            incident_id (str): The UUID of the incident.
 
         Keyword Args:
             include ([IncidentRelatedObject]): [optional] Specifies which types of related objects should be included in the response.
@@ -340,7 +340,7 @@ class IncidentsApi(object):
         >>> result = thread.get()
 
         Args:
-            incident_id (str): The UUID the incident.
+            incident_id (str): The UUID of the incident.
             body (IncidentUpdateRequest): Incident Payload.
 
         Keyword Args:

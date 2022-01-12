@@ -222,7 +222,7 @@ class UsageSummaryResponse(ModelNormal):
             rehydrated_indexed_events_agg_sum (int): [optional] Shows the sum of all rehydrated logs indexed over all hours in the current months for all organizations (data available as of December 1, 2020).
             rehydrated_ingested_bytes_agg_sum (int): [optional] Shows the sum of all rehydrated logs bytes ingested over all hours in the current months for all organizations (data available as of December 1, 2020).
             rum_browser_and_mobile_session_count (int): [optional] Shows the sum of all mobile sessions and all browser lite and legacy sessions over all hours in the current month for all organizations.
-            rum_session_count_agg_sum (int): [optional] Shows the sum of all browser RUM Sessions over all hours in the current months for all organizations.
+            rum_session_count_agg_sum (int): [optional] Shows the sum of all browser RUM Lite Sessions over all hours in the current months for all organizations.
             rum_total_session_count_agg_sum (int): [optional] Shows the sum of RUM Sessions (browser and mobile) over all hours in the current months for all organizations.
             rum_units_agg_sum (int): [optional] Shows the sum of all browser and mobile RUM units over all hours in the current months for all organizations.
             sds_logs_scanned_bytes_sum (int): [optional] Shows the sum of all bytes scanned of logs usage by the Sensitive Data Scanner over all hours in the current month for all organizations.

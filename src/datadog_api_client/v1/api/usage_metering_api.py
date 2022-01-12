@@ -9,6 +9,10 @@ from datadog_api_client.v1.model_utils import (
 )
 from datadog_api_client.v1.model.hourly_usage_attribution_response import HourlyUsageAttributionResponse
 from datadog_api_client.v1.model.hourly_usage_attribution_usage_type import HourlyUsageAttributionUsageType
+from datadog_api_client.v1.model.monthly_usage_attribution_response import MonthlyUsageAttributionResponse
+from datadog_api_client.v1.model.monthly_usage_attribution_supported_metrics import (
+    MonthlyUsageAttributionSupportedMetrics,
+)
 from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse
 from datadog_api_client.v1.model.usage_attribution_response import UsageAttributionResponse
 from datadog_api_client.v1.model.usage_attribution_sort import UsageAttributionSort
@@ -93,7 +97,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -138,7 +142,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -167,7 +171,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -196,7 +200,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -234,7 +238,62 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._get_monthly_usage_attribution_endpoint = _Endpoint(
+            settings={
+                "response_type": (MonthlyUsageAttributionResponse,),
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/monthly-attribution",
+                "operation_id": "get_monthly_usage_attribution",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "start_month": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_month",
+                    "location": "query",
+                },
+                "fields": {
+                    "required": True,
+                    "openapi_types": (MonthlyUsageAttributionSupportedMetrics,),
+                    "attribute": "fields",
+                    "location": "query",
+                },
+                "end_month": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_month",
+                    "location": "query",
+                },
+                "sort_direction": {
+                    "openapi_types": (UsageSortDirection,),
+                    "attribute": "sort_direction",
+                    "location": "query",
+                },
+                "sort_name": {
+                    "openapi_types": (MonthlyUsageAttributionSupportedMetrics,),
+                    "attribute": "sort_name",
+                    "location": "query",
+                },
+                "tag_breakdown_keys": {
+                    "openapi_types": (str,),
+                    "attribute": "tag_breakdown_keys",
+                    "location": "query",
+                },
+                "next_record_id": {
+                    "openapi_types": (str,),
+                    "attribute": "next_record_id",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -258,7 +317,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -282,7 +341,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -311,7 +370,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -359,9 +418,19 @@ class UsageMeteringApi(object):
                     "attribute": "include_descendants",
                     "location": "query",
                 },
+                "offset": {
+                    "openapi_types": (int,),
+                    "attribute": "offset",
+                    "location": "query",
+                },
+                "limit": {
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
+                },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -390,7 +459,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -413,7 +482,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -442,7 +511,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -471,7 +540,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -500,7 +569,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -529,7 +598,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -558,7 +627,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -587,7 +656,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -616,7 +685,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -645,7 +714,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -674,7 +743,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -709,7 +778,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -738,7 +807,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -767,7 +836,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -796,7 +865,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -825,7 +894,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -859,7 +928,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -888,7 +957,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -917,7 +986,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -946,7 +1015,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -980,7 +1049,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1009,7 +1078,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1038,7 +1107,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1067,7 +1136,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1096,7 +1165,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1144,7 +1213,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
+                "accept": ["application/json;datetime-format=rfc3339"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1372,6 +1441,56 @@ class UsageMeteringApi(object):
         kwargs = self._get_monthly_custom_reports_endpoint.default_arguments(kwargs)
         return self._get_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
 
+    def get_monthly_usage_attribution(self, start_month, fields, **kwargs):
+        """Get Monthly Usage Attribution
+
+        Get Monthly Usage Attribution.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True.
+
+        >>> thread = api.get_monthly_usage_attribution(start_month, fields, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
+            fields (MonthlyUsageAttributionSupportedMetrics): Comma-separated list of usage types to return, or `*` for all usage types.
+
+        Keyword Args:
+            end_month (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.
+            sort_direction (UsageSortDirection): [optional] The direction to sort by: `[desc, asc]`.
+            sort_name (MonthlyUsageAttributionSupportedMetrics): [optional] The field to sort by.
+            tag_breakdown_keys (str): [optional] Comma separated list of tags used to group usage. If no value is provided the usage will not be broken down by tags.
+            next_record_id (str): [optional] List following results with a next_record_id provided in the previous query.
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MonthlyUsageAttributionResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_monthly_usage_attribution_endpoint.default_arguments(kwargs)
+        kwargs["start_month"] = start_month
+        kwargs["fields"] = fields
+        return self._get_monthly_usage_attribution_endpoint.call_with_http_info(**kwargs)
+
     def get_specified_daily_custom_reports(self, report_id, **kwargs):
         """Get specified daily custom reports
 
@@ -1521,6 +1640,8 @@ class UsageMeteringApi(object):
             sort_direction (UsageSortDirection): [optional] The direction to sort by: `[desc, asc]`.
             sort_name (UsageAttributionSort): [optional] The field to sort by.
             include_descendants (bool): [optional] Include child org usage in the response. Defaults to false. If omitted the server will use the default value of False.
+            offset (int): [optional] Number of records to skip before beginning to return. If omitted the server will use the default value of 0.
+            limit (int): [optional] Maximum number of records to be returned. If omitted the server will use the default value of 5000.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

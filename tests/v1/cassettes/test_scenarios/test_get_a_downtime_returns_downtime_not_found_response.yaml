@@ -3,12 +3,12 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: GET
     uri: https://api.datadoghq.com/api/v1/downtime/0
   response:
     body:
-      string: '{"errors": ["Downtime not found"]}'
+      string: '{"errors":["Downtime not found"]}'
     headers:
       content-type:
       - application/json

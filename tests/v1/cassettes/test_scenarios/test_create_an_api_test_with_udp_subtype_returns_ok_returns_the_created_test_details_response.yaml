@@ -1,18 +1,18 @@
 interactions:
 - request:
     body: '{"config":{"assertions":[{"operator":"is","target":"message","type":"receivedMessage"},{"operator":"lessThan","target":2000,"type":"responseTime"}],"configVariables":[],"request":{"host":"https://datadoghq.com","message":"message","port":443}},"locations":["aws:us-east-2"],"message":"BDD
-      test payload: synthetics_api_test_udp_payload.json","name":"Test-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response-1636973054","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response-1636973054","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"subtype":"udp","tags":["testing:api"],"type":"api"}'
+      test payload: synthetics_api_test_udp_payload.json","name":"Test-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response-1641430275","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response-1641430275","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"subtype":"udp","tags":["testing:api"],"type":"api"}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
   response:
     body:
-      string: '{"status":"live","public_id":"csh-vbr-4s5","tags":["testing:api"],"org_id":321813,"locations":["aws:us-east-2"],"message":"BDD
-        test payload: synthetics_api_test_udp_payload.json","deleted_at":null,"name":"Test-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response-1636973054","monitor_id":54494362,"type":"api","created_at":"2021-11-15T10:44:14.616929+00:00","modified_at":"2021-11-15T10:44:14.616929+00:00","subtype":"udp","config":{"request":{"host":"https://datadoghq.com","message":"message","port":443},"assertions":[{"operator":"is","type":"receivedMessage","target":"message"},{"operator":"lessThan","type":"responseTime","target":2000}],"configVariables":[]},"options":{"accept_self_signed":false,"retry":{"count":3,"interval":10},"min_location_failed":1,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"monitor_priority":5,"monitor_name":"Test-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response-1636973054","tick_every":60}}'
+      string: '{"status":"live","public_id":"x7m-knw-vsm","tags":["testing:api"],"org_id":321813,"locations":["aws:us-east-2"],"message":"BDD
+        test payload: synthetics_api_test_udp_payload.json","deleted_at":null,"name":"Test-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response-1641430275","monitor_id":59800839,"type":"api","created_at":"2022-01-06T00:51:15.394643+00:00","modified_at":"2022-01-06T00:51:15.394643+00:00","subtype":"udp","config":{"request":{"host":"https://datadoghq.com","message":"message","port":443},"assertions":[{"operator":"is","type":"receivedMessage","target":"message"},{"operator":"lessThan","type":"responseTime","target":2000}],"configVariables":[]},"options":{"accept_self_signed":false,"retry":{"count":3,"interval":10},"min_location_failed":1,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"monitor_priority":5,"monitor_name":"Test-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response-1641430275","tick_every":60}}'
     headers:
       content-type:
       - application/json
@@ -20,17 +20,17 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"public_ids":["csh-vbr-4s5"]}'
+    body: '{"public_ids":["x7m-knw-vsm"]}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
   response:
     body:
-      string: '{"deleted_tests":[{"deleted_at":"2021-11-15T10:44:14.913692+00:00","public_id":"csh-vbr-4s5"}]}'
+      string: '{"deleted_tests":[{"deleted_at":"2022-01-06T00:51:15.642811+00:00","public_id":"x7m-knw-vsm"}]}'
     headers:
       content-type:
       - application/json

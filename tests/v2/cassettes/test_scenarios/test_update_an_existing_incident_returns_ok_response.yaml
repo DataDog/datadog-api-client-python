@@ -3,7 +3,7 @@ interactions:
     body: '{"data":{"attributes":{"customer_impacted":false,"title":"Test-Update_an_existing_incident_returns_OK_response-1618491713"},"type":"incidents"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
@@ -21,7 +21,7 @@ interactions:
     body: '{"data":{"attributes":{"fields":{"state":{"type":"dropdown","value":"resolved"}},"title":"Test-Update_an_existing_incident_returns_OK_response-1618491713-updated"},"id":"f40f7641-0aa4-57d3-b20d-3d42e9dbacae","type":"incidents"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: PATCH
@@ -39,7 +39,7 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/incidents/f40f7641-0aa4-57d3-b20d-3d42e9dbacae
   response:

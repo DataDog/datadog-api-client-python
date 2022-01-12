@@ -1,18 +1,18 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"email":"Test-Create_a_user_returns_OK_response-1618491771@datadoghq.com","name":"Datadog
+    body: '{"data":{"attributes":{"email":"Test-Create_a_user_returns_OK_response-1641829905@datadoghq.com","name":"Datadog
       API Client Python"},"type":"users"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"e2fe756a-9dea-11eb-9df5-da7ad0900002","attributes":{"name":"Datadog
-        API Client Python","handle":"test-create_a_user_returns_ok_response-1618491771@datadoghq.com","created_at":"2021-04-15T13:02:52.114306+00:00","modified_at":"2021-04-15T13:02:52.132140+00:00","email":"test-create_a_user_returns_ok_response-1618491771@datadoghq.com","icon":"https://secure.gravatar.com/avatar/ff0b24a42317828ee39033ae2b535712?s=48&d=retro","title":null,"verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
+      string: '{"data":{"type":"users","id":"36d7b6bc-722d-11ec-b5d7-da7ad0900002","attributes":{"name":"Datadog
+        API Client Python","handle":"test-create_a_user_returns_ok_response-1641829905@datadoghq.com","created_at":"2022-01-10T15:51:46.083118+00:00","modified_at":"2022-01-10T15:51:46.099179+00:00","email":"test-create_a_user_returns_ok_response-1641829905@datadoghq.com","icon":"https://secure.gravatar.com/avatar/2600d8773e2e8594a02021d9e03518ee?s=48&d=retro","title":null,"verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       content-type:
       - application/json
@@ -23,15 +23,13 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/e2fe756a-9dea-11eb-9df5-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/36d7b6bc-722d-11ec-b5d7-da7ad0900002
   response:
     body:
       string: ''
-    headers:
-      content-type:
-      - application/json
+    headers: {}
     status:
       code: 204
       message: No Content

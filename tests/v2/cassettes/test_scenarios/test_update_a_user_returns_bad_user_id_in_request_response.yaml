@@ -1,17 +1,17 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"email":"Test-Update_a_user_returns_Bad_User_ID_in_Request_response-1634655468@datadoghq.com","title":"user
+    body: '{"data":{"attributes":{"email":"Test-Update_a_user_returns_Bad_User_ID_in_Request_response-1641829918@datadoghq.com","title":"user
       title"},"type":"users"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"ecc80030-30ec-11ec-925a-da7ad0900002","attributes":{"name":null,"handle":"test-update_a_user_returns_bad_user_id_in_request_response-1634655468@datadoghq.com","created_at":"2021-10-19T14:57:48.456922+00:00","modified_at":"2021-10-19T14:57:48.521324+00:00","email":"test-update_a_user_returns_bad_user_id_in_request_response-1634655468@datadoghq.com","icon":"https://secure.gravatar.com/avatar/d120aef118f28fb11d345f2cf7d8cd29?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"3eb4b434-722d-11ec-b5d7-da7ad0900002","attributes":{"name":null,"handle":"test-update_a_user_returns_bad_user_id_in_request_response-1641829918@datadoghq.com","created_at":"2022-01-10T15:51:59.274950+00:00","modified_at":"2022-01-10T15:51:59.327176+00:00","email":"test-update_a_user_returns_bad_user_id_in_request_response-1641829918@datadoghq.com","icon":"https://secure.gravatar.com/avatar/82d40e5a82e1506dcf3dc9d8414a13d3?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       content-type:
@@ -23,11 +23,11 @@ interactions:
     body: '{"data":{"attributes":{"disabled":true,"name":"updated"},"id":"00000000-mismatch-body-id-ffffffffffff","type":"users"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/users/ecc80030-30ec-11ec-925a-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/3eb4b434-722d-11ec-b5d7-da7ad0900002
   response:
     body:
       string: '{"errors": ["UUID''s in the URL and request body do not match"]}'
@@ -41,9 +41,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/ecc80030-30ec-11ec-925a-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/3eb4b434-722d-11ec-b5d7-da7ad0900002
   response:
     body:
       string: ''

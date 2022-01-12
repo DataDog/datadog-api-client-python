@@ -12,8 +12,4 @@ WEBHOOK_CUSTOM_VARIABLE_NAME = environ["WEBHOOK_CUSTOM_VARIABLE_NAME"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = WebhooksIntegrationApi(api_client)
-    response = api_instance.delete_webhooks_integration_custom_variable(
-        custom_variable_name=WEBHOOK_CUSTOM_VARIABLE_NAME
-    )
-
-    print(response)
+    api_instance.delete_webhooks_integration_custom_variable(custom_variable_name=WEBHOOK_CUSTOM_VARIABLE_NAME)

@@ -4,7 +4,7 @@ interactions:
       title"},"type":"users"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
@@ -23,7 +23,7 @@ interactions:
     body: '{"data":{"attributes":{"customer_impacted":false,"fields":{"state":{"type":"dropdown","value":"resolved"}},"title":"Test-Create_an_incident_returns_CREATED_response-1618413158"},"relationships":{"commander":{"data":{"id":"d9b79c82-9d33-11eb-9dc6-da7ad0900002","type":"users"}}},"type":"incidents"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
@@ -41,7 +41,7 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/incidents/4f011ae3-66fd-54ee-9364-86bae65bbe80
   response:
@@ -57,7 +57,7 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/users/d9b79c82-9d33-11eb-9dc6-da7ad0900002
   response:

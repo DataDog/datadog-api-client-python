@@ -3,7 +3,7 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: GET
     uri: https://api.datadoghq.com/api/v2/permissions
   response:
@@ -50,9 +50,9 @@ interactions:
         Share","description":"The ability to share dashboards externally.","created":"2019-09-10T14:39:51.967094+00:00","group_name":"Dashboards","display_type":"other","restricted":false}},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304","attributes":{"name":"monitors_read","display_name":"Monitors","description":"The
         ability to view monitors.","created":"2019-09-16T18:39:07.744297+00:00","group_name":"Monitors","display_type":"read","restricted":true}},{"type":"permissions","id":"48ef71ea-d8b1-11e9-a77a-93f408470ad0","attributes":{"name":"monitors_write","display_name":"Monitors","description":"The
         ability to change, mute, and delete individual monitors.","created":"2019-09-16T18:39:15.597109+00:00","group_name":"Monitors","display_type":"write","restricted":false}},{"type":"permissions","id":"4d87d5f8-d8b1-11e9-a77a-eb9c8350d04f","attributes":{"name":"monitors_downtime","display_name":"Monitors
-        Manage Downtimes","description":"The ability to set downtimes for your organization.
-        A user with this permission can suppress alerts from any monitor using a downtime,
-        even if they do not have permission to edit those monitors explicitly.","created":"2019-09-16T18:39:23.306702+00:00","group_name":"Monitors","display_type":"other","restricted":false}},{"type":"permissions","id":"1af86ce4-7823-11ea-93dc-d7cad1b1c6cb","attributes":{"name":"logs_read_data","display_name":"Logs
+        Manage Downtimes","description":"The ability to set downtimes to suppress
+        alerts from any monitor in an organization. The ability to write monitors
+        is not required to set downtimes.","created":"2019-09-16T18:39:23.306702+00:00","group_name":"Monitors","display_type":"other","restricted":false}},{"type":"permissions","id":"1af86ce4-7823-11ea-93dc-d7cad1b1c6cb","attributes":{"name":"logs_read_data","display_name":"Logs
         Read Data","description":"The ability to read log data. Can be restricted
         with restriction queries.","created":"2020-04-06T16:24:35.989108+00:00","group_name":"Logs","display_type":"read","restricted":false}},{"type":"permissions","id":"b382b982-8535-11ea-93de-2bf1bdf20798","attributes":{"name":"logs_read_archives","display_name":"Logs
         Archives","description":"The ability to read logs archives location and use
@@ -65,10 +65,10 @@ interactions:
         Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"58b412cc-ff6d-11eb-bc9c-da7ad0900002","attributes":{"name":"security_monitoring_signals_write","display_name":"Security
         Signals","description":"The ability to modify Security signals.","created":"2021-08-17T15:11:06.963503+00:00","group_name":"Security
         Monitoring","display_type":"write","restricted":false}},{"type":"permissions","id":"9ac1d8cc-e707-11ea-aa2d-73d37e989a9d","attributes":{"name":"user_access_invite","display_name":"Invite
-        User","description":"Allows users to invite other users to your organization.","created":"2020-08-25T19:17:23.539701+00:00","group_name":"Access
+        User","description":"The ability to invite other users to your organization.","created":"2020-08-25T19:17:23.539701+00:00","group_name":"Access
         Management","display_type":"other","restricted":false}},{"type":"permissions","id":"9de604d8-e707-11ea-aa2d-93f1a783b3a3","attributes":{"name":"user_access_manage","display_name":"Access
-        Management","description":"Grants the permission to disable users, manage
-        user roles and SAML-to-role mappings.","created":"2020-08-25T19:17:28.810412+00:00","group_name":"Access
+        Management","description":"The ability to disable users, manage user roles,
+        and manage SAML-to-role mappings.","created":"2020-08-25T19:17:28.810412+00:00","group_name":"Access
         Management","display_type":"other","restricted":false}},{"type":"permissions","id":"46a301da-ec5c-11ea-aa9f-73bedeab67ee","attributes":{"name":"user_app_keys","display_name":"User
         Application Keys","description":"The ability to view and manage Application
         Keys owned by the user.","created":"2020-09-01T14:06:05.444705+00:00","group_name":"API
@@ -177,8 +177,15 @@ interactions:
         Applications","description":"The ability to view RUM Applications data.","created":"2021-08-02T09:46:07.671535+00:00","group_name":"Real
         User Monitoring","display_type":"read","restricted":true}},{"type":"permissions","id":"7605ef25-f376-11eb-b90b-da7ad0900002","attributes":{"name":"rum_session_replay_read","display_name":"Session
         Replay","description":"The ability to view session replays.","created":"2021-08-02T09:46:07.674640+00:00","group_name":"Real
-        User Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"26c79920-1703-11ec-85d2-da7ad0900002","attributes":{"name":"apm_generate_metrics","display_name":"Generate
-        Metrics","description":"The ability to create custom metrics from spans.","created":"2021-09-16T15:31:24.458963+00:00","group_name":"APM","display_type":"other","restricted":false}}]}'
+        User Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"c95412b8-16c7-11ec-85c0-da7ad0900002","attributes":{"name":"security_monitoring_notification_profiles_read","display_name":"Notification
+        Profiles","description":"The ability to read Notification Profiles.","created":"2021-09-16T08:26:27.366789+00:00","group_name":"Security
+        Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"c95412b9-16c7-11ec-85c0-da7ad0900002","attributes":{"name":"security_monitoring_notification_profiles_write","display_name":"Notification
+        Profiles","description":"The ability to create, edit and delete Notification
+        Profiles.","created":"2021-09-16T08:26:27.369359+00:00","group_name":"Security
+        Monitoring","display_type":"write","restricted":false}},{"type":"permissions","id":"26c79920-1703-11ec-85d2-da7ad0900002","attributes":{"name":"apm_generate_metrics","display_name":"Generate
+        Metrics","description":"The ability to create custom metrics from spans.","created":"2021-09-16T15:31:24.458963+00:00","group_name":"APM","display_type":"other","restricted":false}},{"type":"permissions","id":"020a563c-56a4-11ec-a982-da7ad0900002","attributes":{"name":"apm_pipelines_write","display_name":"Manage
+        Pipelines","description":"The ability to add and change APM pipeline configurations.","created":"2021-12-06T14:51:35.049129+00:00","group_name":"APM","display_type":"write","restricted":false}},{"type":"permissions","id":"8e4d6b6e-5750-11ec-a9f4-da7ad0900002","attributes":{"name":"apm_pipelines_read","display_name":"Manage
+        Pipelines","description":"The ability to view APM pipeline configurations.","created":"2021-12-07T11:26:43.807269+00:00","group_name":"APM","display_type":"read","restricted":false}}]}'
     headers:
       content-type:
       - application/json
@@ -189,15 +196,14 @@ interactions:
     body: '{"data":{"id":"984a2bd4-d3b4-11e8-a1ff-a7f660d43029","type":"permissions"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/roles/00000000-dead-beef-dead-ffffffffffff/permissions
   response:
     body:
-      string: '{"errors": ["Missing Role 00000000-dead-beef-dead-ffffffffffff not
-        found"]}'
+      string: '{"errors":["Missing Role 00000000-dead-beef-dead-ffffffffffff not found"]}'
     headers:
       content-type:
       - application/json

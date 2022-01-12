@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
+      == \"sh\"","name":"testdeleteacloudworkloadsecurityagentrulereturnsokresponse1641924696"},"type":"agent_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
+  response:
+    body:
+      string: '{"data":{"attributes":{"category":"Process Activity","name":"testdeleteacloudworkloadsecurityagentrulereturnsokresponse1641924696","creator":{"handle":"frog@datadoghq.com","name":null},"description":"My
+        Agent rule","enabled":true,"defaultRule":false,"version":1,"updater":{"handle":"frog@datadoghq.com","name":null},"updateDate":1641924697412,"creationDate":1641924697412,"expression":"exec.file.name
+        == \"sh\""},"type":"agent_rule","id":"amw-qoo-bfl"}}'
+    headers:
+      content-type:
+      - application/json;charset=utf-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/amw-qoo-bfl
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/amw-qoo-bfl
+  response:
+    body:
+      string: '{"errors":["not_found(Agent rule not found: agentRuleId=amw-qoo-bfl)"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

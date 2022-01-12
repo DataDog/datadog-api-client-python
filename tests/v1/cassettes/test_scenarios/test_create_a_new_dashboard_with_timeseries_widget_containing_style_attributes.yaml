@@ -1,20 +1,20 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1618572731
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1641430241
       with timeseries widget","widgets":[{"definition":{"requests":[{"display_type":"bars","on_right_yaxis":false,"q":"sum:trace.test.errors{env:prod,service:datadog-api-spec}
       by {resource_name}.as_count()","style":{"line_type":"solid","line_width":"normal","palette":"warm"}}],"type":"timeseries"}}]}'
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
       content-type:
       - application/json
     method: POST
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"notify_list":null,"description":null,"author_name":"CI Account","template_variables":null,"is_read_only":false,"id":"edw-vay-96u","title":"Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1618572731
-        with timeseries widget","url":"/dashboard/edw-vay-96u/test-createanewdashboardwithtimeserieswidgetcontainingstyleattributes-1618572731","created_at":"2021-04-16T11:32:11.338701+00:00","modified_at":"2021-04-16T11:32:11.338701+00:00","author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","widgets":[{"definition":{"requests":[{"q":"sum:trace.test.errors{env:prod,service:datadog-api-spec}
-        by {resource_name}.as_count()","on_right_yaxis":false,"style":{"line_width":"normal","palette":"warm","line_type":"solid"},"display_type":"bars"}],"type":"timeseries"},"id":1125815002687389}],"layout_type":"ordered"}'
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"asn-82x-2q5","title":"Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1641430241
+        with timeseries widget","url":"/dashboard/asn-82x-2q5/test-createanewdashboardwithtimeserieswidgetcontainingstyleattributes-1641430241","created_at":"2022-01-06T00:50:41.722113+00:00","modified_at":"2022-01-06T00:50:41.722113+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"q":"sum:trace.test.errors{env:prod,service:datadog-api-spec}
+        by {resource_name}.as_count()","on_right_yaxis":false,"style":{"line_width":"normal","palette":"warm","line_type":"solid"},"display_type":"bars"}],"type":"timeseries"},"id":8478940066341905}],"layout_type":"ordered"}'
     headers:
       content-type:
       - application/json
@@ -25,12 +25,12 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/edw-vay-96u
+    uri: https://api.datadoghq.com/api/v1/dashboard/asn-82x-2q5
   response:
     body:
-      string: '{"deleted_dashboard_id":"edw-vay-96u"}'
+      string: '{"deleted_dashboard_id":"asn-82x-2q5"}'
     headers:
       content-type:
       - application/json

@@ -25,6 +25,7 @@ class UsageRumSessionsHour(ModelNormal):
             "hour": (datetime,),
             "org_name": (str,),
             "public_id": (str,),
+            "replay_session_count": (int,),
             "session_count": (int,),
             "session_count_android": (int,),
             "session_count_ios": (int,),
@@ -34,6 +35,7 @@ class UsageRumSessionsHour(ModelNormal):
         "hour": "hour",
         "org_name": "org_name",
         "public_id": "public_id",
+        "replay_session_count": "replay_session_count",
         "session_count": "session_count",
         "session_count_android": "session_count_android",
         "session_count_ios": "session_count_ios",
@@ -48,7 +50,8 @@ class UsageRumSessionsHour(ModelNormal):
             hour (datetime): [optional] The hour for the usage.
             org_name (str): [optional] The organization name.
             public_id (str): [optional] The organization public ID.
-            session_count (int): [optional] Contains the number of RUM Sessions.
+            replay_session_count (int): [optional] Contains the number of RUM Replay Sessions (data available beginning November 1, 2021).
+            session_count (int): [optional] Contains the number of browser RUM Lite Sessions.
             session_count_android (int): [optional] Contains the number of mobile RUM Sessions on Android (data available beginning December 1, 2020).
             session_count_ios (int): [optional] Contains the number of mobile RUM Sessions on iOS (data available beginning December 1, 2020).
         """

@@ -42,7 +42,6 @@ try:
                 "%40test.service%3A{}%20%40ci.pipeline.id%3A{}&index=citest".format(dd_service, ci_pipeline_id)
             )
 
-
 except ImportError:
     if os.getenv("CI", "false") == "true" and RECORD == "none":
         raise

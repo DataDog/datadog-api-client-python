@@ -268,6 +268,7 @@ All URIs are relative to *https://api.datadoghq.com*
 | _UsageMeteringApi_                    | [**get_incident_management**](UsageMeteringApi.md#get_incident_management)                                               | **GET** /api/v1/usage/incident-management                                                          | Get hourly usage for incident management          |
 | _UsageMeteringApi_                    | [**get_ingested_spans**](UsageMeteringApi.md#get_ingested_spans)                                                         | **GET** /api/v1/usage/ingested-spans                                                               | Get hourly usage for ingested spans               |
 | _UsageMeteringApi_                    | [**get_monthly_custom_reports**](UsageMeteringApi.md#get_monthly_custom_reports)                                         | **GET** /api/v1/monthly_custom_reports                                                             | Get the list of available monthly custom reports  |
+| _UsageMeteringApi_                    | [**get_monthly_usage_attribution**](UsageMeteringApi.md#get_monthly_usage_attribution)                                   | **GET** /api/v1/usage/monthly-attribution                                                          | Get Monthly Usage Attribution                     |
 | _UsageMeteringApi_                    | [**get_specified_daily_custom_reports**](UsageMeteringApi.md#get_specified_daily_custom_reports)                         | **GET** /api/v1/daily_custom_reports/{report_id}                                                   | Get specified daily custom reports                |
 | _UsageMeteringApi_                    | [**get_specified_monthly_custom_reports**](UsageMeteringApi.md#get_specified_monthly_custom_reports)                     | **GET** /api/v1/monthly_custom_reports/{report_id}                                                 | Get specified monthly custom reports              |
 | _UsageMeteringApi_                    | [**get_usage_analyzed_logs**](UsageMeteringApi.md#get_usage_analyzed_logs)                                               | **GET** /api/v1/usage/analyzed_logs                                                                | Get hourly usage for analyzed logs                |
@@ -332,6 +333,7 @@ All URIs are relative to *https://api.datadoghq.com*
 - [AWSTagFilterDeleteRequest](AWSTagFilterDeleteRequest.md)
 - [AWSTagFilterListResponse](AWSTagFilterListResponse.md)
 - [AccessRole](AccessRole.md)
+- [AgentCheck](AgentCheck.md)
 - [AlertGraphWidgetDefinition](AlertGraphWidgetDefinition.md)
 - [AlertGraphWidgetDefinitionType](AlertGraphWidgetDefinitionType.md)
 - [AlertValueWidgetDefinition](AlertValueWidgetDefinition.md)
@@ -453,6 +455,7 @@ All URIs are relative to *https://api.datadoghq.com*
 - [HostMapWidgetDefinitionStyle](HostMapWidgetDefinitionStyle.md)
 - [HostMapWidgetDefinitionType](HostMapWidgetDefinitionType.md)
 - [HostMeta](HostMeta.md)
+- [HostMetaInstallMethod](HostMetaInstallMethod.md)
 - [HostMetrics](HostMetrics.md)
 - [HostMuteResponse](HostMuteResponse.md)
 - [HostMuteSettings](HostMuteSettings.md)
@@ -582,6 +585,12 @@ All URIs are relative to *https://api.datadoghq.com*
 - [MonitorThresholds](MonitorThresholds.md)
 - [MonitorType](MonitorType.md)
 - [MonitorUpdateRequest](MonitorUpdateRequest.md)
+- [MonthlyUsageAttributionBody](MonthlyUsageAttributionBody.md)
+- [MonthlyUsageAttributionMetadata](MonthlyUsageAttributionMetadata.md)
+- [MonthlyUsageAttributionPagination](MonthlyUsageAttributionPagination.md)
+- [MonthlyUsageAttributionResponse](MonthlyUsageAttributionResponse.md)
+- [MonthlyUsageAttributionSupportedMetrics](MonthlyUsageAttributionSupportedMetrics.md)
+- [MonthlyUsageAttributionValues](MonthlyUsageAttributionValues.md)
 - [NoteWidgetDefinition](NoteWidgetDefinition.md)
 - [NoteWidgetDefinitionType](NoteWidgetDefinitionType.md)
 - [NotebookAbsoluteTime](NotebookAbsoluteTime.md)
