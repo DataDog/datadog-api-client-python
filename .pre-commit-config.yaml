@@ -5,7 +5,7 @@ repos:
     name: Generate
     language: node
     entry: make
-    files: "^.generator/.*"
+    files: '^(\.generator/.*|\.pre-commit-config\.yaml|setup\.cfg|Makefile)'
     pass_filenames: false
   - id: docs
     name: Format documentation
