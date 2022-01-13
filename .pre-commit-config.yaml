@@ -1,12 +1,6 @@
 repos:
 - repo: local
   hooks:
-  - id: generated
-    name: Do not commit generated files
-    language: fail
-    entry: Unstage generated files with 'git reset --' command
-    files: '^datadog_api_client/v.*'
-    verbose: true
   - id: generate
     name: Generate
     language: node
