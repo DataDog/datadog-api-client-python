@@ -232,10 +232,7 @@ with ApiClient(configuration) as api_client:
             ],
             request=SyntheticsTestRequest(
                 allow_insecure=True,
-                basic_auth=SyntheticsBasicAuth(
-                    password="",
-                    username="",
-                ),
+                basic_auth=SyntheticsBasicAuth(),
                 body="body_example",
                 certificate=SyntheticsTestRequestCertificate(
                     cert=SyntheticsTestRequestCertificateItem(
@@ -261,6 +258,12 @@ with ApiClient(configuration) as api_client:
                 no_saving_response_body=True,
                 number_of_packets=0,
                 port=1,
+                proxy=SyntheticsTestRequestProxy(
+                    headers=SyntheticsTestHeaders(
+                        key="key_example",
+                    ),
+                    url="https://example.com",
+                ),
                 query={},
                 servername="servername_example",
                 should_track_hops=True,
@@ -288,10 +291,7 @@ with ApiClient(configuration) as api_client:
                     name="name_example",
                     request=SyntheticsTestRequest(
                         allow_insecure=True,
-                        basic_auth=SyntheticsBasicAuth(
-                            password="",
-                            username="",
-                        ),
+                        basic_auth=SyntheticsBasicAuth(),
                         body="body_example",
                         certificate=SyntheticsTestRequestCertificate(
                             cert=SyntheticsTestRequestCertificateItem(
@@ -317,6 +317,12 @@ with ApiClient(configuration) as api_client:
                         no_saving_response_body=True,
                         number_of_packets=0,
                         port=1,
+                        proxy=SyntheticsTestRequestProxy(
+                            headers=SyntheticsTestHeaders(
+                                key="key_example",
+                            ),
+                            url="https://example.com",
+                        ),
                         query={},
                         servername="servername_example",
                         should_track_hops=True,
@@ -444,10 +450,7 @@ with ApiClient(configuration) as api_client:
             ],
             request=SyntheticsTestRequest(
                 allow_insecure=True,
-                basic_auth=SyntheticsBasicAuth(
-                    password="",
-                    username="",
-                ),
+                basic_auth=SyntheticsBasicAuth(),
                 body="body_example",
                 certificate=SyntheticsTestRequestCertificate(
                     cert=SyntheticsTestRequestCertificateItem(
@@ -473,6 +476,12 @@ with ApiClient(configuration) as api_client:
                 no_saving_response_body=True,
                 number_of_packets=0,
                 port=1,
+                proxy=SyntheticsTestRequestProxy(
+                    headers=SyntheticsTestHeaders(
+                        key="key_example",
+                    ),
+                    url="https://example.com",
+                ),
                 query={},
                 servername="servername_example",
                 should_track_hops=True,
@@ -1788,10 +1797,7 @@ with ApiClient(configuration) as api_client:
         tests=[
             SyntheticsCITest(
                 allow_insecure_certificates=True,
-                basic_auth=SyntheticsBasicAuth(
-                    password="",
-                    username="",
-                ),
+                basic_auth=SyntheticsBasicAuth(),
                 body="body_example",
                 body_type="body_type_example",
                 cookies="cookies_example",
@@ -1998,10 +2004,7 @@ with ApiClient(configuration) as api_client:
             ],
             request=SyntheticsTestRequest(
                 allow_insecure=True,
-                basic_auth=SyntheticsBasicAuth(
-                    password="",
-                    username="",
-                ),
+                basic_auth=SyntheticsBasicAuth(),
                 body="body_example",
                 certificate=SyntheticsTestRequestCertificate(
                     cert=SyntheticsTestRequestCertificateItem(
@@ -2027,6 +2030,12 @@ with ApiClient(configuration) as api_client:
                 no_saving_response_body=True,
                 number_of_packets=0,
                 port=1,
+                proxy=SyntheticsTestRequestProxy(
+                    headers=SyntheticsTestHeaders(
+                        key="key_example",
+                    ),
+                    url="https://example.com",
+                ),
                 query={},
                 servername="servername_example",
                 should_track_hops=True,
@@ -2054,10 +2063,7 @@ with ApiClient(configuration) as api_client:
                     name="name_example",
                     request=SyntheticsTestRequest(
                         allow_insecure=True,
-                        basic_auth=SyntheticsBasicAuth(
-                            password="",
-                            username="",
-                        ),
+                        basic_auth=SyntheticsBasicAuth(),
                         body="body_example",
                         certificate=SyntheticsTestRequestCertificate(
                             cert=SyntheticsTestRequestCertificateItem(
@@ -2083,6 +2089,12 @@ with ApiClient(configuration) as api_client:
                         no_saving_response_body=True,
                         number_of_packets=0,
                         port=1,
+                        proxy=SyntheticsTestRequestProxy(
+                            headers=SyntheticsTestHeaders(
+                                key="key_example",
+                            ),
+                            url="https://example.com",
+                        ),
                         query={},
                         servername="servername_example",
                         should_track_hops=True,
@@ -2212,10 +2224,7 @@ with ApiClient(configuration) as api_client:
             ],
             request=SyntheticsTestRequest(
                 allow_insecure=True,
-                basic_auth=SyntheticsBasicAuth(
-                    password="",
-                    username="",
-                ),
+                basic_auth=SyntheticsBasicAuth(),
                 body="body_example",
                 certificate=SyntheticsTestRequestCertificate(
                     cert=SyntheticsTestRequestCertificateItem(
@@ -2241,6 +2250,12 @@ with ApiClient(configuration) as api_client:
                 no_saving_response_body=True,
                 number_of_packets=0,
                 port=1,
+                proxy=SyntheticsTestRequestProxy(
+                    headers=SyntheticsTestHeaders(
+                        key="key_example",
+                    ),
+                    url="https://example.com",
+                ),
                 query={},
                 servername="servername_example",
                 should_track_hops=True,

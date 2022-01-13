@@ -25,6 +25,7 @@ from datadog_api_client.v1.model.synthetics_test_options_retry import Synthetics
 from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
 from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
 from datadog_api_client.v1.model.synthetics_test_request_certificate_item import SyntheticsTestRequestCertificateItem
+from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
 
 body = SyntheticsAPITest(
     config=SyntheticsAPITestConfig(
@@ -67,6 +68,7 @@ body = SyntheticsAPITest(
             method=HTTPMethod("GET"),
             timeout=10.0,
             url="https://datadoghq.com",
+            proxy=SyntheticsTestRequestProxy(url="https://datadoghq.com", headers=SyntheticsTestHeaders()),
         ),
     ),
     locations=["aws:us-east-2"],
