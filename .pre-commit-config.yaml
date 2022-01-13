@@ -30,6 +30,7 @@ repos:
     name: OpenAPI-generator
     language: node
     entry: bash -c "cd .generator && openapi-generator-cli generate"
+    files: "^.generator/.*"
     stages: [manual]
     pass_filenames: false
     additional_dependencies:
