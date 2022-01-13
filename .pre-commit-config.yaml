@@ -29,7 +29,7 @@ repos:
   - id: openapi-generator
     name: OpenAPI-generator
     language: node
-    entry: openapi-generator-cli generate
+    entry: bash -c "cd .generator && openapi-generator-cli generate"
     stages: [manual]
     pass_filenames: false
     additional_dependencies:
