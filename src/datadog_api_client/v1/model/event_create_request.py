@@ -42,15 +42,12 @@ class EventCreateRequest(ModelNormal):
             "date_happened": (int,),
             "device_name": (str,),
             "host": (str,),
-            "id": (int,),
-            "payload": (str,),
             "priority": (EventPriority,),
             "related_event_id": (int,),
             "source_type_name": (str,),
             "tags": ([str],),
             "text": (str,),
             "title": (str,),
-            "url": (str,),
         }
 
     attribute_map = {
@@ -61,20 +58,13 @@ class EventCreateRequest(ModelNormal):
         "date_happened": "date_happened",
         "device_name": "device_name",
         "host": "host",
-        "id": "id",
-        "payload": "payload",
         "priority": "priority",
         "related_event_id": "related_event_id",
         "source_type_name": "source_type_name",
         "tags": "tags",
-        "url": "url",
     }
 
-    read_only_vars = {
-        "id",
-        "payload",
-        "url",
-    }
+    read_only_vars = {}
 
     def __init__(self, text, title, *args, **kwargs):
         """EventCreateRequest - a model defined in OpenAPI
@@ -89,13 +79,10 @@ class EventCreateRequest(ModelNormal):
             date_happened (int): [optional] POSIX timestamp of the event. Must be sent as an integer (that is no quotes). Limited to events no older than 7 days.
             device_name (str): [optional] A device name.
             host (str): [optional] Host name to associate with the event. Any tags associated with the host are also applied to this event.
-            id (int): [optional] Integer ID of the event.
-            payload (str): [optional] Payload of the event.
             priority (EventPriority): [optional]
             related_event_id (int): [optional] ID of the parent event. Must be sent as an integer (that is no quotes).
             source_type_name (str): [optional] The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
             tags ([str]): [optional] A list of tags to apply to the event.
-            url (str): [optional] URL of the event.
         """
         super().__init__(kwargs)
 
