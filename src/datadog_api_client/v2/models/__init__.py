@@ -33,6 +33,41 @@ from datadog_api_client.v2.model.application_key_update_data import ApplicationK
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
 from datadog_api_client.v2.model.application_keys_sort import ApplicationKeysSort
 from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_attributes import (
+    CloudWorkloadSecurityAgentRuleAttributes,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_create_attributes import (
+    CloudWorkloadSecurityAgentRuleCreateAttributes,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_create_data import (
+    CloudWorkloadSecurityAgentRuleCreateData,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_create_request import (
+    CloudWorkloadSecurityAgentRuleCreateRequest,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_creator_attributes import (
+    CloudWorkloadSecurityAgentRuleCreatorAttributes,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_data import CloudWorkloadSecurityAgentRuleData
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_response import (
+    CloudWorkloadSecurityAgentRuleResponse,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_type import CloudWorkloadSecurityAgentRuleType
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_update_attributes import (
+    CloudWorkloadSecurityAgentRuleUpdateAttributes,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_update_data import (
+    CloudWorkloadSecurityAgentRuleUpdateData,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_update_request import (
+    CloudWorkloadSecurityAgentRuleUpdateRequest,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_updater_attributes import (
+    CloudWorkloadSecurityAgentRuleUpdaterAttributes,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rules_list_response import (
+    CloudWorkloadSecurityAgentRulesListResponse,
+)
 from datadog_api_client.v2.model.content_encoding import ContentEncoding
 from datadog_api_client.v2.model.creator import Creator
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest

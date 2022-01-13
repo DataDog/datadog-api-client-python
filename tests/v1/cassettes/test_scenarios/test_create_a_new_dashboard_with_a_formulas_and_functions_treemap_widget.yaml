@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_a_formulas_and_functions_treemap_widget-1641982291","widgets":[{"definition":{"requests":[{"formulas":[{"formula":"hour_before(query1)"},{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"logs","group_by":[],"indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"scalar"}],"title":"","type":"treemap"},"layout":{"height":4,"width":4,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"2ar-acj-hxc","title":"Test-Create_a_new_dashboard_with_a_formulas_and_functions_treemap_widget-1641982291","url":"/dashboard/2ar-acj-hxc/test-createanewdashboardwithaformulasandfunctionstreemapwidget-1641982291","created_at":"2022-01-12T10:11:31.601485+00:00","modified_at":"2022-01-12T10:11:31.601485+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"formulas":[{"formula":"hour_before(query1)"},{"formula":"query1"}],"response_format":"scalar","queries":[{"search":{"query":""},"data_source":"logs","compute":{"aggregation":"count"},"name":"query1","indexes":["*"],"group_by":[]}]}],"type":"treemap","title":""},"layout":{"y":0,"width":4,"x":0,"height":4},"id":2836171994664464}],"layout_type":"ordered"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/2ar-acj-hxc
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"2ar-acj-hxc"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -12,6 +12,4 @@ LOGS_METRIC_DATA_ID = environ["LOGS_METRIC_DATA_ID"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = LogsMetricsApi(api_client)
-    response = api_instance.delete_logs_metric(metric_id=LOGS_METRIC_DATA_ID)
-
-    print(response)
+    api_instance.delete_logs_metric(metric_id=LOGS_METRIC_DATA_ID)

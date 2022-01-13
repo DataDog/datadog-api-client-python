@@ -1,0 +1,37 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Test Agent rule","enabled":true,"expression":"exec.file.name
+      == \"sh\"","name":"testcreateacloudworkloadsecurityagentrulereturnsokresponse1641924695"},"type":"agent_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
+  response:
+    body:
+      string: '{"data":{"attributes":{"category":"Process Activity","name":"testcreateacloudworkloadsecurityagentrulereturnsokresponse1641924695","creator":{"handle":"frog@datadoghq.com","name":null},"description":"Test
+        Agent rule","enabled":true,"defaultRule":false,"version":1,"updater":{"handle":"frog@datadoghq.com","name":null},"updateDate":1641924696117,"creationDate":1641924696117,"expression":"exec.file.name
+        == \"sh\""},"type":"agent_rule","id":"neo-you-kxc"}}'
+    headers:
+      content-type:
+      - application/json;charset=utf-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/neo-you-kxc
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
