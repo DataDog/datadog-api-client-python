@@ -50,50 +50,44 @@ class TreeMapWidgetDefinition(ModelNormal):
         }
 
     attribute_map = {
+        "requests": "requests",
+        "type": "type",
         "color_by": "color_by",
         "group_by": "group_by",
-        "requests": "requests",
         "size_by": "size_by",
-        "type": "type",
         "title": "title",
     }
 
     read_only_vars = {}
 
-    def __init__(self, color_by, group_by, requests, size_by, type, *args, **kwargs):
+    def __init__(self, requests, type, *args, **kwargs):
         """TreeMapWidgetDefinition - a model defined in OpenAPI
 
         Args:
-            color_by (TreeMapColorBy):
-            group_by (TreeMapGroupBy):
             requests ([TreeMapWidgetRequest]): List of top list widget requests.
-            size_by (TreeMapSizeBy):
             type (TreeMapWidgetDefinitionType):
 
         Keyword Args:
+            color_by (TreeMapColorBy): [optional]
+            group_by (TreeMapGroupBy): [optional]
+            size_by (TreeMapSizeBy): [optional]
             title (str): [optional] Title of your widget.
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
-        self.color_by = color_by
-        self.group_by = group_by
         self.requests = requests
-        self.size_by = size_by
         self.type = type
 
     @classmethod
-    def _from_openapi_data(cls, color_by, group_by, requests, size_by, type, *args, **kwargs):
+    def _from_openapi_data(cls, requests, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(TreeMapWidgetDefinition, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
 
-        self.color_by = color_by
-        self.group_by = group_by
         self.requests = requests
-        self.size_by = size_by
         self.type = type
         return self
