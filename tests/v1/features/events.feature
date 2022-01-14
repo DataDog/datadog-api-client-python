@@ -31,7 +31,6 @@ Feature: Events
     And body with value {"title": "{{ unique }}", "text": "A text message.", "date_happened": 1, "tags": ["test:{{ unique_alnum }}"]}
     When the request is sent
     Then the response status is 400 Bad Request
-    And the response "errors[0]" is equal to "Event too far in the past"
 
   @generated @skip @team:DataDog/monitors-evaluation
   Scenario: Post an event returns "Bad Request" response
