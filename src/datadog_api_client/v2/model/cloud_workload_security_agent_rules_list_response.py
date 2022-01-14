@@ -10,11 +10,9 @@ from datadog_api_client.v2.model_utils import (
 
 
 def lazy_import():
-    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_attributes import (
-        CloudWorkloadSecurityAgentRuleAttributes,
-    )
+    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_data import CloudWorkloadSecurityAgentRuleData
 
-    globals()["CloudWorkloadSecurityAgentRuleAttributes"] = CloudWorkloadSecurityAgentRuleAttributes
+    globals()["CloudWorkloadSecurityAgentRuleData"] = CloudWorkloadSecurityAgentRuleData
 
 
 class CloudWorkloadSecurityAgentRulesListResponse(ModelNormal):
@@ -30,7 +28,7 @@ class CloudWorkloadSecurityAgentRulesListResponse(ModelNormal):
     def openapi_types():
         lazy_import()
         return {
-            "data": ([CloudWorkloadSecurityAgentRuleAttributes],),
+            "data": ([CloudWorkloadSecurityAgentRuleData],),
         }
 
     attribute_map = {
@@ -43,7 +41,7 @@ class CloudWorkloadSecurityAgentRulesListResponse(ModelNormal):
         """CloudWorkloadSecurityAgentRulesListResponse - a model defined in OpenAPI
 
         Keyword Args:
-            data ([CloudWorkloadSecurityAgentRuleAttributes]): [optional] A list of Agent rules objects.
+            data ([CloudWorkloadSecurityAgentRuleData]): [optional] A list of Agent rules objects.
         """
         super().__init__(kwargs)
 

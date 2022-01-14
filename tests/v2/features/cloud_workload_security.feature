@@ -28,6 +28,8 @@ Feature: Cloud Workload Security
     And body with value {"data": {"attributes": {"description": "Test Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "name": "{{ unique_lower_alnum }}"}, "type": "agent_rule"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "agent_rule"
+    And the response "data.attributes.description" is equal to "Test Agent rule"
 
   @team:DataDog/cws-backend @team:DataDog/security-monitoring
   Scenario: Delete a Cloud Workload Security Agent rule returns "Not Found" response
@@ -58,6 +60,8 @@ Feature: Cloud Workload Security
     And request contains "agent_rule_id" parameter from "agent_rule.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "agent_rule"
+    And the response "data.attributes.description" is equal to "My Agent rule"
 
   @team:DataDog/cws-backend @team:DataDog/security-monitoring
   Scenario: Get all Cloud Workload Security Agent rules returns "OK" response
@@ -65,6 +69,7 @@ Feature: Cloud Workload Security
     And new "ListCloudWorkloadSecurityAgentRules" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "agent_rule"
 
   @team:DataDog/cws-backend @team:DataDog/security-monitoring
   Scenario: Get the latest Cloud Workload Security policy returns "OK" response
@@ -105,3 +110,5 @@ Feature: Cloud Workload Security
     And body with value {"data": {"attributes": {"description": "Test Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "type": "agent_rule"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "agent_rule"
+    And the response "data.attributes.description" is equal to "Test Agent rule"
