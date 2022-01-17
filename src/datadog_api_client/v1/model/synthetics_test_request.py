@@ -14,11 +14,13 @@ def lazy_import():
     from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
     from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
     from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
+    from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
 
     globals()["HTTPMethod"] = HTTPMethod
     globals()["SyntheticsBasicAuth"] = SyntheticsBasicAuth
     globals()["SyntheticsTestHeaders"] = SyntheticsTestHeaders
     globals()["SyntheticsTestRequestCertificate"] = SyntheticsTestRequestCertificate
+    globals()["SyntheticsTestRequestProxy"] = SyntheticsTestRequestProxy
 
 
 class SyntheticsTestRequest(ModelNormal):
@@ -57,6 +59,7 @@ class SyntheticsTestRequest(ModelNormal):
             "no_saving_response_body": (bool,),
             "number_of_packets": (int,),
             "port": (int,),
+            "proxy": (SyntheticsTestRequestProxy,),
             "query": (dict,),
             "servername": (str,),
             "should_track_hops": (bool,),
@@ -79,6 +82,7 @@ class SyntheticsTestRequest(ModelNormal):
         "no_saving_response_body": "noSavingResponseBody",
         "number_of_packets": "numberOfPackets",
         "port": "port",
+        "proxy": "proxy",
         "query": "query",
         "servername": "servername",
         "should_track_hops": "shouldTrackHops",
@@ -106,6 +110,7 @@ class SyntheticsTestRequest(ModelNormal):
             no_saving_response_body (bool): [optional] Determines whether or not to save the response body.
             number_of_packets (int): [optional] Number of pings to use per test.
             port (int): [optional] Port to use when performing the test.
+            proxy (SyntheticsTestRequestProxy): [optional]
             query (dict): [optional] Query to use for the test.
             servername (str): [optional] For SSL tests, it specifies on which server you want to initiate the TLS handshake, allowing the server to present one of multiple possible certificates on the same IP address and TCP port number.
             should_track_hops (bool): [optional] Turns on a traceroute probe to discover all gateways along the path to the host destination.

@@ -81,9 +81,58 @@ configuration.unstable_operations["<OperationName>"] = True
 
 where `<OperationName>` is the name of the method used to interact with that endpoint. For example: `list_log_indexes`, or `get_logs_index`
 
+### Changing Server
+
+When talking to a different server, like the `eu` instance, change the `server_variables` on your configuration object:
+
+```python
+configuration.server_variables["site"] = "datadoghq.eu"
+```
+
+### Disable compressed payloads
+
+If you want to disable GZIP compressed responses, set the `compress` flag
+on your configuration object:
+
+```python
+configuration.compress = False
+```
+
+### Enable requests logging
+
+If you want to enable requests logging, set the `debug` flag on your configuration object:
+
+```python
+configuration.debug = True
+```
+
+### Asyncio support
+
+The library supports asynchronous operations when using `AsyncApiClient` for the transport. When that client is used,
+the API methods will then return coroutines that you can wait for.
+
+To make async support available, you need to install the extra `async` qualifiers during installation: `pip install datadog-api-client[async]`.
+
+
+```python
+import asyncio
+
+from datadog_api_client.v1 import Configuration, AsyncApiClient
+from datadog_api_client.v1.api import dashboards_api
+
+async def main():
+    configuration = Configuration()
+    async with AsyncApiClient(configuration) as api_client:
+        api_instance = dashboards_api.DashboardsApi(api_client)
+        dashbooards = await api_instance.list_dashboards()
+        print(dashbooards)
+
+asyncio.run(main())
+```
+
 ## Documentation for API Endpoints and Models
 
-Documentation for API endpoints and models can be found under the docs subdirectories, in [v1](/docs/v1#documentation-for-api-endpoints) and [v2](/docs/v2#documentation-for-api-endpoints).
+Documentation for API endpoints and models can be found under the specific version subdirectories, in [v1](./v1#documentation-for-api-endpoints) and [v2](./v2#documentation-for-api-endpoints).
 
 It's also available on [readthedocs](https://datadog-api-client.readthedocs.io/).
 
@@ -96,15 +145,7 @@ configuration.api_key["apiKeyAuth"] = "YOUR_API_KEY"
 configuration.api_key["appKeyAuth"] = "YOUR_APPLICATION_KEY"
 ```
 
-### Disable compressed payloads
-
-If you want to disable GZIP compressed responses, set the `compress` flag
-on your configuration object:
-
-```python
-configuration.compress = False
-```
-
 ## Author
 
 support@datadoghq.com
+

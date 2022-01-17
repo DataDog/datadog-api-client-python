@@ -42,7 +42,11 @@
       "headers": { "unique": "{{ unique_lower_alnum }}" },
       "method": "GET",
       "timeout": 10,
-      "url": "https://datadoghq.com"
+      "url": "https://datadoghq.com",
+      "proxy": {
+        "url": "https://datadoghq.com",
+        "headers": {}
+      }
     }
   },
   "locations": ["aws:us-east-2"],
