@@ -1,5 +1,9 @@
 name: Run Tests
 
+env:
+  GIT_AUTHOR_EMAIL: "packages@datadoghq.com"
+  GIT_AUTHOR_NAME: "ci.datadog-api-spec"
+
 on:
   pull_request:
     branches:
@@ -15,8 +19,7 @@ jobs:
     if: >
       github.event.pull_request.draft == false &&
       !contains(github.event.pull_request.labels.*.name, 'ci/skip') &&
-      !contains(github.event.pull_request.head.ref, 'datadog-api-spec/test/') &&
-      !contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
+      !contains(github.event.pull_request.head.ref, 'datadog-api-spec/test/')
     steps:
       - name: Get GitHub App token
         id: get_token
