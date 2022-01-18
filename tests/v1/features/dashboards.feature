@@ -432,6 +432,15 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/dashboards
+  Scenario: Get deleted dashboards returns "OK" response
+    Given new "ListDashboards" request
+    And there is a valid "dashboard" in the system
+    And the "dashboard" was deleted
+    And request contains "filter[deleted]" parameter with value true
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/dashboards
   Scenario: Restore deleted dashboards returns "Bad Request" response
     Given new "RestoreDashboards" request
