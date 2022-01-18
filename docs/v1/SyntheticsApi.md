@@ -288,7 +288,7 @@ with ApiClient(configuration) as api_client:
                         ),
                     ],
                     is_critical=True,
-                    name="name_example",
+                    name="Example step name",
                     request=SyntheticsTestRequest(
                         allow_insecure=True,
                         basic_auth=SyntheticsBasicAuth(),
@@ -339,7 +339,7 @@ with ApiClient(configuration) as api_client:
         ),
         locations=["aws:eu-west-3"],
         message="Notification message",
-        name="Test name",
+        name="Example test name",
         options=SyntheticsTestOptions(
             accept_self_signed=True,
             allow_insecure=True,
@@ -499,11 +499,9 @@ with ApiClient(configuration) as api_client:
                 ),
             ],
         ),
-        locations=[
-            "locations_example",
-        ],
+        locations=["example-location"],
         message="",
-        name="name_example",
+        name="Example test name",
         options=SyntheticsTestOptions(
             accept_self_signed=True,
             allow_insecure=True,
@@ -2060,7 +2058,7 @@ with ApiClient(configuration) as api_client:
                         ),
                     ],
                     is_critical=True,
-                    name="name_example",
+                    name="Example step name",
                     request=SyntheticsTestRequest(
                         allow_insecure=True,
                         basic_auth=SyntheticsBasicAuth(),
@@ -2111,7 +2109,7 @@ with ApiClient(configuration) as api_client:
         ),
         locations=["aws:eu-west-3"],
         message="Notification message",
-        name="Test name",
+        name="Example test name",
         options=SyntheticsTestOptions(
             accept_self_signed=True,
             allow_insecure=True,
@@ -2273,11 +2271,9 @@ with ApiClient(configuration) as api_client:
                 ),
             ],
         ),
-        locations=[
-            "locations_example",
-        ],
+        locations=["example-location"],
         message="",
-        name="name_example",
+        name="Example test name",
         options=SyntheticsTestOptions(
             accept_self_signed=True,
             allow_insecure=True,
