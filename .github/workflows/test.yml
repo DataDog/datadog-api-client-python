@@ -103,7 +103,7 @@ jobs:
   report:
     runs-on: ubuntu-latest
     if: always() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
-    needs: 
+    needs:
       - test
       - examples
     steps:
