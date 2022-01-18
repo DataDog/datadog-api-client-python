@@ -23,12 +23,16 @@ def lazy_import():
     from datadog_api_client.v2.model.security_monitoring_rule_new_value_options import (
         SecurityMonitoringRuleNewValueOptions,
     )
+    from datadog_api_client.v2.model.security_monitoring_rule_third_party_options import (
+        SecurityMonitoringRuleThirdPartyOptions,
+    )
 
     globals()["SecurityMonitoringRuleDetectionMethod"] = SecurityMonitoringRuleDetectionMethod
     globals()["SecurityMonitoringRuleEvaluationWindow"] = SecurityMonitoringRuleEvaluationWindow
     globals()["SecurityMonitoringRuleKeepAlive"] = SecurityMonitoringRuleKeepAlive
     globals()["SecurityMonitoringRuleMaxSignalDuration"] = SecurityMonitoringRuleMaxSignalDuration
     globals()["SecurityMonitoringRuleNewValueOptions"] = SecurityMonitoringRuleNewValueOptions
+    globals()["SecurityMonitoringRuleThirdPartyOptions"] = SecurityMonitoringRuleThirdPartyOptions
 
 
 class SecurityMonitoringRuleOptions(ModelNormal):
@@ -49,6 +53,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
             "keep_alive": (SecurityMonitoringRuleKeepAlive,),
             "max_signal_duration": (SecurityMonitoringRuleMaxSignalDuration,),
             "new_value_options": (SecurityMonitoringRuleNewValueOptions,),
+            "third_party_rule_options": (SecurityMonitoringRuleThirdPartyOptions,),
         }
 
     attribute_map = {
@@ -57,6 +62,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         "keep_alive": "keepAlive",
         "max_signal_duration": "maxSignalDuration",
         "new_value_options": "newValueOptions",
+        "third_party_rule_options": "thirdPartyRuleOptions",
     }
 
     read_only_vars = {}
@@ -70,6 +76,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
             keep_alive (SecurityMonitoringRuleKeepAlive): [optional]
             max_signal_duration (SecurityMonitoringRuleMaxSignalDuration): [optional]
             new_value_options (SecurityMonitoringRuleNewValueOptions): [optional]
+            third_party_rule_options (SecurityMonitoringRuleThirdPartyOptions): [optional]
         """
         super().__init__(kwargs)
 

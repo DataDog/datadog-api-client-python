@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"cases":[{"name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test-Create_a_detection_rule_with_detection_method_third_party_returns_OK_response-1642512967
+      message","name":"Test-Create_a_detection_rule_with_detection_method_third_party_returns_OK_response-1642512967","options":{"detectionMethod":"third_party","evaluationWindow":0,"keepAlive":3600,"maxSignalDuration":86400,"thirdPartyRuleOptions":{"defaultStatus":"low","rootQuery":"@pop"}},"queries":[{"aggregation":"none","distinctFields":[],"groupByFields":[],"query":"@test:true"}],"tags":[]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
+  response:
+    body:
+      string: '{"creationAuthorId":1445416,"tags":[],"isEnabled":true,"hasExtendedTitle":false,"message":"Test-Create_a_detection_rule_with_detection_method_third_party_returns_OK_response-1642512967
+        message","options":{"detectionMethod":"third_party","evaluationWindow":0,"maxSignalDuration":86400,"thirdPartyRuleOptions":{"defaultStatus":"low","defaultNotifications":[],"rootQuery":"@pop"},"keepAlive":3600},"version":1,"createdAt":1642512967974,"filters":[],"queries":[{"query":"@test:true","groupByFields":[],"aggregation":"none","name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":""}],"type":"log_detection","id":"4fd-sl4-onv","isDefault":false,"name":"Test-Create_a_detection_rule_with_detection_method_third_party_returns_OK_response-1642512967"}'
+    headers:
+      content-type:
+      - application/json;charset=utf-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/4fd-sl4-onv
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

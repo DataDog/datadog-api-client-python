@@ -160,6 +160,16 @@ with ApiClient(configuration) as api_client:
                 forget_after=SecurityMonitoringRuleNewValueOptionsForgetAfter(1),
                 learning_duration=SecurityMonitoringRuleNewValueOptionsLearningDuration(0),
             ),
+            third_party_rule_options=SecurityMonitoringRuleThirdPartyOptions(
+                default_notifications=[
+                    "default_notifications_example",
+                ],
+                default_status=SecurityMonitoringRuleSeverity("critical"),
+                first_seen_override="first_seen_override_example",
+                last_seen_override="last_seen_override_example",
+                root_query="root_query_example",
+                signal_id="signal_id_example",
+            ),
         ),
         queries=[
             SecurityMonitoringRuleQueryCreate(
@@ -928,6 +938,16 @@ with ApiClient(configuration) as api_client:
             new_value_options=SecurityMonitoringRuleNewValueOptions(
                 forget_after=SecurityMonitoringRuleNewValueOptionsForgetAfter(1),
                 learning_duration=SecurityMonitoringRuleNewValueOptionsLearningDuration(0),
+            ),
+            third_party_rule_options=SecurityMonitoringRuleThirdPartyOptions(
+                default_notifications=[
+                    "default_notifications_example",
+                ],
+                default_status=SecurityMonitoringRuleSeverity("critical"),
+                first_seen_override="first_seen_override_example",
+                last_seen_override="last_seen_override_example",
+                root_query="root_query_example",
+                signal_id="signal_id_example",
             ),
         ),
         queries=[

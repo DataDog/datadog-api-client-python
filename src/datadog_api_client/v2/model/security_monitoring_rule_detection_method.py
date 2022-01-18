@@ -22,6 +22,7 @@ class SecurityMonitoringRuleDetectionMethod(ModelSimple):
             "THRESHOLD": "threshold",
             "NEW_VALUE": "new_value",
             "ANOMALY_DETECTION": "anomaly_detection",
+            "THIRD_PARTY": "third_party",
         },
     }
 
@@ -39,10 +40,10 @@ class SecurityMonitoringRuleDetectionMethod(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): The detection method. Must be one of ["threshold", "new_value", "anomaly_detection"].
+            args[0] (str): The detection method. Must be one of ["threshold", "new_value", "anomaly_detection", "third_party"].
 
         Keyword Args:
-            value (str): The detection method. Must be one of ["threshold", "new_value", "anomaly_detection"].
+            value (str): The detection method. Must be one of ["threshold", "new_value", "anomaly_detection", "third_party"].
         """
         super().__init__(kwargs)
 

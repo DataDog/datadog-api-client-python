@@ -24,6 +24,7 @@ class SecurityMonitoringRuleQueryAggregation(ModelSimple):
             "SUM": "sum",
             "MAX": "max",
             "NEW_VALUE": "new_value",
+            "NONE": "none",
         },
     }
 
@@ -41,10 +42,10 @@ class SecurityMonitoringRuleQueryAggregation(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): The aggregation type. Must be one of ["count", "cardinality", "sum", "max", "new_value"].
+            args[0] (str): The aggregation type. Must be one of ["count", "cardinality", "sum", "max", "new_value", "none"].
 
         Keyword Args:
-            value (str): The aggregation type. Must be one of ["count", "cardinality", "sum", "max", "new_value"].
+            value (str): The aggregation type. Must be one of ["count", "cardinality", "sum", "max", "new_value", "none"].
         """
         super().__init__(kwargs)
 
