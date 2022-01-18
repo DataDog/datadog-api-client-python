@@ -362,12 +362,13 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboards_api.DashboardsApi(api_client)
     filter_shared = True  # bool | When `true`, this query only returns shared custom created or cloned dashboards. (optional)
+    filter_deleted = True  # bool | When `true`, this query returns only deleted custom-created or cloned dashboards. This parameter is incompatible with `filter[shared]`. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get all dashboards
-        api_response = api_instance.list_dashboards(filter_shared=filter_shared)
+        api_response = api_instance.list_dashboards(filter_shared=filter_shared, filter_deleted=filter_deleted)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling DashboardsApi->list_dashboards: %s\n" % e)
@@ -375,9 +376,10 @@ with ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name              | Type     | Description                                                                                | Notes      |
-| ----------------- | -------- | ------------------------------------------------------------------------------------------ | ---------- |
-| **filter_shared** | **bool** | When &#x60;true&#x60;, this query only returns shared custom created or cloned dashboards. | [optional] |
+| Name               | Type     | Description                                                                                                                                                 | Notes      |
+| ------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **filter_shared**  | **bool** | When &#x60;true&#x60;, this query only returns shared custom created or cloned dashboards.                                                                  | [optional] |
+| **filter_deleted** | **bool** | When &#x60;true&#x60;, this query returns only deleted custom-created or cloned dashboards. This parameter is incompatible with &#x60;filter[shared]&#x60;. | [optional] |
 
 ### Return type
 

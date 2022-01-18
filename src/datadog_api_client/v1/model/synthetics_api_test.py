@@ -52,15 +52,15 @@ class SyntheticsAPITest(ModelNormal):
     attribute_map = {
         "config": "config",
         "locations": "locations",
-        "message": "message",
-        "monitor_id": "monitor_id",
         "name": "name",
         "options": "options",
+        "type": "type",
+        "message": "message",
+        "monitor_id": "monitor_id",
         "public_id": "public_id",
         "status": "status",
         "subtype": "subtype",
         "tags": "tags",
-        "type": "type",
     }
 
     read_only_vars = {
@@ -68,32 +68,45 @@ class SyntheticsAPITest(ModelNormal):
         "public_id",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, config, locations, name, options, type, *args, **kwargs):
         """SyntheticsAPITest - a model defined in OpenAPI
 
+        Args:
+            config (SyntheticsAPITestConfig):
+            locations ([str]): Array of locations used to run the test.
+            name (str): Name of the test.
+            options (SyntheticsTestOptions):
+            type (SyntheticsAPITestType):
+
         Keyword Args:
-            config (SyntheticsAPITestConfig): [optional]
-            locations ([str]): [optional] Array of locations used to run the test.
             message (str): [optional] Notification message associated with the test.
             monitor_id (int): [optional] The associated monitor ID.
-            name (str): [optional] Name of the test.
-            options (SyntheticsTestOptions): [optional]
             public_id (str): [optional] The public ID for the test.
             status (SyntheticsTestPauseStatus): [optional]
             subtype (SyntheticsTestDetailsSubType): [optional]
             tags ([str]): [optional] Array of tags attached to the test.
-            type (SyntheticsAPITestType): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
+        self.config = config
+        self.locations = locations
+        self.name = name
+        self.options = options
+        self.type = type
+
     @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
+    def _from_openapi_data(cls, config, locations, name, options, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsAPITest, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
 
+        self.config = config
+        self.locations = locations
+        self.name = name
+        self.options = options
+        self.type = type
         return self

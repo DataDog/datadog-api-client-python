@@ -50,17 +50,17 @@ class SyntheticsBrowserTest(ModelNormal):
         }
 
     attribute_map = {
-        "message": "message",
         "config": "config",
         "locations": "locations",
-        "monitor_id": "monitor_id",
         "name": "name",
         "options": "options",
+        "type": "type",
+        "message": "message",
+        "monitor_id": "monitor_id",
         "public_id": "public_id",
         "status": "status",
         "steps": "steps",
         "tags": "tags",
-        "type": "type",
     }
 
     read_only_vars = {
@@ -68,37 +68,45 @@ class SyntheticsBrowserTest(ModelNormal):
         "public_id",
     }
 
-    def __init__(self, message, *args, **kwargs):
+    def __init__(self, config, locations, name, options, type, *args, **kwargs):
         """SyntheticsBrowserTest - a model defined in OpenAPI
 
         Args:
-            message (str): Notification message associated with the test. Message can either be text or an empty string.
+            config (SyntheticsBrowserTestConfig):
+            locations ([str]): Array of locations used to run the test.
+            name (str): Name of the test.
+            options (SyntheticsTestOptions):
+            type (SyntheticsBrowserTestType):
 
         Keyword Args:
-            config (SyntheticsBrowserTestConfig): [optional]
-            locations ([str]): [optional] Array of locations used to run the test.
+            message (str): [optional] Notification message associated with the test. Message can either be text or an empty string.
             monitor_id (int): [optional] The associated monitor ID.
-            name (str): [optional] Name of the test.
-            options (SyntheticsTestOptions): [optional]
             public_id (str): [optional] The public ID of the test.
             status (SyntheticsTestPauseStatus): [optional]
             steps ([SyntheticsStep]): [optional] The steps of the test.
             tags ([str]): [optional] Array of tags attached to the test.
-            type (SyntheticsBrowserTestType): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
-        self.message = message
+        self.config = config
+        self.locations = locations
+        self.name = name
+        self.options = options
+        self.type = type
 
     @classmethod
-    def _from_openapi_data(cls, message, *args, **kwargs):
+    def _from_openapi_data(cls, config, locations, name, options, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsBrowserTest, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
 
-        self.message = message
+        self.config = config
+        self.locations = locations
+        self.name = name
+        self.options = options
+        self.type = type
         return self
