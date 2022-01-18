@@ -1,0 +1,71 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Get_deleted_dashboards_returns_OK_response-1642441413
+      with Profile Metrics Query","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"ssn-gb2-k7k","title":"Test-Get_deleted_dashboards_returns_OK_response-1642441413
+        with Profile Metrics Query","url":"/dashboard/ssn-gb2-k7k/test-getdeleteddashboardsreturnsokresponse-1642441413-with-profile-metrics-query","created_at":"2022-01-17T17:43:33.361797+00:00","modified_at":"2022-01-17T17:43:33.361797+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"id":748946470803570}],"layout_type":"ordered"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/ssn-gb2-k7k
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"ssn-gb2-k7k"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/dashboard?filter%5Bdeleted%5D=true
+  response:
+    body:
+      string: '{"dashboards":[{"created_at":"2022-01-17T17:43:33.361797+00:00","author_handle":"frog@datadoghq.com","is_read_only":false,"description":null,"title":"Test-Get_deleted_dashboards_returns_OK_response-1642441413
+        with Profile Metrics Query","url":"/dashboard/ssn-gb2-k7k/test-getdeleteddashboardsreturnsokresponse-1642441413-with-profile-metrics-query","layout_type":"ordered","deleted_at":"2022-01-17T17:43:33.502200+00:00","modified_at":"2022-01-17T17:43:33.361797+00:00","id":"ssn-gb2-k7k"}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/ssn-gb2-k7k
+  response:
+    body:
+      string: '{"errors": ["Dashboard with ID ssn-gb2-k7k not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

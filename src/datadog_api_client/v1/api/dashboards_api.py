@@ -126,6 +126,11 @@ class DashboardsApi(object):
                     "attribute": "filter[shared]",
                     "location": "query",
                 },
+                "filter_deleted": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[deleted]",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -364,6 +369,7 @@ class DashboardsApi(object):
 
         Keyword Args:
             filter_shared (bool): [optional] When `true`, this query only returns shared custom created or cloned dashboards.
+            filter_deleted (bool): [optional] When `true`, this query returns only deleted custom-created or cloned dashboards. This parameter is incompatible with `filter[shared]`.
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

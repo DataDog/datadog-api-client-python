@@ -26,6 +26,18 @@
   {
     "parameters": [
       {
+        "name": "dashboard_id",
+        "source": "dashboard.id"
+      }
+    ],
+    "step": "the \"dashboard\" was deleted",
+    "key": "deleted_dashboard",
+    "tag": "Dashboards",
+    "operationId": "DeleteDashboard"
+  },
+  {
+    "parameters": [
+      {
         "name": "body",
         "value": "{\n  \"message\": \"{{ unique }}\",\n  \"start\": {{ timestamp(\"now\") }},\n  \"timezone\": \"Etc/UTC\",\n  \"scope\": [\"test:{{ unique_lower_alnum }}\"],\n  \"recurrence\": {\n    \"type\": \"weeks\",\n    \"period\": 1,\n    \"week_days\": [\"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\"],\n    \"until_date\": {{ timestamp(\"now + 21d\")}}\n  }\n}"
       }
