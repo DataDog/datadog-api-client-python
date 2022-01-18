@@ -6,7 +6,7 @@
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
-    datetime,
+    date,
 )
 
 
@@ -30,12 +30,12 @@ class UsageBillableSummaryHour(ModelNormal):
         lazy_import()
         return {
             "billing_plan": (str,),
-            "end_date": (datetime,),
+            "end_date": (date,),
             "num_orgs": (int,),
             "org_name": (str,),
             "public_id": (str,),
             "ratio_in_month": (float,),
-            "start_date": (datetime,),
+            "start_date": (date,),
             "usage": (UsageBillableSummaryKeys,),
         }
 
@@ -57,12 +57,12 @@ class UsageBillableSummaryHour(ModelNormal):
 
         Keyword Args:
             billing_plan (str): [optional] The billing plan.
-            end_date (datetime): [optional] Shows the last date of usage.
+            end_date (date): [optional] Shows the last date of usage.
             num_orgs (int): [optional] The number of organizations.
             org_name (str): [optional] The organization name.
             public_id (str): [optional] The organization public ID.
             ratio_in_month (float): [optional] Shows usage aggregation for a billing period.
-            start_date (datetime): [optional] Shows the first date of usage.
+            start_date (date): [optional] Shows the first date of usage.
             usage (UsageBillableSummaryKeys): [optional]
         """
         super().__init__(kwargs)
