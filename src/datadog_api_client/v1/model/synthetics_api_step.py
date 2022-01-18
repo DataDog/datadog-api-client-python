@@ -47,41 +47,55 @@ class SyntheticsAPIStep(ModelNormal):
         }
 
     attribute_map = {
-        "allow_failure": "allowFailure",
         "assertions": "assertions",
-        "extracted_values": "extractedValues",
-        "is_critical": "isCritical",
         "name": "name",
         "request": "request",
-        "retry": "retry",
         "subtype": "subtype",
+        "allow_failure": "allowFailure",
+        "extracted_values": "extractedValues",
+        "is_critical": "isCritical",
+        "retry": "retry",
     }
 
     read_only_vars = {}
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, name, request, subtype, *args, **kwargs):
         """SyntheticsAPIStep - a model defined in OpenAPI
 
+        Args:
+            name (str): The name of the step.
+            request (SyntheticsTestRequest):
+            subtype (SyntheticsAPIStepSubtype):
+
         Keyword Args:
+            assertions ([SyntheticsAssertion]): Array of assertions used for the test. Defaults to [].
             allow_failure (bool): [optional] Determines whether or not to continue with test if this step fails.
-            assertions ([SyntheticsAssertion]): [optional] Array of assertions used for the test. If omitted the server will use the default value of [].
             extracted_values ([SyntheticsParsingOptions]): [optional] Array of values to parse and save as variables from the response.
             is_critical (bool): [optional] Determines whether or not to consider the entire test as failed if this step fails. Can be used only if `allowFailure` is `true`.
-            name (str): [optional] The name of the step.
-            request (SyntheticsTestRequest): [optional]
             retry (SyntheticsTestOptionsRetry): [optional]
-            subtype (SyntheticsAPIStepSubtype): [optional]
         """
         super().__init__(kwargs)
 
+        assertions = kwargs.get("assertions", [])
+
         self._check_pos_args(args)
 
+        self.assertions = assertions
+        self.name = name
+        self.request = request
+        self.subtype = subtype
+
     @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
+    def _from_openapi_data(cls, name, request, subtype, *args, **kwargs):
         """Helper creating a new instance from a response."""
+        assertions = kwargs.get("assertions", [])
 
         self = super(SyntheticsAPIStep, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
 
+        self.assertions = assertions
+        self.name = name
+        self.request = request
+        self.subtype = subtype
         return self
