@@ -15,7 +15,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/incident-app
+  @team:DataDog/incident-app
   Scenario: Create an incident returns "CREATED" response
     Given there is a valid "user" in the system
     And operation "CreateIncident" enabled
@@ -48,7 +48,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/incident-app
+  @team:DataDog/incident-app
   Scenario: Delete an existing incident returns "OK" response
     Given operation "DeleteIncident" enabled
     And there is a valid "incident" in the system
@@ -71,7 +71,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/incident-app
+  @team:DataDog/incident-app
   Scenario: Get a list of incidents returns "OK" response
     Given operation "ListIncidents" enabled
     And there is a valid "incident" in the system
@@ -95,7 +95,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/incident-app
+  @team:DataDog/incident-app
   Scenario: Get the details of an incident returns "OK" response
     Given operation "GetIncident" enabled
     And there is a valid "incident" in the system
@@ -123,7 +123,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/incident-app
+  @team:DataDog/incident-app
   Scenario: Update an existing incident returns "OK" response
     Given operation "UpdateIncident" enabled
     And there is a valid "incident" in the system
