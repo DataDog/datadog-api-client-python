@@ -17,8 +17,8 @@ body = SecurityFilterCreateRequest(
             exclusion_filters=[SecurityFilterExclusionFilter(name="Exclude staging", query="source:staging")],
             filtered_data_type=SecurityFilterFilteredDataType("logs"),
             is_enabled=True,
-            name="Example-Create_a_security_filter_returns_OK_response",
-            query="service:ExampleCreateasecurityfilterreturnsOKresponse",
+            name="Test-Example-Create_a_security_filter_returns_OK_response",
+            query="service:TestExampleCreateasecurityfilterreturnsOKresponse",
         ),
         type=SecurityFilterType("security_filters"),
     )

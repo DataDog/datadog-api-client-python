@@ -21,7 +21,7 @@ from datadog_api_client.v2.model.security_monitoring_rule_query_create import Se
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
 
 body = SecurityMonitoringRuleCreatePayload(
-    name="Example-Create_a_detection_rule_returns_OK_response",
+    name="Test-Example-Create_a_detection_rule_returns_OK_response",
     queries=[
         SecurityMonitoringRuleQueryCreate(
             query="@test:true",

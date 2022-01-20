@@ -22,7 +22,7 @@ body = ServiceAccountCreateRequest(
         type=UsersType("users"),
         attributes=ServiceAccountCreateAttributes(
             name="Test API Client",
-            email="Example-Create_a_service_account_returns_OK_response@datadoghq.com",
+            email="Test-Example-Create_a_service_account_returns_OK_response@datadoghq.com",
             service_account=True,
         ),
         relationships=UserRelationships(

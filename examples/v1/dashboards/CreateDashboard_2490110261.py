@@ -26,7 +26,7 @@ from datadog_api_client.v1.model.widget_layout import WidgetLayout
 
 body = Dashboard(
     layout_type=DashboardLayoutType("ordered"),
-    title="Example-Create_a_new_dashboard_with_an_audit_logs_query with Audit Logs Query",
+    title="Test-Example-Create_a_new_dashboard_with_an_audit_logs_query with Audit Logs Query",
     widgets=[
         Widget(
             definition=TimeseriesWidgetDefinition(

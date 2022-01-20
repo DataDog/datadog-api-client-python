@@ -22,7 +22,7 @@ from datadog_api_client.v2.model.security_monitoring_rule_severity import Securi
 from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
 
 body = SecurityMonitoringRuleCreatePayload(
-    name="Example-Create_a_detection_rule_with_type_workload_security_returns_OK_response",
+    name="Test-Example-Create_a_detection_rule_with_type_workload_security_returns_OK_response",
     queries=[
         SecurityMonitoringRuleQueryCreate(
             query="@test:true",

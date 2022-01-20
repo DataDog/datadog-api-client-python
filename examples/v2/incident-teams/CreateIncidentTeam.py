@@ -12,7 +12,9 @@ from datadog_api_client.v2.model.incident_team_type import IncidentTeamType
 body = IncidentTeamCreateRequest(
     data=IncidentTeamCreateData(
         type=IncidentTeamType("teams"),
-        attributes=IncidentTeamCreateAttributes(name="Example-Create_a_new_incident_team_returns_CREATED_response"),
+        attributes=IncidentTeamCreateAttributes(
+            name="Test-Example-Create_a_new_incident_team_returns_CREATED_response"
+        ),
     )
 )
 

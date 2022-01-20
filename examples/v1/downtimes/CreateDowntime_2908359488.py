@@ -10,7 +10,7 @@ from datadog_api_client.v1.model.downtime import Downtime
 from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
 
 body = Downtime(
-    message="Example-Schedule_a_downtime_until_date",
+    message="Test-Example-Schedule_a_downtime_until_date",
     recurrence=DowntimeRecurrence(
         period=1,
         type="weeks",

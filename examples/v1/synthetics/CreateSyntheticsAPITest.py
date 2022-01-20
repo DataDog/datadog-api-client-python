@@ -64,7 +64,9 @@ body = SyntheticsAPITest(
                     content="key-content", filename="key-filename", updated_at="2020-10-16T09:23:24.857Z"
                 ),
             ),
-            headers=SyntheticsTestHeaders(unique="examplecreateanapitestreturnsokreturnsthecreatedtestdetailsresponse"),
+            headers=SyntheticsTestHeaders(
+                unique="testexamplecreateanapitestreturnsokreturnsthecreatedtestdetailsresponse"
+            ),
             method=HTTPMethod("GET"),
             timeout=10.0,
             url="https://datadoghq.com",
@@ -73,14 +75,14 @@ body = SyntheticsAPITest(
     ),
     locations=["aws:us-east-2"],
     message="BDD test payload: synthetics_api_test_payload.json",
-    name="Example-Create_an_API_test_returns_OK_Returns_the_created_test_details_response",
+    name="Test-Example-Create_an_API_test_returns_OK_Returns_the_created_test_details_response",
     options=SyntheticsTestOptions(
         accept_self_signed=False,
         allow_insecure=True,
         follow_redirects=True,
         min_failure_duration=10,
         min_location_failed=1,
-        monitor_name="Example-Create_an_API_test_returns_OK_Returns_the_created_test_details_response",
+        monitor_name="Test-Example-Create_an_API_test_returns_OK_Returns_the_created_test_details_response",
         monitor_priority=5,
         retry=SyntheticsTestOptionsRetry(count=3, interval=10.0),
         tick_every=60,

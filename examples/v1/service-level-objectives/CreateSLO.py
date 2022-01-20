@@ -15,7 +15,7 @@ body = ServiceLevelObjectiveRequest(
     description="string",
     groups=["env:test", "role:mysql"],
     monitor_ids=[],
-    name="Example-Create_an_SLO_object_returns_OK_response",
+    name="Test-Example-Create_an_SLO_object_returns_OK_response",
     query=ServiceLevelObjectiveQuery(
         denominator="sum:httpservice.hits{!code:3xx}.as_count()", numerator="sum:httpservice.hits{code:2xx}.as_count()"
     ),

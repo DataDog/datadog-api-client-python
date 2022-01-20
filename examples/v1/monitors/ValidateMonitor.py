@@ -10,11 +10,11 @@ from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
 from datadog_api_client.v1.model.monitor_type import MonitorType
 
 body = Monitor(
-    name="Example-Validate_a_monitor_returns_OK_response",
+    name="Test-Example-Validate_a_monitor_returns_OK_response",
     type=MonitorType("log alert"),
     query='logs("service:foo AND type:error").index("main").rollup("count").by("source").last("5m") > 2',
     message="some message Notify: @hipchat-channel",
-    tags=["test:examplevalidateamonitorreturnsokresponse", "env:ci"],
+    tags=["test:testexamplevalidateamonitorreturnsokresponse", "env:ci"],
     priority=3,
     options=MonitorOptions(
         enable_logs_sample=True,

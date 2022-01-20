@@ -10,8 +10,8 @@ from datadog_api_client.v1.model.http_log_item import HTTPLogItem
 body = HTTPLog(
     [
         HTTPLogItem(
-            message="Example-Send_gzip_logs_returns_Response_from_server_always_200_empty_JSON_response",
-            ddtags="host:ExampleSendgziplogsreturnsResponsefromserveralways200emptyJSONresponse",
+            message="Test-Example-Send_gzip_logs_returns_Response_from_server_always_200_empty_JSON_response",
+            ddtags="host:TestExampleSendgziplogsreturnsResponsefromserveralways200emptyJSONresponse",
         )
     ]
 )

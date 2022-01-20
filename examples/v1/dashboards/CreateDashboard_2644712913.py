@@ -23,7 +23,7 @@ from datadog_api_client.v1.model.widget_time import WidgetTime
 
 body = Dashboard(
     layout_type=DashboardLayoutType("ordered"),
-    title="Example-Create_a_new_dashboard_with_a_query_value_widget_using_the_percentile_aggregator with QVW Percentile Aggregator",
+    title="Test-Example-Create_a_new_dashboard_with_a_query_value_widget_using_the_percentile_aggregator with QVW Percentile Aggregator",
     widgets=[
         Widget(
             definition=QueryValueWidgetDefinition(

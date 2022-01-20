@@ -10,10 +10,10 @@ from datadog_api_client.v1.model.downtime import Downtime
 from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
 
 body = Downtime(
-    message="Example-Schedule_a_downtime_returns_OK_response",
+    message="Test-Example-Schedule_a_downtime_returns_OK_response",
     start=int(datetime.now().timestamp()),
     timezone="Etc/UTC",
-    scope=["test:examplescheduleadowntimereturnsokresponse"],
+    scope=["test:testexamplescheduleadowntimereturnsokresponse"],
     recurrence=DowntimeRecurrence(
         type="weeks",
         period=1,

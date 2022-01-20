@@ -17,7 +17,7 @@ from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 MONITOR_ID = environ["MONITOR_ID"]
 
 body = Dashboard(
-    title="Example-Create_a_new_dashboard_with_alert_value_widget",
+    title="Test-Example-Create_a_new_dashboard_with_alert_value_widget",
     description="",
     widgets=[
         Widget(

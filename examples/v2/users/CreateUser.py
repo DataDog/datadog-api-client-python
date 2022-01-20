@@ -13,7 +13,7 @@ body = UserCreateRequest(
     data=UserCreateData(
         type=UsersType("users"),
         attributes=UserCreateAttributes(
-            name="Datadog API Client Python", email="Example-Create_a_user_returns_OK_response@datadoghq.com"
+            name="Datadog API Client Python", email="Test-Example-Create_a_user_returns_OK_response@datadoghq.com"
         ),
     )
 )

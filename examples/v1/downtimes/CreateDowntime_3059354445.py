@@ -10,7 +10,7 @@ from datadog_api_client.v1.model.downtime import Downtime
 from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
 
 body = Downtime(
-    message="Example-Schedule_a_downtime_once_a_year",
+    message="Test-Example-Schedule_a_downtime_once_a_year",
     recurrence=DowntimeRecurrence(period=1, type="years"),
     scope=["*"],
     start=int(datetime.now().timestamp()),

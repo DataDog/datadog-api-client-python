@@ -12,7 +12,7 @@ from datadog_api_client.v2.model.api_keys_type import APIKeysType
 body = APIKeyCreateRequest(
     data=APIKeyCreateData(
         type=APIKeysType("api_keys"),
-        attributes=APIKeyCreateAttributes(name="Example-Create_an_API_key_returns_Created_response"),
+        attributes=APIKeyCreateAttributes(name="Test-Example-Create_an_API_key_returns_Created_response"),
     )
 )
 

@@ -67,7 +67,7 @@ body = NotebookCreateRequest(
                     type=NotebookCellResourceType("notebook_cells"),
                 ),
             ],
-            name="Example-Create_a_notebook_returns_OK_response",
+            name="Test-Example-Create_a_notebook_returns_OK_response",
             status=NotebookStatus("published"),
             time=NotebookRelativeTime(live_span=WidgetLiveSpan("1h")),
         ),

@@ -14,7 +14,7 @@ from datadog_api_client.v2.model.logs_metric_type import LogsMetricType
 
 body = LogsMetricCreateRequest(
     data=LogsMetricCreateData(
-        id=LogsMetricID("Example-Create_a_log_based_metric_returns_OK_response"),
+        id=LogsMetricID("Test-Example-Create_a_log_based_metric_returns_OK_response"),
         type=LogsMetricType("logs_metrics"),
         attributes=LogsMetricCreateAttributes(
             compute=LogsMetricCompute(aggregation_type=LogsMetricComputeAggregationType("count"))
