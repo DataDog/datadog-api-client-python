@@ -1,5 +1,36 @@
 # Changelog
 
+## 1.8.0 / 2022-01-20
+
+* [Added] Add `filter[deleted]` parameter for searching recently deleted dashboards. See [#787](https://github.com/DataDog/datadog-api-client-python/pull/787).
+* [Added] Add support for authentication and proxy options in Synthetics. See [#742](https://github.com/DataDog/datadog-api-client-python/pull/742).
+* [Added] Support formulas and functions in Treemap Widget. See [#782](https://github.com/DataDog/datadog-api-client-python/pull/782).
+* [Added] Add Cloud Workload Security Agent Rules API. See [#769](https://github.com/DataDog/datadog-api-client-python/pull/769).
+* [Added] Add `offset` and `limit` parameters to usage listing endpoint. See [#774](https://github.com/DataDog/datadog-api-client-python/pull/774).
+* [Added] Add monthly usage attribution API spec. See [#754](https://github.com/DataDog/datadog-api-client-python/pull/754).
+* [Added] Add missing hosts metadata fields. See [#747](https://github.com/DataDog/datadog-api-client-python/pull/747).
+* [Added] Add `replay_session_count ` and update documentation for `rum_session_count`. See [#773](https://github.com/DataDog/datadog-api-client-python/pull/773).
+* [Added] Add retry options for a step in Synthetics multistep test. See [#758](https://github.com/DataDog/datadog-api-client-python/pull/758).
+* [Added] Document `author_name` in dashboard response. See [#755](https://github.com/DataDog/datadog-api-client-python/pull/755).
+* [Added] Add organization metadata for RUM sessions usage and expose `rum_browser_and_mobile_session_count`. See [#748](https://github.com/DataDog/datadog-api-client-python/pull/748).
+* [Added] Add endpoint to retrieve hourly usage attribution. See [#724](https://github.com/DataDog/datadog-api-client-python/pull/724).
+* [Added] Add support for scoped application keys. See [#705](https://github.com/DataDog/datadog-api-client-python/pull/705).
+* [Added] Add endpoint for cloning roles. See [#732](https://github.com/DataDog/datadog-api-client-python/pull/732).
+* [Added] Add organization metadata for audit logs, CWS, CSPM, DBM. See [#740](https://github.com/DataDog/datadog-api-client-python/pull/740).
+* [Added] Add `ci-pipelines alert` to monitors enum. See [#731](https://github.com/DataDog/datadog-api-client-python/pull/731).
+* [Added] Add support for sunburst widget in dashboard. See [#736](https://github.com/DataDog/datadog-api-client-python/pull/736).
+* [Added] Add async client to Python. See [#737](https://github.com/DataDog/datadog-api-client-python/pull/737).
+* [Fixed] Clarify required fields for `SyntheticsAPIStep`, `SyntheticsAPITest`, and `SyntheticsBrowserTest`. See [#667](https://github.com/DataDog/datadog-api-client-python/pull/667).
+* [Fixed] Fixes to Cloud Workload Security API. See [#785](https://github.com/DataDog/datadog-api-client-python/pull/785).
+* [Fixed] Make downtime weekdays nullable. See [#761](https://github.com/DataDog/datadog-api-client-python/pull/761).
+* [Fixed] Do type conversion all the time in Python. See [#757](https://github.com/DataDog/datadog-api-client-python/pull/757).
+* [Fixed] Fix a typo in an incident field attribute description. See [#713](https://github.com/DataDog/datadog-api-client-python/pull/713).
+* [Fixed] Fix `SecurityMonitoringSignal.attributes.tags` type. See [#716](https://github.com/DataDog/datadog-api-client-python/pull/716).
+* [Changed] Remove read only fields in `EventCreateRequest`. See [#783](https://github.com/DataDog/datadog-api-client-python/pull/783).
+* [Changed] Change pagination arguments for querying usage attribution. See [#753](https://github.com/DataDog/datadog-api-client-python/pull/753).
+* [Deprecated] Remove session counts from RUM units response. See [#728](https://github.com/DataDog/datadog-api-client-python/pull/728).
+* [Removed] Remove deprecated AgentRule field in Security Rules API for CWS. See [#746](https://github.com/DataDog/datadog-api-client-python/pull/746).
+
 ## 1.7.0 / 2021-12-10
 
 * [Added] [dashboards formulas and functions] Add formulas and functions support to change widget. See [#567](https://github.com/DataDog/datadog-api-client-python/pull/567).
