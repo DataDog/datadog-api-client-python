@@ -477,13 +477,13 @@
     }
   },
   "ListSecurityFilters": {
-    "tag": "Security Monitoring",
+    "tag": "Cloud SIEM",
     "undo": {
       "type": "safe"
     }
   },
   "CreateSecurityFilter": {
-    "tag": "Security Monitoring",
+    "tag": "Cloud SIEM",
     "undo": {
       "operationId": "DeleteSecurityFilter",
       "parameters": [
@@ -496,31 +496,31 @@
     }
   },
   "DeleteSecurityFilter": {
-    "tag": "Security Monitoring",
+    "tag": "Cloud SIEM",
     "undo": {
       "type": "idempotent"
     }
   },
   "GetSecurityFilter": {
-    "tag": "Security Monitoring",
+    "tag": "Cloud SIEM",
     "undo": {
       "type": "safe"
     }
   },
   "UpdateSecurityFilter": {
-    "tag": "Security Monitoring",
+    "tag": "Cloud SIEM",
     "undo": {
       "type": "idempotent"
     }
   },
   "ListSecurityMonitoringRules": {
-    "tag": "Security Monitoring",
+    "tag": "Cloud SIEM",
     "undo": {
       "type": "safe"
     }
   },
   "CreateSecurityMonitoringRule": {
-    "tag": "Security Monitoring",
+    "tag": "Cloud SIEM",
     "undo": {
       "operationId": "DeleteSecurityMonitoringRule",
       "parameters": [
@@ -533,31 +533,31 @@
     }
   },
   "DeleteSecurityMonitoringRule": {
-    "tag": "Security Monitoring",
+    "tag": "Cloud SIEM",
     "undo": {
       "type": "idempotent"
     }
   },
   "GetSecurityMonitoringRule": {
-    "tag": "Security Monitoring",
+    "tag": "Cloud SIEM",
     "undo": {
       "type": "safe"
     }
   },
   "UpdateSecurityMonitoringRule": {
-    "tag": "Security Monitoring",
+    "tag": "Cloud SIEM",
     "undo": {
       "type": "idempotent"
     }
   },
   "ListSecurityMonitoringSignals": {
-    "tag": "Security Monitoring",
+    "tag": "Cloud SIEM",
     "undo": {
       "type": "safe"
     }
   },
   "SearchSecurityMonitoringSignals": {
-    "tag": "Security Monitoring",
+    "tag": "Cloud SIEM",
     "undo": {
       "type": "safe"
     }
