@@ -1,21 +1,21 @@
-# datadog_api_client.v2.SecurityMonitoringApi
+# datadog_api_client.v2.CloudSIEMApi
 
 All URIs are relative to *https://api.datadoghq.com*
 
-| Method                                                                                                | HTTP request                                                                               | Description                          |
-| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------ |
-| [**create_security_filter**](SecurityMonitoringApi.md#create_security_filter)                         | **POST** /api/v2/security_monitoring/configuration/security_filters                        | Create a security filter             |
-| [**create_security_monitoring_rule**](SecurityMonitoringApi.md#create_security_monitoring_rule)       | **POST** /api/v2/security_monitoring/rules                                                 | Create a detection rule              |
-| [**delete_security_filter**](SecurityMonitoringApi.md#delete_security_filter)                         | **DELETE** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id} | Delete a security filter             |
-| [**delete_security_monitoring_rule**](SecurityMonitoringApi.md#delete_security_monitoring_rule)       | **DELETE** /api/v2/security_monitoring/rules/{rule_id}                                     | Delete an existing rule              |
-| [**get_security_filter**](SecurityMonitoringApi.md#get_security_filter)                               | **GET** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id}    | Get a security filter                |
-| [**get_security_monitoring_rule**](SecurityMonitoringApi.md#get_security_monitoring_rule)             | **GET** /api/v2/security_monitoring/rules/{rule_id}                                        | Get a rule&#39;s details             |
-| [**list_security_filters**](SecurityMonitoringApi.md#list_security_filters)                           | **GET** /api/v2/security_monitoring/configuration/security_filters                         | Get all security filters             |
-| [**list_security_monitoring_rules**](SecurityMonitoringApi.md#list_security_monitoring_rules)         | **GET** /api/v2/security_monitoring/rules                                                  | List rules                           |
-| [**list_security_monitoring_signals**](SecurityMonitoringApi.md#list_security_monitoring_signals)     | **GET** /api/v2/security_monitoring/signals                                                | Get a quick list of security signals |
-| [**search_security_monitoring_signals**](SecurityMonitoringApi.md#search_security_monitoring_signals) | **POST** /api/v2/security_monitoring/signals/search                                        | Get a list of security signals       |
-| [**update_security_filter**](SecurityMonitoringApi.md#update_security_filter)                         | **PATCH** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id}  | Update a security filter             |
-| [**update_security_monitoring_rule**](SecurityMonitoringApi.md#update_security_monitoring_rule)       | **PUT** /api/v2/security_monitoring/rules/{rule_id}                                        | Update an existing rule              |
+| Method                                                                                       | HTTP request                                                                               | Description                          |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------ |
+| [**create_security_filter**](CloudSIEMApi.md#create_security_filter)                         | **POST** /api/v2/security_monitoring/configuration/security_filters                        | Create a security filter             |
+| [**create_security_monitoring_rule**](CloudSIEMApi.md#create_security_monitoring_rule)       | **POST** /api/v2/security_monitoring/rules                                                 | Create a detection rule              |
+| [**delete_security_filter**](CloudSIEMApi.md#delete_security_filter)                         | **DELETE** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id} | Delete a security filter             |
+| [**delete_security_monitoring_rule**](CloudSIEMApi.md#delete_security_monitoring_rule)       | **DELETE** /api/v2/security_monitoring/rules/{rule_id}                                     | Delete an existing rule              |
+| [**get_security_filter**](CloudSIEMApi.md#get_security_filter)                               | **GET** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id}    | Get a security filter                |
+| [**get_security_monitoring_rule**](CloudSIEMApi.md#get_security_monitoring_rule)             | **GET** /api/v2/security_monitoring/rules/{rule_id}                                        | Get a rule&#39;s details             |
+| [**list_security_filters**](CloudSIEMApi.md#list_security_filters)                           | **GET** /api/v2/security_monitoring/configuration/security_filters                         | Get all security filters             |
+| [**list_security_monitoring_rules**](CloudSIEMApi.md#list_security_monitoring_rules)         | **GET** /api/v2/security_monitoring/rules                                                  | List rules                           |
+| [**list_security_monitoring_signals**](CloudSIEMApi.md#list_security_monitoring_signals)     | **GET** /api/v2/security_monitoring/signals                                                | Get a quick list of security signals |
+| [**search_security_monitoring_signals**](CloudSIEMApi.md#search_security_monitoring_signals) | **POST** /api/v2/security_monitoring/signals/search                                        | Get a list of security signals       |
+| [**update_security_filter**](CloudSIEMApi.md#update_security_filter)                         | **PATCH** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id}  | Update a security filter             |
+| [**update_security_monitoring_rule**](CloudSIEMApi.md#update_security_monitoring_rule)       | **PUT** /api/v2/security_monitoring/rules/{rule_id}                                        | Update an existing rule              |
 
 # **create_security_filter**
 
@@ -36,7 +36,7 @@ for more examples.
 import os
 from dateutil.parser import parse as dateutil_parser
 from datadog_api_client.v2 import ApiClient, ApiException, Configuration
-from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.api import cloud_siem_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
@@ -45,7 +45,7 @@ configuration = Configuration()
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    api_instance = cloud_siem_api.CloudSIEMApi(api_client)
     body = SecurityFilterCreateRequest(
         data=SecurityFilterCreateData(
             attributes=SecurityFilterCreateAttributes(
@@ -70,7 +70,7 @@ with ApiClient(configuration) as api_client:
         api_response = api_instance.create_security_filter(body)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling SecurityMonitoringApi->create_security_filter: %s\n" % e)
+        print("Exception when calling CloudSIEMApi->create_security_filter: %s\n" % e)
 ```
 
 ### Parameters
@@ -120,7 +120,7 @@ Create a detection rule.
 import os
 from dateutil.parser import parse as dateutil_parser
 from datadog_api_client.v2 import ApiClient, ApiException, Configuration
-from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.api import cloud_siem_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
@@ -129,7 +129,7 @@ configuration = Configuration()
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    api_instance = cloud_siem_api.CloudSIEMApi(api_client)
     body = SecurityMonitoringRuleCreatePayload(
         cases=[
             SecurityMonitoringRuleCaseCreate(
@@ -150,7 +150,7 @@ with ApiClient(configuration) as api_client:
         has_extended_title=True,
         is_enabled=True,
         message="",
-        name="My security monitoring rule.",
+        name="My Cloud SIEM rule.",
         options=SecurityMonitoringRuleOptions(
             detection_method=SecurityMonitoringRuleDetectionMethod("threshold"),
             evaluation_window=SecurityMonitoringRuleEvaluationWindow(0),
@@ -185,7 +185,7 @@ with ApiClient(configuration) as api_client:
         api_response = api_instance.create_security_monitoring_rule(body)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling SecurityMonitoringApi->create_security_monitoring_rule: %s\n" % e)
+        print("Exception when calling CloudSIEMApi->create_security_monitoring_rule: %s\n" % e)
 ```
 
 ### Parameters
@@ -234,7 +234,7 @@ Delete a specific security filter.
 import os
 from dateutil.parser import parse as dateutil_parser
 from datadog_api_client.v2 import ApiClient, ApiException, Configuration
-from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.api import cloud_siem_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
@@ -243,7 +243,7 @@ configuration = Configuration()
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    api_instance = cloud_siem_api.CloudSIEMApi(api_client)
     security_filter_id = "security_filter_id_example"  # str | The ID of the security filter.
 
     # example passing only required values which don't have defaults set
@@ -251,7 +251,7 @@ with ApiClient(configuration) as api_client:
         # Delete a security filter
         api_instance.delete_security_filter(security_filter_id)
     except ApiException as e:
-        print("Exception when calling SecurityMonitoringApi->delete_security_filter: %s\n" % e)
+        print("Exception when calling CloudSIEMApi->delete_security_filter: %s\n" % e)
 ```
 
 ### Parameters
@@ -300,7 +300,7 @@ Delete an existing rule. Default rules cannot be deleted.
 import os
 from dateutil.parser import parse as dateutil_parser
 from datadog_api_client.v2 import ApiClient, ApiException, Configuration
-from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.api import cloud_siem_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
@@ -309,7 +309,7 @@ configuration = Configuration()
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    api_instance = cloud_siem_api.CloudSIEMApi(api_client)
     rule_id = "rule_id_example"  # str | The ID of the rule.
 
     # example passing only required values which don't have defaults set
@@ -317,7 +317,7 @@ with ApiClient(configuration) as api_client:
         # Delete an existing rule
         api_instance.delete_security_monitoring_rule(rule_id)
     except ApiException as e:
-        print("Exception when calling SecurityMonitoringApi->delete_security_monitoring_rule: %s\n" % e)
+        print("Exception when calling CloudSIEMApi->delete_security_monitoring_rule: %s\n" % e)
 ```
 
 ### Parameters
@@ -369,7 +369,7 @@ for more examples.
 import os
 from dateutil.parser import parse as dateutil_parser
 from datadog_api_client.v2 import ApiClient, ApiException, Configuration
-from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.api import cloud_siem_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
@@ -378,7 +378,7 @@ configuration = Configuration()
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    api_instance = cloud_siem_api.CloudSIEMApi(api_client)
     security_filter_id = "security_filter_id_example"  # str | The ID of the security filter.
 
     # example passing only required values which don't have defaults set
@@ -387,7 +387,7 @@ with ApiClient(configuration) as api_client:
         api_response = api_instance.get_security_filter(security_filter_id)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling SecurityMonitoringApi->get_security_filter: %s\n" % e)
+        print("Exception when calling CloudSIEMApi->get_security_filter: %s\n" % e)
 ```
 
 ### Parameters
@@ -436,7 +436,7 @@ Get a rule's details.
 import os
 from dateutil.parser import parse as dateutil_parser
 from datadog_api_client.v2 import ApiClient, ApiException, Configuration
-from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.api import cloud_siem_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
@@ -445,7 +445,7 @@ configuration = Configuration()
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    api_instance = cloud_siem_api.CloudSIEMApi(api_client)
     rule_id = "rule_id_example"  # str | The ID of the rule.
 
     # example passing only required values which don't have defaults set
@@ -454,7 +454,7 @@ with ApiClient(configuration) as api_client:
         api_response = api_instance.get_security_monitoring_rule(rule_id)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling SecurityMonitoringApi->get_security_monitoring_rule: %s\n" % e)
+        print("Exception when calling CloudSIEMApi->get_security_monitoring_rule: %s\n" % e)
 ```
 
 ### Parameters
@@ -502,7 +502,7 @@ Get the list of configured security filters with their definitions.
 import os
 from dateutil.parser import parse as dateutil_parser
 from datadog_api_client.v2 import ApiClient, ApiException, Configuration
-from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.api import cloud_siem_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
@@ -511,7 +511,7 @@ configuration = Configuration()
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    api_instance = cloud_siem_api.CloudSIEMApi(api_client)
 
     # example, this endpoint has no required or optional parameters
     try:
@@ -519,7 +519,7 @@ with ApiClient(configuration) as api_client:
         api_response = api_instance.list_security_filters()
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling SecurityMonitoringApi->list_security_filters: %s\n" % e)
+        print("Exception when calling CloudSIEMApi->list_security_filters: %s\n" % e)
 ```
 
 ### Parameters
@@ -565,7 +565,7 @@ List rules.
 import os
 from dateutil.parser import parse as dateutil_parser
 from datadog_api_client.v2 import ApiClient, ApiException, Configuration
-from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.api import cloud_siem_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
@@ -574,7 +574,7 @@ configuration = Configuration()
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    api_instance = cloud_siem_api.CloudSIEMApi(api_client)
     page_size = 10  # int | Size for a given page. (optional) if omitted the server will use the default value of 10
     page_number = 0  # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
 
@@ -585,7 +585,7 @@ with ApiClient(configuration) as api_client:
         api_response = api_instance.list_security_monitoring_rules(page_size=page_size, page_number=page_number)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling SecurityMonitoringApi->list_security_monitoring_rules: %s\n" % e)
+        print("Exception when calling CloudSIEMApi->list_security_monitoring_rules: %s\n" % e)
 ```
 
 ### Parameters
@@ -636,7 +636,7 @@ security signals.
 import os
 from dateutil.parser import parse as dateutil_parser
 from datadog_api_client.v2 import ApiClient, ApiException, Configuration
-from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.api import cloud_siem_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
@@ -646,7 +646,7 @@ configuration.unstable_operations["list_security_monitoring_signals"] = True
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    api_instance = cloud_siem_api.CloudSIEMApi(api_client)
     filter_query = "security:attack status:high"  # str | The search query for security signals. (optional)
     filter_from = dateutil_parser('2019-01-02T09:42:36.320Z')  # datetime | The minimum timestamp for requested security signals. (optional)
     filter_to = dateutil_parser('2019-01-03T09:42:36.320Z')  # datetime | The maximum timestamp for requested security signals. (optional)
@@ -661,7 +661,7 @@ with ApiClient(configuration) as api_client:
         api_response = api_instance.list_security_monitoring_signals(filter_query=filter_query, filter_from=filter_from, filter_to=filter_to, sort=sort, page_cursor=page_cursor, page_limit=page_limit)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling SecurityMonitoringApi->list_security_monitoring_signals: %s\n" % e)
+        print("Exception when calling CloudSIEMApi->list_security_monitoring_signals: %s\n" % e)
 ```
 
 ### Parameters
@@ -717,7 +717,7 @@ security signals.
 import os
 from dateutil.parser import parse as dateutil_parser
 from datadog_api_client.v2 import ApiClient, ApiException, Configuration
-from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.api import cloud_siem_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
@@ -727,7 +727,7 @@ configuration.unstable_operations["search_security_monitoring_signals"] = True
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    api_instance = cloud_siem_api.CloudSIEMApi(api_client)
     body = SecurityMonitoringSignalListRequest(
         filter=SecurityMonitoringSignalListRequestFilter(
             _from=dateutil_parser('2019-01-02T09:42:36.32Z'),
@@ -748,7 +748,7 @@ with ApiClient(configuration) as api_client:
         api_response = api_instance.search_security_monitoring_signals(body=body)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling SecurityMonitoringApi->search_security_monitoring_signals: %s\n" % e)
+        print("Exception when calling CloudSIEMApi->search_security_monitoring_signals: %s\n" % e)
 ```
 
 ### Parameters
@@ -798,7 +798,7 @@ Returns the security filter object when the request is successful.
 import os
 from dateutil.parser import parse as dateutil_parser
 from datadog_api_client.v2 import ApiClient, ApiException, Configuration
-from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.api import cloud_siem_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
@@ -807,7 +807,7 @@ configuration = Configuration()
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    api_instance = cloud_siem_api.CloudSIEMApi(api_client)
     security_filter_id = "security_filter_id_example"  # str | The ID of the security filter.
     body = SecurityFilterUpdateRequest(
         data=SecurityFilterUpdateData(
@@ -834,7 +834,7 @@ with ApiClient(configuration) as api_client:
         api_response = api_instance.update_security_filter(security_filter_id, body)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling SecurityMonitoringApi->update_security_filter: %s\n" % e)
+        print("Exception when calling CloudSIEMApi->update_security_filter: %s\n" % e)
 ```
 
 ### Parameters
@@ -888,7 +888,7 @@ Default rules can only be updated to be enabled and to change notifications.
 import os
 from dateutil.parser import parse as dateutil_parser
 from datadog_api_client.v2 import ApiClient, ApiException, Configuration
-from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.api import cloud_siem_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
@@ -897,7 +897,7 @@ configuration = Configuration()
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    api_instance = cloud_siem_api.CloudSIEMApi(api_client)
     rule_id = "rule_id_example"  # str | The ID of the rule.
     body = SecurityMonitoringRuleUpdatePayload(
         cases=[
@@ -956,7 +956,7 @@ with ApiClient(configuration) as api_client:
         api_response = api_instance.update_security_monitoring_rule(rule_id, body)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling SecurityMonitoringApi->update_security_monitoring_rule: %s\n" % e)
+        print("Exception when calling CloudSIEMApi->update_security_monitoring_rule: %s\n" % e)
 ```
 
 ### Parameters

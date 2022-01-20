@@ -1,11 +1,13 @@
-@endpoint(security-monitoring) @endpoint(security-monitoring-v2)
-Feature: Security Monitoring
-  Detection rules for generating signals and listing of generated signals.
+@endpoint(cloud-siem) @endpoint(cloud-siem-v2)
+Feature: Cloud SIEM
+  **Note**: Datadog Security Monitoring is now [Datadog Cloud
+  SIEM](https://docs.datadoghq.com/security_platform/cloud_siem/). Detection
+  rules for generating signals and listing of generated signals.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
-    And an instance of "SecurityMonitoring" API
+    And an instance of "CloudSIEM" API
 
   @team:DataDog/security-monitoring
   Scenario: Create a detection rule returns "Bad Request" response

@@ -4,7 +4,7 @@ Update a security filter returns "OK" response
 
 from os import environ
 from datadog_api_client.v2 import ApiClient, Configuration
-from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
+from datadog_api_client.v2.api.cloud_siem_api import CloudSIEMApi
 from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
 from datadog_api_client.v2.model.security_filter_type import SecurityFilterType
 from datadog_api_client.v2.model.security_filter_update_attributes import SecurityFilterUpdateAttributes
@@ -30,7 +30,7 @@ body = SecurityFilterUpdateRequest(
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
-    api_instance = SecurityMonitoringApi(api_client)
+    api_instance = CloudSIEMApi(api_client)
     response = api_instance.update_security_filter(security_filter_id=SECURITY_FILTER_DATA_ID, body=body)
 
     print(response)

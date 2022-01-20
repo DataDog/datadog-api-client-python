@@ -1,9 +1,9 @@
 """
-Create a detection rule returns "OK" response
+Create a detection rule with type 'workload_security' returns "OK" response
 """
 
 from datadog_api_client.v2 import ApiClient, Configuration
-from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
+from datadog_api_client.v2.api.cloud_siem_api import CloudSIEMApi
 from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
 from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
 from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
@@ -19,9 +19,10 @@ from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation impo
 )
 from datadog_api_client.v2.model.security_monitoring_rule_query_create import SecurityMonitoringRuleQueryCreate
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
+from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
 
 body = SecurityMonitoringRuleCreatePayload(
-    name="Example-Create_a_detection_rule_returns_OK_response",
+    name="Example-Create_a_detection_rule_with_type_workload_security_returns_OK_response",
     queries=[
         SecurityMonitoringRuleQueryCreate(
             query="@test:true",
@@ -45,11 +46,12 @@ body = SecurityMonitoringRuleCreatePayload(
     message="Test rule",
     tags=[],
     is_enabled=True,
+    type=SecurityMonitoringRuleTypeCreate("workload_security"),
 )
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
-    api_instance = SecurityMonitoringApi(api_client)
+    api_instance = CloudSIEMApi(api_client)
     response = api_instance.create_security_monitoring_rule(body=body)
 
     print(response)

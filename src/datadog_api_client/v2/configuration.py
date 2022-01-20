@@ -230,6 +230,8 @@ class Configuration(object):
 
         # Keep track of unstable operations
         self.unstable_operations = {
+            "list_security_monitoring_signals": False,
+            "search_security_monitoring_signals": False,
             "create_incident_service": False,
             "delete_incident_service": False,
             "get_incident_service": False,
@@ -250,8 +252,6 @@ class Configuration(object):
             "list_tag_configuration_by_name": False,
             "list_tag_configurations": False,
             "update_tag_configuration": False,
-            "list_security_monitoring_signals": False,
-            "search_security_monitoring_signals": False,
         }
 
         # Load default values from environment

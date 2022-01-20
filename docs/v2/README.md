@@ -56,12 +56,19 @@ Please follow the [installation procedure](#installation--usage) and then run th
 import time
 import datadog_api_client.v2
 from pprint import pprint
-from datadog_api_client.v2.api import cloud_workload_security_api
+from datadog_api_client.v2.api import cloud_siem_api
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
-from datadog_api_client.v2.model.cloud_workload_security_agent_rule_create_request import CloudWorkloadSecurityAgentRuleCreateRequest
-from datadog_api_client.v2.model.cloud_workload_security_agent_rule_response import CloudWorkloadSecurityAgentRuleResponse
-from datadog_api_client.v2.model.cloud_workload_security_agent_rule_update_request import CloudWorkloadSecurityAgentRuleUpdateRequest
-from datadog_api_client.v2.model.cloud_workload_security_agent_rules_list_response import CloudWorkloadSecurityAgentRulesListResponse
+from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
+from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
+from datadog_api_client.v2.model.security_filter_update_request import SecurityFilterUpdateRequest
+from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
+from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
+from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
+from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
+from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
+from datadog_api_client.v2.model.security_monitoring_signal_list_request import SecurityMonitoringSignalListRequest
+from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
+from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
@@ -69,25 +76,31 @@ configuration = Configuration()
 # Enter a context with an instance of the API client
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cloud_workload_security_api.CloudWorkloadSecurityApi(api_client)
-    body = CloudWorkloadSecurityAgentRuleCreateRequest(
-        data=CloudWorkloadSecurityAgentRuleCreateData(
-            attributes=CloudWorkloadSecurityAgentRuleCreateAttributes(
-                description="My Agent rule",
-                enabled=True,
-                expression="exec.file.name == \"sh\"",
-                name="my_agent_rule",
+    api_instance = cloud_siem_api.CloudSIEMApi(api_client)
+    body = SecurityFilterCreateRequest(
+        data=SecurityFilterCreateData(
+            attributes=SecurityFilterCreateAttributes(
+                exclusion_filters=[
+                    SecurityFilterExclusionFilter(
+                        name="Exclude staging",
+                        query="source:staging",
+                    ),
+                ],
+                filtered_data_type=SecurityFilterFilteredDataType("logs"),
+                is_enabled=True,
+                name="Custom security filter",
+                query="service:api",
             ),
-            type=CloudWorkloadSecurityAgentRuleType("agent_rule"),
+            type=SecurityFilterType("security_filters"),
         ),
-    ) # CloudWorkloadSecurityAgentRuleCreateRequest | The definition of the new Agent rule.
+    ) # SecurityFilterCreateRequest | The definition of the new security filter.
 
     try:
-        # Create a Cloud Workload Security Agent rule
-        api_response = api_instance.create_cloud_workload_security_agent_rule(body)
+        # Create a security filter
+        api_response = api_instance.create_security_filter(body)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
-        print("Exception when calling CloudWorkloadSecurityApi->create_cloud_workload_security_agent_rule: %s\n" % e)
+        print("Exception when calling CloudSIEMApi->create_security_filter: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -96,6 +109,18 @@ All URIs are relative to *https://api.datadoghq.com*
 
 | Class                      | Method                                                                                                                 | HTTP request                                                                               | Description                                        |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------- |
+| _CloudSIEMApi_             | [**create_security_filter**](CloudSIEMApi.md#create_security_filter)                                                   | **POST** /api/v2/security_monitoring/configuration/security_filters                        | Create a security filter                           |
+| _CloudSIEMApi_             | [**create_security_monitoring_rule**](CloudSIEMApi.md#create_security_monitoring_rule)                                 | **POST** /api/v2/security_monitoring/rules                                                 | Create a detection rule                            |
+| _CloudSIEMApi_             | [**delete_security_filter**](CloudSIEMApi.md#delete_security_filter)                                                   | **DELETE** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id} | Delete a security filter                           |
+| _CloudSIEMApi_             | [**delete_security_monitoring_rule**](CloudSIEMApi.md#delete_security_monitoring_rule)                                 | **DELETE** /api/v2/security_monitoring/rules/{rule_id}                                     | Delete an existing rule                            |
+| _CloudSIEMApi_             | [**get_security_filter**](CloudSIEMApi.md#get_security_filter)                                                         | **GET** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id}    | Get a security filter                              |
+| _CloudSIEMApi_             | [**get_security_monitoring_rule**](CloudSIEMApi.md#get_security_monitoring_rule)                                       | **GET** /api/v2/security_monitoring/rules/{rule_id}                                        | Get a rule&#39;s details                           |
+| _CloudSIEMApi_             | [**list_security_filters**](CloudSIEMApi.md#list_security_filters)                                                     | **GET** /api/v2/security_monitoring/configuration/security_filters                         | Get all security filters                           |
+| _CloudSIEMApi_             | [**list_security_monitoring_rules**](CloudSIEMApi.md#list_security_monitoring_rules)                                   | **GET** /api/v2/security_monitoring/rules                                                  | List rules                                         |
+| _CloudSIEMApi_             | [**list_security_monitoring_signals**](CloudSIEMApi.md#list_security_monitoring_signals)                               | **GET** /api/v2/security_monitoring/signals                                                | Get a quick list of security signals               |
+| _CloudSIEMApi_             | [**search_security_monitoring_signals**](CloudSIEMApi.md#search_security_monitoring_signals)                           | **POST** /api/v2/security_monitoring/signals/search                                        | Get a list of security signals                     |
+| _CloudSIEMApi_             | [**update_security_filter**](CloudSIEMApi.md#update_security_filter)                                                   | **PATCH** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id}  | Update a security filter                           |
+| _CloudSIEMApi_             | [**update_security_monitoring_rule**](CloudSIEMApi.md#update_security_monitoring_rule)                                 | **PUT** /api/v2/security_monitoring/rules/{rule_id}                                        | Update an existing rule                            |
 | _CloudWorkloadSecurityApi_ | [**create_cloud_workload_security_agent_rule**](CloudWorkloadSecurityApi.md#create_cloud_workload_security_agent_rule) | **POST** /api/v2/security_monitoring/cloud_workload_security/agent_rules                   | Create a Cloud Workload Security Agent rule        |
 | _CloudWorkloadSecurityApi_ | [**delete_cloud_workload_security_agent_rule**](CloudWorkloadSecurityApi.md#delete_cloud_workload_security_agent_rule) | **DELETE** /api/v2/security_monitoring/cloud_workload_security/agent_rules/{agent_rule_id} | Delete a Cloud Workload Security Agent rule        |
 | _CloudWorkloadSecurityApi_ | [**download_cloud_workload_policy_file**](CloudWorkloadSecurityApi.md#download_cloud_workload_policy_file)             | **GET** /api/v2/security/cloud_workload/policy/download                                    | Get the latest Cloud Workload Security policy      |
@@ -175,18 +200,6 @@ All URIs are relative to *https://api.datadoghq.com*
 | _RolesApi_                 | [**remove_permission_from_role**](RolesApi.md#remove_permission_from_role)                                             | **DELETE** /api/v2/roles/{role_id}/permissions                                             | Revoke permission                                  |
 | _RolesApi_                 | [**remove_user_from_role**](RolesApi.md#remove_user_from_role)                                                         | **DELETE** /api/v2/roles/{role_id}/users                                                   | Remove a user from a role                          |
 | _RolesApi_                 | [**update_role**](RolesApi.md#update_role)                                                                             | **PATCH** /api/v2/roles/{role_id}                                                          | Update a role                                      |
-| _SecurityMonitoringApi_    | [**create_security_filter**](SecurityMonitoringApi.md#create_security_filter)                                          | **POST** /api/v2/security_monitoring/configuration/security_filters                        | Create a security filter                           |
-| _SecurityMonitoringApi_    | [**create_security_monitoring_rule**](SecurityMonitoringApi.md#create_security_monitoring_rule)                        | **POST** /api/v2/security_monitoring/rules                                                 | Create a detection rule                            |
-| _SecurityMonitoringApi_    | [**delete_security_filter**](SecurityMonitoringApi.md#delete_security_filter)                                          | **DELETE** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id} | Delete a security filter                           |
-| _SecurityMonitoringApi_    | [**delete_security_monitoring_rule**](SecurityMonitoringApi.md#delete_security_monitoring_rule)                        | **DELETE** /api/v2/security_monitoring/rules/{rule_id}                                     | Delete an existing rule                            |
-| _SecurityMonitoringApi_    | [**get_security_filter**](SecurityMonitoringApi.md#get_security_filter)                                                | **GET** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id}    | Get a security filter                              |
-| _SecurityMonitoringApi_    | [**get_security_monitoring_rule**](SecurityMonitoringApi.md#get_security_monitoring_rule)                              | **GET** /api/v2/security_monitoring/rules/{rule_id}                                        | Get a rule&#39;s details                           |
-| _SecurityMonitoringApi_    | [**list_security_filters**](SecurityMonitoringApi.md#list_security_filters)                                            | **GET** /api/v2/security_monitoring/configuration/security_filters                         | Get all security filters                           |
-| _SecurityMonitoringApi_    | [**list_security_monitoring_rules**](SecurityMonitoringApi.md#list_security_monitoring_rules)                          | **GET** /api/v2/security_monitoring/rules                                                  | List rules                                         |
-| _SecurityMonitoringApi_    | [**list_security_monitoring_signals**](SecurityMonitoringApi.md#list_security_monitoring_signals)                      | **GET** /api/v2/security_monitoring/signals                                                | Get a quick list of security signals               |
-| _SecurityMonitoringApi_    | [**search_security_monitoring_signals**](SecurityMonitoringApi.md#search_security_monitoring_signals)                  | **POST** /api/v2/security_monitoring/signals/search                                        | Get a list of security signals                     |
-| _SecurityMonitoringApi_    | [**update_security_filter**](SecurityMonitoringApi.md#update_security_filter)                                          | **PATCH** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id}  | Update a security filter                           |
-| _SecurityMonitoringApi_    | [**update_security_monitoring_rule**](SecurityMonitoringApi.md#update_security_monitoring_rule)                        | **PUT** /api/v2/security_monitoring/rules/{rule_id}                                        | Update an existing rule                            |
 | _ServiceAccountsApi_       | [**create_service_account_application_key**](ServiceAccountsApi.md#create_service_account_application_key)             | **POST** /api/v2/service_accounts/{service_account_id}/application_keys                    | Create an application key for this service account |
 | _ServiceAccountsApi_       | [**delete_service_account_application_key**](ServiceAccountsApi.md#delete_service_account_application_key)             | **DELETE** /api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id}     | Delete an application key for this service account |
 | _ServiceAccountsApi_       | [**get_service_account_application_key**](ServiceAccountsApi.md#get_service_account_application_key)                   | **GET** /api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id}        | Get one application key for this service account   |
