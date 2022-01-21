@@ -7,6 +7,7 @@ from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
 )
 
 
@@ -22,14 +23,35 @@ class UsageCloudSecurityPostureManagementHour(ModelNormal):
     @cached_property
     def openapi_types():
         return {
-            "container_count": (int,),
-            "host_count": (int,),
+            "aas_host_count": (
+                float,
+                none_type,
+            ),
+            "azure_host_count": (
+                float,
+                none_type,
+            ),
+            "compliance_host_count": (
+                float,
+                none_type,
+            ),
+            "container_count": (
+                float,
+                none_type,
+            ),
+            "host_count": (
+                float,
+                none_type,
+            ),
             "hour": (datetime,),
             "org_name": (str,),
             "public_id": (str,),
         }
 
     attribute_map = {
+        "aas_host_count": "aas_host_count",
+        "azure_host_count": "azure_host_count",
+        "compliance_host_count": "compliance_host_count",
         "container_count": "container_count",
         "host_count": "host_count",
         "hour": "hour",
@@ -43,8 +65,11 @@ class UsageCloudSecurityPostureManagementHour(ModelNormal):
         """UsageCloudSecurityPostureManagementHour - a model defined in OpenAPI
 
         Keyword Args:
-            container_count (int): [optional] The total number of Cloud Security Posture Management containers during a given hour.
-            host_count (int): [optional] The total number of Cloud Security Posture Management hosts during a given hour.
+            aas_host_count (float, none_type): [optional] The number of Cloud Security Posture Management Azure app services hosts during a given hour.
+            azure_host_count (float, none_type): [optional] The number of Cloud Security Posture Management Azure hosts during a given hour.
+            compliance_host_count (float, none_type): [optional] The number of Cloud Security Posture Management hosts during a given hour.
+            container_count (float, none_type): [optional] The total number of Cloud Security Posture Management containers during a given hour.
+            host_count (float, none_type): [optional] The total number of Cloud Security Posture Management hosts during a given hour.
             hour (datetime): [optional] The hour for the usage.
             org_name (str): [optional] The organization name.
             public_id (str): [optional] The organization public ID.

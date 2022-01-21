@@ -22,7 +22,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 OK
 
-  @integration-only @skip-validation @skip-terraform-config @team:DataDog/logs-intake
+  @integration-only @skip-terraform-config @skip-validation @team:DataDog/logs-intake
   Scenario: Send deflate logs returns "Response from server (always 200 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"message": "{{ unique }}", "ddtags": "host:{{ unique_alnum }}"}]
@@ -30,7 +30,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 Response from server (always 200 empty JSON).
 
-  @integration-only @skip-validation @skip-terraform-config @team:DataDog/logs-intake
+  @integration-only @skip-terraform-config @skip-validation @team:DataDog/logs-intake
   Scenario: Send gzip logs returns "Response from server (always 200 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"message": "{{ unique }}", "ddtags": "host:{{ unique_alnum }}"}]

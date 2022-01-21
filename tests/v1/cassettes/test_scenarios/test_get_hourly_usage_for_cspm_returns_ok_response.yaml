@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json;datetime-format=rfc3339
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/usage/cspm?start_hr=2022-01-18T12%3A03%3A20.978Z
+  response:
+    body:
+      string: '{"usage":[{"host_count":null,"org_name":"DD Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-18T12:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-18T13:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-18T14:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-18T15:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-18T16:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-18T17:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-18T18:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-18T19:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-18T20:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-18T21:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-18T22:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-18T23:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-19T00:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-19T01:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-19T02:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-19T03:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-19T04:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-19T05:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-19T06:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-19T07:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-19T08:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-19T09:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-19T10:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"},{"host_count":null,"org_name":"DD
+        Integration Tests (321813)","container_count":null,"aas_host_count":null,"hour":"2022-01-19T11:00:00+00:00","compliance_host_count":null,"azure_host_count":null,"public_id":"fasjyydbcgwwc2uc"}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

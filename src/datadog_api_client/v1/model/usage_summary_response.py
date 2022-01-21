@@ -47,6 +47,8 @@ class UsageSummaryResponse(ModelNormal):
             "browser_rum_units_agg_sum": (int,),
             "container_avg_sum": (int,),
             "container_hwm_sum": (int,),
+            "cspm_aas_host_top99p_sum": (int,),
+            "cspm_azure_host_top99p_sum": (int,),
             "cspm_container_avg_sum": (int,),
             "cspm_container_hwm_sum": (int,),
             "cspm_host_top99p_sum": (int,),
@@ -114,6 +116,8 @@ class UsageSummaryResponse(ModelNormal):
         "browser_rum_units_agg_sum": "browser_rum_units_agg_sum",
         "container_avg_sum": "container_avg_sum",
         "container_hwm_sum": "container_hwm_sum",
+        "cspm_aas_host_top99p_sum": "cspm_aas_host_top99p_sum",
+        "cspm_azure_host_top99p_sum": "cspm_azure_host_top99p_sum",
         "cspm_container_avg_sum": "cspm_container_avg_sum",
         "cspm_container_hwm_sum": "cspm_container_hwm_sum",
         "cspm_host_top99p_sum": "cspm_host_top99p_sum",
@@ -186,6 +190,8 @@ class UsageSummaryResponse(ModelNormal):
             browser_rum_units_agg_sum (int): [optional] Shows the sum of all browser RUM units over all hours in the current months for all organizations.
             container_avg_sum (int): [optional] Shows the average of all distinct containers over all hours in the current months for all organizations.
             container_hwm_sum (int): [optional] Shows the sum of the high-water marks of all distinct containers over all hours in the current months for all organizations.
+            cspm_aas_host_top99p_sum (int): [optional] Shows the 99th percentile of all Cloud Security Posture Management Azure app services hosts over all hours in the current months for all organizations.
+            cspm_azure_host_top99p_sum (int): [optional] Shows the 99th percentile of all Cloud Security Posture Management Azure hosts over all hours in the current months for all organizations.
             cspm_container_avg_sum (int): [optional] Shows the average number of Cloud Security Posture Management containers over all hours in the current months for all organizations.
             cspm_container_hwm_sum (int): [optional] Shows the sum of the the high-water marks of Cloud Security Posture Management containers over all hours in the current months for all organizations.
             cspm_host_top99p_sum (int): [optional] Shows the 99th percentile of all Cloud Security Posture Management hosts over all hours in the current months for all organizations.

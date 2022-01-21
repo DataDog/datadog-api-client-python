@@ -103,9 +103,10 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for CSPM returns "OK" response
     Given new "GetUsageCloudSecurityPostureManagement" request
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
