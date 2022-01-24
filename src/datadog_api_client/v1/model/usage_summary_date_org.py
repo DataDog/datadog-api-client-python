@@ -36,6 +36,8 @@ class UsageSummaryDateOrg(ModelNormal):
             "browser_rum_units_sum": (int,),
             "container_avg": (int,),
             "container_hwm": (int,),
+            "cspm_aas_host_top99p": (int,),
+            "cspm_azure_host_top99p": (int,),
             "cspm_container_avg": (int,),
             "cspm_container_hwm": (int,),
             "cspm_host_top99p": (int,),
@@ -95,6 +97,8 @@ class UsageSummaryDateOrg(ModelNormal):
         "browser_rum_units_sum": "browser_rum_units_sum",
         "container_avg": "container_avg",
         "container_hwm": "container_hwm",
+        "cspm_aas_host_top99p": "cspm_aas_host_top99p",
+        "cspm_azure_host_top99p": "cspm_azure_host_top99p",
         "cspm_container_avg": "cspm_container_avg",
         "cspm_container_hwm": "cspm_container_hwm",
         "cspm_host_top99p": "cspm_host_top99p",
@@ -159,6 +163,8 @@ class UsageSummaryDateOrg(ModelNormal):
             browser_rum_units_sum (int): [optional] Shows the sum of all browser RUM units over all hours in the current date for the given org.
             container_avg (int): [optional] Shows the average of all distinct containers over all hours in the current date for the given org.
             container_hwm (int): [optional] Shows the high-water mark of all distinct containers over all hours in the current date for the given org.
+            cspm_aas_host_top99p (int): [optional] Shows the 99th percentile of all Cloud Security Posture Management Azure app services hosts over all hours in the current date for the given org.
+            cspm_azure_host_top99p (int): [optional] Shows the 99th percentile of all Cloud Security Posture Management Azure hosts over all hours in the current date for the given org.
             cspm_container_avg (int): [optional] Shows the average number of Cloud Security Posture Management containers over all hours in the current date for the given org.
             cspm_container_hwm (int): [optional] Shows the high-water mark of Cloud Security Posture Management containers over all hours in the current date for the given org.
             cspm_host_top99p (int): [optional] Shows the 99th percentile of all Cloud Security Posture Management hosts over all hours in the current date for the given org.
