@@ -10,12 +10,14 @@ from datadog_api_client.v2.model_utils import (
 
 
 def lazy_import():
+    from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
     from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas import (
         RelationshipToIncidentIntegrationMetadatas,
     )
     from datadog_api_client.v2.model.relationship_to_incident_postmortem import RelationshipToIncidentPostmortem
     from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 
+    globals()["NullableRelationshipToUser"] = NullableRelationshipToUser
     globals()["RelationshipToIncidentIntegrationMetadatas"] = RelationshipToIncidentIntegrationMetadatas
     globals()["RelationshipToIncidentPostmortem"] = RelationshipToIncidentPostmortem
     globals()["RelationshipToUser"] = RelationshipToUser
@@ -34,7 +36,7 @@ class IncidentUpdateRelationships(ModelNormal):
     def openapi_types():
         lazy_import()
         return {
-            "commander_user": (RelationshipToUser,),
+            "commander_user": (NullableRelationshipToUser,),
             "created_by_user": (RelationshipToUser,),
             "integrations": (RelationshipToIncidentIntegrationMetadatas,),
             "last_modified_by_user": (RelationshipToUser,),
@@ -55,7 +57,7 @@ class IncidentUpdateRelationships(ModelNormal):
         """IncidentUpdateRelationships - a model defined in OpenAPI
 
         Keyword Args:
-            commander_user (RelationshipToUser): [optional]
+            commander_user (NullableRelationshipToUser): [optional]
             created_by_user (RelationshipToUser): [optional]
             integrations (RelationshipToIncidentIntegrationMetadatas): [optional]
             last_modified_by_user (RelationshipToUser): [optional]

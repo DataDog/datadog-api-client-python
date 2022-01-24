@@ -56,11 +56,8 @@ with ApiClient(configuration) as api_client:
                 title="A test incident title",
             ),
             relationships=IncidentCreateRelationships(
-                commander=RelationshipToUser(
-                    data=RelationshipToUserData(
-                        id="00000000-0000-0000-0000-000000000000",
-                        type=UsersType("users"),
-                    ),
+                commander_user=NullableRelationshipToUser(
+                    data={},
                 ),
             ),
             type=IncidentType("incidents"),
@@ -387,11 +384,8 @@ with ApiClient(configuration) as api_client:
             ),
             id="00000000-0000-0000-0000-000000000000",
             relationships=IncidentUpdateRelationships(
-                commander_user=RelationshipToUser(
-                    data=RelationshipToUserData(
-                        id="00000000-0000-0000-0000-000000000000",
-                        type=UsersType("users"),
-                    ),
+                commander_user=NullableRelationshipToUser(
+                    data={},
                 ),
                 created_by_user=RelationshipToUser(
                     data=RelationshipToUserData(

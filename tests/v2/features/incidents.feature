@@ -11,16 +11,16 @@ Feature: Incidents
   Scenario: Create an incident returns "Bad Request" response
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
-    And body with value {"data": {"attributes": {"customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "initial_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": [{"display_name": "Jane Doe", "handle": "@test.user@test.com"}], "title": "A test incident title"}, "relationships": {"commander": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
+    And body with value {"data": {"attributes": {"customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "initial_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": [{"display_name": "Jane Doe", "handle": "@test.user@test.com"}], "title": "A test incident title"}, "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/incident-app
+  @team:DataDog/incident-app
   Scenario: Create an incident returns "CREATED" response
     Given there is a valid "user" in the system
     And operation "CreateIncident" enabled
     And new "CreateIncident" request
-    And body with value {"data": {"type": "incidents", "attributes": {"title": "{{unique}}", "customer_impacted": false, "fields": {"state": {"type": "dropdown", "value": "resolved"}}}, "relationships": {"commander": {"data": {"type": "{{ user.data.type }}", "id": "{{ user.data.id }}"}}}}}
+    And body with value {"data": {"type": "incidents", "attributes": {"title": "{{unique}}", "customer_impacted": false, "fields": {"state": {"type": "dropdown", "value": "resolved"}}}, "relationships": {"commander_user": {"data": {"type": "{{ user.data.type }}", "id": "{{ user.data.id }}"}}}}}
     When the request is sent
     Then the response status is 201 CREATED
 
@@ -28,7 +28,7 @@ Feature: Incidents
   Scenario: Create an incident returns "Not Found" response
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
-    And body with value {"data": {"attributes": {"customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "initial_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": [{"display_name": "Jane Doe", "handle": "@test.user@test.com"}], "title": "A test incident title"}, "relationships": {"commander": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
+    And body with value {"data": {"attributes": {"customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "initial_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": [{"display_name": "Jane Doe", "handle": "@test.user@test.com"}], "title": "A test incident title"}, "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -48,7 +48,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/incident-app
+  @team:DataDog/incident-app
   Scenario: Delete an existing incident returns "OK" response
     Given operation "DeleteIncident" enabled
     And there is a valid "incident" in the system
@@ -71,7 +71,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/incident-app
+  @team:DataDog/incident-app
   Scenario: Get a list of incidents returns "OK" response
     Given operation "ListIncidents" enabled
     And there is a valid "incident" in the system
@@ -95,7 +95,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/incident-app
+  @team:DataDog/incident-app
   Scenario: Get the details of an incident returns "OK" response
     Given operation "GetIncident" enabled
     And there is a valid "incident" in the system
@@ -123,7 +123,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/incident-app
+  @team:DataDog/incident-app
   Scenario: Update an existing incident returns "OK" response
     Given operation "UpdateIncident" enabled
     And there is a valid "incident" in the system

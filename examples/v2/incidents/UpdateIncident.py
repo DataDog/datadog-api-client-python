@@ -11,7 +11,6 @@ from datadog_api_client.v2.model.incident_field_attributes_single_value_type imp
 )
 from datadog_api_client.v2.model.incident_type import IncidentType
 from datadog_api_client.v2.model.incident_update_attributes import IncidentUpdateAttributes
-from datadog_api_client.v2.model.incident_update_attributes_fields import IncidentUpdateAttributesFields
 from datadog_api_client.v2.model.incident_update_data import IncidentUpdateData
 from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRequest
 
@@ -24,7 +23,7 @@ body = IncidentUpdateRequest(
         id=INCIDENT_DATA_ID,
         type=IncidentType("incidents"),
         attributes=IncidentUpdateAttributes(
-            fields=IncidentUpdateAttributesFields(
+            fields=dict(
                 state=IncidentFieldAttributesSingleValue(
                     type=IncidentFieldAttributesSingleValueType("dropdown"), value="resolved"
                 )

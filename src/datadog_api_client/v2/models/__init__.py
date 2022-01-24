@@ -270,6 +270,7 @@ from datadog_api_client.v2.model.metrics_and_metric_tag_configurations import Me
 from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response import (
     MetricsAndMetricTagConfigurationsResponse,
 )
+from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
 from datadog_api_client.v2.model.organization import Organization
 from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
 from datadog_api_client.v2.model.organizations_type import OrganizationsType
