@@ -5,19 +5,19 @@ changelog:
   categories:
     - title: Fixed
       labels:
-        - changelog/fixed
+        - changelog/Fixed
     - title: Added
       labels:
-        - changelog/added
+        - changelog/Added
     - title: Changed
       labels:
-        - changelog/changed
+        - changelog/Changed
     - title: Removed
       labels:
-        - changelog/removed
+        - changelog/Removed
     - title: Deprecated
       labels:
-        - changelog/deprecated
+        - changelog/Deprecated
     - title: Security
       labels:
-        - changelog/security
+        - changelog/Security
