@@ -69,7 +69,7 @@ class LogsMetricsApi(object):
         self._get_logs_metric_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsMetricResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/logs/config/metrics/{metric_id}",
                 "operation_id": "get_logs_metric",
                 "http_method": "GET",
@@ -93,7 +93,7 @@ class LogsMetricsApi(object):
         self._list_logs_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsMetricsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/logs/config/metrics",
                 "operation_id": "list_logs_metrics",
                 "http_method": "GET",
