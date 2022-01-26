@@ -162,6 +162,7 @@ This endpoint takes no JSON arguments.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -202,7 +203,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -229,6 +230,7 @@ This endpoint takes no JSON arguments.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -266,7 +268,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -292,6 +294,7 @@ This endpoint takes no JSON arguments.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -329,7 +332,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 

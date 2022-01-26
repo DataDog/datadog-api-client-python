@@ -68,7 +68,7 @@ class LogsPipelinesApi(object):
         self._get_logs_pipeline_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsPipeline,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/logs/config/pipelines/{pipeline_id}",
                 "operation_id": "get_logs_pipeline",
                 "http_method": "GET",
@@ -92,7 +92,7 @@ class LogsPipelinesApi(object):
         self._get_logs_pipeline_order_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsPipelinesOrder,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/logs/config/pipeline-order",
                 "operation_id": "get_logs_pipeline_order",
                 "http_method": "GET",
@@ -109,7 +109,7 @@ class LogsPipelinesApi(object):
         self._list_logs_pipelines_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsPipelineList,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/logs/config/pipelines",
                 "operation_id": "list_logs_pipelines",
                 "http_method": "GET",
