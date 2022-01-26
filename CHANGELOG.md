@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.9.0 / 2022-01-26
+
+### Changed
+* Add CSPM usage fields and change properties to nullable doubles by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/795
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/1.8.0...1.9.0
+
 ## 1.8.0 / 2022-01-20
 
 * [Added] Add `filter[deleted]` parameter for searching recently deleted dashboards. See [#787](https://github.com/DataDog/datadog-api-client-python/pull/787).
