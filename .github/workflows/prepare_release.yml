@@ -25,53 +25,55 @@ jobs:
           github-token: ${{ steps.get_token.outputs.token }}
           script: |
             const { data: notes } = await github.rest.repos.generateReleaseNotes({
-              "owner": context.repo.owner,
-              "repo": context.repo.repo,
-              "tag_name": process.env.RELEASE_TAG,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: process.env.RELEASE_TAG,
             });
 
-	    const today = new Date().toJSON().slice(0, 10);
-	    const header = [`# Changelog\n\n## ${process.env.RELEASE_TAG} / ${today}\n`];
-	    const changes = header.concat(notes.body.split("\n").slice(3));
+            const today = new Date().toJSON().slice(0, 10);
+            const header = [`# Changelog\n\n## ${process.env.RELEASE_TAG} / ${today}\n`];
+            const changes = header.concat(notes.body.split("\n").slice(3));
 
             const { data: content } = await github.rest.repos.getContent({
-              "owner": context.repo.owner,
-              "repo": context.repo.repo,
-              "path": "CHANGELOG.md",
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              path: "CHANGELOG.md",
             });
 
-	    const rawContent = Buffer.from(content.content, "base64").toString("utf-8").split("\n");
-	    const newContent = changes.concat(rawContent.slice(1)).join("\n");
+            const rawContent = Buffer.from(content.content, "base64")
+              .toString("utf-8")
+              .split("\n");
+            const newContent = changes.concat(rawContent.slice(1)).join("\n");
 
             const { data: master } = await github.rest.git.getRef({
-              "owner": context.repo.owner,
-              "repo": context.repo.repo,
-              "ref": "heads/master",
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "heads/master",
             });
             await github.rest.git.createRef({
-              "owner": context.repo.owner,
-              "repo": context.repo.repo,
-              "ref": `ref/heads/release/${process.env.RELEASE_TAG}`,
-              "sha": master.object.sha,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `ref/heads/release/${process.env.RELEASE_TAG}`,
+              sha: master.object.sha,
             });
 
             const { data: commit } = await github.rest.repos.createOrUpdateFileContents({
-              "owner": context.repo.owner,
-              "repo": context.repo.repo,
-              "message": "Update CHANGELOG",
-              "content": Buffer.from(newContent).toString("base64"),
-              "path": "CHANGELOG.md",
-              "branch": `release/${process.env.RELEASE_TAG}`,
-	      "sha": content.sha,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              message: "Update CHANGELOG",
+              content: Buffer.from(newContent).toString("base64"),
+              path: "CHANGELOG.md",
+              branch: `release/${process.env.RELEASE_TAG}`,
+              sha: content.sha,
             });
 
-            const {data: pr} = await github.rest.pulls.create({
-              "owner": context.repo.owner,
-              "repo": context.repo.repo,
-              "head": `release/${process.env.RELEASE_TAG}`,
-              "base": "master",
-              "title": `Release ${process.env.RELEASE_TAG}`,
-              "body": "Update CHANGELOG",
+            const { data: pr } = await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `release/${process.env.RELEASE_TAG}`,
+              base: "master",
+              title: `Release ${process.env.RELEASE_TAG}`,
+              body: "Update CHANGELOG",
             });
             await github.rest.issues.addLabels({
               issue_number: pr.number,
