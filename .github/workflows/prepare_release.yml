@@ -5,6 +5,7 @@ on:
     inputs:
       tag:
         description: New version tag
+        required: true
 
 jobs:
   prepare_release:
