@@ -1,16 +1,14 @@
-name: Build
+name: Release
 
 on:
-  pull_request:
   release:
     types:
       - published
 
 jobs:
-  build_wheels:
-    name: Build wheels on ${{ matrix.os }}
+  upload_release:
+    name: Upload release
     runs-on: ubuntu-20.04
-    if: github.event_name == 'release' && github.event.action == 'published'
     steps:
       - uses: actions/checkout@v2
         # Include all history and tags, needed for building the right version
