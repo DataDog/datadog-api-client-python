@@ -19,13 +19,14 @@ jobs:
           app_id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
           private_key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
       - name: Create release
+        uses: actions/github-script@v5
         env:
           RELEASE_BRANCH: ${{ github.head_ref }}
           SHA: $${ github.event.pull_request.head.sha }}
         with:
           github-token: ${{ steps.get_token.outputs.token }}
           script: |
-            const tagName = process.env.RELEASE_TAG.split("/")[1];
+            const tagName = process.env.RELEASE_BRANCH.split("/")[1];
 
             await github.rest.git.createRef({
               owner: context.repo.owner,
