@@ -24,11 +24,15 @@ class UsageIndexedSpansHour(ModelNormal):
         return {
             "hour": (datetime,),
             "indexed_events_count": (int,),
+            "org_name": (str,),
+            "public_id": (str,),
         }
 
     attribute_map = {
         "hour": "hour",
         "indexed_events_count": "indexed_events_count",
+        "org_name": "org_name",
+        "public_id": "public_id",
     }
 
     read_only_vars = {}
@@ -39,6 +43,8 @@ class UsageIndexedSpansHour(ModelNormal):
         Keyword Args:
             hour (datetime): [optional] The hour for the usage.
             indexed_events_count (int): [optional] Contains the number of spans indexed.
+            org_name (str): [optional] The organization name.
+            public_id (str): [optional] The organization public ID.
         """
         super().__init__(kwargs)
 

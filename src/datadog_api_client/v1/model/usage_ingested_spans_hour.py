@@ -24,11 +24,15 @@ class UsageIngestedSpansHour(ModelNormal):
         return {
             "hour": (datetime,),
             "ingested_events_bytes": (int,),
+            "org_name": (str,),
+            "public_id": (str,),
         }
 
     attribute_map = {
         "hour": "hour",
         "ingested_events_bytes": "ingested_events_bytes",
+        "org_name": "org_name",
+        "public_id": "public_id",
     }
 
     read_only_vars = {}
@@ -39,6 +43,8 @@ class UsageIngestedSpansHour(ModelNormal):
         Keyword Args:
             hour (datetime): [optional] The hour for the usage.
             ingested_events_bytes (int): [optional] Contains the total number of bytes ingested during a given hour.
+            org_name (str): [optional] The organization name.
+            public_id (str): [optional] The organization public ID.
         """
         super().__init__(kwargs)
 
