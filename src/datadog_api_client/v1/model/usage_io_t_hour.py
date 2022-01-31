@@ -24,11 +24,15 @@ class UsageIoTHour(ModelNormal):
         return {
             "hour": (datetime,),
             "iot_device_count": (int,),
+            "org_name": (str,),
+            "public_id": (str,),
         }
 
     attribute_map = {
         "hour": "hour",
         "iot_device_count": "iot_device_count",
+        "org_name": "org_name",
+        "public_id": "public_id",
     }
 
     read_only_vars = {}
@@ -39,6 +43,8 @@ class UsageIoTHour(ModelNormal):
         Keyword Args:
             hour (datetime): [optional] The hour for the usage.
             iot_device_count (int): [optional] The total number of IoT devices during a given hour.
+            org_name (str): [optional] The organization name.
+            public_id (str): [optional] The organization public ID.
         """
         super().__init__(kwargs)
 

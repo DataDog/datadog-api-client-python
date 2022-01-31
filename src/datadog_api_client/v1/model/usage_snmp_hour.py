@@ -23,11 +23,15 @@ class UsageSNMPHour(ModelNormal):
     def openapi_types():
         return {
             "hour": (datetime,),
+            "org_name": (str,),
+            "public_id": (str,),
             "snmp_devices": (int,),
         }
 
     attribute_map = {
         "hour": "hour",
+        "org_name": "org_name",
+        "public_id": "public_id",
         "snmp_devices": "snmp_devices",
     }
 
@@ -38,6 +42,8 @@ class UsageSNMPHour(ModelNormal):
 
         Keyword Args:
             hour (datetime): [optional] The hour for the usage.
+            org_name (str): [optional] The organization name.
+            public_id (str): [optional] The organization public ID.
             snmp_devices (int): [optional] Contains the number of SNMP devices.
         """
         super().__init__(kwargs)

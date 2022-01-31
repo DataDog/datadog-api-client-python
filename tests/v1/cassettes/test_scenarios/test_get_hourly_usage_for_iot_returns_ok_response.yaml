@@ -1,0 +1,65 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json;datetime-format=rfc3339
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/usage/iot?start_hr=2022-01-26T09%3A34%3A28.357Z&end_hr=2022-01-28T09%3A34%3A28.357Z
+  response:
+    body:
+      string: '{"usage":[{"org_name":"DD Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-26T09:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-26T10:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-26T11:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-26T12:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-26T13:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-26T14:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-26T15:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-26T16:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-26T17:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-26T18:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-26T19:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-26T20:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-26T21:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-26T22:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-26T23:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T00:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T01:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T02:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T03:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T04:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T05:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T06:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T07:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T08:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T09:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T10:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T11:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T12:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T13:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T14:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T15:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T16:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T17:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T18:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T19:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T20:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T21:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T22:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-27T23:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-28T00:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-28T01:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-28T02:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-28T03:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-28T04:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-28T05:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-28T06:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-28T07:00:00+00:00"},{"org_name":"DD
+        Integration Tests (321813)","iot_device_count":0,"iot_device_tag":null,"public_id":"fasjyydbcgwwc2uc","hour":"2022-01-28T08:00:00+00:00"}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

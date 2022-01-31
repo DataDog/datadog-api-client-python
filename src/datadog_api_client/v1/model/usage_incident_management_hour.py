@@ -24,11 +24,15 @@ class UsageIncidentManagementHour(ModelNormal):
         return {
             "hour": (datetime,),
             "monthly_active_users": (int,),
+            "org_name": (str,),
+            "public_id": (str,),
         }
 
     attribute_map = {
         "hour": "hour",
         "monthly_active_users": "monthly_active_users",
+        "org_name": "org_name",
+        "public_id": "public_id",
     }
 
     read_only_vars = {}
@@ -39,6 +43,8 @@ class UsageIncidentManagementHour(ModelNormal):
         Keyword Args:
             hour (datetime): [optional] The hour for the usage.
             monthly_active_users (int): [optional] Contains the total number monthly active users from the start of the given hour's month until the given hour.
+            org_name (str): [optional] The organization name.
+            public_id (str): [optional] The organization public ID.
         """
         super().__init__(kwargs)
 
