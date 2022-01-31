@@ -25,12 +25,16 @@ class UsageProfilingHour(ModelNormal):
             "avg_container_agent_count": (int,),
             "host_count": (int,),
             "hour": (datetime,),
+            "org_name": (str,),
+            "public_id": (str,),
         }
 
     attribute_map = {
         "avg_container_agent_count": "avg_container_agent_count",
         "host_count": "host_count",
         "hour": "hour",
+        "org_name": "org_name",
+        "public_id": "public_id",
     }
 
     read_only_vars = {}
@@ -42,6 +46,8 @@ class UsageProfilingHour(ModelNormal):
             avg_container_agent_count (int): [optional] Get average number of container agents for that hour.
             host_count (int): [optional] Contains the total number of profiled hosts reporting during a given hour.
             hour (datetime): [optional] The hour for the usage.
+            org_name (str): [optional] The organization name.
+            public_id (str): [optional] The organization public ID.
         """
         super().__init__(kwargs)
 

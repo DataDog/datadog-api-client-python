@@ -24,11 +24,15 @@ class UsageAnalyzedLogsHour(ModelNormal):
         return {
             "analyzed_logs": (int,),
             "hour": (datetime,),
+            "org_name": (str,),
+            "public_id": (str,),
         }
 
     attribute_map = {
         "analyzed_logs": "analyzed_logs",
         "hour": "hour",
+        "org_name": "org_name",
+        "public_id": "public_id",
     }
 
     read_only_vars = {}
@@ -39,6 +43,8 @@ class UsageAnalyzedLogsHour(ModelNormal):
         Keyword Args:
             analyzed_logs (int): [optional] Contains the number of analyzed logs.
             hour (datetime): [optional] The hour for the usage.
+            org_name (str): [optional] The organization name.
+            public_id (str): [optional] The organization public ID.
         """
         super().__init__(kwargs)
 

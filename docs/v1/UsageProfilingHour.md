@@ -9,5 +9,7 @@ The number of profiled hosts for each hour for a given organization.
 | **avg_container_agent_count** | **int**      | Get average number of container agents for that hour.                      | [optional] |
 | **host_count**                | **int**      | Contains the total number of profiled hosts reporting during a given hour. | [optional] |
 | **hour**                      | **datetime** | The hour for the usage.                                                    | [optional] |
+| **org_name**                  | **str**      | The organization name.                                                     | [optional] |
+| **public_id**                 | **str**      | The organization public ID.                                                | [optional] |
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
