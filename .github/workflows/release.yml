@@ -22,7 +22,6 @@ jobs:
         uses: actions/github-script@v5
         env:
           RELEASE_BRANCH: ${{ github.head_ref }}
-          SHA: $${ github.event.pull_request.head.sha }}
         with:
           github-token: ${{ steps.get_token.outputs.token }}
           script: |
@@ -32,7 +31,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: `refs/tags/${tagName}`,
-              sha: process.env.SHA,
+              sha: context.payload.pull_request.merge_commit_sha,
             });
 
             await github.rest.repos.createRelease({
