@@ -49,6 +49,7 @@ Get daily custom reports.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -97,7 +98,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -362,6 +363,7 @@ Get monthly custom reports.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -410,7 +412,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -523,6 +525,7 @@ Get specified daily custom reports.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -564,7 +567,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -590,6 +593,7 @@ Get specified monthly custom reports.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -631,7 +635,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -826,6 +830,7 @@ Get hourly usage for audit logs.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -877,7 +882,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -971,6 +976,7 @@ Get hourly usage for Cloud Security Posture Management (CSPM).
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -1022,7 +1028,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -1126,6 +1132,7 @@ Get hourly usage for Database Monitoring
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -1177,7 +1184,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -1753,6 +1760,7 @@ Get hourly usage for indexed logs by retention period.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -1804,7 +1812,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -2222,6 +2230,7 @@ Get hourly usage for Sensitive Data Scanner.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -2273,7 +2282,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 

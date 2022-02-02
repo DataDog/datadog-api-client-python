@@ -1023,6 +1023,7 @@ All URIs are relative to *https://api.datadoghq.com*
 - **synthetics_global_variable_read**: The ability to view, search and use in tests the list of global variables available for Synthetics.
 - **synthetics_global_variable_write**: The ability to create, edit, and delete global variables for Synthetics.
 - **synthetics_private_location_read**: The ability to view, search and use in tests the list of private locations available.
+- **synthetics_private_location_write**: The ability to create and delete private locations as well as seeing the associated installation guidelines.
 - **synthetics_read**: The ability to list and view configured Synthetic tests.
 - **synthetics_write**: The ability to create, edit, and delete Synthetic tests.
 - **timeseries_query**: The ability to query Timeseries data.

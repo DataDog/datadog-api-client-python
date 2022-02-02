@@ -68,7 +68,7 @@ class UsageMeteringApi(object):
         self._get_daily_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageCustomReportsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/daily_custom_reports",
                 "operation_id": "get_daily_custom_reports",
                 "http_method": "GET",
@@ -209,7 +209,7 @@ class UsageMeteringApi(object):
         self._get_monthly_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageCustomReportsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monthly_custom_reports",
                 "operation_id": "get_monthly_custom_reports",
                 "http_method": "GET",
@@ -302,7 +302,7 @@ class UsageMeteringApi(object):
         self._get_specified_daily_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSpecifiedCustomReportsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/daily_custom_reports/{report_id}",
                 "operation_id": "get_specified_daily_custom_reports",
                 "http_method": "GET",
@@ -326,7 +326,7 @@ class UsageMeteringApi(object):
         self._get_specified_monthly_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSpecifiedCustomReportsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monthly_custom_reports/{report_id}",
                 "operation_id": "get_specified_monthly_custom_reports",
                 "http_method": "GET",
@@ -439,7 +439,7 @@ class UsageMeteringApi(object):
         self._get_usage_audit_logs_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageAuditLogsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/audit_logs",
                 "operation_id": "get_usage_audit_logs",
                 "http_method": "GET",
@@ -491,7 +491,7 @@ class UsageMeteringApi(object):
         self._get_usage_cloud_security_posture_management_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageCloudSecurityPostureManagementResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/cspm",
                 "operation_id": "get_usage_cloud_security_posture_management",
                 "http_method": "GET",
@@ -549,7 +549,7 @@ class UsageMeteringApi(object):
         self._get_usage_dbm_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageDBMResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/dbm",
                 "operation_id": "get_usage_dbm",
                 "http_method": "GET",
@@ -787,7 +787,7 @@ class UsageMeteringApi(object):
         self._get_usage_logs_by_retention_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageLogsByRetentionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/logs-by-retention",
                 "operation_id": "get_usage_logs_by_retention",
                 "http_method": "GET",
@@ -966,7 +966,7 @@ class UsageMeteringApi(object):
         self._get_usage_sds_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSDSResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/sds",
                 "operation_id": "get_usage_sds",
                 "http_method": "GET",

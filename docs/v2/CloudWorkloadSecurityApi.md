@@ -19,7 +19,6 @@ Create a new Agent rule with the given parameters.
 
 ### Example
 
-- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -70,7 +69,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -97,7 +96,6 @@ Delete a specific Agent rule.
 
 ### Example
 
-- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -137,7 +135,7 @@ void (empty response body)
 
 ### Authorization
 
-[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -228,7 +226,6 @@ Get the details of a specific Agent rule.
 
 ### Example
 
-- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -269,7 +266,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -295,7 +292,6 @@ Get the list of Agent rules.
 
 ### Example
 
-- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -333,7 +329,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -359,7 +355,6 @@ Returns the Agent rule object when the request is successful.
 
 ### Example
 
-- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -411,7 +406,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 

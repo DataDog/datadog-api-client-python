@@ -49,7 +49,7 @@ class SyntheticsApi(object):
         self._create_global_variable_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsGlobalVariable,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/variables",
                 "operation_id": "create_global_variable",
                 "http_method": "POST",
@@ -69,7 +69,7 @@ class SyntheticsApi(object):
         self._create_private_location_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsPrivateLocationCreationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/private-locations",
                 "operation_id": "create_private_location",
                 "http_method": "POST",
@@ -153,7 +153,7 @@ class SyntheticsApi(object):
         self._delete_private_location_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/private-locations/{location_id}",
                 "operation_id": "delete_private_location",
                 "http_method": "DELETE",
@@ -197,7 +197,7 @@ class SyntheticsApi(object):
         self._edit_global_variable_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsGlobalVariable,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/variables/{variable_id}",
                 "operation_id": "edit_global_variable",
                 "http_method": "PUT",
@@ -435,7 +435,7 @@ class SyntheticsApi(object):
         self._get_private_location_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsPrivateLocation,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/private-locations/{location_id}",
                 "operation_id": "get_private_location",
                 "http_method": "GET",
@@ -459,7 +459,7 @@ class SyntheticsApi(object):
         self._get_synthetics_ci_batch_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsBatchDetails,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/ci/batch/{batch_id}",
                 "operation_id": "get_synthetics_ci_batch",
                 "http_method": "GET",
@@ -483,7 +483,7 @@ class SyntheticsApi(object):
         self._get_test_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsTestDetails,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/{public_id}",
                 "operation_id": "get_test",
                 "http_method": "GET",
@@ -558,7 +558,7 @@ class SyntheticsApi(object):
         self._trigger_ci_tests_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsTriggerCITestsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/trigger/ci",
                 "operation_id": "trigger_ci_tests",
                 "http_method": "POST",
@@ -578,7 +578,7 @@ class SyntheticsApi(object):
         self._trigger_tests_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsTriggerCITestsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/trigger",
                 "operation_id": "trigger_tests",
                 "http_method": "POST",
@@ -650,7 +650,7 @@ class SyntheticsApi(object):
         self._update_private_location_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsPrivateLocation,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/private-locations/{location_id}",
                 "operation_id": "update_private_location",
                 "http_method": "PUT",
