@@ -390,6 +390,18 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/synthetics-app
+  Scenario: Get an API test result returns result with failure object
+    Given there is a "synthetics_api_test_with_wrong_dns" in the system
+    And the "synthetics_api_test_with_wrong_dns" is triggered
+    And new "GetAPITestResult" request
+    And request contains "public_id" parameter from "synthetics_api_test_with_wrong_dns.public_id"
+    And request contains "result_id" parameter from "synthetics_api_test_with_wrong_dns_result.results[0].result_id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "result.failure.code" is equal to "DNS"
+    And the response "result.failure.message" is equal to "Error during DNS resolution (ENOTFOUND)."
+
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Get an API test returns "- Synthetic Monitoring is not activated for the user" response
     Given new "GetAPITest" request

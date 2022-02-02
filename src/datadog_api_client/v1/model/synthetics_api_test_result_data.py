@@ -10,12 +10,12 @@ from datadog_api_client.v1.model_utils import (
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.synthetics_error_code import SyntheticsErrorCode
+    from datadog_api_client.v1.model.synthetics_api_test_result_failure import SyntheticsApiTestResultFailure
     from datadog_api_client.v1.model.synthetics_ssl_certificate import SyntheticsSSLCertificate
     from datadog_api_client.v1.model.synthetics_test_process_status import SyntheticsTestProcessStatus
     from datadog_api_client.v1.model.synthetics_timing import SyntheticsTiming
 
-    globals()["SyntheticsErrorCode"] = SyntheticsErrorCode
+    globals()["SyntheticsApiTestResultFailure"] = SyntheticsApiTestResultFailure
     globals()["SyntheticsSSLCertificate"] = SyntheticsSSLCertificate
     globals()["SyntheticsTestProcessStatus"] = SyntheticsTestProcessStatus
     globals()["SyntheticsTiming"] = SyntheticsTiming
@@ -35,9 +35,8 @@ class SyntheticsAPITestResultData(ModelNormal):
         lazy_import()
         return {
             "cert": (SyntheticsSSLCertificate,),
-            "error_code": (SyntheticsErrorCode,),
-            "error_message": (str,),
             "event_type": (SyntheticsTestProcessStatus,),
+            "failure": (SyntheticsApiTestResultFailure,),
             "http_status_code": (int,),
             "request_headers": ({str: (dict,)},),
             "response_body": (str,),
@@ -48,9 +47,8 @@ class SyntheticsAPITestResultData(ModelNormal):
 
     attribute_map = {
         "cert": "cert",
-        "error_code": "errorCode",
-        "error_message": "errorMessage",
         "event_type": "eventType",
+        "failure": "failure",
         "http_status_code": "httpStatusCode",
         "request_headers": "requestHeaders",
         "response_body": "responseBody",
@@ -66,9 +64,8 @@ class SyntheticsAPITestResultData(ModelNormal):
 
         Keyword Args:
             cert (SyntheticsSSLCertificate): [optional]
-            error_code (SyntheticsErrorCode): [optional]
-            error_message (str): [optional] The API test error message.
             event_type (SyntheticsTestProcessStatus): [optional]
+            failure (SyntheticsApiTestResultFailure): [optional]
             http_status_code (int): [optional] The API test HTTP status code.
             request_headers ({str: (dict,)}): [optional] Request header object used for the API test.
             response_body (str): [optional] Response body returned for the API test.

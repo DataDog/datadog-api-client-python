@@ -10,9 +10,11 @@ from datadog_api_client.v1.model_utils import (
 
 
 def lazy_import():
+    from datadog_api_client.v1.model.synthetics_browser_test_result_failure import SyntheticsBrowserTestResultFailure
     from datadog_api_client.v1.model.synthetics_device import SyntheticsDevice
     from datadog_api_client.v1.model.synthetics_step_detail import SyntheticsStepDetail
 
+    globals()["SyntheticsBrowserTestResultFailure"] = SyntheticsBrowserTestResultFailure
     globals()["SyntheticsDevice"] = SyntheticsDevice
     globals()["SyntheticsStepDetail"] = SyntheticsStepDetail
 
@@ -35,6 +37,7 @@ class SyntheticsBrowserTestResultData(ModelNormal):
             "device": (SyntheticsDevice,),
             "duration": (float,),
             "error": (str,),
+            "failure": (SyntheticsBrowserTestResultFailure,),
             "passed": (bool,),
             "received_email_count": (int,),
             "start_url": (str,),
@@ -49,6 +52,7 @@ class SyntheticsBrowserTestResultData(ModelNormal):
         "device": "device",
         "duration": "duration",
         "error": "error",
+        "failure": "failure",
         "passed": "passed",
         "received_email_count": "receivedEmailCount",
         "start_url": "startUrl",
@@ -68,6 +72,7 @@ class SyntheticsBrowserTestResultData(ModelNormal):
             device (SyntheticsDevice): [optional]
             duration (float): [optional] Global duration in second of the browser test.
             error (str): [optional] Error returned for the browser test.
+            failure (SyntheticsBrowserTestResultFailure): [optional]
             passed (bool): [optional] Whether or not the browser test was conducted.
             received_email_count (int): [optional] The amount of email received during the browser test.
             start_url (str): [optional] Starting URL for the browser test.
