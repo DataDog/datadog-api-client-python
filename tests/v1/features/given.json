@@ -130,5 +130,29 @@
     "key": "synthetics_api_test",
     "tag": "Synthetics",
     "operationId": "CreateSyntheticsAPITest"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"message\": \"Testing wrong DNS error\",\n  \"name\": \"{{ unique }}\",\n  \"tags\": [],\n  \"type\": \"api\",\n  \"subtype\": \"http\",\n  \"locations\": [\"aws:eu-west-3\"],\n  \"config\": {\n    \"assertions\": [\n      {\n        \"operator\": \"lessThan\",\n        \"type\": \"responseTime\",\n        \"target\": 1000\n      }\n    ],\n    \"request\": {\n      \"method\": \"GET\",\n      \"url\": \"https://app.datadfoghq.com\"\n    }\n  },\n  \"options\": {\n    \"tick_every\": 86400,\n    \"monitor_options\": {\n      \"renotify_interval\": 0\n    },\n    \"min_failure_duration\": 0,\n    \"min_location_failed\": 1\n  }\n}\n"
+      }
+    ],
+    "step": "there is a \"synthetics_api_test_with_wrong_dns\" in the system",
+    "key": "synthetics_api_test_with_wrong_dns",
+    "tag": "Synthetics",
+    "operationId": "CreateSyntheticsAPITest"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"tests\": [{\"public_id\": \"{{ synthetics_api_test_with_wrong_dns.public_id }}\"}]}"
+      }
+    ],
+    "step": "the \"synthetics_api_test_with_wrong_dns\" is triggered",
+    "key": "synthetics_api_test_with_wrong_dns_result",
+    "tag": "Synthetics",
+    "operationId": "TriggerTests"
   }
 ]
