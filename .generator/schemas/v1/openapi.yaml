@@ -16095,6 +16095,8 @@ components:
               global variables for Synthetics.
             synthetics_private_location_read: The ability to view, search and use
               in tests the list of private locations available.
+            synthetics_private_location_write: The ability to create and delete private
+              locations as well as seeing the associated installation guidelines.
             synthetics_read: The ability to list and view configured Synthetic tests.
             synthetics_write: The ability to create, edit, and delete Synthetic tests.
             timeseries_query: The ability to query Timeseries data.
@@ -16699,6 +16701,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Too many requests
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - usage_read
       summary: Get the list of available daily custom reports
       tags:
       - Usage Metering
@@ -16744,6 +16751,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Too many requests
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - usage_read
       summary: Get specified daily custom reports
       tags:
       - Usage Metering
@@ -18130,6 +18142,10 @@ paths:
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ: []
       summary: Get the total number of active hosts
       tags:
       - Hosts
@@ -21683,6 +21699,11 @@ paths:
           description: Monitor Not Found error
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - monitors_read
       summary: Get all downtimes for a monitor
       tags:
       - Downtimes
@@ -21741,6 +21762,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Too many requests
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - usage_read
       summary: Get the list of available monthly custom reports
       tags:
       - Usage Metering
@@ -21792,6 +21818,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Too many requests
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - usage_read
       summary: Get specified monthly custom reports
       tags:
       - Usage Metering
@@ -21920,6 +21951,10 @@ paths:
           description: Authentication Error
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ: []
       summary: Get all notebooks
       tags:
       - Notebooks
@@ -22087,6 +22122,10 @@ paths:
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ: []
       summary: Get a notebook
       tags:
       - Notebooks
@@ -23369,6 +23408,11 @@ paths:
           description: Batch does not exist.
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - synthetics_read
       summary: Get details of batch
       tags:
       - Synthetics
@@ -23433,6 +23477,11 @@ paths:
           description: Private locations are not activated for the user
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - synthetics_private_location_write
       summary: Create a private location
       tags:
       - Synthetics
@@ -23468,6 +23517,11 @@ paths:
             - Private location does not exist'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - synthetics_private_location_write
       summary: Delete a private location
       tags:
       - Synthetics
@@ -23501,6 +23555,11 @@ paths:
             - Private location does not exist'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - synthetics_private_location_read
       summary: Get a private location
       tags:
       - Synthetics
@@ -23541,6 +23600,11 @@ paths:
             - Private location does not exist'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - synthetics_private_location_write
       summary: Edit a private location
       tags:
       - Synthetics
@@ -24251,6 +24315,11 @@ paths:
           description: Bad Request
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - synthetics_write
       summary: Trigger Synthetics tests
       tags:
       - Synthetics
@@ -24291,6 +24360,11 @@ paths:
           description: JSON format is wrong
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - synthetics_write
       summary: Trigger tests from CI/CD pipelines
       tags:
       - Synthetics
@@ -24332,6 +24406,11 @@ paths:
             - Test is not owned by the user'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - synthetics_read
       summary: Get a test configuration
       tags:
       - Synthetics
@@ -24578,6 +24657,11 @@ paths:
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - synthetics_global_variable_write
       summary: Create a global variable
       tags:
       - Synthetics
@@ -24714,6 +24798,11 @@ paths:
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - synthetics_global_variable_write
       summary: Edit a global variable
       tags:
       - Synthetics
@@ -25173,6 +25262,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Too many requests
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - usage_read
       summary: Get hourly usage for audit logs
       tags:
       - Usage Metering
@@ -25333,6 +25427,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Too many requests
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - usage_read
       summary: Get hourly usage for CSPM
       tags:
       - Usage Metering
@@ -25446,6 +25545,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Too many requests
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - usage_read
       summary: Get hourly usage for Database Monitoring
       tags:
       - Usage Metering
@@ -25981,6 +26085,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Too many requests
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - usage_read
       summary: Get hourly logs usage by retention
       tags:
       - Usage Metering
@@ -26485,6 +26594,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Too many requests
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - usage_read
       summary: Get hourly usage for Sensitive Data Scanner
       tags:
       - Usage Metering

@@ -69,7 +69,7 @@ class NotebooksApi(object):
         self._get_notebook_endpoint = _Endpoint(
             settings={
                 "response_type": (NotebookResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/notebooks/{notebook_id}",
                 "operation_id": "get_notebook",
                 "http_method": "GET",
@@ -93,7 +93,7 @@ class NotebooksApi(object):
         self._list_notebooks_endpoint = _Endpoint(
             settings={
                 "response_type": (NotebooksResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/notebooks",
                 "operation_id": "list_notebooks",
                 "http_method": "GET",

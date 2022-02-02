@@ -36,7 +36,7 @@ class CloudWorkloadSecurityApi(object):
         self._create_cloud_workload_security_agent_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentRuleResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules",
                 "operation_id": "create_cloud_workload_security_agent_rule",
                 "http_method": "POST",
@@ -56,7 +56,7 @@ class CloudWorkloadSecurityApi(object):
         self._delete_cloud_workload_security_agent_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules/{agent_rule_id}",
                 "operation_id": "delete_cloud_workload_security_agent_rule",
                 "http_method": "DELETE",
@@ -97,7 +97,7 @@ class CloudWorkloadSecurityApi(object):
         self._get_cloud_workload_security_agent_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentRuleResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules/{agent_rule_id}",
                 "operation_id": "get_cloud_workload_security_agent_rule",
                 "http_method": "GET",
@@ -121,7 +121,7 @@ class CloudWorkloadSecurityApi(object):
         self._list_cloud_workload_security_agent_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentRulesListResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules",
                 "operation_id": "list_cloud_workload_security_agent_rules",
                 "http_method": "GET",
@@ -138,7 +138,7 @@ class CloudWorkloadSecurityApi(object):
         self._update_cloud_workload_security_agent_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentRuleResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules/{agent_rule_id}",
                 "operation_id": "update_cloud_workload_security_agent_rule",
                 "http_method": "PATCH",

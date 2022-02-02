@@ -40,6 +40,7 @@ Create a Synthetics global variable.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -102,7 +103,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -128,6 +129,7 @@ Create a new Synthetics private location.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -172,7 +174,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -655,6 +657,7 @@ Delete a Synthetics private location.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -694,7 +697,7 @@ void (empty response body)
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -789,6 +792,7 @@ Edit a Synthetics global variable.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -853,7 +857,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -1388,6 +1392,7 @@ Get a Synthetics private location.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -1428,7 +1433,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -1453,6 +1458,7 @@ Get a batch's updated details.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -1493,7 +1499,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -1518,6 +1524,7 @@ Get the detailed configuration associated with a Synthetics test.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -1558,7 +1565,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -1774,6 +1781,7 @@ Trigger a set of Synthetics tests for continuous integration.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -1857,7 +1865,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -1882,6 +1890,7 @@ Trigger a set of Synthetics tests.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -1942,7 +1951,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -2361,6 +2370,7 @@ Edit a Synthetics private location.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -2407,7 +2417,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 

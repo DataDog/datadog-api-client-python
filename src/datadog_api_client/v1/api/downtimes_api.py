@@ -135,7 +135,7 @@ class DowntimesApi(object):
         self._list_monitor_downtimes_endpoint = _Endpoint(
             settings={
                 "response_type": ([Downtime],),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monitor/{monitor_id}/downtimes",
                 "operation_id": "list_monitor_downtimes",
                 "http_method": "GET",

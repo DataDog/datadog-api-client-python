@@ -25,7 +25,7 @@ class HostsApi(object):
         self._get_host_totals_endpoint = _Endpoint(
             settings={
                 "response_type": (HostTotals,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/hosts/totals",
                 "operation_id": "get_host_totals",
                 "http_method": "GET",

@@ -577,6 +577,7 @@ All URIs are relative to *https://api.datadoghq.com*
 - **security_monitoring_rules_read**: The ability to read Detection Rules.
 - **security_monitoring_rules_write**: The ability to create and edit Detection Rules.
 - **security_monitoring_signals_read**: The ability to view Security Signals.
+- **usage_read**: The ability to view your organization's usage and usage attribution.
 - **user_access_invite**: The ability to invite other users to your organization.
 - **user_access_manage**: The ability to disable users, manage user roles, and manage SAML-to-role mappings.
 
