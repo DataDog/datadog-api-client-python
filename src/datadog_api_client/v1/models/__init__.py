@@ -284,6 +284,30 @@ from datadog_api_client.v1.model.metrics_query_response import MetricsQueryRespo
 from datadog_api_client.v1.model.metrics_query_unit import MetricsQueryUnit
 from datadog_api_client.v1.model.monitor import Monitor
 from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
+from datadog_api_client.v1.model.monitor_formula_and_function_event_aggregation import (
+    MonitorFormulaAndFunctionEventAggregation,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition import (
+    MonitorFormulaAndFunctionEventQueryDefinition,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition_compute import (
+    MonitorFormulaAndFunctionEventQueryDefinitionCompute,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition_search import (
+    MonitorFormulaAndFunctionEventQueryDefinitionSearch,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_event_query_group_by import (
+    MonitorFormulaAndFunctionEventQueryGroupBy,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_event_query_group_by_sort import (
+    MonitorFormulaAndFunctionEventQueryGroupBySort,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_events_data_source import (
+    MonitorFormulaAndFunctionEventsDataSource,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_query_definition import (
+    MonitorFormulaAndFunctionQueryDefinition,
+)
 from datadog_api_client.v1.model.monitor_group_search_response import MonitorGroupSearchResponse
 from datadog_api_client.v1.model.monitor_group_search_response_counts import MonitorGroupSearchResponseCounts
 from datadog_api_client.v1.model.monitor_group_search_result import MonitorGroupSearchResult

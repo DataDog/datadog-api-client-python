@@ -307,6 +307,9 @@ with ApiClient(configuration) as api_client:
                 warning_recovery=3.14,
             ),
             timeout_h=1,
+            variables=[
+                MonitorFormulaAndFunctionQueryDefinition(),
+            ],
         ),
         priority=1,
         query="avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
@@ -814,6 +817,9 @@ with ApiClient(configuration) as api_client:
                 warning_recovery=3.14,
             ),
             timeout_h=1,
+            variables=[
+                MonitorFormulaAndFunctionQueryDefinition(),
+            ],
         ),
         priority=1,
         query="query_example",
@@ -934,6 +940,9 @@ with ApiClient(configuration) as api_client:
                 warning_recovery=3.14,
             ),
             timeout_h=1,
+            variables=[
+                MonitorFormulaAndFunctionQueryDefinition(),
+            ],
         ),
         priority=1,
         query="avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
