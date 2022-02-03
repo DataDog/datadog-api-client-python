@@ -12,12 +12,16 @@ from datadog_api_client.v1.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
+    from datadog_api_client.v1.model.monitor_formula_and_function_query_definition import (
+        MonitorFormulaAndFunctionQueryDefinition,
+    )
     from datadog_api_client.v1.model.monitor_options_aggregation import MonitorOptionsAggregation
     from datadog_api_client.v1.model.monitor_renotify_status_type import MonitorRenotifyStatusType
     from datadog_api_client.v1.model.monitor_threshold_window_options import MonitorThresholdWindowOptions
     from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
 
     globals()["MonitorDeviceID"] = MonitorDeviceID
+    globals()["MonitorFormulaAndFunctionQueryDefinition"] = MonitorFormulaAndFunctionQueryDefinition
     globals()["MonitorOptionsAggregation"] = MonitorOptionsAggregation
     globals()["MonitorRenotifyStatusType"] = MonitorRenotifyStatusType
     globals()["MonitorThresholdWindowOptions"] = MonitorThresholdWindowOptions
@@ -99,6 +103,7 @@ class MonitorOptions(ModelNormal):
                 int,
                 none_type,
             ),
+            "variables": ([MonitorFormulaAndFunctionQueryDefinition],),
         }
 
     attribute_map = {
@@ -126,6 +131,7 @@ class MonitorOptions(ModelNormal):
         "threshold_windows": "threshold_windows",
         "thresholds": "thresholds",
         "timeout_h": "timeout_h",
+        "variables": "variables",
     }
 
     read_only_vars = {
@@ -160,6 +166,7 @@ class MonitorOptions(ModelNormal):
             threshold_windows (MonitorThresholdWindowOptions): [optional]
             thresholds (MonitorThresholds): [optional]
             timeout_h (int, none_type): [optional] The number of hours of the monitor not reporting data before it automatically resolves from a triggered state. The minimum allowed value is 0 hours. The maximum allowed value is 24 hours.
+            variables ([MonitorFormulaAndFunctionQueryDefinition]): [optional] List of requests that can be used in the monitor query. **This feature is currently in beta.**
         """
         super().__init__(kwargs)
 
