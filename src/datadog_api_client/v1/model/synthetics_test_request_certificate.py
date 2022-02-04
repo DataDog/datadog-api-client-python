@@ -44,9 +44,10 @@ class SyntheticsTestRequestCertificate(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsTestRequestCertificate - a model defined in OpenAPI
 
-        Keyword Args:
-            cert (SyntheticsTestRequestCertificateItem): [optional]
-            key (SyntheticsTestRequestCertificateItem): [optional]
+
+        :type cert: SyntheticsTestRequestCertificateItem, optional
+
+        :type key: SyntheticsTestRequestCertificateItem, optional
         """
         super().__init__(kwargs)
 

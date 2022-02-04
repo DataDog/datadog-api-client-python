@@ -42,12 +42,21 @@ class UsageDBMHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageDBMHour - a model defined in OpenAPI
 
-        Keyword Args:
-            dbm_host_count (int): [optional] The total number of Database Monitoring host hours from the start of the given hour’s month until the given hour.
-            dbm_queries_count (int): [optional] The total number of normalized Database Monitoring queries from the start of the given hour’s month until the given hour.
-            hour (datetime): [optional] The hour for the usage.
-            org_name (str): [optional] The organization name.
-            public_id (str): [optional] The organization public ID.
+
+        :param dbm_host_count: The total number of Database Monitoring host hours from the start of the given hour’s month until the given hour.
+        :type dbm_host_count: int, optional
+
+        :param dbm_queries_count: The total number of normalized Database Monitoring queries from the start of the given hour’s month until the given hour.
+        :type dbm_queries_count: int, optional
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
         """
         super().__init__(kwargs)
 

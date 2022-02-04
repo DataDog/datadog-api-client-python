@@ -47,15 +47,30 @@ class AzureAccount(ModelNormal):
     def __init__(self, *args, **kwargs):
         """AzureAccount - a model defined in OpenAPI
 
-        Keyword Args:
-            automute (bool): [optional] Silence monitors for expected Azure VM shutdowns.
-            client_id (str): [optional] Your Azure web application ID.
-            client_secret (str): [optional] Your Azure web application secret key.
-            errors ([str]): [optional] Errors in your configuration.
-            host_filters (str): [optional] Limit the Azure instances that are pulled into Datadog by using tags. Only hosts that match one of the defined tags are imported into Datadog.
-            new_client_id (str): [optional] Your New Azure web application ID.
-            new_tenant_name (str): [optional] Your New Azure Active Directory ID.
-            tenant_name (str): [optional] Your Azure Active Directory ID.
+
+        :param automute: Silence monitors for expected Azure VM shutdowns.
+        :type automute: bool, optional
+
+        :param client_id: Your Azure web application ID.
+        :type client_id: str, optional
+
+        :param client_secret: Your Azure web application secret key.
+        :type client_secret: str, optional
+
+        :param errors: Errors in your configuration.
+        :type errors: [str], optional
+
+        :param host_filters: Limit the Azure instances that are pulled into Datadog by using tags. Only hosts that match one of the defined tags are imported into Datadog.
+        :type host_filters: str, optional
+
+        :param new_client_id: Your New Azure web application ID.
+        :type new_client_id: str, optional
+
+        :param new_tenant_name: Your New Azure Active Directory ID.
+        :type new_tenant_name: str, optional
+
+        :param tenant_name: Your Azure Active Directory ID.
+        :type tenant_name: str, optional
         """
         super().__init__(kwargs)
 

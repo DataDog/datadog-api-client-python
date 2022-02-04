@@ -50,15 +50,23 @@ class LogsStringBuilderProcessor(ModelNormal):
     def __init__(self, target, template, type, *args, **kwargs):
         """LogsStringBuilderProcessor - a model defined in OpenAPI
 
-        Args:
-            target (str): The name of the attribute that contains the result of the template.
-            template (str): A formula with one or more attributes and raw text.
-            type (LogsStringBuilderProcessorType):
 
-        Keyword Args:
-            is_enabled (bool): [optional] Whether or not the processor is enabled. If omitted the server will use the default value of False.
-            is_replace_missing (bool): [optional] If true, it replaces all missing attributes of `template` by an empty string. If `false` (default), skips the operation for missing attributes. If omitted the server will use the default value of False.
-            name (str): [optional] Name of the processor.
+        :param target: The name of the attribute that contains the result of the template.
+        :type target: str
+
+        :param template: A formula with one or more attributes and raw text.
+        :type template: str
+
+        :type type: LogsStringBuilderProcessorType
+
+        :param is_enabled: Whether or not the processor is enabled. If omitted the server will use the default value of False.
+        :type is_enabled: bool, optional
+
+        :param is_replace_missing: If true, it replaces all missing attributes of `template` by an empty string. If `false` (default), skips the operation for missing attributes. If omitted the server will use the default value of False.
+        :type is_replace_missing: bool, optional
+
+        :param name: Name of the processor.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

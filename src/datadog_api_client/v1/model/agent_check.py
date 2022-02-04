@@ -32,12 +32,8 @@ class AgentCheck(ModelSimple):
         """AgentCheck - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] ([bool, date, datetime, dict, float, int, list, str, none_type]): Array of strings.
-
-        Keyword Args:
-            value ([bool, date, datetime, dict, float, int, list, str, none_type]): Array of strings.
+        :param value: Array of strings.
+        :type value: [bool, date, datetime, dict, float, int, list, str, none_type]
         """
         super().__init__(kwargs)
 

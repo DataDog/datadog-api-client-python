@@ -35,12 +35,8 @@ class UsageSortDirection(ModelSimple):
         """UsageSortDirection - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The direction to sort by. If omitted defaults to "desc". Must be one of ["desc", "asc"].
-
-        Keyword Args:
-            value (str): The direction to sort by. If omitted defaults to "desc". Must be one of ["desc", "asc"].
+        :param value: The direction to sort by. If omitted defaults to "desc". Must be one of ["desc", "asc"].
+        :type value: str
         """
         super().__init__(kwargs)
 

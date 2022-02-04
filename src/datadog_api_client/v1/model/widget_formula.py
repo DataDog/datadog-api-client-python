@@ -52,14 +52,19 @@ class WidgetFormula(ModelNormal):
     def __init__(self, formula, *args, **kwargs):
         """WidgetFormula - a model defined in OpenAPI
 
-        Args:
-            formula (str): String expression built from queries, formulas, and functions.
 
-        Keyword Args:
-            alias (str): [optional] Expression alias.
-            cell_display_mode (TableWidgetCellDisplayMode): [optional]
-            conditional_formats ([WidgetConditionalFormat]): [optional] List of conditional formats.
-            limit (WidgetFormulaLimit): [optional]
+        :param formula: String expression built from queries, formulas, and functions.
+        :type formula: str
+
+        :param alias: Expression alias.
+        :type alias: str, optional
+
+        :type cell_display_mode: TableWidgetCellDisplayMode, optional
+
+        :param conditional_formats: List of conditional formats.
+        :type conditional_formats: [WidgetConditionalFormat], optional
+
+        :type limit: WidgetFormulaLimit, optional
         """
         super().__init__(kwargs)
 

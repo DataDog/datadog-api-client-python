@@ -48,15 +48,30 @@ class UsageLogsHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageLogsHour - a model defined in OpenAPI
 
-        Keyword Args:
-            billable_ingested_bytes (int): [optional] Contains the number of billable log bytes ingested.
-            hour (datetime): [optional] The hour for the usage.
-            indexed_events_count (int): [optional] Contains the number of log events indexed.
-            ingested_events_bytes (int): [optional] Contains the number of log bytes ingested.
-            logs_live_indexed_count (int): [optional] Contains the number of live log events indexed (data available as of December 1, 2020).
-            logs_live_ingested_bytes (int): [optional] Contains the number of live log bytes ingested (data available as of December 1, 2020).
-            logs_rehydrated_indexed_count (int): [optional] Contains the number of rehydrated log events indexed (data available as of December 1, 2020).
-            logs_rehydrated_ingested_bytes (int): [optional] Contains the number of rehydrated log bytes ingested (data available as of December 1, 2020).
+
+        :param billable_ingested_bytes: Contains the number of billable log bytes ingested.
+        :type billable_ingested_bytes: int, optional
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param indexed_events_count: Contains the number of log events indexed.
+        :type indexed_events_count: int, optional
+
+        :param ingested_events_bytes: Contains the number of log bytes ingested.
+        :type ingested_events_bytes: int, optional
+
+        :param logs_live_indexed_count: Contains the number of live log events indexed (data available as of December 1, 2020).
+        :type logs_live_indexed_count: int, optional
+
+        :param logs_live_ingested_bytes: Contains the number of live log bytes ingested (data available as of December 1, 2020).
+        :type logs_live_ingested_bytes: int, optional
+
+        :param logs_rehydrated_indexed_count: Contains the number of rehydrated log events indexed (data available as of December 1, 2020).
+        :type logs_rehydrated_indexed_count: int, optional
+
+        :param logs_rehydrated_ingested_bytes: Contains the number of rehydrated log bytes ingested (data available as of December 1, 2020).
+        :type logs_rehydrated_ingested_bytes: int, optional
         """
         super().__init__(kwargs)
 

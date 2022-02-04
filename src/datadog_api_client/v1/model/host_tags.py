@@ -35,9 +35,12 @@ class HostTags(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HostTags - a model defined in OpenAPI
 
-        Keyword Args:
-            host (str): [optional] Your host name.
-            tags ([str]): [optional] A list of tags to apply to the host.
+
+        :param host: Your host name.
+        :type host: str, optional
+
+        :param tags: A list of tags to apply to the host.
+        :type tags: [str], optional
         """
         super().__init__(kwargs)
 

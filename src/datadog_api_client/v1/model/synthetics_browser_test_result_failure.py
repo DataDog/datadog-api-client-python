@@ -42,9 +42,11 @@ class SyntheticsBrowserTestResultFailure(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsBrowserTestResultFailure - a model defined in OpenAPI
 
-        Keyword Args:
-            code (SyntheticsBrowserTestFailureCode): [optional]
-            message (str): [optional] The browser test error message.
+
+        :type code: SyntheticsBrowserTestFailureCode, optional
+
+        :param message: The browser test error message.
+        :type message: str, optional
         """
         super().__init__(kwargs)
 

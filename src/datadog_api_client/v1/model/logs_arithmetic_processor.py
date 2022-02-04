@@ -50,15 +50,23 @@ class LogsArithmeticProcessor(ModelNormal):
     def __init__(self, expression, target, type, *args, **kwargs):
         """LogsArithmeticProcessor - a model defined in OpenAPI
 
-        Args:
-            expression (str): Arithmetic operation between one or more log attributes.
-            target (str): Name of the attribute that contains the result of the arithmetic operation.
-            type (LogsArithmeticProcessorType):
 
-        Keyword Args:
-            is_enabled (bool): [optional] Whether or not the processor is enabled. If omitted the server will use the default value of False.
-            is_replace_missing (bool): [optional] If `true`, it replaces all missing attributes of expression by `0`, `false` skip the operation if an attribute is missing. If omitted the server will use the default value of False.
-            name (str): [optional] Name of the processor.
+        :param expression: Arithmetic operation between one or more log attributes.
+        :type expression: str
+
+        :param target: Name of the attribute that contains the result of the arithmetic operation.
+        :type target: str
+
+        :type type: LogsArithmeticProcessorType
+
+        :param is_enabled: Whether or not the processor is enabled. If omitted the server will use the default value of False.
+        :type is_enabled: bool, optional
+
+        :param is_replace_missing: If `true`, it replaces all missing attributes of expression by `0`, `false` skip the operation if an attribute is missing. If omitted the server will use the default value of False.
+        :type is_replace_missing: bool, optional
+
+        :param name: Name of the processor.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

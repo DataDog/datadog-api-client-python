@@ -37,12 +37,8 @@ class UsageSort(ModelSimple):
         """UsageSort - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The field to sort by. If omitted defaults to "start_date". Must be one of ["computed_on", "size", "start_date", "end_date"].
-
-        Keyword Args:
-            value (str): The field to sort by. If omitted defaults to "start_date". Must be one of ["computed_on", "size", "start_date", "end_date"].
+        :param value: The field to sort by. If omitted defaults to "start_date". Must be one of ["computed_on", "size", "start_date", "end_date"].
+        :type value: str
         """
         super().__init__(kwargs)
 

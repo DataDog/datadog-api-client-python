@@ -38,9 +38,12 @@ class MonitorSearchResultNotification(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MonitorSearchResultNotification - a model defined in OpenAPI
 
-        Keyword Args:
-            handle (str): [optional] The email address that received the notification.
-            name (str): [optional] The username receiving the notification
+
+        :param handle: The email address that received the notification.
+        :type handle: str, optional
+
+        :param name: The username receiving the notification
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

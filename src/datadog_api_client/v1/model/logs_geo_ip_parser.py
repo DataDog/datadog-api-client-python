@@ -48,14 +48,18 @@ class LogsGeoIPParser(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """LogsGeoIPParser - a model defined in OpenAPI
 
-        Args:
-            type (LogsGeoIPParserType):
 
-        Keyword Args:
-            sources ([str]): Array of source attributes. Defaults to ["network.client.ip"].
-            target (str): Name of the parent attribute that contains all the extracted details from the `sources`. Defaults to "network.client.geoip".
-            is_enabled (bool): [optional] Whether or not the processor is enabled. If omitted the server will use the default value of False.
-            name (str): [optional] Name of the processor.
+        :type type: LogsGeoIPParserType
+        :param sources: Array of source attributes. Defaults to ["network.client.ip"].
+        :type sources: [str]
+        :param target: Name of the parent attribute that contains all the extracted details from the `sources`. Defaults to "network.client.geoip".
+        :type target: str
+
+        :param is_enabled: Whether or not the processor is enabled. If omitted the server will use the default value of False.
+        :type is_enabled: bool, optional
+
+        :param name: Name of the processor.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

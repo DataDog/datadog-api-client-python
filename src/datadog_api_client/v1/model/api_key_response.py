@@ -40,8 +40,8 @@ class ApiKeyResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ApiKeyResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            api_key (ApiKey): [optional]
+
+        :type api_key: ApiKey, optional
         """
         super().__init__(kwargs)
 

@@ -54,14 +54,21 @@ class IncidentCreateAttributes(ModelNormal):
     def __init__(self, customer_impacted, title, *args, **kwargs):
         """IncidentCreateAttributes - a model defined in OpenAPI
 
-        Args:
-            customer_impacted (bool): A flag indicating whether the incident caused customer impact.
-            title (str): The title of the incident, which summarizes what happened.
 
-        Keyword Args:
-            fields ({str: (IncidentFieldAttributes,)}): [optional] A condensed view of the user-defined fields for which to create initial selections.
-            initial_cells ([IncidentTimelineCellCreateAttributes]): [optional] An array of initial timeline cells to be placed at the beginning of the incident timeline.
-            notification_handles ([IncidentNotificationHandle]): [optional] Notification handles that will be notified of the incident at creation.
+        :param customer_impacted: A flag indicating whether the incident caused customer impact.
+        :type customer_impacted: bool
+
+        :param title: The title of the incident, which summarizes what happened.
+        :type title: str
+
+        :param fields: A condensed view of the user-defined fields for which to create initial selections.
+        :type fields: {str: (IncidentFieldAttributes,)}, optional
+
+        :param initial_cells: An array of initial timeline cells to be placed at the beginning of the incident timeline.
+        :type initial_cells: [IncidentTimelineCellCreateAttributes], optional
+
+        :param notification_handles: Notification handles that will be notified of the incident at creation.
+        :type notification_handles: [IncidentNotificationHandle], optional
         """
         super().__init__(kwargs)
 

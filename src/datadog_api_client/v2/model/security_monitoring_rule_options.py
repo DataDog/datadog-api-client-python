@@ -64,12 +64,16 @@ class SecurityMonitoringRuleOptions(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityMonitoringRuleOptions - a model defined in OpenAPI
 
-        Keyword Args:
-            detection_method (SecurityMonitoringRuleDetectionMethod): [optional]
-            evaluation_window (SecurityMonitoringRuleEvaluationWindow): [optional]
-            keep_alive (SecurityMonitoringRuleKeepAlive): [optional]
-            max_signal_duration (SecurityMonitoringRuleMaxSignalDuration): [optional]
-            new_value_options (SecurityMonitoringRuleNewValueOptions): [optional]
+
+        :type detection_method: SecurityMonitoringRuleDetectionMethod, optional
+
+        :type evaluation_window: SecurityMonitoringRuleEvaluationWindow, optional
+
+        :type keep_alive: SecurityMonitoringRuleKeepAlive, optional
+
+        :type max_signal_duration: SecurityMonitoringRuleMaxSignalDuration, optional
+
+        :type new_value_options: SecurityMonitoringRuleNewValueOptions, optional
         """
         super().__init__(kwargs)
 

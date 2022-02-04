@@ -33,8 +33,9 @@ class SyntheticsDeleteTestsPayload(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsDeleteTestsPayload - a model defined in OpenAPI
 
-        Keyword Args:
-            public_ids ([str]): [optional] An array of Synthetic test IDs you want to delete.
+
+        :param public_ids: An array of Synthetic test IDs you want to delete.
+        :type public_ids: [str], optional
         """
         super().__init__(kwargs)
 

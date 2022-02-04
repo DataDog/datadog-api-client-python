@@ -44,10 +44,14 @@ class NotebookMetadata(ModelNormal):
     def __init__(self, *args, **kwargs):
         """NotebookMetadata - a model defined in OpenAPI
 
-        Keyword Args:
-            is_template (bool): [optional] Whether or not the notebook is a template. If omitted the server will use the default value of False.
-            take_snapshots (bool): [optional] Whether or not the notebook takes snapshot image backups of the notebook's fixed-time graphs. If omitted the server will use the default value of False.
-            type (NotebookMetadataType): [optional]
+
+        :param is_template: Whether or not the notebook is a template. If omitted the server will use the default value of False.
+        :type is_template: bool, optional
+
+        :param take_snapshots: Whether or not the notebook takes snapshot image backups of the notebook's fixed-time graphs. If omitted the server will use the default value of False.
+        :type take_snapshots: bool, optional
+
+        :type type: NotebookMetadataType, optional
         """
         super().__init__(kwargs)
 

@@ -37,12 +37,8 @@ class WidgetServiceSummaryDisplayFormat(ModelSimple):
         """WidgetServiceSummaryDisplayFormat - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Number of columns to display. Must be one of ["one_column", "two_column", "three_column"].
-
-        Keyword Args:
-            value (str): Number of columns to display. Must be one of ["one_column", "two_column", "three_column"].
+        :param value: Number of columns to display. Must be one of ["one_column", "two_column", "three_column"].
+        :type value: str
         """
         super().__init__(kwargs)
 

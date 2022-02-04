@@ -44,10 +44,15 @@ class HostListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HostListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            host_list ([Host]): [optional] Array of hosts.
-            total_matching (int): [optional] Number of host matching the query.
-            total_returned (int): [optional] Number of host returned.
+
+        :param host_list: Array of hosts.
+        :type host_list: [Host], optional
+
+        :param total_matching: Number of host matching the query.
+        :type total_matching: int, optional
+
+        :param total_returned: Number of host returned.
+        :type total_returned: int, optional
         """
         super().__init__(kwargs)
 

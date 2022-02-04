@@ -48,13 +48,16 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
     def __init__(self, data_source, name, query, *args, **kwargs):
         """FormulaAndFunctionMetricQueryDefinition - a model defined in OpenAPI
 
-        Args:
-            data_source (FormulaAndFunctionMetricDataSource):
-            name (str): Name of the query for use in formulas.
-            query (str): Metrics query definition.
 
-        Keyword Args:
-            aggregator (FormulaAndFunctionMetricAggregation): [optional]
+        :type data_source: FormulaAndFunctionMetricDataSource
+
+        :param name: Name of the query for use in formulas.
+        :type name: str
+
+        :param query: Metrics query definition.
+        :type query: str
+
+        :type aggregator: FormulaAndFunctionMetricAggregation, optional
         """
         super().__init__(kwargs)
 

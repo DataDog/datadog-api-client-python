@@ -44,9 +44,11 @@ class MonthlyUsageAttributionResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MonthlyUsageAttributionResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            metadata (MonthlyUsageAttributionMetadata): [optional]
-            usage ([MonthlyUsageAttributionBody]): [optional] Get Usage Summary by tag(s).
+
+        :type metadata: MonthlyUsageAttributionMetadata, optional
+
+        :param usage: Get Usage Summary by tag(s).
+        :type usage: [MonthlyUsageAttributionBody], optional
         """
         super().__init__(kwargs)
 

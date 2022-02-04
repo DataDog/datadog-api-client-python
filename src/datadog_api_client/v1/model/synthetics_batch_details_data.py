@@ -48,10 +48,13 @@ class SyntheticsBatchDetailsData(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsBatchDetailsData - a model defined in OpenAPI
 
-        Keyword Args:
-            metadata (SyntheticsCIBatchMetadata): [optional]
-            results ([SyntheticsBatchResult]): [optional] List of results for the batch.
-            status (SyntheticsStatus): [optional]
+
+        :type metadata: SyntheticsCIBatchMetadata, optional
+
+        :param results: List of results for the batch.
+        :type results: [SyntheticsBatchResult], optional
+
+        :type status: SyntheticsStatus, optional
         """
         super().__init__(kwargs)
 

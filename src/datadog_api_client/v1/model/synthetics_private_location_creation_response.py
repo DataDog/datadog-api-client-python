@@ -50,10 +50,13 @@ class SyntheticsPrivateLocationCreationResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsPrivateLocationCreationResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            config (dict): [optional] Configuration skeleton for the private location. See installation instructions of the private location on how to use this configuration.
-            private_location (SyntheticsPrivateLocation): [optional]
-            result_encryption (SyntheticsPrivateLocationCreationResponseResultEncryption): [optional]
+
+        :param config: Configuration skeleton for the private location. See installation instructions of the private location on how to use this configuration.
+        :type config: dict, optional
+
+        :type private_location: SyntheticsPrivateLocation, optional
+
+        :type result_encryption: SyntheticsPrivateLocationCreationResponseResultEncryption, optional
         """
         super().__init__(kwargs)
 

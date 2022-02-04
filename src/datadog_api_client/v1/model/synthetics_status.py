@@ -37,12 +37,8 @@ class SyntheticsStatus(ModelSimple):
         """SyntheticsStatus - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Determines whether or not the batch has passed, failed, or is in progress. Must be one of ["passed", "skipped", "failed"].
-
-        Keyword Args:
-            value (str): Determines whether or not the batch has passed, failed, or is in progress. Must be one of ["passed", "skipped", "failed"].
+        :param value: Determines whether or not the batch has passed, failed, or is in progress. Must be one of ["passed", "skipped", "failed"].
+        :type value: str
         """
         super().__init__(kwargs)
 

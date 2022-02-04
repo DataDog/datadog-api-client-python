@@ -35,12 +35,8 @@ class QuerySortOrder(ModelSimple):
         """QuerySortOrder - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Direction of sort. If omitted defaults to "desc". Must be one of ["asc", "desc"].
-
-        Keyword Args:
-            value (str): Direction of sort. If omitted defaults to "desc". Must be one of ["asc", "desc"].
+        :param value: Direction of sort. If omitted defaults to "desc". Must be one of ["asc", "desc"].
+        :type value: str
         """
         super().__init__(kwargs)
 

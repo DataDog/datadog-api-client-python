@@ -38,12 +38,8 @@ class MetricCustomSpaceAggregation(ModelSimple):
         """MetricCustomSpaceAggregation - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): A space aggregation for use in query. Must be one of ["avg", "max", "min", "sum"].
-
-        Keyword Args:
-            value (str): A space aggregation for use in query. Must be one of ["avg", "max", "min", "sum"].
+        :param value: A space aggregation for use in query. Must be one of ["avg", "max", "min", "sum"].
+        :type value: str
         """
         super().__init__(kwargs)
 

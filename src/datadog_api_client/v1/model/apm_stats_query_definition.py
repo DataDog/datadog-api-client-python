@@ -54,16 +54,26 @@ class ApmStatsQueryDefinition(ModelNormal):
     def __init__(self, env, name, primary_tag, row_type, service, *args, **kwargs):
         """ApmStatsQueryDefinition - a model defined in OpenAPI
 
-        Args:
-            env (str): Environment name.
-            name (str): Operation name associated with service.
-            primary_tag (str): The organization's host group name and value.
-            row_type (ApmStatsQueryRowType):
-            service (str): Service name.
 
-        Keyword Args:
-            columns ([ApmStatsQueryColumnType]): [optional] Column properties used by the front end for display.
-            resource (str): [optional] Resource name.
+        :param env: Environment name.
+        :type env: str
+
+        :param name: Operation name associated with service.
+        :type name: str
+
+        :param primary_tag: The organization's host group name and value.
+        :type primary_tag: str
+
+        :type row_type: ApmStatsQueryRowType
+
+        :param service: Service name.
+        :type service: str
+
+        :param columns: Column properties used by the front end for display.
+        :type columns: [ApmStatsQueryColumnType], optional
+
+        :param resource: Resource name.
+        :type resource: str, optional
         """
         super().__init__(kwargs)
 

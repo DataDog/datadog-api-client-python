@@ -38,10 +38,15 @@ class UsageLambdaHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageLambdaHour - a model defined in OpenAPI
 
-        Keyword Args:
-            func_count (int): [optional] Contains the number of different functions for each region and AWS account.
-            hour (datetime): [optional] The hour for the usage.
-            invocations_sum (int): [optional] Contains the sum of invocations of all functions.
+
+        :param func_count: Contains the number of different functions for each region and AWS account.
+        :type func_count: int, optional
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param invocations_sum: Contains the sum of invocations of all functions.
+        :type invocations_sum: int, optional
         """
         super().__init__(kwargs)
 

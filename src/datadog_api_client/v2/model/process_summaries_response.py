@@ -44,9 +44,11 @@ class ProcessSummariesResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ProcessSummariesResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([ProcessSummary]): [optional] Array of process summary objects.
-            meta (ProcessSummariesMeta): [optional]
+
+        :param data: Array of process summary objects.
+        :type data: [ProcessSummary], optional
+
+        :type meta: ProcessSummariesMeta, optional
         """
         super().__init__(kwargs)
 

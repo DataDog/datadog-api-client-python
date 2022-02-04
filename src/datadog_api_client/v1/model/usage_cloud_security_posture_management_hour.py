@@ -64,15 +64,30 @@ class UsageCloudSecurityPostureManagementHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageCloudSecurityPostureManagementHour - a model defined in OpenAPI
 
-        Keyword Args:
-            aas_host_count (float, none_type): [optional] The number of Cloud Security Posture Management Azure app services hosts during a given hour.
-            azure_host_count (float, none_type): [optional] The number of Cloud Security Posture Management Azure hosts during a given hour.
-            compliance_host_count (float, none_type): [optional] The number of Cloud Security Posture Management hosts during a given hour.
-            container_count (float, none_type): [optional] The total number of Cloud Security Posture Management containers during a given hour.
-            host_count (float, none_type): [optional] The total number of Cloud Security Posture Management hosts during a given hour.
-            hour (datetime): [optional] The hour for the usage.
-            org_name (str): [optional] The organization name.
-            public_id (str): [optional] The organization public ID.
+
+        :param aas_host_count: The number of Cloud Security Posture Management Azure app services hosts during a given hour.
+        :type aas_host_count: float, none_type, optional
+
+        :param azure_host_count: The number of Cloud Security Posture Management Azure hosts during a given hour.
+        :type azure_host_count: float, none_type, optional
+
+        :param compliance_host_count: The number of Cloud Security Posture Management hosts during a given hour.
+        :type compliance_host_count: float, none_type, optional
+
+        :param container_count: The total number of Cloud Security Posture Management containers during a given hour.
+        :type container_count: float, none_type, optional
+
+        :param host_count: The total number of Cloud Security Posture Management hosts during a given hour.
+        :type host_count: float, none_type, optional
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
         """
         super().__init__(kwargs)
 

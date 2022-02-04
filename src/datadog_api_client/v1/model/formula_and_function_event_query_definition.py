@@ -62,15 +62,21 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
     def __init__(self, compute, data_source, name, *args, **kwargs):
         """FormulaAndFunctionEventQueryDefinition - a model defined in OpenAPI
 
-        Args:
-            compute (FormulaAndFunctionEventQueryDefinitionCompute):
-            data_source (FormulaAndFunctionEventsDataSource):
-            name (str): Name of the query for use in formulas.
 
-        Keyword Args:
-            group_by ([FormulaAndFunctionEventQueryGroupBy]): [optional] Group by options.
-            indexes ([str]): [optional] An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.
-            search (FormulaAndFunctionEventQueryDefinitionSearch): [optional]
+        :type compute: FormulaAndFunctionEventQueryDefinitionCompute
+
+        :type data_source: FormulaAndFunctionEventsDataSource
+
+        :param name: Name of the query for use in formulas.
+        :type name: str
+
+        :param group_by: Group by options.
+        :type group_by: [FormulaAndFunctionEventQueryGroupBy], optional
+
+        :param indexes: An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.
+        :type indexes: [str], optional
+
+        :type search: FormulaAndFunctionEventQueryDefinitionSearch, optional
         """
         super().__init__(kwargs)
 

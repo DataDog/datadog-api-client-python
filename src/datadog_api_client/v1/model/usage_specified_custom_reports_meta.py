@@ -40,8 +40,8 @@ class UsageSpecifiedCustomReportsMeta(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageSpecifiedCustomReportsMeta - a model defined in OpenAPI
 
-        Keyword Args:
-            page (UsageSpecifiedCustomReportsPage): [optional]
+
+        :type page: UsageSpecifiedCustomReportsPage, optional
         """
         super().__init__(kwargs)
 

@@ -47,15 +47,30 @@ class ProcessSummaryAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ProcessSummaryAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            cmdline (str): [optional] Process command line.
-            host (str): [optional] Host running the process.
-            pid (int): [optional] Process ID.
-            ppid (int): [optional] Parent process ID.
-            start (str): [optional] Time the process was started.
-            tags ([str]): [optional] List of tags associated with the process.
-            timestamp (str): [optional] Time the process was seen.
-            user (str): [optional] Process owner.
+
+        :param cmdline: Process command line.
+        :type cmdline: str, optional
+
+        :param host: Host running the process.
+        :type host: str, optional
+
+        :param pid: Process ID.
+        :type pid: int, optional
+
+        :param ppid: Parent process ID.
+        :type ppid: int, optional
+
+        :param start: Time the process was started.
+        :type start: str, optional
+
+        :param tags: List of tags associated with the process.
+        :type tags: [str], optional
+
+        :param timestamp: Time the process was seen.
+        :type timestamp: str, optional
+
+        :param user: Process owner.
+        :type user: str, optional
         """
         super().__init__(kwargs)
 

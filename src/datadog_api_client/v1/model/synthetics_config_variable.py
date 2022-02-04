@@ -48,14 +48,20 @@ class SyntheticsConfigVariable(ModelNormal):
     def __init__(self, name, type, *args, **kwargs):
         """SyntheticsConfigVariable - a model defined in OpenAPI
 
-        Args:
-            name (str): Name of the variable.
-            type (SyntheticsConfigVariableType):
 
-        Keyword Args:
-            example (str): [optional] Example for the variable.
-            id (str): [optional] ID of the variable for global variables.
-            pattern (str): [optional] Pattern of the variable.
+        :param name: Name of the variable.
+        :type name: str
+
+        :type type: SyntheticsConfigVariableType
+
+        :param example: Example for the variable.
+        :type example: str, optional
+
+        :param id: ID of the variable for global variables.
+        :type id: str, optional
+
+        :param pattern: Pattern of the variable.
+        :type pattern: str, optional
         """
         super().__init__(kwargs)
 

@@ -64,19 +64,34 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
     def __init__(self, data_source, env, name, operation_name, resource_name, service, stat, *args, **kwargs):
         """FormulaAndFunctionApmDependencyStatsQueryDefinition - a model defined in OpenAPI
 
-        Args:
-            data_source (FormulaAndFunctionApmDependencyStatsDataSource):
-            env (str): APM environment.
-            name (str): Name of query to use in formulas.
-            operation_name (str): Name of operation on service.
-            resource_name (str): APM resource.
-            service (str): APM service.
-            stat (FormulaAndFunctionApmDependencyStatName):
 
-        Keyword Args:
-            is_upstream (bool): [optional] Determines whether stats for upstream or downstream dependencies should be queried.
-            primary_tag_name (str): [optional] The name of the second primary tag used within APM; required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog.
-            primary_tag_value (str): [optional] Filter APM data by the second primary tag. `primary_tag_name` must also be specified.
+        :type data_source: FormulaAndFunctionApmDependencyStatsDataSource
+
+        :param env: APM environment.
+        :type env: str
+
+        :param name: Name of query to use in formulas.
+        :type name: str
+
+        :param operation_name: Name of operation on service.
+        :type operation_name: str
+
+        :param resource_name: APM resource.
+        :type resource_name: str
+
+        :param service: APM service.
+        :type service: str
+
+        :type stat: FormulaAndFunctionApmDependencyStatName
+
+        :param is_upstream: Determines whether stats for upstream or downstream dependencies should be queried.
+        :type is_upstream: bool, optional
+
+        :param primary_tag_name: The name of the second primary tag used within APM; required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog.
+        :type primary_tag_name: str, optional
+
+        :param primary_tag_value: Filter APM data by the second primary tag. `primary_tag_name` must also be specified.
+        :type primary_tag_value: str, optional
         """
         super().__init__(kwargs)
 

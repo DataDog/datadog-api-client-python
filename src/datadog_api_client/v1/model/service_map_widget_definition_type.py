@@ -34,12 +34,8 @@ class ServiceMapWidgetDefinitionType(ModelSimple):
         """ServiceMapWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the service map widget. If omitted defaults to "servicemap". Must be one of ["servicemap"].
-
-        Keyword Args:
-            value (str): Type of the service map widget. If omitted defaults to "servicemap". Must be one of ["servicemap"].
+        :param value: Type of the service map widget. If omitted defaults to "servicemap". Must be one of ["servicemap"].
+        :type value: str
         """
         super().__init__(kwargs)
 

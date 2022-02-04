@@ -40,8 +40,8 @@ class SLOCorrectionCreateRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOCorrectionCreateRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            data (SLOCorrectionCreateData): [optional]
+
+        :type data: SLOCorrectionCreateData, optional
         """
         super().__init__(kwargs)
 

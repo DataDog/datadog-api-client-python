@@ -33,10 +33,9 @@ class LogsArchiveOrderAttributes(ModelNormal):
     def __init__(self, archive_ids, *args, **kwargs):
         """LogsArchiveOrderAttributes - a model defined in OpenAPI
 
-        Args:
-            archive_ids ([str]): An ordered array of `<ARCHIVE_ID>` strings, the order of archive IDs in the array define the overall archives order for Datadog.
 
-        Keyword Args:
+        :param archive_ids: An ordered array of `<ARCHIVE_ID>` strings, the order of archive IDs in the array define the overall archives order for Datadog.
+        :type archive_ids: [str]
         """
         super().__init__(kwargs)
 

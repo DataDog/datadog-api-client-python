@@ -41,12 +41,8 @@ class FormulaAndFunctionApmDependencyStatName(ModelSimple):
         """FormulaAndFunctionApmDependencyStatName - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): APM statistic. Must be one of ["avg_duration", "avg_root_duration", "avg_spans_per_trace", "error_rate", "pct_exec_time", "pct_of_traces", "total_traces_count"].
-
-        Keyword Args:
-            value (str): APM statistic. Must be one of ["avg_duration", "avg_root_duration", "avg_spans_per_trace", "error_rate", "pct_exec_time", "pct_of_traces", "total_traces_count"].
+        :param value: APM statistic. Must be one of ["avg_duration", "avg_root_duration", "avg_spans_per_trace", "error_rate", "pct_exec_time", "pct_of_traces", "total_traces_count"].
+        :type value: str
         """
         super().__init__(kwargs)
 

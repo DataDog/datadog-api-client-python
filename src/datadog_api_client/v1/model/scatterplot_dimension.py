@@ -38,12 +38,8 @@ class ScatterplotDimension(ModelSimple):
         """ScatterplotDimension - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Dimension of the Scatterplot. Must be one of ["x", "y", "radius", "color"].
-
-        Keyword Args:
-            value (str): Dimension of the Scatterplot. Must be one of ["x", "y", "radius", "color"].
+        :param value: Dimension of the Scatterplot. Must be one of ["x", "y", "radius", "color"].
+        :type value: str
         """
         super().__init__(kwargs)
 

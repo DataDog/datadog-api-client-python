@@ -35,9 +35,12 @@ class SyntheticsTriggerCITestLocation(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsTriggerCITestLocation - a model defined in OpenAPI
 
-        Keyword Args:
-            id (int): [optional] Unique identifier of the location.
-            name (str): [optional] Name of the location.
+
+        :param id: Unique identifier of the location.
+        :type id: int, optional
+
+        :param name: Name of the location.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

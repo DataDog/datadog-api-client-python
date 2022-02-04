@@ -37,12 +37,8 @@ class WidgetVerticalAlign(ModelSimple):
         """WidgetVerticalAlign - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Vertical alignment. Must be one of ["center", "top", "bottom"].
-
-        Keyword Args:
-            value (str): Vertical alignment. Must be one of ["center", "top", "bottom"].
+        :param value: Vertical alignment. Must be one of ["center", "top", "bottom"].
+        :type value: str
         """
         super().__init__(kwargs)
 

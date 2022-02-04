@@ -41,12 +41,8 @@ class AWSNamespace(ModelSimple):
         """AWSNamespace - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The namespace associated with the tag filter entry. Must be one of ["elb", "application_elb", "sqs", "rds", "custom", "network_elb", "lambda"].
-
-        Keyword Args:
-            value (str): The namespace associated with the tag filter entry. Must be one of ["elb", "application_elb", "sqs", "rds", "custom", "network_elb", "lambda"].
+        :param value: The namespace associated with the tag filter entry. Must be one of ["elb", "application_elb", "sqs", "rds", "custom", "network_elb", "lambda"].
+        :type value: str
         """
         super().__init__(kwargs)
 

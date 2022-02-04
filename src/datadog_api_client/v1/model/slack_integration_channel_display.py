@@ -39,11 +39,18 @@ class SlackIntegrationChannelDisplay(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SlackIntegrationChannelDisplay - a model defined in OpenAPI
 
-        Keyword Args:
-            message (bool): [optional] Show the main body of the alert event. If omitted the server will use the default value of True.
-            notified (bool): [optional] Show the list of @-handles in the alert event. If omitted the server will use the default value of True.
-            snapshot (bool): [optional] Show the alert event's snapshot image. If omitted the server will use the default value of True.
-            tags (bool): [optional] Show the scopes on which the monitor alerted. If omitted the server will use the default value of True.
+
+        :param message: Show the main body of the alert event. If omitted the server will use the default value of True.
+        :type message: bool, optional
+
+        :param notified: Show the list of @-handles in the alert event. If omitted the server will use the default value of True.
+        :type notified: bool, optional
+
+        :param snapshot: Show the alert event's snapshot image. If omitted the server will use the default value of True.
+        :type snapshot: bool, optional
+
+        :param tags: Show the scopes on which the monitor alerted. If omitted the server will use the default value of True.
+        :type tags: bool, optional
         """
         super().__init__(kwargs)
 

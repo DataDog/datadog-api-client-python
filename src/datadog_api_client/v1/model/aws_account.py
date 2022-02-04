@@ -53,18 +53,39 @@ class AWSAccount(ModelNormal):
     def __init__(self, *args, **kwargs):
         """AWSAccount - a model defined in OpenAPI
 
-        Keyword Args:
-            access_key_id (str): [optional] Your AWS access key ID. Only required if your AWS account is a GovCloud or China account.
-            account_id (str): [optional] Your AWS Account ID without dashes.
-            account_specific_namespace_rules ({str: (bool,)}): [optional] An object, (in the form `{\"namespace1\":true/false, \"namespace2\":true/false}`), that enables or disables metric collection for specific AWS namespaces for this AWS account only.
-            cspm_resource_collection_enabled (bool): [optional] Whether Datadog collects cloud security posture management resources from your AWS account. This includes additional resources not covered under the general `resource_collection`. If omitted the server will use the default value of False.
-            excluded_regions ([str]): [optional] An array of AWS regions to exclude from metrics collection.
-            filter_tags ([str]): [optional] The array of EC2 tags (in the form `key:value`) defines a filter that Datadog uses when collecting metrics from EC2. Wildcards, such as `?` (for single characters) and `*` (for multiple characters) can also be used. Only hosts that match one of the defined tags will be imported into Datadog. The rest will be ignored. Host matching a given tag can also be excluded by adding `!` before the tag. For example, `env:production,instance-type:c1.*,!region:us-east-1`
-            host_tags ([str]): [optional] Array of tags (in the form `key:value`) to add to all hosts and metrics reporting through this integration.
-            metrics_collection_enabled (bool): [optional] Whether Datadog collects metrics for this AWS account. If omitted the server will use the default value of True.
-            resource_collection_enabled (bool): [optional] Whether Datadog collects a standard set of resources from your AWS account. If omitted the server will use the default value of False.
-            role_name (str): [optional] Your Datadog role delegation name.
-            secret_access_key (str): [optional] Your AWS secret access key. Only required if your AWS account is a GovCloud or China account.
+
+        :param access_key_id: Your AWS access key ID. Only required if your AWS account is a GovCloud or China account.
+        :type access_key_id: str, optional
+
+        :param account_id: Your AWS Account ID without dashes.
+        :type account_id: str, optional
+
+        :param account_specific_namespace_rules: An object, (in the form `{\"namespace1\":true/false, \"namespace2\":true/false}`), that enables or disables metric collection for specific AWS namespaces for this AWS account only.
+        :type account_specific_namespace_rules: {str: (bool,)}, optional
+
+        :param cspm_resource_collection_enabled: Whether Datadog collects cloud security posture management resources from your AWS account. This includes additional resources not covered under the general `resource_collection`. If omitted the server will use the default value of False.
+        :type cspm_resource_collection_enabled: bool, optional
+
+        :param excluded_regions: An array of AWS regions to exclude from metrics collection.
+        :type excluded_regions: [str], optional
+
+        :param filter_tags: The array of EC2 tags (in the form `key:value`) defines a filter that Datadog uses when collecting metrics from EC2. Wildcards, such as `?` (for single characters) and `*` (for multiple characters) can also be used. Only hosts that match one of the defined tags will be imported into Datadog. The rest will be ignored. Host matching a given tag can also be excluded by adding `!` before the tag. For example, `env:production,instance-type:c1.*,!region:us-east-1`
+        :type filter_tags: [str], optional
+
+        :param host_tags: Array of tags (in the form `key:value`) to add to all hosts and metrics reporting through this integration.
+        :type host_tags: [str], optional
+
+        :param metrics_collection_enabled: Whether Datadog collects metrics for this AWS account. If omitted the server will use the default value of True.
+        :type metrics_collection_enabled: bool, optional
+
+        :param resource_collection_enabled: Whether Datadog collects a standard set of resources from your AWS account. If omitted the server will use the default value of False.
+        :type resource_collection_enabled: bool, optional
+
+        :param role_name: Your Datadog role delegation name.
+        :type role_name: str, optional
+
+        :param secret_access_key: Your AWS secret access key. Only required if your AWS account is a GovCloud or China account.
+        :type secret_access_key: str, optional
         """
         super().__init__(kwargs)
 

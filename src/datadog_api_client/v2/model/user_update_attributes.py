@@ -37,10 +37,15 @@ class UserUpdateAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UserUpdateAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            disabled (bool): [optional] If the user is enabled or disabled.
-            email (str): [optional] The email of the user.
-            name (str): [optional] The name of the user.
+
+        :param disabled: If the user is enabled or disabled.
+        :type disabled: bool, optional
+
+        :param email: The email of the user.
+        :type email: str, optional
+
+        :param name: The name of the user.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

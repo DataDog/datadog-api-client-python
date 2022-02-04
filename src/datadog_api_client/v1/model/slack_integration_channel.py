@@ -42,9 +42,11 @@ class SlackIntegrationChannel(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SlackIntegrationChannel - a model defined in OpenAPI
 
-        Keyword Args:
-            display (SlackIntegrationChannelDisplay): [optional]
-            name (str): [optional] Your channel name.
+
+        :type display: SlackIntegrationChannelDisplay, optional
+
+        :param name: Your channel name.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

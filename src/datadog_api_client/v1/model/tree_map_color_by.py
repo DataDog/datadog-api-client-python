@@ -34,12 +34,8 @@ class TreeMapColorBy(ModelSimple):
         """TreeMapColorBy - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The attribute used to determine color in the widget. If omitted defaults to "user". Must be one of ["user"].
-
-        Keyword Args:
-            value (str): The attribute used to determine color in the widget. If omitted defaults to "user". Must be one of ["user"].
+        :param value: The attribute used to determine color in the widget. If omitted defaults to "user". Must be one of ["user"].
+        :type value: str
         """
         super().__init__(kwargs)
 

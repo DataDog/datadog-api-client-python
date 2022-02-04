@@ -40,8 +40,9 @@ class UsageSDSResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageSDSResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageSDSHour]): [optional] Get hourly usage for Sensitive Data Scanner.
+
+        :param usage: Get hourly usage for Sensitive Data Scanner.
+        :type usage: [UsageSDSHour], optional
         """
         super().__init__(kwargs)
 

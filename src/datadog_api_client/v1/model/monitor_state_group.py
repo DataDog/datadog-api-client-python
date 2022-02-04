@@ -50,13 +50,23 @@ class MonitorStateGroup(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MonitorStateGroup - a model defined in OpenAPI
 
-        Keyword Args:
-            last_nodata_ts (int): [optional] Latest timestamp the monitor was in NO_DATA state.
-            last_notified_ts (int): [optional] Latest timestamp of the notification sent for this monitor group.
-            last_resolved_ts (int): [optional] Latest timestamp the monitor group was resolved.
-            last_triggered_ts (int): [optional] Latest timestamp the monitor group triggered.
-            name (str): [optional] The name of the monitor.
-            status (MonitorOverallStates): [optional]
+
+        :param last_nodata_ts: Latest timestamp the monitor was in NO_DATA state.
+        :type last_nodata_ts: int, optional
+
+        :param last_notified_ts: Latest timestamp of the notification sent for this monitor group.
+        :type last_notified_ts: int, optional
+
+        :param last_resolved_ts: Latest timestamp the monitor group was resolved.
+        :type last_resolved_ts: int, optional
+
+        :param last_triggered_ts: Latest timestamp the monitor group triggered.
+        :type last_triggered_ts: int, optional
+
+        :param name: The name of the monitor.
+        :type name: str, optional
+
+        :type status: MonitorOverallStates, optional
         """
         super().__init__(kwargs)
 

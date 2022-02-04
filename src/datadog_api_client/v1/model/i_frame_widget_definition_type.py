@@ -34,12 +34,8 @@ class IFrameWidgetDefinitionType(ModelSimple):
         """IFrameWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the iframe widget. If omitted defaults to "iframe". Must be one of ["iframe"].
-
-        Keyword Args:
-            value (str): Type of the iframe widget. If omitted defaults to "iframe". Must be one of ["iframe"].
+        :param value: Type of the iframe widget. If omitted defaults to "iframe". Must be one of ["iframe"].
+        :type value: str
         """
         super().__init__(kwargs)
 

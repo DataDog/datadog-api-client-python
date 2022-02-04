@@ -48,14 +48,20 @@ class SyntheticsBasicAuthNTLM(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """SyntheticsBasicAuthNTLM - a model defined in OpenAPI
 
-        Args:
-            type (SyntheticsBasicAuthNTLMType):
 
-        Keyword Args:
-            domain (str): [optional] Domain for the authentication to use when performing the test.
-            password (str): [optional] Password for the authentication to use when performing the test.
-            username (str): [optional] Username for the authentication to use when performing the test.
-            workstation (str): [optional] Workstation for the authentication to use when performing the test.
+        :type type: SyntheticsBasicAuthNTLMType
+
+        :param domain: Domain for the authentication to use when performing the test.
+        :type domain: str, optional
+
+        :param password: Password for the authentication to use when performing the test.
+        :type password: str, optional
+
+        :param username: Username for the authentication to use when performing the test.
+        :type username: str, optional
+
+        :param workstation: Workstation for the authentication to use when performing the test.
+        :type workstation: str, optional
         """
         super().__init__(kwargs)
 

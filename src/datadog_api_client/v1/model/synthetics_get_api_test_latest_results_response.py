@@ -42,9 +42,12 @@ class SyntheticsGetAPITestLatestResultsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsGetAPITestLatestResultsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            last_timestamp_fetched (int): [optional] Timestamp of the latest API test run.
-            results ([SyntheticsAPITestResultShort]): [optional] Result of the latest API test run.
+
+        :param last_timestamp_fetched: Timestamp of the latest API test run.
+        :type last_timestamp_fetched: int, optional
+
+        :param results: Result of the latest API test run.
+        :type results: [SyntheticsAPITestResultShort], optional
         """
         super().__init__(kwargs)
 

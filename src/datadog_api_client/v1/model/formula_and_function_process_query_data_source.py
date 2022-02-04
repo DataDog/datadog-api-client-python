@@ -36,12 +36,8 @@ class FormulaAndFunctionProcessQueryDataSource(ModelSimple):
         """FormulaAndFunctionProcessQueryDataSource - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Data sources that rely on the process backend. Must be one of ["process", "container"].
-
-        Keyword Args:
-            value (str): Data sources that rely on the process backend. Must be one of ["process", "container"].
+        :param value: Data sources that rely on the process backend. Must be one of ["process", "container"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -42,11 +42,11 @@ class CheckCanDeleteMonitorResponse(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """CheckCanDeleteMonitorResponse - a model defined in OpenAPI
 
-        Args:
-            data (CheckCanDeleteMonitorResponseData):
 
-        Keyword Args:
-            errors ({str: ([str],)}): [optional] A mapping of Monitor ID to strings denoting where it's used.
+        :type data: CheckCanDeleteMonitorResponseData
+
+        :param errors: A mapping of Monitor ID to strings denoting where it's used.
+        :type errors: {str: ([str],)}, optional
         """
         super().__init__(kwargs)
 

@@ -42,9 +42,10 @@ class IncidentTeamRelationships(ModelNormal):
     def __init__(self, *args, **kwargs):
         """IncidentTeamRelationships - a model defined in OpenAPI
 
-        Keyword Args:
-            created_by (RelationshipToUser): [optional]
-            last_modified_by (RelationshipToUser): [optional]
+
+        :type created_by: RelationshipToUser, optional
+
+        :type last_modified_by: RelationshipToUser, optional
         """
         super().__init__(kwargs)
 

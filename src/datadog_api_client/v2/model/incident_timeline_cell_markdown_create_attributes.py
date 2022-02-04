@@ -52,12 +52,13 @@ class IncidentTimelineCellMarkdownCreateAttributes(ModelNormal):
     def __init__(self, cell_type, content, *args, **kwargs):
         """IncidentTimelineCellMarkdownCreateAttributes - a model defined in OpenAPI
 
-        Args:
-            cell_type (IncidentTimelineCellMarkdownContentType):
-            content (IncidentTimelineCellMarkdownCreateAttributesContent):
 
-        Keyword Args:
-            important (bool): [optional] A flag indicating whether the timeline cell is important and should be highlighted. If omitted the server will use the default value of False.
+        :type cell_type: IncidentTimelineCellMarkdownContentType
+
+        :type content: IncidentTimelineCellMarkdownCreateAttributesContent
+
+        :param important: A flag indicating whether the timeline cell is important and should be highlighted. If omitted the server will use the default value of False.
+        :type important: bool, optional
         """
         super().__init__(kwargs)
 

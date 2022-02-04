@@ -36,12 +36,8 @@ class EventPriority(ModelSimple):
         """EventPriority - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The priority of the event. For example, `normal` or `low`. Must be one of ["normal", "low"].
-
-        Keyword Args:
-            value (str): The priority of the event. For example, `normal` or `low`. Must be one of ["normal", "low"].
+        :param value: The priority of the event. For example, `normal` or `low`. Must be one of ["normal", "low"].
+        :type value: str
         """
         super().__init__(kwargs)
 

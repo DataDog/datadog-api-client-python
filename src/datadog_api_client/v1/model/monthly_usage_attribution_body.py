@@ -55,14 +55,25 @@ class MonthlyUsageAttributionBody(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MonthlyUsageAttributionBody - a model defined in OpenAPI
 
-        Keyword Args:
-            month (datetime): [optional] Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM].
-            org_name (str): [optional] The name of the organization.
-            public_id (str): [optional] The organization public ID.
-            tag_config_source (str): [optional] The source of the usage attribution tag configuration and the selected tags in the format `<source_org_name>:<selected tag 1>///<selected tag 2>///<selected tag 3>`.
-            tags (UsageAttributionTagNames): [optional]
-            updated_at (datetime): [optional] Datetime of the most recent update to the usage values.
-            values (MonthlyUsageAttributionValues): [optional]
+
+        :param month: Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM].
+        :type month: datetime, optional
+
+        :param org_name: The name of the organization.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
+
+        :param tag_config_source: The source of the usage attribution tag configuration and the selected tags in the format `<source_org_name>:<selected tag 1>///<selected tag 2>///<selected tag 3>`.
+        :type tag_config_source: str, optional
+
+        :type tags: UsageAttributionTagNames, optional
+
+        :param updated_at: Datetime of the most recent update to the usage values.
+        :type updated_at: datetime, optional
+
+        :type values: MonthlyUsageAttributionValues, optional
         """
         super().__init__(kwargs)
 

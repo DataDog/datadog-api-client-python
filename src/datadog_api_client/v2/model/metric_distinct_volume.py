@@ -46,10 +46,13 @@ class MetricDistinctVolume(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MetricDistinctVolume - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (MetricDistinctVolumeAttributes): [optional]
-            id (str): [optional] The metric name for this resource.
-            type (MetricDistinctVolumeType): [optional]
+
+        :type attributes: MetricDistinctVolumeAttributes, optional
+
+        :param id: The metric name for this resource.
+        :type id: str, optional
+
+        :type type: MetricDistinctVolumeType, optional
         """
         super().__init__(kwargs)
 

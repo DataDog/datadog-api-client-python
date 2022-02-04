@@ -48,10 +48,13 @@ class MetricIngestedIndexedVolume(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MetricIngestedIndexedVolume - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (MetricIngestedIndexedVolumeAttributes): [optional]
-            id (str): [optional] The metric name for this resource.
-            type (MetricIngestedIndexedVolumeType): [optional]
+
+        :type attributes: MetricIngestedIndexedVolumeAttributes, optional
+
+        :param id: The metric name for this resource.
+        :type id: str, optional
+
+        :type type: MetricIngestedIndexedVolumeType, optional
         """
         super().__init__(kwargs)
 

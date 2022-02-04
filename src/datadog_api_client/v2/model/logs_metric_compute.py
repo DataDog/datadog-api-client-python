@@ -42,11 +42,11 @@ class LogsMetricCompute(ModelNormal):
     def __init__(self, aggregation_type, *args, **kwargs):
         """LogsMetricCompute - a model defined in OpenAPI
 
-        Args:
-            aggregation_type (LogsMetricComputeAggregationType):
 
-        Keyword Args:
-            path (str): [optional] The path to the value the log-based metric will aggregate on (only used if the aggregation type is a \"distribution\").
+        :type aggregation_type: LogsMetricComputeAggregationType
+
+        :param path: The path to the value the log-based metric will aggregate on (only used if the aggregation type is a \"distribution\").
+        :type path: str, optional
         """
         super().__init__(kwargs)
 

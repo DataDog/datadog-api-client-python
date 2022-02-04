@@ -39,12 +39,8 @@ class SyntheticsTestProcessStatus(ModelSimple):
         """SyntheticsTestProcessStatus - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Status of a Synthetic test. Must be one of ["not_scheduled", "scheduled", "started", "finished", "finished_with_error"].
-
-        Keyword Args:
-            value (str): Status of a Synthetic test. Must be one of ["not_scheduled", "scheduled", "started", "finished", "finished_with_error"].
+        :param value: Status of a Synthetic test. Must be one of ["not_scheduled", "scheduled", "started", "finished", "finished_with_error"].
+        :type value: str
         """
         super().__init__(kwargs)
 

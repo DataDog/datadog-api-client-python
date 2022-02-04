@@ -48,12 +48,12 @@ class NotebookLogStreamCellAttributes(ModelNormal):
     def __init__(self, definition, *args, **kwargs):
         """NotebookLogStreamCellAttributes - a model defined in OpenAPI
 
-        Args:
-            definition (LogStreamWidgetDefinition):
 
-        Keyword Args:
-            graph_size (NotebookGraphSize): [optional]
-            time (NotebookCellTime): [optional]
+        :type definition: LogStreamWidgetDefinition
+
+        :type graph_size: NotebookGraphSize, optional
+
+        :type time: NotebookCellTime, optional
         """
         super().__init__(kwargs)
 

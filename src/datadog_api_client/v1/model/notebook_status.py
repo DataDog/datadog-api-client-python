@@ -34,12 +34,8 @@ class NotebookStatus(ModelSimple):
         """NotebookStatus - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Publication status of the notebook. For now, always \"published\". If omitted defaults to "published". Must be one of ["published"].
-
-        Keyword Args:
-            value (str): Publication status of the notebook. For now, always \"published\". If omitted defaults to "published". Must be one of ["published"].
+        :param value: Publication status of the notebook. For now, always \"published\". If omitted defaults to "published". Must be one of ["published"].
+        :type value: str
         """
         super().__init__(kwargs)
 

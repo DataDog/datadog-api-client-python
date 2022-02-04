@@ -35,9 +35,12 @@ class MetricsListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MetricsListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            _from (str): [optional] Time when the metrics were active, seconds since the Unix epoch.
-            metrics ([str]): [optional] List of metric names.
+
+        :param _from: Time when the metrics were active, seconds since the Unix epoch.
+        :type _from: str, optional
+
+        :param metrics: List of metric names.
+        :type metrics: [str], optional
         """
         super().__init__(kwargs)
 

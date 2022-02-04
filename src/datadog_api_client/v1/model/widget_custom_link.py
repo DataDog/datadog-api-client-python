@@ -39,11 +39,18 @@ class WidgetCustomLink(ModelNormal):
     def __init__(self, *args, **kwargs):
         """WidgetCustomLink - a model defined in OpenAPI
 
-        Keyword Args:
-            is_hidden (bool): [optional] The flag for toggling context menu link visibility.
-            label (str): [optional] The label for the custom link URL. Keep the label short and descriptive. Use metrics and tags as variables.
-            link (str): [optional] The URL of the custom link. URL must include `http` or `https`. A relative URL must start with `/`.
-            override_label (str): [optional] The label ID that refers to a context menu link. Can be `logs`, `hosts`, `traces`, `profiles`, `processes`, `containers`, or `rum`.
+
+        :param is_hidden: The flag for toggling context menu link visibility.
+        :type is_hidden: bool, optional
+
+        :param label: The label for the custom link URL. Keep the label short and descriptive. Use metrics and tags as variables.
+        :type label: str, optional
+
+        :param link: The URL of the custom link. URL must include `http` or `https`. A relative URL must start with `/`.
+        :type link: str, optional
+
+        :param override_label: The label ID that refers to a context menu link. Can be `logs`, `hosts`, `traces`, `profiles`, `processes`, `containers`, or `rum`.
+        :type override_label: str, optional
         """
         super().__init__(kwargs)
 

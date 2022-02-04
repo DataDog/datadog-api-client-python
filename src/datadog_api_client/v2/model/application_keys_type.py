@@ -34,12 +34,8 @@ class ApplicationKeysType(ModelSimple):
         """ApplicationKeysType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Application Keys resource type. If omitted defaults to "application_keys". Must be one of ["application_keys"].
-
-        Keyword Args:
-            value (str): Application Keys resource type. If omitted defaults to "application_keys". Must be one of ["application_keys"].
+        :param value: Application Keys resource type. If omitted defaults to "application_keys". Must be one of ["application_keys"].
+        :type value: str
         """
         super().__init__(kwargs)
 

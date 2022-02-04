@@ -44,9 +44,10 @@ class MonthlyUsageAttributionMetadata(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MonthlyUsageAttributionMetadata - a model defined in OpenAPI
 
-        Keyword Args:
-            aggregates (UsageAttributionAggregates): [optional]
-            pagination (MonthlyUsageAttributionPagination): [optional]
+
+        :type aggregates: UsageAttributionAggregates, optional
+
+        :type pagination: MonthlyUsageAttributionPagination, optional
         """
         super().__init__(kwargs)
 

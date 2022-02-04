@@ -52,15 +52,22 @@ class LogsArchiveDestinationAzure(ModelNormal):
     def __init__(self, container, integration, storage_account, type, *args, **kwargs):
         """LogsArchiveDestinationAzure - a model defined in OpenAPI
 
-        Args:
-            container (str): The container where the archive will be stored.
-            integration (LogsArchiveIntegrationAzure):
-            storage_account (str): The associated storage account.
-            type (LogsArchiveDestinationAzureType):
 
-        Keyword Args:
-            path (str): [optional] The archive path.
-            region (str): [optional] The region where the archive will be stored.
+        :param container: The container where the archive will be stored.
+        :type container: str
+
+        :type integration: LogsArchiveIntegrationAzure
+
+        :param storage_account: The associated storage account.
+        :type storage_account: str
+
+        :type type: LogsArchiveDestinationAzureType
+
+        :param path: The archive path.
+        :type path: str, optional
+
+        :param region: The region where the archive will be stored.
+        :type region: str, optional
         """
         super().__init__(kwargs)
 

@@ -37,12 +37,8 @@ class SyntheticsTestExecutionRule(ModelSimple):
         """SyntheticsTestExecutionRule - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Execution rule for a Synthetics test. Must be one of ["blocking", "non_blocking", "skipped"].
-
-        Keyword Args:
-            value (str): Execution rule for a Synthetics test. Must be one of ["blocking", "non_blocking", "skipped"].
+        :param value: Execution rule for a Synthetics test. Must be one of ["blocking", "non_blocking", "skipped"].
+        :type value: str
         """
         super().__init__(kwargs)
 

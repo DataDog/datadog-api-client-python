@@ -35,11 +35,12 @@ class SLOHistoryResponseErrorWithType(ModelNormal):
     def __init__(self, error_message, error_type, *args, **kwargs):
         """SLOHistoryResponseErrorWithType - a model defined in OpenAPI
 
-        Args:
-            error_message (str): A message with more details about the error.
-            error_type (str): Type of the error.
 
-        Keyword Args:
+        :param error_message: A message with more details about the error.
+        :type error_message: str
+
+        :param error_type: Type of the error.
+        :type error_type: str
         """
         super().__init__(kwargs)
 

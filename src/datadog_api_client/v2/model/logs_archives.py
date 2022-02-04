@@ -40,8 +40,9 @@ class LogsArchives(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsArchives - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([LogsArchiveDefinition]): [optional] A list of archives.
+
+        :param data: A list of archives.
+        :type data: [LogsArchiveDefinition], optional
         """
         super().__init__(kwargs)
 

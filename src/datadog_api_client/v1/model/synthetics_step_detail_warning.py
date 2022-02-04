@@ -42,11 +42,11 @@ class SyntheticsStepDetailWarning(ModelNormal):
     def __init__(self, message, type, *args, **kwargs):
         """SyntheticsStepDetailWarning - a model defined in OpenAPI
 
-        Args:
-            message (str): Message for the warning.
-            type (SyntheticsWarningType):
 
-        Keyword Args:
+        :param message: Message for the warning.
+        :type message: str
+
+        :type type: SyntheticsWarningType
         """
         super().__init__(kwargs)
 

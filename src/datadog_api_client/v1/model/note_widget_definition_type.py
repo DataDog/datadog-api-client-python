@@ -34,12 +34,8 @@ class NoteWidgetDefinitionType(ModelSimple):
         """NoteWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the note widget. If omitted defaults to "note". Must be one of ["note"].
-
-        Keyword Args:
-            value (str): Type of the note widget. If omitted defaults to "note". Must be one of ["note"].
+        :param value: Type of the note widget. If omitted defaults to "note". Must be one of ["note"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -46,14 +46,27 @@ class UsageBillableSummaryBody(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageBillableSummaryBody - a model defined in OpenAPI
 
-        Keyword Args:
-            account_billable_usage (int): [optional] The total account usage.
-            elapsed_usage_hours (int): [optional] Elapsed usage hours for some billable product.
-            first_billable_usage_hour (datetime): [optional] The first billable hour for the org.
-            last_billable_usage_hour (datetime): [optional] The last billable hour for the org.
-            org_billable_usage (int): [optional] The number of units used within the billable timeframe.
-            percentage_in_account (float): [optional] The percentage of account usage the org represents.
-            usage_unit (str): [optional] Units pertaining to the usage.
+
+        :param account_billable_usage: The total account usage.
+        :type account_billable_usage: int, optional
+
+        :param elapsed_usage_hours: Elapsed usage hours for some billable product.
+        :type elapsed_usage_hours: int, optional
+
+        :param first_billable_usage_hour: The first billable hour for the org.
+        :type first_billable_usage_hour: datetime, optional
+
+        :param last_billable_usage_hour: The last billable hour for the org.
+        :type last_billable_usage_hour: datetime, optional
+
+        :param org_billable_usage: The number of units used within the billable timeframe.
+        :type org_billable_usage: int, optional
+
+        :param percentage_in_account: The percentage of account usage the org represents.
+        :type percentage_in_account: float, optional
+
+        :param usage_unit: Units pertaining to the usage.
+        :type usage_unit: str, optional
         """
         super().__init__(kwargs)
 

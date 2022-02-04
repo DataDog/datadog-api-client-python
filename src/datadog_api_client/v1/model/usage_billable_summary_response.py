@@ -40,8 +40,9 @@ class UsageBillableSummaryResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageBillableSummaryResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageBillableSummaryHour]): [optional] An array of objects regarding usage of billable summary.
+
+        :param usage: An array of objects regarding usage of billable summary.
+        :type usage: [UsageBillableSummaryHour], optional
         """
         super().__init__(kwargs)
 

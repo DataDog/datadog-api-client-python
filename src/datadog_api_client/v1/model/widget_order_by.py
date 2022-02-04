@@ -38,12 +38,8 @@ class WidgetOrderBy(ModelSimple):
         """WidgetOrderBy - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): What to order by. Must be one of ["change", "name", "present", "past"].
-
-        Keyword Args:
-            value (str): What to order by. Must be one of ["change", "name", "present", "past"].
+        :param value: What to order by. Must be one of ["change", "name", "present", "past"].
+        :type value: str
         """
         super().__init__(kwargs)
 

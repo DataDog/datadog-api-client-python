@@ -44,9 +44,10 @@ class LogsAggregateResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsAggregateResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data (LogsAggregateResponseData): [optional]
-            meta (LogsResponseMetadata): [optional]
+
+        :type data: LogsAggregateResponseData, optional
+
+        :type meta: LogsResponseMetadata, optional
         """
         super().__init__(kwargs)
 

@@ -40,8 +40,8 @@ class SyntheticsUpdateTestPauseStatusPayload(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsUpdateTestPauseStatusPayload - a model defined in OpenAPI
 
-        Keyword Args:
-            new_status (SyntheticsTestPauseStatus): [optional]
+
+        :type new_status: SyntheticsTestPauseStatus, optional
         """
         super().__init__(kwargs)
 

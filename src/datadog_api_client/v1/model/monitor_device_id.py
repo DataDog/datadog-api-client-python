@@ -43,12 +43,8 @@ class MonitorDeviceID(ModelSimple):
         """MonitorDeviceID - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): ID of the device the Synthetics monitor is running on. Same as `SyntheticsDeviceID`. Must be one of ["laptop_large", "tablet", "mobile_small", "chrome.laptop_large", "chrome.tablet", "chrome.mobile_small", "firefox.laptop_large", "firefox.tablet", "firefox.mobile_small"].
-
-        Keyword Args:
-            value (str): ID of the device the Synthetics monitor is running on. Same as `SyntheticsDeviceID`. Must be one of ["laptop_large", "tablet", "mobile_small", "chrome.laptop_large", "chrome.tablet", "chrome.mobile_small", "firefox.laptop_large", "firefox.tablet", "firefox.mobile_small"].
+        :param value: ID of the device the Synthetics monitor is running on. Same as `SyntheticsDeviceID`. Must be one of ["laptop_large", "tablet", "mobile_small", "chrome.laptop_large", "chrome.tablet", "chrome.mobile_small", "firefox.laptop_large", "firefox.tablet", "firefox.mobile_small"].
+        :type value: str
         """
         super().__init__(kwargs)
 

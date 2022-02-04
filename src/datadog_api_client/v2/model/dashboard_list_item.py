@@ -79,21 +79,40 @@ class DashboardListItem(ModelNormal):
     def __init__(self, id, type, *args, **kwargs):
         """DashboardListItem - a model defined in OpenAPI
 
-        Args:
-            id (str): ID of the dashboard.
-            type (DashboardType):
 
-        Keyword Args:
-            author (Creator): [optional]
-            created (datetime): [optional] Date of creation of the dashboard.
-            icon (str): [optional] URL to the icon of the dashboard.
-            is_favorite (bool): [optional] Whether or not the dashboard is in the favorites.
-            is_read_only (bool): [optional] Whether or not the dashboard is read only.
-            is_shared (bool): [optional] Whether the dashboard is publicly shared or not.
-            modified (datetime): [optional] Date of last edition of the dashboard.
-            popularity (int): [optional] Popularity of the dashboard.
-            title (str): [optional] Title of the dashboard.
-            url (str): [optional] URL path to the dashboard.
+        :param id: ID of the dashboard.
+        :type id: str
+
+        :type type: DashboardType
+
+        :type author: Creator, optional
+
+        :param created: Date of creation of the dashboard.
+        :type created: datetime, optional
+
+        :param icon: URL to the icon of the dashboard.
+        :type icon: str, optional
+
+        :param is_favorite: Whether or not the dashboard is in the favorites.
+        :type is_favorite: bool, optional
+
+        :param is_read_only: Whether or not the dashboard is read only.
+        :type is_read_only: bool, optional
+
+        :param is_shared: Whether the dashboard is publicly shared or not.
+        :type is_shared: bool, optional
+
+        :param modified: Date of last edition of the dashboard.
+        :type modified: datetime, optional
+
+        :param popularity: Popularity of the dashboard.
+        :type popularity: int, optional
+
+        :param title: Title of the dashboard.
+        :type title: str, optional
+
+        :param url: URL path to the dashboard.
+        :type url: str, optional
         """
         super().__init__(kwargs)
 

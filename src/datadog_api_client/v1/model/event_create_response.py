@@ -79,21 +79,46 @@ class EventCreateResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """EventCreateResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            alert_type (EventAlertType): [optional]
-            date_happened (int): [optional] POSIX timestamp of the event. Must be sent as an integer (that is no quotes). Limited to events no older than 7 days.
-            device_name (str): [optional] A device name.
-            host (str): [optional] Host name to associate with the event. Any tags associated with the host are also applied to this event.
-            id (int): [optional] Integer ID of the event.
-            payload (str): [optional] Payload of the event.
-            priority (EventPriority): [optional]
-            related_event_id (int): [optional] ID of the parent event. Must be sent as an integer (that is no quotes).
-            source_type_name (str): [optional] The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
-            status (str): [optional] A status.
-            tags ([str]): [optional] A list of tags to apply to the event.
-            text (str): [optional] The body of the event. Limited to 4000 characters. The text supports markdown. Use `msg_text` with the Datadog Ruby library.
-            title (str): [optional] The event title. Limited to 100 characters. Use `msg_title` with the Datadog Ruby library.
-            url (str): [optional] URL of the event.
+
+        :type alert_type: EventAlertType, optional
+
+        :param date_happened: POSIX timestamp of the event. Must be sent as an integer (that is no quotes). Limited to events no older than 7 days.
+        :type date_happened: int, optional
+
+        :param device_name: A device name.
+        :type device_name: str, optional
+
+        :param host: Host name to associate with the event. Any tags associated with the host are also applied to this event.
+        :type host: str, optional
+
+        :param id: Integer ID of the event.
+        :type id: int, optional
+
+        :param payload: Payload of the event.
+        :type payload: str, optional
+
+        :type priority: EventPriority, optional
+
+        :param related_event_id: ID of the parent event. Must be sent as an integer (that is no quotes).
+        :type related_event_id: int, optional
+
+        :param source_type_name: The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
+        :type source_type_name: str, optional
+
+        :param status: A status.
+        :type status: str, optional
+
+        :param tags: A list of tags to apply to the event.
+        :type tags: [str], optional
+
+        :param text: The body of the event. Limited to 4000 characters. The text supports markdown. Use `msg_text` with the Datadog Ruby library.
+        :type text: str, optional
+
+        :param title: The event title. Limited to 100 characters. Use `msg_title` with the Datadog Ruby library.
+        :type title: str, optional
+
+        :param url: URL of the event.
+        :type url: str, optional
         """
         super().__init__(kwargs)
 

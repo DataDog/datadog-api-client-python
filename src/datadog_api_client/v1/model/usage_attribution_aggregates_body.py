@@ -37,10 +37,15 @@ class UsageAttributionAggregatesBody(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageAttributionAggregatesBody - a model defined in OpenAPI
 
-        Keyword Args:
-            agg_type (str): [optional] The aggregate type.
-            field (str): [optional] The field.
-            value (float): [optional] The value for a given field.
+
+        :param agg_type: The aggregate type.
+        :type agg_type: str, optional
+
+        :param field: The field.
+        :type field: str, optional
+
+        :param value: The value for a given field.
+        :type value: float, optional
         """
         super().__init__(kwargs)
 

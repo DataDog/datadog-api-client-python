@@ -34,12 +34,8 @@ class ProcessSummaryType(ModelSimple):
         """ProcessSummaryType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of process summary. If omitted defaults to "process". Must be one of ["process"].
-
-        Keyword Args:
-            value (str): Type of process summary. If omitted defaults to "process". Must be one of ["process"].
+        :param value: Type of process summary. If omitted defaults to "process". Must be one of ["process"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -34,12 +34,8 @@ class LogsLookupProcessorType(ModelSimple):
         """LogsLookupProcessorType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of logs lookup processor. If omitted defaults to "lookup-processor". Must be one of ["lookup-processor"].
-
-        Keyword Args:
-            value (str): Type of logs lookup processor. If omitted defaults to "lookup-processor". Must be one of ["lookup-processor"].
+        :param value: Type of logs lookup processor. If omitted defaults to "lookup-processor". Must be one of ["lookup-processor"].
+        :type value: str
         """
         super().__init__(kwargs)
 

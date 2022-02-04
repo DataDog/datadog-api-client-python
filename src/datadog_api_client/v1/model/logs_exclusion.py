@@ -44,12 +44,14 @@ class LogsExclusion(ModelNormal):
     def __init__(self, name, *args, **kwargs):
         """LogsExclusion - a model defined in OpenAPI
 
-        Args:
-            name (str): Name of the index exclusion filter.
 
-        Keyword Args:
-            filter (LogsExclusionFilter): [optional]
-            is_enabled (bool): [optional] Whether or not the exclusion filter is active.
+        :param name: Name of the index exclusion filter.
+        :type name: str
+
+        :type filter: LogsExclusionFilter, optional
+
+        :param is_enabled: Whether or not the exclusion filter is active.
+        :type is_enabled: bool, optional
         """
         super().__init__(kwargs)
 

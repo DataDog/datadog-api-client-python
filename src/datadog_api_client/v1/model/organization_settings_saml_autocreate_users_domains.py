@@ -35,9 +35,12 @@ class OrganizationSettingsSamlAutocreateUsersDomains(ModelNormal):
     def __init__(self, *args, **kwargs):
         """OrganizationSettingsSamlAutocreateUsersDomains - a model defined in OpenAPI
 
-        Keyword Args:
-            domains ([str]): [optional] List of domains where the SAML automated user creation is enabled.
-            enabled (bool): [optional] Whether or not the automated user creation based on SAML domain is enabled.
+
+        :param domains: List of domains where the SAML automated user creation is enabled.
+        :type domains: [str], optional
+
+        :param enabled: Whether or not the automated user creation based on SAML domain is enabled.
+        :type enabled: bool, optional
         """
         super().__init__(kwargs)
 

@@ -65,17 +65,27 @@ class ListStreamWidgetDefinition(ModelNormal):
     def __init__(self, requests, type, *args, **kwargs):
         """ListStreamWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            requests ([ListStreamWidgetRequest]): Request payload used to query items.
-            type (ListStreamWidgetDefinitionType):
 
-        Keyword Args:
-            legend_size (str): [optional] Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".
-            show_legend (bool): [optional] Whether or not to display the legend on this widget.
-            time (WidgetTime): [optional]
-            title (str): [optional] Title of the widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
+        :param requests: Request payload used to query items.
+        :type requests: [ListStreamWidgetRequest]
+
+        :type type: ListStreamWidgetDefinitionType
+
+        :param legend_size: Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".
+        :type legend_size: str, optional
+
+        :param show_legend: Whether or not to display the legend on this widget.
+        :type show_legend: bool, optional
+
+        :type time: WidgetTime, optional
+
+        :param title: Title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

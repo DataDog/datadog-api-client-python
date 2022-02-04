@@ -48,14 +48,20 @@ class SyntheticsBrowserVariable(ModelNormal):
     def __init__(self, name, type, *args, **kwargs):
         """SyntheticsBrowserVariable - a model defined in OpenAPI
 
-        Args:
-            name (str): Name of the variable.
-            type (SyntheticsBrowserVariableType):
 
-        Keyword Args:
-            example (str): [optional] Example for the variable.
-            id (str): [optional] ID for the variable. Global variables require an ID.
-            pattern (str): [optional] Pattern of the variable.
+        :param name: Name of the variable.
+        :type name: str
+
+        :type type: SyntheticsBrowserVariableType
+
+        :param example: Example for the variable.
+        :type example: str, optional
+
+        :param id: ID for the variable. Global variables require an ID.
+        :type id: str, optional
+
+        :param pattern: Pattern of the variable.
+        :type pattern: str, optional
         """
         super().__init__(kwargs)
 

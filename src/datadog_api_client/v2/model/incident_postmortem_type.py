@@ -34,12 +34,8 @@ class IncidentPostmortemType(ModelSimple):
         """IncidentPostmortemType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Incident postmortem resource type. If omitted defaults to "incident_postmortems". Must be one of ["incident_postmortems"].
-
-        Keyword Args:
-            value (str): Incident postmortem resource type. If omitted defaults to "incident_postmortems". Must be one of ["incident_postmortems"].
+        :param value: Incident postmortem resource type. If omitted defaults to "incident_postmortems". Must be one of ["incident_postmortems"].
+        :type value: str
         """
         super().__init__(kwargs)
 

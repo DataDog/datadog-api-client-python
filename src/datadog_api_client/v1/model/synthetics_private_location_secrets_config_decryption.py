@@ -35,8 +35,9 @@ class SyntheticsPrivateLocationSecretsConfigDecryption(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsPrivateLocationSecretsConfigDecryption - a model defined in OpenAPI
 
-        Keyword Args:
-            key (str): [optional] Private key for the private location.
+
+        :param key: Private key for the private location.
+        :type key: str, optional
         """
         super().__init__(kwargs)
 

@@ -42,11 +42,11 @@ class RelationshipToUserData(ModelNormal):
     def __init__(self, id, type, *args, **kwargs):
         """RelationshipToUserData - a model defined in OpenAPI
 
-        Args:
-            id (str): A unique identifier that represents the user.
-            type (UsersType):
 
-        Keyword Args:
+        :param id: A unique identifier that represents the user.
+        :type id: str
+
+        :type type: UsersType
         """
         super().__init__(kwargs)
 

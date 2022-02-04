@@ -48,13 +48,16 @@ class LogsArchiveDestinationGCS(ModelNormal):
     def __init__(self, bucket, integration, type, *args, **kwargs):
         """LogsArchiveDestinationGCS - a model defined in OpenAPI
 
-        Args:
-            bucket (str): The bucket where the archive will be stored.
-            integration (LogsArchiveIntegrationGCS):
-            type (LogsArchiveDestinationGCSType):
 
-        Keyword Args:
-            path (str): [optional] The archive path.
+        :param bucket: The bucket where the archive will be stored.
+        :type bucket: str
+
+        :type integration: LogsArchiveIntegrationGCS
+
+        :type type: LogsArchiveDestinationGCSType
+
+        :param path: The archive path.
+        :type path: str, optional
         """
         super().__init__(kwargs)
 

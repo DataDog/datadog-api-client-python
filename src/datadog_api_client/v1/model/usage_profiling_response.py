@@ -40,8 +40,9 @@ class UsageProfilingResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageProfilingResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageProfilingHour]): [optional] Get hourly usage for profiled hosts.
+
+        :param usage: Get hourly usage for profiled hosts.
+        :type usage: [UsageProfilingHour], optional
         """
         super().__init__(kwargs)
 

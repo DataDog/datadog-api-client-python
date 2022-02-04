@@ -40,8 +40,9 @@ class SyntheticsDeleteTestsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsDeleteTestsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            deleted_tests ([SyntheticsDeletedTest]): [optional] Array of objects containing a deleted Synthetic test ID with the associated deletion timestamp.
+
+        :param deleted_tests: Array of objects containing a deleted Synthetic test ID with the associated deletion timestamp.
+        :type deleted_tests: [SyntheticsDeletedTest], optional
         """
         super().__init__(kwargs)
 

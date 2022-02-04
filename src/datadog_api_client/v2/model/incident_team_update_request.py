@@ -40,10 +40,8 @@ class IncidentTeamUpdateRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """IncidentTeamUpdateRequest - a model defined in OpenAPI
 
-        Args:
-            data (IncidentTeamUpdateData):
 
-        Keyword Args:
+        :type data: IncidentTeamUpdateData
         """
         super().__init__(kwargs)
 

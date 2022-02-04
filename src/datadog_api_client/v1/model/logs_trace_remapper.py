@@ -46,13 +46,17 @@ class LogsTraceRemapper(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """LogsTraceRemapper - a model defined in OpenAPI
 
-        Args:
-            type (LogsTraceRemapperType):
 
-        Keyword Args:
-            is_enabled (bool): [optional] Whether or not the processor is enabled. If omitted the server will use the default value of False.
-            name (str): [optional] Name of the processor.
-            sources ([str]): [optional] Array of source attributes. If omitted the server will use the default value of ["dd.trace_id"].
+        :type type: LogsTraceRemapperType
+
+        :param is_enabled: Whether or not the processor is enabled. If omitted the server will use the default value of False.
+        :type is_enabled: bool, optional
+
+        :param name: Name of the processor.
+        :type name: str, optional
+
+        :param sources: Array of source attributes. If omitted the server will use the default value of ["dd.trace_id"].
+        :type sources: [str], optional
         """
         super().__init__(kwargs)
 

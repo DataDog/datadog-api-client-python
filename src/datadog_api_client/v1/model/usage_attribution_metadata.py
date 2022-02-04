@@ -44,9 +44,10 @@ class UsageAttributionMetadata(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageAttributionMetadata - a model defined in OpenAPI
 
-        Keyword Args:
-            aggregates (UsageAttributionAggregates): [optional]
-            pagination (UsageAttributionPagination): [optional]
+
+        :type aggregates: UsageAttributionAggregates, optional
+
+        :type pagination: UsageAttributionPagination, optional
         """
         super().__init__(kwargs)
 

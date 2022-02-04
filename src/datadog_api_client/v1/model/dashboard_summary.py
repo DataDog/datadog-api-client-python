@@ -40,8 +40,9 @@ class DashboardSummary(ModelNormal):
     def __init__(self, *args, **kwargs):
         """DashboardSummary - a model defined in OpenAPI
 
-        Keyword Args:
-            dashboards ([DashboardSummaryDefinition]): [optional] List of dashboard definitions.
+
+        :param dashboards: List of dashboard definitions.
+        :type dashboards: [DashboardSummaryDefinition], optional
         """
         super().__init__(kwargs)
 

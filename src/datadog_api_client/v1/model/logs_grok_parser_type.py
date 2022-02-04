@@ -34,12 +34,8 @@ class LogsGrokParserType(ModelSimple):
         """LogsGrokParserType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of logs grok parser. If omitted defaults to "grok-parser". Must be one of ["grok-parser"].
-
-        Keyword Args:
-            value (str): Type of logs grok parser. If omitted defaults to "grok-parser". Must be one of ["grok-parser"].
+        :param value: Type of logs grok parser. If omitted defaults to "grok-parser". Must be one of ["grok-parser"].
+        :type value: str
         """
         super().__init__(kwargs)
 

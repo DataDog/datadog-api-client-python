@@ -40,8 +40,9 @@ class ApplicationKeyListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ApplicationKeyListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            application_keys ([ApplicationKey]): [optional] Array of application keys.
+
+        :param application_keys: Array of application keys.
+        :type application_keys: [ApplicationKey], optional
         """
         super().__init__(kwargs)
 

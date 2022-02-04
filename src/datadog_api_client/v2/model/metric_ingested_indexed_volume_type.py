@@ -34,12 +34,8 @@ class MetricIngestedIndexedVolumeType(ModelSimple):
         """MetricIngestedIndexedVolumeType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The metric ingested and indexed volume type. If omitted defaults to "metric_volumes". Must be one of ["metric_volumes"].
-
-        Keyword Args:
-            value (str): The metric ingested and indexed volume type. If omitted defaults to "metric_volumes". Must be one of ["metric_volumes"].
+        :param value: The metric ingested and indexed volume type. If omitted defaults to "metric_volumes". Must be one of ["metric_volumes"].
+        :type value: str
         """
         super().__init__(kwargs)
 

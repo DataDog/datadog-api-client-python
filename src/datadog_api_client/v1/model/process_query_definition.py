@@ -43,13 +43,18 @@ class ProcessQueryDefinition(ModelNormal):
     def __init__(self, metric, *args, **kwargs):
         """ProcessQueryDefinition - a model defined in OpenAPI
 
-        Args:
-            metric (str): Your chosen metric.
 
-        Keyword Args:
-            filter_by ([str]): [optional] List of processes.
-            limit (int): [optional] Max number of items in the filter list.
-            search_by (str): [optional] Your chosen search term.
+        :param metric: Your chosen metric.
+        :type metric: str
+
+        :param filter_by: List of processes.
+        :type filter_by: [str], optional
+
+        :param limit: Max number of items in the filter list.
+        :type limit: int, optional
+
+        :param search_by: Your chosen search term.
+        :type search_by: str, optional
         """
         super().__init__(kwargs)
 

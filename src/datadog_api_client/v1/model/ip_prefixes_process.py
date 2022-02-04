@@ -35,9 +35,12 @@ class IPPrefixesProcess(ModelNormal):
     def __init__(self, *args, **kwargs):
         """IPPrefixesProcess - a model defined in OpenAPI
 
-        Keyword Args:
-            prefixes_ipv4 ([str]): [optional] List of IPv4 prefixes.
-            prefixes_ipv6 ([str]): [optional] List of IPv6 prefixes.
+
+        :param prefixes_ipv4: List of IPv4 prefixes.
+        :type prefixes_ipv4: [str], optional
+
+        :param prefixes_ipv6: List of IPv6 prefixes.
+        :type prefixes_ipv6: [str], optional
         """
         super().__init__(kwargs)
 

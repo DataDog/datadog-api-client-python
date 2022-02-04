@@ -44,11 +44,18 @@ class RoleAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """RoleAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            created_at (datetime): [optional] Creation time of the role.
-            modified_at (datetime): [optional] Time of last role modification.
-            name (str): [optional] Name of the role.
-            user_count (int): [optional] Number of users with that role.
+
+        :param created_at: Creation time of the role.
+        :type created_at: datetime, optional
+
+        :param modified_at: Time of last role modification.
+        :type modified_at: datetime, optional
+
+        :param name: Name of the role.
+        :type name: str, optional
+
+        :param user_count: Number of users with that role.
+        :type user_count: int, optional
         """
         super().__init__(kwargs)
 

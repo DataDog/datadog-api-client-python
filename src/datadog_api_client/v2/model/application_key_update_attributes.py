@@ -39,9 +39,12 @@ class ApplicationKeyUpdateAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ApplicationKeyUpdateAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            name (str): [optional] Name of the application key.
-            scopes ([str], none_type): [optional] Array of scopes to grant the application key. This feature is in private beta, please contact Datadog support to enable scopes for your application keys.
+
+        :param name: Name of the application key.
+        :type name: str, optional
+
+        :param scopes: Array of scopes to grant the application key. This feature is in private beta, please contact Datadog support to enable scopes for your application keys.
+        :type scopes: [str], none_type, optional
         """
         super().__init__(kwargs)
 

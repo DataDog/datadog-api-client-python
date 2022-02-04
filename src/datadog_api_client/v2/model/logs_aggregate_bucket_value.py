@@ -29,10 +29,7 @@ class LogsAggregateBucketValue(ModelComposed):
         return {}
 
     def __init__(self, *args, **kwargs):
-        """LogsAggregateBucketValue - a model defined in OpenAPI
-
-        Keyword Args:
-        """
+        """LogsAggregateBucketValue - a model defined in OpenAPI"""
         super().__init__(kwargs)
 
         self._check_pos_args(args)

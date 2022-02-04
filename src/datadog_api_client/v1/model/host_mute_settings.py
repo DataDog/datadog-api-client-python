@@ -37,10 +37,15 @@ class HostMuteSettings(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HostMuteSettings - a model defined in OpenAPI
 
-        Keyword Args:
-            end (int): [optional] POSIX timestamp in seconds when the host is unmuted. If omitted, the host remains muted until explicitly unmuted.
-            message (str): [optional] Message to associate with the muting of this host.
-            override (bool): [optional] If true and the host is already muted, replaces existing host mute settings.
+
+        :param end: POSIX timestamp in seconds when the host is unmuted. If omitted, the host remains muted until explicitly unmuted.
+        :type end: int, optional
+
+        :param message: Message to associate with the muting of this host.
+        :type message: str, optional
+
+        :param override: If true and the host is already muted, replaces existing host mute settings.
+        :type override: bool, optional
         """
         super().__init__(kwargs)
 

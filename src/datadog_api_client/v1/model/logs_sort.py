@@ -36,12 +36,8 @@ class LogsSort(ModelSimple):
         """LogsSort - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Time-ascending `asc` or time-descending `desc`results. Must be one of ["asc", "desc"].
-
-        Keyword Args:
-            value (str): Time-ascending `asc` or time-descending `desc`results. Must be one of ["asc", "desc"].
+        :param value: Time-ascending `asc` or time-descending `desc`results. Must be one of ["asc", "desc"].
+        :type value: str
         """
         super().__init__(kwargs)
 

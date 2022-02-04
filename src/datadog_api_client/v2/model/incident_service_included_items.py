@@ -37,11 +37,15 @@ class IncidentServiceIncludedItems(ModelComposed):
     def __init__(self, *args, **kwargs):
         """IncidentServiceIncludedItems - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (UserAttributes): [optional]
-            id (str): [optional] ID of the user.
-            relationships (UserResponseRelationships): [optional]
-            type (UsersType): [optional]
+
+        :type attributes: UserAttributes, optional
+
+        :param id: ID of the user.
+        :type id: str, optional
+
+        :type relationships: UserResponseRelationships, optional
+
+        :type type: UsersType, optional
         """
         super().__init__(kwargs)
 

@@ -39,11 +39,18 @@ class UsageLogsByRetentionHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageLogsByRetentionHour - a model defined in OpenAPI
 
-        Keyword Args:
-            indexed_events_count (int): [optional] Total logs indexed with this retention period during a given hour.
-            live_indexed_events_count (int): [optional] Live logs indexed with this retention period during a given hour.
-            rehydrated_indexed_events_count (int): [optional] Rehydrated logs indexed with this retention period during a given hour.
-            retention (str): [optional] The retention period in days or \"custom\" for all custom retention usage.
+
+        :param indexed_events_count: Total logs indexed with this retention period during a given hour.
+        :type indexed_events_count: int, optional
+
+        :param live_indexed_events_count: Live logs indexed with this retention period during a given hour.
+        :type live_indexed_events_count: int, optional
+
+        :param rehydrated_indexed_events_count: Rehydrated logs indexed with this retention period during a given hour.
+        :type rehydrated_indexed_events_count: int, optional
+
+        :param retention: The retention period in days or \"custom\" for all custom retention usage.
+        :type retention: str, optional
         """
         super().__init__(kwargs)
 

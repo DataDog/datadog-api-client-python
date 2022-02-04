@@ -51,11 +51,18 @@ class PartialApplicationKeyAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """PartialApplicationKeyAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            created_at (str): [optional] Creation date of the application key.
-            last4 (str): [optional] The last four characters of the application key.
-            name (str): [optional] Name of the application key.
-            scopes ([str], none_type): [optional] Array of scopes to grant the application key. This feature is in private beta, please contact Datadog support to enable scopes for your application keys.
+
+        :param created_at: Creation date of the application key.
+        :type created_at: str, optional
+
+        :param last4: The last four characters of the application key.
+        :type last4: str, optional
+
+        :param name: Name of the application key.
+        :type name: str, optional
+
+        :param scopes: Array of scopes to grant the application key. This feature is in private beta, please contact Datadog support to enable scopes for your application keys.
+        :type scopes: [str], none_type, optional
         """
         super().__init__(kwargs)
 

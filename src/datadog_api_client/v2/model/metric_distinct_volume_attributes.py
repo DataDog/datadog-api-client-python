@@ -33,8 +33,9 @@ class MetricDistinctVolumeAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MetricDistinctVolumeAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            distinct_volume (int): [optional] Distinct volume for the given metric.
+
+        :param distinct_volume: Distinct volume for the given metric.
+        :type distinct_volume: int, optional
         """
         super().__init__(kwargs)
 

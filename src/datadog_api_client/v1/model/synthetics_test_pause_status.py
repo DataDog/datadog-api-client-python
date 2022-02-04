@@ -36,12 +36,8 @@ class SyntheticsTestPauseStatus(ModelSimple):
         """SyntheticsTestPauseStatus - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Define whether you want to start (`live`) or pause (`paused`) a Synthetic test. Must be one of ["live", "paused"].
-
-        Keyword Args:
-            value (str): Define whether you want to start (`live`) or pause (`paused`) a Synthetic test. Must be one of ["live", "paused"].
+        :param value: Define whether you want to start (`live`) or pause (`paused`) a Synthetic test. Must be one of ["live", "paused"].
+        :type value: str
         """
         super().__init__(kwargs)
 

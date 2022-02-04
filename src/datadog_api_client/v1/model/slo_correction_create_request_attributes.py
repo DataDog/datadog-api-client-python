@@ -54,17 +54,29 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
     def __init__(self, category, slo_id, start, *args, **kwargs):
         """SLOCorrectionCreateRequestAttributes - a model defined in OpenAPI
 
-        Args:
-            category (SLOCorrectionCategory):
-            slo_id (str): ID of the SLO that this correction will be applied to.
-            start (int): Starting time of the correction in epoch seconds.
 
-        Keyword Args:
-            description (str): [optional] Description of the correction being made.
-            duration (int): [optional] Length of time (in seconds) for a specified `rrule` recurring SLO correction.
-            end (int): [optional] Ending time of the correction in epoch seconds.
-            rrule (str): [optional] The recurrence rules as defined in the iCalendar RFC 5545. The supported rules for SLO corrections are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.
-            timezone (str): [optional] The timezone to display in the UI for the correction times (defaults to \"UTC\").
+        :type category: SLOCorrectionCategory
+
+        :param slo_id: ID of the SLO that this correction will be applied to.
+        :type slo_id: str
+
+        :param start: Starting time of the correction in epoch seconds.
+        :type start: int
+
+        :param description: Description of the correction being made.
+        :type description: str, optional
+
+        :param duration: Length of time (in seconds) for a specified `rrule` recurring SLO correction.
+        :type duration: int, optional
+
+        :param end: Ending time of the correction in epoch seconds.
+        :type end: int, optional
+
+        :param rrule: The recurrence rules as defined in the iCalendar RFC 5545. The supported rules for SLO corrections are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.
+        :type rrule: str, optional
+
+        :param timezone: The timezone to display in the UI for the correction times (defaults to \"UTC\").
+        :type timezone: str, optional
         """
         super().__init__(kwargs)
 

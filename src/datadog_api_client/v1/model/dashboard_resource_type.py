@@ -34,12 +34,8 @@ class DashboardResourceType(ModelSimple):
         """DashboardResourceType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Dashboard resource type. If omitted defaults to "dashboard". Must be one of ["dashboard"].
-
-        Keyword Args:
-            value (str): Dashboard resource type. If omitted defaults to "dashboard". Must be one of ["dashboard"].
+        :param value: Dashboard resource type. If omitted defaults to "dashboard". Must be one of ["dashboard"].
+        :type value: str
         """
         super().__init__(kwargs)
 

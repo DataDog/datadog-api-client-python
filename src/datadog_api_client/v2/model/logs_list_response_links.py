@@ -33,8 +33,9 @@ class LogsListResponseLinks(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsListResponseLinks - a model defined in OpenAPI
 
-        Keyword Args:
-            next (str): [optional] Link for the next set of results. Note that the request can also be made using the POST endpoint.
+
+        :param next: Link for the next set of results. Note that the request can also be made using the POST endpoint.
+        :type next: str, optional
         """
         super().__init__(kwargs)
 

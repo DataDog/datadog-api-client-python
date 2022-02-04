@@ -41,12 +41,8 @@ class NotebookMetadataType(ModelSimple):
         """NotebookMetadataType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Metadata type of the notebook. If omitted defaults to "null". Must be one of ["postmortem", "runbook", "investigation", "documentation", "report"].
-
-        Keyword Args:
-            value (str): Metadata type of the notebook. If omitted defaults to "null". Must be one of ["postmortem", "runbook", "investigation", "documentation", "report"].
+        :param value: Metadata type of the notebook. If omitted defaults to "null". Must be one of ["postmortem", "runbook", "investigation", "documentation", "report"].
+        :type value: str
         """
         super().__init__(kwargs)
 

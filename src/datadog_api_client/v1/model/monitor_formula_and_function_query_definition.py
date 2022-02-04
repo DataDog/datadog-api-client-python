@@ -53,13 +53,21 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
     def __init__(self, *args, **kwargs):
         """MonitorFormulaAndFunctionQueryDefinition - a model defined in OpenAPI
 
-        Keyword Args:
-            group_by ([MonitorFormulaAndFunctionEventQueryGroupBy]): [optional] Group by options.
-            indexes ([str]): [optional] An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.
-            search (MonitorFormulaAndFunctionEventQueryDefinitionSearch): [optional]
-            compute (MonitorFormulaAndFunctionEventQueryDefinitionCompute): [optional]
-            data_source (MonitorFormulaAndFunctionEventsDataSource): [optional]
-            name (str): [optional] Name of the query for use in formulas.
+
+        :param group_by: Group by options.
+        :type group_by: [MonitorFormulaAndFunctionEventQueryGroupBy], optional
+
+        :param indexes: An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.
+        :type indexes: [str], optional
+
+        :type search: MonitorFormulaAndFunctionEventQueryDefinitionSearch, optional
+
+        :type compute: MonitorFormulaAndFunctionEventQueryDefinitionCompute, optional
+
+        :type data_source: MonitorFormulaAndFunctionEventsDataSource, optional
+
+        :param name: Name of the query for use in formulas.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

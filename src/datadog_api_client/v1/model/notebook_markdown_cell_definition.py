@@ -42,11 +42,11 @@ class NotebookMarkdownCellDefinition(ModelNormal):
     def __init__(self, text, type, *args, **kwargs):
         """NotebookMarkdownCellDefinition - a model defined in OpenAPI
 
-        Args:
-            text (str): The markdown content.
-            type (NotebookMarkdownCellDefinitionType):
 
-        Keyword Args:
+        :param text: The markdown content.
+        :type text: str
+
+        :type type: NotebookMarkdownCellDefinitionType
         """
         super().__init__(kwargs)
 

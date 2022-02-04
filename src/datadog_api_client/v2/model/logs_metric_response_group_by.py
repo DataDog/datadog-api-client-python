@@ -35,9 +35,12 @@ class LogsMetricResponseGroupBy(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsMetricResponseGroupBy - a model defined in OpenAPI
 
-        Keyword Args:
-            path (str): [optional] The path to the value the log-based metric will be aggregated over.
-            tag_name (str): [optional] Eventual name of the tag that gets created. By default, the path attribute is used as the tag name.
+
+        :param path: The path to the value the log-based metric will be aggregated over.
+        :type path: str, optional
+
+        :param tag_name: Eventual name of the tag that gets created. By default, the path attribute is used as the tag name.
+        :type tag_name: str, optional
         """
         super().__init__(kwargs)
 

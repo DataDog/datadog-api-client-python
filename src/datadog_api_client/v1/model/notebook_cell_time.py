@@ -37,11 +37,17 @@ class NotebookCellTime(ModelComposed):
     def __init__(self, *args, **kwargs):
         """NotebookCellTime - a model defined in OpenAPI
 
-        Keyword Args:
-            live (bool): [optional] Indicates whether the timeframe should be shifted to end at the current time.
-            live_span (WidgetLiveSpan): [optional]
-            end (datetime): [optional] The end time.
-            start (datetime): [optional] The start time.
+
+        :param live: Indicates whether the timeframe should be shifted to end at the current time.
+        :type live: bool, optional
+
+        :type live_span: WidgetLiveSpan, optional
+
+        :param end: The end time.
+        :type end: datetime, optional
+
+        :param start: The start time.
+        :type start: datetime, optional
         """
         super().__init__(kwargs)
 

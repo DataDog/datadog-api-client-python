@@ -48,10 +48,13 @@ class UsageSpecifiedCustomReportsData(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageSpecifiedCustomReportsData - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (UsageSpecifiedCustomReportsAttributes): [optional]
-            id (str): [optional] The date for specified custom reports.
-            type (UsageReportsType): [optional]
+
+        :type attributes: UsageSpecifiedCustomReportsAttributes, optional
+
+        :param id: The date for specified custom reports.
+        :type id: str, optional
+
+        :type type: UsageReportsType, optional
         """
         super().__init__(kwargs)
 

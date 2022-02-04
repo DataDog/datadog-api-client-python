@@ -37,12 +37,8 @@ class MetricTagConfigurationMetricTypes(ModelSimple):
         """MetricTagConfigurationMetricTypes - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The metric's type. If omitted defaults to "gauge". Must be one of ["gauge", "count", "rate", "distribution"].
-
-        Keyword Args:
-            value (str): The metric's type. If omitted defaults to "gauge". Must be one of ["gauge", "count", "rate", "distribution"].
+        :param value: The metric's type. If omitted defaults to "gauge". Must be one of ["gauge", "count", "rate", "distribution"].
+        :type value: str
         """
         super().__init__(kwargs)
 

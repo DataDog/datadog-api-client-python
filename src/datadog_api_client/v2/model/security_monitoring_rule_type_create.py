@@ -36,12 +36,8 @@ class SecurityMonitoringRuleTypeCreate(ModelSimple):
         """SecurityMonitoringRuleTypeCreate - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The rule type. Must be one of ["log_detection", "workload_security"].
-
-        Keyword Args:
-            value (str): The rule type. Must be one of ["log_detection", "workload_security"].
+        :param value: The rule type. Must be one of ["log_detection", "workload_security"].
+        :type value: str
         """
         super().__init__(kwargs)
 

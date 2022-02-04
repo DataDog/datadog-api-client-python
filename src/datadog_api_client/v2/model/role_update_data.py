@@ -46,12 +46,13 @@ class RoleUpdateData(ModelNormal):
     def __init__(self, attributes, id, type, *args, **kwargs):
         """RoleUpdateData - a model defined in OpenAPI
 
-        Args:
-            attributes (RoleUpdateAttributes):
-            id (str): ID of the role.
-            type (RolesType):
 
-        Keyword Args:
+        :type attributes: RoleUpdateAttributes
+
+        :param id: ID of the role.
+        :type id: str
+
+        :type type: RolesType
         """
         super().__init__(kwargs)
 

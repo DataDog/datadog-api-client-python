@@ -39,11 +39,12 @@ class ApplicationKeyCreateAttributes(ModelNormal):
     def __init__(self, name, *args, **kwargs):
         """ApplicationKeyCreateAttributes - a model defined in OpenAPI
 
-        Args:
-            name (str): Name of the application key.
 
-        Keyword Args:
-            scopes ([str], none_type): [optional] Array of scopes to grant the application key. This feature is in private beta, please contact Datadog support to enable scopes for your application keys.
+        :param name: Name of the application key.
+        :type name: str
+
+        :param scopes: Array of scopes to grant the application key. This feature is in private beta, please contact Datadog support to enable scopes for your application keys.
+        :type scopes: [str], none_type, optional
         """
         super().__init__(kwargs)
 

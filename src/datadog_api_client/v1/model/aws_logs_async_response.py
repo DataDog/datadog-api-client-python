@@ -42,9 +42,12 @@ class AWSLogsAsyncResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """AWSLogsAsyncResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            errors ([AWSLogsAsyncError]): [optional] List of errors.
-            status (str): [optional] Status of the properties.
+
+        :param errors: List of errors.
+        :type errors: [AWSLogsAsyncError], optional
+
+        :param status: Status of the properties.
+        :type status: str, optional
         """
         super().__init__(kwargs)
 

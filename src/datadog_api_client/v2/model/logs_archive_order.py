@@ -40,8 +40,8 @@ class LogsArchiveOrder(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsArchiveOrder - a model defined in OpenAPI
 
-        Keyword Args:
-            data (LogsArchiveOrderDefinition): [optional]
+
+        :type data: LogsArchiveOrderDefinition, optional
         """
         super().__init__(kwargs)
 

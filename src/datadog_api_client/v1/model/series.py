@@ -54,15 +54,24 @@ class Series(ModelNormal):
     def __init__(self, metric, points, *args, **kwargs):
         """Series - a model defined in OpenAPI
 
-        Args:
-            metric (str): The name of the timeseries.
-            points ([Point]): Points relating to a metric. All points must be tuples with timestamp and a scalar value (cannot be a string). Timestamps should be in POSIX time in seconds, and cannot be more than ten minutes in the future or more than one hour in the past.
 
-        Keyword Args:
-            host (str): [optional] The name of the host that produced the metric.
-            interval (int, none_type): [optional] If the type of the metric is rate or count, define the corresponding interval.
-            tags ([str]): [optional] A list of tags associated with the metric.
-            type (str): [optional] The type of the metric either `count`, `gauge`, or `rate`. If omitted the server will use the default value of "gauge".
+        :param metric: The name of the timeseries.
+        :type metric: str
+
+        :param points: Points relating to a metric. All points must be tuples with timestamp and a scalar value (cannot be a string). Timestamps should be in POSIX time in seconds, and cannot be more than ten minutes in the future or more than one hour in the past.
+        :type points: [Point]
+
+        :param host: The name of the host that produced the metric.
+        :type host: str, optional
+
+        :param interval: If the type of the metric is rate or count, define the corresponding interval.
+        :type interval: int, none_type, optional
+
+        :param tags: A list of tags associated with the metric.
+        :type tags: [str], optional
+
+        :param type: The type of the metric either `count`, `gauge`, or `rate`. If omitted the server will use the default value of "gauge".
+        :type type: str, optional
         """
         super().__init__(kwargs)
 

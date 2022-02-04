@@ -48,9 +48,11 @@ class IncidentFieldAttributesSingleValue(ModelNormal):
     def __init__(self, *args, **kwargs):
         """IncidentFieldAttributesSingleValue - a model defined in OpenAPI
 
-        Keyword Args:
-            type (IncidentFieldAttributesSingleValueType): [optional]
-            value (str, none_type): [optional] The single value selected for this field.
+
+        :type type: IncidentFieldAttributesSingleValueType, optional
+
+        :param value: The single value selected for this field.
+        :type value: str, none_type, optional
         """
         super().__init__(kwargs)
 

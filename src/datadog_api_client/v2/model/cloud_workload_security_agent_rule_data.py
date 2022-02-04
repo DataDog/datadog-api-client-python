@@ -48,10 +48,13 @@ class CloudWorkloadSecurityAgentRuleData(ModelNormal):
     def __init__(self, *args, **kwargs):
         """CloudWorkloadSecurityAgentRuleData - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (CloudWorkloadSecurityAgentRuleAttributes): [optional]
-            id (str): [optional] The ID of the Agent rule.
-            type (CloudWorkloadSecurityAgentRuleType): [optional]
+
+        :type attributes: CloudWorkloadSecurityAgentRuleAttributes, optional
+
+        :param id: The ID of the Agent rule.
+        :type id: str, optional
+
+        :type type: CloudWorkloadSecurityAgentRuleType, optional
         """
         super().__init__(kwargs)
 

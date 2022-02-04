@@ -37,10 +37,14 @@ class SunburstWidgetLegend(ModelComposed):
     def __init__(self, *args, **kwargs):
         """SunburstWidgetLegend - a model defined in OpenAPI
 
-        Keyword Args:
-            hide_percent (bool): [optional] Whether to hide the percentages of the groups.
-            hide_value (bool): [optional] Whether to hide the values of the groups.
-            type (SunburstWidgetLegendInlineAutomaticType): [optional]
+
+        :param hide_percent: Whether to hide the percentages of the groups.
+        :type hide_percent: bool, optional
+
+        :param hide_value: Whether to hide the values of the groups.
+        :type hide_value: bool, optional
+
+        :type type: SunburstWidgetLegendInlineAutomaticType, optional
         """
         super().__init__(kwargs)
 

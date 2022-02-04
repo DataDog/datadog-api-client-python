@@ -44,12 +44,14 @@ class LogQueryDefinitionGroupBy(ModelNormal):
     def __init__(self, facet, *args, **kwargs):
         """LogQueryDefinitionGroupBy - a model defined in OpenAPI
 
-        Args:
-            facet (str): Facet name.
 
-        Keyword Args:
-            limit (int): [optional] Maximum number of items in the group.
-            sort (LogQueryDefinitionGroupBySort): [optional]
+        :param facet: Facet name.
+        :type facet: str
+
+        :param limit: Maximum number of items in the group.
+        :type limit: int, optional
+
+        :type sort: LogQueryDefinitionGroupBySort, optional
         """
         super().__init__(kwargs)
 

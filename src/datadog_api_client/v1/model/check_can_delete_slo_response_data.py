@@ -33,8 +33,9 @@ class CheckCanDeleteSLOResponseData(ModelNormal):
     def __init__(self, *args, **kwargs):
         """CheckCanDeleteSLOResponseData - a model defined in OpenAPI
 
-        Keyword Args:
-            ok ([str]): [optional] An array of of SLO IDs that can be safely deleted.
+
+        :param ok: An array of of SLO IDs that can be safely deleted.
+        :type ok: [str], optional
         """
         super().__init__(kwargs)
 

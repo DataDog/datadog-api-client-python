@@ -50,13 +50,15 @@ class Role(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """Role - a model defined in OpenAPI
 
-        Args:
-            type (RolesType):
 
-        Keyword Args:
-            attributes (RoleAttributes): [optional]
-            id (str): [optional] ID of the role.
-            relationships (RoleResponseRelationships): [optional]
+        :type type: RolesType
+
+        :type attributes: RoleAttributes, optional
+
+        :param id: ID of the role.
+        :type id: str, optional
+
+        :type relationships: RoleResponseRelationships, optional
         """
         super().__init__(kwargs)
 

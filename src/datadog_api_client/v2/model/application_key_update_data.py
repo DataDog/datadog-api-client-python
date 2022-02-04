@@ -46,12 +46,13 @@ class ApplicationKeyUpdateData(ModelNormal):
     def __init__(self, attributes, id, type, *args, **kwargs):
         """ApplicationKeyUpdateData - a model defined in OpenAPI
 
-        Args:
-            attributes (ApplicationKeyUpdateAttributes):
-            id (str): ID of the application key.
-            type (ApplicationKeysType):
 
-        Keyword Args:
+        :type attributes: ApplicationKeyUpdateAttributes
+
+        :param id: ID of the application key.
+        :type id: str
+
+        :type type: ApplicationKeysType
         """
         super().__init__(kwargs)
 

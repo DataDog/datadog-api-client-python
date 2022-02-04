@@ -46,12 +46,13 @@ class UserUpdateData(ModelNormal):
     def __init__(self, attributes, id, type, *args, **kwargs):
         """UserUpdateData - a model defined in OpenAPI
 
-        Args:
-            attributes (UserUpdateAttributes):
-            id (str): ID of the user.
-            type (UsersType):
 
-        Keyword Args:
+        :type attributes: UserUpdateAttributes
+
+        :param id: ID of the user.
+        :type id: str
+
+        :type type: UsersType
         """
         super().__init__(kwargs)
 

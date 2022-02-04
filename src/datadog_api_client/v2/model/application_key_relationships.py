@@ -40,8 +40,8 @@ class ApplicationKeyRelationships(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ApplicationKeyRelationships - a model defined in OpenAPI
 
-        Keyword Args:
-            owned_by (RelationshipToUser): [optional]
+
+        :type owned_by: RelationshipToUser, optional
         """
         super().__init__(kwargs)
 

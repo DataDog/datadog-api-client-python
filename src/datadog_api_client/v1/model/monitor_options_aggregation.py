@@ -37,10 +37,15 @@ class MonitorOptionsAggregation(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MonitorOptionsAggregation - a model defined in OpenAPI
 
-        Keyword Args:
-            group_by (str): [optional] Group to break down the monitor on.
-            metric (str): [optional] Metric name used in the monitor.
-            type (str): [optional] Metric type used in the monitor.
+
+        :param group_by: Group to break down the monitor on.
+        :type group_by: str, optional
+
+        :param metric: Metric name used in the monitor.
+        :type metric: str, optional
+
+        :param type: Metric type used in the monitor.
+        :type type: str, optional
         """
         super().__init__(kwargs)
 

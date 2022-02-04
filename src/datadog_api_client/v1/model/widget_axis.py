@@ -41,12 +41,21 @@ class WidgetAxis(ModelNormal):
     def __init__(self, *args, **kwargs):
         """WidgetAxis - a model defined in OpenAPI
 
-        Keyword Args:
-            include_zero (bool): [optional] True includes zero.
-            label (str): [optional] The label of the axis to display on the graph.
-            max (str): [optional] Specifies the maximum value to show on the y-axis. It takes a number, or auto for default behavior. If omitted the server will use the default value of "auto".
-            min (str): [optional] Specifies minimum value to show on the y-axis. It takes a number, or auto for default behavior. If omitted the server will use the default value of "auto".
-            scale (str): [optional] Specifies the scale type. Possible values are `linear`, `log`, `sqrt`, `pow##` (for example `pow2`, `pow0.5` etc.). If omitted the server will use the default value of "linear".
+
+        :param include_zero: True includes zero.
+        :type include_zero: bool, optional
+
+        :param label: The label of the axis to display on the graph.
+        :type label: str, optional
+
+        :param max: Specifies the maximum value to show on the y-axis. It takes a number, or auto for default behavior. If omitted the server will use the default value of "auto".
+        :type max: str, optional
+
+        :param min: Specifies minimum value to show on the y-axis. It takes a number, or auto for default behavior. If omitted the server will use the default value of "auto".
+        :type min: str, optional
+
+        :param scale: Specifies the scale type. Possible values are `linear`, `log`, `sqrt`, `pow##` (for example `pow2`, `pow0.5` etc.). If omitted the server will use the default value of "linear".
+        :type scale: str, optional
         """
         super().__init__(kwargs)
 

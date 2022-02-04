@@ -36,12 +36,8 @@ class SunburstWidgetLegendTableType(ModelSimple):
         """SunburstWidgetLegendTableType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Whether or not to show a table legend. Must be one of ["table", "none"].
-
-        Keyword Args:
-            value (str): Whether or not to show a table legend. Must be one of ["table", "none"].
+        :param value: Whether or not to show a table legend. Must be one of ["table", "none"].
+        :type value: str
         """
         super().__init__(kwargs)
 

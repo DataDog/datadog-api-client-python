@@ -40,8 +40,8 @@ class ResponseMetaAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ResponseMetaAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            page (Pagination): [optional]
+
+        :type page: Pagination, optional
         """
         super().__init__(kwargs)
 

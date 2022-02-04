@@ -33,10 +33,9 @@ class APIErrorResponse(ModelNormal):
     def __init__(self, errors, *args, **kwargs):
         """APIErrorResponse - a model defined in OpenAPI
 
-        Args:
-            errors ([str]): Array of errors returned by the API.
 
-        Keyword Args:
+        :param errors: Array of errors returned by the API.
+        :type errors: [str]
         """
         super().__init__(kwargs)
 

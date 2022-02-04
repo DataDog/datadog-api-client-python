@@ -37,12 +37,8 @@ class WidgetSizeFormat(ModelSimple):
         """WidgetSizeFormat - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Size of the widget. Must be one of ["small", "medium", "large"].
-
-        Keyword Args:
-            value (str): Size of the widget. Must be one of ["small", "medium", "large"].
+        :param value: Size of the widget. Must be one of ["small", "medium", "large"].
+        :type value: str
         """
         super().__init__(kwargs)
 

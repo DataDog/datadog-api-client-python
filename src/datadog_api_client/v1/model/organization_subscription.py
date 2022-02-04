@@ -33,8 +33,9 @@ class OrganizationSubscription(ModelNormal):
     def __init__(self, *args, **kwargs):
         """OrganizationSubscription - a model defined in OpenAPI
 
-        Keyword Args:
-            type (str): [optional] The subscription type. Types available are `trial`, `free`, and `pro`.
+
+        :param type: The subscription type. Types available are `trial`, `free`, and `pro`.
+        :type type: str, optional
         """
         super().__init__(kwargs)
 

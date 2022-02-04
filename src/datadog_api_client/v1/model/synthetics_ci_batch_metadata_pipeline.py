@@ -33,8 +33,9 @@ class SyntheticsCIBatchMetadataPipeline(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsCIBatchMetadataPipeline - a model defined in OpenAPI
 
-        Keyword Args:
-            url (str): [optional] URL of the pipeline.
+
+        :param url: URL of the pipeline.
+        :type url: str, optional
         """
         super().__init__(kwargs)
 

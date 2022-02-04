@@ -40,8 +40,9 @@ class UserListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UserListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            users ([User]): [optional] Array of users.
+
+        :param users: Array of users.
+        :type users: [User], optional
         """
         super().__init__(kwargs)
 

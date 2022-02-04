@@ -51,12 +51,21 @@ class FullAPIKeyAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """FullAPIKeyAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            created_at (str): [optional] Creation date of the API key.
-            key (str): [optional] The API key.
-            last4 (str): [optional] The last four characters of the API key.
-            modified_at (str): [optional] Date the API key was last modified.
-            name (str): [optional] Name of the API key.
+
+        :param created_at: Creation date of the API key.
+        :type created_at: str, optional
+
+        :param key: The API key.
+        :type key: str, optional
+
+        :param last4: The last four characters of the API key.
+        :type last4: str, optional
+
+        :param modified_at: Date the API key was last modified.
+        :type modified_at: str, optional
+
+        :param name: Name of the API key.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

@@ -74,22 +74,39 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
     def __init__(self, query, type, *args, **kwargs):
         """MonitorSummaryWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            query (str): Query to filter the monitors with.
-            type (MonitorSummaryWidgetDefinitionType):
 
-        Keyword Args:
-            color_preference (WidgetColorPreference): [optional]
-            count (int): [optional] The number of monitors to display.
-            display_format (WidgetMonitorSummaryDisplayFormat): [optional]
-            hide_zero_counts (bool): [optional] Whether to show counts of 0 or not.
-            show_last_triggered (bool): [optional] Whether to show the time that has elapsed since the monitor/group triggered.
-            sort (WidgetMonitorSummarySort): [optional]
-            start (int): [optional] The start of the list. Typically 0.
-            summary_type (WidgetSummaryType): [optional]
-            title (str): [optional] Title of the widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
+        :param query: Query to filter the monitors with.
+        :type query: str
+
+        :type type: MonitorSummaryWidgetDefinitionType
+
+        :type color_preference: WidgetColorPreference, optional
+
+        :param count: The number of monitors to display.
+        :type count: int, optional
+
+        :type display_format: WidgetMonitorSummaryDisplayFormat, optional
+
+        :param hide_zero_counts: Whether to show counts of 0 or not.
+        :type hide_zero_counts: bool, optional
+
+        :param show_last_triggered: Whether to show the time that has elapsed since the monitor/group triggered.
+        :type show_last_triggered: bool, optional
+
+        :type sort: WidgetMonitorSummarySort, optional
+
+        :param start: The start of the list. Typically 0.
+        :type start: int, optional
+
+        :type summary_type: WidgetSummaryType, optional
+
+        :param title: Title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

@@ -48,15 +48,30 @@ class OrganizationAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """OrganizationAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            created_at (datetime): [optional] Creation time of the organization.
-            description (str): [optional] Description of the organization.
-            disabled (bool): [optional] Whether or not the organization is disabled.
-            modified_at (datetime): [optional] Time of last organization modification.
-            name (str): [optional] Name of the organization.
-            public_id (str): [optional] Public ID of the organization.
-            sharing (str): [optional] Sharing type of the organization.
-            url (str): [optional] URL of the site that this organization exists at.
+
+        :param created_at: Creation time of the organization.
+        :type created_at: datetime, optional
+
+        :param description: Description of the organization.
+        :type description: str, optional
+
+        :param disabled: Whether or not the organization is disabled.
+        :type disabled: bool, optional
+
+        :param modified_at: Time of last organization modification.
+        :type modified_at: datetime, optional
+
+        :param name: Name of the organization.
+        :type name: str, optional
+
+        :param public_id: Public ID of the organization.
+        :type public_id: str, optional
+
+        :param sharing: Sharing type of the organization.
+        :type sharing: str, optional
+
+        :param url: URL of the site that this organization exists at.
+        :type url: str, optional
         """
         super().__init__(kwargs)
 

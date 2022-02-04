@@ -38,12 +38,8 @@ class SyntheticsGlobalVariableParserType(ModelSimple):
         """SyntheticsGlobalVariableParserType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of parser for a Synthetics global variable from a synthetics test. Must be one of ["raw", "json_path", "regex", "x_path"].
-
-        Keyword Args:
-            value (str): Type of parser for a Synthetics global variable from a synthetics test. Must be one of ["raw", "json_path", "regex", "x_path"].
+        :param value: Type of parser for a Synthetics global variable from a synthetics test. Must be one of ["raw", "json_path", "regex", "x_path"].
+        :type value: str
         """
         super().__init__(kwargs)
 

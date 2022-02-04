@@ -40,8 +40,9 @@ class SyntheticsCITestBody(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsCITestBody - a model defined in OpenAPI
 
-        Keyword Args:
-            tests ([SyntheticsCITest]): [optional] Individual synthetics test.
+
+        :param tests: Individual synthetics test.
+        :type tests: [SyntheticsCITest], optional
         """
         super().__init__(kwargs)
 

@@ -33,8 +33,9 @@ class CanceledDowntimesIds(ModelNormal):
     def __init__(self, *args, **kwargs):
         """CanceledDowntimesIds - a model defined in OpenAPI
 
-        Keyword Args:
-            cancelled_ids ([int]): [optional] ID of downtimes that were canceled.
+
+        :param cancelled_ids: ID of downtimes that were canceled.
+        :type cancelled_ids: [int], optional
         """
         super().__init__(kwargs)
 

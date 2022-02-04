@@ -42,9 +42,11 @@ class Metric(ModelNormal):
     def __init__(self, *args, **kwargs):
         """Metric - a model defined in OpenAPI
 
-        Keyword Args:
-            id (str): [optional] The metric name for this resource.
-            type (MetricType): [optional]
+
+        :param id: The metric name for this resource.
+        :type id: str, optional
+
+        :type type: MetricType, optional
         """
         super().__init__(kwargs)
 

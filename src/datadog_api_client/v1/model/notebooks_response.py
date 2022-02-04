@@ -44,9 +44,11 @@ class NotebooksResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """NotebooksResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([NotebooksResponseData]): [optional] List of notebook definitions.
-            meta (NotebooksResponseMeta): [optional]
+
+        :param data: List of notebook definitions.
+        :type data: [NotebooksResponseData], optional
+
+        :type meta: NotebooksResponseMeta, optional
         """
         super().__init__(kwargs)
 

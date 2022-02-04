@@ -35,11 +35,12 @@ class LogsArchiveIntegrationAzure(ModelNormal):
     def __init__(self, client_id, tenant_id, *args, **kwargs):
         """LogsArchiveIntegrationAzure - a model defined in OpenAPI
 
-        Args:
-            client_id (str): A client ID.
-            tenant_id (str): A tenant ID.
 
-        Keyword Args:
+        :param client_id: A client ID.
+        :type client_id: str
+
+        :param tenant_id: A tenant ID.
+        :type tenant_id: str
         """
         super().__init__(kwargs)
 

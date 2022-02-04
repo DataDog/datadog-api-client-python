@@ -37,12 +37,8 @@ class TimeseriesWidgetLegendLayout(ModelSimple):
         """TimeseriesWidgetLegendLayout - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Layout of the legend. Must be one of ["auto", "horizontal", "vertical"].
-
-        Keyword Args:
-            value (str): Layout of the legend. Must be one of ["auto", "horizontal", "vertical"].
+        :param value: Layout of the legend. Must be one of ["auto", "horizontal", "vertical"].
+        :type value: str
         """
         super().__init__(kwargs)
 

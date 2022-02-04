@@ -42,9 +42,12 @@ class LogsByRetentionMonthlyUsage(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsByRetentionMonthlyUsage - a model defined in OpenAPI
 
-        Keyword Args:
-            date (str): [optional] The month for the usage.
-            usage ([LogsRetentionSumUsage]): [optional] Indexed logs usage for each active retention for the month.
+
+        :param date: The month for the usage.
+        :type date: str, optional
+
+        :param usage: Indexed logs usage for each active retention for the month.
+        :type usage: [LogsRetentionSumUsage], optional
         """
         super().__init__(kwargs)
 

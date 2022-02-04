@@ -79,20 +79,39 @@ class SyntheticsTestDetails(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsTestDetails - a model defined in OpenAPI
 
-        Keyword Args:
-            config (SyntheticsTestConfig): [optional]
-            creator (Creator): [optional]
-            locations ([str]): [optional] Array of locations used to run the test.
-            message (str): [optional] Notification message associated with the test.
-            monitor_id (int): [optional] The associated monitor ID.
-            name (str): [optional] Name of the test.
-            options (SyntheticsTestOptions): [optional]
-            public_id (str): [optional] The test public ID.
-            status (SyntheticsTestPauseStatus): [optional]
-            steps ([SyntheticsStep]): [optional] For browser test, the steps of the test.
-            subtype (SyntheticsTestDetailsSubType): [optional]
-            tags ([str]): [optional] Array of tags attached to the test.
-            type (SyntheticsTestDetailsType): [optional]
+
+        :type config: SyntheticsTestConfig, optional
+
+        :type creator: Creator, optional
+
+        :param locations: Array of locations used to run the test.
+        :type locations: [str], optional
+
+        :param message: Notification message associated with the test.
+        :type message: str, optional
+
+        :param monitor_id: The associated monitor ID.
+        :type monitor_id: int, optional
+
+        :param name: Name of the test.
+        :type name: str, optional
+
+        :type options: SyntheticsTestOptions, optional
+
+        :param public_id: The test public ID.
+        :type public_id: str, optional
+
+        :type status: SyntheticsTestPauseStatus, optional
+
+        :param steps: For browser test, the steps of the test.
+        :type steps: [SyntheticsStep], optional
+
+        :type subtype: SyntheticsTestDetailsSubType, optional
+
+        :param tags: Array of tags attached to the test.
+        :type tags: [str], optional
+
+        :type type: SyntheticsTestDetailsType, optional
         """
         super().__init__(kwargs)
 

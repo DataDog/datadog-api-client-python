@@ -37,12 +37,8 @@ class ApmStatsQueryRowType(ModelSimple):
         """ApmStatsQueryRowType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The level of detail for the request. Must be one of ["service", "resource", "span"].
-
-        Keyword Args:
-            value (str): The level of detail for the request. Must be one of ["service", "resource", "span"].
+        :param value: The level of detail for the request. Must be one of ["service", "resource", "span"].
+        :type value: str
         """
         super().__init__(kwargs)
 

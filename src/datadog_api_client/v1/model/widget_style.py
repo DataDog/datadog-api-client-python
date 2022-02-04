@@ -33,8 +33,9 @@ class WidgetStyle(ModelNormal):
     def __init__(self, *args, **kwargs):
         """WidgetStyle - a model defined in OpenAPI
 
-        Keyword Args:
-            palette (str): [optional] Color palette to apply to the widget.
+
+        :param palette: Color palette to apply to the widget.
+        :type palette: str, optional
         """
         super().__init__(kwargs)
 

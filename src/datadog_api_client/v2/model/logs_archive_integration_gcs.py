@@ -35,11 +35,12 @@ class LogsArchiveIntegrationGCS(ModelNormal):
     def __init__(self, client_email, project_id, *args, **kwargs):
         """LogsArchiveIntegrationGCS - a model defined in OpenAPI
 
-        Args:
-            client_email (str): A client email.
-            project_id (str): A project ID.
 
-        Keyword Args:
+        :param client_email: A client email.
+        :type client_email: str
+
+        :param project_id: A project ID.
+        :type project_id: str
         """
         super().__init__(kwargs)
 

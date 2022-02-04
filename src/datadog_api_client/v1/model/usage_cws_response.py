@@ -40,8 +40,9 @@ class UsageCWSResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageCWSResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageCWSHour]): [optional] Get hourly usage for Cloud Workload Security.
+
+        :param usage: Get hourly usage for Cloud Workload Security.
+        :type usage: [UsageCWSHour], optional
         """
         super().__init__(kwargs)
 

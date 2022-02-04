@@ -40,8 +40,9 @@ class UsageNetworkHostsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageNetworkHostsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageNetworkHostsHour]): [optional] Get hourly usage for NPM hosts.
+
+        :param usage: Get hourly usage for NPM hosts.
+        :type usage: [UsageNetworkHostsHour], optional
         """
         super().__init__(kwargs)
 

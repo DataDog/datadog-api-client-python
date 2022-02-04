@@ -39,14 +39,25 @@ class LogsArchiveCreateRequestDestination(ModelComposed):
     def __init__(self, *args, **kwargs):
         """LogsArchiveCreateRequestDestination - a model defined in OpenAPI
 
-        Keyword Args:
-            path (str): [optional] The archive path.
-            region (str): [optional] The region where the archive will be stored.
-            container (str): [optional] The container where the archive will be stored.
-            integration (LogsArchiveIntegrationS3): [optional]
-            storage_account (str): [optional] The associated storage account.
-            type (LogsArchiveDestinationS3Type): [optional]
-            bucket (str): [optional] The bucket where the archive will be stored.
+
+        :param path: The archive path.
+        :type path: str, optional
+
+        :param region: The region where the archive will be stored.
+        :type region: str, optional
+
+        :param container: The container where the archive will be stored.
+        :type container: str, optional
+
+        :type integration: LogsArchiveIntegrationS3, optional
+
+        :param storage_account: The associated storage account.
+        :type storage_account: str, optional
+
+        :type type: LogsArchiveDestinationS3Type, optional
+
+        :param bucket: The bucket where the archive will be stored.
+        :type bucket: str, optional
         """
         super().__init__(kwargs)
 

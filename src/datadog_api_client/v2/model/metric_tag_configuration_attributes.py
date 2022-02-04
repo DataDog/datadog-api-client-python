@@ -53,13 +53,22 @@ class MetricTagConfigurationAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MetricTagConfigurationAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            aggregations (MetricCustomAggregations): [optional]
-            created_at (datetime): [optional] Timestamp when the tag configuration was created.
-            include_percentiles (bool): [optional] Toggle to turn on/off percentile aggregations for distribution metrics. Only present when the `metric_type` is `distribution`.
-            metric_type (MetricTagConfigurationMetricTypes): [optional]
-            modified_at (datetime): [optional] Timestamp when the tag configuration was last modified.
-            tags ([str]): [optional] List of tag keys on which to group.
+
+        :type aggregations: MetricCustomAggregations, optional
+
+        :param created_at: Timestamp when the tag configuration was created.
+        :type created_at: datetime, optional
+
+        :param include_percentiles: Toggle to turn on/off percentile aggregations for distribution metrics. Only present when the `metric_type` is `distribution`.
+        :type include_percentiles: bool, optional
+
+        :type metric_type: MetricTagConfigurationMetricTypes, optional
+
+        :param modified_at: Timestamp when the tag configuration was last modified.
+        :type modified_at: datetime, optional
+
+        :param tags: List of tag keys on which to group.
+        :type tags: [str], optional
         """
         super().__init__(kwargs)
 

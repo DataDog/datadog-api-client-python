@@ -38,12 +38,8 @@ class SLOCorrectionCategory(ModelSimple):
         """SLOCorrectionCategory - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Category the SLO correction belongs to. Must be one of ["Scheduled Maintenance", "Outside Business Hours", "Deployment", "Other"].
-
-        Keyword Args:
-            value (str): Category the SLO correction belongs to. Must be one of ["Scheduled Maintenance", "Outside Business Hours", "Deployment", "Other"].
+        :param value: Category the SLO correction belongs to. Must be one of ["Scheduled Maintenance", "Outside Business Hours", "Deployment", "Other"].
+        :type value: str
         """
         super().__init__(kwargs)
 

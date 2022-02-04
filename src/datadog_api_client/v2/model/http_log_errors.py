@@ -40,8 +40,9 @@ class HTTPLogErrors(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HTTPLogErrors - a model defined in OpenAPI
 
-        Keyword Args:
-            errors ([HTTPLogError]): [optional] Structured errors.
+
+        :param errors: Structured errors.
+        :type errors: [HTTPLogError], optional
         """
         super().__init__(kwargs)
 

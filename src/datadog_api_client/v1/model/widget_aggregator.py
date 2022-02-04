@@ -40,12 +40,8 @@ class WidgetAggregator(ModelSimple):
         """WidgetAggregator - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Aggregator used for the request. Must be one of ["avg", "last", "max", "min", "sum", "percentile"].
-
-        Keyword Args:
-            value (str): Aggregator used for the request. Must be one of ["avg", "last", "max", "min", "sum", "percentile"].
+        :param value: Aggregator used for the request. Must be one of ["avg", "last", "max", "min", "sum", "percentile"].
+        :type value: str
         """
         super().__init__(kwargs)
 

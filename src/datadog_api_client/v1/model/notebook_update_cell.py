@@ -37,10 +37,13 @@ class NotebookUpdateCell(ModelComposed):
     def __init__(self, *args, **kwargs):
         """NotebookUpdateCell - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (NotebookCellUpdateRequestAttributes): [optional]
-            type (NotebookCellResourceType): [optional]
-            id (str): [optional] Notebook cell ID.
+
+        :type attributes: NotebookCellUpdateRequestAttributes, optional
+
+        :type type: NotebookCellResourceType, optional
+
+        :param id: Notebook cell ID.
+        :type id: str, optional
         """
         super().__init__(kwargs)
 

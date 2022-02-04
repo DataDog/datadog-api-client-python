@@ -37,10 +37,15 @@ class SyntheticsTestRequestCertificateItem(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsTestRequestCertificateItem - a model defined in OpenAPI
 
-        Keyword Args:
-            content (str): [optional] Content of the certificate or key.
-            filename (str): [optional] File name for the certificate or key.
-            updated_at (str): [optional] Date of update of the certificate or key, ISO format.
+
+        :param content: Content of the certificate or key.
+        :type content: str, optional
+
+        :param filename: File name for the certificate or key.
+        :type filename: str, optional
+
+        :param updated_at: Date of update of the certificate or key, ISO format.
+        :type updated_at: str, optional
         """
         super().__init__(kwargs)
 

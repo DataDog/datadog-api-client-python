@@ -38,12 +38,8 @@ class WidgetComparator(ModelSimple):
         """WidgetComparator - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Comparator to apply. Must be one of [">", ">=", "<", "<="].
-
-        Keyword Args:
-            value (str): Comparator to apply. Must be one of [">", ">=", "<", "<="].
+        :param value: Comparator to apply. Must be one of [">", ">=", "<", "<="].
+        :type value: str
         """
         super().__init__(kwargs)
 

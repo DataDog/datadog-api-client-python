@@ -42,9 +42,12 @@ class LogsAggregateBucket(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsAggregateBucket - a model defined in OpenAPI
 
-        Keyword Args:
-            by ({str: (str,)}): [optional] The key, value pairs for each group by
-            computes ({str: (LogsAggregateBucketValue,)}): [optional] A map of the metric name -> value for regular compute or list of values for a timeseries
+
+        :param by: The key, value pairs for each group by
+        :type by: {str: (str,)}, optional
+
+        :param computes: A map of the metric name -> value for regular compute or list of values for a timeseries
+        :type computes: {str: (LogsAggregateBucketValue,)}, optional
         """
         super().__init__(kwargs)
 

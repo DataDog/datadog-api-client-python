@@ -50,14 +50,20 @@ class LogsCategoryProcessor(ModelNormal):
     def __init__(self, categories, target, type, *args, **kwargs):
         """LogsCategoryProcessor - a model defined in OpenAPI
 
-        Args:
-            categories ([LogsCategoryProcessorCategory]): Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.
-            target (str): Name of the target attribute which value is defined by the matching category.
-            type (LogsCategoryProcessorType):
 
-        Keyword Args:
-            is_enabled (bool): [optional] Whether or not the processor is enabled. If omitted the server will use the default value of False.
-            name (str): [optional] Name of the processor.
+        :param categories: Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.
+        :type categories: [LogsCategoryProcessorCategory]
+
+        :param target: Name of the target attribute which value is defined by the matching category.
+        :type target: str
+
+        :type type: LogsCategoryProcessorType
+
+        :param is_enabled: Whether or not the processor is enabled. If omitted the server will use the default value of False.
+        :type is_enabled: bool, optional
+
+        :param name: Name of the processor.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

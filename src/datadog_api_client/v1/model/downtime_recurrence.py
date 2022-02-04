@@ -62,13 +62,24 @@ class DowntimeRecurrence(ModelNormal):
     def __init__(self, *args, **kwargs):
         """DowntimeRecurrence - a model defined in OpenAPI
 
-        Keyword Args:
-            period (int): [optional] How often to repeat as an integer. For example, to repeat every 3 days, select a type of `days` and a period of `3`.
-            rrule (str): [optional] The `RRULE` standard for defining recurring events (**requires to set \"type\" to rrule**) For example, to have a recurring event on the first day of each month, set the type to `rrule` and set the `FREQ` to `MONTHLY` and `BYMONTHDAY` to `1`. Most common `rrule` options from the [iCalendar Spec](https://tools.ietf.org/html/rfc5545) are supported.  **Note**: Attributes specifying the duration in `RRULE` are not supported (for example, `DTSTART`, `DTEND`, `DURATION`). More examples available in this [downtime guide](https://docs.datadoghq.com/monitors/guide/suppress-alert-with-downtimes/?tab=api)
-            type (str): [optional] The type of recurrence. Choose from `days`, `weeks`, `months`, `years`, `rrule`.
-            until_date (int, none_type): [optional] The date at which the recurrence should end as a POSIX timestamp. `until_occurences` and `until_date` are mutually exclusive.
-            until_occurrences (int, none_type): [optional] How many times the downtime is rescheduled. `until_occurences` and `until_date` are mutually exclusive.
-            week_days ([str], none_type): [optional] A list of week days to repeat on. Choose from `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat` or `Sun`. Only applicable when type is weeks. First letter must be capitalized.
+
+        :param period: How often to repeat as an integer. For example, to repeat every 3 days, select a type of `days` and a period of `3`.
+        :type period: int, optional
+
+        :param rrule: The `RRULE` standard for defining recurring events (**requires to set \"type\" to rrule**) For example, to have a recurring event on the first day of each month, set the type to `rrule` and set the `FREQ` to `MONTHLY` and `BYMONTHDAY` to `1`. Most common `rrule` options from the [iCalendar Spec](https://tools.ietf.org/html/rfc5545) are supported.  **Note**: Attributes specifying the duration in `RRULE` are not supported (for example, `DTSTART`, `DTEND`, `DURATION`). More examples available in this [downtime guide](https://docs.datadoghq.com/monitors/guide/suppress-alert-with-downtimes/?tab=api)
+        :type rrule: str, optional
+
+        :param type: The type of recurrence. Choose from `days`, `weeks`, `months`, `years`, `rrule`.
+        :type type: str, optional
+
+        :param until_date: The date at which the recurrence should end as a POSIX timestamp. `until_occurences` and `until_date` are mutually exclusive.
+        :type until_date: int, none_type, optional
+
+        :param until_occurrences: How many times the downtime is rescheduled. `until_occurences` and `until_date` are mutually exclusive.
+        :type until_occurrences: int, none_type, optional
+
+        :param week_days: A list of week days to repeat on. Choose from `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat` or `Sun`. Only applicable when type is weeks. First letter must be capitalized.
+        :type week_days: [str], none_type, optional
         """
         super().__init__(kwargs)
 

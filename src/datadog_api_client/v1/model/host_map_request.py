@@ -58,16 +58,25 @@ class HostMapRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HostMapRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            apm_query (LogQueryDefinition): [optional]
-            event_query (LogQueryDefinition): [optional]
-            log_query (LogQueryDefinition): [optional]
-            network_query (LogQueryDefinition): [optional]
-            process_query (ProcessQueryDefinition): [optional]
-            profile_metrics_query (LogQueryDefinition): [optional]
-            q (str): [optional] Query definition.
-            rum_query (LogQueryDefinition): [optional]
-            security_query (LogQueryDefinition): [optional]
+
+        :type apm_query: LogQueryDefinition, optional
+
+        :type event_query: LogQueryDefinition, optional
+
+        :type log_query: LogQueryDefinition, optional
+
+        :type network_query: LogQueryDefinition, optional
+
+        :type process_query: ProcessQueryDefinition, optional
+
+        :type profile_metrics_query: LogQueryDefinition, optional
+
+        :param q: Query definition.
+        :type q: str, optional
+
+        :type rum_query: LogQueryDefinition, optional
+
+        :type security_query: LogQueryDefinition, optional
         """
         super().__init__(kwargs)
 

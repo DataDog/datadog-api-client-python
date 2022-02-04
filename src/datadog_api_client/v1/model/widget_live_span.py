@@ -49,12 +49,8 @@ class WidgetLiveSpan(ModelSimple):
         """WidgetLiveSpan - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The available timeframes depend on the widget you are using. Must be one of ["1m", "5m", "10m", "15m", "30m", "1h", "4h", "1d", "2d", "1w", "1mo", "3mo", "6mo", "1y", "alert"].
-
-        Keyword Args:
-            value (str): The available timeframes depend on the widget you are using. Must be one of ["1m", "5m", "10m", "15m", "30m", "1h", "4h", "1d", "2d", "1w", "1mo", "3mo", "6mo", "1y", "alert"].
+        :param value: The available timeframes depend on the widget you are using. Must be one of ["1m", "5m", "10m", "15m", "30m", "1h", "4h", "1d", "2d", "1w", "1mo", "3mo", "6mo", "1y", "alert"].
+        :type value: str
         """
         super().__init__(kwargs)
 

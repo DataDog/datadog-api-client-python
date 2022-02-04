@@ -36,9 +36,12 @@ class UsageSyntheticsHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageSyntheticsHour - a model defined in OpenAPI
 
-        Keyword Args:
-            check_calls_count (int): [optional] Contains the number of Synthetics API tests run.
-            hour (datetime): [optional] The hour for the usage.
+
+        :param check_calls_count: Contains the number of Synthetics API tests run.
+        :type check_calls_count: int, optional
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
         """
         super().__init__(kwargs)
 

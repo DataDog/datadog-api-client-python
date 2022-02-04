@@ -40,8 +40,9 @@ class DashboardListUpdateItemsRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """DashboardListUpdateItemsRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            dashboards ([DashboardListItemRequest]): [optional] List of dashboards to update the dashboard list to.
+
+        :param dashboards: List of dashboards to update the dashboard list to.
+        :type dashboards: [DashboardListItemRequest], optional
         """
         super().__init__(kwargs)
 

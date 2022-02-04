@@ -35,9 +35,12 @@ class HostTotals(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HostTotals - a model defined in OpenAPI
 
-        Keyword Args:
-            total_active (int): [optional] Total number of active host (UP and ???) reporting to Datadog.
-            total_up (int): [optional] Number of host that are UP and reporting to Datadog.
+
+        :param total_active: Total number of active host (UP and ???) reporting to Datadog.
+        :type total_active: int, optional
+
+        :param total_up: Number of host that are UP and reporting to Datadog.
+        :type total_up: int, optional
         """
         super().__init__(kwargs)
 

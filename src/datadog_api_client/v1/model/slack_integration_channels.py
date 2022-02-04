@@ -36,12 +36,8 @@ class SlackIntegrationChannels(ModelSimple):
         """SlackIntegrationChannels - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] ([SlackIntegrationChannel]): A list of configured Slack channels.
-
-        Keyword Args:
-            value ([SlackIntegrationChannel]): A list of configured Slack channels.
+        :param value: A list of configured Slack channels.
+        :type value: [SlackIntegrationChannel]
         """
         super().__init__(kwargs)
 

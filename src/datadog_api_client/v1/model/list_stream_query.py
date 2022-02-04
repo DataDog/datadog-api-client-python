@@ -44,12 +44,14 @@ class ListStreamQuery(ModelNormal):
     def __init__(self, data_source, query_string, *args, **kwargs):
         """ListStreamQuery - a model defined in OpenAPI
 
-        Args:
-            data_source (ListStreamSource):
-            query_string (str): Widget query.
 
-        Keyword Args:
-            indexes ([str]): [optional] List of indexes.
+        :type data_source: ListStreamSource
+
+        :param query_string: Widget query.
+        :type query_string: str
+
+        :param indexes: List of indexes.
+        :type indexes: [str], optional
         """
         super().__init__(kwargs)
 

@@ -40,11 +40,18 @@ class UserInvitationDataAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UserInvitationDataAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            created_at (datetime): [optional] Creation time of the user invitation.
-            expires_at (datetime): [optional] Time of invitation expiration.
-            invite_type (str): [optional] Type of invitation.
-            uuid (str): [optional] UUID of the user invitation.
+
+        :param created_at: Creation time of the user invitation.
+        :type created_at: datetime, optional
+
+        :param expires_at: Time of invitation expiration.
+        :type expires_at: datetime, optional
+
+        :param invite_type: Type of invitation.
+        :type invite_type: str, optional
+
+        :param uuid: UUID of the user invitation.
+        :type uuid: str, optional
         """
         super().__init__(kwargs)
 

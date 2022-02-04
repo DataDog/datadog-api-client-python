@@ -44,9 +44,11 @@ class SLOHistoryResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOHistoryResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data (SLOHistoryResponseData): [optional]
-            errors ([SLOHistoryResponseError]): [optional] A list of errors while querying the history data for the service level objective.
+
+        :type data: SLOHistoryResponseData, optional
+
+        :param errors: A list of errors while querying the history data for the service level objective.
+        :type errors: [SLOHistoryResponseError], optional
         """
         super().__init__(kwargs)
 

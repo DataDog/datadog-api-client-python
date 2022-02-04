@@ -83,20 +83,42 @@ class MonitorSearchResult(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MonitorSearchResult - a model defined in OpenAPI
 
-        Keyword Args:
-            classification (str): [optional] Classification of the monitor.
-            creator (Creator): [optional]
-            id (int): [optional] ID of the monitor.
-            last_triggered_ts (int, none_type): [optional] Latest timestamp the monitor triggered.
-            metrics ([str]): [optional] Metrics used by the monitor.
-            name (str): [optional] The monitor name.
-            notifications ([MonitorSearchResultNotification]): [optional] The notification triggered by the monitor.
-            org_id (int): [optional] The ID of the organization.
-            query (str): [optional] The monitor query.
-            scopes ([str]): [optional] The scope(s) to which the downtime applies, for example `host:app2`. Provide multiple scopes as a comma-separated list, for example `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (that is `env:dev AND env:prod`), NOT any of them.
-            status (MonitorOverallStates): [optional]
-            tags ([str]): [optional] Tags associated with the monitor.
-            type (MonitorType): [optional]
+
+        :param classification: Classification of the monitor.
+        :type classification: str, optional
+
+        :type creator: Creator, optional
+
+        :param id: ID of the monitor.
+        :type id: int, optional
+
+        :param last_triggered_ts: Latest timestamp the monitor triggered.
+        :type last_triggered_ts: int, none_type, optional
+
+        :param metrics: Metrics used by the monitor.
+        :type metrics: [str], optional
+
+        :param name: The monitor name.
+        :type name: str, optional
+
+        :param notifications: The notification triggered by the monitor.
+        :type notifications: [MonitorSearchResultNotification], optional
+
+        :param org_id: The ID of the organization.
+        :type org_id: int, optional
+
+        :param query: The monitor query.
+        :type query: str, optional
+
+        :param scopes: The scope(s) to which the downtime applies, for example `host:app2`. Provide multiple scopes as a comma-separated list, for example `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (that is `env:dev AND env:prod`), NOT any of them.
+        :type scopes: [str], optional
+
+        :type status: MonitorOverallStates, optional
+
+        :param tags: Tags associated with the monitor.
+        :type tags: [str], optional
+
+        :type type: MonitorType, optional
         """
         super().__init__(kwargs)
 

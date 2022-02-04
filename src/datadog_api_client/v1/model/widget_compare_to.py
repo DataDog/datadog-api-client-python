@@ -38,12 +38,8 @@ class WidgetCompareTo(ModelSimple):
         """WidgetCompareTo - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Timeframe used for the change comparison. Must be one of ["hour_before", "day_before", "week_before", "month_before"].
-
-        Keyword Args:
-            value (str): Timeframe used for the change comparison. Must be one of ["hour_before", "day_before", "week_before", "month_before"].
+        :param value: Timeframe used for the change comparison. Must be one of ["hour_before", "day_before", "week_before", "month_before"].
+        :type value: str
         """
         super().__init__(kwargs)
 

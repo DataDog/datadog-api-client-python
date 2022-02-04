@@ -54,13 +54,24 @@ class SLOHistoryMetricsSeriesMetadata(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOHistoryMetricsSeriesMetadata - a model defined in OpenAPI
 
-        Keyword Args:
-            aggr (str): [optional] Query aggregator function.
-            expression (str): [optional] Query expression.
-            metric (str): [optional] Query metric used.
-            query_index (int): [optional] Query index from original combined query.
-            scope (str): [optional] Query scope.
-            unit ([SLOHistoryMetricsSeriesMetadataUnit], none_type): [optional] An array of metric units that contains up to two unit objects. For example, bytes represents one unit object and bytes per second represents two unit objects. If a metric query only has one unit object, the second array element is null.
+
+        :param aggr: Query aggregator function.
+        :type aggr: str, optional
+
+        :param expression: Query expression.
+        :type expression: str, optional
+
+        :param metric: Query metric used.
+        :type metric: str, optional
+
+        :param query_index: Query index from original combined query.
+        :type query_index: int, optional
+
+        :param scope: Query scope.
+        :type scope: str, optional
+
+        :param unit: An array of metric units that contains up to two unit objects. For example, bytes represents one unit object and bytes per second represents two unit objects. If a metric query only has one unit object, the second array element is null.
+        :type unit: [SLOHistoryMetricsSeriesMetadataUnit], none_type, optional
         """
         super().__init__(kwargs)
 

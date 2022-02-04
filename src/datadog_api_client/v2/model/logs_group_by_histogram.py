@@ -37,12 +37,15 @@ class LogsGroupByHistogram(ModelNormal):
     def __init__(self, interval, max, min, *args, **kwargs):
         """LogsGroupByHistogram - a model defined in OpenAPI
 
-        Args:
-            interval (float): The bin size of the histogram buckets
-            max (float): The maximum value for the measure used in the histogram (values greater than this one are filtered out)
-            min (float): The minimum value for the measure used in the histogram (values smaller than this one are filtered out)
 
-        Keyword Args:
+        :param interval: The bin size of the histogram buckets
+        :type interval: float
+
+        :param max: The maximum value for the measure used in the histogram (values greater than this one are filtered out)
+        :type max: float
+
+        :param min: The minimum value for the measure used in the histogram (values smaller than this one are filtered out)
+        :type min: float
         """
         super().__init__(kwargs)
 

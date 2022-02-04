@@ -34,12 +34,8 @@ class IncidentIntegrationMetadataType(ModelSimple):
         """IncidentIntegrationMetadataType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Integration metadata resource type. If omitted defaults to "incident_integrations". Must be one of ["incident_integrations"].
-
-        Keyword Args:
-            value (str): Integration metadata resource type. If omitted defaults to "incident_integrations". Must be one of ["incident_integrations"].
+        :param value: Integration metadata resource type. If omitted defaults to "incident_integrations". Must be one of ["incident_integrations"].
+        :type value: str
         """
         super().__init__(kwargs)
 

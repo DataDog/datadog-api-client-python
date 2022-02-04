@@ -33,8 +33,9 @@ class UserDisableResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UserDisableResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            message (str): [optional] Information pertaining to a user disabled for a given organization.
+
+        :param message: Information pertaining to a user disabled for a given organization.
+        :type message: str, optional
         """
         super().__init__(kwargs)
 

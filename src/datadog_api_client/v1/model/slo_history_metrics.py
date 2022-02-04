@@ -54,17 +54,28 @@ class SLOHistoryMetrics(ModelNormal):
     def __init__(self, denominator, interval, numerator, query, res_type, resp_version, times, *args, **kwargs):
         """SLOHistoryMetrics - a model defined in OpenAPI
 
-        Args:
-            denominator (SLOHistoryMetricsSeries):
-            interval (int): The aggregated query interval for the series data. It's implicit based on the query time window.
-            numerator (SLOHistoryMetricsSeries):
-            query (str): The combined numerator and denominator query CSV.
-            res_type (str): The series result type. This mimics `batch_query` response type.
-            resp_version (int): The series response version type. This mimics `batch_query` response type.
-            times ([float]): An array of query timestamps in EPOCH milliseconds
 
-        Keyword Args:
-            message (str): [optional] Optional message if there are specific query issues/warnings.
+        :type denominator: SLOHistoryMetricsSeries
+
+        :param interval: The aggregated query interval for the series data. It's implicit based on the query time window.
+        :type interval: int
+
+        :type numerator: SLOHistoryMetricsSeries
+
+        :param query: The combined numerator and denominator query CSV.
+        :type query: str
+
+        :param res_type: The series result type. This mimics `batch_query` response type.
+        :type res_type: str
+
+        :param resp_version: The series response version type. This mimics `batch_query` response type.
+        :type resp_version: int
+
+        :param times: An array of query timestamps in EPOCH milliseconds
+        :type times: [float]
+
+        :param message: Optional message if there are specific query issues/warnings.
+        :type message: str, optional
         """
         super().__init__(kwargs)
 

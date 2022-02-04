@@ -40,10 +40,8 @@ class MetricTagConfigurationUpdateRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """MetricTagConfigurationUpdateRequest - a model defined in OpenAPI
 
-        Args:
-            data (MetricTagConfigurationUpdateData):
 
-        Keyword Args:
+        :type data: MetricTagConfigurationUpdateData
         """
         super().__init__(kwargs)
 

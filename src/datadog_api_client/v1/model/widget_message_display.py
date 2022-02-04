@@ -37,12 +37,8 @@ class WidgetMessageDisplay(ModelSimple):
         """WidgetMessageDisplay - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Amount of log lines to display Must be one of ["inline", "expanded-md", "expanded-lg"].
-
-        Keyword Args:
-            value (str): Amount of log lines to display Must be one of ["inline", "expanded-md", "expanded-lg"].
+        :param value: Amount of log lines to display Must be one of ["inline", "expanded-md", "expanded-lg"].
+        :type value: str
         """
         super().__init__(kwargs)
 

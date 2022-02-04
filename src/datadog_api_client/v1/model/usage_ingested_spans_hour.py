@@ -40,11 +40,18 @@ class UsageIngestedSpansHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageIngestedSpansHour - a model defined in OpenAPI
 
-        Keyword Args:
-            hour (datetime): [optional] The hour for the usage.
-            ingested_events_bytes (int): [optional] Contains the total number of bytes ingested during a given hour.
-            org_name (str): [optional] The organization name.
-            public_id (str): [optional] The organization public ID.
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param ingested_events_bytes: Contains the total number of bytes ingested during a given hour.
+        :type ingested_events_bytes: int, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
         """
         super().__init__(kwargs)
 

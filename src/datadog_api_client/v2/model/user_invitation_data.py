@@ -44,11 +44,10 @@ class UserInvitationData(ModelNormal):
     def __init__(self, relationships, type, *args, **kwargs):
         """UserInvitationData - a model defined in OpenAPI
 
-        Args:
-            relationships (UserInvitationRelationships):
-            type (UserInvitationsType):
 
-        Keyword Args:
+        :type relationships: UserInvitationRelationships
+
+        :type type: UserInvitationsType
         """
         super().__init__(kwargs)
 

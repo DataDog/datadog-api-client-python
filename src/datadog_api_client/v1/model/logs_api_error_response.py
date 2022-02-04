@@ -40,8 +40,8 @@ class LogsAPIErrorResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsAPIErrorResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            error (LogsAPIError): [optional]
+
+        :type error: LogsAPIError, optional
         """
         super().__init__(kwargs)
 

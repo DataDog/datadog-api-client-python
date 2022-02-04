@@ -40,8 +40,8 @@ class NotebooksResponseMeta(ModelNormal):
     def __init__(self, *args, **kwargs):
         """NotebooksResponseMeta - a model defined in OpenAPI
 
-        Keyword Args:
-            page (NotebooksResponsePage): [optional]
+
+        :type page: NotebooksResponsePage, optional
         """
         super().__init__(kwargs)
 

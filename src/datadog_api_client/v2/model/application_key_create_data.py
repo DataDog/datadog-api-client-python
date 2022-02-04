@@ -44,11 +44,10 @@ class ApplicationKeyCreateData(ModelNormal):
     def __init__(self, attributes, type, *args, **kwargs):
         """ApplicationKeyCreateData - a model defined in OpenAPI
 
-        Args:
-            attributes (ApplicationKeyCreateAttributes):
-            type (ApplicationKeysType):
 
-        Keyword Args:
+        :type attributes: ApplicationKeyCreateAttributes
+
+        :type type: ApplicationKeysType
         """
         super().__init__(kwargs)
 

@@ -34,12 +34,8 @@ class LogsStatusRemapperType(ModelSimple):
         """LogsStatusRemapperType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of logs status remapper. If omitted defaults to "status-remapper". Must be one of ["status-remapper"].
-
-        Keyword Args:
-            value (str): Type of logs status remapper. If omitted defaults to "status-remapper". Must be one of ["status-remapper"].
+        :param value: Type of logs status remapper. If omitted defaults to "status-remapper". Must be one of ["status-remapper"].
+        :type value: str
         """
         super().__init__(kwargs)
 

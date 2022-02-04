@@ -47,14 +47,27 @@ class MetricMetadata(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MetricMetadata - a model defined in OpenAPI
 
-        Keyword Args:
-            description (str): [optional] Metric description.
-            integration (str): [optional] Name of the integration that sent the metric if applicable.
-            per_unit (str): [optional] Per unit of the metric such as `second` in `bytes per second`.
-            short_name (str): [optional] A more human-readable and abbreviated version of the metric name.
-            statsd_interval (int): [optional] StatsD flush interval of the metric in seconds if applicable.
-            type (str): [optional] Metric type such as `gauge` or `rate`.
-            unit (str): [optional] Primary unit of the metric such as `byte` or `operation`.
+
+        :param description: Metric description.
+        :type description: str, optional
+
+        :param integration: Name of the integration that sent the metric if applicable.
+        :type integration: str, optional
+
+        :param per_unit: Per unit of the metric such as `second` in `bytes per second`.
+        :type per_unit: str, optional
+
+        :param short_name: A more human-readable and abbreviated version of the metric name.
+        :type short_name: str, optional
+
+        :param statsd_interval: StatsD flush interval of the metric in seconds if applicable.
+        :type statsd_interval: int, optional
+
+        :param type: Metric type such as `gauge` or `rate`.
+        :type type: str, optional
+
+        :param unit: Primary unit of the metric such as `byte` or `operation`.
+        :type unit: str, optional
         """
         super().__init__(kwargs)
 

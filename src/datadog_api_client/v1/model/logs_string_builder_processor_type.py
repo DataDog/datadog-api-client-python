@@ -34,12 +34,8 @@ class LogsStringBuilderProcessorType(ModelSimple):
         """LogsStringBuilderProcessorType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of logs string builder processor. If omitted defaults to "string-builder-processor". Must be one of ["string-builder-processor"].
-
-        Keyword Args:
-            value (str): Type of logs string builder processor. If omitted defaults to "string-builder-processor". Must be one of ["string-builder-processor"].
+        :param value: Type of logs string builder processor. If omitted defaults to "string-builder-processor". Must be one of ["string-builder-processor"].
+        :type value: str
         """
         super().__init__(kwargs)
 

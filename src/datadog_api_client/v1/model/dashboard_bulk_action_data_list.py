@@ -36,12 +36,8 @@ class DashboardBulkActionDataList(ModelSimple):
         """DashboardBulkActionDataList - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] ([DashboardBulkActionData]): List of dashboard bulk action request data objects.
-
-        Keyword Args:
-            value ([DashboardBulkActionData]): List of dashboard bulk action request data objects.
+        :param value: List of dashboard bulk action request data objects.
+        :type value: [DashboardBulkActionData]
         """
         super().__init__(kwargs)
 

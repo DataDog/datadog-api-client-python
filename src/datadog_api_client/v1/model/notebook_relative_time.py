@@ -42,10 +42,8 @@ class NotebookRelativeTime(ModelNormal):
     def __init__(self, live_span, *args, **kwargs):
         """NotebookRelativeTime - a model defined in OpenAPI
 
-        Args:
-            live_span (WidgetLiveSpan):
 
-        Keyword Args:
+        :type live_span: WidgetLiveSpan
         """
         super().__init__(kwargs)
 

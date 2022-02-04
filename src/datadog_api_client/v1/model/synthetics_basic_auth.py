@@ -37,17 +37,35 @@ class SyntheticsBasicAuth(ModelComposed):
     def __init__(self, *args, **kwargs):
         """SyntheticsBasicAuth - a model defined in OpenAPI
 
-        Keyword Args:
-            region (str): [optional] Region for the `SIGV4` authentication.
-            service_name (str): [optional] Service name for the `SIGV4` authentication.
-            session_token (str): [optional] Session token for the `SIGV4` authentication.
-            domain (str): [optional] Domain for the authentication to use when performing the test.
-            workstation (str): [optional] Workstation for the authentication to use when performing the test.
-            password (str): [optional] Password for the authentication to use when performing the test.
-            type (SyntheticsBasicAuthNTLMType): [optional]
-            username (str): [optional] Username for the authentication to use when performing the test.
-            access_key (str): [optional] Access key for the `SIGV4` authentication.
-            secret_key (str): [optional] Secret key for the `SIGV4` authentication.
+
+        :param region: Region for the `SIGV4` authentication.
+        :type region: str, optional
+
+        :param service_name: Service name for the `SIGV4` authentication.
+        :type service_name: str, optional
+
+        :param session_token: Session token for the `SIGV4` authentication.
+        :type session_token: str, optional
+
+        :param domain: Domain for the authentication to use when performing the test.
+        :type domain: str, optional
+
+        :param workstation: Workstation for the authentication to use when performing the test.
+        :type workstation: str, optional
+
+        :param password: Password for the authentication to use when performing the test.
+        :type password: str, optional
+
+        :type type: SyntheticsBasicAuthNTLMType, optional
+
+        :param username: Username for the authentication to use when performing the test.
+        :type username: str, optional
+
+        :param access_key: Access key for the `SIGV4` authentication.
+        :type access_key: str, optional
+
+        :param secret_key: Secret key for the `SIGV4` authentication.
+        :type secret_key: str, optional
         """
         super().__init__(kwargs)
 

@@ -52,11 +52,14 @@ class UserResponseRelationships(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UserResponseRelationships - a model defined in OpenAPI
 
-        Keyword Args:
-            org (RelationshipToOrganization): [optional]
-            other_orgs (RelationshipToOrganizations): [optional]
-            other_users (RelationshipToUsers): [optional]
-            roles (RelationshipToRoles): [optional]
+
+        :type org: RelationshipToOrganization, optional
+
+        :type other_orgs: RelationshipToOrganizations, optional
+
+        :type other_users: RelationshipToUsers, optional
+
+        :type roles: RelationshipToRoles, optional
         """
         super().__init__(kwargs)
 

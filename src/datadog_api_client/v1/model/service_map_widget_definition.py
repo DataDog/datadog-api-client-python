@@ -60,16 +60,25 @@ class ServiceMapWidgetDefinition(ModelNormal):
     def __init__(self, filters, service, type, *args, **kwargs):
         """ServiceMapWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            filters ([str]): Your environment and primary tag (or * if enabled for your account).
-            service (str): The ID of the service you want to map.
-            type (ServiceMapWidgetDefinitionType):
 
-        Keyword Args:
-            custom_links ([WidgetCustomLink]): [optional] List of custom links.
-            title (str): [optional] The title of your widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
+        :param filters: Your environment and primary tag (or * if enabled for your account).
+        :type filters: [str]
+
+        :param service: The ID of the service you want to map.
+        :type service: str
+
+        :type type: ServiceMapWidgetDefinitionType
+
+        :param custom_links: List of custom links.
+        :type custom_links: [WidgetCustomLink], optional
+
+        :param title: The title of your widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

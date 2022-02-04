@@ -60,16 +60,24 @@ class ToplistWidgetDefinition(ModelNormal):
     def __init__(self, requests, type, *args, **kwargs):
         """ToplistWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            requests ([ToplistWidgetRequest]): List of top list widget requests.
-            type (ToplistWidgetDefinitionType):
 
-        Keyword Args:
-            custom_links ([WidgetCustomLink]): [optional] List of custom links.
-            time (WidgetTime): [optional]
-            title (str): [optional] Title of your widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
+        :param requests: List of top list widget requests.
+        :type requests: [ToplistWidgetRequest]
+
+        :type type: ToplistWidgetDefinitionType
+
+        :param custom_links: List of custom links.
+        :type custom_links: [WidgetCustomLink], optional
+
+        :type time: WidgetTime, optional
+
+        :param title: Title of your widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

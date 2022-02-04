@@ -44,12 +44,8 @@ class SecurityMonitoringRuleKeepAlive(ModelSimple):
         """SecurityMonitoringRuleKeepAlive - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (int): Once a signal is generated, the signal will remain “open” if a case is matched at least once within this keep alive window. Must be one of [0, 60, 300, 600, 900, 1800, 3600, 7200, 10800, 21600].
-
-        Keyword Args:
-            value (int): Once a signal is generated, the signal will remain “open” if a case is matched at least once within this keep alive window. Must be one of [0, 60, 300, 600, 900, 1800, 3600, 7200, 10800, 21600].
+        :param value: Once a signal is generated, the signal will remain “open” if a case is matched at least once within this keep alive window. Must be one of [0, 60, 300, 600, 900, 1800, 3600, 7200, 10800, 21600].
+        :type value: int
         """
         super().__init__(kwargs)
 

@@ -46,13 +46,17 @@ class SLOHistoryMetricsSeries(ModelNormal):
     def __init__(self, count, sum, values, *args, **kwargs):
         """SLOHistoryMetricsSeries - a model defined in OpenAPI
 
-        Args:
-            count (int): Count of submitted metrics.
-            sum (float): Total sum of the query.
-            values ([float]): The query values for each metric.
 
-        Keyword Args:
-            metadata (SLOHistoryMetricsSeriesMetadata): [optional]
+        :param count: Count of submitted metrics.
+        :type count: int
+
+        :param sum: Total sum of the query.
+        :type sum: float
+
+        :param values: The query values for each metric.
+        :type values: [float]
+
+        :type metadata: SLOHistoryMetricsSeriesMetadata, optional
         """
         super().__init__(kwargs)
 

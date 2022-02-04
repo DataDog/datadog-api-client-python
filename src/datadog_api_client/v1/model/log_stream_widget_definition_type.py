@@ -34,12 +34,8 @@ class LogStreamWidgetDefinitionType(ModelSimple):
         """LogStreamWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the log stream widget. If omitted defaults to "log_stream". Must be one of ["log_stream"].
-
-        Keyword Args:
-            value (str): Type of the log stream widget. If omitted defaults to "log_stream". Must be one of ["log_stream"].
+        :param value: Type of the log stream widget. If omitted defaults to "log_stream". Must be one of ["log_stream"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -35,9 +35,12 @@ class SyntheticsGlobalVariableValue(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsGlobalVariableValue - a model defined in OpenAPI
 
-        Keyword Args:
-            secure (bool): [optional] Determines if the value of the variable is hidden.
-            value (str): [optional] Value of the global variable. When reading a global variable, the value will not be present if the variable is hidden with the `secure` property.
+
+        :param secure: Determines if the value of the variable is hidden.
+        :type secure: bool, optional
+
+        :param value: Value of the global variable. When reading a global variable, the value will not be present if the variable is hidden with the `secure` property.
+        :type value: str, optional
         """
         super().__init__(kwargs)
 

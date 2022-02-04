@@ -48,12 +48,13 @@ class MetricTagConfigurationUpdateData(ModelNormal):
     def __init__(self, id, type, *args, **kwargs):
         """MetricTagConfigurationUpdateData - a model defined in OpenAPI
 
-        Args:
-            id (str): The metric name for this resource.
-            type (MetricTagConfigurationType):
 
-        Keyword Args:
-            attributes (MetricTagConfigurationUpdateAttributes): [optional]
+        :param id: The metric name for this resource.
+        :type id: str
+
+        :type type: MetricTagConfigurationType
+
+        :type attributes: MetricTagConfigurationUpdateAttributes, optional
         """
         super().__init__(kwargs)
 

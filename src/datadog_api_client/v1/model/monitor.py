@@ -100,25 +100,49 @@ class Monitor(ModelNormal):
     def __init__(self, query, type, *args, **kwargs):
         """Monitor - a model defined in OpenAPI
 
-        Args:
-            query (str): The monitor query.
-            type (MonitorType):
 
-        Keyword Args:
-            created (datetime): [optional] Timestamp of the monitor creation.
-            creator (Creator): [optional]
-            deleted (datetime, none_type): [optional] Whether or not the monitor is deleted. (Always `null`)
-            id (int): [optional] ID of this monitor.
-            message (str): [optional] A message to include with notifications for this monitor.
-            modified (datetime): [optional] Last timestamp when the monitor was edited.
-            multi (bool): [optional] Whether or not the monitor is broken down on different groups.
-            name (str): [optional] The monitor name.
-            options (MonitorOptions): [optional]
-            overall_state (MonitorOverallStates): [optional]
-            priority (int, none_type): [optional] Integer from 1 (high) to 5 (low) indicating alert severity.
-            restricted_roles ([str], none_type): [optional] A list of role identifiers that can be pulled from the Roles API. Cannot be used with `locked` option.
-            state (MonitorState): [optional]
-            tags ([str]): [optional] Tags associated to your monitor.
+        :param query: The monitor query.
+        :type query: str
+
+        :type type: MonitorType
+
+        :param created: Timestamp of the monitor creation.
+        :type created: datetime, optional
+
+        :type creator: Creator, optional
+
+        :param deleted: Whether or not the monitor is deleted. (Always `null`)
+        :type deleted: datetime, none_type, optional
+
+        :param id: ID of this monitor.
+        :type id: int, optional
+
+        :param message: A message to include with notifications for this monitor.
+        :type message: str, optional
+
+        :param modified: Last timestamp when the monitor was edited.
+        :type modified: datetime, optional
+
+        :param multi: Whether or not the monitor is broken down on different groups.
+        :type multi: bool, optional
+
+        :param name: The monitor name.
+        :type name: str, optional
+
+        :type options: MonitorOptions, optional
+
+        :type overall_state: MonitorOverallStates, optional
+
+        :param priority: Integer from 1 (high) to 5 (low) indicating alert severity.
+        :type priority: int, none_type, optional
+
+        :param restricted_roles: A list of role identifiers that can be pulled from the Roles API. Cannot be used with `locked` option.
+        :type restricted_roles: [str], none_type, optional
+
+        :type state: MonitorState, optional
+
+        :param tags: Tags associated to your monitor.
+        :type tags: [str], optional
         """
         super().__init__(kwargs)
 

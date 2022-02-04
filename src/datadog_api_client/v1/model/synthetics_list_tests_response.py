@@ -40,8 +40,9 @@ class SyntheticsListTestsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsListTestsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            tests ([SyntheticsTestDetails]): [optional] Array of Synthetic tests configuration.
+
+        :param tests: Array of Synthetic tests configuration.
+        :type tests: [SyntheticsTestDetails], optional
         """
         super().__init__(kwargs)
 

@@ -48,11 +48,10 @@ class NotebookResponseData(ModelNormal):
     def __init__(self, attributes, type, *args, **kwargs):
         """NotebookResponseData - a model defined in OpenAPI
 
-        Args:
-            attributes (NotebookResponseDataAttributes):
-            type (NotebookResourceType):
 
-        Keyword Args:
+        :type attributes: NotebookResponseDataAttributes
+
+        :type type: NotebookResourceType
         """
         super().__init__(kwargs)
 

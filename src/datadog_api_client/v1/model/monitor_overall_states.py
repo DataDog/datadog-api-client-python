@@ -41,12 +41,8 @@ class MonitorOverallStates(ModelSimple):
         """MonitorOverallStates - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The different states your monitor can be in. Must be one of ["Alert", "Ignored", "No Data", "OK", "Skipped", "Unknown", "Warn"].
-
-        Keyword Args:
-            value (str): The different states your monitor can be in. Must be one of ["Alert", "Ignored", "No Data", "OK", "Skipped", "Unknown", "Warn"].
+        :param value: The different states your monitor can be in. Must be one of ["Alert", "Ignored", "No Data", "OK", "Skipped", "Unknown", "Warn"].
+        :type value: str
         """
         super().__init__(kwargs)
 

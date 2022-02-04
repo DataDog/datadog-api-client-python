@@ -44,9 +44,11 @@ class SLOBulkDeleteResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOBulkDeleteResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data (SLOBulkDeleteResponseData): [optional]
-            errors ([SLOBulkDeleteError]): [optional] Array of errors object returned.
+
+        :type data: SLOBulkDeleteResponseData, optional
+
+        :param errors: Array of errors object returned.
+        :type errors: [SLOBulkDeleteError], optional
         """
         super().__init__(kwargs)
 

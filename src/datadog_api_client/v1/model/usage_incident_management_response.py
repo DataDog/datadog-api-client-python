@@ -40,8 +40,9 @@ class UsageIncidentManagementResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageIncidentManagementResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageIncidentManagementHour]): [optional] Get hourly usage for incident management.
+
+        :param usage: Get hourly usage for incident management.
+        :type usage: [UsageIncidentManagementHour], optional
         """
         super().__init__(kwargs)
 

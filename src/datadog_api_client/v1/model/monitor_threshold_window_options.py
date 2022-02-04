@@ -42,9 +42,12 @@ class MonitorThresholdWindowOptions(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MonitorThresholdWindowOptions - a model defined in OpenAPI
 
-        Keyword Args:
-            recovery_window (str, none_type): [optional] Describes how long an anomalous metric must be normal before the alert recovers.
-            trigger_window (str, none_type): [optional] Describes how long a metric must be anomalous before an alert triggers.
+
+        :param recovery_window: Describes how long an anomalous metric must be normal before the alert recovers.
+        :type recovery_window: str, none_type, optional
+
+        :param trigger_window: Describes how long a metric must be anomalous before an alert triggers.
+        :type trigger_window: str, none_type, optional
         """
         super().__init__(kwargs)
 

@@ -66,16 +66,33 @@ class MetricsQueryResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MetricsQueryResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            error (str): [optional] Message indicating the errors if status is not `ok`.
-            from_date (int): [optional] Start of requested time window, milliseconds since Unix epoch.
-            group_by ([str]): [optional] List of tag keys on which to group.
-            message (str): [optional] Message indicating `success` if status is `ok`.
-            query (str): [optional] Query string
-            res_type (str): [optional] Type of response.
-            series ([MetricsQueryMetadata]): [optional] List of timeseries queried.
-            status (str): [optional] Status of the query.
-            to_date (int): [optional] End of requested time window, milliseconds since Unix epoch.
+
+        :param error: Message indicating the errors if status is not `ok`.
+        :type error: str, optional
+
+        :param from_date: Start of requested time window, milliseconds since Unix epoch.
+        :type from_date: int, optional
+
+        :param group_by: List of tag keys on which to group.
+        :type group_by: [str], optional
+
+        :param message: Message indicating `success` if status is `ok`.
+        :type message: str, optional
+
+        :param query: Query string
+        :type query: str, optional
+
+        :param res_type: Type of response.
+        :type res_type: str, optional
+
+        :param series: List of timeseries queried.
+        :type series: [MetricsQueryMetadata], optional
+
+        :param status: Status of the query.
+        :type status: str, optional
+
+        :param to_date: End of requested time window, milliseconds since Unix epoch.
+        :type to_date: int, optional
         """
         super().__init__(kwargs)
 

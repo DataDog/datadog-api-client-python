@@ -44,9 +44,11 @@ class SLOCorrectionListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOCorrectionListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([SLOCorrection]): [optional] The list of of SLO corrections objects.
-            meta (ResponseMetaAttributes): [optional]
+
+        :param data: The list of of SLO corrections objects.
+        :type data: [SLOCorrection], optional
+
+        :type meta: ResponseMetaAttributes, optional
         """
         super().__init__(kwargs)
 

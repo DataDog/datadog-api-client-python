@@ -89,20 +89,45 @@ class MetricsQueryMetadata(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MetricsQueryMetadata - a model defined in OpenAPI
 
-        Keyword Args:
-            aggr (str, none_type): [optional] Aggregation type.
-            display_name (str): [optional] Display name of the metric.
-            end (int): [optional] End of the time window, milliseconds since Unix epoch.
-            expression (str): [optional] Metric expression.
-            interval (int): [optional] Number of seconds between data samples.
-            length (int): [optional] Number of data samples.
-            metric (str): [optional] Metric name.
-            pointlist ([Point]): [optional] List of points of the time series.
-            query_index (int): [optional] The index of the series' query within the request.
-            scope (str): [optional] Metric scope, comma separated list of tags.
-            start (int): [optional] Start of the time window, milliseconds since Unix epoch.
-            tag_set ([str]): [optional] Unique tags identifying this series.
-            unit ([MetricsQueryUnit]): [optional] Detailed information about the metric unit. First element describes the \"primary unit\" (for example, `bytes` in `bytes per second`), second describes the \"per unit\" (for example, `second` in `bytes per second`).
+
+        :param aggr: Aggregation type.
+        :type aggr: str, none_type, optional
+
+        :param display_name: Display name of the metric.
+        :type display_name: str, optional
+
+        :param end: End of the time window, milliseconds since Unix epoch.
+        :type end: int, optional
+
+        :param expression: Metric expression.
+        :type expression: str, optional
+
+        :param interval: Number of seconds between data samples.
+        :type interval: int, optional
+
+        :param length: Number of data samples.
+        :type length: int, optional
+
+        :param metric: Metric name.
+        :type metric: str, optional
+
+        :param pointlist: List of points of the time series.
+        :type pointlist: [Point], optional
+
+        :param query_index: The index of the series' query within the request.
+        :type query_index: int, optional
+
+        :param scope: Metric scope, comma separated list of tags.
+        :type scope: str, optional
+
+        :param start: Start of the time window, milliseconds since Unix epoch.
+        :type start: int, optional
+
+        :param tag_set: Unique tags identifying this series.
+        :type tag_set: [str], optional
+
+        :param unit: Detailed information about the metric unit. First element describes the \"primary unit\" (for example, `bytes` in `bytes per second`), second describes the \"per unit\" (for example, `second` in `bytes per second`).
+        :type unit: [MetricsQueryUnit], optional
         """
         super().__init__(kwargs)
 

@@ -40,8 +40,9 @@ class UsageIngestedSpansResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageIngestedSpansResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageIngestedSpansHour]): [optional] Get hourly usage for ingested spans.
+
+        :param usage: Get hourly usage for ingested spans.
+        :type usage: [UsageIngestedSpansHour], optional
         """
         super().__init__(kwargs)
 

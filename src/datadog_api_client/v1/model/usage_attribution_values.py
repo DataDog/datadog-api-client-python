@@ -111,47 +111,126 @@ class UsageAttributionValues(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageAttributionValues - a model defined in OpenAPI
 
-        Keyword Args:
-            api_percentage (float): [optional] The percentage of synthetic API test usage by tag(s).
-            api_usage (float): [optional] The synthetic API test usage by tag(s).
-            apm_host_percentage (float): [optional] The percentage of APM host usage by tag(s).
-            apm_host_usage (float): [optional] The APM host usage by tag(s).
-            browser_percentage (float): [optional] The percentage of synthetic browser test usage by tag(s).
-            browser_usage (float): [optional] The synthetic browser test usage by tag(s).
-            container_percentage (float): [optional] The percentage of container usage by tag(s).
-            container_usage (float): [optional] The container usage by tag(s).
-            cspm_container_percentage (float): [optional] The percentage of Cloud Security Posture Management container usage by tag(s)
-            cspm_container_usage (float): [optional] The Cloud Security Posture Management container usage by tag(s)
-            cspm_host_percentage (float): [optional] The percentage of Cloud Security Posture Management host usage by tag(s)
-            cspm_host_usage (float): [optional] The Cloud Security Posture Management host usage by tag(s)
-            custom_timeseries_percentage (float): [optional] The percentage of custom metrics usage by tag(s).
-            custom_timeseries_usage (float): [optional] The custom metrics usage by tag(s).
-            cws_container_percentage (float): [optional] The percentage of Cloud Workload Security container usage by tag(s)
-            cws_container_usage (float): [optional] The Cloud Workload Security container usage by tag(s)
-            cws_host_percentage (float): [optional] The percentage of Cloud Workload Security host usage by tag(s)
-            cws_host_usage (float): [optional] The Cloud Workload Security host usage by tag(s)
-            dbm_hosts_percentage (float): [optional] The percentage of Database Monitoring host usage by tag(s).
-            dbm_hosts_usage (float): [optional] The Database Monitoring host usage by tag(s).
-            dbm_queries_percentage (float): [optional] The percentage of Database Monitoring normalized queries usage by tag(s).
-            dbm_queries_usage (float): [optional] The Database Monitoring normalized queries usage by tag(s).
-            estimated_indexed_logs_percentage (float): [optional] The percentage of estimated live indexed logs usage by tag(s). Note this field is in private beta.
-            estimated_indexed_logs_usage (float): [optional] The estimated live indexed logs usage by tag(s). Note this field is in private beta.
-            infra_host_percentage (float): [optional] The percentage of infrastructure host usage by tag(s).
-            infra_host_usage (float): [optional] The infrastructure host usage by tag(s).
-            lambda_functions_percentage (float): [optional] The percentage of Lambda function usage by tag(s).
-            lambda_functions_usage (float): [optional] The Lambda function usage by tag(s).
-            lambda_invocations_percentage (float): [optional] The percentage of Lambda invocation usage by tag(s).
-            lambda_invocations_usage (float): [optional] The Lambda invocation usage by tag(s).
-            lambda_percentage (float): [optional] The percentage of Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_percentage instead.
-            lambda_usage (float): [optional] The Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_usage instead.
-            npm_host_percentage (float): [optional] The percentage of network host usage by tag(s).
-            npm_host_usage (float): [optional] The network host usage by tag(s).
-            profiled_container_percentage (float): [optional] The percentage of profiled containers usage by tag(s).
-            profiled_container_usage (float): [optional] The profiled container usage by tag(s).
-            profiled_hosts_percentage (float): [optional] The percentage of profiled hosts usage by tag(s).
-            profiled_hosts_usage (float): [optional] The profiled host usage by tag(s).
-            snmp_percentage (float): [optional] The percentage of network device usage by tag(s).
-            snmp_usage (float): [optional] The network device usage by tag(s).
+
+        :param api_percentage: The percentage of synthetic API test usage by tag(s).
+        :type api_percentage: float, optional
+
+        :param api_usage: The synthetic API test usage by tag(s).
+        :type api_usage: float, optional
+
+        :param apm_host_percentage: The percentage of APM host usage by tag(s).
+        :type apm_host_percentage: float, optional
+
+        :param apm_host_usage: The APM host usage by tag(s).
+        :type apm_host_usage: float, optional
+
+        :param browser_percentage: The percentage of synthetic browser test usage by tag(s).
+        :type browser_percentage: float, optional
+
+        :param browser_usage: The synthetic browser test usage by tag(s).
+        :type browser_usage: float, optional
+
+        :param container_percentage: The percentage of container usage by tag(s).
+        :type container_percentage: float, optional
+
+        :param container_usage: The container usage by tag(s).
+        :type container_usage: float, optional
+
+        :param cspm_container_percentage: The percentage of Cloud Security Posture Management container usage by tag(s)
+        :type cspm_container_percentage: float, optional
+
+        :param cspm_container_usage: The Cloud Security Posture Management container usage by tag(s)
+        :type cspm_container_usage: float, optional
+
+        :param cspm_host_percentage: The percentage of Cloud Security Posture Management host usage by tag(s)
+        :type cspm_host_percentage: float, optional
+
+        :param cspm_host_usage: The Cloud Security Posture Management host usage by tag(s)
+        :type cspm_host_usage: float, optional
+
+        :param custom_timeseries_percentage: The percentage of custom metrics usage by tag(s).
+        :type custom_timeseries_percentage: float, optional
+
+        :param custom_timeseries_usage: The custom metrics usage by tag(s).
+        :type custom_timeseries_usage: float, optional
+
+        :param cws_container_percentage: The percentage of Cloud Workload Security container usage by tag(s)
+        :type cws_container_percentage: float, optional
+
+        :param cws_container_usage: The Cloud Workload Security container usage by tag(s)
+        :type cws_container_usage: float, optional
+
+        :param cws_host_percentage: The percentage of Cloud Workload Security host usage by tag(s)
+        :type cws_host_percentage: float, optional
+
+        :param cws_host_usage: The Cloud Workload Security host usage by tag(s)
+        :type cws_host_usage: float, optional
+
+        :param dbm_hosts_percentage: The percentage of Database Monitoring host usage by tag(s).
+        :type dbm_hosts_percentage: float, optional
+
+        :param dbm_hosts_usage: The Database Monitoring host usage by tag(s).
+        :type dbm_hosts_usage: float, optional
+
+        :param dbm_queries_percentage: The percentage of Database Monitoring normalized queries usage by tag(s).
+        :type dbm_queries_percentage: float, optional
+
+        :param dbm_queries_usage: The Database Monitoring normalized queries usage by tag(s).
+        :type dbm_queries_usage: float, optional
+
+        :param estimated_indexed_logs_percentage: The percentage of estimated live indexed logs usage by tag(s). Note this field is in private beta.
+        :type estimated_indexed_logs_percentage: float, optional
+
+        :param estimated_indexed_logs_usage: The estimated live indexed logs usage by tag(s). Note this field is in private beta.
+        :type estimated_indexed_logs_usage: float, optional
+
+        :param infra_host_percentage: The percentage of infrastructure host usage by tag(s).
+        :type infra_host_percentage: float, optional
+
+        :param infra_host_usage: The infrastructure host usage by tag(s).
+        :type infra_host_usage: float, optional
+
+        :param lambda_functions_percentage: The percentage of Lambda function usage by tag(s).
+        :type lambda_functions_percentage: float, optional
+
+        :param lambda_functions_usage: The Lambda function usage by tag(s).
+        :type lambda_functions_usage: float, optional
+
+        :param lambda_invocations_percentage: The percentage of Lambda invocation usage by tag(s).
+        :type lambda_invocations_percentage: float, optional
+
+        :param lambda_invocations_usage: The Lambda invocation usage by tag(s).
+        :type lambda_invocations_usage: float, optional
+
+        :param lambda_percentage: The percentage of Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_percentage instead.
+        :type lambda_percentage: float, optional
+
+        :param lambda_usage: The Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_usage instead.
+        :type lambda_usage: float, optional
+
+        :param npm_host_percentage: The percentage of network host usage by tag(s).
+        :type npm_host_percentage: float, optional
+
+        :param npm_host_usage: The network host usage by tag(s).
+        :type npm_host_usage: float, optional
+
+        :param profiled_container_percentage: The percentage of profiled containers usage by tag(s).
+        :type profiled_container_percentage: float, optional
+
+        :param profiled_container_usage: The profiled container usage by tag(s).
+        :type profiled_container_usage: float, optional
+
+        :param profiled_hosts_percentage: The percentage of profiled hosts usage by tag(s).
+        :type profiled_hosts_percentage: float, optional
+
+        :param profiled_hosts_usage: The profiled host usage by tag(s).
+        :type profiled_hosts_usage: float, optional
+
+        :param snmp_percentage: The percentage of network device usage by tag(s).
+        :type snmp_percentage: float, optional
+
+        :param snmp_usage: The network device usage by tag(s).
+        :type snmp_usage: float, optional
         """
         super().__init__(kwargs)
 

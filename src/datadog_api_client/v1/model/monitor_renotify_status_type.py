@@ -37,12 +37,8 @@ class MonitorRenotifyStatusType(ModelSimple):
         """MonitorRenotifyStatusType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The different statuses for which renotification is supported. Must be one of ["alert", "warn", "no data"].
-
-        Keyword Args:
-            value (str): The different statuses for which renotification is supported. Must be one of ["alert", "warn", "no data"].
+        :param value: The different statuses for which renotification is supported. Must be one of ["alert", "warn", "no data"].
+        :type value: str
         """
         super().__init__(kwargs)
 

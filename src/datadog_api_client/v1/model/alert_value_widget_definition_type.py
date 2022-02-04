@@ -34,12 +34,8 @@ class AlertValueWidgetDefinitionType(ModelSimple):
         """AlertValueWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the alert value widget. If omitted defaults to "alert_value". Must be one of ["alert_value"].
-
-        Keyword Args:
-            value (str): Type of the alert value widget. If omitted defaults to "alert_value". Must be one of ["alert_value"].
+        :param value: Type of the alert value widget. If omitted defaults to "alert_value". Must be one of ["alert_value"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -52,15 +52,23 @@ class SecurityMonitoringRuleQueryCreate(ModelNormal):
     def __init__(self, query, *args, **kwargs):
         """SecurityMonitoringRuleQueryCreate - a model defined in OpenAPI
 
-        Args:
-            query (str): Query to run on logs.
 
-        Keyword Args:
-            aggregation (SecurityMonitoringRuleQueryAggregation): [optional]
-            distinct_fields ([str]): [optional] Field for which the cardinality is measured. Sent as an array.
-            group_by_fields ([str]): [optional] Fields to group by.
-            metric (str): [optional] The target field to aggregate over when using the sum or max aggregations.
-            name (str): [optional] Name of the query.
+        :param query: Query to run on logs.
+        :type query: str
+
+        :type aggregation: SecurityMonitoringRuleQueryAggregation, optional
+
+        :param distinct_fields: Field for which the cardinality is measured. Sent as an array.
+        :type distinct_fields: [str], optional
+
+        :param group_by_fields: Fields to group by.
+        :type group_by_fields: [str], optional
+
+        :param metric: The target field to aggregate over when using the sum or max aggregations.
+        :type metric: str, optional
+
+        :param name: Name of the query.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

@@ -38,12 +38,8 @@ class ServiceCheckStatus(ModelSimple):
         """ServiceCheckStatus - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (int): The status of a service check. Must be one of [0, 1, 2, 3].
-
-        Keyword Args:
-            value (int): The status of a service check. Must be one of [0, 1, 2, 3].
+        :param value: The status of a service check. Must be one of [0, 1, 2, 3].
+        :type value: int
         """
         super().__init__(kwargs)
 

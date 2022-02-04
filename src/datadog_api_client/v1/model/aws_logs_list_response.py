@@ -44,10 +44,15 @@ class AWSLogsListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """AWSLogsListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            account_id (str): [optional] Your AWS Account ID without dashes.
-            lambdas ([AWSLogsLambda]): [optional] List of ARNs configured in your Datadog account.
-            services ([str]): [optional] Array of services IDs.
+
+        :param account_id: Your AWS Account ID without dashes.
+        :type account_id: str, optional
+
+        :param lambdas: List of ARNs configured in your Datadog account.
+        :type lambdas: [AWSLogsLambda], optional
+
+        :param services: Array of services IDs.
+        :type services: [str], optional
         """
         super().__init__(kwargs)
 

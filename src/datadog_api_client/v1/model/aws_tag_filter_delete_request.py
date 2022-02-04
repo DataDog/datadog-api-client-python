@@ -42,9 +42,11 @@ class AWSTagFilterDeleteRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """AWSTagFilterDeleteRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            account_id (str): [optional] The unique identifier of your AWS account.
-            namespace (AWSNamespace): [optional]
+
+        :param account_id: The unique identifier of your AWS account.
+        :type account_id: str, optional
+
+        :type namespace: AWSNamespace, optional
         """
         super().__init__(kwargs)
 

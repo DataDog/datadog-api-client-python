@@ -34,12 +34,8 @@ class FreeTextWidgetDefinitionType(ModelSimple):
         """FreeTextWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the free text widget. If omitted defaults to "free_text". Must be one of ["free_text"].
-
-        Keyword Args:
-            value (str): Type of the free text widget. If omitted defaults to "free_text". Must be one of ["free_text"].
+        :param value: Type of the free text widget. If omitted defaults to "free_text". Must be one of ["free_text"].
+        :type value: str
         """
         super().__init__(kwargs)
 

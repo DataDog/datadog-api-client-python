@@ -58,16 +58,26 @@ class LogsPipeline(ModelNormal):
     def __init__(self, name, *args, **kwargs):
         """LogsPipeline - a model defined in OpenAPI
 
-        Args:
-            name (str): Name of the pipeline.
 
-        Keyword Args:
-            filter (LogsFilter): [optional]
-            id (str): [optional] ID of the pipeline.
-            is_enabled (bool): [optional] Whether or not the pipeline is enabled.
-            is_read_only (bool): [optional] Whether or not the pipeline can be edited.
-            processors ([LogsProcessor]): [optional] Ordered list of processors in this pipeline.
-            type (str): [optional] Type of pipeline.
+        :param name: Name of the pipeline.
+        :type name: str
+
+        :type filter: LogsFilter, optional
+
+        :param id: ID of the pipeline.
+        :type id: str, optional
+
+        :param is_enabled: Whether or not the pipeline is enabled.
+        :type is_enabled: bool, optional
+
+        :param is_read_only: Whether or not the pipeline can be edited.
+        :type is_read_only: bool, optional
+
+        :param processors: Ordered list of processors in this pipeline.
+        :type processors: [LogsProcessor], optional
+
+        :param type: Type of pipeline.
+        :type type: str, optional
         """
         super().__init__(kwargs)
 

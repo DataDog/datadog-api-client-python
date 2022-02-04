@@ -44,11 +44,10 @@ class NotebookCellCreateRequest(ModelNormal):
     def __init__(self, attributes, type, *args, **kwargs):
         """NotebookCellCreateRequest - a model defined in OpenAPI
 
-        Args:
-            attributes (NotebookCellCreateRequestAttributes):
-            type (NotebookCellResourceType):
 
-        Keyword Args:
+        :type attributes: NotebookCellCreateRequestAttributes
+
+        :type type: NotebookCellResourceType
         """
         super().__init__(kwargs)
 

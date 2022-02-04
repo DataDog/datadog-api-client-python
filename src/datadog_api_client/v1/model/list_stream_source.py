@@ -36,12 +36,8 @@ class ListStreamSource(ModelSimple):
         """ListStreamSource - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Source from which to query items to display in the stream. If omitted defaults to "issue_stream". Must be one of ["issue_stream", "logs_stream", "audit_stream"].
-
-        Keyword Args:
-            value (str): Source from which to query items to display in the stream. If omitted defaults to "issue_stream". Must be one of ["issue_stream", "logs_stream", "audit_stream"].
+        :param value: Source from which to query items to display in the stream. If omitted defaults to "issue_stream". Must be one of ["issue_stream", "logs_stream", "audit_stream"].
+        :type value: str
         """
         super().__init__(kwargs)
 

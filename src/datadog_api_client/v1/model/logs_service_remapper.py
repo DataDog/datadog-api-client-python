@@ -46,13 +46,17 @@ class LogsServiceRemapper(ModelNormal):
     def __init__(self, sources, type, *args, **kwargs):
         """LogsServiceRemapper - a model defined in OpenAPI
 
-        Args:
-            sources ([str]): Array of source attributes.
-            type (LogsServiceRemapperType):
 
-        Keyword Args:
-            is_enabled (bool): [optional] Whether or not the processor is enabled. If omitted the server will use the default value of False.
-            name (str): [optional] Name of the processor.
+        :param sources: Array of source attributes.
+        :type sources: [str]
+
+        :type type: LogsServiceRemapperType
+
+        :param is_enabled: Whether or not the processor is enabled. If omitted the server will use the default value of False.
+        :type is_enabled: bool, optional
+
+        :param name: Name of the processor.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

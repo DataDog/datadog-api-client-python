@@ -64,17 +64,27 @@ class HeatMapWidgetRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HeatMapWidgetRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            apm_query (LogQueryDefinition): [optional]
-            event_query (EventQueryDefinition): [optional]
-            log_query (LogQueryDefinition): [optional]
-            network_query (LogQueryDefinition): [optional]
-            process_query (ProcessQueryDefinition): [optional]
-            profile_metrics_query (LogQueryDefinition): [optional]
-            q (str): [optional] Widget query.
-            rum_query (LogQueryDefinition): [optional]
-            security_query (LogQueryDefinition): [optional]
-            style (WidgetStyle): [optional]
+
+        :type apm_query: LogQueryDefinition, optional
+
+        :type event_query: EventQueryDefinition, optional
+
+        :type log_query: LogQueryDefinition, optional
+
+        :type network_query: LogQueryDefinition, optional
+
+        :type process_query: ProcessQueryDefinition, optional
+
+        :type profile_metrics_query: LogQueryDefinition, optional
+
+        :param q: Widget query.
+        :type q: str, optional
+
+        :type rum_query: LogQueryDefinition, optional
+
+        :type security_query: LogQueryDefinition, optional
+
+        :type style: WidgetStyle, optional
         """
         super().__init__(kwargs)
 

@@ -68,21 +68,46 @@ class Host(ModelNormal):
     def __init__(self, *args, **kwargs):
         """Host - a model defined in OpenAPI
 
-        Keyword Args:
-            aliases ([str]): [optional] Host aliases collected by Datadog.
-            apps ([str]): [optional] The Datadog integrations reporting metrics for the host.
-            aws_name (str): [optional] AWS name of your host.
-            host_name (str): [optional] The host name.
-            id (int): [optional] The host ID.
-            is_muted (bool): [optional] If a host is muted or unmuted.
-            last_reported_time (int): [optional] Last time the host reported a metric data point.
-            meta (HostMeta): [optional]
-            metrics (HostMetrics): [optional]
-            mute_timeout (int): [optional] Timeout of the mute applied to your host.
-            name (str): [optional] The host name.
-            sources ([str]): [optional] Source or cloud provider associated with your host.
-            tags_by_source ({str: ([str],)}): [optional] List of tags for each source (AWS, Datadog Agent, Chef..).
-            up (bool): [optional] Displays UP when the expected metrics are received and displays `???` if no metrics are received.
+
+        :param aliases: Host aliases collected by Datadog.
+        :type aliases: [str], optional
+
+        :param apps: The Datadog integrations reporting metrics for the host.
+        :type apps: [str], optional
+
+        :param aws_name: AWS name of your host.
+        :type aws_name: str, optional
+
+        :param host_name: The host name.
+        :type host_name: str, optional
+
+        :param id: The host ID.
+        :type id: int, optional
+
+        :param is_muted: If a host is muted or unmuted.
+        :type is_muted: bool, optional
+
+        :param last_reported_time: Last time the host reported a metric data point.
+        :type last_reported_time: int, optional
+
+        :type meta: HostMeta, optional
+
+        :type metrics: HostMetrics, optional
+
+        :param mute_timeout: Timeout of the mute applied to your host.
+        :type mute_timeout: int, optional
+
+        :param name: The host name.
+        :type name: str, optional
+
+        :param sources: Source or cloud provider associated with your host.
+        :type sources: [str], optional
+
+        :param tags_by_source: List of tags for each source (AWS, Datadog Agent, Chef..).
+        :type tags_by_source: {str: ([str],)}, optional
+
+        :param up: Displays UP when the expected metrics are received and displays `???` if no metrics are received.
+        :type up: bool, optional
         """
         super().__init__(kwargs)
 

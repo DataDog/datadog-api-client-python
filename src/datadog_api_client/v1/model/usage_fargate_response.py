@@ -40,8 +40,9 @@ class UsageFargateResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageFargateResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageFargateHour]): [optional] Array with the number of hourly Fargate tasks recorded for a given organization.
+
+        :param usage: Array with the number of hourly Fargate tasks recorded for a given organization.
+        :type usage: [UsageFargateHour], optional
         """
         super().__init__(kwargs)
 

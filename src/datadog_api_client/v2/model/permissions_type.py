@@ -34,12 +34,8 @@ class PermissionsType(ModelSimple):
         """PermissionsType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Permissions resource type. If omitted defaults to "permissions". Must be one of ["permissions"].
-
-        Keyword Args:
-            value (str): Permissions resource type. If omitted defaults to "permissions". Must be one of ["permissions"].
+        :param value: Permissions resource type. If omitted defaults to "permissions". Must be one of ["permissions"].
+        :type value: str
         """
         super().__init__(kwargs)
 

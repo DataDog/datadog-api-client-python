@@ -77,20 +77,34 @@ class DistributionWidgetDefinition(ModelNormal):
     def __init__(self, requests, type, *args, **kwargs):
         """DistributionWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            requests ([DistributionWidgetRequest]): Array of one request object to display in the widget.  See the dedicated [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)  to learn how to build the `REQUEST_SCHEMA`.
-            type (DistributionWidgetDefinitionType):
 
-        Keyword Args:
-            legend_size (str): [optional] (Deprecated) The widget legend was replaced by a tooltip and sidebar.
-            markers ([WidgetMarker]): [optional] List of markers.
-            show_legend (bool): [optional] (Deprecated) The widget legend was replaced by a tooltip and sidebar.
-            time (WidgetTime): [optional]
-            title (str): [optional] Title of the widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
-            xaxis (DistributionWidgetXAxis): [optional]
-            yaxis (DistributionWidgetYAxis): [optional]
+        :param requests: Array of one request object to display in the widget.  See the dedicated [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)  to learn how to build the `REQUEST_SCHEMA`.
+        :type requests: [DistributionWidgetRequest]
+
+        :type type: DistributionWidgetDefinitionType
+
+        :param legend_size: (Deprecated) The widget legend was replaced by a tooltip and sidebar.
+        :type legend_size: str, optional
+
+        :param markers: List of markers.
+        :type markers: [WidgetMarker], optional
+
+        :param show_legend: (Deprecated) The widget legend was replaced by a tooltip and sidebar.
+        :type show_legend: bool, optional
+
+        :type time: WidgetTime, optional
+
+        :param title: Title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
+
+        :type xaxis: DistributionWidgetXAxis, optional
+
+        :type yaxis: DistributionWidgetYAxis, optional
         """
         super().__init__(kwargs)
 

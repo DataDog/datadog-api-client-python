@@ -54,15 +54,21 @@ class LogsURLParser(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """LogsURLParser - a model defined in OpenAPI
 
-        Args:
-            type (LogsURLParserType):
 
-        Keyword Args:
-            sources ([str]): Array of source attributes. Defaults to ["http.url"].
-            target (str): Name of the parent attribute that contains all the extracted details from the `sources`. Defaults to "http.url_details".
-            is_enabled (bool): [optional] Whether or not the processor is enabled. If omitted the server will use the default value of False.
-            name (str): [optional] Name of the processor.
-            normalize_ending_slashes (bool, none_type): [optional] Normalize the ending slashes or not. If omitted the server will use the default value of False.
+        :type type: LogsURLParserType
+        :param sources: Array of source attributes. Defaults to ["http.url"].
+        :type sources: [str]
+        :param target: Name of the parent attribute that contains all the extracted details from the `sources`. Defaults to "http.url_details".
+        :type target: str
+
+        :param is_enabled: Whether or not the processor is enabled. If omitted the server will use the default value of False.
+        :type is_enabled: bool, optional
+
+        :param name: Name of the processor.
+        :type name: str, optional
+
+        :param normalize_ending_slashes: Normalize the ending slashes or not. If omitted the server will use the default value of False.
+        :type normalize_ending_slashes: bool, none_type, optional
         """
         super().__init__(kwargs)
 

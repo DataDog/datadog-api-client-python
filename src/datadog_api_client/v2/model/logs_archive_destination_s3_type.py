@@ -34,12 +34,8 @@ class LogsArchiveDestinationS3Type(ModelSimple):
         """LogsArchiveDestinationS3Type - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the S3 archive destination. If omitted defaults to "s3". Must be one of ["s3"].
-
-        Keyword Args:
-            value (str): Type of the S3 archive destination. If omitted defaults to "s3". Must be one of ["s3"].
+        :param value: Type of the S3 archive destination. If omitted defaults to "s3". Must be one of ["s3"].
+        :type value: str
         """
         super().__init__(kwargs)
 

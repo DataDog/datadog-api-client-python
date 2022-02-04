@@ -40,10 +40,8 @@ class SunburstWidgetLegendTable(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """SunburstWidgetLegendTable - a model defined in OpenAPI
 
-        Args:
-            type (SunburstWidgetLegendTableType):
 
-        Keyword Args:
+        :type type: SunburstWidgetLegendTableType
         """
         super().__init__(kwargs)
 

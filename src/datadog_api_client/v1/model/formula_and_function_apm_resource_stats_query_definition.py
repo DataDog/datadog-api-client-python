@@ -64,19 +64,34 @@ class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
     def __init__(self, data_source, env, name, service, stat, *args, **kwargs):
         """FormulaAndFunctionApmResourceStatsQueryDefinition - a model defined in OpenAPI
 
-        Args:
-            data_source (FormulaAndFunctionApmResourceStatsDataSource):
-            env (str): APM environment.
-            name (str): Name of this query to use in formulas.
-            service (str): APM service name.
-            stat (FormulaAndFunctionApmResourceStatName):
 
-        Keyword Args:
-            group_by ([str]): [optional] Array of fields to group results by.
-            operation_name (str): [optional] Name of operation on service.
-            primary_tag_name (str): [optional] Name of the second primary tag used within APM. Required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog
-            primary_tag_value (str): [optional] Value of the second primary tag by which to filter APM data. `primary_tag_name` must also be specified.
-            resource_name (str): [optional] APM resource name.
+        :type data_source: FormulaAndFunctionApmResourceStatsDataSource
+
+        :param env: APM environment.
+        :type env: str
+
+        :param name: Name of this query to use in formulas.
+        :type name: str
+
+        :param service: APM service name.
+        :type service: str
+
+        :type stat: FormulaAndFunctionApmResourceStatName
+
+        :param group_by: Array of fields to group results by.
+        :type group_by: [str], optional
+
+        :param operation_name: Name of operation on service.
+        :type operation_name: str, optional
+
+        :param primary_tag_name: Name of the second primary tag used within APM. Required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog
+        :type primary_tag_name: str, optional
+
+        :param primary_tag_value: Value of the second primary tag by which to filter APM data. `primary_tag_name` must also be specified.
+        :type primary_tag_value: str, optional
+
+        :param resource_name: APM resource name.
+        :type resource_name: str, optional
         """
         super().__init__(kwargs)
 

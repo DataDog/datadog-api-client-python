@@ -70,22 +70,50 @@ class HostMeta(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HostMeta - a model defined in OpenAPI
 
-        Keyword Args:
-            agent_checks ([AgentCheck]): [optional] A list of Agent checks running on the host.
-            agent_version (str): [optional] The Datadog Agent version.
-            cpu_cores (int): [optional] The number of cores.
-            fbsd_v ([str]): [optional] An array of Mac versions.
-            gohai (str): [optional] JSON string containing system information.
-            install_method (HostMetaInstallMethod): [optional]
-            mac_v ([str]): [optional] An array of Mac versions.
-            machine (str): [optional] The machine architecture.
-            nix_v ([str]): [optional] Array of Unix versions.
-            platform (str): [optional] The OS platform.
-            processor (str): [optional] The processor.
-            python_v (str): [optional] The Python version.
-            socket_fqdn (str): [optional] The socket fqdn.
-            socket_hostname (str): [optional] The socket hostname.
-            win_v ([str]): [optional] An array of Windows versions.
+
+        :param agent_checks: A list of Agent checks running on the host.
+        :type agent_checks: [AgentCheck], optional
+
+        :param agent_version: The Datadog Agent version.
+        :type agent_version: str, optional
+
+        :param cpu_cores: The number of cores.
+        :type cpu_cores: int, optional
+
+        :param fbsd_v: An array of Mac versions.
+        :type fbsd_v: [str], optional
+
+        :param gohai: JSON string containing system information.
+        :type gohai: str, optional
+
+        :type install_method: HostMetaInstallMethod, optional
+
+        :param mac_v: An array of Mac versions.
+        :type mac_v: [str], optional
+
+        :param machine: The machine architecture.
+        :type machine: str, optional
+
+        :param nix_v: Array of Unix versions.
+        :type nix_v: [str], optional
+
+        :param platform: The OS platform.
+        :type platform: str, optional
+
+        :param processor: The processor.
+        :type processor: str, optional
+
+        :param python_v: The Python version.
+        :type python_v: str, optional
+
+        :param socket_fqdn: The socket fqdn.
+        :type socket_fqdn: str, optional
+
+        :param socket_hostname: The socket hostname.
+        :type socket_hostname: str, optional
+
+        :param win_v: An array of Windows versions.
+        :type win_v: [str], optional
         """
         super().__init__(kwargs)
 

@@ -48,10 +48,14 @@ class UsersResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsersResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([User]): [optional] Array of returned users.
-            included ([UserResponseIncludedItem]): [optional] Array of objects related to the users.
-            meta (ResponseMetaAttributes): [optional]
+
+        :param data: Array of returned users.
+        :type data: [User], optional
+
+        :param included: Array of objects related to the users.
+        :type included: [UserResponseIncludedItem], optional
+
+        :type meta: ResponseMetaAttributes, optional
         """
         super().__init__(kwargs)
 

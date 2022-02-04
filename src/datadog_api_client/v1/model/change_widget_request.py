@@ -90,25 +90,47 @@ class ChangeWidgetRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ChangeWidgetRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            apm_query (LogQueryDefinition): [optional]
-            change_type (WidgetChangeType): [optional]
-            compare_to (WidgetCompareTo): [optional]
-            event_query (LogQueryDefinition): [optional]
-            formulas ([WidgetFormula]): [optional] List of formulas that operate on queries. **This feature is currently in beta.**
-            increase_good (bool): [optional] Whether to show increase as good.
-            log_query (LogQueryDefinition): [optional]
-            network_query (LogQueryDefinition): [optional]
-            order_by (WidgetOrderBy): [optional]
-            order_dir (WidgetSort): [optional]
-            process_query (ProcessQueryDefinition): [optional]
-            profile_metrics_query (LogQueryDefinition): [optional]
-            q (str): [optional] Query definition.
-            queries ([FormulaAndFunctionQueryDefinition]): [optional] List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**
-            response_format (FormulaAndFunctionResponseFormat): [optional]
-            rum_query (LogQueryDefinition): [optional]
-            security_query (LogQueryDefinition): [optional]
-            show_present (bool): [optional] Whether to show the present value.
+
+        :type apm_query: LogQueryDefinition, optional
+
+        :type change_type: WidgetChangeType, optional
+
+        :type compare_to: WidgetCompareTo, optional
+
+        :type event_query: LogQueryDefinition, optional
+
+        :param formulas: List of formulas that operate on queries. **This feature is currently in beta.**
+        :type formulas: [WidgetFormula], optional
+
+        :param increase_good: Whether to show increase as good.
+        :type increase_good: bool, optional
+
+        :type log_query: LogQueryDefinition, optional
+
+        :type network_query: LogQueryDefinition, optional
+
+        :type order_by: WidgetOrderBy, optional
+
+        :type order_dir: WidgetSort, optional
+
+        :type process_query: ProcessQueryDefinition, optional
+
+        :type profile_metrics_query: LogQueryDefinition, optional
+
+        :param q: Query definition.
+        :type q: str, optional
+
+        :param queries: List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**
+        :type queries: [FormulaAndFunctionQueryDefinition], optional
+
+        :type response_format: FormulaAndFunctionResponseFormat, optional
+
+        :type rum_query: LogQueryDefinition, optional
+
+        :type security_query: LogQueryDefinition, optional
+
+        :param show_present: Whether to show the present value.
+        :type show_present: bool, optional
         """
         super().__init__(kwargs)
 

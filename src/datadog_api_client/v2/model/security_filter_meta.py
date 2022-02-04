@@ -33,8 +33,9 @@ class SecurityFilterMeta(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityFilterMeta - a model defined in OpenAPI
 
-        Keyword Args:
-            warning (str): [optional] A warning message.
+
+        :param warning: A warning message.
+        :type warning: str, optional
         """
         super().__init__(kwargs)
 

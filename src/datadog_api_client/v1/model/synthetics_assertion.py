@@ -41,11 +41,15 @@ class SyntheticsAssertion(ModelComposed):
     def __init__(self, *args, **kwargs):
         """SyntheticsAssertion - a model defined in OpenAPI
 
-        Keyword Args:
-            _property (str): [optional] The associated assertion property.
-            operator (SyntheticsAssertionJSONPathOperator): [optional]
-            target (SyntheticsAssertionJSONPathTargetTarget): [optional]
-            type (SyntheticsAssertionType): [optional]
+
+        :param _property: The associated assertion property.
+        :type _property: str, optional
+
+        :type operator: SyntheticsAssertionJSONPathOperator, optional
+
+        :type target: SyntheticsAssertionJSONPathTargetTarget, optional
+
+        :type type: SyntheticsAssertionType, optional
         """
         super().__init__(kwargs)
 

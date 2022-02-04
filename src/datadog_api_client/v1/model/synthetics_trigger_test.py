@@ -42,11 +42,11 @@ class SyntheticsTriggerTest(ModelNormal):
     def __init__(self, public_id, *args, **kwargs):
         """SyntheticsTriggerTest - a model defined in OpenAPI
 
-        Args:
-            public_id (str): The public ID of the Synthetics test to trigger.
 
-        Keyword Args:
-            metadata (SyntheticsCIBatchMetadata): [optional]
+        :param public_id: The public ID of the Synthetics test to trigger.
+        :type public_id: str
+
+        :type metadata: SyntheticsCIBatchMetadata, optional
         """
         super().__init__(kwargs)
 

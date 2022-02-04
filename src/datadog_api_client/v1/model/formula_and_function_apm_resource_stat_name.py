@@ -44,12 +44,8 @@ class FormulaAndFunctionApmResourceStatName(ModelSimple):
         """FormulaAndFunctionApmResourceStatName - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): APM resource stat name. Must be one of ["errors", "error_rate", "hits", "latency_avg", "latency_max", "latency_p50", "latency_p75", "latency_p90", "latency_p95", "latency_p99"].
-
-        Keyword Args:
-            value (str): APM resource stat name. Must be one of ["errors", "error_rate", "hits", "latency_avg", "latency_max", "latency_p50", "latency_p75", "latency_p90", "latency_p95", "latency_p99"].
+        :param value: APM resource stat name. Must be one of ["errors", "error_rate", "hits", "latency_avg", "latency_max", "latency_p50", "latency_p75", "latency_p90", "latency_p95", "latency_p99"].
+        :type value: str
         """
         super().__init__(kwargs)
 

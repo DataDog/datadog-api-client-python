@@ -36,12 +36,8 @@ class SyntheticsConfigVariableType(ModelSimple):
         """SyntheticsConfigVariableType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the configuration variable. Must be one of ["global", "text"].
-
-        Keyword Args:
-            value (str): Type of the configuration variable. Must be one of ["global", "text"].
+        :param value: Type of the configuration variable. Must be one of ["global", "text"].
+        :type value: str
         """
         super().__init__(kwargs)
 

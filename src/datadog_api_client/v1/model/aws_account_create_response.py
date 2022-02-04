@@ -33,8 +33,9 @@ class AWSAccountCreateResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """AWSAccountCreateResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            external_id (str): [optional] AWS external_id.
+
+        :param external_id: AWS external_id.
+        :type external_id: str, optional
         """
         super().__init__(kwargs)
 

@@ -39,11 +39,18 @@ class LogsRetentionAggSumUsage(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsRetentionAggSumUsage - a model defined in OpenAPI
 
-        Keyword Args:
-            logs_indexed_logs_usage_agg_sum (int): [optional] Total indexed logs for this retention period.
-            logs_live_indexed_logs_usage_agg_sum (int): [optional] Live indexed logs for this retention period.
-            logs_rehydrated_indexed_logs_usage_agg_sum (int): [optional] Rehydrated indexed logs for this retention period.
-            retention (str): [optional] The retention period in days or \"custom\" for all custom retention periods.
+
+        :param logs_indexed_logs_usage_agg_sum: Total indexed logs for this retention period.
+        :type logs_indexed_logs_usage_agg_sum: int, optional
+
+        :param logs_live_indexed_logs_usage_agg_sum: Live indexed logs for this retention period.
+        :type logs_live_indexed_logs_usage_agg_sum: int, optional
+
+        :param logs_rehydrated_indexed_logs_usage_agg_sum: Rehydrated indexed logs for this retention period.
+        :type logs_rehydrated_indexed_logs_usage_agg_sum: int, optional
+
+        :param retention: The retention period in days or \"custom\" for all custom retention periods.
+        :type retention: str, optional
         """
         super().__init__(kwargs)
 

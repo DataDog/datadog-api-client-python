@@ -44,11 +44,10 @@ class FunnelWidgetRequest(ModelNormal):
     def __init__(self, query, request_type, *args, **kwargs):
         """FunnelWidgetRequest - a model defined in OpenAPI
 
-        Args:
-            query (FunnelQuery):
-            request_type (FunnelRequestType):
 
-        Keyword Args:
+        :type query: FunnelQuery
+
+        :type request_type: FunnelRequestType
         """
         super().__init__(kwargs)
 

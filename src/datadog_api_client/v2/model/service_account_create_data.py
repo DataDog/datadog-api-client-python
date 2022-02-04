@@ -48,12 +48,12 @@ class ServiceAccountCreateData(ModelNormal):
     def __init__(self, attributes, type, *args, **kwargs):
         """ServiceAccountCreateData - a model defined in OpenAPI
 
-        Args:
-            attributes (ServiceAccountCreateAttributes):
-            type (UsersType):
 
-        Keyword Args:
-            relationships (UserRelationships): [optional]
+        :type attributes: ServiceAccountCreateAttributes
+
+        :type type: UsersType
+
+        :type relationships: UserRelationships, optional
         """
         super().__init__(kwargs)
 

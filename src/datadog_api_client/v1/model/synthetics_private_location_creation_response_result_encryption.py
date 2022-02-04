@@ -35,9 +35,12 @@ class SyntheticsPrivateLocationCreationResponseResultEncryption(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsPrivateLocationCreationResponseResultEncryption - a model defined in OpenAPI
 
-        Keyword Args:
-            id (str): [optional] Fingerprint for the encryption key.
-            key (str): [optional] Public key for result encryption.
+
+        :param id: Fingerprint for the encryption key.
+        :type id: str, optional
+
+        :param key: Public key for result encryption.
+        :type key: str, optional
         """
         super().__init__(kwargs)
 

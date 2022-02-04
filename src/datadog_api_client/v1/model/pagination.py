@@ -35,9 +35,12 @@ class Pagination(ModelNormal):
     def __init__(self, *args, **kwargs):
         """Pagination - a model defined in OpenAPI
 
-        Keyword Args:
-            total_count (int): [optional] Total count.
-            total_filtered_count (int): [optional] Total count of elements matched by the filter.
+
+        :param total_count: Total count.
+        :type total_count: int, optional
+
+        :param total_filtered_count: Total count of elements matched by the filter.
+        :type total_filtered_count: int, optional
         """
         super().__init__(kwargs)
 

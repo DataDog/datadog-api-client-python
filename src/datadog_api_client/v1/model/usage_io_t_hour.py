@@ -40,11 +40,18 @@ class UsageIoTHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageIoTHour - a model defined in OpenAPI
 
-        Keyword Args:
-            hour (datetime): [optional] The hour for the usage.
-            iot_device_count (int): [optional] The total number of IoT devices during a given hour.
-            org_name (str): [optional] The organization name.
-            public_id (str): [optional] The organization public ID.
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param iot_device_count: The total number of IoT devices during a given hour.
+        :type iot_device_count: int, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
         """
         super().__init__(kwargs)
 

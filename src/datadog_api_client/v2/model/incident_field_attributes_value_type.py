@@ -37,12 +37,8 @@ class IncidentFieldAttributesValueType(ModelSimple):
         """IncidentFieldAttributesValueType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the multiple value field definitions. If omitted defaults to "multiselect". Must be one of ["multiselect", "textarray", "metrictag", "autocomplete"].
-
-        Keyword Args:
-            value (str): Type of the multiple value field definitions. If omitted defaults to "multiselect". Must be one of ["multiselect", "textarray", "metrictag", "autocomplete"].
+        :param value: Type of the multiple value field definitions. If omitted defaults to "multiselect". Must be one of ["multiselect", "textarray", "metrictag", "autocomplete"].
+        :type value: str
         """
         super().__init__(kwargs)
 

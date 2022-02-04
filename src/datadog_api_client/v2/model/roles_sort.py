@@ -39,12 +39,8 @@ class RolesSort(ModelSimple):
         """RolesSort - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Sorting options for roles. If omitted defaults to "name". Must be one of ["name", "-name", "modified_at", "-modified_at", "user_count", "-user_count"].
-
-        Keyword Args:
-            value (str): Sorting options for roles. If omitted defaults to "name". Must be one of ["name", "-name", "modified_at", "-modified_at", "user_count", "-user_count"].
+        :param value: Sorting options for roles. If omitted defaults to "name". Must be one of ["name", "-name", "modified_at", "-modified_at", "user_count", "-user_count"].
+        :type value: str
         """
         super().__init__(kwargs)
 

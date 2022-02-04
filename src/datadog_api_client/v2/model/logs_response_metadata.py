@@ -52,12 +52,19 @@ class LogsResponseMetadata(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsResponseMetadata - a model defined in OpenAPI
 
-        Keyword Args:
-            elapsed (int): [optional] The time elapsed in milliseconds
-            page (LogsResponseMetadataPage): [optional]
-            request_id (str): [optional] The identifier of the request
-            status (LogsAggregateResponseStatus): [optional]
-            warnings ([LogsWarning]): [optional] A list of warnings (non fatal errors) encountered, partial results might be returned if warnings are present in the response.
+
+        :param elapsed: The time elapsed in milliseconds
+        :type elapsed: int, optional
+
+        :type page: LogsResponseMetadataPage, optional
+
+        :param request_id: The identifier of the request
+        :type request_id: str, optional
+
+        :type status: LogsAggregateResponseStatus, optional
+
+        :param warnings: A list of warnings (non fatal errors) encountered, partial results might be returned if warnings are present in the response.
+        :type warnings: [LogsWarning], optional
         """
         super().__init__(kwargs)
 

@@ -33,8 +33,9 @@ class CheckCanDeleteMonitorResponseData(ModelNormal):
     def __init__(self, *args, **kwargs):
         """CheckCanDeleteMonitorResponseData - a model defined in OpenAPI
 
-        Keyword Args:
-            ok ([int]): [optional] An array of of Monitor IDs that can be safely deleted.
+
+        :param ok: An array of of Monitor IDs that can be safely deleted.
+        :type ok: [int], optional
         """
         super().__init__(kwargs)
 

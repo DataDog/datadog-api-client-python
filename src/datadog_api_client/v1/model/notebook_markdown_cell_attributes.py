@@ -40,10 +40,8 @@ class NotebookMarkdownCellAttributes(ModelNormal):
     def __init__(self, definition, *args, **kwargs):
         """NotebookMarkdownCellAttributes - a model defined in OpenAPI
 
-        Args:
-            definition (NotebookMarkdownCellDefinition):
 
-        Keyword Args:
+        :type definition: NotebookMarkdownCellDefinition
         """
         super().__init__(kwargs)
 

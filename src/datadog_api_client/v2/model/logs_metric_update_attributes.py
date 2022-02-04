@@ -44,9 +44,11 @@ class LogsMetricUpdateAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsMetricUpdateAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            filter (LogsMetricFilter): [optional]
-            group_by ([LogsMetricGroupBy]): [optional] The rules for the group by.
+
+        :type filter: LogsMetricFilter, optional
+
+        :param group_by: The rules for the group by.
+        :type group_by: [LogsMetricGroupBy], optional
         """
         super().__init__(kwargs)
 

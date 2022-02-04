@@ -47,12 +47,12 @@ class ApiClient(object):
     Ref: https://openapi-generator.tech
     Do not edit the class manually.
 
-    :param configuration: .Configuration object for this client
-    :param header_name: a header to pass when making calls to the API.
-    :param header_value: a header value to pass when making calls to
+    :param configuration: Configuration object for this client
+    :param header_name: A header to pass when making calls to the API.
+    :param header_value: A header value to pass when making calls to
         the API.
-    :param cookie: a cookie to include in the header when making calls
-        to the API
+    :param cookie: A cookie to include in the header when making calls
+        to the API.
     :param pool_threads: The number of threads to use for async requests
         to the API. More threads means more concurrent API requests.
     """
@@ -167,10 +167,11 @@ class ApiClient(object):
             return (return_data, response.status, response.getheaders())
 
     def parameters_to_multipart(self, params, collection_types):
-        """Get parameters as list of tuples, formatting as json if value is collection_types
+        """Get parameters as list of tuples, formatting as json if value is collection_types.
 
-        :param params: Parameters as list of two-tuples
-        :param dict collection_types: Parameter collection types
+        :param params: Parameters as list of two-tuples.
+        :param collection_types: Parameter collection types.
+
         :return: Parameters as list of tuple or urllib3.fields.RequestField
         """
         new_params = []
@@ -188,15 +189,15 @@ class ApiClient(object):
 
     @classmethod
     def sanitize_for_serialization(cls, obj):
-        """Prepares data for transmission before it is sent with the rest client
+        """Prepares data for transmission before it is sent with the rest client.
         If obj is None, return None.
         If obj is str, int, long, float, bool, return directly.
-        If obj is datetime.datetime, datetime.date
-            convert to string in iso8601 format.
+        If obj is datetime.datetime, datetime.date convert to string in iso8601 format.
         If obj is list, sanitize each element in the list.
         If obj is dict, return the dict.
         If obj is OpenAPI model, return the properties dict.
-        If obj is io.IOBase, return the bytes
+        If obj is io.IOBase, return the bytes.
+
         :param obj: The data to serialize.
         :return: The serialized form of data.
         """
@@ -597,29 +598,32 @@ class AsyncApiClient(ApiClient):
 
 class Endpoint(object):
     def __init__(self, settings=None, params_map=None, headers_map=None, api_client=None):
-        """Creates an endpoint
+        """Creates an endpoint.
 
-        Args:
-            settings (dict): see below key value pairs
-                'response_type' (tuple/None): response type
-                'auth' (list): a list of auth type keys
-                'endpoint_path' (str): the endpoint path
-                'operation_id' (str): endpoint string identifier
-                'http_method' (str): POST/PUT/PATCH/GET etc
-                'servers' (list): list of str servers that this endpoint is at
-            params_map (dict): see below key value pairs
-                'required' (bool): whether the parameter is required
-                'nullable' (bool): whether the parameter is nullable
-                'validations' (dict): the validations dictionaries
-                'allowed_values' (dict): the allowed values (enum) dictionaries
-                'openapi_types' (dict): param_name to openapi type
-                'attribute' (str): camelCase name
-                'location' (str): 'body', 'file', 'form', 'header', 'path', 'query'
-                'collection_format' (str): `csv` etc.
-            headers_map (dict): see below key value pairs
-                'accept' (list): list of Accept header strings
-                'content_type' (list): list of Content-Type header strings
-            api_client (ApiClient) api client instance
+        :param settings: See below key value pairs:
+            'response_type' (tuple/None): response type
+            'auth' (list): a list of auth type keys
+            'endpoint_path' (str): the endpoint path
+            'operation_id' (str): endpoint string identifier
+            'http_method' (str): POST/PUT/PATCH/GET etc
+            'servers' (list): list of str servers that this endpoint is at
+        :type settings: dict
+        :param params_map: See below key value pairs:
+            'required' (bool): whether the parameter is required
+            'nullable' (bool): whether the parameter is nullable
+            'validations' (dict): the validations dictionaries
+            'allowed_values' (dict): the allowed values (enum) dictionaries
+            'openapi_types' (dict): param_name to openapi type
+            'attribute' (str): camelCase name
+            'location' (str): 'body', 'file', 'form', 'header', 'path', 'query'
+            'collection_format' (str): `csv` etc.
+        :type params_map: dict
+        :param headers_map: See below key value pairs:
+            'accept' (list): list of Accept header strings
+            'content_type' (list): list of Content-Type header strings
+        :type headers_map: dict
+        :param api_client API client instance.
+        :type api_client: ApiClient
         """
         self.settings = settings
         self.params_map = params_map

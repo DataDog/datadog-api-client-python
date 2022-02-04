@@ -39,13 +39,18 @@ class WidgetMarker(ModelNormal):
     def __init__(self, value, *args, **kwargs):
         """WidgetMarker - a model defined in OpenAPI
 
-        Args:
-            value (str): Value to apply. Can be a single value y = 15 or a range of values 0 < y < 10.
 
-        Keyword Args:
-            display_type (str): [optional] Combination of:   - A severity error, warning, ok, or info   - A line type: dashed, solid, or bold In this case of a Distribution widget, this can be set to be `x_axis_percentile`.
-            label (str): [optional] Label to display over the marker.
-            time (str): [optional] Timestamp for the widget.
+        :param value: Value to apply. Can be a single value y = 15 or a range of values 0 < y < 10.
+        :type value: str
+
+        :param display_type: Combination of:   - A severity error, warning, ok, or info   - A line type: dashed, solid, or bold In this case of a Distribution widget, this can be set to be `x_axis_percentile`.
+        :type display_type: str, optional
+
+        :param label: Label to display over the marker.
+        :type label: str, optional
+
+        :param time: Timestamp for the widget.
+        :type time: str, optional
         """
         super().__init__(kwargs)
 

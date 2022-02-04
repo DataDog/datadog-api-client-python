@@ -64,17 +64,32 @@ class SyntheticsBatchResult(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsBatchResult - a model defined in OpenAPI
 
-        Keyword Args:
-            device (SyntheticsDeviceID): [optional]
-            duration (float): [optional] Total duration in millisecond of the test.
-            execution_rule (SyntheticsTestExecutionRule): [optional]
-            location (str): [optional] Name of the location.
-            result_id (str): [optional] The ID of the result to get.
-            retries (float): [optional] Total duration in millisecond of the test.
-            status (SyntheticsStatus): [optional]
-            test_name (str): [optional] Name of the test.
-            test_public_id (str): [optional] The public ID of the Synthetic test.
-            test_type (SyntheticsTestDetailsType): [optional]
+
+        :type device: SyntheticsDeviceID, optional
+
+        :param duration: Total duration in millisecond of the test.
+        :type duration: float, optional
+
+        :type execution_rule: SyntheticsTestExecutionRule, optional
+
+        :param location: Name of the location.
+        :type location: str, optional
+
+        :param result_id: The ID of the result to get.
+        :type result_id: str, optional
+
+        :param retries: Total duration in millisecond of the test.
+        :type retries: float, optional
+
+        :type status: SyntheticsStatus, optional
+
+        :param test_name: Name of the test.
+        :type test_name: str, optional
+
+        :param test_public_id: The public ID of the Synthetic test.
+        :type test_public_id: str, optional
+
+        :type test_type: SyntheticsTestDetailsType, optional
         """
         super().__init__(kwargs)
 

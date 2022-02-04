@@ -37,12 +37,8 @@ class WidgetLineType(ModelSimple):
         """WidgetLineType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of lines displayed. Must be one of ["dashed", "dotted", "solid"].
-
-        Keyword Args:
-            value (str): Type of lines displayed. Must be one of ["dashed", "dotted", "solid"].
+        :param value: Type of lines displayed. Must be one of ["dashed", "dotted", "solid"].
+        :type value: str
         """
         super().__init__(kwargs)
 

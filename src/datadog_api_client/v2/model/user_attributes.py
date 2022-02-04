@@ -61,18 +61,39 @@ class UserAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UserAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            created_at (datetime): [optional] Creation time of the user.
-            disabled (bool): [optional] Whether the user is disabled.
-            email (str): [optional] Email of the user.
-            handle (str): [optional] Handle of the user.
-            icon (str): [optional] URL of the user's icon.
-            modified_at (datetime): [optional] Time that the user was last modified.
-            name (str, none_type): [optional] Name of the user.
-            service_account (bool): [optional] Whether the user is a service account.
-            status (str): [optional] Status of the user.
-            title (str, none_type): [optional] Title of the user.
-            verified (bool): [optional] Whether the user is verified.
+
+        :param created_at: Creation time of the user.
+        :type created_at: datetime, optional
+
+        :param disabled: Whether the user is disabled.
+        :type disabled: bool, optional
+
+        :param email: Email of the user.
+        :type email: str, optional
+
+        :param handle: Handle of the user.
+        :type handle: str, optional
+
+        :param icon: URL of the user's icon.
+        :type icon: str, optional
+
+        :param modified_at: Time that the user was last modified.
+        :type modified_at: datetime, optional
+
+        :param name: Name of the user.
+        :type name: str, none_type, optional
+
+        :param service_account: Whether the user is a service account.
+        :type service_account: bool, optional
+
+        :param status: Status of the user.
+        :type status: str, optional
+
+        :param title: Title of the user.
+        :type title: str, none_type, optional
+
+        :param verified: Whether the user is verified.
+        :type verified: bool, optional
         """
         super().__init__(kwargs)
 

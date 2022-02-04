@@ -35,11 +35,12 @@ class NotebookSplitBy(ModelNormal):
     def __init__(self, keys, tags, *args, **kwargs):
         """NotebookSplitBy - a model defined in OpenAPI
 
-        Args:
-            keys ([str]): Keys to split on.
-            tags ([str]): Tags to split on.
 
-        Keyword Args:
+        :param keys: Keys to split on.
+        :type keys: [str]
+
+        :param tags: Tags to split on.
+        :type tags: [str]
         """
         super().__init__(kwargs)
 

@@ -52,10 +52,12 @@ class SecurityMonitoringSignalListRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityMonitoringSignalListRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            filter (SecurityMonitoringSignalListRequestFilter): [optional]
-            page (SecurityMonitoringSignalListRequestPage): [optional]
-            sort (SecurityMonitoringSignalsSort): [optional]
+
+        :type filter: SecurityMonitoringSignalListRequestFilter, optional
+
+        :type page: SecurityMonitoringSignalListRequestPage, optional
+
+        :type sort: SecurityMonitoringSignalsSort, optional
         """
         super().__init__(kwargs)
 

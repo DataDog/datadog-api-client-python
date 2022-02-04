@@ -50,11 +50,16 @@ class SyntheticsParsingOptions(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsParsingOptions - a model defined in OpenAPI
 
-        Keyword Args:
-            field (str): [optional] When type is `http_header`, name of the header to use to extract the value.
-            name (str): [optional] Name of the variable to extract.
-            parser (SyntheticsVariableParser): [optional]
-            type (SyntheticsGlobalVariableParseTestOptionsType): [optional]
+
+        :param field: When type is `http_header`, name of the header to use to extract the value.
+        :type field: str, optional
+
+        :param name: Name of the variable to extract.
+        :type name: str, optional
+
+        :type parser: SyntheticsVariableParser, optional
+
+        :type type: SyntheticsGlobalVariableParseTestOptionsType, optional
         """
         super().__init__(kwargs)
 

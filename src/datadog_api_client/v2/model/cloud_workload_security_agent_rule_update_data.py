@@ -46,11 +46,10 @@ class CloudWorkloadSecurityAgentRuleUpdateData(ModelNormal):
     def __init__(self, attributes, type, *args, **kwargs):
         """CloudWorkloadSecurityAgentRuleUpdateData - a model defined in OpenAPI
 
-        Args:
-            attributes (CloudWorkloadSecurityAgentRuleUpdateAttributes):
-            type (CloudWorkloadSecurityAgentRuleType):
 
-        Keyword Args:
+        :type attributes: CloudWorkloadSecurityAgentRuleUpdateAttributes
+
+        :type type: CloudWorkloadSecurityAgentRuleType
         """
         super().__init__(kwargs)
 

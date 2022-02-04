@@ -42,9 +42,10 @@ class APIKeyRelationships(ModelNormal):
     def __init__(self, *args, **kwargs):
         """APIKeyRelationships - a model defined in OpenAPI
 
-        Keyword Args:
-            created_by (RelationshipToUser): [optional]
-            modified_by (RelationshipToUser): [optional]
+
+        :type created_by: RelationshipToUser, optional
+
+        :type modified_by: RelationshipToUser, optional
         """
         super().__init__(kwargs)
 

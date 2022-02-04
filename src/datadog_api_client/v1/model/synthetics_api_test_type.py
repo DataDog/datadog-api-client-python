@@ -34,12 +34,8 @@ class SyntheticsAPITestType(ModelSimple):
         """SyntheticsAPITestType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the Synthetic test, `api`. If omitted defaults to "api". Must be one of ["api"].
-
-        Keyword Args:
-            value (str): Type of the Synthetic test, `api`. If omitted defaults to "api". Must be one of ["api"].
+        :param value: Type of the Synthetic test, `api`. If omitted defaults to "api". Must be one of ["api"].
+        :type value: str
         """
         super().__init__(kwargs)
 

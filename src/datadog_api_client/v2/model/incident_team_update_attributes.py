@@ -33,10 +33,9 @@ class IncidentTeamUpdateAttributes(ModelNormal):
     def __init__(self, name, *args, **kwargs):
         """IncidentTeamUpdateAttributes - a model defined in OpenAPI
 
-        Args:
-            name (str): Name of the incident team.
 
-        Keyword Args:
+        :param name: Name of the incident team.
+        :type name: str
         """
         super().__init__(kwargs)
 

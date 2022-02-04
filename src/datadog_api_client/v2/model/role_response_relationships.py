@@ -40,8 +40,8 @@ class RoleResponseRelationships(ModelNormal):
     def __init__(self, *args, **kwargs):
         """RoleResponseRelationships - a model defined in OpenAPI
 
-        Keyword Args:
-            permissions (RelationshipToPermissions): [optional]
+
+        :type permissions: RelationshipToPermissions, optional
         """
         super().__init__(kwargs)
 

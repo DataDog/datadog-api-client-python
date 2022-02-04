@@ -55,14 +55,26 @@ class User(ModelNormal):
     def __init__(self, *args, **kwargs):
         """User - a model defined in OpenAPI
 
-        Keyword Args:
-            access_role (AccessRole): [optional]
-            disabled (bool): [optional] The new disabled status of the user.
-            email (str): [optional] The new email of the user.
-            handle (str): [optional] The user handle, must be a valid email.
-            icon (str): [optional] Gravatar icon associated to the user.
-            name (str): [optional] The name of the user.
-            verified (bool): [optional] Whether or not the user logged in Datadog at least once.
+
+        :type access_role: AccessRole, optional
+
+        :param disabled: The new disabled status of the user.
+        :type disabled: bool, optional
+
+        :param email: The new email of the user.
+        :type email: str, optional
+
+        :param handle: The user handle, must be a valid email.
+        :type handle: str, optional
+
+        :param icon: Gravatar icon associated to the user.
+        :type icon: str, optional
+
+        :param name: The name of the user.
+        :type name: str, optional
+
+        :param verified: Whether or not the user logged in Datadog at least once.
+        :type verified: bool, optional
         """
         super().__init__(kwargs)
 

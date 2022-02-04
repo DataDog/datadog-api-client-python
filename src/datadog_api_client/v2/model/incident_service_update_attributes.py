@@ -33,10 +33,9 @@ class IncidentServiceUpdateAttributes(ModelNormal):
     def __init__(self, name, *args, **kwargs):
         """IncidentServiceUpdateAttributes - a model defined in OpenAPI
 
-        Args:
-            name (str): Name of the incident service.
 
-        Keyword Args:
+        :param name: Name of the incident service.
+        :type name: str
         """
         super().__init__(kwargs)
 

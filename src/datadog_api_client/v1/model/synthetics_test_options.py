@@ -77,20 +77,43 @@ class SyntheticsTestOptions(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsTestOptions - a model defined in OpenAPI
 
-        Keyword Args:
-            accept_self_signed (bool): [optional] For SSL test, whether or not the test should allow self signed certificates.
-            allow_insecure (bool): [optional] Allows loading insecure content for an HTTP request.
-            device_ids ([SyntheticsDeviceID]): [optional] For browser test, array with the different device IDs used to run the test.
-            disable_cors (bool): [optional] Whether or not to disable CORS mechanism.
-            follow_redirects (bool): [optional] For API HTTP test, whether or not the test should follow redirects.
-            min_failure_duration (int): [optional] Minimum amount of time in failure required to trigger an alert.
-            min_location_failed (int): [optional] Minimum number of locations in failure required to trigger an alert.
-            monitor_name (str): [optional] The monitor name is used for the alert title as well as for all monitor dashboard widgets and SLOs.
-            monitor_options (SyntheticsTestOptionsMonitorOptions): [optional]
-            monitor_priority (int): [optional] Integer from 1 (high) to 5 (low) indicating alert severity.
-            no_screenshot (bool): [optional] Prevents saving screenshots of the steps.
-            retry (SyntheticsTestOptionsRetry): [optional]
-            tick_every (int): [optional] The frequency at which to run the Synthetic test (in seconds).
+
+        :param accept_self_signed: For SSL test, whether or not the test should allow self signed certificates.
+        :type accept_self_signed: bool, optional
+
+        :param allow_insecure: Allows loading insecure content for an HTTP request.
+        :type allow_insecure: bool, optional
+
+        :param device_ids: For browser test, array with the different device IDs used to run the test.
+        :type device_ids: [SyntheticsDeviceID], optional
+
+        :param disable_cors: Whether or not to disable CORS mechanism.
+        :type disable_cors: bool, optional
+
+        :param follow_redirects: For API HTTP test, whether or not the test should follow redirects.
+        :type follow_redirects: bool, optional
+
+        :param min_failure_duration: Minimum amount of time in failure required to trigger an alert.
+        :type min_failure_duration: int, optional
+
+        :param min_location_failed: Minimum number of locations in failure required to trigger an alert.
+        :type min_location_failed: int, optional
+
+        :param monitor_name: The monitor name is used for the alert title as well as for all monitor dashboard widgets and SLOs.
+        :type monitor_name: str, optional
+
+        :type monitor_options: SyntheticsTestOptionsMonitorOptions, optional
+
+        :param monitor_priority: Integer from 1 (high) to 5 (low) indicating alert severity.
+        :type monitor_priority: int, optional
+
+        :param no_screenshot: Prevents saving screenshots of the steps.
+        :type no_screenshot: bool, optional
+
+        :type retry: SyntheticsTestOptionsRetry, optional
+
+        :param tick_every: The frequency at which to run the Synthetic test (in seconds).
+        :type tick_every: int, optional
         """
         super().__init__(kwargs)
 

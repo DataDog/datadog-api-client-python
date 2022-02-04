@@ -44,9 +44,11 @@ class UsageTopAvgMetricsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageTopAvgMetricsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            metadata (UsageTopAvgMetricsMetadata): [optional]
-            usage ([UsageTopAvgMetricsHour]): [optional] Number of hourly recorded custom metrics for a given organization.
+
+        :type metadata: UsageTopAvgMetricsMetadata, optional
+
+        :param usage: Number of hourly recorded custom metrics for a given organization.
+        :type usage: [UsageTopAvgMetricsHour], optional
         """
         super().__init__(kwargs)
 

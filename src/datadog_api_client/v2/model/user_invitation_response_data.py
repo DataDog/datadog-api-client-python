@@ -46,10 +46,13 @@ class UserInvitationResponseData(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UserInvitationResponseData - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (UserInvitationDataAttributes): [optional]
-            id (str): [optional] ID of the user invitation.
-            type (UserInvitationsType): [optional]
+
+        :type attributes: UserInvitationDataAttributes, optional
+
+        :param id: ID of the user invitation.
+        :type id: str, optional
+
+        :type type: UserInvitationsType, optional
         """
         super().__init__(kwargs)
 
