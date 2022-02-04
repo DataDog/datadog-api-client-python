@@ -72,22 +72,40 @@ class LogStreamWidgetDefinition(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """LogStreamWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            type (LogStreamWidgetDefinitionType):
 
-        Keyword Args:
-            columns ([str]): [optional] Which columns to display on the widget.
-            indexes ([str]): [optional] An array of index names to query in the stream. Use [] to query all indexes at once.
-            logset (str): [optional] ID of the log set to use.
-            message_display (WidgetMessageDisplay): [optional]
-            query (str): [optional] Query to filter the log stream with.
-            show_date_column (bool): [optional] Whether to show the date column or not
-            show_message_column (bool): [optional] Whether to show the message column or not
-            sort (WidgetFieldSort): [optional]
-            time (WidgetTime): [optional]
-            title (str): [optional] Title of the widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
+        :type type: LogStreamWidgetDefinitionType
+
+        :param columns: Which columns to display on the widget.
+        :type columns: [str], optional
+
+        :param indexes: An array of index names to query in the stream. Use [] to query all indexes at once.
+        :type indexes: [str], optional
+
+        :param logset: ID of the log set to use.
+        :type logset: str, optional
+
+        :type message_display: WidgetMessageDisplay, optional
+
+        :param query: Query to filter the log stream with.
+        :type query: str, optional
+
+        :param show_date_column: Whether to show the date column or not
+        :type show_date_column: bool, optional
+
+        :param show_message_column: Whether to show the message column or not
+        :type show_message_column: bool, optional
+
+        :type sort: WidgetFieldSort, optional
+
+        :type time: WidgetTime, optional
+
+        :param title: Title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

@@ -40,8 +40,8 @@ class RelationshipToPermission(ModelNormal):
     def __init__(self, *args, **kwargs):
         """RelationshipToPermission - a model defined in OpenAPI
 
-        Keyword Args:
-            data (RelationshipToPermissionData): [optional]
+
+        :type data: RelationshipToPermissionData, optional
         """
         super().__init__(kwargs)
 

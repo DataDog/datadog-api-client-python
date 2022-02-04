@@ -95,24 +95,54 @@ class SyntheticsStepDetail(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsStepDetail - a model defined in OpenAPI
 
-        Keyword Args:
-            browser_errors ([SyntheticsBrowserError]): [optional] Array of errors collected for a browser test.
-            check_type (SyntheticsCheckType): [optional]
-            description (str): [optional] Description of the test.
-            duration (float): [optional] Total duration in millisecond of the test.
-            error (str): [optional] Error returned by the test.
-            playing_tab (SyntheticsPlayingTab): [optional]
-            screenshot_bucket_key (bool): [optional] Whether or not screenshots where collected by the test.
-            skipped (bool): [optional] Whether or not to skip this step.
-            snapshot_bucket_key (bool): [optional] Whether or not snapshots where collected by the test.
-            step_id (int): [optional] The step ID.
-            sub_test_step_details ([SyntheticsStepDetail]): [optional] If this steps include a sub-test. [Subtests documentation](https://docs.datadoghq.com/synthetics/browser_tests/advanced_options/#subtests).
-            time_to_interactive (float): [optional] Time before starting the step.
-            type (SyntheticsStepType): [optional]
-            url (str): [optional] URL to perform the step against.
-            value (bool, date, datetime, dict, float, int, list, str, none_type): [optional] Value for the step.
-            vitals_metrics ([SyntheticsCoreWebVitals]): [optional] Array of Core Web Vitals metrics for the step.
-            warnings ([SyntheticsStepDetailWarning]): [optional] Warning collected that didn't failed the step.
+
+        :param browser_errors: Array of errors collected for a browser test.
+        :type browser_errors: [SyntheticsBrowserError], optional
+
+        :type check_type: SyntheticsCheckType, optional
+
+        :param description: Description of the test.
+        :type description: str, optional
+
+        :param duration: Total duration in millisecond of the test.
+        :type duration: float, optional
+
+        :param error: Error returned by the test.
+        :type error: str, optional
+
+        :type playing_tab: SyntheticsPlayingTab, optional
+
+        :param screenshot_bucket_key: Whether or not screenshots where collected by the test.
+        :type screenshot_bucket_key: bool, optional
+
+        :param skipped: Whether or not to skip this step.
+        :type skipped: bool, optional
+
+        :param snapshot_bucket_key: Whether or not snapshots where collected by the test.
+        :type snapshot_bucket_key: bool, optional
+
+        :param step_id: The step ID.
+        :type step_id: int, optional
+
+        :param sub_test_step_details: If this steps include a sub-test. [Subtests documentation](https://docs.datadoghq.com/synthetics/browser_tests/advanced_options/#subtests).
+        :type sub_test_step_details: [SyntheticsStepDetail], optional
+
+        :param time_to_interactive: Time before starting the step.
+        :type time_to_interactive: float, optional
+
+        :type type: SyntheticsStepType, optional
+
+        :param url: URL to perform the step against.
+        :type url: str, optional
+
+        :param value: Value for the step.
+        :type value: bool, date, datetime, dict, float, int, list, str, none_type, optional
+
+        :param vitals_metrics: Array of Core Web Vitals metrics for the step.
+        :type vitals_metrics: [SyntheticsCoreWebVitals], optional
+
+        :param warnings: Warning collected that didn't failed the step.
+        :type warnings: [SyntheticsStepDetailWarning], optional
         """
         super().__init__(kwargs)
 

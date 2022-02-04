@@ -64,19 +64,32 @@ class CheckStatusWidgetDefinition(ModelNormal):
     def __init__(self, check, grouping, type, *args, **kwargs):
         """CheckStatusWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            check (str): Name of the check to use in the widget.
-            grouping (WidgetGrouping):
-            type (CheckStatusWidgetDefinitionType):
 
-        Keyword Args:
-            group (str): [optional] Group reporting a single check.
-            group_by ([str]): [optional] List of tag prefixes to group by in the case of a cluster check.
-            tags ([str]): [optional] List of tags used to filter the groups reporting a cluster check.
-            time (WidgetTime): [optional]
-            title (str): [optional] Title of the widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
+        :param check: Name of the check to use in the widget.
+        :type check: str
+
+        :type grouping: WidgetGrouping
+
+        :type type: CheckStatusWidgetDefinitionType
+
+        :param group: Group reporting a single check.
+        :type group: str, optional
+
+        :param group_by: List of tag prefixes to group by in the case of a cluster check.
+        :type group_by: [str], optional
+
+        :param tags: List of tags used to filter the groups reporting a cluster check.
+        :type tags: [str], optional
+
+        :type time: WidgetTime, optional
+
+        :param title: Title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

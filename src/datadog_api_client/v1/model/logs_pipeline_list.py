@@ -36,12 +36,8 @@ class LogsPipelineList(ModelSimple):
         """LogsPipelineList - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] ([LogsPipeline]): Array of pipeline ID strings.
-
-        Keyword Args:
-            value ([LogsPipeline]): Array of pipeline ID strings.
+        :param value: Array of pipeline ID strings.
+        :type value: [LogsPipeline]
         """
         super().__init__(kwargs)
 

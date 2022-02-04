@@ -43,13 +43,24 @@ class SyntheticsSSLCertificateIssuer(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsSSLCertificateIssuer - a model defined in OpenAPI
 
-        Keyword Args:
-            c (str): [optional] Country Name that issued the certificate.
-            cn (str): [optional] Common Name that issued certificate.
-            l (str): [optional] Locality that issued the certificate.
-            o (str): [optional] Organization that issued the certificate.
-            ou (str): [optional] Organizational Unit that issued the certificate.
-            st (str): [optional] State Or Province Name that issued the certificate.
+
+        :param c: Country Name that issued the certificate.
+        :type c: str, optional
+
+        :param cn: Common Name that issued certificate.
+        :type cn: str, optional
+
+        :param l: Locality that issued the certificate.
+        :type l: str, optional
+
+        :param o: Organization that issued the certificate.
+        :type o: str, optional
+
+        :param ou: Organizational Unit that issued the certificate.
+        :type ou: str, optional
+
+        :param st: State Or Province Name that issued the certificate.
+        :type st: str, optional
         """
         super().__init__(kwargs)
 

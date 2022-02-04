@@ -65,19 +65,40 @@ class SyntheticsSSLCertificate(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsSSLCertificate - a model defined in OpenAPI
 
-        Keyword Args:
-            cipher (str): [optional] Cipher used for the connection.
-            exponent (float): [optional] Exponent associated to the certificate.
-            ext_key_usage ([str]): [optional] Array of extensions and details used for the certificate.
-            fingerprint (str): [optional] MD5 digest of the DER-encoded Certificate information.
-            fingerprint256 (str): [optional] SHA-1 digest of the DER-encoded Certificate information.
-            issuer (SyntheticsSSLCertificateIssuer): [optional]
-            modulus (str): [optional] Modulus associated to the SSL certificate private key.
-            protocol (str): [optional] TLS protocol used for the test.
-            serial_number (str): [optional] Serial Number assigned by Symantec to the SSL certificate.
-            subject (SyntheticsSSLCertificateSubject): [optional]
-            valid_from (datetime): [optional] Date from which the SSL certificate is valid.
-            valid_to (datetime): [optional] Date until which the SSL certificate is valid.
+
+        :param cipher: Cipher used for the connection.
+        :type cipher: str, optional
+
+        :param exponent: Exponent associated to the certificate.
+        :type exponent: float, optional
+
+        :param ext_key_usage: Array of extensions and details used for the certificate.
+        :type ext_key_usage: [str], optional
+
+        :param fingerprint: MD5 digest of the DER-encoded Certificate information.
+        :type fingerprint: str, optional
+
+        :param fingerprint256: SHA-1 digest of the DER-encoded Certificate information.
+        :type fingerprint256: str, optional
+
+        :type issuer: SyntheticsSSLCertificateIssuer, optional
+
+        :param modulus: Modulus associated to the SSL certificate private key.
+        :type modulus: str, optional
+
+        :param protocol: TLS protocol used for the test.
+        :type protocol: str, optional
+
+        :param serial_number: Serial Number assigned by Symantec to the SSL certificate.
+        :type serial_number: str, optional
+
+        :type subject: SyntheticsSSLCertificateSubject, optional
+
+        :param valid_from: Date from which the SSL certificate is valid.
+        :type valid_from: datetime, optional
+
+        :param valid_to: Date until which the SSL certificate is valid.
+        :type valid_to: datetime, optional
         """
         super().__init__(kwargs)
 

@@ -70,18 +70,29 @@ class SunburstWidgetDefinition(ModelNormal):
     def __init__(self, requests, type, *args, **kwargs):
         """SunburstWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            requests ([SunburstWidgetRequest]): List of sunburst widget requests.
-            type (SunburstWidgetDefinitionType):
 
-        Keyword Args:
-            custom_links ([WidgetCustomLink]): [optional] List of custom links.
-            hide_total (bool): [optional] Show the total value in this widget.
-            legend (SunburstWidgetLegend): [optional]
-            time (WidgetTime): [optional]
-            title (str): [optional] Title of your widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
+        :param requests: List of sunburst widget requests.
+        :type requests: [SunburstWidgetRequest]
+
+        :type type: SunburstWidgetDefinitionType
+
+        :param custom_links: List of custom links.
+        :type custom_links: [WidgetCustomLink], optional
+
+        :param hide_total: Show the total value in this widget.
+        :type hide_total: bool, optional
+
+        :type legend: SunburstWidgetLegend, optional
+
+        :type time: WidgetTime, optional
+
+        :param title: Title of your widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

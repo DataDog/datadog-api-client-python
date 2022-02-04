@@ -34,12 +34,8 @@ class HostMapWidgetDefinitionType(ModelSimple):
         """HostMapWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the host map widget. If omitted defaults to "hostmap". Must be one of ["hostmap"].
-
-        Keyword Args:
-            value (str): Type of the host map widget. If omitted defaults to "hostmap". Must be one of ["hostmap"].
+        :param value: Type of the host map widget. If omitted defaults to "hostmap". Must be one of ["hostmap"].
+        :type value: str
         """
         super().__init__(kwargs)
 

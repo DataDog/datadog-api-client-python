@@ -36,12 +36,8 @@ class GCPAccountListResponse(ModelSimple):
         """GCPAccountListResponse - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] ([GCPAccount]): Array of GCP account responses.
-
-        Keyword Args:
-            value ([GCPAccount]): Array of GCP account responses.
+        :param value: Array of GCP account responses.
+        :type value: [GCPAccount]
         """
         super().__init__(kwargs)
 

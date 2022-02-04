@@ -73,18 +73,28 @@ class GeomapWidgetDefinition(ModelNormal):
     def __init__(self, requests, style, type, view, *args, **kwargs):
         """GeomapWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            requests ([GeomapWidgetRequest]): Array of one request object to display in the widget. The request must contain a `group-by` tag whose value is a country ISO code.  See the [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json) for information about building the `REQUEST_SCHEMA`.
-            style (GeomapWidgetDefinitionStyle):
-            type (GeomapWidgetDefinitionType):
-            view (GeomapWidgetDefinitionView):
 
-        Keyword Args:
-            custom_links ([WidgetCustomLink]): [optional] A list of custom links.
-            time (WidgetTime): [optional]
-            title (str): [optional] The title of your widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] The size of the title.
+        :param requests: Array of one request object to display in the widget. The request must contain a `group-by` tag whose value is a country ISO code.  See the [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json) for information about building the `REQUEST_SCHEMA`.
+        :type requests: [GeomapWidgetRequest]
+
+        :type style: GeomapWidgetDefinitionStyle
+
+        :type type: GeomapWidgetDefinitionType
+
+        :type view: GeomapWidgetDefinitionView
+
+        :param custom_links: A list of custom links.
+        :type custom_links: [WidgetCustomLink], optional
+
+        :type time: WidgetTime, optional
+
+        :param title: The title of your widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: The size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

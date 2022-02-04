@@ -35,11 +35,12 @@ class LogsGrokParserRules(ModelNormal):
     def __init__(self, match_rules, *args, **kwargs):
         """LogsGrokParserRules - a model defined in OpenAPI
 
-        Args:
-            match_rules (str): List of match rules for the grok parser, separated by a new line.
 
-        Keyword Args:
-            support_rules (str): [optional] List of support rules for the grok parser, separated by a new line. If omitted the server will use the default value of "".
+        :param match_rules: List of match rules for the grok parser, separated by a new line.
+        :type match_rules: str
+
+        :param support_rules: List of support rules for the grok parser, separated by a new line. If omitted the server will use the default value of "".
+        :type support_rules: str, optional
         """
         super().__init__(kwargs)
 

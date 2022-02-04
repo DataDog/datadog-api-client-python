@@ -42,12 +42,8 @@ class SecurityMonitoringRuleEvaluationWindow(ModelSimple):
         """SecurityMonitoringRuleEvaluationWindow - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (int): A time window is specified to match when at least one of the cases matches true. This is a sliding window and evaluates in real time. Must be one of [0, 60, 300, 600, 900, 1800, 3600, 7200].
-
-        Keyword Args:
-            value (int): A time window is specified to match when at least one of the cases matches true. This is a sliding window and evaluates in real time. Must be one of [0, 60, 300, 600, 900, 1800, 3600, 7200].
+        :param value: A time window is specified to match when at least one of the cases matches true. This is a sliding window and evaluates in real time. Must be one of [0, 60, 300, 600, 900, 1800, 3600, 7200].
+        :type value: int
         """
         super().__init__(kwargs)
 

@@ -50,15 +50,23 @@ class ServiceCheck(ModelNormal):
     def __init__(self, check, host_name, status, tags, *args, **kwargs):
         """ServiceCheck - a model defined in OpenAPI
 
-        Args:
-            check (str): The check.
-            host_name (str): The host name correlated with the check.
-            status (ServiceCheckStatus):
-            tags ([str]): Tags related to a check.
 
-        Keyword Args:
-            message (str): [optional] Message containing check status.
-            timestamp (int): [optional] Time of check.
+        :param check: The check.
+        :type check: str
+
+        :param host_name: The host name correlated with the check.
+        :type host_name: str
+
+        :type status: ServiceCheckStatus
+
+        :param tags: Tags related to a check.
+        :type tags: [str]
+
+        :param message: Message containing check status.
+        :type message: str, optional
+
+        :param timestamp: Time of check.
+        :type timestamp: int, optional
         """
         super().__init__(kwargs)
 

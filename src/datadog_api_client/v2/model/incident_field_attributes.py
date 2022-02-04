@@ -37,9 +37,11 @@ class IncidentFieldAttributes(ModelComposed):
     def __init__(self, *args, **kwargs):
         """IncidentFieldAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            type (IncidentFieldAttributesValueType):
-            value ([str], none_type): [optional] The multiple values selected for this field.
+
+        :type type: IncidentFieldAttributesValueType
+
+        :param value: The multiple values selected for this field.
+        :type value: [str], none_type, optional
         """
         super().__init__(kwargs)
 

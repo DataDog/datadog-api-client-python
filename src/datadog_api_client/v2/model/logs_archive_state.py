@@ -38,12 +38,8 @@ class LogsArchiveState(ModelSimple):
         """LogsArchiveState - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The state of the archive. Must be one of ["UNKNOWN", "WORKING", "FAILING", "WORKING_AUTH_LEGACY"].
-
-        Keyword Args:
-            value (str): The state of the archive. Must be one of ["UNKNOWN", "WORKING", "FAILING", "WORKING_AUTH_LEGACY"].
+        :param value: The state of the archive. Must be one of ["UNKNOWN", "WORKING", "FAILING", "WORKING_AUTH_LEGACY"].
+        :type value: str
         """
         super().__init__(kwargs)
 

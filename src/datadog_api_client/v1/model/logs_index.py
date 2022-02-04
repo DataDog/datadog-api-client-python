@@ -54,15 +54,23 @@ class LogsIndex(ModelNormal):
     def __init__(self, filter, name, *args, **kwargs):
         """LogsIndex - a model defined in OpenAPI
 
-        Args:
-            filter (LogsFilter):
-            name (str): The name of the index.
 
-        Keyword Args:
-            daily_limit (int): [optional] The number of log events you can send in this index per day before you are rate-limited.
-            exclusion_filters ([LogsExclusion]): [optional] An array of exclusion objects. The logs are tested against the query of each filter, following the order of the array. Only the first matching active exclusion matters, others (if any) are ignored.
-            is_rate_limited (bool): [optional] A boolean stating if the index is rate limited, meaning more logs than the daily limit have been sent. Rate limit is reset every-day at 2pm UTC.
-            num_retention_days (int): [optional] The number of days before logs are deleted from this index. Available values depend on retention plans specified in your organization's contract/subscriptions.
+        :type filter: LogsFilter
+
+        :param name: The name of the index.
+        :type name: str
+
+        :param daily_limit: The number of log events you can send in this index per day before you are rate-limited.
+        :type daily_limit: int, optional
+
+        :param exclusion_filters: An array of exclusion objects. The logs are tested against the query of each filter, following the order of the array. Only the first matching active exclusion matters, others (if any) are ignored.
+        :type exclusion_filters: [LogsExclusion], optional
+
+        :param is_rate_limited: A boolean stating if the index is rate limited, meaning more logs than the daily limit have been sent. Rate limit is reset every-day at 2pm UTC.
+        :type is_rate_limited: bool, optional
+
+        :param num_retention_days: The number of days before logs are deleted from this index. Available values depend on retention plans specified in your organization's contract/subscriptions.
+        :type num_retention_days: int, optional
         """
         super().__init__(kwargs)
 

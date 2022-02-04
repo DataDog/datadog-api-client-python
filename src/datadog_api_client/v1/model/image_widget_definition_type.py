@@ -34,12 +34,8 @@ class ImageWidgetDefinitionType(ModelSimple):
         """ImageWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the image widget. If omitted defaults to "image". Must be one of ["image"].
-
-        Keyword Args:
-            value (str): Type of the image widget. If omitted defaults to "image". Must be one of ["image"].
+        :param value: Type of the image widget. If omitted defaults to "image". Must be one of ["image"].
+        :type value: str
         """
         super().__init__(kwargs)
 

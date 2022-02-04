@@ -68,16 +68,26 @@ class IPRanges(ModelNormal):
     def __init__(self, *args, **kwargs):
         """IPRanges - a model defined in OpenAPI
 
-        Keyword Args:
-            agents (IPPrefixesAgents): [optional]
-            api (IPPrefixesAPI): [optional]
-            apm (IPPrefixesAPM): [optional]
-            logs (IPPrefixesLogs): [optional]
-            modified (str): [optional] Date when last updated, in the form `YYYY-MM-DD-hh-mm-ss`.
-            process (IPPrefixesProcess): [optional]
-            synthetics (IPPrefixesSynthetics): [optional]
-            version (int): [optional] Version of the IP list.
-            webhooks (IPPrefixesWebhooks): [optional]
+
+        :type agents: IPPrefixesAgents, optional
+
+        :type api: IPPrefixesAPI, optional
+
+        :type apm: IPPrefixesAPM, optional
+
+        :type logs: IPPrefixesLogs, optional
+
+        :param modified: Date when last updated, in the form `YYYY-MM-DD-hh-mm-ss`.
+        :type modified: str, optional
+
+        :type process: IPPrefixesProcess, optional
+
+        :type synthetics: IPPrefixesSynthetics, optional
+
+        :param version: Version of the IP list.
+        :type version: int, optional
+
+        :type webhooks: IPPrefixesWebhooks, optional
         """
         super().__init__(kwargs)
 

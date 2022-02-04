@@ -62,16 +62,29 @@ class SyntheticsAPITestResultData(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsAPITestResultData - a model defined in OpenAPI
 
-        Keyword Args:
-            cert (SyntheticsSSLCertificate): [optional]
-            event_type (SyntheticsTestProcessStatus): [optional]
-            failure (SyntheticsApiTestResultFailure): [optional]
-            http_status_code (int): [optional] The API test HTTP status code.
-            request_headers ({str: (dict,)}): [optional] Request header object used for the API test.
-            response_body (str): [optional] Response body returned for the API test.
-            response_headers ({str: (dict,)}): [optional] Response headers returned for the API test.
-            response_size (int): [optional] Global size in byte of the API test response.
-            timings (SyntheticsTiming): [optional]
+
+        :type cert: SyntheticsSSLCertificate, optional
+
+        :type event_type: SyntheticsTestProcessStatus, optional
+
+        :type failure: SyntheticsApiTestResultFailure, optional
+
+        :param http_status_code: The API test HTTP status code.
+        :type http_status_code: int, optional
+
+        :param request_headers: Request header object used for the API test.
+        :type request_headers: {str: (dict,)}, optional
+
+        :param response_body: Response body returned for the API test.
+        :type response_body: str, optional
+
+        :param response_headers: Response headers returned for the API test.
+        :type response_headers: {str: (dict,)}, optional
+
+        :param response_size: Global size in byte of the API test response.
+        :type response_size: int, optional
+
+        :type timings: SyntheticsTiming, optional
         """
         super().__init__(kwargs)
 

@@ -50,13 +50,15 @@ class IncidentResponseData(ModelNormal):
     def __init__(self, id, type, *args, **kwargs):
         """IncidentResponseData - a model defined in OpenAPI
 
-        Args:
-            id (str): The incident's ID.
-            type (IncidentType):
 
-        Keyword Args:
-            attributes (IncidentResponseAttributes): [optional]
-            relationships (IncidentResponseRelationships): [optional]
+        :param id: The incident's ID.
+        :type id: str
+
+        :type type: IncidentType
+
+        :type attributes: IncidentResponseAttributes, optional
+
+        :type relationships: IncidentResponseRelationships, optional
         """
         super().__init__(kwargs)
 

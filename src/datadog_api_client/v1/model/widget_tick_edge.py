@@ -38,12 +38,8 @@ class WidgetTickEdge(ModelSimple):
         """WidgetTickEdge - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Define how you want to align the text on the widget. Must be one of ["bottom", "left", "right", "top"].
-
-        Keyword Args:
-            value (str): Define how you want to align the text on the widget. Must be one of ["bottom", "left", "right", "top"].
+        :param value: Define how you want to align the text on the widget. Must be one of ["bottom", "left", "right", "top"].
+        :type value: str
         """
         super().__init__(kwargs)
 

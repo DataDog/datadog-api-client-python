@@ -38,12 +38,15 @@ class NotebookAbsoluteTime(ModelNormal):
     def __init__(self, end, start, *args, **kwargs):
         """NotebookAbsoluteTime - a model defined in OpenAPI
 
-        Args:
-            end (datetime): The end time.
-            start (datetime): The start time.
 
-        Keyword Args:
-            live (bool): [optional] Indicates whether the timeframe should be shifted to end at the current time.
+        :param end: The end time.
+        :type end: datetime
+
+        :param start: The start time.
+        :type start: datetime
+
+        :param live: Indicates whether the timeframe should be shifted to end at the current time.
+        :type live: bool, optional
         """
         super().__init__(kwargs)
 

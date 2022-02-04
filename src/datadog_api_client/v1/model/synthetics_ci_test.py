@@ -74,23 +74,44 @@ class SyntheticsCITest(ModelNormal):
     def __init__(self, public_id, *args, **kwargs):
         """SyntheticsCITest - a model defined in OpenAPI
 
-        Args:
-            public_id (str): The public ID of the Synthetics test to trigger.
 
-        Keyword Args:
-            allow_insecure_certificates (bool): [optional] Disable certificate checks in API tests.
-            basic_auth (SyntheticsBasicAuth): [optional]
-            body (str): [optional] Body to include in the test.
-            body_type (str): [optional] Type of the data sent in a synthetics API test.
-            cookies (str): [optional] Cookies for the request.
-            device_ids ([SyntheticsDeviceID]): [optional] For browser test, array with the different device IDs used to run the test.
-            follow_redirects (bool): [optional] For API HTTP test, whether or not the test should follow redirects.
-            headers (SyntheticsTestHeaders): [optional]
-            locations ([str]): [optional] Array of locations used to run the test.
-            metadata (SyntheticsCIBatchMetadata): [optional]
-            retry (SyntheticsTestOptionsRetry): [optional]
-            start_url (str): [optional] Starting URL for the browser test.
-            variables ({str: (str,)}): [optional] Variables to replace in the test.
+        :param public_id: The public ID of the Synthetics test to trigger.
+        :type public_id: str
+
+        :param allow_insecure_certificates: Disable certificate checks in API tests.
+        :type allow_insecure_certificates: bool, optional
+
+        :type basic_auth: SyntheticsBasicAuth, optional
+
+        :param body: Body to include in the test.
+        :type body: str, optional
+
+        :param body_type: Type of the data sent in a synthetics API test.
+        :type body_type: str, optional
+
+        :param cookies: Cookies for the request.
+        :type cookies: str, optional
+
+        :param device_ids: For browser test, array with the different device IDs used to run the test.
+        :type device_ids: [SyntheticsDeviceID], optional
+
+        :param follow_redirects: For API HTTP test, whether or not the test should follow redirects.
+        :type follow_redirects: bool, optional
+
+        :type headers: SyntheticsTestHeaders, optional
+
+        :param locations: Array of locations used to run the test.
+        :type locations: [str], optional
+
+        :type metadata: SyntheticsCIBatchMetadata, optional
+
+        :type retry: SyntheticsTestOptionsRetry, optional
+
+        :param start_url: Starting URL for the browser test.
+        :type start_url: str, optional
+
+        :param variables: Variables to replace in the test.
+        :type variables: {str: (str,)}, optional
         """
         super().__init__(kwargs)
 

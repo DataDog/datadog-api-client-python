@@ -35,11 +35,12 @@ class WidgetEvent(ModelNormal):
     def __init__(self, q, *args, **kwargs):
         """WidgetEvent - a model defined in OpenAPI
 
-        Args:
-            q (str): Query definition.
 
-        Keyword Args:
-            tags_execution (str): [optional] The execution method for multi-value filters.
+        :param q: Query definition.
+        :type q: str
+
+        :param tags_execution: The execution method for multi-value filters.
+        :type tags_execution: str, optional
         """
         super().__init__(kwargs)
 

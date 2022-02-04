@@ -35,9 +35,12 @@ class LogsQueryOptions(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsQueryOptions - a model defined in OpenAPI
 
-        Keyword Args:
-            time_offset (int): [optional] The time offset (in seconds) to apply to the query.
-            timezone (str): [optional] The timezone can be specified both as an offset, for example: \"UTC+03:00\". If omitted the server will use the default value of "UTC".
+
+        :param time_offset: The time offset (in seconds) to apply to the query.
+        :type time_offset: int, optional
+
+        :param timezone: The timezone can be specified both as an offset, for example: \"UTC+03:00\". If omitted the server will use the default value of "UTC".
+        :type timezone: str, optional
         """
         super().__init__(kwargs)
 

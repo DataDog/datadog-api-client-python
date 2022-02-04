@@ -34,12 +34,8 @@ class UsageReportsType(ModelSimple):
         """UsageReportsType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The type of reports. If omitted defaults to "reports". Must be one of ["reports"].
-
-        Keyword Args:
-            value (str): The type of reports. If omitted defaults to "reports". Must be one of ["reports"].
+        :param value: The type of reports. If omitted defaults to "reports". Must be one of ["reports"].
+        :type value: str
         """
         super().__init__(kwargs)
 

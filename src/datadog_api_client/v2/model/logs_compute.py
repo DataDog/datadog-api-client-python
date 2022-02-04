@@ -48,13 +48,16 @@ class LogsCompute(ModelNormal):
     def __init__(self, aggregation, *args, **kwargs):
         """LogsCompute - a model defined in OpenAPI
 
-        Args:
-            aggregation (LogsAggregationFunction):
 
-        Keyword Args:
-            interval (str): [optional] The time buckets' size (only used for type=timeseries) Defaults to a resolution of 150 points
-            metric (str): [optional] The metric to use
-            type (LogsComputeType): [optional]
+        :type aggregation: LogsAggregationFunction
+
+        :param interval: The time buckets' size (only used for type=timeseries) Defaults to a resolution of 150 points
+        :type interval: str, optional
+
+        :param metric: The metric to use
+        :type metric: str, optional
+
+        :type type: LogsComputeType, optional
         """
         super().__init__(kwargs)
 

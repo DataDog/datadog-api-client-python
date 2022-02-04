@@ -48,12 +48,13 @@ class MonitorFormulaAndFunctionEventQueryGroupBySort(ModelNormal):
     def __init__(self, aggregation, *args, **kwargs):
         """MonitorFormulaAndFunctionEventQueryGroupBySort - a model defined in OpenAPI
 
-        Args:
-            aggregation (MonitorFormulaAndFunctionEventAggregation):
 
-        Keyword Args:
-            metric (str): [optional] Metric used for sorting group by results.
-            order (QuerySortOrder): [optional]
+        :type aggregation: MonitorFormulaAndFunctionEventAggregation
+
+        :param metric: Metric used for sorting group by results.
+        :type metric: str, optional
+
+        :type order: QuerySortOrder, optional
         """
         super().__init__(kwargs)
 

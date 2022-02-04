@@ -216,34 +216,33 @@ class LogsApi(object):
         >>> thread = api.aggregate_logs(body, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            body (LogsAggregateRequest):
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
+        :type body: LogsAggregateRequest
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
 
-        Returns:
-            LogsAggregateResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: LogsAggregateResponse
         """
         kwargs = self._aggregate_logs_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
@@ -259,32 +258,32 @@ class LogsApi(object):
         >>> thread = api.list_logs(async_req=True)
         >>> result = thread.get()
 
-        Keyword Args:
-            body (LogsListRequest): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
+        :type body: LogsListRequest, optional
+        :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
 
-        Returns:
-            LogsListResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: LogsListResponse
         """
         kwargs = self._list_logs_endpoint.default_arguments(kwargs)
         return self._list_logs_endpoint.call_with_http_info(**kwargs)
@@ -299,38 +298,51 @@ class LogsApi(object):
         >>> thread = api.list_logs_get(async_req=True)
         >>> result = thread.get()
 
-        Keyword Args:
-            filter_query (str): [optional] Search query following logs syntax.
-            filter_index (str): [optional] For customers with multiple indexes, the indexes to search Defaults to '*' which means all indexes
-            filter_from (datetime): [optional] Minimum timestamp for requested logs.
-            filter_to (datetime): [optional] Maximum timestamp for requested logs.
-            sort (LogsSort): [optional] Order of logs in results.
-            page_cursor (str): [optional] List following results with a cursor provided in the previous query.
-            page_limit (int): [optional] Maximum number of logs in the response. If omitted the server will use the default value of 10.
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
+        :param filter_query: Search query following logs syntax.
+        :type filter_query: str, optional
 
-        Returns:
-            LogsListResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :param filter_index: For customers with multiple indexes, the indexes to search Defaults to '*' which means all indexes
+        :type filter_index: str, optional
+
+        :param filter_from: Minimum timestamp for requested logs.
+        :type filter_from: datetime, optional
+
+        :param filter_to: Maximum timestamp for requested logs.
+        :type filter_to: datetime, optional
+
+        :param sort: Order of logs in results.
+        :type sort: LogsSort, optional
+
+        :param page_cursor: List following results with a cursor provided in the previous query.
+        :type page_cursor: str, optional
+
+        :param page_limit: Maximum number of logs in the response. If omitted the server will use the default value of 10.
+        :type page_limit: int, optional
+        :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: LogsListResponse
         """
         kwargs = self._list_logs_get_endpoint.default_arguments(kwargs)
         return self._list_logs_get_endpoint.call_with_http_info(**kwargs)
@@ -345,36 +357,40 @@ class LogsApi(object):
         >>> thread = api.submit_log(body, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            body (HTTPLog): Log to send (JSON format).
 
-        Keyword Args:
-            content_encoding (ContentEncoding): [optional] HTTP header used to compress the media-type.
-            ddtags (str): [optional] Log tags can be passed as query parameters with `text/plain` content type.
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
+        :param body: Log to send (JSON format).
+        :type body: HTTPLog
 
-        Returns:
-            dict
-                If the method is called asynchronously, returns the request
-                thread.
+        :param content_encoding: HTTP header used to compress the media-type.
+        :type content_encoding: ContentEncoding, optional
+
+        :param ddtags: Log tags can be passed as query parameters with `text/plain` content type.
+        :type ddtags: str, optional
+        :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: dict
         """
         kwargs = self._submit_log_endpoint.default_arguments(kwargs)
         kwargs["body"] = body

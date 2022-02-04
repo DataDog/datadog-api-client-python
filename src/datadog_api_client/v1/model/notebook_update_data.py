@@ -44,11 +44,10 @@ class NotebookUpdateData(ModelNormal):
     def __init__(self, attributes, type, *args, **kwargs):
         """NotebookUpdateData - a model defined in OpenAPI
 
-        Args:
-            attributes (NotebookUpdateDataAttributes):
-            type (NotebookResourceType):
 
-        Keyword Args:
+        :type attributes: NotebookUpdateDataAttributes
+
+        :type type: NotebookResourceType
         """
         super().__init__(kwargs)
 

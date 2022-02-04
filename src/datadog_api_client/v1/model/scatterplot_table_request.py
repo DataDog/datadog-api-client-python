@@ -48,10 +48,14 @@ class ScatterplotTableRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ScatterplotTableRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            formulas ([ScatterplotWidgetFormula]): [optional] List of Scatterplot formulas that operate on queries. **This feature is currently in beta.**
-            queries ([FormulaAndFunctionQueryDefinition]): [optional] List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**
-            response_format (FormulaAndFunctionResponseFormat): [optional]
+
+        :param formulas: List of Scatterplot formulas that operate on queries. **This feature is currently in beta.**
+        :type formulas: [ScatterplotWidgetFormula], optional
+
+        :param queries: List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**
+        :type queries: [FormulaAndFunctionQueryDefinition], optional
+
+        :type response_format: FormulaAndFunctionResponseFormat, optional
         """
         super().__init__(kwargs)
 

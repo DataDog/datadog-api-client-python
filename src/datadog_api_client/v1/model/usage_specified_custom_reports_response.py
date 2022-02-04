@@ -44,9 +44,10 @@ class UsageSpecifiedCustomReportsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageSpecifiedCustomReportsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data (UsageSpecifiedCustomReportsData): [optional]
-            meta (UsageSpecifiedCustomReportsMeta): [optional]
+
+        :type data: UsageSpecifiedCustomReportsData, optional
+
+        :type meta: UsageSpecifiedCustomReportsMeta, optional
         """
         super().__init__(kwargs)
 

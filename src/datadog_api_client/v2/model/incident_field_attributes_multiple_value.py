@@ -46,9 +46,11 @@ class IncidentFieldAttributesMultipleValue(ModelNormal):
     def __init__(self, *args, **kwargs):
         """IncidentFieldAttributesMultipleValue - a model defined in OpenAPI
 
-        Keyword Args:
-            type (IncidentFieldAttributesValueType): [optional]
-            value ([str], none_type): [optional] The multiple values selected for this field.
+
+        :type type: IncidentFieldAttributesValueType, optional
+
+        :param value: The multiple values selected for this field.
+        :type value: [str], none_type, optional
         """
         super().__init__(kwargs)
 

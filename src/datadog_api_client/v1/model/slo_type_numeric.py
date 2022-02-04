@@ -36,12 +36,8 @@ class SLOTypeNumeric(ModelSimple):
         """SLOTypeNumeric - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (int): A numeric representation of the type of the service level objective (`0` for monitor, `1` for metric). Always included in service level objective responses. Ignored in create/update requests. Must be one of [0, 1].
-
-        Keyword Args:
-            value (int): A numeric representation of the type of the service level objective (`0` for monitor, `1` for metric). Always included in service level objective responses. Ignored in create/update requests. Must be one of [0, 1].
+        :param value: A numeric representation of the type of the service level objective (`0` for monitor, `1` for metric). Always included in service level objective responses. Ignored in create/update requests. Must be one of [0, 1].
+        :type value: int
         """
         super().__init__(kwargs)
 

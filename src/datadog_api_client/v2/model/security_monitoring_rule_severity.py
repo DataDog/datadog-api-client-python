@@ -39,12 +39,8 @@ class SecurityMonitoringRuleSeverity(ModelSimple):
         """SecurityMonitoringRuleSeverity - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Severity of the Security Signal. Must be one of ["info", "low", "medium", "high", "critical"].
-
-        Keyword Args:
-            value (str): Severity of the Security Signal. Must be one of ["info", "low", "medium", "high", "critical"].
+        :param value: Severity of the Security Signal. Must be one of ["info", "low", "medium", "high", "critical"].
+        :type value: str
         """
         super().__init__(kwargs)
 

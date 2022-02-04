@@ -46,10 +46,13 @@ class ProcessSummary(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ProcessSummary - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (ProcessSummaryAttributes): [optional]
-            id (str): [optional] Process ID.
-            type (ProcessSummaryType): [optional]
+
+        :type attributes: ProcessSummaryAttributes, optional
+
+        :param id: Process ID.
+        :type id: str, optional
+
+        :type type: ProcessSummaryType, optional
         """
         super().__init__(kwargs)
 

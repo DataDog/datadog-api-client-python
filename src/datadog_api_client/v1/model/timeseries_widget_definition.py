@@ -90,24 +90,45 @@ class TimeseriesWidgetDefinition(ModelNormal):
     def __init__(self, requests, type, *args, **kwargs):
         """TimeseriesWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            requests ([TimeseriesWidgetRequest]): List of timeseries widget requests.
-            type (TimeseriesWidgetDefinitionType):
 
-        Keyword Args:
-            custom_links ([WidgetCustomLink]): [optional] List of custom links.
-            events ([WidgetEvent]): [optional] List of widget events.
-            legend_columns ([TimeseriesWidgetLegendColumn]): [optional] Columns displayed in the legend.
-            legend_layout (TimeseriesWidgetLegendLayout): [optional]
-            legend_size (str): [optional] Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".
-            markers ([WidgetMarker]): [optional] List of markers.
-            right_yaxis (WidgetAxis): [optional]
-            show_legend (bool): [optional] (screenboard only) Show the legend for this widget.
-            time (WidgetTime): [optional]
-            title (str): [optional] Title of your widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
-            yaxis (WidgetAxis): [optional]
+        :param requests: List of timeseries widget requests.
+        :type requests: [TimeseriesWidgetRequest]
+
+        :type type: TimeseriesWidgetDefinitionType
+
+        :param custom_links: List of custom links.
+        :type custom_links: [WidgetCustomLink], optional
+
+        :param events: List of widget events.
+        :type events: [WidgetEvent], optional
+
+        :param legend_columns: Columns displayed in the legend.
+        :type legend_columns: [TimeseriesWidgetLegendColumn], optional
+
+        :type legend_layout: TimeseriesWidgetLegendLayout, optional
+
+        :param legend_size: Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".
+        :type legend_size: str, optional
+
+        :param markers: List of markers.
+        :type markers: [WidgetMarker], optional
+
+        :type right_yaxis: WidgetAxis, optional
+
+        :param show_legend: (screenboard only) Show the legend for this widget.
+        :type show_legend: bool, optional
+
+        :type time: WidgetTime, optional
+
+        :param title: Title of your widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
+
+        :type yaxis: WidgetAxis, optional
         """
         super().__init__(kwargs)
 

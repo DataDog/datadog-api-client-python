@@ -71,20 +71,34 @@ class SyntheticsAPITest(ModelNormal):
     def __init__(self, config, locations, name, options, type, *args, **kwargs):
         """SyntheticsAPITest - a model defined in OpenAPI
 
-        Args:
-            config (SyntheticsAPITestConfig):
-            locations ([str]): Array of locations used to run the test.
-            name (str): Name of the test.
-            options (SyntheticsTestOptions):
-            type (SyntheticsAPITestType):
 
-        Keyword Args:
-            message (str): [optional] Notification message associated with the test.
-            monitor_id (int): [optional] The associated monitor ID.
-            public_id (str): [optional] The public ID for the test.
-            status (SyntheticsTestPauseStatus): [optional]
-            subtype (SyntheticsTestDetailsSubType): [optional]
-            tags ([str]): [optional] Array of tags attached to the test.
+        :type config: SyntheticsAPITestConfig
+
+        :param locations: Array of locations used to run the test.
+        :type locations: [str]
+
+        :param name: Name of the test.
+        :type name: str
+
+        :type options: SyntheticsTestOptions
+
+        :type type: SyntheticsAPITestType
+
+        :param message: Notification message associated with the test.
+        :type message: str, optional
+
+        :param monitor_id: The associated monitor ID.
+        :type monitor_id: int, optional
+
+        :param public_id: The public ID for the test.
+        :type public_id: str, optional
+
+        :type status: SyntheticsTestPauseStatus, optional
+
+        :type subtype: SyntheticsTestDetailsSubType, optional
+
+        :param tags: Array of tags attached to the test.
+        :type tags: [str], optional
         """
         super().__init__(kwargs)
 

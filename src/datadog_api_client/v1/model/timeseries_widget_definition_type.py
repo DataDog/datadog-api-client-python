@@ -34,12 +34,8 @@ class TimeseriesWidgetDefinitionType(ModelSimple):
         """TimeseriesWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the timeseries widget. If omitted defaults to "timeseries". Must be one of ["timeseries"].
-
-        Keyword Args:
-            value (str): Type of the timeseries widget. If omitted defaults to "timeseries". Must be one of ["timeseries"].
+        :param value: Type of the timeseries widget. If omitted defaults to "timeseries". Must be one of ["timeseries"].
+        :type value: str
         """
         super().__init__(kwargs)
 

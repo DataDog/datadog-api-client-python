@@ -34,12 +34,8 @@ class HeatMapWidgetDefinitionType(ModelSimple):
         """HeatMapWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the heat map widget. If omitted defaults to "heatmap". Must be one of ["heatmap"].
-
-        Keyword Args:
-            value (str): Type of the heat map widget. If omitted defaults to "heatmap". Must be one of ["heatmap"].
+        :param value: Type of the heat map widget. If omitted defaults to "heatmap". Must be one of ["heatmap"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -44,9 +44,10 @@ class SyntheticsCIBatchMetadataCI(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsCIBatchMetadataCI - a model defined in OpenAPI
 
-        Keyword Args:
-            pipeline (SyntheticsCIBatchMetadataPipeline): [optional]
-            provider (SyntheticsCIBatchMetadataProvider): [optional]
+
+        :type pipeline: SyntheticsCIBatchMetadataPipeline, optional
+
+        :type provider: SyntheticsCIBatchMetadataProvider, optional
         """
         super().__init__(kwargs)
 

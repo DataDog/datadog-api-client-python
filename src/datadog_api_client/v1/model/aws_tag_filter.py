@@ -42,9 +42,11 @@ class AWSTagFilter(ModelNormal):
     def __init__(self, *args, **kwargs):
         """AWSTagFilter - a model defined in OpenAPI
 
-        Keyword Args:
-            namespace (AWSNamespace): [optional]
-            tag_filter_str (str): [optional] The tag filter string.
+
+        :type namespace: AWSNamespace, optional
+
+        :param tag_filter_str: The tag filter string.
+        :type tag_filter_str: str, optional
         """
         super().__init__(kwargs)
 

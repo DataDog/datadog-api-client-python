@@ -40,8 +40,9 @@ class UsageRumSessionsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageRumSessionsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageRumSessionsHour]): [optional] Get hourly usage for RUM Sessions.
+
+        :param usage: Get hourly usage for RUM Sessions.
+        :type usage: [UsageRumSessionsHour], optional
         """
         super().__init__(kwargs)
 

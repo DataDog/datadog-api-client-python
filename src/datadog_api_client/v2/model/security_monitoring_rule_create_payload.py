@@ -66,19 +66,34 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
     def __init__(self, cases, is_enabled, message, name, options, queries, *args, **kwargs):
         """SecurityMonitoringRuleCreatePayload - a model defined in OpenAPI
 
-        Args:
-            cases ([SecurityMonitoringRuleCaseCreate]): Cases for generating signals.
-            is_enabled (bool): Whether the rule is enabled.
-            message (str): Message for generated signals.
-            name (str): The name of the rule.
-            options (SecurityMonitoringRuleOptions):
-            queries ([SecurityMonitoringRuleQueryCreate]): Queries for selecting logs which are part of the rule.
 
-        Keyword Args:
-            filters ([SecurityMonitoringFilter]): [optional] Additional queries to filter matched events before they are processed.
-            has_extended_title (bool): [optional] Whether the notifications include the triggering group-by values in their title.
-            tags ([str]): [optional] Tags for generated signals.
-            type (SecurityMonitoringRuleTypeCreate): [optional]
+        :param cases: Cases for generating signals.
+        :type cases: [SecurityMonitoringRuleCaseCreate]
+
+        :param is_enabled: Whether the rule is enabled.
+        :type is_enabled: bool
+
+        :param message: Message for generated signals.
+        :type message: str
+
+        :param name: The name of the rule.
+        :type name: str
+
+        :type options: SecurityMonitoringRuleOptions
+
+        :param queries: Queries for selecting logs which are part of the rule.
+        :type queries: [SecurityMonitoringRuleQueryCreate]
+
+        :param filters: Additional queries to filter matched events before they are processed.
+        :type filters: [SecurityMonitoringFilter], optional
+
+        :param has_extended_title: Whether the notifications include the triggering group-by values in their title.
+        :type has_extended_title: bool, optional
+
+        :param tags: Tags for generated signals.
+        :type tags: [str], optional
+
+        :type type: SecurityMonitoringRuleTypeCreate, optional
         """
         super().__init__(kwargs)
 

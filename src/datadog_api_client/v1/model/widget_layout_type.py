@@ -34,12 +34,8 @@ class WidgetLayoutType(ModelSimple):
         """WidgetLayoutType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Layout type of the group. If omitted defaults to "ordered". Must be one of ["ordered"].
-
-        Keyword Args:
-            value (str): Layout type of the group. If omitted defaults to "ordered". Must be one of ["ordered"].
+        :param value: Layout type of the group. If omitted defaults to "ordered". Must be one of ["ordered"].
+        :type value: str
         """
         super().__init__(kwargs)
 

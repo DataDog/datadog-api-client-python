@@ -40,10 +40,8 @@ class NotebookCreateRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """NotebookCreateRequest - a model defined in OpenAPI
 
-        Args:
-            data (NotebookCreateData):
 
-        Keyword Args:
+        :type data: NotebookCreateData
         """
         super().__init__(kwargs)
 

@@ -65,16 +65,24 @@ class ChangeWidgetDefinition(ModelNormal):
     def __init__(self, requests, type, *args, **kwargs):
         """ChangeWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            requests ([ChangeWidgetRequest]): Array of one request object to display in the widget.  See the dedicated [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)  to learn how to build the `REQUEST_SCHEMA`.
-            type (ChangeWidgetDefinitionType):
 
-        Keyword Args:
-            custom_links ([WidgetCustomLink]): [optional] List of custom links.
-            time (WidgetTime): [optional]
-            title (str): [optional] Title of the widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
+        :param requests: Array of one request object to display in the widget.  See the dedicated [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)  to learn how to build the `REQUEST_SCHEMA`.
+        :type requests: [ChangeWidgetRequest]
+
+        :type type: ChangeWidgetDefinitionType
+
+        :param custom_links: List of custom links.
+        :type custom_links: [WidgetCustomLink], optional
+
+        :type time: WidgetTime, optional
+
+        :param title: Title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

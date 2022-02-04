@@ -48,12 +48,13 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
     def __init__(self, parser, type, *args, **kwargs):
         """SyntheticsGlobalVariableParseTestOptions - a model defined in OpenAPI
 
-        Args:
-            parser (SyntheticsVariableParser):
-            type (SyntheticsGlobalVariableParseTestOptionsType):
 
-        Keyword Args:
-            field (str): [optional] When type is `http_header`, name of the header to use to extract the value.
+        :type parser: SyntheticsVariableParser
+
+        :type type: SyntheticsGlobalVariableParseTestOptionsType
+
+        :param field: When type is `http_header`, name of the header to use to extract the value.
+        :type field: str, optional
         """
         super().__init__(kwargs)
 

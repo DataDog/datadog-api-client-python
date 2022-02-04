@@ -54,14 +54,19 @@ class SyntheticsBrowserTestConfig(ModelNormal):
     def __init__(self, request, *args, **kwargs):
         """SyntheticsBrowserTestConfig - a model defined in OpenAPI
 
-        Args:
-            request (SyntheticsTestRequest):
 
-        Keyword Args:
-            assertions ([SyntheticsAssertion]): Array of assertions used for the test. Defaults to [].
-            config_variables ([SyntheticsConfigVariable]): [optional] Array of variables used for the test.
-            set_cookie (str): [optional] Cookies to be used for the request, using the [Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) syntax.
-            variables ([SyntheticsBrowserVariable]): [optional] Array of variables used for the test steps.
+        :type request: SyntheticsTestRequest
+        :param assertions: Array of assertions used for the test. Defaults to [].
+        :type assertions: [SyntheticsAssertion]
+
+        :param config_variables: Array of variables used for the test.
+        :type config_variables: [SyntheticsConfigVariable], optional
+
+        :param set_cookie: Cookies to be used for the request, using the [Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) syntax.
+        :type set_cookie: str, optional
+
+        :param variables: Array of variables used for the test steps.
+        :type variables: [SyntheticsBrowserVariable], optional
         """
         super().__init__(kwargs)
 

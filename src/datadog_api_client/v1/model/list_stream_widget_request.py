@@ -48,12 +48,13 @@ class ListStreamWidgetRequest(ModelNormal):
     def __init__(self, columns, query, response_format, *args, **kwargs):
         """ListStreamWidgetRequest - a model defined in OpenAPI
 
-        Args:
-            columns ([ListStreamColumn]): Widget columns.
-            query (ListStreamQuery):
-            response_format (ListStreamResponseFormat):
 
-        Keyword Args:
+        :param columns: Widget columns.
+        :type columns: [ListStreamColumn]
+
+        :type query: ListStreamQuery
+
+        :type response_format: ListStreamResponseFormat
         """
         super().__init__(kwargs)
 

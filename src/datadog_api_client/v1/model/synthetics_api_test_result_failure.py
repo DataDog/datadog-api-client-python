@@ -42,9 +42,11 @@ class SyntheticsApiTestResultFailure(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsApiTestResultFailure - a model defined in OpenAPI
 
-        Keyword Args:
-            code (SyntheticsApiTestFailureCode): [optional]
-            message (str): [optional] The API test error message.
+
+        :type code: SyntheticsApiTestFailureCode, optional
+
+        :param message: The API test error message.
+        :type message: str, optional
         """
         super().__init__(kwargs)
 

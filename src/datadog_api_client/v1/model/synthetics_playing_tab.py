@@ -39,12 +39,8 @@ class SyntheticsPlayingTab(ModelSimple):
         """SyntheticsPlayingTab - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (int): Navigate between different tabs for your browser test. Must be one of [-1, 0, 1, 2, 3].
-
-        Keyword Args:
-            value (int): Navigate between different tabs for your browser test. Must be one of [-1, 0, 1, 2, 3].
+        :param value: Navigate between different tabs for your browser test. Must be one of [-1, 0, 1, 2, 3].
+        :type value: int
         """
         super().__init__(kwargs)
 

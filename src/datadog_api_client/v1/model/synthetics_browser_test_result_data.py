@@ -66,19 +66,40 @@ class SyntheticsBrowserTestResultData(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsBrowserTestResultData - a model defined in OpenAPI
 
-        Keyword Args:
-            browser_type (str): [optional] Type of browser device used for the browser test.
-            browser_version (str): [optional] Browser version used for the browser test.
-            device (SyntheticsDevice): [optional]
-            duration (float): [optional] Global duration in second of the browser test.
-            error (str): [optional] Error returned for the browser test.
-            failure (SyntheticsBrowserTestResultFailure): [optional]
-            passed (bool): [optional] Whether or not the browser test was conducted.
-            received_email_count (int): [optional] The amount of email received during the browser test.
-            start_url (str): [optional] Starting URL for the browser test.
-            step_details ([SyntheticsStepDetail]): [optional] Array containing the different browser test steps.
-            thumbnails_bucket_key (bool): [optional] Whether or not a thumbnail is associated with the browser test.
-            time_to_interactive (float): [optional] Time in second to wait before the browser test starts after reaching the start URL.
+
+        :param browser_type: Type of browser device used for the browser test.
+        :type browser_type: str, optional
+
+        :param browser_version: Browser version used for the browser test.
+        :type browser_version: str, optional
+
+        :type device: SyntheticsDevice, optional
+
+        :param duration: Global duration in second of the browser test.
+        :type duration: float, optional
+
+        :param error: Error returned for the browser test.
+        :type error: str, optional
+
+        :type failure: SyntheticsBrowserTestResultFailure, optional
+
+        :param passed: Whether or not the browser test was conducted.
+        :type passed: bool, optional
+
+        :param received_email_count: The amount of email received during the browser test.
+        :type received_email_count: int, optional
+
+        :param start_url: Starting URL for the browser test.
+        :type start_url: str, optional
+
+        :param step_details: Array containing the different browser test steps.
+        :type step_details: [SyntheticsStepDetail], optional
+
+        :param thumbnails_bucket_key: Whether or not a thumbnail is associated with the browser test.
+        :type thumbnails_bucket_key: bool, optional
+
+        :param time_to_interactive: Time in second to wait before the browser test starts after reaching the start URL.
+        :type time_to_interactive: float, optional
         """
         super().__init__(kwargs)
 

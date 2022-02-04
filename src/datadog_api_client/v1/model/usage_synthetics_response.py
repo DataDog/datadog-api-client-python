@@ -40,8 +40,9 @@ class UsageSyntheticsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageSyntheticsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageSyntheticsHour]): [optional] Array with the number of hourly Synthetics test run for a given organization.
+
+        :param usage: Array with the number of hourly Synthetics test run for a given organization.
+        :type usage: [UsageSyntheticsHour], optional
         """
         super().__init__(kwargs)
 

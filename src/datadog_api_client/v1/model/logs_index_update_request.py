@@ -50,14 +50,20 @@ class LogsIndexUpdateRequest(ModelNormal):
     def __init__(self, filter, *args, **kwargs):
         """LogsIndexUpdateRequest - a model defined in OpenAPI
 
-        Args:
-            filter (LogsFilter):
 
-        Keyword Args:
-            daily_limit (int): [optional] The number of log events you can send in this index per day before you are rate-limited.
-            disable_daily_limit (bool): [optional] If true, sets the `daily_limit` value to null and the index is not limited on a daily basis (any specified `daily_limit` value in the request is ignored). If false or omitted, the index's current `daily_limit` is maintained.
-            exclusion_filters ([LogsExclusion]): [optional] An array of exclusion objects. The logs are tested against the query of each filter, following the order of the array. Only the first matching active exclusion matters, others (if any) are ignored.
-            num_retention_days (int): [optional] The number of days before logs are deleted from this index. Available values depend on retention plans specified in your organization's contract/subscriptions.  **Note:** Changing the retention for an index adjusts the length of retention for all logs already in this index. It may also affect billing.
+        :type filter: LogsFilter
+
+        :param daily_limit: The number of log events you can send in this index per day before you are rate-limited.
+        :type daily_limit: int, optional
+
+        :param disable_daily_limit: If true, sets the `daily_limit` value to null and the index is not limited on a daily basis (any specified `daily_limit` value in the request is ignored). If false or omitted, the index's current `daily_limit` is maintained.
+        :type disable_daily_limit: bool, optional
+
+        :param exclusion_filters: An array of exclusion objects. The logs are tested against the query of each filter, following the order of the array. Only the first matching active exclusion matters, others (if any) are ignored.
+        :type exclusion_filters: [LogsExclusion], optional
+
+        :param num_retention_days: The number of days before logs are deleted from this index. Available values depend on retention plans specified in your organization's contract/subscriptions.  **Note:** Changing the retention for an index adjusts the length of retention for all logs already in this index. It may also affect billing.
+        :type num_retention_days: int, optional
         """
         super().__init__(kwargs)
 

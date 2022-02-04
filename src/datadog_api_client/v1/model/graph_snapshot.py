@@ -37,10 +37,15 @@ class GraphSnapshot(ModelNormal):
     def __init__(self, *args, **kwargs):
         """GraphSnapshot - a model defined in OpenAPI
 
-        Keyword Args:
-            graph_def (str): [optional] A JSON document defining the graph. `graph_def` can be used instead of `metric_query`. The JSON document uses the [grammar defined here](https://docs.datadoghq.com/graphing/graphing_json/#grammar) and should be formatted to a single line then URL encoded.
-            metric_query (str): [optional] The metric query. One of `metric_query` or `graph_def` is required.
-            snapshot_url (str): [optional] URL of your [graph snapshot](https://docs.datadoghq.com/metrics/explorer/#snapshot).
+
+        :param graph_def: A JSON document defining the graph. `graph_def` can be used instead of `metric_query`. The JSON document uses the [grammar defined here](https://docs.datadoghq.com/graphing/graphing_json/#grammar) and should be formatted to a single line then URL encoded.
+        :type graph_def: str, optional
+
+        :param metric_query: The metric query. One of `metric_query` or `graph_def` is required.
+        :type metric_query: str, optional
+
+        :param snapshot_url: URL of your [graph snapshot](https://docs.datadoghq.com/metrics/explorer/#snapshot).
+        :type snapshot_url: str, optional
         """
         super().__init__(kwargs)
 

@@ -40,8 +40,9 @@ class DashboardListDeleteItemsRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """DashboardListDeleteItemsRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            dashboards ([DashboardListItemRequest]): [optional] List of dashboards to delete from the dashboard list.
+
+        :param dashboards: List of dashboards to delete from the dashboard list.
+        :type dashboards: [DashboardListItemRequest], optional
         """
         super().__init__(kwargs)
 

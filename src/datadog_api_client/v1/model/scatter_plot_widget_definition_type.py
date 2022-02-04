@@ -34,12 +34,8 @@ class ScatterPlotWidgetDefinitionType(ModelSimple):
         """ScatterPlotWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the scatter plot widget. If omitted defaults to "scatterplot". Must be one of ["scatterplot"].
-
-        Keyword Args:
-            value (str): Type of the scatter plot widget. If omitted defaults to "scatterplot". Must be one of ["scatterplot"].
+        :param value: Type of the scatter plot widget. If omitted defaults to "scatterplot". Must be one of ["scatterplot"].
+        :type value: str
         """
         super().__init__(kwargs)
 

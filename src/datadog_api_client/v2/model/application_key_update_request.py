@@ -40,10 +40,8 @@ class ApplicationKeyUpdateRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """ApplicationKeyUpdateRequest - a model defined in OpenAPI
 
-        Args:
-            data (ApplicationKeyUpdateData):
 
-        Keyword Args:
+        :type data: ApplicationKeyUpdateData
         """
         super().__init__(kwargs)
 

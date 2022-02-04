@@ -58,14 +58,23 @@ class GeomapWidgetRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """GeomapWidgetRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            formulas ([WidgetFormula]): [optional] List of formulas that operate on queries. **This feature is currently in beta.**
-            log_query (LogQueryDefinition): [optional]
-            q (str): [optional] The widget metrics query.
-            queries ([FormulaAndFunctionQueryDefinition]): [optional] List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**
-            response_format (FormulaAndFunctionResponseFormat): [optional]
-            rum_query (LogQueryDefinition): [optional]
-            security_query (LogQueryDefinition): [optional]
+
+        :param formulas: List of formulas that operate on queries. **This feature is currently in beta.**
+        :type formulas: [WidgetFormula], optional
+
+        :type log_query: LogQueryDefinition, optional
+
+        :param q: The widget metrics query.
+        :type q: str, optional
+
+        :param queries: List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**
+        :type queries: [FormulaAndFunctionQueryDefinition], optional
+
+        :type response_format: FormulaAndFunctionResponseFormat, optional
+
+        :type rum_query: LogQueryDefinition, optional
+
+        :type security_query: LogQueryDefinition, optional
         """
         super().__init__(kwargs)
 

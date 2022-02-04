@@ -40,10 +40,9 @@ class RelationshipToOrganizations(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """RelationshipToOrganizations - a model defined in OpenAPI
 
-        Args:
-            data ([RelationshipToOrganizationData]): Relationships to organization objects.
 
-        Keyword Args:
+        :param data: Relationships to organization objects.
+        :type data: [RelationshipToOrganizationData]
         """
         super().__init__(kwargs)
 

@@ -40,10 +40,8 @@ class UserInvitationRelationships(ModelNormal):
     def __init__(self, user, *args, **kwargs):
         """UserInvitationRelationships - a model defined in OpenAPI
 
-        Args:
-            user (RelationshipToUser):
 
-        Keyword Args:
+        :type user: RelationshipToUser
         """
         super().__init__(kwargs)
 

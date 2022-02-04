@@ -42,10 +42,8 @@ class RelationshipToIncidentPostmortem(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """RelationshipToIncidentPostmortem - a model defined in OpenAPI
 
-        Args:
-            data (RelationshipToIncidentPostmortemData):
 
-        Keyword Args:
+        :type data: RelationshipToIncidentPostmortemData
         """
         super().__init__(kwargs)
 

@@ -42,11 +42,10 @@ class LogsArchiveCreateRequestDefinition(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsArchiveCreateRequestDefinition - a model defined in OpenAPI
 
-        Args:
+        :param type: The type of the resource. The value should always be archives. Defaults to "archives".
+        :type type: str
 
-        Keyword Args:
-            type (str): The type of the resource. The value should always be archives. Defaults to "archives".
-            attributes (LogsArchiveCreateRequestAttributes): [optional]
+        :type attributes: LogsArchiveCreateRequestAttributes, optional
         """
         super().__init__(kwargs)
 

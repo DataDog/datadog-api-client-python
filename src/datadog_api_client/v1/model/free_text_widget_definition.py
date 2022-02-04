@@ -50,14 +50,19 @@ class FreeTextWidgetDefinition(ModelNormal):
     def __init__(self, text, type, *args, **kwargs):
         """FreeTextWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            text (str): Text to display.
-            type (FreeTextWidgetDefinitionType):
 
-        Keyword Args:
-            color (str): [optional] Color of the text.
-            font_size (str): [optional] Size of the text.
-            text_align (WidgetTextAlign): [optional]
+        :param text: Text to display.
+        :type text: str
+
+        :type type: FreeTextWidgetDefinitionType
+
+        :param color: Color of the text.
+        :type color: str, optional
+
+        :param font_size: Size of the text.
+        :type font_size: str, optional
+
+        :type text_align: WidgetTextAlign, optional
         """
         super().__init__(kwargs)
 

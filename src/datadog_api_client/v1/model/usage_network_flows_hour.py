@@ -36,9 +36,12 @@ class UsageNetworkFlowsHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageNetworkFlowsHour - a model defined in OpenAPI
 
-        Keyword Args:
-            hour (datetime): [optional] The hour for the usage.
-            indexed_events_count (int): [optional] Contains the number of netflow events indexed.
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param indexed_events_count: Contains the number of netflow events indexed.
+        :type indexed_events_count: int, optional
         """
         super().__init__(kwargs)
 

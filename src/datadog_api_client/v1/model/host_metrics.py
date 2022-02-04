@@ -37,10 +37,15 @@ class HostMetrics(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HostMetrics - a model defined in OpenAPI
 
-        Keyword Args:
-            cpu (float): [optional] The percent of CPU used (everything but idle).
-            iowait (float): [optional] The percent of CPU spent waiting on the IO (not reported for all platforms).
-            load (float): [optional] The system load over the last 15 minutes.
+
+        :param cpu: The percent of CPU used (everything but idle).
+        :type cpu: float, optional
+
+        :param iowait: The percent of CPU spent waiting on the IO (not reported for all platforms).
+        :type iowait: float, optional
+
+        :param load: The system load over the last 15 minutes.
+        :type load: float, optional
         """
         super().__init__(kwargs)
 

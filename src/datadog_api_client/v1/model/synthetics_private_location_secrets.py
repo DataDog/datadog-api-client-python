@@ -48,9 +48,10 @@ class SyntheticsPrivateLocationSecrets(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsPrivateLocationSecrets - a model defined in OpenAPI
 
-        Keyword Args:
-            authentication (SyntheticsPrivateLocationSecretsAuthentication): [optional]
-            config_decryption (SyntheticsPrivateLocationSecretsConfigDecryption): [optional]
+
+        :type authentication: SyntheticsPrivateLocationSecretsAuthentication, optional
+
+        :type config_decryption: SyntheticsPrivateLocationSecretsConfigDecryption, optional
         """
         super().__init__(kwargs)
 

@@ -42,9 +42,10 @@ class MonitorGroupSearchResponseCounts(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MonitorGroupSearchResponseCounts - a model defined in OpenAPI
 
-        Keyword Args:
-            status (MonitorSearchCount): [optional]
-            type (MonitorSearchCount): [optional]
+
+        :type status: MonitorSearchCount, optional
+
+        :type type: MonitorSearchCount, optional
         """
         super().__init__(kwargs)
 

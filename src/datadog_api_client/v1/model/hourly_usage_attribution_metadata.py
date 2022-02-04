@@ -40,8 +40,8 @@ class HourlyUsageAttributionMetadata(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HourlyUsageAttributionMetadata - a model defined in OpenAPI
 
-        Keyword Args:
-            pagination (HourlyUsageAttributionPagination): [optional]
+
+        :type pagination: HourlyUsageAttributionPagination, optional
         """
         super().__init__(kwargs)
 

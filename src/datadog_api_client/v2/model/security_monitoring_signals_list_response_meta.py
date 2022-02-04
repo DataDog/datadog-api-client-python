@@ -42,8 +42,8 @@ class SecurityMonitoringSignalsListResponseMeta(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityMonitoringSignalsListResponseMeta - a model defined in OpenAPI
 
-        Keyword Args:
-            page (SecurityMonitoringSignalsListResponseMetaPage): [optional]
+
+        :type page: SecurityMonitoringSignalsListResponseMetaPage, optional
         """
         super().__init__(kwargs)
 

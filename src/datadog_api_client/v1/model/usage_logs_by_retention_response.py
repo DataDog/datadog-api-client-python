@@ -40,8 +40,9 @@ class UsageLogsByRetentionResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageLogsByRetentionResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageLogsByRetentionHour]): [optional] Get hourly usage for indexed logs by retention period.
+
+        :param usage: Get hourly usage for indexed logs by retention period.
+        :type usage: [UsageLogsByRetentionHour], optional
         """
         super().__init__(kwargs)
 

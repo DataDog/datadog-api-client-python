@@ -34,12 +34,8 @@ class LogsGeoIPParserType(ModelSimple):
         """LogsGeoIPParserType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of GeoIP parser. If omitted defaults to "geo-ip-parser". Must be one of ["geo-ip-parser"].
-
-        Keyword Args:
-            value (str): Type of GeoIP parser. If omitted defaults to "geo-ip-parser". Must be one of ["geo-ip-parser"].
+        :param value: Type of GeoIP parser. If omitted defaults to "geo-ip-parser". Must be one of ["geo-ip-parser"].
+        :type value: str
         """
         super().__init__(kwargs)
 

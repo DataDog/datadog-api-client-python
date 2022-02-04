@@ -46,10 +46,12 @@ class ScatterPlotWidgetDefinitionRequests(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ScatterPlotWidgetDefinitionRequests - a model defined in OpenAPI
 
-        Keyword Args:
-            table (ScatterplotTableRequest): [optional]
-            x (ScatterPlotRequest): [optional]
-            y (ScatterPlotRequest): [optional]
+
+        :type table: ScatterplotTableRequest, optional
+
+        :type x: ScatterPlotRequest, optional
+
+        :type y: ScatterPlotRequest, optional
         """
         super().__init__(kwargs)
 

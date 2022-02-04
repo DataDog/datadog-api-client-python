@@ -34,12 +34,8 @@ class ChangeWidgetDefinitionType(ModelSimple):
         """ChangeWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the change widget. If omitted defaults to "change". Must be one of ["change"].
-
-        Keyword Args:
-            value (str): Type of the change widget. If omitted defaults to "change". Must be one of ["change"].
+        :param value: Type of the change widget. If omitted defaults to "change". Must be one of ["change"].
+        :type value: str
         """
         super().__init__(kwargs)
 

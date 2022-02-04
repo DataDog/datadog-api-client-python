@@ -37,12 +37,15 @@ class LogsQueryCompute(ModelNormal):
     def __init__(self, aggregation, *args, **kwargs):
         """LogsQueryCompute - a model defined in OpenAPI
 
-        Args:
-            aggregation (str): The aggregation method.
 
-        Keyword Args:
-            facet (str): [optional] Facet name.
-            interval (int): [optional] Define a time interval in seconds.
+        :param aggregation: The aggregation method.
+        :type aggregation: str
+
+        :param facet: Facet name.
+        :type facet: str, optional
+
+        :param interval: Define a time interval in seconds.
+        :type interval: int, optional
         """
         super().__init__(kwargs)
 

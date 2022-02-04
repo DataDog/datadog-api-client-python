@@ -44,12 +44,14 @@ class LogQueryDefinitionGroupBySort(ModelNormal):
     def __init__(self, aggregation, order, *args, **kwargs):
         """LogQueryDefinitionGroupBySort - a model defined in OpenAPI
 
-        Args:
-            aggregation (str): The aggregation method.
-            order (WidgetSort):
 
-        Keyword Args:
-            facet (str): [optional] Facet name.
+        :param aggregation: The aggregation method.
+        :type aggregation: str
+
+        :type order: WidgetSort
+
+        :param facet: Facet name.
+        :type facet: str, optional
         """
         super().__init__(kwargs)
 

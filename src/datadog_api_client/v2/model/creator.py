@@ -37,10 +37,15 @@ class Creator(ModelNormal):
     def __init__(self, *args, **kwargs):
         """Creator - a model defined in OpenAPI
 
-        Keyword Args:
-            email (str): [optional] Email of the creator.
-            handle (str): [optional] Handle of the creator.
-            name (str): [optional] Name of the creator.
+
+        :param email: Email of the creator.
+        :type email: str, optional
+
+        :param handle: Handle of the creator.
+        :type handle: str, optional
+
+        :param name: Name of the creator.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

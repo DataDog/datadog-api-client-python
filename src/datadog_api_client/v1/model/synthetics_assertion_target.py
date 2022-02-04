@@ -61,13 +61,16 @@ class SyntheticsAssertionTarget(ModelNormal):
     def __init__(self, operator, target, type, *args, **kwargs):
         """SyntheticsAssertionTarget - a model defined in OpenAPI
 
-        Args:
-            operator (SyntheticsAssertionOperator):
-            target (bool, date, datetime, dict, float, int, list, str, none_type): Value used by the operator.
-            type (SyntheticsAssertionType):
 
-        Keyword Args:
-            _property (str): [optional] The associated assertion property.
+        :type operator: SyntheticsAssertionOperator
+
+        :param target: Value used by the operator.
+        :type target: bool, date, datetime, dict, float, int, list, str, none_type
+
+        :type type: SyntheticsAssertionType
+
+        :param _property: The associated assertion property.
+        :type _property: str, optional
         """
         super().__init__(kwargs)
 

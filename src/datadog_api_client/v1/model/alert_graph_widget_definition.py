@@ -58,16 +58,23 @@ class AlertGraphWidgetDefinition(ModelNormal):
     def __init__(self, alert_id, type, viz_type, *args, **kwargs):
         """AlertGraphWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            alert_id (str): ID of the alert to use in the widget.
-            type (AlertGraphWidgetDefinitionType):
-            viz_type (WidgetVizType):
 
-        Keyword Args:
-            time (WidgetTime): [optional]
-            title (str): [optional] The title of the widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
+        :param alert_id: ID of the alert to use in the widget.
+        :type alert_id: str
+
+        :type type: AlertGraphWidgetDefinitionType
+
+        :type viz_type: WidgetVizType
+
+        :type time: WidgetTime, optional
+
+        :param title: The title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

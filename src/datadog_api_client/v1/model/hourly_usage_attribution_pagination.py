@@ -33,8 +33,9 @@ class HourlyUsageAttributionPagination(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HourlyUsageAttributionPagination - a model defined in OpenAPI
 
-        Keyword Args:
-            next_record_id (str): [optional] The cursor to get the next results (if any). To make the next request, use the same parameters and add `next_record_id`.
+
+        :param next_record_id: The cursor to get the next results (if any). To make the next request, use the same parameters and add `next_record_id`.
+        :type next_record_id: str, optional
         """
         super().__init__(kwargs)
 

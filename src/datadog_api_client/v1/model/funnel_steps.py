@@ -29,12 +29,8 @@ class FunnelSteps(ModelSimple):
         """FunnelSteps - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] ([dict]): List of funnel steps.
-
-        Keyword Args:
-            value ([dict]): List of funnel steps.
+        :param value: List of funnel steps.
+        :type value: [dict]
         """
         super().__init__(kwargs)
 

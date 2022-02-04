@@ -34,12 +34,8 @@ class SLOCorrectionType(ModelSimple):
         """SLOCorrectionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): SLO correction resource type. If omitted defaults to "correction". Must be one of ["correction"].
-
-        Keyword Args:
-            value (str): SLO correction resource type. If omitted defaults to "correction". Must be one of ["correction"].
+        :param value: SLO correction resource type. If omitted defaults to "correction". Must be one of ["correction"].
+        :type value: str
         """
         super().__init__(kwargs)
 

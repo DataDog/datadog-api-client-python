@@ -74,22 +74,40 @@ class HostMapWidgetDefinition(ModelNormal):
     def __init__(self, requests, type, *args, **kwargs):
         """HostMapWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            requests (HostMapWidgetDefinitionRequests):
-            type (HostMapWidgetDefinitionType):
 
-        Keyword Args:
-            custom_links ([WidgetCustomLink]): [optional] List of custom links.
-            group ([str]): [optional] List of tag prefixes to group by.
-            no_group_hosts (bool): [optional] Whether to show the hosts that don’t fit in a group.
-            no_metric_hosts (bool): [optional] Whether to show the hosts with no metrics.
-            node_type (WidgetNodeType): [optional]
-            notes (str): [optional] Notes on the title.
-            scope ([str]): [optional] List of tags used to filter the map.
-            style (HostMapWidgetDefinitionStyle): [optional]
-            title (str): [optional] Title of the widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
+        :type requests: HostMapWidgetDefinitionRequests
+
+        :type type: HostMapWidgetDefinitionType
+
+        :param custom_links: List of custom links.
+        :type custom_links: [WidgetCustomLink], optional
+
+        :param group: List of tag prefixes to group by.
+        :type group: [str], optional
+
+        :param no_group_hosts: Whether to show the hosts that don’t fit in a group.
+        :type no_group_hosts: bool, optional
+
+        :param no_metric_hosts: Whether to show the hosts with no metrics.
+        :type no_metric_hosts: bool, optional
+
+        :type node_type: WidgetNodeType, optional
+
+        :param notes: Notes on the title.
+        :type notes: str, optional
+
+        :param scope: List of tags used to filter the map.
+        :type scope: [str], optional
+
+        :type style: HostMapWidgetDefinitionStyle, optional
+
+        :param title: Title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

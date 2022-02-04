@@ -48,10 +48,13 @@ class LogsByRetention(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsByRetention - a model defined in OpenAPI
 
-        Keyword Args:
-            orgs (LogsByRetentionOrgs): [optional]
-            usage ([LogsRetentionAggSumUsage]): [optional] Aggregated index logs usage for each retention period with usage.
-            usage_by_month (LogsByRetentionMonthlyUsage): [optional]
+
+        :type orgs: LogsByRetentionOrgs, optional
+
+        :param usage: Aggregated index logs usage for each retention period with usage.
+        :type usage: [LogsRetentionAggSumUsage], optional
+
+        :type usage_by_month: LogsByRetentionMonthlyUsage, optional
         """
         super().__init__(kwargs)
 

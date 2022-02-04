@@ -39,9 +39,12 @@ class LogsListRequestPage(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsListRequestPage - a model defined in OpenAPI
 
-        Keyword Args:
-            cursor (str): [optional] List following results with a cursor provided in the previous query.
-            limit (int): [optional] Maximum number of logs in the response. If omitted the server will use the default value of 10.
+
+        :param cursor: List following results with a cursor provided in the previous query.
+        :type cursor: str, optional
+
+        :param limit: Maximum number of logs in the response. If omitted the server will use the default value of 10.
+        :type limit: int, optional
         """
         super().__init__(kwargs)
 

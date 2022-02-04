@@ -56,17 +56,27 @@ class AlertValueWidgetDefinition(ModelNormal):
     def __init__(self, alert_id, type, *args, **kwargs):
         """AlertValueWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            alert_id (str): ID of the alert to use in the widget.
-            type (AlertValueWidgetDefinitionType):
 
-        Keyword Args:
-            precision (int): [optional] Number of decimal to show. If not defined, will use the raw value.
-            text_align (WidgetTextAlign): [optional]
-            title (str): [optional] Title of the widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of value in the widget.
-            unit (str): [optional] Unit to display with the value.
+        :param alert_id: ID of the alert to use in the widget.
+        :type alert_id: str
+
+        :type type: AlertValueWidgetDefinitionType
+
+        :param precision: Number of decimal to show. If not defined, will use the raw value.
+        :type precision: int, optional
+
+        :type text_align: WidgetTextAlign, optional
+
+        :param title: Title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of value in the widget.
+        :type title_size: str, optional
+
+        :param unit: Unit to display with the value.
+        :type unit: str, optional
         """
         super().__init__(kwargs)
 

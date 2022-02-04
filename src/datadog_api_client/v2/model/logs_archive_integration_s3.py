@@ -35,11 +35,12 @@ class LogsArchiveIntegrationS3(ModelNormal):
     def __init__(self, account_id, role_name, *args, **kwargs):
         """LogsArchiveIntegrationS3 - a model defined in OpenAPI
 
-        Args:
-            account_id (str): The account ID for the integration.
-            role_name (str): The path of the integration.
 
-        Keyword Args:
+        :param account_id: The account ID for the integration.
+        :type account_id: str
+
+        :param role_name: The path of the integration.
+        :type role_name: str
         """
         super().__init__(kwargs)
 

@@ -42,11 +42,11 @@ class RelationshipToIncidentPostmortemData(ModelNormal):
     def __init__(self, id, type, *args, **kwargs):
         """RelationshipToIncidentPostmortemData - a model defined in OpenAPI
 
-        Args:
-            id (str): A unique identifier that represents the postmortem.
-            type (IncidentPostmortemType):
 
-        Keyword Args:
+        :param id: A unique identifier that represents the postmortem.
+        :type id: str
+
+        :type type: IncidentPostmortemType
         """
         super().__init__(kwargs)
 

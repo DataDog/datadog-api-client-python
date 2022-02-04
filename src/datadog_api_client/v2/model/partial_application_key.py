@@ -50,11 +50,15 @@ class PartialApplicationKey(ModelNormal):
     def __init__(self, *args, **kwargs):
         """PartialApplicationKey - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (PartialApplicationKeyAttributes): [optional]
-            id (str): [optional] ID of the application key.
-            relationships (ApplicationKeyRelationships): [optional]
-            type (ApplicationKeysType): [optional]
+
+        :type attributes: PartialApplicationKeyAttributes, optional
+
+        :param id: ID of the application key.
+        :type id: str, optional
+
+        :type relationships: ApplicationKeyRelationships, optional
+
+        :type type: ApplicationKeysType, optional
         """
         super().__init__(kwargs)
 

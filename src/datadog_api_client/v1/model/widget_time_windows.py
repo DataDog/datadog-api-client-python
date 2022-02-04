@@ -42,12 +42,8 @@ class WidgetTimeWindows(ModelSimple):
         """WidgetTimeWindows - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Define a time window. Must be one of ["7d", "30d", "90d", "week_to_date", "previous_week", "month_to_date", "previous_month", "global_time"].
-
-        Keyword Args:
-            value (str): Define a time window. Must be one of ["7d", "30d", "90d", "week_to_date", "previous_week", "month_to_date", "previous_month", "global_time"].
+        :param value: Define a time window. Must be one of ["7d", "30d", "90d", "week_to_date", "previous_week", "month_to_date", "previous_month", "global_time"].
+        :type value: str
         """
         super().__init__(kwargs)
 

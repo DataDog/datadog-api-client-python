@@ -39,13 +39,18 @@ class CloudWorkloadSecurityAgentRuleCreateAttributes(ModelNormal):
     def __init__(self, expression, name, *args, **kwargs):
         """CloudWorkloadSecurityAgentRuleCreateAttributes - a model defined in OpenAPI
 
-        Args:
-            expression (str): The SECL expression of the Agent rule.
-            name (str): The name of the Agent rule.
 
-        Keyword Args:
-            description (str): [optional] The description of the Agent rule.
-            enabled (bool): [optional] Whether the Agent rule is enabled.
+        :param expression: The SECL expression of the Agent rule.
+        :type expression: str
+
+        :param name: The name of the Agent rule.
+        :type name: str
+
+        :param description: The description of the Agent rule.
+        :type description: str, optional
+
+        :param enabled: Whether the Agent rule is enabled.
+        :type enabled: bool, optional
         """
         super().__init__(kwargs)
 

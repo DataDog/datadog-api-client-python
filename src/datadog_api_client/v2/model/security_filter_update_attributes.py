@@ -56,13 +56,23 @@ class SecurityFilterUpdateAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityFilterUpdateAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            exclusion_filters ([SecurityFilterExclusionFilter]): [optional] Exclusion filters to exclude some logs from the security filter.
-            filtered_data_type (SecurityFilterFilteredDataType): [optional]
-            is_enabled (bool): [optional] Whether the security filter is enabled.
-            name (str): [optional] The name of the security filter.
-            query (str): [optional] The query of the security filter.
-            version (int): [optional] The version of the security filter to update.
+
+        :param exclusion_filters: Exclusion filters to exclude some logs from the security filter.
+        :type exclusion_filters: [SecurityFilterExclusionFilter], optional
+
+        :type filtered_data_type: SecurityFilterFilteredDataType, optional
+
+        :param is_enabled: Whether the security filter is enabled.
+        :type is_enabled: bool, optional
+
+        :param name: The name of the security filter.
+        :type name: str, optional
+
+        :param query: The query of the security filter.
+        :type query: str, optional
+
+        :param version: The version of the security filter to update.
+        :type version: int, optional
         """
         super().__init__(kwargs)
 

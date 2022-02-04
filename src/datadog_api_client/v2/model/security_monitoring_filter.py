@@ -42,9 +42,11 @@ class SecurityMonitoringFilter(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityMonitoringFilter - a model defined in OpenAPI
 
-        Keyword Args:
-            action (SecurityMonitoringFilterAction): [optional]
-            query (str): [optional] Query for selecting logs to apply the filtering action.
+
+        :type action: SecurityMonitoringFilterAction, optional
+
+        :param query: Query for selecting logs to apply the filtering action.
+        :type query: str, optional
         """
         super().__init__(kwargs)
 

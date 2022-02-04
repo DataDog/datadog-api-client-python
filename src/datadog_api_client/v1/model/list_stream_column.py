@@ -42,11 +42,11 @@ class ListStreamColumn(ModelNormal):
     def __init__(self, field, width, *args, **kwargs):
         """ListStreamColumn - a model defined in OpenAPI
 
-        Args:
-            field (str): Widget column field.
-            width (ListStreamColumnWidth):
 
-        Keyword Args:
+        :param field: Widget column field.
+        :type field: str
+
+        :type width: ListStreamColumnWidth
         """
         super().__init__(kwargs)
 

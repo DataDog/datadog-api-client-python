@@ -35,9 +35,12 @@ class NotebooksResponsePage(ModelNormal):
     def __init__(self, *args, **kwargs):
         """NotebooksResponsePage - a model defined in OpenAPI
 
-        Keyword Args:
-            total_count (int): [optional] The total number of notebooks that would be returned if the request was not filtered by `start` and `count` parameters.
-            total_filtered_count (int): [optional] The total number of notebooks returned.
+
+        :param total_count: The total number of notebooks that would be returned if the request was not filtered by `start` and `count` parameters.
+        :type total_count: int, optional
+
+        :param total_filtered_count: The total number of notebooks returned.
+        :type total_filtered_count: int, optional
         """
         super().__init__(kwargs)
 

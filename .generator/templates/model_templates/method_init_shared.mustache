@@ -3,27 +3,23 @@
 
 {{#requiredVars}}
 {{^isReadOnly}}
-{{#-first}}
-        Args:
-{{/-first}}
-{{^defaultValue}}
-            {{name}} ({{{dataType}}}):{{#description}} {{{.}}}{{/description}}
+{{^defaultValue}}{{#description}}
+            :param {{name}}: {{{.}}}{{/description}}
+            :type {{name}}: {{{dataType}}}
 {{/defaultValue}}
-{{#-last}}
-
-{{/-last}}
 {{/isReadOnly}}
 {{/requiredVars}}
-        Keyword Args:
 {{#requiredVars}}
 {{^isReadOnly}}
 {{#defaultValue}}
-            {{name}} ({{{dataType}}}):{{#description}} {{{.}}}{{/description}} Defaults to {{{defaultValue}}}.{{#allowableValues}} Must be one of [{{#enumVars}}{{{value}}}, {{/enumVars}}].{{/allowableValues}}
+            :param {{name}}:{{#description}} {{{.}}}{{/description}} Defaults to {{{defaultValue}}}.{{#allowableValues}} Must be one of [{{#enumVars}}{{{value}}}, {{/enumVars}}].{{/allowableValues}}
+            :type {{name}}: {{{dataType}}}
 {{/defaultValue}}
 {{/isReadOnly}}
 {{/requiredVars}}
-{{#optionalVars}}
-            {{name}} ({{{dataType}}}): [optional]{{#description}} {{{.}}}{{/description}}{{#defaultValue}} If omitted the server will use the default value of {{{.}}}.{{/defaultValue}}
+{{#optionalVars}}{{#description}}
+            :param {{name}}: {{{.}}}{{#defaultValue}} If omitted the server will use the default value of {{{.}}}.{{/defaultValue}}{{/description}}
+            :type {{name}}: {{{dataType}}}, optional
 {{/optionalVars}}
         """
         super().__init__(kwargs)

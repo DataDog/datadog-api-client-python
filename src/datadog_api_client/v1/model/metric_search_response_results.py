@@ -33,8 +33,9 @@ class MetricSearchResponseResults(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MetricSearchResponseResults - a model defined in OpenAPI
 
-        Keyword Args:
-            metrics ([str]): [optional] List of metrics that match the search query.
+
+        :param metrics: List of metrics that match the search query.
+        :type metrics: [str], optional
         """
         super().__init__(kwargs)
 

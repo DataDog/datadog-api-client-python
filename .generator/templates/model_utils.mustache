@@ -40,7 +40,7 @@ def convert_js_args_to_python_args(fn):
 
 
 class cached_property(object):
-    # this caches the result of the function call for fn with no inputs
+    # This caches the result of the function call for fn with no inputs
     # use this as a decorator on function methods that you want converted
     # into cached properties
     result_key = '_results'
@@ -62,15 +62,7 @@ PRIMITIVE_TYPES = (list, float, int, bool, datetime, date, str, file_type)
 def allows_single_value_input(cls):
     """
     This function returns True if the input composed schema model or any
-    descendant model allows a value only input
-    This is true for cases where oneOf contains items like:
-    oneOf:
-      - float
-      - NumberWithValidation
-      - StringEnum
-      - ArrayModel
-      - null
-    TODO: lru_cache this
+    descendant model allows a value only input.
     """
     if (
         issubclass(cls, ModelSimple) or
@@ -87,7 +79,6 @@ def composed_model_input_classes(cls):
     """
     This function returns a list of the possible models that can be accepted as
     inputs.
-    TODO: lru_cache this
     """
     if issubclass(cls, ModelSimple) or cls in PRIMITIVE_TYPES:
         return [cls]
@@ -112,18 +103,21 @@ def composed_model_input_classes(cls):
 class OpenApiModel(object):
     """The base class for all OpenAPIModels.
 
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
+    @var allowed_values (dict): The key is the name of the attribute. The value is a dict
+        with a capitalized key describing the allowed value and an allowed
+        value. These dicts store the allowed enum values.
+    @type allowed_values: dict
+    @var attribute_map: The key is attribute name and the value is json
+        key in definition.
+    @type attribute_map: dict
+    @var validations: The key is the name of the attribute. The value is a dict
+        that stores validations for max_length, min_length, max_items,
+        min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
+        inclusive_minimum, and regex.
+    @type validations: dict
+    @var additional_properties_type: A tuple of classes accepted
+        as additional properties values.
+    @type additional_properties_type: tuple
     """
 
     _composed_schemas = empty_dict
@@ -370,37 +364,31 @@ class OpenApiModel(object):
 
     def __init__(self, kwargs):
         """
-        Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
+        :param _check_type: If True, values for parameters in openapi_types
+            will be type checked and a TypeError will be raised if the wrong type is input.
+            Defaults to True.
+        :type _check_type: bool
+        :param _path_to_item: This is a list of keys or values to drill down to
+            the model in received_data when deserializing a response.
+        :type _path_to_item: tuple/list
+        :param _spec_property_naming: True if the variable names in the input
+            data are serialized names, as specified in the OpenAPI document.  False if the
+            variable names in the input data are pythonic names, e.g. snake case (default).
+        :type _spec_property_naming: bool
+        :param _configuration: The instance to use when deserializing a
+            file_type parameter.  If passed, type conversion is attempted If omitted no
+            type conversion is done.
+        :type _configuration: Configuration
+        :param _visited_composed_classes: This stores a tuple of classes
+            that we have traveled through so that if we see that class again we will not
+            use its discriminator again.  When traveling through a discriminator, the
+            composed schema that is is traveled through is added to this set.  For example
+            if Animal has a discriminator petType and we pass in "Dog", and the class Dog
+            allOf includes Animal, we move through Animal once using the discriminator, and
+            pick Dog.  Then in Dog, we will make an instance of the Animal class but this
+            time we won't travel through its discriminator because we passed in
+            _visited_composed_classes = (Animal,)
+        :type _visited_composed_classes: tuple
         """
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
@@ -446,9 +434,10 @@ class OpenApiModel(object):
 
 
 class ModelSimple(OpenApiModel):
-    """the parent class of models whose type != object in their
-    swagger/openapi"""
-
+    ""
+    The parent class of models whose type != object in their
+    swagger/openapi.
+    """
     required_properties = set([
         '_data_store',
         '_check_type',
@@ -465,8 +454,9 @@ class ModelSimple(OpenApiModel):
 
 
 class ModelNormal(OpenApiModel):
-    """the parent class of models whose type == object in their
-    swagger/openapi"""
+    """
+    The parent class of models whose type == object in their swagger/openapi.
+    """
 
     required_properties = set([
         '_data_store',
@@ -511,8 +501,9 @@ class ModelNormal(OpenApiModel):
 
 
 class ModelComposed(OpenApiModel):
-    """the parent class of models whose type == object in their
-    swagger/openapi and have oneOf/allOf/anyOf
+    """
+    The parent class of models whose type == object in their swagger/openapi
+    and have oneOf/allOf/anyOf.
 
     When one sets a property we use var_name_to_model_instances to store the value in
     the correct class instances + run any type checking + validation code.
@@ -650,16 +641,10 @@ COERCIBLE_TYPE_PAIRS = {
 
 
 def get_simple_class(input_value):
-    """Returns an input_value's simple class that we will use for type checking
-    Python2:
-    float and int will return int, where int is the python3 int backport
-    str and unicode will return str, where str is the python3 str backport
-    Note: float and int ARE both instances of int backport
-    Note: str_py2 and unicode_py2 are NOT both instances of str backport
+    """Returns an input_value's simple class that we will use for type checking.
 
-    Args:
-        input_value (class/class_instance): the item for which we will return
-                                            the simple class
+    :param input_value: The item for which we will return the simple class.
+    :type input_value: class/class_instance
     """
     if isinstance(input_value, type):
         # input_value is a class
@@ -692,13 +677,14 @@ def get_simple_class(input_value):
 
 
 def check_allowed_values(allowed_values, input_variable, input_values):
-    """Raises an exception if the input_values are not allowed
+    """Raises an exception if the input_values are not allowed.
 
-    Args:
-        allowed_values (list): the allowed_values list
-        input_variable (str): the name of the input variable
-        input_values (list/str/int/float/date/datetime): the values that we
-            are checking to see if they are in allowed_values
+    :type allowed_values: list
+    :param input_variable: The name of the input variable.
+    :type input_variable: str
+    :param input_values: The values that we are checking to see if they are in
+        allowed_values.
+    :type input_values: list/str/int/float/date/datetime
     """
     if (isinstance(input_values, list)
             and not set(input_values).issubset(
@@ -739,15 +725,16 @@ def check_allowed_values(allowed_values, input_variable, input_values):
 
 
 def is_json_validation_enabled(schema_keyword, configuration=None):
-    """Returns true if JSON schema validation is enabled for the specified
+    """
+    Returns True if JSON schema validation is enabled for the specified
     validation keyword. This can be used to skip JSON schema structural validation
     as requested in the configuration.
 
-    Args:
-        schema_keyword (string): the name of a JSON schema validation keyword.
-        configuration (Configuration): the configuration class.
+    :param schema_keyword: The name of a JSON schema validation keyword.
+    :type schema_keyword: string
+    :param configuration: The configuration instance.
+    :type configuration: Configuration
     """
-
     return (configuration is None or
         not hasattr(configuration, '_disabled_client_side_validations') or
         schema_keyword not in configuration._disabled_client_side_validations)
@@ -756,16 +743,17 @@ def is_json_validation_enabled(schema_keyword, configuration=None):
 def check_validations(
         validations, input_variable, input_values,
         configuration=None):
-    """Raises an exception if the input_values are invalid
+    """Raises an exception if the input_values are invalid.
 
-    Args:
-        validations (dict): the validation dictionary.
-        input_variable (str): the name of the input variable.
-        input_values (list/str/int/float/date/datetime): the values that we
-            are checking.
-        configuration (Configuration): the configuration class.
+    :param validations: The validation dictionary.
+    :type validations: dict
+    :param input_variable: The name of the input variable.
+    :type input_variable: str
+    :param input_values: The values that we are checking.
+    :type input_values: list/str/int/float/date/datetime
+    :param configuration: The configuration instance.
+    :type configuration: Configuration
     """
-
     if input_values is None:
         return
 
@@ -898,15 +886,15 @@ def check_validations(
 
 
 def order_response_types(required_types):
-    """Returns the required types sorted in coercion order
+    """Returns the required types sorted in coercion order.
 
-    Args:
-        required_types (list/tuple): collection of classes or instance of
-            list or dict with class information inside it.
+    :param required_types: Collection of classes or instance of
+        list or dict with class information inside it.
+    :type required_types: list/tuple
 
-    Returns:
-        (list): coercion order sorted collection of classes or instance
-            of list or dict with class information inside it.
+    :return: Coercion order sorted collection of classes or instance
+        of list or dict with class information inside it.
+    :rtype: list
     """
 
     def index_getter(class_or_instance):
@@ -936,24 +924,24 @@ def order_response_types(required_types):
 
 def remove_uncoercible(required_types_classes, current_item, spec_property_naming,
                        must_convert=True):
-    """Only keeps the type conversions that are possible
+    """Only keeps the type conversions that are possible.
 
-    Args:
-        required_types_classes (tuple): tuple of classes that are required
-                          these should be ordered by COERCION_INDEX_BY_TYPE
-        spec_property_naming (bool): True if the variable names in the input
-            data are serialized names as specified in the OpenAPI document.
-            False if the variables names in the input data are python
-            variable names in PEP-8 snake case.
-        current_item (any): the current item (input data) to be converted
+    :param required_types_classes: Classes that are required, these should be
+        ordered by COERCION_INDEX_BY_TYPE.
+    :type required_types_classes: tuple
+    :param spec_property_naming: True if the variable names in the input data
+        are serialized names as specified in the OpenAPI document.  False if the
+        variables names in the input data are python variable names in PEP-8 snake
+        case.
+    :type spec_property_naming: bool
+    :param current_item: The current item (input data) to be converted.
 
-    Keyword Args:
-        must_convert (bool): if True the item to convert is of the wrong
-                          type and we want a big list of coercibles
-                          if False, we want a limited list of coercibles
+    :param must_convert: If True the item to convert is of the wrong type and
+        we want a big list of coercibles if False, we want a limited list of coercibles.
+    :type must_convert: bool
 
-    Returns:
-        (list): the remaining coercible required types, classes only
+    :return: The remaining coercible required types, classes only.
+    :rtype: list
     """
     current_type_simple = get_simple_class(current_item)
 
@@ -980,11 +968,9 @@ def remove_uncoercible(required_types_classes, current_item, spec_property_namin
             results_classes.append(required_type_class)
     return results_classes
 
+
 def get_discriminated_classes(cls):
-    """
-    Returns all the classes that a discriminator converts to
-    TODO: lru_cache this
-    """
+    """Returns all the classes that a discriminator converts to."""
     possible_classes = []
     key = list(cls.discriminator.keys())[0]
     if is_type_nullable(cls):
@@ -998,7 +984,6 @@ def get_discriminated_classes(cls):
 
 
 def get_possible_classes(cls, from_server_context):
-    # TODO: lru_cache this
     possible_classes = [cls]
     if from_server_context:
         return possible_classes
@@ -1011,25 +996,23 @@ def get_possible_classes(cls, from_server_context):
 
 
 def get_required_type_classes(required_types_mixed, spec_property_naming):
-    """Converts the tuple required_types into a tuple and a dict described
-    below
+    """Converts the tuple required_types into a tuple and a dict described below.
 
-    Args:
-        required_types_mixed (tuple/list): will contain either classes or
-            instance of list or dict
-        spec_property_naming (bool): if True these values came from the
-            server, and we use the data types in our endpoints.
-            If False, we are client side and we need to include
-            oneOf and discriminator classes inside the data types in our endpoints
+    :param required_types_mixed: Will contain either classes or instance of
+        list or dict.
+    :type required_types_mixed: tuple/list
+    :param spec_property_naming: if True these values came from the server, and
+        we use the data types in our endpoints.  If False, we are client side and we
+        need to include oneOf and discriminator classes inside the data types in our
+        endpoints
+    :type spec_property_naming: bool
 
-    Returns:
-        (valid_classes, dict_valid_class_to_child_types_mixed):
-            valid_classes (tuple): the valid classes that the current item
-                                   should be
-            dict_valid_class_to_child_types_mixed (dict):
-                valid_class (class): this is the key
-                child_types_mixed (list/dict/tuple): describes the valid child
-                    types
+    :return (valid_classes, dict_valid_class_to_child_types_mixed):
+        valid_classes (tuple): The valid classes that the current item should be.
+        dict_valid_class_to_child_types_mixed (dict):
+            valid_class (class): This is the key.
+            child_types_mixed (list/dict/tuple): Describes the valid child types.
+    :rtype: tuple
     """
     valid_classes = []
     child_req_types_by_current_type = {}
@@ -1057,7 +1040,6 @@ def change_keys_js_to_python(input_dict, model_class):
     may have undeclared properties (additionalProperties attribute in the OAS
     document).
     """
-
     if not getattr(model_class, 'attribute_map', None):
         return input_dict
     output_dict = {}
@@ -1091,10 +1073,11 @@ def get_type_error(var_value, path_to_item, valid_classes, key_type=False):
 def deserialize_primitive(data, klass, path_to_item):
     """Deserializes string to primitive type.
 
-    :param data: str/int/float
-    :param klass: str/class the class to convert to
+    :type data: str/int/float
+    :param klass: The class to convert to.
+    :type klass: str/class
 
-    :return: int, float, str, bool, date, datetime
+    :rtype: int, float, str, bool, date, datetime
     """
     additional_message = ""
     try:
@@ -1145,20 +1128,20 @@ def get_discriminator_class(model_class,
                             discr_value, cls_visited):
     """Returns the child class specified by the discriminator.
 
-    Args:
-        model_class (OpenApiModel): the model class.
-        discr_name (string): the name of the discriminator property.
-        discr_value (any): the discriminator value.
-        cls_visited (list): list of model classes that have been visited.
-            Used to determine the discriminator class without
-            visiting circular references indefinitely.
+    :param model_class: The model class.
+    :type model_class: OpenApiModel
+    :param discr_name: The name of the discriminator property.
+    :type discr_name: str
+    :param discr_value: The discriminator value.
+    :param cls_visited: List of model classes that have been visited.  Used to
+        determine the discriminator class without visiting circular references
+        indefinitely.
+    :type cls_visited: list
 
-    Returns:
-        used_model_class (class/None): the chosen child class that will be used
-            to deserialize the data, for example dog.Dog.
-            If a class is not found, None is returned.
+    :return: The chosen child class that will be used to deserialize the data,
+        for example dog.Dog. If a class is not found, None is returned.
+    :rtype: class/None
     """
-
     if model_class in cls_visited:
         # The class has already been visited and no suitable class was found.
         return None
@@ -1175,7 +1158,7 @@ def get_discriminator_class(model_class,
         # Ancestor example: in the GrandparentAnimal -> ParentPet -> ChildCat
         #   hierarchy, the discriminator mappings may be defined at any level
         #   in the hierarchy.
-        # Descendant example:  mammal -> whale/zebra/Pig -> BasquePig/DanishPig
+        # Descendant example: mammal -> whale/zebra/Pig -> BasquePig/DanishPig
         #   if we try to make BasquePig from mammal, we need to travel through
         #   the oneOf descendant discriminators to find BasquePig
         descendant_classes =  model_class._composed_schemas.get('oneOf', ()) + \
@@ -1196,25 +1179,24 @@ def deserialize_model(model_data, model_class, path_to_item, check_type,
                       configuration, spec_property_naming):
     """Deserializes model_data to model instance.
 
-    Args:
-        model_data (int/str/float/bool/none_type/list/dict): data to instantiate the model
-        model_class (OpenApiModel): the model class
-        path_to_item (list): path to the model in the received data
-        check_type (bool): whether to check the data tupe for the values in
-            the model
-        configuration (Configuration): the instance to use to convert files
-        spec_property_naming (bool): True if the variable names in the input
-            data are serialized names as specified in the OpenAPI document.
-            False if the variables names in the input data are python
-            variable names in PEP-8 snake case.
+    :param model_data: Data to instantiate the model.
+    :type model_data: int/str/float/bool/none_type/list/dict
+    :param model_class: The model class.
+    :type model_class: OpenApiModel
+    :param path_to_item: Path to the model in the received data.
+    :type path_to_item: list
+    :param check_type: Whether to check the data tupe for the values in
+        the model.
+    :type check_type: bool
+    :param configuration: The instance to use to convert files.
+    :type configuration: Configuration
+    :param spec_property_naming: True if the variable names in the input
+        data are serialized names as specified in the OpenAPI document.
+        False if the variables names in the input data are python
+        variable names in PEP-8 snake case.
+    :type spec_property_naming: bool
 
-    Returns:
-        model instance
-
-    Raise:
-        ApiTypeError
-        ApiValueError
-        ApiKeyError
+    :return: The model instance.
     """
 
     kw_args = dict(_check_type=check_type,
@@ -1237,22 +1219,22 @@ def deserialize_model(model_data, model_class, path_to_item, check_type,
 
 
 def deserialize_file(response_data, configuration, content_disposition=None):
-    """Deserializes body to file
+    """Deserializes body to file.
 
-    Saves response body into a file in a temporary folder,
-    using the filename from the `Content-Disposition` header if provided.
+    Saves response body into a file in a temporary folder, using the filename
+    from the `Content-Disposition` header if provided.
 
-    Args:
-        param response_data (str):  the file data to write
-        configuration (Configuration): the instance to use to convert files
+    :param response_data: The file data to write.
+    :type response_data: str
+    :param configuration: The instance to use to convert files.
+    :type configuration: Configuration
+    :param content_disposition: The value of the Content-Disposition
+        header.
+    :type content_disposition: str
 
-    Keyword Args:
-        content_disposition (str):  the value of the Content-Disposition
-            header
-
-    Returns:
-        (file_type): the deserialized file which is open
-            The user is responsible for closing and reading the file
+    :return: The deserialized file which is open. The user is responsible for
+        closing and reading the file.
+    :rtype: file_type
     """
     fd, path = tempfile.mkstemp(dir=configuration.temp_folder_path)
     os.close(fd)
@@ -1277,27 +1259,24 @@ def attempt_convert_item(input_value, valid_classes, path_to_item,
                          configuration, spec_property_naming, key_type=False,
                          must_convert=False, check_type=True):
     """
-    Args:
-        input_value (any): the data to convert
-        valid_classes (any): the classes that are valid
-        path_to_item (list): the path to the item to convert
-        configuration (Configuration): the instance to use to convert files
-        spec_property_naming (bool): True if the variable names in the input
-            data are serialized names as specified in the OpenAPI document.
-            False if the variables names in the input data are python
-            variable names in PEP-8 snake case.
-        key_type (bool): if True we need to convert a key type (not supported)
-        must_convert (bool): if True we must convert
-        check_type (bool): if True we check the type or the returned data in
-            ModelComposed/ModelNormal/ModelSimple instances
-
-    Returns:
-        instance (any) the fixed item
-
-    Raises:
-        ApiTypeError
-        ApiValueError
-        ApiKeyError
+    :param input_value: The data to convert.
+    :param valid_classes: The classes that are valid.
+    :param path_to_item: The path to the item to convert.
+    :type path_to_item: list
+    :param configuration: The instance to use to convert files.
+    :type configuration: Configuration
+    :param spec_property_naming: True if the variable names in the input data
+        are serialized names as specified in the OpenAPI document.  False if the
+        variables names in the input data are python variable names in PEP-8 snake
+        case.
+    :type spec_property_naming: bool
+    :param key_type: If True we need to convert a key type (not supported)
+    :type key_type: bool
+    :param must_convert: If True we must convert.
+    :type must_convert: bool
+    :param check_type: If True we check the type or the returned data in
+        ModelComposed/ModelNormal/ModelSimple instances.
+    :type check_type: bool
     """
     valid_classes_ordered = order_response_types(valid_classes)
     valid_classes_coercible = remove_uncoercible(
@@ -1332,18 +1311,18 @@ def attempt_convert_item(input_value, valid_classes, path_to_item,
 
 def is_type_nullable(input_type):
     """
-    Returns true if None is an allowed value for the specified input_type.
+    Returns True if None is an allowed value for the specified input_type.
 
-    A type is nullable if at least one of the following conditions is true:
+    A type is nullable if at least one of the following conditions is True:
     1. The OAS 'nullable' attribute has been specified,
-    1. The type is the 'null' type,
-    1. The type is a anyOf/oneOf composed schema, and a child schema is
+    2. The type is the 'null' type,
+    3. The type is a anyOf/oneOf composed schema, and a child schema is
        the 'null' type.
-    Args:
-        input_type (type): the class of the input_value that we are
-            checking
-    Returns:
-        bool
+
+    :param input_type: The class of the input_value that we are checking.
+    :type input_type: type    
+
+    :rtype: bool
     """
     if input_type is none_type:
         return True
@@ -1352,21 +1331,22 @@ def is_type_nullable(input_type):
     if issubclass(input_type, ModelComposed):
         # If oneOf/anyOf, check if the 'null' type is one of the allowed types.
         for t in input_type._composed_schemas.get('oneOf', ()):
-            if is_type_nullable(t): return True
+            if is_type_nullable(t):
+                return True
         for t in input_type._composed_schemas.get('anyOf', ()):
-            if is_type_nullable(t): return True
+            if is_type_nullable(t):
+                return True
     return False
 
 
 def is_valid_type(input_class_simple, valid_classes):
     """
-    Args:
-        input_class_simple (class): the class of the input_value that we are
-            checking
-        valid_classes (tuple): the valid classes that the current item
-            should be
-    Returns:
-        bool
+    :param input_class_simple: The class of the input_value that we are checking.
+    :type input_class_simple: class:
+    :param valid_classes: The valid classes that the current item should be.
+    :type valid_classes: tuple
+
+    :rtype: bool
     """
     valid_type = input_class_simple in valid_classes
     if not valid_type and (
@@ -1390,30 +1370,30 @@ def is_valid_type(input_class_simple, valid_classes):
 
 def validate_and_convert_types(input_value, required_types_mixed, path_to_item,
                                spec_property_naming, _check_type, configuration=None):
-    """Raises a TypeError is there is a problem, otherwise returns value
+    """Raises a TypeError is there is a problem, otherwise returns value.
 
-    Args:
-        input_value (any): the data to validate/convert
-        required_types_mixed (list/dict/tuple): A list of
-            valid classes, or a list tuples of valid classes, or a dict where
-            the value is a tuple of value classes
-        path_to_item: (list) the path to the data being validated
-            this stores a list of keys or indices to get to the data being
-            validated
-        spec_property_naming (bool): True if the variable names in the input
-            data are serialized names as specified in the OpenAPI document.
-            False if the variables names in the input data are python
-            variable names in PEP-8 snake case.
-        _check_type: (boolean) if true, type will be checked and conversion
-            will be attempted.
-        configuration: (Configuration): the configuration class to use
-            when converting file_type items.
+    :param input_value: The data to validate/convert.
+    :param required_types_mixed: A list of valid classes, or a list tuples of
+        valid classes, or a dict where the value is a tuple of value classes.
+    :type required_types_mixed: list/dict/tuple
+    :param path_to_item: The path to the data being validated this stores a
+        list of keys or indices to get to the data being validated.
+    :type path_to_item: list
+    :param spec_property_naming: True if the variable names in the input
+        data are serialized names as specified in the OpenAPI document.  False
+        if the variables names in the input data are python variable names in PEP-8
+        snake case.
+    :type spec_property_naming: bool
+    :param _check_type: If True, type will be checked and conversion
+        will be attempted.
+    :type _check_type: bool
+    :param configuration:: The configuration class to use when converting
+        file_type items.
+    :type configuration: Configuration
 
-    Returns:
-        the correctly typed value
+    :return: The correctly typed value.
 
-    Raises:
-        ApiTypeError
+    :raise: ApiTypeError
     """
     results = get_required_type_classes(required_types_mixed, spec_property_naming)
     valid_classes, child_req_types_by_current_type = results
@@ -1501,15 +1481,12 @@ def validate_and_convert_types(input_value, required_types_mixed, path_to_item,
 
 
 def model_to_dict(model_instance, serialize=True):
-    """Returns the model properties as a dict
+    """Returns the model properties as a dict.
 
-    Args:
-        model_instance (one of your model instances): the model instance that
-            will be converted to a dict.
-
-    Keyword Args:
-        serialize (bool): if True, the keys in the dict will be values from
-            attribute_map
+    :param model_instance: The model instance that will be converted to a dict.
+    :param serialize: If True, the keys in the dict will be values from
+        attribute_map.
+    :type serialize: bool
     """
     result = {}
 
@@ -1576,14 +1553,14 @@ def model_to_dict(model_instance, serialize=True):
 def type_error_message(var_value=None, var_name=None, valid_classes=None,
                        key_type=None):
     """
-    Keyword Args:
-        var_value (any): the variable which has the type_error
-        var_name (str): the name of the variable which has the typ error
-        valid_classes (tuple): the accepted classes for current_item's
-                                  value
-        key_type (bool): False if our value is a value in a dict
-                         True if it is a key in a dict
-                         False if our item is an item in a list
+    :param var_value: The variable which has the type error.
+    :param var_name: The name of the variable which has the type error.
+    :type var_name: str
+    :param valid_classes: The accepted classes for current_item's value.
+    :type valid_classes: tuple
+    :param key_type: False if our value is a value in a dict True if it is a
+        key in a dict False if our item is an item in a list.
+    :type key_type: bool
     """
     key_or_value = 'value'
     if key_type:
@@ -1602,11 +1579,9 @@ def type_error_message(var_value=None, var_name=None, valid_classes=None,
 
 
 def get_valid_classes_phrase(input_classes):
-    """Returns a string phrase describing what types are allowed
-    """
-    all_classes = list(input_classes)
-    all_classes = sorted(all_classes, key=lambda cls: cls.__name__)
-    all_class_names = [cls.__name__ for cls in all_classes]
+    """Returns a string phrase describing what types are allowed."""
+    all_class_names = [cls.__name__ for cls in input_classes]
+    all_class_names.sort()
     if len(all_class_names) == 1:
         return 'is {0}'.format(all_class_names[0])
     return "is one of [{0}]".format(", ".join(all_class_names))
@@ -1614,20 +1589,19 @@ def get_valid_classes_phrase(input_classes):
 
 def get_allof_instances(self, model_args, constant_args):
     """
-    Args:
-        self: the class we are handling
-        model_args (dict): var_name to var_value
-            used to make instances
-        constant_args (dict):
-            metadata arguments:
+    :param self: The class we are handling.
+    :param model_args: var_name to var_value used to make instances.
+    :type model_args: dict
+    :param constant_args:
+        metadata arguments:
             _check_type
             _path_to_item
             _spec_property_naming
             _configuration
             _visited_composed_classes
+    :type constant_args: dict
 
-    Returns
-        composed_instances (list)
+    :rtype: list
     """
     composed_instances = []
     for allof_class in self._composed_schemas['allOf']:
@@ -1658,24 +1632,20 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
     In OAS 3.x, the payload MUST, by validation, match exactly one of the
     schemas described by oneOf.
 
-    Args:
-        cls: the class we are handling
-        model_kwargs (dict): var_name to var_value
-            The input data, e.g. the payload that must match a oneOf schema
-            in the OpenAPI document.
-        constant_kwargs (dict): var_name to var_value
-            args that every model requires, including configuration, server
-            and path to item.
-
-    Kwargs:
-        model_arg: (int, float, bool, str, date, datetime, ModelSimple, None):
-            the value to assign to a primitive class or ModelSimple class
-            Notes:
-            - this is only passed in when oneOf includes types which are not object
-            - None is used to suppress handling of model_arg, nullable models are handled in __new__
-
-    Returns
-        oneof_instance (instance)
+    :param cls: The class we are handling.
+    :param model_kwargs: var_name to var_value.
+        The input data, e.g. the payload that must match a oneOf schema
+        in the OpenAPI document.
+    :type model_kwargs: dict
+    :param constant_kwargs: var_name to var_value
+        args that every model requires, including configuration, server
+        and path to item.
+    :type constant_kwargs: dict
+    :param model_arg: The value to assign to a primitive class or ModelSimple class.
+        Notes:
+        - this is only passed in when oneOf includes types which are not object
+        - None is used to suppress handling of model_arg, nullable models are handled in __new__
+    :type model_arg: int, float, bool, str, date, datetime, ModelSimple, None
     """
     if len(cls._composed_schemas['oneOf']) == 0:
         return None
@@ -1725,17 +1695,17 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
 
 def get_anyof_instances(self, model_args, constant_args):
     """
-    Args:
-        self: the class we are handling
-        model_args (dict): var_name to var_value
-            The input data, e.g. the payload that must match at least one
-            anyOf child schema in the OpenAPI document.
-        constant_args (dict): var_name to var_value
-            args that every model requires, including configuration, server
-            and path to item.
+    :param self: the class we are handling
+    :param model_args: var_name to var_value
+        The input data, e.g. the payload that must match at least one
+        anyOf child schema in the OpenAPI document.
+    :type model_args: dict
+    :param constant_args: var_name to var_value
+        args that every model requires, including configuration, server
+        and path to item.
+    :type constant_args: dict
 
-    Returns
-        anyof_instances (list)
+    :rtype: list
     """
     anyof_instances = []
     if len(self._composed_schemas['anyOf']) == 0:
@@ -1795,10 +1765,9 @@ def get_discarded_args(self, composed_instances, model_args):
 
 def validate_get_composed_info(constant_args, model_args, self):
     """
-    For composed schemas, generate schema instances for
-    all schemas in the oneOf/anyOf/allOf definition. If additional
-    properties are allowed, also assign those properties on
-    all matched schemas that contain additionalProperties.
+    For composed schemas, generate schema instances for all schemas in the
+    oneOf/anyOf/allOf definition. If additional properties are allowed, also assign
+    those properties on all matched schemas that contain additionalProperties.
     Openapi schemas are python classes.
 
     Exceptions are raised if:
@@ -1806,24 +1775,26 @@ def validate_get_composed_info(constant_args, model_args, self):
     - no anyOf schema matches the model_args input data
     - any of the allOf schemas do not match the model_args input data
 
-    Args:
-        constant_args (dict): these are the args that every model requires
-        model_args (dict): these are the required and optional spec args that
-            were passed in to make this model
-        self (class): the class that we are instantiating
-            This class contains self._composed_schemas
+    :param constant_args: These are the args that every model requires.
+    :type constant_args: dict
+    :param model_args: These are the required and optional spec args that
+        were passed in to make this model.
+    :type model_args: dict
+    :param self: The class that we are instantiating.  This class contains
+        self._composed_schemas.
+    :type self: class
 
-    Returns:
-        composed_info (list): length three
-            composed_instances (list): the composed instances which are not
-                self
-            var_name_to_model_instances (dict): a dict going from var_name
-                to the model_instance which holds that var_name
-                the model_instance may be self or an instance of one of the
-                classes in self.composed_instances()
-            additional_properties_model_instances (list): a list of the
-                model instances which have the property
-                additional_properties_type. This list can include self
+    :return:
+        composed_instances (list): the composed instances which are not
+            self
+        var_name_to_model_instances (dict): a dict going from var_name
+            to the model_instance which holds that var_name
+            the model_instance may be self or an instance of one of the
+            classes in self.composed_instances()
+        additional_properties_model_instances (list): a list of the
+            model instances which have the property
+            additional_properties_type. This list can include self
+    :rtype: list
     """
     # create composed_instances
     composed_instances = []

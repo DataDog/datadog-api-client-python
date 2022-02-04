@@ -33,8 +33,9 @@ class OrganizationSettingsSaml(ModelNormal):
     def __init__(self, *args, **kwargs):
         """OrganizationSettingsSaml - a model defined in OpenAPI
 
-        Keyword Args:
-            enabled (bool): [optional] Whether or not SAML is enabled for this organization.
+
+        :param enabled: Whether or not SAML is enabled for this organization.
+        :type enabled: bool, optional
         """
         super().__init__(kwargs)
 

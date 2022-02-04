@@ -50,11 +50,15 @@ class FullApplicationKey(ModelNormal):
     def __init__(self, *args, **kwargs):
         """FullApplicationKey - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (FullApplicationKeyAttributes): [optional]
-            id (str): [optional] ID of the application key.
-            relationships (ApplicationKeyRelationships): [optional]
-            type (ApplicationKeysType): [optional]
+
+        :type attributes: FullApplicationKeyAttributes, optional
+
+        :param id: ID of the application key.
+        :type id: str, optional
+
+        :type relationships: ApplicationKeyRelationships, optional
+
+        :type type: ApplicationKeysType, optional
         """
         super().__init__(kwargs)
 

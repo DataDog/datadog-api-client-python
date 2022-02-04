@@ -38,12 +38,8 @@ class LogsAggregateBucketValueTimeseries(ModelSimple):
         """LogsAggregateBucketValueTimeseries - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] ([LogsAggregateBucketValueTimeseriesPoint]): A timeseries array
-
-        Keyword Args:
-            value ([LogsAggregateBucketValueTimeseriesPoint]): A timeseries array
+        :param value: A timeseries array
+        :type value: [LogsAggregateBucketValueTimeseriesPoint]
         """
         super().__init__(kwargs)
 

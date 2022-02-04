@@ -48,12 +48,20 @@ class SyntheticsBrowserTestResultShortResult(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsBrowserTestResultShortResult - a model defined in OpenAPI
 
-        Keyword Args:
-            device (SyntheticsDevice): [optional]
-            duration (float): [optional] Length in second of the browser test run.
-            error_count (int): [optional] Amount of errors collected for a single browser test run.
-            step_count_completed (int): [optional] Amount of browser test steps completed before failing.
-            step_count_total (int): [optional] Total amount of browser test steps.
+
+        :type device: SyntheticsDevice, optional
+
+        :param duration: Length in second of the browser test run.
+        :type duration: float, optional
+
+        :param error_count: Amount of errors collected for a single browser test run.
+        :type error_count: int, optional
+
+        :param step_count_completed: Amount of browser test steps completed before failing.
+        :type step_count_completed: int, optional
+
+        :param step_count_total: Total amount of browser test steps.
+        :type step_count_total: int, optional
         """
         super().__init__(kwargs)
 

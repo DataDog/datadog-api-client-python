@@ -40,8 +40,9 @@ class ApiKeyListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ApiKeyListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            api_keys ([ApiKey]): [optional] Array of API keys.
+
+        :param api_keys: Array of API keys.
+        :type api_keys: [ApiKey], optional
         """
         super().__init__(kwargs)
 

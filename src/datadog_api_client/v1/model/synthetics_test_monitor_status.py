@@ -37,12 +37,8 @@ class SyntheticsTestMonitorStatus(ModelSimple):
         """SyntheticsTestMonitorStatus - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (int): The status of your Synthetic monitor. * `O` for not triggered * `1` for triggered * `2` for no data Must be one of [0, 1, 2].
-
-        Keyword Args:
-            value (int): The status of your Synthetic monitor. * `O` for not triggered * `1` for triggered * `2` for no data Must be one of [0, 1, 2].
+        :param value: The status of your Synthetic monitor. * `O` for not triggered * `1` for triggered * `2` for no data Must be one of [0, 1, 2].
+        :type value: int
         """
         super().__init__(kwargs)
 

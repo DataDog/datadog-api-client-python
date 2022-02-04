@@ -39,12 +39,8 @@ class DashboardType(ModelSimple):
         """DashboardType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The type of the dashboard. Must be one of ["custom_timeboard", "custom_screenboard", "integration_screenboard", "integration_timeboard", "host_timeboard"].
-
-        Keyword Args:
-            value (str): The type of the dashboard. Must be one of ["custom_timeboard", "custom_screenboard", "integration_screenboard", "integration_timeboard", "host_timeboard"].
+        :param value: The type of the dashboard. Must be one of ["custom_timeboard", "custom_screenboard", "integration_screenboard", "integration_timeboard", "host_timeboard"].
+        :type value: str
         """
         super().__init__(kwargs)
 

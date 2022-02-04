@@ -50,15 +50,21 @@ class LogsUserAgentParser(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """LogsUserAgentParser - a model defined in OpenAPI
 
-        Args:
-            type (LogsUserAgentParserType):
 
-        Keyword Args:
-            sources ([str]): Array of source attributes. Defaults to ["http.useragent"].
-            target (str): Name of the parent attribute that contains all the extracted details from the `sources`. Defaults to "http.useragent_details".
-            is_enabled (bool): [optional] Whether or not the processor is enabled. If omitted the server will use the default value of False.
-            is_encoded (bool): [optional] Define if the source attribute is URL encoded or not. If omitted the server will use the default value of False.
-            name (str): [optional] Name of the processor.
+        :type type: LogsUserAgentParserType
+        :param sources: Array of source attributes. Defaults to ["http.useragent"].
+        :type sources: [str]
+        :param target: Name of the parent attribute that contains all the extracted details from the `sources`. Defaults to "http.useragent_details".
+        :type target: str
+
+        :param is_enabled: Whether or not the processor is enabled. If omitted the server will use the default value of False.
+        :type is_enabled: bool, optional
+
+        :param is_encoded: Define if the source attribute is URL encoded or not. If omitted the server will use the default value of False.
+        :type is_encoded: bool, optional
+
+        :param name: Name of the processor.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

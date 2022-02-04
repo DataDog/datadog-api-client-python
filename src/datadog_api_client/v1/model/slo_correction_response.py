@@ -40,8 +40,8 @@ class SLOCorrectionResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOCorrectionResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data (SLOCorrection): [optional]
+
+        :type data: SLOCorrection, optional
         """
         super().__init__(kwargs)
 

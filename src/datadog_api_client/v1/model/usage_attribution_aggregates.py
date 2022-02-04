@@ -36,12 +36,8 @@ class UsageAttributionAggregates(ModelSimple):
         """UsageAttributionAggregates - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] ([UsageAttributionAggregatesBody]): An array of available aggregates.
-
-        Keyword Args:
-            value ([UsageAttributionAggregatesBody]): An array of available aggregates.
+        :param value: An array of available aggregates.
+        :type value: [UsageAttributionAggregatesBody]
         """
         super().__init__(kwargs)
 

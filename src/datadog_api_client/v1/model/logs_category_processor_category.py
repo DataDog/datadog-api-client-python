@@ -42,9 +42,11 @@ class LogsCategoryProcessorCategory(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsCategoryProcessorCategory - a model defined in OpenAPI
 
-        Keyword Args:
-            filter (LogsFilter): [optional]
-            name (str): [optional] Value to assign to the target attribute.
+
+        :type filter: LogsFilter, optional
+
+        :param name: Value to assign to the target attribute.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

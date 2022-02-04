@@ -50,11 +50,15 @@ class LogsAggregateSort(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsAggregateSort - a model defined in OpenAPI
 
-        Keyword Args:
-            aggregation (LogsAggregationFunction): [optional]
-            metric (str): [optional] The metric to sort by (only used for `type=measure`)
-            order (LogsSortOrder): [optional]
-            type (LogsAggregateSortType): [optional]
+
+        :type aggregation: LogsAggregationFunction, optional
+
+        :param metric: The metric to sort by (only used for `type=measure`)
+        :type metric: str, optional
+
+        :type order: LogsSortOrder, optional
+
+        :type type: LogsAggregateSortType, optional
         """
         super().__init__(kwargs)
 

@@ -34,12 +34,8 @@ class LogsArchiveDestinationGCSType(ModelSimple):
         """LogsArchiveDestinationGCSType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the GCS archive destination. If omitted defaults to "gcs". Must be one of ["gcs"].
-
-        Keyword Args:
-            value (str): Type of the GCS archive destination. If omitted defaults to "gcs". Must be one of ["gcs"].
+        :param value: Type of the GCS archive destination. If omitted defaults to "gcs". Must be one of ["gcs"].
+        :type value: str
         """
         super().__init__(kwargs)
 

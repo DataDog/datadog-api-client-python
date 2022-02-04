@@ -34,12 +34,8 @@ class SLOWidgetDefinitionType(ModelSimple):
         """SLOWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the SLO widget. If omitted defaults to "slo". Must be one of ["slo"].
-
-        Keyword Args:
-            value (str): Type of the SLO widget. If omitted defaults to "slo". Must be one of ["slo"].
+        :param value: Type of the SLO widget. If omitted defaults to "slo". Must be one of ["slo"].
+        :type value: str
         """
         super().__init__(kwargs)
 

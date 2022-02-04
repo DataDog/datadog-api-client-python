@@ -33,8 +33,9 @@ class OrganizationSettingsSamlIdpInitiatedLogin(ModelNormal):
     def __init__(self, *args, **kwargs):
         """OrganizationSettingsSamlIdpInitiatedLogin - a model defined in OpenAPI
 
-        Keyword Args:
-            enabled (bool): [optional] Whether SAML IdP initiated login is enabled, learn more in the [SAML documentation](https://docs.datadoghq.com/account_management/saml/#idp-initiated-login).
+
+        :param enabled: Whether SAML IdP initiated login is enabled, learn more in the [SAML documentation](https://docs.datadoghq.com/account_management/saml/#idp-initiated-login).
+        :type enabled: bool, optional
         """
         super().__init__(kwargs)
 

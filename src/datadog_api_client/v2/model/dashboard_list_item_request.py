@@ -42,11 +42,11 @@ class DashboardListItemRequest(ModelNormal):
     def __init__(self, id, type, *args, **kwargs):
         """DashboardListItemRequest - a model defined in OpenAPI
 
-        Args:
-            id (str): ID of the dashboard.
-            type (DashboardType):
 
-        Keyword Args:
+        :param id: ID of the dashboard.
+        :type id: str
+
+        :type type: DashboardType
         """
         super().__init__(kwargs)
 

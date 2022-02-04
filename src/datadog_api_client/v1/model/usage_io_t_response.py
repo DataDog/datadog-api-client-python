@@ -40,8 +40,9 @@ class UsageIoTResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageIoTResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageIoTHour]): [optional] Get hourly usage for IoT.
+
+        :param usage: Get hourly usage for IoT.
+        :type usage: [UsageIoTHour], optional
         """
         super().__init__(kwargs)
 

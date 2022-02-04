@@ -52,13 +52,14 @@ class NotebookDistributionCellAttributes(ModelNormal):
     def __init__(self, definition, *args, **kwargs):
         """NotebookDistributionCellAttributes - a model defined in OpenAPI
 
-        Args:
-            definition (DistributionWidgetDefinition):
 
-        Keyword Args:
-            graph_size (NotebookGraphSize): [optional]
-            split_by (NotebookSplitBy): [optional]
-            time (NotebookCellTime): [optional]
+        :type definition: DistributionWidgetDefinition
+
+        :type graph_size: NotebookGraphSize, optional
+
+        :type split_by: NotebookSplitBy, optional
+
+        :type time: NotebookCellTime, optional
         """
         super().__init__(kwargs)
 

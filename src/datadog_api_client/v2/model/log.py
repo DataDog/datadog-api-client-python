@@ -46,10 +46,13 @@ class Log(ModelNormal):
     def __init__(self, *args, **kwargs):
         """Log - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (LogAttributes): [optional]
-            id (str): [optional] Unique ID of the Log.
-            type (LogType): [optional]
+
+        :type attributes: LogAttributes, optional
+
+        :param id: Unique ID of the Log.
+        :type id: str, optional
+
+        :type type: LogType, optional
         """
         super().__init__(kwargs)
 

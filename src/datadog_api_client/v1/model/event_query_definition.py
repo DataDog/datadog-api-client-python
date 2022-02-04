@@ -35,11 +35,12 @@ class EventQueryDefinition(ModelNormal):
     def __init__(self, search, tags_execution, *args, **kwargs):
         """EventQueryDefinition - a model defined in OpenAPI
 
-        Args:
-            search (str): The query being made on the event.
-            tags_execution (str): The execution method for multi-value filters. Can be either and or or.
 
-        Keyword Args:
+        :param search: The query being made on the event.
+        :type search: str
+
+        :param tags_execution: The execution method for multi-value filters. Can be either and or or.
+        :type tags_execution: str
         """
         super().__init__(kwargs)
 

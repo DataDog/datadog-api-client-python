@@ -37,12 +37,8 @@ class TreeMapGroupBy(ModelSimple):
         """TreeMapGroupBy - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The attribute used to group elements in the widget. Must be one of ["user", "family", "process"].
-
-        Keyword Args:
-            value (str): The attribute used to group elements in the widget. Must be one of ["user", "family", "process"].
+        :param value: The attribute used to group elements in the widget. Must be one of ["user", "family", "process"].
+        :type value: str
         """
         super().__init__(kwargs)
 

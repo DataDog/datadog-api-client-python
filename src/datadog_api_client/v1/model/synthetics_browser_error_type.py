@@ -36,12 +36,8 @@ class SyntheticsBrowserErrorType(ModelSimple):
         """SyntheticsBrowserErrorType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Error type returned by a browser test. Must be one of ["network", "js"].
-
-        Keyword Args:
-            value (str): Error type returned by a browser test. Must be one of ["network", "js"].
+        :param value: Error type returned by a browser test. Must be one of ["network", "js"].
+        :type value: str
         """
         super().__init__(kwargs)
 

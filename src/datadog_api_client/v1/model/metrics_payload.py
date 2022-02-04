@@ -40,10 +40,9 @@ class MetricsPayload(ModelNormal):
     def __init__(self, series, *args, **kwargs):
         """MetricsPayload - a model defined in OpenAPI
 
-        Args:
-            series ([Series]): A list of time series to submit to Datadog.
 
-        Keyword Args:
+        :param series: A list of time series to submit to Datadog.
+        :type series: [Series]
         """
         super().__init__(kwargs)
 

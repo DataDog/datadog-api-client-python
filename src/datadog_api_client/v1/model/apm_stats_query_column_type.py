@@ -48,13 +48,16 @@ class ApmStatsQueryColumnType(ModelNormal):
     def __init__(self, name, *args, **kwargs):
         """ApmStatsQueryColumnType - a model defined in OpenAPI
 
-        Args:
-            name (str): Column name.
 
-        Keyword Args:
-            alias (str): [optional] A user-assigned alias for the column.
-            cell_display_mode (TableWidgetCellDisplayMode): [optional]
-            order (WidgetSort): [optional]
+        :param name: Column name.
+        :type name: str
+
+        :param alias: A user-assigned alias for the column.
+        :type alias: str, optional
+
+        :type cell_display_mode: TableWidgetCellDisplayMode, optional
+
+        :type order: WidgetSort, optional
         """
         super().__init__(kwargs)
 

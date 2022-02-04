@@ -40,8 +40,9 @@ class PermissionsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """PermissionsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([Permission]): [optional] Array of permissions.
+
+        :param data: Array of permissions.
+        :type data: [Permission], optional
         """
         super().__init__(kwargs)
 

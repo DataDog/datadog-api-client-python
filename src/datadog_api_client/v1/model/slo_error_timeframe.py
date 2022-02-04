@@ -38,12 +38,8 @@ class SLOErrorTimeframe(ModelSimple):
         """SLOErrorTimeframe - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The timeframe of the threshold associated with this error or \"all\" if all thresholds are affected. Must be one of ["7d", "30d", "90d", "all"].
-
-        Keyword Args:
-            value (str): The timeframe of the threshold associated with this error or \"all\" if all thresholds are affected. Must be one of ["7d", "30d", "90d", "all"].
+        :param value: The timeframe of the threshold associated with this error or \"all\" if all thresholds are affected. Must be one of ["7d", "30d", "90d", "all"].
+        :type value: str
         """
         super().__init__(kwargs)
 

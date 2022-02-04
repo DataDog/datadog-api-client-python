@@ -36,12 +36,8 @@ class ContentEncoding(ModelSimple):
         """ContentEncoding - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): HTTP header used to compress the media-type. Must be one of ["gzip", "deflate"].
-
-        Keyword Args:
-            value (str): HTTP header used to compress the media-type. Must be one of ["gzip", "deflate"].
+        :param value: HTTP header used to compress the media-type. Must be one of ["gzip", "deflate"].
+        :type value: str
         """
         super().__init__(kwargs)
 

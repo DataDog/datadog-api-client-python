@@ -36,12 +36,8 @@ class DashboardLayoutType(ModelSimple):
         """DashboardLayoutType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Layout type of the dashboard. Must be one of ["ordered", "free"].
-
-        Keyword Args:
-            value (str): Layout type of the dashboard. Must be one of ["ordered", "free"].
+        :param value: Layout type of the dashboard. Must be one of ["ordered", "free"].
+        :type value: str
         """
         super().__init__(kwargs)
 

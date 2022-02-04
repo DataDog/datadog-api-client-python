@@ -34,12 +34,8 @@ class LogsCategoryProcessorType(ModelSimple):
         """LogsCategoryProcessorType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of logs category processor. If omitted defaults to "category-processor". Must be one of ["category-processor"].
-
-        Keyword Args:
-            value (str): Type of logs category processor. If omitted defaults to "category-processor". Must be one of ["category-processor"].
+        :param value: Type of logs category processor. If omitted defaults to "category-processor". Must be one of ["category-processor"].
+        :type value: str
         """
         super().__init__(kwargs)
 

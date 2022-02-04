@@ -25,142 +25,59 @@ class Configuration(object):
     Ref: https://openapi-generator.tech
     Do not edit the class manually.
 
-    :param host: Base url
+    :param host: Base url.
     :param api_key: Dict to store API key(s).
-      Each entry in the dict specifies an API key.
-      The dict key is the name of the security scheme in the OAS specification.
-      The dict value is the API key secret.
-    :param api_key_prefix: Dict to store API prefix (e.g. Bearer)
-      The dict key is the name of the security scheme in the OAS specification.
-      The dict value is an API key prefix when generating the auth data.
-    :param username: Username for HTTP basic authentication
-    :param password: Password for HTTP basic authentication
+        Each entry in the dict specifies an API key.
+        The dict key is the name of the security scheme in the OAS specification.
+        The dict value is the API key secret.
+    :param api_key_prefix: Dict to store API prefix (e.g. Bearer).
+        The dict key is the name of the security scheme in the OAS specification.
+        The dict value is an API key prefix when generating the auth data.
+    :param username: Username for HTTP basic authentication.
+    :param password: Password for HTTP basic authentication.
     :param discard_unknown_keys: Boolean value indicating whether to discard
-      unknown properties. A server may send a response that includes additional
-      properties that are not known by the client in the following scenarios:
-      1. The OpenAPI document is incomplete, i.e. it does not match the server
-         implementation.
-      2. The client was generated using an older version of the OpenAPI document
-         and the server has been upgraded since then.
-      If a schema in the OpenAPI document defines the additionalProperties attribute,
-      then all undeclared properties received by the server are injected into the
-      additional properties map. In that case, there are undeclared properties, and
-      nothing to discard.
-    :param disabled_client_side_validations (string): Comma-separated list of
-      JSON schema validation keywords to disable JSON schema structural validation
-      rules. The following keywords may be specified: multipleOf, maximum,
-      exclusiveMaximum, minimum, exclusiveMinimum, maxLength, minLength, pattern,
-      maxItems, minItems.
-      By default, the validation is performed for data generated locally by the client
-      and data received from the server, independent of any validation performed by
-      the server side. If the input data does not satisfy the JSON schema validation
-      rules specified in the OpenAPI document, an exception is raised.
-      If disabled_client_side_validations is set, structural validation is
-      disabled. This can be useful to troubleshoot data validation problem, such as
-      when the OpenAPI document validation rules do not match the actual API data
-      received by the server.
+        unknown properties. A server may send a response that includes additional
+        properties that are not known by the client in the following scenarios:
+        1. The OpenAPI document is incomplete, i.e. it does not match the server
+           implementation.
+        2. The client was generated using an older version of the OpenAPI document
+           and the server has been upgraded since then.
+        If a schema in the OpenAPI document defines the additionalProperties
+        attribute, then all undeclared properties received by the server are injected
+        into the additional properties map. In that case, there are undeclared
+        properties, and nothing to discard.
+    :param disabled_client_side_validations: Comma-separated list of
+        JSON schema validation keywords to disable JSON schema structural validation
+        rules. The following keywords may be specified: multipleOf, maximum,
+        exclusiveMaximum, minimum, exclusiveMinimum, maxLength, minLength, pattern,
+        maxItems, minItems.
+        By default, the validation is performed for data generated locally by the client
+        and data received from the server, independent of any validation performed by
+        the server side. If the input data does not satisfy the JSON schema validation
+        rules specified in the OpenAPI document, an exception is raised.
+        If disabled_client_side_validations is set, structural validation is
+        disabled. This can be useful to troubleshoot data validation problem, such as
+        when the OpenAPI document validation rules do not match the actual API data
+        received by the server.
+    :type disabled_client_side_validations: str
 {{#hasHttpSignatureMethods}}
     :param signing_info: Configuration parameters for the HTTP signature security scheme.
         Must be an instance of {{{packageName}}}.signing.HttpSigningConfiguration
 {{/hasHttpSignatureMethods}}
     :param server_index: Index to servers configuration.
     :param server_variables: Mapping with string values to replace variables in
-      templated server configuration. The validation of enums is performed for
-      variables with defined enum values before.
-    :param server_operation_index: Mapping from operation ID to an index to server
-      configuration.
+        templated server configuration. The validation of enums is performed for
+        variables with defined enum values before.
+    :param server_operation_index: Mapping from operation ID to an index to
+        server configuration.
     :param server_operation_variables: Mapping from operation ID to a mapping with
-      string values to replace variables in templated server configuration.
-      The validation of enums is performed for variables with defined enum values before.
+        string values to replace variables in templated server configuration.
+        The validation of enums is performed for variables with defined enum values before.
     :param ssl_ca_cert: The path to a file of concatenated CA certificates
-      in PEM format
+        in PEM format.
     :param compress: Boolean indicating whether we accept encoding responses or not.
-
-{{#hasAuthMethods}}
-    :Example:
-{{#hasApiKeyMethods}}
-
-    API Key Authentication Example.
-    Given the following security scheme in the OpenAPI specification:
-      components:
-        securitySchemes:
-          cookieAuth:         # name for the security scheme
-            type: apiKey
-            in: cookie
-            name: JSESSIONID  # cookie name
-
-    You can programmatically set the cookie:
-
-conf = {{{packageName}}}.Configuration(
-    api_key={'cookieAuth': 'abc123'}
-    api_key_prefix={'cookieAuth': 'JSESSIONID'}
-)
-
-    The following cookie will be added to the HTTP request:
-       Cookie: JSESSIONID abc123
-{{/hasApiKeyMethods}}
-{{#hasHttpBasicMethods}}
-
-    HTTP Basic Authentication Example.
-    Given the following security scheme in the OpenAPI specification:
-      components:
-        securitySchemes:
-          http_basic_auth:
-            type: http
-            scheme: basic
-
-    Configure API client with HTTP basic authentication:
-
-conf = {{{packageName}}}.Configuration(
-    username='the-user',
-    password='the-password',
-)
-
-{{/hasHttpBasicMethods}}
-{{#hasHttpSignatureMethods}}
-
-    HTTP Signature Authentication Example.
-    Given the following security scheme in the OpenAPI specification:
-      components:
-        securitySchemes:
-          http_basic_auth:
-            type: http
-            scheme: signature
-
-    Configure API client with HTTP signature authentication. Use the 'hs2019' signature scheme,
-    sign the HTTP requests with the RSA-SSA-PSS signature algorithm, and set the expiration time
-    of the signature to 5 minutes after the signature has been created.
-    Note you can use the constants defined in the {{{packageName}}}.signing module, and you can
-    also specify arbitrary HTTP headers to be included in the HTTP signature, except for the
-    'Authorization' header, which is used to carry the signature.
-
-    One may be tempted to sign all headers by default, but in practice it rarely works.
-    This is because explicit proxies, transparent proxies, TLS termination endpoints or
-    load balancers may add/modify/remove headers. Include the HTTP headers that you know
-    are not going to be modified in transit.
-
-conf = {{{packageName}}}.Configuration(
-    signing_info = {{{packageName}}}.signing.HttpSigningConfiguration(
-        key_id =                 'my-key-id',
-        private_key_path =       'rsa.pem',
-        signing_scheme =         {{{packageName}}}.signing.SCHEME_HS2019,
-        signing_algorithm =      {{{packageName}}}.signing.ALGORITHM_RSASSA_PSS,
-        signed_headers =         [{{{packageName}}}.signing.HEADER_REQUEST_TARGET,
-                                    {{{packageName}}}.signing.HEADER_CREATED,
-                                    {{{packageName}}}.signing.HEADER_EXPIRES,
-                                    {{{packageName}}}.signing.HEADER_HOST,
-                                    {{{packageName}}}.signing.HEADER_DATE,
-                                    {{{packageName}}}.signing.HEADER_DIGEST,
-                                    'Content-Type',
-                                    'User-Agent'
-                                    ],
-        signature_max_validity = datetime.timedelta(minutes=5)
-    )
-)
-{{/hasHttpSignatureMethods}}
 {{/hasAuthMethods}}
     """
-
     _default = None
 
     def __init__(self, host=None,
@@ -177,119 +94,53 @@ conf = {{{packageName}}}.Configuration(
                  ssl_ca_cert=None,
                  compress=True,
                  ):
-        """Constructor
-        """
+        """Constructor."""
         self._base_path = "{{{basePath}}}" if host is None else host
-        """Default Base url
-        """
         self.server_index = 0 if server_index is None and host is None else server_index
         self.server_operation_index = server_operation_index or {}
-        """Default server index
-        """
         self.server_variables = server_variables or {}
         self.server_operation_variables = server_operation_variables or {}
-        """Default server variables
-        """
         self.temp_folder_path = None
-        """Temp file folder for downloading files
-        """
+
         # Authentication Settings
         self.access_token = access_token
         self.api_key = {}
         if api_key:
             self.api_key = api_key
-        """dict to store API key(s)
-        """
+
         self.api_key_prefix = {}
         if api_key_prefix:
             self.api_key_prefix = api_key_prefix
-        """dict to store API prefix (e.g. Bearer)
-        """
+
         self.refresh_api_key_hook = None
-        """function hook to refresh API key if expired
-        """
         self.username = username
-        """Username for HTTP basic authentication
-        """
         self.password = password
-        """Password for HTTP basic authentication
-        """
         self.discard_unknown_keys = discard_unknown_keys
         self.disabled_client_side_validations = disabled_client_side_validations
 {{#hasHttpSignatureMethods}}
         if signing_info is not None:
             signing_info.host = host
         self.signing_info = signing_info
-        """The HTTP signing configuration
-        """
 {{/hasHttpSignatureMethods}}
         self.logger = {}
-        """Logging Settings
-        """
         self.logger["package_logger"] = logging.getLogger("{{packageName}}")
         self.logger["urllib3_logger"] = logging.getLogger("urllib3")
         self.logger_format = '%(asctime)s %(levelname)s %(message)s'
-        """Log format
-        """
         self.logger_stream_handler = None
-        """Log stream handler
-        """
         self.logger_file_handler = None
-        """Log file handler
-        """
         self.logger_file = None
-        """Debug file location
-        """
         self.debug = False
-        """Debug switch
-        """
 
         self.verify_ssl = True
-        """SSL/TLS verification
-           Set this to false to skip verifying SSL certificate when calling API
-           from https server.
-        """
         self.ssl_ca_cert = ssl_ca_cert
-        """Set this to customize the certificate file to verify the peer.
-        """
         self.cert_file = None
-        """client certificate file
-        """
         self.key_file = None
-        """client key file
-        """
         self.assert_hostname = None
-        """Set this to True/False to enable/disable SSL hostname verification.
-        """
-
-        {{#asyncio}}
-        self.connection_pool_maxsize = 100
-        """This value is passed to the aiohttp to limit simultaneous connections.
-           Default values is 100, None means no-limit.
-        """
-        {{/asyncio}}
-        {{^asyncio}}
-        self.connection_pool_maxsize = multiprocessing.cpu_count() * 5
-        """urllib3 connection pool's maximum number of connections saved
-           per pool. urllib3 uses 1 connection as default value, but this is
-           not the best value when you are making a lot of possibly parallel
-           requests to the same host, which is often the case here.
-           cpu_count * 5 is used as default value to increase performance.
-        """
-        {{/asyncio}}
 
         self.proxy = None
-        """Proxy URL
-        """
         self.proxy_headers = None
-        """Proxy headers
-        """
         self.safe_chars_for_path_param = ''
-        """Safe chars for path_param
-        """
         self.retries = None
-        """Adding retries to override urllib3 default value 3
-        """
         # Enable client side validation
         self.client_side_validation = True
 
@@ -333,9 +184,9 @@ conf = {{{packageName}}}.Configuration(
         for k, v in self.__dict__.items():
             if k not in ('logger', 'logger_file_handler'):
                 setattr(result, k, copy.deepcopy(v, memo))
-        # shallow copy of loggers
+        # Shallow copy of loggers
         result.logger = copy.copy(self.logger)
-        # use setters to configure loggers
+        # Use setters to configure loggers
         result.logger_file = self.logger_file
         result.debug = self.debug
         return result
@@ -388,10 +239,10 @@ conf = {{{packageName}}}.Configuration(
         If the logger_file is None, then add stream handler and remove file
         handler. Otherwise, add file handler and remove stream handler.
 
-        :param value: The logger_file path.
-        :type: str
+        :return: The logger_file path.
+        :rtype value: str
         """
-        return self.__logger_file
+        return self._logger_file
 
     @logger_file.setter
     def logger_file(self, value):
@@ -401,35 +252,35 @@ conf = {{{packageName}}}.Configuration(
         handler. Otherwise, add file handler and remove stream handler.
 
         :param value: The logger_file path.
-        :type: str
+        :type value: str
         """
-        self.__logger_file = value
-        if self.__logger_file:
+        self._logger_file = value
+        if self._logger_file:
             # If set logging file,
             # then add file handler and remove stream handler.
-            self.logger_file_handler = logging.FileHandler(self.__logger_file)
+            self.logger_file_handler = logging.FileHandler(self._logger_file)
             self.logger_file_handler.setFormatter(self.logger_formatter)
             for _, logger in self.logger.items():
                 logger.addHandler(self.logger_file_handler)
 
     @property
     def debug(self):
-        """Debug status
+        """Debug status.
 
-        :param value: The debug status, True or False.
-        :type: bool
+        :return: The debug status, True or False.
+        :rtype: bool
         """
-        return self.__debug
+        return self._debug
 
     @debug.setter
     def debug(self, value):
-        """Debug status
+        """Debug status.
 
         :param value: The debug status, True or False.
-        :type: bool
+        :type value: bool
         """
-        self.__debug = value
-        if self.__debug:
+        self._debug = value
+        if self._debug:
             # if debug status is True, turn on debug logging
             for _, logger in self.logger.items():
                 logger.setLevel(logging.DEBUG)
@@ -449,10 +300,10 @@ conf = {{{packageName}}}.Configuration(
 
         The logger_formatter will be updated when sets logger_format.
 
-        :param value: The format string.
-        :type: str
+        :return: The format string.
+        :rtype: str
         """
-        return self.__logger_format
+        return self._logger_format
 
     @logger_format.setter
     def logger_format(self, value):
@@ -461,16 +312,17 @@ conf = {{{packageName}}}.Configuration(
         The logger_formatter will be updated when sets logger_format.
 
         :param value: The format string.
-        :type: str
+        :type value: str
         """
-        self.__logger_format = value
-        self.logger_formatter = logging.Formatter(self.__logger_format)
+        self._logger_format = value
+        self.logger_formatter = logging.Formatter(self._logger_format)
 
     def get_api_key_with_prefix(self, identifier, alias=None):
         """Gets API key (with prefix if set).
 
         :param identifier: The identifier of apiKey.
         :param alias: The alternative identifier of apiKey.
+
         :return: The token for api key authentication.
         """
         if self.refresh_api_key_hook is not None:
@@ -609,11 +461,13 @@ conf = {{{packageName}}}.Configuration(
         ]
 
     def get_host_from_settings(self, index, variables=None, servers=None):
-        """Gets host URL based on the index and variables
-        :param index: array index of the host settings
-        :param variables: hash of variable and the corresponding value
-        :param servers: an array of host settings or None
-        :return: URL based on host settings
+        """Gets host URL based on the index and variables.
+
+        :param index: Array index of the host settings.
+        :param variables: Hash of variable and the corresponding value.
+        :param servers: An array of host settings or None.
+
+        :return: URL based on host settings.
         """
         if index is None:
             return self._base_path

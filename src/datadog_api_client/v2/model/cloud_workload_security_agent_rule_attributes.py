@@ -66,18 +66,37 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """CloudWorkloadSecurityAgentRuleAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            category (str): [optional] The category of the Agent rule.
-            creation_date (int): [optional] When the Agent rule was created, timestamp in milliseconds.
-            creator (CloudWorkloadSecurityAgentRuleCreatorAttributes): [optional]
-            default_rule (bool): [optional] Whether the rule is included by default.
-            description (str): [optional] The description of the Agent rule.
-            enabled (bool): [optional] Whether the Agent rule is enabled.
-            expression (str): [optional] The SECL expression of the Agent rule.
-            name (str): [optional] The name of the Agent rule.
-            updated_at (int): [optional] When the Agent rule was last updated, timestamp in milliseconds.
-            updater (CloudWorkloadSecurityAgentRuleUpdaterAttributes): [optional]
-            version (int): [optional] The version of the Agent rule.
+
+        :param category: The category of the Agent rule.
+        :type category: str, optional
+
+        :param creation_date: When the Agent rule was created, timestamp in milliseconds.
+        :type creation_date: int, optional
+
+        :type creator: CloudWorkloadSecurityAgentRuleCreatorAttributes, optional
+
+        :param default_rule: Whether the rule is included by default.
+        :type default_rule: bool, optional
+
+        :param description: The description of the Agent rule.
+        :type description: str, optional
+
+        :param enabled: Whether the Agent rule is enabled.
+        :type enabled: bool, optional
+
+        :param expression: The SECL expression of the Agent rule.
+        :type expression: str, optional
+
+        :param name: The name of the Agent rule.
+        :type name: str, optional
+
+        :param updated_at: When the Agent rule was last updated, timestamp in milliseconds.
+        :type updated_at: int, optional
+
+        :type updater: CloudWorkloadSecurityAgentRuleUpdaterAttributes, optional
+
+        :param version: The version of the Agent rule.
+        :type version: int, optional
         """
         super().__init__(kwargs)
 

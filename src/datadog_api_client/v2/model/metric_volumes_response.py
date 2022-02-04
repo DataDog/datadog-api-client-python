@@ -40,8 +40,8 @@ class MetricVolumesResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MetricVolumesResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data (MetricVolumes): [optional]
+
+        :type data: MetricVolumes, optional
         """
         super().__init__(kwargs)
 

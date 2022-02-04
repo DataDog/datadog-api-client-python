@@ -35,12 +35,8 @@ class LogsAggregateSortType(ModelSimple):
         """LogsAggregateSortType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The type of sorting algorithm If omitted defaults to "alphabetical". Must be one of ["alphabetical", "measure"].
-
-        Keyword Args:
-            value (str): The type of sorting algorithm If omitted defaults to "alphabetical". Must be one of ["alphabetical", "measure"].
+        :param value: The type of sorting algorithm If omitted defaults to "alphabetical". Must be one of ["alphabetical", "measure"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -52,12 +52,19 @@ class SyntheticsBrowserTestResultShort(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsBrowserTestResultShort - a model defined in OpenAPI
 
-        Keyword Args:
-            check_time (float): [optional] Last time the browser test was performed.
-            probe_dc (str): [optional] Location from which the Browser test was performed.
-            result (SyntheticsBrowserTestResultShortResult): [optional]
-            result_id (str): [optional] ID of the browser test result.
-            status (SyntheticsTestMonitorStatus): [optional]
+
+        :param check_time: Last time the browser test was performed.
+        :type check_time: float, optional
+
+        :param probe_dc: Location from which the Browser test was performed.
+        :type probe_dc: str, optional
+
+        :type result: SyntheticsBrowserTestResultShortResult, optional
+
+        :param result_id: ID of the browser test result.
+        :type result_id: str, optional
+
+        :type status: SyntheticsTestMonitorStatus, optional
         """
         super().__init__(kwargs)
 

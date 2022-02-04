@@ -75,19 +75,39 @@ class SLOCorrectionResponseAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOCorrectionResponseAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            category (SLOCorrectionCategory): [optional]
-            created_at (int): [optional] The epoch timestamp of when the correction was created at
-            creator (Creator): [optional]
-            description (str): [optional] Description of the correction being made.
-            duration (int, none_type): [optional] Length of time (in seconds) for a specified `rrule` recurring SLO correction.
-            end (int): [optional] Ending time of the correction in epoch seconds.
-            modified_at (int): [optional] The epoch timestamp of when the correction was modified at
-            modifier (SLOCorrectionResponseAttributesModifier): [optional]
-            rrule (str, none_type): [optional] The recurrence rules as defined in the iCalendar RFC 5545. The supported rules for SLO corrections are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.
-            slo_id (str): [optional] ID of the SLO that this correction will be applied to.
-            start (int): [optional] Starting time of the correction in epoch seconds.
-            timezone (str): [optional] The timezone to display in the UI for the correction times (defaults to \"UTC\").
+
+        :type category: SLOCorrectionCategory, optional
+
+        :param created_at: The epoch timestamp of when the correction was created at
+        :type created_at: int, optional
+
+        :type creator: Creator, optional
+
+        :param description: Description of the correction being made.
+        :type description: str, optional
+
+        :param duration: Length of time (in seconds) for a specified `rrule` recurring SLO correction.
+        :type duration: int, none_type, optional
+
+        :param end: Ending time of the correction in epoch seconds.
+        :type end: int, optional
+
+        :param modified_at: The epoch timestamp of when the correction was modified at
+        :type modified_at: int, optional
+
+        :type modifier: SLOCorrectionResponseAttributesModifier, optional
+
+        :param rrule: The recurrence rules as defined in the iCalendar RFC 5545. The supported rules for SLO corrections are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.
+        :type rrule: str, none_type, optional
+
+        :param slo_id: ID of the SLO that this correction will be applied to.
+        :type slo_id: str, optional
+
+        :param start: Starting time of the correction in epoch seconds.
+        :type start: int, optional
+
+        :param timezone: The timezone to display in the UI for the correction times (defaults to \"UTC\").
+        :type timezone: str, optional
         """
         super().__init__(kwargs)
 

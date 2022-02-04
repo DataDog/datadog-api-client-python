@@ -36,12 +36,8 @@ class HTTPLog(ModelSimple):
         """HTTPLog - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] ([HTTPLogItem]): Structured log message.
-
-        Keyword Args:
-            value ([HTTPLogItem]): Structured log message.
+        :param value: Structured log message.
+        :type value: [HTTPLogItem]
         """
         super().__init__(kwargs)
 

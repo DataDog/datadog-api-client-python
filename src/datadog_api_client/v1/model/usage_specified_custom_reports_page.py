@@ -33,8 +33,9 @@ class UsageSpecifiedCustomReportsPage(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageSpecifiedCustomReportsPage - a model defined in OpenAPI
 
-        Keyword Args:
-            total_count (int): [optional] Total page count.
+
+        :param total_count: Total page count.
+        :type total_count: int, optional
         """
         super().__init__(kwargs)
 

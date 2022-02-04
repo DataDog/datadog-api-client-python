@@ -36,12 +36,8 @@ class LogsSortOrder(ModelSimple):
         """LogsSortOrder - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The order to use, ascending or descending Must be one of ["asc", "desc"].
-
-        Keyword Args:
-            value (str): The order to use, ascending or descending Must be one of ["asc", "desc"].
+        :param value: The order to use, ascending or descending Must be one of ["asc", "desc"].
+        :type value: str
         """
         super().__init__(kwargs)
 

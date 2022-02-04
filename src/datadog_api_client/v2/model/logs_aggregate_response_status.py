@@ -36,12 +36,8 @@ class LogsAggregateResponseStatus(ModelSimple):
         """LogsAggregateResponseStatus - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The status of the response Must be one of ["done", "timeout"].
-
-        Keyword Args:
-            value (str): The status of the response Must be one of ["done", "timeout"].
+        :param value: The status of the response Must be one of ["done", "timeout"].
+        :type value: str
         """
         super().__init__(kwargs)
 

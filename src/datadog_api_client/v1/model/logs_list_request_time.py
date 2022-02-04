@@ -38,12 +38,15 @@ class LogsListRequestTime(ModelNormal):
     def __init__(self, _from, to, *args, **kwargs):
         """LogsListRequestTime - a model defined in OpenAPI
 
-        Args:
-            _from (datetime): Minimum timestamp for requested logs.
-            to (datetime): Maximum timestamp for requested logs.
 
-        Keyword Args:
-            timezone (str): [optional] Timezone can be specified both as an offset (for example \"UTC+03:00\") or a regional zone (for example \"Europe/Paris\").
+        :param _from: Minimum timestamp for requested logs.
+        :type _from: datetime
+
+        :param to: Maximum timestamp for requested logs.
+        :type to: datetime
+
+        :param timezone: Timezone can be specified both as an offset (for example \"UTC+03:00\") or a regional zone (for example \"Europe/Paris\").
+        :type timezone: str, optional
         """
         super().__init__(kwargs)
 

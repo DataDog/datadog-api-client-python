@@ -42,10 +42,9 @@ class RelationshipToIncidentIntegrationMetadatas(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """RelationshipToIncidentIntegrationMetadatas - a model defined in OpenAPI
 
-        Args:
-            data ([RelationshipToIncidentIntegrationMetadataData]): The integration metadata relationship array
 
-        Keyword Args:
+        :param data: The integration metadata relationship array
+        :type data: [RelationshipToIncidentIntegrationMetadataData]
         """
         super().__init__(kwargs)
 

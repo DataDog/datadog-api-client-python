@@ -40,8 +40,9 @@ class AWSTagFilterListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """AWSTagFilterListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            filters ([AWSTagFilter]): [optional] An array of tag filters.
+
+        :param filters: An array of tag filters.
+        :type filters: [AWSTagFilter], optional
         """
         super().__init__(kwargs)
 

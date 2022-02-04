@@ -33,8 +33,9 @@ class AWSLogsLambda(ModelNormal):
     def __init__(self, *args, **kwargs):
         """AWSLogsLambda - a model defined in OpenAPI
 
-        Keyword Args:
-            arn (str): [optional] Available ARN IDs.
+
+        :param arn: Available ARN IDs.
+        :type arn: str, optional
         """
         super().__init__(kwargs)
 

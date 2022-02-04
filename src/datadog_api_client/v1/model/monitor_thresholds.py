@@ -59,13 +59,24 @@ class MonitorThresholds(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MonitorThresholds - a model defined in OpenAPI
 
-        Keyword Args:
-            critical (float): [optional] The monitor `CRITICAL` threshold.
-            critical_recovery (float, none_type): [optional] The monitor `CRITICAL` recovery threshold.
-            ok (float, none_type): [optional] The monitor `OK` threshold.
-            unknown (float, none_type): [optional] The monitor UNKNOWN threshold.
-            warning (float, none_type): [optional] The monitor `WARNING` threshold.
-            warning_recovery (float, none_type): [optional] The monitor `WARNING` recovery threshold.
+
+        :param critical: The monitor `CRITICAL` threshold.
+        :type critical: float, optional
+
+        :param critical_recovery: The monitor `CRITICAL` recovery threshold.
+        :type critical_recovery: float, none_type, optional
+
+        :param ok: The monitor `OK` threshold.
+        :type ok: float, none_type, optional
+
+        :param unknown: The monitor UNKNOWN threshold.
+        :type unknown: float, none_type, optional
+
+        :param warning: The monitor `WARNING` threshold.
+        :type warning: float, none_type, optional
+
+        :param warning_recovery: The monitor `WARNING` recovery threshold.
+        :type warning_recovery: float, none_type, optional
         """
         super().__init__(kwargs)
 

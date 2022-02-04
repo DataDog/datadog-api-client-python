@@ -35,9 +35,12 @@ class SLODeleteResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLODeleteResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([str]): [optional] An array containing the ID of the deleted service level objective object.
-            errors ({str: (str,)}): [optional] An dictionary containing the ID of the SLO as key and a deletion error as value.
+
+        :param data: An array containing the ID of the deleted service level objective object.
+        :type data: [str], optional
+
+        :param errors: An dictionary containing the ID of the SLO as key and a deletion error as value.
+        :type errors: {str: (str,)}, optional
         """
         super().__init__(kwargs)
 

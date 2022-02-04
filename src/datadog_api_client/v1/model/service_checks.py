@@ -36,12 +36,8 @@ class ServiceChecks(ModelSimple):
         """ServiceChecks - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] ([ServiceCheck]): The service checks.
-
-        Keyword Args:
-            value ([ServiceCheck]): The service checks.
+        :param value: The service checks.
+        :type value: [ServiceCheck]
         """
         super().__init__(kwargs)
 

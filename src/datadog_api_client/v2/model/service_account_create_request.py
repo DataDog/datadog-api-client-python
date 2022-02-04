@@ -40,10 +40,8 @@ class ServiceAccountCreateRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """ServiceAccountCreateRequest - a model defined in OpenAPI
 
-        Args:
-            data (ServiceAccountCreateData):
 
-        Keyword Args:
+        :type data: ServiceAccountCreateData
         """
         super().__init__(kwargs)
 

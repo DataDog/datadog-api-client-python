@@ -42,11 +42,11 @@ class RelationshipToOrganizationData(ModelNormal):
     def __init__(self, id, type, *args, **kwargs):
         """RelationshipToOrganizationData - a model defined in OpenAPI
 
-        Args:
-            id (str): ID of the organization.
-            type (OrganizationsType):
 
-        Keyword Args:
+        :param id: ID of the organization.
+        :type id: str
+
+        :type type: OrganizationsType
         """
         super().__init__(kwargs)
 

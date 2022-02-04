@@ -33,10 +33,9 @@ class LogQueryDefinitionSearch(ModelNormal):
     def __init__(self, query, *args, **kwargs):
         """LogQueryDefinitionSearch - a model defined in OpenAPI
 
-        Args:
-            query (str): Search value to apply.
 
-        Keyword Args:
+        :param query: Search value to apply.
+        :type query: str
         """
         super().__init__(kwargs)
 

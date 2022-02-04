@@ -34,12 +34,8 @@ class MonitorSummaryWidgetDefinitionType(ModelSimple):
         """MonitorSummaryWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the monitor summary widget. If omitted defaults to "manage_status". Must be one of ["manage_status"].
-
-        Keyword Args:
-            value (str): Type of the monitor summary widget. If omitted defaults to "manage_status". Must be one of ["manage_status"].
+        :param value: Type of the monitor summary widget. If omitted defaults to "manage_status". Must be one of ["manage_status"].
+        :type value: str
         """
         super().__init__(kwargs)
 

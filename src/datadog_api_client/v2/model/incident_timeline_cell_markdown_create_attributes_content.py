@@ -33,8 +33,9 @@ class IncidentTimelineCellMarkdownCreateAttributesContent(ModelNormal):
     def __init__(self, *args, **kwargs):
         """IncidentTimelineCellMarkdownCreateAttributesContent - a model defined in OpenAPI
 
-        Keyword Args:
-            content (str): [optional] The Markdown content of the cell.
+
+        :param content: The Markdown content of the cell.
+        :type content: str, optional
         """
         super().__init__(kwargs)
 

@@ -34,12 +34,8 @@ class ListStreamResponseFormat(ModelSimple):
         """ListStreamResponseFormat - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Widget response format. If omitted defaults to "event_list". Must be one of ["event_list"].
-
-        Keyword Args:
-            value (str): Widget response format. If omitted defaults to "event_list". Must be one of ["event_list"].
+        :param value: Widget response format. If omitted defaults to "event_list". Must be one of ["event_list"].
+        :type value: str
         """
         super().__init__(kwargs)
 

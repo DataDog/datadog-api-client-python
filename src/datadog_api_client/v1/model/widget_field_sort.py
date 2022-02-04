@@ -42,11 +42,11 @@ class WidgetFieldSort(ModelNormal):
     def __init__(self, column, order, *args, **kwargs):
         """WidgetFieldSort - a model defined in OpenAPI
 
-        Args:
-            column (str): Facet path for the column
-            order (WidgetSort):
 
-        Keyword Args:
+        :param column: Facet path for the column
+        :type column: str
+
+        :type order: WidgetSort
         """
         super().__init__(kwargs)
 

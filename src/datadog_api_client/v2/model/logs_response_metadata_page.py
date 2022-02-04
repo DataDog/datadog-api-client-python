@@ -33,8 +33,9 @@ class LogsResponseMetadataPage(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsResponseMetadataPage - a model defined in OpenAPI
 
-        Keyword Args:
-            after (str): [optional] The cursor to use to get the next results, if any. To make the next request, use the same. parameters with the addition of the `page[cursor]`.
+
+        :param after: The cursor to use to get the next results, if any. To make the next request, use the same. parameters with the addition of the `page[cursor]`.
+        :type after: str, optional
         """
         super().__init__(kwargs)
 

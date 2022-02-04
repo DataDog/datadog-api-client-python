@@ -34,12 +34,8 @@ class TreeMapWidgetDefinitionType(ModelSimple):
         """TreeMapWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the treemap widget. If omitted defaults to "treemap". Must be one of ["treemap"].
-
-        Keyword Args:
-            value (str): Type of the treemap widget. If omitted defaults to "treemap". Must be one of ["treemap"].
+        :param value: Type of the treemap widget. If omitted defaults to "treemap". Must be one of ["treemap"].
+        :type value: str
         """
         super().__init__(kwargs)
 

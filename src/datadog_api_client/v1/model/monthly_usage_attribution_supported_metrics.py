@@ -63,12 +63,8 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
         """MonthlyUsageAttributionSupportedMetrics - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Supported metrics for monthly usage attribution requests. Must be one of ["api_usage", "api_percentage", "apm_host_usage", "apm_host_percentage", "browser_usage", "browser_percentage", "container_usage", "container_percentage", "custom_timeseries_usage", "custom_timeseries_percentage", "fargate_usage", "fargate_percentage", "functions_usage", "functions_percentage", "indexed_logs_usage", "indexed_logs_percentage", "infra_host_usage", "infra_host_percentage", "invocations_usage", "invocations_percentage", "npm_host_usage", "npm_host_percentage", "profiled_container_usage", "profiled_container_percentage", "profiled_host_usage", "profiled_host_percentage", "snmp_usage", "snmp_percentage", "*"].
-
-        Keyword Args:
-            value (str): Supported metrics for monthly usage attribution requests. Must be one of ["api_usage", "api_percentage", "apm_host_usage", "apm_host_percentage", "browser_usage", "browser_percentage", "container_usage", "container_percentage", "custom_timeseries_usage", "custom_timeseries_percentage", "fargate_usage", "fargate_percentage", "functions_usage", "functions_percentage", "indexed_logs_usage", "indexed_logs_percentage", "infra_host_usage", "infra_host_percentage", "invocations_usage", "invocations_percentage", "npm_host_usage", "npm_host_percentage", "profiled_container_usage", "profiled_container_percentage", "profiled_host_usage", "profiled_host_percentage", "snmp_usage", "snmp_percentage", "*"].
+        :param value: Supported metrics for monthly usage attribution requests. Must be one of ["api_usage", "api_percentage", "apm_host_usage", "apm_host_percentage", "browser_usage", "browser_percentage", "container_usage", "container_percentage", "custom_timeseries_usage", "custom_timeseries_percentage", "fargate_usage", "fargate_percentage", "functions_usage", "functions_percentage", "indexed_logs_usage", "indexed_logs_percentage", "infra_host_usage", "infra_host_percentage", "invocations_usage", "invocations_percentage", "npm_host_usage", "npm_host_percentage", "profiled_container_usage", "profiled_container_percentage", "profiled_host_usage", "profiled_host_percentage", "snmp_usage", "snmp_percentage", "*"].
+        :type value: str
         """
         super().__init__(kwargs)
 

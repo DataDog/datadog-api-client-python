@@ -27,10 +27,7 @@ class LogsGroupByTotal(ModelNormal):
     read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
-        """LogsGroupByTotal - a model defined in OpenAPI
-
-        Keyword Args:
-        """
+        """LogsGroupByTotal - a model defined in OpenAPI"""
         super().__init__(kwargs)
 
         self._check_pos_args(args)

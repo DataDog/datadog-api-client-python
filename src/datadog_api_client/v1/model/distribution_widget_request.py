@@ -66,18 +66,29 @@ class DistributionWidgetRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """DistributionWidgetRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            apm_query (LogQueryDefinition): [optional]
-            apm_stats_query (ApmStatsQueryDefinition): [optional]
-            event_query (LogQueryDefinition): [optional]
-            log_query (LogQueryDefinition): [optional]
-            network_query (LogQueryDefinition): [optional]
-            process_query (ProcessQueryDefinition): [optional]
-            profile_metrics_query (LogQueryDefinition): [optional]
-            q (str): [optional] Widget query.
-            rum_query (LogQueryDefinition): [optional]
-            security_query (LogQueryDefinition): [optional]
-            style (WidgetStyle): [optional]
+
+        :type apm_query: LogQueryDefinition, optional
+
+        :type apm_stats_query: ApmStatsQueryDefinition, optional
+
+        :type event_query: LogQueryDefinition, optional
+
+        :type log_query: LogQueryDefinition, optional
+
+        :type network_query: LogQueryDefinition, optional
+
+        :type process_query: ProcessQueryDefinition, optional
+
+        :type profile_metrics_query: LogQueryDefinition, optional
+
+        :param q: Widget query.
+        :type q: str, optional
+
+        :type rum_query: LogQueryDefinition, optional
+
+        :type security_query: LogQueryDefinition, optional
+
+        :type style: WidgetStyle, optional
         """
         super().__init__(kwargs)
 

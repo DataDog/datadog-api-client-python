@@ -46,12 +46,13 @@ class NotebookCellUpdateRequest(ModelNormal):
     def __init__(self, attributes, id, type, *args, **kwargs):
         """NotebookCellUpdateRequest - a model defined in OpenAPI
 
-        Args:
-            attributes (NotebookCellUpdateRequestAttributes):
-            id (str): Notebook cell ID.
-            type (NotebookCellResourceType):
 
-        Keyword Args:
+        :type attributes: NotebookCellUpdateRequestAttributes
+
+        :param id: Notebook cell ID.
+        :type id: str
+
+        :type type: NotebookCellResourceType
         """
         super().__init__(kwargs)
 

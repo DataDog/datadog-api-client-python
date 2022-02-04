@@ -42,8 +42,8 @@ class IncidentServicesResponseMeta(ModelNormal):
     def __init__(self, *args, **kwargs):
         """IncidentServicesResponseMeta - a model defined in OpenAPI
 
-        Keyword Args:
-            pagination (IncidentServicesResponseMetaPagination): [optional]
+
+        :type pagination: IncidentServicesResponseMetaPagination, optional
         """
         super().__init__(kwargs)
 

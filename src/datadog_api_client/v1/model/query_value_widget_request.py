@@ -80,22 +80,40 @@ class QueryValueWidgetRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """QueryValueWidgetRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            aggregator (WidgetAggregator): [optional]
-            apm_query (LogQueryDefinition): [optional]
-            audit_query (LogQueryDefinition): [optional]
-            conditional_formats ([WidgetConditionalFormat]): [optional] List of conditional formats.
-            event_query (LogQueryDefinition): [optional]
-            formulas ([WidgetFormula]): [optional] List of formulas that operate on queries. **This feature is currently in beta.**
-            log_query (LogQueryDefinition): [optional]
-            network_query (LogQueryDefinition): [optional]
-            process_query (ProcessQueryDefinition): [optional]
-            profile_metrics_query (LogQueryDefinition): [optional]
-            q (str): [optional] TODO.
-            queries ([FormulaAndFunctionQueryDefinition]): [optional] List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**
-            response_format (FormulaAndFunctionResponseFormat): [optional]
-            rum_query (LogQueryDefinition): [optional]
-            security_query (LogQueryDefinition): [optional]
+
+        :type aggregator: WidgetAggregator, optional
+
+        :type apm_query: LogQueryDefinition, optional
+
+        :type audit_query: LogQueryDefinition, optional
+
+        :param conditional_formats: List of conditional formats.
+        :type conditional_formats: [WidgetConditionalFormat], optional
+
+        :type event_query: LogQueryDefinition, optional
+
+        :param formulas: List of formulas that operate on queries. **This feature is currently in beta.**
+        :type formulas: [WidgetFormula], optional
+
+        :type log_query: LogQueryDefinition, optional
+
+        :type network_query: LogQueryDefinition, optional
+
+        :type process_query: ProcessQueryDefinition, optional
+
+        :type profile_metrics_query: LogQueryDefinition, optional
+
+        :param q: TODO.
+        :type q: str, optional
+
+        :param queries: List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**
+        :type queries: [FormulaAndFunctionQueryDefinition], optional
+
+        :type response_format: FormulaAndFunctionResponseFormat, optional
+
+        :type rum_query: LogQueryDefinition, optional
+
+        :type security_query: LogQueryDefinition, optional
         """
         super().__init__(kwargs)
 

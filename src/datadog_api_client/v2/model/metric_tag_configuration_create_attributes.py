@@ -48,13 +48,15 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
     def __init__(self, metric_type, *args, **kwargs):
         """MetricTagConfigurationCreateAttributes - a model defined in OpenAPI
 
-        Args:
-            metric_type (MetricTagConfigurationMetricTypes):
 
-        Keyword Args:
-            tags ([str]): A list of tag keys that will be queryable for your metric. Defaults to [].
-            aggregations (MetricCustomAggregations): [optional]
-            include_percentiles (bool): [optional] Toggle to include/exclude percentiles for a distribution metric. Defaults to false. Can only be applied to metrics that have a `metric_type` of `distribution`. If omitted the server will use the default value of False.
+        :type metric_type: MetricTagConfigurationMetricTypes
+        :param tags: A list of tag keys that will be queryable for your metric. Defaults to [].
+        :type tags: [str]
+
+        :type aggregations: MetricCustomAggregations, optional
+
+        :param include_percentiles: Toggle to include/exclude percentiles for a distribution metric. Defaults to false. Can only be applied to metrics that have a `metric_type` of `distribution`. If omitted the server will use the default value of False.
+        :type include_percentiles: bool, optional
         """
         super().__init__(kwargs)
 

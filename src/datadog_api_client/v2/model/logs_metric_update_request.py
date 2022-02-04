@@ -40,10 +40,8 @@ class LogsMetricUpdateRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """LogsMetricUpdateRequest - a model defined in OpenAPI
 
-        Args:
-            data (LogsMetricUpdateData):
 
-        Keyword Args:
+        :type data: LogsMetricUpdateData
         """
         super().__init__(kwargs)
 

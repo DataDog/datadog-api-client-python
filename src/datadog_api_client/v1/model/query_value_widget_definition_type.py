@@ -34,12 +34,8 @@ class QueryValueWidgetDefinitionType(ModelSimple):
         """QueryValueWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the query value widget. If omitted defaults to "query_value". Must be one of ["query_value"].
-
-        Keyword Args:
-            value (str): Type of the query value widget. If omitted defaults to "query_value". Must be one of ["query_value"].
+        :param value: Type of the query value widget. If omitted defaults to "query_value". Must be one of ["query_value"].
+        :type value: str
         """
         super().__init__(kwargs)
 

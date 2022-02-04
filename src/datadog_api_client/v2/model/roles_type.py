@@ -34,12 +34,8 @@ class RolesType(ModelSimple):
         """RolesType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Roles type. If omitted defaults to "roles". Must be one of ["roles"].
-
-        Keyword Args:
-            value (str): Roles type. If omitted defaults to "roles". Must be one of ["roles"].
+        :param value: Roles type. If omitted defaults to "roles". Must be one of ["roles"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -33,8 +33,9 @@ class MetricAllTagsAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MetricAllTagsAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            tags ([str]): [optional] List of indexed tag value pairs.
+
+        :param tags: List of indexed tag value pairs.
+        :type tags: [str], optional
         """
         super().__init__(kwargs)
 

@@ -44,12 +44,14 @@ class SyntheticsBasicAuthWeb(ModelNormal):
     def __init__(self, password, type, username, *args, **kwargs):
         """SyntheticsBasicAuthWeb - a model defined in OpenAPI
 
-        Args:
-            password (str): Password to use for the basic authentication.
-            type (SyntheticsBasicAuthWebType):
-            username (str): Username to use for the basic authentication.
 
-        Keyword Args:
+        :param password: Password to use for the basic authentication.
+        :type password: str
+
+        :type type: SyntheticsBasicAuthWebType
+
+        :param username: Username to use for the basic authentication.
+        :type username: str
         """
         super().__init__(kwargs)
 

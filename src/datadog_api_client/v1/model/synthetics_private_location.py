@@ -50,14 +50,20 @@ class SyntheticsPrivateLocation(ModelNormal):
     def __init__(self, description, name, tags, *args, **kwargs):
         """SyntheticsPrivateLocation - a model defined in OpenAPI
 
-        Args:
-            description (str): Description of the private location.
-            name (str): Name of the private location.
-            tags ([str]): Array of tags attached to the private location.
 
-        Keyword Args:
-            id (str): [optional] Unique identifier of the private location.
-            secrets (SyntheticsPrivateLocationSecrets): [optional]
+        :param description: Description of the private location.
+        :type description: str
+
+        :param name: Name of the private location.
+        :type name: str
+
+        :param tags: Array of tags attached to the private location.
+        :type tags: [str]
+
+        :param id: Unique identifier of the private location.
+        :type id: str, optional
+
+        :type secrets: SyntheticsPrivateLocationSecrets, optional
         """
         super().__init__(kwargs)
 

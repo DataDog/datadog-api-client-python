@@ -50,14 +50,20 @@ class SecurityFilterCreateAttributes(ModelNormal):
     def __init__(self, exclusion_filters, filtered_data_type, is_enabled, name, query, *args, **kwargs):
         """SecurityFilterCreateAttributes - a model defined in OpenAPI
 
-        Args:
-            exclusion_filters ([SecurityFilterExclusionFilter]): Exclusion filters to exclude some logs from the security filter.
-            filtered_data_type (SecurityFilterFilteredDataType):
-            is_enabled (bool): Whether the security filter is enabled.
-            name (str): The name of the security filter.
-            query (str): The query of the security filter.
 
-        Keyword Args:
+        :param exclusion_filters: Exclusion filters to exclude some logs from the security filter.
+        :type exclusion_filters: [SecurityFilterExclusionFilter]
+
+        :type filtered_data_type: SecurityFilterFilteredDataType
+
+        :param is_enabled: Whether the security filter is enabled.
+        :type is_enabled: bool
+
+        :param name: The name of the security filter.
+        :type name: str
+
+        :param query: The query of the security filter.
+        :type query: str
         """
         super().__init__(kwargs)
 

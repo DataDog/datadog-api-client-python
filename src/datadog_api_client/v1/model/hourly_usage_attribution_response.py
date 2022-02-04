@@ -44,9 +44,11 @@ class HourlyUsageAttributionResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HourlyUsageAttributionResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            metadata (HourlyUsageAttributionMetadata): [optional]
-            usage ([HourlyUsageAttributionBody]): [optional] Get the hourly usage attribution by tag(s).
+
+        :type metadata: HourlyUsageAttributionMetadata, optional
+
+        :param usage: Get the hourly usage attribution by tag(s).
+        :type usage: [HourlyUsageAttributionBody], optional
         """
         super().__init__(kwargs)
 

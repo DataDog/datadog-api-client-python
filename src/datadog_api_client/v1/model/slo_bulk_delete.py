@@ -39,10 +39,7 @@ class SLOBulkDelete(ModelNormal):
     read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
-        """SLOBulkDelete - a model defined in OpenAPI
-
-        Keyword Args:
-        """
+        """SLOBulkDelete - a model defined in OpenAPI"""
         super().__init__(kwargs)
 
         self._check_pos_args(args)

@@ -37,10 +37,15 @@ class CloudWorkloadSecurityAgentRuleUpdateAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """CloudWorkloadSecurityAgentRuleUpdateAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            description (str): [optional] The description of the Agent rule.
-            enabled (bool): [optional] Whether the Agent rule is enabled.
-            expression (str): [optional] The SECL expression of the Agent rule.
+
+        :param description: The description of the Agent rule.
+        :type description: str, optional
+
+        :param enabled: Whether the Agent rule is enabled.
+        :type enabled: bool, optional
+
+        :param expression: The SECL expression of the Agent rule.
+        :type expression: str, optional
         """
         super().__init__(kwargs)
 

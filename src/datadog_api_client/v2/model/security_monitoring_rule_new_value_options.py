@@ -50,9 +50,10 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityMonitoringRuleNewValueOptions - a model defined in OpenAPI
 
-        Keyword Args:
-            forget_after (SecurityMonitoringRuleNewValueOptionsForgetAfter): [optional]
-            learning_duration (SecurityMonitoringRuleNewValueOptionsLearningDuration): [optional]
+
+        :type forget_after: SecurityMonitoringRuleNewValueOptionsForgetAfter, optional
+
+        :type learning_duration: SecurityMonitoringRuleNewValueOptionsLearningDuration, optional
         """
         super().__init__(kwargs)
 

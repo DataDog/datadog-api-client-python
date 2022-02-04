@@ -46,10 +46,13 @@ class SecurityMonitoringSignal(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityMonitoringSignal - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (SecurityMonitoringSignalAttributes): [optional]
-            id (str): [optional] The unique ID of the security signal.
-            type (SecurityMonitoringSignalType): [optional]
+
+        :type attributes: SecurityMonitoringSignalAttributes, optional
+
+        :param id: The unique ID of the security signal.
+        :type id: str, optional
+
+        :type type: SecurityMonitoringSignalType, optional
         """
         super().__init__(kwargs)
 

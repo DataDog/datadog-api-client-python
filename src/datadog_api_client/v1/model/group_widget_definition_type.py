@@ -34,12 +34,8 @@ class GroupWidgetDefinitionType(ModelSimple):
         """GroupWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the group widget. If omitted defaults to "group". Must be one of ["group"].
-
-        Keyword Args:
-            value (str): Type of the group widget. If omitted defaults to "group". Must be one of ["group"].
+        :param value: Type of the group widget. If omitted defaults to "group". Must be one of ["group"].
+        :type value: str
         """
         super().__init__(kwargs)
 

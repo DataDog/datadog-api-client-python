@@ -37,12 +37,15 @@ class WebhooksIntegrationCustomVariableResponse(ModelNormal):
     def __init__(self, is_secret, name, *args, **kwargs):
         """WebhooksIntegrationCustomVariableResponse - a model defined in OpenAPI
 
-        Args:
-            is_secret (bool): Make custom variable is secret or not. If the custom variable is secret, the value is not returned in the response payload.
-            name (str): The name of the variable. It corresponds with `<CUSTOM_VARIABLE_NAME>`. It must only contains upper-case characters, integers or underscores.
 
-        Keyword Args:
-            value (str): [optional] Value of the custom variable. It won't be returned if the variable is secret.
+        :param is_secret: Make custom variable is secret or not. If the custom variable is secret, the value is not returned in the response payload.
+        :type is_secret: bool
+
+        :param name: The name of the variable. It corresponds with `<CUSTOM_VARIABLE_NAME>`. It must only contains upper-case characters, integers or underscores.
+        :type name: str
+
+        :param value: Value of the custom variable. It won't be returned if the variable is secret.
+        :type value: str, optional
         """
         super().__init__(kwargs)
 

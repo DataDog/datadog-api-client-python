@@ -44,12 +44,14 @@ class SLOBulkDeleteError(ModelNormal):
     def __init__(self, id, message, timeframe, *args, **kwargs):
         """SLOBulkDeleteError - a model defined in OpenAPI
 
-        Args:
-            id (str): The ID of the service level objective object associated with this error.
-            message (str): The error message.
-            timeframe (SLOErrorTimeframe):
 
-        Keyword Args:
+        :param id: The ID of the service level objective object associated with this error.
+        :type id: str
+
+        :param message: The error message.
+        :type message: str
+
+        :type timeframe: SLOErrorTimeframe
         """
         super().__init__(kwargs)
 

@@ -48,12 +48,12 @@ class UserCreateData(ModelNormal):
     def __init__(self, attributes, type, *args, **kwargs):
         """UserCreateData - a model defined in OpenAPI
 
-        Args:
-            attributes (UserCreateAttributes):
-            type (UsersType):
 
-        Keyword Args:
-            relationships (UserRelationships): [optional]
+        :type attributes: UserCreateAttributes
+
+        :type type: UsersType
+
+        :type relationships: UserRelationships, optional
         """
         super().__init__(kwargs)
 

@@ -40,8 +40,9 @@ class SyntheticsLocations(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsLocations - a model defined in OpenAPI
 
-        Keyword Args:
-            locations ([SyntheticsLocation]): [optional] List of Synthetics locations.
+
+        :param locations: List of Synthetics locations.
+        :type locations: [SyntheticsLocation], optional
         """
         super().__init__(kwargs)
 

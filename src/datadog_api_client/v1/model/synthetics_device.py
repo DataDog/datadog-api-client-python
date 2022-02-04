@@ -48,14 +48,20 @@ class SyntheticsDevice(ModelNormal):
     def __init__(self, height, id, name, width, *args, **kwargs):
         """SyntheticsDevice - a model defined in OpenAPI
 
-        Args:
-            height (int): Screen height of the device.
-            id (SyntheticsDeviceID):
-            name (str): The device name.
-            width (int): Screen width of the device.
 
-        Keyword Args:
-            is_mobile (bool): [optional] Whether or not the device is a mobile.
+        :param height: Screen height of the device.
+        :type height: int
+
+        :type id: SyntheticsDeviceID
+
+        :param name: The device name.
+        :type name: str
+
+        :param width: Screen width of the device.
+        :type width: int
+
+        :param is_mobile: Whether or not the device is a mobile.
+        :type is_mobile: bool, optional
         """
         super().__init__(kwargs)
 

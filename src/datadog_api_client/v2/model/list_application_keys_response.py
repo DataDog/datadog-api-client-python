@@ -44,9 +44,12 @@ class ListApplicationKeysResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ListApplicationKeysResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([PartialApplicationKey]): [optional] Array of application keys.
-            included ([ApplicationKeyResponseIncludedItem]): [optional] Array of objects related to the application key.
+
+        :param data: Array of application keys.
+        :type data: [PartialApplicationKey], optional
+
+        :param included: Array of objects related to the application key.
+        :type included: [ApplicationKeyResponseIncludedItem], optional
         """
         super().__init__(kwargs)
 

@@ -33,8 +33,9 @@ class OrganizationSettingsSamlStrictMode(ModelNormal):
     def __init__(self, *args, **kwargs):
         """OrganizationSettingsSamlStrictMode - a model defined in OpenAPI
 
-        Keyword Args:
-            enabled (bool): [optional] Whether or not the SAML strict mode is enabled. If true, all users must log in with SAML. Learn more on the [SAML Strict documentation](https://docs.datadoghq.com/account_management/saml/#saml-strict).
+
+        :param enabled: Whether or not the SAML strict mode is enabled. If true, all users must log in with SAML. Learn more on the [SAML Strict documentation](https://docs.datadoghq.com/account_management/saml/#saml-strict).
+        :type enabled: bool, optional
         """
         super().__init__(kwargs)
 

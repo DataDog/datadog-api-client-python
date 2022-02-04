@@ -34,12 +34,8 @@ class FormulaAndFunctionApmResourceStatsDataSource(ModelSimple):
         """FormulaAndFunctionApmResourceStatsDataSource - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Data source for APM resource stats queries. If omitted defaults to "apm_resource_stats". Must be one of ["apm_resource_stats"].
-
-        Keyword Args:
-            value (str): Data source for APM resource stats queries. If omitted defaults to "apm_resource_stats". Must be one of ["apm_resource_stats"].
+        :param value: Data source for APM resource stats queries. If omitted defaults to "apm_resource_stats". Must be one of ["apm_resource_stats"].
+        :type value: str
         """
         super().__init__(kwargs)
 

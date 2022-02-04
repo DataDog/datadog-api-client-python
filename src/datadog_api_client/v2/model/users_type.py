@@ -34,12 +34,8 @@ class UsersType(ModelSimple):
         """UsersType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Users resource type. If omitted defaults to "users". Must be one of ["users"].
-
-        Keyword Args:
-            value (str): Users resource type. If omitted defaults to "users". Must be one of ["users"].
+        :param value: Users resource type. If omitted defaults to "users". Must be one of ["users"].
+        :type value: str
         """
         super().__init__(kwargs)
 

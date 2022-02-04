@@ -40,8 +40,8 @@ class WidgetTime(ModelNormal):
     def __init__(self, *args, **kwargs):
         """WidgetTime - a model defined in OpenAPI
 
-        Keyword Args:
-            live_span (WidgetLiveSpan): [optional]
+
+        :type live_span: WidgetLiveSpan, optional
         """
         super().__init__(kwargs)
 

@@ -48,13 +48,16 @@ class LogsArchiveDestinationS3(ModelNormal):
     def __init__(self, bucket, integration, type, *args, **kwargs):
         """LogsArchiveDestinationS3 - a model defined in OpenAPI
 
-        Args:
-            bucket (str): The bucket where the archive will be stored.
-            integration (LogsArchiveIntegrationS3):
-            type (LogsArchiveDestinationS3Type):
 
-        Keyword Args:
-            path (str): [optional] The archive path.
+        :param bucket: The bucket where the archive will be stored.
+        :type bucket: str
+
+        :type integration: LogsArchiveIntegrationS3
+
+        :type type: LogsArchiveDestinationS3Type
+
+        :param path: The archive path.
+        :type path: str, optional
         """
         super().__init__(kwargs)
 

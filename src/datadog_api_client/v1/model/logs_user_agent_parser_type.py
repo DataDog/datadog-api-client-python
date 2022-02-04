@@ -34,12 +34,8 @@ class LogsUserAgentParserType(ModelSimple):
         """LogsUserAgentParserType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of logs User-Agent parser. If omitted defaults to "user-agent-parser". Must be one of ["user-agent-parser"].
-
-        Keyword Args:
-            value (str): Type of logs User-Agent parser. If omitted defaults to "user-agent-parser". Must be one of ["user-agent-parser"].
+        :param value: Type of logs User-Agent parser. If omitted defaults to "user-agent-parser". Must be one of ["user-agent-parser"].
+        :type value: str
         """
         super().__init__(kwargs)
 

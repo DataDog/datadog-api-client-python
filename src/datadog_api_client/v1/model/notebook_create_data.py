@@ -44,11 +44,10 @@ class NotebookCreateData(ModelNormal):
     def __init__(self, attributes, type, *args, **kwargs):
         """NotebookCreateData - a model defined in OpenAPI
 
-        Args:
-            attributes (NotebookCreateDataAttributes):
-            type (NotebookResourceType):
 
-        Keyword Args:
+        :type attributes: NotebookCreateDataAttributes
+
+        :type type: NotebookResourceType
         """
         super().__init__(kwargs)
 

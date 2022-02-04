@@ -40,8 +40,9 @@ class SyntheticsListGlobalVariablesResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsListGlobalVariablesResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            variables ([SyntheticsGlobalVariable]): [optional] Array of Synthetic global variables.
+
+        :param variables: Array of Synthetic global variables.
+        :type variables: [SyntheticsGlobalVariable], optional
         """
         super().__init__(kwargs)
 

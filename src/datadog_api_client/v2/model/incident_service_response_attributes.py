@@ -41,10 +41,15 @@ class IncidentServiceResponseAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """IncidentServiceResponseAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            created (datetime): [optional] Timestamp of when the incident service was created.
-            modified (datetime): [optional] Timestamp of when the incident service was modified.
-            name (str): [optional] Name of the incident service.
+
+        :param created: Timestamp of when the incident service was created.
+        :type created: datetime, optional
+
+        :param modified: Timestamp of when the incident service was modified.
+        :type modified: datetime, optional
+
+        :param name: Name of the incident service.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

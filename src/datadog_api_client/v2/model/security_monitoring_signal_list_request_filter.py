@@ -38,10 +38,15 @@ class SecurityMonitoringSignalListRequestFilter(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityMonitoringSignalListRequestFilter - a model defined in OpenAPI
 
-        Keyword Args:
-            _from (datetime): [optional] The minimum timestamp for requested security signals.
-            query (str): [optional] Search query for listing security signals.
-            to (datetime): [optional] The maximum timestamp for requested security signals.
+
+        :param _from: The minimum timestamp for requested security signals.
+        :type _from: datetime, optional
+
+        :param query: Search query for listing security signals.
+        :type query: str, optional
+
+        :param to: The maximum timestamp for requested security signals.
+        :type to: datetime, optional
         """
         super().__init__(kwargs)
 

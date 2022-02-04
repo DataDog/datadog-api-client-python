@@ -42,12 +42,8 @@ class WidgetImageSizing(ModelSimple):
         """WidgetImageSizing - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): How to size the image on the widget. The values are based on the image `object-fit` CSS properties. **Note**: `zoom`, `fit` and `center` values are deprecated. Must be one of ["fill", "contain", "cover", "none", "scale-down", "zoom", "fit", "center"].
-
-        Keyword Args:
-            value (str): How to size the image on the widget. The values are based on the image `object-fit` CSS properties. **Note**: `zoom`, `fit` and `center` values are deprecated. Must be one of ["fill", "contain", "cover", "none", "scale-down", "zoom", "fit", "center"].
+        :param value: How to size the image on the widget. The values are based on the image `object-fit` CSS properties. **Note**: `zoom`, `fit` and `center` values are deprecated. Must be one of ["fill", "contain", "cover", "none", "scale-down", "zoom", "fit", "center"].
+        :type value: str
         """
         super().__init__(kwargs)
 

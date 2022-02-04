@@ -62,17 +62,29 @@ class DashboardList(ModelNormal):
     def __init__(self, name, *args, **kwargs):
         """DashboardList - a model defined in OpenAPI
 
-        Args:
-            name (str): The name of the dashboard list.
 
-        Keyword Args:
-            author (Creator): [optional]
-            created (datetime): [optional] Date of creation of the dashboard list.
-            dashboard_count (int): [optional] The number of dashboards in the list.
-            id (int): [optional] The ID of the dashboard list.
-            is_favorite (bool): [optional] Whether or not the list is in the favorites.
-            modified (datetime): [optional] Date of last edition of the dashboard list.
-            type (str): [optional] The type of dashboard list.
+        :param name: The name of the dashboard list.
+        :type name: str
+
+        :type author: Creator, optional
+
+        :param created: Date of creation of the dashboard list.
+        :type created: datetime, optional
+
+        :param dashboard_count: The number of dashboards in the list.
+        :type dashboard_count: int, optional
+
+        :param id: The ID of the dashboard list.
+        :type id: int, optional
+
+        :param is_favorite: Whether or not the list is in the favorites.
+        :type is_favorite: bool, optional
+
+        :param modified: Date of last edition of the dashboard list.
+        :type modified: datetime, optional
+
+        :param type: The type of dashboard list.
+        :type type: str, optional
         """
         super().__init__(kwargs)
 

@@ -71,29 +71,66 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
     def __init__(self, *args, **kwargs):
         """FormulaAndFunctionQueryDefinition - a model defined in OpenAPI
 
-        Keyword Args:
-            aggregator (FormulaAndFunctionMetricAggregation): [optional]
-            group_by ([str]): [optional] Array of fields to group results by.
-            indexes ([str]): [optional] An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.
-            search (FormulaAndFunctionEventQueryDefinitionSearch): [optional]
-            is_normalized_cpu (bool): [optional] Whether to normalize the CPU percentages.
-            limit (int): [optional] Number of hits to return.
-            sort (QuerySortOrder): [optional]
-            tag_filters ([str]): [optional] An array of tags to filter by.
-            text_filter (str): [optional] Text to use as filter.
-            is_upstream (bool): [optional] Determines whether stats for upstream or downstream dependencies should be queried.
-            primary_tag_name (str): [optional] Name of the second primary tag used within APM. Required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog
-            primary_tag_value (str): [optional] Value of the second primary tag by which to filter APM data. `primary_tag_name` must also be specified.
-            data_source (FormulaAndFunctionApmResourceStatsDataSource): [optional]
-            name (str): [optional] Name of this query to use in formulas.
-            query (str): [optional] Metrics query definition.
-            compute (FormulaAndFunctionEventQueryDefinitionCompute): [optional]
-            metric (str): [optional] Process metric name.
-            env (str): [optional] APM environment.
-            operation_name (str): [optional] Name of operation on service.
-            resource_name (str): [optional] APM resource name.
-            service (str): [optional] APM service name.
-            stat (FormulaAndFunctionApmResourceStatName): [optional]
+
+        :type aggregator: FormulaAndFunctionMetricAggregation, optional
+
+        :param group_by: Array of fields to group results by.
+        :type group_by: [str], optional
+
+        :param indexes: An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.
+        :type indexes: [str], optional
+
+        :type search: FormulaAndFunctionEventQueryDefinitionSearch, optional
+
+        :param is_normalized_cpu: Whether to normalize the CPU percentages.
+        :type is_normalized_cpu: bool, optional
+
+        :param limit: Number of hits to return.
+        :type limit: int, optional
+
+        :type sort: QuerySortOrder, optional
+
+        :param tag_filters: An array of tags to filter by.
+        :type tag_filters: [str], optional
+
+        :param text_filter: Text to use as filter.
+        :type text_filter: str, optional
+
+        :param is_upstream: Determines whether stats for upstream or downstream dependencies should be queried.
+        :type is_upstream: bool, optional
+
+        :param primary_tag_name: Name of the second primary tag used within APM. Required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog
+        :type primary_tag_name: str, optional
+
+        :param primary_tag_value: Value of the second primary tag by which to filter APM data. `primary_tag_name` must also be specified.
+        :type primary_tag_value: str, optional
+
+        :type data_source: FormulaAndFunctionApmResourceStatsDataSource, optional
+
+        :param name: Name of this query to use in formulas.
+        :type name: str, optional
+
+        :param query: Metrics query definition.
+        :type query: str, optional
+
+        :type compute: FormulaAndFunctionEventQueryDefinitionCompute, optional
+
+        :param metric: Process metric name.
+        :type metric: str, optional
+
+        :param env: APM environment.
+        :type env: str, optional
+
+        :param operation_name: Name of operation on service.
+        :type operation_name: str, optional
+
+        :param resource_name: APM resource name.
+        :type resource_name: str, optional
+
+        :param service: APM service name.
+        :type service: str, optional
+
+        :type stat: FormulaAndFunctionApmResourceStatName, optional
         """
         super().__init__(kwargs)
 

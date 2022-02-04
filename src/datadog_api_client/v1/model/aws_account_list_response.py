@@ -40,8 +40,9 @@ class AWSAccountListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """AWSAccountListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            accounts ([AWSAccount]): [optional] List of enabled AWS accounts.
+
+        :param accounts: List of enabled AWS accounts.
+        :type accounts: [AWSAccount], optional
         """
         super().__init__(kwargs)
 

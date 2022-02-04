@@ -40,8 +40,8 @@ class SLOCorrectionUpdateRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOCorrectionUpdateRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            data (SLOCorrectionUpdateData): [optional]
+
+        :type data: SLOCorrectionUpdateData, optional
         """
         super().__init__(kwargs)
 

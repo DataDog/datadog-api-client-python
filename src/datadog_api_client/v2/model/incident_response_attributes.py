@@ -104,27 +104,60 @@ class IncidentResponseAttributes(ModelNormal):
     def __init__(self, title, *args, **kwargs):
         """IncidentResponseAttributes - a model defined in OpenAPI
 
-        Args:
-            title (str): The title of the incident, which summarizes what happened.
 
-        Keyword Args:
-            created (datetime): [optional] Timestamp when the incident was created.
-            customer_impact_duration (int): [optional] Length of the incident's customer impact in seconds. Equals the difference between `customer_impact_start` and `customer_impact_end`.
-            customer_impact_end (datetime, none_type): [optional] Timestamp when customers were no longer impacted by the incident.
-            customer_impact_scope (str, none_type): [optional] A summary of the impact customers experienced during the incident.
-            customer_impact_start (datetime, none_type): [optional] Timestamp when customers began being impacted by the incident.
-            customer_impacted (bool): [optional] A flag indicating whether the incident caused customer impact.
-            detected (datetime, none_type): [optional] Timestamp when the incident was detected.
-            fields ({str: (IncidentFieldAttributes,)}): [optional] A condensed view of the user-defined fields attached to incidents.
-            modified (datetime): [optional] Timestamp when the incident was last modified.
-            notification_handles ([IncidentNotificationHandle], none_type): [optional] Notification handles that will be notified of the incident during update.
-            postmortem_id (str): [optional] The UUID of the postmortem object attached to the incident.
-            public_id (int): [optional] The monotonically increasing integer ID for the incident.
-            resolved (datetime, none_type): [optional] Timestamp when the incident's state was set to resolved.
-            time_to_detect (int): [optional] The amount of time in seconds to detect the incident. Equals the difference between `customer_impact_start` and `detected`.
-            time_to_internal_response (int): [optional] The amount of time in seconds to call incident after detection. Equals the difference of `detected` and `created`.
-            time_to_repair (int): [optional] The amount of time in seconds to resolve customer impact after detecting the issue. Equals the difference between `customer_impact_end` and `detected`.
-            time_to_resolve (int): [optional] The amount of time in seconds to resolve the incident after it was created. Equals the difference between `created` and `resolved`.
+        :param title: The title of the incident, which summarizes what happened.
+        :type title: str
+
+        :param created: Timestamp when the incident was created.
+        :type created: datetime, optional
+
+        :param customer_impact_duration: Length of the incident's customer impact in seconds. Equals the difference between `customer_impact_start` and `customer_impact_end`.
+        :type customer_impact_duration: int, optional
+
+        :param customer_impact_end: Timestamp when customers were no longer impacted by the incident.
+        :type customer_impact_end: datetime, none_type, optional
+
+        :param customer_impact_scope: A summary of the impact customers experienced during the incident.
+        :type customer_impact_scope: str, none_type, optional
+
+        :param customer_impact_start: Timestamp when customers began being impacted by the incident.
+        :type customer_impact_start: datetime, none_type, optional
+
+        :param customer_impacted: A flag indicating whether the incident caused customer impact.
+        :type customer_impacted: bool, optional
+
+        :param detected: Timestamp when the incident was detected.
+        :type detected: datetime, none_type, optional
+
+        :param fields: A condensed view of the user-defined fields attached to incidents.
+        :type fields: {str: (IncidentFieldAttributes,)}, optional
+
+        :param modified: Timestamp when the incident was last modified.
+        :type modified: datetime, optional
+
+        :param notification_handles: Notification handles that will be notified of the incident during update.
+        :type notification_handles: [IncidentNotificationHandle], none_type, optional
+
+        :param postmortem_id: The UUID of the postmortem object attached to the incident.
+        :type postmortem_id: str, optional
+
+        :param public_id: The monotonically increasing integer ID for the incident.
+        :type public_id: int, optional
+
+        :param resolved: Timestamp when the incident's state was set to resolved.
+        :type resolved: datetime, none_type, optional
+
+        :param time_to_detect: The amount of time in seconds to detect the incident. Equals the difference between `customer_impact_start` and `detected`.
+        :type time_to_detect: int, optional
+
+        :param time_to_internal_response: The amount of time in seconds to call incident after detection. Equals the difference of `detected` and `created`.
+        :type time_to_internal_response: int, optional
+
+        :param time_to_repair: The amount of time in seconds to resolve customer impact after detecting the issue. Equals the difference between `customer_impact_end` and `detected`.
+        :type time_to_repair: int, optional
+
+        :param time_to_resolve: The amount of time in seconds to resolve the incident after it was created. Equals the difference between `created` and `resolved`.
+        :type time_to_resolve: int, optional
         """
         super().__init__(kwargs)
 

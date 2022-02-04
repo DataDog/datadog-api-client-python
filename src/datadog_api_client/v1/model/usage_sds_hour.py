@@ -42,12 +42,21 @@ class UsageSDSHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageSDSHour - a model defined in OpenAPI
 
-        Keyword Args:
-            hour (datetime): [optional] The hour for the usage.
-            logs_scanned_bytes (int): [optional] The total number of bytes scanned of logs usage by the Sensitive Data Scanner from the start of the given hour’s month until the given hour.
-            org_name (str): [optional] The organization name.
-            public_id (str): [optional] The organization public ID.
-            total_scanned_bytes (int): [optional] The total number of bytes scanned across all usage types by the Sensitive Data Scanner from the start of the given hour’s month until the given hour.
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param logs_scanned_bytes: The total number of bytes scanned of logs usage by the Sensitive Data Scanner from the start of the given hour’s month until the given hour.
+        :type logs_scanned_bytes: int, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
+
+        :param total_scanned_bytes: The total number of bytes scanned across all usage types by the Sensitive Data Scanner from the start of the given hour’s month until the given hour.
+        :type total_scanned_bytes: int, optional
         """
         super().__init__(kwargs)
 

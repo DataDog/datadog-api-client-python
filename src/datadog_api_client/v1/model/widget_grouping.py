@@ -36,12 +36,8 @@ class WidgetGrouping(ModelSimple):
         """WidgetGrouping - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The kind of grouping to use. Must be one of ["check", "cluster"].
-
-        Keyword Args:
-            value (str): The kind of grouping to use. Must be one of ["check", "cluster"].
+        :param value: The kind of grouping to use. Must be one of ["check", "cluster"].
+        :type value: str
         """
         super().__init__(kwargs)
 

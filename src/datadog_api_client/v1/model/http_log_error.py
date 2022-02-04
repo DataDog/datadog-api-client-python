@@ -39,11 +39,12 @@ class HTTPLogError(ModelNormal):
     def __init__(self, code, message, *args, **kwargs):
         """HTTPLogError - a model defined in OpenAPI
 
-        Args:
-            code (int): Error code.
-            message (str): Error message.
 
-        Keyword Args:
+        :param code: Error code.
+        :type code: int
+
+        :param message: Error message.
+        :type message: str
         """
         super().__init__(kwargs)
 

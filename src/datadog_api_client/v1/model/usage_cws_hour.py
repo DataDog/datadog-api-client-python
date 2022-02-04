@@ -42,12 +42,21 @@ class UsageCWSHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageCWSHour - a model defined in OpenAPI
 
-        Keyword Args:
-            cws_container_count (int): [optional] The total number of Cloud Workload Security container hours from the start of the given hour’s month until the given hour.
-            cws_host_count (int): [optional] The total number of Cloud Workload Security host hours from the start of the given hour’s month until the given hour.
-            hour (datetime): [optional] The hour for the usage.
-            org_name (str): [optional] The organization name.
-            public_id (str): [optional] The organization public ID.
+
+        :param cws_container_count: The total number of Cloud Workload Security container hours from the start of the given hour’s month until the given hour.
+        :type cws_container_count: int, optional
+
+        :param cws_host_count: The total number of Cloud Workload Security host hours from the start of the given hour’s month until the given hour.
+        :type cws_host_count: int, optional
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
         """
         super().__init__(kwargs)
 

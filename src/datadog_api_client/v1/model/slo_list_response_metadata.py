@@ -40,8 +40,8 @@ class SLOListResponseMetadata(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOListResponseMetadata - a model defined in OpenAPI
 
-        Keyword Args:
-            page (SLOListResponseMetadataPage): [optional]
+
+        :type page: SLOListResponseMetadataPage, optional
         """
         super().__init__(kwargs)
 

@@ -34,12 +34,8 @@ class SunburstWidgetDefinitionType(ModelSimple):
         """SunburstWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the Sunburst widget. If omitted defaults to "sunburst". Must be one of ["sunburst"].
-
-        Keyword Args:
-            value (str): Type of the Sunburst widget. If omitted defaults to "sunburst". Must be one of ["sunburst"].
+        :param value: Type of the Sunburst widget. If omitted defaults to "sunburst". Must be one of ["sunburst"].
+        :type value: str
         """
         super().__init__(kwargs)
 

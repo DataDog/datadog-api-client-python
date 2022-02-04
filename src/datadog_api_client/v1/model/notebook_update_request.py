@@ -40,10 +40,8 @@ class NotebookUpdateRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """NotebookUpdateRequest - a model defined in OpenAPI
 
-        Args:
-            data (NotebookUpdateData):
 
-        Keyword Args:
+        :type data: NotebookUpdateData
         """
         super().__init__(kwargs)
 

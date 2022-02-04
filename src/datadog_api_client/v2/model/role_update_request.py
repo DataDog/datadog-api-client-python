@@ -40,10 +40,8 @@ class RoleUpdateRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """RoleUpdateRequest - a model defined in OpenAPI
 
-        Args:
-            data (RoleUpdateData):
 
-        Keyword Args:
+        :type data: RoleUpdateData
         """
         super().__init__(kwargs)
 

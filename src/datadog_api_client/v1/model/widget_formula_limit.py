@@ -42,9 +42,11 @@ class WidgetFormulaLimit(ModelNormal):
     def __init__(self, *args, **kwargs):
         """WidgetFormulaLimit - a model defined in OpenAPI
 
-        Keyword Args:
-            count (int): [optional] Number of results to return.
-            order (QuerySortOrder): [optional]
+
+        :param count: Number of results to return.
+        :type count: int, optional
+
+        :type order: QuerySortOrder, optional
         """
         super().__init__(kwargs)
 

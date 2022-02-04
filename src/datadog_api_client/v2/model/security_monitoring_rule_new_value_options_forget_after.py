@@ -40,12 +40,8 @@ class SecurityMonitoringRuleNewValueOptionsForgetAfter(ModelSimple):
         """SecurityMonitoringRuleNewValueOptionsForgetAfter - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (int): The duration in days after which a learned value is forgotten. Must be one of [1, 2, 7, 14, 21, 28].
-
-        Keyword Args:
-            value (int): The duration in days after which a learned value is forgotten. Must be one of [1, 2, 7, 14, 21, 28].
+        :param value: The duration in days after which a learned value is forgotten. Must be one of [1, 2, 7, 14, 21, 28].
+        :type value: int
         """
         super().__init__(kwargs)
 

@@ -86,24 +86,45 @@ class TimeseriesWidgetRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """TimeseriesWidgetRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            apm_query (LogQueryDefinition): [optional]
-            audit_query (LogQueryDefinition): [optional]
-            display_type (WidgetDisplayType): [optional]
-            event_query (LogQueryDefinition): [optional]
-            formulas ([WidgetFormula]): [optional] List of formulas that operate on queries. **This feature is currently in beta.**
-            log_query (LogQueryDefinition): [optional]
-            metadata ([TimeseriesWidgetExpressionAlias]): [optional] Used to define expression aliases.
-            network_query (LogQueryDefinition): [optional]
-            on_right_yaxis (bool): [optional] Whether or not to display a second y-axis on the right.
-            process_query (ProcessQueryDefinition): [optional]
-            profile_metrics_query (LogQueryDefinition): [optional]
-            q (str): [optional] Widget query.
-            queries ([FormulaAndFunctionQueryDefinition]): [optional] List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**
-            response_format (FormulaAndFunctionResponseFormat): [optional]
-            rum_query (LogQueryDefinition): [optional]
-            security_query (LogQueryDefinition): [optional]
-            style (WidgetRequestStyle): [optional]
+
+        :type apm_query: LogQueryDefinition, optional
+
+        :type audit_query: LogQueryDefinition, optional
+
+        :type display_type: WidgetDisplayType, optional
+
+        :type event_query: LogQueryDefinition, optional
+
+        :param formulas: List of formulas that operate on queries. **This feature is currently in beta.**
+        :type formulas: [WidgetFormula], optional
+
+        :type log_query: LogQueryDefinition, optional
+
+        :param metadata: Used to define expression aliases.
+        :type metadata: [TimeseriesWidgetExpressionAlias], optional
+
+        :type network_query: LogQueryDefinition, optional
+
+        :param on_right_yaxis: Whether or not to display a second y-axis on the right.
+        :type on_right_yaxis: bool, optional
+
+        :type process_query: ProcessQueryDefinition, optional
+
+        :type profile_metrics_query: LogQueryDefinition, optional
+
+        :param q: Widget query.
+        :type q: str, optional
+
+        :param queries: List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**
+        :type queries: [FormulaAndFunctionQueryDefinition], optional
+
+        :type response_format: FormulaAndFunctionResponseFormat, optional
+
+        :type rum_query: LogQueryDefinition, optional
+
+        :type security_query: LogQueryDefinition, optional
+
+        :type style: WidgetRequestStyle, optional
         """
         super().__init__(kwargs)
 

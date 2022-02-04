@@ -63,15 +63,20 @@ class TreeMapWidgetDefinition(ModelNormal):
     def __init__(self, requests, type, *args, **kwargs):
         """TreeMapWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            requests ([TreeMapWidgetRequest]): List of top list widget requests.
-            type (TreeMapWidgetDefinitionType):
 
-        Keyword Args:
-            color_by (TreeMapColorBy): [optional]
-            group_by (TreeMapGroupBy): [optional]
-            size_by (TreeMapSizeBy): [optional]
-            title (str): [optional] Title of your widget.
+        :param requests: List of top list widget requests.
+        :type requests: [TreeMapWidgetRequest]
+
+        :type type: TreeMapWidgetDefinitionType
+
+        :type color_by: TreeMapColorBy, optional
+
+        :type group_by: TreeMapGroupBy, optional
+
+        :type size_by: TreeMapSizeBy, optional
+
+        :param title: Title of your widget.
+        :type title: str, optional
         """
         super().__init__(kwargs)
 

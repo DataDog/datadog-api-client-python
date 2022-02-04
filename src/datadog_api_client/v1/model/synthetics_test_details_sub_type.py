@@ -42,12 +42,8 @@ class SyntheticsTestDetailsSubType(ModelSimple):
         """SyntheticsTestDetailsSubType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The subtype of the Synthetic API test, `http`, `ssl`, `tcp`, `dns`, `icmp`, `udp`, `websocket` or `multi`. Must be one of ["http", "ssl", "tcp", "dns", "multi", "icmp", "udp", "websocket"].
-
-        Keyword Args:
-            value (str): The subtype of the Synthetic API test, `http`, `ssl`, `tcp`, `dns`, `icmp`, `udp`, `websocket` or `multi`. Must be one of ["http", "ssl", "tcp", "dns", "multi", "icmp", "udp", "websocket"].
+        :param value: The subtype of the Synthetic API test, `http`, `ssl`, `tcp`, `dns`, `icmp`, `udp`, `websocket` or `multi`. Must be one of ["http", "ssl", "tcp", "dns", "multi", "icmp", "udp", "websocket"].
+        :type value: str
         """
         super().__init__(kwargs)
 

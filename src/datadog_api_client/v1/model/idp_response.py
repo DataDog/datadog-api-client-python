@@ -33,10 +33,9 @@ class IdpResponse(ModelNormal):
     def __init__(self, message, *args, **kwargs):
         """IdpResponse - a model defined in OpenAPI
 
-        Args:
-            message (str): Identity provider response.
 
-        Keyword Args:
+        :param message: Identity provider response.
+        :type message: str
         """
         super().__init__(kwargs)
 

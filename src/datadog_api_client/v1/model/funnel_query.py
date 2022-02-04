@@ -46,12 +46,13 @@ class FunnelQuery(ModelNormal):
     def __init__(self, data_source, query_string, steps, *args, **kwargs):
         """FunnelQuery - a model defined in OpenAPI
 
-        Args:
-            data_source (FunnelSource):
-            query_string (str): The widget query.
-            steps (FunnelSteps):
 
-        Keyword Args:
+        :type data_source: FunnelSource
+
+        :param query_string: The widget query.
+        :type query_string: str
+
+        :type steps: FunnelSteps
         """
         super().__init__(kwargs)
 

@@ -61,16 +61,32 @@ class DashboardSummaryDefinition(ModelNormal):
     def __init__(self, *args, **kwargs):
         """DashboardSummaryDefinition - a model defined in OpenAPI
 
-        Keyword Args:
-            author_handle (str): [optional] Identifier of the dashboard author.
-            created_at (datetime): [optional] Creation date of the dashboard.
-            description (str, none_type): [optional] Description of the dashboard.
-            id (str): [optional] Dashboard identifier.
-            is_read_only (bool): [optional] Whether this dashboard is read-only. If True, only the author and admins can make changes to it.
-            layout_type (DashboardLayoutType): [optional]
-            modified_at (datetime): [optional] Modification date of the dashboard.
-            title (str): [optional] Title of the dashboard.
-            url (str): [optional] URL of the dashboard.
+
+        :param author_handle: Identifier of the dashboard author.
+        :type author_handle: str, optional
+
+        :param created_at: Creation date of the dashboard.
+        :type created_at: datetime, optional
+
+        :param description: Description of the dashboard.
+        :type description: str, none_type, optional
+
+        :param id: Dashboard identifier.
+        :type id: str, optional
+
+        :param is_read_only: Whether this dashboard is read-only. If True, only the author and admins can make changes to it.
+        :type is_read_only: bool, optional
+
+        :type layout_type: DashboardLayoutType, optional
+
+        :param modified_at: Modification date of the dashboard.
+        :type modified_at: datetime, optional
+
+        :param title: Title of the dashboard.
+        :type title: str, optional
+
+        :param url: URL of the dashboard.
+        :type url: str, optional
         """
         super().__init__(kwargs)
 

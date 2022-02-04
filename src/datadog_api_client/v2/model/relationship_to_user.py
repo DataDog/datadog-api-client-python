@@ -40,10 +40,8 @@ class RelationshipToUser(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """RelationshipToUser - a model defined in OpenAPI
 
-        Args:
-            data (RelationshipToUserData):
 
-        Keyword Args:
+        :type data: RelationshipToUserData
         """
         super().__init__(kwargs)
 

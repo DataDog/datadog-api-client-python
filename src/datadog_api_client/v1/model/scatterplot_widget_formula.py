@@ -44,12 +44,14 @@ class ScatterplotWidgetFormula(ModelNormal):
     def __init__(self, dimension, formula, *args, **kwargs):
         """ScatterplotWidgetFormula - a model defined in OpenAPI
 
-        Args:
-            dimension (ScatterplotDimension):
-            formula (str): String expression built from queries, formulas, and functions.
 
-        Keyword Args:
-            alias (str): [optional] Expression alias.
+        :type dimension: ScatterplotDimension
+
+        :param formula: String expression built from queries, formulas, and functions.
+        :type formula: str
+
+        :param alias: Expression alias.
+        :type alias: str, optional
         """
         super().__init__(kwargs)
 

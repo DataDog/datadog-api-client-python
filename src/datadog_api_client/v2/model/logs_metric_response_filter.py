@@ -33,8 +33,9 @@ class LogsMetricResponseFilter(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsMetricResponseFilter - a model defined in OpenAPI
 
-        Keyword Args:
-            query (str): [optional] The search query - following the log search syntax.
+
+        :param query: The search query - following the log search syntax.
+        :type query: str, optional
         """
         super().__init__(kwargs)
 

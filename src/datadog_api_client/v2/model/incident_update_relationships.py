@@ -54,12 +54,16 @@ class IncidentUpdateRelationships(ModelNormal):
     def __init__(self, *args, **kwargs):
         """IncidentUpdateRelationships - a model defined in OpenAPI
 
-        Keyword Args:
-            commander_user (RelationshipToUser): [optional]
-            created_by_user (RelationshipToUser): [optional]
-            integrations (RelationshipToIncidentIntegrationMetadatas): [optional]
-            last_modified_by_user (RelationshipToUser): [optional]
-            postmortem (RelationshipToIncidentPostmortem): [optional]
+
+        :type commander_user: RelationshipToUser, optional
+
+        :type created_by_user: RelationshipToUser, optional
+
+        :type integrations: RelationshipToIncidentIntegrationMetadatas, optional
+
+        :type last_modified_by_user: RelationshipToUser, optional
+
+        :type postmortem: RelationshipToIncidentPostmortem, optional
         """
         super().__init__(kwargs)
 

@@ -56,16 +56,24 @@ class EventTimelineWidgetDefinition(ModelNormal):
     def __init__(self, query, type, *args, **kwargs):
         """EventTimelineWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            query (str): Query to filter the event timeline with.
-            type (EventTimelineWidgetDefinitionType):
 
-        Keyword Args:
-            tags_execution (str): [optional] The execution method for multi-value filters. Can be either and or or.
-            time (WidgetTime): [optional]
-            title (str): [optional] Title of the widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
+        :param query: Query to filter the event timeline with.
+        :type query: str
+
+        :type type: EventTimelineWidgetDefinitionType
+
+        :param tags_execution: The execution method for multi-value filters. Can be either and or or.
+        :type tags_execution: str, optional
+
+        :type time: WidgetTime, optional
+
+        :param title: Title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

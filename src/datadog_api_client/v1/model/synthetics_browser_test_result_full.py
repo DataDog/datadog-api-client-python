@@ -58,14 +58,24 @@ class SyntheticsBrowserTestResultFull(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsBrowserTestResultFull - a model defined in OpenAPI
 
-        Keyword Args:
-            check (SyntheticsBrowserTestResultFullCheck): [optional]
-            check_time (float): [optional] When the browser test was conducted.
-            check_version (int): [optional] Version of the browser test used.
-            probe_dc (str): [optional] Location from which the browser test was performed.
-            result (SyntheticsBrowserTestResultData): [optional]
-            result_id (str): [optional] ID of the browser test result.
-            status (SyntheticsTestMonitorStatus): [optional]
+
+        :type check: SyntheticsBrowserTestResultFullCheck, optional
+
+        :param check_time: When the browser test was conducted.
+        :type check_time: float, optional
+
+        :param check_version: Version of the browser test used.
+        :type check_version: int, optional
+
+        :param probe_dc: Location from which the browser test was performed.
+        :type probe_dc: str, optional
+
+        :type result: SyntheticsBrowserTestResultData, optional
+
+        :param result_id: ID of the browser test result.
+        :type result_id: str, optional
+
+        :type status: SyntheticsTestMonitorStatus, optional
         """
         super().__init__(kwargs)
 

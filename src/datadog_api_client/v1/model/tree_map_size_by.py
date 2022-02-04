@@ -36,12 +36,8 @@ class TreeMapSizeBy(ModelSimple):
         """TreeMapSizeBy - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The attribute used to determine size in the widget. Must be one of ["pct_cpu", "pct_mem"].
-
-        Keyword Args:
-            value (str): The attribute used to determine size in the widget. Must be one of ["pct_cpu", "pct_mem"].
+        :param value: The attribute used to determine size in the widget. Must be one of ["pct_cpu", "pct_mem"].
+        :type value: str
         """
         super().__init__(kwargs)
 

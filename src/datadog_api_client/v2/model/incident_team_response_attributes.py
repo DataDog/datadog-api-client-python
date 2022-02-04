@@ -41,10 +41,15 @@ class IncidentTeamResponseAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """IncidentTeamResponseAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            created (datetime): [optional] Timestamp of when the incident team was created.
-            modified (datetime): [optional] Timestamp of when the incident team was modified.
-            name (str): [optional] Name of the incident team.
+
+        :param created: Timestamp of when the incident team was created.
+        :type created: datetime, optional
+
+        :param modified: Timestamp of when the incident team was modified.
+        :type modified: datetime, optional
+
+        :param name: Name of the incident team.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

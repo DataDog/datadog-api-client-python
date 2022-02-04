@@ -52,12 +52,19 @@ class LogQueryDefinition(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogQueryDefinition - a model defined in OpenAPI
 
-        Keyword Args:
-            compute (LogsQueryCompute): [optional]
-            group_by ([LogQueryDefinitionGroupBy]): [optional] List of tag prefixes to group by in the case of a cluster check.
-            index (str): [optional] A coma separated-list of index names. Use \"*\" query all indexes at once. [Multiple Indexes](https://docs.datadoghq.com/logs/indexes/#multiple-indexes)
-            multi_compute ([LogsQueryCompute]): [optional] This field is mutually exclusive with `compute`.
-            search (LogQueryDefinitionSearch): [optional]
+
+        :type compute: LogsQueryCompute, optional
+
+        :param group_by: List of tag prefixes to group by in the case of a cluster check.
+        :type group_by: [LogQueryDefinitionGroupBy], optional
+
+        :param index: A coma separated-list of index names. Use \"*\" query all indexes at once. [Multiple Indexes](https://docs.datadoghq.com/logs/indexes/#multiple-indexes)
+        :type index: str, optional
+
+        :param multi_compute: This field is mutually exclusive with `compute`.
+        :type multi_compute: [LogsQueryCompute], optional
+
+        :type search: LogQueryDefinitionSearch, optional
         """
         super().__init__(kwargs)
 

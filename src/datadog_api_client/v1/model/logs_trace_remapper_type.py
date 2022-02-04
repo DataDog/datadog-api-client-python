@@ -34,12 +34,8 @@ class LogsTraceRemapperType(ModelSimple):
         """LogsTraceRemapperType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of logs trace remapper. If omitted defaults to "trace-id-remapper". Must be one of ["trace-id-remapper"].
-
-        Keyword Args:
-            value (str): Type of logs trace remapper. If omitted defaults to "trace-id-remapper". Must be one of ["trace-id-remapper"].
+        :param value: Type of logs trace remapper. If omitted defaults to "trace-id-remapper". Must be one of ["trace-id-remapper"].
+        :type value: str
         """
         super().__init__(kwargs)
 

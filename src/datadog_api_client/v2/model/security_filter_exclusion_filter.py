@@ -35,11 +35,12 @@ class SecurityFilterExclusionFilter(ModelNormal):
     def __init__(self, name, query, *args, **kwargs):
         """SecurityFilterExclusionFilter - a model defined in OpenAPI
 
-        Args:
-            name (str): Exclusion filter name.
-            query (str): Exclusion filter query. Logs that match this query are excluded from the security filter.
 
-        Keyword Args:
+        :param name: Exclusion filter name.
+        :type name: str
+
+        :param query: Exclusion filter query. Logs that match this query are excluded from the security filter.
+        :type query: str
         """
         super().__init__(kwargs)
 

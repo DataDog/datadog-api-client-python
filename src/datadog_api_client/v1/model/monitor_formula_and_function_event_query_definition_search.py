@@ -33,10 +33,9 @@ class MonitorFormulaAndFunctionEventQueryDefinitionSearch(ModelNormal):
     def __init__(self, query, *args, **kwargs):
         """MonitorFormulaAndFunctionEventQueryDefinitionSearch - a model defined in OpenAPI
 
-        Args:
-            query (str): Events search string.
 
-        Keyword Args:
+        :param query: Events search string.
+        :type query: str
         """
         super().__init__(kwargs)
 

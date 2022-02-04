@@ -50,11 +50,15 @@ class FullAPIKey(ModelNormal):
     def __init__(self, *args, **kwargs):
         """FullAPIKey - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (FullAPIKeyAttributes): [optional]
-            id (str): [optional] ID of the API key.
-            relationships (APIKeyRelationships): [optional]
-            type (APIKeysType): [optional]
+
+        :type attributes: FullAPIKeyAttributes, optional
+
+        :param id: ID of the API key.
+        :type id: str, optional
+
+        :type relationships: APIKeyRelationships, optional
+
+        :type type: APIKeysType, optional
         """
         super().__init__(kwargs)
 

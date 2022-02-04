@@ -35,11 +35,12 @@ class PagerDutyService(ModelNormal):
     def __init__(self, service_key, service_name, *args, **kwargs):
         """PagerDutyService - a model defined in OpenAPI
 
-        Args:
-            service_key (str): Your service key in PagerDuty.
-            service_name (str): Your service name associated with a service key in PagerDuty.
 
-        Keyword Args:
+        :param service_key: Your service key in PagerDuty.
+        :type service_key: str
+
+        :param service_name: Your service name associated with a service key in PagerDuty.
+        :type service_name: str
         """
         super().__init__(kwargs)
 

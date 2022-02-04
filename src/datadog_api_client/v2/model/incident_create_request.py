@@ -40,10 +40,8 @@ class IncidentCreateRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """IncidentCreateRequest - a model defined in OpenAPI
 
-        Args:
-            data (IncidentCreateData):
 
-        Keyword Args:
+        :type data: IncidentCreateData
         """
         super().__init__(kwargs)
 

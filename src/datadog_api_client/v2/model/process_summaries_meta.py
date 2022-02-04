@@ -40,8 +40,8 @@ class ProcessSummariesMeta(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ProcessSummariesMeta - a model defined in OpenAPI
 
-        Keyword Args:
-            page (ProcessSummariesMetaPage): [optional]
+
+        :type page: ProcessSummariesMetaPage, optional
         """
         super().__init__(kwargs)
 

@@ -37,10 +37,15 @@ class SyntheticsCoreWebVitals(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsCoreWebVitals - a model defined in OpenAPI
 
-        Keyword Args:
-            cls (int): [optional] Cumulative Layout Shift.
-            lcp (int): [optional] Largest Contentful Paint in milliseconds.
-            url (str): [optional] URL attached to the metrics.
+
+        :param cls: Cumulative Layout Shift.
+        :type cls: int, optional
+
+        :param lcp: Largest Contentful Paint in milliseconds.
+        :type lcp: int, optional
+
+        :param url: URL attached to the metrics.
+        :type url: str, optional
         """
         super().__init__(kwargs)
 

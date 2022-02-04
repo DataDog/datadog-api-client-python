@@ -39,9 +39,12 @@ class SecurityMonitoringSignalListRequestPage(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityMonitoringSignalListRequestPage - a model defined in OpenAPI
 
-        Keyword Args:
-            cursor (str): [optional] A list of results using the cursor provided in the previous query.
-            limit (int): [optional] The maximum number of security signals in the response. If omitted the server will use the default value of 10.
+
+        :param cursor: A list of results using the cursor provided in the previous query.
+        :type cursor: str, optional
+
+        :param limit: The maximum number of security signals in the response. If omitted the server will use the default value of 10.
+        :type limit: int, optional
         """
         super().__init__(kwargs)
 

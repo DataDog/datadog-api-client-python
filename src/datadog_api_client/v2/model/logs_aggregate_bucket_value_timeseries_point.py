@@ -35,9 +35,12 @@ class LogsAggregateBucketValueTimeseriesPoint(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsAggregateBucketValueTimeseriesPoint - a model defined in OpenAPI
 
-        Keyword Args:
-            time (str): [optional] The time value for this point
-            value (float): [optional] The value for this point
+
+        :param time: The time value for this point
+        :type time: str, optional
+
+        :param value: The value for this point
+        :type value: float, optional
         """
         super().__init__(kwargs)
 

@@ -42,11 +42,11 @@ class SyntheticsTestRequestProxy(ModelNormal):
     def __init__(self, url, *args, **kwargs):
         """SyntheticsTestRequestProxy - a model defined in OpenAPI
 
-        Args:
-            url (str): URL of the proxy to perform the test.
 
-        Keyword Args:
-            headers (SyntheticsTestHeaders): [optional]
+        :param url: URL of the proxy to perform the test.
+        :type url: str
+
+        :type headers: SyntheticsTestHeaders, optional
         """
         super().__init__(kwargs)
 

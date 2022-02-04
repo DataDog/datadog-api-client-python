@@ -34,12 +34,8 @@ class SyntheticsWarningType(ModelSimple):
         """SyntheticsWarningType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): User locator used. If omitted defaults to "user_locator". Must be one of ["user_locator"].
-
-        Keyword Args:
-            value (str): User locator used. If omitted defaults to "user_locator". Must be one of ["user_locator"].
+        :param value: User locator used. If omitted defaults to "user_locator". Must be one of ["user_locator"].
+        :type value: str
         """
         super().__init__(kwargs)
 

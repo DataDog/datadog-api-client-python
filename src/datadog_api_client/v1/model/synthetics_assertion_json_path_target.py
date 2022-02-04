@@ -52,13 +52,15 @@ class SyntheticsAssertionJSONPathTarget(ModelNormal):
     def __init__(self, operator, type, *args, **kwargs):
         """SyntheticsAssertionJSONPathTarget - a model defined in OpenAPI
 
-        Args:
-            operator (SyntheticsAssertionJSONPathOperator):
-            type (SyntheticsAssertionType):
 
-        Keyword Args:
-            _property (str): [optional] The associated assertion property.
-            target (SyntheticsAssertionJSONPathTargetTarget): [optional]
+        :type operator: SyntheticsAssertionJSONPathOperator
+
+        :type type: SyntheticsAssertionType
+
+        :param _property: The associated assertion property.
+        :type _property: str, optional
+
+        :type target: SyntheticsAssertionJSONPathTargetTarget, optional
         """
         super().__init__(kwargs)
 

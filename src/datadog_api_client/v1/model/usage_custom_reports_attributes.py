@@ -41,12 +41,21 @@ class UsageCustomReportsAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageCustomReportsAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            computed_on (str): [optional] The date the specified custom report was computed.
-            end_date (str): [optional] The ending date of custom report.
-            size (int): [optional] size
-            start_date (str): [optional] The starting date of custom report.
-            tags ([str]): [optional] A list of tags to apply to custom reports.
+
+        :param computed_on: The date the specified custom report was computed.
+        :type computed_on: str, optional
+
+        :param end_date: The ending date of custom report.
+        :type end_date: str, optional
+
+        :param size: size
+        :type size: int, optional
+
+        :param start_date: The starting date of custom report.
+        :type start_date: str, optional
+
+        :param tags: A list of tags to apply to custom reports.
+        :type tags: [str], optional
         """
         super().__init__(kwargs)
 

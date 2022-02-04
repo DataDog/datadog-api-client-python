@@ -36,12 +36,8 @@ class SyntheticsGlobalVariableParseTestOptionsType(ModelSimple):
         """SyntheticsGlobalVariableParseTestOptionsType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Property of the Synthetics Test Response to use for a Synthetics global variable. Must be one of ["http_body", "http_header"].
-
-        Keyword Args:
-            value (str): Property of the Synthetics Test Response to use for a Synthetics global variable. Must be one of ["http_body", "http_header"].
+        :param value: Property of the Synthetics Test Response to use for a Synthetics global variable. Must be one of ["http_body", "http_header"].
+        :type value: str
         """
         super().__init__(kwargs)
 

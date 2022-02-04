@@ -44,11 +44,18 @@ class MonitorSearchResponseMetadata(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MonitorSearchResponseMetadata - a model defined in OpenAPI
 
-        Keyword Args:
-            page (int): [optional] The page to start paginating from.
-            page_count (int): [optional] The number of pages.
-            per_page (int): [optional] The number of monitors to return per page.
-            total_count (int): [optional] The total number of monitors.
+
+        :param page: The page to start paginating from.
+        :type page: int, optional
+
+        :param page_count: The number of pages.
+        :type page_count: int, optional
+
+        :param per_page: The number of monitors to return per page.
+        :type per_page: int, optional
+
+        :param total_count: The total number of monitors.
+        :type total_count: int, optional
         """
         super().__init__(kwargs)
 

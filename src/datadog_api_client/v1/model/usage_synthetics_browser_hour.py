@@ -36,9 +36,12 @@ class UsageSyntheticsBrowserHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageSyntheticsBrowserHour - a model defined in OpenAPI
 
-        Keyword Args:
-            browser_check_calls_count (int): [optional] Contains the number of Synthetics Browser tests run.
-            hour (datetime): [optional] The hour for the usage.
+
+        :param browser_check_calls_count: Contains the number of Synthetics Browser tests run.
+        :type browser_check_calls_count: int, optional
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
         """
         super().__init__(kwargs)
 

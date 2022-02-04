@@ -40,8 +40,9 @@ class UsageNetworkFlowsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageNetworkFlowsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageNetworkFlowsHour]): [optional] Get hourly usage for Network Flows.
+
+        :param usage: Get hourly usage for Network Flows.
+        :type usage: [UsageNetworkFlowsHour], optional
         """
         super().__init__(kwargs)
 

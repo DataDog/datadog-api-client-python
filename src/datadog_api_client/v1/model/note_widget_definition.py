@@ -64,19 +64,32 @@ class NoteWidgetDefinition(ModelNormal):
     def __init__(self, content, type, *args, **kwargs):
         """NoteWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            content (str): Content of the note.
-            type (NoteWidgetDefinitionType):
 
-        Keyword Args:
-            background_color (str): [optional] Background color of the note.
-            font_size (str): [optional] Size of the text.
-            has_padding (bool): [optional] Whether to add padding or not. If omitted the server will use the default value of True.
-            show_tick (bool): [optional] Whether to show a tick or not.
-            text_align (WidgetTextAlign): [optional]
-            tick_edge (WidgetTickEdge): [optional]
-            tick_pos (str): [optional] Where to position the tick on an edge.
-            vertical_align (WidgetVerticalAlign): [optional]
+        :param content: Content of the note.
+        :type content: str
+
+        :type type: NoteWidgetDefinitionType
+
+        :param background_color: Background color of the note.
+        :type background_color: str, optional
+
+        :param font_size: Size of the text.
+        :type font_size: str, optional
+
+        :param has_padding: Whether to add padding or not. If omitted the server will use the default value of True.
+        :type has_padding: bool, optional
+
+        :param show_tick: Whether to show a tick or not.
+        :type show_tick: bool, optional
+
+        :type text_align: WidgetTextAlign, optional
+
+        :type tick_edge: WidgetTickEdge, optional
+
+        :param tick_pos: Where to position the tick on an edge.
+        :type tick_pos: str, optional
+
+        :type vertical_align: WidgetVerticalAlign, optional
         """
         super().__init__(kwargs)
 

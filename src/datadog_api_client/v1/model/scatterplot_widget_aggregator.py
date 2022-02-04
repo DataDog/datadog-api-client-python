@@ -39,12 +39,8 @@ class ScatterplotWidgetAggregator(ModelSimple):
         """ScatterplotWidgetAggregator - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Aggregator used for the request. Must be one of ["avg", "last", "max", "min", "sum"].
-
-        Keyword Args:
-            value (str): Aggregator used for the request. Must be one of ["avg", "last", "max", "min", "sum"].
+        :param value: Aggregator used for the request. Must be one of ["avg", "last", "max", "min", "sum"].
+        :type value: str
         """
         super().__init__(kwargs)
 

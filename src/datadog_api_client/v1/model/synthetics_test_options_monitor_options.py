@@ -38,8 +38,9 @@ class SyntheticsTestOptionsMonitorOptions(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsTestOptionsMonitorOptions - a model defined in OpenAPI
 
-        Keyword Args:
-            renotify_interval (int): [optional] Time interval before renotifying if the test is still failing (in minutes).
+
+        :param renotify_interval: Time interval before renotifying if the test is still failing (in minutes).
+        :type renotify_interval: int, optional
         """
         super().__init__(kwargs)
 

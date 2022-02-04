@@ -34,12 +34,8 @@ class LogsMetricType(ModelSimple):
         """LogsMetricType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The type of the resource. The value should always be logs_metrics. If omitted defaults to "logs_metrics". Must be one of ["logs_metrics"].
-
-        Keyword Args:
-            value (str): The type of the resource. The value should always be logs_metrics. If omitted defaults to "logs_metrics". Must be one of ["logs_metrics"].
+        :param value: The type of the resource. The value should always be logs_metrics. If omitted defaults to "logs_metrics". Must be one of ["logs_metrics"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -36,12 +36,8 @@ class SecurityMonitoringFilterAction(ModelSimple):
         """SecurityMonitoringFilterAction - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The type of filtering action. Must be one of ["require", "suppress"].
-
-        Keyword Args:
-            value (str): The type of filtering action. Must be one of ["require", "suppress"].
+        :param value: The type of filtering action. Must be one of ["require", "suppress"].
+        :type value: str
         """
         super().__init__(kwargs)
 

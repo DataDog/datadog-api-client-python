@@ -42,9 +42,11 @@ class SyntheticsAPITestResultShortResult(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsAPITestResultShortResult - a model defined in OpenAPI
 
-        Keyword Args:
-            passed (bool): [optional] Describes if the test run has passed or failed.
-            timings (SyntheticsTiming): [optional]
+
+        :param passed: Describes if the test run has passed or failed.
+        :type passed: bool, optional
+
+        :type timings: SyntheticsTiming, optional
         """
         super().__init__(kwargs)
 

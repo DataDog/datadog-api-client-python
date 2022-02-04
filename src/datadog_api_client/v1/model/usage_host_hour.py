@@ -60,21 +60,48 @@ class UsageHostHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageHostHour - a model defined in OpenAPI
 
-        Keyword Args:
-            agent_host_count (int): [optional] Contains the total number of infrastructure hosts reporting during a given hour that were running the Datadog Agent.
-            alibaba_host_count (int): [optional] Contains the total number of hosts that reported through Alibaba integration (and were NOT running the Datadog Agent).
-            apm_azure_app_service_host_count (int): [optional] Contains the total number of Azure App Services hosts using APM.
-            apm_host_count (int): [optional] Shows the total number of hosts using APM during the hour, these are counted as billable (except during trial periods).
-            aws_host_count (int): [optional] Contains the total number of hosts that reported through the AWS integration (and were NOT running the Datadog Agent).
-            azure_host_count (int): [optional] Contains the total number of hosts that reported through Azure integration (and were NOT running the Datadog Agent).
-            container_count (int): [optional] Shows the total number of containers reported by the Docker integration during the hour.
-            gcp_host_count (int): [optional] Contains the total number of hosts that reported through the Google Cloud integration (and were NOT running the Datadog Agent).
-            heroku_host_count (int): [optional] Contains the total number of Heroku dynos reported by the Datadog Agent.
-            host_count (int): [optional] Contains the total number of billable infrastructure hosts reporting during a given hour. This is the sum of `agent_host_count`, `aws_host_count`, and `gcp_host_count`.
-            hour (datetime): [optional] The hour for the usage.
-            infra_azure_app_service (int): [optional] Contains the total number of hosts that reported through the Azure App Services integration (and were NOT running the Datadog Agent).
-            opentelemetry_host_count (int): [optional] Contains the total number of hosts reported by Datadog exporter for the OpenTelemetry Collector.
-            vsphere_host_count (int): [optional] Contains the total number of hosts that reported through vSphere integration (and were NOT running the Datadog Agent).
+
+        :param agent_host_count: Contains the total number of infrastructure hosts reporting during a given hour that were running the Datadog Agent.
+        :type agent_host_count: int, optional
+
+        :param alibaba_host_count: Contains the total number of hosts that reported through Alibaba integration (and were NOT running the Datadog Agent).
+        :type alibaba_host_count: int, optional
+
+        :param apm_azure_app_service_host_count: Contains the total number of Azure App Services hosts using APM.
+        :type apm_azure_app_service_host_count: int, optional
+
+        :param apm_host_count: Shows the total number of hosts using APM during the hour, these are counted as billable (except during trial periods).
+        :type apm_host_count: int, optional
+
+        :param aws_host_count: Contains the total number of hosts that reported through the AWS integration (and were NOT running the Datadog Agent).
+        :type aws_host_count: int, optional
+
+        :param azure_host_count: Contains the total number of hosts that reported through Azure integration (and were NOT running the Datadog Agent).
+        :type azure_host_count: int, optional
+
+        :param container_count: Shows the total number of containers reported by the Docker integration during the hour.
+        :type container_count: int, optional
+
+        :param gcp_host_count: Contains the total number of hosts that reported through the Google Cloud integration (and were NOT running the Datadog Agent).
+        :type gcp_host_count: int, optional
+
+        :param heroku_host_count: Contains the total number of Heroku dynos reported by the Datadog Agent.
+        :type heroku_host_count: int, optional
+
+        :param host_count: Contains the total number of billable infrastructure hosts reporting during a given hour. This is the sum of `agent_host_count`, `aws_host_count`, and `gcp_host_count`.
+        :type host_count: int, optional
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param infra_azure_app_service: Contains the total number of hosts that reported through the Azure App Services integration (and were NOT running the Datadog Agent).
+        :type infra_azure_app_service: int, optional
+
+        :param opentelemetry_host_count: Contains the total number of hosts reported by Datadog exporter for the OpenTelemetry Collector.
+        :type opentelemetry_host_count: int, optional
+
+        :param vsphere_host_count: Contains the total number of hosts that reported through vSphere integration (and were NOT running the Datadog Agent).
+        :type vsphere_host_count: int, optional
         """
         super().__init__(kwargs)
 

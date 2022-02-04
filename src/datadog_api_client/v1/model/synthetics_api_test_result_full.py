@@ -56,14 +56,24 @@ class SyntheticsAPITestResultFull(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsAPITestResultFull - a model defined in OpenAPI
 
-        Keyword Args:
-            check (SyntheticsAPITestResultFullCheck): [optional]
-            check_time (float): [optional] When the API test was conducted.
-            check_version (int): [optional] Version of the API test used.
-            probe_dc (str): [optional] Locations for which to query the API test results.
-            result (SyntheticsAPITestResultData): [optional]
-            result_id (str): [optional] ID of the API test result.
-            status (SyntheticsTestMonitorStatus): [optional]
+
+        :type check: SyntheticsAPITestResultFullCheck, optional
+
+        :param check_time: When the API test was conducted.
+        :type check_time: float, optional
+
+        :param check_version: Version of the API test used.
+        :type check_version: int, optional
+
+        :param probe_dc: Locations for which to query the API test results.
+        :type probe_dc: str, optional
+
+        :type result: SyntheticsAPITestResultData, optional
+
+        :param result_id: ID of the API test result.
+        :type result_id: str, optional
+
+        :type status: SyntheticsTestMonitorStatus, optional
         """
         super().__init__(kwargs)
 

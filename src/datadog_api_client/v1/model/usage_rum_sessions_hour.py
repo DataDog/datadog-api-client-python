@@ -46,14 +46,27 @@ class UsageRumSessionsHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageRumSessionsHour - a model defined in OpenAPI
 
-        Keyword Args:
-            hour (datetime): [optional] The hour for the usage.
-            org_name (str): [optional] The organization name.
-            public_id (str): [optional] The organization public ID.
-            replay_session_count (int): [optional] Contains the number of RUM Replay Sessions (data available beginning November 1, 2021).
-            session_count (int): [optional] Contains the number of browser RUM Lite Sessions.
-            session_count_android (int): [optional] Contains the number of mobile RUM Sessions on Android (data available beginning December 1, 2020).
-            session_count_ios (int): [optional] Contains the number of mobile RUM Sessions on iOS (data available beginning December 1, 2020).
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
+
+        :param replay_session_count: Contains the number of RUM Replay Sessions (data available beginning November 1, 2021).
+        :type replay_session_count: int, optional
+
+        :param session_count: Contains the number of browser RUM Lite Sessions.
+        :type session_count: int, optional
+
+        :param session_count_android: Contains the number of mobile RUM Sessions on Android (data available beginning December 1, 2020).
+        :type session_count_android: int, optional
+
+        :param session_count_ios: Contains the number of mobile RUM Sessions on iOS (data available beginning December 1, 2020).
+        :type session_count_ios: int, optional
         """
         super().__init__(kwargs)
 

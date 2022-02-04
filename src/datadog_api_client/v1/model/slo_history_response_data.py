@@ -68,17 +68,32 @@ class SLOHistoryResponseData(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOHistoryResponseData - a model defined in OpenAPI
 
-        Keyword Args:
-            from_ts (int): [optional] The `from` timestamp in epoch seconds.
-            group_by ([str]): [optional] For `metric` based SLOs where the query includes a group-by clause, this represents the list of grouping parameters.  This is not included in responses for `monitor` based SLOs.
-            groups ([SLOHistoryMonitor]): [optional] For grouped SLOs, this represents SLI data for specific groups.  This is not included in the responses for `metric` based SLOs.
-            monitors ([SLOHistoryMonitor]): [optional] For multi-monitor SLOs, this represents SLI data for specific monitors.  This is not included in the responses for `metric` based SLOs.
-            overall (SLOHistorySLIData): [optional]
-            series (SLOHistoryMetrics): [optional]
-            thresholds ({str: (SLOThreshold,)}): [optional] mapping of string timeframe to the SLO threshold.
-            to_ts (int): [optional] The `to` timestamp in epoch seconds.
-            type (SLOType): [optional]
-            type_id (SLOTypeNumeric): [optional]
+
+        :param from_ts: The `from` timestamp in epoch seconds.
+        :type from_ts: int, optional
+
+        :param group_by: For `metric` based SLOs where the query includes a group-by clause, this represents the list of grouping parameters.  This is not included in responses for `monitor` based SLOs.
+        :type group_by: [str], optional
+
+        :param groups: For grouped SLOs, this represents SLI data for specific groups.  This is not included in the responses for `metric` based SLOs.
+        :type groups: [SLOHistoryMonitor], optional
+
+        :param monitors: For multi-monitor SLOs, this represents SLI data for specific monitors.  This is not included in the responses for `metric` based SLOs.
+        :type monitors: [SLOHistoryMonitor], optional
+
+        :type overall: SLOHistorySLIData, optional
+
+        :type series: SLOHistoryMetrics, optional
+
+        :param thresholds: mapping of string timeframe to the SLO threshold.
+        :type thresholds: {str: (SLOThreshold,)}, optional
+
+        :param to_ts: The `to` timestamp in epoch seconds.
+        :type to_ts: int, optional
+
+        :type type: SLOType, optional
+
+        :type type_id: SLOTypeNumeric, optional
         """
         super().__init__(kwargs)
 

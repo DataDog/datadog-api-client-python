@@ -52,11 +52,18 @@ class SyntheticsTriggerCITestsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsTriggerCITestsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            batch_id (str, none_type): [optional] The public ID of the batch triggered.
-            locations ([SyntheticsTriggerCITestLocation]): [optional] List of Synthetics locations.
-            results ([SyntheticsTriggerCITestRunResult]): [optional] Information about the tests runs.
-            triggered_check_ids ([str]): [optional] The public IDs of the Synthetics test triggered.
+
+        :param batch_id: The public ID of the batch triggered.
+        :type batch_id: str, none_type, optional
+
+        :param locations: List of Synthetics locations.
+        :type locations: [SyntheticsTriggerCITestLocation], optional
+
+        :param results: Information about the tests runs.
+        :type results: [SyntheticsTriggerCITestRunResult], optional
+
+        :param triggered_check_ids: The public IDs of the Synthetics test triggered.
+        :type triggered_check_ids: [str], optional
         """
         super().__init__(kwargs)
 

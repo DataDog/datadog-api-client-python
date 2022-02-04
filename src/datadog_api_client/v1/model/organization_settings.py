@@ -70,17 +70,31 @@ class OrganizationSettings(ModelNormal):
     def __init__(self, *args, **kwargs):
         """OrganizationSettings - a model defined in OpenAPI
 
-        Keyword Args:
-            private_widget_share (bool): [optional] Whether or not the organization users can share widgets outside of Datadog.
-            saml (OrganizationSettingsSaml): [optional]
-            saml_autocreate_access_role (AccessRole): [optional]
-            saml_autocreate_users_domains (OrganizationSettingsSamlAutocreateUsersDomains): [optional]
-            saml_can_be_enabled (bool): [optional] Whether or not SAML can be enabled for this organization.
-            saml_idp_endpoint (str): [optional] Identity provider endpoint for SAML authentication.
-            saml_idp_initiated_login (OrganizationSettingsSamlIdpInitiatedLogin): [optional]
-            saml_idp_metadata_uploaded (bool): [optional] Whether or not a SAML identity provider metadata file was provided to the Datadog organization.
-            saml_login_url (str): [optional] URL for SAML logging.
-            saml_strict_mode (OrganizationSettingsSamlStrictMode): [optional]
+
+        :param private_widget_share: Whether or not the organization users can share widgets outside of Datadog.
+        :type private_widget_share: bool, optional
+
+        :type saml: OrganizationSettingsSaml, optional
+
+        :type saml_autocreate_access_role: AccessRole, optional
+
+        :type saml_autocreate_users_domains: OrganizationSettingsSamlAutocreateUsersDomains, optional
+
+        :param saml_can_be_enabled: Whether or not SAML can be enabled for this organization.
+        :type saml_can_be_enabled: bool, optional
+
+        :param saml_idp_endpoint: Identity provider endpoint for SAML authentication.
+        :type saml_idp_endpoint: str, optional
+
+        :type saml_idp_initiated_login: OrganizationSettingsSamlIdpInitiatedLogin, optional
+
+        :param saml_idp_metadata_uploaded: Whether or not a SAML identity provider metadata file was provided to the Datadog organization.
+        :type saml_idp_metadata_uploaded: bool, optional
+
+        :param saml_login_url: URL for SAML logging.
+        :type saml_login_url: str, optional
+
+        :type saml_strict_mode: OrganizationSettingsSamlStrictMode, optional
         """
         super().__init__(kwargs)
 

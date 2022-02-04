@@ -48,12 +48,20 @@ class SyntheticsStep(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsStep - a model defined in OpenAPI
 
-        Keyword Args:
-            allow_failure (bool): [optional] A boolean set to allow this step to fail.
-            name (str): [optional] The name of the step.
-            params (dict): [optional] The parameters of the step.
-            timeout (int): [optional] The time before declaring a step failed.
-            type (SyntheticsStepType): [optional]
+
+        :param allow_failure: A boolean set to allow this step to fail.
+        :type allow_failure: bool, optional
+
+        :param name: The name of the step.
+        :type name: str, optional
+
+        :param params: The parameters of the step.
+        :type params: dict, optional
+
+        :param timeout: The time before declaring a step failed.
+        :type timeout: int, optional
+
+        :type type: SyntheticsStepType, optional
         """
         super().__init__(kwargs)
 

@@ -40,11 +40,18 @@ class UsageSNMPHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageSNMPHour - a model defined in OpenAPI
 
-        Keyword Args:
-            hour (datetime): [optional] The hour for the usage.
-            org_name (str): [optional] The organization name.
-            public_id (str): [optional] The organization public ID.
-            snmp_devices (int): [optional] Contains the number of SNMP devices.
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
+
+        :param snmp_devices: Contains the number of SNMP devices.
+        :type snmp_devices: int, optional
         """
         super().__init__(kwargs)
 

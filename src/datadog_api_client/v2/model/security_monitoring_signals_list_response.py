@@ -52,10 +52,13 @@ class SecurityMonitoringSignalsListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityMonitoringSignalsListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([SecurityMonitoringSignal]): [optional] An array of security signals matching the request.
-            links (SecurityMonitoringSignalsListResponseLinks): [optional]
-            meta (SecurityMonitoringSignalsListResponseMeta): [optional]
+
+        :param data: An array of security signals matching the request.
+        :type data: [SecurityMonitoringSignal], optional
+
+        :type links: SecurityMonitoringSignalsListResponseLinks, optional
+
+        :type meta: SecurityMonitoringSignalsListResponseMeta, optional
         """
         super().__init__(kwargs)
 

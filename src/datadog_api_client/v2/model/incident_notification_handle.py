@@ -35,9 +35,12 @@ class IncidentNotificationHandle(ModelNormal):
     def __init__(self, *args, **kwargs):
         """IncidentNotificationHandle - a model defined in OpenAPI
 
-        Keyword Args:
-            display_name (str): [optional] The name of the notified handle.
-            handle (str): [optional] The email address used for the notification.
+
+        :param display_name: The name of the notified handle.
+        :type display_name: str, optional
+
+        :param handle: The email address used for the notification.
+        :type handle: str, optional
         """
         super().__init__(kwargs)
 

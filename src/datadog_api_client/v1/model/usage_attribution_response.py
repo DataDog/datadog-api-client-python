@@ -44,9 +44,11 @@ class UsageAttributionResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageAttributionResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            metadata (UsageAttributionMetadata): [optional]
-            usage ([UsageAttributionBody]): [optional] Get Usage Summary by tag(s).
+
+        :type metadata: UsageAttributionMetadata, optional
+
+        :param usage: Get Usage Summary by tag(s).
+        :type usage: [UsageAttributionBody], optional
         """
         super().__init__(kwargs)
 

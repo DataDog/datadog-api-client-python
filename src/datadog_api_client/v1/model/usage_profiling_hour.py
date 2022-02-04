@@ -42,12 +42,21 @@ class UsageProfilingHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageProfilingHour - a model defined in OpenAPI
 
-        Keyword Args:
-            avg_container_agent_count (int): [optional] Get average number of container agents for that hour.
-            host_count (int): [optional] Contains the total number of profiled hosts reporting during a given hour.
-            hour (datetime): [optional] The hour for the usage.
-            org_name (str): [optional] The organization name.
-            public_id (str): [optional] The organization public ID.
+
+        :param avg_container_agent_count: Get average number of container agents for that hour.
+        :type avg_container_agent_count: int, optional
+
+        :param host_count: Contains the total number of profiled hosts reporting during a given hour.
+        :type host_count: int, optional
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
         """
         super().__init__(kwargs)
 

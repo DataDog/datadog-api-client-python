@@ -39,12 +39,8 @@ class NotebookGraphSize(ModelSimple):
         """NotebookGraphSize - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The size of the graph. Must be one of ["xs", "s", "m", "l", "xl"].
-
-        Keyword Args:
-            value (str): The size of the graph. Must be one of ["xs", "s", "m", "l", "xl"].
+        :param value: The size of the graph. Must be one of ["xs", "s", "m", "l", "xl"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -42,11 +42,11 @@ class IFrameWidgetDefinition(ModelNormal):
     def __init__(self, type, url, *args, **kwargs):
         """IFrameWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            type (IFrameWidgetDefinitionType):
-            url (str): URL of the iframe.
 
-        Keyword Args:
+        :type type: IFrameWidgetDefinitionType
+
+        :param url: URL of the iframe.
+        :type url: str
         """
         super().__init__(kwargs)
 

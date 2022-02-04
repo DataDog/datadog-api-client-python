@@ -46,12 +46,13 @@ class APIKeyUpdateData(ModelNormal):
     def __init__(self, attributes, id, type, *args, **kwargs):
         """APIKeyUpdateData - a model defined in OpenAPI
 
-        Args:
-            attributes (APIKeyUpdateAttributes):
-            id (str): ID of the API key.
-            type (APIKeysType):
 
-        Keyword Args:
+        :type attributes: APIKeyUpdateAttributes
+
+        :param id: ID of the API key.
+        :type id: str
+
+        :type type: APIKeysType
         """
         super().__init__(kwargs)
 

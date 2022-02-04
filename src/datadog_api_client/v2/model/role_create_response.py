@@ -40,8 +40,8 @@ class RoleCreateResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """RoleCreateResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data (RoleCreateResponseData): [optional]
+
+        :type data: RoleCreateResponseData, optional
         """
         super().__init__(kwargs)
 

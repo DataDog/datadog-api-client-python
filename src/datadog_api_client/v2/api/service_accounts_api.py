@@ -206,35 +206,37 @@ class ServiceAccountsApi(object):
         >>> thread = api.create_service_account_application_key(service_account_id, body, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            service_account_id (str): The ID of the service account.
-            body (ApplicationKeyCreateRequest):
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
 
-        Returns:
-            ApplicationKeyResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :param service_account_id: The ID of the service account.
+        :type service_account_id: str
+
+        :type body: ApplicationKeyCreateRequest
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: ApplicationKeyResponse
         """
         kwargs = self._create_service_account_application_key_endpoint.default_arguments(kwargs)
         kwargs["service_account_id"] = service_account_id
@@ -251,35 +253,38 @@ class ServiceAccountsApi(object):
         >>> thread = api.delete_service_account_application_key(service_account_id, app_key_id, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            service_account_id (str): The ID of the service account.
-            app_key_id (str): The ID of the application key.
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
 
-        Returns:
-            None
-                If the method is called asynchronously, returns the request
-                thread.
+        :param service_account_id: The ID of the service account.
+        :type service_account_id: str
+
+        :param app_key_id: The ID of the application key.
+        :type app_key_id: str
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: None
         """
         kwargs = self._delete_service_account_application_key_endpoint.default_arguments(kwargs)
         kwargs["service_account_id"] = service_account_id
@@ -296,35 +301,38 @@ class ServiceAccountsApi(object):
         >>> thread = api.get_service_account_application_key(service_account_id, app_key_id, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            service_account_id (str): The ID of the service account.
-            app_key_id (str): The ID of the application key.
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
 
-        Returns:
-            PartialApplicationKeyResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :param service_account_id: The ID of the service account.
+        :type service_account_id: str
+
+        :param app_key_id: The ID of the application key.
+        :type app_key_id: str
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: PartialApplicationKeyResponse
         """
         kwargs = self._get_service_account_application_key_endpoint.default_arguments(kwargs)
         kwargs["service_account_id"] = service_account_id
@@ -341,40 +349,52 @@ class ServiceAccountsApi(object):
         >>> thread = api.list_service_account_application_keys(service_account_id, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            service_account_id (str): The ID of the service account.
 
-        Keyword Args:
-            page_size (int): [optional] Size for a given page. If omitted the server will use the default value of 10.
-            page_number (int): [optional] Specific page number to return. If omitted the server will use the default value of 0.
-            sort (ApplicationKeysSort): [optional] Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.
-            filter (str): [optional] Filter application keys by the specified string.
-            filter_created_at_start (str): [optional] Only include application keys created on or after the specified date.
-            filter_created_at_end (str): [optional] Only include application keys created on or before the specified date.
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
+        :param service_account_id: The ID of the service account.
+        :type service_account_id: str
 
-        Returns:
-            ListApplicationKeysResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :param page_size: Size for a given page. If omitted the server will use the default value of 10.
+        :type page_size: int, optional
+
+        :param page_number: Specific page number to return. If omitted the server will use the default value of 0.
+        :type page_number: int, optional
+
+        :param sort: Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.
+        :type sort: ApplicationKeysSort, optional
+
+        :param filter: Filter application keys by the specified string.
+        :type filter: str, optional
+
+        :param filter_created_at_start: Only include application keys created on or after the specified date.
+        :type filter_created_at_start: str, optional
+
+        :param filter_created_at_end: Only include application keys created on or before the specified date.
+        :type filter_created_at_end: str, optional
+        :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: ListApplicationKeysResponse
         """
         kwargs = self._list_service_account_application_keys_endpoint.default_arguments(kwargs)
         kwargs["service_account_id"] = service_account_id
@@ -390,36 +410,41 @@ class ServiceAccountsApi(object):
         >>> thread = api.update_service_account_application_key(service_account_id, app_key_id, body, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            service_account_id (str): The ID of the service account.
-            app_key_id (str): The ID of the application key.
-            body (ApplicationKeyUpdateRequest):
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
 
-        Returns:
-            PartialApplicationKeyResponse
-                If the method is called asynchronously, returns the request
-                thread.
+
+        :param service_account_id: The ID of the service account.
+        :type service_account_id: str
+
+        :param app_key_id: The ID of the application key.
+        :type app_key_id: str
+
+        :type body: ApplicationKeyUpdateRequest
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: PartialApplicationKeyResponse
         """
         kwargs = self._update_service_account_application_key_endpoint.default_arguments(kwargs)
         kwargs["service_account_id"] = service_account_id

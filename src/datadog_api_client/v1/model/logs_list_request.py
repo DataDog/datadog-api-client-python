@@ -56,15 +56,22 @@ class LogsListRequest(ModelNormal):
     def __init__(self, time, *args, **kwargs):
         """LogsListRequest - a model defined in OpenAPI
 
-        Args:
-            time (LogsListRequestTime):
 
-        Keyword Args:
-            index (str): [optional] The log index on which the request is performed. For multi-index organizations, the default is all live indexes. Historical indexes of rehydrated logs must be specified.
-            limit (int): [optional] Number of logs return in the response.
-            query (str): [optional] The search query - following the log search syntax.
-            sort (LogsSort): [optional]
-            start_at (str): [optional] Hash identifier of the first log to return in the list, available in a log `id` attribute. This parameter is used for the pagination feature.  **Note**: This parameter is ignored if the corresponding log is out of the scope of the specified time window.
+        :type time: LogsListRequestTime
+
+        :param index: The log index on which the request is performed. For multi-index organizations, the default is all live indexes. Historical indexes of rehydrated logs must be specified.
+        :type index: str, optional
+
+        :param limit: Number of logs return in the response.
+        :type limit: int, optional
+
+        :param query: The search query - following the log search syntax.
+        :type query: str, optional
+
+        :type sort: LogsSort, optional
+
+        :param start_at: Hash identifier of the first log to return in the list, available in a log `id` attribute. This parameter is used for the pagination feature.  **Note**: This parameter is ignored if the corresponding log is out of the scope of the specified time window.
+        :type start_at: str, optional
         """
         super().__init__(kwargs)
 

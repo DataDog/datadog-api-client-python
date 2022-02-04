@@ -35,11 +35,12 @@ class AWSLogsServicesRequest(ModelNormal):
     def __init__(self, account_id, services, *args, **kwargs):
         """AWSLogsServicesRequest - a model defined in OpenAPI
 
-        Args:
-            account_id (str): Your AWS Account ID without dashes.
-            services ([str]): Array of services IDs set to enable automatic log collection. Discover the list of available services with the get list of AWS log ready services API endpoint.
 
-        Keyword Args:
+        :param account_id: Your AWS Account ID without dashes.
+        :type account_id: str
+
+        :param services: Array of services IDs set to enable automatic log collection. Discover the list of available services with the get list of AWS log ready services API endpoint.
+        :type services: [str]
         """
         super().__init__(kwargs)
 

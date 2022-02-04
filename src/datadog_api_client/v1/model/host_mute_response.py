@@ -39,11 +39,18 @@ class HostMuteResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HostMuteResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            action (str): [optional] Action applied to the hosts.
-            end (int): [optional] POSIX timestamp in seconds when the host is unmuted.
-            hostname (str): [optional] The host name.
-            message (str): [optional] Message associated with the mute.
+
+        :param action: Action applied to the hosts.
+        :type action: str, optional
+
+        :param end: POSIX timestamp in seconds when the host is unmuted.
+        :type end: int, optional
+
+        :param hostname: The host name.
+        :type hostname: str, optional
+
+        :param message: Message associated with the mute.
+        :type message: str, optional
         """
         super().__init__(kwargs)
 

@@ -34,12 +34,8 @@ class LogType(ModelSimple):
         """LogType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the event. If omitted defaults to "log". Must be one of ["log"].
-
-        Keyword Args:
-            value (str): Type of the event. If omitted defaults to "log". Must be one of ["log"].
+        :param value: Type of the event. If omitted defaults to "log". Must be one of ["log"].
+        :type value: str
         """
         super().__init__(kwargs)
 

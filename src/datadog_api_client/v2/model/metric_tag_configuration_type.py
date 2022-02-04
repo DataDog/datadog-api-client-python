@@ -34,12 +34,8 @@ class MetricTagConfigurationType(ModelSimple):
         """MetricTagConfigurationType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The metric tag configuration resource type. If omitted defaults to "manage_tags". Must be one of ["manage_tags"].
-
-        Keyword Args:
-            value (str): The metric tag configuration resource type. If omitted defaults to "manage_tags". Must be one of ["manage_tags"].
+        :param value: The metric tag configuration resource type. If omitted defaults to "manage_tags". Must be one of ["manage_tags"].
+        :type value: str
         """
         super().__init__(kwargs)
 

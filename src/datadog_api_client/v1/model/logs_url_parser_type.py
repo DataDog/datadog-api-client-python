@@ -34,12 +34,8 @@ class LogsURLParserType(ModelSimple):
         """LogsURLParserType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of logs URL parser. If omitted defaults to "url-parser". Must be one of ["url-parser"].
-
-        Keyword Args:
-            value (str): Type of logs URL parser. If omitted defaults to "url-parser". Must be one of ["url-parser"].
+        :param value: Type of logs URL parser. If omitted defaults to "url-parser". Must be one of ["url-parser"].
+        :type value: str
         """
         super().__init__(kwargs)
 

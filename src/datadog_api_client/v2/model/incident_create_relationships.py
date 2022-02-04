@@ -40,10 +40,8 @@ class IncidentCreateRelationships(ModelNormal):
     def __init__(self, commander, *args, **kwargs):
         """IncidentCreateRelationships - a model defined in OpenAPI
 
-        Args:
-            commander (RelationshipToUser):
 
-        Keyword Args:
+        :type commander: RelationshipToUser
         """
         super().__init__(kwargs)
 

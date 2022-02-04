@@ -46,11 +46,17 @@ class UsageTopAvgMetricsHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageTopAvgMetricsHour - a model defined in OpenAPI
 
-        Keyword Args:
-            avg_metric_hour (int): [optional] Average number of timeseries per hour in which the metric occurs.
-            max_metric_hour (int): [optional] Maximum number of timeseries per hour in which the metric occurs.
-            metric_category (UsageMetricCategory): [optional]
-            metric_name (str): [optional] Contains the custom metric name.
+
+        :param avg_metric_hour: Average number of timeseries per hour in which the metric occurs.
+        :type avg_metric_hour: int, optional
+
+        :param max_metric_hour: Maximum number of timeseries per hour in which the metric occurs.
+        :type max_metric_hour: int, optional
+
+        :type metric_category: UsageMetricCategory, optional
+
+        :param metric_name: Contains the custom metric name.
+        :type metric_name: str, optional
         """
         super().__init__(kwargs)
 

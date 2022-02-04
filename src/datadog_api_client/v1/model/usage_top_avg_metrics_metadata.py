@@ -45,10 +45,14 @@ class UsageTopAvgMetricsMetadata(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageTopAvgMetricsMetadata - a model defined in OpenAPI
 
-        Keyword Args:
-            day (datetime): [optional] The day value from the user request that contains the returned usage data. (If day was used the request)
-            month (datetime): [optional] The month value from the user request that contains the returned usage data. (If month was used the request)
-            pagination (UsageAttributionPagination): [optional]
+
+        :param day: The day value from the user request that contains the returned usage data. (If day was used the request)
+        :type day: datetime, optional
+
+        :param month: The month value from the user request that contains the returned usage data. (If month was used the request)
+        :type month: datetime, optional
+
+        :type pagination: UsageAttributionPagination, optional
         """
         super().__init__(kwargs)
 

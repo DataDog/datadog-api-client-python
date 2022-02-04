@@ -39,12 +39,8 @@ class SecurityMonitoringRuleQueryAggregation(ModelSimple):
         """SecurityMonitoringRuleQueryAggregation - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The aggregation type. Must be one of ["count", "cardinality", "sum", "max", "new_value"].
-
-        Keyword Args:
-            value (str): The aggregation type. Must be one of ["count", "cardinality", "sum", "max", "new_value"].
+        :param value: The aggregation type. Must be one of ["count", "cardinality", "sum", "max", "new_value"].
+        :type value: str
         """
         super().__init__(kwargs)
 

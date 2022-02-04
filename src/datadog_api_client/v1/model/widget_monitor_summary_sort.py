@@ -49,12 +49,8 @@ class WidgetMonitorSummarySort(ModelSimple):
         """WidgetMonitorSummarySort - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Widget sorting methods. Must be one of ["name", "group", "status", "tags", "triggered", "group,asc", "group,desc", "name,asc", "name,desc", "status,asc", "status,desc", "tags,asc", "tags,desc", "triggered,asc", "triggered,desc"].
-
-        Keyword Args:
-            value (str): Widget sorting methods. Must be one of ["name", "group", "status", "tags", "triggered", "group,asc", "group,desc", "name,asc", "name,desc", "status,asc", "status,desc", "tags,asc", "tags,desc", "triggered,asc", "triggered,desc"].
+        :param value: Widget sorting methods. Must be one of ["name", "group", "status", "tags", "triggered", "group,asc", "group,desc", "name,asc", "name,desc", "status,asc", "status,desc", "tags,asc", "tags,desc", "triggered,asc", "triggered,desc"].
+        :type value: str
         """
         super().__init__(kwargs)
 

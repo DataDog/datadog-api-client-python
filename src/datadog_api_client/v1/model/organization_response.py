@@ -40,8 +40,8 @@ class OrganizationResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """OrganizationResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            org (Organization): [optional]
+
+        :type org: Organization, optional
         """
         super().__init__(kwargs)
 

@@ -81,37 +81,48 @@ class ProcessesApi(object):
         >>> thread = api.list_processes(async_req=True)
         >>> result = thread.get()
 
-        Keyword Args:
-            search (str): [optional] String to search processes by.
-            tags (str): [optional] Comma-separated list of tags to filter processes by.
-            _from (int): [optional] Unix timestamp (number of seconds since epoch) of the start of the query window. If not provided, the start of the query window will be 15 minutes before the `to` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.
-            to (int): [optional] Unix timestamp (number of seconds since epoch) of the end of the query window. If not provided, the end of the query window will be 15 minutes after the `from` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.
-            page_limit (int): [optional] Maximum number of results returned. If omitted the server will use the default value of 1000.
-            page_cursor (str): [optional] String to query the next page of results. This key is provided with each valid response from the API in `meta.page.after`.
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
+        :param search: String to search processes by.
+        :type search: str, optional
 
-        Returns:
-            ProcessSummariesResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :param tags: Comma-separated list of tags to filter processes by.
+        :type tags: str, optional
+
+        :param _from: Unix timestamp (number of seconds since epoch) of the start of the query window. If not provided, the start of the query window will be 15 minutes before the `to` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.
+        :type _from: int, optional
+
+        :param to: Unix timestamp (number of seconds since epoch) of the end of the query window. If not provided, the end of the query window will be 15 minutes after the `from` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.
+        :type to: int, optional
+
+        :param page_limit: Maximum number of results returned. If omitted the server will use the default value of 1000.
+        :type page_limit: int, optional
+
+        :param page_cursor: String to query the next page of results. This key is provided with each valid response from the API in `meta.page.after`.
+        :type page_cursor: str, optional
+        :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: ProcessSummariesResponse
         """
         kwargs = self._list_processes_endpoint.default_arguments(kwargs)
         return self._list_processes_endpoint.call_with_http_info(**kwargs)

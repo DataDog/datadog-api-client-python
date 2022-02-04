@@ -45,12 +45,8 @@ class LogsAggregationFunction(ModelSimple):
         """LogsAggregationFunction - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): An aggregation function Must be one of ["count", "cardinality", "pc75", "pc90", "pc95", "pc98", "pc99", "sum", "min", "max", "avg"].
-
-        Keyword Args:
-            value (str): An aggregation function Must be one of ["count", "cardinality", "pc75", "pc90", "pc95", "pc98", "pc99", "sum", "min", "max", "avg"].
+        :param value: An aggregation function Must be one of ["count", "cardinality", "pc75", "pc90", "pc95", "pc98", "pc99", "sum", "min", "max", "avg"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -46,10 +46,13 @@ class WidgetRequestStyle(ModelNormal):
     def __init__(self, *args, **kwargs):
         """WidgetRequestStyle - a model defined in OpenAPI
 
-        Keyword Args:
-            line_type (WidgetLineType): [optional]
-            line_width (WidgetLineWidth): [optional]
-            palette (str): [optional] Color palette to apply to the widget.
+
+        :type line_type: WidgetLineType, optional
+
+        :type line_width: WidgetLineWidth, optional
+
+        :param palette: Color palette to apply to the widget.
+        :type palette: str, optional
         """
         super().__init__(kwargs)
 

@@ -46,11 +46,17 @@ class SecurityMonitoringRuleCase(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityMonitoringRuleCase - a model defined in OpenAPI
 
-        Keyword Args:
-            condition (str): [optional] A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated based on the event counts in the previously defined queries.
-            name (str): [optional] Name of the case.
-            notifications ([str]): [optional] Notification targets for each rule case.
-            status (SecurityMonitoringRuleSeverity): [optional]
+
+        :param condition: A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated based on the event counts in the previously defined queries.
+        :type condition: str, optional
+
+        :param name: Name of the case.
+        :type name: str, optional
+
+        :param notifications: Notification targets for each rule case.
+        :type notifications: [str], optional
+
+        :type status: SecurityMonitoringRuleSeverity, optional
         """
         super().__init__(kwargs)
 

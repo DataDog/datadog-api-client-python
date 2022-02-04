@@ -69,20 +69,37 @@ class EventCreateRequest(ModelNormal):
     def __init__(self, text, title, *args, **kwargs):
         """EventCreateRequest - a model defined in OpenAPI
 
-        Args:
-            text (str): The body of the event. Limited to 4000 characters. The text supports markdown. To use markdown in the event text, start the text block with `%%% \\n` and end the text block with `\\n %%%`. Use `msg_text` with the Datadog Ruby library.
-            title (str): The event title.
 
-        Keyword Args:
-            aggregation_key (str): [optional] An arbitrary string to use for aggregation. Limited to 100 characters. If you specify a key, all events using that key are grouped together in the Event Stream.
-            alert_type (EventAlertType): [optional]
-            date_happened (int): [optional] POSIX timestamp of the event. Must be sent as an integer (that is no quotes). Limited to events no older than 7 days.
-            device_name (str): [optional] A device name.
-            host (str): [optional] Host name to associate with the event. Any tags associated with the host are also applied to this event.
-            priority (EventPriority): [optional]
-            related_event_id (int): [optional] ID of the parent event. Must be sent as an integer (that is no quotes).
-            source_type_name (str): [optional] The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
-            tags ([str]): [optional] A list of tags to apply to the event.
+        :param text: The body of the event. Limited to 4000 characters. The text supports markdown. To use markdown in the event text, start the text block with `%%% \\n` and end the text block with `\\n %%%`. Use `msg_text` with the Datadog Ruby library.
+        :type text: str
+
+        :param title: The event title.
+        :type title: str
+
+        :param aggregation_key: An arbitrary string to use for aggregation. Limited to 100 characters. If you specify a key, all events using that key are grouped together in the Event Stream.
+        :type aggregation_key: str, optional
+
+        :type alert_type: EventAlertType, optional
+
+        :param date_happened: POSIX timestamp of the event. Must be sent as an integer (that is no quotes). Limited to events no older than 7 days.
+        :type date_happened: int, optional
+
+        :param device_name: A device name.
+        :type device_name: str, optional
+
+        :param host: Host name to associate with the event. Any tags associated with the host are also applied to this event.
+        :type host: str, optional
+
+        :type priority: EventPriority, optional
+
+        :param related_event_id: ID of the parent event. Must be sent as an integer (that is no quotes).
+        :type related_event_id: int, optional
+
+        :param source_type_name: The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
+        :type source_type_name: str, optional
+
+        :param tags: A list of tags to apply to the event.
+        :type tags: [str], optional
         """
         super().__init__(kwargs)
 

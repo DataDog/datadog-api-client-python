@@ -34,12 +34,8 @@ class FunnelSource(ModelSimple):
         """FunnelSource - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Source from which to query items to display in the funnel. If omitted defaults to "rum". Must be one of ["rum"].
-
-        Keyword Args:
-            value (str): Source from which to query items to display in the funnel. If omitted defaults to "rum". Must be one of ["rum"].
+        :param value: Source from which to query items to display in the funnel. If omitted defaults to "rum". Must be one of ["rum"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -35,12 +35,8 @@ class LogsComputeType(ModelSimple):
         """LogsComputeType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The type of compute If omitted defaults to "total". Must be one of ["timeseries", "total"].
-
-        Keyword Args:
-            value (str): The type of compute If omitted defaults to "total". Must be one of ["timeseries", "total"].
+        :param value: The type of compute If omitted defaults to "total". Must be one of ["timeseries", "total"].
+        :type value: str
         """
         super().__init__(kwargs)
 

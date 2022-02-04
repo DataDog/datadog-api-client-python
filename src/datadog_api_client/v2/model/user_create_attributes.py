@@ -37,12 +37,15 @@ class UserCreateAttributes(ModelNormal):
     def __init__(self, email, *args, **kwargs):
         """UserCreateAttributes - a model defined in OpenAPI
 
-        Args:
-            email (str): The email of the user.
 
-        Keyword Args:
-            name (str): [optional] The name of the user.
-            title (str): [optional] The title of the user.
+        :param email: The email of the user.
+        :type email: str
+
+        :param name: The name of the user.
+        :type name: str, optional
+
+        :param title: The title of the user.
+        :type title: str, optional
         """
         super().__init__(kwargs)
 

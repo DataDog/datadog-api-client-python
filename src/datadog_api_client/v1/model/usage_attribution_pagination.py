@@ -41,12 +41,21 @@ class UsageAttributionPagination(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageAttributionPagination - a model defined in OpenAPI
 
-        Keyword Args:
-            limit (int): [optional] Maximum amount of records to be returned.
-            offset (int): [optional] Records to be skipped before beginning to return.
-            sort_direction (str): [optional] Direction to sort by.
-            sort_name (str): [optional] Field to sort by.
-            total_number_of_records (int): [optional] Total number of records.
+
+        :param limit: Maximum amount of records to be returned.
+        :type limit: int, optional
+
+        :param offset: Records to be skipped before beginning to return.
+        :type offset: int, optional
+
+        :param sort_direction: Direction to sort by.
+        :type sort_direction: str, optional
+
+        :param sort_name: Field to sort by.
+        :type sort_name: str, optional
+
+        :param total_number_of_records: Total number of records.
+        :type total_number_of_records: int, optional
         """
         super().__init__(kwargs)
 

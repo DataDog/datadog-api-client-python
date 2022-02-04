@@ -34,12 +34,8 @@ class LogsArchiveDestinationAzureType(ModelSimple):
         """LogsArchiveDestinationAzureType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the Azure archive destination. If omitted defaults to "azure". Must be one of ["azure"].
-
-        Keyword Args:
-            value (str): Type of the Azure archive destination. If omitted defaults to "azure". Must be one of ["azure"].
+        :param value: Type of the Azure archive destination. If omitted defaults to "azure". Must be one of ["azure"].
+        :type value: str
         """
         super().__init__(kwargs)
 

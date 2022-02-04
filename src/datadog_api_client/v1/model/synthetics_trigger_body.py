@@ -40,10 +40,9 @@ class SyntheticsTriggerBody(ModelNormal):
     def __init__(self, tests, *args, **kwargs):
         """SyntheticsTriggerBody - a model defined in OpenAPI
 
-        Args:
-            tests ([SyntheticsTriggerTest]): Individual synthetics test.
 
-        Keyword Args:
+        :param tests: Individual synthetics test.
+        :type tests: [SyntheticsTriggerTest]
         """
         super().__init__(kwargs)
 

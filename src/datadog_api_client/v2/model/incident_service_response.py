@@ -46,11 +46,11 @@ class IncidentServiceResponse(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """IncidentServiceResponse - a model defined in OpenAPI
 
-        Args:
-            data (IncidentServiceResponseData):
 
-        Keyword Args:
-            included ([IncidentServiceIncludedItems]): [optional] Included objects from relationships.
+        :type data: IncidentServiceResponseData
+
+        :param included: Included objects from relationships.
+        :type included: [IncidentServiceIncludedItems], optional
         """
         super().__init__(kwargs)
 

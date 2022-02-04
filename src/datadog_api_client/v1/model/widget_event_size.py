@@ -36,12 +36,8 @@ class WidgetEventSize(ModelSimple):
         """WidgetEventSize - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Size to use to display an event. Must be one of ["s", "l"].
-
-        Keyword Args:
-            value (str): Size to use to display an event. Must be one of ["s", "l"].
+        :param value: Size to use to display an event. Must be one of ["s", "l"].
+        :type value: str
         """
         super().__init__(kwargs)
 

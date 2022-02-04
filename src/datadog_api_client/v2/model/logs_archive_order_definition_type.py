@@ -34,12 +34,8 @@ class LogsArchiveOrderDefinitionType(ModelSimple):
         """LogsArchiveOrderDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the archive order definition. If omitted defaults to "archive_order". Must be one of ["archive_order"].
-
-        Keyword Args:
-            value (str): Type of the archive order definition. If omitted defaults to "archive_order". Must be one of ["archive_order"].
+        :param value: Type of the archive order definition. If omitted defaults to "archive_order". Must be one of ["archive_order"].
+        :type value: str
         """
         super().__init__(kwargs)
 

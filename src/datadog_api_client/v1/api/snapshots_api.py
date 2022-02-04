@@ -79,39 +79,50 @@ class SnapshotsApi(object):
         >>> thread = api.get_graph_snapshot(start, end, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            start (int): The POSIX timestamp of the start of the query.
-            end (int): The POSIX timestamp of the end of the query.
 
-        Keyword Args:
-            metric_query (str): [optional] The metric query.
-            event_query (str): [optional] A query that adds event bands to the graph.
-            graph_def (str): [optional] A JSON document defining the graph. `graph_def` can be used instead of `metric_query`. The JSON document uses the [grammar defined here](https://docs.datadoghq.com/graphing/graphing_json/#grammar) and should be formatted to a single line then URL encoded.
-            title (str): [optional] A title for the graph. If no title is specified, the graph does not have a title.
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
 
-        Returns:
-            GraphSnapshot
-                If the method is called asynchronously, returns the request
-                thread.
+        :param start: The POSIX timestamp of the start of the query.
+        :type start: int
+
+        :param end: The POSIX timestamp of the end of the query.
+        :type end: int
+
+        :param metric_query: The metric query.
+        :type metric_query: str, optional
+
+        :param event_query: A query that adds event bands to the graph.
+        :type event_query: str, optional
+
+        :param graph_def: A JSON document defining the graph. `graph_def` can be used instead of `metric_query`. The JSON document uses the [grammar defined here](https://docs.datadoghq.com/graphing/graphing_json/#grammar) and should be formatted to a single line then URL encoded.
+        :type graph_def: str, optional
+
+        :param title: A title for the graph. If no title is specified, the graph does not have a title.
+        :type title: str, optional
+        :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: GraphSnapshot
         """
         kwargs = self._get_graph_snapshot_endpoint.default_arguments(kwargs)
         kwargs["start"] = start

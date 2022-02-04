@@ -40,8 +40,9 @@ class UserInvitationsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UserInvitationsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([UserInvitationResponseData]): [optional] Array of user invitations.
+
+        :param data: Array of user invitations.
+        :type data: [UserInvitationResponseData], optional
         """
         super().__init__(kwargs)
 

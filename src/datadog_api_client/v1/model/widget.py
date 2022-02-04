@@ -46,12 +46,13 @@ class Widget(ModelNormal):
     def __init__(self, definition, *args, **kwargs):
         """Widget - a model defined in OpenAPI
 
-        Args:
-            definition (WidgetDefinition):
 
-        Keyword Args:
-            id (int): [optional] ID of the widget.
-            layout (WidgetLayout): [optional]
+        :type definition: WidgetDefinition
+
+        :param id: ID of the widget.
+        :type id: int, optional
+
+        :type layout: WidgetLayout, optional
         """
         super().__init__(kwargs)
 

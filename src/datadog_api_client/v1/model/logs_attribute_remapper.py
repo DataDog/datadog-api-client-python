@@ -60,19 +60,34 @@ class LogsAttributeRemapper(ModelNormal):
     def __init__(self, sources, target, type, *args, **kwargs):
         """LogsAttributeRemapper - a model defined in OpenAPI
 
-        Args:
-            sources ([str]): Array of source attributes.
-            target (str): Final attribute or tag name to remap the sources to.
-            type (LogsAttributeRemapperType):
 
-        Keyword Args:
-            is_enabled (bool): [optional] Whether or not the processor is enabled. If omitted the server will use the default value of False.
-            name (str): [optional] Name of the processor.
-            override_on_conflict (bool): [optional] Override or not the target element if already set, If omitted the server will use the default value of False.
-            preserve_source (bool): [optional] Remove or preserve the remapped source element. If omitted the server will use the default value of False.
-            source_type (str): [optional] Defines if the sources are from log `attribute` or `tag`. If omitted the server will use the default value of "attribute".
-            target_format (TargetFormatType): [optional]
-            target_type (str): [optional] Defines if the final attribute or tag name is from log `attribute` or `tag`. If omitted the server will use the default value of "attribute".
+        :param sources: Array of source attributes.
+        :type sources: [str]
+
+        :param target: Final attribute or tag name to remap the sources to.
+        :type target: str
+
+        :type type: LogsAttributeRemapperType
+
+        :param is_enabled: Whether or not the processor is enabled. If omitted the server will use the default value of False.
+        :type is_enabled: bool, optional
+
+        :param name: Name of the processor.
+        :type name: str, optional
+
+        :param override_on_conflict: Override or not the target element if already set, If omitted the server will use the default value of False.
+        :type override_on_conflict: bool, optional
+
+        :param preserve_source: Remove or preserve the remapped source element. If omitted the server will use the default value of False.
+        :type preserve_source: bool, optional
+
+        :param source_type: Defines if the sources are from log `attribute` or `tag`. If omitted the server will use the default value of "attribute".
+        :type source_type: str, optional
+
+        :type target_format: TargetFormatType, optional
+
+        :param target_type: Defines if the final attribute or tag name is from log `attribute` or `tag`. If omitted the server will use the default value of "attribute".
+        :type target_type: str, optional
         """
         super().__init__(kwargs)
 

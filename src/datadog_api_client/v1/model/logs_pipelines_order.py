@@ -33,10 +33,9 @@ class LogsPipelinesOrder(ModelNormal):
     def __init__(self, pipeline_ids, *args, **kwargs):
         """LogsPipelinesOrder - a model defined in OpenAPI
 
-        Args:
-            pipeline_ids ([str]): Ordered Array of `<PIPELINE_ID>` strings, the order of pipeline IDs in the array define the overall Pipelines order for Datadog.
 
-        Keyword Args:
+        :param pipeline_ids: Ordered Array of `<PIPELINE_ID>` strings, the order of pipeline IDs in the array define the overall Pipelines order for Datadog.
+        :type pipeline_ids: [str]
         """
         super().__init__(kwargs)
 

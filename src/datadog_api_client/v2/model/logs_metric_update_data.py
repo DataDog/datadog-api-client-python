@@ -44,11 +44,10 @@ class LogsMetricUpdateData(ModelNormal):
     def __init__(self, attributes, type, *args, **kwargs):
         """LogsMetricUpdateData - a model defined in OpenAPI
 
-        Args:
-            attributes (LogsMetricUpdateAttributes):
-            type (LogsMetricType):
 
-        Keyword Args:
+        :type attributes: LogsMetricUpdateAttributes
+
+        :type type: LogsMetricType
         """
         super().__init__(kwargs)
 

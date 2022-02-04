@@ -40,8 +40,9 @@ class UsageDBMResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageDBMResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageDBMHour]): [optional] Get hourly usage for Database Monitoring
+
+        :param usage: Get hourly usage for Database Monitoring
+        :type usage: [UsageDBMHour], optional
         """
         super().__init__(kwargs)
 
