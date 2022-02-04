@@ -45,7 +45,7 @@ def convert_js_args_to_python_args(fn):
 
 
 class cached_property(object):
-    # this caches the result of the function call for fn with no inputs
+    # This caches the result of the function call for fn with no inputs
     # use this as a decorator on function methods that you want converted
     # into cached properties
     result_key = "_results"
@@ -69,13 +69,6 @@ def allows_single_value_input(cls):
     """
     This function returns True if the input composed schema model or any
     descendant model allows a value only input.
-    This is True for cases where oneOf contains items like:
-    oneOf:
-      - float
-      - NumberWithValidation
-      - StringEnum
-      - ArrayModel
-      - null
     """
     if issubclass(cls, ModelSimple) or cls in PRIMITIVE_TYPES:
         return True
@@ -114,18 +107,21 @@ def composed_model_input_classes(cls):
 class OpenApiModel(object):
     """The base class for all OpenAPIModels.
 
-    Attributes:
-      allowed_values (dict): The key is the name of the attribute. The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      validations (dict): The key is the name of the attribute. The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
+    @var allowed_values (dict): The key is the name of the attribute. The value is a dict
+        with a capitalized key describing the allowed value and an allowed
+        value. These dicts store the allowed enum values.
+    @type allowed_values: dict
+    @var attribute_map: The key is attribute name and the value is json
+        key in definition.
+    @type attribute_map: dict
+    @var validations: The key is the name of the attribute. The value is a dict
+        that stores validations for max_length, min_length, max_items,
+        min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
+        inclusive_minimum, and regex.
+    @type validations: dict
+    @var additional_properties_type: A tuple of classes accepted
+        as additional properties values.
+    @type additional_properties_type: tuple
     """
 
     _composed_schemas = empty_dict
@@ -477,8 +473,10 @@ class OpenApiModel(object):
 
 
 class ModelSimple(OpenApiModel):
-    """the parent class of models whose type != object in their
-    swagger/openapi"""
+    """
+    The parent class of models whose type != object in their
+    swagger/openapi.
+    """
 
     required_properties = set(
         [
@@ -538,8 +536,9 @@ class ModelSimple(OpenApiModel):
 
 
 class ModelNormal(OpenApiModel):
-    """the parent class of models whose type == object in their
-    swagger/openapi"""
+    """
+    The parent class of models whose type == object in their swagger/openapi.
+    """
 
     required_properties = set(
         [
@@ -638,8 +637,9 @@ class ModelNormal(OpenApiModel):
 
 
 class ModelComposed(OpenApiModel):
-    """the parent class of models whose type == object in their
-    swagger/openapi and have oneOf/allOf/anyOf
+    """
+    The parent class of models whose type == object in their swagger/openapi
+    and have oneOf/allOf/anyOf.
 
     When one sets a property we use var_name_to_model_instances to store the value in
     the correct class instances + run any type checking + validation code.
@@ -1496,8 +1496,8 @@ def is_type_nullable(input_type):
 
     A type is nullable if at least one of the following conditions is True:
     1. The OAS 'nullable' attribute has been specified,
-    1. The type is the 'null' type,
-    1. The type is a anyOf/oneOf composed schema, and a child schema is
+    2. The type is the 'null' type,
+    3. The type is a anyOf/oneOf composed schema, and a child schema is
        the 'null' type.
 
     :param input_type: The class of the input_value that we are checking.
