@@ -36,12 +36,8 @@ class WidgetVizType(ModelSimple):
         """WidgetVizType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Whether to display the Alert Graph as a timeseries or a top list. Must be one of ["timeseries", "toplist"].
-
-        Keyword Args:
-            value (str): Whether to display the Alert Graph as a timeseries or a top list. Must be one of ["timeseries", "toplist"].
+        :param value: Whether to display the Alert Graph as a timeseries or a top list. Must be one of ["timeseries", "toplist"].
+        :type value: str
         """
         super().__init__(kwargs)
 

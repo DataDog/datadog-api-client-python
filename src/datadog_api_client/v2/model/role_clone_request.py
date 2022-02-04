@@ -40,10 +40,8 @@ class RoleCloneRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """RoleCloneRequest - a model defined in OpenAPI
 
-        Args:
-            data (RoleClone):
 
-        Keyword Args:
+        :type data: RoleClone
         """
         super().__init__(kwargs)
 

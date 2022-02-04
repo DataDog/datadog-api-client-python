@@ -46,12 +46,13 @@ class Permission(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """Permission - a model defined in OpenAPI
 
-        Args:
-            type (PermissionsType):
 
-        Keyword Args:
-            attributes (PermissionAttributes): [optional]
-            id (str): [optional] ID of the permission.
+        :type type: PermissionsType
+
+        :type attributes: PermissionAttributes, optional
+
+        :param id: ID of the permission.
+        :type id: str, optional
         """
         super().__init__(kwargs)
 

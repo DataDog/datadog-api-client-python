@@ -42,9 +42,11 @@ class RelationshipToRoleData(ModelNormal):
     def __init__(self, *args, **kwargs):
         """RelationshipToRoleData - a model defined in OpenAPI
 
-        Keyword Args:
-            id (str): [optional] ID of the role.
-            type (RolesType): [optional]
+
+        :param id: ID of the role.
+        :type id: str, optional
+
+        :type type: RolesType, optional
         """
         super().__init__(kwargs)
 

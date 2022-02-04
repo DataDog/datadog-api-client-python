@@ -40,8 +40,9 @@ class UsageTimeseriesResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageTimeseriesResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageTimeseriesHour]): [optional] An array of objects regarding hourly usage of timeseries.
+
+        :param usage: An array of objects regarding hourly usage of timeseries.
+        :type usage: [UsageTimeseriesHour], optional
         """
         super().__init__(kwargs)
 

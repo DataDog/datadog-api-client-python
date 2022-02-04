@@ -68,17 +68,35 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityMonitoringRuleUpdatePayload - a model defined in OpenAPI
 
-        Keyword Args:
-            cases ([SecurityMonitoringRuleCase]): [optional] Cases for generating signals.
-            filters ([SecurityMonitoringFilter]): [optional] Additional queries to filter matched events before they are processed.
-            has_extended_title (bool): [optional] Whether the notifications include the triggering group-by values in their title.
-            is_enabled (bool): [optional] Whether the rule is enabled.
-            message (str): [optional] Message for generated signals.
-            name (str): [optional] Name of the rule.
-            options (SecurityMonitoringRuleOptions): [optional]
-            queries ([SecurityMonitoringRuleQuery]): [optional] Queries for selecting logs which are part of the rule.
-            tags ([str]): [optional] Tags for generated signals.
-            version (int): [optional] The version of the rule being updated.
+
+        :param cases: Cases for generating signals.
+        :type cases: [SecurityMonitoringRuleCase], optional
+
+        :param filters: Additional queries to filter matched events before they are processed.
+        :type filters: [SecurityMonitoringFilter], optional
+
+        :param has_extended_title: Whether the notifications include the triggering group-by values in their title.
+        :type has_extended_title: bool, optional
+
+        :param is_enabled: Whether the rule is enabled.
+        :type is_enabled: bool, optional
+
+        :param message: Message for generated signals.
+        :type message: str, optional
+
+        :param name: Name of the rule.
+        :type name: str, optional
+
+        :type options: SecurityMonitoringRuleOptions, optional
+
+        :param queries: Queries for selecting logs which are part of the rule.
+        :type queries: [SecurityMonitoringRuleQuery], optional
+
+        :param tags: Tags for generated signals.
+        :type tags: [str], optional
+
+        :param version: The version of the rule being updated.
+        :type version: int, optional
         """
         super().__init__(kwargs)
 

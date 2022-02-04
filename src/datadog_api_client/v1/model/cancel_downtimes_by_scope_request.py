@@ -33,10 +33,9 @@ class CancelDowntimesByScopeRequest(ModelNormal):
     def __init__(self, scope, *args, **kwargs):
         """CancelDowntimesByScopeRequest - a model defined in OpenAPI
 
-        Args:
-            scope (str): The scope(s) to which the downtime applies. For example, `host:app2`. Provide multiple scopes as a comma-separated list like `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (`env:dev` **AND** `env:prod`).
 
-        Keyword Args:
+        :param scope: The scope(s) to which the downtime applies. For example, `host:app2`. Provide multiple scopes as a comma-separated list like `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (`env:dev` **AND** `env:prod`).
+        :type scope: str
         """
         super().__init__(kwargs)
 

@@ -37,10 +37,15 @@ class IncidentServicesResponseMetaPagination(ModelNormal):
     def __init__(self, *args, **kwargs):
         """IncidentServicesResponseMetaPagination - a model defined in OpenAPI
 
-        Keyword Args:
-            next_offset (int): [optional] The index of the first element in the next page of results. Equal to page size added to the current offset.
-            offset (int): [optional] The index of the first element in the results.
-            size (int): [optional] Maximum size of pages to return.
+
+        :param next_offset: The index of the first element in the next page of results. Equal to page size added to the current offset.
+        :type next_offset: int, optional
+
+        :param offset: The index of the first element in the results.
+        :type offset: int, optional
+
+        :param size: Maximum size of pages to return.
+        :type size: int, optional
         """
         super().__init__(kwargs)
 

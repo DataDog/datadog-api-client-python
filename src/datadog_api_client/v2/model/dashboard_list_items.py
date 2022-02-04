@@ -44,11 +44,12 @@ class DashboardListItems(ModelNormal):
     def __init__(self, dashboards, *args, **kwargs):
         """DashboardListItems - a model defined in OpenAPI
 
-        Args:
-            dashboards ([DashboardListItem]): List of dashboards in the dashboard list.
 
-        Keyword Args:
-            total (int): [optional] Number of dashboards in the dashboard list.
+        :param dashboards: List of dashboards in the dashboard list.
+        :type dashboards: [DashboardListItem]
+
+        :param total: Number of dashboards in the dashboard list.
+        :type total: int, optional
         """
         super().__init__(kwargs)
 

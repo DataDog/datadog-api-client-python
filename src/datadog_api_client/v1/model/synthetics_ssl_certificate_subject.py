@@ -45,14 +45,27 @@ class SyntheticsSSLCertificateSubject(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsSSLCertificateSubject - a model defined in OpenAPI
 
-        Keyword Args:
-            c (str): [optional] Country Name associated with the certificate.
-            cn (str): [optional] Common Name that associated with the certificate.
-            l (str): [optional] Locality associated with the certificate.
-            o (str): [optional] Organization associated with the certificate.
-            ou (str): [optional] Organizational Unit associated with the certificate.
-            st (str): [optional] State Or Province Name associated with the certificate.
-            alt_name (str): [optional] Subject Alternative Name associated with the certificate.
+
+        :param c: Country Name associated with the certificate.
+        :type c: str, optional
+
+        :param cn: Common Name that associated with the certificate.
+        :type cn: str, optional
+
+        :param l: Locality associated with the certificate.
+        :type l: str, optional
+
+        :param o: Organization associated with the certificate.
+        :type o: str, optional
+
+        :param ou: Organizational Unit associated with the certificate.
+        :type ou: str, optional
+
+        :param st: State Or Province Name associated with the certificate.
+        :type st: str, optional
+
+        :param alt_name: Subject Alternative Name associated with the certificate.
+        :type alt_name: str, optional
         """
         super().__init__(kwargs)
 

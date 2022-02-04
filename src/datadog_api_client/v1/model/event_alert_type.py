@@ -41,12 +41,8 @@ class EventAlertType(ModelSimple):
         """EventAlertType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): If an alert event is enabled, set its type. For example, `error`, `warning`, `info`, `success`, `user_update`, `recommendation`, and `snapshot`. Must be one of ["error", "warning", "info", "success", "user_update", "recommendation", "snapshot"].
-
-        Keyword Args:
-            value (str): If an alert event is enabled, set its type. For example, `error`, `warning`, `info`, `success`, `user_update`, `recommendation`, and `snapshot`. Must be one of ["error", "warning", "info", "success", "user_update", "recommendation", "snapshot"].
+        :param value: If an alert event is enabled, set its type. For example, `error`, `warning`, `info`, `success`, `user_update`, `recommendation`, and `snapshot`. Must be one of ["error", "warning", "info", "success", "user_update", "recommendation", "snapshot"].
+        :type value: str
         """
         super().__init__(kwargs)
 

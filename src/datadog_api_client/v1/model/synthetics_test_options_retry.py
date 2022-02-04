@@ -35,9 +35,12 @@ class SyntheticsTestOptionsRetry(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsTestOptionsRetry - a model defined in OpenAPI
 
-        Keyword Args:
-            count (int): [optional] Number of times a test needs to be retried before marking a location as failed. Defaults to 0.
-            interval (float): [optional] Time interval between retries (in milliseconds). Defaults to 300ms.
+
+        :param count: Number of times a test needs to be retried before marking a location as failed. Defaults to 0.
+        :type count: int, optional
+
+        :param interval: Time interval between retries (in milliseconds). Defaults to 300ms.
+        :type interval: float, optional
         """
         super().__init__(kwargs)
 

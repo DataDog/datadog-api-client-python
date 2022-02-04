@@ -46,12 +46,14 @@ class FormulaAndFunctionEventQueryGroupBy(ModelNormal):
     def __init__(self, facet, *args, **kwargs):
         """FormulaAndFunctionEventQueryGroupBy - a model defined in OpenAPI
 
-        Args:
-            facet (str): Event facet.
 
-        Keyword Args:
-            limit (int): [optional] Number of groups to return.
-            sort (FormulaAndFunctionEventQueryGroupBySort): [optional]
+        :param facet: Event facet.
+        :type facet: str
+
+        :param limit: Number of groups to return.
+        :type limit: int, optional
+
+        :type sort: FormulaAndFunctionEventQueryGroupBySort, optional
         """
         super().__init__(kwargs)
 

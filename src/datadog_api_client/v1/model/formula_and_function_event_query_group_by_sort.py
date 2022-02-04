@@ -46,12 +46,13 @@ class FormulaAndFunctionEventQueryGroupBySort(ModelNormal):
     def __init__(self, aggregation, *args, **kwargs):
         """FormulaAndFunctionEventQueryGroupBySort - a model defined in OpenAPI
 
-        Args:
-            aggregation (FormulaAndFunctionEventAggregation):
 
-        Keyword Args:
-            metric (str): [optional] Metric used for sorting group by results.
-            order (QuerySortOrder): [optional]
+        :type aggregation: FormulaAndFunctionEventAggregation
+
+        :param metric: Metric used for sorting group by results.
+        :type metric: str, optional
+
+        :type order: QuerySortOrder, optional
         """
         super().__init__(kwargs)
 

@@ -46,11 +46,17 @@ class SyntheticsTriggerCITestRunResult(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsTriggerCITestRunResult - a model defined in OpenAPI
 
-        Keyword Args:
-            device (SyntheticsDeviceID): [optional]
-            location (int): [optional] The location ID of the test run.
-            public_id (str): [optional] The public ID of the Synthetics test.
-            result_id (str): [optional] ID of the result.
+
+        :type device: SyntheticsDeviceID, optional
+
+        :param location: The location ID of the test run.
+        :type location: int, optional
+
+        :param public_id: The public ID of the Synthetics test.
+        :type public_id: str, optional
+
+        :param result_id: ID of the result.
+        :type result_id: str, optional
         """
         super().__init__(kwargs)
 

@@ -45,10 +45,15 @@ class ApplicationKey(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ApplicationKey - a model defined in OpenAPI
 
-        Keyword Args:
-            hash (str): [optional] Hash of an application key.
-            name (str): [optional] Name of an application key.
-            owner (str): [optional] Owner of an application key.
+
+        :param hash: Hash of an application key.
+        :type hash: str, optional
+
+        :param name: Name of an application key.
+        :type name: str, optional
+
+        :param owner: Owner of an application key.
+        :type owner: str, optional
         """
         super().__init__(kwargs)
 

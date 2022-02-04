@@ -40,8 +40,9 @@ class UsageIndexedSpansResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageIndexedSpansResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageIndexedSpansHour]): [optional] Array with the number of hourly traces indexed for a given organization.
+
+        :param usage: Array with the number of hourly traces indexed for a given organization.
+        :type usage: [UsageIndexedSpansHour], optional
         """
         super().__init__(kwargs)
 

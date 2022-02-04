@@ -37,10 +37,15 @@ class LogsAPIError(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsAPIError - a model defined in OpenAPI
 
-        Keyword Args:
-            code (str): [optional] Code identifying the error
-            details ([LogsAPIError]): [optional] Additional error details
-            message (str): [optional] Error message
+
+        :param code: Code identifying the error
+        :type code: str, optional
+
+        :param details: Additional error details
+        :type details: [LogsAPIError], optional
+
+        :param message: Error message
+        :type message: str, optional
         """
         super().__init__(kwargs)
 

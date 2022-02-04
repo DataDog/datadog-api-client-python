@@ -35,11 +35,12 @@ class TimeseriesWidgetExpressionAlias(ModelNormal):
     def __init__(self, expression, *args, **kwargs):
         """TimeseriesWidgetExpressionAlias - a model defined in OpenAPI
 
-        Args:
-            expression (str): Expression name.
 
-        Keyword Args:
-            alias_name (str): [optional] Expression alias.
+        :param expression: Expression name.
+        :type expression: str
+
+        :param alias_name: Expression alias.
+        :type alias_name: str, optional
         """
         super().__init__(kwargs)
 

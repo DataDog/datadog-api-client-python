@@ -34,12 +34,8 @@ class SecurityFilterType(ModelSimple):
         """SecurityFilterType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The type of the resource. The value should always be `security_filters`. If omitted defaults to "security_filters". Must be one of ["security_filters"].
-
-        Keyword Args:
-            value (str): The type of the resource. The value should always be `security_filters`. If omitted defaults to "security_filters". Must be one of ["security_filters"].
+        :param value: The type of the resource. The value should always be `security_filters`. If omitted defaults to "security_filters". Must be one of ["security_filters"].
+        :type value: str
         """
         super().__init__(kwargs)
 

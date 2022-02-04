@@ -50,10 +50,13 @@ class MonitorGroupSearchResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MonitorGroupSearchResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            counts (MonitorGroupSearchResponseCounts): [optional]
-            groups ([MonitorGroupSearchResult]): [optional] The list of found monitor groups.
-            metadata (MonitorSearchResponseMetadata): [optional]
+
+        :type counts: MonitorGroupSearchResponseCounts, optional
+
+        :param groups: The list of found monitor groups.
+        :type groups: [MonitorGroupSearchResult], optional
+
+        :type metadata: MonitorSearchResponseMetadata, optional
         """
         super().__init__(kwargs)
 

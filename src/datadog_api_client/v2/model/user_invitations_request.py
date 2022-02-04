@@ -40,10 +40,9 @@ class UserInvitationsRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """UserInvitationsRequest - a model defined in OpenAPI
 
-        Args:
-            data ([UserInvitationData]): List of user invitations.
 
-        Keyword Args:
+        :param data: List of user invitations.
+        :type data: [UserInvitationData]
         """
         super().__init__(kwargs)
 

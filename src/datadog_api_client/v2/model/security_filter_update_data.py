@@ -44,11 +44,10 @@ class SecurityFilterUpdateData(ModelNormal):
     def __init__(self, attributes, type, *args, **kwargs):
         """SecurityFilterUpdateData - a model defined in OpenAPI
 
-        Args:
-            attributes (SecurityFilterUpdateAttributes):
-            type (SecurityFilterType):
 
-        Keyword Args:
+        :type attributes: SecurityFilterUpdateAttributes
+
+        :type type: SecurityFilterType
         """
         super().__init__(kwargs)
 

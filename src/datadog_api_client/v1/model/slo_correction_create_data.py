@@ -46,11 +46,10 @@ class SLOCorrectionCreateData(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """SLOCorrectionCreateData - a model defined in OpenAPI
 
-        Args:
-            type (SLOCorrectionType):
 
-        Keyword Args:
-            attributes (SLOCorrectionCreateRequestAttributes): [optional]
+        :type type: SLOCorrectionType
+
+        :type attributes: SLOCorrectionCreateRequestAttributes, optional
         """
         super().__init__(kwargs)
 

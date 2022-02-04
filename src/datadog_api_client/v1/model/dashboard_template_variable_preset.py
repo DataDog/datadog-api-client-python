@@ -44,9 +44,12 @@ class DashboardTemplateVariablePreset(ModelNormal):
     def __init__(self, *args, **kwargs):
         """DashboardTemplateVariablePreset - a model defined in OpenAPI
 
-        Keyword Args:
-            name (str): [optional] The name of the variable.
-            template_variables ([DashboardTemplateVariablePresetValue]): [optional] List of variables.
+
+        :param name: The name of the variable.
+        :type name: str, optional
+
+        :param template_variables: List of variables.
+        :type template_variables: [DashboardTemplateVariablePresetValue], optional
         """
         super().__init__(kwargs)
 

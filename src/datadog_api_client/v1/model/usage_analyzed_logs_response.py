@@ -40,8 +40,9 @@ class UsageAnalyzedLogsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageAnalyzedLogsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageAnalyzedLogsHour]): [optional] Get hourly usage for analyzed logs.
+
+        :param usage: Get hourly usage for analyzed logs.
+        :type usage: [UsageAnalyzedLogsHour], optional
         """
         super().__init__(kwargs)
 

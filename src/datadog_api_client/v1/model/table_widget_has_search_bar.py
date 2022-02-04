@@ -37,12 +37,8 @@ class TableWidgetHasSearchBar(ModelSimple):
         """TableWidgetHasSearchBar - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Controls the display of the search bar. Must be one of ["always", "never", "auto"].
-
-        Keyword Args:
-            value (str): Controls the display of the search bar. Must be one of ["always", "never", "auto"].
+        :param value: Controls the display of the search bar. Must be one of ["always", "never", "auto"].
+        :type value: str
         """
         super().__init__(kwargs)
 

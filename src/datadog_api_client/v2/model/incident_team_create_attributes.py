@@ -33,10 +33,9 @@ class IncidentTeamCreateAttributes(ModelNormal):
     def __init__(self, name, *args, **kwargs):
         """IncidentTeamCreateAttributes - a model defined in OpenAPI
 
-        Args:
-            name (str): Name of the incident team.
 
-        Keyword Args:
+        :param name: Name of the incident team.
+        :type name: str
         """
         super().__init__(kwargs)
 

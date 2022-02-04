@@ -50,10 +50,15 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsAssertionJSONPathTargetTarget - a model defined in OpenAPI
 
-        Keyword Args:
-            json_path (str): [optional] The JSON path to assert.
-            operator (str): [optional] The specific operator to use on the path.
-            target_value (bool, date, datetime, dict, float, int, list, str, none_type): [optional] The path target value to compare to.
+
+        :param json_path: The JSON path to assert.
+        :type json_path: str, optional
+
+        :param operator: The specific operator to use on the path.
+        :type operator: str, optional
+
+        :param target_value: The path target value to compare to.
+        :type target_value: bool, date, datetime, dict, float, int, list, str, none_type, optional
         """
         super().__init__(kwargs)
 

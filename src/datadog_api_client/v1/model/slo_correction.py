@@ -46,10 +46,13 @@ class SLOCorrection(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOCorrection - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (SLOCorrectionResponseAttributes): [optional]
-            id (str): [optional] The ID of the SLO correction.
-            type (SLOCorrectionType): [optional]
+
+        :type attributes: SLOCorrectionResponseAttributes, optional
+
+        :param id: The ID of the SLO correction.
+        :type id: str, optional
+
+        :type type: SLOCorrectionType, optional
         """
         super().__init__(kwargs)
 

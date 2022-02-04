@@ -42,12 +42,21 @@ class UsageLogsByIndexHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageLogsByIndexHour - a model defined in OpenAPI
 
-        Keyword Args:
-            event_count (int): [optional] The total number of indexed logs for the queried hour.
-            hour (datetime): [optional] The hour for the usage.
-            index_id (str): [optional] The index ID for this usage.
-            index_name (str): [optional] The user specified name for this index ID.
-            retention (int): [optional] The retention period (in days) for this index ID.
+
+        :param event_count: The total number of indexed logs for the queried hour.
+        :type event_count: int, optional
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param index_id: The index ID for this usage.
+        :type index_id: str, optional
+
+        :param index_name: The user specified name for this index ID.
+        :type index_name: str, optional
+
+        :param retention: The retention period (in days) for this index ID.
+        :type retention: int, optional
         """
         super().__init__(kwargs)
 

@@ -36,9 +36,12 @@ class UsageNetworkHostsHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageNetworkHostsHour - a model defined in OpenAPI
 
-        Keyword Args:
-            host_count (int): [optional] Contains the number of active NPM hosts.
-            hour (datetime): [optional] The hour for the usage.
+
+        :param host_count: Contains the number of active NPM hosts.
+        :type host_count: int, optional
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
         """
         super().__init__(kwargs)
 

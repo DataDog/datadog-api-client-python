@@ -35,11 +35,12 @@ class LogsExclusionFilter(ModelNormal):
     def __init__(self, sample_rate, *args, **kwargs):
         """LogsExclusionFilter - a model defined in OpenAPI
 
-        Args:
-            sample_rate (float): Sample rate to apply to logs going through this exclusion filter, a value of 1.0 excludes all logs matching the query.
 
-        Keyword Args:
-            query (str): [optional] Default query is `*`, meaning all logs flowing in the index would be excluded. Scope down exclusion filter to only a subset of logs with a log query.
+        :param sample_rate: Sample rate to apply to logs going through this exclusion filter, a value of 1.0 excludes all logs matching the query.
+        :type sample_rate: float
+
+        :param query: Default query is `*`, meaning all logs flowing in the index would be excluded. Scope down exclusion filter to only a subset of logs with a log query.
+        :type query: str, optional
         """
         super().__init__(kwargs)
 

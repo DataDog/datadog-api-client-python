@@ -46,10 +46,13 @@ class SecurityFilter(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityFilter - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (SecurityFilterAttributes): [optional]
-            id (str): [optional] The ID of the security filter.
-            type (SecurityFilterType): [optional]
+
+        :type attributes: SecurityFilterAttributes, optional
+
+        :param id: The ID of the security filter.
+        :type id: str, optional
+
+        :type type: SecurityFilterType, optional
         """
         super().__init__(kwargs)
 

@@ -387,35 +387,37 @@ class RolesApi(object):
         >>> thread = api.add_permission_to_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            role_id (str): The ID of the role.
-            body (RelationshipToPermission):
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
 
-        Returns:
-            PermissionsResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :param role_id: The ID of the role.
+        :type role_id: str
+
+        :type body: RelationshipToPermission
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: PermissionsResponse
         """
         kwargs = self._add_permission_to_role_endpoint.default_arguments(kwargs)
         kwargs["role_id"] = role_id
@@ -432,35 +434,37 @@ class RolesApi(object):
         >>> thread = api.add_user_to_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            role_id (str): The ID of the role.
-            body (RelationshipToUser):
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
 
-        Returns:
-            UsersResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :param role_id: The ID of the role.
+        :type role_id: str
+
+        :type body: RelationshipToUser
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: UsersResponse
         """
         kwargs = self._add_user_to_role_endpoint.default_arguments(kwargs)
         kwargs["role_id"] = role_id
@@ -477,35 +481,37 @@ class RolesApi(object):
         >>> thread = api.clone_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            role_id (str): The ID of the role.
-            body (RoleCloneRequest):
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
 
-        Returns:
-            RoleResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :param role_id: The ID of the role.
+        :type role_id: str
+
+        :type body: RoleCloneRequest
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: RoleResponse
         """
         kwargs = self._clone_role_endpoint.default_arguments(kwargs)
         kwargs["role_id"] = role_id
@@ -522,34 +528,33 @@ class RolesApi(object):
         >>> thread = api.create_role(body, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            body (RoleCreateRequest):
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
+        :type body: RoleCreateRequest
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
 
-        Returns:
-            RoleCreateResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: RoleCreateResponse
         """
         kwargs = self._create_role_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
@@ -565,34 +570,34 @@ class RolesApi(object):
         >>> thread = api.delete_role(role_id, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            role_id (str): The ID of the role.
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
+        :param role_id: The ID of the role.
+        :type role_id: str
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
 
-        Returns:
-            None
-                If the method is called asynchronously, returns the request
-                thread.
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: None
         """
         kwargs = self._delete_role_endpoint.default_arguments(kwargs)
         kwargs["role_id"] = role_id
@@ -608,34 +613,34 @@ class RolesApi(object):
         >>> thread = api.get_role(role_id, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            role_id (str): The ID of the role.
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
+        :param role_id: The ID of the role.
+        :type role_id: str
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
 
-        Returns:
-            RoleResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: RoleResponse
         """
         kwargs = self._get_role_endpoint.default_arguments(kwargs)
         kwargs["role_id"] = role_id
@@ -650,32 +655,31 @@ class RolesApi(object):
 
         >>> thread = api.list_permissions(async_req=True)
         >>> result = thread.get()
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            PermissionsResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: PermissionsResponse
         """
         kwargs = self._list_permissions_endpoint.default_arguments(kwargs)
         return self._list_permissions_endpoint.call_with_http_info(**kwargs)
@@ -690,34 +694,34 @@ class RolesApi(object):
         >>> thread = api.list_role_permissions(role_id, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            role_id (str): The ID of the role.
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
+        :param role_id: The ID of the role.
+        :type role_id: str
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
 
-        Returns:
-            PermissionsResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: PermissionsResponse
         """
         kwargs = self._list_role_permissions_endpoint.default_arguments(kwargs)
         kwargs["role_id"] = role_id
@@ -733,38 +737,46 @@ class RolesApi(object):
         >>> thread = api.list_role_users(role_id, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            role_id (str): The ID of the role.
 
-        Keyword Args:
-            page_size (int): [optional] Size for a given page. If omitted the server will use the default value of 10.
-            page_number (int): [optional] Specific page number to return. If omitted the server will use the default value of 0.
-            sort (str): [optional] User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `email`, `status`. If omitted the server will use the default value of "name".
-            filter (str): [optional] Filter all users by the given string. Defaults to no filtering.
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
+        :param role_id: The ID of the role.
+        :type role_id: str
 
-        Returns:
-            UsersResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :param page_size: Size for a given page. If omitted the server will use the default value of 10.
+        :type page_size: int, optional
+
+        :param page_number: Specific page number to return. If omitted the server will use the default value of 0.
+        :type page_number: int, optional
+
+        :param sort: User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `email`, `status`. If omitted the server will use the default value of "name".
+        :type sort: str, optional
+
+        :param filter: Filter all users by the given string. Defaults to no filtering.
+        :type filter: str, optional
+        :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: UsersResponse
         """
         kwargs = self._list_role_users_endpoint.default_arguments(kwargs)
         kwargs["role_id"] = role_id
@@ -780,35 +792,42 @@ class RolesApi(object):
         >>> thread = api.list_roles(async_req=True)
         >>> result = thread.get()
 
-        Keyword Args:
-            page_size (int): [optional] Size for a given page. If omitted the server will use the default value of 10.
-            page_number (int): [optional] Specific page number to return. If omitted the server will use the default value of 0.
-            sort (RolesSort): [optional] Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: `sort=-name`.
-            filter (str): [optional] Filter all roles by the given string.
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
+        :param page_size: Size for a given page. If omitted the server will use the default value of 10.
+        :type page_size: int, optional
 
-        Returns:
-            RolesResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :param page_number: Specific page number to return. If omitted the server will use the default value of 0.
+        :type page_number: int, optional
+
+        :param sort: Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: `sort=-name`.
+        :type sort: RolesSort, optional
+
+        :param filter: Filter all roles by the given string.
+        :type filter: str, optional
+        :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: RolesResponse
         """
         kwargs = self._list_roles_endpoint.default_arguments(kwargs)
         return self._list_roles_endpoint.call_with_http_info(**kwargs)
@@ -823,35 +842,37 @@ class RolesApi(object):
         >>> thread = api.remove_permission_from_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            role_id (str): The ID of the role.
-            body (RelationshipToPermission):
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
 
-        Returns:
-            PermissionsResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :param role_id: The ID of the role.
+        :type role_id: str
+
+        :type body: RelationshipToPermission
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: PermissionsResponse
         """
         kwargs = self._remove_permission_from_role_endpoint.default_arguments(kwargs)
         kwargs["role_id"] = role_id
@@ -868,35 +889,37 @@ class RolesApi(object):
         >>> thread = api.remove_user_from_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            role_id (str): The ID of the role.
-            body (RelationshipToUser):
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
 
-        Returns:
-            UsersResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :param role_id: The ID of the role.
+        :type role_id: str
+
+        :type body: RelationshipToUser
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: UsersResponse
         """
         kwargs = self._remove_user_from_role_endpoint.default_arguments(kwargs)
         kwargs["role_id"] = role_id
@@ -913,35 +936,37 @@ class RolesApi(object):
         >>> thread = api.update_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            role_id (str): The ID of the role.
-            body (RoleUpdateRequest):
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
 
-        Returns:
-            RoleUpdateResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :param role_id: The ID of the role.
+        :type role_id: str
+
+        :type body: RoleUpdateRequest
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: RoleUpdateResponse
         """
         kwargs = self._update_role_endpoint.default_arguments(kwargs)
         kwargs["role_id"] = role_id

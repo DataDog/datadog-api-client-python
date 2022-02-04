@@ -40,8 +40,9 @@ class LogsIndexListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsIndexListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            indexes ([LogsIndex]): [optional] Array of Log index configurations.
+
+        :param indexes: Array of Log index configurations.
+        :type indexes: [LogsIndex], optional
         """
         super().__init__(kwargs)
 

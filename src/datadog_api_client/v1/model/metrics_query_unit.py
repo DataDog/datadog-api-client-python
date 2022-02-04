@@ -49,12 +49,21 @@ class MetricsQueryUnit(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MetricsQueryUnit - a model defined in OpenAPI
 
-        Keyword Args:
-            family (str): [optional] Unit family, allows for conversion between units of the same family, for scaling.
-            name (str): [optional] Unit name
-            plural (str): [optional] Plural form of the unit name.
-            scale_factor (float): [optional] Factor for scaling between units of the same family.
-            short_name (str): [optional] Abbreviation of the unit.
+
+        :param family: Unit family, allows for conversion between units of the same family, for scaling.
+        :type family: str, optional
+
+        :param name: Unit name
+        :type name: str, optional
+
+        :param plural: Plural form of the unit name.
+        :type plural: str, optional
+
+        :param scale_factor: Factor for scaling between units of the same family.
+        :type scale_factor: float, optional
+
+        :param short_name: Abbreviation of the unit.
+        :type short_name: str, optional
         """
         super().__init__(kwargs)
 

@@ -35,11 +35,12 @@ class GeomapWidgetDefinitionStyle(ModelNormal):
     def __init__(self, palette, palette_flip, *args, **kwargs):
         """GeomapWidgetDefinitionStyle - a model defined in OpenAPI
 
-        Args:
-            palette (str): The color palette to apply to the widget.
-            palette_flip (bool): Whether to flip the palette tones.
 
-        Keyword Args:
+        :param palette: The color palette to apply to the widget.
+        :type palette: str
+
+        :param palette_flip: Whether to flip the palette tones.
+        :type palette_flip: bool
         """
         super().__init__(kwargs)
 

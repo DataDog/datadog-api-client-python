@@ -55,15 +55,29 @@ class UsageBillableSummaryHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageBillableSummaryHour - a model defined in OpenAPI
 
-        Keyword Args:
-            billing_plan (str): [optional] The billing plan.
-            end_date (datetime): [optional] Shows the last date of usage.
-            num_orgs (int): [optional] The number of organizations.
-            org_name (str): [optional] The organization name.
-            public_id (str): [optional] The organization public ID.
-            ratio_in_month (float): [optional] Shows usage aggregation for a billing period.
-            start_date (datetime): [optional] Shows the first date of usage.
-            usage (UsageBillableSummaryKeys): [optional]
+
+        :param billing_plan: The billing plan.
+        :type billing_plan: str, optional
+
+        :param end_date: Shows the last date of usage.
+        :type end_date: datetime, optional
+
+        :param num_orgs: The number of organizations.
+        :type num_orgs: int, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
+
+        :param ratio_in_month: Shows usage aggregation for a billing period.
+        :type ratio_in_month: float, optional
+
+        :param start_date: Shows the first date of usage.
+        :type start_date: datetime, optional
+
+        :type usage: UsageBillableSummaryKeys, optional
         """
         super().__init__(kwargs)
 

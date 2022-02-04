@@ -42,8 +42,9 @@ class UsageCloudSecurityPostureManagementResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageCloudSecurityPostureManagementResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageCloudSecurityPostureManagementHour]): [optional] Get hourly usage for Cloud Security Posture Management.
+
+        :param usage: Get hourly usage for Cloud Security Posture Management.
+        :type usage: [UsageCloudSecurityPostureManagementHour], optional
         """
         super().__init__(kwargs)
 

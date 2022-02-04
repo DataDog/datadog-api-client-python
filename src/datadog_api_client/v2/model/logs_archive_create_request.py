@@ -40,8 +40,8 @@ class LogsArchiveCreateRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsArchiveCreateRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            data (LogsArchiveCreateRequestDefinition): [optional]
+
+        :type data: LogsArchiveCreateRequestDefinition, optional
         """
         super().__init__(kwargs)
 

@@ -52,16 +52,26 @@ class LogsLookupProcessor(ModelNormal):
     def __init__(self, lookup_table, source, target, type, *args, **kwargs):
         """LogsLookupProcessor - a model defined in OpenAPI
 
-        Args:
-            lookup_table ([str]): Mapping table of values for the source attribute and their associated target attribute values, formatted as `[\"source_key1,target_value1\", \"source_key2,target_value2\"]`
-            source (str): Source attribute used to perform the lookup.
-            target (str): Name of the attribute that contains the corresponding value in the mapping list or the `default_lookup` if not found in the mapping list.
-            type (LogsLookupProcessorType):
 
-        Keyword Args:
-            default_lookup (str): [optional] Value to set the target attribute if the source value is not found in the list.
-            is_enabled (bool): [optional] Whether or not the processor is enabled. If omitted the server will use the default value of False.
-            name (str): [optional] Name of the processor.
+        :param lookup_table: Mapping table of values for the source attribute and their associated target attribute values, formatted as `[\"source_key1,target_value1\", \"source_key2,target_value2\"]`
+        :type lookup_table: [str]
+
+        :param source: Source attribute used to perform the lookup.
+        :type source: str
+
+        :param target: Name of the attribute that contains the corresponding value in the mapping list or the `default_lookup` if not found in the mapping list.
+        :type target: str
+
+        :type type: LogsLookupProcessorType
+
+        :param default_lookup: Value to set the target attribute if the source value is not found in the list.
+        :type default_lookup: str, optional
+
+        :param is_enabled: Whether or not the processor is enabled. If omitted the server will use the default value of False.
+        :type is_enabled: bool, optional
+
+        :param name: Name of the processor.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

@@ -52,14 +52,19 @@ class LogsPipelineProcessor(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """LogsPipelineProcessor - a model defined in OpenAPI
 
-        Args:
-            type (LogsPipelineProcessorType):
 
-        Keyword Args:
-            filter (LogsFilter): [optional]
-            is_enabled (bool): [optional] Whether or not the processor is enabled. If omitted the server will use the default value of False.
-            name (str): [optional] Name of the processor.
-            processors ([LogsProcessor]): [optional] Ordered list of processors in this pipeline.
+        :type type: LogsPipelineProcessorType
+
+        :type filter: LogsFilter, optional
+
+        :param is_enabled: Whether or not the processor is enabled. If omitted the server will use the default value of False.
+        :type is_enabled: bool, optional
+
+        :param name: Name of the processor.
+        :type name: str, optional
+
+        :param processors: Ordered list of processors in this pipeline.
+        :type processors: [LogsProcessor], optional
         """
         super().__init__(kwargs)
 

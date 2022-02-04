@@ -35,12 +35,8 @@ class Point(ModelSimple):
         """Point - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] ([float, none_type]): Array of timeseries points.
-
-        Keyword Args:
-            value ([float, none_type]): Array of timeseries points.
+        :param value: Array of timeseries points.
+        :type value: [float, none_type]
         """
         super().__init__(kwargs)
 

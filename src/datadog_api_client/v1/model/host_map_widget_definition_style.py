@@ -39,11 +39,18 @@ class HostMapWidgetDefinitionStyle(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HostMapWidgetDefinitionStyle - a model defined in OpenAPI
 
-        Keyword Args:
-            fill_max (str): [optional] Max value to use to color the map.
-            fill_min (str): [optional] Min value to use to color the map.
-            palette (str): [optional] Color palette to apply to the widget.
-            palette_flip (bool): [optional] Whether to flip the palette tones.
+
+        :param fill_max: Max value to use to color the map.
+        :type fill_max: str, optional
+
+        :param fill_min: Min value to use to color the map.
+        :type fill_min: str, optional
+
+        :param palette: Color palette to apply to the widget.
+        :type palette: str, optional
+
+        :param palette_flip: Whether to flip the palette tones.
+        :type palette_flip: bool, optional
         """
         super().__init__(kwargs)
 

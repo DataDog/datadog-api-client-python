@@ -36,12 +36,8 @@ class WidgetColorPreference(ModelSimple):
         """WidgetColorPreference - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Which color to use on the widget. Must be one of ["background", "text"].
-
-        Keyword Args:
-            value (str): Which color to use on the widget. Must be one of ["background", "text"].
+        :param value: Which color to use on the widget. Must be one of ["background", "text"].
+        :type value: str
         """
         super().__init__(kwargs)
 

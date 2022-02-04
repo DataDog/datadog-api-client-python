@@ -48,11 +48,18 @@ class ApiKey(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ApiKey - a model defined in OpenAPI
 
-        Keyword Args:
-            created (str): [optional] Date of creation of the API key.
-            created_by (str): [optional] Datadog user handle that created the API key.
-            key (str): [optional] API key.
-            name (str): [optional] Name of your API key.
+
+        :param created: Date of creation of the API key.
+        :type created: str, optional
+
+        :param created_by: Datadog user handle that created the API key.
+        :type created_by: str, optional
+
+        :param key: API key.
+        :type key: str, optional
+
+        :param name: Name of your API key.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

@@ -35,12 +35,8 @@ class WebhooksIntegrationEncoding(ModelSimple):
         """WebhooksIntegrationEncoding - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Encoding type. Can be given either `json` or `form`. If omitted defaults to "json". Must be one of ["json", "form"].
-
-        Keyword Args:
-            value (str): Encoding type. Can be given either `json` or `form`. If omitted defaults to "json". Must be one of ["json", "form"].
+        :param value: Encoding type. Can be given either `json` or `form`. If omitted defaults to "json". Must be one of ["json", "form"].
+        :type value: str
         """
         super().__init__(kwargs)
 

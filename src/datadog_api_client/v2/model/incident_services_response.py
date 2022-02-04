@@ -50,12 +50,14 @@ class IncidentServicesResponse(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """IncidentServicesResponse - a model defined in OpenAPI
 
-        Args:
-            data ([IncidentServiceResponseData]): An array of incident services.
 
-        Keyword Args:
-            included ([IncidentServiceIncludedItems]): [optional] Included related resources which the user requested.
-            meta (IncidentServicesResponseMeta): [optional]
+        :param data: An array of incident services.
+        :type data: [IncidentServiceResponseData]
+
+        :param included: Included related resources which the user requested.
+        :type included: [IncidentServiceIncludedItems], optional
+
+        :type meta: IncidentServicesResponseMeta, optional
         """
         super().__init__(kwargs)
 

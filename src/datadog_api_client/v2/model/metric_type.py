@@ -34,12 +34,8 @@ class MetricType(ModelSimple):
         """MetricType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The metric resource type. If omitted defaults to "metrics". Must be one of ["metrics"].
-
-        Keyword Args:
-            value (str): The metric resource type. If omitted defaults to "metrics". Must be one of ["metrics"].
+        :param value: The metric resource type. If omitted defaults to "metrics". Must be one of ["metrics"].
+        :type value: str
         """
         super().__init__(kwargs)
 

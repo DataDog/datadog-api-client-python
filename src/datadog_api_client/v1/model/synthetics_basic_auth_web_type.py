@@ -34,12 +34,8 @@ class SyntheticsBasicAuthWebType(ModelSimple):
         """SyntheticsBasicAuthWebType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The type of basic authentication to use when performing the test. If omitted defaults to "web". Must be one of ["web"].
-
-        Keyword Args:
-            value (str): The type of basic authentication to use when performing the test. If omitted defaults to "web". Must be one of ["web"].
+        :param value: The type of basic authentication to use when performing the test. If omitted defaults to "web". Must be one of ["web"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -107,24 +107,55 @@ class Downtime(ModelNormal):
     def __init__(self, *args, **kwargs):
         """Downtime - a model defined in OpenAPI
 
-        Keyword Args:
-            active (bool): [optional] If a scheduled downtime currently exists.
-            active_child (DowntimeChild): [optional]
-            canceled (int, none_type): [optional] If a scheduled downtime is canceled.
-            creator_id (int): [optional] User ID of the downtime creator.
-            disabled (bool): [optional] If a downtime has been disabled.
-            downtime_type (int): [optional] `0` for a downtime applied on `*` or all, `1` when the downtime is only scoped to hosts, or `2` when the downtime is scoped to anything but hosts.
-            end (int, none_type): [optional] POSIX timestamp to end the downtime. If not provided, the downtime is in effect indefinitely until you cancel it.
-            id (int): [optional] The downtime ID.
-            message (str): [optional] A message to include with notifications for this downtime. Email notifications can be sent to specific users by using the same `@username` notation as events.
-            monitor_id (int, none_type): [optional] A single monitor to which the downtime applies. If not provided, the downtime applies to all monitors.
-            monitor_tags ([str]): [optional] A comma-separated list of monitor tags. For example, tags that are applied directly to monitors, not tags that are used in monitor queries (which are filtered by the scope parameter), to which the downtime applies. The resulting downtime applies to monitors that match ALL provided monitor tags. For example, `service:postgres` **AND** `team:frontend`.
-            parent_id (int, none_type): [optional] ID of the parent Downtime.
-            recurrence (DowntimeRecurrence): [optional]
-            scope ([str]): [optional] The scope(s) to which the downtime applies. For example, `host:app2`. Provide multiple scopes as a comma-separated list like `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (`env:dev` **AND** `env:prod`).
-            start (int): [optional] POSIX timestamp to start the downtime. If not provided, the downtime starts the moment it is created.
-            timezone (str): [optional] The timezone in which to display the downtime's start and end times in Datadog applications.
-            updater_id (int, none_type): [optional] ID of the last user that updated the downtime.
+
+        :param active: If a scheduled downtime currently exists.
+        :type active: bool, optional
+
+        :type active_child: DowntimeChild, optional
+
+        :param canceled: If a scheduled downtime is canceled.
+        :type canceled: int, none_type, optional
+
+        :param creator_id: User ID of the downtime creator.
+        :type creator_id: int, optional
+
+        :param disabled: If a downtime has been disabled.
+        :type disabled: bool, optional
+
+        :param downtime_type: `0` for a downtime applied on `*` or all, `1` when the downtime is only scoped to hosts, or `2` when the downtime is scoped to anything but hosts.
+        :type downtime_type: int, optional
+
+        :param end: POSIX timestamp to end the downtime. If not provided, the downtime is in effect indefinitely until you cancel it.
+        :type end: int, none_type, optional
+
+        :param id: The downtime ID.
+        :type id: int, optional
+
+        :param message: A message to include with notifications for this downtime. Email notifications can be sent to specific users by using the same `@username` notation as events.
+        :type message: str, optional
+
+        :param monitor_id: A single monitor to which the downtime applies. If not provided, the downtime applies to all monitors.
+        :type monitor_id: int, none_type, optional
+
+        :param monitor_tags: A comma-separated list of monitor tags. For example, tags that are applied directly to monitors, not tags that are used in monitor queries (which are filtered by the scope parameter), to which the downtime applies. The resulting downtime applies to monitors that match ALL provided monitor tags. For example, `service:postgres` **AND** `team:frontend`.
+        :type monitor_tags: [str], optional
+
+        :param parent_id: ID of the parent Downtime.
+        :type parent_id: int, none_type, optional
+
+        :type recurrence: DowntimeRecurrence, optional
+
+        :param scope: The scope(s) to which the downtime applies. For example, `host:app2`. Provide multiple scopes as a comma-separated list like `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (`env:dev` **AND** `env:prod`).
+        :type scope: [str], optional
+
+        :param start: POSIX timestamp to start the downtime. If not provided, the downtime starts the moment it is created.
+        :type start: int, optional
+
+        :param timezone: The timezone in which to display the downtime's start and end times in Datadog applications.
+        :type timezone: str, optional
+
+        :param updater_id: ID of the last user that updated the downtime.
+        :type updater_id: int, none_type, optional
         """
         super().__init__(kwargs)
 

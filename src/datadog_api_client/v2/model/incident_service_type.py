@@ -34,12 +34,8 @@ class IncidentServiceType(ModelSimple):
         """IncidentServiceType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Incident service resource type. If omitted defaults to "services". Must be one of ["services"].
-
-        Keyword Args:
-            value (str): Incident service resource type. If omitted defaults to "services". Must be one of ["services"].
+        :param value: Incident service resource type. If omitted defaults to "services". Must be one of ["services"].
+        :type value: str
         """
         super().__init__(kwargs)
 

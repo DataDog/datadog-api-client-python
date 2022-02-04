@@ -40,8 +40,8 @@ class UserResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UserResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            user (User): [optional]
+
+        :type user: User, optional
         """
         super().__init__(kwargs)
 

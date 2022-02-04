@@ -52,13 +52,24 @@ class SLOHistoryMetricsSeriesMetadataUnit(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOHistoryMetricsSeriesMetadataUnit - a model defined in OpenAPI
 
-        Keyword Args:
-            family (str): [optional] The family of metric unit, for example `bytes` is the family for `kibibyte`, `byte`, and `bit` units.
-            id (int): [optional] The ID of the metric unit.
-            name (str): [optional] The unit of the metric, for instance `byte`.
-            plural (str, none_type): [optional] The plural Unit of metric, for instance `bytes`.
-            scale_factor (float): [optional] The scale factor of metric unit, for instance `1.0`.
-            short_name (str, none_type): [optional] A shorter and abbreviated version of the metric unit, for instance `B`.
+
+        :param family: The family of metric unit, for example `bytes` is the family for `kibibyte`, `byte`, and `bit` units.
+        :type family: str, optional
+
+        :param id: The ID of the metric unit.
+        :type id: int, optional
+
+        :param name: The unit of the metric, for instance `byte`.
+        :type name: str, optional
+
+        :param plural: The plural Unit of metric, for instance `bytes`.
+        :type plural: str, none_type, optional
+
+        :param scale_factor: The scale factor of metric unit, for instance `1.0`.
+        :type scale_factor: float, optional
+
+        :param short_name: A shorter and abbreviated version of the metric unit, for instance `B`.
+        :type short_name: str, none_type, optional
         """
         super().__init__(kwargs)
 

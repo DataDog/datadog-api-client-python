@@ -36,9 +36,12 @@ class SyntheticsDeletedTest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsDeletedTest - a model defined in OpenAPI
 
-        Keyword Args:
-            deleted_at (datetime): [optional] Deletion timestamp of the Synthetic test ID.
-            public_id (str): [optional] The Synthetic test ID deleted.
+
+        :param deleted_at: Deletion timestamp of the Synthetic test ID.
+        :type deleted_at: datetime, optional
+
+        :param public_id: The Synthetic test ID deleted.
+        :type public_id: str, optional
         """
         super().__init__(kwargs)
 

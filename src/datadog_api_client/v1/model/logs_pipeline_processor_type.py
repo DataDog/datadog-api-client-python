@@ -34,12 +34,8 @@ class LogsPipelineProcessorType(ModelSimple):
         """LogsPipelineProcessorType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of logs pipeline processor. If omitted defaults to "pipeline". Must be one of ["pipeline"].
-
-        Keyword Args:
-            value (str): Type of logs pipeline processor. If omitted defaults to "pipeline". Must be one of ["pipeline"].
+        :param value: Type of logs pipeline processor. If omitted defaults to "pipeline". Must be one of ["pipeline"].
+        :type value: str
         """
         super().__init__(kwargs)
 

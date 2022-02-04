@@ -135,34 +135,34 @@ class LogsApi(object):
         >>> thread = api.list_logs(body, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            body (LogsListRequest): Logs filter
 
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
+        :param body: Logs filter
+        :type body: LogsListRequest
+            :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
 
-        Returns:
-            LogsListResponse
-                If the method is called asynchronously, returns the request
-                thread.
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: LogsListResponse
         """
         kwargs = self._list_logs_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
@@ -178,36 +178,40 @@ class LogsApi(object):
         >>> thread = api.submit_log(body, async_req=True)
         >>> result = thread.get()
 
-        Args:
-            body (HTTPLog): Log to send (JSON format).
 
-        Keyword Args:
-            content_encoding (ContentEncoding): [optional] HTTP header used to compress the media-type.
-            ddtags (str): [optional] Log tags can be passed as query parameters with `text/plain` content type.
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
+        :param body: Log to send (JSON format).
+        :type body: HTTPLog
 
-        Returns:
-            dict
-                If the method is called asynchronously, returns the request
-                thread.
+        :param content_encoding: HTTP header used to compress the media-type.
+        :type content_encoding: ContentEncoding, optional
+
+        :param ddtags: Log tags can be passed as query parameters with `text/plain` content type.
+        :type ddtags: str, optional
+        :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: dict
         """
         kwargs = self._submit_log_endpoint.default_arguments(kwargs)
         kwargs["body"] = body

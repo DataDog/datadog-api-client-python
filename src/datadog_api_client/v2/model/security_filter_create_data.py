@@ -44,11 +44,10 @@ class SecurityFilterCreateData(ModelNormal):
     def __init__(self, attributes, type, *args, **kwargs):
         """SecurityFilterCreateData - a model defined in OpenAPI
 
-        Args:
-            attributes (SecurityFilterCreateAttributes):
-            type (SecurityFilterType):
 
-        Keyword Args:
+        :type attributes: SecurityFilterCreateAttributes
+
+        :type type: SecurityFilterType
         """
         super().__init__(kwargs)
 

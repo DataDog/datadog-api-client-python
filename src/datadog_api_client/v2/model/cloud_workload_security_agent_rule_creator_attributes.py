@@ -35,9 +35,12 @@ class CloudWorkloadSecurityAgentRuleCreatorAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """CloudWorkloadSecurityAgentRuleCreatorAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            handle (str): [optional] The handle of the user.
-            name (str): [optional] The name of the user.
+
+        :param handle: The handle of the user.
+        :type handle: str, optional
+
+        :param name: The name of the user.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

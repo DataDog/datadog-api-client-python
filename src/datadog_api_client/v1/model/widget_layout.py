@@ -54,14 +54,21 @@ class WidgetLayout(ModelNormal):
     def __init__(self, height, width, x, y, *args, **kwargs):
         """WidgetLayout - a model defined in OpenAPI
 
-        Args:
-            height (int): The height of the widget. Should be a non-negative integer.
-            width (int): The width of the widget. Should be a non-negative integer.
-            x (int): The position of the widget on the x (horizontal) axis. Should be a non-negative integer.
-            y (int): The position of the widget on the y (vertical) axis. Should be a non-negative integer.
 
-        Keyword Args:
-            is_column_break (bool): [optional] Whether the widget should be the first one on the second column in high density or not. **Note**: Only for the **new dashboard layout** and only one widget in the dashboard should have this property set to `true`.
+        :param height: The height of the widget. Should be a non-negative integer.
+        :type height: int
+
+        :param width: The width of the widget. Should be a non-negative integer.
+        :type width: int
+
+        :param x: The position of the widget on the x (horizontal) axis. Should be a non-negative integer.
+        :type x: int
+
+        :param y: The position of the widget on the y (vertical) axis. Should be a non-negative integer.
+        :type y: int
+
+        :param is_column_break: Whether the widget should be the first one on the second column in high density or not. **Note**: Only for the **new dashboard layout** and only one widget in the dashboard should have this property set to `true`.
+        :type is_column_break: bool, optional
         """
         super().__init__(kwargs)
 

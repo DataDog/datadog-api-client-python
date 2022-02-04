@@ -52,11 +52,14 @@ class LogsListRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsListRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            filter (LogsQueryFilter): [optional]
-            options (LogsQueryOptions): [optional]
-            page (LogsListRequestPage): [optional]
-            sort (LogsSort): [optional]
+
+        :type filter: LogsQueryFilter, optional
+
+        :type options: LogsQueryOptions, optional
+
+        :type page: LogsListRequestPage, optional
+
+        :type sort: LogsSort, optional
         """
         super().__init__(kwargs)
 

@@ -48,12 +48,13 @@ class LogsMetricCreateAttributes(ModelNormal):
     def __init__(self, compute, *args, **kwargs):
         """LogsMetricCreateAttributes - a model defined in OpenAPI
 
-        Args:
-            compute (LogsMetricCompute):
 
-        Keyword Args:
-            filter (LogsMetricFilter): [optional]
-            group_by ([LogsMetricGroupBy]): [optional] The rules for the group by.
+        :type compute: LogsMetricCompute
+
+        :type filter: LogsMetricFilter, optional
+
+        :param group_by: The rules for the group by.
+        :type group_by: [LogsMetricGroupBy], optional
         """
         super().__init__(kwargs)
 

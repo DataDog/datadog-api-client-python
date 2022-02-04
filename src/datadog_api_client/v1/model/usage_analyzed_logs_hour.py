@@ -40,11 +40,18 @@ class UsageAnalyzedLogsHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageAnalyzedLogsHour - a model defined in OpenAPI
 
-        Keyword Args:
-            analyzed_logs (int): [optional] Contains the number of analyzed logs.
-            hour (datetime): [optional] The hour for the usage.
-            org_name (str): [optional] The organization name.
-            public_id (str): [optional] The organization public ID.
+
+        :param analyzed_logs: Contains the number of analyzed logs.
+        :type analyzed_logs: int, optional
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
         """
         super().__init__(kwargs)
 

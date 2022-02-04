@@ -44,12 +44,14 @@ class FormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
     def __init__(self, aggregation, *args, **kwargs):
         """FormulaAndFunctionEventQueryDefinitionCompute - a model defined in OpenAPI
 
-        Args:
-            aggregation (FormulaAndFunctionEventAggregation):
 
-        Keyword Args:
-            interval (int): [optional] A time interval in milliseconds.
-            metric (str): [optional] Measurable attribute to compute.
+        :type aggregation: FormulaAndFunctionEventAggregation
+
+        :param interval: A time interval in milliseconds.
+        :type interval: int, optional
+
+        :param metric: Measurable attribute to compute.
+        :type metric: str, optional
         """
         super().__init__(kwargs)
 

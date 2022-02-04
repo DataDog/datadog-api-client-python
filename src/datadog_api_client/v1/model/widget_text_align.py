@@ -37,12 +37,8 @@ class WidgetTextAlign(ModelSimple):
         """WidgetTextAlign - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): How to align the text on the widget. Must be one of ["center", "left", "right"].
-
-        Keyword Args:
-            value (str): How to align the text on the widget. Must be one of ["center", "left", "right"].
+        :param value: How to align the text on the widget. Must be one of ["center", "left", "right"].
+        :type value: str
         """
         super().__init__(kwargs)
 

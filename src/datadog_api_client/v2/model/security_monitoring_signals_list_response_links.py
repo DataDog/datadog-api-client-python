@@ -33,8 +33,9 @@ class SecurityMonitoringSignalsListResponseLinks(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityMonitoringSignalsListResponseLinks - a model defined in OpenAPI
 
-        Keyword Args:
-            next (str): [optional] The link for the next set of results. **Note**: The request can also be made using the POST endpoint.
+
+        :param next: The link for the next set of results. **Note**: The request can also be made using the POST endpoint.
+        :type next: str, optional
         """
         super().__init__(kwargs)
 

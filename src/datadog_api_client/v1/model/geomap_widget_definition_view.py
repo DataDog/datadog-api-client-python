@@ -33,10 +33,9 @@ class GeomapWidgetDefinitionView(ModelNormal):
     def __init__(self, focus, *args, **kwargs):
         """GeomapWidgetDefinitionView - a model defined in OpenAPI
 
-        Args:
-            focus (str): The 2-letter ISO code of a country to focus the map on. Or `WORLD`.
 
-        Keyword Args:
+        :param focus: The 2-letter ISO code of a country to focus the map on. Or `WORLD`.
+        :type focus: str
         """
         super().__init__(kwargs)
 

@@ -50,15 +50,23 @@ class SyntheticsBasicAuthSigv4(ModelNormal):
     def __init__(self, access_key, secret_key, type, *args, **kwargs):
         """SyntheticsBasicAuthSigv4 - a model defined in OpenAPI
 
-        Args:
-            access_key (str): Access key for the `SIGV4` authentication.
-            secret_key (str): Secret key for the `SIGV4` authentication.
-            type (SyntheticsBasicAuthSigv4Type):
 
-        Keyword Args:
-            region (str): [optional] Region for the `SIGV4` authentication.
-            service_name (str): [optional] Service name for the `SIGV4` authentication.
-            session_token (str): [optional] Session token for the `SIGV4` authentication.
+        :param access_key: Access key for the `SIGV4` authentication.
+        :type access_key: str
+
+        :param secret_key: Secret key for the `SIGV4` authentication.
+        :type secret_key: str
+
+        :type type: SyntheticsBasicAuthSigv4Type
+
+        :param region: Region for the `SIGV4` authentication.
+        :type region: str, optional
+
+        :param service_name: Service name for the `SIGV4` authentication.
+        :type service_name: str, optional
+
+        :param session_token: Session token for the `SIGV4` authentication.
+        :type session_token: str, optional
         """
         super().__init__(kwargs)
 

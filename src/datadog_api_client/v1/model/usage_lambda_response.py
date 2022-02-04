@@ -40,8 +40,9 @@ class UsageLambdaResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageLambdaResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageLambdaHour]): [optional] Get hourly usage for Lambda.
+
+        :param usage: Get hourly usage for Lambda.
+        :type usage: [UsageLambdaHour], optional
         """
         super().__init__(kwargs)
 

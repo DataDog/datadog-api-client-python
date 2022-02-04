@@ -44,11 +44,10 @@ class MetricCustomAggregation(ModelNormal):
     def __init__(self, space, time, *args, **kwargs):
         """MetricCustomAggregation - a model defined in OpenAPI
 
-        Args:
-            space (MetricCustomSpaceAggregation):
-            time (MetricCustomTimeAggregation):
 
-        Keyword Args:
+        :type space: MetricCustomSpaceAggregation
+
+        :type time: MetricCustomTimeAggregation
         """
         super().__init__(kwargs)
 

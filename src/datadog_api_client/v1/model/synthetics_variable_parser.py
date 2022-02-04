@@ -42,11 +42,11 @@ class SyntheticsVariableParser(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """SyntheticsVariableParser - a model defined in OpenAPI
 
-        Args:
-            type (SyntheticsGlobalVariableParserType):
 
-        Keyword Args:
-            value (str): [optional] Regex or JSON path used for the parser. Not used with type `raw`.
+        :type type: SyntheticsGlobalVariableParserType
+
+        :param value: Regex or JSON path used for the parser. Not used with type `raw`.
+        :type value: str, optional
         """
         super().__init__(kwargs)
 

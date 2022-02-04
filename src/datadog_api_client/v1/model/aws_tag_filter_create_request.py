@@ -44,10 +44,14 @@ class AWSTagFilterCreateRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """AWSTagFilterCreateRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            account_id (str): [optional] Your AWS Account ID without dashes.
-            namespace (AWSNamespace): [optional]
-            tag_filter_str (str): [optional] The tag filter string.
+
+        :param account_id: Your AWS Account ID without dashes.
+        :type account_id: str, optional
+
+        :type namespace: AWSNamespace, optional
+
+        :param tag_filter_str: The tag filter string.
+        :type tag_filter_str: str, optional
         """
         super().__init__(kwargs)
 

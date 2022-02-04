@@ -64,18 +64,28 @@ class ImageWidgetDefinition(ModelNormal):
     def __init__(self, type, url, *args, **kwargs):
         """ImageWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            type (ImageWidgetDefinitionType):
-            url (str): URL of the image.
 
-        Keyword Args:
-            has_background (bool): [optional] Whether to display a background or not. If omitted the server will use the default value of True.
-            has_border (bool): [optional] Whether to display a border or not. If omitted the server will use the default value of True.
-            horizontal_align (WidgetHorizontalAlign): [optional]
-            margin (WidgetMargin): [optional]
-            sizing (WidgetImageSizing): [optional]
-            url_dark_theme (str): [optional] URL of the image in dark mode.
-            vertical_align (WidgetVerticalAlign): [optional]
+        :type type: ImageWidgetDefinitionType
+
+        :param url: URL of the image.
+        :type url: str
+
+        :param has_background: Whether to display a background or not. If omitted the server will use the default value of True.
+        :type has_background: bool, optional
+
+        :param has_border: Whether to display a border or not. If omitted the server will use the default value of True.
+        :type has_border: bool, optional
+
+        :type horizontal_align: WidgetHorizontalAlign, optional
+
+        :type margin: WidgetMargin, optional
+
+        :type sizing: WidgetImageSizing, optional
+
+        :param url_dark_theme: URL of the image in dark mode.
+        :type url_dark_theme: str, optional
+
+        :type vertical_align: WidgetVerticalAlign, optional
         """
         super().__init__(kwargs)
 

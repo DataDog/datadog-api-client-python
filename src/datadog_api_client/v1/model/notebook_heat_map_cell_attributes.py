@@ -52,13 +52,14 @@ class NotebookHeatMapCellAttributes(ModelNormal):
     def __init__(self, definition, *args, **kwargs):
         """NotebookHeatMapCellAttributes - a model defined in OpenAPI
 
-        Args:
-            definition (HeatMapWidgetDefinition):
 
-        Keyword Args:
-            graph_size (NotebookGraphSize): [optional]
-            split_by (NotebookSplitBy): [optional]
-            time (NotebookCellTime): [optional]
+        :type definition: HeatMapWidgetDefinition
+
+        :type graph_size: NotebookGraphSize, optional
+
+        :type split_by: NotebookSplitBy, optional
+
+        :type time: NotebookCellTime, optional
         """
         super().__init__(kwargs)
 

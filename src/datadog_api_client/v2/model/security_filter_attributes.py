@@ -60,14 +60,26 @@ class SecurityFilterAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityFilterAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            exclusion_filters ([SecurityFilterExclusionFilterResponse]): [optional] The list of exclusion filters applied in this security filter.
-            filtered_data_type (SecurityFilterFilteredDataType): [optional]
-            is_builtin (bool): [optional] Whether the security filter is the built-in filter.
-            is_enabled (bool): [optional] Whether the security filter is enabled.
-            name (str): [optional] The security filter name.
-            query (str): [optional] The security filter query. Logs accepted by this query will be accepted by this filter.
-            version (int): [optional] The version of the security filter.
+
+        :param exclusion_filters: The list of exclusion filters applied in this security filter.
+        :type exclusion_filters: [SecurityFilterExclusionFilterResponse], optional
+
+        :type filtered_data_type: SecurityFilterFilteredDataType, optional
+
+        :param is_builtin: Whether the security filter is the built-in filter.
+        :type is_builtin: bool, optional
+
+        :param is_enabled: Whether the security filter is enabled.
+        :type is_enabled: bool, optional
+
+        :param name: The security filter name.
+        :type name: str, optional
+
+        :param query: The security filter query. Logs accepted by this query will be accepted by this filter.
+        :type query: str, optional
+
+        :param version: The version of the security filter.
+        :type version: int, optional
         """
         super().__init__(kwargs)
 

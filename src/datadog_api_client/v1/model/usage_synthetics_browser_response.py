@@ -40,8 +40,9 @@ class UsageSyntheticsBrowserResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageSyntheticsBrowserResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageSyntheticsBrowserHour]): [optional] Get hourly usage for Synthetics Browser tests.
+
+        :param usage: Get hourly usage for Synthetics Browser tests.
+        :type usage: [UsageSyntheticsBrowserHour], optional
         """
         super().__init__(kwargs)
 

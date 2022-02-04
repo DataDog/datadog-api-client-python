@@ -35,9 +35,12 @@ class SyntheticsCIBatchMetadataGit(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsCIBatchMetadataGit - a model defined in OpenAPI
 
-        Keyword Args:
-            branch (str): [optional] Branch name.
-            commit_sha (str): [optional] The commit SHA.
+
+        :param branch: Branch name.
+        :type branch: str, optional
+
+        :param commit_sha: The commit SHA.
+        :type commit_sha: str, optional
         """
         super().__init__(kwargs)
 

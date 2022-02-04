@@ -63,14 +63,26 @@ class MonitorGroupSearchResult(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MonitorGroupSearchResult - a model defined in OpenAPI
 
-        Keyword Args:
-            group (str): [optional] The name of the group.
-            group_tags ([str]): [optional] The list of tags of the monitor group.
-            last_nodata_ts (int): [optional] Latest timestamp the monitor group was in NO_DATA state.
-            last_triggered_ts (int, none_type): [optional] Latest timestamp the monitor group triggered.
-            monitor_id (int): [optional] The ID of the monitor.
-            monitor_name (str): [optional] The name of the monitor.
-            status (MonitorOverallStates): [optional]
+
+        :param group: The name of the group.
+        :type group: str, optional
+
+        :param group_tags: The list of tags of the monitor group.
+        :type group_tags: [str], optional
+
+        :param last_nodata_ts: Latest timestamp the monitor group was in NO_DATA state.
+        :type last_nodata_ts: int, optional
+
+        :param last_triggered_ts: Latest timestamp the monitor group triggered.
+        :type last_triggered_ts: int, none_type, optional
+
+        :param monitor_id: The ID of the monitor.
+        :type monitor_id: int, optional
+
+        :param monitor_name: The name of the monitor.
+        :type monitor_name: str, optional
+
+        :type status: MonitorOverallStates, optional
         """
         super().__init__(kwargs)
 

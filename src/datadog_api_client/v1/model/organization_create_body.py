@@ -48,12 +48,13 @@ class OrganizationCreateBody(ModelNormal):
     def __init__(self, name, *args, **kwargs):
         """OrganizationCreateBody - a model defined in OpenAPI
 
-        Args:
-            name (str): The name of the new child-organization, limited to 32 characters.
 
-        Keyword Args:
-            billing (OrganizationBilling): [optional]
-            subscription (OrganizationSubscription): [optional]
+        :param name: The name of the new child-organization, limited to 32 characters.
+        :type name: str
+
+        :type billing: OrganizationBilling, optional
+
+        :type subscription: OrganizationSubscription, optional
         """
         super().__init__(kwargs)
 

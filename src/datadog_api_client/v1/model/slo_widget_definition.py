@@ -64,19 +64,32 @@ class SLOWidgetDefinition(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """SLOWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            type (SLOWidgetDefinitionType):
 
-        Keyword Args:
-            view_type (str): Type of view displayed by the widget. Defaults to "detail".
-            global_time_target (str): [optional] Defined global time target.
-            show_error_budget (bool): [optional] Defined error budget.
-            slo_id (str): [optional] ID of the SLO displayed.
-            time_windows ([WidgetTimeWindows]): [optional] Times being monitored.
-            title (str): [optional] Title of the widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
-            view_mode (WidgetViewMode): [optional]
+        :type type: SLOWidgetDefinitionType
+        :param view_type: Type of view displayed by the widget. Defaults to "detail".
+        :type view_type: str
+
+        :param global_time_target: Defined global time target.
+        :type global_time_target: str, optional
+
+        :param show_error_budget: Defined error budget.
+        :type show_error_budget: bool, optional
+
+        :param slo_id: ID of the SLO displayed.
+        :type slo_id: str, optional
+
+        :param time_windows: Times being monitored.
+        :type time_windows: [WidgetTimeWindows], optional
+
+        :param title: Title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
+
+        :type view_mode: WidgetViewMode, optional
         """
         super().__init__(kwargs)
 

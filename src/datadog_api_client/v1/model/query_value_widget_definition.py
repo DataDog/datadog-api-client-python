@@ -73,20 +73,35 @@ class QueryValueWidgetDefinition(ModelNormal):
     def __init__(self, requests, type, *args, **kwargs):
         """QueryValueWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            requests ([QueryValueWidgetRequest]): Widget definition.
-            type (QueryValueWidgetDefinitionType):
 
-        Keyword Args:
-            autoscale (bool): [optional] Whether to use auto-scaling or not.
-            custom_links ([WidgetCustomLink]): [optional] List of custom links.
-            custom_unit (str): [optional] Display a unit of your choice on the widget.
-            precision (int): [optional] Number of decimals to show. If not defined, the widget uses the raw value.
-            text_align (WidgetTextAlign): [optional]
-            time (WidgetTime): [optional]
-            title (str): [optional] Title of your widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
+        :param requests: Widget definition.
+        :type requests: [QueryValueWidgetRequest]
+
+        :type type: QueryValueWidgetDefinitionType
+
+        :param autoscale: Whether to use auto-scaling or not.
+        :type autoscale: bool, optional
+
+        :param custom_links: List of custom links.
+        :type custom_links: [WidgetCustomLink], optional
+
+        :param custom_unit: Display a unit of your choice on the widget.
+        :type custom_unit: str, optional
+
+        :param precision: Number of decimals to show. If not defined, the widget uses the raw value.
+        :type precision: int, optional
+
+        :type text_align: WidgetTextAlign, optional
+
+        :type time: WidgetTime, optional
+
+        :param title: Title of your widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

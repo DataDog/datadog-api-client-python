@@ -42,10 +42,8 @@ class CloudWorkloadSecurityAgentRuleUpdateRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """CloudWorkloadSecurityAgentRuleUpdateRequest - a model defined in OpenAPI
 
-        Args:
-            data (CloudWorkloadSecurityAgentRuleUpdateData):
 
-        Keyword Args:
+        :type data: CloudWorkloadSecurityAgentRuleUpdateData
         """
         super().__init__(kwargs)
 

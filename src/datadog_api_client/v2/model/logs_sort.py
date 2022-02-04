@@ -36,12 +36,8 @@ class LogsSort(ModelSimple):
         """LogsSort - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Sort parameters when querying logs. Must be one of ["timestamp", "-timestamp"].
-
-        Keyword Args:
-            value (str): Sort parameters when querying logs. Must be one of ["timestamp", "-timestamp"].
+        :param value: Sort parameters when querying logs. Must be one of ["timestamp", "-timestamp"].
+        :type value: str
         """
         super().__init__(kwargs)
 

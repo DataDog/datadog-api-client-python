@@ -42,9 +42,12 @@ class EventListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """EventListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            events ([Event]): [optional] An array of events.
-            status (str): [optional] A status.
+
+        :param events: An array of events.
+        :type events: [Event], optional
+
+        :param status: A status.
+        :type status: str, optional
         """
         super().__init__(kwargs)
 

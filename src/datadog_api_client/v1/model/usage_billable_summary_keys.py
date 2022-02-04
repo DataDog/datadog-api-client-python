@@ -102,39 +102,70 @@ class UsageBillableSummaryKeys(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageBillableSummaryKeys - a model defined in OpenAPI
 
-        Keyword Args:
-            apm_host_sum (UsageBillableSummaryBody): [optional]
-            apm_host_top99p (UsageBillableSummaryBody): [optional]
-            apm_trace_search_sum (UsageBillableSummaryBody): [optional]
-            fargate_container_average (UsageBillableSummaryBody): [optional]
-            infra_container_sum (UsageBillableSummaryBody): [optional]
-            infra_host_sum (UsageBillableSummaryBody): [optional]
-            infra_host_top99p (UsageBillableSummaryBody): [optional]
-            iot_top99p (UsageBillableSummaryBody): [optional]
-            lambda_function_average (UsageBillableSummaryBody): [optional]
-            logs_indexed_15day_sum (UsageBillableSummaryBody): [optional]
-            logs_indexed_180day_sum (UsageBillableSummaryBody): [optional]
-            logs_indexed_30day_sum (UsageBillableSummaryBody): [optional]
-            logs_indexed_3day_sum (UsageBillableSummaryBody): [optional]
-            logs_indexed_45day_sum (UsageBillableSummaryBody): [optional]
-            logs_indexed_60day_sum (UsageBillableSummaryBody): [optional]
-            logs_indexed_7day_sum (UsageBillableSummaryBody): [optional]
-            logs_indexed_90day_sum (UsageBillableSummaryBody): [optional]
-            logs_indexed_custom_retention_sum (UsageBillableSummaryBody): [optional]
-            logs_indexed_sum (UsageBillableSummaryBody): [optional]
-            logs_ingested_sum (UsageBillableSummaryBody): [optional]
-            network_device_top99p (UsageBillableSummaryBody): [optional]
-            npm_flow_sum (UsageBillableSummaryBody): [optional]
-            npm_host_sum (UsageBillableSummaryBody): [optional]
-            npm_host_top99p (UsageBillableSummaryBody): [optional]
-            prof_container_sum (UsageBillableSummaryBody): [optional]
-            prof_host_top99p (UsageBillableSummaryBody): [optional]
-            rum_sum (UsageBillableSummaryBody): [optional]
-            serverless_invocation_sum (UsageBillableSummaryBody): [optional]
-            siem_sum (UsageBillableSummaryBody): [optional]
-            synthetics_api_tests_sum (UsageBillableSummaryBody): [optional]
-            synthetics_browser_checks_sum (UsageBillableSummaryBody): [optional]
-            timeseries_average (UsageBillableSummaryBody): [optional]
+
+        :type apm_host_sum: UsageBillableSummaryBody, optional
+
+        :type apm_host_top99p: UsageBillableSummaryBody, optional
+
+        :type apm_trace_search_sum: UsageBillableSummaryBody, optional
+
+        :type fargate_container_average: UsageBillableSummaryBody, optional
+
+        :type infra_container_sum: UsageBillableSummaryBody, optional
+
+        :type infra_host_sum: UsageBillableSummaryBody, optional
+
+        :type infra_host_top99p: UsageBillableSummaryBody, optional
+
+        :type iot_top99p: UsageBillableSummaryBody, optional
+
+        :type lambda_function_average: UsageBillableSummaryBody, optional
+
+        :type logs_indexed_15day_sum: UsageBillableSummaryBody, optional
+
+        :type logs_indexed_180day_sum: UsageBillableSummaryBody, optional
+
+        :type logs_indexed_30day_sum: UsageBillableSummaryBody, optional
+
+        :type logs_indexed_3day_sum: UsageBillableSummaryBody, optional
+
+        :type logs_indexed_45day_sum: UsageBillableSummaryBody, optional
+
+        :type logs_indexed_60day_sum: UsageBillableSummaryBody, optional
+
+        :type logs_indexed_7day_sum: UsageBillableSummaryBody, optional
+
+        :type logs_indexed_90day_sum: UsageBillableSummaryBody, optional
+
+        :type logs_indexed_custom_retention_sum: UsageBillableSummaryBody, optional
+
+        :type logs_indexed_sum: UsageBillableSummaryBody, optional
+
+        :type logs_ingested_sum: UsageBillableSummaryBody, optional
+
+        :type network_device_top99p: UsageBillableSummaryBody, optional
+
+        :type npm_flow_sum: UsageBillableSummaryBody, optional
+
+        :type npm_host_sum: UsageBillableSummaryBody, optional
+
+        :type npm_host_top99p: UsageBillableSummaryBody, optional
+
+        :type prof_container_sum: UsageBillableSummaryBody, optional
+
+        :type prof_host_top99p: UsageBillableSummaryBody, optional
+
+        :type rum_sum: UsageBillableSummaryBody, optional
+
+        :type serverless_invocation_sum: UsageBillableSummaryBody, optional
+
+        :type siem_sum: UsageBillableSummaryBody, optional
+
+        :type synthetics_api_tests_sum: UsageBillableSummaryBody, optional
+
+        :type synthetics_browser_checks_sum: UsageBillableSummaryBody, optional
+
+        :type timeseries_average: UsageBillableSummaryBody, optional
         """
         super().__init__(kwargs)
 

@@ -40,8 +40,9 @@ class MonitorState(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MonitorState - a model defined in OpenAPI
 
-        Keyword Args:
-            groups ({str: (MonitorStateGroup,)}): [optional] Dictionary where the keys are groups (comma separated lists of tags) and the values are the list of groups your monitor is broken down on.
+
+        :param groups: Dictionary where the keys are groups (comma separated lists of tags) and the values are the list of groups your monitor is broken down on.
+        :type groups: {str: (MonitorStateGroup,)}, optional
         """
         super().__init__(kwargs)
 

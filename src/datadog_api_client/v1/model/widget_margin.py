@@ -39,12 +39,8 @@ class WidgetMargin(ModelSimple):
         """WidgetMargin - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Size of the margins around the image. **Note**: `small` and `large` values are deprecated. Must be one of ["sm", "md", "lg", "small", "large"].
-
-        Keyword Args:
-            value (str): Size of the margins around the image. **Note**: `small` and `large` values are deprecated. Must be one of ["sm", "md", "lg", "small", "large"].
+        :param value: Size of the margins around the image. **Note**: `small` and `large` values are deprecated. Must be one of ["sm", "md", "lg", "small", "large"].
+        :type value: str
         """
         super().__init__(kwargs)
 

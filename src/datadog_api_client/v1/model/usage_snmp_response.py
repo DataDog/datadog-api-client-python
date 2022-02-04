@@ -40,8 +40,9 @@ class UsageSNMPResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageSNMPResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageSNMPHour]): [optional] Get hourly usage for SNMP devices.
+
+        :param usage: Get hourly usage for SNMP devices.
+        :type usage: [UsageSNMPHour], optional
         """
         super().__init__(kwargs)
 

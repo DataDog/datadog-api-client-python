@@ -33,8 +33,9 @@ class DashboardDeleteResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """DashboardDeleteResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            deleted_dashboard_id (str): [optional] ID of the deleted dashboard.
+
+        :param deleted_dashboard_id: ID of the deleted dashboard.
+        :type deleted_dashboard_id: str, optional
         """
         super().__init__(kwargs)
 

@@ -34,12 +34,8 @@ class LogsArithmeticProcessorType(ModelSimple):
         """LogsArithmeticProcessorType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of logs arithmetic processor. If omitted defaults to "arithmetic-processor". Must be one of ["arithmetic-processor"].
-
-        Keyword Args:
-            value (str): Type of logs arithmetic processor. If omitted defaults to "arithmetic-processor". Must be one of ["arithmetic-processor"].
+        :param value: Type of logs arithmetic processor. If omitted defaults to "arithmetic-processor". Must be one of ["arithmetic-processor"].
+        :type value: str
         """
         super().__init__(kwargs)
 

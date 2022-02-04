@@ -46,14 +46,27 @@ class PermissionAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """PermissionAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            created (datetime): [optional] Creation time of the permission.
-            description (str): [optional] Description of the permission.
-            display_name (str): [optional] Displayed name for the permission.
-            display_type (str): [optional] Display type.
-            group_name (str): [optional] Name of the permission group.
-            name (str): [optional] Name of the permission.
-            restricted (bool): [optional] Whether or not the permission is restricted.
+
+        :param created: Creation time of the permission.
+        :type created: datetime, optional
+
+        :param description: Description of the permission.
+        :type description: str, optional
+
+        :param display_name: Displayed name for the permission.
+        :type display_name: str, optional
+
+        :param display_type: Display type.
+        :type display_type: str, optional
+
+        :param group_name: Name of the permission group.
+        :type group_name: str, optional
+
+        :param name: Name of the permission.
+        :type name: str, optional
+
+        :param restricted: Whether or not the permission is restricted.
+        :type restricted: bool, optional
         """
         super().__init__(kwargs)
 

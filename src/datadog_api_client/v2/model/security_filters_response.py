@@ -44,9 +44,11 @@ class SecurityFiltersResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityFiltersResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([SecurityFilter]): [optional] A list of security filters objects.
-            meta (SecurityFilterMeta): [optional]
+
+        :param data: A list of security filters objects.
+        :type data: [SecurityFilter], optional
+
+        :type meta: SecurityFilterMeta, optional
         """
         super().__init__(kwargs)
 

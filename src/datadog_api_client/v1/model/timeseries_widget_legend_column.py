@@ -39,12 +39,8 @@ class TimeseriesWidgetLegendColumn(ModelSimple):
         """TimeseriesWidgetLegendColumn - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Legend column. Must be one of ["value", "avg", "sum", "min", "max"].
-
-        Keyword Args:
-            value (str): Legend column. Must be one of ["value", "avg", "sum", "min", "max"].
+        :param value: Legend column. Must be one of ["value", "avg", "sum", "min", "max"].
+        :type value: str
         """
         super().__init__(kwargs)
 

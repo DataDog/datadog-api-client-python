@@ -36,12 +36,8 @@ class SunburstWidgetLegendInlineAutomaticType(ModelSimple):
         """SunburstWidgetLegendInlineAutomaticType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Whether to show the legend inline or let it be automatically generated. Must be one of ["inline", "automatic"].
-
-        Keyword Args:
-            value (str): Whether to show the legend inline or let it be automatically generated. Must be one of ["inline", "automatic"].
+        :param value: Whether to show the legend inline or let it be automatically generated. Must be one of ["inline", "automatic"].
+        :type value: str
         """
         super().__init__(kwargs)
 

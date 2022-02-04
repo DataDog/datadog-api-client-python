@@ -2,12 +2,9 @@
         """{{classname}} - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] ({{{dataType}}}):{{#description}} {{{.}}}{{/description}}{{#defaultValue}} If omitted defaults to {{{.}}}.{{/defaultValue}}{{#allowableValues}} Must be one of [{{#enumVars}}{{{value}}}{{^-last}}, {{/-last}}{{/enumVars}}].{{/allowableValues}}
-
-        Keyword Args:
-            value ({{{dataType}}}):{{#description}} {{{.}}}{{/description}}{{#defaultValue}} If omitted defaults to {{{.}}}.{{/defaultValue}}{{#allowableValues}} Must be one of [{{#enumVars}}{{{value}}}{{^-last}}, {{/-last}}{{/enumVars}}].{{/allowableValues}}
+{{#description}}
+        :param value: {{{.}}}{{#defaultValue}} If omitted defaults to {{{.}}}.{{/defaultValue}}{{#allowableValues}} Must be one of [{{#enumVars}}{{{value}}}{{^-last}}, {{/-last}}{{/enumVars}}].{{/allowableValues}}{{/description}}
+        :type value: {{{dataType}}}
         """
         super().__init__(kwargs)
 

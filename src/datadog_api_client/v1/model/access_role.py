@@ -37,12 +37,8 @@ class AccessRole(ModelSimple):
         """AccessRole - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The access role of the user. Options are **st** (standard user), **adm** (admin user), or **ro** (read-only user). If omitted defaults to "st". Must be one of ["st", "adm", "ro", "ERROR"].
-
-        Keyword Args:
-            value (str): The access role of the user. Options are **st** (standard user), **adm** (admin user), or **ro** (read-only user). If omitted defaults to "st". Must be one of ["st", "adm", "ro", "ERROR"].
+        :param value: The access role of the user. Options are **st** (standard user), **adm** (admin user), or **ro** (read-only user). If omitted defaults to "st". Must be one of ["st", "adm", "ro", "ERROR"].
+        :type value: str
         """
         super().__init__(kwargs)
 

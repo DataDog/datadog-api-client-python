@@ -62,18 +62,30 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
     def __init__(self, data_source, metric, name, *args, **kwargs):
         """FormulaAndFunctionProcessQueryDefinition - a model defined in OpenAPI
 
-        Args:
-            data_source (FormulaAndFunctionProcessQueryDataSource):
-            metric (str): Process metric name.
-            name (str): Name of query for use in formulas.
 
-        Keyword Args:
-            aggregator (FormulaAndFunctionMetricAggregation): [optional]
-            is_normalized_cpu (bool): [optional] Whether to normalize the CPU percentages.
-            limit (int): [optional] Number of hits to return.
-            sort (QuerySortOrder): [optional]
-            tag_filters ([str]): [optional] An array of tags to filter by.
-            text_filter (str): [optional] Text to use as filter.
+        :type data_source: FormulaAndFunctionProcessQueryDataSource
+
+        :param metric: Process metric name.
+        :type metric: str
+
+        :param name: Name of query for use in formulas.
+        :type name: str
+
+        :type aggregator: FormulaAndFunctionMetricAggregation, optional
+
+        :param is_normalized_cpu: Whether to normalize the CPU percentages.
+        :type is_normalized_cpu: bool, optional
+
+        :param limit: Number of hits to return.
+        :type limit: int, optional
+
+        :type sort: QuerySortOrder, optional
+
+        :param tag_filters: An array of tags to filter by.
+        :type tag_filters: [str], optional
+
+        :param text_filter: Text to use as filter.
+        :type text_filter: str, optional
         """
         super().__init__(kwargs)
 

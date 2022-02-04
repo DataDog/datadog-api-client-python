@@ -33,8 +33,9 @@ class SyntheticsGlobalVariableAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsGlobalVariableAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            restricted_roles ([str]): [optional] List of role identifiers that can be pulled from the Roles API.
+
+        :param restricted_roles: List of role identifiers that can be pulled from the Roles API.
+        :type restricted_roles: [str], optional
         """
         super().__init__(kwargs)
 

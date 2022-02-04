@@ -34,12 +34,8 @@ class UserInvitationsType(ModelSimple):
         """UserInvitationsType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): User invitations type. If omitted defaults to "user_invitations". Must be one of ["user_invitations"].
-
-        Keyword Args:
-            value (str): User invitations type. If omitted defaults to "user_invitations". Must be one of ["user_invitations"].
+        :param value: User invitations type. If omitted defaults to "user_invitations". Must be one of ["user_invitations"].
+        :type value: str
         """
         super().__init__(kwargs)
 

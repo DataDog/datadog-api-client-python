@@ -71,20 +71,35 @@ class SyntheticsBrowserTest(ModelNormal):
     def __init__(self, config, locations, name, options, type, *args, **kwargs):
         """SyntheticsBrowserTest - a model defined in OpenAPI
 
-        Args:
-            config (SyntheticsBrowserTestConfig):
-            locations ([str]): Array of locations used to run the test.
-            name (str): Name of the test.
-            options (SyntheticsTestOptions):
-            type (SyntheticsBrowserTestType):
 
-        Keyword Args:
-            message (str): [optional] Notification message associated with the test. Message can either be text or an empty string.
-            monitor_id (int): [optional] The associated monitor ID.
-            public_id (str): [optional] The public ID of the test.
-            status (SyntheticsTestPauseStatus): [optional]
-            steps ([SyntheticsStep]): [optional] The steps of the test.
-            tags ([str]): [optional] Array of tags attached to the test.
+        :type config: SyntheticsBrowserTestConfig
+
+        :param locations: Array of locations used to run the test.
+        :type locations: [str]
+
+        :param name: Name of the test.
+        :type name: str
+
+        :type options: SyntheticsTestOptions
+
+        :type type: SyntheticsBrowserTestType
+
+        :param message: Notification message associated with the test. Message can either be text or an empty string.
+        :type message: str, optional
+
+        :param monitor_id: The associated monitor ID.
+        :type monitor_id: int, optional
+
+        :param public_id: The public ID of the test.
+        :type public_id: str, optional
+
+        :type status: SyntheticsTestPauseStatus, optional
+
+        :param steps: The steps of the test.
+        :type steps: [SyntheticsStep], optional
+
+        :param tags: Array of tags attached to the test.
+        :type tags: [str], optional
         """
         super().__init__(kwargs)
 

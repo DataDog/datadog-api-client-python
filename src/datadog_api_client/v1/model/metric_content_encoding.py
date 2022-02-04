@@ -34,12 +34,8 @@ class MetricContentEncoding(ModelSimple):
         """MetricContentEncoding - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): HTTP header used to compress the media-type. If omitted defaults to "deflate". Must be one of ["deflate"].
-
-        Keyword Args:
-            value (str): HTTP header used to compress the media-type. If omitted defaults to "deflate". Must be one of ["deflate"].
+        :param value: HTTP header used to compress the media-type. If omitted defaults to "deflate". Must be one of ["deflate"].
+        :type value: str
         """
         super().__init__(kwargs)
 

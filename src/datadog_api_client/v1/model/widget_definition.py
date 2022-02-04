@@ -167,103 +167,262 @@ class WidgetDefinition(ModelComposed):
     def __init__(self, *args, **kwargs):
         """WidgetDefinition - a model defined in OpenAPI
 
-        Keyword Args:
-            time (WidgetTime): [optional]
-            title (str): [optional] The title of the widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] The size of the title.
-            precision (int): [optional] Number of decimals to show. If not defined, the widget uses the raw value.
-            text_align (WidgetTextAlign): [optional]
-            unit (str): [optional] Unit to display with the value.
-            custom_links ([WidgetCustomLink]): [optional] List of custom links.
-            group ([str]): [optional] List of tag prefixes to group by.
-            group_by (TreeMapGroupBy): [optional]
-            tags ([str]): [optional] List of tags used to filter the groups reporting a cluster check.
-            legend_size (str): [optional] Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".
-            markers ([WidgetMarker]): [optional] List of markers.
-            show_legend (bool): [optional] Whether or not to display the legend on this widget.
-            xaxis (WidgetAxis): [optional]
-            yaxis (WidgetAxis): [optional]
-            event_size (WidgetEventSize): [optional]
-            tags_execution (str): [optional] The execution method for multi-value filters. Can be either and or or.
-            color (str): [optional] Color of the text.
-            font_size (str): [optional] Size of the text.
-            background_color (str): [optional] Background color of the note.
-            banner_img (str): [optional] URL of image to display as a banner for the group.
-            show_title (bool): [optional] Whether to show the title or not. If omitted the server will use the default value of True.
-            events ([WidgetEvent]): [optional] List of widget events.
-            no_group_hosts (bool): [optional] Whether to show the hosts that don’t fit in a group.
-            no_metric_hosts (bool): [optional] Whether to show the hosts with no metrics.
-            node_type (WidgetNodeType): [optional]
-            notes (str): [optional] Notes on the title.
-            scope ([str]): [optional] List of tags used to filter the map.
-            has_background (bool): [optional] Whether to display a background or not. If omitted the server will use the default value of True.
-            has_border (bool): [optional] Whether to display a border or not. If omitted the server will use the default value of True.
-            horizontal_align (WidgetHorizontalAlign): [optional]
-            margin (WidgetMargin): [optional]
-            sizing (WidgetImageSizing): [optional]
-            url_dark_theme (str): [optional] URL of the image in dark mode.
-            vertical_align (WidgetVerticalAlign): [optional]
-            columns ([str]): [optional] Which columns to display on the widget.
-            indexes ([str]): [optional] An array of index names to query in the stream. Use [] to query all indexes at once.
-            logset (str): [optional] ID of the log set to use.
-            message_display (WidgetMessageDisplay): [optional]
-            show_date_column (bool): [optional] Whether to show the date column or not
-            show_message_column (bool): [optional] Whether to show the message column or not
-            sort (WidgetMonitorSummarySort): [optional]
-            color_preference (WidgetColorPreference): [optional]
-            count (int): [optional] The number of monitors to display.
-            display_format (WidgetServiceSummaryDisplayFormat): [optional]
-            hide_zero_counts (bool): [optional] Whether to show counts of 0 or not.
-            show_last_triggered (bool): [optional] Whether to show the time that has elapsed since the monitor/group triggered.
-            start (int): [optional] The start of the list. Typically 0.
-            summary_type (WidgetSummaryType): [optional]
-            has_padding (bool): [optional] Whether to add padding or not. If omitted the server will use the default value of True.
-            show_tick (bool): [optional] Whether to show a tick or not.
-            tick_edge (WidgetTickEdge): [optional]
-            tick_pos (str): [optional] Where to position the tick on an edge.
-            autoscale (bool): [optional] Whether to use auto-scaling or not.
-            custom_unit (str): [optional] Display a unit of your choice on the widget.
-            color_by_groups ([str]): [optional] List of groups used for colors.
-            global_time_target (str): [optional] Defined global time target.
-            show_error_budget (bool): [optional] Defined error budget.
-            slo_id (str): [optional] ID of the SLO displayed.
-            time_windows ([WidgetTimeWindows]): [optional] Times being monitored.
-            view_mode (WidgetViewMode): [optional]
-            show_breakdown (bool): [optional] Whether to show the latency breakdown or not.
-            show_distribution (bool): [optional] Whether to show the latency distribution or not.
-            show_errors (bool): [optional] Whether to show the error metrics or not.
-            show_hits (bool): [optional] Whether to show the hits metrics or not.
-            show_latency (bool): [optional] Whether to show the latency metrics or not.
-            show_resource_list (bool): [optional] Whether to show the resource list or not.
-            size_format (WidgetSizeFormat): [optional]
-            hide_total (bool): [optional] Show the total value in this widget.
-            legend (SunburstWidgetLegend): [optional]
-            has_search_bar (TableWidgetHasSearchBar): [optional]
-            legend_columns ([TimeseriesWidgetLegendColumn]): [optional] Columns displayed in the legend.
-            legend_layout (TimeseriesWidgetLegendLayout): [optional]
-            right_yaxis (WidgetAxis): [optional]
-            color_by (TreeMapColorBy): [optional]
-            size_by (TreeMapSizeBy): [optional]
-            alert_id (str): [optional] ID of the alert to use in the widget.
-            type (FunnelWidgetDefinitionType): [optional]
-            viz_type (WidgetVizType): [optional]
-            requests ([FunnelWidgetRequest]): [optional] Request payload used to query items.
-            check (str): [optional] Name of the check to use in the widget.
-            grouping (WidgetGrouping): [optional]
-            query (str): [optional] Query to filter the monitors with.
-            text (str): [optional] Text to display.
-            style (HostMapWidgetDefinitionStyle): [optional]
-            view (GeomapWidgetDefinitionView): [optional]
-            layout_type (WidgetLayoutType): [optional]
-            widgets ([Widget]): [optional] List of widget groups.
-            url (str): [optional] URL of the image.
-            content (str): [optional] Content of the note.
-            view_type (str): [optional] Type of view displayed by the widget. If omitted the server will use the default value of "detail".
-            filters ([str]): [optional] Your environment and primary tag (or * if enabled for your account).
-            service (str): [optional] APM service.
-            env (str): [optional] APM environment.
-            span_name (str): [optional] APM span name.
+
+        :type time: WidgetTime, optional
+
+        :param title: The title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: The size of the title.
+        :type title_size: str, optional
+
+        :param precision: Number of decimals to show. If not defined, the widget uses the raw value.
+        :type precision: int, optional
+
+        :type text_align: WidgetTextAlign, optional
+
+        :param unit: Unit to display with the value.
+        :type unit: str, optional
+
+        :param custom_links: List of custom links.
+        :type custom_links: [WidgetCustomLink], optional
+
+        :param group: List of tag prefixes to group by.
+        :type group: [str], optional
+
+        :type group_by: TreeMapGroupBy, optional
+
+        :param tags: List of tags used to filter the groups reporting a cluster check.
+        :type tags: [str], optional
+
+        :param legend_size: Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".
+        :type legend_size: str, optional
+
+        :param markers: List of markers.
+        :type markers: [WidgetMarker], optional
+
+        :param show_legend: Whether or not to display the legend on this widget.
+        :type show_legend: bool, optional
+
+        :type xaxis: WidgetAxis, optional
+
+        :type yaxis: WidgetAxis, optional
+
+        :type event_size: WidgetEventSize, optional
+
+        :param tags_execution: The execution method for multi-value filters. Can be either and or or.
+        :type tags_execution: str, optional
+
+        :param color: Color of the text.
+        :type color: str, optional
+
+        :param font_size: Size of the text.
+        :type font_size: str, optional
+
+        :param background_color: Background color of the note.
+        :type background_color: str, optional
+
+        :param banner_img: URL of image to display as a banner for the group.
+        :type banner_img: str, optional
+
+        :param show_title: Whether to show the title or not. If omitted the server will use the default value of True.
+        :type show_title: bool, optional
+
+        :param events: List of widget events.
+        :type events: [WidgetEvent], optional
+
+        :param no_group_hosts: Whether to show the hosts that don’t fit in a group.
+        :type no_group_hosts: bool, optional
+
+        :param no_metric_hosts: Whether to show the hosts with no metrics.
+        :type no_metric_hosts: bool, optional
+
+        :type node_type: WidgetNodeType, optional
+
+        :param notes: Notes on the title.
+        :type notes: str, optional
+
+        :param scope: List of tags used to filter the map.
+        :type scope: [str], optional
+
+        :param has_background: Whether to display a background or not. If omitted the server will use the default value of True.
+        :type has_background: bool, optional
+
+        :param has_border: Whether to display a border or not. If omitted the server will use the default value of True.
+        :type has_border: bool, optional
+
+        :type horizontal_align: WidgetHorizontalAlign, optional
+
+        :type margin: WidgetMargin, optional
+
+        :type sizing: WidgetImageSizing, optional
+
+        :param url_dark_theme: URL of the image in dark mode.
+        :type url_dark_theme: str, optional
+
+        :type vertical_align: WidgetVerticalAlign, optional
+
+        :param columns: Which columns to display on the widget.
+        :type columns: [str], optional
+
+        :param indexes: An array of index names to query in the stream. Use [] to query all indexes at once.
+        :type indexes: [str], optional
+
+        :param logset: ID of the log set to use.
+        :type logset: str, optional
+
+        :type message_display: WidgetMessageDisplay, optional
+
+        :param show_date_column: Whether to show the date column or not
+        :type show_date_column: bool, optional
+
+        :param show_message_column: Whether to show the message column or not
+        :type show_message_column: bool, optional
+
+        :type sort: WidgetMonitorSummarySort, optional
+
+        :type color_preference: WidgetColorPreference, optional
+
+        :param count: The number of monitors to display.
+        :type count: int, optional
+
+        :type display_format: WidgetServiceSummaryDisplayFormat, optional
+
+        :param hide_zero_counts: Whether to show counts of 0 or not.
+        :type hide_zero_counts: bool, optional
+
+        :param show_last_triggered: Whether to show the time that has elapsed since the monitor/group triggered.
+        :type show_last_triggered: bool, optional
+
+        :param start: The start of the list. Typically 0.
+        :type start: int, optional
+
+        :type summary_type: WidgetSummaryType, optional
+
+        :param has_padding: Whether to add padding or not. If omitted the server will use the default value of True.
+        :type has_padding: bool, optional
+
+        :param show_tick: Whether to show a tick or not.
+        :type show_tick: bool, optional
+
+        :type tick_edge: WidgetTickEdge, optional
+
+        :param tick_pos: Where to position the tick on an edge.
+        :type tick_pos: str, optional
+
+        :param autoscale: Whether to use auto-scaling or not.
+        :type autoscale: bool, optional
+
+        :param custom_unit: Display a unit of your choice on the widget.
+        :type custom_unit: str, optional
+
+        :param color_by_groups: List of groups used for colors.
+        :type color_by_groups: [str], optional
+
+        :param global_time_target: Defined global time target.
+        :type global_time_target: str, optional
+
+        :param show_error_budget: Defined error budget.
+        :type show_error_budget: bool, optional
+
+        :param slo_id: ID of the SLO displayed.
+        :type slo_id: str, optional
+
+        :param time_windows: Times being monitored.
+        :type time_windows: [WidgetTimeWindows], optional
+
+        :type view_mode: WidgetViewMode, optional
+
+        :param show_breakdown: Whether to show the latency breakdown or not.
+        :type show_breakdown: bool, optional
+
+        :param show_distribution: Whether to show the latency distribution or not.
+        :type show_distribution: bool, optional
+
+        :param show_errors: Whether to show the error metrics or not.
+        :type show_errors: bool, optional
+
+        :param show_hits: Whether to show the hits metrics or not.
+        :type show_hits: bool, optional
+
+        :param show_latency: Whether to show the latency metrics or not.
+        :type show_latency: bool, optional
+
+        :param show_resource_list: Whether to show the resource list or not.
+        :type show_resource_list: bool, optional
+
+        :type size_format: WidgetSizeFormat, optional
+
+        :param hide_total: Show the total value in this widget.
+        :type hide_total: bool, optional
+
+        :type legend: SunburstWidgetLegend, optional
+
+        :type has_search_bar: TableWidgetHasSearchBar, optional
+
+        :param legend_columns: Columns displayed in the legend.
+        :type legend_columns: [TimeseriesWidgetLegendColumn], optional
+
+        :type legend_layout: TimeseriesWidgetLegendLayout, optional
+
+        :type right_yaxis: WidgetAxis, optional
+
+        :type color_by: TreeMapColorBy, optional
+
+        :type size_by: TreeMapSizeBy, optional
+
+        :param alert_id: ID of the alert to use in the widget.
+        :type alert_id: str, optional
+
+        :type type: FunnelWidgetDefinitionType, optional
+
+        :type viz_type: WidgetVizType, optional
+
+        :param requests: Request payload used to query items.
+        :type requests: [FunnelWidgetRequest], optional
+
+        :param check: Name of the check to use in the widget.
+        :type check: str, optional
+
+        :type grouping: WidgetGrouping, optional
+
+        :param query: Query to filter the monitors with.
+        :type query: str, optional
+
+        :param text: Text to display.
+        :type text: str, optional
+
+        :type style: HostMapWidgetDefinitionStyle, optional
+
+        :type view: GeomapWidgetDefinitionView, optional
+
+        :type layout_type: WidgetLayoutType, optional
+
+        :param widgets: List of widget groups.
+        :type widgets: [Widget], optional
+
+        :param url: URL of the image.
+        :type url: str, optional
+
+        :param content: Content of the note.
+        :type content: str, optional
+
+        :param view_type: Type of view displayed by the widget. If omitted the server will use the default value of "detail".
+        :type view_type: str, optional
+
+        :param filters: Your environment and primary tag (or * if enabled for your account).
+        :type filters: [str], optional
+
+        :param service: APM service.
+        :type service: str, optional
+
+        :param env: APM environment.
+        :type env: str, optional
+
+        :param span_name: APM span name.
+        :type span_name: str, optional
         """
         super().__init__(kwargs)
 

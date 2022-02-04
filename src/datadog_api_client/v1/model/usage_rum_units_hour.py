@@ -45,12 +45,21 @@ class UsageRumUnitsHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageRumUnitsHour - a model defined in OpenAPI
 
-        Keyword Args:
-            browser_rum_units (int): [optional] The number of browser RUM units.
-            mobile_rum_units (int): [optional] The number of mobile RUM units.
-            org_name (str): [optional] The organization name.
-            public_id (str): [optional] The organization public ID.
-            rum_units (int, none_type): [optional] Total RUM units across mobile and browser RUM.
+
+        :param browser_rum_units: The number of browser RUM units.
+        :type browser_rum_units: int, optional
+
+        :param mobile_rum_units: The number of mobile RUM units.
+        :type mobile_rum_units: int, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
+
+        :param rum_units: Total RUM units across mobile and browser RUM.
+        :type rum_units: int, none_type, optional
         """
         super().__init__(kwargs)
 

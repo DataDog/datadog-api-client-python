@@ -42,9 +42,11 @@ class Log(ModelNormal):
     def __init__(self, *args, **kwargs):
         """Log - a model defined in OpenAPI
 
-        Keyword Args:
-            content (LogContent): [optional]
-            id (str): [optional] Unique ID of the Log.
+
+        :type content: LogContent, optional
+
+        :param id: Unique ID of the Log.
+        :type id: str, optional
         """
         super().__init__(kwargs)
 

@@ -37,12 +37,8 @@ class SecurityMonitoringRuleNewValueOptionsLearningDuration(ModelSimple):
         """SecurityMonitoringRuleNewValueOptionsLearningDuration - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (int): The duration in days during which values are learned, and after which signals will be generated for values that weren't learned. If set to 0, a signal will be generated for all new values after the first value is learned. Must be one of [0, 1, 7].
-
-        Keyword Args:
-            value (int): The duration in days during which values are learned, and after which signals will be generated for values that weren't learned. If set to 0, a signal will be generated for all new values after the first value is learned. Must be one of [0, 1, 7].
+        :param value: The duration in days during which values are learned, and after which signals will be generated for values that weren't learned. If set to 0, a signal will be generated for all new values after the first value is learned. Must be one of [0, 1, 7].
+        :type value: int
         """
         super().__init__(kwargs)
 

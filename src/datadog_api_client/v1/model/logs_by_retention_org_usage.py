@@ -40,8 +40,9 @@ class LogsByRetentionOrgUsage(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsByRetentionOrgUsage - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([LogsRetentionSumUsage]): [optional] Indexed logs usage for each active retention for the organization.
+
+        :param usage: Indexed logs usage for each active retention for the organization.
+        :type usage: [LogsRetentionSumUsage], optional
         """
         super().__init__(kwargs)
 

@@ -72,16 +72,33 @@ class IncidentUpdateAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """IncidentUpdateAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            customer_impact_end (datetime, none_type): [optional] Timestamp when customers were no longer impacted by the incident.
-            customer_impact_scope (str): [optional] A summary of the impact customers experienced during the incident.
-            customer_impact_start (datetime, none_type): [optional] Timestamp when customers began being impacted by the incident.
-            customer_impacted (bool): [optional] A flag indicating whether the incident caused customer impact.
-            detected (datetime, none_type): [optional] Timestamp when the incident was detected.
-            fields ({str: (IncidentFieldAttributes,)}): [optional] A condensed view of the user-defined fields for which to update selections.
-            notification_handles ([IncidentNotificationHandle]): [optional] Notification handles that will be notified of the incident during update.
-            resolved (datetime, none_type): [optional] Timestamp when the incident's state was set to resolved.
-            title (str): [optional] The title of the incident, which summarizes what happened.
+
+        :param customer_impact_end: Timestamp when customers were no longer impacted by the incident.
+        :type customer_impact_end: datetime, none_type, optional
+
+        :param customer_impact_scope: A summary of the impact customers experienced during the incident.
+        :type customer_impact_scope: str, optional
+
+        :param customer_impact_start: Timestamp when customers began being impacted by the incident.
+        :type customer_impact_start: datetime, none_type, optional
+
+        :param customer_impacted: A flag indicating whether the incident caused customer impact.
+        :type customer_impacted: bool, optional
+
+        :param detected: Timestamp when the incident was detected.
+        :type detected: datetime, none_type, optional
+
+        :param fields: A condensed view of the user-defined fields for which to update selections.
+        :type fields: {str: (IncidentFieldAttributes,)}, optional
+
+        :param notification_handles: Notification handles that will be notified of the incident during update.
+        :type notification_handles: [IncidentNotificationHandle], optional
+
+        :param resolved: Timestamp when the incident's state was set to resolved.
+        :type resolved: datetime, none_type, optional
+
+        :param title: The title of the incident, which summarizes what happened.
+        :type title: str, optional
         """
         super().__init__(kwargs)
 

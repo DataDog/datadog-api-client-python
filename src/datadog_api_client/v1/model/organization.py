@@ -60,14 +60,24 @@ class Organization(ModelNormal):
     def __init__(self, *args, **kwargs):
         """Organization - a model defined in OpenAPI
 
-        Keyword Args:
-            billing (OrganizationBilling): [optional]
-            created (str): [optional] Date of the organization creation.
-            description (str): [optional] Description of the organization.
-            name (str): [optional] The name of the new child-organization, limited to 32 characters.
-            public_id (str): [optional] The `public_id` of the organization you are operating within.
-            settings (OrganizationSettings): [optional]
-            subscription (OrganizationSubscription): [optional]
+
+        :type billing: OrganizationBilling, optional
+
+        :param created: Date of the organization creation.
+        :type created: str, optional
+
+        :param description: Description of the organization.
+        :type description: str, optional
+
+        :param name: The name of the new child-organization, limited to 32 characters.
+        :type name: str, optional
+
+        :param public_id: The `public_id` of the organization you are operating within.
+        :type public_id: str, optional
+
+        :type settings: OrganizationSettings, optional
+
+        :type subscription: OrganizationSubscription, optional
         """
         super().__init__(kwargs)
 

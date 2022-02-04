@@ -35,9 +35,12 @@ class SLOListResponseMetadataPage(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOListResponseMetadataPage - a model defined in OpenAPI
 
-        Keyword Args:
-            total_count (int): [optional] The total number of resources that could be retrieved ignoring the parameters and filters in the request.
-            total_filtered_count (int): [optional] The total number of resources that match the parameters and filters in the request. This attribute can be used by a client to determine the total number of pages.
+
+        :param total_count: The total number of resources that could be retrieved ignoring the parameters and filters in the request.
+        :type total_count: int, optional
+
+        :param total_filtered_count: The total number of resources that match the parameters and filters in the request. This attribute can be used by a client to determine the total number of pages.
+        :type total_filtered_count: int, optional
         """
         super().__init__(kwargs)
 

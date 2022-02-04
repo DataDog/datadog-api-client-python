@@ -40,8 +40,9 @@ class OrganizationListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """OrganizationListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            orgs ([Organization]): [optional] Array of organization objects.
+
+        :param orgs: Array of organization objects.
+        :type orgs: [Organization], optional
         """
         super().__init__(kwargs)
 

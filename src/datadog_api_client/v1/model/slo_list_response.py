@@ -46,10 +46,14 @@ class SLOListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([ServiceLevelObjective]): [optional] An array of service level objective objects.
-            errors ([str]): [optional] An array of error messages. Each endpoint documents how/whether this field is used.
-            metadata (SLOListResponseMetadata): [optional]
+
+        :param data: An array of service level objective objects.
+        :type data: [ServiceLevelObjective], optional
+
+        :param errors: An array of error messages. Each endpoint documents how/whether this field is used.
+        :type errors: [str], optional
+
+        :type metadata: SLOListResponseMetadata, optional
         """
         super().__init__(kwargs)
 

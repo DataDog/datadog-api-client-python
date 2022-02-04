@@ -40,8 +40,8 @@ class NotebookResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """NotebookResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data (NotebookResponseData): [optional]
+
+        :type data: NotebookResponseData, optional
         """
         super().__init__(kwargs)
 

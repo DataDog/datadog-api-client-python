@@ -41,11 +41,15 @@ class UserResponseIncludedItem(ModelComposed):
     def __init__(self, *args, **kwargs):
         """UserResponseIncludedItem - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (RoleAttributes): [optional]
-            id (str): [optional] ID of the role.
-            relationships (RoleResponseRelationships): [optional]
-            type (RolesType): [optional]
+
+        :type attributes: RoleAttributes, optional
+
+        :param id: ID of the role.
+        :type id: str, optional
+
+        :type relationships: RoleResponseRelationships, optional
+
+        :type type: RolesType, optional
         """
         super().__init__(kwargs)
 

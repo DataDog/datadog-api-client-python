@@ -36,12 +36,8 @@ class SecurityMonitoringSignalsSort(ModelSimple):
         """SecurityMonitoringSignalsSort - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The sort parameters used for querying security signals. Must be one of ["timestamp", "-timestamp"].
-
-        Keyword Args:
-            value (str): The sort parameters used for querying security signals. Must be one of ["timestamp", "-timestamp"].
+        :param value: The sort parameters used for querying security signals. Must be one of ["timestamp", "-timestamp"].
+        :type value: str
         """
         super().__init__(kwargs)
 

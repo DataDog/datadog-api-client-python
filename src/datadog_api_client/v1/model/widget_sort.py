@@ -36,12 +36,8 @@ class WidgetSort(ModelSimple):
         """WidgetSort - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Widget sorting methods. Must be one of ["asc", "desc"].
-
-        Keyword Args:
-            value (str): Widget sorting methods. Must be one of ["asc", "desc"].
+        :param value: Widget sorting methods. Must be one of ["asc", "desc"].
+        :type value: str
         """
         super().__init__(kwargs)
 

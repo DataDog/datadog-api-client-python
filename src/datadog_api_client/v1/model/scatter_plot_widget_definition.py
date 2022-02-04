@@ -68,19 +68,30 @@ class ScatterPlotWidgetDefinition(ModelNormal):
     def __init__(self, requests, type, *args, **kwargs):
         """ScatterPlotWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            requests (ScatterPlotWidgetDefinitionRequests):
-            type (ScatterPlotWidgetDefinitionType):
 
-        Keyword Args:
-            color_by_groups ([str]): [optional] List of groups used for colors.
-            custom_links ([WidgetCustomLink]): [optional] List of custom links.
-            time (WidgetTime): [optional]
-            title (str): [optional] Title of your widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
-            xaxis (WidgetAxis): [optional]
-            yaxis (WidgetAxis): [optional]
+        :type requests: ScatterPlotWidgetDefinitionRequests
+
+        :type type: ScatterPlotWidgetDefinitionType
+
+        :param color_by_groups: List of groups used for colors.
+        :type color_by_groups: [str], optional
+
+        :param custom_links: List of custom links.
+        :type custom_links: [WidgetCustomLink], optional
+
+        :type time: WidgetTime, optional
+
+        :param title: Title of your widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
+
+        :type xaxis: WidgetAxis, optional
+
+        :type yaxis: WidgetAxis, optional
         """
         super().__init__(kwargs)
 

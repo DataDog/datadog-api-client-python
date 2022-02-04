@@ -61,15 +61,21 @@ class FunnelWidgetDefinition(ModelNormal):
     def __init__(self, requests, type, *args, **kwargs):
         """FunnelWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            requests ([FunnelWidgetRequest]): Request payload used to query items.
-            type (FunnelWidgetDefinitionType):
 
-        Keyword Args:
-            time (WidgetTime): [optional]
-            title (str): [optional] The title of the widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] The size of the title.
+        :param requests: Request payload used to query items.
+        :type requests: [FunnelWidgetRequest]
+
+        :type type: FunnelWidgetDefinitionType
+
+        :type time: WidgetTime, optional
+
+        :param title: The title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: The size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

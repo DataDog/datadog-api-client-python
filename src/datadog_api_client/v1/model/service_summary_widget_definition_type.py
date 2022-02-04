@@ -34,12 +34,8 @@ class ServiceSummaryWidgetDefinitionType(ModelSimple):
         """ServiceSummaryWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the service summary widget. If omitted defaults to "trace_service". Must be one of ["trace_service"].
-
-        Keyword Args:
-            value (str): Type of the service summary widget. If omitted defaults to "trace_service". Must be one of ["trace_service"].
+        :param value: Type of the service summary widget. If omitted defaults to "trace_service". Must be one of ["trace_service"].
+        :type value: str
         """
         super().__init__(kwargs)
 

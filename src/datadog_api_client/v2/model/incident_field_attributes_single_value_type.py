@@ -35,12 +35,8 @@ class IncidentFieldAttributesSingleValueType(ModelSimple):
         """IncidentFieldAttributesSingleValueType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the single value field definitions. If omitted defaults to "dropdown". Must be one of ["dropdown", "textbox"].
-
-        Keyword Args:
-            value (str): Type of the single value field definitions. If omitted defaults to "dropdown". Must be one of ["dropdown", "textbox"].
+        :param value: Type of the single value field definitions. If omitted defaults to "dropdown". Must be one of ["dropdown", "textbox"].
+        :type value: str
         """
         super().__init__(kwargs)
 

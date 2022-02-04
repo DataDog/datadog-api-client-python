@@ -34,12 +34,8 @@ class SyntheticsBrowserTestType(ModelSimple):
         """SyntheticsBrowserTestType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the Synthetic test, `browser`. If omitted defaults to "browser". Must be one of ["browser"].
-
-        Keyword Args:
-            value (str): Type of the Synthetic test, `browser`. If omitted defaults to "browser". Must be one of ["browser"].
+        :param value: Type of the Synthetic test, `browser`. If omitted defaults to "browser". Must be one of ["browser"].
+        :type value: str
         """
         super().__init__(kwargs)
 

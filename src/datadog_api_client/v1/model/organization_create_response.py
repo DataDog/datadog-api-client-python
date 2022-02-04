@@ -52,11 +52,14 @@ class OrganizationCreateResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """OrganizationCreateResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            api_key (ApiKey): [optional]
-            application_key (ApplicationKey): [optional]
-            org (Organization): [optional]
-            user (User): [optional]
+
+        :type api_key: ApiKey, optional
+
+        :type application_key: ApplicationKey, optional
+
+        :type org: Organization, optional
+
+        :type user: User, optional
         """
         super().__init__(kwargs)
 

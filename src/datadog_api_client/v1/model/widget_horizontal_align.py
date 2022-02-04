@@ -37,12 +37,8 @@ class WidgetHorizontalAlign(ModelSimple):
         """WidgetHorizontalAlign - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Horizontal alignment. Must be one of ["center", "left", "right"].
-
-        Keyword Args:
-            value (str): Horizontal alignment. Must be one of ["center", "left", "right"].
+        :param value: Horizontal alignment. Must be one of ["center", "left", "right"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -44,9 +44,8 @@ class DashboardListItemResponse(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """DashboardListItemResponse - a model defined in OpenAPI
 
-            type (DashboardType):
 
-        Keyword Args:
+        :type type: DashboardType
         """
         super().__init__(kwargs)
 

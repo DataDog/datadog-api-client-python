@@ -42,11 +42,18 @@ class SecurityMonitoringSignalAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityMonitoringSignalAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional] A JSON object of attributes in the security signal.
-            message (str): [optional] The message in the security signal defined by the rule that generated the signal.
-            tags ([str]): [optional] An array of tags associated with the security signal.
-            timestamp (datetime): [optional] The timestamp of the security signal.
+
+        :param attributes: A JSON object of attributes in the security signal.
+        :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, none_type)}, optional
+
+        :param message: The message in the security signal defined by the rule that generated the signal.
+        :type message: str, optional
+
+        :param tags: An array of tags associated with the security signal.
+        :type tags: [str], optional
+
+        :param timestamp: The timestamp of the security signal.
+        :type timestamp: datetime, optional
         """
         super().__init__(kwargs)
 

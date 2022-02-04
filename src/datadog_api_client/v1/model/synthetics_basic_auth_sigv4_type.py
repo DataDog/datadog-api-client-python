@@ -34,12 +34,8 @@ class SyntheticsBasicAuthSigv4Type(ModelSimple):
         """SyntheticsBasicAuthSigv4Type - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The type of authentication to use when performing the test. If omitted defaults to "sigv4". Must be one of ["sigv4"].
-
-        Keyword Args:
-            value (str): The type of authentication to use when performing the test. If omitted defaults to "sigv4". Must be one of ["sigv4"].
+        :param value: The type of authentication to use when performing the test. If omitted defaults to "sigv4". Must be one of ["sigv4"].
+        :type value: str
         """
         super().__init__(kwargs)
 

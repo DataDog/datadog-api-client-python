@@ -42,9 +42,12 @@ class SyntheticsGetBrowserTestLatestResultsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsGetBrowserTestLatestResultsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            last_timestamp_fetched (int): [optional] Timestamp of the latest browser test run.
-            results ([SyntheticsBrowserTestResultShort]): [optional] Result of the latest browser test run.
+
+        :param last_timestamp_fetched: Timestamp of the latest browser test run.
+        :type last_timestamp_fetched: int, optional
+
+        :param results: Result of the latest browser test run.
+        :type results: [SyntheticsBrowserTestResultShort], optional
         """
         super().__init__(kwargs)
 

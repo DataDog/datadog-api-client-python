@@ -35,11 +35,12 @@ class ServiceLevelObjectiveQuery(ModelNormal):
     def __init__(self, denominator, numerator, *args, **kwargs):
         """ServiceLevelObjectiveQuery - a model defined in OpenAPI
 
-        Args:
-            denominator (str): A Datadog metric query for total (valid) events.
-            numerator (str): A Datadog metric query for good events.
 
-        Keyword Args:
+        :param denominator: A Datadog metric query for total (valid) events.
+        :type denominator: str
+
+        :param numerator: A Datadog metric query for good events.
+        :type numerator: str
         """
         super().__init__(kwargs)
 

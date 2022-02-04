@@ -34,12 +34,8 @@ class SyntheticsAssertionJSONPathOperator(ModelSimple):
         """SyntheticsAssertionJSONPathOperator - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Assertion operator to apply. If omitted defaults to "validatesJSONPath". Must be one of ["validatesJSONPath"].
-
-        Keyword Args:
-            value (str): Assertion operator to apply. If omitted defaults to "validatesJSONPath". Must be one of ["validatesJSONPath"].
+        :param value: Assertion operator to apply. If omitted defaults to "validatesJSONPath". Must be one of ["validatesJSONPath"].
+        :type value: str
         """
         super().__init__(kwargs)
 

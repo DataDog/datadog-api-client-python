@@ -37,10 +37,15 @@ class HostMetaInstallMethod(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HostMetaInstallMethod - a model defined in OpenAPI
 
-        Keyword Args:
-            installer_version (str): [optional] The installer version.
-            tool (str): [optional] Tool used to install the agent.
-            tool_version (str): [optional] The tool version.
+
+        :param installer_version: The installer version.
+        :type installer_version: str, optional
+
+        :param tool: Tool used to install the agent.
+        :type tool: str, optional
+
+        :param tool_version: The tool version.
+        :type tool_version: str, optional
         """
         super().__init__(kwargs)
 

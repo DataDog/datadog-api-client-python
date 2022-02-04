@@ -42,12 +42,8 @@ class FormulaAndFunctionMetricAggregation(ModelSimple):
         """FormulaAndFunctionMetricAggregation - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The aggregation methods available for metrics queries. Must be one of ["avg", "min", "max", "sum", "last", "area", "l2norm", "percentile"].
-
-        Keyword Args:
-            value (str): The aggregation methods available for metrics queries. Must be one of ["avg", "min", "max", "sum", "last", "area", "l2norm", "percentile"].
+        :param value: The aggregation methods available for metrics queries. Must be one of ["avg", "min", "max", "sum", "last", "area", "l2norm", "percentile"].
+        :type value: str
         """
         super().__init__(kwargs)
 

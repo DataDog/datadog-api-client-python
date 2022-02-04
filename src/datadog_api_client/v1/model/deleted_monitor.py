@@ -33,8 +33,9 @@ class DeletedMonitor(ModelNormal):
     def __init__(self, *args, **kwargs):
         """DeletedMonitor - a model defined in OpenAPI
 
-        Keyword Args:
-            deleted_monitor_id (int): [optional] ID of the deleted monitor.
+
+        :param deleted_monitor_id: ID of the deleted monitor.
+        :type deleted_monitor_id: int, optional
         """
         super().__init__(kwargs)
 

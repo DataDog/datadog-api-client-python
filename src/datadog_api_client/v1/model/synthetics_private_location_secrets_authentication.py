@@ -38,9 +38,12 @@ class SyntheticsPrivateLocationSecretsAuthentication(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsPrivateLocationSecretsAuthentication - a model defined in OpenAPI
 
-        Keyword Args:
-            id (str): [optional] Access key for the private location.
-            key (str): [optional] Secret access key for the private location.
+
+        :param id: Access key for the private location.
+        :type id: str, optional
+
+        :param key: Secret access key for the private location.
+        :type key: str, optional
         """
         super().__init__(kwargs)
 

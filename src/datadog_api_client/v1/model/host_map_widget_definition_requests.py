@@ -42,9 +42,10 @@ class HostMapWidgetDefinitionRequests(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HostMapWidgetDefinitionRequests - a model defined in OpenAPI
 
-        Keyword Args:
-            fill (HostMapRequest): [optional]
-            size (HostMapRequest): [optional]
+
+        :type fill: HostMapRequest, optional
+
+        :type size: HostMapRequest, optional
         """
         super().__init__(kwargs)
 

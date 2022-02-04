@@ -38,12 +38,8 @@ class SLOTimeframe(ModelSimple):
         """SLOTimeframe - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The SLO time window options. Must be one of ["7d", "30d", "90d", "custom"].
-
-        Keyword Args:
-            value (str): The SLO time window options. Must be one of ["7d", "30d", "90d", "custom"].
+        :param value: The SLO time window options. Must be one of ["7d", "30d", "90d", "custom"].
+        :type value: str
         """
         super().__init__(kwargs)
 

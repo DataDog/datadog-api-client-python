@@ -73,30 +73,71 @@ class LogsProcessor(ModelComposed):
     def __init__(self, *args, **kwargs):
         """LogsProcessor - a model defined in OpenAPI
 
-        Keyword Args:
-            is_enabled (bool): [optional] Whether or not the processor is enabled. If omitted the server will use the default value of False.
-            name (str): [optional] Name of the processor.
-            samples ([str]): [optional] List of sample logs to test this grok parser.
-            override_on_conflict (bool): [optional] Override or not the target element if already set, If omitted the server will use the default value of False.
-            preserve_source (bool): [optional] Remove or preserve the remapped source element. If omitted the server will use the default value of False.
-            source_type (str): [optional] Defines if the sources are from log `attribute` or `tag`. If omitted the server will use the default value of "attribute".
-            target_format (TargetFormatType): [optional]
-            target_type (str): [optional] Defines if the final attribute or tag name is from log `attribute` or `tag`. If omitted the server will use the default value of "attribute".
-            normalize_ending_slashes (bool, none_type): [optional] Normalize the ending slashes or not. If omitted the server will use the default value of False.
-            is_encoded (bool): [optional] Define if the source attribute is URL encoded or not. If omitted the server will use the default value of False.
-            is_replace_missing (bool): [optional] If true, it replaces all missing attributes of `template` by an empty string. If `false` (default), skips the operation for missing attributes. If omitted the server will use the default value of False.
-            filter (LogsFilter): [optional]
-            processors ([LogsProcessor]): [optional] Ordered list of processors in this pipeline.
-            default_lookup (str): [optional] Value to set the target attribute if the source value is not found in the list.
-            grok (LogsGrokParserRules): [optional]
-            source (str): [optional] Source attribute used to perform the lookup.
-            type (LogsTraceRemapperType): [optional]
-            sources ([str]): [optional] Array of source attributes. If omitted the server will use the default value of ["dd.trace_id"].
-            target (str): [optional] Name of the attribute that contains the corresponding value in the mapping list or the `default_lookup` if not found in the mapping list.
-            categories ([LogsCategoryProcessorCategory]): [optional] Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.
-            expression (str): [optional] Arithmetic operation between one or more log attributes.
-            template (str): [optional] A formula with one or more attributes and raw text.
-            lookup_table ([str]): [optional] Mapping table of values for the source attribute and their associated target attribute values, formatted as `[\"source_key1,target_value1\", \"source_key2,target_value2\"]`
+
+        :param is_enabled: Whether or not the processor is enabled. If omitted the server will use the default value of False.
+        :type is_enabled: bool, optional
+
+        :param name: Name of the processor.
+        :type name: str, optional
+
+        :param samples: List of sample logs to test this grok parser.
+        :type samples: [str], optional
+
+        :param override_on_conflict: Override or not the target element if already set, If omitted the server will use the default value of False.
+        :type override_on_conflict: bool, optional
+
+        :param preserve_source: Remove or preserve the remapped source element. If omitted the server will use the default value of False.
+        :type preserve_source: bool, optional
+
+        :param source_type: Defines if the sources are from log `attribute` or `tag`. If omitted the server will use the default value of "attribute".
+        :type source_type: str, optional
+
+        :type target_format: TargetFormatType, optional
+
+        :param target_type: Defines if the final attribute or tag name is from log `attribute` or `tag`. If omitted the server will use the default value of "attribute".
+        :type target_type: str, optional
+
+        :param normalize_ending_slashes: Normalize the ending slashes or not. If omitted the server will use the default value of False.
+        :type normalize_ending_slashes: bool, none_type, optional
+
+        :param is_encoded: Define if the source attribute is URL encoded or not. If omitted the server will use the default value of False.
+        :type is_encoded: bool, optional
+
+        :param is_replace_missing: If true, it replaces all missing attributes of `template` by an empty string. If `false` (default), skips the operation for missing attributes. If omitted the server will use the default value of False.
+        :type is_replace_missing: bool, optional
+
+        :type filter: LogsFilter, optional
+
+        :param processors: Ordered list of processors in this pipeline.
+        :type processors: [LogsProcessor], optional
+
+        :param default_lookup: Value to set the target attribute if the source value is not found in the list.
+        :type default_lookup: str, optional
+
+        :type grok: LogsGrokParserRules, optional
+
+        :param source: Source attribute used to perform the lookup.
+        :type source: str, optional
+
+        :type type: LogsTraceRemapperType, optional
+
+        :param sources: Array of source attributes. If omitted the server will use the default value of ["dd.trace_id"].
+        :type sources: [str], optional
+
+        :param target: Name of the attribute that contains the corresponding value in the mapping list or the `default_lookup` if not found in the mapping list.
+        :type target: str, optional
+
+        :param categories: Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.
+        :type categories: [LogsCategoryProcessorCategory], optional
+
+        :param expression: Arithmetic operation between one or more log attributes.
+        :type expression: str, optional
+
+        :param template: A formula with one or more attributes and raw text.
+        :type template: str, optional
+
+        :param lookup_table: Mapping table of values for the source attribute and their associated target attribute values, formatted as `[\"source_key1,target_value1\", \"source_key2,target_value2\"]`
+        :type lookup_table: [str], optional
         """
         super().__init__(kwargs)
 

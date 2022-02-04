@@ -35,8 +35,9 @@ class AuthenticationValidationResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """AuthenticationValidationResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            valid (bool): [optional] Return `true` if the authentication response is valid.
+
+        :param valid: Return `true` if the authentication response is valid.
+        :type valid: bool, optional
         """
         super().__init__(kwargs)
 

@@ -35,9 +35,12 @@ class MetricIngestedIndexedVolumeAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MetricIngestedIndexedVolumeAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            indexed_volume (int): [optional] Indexed volume for the given metric.
-            ingested_volume (int): [optional] Ingested volume for the given metric.
+
+        :param indexed_volume: Indexed volume for the given metric.
+        :type indexed_volume: int, optional
+
+        :param ingested_volume: Ingested volume for the given metric.
+        :type ingested_volume: int, optional
         """
         super().__init__(kwargs)
 

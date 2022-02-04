@@ -37,12 +37,8 @@ class SecurityMonitoringRuleDetectionMethod(ModelSimple):
         """SecurityMonitoringRuleDetectionMethod - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The detection method. Must be one of ["threshold", "new_value", "anomaly_detection"].
-
-        Keyword Args:
-            value (str): The detection method. Must be one of ["threshold", "new_value", "anomaly_detection"].
+        :param value: The detection method. Must be one of ["threshold", "new_value", "anomaly_detection"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -36,12 +36,8 @@ class AzureAccountListResponse(ModelSimple):
         """AzureAccountListResponse - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] ([AzureAccount]): Accounts configured for your organization.
-
-        Keyword Args:
-            value ([AzureAccount]): Accounts configured for your organization.
+        :param value: Accounts configured for your organization.
+        :type value: [AzureAccount]
         """
         super().__init__(kwargs)
 

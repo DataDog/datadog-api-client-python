@@ -62,17 +62,27 @@ class SyntheticsGlobalVariable(ModelNormal):
     def __init__(self, description, name, tags, value, *args, **kwargs):
         """SyntheticsGlobalVariable - a model defined in OpenAPI
 
-        Args:
-            description (str): Description of the global variable.
-            name (str): Name of the global variable. Unique across Synthetics global variables.
-            tags ([str]): Tags of the global variable.
-            value (SyntheticsGlobalVariableValue):
 
-        Keyword Args:
-            attributes (SyntheticsGlobalVariableAttributes): [optional]
-            id (str): [optional] Unique identifier of the global variable.
-            parse_test_options (SyntheticsGlobalVariableParseTestOptions): [optional]
-            parse_test_public_id (str): [optional] A Synthetic test ID to use as a test to generate the variable value.
+        :param description: Description of the global variable.
+        :type description: str
+
+        :param name: Name of the global variable. Unique across Synthetics global variables.
+        :type name: str
+
+        :param tags: Tags of the global variable.
+        :type tags: [str]
+
+        :type value: SyntheticsGlobalVariableValue
+
+        :type attributes: SyntheticsGlobalVariableAttributes, optional
+
+        :param id: Unique identifier of the global variable.
+        :type id: str, optional
+
+        :type parse_test_options: SyntheticsGlobalVariableParseTestOptions, optional
+
+        :param parse_test_public_id: A Synthetic test ID to use as a test to generate the variable value.
+        :type parse_test_public_id: str, optional
         """
         super().__init__(kwargs)
 

@@ -39,13 +39,18 @@ class ServiceAccountCreateAttributes(ModelNormal):
     def __init__(self, email, service_account, *args, **kwargs):
         """ServiceAccountCreateAttributes - a model defined in OpenAPI
 
-        Args:
-            email (str): The email of the user.
-            service_account (bool): Whether the user is a service account. Must be true.
 
-        Keyword Args:
-            name (str): [optional] The name of the user.
-            title (str): [optional] The title of the user.
+        :param email: The email of the user.
+        :type email: str
+
+        :param service_account: Whether the user is a service account. Must be true.
+        :type service_account: bool
+
+        :param name: The name of the user.
+        :type name: str, optional
+
+        :param title: The title of the user.
+        :type title: str, optional
         """
         super().__init__(kwargs)
 

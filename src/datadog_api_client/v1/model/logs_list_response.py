@@ -44,10 +44,15 @@ class LogsListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            logs ([Log]): [optional] Array of logs matching the request and the `nextLogId` if sent.
-            next_log_id (str): [optional] Hash identifier of the next log to return in the list. This parameter is used for the pagination feature.
-            status (str): [optional] Status of the response.
+
+        :param logs: Array of logs matching the request and the `nextLogId` if sent.
+        :type logs: [Log], optional
+
+        :param next_log_id: Hash identifier of the next log to return in the list. This parameter is used for the pagination feature.
+        :type next_log_id: str, optional
+
+        :param status: Status of the response.
+        :type status: str, optional
         """
         super().__init__(kwargs)
 

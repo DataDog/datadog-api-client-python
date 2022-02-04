@@ -33,8 +33,9 @@ class OrganizationBilling(ModelNormal):
     def __init__(self, *args, **kwargs):
         """OrganizationBilling - a model defined in OpenAPI
 
-        Keyword Args:
-            type (str): [optional] The type of billing. Only `parent_billing` is supported.
+
+        :param type: The type of billing. Only `parent_billing` is supported.
+        :type type: str, optional
         """
         super().__init__(kwargs)
 

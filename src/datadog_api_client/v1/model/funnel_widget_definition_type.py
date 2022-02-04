@@ -34,12 +34,8 @@ class FunnelWidgetDefinitionType(ModelSimple):
         """FunnelWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of funnel widget. If omitted defaults to "funnel". Must be one of ["funnel"].
-
-        Keyword Args:
-            value (str): Type of funnel widget. If omitted defaults to "funnel". Must be one of ["funnel"].
+        :param value: Type of funnel widget. If omitted defaults to "funnel". Must be one of ["funnel"].
+        :type value: str
         """
         super().__init__(kwargs)
 

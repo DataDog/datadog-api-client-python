@@ -38,12 +38,8 @@ class TargetFormatType(ModelSimple):
         """TargetFormatType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): If the `target_type` of the remapper is `attribute`, try to cast the value to a new specific type. If the cast is not possible, the original type is kept. `string`, `integer`, or `double` are the possible types. If the `target_type` is `tag`, this parameter may not be specified. Must be one of ["auto", "string", "integer", "double"].
-
-        Keyword Args:
-            value (str): If the `target_type` of the remapper is `attribute`, try to cast the value to a new specific type. If the cast is not possible, the original type is kept. `string`, `integer`, or `double` are the possible types. If the `target_type` is `tag`, this parameter may not be specified. Must be one of ["auto", "string", "integer", "double"].
+        :param value: If the `target_type` of the remapper is `attribute`, try to cast the value to a new specific type. If the cast is not possible, the original type is kept. `string`, `integer`, or `double` are the possible types. If the `target_type` is `tag`, this parameter may not be specified. Must be one of ["auto", "string", "integer", "double"].
+        :type value: str
         """
         super().__init__(kwargs)
 

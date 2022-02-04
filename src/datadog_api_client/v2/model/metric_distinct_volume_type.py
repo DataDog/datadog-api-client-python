@@ -34,12 +34,8 @@ class MetricDistinctVolumeType(ModelSimple):
         """MetricDistinctVolumeType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The metric distinct volume type. If omitted defaults to "distinct_metric_volumes". Must be one of ["distinct_metric_volumes"].
-
-        Keyword Args:
-            value (str): The metric distinct volume type. If omitted defaults to "distinct_metric_volumes". Must be one of ["distinct_metric_volumes"].
+        :param value: The metric distinct volume type. If omitted defaults to "distinct_metric_volumes". Must be one of ["distinct_metric_volumes"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -40,10 +40,8 @@ class UserCreateRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """UserCreateRequest - a model defined in OpenAPI
 
-        Args:
-            data (UserCreateData):
 
-        Keyword Args:
+        :type data: UserCreateData
         """
         super().__init__(kwargs)
 

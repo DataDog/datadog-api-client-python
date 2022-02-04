@@ -37,10 +37,15 @@ class AWSAccountDeleteRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """AWSAccountDeleteRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            access_key_id (str): [optional] Your AWS access key ID. Only required if your AWS account is a GovCloud or China account.
-            account_id (str): [optional] Your AWS Account ID without dashes.
-            role_name (str): [optional] Your Datadog role delegation name.
+
+        :param access_key_id: Your AWS access key ID. Only required if your AWS account is a GovCloud or China account.
+        :type access_key_id: str, optional
+
+        :param account_id: Your AWS Account ID without dashes.
+        :type account_id: str, optional
+
+        :param role_name: Your Datadog role delegation name.
+        :type role_name: str, optional
         """
         super().__init__(kwargs)
 

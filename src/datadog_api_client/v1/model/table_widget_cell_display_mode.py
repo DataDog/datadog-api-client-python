@@ -36,12 +36,8 @@ class TableWidgetCellDisplayMode(ModelSimple):
         """TableWidgetCellDisplayMode - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Define a display mode for the table cell. Must be one of ["number", "bar"].
-
-        Keyword Args:
-            value (str): Define a display mode for the table cell. Must be one of ["number", "bar"].
+        :param value: Define a display mode for the table cell. Must be one of ["number", "bar"].
+        :type value: str
         """
         super().__init__(kwargs)
 

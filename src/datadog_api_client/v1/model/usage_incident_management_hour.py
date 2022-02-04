@@ -40,11 +40,18 @@ class UsageIncidentManagementHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageIncidentManagementHour - a model defined in OpenAPI
 
-        Keyword Args:
-            hour (datetime): [optional] The hour for the usage.
-            monthly_active_users (int): [optional] Contains the total number monthly active users from the start of the given hour's month until the given hour.
-            org_name (str): [optional] The organization name.
-            public_id (str): [optional] The organization public ID.
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param monthly_active_users: Contains the total number monthly active users from the start of the given hour's month until the given hour.
+        :type monthly_active_users: int, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
         """
         super().__init__(kwargs)
 

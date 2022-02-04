@@ -34,12 +34,8 @@ class IncidentRelatedObject(ModelSimple):
         """IncidentRelatedObject - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Object related to an incident. If omitted defaults to "users". Must be one of ["users"].
-
-        Keyword Args:
-            value (str): Object related to an incident. If omitted defaults to "users". Must be one of ["users"].
+        :param value: Object related to an incident. If omitted defaults to "users". Must be one of ["users"].
+        :type value: str
         """
         super().__init__(kwargs)
 

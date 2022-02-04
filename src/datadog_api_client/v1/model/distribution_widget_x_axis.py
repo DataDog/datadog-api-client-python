@@ -39,11 +39,18 @@ class DistributionWidgetXAxis(ModelNormal):
     def __init__(self, *args, **kwargs):
         """DistributionWidgetXAxis - a model defined in OpenAPI
 
-        Keyword Args:
-            include_zero (bool): [optional] True includes zero.
-            max (str): [optional] Specifies maximum value to show on the x-axis. It takes a number, percentile (p90 === 90th percentile), or auto for default behavior. If omitted the server will use the default value of "auto".
-            min (str): [optional] Specifies minimum value to show on the x-axis. It takes a number, percentile (p90 === 90th percentile), or auto for default behavior. If omitted the server will use the default value of "auto".
-            scale (str): [optional] Specifies the scale type. Possible values are `linear`. If omitted the server will use the default value of "linear".
+
+        :param include_zero: True includes zero.
+        :type include_zero: bool, optional
+
+        :param max: Specifies maximum value to show on the x-axis. It takes a number, percentile (p90 === 90th percentile), or auto for default behavior. If omitted the server will use the default value of "auto".
+        :type max: str, optional
+
+        :param min: Specifies minimum value to show on the x-axis. It takes a number, percentile (p90 === 90th percentile), or auto for default behavior. If omitted the server will use the default value of "auto".
+        :type min: str, optional
+
+        :param scale: Specifies the scale type. Possible values are `linear`. If omitted the server will use the default value of "linear".
+        :type scale: str, optional
         """
         super().__init__(kwargs)
 

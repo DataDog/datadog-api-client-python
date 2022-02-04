@@ -39,10 +39,15 @@ class SLOCorrectionResponseAttributesModifier(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOCorrectionResponseAttributesModifier - a model defined in OpenAPI
 
-        Keyword Args:
-            email (str): [optional] Email of the Modifier.
-            handle (str): [optional] Handle of the Modifier.
-            name (str): [optional] Name of the Modifier.
+
+        :param email: Email of the Modifier.
+        :type email: str, optional
+
+        :param handle: Handle of the Modifier.
+        :type handle: str, optional
+
+        :param name: Name of the Modifier.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

@@ -40,8 +40,8 @@ class MetricAllTagsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MetricAllTagsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data (MetricAllTags): [optional]
+
+        :type data: MetricAllTags, optional
         """
         super().__init__(kwargs)
 

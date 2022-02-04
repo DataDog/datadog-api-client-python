@@ -153,64 +153,177 @@ class UsageSummaryDate(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageSummaryDate - a model defined in OpenAPI
 
-        Keyword Args:
-            agent_host_top99p (int): [optional] Shows the 99th percentile of all agent hosts over all hours in the current date for all organizations.
-            apm_azure_app_service_host_top99p (int): [optional] Shows the 99th percentile of all Azure app services using APM over all hours in the current date all organizations.
-            apm_host_top99p (int): [optional] Shows the 99th percentile of all distinct APM hosts over all hours in the current date for all organizations.
-            audit_logs_lines_indexed_sum (int): [optional] Shows the sum of audit logs lines indexed over all hours in the current date for all organizations.
-            avg_profiled_fargate_tasks (int): [optional] The average profiled task count for Fargate Profiling.
-            aws_host_top99p (int): [optional] Shows the 99th percentile of all AWS hosts over all hours in the current date for all organizations.
-            aws_lambda_func_count (int): [optional] Shows the average of the number of functions that executed 1 or more times each hour in the current date for all organizations.
-            aws_lambda_invocations_sum (int): [optional] Shows the sum of all AWS Lambda invocations over all hours in the current date for all organizations.
-            azure_app_service_top99p (int): [optional] Shows the 99th percentile of all Azure app services over all hours in the current date for all organizations.
-            billable_ingested_bytes_sum (int): [optional] Shows the sum of all log bytes ingested over all hours in the current date for all organizations.
-            browser_rum_lite_session_count_sum (int): [optional] Shows the sum of all browser lite sessions over all hours in the current date for all organizations.
-            browser_rum_replay_session_count_sum (int): [optional] Shows the sum of all browser replay sessions over all hours in the current date for all organizations.
-            browser_rum_units_sum (int): [optional] Shows the sum of all browser RUM units over all hours in the current date for all organizations.
-            container_avg (int): [optional] Shows the average of all distinct containers over all hours in the current date for all organizations.
-            container_hwm (int): [optional] Shows the high-water mark of all distinct containers over all hours in the current date for all organizations.
-            cspm_aas_host_top99p (int): [optional] Shows the 99th percentile of all Cloud Security Posture Management Azure app services hosts over all hours in the current date for all organizations.
-            cspm_azure_host_top99p (int): [optional] Shows the 99th percentile of all Cloud Security Posture Management Azure hosts over all hours in the current date for all organizations.
-            cspm_container_avg (int): [optional] Shows the average number of Cloud Security Posture Management containers over all hours in the current date for all organizations.
-            cspm_container_hwm (int): [optional] Shows the high-water mark of Cloud Security Posture Management containers over all hours in the current date for all organizations.
-            cspm_host_top99p (int): [optional] Shows the 99th percentile of all Cloud Security Posture Management hosts over all hours in the current date for all organizations.
-            custom_ts_avg (int): [optional] Shows the average number of distinct custom metrics over all hours in the current date for all organizations.
-            cws_container_count_avg (int): [optional] Shows the average of all distinct Cloud Workload Security containers over all hours in the current date for all organizations.
-            cws_host_top99p (int): [optional] Shows the 99th percentile of all Cloud Workload Security hosts over all hours in the current date for all organizations.
-            date (datetime): [optional] The date for the usage.
-            dbm_host_top99p (int): [optional] Shows the 99th percentile of all Database Monitoring hosts over all hours in the current date for all organizations.
-            dbm_queries_count_avg (int): [optional] Shows the average of all normalized Database Monitoring queries over all hours in the current date for all organizations.
-            fargate_tasks_count_avg (int): [optional] Shows the high-watermark of all Fargate tasks over all hours in the current date for all organizations.
-            fargate_tasks_count_hwm (int): [optional] Shows the average of all Fargate tasks over all hours in the current date for all organizations.
-            gcp_host_top99p (int): [optional] Shows the 99th percentile of all GCP hosts over all hours in the current date for all organizations.
-            heroku_host_top99p (int): [optional] Shows the 99th percentile of all Heroku dynos over all hours in the current date for all organizations.
-            incident_management_monthly_active_users_hwm (int): [optional] Shows the high-water mark of incident management monthly active users over all hours in the current date for all organizations.
-            indexed_events_count_sum (int): [optional] Shows the sum of all log events indexed over all hours in the current date for all organizations.
-            infra_host_top99p (int): [optional] Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current date for all organizations.
-            ingested_events_bytes_sum (int): [optional] Shows the sum of all log bytes ingested over all hours in the current date for all organizations.
-            iot_device_sum (int): [optional] Shows the sum of all IoT devices over all hours in the current date for all organizations.
-            iot_device_top99p (int): [optional] Shows the 99th percentile of all IoT devices over all hours in the current date all organizations.
-            mobile_rum_lite_session_count_sum (int): [optional] Shows the sum of all mobile lite sessions over all hours in the current date for all organizations.
-            mobile_rum_session_count_android_sum (int): [optional] Shows the sum of all mobile RUM Sessions on Android over all hours in the current date for all organizations.
-            mobile_rum_session_count_ios_sum (int): [optional] Shows the sum of all mobile RUM Sessions on iOS over all hours in the current date for all organizations.
-            mobile_rum_session_count_sum (int): [optional] Shows the sum of all mobile RUM Sessions over all hours in the current date for all organizations
-            mobile_rum_units_sum (int): [optional] Shows the sum of all mobile RUM units over all hours in the current date for all organizations.
-            netflow_indexed_events_count_sum (int): [optional] Shows the sum of all Network flows indexed over all hours in the current date for all organizations.
-            npm_host_top99p (int): [optional] Shows the 99th percentile of all distinct Networks hosts over all hours in the current date for all organizations.
-            opentelemetry_host_top99p (int): [optional] Shows the 99th percentile of all hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for all organizations.
-            orgs ([UsageSummaryDateOrg]): [optional] Organizations associated with a user.
-            profiling_host_top99p (int): [optional] Shows the 99th percentile of all profiled hosts over all hours in the current date for all organizations.
-            rum_browser_and_mobile_session_count (int): [optional] Shows the sum of all mobile sessions and all browser lite and legacy sessions over all hours in the current month for all organizations.
-            rum_session_count_sum (int): [optional] Shows the sum of all browser RUM Lite Sessions over all hours in the current date for all organizations
-            rum_total_session_count_sum (int): [optional] Shows the sum of RUM Sessions (browser and mobile) over all hours in the current date for all organizations.
-            rum_units_sum (int): [optional] Shows the sum of all browser and mobile RUM units over all hours in the current date for all organizations.
-            sds_logs_scanned_bytes_sum (int): [optional] Shows the sum of all bytes scanned of logs usage by the Sensitive Data Scanner over all hours in the current month for all organizations.
-            sds_total_scanned_bytes_sum (int): [optional] Shows the sum of all bytes scanned across all usage types by the Sensitive Data Scanner over all hours in the current month for all organizations.
-            synthetics_browser_check_calls_count_sum (int): [optional] Shows the sum of all Synthetic browser tests over all hours in the current date for all organizations.
-            synthetics_check_calls_count_sum (int): [optional] Shows the sum of all Synthetic API tests over all hours in the current date for all organizations.
-            trace_search_indexed_events_count_sum (int): [optional] Shows the sum of all Indexed Spans indexed over all hours in the current date for all organizations.
-            twol_ingested_events_bytes_sum (int): [optional] Shows the sum of all tracing without limits bytes ingested over all hours in the current date for all organizations.
-            vsphere_host_top99p (int): [optional] Shows the 99th percentile of all vSphere hosts over all hours in the current date for all organizations.
+
+        :param agent_host_top99p: Shows the 99th percentile of all agent hosts over all hours in the current date for all organizations.
+        :type agent_host_top99p: int, optional
+
+        :param apm_azure_app_service_host_top99p: Shows the 99th percentile of all Azure app services using APM over all hours in the current date all organizations.
+        :type apm_azure_app_service_host_top99p: int, optional
+
+        :param apm_host_top99p: Shows the 99th percentile of all distinct APM hosts over all hours in the current date for all organizations.
+        :type apm_host_top99p: int, optional
+
+        :param audit_logs_lines_indexed_sum: Shows the sum of audit logs lines indexed over all hours in the current date for all organizations.
+        :type audit_logs_lines_indexed_sum: int, optional
+
+        :param avg_profiled_fargate_tasks: The average profiled task count for Fargate Profiling.
+        :type avg_profiled_fargate_tasks: int, optional
+
+        :param aws_host_top99p: Shows the 99th percentile of all AWS hosts over all hours in the current date for all organizations.
+        :type aws_host_top99p: int, optional
+
+        :param aws_lambda_func_count: Shows the average of the number of functions that executed 1 or more times each hour in the current date for all organizations.
+        :type aws_lambda_func_count: int, optional
+
+        :param aws_lambda_invocations_sum: Shows the sum of all AWS Lambda invocations over all hours in the current date for all organizations.
+        :type aws_lambda_invocations_sum: int, optional
+
+        :param azure_app_service_top99p: Shows the 99th percentile of all Azure app services over all hours in the current date for all organizations.
+        :type azure_app_service_top99p: int, optional
+
+        :param billable_ingested_bytes_sum: Shows the sum of all log bytes ingested over all hours in the current date for all organizations.
+        :type billable_ingested_bytes_sum: int, optional
+
+        :param browser_rum_lite_session_count_sum: Shows the sum of all browser lite sessions over all hours in the current date for all organizations.
+        :type browser_rum_lite_session_count_sum: int, optional
+
+        :param browser_rum_replay_session_count_sum: Shows the sum of all browser replay sessions over all hours in the current date for all organizations.
+        :type browser_rum_replay_session_count_sum: int, optional
+
+        :param browser_rum_units_sum: Shows the sum of all browser RUM units over all hours in the current date for all organizations.
+        :type browser_rum_units_sum: int, optional
+
+        :param container_avg: Shows the average of all distinct containers over all hours in the current date for all organizations.
+        :type container_avg: int, optional
+
+        :param container_hwm: Shows the high-water mark of all distinct containers over all hours in the current date for all organizations.
+        :type container_hwm: int, optional
+
+        :param cspm_aas_host_top99p: Shows the 99th percentile of all Cloud Security Posture Management Azure app services hosts over all hours in the current date for all organizations.
+        :type cspm_aas_host_top99p: int, optional
+
+        :param cspm_azure_host_top99p: Shows the 99th percentile of all Cloud Security Posture Management Azure hosts over all hours in the current date for all organizations.
+        :type cspm_azure_host_top99p: int, optional
+
+        :param cspm_container_avg: Shows the average number of Cloud Security Posture Management containers over all hours in the current date for all organizations.
+        :type cspm_container_avg: int, optional
+
+        :param cspm_container_hwm: Shows the high-water mark of Cloud Security Posture Management containers over all hours in the current date for all organizations.
+        :type cspm_container_hwm: int, optional
+
+        :param cspm_host_top99p: Shows the 99th percentile of all Cloud Security Posture Management hosts over all hours in the current date for all organizations.
+        :type cspm_host_top99p: int, optional
+
+        :param custom_ts_avg: Shows the average number of distinct custom metrics over all hours in the current date for all organizations.
+        :type custom_ts_avg: int, optional
+
+        :param cws_container_count_avg: Shows the average of all distinct Cloud Workload Security containers over all hours in the current date for all organizations.
+        :type cws_container_count_avg: int, optional
+
+        :param cws_host_top99p: Shows the 99th percentile of all Cloud Workload Security hosts over all hours in the current date for all organizations.
+        :type cws_host_top99p: int, optional
+
+        :param date: The date for the usage.
+        :type date: datetime, optional
+
+        :param dbm_host_top99p: Shows the 99th percentile of all Database Monitoring hosts over all hours in the current date for all organizations.
+        :type dbm_host_top99p: int, optional
+
+        :param dbm_queries_count_avg: Shows the average of all normalized Database Monitoring queries over all hours in the current date for all organizations.
+        :type dbm_queries_count_avg: int, optional
+
+        :param fargate_tasks_count_avg: Shows the high-watermark of all Fargate tasks over all hours in the current date for all organizations.
+        :type fargate_tasks_count_avg: int, optional
+
+        :param fargate_tasks_count_hwm: Shows the average of all Fargate tasks over all hours in the current date for all organizations.
+        :type fargate_tasks_count_hwm: int, optional
+
+        :param gcp_host_top99p: Shows the 99th percentile of all GCP hosts over all hours in the current date for all organizations.
+        :type gcp_host_top99p: int, optional
+
+        :param heroku_host_top99p: Shows the 99th percentile of all Heroku dynos over all hours in the current date for all organizations.
+        :type heroku_host_top99p: int, optional
+
+        :param incident_management_monthly_active_users_hwm: Shows the high-water mark of incident management monthly active users over all hours in the current date for all organizations.
+        :type incident_management_monthly_active_users_hwm: int, optional
+
+        :param indexed_events_count_sum: Shows the sum of all log events indexed over all hours in the current date for all organizations.
+        :type indexed_events_count_sum: int, optional
+
+        :param infra_host_top99p: Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current date for all organizations.
+        :type infra_host_top99p: int, optional
+
+        :param ingested_events_bytes_sum: Shows the sum of all log bytes ingested over all hours in the current date for all organizations.
+        :type ingested_events_bytes_sum: int, optional
+
+        :param iot_device_sum: Shows the sum of all IoT devices over all hours in the current date for all organizations.
+        :type iot_device_sum: int, optional
+
+        :param iot_device_top99p: Shows the 99th percentile of all IoT devices over all hours in the current date all organizations.
+        :type iot_device_top99p: int, optional
+
+        :param mobile_rum_lite_session_count_sum: Shows the sum of all mobile lite sessions over all hours in the current date for all organizations.
+        :type mobile_rum_lite_session_count_sum: int, optional
+
+        :param mobile_rum_session_count_android_sum: Shows the sum of all mobile RUM Sessions on Android over all hours in the current date for all organizations.
+        :type mobile_rum_session_count_android_sum: int, optional
+
+        :param mobile_rum_session_count_ios_sum: Shows the sum of all mobile RUM Sessions on iOS over all hours in the current date for all organizations.
+        :type mobile_rum_session_count_ios_sum: int, optional
+
+        :param mobile_rum_session_count_sum: Shows the sum of all mobile RUM Sessions over all hours in the current date for all organizations
+        :type mobile_rum_session_count_sum: int, optional
+
+        :param mobile_rum_units_sum: Shows the sum of all mobile RUM units over all hours in the current date for all organizations.
+        :type mobile_rum_units_sum: int, optional
+
+        :param netflow_indexed_events_count_sum: Shows the sum of all Network flows indexed over all hours in the current date for all organizations.
+        :type netflow_indexed_events_count_sum: int, optional
+
+        :param npm_host_top99p: Shows the 99th percentile of all distinct Networks hosts over all hours in the current date for all organizations.
+        :type npm_host_top99p: int, optional
+
+        :param opentelemetry_host_top99p: Shows the 99th percentile of all hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for all organizations.
+        :type opentelemetry_host_top99p: int, optional
+
+        :param orgs: Organizations associated with a user.
+        :type orgs: [UsageSummaryDateOrg], optional
+
+        :param profiling_host_top99p: Shows the 99th percentile of all profiled hosts over all hours in the current date for all organizations.
+        :type profiling_host_top99p: int, optional
+
+        :param rum_browser_and_mobile_session_count: Shows the sum of all mobile sessions and all browser lite and legacy sessions over all hours in the current month for all organizations.
+        :type rum_browser_and_mobile_session_count: int, optional
+
+        :param rum_session_count_sum: Shows the sum of all browser RUM Lite Sessions over all hours in the current date for all organizations
+        :type rum_session_count_sum: int, optional
+
+        :param rum_total_session_count_sum: Shows the sum of RUM Sessions (browser and mobile) over all hours in the current date for all organizations.
+        :type rum_total_session_count_sum: int, optional
+
+        :param rum_units_sum: Shows the sum of all browser and mobile RUM units over all hours in the current date for all organizations.
+        :type rum_units_sum: int, optional
+
+        :param sds_logs_scanned_bytes_sum: Shows the sum of all bytes scanned of logs usage by the Sensitive Data Scanner over all hours in the current month for all organizations.
+        :type sds_logs_scanned_bytes_sum: int, optional
+
+        :param sds_total_scanned_bytes_sum: Shows the sum of all bytes scanned across all usage types by the Sensitive Data Scanner over all hours in the current month for all organizations.
+        :type sds_total_scanned_bytes_sum: int, optional
+
+        :param synthetics_browser_check_calls_count_sum: Shows the sum of all Synthetic browser tests over all hours in the current date for all organizations.
+        :type synthetics_browser_check_calls_count_sum: int, optional
+
+        :param synthetics_check_calls_count_sum: Shows the sum of all Synthetic API tests over all hours in the current date for all organizations.
+        :type synthetics_check_calls_count_sum: int, optional
+
+        :param trace_search_indexed_events_count_sum: Shows the sum of all Indexed Spans indexed over all hours in the current date for all organizations.
+        :type trace_search_indexed_events_count_sum: int, optional
+
+        :param twol_ingested_events_bytes_sum: Shows the sum of all tracing without limits bytes ingested over all hours in the current date for all organizations.
+        :type twol_ingested_events_bytes_sum: int, optional
+
+        :param vsphere_host_top99p: Shows the 99th percentile of all vSphere hosts over all hours in the current date for all organizations.
+        :type vsphere_host_top99p: int, optional
         """
         super().__init__(kwargs)
 

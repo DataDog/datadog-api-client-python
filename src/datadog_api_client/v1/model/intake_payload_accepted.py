@@ -33,8 +33,9 @@ class IntakePayloadAccepted(ModelNormal):
     def __init__(self, *args, **kwargs):
         """IntakePayloadAccepted - a model defined in OpenAPI
 
-        Keyword Args:
-            status (str): [optional] The status of the intake payload.
+
+        :param status: The status of the intake payload.
+        :type status: str, optional
         """
         super().__init__(kwargs)
 

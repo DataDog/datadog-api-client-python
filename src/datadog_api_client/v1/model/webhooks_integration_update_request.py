@@ -52,12 +52,20 @@ class WebhooksIntegrationUpdateRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """WebhooksIntegrationUpdateRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            custom_headers (str): [optional] If `null`, uses no header. If given a JSON payload, these will be headers attached to your webhook.
-            encode_as (WebhooksIntegrationEncoding): [optional]
-            name (str): [optional] The name of the webhook. It corresponds with `<WEBHOOK_NAME>`. Learn more on how to use it in [monitor notifications](https://docs.datadoghq.com/monitors/notify).
-            payload (str, none_type): [optional] If `null`, uses the default payload. If given a JSON payload, the webhook returns the payload specified by the given payload. [Webhooks variable usage](https://docs.datadoghq.com/integrations/webhooks/#usage).
-            url (str): [optional] URL of the webhook.
+
+        :param custom_headers: If `null`, uses no header. If given a JSON payload, these will be headers attached to your webhook.
+        :type custom_headers: str, optional
+
+        :type encode_as: WebhooksIntegrationEncoding, optional
+
+        :param name: The name of the webhook. It corresponds with `<WEBHOOK_NAME>`. Learn more on how to use it in [monitor notifications](https://docs.datadoghq.com/monitors/notify).
+        :type name: str, optional
+
+        :param payload: If `null`, uses the default payload. If given a JSON payload, the webhook returns the payload specified by the given payload. [Webhooks variable usage](https://docs.datadoghq.com/integrations/webhooks/#usage).
+        :type payload: str, none_type, optional
+
+        :param url: URL of the webhook.
+        :type url: str, optional
         """
         super().__init__(kwargs)
 

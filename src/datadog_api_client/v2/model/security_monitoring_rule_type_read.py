@@ -38,12 +38,8 @@ class SecurityMonitoringRuleTypeRead(ModelSimple):
         """SecurityMonitoringRuleTypeRead - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The rule type. Must be one of ["log_detection", "infrastructure_configuration", "workload_security", "cloud_configuration"].
-
-        Keyword Args:
-            value (str): The rule type. Must be one of ["log_detection", "infrastructure_configuration", "workload_security", "cloud_configuration"].
+        :param value: The rule type. Must be one of ["log_detection", "infrastructure_configuration", "workload_security", "cloud_configuration"].
+        :type value: str
         """
         super().__init__(kwargs)
 

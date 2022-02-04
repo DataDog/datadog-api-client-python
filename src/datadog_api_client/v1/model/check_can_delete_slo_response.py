@@ -42,9 +42,11 @@ class CheckCanDeleteSLOResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """CheckCanDeleteSLOResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data (CheckCanDeleteSLOResponseData): [optional]
-            errors ({str: (str,)}): [optional] A mapping of SLO id to it's current usages.
+
+        :type data: CheckCanDeleteSLOResponseData, optional
+
+        :param errors: A mapping of SLO id to it's current usages.
+        :type errors: {str: (str,)}, optional
         """
         super().__init__(kwargs)
 

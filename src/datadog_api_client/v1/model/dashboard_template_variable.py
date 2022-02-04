@@ -49,13 +49,18 @@ class DashboardTemplateVariable(ModelNormal):
     def __init__(self, name, *args, **kwargs):
         """DashboardTemplateVariable - a model defined in OpenAPI
 
-        Args:
-            name (str): The name of the variable.
 
-        Keyword Args:
-            available_values ([str], none_type): [optional] The list of values that the template variable drop-down is limited to.
-            default (str, none_type): [optional] The default value for the template variable on dashboard load.
-            prefix (str, none_type): [optional] The tag prefix associated with the variable. Only tags with this prefix appear in the variable drop-down.
+        :param name: The name of the variable.
+        :type name: str
+
+        :param available_values: The list of values that the template variable drop-down is limited to.
+        :type available_values: [str], none_type, optional
+
+        :param default: The default value for the template variable on dashboard load.
+        :type default: str, none_type, optional
+
+        :param prefix: The tag prefix associated with the variable. Only tags with this prefix appear in the variable drop-down.
+        :type prefix: str, none_type, optional
         """
         super().__init__(kwargs)
 

@@ -33,10 +33,9 @@ class LogsIndexesOrder(ModelNormal):
     def __init__(self, index_names, *args, **kwargs):
         """LogsIndexesOrder - a model defined in OpenAPI
 
-        Args:
-            index_names ([str]): Array of strings identifying by their name(s) the index(es) of your organization. Logs are tested against the query filter of each index one by one, following the order of the array. Logs are eventually stored in the first matching index.
 
-        Keyword Args:
+        :param index_names: Array of strings identifying by their name(s) the index(es) of your organization. Logs are tested against the query filter of each index one by one, following the order of the array. Logs are eventually stored in the first matching index.
+        :type index_names: [str]
         """
         super().__init__(kwargs)
 

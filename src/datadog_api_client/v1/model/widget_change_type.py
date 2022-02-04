@@ -36,12 +36,8 @@ class WidgetChangeType(ModelSimple):
         """WidgetChangeType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Show the absolute or the relative change. Must be one of ["absolute", "relative"].
-
-        Keyword Args:
-            value (str): Show the absolute or the relative change. Must be one of ["absolute", "relative"].
+        :param value: Show the absolute or the relative change. Must be one of ["absolute", "relative"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -71,17 +71,26 @@ class NotebooksResponseDataAttributes(ModelNormal):
     def __init__(self, name, *args, **kwargs):
         """NotebooksResponseDataAttributes - a model defined in OpenAPI
 
-        Args:
-            name (str): The name of the notebook.
 
-        Keyword Args:
-            author (NotebookAuthor): [optional]
-            cells ([NotebookCellResponse]): [optional] List of cells to display in the notebook.
-            created (datetime): [optional] UTC time stamp for when the notebook was created.
-            metadata (NotebookMetadata): [optional]
-            modified (datetime): [optional] UTC time stamp for when the notebook was last modified.
-            status (NotebookStatus): [optional]
-            time (NotebookGlobalTime): [optional]
+        :param name: The name of the notebook.
+        :type name: str
+
+        :type author: NotebookAuthor, optional
+
+        :param cells: List of cells to display in the notebook.
+        :type cells: [NotebookCellResponse], optional
+
+        :param created: UTC time stamp for when the notebook was created.
+        :type created: datetime, optional
+
+        :type metadata: NotebookMetadata, optional
+
+        :param modified: UTC time stamp for when the notebook was last modified.
+        :type modified: datetime, optional
+
+        :type status: NotebookStatus, optional
+
+        :type time: NotebookGlobalTime, optional
         """
         super().__init__(kwargs)
 

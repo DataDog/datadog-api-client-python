@@ -40,10 +40,8 @@ class LogsMetricCreateRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """LogsMetricCreateRequest - a model defined in OpenAPI
 
-        Args:
-            data (LogsMetricCreateData):
 
-        Keyword Args:
+        :type data: LogsMetricCreateData
         """
         super().__init__(kwargs)
 

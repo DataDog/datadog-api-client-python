@@ -34,12 +34,8 @@ class FormulaAndFunctionMetricDataSource(ModelSimple):
         """FormulaAndFunctionMetricDataSource - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Data source for metrics queries. If omitted defaults to "metrics". Must be one of ["metrics"].
-
-        Keyword Args:
-            value (str): Data source for metrics queries. If omitted defaults to "metrics". Must be one of ["metrics"].
+        :param value: Data source for metrics queries. If omitted defaults to "metrics". Must be one of ["metrics"].
+        :type value: str
         """
         super().__init__(kwargs)
 

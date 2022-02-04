@@ -35,11 +35,12 @@ class AWSAccountAndLambdaRequest(ModelNormal):
     def __init__(self, account_id, lambda_arn, *args, **kwargs):
         """AWSAccountAndLambdaRequest - a model defined in OpenAPI
 
-        Args:
-            account_id (str): Your AWS Account ID without dashes.
-            lambda_arn (str): ARN of the Datadog Lambda created during the Datadog-Amazon Web services Log collection setup.
 
-        Keyword Args:
+        :param account_id: Your AWS Account ID without dashes.
+        :type account_id: str
+
+        :param lambda_arn: ARN of the Datadog Lambda created during the Datadog-Amazon Web services Log collection setup.
+        :type lambda_arn: str
         """
         super().__init__(kwargs)
 

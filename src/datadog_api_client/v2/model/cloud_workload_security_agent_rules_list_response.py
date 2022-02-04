@@ -40,8 +40,9 @@ class CloudWorkloadSecurityAgentRulesListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """CloudWorkloadSecurityAgentRulesListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([CloudWorkloadSecurityAgentRuleData]): [optional] A list of Agent rules objects.
+
+        :param data: A list of Agent rules objects.
+        :type data: [CloudWorkloadSecurityAgentRuleData], optional
         """
         super().__init__(kwargs)
 

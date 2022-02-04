@@ -36,12 +36,8 @@ class UsageMetricCategory(ModelSimple):
         """UsageMetricCategory - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Contains the metric category. Must be one of ["standard", "custom"].
-
-        Keyword Args:
-            value (str): Contains the metric category. Must be one of ["standard", "custom"].
+        :param value: Contains the metric category. Must be one of ["standard", "custom"].
+        :type value: str
         """
         super().__init__(kwargs)
 

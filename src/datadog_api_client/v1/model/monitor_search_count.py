@@ -29,12 +29,8 @@ class MonitorSearchCount(ModelSimple):
         """MonitorSearchCount - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] ([dict]): Search facets.
-
-        Keyword Args:
-            value ([dict]): Search facets.
+        :param value: Search facets.
+        :type value: [dict]
         """
         super().__init__(kwargs)
 

@@ -34,12 +34,8 @@ class NotebookCellResourceType(ModelSimple):
         """NotebookCellResourceType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the Notebook Cell resource. If omitted defaults to "notebook_cells". Must be one of ["notebook_cells"].
-
-        Keyword Args:
-            value (str): Type of the Notebook Cell resource. If omitted defaults to "notebook_cells". Must be one of ["notebook_cells"].
+        :param value: Type of the Notebook Cell resource. If omitted defaults to "notebook_cells". Must be one of ["notebook_cells"].
+        :type value: str
         """
         super().__init__(kwargs)
 

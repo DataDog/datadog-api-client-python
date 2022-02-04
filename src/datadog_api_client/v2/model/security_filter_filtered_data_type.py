@@ -34,12 +34,8 @@ class SecurityFilterFilteredDataType(ModelSimple):
         """SecurityFilterFilteredDataType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The filtered data type. If omitted defaults to "logs". Must be one of ["logs"].
-
-        Keyword Args:
-            value (str): The filtered data type. If omitted defaults to "logs". Must be one of ["logs"].
+        :param value: The filtered data type. If omitted defaults to "logs". Must be one of ["logs"].
+        :type value: str
         """
         super().__init__(kwargs)
 

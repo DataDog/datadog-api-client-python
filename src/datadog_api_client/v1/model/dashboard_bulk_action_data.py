@@ -42,11 +42,11 @@ class DashboardBulkActionData(ModelNormal):
     def __init__(self, id, type, *args, **kwargs):
         """DashboardBulkActionData - a model defined in OpenAPI
 
-        Args:
-            id (str): Dashboard resource ID.
-            type (DashboardResourceType):
 
-        Keyword Args:
+        :param id: Dashboard resource ID.
+        :type id: str
+
+        :type type: DashboardResourceType
         """
         super().__init__(kwargs)
 

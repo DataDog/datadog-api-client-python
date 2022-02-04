@@ -56,15 +56,20 @@ class LogsGroupBy(ModelNormal):
     def __init__(self, facet, *args, **kwargs):
         """LogsGroupBy - a model defined in OpenAPI
 
-        Args:
-            facet (str): The name of the facet to use (required)
 
-        Keyword Args:
-            histogram (LogsGroupByHistogram): [optional]
-            limit (int): [optional] The maximum buckets to return for this group by If omitted the server will use the default value of 10.
-            missing (LogsGroupByMissing): [optional]
-            sort (LogsAggregateSort): [optional]
-            total (LogsGroupByTotal): [optional]
+        :param facet: The name of the facet to use (required)
+        :type facet: str
+
+        :type histogram: LogsGroupByHistogram, optional
+
+        :param limit: The maximum buckets to return for this group by If omitted the server will use the default value of 10.
+        :type limit: int, optional
+
+        :type missing: LogsGroupByMissing, optional
+
+        :type sort: LogsAggregateSort, optional
+
+        :type total: LogsGroupByTotal, optional
         """
         super().__init__(kwargs)
 

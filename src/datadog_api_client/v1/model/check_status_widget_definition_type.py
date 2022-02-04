@@ -34,12 +34,8 @@ class CheckStatusWidgetDefinitionType(ModelSimple):
         """CheckStatusWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the check status widget. If omitted defaults to "check_status". Must be one of ["check_status"].
-
-        Keyword Args:
-            value (str): Type of the check status widget. If omitted defaults to "check_status". Must be one of ["check_status"].
+        :param value: Type of the check status widget. If omitted defaults to "check_status". Must be one of ["check_status"].
+        :type value: str
         """
         super().__init__(kwargs)
 

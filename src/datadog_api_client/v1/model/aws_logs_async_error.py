@@ -35,9 +35,12 @@ class AWSLogsAsyncError(ModelNormal):
     def __init__(self, *args, **kwargs):
         """AWSLogsAsyncError - a model defined in OpenAPI
 
-        Keyword Args:
-            code (str): [optional] Code properties
-            message (str): [optional] Message content.
+
+        :param code: Code properties
+        :type code: str, optional
+
+        :param message: Message content.
+        :type message: str, optional
         """
         super().__init__(kwargs)
 

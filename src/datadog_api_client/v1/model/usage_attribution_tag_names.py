@@ -31,10 +31,7 @@ class UsageAttributionTagNames(ModelNormal):
     read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
-        """UsageAttributionTagNames - a model defined in OpenAPI
-
-        Keyword Args:
-        """
+        """UsageAttributionTagNames - a model defined in OpenAPI"""
         super().__init__(kwargs)
 
         self._check_pos_args(args)

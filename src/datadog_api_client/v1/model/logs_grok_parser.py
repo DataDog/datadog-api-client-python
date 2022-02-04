@@ -56,15 +56,21 @@ class LogsGrokParser(ModelNormal):
     def __init__(self, grok, type, *args, **kwargs):
         """LogsGrokParser - a model defined in OpenAPI
 
-        Args:
-            grok (LogsGrokParserRules):
-            type (LogsGrokParserType):
 
-        Keyword Args:
-            source (str): Name of the log attribute to parse. Defaults to "message".
-            is_enabled (bool): [optional] Whether or not the processor is enabled. If omitted the server will use the default value of False.
-            name (str): [optional] Name of the processor.
-            samples ([str]): [optional] List of sample logs to test this grok parser.
+        :type grok: LogsGrokParserRules
+
+        :type type: LogsGrokParserType
+        :param source: Name of the log attribute to parse. Defaults to "message".
+        :type source: str
+
+        :param is_enabled: Whether or not the processor is enabled. If omitted the server will use the default value of False.
+        :type is_enabled: bool, optional
+
+        :param name: Name of the processor.
+        :type name: str, optional
+
+        :param samples: List of sample logs to test this grok parser.
+        :type samples: [str], optional
         """
         super().__init__(kwargs)
 

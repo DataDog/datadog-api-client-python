@@ -78,22 +78,42 @@ class ServiceLevelObjective(ModelNormal):
     def __init__(self, name, thresholds, type, *args, **kwargs):
         """ServiceLevelObjective - a model defined in OpenAPI
 
-        Args:
-            name (str): The name of the service level objective object.
-            thresholds ([SLOThreshold]): The thresholds (timeframes and associated targets) for this service level objective object.
-            type (SLOType):
 
-        Keyword Args:
-            created_at (int): [optional] Creation timestamp (UNIX time in seconds)  Always included in service level objective responses.
-            creator (Creator): [optional]
-            description (str, none_type): [optional] A user-defined description of the service level objective.  Always included in service level objective responses (but may be `null`). Optional in create/update requests.
-            groups ([str]): [optional] A list of (up to 20) monitor groups that narrow the scope of a monitor service level objective.  Included in service level objective responses if it is not empty. Optional in create/update requests for monitor service level objectives, but may only be used when then length of the `monitor_ids` field is one.
-            id (str): [optional] A unique identifier for the service level objective object.  Always included in service level objective responses.
-            modified_at (int): [optional] Modification timestamp (UNIX time in seconds)  Always included in service level objective responses.
-            monitor_ids ([int]): [optional] A list of monitor ids that defines the scope of a monitor service level objective. **Required if type is `monitor`**.
-            monitor_tags ([str]): [optional] The union of monitor tags for all monitors referenced by the `monitor_ids` field. Always included in service level objective responses for monitor service level objectives (but may be empty). Ignored in create/update requests. Does not affect which monitors are included in the service level objective (that is determined entirely by the `monitor_ids` field).
-            query (ServiceLevelObjectiveQuery): [optional]
-            tags ([str]): [optional] A list of tags associated with this service level objective. Always included in service level objective responses (but may be empty). Optional in create/update requests.
+        :param name: The name of the service level objective object.
+        :type name: str
+
+        :param thresholds: The thresholds (timeframes and associated targets) for this service level objective object.
+        :type thresholds: [SLOThreshold]
+
+        :type type: SLOType
+
+        :param created_at: Creation timestamp (UNIX time in seconds)  Always included in service level objective responses.
+        :type created_at: int, optional
+
+        :type creator: Creator, optional
+
+        :param description: A user-defined description of the service level objective.  Always included in service level objective responses (but may be `null`). Optional in create/update requests.
+        :type description: str, none_type, optional
+
+        :param groups: A list of (up to 20) monitor groups that narrow the scope of a monitor service level objective.  Included in service level objective responses if it is not empty. Optional in create/update requests for monitor service level objectives, but may only be used when then length of the `monitor_ids` field is one.
+        :type groups: [str], optional
+
+        :param id: A unique identifier for the service level objective object.  Always included in service level objective responses.
+        :type id: str, optional
+
+        :param modified_at: Modification timestamp (UNIX time in seconds)  Always included in service level objective responses.
+        :type modified_at: int, optional
+
+        :param monitor_ids: A list of monitor ids that defines the scope of a monitor service level objective. **Required if type is `monitor`**.
+        :type monitor_ids: [int], optional
+
+        :param monitor_tags: The union of monitor tags for all monitors referenced by the `monitor_ids` field. Always included in service level objective responses for monitor service level objectives (but may be empty). Ignored in create/update requests. Does not affect which monitors are included in the service level objective (that is determined entirely by the `monitor_ids` field).
+        :type monitor_tags: [str], optional
+
+        :type query: ServiceLevelObjectiveQuery, optional
+
+        :param tags: A list of tags associated with this service level objective. Always included in service level objective responses (but may be empty). Optional in create/update requests.
+        :type tags: [str], optional
         """
         super().__init__(kwargs)
 

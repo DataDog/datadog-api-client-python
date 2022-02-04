@@ -39,12 +39,8 @@ class MetricCustomTimeAggregation(ModelSimple):
         """MetricCustomTimeAggregation - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): A time aggregation for use in query. Must be one of ["avg", "count", "max", "min", "sum"].
-
-        Keyword Args:
-            value (str): A time aggregation for use in query. Must be one of ["avg", "count", "max", "min", "sum"].
+        :param value: A time aggregation for use in query. Must be one of ["avg", "count", "max", "min", "sum"].
+        :type value: str
         """
         super().__init__(kwargs)
 

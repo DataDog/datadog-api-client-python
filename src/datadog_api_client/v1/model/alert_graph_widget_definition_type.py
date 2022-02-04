@@ -34,12 +34,8 @@ class AlertGraphWidgetDefinitionType(ModelSimple):
         """AlertGraphWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the alert graph widget. If omitted defaults to "alert_graph". Must be one of ["alert_graph"].
-
-        Keyword Args:
-            value (str): Type of the alert graph widget. If omitted defaults to "alert_graph". Must be one of ["alert_graph"].
+        :param value: Type of the alert graph widget. If omitted defaults to "alert_graph". Must be one of ["alert_graph"].
+        :type value: str
         """
         super().__init__(kwargs)
 

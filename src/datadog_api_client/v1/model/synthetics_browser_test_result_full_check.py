@@ -40,10 +40,8 @@ class SyntheticsBrowserTestResultFullCheck(ModelNormal):
     def __init__(self, config, *args, **kwargs):
         """SyntheticsBrowserTestResultFullCheck - a model defined in OpenAPI
 
-        Args:
-            config (SyntheticsTestConfig):
 
-        Keyword Args:
+        :type config: SyntheticsTestConfig
         """
         super().__init__(kwargs)
 

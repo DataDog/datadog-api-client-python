@@ -44,11 +44,10 @@ class RoleClone(ModelNormal):
     def __init__(self, attributes, type, *args, **kwargs):
         """RoleClone - a model defined in OpenAPI
 
-        Args:
-            attributes (RoleCloneAttributes):
-            type (RolesType):
 
-        Keyword Args:
+        :type attributes: RoleCloneAttributes
+
+        :type type: RolesType
         """
         super().__init__(kwargs)
 

@@ -40,9 +40,12 @@ class ProcessSummariesMetaPage(ModelNormal):
     def __init__(self, *args, **kwargs):
         """ProcessSummariesMetaPage - a model defined in OpenAPI
 
-        Keyword Args:
-            after (str): [optional] The cursor used to get the next results, if any. To make the next request, use the same parameters with the addition of the `page[cursor]`.
-            size (int): [optional] Number of results returned.
+
+        :param after: The cursor used to get the next results, if any. To make the next request, use the same parameters with the addition of the `page[cursor]`.
+        :type after: str, optional
+
+        :param size: Number of results returned.
+        :type size: int, optional
         """
         super().__init__(kwargs)
 

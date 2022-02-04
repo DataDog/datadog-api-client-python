@@ -87,35 +87,90 @@ class MonthlyUsageAttributionValues(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MonthlyUsageAttributionValues - a model defined in OpenAPI
 
-        Keyword Args:
-            api_percentage (float): [optional] The percentage of synthetic API test usage by tag(s).
-            api_usage (float): [optional] The synthetic API test usage by tag(s).
-            apm_host_percentage (float): [optional] The percentage of APM host usage by tag(s).
-            apm_host_usage (float): [optional] The APM host usage by tag(s).
-            browser_percentage (float): [optional] The percentage of synthetic browser test usage by tag(s).
-            browser_usage (float): [optional] The synthetic browser test usage by tag(s).
-            container_percentage (float): [optional] The percentage of container usage by tag(s).
-            container_usage (float): [optional] The container usage by tag(s).
-            custom_timeseries_percentage (float): [optional] The percentage of custom metrics usage by tag(s).
-            custom_timeseries_usage (float): [optional] The custom metrics usage by tag(s).
-            fargate_percentage (float): [optional] The percentage of Fargate usage by tags.
-            fargate_usage (float): [optional] The Fargate usage by tags.
-            functions_percentage (float): [optional] The percentage of Lambda function usage by tag(s).
-            functions_usage (float): [optional] The Lambda function usage by tag(s).
-            indexed_logs_percentage (float): [optional] The percentage of indexed logs usage by tags.
-            indexed_logs_usage (float): [optional] The indexed logs usage by tags.
-            infra_host_percentage (float): [optional] The percentage of infrastructure host usage by tag(s).
-            infra_host_usage (float): [optional] The infrastructure host usage by tag(s).
-            invocations_percentage (float): [optional] The percentage of Lambda invocation usage by tag(s).
-            invocations_usage (float): [optional] The Lambda invocation usage by tag(s).
-            npm_host_percentage (float): [optional] The percentage of network host usage by tag(s).
-            npm_host_usage (float): [optional] The network host usage by tag(s).
-            profiled_container_percentage (float): [optional] The percentage of profiled container usage by tag(s).
-            profiled_container_usage (float): [optional] The profiled container usage by tag(s).
-            profiled_host_percentage (float): [optional] The percentage of profiled hosts usage by tag(s).
-            profiled_host_usage (float): [optional] The profiled hosts usage by tag(s).
-            snmp_percentage (float): [optional] The percentage of network device usage by tag(s).
-            snmp_usage (float): [optional] The network device usage by tag(s).
+
+        :param api_percentage: The percentage of synthetic API test usage by tag(s).
+        :type api_percentage: float, optional
+
+        :param api_usage: The synthetic API test usage by tag(s).
+        :type api_usage: float, optional
+
+        :param apm_host_percentage: The percentage of APM host usage by tag(s).
+        :type apm_host_percentage: float, optional
+
+        :param apm_host_usage: The APM host usage by tag(s).
+        :type apm_host_usage: float, optional
+
+        :param browser_percentage: The percentage of synthetic browser test usage by tag(s).
+        :type browser_percentage: float, optional
+
+        :param browser_usage: The synthetic browser test usage by tag(s).
+        :type browser_usage: float, optional
+
+        :param container_percentage: The percentage of container usage by tag(s).
+        :type container_percentage: float, optional
+
+        :param container_usage: The container usage by tag(s).
+        :type container_usage: float, optional
+
+        :param custom_timeseries_percentage: The percentage of custom metrics usage by tag(s).
+        :type custom_timeseries_percentage: float, optional
+
+        :param custom_timeseries_usage: The custom metrics usage by tag(s).
+        :type custom_timeseries_usage: float, optional
+
+        :param fargate_percentage: The percentage of Fargate usage by tags.
+        :type fargate_percentage: float, optional
+
+        :param fargate_usage: The Fargate usage by tags.
+        :type fargate_usage: float, optional
+
+        :param functions_percentage: The percentage of Lambda function usage by tag(s).
+        :type functions_percentage: float, optional
+
+        :param functions_usage: The Lambda function usage by tag(s).
+        :type functions_usage: float, optional
+
+        :param indexed_logs_percentage: The percentage of indexed logs usage by tags.
+        :type indexed_logs_percentage: float, optional
+
+        :param indexed_logs_usage: The indexed logs usage by tags.
+        :type indexed_logs_usage: float, optional
+
+        :param infra_host_percentage: The percentage of infrastructure host usage by tag(s).
+        :type infra_host_percentage: float, optional
+
+        :param infra_host_usage: The infrastructure host usage by tag(s).
+        :type infra_host_usage: float, optional
+
+        :param invocations_percentage: The percentage of Lambda invocation usage by tag(s).
+        :type invocations_percentage: float, optional
+
+        :param invocations_usage: The Lambda invocation usage by tag(s).
+        :type invocations_usage: float, optional
+
+        :param npm_host_percentage: The percentage of network host usage by tag(s).
+        :type npm_host_percentage: float, optional
+
+        :param npm_host_usage: The network host usage by tag(s).
+        :type npm_host_usage: float, optional
+
+        :param profiled_container_percentage: The percentage of profiled container usage by tag(s).
+        :type profiled_container_percentage: float, optional
+
+        :param profiled_container_usage: The profiled container usage by tag(s).
+        :type profiled_container_usage: float, optional
+
+        :param profiled_host_percentage: The percentage of profiled hosts usage by tag(s).
+        :type profiled_host_percentage: float, optional
+
+        :param profiled_host_usage: The profiled hosts usage by tag(s).
+        :type profiled_host_usage: float, optional
+
+        :param snmp_percentage: The percentage of network device usage by tag(s).
+        :type snmp_percentage: float, optional
+
+        :param snmp_usage: The network device usage by tag(s).
+        :type snmp_usage: float, optional
         """
         super().__init__(kwargs)
 

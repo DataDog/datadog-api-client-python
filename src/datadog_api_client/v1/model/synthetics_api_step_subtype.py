@@ -34,12 +34,8 @@ class SyntheticsAPIStepSubtype(ModelSimple):
         """SyntheticsAPIStepSubtype - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The subtype of the Synthetic multistep API test step, currently only supporting `http`. If omitted defaults to "http". Must be one of ["http"].
-
-        Keyword Args:
-            value (str): The subtype of the Synthetic multistep API test step, currently only supporting `http`. If omitted defaults to "http". Must be one of ["http"].
+        :param value: The subtype of the Synthetic multistep API test step, currently only supporting `http`. If omitted defaults to "http". Must be one of ["http"].
+        :type value: str
         """
         super().__init__(kwargs)
 

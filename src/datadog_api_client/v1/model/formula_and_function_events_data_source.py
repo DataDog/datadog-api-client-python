@@ -42,12 +42,8 @@ class FormulaAndFunctionEventsDataSource(ModelSimple):
         """FormulaAndFunctionEventsDataSource - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Data source for event platform-based queries. Must be one of ["logs", "spans", "network", "rum", "security_signals", "profiles", "audit", "events"].
-
-        Keyword Args:
-            value (str): Data source for event platform-based queries. Must be one of ["logs", "spans", "network", "rum", "security_signals", "profiles", "audit", "events"].
+        :param value: Data source for event platform-based queries. Must be one of ["logs", "spans", "network", "rum", "security_signals", "profiles", "audit", "events"].
+        :type value: str
         """
         super().__init__(kwargs)
 

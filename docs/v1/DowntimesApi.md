@@ -375,6 +375,7 @@ Get all active downtimes for the specified monitor.
 
 ### Example
 
+- OAuth Authentication (AuthZ):
 - Api Key Authentication (apiKeyAuth):
 - Api Key Authentication (appKeyAuth):
 
@@ -415,7 +416,7 @@ with ApiClient(configuration) as api_client:
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 

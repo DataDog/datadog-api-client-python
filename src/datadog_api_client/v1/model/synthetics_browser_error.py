@@ -46,13 +46,17 @@ class SyntheticsBrowserError(ModelNormal):
     def __init__(self, description, name, type, *args, **kwargs):
         """SyntheticsBrowserError - a model defined in OpenAPI
 
-        Args:
-            description (str): Description of the error.
-            name (str): Name of the error.
-            type (SyntheticsBrowserErrorType):
 
-        Keyword Args:
-            status (int): [optional] Status Code of the error.
+        :param description: Description of the error.
+        :type description: str
+
+        :param name: Name of the error.
+        :type name: str
+
+        :type type: SyntheticsBrowserErrorType
+
+        :param status: Status Code of the error.
+        :type status: int, optional
         """
         super().__init__(kwargs)
 

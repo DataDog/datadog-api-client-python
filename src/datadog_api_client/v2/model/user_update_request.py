@@ -40,10 +40,8 @@ class UserUpdateRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """UserUpdateRequest - a model defined in OpenAPI
 
-        Args:
-            data (UserUpdateData):
 
-        Keyword Args:
+        :type data: UserUpdateData
         """
         super().__init__(kwargs)
 

@@ -46,12 +46,13 @@ class Organization(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """Organization - a model defined in OpenAPI
 
-        Args:
-            type (OrganizationsType):
 
-        Keyword Args:
-            attributes (OrganizationAttributes): [optional]
-            id (str): [optional] ID of the organization.
+        :type type: OrganizationsType
+
+        :type attributes: OrganizationAttributes, optional
+
+        :param id: ID of the organization.
+        :type id: str, optional
         """
         super().__init__(kwargs)
 

@@ -35,9 +35,12 @@ class SyntheticsLocation(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsLocation - a model defined in OpenAPI
 
-        Keyword Args:
-            id (str): [optional] Unique identifier of the location.
-            name (str): [optional] Name of the location.
+
+        :param id: Unique identifier of the location.
+        :type id: str, optional
+
+        :param name: Name of the location.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

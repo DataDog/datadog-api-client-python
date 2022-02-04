@@ -48,12 +48,12 @@ class RoleCreateData(ModelNormal):
     def __init__(self, attributes, *args, **kwargs):
         """RoleCreateData - a model defined in OpenAPI
 
-        Args:
-            attributes (RoleCreateAttributes):
 
-        Keyword Args:
-            relationships (RoleRelationships): [optional]
-            type (RolesType): [optional]
+        :type attributes: RoleCreateAttributes
+
+        :type relationships: RoleRelationships, optional
+
+        :type type: RolesType, optional
         """
         super().__init__(kwargs)
 

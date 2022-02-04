@@ -56,12 +56,18 @@ class LogsAggregateRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsAggregateRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            compute ([LogsCompute]): [optional] The list of metrics or timeseries to compute for the retrieved buckets.
-            filter (LogsQueryFilter): [optional]
-            group_by ([LogsGroupBy]): [optional] The rules for the group by
-            options (LogsQueryOptions): [optional]
-            page (LogsAggregateRequestPage): [optional]
+
+        :param compute: The list of metrics or timeseries to compute for the retrieved buckets.
+        :type compute: [LogsCompute], optional
+
+        :type filter: LogsQueryFilter, optional
+
+        :param group_by: The rules for the group by
+        :type group_by: [LogsGroupBy], optional
+
+        :type options: LogsQueryOptions, optional
+
+        :type page: LogsAggregateRequestPage, optional
         """
         super().__init__(kwargs)
 

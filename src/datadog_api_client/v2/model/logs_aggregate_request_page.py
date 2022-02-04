@@ -33,8 +33,9 @@ class LogsAggregateRequestPage(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsAggregateRequestPage - a model defined in OpenAPI
 
-        Keyword Args:
-            cursor (str): [optional] The returned paging point to use to get the next results
+
+        :param cursor: The returned paging point to use to get the next results
+        :type cursor: str, optional
         """
         super().__init__(kwargs)
 

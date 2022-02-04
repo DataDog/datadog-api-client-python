@@ -34,12 +34,8 @@ class APIKeysType(ModelSimple):
         """APIKeysType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): API Keys resource type. If omitted defaults to "api_keys". Must be one of ["api_keys"].
-
-        Keyword Args:
-            value (str): API Keys resource type. If omitted defaults to "api_keys". Must be one of ["api_keys"].
+        :param value: API Keys resource type. If omitted defaults to "api_keys". Must be one of ["api_keys"].
+        :type value: str
         """
         super().__init__(kwargs)
 

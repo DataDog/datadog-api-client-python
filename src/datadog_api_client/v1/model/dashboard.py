@@ -102,25 +102,52 @@ class Dashboard(ModelNormal):
     def __init__(self, layout_type, title, widgets, *args, **kwargs):
         """Dashboard - a model defined in OpenAPI
 
-        Args:
-            layout_type (DashboardLayoutType):
-            title (str): Title of the dashboard.
-            widgets ([Widget]): List of widgets to display on the dashboard.
 
-        Keyword Args:
-            author_handle (str): [optional] Identifier of the dashboard author.
-            author_name (str, none_type): [optional] Name of the dashboard author.
-            created_at (datetime): [optional] Creation date of the dashboard.
-            description (str, none_type): [optional] Description of the dashboard.
-            id (str): [optional] ID of the dashboard.
-            is_read_only (bool): [optional] Whether this dashboard is read-only. If True, only the author and admins can make changes to it. Prefer using `restricted_roles` to manage write authorization. If omitted the server will use the default value of False.
-            modified_at (datetime): [optional] Modification date of the dashboard.
-            notify_list ([str], none_type): [optional] List of handles of users to notify when changes are made to this dashboard.
-            reflow_type (DashboardReflowType): [optional]
-            restricted_roles ([str]): [optional] A list of role identifiers. Only the author and users associated with at least one of these roles can edit this dashboard.
-            template_variable_presets ([DashboardTemplateVariablePreset], none_type): [optional] Array of template variables saved views.
-            template_variables ([DashboardTemplateVariable], none_type): [optional] List of template variables for this dashboard.
-            url (str): [optional] The URL of the dashboard.
+        :type layout_type: DashboardLayoutType
+
+        :param title: Title of the dashboard.
+        :type title: str
+
+        :param widgets: List of widgets to display on the dashboard.
+        :type widgets: [Widget]
+
+        :param author_handle: Identifier of the dashboard author.
+        :type author_handle: str, optional
+
+        :param author_name: Name of the dashboard author.
+        :type author_name: str, none_type, optional
+
+        :param created_at: Creation date of the dashboard.
+        :type created_at: datetime, optional
+
+        :param description: Description of the dashboard.
+        :type description: str, none_type, optional
+
+        :param id: ID of the dashboard.
+        :type id: str, optional
+
+        :param is_read_only: Whether this dashboard is read-only. If True, only the author and admins can make changes to it. Prefer using `restricted_roles` to manage write authorization. If omitted the server will use the default value of False.
+        :type is_read_only: bool, optional
+
+        :param modified_at: Modification date of the dashboard.
+        :type modified_at: datetime, optional
+
+        :param notify_list: List of handles of users to notify when changes are made to this dashboard.
+        :type notify_list: [str], none_type, optional
+
+        :type reflow_type: DashboardReflowType, optional
+
+        :param restricted_roles: A list of role identifiers. Only the author and users associated with at least one of these roles can edit this dashboard.
+        :type restricted_roles: [str], optional
+
+        :param template_variable_presets: Array of template variables saved views.
+        :type template_variable_presets: [DashboardTemplateVariablePreset], none_type, optional
+
+        :param template_variables: List of template variables for this dashboard.
+        :type template_variables: [DashboardTemplateVariable], none_type, optional
+
+        :param url: The URL of the dashboard.
+        :type url: str, optional
         """
         super().__init__(kwargs)
 

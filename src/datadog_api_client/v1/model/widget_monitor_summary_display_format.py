@@ -37,12 +37,8 @@ class WidgetMonitorSummaryDisplayFormat(ModelSimple):
         """WidgetMonitorSummaryDisplayFormat - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): What to display on the widget. Must be one of ["counts", "countsAndList", "list"].
-
-        Keyword Args:
-            value (str): What to display on the widget. Must be one of ["counts", "countsAndList", "list"].
+        :param value: What to display on the widget. Must be one of ["counts", "countsAndList", "list"].
+        :type value: str
         """
         super().__init__(kwargs)
 

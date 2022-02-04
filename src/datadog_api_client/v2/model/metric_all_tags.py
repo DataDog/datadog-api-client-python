@@ -46,10 +46,13 @@ class MetricAllTags(ModelNormal):
     def __init__(self, *args, **kwargs):
         """MetricAllTags - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (MetricAllTagsAttributes): [optional]
-            id (str): [optional] The metric name for this resource.
-            type (MetricType): [optional]
+
+        :type attributes: MetricAllTagsAttributes, optional
+
+        :param id: The metric name for this resource.
+        :type id: str, optional
+
+        :type type: MetricType, optional
         """
         super().__init__(kwargs)
 

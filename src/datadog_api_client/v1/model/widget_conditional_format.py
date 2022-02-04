@@ -58,18 +58,31 @@ class WidgetConditionalFormat(ModelNormal):
     def __init__(self, comparator, palette, value, *args, **kwargs):
         """WidgetConditionalFormat - a model defined in OpenAPI
 
-        Args:
-            comparator (WidgetComparator):
-            palette (WidgetPalette):
-            value (float): Value for the comparator.
 
-        Keyword Args:
-            custom_bg_color (str): [optional] Color palette to apply to the background, same values available as palette.
-            custom_fg_color (str): [optional] Color palette to apply to the foreground, same values available as palette.
-            hide_value (bool): [optional] True hides values.
-            image_url (str): [optional] Displays an image as the background.
-            metric (str): [optional] Metric from the request to correlate this conditional format with.
-            timeframe (str): [optional] Defines the displayed timeframe.
+        :type comparator: WidgetComparator
+
+        :type palette: WidgetPalette
+
+        :param value: Value for the comparator.
+        :type value: float
+
+        :param custom_bg_color: Color palette to apply to the background, same values available as palette.
+        :type custom_bg_color: str, optional
+
+        :param custom_fg_color: Color palette to apply to the foreground, same values available as palette.
+        :type custom_fg_color: str, optional
+
+        :param hide_value: True hides values.
+        :type hide_value: bool, optional
+
+        :param image_url: Displays an image as the background.
+        :type image_url: str, optional
+
+        :param metric: Metric from the request to correlate this conditional format with.
+        :type metric: str, optional
+
+        :param timeframe: Defines the displayed timeframe.
+        :type timeframe: str, optional
         """
         super().__init__(kwargs)
 

@@ -11,22 +11,19 @@ class OpenApiException(Exception):
 
 class ApiTypeError(OpenApiException, TypeError):
     def __init__(self, msg, path_to_item=None, valid_classes=None, key_type=None):
-        """Raises an exception for TypeErrors
+        """Raises an exception for TypeErrors.
 
-        Args:
-            msg (str): the exception message
-
-        Keyword Args:
-            path_to_item (list): a list of keys an indices to get to the
-                                 current_item
-                                 None if unset
-            valid_classes (tuple): the primitive classes that current item
-                                   should be an instance of
-                                   None if unset
-            key_type (bool): False if our value is a value in a dict
-                             True if it is a key in a dict
-                             False if our item is an item in a list
-                             None if unset
+        :param msg: The exception message.
+        :type msg: str
+        :param path_to_item: A list of keys an indices to get to the
+            current_item None if unset.
+        :type path_to_item: list
+        :param valid_classes: The primitive classes that current item should
+            be an instance of None if unset.
+        :type valid_classes: tuple
+        :param key_type: False if our value is a value in a dict True if
+            it is a key in a dict False if our item is an item in a list None if unset.
+        :type key_type: bool
         """
         self.path_to_item = path_to_item
         self.valid_classes = valid_classes
@@ -40,14 +37,13 @@ class ApiTypeError(OpenApiException, TypeError):
 class ApiValueError(OpenApiException, ValueError):
     def __init__(self, msg, path_to_item=None):
         """
-        Args:
-            msg (str): the exception message
+        :param msg: The exception message.
+        :type msg: str
 
-        Keyword Args:
-            path_to_item (list) the path to the exception in the
-                received_data dict. None if unset
+        :param path_to_item: The path to the exception in the received_data
+            dict. None if unset.
+        :type path_to_item: list
         """
-
         self.path_to_item = path_to_item
         full_msg = msg
         if path_to_item:
@@ -60,12 +56,12 @@ class ApiAttributeError(OpenApiException, AttributeError):
         """
         Raised when an attribute reference or assignment fails.
 
-        Args:
-            msg (str): the exception message
+        :param msg: The exception message.
+        :type msg: str
 
-        Keyword Args:
-            path_to_item (None/list) the path to the exception in the
-                received_data dict
+        :param path_to_item: The path to the exception in the received_data
+            dict. None if unset.
+        :type path_to_item: list
         """
         self.path_to_item = path_to_item
         full_msg = msg
@@ -77,12 +73,12 @@ class ApiAttributeError(OpenApiException, AttributeError):
 class ApiKeyError(OpenApiException, KeyError):
     def __init__(self, msg, path_to_item=None):
         """
-        Args:
-            msg (str): the exception message
+        :param msg: The exception message.
+        :type msg: str
 
-        Keyword Args:
-            path_to_item (None/list) the path to the exception in the
-                received_data dict
+        :param path_to_item: The path to the exception in the received_data
+            dict. None if unset.
+        :type path_to_item: list
         """
         self.path_to_item = path_to_item
         full_msg = msg

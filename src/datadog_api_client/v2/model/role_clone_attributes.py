@@ -33,10 +33,9 @@ class RoleCloneAttributes(ModelNormal):
     def __init__(self, name, *args, **kwargs):
         """RoleCloneAttributes - a model defined in OpenAPI
 
-        Args:
-            name (str): Name of the new role that is cloned.
 
-        Keyword Args:
+        :param name: Name of the new role that is cloned.
+        :type name: str
         """
         super().__init__(kwargs)
 

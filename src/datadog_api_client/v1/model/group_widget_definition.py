@@ -60,17 +60,27 @@ class GroupWidgetDefinition(ModelNormal):
     def __init__(self, layout_type, type, widgets, *args, **kwargs):
         """GroupWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            layout_type (WidgetLayoutType):
-            type (GroupWidgetDefinitionType):
-            widgets ([Widget]): List of widget groups.
 
-        Keyword Args:
-            background_color (str): [optional] Background color of the group title.
-            banner_img (str): [optional] URL of image to display as a banner for the group.
-            show_title (bool): [optional] Whether to show the title or not. If omitted the server will use the default value of True.
-            title (str): [optional] Title of the widget.
-            title_align (WidgetTextAlign): [optional]
+        :type layout_type: WidgetLayoutType
+
+        :type type: GroupWidgetDefinitionType
+
+        :param widgets: List of widget groups.
+        :type widgets: [Widget]
+
+        :param background_color: Background color of the group title.
+        :type background_color: str, optional
+
+        :param banner_img: URL of image to display as a banner for the group.
+        :type banner_img: str, optional
+
+        :param show_title: Whether to show the title or not. If omitted the server will use the default value of True.
+        :type show_title: bool, optional
+
+        :param title: Title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
         """
         super().__init__(kwargs)
 

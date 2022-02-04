@@ -49,11 +49,14 @@ class NotebookCellCreateRequestAttributes(ModelComposed):
     def __init__(self, *args, **kwargs):
         """NotebookCellCreateRequestAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            graph_size (NotebookGraphSize): [optional]
-            split_by (NotebookSplitBy): [optional]
-            time (NotebookCellTime): [optional]
-            definition (LogStreamWidgetDefinition): [optional]
+
+        :type graph_size: NotebookGraphSize, optional
+
+        :type split_by: NotebookSplitBy, optional
+
+        :type time: NotebookCellTime, optional
+
+        :type definition: LogStreamWidgetDefinition, optional
         """
         super().__init__(kwargs)
 

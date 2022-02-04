@@ -40,11 +40,18 @@ class UsageTimeseriesHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageTimeseriesHour - a model defined in OpenAPI
 
-        Keyword Args:
-            hour (datetime): [optional] The hour for the usage.
-            num_custom_input_timeseries (int): [optional] Contains the number of custom metrics that are inputs for aggregations (metric configured is custom).
-            num_custom_output_timeseries (int): [optional] Contains the number of custom metrics that are outputs for aggregations (metric configured is custom).
-            num_custom_timeseries (int): [optional] Contains sum of non-aggregation custom metrics and custom metrics that are outputs for aggregations.
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param num_custom_input_timeseries: Contains the number of custom metrics that are inputs for aggregations (metric configured is custom).
+        :type num_custom_input_timeseries: int, optional
+
+        :param num_custom_output_timeseries: Contains the number of custom metrics that are outputs for aggregations (metric configured is custom).
+        :type num_custom_output_timeseries: int, optional
+
+        :param num_custom_timeseries: Contains sum of non-aggregation custom metrics and custom metrics that are outputs for aggregations.
+        :type num_custom_timeseries: int, optional
         """
         super().__init__(kwargs)
 

@@ -52,14 +52,26 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOCorrectionUpdateRequestAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            category (SLOCorrectionCategory): [optional]
-            description (str): [optional] Description of the correction being made.
-            duration (int): [optional] Length of time (in seconds) for a specified `rrule` recurring SLO correction.
-            end (int): [optional] Ending time of the correction in epoch seconds.
-            rrule (str): [optional] The recurrence rules as defined in the iCalendar RFC 5545. The supported rules for SLO corrections are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.
-            start (int): [optional] Starting time of the correction in epoch seconds.
-            timezone (str): [optional] The timezone to display in the UI for the correction times (defaults to \"UTC\").
+
+        :type category: SLOCorrectionCategory, optional
+
+        :param description: Description of the correction being made.
+        :type description: str, optional
+
+        :param duration: Length of time (in seconds) for a specified `rrule` recurring SLO correction.
+        :type duration: int, optional
+
+        :param end: Ending time of the correction in epoch seconds.
+        :type end: int, optional
+
+        :param rrule: The recurrence rules as defined in the iCalendar RFC 5545. The supported rules for SLO corrections are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.
+        :type rrule: str, optional
+
+        :param start: Starting time of the correction in epoch seconds.
+        :type start: int, optional
+
+        :param timezone: The timezone to display in the UI for the correction times (defaults to \"UTC\").
+        :type timezone: str, optional
         """
         super().__init__(kwargs)
 

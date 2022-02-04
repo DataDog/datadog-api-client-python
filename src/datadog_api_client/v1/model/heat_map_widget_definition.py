@@ -77,20 +77,35 @@ class HeatMapWidgetDefinition(ModelNormal):
     def __init__(self, requests, type, *args, **kwargs):
         """HeatMapWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            requests ([HeatMapWidgetRequest]): List of widget types.
-            type (HeatMapWidgetDefinitionType):
 
-        Keyword Args:
-            custom_links ([WidgetCustomLink]): [optional] List of custom links.
-            events ([WidgetEvent]): [optional] List of widget events.
-            legend_size (str): [optional] Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".
-            show_legend (bool): [optional] Whether or not to display the legend on this widget.
-            time (WidgetTime): [optional]
-            title (str): [optional] Title of the widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
-            yaxis (WidgetAxis): [optional]
+        :param requests: List of widget types.
+        :type requests: [HeatMapWidgetRequest]
+
+        :type type: HeatMapWidgetDefinitionType
+
+        :param custom_links: List of custom links.
+        :type custom_links: [WidgetCustomLink], optional
+
+        :param events: List of widget events.
+        :type events: [WidgetEvent], optional
+
+        :param legend_size: Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".
+        :type legend_size: str, optional
+
+        :param show_legend: Whether or not to display the legend on this widget.
+        :type show_legend: bool, optional
+
+        :type time: WidgetTime, optional
+
+        :param title: Title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
+
+        :type yaxis: WidgetAxis, optional
         """
         super().__init__(kwargs)
 

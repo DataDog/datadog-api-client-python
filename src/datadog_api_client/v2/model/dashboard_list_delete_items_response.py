@@ -40,8 +40,9 @@ class DashboardListDeleteItemsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """DashboardListDeleteItemsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            deleted_dashboards_from_list ([DashboardListItemResponse]): [optional] List of dashboards deleted from the dashboard list.
+
+        :param deleted_dashboards_from_list: List of dashboards deleted from the dashboard list.
+        :type deleted_dashboards_from_list: [DashboardListItemResponse], optional
         """
         super().__init__(kwargs)
 

@@ -5599,6 +5599,7 @@ components:
             security_monitoring_rules_write: The ability to create and edit Detection
               Rules.
             security_monitoring_signals_read: The ability to view Security Signals.
+            usage_read: The ability to view your organization's usage and usage attribution.
             user_access_invite: The ability to invite other users to your organization.
             user_access_manage: The ability to disable users, manage user roles, and
               manage SAML-to-role mappings.
@@ -8731,11 +8732,6 @@ paths:
           $ref: '#/components/responses/NotAuthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ:
-        - security_monitoring_cws_agent_rules_read
       summary: Get all Cloud Workload Security Agent rules
       tags:
       - Cloud Workload Security
@@ -8767,11 +8763,6 @@ paths:
           $ref: '#/components/responses/ConflictResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ:
-        - security_monitoring_cws_agent_rules_write
       summary: Create a Cloud Workload Security Agent rule
       tags:
       - Cloud Workload Security
@@ -8807,11 +8798,6 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ:
-        - security_monitoring_cws_agent_rules_write
       summary: Delete a Cloud Workload Security Agent rule
       tags:
       - Cloud Workload Security
@@ -8836,11 +8822,6 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ:
-        - security_monitoring_cws_agent_rules_read
       summary: Get a Cloud Workload Security Agent rule
       tags:
       - Cloud Workload Security
@@ -8878,11 +8859,6 @@ paths:
           $ref: '#/components/responses/ConcurrentModificationResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ:
-        - security_monitoring_cws_agent_rules_write
       summary: Update a Cloud Workload Security Agent rule
       tags:
       - Cloud Workload Security

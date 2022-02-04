@@ -48,12 +48,12 @@ class IncidentTeamCreateData(ModelNormal):
     def __init__(self, type, *args, **kwargs):
         """IncidentTeamCreateData - a model defined in OpenAPI
 
-        Args:
-            type (IncidentTeamType):
 
-        Keyword Args:
-            attributes (IncidentTeamCreateAttributes): [optional]
-            relationships (IncidentTeamRelationships): [optional]
+        :type type: IncidentTeamType
+
+        :type attributes: IncidentTeamCreateAttributes, optional
+
+        :type relationships: IncidentTeamRelationships, optional
         """
         super().__init__(kwargs)
 

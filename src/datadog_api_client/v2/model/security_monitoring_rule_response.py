@@ -80,24 +80,55 @@ class SecurityMonitoringRuleResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityMonitoringRuleResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            cases ([SecurityMonitoringRuleCase]): [optional] Cases for generating signals.
-            created_at (int): [optional] When the rule was created, timestamp in milliseconds.
-            creation_author_id (int): [optional] User ID of the user who created the rule.
-            filters ([SecurityMonitoringFilter]): [optional] Additional queries to filter matched events before they are processed.
-            has_extended_title (bool): [optional] Whether the notifications include the triggering group-by values in their title.
-            id (str): [optional] The ID of the rule.
-            is_default (bool): [optional] Whether the rule is included by default.
-            is_deleted (bool): [optional] Whether the rule has been deleted.
-            is_enabled (bool): [optional] Whether the rule is enabled.
-            message (str): [optional] Message for generated signals.
-            name (str): [optional] The name of the rule.
-            options (SecurityMonitoringRuleOptions): [optional]
-            queries ([SecurityMonitoringRuleQuery]): [optional] Queries for selecting logs which are part of the rule.
-            tags ([str]): [optional] Tags for generated signals.
-            type (SecurityMonitoringRuleTypeRead): [optional]
-            update_author_id (int): [optional] User ID of the user who updated the rule.
-            version (int): [optional] The version of the rule.
+
+        :param cases: Cases for generating signals.
+        :type cases: [SecurityMonitoringRuleCase], optional
+
+        :param created_at: When the rule was created, timestamp in milliseconds.
+        :type created_at: int, optional
+
+        :param creation_author_id: User ID of the user who created the rule.
+        :type creation_author_id: int, optional
+
+        :param filters: Additional queries to filter matched events before they are processed.
+        :type filters: [SecurityMonitoringFilter], optional
+
+        :param has_extended_title: Whether the notifications include the triggering group-by values in their title.
+        :type has_extended_title: bool, optional
+
+        :param id: The ID of the rule.
+        :type id: str, optional
+
+        :param is_default: Whether the rule is included by default.
+        :type is_default: bool, optional
+
+        :param is_deleted: Whether the rule has been deleted.
+        :type is_deleted: bool, optional
+
+        :param is_enabled: Whether the rule is enabled.
+        :type is_enabled: bool, optional
+
+        :param message: Message for generated signals.
+        :type message: str, optional
+
+        :param name: The name of the rule.
+        :type name: str, optional
+
+        :type options: SecurityMonitoringRuleOptions, optional
+
+        :param queries: Queries for selecting logs which are part of the rule.
+        :type queries: [SecurityMonitoringRuleQuery], optional
+
+        :param tags: Tags for generated signals.
+        :type tags: [str], optional
+
+        :type type: SecurityMonitoringRuleTypeRead, optional
+
+        :param update_author_id: User ID of the user who updated the rule.
+        :type update_author_id: int, optional
+
+        :param version: The version of the rule.
+        :type version: int, optional
         """
         super().__init__(kwargs)
 

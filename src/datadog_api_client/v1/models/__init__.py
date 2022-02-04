@@ -284,6 +284,30 @@ from datadog_api_client.v1.model.metrics_query_response import MetricsQueryRespo
 from datadog_api_client.v1.model.metrics_query_unit import MetricsQueryUnit
 from datadog_api_client.v1.model.monitor import Monitor
 from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
+from datadog_api_client.v1.model.monitor_formula_and_function_event_aggregation import (
+    MonitorFormulaAndFunctionEventAggregation,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition import (
+    MonitorFormulaAndFunctionEventQueryDefinition,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition_compute import (
+    MonitorFormulaAndFunctionEventQueryDefinitionCompute,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition_search import (
+    MonitorFormulaAndFunctionEventQueryDefinitionSearch,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_event_query_group_by import (
+    MonitorFormulaAndFunctionEventQueryGroupBy,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_event_query_group_by_sort import (
+    MonitorFormulaAndFunctionEventQueryGroupBySort,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_events_data_source import (
+    MonitorFormulaAndFunctionEventsDataSource,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_query_definition import (
+    MonitorFormulaAndFunctionQueryDefinition,
+)
 from datadog_api_client.v1.model.monitor_group_search_response import MonitorGroupSearchResponse
 from datadog_api_client.v1.model.monitor_group_search_response_counts import MonitorGroupSearchResponseCounts
 from datadog_api_client.v1.model.monitor_group_search_result import MonitorGroupSearchResult
@@ -468,6 +492,8 @@ from datadog_api_client.v1.model.synthetics_api_test_result_full_check import Sy
 from datadog_api_client.v1.model.synthetics_api_test_result_short import SyntheticsAPITestResultShort
 from datadog_api_client.v1.model.synthetics_api_test_result_short_result import SyntheticsAPITestResultShortResult
 from datadog_api_client.v1.model.synthetics_api_test_type import SyntheticsAPITestType
+from datadog_api_client.v1.model.synthetics_api_test_failure_code import SyntheticsApiTestFailureCode
+from datadog_api_client.v1.model.synthetics_api_test_result_failure import SyntheticsApiTestResultFailure
 from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
 from datadog_api_client.v1.model.synthetics_assertion_json_path_operator import SyntheticsAssertionJSONPathOperator
 from datadog_api_client.v1.model.synthetics_assertion_json_path_target import SyntheticsAssertionJSONPathTarget
@@ -491,7 +517,9 @@ from datadog_api_client.v1.model.synthetics_browser_error import SyntheticsBrows
 from datadog_api_client.v1.model.synthetics_browser_error_type import SyntheticsBrowserErrorType
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
 from datadog_api_client.v1.model.synthetics_browser_test_config import SyntheticsBrowserTestConfig
+from datadog_api_client.v1.model.synthetics_browser_test_failure_code import SyntheticsBrowserTestFailureCode
 from datadog_api_client.v1.model.synthetics_browser_test_result_data import SyntheticsBrowserTestResultData
+from datadog_api_client.v1.model.synthetics_browser_test_result_failure import SyntheticsBrowserTestResultFailure
 from datadog_api_client.v1.model.synthetics_browser_test_result_full import SyntheticsBrowserTestResultFull
 from datadog_api_client.v1.model.synthetics_browser_test_result_full_check import SyntheticsBrowserTestResultFullCheck
 from datadog_api_client.v1.model.synthetics_browser_test_result_short import SyntheticsBrowserTestResultShort
@@ -517,7 +545,6 @@ from datadog_api_client.v1.model.synthetics_delete_tests_response import Synthet
 from datadog_api_client.v1.model.synthetics_deleted_test import SyntheticsDeletedTest
 from datadog_api_client.v1.model.synthetics_device import SyntheticsDevice
 from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
-from datadog_api_client.v1.model.synthetics_error_code import SyntheticsErrorCode
 from datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response import (
     SyntheticsGetAPITestLatestResultsResponse,
 )

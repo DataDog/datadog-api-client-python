@@ -64,17 +64,26 @@ class TableWidgetDefinition(ModelNormal):
     def __init__(self, requests, type, *args, **kwargs):
         """TableWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            requests ([TableWidgetRequest]): Widget definition.
-            type (TableWidgetDefinitionType):
 
-        Keyword Args:
-            custom_links ([WidgetCustomLink]): [optional] List of custom links.
-            has_search_bar (TableWidgetHasSearchBar): [optional]
-            time (WidgetTime): [optional]
-            title (str): [optional] Title of your widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
+        :param requests: Widget definition.
+        :type requests: [TableWidgetRequest]
+
+        :type type: TableWidgetDefinitionType
+
+        :param custom_links: List of custom links.
+        :type custom_links: [WidgetCustomLink], optional
+
+        :type has_search_bar: TableWidgetHasSearchBar, optional
+
+        :type time: WidgetTime, optional
+
+        :param title: Title of your widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

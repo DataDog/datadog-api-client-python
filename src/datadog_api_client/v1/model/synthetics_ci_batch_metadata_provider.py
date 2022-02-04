@@ -33,8 +33,9 @@ class SyntheticsCIBatchMetadataProvider(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsCIBatchMetadataProvider - a model defined in OpenAPI
 
-        Keyword Args:
-            name (str): [optional] Name of the CI provider.
+
+        :param name: Name of the CI provider.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 

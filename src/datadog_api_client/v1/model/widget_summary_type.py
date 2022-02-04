@@ -37,12 +37,8 @@ class WidgetSummaryType(ModelSimple):
         """WidgetSummaryType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Which summary type should be used. Must be one of ["monitors", "groups", "combined"].
-
-        Keyword Args:
-            value (str): Which summary type should be used. Must be one of ["monitors", "groups", "combined"].
+        :param value: Which summary type should be used. Must be one of ["monitors", "groups", "combined"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -34,12 +34,8 @@ class SyntheticsBasicAuthNTLMType(ModelSimple):
         """SyntheticsBasicAuthNTLMType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The type of authentication to use when performing the test. If omitted defaults to "ntlm". Must be one of ["ntlm"].
-
-        Keyword Args:
-            value (str): The type of authentication to use when performing the test. If omitted defaults to "ntlm". Must be one of ["ntlm"].
+        :param value: The type of authentication to use when performing the test. If omitted defaults to "ntlm". Must be one of ["ntlm"].
+        :type value: str
         """
         super().__init__(kwargs)
 

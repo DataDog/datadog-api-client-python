@@ -36,12 +36,8 @@ class FormulaAndFunctionResponseFormat(ModelSimple):
         """FormulaAndFunctionResponseFormat - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Timeseries or Scalar response. **This feature is currently in beta.** Must be one of ["timeseries", "scalar"].
-
-        Keyword Args:
-            value (str): Timeseries or Scalar response. **This feature is currently in beta.** Must be one of ["timeseries", "scalar"].
+        :param value: Timeseries or Scalar response. **This feature is currently in beta.** Must be one of ["timeseries", "scalar"].
+        :type value: str
         """
         super().__init__(kwargs)
 

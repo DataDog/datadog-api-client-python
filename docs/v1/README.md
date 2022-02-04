@@ -564,6 +564,14 @@ All URIs are relative to *https://api.datadoghq.com*
 - [MetricsQueryUnit](MetricsQueryUnit.md)
 - [Monitor](Monitor.md)
 - [MonitorDeviceID](MonitorDeviceID.md)
+- [MonitorFormulaAndFunctionEventAggregation](MonitorFormulaAndFunctionEventAggregation.md)
+- [MonitorFormulaAndFunctionEventQueryDefinition](MonitorFormulaAndFunctionEventQueryDefinition.md)
+- [MonitorFormulaAndFunctionEventQueryDefinitionCompute](MonitorFormulaAndFunctionEventQueryDefinitionCompute.md)
+- [MonitorFormulaAndFunctionEventQueryDefinitionSearch](MonitorFormulaAndFunctionEventQueryDefinitionSearch.md)
+- [MonitorFormulaAndFunctionEventQueryGroupBy](MonitorFormulaAndFunctionEventQueryGroupBy.md)
+- [MonitorFormulaAndFunctionEventQueryGroupBySort](MonitorFormulaAndFunctionEventQueryGroupBySort.md)
+- [MonitorFormulaAndFunctionEventsDataSource](MonitorFormulaAndFunctionEventsDataSource.md)
+- [MonitorFormulaAndFunctionQueryDefinition](MonitorFormulaAndFunctionQueryDefinition.md)
 - [MonitorGroupSearchResponse](MonitorGroupSearchResponse.md)
 - [MonitorGroupSearchResponseCounts](MonitorGroupSearchResponseCounts.md)
 - [MonitorGroupSearchResult](MonitorGroupSearchResult.md)
@@ -738,6 +746,8 @@ All URIs are relative to *https://api.datadoghq.com*
 - [SyntheticsAPITestResultShort](SyntheticsAPITestResultShort.md)
 - [SyntheticsAPITestResultShortResult](SyntheticsAPITestResultShortResult.md)
 - [SyntheticsAPITestType](SyntheticsAPITestType.md)
+- [SyntheticsApiTestFailureCode](SyntheticsApiTestFailureCode.md)
+- [SyntheticsApiTestResultFailure](SyntheticsApiTestResultFailure.md)
 - [SyntheticsAssertion](SyntheticsAssertion.md)
 - [SyntheticsAssertionJSONPathOperator](SyntheticsAssertionJSONPathOperator.md)
 - [SyntheticsAssertionJSONPathTarget](SyntheticsAssertionJSONPathTarget.md)
@@ -759,7 +769,9 @@ All URIs are relative to *https://api.datadoghq.com*
 - [SyntheticsBrowserErrorType](SyntheticsBrowserErrorType.md)
 - [SyntheticsBrowserTest](SyntheticsBrowserTest.md)
 - [SyntheticsBrowserTestConfig](SyntheticsBrowserTestConfig.md)
+- [SyntheticsBrowserTestFailureCode](SyntheticsBrowserTestFailureCode.md)
 - [SyntheticsBrowserTestResultData](SyntheticsBrowserTestResultData.md)
+- [SyntheticsBrowserTestResultFailure](SyntheticsBrowserTestResultFailure.md)
 - [SyntheticsBrowserTestResultFull](SyntheticsBrowserTestResultFull.md)
 - [SyntheticsBrowserTestResultFullCheck](SyntheticsBrowserTestResultFullCheck.md)
 - [SyntheticsBrowserTestResultShort](SyntheticsBrowserTestResultShort.md)
@@ -783,7 +795,6 @@ All URIs are relative to *https://api.datadoghq.com*
 - [SyntheticsDeletedTest](SyntheticsDeletedTest.md)
 - [SyntheticsDevice](SyntheticsDevice.md)
 - [SyntheticsDeviceID](SyntheticsDeviceID.md)
-- [SyntheticsErrorCode](SyntheticsErrorCode.md)
 - [SyntheticsGetAPITestLatestResultsResponse](SyntheticsGetAPITestLatestResultsResponse.md)
 - [SyntheticsGetBrowserTestLatestResultsResponse](SyntheticsGetBrowserTestLatestResultsResponse.md)
 - [SyntheticsGlobalVariable](SyntheticsGlobalVariable.md)
@@ -1020,6 +1031,7 @@ All URIs are relative to *https://api.datadoghq.com*
 - **synthetics_global_variable_read**: The ability to view, search and use in tests the list of global variables available for Synthetics.
 - **synthetics_global_variable_write**: The ability to create, edit, and delete global variables for Synthetics.
 - **synthetics_private_location_read**: The ability to view, search and use in tests the list of private locations available.
+- **synthetics_private_location_write**: The ability to create and delete private locations as well as seeing the associated installation guidelines.
 - **synthetics_read**: The ability to list and view configured Synthetic tests.
 - **synthetics_write**: The ability to create, edit, and delete Synthetic tests.
 - **timeseries_query**: The ability to query Timeseries data.

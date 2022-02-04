@@ -48,12 +48,8 @@ class SyntheticsCheckType(ModelSimple):
         """SyntheticsCheckType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of assertion to apply in an API test. Must be one of ["equals", "notEquals", "contains", "notContains", "startsWith", "notStartsWith", "greater", "lower", "greaterEquals", "lowerEquals", "matchRegex", "between", "isEmpty", "notIsEmpty"].
-
-        Keyword Args:
-            value (str): Type of assertion to apply in an API test. Must be one of ["equals", "notEquals", "contains", "notContains", "startsWith", "notStartsWith", "greater", "lower", "greaterEquals", "lowerEquals", "matchRegex", "between", "isEmpty", "notIsEmpty"].
+        :param value: Type of assertion to apply in an API test. Must be one of ["equals", "notEquals", "contains", "notContains", "startsWith", "notStartsWith", "greater", "lower", "greaterEquals", "lowerEquals", "matchRegex", "between", "isEmpty", "notIsEmpty"].
+        :type value: str
         """
         super().__init__(kwargs)
 

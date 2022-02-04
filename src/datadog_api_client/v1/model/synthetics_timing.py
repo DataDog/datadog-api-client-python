@@ -49,16 +49,33 @@ class SyntheticsTiming(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsTiming - a model defined in OpenAPI
 
-        Keyword Args:
-            dns (float): [optional] The duration in millisecond of the DNS lookup.
-            download (float): [optional] The time in millisecond to download the response.
-            first_byte (float): [optional] The time in millisecond to first byte.
-            handshake (float): [optional] The duration in millisecond of the TLS handshake.
-            redirect (float): [optional] The time in millisecond spent during redirections.
-            ssl (float): [optional] The duration in millisecond of the TLS handshake.
-            tcp (float): [optional] Time in millisecond to establish the TCP connection.
-            total (float): [optional] The overall time in millisecond the request took to be processed.
-            wait (float): [optional] Time spent in millisecond waiting for a response.
+
+        :param dns: The duration in millisecond of the DNS lookup.
+        :type dns: float, optional
+
+        :param download: The time in millisecond to download the response.
+        :type download: float, optional
+
+        :param first_byte: The time in millisecond to first byte.
+        :type first_byte: float, optional
+
+        :param handshake: The duration in millisecond of the TLS handshake.
+        :type handshake: float, optional
+
+        :param redirect: The time in millisecond spent during redirections.
+        :type redirect: float, optional
+
+        :param ssl: The duration in millisecond of the TLS handshake.
+        :type ssl: float, optional
+
+        :param tcp: Time in millisecond to establish the TCP connection.
+        :type tcp: float, optional
+
+        :param total: The overall time in millisecond the request took to be processed.
+        :type total: float, optional
+
+        :param wait: Time spent in millisecond waiting for a response.
+        :type wait: float, optional
         """
         super().__init__(kwargs)
 

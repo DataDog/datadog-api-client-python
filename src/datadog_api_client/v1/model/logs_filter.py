@@ -33,8 +33,9 @@ class LogsFilter(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsFilter - a model defined in OpenAPI
 
-        Keyword Args:
-            query (str): [optional] The filter query.
+
+        :param query: The filter query.
+        :type query: str, optional
         """
         super().__init__(kwargs)
 

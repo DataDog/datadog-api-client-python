@@ -94,26 +94,51 @@ class TableWidgetRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """TableWidgetRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            aggregator (WidgetAggregator): [optional]
-            alias (str): [optional] The column name (defaults to the metric name).
-            apm_query (LogQueryDefinition): [optional]
-            apm_stats_query (ApmStatsQueryDefinition): [optional]
-            cell_display_mode ([TableWidgetCellDisplayMode]): [optional] A list of display modes for each table cell.
-            conditional_formats ([WidgetConditionalFormat]): [optional] List of conditional formats.
-            event_query (LogQueryDefinition): [optional]
-            formulas ([WidgetFormula]): [optional] List of formulas that operate on queries. **This feature is currently in beta.**
-            limit (int): [optional] For metric queries, the number of lines to show in the table. Only one request should have this property.
-            log_query (LogQueryDefinition): [optional]
-            network_query (LogQueryDefinition): [optional]
-            order (WidgetSort): [optional]
-            process_query (ProcessQueryDefinition): [optional]
-            profile_metrics_query (LogQueryDefinition): [optional]
-            q (str): [optional] Query definition.
-            queries ([FormulaAndFunctionQueryDefinition]): [optional] List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**
-            response_format (FormulaAndFunctionResponseFormat): [optional]
-            rum_query (LogQueryDefinition): [optional]
-            security_query (LogQueryDefinition): [optional]
+
+        :type aggregator: WidgetAggregator, optional
+
+        :param alias: The column name (defaults to the metric name).
+        :type alias: str, optional
+
+        :type apm_query: LogQueryDefinition, optional
+
+        :type apm_stats_query: ApmStatsQueryDefinition, optional
+
+        :param cell_display_mode: A list of display modes for each table cell.
+        :type cell_display_mode: [TableWidgetCellDisplayMode], optional
+
+        :param conditional_formats: List of conditional formats.
+        :type conditional_formats: [WidgetConditionalFormat], optional
+
+        :type event_query: LogQueryDefinition, optional
+
+        :param formulas: List of formulas that operate on queries. **This feature is currently in beta.**
+        :type formulas: [WidgetFormula], optional
+
+        :param limit: For metric queries, the number of lines to show in the table. Only one request should have this property.
+        :type limit: int, optional
+
+        :type log_query: LogQueryDefinition, optional
+
+        :type network_query: LogQueryDefinition, optional
+
+        :type order: WidgetSort, optional
+
+        :type process_query: ProcessQueryDefinition, optional
+
+        :type profile_metrics_query: LogQueryDefinition, optional
+
+        :param q: Query definition.
+        :type q: str, optional
+
+        :param queries: List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**
+        :type queries: [FormulaAndFunctionQueryDefinition], optional
+
+        :type response_format: FormulaAndFunctionResponseFormat, optional
+
+        :type rum_query: LogQueryDefinition, optional
+
+        :type security_query: LogQueryDefinition, optional
         """
         super().__init__(kwargs)
 

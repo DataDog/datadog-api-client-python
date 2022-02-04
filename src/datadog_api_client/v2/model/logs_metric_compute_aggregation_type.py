@@ -36,12 +36,8 @@ class LogsMetricComputeAggregationType(ModelSimple):
         """LogsMetricComputeAggregationType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The type of aggregation to use. Must be one of ["count", "distribution"].
-
-        Keyword Args:
-            value (str): The type of aggregation to use. Must be one of ["count", "distribution"].
+        :param value: The type of aggregation to use. Must be one of ["count", "distribution"].
+        :type value: str
         """
         super().__init__(kwargs)
 

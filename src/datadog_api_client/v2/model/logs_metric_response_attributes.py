@@ -48,10 +48,13 @@ class LogsMetricResponseAttributes(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsMetricResponseAttributes - a model defined in OpenAPI
 
-        Keyword Args:
-            compute (LogsMetricResponseCompute): [optional]
-            filter (LogsMetricResponseFilter): [optional]
-            group_by ([LogsMetricResponseGroupBy]): [optional] The rules for the group by.
+
+        :type compute: LogsMetricResponseCompute, optional
+
+        :type filter: LogsMetricResponseFilter, optional
+
+        :param group_by: The rules for the group by.
+        :type group_by: [LogsMetricResponseGroupBy], optional
         """
         super().__init__(kwargs)
 

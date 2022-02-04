@@ -44,9 +44,11 @@ class APIKeyResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """APIKeyResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data (FullAPIKey): [optional]
-            included ([APIKeyResponseIncludedItem]): [optional] Array of objects related to the API key.
+
+        :type data: FullAPIKey, optional
+
+        :param included: Array of objects related to the API key.
+        :type included: [APIKeyResponseIncludedItem], optional
         """
         super().__init__(kwargs)
 

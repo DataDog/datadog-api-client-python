@@ -33,8 +33,9 @@ class SLOHistoryResponseError(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOHistoryResponseError - a model defined in OpenAPI
 
-        Keyword Args:
-            error (str): [optional] Human readable error.
+
+        :param error: Human readable error.
+        :type error: str, optional
         """
         super().__init__(kwargs)
 

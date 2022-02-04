@@ -33,10 +33,9 @@ class APIKeyCreateAttributes(ModelNormal):
     def __init__(self, name, *args, **kwargs):
         """APIKeyCreateAttributes - a model defined in OpenAPI
 
-        Args:
-            name (str): Name of the API key.
 
-        Keyword Args:
+        :param name: Name of the API key.
+        :type name: str
         """
         super().__init__(kwargs)
 

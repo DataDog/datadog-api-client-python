@@ -34,12 +34,8 @@ class IncidentTimelineCellMarkdownContentType(ModelSimple):
         """IncidentTimelineCellMarkdownContentType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the Markdown timeline cell. If omitted defaults to "markdown". Must be one of ["markdown"].
-
-        Keyword Args:
-            value (str): Type of the Markdown timeline cell. If omitted defaults to "markdown". Must be one of ["markdown"].
+        :param value: Type of the Markdown timeline cell. If omitted defaults to "markdown". Must be one of ["markdown"].
+        :type value: str
         """
         super().__init__(kwargs)
 

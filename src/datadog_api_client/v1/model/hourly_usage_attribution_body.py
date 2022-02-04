@@ -57,15 +57,28 @@ class HourlyUsageAttributionBody(ModelNormal):
     def __init__(self, *args, **kwargs):
         """HourlyUsageAttributionBody - a model defined in OpenAPI
 
-        Keyword Args:
-            hour (datetime): [optional] The hour for the usage.
-            org_name (str): [optional] The name of the organization.
-            public_id (str): [optional] The organization public ID.
-            tag_config_source (str): [optional] The source of the usage attribution tag configuration and the selected tags in the format of `<source_org_name>:::<selected tag 1>///<selected tag 2>///<selected tag 3>`.
-            tags (UsageAttributionTagNames): [optional]
-            total_usage_sum (float): [optional] Total product usage for the given tags within the hour.
-            updated_at (str): [optional] Shows the most recent hour in the current month for all organizations where usages are calculated.
-            usage_type (HourlyUsageAttributionUsageType): [optional]
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param org_name: The name of the organization.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
+
+        :param tag_config_source: The source of the usage attribution tag configuration and the selected tags in the format of `<source_org_name>:::<selected tag 1>///<selected tag 2>///<selected tag 3>`.
+        :type tag_config_source: str, optional
+
+        :type tags: UsageAttributionTagNames, optional
+
+        :param total_usage_sum: Total product usage for the given tags within the hour.
+        :type total_usage_sum: float, optional
+
+        :param updated_at: Shows the most recent hour in the current month for all organizations where usages are calculated.
+        :type updated_at: str, optional
+
+        :type usage_type: HourlyUsageAttributionUsageType, optional
         """
         super().__init__(kwargs)
 

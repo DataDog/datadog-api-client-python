@@ -44,9 +44,10 @@ class RoleRelationships(ModelNormal):
     def __init__(self, *args, **kwargs):
         """RoleRelationships - a model defined in OpenAPI
 
-        Keyword Args:
-            permissions (RelationshipToPermissions): [optional]
-            users (RelationshipToUsers): [optional]
+
+        :type permissions: RelationshipToPermissions, optional
+
+        :type users: RelationshipToUsers, optional
         """
         super().__init__(kwargs)
 

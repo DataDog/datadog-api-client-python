@@ -37,12 +37,8 @@ class WidgetLineWidth(ModelSimple):
         """WidgetLineWidth - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Width of line displayed. Must be one of ["normal", "thick", "thin"].
-
-        Keyword Args:
-            value (str): Width of line displayed. Must be one of ["normal", "thick", "thin"].
+        :param value: Width of line displayed. Must be one of ["normal", "thick", "thin"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -62,17 +62,26 @@ class SyntheticsAPIStep(ModelNormal):
     def __init__(self, name, request, subtype, *args, **kwargs):
         """SyntheticsAPIStep - a model defined in OpenAPI
 
-        Args:
-            name (str): The name of the step.
-            request (SyntheticsTestRequest):
-            subtype (SyntheticsAPIStepSubtype):
 
-        Keyword Args:
-            assertions ([SyntheticsAssertion]): Array of assertions used for the test. Defaults to [].
-            allow_failure (bool): [optional] Determines whether or not to continue with test if this step fails.
-            extracted_values ([SyntheticsParsingOptions]): [optional] Array of values to parse and save as variables from the response.
-            is_critical (bool): [optional] Determines whether or not to consider the entire test as failed if this step fails. Can be used only if `allowFailure` is `true`.
-            retry (SyntheticsTestOptionsRetry): [optional]
+        :param name: The name of the step.
+        :type name: str
+
+        :type request: SyntheticsTestRequest
+
+        :type subtype: SyntheticsAPIStepSubtype
+        :param assertions: Array of assertions used for the test. Defaults to [].
+        :type assertions: [SyntheticsAssertion]
+
+        :param allow_failure: Determines whether or not to continue with test if this step fails.
+        :type allow_failure: bool, optional
+
+        :param extracted_values: Array of values to parse and save as variables from the response.
+        :type extracted_values: [SyntheticsParsingOptions], optional
+
+        :param is_critical: Determines whether or not to consider the entire test as failed if this step fails. Can be used only if `allowFailure` is `true`.
+        :type is_critical: bool, optional
+
+        :type retry: SyntheticsTestOptionsRetry, optional
         """
         super().__init__(kwargs)
 

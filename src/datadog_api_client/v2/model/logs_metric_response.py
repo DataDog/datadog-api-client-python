@@ -40,8 +40,8 @@ class LogsMetricResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsMetricResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data (LogsMetricResponseData): [optional]
+
+        :type data: LogsMetricResponseData, optional
         """
         super().__init__(kwargs)
 

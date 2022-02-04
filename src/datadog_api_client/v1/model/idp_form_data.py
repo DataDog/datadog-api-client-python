@@ -34,10 +34,9 @@ class IdpFormData(ModelNormal):
     def __init__(self, idp_file, *args, **kwargs):
         """IdpFormData - a model defined in OpenAPI
 
-        Args:
-            idp_file (file_type): The path to the XML metadata file you wish to upload.
 
-        Keyword Args:
+        :param idp_file: The path to the XML metadata file you wish to upload.
+        :type idp_file: file_type
         """
         super().__init__(kwargs)
 

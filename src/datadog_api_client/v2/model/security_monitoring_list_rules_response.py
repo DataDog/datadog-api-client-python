@@ -44,9 +44,11 @@ class SecurityMonitoringListRulesResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SecurityMonitoringListRulesResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([SecurityMonitoringRuleResponse]): [optional] Array containing the list of rules.
-            meta (ResponseMetaAttributes): [optional]
+
+        :param data: Array containing the list of rules.
+        :type data: [SecurityMonitoringRuleResponse], optional
+
+        :type meta: ResponseMetaAttributes, optional
         """
         super().__init__(kwargs)
 

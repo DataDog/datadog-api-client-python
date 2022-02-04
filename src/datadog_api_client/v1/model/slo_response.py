@@ -42,9 +42,11 @@ class SLOResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data (SLOResponseData): [optional]
-            errors ([str]): [optional] An array of error messages. Each endpoint documents how/whether this field is used.
+
+        :type data: SLOResponseData, optional
+
+        :param errors: An array of error messages. Each endpoint documents how/whether this field is used.
+        :type errors: [str], optional
         """
         super().__init__(kwargs)
 

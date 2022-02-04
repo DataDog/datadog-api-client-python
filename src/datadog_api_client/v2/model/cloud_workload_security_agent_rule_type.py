@@ -34,12 +34,8 @@ class CloudWorkloadSecurityAgentRuleType(ModelSimple):
         """CloudWorkloadSecurityAgentRuleType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): The type of the resource. The value should always be `agent_rule`. If omitted defaults to "agent_rule". Must be one of ["agent_rule"].
-
-        Keyword Args:
-            value (str): The type of the resource. The value should always be `agent_rule`. If omitted defaults to "agent_rule". Must be one of ["agent_rule"].
+        :param value: The type of the resource. The value should always be `agent_rule`. If omitted defaults to "agent_rule". Must be one of ["agent_rule"].
+        :type value: str
         """
         super().__init__(kwargs)
 

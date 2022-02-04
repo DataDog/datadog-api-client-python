@@ -34,12 +34,8 @@ class IncidentTeamType(ModelSimple):
         """IncidentTeamType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Incident Team resource type. If omitted defaults to "teams". Must be one of ["teams"].
-
-        Keyword Args:
-            value (str): Incident Team resource type. If omitted defaults to "teams". Must be one of ["teams"].
+        :param value: Incident Team resource type. If omitted defaults to "teams". Must be one of ["teams"].
+        :type value: str
         """
         super().__init__(kwargs)
 

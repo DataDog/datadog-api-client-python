@@ -39,12 +39,8 @@ class ApplicationKeysSort(ModelSimple):
         """ApplicationKeysSort - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Sorting options If omitted defaults to "name". Must be one of ["created_at", "-created_at", "last4", "-last4", "name", "-name"].
-
-        Keyword Args:
-            value (str): Sorting options If omitted defaults to "name". Must be one of ["created_at", "-created_at", "last4", "-last4", "name", "-name"].
+        :param value: Sorting options If omitted defaults to "name". Must be one of ["created_at", "-created_at", "last4", "-last4", "name", "-name"].
+        :type value: str
         """
         super().__init__(kwargs)
 

@@ -40,8 +40,9 @@ class UsageHostsResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageHostsResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            usage ([UsageHostHour]): [optional] An array of objects related to host usage.
+
+        :param usage: An array of objects related to host usage.
+        :type usage: [UsageHostHour], optional
         """
         super().__init__(kwargs)
 

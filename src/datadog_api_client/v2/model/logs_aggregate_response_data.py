@@ -40,8 +40,9 @@ class LogsAggregateResponseData(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsAggregateResponseData - a model defined in OpenAPI
 
-        Keyword Args:
-            buckets ([LogsAggregateBucket]): [optional] The list of matching buckets, one item per bucket
+
+        :param buckets: The list of matching buckets, one item per bucket
+        :type buckets: [LogsAggregateBucket], optional
         """
         super().__init__(kwargs)
 

@@ -41,12 +41,15 @@ class RoleCreateAttributes(ModelNormal):
     def __init__(self, name, *args, **kwargs):
         """RoleCreateAttributes - a model defined in OpenAPI
 
-        Args:
-            name (str): Name of the role.
 
-        Keyword Args:
-            created_at (datetime): [optional] Creation time of the role.
-            modified_at (datetime): [optional] Time of last role modification.
+        :param name: Name of the role.
+        :type name: str
+
+        :param created_at: Creation time of the role.
+        :type created_at: datetime, optional
+
+        :param modified_at: Time of last role modification.
+        :type modified_at: datetime, optional
         """
         super().__init__(kwargs)
 

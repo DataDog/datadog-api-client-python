@@ -59,14 +59,18 @@ class NotebookCreateDataAttributes(ModelNormal):
     def __init__(self, cells, name, time, *args, **kwargs):
         """NotebookCreateDataAttributes - a model defined in OpenAPI
 
-        Args:
-            cells ([NotebookCellCreateRequest]): List of cells to display in the notebook.
-            name (str): The name of the notebook.
-            time (NotebookGlobalTime):
 
-        Keyword Args:
-            metadata (NotebookMetadata): [optional]
-            status (NotebookStatus): [optional]
+        :param cells: List of cells to display in the notebook.
+        :type cells: [NotebookCellCreateRequest]
+
+        :param name: The name of the notebook.
+        :type name: str
+
+        :type time: NotebookGlobalTime
+
+        :type metadata: NotebookMetadata, optional
+
+        :type status: NotebookStatus, optional
         """
         super().__init__(kwargs)
 

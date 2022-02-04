@@ -34,12 +34,8 @@ class OrganizationsType(ModelSimple):
         """OrganizationsType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Organizations resource type. If omitted defaults to "orgs". Must be one of ["orgs"].
-
-        Keyword Args:
-            value (str): Organizations resource type. If omitted defaults to "orgs". Must be one of ["orgs"].
+        :param value: Organizations resource type. If omitted defaults to "orgs". Must be one of ["orgs"].
+        :type value: str
         """
         super().__init__(kwargs)
 

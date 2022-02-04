@@ -78,25 +78,49 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
     def __init__(self, env, service, span_name, type, *args, **kwargs):
         """ServiceSummaryWidgetDefinition - a model defined in OpenAPI
 
-        Args:
-            env (str): APM environment.
-            service (str): APM service.
-            span_name (str): APM span name.
-            type (ServiceSummaryWidgetDefinitionType):
 
-        Keyword Args:
-            display_format (WidgetServiceSummaryDisplayFormat): [optional]
-            show_breakdown (bool): [optional] Whether to show the latency breakdown or not.
-            show_distribution (bool): [optional] Whether to show the latency distribution or not.
-            show_errors (bool): [optional] Whether to show the error metrics or not.
-            show_hits (bool): [optional] Whether to show the hits metrics or not.
-            show_latency (bool): [optional] Whether to show the latency metrics or not.
-            show_resource_list (bool): [optional] Whether to show the resource list or not.
-            size_format (WidgetSizeFormat): [optional]
-            time (WidgetTime): [optional]
-            title (str): [optional] Title of the widget.
-            title_align (WidgetTextAlign): [optional]
-            title_size (str): [optional] Size of the title.
+        :param env: APM environment.
+        :type env: str
+
+        :param service: APM service.
+        :type service: str
+
+        :param span_name: APM span name.
+        :type span_name: str
+
+        :type type: ServiceSummaryWidgetDefinitionType
+
+        :type display_format: WidgetServiceSummaryDisplayFormat, optional
+
+        :param show_breakdown: Whether to show the latency breakdown or not.
+        :type show_breakdown: bool, optional
+
+        :param show_distribution: Whether to show the latency distribution or not.
+        :type show_distribution: bool, optional
+
+        :param show_errors: Whether to show the error metrics or not.
+        :type show_errors: bool, optional
+
+        :param show_hits: Whether to show the hits metrics or not.
+        :type show_hits: bool, optional
+
+        :param show_latency: Whether to show the latency metrics or not.
+        :type show_latency: bool, optional
+
+        :param show_resource_list: Whether to show the resource list or not.
+        :type show_resource_list: bool, optional
+
+        :type size_format: WidgetSizeFormat, optional
+
+        :type time: WidgetTime, optional
+
+        :param title: Title of the widget.
+        :type title: str, optional
+
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
         """
         super().__init__(kwargs)
 

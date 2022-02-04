@@ -40,8 +40,8 @@ class SyntheticsBatchDetails(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsBatchDetails - a model defined in OpenAPI
 
-        Keyword Args:
-            data (SyntheticsBatchDetailsData): [optional]
+
+        :type data: SyntheticsBatchDetailsData, optional
         """
         super().__init__(kwargs)
 

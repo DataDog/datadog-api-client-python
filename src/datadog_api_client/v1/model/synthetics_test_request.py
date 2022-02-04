@@ -95,27 +95,61 @@ class SyntheticsTestRequest(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsTestRequest - a model defined in OpenAPI
 
-        Keyword Args:
-            allow_insecure (bool): [optional] Allows loading insecure content for an HTTP request in a multistep test step.
-            basic_auth (SyntheticsBasicAuth): [optional]
-            body (str): [optional] Body to include in the test.
-            certificate (SyntheticsTestRequestCertificate): [optional]
-            dns_server (str): [optional] DNS server to use for DNS tests.
-            dns_server_port (int): [optional] DNS server port to use for DNS tests.
-            follow_redirects (bool): [optional] Specifies whether or not the request follows redirects.
-            headers (SyntheticsTestHeaders): [optional]
-            host (str): [optional] Host name to perform the test with.
-            message (str): [optional] Message to send for UDP or WebSocket tests.
-            method (HTTPMethod): [optional]
-            no_saving_response_body (bool): [optional] Determines whether or not to save the response body.
-            number_of_packets (int): [optional] Number of pings to use per test.
-            port (int): [optional] Port to use when performing the test.
-            proxy (SyntheticsTestRequestProxy): [optional]
-            query (dict): [optional] Query to use for the test.
-            servername (str): [optional] For SSL tests, it specifies on which server you want to initiate the TLS handshake, allowing the server to present one of multiple possible certificates on the same IP address and TCP port number.
-            should_track_hops (bool): [optional] Turns on a traceroute probe to discover all gateways along the path to the host destination.
-            timeout (float): [optional] Timeout in seconds for the test.
-            url (str): [optional] URL to perform the test with.
+
+        :param allow_insecure: Allows loading insecure content for an HTTP request in a multistep test step.
+        :type allow_insecure: bool, optional
+
+        :type basic_auth: SyntheticsBasicAuth, optional
+
+        :param body: Body to include in the test.
+        :type body: str, optional
+
+        :type certificate: SyntheticsTestRequestCertificate, optional
+
+        :param dns_server: DNS server to use for DNS tests.
+        :type dns_server: str, optional
+
+        :param dns_server_port: DNS server port to use for DNS tests.
+        :type dns_server_port: int, optional
+
+        :param follow_redirects: Specifies whether or not the request follows redirects.
+        :type follow_redirects: bool, optional
+
+        :type headers: SyntheticsTestHeaders, optional
+
+        :param host: Host name to perform the test with.
+        :type host: str, optional
+
+        :param message: Message to send for UDP or WebSocket tests.
+        :type message: str, optional
+
+        :type method: HTTPMethod, optional
+
+        :param no_saving_response_body: Determines whether or not to save the response body.
+        :type no_saving_response_body: bool, optional
+
+        :param number_of_packets: Number of pings to use per test.
+        :type number_of_packets: int, optional
+
+        :param port: Port to use when performing the test.
+        :type port: int, optional
+
+        :type proxy: SyntheticsTestRequestProxy, optional
+
+        :param query: Query to use for the test.
+        :type query: dict, optional
+
+        :param servername: For SSL tests, it specifies on which server you want to initiate the TLS handshake, allowing the server to present one of multiple possible certificates on the same IP address and TCP port number.
+        :type servername: str, optional
+
+        :param should_track_hops: Turns on a traceroute probe to discover all gateways along the path to the host destination.
+        :type should_track_hops: bool, optional
+
+        :param timeout: Timeout in seconds for the test.
+        :type timeout: float, optional
+
+        :param url: URL to perform the test with.
+        :type url: str, optional
         """
         super().__init__(kwargs)
 

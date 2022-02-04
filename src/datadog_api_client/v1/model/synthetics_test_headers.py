@@ -31,10 +31,7 @@ class SyntheticsTestHeaders(ModelNormal):
     read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
-        """SyntheticsTestHeaders - a model defined in OpenAPI
-
-        Keyword Args:
-        """
+        """SyntheticsTestHeaders - a model defined in OpenAPI"""
         super().__init__(kwargs)
 
         self._check_pos_args(args)

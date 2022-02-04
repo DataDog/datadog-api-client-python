@@ -33,10 +33,9 @@ class PagerDutyServiceKey(ModelNormal):
     def __init__(self, service_key, *args, **kwargs):
         """PagerDutyServiceKey - a model defined in OpenAPI
 
-        Args:
-            service_key (str): Your service key in PagerDuty.
 
-        Keyword Args:
+        :param service_key: Your service key in PagerDuty.
+        :type service_key: str
         """
         super().__init__(kwargs)
 

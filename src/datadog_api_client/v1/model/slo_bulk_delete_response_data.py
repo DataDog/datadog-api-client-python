@@ -35,9 +35,12 @@ class SLOBulkDeleteResponseData(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SLOBulkDeleteResponseData - a model defined in OpenAPI
 
-        Keyword Args:
-            deleted ([str]): [optional] An array of service level objective object IDs that indicates which objects that were completely deleted.
-            updated ([str]): [optional] An array of service level objective object IDs that indicates which objects that were modified (objects for which at least one threshold was deleted, but that were not completely deleted).
+
+        :param deleted: An array of service level objective object IDs that indicates which objects that were completely deleted.
+        :type deleted: [str], optional
+
+        :param updated: An array of service level objective object IDs that indicates which objects that were modified (objects for which at least one threshold was deleted, but that were not completely deleted).
+        :type updated: [str], optional
         """
         super().__init__(kwargs)
 

@@ -46,10 +46,13 @@ class LogsMetricResponseData(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsMetricResponseData - a model defined in OpenAPI
 
-        Keyword Args:
-            attributes (LogsMetricResponseAttributes): [optional]
-            id (str): [optional] The name of the log-based metric.
-            type (LogsMetricType): [optional]
+
+        :type attributes: LogsMetricResponseAttributes, optional
+
+        :param id: The name of the log-based metric.
+        :type id: str, optional
+
+        :type type: LogsMetricType, optional
         """
         super().__init__(kwargs)
 

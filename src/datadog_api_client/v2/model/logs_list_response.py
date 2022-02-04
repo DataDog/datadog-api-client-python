@@ -48,10 +48,13 @@ class LogsListResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsListResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([Log]): [optional] Array of logs matching the request.
-            links (LogsListResponseLinks): [optional]
-            meta (LogsResponseMetadata): [optional]
+
+        :param data: Array of logs matching the request.
+        :type data: [Log], optional
+
+        :type links: LogsListResponseLinks, optional
+
+        :type meta: LogsResponseMetadata, optional
         """
         super().__init__(kwargs)
 

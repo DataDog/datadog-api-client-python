@@ -34,12 +34,8 @@ class TableWidgetDefinitionType(ModelSimple):
         """TableWidgetDefinitionType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Type of the table widget. If omitted defaults to "query_table". Must be one of ["query_table"].
-
-        Keyword Args:
-            value (str): Type of the table widget. If omitted defaults to "query_table". Must be one of ["query_table"].
+        :param value: Type of the table widget. If omitted defaults to "query_table". Must be one of ["query_table"].
+        :type value: str
         """
         super().__init__(kwargs)
 

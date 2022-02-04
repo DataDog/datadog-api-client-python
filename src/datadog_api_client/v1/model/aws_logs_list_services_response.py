@@ -35,9 +35,12 @@ class AWSLogsListServicesResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """AWSLogsListServicesResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            id (str): [optional] Key value in returned object.
-            label (str): [optional] Name of service available for configuration with Datadog logs.
+
+        :param id: Key value in returned object.
+        :type id: str, optional
+
+        :param label: Name of service available for configuration with Datadog logs.
+        :type label: str, optional
         """
         super().__init__(kwargs)
 

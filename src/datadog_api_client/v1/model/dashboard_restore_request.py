@@ -40,10 +40,8 @@ class DashboardRestoreRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """DashboardRestoreRequest - a model defined in OpenAPI
 
-        Args:
-            data (DashboardBulkActionDataList):
 
-        Keyword Args:
+        :type data: DashboardBulkActionDataList
         """
         super().__init__(kwargs)
 

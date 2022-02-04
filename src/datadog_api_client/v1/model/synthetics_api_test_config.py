@@ -52,11 +52,17 @@ class SyntheticsAPITestConfig(ModelNormal):
     def __init__(self, *args, **kwargs):
         """SyntheticsAPITestConfig - a model defined in OpenAPI
 
-        Keyword Args:
-            assertions ([SyntheticsAssertion]): [optional] Array of assertions used for the test. Required for single API tests. If omitted the server will use the default value of [].
-            config_variables ([SyntheticsConfigVariable]): [optional] Array of variables used for the test.
-            request (SyntheticsTestRequest): [optional]
-            steps ([SyntheticsAPIStep]): [optional] When the test subtype is `multi`, the steps of the test.
+
+        :param assertions: Array of assertions used for the test. Required for single API tests. If omitted the server will use the default value of [].
+        :type assertions: [SyntheticsAssertion], optional
+
+        :param config_variables: Array of variables used for the test.
+        :type config_variables: [SyntheticsConfigVariable], optional
+
+        :type request: SyntheticsTestRequest, optional
+
+        :param steps: When the test subtype is `multi`, the steps of the test.
+        :type steps: [SyntheticsAPIStep], optional
         """
         super().__init__(kwargs)
 

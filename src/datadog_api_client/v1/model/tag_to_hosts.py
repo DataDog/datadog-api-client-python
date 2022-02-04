@@ -33,8 +33,9 @@ class TagToHosts(ModelNormal):
     def __init__(self, *args, **kwargs):
         """TagToHosts - a model defined in OpenAPI
 
-        Keyword Args:
-            tags ({str: ([str],)}): [optional] A list of tags to apply to the host.
+
+        :param tags: A list of tags to apply to the host.
+        :type tags: {str: ([str],)}, optional
         """
         super().__init__(kwargs)
 

@@ -37,10 +37,15 @@ class LogsWarning(ModelNormal):
     def __init__(self, *args, **kwargs):
         """LogsWarning - a model defined in OpenAPI
 
-        Keyword Args:
-            code (str): [optional] A unique code for this type of warning
-            detail (str): [optional] A detailed explanation of this specific warning
-            title (str): [optional] A short human-readable summary of the warning
+
+        :param code: A unique code for this type of warning
+        :type code: str, optional
+
+        :param detail: A detailed explanation of this specific warning
+        :type detail: str, optional
+
+        :param title: A short human-readable summary of the warning
+        :type title: str, optional
         """
         super().__init__(kwargs)
 

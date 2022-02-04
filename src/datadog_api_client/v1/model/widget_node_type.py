@@ -36,12 +36,8 @@ class WidgetNodeType(ModelSimple):
         """WidgetNodeType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] (str): Which type of node to use in the map. Must be one of ["host", "container"].
-
-        Keyword Args:
-            value (str): Which type of node to use in the map. Must be one of ["host", "container"].
+        :param value: Which type of node to use in the map. Must be one of ["host", "container"].
+        :type value: str
         """
         super().__init__(kwargs)
 

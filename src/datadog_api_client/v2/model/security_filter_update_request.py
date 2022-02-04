@@ -40,10 +40,8 @@ class SecurityFilterUpdateRequest(ModelNormal):
     def __init__(self, data, *args, **kwargs):
         """SecurityFilterUpdateRequest - a model defined in OpenAPI
 
-        Args:
-            data (SecurityFilterUpdateData):
 
-        Keyword Args:
+        :type data: SecurityFilterUpdateData
         """
         super().__init__(kwargs)
 

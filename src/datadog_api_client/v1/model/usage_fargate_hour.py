@@ -42,12 +42,21 @@ class UsageFargateHour(ModelNormal):
     def __init__(self, *args, **kwargs):
         """UsageFargateHour - a model defined in OpenAPI
 
-        Keyword Args:
-            avg_profiled_fargate_tasks (int): [optional] The average profiled task count for Fargate Profiling.
-            hour (datetime): [optional] The hour for the usage.
-            org_name (str): [optional] The organization name.
-            public_id (str): [optional] The organization public ID.
-            tasks_count (int): [optional] The number of Fargate tasks run.
+
+        :param avg_profiled_fargate_tasks: The average profiled task count for Fargate Profiling.
+        :type avg_profiled_fargate_tasks: int, optional
+
+        :param hour: The hour for the usage.
+        :type hour: datetime, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
+
+        :param tasks_count: The number of Fargate tasks run.
+        :type tasks_count: int, optional
         """
         super().__init__(kwargs)
 

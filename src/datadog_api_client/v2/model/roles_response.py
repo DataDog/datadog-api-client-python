@@ -44,9 +44,11 @@ class RolesResponse(ModelNormal):
     def __init__(self, *args, **kwargs):
         """RolesResponse - a model defined in OpenAPI
 
-        Keyword Args:
-            data ([Role]): [optional] Array of returned roles.
-            meta (ResponseMetaAttributes): [optional]
+
+        :param data: Array of returned roles.
+        :type data: [Role], optional
+
+        :type meta: ResponseMetaAttributes, optional
         """
         super().__init__(kwargs)
 
