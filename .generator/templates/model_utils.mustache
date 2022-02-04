@@ -103,21 +103,21 @@ def composed_model_input_classes(cls):
 class OpenApiModel(object):
     """The base class for all OpenAPIModels.
 
-    @var allowed_values (dict): The key is the name of the attribute. The value is a dict
+    :var allowed_values: The key is the name of the attribute. The value is a dict
         with a capitalized key describing the allowed value and an allowed
         value. These dicts store the allowed enum values.
-    @type allowed_values: dict
-    @var attribute_map: The key is attribute name and the value is json
+    :type allowed_values: dict
+    :var attribute_map: The key is attribute name and the value is json
         key in definition.
-    @type attribute_map: dict
-    @var validations: The key is the name of the attribute. The value is a dict
+    :type attribute_map: dict
+    :var validations: The key is the name of the attribute. The value is a dict
         that stores validations for max_length, min_length, max_items,
         min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
         inclusive_minimum, and regex.
-    @type validations: dict
-    @var additional_properties_type: A tuple of classes accepted
+    :type validations: dict
+    :var additional_properties_type: A tuple of classes accepted
         as additional properties values.
-    @type additional_properties_type: tuple
+    :type additional_properties_type: tuple
     """
 
     _composed_schemas = empty_dict
@@ -512,19 +512,16 @@ class ModelComposed(OpenApiModel):
     This allows multiple composed schemas to contain the same property with additive
     constraints on the value.
 
-    _composed_schemas (dict) stores the anyOf/allOf/oneOf classes
-    key (str): allOf/oneOf/anyOf
-    value (list): the classes in the XOf definition.
-        Note: none_type can be included when the openapi document version >= 3.1.0
-    _composed_instances (list): stores a list of instances of the composed schemas
-    defined in _composed_schemas. When properties are accessed in the self instance,
-    they are returned from the self._data_store or the data stores in the instances
-    in self._composed_schemas
-    _var_name_to_model_instances (dict): maps between a variable name on self and
-    the composed instances (self included) which contain that data
-    key (str): property name
-    value (list): list of class instances, self or instances in _composed_instances
-    which contain the value that the key is referring to.
+    :var _composed_schemas: Stores the anyOf/allOf/oneOf classes.
+    :type _composed_schemas: dict
+    :var _composed_instances: Stores a list of instances of the composed schemas
+        defined in _composed_schemas. When properties are accessed in the self instance,
+        they are returned from the self._data_store or the data stores in the instances
+        in self._composed_schemas.
+    :type _composed_schemas: list
+    :var _var_name_to_model_instances: Map between a variable name on self and
+        the composed instances (self included) which contain that data.
+    :type _var_name_to_model_instances: dict
     """
 
     required_properties = set([
@@ -1010,8 +1007,10 @@ def get_required_type_classes(required_types_mixed, spec_property_naming):
     :return (valid_classes, dict_valid_class_to_child_types_mixed):
         valid_classes (tuple): The valid classes that the current item should be.
         dict_valid_class_to_child_types_mixed (dict):
+
             valid_class (class): This is the key.
             child_types_mixed (list/dict/tuple): Describes the valid child types.
+
     :rtype: tuple
     """
     valid_classes = []
@@ -1314,13 +1313,14 @@ def is_type_nullable(input_type):
     Returns True if None is an allowed value for the specified input_type.
 
     A type is nullable if at least one of the following conditions is True:
-    1. The OAS 'nullable' attribute has been specified,
-    2. The type is the 'null' type,
-    3. The type is a anyOf/oneOf composed schema, and a child schema is
-       the 'null' type.
+
+        1. The OAS 'nullable' attribute has been specified,
+        2. The type is the 'null' type,
+        3. The type is a anyOf/oneOf composed schema, and a child schema is
+           the 'null' type.
 
     :param input_type: The class of the input_value that we are checking.
-    :type input_type: type    
+    :type input_type: type
 
     :rtype: bool
     """
