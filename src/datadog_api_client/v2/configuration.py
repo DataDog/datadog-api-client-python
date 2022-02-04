@@ -6,6 +6,7 @@
 import copy
 import logging
 import os
+import multiprocessing
 import urllib3
 
 from http import client as http_client
@@ -140,6 +141,7 @@ class Configuration(object):
         self.key_file = None
         self.assert_hostname = None
 
+        self.connection_pool_maxsize = multiprocessing.cpu_count() * 5
         self.proxy = None
         self.proxy_headers = None
         self.safe_chars_for_path_param = ""
