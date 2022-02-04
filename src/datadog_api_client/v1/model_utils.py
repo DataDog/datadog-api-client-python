@@ -394,7 +394,7 @@ class OpenApiModel(object):
         if cls._composed_schemas.get("allOf") and oneof_anyof_child:
             # Validate that we can make self because when we make the
             # new_cls it will not include the allOf validations in self
-            self_inst = cls._from_openapi_data(*args, **kwargs)
+            cls._from_openapi_data(*args, **kwargs)
 
         new_inst = new_cls._new_from_openapi_data(*args, **kwargs)
         return new_inst

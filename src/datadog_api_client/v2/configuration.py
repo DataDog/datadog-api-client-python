@@ -6,7 +6,6 @@
 import copy
 import logging
 import os
-import sys
 import urllib3
 
 from http import client as http_client
@@ -244,7 +243,7 @@ class Configuration(object):
         handler. Otherwise, add file handler and remove stream handler.
 
         :return: The logger_file path.
-        :rtype value: str
+        :rtype: str
         """
         return self._logger_file
 
@@ -384,19 +383,6 @@ class Configuration(object):
                 ),
             }
         return auth
-
-    def to_debug_report(self):
-        """Gets the essential information for debugging.
-
-        :return: The report for debugging.
-        """
-        return (
-            "Python SDK Debug Report:\n"
-            "OS: {env}\n"
-            "Python Version: {pyversion}\n"
-            "Version of the API: 1.0\n"
-            "SDK Package Version: 0.1.0".format(env=sys.platform, pyversion=sys.version)
-        )
 
     def get_host_settings(self):
         """Gets an array of host settings
