@@ -59,6 +59,9 @@ jobs:
           name: documentation
           path: site
 
+      - name: Uncompress site
+        run: tar xzf site/site.tar.gz && rm site/site.tar.gz
+
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
