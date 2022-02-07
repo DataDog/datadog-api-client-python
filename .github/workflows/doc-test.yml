@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
 
     needs:
-      - build
+      - build-test
 
     steps:
       - uses: actions/download-artifact@v2
