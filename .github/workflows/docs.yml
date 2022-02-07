@@ -30,7 +30,7 @@ jobs:
         run: pip install tox
 
       - name: Build documentation
-        run: tox -e docs build
+        run: tox -e docs
 
       - name: Compress site
         run: tar czf site.tar.gz site

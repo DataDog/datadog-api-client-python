@@ -47,6 +47,11 @@ html_favicon = "assets/images/favicon.ico"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["assets"]
 
+html_sidebars = {
+    "**": ["globaltoc.html", "localtoc.html", "searchbox.html"]
+}
+
+
 html_theme_options = {
     # Set the name of the project to appear in the navigation.
     "nav_title": "Datadog API Client for Python",
