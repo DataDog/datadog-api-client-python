@@ -113,7 +113,6 @@ the API methods will then return coroutines that you can wait for.
 
 To make async support available, you need to install the extra `async` qualifiers during installation: `pip install datadog-api-client[async]`.
 
-
 ```python
 import asyncio
 
@@ -148,4 +147,3 @@ configuration.api_key["appKeyAuth"] = "YOUR_APPLICATION_KEY"
 ## Author
 
 support@datadoghq.com
-
