@@ -21,10 +21,6 @@ project = 'Datadog API Client for Python'
 copyright = '2022, Datadog'
 author = 'Datadog'
 
-# The full version, including alpha/beta/rc tags
-release = '1.8.0'
-
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -49,9 +45,30 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_material'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['assets']
+
+html_theme_options = {
+
+    # Set the name of the project to appear in the navigation.
+    'nav_title': 'Datadog API Client for Python',
+
+    # Set the color and the accent color
+    'color_primary': 'deep-purple',
+    'color_accent': 'deep-purple',
+
+    # Set the repo location to get a badge with stats
+    'repo_url': 'https://github.com/DataDog/datadog-api-client-python/',
+    'repo_name': 'datadog-api-client-python',
+
+    # Visible levels of the global TOC; -1 means unlimited
+    'globaltoc_depth': 3,
+    # If False, expand all TOC entries
+    'globaltoc_collapse': False,
+    # If True, show hidden TOC entries
+    'globaltoc_includehidden': False,
+}
