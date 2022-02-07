@@ -29,13 +29,22 @@ jobs:
       - name: Install tox
         run: pip install tox
 
+      - name: Cache sphinx
+        uses: actions/cache@v2
+        with:
+          path: site
+          key: sphinx
+
       - name: Build documentation
-        run: tox -e docs build
+        run: tox -e docs
+
+      - name: Compress site
+        run: tar czf site.tar.gz site
 
       - uses: actions/upload-artifact@v2
         with:
           name: documentation
-          path: site
+          path: site.tar.gz
 
   publish:
     runs-on: ubuntu-latest
@@ -48,7 +57,10 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: documentation
-          path: site
+          path: site.tar.gz
+
+      - name: Uncompress site
+        run: tar xzf site.tar.gz
 
       - uses: peaceiris/actions-gh-pages@v3
         with:
