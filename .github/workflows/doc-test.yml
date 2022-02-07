@@ -56,3 +56,9 @@ jobs:
 
       - name: Uncompress site
         run: ls -al site/
+
+      - name: Uncompress site really
+        run: tar xzf site/site.tar.gz 
+
+      - name: List site
+        run: ls -al site/
