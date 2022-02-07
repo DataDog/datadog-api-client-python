@@ -51,7 +51,6 @@ html_sidebars = {
     "**": ["globaltoc.html", "localtoc.html", "searchbox.html"]
 }
 
-
 html_theme_options = {
     # Set the name of the project to appear in the navigation.
     "nav_title": "Datadog API Client for Python",
