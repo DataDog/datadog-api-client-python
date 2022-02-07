@@ -20,6 +20,14 @@ repos:
       # When updating the version of prettier, make sure to check the  pre-commit file
       # And keep the `entry` here up to date https://github.com/pre-commit/mirrors-prettier/blob/master/.pre-commit-hooks.yaml
       - prettier@2.5.1
+  - id: api-docs
+    name: Generate API docs
+    stages: [manual]
+    language: python
+    entry: sphinx-apidoc --output-dir docs --force --no-toc src/datadog_api_client *apis *models *version.py
+    pass_filenames: false
+    additional_dependencies:
+      - Sphinx
   - id: openapi-generator
     name: OpenAPI-generator
     language: node
