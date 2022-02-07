@@ -5,7 +5,7 @@ on:
 
 jobs:
 
-  build:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -42,47 +42,9 @@ jobs:
           name: documentation
           path: site.tar.gz
 
-  build:
+  publish-test:
     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          # Fetch all history for applying timestamps to every page
-          fetch-depth: 0
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: "3.8"
-
-      - name: Upgrade Python packaging tools
-        run: pip install --disable-pip-version-check --upgrade pip setuptools wheel
-
-      - name: Install tox
-        run: pip install tox
-
-      - name: Cache sphinx
-        uses: actions/cache@v2
-        with:
-          path: site
-          key: sphinx
-
-      - name: Build documentation
-        run: tox -e docs
-
-      - name: Compress site
-        run: tar czf site.tar.gz site
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: documentation
-          path: site.tar.gz
-
-  publish:
-    runs-on: ubuntu-latest
-
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     needs:
       - build
 
