@@ -308,10 +308,9 @@ class ServiceLevelObjectivesApi(object):
         >>> thread = api.check_can_delete_slo(ids, async_req=True)
         >>> result = thread.get()
 
-
         :param ids: A comma separated list of the IDs of the service level objectives objects.
         :type ids: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -351,10 +350,9 @@ class ServiceLevelObjectivesApi(object):
         >>> thread = api.create_slo(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Service level objective request object.
         :type body: ServiceLevelObjectiveRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -394,10 +392,8 @@ class ServiceLevelObjectivesApi(object):
         >>> thread = api.delete_slo(slo_id, async_req=True)
         >>> result = thread.get()
 
-
         :param slo_id: The ID of the service level objective.
         :type slo_id: str
-
         :param force: Delete the monitor even if it's referenced by other resources (for example SLO, composite monitor).
         :type force: str, optional
         :param _return_http_data_only: Response data without head status
@@ -440,10 +436,9 @@ class ServiceLevelObjectivesApi(object):
         >>> thread = api.delete_slo_timeframe_in_bulk(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Delete multiple service level objective objects request body.
         :type body: SLOBulkDelete
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -483,10 +478,8 @@ class ServiceLevelObjectivesApi(object):
         >>> thread = api.get_slo(slo_id, async_req=True)
         >>> result = thread.get()
 
-
         :param slo_id: The ID of the service level objective object.
         :type slo_id: str
-
         :param with_configured_alert_ids: Get the IDs of SLO monitors that reference this SLO.
         :type with_configured_alert_ids: bool, optional
         :param _return_http_data_only: Response data without head status
@@ -529,10 +522,9 @@ class ServiceLevelObjectivesApi(object):
         >>> thread = api.get_slo_corrections(slo_id, async_req=True)
         >>> result = thread.get()
 
-
         :param slo_id: The ID of the service level objective object.
         :type slo_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -572,21 +564,14 @@ class ServiceLevelObjectivesApi(object):
         >>> thread = api.get_slo_history(slo_id, from_ts, to_ts, async_req=True)
         >>> result = thread.get()
 
-
-
-
         :param slo_id: The ID of the service level objective object.
         :type slo_id: str
-
         :param from_ts: The `from` timestamp for the query window in epoch seconds.
         :type from_ts: int
-
         :param to_ts: The `to` timestamp for the query window in epoch seconds.
         :type to_ts: int
-
         :param target: The SLO target. If `target` is passed in, the response will include the remaining error budget and a timeframe value of `custom`.
         :type target: float, optional
-
         :param apply_correction: Defaults to `true`. If any SLO corrections are applied and this parameter is set to `false`, then the corrections will not be applied and the SLI values will not be affected.
         :type apply_correction: bool, optional
         :param _return_http_data_only: Response data without head status
@@ -633,19 +618,14 @@ class ServiceLevelObjectivesApi(object):
 
         :param ids: A comma separated list of the IDs of the service level objectives objects.
         :type ids: str, optional
-
         :param query: The query string to filter results based on SLO names.
         :type query: str, optional
-
         :param tags_query: The query string to filter results based on a single SLO tag.
         :type tags_query: str, optional
-
         :param metrics_query: The query string to filter results based on SLO numerator and denominator.
         :type metrics_query: str, optional
-
         :param limit: The number of SLOs to return in the response.
         :type limit: int, optional
-
         :param offset: The specific offset to use as the beginning of the returned response.
         :type offset: int, optional
         :param _return_http_data_only: Response data without head status
@@ -687,14 +667,11 @@ class ServiceLevelObjectivesApi(object):
         >>> thread = api.update_slo(slo_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param slo_id: The ID of the service level objective object.
         :type slo_id: str
-
         :param body: The edited service level objective request object.
         :type body: ServiceLevelObjective
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

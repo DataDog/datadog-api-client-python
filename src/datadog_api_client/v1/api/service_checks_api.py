@@ -50,10 +50,9 @@ class ServiceChecksApi(object):
         >>> thread = api.submit_service_check(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Service Check request body.
         :type body: ServiceChecks
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

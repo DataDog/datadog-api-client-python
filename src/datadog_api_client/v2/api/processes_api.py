@@ -83,19 +83,14 @@ class ProcessesApi(object):
 
         :param search: String to search processes by.
         :type search: str, optional
-
         :param tags: Comma-separated list of tags to filter processes by.
         :type tags: str, optional
-
         :param _from: Unix timestamp (number of seconds since epoch) of the start of the query window. If not provided, the start of the query window will be 15 minutes before the `to` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.
         :type _from: int, optional
-
         :param to: Unix timestamp (number of seconds since epoch) of the end of the query window. If not provided, the end of the query window will be 15 minutes after the `from` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.
         :type to: int, optional
-
         :param page_limit: Maximum number of results returned. If omitted the server will use the default value of 1000.
         :type page_limit: int, optional
-
         :param page_cursor: String to query the next page of results. This key is provided with each valid response from the API in `meta.page.after`.
         :type page_cursor: str, optional
         :param _return_http_data_only: Response data without head status

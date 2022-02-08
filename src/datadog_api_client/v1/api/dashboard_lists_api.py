@@ -142,10 +142,9 @@ class DashboardListsApi(object):
         >>> thread = api.create_dashboard_list(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Create a dashboard list request body.
         :type body: DashboardList
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -185,10 +184,9 @@ class DashboardListsApi(object):
         >>> thread = api.delete_dashboard_list(list_id, async_req=True)
         >>> result = thread.get()
 
-
         :param list_id: ID of the dashboard list to delete.
         :type list_id: int
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -228,10 +226,9 @@ class DashboardListsApi(object):
         >>> thread = api.get_dashboard_list(list_id, async_req=True)
         >>> result = thread.get()
 
-
         :param list_id: ID of the dashboard list to fetch.
         :type list_id: int
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -270,7 +267,8 @@ class DashboardListsApi(object):
 
         >>> thread = api.list_dashboard_lists(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -309,14 +307,11 @@ class DashboardListsApi(object):
         >>> thread = api.update_dashboard_list(list_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param list_id: ID of the dashboard list to update.
         :type list_id: int
-
         :param body: Update a dashboard list request body.
         :type body: DashboardList
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

@@ -258,13 +258,11 @@ class LogsArchivesApi(object):
         >>> thread = api.add_read_role_to_archive(archive_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param archive_id: The ID of the archive.
         :type archive_id: str
 
         :type body: RelationshipToRole
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -305,10 +303,9 @@ class LogsArchivesApi(object):
         >>> thread = api.create_logs_archive(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: The definition of the new archive.
         :type body: LogsArchiveCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -348,10 +345,9 @@ class LogsArchivesApi(object):
         >>> thread = api.delete_logs_archive(archive_id, async_req=True)
         >>> result = thread.get()
 
-
         :param archive_id: The ID of the archive.
         :type archive_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -391,10 +387,9 @@ class LogsArchivesApi(object):
         >>> thread = api.get_logs_archive(archive_id, async_req=True)
         >>> result = thread.get()
 
-
         :param archive_id: The ID of the archive.
         :type archive_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -433,7 +428,8 @@ class LogsArchivesApi(object):
 
         >>> thread = api.get_logs_archive_order(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -472,10 +468,9 @@ class LogsArchivesApi(object):
         >>> thread = api.list_archive_read_roles(archive_id, async_req=True)
         >>> result = thread.get()
 
-
         :param archive_id: The ID of the archive.
         :type archive_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -514,7 +509,8 @@ class LogsArchivesApi(object):
 
         >>> thread = api.list_logs_archives(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -553,13 +549,11 @@ class LogsArchivesApi(object):
         >>> thread = api.remove_role_from_archive(archive_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param archive_id: The ID of the archive.
         :type archive_id: str
 
         :type body: RelationshipToRole
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -600,14 +594,11 @@ class LogsArchivesApi(object):
         >>> thread = api.update_logs_archive(archive_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param archive_id: The ID of the archive.
         :type archive_id: str
-
         :param body: New definition of the archive.
         :type body: LogsArchiveCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -648,10 +639,9 @@ class LogsArchivesApi(object):
         >>> thread = api.update_logs_archive_order(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: An object containing the new ordered list of archive IDs.
         :type body: LogsArchiveOrder
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

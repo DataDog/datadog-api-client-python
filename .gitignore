@@ -3,6 +3,7 @@ src/datadog_api_client/version.py
 .generator/lib
 examples/generated
 site
+docs/.sphinx
 
 # VSCode
 .vscode

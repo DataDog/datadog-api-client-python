@@ -195,10 +195,9 @@ class DashboardsApi(object):
         >>> thread = api.create_dashboard(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Create a dashboard request body.
         :type body: Dashboard
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -238,10 +237,9 @@ class DashboardsApi(object):
         >>> thread = api.delete_dashboard(dashboard_id, async_req=True)
         >>> result = thread.get()
 
-
         :param dashboard_id: The ID of the dashboard.
         :type dashboard_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -281,10 +279,9 @@ class DashboardsApi(object):
         >>> thread = api.delete_dashboards(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Delete dashboards request body.
         :type body: DashboardBulkDeleteRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -324,10 +321,9 @@ class DashboardsApi(object):
         >>> thread = api.get_dashboard(dashboard_id, async_req=True)
         >>> result = thread.get()
 
-
         :param dashboard_id: The ID of the dashboard.
         :type dashboard_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -369,7 +365,6 @@ class DashboardsApi(object):
 
         :param filter_shared: When `true`, this query only returns shared custom created or cloned dashboards.
         :type filter_shared: bool, optional
-
         :param filter_deleted: When `true`, this query returns only deleted custom-created or cloned dashboards. This parameter is incompatible with `filter[shared]`.
         :type filter_deleted: bool, optional
         :param _return_http_data_only: Response data without head status
@@ -411,10 +406,9 @@ class DashboardsApi(object):
         >>> thread = api.restore_dashboards(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Restore dashboards request body.
         :type body: DashboardRestoreRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -454,14 +448,11 @@ class DashboardsApi(object):
         >>> thread = api.update_dashboard(dashboard_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param dashboard_id: The ID of the dashboard.
         :type dashboard_id: str
-
         :param body: Update Dashboard request body.
         :type body: Dashboard
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

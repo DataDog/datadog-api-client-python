@@ -320,10 +320,9 @@ class MonitorsApi(object):
         >>> thread = api.check_can_delete_monitor(monitor_ids, async_req=True)
         >>> result = thread.get()
 
-
         :param monitor_ids: The IDs of the monitor to check.
         :type monitor_ids: [int]
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -363,10 +362,9 @@ class MonitorsApi(object):
         >>> thread = api.create_monitor(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Create a monitor request body.
         :type body: Monitor
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -406,10 +404,8 @@ class MonitorsApi(object):
         >>> thread = api.delete_monitor(monitor_id, async_req=True)
         >>> result = thread.get()
 
-
         :param monitor_id: The ID of the monitor.
         :type monitor_id: int
-
         :param force: Delete the monitor even if it's referenced by other resources (for example SLO, composite monitor).
         :type force: str, optional
         :param _return_http_data_only: Response data without head status
@@ -452,10 +448,8 @@ class MonitorsApi(object):
         >>> thread = api.get_monitor(monitor_id, async_req=True)
         >>> result = thread.get()
 
-
         :param monitor_id: The ID of the monitor
         :type monitor_id: int
-
         :param group_states: When specified, shows additional information about the group states. Choose one or more from `all`, `alert`, `warn`, and `no data`.
         :type group_states: str, optional
         :param _return_http_data_only: Response data without head status
@@ -500,25 +494,18 @@ class MonitorsApi(object):
 
         :param group_states: When specified, shows additional information about the group states. Choose one or more from `all`, `alert`, `warn`, and `no data`.
         :type group_states: str, optional
-
         :param name: A string to filter monitors by name.
         :type name: str, optional
-
         :param tags: A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope. For example, `host:host0`.
         :type tags: str, optional
-
         :param monitor_tags: A comma separated list indicating what service and/or custom tags, if any, should be used to filter the list of monitors. Tags created in the Datadog UI automatically have the service key prepended. For example, `service:my-app`.
         :type monitor_tags: str, optional
-
         :param with_downtimes: If this argument is set to true, then the returned data includes all current active downtimes for each monitor.
         :type with_downtimes: bool, optional
-
         :param id_offset: Use this parameter for paginating through large sets of monitors. Start with a value of zero, make a request, set the value to the last ID of result set, and then repeat until the response is empty.
         :type id_offset: int, optional
-
         :param page: The page to start paginating from. If this argument is not specified, the request returns all monitors without pagination.
         :type page: int, optional
-
         :param page_size: The number of monitors to return per page. If the page argument is not specified, the default behavior returns all monitors without a `page_size` limit. However, if page is specified and `page_size` is not, the argument defaults to 100.
         :type page_size: int, optional
         :param _return_http_data_only: Response data without head status
@@ -562,13 +549,10 @@ class MonitorsApi(object):
 
         :param query: After entering a search query in your [Manage Monitor page][1] use the query parameter value in the URL of the page as value for this parameter. Consult the dedicated [manage monitor documentation][2] page to learn more.  The query can contain any number of space-separated monitor attributes, for instance `query=\"type:metric status:alert\"`.  [1]: https://app.datadoghq.com/monitors/manage [2]: /monitors/manage/#find-the-monitors
         :type query: str, optional
-
         :param page: Page to start paginating from. If omitted the server will use the default value of 0.
         :type page: int, optional
-
         :param per_page: Number of monitors to return per page. If omitted the server will use the default value of 30.
         :type per_page: int, optional
-
         :param sort: String for sort order, composed of field and sort order separate by a comma, for example `name,asc`. Supported sort directions: `asc`, `desc`. Supported fields:  * `name` * `status` * `tags`
         :type sort: str, optional
         :param _return_http_data_only: Response data without head status
@@ -612,13 +596,10 @@ class MonitorsApi(object):
 
         :param query: After entering a search query in your [Manage Monitor page][1] use the query parameter value in the URL of the page as value for this parameter. Consult the dedicated [manage monitor documentation][2] page to learn more.  The query can contain any number of space-separated monitor attributes, for instance `query=\"type:metric status:alert\"`.  [1]: https://app.datadoghq.com/monitors/manage [2]: /monitors/manage/#find-the-monitors
         :type query: str, optional
-
         :param page: Page to start paginating from. If omitted the server will use the default value of 0.
         :type page: int, optional
-
         :param per_page: Number of monitors to return per page. If omitted the server will use the default value of 30.
         :type per_page: int, optional
-
         :param sort: String for sort order, composed of field and sort order separate by a comma, for example `name,asc`. Supported sort directions: `asc`, `desc`. Supported fields:  * `name` * `status` * `tags`
         :type sort: str, optional
         :param _return_http_data_only: Response data without head status
@@ -660,14 +641,11 @@ class MonitorsApi(object):
         >>> thread = api.update_monitor(monitor_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param monitor_id: The ID of the monitor.
         :type monitor_id: int
-
         :param body: Edit a monitor request body.
         :type body: MonitorUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -708,10 +686,9 @@ class MonitorsApi(object):
         >>> thread = api.validate_monitor(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Monitor request object
         :type body: Monitor
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

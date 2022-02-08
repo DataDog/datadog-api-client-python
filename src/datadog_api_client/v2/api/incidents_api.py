@@ -167,10 +167,9 @@ class IncidentsApi(object):
         >>> thread = api.create_incident(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Incident payload.
         :type body: IncidentCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -210,10 +209,9 @@ class IncidentsApi(object):
         >>> thread = api.delete_incident(incident_id, async_req=True)
         >>> result = thread.get()
 
-
         :param incident_id: The UUID of the incident.
         :type incident_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -253,10 +251,8 @@ class IncidentsApi(object):
         >>> thread = api.get_incident(incident_id, async_req=True)
         >>> result = thread.get()
 
-
         :param incident_id: The UUID of the incident.
         :type incident_id: str
-
         :param include: Specifies which types of related objects should be included in the response.
         :type include: [IncidentRelatedObject], optional
         :param _return_http_data_only: Response data without head status
@@ -301,10 +297,8 @@ class IncidentsApi(object):
 
         :param include: Specifies which types of related objects should be included in the response.
         :type include: [IncidentRelatedObject], optional
-
         :param page_size: Size for a given page. If omitted the server will use the default value of 10.
         :type page_size: int, optional
-
         :param page_offset: Specific offset to use as the beginning of the returned page. If omitted the server will use the default value of 0.
         :type page_offset: int, optional
         :param _return_http_data_only: Response data without head status
@@ -346,14 +340,11 @@ class IncidentsApi(object):
         >>> thread = api.update_incident(incident_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param incident_id: The UUID of the incident.
         :type incident_id: str
-
         :param body: Incident Payload.
         :type body: IncidentUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

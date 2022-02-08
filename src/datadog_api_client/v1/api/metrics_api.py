@@ -204,10 +204,9 @@ class MetricsApi(object):
         >>> thread = api.get_metric_metadata(metric_name, async_req=True)
         >>> result = thread.get()
 
-
         :param metric_name: Name of the metric for which to get metadata.
         :type metric_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -247,13 +246,10 @@ class MetricsApi(object):
         >>> thread = api.list_active_metrics(_from, async_req=True)
         >>> result = thread.get()
 
-
         :param _from: Seconds since the Unix epoch.
         :type _from: int
-
         :param host: Hostname for filtering the list of metrics returned. If set, metrics retrieved are those with the corresponding hostname tag.
         :type host: str, optional
-
         :param tag_filter: Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions. Cannot be combined with other filters.
         :type tag_filter: str, optional
         :param _return_http_data_only: Response data without head status
@@ -296,10 +292,9 @@ class MetricsApi(object):
         >>> thread = api.list_metrics(q, async_req=True)
         >>> result = thread.get()
 
-
         :param q: Query string to search metrics upon. Must be prefixed with `metrics:`.
         :type q: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -339,18 +334,13 @@ class MetricsApi(object):
         >>> thread = api.query_metrics(_from, to, query, async_req=True)
         >>> result = thread.get()
 
-
-
-
         :param _from: Start of the queried time period, seconds since the Unix epoch.
         :type _from: int
-
         :param to: End of the queried time period, seconds since the Unix epoch.
         :type to: int
-
         :param query: Query string.
         :type query: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -394,7 +384,6 @@ class MetricsApi(object):
 
 
         :type body: MetricsPayload
-
         :param content_encoding: HTTP header used to compress the media-type.
         :type content_encoding: MetricContentEncoding, optional
         :param _return_http_data_only: Response data without head status
@@ -437,14 +426,11 @@ class MetricsApi(object):
         >>> thread = api.update_metric_metadata(metric_name, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param metric_name: Name of the metric for which to edit metadata.
         :type metric_name: str
-
         :param body: New metadata.
         :type body: MetricMetadata
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

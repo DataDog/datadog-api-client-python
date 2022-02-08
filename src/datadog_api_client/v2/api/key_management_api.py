@@ -471,7 +471,7 @@ class KeyManagementApi(object):
 
 
         :type body: APIKeyCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -513,7 +513,7 @@ class KeyManagementApi(object):
 
 
         :type body: ApplicationKeyCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -553,10 +553,9 @@ class KeyManagementApi(object):
         >>> thread = api.delete_api_key(api_key_id, async_req=True)
         >>> result = thread.get()
 
-
         :param api_key_id: The ID of the API key.
         :type api_key_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -596,10 +595,9 @@ class KeyManagementApi(object):
         >>> thread = api.delete_application_key(app_key_id, async_req=True)
         >>> result = thread.get()
 
-
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -639,10 +637,9 @@ class KeyManagementApi(object):
         >>> thread = api.delete_current_user_application_key(app_key_id, async_req=True)
         >>> result = thread.get()
 
-
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -682,10 +679,8 @@ class KeyManagementApi(object):
         >>> thread = api.get_api_key(api_key_id, async_req=True)
         >>> result = thread.get()
 
-
         :param api_key_id: The ID of the API key.
         :type api_key_id: str
-
         :param include: Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`.
         :type include: str, optional
         :param _return_http_data_only: Response data without head status
@@ -728,10 +723,8 @@ class KeyManagementApi(object):
         >>> thread = api.get_application_key(app_key_id, async_req=True)
         >>> result = thread.get()
 
-
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
-
         :param include: Resource path for related resources to include in the response. Only `owned_by` is supported.
         :type include: str, optional
         :param _return_http_data_only: Response data without head status
@@ -774,10 +767,9 @@ class KeyManagementApi(object):
         >>> thread = api.get_current_user_application_key(app_key_id, async_req=True)
         >>> result = thread.get()
 
-
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -819,28 +811,20 @@ class KeyManagementApi(object):
 
         :param page_size: Size for a given page. If omitted the server will use the default value of 10.
         :type page_size: int, optional
-
         :param page_number: Specific page number to return. If omitted the server will use the default value of 0.
         :type page_number: int, optional
-
         :param sort: API key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.
         :type sort: APIKeysSort, optional
-
         :param filter: Filter API keys by the specified string.
         :type filter: str, optional
-
         :param filter_created_at_start: Only include API keys created on or after the specified date.
         :type filter_created_at_start: str, optional
-
         :param filter_created_at_end: Only include API keys created on or before the specified date.
         :type filter_created_at_end: str, optional
-
         :param filter_modified_at_start: Only include API keys modified on or after the specified date.
         :type filter_modified_at_start: str, optional
-
         :param filter_modified_at_end: Only include API keys modified on or before the specified date.
         :type filter_modified_at_end: str, optional
-
         :param include: Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`.
         :type include: str, optional
         :param _return_http_data_only: Response data without head status
@@ -884,19 +868,14 @@ class KeyManagementApi(object):
 
         :param page_size: Size for a given page. If omitted the server will use the default value of 10.
         :type page_size: int, optional
-
         :param page_number: Specific page number to return. If omitted the server will use the default value of 0.
         :type page_number: int, optional
-
         :param sort: Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.
         :type sort: ApplicationKeysSort, optional
-
         :param filter: Filter application keys by the specified string.
         :type filter: str, optional
-
         :param filter_created_at_start: Only include application keys created on or after the specified date.
         :type filter_created_at_start: str, optional
-
         :param filter_created_at_end: Only include application keys created on or before the specified date.
         :type filter_created_at_end: str, optional
         :param _return_http_data_only: Response data without head status
@@ -940,19 +919,14 @@ class KeyManagementApi(object):
 
         :param page_size: Size for a given page. If omitted the server will use the default value of 10.
         :type page_size: int, optional
-
         :param page_number: Specific page number to return. If omitted the server will use the default value of 0.
         :type page_number: int, optional
-
         :param sort: Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.
         :type sort: ApplicationKeysSort, optional
-
         :param filter: Filter application keys by the specified string.
         :type filter: str, optional
-
         :param filter_created_at_start: Only include application keys created on or after the specified date.
         :type filter_created_at_start: str, optional
-
         :param filter_created_at_end: Only include application keys created on or before the specified date.
         :type filter_created_at_end: str, optional
         :param _return_http_data_only: Response data without head status
@@ -994,13 +968,11 @@ class KeyManagementApi(object):
         >>> thread = api.update_api_key(api_key_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param api_key_id: The ID of the API key.
         :type api_key_id: str
 
         :type body: APIKeyUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1041,13 +1013,11 @@ class KeyManagementApi(object):
         >>> thread = api.update_application_key(app_key_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
 
         :type body: ApplicationKeyUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1088,13 +1058,11 @@ class KeyManagementApi(object):
         >>> thread = api.update_current_user_application_key(app_key_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
 
         :type body: ApplicationKeyUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

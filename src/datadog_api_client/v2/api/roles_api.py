@@ -387,13 +387,11 @@ class RolesApi(object):
         >>> thread = api.add_permission_to_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param role_id: The ID of the role.
         :type role_id: str
 
         :type body: RelationshipToPermission
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -434,13 +432,11 @@ class RolesApi(object):
         >>> thread = api.add_user_to_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param role_id: The ID of the role.
         :type role_id: str
 
         :type body: RelationshipToUser
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -481,13 +477,11 @@ class RolesApi(object):
         >>> thread = api.clone_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param role_id: The ID of the role.
         :type role_id: str
 
         :type body: RoleCloneRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -530,7 +524,7 @@ class RolesApi(object):
 
 
         :type body: RoleCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -570,10 +564,9 @@ class RolesApi(object):
         >>> thread = api.delete_role(role_id, async_req=True)
         >>> result = thread.get()
 
-
         :param role_id: The ID of the role.
         :type role_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -613,10 +606,9 @@ class RolesApi(object):
         >>> thread = api.get_role(role_id, async_req=True)
         >>> result = thread.get()
 
-
         :param role_id: The ID of the role.
         :type role_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -655,7 +647,8 @@ class RolesApi(object):
 
         >>> thread = api.list_permissions(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -694,10 +687,9 @@ class RolesApi(object):
         >>> thread = api.list_role_permissions(role_id, async_req=True)
         >>> result = thread.get()
 
-
         :param role_id: The ID of the role.
         :type role_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -737,19 +729,14 @@ class RolesApi(object):
         >>> thread = api.list_role_users(role_id, async_req=True)
         >>> result = thread.get()
 
-
         :param role_id: The ID of the role.
         :type role_id: str
-
         :param page_size: Size for a given page. If omitted the server will use the default value of 10.
         :type page_size: int, optional
-
         :param page_number: Specific page number to return. If omitted the server will use the default value of 0.
         :type page_number: int, optional
-
         :param sort: User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `email`, `status`. If omitted the server will use the default value of "name".
         :type sort: str, optional
-
         :param filter: Filter all users by the given string. Defaults to no filtering.
         :type filter: str, optional
         :param _return_http_data_only: Response data without head status
@@ -794,13 +781,10 @@ class RolesApi(object):
 
         :param page_size: Size for a given page. If omitted the server will use the default value of 10.
         :type page_size: int, optional
-
         :param page_number: Specific page number to return. If omitted the server will use the default value of 0.
         :type page_number: int, optional
-
         :param sort: Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: `sort=-name`.
         :type sort: RolesSort, optional
-
         :param filter: Filter all roles by the given string.
         :type filter: str, optional
         :param _return_http_data_only: Response data without head status
@@ -842,13 +826,11 @@ class RolesApi(object):
         >>> thread = api.remove_permission_from_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param role_id: The ID of the role.
         :type role_id: str
 
         :type body: RelationshipToPermission
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -889,13 +871,11 @@ class RolesApi(object):
         >>> thread = api.remove_user_from_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param role_id: The ID of the role.
         :type role_id: str
 
         :type body: RelationshipToUser
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -936,13 +916,11 @@ class RolesApi(object):
         >>> thread = api.update_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param role_id: The ID of the role.
         :type role_id: str
 
         :type body: RoleUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

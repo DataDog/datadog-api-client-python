@@ -127,10 +127,9 @@ class AzureIntegrationApi(object):
         >>> thread = api.create_azure_integration(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Create a Datadog-Azure integration for your Datadog account request body.
         :type body: AzureAccount
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -170,10 +169,9 @@ class AzureIntegrationApi(object):
         >>> thread = api.delete_azure_integration(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Delete a given Datadog-Azure integration request body.
         :type body: AzureAccount
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -212,7 +210,8 @@ class AzureIntegrationApi(object):
 
         >>> thread = api.list_azure_integration(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -251,10 +250,9 @@ class AzureIntegrationApi(object):
         >>> thread = api.update_azure_host_filters(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Update a Datadog-Azure integration's host filters request body.
         :type body: AzureAccount
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -294,10 +292,9 @@ class AzureIntegrationApi(object):
         >>> thread = api.update_azure_integration(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Update a Datadog-Azure integration request body.
         :type body: AzureAccount
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

@@ -66,4 +66,8 @@ html_theme_options = {
     "globaltoc_collapse": False,
     # If True, show hidden TOC entries
     "globaltoc_includehidden": False,
+    # No version menu
+    "version_dropdown": False,
 }
+
+add_module_names = False

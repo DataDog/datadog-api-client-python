@@ -170,10 +170,9 @@ class IncidentServicesApi(object):
         >>> thread = api.create_incident_service(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Incident Service Payload.
         :type body: IncidentServiceCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -213,10 +212,9 @@ class IncidentServicesApi(object):
         >>> thread = api.delete_incident_service(service_id, async_req=True)
         >>> result = thread.get()
 
-
         :param service_id: The ID of the incident service.
         :type service_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -256,10 +254,8 @@ class IncidentServicesApi(object):
         >>> thread = api.get_incident_service(service_id, async_req=True)
         >>> result = thread.get()
 
-
         :param service_id: The ID of the incident service.
         :type service_id: str
-
         :param include: Specifies which types of related objects should be included in the response.
         :type include: IncidentRelatedObject, optional
         :param _return_http_data_only: Response data without head status
@@ -304,13 +300,10 @@ class IncidentServicesApi(object):
 
         :param include: Specifies which types of related objects should be included in the response.
         :type include: IncidentRelatedObject, optional
-
         :param page_size: Size for a given page. If omitted the server will use the default value of 10.
         :type page_size: int, optional
-
         :param page_offset: Specific offset to use as the beginning of the returned page. If omitted the server will use the default value of 0.
         :type page_offset: int, optional
-
         :param filter: A search query that filters services by name.
         :type filter: str, optional
         :param _return_http_data_only: Response data without head status
@@ -352,14 +345,11 @@ class IncidentServicesApi(object):
         >>> thread = api.update_incident_service(service_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param service_id: The ID of the incident service.
         :type service_id: str
-
         :param body: Incident Service Payload.
         :type body: IncidentServiceUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

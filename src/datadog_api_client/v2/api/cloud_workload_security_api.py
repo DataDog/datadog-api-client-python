@@ -171,10 +171,9 @@ class CloudWorkloadSecurityApi(object):
         >>> thread = api.create_cloud_workload_security_agent_rule(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: The definition of the new Agent rule.
         :type body: CloudWorkloadSecurityAgentRuleCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -214,10 +213,9 @@ class CloudWorkloadSecurityApi(object):
         >>> thread = api.delete_cloud_workload_security_agent_rule(agent_rule_id, async_req=True)
         >>> result = thread.get()
 
-
         :param agent_rule_id: The ID of the Agent rule.
         :type agent_rule_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -256,7 +254,8 @@ class CloudWorkloadSecurityApi(object):
 
         >>> thread = api.download_cloud_workload_policy_file(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -295,10 +294,9 @@ class CloudWorkloadSecurityApi(object):
         >>> thread = api.get_cloud_workload_security_agent_rule(agent_rule_id, async_req=True)
         >>> result = thread.get()
 
-
         :param agent_rule_id: The ID of the Agent rule.
         :type agent_rule_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -337,7 +335,8 @@ class CloudWorkloadSecurityApi(object):
 
         >>> thread = api.list_cloud_workload_security_agent_rules(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -376,14 +375,11 @@ class CloudWorkloadSecurityApi(object):
         >>> thread = api.update_cloud_workload_security_agent_rule(agent_rule_id, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param agent_rule_id: The ID of the Agent rule.
         :type agent_rule_id: str
-
         :param body: New definition of the Agent rule.
         :type body: CloudWorkloadSecurityAgentRuleUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
