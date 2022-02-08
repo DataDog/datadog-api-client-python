@@ -32,7 +32,7 @@ jobs:
       - name: Cache sphinx
         uses: actions/cache@v2
         with:
-          path: site
+          path: docs/.sphinx
           key: sphinx
 
       - name: Build documentation
