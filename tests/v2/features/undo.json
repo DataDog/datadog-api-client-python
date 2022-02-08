@@ -60,6 +60,43 @@
       "type": "idempotent"
     }
   },
+  "ListAuthNMappings": {
+    "tag": "AuthN Mappings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAuthNMapping": {
+    "tag": "AuthN Mappings",
+    "undo": {
+      "operationId": "DeleteAuthNMapping",
+      "parameters": [
+        {
+          "name": "authn_mapping_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteAuthNMapping": {
+    "tag": "AuthN Mappings",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAuthNMapping": {
+    "tag": "AuthN Mappings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateAuthNMapping": {
+    "tag": "AuthN Mappings",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListCurrentUserApplicationKeys": {
     "tag": "Key Management",
     "undo": {
