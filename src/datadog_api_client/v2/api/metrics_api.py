@@ -233,7 +233,6 @@ class MetricsApi(object):
         >>> thread = api.create_tag_configuration(metric_name, body, async_req=True)
         >>> result = thread.get()
 
-
         :param metric_name: The name of the metric.
         :type metric_name: str
 
@@ -279,7 +278,6 @@ class MetricsApi(object):
         >>> thread = api.delete_tag_configuration(metric_name, async_req=True)
         >>> result = thread.get()
 
-
         :param metric_name: The name of the metric.
         :type metric_name: str
         :param _return_http_data_only: Response data without head status
@@ -321,7 +319,6 @@ class MetricsApi(object):
 
         >>> thread = api.list_tag_configuration_by_name(metric_name, async_req=True)
         >>> result = thread.get()
-
 
         :param metric_name: The name of the metric.
         :type metric_name: str
@@ -365,22 +362,16 @@ class MetricsApi(object):
         >>> thread = api.list_tag_configurations(async_req=True)
         >>> result = thread.get()
 
-
         :param filter_configured: Filter metrics that have configured tags.
         :type filter_configured: bool, optional
-
         :param filter_tags_configured: Filter tag configurations by configured tags.
         :type filter_tags_configured: str, optional
-
         :param filter_metric_type: Filter tag configurations by metric type.
         :type filter_metric_type: MetricTagConfigurationMetricTypes, optional
-
         :param filter_include_percentiles: Filter distributions with additional percentile aggregations enabled or disabled.
         :type filter_include_percentiles: bool, optional
-
         :param filter_tags: Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions. Cannot be combined with other filters.
         :type filter_tags: str, optional
-
         :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] query. Defaults value is 3600 (1 hour), maximum value is 172,800 (2 days).
         :type window_seconds: int, optional
         :param _return_http_data_only: Response data without head status
@@ -421,7 +412,6 @@ class MetricsApi(object):
 
         >>> thread = api.list_tags_by_metric_name(metric_name, async_req=True)
         >>> result = thread.get()
-
 
         :param metric_name: The name of the metric.
         :type metric_name: str
@@ -465,7 +455,6 @@ class MetricsApi(object):
         >>> thread = api.list_volumes_by_metric_name(metric_name, async_req=True)
         >>> result = thread.get()
 
-
         :param metric_name: The name of the metric.
         :type metric_name: str
         :param _return_http_data_only: Response data without head status
@@ -507,7 +496,6 @@ class MetricsApi(object):
 
         >>> thread = api.update_tag_configuration(metric_name, body, async_req=True)
         >>> result = thread.get()
-
 
         :param metric_name: The name of the metric.
         :type metric_name: str

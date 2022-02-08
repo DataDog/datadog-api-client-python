@@ -299,25 +299,18 @@ class LogsApi(object):
         >>> thread = api.list_logs_get(async_req=True)
         >>> result = thread.get()
 
-
         :param filter_query: Search query following logs syntax.
         :type filter_query: str, optional
-
         :param filter_index: For customers with multiple indexes, the indexes to search Defaults to '*' which means all indexes
         :type filter_index: str, optional
-
         :param filter_from: Minimum timestamp for requested logs.
         :type filter_from: datetime, optional
-
         :param filter_to: Maximum timestamp for requested logs.
         :type filter_to: datetime, optional
-
         :param sort: Order of logs in results.
         :type sort: LogsSort, optional
-
         :param page_cursor: List following results with a cursor provided in the previous query.
         :type page_cursor: str, optional
-
         :param page_limit: Maximum number of logs in the response. If omitted the server will use the default value of 10.
         :type page_limit: int, optional
         :param _return_http_data_only: Response data without head status
@@ -359,13 +352,10 @@ class LogsApi(object):
         >>> thread = api.submit_log(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Log to send (JSON format).
         :type body: HTTPLog
-
         :param content_encoding: HTTP header used to compress the media-type.
         :type content_encoding: ContentEncoding, optional
-
         :param ddtags: Log tags can be passed as query parameters with `text/plain` content type.
         :type ddtags: str, optional
         :param _return_http_data_only: Response data without head status

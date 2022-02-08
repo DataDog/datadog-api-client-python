@@ -142,7 +142,6 @@ class DashboardListsApi(object):
         >>> thread = api.create_dashboard_list(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Create a dashboard list request body.
         :type body: DashboardList
         :param _return_http_data_only: Response data without head status
@@ -185,7 +184,6 @@ class DashboardListsApi(object):
         >>> thread = api.delete_dashboard_list(list_id, async_req=True)
         >>> result = thread.get()
 
-
         :param list_id: ID of the dashboard list to delete.
         :type list_id: int
         :param _return_http_data_only: Response data without head status
@@ -227,7 +225,6 @@ class DashboardListsApi(object):
 
         >>> thread = api.get_dashboard_list(list_id, async_req=True)
         >>> result = thread.get()
-
 
         :param list_id: ID of the dashboard list to fetch.
         :type list_id: int
@@ -310,10 +307,8 @@ class DashboardListsApi(object):
         >>> thread = api.update_dashboard_list(list_id, body, async_req=True)
         >>> result = thread.get()
 
-
         :param list_id: ID of the dashboard list to update.
         :type list_id: int
-
         :param body: Update a dashboard list request body.
         :type body: DashboardList
         :param _return_http_data_only: Response data without head status

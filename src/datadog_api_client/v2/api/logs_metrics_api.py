@@ -143,7 +143,6 @@ class LogsMetricsApi(object):
         >>> thread = api.create_logs_metric(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: The definition of the new log-based metric.
         :type body: LogsMetricCreateRequest
         :param _return_http_data_only: Response data without head status
@@ -186,7 +185,6 @@ class LogsMetricsApi(object):
         >>> thread = api.delete_logs_metric(metric_id, async_req=True)
         >>> result = thread.get()
 
-
         :param metric_id: The name of the log-based metric.
         :type metric_id: str
         :param _return_http_data_only: Response data without head status
@@ -228,7 +226,6 @@ class LogsMetricsApi(object):
 
         >>> thread = api.get_logs_metric(metric_id, async_req=True)
         >>> result = thread.get()
-
 
         :param metric_id: The name of the log-based metric.
         :type metric_id: str
@@ -311,10 +308,8 @@ class LogsMetricsApi(object):
         >>> thread = api.update_logs_metric(metric_id, body, async_req=True)
         >>> result = thread.get()
 
-
         :param metric_id: The name of the log-based metric.
         :type metric_id: str
-
         :param body: New definition of the log-based metric.
         :type body: LogsMetricUpdateRequest
         :param _return_http_data_only: Response data without head status

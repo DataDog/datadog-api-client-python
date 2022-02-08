@@ -50,7 +50,6 @@ class ServiceChecksApi(object):
         >>> thread = api.submit_service_check(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Service Check request body.
         :type body: ServiceChecks
         :param _return_http_data_only: Response data without head status

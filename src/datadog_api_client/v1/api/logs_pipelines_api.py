@@ -179,7 +179,6 @@ class LogsPipelinesApi(object):
         >>> thread = api.create_logs_pipeline(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Definition of the new pipeline.
         :type body: LogsPipeline
         :param _return_http_data_only: Response data without head status
@@ -222,7 +221,6 @@ class LogsPipelinesApi(object):
         >>> thread = api.delete_logs_pipeline(pipeline_id, async_req=True)
         >>> result = thread.get()
 
-
         :param pipeline_id: ID of the pipeline to delete.
         :type pipeline_id: str
         :param _return_http_data_only: Response data without head status
@@ -264,7 +262,6 @@ class LogsPipelinesApi(object):
 
         >>> thread = api.get_logs_pipeline(pipeline_id, async_req=True)
         >>> result = thread.get()
-
 
         :param pipeline_id: ID of the pipeline to get.
         :type pipeline_id: str
@@ -386,10 +383,8 @@ class LogsPipelinesApi(object):
         >>> thread = api.update_logs_pipeline(pipeline_id, body, async_req=True)
         >>> result = thread.get()
 
-
         :param pipeline_id: ID of the pipeline to delete.
         :type pipeline_id: str
-
         :param body: New definition of the pipeline.
         :type body: LogsPipeline
         :param _return_http_data_only: Response data without head status
@@ -432,7 +427,6 @@ class LogsPipelinesApi(object):
 
         >>> thread = api.update_logs_pipeline_order(body, async_req=True)
         >>> result = thread.get()
-
 
         :param body: Object containing the new ordered list of pipeline IDs.
         :type body: LogsPipelinesOrder

@@ -258,7 +258,6 @@ class LogsArchivesApi(object):
         >>> thread = api.add_read_role_to_archive(archive_id, body, async_req=True)
         >>> result = thread.get()
 
-
         :param archive_id: The ID of the archive.
         :type archive_id: str
 
@@ -304,7 +303,6 @@ class LogsArchivesApi(object):
         >>> thread = api.create_logs_archive(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: The definition of the new archive.
         :type body: LogsArchiveCreateRequest
         :param _return_http_data_only: Response data without head status
@@ -347,7 +345,6 @@ class LogsArchivesApi(object):
         >>> thread = api.delete_logs_archive(archive_id, async_req=True)
         >>> result = thread.get()
 
-
         :param archive_id: The ID of the archive.
         :type archive_id: str
         :param _return_http_data_only: Response data without head status
@@ -389,7 +386,6 @@ class LogsArchivesApi(object):
 
         >>> thread = api.get_logs_archive(archive_id, async_req=True)
         >>> result = thread.get()
-
 
         :param archive_id: The ID of the archive.
         :type archive_id: str
@@ -472,7 +468,6 @@ class LogsArchivesApi(object):
         >>> thread = api.list_archive_read_roles(archive_id, async_req=True)
         >>> result = thread.get()
 
-
         :param archive_id: The ID of the archive.
         :type archive_id: str
         :param _return_http_data_only: Response data without head status
@@ -554,7 +549,6 @@ class LogsArchivesApi(object):
         >>> thread = api.remove_role_from_archive(archive_id, body, async_req=True)
         >>> result = thread.get()
 
-
         :param archive_id: The ID of the archive.
         :type archive_id: str
 
@@ -600,10 +594,8 @@ class LogsArchivesApi(object):
         >>> thread = api.update_logs_archive(archive_id, body, async_req=True)
         >>> result = thread.get()
 
-
         :param archive_id: The ID of the archive.
         :type archive_id: str
-
         :param body: New definition of the archive.
         :type body: LogsArchiveCreateRequest
         :param _return_http_data_only: Response data without head status
@@ -646,7 +638,6 @@ class LogsArchivesApi(object):
 
         >>> thread = api.update_logs_archive_order(body, async_req=True)
         >>> result = thread.get()
-
 
         :param body: An object containing the new ordered list of archive IDs.
         :type body: LogsArchiveOrder

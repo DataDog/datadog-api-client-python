@@ -376,7 +376,6 @@ class UsersApi(object):
         >>> thread = api.disable_user(user_id, async_req=True)
         >>> result = thread.get()
 
-
         :param user_id: The ID of the user.
         :type user_id: str
         :param _return_http_data_only: Response data without head status
@@ -418,7 +417,6 @@ class UsersApi(object):
 
         >>> thread = api.get_invitation(user_invitation_uuid, async_req=True)
         >>> result = thread.get()
-
 
         :param user_invitation_uuid: The UUID of the user invitation.
         :type user_invitation_uuid: str
@@ -462,7 +460,6 @@ class UsersApi(object):
         >>> thread = api.get_user(user_id, async_req=True)
         >>> result = thread.get()
 
-
         :param user_id: The ID of the user.
         :type user_id: str
         :param _return_http_data_only: Response data without head status
@@ -504,7 +501,6 @@ class UsersApi(object):
 
         >>> thread = api.list_user_organizations(user_id, async_req=True)
         >>> result = thread.get()
-
 
         :param user_id: The ID of the user.
         :type user_id: str
@@ -548,7 +544,6 @@ class UsersApi(object):
         >>> thread = api.list_user_permissions(user_id, async_req=True)
         >>> result = thread.get()
 
-
         :param user_id: The ID of the user.
         :type user_id: str
         :param _return_http_data_only: Response data without head status
@@ -591,22 +586,16 @@ class UsersApi(object):
         >>> thread = api.list_users(async_req=True)
         >>> result = thread.get()
 
-
         :param page_size: Size for a given page. If omitted the server will use the default value of 10.
         :type page_size: int, optional
-
         :param page_number: Specific page number to return. If omitted the server will use the default value of 0.
         :type page_number: int, optional
-
         :param sort: User attribute to order results by. Sort order is ascending by default. Sort order is descending if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `modified_at`, `user_count`. If omitted the server will use the default value of "name".
         :type sort: str, optional
-
         :param sort_dir: Direction of sort. Options: `asc`, `desc`.
         :type sort_dir: QuerySortOrder, optional
-
         :param filter: Filter all users by the given string. Defaults to no filtering.
         :type filter: str, optional
-
         :param filter_status: Filter on status attribute. Comma separated list, with possible values `Active`, `Pending`, and `Disabled`. Defaults to no filtering.
         :type filter_status: str, optional
         :param _return_http_data_only: Response data without head status
@@ -689,7 +678,6 @@ class UsersApi(object):
 
         >>> thread = api.update_user(user_id, body, async_req=True)
         >>> result = thread.get()
-
 
         :param user_id: The ID of the user.
         :type user_id: str

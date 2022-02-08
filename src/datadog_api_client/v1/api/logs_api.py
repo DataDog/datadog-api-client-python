@@ -135,7 +135,6 @@ class LogsApi(object):
         >>> thread = api.list_logs(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Logs filter
         :type body: LogsListRequest
         :param _return_http_data_only: Response data without head status
@@ -178,13 +177,10 @@ class LogsApi(object):
         >>> thread = api.submit_log(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Log to send (JSON format).
         :type body: HTTPLog
-
         :param content_encoding: HTTP header used to compress the media-type.
         :type content_encoding: ContentEncoding, optional
-
         :param ddtags: Log tags can be passed as query parameters with `text/plain` content type.
         :type ddtags: str, optional
         :param _return_http_data_only: Response data without head status

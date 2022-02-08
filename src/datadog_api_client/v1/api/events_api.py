@@ -140,7 +140,6 @@ class EventsApi(object):
         >>> thread = api.create_event(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Event request object
         :type body: EventCreateRequest
         :param _return_http_data_only: Response data without head status
@@ -182,7 +181,6 @@ class EventsApi(object):
 
         >>> thread = api.get_event(event_id, async_req=True)
         >>> result = thread.get()
-
 
         :param event_id: The ID of the event.
         :type event_id: int
@@ -226,28 +224,20 @@ class EventsApi(object):
         >>> thread = api.list_events(start, end, async_req=True)
         >>> result = thread.get()
 
-
         :param start: POSIX timestamp.
         :type start: int
-
         :param end: POSIX timestamp.
         :type end: int
-
         :param priority: Priority of your events, either `low` or `normal`.
         :type priority: EventPriority, optional
-
         :param sources: A comma separated string of sources.
         :type sources: str, optional
-
         :param tags: A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope.
         :type tags: str, optional
-
         :param unaggregated: Set unaggregated to `true` to return all events within the specified [`start`,`end`] timeframe. Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe, it won't be available in the output. Aggregated events with `is_aggregate=true` in the response will still be returned unless exclude_aggregate is set to `true.`
         :type unaggregated: bool, optional
-
         :param exclude_aggregate: Set `exclude_aggregate` to `true` to only return unaggregated events where `is_aggregate=false` in the response. If the `exclude_aggregate` parameter is set to `true`, then the unaggregated parameter is ignored and will be `true` by default.
         :type exclude_aggregate: bool, optional
-
         :param page: By default 1000 results are returned per request. Set page to the number of the page to return with `0` being the first page. The page parameter can only be used when either unaggregated or exclude_aggregate is set to `true.`
         :type page: int, optional
         :param _return_http_data_only: Response data without head status

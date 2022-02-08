@@ -125,7 +125,6 @@ class PagerDutyIntegrationApi(object):
         >>> thread = api.create_pager_duty_integration_service(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Create a new service object request body.
         :type body: PagerDutyService
         :param _return_http_data_only: Response data without head status
@@ -167,7 +166,6 @@ class PagerDutyIntegrationApi(object):
 
         >>> thread = api.delete_pager_duty_integration_service(service_name, async_req=True)
         >>> result = thread.get()
-
 
         :param service_name: The service name
         :type service_name: str
@@ -211,7 +209,6 @@ class PagerDutyIntegrationApi(object):
         >>> thread = api.get_pager_duty_integration_service(service_name, async_req=True)
         >>> result = thread.get()
 
-
         :param service_name: The service name.
         :type service_name: str
         :param _return_http_data_only: Response data without head status
@@ -254,10 +251,8 @@ class PagerDutyIntegrationApi(object):
         >>> thread = api.update_pager_duty_integration_service(service_name, body, async_req=True)
         >>> result = thread.get()
 
-
         :param service_name: The service name
         :type service_name: str
-
         :param body: Update an existing service object request body.
         :type body: PagerDutyServiceKey
         :param _return_http_data_only: Response data without head status

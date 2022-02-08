@@ -206,7 +206,6 @@ class ServiceAccountsApi(object):
         >>> thread = api.create_service_account_application_key(service_account_id, body, async_req=True)
         >>> result = thread.get()
 
-
         :param service_account_id: The ID of the service account.
         :type service_account_id: str
 
@@ -252,10 +251,8 @@ class ServiceAccountsApi(object):
         >>> thread = api.delete_service_account_application_key(service_account_id, app_key_id, async_req=True)
         >>> result = thread.get()
 
-
         :param service_account_id: The ID of the service account.
         :type service_account_id: str
-
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
         :param _return_http_data_only: Response data without head status
@@ -299,10 +296,8 @@ class ServiceAccountsApi(object):
         >>> thread = api.get_service_account_application_key(service_account_id, app_key_id, async_req=True)
         >>> result = thread.get()
 
-
         :param service_account_id: The ID of the service account.
         :type service_account_id: str
-
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
         :param _return_http_data_only: Response data without head status
@@ -346,25 +341,18 @@ class ServiceAccountsApi(object):
         >>> thread = api.list_service_account_application_keys(service_account_id, async_req=True)
         >>> result = thread.get()
 
-
         :param service_account_id: The ID of the service account.
         :type service_account_id: str
-
         :param page_size: Size for a given page. If omitted the server will use the default value of 10.
         :type page_size: int, optional
-
         :param page_number: Specific page number to return. If omitted the server will use the default value of 0.
         :type page_number: int, optional
-
         :param sort: Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.
         :type sort: ApplicationKeysSort, optional
-
         :param filter: Filter application keys by the specified string.
         :type filter: str, optional
-
         :param filter_created_at_start: Only include application keys created on or after the specified date.
         :type filter_created_at_start: str, optional
-
         :param filter_created_at_end: Only include application keys created on or before the specified date.
         :type filter_created_at_end: str, optional
         :param _return_http_data_only: Response data without head status
@@ -407,10 +395,8 @@ class ServiceAccountsApi(object):
         >>> thread = api.update_service_account_application_key(service_account_id, app_key_id, body, async_req=True)
         >>> result = thread.get()
 
-
         :param service_account_id: The ID of the service account.
         :type service_account_id: str
-
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
 

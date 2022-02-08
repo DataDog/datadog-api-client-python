@@ -143,7 +143,6 @@ class UsersApi(object):
         >>> thread = api.create_user(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: User object that needs to be created.
         :type body: User
         :param _return_http_data_only: Response data without head status
@@ -186,7 +185,6 @@ class UsersApi(object):
         >>> thread = api.disable_user(user_handle, async_req=True)
         >>> result = thread.get()
 
-
         :param user_handle: The handle of the user.
         :type user_handle: str
         :param _return_http_data_only: Response data without head status
@@ -228,7 +226,6 @@ class UsersApi(object):
 
         >>> thread = api.get_user(user_handle, async_req=True)
         >>> result = thread.get()
-
 
         :param user_handle: The ID of the user.
         :type user_handle: str
@@ -311,10 +308,8 @@ class UsersApi(object):
         >>> thread = api.update_user(user_handle, body, async_req=True)
         >>> result = thread.get()
 
-
         :param user_handle: The ID of the user.
         :type user_handle: str
-
         :param body: Description of the update.
         :type body: User
         :param _return_http_data_only: Response data without head status

@@ -345,7 +345,6 @@ class SecurityMonitoringApi(object):
         >>> thread = api.create_security_filter(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: The definition of the new security filter.
         :type body: SecurityFilterCreateRequest
         :param _return_http_data_only: Response data without head status
@@ -430,7 +429,6 @@ class SecurityMonitoringApi(object):
         >>> thread = api.delete_security_filter(security_filter_id, async_req=True)
         >>> result = thread.get()
 
-
         :param security_filter_id: The ID of the security filter.
         :type security_filter_id: str
         :param _return_http_data_only: Response data without head status
@@ -472,7 +470,6 @@ class SecurityMonitoringApi(object):
 
         >>> thread = api.delete_security_monitoring_rule(rule_id, async_req=True)
         >>> result = thread.get()
-
 
         :param rule_id: The ID of the rule.
         :type rule_id: str
@@ -516,7 +513,6 @@ class SecurityMonitoringApi(object):
         >>> thread = api.get_security_filter(security_filter_id, async_req=True)
         >>> result = thread.get()
 
-
         :param security_filter_id: The ID of the security filter.
         :type security_filter_id: str
         :param _return_http_data_only: Response data without head status
@@ -558,7 +554,6 @@ class SecurityMonitoringApi(object):
 
         >>> thread = api.get_security_monitoring_rule(rule_id, async_req=True)
         >>> result = thread.get()
-
 
         :param rule_id: The ID of the rule.
         :type rule_id: str
@@ -641,10 +636,8 @@ class SecurityMonitoringApi(object):
         >>> thread = api.list_security_monitoring_rules(async_req=True)
         >>> result = thread.get()
 
-
         :param page_size: Size for a given page. If omitted the server will use the default value of 10.
         :type page_size: int, optional
-
         :param page_number: Specific page number to return. If omitted the server will use the default value of 0.
         :type page_number: int, optional
         :param _return_http_data_only: Response data without head status
@@ -686,22 +679,16 @@ class SecurityMonitoringApi(object):
         >>> thread = api.list_security_monitoring_signals(async_req=True)
         >>> result = thread.get()
 
-
         :param filter_query: The search query for security signals.
         :type filter_query: str, optional
-
         :param filter_from: The minimum timestamp for requested security signals.
         :type filter_from: datetime, optional
-
         :param filter_to: The maximum timestamp for requested security signals.
         :type filter_to: datetime, optional
-
         :param sort: The order of the security signals in results.
         :type sort: SecurityMonitoringSignalsSort, optional
-
         :param page_cursor: A list of results using the cursor provided in the previous query.
         :type page_cursor: str, optional
-
         :param page_limit: The maximum number of security signals in the response. If omitted the server will use the default value of 10.
         :type page_limit: int, optional
         :param _return_http_data_only: Response data without head status
@@ -784,10 +771,8 @@ class SecurityMonitoringApi(object):
         >>> thread = api.update_security_filter(security_filter_id, body, async_req=True)
         >>> result = thread.get()
 
-
         :param security_filter_id: The ID of the security filter.
         :type security_filter_id: str
-
         :param body: New definition of the security filter.
         :type body: SecurityFilterUpdateRequest
         :param _return_http_data_only: Response data without head status
@@ -830,7 +815,6 @@ class SecurityMonitoringApi(object):
 
         >>> thread = api.update_security_monitoring_rule(rule_id, body, async_req=True)
         >>> result = thread.get()
-
 
         :param rule_id: The ID of the rule.
         :type rule_id: str

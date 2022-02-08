@@ -171,20 +171,10 @@ class {{classname}}(object):
         >>> thread = api.{{operationId}}({{#requiredParams}}{{^defaultValue}}{{paramName}}, {{/defaultValue}}{{/requiredParams}}{{#requiredParams}}{{#defaultValue}}{{paramName}}={{{defaultValue}}}, {{/defaultValue}}{{/requiredParams}}async_req=True)
         >>> result = thread.get()
 
-{{#requiredParams}}
-{{^defaultValue}}{{#description}}
-        :param {{paramName}}: {{{.}}}{{/description}}
+{{#requiredParams}}{{#description}}        :param {{paramName}}: {{{.}}}{{#defaultValue}} Defaults to {{{defaultValue}}}.{{/defaultValue}}{{/description}}
         :type {{paramName}}: {{dataType}}
-{{/defaultValue}}
 {{/requiredParams}}
-{{#requiredParams}}
-{{#defaultValue}}{{#description}}
-        :param {{paramName}}: {{{.}}} Defaults to {{{defaultValue}}}. Must be one of [{{{defaultValue}}}]{{/description}}
-        :type {{paramName}}: {{dataType}}
-{{/defaultValue}}
-{{/requiredParams}}
-{{#optionalParams}}{{#description}}
-        :param {{paramName}}: {{{.}}}{{#defaultValue}} If omitted the server will use the default value of {{{defaultValue}}}.{{/defaultValue}}{{/description}}
+{{#optionalParams}}{{#description}}        :param {{paramName}}: {{{.}}}{{#defaultValue}} If omitted the server will use the default value of {{{defaultValue}}}.{{/defaultValue}}{{/description}}
         :type {{paramName}}: {{dataType}}, optional
 {{/optionalParams}}
         :param _return_http_data_only: Response data without head status

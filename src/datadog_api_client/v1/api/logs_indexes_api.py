@@ -156,7 +156,6 @@ class LogsIndexesApi(object):
         >>> thread = api.create_logs_index(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Object containing the new index.
         :type body: LogsIndex
         :param _return_http_data_only: Response data without head status
@@ -198,7 +197,6 @@ class LogsIndexesApi(object):
 
         >>> thread = api.get_logs_index(name, async_req=True)
         >>> result = thread.get()
-
 
         :param name: Name of the log index.
         :type name: str
@@ -320,10 +318,8 @@ class LogsIndexesApi(object):
         >>> thread = api.update_logs_index(name, body, async_req=True)
         >>> result = thread.get()
 
-
         :param name: Name of the log index.
         :type name: str
-
         :param body: Object containing the new `LogsIndexUpdateRequest`.
         :type body: LogsIndexUpdateRequest
         :param _return_http_data_only: Response data without head status
@@ -366,7 +362,6 @@ class LogsIndexesApi(object):
 
         >>> thread = api.update_logs_index_order(body, async_req=True)
         >>> result = thread.get()
-
 
         :param body: Object containing the new ordered list of index names
         :type body: LogsIndexesOrder

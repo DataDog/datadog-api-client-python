@@ -143,7 +143,6 @@ class ServiceLevelObjectiveCorrectionsApi(object):
         >>> thread = api.create_slo_correction(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Create an SLO Correction
         :type body: SLOCorrectionCreateRequest
         :param _return_http_data_only: Response data without head status
@@ -186,7 +185,6 @@ class ServiceLevelObjectiveCorrectionsApi(object):
         >>> thread = api.delete_slo_correction(slo_correction_id, async_req=True)
         >>> result = thread.get()
 
-
         :param slo_correction_id: The ID of the SLO correction object.
         :type slo_correction_id: str
         :param _return_http_data_only: Response data without head status
@@ -228,7 +226,6 @@ class ServiceLevelObjectiveCorrectionsApi(object):
 
         >>> thread = api.get_slo_correction(slo_correction_id, async_req=True)
         >>> result = thread.get()
-
 
         :param slo_correction_id: The ID of the SLO correction object.
         :type slo_correction_id: str
@@ -311,10 +308,8 @@ class ServiceLevelObjectiveCorrectionsApi(object):
         >>> thread = api.update_slo_correction(slo_correction_id, body, async_req=True)
         >>> result = thread.get()
 
-
         :param slo_correction_id: The ID of the SLO correction object.
         :type slo_correction_id: str
-
         :param body: The edited SLO correction object.
         :type body: SLOCorrectionUpdateRequest
         :param _return_http_data_only: Response data without head status

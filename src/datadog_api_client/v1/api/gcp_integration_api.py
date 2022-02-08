@@ -107,7 +107,6 @@ class GCPIntegrationApi(object):
         >>> thread = api.create_gcp_integration(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Create a Datadog-GCP integration.
         :type body: GCPAccount
         :param _return_http_data_only: Response data without head status
@@ -149,7 +148,6 @@ class GCPIntegrationApi(object):
 
         >>> thread = api.delete_gcp_integration(body, async_req=True)
         >>> result = thread.get()
-
 
         :param body: Delete a given Datadog-GCP integration.
         :type body: GCPAccount
@@ -231,7 +229,6 @@ class GCPIntegrationApi(object):
 
         >>> thread = api.update_gcp_integration(body, async_req=True)
         >>> result = thread.get()
-
 
         :param body: Update a Datadog-GCP integration.
         :type body: GCPAccount

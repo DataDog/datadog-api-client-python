@@ -1229,16 +1229,12 @@ class UsageMeteringApi(object):
         >>> thread = api.get_daily_custom_reports(async_req=True)
         >>> result = thread.get()
 
-
         :param page_size: The number of files to return in the response. `[default=60]`.
         :type page_size: int, optional
-
         :param page_number: The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`.
         :type page_number: int, optional
-
         :param sort_dir: The direction to sort by: `[desc, asc]`.
         :type sort_dir: UsageSortDirection, optional
-
         :param sort: The field to sort by: `[computed_on, size, start_date, end_date]`.
         :type sort: UsageSort, optional
         :param _return_http_data_only: Response data without head status
@@ -1280,19 +1276,14 @@ class UsageMeteringApi(object):
         >>> thread = api.get_hourly_usage_attribution(start_hr, usage_type, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-
         :param usage_type: Usage type to retrieve.
         :type usage_type: HourlyUsageAttributionUsageType
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
         :type end_hr: datetime, optional
-
         :param next_record_id: List following results with a next_record_id provided in the previous query.
         :type next_record_id: str, optional
-
         :param tag_breakdown_keys: Comma separated list of tags used to group usage. If no value is provided the usage will not be broken down by tags.
         :type tag_breakdown_keys: str, optional
         :param _return_http_data_only: Response data without head status
@@ -1336,10 +1327,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_incident_management(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -1382,10 +1371,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_ingested_spans(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -1428,16 +1415,12 @@ class UsageMeteringApi(object):
         >>> thread = api.get_monthly_custom_reports(async_req=True)
         >>> result = thread.get()
 
-
         :param page_size: The number of files to return in the response `[default=60].`
         :type page_size: int, optional
-
         :param page_number: The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`.
         :type page_number: int, optional
-
         :param sort_dir: The direction to sort by: `[desc, asc]`.
         :type sort_dir: UsageSortDirection, optional
-
         :param sort: The field to sort by: `[computed_on, size, start_date, end_date]`.
         :type sort: UsageSort, optional
         :param _return_http_data_only: Response data without head status
@@ -1479,25 +1462,18 @@ class UsageMeteringApi(object):
         >>> thread = api.get_monthly_usage_attribution(start_month, fields, async_req=True)
         >>> result = thread.get()
 
-
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
         :type start_month: datetime
-
         :param fields: Comma-separated list of usage types to return, or `*` for all usage types.
         :type fields: MonthlyUsageAttributionSupportedMetrics
-
         :param end_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.
         :type end_month: datetime, optional
-
         :param sort_direction: The direction to sort by: `[desc, asc]`.
         :type sort_direction: UsageSortDirection, optional
-
         :param sort_name: The field to sort by.
         :type sort_name: MonthlyUsageAttributionSupportedMetrics, optional
-
         :param tag_breakdown_keys: Comma separated list of tags used to group usage. If no value is provided the usage will not be broken down by tags.
         :type tag_breakdown_keys: str, optional
-
         :param next_record_id: List following results with a next_record_id provided in the previous query.
         :type next_record_id: str, optional
         :param _return_http_data_only: Response data without head status
@@ -1541,7 +1517,6 @@ class UsageMeteringApi(object):
         >>> thread = api.get_specified_daily_custom_reports(report_id, async_req=True)
         >>> result = thread.get()
 
-
         :param report_id: Date of the report in the format `YYYY-MM-DD`.
         :type report_id: str
         :param _return_http_data_only: Response data without head status
@@ -1583,7 +1558,6 @@ class UsageMeteringApi(object):
 
         >>> thread = api.get_specified_monthly_custom_reports(report_id, async_req=True)
         >>> result = thread.get()
-
 
         :param report_id: Date of the report in the format `YYYY-MM-DD`.
         :type report_id: str
@@ -1627,10 +1601,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_analyzed_logs(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -1673,28 +1645,20 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_attribution(start_month, fields, async_req=True)
         >>> result = thread.get()
 
-
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
         :type start_month: datetime
-
         :param fields: Comma-separated list of usage types to return, or `*` for all usage types.
         :type fields: UsageAttributionSupportedMetrics
-
         :param end_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.
         :type end_month: datetime, optional
-
         :param sort_direction: The direction to sort by: `[desc, asc]`.
         :type sort_direction: UsageSortDirection, optional
-
         :param sort_name: The field to sort by.
         :type sort_name: UsageAttributionSort, optional
-
         :param include_descendants: Include child org usage in the response. Defaults to false. If omitted the server will use the default value of False.
         :type include_descendants: bool, optional
-
         :param offset: Number of records to skip before beginning to return. If omitted the server will use the default value of 0.
         :type offset: int, optional
-
         :param limit: Maximum number of records to be returned. If omitted the server will use the default value of 5000.
         :type limit: int, optional
         :param _return_http_data_only: Response data without head status
@@ -1738,10 +1702,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_audit_logs(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -1784,7 +1746,6 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_billable_summary(async_req=True)
         >>> result = thread.get()
 
-
         :param month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage starting this month.
         :type month: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -1826,10 +1787,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_cloud_security_posture_management(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -1872,10 +1831,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_cws(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -1918,10 +1875,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_dbm(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -1964,10 +1919,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_fargate(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2010,10 +1963,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_hosts(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2056,10 +2007,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_indexed_spans(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2102,10 +2051,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_internet_of_things(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2148,10 +2095,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_lambda(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2194,10 +2139,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_logs(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2240,13 +2183,10 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_logs_by_index(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-
         :param index_name: Comma-separated list of log index names.
         :type index_name: [str], optional
         :param _return_http_data_only: Response data without head status
@@ -2289,10 +2229,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_logs_by_retention(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2335,10 +2273,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_network_flows(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2381,10 +2317,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_network_hosts(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2427,10 +2361,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_profiling(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2473,13 +2405,10 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_rum_sessions(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-
         :param type: RUM type: `[browser, mobile]`. Defaults to `browser`.
         :type type: str, optional
         :param _return_http_data_only: Response data without head status
@@ -2522,10 +2451,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_rum_units(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2568,10 +2495,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_sds(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2614,10 +2539,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_snmp(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2660,13 +2583,10 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_summary(start_month, async_req=True)
         >>> result = thread.get()
 
-
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
         :type start_month: datetime
-
         :param end_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.
         :type end_month: datetime, optional
-
         :param include_org_details: Include usage summaries for each sub-org.
         :type include_org_details: bool, optional
         :param _return_http_data_only: Response data without head status
@@ -2709,10 +2629,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_synthetics(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2755,10 +2673,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_synthetics_api(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2801,10 +2717,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_synthetics_browser(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2847,10 +2761,8 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_timeseries(start_hr, async_req=True)
         >>> result = thread.get()
 
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
-
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -2893,19 +2805,14 @@ class UsageMeteringApi(object):
         >>> thread = api.get_usage_top_avg_metrics(async_req=True)
         >>> result = thread.get()
 
-
         :param month: Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour. (Either month or day should be specified, but not both)
         :type month: datetime, optional
-
         :param day: Datetime in ISO-8601 format, UTC, precise to day: [YYYY-MM-DD] for usage beginning at this hour. (Either month or day should be specified, but not both)
         :type day: datetime, optional
-
         :param names: Comma-separated list of metric names.
         :type names: [str], optional
-
         :param limit: Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified. If omitted the server will use the default value of 500.
         :type limit: int, optional
-
         :param next_record_id: List following results with a next_record_id provided in the previous query.
         :type next_record_id: str, optional
         :param _return_http_data_only: Response data without head status

@@ -171,7 +171,6 @@ class CloudWorkloadSecurityApi(object):
         >>> thread = api.create_cloud_workload_security_agent_rule(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: The definition of the new Agent rule.
         :type body: CloudWorkloadSecurityAgentRuleCreateRequest
         :param _return_http_data_only: Response data without head status
@@ -213,7 +212,6 @@ class CloudWorkloadSecurityApi(object):
 
         >>> thread = api.delete_cloud_workload_security_agent_rule(agent_rule_id, async_req=True)
         >>> result = thread.get()
-
 
         :param agent_rule_id: The ID of the Agent rule.
         :type agent_rule_id: str
@@ -296,7 +294,6 @@ class CloudWorkloadSecurityApi(object):
         >>> thread = api.get_cloud_workload_security_agent_rule(agent_rule_id, async_req=True)
         >>> result = thread.get()
 
-
         :param agent_rule_id: The ID of the Agent rule.
         :type agent_rule_id: str
         :param _return_http_data_only: Response data without head status
@@ -378,10 +375,8 @@ class CloudWorkloadSecurityApi(object):
         >>> thread = api.update_cloud_workload_security_agent_rule(agent_rule_id, body, async_req=True)
         >>> result = thread.get()
 
-
         :param agent_rule_id: The ID of the Agent rule.
         :type agent_rule_id: str
-
         :param body: New definition of the Agent rule.
         :type body: CloudWorkloadSecurityAgentRuleUpdateRequest
         :param _return_http_data_only: Response data without head status
