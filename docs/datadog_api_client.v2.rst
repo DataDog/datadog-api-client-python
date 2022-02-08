@@ -1,8 +1,5 @@
-datadog\_api\_client.v2 package
-===============================
-
-Subpackages
------------
+datadog\_api\_client.v2
+=======================
 
 .. toctree::
    :maxdepth: 4
@@ -10,51 +7,47 @@ Subpackages
    datadog_api_client.v2.api
    datadog_api_client.v2.model
 
-Submodules
-----------
 
-datadog\_api\_client.v2.api\_client module
-------------------------------------------
+api\_client
+-----------
 
 .. automodule:: datadog_api_client.v2.api_client
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v2.configuration module
---------------------------------------------
+configuration
+-------------
 
 .. automodule:: datadog_api_client.v2.configuration
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v2.exceptions module
------------------------------------------
+exceptions
+----------
 
 .. automodule:: datadog_api_client.v2.exceptions
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model\_utils module
--------------------------------------------
+model\_utils
+------------
 
 .. automodule:: datadog_api_client.v2.model_utils
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v2.rest module
------------------------------------
+rest
+----
 
 .. automodule:: datadog_api_client.v2.rest
    :members:
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
 
 .. automodule:: datadog_api_client.v2
    :members:

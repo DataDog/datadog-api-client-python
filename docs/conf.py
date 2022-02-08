@@ -67,3 +67,5 @@ html_theme_options = {
     # If True, show hidden TOC entries
     "globaltoc_includehidden": False,
 }
+
+add_module_names = False

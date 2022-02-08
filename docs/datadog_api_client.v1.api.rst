@@ -1,251 +1,246 @@
-datadog\_api\_client.v1.api package
-===================================
+datadog\_api\_client.v1.api
+===========================
 
-Submodules
-----------
-
-datadog\_api\_client.v1.api.authentication\_api module
-------------------------------------------------------
+authentication\_api
+-------------------
 
 .. automodule:: datadog_api_client.v1.api.authentication_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.aws\_integration\_api module
---------------------------------------------------------
+aws\_integration\_api
+---------------------
 
 .. automodule:: datadog_api_client.v1.api.aws_integration_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.aws\_logs\_integration\_api module
---------------------------------------------------------------
+aws\_logs\_integration\_api
+---------------------------
 
 .. automodule:: datadog_api_client.v1.api.aws_logs_integration_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.azure\_integration\_api module
-----------------------------------------------------------
+azure\_integration\_api
+-----------------------
 
 .. automodule:: datadog_api_client.v1.api.azure_integration_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.dashboard\_lists\_api module
---------------------------------------------------------
+dashboard\_lists\_api
+---------------------
 
 .. automodule:: datadog_api_client.v1.api.dashboard_lists_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.dashboards\_api module
---------------------------------------------------
+dashboards\_api
+---------------
 
 .. automodule:: datadog_api_client.v1.api.dashboards_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.downtimes\_api module
--------------------------------------------------
+downtimes\_api
+--------------
 
 .. automodule:: datadog_api_client.v1.api.downtimes_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.events\_api module
-----------------------------------------------
+events\_api
+-----------
 
 .. automodule:: datadog_api_client.v1.api.events_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.gcp\_integration\_api module
---------------------------------------------------------
+gcp\_integration\_api
+---------------------
 
 .. automodule:: datadog_api_client.v1.api.gcp_integration_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.hosts\_api module
----------------------------------------------
+hosts\_api
+----------
 
 .. automodule:: datadog_api_client.v1.api.hosts_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.ip\_ranges\_api module
---------------------------------------------------
+ip\_ranges\_api
+---------------
 
 .. automodule:: datadog_api_client.v1.api.ip_ranges_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.key\_management\_api module
--------------------------------------------------------
+key\_management\_api
+--------------------
 
 .. automodule:: datadog_api_client.v1.api.key_management_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.logs\_api module
---------------------------------------------
+logs\_api
+---------
 
 .. automodule:: datadog_api_client.v1.api.logs_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.logs\_indexes\_api module
------------------------------------------------------
+logs\_indexes\_api
+------------------
 
 .. automodule:: datadog_api_client.v1.api.logs_indexes_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.logs\_pipelines\_api module
--------------------------------------------------------
+logs\_pipelines\_api
+--------------------
 
 .. automodule:: datadog_api_client.v1.api.logs_pipelines_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.metrics\_api module
------------------------------------------------
+metrics\_api
+------------
 
 .. automodule:: datadog_api_client.v1.api.metrics_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.monitors\_api module
-------------------------------------------------
+monitors\_api
+-------------
 
 .. automodule:: datadog_api_client.v1.api.monitors_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.notebooks\_api module
--------------------------------------------------
+notebooks\_api
+--------------
 
 .. automodule:: datadog_api_client.v1.api.notebooks_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.organizations\_api module
------------------------------------------------------
+organizations\_api
+------------------
 
 .. automodule:: datadog_api_client.v1.api.organizations_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.pager\_duty\_integration\_api module
-----------------------------------------------------------------
+pager\_duty\_integration\_api
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.api.pager_duty_integration_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.service\_checks\_api module
--------------------------------------------------------
+service\_checks\_api
+--------------------
 
 .. automodule:: datadog_api_client.v1.api.service_checks_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.service\_level\_objective\_corrections\_api module
-------------------------------------------------------------------------------
+service\_level\_objective\_corrections\_api
+-------------------------------------------
 
 .. automodule:: datadog_api_client.v1.api.service_level_objective_corrections_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.service\_level\_objectives\_api module
-------------------------------------------------------------------
+service\_level\_objectives\_api
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.api.service_level_objectives_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.slack\_integration\_api module
-----------------------------------------------------------
+slack\_integration\_api
+-----------------------
 
 .. automodule:: datadog_api_client.v1.api.slack_integration_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.snapshots\_api module
--------------------------------------------------
+snapshots\_api
+--------------
 
 .. automodule:: datadog_api_client.v1.api.snapshots_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.synthetics\_api module
---------------------------------------------------
+synthetics\_api
+---------------
 
 .. automodule:: datadog_api_client.v1.api.synthetics_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.tags\_api module
---------------------------------------------
+tags\_api
+---------
 
 .. automodule:: datadog_api_client.v1.api.tags_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.usage\_metering\_api module
--------------------------------------------------------
+usage\_metering\_api
+--------------------
 
 .. automodule:: datadog_api_client.v1.api.usage_metering_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.users\_api module
----------------------------------------------
+users\_api
+----------
 
 .. automodule:: datadog_api_client.v1.api.users_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-datadog\_api\_client.v1.api.webhooks\_integration\_api module
--------------------------------------------------------------
+webhooks\_integration\_api
+--------------------------
 
 .. automodule:: datadog_api_client.v1.api.webhooks_integration_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
 
 .. automodule:: datadog_api_client.v1.api
    :members:
