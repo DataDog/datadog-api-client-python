@@ -15,6 +15,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n     \"attribute_key\": \"{{ unique_lower_alnum }}\",\n     \"attribute_value\": \"{{ unique }}\"\n    },\n    \"relationships\": {\n       \"role\": {\n         \"data\": {\n           \"id\": \"{{ role.data.id }}\",\n           \"type\": \"{{ role.data.type }}\"\n         }\n      }\n    },\n    \"type\": \"authn_mappings\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"authn_mapping\" in the system",
+    "key": "authn_mapping",
+    "tag": "AuthN Mappings",
+    "operationId": "CreateAuthNMapping"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n    },\n    \"type\": \"application_keys\"\n  }\n}"
       }
     ],

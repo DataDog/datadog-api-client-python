@@ -5,7 +5,7 @@
 # raise a `RecursionError`.
 # In order to avoid this, import only the API that you directly need like:
 #
-#   from .api.cloud_workload_security_api import CloudWorkloadSecurityApi
+#   from .api.auth_n_mappings_api import AuthNMappingsApi
 #
 # or import this package, but before doing it, use:
 #
@@ -13,6 +13,7 @@
 #   sys.setrecursionlimit(n)
 
 # Import APIs into API package:
+from datadog_api_client.v2.api.auth_n_mappings_api import AuthNMappingsApi
 from datadog_api_client.v2.api.cloud_workload_security_api import CloudWorkloadSecurityApi
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.api.incident_services_api import IncidentServicesApi

@@ -33,6 +33,22 @@ from datadog_api_client.v2.model.application_key_update_data import ApplicationK
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
 from datadog_api_client.v2.model.application_keys_sort import ApplicationKeysSort
 from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
+from datadog_api_client.v2.model.auth_n_mapping import AuthNMapping
+from datadog_api_client.v2.model.auth_n_mapping_attributes import AuthNMappingAttributes
+from datadog_api_client.v2.model.auth_n_mapping_create_attributes import AuthNMappingCreateAttributes
+from datadog_api_client.v2.model.auth_n_mapping_create_data import AuthNMappingCreateData
+from datadog_api_client.v2.model.auth_n_mapping_create_relationships import AuthNMappingCreateRelationships
+from datadog_api_client.v2.model.auth_n_mapping_create_request import AuthNMappingCreateRequest
+from datadog_api_client.v2.model.auth_n_mapping_included import AuthNMappingIncluded
+from datadog_api_client.v2.model.auth_n_mapping_relationships import AuthNMappingRelationships
+from datadog_api_client.v2.model.auth_n_mapping_response import AuthNMappingResponse
+from datadog_api_client.v2.model.auth_n_mapping_update_attributes import AuthNMappingUpdateAttributes
+from datadog_api_client.v2.model.auth_n_mapping_update_data import AuthNMappingUpdateData
+from datadog_api_client.v2.model.auth_n_mapping_update_relationships import AuthNMappingUpdateRelationships
+from datadog_api_client.v2.model.auth_n_mapping_update_request import AuthNMappingUpdateRequest
+from datadog_api_client.v2.model.auth_n_mappings_response import AuthNMappingsResponse
+from datadog_api_client.v2.model.auth_n_mappings_sort import AuthNMappingsSort
+from datadog_api_client.v2.model.auth_n_mappings_type import AuthNMappingsType
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_attributes import (
     CloudWorkloadSecurityAgentRuleAttributes,
 )
@@ -307,6 +323,10 @@ from datadog_api_client.v2.model.relationship_to_permissions import Relationship
 from datadog_api_client.v2.model.relationship_to_role import RelationshipToRole
 from datadog_api_client.v2.model.relationship_to_role_data import RelationshipToRoleData
 from datadog_api_client.v2.model.relationship_to_roles import RelationshipToRoles
+from datadog_api_client.v2.model.relationship_to_saml_assertion_attribute import RelationshipToSAMLAssertionAttribute
+from datadog_api_client.v2.model.relationship_to_saml_assertion_attribute_data import (
+    RelationshipToSAMLAssertionAttributeData,
+)
 from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 from datadog_api_client.v2.model.relationship_to_user_data import RelationshipToUserData
 from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
@@ -332,6 +352,9 @@ from datadog_api_client.v2.model.role_update_response_data import RoleUpdateResp
 from datadog_api_client.v2.model.roles_response import RolesResponse
 from datadog_api_client.v2.model.roles_sort import RolesSort
 from datadog_api_client.v2.model.roles_type import RolesType
+from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
+from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
+from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
 from datadog_api_client.v2.model.security_filter import SecurityFilter
 from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
 from datadog_api_client.v2.model.security_filter_create_attributes import SecurityFilterCreateAttributes
