@@ -1,7 +1,6 @@
 .env
 src/datadog_api_client/version.py
 .generator/lib
-docs/datadog_api_client*.rst
 examples/generated
 site
 
