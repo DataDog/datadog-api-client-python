@@ -68,7 +68,6 @@ html_theme_options = {
     "globaltoc_includehidden": False,
     # No version menu
     "version_dropdown": False,
-    "html_minify": True,
 }
 
 add_module_names = False
