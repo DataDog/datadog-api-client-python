@@ -138,7 +138,7 @@ class LogsApi(object):
 
         :param body: Logs filter
         :type body: LogsListRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

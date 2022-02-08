@@ -311,7 +311,7 @@ class ServiceLevelObjectivesApi(object):
 
         :param ids: A comma separated list of the IDs of the service level objectives objects.
         :type ids: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -354,7 +354,7 @@ class ServiceLevelObjectivesApi(object):
 
         :param body: Service level objective request object.
         :type body: ServiceLevelObjectiveRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -443,7 +443,7 @@ class ServiceLevelObjectivesApi(object):
 
         :param body: Delete multiple service level objective objects request body.
         :type body: SLOBulkDelete
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -532,7 +532,7 @@ class ServiceLevelObjectivesApi(object):
 
         :param slo_id: The ID of the service level objective object.
         :type slo_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -571,8 +571,6 @@ class ServiceLevelObjectivesApi(object):
 
         >>> thread = api.get_slo_history(slo_id, from_ts, to_ts, async_req=True)
         >>> result = thread.get()
-
-
 
 
         :param slo_id: The ID of the service level objective object.
@@ -631,6 +629,7 @@ class ServiceLevelObjectivesApi(object):
         >>> thread = api.list_slos(async_req=True)
         >>> result = thread.get()
 
+
         :param ids: A comma separated list of the IDs of the service level objectives objects.
         :type ids: str, optional
 
@@ -688,13 +687,12 @@ class ServiceLevelObjectivesApi(object):
         >>> result = thread.get()
 
 
-
         :param slo_id: The ID of the service level objective object.
         :type slo_id: str
 
         :param body: The edited service level objective request object.
         :type body: ServiceLevelObjective
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

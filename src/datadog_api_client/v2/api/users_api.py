@@ -294,7 +294,7 @@ class UsersApi(object):
 
 
         :type body: ServiceAccountCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -336,7 +336,7 @@ class UsersApi(object):
 
 
         :type body: UserCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -379,7 +379,7 @@ class UsersApi(object):
 
         :param user_id: The ID of the user.
         :type user_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -422,7 +422,7 @@ class UsersApi(object):
 
         :param user_invitation_uuid: The UUID of the user invitation.
         :type user_invitation_uuid: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -465,7 +465,7 @@ class UsersApi(object):
 
         :param user_id: The ID of the user.
         :type user_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -508,7 +508,7 @@ class UsersApi(object):
 
         :param user_id: The ID of the user.
         :type user_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -551,7 +551,7 @@ class UsersApi(object):
 
         :param user_id: The ID of the user.
         :type user_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -590,6 +590,7 @@ class UsersApi(object):
 
         >>> thread = api.list_users(async_req=True)
         >>> result = thread.get()
+
 
         :param page_size: Size for a given page. If omitted the server will use the default value of 10.
         :type page_size: int, optional
@@ -649,7 +650,7 @@ class UsersApi(object):
 
 
         :type body: UserInvitationsRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -690,12 +691,11 @@ class UsersApi(object):
         >>> result = thread.get()
 
 
-
         :param user_id: The ID of the user.
         :type user_id: str
 
         :type body: UserUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

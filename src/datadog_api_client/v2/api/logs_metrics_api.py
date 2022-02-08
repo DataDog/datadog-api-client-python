@@ -146,7 +146,7 @@ class LogsMetricsApi(object):
 
         :param body: The definition of the new log-based metric.
         :type body: LogsMetricCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -189,7 +189,7 @@ class LogsMetricsApi(object):
 
         :param metric_id: The name of the log-based metric.
         :type metric_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -232,7 +232,7 @@ class LogsMetricsApi(object):
 
         :param metric_id: The name of the log-based metric.
         :type metric_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -271,7 +271,8 @@ class LogsMetricsApi(object):
 
         >>> thread = api.list_logs_metrics(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -311,13 +312,12 @@ class LogsMetricsApi(object):
         >>> result = thread.get()
 
 
-
         :param metric_id: The name of the log-based metric.
         :type metric_id: str
 
         :param body: New definition of the log-based metric.
         :type body: LogsMetricUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

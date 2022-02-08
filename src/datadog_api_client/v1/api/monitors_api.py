@@ -323,7 +323,7 @@ class MonitorsApi(object):
 
         :param monitor_ids: The IDs of the monitor to check.
         :type monitor_ids: [int]
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -366,7 +366,7 @@ class MonitorsApi(object):
 
         :param body: Create a monitor request body.
         :type body: Monitor
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -498,6 +498,7 @@ class MonitorsApi(object):
         >>> thread = api.list_monitors(async_req=True)
         >>> result = thread.get()
 
+
         :param group_states: When specified, shows additional information about the group states. Choose one or more from `all`, `alert`, `warn`, and `no data`.
         :type group_states: str, optional
 
@@ -560,6 +561,7 @@ class MonitorsApi(object):
         >>> thread = api.search_monitor_groups(async_req=True)
         >>> result = thread.get()
 
+
         :param query: After entering a search query in your [Manage Monitor page][1] use the query parameter value in the URL of the page as value for this parameter. Consult the dedicated [manage monitor documentation][2] page to learn more.  The query can contain any number of space-separated monitor attributes, for instance `query=\"type:metric status:alert\"`.  [1]: https://app.datadoghq.com/monitors/manage [2]: /monitors/manage/#find-the-monitors
         :type query: str, optional
 
@@ -609,6 +611,7 @@ class MonitorsApi(object):
 
         >>> thread = api.search_monitors(async_req=True)
         >>> result = thread.get()
+
 
         :param query: After entering a search query in your [Manage Monitor page][1] use the query parameter value in the URL of the page as value for this parameter. Consult the dedicated [manage monitor documentation][2] page to learn more.  The query can contain any number of space-separated monitor attributes, for instance `query=\"type:metric status:alert\"`.  [1]: https://app.datadoghq.com/monitors/manage [2]: /monitors/manage/#find-the-monitors
         :type query: str, optional
@@ -661,13 +664,12 @@ class MonitorsApi(object):
         >>> result = thread.get()
 
 
-
         :param monitor_id: The ID of the monitor.
         :type monitor_id: int
 
         :param body: Edit a monitor request body.
         :type body: MonitorUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -711,7 +713,7 @@ class MonitorsApi(object):
 
         :param body: Monitor request object
         :type body: Monitor
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

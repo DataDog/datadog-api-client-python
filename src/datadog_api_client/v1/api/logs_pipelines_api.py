@@ -182,7 +182,7 @@ class LogsPipelinesApi(object):
 
         :param body: Definition of the new pipeline.
         :type body: LogsPipeline
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -225,7 +225,7 @@ class LogsPipelinesApi(object):
 
         :param pipeline_id: ID of the pipeline to delete.
         :type pipeline_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -268,7 +268,7 @@ class LogsPipelinesApi(object):
 
         :param pipeline_id: ID of the pipeline to get.
         :type pipeline_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -307,7 +307,8 @@ class LogsPipelinesApi(object):
 
         >>> thread = api.get_logs_pipeline_order(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -345,7 +346,8 @@ class LogsPipelinesApi(object):
 
         >>> thread = api.list_logs_pipelines(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -385,13 +387,12 @@ class LogsPipelinesApi(object):
         >>> result = thread.get()
 
 
-
         :param pipeline_id: ID of the pipeline to delete.
         :type pipeline_id: str
 
         :param body: New definition of the pipeline.
         :type body: LogsPipeline
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -435,7 +436,7 @@ class LogsPipelinesApi(object):
 
         :param body: Object containing the new ordered list of pipeline IDs.
         :type body: LogsPipelinesOrder
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

@@ -143,7 +143,7 @@ class EventsApi(object):
 
         :param body: Event request object
         :type body: EventCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -186,7 +186,7 @@ class EventsApi(object):
 
         :param event_id: The ID of the event.
         :type event_id: int
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -225,7 +225,6 @@ class EventsApi(object):
 
         >>> thread = api.list_events(start, end, async_req=True)
         >>> result = thread.get()
-
 
 
         :param start: POSIX timestamp.

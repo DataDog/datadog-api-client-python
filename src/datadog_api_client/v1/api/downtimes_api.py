@@ -195,7 +195,7 @@ class DowntimesApi(object):
 
         :param downtime_id: ID of the downtime to cancel.
         :type downtime_id: int
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -238,7 +238,7 @@ class DowntimesApi(object):
 
         :param body: Scope to cancel downtimes for.
         :type body: CancelDowntimesByScopeRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -281,7 +281,7 @@ class DowntimesApi(object):
 
         :param body: Schedule a downtime request body.
         :type body: Downtime
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -324,7 +324,7 @@ class DowntimesApi(object):
 
         :param downtime_id: ID of the downtime to fetch.
         :type downtime_id: int
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -363,6 +363,7 @@ class DowntimesApi(object):
 
         >>> thread = api.list_downtimes(async_req=True)
         >>> result = thread.get()
+
 
         :param current_only: Only return downtimes that are active when the request is made.
         :type current_only: bool, optional
@@ -408,7 +409,7 @@ class DowntimesApi(object):
 
         :param monitor_id: The id of the monitor
         :type monitor_id: int
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -449,13 +450,12 @@ class DowntimesApi(object):
         >>> result = thread.get()
 
 
-
         :param downtime_id: ID of the downtime to update.
         :type downtime_id: int
 
         :param body: Update a downtime request body.
         :type body: Downtime
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

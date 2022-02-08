@@ -128,7 +128,7 @@ class PagerDutyIntegrationApi(object):
 
         :param body: Create a new service object request body.
         :type body: PagerDutyService
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -171,7 +171,7 @@ class PagerDutyIntegrationApi(object):
 
         :param service_name: The service name
         :type service_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -214,7 +214,7 @@ class PagerDutyIntegrationApi(object):
 
         :param service_name: The service name.
         :type service_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -255,13 +255,12 @@ class PagerDutyIntegrationApi(object):
         >>> result = thread.get()
 
 
-
         :param service_name: The service name
         :type service_name: str
 
         :param body: Update an existing service object request body.
         :type body: PagerDutyServiceKey
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

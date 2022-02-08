@@ -80,7 +80,6 @@ class SnapshotsApi(object):
         >>> result = thread.get()
 
 
-
         :param start: The POSIX timestamp of the start of the query.
         :type start: int
 

@@ -234,12 +234,11 @@ class MetricsApi(object):
         >>> result = thread.get()
 
 
-
         :param metric_name: The name of the metric.
         :type metric_name: str
 
         :type body: MetricTagConfigurationCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -283,7 +282,7 @@ class MetricsApi(object):
 
         :param metric_name: The name of the metric.
         :type metric_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -326,7 +325,7 @@ class MetricsApi(object):
 
         :param metric_name: The name of the metric.
         :type metric_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -365,6 +364,7 @@ class MetricsApi(object):
 
         >>> thread = api.list_tag_configurations(async_req=True)
         >>> result = thread.get()
+
 
         :param filter_configured: Filter metrics that have configured tags.
         :type filter_configured: bool, optional
@@ -425,7 +425,7 @@ class MetricsApi(object):
 
         :param metric_name: The name of the metric.
         :type metric_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -468,7 +468,7 @@ class MetricsApi(object):
 
         :param metric_name: The name of the metric.
         :type metric_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -509,12 +509,11 @@ class MetricsApi(object):
         >>> result = thread.get()
 
 
-
         :param metric_name: The name of the metric.
         :type metric_name: str
 
         :type body: MetricTagConfigurationUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

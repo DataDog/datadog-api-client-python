@@ -197,7 +197,7 @@ class NotebooksApi(object):
 
         :param body: The JSON description of the notebook you want to create.
         :type body: NotebookCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -240,7 +240,7 @@ class NotebooksApi(object):
 
         :param notebook_id: Unique ID, assigned when you create the notebook.
         :type notebook_id: int
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -283,7 +283,7 @@ class NotebooksApi(object):
 
         :param notebook_id: Unique ID, assigned when you create the notebook.
         :type notebook_id: int
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -322,6 +322,7 @@ class NotebooksApi(object):
 
         >>> thread = api.list_notebooks(async_req=True)
         >>> result = thread.get()
+
 
         :param author_handle: Return notebooks created by the given `author_handle`.
         :type author_handle: str, optional
@@ -392,13 +393,12 @@ class NotebooksApi(object):
         >>> result = thread.get()
 
 
-
         :param notebook_id: Unique ID, assigned when you create the notebook.
         :type notebook_id: int
 
         :param body: Update notebook request body.
         :type body: NotebookUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

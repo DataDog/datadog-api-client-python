@@ -163,6 +163,7 @@ class HostsApi(object):
         >>> thread = api.get_host_totals(async_req=True)
         >>> result = thread.get()
 
+
         :param _from: Number of seconds from which you want to get total number of active hosts.
         :type _from: int, optional
         :param _return_http_data_only: Response data without head status
@@ -203,6 +204,7 @@ class HostsApi(object):
 
         >>> thread = api.list_hosts(async_req=True)
         >>> result = thread.get()
+
 
         :param filter: String to filter search results.
         :type filter: str, optional
@@ -267,13 +269,12 @@ class HostsApi(object):
         >>> result = thread.get()
 
 
-
         :param host_name: Name of the host to mute.
         :type host_name: str
 
         :param body: Mute a host request body.
         :type body: HostMuteSettings
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -317,7 +318,7 @@ class HostsApi(object):
 
         :param host_name: Name of the host to unmute.
         :type host_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

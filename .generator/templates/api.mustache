@@ -87,7 +87,7 @@ class {{classname}}(object):
 {{#allParams}}
                 '{{paramName}}': {
                      {{#required}}'required': True,{{/required}}
-		     {{#isNullable}}'nullable': True,{{/isNullable}}
+                     {{#isNullable}}'nullable': True,{{/isNullable}}
 {{#isEnum}}
                      'allowed_values': {
 {{#isNullable}}
@@ -111,14 +111,14 @@ class {{classname}}(object):
                     },
 {{/hasValidation}}
                     'openapi_types': ({{{dataType}}},),
-		   {{^isBodyParam}}
+                   {{^isBodyParam}}
                     'attribute': '{{baseName}}',
 {{/isBodyParam}}
                     'location': '{{#isFormParam}}form{{/isFormParam}}{{#isQueryParam}}query{{/isQueryParam}}{{#isPathParam}}path{{/isPathParam}}{{#isHeaderParam}}header{{/isHeaderParam}}{{#isCookieParam}}cookie{{/isCookieParam}}{{#isBodyParam}}body{{/isBodyParam}}',
 {{#collectionFormat}}
                     'collection_format': '{{collectionFormat}}',
 {{/collectionFormat}}
-	    },
+            },
 {{/allParams}}
 },
             headers_map={
@@ -170,9 +170,7 @@ class {{classname}}(object):
 
         >>> thread = api.{{operationId}}({{#requiredParams}}{{^defaultValue}}{{paramName}}, {{/defaultValue}}{{/requiredParams}}{{#requiredParams}}{{#defaultValue}}{{paramName}}={{{defaultValue}}}, {{/defaultValue}}{{/requiredParams}}async_req=True)
         >>> result = thread.get()
-{{#requiredParams}}
 
-{{/requiredParams}}
 {{#requiredParams}}
 {{^defaultValue}}{{#description}}
         :param {{paramName}}: {{{.}}}{{/description}}
@@ -185,10 +183,10 @@ class {{classname}}(object):
         :type {{paramName}}: {{dataType}}
 {{/defaultValue}}
 {{/requiredParams}}
-    {{#optionalParams}}{{#description}}
+{{#optionalParams}}{{#description}}
         :param {{paramName}}: {{{.}}}{{#defaultValue}} If omitted the server will use the default value of {{{defaultValue}}}.{{/defaultValue}}{{/description}}
         :type {{paramName}}: {{dataType}}, optional
-    {{/optionalParams}}
+{{/optionalParams}}
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool

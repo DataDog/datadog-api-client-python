@@ -247,7 +247,7 @@ class AWSIntegrationApi(object):
 
         :param body: AWS Request Object
         :type body: AWSAccount
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -290,7 +290,7 @@ class AWSIntegrationApi(object):
 
         :param body: Set an AWS tag filter using an `aws_account_identifier`, `namespace`, and filtering string. Namespace options are `application_elb`, `elb`, `lambda`, `network_elb`, `rds`, `sqs`, and `custom`.
         :type body: AWSTagFilterCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -333,7 +333,7 @@ class AWSIntegrationApi(object):
 
         :param body: Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://docs.datadoghq.com/integrations/amazon_web_services/#setup).
         :type body: AWSAccount
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -376,7 +376,7 @@ class AWSIntegrationApi(object):
 
         :param body: AWS request object
         :type body: AWSAccountDeleteRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -419,7 +419,7 @@ class AWSIntegrationApi(object):
 
         :param body: Delete a tag filtering entry for a given AWS account and `dd-aws` namespace.
         :type body: AWSTagFilterDeleteRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -458,7 +458,8 @@ class AWSIntegrationApi(object):
 
         >>> thread = api.list_available_aws_namespaces(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -496,6 +497,7 @@ class AWSIntegrationApi(object):
 
         >>> thread = api.list_aws_accounts(async_req=True)
         >>> result = thread.get()
+
 
         :param account_id: Only return AWS accounts that matches this `account_id`.
         :type account_id: str, optional
@@ -547,7 +549,7 @@ class AWSIntegrationApi(object):
 
         :param account_id: Only return AWS filters that matches this `account_id`.
         :type account_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

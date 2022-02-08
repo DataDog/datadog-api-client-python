@@ -173,13 +173,12 @@ class SlackIntegrationApi(object):
         >>> result = thread.get()
 
 
-
         :param account_name: Your Slack account name.
         :type account_name: str
 
         :param body: Payload describing Slack channel to be created
         :type body: SlackIntegrationChannel
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -221,13 +220,12 @@ class SlackIntegrationApi(object):
         >>> result = thread.get()
 
 
-
         :param account_name: Your Slack account name.
         :type account_name: str
 
         :param channel_name: The name of the Slack channel being operated on.
         :type channel_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -271,7 +269,7 @@ class SlackIntegrationApi(object):
 
         :param account_name: Your Slack account name.
         :type account_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -312,13 +310,12 @@ class SlackIntegrationApi(object):
         >>> result = thread.get()
 
 
-
         :param account_name: Your Slack account name.
         :type account_name: str
 
         :param channel_name: The name of the Slack channel being operated on.
         :type channel_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -360,8 +357,6 @@ class SlackIntegrationApi(object):
         >>> result = thread.get()
 
 
-
-
         :param account_name: Your Slack account name.
         :type account_name: str
 
@@ -370,7 +365,7 @@ class SlackIntegrationApi(object):
 
         :param body: Payload describing fields and values to be updated.
         :type body: SlackIntegrationChannel
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

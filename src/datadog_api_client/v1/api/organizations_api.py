@@ -154,7 +154,7 @@ class OrganizationsApi(object):
 
         :param body: Organization object that needs to be created
         :type body: OrganizationCreateBody
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -197,7 +197,7 @@ class OrganizationsApi(object):
 
         :param public_id: The `public_id` of the organization you are operating within.
         :type public_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -236,7 +236,8 @@ class OrganizationsApi(object):
 
         >>> thread = api.list_orgs(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -276,12 +277,11 @@ class OrganizationsApi(object):
         >>> result = thread.get()
 
 
-
         :param public_id: The `public_id` of the organization you are operating within.
         :type public_id: str
 
         :type body: Organization
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -323,13 +323,12 @@ class OrganizationsApi(object):
         >>> result = thread.get()
 
 
-
         :param public_id: The `public_id` of the organization you are operating with
         :type public_id: str
 
         :param idp_file: The path to the XML metadata file you wish to upload.
         :type idp_file: file_type
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

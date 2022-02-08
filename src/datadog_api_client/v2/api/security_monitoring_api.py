@@ -348,7 +348,7 @@ class SecurityMonitoringApi(object):
 
         :param body: The definition of the new security filter.
         :type body: SecurityFilterCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -390,7 +390,7 @@ class SecurityMonitoringApi(object):
 
 
         :type body: SecurityMonitoringRuleCreatePayload
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -433,7 +433,7 @@ class SecurityMonitoringApi(object):
 
         :param security_filter_id: The ID of the security filter.
         :type security_filter_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -476,7 +476,7 @@ class SecurityMonitoringApi(object):
 
         :param rule_id: The ID of the rule.
         :type rule_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -519,7 +519,7 @@ class SecurityMonitoringApi(object):
 
         :param security_filter_id: The ID of the security filter.
         :type security_filter_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -562,7 +562,7 @@ class SecurityMonitoringApi(object):
 
         :param rule_id: The ID of the rule.
         :type rule_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -601,7 +601,8 @@ class SecurityMonitoringApi(object):
 
         >>> thread = api.list_security_filters(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -639,6 +640,7 @@ class SecurityMonitoringApi(object):
 
         >>> thread = api.list_security_monitoring_rules(async_req=True)
         >>> result = thread.get()
+
 
         :param page_size: Size for a given page. If omitted the server will use the default value of 10.
         :type page_size: int, optional
@@ -683,6 +685,7 @@ class SecurityMonitoringApi(object):
 
         >>> thread = api.list_security_monitoring_signals(async_req=True)
         >>> result = thread.get()
+
 
         :param filter_query: The search query for security signals.
         :type filter_query: str, optional
@@ -740,6 +743,7 @@ class SecurityMonitoringApi(object):
         >>> thread = api.search_security_monitoring_signals(async_req=True)
         >>> result = thread.get()
 
+
         :type body: SecurityMonitoringSignalListRequest, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -781,13 +785,12 @@ class SecurityMonitoringApi(object):
         >>> result = thread.get()
 
 
-
         :param security_filter_id: The ID of the security filter.
         :type security_filter_id: str
 
         :param body: New definition of the security filter.
         :type body: SecurityFilterUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -829,12 +832,11 @@ class SecurityMonitoringApi(object):
         >>> result = thread.get()
 
 
-
         :param rule_id: The ID of the rule.
         :type rule_id: str
 
         :type body: SecurityMonitoringRuleUpdatePayload
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

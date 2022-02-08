@@ -174,7 +174,6 @@ class TagsApi(object):
         >>> result = thread.get()
 
 
-
         :param host_name: This endpoint allows you to add new tags to a host, optionally specifying where the tags came from.
         :type host_name: str
 
@@ -316,6 +315,7 @@ class TagsApi(object):
         >>> thread = api.list_host_tags(async_req=True)
         >>> result = thread.get()
 
+
         :param source: When specified, filters host list to those tags with the specified source.
         :type source: str, optional
         :param _return_http_data_only: Response data without head status
@@ -356,7 +356,6 @@ class TagsApi(object):
 
         >>> thread = api.update_host_tags(host_name, body, async_req=True)
         >>> result = thread.get()
-
 
 
         :param host_name: This endpoint allows you to update/replace all in an integration source with those supplied in the request.

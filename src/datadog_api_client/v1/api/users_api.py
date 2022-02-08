@@ -146,7 +146,7 @@ class UsersApi(object):
 
         :param body: User object that needs to be created.
         :type body: User
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -189,7 +189,7 @@ class UsersApi(object):
 
         :param user_handle: The handle of the user.
         :type user_handle: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -232,7 +232,7 @@ class UsersApi(object):
 
         :param user_handle: The ID of the user.
         :type user_handle: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -271,7 +271,8 @@ class UsersApi(object):
 
         >>> thread = api.list_users(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -311,13 +312,12 @@ class UsersApi(object):
         >>> result = thread.get()
 
 
-
         :param user_handle: The ID of the user.
         :type user_handle: str
 
         :param body: Description of the update.
         :type body: User
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

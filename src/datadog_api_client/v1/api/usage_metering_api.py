@@ -1229,6 +1229,7 @@ class UsageMeteringApi(object):
         >>> thread = api.get_daily_custom_reports(async_req=True)
         >>> result = thread.get()
 
+
         :param page_size: The number of files to return in the response. `[default=60]`.
         :type page_size: int, optional
 
@@ -1278,7 +1279,6 @@ class UsageMeteringApi(object):
 
         >>> thread = api.get_hourly_usage_attribution(start_hr, usage_type, async_req=True)
         >>> result = thread.get()
-
 
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
@@ -1428,6 +1428,7 @@ class UsageMeteringApi(object):
         >>> thread = api.get_monthly_custom_reports(async_req=True)
         >>> result = thread.get()
 
+
         :param page_size: The number of files to return in the response `[default=60].`
         :type page_size: int, optional
 
@@ -1477,7 +1478,6 @@ class UsageMeteringApi(object):
 
         >>> thread = api.get_monthly_usage_attribution(start_month, fields, async_req=True)
         >>> result = thread.get()
-
 
 
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
@@ -1544,7 +1544,7 @@ class UsageMeteringApi(object):
 
         :param report_id: Date of the report in the format `YYYY-MM-DD`.
         :type report_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1587,7 +1587,7 @@ class UsageMeteringApi(object):
 
         :param report_id: Date of the report in the format `YYYY-MM-DD`.
         :type report_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1672,7 +1672,6 @@ class UsageMeteringApi(object):
 
         >>> thread = api.get_usage_attribution(start_month, fields, async_req=True)
         >>> result = thread.get()
-
 
 
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
@@ -1784,6 +1783,7 @@ class UsageMeteringApi(object):
 
         >>> thread = api.get_usage_billable_summary(async_req=True)
         >>> result = thread.get()
+
 
         :param month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage starting this month.
         :type month: datetime, optional
@@ -2892,6 +2892,7 @@ class UsageMeteringApi(object):
 
         >>> thread = api.get_usage_top_avg_metrics(async_req=True)
         >>> result = thread.get()
+
 
         :param month: Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour. (Either month or day should be specified, but not both)
         :type month: datetime, optional

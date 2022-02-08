@@ -228,7 +228,7 @@ class WebhooksIntegrationApi(object):
 
         :param body: Create a webhooks integration request body.
         :type body: WebhooksIntegration
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -271,7 +271,7 @@ class WebhooksIntegrationApi(object):
 
         :param body: Define a custom variable request body.
         :type body: WebhooksIntegrationCustomVariable
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -314,7 +314,7 @@ class WebhooksIntegrationApi(object):
 
         :param webhook_name: The name of the webhook.
         :type webhook_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -357,7 +357,7 @@ class WebhooksIntegrationApi(object):
 
         :param custom_variable_name: The name of the custom variable.
         :type custom_variable_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -400,7 +400,7 @@ class WebhooksIntegrationApi(object):
 
         :param webhook_name: The name of the webhook.
         :type webhook_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -443,7 +443,7 @@ class WebhooksIntegrationApi(object):
 
         :param custom_variable_name: The name of the custom variable.
         :type custom_variable_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -484,13 +484,12 @@ class WebhooksIntegrationApi(object):
         >>> result = thread.get()
 
 
-
         :param webhook_name: The name of the webhook.
         :type webhook_name: str
 
         :param body: Update an existing Datadog-Webhooks integration.
         :type body: WebhooksIntegrationUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -532,13 +531,12 @@ class WebhooksIntegrationApi(object):
         >>> result = thread.get()
 
 
-
         :param custom_variable_name: The name of the custom variable.
         :type custom_variable_name: str
 
         :param body: Update an existing custom variable request body.
         :type body: WebhooksIntegrationCustomVariableUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

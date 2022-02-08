@@ -207,7 +207,7 @@ class MetricsApi(object):
 
         :param metric_name: Name of the metric for which to get metadata.
         :type metric_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -299,7 +299,7 @@ class MetricsApi(object):
 
         :param q: Query string to search metrics upon. Must be prefixed with `metrics:`.
         :type q: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -340,8 +340,6 @@ class MetricsApi(object):
         >>> result = thread.get()
 
 
-
-
         :param _from: Start of the queried time period, seconds since the Unix epoch.
         :type _from: int
 
@@ -350,7 +348,7 @@ class MetricsApi(object):
 
         :param query: Query string.
         :type query: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -438,13 +436,12 @@ class MetricsApi(object):
         >>> result = thread.get()
 
 
-
         :param metric_name: Name of the metric for which to edit metadata.
         :type metric_name: str
 
         :param body: New metadata.
         :type body: MetricMetadata
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

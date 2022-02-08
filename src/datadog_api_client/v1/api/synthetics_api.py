@@ -712,7 +712,7 @@ class SyntheticsApi(object):
 
         :param body: Details of the global variable to create.
         :type body: SyntheticsGlobalVariable
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -755,7 +755,7 @@ class SyntheticsApi(object):
 
         :param body: Details of the private location to create.
         :type body: SyntheticsPrivateLocation
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -798,7 +798,7 @@ class SyntheticsApi(object):
 
         :param body: Details of the test to create.
         :type body: SyntheticsAPITest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -841,7 +841,7 @@ class SyntheticsApi(object):
 
         :param body: Details of the test to create.
         :type body: SyntheticsBrowserTest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -884,7 +884,7 @@ class SyntheticsApi(object):
 
         :param variable_id: The ID of the global variable.
         :type variable_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -927,7 +927,7 @@ class SyntheticsApi(object):
 
         :param location_id: The ID of the private location.
         :type location_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -970,7 +970,7 @@ class SyntheticsApi(object):
 
         :param body: Public ID list of the Synthetic tests to be deleted.
         :type body: SyntheticsDeleteTestsPayload
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1011,13 +1011,12 @@ class SyntheticsApi(object):
         >>> result = thread.get()
 
 
-
         :param variable_id: The ID of the global variable.
         :type variable_id: str
 
         :param body: Details of the global variable to update.
         :type body: SyntheticsGlobalVariable
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1061,7 +1060,7 @@ class SyntheticsApi(object):
 
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1154,13 +1153,12 @@ class SyntheticsApi(object):
         >>> result = thread.get()
 
 
-
         :param public_id: The public ID of the API test to which the target result belongs.
         :type public_id: str
 
         :param result_id: The ID of the result to get.
         :type result_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1204,7 +1202,7 @@ class SyntheticsApi(object):
 
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1297,13 +1295,12 @@ class SyntheticsApi(object):
         >>> result = thread.get()
 
 
-
         :param public_id: The public ID of the browser test to which the target result belongs.
         :type public_id: str
 
         :param result_id: The ID of the result to get.
         :type result_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1347,7 +1344,7 @@ class SyntheticsApi(object):
 
         :param variable_id: The ID of the global variable.
         :type variable_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1390,7 +1387,7 @@ class SyntheticsApi(object):
 
         :param location_id: The ID of the private location.
         :type location_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1433,7 +1430,7 @@ class SyntheticsApi(object):
 
         :param batch_id: The ID of the batch.
         :type batch_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1476,7 +1473,7 @@ class SyntheticsApi(object):
 
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1515,7 +1512,8 @@ class SyntheticsApi(object):
 
         >>> thread = api.list_global_variables(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1553,7 +1551,8 @@ class SyntheticsApi(object):
 
         >>> thread = api.list_locations(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1591,7 +1590,8 @@ class SyntheticsApi(object):
 
         >>> thread = api.list_tests(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1633,7 +1633,7 @@ class SyntheticsApi(object):
 
         :param body: Details of the test to trigger.
         :type body: SyntheticsCITestBody
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1676,7 +1676,7 @@ class SyntheticsApi(object):
 
         :param body: The identifiers of the tests to trigger.
         :type body: SyntheticsTriggerBody
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1717,13 +1717,12 @@ class SyntheticsApi(object):
         >>> result = thread.get()
 
 
-
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
 
         :param body: New test details to be saved.
         :type body: SyntheticsAPITest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1765,13 +1764,12 @@ class SyntheticsApi(object):
         >>> result = thread.get()
 
 
-
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
 
         :param body: New test details to be saved.
         :type body: SyntheticsBrowserTest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1813,13 +1811,12 @@ class SyntheticsApi(object):
         >>> result = thread.get()
 
 
-
         :param location_id: The ID of the private location.
         :type location_id: str
 
         :param body: Details of the private location to be updated.
         :type body: SyntheticsPrivateLocation
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -1861,13 +1858,12 @@ class SyntheticsApi(object):
         >>> result = thread.get()
 
 
-
         :param public_id: The public ID of the Synthetic test to update.
         :type public_id: str
 
         :param body: Status to set the given Synthetic test to.
         :type body: SyntheticsUpdateTestPauseStatusPayload
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

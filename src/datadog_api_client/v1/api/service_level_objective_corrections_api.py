@@ -146,7 +146,7 @@ class ServiceLevelObjectiveCorrectionsApi(object):
 
         :param body: Create an SLO Correction
         :type body: SLOCorrectionCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -189,7 +189,7 @@ class ServiceLevelObjectiveCorrectionsApi(object):
 
         :param slo_correction_id: The ID of the SLO correction object.
         :type slo_correction_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -232,7 +232,7 @@ class ServiceLevelObjectiveCorrectionsApi(object):
 
         :param slo_correction_id: The ID of the SLO correction object.
         :type slo_correction_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -271,7 +271,8 @@ class ServiceLevelObjectiveCorrectionsApi(object):
 
         >>> thread = api.list_slo_correction(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -311,13 +312,12 @@ class ServiceLevelObjectiveCorrectionsApi(object):
         >>> result = thread.get()
 
 
-
         :param slo_correction_id: The ID of the SLO correction object.
         :type slo_correction_id: str
 
         :param body: The edited SLO correction object.
         :type body: SLOCorrectionUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

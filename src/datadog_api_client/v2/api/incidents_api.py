@@ -170,7 +170,7 @@ class IncidentsApi(object):
 
         :param body: Incident payload.
         :type body: IncidentCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -213,7 +213,7 @@ class IncidentsApi(object):
 
         :param incident_id: The UUID of the incident.
         :type incident_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -299,6 +299,7 @@ class IncidentsApi(object):
         >>> thread = api.list_incidents(async_req=True)
         >>> result = thread.get()
 
+
         :param include: Specifies which types of related objects should be included in the response.
         :type include: [IncidentRelatedObject], optional
 
@@ -347,13 +348,12 @@ class IncidentsApi(object):
         >>> result = thread.get()
 
 
-
         :param incident_id: The UUID of the incident.
         :type incident_id: str
 
         :param body: Incident Payload.
         :type body: IncidentUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

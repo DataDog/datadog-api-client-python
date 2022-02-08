@@ -388,12 +388,11 @@ class RolesApi(object):
         >>> result = thread.get()
 
 
-
         :param role_id: The ID of the role.
         :type role_id: str
 
         :type body: RelationshipToPermission
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -435,12 +434,11 @@ class RolesApi(object):
         >>> result = thread.get()
 
 
-
         :param role_id: The ID of the role.
         :type role_id: str
 
         :type body: RelationshipToUser
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -482,12 +480,11 @@ class RolesApi(object):
         >>> result = thread.get()
 
 
-
         :param role_id: The ID of the role.
         :type role_id: str
 
         :type body: RoleCloneRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -530,7 +527,7 @@ class RolesApi(object):
 
 
         :type body: RoleCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -573,7 +570,7 @@ class RolesApi(object):
 
         :param role_id: The ID of the role.
         :type role_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -616,7 +613,7 @@ class RolesApi(object):
 
         :param role_id: The ID of the role.
         :type role_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -655,7 +652,8 @@ class RolesApi(object):
 
         >>> thread = api.list_permissions(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -697,7 +695,7 @@ class RolesApi(object):
 
         :param role_id: The ID of the role.
         :type role_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -792,6 +790,7 @@ class RolesApi(object):
         >>> thread = api.list_roles(async_req=True)
         >>> result = thread.get()
 
+
         :param page_size: Size for a given page. If omitted the server will use the default value of 10.
         :type page_size: int, optional
 
@@ -843,12 +842,11 @@ class RolesApi(object):
         >>> result = thread.get()
 
 
-
         :param role_id: The ID of the role.
         :type role_id: str
 
         :type body: RelationshipToPermission
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -890,12 +888,11 @@ class RolesApi(object):
         >>> result = thread.get()
 
 
-
         :param role_id: The ID of the role.
         :type role_id: str
 
         :type body: RelationshipToUser
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -937,12 +934,11 @@ class RolesApi(object):
         >>> result = thread.get()
 
 
-
         :param role_id: The ID of the role.
         :type role_id: str
 
         :type body: RoleUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

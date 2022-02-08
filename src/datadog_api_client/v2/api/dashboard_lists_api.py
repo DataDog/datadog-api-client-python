@@ -138,13 +138,12 @@ class DashboardListsApi(object):
         >>> result = thread.get()
 
 
-
         :param dashboard_list_id: ID of the dashboard list to add items to.
         :type dashboard_list_id: int
 
         :param body: Dashboards to add to the dashboard list.
         :type body: DashboardListAddItemsRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -186,13 +185,12 @@ class DashboardListsApi(object):
         >>> result = thread.get()
 
 
-
         :param dashboard_list_id: ID of the dashboard list to delete items from.
         :type dashboard_list_id: int
 
         :param body: Dashboards to delete from the dashboard list.
         :type body: DashboardListDeleteItemsRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -236,7 +234,7 @@ class DashboardListsApi(object):
 
         :param dashboard_list_id: ID of the dashboard list to get items from.
         :type dashboard_list_id: int
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -277,13 +275,12 @@ class DashboardListsApi(object):
         >>> result = thread.get()
 
 
-
         :param dashboard_list_id: ID of the dashboard list to update items from.
         :type dashboard_list_id: int
 
         :param body: New dashboards of the dashboard list.
         :type body: DashboardListUpdateItemsRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

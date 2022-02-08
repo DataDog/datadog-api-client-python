@@ -173,7 +173,7 @@ class IncidentTeamsApi(object):
 
         :param body: Incident Team Payload.
         :type body: IncidentTeamCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -216,7 +216,7 @@ class IncidentTeamsApi(object):
 
         :param team_id: The ID of the incident team.
         :type team_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -302,6 +302,7 @@ class IncidentTeamsApi(object):
         >>> thread = api.list_incident_teams(async_req=True)
         >>> result = thread.get()
 
+
         :param include: Specifies which types of related objects should be included in the response.
         :type include: IncidentRelatedObject, optional
 
@@ -353,13 +354,12 @@ class IncidentTeamsApi(object):
         >>> result = thread.get()
 
 
-
         :param team_id: The ID of the incident team.
         :type team_id: str
 
         :param body: Incident Team Payload.
         :type body: IncidentTeamUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

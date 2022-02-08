@@ -207,12 +207,11 @@ class ServiceAccountsApi(object):
         >>> result = thread.get()
 
 
-
         :param service_account_id: The ID of the service account.
         :type service_account_id: str
 
         :type body: ApplicationKeyCreateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -254,13 +253,12 @@ class ServiceAccountsApi(object):
         >>> result = thread.get()
 
 
-
         :param service_account_id: The ID of the service account.
         :type service_account_id: str
 
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -302,13 +300,12 @@ class ServiceAccountsApi(object):
         >>> result = thread.get()
 
 
-
         :param service_account_id: The ID of the service account.
         :type service_account_id: str
 
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -411,8 +408,6 @@ class ServiceAccountsApi(object):
         >>> result = thread.get()
 
 
-
-
         :param service_account_id: The ID of the service account.
         :type service_account_id: str
 
@@ -420,7 +415,7 @@ class ServiceAccountsApi(object):
         :type app_key_id: str
 
         :type body: ApplicationKeyUpdateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

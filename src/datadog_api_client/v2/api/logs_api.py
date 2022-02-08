@@ -218,7 +218,7 @@ class LogsApi(object):
 
 
         :type body: LogsAggregateRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -257,6 +257,7 @@ class LogsApi(object):
 
         >>> thread = api.list_logs(async_req=True)
         >>> result = thread.get()
+
 
         :type body: LogsListRequest, optional
         :param _return_http_data_only: Response data without head status
@@ -297,6 +298,7 @@ class LogsApi(object):
 
         >>> thread = api.list_logs_get(async_req=True)
         >>> result = thread.get()
+
 
         :param filter_query: Search query following logs syntax.
         :type filter_query: str, optional
