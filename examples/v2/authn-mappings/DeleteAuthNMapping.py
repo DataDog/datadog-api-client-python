@@ -1,0 +1,15 @@
+"""
+Delete an AuthN Mapping returns "OK" response
+"""
+
+from os import environ
+from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client.v2.api.auth_n_mappings_api import AuthNMappingsApi
+
+# there is a valid "authn_mapping" in the system
+AUTHN_MAPPING_DATA_ID = environ["AUTHN_MAPPING_DATA_ID"]
+
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
+    api_instance = AuthNMappingsApi(api_client)
+    api_instance.delete_auth_n_mapping(authn_mapping_id=AUTHN_MAPPING_DATA_ID)
