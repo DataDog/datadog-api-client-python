@@ -193,6 +193,134 @@ application\_keys\_type
    :undoc-members:
    :show-inheritance:
 
+auth\_n\_mapping
+----------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mapping
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+auth\_n\_mapping\_attributes
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mapping_attributes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+auth\_n\_mapping\_create\_attributes
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mapping_create_attributes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+auth\_n\_mapping\_create\_data
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mapping_create_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+auth\_n\_mapping\_create\_relationships
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mapping_create_relationships
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+auth\_n\_mapping\_create\_request
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mapping_create_request
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+auth\_n\_mapping\_included
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mapping_included
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+auth\_n\_mapping\_relationships
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mapping_relationships
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+auth\_n\_mapping\_response
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mapping_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+auth\_n\_mapping\_update\_attributes
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mapping_update_attributes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+auth\_n\_mapping\_update\_data
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mapping_update_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+auth\_n\_mapping\_update\_relationships
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mapping_update_relationships
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+auth\_n\_mapping\_update\_request
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mapping_update_request
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+auth\_n\_mappings\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mappings_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+auth\_n\_mappings\_sort
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mappings_sort
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+auth\_n\_mappings\_type
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_n_mappings_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 cloud\_workload\_security\_agent\_rule\_attributes
 --------------------------------------------------
 
@@ -2017,6 +2145,22 @@ relationship\_to\_roles
    :undoc-members:
    :show-inheritance:
 
+relationship\_to\_saml\_assertion\_attribute
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_saml_assertion_attribute
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+relationship\_to\_saml\_assertion\_attribute\_data
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_saml_assertion_attribute_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 relationship\_to\_user
 ----------------------
 
@@ -2213,6 +2357,30 @@ roles\_type
 -----------
 
 .. automodule:: datadog_api_client.v2.model.roles_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+saml\_assertion\_attribute
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_assertion_attribute
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+saml\_assertion\_attribute\_attributes
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_assertion_attribute_attributes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+saml\_assertion\_attributes\_type
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_assertion_attributes_type
    :members:
    :undoc-members:
    :show-inheritance:
