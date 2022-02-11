@@ -86,8 +86,8 @@ def sleep_after_request(f):
 
 
 def escape_reserved_keyword(word):
-    """
-    # Escape reserved language keywords like openapi generator does it
+    """Escape reserved language keywords like openapi generator does it.
+
     :param word: Word to escape
     :return: The escaped word if it was a reserved keyword, the word unchanged otherwise
     """
@@ -175,7 +175,7 @@ def glom(value, path):
     # replace foo[index].bar by foo.index.bar
     path = PATTERN_INDEX.sub(r".\1", path)
 
-    return g(value, path)
+    return g(value, path) if path else value
 
 
 def _get_prefix(request):
