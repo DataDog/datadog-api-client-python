@@ -11527,6 +11527,10 @@ components:
         allowFailure:
           description: A boolean set to allow this step to fail.
           type: boolean
+        isCritical:
+          description: A boolean to use in addition to `allowFailure` to determine
+            if the test should be marked as failed when the step fails.
+          type: boolean
         name:
           description: The name of the step.
           type: string
