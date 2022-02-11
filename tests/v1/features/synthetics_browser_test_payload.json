@@ -28,5 +28,14 @@
     "tick_every": 300
   },
   "tags": ["testing:browser"],
-  "type": "browser"
+  "type": "browser",
+  "steps": [
+    {
+      "allowFailure": false,
+      "isCritical": true,
+      "name": "Refresh page",
+      "params": {},
+      "type": "refresh"
+    }
+  ]
 }
