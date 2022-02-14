@@ -9,42 +9,42 @@ Feature: Webhooks Integration
     And a valid "appKeyAuth" key in the system
     And an instance of "WebhooksIntegration" API
 
-  @generated @skip @team:Datadog/web-integrations
+  @generated @skip @team:Datadog/collaboration-integrations
   Scenario: Create a custom variable returns "Bad Request" response
     Given new "CreateWebhooksIntegrationCustomVariable" request
     And body with value {"is_secret": true, "name": "CUSTOM_VARIABLE_NAME", "value": "CUSTOM_VARIABLE_VALUE"}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/web-integrations
+  @skip-terraform-config @team:Datadog/collaboration-integrations
   Scenario: Create a custom variable returns "OK" response
     Given new "CreateWebhooksIntegrationCustomVariable" request
     And body with value {"is_secret": true, "name": "{{ unique_upper_alnum }}", "value": "CUSTOM_VARIABLE_VALUE"}
     When the request is sent
     Then the response status is 201 OK
 
-  @generated @skip @team:Datadog/web-integrations
+  @generated @skip @team:Datadog/collaboration-integrations
   Scenario: Create a webhooks integration returns "Bad Request" response
     Given new "CreateWebhooksIntegration" request
     And body with value {"custom_headers": null, "encode_as": "json", "name": "WEBHOOK_NAME", "payload": null, "url": "https://example.com/webhook"}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/web-integrations
+  @skip-terraform-config @team:Datadog/collaboration-integrations
   Scenario: Create a webhooks integration returns "OK" response
     Given new "CreateWebhooksIntegration" request
     And body with value {"name": "{{ unique }}", "url": "https://example.com/webhook"}
     When the request is sent
     Then the response status is 201 OK
 
-  @generated @skip @team:Datadog/web-integrations
+  @generated @skip @team:Datadog/collaboration-integrations
   Scenario: Delete a custom variable returns "Item Not Found" response
     Given new "DeleteWebhooksIntegrationCustomVariable" request
     And request contains "custom_variable_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Item Not Found
 
-  @team:Datadog/web-integrations
+  @skip-terraform-config @team:Datadog/collaboration-integrations
   Scenario: Delete a custom variable returns "OK" response
     Given there is a valid "webhook_custom_variable" in the system
     And new "DeleteWebhooksIntegrationCustomVariable" request
@@ -52,14 +52,14 @@ Feature: Webhooks Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:Datadog/web-integrations
+  @generated @skip @team:Datadog/collaboration-integrations
   Scenario: Delete a webhook returns "Item Not Found" response
     Given new "DeleteWebhooksIntegration" request
     And request contains "webhook_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Item Not Found
 
-  @team:Datadog/web-integrations
+  @skip-terraform-config @team:Datadog/collaboration-integrations
   Scenario: Delete a webhook returns "OK" response
     Given there is a valid "webhook" in the system
     And new "DeleteWebhooksIntegration" request
@@ -67,42 +67,42 @@ Feature: Webhooks Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:Datadog/web-integrations
+  @generated @skip @team:Datadog/collaboration-integrations
   Scenario: Get a custom variable returns "Bad Request" response
     Given new "GetWebhooksIntegrationCustomVariable" request
     And request contains "custom_variable_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/web-integrations
+  @generated @skip @team:Datadog/collaboration-integrations
   Scenario: Get a custom variable returns "Item Not Found" response
     Given new "GetWebhooksIntegrationCustomVariable" request
     And request contains "custom_variable_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Item Not Found
 
-  @generated @skip @team:Datadog/web-integrations
+  @generated @skip @team:Datadog/collaboration-integrations
   Scenario: Get a custom variable returns "OK" response
     Given new "GetWebhooksIntegrationCustomVariable" request
     And request contains "custom_variable_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:Datadog/web-integrations
+  @generated @skip @team:Datadog/collaboration-integrations
   Scenario: Get a webhook integration returns "Bad Request" response
     Given new "GetWebhooksIntegration" request
     And request contains "webhook_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/web-integrations
+  @generated @skip @team:Datadog/collaboration-integrations
   Scenario: Get a webhook integration returns "Item Not Found" response
     Given new "GetWebhooksIntegration" request
     And request contains "webhook_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Item Not Found
 
-  @team:Datadog/web-integrations
+  @skip-terraform-config @team:Datadog/collaboration-integrations
   Scenario: Get a webhook integration returns "OK" response
     Given there is a valid "webhook" in the system
     And new "GetWebhooksIntegration" request
@@ -110,7 +110,7 @@ Feature: Webhooks Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:Datadog/web-integrations
+  @generated @skip @team:Datadog/collaboration-integrations
   Scenario: Update a custom variable returns "Bad Request" response
     Given new "UpdateWebhooksIntegrationCustomVariable" request
     And request contains "custom_variable_name" parameter from "REPLACE.ME"
@@ -118,7 +118,7 @@ Feature: Webhooks Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/web-integrations
+  @generated @skip @team:Datadog/collaboration-integrations
   Scenario: Update a custom variable returns "Item Not Found" response
     Given new "UpdateWebhooksIntegrationCustomVariable" request
     And request contains "custom_variable_name" parameter from "REPLACE.ME"
@@ -126,7 +126,7 @@ Feature: Webhooks Integration
     When the request is sent
     Then the response status is 404 Item Not Found
 
-  @team:Datadog/web-integrations
+  @skip-terraform-config @team:Datadog/collaboration-integrations
   Scenario: Update a custom variable returns "OK" response
     Given there is a valid "webhook_custom_variable" in the system
     And new "UpdateWebhooksIntegrationCustomVariable" request
@@ -135,7 +135,7 @@ Feature: Webhooks Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:Datadog/web-integrations
+  @generated @skip @team:Datadog/collaboration-integrations
   Scenario: Update a webhook returns "Bad Request" response
     Given new "UpdateWebhooksIntegration" request
     And request contains "webhook_name" parameter from "REPLACE.ME"
@@ -143,7 +143,7 @@ Feature: Webhooks Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/web-integrations
+  @generated @skip @team:Datadog/collaboration-integrations
   Scenario: Update a webhook returns "Item Not Found" response
     Given new "UpdateWebhooksIntegration" request
     And request contains "webhook_name" parameter from "REPLACE.ME"
@@ -151,7 +151,7 @@ Feature: Webhooks Integration
     When the request is sent
     Then the response status is 404 Item Not Found
 
-  @team:Datadog/web-integrations
+  @skip-terraform-config @team:Datadog/collaboration-integrations
   Scenario: Update a webhook returns "OK" response
     Given there is a valid "webhook" in the system
     And new "UpdateWebhooksIntegration" request
