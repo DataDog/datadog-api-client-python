@@ -2681,14 +2681,6 @@ security\_monitoring\_rule\_update\_payload
    :undoc-members:
    :show-inheritance:
 
-security\_monitoring\_runtime\_agent\_rule
-------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.security_monitoring_runtime_agent_rule
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 security\_monitoring\_signal
 ----------------------------
 
