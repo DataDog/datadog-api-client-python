@@ -1,0 +1,4 @@
+{%- for model in models %}
+from {{ config["packageName"] }}.model.{{ model|snake_case }} import {{ model }}
+{%- endfor %}
+

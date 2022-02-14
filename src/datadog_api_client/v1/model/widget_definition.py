@@ -2,7 +2,6 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
-
 from datadog_api_client.v1.model_utils import (
     ModelComposed,
     cached_property,
@@ -11,176 +10,131 @@ from datadog_api_client.v1.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v1.model.alert_graph_widget_definition import AlertGraphWidgetDefinition
-    from datadog_api_client.v1.model.alert_value_widget_definition import AlertValueWidgetDefinition
-    from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
-    from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
-    from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
-    from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
-    from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
-    from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
-    from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
-    from datadog_api_client.v1.model.funnel_widget_definition_type import FunnelWidgetDefinitionType
-    from datadog_api_client.v1.model.funnel_widget_request import FunnelWidgetRequest
-    from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
-    from datadog_api_client.v1.model.geomap_widget_definition_view import GeomapWidgetDefinitionView
-    from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
-    from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
-    from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
-    from datadog_api_client.v1.model.host_map_widget_definition_style import HostMapWidgetDefinitionStyle
-    from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
-    from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
-    from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
-    from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWidgetDefinition
-    from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
-    from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
-    from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
-    from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
-    from datadog_api_client.v1.model.service_map_widget_definition import ServiceMapWidgetDefinition
-    from datadog_api_client.v1.model.service_summary_widget_definition import ServiceSummaryWidgetDefinition
-    from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
-    from datadog_api_client.v1.model.sunburst_widget_definition import SunburstWidgetDefinition
-    from datadog_api_client.v1.model.sunburst_widget_legend import SunburstWidgetLegend
-    from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
-    from datadog_api_client.v1.model.table_widget_has_search_bar import TableWidgetHasSearchBar
-    from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
-    from datadog_api_client.v1.model.timeseries_widget_legend_column import TimeseriesWidgetLegendColumn
-    from datadog_api_client.v1.model.timeseries_widget_legend_layout import TimeseriesWidgetLegendLayout
-    from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
-    from datadog_api_client.v1.model.tree_map_color_by import TreeMapColorBy
-    from datadog_api_client.v1.model.tree_map_group_by import TreeMapGroupBy
-    from datadog_api_client.v1.model.tree_map_size_by import TreeMapSizeBy
-    from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
-    from datadog_api_client.v1.model.widget import Widget
-    from datadog_api_client.v1.model.widget_axis import WidgetAxis
-    from datadog_api_client.v1.model.widget_color_preference import WidgetColorPreference
-    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
-    from datadog_api_client.v1.model.widget_event import WidgetEvent
-    from datadog_api_client.v1.model.widget_event_size import WidgetEventSize
-    from datadog_api_client.v1.model.widget_grouping import WidgetGrouping
-    from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontalAlign
-    from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
-    from datadog_api_client.v1.model.widget_layout_type import WidgetLayoutType
-    from datadog_api_client.v1.model.widget_margin import WidgetMargin
-    from datadog_api_client.v1.model.widget_marker import WidgetMarker
-    from datadog_api_client.v1.model.widget_message_display import WidgetMessageDisplay
-    from datadog_api_client.v1.model.widget_monitor_summary_sort import WidgetMonitorSummarySort
-    from datadog_api_client.v1.model.widget_node_type import WidgetNodeType
-    from datadog_api_client.v1.model.widget_service_summary_display_format import WidgetServiceSummaryDisplayFormat
-    from datadog_api_client.v1.model.widget_size_format import WidgetSizeFormat
-    from datadog_api_client.v1.model.widget_summary_type import WidgetSummaryType
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.widget_tick_edge import WidgetTickEdge
-    from datadog_api_client.v1.model.widget_time import WidgetTime
-    from datadog_api_client.v1.model.widget_time_windows import WidgetTimeWindows
-    from datadog_api_client.v1.model.widget_vertical_align import WidgetVerticalAlign
-    from datadog_api_client.v1.model.widget_view_mode import WidgetViewMode
-    from datadog_api_client.v1.model.widget_viz_type import WidgetVizType
 
     globals()["AlertGraphWidgetDefinition"] = AlertGraphWidgetDefinition
+    from datadog_api_client.v1.model.alert_value_widget_definition import AlertValueWidgetDefinition
+
     globals()["AlertValueWidgetDefinition"] = AlertValueWidgetDefinition
+    from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
+
     globals()["ChangeWidgetDefinition"] = ChangeWidgetDefinition
+    from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
+
     globals()["CheckStatusWidgetDefinition"] = CheckStatusWidgetDefinition
+    from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
+
     globals()["DistributionWidgetDefinition"] = DistributionWidgetDefinition
+    from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
+
     globals()["EventStreamWidgetDefinition"] = EventStreamWidgetDefinition
+    from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
+
     globals()["EventTimelineWidgetDefinition"] = EventTimelineWidgetDefinition
+    from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
+
     globals()["FreeTextWidgetDefinition"] = FreeTextWidgetDefinition
-    globals()["FunnelWidgetDefinition"] = FunnelWidgetDefinition
-    globals()["FunnelWidgetDefinitionType"] = FunnelWidgetDefinitionType
-    globals()["FunnelWidgetRequest"] = FunnelWidgetRequest
+    from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
+
     globals()["GeomapWidgetDefinition"] = GeomapWidgetDefinition
-    globals()["GeomapWidgetDefinitionView"] = GeomapWidgetDefinitionView
+    from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
+
     globals()["GroupWidgetDefinition"] = GroupWidgetDefinition
+    from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
+
     globals()["HeatMapWidgetDefinition"] = HeatMapWidgetDefinition
+    from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
+
     globals()["HostMapWidgetDefinition"] = HostMapWidgetDefinition
-    globals()["HostMapWidgetDefinitionStyle"] = HostMapWidgetDefinitionStyle
+    from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
+
     globals()["IFrameWidgetDefinition"] = IFrameWidgetDefinition
+    from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
+
     globals()["ImageWidgetDefinition"] = ImageWidgetDefinition
-    globals()["ListStreamWidgetDefinition"] = ListStreamWidgetDefinition
+    from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWidgetDefinition
+
     globals()["LogStreamWidgetDefinition"] = LogStreamWidgetDefinition
+    from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
+
     globals()["MonitorSummaryWidgetDefinition"] = MonitorSummaryWidgetDefinition
+    from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
+
     globals()["NoteWidgetDefinition"] = NoteWidgetDefinition
+    from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
+
     globals()["QueryValueWidgetDefinition"] = QueryValueWidgetDefinition
-    globals()["SLOWidgetDefinition"] = SLOWidgetDefinition
+    from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
+
     globals()["ScatterPlotWidgetDefinition"] = ScatterPlotWidgetDefinition
+    from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
+
+    globals()["SLOWidgetDefinition"] = SLOWidgetDefinition
+    from datadog_api_client.v1.model.service_map_widget_definition import ServiceMapWidgetDefinition
+
     globals()["ServiceMapWidgetDefinition"] = ServiceMapWidgetDefinition
+    from datadog_api_client.v1.model.service_summary_widget_definition import ServiceSummaryWidgetDefinition
+
     globals()["ServiceSummaryWidgetDefinition"] = ServiceSummaryWidgetDefinition
+    from datadog_api_client.v1.model.sunburst_widget_definition import SunburstWidgetDefinition
+
     globals()["SunburstWidgetDefinition"] = SunburstWidgetDefinition
-    globals()["SunburstWidgetLegend"] = SunburstWidgetLegend
+    from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
+
     globals()["TableWidgetDefinition"] = TableWidgetDefinition
-    globals()["TableWidgetHasSearchBar"] = TableWidgetHasSearchBar
+    from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
+
     globals()["TimeseriesWidgetDefinition"] = TimeseriesWidgetDefinition
-    globals()["TimeseriesWidgetLegendColumn"] = TimeseriesWidgetLegendColumn
-    globals()["TimeseriesWidgetLegendLayout"] = TimeseriesWidgetLegendLayout
+    from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
+
     globals()["ToplistWidgetDefinition"] = ToplistWidgetDefinition
-    globals()["TreeMapColorBy"] = TreeMapColorBy
-    globals()["TreeMapGroupBy"] = TreeMapGroupBy
-    globals()["TreeMapSizeBy"] = TreeMapSizeBy
+    from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
+
     globals()["TreeMapWidgetDefinition"] = TreeMapWidgetDefinition
-    globals()["Widget"] = Widget
-    globals()["WidgetAxis"] = WidgetAxis
-    globals()["WidgetColorPreference"] = WidgetColorPreference
-    globals()["WidgetCustomLink"] = WidgetCustomLink
-    globals()["WidgetEvent"] = WidgetEvent
-    globals()["WidgetEventSize"] = WidgetEventSize
-    globals()["WidgetGrouping"] = WidgetGrouping
-    globals()["WidgetHorizontalAlign"] = WidgetHorizontalAlign
-    globals()["WidgetImageSizing"] = WidgetImageSizing
-    globals()["WidgetLayoutType"] = WidgetLayoutType
-    globals()["WidgetMargin"] = WidgetMargin
-    globals()["WidgetMarker"] = WidgetMarker
-    globals()["WidgetMessageDisplay"] = WidgetMessageDisplay
-    globals()["WidgetMonitorSummarySort"] = WidgetMonitorSummarySort
-    globals()["WidgetNodeType"] = WidgetNodeType
-    globals()["WidgetServiceSummaryDisplayFormat"] = WidgetServiceSummaryDisplayFormat
-    globals()["WidgetSizeFormat"] = WidgetSizeFormat
-    globals()["WidgetSummaryType"] = WidgetSummaryType
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["WidgetTickEdge"] = WidgetTickEdge
-    globals()["WidgetTime"] = WidgetTime
-    globals()["WidgetTimeWindows"] = WidgetTimeWindows
-    globals()["WidgetVerticalAlign"] = WidgetVerticalAlign
-    globals()["WidgetViewMode"] = WidgetViewMode
-    globals()["WidgetVizType"] = WidgetVizType
+    from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
+
+    globals()["ListStreamWidgetDefinition"] = ListStreamWidgetDefinition
+    from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
+
+    globals()["FunnelWidgetDefinition"] = FunnelWidgetDefinition
 
 
 class WidgetDefinition(ModelComposed):
-    """NOTE: This class is auto generated by OpenAPI Generator.
-    Ref: https://openapi-generator.tech
 
-    Do not edit the class manually.
-    """
-
-    validations = {
-        "requests": {
-            "max_items": 1,
-            "min_items": 1,
-        },
-        "filters": {
-            "min_items": 1,
-        },
-    }
+    validations = {}
 
     @cached_property
     def openapi_types():
         return {}
 
     def __init__(self, *args, **kwargs):
-        """WidgetDefinition - a model defined in OpenAPI
+        """
+        [Definition of the widget](https://docs.datadoghq.com/dashboards/widgets/).
 
+        :param alert_id: ID of the alert to use in the widget.
+        :type alert_id: str
 
+        :param time: Time setting for the widget.
         :type time: WidgetTime, optional
 
         :param title: The title of the widget.
         :type title: str, optional
 
+        :param title_align: How to align the text on the widget.
         :type title_align: WidgetTextAlign, optional
 
-        :param title_size: The size of the title.
+        :param title_size: Size of the title.
         :type title_size: str, optional
 
-        :param precision: Number of decimals to show. If not defined, the widget uses the raw value.
+        :param type: Type of the alert graph widget.
+        :type type: AlertGraphWidgetDefinitionType
+
+        :param viz_type: Whether to display the Alert Graph as a timeseries or a top list.
+        :type viz_type: WidgetVizType
+
+        :param precision: Number of decimal to show. If not defined, will use the raw value.
         :type precision: int, optional
 
+        :param text_align: How to align the text on the widget.
         :type text_align: WidgetTextAlign, optional
 
         :param unit: Unit to display with the value.
@@ -189,28 +143,47 @@ class WidgetDefinition(ModelComposed):
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
 
-        :param group: List of tag prefixes to group by.
-        :type group: [str], optional
+        :param requests: Array of one request object to display in the widget.
 
-        :type group_by: TreeMapGroupBy, optional
+            See the dedicated [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)
+             to learn how to build the `REQUEST_SCHEMA`.
+        :type requests: [ChangeWidgetRequest]
+
+        :param check: Name of the check to use in the widget.
+        :type check: str
+
+        :param group: Group reporting a single check.
+        :type group: str, optional
+
+        :param group_by: List of tag prefixes to group by in the case of a cluster check.
+        :type group_by: [str], optional
+
+        :param grouping: The kind of grouping to use.
+        :type grouping: WidgetGrouping
 
         :param tags: List of tags used to filter the groups reporting a cluster check.
         :type tags: [str], optional
 
-        :param legend_size: Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".
+        :param legend_size: (Deprecated) The widget legend was replaced by a tooltip and sidebar.
         :type legend_size: str, optional
 
         :param markers: List of markers.
         :type markers: [WidgetMarker], optional
 
-        :param show_legend: Whether or not to display the legend on this widget.
+        :param show_legend: (Deprecated) The widget legend was replaced by a tooltip and sidebar.
         :type show_legend: bool, optional
 
-        :type xaxis: WidgetAxis, optional
+        :param xaxis: X Axis controls for the distribution widget.
+        :type xaxis: DistributionWidgetXAxis, optional
 
-        :type yaxis: WidgetAxis, optional
+        :param yaxis: Y Axis controls for the distribution widget.
+        :type yaxis: DistributionWidgetYAxis, optional
 
+        :param event_size: Size to use to display an event.
         :type event_size: WidgetEventSize, optional
+
+        :param query: Query to filter the event stream with.
+        :type query: str
 
         :param tags_execution: The execution method for multi-value filters. Can be either and or or.
         :type tags_execution: str, optional
@@ -221,14 +194,29 @@ class WidgetDefinition(ModelComposed):
         :param font_size: Size of the text.
         :type font_size: str, optional
 
-        :param background_color: Background color of the note.
+        :param text: Text to display.
+        :type text: str
+
+        :param style: The style to apply to the widget.
+        :type style: WidgetDefinitionStyle
+
+        :param view: The view of the world that the map should render.
+        :type view: WidgetDefinitionView
+
+        :param background_color: Background color of the group title.
         :type background_color: str, optional
 
         :param banner_img: URL of image to display as a banner for the group.
         :type banner_img: str, optional
 
-        :param show_title: Whether to show the title or not. If omitted the server will use the default value of True.
+        :param layout_type: Layout type of the group.
+        :type layout_type: WidgetLayoutType
+
+        :param show_title: Whether to show the title or not.
         :type show_title: bool, optional
+
+        :param widgets: List of widget groups.
+        :type widgets: [Widget]
 
         :param events: List of widget events.
         :type events: [WidgetEvent], optional
@@ -239,6 +227,7 @@ class WidgetDefinition(ModelComposed):
         :param no_metric_hosts: Whether to show the hosts with no metrics.
         :type no_metric_hosts: bool, optional
 
+        :param node_type: Which type of node to use in the map.
         :type node_type: WidgetNodeType, optional
 
         :param notes: Notes on the title.
@@ -247,21 +236,30 @@ class WidgetDefinition(ModelComposed):
         :param scope: List of tags used to filter the map.
         :type scope: [str], optional
 
-        :param has_background: Whether to display a background or not. If omitted the server will use the default value of True.
+        :param url: URL of the iframe.
+        :type url: str
+
+        :param has_background: Whether to display a background or not.
         :type has_background: bool, optional
 
-        :param has_border: Whether to display a border or not. If omitted the server will use the default value of True.
+        :param has_border: Whether to display a border or not.
         :type has_border: bool, optional
 
+        :param horizontal_align: Horizontal alignment.
         :type horizontal_align: WidgetHorizontalAlign, optional
 
+        :param margin: Size of the margins around the image.
+            **Note**: `small` and `large` values are deprecated.
         :type margin: WidgetMargin, optional
 
+        :param sizing: How to size the image on the widget. The values are based on the image `object-fit` CSS properties.
+            **Note**: `zoom`, `fit` and `center` values are deprecated.
         :type sizing: WidgetImageSizing, optional
 
         :param url_dark_theme: URL of the image in dark mode.
         :type url_dark_theme: str, optional
 
+        :param vertical_align: Vertical alignment.
         :type vertical_align: WidgetVerticalAlign, optional
 
         :param columns: Which columns to display on the widget.
@@ -273,6 +271,7 @@ class WidgetDefinition(ModelComposed):
         :param logset: ID of the log set to use.
         :type logset: str, optional
 
+        :param message_display: Amount of log lines to display
         :type message_display: WidgetMessageDisplay, optional
 
         :param show_date_column: Whether to show the date column or not
@@ -281,14 +280,17 @@ class WidgetDefinition(ModelComposed):
         :param show_message_column: Whether to show the message column or not
         :type show_message_column: bool, optional
 
-        :type sort: WidgetMonitorSummarySort, optional
+        :param sort: Which column and order to sort by
+        :type sort: WidgetFieldSort, optional
 
+        :param color_preference: Which color to use on the widget.
         :type color_preference: WidgetColorPreference, optional
 
         :param count: The number of monitors to display.
         :type count: int, optional
 
-        :type display_format: WidgetServiceSummaryDisplayFormat, optional
+        :param display_format: What to display on the widget.
+        :type display_format: WidgetMonitorSummaryDisplayFormat, optional
 
         :param hide_zero_counts: Whether to show counts of 0 or not.
         :type hide_zero_counts: bool, optional
@@ -299,14 +301,19 @@ class WidgetDefinition(ModelComposed):
         :param start: The start of the list. Typically 0.
         :type start: int, optional
 
+        :param summary_type: Which summary type should be used.
         :type summary_type: WidgetSummaryType, optional
 
-        :param has_padding: Whether to add padding or not. If omitted the server will use the default value of True.
+        :param content: Content of the note.
+        :type content: str
+
+        :param has_padding: Whether to add padding or not.
         :type has_padding: bool, optional
 
         :param show_tick: Whether to show a tick or not.
         :type show_tick: bool, optional
 
+        :param tick_edge: Define how you want to align the text on the widget.
         :type tick_edge: WidgetTickEdge, optional
 
         :param tick_pos: Where to position the tick on an edge.
@@ -333,7 +340,20 @@ class WidgetDefinition(ModelComposed):
         :param time_windows: Times being monitored.
         :type time_windows: [WidgetTimeWindows], optional
 
+        :param view_mode: Define how you want the SLO to be displayed.
         :type view_mode: WidgetViewMode, optional
+
+        :param view_type: Type of view displayed by the widget.
+        :type view_type: str
+
+        :param filters: Your environment and primary tag (or * if enabled for your account).
+        :type filters: [str]
+
+        :param service: The ID of the service you want to map.
+        :type service: str
+
+        :param env: APM environment.
+        :type env: str
 
         :param show_breakdown: Whether to show the latency breakdown or not.
         :type show_breakdown: bool, optional
@@ -353,76 +373,35 @@ class WidgetDefinition(ModelComposed):
         :param show_resource_list: Whether to show the resource list or not.
         :type show_resource_list: bool, optional
 
+        :param size_format: Size of the widget.
         :type size_format: WidgetSizeFormat, optional
+
+        :param span_name: APM span name.
+        :type span_name: str
 
         :param hide_total: Show the total value in this widget.
         :type hide_total: bool, optional
 
+        :param legend: Configuration of the legend.
         :type legend: SunburstWidgetLegend, optional
 
+        :param has_search_bar: Controls the display of the search bar.
         :type has_search_bar: TableWidgetHasSearchBar, optional
 
         :param legend_columns: Columns displayed in the legend.
         :type legend_columns: [TimeseriesWidgetLegendColumn], optional
 
+        :param legend_layout: Layout of the legend.
         :type legend_layout: TimeseriesWidgetLegendLayout, optional
 
+        :param right_yaxis: Axis controls for the widget.
         :type right_yaxis: WidgetAxis, optional
 
+        :param color_by: The attribute used to determine color in the widget.
         :type color_by: TreeMapColorBy, optional
 
+        :param size_by: The attribute used to determine size in the widget.
         :type size_by: TreeMapSizeBy, optional
-
-        :param alert_id: ID of the alert to use in the widget.
-        :type alert_id: str, optional
-
-        :type type: FunnelWidgetDefinitionType, optional
-
-        :type viz_type: WidgetVizType, optional
-
-        :param requests: Request payload used to query items.
-        :type requests: [FunnelWidgetRequest], optional
-
-        :param check: Name of the check to use in the widget.
-        :type check: str, optional
-
-        :type grouping: WidgetGrouping, optional
-
-        :param query: Query to filter the monitors with.
-        :type query: str, optional
-
-        :param text: Text to display.
-        :type text: str, optional
-
-        :type style: HostMapWidgetDefinitionStyle, optional
-
-        :type view: GeomapWidgetDefinitionView, optional
-
-        :type layout_type: WidgetLayoutType, optional
-
-        :param widgets: List of widget groups.
-        :type widgets: [Widget], optional
-
-        :param url: URL of the image.
-        :type url: str, optional
-
-        :param content: Content of the note.
-        :type content: str, optional
-
-        :param view_type: Type of view displayed by the widget. If omitted the server will use the default value of "detail".
-        :type view_type: str, optional
-
-        :param filters: Your environment and primary tag (or * if enabled for your account).
-        :type filters: [str], optional
-
-        :param service: APM service.
-        :type service: str, optional
-
-        :param env: APM environment.
-        :type env: str, optional
-
-        :param span_name: APM span name.
-        :type span_name: str, optional
         """
         super().__init__(kwargs)
 
@@ -460,20 +439,18 @@ class WidgetDefinition(ModelComposed):
                 EventStreamWidgetDefinition,
                 EventTimelineWidgetDefinition,
                 FreeTextWidgetDefinition,
-                FunnelWidgetDefinition,
                 GeomapWidgetDefinition,
                 GroupWidgetDefinition,
                 HeatMapWidgetDefinition,
                 HostMapWidgetDefinition,
                 IFrameWidgetDefinition,
                 ImageWidgetDefinition,
-                ListStreamWidgetDefinition,
                 LogStreamWidgetDefinition,
                 MonitorSummaryWidgetDefinition,
                 NoteWidgetDefinition,
                 QueryValueWidgetDefinition,
-                SLOWidgetDefinition,
                 ScatterPlotWidgetDefinition,
+                SLOWidgetDefinition,
                 ServiceMapWidgetDefinition,
                 ServiceSummaryWidgetDefinition,
                 SunburstWidgetDefinition,
@@ -481,5 +458,7 @@ class WidgetDefinition(ModelComposed):
                 TimeseriesWidgetDefinition,
                 ToplistWidgetDefinition,
                 TreeMapWidgetDefinition,
+                ListStreamWidgetDefinition,
+                FunnelWidgetDefinition,
             ],
         }

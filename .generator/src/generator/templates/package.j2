@@ -1,0 +1,59 @@
+=begin
+{% include "api_info.j2" %}
+=end
+
+# Common files
+require 'datadog_api_client/version'
+require '{{ config.gemName }}/api_client'
+require '{{ config.gemName }}/api_error'
+require '{{ config.gemName }}/configuration'
+
+# Models
+{%- for model in models|sort %}
+require '{{ config.gemName }}/models/{{ model|snake_case }}'
+{%- endfor %}
+
+# APIs
+{%- for api in apis|sort %}
+require '{{ config.gemName }}/api/{{ api|snake_case }}_api'
+{%- endfor %}
+
+module {{ config.moduleName}}
+  class << self
+    # Customize default settings for the SDK using block.
+    #   {{ config.moduleName}}.configure do |config|
+    #     config.username = "xxx"
+    #     config.password = "xxx"
+    #   end
+    # If no block given, return the default Configuration object.
+    def configure
+      if block_given?
+        yield(Configuration.default)
+      else
+        Configuration.default
+      end
+    end
+  end
+
+  class EnumAttributeValidator
+    attr_reader :datatype
+    attr_reader :allowable_values
+
+    def initialize(datatype, allowable_values)
+      @allowable_values = allowable_values.map do |value|
+        case datatype.to_s
+        when /Integer/i
+          value.to_i
+        when /Float/i
+          value.to_f
+        else
+          value
+        end
+      end
+    end
+
+    def valid?(value)
+      !value || allowable_values.include?(value)
+    end
+  end
+end

@@ -2,7 +2,6 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
-
 import copy
 import logging
 import os
@@ -157,28 +156,20 @@ class Configuration(object):
 
         # Keep track of unstable operations
         self.unstable_operations = {
-            "create_incident_service": False,
-            "delete_incident_service": False,
-            "get_incident_service": False,
-            "list_incident_services": False,
-            "update_incident_service": False,
-            "create_incident_team": False,
-            "delete_incident_team": False,
-            "get_incident_team": False,
-            "list_incident_teams": False,
-            "update_incident_team": False,
-            "create_incident": False,
-            "delete_incident": False,
-            "get_incident": False,
-            "list_incidents": False,
-            "update_incident": False,
-            "create_tag_configuration": False,
-            "delete_tag_configuration": False,
-            "list_tag_configuration_by_name": False,
-            "list_tag_configurations": False,
-            "update_tag_configuration": False,
-            "list_security_monitoring_signals": False,
-            "search_security_monitoring_signals": False,
+            "create_slo_correction": False,
+            "delete_slo_correction": False,
+            "get_slo_correction": False,
+            "list_slo_correction": False,
+            "update_slo_correction": False,
+            "get_slo_corrections": False,
+            "get_slo_history": False,
+            "get_daily_custom_reports": False,
+            "get_hourly_usage_attribution": False,
+            "get_monthly_custom_reports": False,
+            "get_monthly_usage_attribution": False,
+            "get_specified_daily_custom_reports": False,
+            "get_specified_monthly_custom_reports": False,
+            "get_usage_attribution": False,
         }
 
         # Load default values from environment
@@ -375,6 +366,16 @@ class Configuration(object):
                     "apiKeyAuth",
                 ),
             }
+        if "apiKeyAuthQuery" in self.api_key or "apiKeyAuth" in self.api_key:
+            auth["apiKeyAuthQuery"] = {
+                "type": "api_key",
+                "in": "query",
+                "key": "api_key",
+                "value": self.get_api_key_with_prefix(
+                    "apiKeyAuthQuery",
+                    alias="apiKeyAuth",
+                ),
+            }
         if "appKeyAuth" in self.api_key:
             auth["appKeyAuth"] = {
                 "type": "api_key",
@@ -382,6 +383,16 @@ class Configuration(object):
                 "key": "DD-APPLICATION-KEY",
                 "value": self.get_api_key_with_prefix(
                     "appKeyAuth",
+                ),
+            }
+        if "appKeyAuthQuery" in self.api_key or "appKeyAuth" in self.api_key:
+            auth["appKeyAuthQuery"] = {
+                "type": "api_key",
+                "in": "query",
+                "key": "application_key",
+                "value": self.get_api_key_with_prefix(
+                    "appKeyAuthQuery",
+                    alias="appKeyAuth",
                 ),
             }
         return auth
@@ -397,7 +408,7 @@ class Configuration(object):
                 "description": "No description provided",
                 "variables": {
                     "site": {
-                        "description": "The regional site for Datadog customers.",
+                        "description": "The regional site for a Datadog customer.",
                         "default_value": "datadoghq.com",
                         "enum_values": [
                             "datadoghq.com",

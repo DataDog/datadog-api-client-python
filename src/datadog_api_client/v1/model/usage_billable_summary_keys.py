@@ -2,7 +2,6 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
-
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
@@ -11,16 +10,73 @@ from datadog_api_client.v1.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
 
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
     globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
 
 
 class UsageBillableSummaryKeys(ModelNormal):
-    """NOTE: This class is auto generated by OpenAPI Generator.
-    Ref: https://openapi-generator.tech
-
-    Do not edit the class manually.
-    """
 
     validations = {}
 
@@ -100,71 +156,103 @@ class UsageBillableSummaryKeys(ModelNormal):
     read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
-        """UsageBillableSummaryKeys - a model defined in OpenAPI
+        """
+        Response with aggregated usage types.
 
-
+        :param apm_host_sum: Response with properties for each aggregated usage type.
         :type apm_host_sum: UsageBillableSummaryBody, optional
 
+        :param apm_host_top99p: Response with properties for each aggregated usage type.
         :type apm_host_top99p: UsageBillableSummaryBody, optional
 
+        :param apm_trace_search_sum: Response with properties for each aggregated usage type.
         :type apm_trace_search_sum: UsageBillableSummaryBody, optional
 
+        :param fargate_container_average: Response with properties for each aggregated usage type.
         :type fargate_container_average: UsageBillableSummaryBody, optional
 
+        :param infra_container_sum: Response with properties for each aggregated usage type.
         :type infra_container_sum: UsageBillableSummaryBody, optional
 
+        :param infra_host_sum: Response with properties for each aggregated usage type.
         :type infra_host_sum: UsageBillableSummaryBody, optional
 
+        :param infra_host_top99p: Response with properties for each aggregated usage type.
         :type infra_host_top99p: UsageBillableSummaryBody, optional
 
+        :param iot_top99p: Response with properties for each aggregated usage type.
         :type iot_top99p: UsageBillableSummaryBody, optional
 
+        :param lambda_function_average: Response with properties for each aggregated usage type.
         :type lambda_function_average: UsageBillableSummaryBody, optional
 
+        :param logs_indexed_15day_sum: Response with properties for each aggregated usage type.
         :type logs_indexed_15day_sum: UsageBillableSummaryBody, optional
 
+        :param logs_indexed_180day_sum: Response with properties for each aggregated usage type.
         :type logs_indexed_180day_sum: UsageBillableSummaryBody, optional
 
+        :param logs_indexed_30day_sum: Response with properties for each aggregated usage type.
         :type logs_indexed_30day_sum: UsageBillableSummaryBody, optional
 
+        :param logs_indexed_3day_sum: Response with properties for each aggregated usage type.
         :type logs_indexed_3day_sum: UsageBillableSummaryBody, optional
 
+        :param logs_indexed_45day_sum: Response with properties for each aggregated usage type.
         :type logs_indexed_45day_sum: UsageBillableSummaryBody, optional
 
+        :param logs_indexed_60day_sum: Response with properties for each aggregated usage type.
         :type logs_indexed_60day_sum: UsageBillableSummaryBody, optional
 
+        :param logs_indexed_7day_sum: Response with properties for each aggregated usage type.
         :type logs_indexed_7day_sum: UsageBillableSummaryBody, optional
 
+        :param logs_indexed_90day_sum: Response with properties for each aggregated usage type.
         :type logs_indexed_90day_sum: UsageBillableSummaryBody, optional
 
+        :param logs_indexed_custom_retention_sum: Response with properties for each aggregated usage type.
         :type logs_indexed_custom_retention_sum: UsageBillableSummaryBody, optional
 
+        :param logs_indexed_sum: Response with properties for each aggregated usage type.
         :type logs_indexed_sum: UsageBillableSummaryBody, optional
 
+        :param logs_ingested_sum: Response with properties for each aggregated usage type.
         :type logs_ingested_sum: UsageBillableSummaryBody, optional
 
+        :param network_device_top99p: Response with properties for each aggregated usage type.
         :type network_device_top99p: UsageBillableSummaryBody, optional
 
+        :param npm_flow_sum: Response with properties for each aggregated usage type.
         :type npm_flow_sum: UsageBillableSummaryBody, optional
 
+        :param npm_host_sum: Response with properties for each aggregated usage type.
         :type npm_host_sum: UsageBillableSummaryBody, optional
 
+        :param npm_host_top99p: Response with properties for each aggregated usage type.
         :type npm_host_top99p: UsageBillableSummaryBody, optional
 
+        :param prof_container_sum: Response with properties for each aggregated usage type.
         :type prof_container_sum: UsageBillableSummaryBody, optional
 
+        :param prof_host_top99p: Response with properties for each aggregated usage type.
         :type prof_host_top99p: UsageBillableSummaryBody, optional
 
+        :param rum_sum: Response with properties for each aggregated usage type.
         :type rum_sum: UsageBillableSummaryBody, optional
 
+        :param serverless_invocation_sum: Response with properties for each aggregated usage type.
         :type serverless_invocation_sum: UsageBillableSummaryBody, optional
 
+        :param siem_sum: Response with properties for each aggregated usage type.
         :type siem_sum: UsageBillableSummaryBody, optional
 
+        :param synthetics_api_tests_sum: Response with properties for each aggregated usage type.
         :type synthetics_api_tests_sum: UsageBillableSummaryBody, optional
 
+        :param synthetics_browser_checks_sum: Response with properties for each aggregated usage type.
         :type synthetics_browser_checks_sum: UsageBillableSummaryBody, optional
 
+        :param timeseries_average: Response with properties for each aggregated usage type.
         :type timeseries_average: UsageBillableSummaryBody, optional
         """
         super().__init__(kwargs)

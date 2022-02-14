@@ -2,7 +2,6 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
-
 import json
 import atexit
 import mimetypes
@@ -341,7 +340,7 @@ class ApiClient(object):
             for k, v in path_params:
                 # specified safe chars, encode everything
                 resource_path = resource_path.replace(
-                    "{%s}" % k, quote(str(v), safe=self.configuration.safe_chars_for_path_param)
+                    f"{{{k}}}", quote(str(v), safe=self.configuration.safe_chars_for_path_param)
                 )
 
         # query parameters
