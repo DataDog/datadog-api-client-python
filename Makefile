@@ -1,5 +1,6 @@
 .PHONY: all
 all: .generator .env
+	@rm -rf ./src/datadog_api_client/
 	@pre-commit run --all-files --hook-stage=manual openapi-generator || true
 	@cp -r v1/datadog_api_client ./src/
 	@cp -r v2/datadog_api_client ./src/
