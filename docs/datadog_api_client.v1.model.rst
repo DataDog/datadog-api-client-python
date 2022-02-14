@@ -3841,14 +3841,6 @@ synthetics\_device\_id
    :undoc-members:
    :show-inheritance:
 
-synthetics\_error\_code
------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_error_code
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 synthetics\_get\_api\_test\_latest\_results\_response
 -----------------------------------------------------
 
