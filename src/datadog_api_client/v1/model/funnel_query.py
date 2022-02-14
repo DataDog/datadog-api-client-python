@@ -11,10 +11,10 @@ from datadog_api_client.v1.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v1.model.funnel_source import FunnelSource
-    from datadog_api_client.v1.model.funnel_steps import FunnelSteps
+    from datadog_api_client.v1.model.funnel_step import FunnelStep
 
     globals()["FunnelSource"] = FunnelSource
-    globals()["FunnelSteps"] = FunnelSteps
+    globals()["FunnelStep"] = FunnelStep
 
 
 class FunnelQuery(ModelNormal):
@@ -32,7 +32,7 @@ class FunnelQuery(ModelNormal):
         return {
             "data_source": (FunnelSource,),
             "query_string": (str,),
-            "steps": (FunnelSteps,),
+            "steps": ([FunnelStep],),
         }
 
     attribute_map = {
@@ -52,7 +52,8 @@ class FunnelQuery(ModelNormal):
         :param query_string: The widget query.
         :type query_string: str
 
-        :type steps: FunnelSteps
+        :param steps: List of funnel steps.
+        :type steps: [FunnelStep]
         """
         super().__init__(kwargs)
 

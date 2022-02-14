@@ -889,10 +889,10 @@ funnel\_source
    :undoc-members:
    :show-inheritance:
 
-funnel\_steps
--------------
+funnel\_step
+------------
 
-.. automodule:: datadog_api_client.v1.model.funnel_steps
+.. automodule:: datadog_api_client.v1.model.funnel_step
    :members:
    :undoc-members:
    :show-inheritance:

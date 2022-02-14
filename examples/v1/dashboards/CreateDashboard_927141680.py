@@ -9,7 +9,6 @@ from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutTyp
 from datadog_api_client.v1.model.funnel_query import FunnelQuery
 from datadog_api_client.v1.model.funnel_request_type import FunnelRequestType
 from datadog_api_client.v1.model.funnel_source import FunnelSource
-from datadog_api_client.v1.model.funnel_steps import FunnelSteps
 from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
 from datadog_api_client.v1.model.funnel_widget_definition_type import FunnelWidgetDefinitionType
 from datadog_api_client.v1.model.funnel_widget_request import FunnelWidgetRequest
@@ -24,7 +23,7 @@ body = Dashboard(
                 type=FunnelWidgetDefinitionType("funnel"),
                 requests=[
                     FunnelWidgetRequest(
-                        query=FunnelQuery(data_source=FunnelSource("rum"), query_string="", steps=FunnelSteps([])),
+                        query=FunnelQuery(data_source=FunnelSource("rum"), query_string="", steps=[]),
                         request_type=FunnelRequestType("funnel"),
                     )
                 ],
