@@ -1,0 +1,72 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"email":"Test-Configure_tags_for_multiple_metrics_returns_Accepted_response-1644590372@datadoghq.com","title":"user
+      title"},"type":"users"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/users
+  response:
+    body:
+      string: '{"data":{"type":"users","id":"6d716162-8b48-11ec-8120-da7ad0900002","attributes":{"name":null,"handle":"test-configure_tags_for_multiple_metrics_returns_accepted_response-1644590372@datadoghq.com","created_at":"2022-02-11T14:39:33.168622+00:00","modified_at":"2022-02-11T14:39:33.210204+00:00","email":"test-configure_tags_for_multiple_metrics_returns_accepted_response-1644590372@datadoghq.com","icon":"https://secure.gravatar.com/avatar/26c5c0db9872a0c3853a47185d64e364?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"emails":["test-configure_tags_for_multiple_metrics_returns_accepted_response-1644590372@datadoghq.com"],"tags":["test","testconfiguretagsformultiplemetricsreturnsacceptedresponse1644590372"]},"id":"system.load.1","type":"metric_bulk_configure_tags"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/metrics/config/bulk-tags
+  response:
+    body:
+      string: '{"data":{"type":"metric_bulk_configure_tags","id":"system.load.1","attributes":{"tags":["test","testconfiguretagsformultiplemetricsreturnsacceptedresponse1644590372"],"emails":["test-configure_tags_for_multiple_metrics_returns_accepted_response-1644590372@datadoghq.com"],"status":"Accepted"}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 202
+      message: Accepted
+- request:
+    body: '{"data":{"attributes":{"emails":["test-configure_tags_for_multiple_metrics_returns_accepted_response-1644590372@datadoghq.com"],"status":"Accepted","tags":["test","testconfiguretagsformultiplemetricsreturnsacceptedresponse1644590372"]},"id":"system.load.1","type":"metric_bulk_configure_tags"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/metrics/config/bulk-tags
+  response:
+    body:
+      string: '{"data":{"type":"metric_bulk_configure_tags","id":"system.load.1","attributes":{"emails":["test-configure_tags_for_multiple_metrics_returns_accepted_response-1644590372@datadoghq.com"],"status":"Accepted"}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 202
+      message: Accepted
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/users/6d716162-8b48-11ec-8120-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

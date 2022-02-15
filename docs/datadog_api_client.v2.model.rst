@@ -1673,6 +1673,102 @@ metric\_all\_tags\_response
    :undoc-members:
    :show-inheritance:
 
+metric\_bulk\_configure\_tags\_type
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_bulk_configure_tags_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_bulk\_tag\_config\_create
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_create
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_bulk\_tag\_config\_create\_attributes
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_create_attributes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_bulk\_tag\_config\_create\_request
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_create_request
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_bulk\_tag\_config\_delete
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_delete
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_bulk\_tag\_config\_delete\_attributes
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_delete_attributes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_bulk\_tag\_config\_delete\_request
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_delete_request
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_bulk\_tag\_config\_email\_list
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_email_list
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_bulk\_tag\_config\_response
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_bulk\_tag\_config\_status
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_status
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_bulk\_tag\_config\_status\_attributes
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_status_attributes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_bulk\_tag\_config\_tag\_name\_list
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_tag_name_list
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 metric\_custom\_aggregation
 ---------------------------
 
