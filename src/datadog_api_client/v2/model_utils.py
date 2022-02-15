@@ -630,7 +630,8 @@ class ModelNormal(OpenApiModel):
                 and self._configuration.discard_unknown_keys
                 and self.additional_properties_type is None
             ):
-                # discard variable.
+                # If it's returned from the API, store it if we need to send it back
+                self.__dict__["_data_store"][var_name] = var_value
                 continue
             setattr(self, var_name, var_value)
         return self
