@@ -329,6 +329,25 @@
       "type": "safe"
     }
   },
+  "DeleteBulkTagsMetricsConfiguration": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateBulkTagsMetricsConfiguration": {
+    "tag": "Metrics",
+    "undo": {
+      "operationId": "DeleteBulkTagsMetricsConfiguration",
+      "parameters": [
+        {
+          "name": "body",
+          "source": ""
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "ListTagsByMetricName": {
     "tag": "Metrics",
     "undo": {

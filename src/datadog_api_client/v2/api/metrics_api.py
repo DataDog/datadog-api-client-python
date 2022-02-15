@@ -5,6 +5,9 @@
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model.metric_all_tags_response import MetricAllTagsResponse
+from datadog_api_client.v2.model.metric_bulk_tag_config_create_request import MetricBulkTagConfigCreateRequest
+from datadog_api_client.v2.model.metric_bulk_tag_config_delete_request import MetricBulkTagConfigDeleteRequest
+from datadog_api_client.v2.model.metric_bulk_tag_config_response import MetricBulkTagConfigResponse
 from datadog_api_client.v2.model.metric_tag_configuration_create_request import MetricTagConfigurationCreateRequest
 from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
 from datadog_api_client.v2.model.metric_tag_configuration_response import MetricTagConfigurationResponse
@@ -27,6 +30,26 @@ class MetricsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+        self._create_bulk_tags_metrics_configuration_endpoint = _Endpoint(
+            settings={
+                "response_type": (MetricBulkTagConfigResponse,),
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/metrics/config/bulk-tags",
+                "operation_id": "create_bulk_tags_metrics_configuration",
+                "http_method": "POST",
+                "servers": None,
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (MetricBulkTagConfigCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_tag_configuration_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricTagConfigurationResponse,),
@@ -46,6 +69,26 @@ class MetricsApi(object):
                 "body": {
                     "required": True,
                     "openapi_types": (MetricTagConfigurationCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_bulk_tags_metrics_configuration_endpoint = _Endpoint(
+            settings={
+                "response_type": (MetricBulkTagConfigResponse,),
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/metrics/config/bulk-tags",
+                "operation_id": "delete_bulk_tags_metrics_configuration",
+                "http_method": "DELETE",
+                "servers": None,
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (MetricBulkTagConfigDeleteRequest,),
                     "location": "body",
                 },
             },
@@ -223,6 +266,48 @@ class MetricsApi(object):
             api_client=api_client,
         )
 
+    def create_bulk_tags_metrics_configuration(self, body, **kwargs):
+        """Configure tags for multiple metrics
+
+        Create and define a list of queryable tag keys for a set of existing count, gauge, rate, and distribution metrics. Metrics are selected by passing a metric name prefix. Use the Delete method of this API path to remove tag configurations. Results can be sent to a set of account email addresses, just like the same operation in the Datadog web app. If multiple calls include the same metric, the last configuration applied (not by submit order) is used, do not expect deterministic ordering of concurrent calls. Can only be used with application keys of users with the `Manage Tags for Metrics` permission.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True.
+
+        >>> thread = api.create_bulk_tags_metrics_configuration(body, async_req=True)
+        >>> result = thread.get()
+
+
+        :type body: MetricBulkTagConfigCreateRequest
+        :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: MetricBulkTagConfigResponse
+        """
+        kwargs = self._create_bulk_tags_metrics_configuration_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_bulk_tags_metrics_configuration_endpoint.call_with_http_info(**kwargs)
+
     def create_tag_configuration(self, metric_name, body, **kwargs):
         """Create a tag configuration
 
@@ -267,6 +352,48 @@ class MetricsApi(object):
         kwargs["metric_name"] = metric_name
         kwargs["body"] = body
         return self._create_tag_configuration_endpoint.call_with_http_info(**kwargs)
+
+    def delete_bulk_tags_metrics_configuration(self, body, **kwargs):
+        """Configure tags for multiple metrics
+
+        Delete all custom lists of queryable tag keys for a set of existing count, gauge, rate, and distribution metrics. Metrics are selected by passing a metric name prefix. Results can be sent to a set of account email addresses, just like the same operation in the Datadog web app. Can only be used with application keys of users with the `Manage Tags for Metrics` permission.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True.
+
+        >>> thread = api.delete_bulk_tags_metrics_configuration(body, async_req=True)
+        >>> result = thread.get()
+
+
+        :type body: MetricBulkTagConfigDeleteRequest
+        :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: MetricBulkTagConfigResponse
+        """
+        kwargs = self._delete_bulk_tags_metrics_configuration_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._delete_bulk_tags_metrics_configuration_endpoint.call_with_http_info(**kwargs)
 
     def delete_tag_configuration(self, metric_name, **kwargs):
         """Delete a tag configuration
