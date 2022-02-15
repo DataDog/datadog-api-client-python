@@ -146,7 +146,7 @@ from datadog_api_client.v1.model.free_text_widget_definition_type import FreeTex
 from datadog_api_client.v1.model.funnel_query import FunnelQuery
 from datadog_api_client.v1.model.funnel_request_type import FunnelRequestType
 from datadog_api_client.v1.model.funnel_source import FunnelSource
-from datadog_api_client.v1.model.funnel_steps import FunnelSteps
+from datadog_api_client.v1.model.funnel_step import FunnelStep
 from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
 from datadog_api_client.v1.model.funnel_widget_definition_type import FunnelWidgetDefinitionType
 from datadog_api_client.v1.model.funnel_widget_request import FunnelWidgetRequest

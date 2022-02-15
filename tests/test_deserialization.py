@@ -8,7 +8,11 @@ from datadog_api_client.v1 import Configuration as Configuration
 from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateResponse
 from datadog_api_client.v2.model.logs_archive import LogsArchive
 from datadog_api_client.v2.model.logs_archive_destination import LogsArchiveDestination
-from datadog_api_client.v2.model_utils import validate_and_convert_types as validate_and_convert_types_v2
+from datadog_api_client.v2.model.user_response import UserResponse
+from datadog_api_client.v2.model_utils import (
+    validate_and_convert_types as validate_and_convert_types_v2,
+    model_to_dict as model_to_dict_v2,
+)
 from datadog_api_client.v2 import Configuration as ConfigurationV2
 
 
@@ -283,3 +287,37 @@ def test_one_of_primitive_types():
     )
     assert isinstance(deserialized_data, LogsAggregateResponse)
     assert deserialized_data.data.buckets[0].computes["c0"] == 435.3
+
+
+def test_unknown_model_value():
+    body = """{
+        "data": {
+            "type": "users",
+            "id": "6d716162-8b48-11ec-8120-da7ad0900002",
+            "attributes": {
+                "name": null,
+                "created_at": "2022-02-11T14:39:33.168622+00:00",
+                "modified_at": "2022-02-11T14:39:33.210204+00:00",
+                "title": "user title",
+                "verified": false,
+                "service_account": false,
+                "disabled": false,
+                "allowed_login_methods": [],
+                "status": "Pending"
+            },
+            "relationships": {
+                "roles": { "data": [] },
+                "org": {
+                    "data": { "type": "orgs", "id": "4dee724d-00cc-11ea-a77b-570c9d03c6c5" }
+                }
+            }
+        }
+    }"""
+    config = ConfigurationV2()
+    deserialized_data = validate_and_convert_types_v2(
+        json.loads(body), (UserResponse,), ["received_data"], True, True, config
+    )
+    assert isinstance(deserialized_data, UserResponse)
+    serialized = model_to_dict_v2(deserialized_data)
+    assert "allowed_login_methods" in serialized["data"]["attributes"]
+    assert serialized["data"]["attributes"]["allowed_login_methods"] == []

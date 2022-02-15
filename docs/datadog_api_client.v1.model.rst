@@ -889,10 +889,10 @@ funnel\_source
    :undoc-members:
    :show-inheritance:
 
-funnel\_steps
--------------
+funnel\_step
+------------
 
-.. automodule:: datadog_api_client.v1.model.funnel_steps
+.. automodule:: datadog_api_client.v1.model.funnel_step
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3837,14 +3837,6 @@ synthetics\_device\_id
 ----------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_device_id
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-synthetics\_error\_code
------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_error_code
    :members:
    :undoc-members:
    :show-inheritance:
