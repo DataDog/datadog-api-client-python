@@ -258,7 +258,7 @@ class KeyManagementApi(object):
 
 
         :type body: ApiKey
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -300,7 +300,7 @@ class KeyManagementApi(object):
 
 
         :type body: ApplicationKey
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -340,10 +340,9 @@ class KeyManagementApi(object):
         >>> thread = api.delete_api_key(key, async_req=True)
         >>> result = thread.get()
 
-
         :param key: The specific API key you are working with.
         :type key: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -383,10 +382,9 @@ class KeyManagementApi(object):
         >>> thread = api.delete_application_key(key, async_req=True)
         >>> result = thread.get()
 
-
         :param key: The specific APP key you are working with.
         :type key: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -426,10 +424,9 @@ class KeyManagementApi(object):
         >>> thread = api.get_api_key(key, async_req=True)
         >>> result = thread.get()
 
-
         :param key: The specific API key you are working with.
         :type key: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -469,10 +466,9 @@ class KeyManagementApi(object):
         >>> thread = api.get_application_key(key, async_req=True)
         >>> result = thread.get()
 
-
         :param key: The specific APP key you are working with.
         :type key: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -511,7 +507,8 @@ class KeyManagementApi(object):
 
         >>> thread = api.list_api_keys(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -549,7 +546,8 @@ class KeyManagementApi(object):
 
         >>> thread = api.list_application_keys(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -588,13 +586,11 @@ class KeyManagementApi(object):
         >>> thread = api.update_api_key(key, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param key: The specific API key you are working with.
         :type key: str
 
         :type body: ApiKey
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -635,13 +631,11 @@ class KeyManagementApi(object):
         >>> thread = api.update_application_key(key, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param key: The specific APP key you are working with.
         :type key: str
 
         :type body: ApplicationKey
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

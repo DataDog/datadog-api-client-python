@@ -206,25 +206,18 @@ class HostsApi(object):
 
         :param filter: String to filter search results.
         :type filter: str, optional
-
         :param sort_field: Sort hosts by this field.
         :type sort_field: str, optional
-
         :param sort_dir: Direction of sort. Options include `asc` and `desc`.
         :type sort_dir: str, optional
-
         :param start: Host result to start search from.
         :type start: int, optional
-
         :param count: Number of hosts to return. Max 1000.
         :type count: int, optional
-
         :param _from: Number of seconds since UNIX epoch from which you want to search your hosts.
         :type _from: int, optional
-
         :param include_muted_hosts_data: Include information on the muted status of hosts and when the mute expires.
         :type include_muted_hosts_data: bool, optional
-
         :param include_hosts_metadata: Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.).
         :type include_hosts_metadata: bool, optional
         :param _return_http_data_only: Response data without head status
@@ -266,14 +259,11 @@ class HostsApi(object):
         >>> thread = api.mute_host(host_name, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param host_name: Name of the host to mute.
         :type host_name: str
-
         :param body: Mute a host request body.
         :type body: HostMuteSettings
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -314,10 +304,9 @@ class HostsApi(object):
         >>> thread = api.unmute_host(host_name, async_req=True)
         >>> result = thread.get()
 
-
         :param host_name: Name of the host to unmute.
         :type host_name: str
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

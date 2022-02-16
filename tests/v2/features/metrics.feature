@@ -14,6 +14,28 @@ Feature: Metrics
     And a valid "appKeyAuth" key in the system
     And an instance of "Metrics" API
 
+  @team:DataDog/points-aggregation
+  Scenario: Configure tags for multiple metrics returns "Accepted" response
+    Given there is a valid "user" in the system
+    And new "CreateBulkTagsMetricsConfiguration" request
+    And body with value {"data": {"attributes": {"emails": ["{{ user.data.attributes.email }}"], "tags": ["test", "{{ unique_lower_alnum }}"]}, "id": "system.load.1", "type": "metric_bulk_configure_tags"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/points-aggregation
+  Scenario: Configure tags for multiple metrics returns "Bad Request" response
+    Given new "CreateBulkTagsMetricsConfiguration" request
+    And body with value {"data": {"attributes": {"emails": ["sue@example.com", "bob@example.com"], "tags": ["host", "pod_name", "is_shadow"]}, "id": "kafka.lag", "type": "metric_bulk_configure_tags"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/points-aggregation
+  Scenario: Configure tags for multiple metrics returns "Not Found" response
+    Given new "CreateBulkTagsMetricsConfiguration" request
+    And body with value {"data": {"attributes": {"emails": ["sue@example.com", "bob@example.com"], "tags": ["host", "pod_name", "is_shadow"]}, "id": "kafka.lag", "type": "metric_bulk_configure_tags"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @generated @skip @team:DataDog/points-aggregation
   Scenario: Create a tag configuration returns "Bad Request" response
     Given operation "CreateTagConfiguration" enabled

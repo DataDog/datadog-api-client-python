@@ -186,11 +186,11 @@ class OpenApiModel(object):
         return not self == other
 
     def __setattr__(self, attr, value):
-        """set the value of an attribute using dot notation: `instance.attr = val`"""
+        """Set the value of an attribute using dot notation: `instance.attr = val`."""
         self[attr] = value
 
     def __getattr__(self, attr):
-        """get the value of an attribute using dot notation: `instance.attr`"""
+        """Get the value of an attribute using dot notation: `instance.attr`."""
         return self.__getitem__(attr)
 
     def __new__(cls, *args, **kwargs):
@@ -491,7 +491,7 @@ class ModelSimple(OpenApiModel):
     )
 
     def __setitem__(self, name, value):
-        """set the value of an attribute using square-bracket notation: `instance[attr] = val`"""
+        """Set the value of an attribute using square-bracket notation: `instance[attr] = val`."""
         if name in self.required_properties:
             self.__dict__[name] = value
             return
@@ -499,14 +499,14 @@ class ModelSimple(OpenApiModel):
         self.set_attribute(name, value)
 
     def get(self, name, default=None):
-        """returns the value of an attribute or some default value if the attribute was not set"""
+        """Returns the value of an attribute or some default value if the attribute was not set."""
         if name in self.required_properties:
             return self.__dict__[name]
 
         return self.__dict__["_data_store"].get(name, default)
 
     def __getitem__(self, name):
-        """get the value of an attribute using square-bracket notation: `instance[attr]`"""
+        """Get the value of an attribute using square-bracket notation: `instance[attr]`."""
         if name in self:
             return self.get(name)
 
@@ -515,7 +515,7 @@ class ModelSimple(OpenApiModel):
         )
 
     def __contains__(self, name):
-        """used by `in` operator to check if an attribute value was set in an instance: `'attr' in instance`"""
+        """Used by `in` operator to check if an attribute value was set in an instance: `'attr' in instance`."""
         if name in self.required_properties:
             return name in self.__dict__
 
@@ -553,7 +553,7 @@ class ModelNormal(OpenApiModel):
     )
 
     def __setitem__(self, name, value):
-        """set the value of an attribute using square-bracket notation: `instance[attr] = val`"""
+        """Set the value of an attribute using square-bracket notation: `instance[attr] = val`."""
         if name in self.required_properties:
             self.__dict__[name] = value
             return
@@ -561,14 +561,14 @@ class ModelNormal(OpenApiModel):
         self.set_attribute(name, value)
 
     def get(self, name, default=None):
-        """returns the value of an attribute or some default value if the attribute was not set"""
+        """Returns the value of an attribute or some default value if the attribute was not set."""
         if name in self.required_properties:
             return self.__dict__[name]
 
         return self.__dict__["_data_store"].get(name, default)
 
     def __getitem__(self, name):
-        """get the value of an attribute using square-bracket notation: `instance[attr]`"""
+        """Get the value of an attribute using square-bracket notation: `instance[attr]`."""
         if name in self:
             return self.get(name)
 
@@ -577,7 +577,7 @@ class ModelNormal(OpenApiModel):
         )
 
     def __contains__(self, name):
-        """used by `in` operator to check if an attribute value was set in an instance: `'attr' in instance`"""
+        """Used by `in` operator to check if an attribute value was set in an instance: `'attr' in instance`."""
         if name in self.required_properties:
             return name in self.__dict__
 
@@ -630,7 +630,8 @@ class ModelNormal(OpenApiModel):
                 and self._configuration.discard_unknown_keys
                 and self.additional_properties_type is None
             ):
-                # discard variable.
+                # If it's returned from the API, store it if we need to send it back
+                self.__dict__["_data_store"][var_name] = var_value
                 continue
             setattr(self, var_name, var_value)
         return self
@@ -696,7 +697,7 @@ class ModelComposed(OpenApiModel):
         return self
 
     def __setitem__(self, name, value):
-        """set the value of an attribute using square-bracket notation: `instance[attr] = val`"""
+        """Set the value of an attribute using square-bracket notation: `instance[attr] = val`."""
         if name in self.required_properties:
             self.__dict__[name] = value
             return
@@ -712,7 +713,7 @@ class ModelComposed(OpenApiModel):
     __unset_attribute_value__ = object()
 
     def get(self, name, default=None):
-        """returns the value of an attribute or some default value if the attribute was not set"""
+        """Returns the value of an attribute or some default value if the attribute was not set."""
         if name in self.required_properties:
             return self.__dict__[name]
 
@@ -743,7 +744,7 @@ class ModelComposed(OpenApiModel):
             )
 
     def __getitem__(self, name):
-        """get the value of an attribute using square-bracket notation: `instance[attr]`"""
+        """Get the value of an attribute using square-bracket notation: `instance[attr]`."""
         value = self.get(name, self.__unset_attribute_value__)
         if value is self.__unset_attribute_value__:
             raise ApiAttributeError(
@@ -753,7 +754,7 @@ class ModelComposed(OpenApiModel):
         return value
 
     def __contains__(self, name):
-        """used by `in` operator to check if an attribute value was set in an instance: `'attr' in instance`"""
+        """Used by `in` operator to check if an attribute value was set in an instance: `'attr' in instance`."""
 
         if name in self.required_properties:
             return name in self.__dict__
@@ -1968,7 +1969,7 @@ def validate_get_composed_info(constant_args, model_args, self):
             additional_properties_type. This list can include self
     :rtype: list
     """
-    # create composed_instances
+    # Create composed_instances
     composed_instances = []
     allof_instances = get_allof_instances(self, model_args, constant_args)
     composed_instances.extend(allof_instances)
@@ -1977,34 +1978,14 @@ def validate_get_composed_info(constant_args, model_args, self):
         composed_instances.append(oneof_instance)
     anyof_instances = get_anyof_instances(self, model_args, constant_args)
     composed_instances.extend(anyof_instances)
-    """
-    set additional_properties_model_instances
-    additional properties must be evaluated at the schema level
-    so self's additional properties are most important
-    If self is a composed schema with:
-    - no properties defined in self
-    - additionalProperties: False
-    Then for object payloads every property is an additional property
-    and they are not allowed, so only empty dict is allowed
 
-    Properties must be set on all matching schemas
-    so when a property is assigned toa composed instance, it must be set on all
-    composed instances regardless of additionalProperties presence
-    keeping it to prevent breaking changes in v5.0.1
-    TODO remove cls._additional_properties_model_instances in 6.0.0
-    """
     additional_properties_model_instances = []
     if self.additional_properties_type is not None:
         additional_properties_model_instances = [self]
 
-    """
-    no need to set properties on self in here, they will be set in __init__
-    By here all composed schema oneOf/anyOf/allOf instances have their properties set using
-    model_args
-    """
     discarded_args = get_discarded_args(self, composed_instances, model_args)
 
-    # map variable names to composed_instances
+    # Map variable names to composed_instances
     var_name_to_model_instances = {}
     for prop_name in model_args:
         if prop_name not in discarded_args:

@@ -167,10 +167,9 @@ class AWSLogsIntegrationApi(object):
         >>> thread = api.check_aws_logs_lambda_async(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Check AWS Log Lambda Async request body.
         :type body: AWSAccountAndLambdaRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -210,10 +209,9 @@ class AWSLogsIntegrationApi(object):
         >>> thread = api.check_aws_logs_services_async(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Check AWS Logs Async Services request body.
         :type body: AWSLogsServicesRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -253,10 +251,9 @@ class AWSLogsIntegrationApi(object):
         >>> thread = api.create_aws_lambda_arn(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: AWS Log Lambda Async request body.
         :type body: AWSAccountAndLambdaRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -296,10 +293,9 @@ class AWSLogsIntegrationApi(object):
         >>> thread = api.delete_aws_lambda_arn(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Delete AWS Lambda ARN request body.
         :type body: AWSAccountAndLambdaRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -339,10 +335,9 @@ class AWSLogsIntegrationApi(object):
         >>> thread = api.enable_aws_log_services(body, async_req=True)
         >>> result = thread.get()
 
-
         :param body: Enable AWS Log Services request body.
         :type body: AWSLogsServicesRequest
-            :param _return_http_data_only: Response data without head status
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -381,7 +376,8 @@ class AWSLogsIntegrationApi(object):
 
         >>> thread = api.list_aws_logs_integrations(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object
@@ -419,7 +415,8 @@ class AWSLogsIntegrationApi(object):
 
         >>> thread = api.list_aws_logs_services(async_req=True)
         >>> result = thread.get()
-            :param _return_http_data_only: Response data without head status
+
+        :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
         :param _preload_content: If False, the urllib3.HTTPResponse object

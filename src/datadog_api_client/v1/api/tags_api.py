@@ -173,14 +173,10 @@ class TagsApi(object):
         >>> thread = api.create_host_tags(host_name, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param host_name: This endpoint allows you to add new tags to a host, optionally specifying where the tags came from.
         :type host_name: str
-
         :param body: Update host tags request body.
         :type body: HostTags
-
         :param source: The source of the tags. [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
         :type source: str, optional
         :param _return_http_data_only: Response data without head status
@@ -224,10 +220,8 @@ class TagsApi(object):
         >>> thread = api.delete_host_tags(host_name, async_req=True)
         >>> result = thread.get()
 
-
         :param host_name: This endpoint allows you to remove all user-assigned tags for a single host.
         :type host_name: str
-
         :param source: The source of the tags (for example chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
         :type source: str, optional
         :param _return_http_data_only: Response data without head status
@@ -270,10 +264,8 @@ class TagsApi(object):
         >>> thread = api.get_host_tags(host_name, async_req=True)
         >>> result = thread.get()
 
-
         :param host_name: When specified, filters list of tags to those tags with the specified source.
         :type host_name: str
-
         :param source: Source to filter.
         :type source: str, optional
         :param _return_http_data_only: Response data without head status
@@ -357,14 +349,10 @@ class TagsApi(object):
         >>> thread = api.update_host_tags(host_name, body, async_req=True)
         >>> result = thread.get()
 
-
-
         :param host_name: This endpoint allows you to update/replace all in an integration source with those supplied in the request.
         :type host_name: str
-
         :param body: Add tags to host
         :type body: HostTags
-
         :param source: The source of the tags (for example chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value)
         :type source: str, optional
         :param _return_http_data_only: Response data without head status

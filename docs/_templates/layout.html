@@ -1,0 +1,12 @@
+{%- extends "!layout.html" %}
+
+{%- block extrahead %}
+    <link rel="stylesheet" href="{{ pathto('_static/basic.css', 1) }}"/>
+    <style>
+    dt:target {
+      background-color: white;
+    }
+    </style>
+
+  {{ super() }}
+{% endblock %}
