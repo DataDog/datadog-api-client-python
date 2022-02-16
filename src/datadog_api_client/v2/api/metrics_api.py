@@ -33,7 +33,7 @@ class MetricsApi(object):
         self._create_bulk_tags_metrics_configuration_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricBulkTagConfigResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/metrics/config/bulk-tags",
                 "operation_id": "create_bulk_tags_metrics_configuration",
                 "http_method": "POST",
@@ -79,7 +79,7 @@ class MetricsApi(object):
         self._delete_bulk_tags_metrics_configuration_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricBulkTagConfigResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/metrics/config/bulk-tags",
                 "operation_id": "delete_bulk_tags_metrics_configuration",
                 "http_method": "DELETE",
