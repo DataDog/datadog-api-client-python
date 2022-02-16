@@ -24,6 +24,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
             "BROWSER_USAGE": "browser_usage",
             "CONTAINER_USAGE": "container_usage",
             "CUSTOM_TIMESERIES_USAGE": "custom_timeseries_usage",
+            "ESTIMATED_INDEXED_LOGS_USAGE": "estimated_indexed_logs_usage",
             "FARGATE_USAGE": "fargate_usage",
             "FUNCTIONS_USAGE": "functions_usage",
             "INDEXED_LOGS_USAGE": "indexed_logs_usage",
@@ -48,7 +49,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
         """HourlyUsageAttributionUsageType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-        :param value: Supported products for hourly usage attribution requests. Must be one of ["api_usage", "apm_host_usage", "browser_usage", "container_usage", "custom_timeseries_usage", "fargate_usage", "functions_usage", "indexed_logs_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "profiled_container_usage", "profiled_host_usage", "snmp_usage"].
+        :param value: Supported products for hourly usage attribution requests. Must be one of ["api_usage", "apm_host_usage", "browser_usage", "container_usage", "custom_timeseries_usage", "estimated_indexed_logs_usage", "fargate_usage", "functions_usage", "indexed_logs_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "profiled_container_usage", "profiled_host_usage", "snmp_usage"].
         :type value: str
         """
         super().__init__(kwargs)

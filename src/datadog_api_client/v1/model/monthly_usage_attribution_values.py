@@ -31,6 +31,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "container_usage": (float,),
             "custom_timeseries_percentage": (float,),
             "custom_timeseries_usage": (float,),
+            "estimated_indexed_logs_percentage": (float,),
+            "estimated_indexed_logs_usage": (float,),
             "fargate_percentage": (float,),
             "fargate_usage": (float,),
             "functions_percentage": (float,),
@@ -62,6 +64,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "container_usage": "container_usage",
         "custom_timeseries_percentage": "custom_timeseries_percentage",
         "custom_timeseries_usage": "custom_timeseries_usage",
+        "estimated_indexed_logs_percentage": "estimated_indexed_logs_percentage",
+        "estimated_indexed_logs_usage": "estimated_indexed_logs_usage",
         "fargate_percentage": "fargate_percentage",
         "fargate_usage": "fargate_usage",
         "functions_percentage": "functions_percentage",
@@ -117,6 +121,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param custom_timeseries_usage: The custom metrics usage by tag(s).
         :type custom_timeseries_usage: float, optional
+
+        :param estimated_indexed_logs_percentage: The percentage of estimated live indexed logs usage by tag(s). This field is in private beta.
+        :type estimated_indexed_logs_percentage: float, optional
+
+        :param estimated_indexed_logs_usage: The estimated live indexed logs usage by tag(s). This field is in private beta.
+        :type estimated_indexed_logs_usage: float, optional
 
         :param fargate_percentage: The percentage of Fargate usage by tags.
         :type fargate_percentage: float, optional
