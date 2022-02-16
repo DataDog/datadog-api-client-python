@@ -729,6 +729,22 @@ incident\_response\_included\_item
    :undoc-members:
    :show-inheritance:
 
+incident\_response\_meta
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_response_meta
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+incident\_response\_meta\_pagination
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_response_meta_pagination
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 incident\_response\_relationships
 ---------------------------------
 
@@ -837,22 +853,6 @@ incident\_services\_response
 ----------------------------
 
 .. automodule:: datadog_api_client.v2.model.incident_services_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-incident\_services\_response\_meta
-----------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_services_response_meta
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-incident\_services\_response\_meta\_pagination
-----------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_services_response_meta_pagination
    :members:
    :undoc-members:
    :show-inheritance:
