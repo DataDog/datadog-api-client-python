@@ -51,7 +51,7 @@ class SyntheticsBrowserTestResultShortResult(ModelNormal):
 
         :type device: SyntheticsDevice, optional
 
-        :param duration: Length in second of the browser test run.
+        :param duration: Length in milliseconds of the browser test run.
         :type duration: float, optional
 
         :param error_count: Amount of errors collected for a single browser test run.
