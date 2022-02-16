@@ -3515,6 +3515,7 @@ components:
       - browser_usage
       - container_usage
       - custom_timeseries_usage
+      - estimated_indexed_logs_usage
       - fargate_usage
       - functions_usage
       - indexed_logs_usage
@@ -3531,6 +3532,7 @@ components:
       - BROWSER_USAGE
       - CONTAINER_USAGE
       - CUSTOM_TIMESERIES_USAGE
+      - ESTIMATED_INDEXED_LOGS_USAGE
       - FARGATE_USAGE
       - FUNCTIONS_USAGE
       - INDEXED_LOGS_USAGE
@@ -6659,6 +6661,8 @@ components:
       - container_percentage
       - custom_timeseries_usage
       - custom_timeseries_percentage
+      - estimated_indexed_logs_usage
+      - estimated_indexed_logs_percentage
       - fargate_usage
       - fargate_percentage
       - functions_usage
@@ -6690,6 +6694,8 @@ components:
       - CONTAINER_PERCENTAGE
       - CUSTOM_TIMESERIES_USAGE
       - CUSTOM_TIMESERIES_PERCENTAGE
+      - ESTIMATED_INDEXED_LOGS_USAGE
+      - ESTIMATED_INDEXED_LOGS_PERCENTAGE
       - FARGATE_USAGE
       - FARGATE_PERCENTAGE
       - FUNCTIONS_USAGE
@@ -6750,6 +6756,16 @@ components:
           type: number
         custom_timeseries_usage:
           description: The custom metrics usage by tag(s).
+          format: double
+          type: number
+        estimated_indexed_logs_percentage:
+          description: The percentage of estimated live indexed logs usage by tag(s).
+            This field is in private beta.
+          format: double
+          type: number
+        estimated_indexed_logs_usage:
+          description: The estimated live indexed logs usage by tag(s). This field
+            is in private beta.
           format: double
           type: number
         fargate_percentage:
@@ -12843,6 +12859,8 @@ components:
       - lambda_invocations_percentage
       - lambda_usage
       - lambda_percentage
+      - estimated_indexed_logs_usage
+      - estimated_indexed_logs_percentage
       type: string
       x-enum-varnames:
       - API_PERCENTAGE
@@ -12867,6 +12885,8 @@ components:
       - LAMBDA_INVOCATIONS_PERCENTAGE
       - LAMBDA_USAGE
       - LAMBDA_PERCENTAGE
+      - ESTIMATED_INDEXED_LOGS_USAGE
+      - ESTIMATED_INDEXED_LOGS_PERCENTAGE
     UsageAttributionSupportedMetrics:
       description: Supported fields for usage attribution requests (valid requests
         contain one or more metrics, or `*` for all).
