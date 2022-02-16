@@ -10,11 +10,11 @@ from datadog_api_client.v2.model_utils import (
 
 
 def lazy_import():
-    from datadog_api_client.v2.model.incident_services_response_meta import IncidentServicesResponseMeta
+    from datadog_api_client.v2.model.incident_response_meta import IncidentResponseMeta
     from datadog_api_client.v2.model.incident_team_included_items import IncidentTeamIncludedItems
     from datadog_api_client.v2.model.incident_team_response_data import IncidentTeamResponseData
 
-    globals()["IncidentServicesResponseMeta"] = IncidentServicesResponseMeta
+    globals()["IncidentResponseMeta"] = IncidentResponseMeta
     globals()["IncidentTeamIncludedItems"] = IncidentTeamIncludedItems
     globals()["IncidentTeamResponseData"] = IncidentTeamResponseData
 
@@ -34,7 +34,7 @@ class IncidentTeamsResponse(ModelNormal):
         return {
             "data": ([IncidentTeamResponseData],),
             "included": ([IncidentTeamIncludedItems],),
-            "meta": (IncidentServicesResponseMeta,),
+            "meta": (IncidentResponseMeta,),
         }
 
     attribute_map = {
@@ -57,7 +57,7 @@ class IncidentTeamsResponse(ModelNormal):
         :param included: Included related resources which the user requested.
         :type included: [IncidentTeamIncludedItems], optional
 
-        :type meta: IncidentServicesResponseMeta, optional
+        :type meta: IncidentResponseMeta, optional
         """
         super().__init__(kwargs)
 
