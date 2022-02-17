@@ -41,6 +41,7 @@ class IFrameWidgetDefinitionType(ModelSimple):
             value = args.pop(0)
         else:
             value = "iframe"
+
         self._check_pos_args(args)
 
         self.value = value

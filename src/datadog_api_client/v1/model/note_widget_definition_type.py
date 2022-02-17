@@ -41,6 +41,7 @@ class NoteWidgetDefinitionType(ModelSimple):
             value = args.pop(0)
         else:
             value = "note"
+
         self._check_pos_args(args)
 
         self.value = value

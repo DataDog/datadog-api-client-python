@@ -41,6 +41,7 @@ class LogsUserAgentParserType(ModelSimple):
             value = args.pop(0)
         else:
             value = "user-agent-parser"
+
         self._check_pos_args(args)
 
         self.value = value

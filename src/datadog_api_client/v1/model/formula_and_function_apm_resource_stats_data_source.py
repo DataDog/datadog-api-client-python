@@ -41,6 +41,7 @@ class FormulaAndFunctionApmResourceStatsDataSource(ModelSimple):
             value = args.pop(0)
         else:
             value = "apm_resource_stats"
+
         self._check_pos_args(args)
 
         self.value = value

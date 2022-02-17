@@ -41,6 +41,7 @@ class SecurityMonitoringSignalType(ModelSimple):
             value = args.pop(0)
         else:
             value = "signal"
+
         self._check_pos_args(args)
 
         self.value = value

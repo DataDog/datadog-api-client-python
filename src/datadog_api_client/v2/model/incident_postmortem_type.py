@@ -41,6 +41,7 @@ class IncidentPostmortemType(ModelSimple):
             value = args.pop(0)
         else:
             value = "incident_postmortems"
+
         self._check_pos_args(args)
 
         self.value = value

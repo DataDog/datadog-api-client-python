@@ -41,6 +41,7 @@ class HostMapWidgetDefinitionType(ModelSimple):
             value = args.pop(0)
         else:
             value = "hostmap"
+
         self._check_pos_args(args)
 
         self.value = value

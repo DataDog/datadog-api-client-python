@@ -41,6 +41,7 @@ class EventStreamWidgetDefinitionType(ModelSimple):
             value = args.pop(0)
         else:
             value = "event_stream"
+
         self._check_pos_args(args)
 
         self.value = value

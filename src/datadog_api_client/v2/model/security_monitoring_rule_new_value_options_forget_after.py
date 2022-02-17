@@ -51,6 +51,7 @@ class SecurityMonitoringRuleNewValueOptionsForgetAfter(ModelSimple):
                 path_to_item=self._path_to_item,
                 valid_classes=(self.__class__,),
             )
+
         self._check_pos_args(args)
 
         self.value = value

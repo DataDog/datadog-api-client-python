@@ -41,6 +41,7 @@ class LogsLookupProcessorType(ModelSimple):
             value = args.pop(0)
         else:
             value = "lookup-processor"
+
         self._check_pos_args(args)
 
         self.value = value

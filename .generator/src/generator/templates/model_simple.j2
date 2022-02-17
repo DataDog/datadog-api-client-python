@@ -86,6 +86,7 @@ class {{ name }}(ModelSimple):
                 valid_classes=(self.__class__,),
             )
 {%- endif %}
+
         self._check_pos_args(args)
 
         self.value = value

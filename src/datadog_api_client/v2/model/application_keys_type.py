@@ -41,6 +41,7 @@ class ApplicationKeysType(ModelSimple):
             value = args.pop(0)
         else:
             value = "application_keys"
+
         self._check_pos_args(args)
 
         self.value = value

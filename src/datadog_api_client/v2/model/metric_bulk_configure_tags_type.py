@@ -41,6 +41,7 @@ class MetricBulkConfigureTagsType(ModelSimple):
             value = args.pop(0)
         else:
             value = "metric_bulk_configure_tags"
+
         self._check_pos_args(args)
 
         self.value = value

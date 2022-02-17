@@ -41,6 +41,7 @@ class SyntheticsAssertionJSONPathOperator(ModelSimple):
             value = args.pop(0)
         else:
             value = "validatesJSONPath"
+
         self._check_pos_args(args)
 
         self.value = value

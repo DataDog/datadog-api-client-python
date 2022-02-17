@@ -44,6 +44,7 @@ class AccessRole(ModelSimple):
             value = args.pop(0)
         else:
             value = "st"
+
         self._check_pos_args(args)
 
         self.value = value

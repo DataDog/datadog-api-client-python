@@ -41,6 +41,7 @@ class HeatMapWidgetDefinitionType(ModelSimple):
             value = args.pop(0)
         else:
             value = "heatmap"
+
         self._check_pos_args(args)
 
         self.value = value

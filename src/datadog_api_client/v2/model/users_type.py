@@ -41,6 +41,7 @@ class UsersType(ModelSimple):
             value = args.pop(0)
         else:
             value = "users"
+
         self._check_pos_args(args)
 
         self.value = value

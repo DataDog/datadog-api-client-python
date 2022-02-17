@@ -41,6 +41,7 @@ class SyntheticsBasicAuthSigv4Type(ModelSimple):
             value = args.pop(0)
         else:
             value = "sigv4"
+
         self._check_pos_args(args)
 
         self.value = value

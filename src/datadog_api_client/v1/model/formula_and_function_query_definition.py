@@ -12,29 +12,25 @@ def lazy_import():
     from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
         FormulaAndFunctionMetricQueryDefinition,
     )
-
-    globals()["FormulaAndFunctionMetricQueryDefinition"] = FormulaAndFunctionMetricQueryDefinition
     from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
         FormulaAndFunctionEventQueryDefinition,
     )
-
-    globals()["FormulaAndFunctionEventQueryDefinition"] = FormulaAndFunctionEventQueryDefinition
     from datadog_api_client.v1.model.formula_and_function_process_query_definition import (
         FormulaAndFunctionProcessQueryDefinition,
     )
-
-    globals()["FormulaAndFunctionProcessQueryDefinition"] = FormulaAndFunctionProcessQueryDefinition
     from datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_query_definition import (
         FormulaAndFunctionApmDependencyStatsQueryDefinition,
     )
-
-    globals()[
-        "FormulaAndFunctionApmDependencyStatsQueryDefinition"
-    ] = FormulaAndFunctionApmDependencyStatsQueryDefinition
     from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_definition import (
         FormulaAndFunctionApmResourceStatsQueryDefinition,
     )
 
+    globals()["FormulaAndFunctionMetricQueryDefinition"] = FormulaAndFunctionMetricQueryDefinition
+    globals()["FormulaAndFunctionEventQueryDefinition"] = FormulaAndFunctionEventQueryDefinition
+    globals()["FormulaAndFunctionProcessQueryDefinition"] = FormulaAndFunctionProcessQueryDefinition
+    globals()[
+        "FormulaAndFunctionApmDependencyStatsQueryDefinition"
+    ] = FormulaAndFunctionApmDependencyStatsQueryDefinition
     globals()["FormulaAndFunctionApmResourceStatsQueryDefinition"] = FormulaAndFunctionApmResourceStatsQueryDefinition
 
 

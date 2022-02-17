@@ -41,6 +41,7 @@ class TreeMapWidgetDefinitionType(ModelSimple):
             value = args.pop(0)
         else:
             value = "treemap"
+
         self._check_pos_args(args)
 
         self.value = value

@@ -10,91 +10,63 @@ from datadog_api_client.v1.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v1.model.alert_graph_widget_definition import AlertGraphWidgetDefinition
-
-    globals()["AlertGraphWidgetDefinition"] = AlertGraphWidgetDefinition
     from datadog_api_client.v1.model.alert_value_widget_definition import AlertValueWidgetDefinition
-
-    globals()["AlertValueWidgetDefinition"] = AlertValueWidgetDefinition
     from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
-
-    globals()["ChangeWidgetDefinition"] = ChangeWidgetDefinition
     from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
-
-    globals()["CheckStatusWidgetDefinition"] = CheckStatusWidgetDefinition
     from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
-
-    globals()["DistributionWidgetDefinition"] = DistributionWidgetDefinition
     from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
-
-    globals()["EventStreamWidgetDefinition"] = EventStreamWidgetDefinition
     from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
-
-    globals()["EventTimelineWidgetDefinition"] = EventTimelineWidgetDefinition
     from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
-
-    globals()["FreeTextWidgetDefinition"] = FreeTextWidgetDefinition
     from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
-
-    globals()["GeomapWidgetDefinition"] = GeomapWidgetDefinition
     from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
-
-    globals()["GroupWidgetDefinition"] = GroupWidgetDefinition
     from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
-
-    globals()["HeatMapWidgetDefinition"] = HeatMapWidgetDefinition
     from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
-
-    globals()["HostMapWidgetDefinition"] = HostMapWidgetDefinition
     from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
-
-    globals()["IFrameWidgetDefinition"] = IFrameWidgetDefinition
     from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
-
-    globals()["ImageWidgetDefinition"] = ImageWidgetDefinition
     from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWidgetDefinition
-
-    globals()["LogStreamWidgetDefinition"] = LogStreamWidgetDefinition
     from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
-
-    globals()["MonitorSummaryWidgetDefinition"] = MonitorSummaryWidgetDefinition
     from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
-
-    globals()["NoteWidgetDefinition"] = NoteWidgetDefinition
     from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
-
-    globals()["QueryValueWidgetDefinition"] = QueryValueWidgetDefinition
     from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
-
-    globals()["ScatterPlotWidgetDefinition"] = ScatterPlotWidgetDefinition
     from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
-
-    globals()["SLOWidgetDefinition"] = SLOWidgetDefinition
     from datadog_api_client.v1.model.service_map_widget_definition import ServiceMapWidgetDefinition
-
-    globals()["ServiceMapWidgetDefinition"] = ServiceMapWidgetDefinition
     from datadog_api_client.v1.model.service_summary_widget_definition import ServiceSummaryWidgetDefinition
-
-    globals()["ServiceSummaryWidgetDefinition"] = ServiceSummaryWidgetDefinition
     from datadog_api_client.v1.model.sunburst_widget_definition import SunburstWidgetDefinition
-
-    globals()["SunburstWidgetDefinition"] = SunburstWidgetDefinition
     from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
-
-    globals()["TableWidgetDefinition"] = TableWidgetDefinition
     from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
-
-    globals()["TimeseriesWidgetDefinition"] = TimeseriesWidgetDefinition
     from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
-
-    globals()["ToplistWidgetDefinition"] = ToplistWidgetDefinition
     from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
-
-    globals()["TreeMapWidgetDefinition"] = TreeMapWidgetDefinition
     from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
-
-    globals()["ListStreamWidgetDefinition"] = ListStreamWidgetDefinition
     from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
 
+    globals()["AlertGraphWidgetDefinition"] = AlertGraphWidgetDefinition
+    globals()["AlertValueWidgetDefinition"] = AlertValueWidgetDefinition
+    globals()["ChangeWidgetDefinition"] = ChangeWidgetDefinition
+    globals()["CheckStatusWidgetDefinition"] = CheckStatusWidgetDefinition
+    globals()["DistributionWidgetDefinition"] = DistributionWidgetDefinition
+    globals()["EventStreamWidgetDefinition"] = EventStreamWidgetDefinition
+    globals()["EventTimelineWidgetDefinition"] = EventTimelineWidgetDefinition
+    globals()["FreeTextWidgetDefinition"] = FreeTextWidgetDefinition
+    globals()["GeomapWidgetDefinition"] = GeomapWidgetDefinition
+    globals()["GroupWidgetDefinition"] = GroupWidgetDefinition
+    globals()["HeatMapWidgetDefinition"] = HeatMapWidgetDefinition
+    globals()["HostMapWidgetDefinition"] = HostMapWidgetDefinition
+    globals()["IFrameWidgetDefinition"] = IFrameWidgetDefinition
+    globals()["ImageWidgetDefinition"] = ImageWidgetDefinition
+    globals()["LogStreamWidgetDefinition"] = LogStreamWidgetDefinition
+    globals()["MonitorSummaryWidgetDefinition"] = MonitorSummaryWidgetDefinition
+    globals()["NoteWidgetDefinition"] = NoteWidgetDefinition
+    globals()["QueryValueWidgetDefinition"] = QueryValueWidgetDefinition
+    globals()["ScatterPlotWidgetDefinition"] = ScatterPlotWidgetDefinition
+    globals()["SLOWidgetDefinition"] = SLOWidgetDefinition
+    globals()["ServiceMapWidgetDefinition"] = ServiceMapWidgetDefinition
+    globals()["ServiceSummaryWidgetDefinition"] = ServiceSummaryWidgetDefinition
+    globals()["SunburstWidgetDefinition"] = SunburstWidgetDefinition
+    globals()["TableWidgetDefinition"] = TableWidgetDefinition
+    globals()["TimeseriesWidgetDefinition"] = TimeseriesWidgetDefinition
+    globals()["ToplistWidgetDefinition"] = ToplistWidgetDefinition
+    globals()["TreeMapWidgetDefinition"] = TreeMapWidgetDefinition
+    globals()["ListStreamWidgetDefinition"] = ListStreamWidgetDefinition
     globals()["FunnelWidgetDefinition"] = FunnelWidgetDefinition
 
 

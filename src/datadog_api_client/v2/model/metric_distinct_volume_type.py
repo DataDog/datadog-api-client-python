@@ -41,6 +41,7 @@ class MetricDistinctVolumeType(ModelSimple):
             value = args.pop(0)
         else:
             value = "distinct_metric_volumes"
+
         self._check_pos_args(args)
 
         self.value = value

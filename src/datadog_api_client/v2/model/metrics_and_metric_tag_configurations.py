@@ -10,10 +10,9 @@ from datadog_api_client.v2.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v2.model.metric import Metric
-
-    globals()["Metric"] = Metric
     from datadog_api_client.v2.model.metric_tag_configuration import MetricTagConfiguration
 
+    globals()["Metric"] = Metric
     globals()["MetricTagConfiguration"] = MetricTagConfiguration
 
 

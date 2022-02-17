@@ -41,6 +41,7 @@ class DashboardResourceType(ModelSimple):
             value = args.pop(0)
         else:
             value = "dashboard"
+
         self._check_pos_args(args)
 
         self.value = value

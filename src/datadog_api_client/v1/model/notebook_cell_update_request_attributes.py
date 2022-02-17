@@ -10,22 +10,17 @@ from datadog_api_client.v1.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v1.model.notebook_markdown_cell_attributes import NotebookMarkdownCellAttributes
-
-    globals()["NotebookMarkdownCellAttributes"] = NotebookMarkdownCellAttributes
     from datadog_api_client.v1.model.notebook_timeseries_cell_attributes import NotebookTimeseriesCellAttributes
-
-    globals()["NotebookTimeseriesCellAttributes"] = NotebookTimeseriesCellAttributes
     from datadog_api_client.v1.model.notebook_toplist_cell_attributes import NotebookToplistCellAttributes
-
-    globals()["NotebookToplistCellAttributes"] = NotebookToplistCellAttributes
     from datadog_api_client.v1.model.notebook_heat_map_cell_attributes import NotebookHeatMapCellAttributes
-
-    globals()["NotebookHeatMapCellAttributes"] = NotebookHeatMapCellAttributes
     from datadog_api_client.v1.model.notebook_distribution_cell_attributes import NotebookDistributionCellAttributes
-
-    globals()["NotebookDistributionCellAttributes"] = NotebookDistributionCellAttributes
     from datadog_api_client.v1.model.notebook_log_stream_cell_attributes import NotebookLogStreamCellAttributes
 
+    globals()["NotebookMarkdownCellAttributes"] = NotebookMarkdownCellAttributes
+    globals()["NotebookTimeseriesCellAttributes"] = NotebookTimeseriesCellAttributes
+    globals()["NotebookToplistCellAttributes"] = NotebookToplistCellAttributes
+    globals()["NotebookHeatMapCellAttributes"] = NotebookHeatMapCellAttributes
+    globals()["NotebookDistributionCellAttributes"] = NotebookDistributionCellAttributes
     globals()["NotebookLogStreamCellAttributes"] = NotebookLogStreamCellAttributes
 
 

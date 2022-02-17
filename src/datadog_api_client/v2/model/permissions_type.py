@@ -41,6 +41,7 @@ class PermissionsType(ModelSimple):
             value = args.pop(0)
         else:
             value = "permissions"
+
         self._check_pos_args(args)
 
         self.value = value

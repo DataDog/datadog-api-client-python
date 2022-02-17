@@ -10,10 +10,9 @@ from datadog_api_client.v2.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v2.model.metric_distinct_volume import MetricDistinctVolume
-
-    globals()["MetricDistinctVolume"] = MetricDistinctVolume
     from datadog_api_client.v2.model.metric_ingested_indexed_volume import MetricIngestedIndexedVolume
 
+    globals()["MetricDistinctVolume"] = MetricDistinctVolume
     globals()["MetricIngestedIndexedVolume"] = MetricIngestedIndexedVolume
 
 

@@ -41,6 +41,7 @@ class TimeseriesWidgetDefinitionType(ModelSimple):
             value = args.pop(0)
         else:
             value = "timeseries"
+
         self._check_pos_args(args)
 
         self.value = value

@@ -43,6 +43,7 @@ class ListStreamSource(ModelSimple):
             value = args.pop(0)
         else:
             value = "issue_stream"
+
         self._check_pos_args(args)
 
         self.value = value

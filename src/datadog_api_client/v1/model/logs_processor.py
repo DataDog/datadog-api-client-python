@@ -10,49 +10,35 @@ from datadog_api_client.v1.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v1.model.logs_grok_parser import LogsGrokParser
-
-    globals()["LogsGrokParser"] = LogsGrokParser
     from datadog_api_client.v1.model.logs_date_remapper import LogsDateRemapper
-
-    globals()["LogsDateRemapper"] = LogsDateRemapper
     from datadog_api_client.v1.model.logs_status_remapper import LogsStatusRemapper
-
-    globals()["LogsStatusRemapper"] = LogsStatusRemapper
     from datadog_api_client.v1.model.logs_service_remapper import LogsServiceRemapper
-
-    globals()["LogsServiceRemapper"] = LogsServiceRemapper
     from datadog_api_client.v1.model.logs_message_remapper import LogsMessageRemapper
-
-    globals()["LogsMessageRemapper"] = LogsMessageRemapper
     from datadog_api_client.v1.model.logs_attribute_remapper import LogsAttributeRemapper
-
-    globals()["LogsAttributeRemapper"] = LogsAttributeRemapper
     from datadog_api_client.v1.model.logs_url_parser import LogsURLParser
-
-    globals()["LogsURLParser"] = LogsURLParser
     from datadog_api_client.v1.model.logs_user_agent_parser import LogsUserAgentParser
-
-    globals()["LogsUserAgentParser"] = LogsUserAgentParser
     from datadog_api_client.v1.model.logs_category_processor import LogsCategoryProcessor
-
-    globals()["LogsCategoryProcessor"] = LogsCategoryProcessor
     from datadog_api_client.v1.model.logs_arithmetic_processor import LogsArithmeticProcessor
-
-    globals()["LogsArithmeticProcessor"] = LogsArithmeticProcessor
     from datadog_api_client.v1.model.logs_string_builder_processor import LogsStringBuilderProcessor
-
-    globals()["LogsStringBuilderProcessor"] = LogsStringBuilderProcessor
     from datadog_api_client.v1.model.logs_pipeline_processor import LogsPipelineProcessor
-
-    globals()["LogsPipelineProcessor"] = LogsPipelineProcessor
     from datadog_api_client.v1.model.logs_geo_ip_parser import LogsGeoIPParser
-
-    globals()["LogsGeoIPParser"] = LogsGeoIPParser
     from datadog_api_client.v1.model.logs_lookup_processor import LogsLookupProcessor
-
-    globals()["LogsLookupProcessor"] = LogsLookupProcessor
     from datadog_api_client.v1.model.logs_trace_remapper import LogsTraceRemapper
 
+    globals()["LogsGrokParser"] = LogsGrokParser
+    globals()["LogsDateRemapper"] = LogsDateRemapper
+    globals()["LogsStatusRemapper"] = LogsStatusRemapper
+    globals()["LogsServiceRemapper"] = LogsServiceRemapper
+    globals()["LogsMessageRemapper"] = LogsMessageRemapper
+    globals()["LogsAttributeRemapper"] = LogsAttributeRemapper
+    globals()["LogsURLParser"] = LogsURLParser
+    globals()["LogsUserAgentParser"] = LogsUserAgentParser
+    globals()["LogsCategoryProcessor"] = LogsCategoryProcessor
+    globals()["LogsArithmeticProcessor"] = LogsArithmeticProcessor
+    globals()["LogsStringBuilderProcessor"] = LogsStringBuilderProcessor
+    globals()["LogsPipelineProcessor"] = LogsPipelineProcessor
+    globals()["LogsGeoIPParser"] = LogsGeoIPParser
+    globals()["LogsLookupProcessor"] = LogsLookupProcessor
     globals()["LogsTraceRemapper"] = LogsTraceRemapper
 
 

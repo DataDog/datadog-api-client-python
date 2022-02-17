@@ -41,6 +41,7 @@ class ProcessSummaryType(ModelSimple):
             value = args.pop(0)
         else:
             value = "process"
+
         self._check_pos_args(args)
 
         self.value = value

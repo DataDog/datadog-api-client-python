@@ -10,10 +10,9 @@ from datadog_api_client.v1.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
-
-    globals()["SyntheticsAssertionTarget"] = SyntheticsAssertionTarget
     from datadog_api_client.v1.model.synthetics_assertion_json_path_target import SyntheticsAssertionJSONPathTarget
 
+    globals()["SyntheticsAssertionTarget"] = SyntheticsAssertionTarget
     globals()["SyntheticsAssertionJSONPathTarget"] = SyntheticsAssertionJSONPathTarget
 
 

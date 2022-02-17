@@ -10,13 +10,11 @@ from datadog_api_client.v2.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v2.model.organization import Organization
-
-    globals()["Organization"] = Organization
     from datadog_api_client.v2.model.permission import Permission
-
-    globals()["Permission"] = Permission
     from datadog_api_client.v2.model.role import Role
 
+    globals()["Organization"] = Organization
+    globals()["Permission"] = Permission
     globals()["Role"] = Role
 
 

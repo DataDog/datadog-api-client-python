@@ -44,6 +44,7 @@ class UsageSort(ModelSimple):
             value = args.pop(0)
         else:
             value = "start_date"
+
         self._check_pos_args(args)
 
         self.value = value

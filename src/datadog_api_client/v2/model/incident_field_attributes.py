@@ -10,12 +10,11 @@ from datadog_api_client.v2.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v2.model.incident_field_attributes_single_value import IncidentFieldAttributesSingleValue
-
-    globals()["IncidentFieldAttributesSingleValue"] = IncidentFieldAttributesSingleValue
     from datadog_api_client.v2.model.incident_field_attributes_multiple_value import (
         IncidentFieldAttributesMultipleValue,
     )
 
+    globals()["IncidentFieldAttributesSingleValue"] = IncidentFieldAttributesSingleValue
     globals()["IncidentFieldAttributesMultipleValue"] = IncidentFieldAttributesMultipleValue
 
 

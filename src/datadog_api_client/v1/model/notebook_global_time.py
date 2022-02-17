@@ -10,10 +10,9 @@ from datadog_api_client.v1.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v1.model.notebook_relative_time import NotebookRelativeTime
-
-    globals()["NotebookRelativeTime"] = NotebookRelativeTime
     from datadog_api_client.v1.model.notebook_absolute_time import NotebookAbsoluteTime
 
+    globals()["NotebookRelativeTime"] = NotebookRelativeTime
     globals()["NotebookAbsoluteTime"] = NotebookAbsoluteTime
 
 

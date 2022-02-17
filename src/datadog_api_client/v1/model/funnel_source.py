@@ -41,6 +41,7 @@ class FunnelSource(ModelSimple):
             value = args.pop(0)
         else:
             value = "rum"
+
         self._check_pos_args(args)
 
         self.value = value

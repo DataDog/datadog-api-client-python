@@ -10,10 +10,9 @@ from datadog_api_client.v1.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v1.model.notebook_cell_create_request import NotebookCellCreateRequest
-
-    globals()["NotebookCellCreateRequest"] = NotebookCellCreateRequest
     from datadog_api_client.v1.model.notebook_cell_update_request import NotebookCellUpdateRequest
 
+    globals()["NotebookCellCreateRequest"] = NotebookCellCreateRequest
     globals()["NotebookCellUpdateRequest"] = NotebookCellUpdateRequest
 
 

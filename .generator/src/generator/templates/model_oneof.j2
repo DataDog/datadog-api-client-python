@@ -3,6 +3,8 @@
 def lazy_import():
 {%- for ref in refs %}
     from {{ config["packageName"] }}.model.{{ ref|snake_case }} import {{ ref }}
+{%- endfor %}
+{%- for ref in refs %}
     globals()["{{ ref }}"] = {{ ref }}
 {%- endfor %}
 {%- endif %}

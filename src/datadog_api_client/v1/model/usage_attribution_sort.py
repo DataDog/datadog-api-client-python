@@ -64,6 +64,7 @@ class UsageAttributionSort(ModelSimple):
             value = args.pop(0)
         else:
             value = "custom_timeseries_usage"
+
         self._check_pos_args(args)
 
         self.value = value

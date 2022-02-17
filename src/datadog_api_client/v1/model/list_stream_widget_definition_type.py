@@ -41,6 +41,7 @@ class ListStreamWidgetDefinitionType(ModelSimple):
             value = args.pop(0)
         else:
             value = "list_stream"
+
         self._check_pos_args(args)
 
         self.value = value

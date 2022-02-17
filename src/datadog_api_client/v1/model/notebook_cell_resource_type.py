@@ -41,6 +41,7 @@ class NotebookCellResourceType(ModelSimple):
             value = args.pop(0)
         else:
             value = "notebook_cells"
+
         self._check_pos_args(args)
 
         self.value = value

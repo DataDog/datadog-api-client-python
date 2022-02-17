@@ -42,6 +42,7 @@ class IncidentFieldAttributesSingleValueType(ModelSimple):
             value = args.pop(0)
         else:
             value = "dropdown"
+
         self._check_pos_args(args)
 
         self.value = value

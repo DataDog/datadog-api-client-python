@@ -10,13 +10,11 @@ from datadog_api_client.v1.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasicAuthWeb
-
-    globals()["SyntheticsBasicAuthWeb"] = SyntheticsBasicAuthWeb
     from datadog_api_client.v1.model.synthetics_basic_auth_sigv4 import SyntheticsBasicAuthSigv4
-
-    globals()["SyntheticsBasicAuthSigv4"] = SyntheticsBasicAuthSigv4
     from datadog_api_client.v1.model.synthetics_basic_auth_ntlm import SyntheticsBasicAuthNTLM
 
+    globals()["SyntheticsBasicAuthWeb"] = SyntheticsBasicAuthWeb
+    globals()["SyntheticsBasicAuthSigv4"] = SyntheticsBasicAuthSigv4
     globals()["SyntheticsBasicAuthNTLM"] = SyntheticsBasicAuthNTLM
 
 

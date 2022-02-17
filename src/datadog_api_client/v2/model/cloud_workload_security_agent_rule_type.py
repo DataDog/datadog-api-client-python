@@ -41,6 +41,7 @@ class CloudWorkloadSecurityAgentRuleType(ModelSimple):
             value = args.pop(0)
         else:
             value = "agent_rule"
+
         self._check_pos_args(args)
 
         self.value = value

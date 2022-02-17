@@ -10,13 +10,11 @@ from datadog_api_client.v2.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v2.model.logs_archive_destination_azure import LogsArchiveDestinationAzure
-
-    globals()["LogsArchiveDestinationAzure"] = LogsArchiveDestinationAzure
     from datadog_api_client.v2.model.logs_archive_destination_gcs import LogsArchiveDestinationGCS
-
-    globals()["LogsArchiveDestinationGCS"] = LogsArchiveDestinationGCS
     from datadog_api_client.v2.model.logs_archive_destination_s3 import LogsArchiveDestinationS3
 
+    globals()["LogsArchiveDestinationAzure"] = LogsArchiveDestinationAzure
+    globals()["LogsArchiveDestinationGCS"] = LogsArchiveDestinationGCS
     globals()["LogsArchiveDestinationS3"] = LogsArchiveDestinationS3
 
 
