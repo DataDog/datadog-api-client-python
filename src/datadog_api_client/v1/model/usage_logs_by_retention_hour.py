@@ -23,6 +23,8 @@ class UsageLogsByRetentionHour(ModelNormal):
         return {
             "indexed_events_count": (int,),
             "live_indexed_events_count": (int,),
+            "org_name": (str,),
+            "public_id": (str,),
             "rehydrated_indexed_events_count": (int,),
             "retention": (str,),
         }
@@ -30,6 +32,8 @@ class UsageLogsByRetentionHour(ModelNormal):
     attribute_map = {
         "indexed_events_count": "indexed_events_count",
         "live_indexed_events_count": "live_indexed_events_count",
+        "org_name": "org_name",
+        "public_id": "public_id",
         "rehydrated_indexed_events_count": "rehydrated_indexed_events_count",
         "retention": "retention",
     }
@@ -45,6 +49,12 @@ class UsageLogsByRetentionHour(ModelNormal):
 
         :param live_indexed_events_count: Live logs indexed with this retention period during a given hour.
         :type live_indexed_events_count: int, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
 
         :param rehydrated_indexed_events_count: Rehydrated logs indexed with this retention period during a given hour.
         :type rehydrated_indexed_events_count: int, optional
