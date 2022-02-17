@@ -24,11 +24,15 @@ class UsageNetworkFlowsHour(ModelNormal):
         return {
             "hour": (datetime,),
             "indexed_events_count": (int,),
+            "org_name": (str,),
+            "public_id": (str,),
         }
 
     attribute_map = {
         "hour": "hour",
         "indexed_events_count": "indexed_events_count",
+        "org_name": "org_name",
+        "public_id": "public_id",
     }
 
     read_only_vars = {}
@@ -42,6 +46,12 @@ class UsageNetworkFlowsHour(ModelNormal):
 
         :param indexed_events_count: Contains the number of netflow events indexed.
         :type indexed_events_count: int, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
         """
         super().__init__(kwargs)
 

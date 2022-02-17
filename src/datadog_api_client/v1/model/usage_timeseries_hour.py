@@ -26,6 +26,8 @@ class UsageTimeseriesHour(ModelNormal):
             "num_custom_input_timeseries": (int,),
             "num_custom_output_timeseries": (int,),
             "num_custom_timeseries": (int,),
+            "org_name": (str,),
+            "public_id": (str,),
         }
 
     attribute_map = {
@@ -33,6 +35,8 @@ class UsageTimeseriesHour(ModelNormal):
         "num_custom_input_timeseries": "num_custom_input_timeseries",
         "num_custom_output_timeseries": "num_custom_output_timeseries",
         "num_custom_timeseries": "num_custom_timeseries",
+        "org_name": "org_name",
+        "public_id": "public_id",
     }
 
     read_only_vars = {}
@@ -52,6 +56,12 @@ class UsageTimeseriesHour(ModelNormal):
 
         :param num_custom_timeseries: Contains sum of non-aggregation custom metrics and custom metrics that are outputs for aggregations.
         :type num_custom_timeseries: int, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
         """
         super().__init__(kwargs)
 

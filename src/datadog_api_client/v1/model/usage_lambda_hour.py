@@ -25,12 +25,16 @@ class UsageLambdaHour(ModelNormal):
             "func_count": (int,),
             "hour": (datetime,),
             "invocations_sum": (int,),
+            "org_name": (str,),
+            "public_id": (str,),
         }
 
     attribute_map = {
         "func_count": "func_count",
         "hour": "hour",
         "invocations_sum": "invocations_sum",
+        "org_name": "org_name",
+        "public_id": "public_id",
     }
 
     read_only_vars = {}
@@ -47,6 +51,12 @@ class UsageLambdaHour(ModelNormal):
 
         :param invocations_sum: Contains the sum of invocations of all functions.
         :type invocations_sum: int, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
         """
         super().__init__(kwargs)
 
