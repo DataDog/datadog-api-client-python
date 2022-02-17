@@ -303,7 +303,7 @@ class AuthNMappingsApi(object):
         :type page_number: int, optional
         :param sort: Sort AuthN Mappings depending on the given field.
         :type sort: AuthNMappingsSort, optional
-
+        :param include: Include additional information in the response.
         :type include: [str], optional
         :param filter: Filter all mappings by the given string.
         :type filter: str, optional
