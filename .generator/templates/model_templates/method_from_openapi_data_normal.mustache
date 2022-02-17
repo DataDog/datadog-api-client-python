@@ -1,9 +1,0 @@
-{{> model_templates/method_from_openapi_data_shared }}
-
-{{#isEnum}}
-        self.value = value
-{{/isEnum}}
-{{#requiredVars}}
-        self.{{name}} = {{name}}
-{{/requiredVars}}
-        return self

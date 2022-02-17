@@ -1,6 +1,5 @@
 .env
 src/datadog_api_client/version.py
-.generator/lib
 site
 docs/.sphinx
 
