@@ -24,11 +24,15 @@ class UsageSyntheticsBrowserHour(ModelNormal):
         return {
             "browser_check_calls_count": (int,),
             "hour": (datetime,),
+            "org_name": (str,),
+            "public_id": (str,),
         }
 
     attribute_map = {
         "browser_check_calls_count": "browser_check_calls_count",
         "hour": "hour",
+        "org_name": "org_name",
+        "public_id": "public_id",
     }
 
     read_only_vars = {}
@@ -42,6 +46,12 @@ class UsageSyntheticsBrowserHour(ModelNormal):
 
         :param hour: The hour for the usage.
         :type hour: datetime, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
         """
         super().__init__(kwargs)
 

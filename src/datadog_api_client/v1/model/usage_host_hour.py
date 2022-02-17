@@ -35,6 +35,8 @@ class UsageHostHour(ModelNormal):
             "hour": (datetime,),
             "infra_azure_app_service": (int,),
             "opentelemetry_host_count": (int,),
+            "org_name": (str,),
+            "public_id": (str,),
             "vsphere_host_count": (int,),
         }
 
@@ -52,6 +54,8 @@ class UsageHostHour(ModelNormal):
         "hour": "hour",
         "infra_azure_app_service": "infra_azure_app_service",
         "opentelemetry_host_count": "opentelemetry_host_count",
+        "org_name": "org_name",
+        "public_id": "public_id",
         "vsphere_host_count": "vsphere_host_count",
     }
 
@@ -99,6 +103,12 @@ class UsageHostHour(ModelNormal):
 
         :param opentelemetry_host_count: Contains the total number of hosts reported by Datadog exporter for the OpenTelemetry Collector.
         :type opentelemetry_host_count: int, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
 
         :param vsphere_host_count: Contains the total number of hosts that reported through vSphere integration (and were NOT running the Datadog Agent).
         :type vsphere_host_count: int, optional

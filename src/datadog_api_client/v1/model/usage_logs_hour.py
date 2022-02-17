@@ -30,6 +30,8 @@ class UsageLogsHour(ModelNormal):
             "logs_live_ingested_bytes": (int,),
             "logs_rehydrated_indexed_count": (int,),
             "logs_rehydrated_ingested_bytes": (int,),
+            "org_name": (str,),
+            "public_id": (str,),
         }
 
     attribute_map = {
@@ -41,6 +43,8 @@ class UsageLogsHour(ModelNormal):
         "logs_live_ingested_bytes": "logs_live_ingested_bytes",
         "logs_rehydrated_indexed_count": "logs_rehydrated_indexed_count",
         "logs_rehydrated_ingested_bytes": "logs_rehydrated_ingested_bytes",
+        "org_name": "org_name",
+        "public_id": "public_id",
     }
 
     read_only_vars = {}
@@ -72,6 +76,12 @@ class UsageLogsHour(ModelNormal):
 
         :param logs_rehydrated_ingested_bytes: Contains the number of rehydrated log bytes ingested (data available as of December 1, 2020).
         :type logs_rehydrated_ingested_bytes: int, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
         """
         super().__init__(kwargs)
 

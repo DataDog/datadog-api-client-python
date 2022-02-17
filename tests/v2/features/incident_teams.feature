@@ -114,7 +114,7 @@ Feature: Incident Teams
     Given operation "UpdateIncidentTeam" enabled
     And new "UpdateIncidentTeam" request
     And request contains "team_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "team name"}, "id": "00000000-0000-0000-0000-000000000000", "type": "teams"}}
+    And body with value {"data": {"attributes": {"name": "team name"}, "id": "00000000-7ea3-0000-0001-000000000000", "type": "teams"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -123,7 +123,7 @@ Feature: Incident Teams
     Given operation "UpdateIncidentTeam" enabled
     And new "UpdateIncidentTeam" request
     And request contains "team_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "team name"}, "id": "00000000-0000-0000-0000-000000000000", "type": "teams"}}
+    And body with value {"data": {"attributes": {"name": "team name"}, "id": "00000000-7ea3-0000-0001-000000000000", "type": "teams"}}
     When the request is sent
     Then the response status is 404 Not Found
 

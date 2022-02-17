@@ -120,7 +120,7 @@ class LogsApi(object):
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": ["application/json", "application/logplex-1", "text/plain"],
+                "content_type": ["application/json", "application/json;simple", "application/logplex-1", "text/plain"],
             },
             api_client=api_client,
         )

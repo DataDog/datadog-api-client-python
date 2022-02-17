@@ -26,6 +26,8 @@ class UsageLogsByIndexHour(ModelNormal):
             "hour": (datetime,),
             "index_id": (str,),
             "index_name": (str,),
+            "org_name": (str,),
+            "public_id": (str,),
             "retention": (int,),
         }
 
@@ -34,6 +36,8 @@ class UsageLogsByIndexHour(ModelNormal):
         "hour": "hour",
         "index_id": "index_id",
         "index_name": "index_name",
+        "org_name": "org_name",
+        "public_id": "public_id",
         "retention": "retention",
     }
 
@@ -54,6 +58,12 @@ class UsageLogsByIndexHour(ModelNormal):
 
         :param index_name: The user specified name for this index ID.
         :type index_name: str, optional
+
+        :param org_name: The organization name.
+        :type org_name: str, optional
+
+        :param public_id: The organization public ID.
+        :type public_id: str, optional
 
         :param retention: The retention period (in days) for this index ID.
         :type retention: int, optional

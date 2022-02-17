@@ -162,7 +162,7 @@ Feature: Users
   Scenario: Update a user returns "Bad Request" response
     Given new "UpdateUser" request
     And request contains "user_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
+    And body with value {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-feed-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -200,6 +200,6 @@ Feature: Users
   Scenario: Update a user returns "Unprocessable Entity" response
     Given new "UpdateUser" request
     And request contains "user_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
+    And body with value {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-feed-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
