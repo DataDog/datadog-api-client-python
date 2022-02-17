@@ -17,7 +17,7 @@ Feature: Roles
   Scenario: Add a user to a role returns "Bad Request" response
     Given new "AddUserToRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
+    And body with value {"data": {"id": "00000000-0000-0000-2345-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -25,7 +25,7 @@ Feature: Roles
   Scenario: Add a user to a role returns "Not found" response
     Given new "AddUserToRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
+    And body with value {"data": {"id": "00000000-0000-0000-2345-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 404 Not found
 
@@ -209,7 +209,7 @@ Feature: Roles
   Scenario: Remove a user from a role returns "Bad Request" response
     Given new "RemoveUserFromRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
+    And body with value {"data": {"id": "00000000-0000-0000-2345-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -217,7 +217,7 @@ Feature: Roles
   Scenario: Remove a user from a role returns "Not found" response
     Given new "RemoveUserFromRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
+    And body with value {"data": {"id": "00000000-0000-0000-2345-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 404 Not found
 
@@ -266,7 +266,7 @@ Feature: Roles
   Scenario: Update a role returns "Bad Request" response
     Given new "UpdateRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
+    And body with value {"data": {"attributes": {"name": null}, "id": "00000000-0000-1111-0000-000000000000", "type": "roles"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -301,6 +301,6 @@ Feature: Roles
   Scenario: Update a role returns "Unprocessable Entity" response
     Given new "UpdateRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
+    And body with value {"data": {"attributes": {"name": null}, "id": "00000000-0000-1111-0000-000000000000", "type": "roles"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity

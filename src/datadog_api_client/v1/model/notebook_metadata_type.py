@@ -4,6 +4,7 @@
 
 
 from datadog_api_client.v1.model_utils import (
+    ApiTypeError,
     ModelSimple,
     cached_property,
 )
@@ -41,7 +42,7 @@ class NotebookMetadataType(ModelSimple):
         """NotebookMetadataType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
-        :param value: Metadata type of the notebook. If omitted defaults to "null". Must be one of ["postmortem", "runbook", "investigation", "documentation", "report"].
+        :param value: Metadata type of the notebook. Must be one of ["postmortem", "runbook", "investigation", "documentation", "report"].
         :type value: str
         """
         super().__init__(kwargs)
@@ -52,7 +53,11 @@ class NotebookMetadataType(ModelSimple):
             args = list(args)
             value = args.pop(0)
         else:
-            value = "null"
+            raise ApiTypeError(
+                "value is required, but not passed in args or kwargs and doesn't have default",
+                path_to_item=self._path_to_item,
+                valid_classes=(self.__class__,),
+            )
 
         self._check_pos_args(args)
 
