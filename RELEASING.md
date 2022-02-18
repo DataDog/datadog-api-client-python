@@ -7,21 +7,28 @@ This project does not have a strict release schedule. However, we would make a r
   - No release will be done if no changes got merged to the `master` branch during the above mentioned window.
   - Releases may be done more frequently than the above mentioned window.
 
-## Release Process
-Our team will trigger the release pipeline.
+### Prerequisites
+- Ensure all CIs are passing on the master branch that we're about to release. 
 
-### Prerequisite 
-- Install [datadog_checks_dev](https://datadog-checks-base.readthedocs.io/en/latest/datadog_checks_dev.cli.html#installation) using Python 3.
+## Release Process
+
+The release process is controlled and run by GitHub Actions.
+
+### Prerequisite
+
+1. Make sure you have `write_repo` access.
+1. Share your plan for the release with other maintainers to avoid conflicts during the release process.
 
 ### Update Changelog
-#### Commands
-- See changes ready for release by running `ddev release show changes . --tag-prefix v --since <CURRENT_VERSION>` at the root of this project. Add any missing labels to PRs if needed.
-- Run `ddev release changelog . <NEW_VERSION> <CURRENT_VERSION> --no-semver` to update the `CHANGELOG.md` file at the root of this repository
-- Commit the changes to the repository in a release branch and open a PR.
-    - Ensure CI passes fully here, this is the commit that will be released!
-    - Ensure the [documentation builds](https://readthedocs.org/projects/datadog-api-client/builds/) are passing
-    - Get this PR approved and merged
 
-### Release
-1. Create the release on GitHub. [Example](https://github.com/DataDog/datadog-api-client-python/releases/tag/1.0.0b1)
+1. Open [prepare release](https://github.com/DataDog/datadog-api-client-python/actions/workflows/prepare_release.yml) and click on `Run workflow` dropdown.
+1. Enter new version identifier in the `New version tag` input box (e.g. `1.9.0`).
+1. Trigger the action by clicking on `Run workflow` button.
+
+### Review
+
+1. Review the generated pull-request for `release/<New version tag>` branch.
+1. If everything is fine, merge the pull-request.
+1. Check that the [release](https://github.com/DataDog/datadog-api-client-python/actions/workflows/release.yml) action created new release on GitHub.
 1. A github action will kick off that builds and publishes this tag to PyPI. Confirm the [release is available](https://pypi.org/project/datadog-api-client/#history)
+1. Review and merge generated `Post release` pull-request with `dev` version bump.
