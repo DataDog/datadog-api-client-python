@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
@@ -49,6 +50,7 @@ class NotebookCellCreateRequest(ModelNormal):
         super().__init__(kwargs)
 
         self._check_pos_args(args)
+
         self.attributes = attributes
         self.type = type
 
@@ -59,7 +61,7 @@ class NotebookCellCreateRequest(ModelNormal):
         self = super(NotebookCellCreateRequest, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
+
         self.attributes = attributes
         self.type = type
-
         return self

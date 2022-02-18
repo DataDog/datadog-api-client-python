@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v2.model_utils import (
     ModelNormal,
     cached_property,
@@ -94,6 +95,7 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
         super().__init__(kwargs)
 
         self._check_pos_args(args)
+
         self.cases = cases
         self.is_enabled = is_enabled
         self.message = message
@@ -108,11 +110,11 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
         self = super(SecurityMonitoringRuleCreatePayload, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
+
         self.cases = cases
         self.is_enabled = is_enabled
         self.message = message
         self.name = name
         self.options = options
         self.queries = queries
-
         return self

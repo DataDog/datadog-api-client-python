@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v2.model_utils import (
     ModelNormal,
     cached_property,
@@ -75,6 +76,7 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
         tags = kwargs.get("tags", [])
 
         self._check_pos_args(args)
+
         self.metric_type = metric_type
         self.tags = tags
 
@@ -86,7 +88,7 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
         self = super(MetricTagConfigurationCreateAttributes, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
+
         self.metric_type = metric_type
         self.tags = tags
-
         return self

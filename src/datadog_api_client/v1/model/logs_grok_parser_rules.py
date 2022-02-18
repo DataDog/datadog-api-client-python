@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
@@ -39,6 +40,7 @@ class LogsGrokParserRules(ModelNormal):
         super().__init__(kwargs)
 
         self._check_pos_args(args)
+
         self.match_rules = match_rules
 
     @classmethod
@@ -48,6 +50,6 @@ class LogsGrokParserRules(ModelNormal):
         self = super(LogsGrokParserRules, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
-        self.match_rules = match_rules
 
+        self.match_rules = match_rules
         return self

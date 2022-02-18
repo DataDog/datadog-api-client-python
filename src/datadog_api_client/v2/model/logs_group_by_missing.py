@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v2.model_utils import (
     ModelComposed,
     cached_property,

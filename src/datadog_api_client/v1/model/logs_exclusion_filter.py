@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
@@ -41,6 +42,7 @@ class LogsExclusionFilter(ModelNormal):
         super().__init__(kwargs)
 
         self._check_pos_args(args)
+
         self.sample_rate = sample_rate
 
     @classmethod
@@ -50,6 +52,6 @@ class LogsExclusionFilter(ModelNormal):
         self = super(LogsExclusionFilter, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
-        self.sample_rate = sample_rate
 
+        self.sample_rate = sample_rate
         return self

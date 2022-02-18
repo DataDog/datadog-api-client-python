@@ -109,7 +109,7 @@ class {{ name }}(ModelNormal):
 
         self._check_pos_args(args)
 
-{%- for attr in model.properties %}
+{% for attr in model.properties %}
         {%- if attr in model.get("required", []) %}
         self.{{ attr|attribute_name }} = {{ attr|attribute_name }}{% endif %}
 {%- endfor %}
@@ -130,9 +130,8 @@ class {{ name }}(ModelNormal):
 
         self._check_pos_args(args)
 
-{%- for attr in model.properties %}
+{% for attr in model.properties %}
         {%- if attr in model.get("required", []) %}
         self.{{ attr|attribute_name }} = {{ attr|attribute_name }}{% endif %}
 {%- endfor %}
-
         return self

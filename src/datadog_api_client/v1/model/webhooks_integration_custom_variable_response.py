@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
@@ -45,6 +46,7 @@ class WebhooksIntegrationCustomVariableResponse(ModelNormal):
         super().__init__(kwargs)
 
         self._check_pos_args(args)
+
         self.is_secret = is_secret
         self.name = name
 
@@ -55,7 +57,7 @@ class WebhooksIntegrationCustomVariableResponse(ModelNormal):
         self = super(WebhooksIntegrationCustomVariableResponse, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
+
         self.is_secret = is_secret
         self.name = name
-
         return self

@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
@@ -42,6 +43,7 @@ class NotebookRelativeTime(ModelNormal):
         super().__init__(kwargs)
 
         self._check_pos_args(args)
+
         self.live_span = live_span
 
     @classmethod
@@ -51,6 +53,6 @@ class NotebookRelativeTime(ModelNormal):
         self = super(NotebookRelativeTime, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
-        self.live_span = live_span
 
+        self.live_span = live_span
         return self

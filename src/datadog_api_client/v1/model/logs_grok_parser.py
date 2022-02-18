@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
@@ -74,6 +75,7 @@ class LogsGrokParser(ModelNormal):
         source = kwargs.get("source", "message")
 
         self._check_pos_args(args)
+
         self.grok = grok
         self.source = source
         self.type = type
@@ -86,8 +88,8 @@ class LogsGrokParser(ModelNormal):
         self = super(LogsGrokParser, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
+
         self.grok = grok
         self.source = source
         self.type = type
-
         return self

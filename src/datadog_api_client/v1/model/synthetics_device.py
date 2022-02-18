@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
@@ -61,6 +62,7 @@ class SyntheticsDevice(ModelNormal):
         super().__init__(kwargs)
 
         self._check_pos_args(args)
+
         self.height = height
         self.id = id
         self.name = name
@@ -73,9 +75,9 @@ class SyntheticsDevice(ModelNormal):
         self = super(SyntheticsDevice, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
+
         self.height = height
         self.id = id
         self.name = name
         self.width = width
-
         return self

@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
@@ -53,6 +54,7 @@ class SLOBulkDeleteError(ModelNormal):
         super().__init__(kwargs)
 
         self._check_pos_args(args)
+
         self.id = id
         self.message = message
         self.timeframe = timeframe
@@ -64,8 +66,8 @@ class SLOBulkDeleteError(ModelNormal):
         self = super(SLOBulkDeleteError, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
+
         self.id = id
         self.message = message
         self.timeframe = timeframe
-
         return self

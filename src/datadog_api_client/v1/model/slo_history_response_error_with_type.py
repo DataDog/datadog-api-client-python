@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
@@ -39,6 +40,7 @@ class SLOHistoryResponseErrorWithType(ModelNormal):
         super().__init__(kwargs)
 
         self._check_pos_args(args)
+
         self.error_message = error_message
         self.error_type = error_type
 
@@ -49,7 +51,7 @@ class SLOHistoryResponseErrorWithType(ModelNormal):
         self = super(SLOHistoryResponseErrorWithType, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
+
         self.error_message = error_message
         self.error_type = error_type
-
         return self

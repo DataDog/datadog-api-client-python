@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v2.model_utils import (
     ModelNormal,
     cached_property,
@@ -62,6 +63,7 @@ class IncidentTeamUpdateData(ModelNormal):
         super().__init__(kwargs)
 
         self._check_pos_args(args)
+
         self.type = type
 
     @classmethod
@@ -71,6 +73,6 @@ class IncidentTeamUpdateData(ModelNormal):
         self = super(IncidentTeamUpdateData, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
-        self.type = type
 
+        self.type = type
         return self

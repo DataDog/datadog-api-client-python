@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
@@ -41,6 +42,7 @@ class MetricsPayload(ModelNormal):
         super().__init__(kwargs)
 
         self._check_pos_args(args)
+
         self.series = series
 
     @classmethod
@@ -50,6 +52,6 @@ class MetricsPayload(ModelNormal):
         self = super(MetricsPayload, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
-        self.series = series
 
+        self.series = series
         return self

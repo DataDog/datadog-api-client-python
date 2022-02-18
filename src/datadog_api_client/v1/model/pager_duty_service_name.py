@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
@@ -34,6 +35,7 @@ class PagerDutyServiceName(ModelNormal):
         super().__init__(kwargs)
 
         self._check_pos_args(args)
+
         self.service_name = service_name
 
     @classmethod
@@ -43,6 +45,6 @@ class PagerDutyServiceName(ModelNormal):
         self = super(PagerDutyServiceName, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
-        self.service_name = service_name
 
+        self.service_name = service_name
         return self

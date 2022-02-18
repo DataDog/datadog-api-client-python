@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
@@ -77,6 +78,7 @@ class LogsListRequest(ModelNormal):
         super().__init__(kwargs)
 
         self._check_pos_args(args)
+
         self.time = time
 
     @classmethod
@@ -86,6 +88,6 @@ class LogsListRequest(ModelNormal):
         self = super(LogsListRequest, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
-        self.time = time
 
+        self.time = time
         return self

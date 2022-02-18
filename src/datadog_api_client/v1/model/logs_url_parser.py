@@ -2,6 +2,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
@@ -69,6 +70,7 @@ class LogsURLParser(ModelNormal):
         target = kwargs.get("target", "http.url_details")
 
         self._check_pos_args(args)
+
         self.sources = sources
         self.target = target
         self.type = type
@@ -82,8 +84,8 @@ class LogsURLParser(ModelNormal):
         self = super(LogsURLParser, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
+
         self.sources = sources
         self.target = target
         self.type = type
-
         return self
