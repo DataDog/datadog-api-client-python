@@ -1,7 +1,6 @@
 import pathlib
 import yaml
 from jsonref import JsonRef
-from urllib.parse import urlparse
 from yaml import CSafeLoader
 
 from . import formatter
@@ -13,17 +12,9 @@ def load(filename):
         return JsonRef.replace_refs(yaml.load(fp, Loader=CSafeLoader))
 
 
-def get_name(schema):
-    name = None
-    if hasattr(schema, "__reference__"):
-        name = schema.__reference__["$ref"].split("/")[-1]
-
-    return name
-
-
 def type_to_python(schema, alternative_name=None):
     """Return Python type name for the type."""
-    name = get_name(schema)
+    name = formatter.get_name(schema)
     if name:
         if "enum" in schema:
             return name
@@ -78,13 +69,13 @@ def get_type_for_attribute(schema, attribute, current_name=None):
 def get_types_for_attribute(schema, attribute, current_name=None):
     child_schema = schema.get("properties", {}).get(attribute)
     base_type = get_type_for_attribute(schema, attribute, current_name)
-    if child_schema.get("nullable") and not get_name(child_schema):
+    if child_schema.get("nullable") and not formatter.get_name(child_schema):
         return f"({base_type}, none_type)"
     return f"({base_type},)"
 
 
 def get_type_for_items(schema):
-    name = get_name(schema.get("items"))
+    name = formatter.get_name(schema.get("items"))
     return name
 
 
@@ -112,7 +103,7 @@ def get_enum_default(model):
 
 def child_models(schema, alternative_name=None, seen=None):
     seen = seen or set()
-    current_name = get_name(schema)
+    current_name = formatter.get_name(schema)
     name = current_name or alternative_name
 
     has_sub_models = False
@@ -176,7 +167,7 @@ def child_models(schema, alternative_name=None, seen=None):
         yield name, schema
 
     if "additionalProperties" in schema:
-        nested_name = get_name(schema["additionalProperties"])
+        nested_name = formatter.get_name(schema["additionalProperties"])
         if nested_name:
             yield from child_models(
                 schema["additionalProperties"],
@@ -210,35 +201,35 @@ def models(spec):
 
 def get_references_for_model(model, model_name):
     result = []
-    top_name = get_name(model) or model_name
+    top_name = formatter.get_name(model) or model_name
     for key, definition in model.get("properties", {}).items():
         if definition.get("type") == "object" or definition.get("enum"):
-            name = get_name(definition)
+            name = formatter.get_name(definition)
             if name:
                 result.append(name)
             elif definition.get("properties") and top_name:
                 result.append(top_name + formatter.camel_case(key))
             elif definition.get("additionalProperties"):
-                name = get_name(definition["additionalProperties"])
+                name = formatter.get_name(definition["additionalProperties"])
                 if name:
                     result.append(name)
         elif definition.get("type") == "array":
-            name = get_name(definition)
+            name = formatter.get_name(definition)
             if name:
                 result.append(name)
             else:
-                name = get_name(definition.get("items"))
+                name = formatter.get_name(definition.get("items"))
                 if name:
                     result.append(name)
         elif definition.get("properties") and top_name:
             result.append(top_name + formatter.camel_case(key))
     if model.get("additionalProperties"):
         definition = model["additionalProperties"]
-        name = get_name(definition)
+        name = formatter.get_name(definition)
         if name:
             result.append(name)
         elif definition.get("type") == "array":
-            name = get_name(definition.get("items"))
+            name = formatter.get_name(definition.get("items"))
             if name:
                 result.append(name)
     return result
@@ -257,7 +248,7 @@ def get_oneof_types(model):
     for schema in model["oneOf"]:
         type_ = schema.get("type")
         if type_ in ("array", "object"):
-            yield get_name(schema)
+            yield formatter.get_name(schema)
         elif type_ == "integer":
             yield "int"
         elif type_ == "string":
@@ -270,7 +261,7 @@ def get_oneof_models(model):
     result = []
     for schema in model["oneOf"]:
         if schema.get("type") in ("array", "object"):
-            result.append(get_name(schema))
+            result.append(formatter.get_name(schema))
     return result
 
 
@@ -301,26 +292,26 @@ def get_api_models(operations):
         for response in operation.get("responses", {}).values():
             for content in response.get("content", {}).values():
                 if "schema" in content:
-                    name = get_name(content["schema"])
+                    name = formatter.get_name(content["schema"])
                     if name and name not in seen:
                         seen.add(name)
                         yield name
                     elif "items" in content["schema"]:
-                        name = get_name(content["schema"]["items"])
+                        name = formatter.get_name(content["schema"]["items"])
                         if name and name not in seen:
                             seen.add(name)
                             yield name
             break
         for content in operation.get("parameters", []):
             if "schema" in content and (content["schema"].get("type") == "object" or content["schema"].get("enum")):
-                name = get_name(content["schema"])
+                name = formatter.get_name(content["schema"])
                 if name and name not in seen:
                     seen.add(name)
                     yield name
         if "requestBody" in operation:
             for content in operation["requestBody"].get("content", {}).values():
                 if "schema" in content:
-                    name = get_name(content["schema"])
+                    name = formatter.get_name(content["schema"])
                     if name and name not in seen:
                         seen.add(name)
                         yield name
@@ -396,53 +387,3 @@ def collection_format(parameter):
         style = parameter.get("style", in_to_style[in_])
         explode = parameter.get("explode", True if style == "form" else False)
         return matrix.get((style, explode), "multi")
-
-
-def format_server(server, server_variables=None, path=""):
-    url = server["url"] + path
-    # replace potential path variables
-    for variable, value in (server_variables or {}).items():
-        url = url.replace("{" + variable + "}", value)
-    # replace server variables if they were not replace before
-    for variable in server["variables"]:
-        if server_variables and variable in server_variables:
-            continue
-        url = url.replace("{" + variable + "}", server["variables"][variable]["default"])
-    return urlparse(url)
-
-
-def server_url_and_method(spec, operation_id, server_index=0, server_variables=None):
-    for path in spec["paths"]:
-        for method in spec["paths"][path]:
-            operation = spec["paths"][path][method]
-            if operation["operationId"] == operation_id:
-                if "servers" in operation:
-                    server = operation["servers"][server_index]
-                else:
-                    server = spec["servers"][server_index]
-                return (
-                    format_server(server, server_variables=server_variables, path=path).geturl(),
-                    method,
-                )
-
-    raise ValueError(f"Operation {operation_id} not found")
-
-
-def response_code_and_accept_type(operation, status_code=None):
-    for response in operation["responses"]:
-        if status_code is None:
-            return int(response), next(iter(operation["responses"][response].get("content", {None: None})))
-        if response == str(status_code):
-            return status_code, next(iter(operation["responses"][response].get("content", {None: None})))
-    return status_code, None
-
-
-def request_content_type(operation, status_code=None):
-    return next(iter(operation.get("requestBody", {}).get("content", {None: None})))
-
-
-def response(operation, status_code=None):
-    for response in operation["responses"]:
-        if status_code is None or response == str(status_code):
-            return list(operation["responses"][response]["content"].values())[0]["schema"]
-    return None

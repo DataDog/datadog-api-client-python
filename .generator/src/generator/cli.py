@@ -21,7 +21,7 @@ from . import formatter
 )
 def cli(input, output):
     """
-    Generate a Ruby code snippet from OpenAPI specification.
+    Generate a Python code snippet from OpenAPI specification.
     """
     spec = openapi.load(input)
 
@@ -33,10 +33,8 @@ def cli(input, output):
 
     env.filters["accept_headers"] = openapi.accept_headers
     env.filters["attribute_name"] = formatter.attribute_name
-    env.filters["block_comment"] = formatter.block_comment
     env.filters["camel_case"] = formatter.camel_case
     env.filters["collection_format"] = openapi.collection_format
-    env.filters["format_server"] = openapi.format_server
     env.filters["format_value"] = formatter.format_value
     env.filters["parameter_schema"] = openapi.parameter_schema
     env.filters["parameters"] = openapi.parameters
@@ -47,7 +45,7 @@ def cli(input, output):
     env.globals["enumerate"] = enumerate
     env.globals["version"] = version
     env.globals["openapi"] = spec
-    env.globals["get_name"] = openapi.get_name
+    env.globals["get_name"] = formatter.get_name
     env.globals["get_type_for_attribute"] = openapi.get_type_for_attribute
     env.globals["get_types_for_attribute"] = openapi.get_types_for_attribute
     env.globals["get_type_for_parameter"] = openapi.get_type_for_parameter
