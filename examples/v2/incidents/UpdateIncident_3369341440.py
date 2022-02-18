@@ -1,34 +1,32 @@
 """
-Update an existing incident returns "OK" response
+Add commander to an incident returns "OK" response
 """
 
 from os import environ
 from datadog_api_client.v2 import ApiClient, Configuration
 from datadog_api_client.v2.api.incidents_api import IncidentsApi
-from datadog_api_client.v2.model.incident_field_attributes_single_value import IncidentFieldAttributesSingleValue
-from datadog_api_client.v2.model.incident_field_attributes_single_value_type import (
-    IncidentFieldAttributesSingleValueType,
-)
 from datadog_api_client.v2.model.incident_type import IncidentType
-from datadog_api_client.v2.model.incident_update_attributes import IncidentUpdateAttributes
 from datadog_api_client.v2.model.incident_update_data import IncidentUpdateData
+from datadog_api_client.v2.model.incident_update_relationships import IncidentUpdateRelationships
 from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRequest
+from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
+from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
+from datadog_api_client.v2.model.users_type import UsersType
 
 # there is a valid "incident" in the system
-INCIDENT_DATA_ATTRIBUTES_TITLE = environ["INCIDENT_DATA_ATTRIBUTES_TITLE"]
 INCIDENT_DATA_ID = environ["INCIDENT_DATA_ID"]
+
+# there is a valid "user" in the system
+USER_DATA_ID = environ["USER_DATA_ID"]
 
 body = IncidentUpdateRequest(
     data=IncidentUpdateData(
         id=INCIDENT_DATA_ID,
         type=IncidentType("incidents"),
-        attributes=IncidentUpdateAttributes(
-            fields=dict(
-                state=IncidentFieldAttributesSingleValue(
-                    type=IncidentFieldAttributesSingleValueType("dropdown"), value="resolved"
-                )
-            ),
-            title="A test incident title-updated",
+        relationships=IncidentUpdateRelationships(
+            commander_user=NullableRelationshipToUser(
+                data=NullableRelationshipToUserData(id=USER_DATA_ID, type=UsersType("users"))
+            )
         ),
     )
 )

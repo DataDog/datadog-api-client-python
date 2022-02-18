@@ -1977,6 +1977,22 @@ metrics\_and\_metric\_tag\_configurations\_response
    :undoc-members:
    :show-inheritance:
 
+nullable\_relationship\_to\_user
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.nullable_relationship_to_user
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+nullable\_relationship\_to\_user\_data
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.nullable_relationship_to_user_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 organization
 ------------
 
