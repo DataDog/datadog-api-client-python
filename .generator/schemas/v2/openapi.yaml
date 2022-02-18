@@ -1431,10 +1431,10 @@ components:
       description: The relationships the incident will have with other resources once
         created.
       properties:
-        commander:
-          $ref: '#/components/schemas/RelationshipToUser'
+        commander_user:
+          $ref: '#/components/schemas/NullableRelationshipToUser'
       required:
-      - commander
+      - commander_user
       type: object
     IncidentCreateRequest:
       description: Create request for an incident.
@@ -1718,7 +1718,7 @@ components:
       description: The incident's relationships from a response.
       properties:
         commander_user:
-          $ref: '#/components/schemas/RelationshipToUser'
+          $ref: '#/components/schemas/NullableRelationshipToUser'
         created_by_user:
           $ref: '#/components/schemas/RelationshipToUser'
         integrations:
@@ -2165,13 +2165,9 @@ components:
       description: The incident's relationships for an update request.
       properties:
         commander_user:
-          $ref: '#/components/schemas/RelationshipToUser'
-        created_by_user:
-          $ref: '#/components/schemas/RelationshipToUser'
+          $ref: '#/components/schemas/NullableRelationshipToUser'
         integrations:
           $ref: '#/components/schemas/RelationshipToIncidentIntegrationMetadatas'
-        last_modified_by_user:
-          $ref: '#/components/schemas/RelationshipToUser'
         postmortem:
           $ref: '#/components/schemas/RelationshipToIncidentPostmortem'
       type: object
@@ -3937,6 +3933,28 @@ components:
             $ref: '#/components/schemas/MetricsAndMetricTagConfigurations'
           type: array
       readOnly: true
+      type: object
+    NullableRelationshipToUser:
+      description: Relationship to user.
+      properties:
+        data:
+          $ref: '#/components/schemas/NullableRelationshipToUserData'
+      required:
+      - data
+      type: object
+    NullableRelationshipToUserData:
+      description: Relationship to user object.
+      nullable: true
+      properties:
+        id:
+          description: A unique identifier that represents the user.
+          example: 00000000-0000-0000-0000-000000000000
+          type: string
+        type:
+          $ref: '#/components/schemas/UsersType'
+      required:
+      - id
+      - type
       type: object
     Organization:
       description: Organization object.
@@ -7145,6 +7163,7 @@ paths:
       operationId: UpdateIncident
       parameters:
       - $ref: '#/components/parameters/IncidentIDPathParameter'
+      - $ref: '#/components/parameters/IncidentIncludeQueryParameter'
       requestBody:
         content:
           application/json:

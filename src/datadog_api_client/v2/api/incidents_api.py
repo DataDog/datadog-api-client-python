@@ -152,6 +152,12 @@ class IncidentsApi(object):
                     "openapi_types": (IncidentUpdateRequest,),
                     "location": "body",
                 },
+                "include": {
+                    "openapi_types": ([IncidentRelatedObject],),
+                    "attribute": "include",
+                    "location": "query",
+                    "collection_format": "csv",
+                },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -344,6 +350,8 @@ class IncidentsApi(object):
         :type incident_id: str
         :param body: Incident Payload.
         :type body: IncidentUpdateRequest
+        :param include: Specifies which types of related objects should be included in the response.
+        :type include: [IncidentRelatedObject], optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
