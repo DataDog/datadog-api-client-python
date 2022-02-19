@@ -763,7 +763,6 @@ class Endpoint(object):
         self._validate_inputs(kwargs)
 
         params = self._gather_params(kwargs)
-        params["header"]["Dd-Operation-Id"] = "".join(x.title() for x in self.settings["operation_id"].split("_"))
 
         accept_headers_list = self.headers_map["accept"]
         if accept_headers_list:
