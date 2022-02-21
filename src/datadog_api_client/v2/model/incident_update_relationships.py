@@ -10,7 +10,6 @@ from datadog_api_client.v2.model_utils import (
 
 
 def lazy_import():
-<<<<<<< HEAD
     from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
     from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas import (
         RelationshipToIncidentIntegrationMetadatas,
@@ -19,20 +18,6 @@ def lazy_import():
 
     globals()["NullableRelationshipToUser"] = NullableRelationshipToUser
     globals()["RelationshipToIncidentIntegrationMetadatas"] = RelationshipToIncidentIntegrationMetadatas
-=======
-    from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
-    from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
-    from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas import (
-        RelationshipToIncidentIntegrationMetadatas,
-    )
-    from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
-    from datadog_api_client.v2.model.relationship_to_incident_postmortem import RelationshipToIncidentPostmortem
-
-    globals()["RelationshipToUser"] = RelationshipToUser
-    globals()["RelationshipToUser"] = RelationshipToUser
-    globals()["RelationshipToIncidentIntegrationMetadatas"] = RelationshipToIncidentIntegrationMetadatas
-    globals()["RelationshipToUser"] = RelationshipToUser
->>>>>>> d5bdbdd6e (Use new generator for Python)
     globals()["RelationshipToIncidentPostmortem"] = RelationshipToIncidentPostmortem
 
 
@@ -61,26 +46,13 @@ class IncidentUpdateRelationships(ModelNormal):
         """
         The incident's relationships for an update request.
 
-<<<<<<< HEAD
-        :type commander_user: NullableRelationshipToUser, optional
-=======
         :param commander_user: Relationship to user.
-        :type commander_user: RelationshipToUser, optional
-
-        :param created_by_user: Relationship to user.
-        :type created_by_user: RelationshipToUser, optional
->>>>>>> d5bdbdd6e (Use new generator for Python)
+        :type commander_user: NullableRelationshipToUser, optional
 
         :param integrations: A relationship reference for multiple integration metadata objects.
         :type integrations: RelationshipToIncidentIntegrationMetadatas, optional
 
-<<<<<<< HEAD
-=======
-        :param last_modified_by_user: Relationship to user.
-        :type last_modified_by_user: RelationshipToUser, optional
-
         :param postmortem: A relationship reference for postmortems.
->>>>>>> d5bdbdd6e (Use new generator for Python)
         :type postmortem: RelationshipToIncidentPostmortem, optional
         """
         super().__init__(kwargs)

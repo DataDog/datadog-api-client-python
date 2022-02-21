@@ -10,25 +10,15 @@ from datadog_api_client.v2.model_utils import (
 
 
 def lazy_import():
-<<<<<<< HEAD
     from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
-=======
     from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
-    from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
->>>>>>> d5bdbdd6e (Use new generator for Python)
     from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas import (
         RelationshipToIncidentIntegrationMetadatas,
     )
     from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
     from datadog_api_client.v2.model.relationship_to_incident_postmortem import RelationshipToIncidentPostmortem
 
-<<<<<<< HEAD
     globals()["NullableRelationshipToUser"] = NullableRelationshipToUser
-    globals()["RelationshipToIncidentIntegrationMetadatas"] = RelationshipToIncidentIntegrationMetadatas
-    globals()["RelationshipToIncidentPostmortem"] = RelationshipToIncidentPostmortem
-=======
->>>>>>> d5bdbdd6e (Use new generator for Python)
-    globals()["RelationshipToUser"] = RelationshipToUser
     globals()["RelationshipToUser"] = RelationshipToUser
     globals()["RelationshipToIncidentIntegrationMetadatas"] = RelationshipToIncidentIntegrationMetadatas
     globals()["RelationshipToUser"] = RelationshipToUser
@@ -64,12 +54,8 @@ class IncidentResponseRelationships(ModelNormal):
         """
         The incident's relationships from a response.
 
-<<<<<<< HEAD
-        :type commander_user: NullableRelationshipToUser, optional
-=======
         :param commander_user: Relationship to user.
-        :type commander_user: RelationshipToUser, optional
->>>>>>> d5bdbdd6e (Use new generator for Python)
+        :type commander_user: NullableRelationshipToUser, optional
 
         :param created_by_user: Relationship to user.
         :type created_by_user: RelationshipToUser, optional

@@ -140,16 +140,16 @@ class IncidentsApi:
                     "attribute": "incident_id",
                     "location": "path",
                 },
-                "body": {
-                    "required": True,
-                    "openapi_types": (IncidentUpdateRequest,),
-                    "location": "body",
-                },
                 "include": {
                     "openapi_types": ([IncidentRelatedObject],),
                     "attribute": "include",
                     "location": "query",
                     "collection_format": "csv",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentUpdateRequest,),
+                    "location": "body",
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
