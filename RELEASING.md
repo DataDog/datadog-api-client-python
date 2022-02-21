@@ -29,5 +29,5 @@ The release process is controlled and run by GitHub Actions.
 
 1. Review the generated pull-request for `release/<New version number>` branch.
 1. If everything is fine, merge the pull-request.
-1. Check that the [release](https://github.com/DataDog/datadog-api-client-python/actions/workflows/release.yml) action created new release on GitHub.
+1. Check that the [release](https://github.com/DataDog/datadog-api-client-python/actions/workflows/release.yml) action created a new release on GitHub.
 1. A GitHub action will kick off that builds and publishes this tag to PyPI. Confirm the [release is available](https://pypi.org/project/datadog-api-client/#history)
