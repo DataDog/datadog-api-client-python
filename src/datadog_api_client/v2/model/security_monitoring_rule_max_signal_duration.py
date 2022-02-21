@@ -43,7 +43,7 @@ class SecurityMonitoringRuleMaxSignalDuration(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["0", "60", "300", "600", "900", "1800", "3600", "7200", "10800", "21600", "43200", "86400"].
+        :param value: Must be one of [0, 60, 300, 600, 900, 1800, 3600, 7200, 10800, 21600, 43200, 86400].
         :type value: int
         """
         super().__init__(kwargs)

@@ -35,7 +35,7 @@ class SyntheticsPlayingTab(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["-1", "0", "1", "2", "3"].
+        :param value: Must be one of [-1, 0, 1, 2, 3].
         :type value: int
         """
         super().__init__(kwargs)

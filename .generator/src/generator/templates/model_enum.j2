@@ -22,7 +22,7 @@ class {{ name }}(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: {%- if default != None %} If omitted defaults to "{{ default }}".{%- endif %} Must be one of [{%- for value in model.enum %}"{{ value }}"{% if not loop.last %}, {% endif %}{%- endfor %}].
+        :param value: {%- if default != None %} If omitted defaults to {{ default|format_value }}.{%- endif %} Must be one of [{%- for value in model.enum %}{{ value|format_value }}{% if not loop.last %}, {% endif %}{%- endfor %}].
         :type value: {{ get_enum_type(model) }}
         """
         super().__init__(kwargs)

@@ -39,7 +39,7 @@ class SecurityMonitoringRuleEvaluationWindow(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["0", "60", "300", "600", "900", "1800", "3600", "7200"].
+        :param value: Must be one of [0, 60, 300, 600, 900, 1800, 3600, 7200].
         :type value: int
         """
         super().__init__(kwargs)

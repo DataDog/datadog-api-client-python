@@ -38,7 +38,7 @@ def attribute_name(attribute):
     return escape_reserved_keyword(snake_case(attribute))
 
 
-def format_value(value, quotes="'"):
+def format_value(value, quotes='"'):
     if isinstance(value, str):
         return f"{quotes}{value}{quotes}"
     elif isinstance(value, bool):
