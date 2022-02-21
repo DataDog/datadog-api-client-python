@@ -25,7 +25,7 @@ jobs:
         with:
           github-token: ${{ steps.get_token.outputs.token }}
           script: |
-            const tagName = `${process.env.RELEASE_BRANCH.split("/")[1]}`;
+            const tagName = process.env.RELEASE_BRANCH.split("/")[1];
             await github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
