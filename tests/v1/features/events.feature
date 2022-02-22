@@ -45,6 +45,7 @@ Feature: Events
     And body with value {"title": "{{ unique }}", "text": "A text message.", "tags": ["test:{{ unique_alnum }}"]}
     When the request is sent
     Then the response status is 202 OK
+    And the response "event.text" is equal to "A text message."
 
   @team:DataDog/monitors-evaluation
   Scenario: Post an event with a long title returns "OK" response

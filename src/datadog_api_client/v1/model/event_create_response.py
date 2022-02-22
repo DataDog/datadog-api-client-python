@@ -10,11 +10,9 @@ from datadog_api_client.v1.model_utils import (
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.event_alert_type import EventAlertType
-    from datadog_api_client.v1.model.event_priority import EventPriority
+    from datadog_api_client.v1.model.event import Event
 
-    globals()["EventAlertType"] = EventAlertType
-    globals()["EventPriority"] = EventPriority
+    globals()["Event"] = Event
 
 
 class EventCreateResponse(ModelNormal):
@@ -24,101 +22,31 @@ class EventCreateResponse(ModelNormal):
     Do not edit the class manually.
     """
 
-    validations = {
-        "text": {
-            "max_length": 4000,
-        },
-        "title": {
-            "max_length": 100,
-        },
-    }
+    validations = {}
 
     @cached_property
     def openapi_types():
         lazy_import()
         return {
-            "alert_type": (EventAlertType,),
-            "date_happened": (int,),
-            "device_name": (str,),
-            "host": (str,),
-            "id": (int,),
-            "payload": (str,),
-            "priority": (EventPriority,),
-            "related_event_id": (int,),
-            "source_type_name": (str,),
+            "event": (Event,),
             "status": (str,),
-            "tags": ([str],),
-            "text": (str,),
-            "title": (str,),
-            "url": (str,),
         }
 
     attribute_map = {
-        "alert_type": "alert_type",
-        "date_happened": "date_happened",
-        "device_name": "device_name",
-        "host": "host",
-        "id": "id",
-        "payload": "payload",
-        "priority": "priority",
-        "related_event_id": "related_event_id",
-        "source_type_name": "source_type_name",
+        "event": "event",
         "status": "status",
-        "tags": "tags",
-        "text": "text",
-        "title": "title",
-        "url": "url",
     }
 
-    read_only_vars = {
-        "id",
-        "payload",
-        "url",
-    }
+    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """EventCreateResponse - a model defined in OpenAPI
 
 
-        :type alert_type: EventAlertType, optional
-
-        :param date_happened: POSIX timestamp of the event. Must be sent as an integer (that is no quotes). Limited to events no older than 7 days.
-        :type date_happened: int, optional
-
-        :param device_name: A device name.
-        :type device_name: str, optional
-
-        :param host: Host name to associate with the event. Any tags associated with the host are also applied to this event.
-        :type host: str, optional
-
-        :param id: Integer ID of the event.
-        :type id: int, optional
-
-        :param payload: Payload of the event.
-        :type payload: str, optional
-
-        :type priority: EventPriority, optional
-
-        :param related_event_id: ID of the parent event. Must be sent as an integer (that is no quotes).
-        :type related_event_id: int, optional
-
-        :param source_type_name: The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
-        :type source_type_name: str, optional
+        :type event: Event, optional
 
         :param status: A status.
         :type status: str, optional
-
-        :param tags: A list of tags to apply to the event.
-        :type tags: [str], optional
-
-        :param text: The body of the event. Limited to 4000 characters. The text supports markdown. Use `msg_text` with the Datadog Ruby library.
-        :type text: str, optional
-
-        :param title: The event title. Limited to 100 characters. Use `msg_title` with the Datadog Ruby library.
-        :type title: str, optional
-
-        :param url: URL of the event.
-        :type url: str, optional
         """
         super().__init__(kwargs)
 
