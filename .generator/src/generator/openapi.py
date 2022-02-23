@@ -303,11 +303,18 @@ def get_api_models(operations):
                             yield name
             break
         for content in operation.get("parameters", []):
-            if "schema" in content and (content["schema"].get("type") == "object" or content["schema"].get("enum")):
+            if "schema" in content and (
+                content["schema"].get("type") in ("object", "array") or content["schema"].get("enum")
+            ):
                 name = formatter.get_name(content["schema"])
                 if name and name not in seen:
                     seen.add(name)
                     yield name
+                elif "items" in content["schema"]:
+                    name = formatter.get_name(content["schema"]["items"])
+                    if name and name not in seen:
+                        seen.add(name)
+                        yield name
         if "requestBody" in operation:
             for content in operation["requestBody"].get("content", {}).values():
                 if "schema" in content:
