@@ -86,7 +86,7 @@ class EventCreateRequest(ModelNormal):
         :type host: str, optional
 
         :param priority: The priority of the event. For example, `normal` or `low`.
-        :type priority: EventPriority, optional
+        :type priority: EventPriority, none_type, optional
 
         :param related_event_id: ID of the parent event. Must be sent as an integer (that is no quotes).
         :type related_event_id: int, optional

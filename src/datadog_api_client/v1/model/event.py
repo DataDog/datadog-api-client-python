@@ -98,7 +98,7 @@ class Event(ModelNormal):
         :type payload: str, optional
 
         :param priority: The priority of the event. For example, `normal` or `low`.
-        :type priority: EventPriority, optional
+        :type priority: EventPriority, none_type, optional
 
         :param source_type_name: The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc.
             A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
