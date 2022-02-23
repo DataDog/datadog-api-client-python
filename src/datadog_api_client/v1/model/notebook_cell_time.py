@@ -21,6 +21,8 @@ class NotebookCellTime(ModelComposed):
 
     validations = {}
 
+    _nullable = True
+
     @cached_property
     def openapi_types():
         return {}

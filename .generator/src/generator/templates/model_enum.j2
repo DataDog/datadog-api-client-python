@@ -9,6 +9,10 @@ class {{ name }}(ModelSimple):
 
     validations = {}
 
+{% if model.nullable %}
+    _nullable = True
+{%- endif %}
+
     @cached_property
     def openapi_types():
         return {

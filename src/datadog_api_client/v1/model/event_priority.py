@@ -20,6 +20,8 @@ class EventPriority(ModelSimple):
 
     validations = {}
 
+    _nullable = True
+
     @cached_property
     def openapi_types():
         return {
