@@ -42,7 +42,7 @@ class {{ name }}(ModelNormal):
             "{% if definition.exclusiveMaximum %}exclusive{% else %}inclusive{% endif %}_maximum": {{ definition.maximum }},
 {%- endif %}
 {%- if definition.minimum is defined %}
-            "{% if definition.exclusiveMinimum %}exclusive{% else %}inclusive{% endif %}inclusive_minimum": {{ definition.minimum }},
+            "{% if definition.exclusiveMinimum %}exclusive{% else %}inclusive{% endif %}_minimum": {{ definition.minimum }},
 {%- endif %}
         },
 {%- endif %}

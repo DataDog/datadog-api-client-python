@@ -30,7 +30,7 @@ class MonitorUpdateRequest(ModelNormal):
     validations = {
         "priority": {
             "inclusive_maximum": 5,
-            "inclusiveinclusive_minimum": 1,
+            "inclusive_minimum": 1,
         },
     }
 

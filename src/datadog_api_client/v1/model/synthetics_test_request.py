@@ -28,11 +28,11 @@ class SyntheticsTestRequest(ModelNormal):
     validations = {
         "dns_server_port": {
             "inclusive_maximum": 65535,
-            "inclusiveinclusive_minimum": 1,
+            "inclusive_minimum": 1,
         },
         "number_of_packets": {
             "inclusive_maximum": 10,
-            "inclusiveinclusive_minimum": 0,
+            "inclusive_minimum": 0,
         },
     }
 

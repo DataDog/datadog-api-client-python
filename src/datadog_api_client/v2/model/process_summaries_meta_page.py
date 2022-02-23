@@ -14,7 +14,7 @@ class ProcessSummariesMetaPage(ModelNormal):
     validations = {
         "size": {
             "inclusive_maximum": 10000,
-            "inclusiveinclusive_minimum": 0,
+            "inclusive_minimum": 0,
         },
     }
 

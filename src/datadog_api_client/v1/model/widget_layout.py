@@ -13,16 +13,16 @@ class WidgetLayout(ModelNormal):
 
     validations = {
         "height": {
-            "inclusiveinclusive_minimum": 0,
+            "inclusive_minimum": 0,
         },
         "width": {
-            "inclusiveinclusive_minimum": 0,
+            "inclusive_minimum": 0,
         },
         "x": {
-            "inclusiveinclusive_minimum": 0,
+            "inclusive_minimum": 0,
         },
         "y": {
-            "inclusiveinclusive_minimum": 0,
+            "inclusive_minimum": 0,
         },
     }
 

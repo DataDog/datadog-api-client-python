@@ -33,7 +33,7 @@ class MonitorOptions(ModelNormal):
     validations = {
         "min_failure_duration": {
             "inclusive_maximum": 7200,
-            "inclusiveinclusive_minimum": 0,
+            "inclusive_minimum": 0,
         },
     }
 

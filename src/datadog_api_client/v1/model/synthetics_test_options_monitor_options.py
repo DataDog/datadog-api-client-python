@@ -14,7 +14,7 @@ class SyntheticsTestOptionsMonitorOptions(ModelNormal):
     validations = {
         "renotify_interval": {
             "inclusive_maximum": 1440,
-            "inclusiveinclusive_minimum": 0,
+            "inclusive_minimum": 0,
         },
     }
 

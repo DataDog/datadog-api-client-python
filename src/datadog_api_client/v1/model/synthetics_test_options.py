@@ -24,11 +24,11 @@ class SyntheticsTestOptions(ModelNormal):
     validations = {
         "monitor_priority": {
             "inclusive_maximum": 5,
-            "inclusiveinclusive_minimum": 1,
+            "inclusive_minimum": 1,
         },
         "tick_every": {
             "inclusive_maximum": 604800,
-            "inclusiveinclusive_minimum": 30,
+            "inclusive_minimum": 30,
         },
     }
 

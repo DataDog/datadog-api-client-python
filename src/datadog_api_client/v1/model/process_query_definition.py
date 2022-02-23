@@ -13,7 +13,7 @@ class ProcessQueryDefinition(ModelNormal):
 
     validations = {
         "limit": {
-            "inclusiveinclusive_minimum": 0,
+            "inclusive_minimum": 0,
         },
     }
 
