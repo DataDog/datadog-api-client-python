@@ -43,6 +43,7 @@ class SyntheticsTestOptions(ModelNormal):
         return {
             "accept_self_signed": (bool,),
             "allow_insecure": (bool,),
+            "check_certificate_revocation": (bool,),
             "device_ids": ([SyntheticsDeviceID],),
             "disable_cors": (bool,),
             "follow_redirects": (bool,),
@@ -59,6 +60,7 @@ class SyntheticsTestOptions(ModelNormal):
     attribute_map = {
         "accept_self_signed": "accept_self_signed",
         "allow_insecure": "allow_insecure",
+        "check_certificate_revocation": "checkCertificateRevocation",
         "device_ids": "device_ids",
         "disable_cors": "disableCors",
         "follow_redirects": "follow_redirects",
@@ -83,6 +85,9 @@ class SyntheticsTestOptions(ModelNormal):
 
         :param allow_insecure: Allows loading insecure content for an HTTP request.
         :type allow_insecure: bool, optional
+
+        :param check_certificate_revocation: For SSL test, whether or not the test should fail on revoked certificate in stapled OCSP.
+        :type check_certificate_revocation: bool, optional
 
         :param device_ids: For browser test, array with the different device IDs used to run the test.
         :type device_ids: [SyntheticsDeviceID], optional
