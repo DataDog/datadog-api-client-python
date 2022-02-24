@@ -203,7 +203,7 @@ def get_references_for_model(model, model_name):
     result = []
     top_name = formatter.get_name(model) or model_name
     for key, definition in model.get("properties", {}).items():
-        if definition.get("type") == "object" or definition.get("enum"):
+        if definition.get("type") == "object" or definition.get("enum") or definition.get("oneOf"):
             name = formatter.get_name(definition)
             if name:
                 result.append(name)

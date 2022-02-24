@@ -11,10 +11,14 @@ from datadog_api_client.v2.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v2.model.logs_group_by_histogram import LogsGroupByHistogram
+    from datadog_api_client.v2.model.logs_group_by_missing import LogsGroupByMissing
     from datadog_api_client.v2.model.logs_aggregate_sort import LogsAggregateSort
+    from datadog_api_client.v2.model.logs_group_by_total import LogsGroupByTotal
 
     globals()["LogsGroupByHistogram"] = LogsGroupByHistogram
+    globals()["LogsGroupByMissing"] = LogsGroupByMissing
     globals()["LogsAggregateSort"] = LogsAggregateSort
+    globals()["LogsGroupByTotal"] = LogsGroupByTotal
 
 
 class LogsGroupBy(ModelNormal):
