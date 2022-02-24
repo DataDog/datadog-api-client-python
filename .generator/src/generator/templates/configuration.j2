@@ -390,55 +390,29 @@ class Configuration(object):
         :return: An array of host settings
         """
         return [
+{%- for server in openapi.servers %}
             {
-                "url": "https://{subdomain}.{site}",
-                "description": "No description provided",
+                "url": "{{ server.url }}",
+                "description": "{{ server.description|default("No description provided") }}",
                 "variables": {
-                    "site": {
-                        "description": "The regional site for a Datadog customer.",
-                        "default_value": "datadoghq.com",
+                {%- for name, variable in server.get("variables", {}).items() %}
+                    "{{ name }}": {
+                        "description": "{{ variable.description|default("No description provided") }}",
+                        "default_value": "{{ variable.default }}",
+                      {%- for value in variable.enum %}
+                      {%- if loop.first %}
                         "enum_values": [
-                            "datadoghq.com",
-                            "us3.datadoghq.com",
-                            "us5.datadoghq.com",
-                            "datadoghq.eu",
-                            "ddog-gov.com",
+                      {%- endif %}
+                            "{{ value }}",
+                      {%- if loop.last %}
                         ],
+                      {%- endif %}
+                      {%- endfor %}
                     },
-                    "subdomain": {
-                        "description": "The subdomain where the API is deployed.",
-                        "default_value": "api",
-                    },
+                {%- endfor %}
                 },
             },
-            {
-                "url": "{protocol}://{name}",
-                "description": "No description provided",
-                "variables": {
-                    "name": {
-                        "description": "Full site DNS name.",
-                        "default_value": "api.datadoghq.com",
-                    },
-                    "protocol": {
-                        "description": "The protocol for accessing the API.",
-                        "default_value": "https",
-                    },
-                },
-            },
-            {
-                "url": "https://{subdomain}.{site}",
-                "description": "No description provided",
-                "variables": {
-                    "site": {
-                        "description": "Any Datadog deployment.",
-                        "default_value": "datadoghq.com",
-                    },
-                    "subdomain": {
-                        "description": "The subdomain where the API is deployed.",
-                        "default_value": "api",
-                    },
-                },
-            },
+{%- endfor %}
         ]
 
     def get_host_from_settings(self, index, variables=None, servers=None):
