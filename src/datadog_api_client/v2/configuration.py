@@ -370,16 +370,6 @@ class Configuration(object):
                     "apiKeyAuth",
                 ),
             }
-        if "apiKeyAuthQuery" in self.api_key or "apiKeyAuth" in self.api_key:
-            auth["apiKeyAuthQuery"] = {
-                "type": "api_key",
-                "in": "query",
-                "key": "api_key",
-                "value": self.get_api_key_with_prefix(
-                    "apiKeyAuthQuery",
-                    alias="apiKeyAuth",
-                ),
-            }
         if "appKeyAuth" in self.api_key:
             auth["appKeyAuth"] = {
                 "type": "api_key",
@@ -387,16 +377,6 @@ class Configuration(object):
                 "key": "DD-APPLICATION-KEY",
                 "value": self.get_api_key_with_prefix(
                     "appKeyAuth",
-                ),
-            }
-        if "appKeyAuthQuery" in self.api_key or "appKeyAuth" in self.api_key:
-            auth["appKeyAuthQuery"] = {
-                "type": "api_key",
-                "in": "query",
-                "key": "application_key",
-                "value": self.get_api_key_with_prefix(
-                    "appKeyAuthQuery",
-                    alias="appKeyAuth",
                 ),
             }
         return auth

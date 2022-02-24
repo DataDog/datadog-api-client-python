@@ -337,6 +337,38 @@ class Configuration(object):
         :return: The Auth Settings information dict.
         """
         auth = {}
+{%- for name, schema in openapi.components.securitySchemes.items() %}
+{%- if schema.type == "apiKey" %}
+        if "{{name}}" in self.api_key{% if "x-auth-id-alias" in schema %} or "{{ schema["x-auth-id-alias"] }}" in self.api_key{% endif %}:
+            auth["{{name}}"] = {
+                "type": "api_key",
+                "in": "{{ schema.in }}",
+                "key": "{{ schema.name }}",
+                "value": self.get_api_key_with_prefix(
+                    "{{name}}",{% if "x-auth-id-alias" in schema %}
+                    alias="{{ schema["x-auth-id-alias"] }}",{%- endif %}
+                ),
+            }
+{%- elif schema.type == "http" and schema.scheme == "basic" %}
+        if self.username is not None and self.password is not None:
+            auth["{{name}}"] = {
+                "type": "basic",
+                "in": "header",
+                "key": "Authorization",
+                "value": self.get_basic_auth_token()
+            }
+{%- elif schema.type == "http" and schema.scheme == "bearer" %}
+        if self.access_token is not None:
+            auth["{{name}}"] = {
+                "type": "bearer",
+                "in": "header",
+                {% if schema.bearerFormat %}
+                "format": "{{ schema.bearerFormat }}",
+                {% endif %}
+                "key": "Authorization",
+                "value": "Bearer " + self.access_token
+            }
+{%- elif schema.type == "oauth2" %}
         if self.access_token is not None:
             auth["AuthZ"] = {
                 "type": "oauth2",
@@ -344,44 +376,8 @@ class Configuration(object):
                 "key": "Authorization",
                 "value": "Bearer " + self.access_token,
             }
-        if "apiKeyAuth" in self.api_key:
-            auth["apiKeyAuth"] = {
-                "type": "api_key",
-                "in": "header",
-                "key": "DD-API-KEY",
-                "value": self.get_api_key_with_prefix(
-                    "apiKeyAuth",
-                ),
-            }
-        if "apiKeyAuthQuery" in self.api_key or "apiKeyAuth" in self.api_key:
-            auth["apiKeyAuthQuery"] = {
-                "type": "api_key",
-                "in": "query",
-                "key": "api_key",
-                "value": self.get_api_key_with_prefix(
-                    "apiKeyAuthQuery",
-                    alias="apiKeyAuth",
-                ),
-            }
-        if "appKeyAuth" in self.api_key:
-            auth["appKeyAuth"] = {
-                "type": "api_key",
-                "in": "header",
-                "key": "DD-APPLICATION-KEY",
-                "value": self.get_api_key_with_prefix(
-                    "appKeyAuth",
-                ),
-            }
-        if "appKeyAuthQuery" in self.api_key or "appKeyAuth" in self.api_key:
-            auth["appKeyAuthQuery"] = {
-                "type": "api_key",
-                "in": "query",
-                "key": "application_key",
-                "value": self.get_api_key_with_prefix(
-                    "appKeyAuthQuery",
-                    alias="appKeyAuth",
-                ),
-            }
+{%- endif %}
+{%- endfor %}
         return auth
 
     def get_host_settings(self):
