@@ -19,6 +19,7 @@ from datadog_api_client.v1.model.usage_attribution_sort import UsageAttributionS
 from datadog_api_client.v1.model.usage_attribution_supported_metrics import UsageAttributionSupportedMetrics
 from datadog_api_client.v1.model.usage_audit_logs_response import UsageAuditLogsResponse
 from datadog_api_client.v1.model.usage_billable_summary_response import UsageBillableSummaryResponse
+from datadog_api_client.v1.model.usage_ci_visibility_response import UsageCIVisibilityResponse
 from datadog_api_client.v1.model.usage_cws_response import UsageCWSResponse
 from datadog_api_client.v1.model.usage_cloud_security_posture_management_response import (
     UsageCloudSecurityPostureManagementResponse,
@@ -478,6 +479,35 @@ class UsageMeteringApi(object):
                 "month": {
                     "openapi_types": (datetime,),
                     "attribute": "month",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._get_usage_ci_app_endpoint = _Endpoint(
+            settings={
+                "response_type": (UsageCIVisibilityResponse,),
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/ci-app",
+                "operation_id": "get_usage_ci_app",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
+                },
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
                     "location": "query",
                 },
             },
@@ -1776,6 +1806,50 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_billable_summary_endpoint.default_arguments(kwargs)
         return self._get_usage_billable_summary_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_ci_app(self, start_hr, **kwargs):
+        """Get hourly usage for CI Visibility
+
+        Get hourly usage for CI Visibility (Tests, Pipeline, Combo, and Spans).
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True.
+
+        >>> thread = api.get_usage_ci_app(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :type start_hr: datetime
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :type end_hr: datetime, optional
+        :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: UsageCIVisibilityResponse
+        """
+        kwargs = self._get_usage_ci_app_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_ci_app_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_cloud_security_posture_management(self, start_hr, **kwargs):
         """Get hourly usage for CSPM
