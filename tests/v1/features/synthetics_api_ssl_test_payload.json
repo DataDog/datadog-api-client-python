@@ -1,0 +1,26 @@
+{
+  "config": {
+    "assertions": [
+      {
+        "operator": "isInMoreThan",
+        "target": 10,
+        "type": "certificate"
+      }
+    ],
+    "request": {
+      "host": "datadoghq.com",
+      "port": 443
+    }
+  },
+  "locations": ["aws:us-east-2"],
+  "message": "BDD test payload: synthetics_api_ssl_test_payload.json",
+  "name": "{{ unique }}",
+  "options": {
+    "accept_self_signed": true,
+    "checkCertificateRevocation": true,
+    "tick_every": 60
+  },
+  "subtype": "ssl",
+  "tags": ["testing:api"],
+  "type": "api"
+}
