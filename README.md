@@ -1,8 +1,6 @@
 # datadog-api-client-python
 
 This repository contains a Python API client for the [Datadog API](https://docs.datadoghq.com/api/).
-The code is generated using [openapi-generator](https://github.com/OpenAPITools/openapi-generator)
-and [apigentools](https://github.com/DataDog/apigentools).
 
 ## Requirements
 
