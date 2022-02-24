@@ -64,11 +64,11 @@ def cli(input, output):
     model_j2 = env.get_template("model.j2")
     models_j2 = env.get_template("models.j2")
     init_j2 = env.get_template("init.j2")
+    configuration_j2 = env.get_template("configuration.j2")
 
     extra_files = {
         "api_client.py": env.get_template("api_client.j2"),
         "exceptions.py": env.get_template("exceptions.j2"),
-        "configuration.py": env.get_template("configuration.j2"),
         "model_utils.py": env.get_template("model_utils.j2"),
         "rest.py": env.get_template("rest.j2"),
     }
@@ -119,3 +119,7 @@ def cli(input, output):
     init_path = package / "__init__.py"
     with init_path.open("w") as fp:
         fp.write(init_j2.render())
+
+    config_path = package / "configuration.py"
+    with config_path.open("w") as fp:
+        fp.write(configuration_j2.render(apis=apis))

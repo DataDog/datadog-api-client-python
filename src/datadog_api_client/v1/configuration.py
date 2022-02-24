@@ -152,13 +152,6 @@ class Configuration(object):
 
         # Keep track of unstable operations
         self.unstable_operations = {
-            "create_slo_correction": False,
-            "delete_slo_correction": False,
-            "get_slo_correction": False,
-            "list_slo_correction": False,
-            "update_slo_correction": False,
-            "get_slo_corrections": False,
-            "get_slo_history": False,
             "get_daily_custom_reports": False,
             "get_hourly_usage_attribution": False,
             "get_monthly_custom_reports": False,
@@ -166,6 +159,13 @@ class Configuration(object):
             "get_specified_daily_custom_reports": False,
             "get_specified_monthly_custom_reports": False,
             "get_usage_attribution": False,
+            "get_slo_corrections": False,
+            "get_slo_history": False,
+            "create_slo_correction": False,
+            "delete_slo_correction": False,
+            "get_slo_correction": False,
+            "list_slo_correction": False,
+            "update_slo_correction": False,
         }
 
         # Load default values from environment

@@ -150,20 +150,13 @@ class Configuration(object):
 
         # Keep track of unstable operations
         self.unstable_operations = {
-            "create_slo_correction": False,
-            "delete_slo_correction": False,
-            "get_slo_correction": False,
-            "list_slo_correction": False,
-            "update_slo_correction": False,
-            "get_slo_corrections": False,
-            "get_slo_history": False,
-            "get_daily_custom_reports": False,
-            "get_hourly_usage_attribution": False,
-            "get_monthly_custom_reports": False,
-            "get_monthly_usage_attribution": False,
-            "get_specified_daily_custom_reports": False,
-            "get_specified_monthly_custom_reports": False,
-            "get_usage_attribution": False,
+        {%- for operations in apis.values() %}
+        {%- for _, _, operation in operations|sort(attribute="2.operationId") %}
+        {%- if "x-unstable" in operation %}
+            "{{ operation.operationId|snake_case }}": False,
+        {%- endif %}
+        {%- endfor %}
+        {%- endfor %}
         }
 
         # Load default values from environment
