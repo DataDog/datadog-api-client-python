@@ -38,7 +38,7 @@ class {{ name }}(ModelSimple):
             value = args.pop(0)
 {%- if default != None %}
         else:
-            value = "{{ default }}"
+            value = {{ default|format_value }}
 {%- else %}
         else:
             raise ApiTypeError(
