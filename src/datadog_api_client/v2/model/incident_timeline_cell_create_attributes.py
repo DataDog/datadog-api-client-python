@@ -33,7 +33,7 @@ class IncidentTimelineCellCreateAttributes(ModelComposed):
         :type cell_type: IncidentTimelineCellMarkdownContentType
 
         :param content: The Markdown timeline cell contents.
-        :type content: IncidentTimelineCellCreateAttributesContent
+        :type content: IncidentTimelineCellMarkdownCreateAttributesContent
 
         :param important: A flag indicating whether the timeline cell is important and should be highlighted.
         :type important: bool, optional

@@ -37,7 +37,7 @@ class SLOCorrectionResponseAttributes(ModelNormal):
             "duration": (int, none_type),
             "end": (int,),
             "modified_at": (int,),
-            "modifier": (SLOCorrectionResponseAttributesModifier, none_type),
+            "modifier": (SLOCorrectionResponseAttributesModifier,),
             "rrule": (str, none_type),
             "slo_id": (str,),
             "start": (int,),

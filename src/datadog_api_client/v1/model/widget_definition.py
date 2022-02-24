@@ -171,10 +171,10 @@ class WidgetDefinition(ModelComposed):
         :type text: str
 
         :param style: The style to apply to the widget.
-        :type style: WidgetDefinitionStyle
+        :type style: GeomapWidgetDefinitionStyle
 
         :param view: The view of the world that the map should render.
-        :type view: WidgetDefinitionView
+        :type view: GeomapWidgetDefinitionView
 
         :param background_color: Background color of the group title.
         :type background_color: str, optional

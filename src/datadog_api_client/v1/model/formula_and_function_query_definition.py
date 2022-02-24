@@ -60,7 +60,7 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
         :type query: str
 
         :param compute: Compute options.
-        :type compute: FormulaAndFunctionQueryDefinitionCompute
+        :type compute: FormulaAndFunctionEventQueryDefinitionCompute
 
         :param group_by: Group by options.
         :type group_by: [FormulaAndFunctionEventQueryGroupBy], optional
@@ -69,7 +69,7 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
         :type indexes: [str], optional
 
         :param search: Search options.
-        :type search: FormulaAndFunctionQueryDefinitionSearch, optional
+        :type search: FormulaAndFunctionEventQueryDefinitionSearch, optional
 
         :param is_normalized_cpu: Whether to normalize the CPU percentages.
         :type is_normalized_cpu: bool, optional
