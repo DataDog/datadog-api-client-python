@@ -2,7 +2,7 @@
 name = "generator"
 version = "0.1.0"
 description = ""
-authors = ["Jiri Kuncar <jiri.kuncar@datadoghq.com>"]
+authors = ["<support@datadoghq.com>"]
 license = "Apache-2.0"
 
 [tool.poetry.dependencies]
