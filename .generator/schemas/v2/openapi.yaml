@@ -3427,7 +3427,6 @@ components:
       readOnly: true
       type: object
     MetricBulkConfigureTagsType:
-      type: string
       default: metric_bulk_configure_tags
       description: The metric bulk configure tags resource.
       enum:
