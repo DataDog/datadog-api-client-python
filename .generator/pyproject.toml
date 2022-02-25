@@ -2,7 +2,7 @@
 name = "generator"
 version = "0.1.0"
 description = ""
-authors = ["<support@datadoghq.com>"]
+authors = ["Datadog <support@datadoghq.com>"]
 license = "Apache-2.0"
 
 [tool.poetry.dependencies]
