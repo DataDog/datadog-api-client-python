@@ -7,59 +7,53 @@ from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (
     datetime,
 )
-from datadog_api_client.v1.model.hourly_usage_attribution_response import HourlyUsageAttributionResponse
-from datadog_api_client.v1.model.hourly_usage_attribution_usage_type import HourlyUsageAttributionUsageType
-from datadog_api_client.v1.model.monthly_usage_attribution_response import MonthlyUsageAttributionResponse
-from datadog_api_client.v1.model.monthly_usage_attribution_supported_metrics import (
-    MonthlyUsageAttributionSupportedMetrics,
-)
+from datadog_api_client.v1.model.usage_custom_reports_response import UsageCustomReportsResponse
+from datadog_api_client.v1.model.usage_sort_direction import UsageSortDirection
+from datadog_api_client.v1.model.usage_sort import UsageSort
+from datadog_api_client.v1.model.usage_specified_custom_reports_response import UsageSpecifiedCustomReportsResponse
 from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse
 from datadog_api_client.v1.model.usage_attribution_response import UsageAttributionResponse
-from datadog_api_client.v1.model.usage_attribution_sort import UsageAttributionSort
 from datadog_api_client.v1.model.usage_attribution_supported_metrics import UsageAttributionSupportedMetrics
+from datadog_api_client.v1.model.usage_attribution_sort import UsageAttributionSort
 from datadog_api_client.v1.model.usage_audit_logs_response import UsageAuditLogsResponse
+from datadog_api_client.v1.model.usage_lambda_response import UsageLambdaResponse
 from datadog_api_client.v1.model.usage_billable_summary_response import UsageBillableSummaryResponse
-from datadog_api_client.v1.model.usage_cws_response import UsageCWSResponse
 from datadog_api_client.v1.model.usage_cloud_security_posture_management_response import (
     UsageCloudSecurityPostureManagementResponse,
 )
-from datadog_api_client.v1.model.usage_custom_reports_response import UsageCustomReportsResponse
+from datadog_api_client.v1.model.usage_cws_response import UsageCWSResponse
 from datadog_api_client.v1.model.usage_dbm_response import UsageDBMResponse
 from datadog_api_client.v1.model.usage_fargate_response import UsageFargateResponse
 from datadog_api_client.v1.model.usage_hosts_response import UsageHostsResponse
+from datadog_api_client.v1.model.hourly_usage_attribution_response import HourlyUsageAttributionResponse
+from datadog_api_client.v1.model.hourly_usage_attribution_usage_type import HourlyUsageAttributionUsageType
 from datadog_api_client.v1.model.usage_incident_management_response import UsageIncidentManagementResponse
 from datadog_api_client.v1.model.usage_indexed_spans_response import UsageIndexedSpansResponse
 from datadog_api_client.v1.model.usage_ingested_spans_response import UsageIngestedSpansResponse
 from datadog_api_client.v1.model.usage_io_t_response import UsageIoTResponse
-from datadog_api_client.v1.model.usage_lambda_response import UsageLambdaResponse
-from datadog_api_client.v1.model.usage_logs_by_index_response import UsageLogsByIndexResponse
-from datadog_api_client.v1.model.usage_logs_by_retention_response import UsageLogsByRetentionResponse
 from datadog_api_client.v1.model.usage_logs_response import UsageLogsResponse
+from datadog_api_client.v1.model.usage_logs_by_retention_response import UsageLogsByRetentionResponse
+from datadog_api_client.v1.model.usage_logs_by_index_response import UsageLogsByIndexResponse
+from datadog_api_client.v1.model.monthly_usage_attribution_response import MonthlyUsageAttributionResponse
+from datadog_api_client.v1.model.monthly_usage_attribution_supported_metrics import (
+    MonthlyUsageAttributionSupportedMetrics,
+)
 from datadog_api_client.v1.model.usage_network_flows_response import UsageNetworkFlowsResponse
 from datadog_api_client.v1.model.usage_network_hosts_response import UsageNetworkHostsResponse
 from datadog_api_client.v1.model.usage_profiling_response import UsageProfilingResponse
-from datadog_api_client.v1.model.usage_rum_sessions_response import UsageRumSessionsResponse
 from datadog_api_client.v1.model.usage_rum_units_response import UsageRumUnitsResponse
+from datadog_api_client.v1.model.usage_rum_sessions_response import UsageRumSessionsResponse
 from datadog_api_client.v1.model.usage_sds_response import UsageSDSResponse
 from datadog_api_client.v1.model.usage_snmp_response import UsageSNMPResponse
-from datadog_api_client.v1.model.usage_sort import UsageSort
-from datadog_api_client.v1.model.usage_sort_direction import UsageSortDirection
-from datadog_api_client.v1.model.usage_specified_custom_reports_response import UsageSpecifiedCustomReportsResponse
 from datadog_api_client.v1.model.usage_summary_response import UsageSummaryResponse
+from datadog_api_client.v1.model.usage_synthetics_response import UsageSyntheticsResponse
 from datadog_api_client.v1.model.usage_synthetics_api_response import UsageSyntheticsAPIResponse
 from datadog_api_client.v1.model.usage_synthetics_browser_response import UsageSyntheticsBrowserResponse
-from datadog_api_client.v1.model.usage_synthetics_response import UsageSyntheticsResponse
 from datadog_api_client.v1.model.usage_timeseries_response import UsageTimeseriesResponse
 from datadog_api_client.v1.model.usage_top_avg_metrics_response import UsageTopAvgMetricsResponse
 
 
-class UsageMeteringApi(object):
-    """NOTE: This class is auto generated by OpenAPI Generator
-    Ref: https://openapi-generator.tech
-
-    Do not edit the class manually.
-    """
-
+class UsageMeteringApi:
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -68,7 +62,7 @@ class UsageMeteringApi(object):
         self._get_daily_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageCustomReportsResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/daily_custom_reports",
                 "operation_id": "get_daily_custom_reports",
                 "http_method": "GET",
@@ -106,7 +100,7 @@ class UsageMeteringApi(object):
         self._get_hourly_usage_attribution_endpoint = _Endpoint(
             settings={
                 "response_type": (HourlyUsageAttributionResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/hourly-attribution",
                 "operation_id": "get_hourly_usage_attribution",
                 "http_method": "GET",
@@ -119,15 +113,15 @@ class UsageMeteringApi(object):
                     "attribute": "start_hr",
                     "location": "query",
                 },
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
+                },
                 "usage_type": {
                     "required": True,
                     "openapi_types": (HourlyUsageAttributionUsageType,),
                     "attribute": "usage_type",
-                    "location": "query",
-                },
-                "end_hr": {
-                    "openapi_types": (datetime,),
-                    "attribute": "end_hr",
                     "location": "query",
                 },
                 "next_record_id": {
@@ -151,7 +145,7 @@ class UsageMeteringApi(object):
         self._get_incident_management_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageIncidentManagementResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/incident-management",
                 "operation_id": "get_incident_management",
                 "http_method": "GET",
@@ -180,7 +174,7 @@ class UsageMeteringApi(object):
         self._get_ingested_spans_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageIngestedSpansResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/ingested-spans",
                 "operation_id": "get_ingested_spans",
                 "http_method": "GET",
@@ -209,7 +203,7 @@ class UsageMeteringApi(object):
         self._get_monthly_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageCustomReportsResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/monthly_custom_reports",
                 "operation_id": "get_monthly_custom_reports",
                 "http_method": "GET",
@@ -247,7 +241,7 @@ class UsageMeteringApi(object):
         self._get_monthly_usage_attribution_endpoint = _Endpoint(
             settings={
                 "response_type": (MonthlyUsageAttributionResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/monthly-attribution",
                 "operation_id": "get_monthly_usage_attribution",
                 "http_method": "GET",
@@ -260,15 +254,15 @@ class UsageMeteringApi(object):
                     "attribute": "start_month",
                     "location": "query",
                 },
+                "end_month": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_month",
+                    "location": "query",
+                },
                 "fields": {
                     "required": True,
                     "openapi_types": (MonthlyUsageAttributionSupportedMetrics,),
                     "attribute": "fields",
-                    "location": "query",
-                },
-                "end_month": {
-                    "openapi_types": (datetime,),
-                    "attribute": "end_month",
                     "location": "query",
                 },
                 "sort_direction": {
@@ -302,7 +296,7 @@ class UsageMeteringApi(object):
         self._get_specified_daily_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSpecifiedCustomReportsResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/daily_custom_reports/{report_id}",
                 "operation_id": "get_specified_daily_custom_reports",
                 "http_method": "GET",
@@ -326,7 +320,7 @@ class UsageMeteringApi(object):
         self._get_specified_monthly_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSpecifiedCustomReportsResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/monthly_custom_reports/{report_id}",
                 "operation_id": "get_specified_monthly_custom_reports",
                 "http_method": "GET",
@@ -350,7 +344,7 @@ class UsageMeteringApi(object):
         self._get_usage_analyzed_logs_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageAnalyzedLogsResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/analyzed_logs",
                 "operation_id": "get_usage_analyzed_logs",
                 "http_method": "GET",
@@ -379,7 +373,7 @@ class UsageMeteringApi(object):
         self._get_usage_attribution_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageAttributionResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/attribution",
                 "operation_id": "get_usage_attribution",
                 "http_method": "GET",
@@ -439,7 +433,7 @@ class UsageMeteringApi(object):
         self._get_usage_audit_logs_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageAuditLogsResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/audit_logs",
                 "operation_id": "get_usage_audit_logs",
                 "http_method": "GET",
@@ -468,7 +462,7 @@ class UsageMeteringApi(object):
         self._get_usage_billable_summary_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageBillableSummaryResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/billable-summary",
                 "operation_id": "get_usage_billable_summary",
                 "http_method": "GET",
@@ -491,7 +485,7 @@ class UsageMeteringApi(object):
         self._get_usage_cloud_security_posture_management_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageCloudSecurityPostureManagementResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/cspm",
                 "operation_id": "get_usage_cloud_security_posture_management",
                 "http_method": "GET",
@@ -520,7 +514,7 @@ class UsageMeteringApi(object):
         self._get_usage_cws_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageCWSResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/cws",
                 "operation_id": "get_usage_cws",
                 "http_method": "GET",
@@ -549,7 +543,7 @@ class UsageMeteringApi(object):
         self._get_usage_dbm_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageDBMResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/dbm",
                 "operation_id": "get_usage_dbm",
                 "http_method": "GET",
@@ -578,7 +572,7 @@ class UsageMeteringApi(object):
         self._get_usage_fargate_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageFargateResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/fargate",
                 "operation_id": "get_usage_fargate",
                 "http_method": "GET",
@@ -607,7 +601,7 @@ class UsageMeteringApi(object):
         self._get_usage_hosts_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageHostsResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/hosts",
                 "operation_id": "get_usage_hosts",
                 "http_method": "GET",
@@ -636,7 +630,7 @@ class UsageMeteringApi(object):
         self._get_usage_indexed_spans_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageIndexedSpansResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/indexed-spans",
                 "operation_id": "get_usage_indexed_spans",
                 "http_method": "GET",
@@ -665,7 +659,7 @@ class UsageMeteringApi(object):
         self._get_usage_internet_of_things_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageIoTResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/iot",
                 "operation_id": "get_usage_internet_of_things",
                 "http_method": "GET",
@@ -694,7 +688,7 @@ class UsageMeteringApi(object):
         self._get_usage_lambda_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageLambdaResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/aws_lambda",
                 "operation_id": "get_usage_lambda",
                 "http_method": "GET",
@@ -723,7 +717,7 @@ class UsageMeteringApi(object):
         self._get_usage_logs_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageLogsResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/logs",
                 "operation_id": "get_usage_logs",
                 "http_method": "GET",
@@ -752,7 +746,7 @@ class UsageMeteringApi(object):
         self._get_usage_logs_by_index_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageLogsByIndexResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/logs_by_index",
                 "operation_id": "get_usage_logs_by_index",
                 "http_method": "GET",
@@ -787,7 +781,7 @@ class UsageMeteringApi(object):
         self._get_usage_logs_by_retention_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageLogsByRetentionResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/logs-by-retention",
                 "operation_id": "get_usage_logs_by_retention",
                 "http_method": "GET",
@@ -816,7 +810,7 @@ class UsageMeteringApi(object):
         self._get_usage_network_flows_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageNetworkFlowsResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/network_flows",
                 "operation_id": "get_usage_network_flows",
                 "http_method": "GET",
@@ -845,7 +839,7 @@ class UsageMeteringApi(object):
         self._get_usage_network_hosts_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageNetworkHostsResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/network_hosts",
                 "operation_id": "get_usage_network_hosts",
                 "http_method": "GET",
@@ -874,7 +868,7 @@ class UsageMeteringApi(object):
         self._get_usage_profiling_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageProfilingResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/profiling",
                 "operation_id": "get_usage_profiling",
                 "http_method": "GET",
@@ -903,7 +897,7 @@ class UsageMeteringApi(object):
         self._get_usage_rum_sessions_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageRumSessionsResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/rum_sessions",
                 "operation_id": "get_usage_rum_sessions",
                 "http_method": "GET",
@@ -937,7 +931,7 @@ class UsageMeteringApi(object):
         self._get_usage_rum_units_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageRumUnitsResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/rum",
                 "operation_id": "get_usage_rum_units",
                 "http_method": "GET",
@@ -966,7 +960,7 @@ class UsageMeteringApi(object):
         self._get_usage_sds_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSDSResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/sds",
                 "operation_id": "get_usage_sds",
                 "http_method": "GET",
@@ -995,7 +989,7 @@ class UsageMeteringApi(object):
         self._get_usage_snmp_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSNMPResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/snmp",
                 "operation_id": "get_usage_snmp",
                 "http_method": "GET",
@@ -1024,7 +1018,7 @@ class UsageMeteringApi(object):
         self._get_usage_summary_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSummaryResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/summary",
                 "operation_id": "get_usage_summary",
                 "http_method": "GET",
@@ -1058,7 +1052,7 @@ class UsageMeteringApi(object):
         self._get_usage_synthetics_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSyntheticsResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/synthetics",
                 "operation_id": "get_usage_synthetics",
                 "http_method": "GET",
@@ -1087,7 +1081,7 @@ class UsageMeteringApi(object):
         self._get_usage_synthetics_api_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSyntheticsAPIResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/synthetics_api",
                 "operation_id": "get_usage_synthetics_api",
                 "http_method": "GET",
@@ -1116,7 +1110,7 @@ class UsageMeteringApi(object):
         self._get_usage_synthetics_browser_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSyntheticsBrowserResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/synthetics_browser",
                 "operation_id": "get_usage_synthetics_browser",
                 "http_method": "GET",
@@ -1145,7 +1139,7 @@ class UsageMeteringApi(object):
         self._get_usage_timeseries_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageTimeseriesResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/timeseries",
                 "operation_id": "get_usage_timeseries",
                 "http_method": "GET",
@@ -1174,7 +1168,7 @@ class UsageMeteringApi(object):
         self._get_usage_top_avg_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageTopAvgMetricsResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/usage/top_avg_metrics",
                 "operation_id": "get_usage_top_avg_metrics",
                 "http_method": "GET",
@@ -1220,9 +1214,10 @@ class UsageMeteringApi(object):
         )
 
     def get_daily_custom_reports(self, **kwargs):
-        """Get the list of available daily custom reports
+        """Get the list of available daily custom reports.
 
         Get daily custom reports.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1267,9 +1262,10 @@ class UsageMeteringApi(object):
         return self._get_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_hourly_usage_attribution(self, start_hr, usage_type, **kwargs):
-        """Get Hourly Usage Attribution
+        """Get Hourly Usage Attribution.
 
         Get Hourly Usage Attribution.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1280,7 +1276,8 @@ class UsageMeteringApi(object):
         :type start_hr: datetime
         :param usage_type: Usage type to retrieve.
         :type usage_type: HourlyUsageAttributionUsageType
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+            **before** this hour.
         :type end_hr: datetime, optional
         :param next_record_id: List following results with a next_record_id provided in the previous query.
         :type next_record_id: str, optional
@@ -1314,13 +1311,16 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_hourly_usage_attribution_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         kwargs["usage_type"] = usage_type
+
         return self._get_hourly_usage_attribution_endpoint.call_with_http_info(**kwargs)
 
     def get_incident_management(self, start_hr, **kwargs):
-        """Get hourly usage for incident management
+        """Get hourly usage for incident management.
 
         Get hourly usage for incident management.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1329,7 +1329,8 @@ class UsageMeteringApi(object):
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+            **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -1359,12 +1360,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_incident_management_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_incident_management_endpoint.call_with_http_info(**kwargs)
 
     def get_ingested_spans(self, start_hr, **kwargs):
-        """Get hourly usage for ingested spans
+        """Get hourly usage for ingested spans.
 
         Get hourly usage for ingested spans.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1373,7 +1376,8 @@ class UsageMeteringApi(object):
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+            **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -1403,12 +1407,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_ingested_spans_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_ingested_spans_endpoint.call_with_http_info(**kwargs)
 
     def get_monthly_custom_reports(self, **kwargs):
-        """Get the list of available monthly custom reports
+        """Get the list of available monthly custom reports.
 
         Get monthly custom reports.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1453,16 +1459,18 @@ class UsageMeteringApi(object):
         return self._get_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_monthly_usage_attribution(self, start_month, fields, **kwargs):
-        """Get Monthly Usage Attribution
+        """Get Monthly Usage Attribution.
 
         Get Monthly Usage Attribution.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_monthly_usage_attribution(start_month, fields, async_req=True)
         >>> result = thread.get()
 
-        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
+        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month.
+            Maximum of 15 months ago.
         :type start_month: datetime
         :param fields: Comma-separated list of usage types to return, or `*` for all usage types.
         :type fields: MonthlyUsageAttributionSupportedMetrics
@@ -1504,13 +1512,16 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_monthly_usage_attribution_endpoint.default_arguments(kwargs)
         kwargs["start_month"] = start_month
+
         kwargs["fields"] = fields
+
         return self._get_monthly_usage_attribution_endpoint.call_with_http_info(**kwargs)
 
     def get_specified_daily_custom_reports(self, report_id, **kwargs):
-        """Get specified daily custom reports
+        """Get specified daily custom reports.
 
         Get specified daily custom reports.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1547,12 +1558,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_specified_daily_custom_reports_endpoint.default_arguments(kwargs)
         kwargs["report_id"] = report_id
+
         return self._get_specified_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_specified_monthly_custom_reports(self, report_id, **kwargs):
-        """Get specified monthly custom reports
+        """Get specified monthly custom reports.
 
         Get specified monthly custom reports.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1589,12 +1602,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_specified_monthly_custom_reports_endpoint.default_arguments(kwargs)
         kwargs["report_id"] = report_id
+
         return self._get_specified_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_analyzed_logs(self, start_hr, **kwargs):
-        """Get hourly usage for analyzed logs
+        """Get hourly usage for analyzed logs.
 
         Get hourly usage for analyzed logs (Security Monitoring).
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1603,7 +1618,8 @@ class UsageMeteringApi(object):
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+            **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -1633,19 +1649,22 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_analyzed_logs_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_analyzed_logs_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_attribution(self, start_month, fields, **kwargs):
-        """Get Usage Attribution
+        """Get Usage Attribution.
 
         Get Usage Attribution.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_attribution(start_month, fields, async_req=True)
         >>> result = thread.get()
 
-        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
+        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month.
+            Maximum of 15 months ago.
         :type start_month: datetime
         :param fields: Comma-separated list of usage types to return, or `*` for all usage types.
         :type fields: UsageAttributionSupportedMetrics
@@ -1655,11 +1674,11 @@ class UsageMeteringApi(object):
         :type sort_direction: UsageSortDirection, optional
         :param sort_name: The field to sort by.
         :type sort_name: UsageAttributionSort, optional
-        :param include_descendants: Include child org usage in the response. Defaults to false. If omitted the server will use the default value of False.
+        :param include_descendants: Include child org usage in the response. Defaults to false.
         :type include_descendants: bool, optional
-        :param offset: Number of records to skip before beginning to return. If omitted the server will use the default value of 0.
+        :param offset: Number of records to skip before beginning to return.
         :type offset: int, optional
-        :param limit: Maximum number of records to be returned. If omitted the server will use the default value of 5000.
+        :param limit: Maximum number of records to be returned.
         :type limit: int, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -1689,13 +1708,16 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_attribution_endpoint.default_arguments(kwargs)
         kwargs["start_month"] = start_month
+
         kwargs["fields"] = fields
+
         return self._get_usage_attribution_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_audit_logs(self, start_hr, **kwargs):
-        """Get hourly usage for audit logs
+        """Get hourly usage for audit logs.
 
         Get hourly usage for audit logs.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1704,7 +1726,8 @@ class UsageMeteringApi(object):
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+            **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -1734,12 +1757,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_audit_logs_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_audit_logs_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_billable_summary(self, **kwargs):
-        """Get billable usage across your account
+        """Get billable usage across your account.
 
         Get billable usage across your account.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1778,9 +1803,10 @@ class UsageMeteringApi(object):
         return self._get_usage_billable_summary_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_cloud_security_posture_management(self, start_hr, **kwargs):
-        """Get hourly usage for CSPM
+        """Get hourly usage for CSPM.
 
         Get hourly usage for Cloud Security Posture Management (CSPM).
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1789,7 +1815,8 @@ class UsageMeteringApi(object):
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+            **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -1819,12 +1846,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_cloud_security_posture_management_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_cloud_security_posture_management_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_cws(self, start_hr, **kwargs):
-        """Get hourly usage for Cloud Workload Security
+        """Get hourly usage for Cloud Workload Security.
 
         Get hourly usage for Cloud Workload Security.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1833,7 +1862,8 @@ class UsageMeteringApi(object):
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+            **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -1863,12 +1893,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_cws_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_cws_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_dbm(self, start_hr, **kwargs):
-        """Get hourly usage for Database Monitoring
+        """Get hourly usage for Database Monitoring.
 
         Get hourly usage for Database Monitoring
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1877,7 +1909,8 @@ class UsageMeteringApi(object):
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+            **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -1907,12 +1940,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_dbm_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_dbm_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_fargate(self, start_hr, **kwargs):
-        """Get hourly usage for Fargate
+        """Get hourly usage for Fargate.
 
         Get hourly usage for [Fargate](https://docs.datadoghq.com/integrations/ecs_fargate/).
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1951,12 +1986,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_fargate_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_fargate_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_hosts(self, start_hr, **kwargs):
-        """Get hourly usage for hosts and containers
+        """Get hourly usage for hosts and containers.
 
         Get hourly usage for hosts and containers.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1995,12 +2032,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_hosts_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_hosts_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_indexed_spans(self, start_hr, **kwargs):
-        """Get hourly usage for indexed spans
+        """Get hourly usage for indexed spans.
 
         Get hourly usage for indexed spans.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2039,12 +2078,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_indexed_spans_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_indexed_spans_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_internet_of_things(self, start_hr, **kwargs):
-        """Get hourly usage for IoT
+        """Get hourly usage for IoT.
 
         Get hourly usage for IoT.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2053,7 +2094,8 @@ class UsageMeteringApi(object):
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+            **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -2083,12 +2125,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_internet_of_things_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_internet_of_things_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_lambda(self, start_hr, **kwargs):
-        """Get hourly usage for Lambda
+        """Get hourly usage for Lambda.
 
         Get hourly usage for lambda.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2127,12 +2171,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_lambda_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_lambda_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_logs(self, start_hr, **kwargs):
-        """Get hourly usage for Logs
+        """Get hourly usage for Logs.
 
         Get hourly usage for logs.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2171,12 +2217,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_logs_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_logs_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_logs_by_index(self, start_hr, **kwargs):
-        """Get hourly usage for Logs by Index
+        """Get hourly usage for Logs by Index.
 
         Get hourly usage for logs by index.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2217,12 +2265,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_logs_by_index_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_logs_by_index_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_logs_by_retention(self, start_hr, **kwargs):
-        """Get hourly logs usage by retention
+        """Get hourly logs usage by retention.
 
         Get hourly usage for indexed logs by retention period.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2231,7 +2281,8 @@ class UsageMeteringApi(object):
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+            **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -2261,12 +2312,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_logs_by_retention_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_logs_by_retention_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_network_flows(self, start_hr, **kwargs):
-        """Get hourly usage for Network Flows
+        """Get hourly usage for Network Flows.
 
         Get hourly usage for network flows.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2275,7 +2328,8 @@ class UsageMeteringApi(object):
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+            **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -2305,12 +2359,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_network_flows_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_network_flows_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_network_hosts(self, start_hr, **kwargs):
-        """Get hourly usage for Network Hosts
+        """Get hourly usage for Network Hosts.
 
         Get hourly usage for network hosts.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2349,12 +2405,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_network_hosts_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_network_hosts_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_profiling(self, start_hr, **kwargs):
-        """Get hourly usage for profiled hosts
+        """Get hourly usage for profiled hosts.
 
         Get hourly usage for profiled hosts.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2363,7 +2421,8 @@ class UsageMeteringApi(object):
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+            **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -2393,12 +2452,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_profiling_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_profiling_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_rum_sessions(self, start_hr, **kwargs):
-        """Get hourly usage for RUM Sessions
+        """Get hourly usage for RUM Sessions.
 
         Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/) Sessions.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2439,12 +2500,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_rum_sessions_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_rum_sessions_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_rum_units(self, start_hr, **kwargs):
-        """Get hourly usage for RUM Units
+        """Get hourly usage for RUM Units.
 
         Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/) Units.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2483,12 +2546,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_rum_units_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_rum_units_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_sds(self, start_hr, **kwargs):
-        """Get hourly usage for Sensitive Data Scanner
+        """Get hourly usage for Sensitive Data Scanner.
 
         Get hourly usage for Sensitive Data Scanner.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2497,7 +2562,8 @@ class UsageMeteringApi(object):
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+            **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -2527,12 +2593,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_sds_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_sds_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_snmp(self, start_hr, **kwargs):
-        """Get hourly usage for SNMP devices
+        """Get hourly usage for SNMP devices.
 
         Get hourly usage for SNMP devices.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2541,7 +2609,8 @@ class UsageMeteringApi(object):
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+            **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -2571,19 +2640,22 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_snmp_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_snmp_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_summary(self, start_month, **kwargs):
-        """Get usage across your multi-org account
+        """Get usage across your multi-org account.
 
         Get usage across your multi-org account. You must have the multi-org feature enabled.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.get_usage_summary(start_month, async_req=True)
         >>> result = thread.get()
 
-        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
+        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month.
+            Maximum of 15 months ago.
         :type start_month: datetime
         :param end_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.
         :type end_month: datetime, optional
@@ -2617,12 +2689,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_summary_endpoint.default_arguments(kwargs)
         kwargs["start_month"] = start_month
+
         return self._get_usage_summary_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_synthetics(self, start_hr, **kwargs):
-        """Get hourly usage for Synthetics Checks
+        """Get hourly usage for Synthetics Checks.
 
         Get hourly usage for [Synthetics checks](https://docs.datadoghq.com/synthetics/).
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2661,12 +2735,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_synthetics_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_synthetics_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_synthetics_api(self, start_hr, **kwargs):
-        """Get hourly usage for Synthetics API Checks
+        """Get hourly usage for Synthetics API Checks.
 
         Get hourly usage for [synthetics API checks](https://docs.datadoghq.com/synthetics/).
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2705,12 +2781,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_synthetics_api_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_synthetics_api_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_synthetics_browser(self, start_hr, **kwargs):
-        """Get hourly usage for Synthetics Browser Checks
+        """Get hourly usage for Synthetics Browser Checks.
 
         Get hourly usage for synthetics browser checks.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2749,12 +2827,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_synthetics_browser_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_synthetics_browser_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_timeseries(self, start_hr, **kwargs):
-        """Get hourly usage for custom metrics
+        """Get hourly usage for custom metrics.
 
         Get hourly usage for [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/).
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2793,12 +2873,14 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_timeseries_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
+
         return self._get_usage_timeseries_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_top_avg_metrics(self, **kwargs):
-        """Get all custom metrics by hourly average
+        """Get all custom metrics by hourly average.
 
         Get all [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average. Use the month parameter to get a month-to-date data resolution or use the day parameter to get a daily resolution. One of the two is required, and only one of the two is allowed.
+
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -2811,7 +2893,7 @@ class UsageMeteringApi(object):
         :type day: datetime, optional
         :param names: Comma-separated list of metric names.
         :type names: [str], optional
-        :param limit: Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified. If omitted the server will use the default value of 500.
+        :param limit: Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified.
         :type limit: int, optional
         :param next_record_id: List following results with a next_record_id provided in the previous query.
         :type next_record_id: str, optional

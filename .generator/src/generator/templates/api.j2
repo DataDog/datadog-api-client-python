@@ -1,0 +1,185 @@
+{% include "api_info.j2" %}
+
+
+from {{ config["packageName"] }}.api_client import ApiClient, Endpoint as _Endpoint
+from {{ config["packageName"] }}.model_utils import (
+    date,
+    datetime,
+    file_type,
+    none_type,
+)
+{%- for model in get_api_models(operations) %}
+from {{ config["packageName"] }}.model.{{ model|snake_case }} import {{ model }}
+{%- endfor %}
+
+{% set classname = name.replace(" ", "") + "Api" %}
+class {{ classname }}:
+
+    def __init__(self, api_client=None):
+        if api_client is None:
+            api_client = ApiClient()
+        self.api_client = api_client
+{% for path, method, operation in operations|sort(attribute="2.operationId") %}
+    {%- set httpMethod = method.upper() %}
+    {%- set returnType = operation|return_type %}
+        self._{{ operation.operationId|snake_case }}_endpoint = _Endpoint(
+            settings={
+                "response_type": {% if returnType %}({{ returnType }},){% else %}None{% endif %},
+    {%- set authMethods = operation.security if "security" in operation else openapi.security %}
+                "auth": [
+{%- for auth in (authMethods or []) %}"{{ '", "'.join(auth.keys()) }}"{%- if not loop.last %}, {% endif %}{%- endfor %}],
+                "endpoint_path": "{{ path }}",
+                "operation_id": "{{ operation.operationId|snake_case }}",
+                "http_method": "{{httpMethod}}",
+{%- set servers = operation.servers %}
+{%- if servers %}
+                "servers": [
+{%- for server in servers %}
+                    {
+                        "url": "{{ server.url }}",
+                        "variables": {
+{%- for name, variable in server.get("variables", {}).items() %}
+                            "{{ name }}": {
+                                "description": "{{ variable.description }}",
+                                "default_value": "{{ variable.default }}",
+{%- for value in variable.enum %}
+{%- if loop.first %}
+                                "enum_values": [
+{%- endif %}
+                                    "{{ value }}",
+{%- if loop.last %}
+                                ],
+{%- endif %}
+{%- endfor %}
+                            },
+{%- endfor %}
+                        },
+                    },
+{%- endfor %}
+                ],
+{%- else %}
+                "servers": None,
+{%- endif %}
+            },
+            params_map={
+      {%- for name, parameter in operation|parameters %}
+      {%- set schema = parameter|parameter_schema %}
+                "{{ name|attribute_name }}": {
+                    {%- if parameter.required %}
+                    "required": True,{% endif %}
+                    {%- if parameter.nullable %}"nullable": True,{% endif %}
+{%- set has_validation = (
+      (not schema.nullable and required) or
+      schema.maxLength is defined or
+      schema.minLength is defined or
+      schema.maximum is defined or
+      schema.minimum is defined or
+      schema.pattern is defined or
+      schema.maxItems is defined or
+      schema.minItems is defined
+    ) %}
+{%- if has_validation %}
+                    "validation": {
+{%- if schema.maxLength is defined %}
+                        "max_length": {{ schema.maxLength }},
+{%- endif %}
+{%- if schema.minLength is defined %}
+                        "min_length": {{ schema.minLength }},
+{%- endif %}
+{%- if schema.maxItems is defined %}
+                        "max_items": {{ schema.maxItems }},
+{%- endif %}
+{%- if schema.minItems is defined %}
+                        "min_items": {{ schema.minItems }},
+{%- endif %}
+{%- if schema.maximum is defined %}
+                        "{% if schema.exclusiveMaximum %}exclusive{% else %}inclusive{% endif %}_maximum": {{ schema.maximum }},
+{%- endif %}
+{%- if schema.minimum is defined %}
+                        "{% if schema.exclusiveMinimum %}exclusive{% else %}inclusive{% endif %}_minimum": {{ schema.minimum }},
+{%- endif %}
+                    },
+{%- endif %}
+                    "openapi_types": ({{ get_type_for_parameter(parameter) }},),
+                    {%- if name == "body" %}
+                    "location": "body",
+                    {%- else %}
+                    "attribute": "{{ name }}",
+                    "location": "{{ parameter.in }}",
+                    {%- endif %}
+      {%- set collection = parameter|collection_format %}
+      {%- if collection %}
+                    "collection_format": "{{ collection }}",
+      {%- endif %}
+                },
+       {%- endfor %}
+            },
+            headers_map={
+                "accept": [
+{%- for mediaType in operation|accept_headers %}"{{ mediaType }}"{%- if not loop.last %}, {% endif %}{%- endfor %}],
+{%- if operation.requestBody %}
+                "content_type": [
+{%- for mediaType in operation.requestBody.content.keys() %}"{{ mediaType }}"{%- if not loop.last %}, {% endif %}{%- endfor %}]
+{% else %}
+                "content_type": [],
+{%- endif %}
+            },
+            api_client=api_client,
+        )
+{% endfor %}
+
+{%- for path, method, operation in operations|sort(attribute="2.operationId") %}
+    def {{ operation.operationId|snake_case }}(self, {% for name, parameter in operation|parameters if parameter.required %}{{name|attribute_name}}, {% endfor %}**kwargs):
+        """{{ operation.summary|indent(8) }}.
+{% if operation.description %}
+        {{ operation.description.replace("\\", "\\\\")|indent(8) }}
+{% endif %}
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True.
+
+        >>> thread = api.{{ operation.operationId|snake_case }}(
+{%- for name, parameter in operation|parameters if parameter.required %}{{name|attribute_name}}, {% endfor %}async_req=True)
+        >>> result = thread.get()
+{# keep new line #}
+
+{%- for name, parameter in operation|parameters if parameter.required %}
+{% if parameter.description %}        :param {{ name|attribute_name }}: {{ parameter.description|indent(12) }}{%- if parameter.default %} Defaults to {{ parameter.default }}.{% endif %}{% endif %}
+        :type {{ name|attribute_name }}: {{ get_type_for_parameter(parameter) }}
+{%- endfor %}
+{%- for name, parameter in operation|parameters if not parameter.required %}
+{% if parameter.description %}        :param {{ name|attribute_name }}: {{ parameter.description|indent(12) }}{%- if parameter.default %} If omitted the server will use the default value of {{ parameter.default }}.{% endif %}{% endif %}
+        :type {{ name|attribute_name }}: {{ get_type_for_parameter(parameter) }}, optional
+{%- endfor %}
+        :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+{%- set returnType = operation|return_type %}
+        :rtype: {% if returnType %}{{ returnType }}{% else %}None{% endif %}
+        """
+        kwargs = self._{{ operation.operationId|snake_case }}_endpoint.default_arguments(kwargs)
+{%- for name, parameter in operation|parameters if parameter.required %}
+        kwargs["{{ name|attribute_name }}"] = {{ name|attribute_name }}
+{% endfor %}
+        return self._{{ operation.operationId|snake_case }}_endpoint.call_with_http_info(**kwargs)
+{% endfor %}

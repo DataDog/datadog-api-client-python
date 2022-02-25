@@ -3,9 +3,9 @@ repos:
   hooks:
   - id: generate
     name: Generate
-    language: node
+    language: system
     entry: make
-    files: '^(\.generator/.*|\.pre-commit-config\.yaml|setup\.cfg|Makefile)'
+    files: '^(\.generator/.*|\.pre-commit-config\.yaml|Makefile)'
     pass_filenames: false
   - id: docs
     name: Format documentation
@@ -28,15 +28,24 @@ repos:
     pass_filenames: false
     additional_dependencies:
       - Sphinx
-  - id: openapi-generator
-    name: OpenAPI-generator
-    language: node
-    entry: bash -c "cd .generator && openapi-generator-cli generate"
-    files: "^.generator/.*"
+  - id: generator-v1
+    name: generator-v1
+    language: python
+    entry: bash -c "cd .generator && poetry install && poetry run python -m generator -i ./schemas/v1/openapi.yaml -o ../src/"
+    files: "^.generator/(config|schemas/v1|src|poetry.lock|pyproject.toml)"
     stages: [manual]
     pass_filenames: false
     additional_dependencies:
-      - "@openapitools/openapi-generator-cli"
+      - "poetry"
+  - id: generator-v2
+    name: generator-v2
+    language: python
+    entry: bash -c "cd .generator && poetry install && poetry run python -m generator -i ./schemas/v2/openapi.yaml -o ../src/"
+    files: "^.generator/(config|schemas/v2|src|poetry.lock|pyproject.toml)"
+    stages: [manual]
+    pass_filenames: false
+    additional_dependencies:
+      - "poetry"
 - repo: https://github.com/psf/black
   rev: 21.12b0
   hooks:
