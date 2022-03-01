@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Get_a_dashboard_returns_OK_response-1645779308
+      with Profile Metrics Query","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"u9q-fdh-vhp","title":"Test-Get_a_dashboard_returns_OK_response-1645779308
+        with Profile Metrics Query","url":"/dashboard/u9q-fdh-vhp/test-getadashboardreturnsokresponse-1645779308-with-profile-metrics-query","created_at":"2022-02-25T08:55:09.197511+00:00","modified_at":"2022-02-25T08:55:09.197511+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"id":4650197596442225}],"layout_type":"ordered"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/dashboard/u9q-fdh-vhp
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"u9q-fdh-vhp","title":"Test-Get_a_dashboard_returns_OK_response-1645779308
+        with Profile Metrics Query","url":"/dashboard/u9q-fdh-vhp/test-getadashboardreturnsokresponse-1645779308-with-profile-metrics-query","created_at":"2022-02-25T08:55:09.197511+00:00","modified_at":"2022-02-25T08:55:09.197511+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"id":4650197596442225}],"layout_type":"ordered"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/u9q-fdh-vhp
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"u9q-fdh-vhp"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
