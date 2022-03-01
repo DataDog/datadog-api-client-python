@@ -372,12 +372,14 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 404 Dashboards Not Found
 
-  @generated @skip @team:DataDog/dashboards
+  @team:DataDog/dashboards
   Scenario: Delete a dashboard returns "OK" response
+    Given there is a valid "dashboard" in the system
     Given new "DeleteDashboard" request
-    And request contains "dashboard_id" parameter from "REPLACE.ME"
+    And request contains "dashboard_id" parameter from "dashboard.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "deleted_dashboard_id" is equal to "{{ dashboard.id }}"
 
   @generated @skip @team:DataDog/dashboards
   Scenario: Delete dashboards returns "Bad Request" response
@@ -408,12 +410,14 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 404 Item Not Found
 
-  @generated @skip @team:DataDog/dashboards
+  @team:DataDog/dashboards
   Scenario: Get a dashboard returns "OK" response
+    Given there is a valid "dashboard" in the system
     Given new "GetDashboard" request
-    And request contains "dashboard_id" parameter from "REPLACE.ME"
+    And request contains "dashboard_id" parameter from "dashboard.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "description" is equal to null
 
   @replay-only @team:DataDog/dashboards
   Scenario: Get a dashboard returns 'author_name'
@@ -455,10 +459,12 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 404 Dashboards Not Found
 
-  @generated @skip @team:DataDog/dashboards
+  @team:DataDog/dashboards
   Scenario: Restore deleted dashboards returns "No Content" response
-    Given new "RestoreDashboards" request
-    And body with value {"data": [{"id": "123-abc-456", "type": "dashboard"}]}
+    Given there is a valid "dashboard" in the system
+    And the "dashboard" was deleted
+    And new "RestoreDashboards" request
+    And body with value {"data": [{"id": "{{ dashboard.id }}", "type": "dashboard"}]}
     When the request is sent
     Then the response status is 204 No Content
 
@@ -478,10 +484,12 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 404 Item Not Found
 
-  @generated @skip @team:DataDog/dashboards
+  @team:DataDog/dashboards
   Scenario: Update a dashboard returns "OK" response
+    Given there is a valid "dashboard" in the system
     Given new "UpdateDashboard" request
-    And request contains "dashboard_id" parameter from "REPLACE.ME"
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [null], "reflow_type": "auto", "restricted_roles": [null], "template_variable_presets": [{"name": null, "template_variables": [{"name": null, "value": null}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    And request contains "dashboard_id" parameter from "dashboard.id"
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","description":"Updated description","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"issue_stream","query_string":""},"response_format":"event_list"}]}}]}
     When the request is sent
     Then the response status is 200 OK
+    And the response "description" is equal to "Updated description"
