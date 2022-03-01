@@ -37,7 +37,7 @@ function camel(value) {
 }
 
 /^# datadog_api_client\.v[0-9]*\.(.+)Api/ {
-    tag = slug(substr($2, 23, length($2)-25));
+    tag = tolower(slug(substr($2, 23, length($2)-25)));
 }
 /^##? \*\*.+\*\*/ {
     operation_id = camel(substr($2, 3, length($2)-4));
