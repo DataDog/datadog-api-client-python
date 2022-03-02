@@ -29,6 +29,10 @@ class UsageSummaryDateOrg(ModelNormal):
             "browser_rum_lite_session_count_sum": (int,),
             "browser_rum_replay_session_count_sum": (int,),
             "browser_rum_units_sum": (int,),
+            "ci_pipeline_indexed_spans_sum": (int,),
+            "ci_test_indexed_spans_sum": (int,),
+            "ci_visibility_pipeline_committers_hwm": (int,),
+            "ci_visibility_test_committers_hwm": (int,),
             "container_avg": (int,),
             "container_hwm": (int,),
             "cspm_aas_host_top99p": (int,),
@@ -90,6 +94,10 @@ class UsageSummaryDateOrg(ModelNormal):
         "browser_rum_lite_session_count_sum": "browser_rum_lite_session_count_sum",
         "browser_rum_replay_session_count_sum": "browser_rum_replay_session_count_sum",
         "browser_rum_units_sum": "browser_rum_units_sum",
+        "ci_pipeline_indexed_spans_sum": "ci_pipeline_indexed_spans_sum",
+        "ci_test_indexed_spans_sum": "ci_test_indexed_spans_sum",
+        "ci_visibility_pipeline_committers_hwm": "ci_visibility_pipeline_committers_hwm",
+        "ci_visibility_test_committers_hwm": "ci_visibility_test_committers_hwm",
         "container_avg": "container_avg",
         "container_hwm": "container_hwm",
         "cspm_aas_host_top99p": "cspm_aas_host_top99p",
@@ -181,6 +189,18 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param browser_rum_units_sum: Shows the sum of all browser RUM units over all hours in the current date for the given org.
         :type browser_rum_units_sum: int, optional
+
+        :param ci_pipeline_indexed_spans_sum: Shows the sum of all CI pipeline indexed spans over all hours in the current date for the given org.
+        :type ci_pipeline_indexed_spans_sum: int, optional
+
+        :param ci_test_indexed_spans_sum: Shows the sum of all CI test indexed spans over all hours in the current date for the given org.
+        :type ci_test_indexed_spans_sum: int, optional
+
+        :param ci_visibility_pipeline_committers_hwm: Shows the high-water mark of all CI visibility pipeline committers over all hours in the current date for the given org.
+        :type ci_visibility_pipeline_committers_hwm: int, optional
+
+        :param ci_visibility_test_committers_hwm: Shows the high-water mark of all CI visibility test committers over all hours in the current date for the given org.
+        :type ci_visibility_test_committers_hwm: int, optional
 
         :param container_avg: Shows the average of all distinct containers over all hours in the current date for the given org.
         :type container_avg: int, optional
