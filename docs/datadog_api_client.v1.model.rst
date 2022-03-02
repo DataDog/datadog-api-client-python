@@ -4585,6 +4585,22 @@ usage\_billable\_summary\_response
    :undoc-members:
    :show-inheritance:
 
+usage\_ci\_visibility\_hour
+---------------------------
+
+.. automodule:: datadog_api_client.v1.model.usage_ci_visibility_hour
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+usage\_ci\_visibility\_response
+-------------------------------
+
+.. automodule:: datadog_api_client.v1.model.usage_ci_visibility_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 usage\_cloud\_security\_posture\_management\_hour
 -------------------------------------------------
 
