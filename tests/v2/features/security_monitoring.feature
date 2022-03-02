@@ -22,6 +22,13 @@ Feature: Security Monitoring
     Then the response status is 200 OK
 
   @team:DataDog/security-monitoring
+  Scenario: Create a detection rule with type 'impossible_travel' returns "OK" response
+    Given new "CreateSecurityMonitoringRule" request
+    And body with value {"queries":[{"aggregation":"geo_data","groupByFields":["@usr.id"],"distinctFields":[],"metric":"@network.client.geoip","query":"*"}],"cases":[{"name":"","status":"info","notifications":[]}],"hasExtendedTitle":true,"message":"test","isEnabled":true,"options":{"maxSignalDuration":86400,"evaluationWindow":900,"keepAlive":3600,"detectionMethod":"impossible_travel","impossibleTravelOptions":{"baselineUserLocations":false}},"name":"{{ unique }}","type":"log_detection","tags":[],"filters":[]}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/security-monitoring
   Scenario: Create a detection rule with type 'workload_security' returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type": "workload_security"}
@@ -207,7 +214,7 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "Bad Request" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "critical"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
+    And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "critical"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -215,7 +222,7 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "Not Found" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "critical"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
+    And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "critical"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -223,6 +230,6 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "critical"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
+    And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "critical"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
     When the request is sent
     Then the response status is 200 OK

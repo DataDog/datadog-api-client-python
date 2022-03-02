@@ -18,6 +18,7 @@ class SecurityMonitoringRuleQueryAggregation(ModelSimple):
             "SUM": "sum",
             "MAX": "max",
             "NEW_VALUE": "new_value",
+            "GEO_DATA": "geo_data",
         },
     }
 
@@ -35,7 +36,7 @@ class SecurityMonitoringRuleQueryAggregation(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["count", "cardinality", "sum", "max", "new_value"].
+        :param value: Must be one of ["count", "cardinality", "sum", "max", "new_value", "geo_data"].
         :type value: str
         """
         super().__init__(kwargs)
