@@ -16,6 +16,9 @@ def lazy_import():
     from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
         SecurityMonitoringRuleEvaluationWindow,
     )
+    from datadog_api_client.v2.model.security_monitoring_rule_impossible_travel_options import (
+        SecurityMonitoringRuleImpossibleTravelOptions,
+    )
     from datadog_api_client.v2.model.security_monitoring_rule_keep_alive import SecurityMonitoringRuleKeepAlive
     from datadog_api_client.v2.model.security_monitoring_rule_max_signal_duration import (
         SecurityMonitoringRuleMaxSignalDuration,
@@ -26,6 +29,7 @@ def lazy_import():
 
     globals()["SecurityMonitoringRuleDetectionMethod"] = SecurityMonitoringRuleDetectionMethod
     globals()["SecurityMonitoringRuleEvaluationWindow"] = SecurityMonitoringRuleEvaluationWindow
+    globals()["SecurityMonitoringRuleImpossibleTravelOptions"] = SecurityMonitoringRuleImpossibleTravelOptions
     globals()["SecurityMonitoringRuleKeepAlive"] = SecurityMonitoringRuleKeepAlive
     globals()["SecurityMonitoringRuleMaxSignalDuration"] = SecurityMonitoringRuleMaxSignalDuration
     globals()["SecurityMonitoringRuleNewValueOptions"] = SecurityMonitoringRuleNewValueOptions
@@ -41,6 +45,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         return {
             "detection_method": (SecurityMonitoringRuleDetectionMethod,),
             "evaluation_window": (SecurityMonitoringRuleEvaluationWindow,),
+            "impossible_travel_options": (SecurityMonitoringRuleImpossibleTravelOptions,),
             "keep_alive": (SecurityMonitoringRuleKeepAlive,),
             "max_signal_duration": (SecurityMonitoringRuleMaxSignalDuration,),
             "new_value_options": (SecurityMonitoringRuleNewValueOptions,),
@@ -49,6 +54,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
     attribute_map = {
         "detection_method": "detectionMethod",
         "evaluation_window": "evaluationWindow",
+        "impossible_travel_options": "impossibleTravelOptions",
         "keep_alive": "keepAlive",
         "max_signal_duration": "maxSignalDuration",
         "new_value_options": "newValueOptions",
@@ -66,6 +72,9 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         :param evaluation_window: A time window is specified to match when at least one of the cases matches true. This is a sliding window
             and evaluates in real time.
         :type evaluation_window: SecurityMonitoringRuleEvaluationWindow, optional
+
+        :param impossible_travel_options: Options on impossible travel rules.
+        :type impossible_travel_options: SecurityMonitoringRuleImpossibleTravelOptions, optional
 
         :param keep_alive: Once a signal is generated, the signal will remain “open” if a case is matched at least once within
             this keep alive window.
