@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.10.0 / 2022-03-02
+
+### Fixed
+* Add missing type to enum by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/844
+* Add nullable user relationships to incidents and use this relationship schema for `commander_user` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/799
+* Fix event intake response by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/849
+* Use custom generator by @therve in https://github.com/DataDog/datadog-api-client-python/pull/853
+### Added
+* [Synthetics] Add missing option for SSL tests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/851
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/1.9.0...1.10.0
+
 ## 1.9.0 / 2022-02-17
 
 ### Fixed
