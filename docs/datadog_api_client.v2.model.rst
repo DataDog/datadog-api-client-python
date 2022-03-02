@@ -2681,6 +2681,14 @@ security\_monitoring\_rule\_evaluation\_window
    :undoc-members:
    :show-inheritance:
 
+security\_monitoring\_rule\_impossible\_travel\_options
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_impossible_travel_options
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 security\_monitoring\_rule\_keep\_alive
 ---------------------------------------
 
