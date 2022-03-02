@@ -381,6 +381,9 @@ from datadog_api_client.v2.model.security_monitoring_rule_detection_method impor
 from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
     SecurityMonitoringRuleEvaluationWindow,
 )
+from datadog_api_client.v2.model.security_monitoring_rule_impossible_travel_options import (
+    SecurityMonitoringRuleImpossibleTravelOptions,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_keep_alive import SecurityMonitoringRuleKeepAlive
 from datadog_api_client.v2.model.security_monitoring_rule_max_signal_duration import (
     SecurityMonitoringRuleMaxSignalDuration,
