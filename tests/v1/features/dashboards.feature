@@ -375,7 +375,7 @@ Feature: Dashboards
   @team:DataDog/dashboards
   Scenario: Delete a dashboard returns "OK" response
     Given there is a valid "dashboard" in the system
-    Given new "DeleteDashboard" request
+    And new "DeleteDashboard" request
     And request contains "dashboard_id" parameter from "dashboard.id"
     When the request is sent
     Then the response status is 200 OK
@@ -413,7 +413,7 @@ Feature: Dashboards
   @team:DataDog/dashboards
   Scenario: Get a dashboard returns "OK" response
     Given there is a valid "dashboard" in the system
-    Given new "GetDashboard" request
+    And new "GetDashboard" request
     And request contains "dashboard_id" parameter from "dashboard.id"
     When the request is sent
     Then the response status is 200 OK
@@ -487,7 +487,7 @@ Feature: Dashboards
   @team:DataDog/dashboards
   Scenario: Update a dashboard returns "OK" response
     Given there is a valid "dashboard" in the system
-    Given new "UpdateDashboard" request
+    And new "UpdateDashboard" request
     And request contains "dashboard_id" parameter from "dashboard.id"
     And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","description":"Updated description","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"issue_stream","query_string":""},"response_format":"event_list"}]}}]}
     When the request is sent

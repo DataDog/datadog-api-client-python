@@ -6,6 +6,7 @@
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
 )
 
 
@@ -23,7 +24,7 @@ class LogsByRetentionMonthlyUsage(ModelNormal):
     def openapi_types():
         lazy_import()
         return {
-            "date": (str,),
+            "date": (datetime,),
             "usage": ([LogsRetentionSumUsage],),
         }
 
@@ -39,7 +40,7 @@ class LogsByRetentionMonthlyUsage(ModelNormal):
         Object containing a summary of indexed logs usage by retention period for a single month.
 
         :param date: The month for the usage.
-        :type date: str, optional
+        :type date: datetime, optional
 
         :param usage: Indexed logs usage for each active retention for the month.
         :type usage: [LogsRetentionSumUsage], optional
