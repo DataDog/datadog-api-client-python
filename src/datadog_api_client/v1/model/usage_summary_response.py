@@ -40,6 +40,10 @@ class UsageSummaryResponse(ModelNormal):
             "browser_rum_lite_session_count_agg_sum": (int,),
             "browser_rum_replay_session_count_agg_sum": (int,),
             "browser_rum_units_agg_sum": (int,),
+            "ci_pipeline_indexed_spans_agg_sum": (int,),
+            "ci_test_indexed_spans_agg_sum": (int,),
+            "ci_visibility_pipeline_committers_hwm_sum": (int,),
+            "ci_visibility_test_committers_hwm_sum": (int,),
             "container_avg_sum": (int,),
             "container_hwm_sum": (int,),
             "cspm_aas_host_top99p_sum": (int,),
@@ -109,6 +113,10 @@ class UsageSummaryResponse(ModelNormal):
         "browser_rum_lite_session_count_agg_sum": "browser_rum_lite_session_count_agg_sum",
         "browser_rum_replay_session_count_agg_sum": "browser_rum_replay_session_count_agg_sum",
         "browser_rum_units_agg_sum": "browser_rum_units_agg_sum",
+        "ci_pipeline_indexed_spans_agg_sum": "ci_pipeline_indexed_spans_agg_sum",
+        "ci_test_indexed_spans_agg_sum": "ci_test_indexed_spans_agg_sum",
+        "ci_visibility_pipeline_committers_hwm_sum": "ci_visibility_pipeline_committers_hwm_sum",
+        "ci_visibility_test_committers_hwm_sum": "ci_visibility_test_committers_hwm_sum",
         "container_avg_sum": "container_avg_sum",
         "container_hwm_sum": "container_hwm_sum",
         "cspm_aas_host_top99p_sum": "cspm_aas_host_top99p_sum",
@@ -210,6 +218,18 @@ class UsageSummaryResponse(ModelNormal):
 
         :param browser_rum_units_agg_sum: Shows the sum of all browser RUM units over all hours in the current months for all organizations.
         :type browser_rum_units_agg_sum: int, optional
+
+        :param ci_pipeline_indexed_spans_agg_sum: Shows the sum of all CI pipeline indexed spans over all hours in the current months for all organizations.
+        :type ci_pipeline_indexed_spans_agg_sum: int, optional
+
+        :param ci_test_indexed_spans_agg_sum: Shows the sum of all CI test indexed spans over all hours in the current months for all organizations.
+        :type ci_test_indexed_spans_agg_sum: int, optional
+
+        :param ci_visibility_pipeline_committers_hwm_sum: Shows the high-water mark of all CI visibility pipeline committers over all hours in the current months for all organizations.
+        :type ci_visibility_pipeline_committers_hwm_sum: int, optional
+
+        :param ci_visibility_test_committers_hwm_sum: Shows the high-water mark of all CI visibility test committers over all hours in the current months for all organizations.
+        :type ci_visibility_test_committers_hwm_sum: int, optional
 
         :param container_avg_sum: Shows the average of all distinct containers over all hours in the current months for all organizations.
         :type container_avg_sum: int, optional

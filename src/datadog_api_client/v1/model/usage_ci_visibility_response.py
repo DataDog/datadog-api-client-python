@@ -6,17 +6,16 @@
 from datadog_api_client.v1.model_utils import (
     ModelNormal,
     cached_property,
-    datetime,
 )
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.logs_retention_sum_usage import LogsRetentionSumUsage
+    from datadog_api_client.v1.model.usage_ci_visibility_hour import UsageCIVisibilityHour
 
-    globals()["LogsRetentionSumUsage"] = LogsRetentionSumUsage
+    globals()["UsageCIVisibilityHour"] = UsageCIVisibilityHour
 
 
-class LogsByRetentionMonthlyUsage(ModelNormal):
+class UsageCIVisibilityResponse(ModelNormal):
 
     validations = {}
 
@@ -24,12 +23,10 @@ class LogsByRetentionMonthlyUsage(ModelNormal):
     def openapi_types():
         lazy_import()
         return {
-            "date": (datetime,),
-            "usage": ([LogsRetentionSumUsage],),
+            "usage": ([UsageCIVisibilityHour],),
         }
 
     attribute_map = {
-        "date": "date",
         "usage": "usage",
     }
 
@@ -37,13 +34,10 @@ class LogsByRetentionMonthlyUsage(ModelNormal):
 
     def __init__(self, *args, **kwargs):
         """
-        Object containing a summary of indexed logs usage by retention period for a single month.
+        CI visibility usage response
 
-        :param date: The month for the usage.
-        :type date: datetime, optional
-
-        :param usage: Indexed logs usage for each active retention for the month.
-        :type usage: [LogsRetentionSumUsage], optional
+        :param usage: Response containing CI visibility usage.
+        :type usage: [UsageCIVisibilityHour], optional
         """
         super().__init__(kwargs)
 
@@ -53,7 +47,7 @@ class LogsByRetentionMonthlyUsage(ModelNormal):
     def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
-        self = super(LogsByRetentionMonthlyUsage, cls)._from_openapi_data(kwargs)
+        self = super(UsageCIVisibilityResponse, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
 
