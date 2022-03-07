@@ -22314,10 +22314,6 @@ paths:
           description: Authentication Error
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       summary: Get all notebooks
       tags:
       - Notebooks
@@ -22485,10 +22481,6 @@ paths:
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       summary: Get a notebook
       tags:
       - Notebooks
