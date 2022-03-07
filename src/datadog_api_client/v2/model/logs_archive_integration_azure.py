@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class LogsArchiveIntegrationAzure(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "client_id": (str,),
             "tenant_id": (str,),
@@ -24,8 +21,6 @@ class LogsArchiveIntegrationAzure(ModelNormal):
         "client_id": "client_id",
         "tenant_id": "tenant_id",
     }
-
-    read_only_vars = {}
 
     def __init__(self, client_id, tenant_id, *args, **kwargs):
         """

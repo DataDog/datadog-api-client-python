@@ -10,7 +10,6 @@ from datadog_api_client.v1.model_utils import (
 
 
 class HTTPLogError(ModelNormal):
-
     validations = {
         "code": {
             "inclusive_maximum": 2147483647,
@@ -18,7 +17,7 @@ class HTTPLogError(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "code": (int,),
             "message": (str,),
@@ -28,8 +27,6 @@ class HTTPLogError(ModelNormal):
         "code": "code",
         "message": "message",
     }
-
-    read_only_vars = {}
 
     def __init__(self, code, message, *args, **kwargs):
         """

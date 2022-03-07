@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "field": (str,),
@@ -37,8 +34,6 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
         "parser": "parser",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, parser, type, *args, **kwargs):
         """

@@ -26,11 +26,8 @@ def lazy_import():
 
 
 class MonitorSummaryWidgetDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "color_preference": (WidgetColorPreference,),
@@ -63,8 +60,6 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
         "title_size": "title_size",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, query, type, *args, **kwargs):
         """

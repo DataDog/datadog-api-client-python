@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class HostTotals(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "total_active": (int,),
             "total_up": (int,),
@@ -24,8 +21,6 @@ class HostTotals(ModelNormal):
         "total_active": "total_active",
         "total_up": "total_up",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

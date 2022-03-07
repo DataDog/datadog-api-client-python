@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class MetricTagConfigurationUpdateAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "aggregations": (MetricCustomAggregations,),
@@ -33,8 +30,6 @@ class MetricTagConfigurationUpdateAttributes(ModelNormal):
         "include_percentiles": "include_percentiles",
         "tags": "tags",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

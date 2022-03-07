@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class SecurityMonitoringRuleQueryCreate(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "aggregation": (SecurityMonitoringRuleQueryAggregation,),
@@ -41,8 +38,6 @@ class SecurityMonitoringRuleQueryCreate(ModelNormal):
         "name": "name",
         "query": "query",
     }
-
-    read_only_vars = {}
 
     def __init__(self, query, *args, **kwargs):
         """

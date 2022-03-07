@@ -34,11 +34,8 @@ def lazy_import():
 
 
 class MonitorFormulaAndFunctionEventQueryDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "compute": (MonitorFormulaAndFunctionEventQueryDefinitionCompute,),
@@ -57,8 +54,6 @@ class MonitorFormulaAndFunctionEventQueryDefinition(ModelNormal):
         "name": "name",
         "search": "search",
     }
-
-    read_only_vars = {}
 
     def __init__(self, compute, data_source, name, *args, **kwargs):
         """

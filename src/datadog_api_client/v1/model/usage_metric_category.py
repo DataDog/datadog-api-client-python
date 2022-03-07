@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class UsageMetricCategory(ModelSimple):
+
     allowed_values = {
         "value": {
             "STANDARD": "standard",
@@ -18,10 +19,8 @@ class UsageMetricCategory(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

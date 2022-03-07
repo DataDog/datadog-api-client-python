@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class IncidentUpdateRelationships(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "commander_user": (NullableRelationshipToUser,),
@@ -39,8 +36,6 @@ class IncidentUpdateRelationships(ModelNormal):
         "integrations": "integrations",
         "postmortem": "postmortem",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -11,11 +11,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class MonitorThresholdWindowOptions(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "recovery_window": (str, none_type),
             "trigger_window": (str, none_type),
@@ -25,8 +22,6 @@ class MonitorThresholdWindowOptions(ModelNormal):
         "recovery_window": "recovery_window",
         "trigger_window": "trigger_window",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

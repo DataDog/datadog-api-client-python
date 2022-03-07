@@ -10,16 +10,15 @@ from datadog_api_client.v2.model_utils import (
 
 
 class LogsArchiveOrderDefinitionType(ModelSimple):
+
     allowed_values = {
         "value": {
             "ARCHIVE_ORDER": "archive_order",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

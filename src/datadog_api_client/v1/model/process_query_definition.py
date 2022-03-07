@@ -10,7 +10,6 @@ from datadog_api_client.v1.model_utils import (
 
 
 class ProcessQueryDefinition(ModelNormal):
-
     validations = {
         "limit": {
             "inclusive_minimum": 0,
@@ -18,7 +17,7 @@ class ProcessQueryDefinition(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "filter_by": ([str],),
             "limit": (int,),
@@ -32,8 +31,6 @@ class ProcessQueryDefinition(ModelNormal):
         "metric": "metric",
         "search_by": "search_by",
     }
-
-    read_only_vars = {}
 
     def __init__(self, metric, *args, **kwargs):
         """

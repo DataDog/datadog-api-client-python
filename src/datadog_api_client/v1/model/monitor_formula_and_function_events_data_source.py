@@ -10,16 +10,15 @@ from datadog_api_client.v1.model_utils import (
 
 
 class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
+
     allowed_values = {
         "value": {
             "RUM": "rum",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

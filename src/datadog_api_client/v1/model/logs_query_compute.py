@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class LogsQueryCompute(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "aggregation": (str,),
             "facet": (str,),
@@ -26,8 +23,6 @@ class LogsQueryCompute(ModelNormal):
         "facet": "facet",
         "interval": "interval",
     }
-
-    read_only_vars = {}
 
     def __init__(self, aggregation, *args, **kwargs):
         """

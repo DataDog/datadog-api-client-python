@@ -29,7 +29,6 @@ def lazy_import():
 
 
 class MonitorOptions(ModelNormal):
-
     validations = {
         "min_failure_duration": {
             "inclusive_maximum": 7200,
@@ -38,7 +37,7 @@ class MonitorOptions(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "aggregation": (MonitorOptionsAggregation,),
@@ -95,7 +94,6 @@ class MonitorOptions(ModelNormal):
         "timeout_h": "timeout_h",
         "variables": "variables",
     }
-
     read_only_vars = {
         "aggregation",
         "device_ids",

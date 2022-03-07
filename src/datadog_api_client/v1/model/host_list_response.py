@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class HostListResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "host_list": ([Host],),
@@ -33,8 +30,6 @@ class HostListResponse(ModelNormal):
         "total_matching": "total_matching",
         "total_returned": "total_returned",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

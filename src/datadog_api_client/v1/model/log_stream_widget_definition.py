@@ -24,11 +24,8 @@ def lazy_import():
 
 
 class LogStreamWidgetDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "columns": ([str],),
@@ -61,8 +58,6 @@ class LogStreamWidgetDefinition(ModelNormal):
         "title_size": "title_size",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, type, *args, **kwargs):
         """

@@ -17,11 +17,8 @@ def lazy_import():
 
 
 class UsageSummaryDate(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "agent_host_top99p": (int,),
@@ -150,8 +147,6 @@ class UsageSummaryDate(ModelNormal):
         "twol_ingested_events_bytes_sum": "twol_ingested_events_bytes_sum",
         "vsphere_host_top99p": "vsphere_host_top99p",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

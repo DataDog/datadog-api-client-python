@@ -21,11 +21,8 @@ def lazy_import():
 
 
 class SyntheticsAssertionTarget(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "operator": (SyntheticsAssertionOperator,),
@@ -50,8 +47,6 @@ class SyntheticsAssertionTarget(ModelNormal):
         "target": "target",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, operator, target, type, *args, **kwargs):
         """

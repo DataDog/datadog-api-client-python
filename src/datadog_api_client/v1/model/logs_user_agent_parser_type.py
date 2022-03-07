@@ -10,16 +10,15 @@ from datadog_api_client.v1.model_utils import (
 
 
 class LogsUserAgentParserType(ModelSimple):
+
     allowed_values = {
         "value": {
             "USER_AGENT_PARSER": "user-agent-parser",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

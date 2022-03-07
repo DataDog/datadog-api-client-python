@@ -12,6 +12,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class Point(ModelSimple):
+
     validations = {
         "value": {
             "max_items": 2,
@@ -20,7 +21,7 @@ class Point(ModelSimple):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": ([float, none_type],),
         }

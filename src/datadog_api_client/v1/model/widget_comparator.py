@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class WidgetComparator(ModelSimple):
+
     allowed_values = {
         "value": {
             "GREATER_THAN": ">",
@@ -20,10 +21,8 @@ class WidgetComparator(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsStep(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "allow_failure": (bool,),
@@ -39,8 +36,6 @@ class SyntheticsStep(ModelNormal):
         "timeout": "timeout",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

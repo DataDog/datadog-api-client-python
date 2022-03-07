@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class LogsIndexUpdateRequest(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "daily_limit": (int,),
@@ -39,8 +36,6 @@ class LogsIndexUpdateRequest(ModelNormal):
         "filter": "filter",
         "num_retention_days": "num_retention_days",
     }
-
-    read_only_vars = {}
 
     def __init__(self, filter, *args, **kwargs):
         """

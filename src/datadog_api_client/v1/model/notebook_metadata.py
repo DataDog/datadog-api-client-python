@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class NotebookMetadata(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "is_template": (bool,),
@@ -33,8 +30,6 @@ class NotebookMetadata(ModelNormal):
         "take_snapshots": "take_snapshots",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

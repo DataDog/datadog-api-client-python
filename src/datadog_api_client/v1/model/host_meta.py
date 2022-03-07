@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class HostMeta(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "agent_checks": ([AgentCheck],),
@@ -59,8 +56,6 @@ class HostMeta(ModelNormal):
         "socket_hostname": "socket-hostname",
         "win_v": "winV",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

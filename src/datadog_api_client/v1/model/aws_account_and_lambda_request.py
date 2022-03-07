@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class AWSAccountAndLambdaRequest(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "account_id": (str,),
             "lambda_arn": (str,),
@@ -24,8 +21,6 @@ class AWSAccountAndLambdaRequest(ModelNormal):
         "account_id": "account_id",
         "lambda_arn": "lambda_arn",
     }
-
-    read_only_vars = {}
 
     def __init__(self, account_id, lambda_arn, *args, **kwargs):
         """

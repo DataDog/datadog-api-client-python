@@ -26,7 +26,6 @@ def lazy_import():
 
 
 class Monitor(ModelNormal):
-
     validations = {
         "priority": {
             "inclusive_maximum": 5,
@@ -35,7 +34,7 @@ class Monitor(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "created": (datetime,),
@@ -74,7 +73,6 @@ class Monitor(ModelNormal):
         "tags": "tags",
         "type": "type",
     }
-
     read_only_vars = {
         "created",
         "creator",

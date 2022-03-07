@@ -10,16 +10,15 @@ from datadog_api_client.v2.model_utils import (
 
 
 class IncidentPostmortemType(ModelSimple):
+
     allowed_values = {
         "value": {
             "INCIDENT_POSTMORTEMS": "incident_postmortems",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

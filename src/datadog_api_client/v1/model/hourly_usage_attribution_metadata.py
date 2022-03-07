@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class HourlyUsageAttributionMetadata(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "pagination": (HourlyUsageAttributionPagination,),
@@ -29,8 +26,6 @@ class HourlyUsageAttributionMetadata(ModelNormal):
     attribute_map = {
         "pagination": "pagination",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

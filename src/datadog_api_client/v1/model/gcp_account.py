@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class GCPAccount(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "auth_provider_x509_cert_url": (str,),
             "auth_uri": (str,),
@@ -46,8 +43,6 @@ class GCPAccount(ModelNormal):
         "token_uri": "token_uri",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

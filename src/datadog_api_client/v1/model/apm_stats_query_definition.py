@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class ApmStatsQueryDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "columns": ([ApmStatsQueryColumnType],),
@@ -43,8 +40,6 @@ class ApmStatsQueryDefinition(ModelNormal):
         "row_type": "row_type",
         "service": "service",
     }
-
-    read_only_vars = {}
 
     def __init__(self, env, name, primary_tag, row_type, service, *args, **kwargs):
         """

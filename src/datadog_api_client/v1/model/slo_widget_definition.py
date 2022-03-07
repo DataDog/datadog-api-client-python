@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class SLOWidgetDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "global_time_target": (str,),
@@ -53,8 +50,6 @@ class SLOWidgetDefinition(ModelNormal):
         "view_mode": "view_mode",
         "view_type": "view_type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, type, *args, **kwargs):
         """

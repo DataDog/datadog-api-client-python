@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class LogsArchiveDestinationAzure(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "container": (str,),
@@ -41,8 +38,6 @@ class LogsArchiveDestinationAzure(ModelNormal):
         "storage_account": "storage_account",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, container, integration, storage_account, type, *args, **kwargs):
         """

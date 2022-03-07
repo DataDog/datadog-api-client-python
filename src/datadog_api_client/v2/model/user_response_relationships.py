@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class UserResponseRelationships(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "org": (RelationshipToOrganization,),
@@ -41,8 +38,6 @@ class UserResponseRelationships(ModelNormal):
         "other_users": "other_users",
         "roles": "roles",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

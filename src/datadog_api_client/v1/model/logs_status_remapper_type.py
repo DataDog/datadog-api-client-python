@@ -10,16 +10,15 @@ from datadog_api_client.v1.model_utils import (
 
 
 class LogsStatusRemapperType(ModelSimple):
+
     allowed_values = {
         "value": {
             "STATUS_REMAPPER": "status-remapper",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

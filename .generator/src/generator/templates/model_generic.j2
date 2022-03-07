@@ -12,7 +12,7 @@ def lazy_import():
 
 class {{ name }}(ModelNormal):
 
-    validations = {
+{%- set validation_ns = namespace(started=false) %}
 {%- for attr, definition in model.get("properties", {}).items() %}
 {%- set has_validation = (
       (not definition.nullable and required) or
@@ -25,6 +25,10 @@ class {{ name }}(ModelNormal):
       definition.minItems is defined
     ) %}
 {%- if has_validation %}
+{%- if not validation_ns.started %}
+    validations = {
+{%- set validation_ns.started = true %}
+{%- endif %}
         "{{ attr|attribute_name }}": {
 {%- if definition.maxLength is defined %}
             "max_length": {{ definition.maxLength }},
@@ -47,11 +51,13 @@ class {{ name }}(ModelNormal):
         },
 {%- endif %}
 {%- endfor %}
+{%- if validation_ns.started %}
     }
+{%- endif %}
 
 {%- if model.get("additionalProperties") %}
     @cached_property
-    def additional_properties_type():
+    def additional_properties_type(_):
 {%- if refs %}
         lazy_import()
 {%- endif %}
@@ -63,7 +69,7 @@ class {{ name }}(ModelNormal):
 {%- endif %}
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
 {%- if refs %}
         lazy_import()
 {%- endif %}
@@ -79,13 +85,19 @@ class {{ name }}(ModelNormal):
 {%- endfor %}
     }
 
-    read_only_vars = {
+{%- set read_only_ns = namespace(started=false) %}
 {%- for attr, definition in model.get("properties", {}).items() %}
         {%- if definition.readOnly %}
+{%- if not read_only_ns.started %}
+    read_only_vars = {
+{%- set read_only_ns.started = true %}
+{%- endif %}
         "{{ attr|attribute_name }}",
         {%- endif %}
 {%- endfor %}
+{%- if read_only_ns.started %}
     }
+{%- endif %}
 
     def __init__(self,
 {%- for attr, definition in model.get("properties", {}).items() %}

@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsBrowserError(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "description": (str,),
@@ -35,8 +32,6 @@ class SyntheticsBrowserError(ModelNormal):
         "status": "status",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, description, name, type, *args, **kwargs):
         """

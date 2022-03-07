@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class MetricsPayload(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "series": ([Series],),
@@ -29,8 +26,6 @@ class MetricsPayload(ModelNormal):
     attribute_map = {
         "series": "series",
     }
-
-    read_only_vars = {}
 
     def __init__(self, series, *args, **kwargs):
         """

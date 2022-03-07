@@ -11,6 +11,7 @@ from datadog_api_client.v2.model_utils import (
 
 
 class LogsMetricComputeAggregationType(ModelSimple):
+
     allowed_values = {
         "value": {
             "COUNT": "count",
@@ -18,10 +19,8 @@ class LogsMetricComputeAggregationType(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

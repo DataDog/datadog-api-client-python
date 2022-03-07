@@ -11,6 +11,7 @@ from datadog_api_client.v2.model_utils import (
 
 
 class SecurityMonitoringRuleNewValueOptionsForgetAfter(ModelSimple):
+
     allowed_values = {
         "value": {
             "ONE_DAY": 1,
@@ -22,10 +23,8 @@ class SecurityMonitoringRuleNewValueOptionsForgetAfter(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (int,),
         }

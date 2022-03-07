@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class NotebookHeatMapCellAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "definition": (HeatMapWidgetDefinition,),
@@ -41,8 +38,6 @@ class NotebookHeatMapCellAttributes(ModelNormal):
         "split_by": "split_by",
         "time": "time",
     }
-
-    read_only_vars = {}
 
     def __init__(self, definition, *args, **kwargs):
         """

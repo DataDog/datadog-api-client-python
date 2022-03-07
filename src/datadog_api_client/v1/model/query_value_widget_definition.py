@@ -26,7 +26,6 @@ def lazy_import():
 
 
 class QueryValueWidgetDefinition(ModelNormal):
-
     validations = {
         "requests": {
             "max_items": 1,
@@ -35,7 +34,7 @@ class QueryValueWidgetDefinition(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "autoscale": (bool,),
@@ -64,8 +63,6 @@ class QueryValueWidgetDefinition(ModelNormal):
         "title_size": "title_size",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, requests, type, *args, **kwargs):
         """

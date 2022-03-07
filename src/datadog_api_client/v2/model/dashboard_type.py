@@ -11,6 +11,7 @@ from datadog_api_client.v2.model_utils import (
 
 
 class DashboardType(ModelSimple):
+
     allowed_values = {
         "value": {
             "CUSTOM_TIMEBOARD": "custom_timeboard",
@@ -21,10 +22,8 @@ class DashboardType(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

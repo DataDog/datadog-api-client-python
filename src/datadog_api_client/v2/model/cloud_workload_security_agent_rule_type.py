@@ -10,16 +10,15 @@ from datadog_api_client.v2.model_utils import (
 
 
 class CloudWorkloadSecurityAgentRuleType(ModelSimple):
+
     allowed_values = {
         "value": {
             "AGENT_RULE": "agent_rule",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

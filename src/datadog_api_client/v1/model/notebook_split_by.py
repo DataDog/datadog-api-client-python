@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class NotebookSplitBy(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "keys": ([str],),
             "tags": ([str],),
@@ -24,8 +21,6 @@ class NotebookSplitBy(ModelNormal):
         "keys": "keys",
         "tags": "tags",
     }
-
-    read_only_vars = {}
 
     def __init__(self, keys, tags, *args, **kwargs):
         """

@@ -10,6 +10,7 @@ from datadog_api_client.v2.model_utils import (
 
 
 class IncidentFieldAttributesValueType(ModelSimple):
+
     allowed_values = {
         "value": {
             "MULTISELECT": "multiselect",
@@ -19,10 +20,8 @@ class IncidentFieldAttributesValueType(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

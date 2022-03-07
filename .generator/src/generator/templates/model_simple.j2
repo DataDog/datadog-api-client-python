@@ -7,7 +7,8 @@ def lazy_import():
 {%- endif %}
 
 class {{ name }}(ModelSimple):
-    validations = {
+
+{% set validation_ns = namespace(started=false) %}
 {%- set has_validation = (
       (not model.nullable and required) or
       model.maxLength is defined or
@@ -19,6 +20,10 @@ class {{ name }}(ModelSimple):
       model.minItems is defined
     ) %}
 {%- if has_validation %}
+{%- if not validation_ns.started %}
+    validations = {
+{%- set validation_ns.started = true %}
+{%- endif %}
         "value": {
 {%- if model.maxLength is defined %}
             "max_length": {{ model.maxLength }},
@@ -40,10 +45,12 @@ class {{ name }}(ModelSimple):
 {%- endif %}
         },
 {%- endif %}
+{%- if validation_ns.started %}
     }
+{%- endif %}
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
 {%- if ref %}
         lazy_import()
         return {

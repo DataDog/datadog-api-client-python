@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class EventAlertType(ModelSimple):
+
     allowed_values = {
         "value": {
             "ERROR": "error",
@@ -23,10 +24,8 @@ class EventAlertType(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

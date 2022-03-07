@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class SyntheticsPrivateLocationCreationResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "config": (dict,),
@@ -39,8 +36,6 @@ class SyntheticsPrivateLocationCreationResponse(ModelNormal):
         "private_location": "private_location",
         "result_encryption": "result_encryption",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

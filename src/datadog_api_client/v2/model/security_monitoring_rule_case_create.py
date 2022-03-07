@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SecurityMonitoringRuleCaseCreate(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "condition": (str,),
@@ -35,8 +32,6 @@ class SecurityMonitoringRuleCaseCreate(ModelNormal):
         "notifications": "notifications",
         "status": "status",
     }
-
-    read_only_vars = {}
 
     def __init__(self, status, *args, **kwargs):
         """

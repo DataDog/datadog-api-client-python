@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class IncidentServicesResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "data": ([IncidentServiceResponseData],),
@@ -37,7 +34,6 @@ class IncidentServicesResponse(ModelNormal):
         "included": "included",
         "meta": "meta",
     }
-
     read_only_vars = {
         "included",
         "meta",

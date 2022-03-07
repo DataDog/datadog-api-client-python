@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class MonitorOptionsAggregation(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "group_by": (str,),
             "metric": (str,),
@@ -26,8 +23,6 @@ class MonitorOptionsAggregation(ModelNormal):
         "metric": "metric",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class Host(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "aliases": ([str],),
@@ -57,8 +54,6 @@ class Host(ModelNormal):
         "tags_by_source": "tags_by_source",
         "up": "up",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

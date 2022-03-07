@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsBrowserTestResultFullCheck(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "config": (SyntheticsTestConfig,),
@@ -29,8 +26,6 @@ class SyntheticsBrowserTestResultFullCheck(ModelNormal):
     attribute_map = {
         "config": "config",
     }
-
-    read_only_vars = {}
 
     def __init__(self, config, *args, **kwargs):
         """

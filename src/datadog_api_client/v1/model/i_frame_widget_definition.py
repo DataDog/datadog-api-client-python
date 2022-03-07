@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class IFrameWidgetDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "type": (IFrameWidgetDefinitionType,),
@@ -31,8 +28,6 @@ class IFrameWidgetDefinition(ModelNormal):
         "type": "type",
         "url": "url",
     }
-
-    read_only_vars = {}
 
     def __init__(self, type, url, *args, **kwargs):
         """

@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class LogsIndexListResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "indexes": ([LogsIndex],),
@@ -29,8 +26,6 @@ class LogsIndexListResponse(ModelNormal):
     attribute_map = {
         "indexes": "indexes",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

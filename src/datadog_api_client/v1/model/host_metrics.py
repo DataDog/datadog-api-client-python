@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class HostMetrics(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "cpu": (float,),
             "iowait": (float,),
@@ -26,8 +23,6 @@ class HostMetrics(ModelNormal):
         "iowait": "iowait",
         "load": "load",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

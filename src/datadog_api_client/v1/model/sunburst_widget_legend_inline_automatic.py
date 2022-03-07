@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class SunburstWidgetLegendInlineAutomatic(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "hide_percent": (bool,),
@@ -35,8 +32,6 @@ class SunburstWidgetLegendInlineAutomatic(ModelNormal):
         "hide_value": "hide_value",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, type, *args, **kwargs):
         """

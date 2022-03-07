@@ -10,7 +10,6 @@ from datadog_api_client.v1.model_utils import (
 
 
 class ApplicationKey(ModelNormal):
-
     validations = {
         "hash": {
             "max_length": 40,
@@ -19,7 +18,7 @@ class ApplicationKey(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "hash": (str,),
             "name": (str,),
@@ -31,7 +30,6 @@ class ApplicationKey(ModelNormal):
         "name": "name",
         "owner": "owner",
     }
-
     read_only_vars = {
         "hash",
         "owner",

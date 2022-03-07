@@ -20,13 +20,6 @@ def lazy_import():
 
 
 class LogsArchiveCreateRequestDestination(ModelComposed):
-
-    validations = {}
-
-    @cached_property
-    def openapi_types():
-        return {}
-
     def __init__(self, *args, **kwargs):
         """
         An archive's destination.
@@ -67,7 +60,7 @@ class LogsArchiveCreateRequestDestination(ModelComposed):
         return self
 
     @cached_property
-    def _composed_schemas():
+    def _composed_schemas(_):
         # we need this here to make our import statements work
         # we must store _composed_schemas in here so the code is only run
         # when we invoke this method. If we kept this at the class

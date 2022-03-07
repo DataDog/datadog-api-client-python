@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class MonitorSearchResultNotification(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "handle": (str,),
             "name": (str,),
@@ -24,7 +21,6 @@ class MonitorSearchResultNotification(ModelNormal):
         "handle": "handle",
         "name": "name",
     }
-
     read_only_vars = {
         "handle",
         "name",

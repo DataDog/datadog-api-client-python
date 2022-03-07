@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class WidgetTickEdge(ModelSimple):
+
     allowed_values = {
         "value": {
             "BOTTOM": "bottom",
@@ -20,10 +21,8 @@ class WidgetTickEdge(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

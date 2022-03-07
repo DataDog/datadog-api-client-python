@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class WidgetImageSizing(ModelSimple):
+
     allowed_values = {
         "value": {
             "FILL": "fill",
@@ -24,10 +25,8 @@ class WidgetImageSizing(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class FormulaAndFunctionResponseFormat(ModelSimple):
+
     allowed_values = {
         "value": {
             "TIMESERIES": "timeseries",
@@ -18,10 +19,8 @@ class FormulaAndFunctionResponseFormat(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

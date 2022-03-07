@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class SecurityFiltersResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "data": ([SecurityFilter],),
@@ -33,8 +30,6 @@ class SecurityFiltersResponse(ModelNormal):
         "data": "data",
         "meta": "meta",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

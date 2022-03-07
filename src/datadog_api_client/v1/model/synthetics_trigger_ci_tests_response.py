@@ -19,11 +19,8 @@ def lazy_import():
 
 
 class SyntheticsTriggerCITestsResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "batch_id": (str, none_type),
@@ -38,8 +35,6 @@ class SyntheticsTriggerCITestsResponse(ModelNormal):
         "results": "results",
         "triggered_check_ids": "triggered_check_ids",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class SyntheticsPrivateLocationCreationResponseResultEncryption(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "id": (str,),
             "key": (str,),
@@ -24,8 +21,6 @@ class SyntheticsPrivateLocationCreationResponseResultEncryption(ModelNormal):
         "id": "id",
         "key": "key",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

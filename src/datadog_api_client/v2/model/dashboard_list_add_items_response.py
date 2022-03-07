@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class DashboardListAddItemsResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "added_dashboards_to_list": ([DashboardListItemResponse],),
@@ -29,8 +26,6 @@ class DashboardListAddItemsResponse(ModelNormal):
     attribute_map = {
         "added_dashboards_to_list": "added_dashboards_to_list",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

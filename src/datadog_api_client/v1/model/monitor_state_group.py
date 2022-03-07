@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class MonitorStateGroup(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "last_nodata_ts": (int,),
@@ -39,7 +36,6 @@ class MonitorStateGroup(ModelNormal):
         "name": "name",
         "status": "status",
     }
-
     read_only_vars = {
         "status",
     }

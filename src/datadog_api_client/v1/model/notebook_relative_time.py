@@ -16,12 +16,10 @@ def lazy_import():
 
 
 class NotebookRelativeTime(ModelNormal):
-
-    validations = {}
     _nullable = True
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "live_span": (WidgetLiveSpan,),
@@ -30,8 +28,6 @@ class NotebookRelativeTime(ModelNormal):
     attribute_map = {
         "live_span": "live_span",
     }
-
-    read_only_vars = {}
 
     def __init__(self, live_span, *args, **kwargs):
         """

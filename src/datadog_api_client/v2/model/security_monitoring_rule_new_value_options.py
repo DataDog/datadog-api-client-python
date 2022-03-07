@@ -24,11 +24,8 @@ def lazy_import():
 
 
 class SecurityMonitoringRuleNewValueOptions(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "forget_after": (SecurityMonitoringRuleNewValueOptionsForgetAfter,),
@@ -39,8 +36,6 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
         "forget_after": "forgetAfter",
         "learning_duration": "learningDuration",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

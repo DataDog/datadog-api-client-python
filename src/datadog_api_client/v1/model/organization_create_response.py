@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class OrganizationCreateResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "api_key": (ApiKey,),
@@ -41,8 +38,6 @@ class OrganizationCreateResponse(ModelNormal):
         "org": "org",
         "user": "user",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

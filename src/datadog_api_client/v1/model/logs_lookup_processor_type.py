@@ -10,16 +10,15 @@ from datadog_api_client.v1.model_utils import (
 
 
 class LogsLookupProcessorType(ModelSimple):
+
     allowed_values = {
         "value": {
             "LOOKUP_PROCESSOR": "lookup-processor",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

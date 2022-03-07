@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class MonitorState(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "groups": ({str: (MonitorStateGroup,)},),
@@ -29,8 +26,6 @@ class MonitorState(ModelNormal):
     attribute_map = {
         "groups": "groups",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

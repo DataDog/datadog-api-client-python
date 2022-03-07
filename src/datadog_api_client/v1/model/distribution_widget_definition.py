@@ -28,7 +28,6 @@ def lazy_import():
 
 
 class DistributionWidgetDefinition(ModelNormal):
-
     validations = {
         "requests": {
             "max_items": 1,
@@ -37,7 +36,7 @@ class DistributionWidgetDefinition(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "legend_size": (str,),
@@ -66,8 +65,6 @@ class DistributionWidgetDefinition(ModelNormal):
         "xaxis": "xaxis",
         "yaxis": "yaxis",
     }
-
-    read_only_vars = {}
 
     def __init__(self, requests, type, *args, **kwargs):
         """

@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class MetricCustomAggregation(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "space": (MetricCustomSpaceAggregation,),
@@ -33,8 +30,6 @@ class MetricCustomAggregation(ModelNormal):
         "space": "space",
         "time": "time",
     }
-
-    read_only_vars = {}
 
     def __init__(self, space, time, *args, **kwargs):
         """

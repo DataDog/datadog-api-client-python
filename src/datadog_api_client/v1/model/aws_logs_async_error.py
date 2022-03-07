@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class AWSLogsAsyncError(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "code": (str,),
             "message": (str,),
@@ -24,8 +21,6 @@ class AWSLogsAsyncError(ModelNormal):
         "code": "code",
         "message": "message",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

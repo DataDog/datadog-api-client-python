@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class MetricTagConfigurationUpdateData(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "attributes": (MetricTagConfigurationUpdateAttributes,),
@@ -37,8 +34,6 @@ class MetricTagConfigurationUpdateData(ModelNormal):
         "id": "id",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, id, type, *args, **kwargs):
         """

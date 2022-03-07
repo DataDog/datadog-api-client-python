@@ -19,7 +19,6 @@ def lazy_import():
 
 
 class Downtime(ModelNormal):
-
     validations = {
         "creator_id": {
             "inclusive_maximum": 2147483647,
@@ -33,7 +32,7 @@ class Downtime(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "active": (bool,),
@@ -74,7 +73,6 @@ class Downtime(ModelNormal):
         "timezone": "timezone",
         "updater_id": "updater_id",
     }
-
     read_only_vars = {
         "active",
         "active_child",

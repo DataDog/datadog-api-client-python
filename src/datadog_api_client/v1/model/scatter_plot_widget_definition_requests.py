@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class ScatterPlotWidgetDefinitionRequests(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "table": (ScatterplotTableRequest,),
@@ -37,8 +34,6 @@ class ScatterPlotWidgetDefinitionRequests(ModelNormal):
         "x": "x",
         "y": "y",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

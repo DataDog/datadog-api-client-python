@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class IncidentServiceCreateRequest(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "data": (IncidentServiceCreateData,),
@@ -29,8 +26,6 @@ class IncidentServiceCreateRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
-
-    read_only_vars = {}
 
     def __init__(self, data, *args, **kwargs):
         """

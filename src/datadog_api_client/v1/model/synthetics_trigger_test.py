@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsTriggerTest(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "metadata": (SyntheticsCIBatchMetadata,),
@@ -31,8 +28,6 @@ class SyntheticsTriggerTest(ModelNormal):
         "metadata": "metadata",
         "public_id": "public_id",
     }
-
-    read_only_vars = {}
 
     def __init__(self, public_id, *args, **kwargs):
         """

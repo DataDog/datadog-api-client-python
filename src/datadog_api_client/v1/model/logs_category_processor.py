@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class LogsCategoryProcessor(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "categories": ([LogsCategoryProcessorCategory],),
@@ -39,8 +36,6 @@ class LogsCategoryProcessor(ModelNormal):
         "target": "target",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, categories, target, type, *args, **kwargs):
         """

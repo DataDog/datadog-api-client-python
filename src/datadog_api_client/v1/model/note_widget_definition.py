@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class NoteWidgetDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "background_color": (str,),
@@ -53,8 +50,6 @@ class NoteWidgetDefinition(ModelNormal):
         "type": "type",
         "vertical_align": "vertical_align",
     }
-
-    read_only_vars = {}
 
     def __init__(self, content, type, *args, **kwargs):
         """

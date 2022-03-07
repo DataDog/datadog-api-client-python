@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SecurityMonitoringFilter(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "action": (SecurityMonitoringFilterAction,),
@@ -31,8 +28,6 @@ class SecurityMonitoringFilter(ModelNormal):
         "action": "action",
         "query": "query",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

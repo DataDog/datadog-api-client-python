@@ -10,16 +10,15 @@ from datadog_api_client.v1.model_utils import (
 
 
 class TableWidgetDefinitionType(ModelSimple):
+
     allowed_values = {
         "value": {
             "QUERY_TABLE": "query_table",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

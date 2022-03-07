@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class Widget(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "definition": (WidgetDefinition,),
@@ -35,8 +32,6 @@ class Widget(ModelNormal):
         "id": "id",
         "layout": "layout",
     }
-
-    read_only_vars = {}
 
     def __init__(self, definition, *args, **kwargs):
         """

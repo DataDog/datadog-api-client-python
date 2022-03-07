@@ -11,11 +11,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class UsageIncidentManagementHour(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "hour": (datetime,),
             "monthly_active_users": (int,),
@@ -29,8 +26,6 @@ class UsageIncidentManagementHour(ModelNormal):
         "org_name": "org_name",
         "public_id": "public_id",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

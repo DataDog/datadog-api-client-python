@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class LogsQueryOptions(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "time_offset": (int,),
             "timezone": (str,),
@@ -24,8 +21,6 @@ class LogsQueryOptions(ModelNormal):
         "time_offset": "timeOffset",
         "timezone": "timezone",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

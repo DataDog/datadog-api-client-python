@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class MonitorSearchResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "counts": (MonitorSearchResponseCounts,),
@@ -37,7 +34,6 @@ class MonitorSearchResponse(ModelNormal):
         "metadata": "metadata",
         "monitors": "monitors",
     }
-
     read_only_vars = {
         "counts",
         "monitors",

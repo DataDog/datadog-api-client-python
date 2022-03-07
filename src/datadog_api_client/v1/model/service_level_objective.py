@@ -23,11 +23,8 @@ def lazy_import():
 
 
 class ServiceLevelObjective(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "created_at": (int,),
@@ -60,7 +57,6 @@ class ServiceLevelObjective(ModelNormal):
         "thresholds": "thresholds",
         "type": "type",
     }
-
     read_only_vars = {
         "created_at",
         "creator",

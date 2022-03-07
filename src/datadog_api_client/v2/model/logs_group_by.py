@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class LogsGroupBy(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "facet": (str,),
@@ -45,8 +42,6 @@ class LogsGroupBy(ModelNormal):
         "sort": "sort",
         "total": "total",
     }
-
-    read_only_vars = {}
 
     def __init__(self, facet, *args, **kwargs):
         """

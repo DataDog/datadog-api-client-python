@@ -17,11 +17,8 @@ def lazy_import():
 
 
 class WebhooksIntegration(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "custom_headers": (str, none_type),
@@ -38,8 +35,6 @@ class WebhooksIntegration(ModelNormal):
         "payload": "payload",
         "url": "url",
     }
-
-    read_only_vars = {}
 
     def __init__(self, name, url, *args, **kwargs):
         """

@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SLOThreshold(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "target": (float,),
@@ -37,8 +34,6 @@ class SLOThreshold(ModelNormal):
         "warning": "warning",
         "warning_display": "warning_display",
     }
-
-    read_only_vars = {}
 
     def __init__(self, target, timeframe, *args, **kwargs):
         """

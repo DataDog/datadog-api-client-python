@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class HostMuteSettings(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "end": (int,),
             "message": (str,),
@@ -26,8 +23,6 @@ class HostMuteSettings(ModelNormal):
         "message": "message",
         "override": "override",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

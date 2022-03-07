@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class UsageCIVisibilityHour(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "ci_pipeline_indexed_spans": (int,),
             "ci_test_indexed_spans": (int,),
@@ -32,8 +29,6 @@ class UsageCIVisibilityHour(ModelNormal):
         "org_name": "org_name",
         "public_id": "public_id",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

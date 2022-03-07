@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class User(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "access_role": (AccessRole,),
@@ -41,7 +38,6 @@ class User(ModelNormal):
         "name": "name",
         "verified": "verified",
     }
-
     read_only_vars = {
         "icon",
         "verified",

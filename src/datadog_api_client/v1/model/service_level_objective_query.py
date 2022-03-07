@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class ServiceLevelObjectiveQuery(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "denominator": (str,),
             "numerator": (str,),
@@ -24,8 +21,6 @@ class ServiceLevelObjectiveQuery(ModelNormal):
         "denominator": "denominator",
         "numerator": "numerator",
     }
-
-    read_only_vars = {}
 
     def __init__(self, denominator, numerator, *args, **kwargs):
         """

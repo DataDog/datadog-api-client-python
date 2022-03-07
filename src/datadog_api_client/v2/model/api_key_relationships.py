@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class APIKeyRelationships(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "created_by": (RelationshipToUser,),
@@ -33,8 +30,6 @@ class APIKeyRelationships(ModelNormal):
         "created_by": "created_by",
         "modified_by": "modified_by",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """
