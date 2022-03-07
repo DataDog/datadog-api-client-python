@@ -21,13 +21,6 @@ class SLOBulkDelete(ModelNormal):
         lazy_import()
         return ([SLOTimeframe],)
 
-    @cached_property
-    def openapi_types(_):
-        lazy_import()
-        return {}
-
-    attribute_map = {}
-
     def __init__(self, *args, **kwargs):
         """
         A map of service level objective object IDs to arrays of timeframes,

@@ -14,12 +14,6 @@ class SLOErrorBudgetRemainingData(ModelNormal):
     def additional_properties_type(_):
         return (float,)
 
-    @cached_property
-    def openapi_types(_):
-        return {}
-
-    attribute_map = {}
-
     def __init__(self, *args, **kwargs):
         """
         A mapping of threshold `timeframe` to the remaining error budget.

@@ -14,12 +14,6 @@ class SyntheticsTestHeaders(ModelNormal):
     def additional_properties_type(_):
         return (str,)
 
-    @cached_property
-    def openapi_types(_):
-        return {}
-
-    attribute_map = {}
-
     def __init__(self, *args, **kwargs):
         """
         Headers to include when performing the test.
