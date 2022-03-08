@@ -15,9 +15,9 @@ try:
         from ddtrace.internal.writer import AgentWriter
 
         writer = AgentWriter(
-            tracer.writer.agent_url,
+            tracer._writer.agent_url,
             sync_mode=True,
-            priority_sampler=tracer.priority_sampler,
+            priority_sampler=tracer._priority_sampler,
         )
         tracer.configure(writer)
 
@@ -278,7 +278,7 @@ def vcr_config():
     if tracer:
         from urllib.parse import urlparse
 
-        config["ignore_hosts"] = [urlparse(tracer.writer.agent_url).hostname]
+        config["ignore_hosts"] = [urlparse(tracer._writer.agent_url).hostname]
 
     return config
 
