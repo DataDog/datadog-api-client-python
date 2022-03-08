@@ -10,6 +10,7 @@ from datadog_api_client.v2.model_utils import (
 
 
 class IncidentFieldAttributesSingleValueType(ModelSimple):
+
     allowed_values = {
         "value": {
             "DROPDOWN": "dropdown",
@@ -17,10 +18,8 @@ class IncidentFieldAttributesSingleValueType(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

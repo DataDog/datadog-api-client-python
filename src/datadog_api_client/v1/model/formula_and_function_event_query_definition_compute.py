@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class FormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "aggregation": (FormulaAndFunctionEventAggregation,),
@@ -33,8 +30,6 @@ class FormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
         "interval": "interval",
         "metric": "metric",
     }
-
-    read_only_vars = {}
 
     def __init__(self, aggregation, *args, **kwargs):
         """

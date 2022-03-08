@@ -11,11 +11,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class UsageIoTHour(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "hour": (datetime,),
             "iot_device_count": (int,),
@@ -29,8 +26,6 @@ class UsageIoTHour(ModelNormal):
         "org_name": "org_name",
         "public_id": "public_id",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -10,16 +10,15 @@ from datadog_api_client.v1.model_utils import (
 
 
 class ImageWidgetDefinitionType(ModelSimple):
+
     allowed_values = {
         "value": {
             "IMAGE": "image",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

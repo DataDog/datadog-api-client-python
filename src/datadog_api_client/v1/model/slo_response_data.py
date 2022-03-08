@@ -23,11 +23,8 @@ def lazy_import():
 
 
 class SLOResponseData(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "configured_alert_ids": ([int],),
@@ -62,7 +59,6 @@ class SLOResponseData(ModelNormal):
         "thresholds": "thresholds",
         "type": "type",
     }
-
     read_only_vars = {
         "created_at",
         "creator",

@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class IncidentResponseMeta(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "pagination": (IncidentResponseMetaPagination,),
@@ -29,8 +26,6 @@ class IncidentResponseMeta(ModelNormal):
     attribute_map = {
         "pagination": "pagination",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

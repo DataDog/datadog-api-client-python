@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class RoleCreateData(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "attributes": (RoleCreateAttributes,),
@@ -37,8 +34,6 @@ class RoleCreateData(ModelNormal):
         "relationships": "relationships",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, attributes, *args, **kwargs):
         """

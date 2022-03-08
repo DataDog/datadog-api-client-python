@@ -11,11 +11,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class IncidentServiceResponseAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "created": (datetime,),
             "modified": (datetime,),
@@ -27,7 +24,6 @@ class IncidentServiceResponseAttributes(ModelNormal):
         "modified": "modified",
         "name": "name",
     }
-
     read_only_vars = {
         "created",
         "modified",

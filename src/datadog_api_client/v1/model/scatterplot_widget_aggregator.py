@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class ScatterplotWidgetAggregator(ModelSimple):
+
     allowed_values = {
         "value": {
             "AVERAGE": "avg",
@@ -21,10 +22,8 @@ class ScatterplotWidgetAggregator(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

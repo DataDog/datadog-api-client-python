@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class LogsLookupProcessor(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "default_lookup": (str,),
@@ -41,8 +38,6 @@ class LogsLookupProcessor(ModelNormal):
         "target": "target",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, lookup_table, source, target, type, *args, **kwargs):
         """

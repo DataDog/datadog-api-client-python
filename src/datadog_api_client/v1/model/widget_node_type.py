@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class WidgetNodeType(ModelSimple):
+
     allowed_values = {
         "value": {
             "HOST": "host",
@@ -18,10 +19,8 @@ class WidgetNodeType(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

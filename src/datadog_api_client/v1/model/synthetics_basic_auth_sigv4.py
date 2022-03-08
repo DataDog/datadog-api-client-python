@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsBasicAuthSigv4(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "access_key": (str,),
@@ -39,8 +36,6 @@ class SyntheticsBasicAuthSigv4(ModelNormal):
         "session_token": "sessionToken",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, access_key, secret_key, type, *args, **kwargs):
         """

@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class LogsArchiveAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "destination": (LogsArchiveDestination,),
@@ -41,8 +38,6 @@ class LogsArchiveAttributes(ModelNormal):
         "rehydration_tags": "rehydration_tags",
         "state": "state",
     }
-
-    read_only_vars = {}
 
     def __init__(self, destination, name, query, *args, **kwargs):
         """

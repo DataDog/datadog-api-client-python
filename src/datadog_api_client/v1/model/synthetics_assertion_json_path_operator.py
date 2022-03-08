@@ -10,16 +10,15 @@ from datadog_api_client.v1.model_utils import (
 
 
 class SyntheticsAssertionJSONPathOperator(ModelSimple):
+
     allowed_values = {
         "value": {
             "VALIDATES_JSON_PATH": "validatesJSONPath",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

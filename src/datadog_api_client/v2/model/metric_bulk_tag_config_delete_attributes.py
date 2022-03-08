@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class MetricBulkTagConfigDeleteAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "emails": (MetricBulkTagConfigEmailList,),
@@ -29,8 +26,6 @@ class MetricBulkTagConfigDeleteAttributes(ModelNormal):
     attribute_map = {
         "emails": "emails",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -13,11 +13,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "json_path": (str,),
             "operator": (str,),
@@ -39,8 +36,6 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
         "operator": "operator",
         "target_value": "targetValue",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

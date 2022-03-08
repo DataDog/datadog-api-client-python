@@ -19,7 +19,6 @@ def lazy_import():
 
 
 class DashboardListItem(ModelNormal):
-
     validations = {
         "popularity": {
             "inclusive_maximum": 5,
@@ -27,7 +26,7 @@ class DashboardListItem(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "author": (Creator,),
@@ -58,7 +57,6 @@ class DashboardListItem(ModelNormal):
         "type": "type",
         "url": "url",
     }
-
     read_only_vars = {
         "created",
         "icon",

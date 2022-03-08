@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class LogsArchiveOrderAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "archive_ids": ([str],),
         }
@@ -22,8 +19,6 @@ class LogsArchiveOrderAttributes(ModelNormal):
     attribute_map = {
         "archive_ids": "archive_ids",
     }
-
-    read_only_vars = {}
 
     def __init__(self, archive_ids, *args, **kwargs):
         """

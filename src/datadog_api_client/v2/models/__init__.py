@@ -307,6 +307,20 @@ from datadog_api_client.v2.model.process_summary import ProcessSummary
 from datadog_api_client.v2.model.process_summary_attributes import ProcessSummaryAttributes
 from datadog_api_client.v2.model.process_summary_type import ProcessSummaryType
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
+from datadog_api_client.v2.model.rum_event import RUMEvent
+from datadog_api_client.v2.model.rum_event_attributes import RUMEventAttributes
+from datadog_api_client.v2.model.rum_event_type import RUMEventType
+from datadog_api_client.v2.model.rum_events_response import RUMEventsResponse
+from datadog_api_client.v2.model.rum_query_filter import RUMQueryFilter
+from datadog_api_client.v2.model.rum_query_options import RUMQueryOptions
+from datadog_api_client.v2.model.rum_query_page_options import RUMQueryPageOptions
+from datadog_api_client.v2.model.rum_response_links import RUMResponseLinks
+from datadog_api_client.v2.model.rum_response_metadata import RUMResponseMetadata
+from datadog_api_client.v2.model.rum_response_page import RUMResponsePage
+from datadog_api_client.v2.model.rum_response_status import RUMResponseStatus
+from datadog_api_client.v2.model.rum_search_events_request import RUMSearchEventsRequest
+from datadog_api_client.v2.model.rum_sort import RUMSort
+from datadog_api_client.v2.model.rum_warning import RUMWarning
 from datadog_api_client.v2.model.relationship_to_incident_integration_metadata_data import (
     RelationshipToIncidentIntegrationMetadataData,
 )

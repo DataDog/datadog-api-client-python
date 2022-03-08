@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class AzureAccount(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "automute": (bool,),
             "client_id": (str,),
@@ -36,8 +33,6 @@ class AzureAccount(ModelNormal):
         "new_tenant_name": "new_tenant_name",
         "tenant_name": "tenant_name",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

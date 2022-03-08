@@ -17,11 +17,8 @@ def lazy_import():
 
 
 class MonitorGroupSearchResult(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "group": (str,),
@@ -42,7 +39,6 @@ class MonitorGroupSearchResult(ModelNormal):
         "monitor_name": "monitor_name",
         "status": "status",
     }
-
     read_only_vars = {
         "group",
         "group_tags",

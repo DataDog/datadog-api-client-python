@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class WidgetLineType(ModelSimple):
+
     allowed_values = {
         "value": {
             "DASHED": "dashed",
@@ -19,10 +20,8 @@ class WidgetLineType(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsUpdateTestPauseStatusPayload(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "new_status": (SyntheticsTestPauseStatus,),
@@ -29,8 +26,6 @@ class SyntheticsUpdateTestPauseStatusPayload(ModelNormal):
     attribute_map = {
         "new_status": "new_status",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

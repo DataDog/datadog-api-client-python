@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class LogsRetentionAggSumUsage(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "logs_indexed_logs_usage_agg_sum": (int,),
             "logs_live_indexed_logs_usage_agg_sum": (int,),
@@ -28,8 +25,6 @@ class LogsRetentionAggSumUsage(ModelNormal):
         "logs_rehydrated_indexed_logs_usage_agg_sum": "logs_rehydrated_indexed_logs_usage_agg_sum",
         "retention": "retention",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

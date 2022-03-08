@@ -78,11 +78,8 @@ def lazy_import():
 
 
 class UsageBillableSummaryKeys(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "apm_host_sum": (UsageBillableSummaryBody,),
@@ -153,8 +150,6 @@ class UsageBillableSummaryKeys(ModelNormal):
         "synthetics_browser_checks_sum": "synthetics_browser_checks_sum",
         "timeseries_average": "timeseries_average",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

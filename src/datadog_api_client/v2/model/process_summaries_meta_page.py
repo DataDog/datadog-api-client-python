@@ -10,7 +10,6 @@ from datadog_api_client.v2.model_utils import (
 
 
 class ProcessSummariesMetaPage(ModelNormal):
-
     validations = {
         "size": {
             "inclusive_maximum": 10000,
@@ -19,7 +18,7 @@ class ProcessSummariesMetaPage(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "after": (str,),
             "size": (int,),
@@ -29,8 +28,6 @@ class ProcessSummariesMetaPage(ModelNormal):
         "after": "after",
         "size": "size",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

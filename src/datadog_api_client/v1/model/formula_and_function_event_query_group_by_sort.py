@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class FormulaAndFunctionEventQueryGroupBySort(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "aggregation": (FormulaAndFunctionEventAggregation,),
@@ -35,8 +32,6 @@ class FormulaAndFunctionEventQueryGroupBySort(ModelNormal):
         "metric": "metric",
         "order": "order",
     }
-
-    read_only_vars = {}
 
     def __init__(self, aggregation, *args, **kwargs):
         """

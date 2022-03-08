@@ -23,11 +23,8 @@ def lazy_import():
 
 
 class MonitorSearchResult(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "classification": (str,),
@@ -60,7 +57,6 @@ class MonitorSearchResult(ModelNormal):
         "tags": "tags",
         "type": "type",
     }
-
     read_only_vars = {
         "classification",
         "creator",

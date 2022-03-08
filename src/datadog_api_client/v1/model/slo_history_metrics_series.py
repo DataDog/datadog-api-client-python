@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SLOHistoryMetricsSeries(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "count": (int,),
@@ -35,8 +32,6 @@ class SLOHistoryMetricsSeries(ModelNormal):
         "sum": "sum",
         "values": "values",
     }
-
-    read_only_vars = {}
 
     def __init__(self, count, sum, values, *args, **kwargs):
         """

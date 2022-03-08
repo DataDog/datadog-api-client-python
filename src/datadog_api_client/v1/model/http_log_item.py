@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class HTTPLogItem(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "ddsource": (str,),
             "ddtags": (str,),
@@ -30,8 +27,6 @@ class HTTPLogItem(ModelNormal):
         "message": "message",
         "service": "service",
     }
-
-    read_only_vars = {}
 
     def __init__(self, message, *args, **kwargs):
         """

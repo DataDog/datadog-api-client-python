@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsLocations(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "locations": ([SyntheticsLocation],),
@@ -29,8 +26,6 @@ class SyntheticsLocations(ModelNormal):
     attribute_map = {
         "locations": "locations",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

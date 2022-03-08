@@ -10,16 +10,15 @@ from datadog_api_client.v2.model_utils import (
 
 
 class MetricBulkConfigureTagsType(ModelSimple):
+
     allowed_values = {
         "value": {
             "BULK_MANAGE_TAGS": "metric_bulk_configure_tags",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

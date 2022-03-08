@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsGetAPITestLatestResultsResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "last_timestamp_fetched": (int,),
@@ -31,8 +28,6 @@ class SyntheticsGetAPITestLatestResultsResponse(ModelNormal):
         "last_timestamp_fetched": "last_timestamp_fetched",
         "results": "results",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -10,6 +10,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class UsageSort(ModelSimple):
+
     allowed_values = {
         "value": {
             "COMPUTED_ON": "computed_on",
@@ -19,10 +20,8 @@ class UsageSort(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

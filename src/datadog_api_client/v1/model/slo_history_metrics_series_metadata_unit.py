@@ -11,12 +11,10 @@ from datadog_api_client.v1.model_utils import (
 
 
 class SLOHistoryMetricsSeriesMetadataUnit(ModelNormal):
-
-    validations = {}
     _nullable = True
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "family": (str,),
             "id": (int,),
@@ -34,8 +32,6 @@ class SLOHistoryMetricsSeriesMetadataUnit(ModelNormal):
         "scale_factor": "scale_factor",
         "short_name": "short_name",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

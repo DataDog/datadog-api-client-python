@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class LogsMetricResponseAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "compute": (LogsMetricResponseCompute,),
@@ -37,8 +34,6 @@ class LogsMetricResponseAttributes(ModelNormal):
         "filter": "filter",
         "group_by": "group_by",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

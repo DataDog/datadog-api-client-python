@@ -489,6 +489,18 @@
       "type": "safe"
     }
   },
+  "ListRUMEvents": {
+    "tag": "RUM",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchRUMEvents": {
+    "tag": "RUM",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DownloadCloudWorkloadPolicyFile": {
     "tag": "Cloud Workload Security",
     "undo": {

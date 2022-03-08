@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class LogQueryDefinitionGroupBy(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "facet": (str,),
@@ -33,8 +30,6 @@ class LogQueryDefinitionGroupBy(ModelNormal):
         "limit": "limit",
         "sort": "sort",
     }
-
-    read_only_vars = {}
 
     def __init__(self, facet, *args, **kwargs):
         """

@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsListTestsResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "tests": ([SyntheticsTestDetails],),
@@ -29,8 +26,6 @@ class SyntheticsListTestsResponse(ModelNormal):
     attribute_map = {
         "tests": "tests",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

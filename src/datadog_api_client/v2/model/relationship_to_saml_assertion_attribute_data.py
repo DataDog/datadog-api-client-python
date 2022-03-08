@@ -16,7 +16,6 @@ def lazy_import():
 
 
 class RelationshipToSAMLAssertionAttributeData(ModelNormal):
-
     validations = {
         "id": {
             "inclusive_maximum": 2147483647,
@@ -24,7 +23,7 @@ class RelationshipToSAMLAssertionAttributeData(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "id": (int,),
@@ -35,8 +34,6 @@ class RelationshipToSAMLAssertionAttributeData(ModelNormal):
         "id": "id",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, id, type, *args, **kwargs):
         """

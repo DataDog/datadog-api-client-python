@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsTriggerCITestRunResult(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "device": (SyntheticsDeviceID,),
@@ -35,8 +32,6 @@ class SyntheticsTriggerCITestRunResult(ModelNormal):
         "public_id": "public_id",
         "result_id": "result_id",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

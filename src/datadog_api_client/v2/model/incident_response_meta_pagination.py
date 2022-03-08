@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class IncidentResponseMetaPagination(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "next_offset": (int,),
             "offset": (int,),
@@ -26,8 +23,6 @@ class IncidentResponseMetaPagination(ModelNormal):
         "offset": "offset",
         "size": "size",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

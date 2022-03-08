@@ -24,11 +24,8 @@ def lazy_import():
 
 
 class SyntheticsAPIStep(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "allow_failure": (bool,),
@@ -51,8 +48,6 @@ class SyntheticsAPIStep(ModelNormal):
         "retry": "retry",
         "subtype": "subtype",
     }
-
-    read_only_vars = {}
 
     def __init__(self, name, request, subtype, *args, **kwargs):
         """

@@ -25,7 +25,6 @@ def lazy_import():
 
 
 class NotebooksResponseDataAttributes(ModelNormal):
-
     validations = {
         "name": {
             "max_length": 80,
@@ -34,7 +33,7 @@ class NotebooksResponseDataAttributes(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "author": (NotebookAuthor,),
@@ -57,7 +56,6 @@ class NotebooksResponseDataAttributes(ModelNormal):
         "status": "status",
         "time": "time",
     }
-
     read_only_vars = {
         "created",
         "modified",

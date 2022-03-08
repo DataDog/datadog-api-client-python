@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class NotebooksResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "data": ([NotebooksResponseData],),
@@ -33,8 +30,6 @@ class NotebooksResponse(ModelNormal):
         "data": "data",
         "meta": "meta",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

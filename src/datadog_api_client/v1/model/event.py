@@ -18,7 +18,6 @@ def lazy_import():
 
 
 class Event(ModelNormal):
-
     validations = {
         "text": {
             "max_length": 4000,
@@ -26,7 +25,7 @@ class Event(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "alert_type": (EventAlertType,),
@@ -59,7 +58,6 @@ class Event(ModelNormal):
         "title": "title",
         "url": "url",
     }
-
     read_only_vars = {
         "id",
         "id_str",

@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class SyntheticsGlobalVariable(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "attributes": (SyntheticsGlobalVariableAttributes,),
@@ -49,7 +46,6 @@ class SyntheticsGlobalVariable(ModelNormal):
         "tags": "tags",
         "value": "value",
     }
-
     read_only_vars = {
         "id",
     }

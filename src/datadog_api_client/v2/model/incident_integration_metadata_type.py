@@ -10,16 +10,15 @@ from datadog_api_client.v2.model_utils import (
 
 
 class IncidentIntegrationMetadataType(ModelSimple):
+
     allowed_values = {
         "value": {
             "INCIDENT_INTEGRATIONS": "incident_integrations",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

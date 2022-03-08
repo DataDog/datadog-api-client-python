@@ -34,11 +34,8 @@ def lazy_import():
 
 
 class DistributionWidgetRequest(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "apm_query": (LogQueryDefinition,),
@@ -67,8 +64,6 @@ class DistributionWidgetRequest(ModelNormal):
         "security_query": "security_query",
         "style": "style",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

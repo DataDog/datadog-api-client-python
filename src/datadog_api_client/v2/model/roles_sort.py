@@ -10,6 +10,7 @@ from datadog_api_client.v2.model_utils import (
 
 
 class RolesSort(ModelSimple):
+
     allowed_values = {
         "value": {
             "NAME_ASCENDING": "name",
@@ -21,10 +22,8 @@ class RolesSort(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

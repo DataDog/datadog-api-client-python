@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class NotebookMarkdownCellAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "definition": (NotebookMarkdownCellDefinition,),
@@ -29,8 +26,6 @@ class NotebookMarkdownCellAttributes(ModelNormal):
     attribute_map = {
         "definition": "definition",
     }
-
-    read_only_vars = {}
 
     def __init__(self, definition, *args, **kwargs):
         """

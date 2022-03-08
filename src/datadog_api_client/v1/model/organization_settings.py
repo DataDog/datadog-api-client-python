@@ -28,11 +28,8 @@ def lazy_import():
 
 
 class OrganizationSettings(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "private_widget_share": (bool,),
@@ -59,8 +56,6 @@ class OrganizationSettings(ModelNormal):
         "saml_login_url": "saml_login_url",
         "saml_strict_mode": "saml_strict_mode",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

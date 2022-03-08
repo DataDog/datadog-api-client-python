@@ -24,11 +24,8 @@ def lazy_import():
 
 
 class ImageWidgetDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "has_background": (bool,),
@@ -53,8 +50,6 @@ class ImageWidgetDefinition(ModelNormal):
         "url_dark_theme": "url_dark_theme",
         "vertical_align": "vertical_align",
     }
-
-    read_only_vars = {}
 
     def __init__(self, type, url, *args, **kwargs):
         """

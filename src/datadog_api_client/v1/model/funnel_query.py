@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class FunnelQuery(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "data_source": (FunnelSource,),
@@ -35,8 +32,6 @@ class FunnelQuery(ModelNormal):
         "query_string": "query_string",
         "steps": "steps",
     }
-
-    read_only_vars = {}
 
     def __init__(self, data_source, query_string, steps, *args, **kwargs):
         """

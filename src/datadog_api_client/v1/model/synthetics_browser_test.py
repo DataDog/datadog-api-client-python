@@ -24,11 +24,8 @@ def lazy_import():
 
 
 class SyntheticsBrowserTest(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "config": (SyntheticsBrowserTestConfig,),
@@ -57,7 +54,6 @@ class SyntheticsBrowserTest(ModelNormal):
         "tags": "tags",
         "type": "type",
     }
-
     read_only_vars = {
         "monitor_id",
         "public_id",

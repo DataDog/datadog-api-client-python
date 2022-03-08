@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsTestRequestProxy(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "headers": (SyntheticsTestHeaders,),
@@ -31,8 +28,6 @@ class SyntheticsTestRequestProxy(ModelNormal):
         "headers": "headers",
         "url": "url",
     }
-
-    read_only_vars = {}
 
     def __init__(self, url, *args, **kwargs):
         """

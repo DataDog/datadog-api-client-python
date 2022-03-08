@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class LogsArchiveIntegrationS3(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "account_id": (str,),
             "role_name": (str,),
@@ -24,8 +21,6 @@ class LogsArchiveIntegrationS3(ModelNormal):
         "account_id": "account_id",
         "role_name": "role_name",
     }
-
-    read_only_vars = {}
 
     def __init__(self, account_id, role_name, *args, **kwargs):
         """

@@ -28,11 +28,8 @@ def lazy_import():
 
 
 class SLOHistoryResponseData(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "from_ts": (int,),
@@ -59,8 +56,6 @@ class SLOHistoryResponseData(ModelNormal):
         "type": "type",
         "type_id": "type_id",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

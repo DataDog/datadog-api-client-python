@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class NotebookLogStreamCellAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "definition": (LogStreamWidgetDefinition,),
@@ -37,8 +34,6 @@ class NotebookLogStreamCellAttributes(ModelNormal):
         "graph_size": "graph_size",
         "time": "time",
     }
-
-    read_only_vars = {}
 
     def __init__(self, definition, *args, **kwargs):
         """

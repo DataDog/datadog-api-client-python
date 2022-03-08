@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class ServiceCheck(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "check": (str,),
@@ -39,8 +36,6 @@ class ServiceCheck(ModelNormal):
         "tags": "tags",
         "timestamp": "timestamp",
     }
-
-    read_only_vars = {}
 
     def __init__(self, check, host_name, status, tags, *args, **kwargs):
         """

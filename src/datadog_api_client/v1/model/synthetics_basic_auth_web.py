@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsBasicAuthWeb(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "password": (str,),
@@ -33,8 +30,6 @@ class SyntheticsBasicAuthWeb(ModelNormal):
         "type": "type",
         "username": "username",
     }
-
-    read_only_vars = {}
 
     def __init__(self, password, type, username, *args, **kwargs):
         """

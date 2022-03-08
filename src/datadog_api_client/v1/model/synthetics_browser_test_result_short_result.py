@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsBrowserTestResultShortResult(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "device": (SyntheticsDevice,),
@@ -37,8 +34,6 @@ class SyntheticsBrowserTestResultShortResult(ModelNormal):
         "step_count_completed": "stepCountCompleted",
         "step_count_total": "stepCountTotal",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

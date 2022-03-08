@@ -10,16 +10,15 @@ from datadog_api_client.v2.model_utils import (
 
 
 class APIKeysType(ModelSimple):
+
     allowed_values = {
         "value": {
             "API_KEYS": "api_keys",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

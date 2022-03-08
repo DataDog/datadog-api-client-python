@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class SyntheticsAssertionJSONPathTarget(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "operator": (SyntheticsAssertionJSONPathOperator,),
@@ -41,8 +38,6 @@ class SyntheticsAssertionJSONPathTarget(ModelNormal):
         "target": "target",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, operator, type, *args, **kwargs):
         """

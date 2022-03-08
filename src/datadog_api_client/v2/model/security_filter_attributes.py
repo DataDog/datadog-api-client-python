@@ -20,7 +20,6 @@ def lazy_import():
 
 
 class SecurityFilterAttributes(ModelNormal):
-
     validations = {
         "version": {
             "inclusive_maximum": 2147483647,
@@ -28,7 +27,7 @@ class SecurityFilterAttributes(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "exclusion_filters": ([SecurityFilterExclusionFilterResponse],),
@@ -49,8 +48,6 @@ class SecurityFilterAttributes(ModelNormal):
         "query": "query",
         "version": "version",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

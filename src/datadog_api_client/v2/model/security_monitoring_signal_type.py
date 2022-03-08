@@ -10,16 +10,15 @@ from datadog_api_client.v2.model_utils import (
 
 
 class SecurityMonitoringSignalType(ModelSimple):
+
     allowed_values = {
         "value": {
             "SIGNAL": "signal",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

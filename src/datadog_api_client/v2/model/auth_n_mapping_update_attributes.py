@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class AuthNMappingUpdateAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "attribute_key": (str,),
             "attribute_value": (str,),
@@ -24,8 +21,6 @@ class AuthNMappingUpdateAttributes(ModelNormal):
         "attribute_key": "attribute_key",
         "attribute_value": "attribute_value",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

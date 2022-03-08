@@ -11,11 +11,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class UsageRumUnitsHour(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "browser_rum_units": (int,),
             "mobile_rum_units": (int,),
@@ -31,8 +28,6 @@ class UsageRumUnitsHour(ModelNormal):
         "public_id": "public_id",
         "rum_units": "rum_units",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

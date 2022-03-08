@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class UserCreateAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "email": (str,),
             "name": (str,),
@@ -26,8 +23,6 @@ class UserCreateAttributes(ModelNormal):
         "name": "name",
         "title": "title",
     }
-
-    read_only_vars = {}
 
     def __init__(self, email, *args, **kwargs):
         """

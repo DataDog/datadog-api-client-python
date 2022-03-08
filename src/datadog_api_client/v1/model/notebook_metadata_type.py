@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class NotebookMetadataType(ModelSimple):
+
     allowed_values = {
         "value": {
             "POSTMORTEM": "postmortem",
@@ -21,12 +22,10 @@ class NotebookMetadataType(ModelSimple):
         },
     }
 
-    validations = {}
-
     _nullable = True
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

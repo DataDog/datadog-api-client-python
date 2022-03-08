@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class AWSAccount(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "access_key_id": (str,),
             "account_id": (str,),
@@ -42,8 +39,6 @@ class AWSAccount(ModelNormal):
         "role_name": "role_name",
         "secret_access_key": "secret_access_key",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

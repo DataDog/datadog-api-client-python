@@ -10,7 +10,6 @@ from datadog_api_client.v1.model_utils import (
 
 
 class SyntheticsTestOptionsMonitorOptions(ModelNormal):
-
     validations = {
         "renotify_interval": {
             "inclusive_maximum": 1440,
@@ -19,7 +18,7 @@ class SyntheticsTestOptionsMonitorOptions(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "renotify_interval": (int,),
         }
@@ -27,8 +26,6 @@ class SyntheticsTestOptionsMonitorOptions(ModelNormal):
     attribute_map = {
         "renotify_interval": "renotify_interval",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -11,6 +11,7 @@ from datadog_api_client.v2.model_utils import (
 
 
 class AuthNMappingsSort(ModelSimple):
+
     allowed_values = {
         "value": {
             "CREATED_AT_ASCENDING": "created_at",
@@ -28,10 +29,8 @@ class AuthNMappingsSort(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

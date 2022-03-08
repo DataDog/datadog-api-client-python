@@ -24,7 +24,6 @@ def lazy_import():
 
 
 class SyntheticsTestRequest(ModelNormal):
-
     validations = {
         "dns_server_port": {
             "inclusive_maximum": 65535,
@@ -37,7 +36,7 @@ class SyntheticsTestRequest(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "allow_insecure": (bool,),
@@ -84,8 +83,6 @@ class SyntheticsTestRequest(ModelNormal):
         "timeout": "timeout",
         "url": "url",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

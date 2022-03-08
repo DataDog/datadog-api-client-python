@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class LogsArchiveIntegrationGCS(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "client_email": (str,),
             "project_id": (str,),
@@ -24,8 +21,6 @@ class LogsArchiveIntegrationGCS(ModelNormal):
         "client_email": "client_email",
         "project_id": "project_id",
     }
-
-    read_only_vars = {}
 
     def __init__(self, client_email, project_id, *args, **kwargs):
         """

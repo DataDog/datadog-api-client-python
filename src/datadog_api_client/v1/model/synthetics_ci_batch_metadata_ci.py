@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class SyntheticsCIBatchMetadataCI(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "pipeline": (SyntheticsCIBatchMetadataPipeline,),
@@ -33,8 +30,6 @@ class SyntheticsCIBatchMetadataCI(ModelNormal):
         "pipeline": "pipeline",
         "provider": "provider",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

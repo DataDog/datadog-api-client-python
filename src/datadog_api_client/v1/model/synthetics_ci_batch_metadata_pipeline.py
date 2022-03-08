@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class SyntheticsCIBatchMetadataPipeline(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "url": (str,),
         }
@@ -22,8 +19,6 @@ class SyntheticsCIBatchMetadataPipeline(ModelNormal):
     attribute_map = {
         "url": "url",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

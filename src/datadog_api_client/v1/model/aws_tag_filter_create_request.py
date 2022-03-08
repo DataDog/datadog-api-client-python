@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class AWSTagFilterCreateRequest(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "account_id": (str,),
@@ -33,8 +30,6 @@ class AWSTagFilterCreateRequest(ModelNormal):
         "namespace": "namespace",
         "tag_filter_str": "tag_filter_str",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class SyntheticsTiming(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "dns": (float,),
             "download": (float,),
@@ -38,8 +35,6 @@ class SyntheticsTiming(ModelNormal):
         "total": "total",
         "wait": "wait",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

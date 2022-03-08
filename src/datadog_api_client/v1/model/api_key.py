@@ -10,7 +10,6 @@ from datadog_api_client.v1.model_utils import (
 
 
 class ApiKey(ModelNormal):
-
     validations = {
         "key": {
             "max_length": 32,
@@ -19,7 +18,7 @@ class ApiKey(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "created": (str,),
             "created_by": (str,),
@@ -33,7 +32,6 @@ class ApiKey(ModelNormal):
         "key": "key",
         "name": "name",
     }
-
     read_only_vars = {
         "created",
         "created_by",

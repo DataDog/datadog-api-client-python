@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "aggregator": (FormulaAndFunctionMetricAggregation,),
@@ -51,8 +48,6 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
         "tag_filters": "tag_filters",
         "text_filter": "text_filter",
     }
-
-    read_only_vars = {}
 
     def __init__(self, data_source, metric, name, *args, **kwargs):
         """

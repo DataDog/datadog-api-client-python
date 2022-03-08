@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class AWSLogsServicesRequest(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "account_id": (str,),
             "services": ([str],),
@@ -24,8 +21,6 @@ class AWSLogsServicesRequest(ModelNormal):
         "account_id": "account_id",
         "services": "services",
     }
-
-    read_only_vars = {}
 
     def __init__(self, account_id, services, *args, **kwargs):
         """

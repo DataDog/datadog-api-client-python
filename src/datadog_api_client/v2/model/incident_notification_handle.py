@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class IncidentNotificationHandle(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "display_name": (str,),
             "handle": (str,),
@@ -24,8 +21,6 @@ class IncidentNotificationHandle(ModelNormal):
         "display_name": "display_name",
         "handle": "handle",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

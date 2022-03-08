@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class GroupWidgetDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "background_color": (str,),
@@ -49,8 +46,6 @@ class GroupWidgetDefinition(ModelNormal):
         "type": "type",
         "widgets": "widgets",
     }
-
-    read_only_vars = {}
 
     def __init__(self, layout_type, type, widgets, *args, **kwargs):
         """

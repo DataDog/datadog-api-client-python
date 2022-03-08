@@ -10,16 +10,15 @@ from datadog_api_client.v2.model_utils import (
 
 
 class LogsMetricType(ModelSimple):
+
     allowed_values = {
         "value": {
             "LOGS_METRICS": "logs_metrics",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

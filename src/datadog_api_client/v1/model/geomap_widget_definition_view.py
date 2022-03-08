@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class GeomapWidgetDefinitionView(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "focus": (str,),
         }
@@ -22,8 +19,6 @@ class GeomapWidgetDefinitionView(ModelNormal):
     attribute_map = {
         "focus": "focus",
     }
-
-    read_only_vars = {}
 
     def __init__(self, focus, *args, **kwargs):
         """

@@ -22,7 +22,6 @@ def lazy_import():
 
 
 class SecurityMonitoringRuleUpdatePayload(ModelNormal):
-
     validations = {
         "version": {
             "inclusive_maximum": 2147483647,
@@ -30,7 +29,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "cases": ([SecurityMonitoringRuleCase],),
@@ -57,8 +56,6 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         "tags": "tags",
         "version": "version",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

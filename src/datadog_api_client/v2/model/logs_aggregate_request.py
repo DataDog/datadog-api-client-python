@@ -24,11 +24,8 @@ def lazy_import():
 
 
 class LogsAggregateRequest(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "compute": ([LogsCompute],),
@@ -45,8 +42,6 @@ class LogsAggregateRequest(ModelNormal):
         "options": "options",
         "page": "page",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

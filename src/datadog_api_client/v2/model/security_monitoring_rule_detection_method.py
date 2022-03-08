@@ -11,6 +11,7 @@ from datadog_api_client.v2.model_utils import (
 
 
 class SecurityMonitoringRuleDetectionMethod(ModelSimple):
+
     allowed_values = {
         "value": {
             "THRESHOLD": "threshold",
@@ -20,10 +21,8 @@ class SecurityMonitoringRuleDetectionMethod(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

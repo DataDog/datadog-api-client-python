@@ -31,11 +31,8 @@ def lazy_import():
 
 
 class SyntheticsStepDetail(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "browser_errors": ([SyntheticsBrowserError],),
@@ -86,8 +83,6 @@ class SyntheticsStepDetail(ModelNormal):
         "vitals_metrics": "vitalsMetrics",
         "warnings": "warnings",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

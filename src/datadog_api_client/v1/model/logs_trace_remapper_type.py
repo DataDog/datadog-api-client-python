@@ -10,16 +10,15 @@ from datadog_api_client.v1.model_utils import (
 
 
 class LogsTraceRemapperType(ModelSimple):
+
     allowed_values = {
         "value": {
             "TRACE_ID_REMAPPER": "trace-id-remapper",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

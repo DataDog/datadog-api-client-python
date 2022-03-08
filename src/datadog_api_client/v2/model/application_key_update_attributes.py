@@ -11,11 +11,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class ApplicationKeyUpdateAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "name": (str,),
             "scopes": ([str], none_type),
@@ -25,8 +22,6 @@ class ApplicationKeyUpdateAttributes(ModelNormal):
         "name": "name",
         "scopes": "scopes",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

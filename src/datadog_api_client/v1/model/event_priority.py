@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class EventPriority(ModelSimple):
+
     allowed_values = {
         "value": {
             "NORMAL": "normal",
@@ -18,12 +19,10 @@ class EventPriority(ModelSimple):
         },
     }
 
-    validations = {}
-
     _nullable = True
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

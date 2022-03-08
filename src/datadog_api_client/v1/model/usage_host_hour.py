@@ -11,11 +11,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class UsageHostHour(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "agent_host_count": (int,),
             "alibaba_host_count": (int,),
@@ -53,8 +50,6 @@ class UsageHostHour(ModelNormal):
         "public_id": "public_id",
         "vsphere_host_count": "vsphere_host_count",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

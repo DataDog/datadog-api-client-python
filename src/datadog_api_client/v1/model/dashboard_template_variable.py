@@ -11,11 +11,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class DashboardTemplateVariable(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "available_values": ([str], none_type),
             "default": (str, none_type),
@@ -29,8 +26,6 @@ class DashboardTemplateVariable(ModelNormal):
         "name": "name",
         "prefix": "prefix",
     }
-
-    read_only_vars = {}
 
     def __init__(self, name, *args, **kwargs):
         """

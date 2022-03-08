@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class SyntheticsTestProcessStatus(ModelSimple):
+
     allowed_values = {
         "value": {
             "NOT_SCHEDULED": "not_scheduled",
@@ -21,10 +22,8 @@ class SyntheticsTestProcessStatus(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class SecurityMonitoringSignalsListResponseMetaPage(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "after": (str,),
         }
@@ -22,8 +19,6 @@ class SecurityMonitoringSignalsListResponseMetaPage(ModelNormal):
     attribute_map = {
         "after": "after",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

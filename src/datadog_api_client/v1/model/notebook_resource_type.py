@@ -10,16 +10,15 @@ from datadog_api_client.v1.model_utils import (
 
 
 class NotebookResourceType(ModelSimple):
+
     allowed_values = {
         "value": {
             "NOTEBOOKS": "notebooks",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

@@ -18,7 +18,6 @@ def lazy_import():
 
 
 class LogsGrokParser(ModelNormal):
-
     validations = {
         "samples": {
             "max_items": 5,
@@ -26,7 +25,7 @@ class LogsGrokParser(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "grok": (LogsGrokParserRules,),
@@ -45,8 +44,6 @@ class LogsGrokParser(ModelNormal):
         "source": "source",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, grok, type, *args, **kwargs):
         """

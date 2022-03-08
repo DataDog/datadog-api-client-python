@@ -10,6 +10,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class ListStreamSource(ModelSimple):
+
     allowed_values = {
         "value": {
             "ISSUE_STREAM": "issue_stream",
@@ -18,10 +19,8 @@ class ListStreamSource(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class FreeTextWidgetDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "color": (str,),
@@ -39,8 +36,6 @@ class FreeTextWidgetDefinition(ModelNormal):
         "text_align": "text_align",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, text, type, *args, **kwargs):
         """

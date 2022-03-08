@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class MonitorSearchResponseCounts(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "muted": (MonitorSearchCount,),
@@ -41,8 +38,6 @@ class MonitorSearchResponseCounts(ModelNormal):
         "tag": "tag",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

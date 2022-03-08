@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class SyntheticsDeviceID(ModelSimple):
+
     allowed_values = {
         "value": {
             "LAPTOP_LARGE": "laptop_large",
@@ -28,10 +29,8 @@ class SyntheticsDeviceID(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

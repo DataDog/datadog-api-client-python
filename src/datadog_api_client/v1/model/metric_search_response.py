@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class MetricSearchResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "results": (MetricSearchResponseResults,),
@@ -29,8 +26,6 @@ class MetricSearchResponse(ModelNormal):
     attribute_map = {
         "results": "results",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

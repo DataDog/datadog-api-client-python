@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class UsageSpecifiedCustomReportsMeta(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "page": (UsageSpecifiedCustomReportsPage,),
@@ -29,8 +26,6 @@ class UsageSpecifiedCustomReportsMeta(ModelNormal):
     attribute_map = {
         "page": "page",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

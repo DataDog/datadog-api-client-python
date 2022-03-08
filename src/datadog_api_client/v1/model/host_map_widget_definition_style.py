@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class HostMapWidgetDefinitionStyle(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "fill_max": (str,),
             "fill_min": (str,),
@@ -28,8 +25,6 @@ class HostMapWidgetDefinitionStyle(ModelNormal):
         "palette": "palette",
         "palette_flip": "palette_flip",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

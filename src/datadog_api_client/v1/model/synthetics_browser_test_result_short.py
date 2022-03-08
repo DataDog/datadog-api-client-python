@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class SyntheticsBrowserTestResultShort(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "check_time": (float,),
@@ -41,8 +38,6 @@ class SyntheticsBrowserTestResultShort(ModelNormal):
         "result_id": "result_id",
         "status": "status",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

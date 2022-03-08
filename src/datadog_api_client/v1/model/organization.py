@@ -20,7 +20,6 @@ def lazy_import():
 
 
 class Organization(ModelNormal):
-
     validations = {
         "name": {
             "inclusive_maximum": 32,
@@ -28,7 +27,7 @@ class Organization(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "billing": (OrganizationBilling,),
@@ -49,7 +48,6 @@ class Organization(ModelNormal):
         "settings": "settings",
         "subscription": "subscription",
     }
-
     read_only_vars = {
         "created",
     }

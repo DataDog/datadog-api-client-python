@@ -10,6 +10,7 @@ from datadog_api_client.v2.model_utils import (
 
 
 class LogsAggregateSortType(ModelSimple):
+
     allowed_values = {
         "value": {
             "ALPHABETICAL": "alphabetical",
@@ -17,10 +18,8 @@ class LogsAggregateSortType(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

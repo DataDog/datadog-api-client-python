@@ -11,6 +11,7 @@ from datadog_api_client.v2.model_utils import (
 
 
 class SecurityMonitoringRuleTypeRead(ModelSimple):
+
     allowed_values = {
         "value": {
             "LOG_DETECTION": "log_detection",
@@ -20,10 +21,8 @@ class SecurityMonitoringRuleTypeRead(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class UsageCustomReportsData(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "attributes": (UsageCustomReportsAttributes,),
@@ -35,8 +32,6 @@ class UsageCustomReportsData(ModelNormal):
         "id": "id",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -19,7 +19,6 @@ def lazy_import():
 
 
 class MetricsQueryMetadata(ModelNormal):
-
     validations = {
         "unit": {
             "max_items": 2,
@@ -28,7 +27,7 @@ class MetricsQueryMetadata(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "aggr": (str, none_type),
@@ -61,7 +60,6 @@ class MetricsQueryMetadata(ModelNormal):
         "tag_set": "tag_set",
         "unit": "unit",
     }
-
     read_only_vars = {
         "aggr",
         "display_name",

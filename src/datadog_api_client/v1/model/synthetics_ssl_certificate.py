@@ -19,11 +19,8 @@ def lazy_import():
 
 
 class SyntheticsSSLCertificate(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "cipher": (str,),
@@ -54,8 +51,6 @@ class SyntheticsSSLCertificate(ModelNormal):
         "valid_from": "validFrom",
         "valid_to": "validTo",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """
