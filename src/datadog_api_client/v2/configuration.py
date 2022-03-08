@@ -65,3 +65,36 @@ class Configuration(BaseConfiguration):
             "list_incident_teams": False,
             "update_incident_team": False,
         }
+
+    def auth_settings(self):
+        """Gets Auth Settings dict for api client.
+
+        :return: The Auth Settings information dict.
+        """
+        auth = {}
+        if self.access_token is not None:
+            auth["AuthZ"] = {
+                "type": "oauth2",
+                "in": "header",
+                "key": "Authorization",
+                "value": "Bearer " + self.access_token,
+            }
+        if "apiKeyAuth" in self.api_key:
+            auth["apiKeyAuth"] = {
+                "type": "api_key",
+                "in": "header",
+                "key": "DD-API-KEY",
+                "value": self.get_api_key_with_prefix(
+                    "apiKeyAuth",
+                ),
+            }
+        if "appKeyAuth" in self.api_key:
+            auth["appKeyAuth"] = {
+                "type": "api_key",
+                "in": "header",
+                "key": "DD-APPLICATION-KEY",
+                "value": self.get_api_key_with_prefix(
+                    "appKeyAuth",
+                ),
+            }
+        return auth
