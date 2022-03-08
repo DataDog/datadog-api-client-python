@@ -49,12 +49,11 @@ jobs:
           repo: datadog-api-spec
           status: pending
           context: integration
-      - name: Set up Node 14
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
       - name: Report source code metadata
-        run: npx @datadog/datadog-ci git-metadata upload
+        run: |
+          curl -L "https://github.com/DataDog/datadog-ci/releases/latest/download/datadog-ci-linux-x64" --output ./datadog-ci
+          chmod +x "./datadog-ci"
+          ./datadog-ci git-metadata upload
         env:
           DATADOG_API_KEY: ${{ secrets.DD_API_KEY }}
       - name: Set up Python 3.10
