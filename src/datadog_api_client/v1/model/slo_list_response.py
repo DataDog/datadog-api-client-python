@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class SLOListResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "data": ([ServiceLevelObjective],),
@@ -35,8 +32,6 @@ class SLOListResponse(ModelNormal):
         "errors": "errors",
         "metadata": "metadata",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

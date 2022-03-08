@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class RUMWarning(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "code": (str,),
             "detail": (str,),
@@ -26,8 +23,6 @@ class RUMWarning(ModelNormal):
         "detail": "detail",
         "title": "title",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

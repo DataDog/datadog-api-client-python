@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class LogsAPIError(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "code": (str,),
@@ -33,8 +30,6 @@ class LogsAPIError(ModelNormal):
         "details": "details",
         "message": "message",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

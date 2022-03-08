@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class DashboardSummaryDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "author_handle": (str,),
@@ -47,8 +44,6 @@ class DashboardSummaryDefinition(ModelNormal):
         "title": "title",
         "url": "url",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

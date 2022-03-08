@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class UsageAttributionValues(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "api_percentage": (float,),
             "api_usage": (float,),
@@ -100,8 +97,6 @@ class UsageAttributionValues(ModelNormal):
         "snmp_percentage": "snmp_percentage",
         "snmp_usage": "snmp_usage",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

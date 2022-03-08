@@ -10,16 +10,15 @@ from datadog_api_client.v2.model_utils import (
 
 
 class LogsArchiveDestinationS3Type(ModelSimple):
+
     allowed_values = {
         "value": {
             "S3": "s3",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

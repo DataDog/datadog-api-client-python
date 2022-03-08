@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class AWSAccountDeleteRequest(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "access_key_id": (str,),
             "account_id": (str,),
@@ -26,8 +23,6 @@ class AWSAccountDeleteRequest(ModelNormal):
         "account_id": "account_id",
         "role_name": "role_name",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

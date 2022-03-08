@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class SyntheticsSSLCertificateIssuer(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "c": (str,),
             "cn": (str,),
@@ -32,8 +29,6 @@ class SyntheticsSSLCertificateIssuer(ModelNormal):
         "ou": "OU",
         "st": "ST",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

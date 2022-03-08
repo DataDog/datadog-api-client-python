@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class LogsArchiveDestinationS3(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "bucket": (str,),
@@ -37,8 +34,6 @@ class LogsArchiveDestinationS3(ModelNormal):
         "path": "path",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, bucket, integration, type, *args, **kwargs):
         """

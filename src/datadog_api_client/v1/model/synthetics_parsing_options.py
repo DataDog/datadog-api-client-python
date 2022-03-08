@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class SyntheticsParsingOptions(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "field": (str,),
@@ -39,8 +36,6 @@ class SyntheticsParsingOptions(ModelNormal):
         "parser": "parser",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

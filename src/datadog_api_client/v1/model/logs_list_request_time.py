@@ -11,11 +11,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class LogsListRequestTime(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "_from": (datetime,),
             "timezone": (str,),
@@ -27,8 +24,6 @@ class LogsListRequestTime(ModelNormal):
         "timezone": "timezone",
         "to": "to",
     }
-
-    read_only_vars = {}
 
     def __init__(self, _from, to, *args, **kwargs):
         """

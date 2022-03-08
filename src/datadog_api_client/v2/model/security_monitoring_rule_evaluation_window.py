@@ -11,6 +11,7 @@ from datadog_api_client.v2.model_utils import (
 
 
 class SecurityMonitoringRuleEvaluationWindow(ModelSimple):
+
     allowed_values = {
         "value": {
             "ZERO_MINUTES": 0,
@@ -24,10 +25,8 @@ class SecurityMonitoringRuleEvaluationWindow(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (int,),
         }

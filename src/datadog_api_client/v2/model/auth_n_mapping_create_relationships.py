@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class AuthNMappingCreateRelationships(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "role": (RelationshipToRole,),
@@ -29,8 +26,6 @@ class AuthNMappingCreateRelationships(ModelNormal):
     attribute_map = {
         "role": "role",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

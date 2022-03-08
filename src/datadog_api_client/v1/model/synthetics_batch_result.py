@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class SyntheticsBatchResult(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "device": (SyntheticsDeviceID,),
@@ -53,8 +50,6 @@ class SyntheticsBatchResult(ModelNormal):
         "test_public_id": "test_public_id",
         "test_type": "test_type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

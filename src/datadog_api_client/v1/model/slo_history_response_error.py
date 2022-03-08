@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class SLOHistoryResponseError(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "error": (str,),
         }
@@ -22,8 +19,6 @@ class SLOHistoryResponseError(ModelNormal):
     attribute_map = {
         "error": "error",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

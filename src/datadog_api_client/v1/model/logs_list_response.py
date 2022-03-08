@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class LogsListResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "logs": ([Log],),
@@ -33,8 +30,6 @@ class LogsListResponse(ModelNormal):
         "next_log_id": "nextLogId",
         "status": "status",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

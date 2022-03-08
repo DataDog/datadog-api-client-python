@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class UsageAttributionPagination(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "limit": (int,),
             "offset": (int,),
@@ -30,8 +27,6 @@ class UsageAttributionPagination(ModelNormal):
         "sort_name": "sort_name",
         "total_number_of_records": "total_number_of_records",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

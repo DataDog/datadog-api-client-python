@@ -11,11 +11,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class RoleAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "created_at": (datetime,),
             "modified_at": (datetime,),
@@ -29,7 +26,6 @@ class RoleAttributes(ModelNormal):
         "name": "name",
         "user_count": "user_count",
     }
-
     read_only_vars = {
         "created_at",
         "modified_at",

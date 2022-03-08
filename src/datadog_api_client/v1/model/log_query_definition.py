@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class LogQueryDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "compute": (LogsQueryCompute,),
@@ -43,8 +40,6 @@ class LogQueryDefinition(ModelNormal):
         "multi_compute": "multi_compute",
         "search": "search",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

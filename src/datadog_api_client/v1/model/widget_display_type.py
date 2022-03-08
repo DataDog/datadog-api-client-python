@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class WidgetDisplayType(ModelSimple):
+
     allowed_values = {
         "value": {
             "AREA": "area",
@@ -19,10 +20,8 @@ class WidgetDisplayType(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

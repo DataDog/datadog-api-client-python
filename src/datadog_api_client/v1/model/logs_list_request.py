@@ -18,7 +18,6 @@ def lazy_import():
 
 
 class LogsListRequest(ModelNormal):
-
     validations = {
         "limit": {
             "inclusive_maximum": 1000,
@@ -26,7 +25,7 @@ class LogsListRequest(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "index": (str,),
@@ -45,8 +44,6 @@ class LogsListRequest(ModelNormal):
         "start_at": "startAt",
         "time": "time",
     }
-
-    read_only_vars = {}
 
     def __init__(self, time, *args, **kwargs):
         """

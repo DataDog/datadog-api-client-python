@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class UserInvitationData(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "relationships": (UserInvitationRelationships,),
@@ -33,8 +30,6 @@ class UserInvitationData(ModelNormal):
         "relationships": "relationships",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, relationships, type, *args, **kwargs):
         """

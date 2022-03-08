@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class ListStreamWidgetRequest(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "columns": ([ListStreamColumn],),
@@ -37,8 +34,6 @@ class ListStreamWidgetRequest(ModelNormal):
         "query": "query",
         "response_format": "response_format",
     }
-
-    read_only_vars = {}
 
     def __init__(self, columns, query, response_format, *args, **kwargs):
         """

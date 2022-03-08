@@ -17,10 +17,8 @@ def lazy_import():
 
 
 class GCPAccountListResponse(ModelSimple):
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "value": ([GCPAccount],),

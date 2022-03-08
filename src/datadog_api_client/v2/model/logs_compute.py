@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class LogsCompute(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "aggregation": (LogsAggregationFunction,),
@@ -37,8 +34,6 @@ class LogsCompute(ModelNormal):
         "metric": "metric",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, aggregation, *args, **kwargs):
         """

@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class UsageTopAvgMetricsHour(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "avg_metric_hour": (int,),
@@ -35,8 +32,6 @@ class UsageTopAvgMetricsHour(ModelNormal):
         "metric_category": "metric_category",
         "metric_name": "metric_name",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

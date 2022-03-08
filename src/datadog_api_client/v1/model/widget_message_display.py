@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class WidgetMessageDisplay(ModelSimple):
+
     allowed_values = {
         "value": {
             "INLINE": "inline",
@@ -19,10 +20,8 @@ class WidgetMessageDisplay(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

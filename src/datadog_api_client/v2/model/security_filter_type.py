@@ -10,16 +10,15 @@ from datadog_api_client.v2.model_utils import (
 
 
 class SecurityFilterType(ModelSimple):
+
     allowed_values = {
         "value": {
             "SECURITY_FILTERS": "security_filters",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

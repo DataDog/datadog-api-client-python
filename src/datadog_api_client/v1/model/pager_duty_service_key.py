@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class PagerDutyServiceKey(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "service_key": (str,),
         }
@@ -22,8 +19,6 @@ class PagerDutyServiceKey(ModelNormal):
     attribute_map = {
         "service_key": "service_key",
     }
-
-    read_only_vars = {}
 
     def __init__(self, service_key, *args, **kwargs):
         """

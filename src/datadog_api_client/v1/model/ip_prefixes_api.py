@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class IPPrefixesAPI(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "prefixes_ipv4": ([str],),
             "prefixes_ipv6": ([str],),
@@ -24,8 +21,6 @@ class IPPrefixesAPI(ModelNormal):
         "prefixes_ipv4": "prefixes_ipv4",
         "prefixes_ipv6": "prefixes_ipv6",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

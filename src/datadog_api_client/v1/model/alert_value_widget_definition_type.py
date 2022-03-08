@@ -10,16 +10,15 @@ from datadog_api_client.v1.model_utils import (
 
 
 class AlertValueWidgetDefinitionType(ModelSimple):
+
     allowed_values = {
         "value": {
             "ALERT_VALUE": "alert_value",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

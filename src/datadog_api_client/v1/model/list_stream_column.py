@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class ListStreamColumn(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "field": (str,),
@@ -31,8 +28,6 @@ class ListStreamColumn(ModelNormal):
         "field": "field",
         "width": "width",
     }
-
-    read_only_vars = {}
 
     def __init__(self, field, width, *args, **kwargs):
         """

@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsAPITestResultShortResult(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "passed": (bool,),
@@ -31,8 +28,6 @@ class SyntheticsAPITestResultShortResult(ModelNormal):
         "passed": "passed",
         "timings": "timings",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -36,11 +36,8 @@ def lazy_import():
 
 
 class SecurityMonitoringRuleOptions(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "detection_method": (SecurityMonitoringRuleDetectionMethod,),
@@ -59,8 +56,6 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         "max_signal_duration": "maxSignalDuration",
         "new_value_options": "newValueOptions",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

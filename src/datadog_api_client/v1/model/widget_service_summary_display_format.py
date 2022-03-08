@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class WidgetServiceSummaryDisplayFormat(ModelSimple):
+
     allowed_values = {
         "value": {
             "ONE_COLUMN": "one_column",
@@ -19,10 +20,8 @@ class WidgetServiceSummaryDisplayFormat(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

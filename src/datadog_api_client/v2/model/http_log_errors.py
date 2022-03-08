@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class HTTPLogErrors(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "errors": ([HTTPLogError],),
@@ -29,8 +26,6 @@ class HTTPLogErrors(ModelNormal):
     attribute_map = {
         "errors": "errors",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

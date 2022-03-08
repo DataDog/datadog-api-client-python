@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class WidgetEvent(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "q": (str,),
             "tags_execution": (str,),
@@ -24,8 +21,6 @@ class WidgetEvent(ModelNormal):
         "q": "q",
         "tags_execution": "tags_execution",
     }
-
-    read_only_vars = {}
 
     def __init__(self, q, *args, **kwargs):
         """

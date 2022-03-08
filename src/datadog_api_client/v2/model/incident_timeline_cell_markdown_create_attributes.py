@@ -24,11 +24,8 @@ def lazy_import():
 
 
 class IncidentTimelineCellMarkdownCreateAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "cell_type": (IncidentTimelineCellMarkdownContentType,),
@@ -41,8 +38,6 @@ class IncidentTimelineCellMarkdownCreateAttributes(ModelNormal):
         "content": "content",
         "important": "important",
     }
-
-    read_only_vars = {}
 
     def __init__(self, cell_type, content, *args, **kwargs):
         """

@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class UsageFargateResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "usage": ([UsageFargateHour],),
@@ -29,8 +26,6 @@ class UsageFargateResponse(ModelNormal):
     attribute_map = {
         "usage": "usage",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

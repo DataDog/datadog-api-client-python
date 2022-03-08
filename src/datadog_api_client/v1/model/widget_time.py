@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class WidgetTime(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "live_span": (WidgetLiveSpan,),
@@ -29,8 +26,6 @@ class WidgetTime(ModelNormal):
     attribute_map = {
         "live_span": "live_span",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

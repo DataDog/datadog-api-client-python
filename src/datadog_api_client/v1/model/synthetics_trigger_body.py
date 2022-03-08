@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsTriggerBody(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "tests": ([SyntheticsTriggerTest],),
@@ -29,8 +26,6 @@ class SyntheticsTriggerBody(ModelNormal):
     attribute_map = {
         "tests": "tests",
     }
-
-    read_only_vars = {}
 
     def __init__(self, tests, *args, **kwargs):
         """

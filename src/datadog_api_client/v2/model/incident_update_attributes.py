@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class IncidentUpdateAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "customer_impact_end": (datetime, none_type),
@@ -49,8 +46,6 @@ class IncidentUpdateAttributes(ModelNormal):
         "resolved": "resolved",
         "title": "title",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

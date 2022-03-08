@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class DashboardListItemResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "id": (str,),
@@ -31,7 +28,6 @@ class DashboardListItemResponse(ModelNormal):
         "id": "id",
         "type": "type",
     }
-
     read_only_vars = {
         "id",
     }

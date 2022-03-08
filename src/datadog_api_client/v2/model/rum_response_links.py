@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class RUMResponseLinks(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "next": (str,),
         }
@@ -22,8 +19,6 @@ class RUMResponseLinks(ModelNormal):
     attribute_map = {
         "next": "next",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

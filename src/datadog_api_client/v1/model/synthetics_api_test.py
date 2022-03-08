@@ -24,11 +24,8 @@ def lazy_import():
 
 
 class SyntheticsAPITest(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "config": (SyntheticsAPITestConfig,),
@@ -57,7 +54,6 @@ class SyntheticsAPITest(ModelNormal):
         "tags": "tags",
         "type": "type",
     }
-
     read_only_vars = {
         "monitor_id",
         "public_id",

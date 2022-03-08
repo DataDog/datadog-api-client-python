@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class OrganizationListResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "orgs": ([Organization],),
@@ -29,8 +26,6 @@ class OrganizationListResponse(ModelNormal):
     attribute_map = {
         "orgs": "orgs",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

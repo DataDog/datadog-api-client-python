@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class MetricIngestedIndexedVolume(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "attributes": (MetricIngestedIndexedVolumeAttributes,),
@@ -37,8 +34,6 @@ class MetricIngestedIndexedVolume(ModelNormal):
         "id": "id",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class NotebookMarkdownCellDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "text": (str,),
@@ -31,8 +28,6 @@ class NotebookMarkdownCellDefinition(ModelNormal):
         "text": "text",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, text, type, *args, **kwargs):
         """

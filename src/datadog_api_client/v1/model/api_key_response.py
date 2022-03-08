@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class ApiKeyResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "api_key": (ApiKey,),
@@ -29,8 +26,6 @@ class ApiKeyResponse(ModelNormal):
     attribute_map = {
         "api_key": "api_key",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

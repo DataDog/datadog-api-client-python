@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class SyntheticsTestRequestCertificate(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "cert": (SyntheticsTestRequestCertificateItem,),
@@ -37,8 +34,6 @@ class SyntheticsTestRequestCertificate(ModelNormal):
         "cert": "cert",
         "key": "key",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class LogsArchiveOrder(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "data": (LogsArchiveOrderDefinition,),
@@ -29,8 +26,6 @@ class LogsArchiveOrder(ModelNormal):
     attribute_map = {
         "data": "data",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class IncidentCreateRelationships(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "commander_user": (NullableRelationshipToUser,),
@@ -29,8 +26,6 @@ class IncidentCreateRelationships(ModelNormal):
     attribute_map = {
         "commander_user": "commander_user",
     }
-
-    read_only_vars = {}
 
     def __init__(self, commander_user, *args, **kwargs):
         """

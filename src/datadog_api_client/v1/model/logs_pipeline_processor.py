@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class LogsPipelineProcessor(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "filter": (LogsFilter,),
@@ -41,8 +38,6 @@ class LogsPipelineProcessor(ModelNormal):
         "processors": "processors",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, type, *args, **kwargs):
         """

@@ -20,7 +20,6 @@ def lazy_import():
 
 
 class SyntheticsTestOptions(ModelNormal):
-
     validations = {
         "monitor_priority": {
             "inclusive_maximum": 5,
@@ -33,7 +32,7 @@ class SyntheticsTestOptions(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "accept_self_signed": (bool,),
@@ -68,8 +67,6 @@ class SyntheticsTestOptions(ModelNormal):
         "retry": "retry",
         "tick_every": "tick_every",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

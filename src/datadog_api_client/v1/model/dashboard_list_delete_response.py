@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class DashboardListDeleteResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "deleted_dashboard_list_id": (int,),
         }
@@ -22,8 +19,6 @@ class DashboardListDeleteResponse(ModelNormal):
     attribute_map = {
         "deleted_dashboard_list_id": "deleted_dashboard_list_id",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

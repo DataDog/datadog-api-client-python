@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class MetricsQueryResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "error": (str,),
@@ -45,7 +42,6 @@ class MetricsQueryResponse(ModelNormal):
         "status": "status",
         "to_date": "to_date",
     }
-
     read_only_vars = {
         "error",
         "from_date",

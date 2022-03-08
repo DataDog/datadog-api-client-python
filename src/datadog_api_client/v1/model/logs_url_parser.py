@@ -17,11 +17,8 @@ def lazy_import():
 
 
 class LogsURLParser(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "is_enabled": (bool,),
@@ -40,8 +37,6 @@ class LogsURLParser(ModelNormal):
         "target": "target",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, type, *args, **kwargs):
         """

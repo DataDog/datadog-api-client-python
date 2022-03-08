@@ -10,16 +10,15 @@ from datadog_api_client.v2.model_utils import (
 
 
 class AuthNMappingsType(ModelSimple):
+
     allowed_values = {
         "value": {
             "AUTHN_MAPPINGS": "authn_mappings",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

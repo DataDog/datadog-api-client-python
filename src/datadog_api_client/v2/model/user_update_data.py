@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class UserUpdateData(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "attributes": (UserUpdateAttributes,),
@@ -35,8 +32,6 @@ class UserUpdateData(ModelNormal):
         "id": "id",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, attributes, id, type, *args, **kwargs):
         """

@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class SLOBulkDeleteResponseData(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "deleted": ([str],),
             "updated": ([str],),
@@ -24,8 +21,6 @@ class SLOBulkDeleteResponseData(ModelNormal):
         "deleted": "deleted",
         "updated": "updated",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

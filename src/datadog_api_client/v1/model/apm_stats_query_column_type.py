@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class ApmStatsQueryColumnType(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "alias": (str,),
@@ -37,8 +34,6 @@ class ApmStatsQueryColumnType(ModelNormal):
         "name": "name",
         "order": "order",
     }
-
-    read_only_vars = {}
 
     def __init__(self, name, *args, **kwargs):
         """

@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class WidgetSort(ModelSimple):
+
     allowed_values = {
         "value": {
             "ASCENDING": "asc",
@@ -18,10 +19,8 @@ class WidgetSort(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

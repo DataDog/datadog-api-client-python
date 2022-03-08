@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class LogsAttributeRemapper(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "is_enabled": (bool,),
@@ -49,8 +46,6 @@ class LogsAttributeRemapper(ModelNormal):
         "target_type": "target_type",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, sources, target, type, *args, **kwargs):
         """

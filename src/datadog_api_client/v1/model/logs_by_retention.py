@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class LogsByRetention(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "orgs": (LogsByRetentionOrgs,),
@@ -37,8 +34,6 @@ class LogsByRetention(ModelNormal):
         "usage": "usage",
         "usage_by_month": "usage_by_month",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

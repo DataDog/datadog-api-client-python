@@ -20,7 +20,6 @@ def lazy_import():
 
 
 class ServiceMapWidgetDefinition(ModelNormal):
-
     validations = {
         "filters": {
             "min_items": 1,
@@ -28,7 +27,7 @@ class ServiceMapWidgetDefinition(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "custom_links": ([WidgetCustomLink],),
@@ -49,8 +48,6 @@ class ServiceMapWidgetDefinition(ModelNormal):
         "title_size": "title_size",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, filters, service, type, *args, **kwargs):
         """

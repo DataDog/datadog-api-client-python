@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class LogsExclusion(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "filter": (LogsExclusionFilter,),
@@ -33,8 +30,6 @@ class LogsExclusion(ModelNormal):
         "is_enabled": "is_enabled",
         "name": "name",
     }
-
-    read_only_vars = {}
 
     def __init__(self, name, *args, **kwargs):
         """

@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class LogsAggregateRequestPage(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "cursor": (str,),
         }
@@ -22,8 +19,6 @@ class LogsAggregateRequestPage(ModelNormal):
     attribute_map = {
         "cursor": "cursor",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

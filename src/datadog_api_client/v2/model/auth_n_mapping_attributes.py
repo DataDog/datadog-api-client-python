@@ -11,7 +11,6 @@ from datadog_api_client.v2.model_utils import (
 
 
 class AuthNMappingAttributes(ModelNormal):
-
     validations = {
         "saml_assertion_attribute_id": {
             "inclusive_maximum": 2147483647,
@@ -19,7 +18,7 @@ class AuthNMappingAttributes(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "attribute_key": (str,),
             "attribute_value": (str,),
@@ -35,7 +34,6 @@ class AuthNMappingAttributes(ModelNormal):
         "modified_at": "modified_at",
         "saml_assertion_attribute_id": "saml_assertion_attribute_id",
     }
-
     read_only_vars = {
         "created_at",
         "modified_at",

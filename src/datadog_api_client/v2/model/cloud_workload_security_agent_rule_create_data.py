@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class CloudWorkloadSecurityAgentRuleCreateData(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "attributes": (CloudWorkloadSecurityAgentRuleCreateAttributes,),
@@ -35,8 +32,6 @@ class CloudWorkloadSecurityAgentRuleCreateData(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, attributes, type, *args, **kwargs):
         """

@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class OrganizationSettingsSamlStrictMode(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "enabled": (bool,),
         }
@@ -22,8 +19,6 @@ class OrganizationSettingsSamlStrictMode(ModelNormal):
     attribute_map = {
         "enabled": "enabled",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -11,7 +11,6 @@ from datadog_api_client.v2.model_utils import (
 
 
 class PartialApplicationKeyAttributes(ModelNormal):
-
     validations = {
         "last4": {
             "max_length": 4,
@@ -20,7 +19,7 @@ class PartialApplicationKeyAttributes(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "created_at": (str,),
             "last4": (str,),
@@ -34,7 +33,6 @@ class PartialApplicationKeyAttributes(ModelNormal):
         "name": "name",
         "scopes": "scopes",
     }
-
     read_only_vars = {
         "created_at",
         "last4",

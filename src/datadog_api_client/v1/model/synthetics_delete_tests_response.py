@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsDeleteTestsResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "deleted_tests": ([SyntheticsDeletedTest],),
@@ -29,8 +26,6 @@ class SyntheticsDeleteTestsResponse(ModelNormal):
     attribute_map = {
         "deleted_tests": "deleted_tests",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

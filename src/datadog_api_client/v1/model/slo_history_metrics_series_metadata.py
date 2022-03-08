@@ -17,11 +17,8 @@ def lazy_import():
 
 
 class SLOHistoryMetricsSeriesMetadata(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "aggr": (str,),
@@ -40,8 +37,6 @@ class SLOHistoryMetricsSeriesMetadata(ModelNormal):
         "scope": "scope",
         "unit": "unit",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

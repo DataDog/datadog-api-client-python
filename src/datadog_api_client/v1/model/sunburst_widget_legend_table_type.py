@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class SunburstWidgetLegendTableType(ModelSimple):
+
     allowed_values = {
         "value": {
             "TABLE": "table",
@@ -18,10 +19,8 @@ class SunburstWidgetLegendTableType(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

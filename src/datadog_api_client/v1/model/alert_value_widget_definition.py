@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class AlertValueWidgetDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "alert_id": (str,),
@@ -47,8 +44,6 @@ class AlertValueWidgetDefinition(ModelNormal):
         "type": "type",
         "unit": "unit",
     }
-
-    read_only_vars = {}
 
     def __init__(self, alert_id, type, *args, **kwargs):
         """

@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class MetricIngestedIndexedVolumeAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "indexed_volume": (int,),
             "ingested_volume": (int,),
@@ -24,8 +21,6 @@ class MetricIngestedIndexedVolumeAttributes(ModelNormal):
         "indexed_volume": "indexed_volume",
         "ingested_volume": "ingested_volume",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

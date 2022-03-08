@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "data_source": (FormulaAndFunctionApmDependencyStatsDataSource,),
@@ -53,8 +50,6 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
         "service": "service",
         "stat": "stat",
     }
-
-    read_only_vars = {}
 
     def __init__(self, data_source, env, name, operation_name, resource_name, service, stat, *args, **kwargs):
         """

@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class AuthenticationValidationResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "valid": (bool,),
         }
@@ -22,7 +19,6 @@ class AuthenticationValidationResponse(ModelNormal):
     attribute_map = {
         "valid": "valid",
     }
-
     read_only_vars = {
         "valid",
     }

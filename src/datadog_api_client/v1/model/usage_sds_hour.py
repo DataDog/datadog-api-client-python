@@ -11,11 +11,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class UsageSDSHour(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "hour": (datetime,),
             "logs_scanned_bytes": (int,),
@@ -31,8 +28,6 @@ class UsageSDSHour(ModelNormal):
         "public_id": "public_id",
         "total_scanned_bytes": "total_scanned_bytes",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

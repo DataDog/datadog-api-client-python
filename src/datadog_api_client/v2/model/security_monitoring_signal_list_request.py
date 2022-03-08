@@ -24,11 +24,8 @@ def lazy_import():
 
 
 class SecurityMonitoringSignalListRequest(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "filter": (SecurityMonitoringSignalListRequestFilter,),
@@ -41,8 +38,6 @@ class SecurityMonitoringSignalListRequest(ModelNormal):
         "page": "page",
         "sort": "sort",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

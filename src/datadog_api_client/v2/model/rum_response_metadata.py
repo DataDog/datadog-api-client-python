@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class RUMResponseMetadata(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "elapsed": (int,),
@@ -41,8 +38,6 @@ class RUMResponseMetadata(ModelNormal):
         "status": "status",
         "warnings": "warnings",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

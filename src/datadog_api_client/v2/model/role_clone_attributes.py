@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class RoleCloneAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "name": (str,),
         }
@@ -22,8 +19,6 @@ class RoleCloneAttributes(ModelNormal):
     attribute_map = {
         "name": "name",
     }
-
-    read_only_vars = {}
 
     def __init__(self, name, *args, **kwargs):
         """

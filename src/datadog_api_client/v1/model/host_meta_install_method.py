@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class HostMetaInstallMethod(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "installer_version": (str,),
             "tool": (str,),
@@ -26,8 +23,6 @@ class HostMetaInstallMethod(ModelNormal):
         "tool": "tool",
         "tool_version": "tool_version",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

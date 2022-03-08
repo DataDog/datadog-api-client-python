@@ -19,11 +19,8 @@ def lazy_import():
 
 
 class HourlyUsageAttributionBody(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "hour": (datetime,),
@@ -46,8 +43,6 @@ class HourlyUsageAttributionBody(ModelNormal):
         "updated_at": "updated_at",
         "usage_type": "usage_type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

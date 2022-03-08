@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class SLOHistorySLIData(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "error_budget_remaining": (SLOErrorBudgetRemainingData,),
@@ -53,8 +50,6 @@ class SLOHistorySLIData(ModelNormal):
         "span_precision": "span_precision",
         "uptime": "uptime",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

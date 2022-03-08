@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SLOCorrectionUpdateRequestAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "category": (SLOCorrectionCategory,),
@@ -41,8 +38,6 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
         "start": "start",
         "timezone": "timezone",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

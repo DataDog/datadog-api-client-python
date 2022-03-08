@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class WidgetCompareTo(ModelSimple):
+
     allowed_values = {
         "value": {
             "HOUR_BEFORE": "hour_before",
@@ -20,10 +21,8 @@ class WidgetCompareTo(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

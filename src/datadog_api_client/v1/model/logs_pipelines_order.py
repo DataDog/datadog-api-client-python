@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class LogsPipelinesOrder(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "pipeline_ids": ([str],),
         }
@@ -22,8 +19,6 @@ class LogsPipelinesOrder(ModelNormal):
     attribute_map = {
         "pipeline_ids": "pipeline_ids",
     }
-
-    read_only_vars = {}
 
     def __init__(self, pipeline_ids, *args, **kwargs):
         """

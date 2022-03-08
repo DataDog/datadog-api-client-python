@@ -22,7 +22,6 @@ def lazy_import():
 
 
 class NotebookCreateDataAttributes(ModelNormal):
-
     validations = {
         "name": {
             "max_length": 80,
@@ -31,7 +30,7 @@ class NotebookCreateDataAttributes(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "cells": ([NotebookCellCreateRequest],),
@@ -48,8 +47,6 @@ class NotebookCreateDataAttributes(ModelNormal):
         "status": "status",
         "time": "time",
     }
-
-    read_only_vars = {}
 
     def __init__(self, cells, name, time, *args, **kwargs):
         """

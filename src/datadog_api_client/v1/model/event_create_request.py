@@ -18,7 +18,6 @@ def lazy_import():
 
 
 class EventCreateRequest(ModelNormal):
-
     validations = {
         "aggregation_key": {
             "max_length": 100,
@@ -29,7 +28,7 @@ class EventCreateRequest(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "aggregation_key": (str,),
@@ -58,8 +57,6 @@ class EventCreateRequest(ModelNormal):
         "text": "text",
         "title": "title",
     }
-
-    read_only_vars = {}
 
     def __init__(self, text, title, *args, **kwargs):
         """

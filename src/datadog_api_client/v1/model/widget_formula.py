@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class WidgetFormula(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "alias": (str,),
@@ -41,8 +38,6 @@ class WidgetFormula(ModelNormal):
         "formula": "formula",
         "limit": "limit",
     }
-
-    read_only_vars = {}
 
     def __init__(self, formula, *args, **kwargs):
         """

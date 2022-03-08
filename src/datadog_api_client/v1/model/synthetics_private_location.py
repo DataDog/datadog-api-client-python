@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class SyntheticsPrivateLocation(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "description": (str,),
@@ -37,7 +34,6 @@ class SyntheticsPrivateLocation(ModelNormal):
         "secrets": "secrets",
         "tags": "tags",
     }
-
     read_only_vars = {
         "id",
         "secrets",

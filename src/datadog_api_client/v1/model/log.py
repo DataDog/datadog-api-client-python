@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class Log(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "content": (LogContent,),
@@ -31,8 +28,6 @@ class Log(ModelNormal):
         "content": "content",
         "id": "id",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

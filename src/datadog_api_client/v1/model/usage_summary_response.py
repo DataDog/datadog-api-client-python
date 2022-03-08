@@ -19,11 +19,8 @@ def lazy_import():
 
 
 class UsageSummaryResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "agent_host_top99p_sum": (int,),
@@ -170,8 +167,6 @@ class UsageSummaryResponse(ModelNormal):
         "usage": "usage",
         "vsphere_host_top99p_sum": "vsphere_host_top99p_sum",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

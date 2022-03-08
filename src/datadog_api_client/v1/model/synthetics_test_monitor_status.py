@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class SyntheticsTestMonitorStatus(ModelSimple):
+
     allowed_values = {
         "value": {
             "UNTRIGGERED": 0,
@@ -19,10 +20,8 @@ class SyntheticsTestMonitorStatus(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (int,),
         }

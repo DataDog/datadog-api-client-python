@@ -11,7 +11,6 @@ from datadog_api_client.v1.model_utils import (
 
 
 class DowntimeRecurrence(ModelNormal):
-
     validations = {
         "period": {
             "inclusive_maximum": 2147483647,
@@ -23,7 +22,7 @@ class DowntimeRecurrence(ModelNormal):
     _nullable = True
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "period": (int,),
             "rrule": (str,),
@@ -41,8 +40,6 @@ class DowntimeRecurrence(ModelNormal):
         "until_occurrences": "until_occurrences",
         "week_days": "week_days",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

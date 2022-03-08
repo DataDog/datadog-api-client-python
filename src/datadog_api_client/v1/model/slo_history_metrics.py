@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class SLOHistoryMetrics(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "denominator": (SLOHistoryMetricsSeries,),
@@ -45,8 +42,6 @@ class SLOHistoryMetrics(ModelNormal):
         "resp_version": "resp_version",
         "times": "times",
     }
-
-    read_only_vars = {}
 
     def __init__(self, denominator, interval, numerator, query, res_type, resp_version, times, *args, **kwargs):
         """

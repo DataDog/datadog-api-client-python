@@ -11,11 +11,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class UsageBillableSummaryBody(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "account_billable_usage": (int,),
             "elapsed_usage_hours": (int,),
@@ -35,8 +32,6 @@ class UsageBillableSummaryBody(ModelNormal):
         "percentage_in_account": "percentage_in_account",
         "usage_unit": "usage_unit",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

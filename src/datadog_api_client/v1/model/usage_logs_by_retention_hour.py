@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class UsageLogsByRetentionHour(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "indexed_events_count": (int,),
             "live_indexed_events_count": (int,),
@@ -32,8 +29,6 @@ class UsageLogsByRetentionHour(ModelNormal):
         "rehydrated_indexed_events_count": "rehydrated_indexed_events_count",
         "retention": "retention",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

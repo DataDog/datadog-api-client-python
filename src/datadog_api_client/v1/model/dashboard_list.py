@@ -17,11 +17,8 @@ def lazy_import():
 
 
 class DashboardList(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "author": (Creator,),
@@ -44,7 +41,6 @@ class DashboardList(ModelNormal):
         "name": "name",
         "type": "type",
     }
-
     read_only_vars = {
         "author",
         "created",

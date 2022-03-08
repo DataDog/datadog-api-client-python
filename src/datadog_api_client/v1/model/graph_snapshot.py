@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class GraphSnapshot(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "graph_def": (str,),
             "metric_query": (str,),
@@ -26,8 +23,6 @@ class GraphSnapshot(ModelNormal):
         "metric_query": "metric_query",
         "snapshot_url": "snapshot_url",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

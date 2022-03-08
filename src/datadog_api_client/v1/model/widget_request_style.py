@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class WidgetRequestStyle(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "line_type": (WidgetLineType,),
@@ -35,8 +32,6 @@ class WidgetRequestStyle(ModelNormal):
         "line_width": "line_width",
         "palette": "palette",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

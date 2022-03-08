@@ -10,11 +10,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class LogsMetricResponseGroupBy(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "path": (str,),
             "tag_name": (str,),
@@ -24,8 +21,6 @@ class LogsMetricResponseGroupBy(ModelNormal):
         "path": "path",
         "tag_name": "tag_name",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -17,11 +17,8 @@ def lazy_import():
 
 
 class UsageBillableSummaryHour(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "billing_plan": (str,),
@@ -44,8 +41,6 @@ class UsageBillableSummaryHour(ModelNormal):
         "start_date": "start_date",
         "usage": "usage",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

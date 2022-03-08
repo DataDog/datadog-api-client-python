@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class DashboardListItems(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "dashboards": ([DashboardListItem],),
@@ -31,7 +28,6 @@ class DashboardListItems(ModelNormal):
         "dashboards": "dashboards",
         "total": "total",
     }
-
     read_only_vars = {
         "total",
     }

@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class WidgetFieldSort(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "column": (str,),
@@ -31,8 +28,6 @@ class WidgetFieldSort(ModelNormal):
         "column": "column",
         "order": "order",
     }
-
-    read_only_vars = {}
 
     def __init__(self, column, order, *args, **kwargs):
         """

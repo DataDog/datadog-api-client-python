@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class SLOCorrection(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "attributes": (SLOCorrectionResponseAttributes,),
@@ -35,8 +32,6 @@ class SLOCorrection(ModelNormal):
         "id": "id",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

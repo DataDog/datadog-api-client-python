@@ -13,11 +13,8 @@ from datadog_api_client.v2.model_utils import (
 
 
 class RUMEventAttributes(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "attributes": (
                 {
@@ -45,8 +42,6 @@ class RUMEventAttributes(ModelNormal):
         "tags": "tags",
         "timestamp": "timestamp",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

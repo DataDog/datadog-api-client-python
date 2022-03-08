@@ -10,16 +10,15 @@ from datadog_api_client.v2.model_utils import (
 
 
 class MetricDistinctVolumeType(ModelSimple):
+
     allowed_values = {
         "value": {
             "DISTINCT_METRIC_VOLUMES": "distinct_metric_volumes",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

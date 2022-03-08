@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class SyntheticsAssertionOperator(ModelSimple):
+
     allowed_values = {
         "value": {
             "CONTAINS": "contains",
@@ -29,10 +30,8 @@ class SyntheticsAssertionOperator(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

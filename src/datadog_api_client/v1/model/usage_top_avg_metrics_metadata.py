@@ -17,11 +17,8 @@ def lazy_import():
 
 
 class UsageTopAvgMetricsMetadata(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "day": (datetime,),
@@ -34,8 +31,6 @@ class UsageTopAvgMetricsMetadata(ModelNormal):
         "month": "month",
         "pagination": "pagination",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

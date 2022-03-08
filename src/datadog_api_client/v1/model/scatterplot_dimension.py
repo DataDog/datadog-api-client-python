@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class ScatterplotDimension(ModelSimple):
+
     allowed_values = {
         "value": {
             "X": "x",
@@ -20,10 +21,8 @@ class ScatterplotDimension(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

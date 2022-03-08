@@ -54,7 +54,7 @@ class cached_property(object):
         if self.result_key in vars(self):
             return vars(self)[self.result_key]
         else:
-            result = self._fn()
+            result = self._fn(instance)
             setattr(self, self.result_key, result)
             return result
 
@@ -132,6 +132,12 @@ class OpenApiModel(object):
     discriminator = None
 
     allowed_values = empty_dict
+
+    validations = empty_dict
+
+    openapi_types = empty_dict
+
+    read_only_vars = empty_dict
 
     def set_attribute(self, name, value):
         # this is only used to set properties on self
@@ -1993,10 +1999,6 @@ def validate_get_composed_info(constant_args, model_args, self):
 
 class UnparsedObject(ModelNormal):
     """A model for an oneOf we don't know about."""
-
-    validations = empty_dict
-
-    openapi_types = empty_dict
 
     required_properties = set(
         [

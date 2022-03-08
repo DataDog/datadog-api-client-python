@@ -16,11 +16,8 @@ def lazy_import():
 
 
 class AWSTagFilterListResponse(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "filters": ([AWSTagFilter],),
@@ -29,8 +26,6 @@ class AWSTagFilterListResponse(ModelNormal):
     attribute_map = {
         "filters": "filters",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

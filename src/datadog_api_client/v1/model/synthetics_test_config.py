@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class SyntheticsTestConfig(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "assertions": ([SyntheticsAssertion],),
@@ -41,8 +38,6 @@ class SyntheticsTestConfig(ModelNormal):
         "request": "request",
         "variables": "variables",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

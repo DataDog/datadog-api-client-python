@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class MonitorSearchResponseMetadata(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "page": (int,),
             "page_count": (int,),
@@ -28,7 +25,6 @@ class MonitorSearchResponseMetadata(ModelNormal):
         "per_page": "per_page",
         "total_count": "total_count",
     }
-
     read_only_vars = {
         "page",
         "page_count",

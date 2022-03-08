@@ -19,11 +19,8 @@ def lazy_import():
 
 
 class IncidentFieldAttributesSingleValue(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "type": (IncidentFieldAttributesSingleValueType,),
@@ -34,8 +31,6 @@ class IncidentFieldAttributesSingleValue(ModelNormal):
         "type": "type",
         "value": "value",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -22,7 +22,6 @@ def lazy_import():
 
 
 class ListStreamWidgetDefinition(ModelNormal):
-
     validations = {
         "requests": {
             "max_items": 1,
@@ -31,7 +30,7 @@ class ListStreamWidgetDefinition(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "legend_size": (str,),
@@ -54,8 +53,6 @@ class ListStreamWidgetDefinition(ModelNormal):
         "title_size": "title_size",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, requests, type, *args, **kwargs):
         """

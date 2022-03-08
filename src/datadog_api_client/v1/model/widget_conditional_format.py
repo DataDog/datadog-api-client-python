@@ -18,11 +18,8 @@ def lazy_import():
 
 
 class WidgetConditionalFormat(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "comparator": (WidgetComparator,),
@@ -47,8 +44,6 @@ class WidgetConditionalFormat(ModelNormal):
         "timeframe": "timeframe",
         "value": "value",
     }
-
-    read_only_vars = {}
 
     def __init__(self, comparator, palette, value, *args, **kwargs):
         """

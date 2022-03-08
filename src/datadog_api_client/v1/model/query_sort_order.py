@@ -10,6 +10,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class QuerySortOrder(ModelSimple):
+
     allowed_values = {
         "value": {
             "ASC": "asc",
@@ -17,10 +18,8 @@ class QuerySortOrder(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

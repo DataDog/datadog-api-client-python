@@ -24,11 +24,8 @@ def lazy_import():
 
 
 class ToplistWidgetDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "custom_links": ([WidgetCustomLink],),
@@ -49,8 +46,6 @@ class ToplistWidgetDefinition(ModelNormal):
         "title_size": "title_size",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, requests, type, *args, **kwargs):
         """

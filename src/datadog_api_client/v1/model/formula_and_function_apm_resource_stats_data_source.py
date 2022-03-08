@@ -10,16 +10,15 @@ from datadog_api_client.v1.model_utils import (
 
 
 class FormulaAndFunctionApmResourceStatsDataSource(ModelSimple):
+
     allowed_values = {
         "value": {
             "APM_RESOURCE_STATS": "apm_resource_stats",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

@@ -28,7 +28,6 @@ def lazy_import():
 
 
 class GeomapWidgetDefinition(ModelNormal):
-
     validations = {
         "requests": {
             "max_items": 1,
@@ -37,7 +36,7 @@ class GeomapWidgetDefinition(ModelNormal):
     }
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "custom_links": ([WidgetCustomLink],),
@@ -62,8 +61,6 @@ class GeomapWidgetDefinition(ModelNormal):
         "type": "type",
         "view": "view",
     }
-
-    read_only_vars = {}
 
     def __init__(self, requests, style, type, view, *args, **kwargs):
         """

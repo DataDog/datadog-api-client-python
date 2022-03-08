@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class WidgetLiveSpan(ModelSimple):
+
     allowed_values = {
         "value": {
             "PAST_ONE_MINUTE": "1m",
@@ -31,10 +32,8 @@ class WidgetLiveSpan(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

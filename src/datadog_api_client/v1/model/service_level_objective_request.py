@@ -21,11 +21,8 @@ def lazy_import():
 
 
 class ServiceLevelObjectiveRequest(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "description": (str, none_type),
@@ -48,8 +45,6 @@ class ServiceLevelObjectiveRequest(ModelNormal):
         "thresholds": "thresholds",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, name, thresholds, type, *args, **kwargs):
         """

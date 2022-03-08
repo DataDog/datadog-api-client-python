@@ -11,6 +11,7 @@ from datadog_api_client.v2.model_utils import (
 
 
 class SecurityMonitoringFilterAction(ModelSimple):
+
     allowed_values = {
         "value": {
             "REQUIRE": "require",
@@ -18,10 +19,8 @@ class SecurityMonitoringFilterAction(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

@@ -11,6 +11,7 @@ from datadog_api_client.v1.model_utils import (
 
 
 class UsageAttributionSupportedMetrics(ModelSimple):
+
     allowed_values = {
         "value": {
             "CUSTOM_TIMESERIES_USAGE": "custom_timeseries_usage",
@@ -51,10 +52,8 @@ class UsageAttributionSupportedMetrics(ModelSimple):
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

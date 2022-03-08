@@ -24,11 +24,8 @@ def lazy_import():
 
 
 class ServiceSummaryWidgetDefinition(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "display_format": (WidgetServiceSummaryDisplayFormat,),
@@ -67,8 +64,6 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
         "title_size": "title_size",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, env, service, span_name, type, *args, **kwargs):
         """

@@ -10,12 +10,10 @@ from datadog_api_client.v1.model_utils import (
 
 
 class MetricsQueryUnit(ModelNormal):
-
-    validations = {}
     _nullable = True
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "family": (str,),
             "name": (str,),
@@ -31,7 +29,6 @@ class MetricsQueryUnit(ModelNormal):
         "scale_factor": "scale_factor",
         "short_name": "short_name",
     }
-
     read_only_vars = {
         "family",
         "name",

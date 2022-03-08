@@ -16,12 +16,10 @@ def lazy_import():
 
 
 class NullableRelationshipToUserData(ModelNormal):
-
-    validations = {}
     _nullable = True
 
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "id": (str,),
@@ -32,8 +30,6 @@ class NullableRelationshipToUserData(ModelNormal):
         "id": "id",
         "type": "type",
     }
-
-    read_only_vars = {}
 
     def __init__(self, id, type, *args, **kwargs):
         """

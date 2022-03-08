@@ -10,16 +10,15 @@ from datadog_api_client.v1.model_utils import (
 
 
 class EventTimelineWidgetDefinitionType(ModelSimple):
+
     allowed_values = {
         "value": {
             "EVENT_TIMELINE": "event_timeline",
         },
     }
 
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "value": (str,),
         }

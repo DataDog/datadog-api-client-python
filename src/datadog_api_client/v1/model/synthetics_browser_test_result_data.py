@@ -20,11 +20,8 @@ def lazy_import():
 
 
 class SyntheticsBrowserTestResultData(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "browser_type": (str,),
@@ -55,8 +52,6 @@ class SyntheticsBrowserTestResultData(ModelNormal):
         "thumbnails_bucket_key": "thumbnailsBucketKey",
         "time_to_interactive": "timeToInteractive",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """

@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class GeomapWidgetDefinitionStyle(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "palette": (str,),
             "palette_flip": (bool,),
@@ -24,8 +21,6 @@ class GeomapWidgetDefinitionStyle(ModelNormal):
         "palette": "palette",
         "palette_flip": "palette_flip",
     }
-
-    read_only_vars = {}
 
     def __init__(self, palette, palette_flip, *args, **kwargs):
         """

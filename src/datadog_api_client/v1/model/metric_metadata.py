@@ -10,11 +10,8 @@ from datadog_api_client.v1.model_utils import (
 
 
 class MetricMetadata(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         return {
             "description": (str,),
             "integration": (str,),
@@ -34,7 +31,6 @@ class MetricMetadata(ModelNormal):
         "type": "type",
         "unit": "unit",
     }
-
     read_only_vars = {
         "integration",
     }
