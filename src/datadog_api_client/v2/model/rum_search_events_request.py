@@ -22,11 +22,8 @@ def lazy_import():
 
 
 class RUMSearchEventsRequest(ModelNormal):
-
-    validations = {}
-
     @cached_property
-    def openapi_types():
+    def openapi_types(_):
         lazy_import()
         return {
             "filter": (RUMQueryFilter,),
@@ -41,8 +38,6 @@ class RUMSearchEventsRequest(ModelNormal):
         "page": "page",
         "sort": "sort",
     }
-
-    read_only_vars = {}
 
     def __init__(self, *args, **kwargs):
         """
