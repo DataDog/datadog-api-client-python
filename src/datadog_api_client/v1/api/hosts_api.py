@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.host_mute_response import HostMuteResponse
 from datadog_api_client.v1.model.host_mute_settings import HostMuteSettings
 from datadog_api_client.v1.model.host_list_response import HostListResponse

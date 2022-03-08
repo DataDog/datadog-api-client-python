@@ -15,10 +15,9 @@ from urllib.parse import quote
 from urllib3.fields import RequestField
 
 
-from datadog_api_client.v2 import rest
-from datadog_api_client.v2.configuration import Configuration
-from datadog_api_client.v2.exceptions import ApiTypeError, ApiValueError
-from datadog_api_client.v2.model_utils import (
+from datadog_api_client import rest
+from datadog_api_client.exceptions import ApiTypeError, ApiValueError
+from datadog_api_client.model_utils import (
     ModelNormal,
     ModelSimple,
     ModelComposed,
@@ -54,9 +53,7 @@ class ApiClient(object):
 
     _pool = None
 
-    def __init__(self, configuration=None, cookie=None, pool_threads=1):
-        if configuration is None:
-            configuration = Configuration.get_default_copy()
+    def __init__(self, configuration, cookie=None, pool_threads=1):
         self.configuration = configuration
         self.pool_threads = pool_threads
 

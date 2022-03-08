@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.event_list_response import EventListResponse
 from datadog_api_client.v1.model.event_priority import EventPriority
 from datadog_api_client.v1.model.event_create_response import EventCreateResponse

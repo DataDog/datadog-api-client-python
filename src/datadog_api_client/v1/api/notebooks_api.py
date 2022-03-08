@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.notebooks_response import NotebooksResponse
 from datadog_api_client.v1.model.notebook_response import NotebookResponse
 from datadog_api_client.v1.model.notebook_create_request import NotebookCreateRequest

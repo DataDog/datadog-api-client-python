@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model.logs_metrics_response import LogsMetricsResponse
 from datadog_api_client.v2.model.logs_metric_response import LogsMetricResponse
 from datadog_api_client.v2.model.logs_metric_create_request import LogsMetricCreateRequest

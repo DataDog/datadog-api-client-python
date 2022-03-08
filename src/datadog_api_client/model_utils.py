@@ -13,7 +13,7 @@ from types import MappingProxyType
 
 from dateutil.parser import parse
 
-from datadog_api_client.v2.exceptions import (
+from datadog_api_client.exceptions import (
     ApiKeyError,
     ApiAttributeError,
     ApiTypeError,

@@ -4,7 +4,7 @@ import pytest
 
 from datadog_api_client.v1 import Configuration, AsyncApiClient
 from datadog_api_client.v1.api import dashboards_api, metrics_api
-from datadog_api_client.v1.exceptions import ForbiddenException
+from datadog_api_client.exceptions import ForbiddenException
 
 
 @pytest.mark.asyncio

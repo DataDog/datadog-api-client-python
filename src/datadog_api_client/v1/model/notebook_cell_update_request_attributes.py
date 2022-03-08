@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.model_utils import (
+from datadog_api_client.model_utils import (
     ModelComposed,
     cached_property,
 )

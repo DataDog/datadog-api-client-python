@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model.logs_archive_order import LogsArchiveOrder
 from datadog_api_client.v2.model.logs_archives import LogsArchives
 from datadog_api_client.v2.model.logs_archive import LogsArchive

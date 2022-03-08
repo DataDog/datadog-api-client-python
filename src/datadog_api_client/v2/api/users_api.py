@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model.user_response import UserResponse
 from datadog_api_client.v2.model.service_account_create_request import ServiceAccountCreateRequest
 from datadog_api_client.v2.model.user_invitations_response import UserInvitationsResponse

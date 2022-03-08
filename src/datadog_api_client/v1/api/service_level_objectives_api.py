@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.slo_list_response import SLOListResponse
 from datadog_api_client.v1.model.service_level_objective_request import ServiceLevelObjectiveRequest
 from datadog_api_client.v1.model.slo_bulk_delete_response import SLOBulkDeleteResponse

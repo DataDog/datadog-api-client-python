@@ -2,7 +2,7 @@ import pytest
 
 from datadog_api_client.v1 import Configuration, ApiClient
 from datadog_api_client.v1.api import metrics_api
-from datadog_api_client.v1.exceptions import ApiValueError
+from datadog_api_client.exceptions import ApiValueError
 
 
 def test_invalid_header():
