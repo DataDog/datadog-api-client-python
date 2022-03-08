@@ -105,6 +105,14 @@ roles\_api
    :undoc-members:
    :show-inheritance:
 
+rum\_api
+--------
+
+.. automodule:: datadog_api_client.v2.api.rum_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 security\_monitoring\_api
 -------------------------
 

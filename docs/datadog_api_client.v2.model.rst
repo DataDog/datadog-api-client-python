@@ -2473,6 +2473,118 @@ roles\_type
    :undoc-members:
    :show-inheritance:
 
+rum\_event
+----------
+
+.. automodule:: datadog_api_client.v2.model.rum_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_event\_attributes
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_event_attributes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_event\_type
+----------------
+
+.. automodule:: datadog_api_client.v2.model.rum_event_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_events\_response
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_events_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_query\_filter
+------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_query_filter
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_query\_options
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_query_options
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_query\_page\_options
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_query_page_options
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_response\_links
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_response_links
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_response\_metadata
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_response_metadata
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_response\_page
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_response_page
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_response\_status
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_response_status
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_search\_events\_request
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_search_events_request
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_sort
+---------
+
+.. automodule:: datadog_api_client.v2.model.rum_sort
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_warning
+------------
+
+.. automodule:: datadog_api_client.v2.model.rum_warning
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 saml\_assertion\_attribute
 --------------------------
 
