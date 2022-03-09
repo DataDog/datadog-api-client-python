@@ -4889,6 +4889,22 @@ usage\_network\_hosts\_response
    :undoc-members:
    :show-inheritance:
 
+usage\_online\_archive\_hour
+----------------------------
+
+.. automodule:: datadog_api_client.v1.model.usage_online_archive_hour
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+usage\_online\_archive\_response
+--------------------------------
+
+.. automodule:: datadog_api_client.v1.model.usage_online_archive_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 usage\_profiling\_hour
 ----------------------
 

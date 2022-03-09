@@ -687,6 +687,8 @@ from datadog_api_client.v1.model.usage_network_flows_hour import UsageNetworkFlo
 from datadog_api_client.v1.model.usage_network_flows_response import UsageNetworkFlowsResponse
 from datadog_api_client.v1.model.usage_network_hosts_hour import UsageNetworkHostsHour
 from datadog_api_client.v1.model.usage_network_hosts_response import UsageNetworkHostsResponse
+from datadog_api_client.v1.model.usage_online_archive_hour import UsageOnlineArchiveHour
+from datadog_api_client.v1.model.usage_online_archive_response import UsageOnlineArchiveResponse
 from datadog_api_client.v1.model.usage_profiling_hour import UsageProfilingHour
 from datadog_api_client.v1.model.usage_profiling_response import UsageProfilingResponse
 from datadog_api_client.v1.model.usage_reports_type import UsageReportsType

@@ -61,6 +61,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "name": (str,),
             "netflow_indexed_events_count_sum": (int,),
             "npm_host_top99p": (int,),
+            "online_archive_events_count_sum": (int,),
             "opentelemetry_host_top99p": (int,),
             "profiling_host_top99p": (int,),
             "public_id": (str,),
@@ -126,6 +127,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "name": "name",
         "netflow_indexed_events_count_sum": "netflow_indexed_events_count_sum",
         "npm_host_top99p": "npm_host_top99p",
+        "online_archive_events_count_sum": "online_archive_events_count_sum",
         "opentelemetry_host_top99p": "opentelemetry_host_top99p",
         "profiling_host_top99p": "profiling_host_top99p",
         "public_id": "public_id",
@@ -289,6 +291,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param npm_host_top99p: Shows the 99th percentile of all distinct Networks hosts over all hours in the current date for the given org.
         :type npm_host_top99p: int, optional
+
+        :param online_archive_events_count_sum: Sum of all online archived events over all hours in the current date for the given org.
+        :type online_archive_events_count_sum: int, optional
 
         :param opentelemetry_host_top99p: Shows the 99th percentile of all hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for the given org.
         :type opentelemetry_host_top99p: int, optional
