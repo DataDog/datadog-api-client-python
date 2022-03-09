@@ -120,11 +120,15 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/slo-app
+  @team:DataDog/slo-app
   Scenario: Get all SLOs returns "OK" response
-    Given new "ListSLOs" request
+    Given there is a valid "slo" in the system
+    And new "ListSLOs" request
+    And request contains "ids" parameter from "slo.data[0].id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].id" has the same value as "slo.data[0].id"
 
   @generated @skip @team:DataDog/slo-app
   Scenario: Get an SLO's details returns "Not found" response
@@ -133,12 +137,14 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 404 Not found
 
-  @generated @skip @team:DataDog/slo-app
+  @team:DataDog/slo-app
   Scenario: Get an SLO's details returns "OK" response
-    Given new "GetSLO" request
-    And request contains "slo_id" parameter from "REPLACE.ME"
+    Given there is a valid "slo" in the system
+    And new "GetSLO" request
+    And request contains "slo_id" parameter from "slo.data[0].id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "metric"
 
   @generated @skip @team:DataDog/slo-app
   Scenario: Get an SLO's history returns "Bad Request" response
@@ -156,13 +162,17 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/slo-app
+  @team:DataDog/slo-app
   Scenario: Get an SLO's history returns "OK" response
-    Given operation "GetSLOHistory" enabled
+    Given there is a valid "slo" in the system
+    And operation "GetSLOHistory" enabled
     And new "GetSLOHistory" request
-    And request contains "slo_id" parameter from "REPLACE.ME"
+    And request contains "slo_id" parameter from "slo.data[0].id"
+    And request contains "from_ts" parameter with value {{ timestamp("now - 1d") }}
+    And request contains "to_ts" parameter with value {{ timestamp("now") }}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.series.res_type" is equal to "time_series"
 
   @team:DataDog/slo-app
   Scenario: Update an SLO returns "Bad Request" response
@@ -181,10 +191,12 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/slo-app
+  @team:DataDog/slo-app
   Scenario: Update an SLO returns "OK" response
-    Given new "UpdateSLO" request
-    And request contains "slo_id" parameter from "REPLACE.ME"
-    And body with value null
+    Given there is a valid "slo" in the system
+    And new "UpdateSLO" request
+    And request contains "slo_id" parameter from "slo.data[0].id"
+    And body with value {"type":"metric","name":"{{ slo.data[0].name }}","thresholds":[{"target":97.0,"timeframe":"7d","warning":98.0}],"query":{"numerator":"sum:httpservice.hits{code:2xx}.as_count()","denominator":"sum:httpservice.hits{!code:3xx}.as_count()"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].thresholds[0].target" is equal to 97.0

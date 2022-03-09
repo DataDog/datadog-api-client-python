@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"name":"Test-Get_an_SLO_s_history_returns_OK_response-1646747953","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/slo
+  response:
+    body:
+      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"9236f988e3d25ac6982fd4319912ec43","name":"Test-Get_an_SLO_s_history_returns_OK_response-1646747953","created_at":1646747953,"tags":[],"modified_at":1646747953,"type":"metric"}],"error":null}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/slo/9236f988e3d25ac6982fd4319912ec43/history?from_ts=1646661553&to_ts=1646747953
+  response:
+    body:
+      string: '{"errors":null,"data":{"to_ts":1646747953,"type_id":1,"series":{"res_type":"time_series","denominator":{"count":13,"sum":0.0,"values":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"metadata":{"unit":null,"query_index":1,"aggr":"sum","scope":"!code:3xx","metric":"default_zero(httpservice.hits)","expression":"default_zero(sum:httpservice.hits{!code:3xx}.as_count())","tag_set":[]}},"graph_query":"default_zero(sum:httpservice.hits{code:2xx}.as_count()),
+        default_zero(sum:httpservice.hits{!code:3xx}.as_count()) - default_zero(sum:httpservice.hits{code:2xx}.as_count())","resp_version":2,"interval":7200,"numerator":{"count":13,"sum":0.0,"values":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"metadata":{"unit":null,"query_index":0,"aggr":"sum","scope":"code:2xx","metric":"default_zero(httpservice.hits)","expression":"default_zero(sum:httpservice.hits{code:2xx}.as_count())","tag_set":[]}},"bad_series_query":"default_zero(sum:httpservice.hits{!code:3xx}.as_count())
+        - default_zero(sum:httpservice.hits{code:2xx}.as_count())","times":[1646654400000.0,1646661600000.0,1646668800000.0,1646676000000.0,1646683200000.0,1646690400000.0,1646697600000.0,1646704800000.0,1646712000000.0,1646719200000.0,1646726400000.0,1646733600000.0,1646740800000.0],"denominator_query":"default_zero(sum:httpservice.hits{!code:3xx}.as_count())","from_date":1646661553000,"numerator_query":"default_zero(sum:httpservice.hits{code:2xx}.as_count())","to_date":1646747953000,"timing":"0.0103521347046","query":"default_zero(sum:httpservice.hits{code:2xx}.as_count()),
+        default_zero(sum:httpservice.hits{!code:3xx}.as_count())","message":""},"thresholds":{"7d":{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}},"overall":{"uptime":null,"errors":[{"error_type":"ZERO_VALUED_DENOMINATOR","error_message":"The
+        denominator is zero valued"}],"sli_value":null,"precision":{"7d":0},"corrections":[],"span_precision":2},"from_ts":1646661553,"group_by":[],"slo":{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"9236f988e3d25ac6982fd4319912ec43","name":"Test-Get_an_SLO_s_history_returns_OK_response-1646747953","created_at":1646747953,"tags":[],"modified_at":1646747953,"type":"metric"},"type":"metric"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/slo/9236f988e3d25ac6982fd4319912ec43
+  response:
+    body:
+      string: '{"data":["9236f988e3d25ac6982fd4319912ec43"],"error":null}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
