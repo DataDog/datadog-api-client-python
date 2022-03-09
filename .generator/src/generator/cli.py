@@ -71,6 +71,7 @@ def cli(input, output):
         "exceptions.py": env.get_template("exceptions.j2"),
         "model_utils.py": env.get_template("model_utils.j2"),
         "rest.py": env.get_template("rest.j2"),
+        "configuration.py": env.get_template("base_configuration.j2"),
     }
 
     apis = openapi.apis(spec)
@@ -79,10 +80,11 @@ def cli(input, output):
     package = output / config["packageName"].replace(".", "/")
     package.mkdir(parents=True, exist_ok=True)
 
+    top_package = package.parent
     for name, template in extra_files.items():
-        filename = package / name
+        filename = top_package / name
         with filename.open("w") as fp:
-            fp.write(template.render(apis=apis, models=models))
+            fp.write(template.render())
 
     for name, model in models.items():
         filename = formatter.snake_case(name) + ".py"

@@ -11,7 +11,7 @@ import zlib
 
 import urllib3
 
-from datadog_api_client.v2.exceptions import (
+from datadog_api_client.exceptions import (
     ApiException,
     UnauthorizedException,
     ForbiddenException,

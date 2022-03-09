@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.downtime import Downtime
 from datadog_api_client.v1.model.canceled_downtimes_ids import CanceledDowntimesIds
 from datadog_api_client.v1.model.cancel_downtimes_by_scope_request import CancelDowntimesByScopeRequest

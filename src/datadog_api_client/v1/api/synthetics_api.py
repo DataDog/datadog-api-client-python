@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.synthetics_batch_details import SyntheticsBatchDetails
 from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
 from datadog_api_client.v1.model.synthetics_private_location_creation_response import (

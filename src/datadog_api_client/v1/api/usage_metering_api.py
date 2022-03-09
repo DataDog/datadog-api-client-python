@@ -3,8 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
-from datadog_api_client.v1.model_utils import (
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
     datetime,
 )
 from datadog_api_client.v1.model.usage_custom_reports_response import UsageCustomReportsResponse

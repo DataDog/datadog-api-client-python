@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model.dashboard_list_delete_items_response import DashboardListDeleteItemsResponse
 from datadog_api_client.v2.model.dashboard_list_delete_items_request import DashboardListDeleteItemsRequest
 from datadog_api_client.v2.model.dashboard_list_items import DashboardListItems

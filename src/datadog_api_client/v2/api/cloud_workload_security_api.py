@@ -3,8 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
-from datadog_api_client.v2.model_utils import (
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
     file_type,
 )
 from datadog_api_client.v2.model.cloud_workload_security_agent_rules_list_response import (

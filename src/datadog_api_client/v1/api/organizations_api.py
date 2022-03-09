@@ -3,8 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
-from datadog_api_client.v1.model_utils import (
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
     file_type,
 )
 from datadog_api_client.v1.model.organization_list_response import OrganizationListResponse

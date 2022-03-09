@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.tag_to_hosts import TagToHosts
 from datadog_api_client.v1.model.host_tags import HostTags
 

@@ -1,8 +1,8 @@
 {% include "api_info.j2" %}
 
 
-from {{ config["packageName"] }}.api_client import ApiClient, Endpoint as _Endpoint
-from {{ config["packageName"] }}.model_utils import (
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
     date,
     datetime,
     file_type,

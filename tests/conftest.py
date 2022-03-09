@@ -61,6 +61,8 @@ from dateutil.relativedelta import relativedelta
 from jinja2 import Template, Environment, meta
 from pytest_bdd import given, parsers, then, when
 
+from datadog_api_client import exceptions
+
 logging.basicConfig()
 
 PATTERN_ALPHANUM = re.compile(r"[^A-Za-z0-9]+")
@@ -528,7 +530,6 @@ for f in pathlib.Path(os.path.dirname(__file__)).rglob("given.json"):
 @pytest.fixture
 def undo(package_name, undo_operations, client):
     """Clean after operation."""
-    exceptions = importlib.import_module(package_name + ".exceptions")
 
     def cleanup(api, version, operation_id, response, client=client):
         operation = undo_operations.get(version, {}).get(operation_id)
@@ -569,12 +570,11 @@ def undo(package_name, undo_operations, client):
 def execute_request(undo, context, client, api_version, _package):
     """Execute the prepared request."""
     api_request = context["api_request"]
-    exceptions = importlib.import_module(context["api"]["package"] + ".exceptions")
 
     try:
         response = api_request["request"](*api_request["args"], **api_request["kwargs"])
         # Reserialise the response body to JSON to facilitate test assertions
-        response_body_json = _package.api_client.ApiClient.sanitize_for_serialization(response[0])
+        response_body_json = _package.ApiClient.sanitize_for_serialization(response[0])
         api_request["response"] = [response_body_json, response[1], response[2]]
     except exceptions.ApiException as e:
         # If we have an exception, make a stub response object to use for assertions

@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.aws_account_delete_request import AWSAccountDeleteRequest
 from datadog_api_client.v1.model.aws_account_list_response import AWSAccountListResponse
 from datadog_api_client.v1.model.aws_account_create_response import AWSAccountCreateResponse

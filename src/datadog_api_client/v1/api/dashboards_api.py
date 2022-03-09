@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.dashboard_bulk_delete_request import DashboardBulkDeleteRequest
 from datadog_api_client.v1.model.dashboard_summary import DashboardSummary
 from datadog_api_client.v1.model.dashboard_restore_request import DashboardRestoreRequest

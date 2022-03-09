@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccountAndLambdaRequest
 from datadog_api_client.v1.model.aws_logs_list_response import AWSLogsListResponse
 from datadog_api_client.v1.model.aws_logs_async_response import AWSLogsAsyncResponse

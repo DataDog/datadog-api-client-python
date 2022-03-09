@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.pager_duty_service_name import PagerDutyServiceName
 from datadog_api_client.v1.model.pager_duty_service import PagerDutyService
 from datadog_api_client.v1.model.pager_duty_service_key import PagerDutyServiceKey

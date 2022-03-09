@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.slo_correction_list_response import SLOCorrectionListResponse
 from datadog_api_client.v1.model.slo_correction_response import SLOCorrectionResponse
 from datadog_api_client.v1.model.slo_correction_create_request import SLOCorrectionCreateRequest
