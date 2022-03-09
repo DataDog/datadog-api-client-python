@@ -1296,6 +1296,12 @@
       "type": "safe"
     }
   },
+  "GetUsageOnlineArchive": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageProfiling": {
     "tag": "Usage Metering",
     "undo": {

@@ -238,6 +238,22 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for Online Archive returns "Bad Request" response
+    Given new "GetUsageOnlineArchive" request
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for Online Archive returns "OK" response
+    Given new "GetUsageOnlineArchive" request
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for RUM Sessions returns "Bad Request" response
     Given new "GetUsageRumSessions" request
