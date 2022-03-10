@@ -60,6 +60,18 @@
       "type": "idempotent"
     }
   },
+  "ListAuditLogs": {
+    "tag": "Audit",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchAuditLogs": {
+    "tag": "Audit",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListAuthNMappings": {
     "tag": "AuthN Mappings",
     "undo": {
