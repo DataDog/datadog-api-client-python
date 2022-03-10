@@ -276,7 +276,6 @@ class MetricsApi:
         >>> thread = api.create_bulk_tags_metrics_configuration(body, async_req=True)
         >>> result = thread.get()
 
-
         :type body: MetricBulkTagConfigCreateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -325,7 +324,6 @@ class MetricsApi:
 
         :param metric_name: The name of the metric.
         :type metric_name: str
-
         :type body: MetricTagConfigurationCreateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -373,7 +371,6 @@ class MetricsApi:
 
         >>> thread = api.delete_bulk_tags_metrics_configuration(body, async_req=True)
         >>> result = thread.get()
-
 
         :type body: MetricBulkTagConfigDeleteRequest
         :param _return_http_data_only: Response data without head status
@@ -659,7 +656,6 @@ class MetricsApi:
 
         :param metric_name: The name of the metric.
         :type metric_name: str
-
         :type body: MetricTagConfigurationUpdateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

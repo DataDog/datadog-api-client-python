@@ -285,7 +285,6 @@ class OrganizationsApi:
 
         :param public_id: The `public_id` of the organization you are operating within.
         :type public_id: str
-
         :type body: Organization
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
