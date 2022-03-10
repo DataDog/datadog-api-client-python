@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"filter":{"from":"now-15m","query":"@type:session AND @session.type:user","to":"now"},"options":{"time_offset":0,"timezone":"GMT"},"page":{"limit":25},"sort":"timestamp"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/audit/events/search
+  response:
+    body:
+      string: '{"data":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

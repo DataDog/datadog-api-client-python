@@ -1,6 +1,14 @@
 datadog\_api\_client.v2.api
 ===========================
 
+audit\_api
+----------
+
+.. automodule:: datadog_api_client.v2.api.audit_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 auth\_n\_mappings\_api
 ----------------------
 

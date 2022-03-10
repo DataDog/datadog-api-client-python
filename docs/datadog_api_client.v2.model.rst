@@ -193,6 +193,118 @@ application\_keys\_type
    :undoc-members:
    :show-inheritance:
 
+audit\_logs\_event
+------------------
+
+.. automodule:: datadog_api_client.v2.model.audit_logs_event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+audit\_logs\_event\_attributes
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.audit_logs_event_attributes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+audit\_logs\_event\_type
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.audit_logs_event_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+audit\_logs\_events\_response
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.audit_logs_events_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+audit\_logs\_query\_filter
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.audit_logs_query_filter
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+audit\_logs\_query\_options
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.audit_logs_query_options
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+audit\_logs\_query\_page\_options
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.audit_logs_query_page_options
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+audit\_logs\_response\_links
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.audit_logs_response_links
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+audit\_logs\_response\_metadata
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.audit_logs_response_metadata
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+audit\_logs\_response\_page
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.audit_logs_response_page
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+audit\_logs\_response\_status
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.audit_logs_response_status
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+audit\_logs\_search\_events\_request
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.audit_logs_search_events_request
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+audit\_logs\_sort
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.audit_logs_sort
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+audit\_logs\_warning
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.audit_logs_warning
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 auth\_n\_mapping
 ----------------
 
