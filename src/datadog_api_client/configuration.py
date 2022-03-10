@@ -6,7 +6,7 @@ import copy
 import logging
 import os
 import multiprocessing
-import urllib3
+import urllib3  # type: ignore
 
 from http import client as http_client
 from datadog_api_client.exceptions import ApiValueError

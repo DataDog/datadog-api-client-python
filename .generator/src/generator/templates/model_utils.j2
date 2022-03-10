@@ -8,6 +8,7 @@ import pprint
 import re
 import tempfile
 from types import MappingProxyType
+from typing import Collection, Mapping, Union
 
 from dateutil.parser import parse
 
@@ -20,7 +21,7 @@ from datadog_api_client.exceptions import (
 
 none_type = type(None)
 file_type = io.IOBase
-empty_dict = MappingProxyType({})
+empty_dict = MappingProxyType({})  # type: ignore
 
 
 def convert_js_args_to_python_args(fn):
@@ -125,19 +126,19 @@ class OpenApiModel(object):
 
     additional_properties_type = None
 
-    attribute_map = empty_dict
+    attribute_map: Mapping[str, str] = empty_dict
 
     _nullable = False
 
     discriminator = None
 
-    allowed_values = empty_dict
+    allowed_values: Mapping[str, Mapping[str, Union[str, int]]] = empty_dict
 
-    validations = empty_dict
+    validations: Mapping[str, Mapping[str, int]] = empty_dict
 
     openapi_types = empty_dict
 
-    read_only_vars = empty_dict
+    read_only_vars: Collection[str] = frozenset()
 
     def set_attribute(self, name, value):
         # this is only used to set properties on self
@@ -882,7 +883,7 @@ def get_simple_class(input_value):
         return list
     elif isinstance(input_value, dict):
         return dict
-    elif isinstance(input_value, none_type):
+    elif input_value is None:
         return none_type
     elif isinstance(input_value, file_type):
         return file_type
