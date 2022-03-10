@@ -464,7 +464,6 @@ class KeyManagementApi:
         >>> thread = api.create_api_key(body, async_req=True)
         >>> result = thread.get()
 
-
         :type body: APIKeyCreateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -507,7 +506,6 @@ class KeyManagementApi:
 
         >>> thread = api.create_current_user_application_key(body, async_req=True)
         >>> result = thread.get()
-
 
         :type body: ApplicationKeyCreateRequest
         :param _return_http_data_only: Response data without head status
@@ -990,7 +988,6 @@ class KeyManagementApi:
 
         :param api_key_id: The ID of the API key.
         :type api_key_id: str
-
         :type body: APIKeyUpdateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -1038,7 +1035,6 @@ class KeyManagementApi:
 
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
-
         :type body: ApplicationKeyUpdateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -1086,7 +1082,6 @@ class KeyManagementApi:
 
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
-
         :type body: ApplicationKeyUpdateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

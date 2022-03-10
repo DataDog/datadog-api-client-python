@@ -387,7 +387,6 @@ class SecurityMonitoringApi:
         >>> thread = api.create_security_monitoring_rule(body, async_req=True)
         >>> result = thread.get()
 
-
         :type body: SecurityMonitoringRuleCreatePayload
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -750,7 +749,6 @@ class SecurityMonitoringApi:
         >>> thread = api.search_security_monitoring_signals(async_req=True)
         >>> result = thread.get()
 
-
         :type body: SecurityMonitoringSignalListRequest, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -845,7 +843,6 @@ class SecurityMonitoringApi:
 
         :param rule_id: The ID of the rule.
         :type rule_id: str
-
         :type body: SecurityMonitoringRuleUpdatePayload
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

@@ -166,7 +166,6 @@ class AuthNMappingsApi:
         >>> thread = api.create_auth_n_mapping(body, async_req=True)
         >>> result = thread.get()
 
-
         :type body: AuthNMappingCreateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -350,7 +349,6 @@ class AuthNMappingsApi:
 
         :param authn_mapping_id: The UUID of the AuthN Mapping.
         :type authn_mapping_id: str
-
         :type body: AuthNMappingUpdateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

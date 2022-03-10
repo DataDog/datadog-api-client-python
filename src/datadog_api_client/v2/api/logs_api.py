@@ -209,7 +209,6 @@ class LogsApi:
         >>> thread = api.aggregate_logs(body, async_req=True)
         >>> result = thread.get()
 
-
         :type body: LogsAggregateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -262,7 +261,6 @@ class LogsApi:
 
         >>> thread = api.list_logs(async_req=True)
         >>> result = thread.get()
-
 
         :type body: LogsListRequest, optional
         :param _return_http_data_only: Response data without head status

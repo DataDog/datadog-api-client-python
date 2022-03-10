@@ -143,11 +143,13 @@ class {{ classname }}:
 {# keep new line #}
 
 {%- for name, parameter in operation|parameters if parameter.required %}
-{% if parameter.description %}        :param {{ name|attribute_name }}: {{ parameter.description|indent(12) }}{%- if parameter.default %} Defaults to {{ parameter.default }}.{% endif %}{% endif %}
+{%- if parameter.description %}
+        :param {{ name|attribute_name }}: {{ parameter.description|indent(12) }}{% if parameter.default %} Defaults to {{ parameter.default }}.{% endif %}{% endif %}
         :type {{ name|attribute_name }}: {{ get_type_for_parameter(parameter) }}
 {%- endfor %}
 {%- for name, parameter in operation|parameters if not parameter.required %}
-{% if parameter.description %}        :param {{ name|attribute_name }}: {{ parameter.description|indent(12) }}{%- if parameter.default %} If omitted the server will use the default value of {{ parameter.default }}.{% endif %}{% endif %}
+{%- if parameter.description %}
+        :param {{ name|attribute_name }}: {{ parameter.description|indent(12) }}{%- if parameter.default %} If omitted the server will use the default value of {{ parameter.default }}.{% endif %}{% endif %}
         :type {{ name|attribute_name }}: {{ get_type_for_parameter(parameter) }}, optional
 {%- endfor %}
         :param _return_http_data_only: Response data without head status

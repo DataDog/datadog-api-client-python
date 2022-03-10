@@ -384,7 +384,6 @@ class RolesApi:
 
         :param role_id: The ID of the role.
         :type role_id: str
-
         :type body: RelationshipToPermission
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -432,7 +431,6 @@ class RolesApi:
 
         :param role_id: The ID of the role.
         :type role_id: str
-
         :type body: RelationshipToUser
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -480,7 +478,6 @@ class RolesApi:
 
         :param role_id: The ID of the role.
         :type role_id: str
-
         :type body: RoleCloneRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -525,7 +522,6 @@ class RolesApi:
 
         >>> thread = api.create_role(body, async_req=True)
         >>> result = thread.get()
-
 
         :type body: RoleCreateRequest
         :param _return_http_data_only: Response data without head status
@@ -848,7 +844,6 @@ class RolesApi:
 
         :param role_id: The ID of the role.
         :type role_id: str
-
         :type body: RelationshipToPermission
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -896,7 +891,6 @@ class RolesApi:
 
         :param role_id: The ID of the role.
         :type role_id: str
-
         :type body: RelationshipToUser
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -944,7 +938,6 @@ class RolesApi:
 
         :param role_id: The ID of the role.
         :type role_id: str
-
         :type body: RoleUpdateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

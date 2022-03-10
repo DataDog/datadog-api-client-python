@@ -161,7 +161,6 @@ class RUMApi:
         >>> thread = api.search_rum_events(async_req=True)
         >>> result = thread.get()
 
-
         :type body: RUMSearchEventsRequest, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

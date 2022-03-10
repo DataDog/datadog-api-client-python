@@ -255,7 +255,6 @@ class LogsArchivesApi:
 
         :param archive_id: The ID of the archive.
         :type archive_id: str
-
         :type body: RelationshipToRole
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -560,7 +559,6 @@ class LogsArchivesApi:
 
         :param archive_id: The ID of the archive.
         :type archive_id: str
-
         :type body: RelationshipToRole
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

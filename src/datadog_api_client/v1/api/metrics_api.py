@@ -399,7 +399,6 @@ class MetricsApi:
         >>> thread = api.submit_metrics(body, async_req=True)
         >>> result = thread.get()
 
-
         :type body: MetricsPayload
         :param content_encoding: HTTP header used to compress the media-type.
         :type content_encoding: MetricContentEncoding, optional

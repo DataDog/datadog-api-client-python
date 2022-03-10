@@ -287,7 +287,6 @@ class UsersApi:
         >>> thread = api.create_service_account(body, async_req=True)
         >>> result = thread.get()
 
-
         :type body: ServiceAccountCreateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -330,7 +329,6 @@ class UsersApi:
 
         >>> thread = api.create_user(body, async_req=True)
         >>> result = thread.get()
-
 
         :type body: UserCreateRequest
         :param _return_http_data_only: Response data without head status
@@ -656,7 +654,6 @@ class UsersApi:
         >>> thread = api.send_invitations(body, async_req=True)
         >>> result = thread.get()
 
-
         :type body: UserInvitationsRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -703,7 +700,6 @@ class UsersApi:
 
         :param user_id: The ID of the user.
         :type user_id: str
-
         :type body: UserUpdateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

@@ -203,7 +203,6 @@ class ServiceAccountsApi:
 
         :param service_account_id: The ID of the service account.
         :type service_account_id: str
-
         :type body: ApplicationKeyCreateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -407,7 +406,6 @@ class ServiceAccountsApi:
         :type service_account_id: str
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
-
         :type body: ApplicationKeyUpdateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
