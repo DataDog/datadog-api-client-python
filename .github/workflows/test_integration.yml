@@ -51,7 +51,7 @@ jobs:
           context: integration
       - name: Report source code metadata
         run: |
-          curl -L "https://github.com/DataDog/datadog-ci/releases/latest/download/datadog-ci-linux-x64" --output ./datadog-ci
+          curl -L "https://github.com/DataDog/datadog-ci/releases/latest/download/datadog-ci_linux-x64" --output ./datadog-ci
           chmod +x "./datadog-ci"
           ./datadog-ci git-metadata upload
         env:
