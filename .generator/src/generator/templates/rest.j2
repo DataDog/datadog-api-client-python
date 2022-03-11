@@ -7,7 +7,7 @@ import ssl
 from urllib.parse import urlencode
 import zlib
 
-import urllib3
+import urllib3  # type: ignore
 
 from datadog_api_client.exceptions import (
     ApiException,
@@ -233,7 +233,7 @@ class _AioSonicResponseWrapper:
 
 class AsyncRESTClientObject:
     def __init__(self, configuration):
-        import aiosonic
+        import aiosonic  # type: ignore
 
         self._client = aiosonic.HTTPClient()
 

@@ -10,9 +10,9 @@ from multiprocessing.pool import ThreadPool
 import io
 import os
 import re
-import typing
+from typing import Any, Dict, Optional, List, Tuple, Union
 from urllib.parse import quote
-from urllib3.fields import RequestField
+from urllib3.fields import RequestField  # type: ignore
 
 
 from datadog_api_client import rest
@@ -108,15 +108,15 @@ class ApiClient(object):
         self,
         method: str,
         url: str,
-        query_params: typing.Optional[typing.List[typing.Tuple[str, typing.Any]]] = None,
-        header_params: typing.Optional[typing.Dict[str, typing.Any]] = None,
-        body: typing.Optional[typing.Any] = None,
-        post_params: typing.Optional[typing.List[typing.Tuple[str, typing.Any]]] = None,
-        response_type: typing.Optional[typing.Tuple[typing.Any]] = None,
-        _return_http_data_only: typing.Optional[bool] = None,
+        query_params: Optional[List[Tuple[str, Any]]] = None,
+        header_params: Optional[Dict[str, Any]] = None,
+        body: Optional[Any] = None,
+        post_params: Optional[List[Tuple[str, Any]]] = None,
+        response_type: Optional[Tuple[Any]] = None,
+        _return_http_data_only: Optional[bool] = None,
         _preload_content: bool = True,
-        _request_timeout: typing.Optional[typing.Union[int, float, typing.Tuple]] = None,
-        _check_type: typing.Optional[bool] = None,
+        _request_timeout: Optional[Union[int, float, Tuple]] = None,
+        _check_type: Optional[bool] = None,
     ):
         # perform request and return response
         response = self.rest_client.request(
@@ -197,7 +197,7 @@ class ApiClient(object):
             return {key: cls.sanitize_for_serialization(val) for key, val in model_to_dict(obj, serialize=True).items()}
         elif isinstance(obj, io.IOBase):
             return cls.get_file_data_and_close_file(obj)
-        elif isinstance(obj, (str, int, float, none_type, bool)):
+        elif isinstance(obj, (str, int, float, bool)) or obj is None:
             return obj
         elif isinstance(obj, (datetime, date)):
             if obj.tzinfo is not None:
@@ -248,21 +248,21 @@ class ApiClient(object):
         self,
         resource_path: str,
         method: str,
-        path_params: typing.Optional[typing.Dict[str, typing.Any]] = None,
-        query_params: typing.Optional[typing.List[typing.Tuple[str, typing.Any]]] = None,
-        header_params: typing.Optional[typing.Dict[str, typing.Any]] = None,
-        body: typing.Optional[typing.Any] = None,
-        post_params: typing.Optional[typing.List[typing.Tuple[str, typing.Any]]] = None,
-        files: typing.Optional[typing.Dict[str, typing.List[io.IOBase]]] = None,
-        response_type: typing.Optional[typing.Tuple[typing.Any]] = None,
-        auth_settings: typing.Optional[typing.List[str]] = None,
-        async_req: typing.Optional[bool] = None,
-        _return_http_data_only: typing.Optional[bool] = None,
-        collection_formats: typing.Optional[typing.Dict[str, str]] = None,
+        path_params: Optional[Dict[str, Any]] = None,
+        query_params: Optional[List[Tuple[str, Any]]] = None,
+        header_params: Optional[Dict[str, Any]] = None,
+        body: Optional[Any] = None,
+        post_params: Optional[List[Tuple[str, Any]]] = None,
+        files: Optional[Dict[str, List[io.FileIO]]] = None,
+        response_type: Optional[Tuple[Any]] = None,
+        auth_settings: Optional[List[str]] = None,
+        async_req: Optional[bool] = None,
+        _return_http_data_only: Optional[bool] = None,
+        collection_formats: Optional[Dict[str, str]] = None,
         _preload_content: bool = True,
-        _request_timeout: typing.Optional[typing.Union[int, float, typing.Tuple]] = None,
-        _host: typing.Optional[str] = None,
-        _check_type: typing.Optional[bool] = None,
+        _request_timeout: Optional[Union[int, float, Tuple]] = None,
+        _host: Optional[str] = None,
+        _check_type: Optional[bool] = None,
     ):
         """Makes the HTTP request (synchronous) and returns deserialized data.
 
@@ -329,8 +329,7 @@ class ApiClient(object):
         # path parameters
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
-            path_params = self.parameters_to_tuples(path_params, collection_formats)
-            for k, v in path_params:
+            for k, v in self.parameters_to_tuples(path_params, collection_formats):
                 # specified safe chars, encode everything
                 resource_path = resource_path.replace(
                     f"{{{k}}}", quote(str(v), safe=self.configuration.safe_chars_for_path_param)
@@ -396,14 +395,14 @@ class ApiClient(object):
             ),
         )
 
-    def parameters_to_tuples(self, params, collection_formats):
+    def parameters_to_tuples(self, params, collection_formats) -> List[Tuple[str, str]]:
         """Get parameters as list of tuples, formatting collections.
 
         :param params: Parameters as dict or list of two-tuples
         :param dict collection_formats: Parameter collection formats
         :return: Parameters as list of tuples, collections formatted
         """
-        new_params = []
+        new_params: List[Tuple[str, str]] = []
         if collection_formats is None:
             collection_formats = {}
         for k, v in params.items() if isinstance(params, dict) else params:
@@ -433,7 +432,7 @@ class ApiClient(object):
         file_instance.close()
         return file_data
 
-    def files_parameters(self, files: typing.Optional[typing.Dict[str, typing.List[io.IOBase]]] = None):
+    def files_parameters(self, files: Optional[Dict[str, List[io.FileIO]]] = None):
         """Builds form parameters.
 
         :param files: None or a dict with key=param_name and
@@ -456,7 +455,7 @@ class ApiClient(object):
                     raise ApiValueError(
                         "Cannot read a closed file. The passed in file_type " "for %s must be open." % param_name
                     )
-                filename = os.path.basename(file_instance.name)
+                filename = os.path.basename(str(file_instance.name))
                 filedata = self.get_file_data_and_close_file(file_instance)
                 mimetype = mimetypes.guess_type(filename)[0] or "application/octet-stream"
                 params.append(tuple([param_name, tuple([filename, filedata, mimetype])]))
@@ -541,15 +540,15 @@ class AsyncApiClient(ApiClient):
         self,
         method: str,
         url: str,
-        query_params: typing.Optional[typing.List[typing.Tuple[str, typing.Any]]] = None,
-        header_params: typing.Optional[typing.Dict[str, typing.Any]] = None,
-        body: typing.Optional[typing.Any] = None,
-        post_params: typing.Optional[typing.List[typing.Tuple[str, typing.Any]]] = None,
-        response_type: typing.Optional[typing.Tuple[typing.Any]] = None,
-        _return_http_data_only: typing.Optional[bool] = None,
+        query_params: Optional[List[Tuple[str, Any]]] = None,
+        header_params: Optional[Dict[str, Any]] = None,
+        body: Optional[Any] = None,
+        post_params: Optional[List[Tuple[str, Any]]] = None,
+        response_type: Optional[Tuple[Any]] = None,
+        _return_http_data_only: Optional[bool] = None,
         _preload_content: bool = True,
-        _request_timeout: typing.Optional[typing.Union[int, float, typing.Tuple]] = None,
-        _check_type: typing.Optional[bool] = None,
+        _request_timeout: Optional[Union[int, float, Tuple]] = None,
+        _check_type: Optional[bool] = None,
     ):
 
         # perform request and return response
