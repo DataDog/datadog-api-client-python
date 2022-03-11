@@ -75,7 +75,6 @@ Feature: Logs
   @team:DataDog/logs-app
   Scenario: Search logs returns "OK" response
     Given a valid "appKeyAuth" key in the system
-    And operation "ListLogs" enabled
     And new "ListLogs" request
     And body with value {"filter": {"query": "datadog-agent", "indexes": ["main"], "from": "2020-09-17T11:48:36+01:00", "to": "2020-09-17T12:48:36+01:00"}, "sort": "timestamp", "page": {"limit": 5}}
     When the request is sent
