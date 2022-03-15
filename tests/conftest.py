@@ -192,48 +192,46 @@ def _get_prefix(request):
 
 
 @pytest.fixture
-def unique(request, freezer):
+def unique(request, freezed_time):
     prefix = _get_prefix(request)
-    with freezer:
-        return f"{prefix}-{int(datetime.utcnow().timestamp())}"
+    return f"{prefix}-{int(freezed_time.timestamp())}"
 
 
-def relative_time(freezer, iso):
+def relative_time(freezed_time, iso):
     time_re = re.compile(r"now( *([+-]) *(\d+)([smhdMy]))?")
 
     def func(arg):
-        with freezer:
-            ret = datetime.now()
-            m = time_re.match(arg)
-            if m:
-                if m.group(1):
-                    sign = m.group(2)
-                    num = int(sign + m.group(3))
-                    unit = m.group(4)
-                    if unit == "s":
-                        ret += relativedelta(seconds=num)
-                    elif unit == "m":
-                        ret += relativedelta(minutes=num)
-                    elif unit == "h":
-                        ret += relativedelta(hours=num)
-                    elif unit == "d":
-                        ret += relativedelta(days=num)
-                    elif unit == "M":
-                        ret += relativedelta(months=num)
-                    elif unit == "y":
-                        ret += relativedelta(years=num)
-                if iso:
-                    return ret  # return datetime object and not string
-                    # NOTE this is not a full ISO 8601 format, but it's enough for our needs
-                    # return ret.strftime('%Y-%m-%dT%H:%M:%S') + ret.strftime('.%f')[:4] + 'Z'
-                return int(ret.timestamp())
-            return ""
+        ret = freezed_time
+        m = time_re.match(arg)
+        if m:
+            if m.group(1):
+                sign = m.group(2)
+                num = int(sign + m.group(3))
+                unit = m.group(4)
+                if unit == "s":
+                    ret += relativedelta(seconds=num)
+                elif unit == "m":
+                    ret += relativedelta(minutes=num)
+                elif unit == "h":
+                    ret += relativedelta(hours=num)
+                elif unit == "d":
+                    ret += relativedelta(days=num)
+                elif unit == "M":
+                    ret += relativedelta(months=num)
+                elif unit == "y":
+                    ret += relativedelta(years=num)
+            if iso:
+                return ret.replace(tzinfo=None)  # return datetime object and not string
+                # NOTE this is not a full ISO 8601 format, but it's enough for our needs
+                # return ret.strftime('%Y-%m-%dT%H:%M:%S') + ret.strftime('.%f')[:4] + 'Z'
+            return int(ret.timestamp())
+        return ""
 
     return func
 
 
 @pytest.fixture
-def context(vcr, unique, freezer):
+def context(vcr, unique, freezed_time):
     """
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
@@ -246,8 +244,8 @@ def context(vcr, unique, freezer):
         "unique_alnum": PATTERN_ALPHANUM.sub("", unique),
         "unique_lower_alnum": PATTERN_ALPHANUM.sub("", unique).lower(),
         "unique_upper_alnum": PATTERN_ALPHANUM.sub("", unique).upper(),
-        "timestamp": relative_time(freezer, False),
-        "timeISO": relative_time(freezer, True),
+        "timestamp": relative_time(freezed_time, False),
+        "timeISO": relative_time(freezed_time, True),
     }
 
     yield ctx
@@ -291,8 +289,7 @@ def default_cassette_name(default_cassette_name):
 
 
 @pytest.fixture
-def freezer(default_cassette_name, record_mode, vcr):
-    from freezegun import freeze_time
+def freezed_time(default_cassette_name, record_mode, vcr):
     from dateutil import parser
 
     if record_mode in {"new_episodes", "rewrite"}:
@@ -320,7 +317,7 @@ def freezer(default_cassette_name, record_mode, vcr):
             )
             raise RuntimeError(msg)
 
-    return freeze_time(parser.isoparse(freeze_at))
+    return parser.isoparse(freeze_at)
 
 
 def pytest_recording_configure(config, vcr):
