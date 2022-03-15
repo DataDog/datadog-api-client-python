@@ -105,7 +105,7 @@ class ChangeWidgetRequest(ModelNormal):
         :param event_query: The log query.
         :type event_query: LogQueryDefinition, optional
 
-        :param formulas: List of formulas that operate on queries. **This feature is currently in beta.**
+        :param formulas: List of formulas that operate on queries.
         :type formulas: [WidgetFormula], optional
 
         :param increase_good: Whether to show increase as good.
@@ -132,10 +132,10 @@ class ChangeWidgetRequest(ModelNormal):
         :param q: Query definition.
         :type q: str, optional
 
-        :param queries: List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**
+        :param queries: List of queries that can be returned directly or used in formulas.
         :type queries: [FormulaAndFunctionQueryDefinition], optional
 
-        :param response_format: Timeseries or Scalar response. **This feature is currently in beta.**
+        :param response_format: Timeseries or Scalar response.
         :type response_format: FormulaAndFunctionResponseFormat, optional
 
         :param rum_query: The log query.
