@@ -27,7 +27,7 @@ class FormulaAndFunctionResponseFormat(ModelSimple):
 
     def __init__(self, *args, **kwargs):
         """
-        Timeseries or Scalar response.
+        Timeseries or Scalar response. **This feature is currently in beta.**
 
         Note that value can be passed either in args or in kwargs, but not in both.
 

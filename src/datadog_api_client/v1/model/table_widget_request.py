@@ -118,7 +118,7 @@ class TableWidgetRequest(ModelNormal):
         :param event_query: The log query.
         :type event_query: LogQueryDefinition, optional
 
-        :param formulas: List of formulas that operate on queries.
+        :param formulas: List of formulas that operate on queries. **This feature is currently in beta.**
         :type formulas: [WidgetFormula], optional
 
         :param limit: For metric queries, the number of lines to show in the table. Only one request should have this property.
@@ -142,10 +142,10 @@ class TableWidgetRequest(ModelNormal):
         :param q: Query definition.
         :type q: str, optional
 
-        :param queries: List of queries that can be returned directly or used in formulas.
+        :param queries: List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**
         :type queries: [FormulaAndFunctionQueryDefinition], optional
 
-        :param response_format: Timeseries or Scalar response.
+        :param response_format: Timeseries or Scalar response. **This feature is currently in beta.**
         :type response_format: FormulaAndFunctionResponseFormat, optional
 
         :param rum_query: The log query.

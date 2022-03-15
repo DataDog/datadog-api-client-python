@@ -14,11 +14,11 @@ Feature: Logs
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/logs-app
+  @team:DataDog/logs-app
   Scenario: Search logs returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request
-    And body with value {"index": "retention-3,retention-15", "limit": null, "query": "service:web* AND @http.status_code:[200 TO 299]", "sort": "asc", "startAt": null, "time": {"from": "2020-02-02T02:02:02Z", "timezone": null, "to": "2020-02-02T20:20:20Z"}}
+    And body with value {"index":"main","limit":5,"query":"service:web* AND @http.status_code:[200 TO 299]","sort":"asc","time": {"from": {{ timestamp("now - 1d") }},"timezone":"Europe/Paris","to": {{ timestamp("now") }} }}
     When the request is sent
     Then the response status is 200 OK
 

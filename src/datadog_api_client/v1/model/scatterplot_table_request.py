@@ -39,13 +39,13 @@ class ScatterplotTableRequest(ModelNormal):
         """
         Scatterplot request containing formulas and functions.
 
-        :param formulas: List of Scatterplot formulas that operate on queries.
+        :param formulas: List of Scatterplot formulas that operate on queries. **This feature is currently in beta.**
         :type formulas: [ScatterplotWidgetFormula], optional
 
-        :param queries: List of queries that can be returned directly or used in formulas.
+        :param queries: List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**
         :type queries: [FormulaAndFunctionQueryDefinition], optional
 
-        :param response_format: Timeseries or Scalar response.
+        :param response_format: Timeseries or Scalar response. **This feature is currently in beta.**
         :type response_format: FormulaAndFunctionResponseFormat, optional
         """
         super().__init__(kwargs)

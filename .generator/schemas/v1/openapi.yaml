@@ -97,7 +97,7 @@ components:
 
             For example, `env:production,instance-type:c1.*,!region:us-east-1`'
           example:
-          - $KEY:$VALUE
+          - <KEY>:<VALUE>
           items:
             description: The list of the filter_tags.
             type: string
@@ -107,7 +107,7 @@ components:
 
             and metrics reporting through this integration.'
           example:
-          - $KEY:$VALUE
+          - <KEY>:<VALUE>
           items:
             description: The list of the the host_tags.
             type: string
@@ -755,7 +755,8 @@ components:
         event_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         formulas:
-          description: List of formulas that operate on queries.
+          description: List of formulas that operate on queries. **This feature is
+            currently in beta.**
           items:
             $ref: '#/components/schemas/WidgetFormula'
           type: array
@@ -779,6 +780,7 @@ components:
           type: string
         queries:
           description: List of queries that can be returned directly or used in formulas.
+            **This feature is currently in beta.**
           items:
             $ref: '#/components/schemas/FormulaAndFunctionQueryDefinition'
           type: array
@@ -2458,7 +2460,7 @@ components:
       - $ref: '#/components/schemas/FormulaAndFunctionApmResourceStatsQueryDefinition'
       type: object
     FormulaAndFunctionResponseFormat:
-      description: Timeseries or Scalar response.
+      description: Timeseries or Scalar response. **This feature is currently in beta.**
       enum:
       - timeseries
       - scalar
@@ -2632,11 +2634,11 @@ components:
           example: '123456712345671234567'
           type: string
         client_x509_cert_url:
-          description: 'Should be `https://www.googleapis.com/robot/v1/metadata/x509/$CLIENT_EMAIL`
+          description: 'Should be `https://www.googleapis.com/robot/v1/metadata/x509/<CLIENT_EMAIL>`
 
-            where `$CLIENT_EMAIL` is the email found in your JSON service account
+            where `<CLIENT_EMAIL>` is the email found in your JSON service account
             key.'
-          example: https://www.googleapis.com/robot/v1/metadata/x509/$CLIENT_EMAIL
+          example: https://www.googleapis.com/robot/v1/metadata/x509/<CLIENT_EMAIL>
           type: string
         errors:
           description: An array of errors.
@@ -2774,7 +2776,8 @@ components:
       description: An updated geomap widget.
       properties:
         formulas:
-          description: List of formulas that operate on queries.
+          description: List of formulas that operate on queries. **This feature is
+            currently in beta.**
           items:
             $ref: '#/components/schemas/WidgetFormula'
           type: array
@@ -2785,6 +2788,7 @@ components:
           type: string
         queries:
           description: List of queries that can be returned directly or used in formulas.
+            **This feature is currently in beta.**
           items:
             $ref: '#/components/schemas/FormulaAndFunctionQueryDefinition'
           type: array
@@ -7991,7 +7995,8 @@ components:
         event_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         formulas:
-          description: List of formulas that operate on queries.
+          description: List of formulas that operate on queries. **This feature is
+            currently in beta.**
           items:
             $ref: '#/components/schemas/WidgetFormula'
           type: array
@@ -8008,6 +8013,7 @@ components:
           type: string
         queries:
           description: List of queries that can be returned directly or used in formulas.
+            **This feature is currently in beta.**
           items:
             $ref: '#/components/schemas/FormulaAndFunctionQueryDefinition'
           type: array
@@ -9234,12 +9240,14 @@ components:
       description: Scatterplot request containing formulas and functions.
       properties:
         formulas:
-          description: List of Scatterplot formulas that operate on queries.
+          description: List of Scatterplot formulas that operate on queries. **This
+            feature is currently in beta.**
           items:
             $ref: '#/components/schemas/ScatterplotWidgetFormula'
           type: array
         queries:
           description: List of queries that can be returned directly or used in formulas.
+            **This feature is currently in beta.**
           items:
             $ref: '#/components/schemas/FormulaAndFunctionQueryDefinition'
           type: array
@@ -9874,7 +9882,8 @@ components:
         event_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         formulas:
-          description: List of formulas that operate on queries.
+          description: List of formulas that operate on queries. **This feature is
+            currently in beta.**
           items:
             $ref: '#/components/schemas/WidgetFormula'
           type: array
@@ -9891,6 +9900,7 @@ components:
           type: string
         queries:
           description: List of queries that can be returned directly or used in formulas.
+            **This feature is currently in beta.**
           items:
             $ref: '#/components/schemas/FormulaAndFunctionQueryDefinition'
           type: array
@@ -12318,7 +12328,8 @@ components:
         event_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         formulas:
-          description: List of formulas that operate on queries.
+          description: List of formulas that operate on queries. **This feature is
+            currently in beta.**
           items:
             $ref: '#/components/schemas/WidgetFormula'
           type: array
@@ -12342,6 +12353,7 @@ components:
           type: string
         queries:
           description: List of queries that can be returned directly or used in formulas.
+            **This feature is currently in beta.**
           items:
             $ref: '#/components/schemas/FormulaAndFunctionQueryDefinition'
           type: array
@@ -12505,7 +12517,8 @@ components:
         event_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         formulas:
-          description: List of formulas that operate on queries.
+          description: List of formulas that operate on queries. **This feature is
+            currently in beta.**
           items:
             $ref: '#/components/schemas/WidgetFormula'
           type: array
@@ -12530,6 +12543,7 @@ components:
           type: string
         queries:
           description: List of queries that can be returned directly or used in formulas.
+            **This feature is currently in beta.**
           items:
             $ref: '#/components/schemas/FormulaAndFunctionQueryDefinition'
           type: array
@@ -12604,7 +12618,8 @@ components:
         event_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         formulas:
-          description: List of formulas that operate on queries.
+          description: List of formulas that operate on queries. **This feature is
+            currently in beta.**
           items:
             $ref: '#/components/schemas/WidgetFormula'
           type: array
@@ -12621,6 +12636,7 @@ components:
           type: string
         queries:
           description: List of queries that can be returned directly or used in formulas.
+            **This feature is currently in beta.**
           items:
             $ref: '#/components/schemas/FormulaAndFunctionQueryDefinition'
           type: array
@@ -12708,7 +12724,8 @@ components:
       description: An updated treemap widget.
       properties:
         formulas:
-          description: List of formulas that operate on queries.
+          description: List of formulas that operate on queries. **This feature is
+            currently in beta.**
           items:
             $ref: '#/components/schemas/WidgetFormula'
           type: array
@@ -12717,6 +12734,7 @@ components:
           type: string
         queries:
           description: List of queries that can be returned directly or used in formulas.
+            **This feature is currently in beta.**
           items:
             $ref: '#/components/schemas/FormulaAndFunctionQueryDefinition'
           type: array
