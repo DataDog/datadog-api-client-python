@@ -81,7 +81,7 @@ Feature: Security Monitoring
   @skip @team:DataDog/security-monitoring
   Scenario: Delete a security filter returns "OK" response
     Given new "DeleteSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
+    And request contains "security_filter_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
