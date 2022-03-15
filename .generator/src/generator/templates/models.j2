@@ -1,4 +1,4 @@
 {%- for model in models %}
-from {{ config["packageName"] }}.model.{{ model|snake_case }} import {{ model }}
+from datadog_api_client.{{ version }}.model.{{ model|snake_case }} import {{ model }}
 {%- endfor %}
 

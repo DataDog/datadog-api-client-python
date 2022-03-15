@@ -120,7 +120,7 @@ class BaseConfiguration:
         self.discard_unknown_keys = discard_unknown_keys
         self.disabled_client_side_validations = disabled_client_side_validations
         self.logger = {}
-        self.logger["package_logger"] = logging.getLogger("datadog_api_client.v2")
+        self.logger["package_logger"] = logging.getLogger("datadog_api_client")
         self.logger["urllib3_logger"] = logging.getLogger("urllib3")
         self.logger_format = "%(asctime)s %(levelname)s %(message)s"
         self.logger_stream_handler = None

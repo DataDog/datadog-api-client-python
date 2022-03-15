@@ -9,7 +9,7 @@ from datadog_api_client.model_utils import (
     none_type,
 )
 {%- for model in get_api_models(operations) %}
-from {{ config["packageName"] }}.model.{{ model|snake_case }} import {{ model }}
+from datadog_api_client.{{ version }}.model.{{ model|snake_case }} import {{ model }}
 {%- endfor %}
 
 {% set classname = name.replace(" ", "") + "Api" %}

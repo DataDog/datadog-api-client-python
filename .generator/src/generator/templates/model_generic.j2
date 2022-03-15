@@ -2,7 +2,7 @@
 {%- if refs %}
 def lazy_import():
 {%- for ref in refs %}
-    from {{ config["packageName"] }}.model.{{ ref|snake_case }} import {{ ref }}
+    from datadog_api_client.{{ version }}.model.{{ ref|snake_case }} import {{ ref }}
 {%- endfor %}
 {# keep new line #}
 {%- for ref in refs %}
