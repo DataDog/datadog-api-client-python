@@ -1,7 +1,7 @@
 {% include "api_info.j2" %}
 
-from datadog_api_client.api_client import ApiClient, AsyncApiClient
-from datadog_api_client.exceptions import (
+from {{ package }}.api_client import ApiClient, AsyncApiClient
+from {{ package }}.exceptions import (
     OpenApiException, ApiAttributeError, ApiTypeError, ApiValueError, ApiKeyError, ApiException)
 
-from datadog_api_client.{{ version }}.configuration import Configuration
+from {{ package }}.{{ version }}.configuration import Configuration

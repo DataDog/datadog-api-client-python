@@ -13,9 +13,9 @@ from urllib.parse import quote
 from urllib3.fields import RequestField  # type: ignore
 
 
-from datadog_api_client import rest
-from datadog_api_client.exceptions import ApiTypeError, ApiValueError
-from datadog_api_client.model_utils import (
+from {{ package }} import rest
+from {{ package }}.exceptions import ApiTypeError, ApiValueError
+from {{ package }}.model_utils import (
     ModelNormal,
     ModelSimple,
     ModelComposed,
@@ -788,7 +788,7 @@ class Endpoint(object):
 def user_agent():
     """Generate default User-Agent header."""
     import platform
-    from datadog_api_client.version import __version__
+    from {{ package }}.version import __version__
 
     return "datadog-api-client-python/{version} (python {py}; os {os}; arch {arch})".format(
         version=__version__,

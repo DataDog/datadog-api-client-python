@@ -6,6 +6,8 @@ from jinja2 import Environment, FileSystemLoader
 from . import openapi
 from . import formatter
 
+PACKAGE_NAME = "datadog_api_client"
+
 
 @click.command()
 @click.option(
@@ -40,6 +42,7 @@ def cli(input, output):
 
     env.globals["enumerate"] = enumerate
     env.globals["version"] = version
+    env.globals["package"] = PACKAGE_NAME
     env.globals["openapi"] = spec
     env.globals["get_name"] = formatter.get_name
     env.globals["get_type_for_attribute"] = openapi.get_type_for_attribute
@@ -73,7 +76,7 @@ def cli(input, output):
     apis = openapi.apis(spec)
     models = openapi.models(spec)
 
-    top_package = output / "datadog_api_client"
+    top_package = output / PACKAGE_NAME
     top_package.mkdir(parents=True, exist_ok=True)
 
     for name, template in extra_files.items():

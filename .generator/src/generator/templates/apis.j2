@@ -1,5 +1,5 @@
 {%- for api in apis %}
 {%- set classname = api.replace(" ", "") + "Api" %}
-from datadog_api_client.{{ version }}.api.{{ classname|snake_case }} import {{ classname }}
+from {{ package }}.{{ version }}.api.{{ classname|snake_case }} import {{ classname }}
 {%- endfor %}
 
