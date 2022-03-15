@@ -63,8 +63,8 @@ class GCPAccount(ModelNormal):
         :param client_id: Your ID found in your JSON service account key.
         :type client_id: str, optional
 
-        :param client_x509_cert_url: Should be `https://www.googleapis.com/robot/v1/metadata/x509/<CLIENT_EMAIL>`
-            where `<CLIENT_EMAIL>` is the email found in your JSON service account key.
+        :param client_x509_cert_url: Should be `https://www.googleapis.com/robot/v1/metadata/x509/$CLIENT_EMAIL`
+            where `$CLIENT_EMAIL` is the email found in your JSON service account key.
         :type client_x509_cert_url: str, optional
 
         :param errors: An array of errors.
