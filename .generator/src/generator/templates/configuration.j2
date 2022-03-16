@@ -1,6 +1,6 @@
 {% include "api_info.j2" %}
 
-from datadog_api_client.configuration import BaseConfiguration
+from {{ package }}.configuration import BaseConfiguration
 
 
 class Configuration(BaseConfiguration):

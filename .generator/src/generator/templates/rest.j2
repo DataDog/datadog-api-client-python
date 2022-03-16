@@ -9,7 +9,7 @@ import zlib
 
 import urllib3  # type: ignore
 
-from datadog_api_client.exceptions import (
+from {{ package }}.exceptions import (
     ApiException,
     UnauthorizedException,
     ForbiddenException,

@@ -1,15 +1,15 @@
 {% include "api_info.j2" %}
 
 
-from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
-from datadog_api_client.model_utils import (
+from {{ package }}.api_client import ApiClient, Endpoint as _Endpoint
+from {{ package }}.model_utils import (
     date,
     datetime,
     file_type,
     none_type,
 )
 {%- for model in get_api_models(operations) %}
-from {{ config["packageName"] }}.model.{{ model|snake_case }} import {{ model }}
+from {{ package }}.{{ version }}.model.{{ model|snake_case }} import {{ model }}
 {%- endfor %}
 
 {% set classname = name.replace(" ", "") + "Api" %}

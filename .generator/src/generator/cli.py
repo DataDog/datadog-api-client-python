@@ -1,4 +1,3 @@
-import json
 import pathlib
 
 import click
@@ -6,6 +5,8 @@ from jinja2 import Environment, FileSystemLoader
 
 from . import openapi
 from . import formatter
+
+PACKAGE_NAME = "datadog_api_client"
 
 
 @click.command()
@@ -26,8 +27,6 @@ def cli(input, output):
     spec = openapi.load(input)
 
     version = input.parent.name
-    with (input.parent.parent.parent / "config" / f"{version}.json").open() as fp:
-        config = json.load(fp)
 
     env = Environment(loader=FileSystemLoader(str(pathlib.Path(__file__).parent / "templates")))
 
@@ -41,9 +40,9 @@ def cli(input, output):
     env.filters["return_type"] = openapi.return_type
     env.filters["snake_case"] = formatter.snake_case
 
-    env.globals["config"] = config
     env.globals["enumerate"] = enumerate
     env.globals["version"] = version
+    env.globals["package"] = PACKAGE_NAME
     env.globals["openapi"] = spec
     env.globals["get_name"] = formatter.get_name
     env.globals["get_type_for_attribute"] = openapi.get_type_for_attribute
@@ -77,14 +76,16 @@ def cli(input, output):
     apis = openapi.apis(spec)
     models = openapi.models(spec)
 
-    package = output / config["packageName"].replace(".", "/")
-    package.mkdir(parents=True, exist_ok=True)
+    top_package = output / PACKAGE_NAME
+    top_package.mkdir(parents=True, exist_ok=True)
 
-    top_package = package.parent
     for name, template in extra_files.items():
         filename = top_package / name
         with filename.open("w") as fp:
             fp.write(template.render())
+
+    package = top_package / version
+    package.mkdir(exist_ok=True)
 
     for name, model in models.items():
         filename = formatter.snake_case(name) + ".py"

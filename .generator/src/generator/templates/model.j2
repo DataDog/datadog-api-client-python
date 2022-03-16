@@ -1,7 +1,7 @@
 {% include "api_info.j2" %}
 
 
-from datadog_api_client.model_utils import (
+from {{ package }}.model_utils import (
     ApiTypeError,
     ModelComposed,
     ModelNormal,
