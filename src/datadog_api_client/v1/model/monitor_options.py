@@ -133,7 +133,7 @@ class MonitorOptions(ModelNormal):
             - If `False`, `[Triggered] Monitor Title`
         :type include_tags: bool, optional
 
-        :param locked: Whether or not the monitor is locked (only editable by creator and admins).
+        :param locked: Whether or not the monitor is locked (only editable by creator and admins). Use `restricted_roles` instead.
         :type locked: bool, optional
 
         :param min_failure_duration: How long the test should be in failure before alerting (integer, number of seconds, max 7200).

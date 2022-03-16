@@ -124,7 +124,7 @@ class Monitor(ModelNormal):
         :param query: The monitor query.
         :type query: str
 
-        :param restricted_roles: A list of role identifiers that can be pulled from the Roles API. Cannot be used with `locked` option.
+        :param restricted_roles: A list of unique role identifiers to define which roles are allowed to edit the monitor. Editing a monitor includes any updates to the monitor configuration, monitor deletion, and muting of the monitor for any amount of time. Roles unique identifiers can be pulled from the [Roles API](https://docs.datadoghq.com/api/latest/roles/#list-roles) in the `data.id` field.
         :type restricted_roles: [str], none_type, optional
 
         :param state: Wrapper object with the different monitor states.

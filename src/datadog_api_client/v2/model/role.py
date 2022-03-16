@@ -44,7 +44,7 @@ class Role(ModelNormal):
         :param attributes: Attributes of the role.
         :type attributes: RoleAttributes, optional
 
-        :param id: ID of the role.
+        :param id: The unique identifier of the role.
         :type id: str, optional
 
         :param relationships: Relationships of the role object returned by the API.

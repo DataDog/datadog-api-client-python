@@ -40,7 +40,7 @@ class RoleUpdateData(ModelNormal):
         :param attributes: Attributes of the role.
         :type attributes: RoleUpdateAttributes
 
-        :param id: ID of the role.
+        :param id: The unique identifier of the role.
         :type id: str
 
         :param type: Roles type.
