@@ -22,6 +22,14 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/logs-app
+  Scenario: Search test logs returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListLogs" request
+    And body with value {"index": "main", "query": "service:web*", "sort": "asc", "time": {"from": {{ timestamp("now - 1hr") }}, "to": {{ timestamp("now") }} }}
+    When the request is sent
+    Then the response status is 200 OK
+
   @integration-only @skip-terraform-config @skip-validation @team:DataDog/logs-intake
   Scenario: Send deflate logs returns "Response from server (always 200 empty JSON)." response
     Given new "SubmitLog" request

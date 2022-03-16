@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"index":"main","query":"service:web*","sort":"asc","time":{"from":1647382403,"timezone":null,"to":1647386003}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/logs-queries/list
+  response:
+    body:
+      string: '{"status":"done","nextLogId":null,"logs":[],"requestId":"pddv1ChZfR3ZZcHF6V1FuaW1JNldXNFhxb0dRIiwKHFSYsKzMf0f-bbFLDzkRwB5TyxiNZ6pZwCMDugsSDBrfRT5ki0RHe-JkqQ"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
