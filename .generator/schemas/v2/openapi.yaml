@@ -255,7 +255,7 @@ components:
         format: int64
         type: integer
     RoleID:
-      description: The ID of the role.
+      description: The unique identifier of the role.
       in: path
       name: role_id
       required: true
@@ -4851,7 +4851,7 @@ components:
       description: Relationship to role object.
       properties:
         id:
-          description: ID of the role.
+          description: The unique identifier of the role.
           example: 3653d3c6-0c75-11ea-ad28-fb5701eabc7d
           type: string
         type:
@@ -4861,7 +4861,7 @@ components:
       description: Relationship to roles.
       properties:
         data:
-          description: An array containing type and ID of a role.
+          description: An array containing type and the unique identifier of a role.
           items:
             $ref: '#/components/schemas/RelationshipToRoleData'
           type: array
@@ -4934,7 +4934,7 @@ components:
         attributes:
           $ref: '#/components/schemas/RoleAttributes'
         id:
-          description: ID of the role.
+          description: The unique identifier of the role.
           type: string
         relationships:
           $ref: '#/components/schemas/RoleResponseRelationships'
@@ -4957,7 +4957,8 @@ components:
           readOnly: true
           type: string
         name:
-          description: Name of the role.
+          description: The name of the role. The name is neither unique nor a stable
+            identifier of the role.
           type: string
         user_count:
           description: Number of users with that role.
@@ -5047,7 +5048,7 @@ components:
         attributes:
           $ref: '#/components/schemas/RoleCreateAttributes'
         id:
-          description: ID of the role.
+          description: The unique identifier of the role.
           type: string
         relationships:
           $ref: '#/components/schemas/RoleResponseRelationships'
@@ -5099,7 +5100,7 @@ components:
         attributes:
           $ref: '#/components/schemas/RoleUpdateAttributes'
         id:
-          description: ID of the role.
+          description: The unique identifier of the role.
           example: 00000000-0000-1111-0000-000000000000
           type: string
         type:
@@ -5129,7 +5130,7 @@ components:
         attributes:
           $ref: '#/components/schemas/RoleUpdateAttributes'
         id:
-          description: ID of the role.
+          description: The unique identifier of the role.
           type: string
         relationships:
           $ref: '#/components/schemas/RoleResponseRelationships'
@@ -9437,7 +9438,7 @@ paths:
         type: safe
   /api/v2/roles:
     get:
-      description: Returns all roles, including their names and IDs.
+      description: Returns all roles, including their names and their unique identifiers.
       operationId: ListRoles
       parameters:
       - $ref: '#/components/parameters/PageSize'

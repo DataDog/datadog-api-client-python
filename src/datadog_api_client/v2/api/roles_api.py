@@ -382,7 +382,7 @@ class RolesApi:
         >>> thread = api.add_permission_to_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-        :param role_id: The ID of the role.
+        :param role_id: The unique identifier of the role.
         :type role_id: str
         :type body: RelationshipToPermission
         :param _return_http_data_only: Response data without head status
@@ -429,7 +429,7 @@ class RolesApi:
         >>> thread = api.add_user_to_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-        :param role_id: The ID of the role.
+        :param role_id: The unique identifier of the role.
         :type role_id: str
         :type body: RelationshipToUser
         :param _return_http_data_only: Response data without head status
@@ -476,7 +476,7 @@ class RolesApi:
         >>> thread = api.clone_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-        :param role_id: The ID of the role.
+        :param role_id: The unique identifier of the role.
         :type role_id: str
         :type body: RoleCloneRequest
         :param _return_http_data_only: Response data without head status
@@ -566,7 +566,7 @@ class RolesApi:
         >>> thread = api.delete_role(role_id, async_req=True)
         >>> result = thread.get()
 
-        :param role_id: The ID of the role.
+        :param role_id: The unique identifier of the role.
         :type role_id: str
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -610,7 +610,7 @@ class RolesApi:
         >>> thread = api.get_role(role_id, async_req=True)
         >>> result = thread.get()
 
-        :param role_id: The ID of the role.
+        :param role_id: The unique identifier of the role.
         :type role_id: str
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -694,7 +694,7 @@ class RolesApi:
         >>> thread = api.list_role_permissions(role_id, async_req=True)
         >>> result = thread.get()
 
-        :param role_id: The ID of the role.
+        :param role_id: The unique identifier of the role.
         :type role_id: str
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -730,7 +730,7 @@ class RolesApi:
     def list_roles(self, **kwargs):
         """List roles.
 
-        Returns all roles, including their names and IDs.
+        Returns all roles, including their names and their unique identifiers.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -788,7 +788,7 @@ class RolesApi:
         >>> thread = api.list_role_users(role_id, async_req=True)
         >>> result = thread.get()
 
-        :param role_id: The ID of the role.
+        :param role_id: The unique identifier of the role.
         :type role_id: str
         :param page_size: Size for a given page.
         :type page_size: int, optional
@@ -842,7 +842,7 @@ class RolesApi:
         >>> thread = api.remove_permission_from_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-        :param role_id: The ID of the role.
+        :param role_id: The unique identifier of the role.
         :type role_id: str
         :type body: RelationshipToPermission
         :param _return_http_data_only: Response data without head status
@@ -889,7 +889,7 @@ class RolesApi:
         >>> thread = api.remove_user_from_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-        :param role_id: The ID of the role.
+        :param role_id: The unique identifier of the role.
         :type role_id: str
         :type body: RelationshipToUser
         :param _return_http_data_only: Response data without head status
@@ -936,7 +936,7 @@ class RolesApi:
         >>> thread = api.update_role(role_id, body, async_req=True)
         >>> result = thread.get()
 
-        :param role_id: The ID of the role.
+        :param role_id: The unique identifier of the role.
         :type role_id: str
         :type body: RoleUpdateRequest
         :param _return_http_data_only: Response data without head status

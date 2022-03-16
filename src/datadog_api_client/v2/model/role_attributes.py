@@ -42,7 +42,7 @@ class RoleAttributes(ModelNormal):
         :param modified_at: Time of last role modification.
         :type modified_at: datetime, optional
 
-        :param name: Name of the role.
+        :param name: The name of the role. The name is neither unique nor a stable identifier of the role.
         :type name: str, optional
 
         :param user_count: Number of users with that role.

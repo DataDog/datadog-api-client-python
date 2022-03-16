@@ -33,7 +33,7 @@ class RelationshipToRoleData(ModelNormal):
         """
         Relationship to role object.
 
-        :param id: ID of the role.
+        :param id: The unique identifier of the role.
         :type id: str, optional
 
         :param type: Roles type.

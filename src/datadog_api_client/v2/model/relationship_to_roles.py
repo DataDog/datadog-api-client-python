@@ -31,7 +31,7 @@ class RelationshipToRoles(ModelNormal):
         """
         Relationship to roles.
 
-        :param data: An array containing type and ID of a role.
+        :param data: An array containing type and the unique identifier of a role.
         :type data: [RelationshipToRoleData], optional
         """
         super().__init__(kwargs)
