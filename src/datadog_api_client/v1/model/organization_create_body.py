@@ -20,7 +20,7 @@ def lazy_import():
 class OrganizationCreateBody(ModelNormal):
     validations = {
         "name": {
-            "inclusive_maximum": 32,
+            "max_length": 32,
         },
     }
 
