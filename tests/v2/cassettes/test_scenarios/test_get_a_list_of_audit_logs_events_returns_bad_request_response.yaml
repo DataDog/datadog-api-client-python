@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/audit/events?page%5Blimit%5D=10&page%5Bcursor%5D=eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ%3D%3D&filter%5Bquery%5D=%40type%3Asession%20AND%20%40session.type%3Auser&filter%5Bto%5D=2022-03-17T20%3A44%3A48.092Z&filter%5Bfrom%5D=2022-03-17T20%3A29%3A48.092Z&sort=timestamp
+  response:
+    body:
+      string: '{"errors":["input_validation_error(Field ''page'' is invalid: invalid
+        cursor)"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
