@@ -59,6 +59,13 @@ Feature: Monitors
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/monitor-app
+  Scenario: Create an Error Tracking monitor returns "OK" response
+    Given new "CreateMonitor" request
+    And body from file "monitor_error_tracking_alert_payload.json"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/monitor-app
   Scenario: Delete a monitor returns "Bad Request" response
     Given new "DeleteMonitor" request
