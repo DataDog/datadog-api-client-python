@@ -11,9 +11,9 @@ from datadog_api_client.model_utils import (
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.usage_attribution_pagination import UsageAttributionPagination
+    from datadog_api_client.v1.model.usage_top_avg_metrics_pagination import UsageTopAvgMetricsPagination
 
-    globals()["UsageAttributionPagination"] = UsageAttributionPagination
+    globals()["UsageTopAvgMetricsPagination"] = UsageTopAvgMetricsPagination
 
 
 class UsageTopAvgMetricsMetadata(ModelNormal):
@@ -23,7 +23,7 @@ class UsageTopAvgMetricsMetadata(ModelNormal):
         return {
             "day": (datetime,),
             "month": (datetime,),
-            "pagination": (UsageAttributionPagination,),
+            "pagination": (UsageTopAvgMetricsPagination,),
         }
 
     attribute_map = {
@@ -43,7 +43,7 @@ class UsageTopAvgMetricsMetadata(ModelNormal):
         :type month: datetime, optional
 
         :param pagination: The metadata for the current pagination.
-        :type pagination: UsageAttributionPagination, optional
+        :type pagination: UsageTopAvgMetricsPagination, optional
         """
         super().__init__(kwargs)
 
