@@ -1,16 +1,15 @@
 import json
 
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import validate_and_convert_types, model_to_dict
 
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
 from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
-from datadog_api_client.v1 import Configuration as Configuration
 from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateResponse
 from datadog_api_client.v2.model.logs_archive import LogsArchive
 from datadog_api_client.v2.model.logs_archive_destination import LogsArchiveDestination
 from datadog_api_client.v2.model.user_response import UserResponse
-from datadog_api_client.v2 import Configuration as ConfigurationV2
 
 
 def test_unknown_nested_oneof_in_list():
@@ -266,7 +265,7 @@ def test_unknown_nested_one_of():
             }
         }
     }"""
-    config = ConfigurationV2()
+    config = Configuration()
     deserialized_data = validate_and_convert_types(
         json.loads(body), (LogsArchive,), ["received_data"], True, True, config
     )
@@ -278,7 +277,7 @@ def test_unknown_nested_one_of():
 
 def test_one_of_primitive_types():
     body = """{"data": {"buckets": [{"by": {}, "computes": {"c0": 435.3}}]}}"""
-    config = ConfigurationV2()
+    config = Configuration()
     deserialized_data = validate_and_convert_types(
         json.loads(body), (LogsAggregateResponse,), ["received_data"], True, True, config
     )
@@ -310,7 +309,7 @@ def test_unknown_model_value():
             }
         }
     }"""
-    config = ConfigurationV2()
+    config = Configuration()
     deserialized_data = validate_and_convert_types(
         json.loads(body), (UserResponse,), ["received_data"], True, True, config
     )

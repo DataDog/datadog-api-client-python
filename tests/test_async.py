@@ -2,9 +2,10 @@ import os
 
 import pytest
 
-from datadog_api_client.v1 import Configuration, AsyncApiClient
-from datadog_api_client.v1.api import dashboards_api, metrics_api
+from datadog_api_client.api_client import AsyncApiClient
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.exceptions import ForbiddenException
+from datadog_api_client.v1.api import dashboards_api, metrics_api
 
 
 @pytest.mark.asyncio
