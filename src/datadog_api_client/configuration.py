@@ -26,7 +26,49 @@ JSON_SCHEMA_VALIDATION_KEYWORDS = {
 }
 
 
-class BaseConfiguration:
+class _UnstableOperation:
+    def __init__(self, values):
+        self.values = values
+
+    def get(self, key, default=None):
+        if key in self:
+            return self[key]
+        return default
+
+    def __getitem__(self, key):
+        if key in self.values:
+            return self.values[key]
+        else:
+            for version in ("v1", "v2"):
+                version_key = f"{version}.{key}"
+                if version_key in self.values:
+                    return self.values[version_key]
+        raise KeyError(f"Unknown unstable operation {key}")
+
+    def __setitem__(self, key, value):
+        if key in self.values:
+            self.values[key] = value
+        else:
+            for version in ("v1", "v2"):
+                version_key = f"{version}.{key}"
+                if version_key in self.values:
+                    self.values[version_key] = value
+                    break
+            else:
+                raise KeyError(f"Unknown unstable operation {key}")
+
+    def __contains__(self, key):
+        if key in self.values:
+            return True
+        else:
+            for version in ("v1", "v2"):
+                version_key = f"{version}.{key}"
+                if version_key in self.values:
+                    return True
+        return False
+
+
+class Configuration:
     """
     :param host: Base url.
     :param api_key: Dict to store API key(s).
@@ -148,7 +190,47 @@ class BaseConfiguration:
         # Will translate to a Accept-Encoding header
         self.compress = compress
 
-        self.unstable_operations = {}
+        # Keep track of unstable operations
+        self.unstable_operations = _UnstableOperation(
+            {
+                "v1.get_daily_custom_reports": False,
+                "v1.get_hourly_usage_attribution": False,
+                "v1.get_monthly_custom_reports": False,
+                "v1.get_monthly_usage_attribution": False,
+                "v1.get_specified_daily_custom_reports": False,
+                "v1.get_specified_monthly_custom_reports": False,
+                "v1.get_usage_attribution": False,
+                "v1.get_slo_corrections": False,
+                "v1.get_slo_history": False,
+                "v1.create_slo_correction": False,
+                "v1.delete_slo_correction": False,
+                "v1.get_slo_correction": False,
+                "v1.list_slo_correction": False,
+                "v1.update_slo_correction": False,
+                "v2.create_incident": False,
+                "v2.delete_incident": False,
+                "v2.get_incident": False,
+                "v2.list_incidents": False,
+                "v2.update_incident": False,
+                "v2.create_tag_configuration": False,
+                "v2.delete_tag_configuration": False,
+                "v2.list_tag_configuration_by_name": False,
+                "v2.list_tag_configurations": False,
+                "v2.update_tag_configuration": False,
+                "v2.list_security_monitoring_signals": False,
+                "v2.search_security_monitoring_signals": False,
+                "v2.create_incident_service": False,
+                "v2.delete_incident_service": False,
+                "v2.get_incident_service": False,
+                "v2.list_incident_services": False,
+                "v2.update_incident_service": False,
+                "v2.create_incident_team": False,
+                "v2.delete_incident_team": False,
+                "v2.get_incident_team": False,
+                "v2.list_incident_teams": False,
+                "v2.update_incident_team": False,
+            }
+        )
 
         # Load default values from environment
         if "DD_SITE" in os.environ:
@@ -403,3 +485,83 @@ class BaseConfiguration:
         """Fix base path."""
         self._base_path = value
         self.server_index = None
+
+    def auth_settings(self, version):
+        """Gets Auth Settings dict for api client.
+
+        :return: The Auth Settings information dict.
+        """
+        auth = {}
+        if version == "v1":
+            if self.access_token is not None:
+                auth["AuthZ"] = {
+                    "type": "oauth2",
+                    "in": "header",
+                    "key": "Authorization",
+                    "value": "Bearer " + self.access_token,
+                }
+            if "apiKeyAuth" in self.api_key:
+                auth["apiKeyAuth"] = {
+                    "type": "api_key",
+                    "in": "header",
+                    "key": "DD-API-KEY",
+                    "value": self.get_api_key_with_prefix(
+                        "apiKeyAuth",
+                    ),
+                }
+            if "apiKeyAuthQuery" in self.api_key or "apiKeyAuth" in self.api_key:
+                auth["apiKeyAuthQuery"] = {
+                    "type": "api_key",
+                    "in": "query",
+                    "key": "api_key",
+                    "value": self.get_api_key_with_prefix(
+                        "apiKeyAuthQuery",
+                        alias="apiKeyAuth",
+                    ),
+                }
+            if "appKeyAuth" in self.api_key:
+                auth["appKeyAuth"] = {
+                    "type": "api_key",
+                    "in": "header",
+                    "key": "DD-APPLICATION-KEY",
+                    "value": self.get_api_key_with_prefix(
+                        "appKeyAuth",
+                    ),
+                }
+            if "appKeyAuthQuery" in self.api_key or "appKeyAuth" in self.api_key:
+                auth["appKeyAuthQuery"] = {
+                    "type": "api_key",
+                    "in": "query",
+                    "key": "application_key",
+                    "value": self.get_api_key_with_prefix(
+                        "appKeyAuthQuery",
+                        alias="appKeyAuth",
+                    ),
+                }
+        if version == "v2":
+            if self.access_token is not None:
+                auth["AuthZ"] = {
+                    "type": "oauth2",
+                    "in": "header",
+                    "key": "Authorization",
+                    "value": "Bearer " + self.access_token,
+                }
+            if "apiKeyAuth" in self.api_key:
+                auth["apiKeyAuth"] = {
+                    "type": "api_key",
+                    "in": "header",
+                    "key": "DD-API-KEY",
+                    "value": self.get_api_key_with_prefix(
+                        "apiKeyAuth",
+                    ),
+                }
+            if "appKeyAuth" in self.api_key:
+                auth["appKeyAuth"] = {
+                    "type": "api_key",
+                    "in": "header",
+                    "key": "DD-APPLICATION-KEY",
+                    "value": self.get_api_key_with_prefix(
+                        "appKeyAuth",
+                    ),
+                }
+        return auth

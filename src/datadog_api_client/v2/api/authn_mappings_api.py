@@ -24,6 +24,7 @@ class AuthNMappingsApi:
                 "endpoint_path": "/api/v2/authn_mappings",
                 "operation_id": "create_authn_mapping",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -44,6 +45,7 @@ class AuthNMappingsApi:
                 "endpoint_path": "/api/v2/authn_mappings/{authn_mapping_id}",
                 "operation_id": "delete_authn_mapping",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -68,6 +70,7 @@ class AuthNMappingsApi:
                 "endpoint_path": "/api/v2/authn_mappings/{authn_mapping_id}",
                 "operation_id": "get_authn_mapping",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -92,6 +95,7 @@ class AuthNMappingsApi:
                 "endpoint_path": "/api/v2/authn_mappings",
                 "operation_id": "list_authn_mappings",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -136,6 +140,7 @@ class AuthNMappingsApi:
                 "endpoint_path": "/api/v2/authn_mappings/{authn_mapping_id}",
                 "operation_id": "update_authn_mapping",
                 "http_method": "PATCH",
+                "version": "v2",
                 "servers": None,
             },
             params_map={

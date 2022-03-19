@@ -10,9 +10,9 @@ PACKAGE_NAME = "datadog_api_client"
 
 
 @click.command()
-@click.option(
-    "-i",
-    "--input",
+@click.argument(
+    "specs",
+    nargs=-1,
     type=click.Path(exists=True, file_okay=True, dir_okay=False, path_type=pathlib.Path),
 )
 @click.option(
@@ -20,14 +20,10 @@ PACKAGE_NAME = "datadog_api_client"
     "--output",
     type=click.Path(path_type=pathlib.Path),
 )
-def cli(input, output):
+def cli(specs, output):
     """
     Generate a Python code snippet from OpenAPI specification.
     """
-    spec = openapi.load(input)
-
-    version = input.parent.name
-
     env = Environment(loader=FileSystemLoader(str(pathlib.Path(__file__).parent / "templates")))
 
     env.filters["accept_headers"] = openapi.accept_headers
@@ -41,9 +37,7 @@ def cli(input, output):
     env.filters["safe_snake_case"] = openapi.safe_snake_case
 
     env.globals["enumerate"] = enumerate
-    env.globals["version"] = version
     env.globals["package"] = PACKAGE_NAME
-    env.globals["openapi"] = spec
     env.globals["get_name"] = formatter.get_name
     env.globals["get_type_for_attribute"] = openapi.get_type_for_attribute
     env.globals["get_types_for_attribute"] = openapi.get_types_for_attribute
@@ -70,11 +64,7 @@ def cli(input, output):
         "exceptions.py": env.get_template("exceptions.j2"),
         "model_utils.py": env.get_template("model_utils.j2"),
         "rest.py": env.get_template("rest.j2"),
-        "configuration.py": env.get_template("base_configuration.j2"),
     }
-
-    apis = openapi.apis(spec)
-    models = openapi.models(spec)
 
     top_package = output / PACKAGE_NAME
     top_package.mkdir(parents=True, exist_ok=True)
@@ -84,45 +74,61 @@ def cli(input, output):
         with filename.open("w") as fp:
             fp.write(template.render())
 
-    package = top_package / version
-    package.mkdir(exist_ok=True)
+    all_specs = {}
+    all_apis = {}
 
-    for name, model in models.items():
-        filename = openapi.safe_snake_case(name) + ".py"
-        model_path = package / "model" / filename
-        model_path.parent.mkdir(parents=True, exist_ok=True)
-        with model_path.open("w") as fp:
-            fp.write(model_j2.render(name=name, model=model))
+    for spec_path in specs:
+        spec = openapi.load(spec_path)
+        env.globals["openapi"] = spec
 
-    model_init_path = package / "model" / "__init__.py"
-    with model_init_path.open("w") as fp:
-        fp.write("")
+        version = spec_path.parent.name
+        env.globals["version"] = version
 
-    models_path = package / "models" / "__init__.py"
-    models_path.parent.mkdir(parents=True, exist_ok=True)
-    with models_path.open("w") as fp:
-        fp.write(models_j2.render(models=sorted(models)))
+        all_specs[version] = spec
 
-    for name, operations in apis.items():
-        filename = openapi.safe_snake_case(name) + "_api.py"
-        api_path = package / "api" / filename
-        api_path.parent.mkdir(parents=True, exist_ok=True)
-        with api_path.open("w") as fp:
-            fp.write(api_j2.render(name=name, operations=operations))
+        apis = openapi.apis(spec)
+        all_apis[version] = apis
+        models = openapi.models(spec)
 
-    api_init_path = package / "api" / "__init__.py"
-    with api_init_path.open("w") as fp:
-        fp.write("")
+        package = top_package / version
+        package.mkdir(exist_ok=True)
 
-    apis_path = package / "apis" / "__init__.py"
-    apis_path.parent.mkdir(parents=True, exist_ok=True)
-    with apis_path.open("w") as fp:
-        fp.write(apis_j2.render(apis=sorted(apis)))
+        for name, model in models.items():
+            filename = openapi.safe_snake_case(name) + ".py"
+            model_path = package / "model" / filename
+            model_path.parent.mkdir(parents=True, exist_ok=True)
+            with model_path.open("w") as fp:
+                fp.write(model_j2.render(name=name, model=model))
 
-    init_path = package / "__init__.py"
-    with init_path.open("w") as fp:
-        fp.write(init_j2.render())
+        model_init_path = package / "model" / "__init__.py"
+        with model_init_path.open("w") as fp:
+            fp.write("")
 
-    config_path = package / "configuration.py"
-    with config_path.open("w") as fp:
-        fp.write(configuration_j2.render(apis=apis))
+        models_path = package / "models" / "__init__.py"
+        models_path.parent.mkdir(parents=True, exist_ok=True)
+        with models_path.open("w") as fp:
+            fp.write(models_j2.render(models=sorted(models)))
+
+        for name, operations in apis.items():
+            filename = open.safe_snake_case(name) + "_api.py"
+            api_path = package / "api" / filename
+            api_path.parent.mkdir(parents=True, exist_ok=True)
+            with api_path.open("w") as fp:
+                fp.write(api_j2.render(name=name, operations=operations))
+
+        api_init_path = package / "api" / "__init__.py"
+        with api_init_path.open("w") as fp:
+            fp.write("")
+
+        apis_path = package / "apis" / "__init__.py"
+        apis_path.parent.mkdir(parents=True, exist_ok=True)
+        with apis_path.open("w") as fp:
+            fp.write(apis_j2.render(apis=sorted(apis)))
+
+        init_path = package / "__init__.py"
+        with init_path.open("w") as fp:
+            fp.write(init_j2.render())
+
+    filename = top_package / "configuration.py"
+    with filename.open("w") as fp:
+        fp.write(configuration_j2.render(specs=all_specs, apis=all_apis))

@@ -29,6 +29,7 @@ class ServiceLevelObjectivesApi:
                 "endpoint_path": "/api/v1/slo/can_delete",
                 "operation_id": "check_can_delete_slo",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -53,6 +54,7 @@ class ServiceLevelObjectivesApi:
                 "endpoint_path": "/api/v1/slo",
                 "operation_id": "create_slo",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -73,6 +75,7 @@ class ServiceLevelObjectivesApi:
                 "endpoint_path": "/api/v1/slo/{slo_id}",
                 "operation_id": "delete_slo",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -102,6 +105,7 @@ class ServiceLevelObjectivesApi:
                 "endpoint_path": "/api/v1/slo/bulk_delete",
                 "operation_id": "delete_slo_timeframe_in_bulk",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -122,6 +126,7 @@ class ServiceLevelObjectivesApi:
                 "endpoint_path": "/api/v1/slo/{slo_id}",
                 "operation_id": "get_slo",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -151,6 +156,7 @@ class ServiceLevelObjectivesApi:
                 "endpoint_path": "/api/v1/slo/{slo_id}/corrections",
                 "operation_id": "get_slo_corrections",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -175,6 +181,7 @@ class ServiceLevelObjectivesApi:
                 "endpoint_path": "/api/v1/slo/{slo_id}/history",
                 "operation_id": "get_slo_history",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -225,6 +232,7 @@ class ServiceLevelObjectivesApi:
                 "endpoint_path": "/api/v1/slo",
                 "operation_id": "list_sl_os",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -273,6 +281,7 @@ class ServiceLevelObjectivesApi:
                 "endpoint_path": "/api/v1/slo/{slo_id}",
                 "operation_id": "update_slo",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

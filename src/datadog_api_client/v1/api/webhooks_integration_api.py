@@ -28,6 +28,7 @@ class WebhooksIntegrationApi:
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/webhooks",
                 "operation_id": "create_webhooks_integration",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -48,6 +49,7 @@ class WebhooksIntegrationApi:
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/custom-variables",
                 "operation_id": "create_webhooks_integration_custom_variable",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -68,6 +70,7 @@ class WebhooksIntegrationApi:
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/webhooks/{webhook_name}",
                 "operation_id": "delete_webhooks_integration",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -92,6 +95,7 @@ class WebhooksIntegrationApi:
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/custom-variables/{custom_variable_name}",
                 "operation_id": "delete_webhooks_integration_custom_variable",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -116,6 +120,7 @@ class WebhooksIntegrationApi:
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/webhooks/{webhook_name}",
                 "operation_id": "get_webhooks_integration",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -140,6 +145,7 @@ class WebhooksIntegrationApi:
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/custom-variables/{custom_variable_name}",
                 "operation_id": "get_webhooks_integration_custom_variable",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -164,6 +170,7 @@ class WebhooksIntegrationApi:
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/webhooks/{webhook_name}",
                 "operation_id": "update_webhooks_integration",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -190,6 +197,7 @@ class WebhooksIntegrationApi:
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/custom-variables/{custom_variable_name}",
                 "operation_id": "update_webhooks_integration_custom_variable",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

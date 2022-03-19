@@ -24,6 +24,7 @@ class IncidentTeamsApi:
                 "endpoint_path": "/api/v2/teams",
                 "operation_id": "create_incident_team",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -44,6 +45,7 @@ class IncidentTeamsApi:
                 "endpoint_path": "/api/v2/teams/{team_id}",
                 "operation_id": "delete_incident_team",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -68,6 +70,7 @@ class IncidentTeamsApi:
                 "endpoint_path": "/api/v2/teams/{team_id}",
                 "operation_id": "get_incident_team",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -97,6 +100,7 @@ class IncidentTeamsApi:
                 "endpoint_path": "/api/v2/teams",
                 "operation_id": "list_incident_teams",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -135,6 +139,7 @@ class IncidentTeamsApi:
                 "endpoint_path": "/api/v2/teams/{team_id}",
                 "operation_id": "update_incident_team",
                 "http_method": "PATCH",
+                "version": "v2",
                 "servers": None,
             },
             params_map={

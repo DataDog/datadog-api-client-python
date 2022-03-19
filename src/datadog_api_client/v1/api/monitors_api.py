@@ -25,6 +25,7 @@ class MonitorsApi:
                 "endpoint_path": "/api/v1/monitor/can_delete",
                 "operation_id": "check_can_delete_monitor",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -50,6 +51,7 @@ class MonitorsApi:
                 "endpoint_path": "/api/v1/monitor",
                 "operation_id": "create_monitor",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -70,6 +72,7 @@ class MonitorsApi:
                 "endpoint_path": "/api/v1/monitor/{monitor_id}",
                 "operation_id": "delete_monitor",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -99,6 +102,7 @@ class MonitorsApi:
                 "endpoint_path": "/api/v1/monitor/{monitor_id}",
                 "operation_id": "get_monitor",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -128,6 +132,7 @@ class MonitorsApi:
                 "endpoint_path": "/api/v1/monitor",
                 "operation_id": "list_monitors",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -189,6 +194,7 @@ class MonitorsApi:
                 "endpoint_path": "/api/v1/monitor/groups/search",
                 "operation_id": "search_monitor_groups",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -227,6 +233,7 @@ class MonitorsApi:
                 "endpoint_path": "/api/v1/monitor/search",
                 "operation_id": "search_monitors",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -265,6 +272,7 @@ class MonitorsApi:
                 "endpoint_path": "/api/v1/monitor/{monitor_id}",
                 "operation_id": "update_monitor",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -291,6 +299,7 @@ class MonitorsApi:
                 "endpoint_path": "/api/v1/monitor/validate",
                 "operation_id": "validate_monitor",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

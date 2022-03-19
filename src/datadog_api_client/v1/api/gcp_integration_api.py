@@ -21,6 +21,7 @@ class GCPIntegrationApi:
                 "endpoint_path": "/api/v1/integration/gcp",
                 "operation_id": "create_gcp_integration",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -41,6 +42,7 @@ class GCPIntegrationApi:
                 "endpoint_path": "/api/v1/integration/gcp",
                 "operation_id": "delete_gcp_integration",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -61,6 +63,7 @@ class GCPIntegrationApi:
                 "endpoint_path": "/api/v1/integration/gcp",
                 "operation_id": "list_gcp_integration",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},
@@ -78,6 +81,7 @@ class GCPIntegrationApi:
                 "endpoint_path": "/api/v1/integration/gcp",
                 "operation_id": "update_gcp_integration",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

@@ -25,6 +25,7 @@ class LogsArchivesApi:
                 "endpoint_path": "/api/v2/logs/config/archives/{archive_id}/readers",
                 "operation_id": "add_read_role_to_archive",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -51,6 +52,7 @@ class LogsArchivesApi:
                 "endpoint_path": "/api/v2/logs/config/archives",
                 "operation_id": "create_logs_archive",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -71,6 +73,7 @@ class LogsArchivesApi:
                 "endpoint_path": "/api/v2/logs/config/archives/{archive_id}",
                 "operation_id": "delete_logs_archive",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -95,6 +98,7 @@ class LogsArchivesApi:
                 "endpoint_path": "/api/v2/logs/config/archives/{archive_id}",
                 "operation_id": "get_logs_archive",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -119,6 +123,7 @@ class LogsArchivesApi:
                 "endpoint_path": "/api/v2/logs/config/archive-order",
                 "operation_id": "get_logs_archive_order",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={},
@@ -136,6 +141,7 @@ class LogsArchivesApi:
                 "endpoint_path": "/api/v2/logs/config/archives/{archive_id}/readers",
                 "operation_id": "list_archive_read_roles",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -160,6 +166,7 @@ class LogsArchivesApi:
                 "endpoint_path": "/api/v2/logs/config/archives",
                 "operation_id": "list_logs_archives",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={},
@@ -177,6 +184,7 @@ class LogsArchivesApi:
                 "endpoint_path": "/api/v2/logs/config/archives/{archive_id}/readers",
                 "operation_id": "remove_role_from_archive",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -203,6 +211,7 @@ class LogsArchivesApi:
                 "endpoint_path": "/api/v2/logs/config/archives/{archive_id}",
                 "operation_id": "update_logs_archive",
                 "http_method": "PUT",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -229,6 +238,7 @@ class LogsArchivesApi:
                 "endpoint_path": "/api/v2/logs/config/archive-order",
                 "operation_id": "update_logs_archive_order",
                 "http_method": "PUT",
+                "version": "v2",
                 "servers": None,
             },
             params_map={

@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 from datadog_api_client.api_client import ApiClient, AsyncApiClient
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.exceptions import (
     OpenApiException,
     ApiAttributeError,
@@ -11,5 +12,3 @@ from datadog_api_client.exceptions import (
     ApiKeyError,
     ApiException,
 )
-
-from datadog_api_client.v1.configuration import Configuration

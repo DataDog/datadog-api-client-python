@@ -47,6 +47,7 @@ class RUMApi:
                 "endpoint_path": "/api/v2/rum/events",
                 "operation_id": "list_rum_events",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -98,6 +99,7 @@ class RUMApi:
                 "endpoint_path": "/api/v2/rum/events/search",
                 "operation_id": "search_rum_events",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={

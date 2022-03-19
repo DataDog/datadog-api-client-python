@@ -31,6 +31,7 @@ class MetricsApi:
                 "endpoint_path": "/api/v2/metrics/config/bulk-tags",
                 "operation_id": "create_bulk_tags_metrics_configuration",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -51,6 +52,7 @@ class MetricsApi:
                 "endpoint_path": "/api/v2/metrics/{metric_name}/tags",
                 "operation_id": "create_tag_configuration",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -77,6 +79,7 @@ class MetricsApi:
                 "endpoint_path": "/api/v2/metrics/config/bulk-tags",
                 "operation_id": "delete_bulk_tags_metrics_configuration",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -97,6 +100,7 @@ class MetricsApi:
                 "endpoint_path": "/api/v2/metrics/{metric_name}/tags",
                 "operation_id": "delete_tag_configuration",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -121,6 +125,7 @@ class MetricsApi:
                 "endpoint_path": "/api/v2/metrics/{metric_name}/tags",
                 "operation_id": "list_tag_configuration_by_name",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -145,6 +150,7 @@ class MetricsApi:
                 "endpoint_path": "/api/v2/metrics",
                 "operation_id": "list_tag_configurations",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -193,6 +199,7 @@ class MetricsApi:
                 "endpoint_path": "/api/v2/metrics/{metric_name}/all-tags",
                 "operation_id": "list_tags_by_metric_name",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -217,6 +224,7 @@ class MetricsApi:
                 "endpoint_path": "/api/v2/metrics/{metric_name}/volumes",
                 "operation_id": "list_volumes_by_metric_name",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -241,6 +249,7 @@ class MetricsApi:
                 "endpoint_path": "/api/v2/metrics/{metric_name}/tags",
                 "operation_id": "update_tag_configuration",
                 "http_method": "PATCH",
+                "version": "v2",
                 "servers": None,
             },
             params_map={

@@ -21,6 +21,7 @@ class ServiceChecksApi:
                 "endpoint_path": "/api/v1/check_run",
                 "operation_id": "submit_service_check",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

@@ -22,6 +22,7 @@ class DashboardListsApi:
                 "endpoint_path": "/api/v1/dashboard/lists/manual",
                 "operation_id": "create_dashboard_list",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -42,6 +43,7 @@ class DashboardListsApi:
                 "endpoint_path": "/api/v1/dashboard/lists/manual/{list_id}",
                 "operation_id": "delete_dashboard_list",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -66,6 +68,7 @@ class DashboardListsApi:
                 "endpoint_path": "/api/v1/dashboard/lists/manual/{list_id}",
                 "operation_id": "get_dashboard_list",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -90,6 +93,7 @@ class DashboardListsApi:
                 "endpoint_path": "/api/v1/dashboard/lists/manual",
                 "operation_id": "list_dashboard_lists",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},
@@ -107,6 +111,7 @@ class DashboardListsApi:
                 "endpoint_path": "/api/v1/dashboard/lists/manual/{list_id}",
                 "operation_id": "update_dashboard_list",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

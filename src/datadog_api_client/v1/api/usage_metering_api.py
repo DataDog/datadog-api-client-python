@@ -68,6 +68,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/daily_custom_reports",
                 "operation_id": "get_daily_custom_reports",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -106,6 +107,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/hourly-attribution",
                 "operation_id": "get_hourly_usage_attribution",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -151,6 +153,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/incident-management",
                 "operation_id": "get_incident_management",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -180,6 +183,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/ingested-spans",
                 "operation_id": "get_ingested_spans",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -209,6 +213,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/monthly_custom_reports",
                 "operation_id": "get_monthly_custom_reports",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -247,6 +252,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/monthly-attribution",
                 "operation_id": "get_monthly_usage_attribution",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -302,6 +308,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/daily_custom_reports/{report_id}",
                 "operation_id": "get_specified_daily_custom_reports",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -326,6 +333,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/monthly_custom_reports/{report_id}",
                 "operation_id": "get_specified_monthly_custom_reports",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -350,6 +358,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/analyzed_logs",
                 "operation_id": "get_usage_analyzed_logs",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -379,6 +388,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/attribution",
                 "operation_id": "get_usage_attribution",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -439,6 +449,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/audit_logs",
                 "operation_id": "get_usage_audit_logs",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -468,6 +479,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/billable-summary",
                 "operation_id": "get_usage_billable_summary",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -491,6 +503,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/ci-app",
                 "operation_id": "get_usage_ci_app",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -520,6 +533,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/cspm",
                 "operation_id": "get_usage_cloud_security_posture_management",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -549,6 +563,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/cws",
                 "operation_id": "get_usage_cws",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -578,6 +593,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/dbm",
                 "operation_id": "get_usage_dbm",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -607,6 +623,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/fargate",
                 "operation_id": "get_usage_fargate",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -636,6 +653,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/hosts",
                 "operation_id": "get_usage_hosts",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -665,6 +683,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/indexed-spans",
                 "operation_id": "get_usage_indexed_spans",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -694,6 +713,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/iot",
                 "operation_id": "get_usage_internet_of_things",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -723,6 +743,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/aws_lambda",
                 "operation_id": "get_usage_lambda",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -752,6 +773,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/logs",
                 "operation_id": "get_usage_logs",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -781,6 +803,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/logs_by_index",
                 "operation_id": "get_usage_logs_by_index",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -816,6 +839,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/logs-by-retention",
                 "operation_id": "get_usage_logs_by_retention",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -845,6 +869,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/network_flows",
                 "operation_id": "get_usage_network_flows",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -874,6 +899,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/network_hosts",
                 "operation_id": "get_usage_network_hosts",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -903,6 +929,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/online-archive",
                 "operation_id": "get_usage_online_archive",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -932,6 +959,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/profiling",
                 "operation_id": "get_usage_profiling",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -961,6 +989,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/rum_sessions",
                 "operation_id": "get_usage_rum_sessions",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -995,6 +1024,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/rum",
                 "operation_id": "get_usage_rum_units",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -1024,6 +1054,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/sds",
                 "operation_id": "get_usage_sds",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -1053,6 +1084,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/snmp",
                 "operation_id": "get_usage_snmp",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -1082,6 +1114,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/summary",
                 "operation_id": "get_usage_summary",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -1116,6 +1149,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/synthetics",
                 "operation_id": "get_usage_synthetics",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -1145,6 +1179,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/synthetics_api",
                 "operation_id": "get_usage_synthetics_api",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -1174,6 +1209,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/synthetics_browser",
                 "operation_id": "get_usage_synthetics_browser",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -1203,6 +1239,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/timeseries",
                 "operation_id": "get_usage_timeseries",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -1232,6 +1269,7 @@ class UsageMeteringApi:
                 "endpoint_path": "/api/v1/usage/top_avg_metrics",
                 "operation_id": "get_usage_top_avg_metrics",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

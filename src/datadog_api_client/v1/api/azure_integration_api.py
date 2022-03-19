@@ -21,6 +21,7 @@ class AzureIntegrationApi:
                 "endpoint_path": "/api/v1/integration/azure",
                 "operation_id": "create_azure_integration",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -41,6 +42,7 @@ class AzureIntegrationApi:
                 "endpoint_path": "/api/v1/integration/azure",
                 "operation_id": "delete_azure_integration",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -61,6 +63,7 @@ class AzureIntegrationApi:
                 "endpoint_path": "/api/v1/integration/azure",
                 "operation_id": "list_azure_integration",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},
@@ -78,6 +81,7 @@ class AzureIntegrationApi:
                 "endpoint_path": "/api/v1/integration/azure/host_filters",
                 "operation_id": "update_azure_host_filters",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -98,6 +102,7 @@ class AzureIntegrationApi:
                 "endpoint_path": "/api/v1/integration/azure",
                 "operation_id": "update_azure_integration",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

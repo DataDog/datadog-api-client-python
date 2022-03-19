@@ -28,6 +28,7 @@ class OrganizationsApi:
                 "endpoint_path": "/api/v1/org",
                 "operation_id": "create_child_org",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -48,6 +49,7 @@ class OrganizationsApi:
                 "endpoint_path": "/api/v1/org/{public_id}",
                 "operation_id": "get_org",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -72,6 +74,7 @@ class OrganizationsApi:
                 "endpoint_path": "/api/v1/org",
                 "operation_id": "list_orgs",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},
@@ -89,6 +92,7 @@ class OrganizationsApi:
                 "endpoint_path": "/api/v1/org/{public_id}",
                 "operation_id": "update_org",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -115,6 +119,7 @@ class OrganizationsApi:
                 "endpoint_path": "/api/v1/org/{public_id}/idp_metadata",
                 "operation_id": "upload_idp_for_org",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

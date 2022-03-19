@@ -22,6 +22,7 @@ class LogsPipelinesApi:
                 "endpoint_path": "/api/v1/logs/config/pipelines",
                 "operation_id": "create_logs_pipeline",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -42,6 +43,7 @@ class LogsPipelinesApi:
                 "endpoint_path": "/api/v1/logs/config/pipelines/{pipeline_id}",
                 "operation_id": "delete_logs_pipeline",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -66,6 +68,7 @@ class LogsPipelinesApi:
                 "endpoint_path": "/api/v1/logs/config/pipelines/{pipeline_id}",
                 "operation_id": "get_logs_pipeline",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -90,6 +93,7 @@ class LogsPipelinesApi:
                 "endpoint_path": "/api/v1/logs/config/pipeline-order",
                 "operation_id": "get_logs_pipeline_order",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},
@@ -107,6 +111,7 @@ class LogsPipelinesApi:
                 "endpoint_path": "/api/v1/logs/config/pipelines",
                 "operation_id": "list_logs_pipelines",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},
@@ -124,6 +129,7 @@ class LogsPipelinesApi:
                 "endpoint_path": "/api/v1/logs/config/pipelines/{pipeline_id}",
                 "operation_id": "update_logs_pipeline",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -150,6 +156,7 @@ class LogsPipelinesApi:
                 "endpoint_path": "/api/v1/logs/config/pipeline-order",
                 "operation_id": "update_logs_pipeline_order",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
