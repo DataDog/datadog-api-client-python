@@ -35,7 +35,7 @@ Feature: Events
   @generated @skip @team:DataDog/monitors-evaluation
   Scenario: Post an event returns "Bad Request" response
     Given new "CreateEvent" request
-    And body with value {"aggregation_key": null, "alert_type": "info", "date_happened": null, "device_name": null, "host": null, "priority": "normal", "related_event_id": null, "source_type_name": null, "tags": ["environment:test"], "text": "Oh boy!", "title": "Did you hear the news today?"}
+    And body with value {"alert_type": "info", "priority": "normal", "tags": ["environment:test"], "text": "Oh boy!", "title": "Did you hear the news today?"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -58,6 +58,8 @@ Feature: Events
   Scenario: Query the event stream returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListEvents" request
+    And request contains "start" parameter from "REPLACE.ME"
+    And request contains "end" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -65,5 +67,7 @@ Feature: Events
   Scenario: Query the event stream returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListEvents" request
+    And request contains "start" parameter from "REPLACE.ME"
+    And request contains "end" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK

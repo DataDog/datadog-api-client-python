@@ -30,18 +30,21 @@ Feature: Service Level Objectives
   @generated @skip @team:DataDog/slo-app
   Scenario: Check if SLOs can be safely deleted returns "Bad Request" response
     Given new "CheckCanDeleteSLO" request
+    And request contains "ids" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/slo-app
   Scenario: Check if SLOs can be safely deleted returns "Conflict" response
     Given new "CheckCanDeleteSLO" request
+    And request contains "ids" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 409 Conflict
 
   @generated @skip @team:DataDog/slo-app
   Scenario: Check if SLOs can be safely deleted returns "OK" response
     Given new "CheckCanDeleteSLO" request
+    And request contains "ids" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -151,6 +154,8 @@ Feature: Service Level Objectives
     Given operation "GetSLOHistory" enabled
     And new "GetSLOHistory" request
     And request contains "slo_id" parameter from "REPLACE.ME"
+    And request contains "from_ts" parameter from "REPLACE.ME"
+    And request contains "to_ts" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -159,6 +164,8 @@ Feature: Service Level Objectives
     Given operation "GetSLOHistory" enabled
     And new "GetSLOHistory" request
     And request contains "slo_id" parameter from "REPLACE.ME"
+    And request contains "from_ts" parameter from "REPLACE.ME"
+    And request contains "to_ts" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 

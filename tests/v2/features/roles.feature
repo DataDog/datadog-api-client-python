@@ -78,7 +78,7 @@ Feature: Roles
   @generated @skip @team:DataDog/team-aaa
   Scenario: Create role returns "Bad Request" response
     Given new "CreateRole" request
-    And body with value {"data": {"attributes": {"name": "developers"}, "relationships": {"permissions": {"data": [{"id": null, "type": "permissions"}]}, "users": {"data": []}}, "type": "roles"}}
+    And body with value {"data": {"attributes": {"name": "developers"}, "relationships": {"permissions": {"data": [{"type": "permissions"}]}, "users": {"data": []}}, "type": "roles"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -143,7 +143,7 @@ Feature: Roles
   Scenario: Grant permission to a role returns "Bad Request" response
     Given new "AddPermissionToRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"id": null, "type": "permissions"}}
+    And body with value {"data": {"type": "permissions"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -151,7 +151,7 @@ Feature: Roles
   Scenario: Grant permission to a role returns "Not found" response
     Given new "AddPermissionToRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"id": null, "type": "permissions"}}
+    And body with value {"data": {"type": "permissions"}}
     When the request is sent
     Then the response status is 404 Not found
 
@@ -266,7 +266,7 @@ Feature: Roles
   Scenario: Update a role returns "Bad Request" response
     Given new "UpdateRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": null}, "id": "00000000-0000-1111-0000-000000000000", "type": "roles"}}
+    And body with value {"data": {"attributes": {}, "id": "00000000-0000-1111-0000-000000000000", "type": "roles"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -301,6 +301,6 @@ Feature: Roles
   Scenario: Update a role returns "Unprocessable Entity" response
     Given new "UpdateRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": null}, "id": "00000000-0000-1111-0000-000000000000", "type": "roles"}}
+    And body with value {"data": {"attributes": {}, "id": "00000000-0000-1111-0000-000000000000", "type": "roles"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity

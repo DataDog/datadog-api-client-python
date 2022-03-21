@@ -10,6 +10,8 @@ Feature: Snapshots
 
   @generated @skip @team:DataDog/monitor-app
   Scenario: Take graph snapshots returns "Bad Request" response
+    Given request contains "start" parameter from "REPLACE.ME"
+    And request contains "end" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
