@@ -720,6 +720,7 @@ from datadog_api_client.v1.model.usage_timeseries_hour import UsageTimeseriesHou
 from datadog_api_client.v1.model.usage_timeseries_response import UsageTimeseriesResponse
 from datadog_api_client.v1.model.usage_top_avg_metrics_hour import UsageTopAvgMetricsHour
 from datadog_api_client.v1.model.usage_top_avg_metrics_metadata import UsageTopAvgMetricsMetadata
+from datadog_api_client.v1.model.usage_top_avg_metrics_pagination import UsageTopAvgMetricsPagination
 from datadog_api_client.v1.model.usage_top_avg_metrics_response import UsageTopAvgMetricsResponse
 from datadog_api_client.v1.model.user import User
 from datadog_api_client.v1.model.user_disable_response import UserDisableResponse

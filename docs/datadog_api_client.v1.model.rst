@@ -5153,6 +5153,14 @@ usage\_top\_avg\_metrics\_metadata
    :undoc-members:
    :show-inheritance:
 
+usage\_top\_avg\_metrics\_pagination
+------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.usage_top_avg_metrics_pagination
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 usage\_top\_avg\_metrics\_response
 ----------------------------------
 
