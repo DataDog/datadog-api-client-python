@@ -88,7 +88,8 @@ Feature: Cloud Workload Security
 
   @skip @team:DataDog/cws-backend @team:DataDog/security-monitoring
   Scenario: Update a Cloud Workload Security Agent rule returns "Concurrent Modification" response
-    Given new "UpdateCloudWorkloadSecurityAgentRule" request
+    Given there is a valid "agent_rule" in the system
+    And new "UpdateCloudWorkloadSecurityAgentRule" request
     And request contains "agent_rule_id" parameter from "agent_rule.data.id"
     And body with value {"data": {"attributes": {"description": "Test Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "type": "agent_rule"}}
     When the request is sent

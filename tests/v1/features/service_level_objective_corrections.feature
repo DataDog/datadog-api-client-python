@@ -105,7 +105,7 @@ Feature: Service Level Objective Corrections
     Given operation "UpdateSLOCorrection" enabled
     And new "UpdateSLOCorrection" request
     And request contains "slo_correction_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": null, "duration": 3600, "end": 1600000000, "rrule": "FREQ=DAILY;INTERVAL=10;COUNT=5", "start": 1600000000, "timezone": "UTC"}, "type": "correction"}}
+    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "duration": 3600, "end": 1600000000, "rrule": "FREQ=DAILY;INTERVAL=10;COUNT=5", "start": 1600000000, "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 404 Not Found
 

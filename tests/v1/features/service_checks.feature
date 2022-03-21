@@ -23,7 +23,7 @@ Feature: Service Checks
 
   @generated @skip @team:DataDog/monitors-evaluation
   Scenario: Submit a Service Check returns "Bad Request" response
-    Given body with value [{"check": "app.ok", "host_name": "app.host1", "message": "app is running", "status": 0, "tags": ["environment:test"], "timestamp": null}]
+    Given body with value [{"check": "app.ok", "host_name": "app.host1", "message": "app is running", "status": 0, "tags": ["environment:test"]}]
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -35,12 +35,12 @@ Feature: Service Checks
 
   @generated @skip @team:DataDog/monitors-evaluation
   Scenario: Submit a Service Check returns "Payload too large" response
-    Given body with value [{"check": "app.ok", "host_name": "app.host1", "message": "app is running", "status": 0, "tags": ["environment:test"], "timestamp": null}]
+    Given body with value [{"check": "app.ok", "host_name": "app.host1", "message": "app is running", "status": 0, "tags": ["environment:test"]}]
     When the request is sent
     Then the response status is 413 Payload too large
 
   @generated @skip @team:DataDog/monitors-evaluation
   Scenario: Submit a Service Check returns "Request timeout" response
-    Given body with value [{"check": "app.ok", "host_name": "app.host1", "message": "app is running", "status": 0, "tags": ["environment:test"], "timestamp": null}]
+    Given body with value [{"check": "app.ok", "host_name": "app.host1", "message": "app is running", "status": 0, "tags": ["environment:test"]}]
     When the request is sent
     Then the response status is 408 Request timeout

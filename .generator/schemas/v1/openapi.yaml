@@ -4708,7 +4708,7 @@ components:
       properties:
         from:
           description: Minimum timestamp for requested logs.
-          example: '2020-02-02T02:02:02Z'
+          example: '2020-02-02T02:02:02.202Z'
           format: date-time
           type: string
         timezone:
@@ -4718,7 +4718,7 @@ components:
           type: string
         to:
           description: Maximum timestamp for requested logs.
-          example: '2020-02-02T20:20:20Z'
+          example: '2020-02-20T02:02:02.202Z'
           format: date-time
           type: string
       required:
@@ -10564,7 +10564,7 @@ components:
         locations:
           description: Array of locations used to run the test.
           example:
-          - example-location
+          - aws:eu-west-3
           items:
             description: A location from which the test was run.
             type: string
@@ -10598,6 +10598,8 @@ components:
           type: array
         tags:
           description: Array of tags attached to the test.
+          example:
+          - env:prod
           items:
             description: A tag attached to the test.
             type: string
@@ -10961,6 +10963,8 @@ components:
           $ref: '#/components/schemas/SyntheticsTestHeaders'
         locations:
           description: Array of locations used to run the test.
+          example:
+          - aws:eu-west-3
           items:
             description: A location from which the test was run.
             type: string
@@ -11757,6 +11761,8 @@ components:
           $ref: '#/components/schemas/Creator'
         locations:
           description: Array of locations used to run the test.
+          example:
+          - aws:eu-west-3
           items:
             description: A location from which the test was run.
             type: string

@@ -18,7 +18,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And new "UpdateMetricMetadata" request
     And request contains "metric_name" parameter from "REPLACE.ME"
-    And body with value {"description": null, "per_unit": "second", "short_name": null, "statsd_interval": null, "type": "count", "unit": "byte"}
+    And body with value {"per_unit": "second", "type": "count", "unit": "byte"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -27,7 +27,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And new "UpdateMetricMetadata" request
     And request contains "metric_name" parameter from "REPLACE.ME"
-    And body with value {"description": null, "per_unit": "second", "short_name": null, "statsd_interval": null, "type": "count", "unit": "byte"}
+    And body with value {"per_unit": "second", "type": "count", "unit": "byte"}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -36,7 +36,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And new "UpdateMetricMetadata" request
     And request contains "metric_name" parameter from "REPLACE.ME"
-    And body with value {"description": null, "per_unit": "second", "short_name": null, "statsd_interval": null, "type": "count", "unit": "byte"}
+    And body with value {"per_unit": "second", "type": "count", "unit": "byte"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -44,6 +44,7 @@ Feature: Metrics
   Scenario: Get active metrics list returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListActiveMetrics" request
+    And request contains "from" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -51,6 +52,7 @@ Feature: Metrics
   Scenario: Get active metrics list returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListActiveMetrics" request
+    And request contains "from" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -74,6 +76,9 @@ Feature: Metrics
   Scenario: Query timeseries points returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryMetrics" request
+    And request contains "from" parameter from "REPLACE.ME"
+    And request contains "to" parameter from "REPLACE.ME"
+    And request contains "query" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -91,6 +96,7 @@ Feature: Metrics
   Scenario: Search metrics returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListMetrics" request
+    And request contains "q" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -98,6 +104,7 @@ Feature: Metrics
   Scenario: Search metrics returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListMetrics" request
+    And request contains "q" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 

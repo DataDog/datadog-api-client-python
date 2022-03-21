@@ -114,7 +114,7 @@ Feature: Webhooks Integration
   Scenario: Update a custom variable returns "Bad Request" response
     Given new "UpdateWebhooksIntegrationCustomVariable" request
     And request contains "custom_variable_name" parameter from "REPLACE.ME"
-    And body with value {"is_secret": null, "name": "CUSTOM_VARIABLE_NAME", "value": "CUSTOM_VARIABLE_VALUE"}
+    And body with value {"name": "CUSTOM_VARIABLE_NAME", "value": "CUSTOM_VARIABLE_VALUE"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -122,7 +122,7 @@ Feature: Webhooks Integration
   Scenario: Update a custom variable returns "Item Not Found" response
     Given new "UpdateWebhooksIntegrationCustomVariable" request
     And request contains "custom_variable_name" parameter from "REPLACE.ME"
-    And body with value {"is_secret": null, "name": "CUSTOM_VARIABLE_NAME", "value": "CUSTOM_VARIABLE_VALUE"}
+    And body with value {"name": "CUSTOM_VARIABLE_NAME", "value": "CUSTOM_VARIABLE_VALUE"}
     When the request is sent
     Then the response status is 404 Item Not Found
 
@@ -139,7 +139,7 @@ Feature: Webhooks Integration
   Scenario: Update a webhook returns "Bad Request" response
     Given new "UpdateWebhooksIntegration" request
     And request contains "webhook_name" parameter from "REPLACE.ME"
-    And body with value {"custom_headers": null, "encode_as": "json", "name": "WEBHOOK_NAME", "payload": null, "url": "https://example.com/webhook"}
+    And body with value {"encode_as": "json", "name": "WEBHOOK_NAME", "payload": null, "url": "https://example.com/webhook"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -147,7 +147,7 @@ Feature: Webhooks Integration
   Scenario: Update a webhook returns "Item Not Found" response
     Given new "UpdateWebhooksIntegration" request
     And request contains "webhook_name" parameter from "REPLACE.ME"
-    And body with value {"custom_headers": null, "encode_as": "json", "name": "WEBHOOK_NAME", "payload": null, "url": "https://example.com/webhook"}
+    And body with value {"encode_as": "json", "name": "WEBHOOK_NAME", "payload": null, "url": "https://example.com/webhook"}
     When the request is sent
     Then the response status is 404 Item Not Found
 

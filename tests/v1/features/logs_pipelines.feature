@@ -25,14 +25,14 @@ Feature: Logs Pipelines
   @generated @skip @team:DataDog/event-platform-experience
   Scenario: Create a pipeline returns "Bad Request" response
     Given new "CreateLogsPipeline" request
-    And body with value {"filter": {"query": "source:python"}, "is_enabled": null, "name": "", "processors": [{"grok": {"match_rules": "rule_name_1 foo\nrule_name_2 bar\n", "support_rules": "rule_name_1 foo\nrule_name_2 bar\n"}, "is_enabled": false, "name": null, "samples": [null], "source": "message", "type": "grok-parser"}]}
+    And body with value {"filter": {"query": "source:python"}, "name": "", "processors": [{"grok": {"match_rules": "rule_name_1 foo\nrule_name_2 bar\n", "support_rules": "rule_name_1 foo\nrule_name_2 bar\n"}, "is_enabled": false, "samples": [], "source": "message", "type": "grok-parser"}], "type": "pipeline"}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/event-platform-experience
   Scenario: Create a pipeline returns "OK" response
     Given new "CreateLogsPipeline" request
-    And body with value {"filter": {"query": "source:python"}, "is_enabled": null, "name": "", "processors": [{"grok": {"match_rules": "rule_name_1 foo\nrule_name_2 bar\n", "support_rules": "rule_name_1 foo\nrule_name_2 bar\n"}, "is_enabled": false, "name": null, "samples": [null], "source": "message", "type": "grok-parser"}]}
+    And body with value {"filter": {"query": "source:python"}, "name": "", "processors": [{"grok": {"match_rules": "rule_name_1 foo\nrule_name_2 bar\n", "support_rules": "rule_name_1 foo\nrule_name_2 bar\n"}, "is_enabled": false, "samples": [], "source": "message", "type": "grok-parser"}], "type": "pipeline"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -80,7 +80,7 @@ Feature: Logs Pipelines
   Scenario: Update a pipeline returns "Bad Request" response
     Given new "UpdateLogsPipeline" request
     And request contains "pipeline_id" parameter from "REPLACE.ME"
-    And body with value {"filter": {"query": "source:python"}, "is_enabled": null, "name": "", "processors": [{"grok": {"match_rules": "rule_name_1 foo\nrule_name_2 bar\n", "support_rules": "rule_name_1 foo\nrule_name_2 bar\n"}, "is_enabled": false, "name": null, "samples": [null], "source": "message", "type": "grok-parser"}]}
+    And body with value {"filter": {"query": "source:python"}, "name": "", "processors": [{"grok": {"match_rules": "rule_name_1 foo\nrule_name_2 bar\n", "support_rules": "rule_name_1 foo\nrule_name_2 bar\n"}, "is_enabled": false, "samples": [], "source": "message", "type": "grok-parser"}], "type": "pipeline"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -88,7 +88,7 @@ Feature: Logs Pipelines
   Scenario: Update a pipeline returns "OK" response
     Given new "UpdateLogsPipeline" request
     And request contains "pipeline_id" parameter from "REPLACE.ME"
-    And body with value {"filter": {"query": "source:python"}, "is_enabled": null, "name": "", "processors": [{"grok": {"match_rules": "rule_name_1 foo\nrule_name_2 bar\n", "support_rules": "rule_name_1 foo\nrule_name_2 bar\n"}, "is_enabled": false, "name": null, "samples": [null], "source": "message", "type": "grok-parser"}]}
+    And body with value {"filter": {"query": "source:python"}, "name": "", "processors": [{"grok": {"match_rules": "rule_name_1 foo\nrule_name_2 bar\n", "support_rules": "rule_name_1 foo\nrule_name_2 bar\n"}, "is_enabled": false, "samples": [], "source": "message", "type": "grok-parser"}], "type": "pipeline"}
     When the request is sent
     Then the response status is 200 OK
 
