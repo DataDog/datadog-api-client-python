@@ -2,7 +2,7 @@
 {%- if refs %}
 def lazy_import():
 {%- for ref in refs %}
-    from {{ package }}.{{ version }}.model.{{ ref|model_name }} import {{ ref }}
+    from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
 {%- endfor %}
 {%- for ref in refs %}
     globals()["{{ ref }}"] = {{ ref }}

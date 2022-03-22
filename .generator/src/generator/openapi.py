@@ -286,14 +286,9 @@ def operation(spec, operation_id):
     return None
 
 
-def operation_name(operation_id):
-    operation_id = operation_id.replace("IdP", "Idp").replace("AuthN", "Authn")
-    return formatter.snake_case(operation_id)
-
-
-def model_name(model):
-    model = model.replace("IoT", "Iot").replace("AuthN", "Authn")
-    return formatter.snake_case(model)
+def safe_snake_case(value):
+    value = value.replace("IdP", "Idp").replace("AuthN", "Authn").replace("IoT", "Iot")
+    return formatter.snake_case(value)
 
 
 def get_api_models(operations):

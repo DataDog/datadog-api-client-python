@@ -163,6 +163,7 @@ def pytest_bdd_apply_tag(tag, function):
 
 
 def snake_case(value):
+    value = value.replace("IdP", "Idp").replace("AuthN", "Authn").replace("IoT", "Iot")
     s1 = PATTERN_LEADING_ALPHA.sub(r"\1_\2", value)
     s1 = PATTERN_FOLLOWING_ALPHA.sub(r"\1_\2", s1).lower()
     s1 = PATTERN_WHITESPACE.sub("_", s1)

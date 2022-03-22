@@ -1,5 +1,4 @@
 import pathlib
-
 import click
 from jinja2 import Environment, FileSystemLoader
 
@@ -38,9 +37,7 @@ def cli(input, output):
     env.filters["parameter_schema"] = openapi.parameter_schema
     env.filters["parameters"] = openapi.parameters
     env.filters["return_type"] = openapi.return_type
-    env.filters["snake_case"] = formatter.snake_case
-    env.filters["operation_name"] = openapi.operation_name
-    env.filters["model_name"] = openapi.model_name
+    env.filters["safe_snake_case"] = openapi.safe_snake_case
 
     env.globals["enumerate"] = enumerate
     env.globals["version"] = version
@@ -90,7 +87,7 @@ def cli(input, output):
     package.mkdir(exist_ok=True)
 
     for name, model in models.items():
-        filename = openapi.model_name(name) + ".py"
+        filename = openapi.safe_snake_case(name) + ".py"
         model_path = package / "model" / filename
         model_path.parent.mkdir(parents=True, exist_ok=True)
         with model_path.open("w") as fp:
@@ -106,7 +103,7 @@ def cli(input, output):
         fp.write(models_j2.render(models=sorted(models)))
 
     for name, operations in apis.items():
-        filename = formatter.snake_case(name) + "_api.py"
+        filename = openapi.safe_snake_case(name) + "_api.py"
         api_path = package / "api" / filename
         api_path.parent.mkdir(parents=True, exist_ok=True)
         with api_path.open("w") as fp:
