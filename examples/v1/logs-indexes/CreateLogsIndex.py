@@ -13,7 +13,6 @@ body = LogsIndex(
     daily_limit=300000000,
     exclusion_filters=[LogsExclusion(filter=LogsExclusionFilter(query="*", sample_rate=1.0), name="payment")],
     filter=LogsFilter(query="source:python"),
-    is_rate_limited=False,
     name="main",
     num_retention_days=15,
 )

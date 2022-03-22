@@ -24,7 +24,6 @@ body = LogsPipeline(
             type=LogsGrokParserType("grok-parser"),
         )
     ],
-    type="pipeline",
 )
 
 configuration = Configuration()

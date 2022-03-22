@@ -12,9 +12,7 @@ body = User(
     disabled=False,
     email="test@datadoghq.com",
     handle="test@datadoghq.com",
-    icon="/path/to/matching/gravatar/icon",
     name="test user",
-    verified=True,
 )
 
 configuration = Configuration()

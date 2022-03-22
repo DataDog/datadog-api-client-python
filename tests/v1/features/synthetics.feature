@@ -107,21 +107,21 @@ Feature: Synthetics
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create an API test returns "- JSON format is wrong" response
     Given new "CreateSyntheticsAPITest" request
-    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "monitor_id": 12345678, "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "public_id": "123-abc-456", "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
+    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create an API test returns "OK - Returns the created test details." response
     Given new "CreateSyntheticsAPITest" request
-    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "monitor_id": 12345678, "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "public_id": "123-abc-456", "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
+    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
     When the request is sent
     Then the response status is 200 OK - Returns the created test details.
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create an API test returns "Test quota is reached" response
     Given new "CreateSyntheticsAPITest" request
-    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "monitor_id": 12345678, "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "public_id": "123-abc-456", "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
+    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
     When the request is sent
     Then the response status is 402 Test quota is reached
 
@@ -269,7 +269,7 @@ Feature: Synthetics
   Scenario: Edit an API test returns "- JSON format is wrong" response
     Given new "UpdateAPITest" request
     And request contains "public_id" parameter from "REPLACE.ME"
-    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "monitor_id": 12345678, "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "public_id": "123-abc-456", "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
+    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
@@ -277,7 +277,7 @@ Feature: Synthetics
   Scenario: Edit an API test returns "- Synthetic Monitoring is not activated for the user" response
     Given new "UpdateAPITest" request
     And request contains "public_id" parameter from "REPLACE.ME"
-    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "monitor_id": 12345678, "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "public_id": "123-abc-456", "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
+    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
     When the request is sent
     Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
