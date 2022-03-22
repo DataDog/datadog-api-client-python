@@ -11,9 +11,9 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = SnapshotsApi(api_client)
     response = api_instance.get_graph_snapshot(
+        metric_query="avg:system.load.1{*}",
         start=int((datetime.now() + relativedelta(days=-1)).timestamp()),
         end=int(datetime.now().timestamp()),
-        metric_query="avg:system.load.1{*}",
         title="System load",
     )
 

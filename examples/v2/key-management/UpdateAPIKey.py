@@ -5,10 +5,10 @@ Edit an API key returns "OK" response
 from os import environ
 from datadog_api_client.v2 import ApiClient, Configuration
 from datadog_api_client.v2.api.key_management_api import KeyManagementApi
-from datadog_api_client.v2.model.api_keys_type import APIKeysType
 from datadog_api_client.v2.model.api_key_update_attributes import APIKeyUpdateAttributes
 from datadog_api_client.v2.model.api_key_update_data import APIKeyUpdateData
 from datadog_api_client.v2.model.api_key_update_request import APIKeyUpdateRequest
+from datadog_api_client.v2.model.api_keys_type import APIKeysType
 
 # there is a valid "api_key" in the system
 API_KEY_DATA_ID = environ["API_KEY_DATA_ID"]

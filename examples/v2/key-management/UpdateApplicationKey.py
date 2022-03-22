@@ -5,10 +5,10 @@ Edit an application key returns "OK" response
 from os import environ
 from datadog_api_client.v2 import ApiClient, Configuration
 from datadog_api_client.v2.api.key_management_api import KeyManagementApi
-from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
 from datadog_api_client.v2.model.application_key_update_attributes import ApplicationKeyUpdateAttributes
 from datadog_api_client.v2.model.application_key_update_data import ApplicationKeyUpdateData
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
+from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
 
 # there is a valid "application_key" in the system
 APPLICATION_KEY_DATA_ATTRIBUTES_NAME = environ["APPLICATION_KEY_DATA_ATTRIBUTES_NAME"]

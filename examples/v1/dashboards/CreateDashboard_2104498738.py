@@ -12,11 +12,11 @@ from datadog_api_client.v1.model.formula_and_function_metric_query_definition im
     FormulaAndFunctionMetricQueryDefinition,
 )
 from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
-from datadog_api_client.v1.model.scatterplot_dimension import ScatterplotDimension
-from datadog_api_client.v1.model.scatterplot_table_request import ScatterplotTableRequest
 from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
 from datadog_api_client.v1.model.scatter_plot_widget_definition_requests import ScatterPlotWidgetDefinitionRequests
 from datadog_api_client.v1.model.scatter_plot_widget_definition_type import ScatterPlotWidgetDefinitionType
+from datadog_api_client.v1.model.scatterplot_dimension import ScatterplotDimension
+from datadog_api_client.v1.model.scatterplot_table_request import ScatterplotTableRequest
 from datadog_api_client.v1.model.scatterplot_widget_formula import ScatterplotWidgetFormula
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
