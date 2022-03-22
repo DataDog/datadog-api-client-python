@@ -10,7 +10,7 @@ from datadog_api_client.model_utils import (
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.usage_io_t_hour import UsageIoTHour
+    from datadog_api_client.v1.model.usage_iot_hour import UsageIoTHour
 
     globals()["UsageIoTHour"] = UsageIoTHour
 

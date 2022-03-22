@@ -493,8 +493,8 @@ from datadog_api_client.v1.model.synthetics_assertion_operator import Synthetics
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
 from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
 from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
-from datadog_api_client.v1.model.synthetics_basic_auth_ntlm import SyntheticsBasicAuthNTLM
-from datadog_api_client.v1.model.synthetics_basic_auth_ntlm_type import SyntheticsBasicAuthNTLMType
+from datadog_api_client.v1.model.synthetics_basic_authn_tlm import SyntheticsBasicAuthNTLM
+from datadog_api_client.v1.model.synthetics_basic_authn_tlm_type import SyntheticsBasicAuthNTLMType
 from datadog_api_client.v1.model.synthetics_basic_auth_sigv4 import SyntheticsBasicAuthSigv4
 from datadog_api_client.v1.model.synthetics_basic_auth_sigv4_type import SyntheticsBasicAuthSigv4Type
 from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasicAuthWeb
@@ -672,8 +672,8 @@ from datadog_api_client.v1.model.usage_indexed_spans_hour import UsageIndexedSpa
 from datadog_api_client.v1.model.usage_indexed_spans_response import UsageIndexedSpansResponse
 from datadog_api_client.v1.model.usage_ingested_spans_hour import UsageIngestedSpansHour
 from datadog_api_client.v1.model.usage_ingested_spans_response import UsageIngestedSpansResponse
-from datadog_api_client.v1.model.usage_io_t_hour import UsageIoTHour
-from datadog_api_client.v1.model.usage_io_t_response import UsageIoTResponse
+from datadog_api_client.v1.model.usage_iot_hour import UsageIoTHour
+from datadog_api_client.v1.model.usage_iot_response import UsageIoTResponse
 from datadog_api_client.v1.model.usage_lambda_hour import UsageLambdaHour
 from datadog_api_client.v1.model.usage_lambda_response import UsageLambdaResponse
 from datadog_api_client.v1.model.usage_logs_by_index_hour import UsageLogsByIndexHour

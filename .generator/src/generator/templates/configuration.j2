@@ -33,7 +33,7 @@ class Configuration(BaseConfiguration):
         {%- for operations in apis.values() %}
         {%- for _, _, operation in operations|sort(attribute="2.operationId") %}
         {%- if "x-unstable" in operation %}
-            "{{ operation.operationId|snake_case }}": False,
+            "{{ operation.operationId|operation_name }}": False,
         {%- endif %}
         {%- endfor %}
         {%- endfor %}

@@ -39,6 +39,8 @@ def cli(input, output):
     env.filters["parameters"] = openapi.parameters
     env.filters["return_type"] = openapi.return_type
     env.filters["snake_case"] = formatter.snake_case
+    env.filters["operation_name"] = openapi.operation_name
+    env.filters["model_name"] = openapi.model_name
 
     env.globals["enumerate"] = enumerate
     env.globals["version"] = version
@@ -88,7 +90,7 @@ def cli(input, output):
     package.mkdir(exist_ok=True)
 
     for name, model in models.items():
-        filename = formatter.snake_case(name) + ".py"
+        filename = openapi.model_name(name) + ".py"
         model_path = package / "model" / filename
         model_path.parent.mkdir(parents=True, exist_ok=True)
         with model_path.open("w") as fp:

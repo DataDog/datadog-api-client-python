@@ -10,7 +10,7 @@ from datadog_api_client.model_utils import (
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.synthetics_basic_auth_ntlm_type import SyntheticsBasicAuthNTLMType
+    from datadog_api_client.v1.model.synthetics_basic_authn_tlm_type import SyntheticsBasicAuthNTLMType
 
     globals()["SyntheticsBasicAuthNTLMType"] = SyntheticsBasicAuthNTLMType
 

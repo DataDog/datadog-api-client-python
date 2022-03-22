@@ -108,12 +108,12 @@ class OrganizationsApi:
             api_client=api_client,
         )
 
-        self._upload_id_p_for_org_endpoint = _Endpoint(
+        self._upload_idp_for_org_endpoint = _Endpoint(
             settings={
                 "response_type": (IdpResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/org/{public_id}/idp_metadata",
-                "operation_id": "upload_id_p_for_org",
+                "operation_id": "upload_idp_for_org",
                 "http_method": "POST",
                 "servers": None,
             },
@@ -319,7 +319,7 @@ class OrganizationsApi:
 
         return self._update_org_endpoint.call_with_http_info(**kwargs)
 
-    def upload_id_p_for_org(self, public_id, idp_file, **kwargs):
+    def upload_idp_for_org(self, public_id, idp_file, **kwargs):
         """Upload IdP metadata.
 
         There are a couple of options for updating the Identity Provider (IdP)
@@ -332,7 +332,7 @@ class OrganizationsApi:
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
-        >>> thread = api.upload_id_p_for_org(public_id, idp_file, async_req=True)
+        >>> thread = api.upload_idp_for_org(public_id, idp_file, async_req=True)
         >>> result = thread.get()
 
         :param public_id: The `public_id` of the organization you are operating with
@@ -365,9 +365,9 @@ class OrganizationsApi:
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: IdpResponse
         """
-        kwargs = self._upload_id_p_for_org_endpoint.default_arguments(kwargs)
+        kwargs = self._upload_idp_for_org_endpoint.default_arguments(kwargs)
         kwargs["public_id"] = public_id
 
         kwargs["idp_file"] = idp_file
 
-        return self._upload_id_p_for_org_endpoint.call_with_http_info(**kwargs)
+        return self._upload_idp_for_org_endpoint.call_with_http_info(**kwargs)

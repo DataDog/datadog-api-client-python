@@ -3529,22 +3529,6 @@ synthetics\_basic\_auth
    :undoc-members:
    :show-inheritance:
 
-synthetics\_basic\_auth\_ntlm
------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_ntlm
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-synthetics\_basic\_auth\_ntlm\_type
------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_ntlm_type
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 synthetics\_basic\_auth\_sigv4
 ------------------------------
 
@@ -3573,6 +3557,22 @@ synthetics\_basic\_auth\_web\_type
 ----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_web_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+synthetics\_basic\_authn\_tlm
+-----------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_basic_authn_tlm
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+synthetics\_basic\_authn\_tlm\_type
+-----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_basic_authn_tlm_type
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4769,18 +4769,18 @@ usage\_ingested\_spans\_response
    :undoc-members:
    :show-inheritance:
 
-usage\_io\_t\_hour
-------------------
+usage\_iot\_hour
+----------------
 
-.. automodule:: datadog_api_client.v1.model.usage_io_t_hour
+.. automodule:: datadog_api_client.v1.model.usage_iot_hour
    :members:
    :undoc-members:
    :show-inheritance:
 
-usage\_io\_t\_response
-----------------------
+usage\_iot\_response
+--------------------
 
-.. automodule:: datadog_api_client.v1.model.usage_io_t_response
+.. automodule:: datadog_api_client.v1.model.usage_iot_response
    :members:
    :undoc-members:
    :show-inheritance:

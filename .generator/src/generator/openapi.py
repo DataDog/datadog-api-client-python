@@ -286,6 +286,16 @@ def operation(spec, operation_id):
     return None
 
 
+def operation_name(operation_id):
+    operation_id = operation_id.replace("IdP", "Idp").replace("AuthN", "Authn")
+    return formatter.snake_case(operation_id)
+
+
+def model_name(model):
+    model = model.replace("IoT", "Iot").replace("AuthN", "Authn")
+    return formatter.snake_case(model)
+
+
 def get_api_models(operations):
     seen = set()
     for _, _, operation in operations:

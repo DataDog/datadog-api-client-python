@@ -10,7 +10,7 @@ from datadog_api_client.model_utils import (
 
 
 def lazy_import():
-    from datadog_api_client.v2.model.auth_n_mapping_create_data import AuthNMappingCreateData
+    from datadog_api_client.v2.model.authn_mapping_create_data import AuthNMappingCreateData
 
     globals()["AuthNMappingCreateData"] = AuthNMappingCreateData
 
