@@ -5,7 +5,6 @@ Update a tag configuration returns "OK" response
 from os import environ
 from datadog_api_client.v2 import ApiClient, Configuration
 from datadog_api_client.v2.api.metrics_api import MetricsApi
-from datadog_api_client.v2.model.metric_name import MetricName
 from datadog_api_client.v2.model.metric_tag_configuration_type import MetricTagConfigurationType
 from datadog_api_client.v2.model.metric_tag_configuration_update_attributes import (
     MetricTagConfigurationUpdateAttributes,
@@ -19,7 +18,7 @@ METRIC_TAG_CONFIGURATION_DATA_ID = environ["METRIC_TAG_CONFIGURATION_DATA_ID"]
 body = MetricTagConfigurationUpdateRequest(
     data=MetricTagConfigurationUpdateData(
         type=MetricTagConfigurationType("manage_tags"),
-        id=MetricName(METRIC_TAG_CONFIGURATION_DATA_ID),
+        id=METRIC_TAG_CONFIGURATION_DATA_ID,
         attributes=MetricTagConfigurationUpdateAttributes(tags=["app"]),
     )
 )

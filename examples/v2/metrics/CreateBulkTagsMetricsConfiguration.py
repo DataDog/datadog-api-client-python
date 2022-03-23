@@ -10,7 +10,6 @@ from datadog_api_client.v2.model.metric_bulk_tag_config_create import MetricBulk
 from datadog_api_client.v2.model.metric_bulk_tag_config_create_attributes import MetricBulkTagConfigCreateAttributes
 from datadog_api_client.v2.model.metric_bulk_tag_config_create_request import MetricBulkTagConfigCreateRequest
 from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
-from datadog_api_client.v2.model.metric_bulk_tag_config_name_prefix import MetricBulkTagConfigNamePrefix
 from datadog_api_client.v2.model.metric_bulk_tag_config_tag_name_list import MetricBulkTagConfigTagNameList
 
 # there is a valid "user" in the system
@@ -24,7 +23,7 @@ body = MetricBulkTagConfigCreateRequest(
                 ["test", "exampleconfiguretagsformultiplemetricsreturnsacceptedresponse"]
             ),
         ),
-        id=MetricBulkTagConfigNamePrefix("system.load.1"),
+        id="system.load.1",
         type=MetricBulkConfigureTagsType("metric_bulk_configure_tags"),
     )
 )
