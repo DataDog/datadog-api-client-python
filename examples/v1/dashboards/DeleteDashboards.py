@@ -8,7 +8,6 @@ from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard_bulk_action_data import DashboardBulkActionData
 from datadog_api_client.v1.model.dashboard_bulk_action_data_list import DashboardBulkActionDataList
 from datadog_api_client.v1.model.dashboard_bulk_delete_request import DashboardBulkDeleteRequest
-from datadog_api_client.v1.model.dashboard_id import DashboardID
 from datadog_api_client.v1.model.dashboard_resource_type import DashboardResourceType
 
 # there is a valid "dashboard" in the system
@@ -16,7 +15,7 @@ DASHBOARD_ID = environ["DASHBOARD_ID"]
 
 body = DashboardBulkDeleteRequest(
     data=DashboardBulkActionDataList(
-        [DashboardBulkActionData(id=DashboardID(DASHBOARD_ID), type=DashboardResourceType("dashboard"))]
+        [DashboardBulkActionData(id=DASHBOARD_ID, type=DashboardResourceType("dashboard"))]
     )
 )
 

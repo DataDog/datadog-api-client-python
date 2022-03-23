@@ -9,12 +9,11 @@ from datadog_api_client.v2.model.logs_metric_compute_aggregation_type import Log
 from datadog_api_client.v2.model.logs_metric_create_attributes import LogsMetricCreateAttributes
 from datadog_api_client.v2.model.logs_metric_create_data import LogsMetricCreateData
 from datadog_api_client.v2.model.logs_metric_create_request import LogsMetricCreateRequest
-from datadog_api_client.v2.model.logs_metric_id import LogsMetricID
 from datadog_api_client.v2.model.logs_metric_type import LogsMetricType
 
 body = LogsMetricCreateRequest(
     data=LogsMetricCreateData(
-        id=LogsMetricID("Example-Create_a_log_based_metric_returns_OK_response"),
+        id="Example-Create_a_log_based_metric_returns_OK_response",
         type=LogsMetricType("logs_metrics"),
         attributes=LogsMetricCreateAttributes(
             compute=LogsMetricCompute(aggregation_type=LogsMetricComputeAggregationType("count"))
