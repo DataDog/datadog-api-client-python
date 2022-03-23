@@ -40,6 +40,13 @@ Feature: Monitors
     Then the response status is 200 OK
 
   @team:DataDog/monitor-app
+  Scenario: Create a ci-pipelines formula and functions monitor returns "OK" response
+    Given new "CreateMonitor" request
+    And body with value {"name": "{{ unique }}","type": "ci-pipelines alert","query": "formula(\"query1 / query2 * 100\").last(\"15m\") >= 0.8","message": "some message Notify: @hipchat-channel","tags": ["test:{{ unique_lower_alnum }}", "env:ci"],"priority": 3,"options": {"thresholds": {"critical": 0.8},"variables": [{"data_source": "ci_pipelines","name": "query1","search": {"query": "@ci.status:error"},"indexes": ["*"],"compute": {"aggregation": "count"},"group_by": []},{"data_source": "ci_pipelines","name": "query2","search": {"query": ""},"indexes": ["*"],"compute": {"aggregation": "count"},"group_by": []}]}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/monitor-app
   Scenario: Create a ci-pipelines monitor returns "OK" response
     Given new "CreateMonitor" request
     And body with value {"name": "{{ unique }}","type": "ci-pipelines alert","query": "ci-pipelines(\"ci_level:pipeline @git.branch:staging* @ci.status:error\").rollup(\"count\").by(\"@git.branch,@ci.pipeline.name\").last(\"5m\") >= 1","message": "some message Notify: @hipchat-channel",	"tags": ["test:{{ unique_lower_alnum }}", "env:ci"],"priority": 3,"options":{"thresholds":{"critical":1}}}
