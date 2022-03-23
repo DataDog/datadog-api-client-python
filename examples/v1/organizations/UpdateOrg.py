@@ -20,7 +20,6 @@ from datadog_api_client.v1.model.organization_subscription import OrganizationSu
 
 body = Organization(
     billing=OrganizationBilling(type="parent_billing"),
-    created="2019-09-26T17:28:28Z",
     description="some description",
     name="New child org",
     public_id="abcdef12345",
