@@ -4,6 +4,7 @@
 
 
 from datadog_api_client.model_utils import (
+    ApiTypeError,
     ModelSimple,
     cached_property,
 )
@@ -14,6 +15,7 @@ class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
     allowed_values = {
         "value": {
             "RUM": "rum",
+            "CI_PIPELINES": "ci_pipelines",
         },
     }
 
@@ -29,7 +31,7 @@ class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: If omitted defaults to "rum". Must be one of ["rum"].
+        :param value: Must be one of ["rum", "ci_pipelines"].
         :type value: str
         """
         super().__init__(kwargs)
@@ -40,7 +42,11 @@ class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
             args = list(args)
             value = args.pop(0)
         else:
-            value = "rum"
+            raise ApiTypeError(
+                "value is required, but not passed in args or kwargs and doesn't have default",
+                path_to_item=self._path_to_item,
+                valid_classes=(self.__class__,),
+            )
 
         self._check_pos_args(args)
 
