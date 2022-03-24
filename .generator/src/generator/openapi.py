@@ -1,3 +1,4 @@
+import json
 import pathlib
 import yaml
 from jsonref import JsonRef
@@ -5,7 +6,8 @@ from yaml import CSafeLoader
 
 from . import formatter
 
-EDGE_CASES = {"IdP": "Idp", "AuthNMapping": "AuthnMapping", "AuthN ": "Authn ", "IoT": "Iot"}
+with (pathlib.Path(__file__).parent / "replacement.json").open() as f:
+    EDGE_CASES = json.load(f)
 
 
 def load(filename):

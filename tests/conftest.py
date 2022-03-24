@@ -65,7 +65,9 @@ from datadog_api_client import exceptions
 
 logging.basicConfig()
 
-EDGE_CASES = {"IdP": "Idp", "AuthNMapping": "AuthnMapping", "AuthN ": "Authn ", "IoT": "Iot"}
+with (pathlib.Path(__file__).parent.parent / ".generator" / "src" / "generator" / "replacement.json").open() as f:
+    EDGE_CASES = json.load(f)
+
 PATTERN_ALPHANUM = re.compile(r"[^A-Za-z0-9]+")
 PATTERN_DOUBLE_UNDERSCORE = re.compile(r"__+")
 PATTERN_LEADING_ALPHA = re.compile(r"(.)([A-Z][a-z]+)")
