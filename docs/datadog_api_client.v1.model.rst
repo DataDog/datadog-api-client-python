@@ -3529,6 +3529,22 @@ synthetics\_basic\_auth
    :undoc-members:
    :show-inheritance:
 
+synthetics\_basic\_auth\_ntlm
+-----------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_ntlm
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+synthetics\_basic\_auth\_ntlm\_type
+-----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_ntlm_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 synthetics\_basic\_auth\_sigv4
 ------------------------------
 
@@ -3557,22 +3573,6 @@ synthetics\_basic\_auth\_web\_type
 ----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_web_type
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-synthetics\_basic\_authn\_tlm
------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_basic_authn_tlm
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-synthetics\_basic\_authn\_tlm\_type
------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_basic_authn_tlm_type
    :members:
    :undoc-members:
    :show-inheritance:

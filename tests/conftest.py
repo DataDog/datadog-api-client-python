@@ -65,7 +65,7 @@ from datadog_api_client import exceptions
 
 logging.basicConfig()
 
-EDGE_CASES = ("IdP", "AuthN", "IoT")
+EDGE_CASES = {"IdP": "Idp", "AuthNMapping": "AuthnMapping", "AuthN ": "Authn ", "IoT": "Iot"}
 PATTERN_ALPHANUM = re.compile(r"[^A-Za-z0-9]+")
 PATTERN_DOUBLE_UNDERSCORE = re.compile(r"__+")
 PATTERN_LEADING_ALPHA = re.compile(r"(.)([A-Z][a-z]+)")
@@ -164,8 +164,8 @@ def pytest_bdd_apply_tag(tag, function):
 
 
 def snake_case(value):
-    for token in EDGE_CASES:
-        value = value.replace(token, token.title())
+    for token, replacement in EDGE_CASES.items():
+        value = value.replace(token, replacement)
     s1 = PATTERN_LEADING_ALPHA.sub(r"\1_\2", value)
     s1 = PATTERN_FOLLOWING_ALPHA.sub(r"\1_\2", s1).lower()
     s1 = PATTERN_WHITESPACE.sub("_", s1)

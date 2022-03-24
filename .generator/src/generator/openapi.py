@@ -5,7 +5,7 @@ from yaml import CSafeLoader
 
 from . import formatter
 
-EDGE_CASES = ("IdP", "AuthN", "IoT")
+EDGE_CASES = {"IdP": "Idp", "AuthNMapping": "AuthnMapping", "AuthN ": "Authn ", "IoT": "Iot"}
 
 
 def load(filename):
@@ -289,8 +289,8 @@ def operation(spec, operation_id):
 
 
 def safe_snake_case(value):
-    for token in EDGE_CASES:
-        value = value.replace(token, token.title())
+    for token, replacement in EDGE_CASES.items():
+        value = value.replace(token, replacement)
     return formatter.snake_case(value)
 
 
