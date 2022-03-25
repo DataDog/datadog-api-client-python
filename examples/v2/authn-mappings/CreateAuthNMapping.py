@@ -4,12 +4,12 @@ Create an AuthN Mapping returns "OK" response
 
 from os import environ
 from datadog_api_client.v2 import ApiClient, Configuration
-from datadog_api_client.v2.api.auth_n_mappings_api import AuthNMappingsApi
-from datadog_api_client.v2.model.auth_n_mapping_create_attributes import AuthNMappingCreateAttributes
-from datadog_api_client.v2.model.auth_n_mapping_create_data import AuthNMappingCreateData
-from datadog_api_client.v2.model.auth_n_mapping_create_relationships import AuthNMappingCreateRelationships
-from datadog_api_client.v2.model.auth_n_mapping_create_request import AuthNMappingCreateRequest
-from datadog_api_client.v2.model.auth_n_mappings_type import AuthNMappingsType
+from datadog_api_client.v2.api.authn_mappings_api import AuthNMappingsApi
+from datadog_api_client.v2.model.authn_mapping_create_attributes import AuthNMappingCreateAttributes
+from datadog_api_client.v2.model.authn_mapping_create_data import AuthNMappingCreateData
+from datadog_api_client.v2.model.authn_mapping_create_relationships import AuthNMappingCreateRelationships
+from datadog_api_client.v2.model.authn_mapping_create_request import AuthNMappingCreateRequest
+from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
 from datadog_api_client.v2.model.relationship_to_role import RelationshipToRole
 from datadog_api_client.v2.model.relationship_to_role_data import RelationshipToRoleData
 from datadog_api_client.v2.model.roles_type import RolesType
@@ -33,6 +33,6 @@ body = AuthNMappingCreateRequest(
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = AuthNMappingsApi(api_client)
-    response = api_instance.create_auth_n_mapping(body=body)
+    response = api_instance.create_authn_mapping(body=body)
 
     print(response)
