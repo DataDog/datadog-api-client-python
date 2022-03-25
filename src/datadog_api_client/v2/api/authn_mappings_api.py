@@ -4,11 +4,11 @@
 
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
-from datadog_api_client.v2.model.auth_n_mappings_response import AuthNMappingsResponse
-from datadog_api_client.v2.model.auth_n_mappings_sort import AuthNMappingsSort
-from datadog_api_client.v2.model.auth_n_mapping_response import AuthNMappingResponse
-from datadog_api_client.v2.model.auth_n_mapping_create_request import AuthNMappingCreateRequest
-from datadog_api_client.v2.model.auth_n_mapping_update_request import AuthNMappingUpdateRequest
+from datadog_api_client.v2.model.authn_mappings_response import AuthNMappingsResponse
+from datadog_api_client.v2.model.authn_mappings_sort import AuthNMappingsSort
+from datadog_api_client.v2.model.authn_mapping_response import AuthNMappingResponse
+from datadog_api_client.v2.model.authn_mapping_create_request import AuthNMappingCreateRequest
+from datadog_api_client.v2.model.authn_mapping_update_request import AuthNMappingUpdateRequest
 
 
 class AuthNMappingsApi:
@@ -17,12 +17,12 @@ class AuthNMappingsApi:
             api_client = ApiClient()
         self.api_client = api_client
 
-        self._create_auth_n_mapping_endpoint = _Endpoint(
+        self._create_authn_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": (AuthNMappingResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/authn_mappings",
-                "operation_id": "create_auth_n_mapping",
+                "operation_id": "create_authn_mapping",
                 "http_method": "POST",
                 "servers": None,
             },
@@ -37,12 +37,12 @@ class AuthNMappingsApi:
             api_client=api_client,
         )
 
-        self._delete_auth_n_mapping_endpoint = _Endpoint(
+        self._delete_authn_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/authn_mappings/{authn_mapping_id}",
-                "operation_id": "delete_auth_n_mapping",
+                "operation_id": "delete_authn_mapping",
                 "http_method": "DELETE",
                 "servers": None,
             },
@@ -61,12 +61,12 @@ class AuthNMappingsApi:
             api_client=api_client,
         )
 
-        self._get_auth_n_mapping_endpoint = _Endpoint(
+        self._get_authn_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": (AuthNMappingResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/authn_mappings/{authn_mapping_id}",
-                "operation_id": "get_auth_n_mapping",
+                "operation_id": "get_authn_mapping",
                 "http_method": "GET",
                 "servers": None,
             },
@@ -85,12 +85,12 @@ class AuthNMappingsApi:
             api_client=api_client,
         )
 
-        self._list_auth_n_mappings_endpoint = _Endpoint(
+        self._list_authn_mappings_endpoint = _Endpoint(
             settings={
                 "response_type": (AuthNMappingsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/authn_mappings",
-                "operation_id": "list_auth_n_mappings",
+                "operation_id": "list_authn_mappings",
                 "http_method": "GET",
                 "servers": None,
             },
@@ -129,12 +129,12 @@ class AuthNMappingsApi:
             api_client=api_client,
         )
 
-        self._update_auth_n_mapping_endpoint = _Endpoint(
+        self._update_authn_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": (AuthNMappingResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/authn_mappings/{authn_mapping_id}",
-                "operation_id": "update_auth_n_mapping",
+                "operation_id": "update_authn_mapping",
                 "http_method": "PATCH",
                 "servers": None,
             },
@@ -155,7 +155,7 @@ class AuthNMappingsApi:
             api_client=api_client,
         )
 
-    def create_auth_n_mapping(self, body, **kwargs):
+    def create_authn_mapping(self, body, **kwargs):
         """Create an AuthN Mapping.
 
         Create an AuthN Mapping.
@@ -163,7 +163,7 @@ class AuthNMappingsApi:
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
-        >>> thread = api.create_auth_n_mapping(body, async_req=True)
+        >>> thread = api.create_authn_mapping(body, async_req=True)
         >>> result = thread.get()
 
         :type body: AuthNMappingCreateRequest
@@ -193,12 +193,12 @@ class AuthNMappingsApi:
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuthNMappingResponse
         """
-        kwargs = self._create_auth_n_mapping_endpoint.default_arguments(kwargs)
+        kwargs = self._create_authn_mapping_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
-        return self._create_auth_n_mapping_endpoint.call_with_http_info(**kwargs)
+        return self._create_authn_mapping_endpoint.call_with_http_info(**kwargs)
 
-    def delete_auth_n_mapping(self, authn_mapping_id, **kwargs):
+    def delete_authn_mapping(self, authn_mapping_id, **kwargs):
         """Delete an AuthN Mapping.
 
         Delete an AuthN Mapping specified by AuthN Mapping UUID.
@@ -206,7 +206,7 @@ class AuthNMappingsApi:
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
-        >>> thread = api.delete_auth_n_mapping(authn_mapping_id, async_req=True)
+        >>> thread = api.delete_authn_mapping(authn_mapping_id, async_req=True)
         >>> result = thread.get()
 
         :param authn_mapping_id: The UUID of the AuthN Mapping.
@@ -237,12 +237,12 @@ class AuthNMappingsApi:
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._delete_auth_n_mapping_endpoint.default_arguments(kwargs)
+        kwargs = self._delete_authn_mapping_endpoint.default_arguments(kwargs)
         kwargs["authn_mapping_id"] = authn_mapping_id
 
-        return self._delete_auth_n_mapping_endpoint.call_with_http_info(**kwargs)
+        return self._delete_authn_mapping_endpoint.call_with_http_info(**kwargs)
 
-    def get_auth_n_mapping(self, authn_mapping_id, **kwargs):
+    def get_authn_mapping(self, authn_mapping_id, **kwargs):
         """Get an AuthN Mapping by UUID.
 
         Get an AuthN Mapping specified by the AuthN Mapping UUID.
@@ -250,7 +250,7 @@ class AuthNMappingsApi:
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
-        >>> thread = api.get_auth_n_mapping(authn_mapping_id, async_req=True)
+        >>> thread = api.get_authn_mapping(authn_mapping_id, async_req=True)
         >>> result = thread.get()
 
         :param authn_mapping_id: The UUID of the AuthN Mapping.
@@ -281,12 +281,12 @@ class AuthNMappingsApi:
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuthNMappingResponse
         """
-        kwargs = self._get_auth_n_mapping_endpoint.default_arguments(kwargs)
+        kwargs = self._get_authn_mapping_endpoint.default_arguments(kwargs)
         kwargs["authn_mapping_id"] = authn_mapping_id
 
-        return self._get_auth_n_mapping_endpoint.call_with_http_info(**kwargs)
+        return self._get_authn_mapping_endpoint.call_with_http_info(**kwargs)
 
-    def list_auth_n_mappings(self, **kwargs):
+    def list_authn_mappings(self, **kwargs):
         """List all AuthN Mappings.
 
         List all AuthN Mappings in the org.
@@ -294,7 +294,7 @@ class AuthNMappingsApi:
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
-        >>> thread = api.list_auth_n_mappings(async_req=True)
+        >>> thread = api.list_authn_mappings(async_req=True)
         >>> result = thread.get()
 
         :param page_size: Size for a given page.
@@ -333,10 +333,10 @@ class AuthNMappingsApi:
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuthNMappingsResponse
         """
-        kwargs = self._list_auth_n_mappings_endpoint.default_arguments(kwargs)
-        return self._list_auth_n_mappings_endpoint.call_with_http_info(**kwargs)
+        kwargs = self._list_authn_mappings_endpoint.default_arguments(kwargs)
+        return self._list_authn_mappings_endpoint.call_with_http_info(**kwargs)
 
-    def update_auth_n_mapping(self, authn_mapping_id, body, **kwargs):
+    def update_authn_mapping(self, authn_mapping_id, body, **kwargs):
         """Edit an AuthN Mapping.
 
         Edit an AuthN Mapping.
@@ -344,7 +344,7 @@ class AuthNMappingsApi:
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
-        >>> thread = api.update_auth_n_mapping(authn_mapping_id, body, async_req=True)
+        >>> thread = api.update_authn_mapping(authn_mapping_id, body, async_req=True)
         >>> result = thread.get()
 
         :param authn_mapping_id: The UUID of the AuthN Mapping.
@@ -376,9 +376,9 @@ class AuthNMappingsApi:
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuthNMappingResponse
         """
-        kwargs = self._update_auth_n_mapping_endpoint.default_arguments(kwargs)
+        kwargs = self._update_authn_mapping_endpoint.default_arguments(kwargs)
         kwargs["authn_mapping_id"] = authn_mapping_id
 
         kwargs["body"] = body
 
-        return self._update_auth_n_mapping_endpoint.call_with_http_info(**kwargs)
+        return self._update_authn_mapping_endpoint.call_with_http_info(**kwargs)

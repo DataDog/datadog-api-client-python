@@ -9,10 +9,10 @@ audit\_api
    :undoc-members:
    :show-inheritance:
 
-auth\_n\_mappings\_api
-----------------------
+authn\_mappings\_api
+--------------------
 
-.. automodule:: datadog_api_client.v2.api.auth_n_mappings_api
+.. automodule:: datadog_api_client.v2.api.authn_mappings_api
    :members:
    :undoc-members:
    :show-inheritance:

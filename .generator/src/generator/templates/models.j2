@@ -1,4 +1,4 @@
 {%- for model in models %}
-from {{ package }}.{{ version }}.model.{{ model|snake_case }} import {{ model }}
+from {{ package }}.{{ version }}.model.{{ model|safe_snake_case }} import {{ model }}
 {%- endfor %}
 

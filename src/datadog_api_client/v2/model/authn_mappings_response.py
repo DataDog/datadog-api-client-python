@@ -10,7 +10,7 @@ from datadog_api_client.model_utils import (
 
 
 def lazy_import():
-    from datadog_api_client.v2.model.auth_n_mapping import AuthNMapping
+    from datadog_api_client.v2.model.authn_mapping import AuthNMapping
     from datadog_api_client.v2.model.response_meta_attributes import ResponseMetaAttributes
 
     globals()["AuthNMapping"] = AuthNMapping

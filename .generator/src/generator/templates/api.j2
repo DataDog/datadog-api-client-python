@@ -9,7 +9,7 @@ from {{ package }}.model_utils import (
     none_type,
 )
 {%- for model in get_api_models(operations) %}
-from {{ package }}.{{ version }}.model.{{ model|snake_case }} import {{ model }}
+from {{ package }}.{{ version }}.model.{{ model|safe_snake_case }} import {{ model }}
 {%- endfor %}
 
 {% set classname = name.replace(" ", "") + "Api" %}
@@ -22,14 +22,14 @@ class {{ classname }}:
 {% for path, method, operation in operations|sort(attribute="2.operationId") %}
     {%- set httpMethod = method.upper() %}
     {%- set returnType = operation|return_type %}
-        self._{{ operation.operationId|snake_case }}_endpoint = _Endpoint(
+        self._{{ operation.operationId|safe_snake_case }}_endpoint = _Endpoint(
             settings={
                 "response_type": {% if returnType %}({{ returnType }},){% else %}None{% endif %},
     {%- set authMethods = operation.security if "security" in operation else openapi.security %}
                 "auth": [
 {%- for auth in (authMethods or []) %}"{{ '", "'.join(auth.keys()) }}"{%- if not loop.last %}, {% endif %}{%- endfor %}],
                 "endpoint_path": "{{ path }}",
-                "operation_id": "{{ operation.operationId|snake_case }}",
+                "operation_id": "{{ operation.operationId|safe_snake_case }}",
                 "http_method": "{{httpMethod}}",
 {%- set servers = operation.servers %}
 {%- if servers %}
@@ -129,7 +129,7 @@ class {{ classname }}:
 {% endfor %}
 
 {%- for path, method, operation in operations|sort(attribute="2.operationId") %}
-    def {{ operation.operationId|snake_case }}(self, {% for name, parameter in operation|parameters if parameter.required %}{{name|attribute_name}}, {% endfor %}**kwargs):
+    def {{ operation.operationId|safe_snake_case }}(self, {% for name, parameter in operation|parameters if parameter.required %}{{name|attribute_name}}, {% endfor %}**kwargs):
         """{{ operation.summary|indent(8) }}.
 {% if operation.description %}
         {{ operation.description.replace("\\", "\\\\")|indent(8) }}
@@ -137,7 +137,7 @@ class {{ classname }}:
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
-        >>> thread = api.{{ operation.operationId|snake_case }}(
+        >>> thread = api.{{ operation.operationId|safe_snake_case }}(
 {%- for name, parameter in operation|parameters if parameter.required %}{{name|attribute_name}}, {% endfor %}async_req=True)
         >>> result = thread.get()
 {# keep new line #}
@@ -179,9 +179,9 @@ class {{ classname }}:
 {%- set returnType = operation|return_type %}
         :rtype: {% if returnType %}{{ returnType }}{% else %}None{% endif %}
         """
-        kwargs = self._{{ operation.operationId|snake_case }}_endpoint.default_arguments(kwargs)
+        kwargs = self._{{ operation.operationId|safe_snake_case }}_endpoint.default_arguments(kwargs)
 {%- for name, parameter in operation|parameters if parameter.required %}
         kwargs["{{ name|attribute_name }}"] = {{ name|attribute_name }}
 {% endfor %}
-        return self._{{ operation.operationId|snake_case }}_endpoint.call_with_http_info(**kwargs)
+        return self._{{ operation.operationId|safe_snake_case }}_endpoint.call_with_http_info(**kwargs)
 {% endfor %}

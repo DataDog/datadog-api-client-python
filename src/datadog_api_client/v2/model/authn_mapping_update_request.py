@@ -10,40 +10,43 @@ from datadog_api_client.model_utils import (
 
 
 def lazy_import():
-    from datadog_api_client.v2.model.auth_n_mapping import AuthNMapping
+    from datadog_api_client.v2.model.authn_mapping_update_data import AuthNMappingUpdateData
 
-    globals()["AuthNMapping"] = AuthNMapping
+    globals()["AuthNMappingUpdateData"] = AuthNMappingUpdateData
 
 
-class AuthNMappingResponse(ModelNormal):
+class AuthNMappingUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
         lazy_import()
         return {
-            "data": (AuthNMapping,),
+            "data": (AuthNMappingUpdateData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, data, *args, **kwargs):
         """
-        AuthN Mapping response from the API.
+        Request to update an AuthN Mapping.
 
-        :param data: The AuthN Mapping object returned by API.
-        :type data: AuthNMapping, optional
+        :param data: Data for updating an AuthN Mapping.
+        :type data: AuthNMappingUpdateData
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
+        self.data = data
+
     @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
+    def _from_openapi_data(cls, data, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
-        self = super(AuthNMappingResponse, cls)._from_openapi_data(kwargs)
+        self = super(AuthNMappingUpdateRequest, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
 
+        self.data = data
         return self

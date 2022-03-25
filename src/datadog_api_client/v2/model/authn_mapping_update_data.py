@@ -10,52 +10,45 @@ from datadog_api_client.model_utils import (
 
 
 def lazy_import():
-    from datadog_api_client.v2.model.auth_n_mapping_attributes import AuthNMappingAttributes
-    from datadog_api_client.v2.model.auth_n_mapping_included import AuthNMappingIncluded
-    from datadog_api_client.v2.model.auth_n_mapping_relationships import AuthNMappingRelationships
-    from datadog_api_client.v2.model.auth_n_mappings_type import AuthNMappingsType
+    from datadog_api_client.v2.model.authn_mapping_update_attributes import AuthNMappingUpdateAttributes
+    from datadog_api_client.v2.model.authn_mapping_update_relationships import AuthNMappingUpdateRelationships
+    from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
 
-    globals()["AuthNMappingAttributes"] = AuthNMappingAttributes
-    globals()["AuthNMappingIncluded"] = AuthNMappingIncluded
-    globals()["AuthNMappingRelationships"] = AuthNMappingRelationships
+    globals()["AuthNMappingUpdateAttributes"] = AuthNMappingUpdateAttributes
+    globals()["AuthNMappingUpdateRelationships"] = AuthNMappingUpdateRelationships
     globals()["AuthNMappingsType"] = AuthNMappingsType
 
 
-class AuthNMapping(ModelNormal):
+class AuthNMappingUpdateData(ModelNormal):
     @cached_property
     def openapi_types(_):
         lazy_import()
         return {
-            "attributes": (AuthNMappingAttributes,),
+            "attributes": (AuthNMappingUpdateAttributes,),
             "id": (str,),
-            "included": ([AuthNMappingIncluded],),
-            "relationships": (AuthNMappingRelationships,),
+            "relationships": (AuthNMappingUpdateRelationships,),
             "type": (AuthNMappingsType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
         "id": "id",
-        "included": "included",
         "relationships": "relationships",
         "type": "type",
     }
 
     def __init__(self, id, type, *args, **kwargs):
         """
-        The AuthN Mapping object returned by API.
+        Data for updating an AuthN Mapping.
 
-        :param attributes: Attributes of AuthN Mapping.
-        :type attributes: AuthNMappingAttributes, optional
+        :param attributes: Key/Value pair of attributes used for update request.
+        :type attributes: AuthNMappingUpdateAttributes, optional
 
         :param id: ID of the AuthN Mapping.
         :type id: str
 
-        :param included: Included data in the AuthN Mapping response.
-        :type included: [AuthNMappingIncluded], optional
-
-        :param relationships: All relationships associated with AuthN Mapping.
-        :type relationships: AuthNMappingRelationships, optional
+        :param relationships: Relationship of AuthN Mapping update object to Role.
+        :type relationships: AuthNMappingUpdateRelationships, optional
 
         :param type: AuthN Mappings resource type.
         :type type: AuthNMappingsType
@@ -71,7 +64,7 @@ class AuthNMapping(ModelNormal):
     def _from_openapi_data(cls, id, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
-        self = super(AuthNMapping, cls)._from_openapi_data(kwargs)
+        self = super(AuthNMappingUpdateData, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
 

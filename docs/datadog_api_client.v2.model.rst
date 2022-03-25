@@ -305,130 +305,130 @@ audit\_logs\_warning
    :undoc-members:
    :show-inheritance:
 
-auth\_n\_mapping
-----------------
+authn\_mapping
+--------------
 
-.. automodule:: datadog_api_client.v2.model.auth_n_mapping
+.. automodule:: datadog_api_client.v2.model.authn_mapping
    :members:
    :undoc-members:
    :show-inheritance:
 
-auth\_n\_mapping\_attributes
+authn\_mapping\_attributes
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.authn_mapping_attributes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+authn\_mapping\_create\_attributes
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.authn_mapping_create_attributes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+authn\_mapping\_create\_data
 ----------------------------
 
-.. automodule:: datadog_api_client.v2.model.auth_n_mapping_attributes
+.. automodule:: datadog_api_client.v2.model.authn_mapping_create_data
    :members:
    :undoc-members:
    :show-inheritance:
 
-auth\_n\_mapping\_create\_attributes
-------------------------------------
+authn\_mapping\_create\_relationships
+-------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.auth_n_mapping_create_attributes
+.. automodule:: datadog_api_client.v2.model.authn_mapping_create_relationships
    :members:
    :undoc-members:
    :show-inheritance:
 
-auth\_n\_mapping\_create\_data
-------------------------------
-
-.. automodule:: datadog_api_client.v2.model.auth_n_mapping_create_data
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-auth\_n\_mapping\_create\_relationships
----------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.auth_n_mapping_create_relationships
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-auth\_n\_mapping\_create\_request
----------------------------------
-
-.. automodule:: datadog_api_client.v2.model.auth_n_mapping_create_request
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-auth\_n\_mapping\_included
---------------------------
-
-.. automodule:: datadog_api_client.v2.model.auth_n_mapping_included
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-auth\_n\_mapping\_relationships
+authn\_mapping\_create\_request
 -------------------------------
 
-.. automodule:: datadog_api_client.v2.model.auth_n_mapping_relationships
+.. automodule:: datadog_api_client.v2.model.authn_mapping_create_request
    :members:
    :undoc-members:
    :show-inheritance:
 
-auth\_n\_mapping\_response
---------------------------
+authn\_mapping\_included
+------------------------
 
-.. automodule:: datadog_api_client.v2.model.auth_n_mapping_response
+.. automodule:: datadog_api_client.v2.model.authn_mapping_included
    :members:
    :undoc-members:
    :show-inheritance:
 
-auth\_n\_mapping\_update\_attributes
-------------------------------------
+authn\_mapping\_relationships
+-----------------------------
 
-.. automodule:: datadog_api_client.v2.model.auth_n_mapping_update_attributes
+.. automodule:: datadog_api_client.v2.model.authn_mapping_relationships
    :members:
    :undoc-members:
    :show-inheritance:
 
-auth\_n\_mapping\_update\_data
-------------------------------
+authn\_mapping\_response
+------------------------
 
-.. automodule:: datadog_api_client.v2.model.auth_n_mapping_update_data
+.. automodule:: datadog_api_client.v2.model.authn_mapping_response
    :members:
    :undoc-members:
    :show-inheritance:
 
-auth\_n\_mapping\_update\_relationships
----------------------------------------
+authn\_mapping\_update\_attributes
+----------------------------------
 
-.. automodule:: datadog_api_client.v2.model.auth_n_mapping_update_relationships
+.. automodule:: datadog_api_client.v2.model.authn_mapping_update_attributes
    :members:
    :undoc-members:
    :show-inheritance:
 
-auth\_n\_mapping\_update\_request
----------------------------------
+authn\_mapping\_update\_data
+----------------------------
 
-.. automodule:: datadog_api_client.v2.model.auth_n_mapping_update_request
+.. automodule:: datadog_api_client.v2.model.authn_mapping_update_data
    :members:
    :undoc-members:
    :show-inheritance:
 
-auth\_n\_mappings\_response
----------------------------
+authn\_mapping\_update\_relationships
+-------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.auth_n_mappings_response
+.. automodule:: datadog_api_client.v2.model.authn_mapping_update_relationships
    :members:
    :undoc-members:
    :show-inheritance:
 
-auth\_n\_mappings\_sort
------------------------
+authn\_mapping\_update\_request
+-------------------------------
 
-.. automodule:: datadog_api_client.v2.model.auth_n_mappings_sort
+.. automodule:: datadog_api_client.v2.model.authn_mapping_update_request
    :members:
    :undoc-members:
    :show-inheritance:
 
-auth\_n\_mappings\_type
------------------------
+authn\_mappings\_response
+-------------------------
 
-.. automodule:: datadog_api_client.v2.model.auth_n_mappings_type
+.. automodule:: datadog_api_client.v2.model.authn_mappings_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+authn\_mappings\_sort
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.authn_mappings_sort
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+authn\_mappings\_type
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.authn_mappings_type
    :members:
    :undoc-members:
    :show-inheritance:

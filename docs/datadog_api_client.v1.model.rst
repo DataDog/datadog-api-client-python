@@ -4769,18 +4769,18 @@ usage\_ingested\_spans\_response
    :undoc-members:
    :show-inheritance:
 
-usage\_io\_t\_hour
-------------------
+usage\_iot\_hour
+----------------
 
-.. automodule:: datadog_api_client.v1.model.usage_io_t_hour
+.. automodule:: datadog_api_client.v1.model.usage_iot_hour
    :members:
    :undoc-members:
    :show-inheritance:
 
-usage\_io\_t\_response
-----------------------
+usage\_iot\_response
+--------------------
 
-.. automodule:: datadog_api_client.v1.model.usage_io_t_response
+.. automodule:: datadog_api_client.v1.model.usage_iot_response
    :members:
    :undoc-members:
    :show-inheritance:

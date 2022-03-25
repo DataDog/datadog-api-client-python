@@ -10,9 +10,9 @@ from datadog_api_client.model_utils import (
 
 
 def lazy_import():
-    from datadog_api_client.v2.model.auth_n_mapping_create_attributes import AuthNMappingCreateAttributes
-    from datadog_api_client.v2.model.auth_n_mapping_create_relationships import AuthNMappingCreateRelationships
-    from datadog_api_client.v2.model.auth_n_mappings_type import AuthNMappingsType
+    from datadog_api_client.v2.model.authn_mapping_create_attributes import AuthNMappingCreateAttributes
+    from datadog_api_client.v2.model.authn_mapping_create_relationships import AuthNMappingCreateRelationships
+    from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
 
     globals()["AuthNMappingCreateAttributes"] = AuthNMappingCreateAttributes
     globals()["AuthNMappingCreateRelationships"] = AuthNMappingCreateRelationships

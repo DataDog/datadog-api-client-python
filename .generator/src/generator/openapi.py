@@ -1,9 +1,13 @@
+import json
 import pathlib
 import yaml
 from jsonref import JsonRef
 from yaml import CSafeLoader
 
 from . import formatter
+
+with (pathlib.Path(__file__).parent / "replacement.json").open() as f:
+    EDGE_CASES = json.load(f)
 
 
 def load(filename):
@@ -284,6 +288,12 @@ def operation(spec, operation_id):
             if operation["operationId"] == operation_id:
                 return operation
     return None
+
+
+def safe_snake_case(value):
+    for token, replacement in EDGE_CASES.items():
+        value = value.replace(token, replacement)
+    return formatter.snake_case(value)
 
 
 def get_api_models(operations):
