@@ -23,14 +23,12 @@ class UsageAttributionSupportedMetrics(ModelSimple):
             "INFRA_HOST_USAGE": "infra_host_usage",
             "CUSTOM_TIMESERIES_PERCENTAGE": "custom_timeseries_percentage",
             "CONTAINER_PERCENTAGE": "container_percentage",
-            "LAMBDA_USAGE": "lambda_usage",
             "API_USAGE": "api_usage",
             "APM_HOST_PERCENTAGE": "apm_host_percentage",
             "INFRA_HOST_PERCENTAGE": "infra_host_percentage",
             "SNMP_USAGE": "snmp_usage",
             "BROWSER_PERCENTAGE": "browser_percentage",
             "API_PERCENTAGE": "api_percentage",
-            "LAMBDA_PERCENTAGE": "lambda_percentage",
             "NPM_HOST_USAGE": "npm_host_usage",
             "LAMBDA_FUNCTIONS_USAGE": "lambda_functions_usage",
             "LAMBDA_FUNCTIONS_PERCENTAGE": "lambda_functions_percentage",
@@ -64,7 +62,7 @@ class UsageAttributionSupportedMetrics(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["custom_timeseries_usage", "container_usage", "snmp_percentage", "apm_host_usage", "browser_usage", "npm_host_percentage", "infra_host_usage", "custom_timeseries_percentage", "container_percentage", "lambda_usage", "api_usage", "apm_host_percentage", "infra_host_percentage", "snmp_usage", "browser_percentage", "api_percentage", "lambda_percentage", "npm_host_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "fargate_usage", "fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "profiled_container_usage", "profiled_container_percentage", "dbm_hosts_usage", "dbm_hosts_percentage", "dbm_queries_usage", "dbm_queries_percentage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "*"].
+        :param value: Must be one of ["custom_timeseries_usage", "container_usage", "snmp_percentage", "apm_host_usage", "browser_usage", "npm_host_percentage", "infra_host_usage", "custom_timeseries_percentage", "container_percentage", "api_usage", "apm_host_percentage", "infra_host_percentage", "snmp_usage", "browser_percentage", "api_percentage", "npm_host_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "fargate_usage", "fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "profiled_container_usage", "profiled_container_percentage", "dbm_hosts_usage", "dbm_hosts_percentage", "dbm_queries_usage", "dbm_queries_percentage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "*"].
         :type value: str
         """
         super().__init__(kwargs)
