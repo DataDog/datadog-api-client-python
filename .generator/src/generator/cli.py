@@ -1,4 +1,5 @@
 import pathlib
+
 import click
 from jinja2 import Environment, FileSystemLoader
 
