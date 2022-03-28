@@ -43,8 +43,6 @@ class UsageAttributionValues(ModelNormal):
             "lambda_functions_usage": (float,),
             "lambda_invocations_percentage": (float,),
             "lambda_invocations_usage": (float,),
-            "lambda_percentage": (float,),
-            "lambda_usage": (float,),
             "npm_host_percentage": (float,),
             "npm_host_usage": (float,),
             "profiled_container_percentage": (float,),
@@ -86,8 +84,6 @@ class UsageAttributionValues(ModelNormal):
         "lambda_functions_usage": "lambda_functions_usage",
         "lambda_invocations_percentage": "lambda_invocations_percentage",
         "lambda_invocations_usage": "lambda_invocations_usage",
-        "lambda_percentage": "lambda_percentage",
-        "lambda_usage": "lambda_usage",
         "npm_host_percentage": "npm_host_percentage",
         "npm_host_usage": "npm_host_usage",
         "profiled_container_percentage": "profiled_container_percentage",
@@ -191,16 +187,6 @@ class UsageAttributionValues(ModelNormal):
 
         :param lambda_invocations_usage: The Lambda invocation usage by tag(s).
         :type lambda_invocations_usage: float, optional
-
-        :param lambda_percentage: The percentage of Lambda function usage by tag(s).
-
-            **Note** this field is deprecated. Use lambda_functions_percentage instead.
-        :type lambda_percentage: float, optional
-
-        :param lambda_usage: The Lambda function usage by tag(s).
-
-            **Note** this field is deprecated. Use lambda_functions_usage instead.
-        :type lambda_usage: float, optional
 
         :param npm_host_percentage: The percentage of network host usage by tag(s).
         :type npm_host_percentage: float, optional
