@@ -26,7 +26,7 @@ JSON_SCHEMA_VALIDATION_KEYWORDS = {
 }
 
 
-class _UnstableOperation:
+class _UnstableOperations:
     def __init__(self, values):
         self.values = values
 
@@ -38,33 +38,30 @@ class _UnstableOperation:
     def __getitem__(self, key):
         if key in self.values:
             return self.values[key]
-        else:
-            for version in ("v1", "v2"):
-                version_key = f"{version}.{key}"
-                if version_key in self.values:
-                    return self.values[version_key]
+        for version in ("v1", "v2"):
+            version_key = f"{version}.{key}"
+            if version_key in self.values:
+                return self.values[version_key]
         raise KeyError(f"Unknown unstable operation {key}")
 
     def __setitem__(self, key, value):
         if key in self.values:
             self.values[key] = value
+        for version in ("v1", "v2"):
+            version_key = f"{version}.{key}"
+            if version_key in self.values:
+                self.values[version_key] = value
+                break
         else:
-            for version in ("v1", "v2"):
-                version_key = f"{version}.{key}"
-                if version_key in self.values:
-                    self.values[version_key] = value
-                    break
-            else:
-                raise KeyError(f"Unknown unstable operation {key}")
+            raise KeyError(f"Unknown unstable operation {key}")
 
     def __contains__(self, key):
         if key in self.values:
             return True
-        else:
-            for version in ("v1", "v2"):
-                version_key = f"{version}.{key}"
-                if version_key in self.values:
-                    return True
+        for version in ("v1", "v2"):
+            version_key = f"{version}.{key}"
+            if version_key in self.values:
+                return True
         return False
 
 
@@ -191,7 +188,7 @@ class Configuration:
         self.compress = compress
 
         # Keep track of unstable operations
-        self.unstable_operations = _UnstableOperation(
+        self.unstable_operations = _UnstableOperations(
             {
                 "v1.get_daily_custom_reports": False,
                 "v1.get_hourly_usage_attribution": False,
