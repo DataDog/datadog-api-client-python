@@ -764,7 +764,7 @@ class Endpoint(object):
             return
 
         for auth in self.settings["auth"]:
-            auth_setting = self.api_client.configuration.auth_settings(self.settings["version"]).get(auth)
+            auth_setting = self.api_client.configuration.auth_settings().get(auth)
             if auth_setting:
                 if auth_setting["in"] == "cookie":
                     headers["Cookie"] = auth_setting["value"]

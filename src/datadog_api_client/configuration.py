@@ -486,82 +486,35 @@ class Configuration:
         self._base_path = value
         self.server_index = None
 
-    def auth_settings(self, version):
+    def auth_settings(self):
         """Gets Auth Settings dict for api client.
 
         :return: The Auth Settings information dict.
         """
         auth = {}
-        if version == "v1":
-            if self.access_token is not None:
-                auth["AuthZ"] = {
-                    "type": "oauth2",
-                    "in": "header",
-                    "key": "Authorization",
-                    "value": "Bearer " + self.access_token,
-                }
-            if "apiKeyAuth" in self.api_key:
-                auth["apiKeyAuth"] = {
-                    "type": "api_key",
-                    "in": "header",
-                    "key": "DD-API-KEY",
-                    "value": self.get_api_key_with_prefix(
-                        "apiKeyAuth",
-                    ),
-                }
-            if "apiKeyAuthQuery" in self.api_key or "apiKeyAuth" in self.api_key:
-                auth["apiKeyAuthQuery"] = {
-                    "type": "api_key",
-                    "in": "query",
-                    "key": "api_key",
-                    "value": self.get_api_key_with_prefix(
-                        "apiKeyAuthQuery",
-                        alias="apiKeyAuth",
-                    ),
-                }
-            if "appKeyAuth" in self.api_key:
-                auth["appKeyAuth"] = {
-                    "type": "api_key",
-                    "in": "header",
-                    "key": "DD-APPLICATION-KEY",
-                    "value": self.get_api_key_with_prefix(
-                        "appKeyAuth",
-                    ),
-                }
-            if "appKeyAuthQuery" in self.api_key or "appKeyAuth" in self.api_key:
-                auth["appKeyAuthQuery"] = {
-                    "type": "api_key",
-                    "in": "query",
-                    "key": "application_key",
-                    "value": self.get_api_key_with_prefix(
-                        "appKeyAuthQuery",
-                        alias="appKeyAuth",
-                    ),
-                }
-        if version == "v2":
-            if self.access_token is not None:
-                auth["AuthZ"] = {
-                    "type": "oauth2",
-                    "in": "header",
-                    "key": "Authorization",
-                    "value": "Bearer " + self.access_token,
-                }
-            if "apiKeyAuth" in self.api_key:
-                auth["apiKeyAuth"] = {
-                    "type": "api_key",
-                    "in": "header",
-                    "key": "DD-API-KEY",
-                    "value": self.get_api_key_with_prefix(
-                        "apiKeyAuth",
-                    ),
-                }
-            if "appKeyAuth" in self.api_key:
-                auth["appKeyAuth"] = {
-                    "type": "api_key",
-                    "in": "header",
-                    "key": "DD-APPLICATION-KEY",
-                    "value": self.get_api_key_with_prefix(
-                        "appKeyAuth",
-                    ),
-                }
+        if self.access_token is not None:
+            auth["AuthZ"] = {
+                "type": "oauth2",
+                "in": "header",
+                "key": "Authorization",
+                "value": "Bearer " + self.access_token,
+            }
+        if "apiKeyAuth" in self.api_key:
+            auth["apiKeyAuth"] = {
+                "type": "api_key",
+                "in": "header",
+                "key": "DD-API-KEY",
+                "value": self.get_api_key_with_prefix(
+                    "apiKeyAuth",
+                ),
+            }
+        if "appKeyAuth" in self.api_key:
+            auth["appKeyAuth"] = {
+                "type": "api_key",
+                "in": "header",
+                "key": "DD-APPLICATION-KEY",
+                "value": self.get_api_key_with_prefix(
+                    "appKeyAuth",
+                ),
+            }
         return auth
