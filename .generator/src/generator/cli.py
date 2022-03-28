@@ -110,7 +110,7 @@ def cli(specs, output):
             fp.write(models_j2.render(models=sorted(models)))
 
         for name, operations in apis.items():
-            filename = open.safe_snake_case(name) + "_api.py"
+            filename = openapi.safe_snake_case(name) + "_api.py"
             api_path = package / "api" / filename
             api_path.parent.mkdir(parents=True, exist_ok=True)
             with api_path.open("w") as fp:
