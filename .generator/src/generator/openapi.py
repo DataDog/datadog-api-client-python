@@ -268,7 +268,7 @@ def get_oneof_types(model):
 def get_oneof_models(model):
     result = []
     for schema in model["oneOf"]:
-        if schema.get("type") in ("array", "object"):
+        if schema.get("type", "object") in ("array", "object"):
             result.append(formatter.get_name(schema))
     return result
 
