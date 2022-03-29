@@ -250,7 +250,7 @@ def get_oneof_parameters(model):
 
 def get_oneof_types(model):
     for schema in model["oneOf"]:
-        type_ = schema.get("type")
+        type_ = schema.get("type", "object")
         if type_ in ("array", "object"):
             yield formatter.get_name(schema)
         elif type_ == "integer":
@@ -259,6 +259,10 @@ def get_oneof_types(model):
             yield "str"
         elif type_ == "number":
             yield "float"
+        elif type_ == "boolean":
+            yield "bool"
+        else:
+            raise NotImplementedError(f"Type {type_} not implemented")
 
 
 def get_oneof_models(model):
