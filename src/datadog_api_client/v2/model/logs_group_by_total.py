@@ -41,6 +41,7 @@ class LogsGroupByTotal(ModelComposed):
             "anyOf": [],
             "allOf": [],
             "oneOf": [
+                bool,
                 str,
                 float,
             ],
