@@ -13,9 +13,6 @@ from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window impo
 from datadog_api_client.v2.model.security_monitoring_rule_impossible_travel_options import (
     SecurityMonitoringRuleImpossibleTravelOptions,
 )
-from datadog_api_client.v2.model.security_monitoring_rule_impossible_travel_options_baseline_user_locations import (
-    SecurityMonitoringRuleImpossibleTravelOptionsBaselineUserLocations,
-)
 from datadog_api_client.v2.model.security_monitoring_rule_keep_alive import SecurityMonitoringRuleKeepAlive
 from datadog_api_client.v2.model.security_monitoring_rule_max_signal_duration import (
     SecurityMonitoringRuleMaxSignalDuration,
@@ -47,9 +44,7 @@ body = SecurityMonitoringRuleCreatePayload(
         evaluation_window=SecurityMonitoringRuleEvaluationWindow(900),
         keep_alive=SecurityMonitoringRuleKeepAlive(3600),
         detection_method=SecurityMonitoringRuleDetectionMethod("impossible_travel"),
-        impossible_travel_options=SecurityMonitoringRuleImpossibleTravelOptions(
-            baseline_user_locations=SecurityMonitoringRuleImpossibleTravelOptionsBaselineUserLocations(False)
-        ),
+        impossible_travel_options=SecurityMonitoringRuleImpossibleTravelOptions(baseline_user_locations=False),
     ),
     name="Example-Create_a_detection_rule_with_type_impossible_travel_returns_OK_response",
     type=SecurityMonitoringRuleTypeCreate("log_detection"),
