@@ -49,5 +49,8 @@ class SunburstWidgetLegend(ModelComposed):
         return {
             "anyOf": [],
             "allOf": [],
-            "oneOf": [],
+            "oneOf": [
+                SunburstWidgetLegendTable,
+                SunburstWidgetLegendInlineAutomatic,
+            ],
         }
