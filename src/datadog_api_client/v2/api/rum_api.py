@@ -7,6 +7,8 @@ from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
     datetime,
 )
+from datadog_api_client.v2.model.rum_analytics_aggregate_response import RUMAnalyticsAggregateResponse
+from datadog_api_client.v2.model.rum_aggregate_request import RUMAggregateRequest
 from datadog_api_client.v2.model.rum_events_response import RUMEventsResponse
 from datadog_api_client.v2.model.rum_sort import RUMSort
 from datadog_api_client.v2.model.rum_search_events_request import RUMSearchEventsRequest
@@ -17,6 +19,26 @@ class RUMApi:
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+
+        self._aggregate_rum_events_endpoint = _Endpoint(
+            settings={
+                "response_type": (RUMAnalyticsAggregateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/rum/analytics/aggregate",
+                "operation_id": "aggregate_rum_events",
+                "http_method": "POST",
+                "servers": None,
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (RUMAggregateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._list_rum_events_endpoint = _Endpoint(
             settings={
@@ -80,6 +102,7 @@ class RUMApi:
             },
             params_map={
                 "body": {
+                    "required": True,
                     "openapi_types": (RUMSearchEventsRequest,),
                     "location": "body",
                 },
@@ -87,6 +110,49 @@ class RUMApi:
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def aggregate_rum_events(self, body, **kwargs):
+        """Aggregate RUM events.
+
+        The API endpoint to aggregate RUM events into buckets of computed metrics and timeseries.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True.
+
+        >>> thread = api.aggregate_rum_events(body, async_req=True)
+        >>> result = thread.get()
+
+        :type body: RUMAggregateRequest
+        :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: RUMAnalyticsAggregateResponse
+        """
+        kwargs = self._aggregate_rum_events_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+
+        return self._aggregate_rum_events_endpoint.call_with_http_info(**kwargs)
 
     def list_rum_events(self, **kwargs):
         """Get a list of RUM events.
@@ -145,7 +211,7 @@ class RUMApi:
         kwargs = self._list_rum_events_endpoint.default_arguments(kwargs)
         return self._list_rum_events_endpoint.call_with_http_info(**kwargs)
 
-    def search_rum_events(self, **kwargs):
+    def search_rum_events(self, body, **kwargs):
         """Search RUM events.
 
         List endpoint returns RUM events that match a RUM search query.
@@ -158,10 +224,10 @@ class RUMApi:
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
-        >>> thread = api.search_rum_events(async_req=True)
+        >>> thread = api.search_rum_events(body, async_req=True)
         >>> result = thread.get()
 
-        :type body: RUMSearchEventsRequest, optional
+        :type body: RUMSearchEventsRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
@@ -189,4 +255,6 @@ class RUMApi:
         :rtype: RUMEventsResponse
         """
         kwargs = self._search_rum_events_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+
         return self._search_rum_events_endpoint.call_with_http_info(**kwargs)
