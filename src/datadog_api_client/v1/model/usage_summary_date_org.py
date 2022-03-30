@@ -16,6 +16,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "agent_host_top99p": (int,),
             "apm_azure_app_service_host_top99p": (int,),
             "apm_host_top99p": (int,),
+            "apm_ingested_spans_billable_bytes_sum": (int,),
             "audit_logs_lines_indexed_sum": (int,),
             "avg_profiled_fargate_tasks": (int,),
             "aws_host_top99p": (int,),
@@ -82,6 +83,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "agent_host_top99p": "agent_host_top99p",
         "apm_azure_app_service_host_top99p": "apm_azure_app_service_host_top99p",
         "apm_host_top99p": "apm_host_top99p",
+        "apm_ingested_spans_billable_bytes_sum": "apm_ingested_spans_billable_bytes_sum",
         "audit_logs_lines_indexed_sum": "audit_logs_lines_indexed_sum",
         "avg_profiled_fargate_tasks": "avg_profiled_fargate_tasks",
         "aws_host_top99p": "aws_host_top99p",
@@ -156,6 +158,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param apm_host_top99p: Shows the 99th percentile of all distinct APM hosts over all hours in the current date for the given org.
         :type apm_host_top99p: int, optional
+
+        :param apm_ingested_spans_billable_bytes_sum: Shows the sum of all ingested APM span bytes over all hours in the current date for the given org.
+        :type apm_ingested_spans_billable_bytes_sum: int, optional
 
         :param audit_logs_lines_indexed_sum: Shows the sum of all audit logs lines indexed over all hours in the current date for the given org.
         :type audit_logs_lines_indexed_sum: int, optional
