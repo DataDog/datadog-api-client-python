@@ -321,10 +321,28 @@ from datadog_api_client.v2.model.process_summary import ProcessSummary
 from datadog_api_client.v2.model.process_summary_attributes import ProcessSummaryAttributes
 from datadog_api_client.v2.model.process_summary_type import ProcessSummaryType
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
+from datadog_api_client.v2.model.rum_aggregate_bucket_value import RUMAggregateBucketValue
+from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries import RUMAggregateBucketValueTimeseries
+from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries_point import (
+    RUMAggregateBucketValueTimeseriesPoint,
+)
+from datadog_api_client.v2.model.rum_aggregate_request import RUMAggregateRequest
+from datadog_api_client.v2.model.rum_aggregate_sort import RUMAggregateSort
+from datadog_api_client.v2.model.rum_aggregate_sort_type import RUMAggregateSortType
+from datadog_api_client.v2.model.rum_aggregation_buckets_response import RUMAggregationBucketsResponse
+from datadog_api_client.v2.model.rum_aggregation_function import RUMAggregationFunction
+from datadog_api_client.v2.model.rum_analytics_aggregate_response import RUMAnalyticsAggregateResponse
+from datadog_api_client.v2.model.rum_bucket_response import RUMBucketResponse
+from datadog_api_client.v2.model.rum_compute import RUMCompute
+from datadog_api_client.v2.model.rum_compute_type import RUMComputeType
 from datadog_api_client.v2.model.rum_event import RUMEvent
 from datadog_api_client.v2.model.rum_event_attributes import RUMEventAttributes
 from datadog_api_client.v2.model.rum_event_type import RUMEventType
 from datadog_api_client.v2.model.rum_events_response import RUMEventsResponse
+from datadog_api_client.v2.model.rum_group_by import RUMGroupBy
+from datadog_api_client.v2.model.rum_group_by_histogram import RUMGroupByHistogram
+from datadog_api_client.v2.model.rum_group_by_missing import RUMGroupByMissing
+from datadog_api_client.v2.model.rum_group_by_total import RUMGroupByTotal
 from datadog_api_client.v2.model.rum_query_filter import RUMQueryFilter
 from datadog_api_client.v2.model.rum_query_options import RUMQueryOptions
 from datadog_api_client.v2.model.rum_query_page_options import RUMQueryPageOptions
@@ -334,6 +352,7 @@ from datadog_api_client.v2.model.rum_response_page import RUMResponsePage
 from datadog_api_client.v2.model.rum_response_status import RUMResponseStatus
 from datadog_api_client.v2.model.rum_search_events_request import RUMSearchEventsRequest
 from datadog_api_client.v2.model.rum_sort import RUMSort
+from datadog_api_client.v2.model.rum_sort_order import RUMSortOrder
 from datadog_api_client.v2.model.rum_warning import RUMWarning
 from datadog_api_client.v2.model.relationship_to_incident_integration_metadata_data import (
     RelationshipToIncidentIntegrationMetadataData,

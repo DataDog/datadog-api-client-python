@@ -2585,6 +2585,102 @@ roles\_type
    :undoc-members:
    :show-inheritance:
 
+rum\_aggregate\_bucket\_value
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_aggregate_bucket_value
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_aggregate\_bucket\_value\_timeseries
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_aggregate\_bucket\_value\_timeseries\_point
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries_point
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_aggregate\_request
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_aggregate_request
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_aggregate\_sort
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_aggregate_sort
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_aggregate\_sort\_type
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_aggregate_sort_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_aggregation\_buckets\_response
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_aggregation_buckets_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_aggregation\_function
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_aggregation_function
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_analytics\_aggregate\_response
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_analytics_aggregate_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_bucket\_response
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_bucket_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_compute
+------------
+
+.. automodule:: datadog_api_client.v2.model.rum_compute
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_compute\_type
+------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_compute_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 rum\_event
 ----------
 
@@ -2613,6 +2709,38 @@ rum\_events\_response
 ---------------------
 
 .. automodule:: datadog_api_client.v2.model.rum_events_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_group\_by
+--------------
+
+.. automodule:: datadog_api_client.v2.model.rum_group_by
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_group\_by\_histogram
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_group_by_histogram
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_group\_by\_missing
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_group_by_missing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_group\_by\_total
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_group_by_total
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2685,6 +2813,14 @@ rum\_sort
 ---------
 
 .. automodule:: datadog_api_client.v2.model.rum_sort
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rum\_sort\_order
+----------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sort_order
    :members:
    :undoc-members:
    :show-inheritance:

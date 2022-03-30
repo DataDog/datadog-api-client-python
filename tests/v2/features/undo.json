@@ -501,6 +501,12 @@
       "type": "safe"
     }
   },
+  "AggregateRUMEvents": {
+    "tag": "RUM",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListRUMEvents": {
     "tag": "RUM",
     "undo": {
