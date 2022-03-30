@@ -1,0 +1,108 @@
+interactions:
+- request:
+    body: '{"name":"Test-Delete_custom_timeboard_dashboard_from_an_existing_dashboard_list_returns_OK_response-1647890207"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual
+  response:
+    body:
+      string: '{"is_favorite":false,"name":"Test-Delete_custom_timeboard_dashboard_from_an_existing_dashboard_list_returns_OK_response-1647890207","dashboard_count":0,"author":{"handle":"frog@datadoghq.com","name":null},"created":"2022-03-21T19:16:47.932747+00:00","type":"manual_dashboard_list","dashboards":null,"modified":"2022-03-21T19:16:47.932757+00:00","id":284064}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Delete_custom_timeboard_dashboard_from_an_existing_dashboard_list_returns_OK_response-1647890207
+      with Profile Metrics Query","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"x4b-fxa-rsf","title":"Test-Delete_custom_timeboard_dashboard_from_an_existing_dashboard_list_returns_OK_response-1647890207
+        with Profile Metrics Query","url":"/dashboard/x4b-fxa-rsf/test-deletecustomtimeboarddashboardfromanexistingdashboardlistreturnsokresponse","created_at":"2022-03-21T19:16:48.250818+00:00","modified_at":"2022-03-21T19:16:48.250818+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"id":2963682212939376}],"layout_type":"ordered"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"dashboards":[{"id":"x4b-fxa-rsf","type":"custom_timeboard"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/dashboard/lists/manual/284064/dashboards
+  response:
+    body:
+      string: '{"added_dashboards_to_list":[{"type":"custom_timeboard","id":"x4b-fxa-rsf"}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"dashboards":[{"id":"x4b-fxa-rsf","type":"custom_timeboard"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/dashboard/lists/manual/284064/dashboards
+  response:
+    body:
+      string: '{"deleted_dashboards_from_list":[{"type":"custom_timeboard","id":"x4b-fxa-rsf"}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/x4b-fxa-rsf
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"x4b-fxa-rsf"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual/284064
+  response:
+    body:
+      string: '{"deleted_dashboard_list_id":284064}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
