@@ -59,7 +59,7 @@ class MonitorOptions(ModelNormal):
             "renotify_occurrences": (int, none_type),
             "renotify_statuses": ([MonitorRenotifyStatusType], none_type),
             "require_full_window": (bool,),
-            "silenced": ({str: (int,)},),
+            "silenced": ({str: (int, none_type)},),
             "synthetics_check_id": (str, none_type),
             "threshold_windows": (MonitorThresholdWindowOptions,),
             "thresholds": (MonitorThresholds,),
