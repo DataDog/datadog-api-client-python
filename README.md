@@ -19,7 +19,7 @@ pip install datadog-api-client
 Please follow the [installation](#installation) instruction and execute the following Python code:
 
 ```python
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.monitors_api import MonitorsApi
 from datadog_api_client.v1.model.monitor import Monitor
 from datadog_api_client.v1.model.monitor_type import MonitorType
@@ -85,7 +85,7 @@ To make async support available, you need to install the extra `async` qualifier
 ```python
 import asyncio
 
-from datadog_api_client.v1 import Configuration, AsyncApiClient
+from datadog_api_client import Configuration, AsyncApiClient
 from datadog_api_client.v1.api import dashboards_api
 
 async def main():
