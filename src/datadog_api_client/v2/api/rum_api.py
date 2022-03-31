@@ -27,6 +27,7 @@ class RUMApi:
                 "endpoint_path": "/api/v2/rum/analytics/aggregate",
                 "operation_id": "aggregate_rum_events",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
