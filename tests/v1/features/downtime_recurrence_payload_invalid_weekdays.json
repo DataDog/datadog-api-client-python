@@ -1,0 +1,12 @@
+{
+  "message": "{{ unique }}",
+  "recurrence": {
+    "period": 1,
+    "type":"weeks",
+    "week_days": ["mon", "tue"]
+  },
+  "scope": ["*"],
+  "start": {{ timestamp("now") }},
+  "end": {{ timestamp("now + 1h") }},
+  "timezone": "Etc/UTC"
+}

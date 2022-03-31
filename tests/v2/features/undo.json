@@ -60,6 +60,55 @@
       "type": "idempotent"
     }
   },
+  "ListAuditLogs": {
+    "tag": "Audit",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchAuditLogs": {
+    "tag": "Audit",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAuthNMappings": {
+    "tag": "AuthN Mappings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAuthNMapping": {
+    "tag": "AuthN Mappings",
+    "undo": {
+      "operationId": "DeleteAuthNMapping",
+      "parameters": [
+        {
+          "name": "authn_mapping_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteAuthNMapping": {
+    "tag": "AuthN Mappings",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAuthNMapping": {
+    "tag": "AuthN Mappings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateAuthNMapping": {
+    "tag": "AuthN Mappings",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListCurrentUserApplicationKeys": {
     "tag": "Key Management",
     "undo": {
@@ -156,6 +205,12 @@
     "tag": "Incidents",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "SubmitLog": {
+    "tag": "Logs",
+    "undo": {
+      "type": "safe"
     }
   },
   "AggregateLogs": {
@@ -286,6 +341,25 @@
       "type": "safe"
     }
   },
+  "DeleteBulkTagsMetricsConfiguration": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateBulkTagsMetricsConfiguration": {
+    "tag": "Metrics",
+    "undo": {
+      "operationId": "DeleteBulkTagsMetricsConfiguration",
+      "parameters": [
+        {
+          "name": "body",
+          "source": ""
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "ListTagsByMetricName": {
     "tag": "Metrics",
     "undo": {
@@ -378,6 +452,19 @@
       "type": "idempotent"
     }
   },
+  "CloneRole": {
+    "tag": "Roles",
+    "undo": {
+      "operationId": "DeleteRole",
+      "parameters": [
+        {
+          "name": "role_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "RemovePermissionFromRole": {
     "tag": "Roles",
     "undo": {
@@ -412,6 +499,67 @@
     "tag": "Roles",
     "undo": {
       "type": "safe"
+    }
+  },
+  "AggregateRUMEvents": {
+    "tag": "RUM",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListRUMEvents": {
+    "tag": "RUM",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchRUMEvents": {
+    "tag": "RUM",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DownloadCloudWorkloadPolicyFile": {
+    "tag": "Cloud Workload Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCloudWorkloadSecurityAgentRules": {
+    "tag": "Cloud Workload Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCloudWorkloadSecurityAgentRule": {
+    "tag": "Cloud Workload Security",
+    "undo": {
+      "operationId": "DeleteCloudWorkloadSecurityAgentRule",
+      "parameters": [
+        {
+          "name": "agent_rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteCloudWorkloadSecurityAgentRule": {
+    "tag": "Cloud Workload Security",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCloudWorkloadSecurityAgentRule": {
+    "tag": "Cloud Workload Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCloudWorkloadSecurityAgentRule": {
+    "tag": "Cloud Workload Security",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListSecurityFilters": {
@@ -498,6 +646,60 @@
     "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
+    }
+  },
+  "CreateServiceAccount": {
+    "tag": "Users",
+    "undo": {
+      "operationId": "DisableUser",
+      "parameters": [
+        {
+          "name": "user_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ListServiceAccountApplicationKeys": {
+    "tag": "Service Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateServiceAccountApplicationKey": {
+    "tag": "Service Accounts",
+    "undo": {
+      "operationId": "DeleteServiceAccountApplicationKey",
+      "parameters": [
+        {
+          "name": "app_key_id",
+          "source": "data.id"
+        },
+        {
+          "name": "service_account_id",
+          "source": "data.relationships.owned_by.data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteServiceAccountApplicationKey": {
+    "tag": "Service Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetServiceAccountApplicationKey": {
+    "tag": "Service Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateServiceAccountApplicationKey": {
+    "tag": "Service Accounts",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListIncidentServices": {

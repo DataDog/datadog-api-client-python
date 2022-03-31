@@ -3,57 +3,15 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '5095942047695828255'
-      x-datadog-trace-id:
-      - '5095942047695828255'
+      - application/json
     method: GET
     uri: https://api.datadoghq.com/api/v2/processes?search=process-agent&tags=testing%3Atrue&page%5Blimit%5D=2
   response:
     body:
       string: '{"meta":{"page":{"after":"","size":0}},"data":[]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '49'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Thu, 15 Apr 2021 13:02:28 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - +L3cOfomyGGuXv+NlljFgOXDhA8u+DdhktfMTq5dNwRAQOJlilnIrPxwleX76+2G
-      x-dd-version:
-      - '35.4318655'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '100'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '99'
-      x-ratelimit-reset:
-      - '32'
     status:
       code: 200
       message: OK

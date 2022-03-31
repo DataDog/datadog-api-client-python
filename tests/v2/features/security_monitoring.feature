@@ -7,52 +7,63 @@ Feature: Security Monitoring
     And a valid "appKeyAuth" key in the system
     And an instance of "SecurityMonitoring" API
 
+  @team:DataDog/security-monitoring
   Scenario: Create a detection rule returns "Bad Request" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":""}],"cases":[{"status":"info"}],"options":{},"message":"Test rule","tags":[],"isEnabled":true}
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/security-monitoring
   Scenario: Create a detection rule returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @team:DataDog/security-monitoring
+  Scenario: Create a detection rule with type 'impossible_travel' returns "OK" response
+    Given new "CreateSecurityMonitoringRule" request
+    And body with value {"queries":[{"aggregation":"geo_data","groupByFields":["@usr.id"],"distinctFields":[],"metric":"@network.client.geoip","query":"*"}],"cases":[{"name":"","status":"info","notifications":[]}],"hasExtendedTitle":true,"message":"test","isEnabled":true,"options":{"maxSignalDuration":86400,"evaluationWindow":900,"keepAlive":3600,"detectionMethod":"impossible_travel","impossibleTravelOptions":{"baselineUserLocations":false}},"name":"{{ unique }}","type":"log_detection","tags":[],"filters":[]}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/security-monitoring
+  Scenario: Create a detection rule with type 'workload_security' returns "OK" response
+    Given new "CreateSecurityMonitoringRule" request
+    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type": "workload_security"}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Create a security filter returns "Bad Request" response
     Given new "CreateSecurityFilter" request
     And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api"}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Create a security filter returns "Conflict" response
     Given new "CreateSecurityFilter" request
     And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api"}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 409 Conflict
 
+  @team:DataDog/security-monitoring
   Scenario: Create a security filter returns "OK" response
     Given new "CreateSecurityFilter" request
     And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "{{ unique }}", "query": "service:{{ unique_alnum }}"}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
-  Scenario: Create a security filter returns "Too many requests" response
-    Given new "CreateSecurityFilter" request
-    And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api"}, "type": "security_filters"}}
-    When the request is sent
-    Then the response status is 429 Too many requests
-
-  @skip
+  @skip @team:DataDog/security-monitoring
   Scenario: Delete a non existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
     And request contains "rule_id" parameter with value "ThisRuleIdProbablyDoesntExist"
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/security-monitoring
   Scenario: Delete a security filter returns "No Content" response
     Given there is a valid "security_filter" in the system
     And new "DeleteSecurityFilter" request
@@ -60,34 +71,28 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Delete a security filter returns "Not Found" response
     Given new "DeleteSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
+    And request contains "security_filter_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Delete a security filter returns "OK" response
     Given new "DeleteSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
+    And request contains "security_filter_id" parameter from "REPLACE.ME"
     When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 204 OK
 
-  @generated @skip
-  Scenario: Delete a security filter returns "Too many requests" response
-    Given new "DeleteSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 429 Too many requests
-
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Delete an existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "<PATH>"
+    And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/security-monitoring
   Scenario: Delete an existing rule returns "OK" response
     Given there is a valid "security_rule" in the system
     And new "DeleteSecurityMonitoringRule" request
@@ -95,7 +100,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a list of security signals returns "Bad Request" response
     Given operation "SearchSecurityMonitoringSignals" enabled
     And new "SearchSecurityMonitoringSignals" request
@@ -103,7 +108,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a list of security signals returns "OK" response
     Given operation "SearchSecurityMonitoringSignals" enabled
     And new "SearchSecurityMonitoringSignals" request
@@ -111,41 +116,42 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a quick list of security signals returns "Bad Request" response
     Given operation "ListSecurityMonitoringSignals" enabled
     And new "ListSecurityMonitoringSignals" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a quick list of security signals returns "OK" response
     Given operation "ListSecurityMonitoringSignals" enabled
     And new "ListSecurityMonitoringSignals" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a rule's details returns "Not Found" response
     Given new "GetSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "<PATH>"
+    And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a rule's details returns "OK" response
     Given new "GetSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "<PATH>"
+    And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a security filter returns "Not Found" response
     Given new "GetSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
+    And request contains "security_filter_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/security-monitoring
   Scenario: Get a security filter returns "OK" response
     Given there is a valid "security_filter" in the system
     And new "GetSecurityFilter" request
@@ -153,60 +159,49 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
-  Scenario: Get a security filter returns "Too many requests" response
-    Given new "GetSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 429 Too many requests
-
+  @team:DataDog/security-monitoring
   Scenario: Get all security filters returns "OK" response
     Given new "ListSecurityFilters" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
-  Scenario: Get all security filters returns "Too many requests" response
-    Given new "ListSecurityFilters" request
-    When the request is sent
-    Then the response status is 429 Too many requests
-
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: List rules returns "Bad Request" response
     Given new "ListSecurityMonitoringRules" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: List rules returns "OK" response
     Given new "ListSecurityMonitoringRules" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Update a security filter returns "Bad Request" response
     Given new "UpdateSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
+    And request contains "security_filter_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"exclusion_filters": [], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api", "version": 1}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Update a security filter returns "Concurrent Modification" response
     Given new "UpdateSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
+    And request contains "security_filter_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"exclusion_filters": [], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api", "version": 1}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Update a security filter returns "Not Found" response
     Given new "UpdateSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
+    And request contains "security_filter_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"exclusion_filters": [], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api", "version": 1}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/security-monitoring
   Scenario: Update a security filter returns "OK" response
     Given new "UpdateSecurityFilter" request
     And there is a valid "security_filter" in the system
@@ -215,34 +210,26 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
-  Scenario: Update a security filter returns "Too many requests" response
-    Given new "UpdateSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
-    And body with value {"data": {"attributes": {"exclusion_filters": [], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api", "version": 1}, "type": "security_filters"}}
-    When the request is sent
-    Then the response status is 429 Too many requests
-
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Update an existing rule returns "Bad Request" response
     Given new "UpdateSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "<PATH>"
-    And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "info"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": []}], "tags": [], "version": 1}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Update an existing rule returns "Not Found" response
     Given new "UpdateSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "<PATH>"
-    And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "info"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": []}], "tags": [], "version": 1}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
+  @generated @skip @team:DataDog/security-monitoring
   Scenario: Update an existing rule returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "<PATH>"
-    And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "info"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": []}], "tags": [], "version": 1}
     When the request is sent
     Then the response status is 200 OK

@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"scope":"test:testcanceldowntimesbyscopereturnsdowntimesnotfoundresponse1641430245_invalid"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/downtime/cancel/by_scope
+  response:
+    body:
+      string: '{"errors":["No downtimes found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

@@ -20,6 +20,8 @@ fi
 # Explicitly install so we have the scm version.py file available
 python -m pip install -e .
 
+python -m mypy src
+
 # Run tests
 set +e
 python -m pytest -vvv

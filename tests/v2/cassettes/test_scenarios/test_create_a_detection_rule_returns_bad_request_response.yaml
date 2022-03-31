@@ -1,51 +1,19 @@
 interactions:
 - request:
-    body: '{"cases":[{"status":"info"}],"isEnabled":true,"message":"Test rule","name":"Test-Create_a_detection_rule_returns_Bad_Request_response-1618473262","options":{},"queries":[{"query":""}],"tags":[]}'
+    body: '{"cases":[{"status":"info"}],"isEnabled":true,"message":"Test rule","name":"Test-Create_a_detection_rule_returns_Bad_Request_response-1641430328","options":{},"queries":[{"query":""}],"tags":[]}'
     headers:
       accept:
-      - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '194'
+      - application/json
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.12.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '2007628655085055880'
-      x-datadog-trace-id:
-      - '2007628655085055880'
     method: POST
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
       string: '{"errors":["Internal error"]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '29'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Thu, 15 Apr 2021 07:54:22 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-dd-version:
-      - '35.4316747'
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 400
       message: Bad Request

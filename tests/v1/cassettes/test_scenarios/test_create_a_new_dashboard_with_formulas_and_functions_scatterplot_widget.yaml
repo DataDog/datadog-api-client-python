@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_formulas_and_functions_scatterplot_widget-1641430231","widgets":[{"definition":{"requests":{"table":{"formulas":[{"alias":"my-query1","dimension":"x","formula":"query1"},{"alias":"my-query2","dimension":"y","formula":"query2"}],"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
+      by {service}"},{"aggregator":"avg","data_source":"metrics","name":"query2","query":"avg:system.mem.used{*}
+      by {service}"}],"response_format":"scalar"}},"title":"","title_align":"left","title_size":"16","type":"scatterplot"},"id":5346764334358972,"layout":{"height":2,"width":4,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"zct-37r-af2","title":"Test-Create_a_new_dashboard_with_formulas_and_functions_scatterplot_widget-1641430231","url":"/dashboard/zct-37r-af2/test-createanewdashboardwithformulasandfunctionsscatterplotwidget-1641430231","created_at":"2022-01-06T00:50:32.173771+00:00","modified_at":"2022-01-06T00:50:32.173771+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"type":"scatterplot","requests":{"table":{"formulas":[{"alias":"my-query1","dimension":"x","formula":"query1"},{"alias":"my-query2","dimension":"y","formula":"query2"}],"response_format":"scalar","queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
+        by {service}"},{"aggregator":"avg","data_source":"metrics","name":"query2","query":"avg:system.mem.used{*}
+        by {service}"}]}},"title_align":"left","title_size":"16","title":""},"layout":{"y":0,"width":4,"x":0,"height":2},"id":5346764334358972}],"layout_type":"ordered"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/zct-37r-af2
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"zct-37r-af2"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

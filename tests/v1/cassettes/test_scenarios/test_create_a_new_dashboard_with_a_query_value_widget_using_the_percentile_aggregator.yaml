@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_a_query_value_widget_using_the_percentile_aggregator-1641430225
+      with QVW Percentile Aggregator","widgets":[{"definition":{"autoscale":true,"precision":2,"requests":[{"formulas":[{"formula":"query1"}],"queries":[{"aggregator":"percentile","data_source":"metrics","name":"query1","query":"p90:dist.dd.dogweb.latency{*}"}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"query_value"},"layout":{"height":2,"width":2,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"xtt-jph-mde","title":"Test-Create_a_new_dashboard_with_a_query_value_widget_using_the_percentile_aggregator-1641430225
+        with QVW Percentile Aggregator","url":"/dashboard/xtt-jph-mde/test-createanewdashboardwithaqueryvaluewidgetusingthepercentileaggregator-164143","created_at":"2022-01-06T00:50:25.655596+00:00","modified_at":"2022-01-06T00:50:25.655596+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"autoscale":true,"title":"","title_align":"left","precision":2,"time":{},"title_size":"16","requests":[{"formulas":[{"formula":"query1"}],"response_format":"scalar","queries":[{"aggregator":"percentile","data_source":"metrics","name":"query1","query":"p90:dist.dd.dogweb.latency{*}"}]}],"type":"query_value"},"layout":{"y":0,"width":2,"x":0,"height":2},"id":5189476437557683}],"layout_type":"ordered"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/xtt-jph-mde
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"xtt-jph-mde"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

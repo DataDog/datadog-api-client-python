@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"query":"query","type":"log alert"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/monitor/validate
+  response:
+    body:
+      string: '{"errors":["The value provided for parameter ''query'' is invalid:
+        invalid operator specified: "]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

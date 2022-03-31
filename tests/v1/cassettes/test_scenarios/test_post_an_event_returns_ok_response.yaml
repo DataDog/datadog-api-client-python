@@ -1,47 +1,21 @@
 interactions:
 - request:
-    body: '{"tags":["test:TestPostaneventreturnsOKresponse1618491668"],"text":"A text
-      message.","title":"Test-Post_an_event_returns_OK_response-1618491668"}'
+    body: '{"tags":["test:TestPostaneventreturnsOKresponse1641430251"],"text":"A text
+      message.","title":"Test-Post_an_event_returns_OK_response-1641430251"}'
     headers:
       accept:
-      - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '145'
+      - application/json
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '5095942047695828255'
-      x-datadog-trace-id:
-      - '5095942047695828255'
     method: POST
     uri: https://api.datadoghq.com/api/v1/events
   response:
     body:
-      string: '{"status":"ok","event":{"id":5942973138276091518,"title":"Test-Post_an_event_returns_OK_response-1618491668","text":"A
-        text message.","date_happened":1618491668,"handle":null,"priority":null,"related_event_id":null,"tags":["test:TestPostaneventreturnsOKresponse1618491668"],"url":"https://app.datadoghq.com/event/event?id=5942973138276091518"}}'
+      string: '{"status":"ok","event":{"id":6327818702635911000,"id_str":"6327818702635911562","title":"Test-Post_an_event_returns_OK_response-1641430251","text":"A
+        text message.","date_happened":1641430251,"handle":null,"priority":null,"related_event_id":null,"tags":["test:TestPostaneventreturnsOKresponse1641430251"],"url":"https://app.datadoghq.com/event/event?id=6327818702635911562"}}'
     headers:
-      connection:
-      - close
-      content-length:
-      - '344'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Thu, 15 Apr 2021 13:01:08 GMT
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
     status:
       code: 202
       message: Accepted

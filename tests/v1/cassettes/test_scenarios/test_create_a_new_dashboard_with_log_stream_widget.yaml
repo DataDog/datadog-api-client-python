@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"description":"","is_read_only":false,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_log_stream_widget-1641430236","widgets":[{"definition":{"columns":["host","service"],"indexes":["main"],"message_display":"expanded-md","query":"","show_date_column":true,"show_message_column":true,"sort":{"column":"time","order":"desc"},"title":"","title_align":"left","title_size":"16","type":"log_stream"},"layout":{"height":36,"width":47,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":[],"description":"","restricted_roles":[],"author_name":null,"template_variables":[],"is_read_only":false,"id":"ge2-n5p-cnd","title":"Test-Create_a_new_dashboard_with_log_stream_widget-1641430236","url":"/dashboard/ge2-n5p-cnd/test-createanewdashboardwithlogstreamwidget-1641430236","created_at":"2022-01-06T00:50:36.957558+00:00","modified_at":"2022-01-06T00:50:36.957558+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"sort":{"column":"time","order":"desc"},"show_message_column":true,"title_size":"16","title":"","title_align":"left","message_display":"expanded-md","indexes":["main"],"show_date_column":true,"query":"","type":"log_stream","columns":["host","service"]},"layout":{"y":0,"width":47,"x":0,"height":36},"id":853406405411463}],"layout_type":"free"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/ge2-n5p-cnd
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"ge2-n5p-cnd"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

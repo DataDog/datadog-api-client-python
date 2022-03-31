@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: '{"name":"Test-Get_a_dashboard_list_returns_OK_response-1641430222"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual
+  response:
+    body:
+      string: '{"is_favorite":false,"name":"Test-Get_a_dashboard_list_returns_OK_response-1641430222","dashboard_count":0,"author":{"handle":"frog@datadoghq.com","name":null},"created":"2022-01-06T00:50:22.806263+00:00","type":"manual_dashboard_list","dashboards":null,"modified":"2022-01-06T00:50:22.806287+00:00","id":269881}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual/269881
+  response:
+    body:
+      string: '{"is_favorite":false,"name":"Test-Get_a_dashboard_list_returns_OK_response-1641430222","dashboard_count":0,"author":{"handle":"frog@datadoghq.com","name":null},"created":"2022-01-06T00:50:22.806263+00:00","type":"manual_dashboard_list","dashboards":null,"modified":"2022-01-06T00:50:22.806287+00:00","id":269881}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual/269881
+  response:
+    body:
+      string: '{"deleted_dashboard_list_id":269881}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

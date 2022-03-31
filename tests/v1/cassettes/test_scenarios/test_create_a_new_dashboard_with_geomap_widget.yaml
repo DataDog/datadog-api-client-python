@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"description":null,"is_read_only":false,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_geomap_widget-1641430233","widgets":[{"definition":{"requests":[{"formulas":[{"formula":"query1","limit":{"count":250,"order":"desc"}}],"queries":[{"compute":{"aggregation":"count"},"data_source":"rum","group_by":[{"facet":"@geo.country_iso_code","limit":250,"sort":{"aggregation":"count","order":"desc"}}],"indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"scalar"}],"style":{"palette":"hostmap_blues","palette_flip":false},"time":{},"title":"","title_align":"left","title_size":"16","type":"geomap","view":{"focus":"WORLD"}},"layout":{"height":30,"width":47,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":[],"description":null,"restricted_roles":[],"author_name":null,"template_variables":[],"is_read_only":false,"id":"cqc-kbv-se3","title":"Test-Create_a_new_dashboard_with_geomap_widget-1641430233","url":"/dashboard/cqc-kbv-se3/test-createanewdashboardwithgeomapwidget-1641430233","created_at":"2022-01-06T00:50:33.554719+00:00","modified_at":"2022-01-06T00:50:33.554719+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"style":{"palette":"hostmap_blues","palette_flip":false},"title_size":"16","title":"","title_align":"left","time":{},"requests":[{"formulas":[{"formula":"query1","limit":{"count":250,"order":"desc"}}],"response_format":"scalar","queries":[{"search":{"query":""},"data_source":"rum","compute":{"aggregation":"count"},"name":"query1","indexes":["*"],"group_by":[{"facet":"@geo.country_iso_code","sort":{"aggregation":"count","order":"desc"},"limit":250}]}]}],"type":"geomap","view":{"focus":"WORLD"}},"layout":{"y":0,"width":47,"x":0,"height":30},"id":814328647870268}],"layout_type":"free"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/cqc-kbv-se3
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"cqc-kbv-se3"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

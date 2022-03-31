@@ -1,5 +1,6 @@
-examples/
 src/datadog_api_client/version.py
+site
+docs/.sphinx
 
 # VSCode
 .vscode

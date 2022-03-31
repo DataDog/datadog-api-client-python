@@ -1,0 +1,25 @@
+interactions:
+- request:
+    body: '{"tags":["test:TestPostaneventwithalongtitlereturnsOKresponse1641430251"],"text":"A
+      text message.","title":"Test-Post_an_event_with_a_long_title_returns_OK_response-1641430251
+      very very very looooooooong looooooooooooong loooooooooooooooooooooong looooooooooooooooooooooooooong
+      title with 100+ characters"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/events
+  response:
+    body:
+      string: '{"status":"ok","event":{"id":6327818704671040000,"id_str":"6327818704671039975","title":"Test-Post_an_event_with_a_long_title_returns_OK_response-1641430251
+        very very very looooooooong looooooooooooong loooooooooooooooooooooong looooooooooooooooooooooooooong
+        title with 100+ characters","text":"A text message.","date_happened":1641430252,"handle":null,"priority":null,"related_event_id":null,"tags":["test:TestPostaneventwithalongtitlereturnsOKresponse1641430251"],"url":"https://app.datadoghq.com/event/event?id=6327818704671039975"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 202
+      message: Accepted
+version: 1

@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_an_audit_logs_query-1641430228
+      with Audit Logs Query","widgets":[{"definition":{"requests":[{"queries":[{"compute":{"aggregation":"count"},"data_source":"audit","group_by":[],"indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"timeseries"}],"type":"timeseries"},"layout":{"height":2,"width":4,"x":2,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"gni-ma8-3tw","title":"Test-Create_a_new_dashboard_with_an_audit_logs_query-1641430228
+        with Audit Logs Query","url":"/dashboard/gni-ma8-3tw/test-createanewdashboardwithanauditlogsquery-1641430228-with-audit-logs-query","created_at":"2022-01-06T00:50:28.350927+00:00","modified_at":"2022-01-06T00:50:28.350927+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"response_format":"timeseries","queries":[{"search":{"query":""},"data_source":"audit","compute":{"aggregation":"count"},"name":"query1","indexes":["*"],"group_by":[]}]}],"type":"timeseries"},"layout":{"y":0,"width":4,"x":2,"height":2},"id":6324292938180360}],"layout_type":"ordered"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/gni-ma8-3tw
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"gni-ma8-3tw"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

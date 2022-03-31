@@ -1,0 +1,4 @@
+{%- for model in models %}
+from {{ package }}.{{ version }}.model.{{ model|safe_snake_case }} import {{ model }}
+{%- endfor %}
+

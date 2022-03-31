@@ -1,0 +1,25 @@
+{% include "api_info.j2" %}
+
+
+from {{ package }}.model_utils import (
+    ApiTypeError,
+    ModelComposed,
+    ModelNormal,
+    ModelSimple,
+    cached_property,
+    date,
+    datetime,
+    file_type,
+    none_type,
+)
+
+{% if "enum" in model -%}
+{% include "model_enum.j2" %}
+{%- elif "oneOf" in model -%}
+{% include "model_oneof.j2" %}
+{%- elif "array" == model.get("type") -%}
+{% include "model_simple.j2" %}
+{%- else -%}
+{% include "model_generic.j2" %}
+{%- endif %}
+{# keep new line #}

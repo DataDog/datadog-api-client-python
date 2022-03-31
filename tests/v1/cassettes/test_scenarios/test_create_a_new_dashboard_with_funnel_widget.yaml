@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_funnel_widget-1641430232
+      with funnel widget","widgets":[{"definition":{"requests":[{"query":{"data_source":"rum","query_string":"","steps":[]},"request_type":"funnel"}],"type":"funnel"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"2n6-br7-kwr","title":"Test-Create_a_new_dashboard_with_funnel_widget-1641430232
+        with funnel widget","url":"/dashboard/2n6-br7-kwr/test-createanewdashboardwithfunnelwidget-1641430232-with-funnel-widget","created_at":"2022-01-06T00:50:33.082701+00:00","modified_at":"2022-01-06T00:50:33.082701+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"query":{"query_string":"","data_source":"rum","steps":[]},"request_type":"funnel"}],"type":"funnel"},"id":5380342825148909}],"layout_type":"ordered"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/2n6-br7-kwr
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"2n6-br7-kwr"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

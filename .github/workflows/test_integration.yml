@@ -23,7 +23,7 @@ jobs:
       github.event_name == 'schedule'
     services:
       datadog-agent:
-        image: datadog/agent:latest
+        image: gcr.io/datadoghq/agent:latest
         ports:
           - 8126:8126
         env:
@@ -34,7 +34,7 @@ jobs:
       - name: Get GitHub App token
         if: github.event_name == 'pull_request'
         id: get_token
-        uses: tibdex/github-app-token@v1.3.0
+        uses: tibdex/github-app-token@v1
         with:
           app_id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
           private_key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
@@ -49,17 +49,27 @@ jobs:
           repo: datadog-api-spec
           status: pending
           context: integration
-      - name: Set up Python 3.8
+      - name: Report source code metadata
+        run: |
+          curl -L "https://github.com/DataDog/datadog-ci/releases/latest/download/datadog-ci_linux-x64" --output ./datadog-ci
+          chmod +x "./datadog-ci"
+          ./datadog-ci git-metadata upload
+        env:
+          DATADOG_API_KEY: ${{ secrets.DD_API_KEY }}
+      - name: Set up Python 3.10
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: "3.10"
+      - name: Upgrade pip
+        run: |
+          python -m pip install --upgrade pip
+          pip install --upgrade wheel setuptools build
       - name: Install
         run: pip install --disable-pip-version-check -e .[apm,tests]
       - name: Test
         run: ./run-tests.sh
         shell: bash
         env:
-          CI: "true"
           DD_AGENT_HOST: localhost
           DD_ENV: prod
           DD_SERVICE: datadog-api-client-python
@@ -68,6 +78,7 @@ jobs:
           DD_TEST_CLIENT_APP_KEY: ${{ secrets.DD_CLIENT_APP_KEY }}
           DD_TRACE_ANALYTICS_ENABLED: "true"
           RECORD: "none"
+          SLEEP_AFTER_REQUEST: ${{ secrets.SLEEP_AFTER_REQUEST }}
           PYTEST_ADDOPTS: "--ddtrace"
           DD_PYTEST_OPERATION_NAME: "test"
       - name: Post failure status check

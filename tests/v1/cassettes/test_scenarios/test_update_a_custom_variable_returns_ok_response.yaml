@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"is_secret":false,"name":"TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1642429348","value":"variable-value"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables
+  response:
+    body:
+      string: '{"is_secret":false,"name":"TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1642429348","value":"variable-value"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"value":"variable-updated"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1642429348
+  response:
+    body:
+      string: '{"is_secret":false,"name":"TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1642429348","value":"variable-updated"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1642429348
+  response:
+    body:
+      string: '{}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

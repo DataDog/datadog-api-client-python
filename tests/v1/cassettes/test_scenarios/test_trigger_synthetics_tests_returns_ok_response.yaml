@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: '{"config":{"assertions":[{"operator":"is","property":"{{ PROPERTY }}","target":"text/html","type":"header"},{"operator":"lessThan","target":2000,"type":"responseTime"},{"operator":"validatesJSONPath","target":{"jsonPath":"topKey","operator":"isNot","targetValue":"0"},"type":"body"}],"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"request":{"certificate":{"cert":{"content":"cert-content","filename":"cert-filename","updatedAt":"2020-10-16T09:23:24.857Z"},"key":{"content":"key-content","filename":"key-filename","updatedAt":"2020-10-16T09:23:24.857Z"}},"headers":{"unique":"testtriggersyntheticstestsreturnsokresponse1645549953"},"method":"GET","proxy":{"headers":{},"url":"https://datadoghq.com"},"timeout":10,"url":"https://datadoghq.com"}},"locations":["aws:us-east-2"],"message":"BDD
+      test payload: synthetics_api_http_test_payload.json","name":"Test-Trigger_Synthetics_tests_returns_OK_response-1645549953","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Trigger_Synthetics_tests_returns_OK_response-1645549953","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"subtype":"http","tags":["testing:api"],"type":"api"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
+  response:
+    body:
+      string: '{"status":"live","public_id":"4fn-sy5-enu","tags":["testing:api"],"org_id":321813,"locations":["aws:us-east-2"],"message":"BDD
+        test payload: synthetics_api_http_test_payload.json","deleted_at":null,"name":"Test-Trigger_Synthetics_tests_returns_OK_response-1645549953","monitor_id":64654481,"type":"api","created_at":"2022-02-22T17:12:34.372050+00:00","modified_at":"2022-02-22T17:12:34.372050+00:00","subtype":"http","config":{"request":{"certificate":{"cert":{"filename":"cert-filename","updatedAt":"2020-10-16T09:23:24.857Z"},"key":{"filename":"key-filename","updatedAt":"2020-10-16T09:23:24.857Z"}},"url":"https://datadoghq.com","headers":{"unique":"testtriggersyntheticstestsreturnsokresponse1645549953"},"proxy":{"url":"https://datadoghq.com","headers":{}},"timeout":10,"method":"GET"},"assertions":[{"operator":"is","property":"{{
+        PROPERTY }}","type":"header","target":"text/html"},{"operator":"lessThan","type":"responseTime","target":2000},{"operator":"validatesJSONPath","type":"body","target":{"operator":"isNot","targetValue":"0","jsonPath":"topKey"}}],"configVariables":[{"pattern":"content-type","type":"text","example":"content-type","name":"PROPERTY"}]},"options":{"accept_self_signed":false,"retry":{"count":3,"interval":10},"min_location_failed":1,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"monitor_priority":5,"monitor_name":"Test-Trigger_Synthetics_tests_returns_OK_response-1645549953","tick_every":60}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"tests":[{"public_id":"4fn-sy5-enu"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/trigger
+  response:
+    body:
+      string: '{"batch_id":null,"results":[{"result_id":"630089876876805805","public_id":"4fn-sy5-enu","location":30005}],"triggered_check_ids":["4fn-sy5-enu"],"locations":[{"display_name":"Ohio
+        (AWS)","name":"aws:us-east-2","region":"Americas","is_active":true,"is_public":true,"id":30005}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"public_ids":["4fn-sy5-enu"]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
+  response:
+    body:
+      string: '{"deleted_tests":[{"deleted_at":"2022-02-22T17:12:40.289621+00:00","public_id":"4fn-sy5-enu"}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

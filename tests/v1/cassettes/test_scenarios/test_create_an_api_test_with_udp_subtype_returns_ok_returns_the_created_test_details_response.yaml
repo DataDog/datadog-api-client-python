@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"config":{"assertions":[{"operator":"is","target":"message","type":"receivedMessage"},{"operator":"lessThan","target":2000,"type":"responseTime"}],"configVariables":[],"request":{"host":"https://datadoghq.com","message":"message","port":443}},"locations":["aws:us-east-2"],"message":"BDD
+      test payload: synthetics_api_test_udp_payload.json","name":"Test-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response-1644495853","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response-1644495853","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"subtype":"udp","tags":["testing:api"],"type":"api"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
+  response:
+    body:
+      string: '{"status":"live","public_id":"7sh-p28-ahf","tags":["testing:api"],"org_id":321813,"locations":["aws:us-east-2"],"message":"BDD
+        test payload: synthetics_api_test_udp_payload.json","deleted_at":null,"name":"Test-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response-1644495853","monitor_id":63812388,"type":"api","created_at":"2022-02-10T12:24:13.755017+00:00","modified_at":"2022-02-10T12:24:13.755017+00:00","subtype":"udp","config":{"request":{"host":"https://datadoghq.com","message":"message","port":443},"assertions":[{"operator":"is","type":"receivedMessage","target":"message"},{"operator":"lessThan","type":"responseTime","target":2000}],"configVariables":[]},"options":{"accept_self_signed":false,"retry":{"count":3,"interval":10},"min_location_failed":1,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"monitor_priority":5,"monitor_name":"Test-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response-1644495853","tick_every":60}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"public_ids":["7sh-p28-ahf"]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
+  response:
+    body:
+      string: '{"deleted_tests":[{"deleted_at":"2022-02-10T12:24:14.268581+00:00","public_id":"7sh-p28-ahf"}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,61 @@
+{%- set refs = get_oneof_models(model) %}
+{%- if refs %}
+def lazy_import():
+{%- for ref in refs %}
+    from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
+{%- endfor %}
+{%- for ref in refs %}
+    globals()["{{ ref }}"] = {{ ref }}
+{%- endfor %}
+{%- endif %}
+
+class {{ name }}(ModelComposed):
+
+{% if model.nullable %}
+    _nullable = True
+{%- endif %}
+
+    def __init__(self, *args, **kwargs):
+        """
+        {{ model.description|indent(8) }}
+{%- for attr, definition, schema in get_oneof_parameters(model) %}
+{# keep new line #}
+        :param {{ attr|attribute_name }}: {{ definition.description|indent(12) }}
+        :type {{ attr|attribute_name }}: {{ get_type_for_attribute(schema, attr, current_name=name) }}{% if definition.nullable %}, none_type{% endif %}{% if attr not in schema.get("required", []) %}, optional{% endif %}
+{%- endfor %}
+        """
+        super().__init__(kwargs)
+
+        self._check_pos_args(args)
+
+    @classmethod
+    def _from_openapi_data(cls, *args, **kwargs):
+        """Helper creating a new instance from a response."""
+
+        self = super({{ name }}, cls)._from_openapi_data(kwargs)
+
+        self._check_pos_args(args)
+
+        return self
+
+    @cached_property
+    def _composed_schemas(_):
+        # we need this here to make our import statements work
+        # we must store _composed_schemas in here so the code is only run
+        # when we invoke this method. If we kept this at the class
+        # level we would get an error because the class level
+        # code would be run when this module is imported, and these composed
+        # classes don't exist yet because their module has not finished
+        # loading
+{%- if refs %}
+        lazy_import()
+{%- endif %}
+        return {
+            "anyOf": [],
+            "allOf": [],
+            "oneOf": [
+            {%- for ref in get_oneof_types(model) %}
+                {{ ref }},
+            {%- endfor %}
+            ],
+        }

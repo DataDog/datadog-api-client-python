@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Test Agent rule","enabled":true,"expression":"open.file.path
+      = sh","name":"testcreateacloudworkloadsecurityagentrulereturnsbadrequestresponse1641924695"},"type":"agent_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
+  response:
+    body:
+      string: '{"errors":["input_validation_error(Field ''expression'' is invalid:
+        rule `testcreateacloudworkloadsecurityagentrulereturnsbadrequestresponse1641924695`
+        definition error: syntax error: 1:18: unexpected token \"sh\" (expected \"~\"))"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

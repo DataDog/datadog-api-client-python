@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Delete_an_API_key_returns_No_Content_response-1641826582"},"type":"api_keys"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/api_keys
+  response:
+    body:
+      string: '{"data":{"type":"api_keys","attributes":{"created_at":"2022-01-10T14:56:22.680333+00:00","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","last4":"xxxx","modified_at":"2022-01-10T14:56:22.680333+00:00","name":"Test-Delete_an_API_key_returns_No_Content_response-1641826582"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"d50a8a66-3864-493c-8808-903141a7faac"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/api_keys/d50a8a66-3864-493c-8808-903141a7faac
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/api_keys/d50a8a66-3864-493c-8808-903141a7faac
+  response:
+    body:
+      string: '{"errors": ["API key not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

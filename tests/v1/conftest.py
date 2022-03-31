@@ -5,5 +5,5 @@ import pytest
 
 
 @pytest.fixture(scope="module")
-def package_name():
-    return "datadog_api_client.v1"
+def api_version():
+    return "v1"

@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"end":1641433848,"message":"Test-Schedule_a_downtime_with_invalid_type_hours-1641430248","recurrence":{"period":1,"type":"hours"},"scope":["*"],"start":1641430248,"timezone":"Etc/UTC"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/downtime
+  response:
+    body:
+      string: '{"errors":["Invalid recurrence type"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

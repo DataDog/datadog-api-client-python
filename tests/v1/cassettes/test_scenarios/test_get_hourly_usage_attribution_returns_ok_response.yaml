@@ -1,0 +1,35 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json;datetime-format=rfc3339
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/usage/hourly-attribution?start_hr=2022-01-08T15%3A25%3A15.014Z&usage_type=infra_host_usage
+  response:
+    body:
+      string: '{"usage":[{"org_name":"DD Integration Tests (321813)","public_id":"fasjyydbcgwwc2uc","hour":"2022-01-08T15:00:00+00:00","tag_config_source":"DD
+        Integration Tests (321813):::project","tags":null,"total_usage_sum":17,"updated_at":"2022-01-09T04","usage_type":"infra_host_usage"},{"org_name":"DD
+        Integration Tests (321813)","public_id":"fasjyydbcgwwc2uc","hour":"2022-01-08T16:00:00+00:00","tag_config_source":"DD
+        Integration Tests (321813):::project","tags":null,"total_usage_sum":17,"updated_at":"2022-01-09T10","usage_type":"infra_host_usage"},{"org_name":"DD
+        Integration Tests (321813)","public_id":"fasjyydbcgwwc2uc","hour":"2022-01-08T17:00:00+00:00","tag_config_source":"DD
+        Integration Tests (321813):::project","tags":null,"total_usage_sum":17,"updated_at":"2022-01-09T10","usage_type":"infra_host_usage"},{"org_name":"DD
+        Integration Tests (321813)","public_id":"fasjyydbcgwwc2uc","hour":"2022-01-08T18:00:00+00:00","tag_config_source":"DD
+        Integration Tests (321813):::project","tags":null,"total_usage_sum":17,"updated_at":"2022-01-09T10","usage_type":"infra_host_usage"},{"org_name":"DD
+        Integration Tests (321813)","public_id":"fasjyydbcgwwc2uc","hour":"2022-01-08T19:00:00+00:00","tag_config_source":"DD
+        Integration Tests (321813):::project","tags":null,"total_usage_sum":17,"updated_at":"2022-01-09T10","usage_type":"infra_host_usage"},{"org_name":"DD
+        Integration Tests (321813)","public_id":"fasjyydbcgwwc2uc","hour":"2022-01-08T20:00:00+00:00","tag_config_source":"DD
+        Integration Tests (321813):::project","tags":null,"total_usage_sum":17,"updated_at":"2022-01-09T16","usage_type":"infra_host_usage"},{"org_name":"DD
+        Integration Tests (321813)","public_id":"fasjyydbcgwwc2uc","hour":"2022-01-08T21:00:00+00:00","tag_config_source":"DD
+        Integration Tests (321813):::project","tags":null,"total_usage_sum":17,"updated_at":"2022-01-09T16","usage_type":"infra_host_usage"},{"org_name":"DD
+        Integration Tests (321813)","public_id":"fasjyydbcgwwc2uc","hour":"2022-01-08T22:00:00+00:00","tag_config_source":"DD
+        Integration Tests (321813):::project","tags":null,"total_usage_sum":17,"updated_at":"2022-01-09T16","usage_type":"infra_host_usage"},{"org_name":"DD
+        Integration Tests (321813)","public_id":"fasjyydbcgwwc2uc","hour":"2022-01-08T23:00:00+00:00","tag_config_source":"DD
+        Integration Tests (321813):::project","tags":null,"total_usage_sum":17,"updated_at":"2022-01-09T16","usage_type":"infra_host_usage"}],"metadata":{"pagination":{"next_record_id":null}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

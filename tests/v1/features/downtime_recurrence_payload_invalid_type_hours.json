@@ -1,0 +1,11 @@
+{
+  "message": "{{ unique }}",
+  "recurrence": {
+    "period": 1,
+    "type": "hours"
+  },
+  "scope": ["*"],
+  "start": {{ timestamp("now") }},
+  "end": {{ timestamp("now + 1h") }},
+  "timezone": "Etc/UTC"
+}

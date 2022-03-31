@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Create_a_ci_pipelines_monitor_returns_OK_response-1641430253","options":{"thresholds":{"critical":1}},"priority":3,"query":"ci-pipelines(\"ci_level:pipeline
+      @git.branch:staging* @ci.status:error\").rollup(\"count\").by(\"@git.branch,@ci.pipeline.name\").last(\"5m\")
+      >= 1","tags":["test:testcreateacipipelinesmonitorreturnsokresponse1641430253","env:ci"],"type":"ci-pipelines
+      alert"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/monitor
+  response:
+    body:
+      string: '{"restricted_roles":null,"tags":["test:testcreateacipipelinesmonitorreturnsokresponse1641430253","env:ci"],"deleted":null,"query":"ci-pipelines(\"ci_level:pipeline
+        @git.branch:staging* @ci.status:error\").rollup(\"count\").by(\"@git.branch,@ci.pipeline.name\").last(\"5m\")
+        >= 1","message":"some message Notify: @hipchat-channel","id":59800609,"multi":true,"name":"Test-Create_a_ci_pipelines_monitor_returns_OK_response-1641430253","created":"2022-01-06T00:50:54.050585+00:00","created_at":1641430254000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2022-01-06T00:50:54.050585+00:00","priority":3,"overall_state_modified":null,"overall_state":"No
+        Data","type":"ci-pipelines alert","options":{"notify_audit":false,"locked":false,"silenced":{},"include_tags":true,"thresholds":{"critical":1},"new_host_delay":300,"notify_no_data":false,"groupby_simple_monitor":false}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/monitor/59800609
+  response:
+    body:
+      string: '{"deleted_monitor_id":59800609}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

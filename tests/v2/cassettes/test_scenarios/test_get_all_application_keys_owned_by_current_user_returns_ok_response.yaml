@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys
+  response:
+    body:
+      string: '{"meta":{"page":{"total_filtered_count":5},"max_allowed_per_user":1000},"data":[{"type":"application_keys","id":"109352f1-8828-5305-8e07-f9224517a443","attributes":{"name":"1PASSWD_SHARED","created_at":"2021-04-15T14:20:28.940731+00:00","last4":"xxxx","scopes":null}},{"type":"application_keys","id":"b35e8f9a-a94b-5b20-8ec2-4b76dd2e13e1","attributes":{"name":"Romain","created_at":"2021-04-19T14:01:09.155025+00:00","last4":"xxxx","scopes":null}},{"type":"application_keys","id":"6e93352a-06eb-4101-9bd2-59455a0c6e60","attributes":{"name":"terraform-config","created_at":"2021-12-17T20:38:35.465545+00:00","last4":"xxxx","scopes":null}},{"type":"application_keys","id":"b630d042-d295-4fb0-ac6a-e1c105857594","attributes":{"name":"Test-Create_an_Application_key_for_current_user_returns_Created_response-1640112920","created_at":"2021-12-21T18:55:20.747757+00:00","last4":"xxxx","scopes":null}},{"type":"application_keys","id":"568341e8-0afc-4ddb-98da-7323223575f2","attributes":{"name":"Test-Typescript-Create_an_Application_key_for_current_user_returns_Created_response-1640112755","created_at":"2021-12-21T18:52:35.271781+00:00","last4":"xxxx","scopes":null}}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

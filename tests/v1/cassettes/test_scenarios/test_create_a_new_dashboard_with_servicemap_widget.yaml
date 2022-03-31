@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"description":"","is_read_only":false,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_servicemap_widget-1641430239","widgets":[{"definition":{"filters":["env:none","environment:*"],"service":"","title":"","title_align":"left","title_size":"16","type":"servicemap"},"layout":{"height":15,"width":47,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":[],"description":"","restricted_roles":[],"author_name":null,"template_variables":[],"is_read_only":false,"id":"9b3-emh-qe4","title":"Test-Create_a_new_dashboard_with_servicemap_widget-1641430239","url":"/dashboard/9b3-emh-qe4/test-createanewdashboardwithservicemapwidget-1641430239","created_at":"2022-01-06T00:50:39.841716+00:00","modified_at":"2022-01-06T00:50:39.841716+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"title_size":"16","service":"","title":"","title_align":"left","filters":["env:none","environment:*"],"type":"servicemap"},"layout":{"y":0,"width":47,"x":0,"height":15},"id":2823265998914096}],"layout_type":"free"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/9b3-emh-qe4
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"9b3-emh-qe4"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

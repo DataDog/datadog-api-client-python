@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Get_all_API_keys_returns_OK_response-1641829852"},"type":"api_keys"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/api_keys
+  response:
+    body:
+      string: '{"data":{"type":"api_keys","attributes":{"created_at":"2022-01-10T15:50:52.732301+00:00","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","last4":"xxxx","modified_at":"2022-01-10T15:50:52.732301+00:00","name":"Test-Get_all_API_keys_returns_OK_response-1641829852"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"263f68dd-7d83-4f8f-8034-18402fb68c2b"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/api_keys?filter=Test-Get_all_API_keys_returns_OK_response-1641829852
+  response:
+    body:
+      string: '{"meta":{"max_allowed":200,"page":{"total_filtered_count":1}},"data":[{"type":"api_keys","attributes":{"created_at":"2022-01-10T15:50:52.732301+00:00","last4":"xxxx","modified_at":"2022-01-10T15:50:52.732301+00:00","name":"Test-Get_all_API_keys_returns_OK_response-1641829852"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"263f68dd-7d83-4f8f-8034-18402fb68c2b"}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/api_keys/263f68dd-7d83-4f8f-8034-18402fb68c2b
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

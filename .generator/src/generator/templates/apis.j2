@@ -1,0 +1,5 @@
+{%- for api in apis %}
+{%- set classname = api.replace(" ", "") + "Api" %}
+from {{ package }}.{{ version }}.api.{{ classname|safe_snake_case }} import {{ classname }}
+{%- endfor %}
+

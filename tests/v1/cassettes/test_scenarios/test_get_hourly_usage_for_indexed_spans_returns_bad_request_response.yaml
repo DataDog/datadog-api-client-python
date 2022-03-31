@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json;datetime-format=rfc3339
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/usage/indexed-spans?start_hr=2022-01-28T09%3A34%3A32.316Z&end_hr=2022-01-26T09%3A34%3A32.316Z
+  response:
+    body:
+      string: '{"errors": ["start_hr [YYYY-MM-DDThh] must be before end_hr [YYYY-MM-DDThh]"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

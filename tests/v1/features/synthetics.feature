@@ -15,406 +15,511 @@ Feature: Synthetics
     And a valid "appKeyAuth" key in the system
     And an instance of "Synthetics" API
 
-  @generated @skip
+  @replay-only @team:DataDog/synthetics-app
+  Scenario: Client is resilient to enum and oneOf deserialization errors
+    Given new "ListTests" request
+    When the request is sent
+    Then the response status is 200 OK - Returns the list of all Synthetic tests.
+    And the response "tests" has length 6
+    And the response "tests[0].config.assertions" has length 3
+    And the response "tests[0].config.assertions[0].operator" is equal to "lessThan"
+    And the response "tests[0].config.assertions[2].operator" is equal to "A non existent operator"
+    And the response "tests[1].config.assertions[0].operator" is equal to "lessThan"
+    And the response "tests[1].config.assertions[1].type" is equal to "A non existent assertion type"
+    And the response "tests[2].options.device_ids" has length 3
+    And the response "tests[2].options.device_ids[2]" is equal to "A non existent device ID"
+    And the response "tests[3].type" is equal to "A non existent test type"
+    And the response "tests[4].config.request.method" is equal to "A non existent method"
+
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a browser test returns "- JSON format is wrong" response
     Given new "CreateSyntheticsBrowserTest" request
-    And body with value {"config": {"assertions": [], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "setCookie": null, "variables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "element"}]}, "locations": [null], "message": "", "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_name": null, "monitor_options": {"renotify_interval": null}, "monitor_priority": null, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": null}, "status": "live", "steps": [{"allowFailure": null, "name": null, "params": null, "timeout": null, "type": "assertCurrentUrl"}], "tags": [null], "type": "browser"}
+    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "", "type": "web", "username": ""}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
-  @generated @skip
+  @team:DataDog/synthetics-app
   Scenario: Create a browser test returns "OK - Returns the created test details." response
     Given new "CreateSyntheticsBrowserTest" request
-    And body with value {"config": {"assertions": [], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "setCookie": null, "variables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "element"}]}, "locations": [null], "message": "", "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_name": null, "monitor_options": {"renotify_interval": null}, "monitor_priority": null, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": null}, "status": "live", "steps": [{"allowFailure": null, "name": null, "params": null, "timeout": null, "type": "assertCurrentUrl"}], "tags": [null], "type": "browser"}
+    And body from file "synthetics_browser_test_payload.json"
     When the request is sent
     Then the response status is 200 OK - Returns the created test details.
+    And the response "name" is equal to "{{ unique }}"
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a browser test returns "Test quota is reached" response
     Given new "CreateSyntheticsBrowserTest" request
-    And body with value {"config": {"assertions": [], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "setCookie": null, "variables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "element"}]}, "locations": [null], "message": "", "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_name": null, "monitor_options": {"renotify_interval": null}, "monitor_priority": null, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": null}, "status": "live", "steps": [{"allowFailure": null, "name": null, "params": null, "timeout": null, "type": "assertCurrentUrl"}], "tags": [null], "type": "browser"}
+    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "", "type": "web", "username": ""}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
     When the request is sent
     Then the response status is 402 Test quota is reached
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a global variable returns "Invalid request" response
     Given new "CreateGlobalVariable" request
-    And body with value {"description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
+    And body with value {"attributes": {"restricted_roles": []}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
     When the request is sent
     Then the response status is 400 Invalid request
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a global variable returns "OK" response
     Given new "CreateGlobalVariable" request
-    And body with value {"description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
+    And body with value {"attributes": {"restricted_roles": []}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a private location returns "OK" response
     Given new "CreatePrivateLocation" request
     And body with value {"description": "Description of private location", "name": "New private location", "tags": ["team:front"]}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a private location returns "Private locations are not activated for the user" response
     Given new "CreatePrivateLocation" request
     And body with value {"description": "Description of private location", "name": "New private location", "tags": ["team:front"]}
     When the request is sent
     Then the response status is 404 Private locations are not activated for the user
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a private location returns "Quota reached for private locations" response
     Given new "CreatePrivateLocation" request
     And body with value {"description": "Description of private location", "name": "New private location", "tags": ["team:front"]}
     When the request is sent
     Then the response status is 402 Quota reached for private locations
 
-  @generated @skip
+  @team:DataDog/synthetics-app
+  Scenario: Create an API HTTP test returns "OK - Returns the created test details." response
+    Given new "CreateSyntheticsAPITest" request
+    And body from file "synthetics_api_http_test_payload.json"
+    When the request is sent
+    Then the response status is 200 OK - Returns the created test details.
+    And the response "name" is equal to "{{ unique }}"
+
+  @team:DataDog/synthetics-app
+  Scenario: Create an API SSL test returns "OK - Returns the created test details." response
+    Given new "CreateSyntheticsAPITest" request
+    And body from file "synthetics_api_ssl_test_payload.json"
+    When the request is sent
+    Then the response status is 200 OK - Returns the created test details.
+    And the response "name" is equal to "{{ unique }}"
+
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Create an API test returns "- JSON format is wrong" response
     Given new "CreateSyntheticsAPITest" request
-    And body with value {"config": {"assertions": [], "configVariables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "global"}], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "steps": [{"allowFailure": null, "assertions": [], "extractedValues": [{"field": "content-type", "name": null, "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}], "isCritical": null, "name": null, "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "subtype": "http"}]}, "locations": [null], "message": null, "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_name": null, "monitor_options": {"renotify_interval": null}, "monitor_priority": null, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": null}, "status": "live", "subtype": "http", "tags": [null], "type": "api"}
+    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Create an API test returns "OK - Returns the created test details." response
     Given new "CreateSyntheticsAPITest" request
-    And body with value {"config":{"assertions":[{"operator":"contains","property":"content-type","target":"application/json","type":"header"},{"operator":"is","target":200,"type":"statusCode"},{"operator":"validatesJSONPath","target":{"jsonPath":"topKey","operator":"isNot","targetValue":"0"},"type":"body"},{"operator":"validatesJSONPath","target":{"jsonPath":"something","operator":"moreThan","targetValue":5},"type":"body"},{"operator":"isNot","target":200,"type":"statusCode"},{"operator":"matches","target":"20[04]","type":"statusCode"},{"operator":"doesNotMatch","target":"20[04]","type":"statusCode"}],"configVariables":[],"request":{"basicAuth":{"password":"secret","username":"admin"},"body":"this is a body","headers":{"Accept":"application/json"},"method":"GET","query":{"foo":"bar"},"timeout":30,"url":"https://www.datadoghq.com"}},"locations":["aws:eu-central-1"],"message":"Notify @datadog.user","name":"{{ unique }}","options":{"follow_redirects":true,"min_location_failed":1,"monitor_options":{"renotify_interval":100},"tick_every":60},"status":"paused","subtype":"http","tags":["foo:bar","baz"],"type":"api"}
+    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
     When the request is sent
     Then the response status is 200 OK - Returns the created test details.
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Create an API test returns "Test quota is reached" response
     Given new "CreateSyntheticsAPITest" request
-    And body with value {"config": {"assertions": [], "configVariables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "global"}], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "steps": [{"allowFailure": null, "assertions": [], "extractedValues": [{"field": "content-type", "name": null, "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}], "isCritical": null, "name": null, "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "subtype": "http"}]}, "locations": [null], "message": null, "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_name": null, "monitor_options": {"renotify_interval": null}, "monitor_priority": null, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": null}, "status": "live", "subtype": "http", "tags": [null], "type": "api"}
+    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
     When the request is sent
     Then the response status is 402 Test quota is reached
 
-  @generated @skip
+  @team:DataDog/synthetics-app
+  Scenario: Create an API test with UDP subtype returns "OK - Returns the created test details." response
+    Given new "CreateSyntheticsAPITest" request
+    And body from file "synthetics_api_test_udp_payload.json"
+    When the request is sent
+    Then the response status is 200 OK - Returns the created test details.
+    And the response "name" is equal to "{{ unique }}"
+
+  @team:DataDog/synthetics-app
+  Scenario: Create an API test with WEBSOCKET subtype returns "OK - Returns the created test details." response
+    Given new "CreateSyntheticsAPITest" request
+    And body from file "synthetics_api_test_websocket_payload.json"
+    When the request is sent
+    Then the response status is 200 OK - Returns the created test details.
+    And the response "name" is equal to "{{ unique }}"
+
+  @team:DataDog/synthetics-app
+  Scenario: Create an API test with multi subtype returns "OK - Returns the created test details." response
+    Given new "CreateSyntheticsAPITest" request
+    And body from file "synthetics_api_test_multi_step_payload.json"
+    When the request is sent
+    Then the response status is 200 OK - Returns the created test details.
+    And the response "name" is equal to "{{ unique }}"
+    And the response "config.steps[0].retry.count" is equal to 5
+    And the response "config.steps[0].retry.interval" is equal to 1000
+
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Delete a global variable returns "JSON format is wrong" response
     Given new "DeleteGlobalVariable" request
-    And request contains "variable_id" parameter from "<PATH>"
+    And request contains "variable_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 JSON format is wrong
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Delete a global variable returns "Not found" response
     Given new "DeleteGlobalVariable" request
-    And request contains "variable_id" parameter from "<PATH>"
+    And request contains "variable_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Delete a global variable returns "OK" response
     Given new "DeleteGlobalVariable" request
-    And request contains "variable_id" parameter from "<PATH>"
+    And request contains "variable_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Delete a private location returns "- Private locations are not activated for the user" response
     Given new "DeletePrivateLocation" request
-    And request contains "location_id" parameter from "<PATH>"
+    And request contains "location_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 - Private locations are not activated for the user
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Delete a private location returns "OK" response
     Given new "DeletePrivateLocation" request
-    And request contains "location_id" parameter from "<PATH>"
+    And request contains "location_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Delete tests returns "- JSON format is wrong" response
     Given new "DeleteTests" request
     And body with value {"public_ids": []}
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Delete tests returns "- Tests to be deleted can't be found" response
     Given new "DeleteTests" request
     And body with value {"public_ids": []}
     When the request is sent
     Then the response status is 404 - Tests to be deleted can't be found
 
-  @generated @skip
+  @skip @team:DataDog/synthetics-app
   Scenario: Delete tests returns "OK." response
-    Given new "DeleteTests" request
-    And body with value {"public_ids": []}
+    Given there is a valid "synthetics_api_test" in the system
+    And new "DeleteTests" request
+    And body with value {"public_ids": ["{{ synthetics_api_test.public_id }}"]}
     When the request is sent
     Then the response status is 200 OK.
+    And the response "deleted_tests[0].public_id" is equal to "{{ synthetics_api_test.public_id }}"
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Edit a browser test returns "- JSON format is wrong" response
     Given new "UpdateBrowserTest" request
-    And request contains "public_id" parameter from "<PATH>"
-    And body with value {"config": {"assertions": [], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "setCookie": null, "variables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "element"}]}, "locations": [null], "message": "", "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_name": null, "monitor_options": {"renotify_interval": null}, "monitor_priority": null, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": null}, "status": "live", "steps": [{"allowFailure": null, "name": null, "params": null, "timeout": null, "type": "assertCurrentUrl"}], "tags": [null], "type": "browser"}
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "", "type": "web", "username": ""}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Edit a browser test returns "- Synthetic Monitoring is not activated for the user" response
     Given new "UpdateBrowserTest" request
-    And request contains "public_id" parameter from "<PATH>"
-    And body with value {"config": {"assertions": [], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "setCookie": null, "variables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "element"}]}, "locations": [null], "message": "", "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_name": null, "monitor_options": {"renotify_interval": null}, "monitor_priority": null, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": null}, "status": "live", "steps": [{"allowFailure": null, "name": null, "params": null, "timeout": null, "type": "assertCurrentUrl"}], "tags": [null], "type": "browser"}
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "", "type": "web", "username": ""}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
     When the request is sent
     Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Edit a browser test returns "OK" response
     Given new "UpdateBrowserTest" request
-    And request contains "public_id" parameter from "<PATH>"
-    And body with value {"config": {"assertions": [], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "setCookie": null, "variables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "element"}]}, "locations": [null], "message": "", "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_name": null, "monitor_options": {"renotify_interval": null}, "monitor_priority": null, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": null}, "status": "live", "steps": [{"allowFailure": null, "name": null, "params": null, "timeout": null, "type": "assertCurrentUrl"}], "tags": [null], "type": "browser"}
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "", "type": "web", "username": ""}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Edit a global variable returns "Invalid request" response
     Given new "EditGlobalVariable" request
-    And request contains "variable_id" parameter from "<PATH>"
-    And body with value {"description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
+    And request contains "variable_id" parameter from "REPLACE.ME"
+    And body with value {"attributes": {"restricted_roles": []}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
     When the request is sent
     Then the response status is 400 Invalid request
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Edit a global variable returns "OK" response
     Given new "EditGlobalVariable" request
-    And request contains "variable_id" parameter from "<PATH>"
-    And body with value {"description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
+    And request contains "variable_id" parameter from "REPLACE.ME"
+    And body with value {"attributes": {"restricted_roles": []}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Edit a private location returns "- Private locations are not activated for the user" response
     Given new "UpdatePrivateLocation" request
-    And request contains "location_id" parameter from "<PATH>"
+    And request contains "location_id" parameter from "REPLACE.ME"
     And body with value {"description": "Description of private location", "name": "New private location", "tags": ["team:front"]}
     When the request is sent
     Then the response status is 404 - Private locations are not activated for the user
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Edit a private location returns "OK" response
     Given new "UpdatePrivateLocation" request
-    And request contains "location_id" parameter from "<PATH>"
+    And request contains "location_id" parameter from "REPLACE.ME"
     And body with value {"description": "Description of private location", "name": "New private location", "tags": ["team:front"]}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Edit an API test returns "- JSON format is wrong" response
     Given new "UpdateAPITest" request
-    And request contains "public_id" parameter from "<PATH>"
-    And body with value {"config": {"assertions": [], "configVariables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "global"}], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "steps": [{"allowFailure": null, "assertions": [], "extractedValues": [{"field": "content-type", "name": null, "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}], "isCritical": null, "name": null, "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "subtype": "http"}]}, "locations": [null], "message": null, "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_name": null, "monitor_options": {"renotify_interval": null}, "monitor_priority": null, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": null}, "status": "live", "subtype": "http", "tags": [null], "type": "api"}
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Edit an API test returns "- Synthetic Monitoring is not activated for the user" response
     Given new "UpdateAPITest" request
-    And request contains "public_id" parameter from "<PATH>"
-    And body with value {"config": {"assertions": [], "configVariables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "global"}], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "steps": [{"allowFailure": null, "assertions": [], "extractedValues": [{"field": "content-type", "name": null, "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}], "isCritical": null, "name": null, "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "subtype": "http"}]}, "locations": [null], "message": null, "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_name": null, "monitor_options": {"renotify_interval": null}, "monitor_priority": null, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": null}, "status": "live", "subtype": "http", "tags": [null], "type": "api"}
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
     When the request is sent
     Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
-  @generated @skip
+  @team:DataDog/synthetics-app
   Scenario: Edit an API test returns "OK" response
-    Given new "UpdateAPITest" request
-    And request contains "public_id" parameter from "<PATH>"
-    And body with value {"config": {"assertions": [], "configVariables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "global"}], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "steps": [{"allowFailure": null, "assertions": [], "extractedValues": [{"field": "content-type", "name": null, "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}], "isCritical": null, "name": null, "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "shouldTrackHops": null, "timeout": null, "url": null}, "subtype": "http"}]}, "locations": [null], "message": null, "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_name": null, "monitor_options": {"renotify_interval": null}, "monitor_priority": null, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": null}, "status": "live", "subtype": "http", "tags": [null], "type": "api"}
+    Given there is a valid "synthetics_api_test" in the system
+    And new "UpdateAPITest" request
+    And request contains "public_id" parameter from "synthetics_api_test.public_id"
+    And body from file "synthetics_api_test_update_payload.json"
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" is equal to "{{ synthetics_api_test.name }}-updated"
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a browser test result returns "- Synthetic is not activated for the user" response
     Given new "GetBrowserTestResult" request
-    And request contains "public_id" parameter from "<PATH>"
-    And request contains "result_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And request contains "result_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 - Synthetic is not activated for the user
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a browser test result returns "OK" response
     Given new "GetBrowserTestResult" request
-    And request contains "public_id" parameter from "<PATH>"
-    And request contains "result_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And request contains "result_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a browser test returns "- Synthetic is not activated for the user" response
     Given new "GetBrowserTest" request
-    And request contains "public_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 - Synthetic is not activated for the user
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a browser test returns "OK" response
     Given new "GetBrowserTest" request
-    And request contains "public_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a browser test's latest results summaries returns "- Synthetic is not activated for the user" response
     Given new "GetBrowserTestLatestResults" request
-    And request contains "public_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 - Synthetic is not activated for the user
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a browser test's latest results summaries returns "OK" response
     Given new "GetBrowserTestLatestResults" request
-    And request contains "public_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a global variable returns "Not found" response
     Given new "GetGlobalVariable" request
-    And request contains "variable_id" parameter from "<PATH>"
+    And request contains "variable_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a global variable returns "OK" response
     Given new "GetGlobalVariable" request
-    And request contains "variable_id" parameter from "<PATH>"
+    And request contains "variable_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a private location returns "- Synthetic private locations are not activated for the user" response
     Given new "GetPrivateLocation" request
-    And request contains "location_id" parameter from "<PATH>"
+    And request contains "location_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 - Synthetic private locations are not activated for the user
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a private location returns "OK" response
     Given new "GetPrivateLocation" request
-    And request contains "location_id" parameter from "<PATH>"
+    And request contains "location_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a test configuration returns "- Synthetic is not activated for the user" response
     Given new "GetTest" request
-    And request contains "public_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 - Synthetic is not activated for the user
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a test configuration returns "OK" response
     Given new "GetTest" request
-    And request contains "public_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get all global variables returns "OK" response
     Given new "ListGlobalVariables" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get all locations (public and private) returns "OK" response
     Given new "ListLocations" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get an API test result returns "- Synthetic is not activated for the user" response
     Given new "GetAPITestResult" request
-    And request contains "public_id" parameter from "<PATH>"
-    And request contains "result_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And request contains "result_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 - Synthetic is not activated for the user
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get an API test result returns "OK" response
     Given new "GetAPITestResult" request
-    And request contains "public_id" parameter from "<PATH>"
-    And request contains "result_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And request contains "result_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @team:DataDog/synthetics-app
+  Scenario: Get an API test result returns result with failure object
+    Given there is a "synthetics_api_test_with_wrong_dns" in the system
+    And the "synthetics_api_test_with_wrong_dns" is triggered
+    And new "GetAPITestResult" request
+    And request contains "public_id" parameter from "synthetics_api_test_with_wrong_dns.public_id"
+    And request contains "result_id" parameter from "synthetics_api_test_with_wrong_dns_result.results[0].result_id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "result.failure.code" is equal to "DNS"
+    And the response "result.failure.message" is equal to "Error during DNS resolution (ENOTFOUND)."
+
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get an API test returns "- Synthetic Monitoring is not activated for the user" response
     Given new "GetAPITest" request
-    And request contains "public_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get an API test returns "OK" response
     Given new "GetAPITest" request
-    And request contains "public_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get an API test's latest results summaries returns "- Synthetic is not activated for the user" response
     Given new "GetAPITestLatestResults" request
-    And request contains "public_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 - Synthetic is not activated for the user
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get an API test's latest results summaries returns "OK" response
     Given new "GetAPITestLatestResults" request
-    And request contains "public_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
+  Scenario: Get details of batch returns "Batch does not exist." response
+    Given new "GetSyntheticsCIBatch" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Batch does not exist.
+
+  @generated @skip @team:DataDog/synthetics-app
+  Scenario: Get details of batch returns "OK" response
+    Given new "GetSyntheticsCIBatch" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get the list of all tests returns "OK - Returns the list of all Synthetic tests." response
     Given new "ListTests" request
     When the request is sent
     Then the response status is 200 OK - Returns the list of all Synthetic tests.
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get the list of all tests returns "Synthetics is not activated for the user." response
     Given new "ListTests" request
     When the request is sent
     Then the response status is 404 Synthetics is not activated for the user.
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Pause or start a test returns "- Synthetic is not activated for the user" response
     Given new "UpdateTestPauseStatus" request
-    And request contains "public_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
     And body with value {"new_status": "live"}
     When the request is sent
     Then the response status is 404 - Synthetic is not activated for the user
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Pause or start a test returns "JSON format is wrong." response
     Given new "UpdateTestPauseStatus" request
-    And request contains "public_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
     And body with value {"new_status": "live"}
     When the request is sent
     Then the response status is 400 JSON format is wrong.
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Pause or start a test returns "OK - Returns a boolean indicating if the update was successful." response
     Given new "UpdateTestPauseStatus" request
-    And request contains "public_id" parameter from "<PATH>"
+    And request contains "public_id" parameter from "REPLACE.ME"
     And body with value {"new_status": "live"}
     When the request is sent
     Then the response status is 200 OK - Returns a boolean indicating if the update was successful.
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
+  Scenario: Trigger Synthetics tests returns "Bad Request" response
+    Given new "TriggerTests" request
+    And body with value {"tests": [{"metadata": {"ci": {"pipeline": {}, "provider": {}}, "git": {}}, "public_id": "aaa-aaa-aaa"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/synthetics-app
+  Scenario: Trigger Synthetics tests returns "OK" response
+    Given there is a valid "synthetics_api_test" in the system
+    And new "TriggerTests" request
+    And body with value {"tests": [{"public_id": "{{ synthetics_api_test.public_id }}"}]}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Trigger tests from CI/CD pipelines returns "JSON format is wrong" response
     Given new "TriggerCITests" request
-    And body with value {"tests": [{"allowInsecureCertificates": null, "basicAuth": {"password": "", "username": ""}, "body": null, "bodyType": null, "cookies": null, "deviceIds": ["laptop_large"], "followRedirects": null, "headers": null, "locations": [null], "metadata": {"ci": {"pipeline": null, "provider": null}, "git": {"branch": null, "commit_sha": null}}, "public_id": "aaa-aaa-aaa", "retry": {"count": null, "interval": null}, "startUrl": null, "variables": null}]}
+    And body with value {"tests": [{"basicAuth": {"password": "", "type": "web", "username": ""}, "deviceIds": ["laptop_large"], "locations": ["aws:eu-west-3"], "metadata": {"ci": {"pipeline": {}, "provider": {}}, "git": {}}, "public_id": "aaa-aaa-aaa", "retry": {}}]}
     When the request is sent
     Then the response status is 400 JSON format is wrong
 
-  @generated @skip
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Trigger tests from CI/CD pipelines returns "OK" response
     Given new "TriggerCITests" request
-    And body with value {"tests": [{"allowInsecureCertificates": null, "basicAuth": {"password": "", "username": ""}, "body": null, "bodyType": null, "cookies": null, "deviceIds": ["laptop_large"], "followRedirects": null, "headers": null, "locations": [null], "metadata": {"ci": {"pipeline": null, "provider": null}, "git": {"branch": null, "commit_sha": null}}, "public_id": "aaa-aaa-aaa", "retry": {"count": null, "interval": null}, "startUrl": null, "variables": null}]}
+    And body with value {"tests": [{"basicAuth": {"password": "", "type": "web", "username": ""}, "deviceIds": ["laptop_large"], "locations": ["aws:eu-west-3"], "metadata": {"ci": {"pipeline": {}, "provider": {}}, "git": {}}, "public_id": "aaa-aaa-aaa", "retry": {}}]}
     When the request is sent
     Then the response status is 200 OK

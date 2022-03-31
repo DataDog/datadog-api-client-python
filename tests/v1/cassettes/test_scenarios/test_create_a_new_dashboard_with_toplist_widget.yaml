@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"description":"","is_read_only":false,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_toplist_widget-1641430242","widgets":[{"definition":{"requests":[{"formulas":[{"formula":"query1","limit":{"count":10,"order":"desc"}}],"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
+      by {service}"}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"toplist"},"layout":{"height":15,"width":47,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":[],"description":"","restricted_roles":[],"author_name":null,"template_variables":[],"is_read_only":false,"id":"d2b-542-pi3","title":"Test-Create_a_new_dashboard_with_toplist_widget-1641430242","url":"/dashboard/d2b-542-pi3/test-createanewdashboardwithtoplistwidget-1641430242","created_at":"2022-01-06T00:50:42.239967+00:00","modified_at":"2022-01-06T00:50:42.239967+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"title_size":"16","title":"","title_align":"left","time":{},"requests":[{"formulas":[{"formula":"query1","limit":{"count":10,"order":"desc"}}],"response_format":"scalar","queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
+        by {service}"}]}],"type":"toplist"},"layout":{"y":0,"width":47,"x":0,"height":15},"id":7585713881554705}],"layout_type":"free"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/d2b-542-pi3
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"d2b-542-pi3"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

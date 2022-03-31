@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"description":null,"is_read_only":false,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_hostmap_widget-1641430234","widgets":[{"definition":{"no_group_hosts":true,"no_metric_hosts":true,"node_type":"host","requests":{"fill":{"q":"avg:system.cpu.user{*}
+      by {host}"}},"style":{"palette":"green_to_orange","palette_flip":false},"title":"","title_align":"left","title_size":"16","type":"hostmap"},"layout":{"height":22,"width":47,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":[],"description":null,"restricted_roles":[],"author_name":null,"template_variables":[],"is_read_only":false,"id":"sjt-c5e-sir","title":"Test-Create_a_new_dashboard_with_hostmap_widget-1641430234","url":"/dashboard/sjt-c5e-sir/test-createanewdashboardwithhostmapwidget-1641430234","created_at":"2022-01-06T00:50:34.551060+00:00","modified_at":"2022-01-06T00:50:34.551060+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"style":{"palette":"green_to_orange","palette_flip":false},"title_size":"16","title":"","title_align":"left","node_type":"host","no_metric_hosts":true,"requests":{"fill":{"q":"avg:system.cpu.user{*}
+        by {host}"}},"no_group_hosts":true,"type":"hostmap"},"layout":{"y":0,"width":47,"x":0,"height":22},"id":7704723778867726}],"layout_type":"free"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/sjt-c5e-sir
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"sjt-c5e-sir"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

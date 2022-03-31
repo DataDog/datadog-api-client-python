@@ -1,0 +1,51 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Get_one_Application_key_owned_by_current_user_returns_OK_response-1641829856"},"type":"application_keys"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys
+  response:
+    body:
+      string: '{"data":{"type":"application_keys","id":"10ac0be9-4298-4e0a-a3c5-7f3cb755f14a","attributes":{"name":"Test-Get_one_Application_key_owned_by_current_user_returns_OK_response-1641829856","created_at":"2022-01-10T15:50:56.909435+00:00","last4":"xxxx","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/10ac0be9-4298-4e0a-a3c5-7f3cb755f14a
+  response:
+    body:
+      string: '{"included":[{"type":"roles","id":"94172442-be03-11e9-a77a-3b7612558ac1","attributes":{"name":"Datadog
+        Admin Role","created_at":"2019-08-13T19:50:19.022791+00:00","modified_at":"2019-08-13T19:50:19.022791+00:00"}},{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"handle":"frog@datadoghq.com","created_at":"2019-10-02T08:15:39.795051+00:00","modified_at":"2020-06-15T12:33:12.884459+00:00","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Active"},"relationships":{"roles":{"data":[{"type":"roles","id":"94172442-be03-11e9-a77a-3b7612558ac1"}]}}}],"data":{"type":"application_keys","id":"10ac0be9-4298-4e0a-a3c5-7f3cb755f14a","attributes":{"name":"Test-Get_one_Application_key_owned_by_current_user_returns_OK_response-1641829856","created_at":"2022-01-10T15:50:56.909435+00:00","last4":"xxxx","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/10ac0be9-4298-4e0a-a3c5-7f3cb755f14a
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

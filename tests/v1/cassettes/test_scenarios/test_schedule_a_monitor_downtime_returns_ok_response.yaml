@@ -1,0 +1,76 @@
+interactions:
+- request:
+    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Schedule_a_monitor_downtime_returns_OK_response-1641829815","options":{"enable_logs_sample":true,"escalation_message":"the
+      situation has escalated","evaluation_delay":700,"groupby_simple_monitor":true,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notify_audit":false,"notify_no_data":false,"renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":24},"priority":3,"query":"logs(\"service:foo
+      AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
+      > 2","tags":["test:testscheduleamonitordowntimereturnsokresponse1641829815","env:ci"],"type":"log
+      alert"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/monitor
+  response:
+    body:
+      string: '{"restricted_roles":null,"tags":["test:testscheduleamonitordowntimereturnsokresponse1641829815","env:ci"],"deleted":null,"query":"logs(\"service:foo
+        AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
+        > 2","message":"some message Notify: @hipchat-channel","id":60342515,"multi":true,"name":"Test-Schedule_a_monitor_downtime_returns_OK_response-1641829815","created":"2022-01-10T15:50:15.883215+00:00","created_at":1641829815000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2022-01-10T15:50:15.883215+00:00","priority":3,"overall_state_modified":null,"overall_state":"No
+        Data","type":"log alert","options":{"notify_audit":false,"locked":false,"timeout_h":24,"renotify_interval":60,"include_tags":true,"no_data_timeframe":null,"silenced":{},"new_host_delay":600,"require_full_window":true,"notify_no_data":false,"enable_logs_sample":true,"groupby_simple_monitor":true,"escalation_message":"the
+        situation has escalated","evaluation_delay":700,"thresholds":{"critical":2.0,"warning":1.0}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"message":"Test-Schedule_a_monitor_downtime_returns_OK_response-1641829815","monitor_id":60342515,"scope":["test:testscheduleamonitordowntimereturnsokresponse1641829815"],"start":1641829815,"timezone":"Etc/UTC"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/downtime
+  response:
+    body:
+      string: '{"recurrence":null,"end":null,"monitor_tags":["*"],"child_id":null,"canceled":null,"monitor_id":60342515,"created":1641829816,"org_id":321813,"modified":1641829816,"disabled":false,"start":1641829815,"creator_id":1445416,"parent_id":null,"timezone":"Etc/UTC","active":true,"scope":["test:testscheduleamonitordowntimereturnsokresponse1641829815"],"message":"Test-Schedule_a_monitor_downtime_returns_OK_response-1641829815","downtime_type":2,"id":1672791314,"updater_id":null}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/downtime/1672791314
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/monitor/60342515
+  response:
+    body:
+      string: '{"deleted_monitor_id":60342515}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

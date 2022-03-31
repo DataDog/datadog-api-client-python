@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"description":"","is_read_only":false,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_scatterplot_widget-1641430239","widgets":[{"definition":{"color_by_groups":[],"requests":{"table":{"formulas":[{"alias":"","dimension":"x","formula":"query1"},{"alias":"","dimension":"y","formula":"query2"}],"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
+      by {service}"},{"aggregator":"avg","data_source":"metrics","name":"query2","query":"avg:system.mem.used{*}
+      by {service}"}],"response_format":"scalar"}},"time":{},"title":"","title_align":"left","title_size":"16","type":"scatterplot","xaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"},"yaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"}},"layout":{"height":15,"width":47,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":[],"description":"","restricted_roles":[],"author_name":null,"template_variables":[],"is_read_only":false,"id":"kif-ema-sua","title":"Test-Create_a_new_dashboard_with_scatterplot_widget-1641430239","url":"/dashboard/kif-ema-sua/test-createanewdashboardwithscatterplotwidget-1641430239","created_at":"2022-01-06T00:50:39.358282+00:00","modified_at":"2022-01-06T00:50:39.358282+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"title_size":"16","yaxis":{"include_zero":true,"scale":"linear","min":"auto","max":"auto"},"title_align":"left","color_by_groups":[],"xaxis":{"include_zero":true,"scale":"linear","min":"auto","max":"auto"},"time":{},"title":"","requests":{"table":{"formulas":[{"alias":"","dimension":"x","formula":"query1"},{"alias":"","dimension":"y","formula":"query2"}],"response_format":"scalar","queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
+        by {service}"},{"aggregator":"avg","data_source":"metrics","name":"query2","query":"avg:system.mem.used{*}
+        by {service}"}]}},"type":"scatterplot"},"layout":{"y":0,"width":47,"x":0,"height":15},"id":1267307721120974}],"layout_type":"free"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/kif-ema-sua
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"kif-ema-sua"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

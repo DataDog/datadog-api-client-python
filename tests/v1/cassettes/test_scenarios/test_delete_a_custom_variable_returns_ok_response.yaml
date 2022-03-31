@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: '{"is_secret":false,"name":"TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1641833861","value":"variable-value"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables
+  response:
+    body:
+      string: '{"is_secret":false,"name":"TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1641833861","value":"variable-value"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1641833861
+  response:
+    body:
+      string: '{}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1641833861
+  response:
+    body:
+      string: '{"errors": ["Custom variable does not exist"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

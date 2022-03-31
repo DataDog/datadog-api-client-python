@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: '{"name":"Test-Create_a_webhooks_integration_returns_OK_response-1642429397","url":"https://example.com/webhook"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/webhooks
+  response:
+    body:
+      string: '{"encode_as":"json","url":"https://example.com/webhook","custom_headers":null,"name":"Test-Create_a_webhooks_integration_returns_OK_response-1642429397","payload":"{\"body\":
+        \"$EVENT_MSG\", \"last_updated\": \"$LAST_UPDATED\", \"event_type\": \"$EVENT_TYPE\",
+        \"title\": \"$EVENT_TITLE\", \"date\": \"$DATE\", \"org\": {\"id\": \"$ORG_ID\",
+        \"name\": \"$ORG_NAME\"}, \"id\": \"$ID\"}"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/webhooks/Test-Create_a_webhooks_integration_returns_OK_response-1642429397
+  response:
+    body:
+      string: '{}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

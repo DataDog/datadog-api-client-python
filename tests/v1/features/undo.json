@@ -97,10 +97,22 @@
       "type": "safe"
     }
   },
+  "DeleteDashboards": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListDashboards": {
     "tag": "Dashboards",
     "undo": {
       "type": "safe"
+    }
+  },
+  "RestoreDashboards": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "CreateDashboard": {
@@ -180,8 +192,13 @@
   "CreateDowntime": {
     "tag": "Downtimes",
     "undo": {
-      "operationId": "TODO",
-      "parameters": [],
+      "operationId": "CancelDowntime",
+      "parameters": [
+        {
+          "name": "downtime_id",
+          "source": "id"
+        }
+      ],
       "type": "unsafe"
     }
   },
@@ -477,6 +494,68 @@
     "tag": "Slack Integration",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "CreateWebhooksIntegrationCustomVariable": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "operationId": "DeleteWebhooksIntegrationCustomVariable",
+      "parameters": [
+        {
+          "name": "custom_variable_name",
+          "source": "name"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteWebhooksIntegrationCustomVariable": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetWebhooksIntegrationCustomVariable": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateWebhooksIntegrationCustomVariable": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateWebhooksIntegration": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "operationId": "DeleteWebhooksIntegration",
+      "parameters": [
+        {
+          "name": "webhook_name",
+          "source": "name"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteWebhooksIntegration": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetWebhooksIntegration": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateWebhooksIntegration": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "safe"
     }
   },
   "ListLogs": {
@@ -842,8 +921,20 @@
       "type": "idempotent"
     }
   },
+  "GetSLOCorrections": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetSLOHistory": {
     "tag": "Service Level Objectives",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSyntheticsCIBatch": {
+    "tag": "Synthetics",
     "undo": {
       "type": "safe"
     }
@@ -919,8 +1010,13 @@
   "CreateSyntheticsBrowserTest": {
     "tag": "Synthetics",
     "undo": {
-      "operationId": "TODO",
-      "parameters": [],
+      "operationId": "DeleteTests",
+      "parameters": [
+        {
+          "name": "body",
+          "template": "{\"public_ids\": [\"{{ public_id }}\"]}"
+        }
+      ],
       "type": "unsafe"
     }
   },
@@ -952,6 +1048,12 @@
     "tag": "Synthetics",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "TriggerTests": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
     }
   },
   "TriggerCITests": {
@@ -1092,6 +1194,12 @@
       "type": "safe"
     }
   },
+  "GetUsageCIApp": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageCloudSecurityPostureManagement": {
     "tag": "Usage Metering",
     "undo": {
@@ -1104,6 +1212,12 @@
       "type": "safe"
     }
   },
+  "GetUsageDBM": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageFargate": {
     "tag": "Usage Metering",
     "undo": {
@@ -1111,6 +1225,12 @@
     }
   },
   "GetUsageHosts": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetHourlyUsageAttribution": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"
@@ -1158,6 +1278,12 @@
       "type": "safe"
     }
   },
+  "GetMonthlyUsageAttribution": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageNetworkFlows": {
     "tag": "Usage Metering",
     "undo": {
@@ -1170,13 +1296,31 @@
       "type": "safe"
     }
   },
+  "GetUsageOnlineArchive": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageProfiling": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"
     }
   },
+  "GetUsageRumUnits": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageRumSessions": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetUsageSDS": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"
@@ -1219,18 +1363,6 @@
     }
   },
   "GetUsageTopAvgMetrics": {
-    "tag": "Usage Metering",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetUsageTrace": {
-    "tag": "Usage Metering",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetTracingWithoutLimits": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"

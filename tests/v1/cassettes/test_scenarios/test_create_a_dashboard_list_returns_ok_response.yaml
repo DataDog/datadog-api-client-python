@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"name":"Test-Create_a_dashboard_list_returns_OK_response-1641430221"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual
+  response:
+    body:
+      string: '{"is_favorite":false,"name":"Test-Create_a_dashboard_list_returns_OK_response-1641430221","dashboard_count":0,"author":{"handle":"frog@datadoghq.com","name":null},"created":"2022-01-06T00:50:21.382205+00:00","type":"manual_dashboard_list","dashboards":null,"modified":"2022-01-06T00:50:21.382231+00:00","id":269879}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual/269879
+  response:
+    body:
+      string: '{"deleted_dashboard_list_id":269879}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

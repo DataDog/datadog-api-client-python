@@ -1,0 +1,6 @@
+{% include "api_info.j2" %}
+
+from {{ package }}.api_client import ApiClient, AsyncApiClient
+from {{ package }}.configuration import Configuration
+from {{ package }}.exceptions import (
+    OpenApiException, ApiAttributeError, ApiTypeError, ApiValueError, ApiKeyError, ApiException)

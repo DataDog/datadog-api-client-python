@@ -3,22 +3,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-import re  # noqa: F401
-import sys  # noqa: F401
-
-from datadog_api_client.v1.model_utils import (  # noqa: F401
-    ApiTypeError,
+from datadog_api_client.model_utils import (
     ModelComposed,
-    ModelNormal,
-    ModelSimple,
     cached_property,
-    change_keys_js_to_python,
-    convert_js_args_to_python_args,
-    date,
-    datetime,
-    file_type,
-    none_type,
-    validate_get_composed_info,
 )
 
 
@@ -32,11 +19,9 @@ def lazy_import():
     from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
     from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
     from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
-    from datadog_api_client.v1.model.geomap_widget_definition_view import GeomapWidgetDefinitionView
     from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
     from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
     from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
-    from datadog_api_client.v1.model.host_map_widget_definition_style import HostMapWidgetDefinitionStyle
     from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
     from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
     from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWidgetDefinition
@@ -44,46 +29,16 @@ def lazy_import():
     from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
     from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
     from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
+    from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
     from datadog_api_client.v1.model.service_map_widget_definition import ServiceMapWidgetDefinition
     from datadog_api_client.v1.model.service_summary_widget_definition import ServiceSummaryWidgetDefinition
-    from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
+    from datadog_api_client.v1.model.sunburst_widget_definition import SunburstWidgetDefinition
     from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
-    from datadog_api_client.v1.model.table_widget_has_search_bar import TableWidgetHasSearchBar
     from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
-    from datadog_api_client.v1.model.timeseries_widget_legend_column import TimeseriesWidgetLegendColumn
-    from datadog_api_client.v1.model.timeseries_widget_legend_layout import TimeseriesWidgetLegendLayout
     from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
-    from datadog_api_client.v1.model.tree_map_color_by import TreeMapColorBy
-    from datadog_api_client.v1.model.tree_map_group_by import TreeMapGroupBy
-    from datadog_api_client.v1.model.tree_map_size_by import TreeMapSizeBy
     from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
-    from datadog_api_client.v1.model.tree_map_widget_definition_type import TreeMapWidgetDefinitionType
-    from datadog_api_client.v1.model.tree_map_widget_request import TreeMapWidgetRequest
-    from datadog_api_client.v1.model.widget import Widget
-    from datadog_api_client.v1.model.widget_axis import WidgetAxis
-    from datadog_api_client.v1.model.widget_color_preference import WidgetColorPreference
-    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
-    from datadog_api_client.v1.model.widget_event import WidgetEvent
-    from datadog_api_client.v1.model.widget_event_size import WidgetEventSize
-    from datadog_api_client.v1.model.widget_grouping import WidgetGrouping
-    from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontalAlign
-    from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
-    from datadog_api_client.v1.model.widget_layout_type import WidgetLayoutType
-    from datadog_api_client.v1.model.widget_margin import WidgetMargin
-    from datadog_api_client.v1.model.widget_marker import WidgetMarker
-    from datadog_api_client.v1.model.widget_message_display import WidgetMessageDisplay
-    from datadog_api_client.v1.model.widget_monitor_summary_sort import WidgetMonitorSummarySort
-    from datadog_api_client.v1.model.widget_node_type import WidgetNodeType
-    from datadog_api_client.v1.model.widget_service_summary_display_format import WidgetServiceSummaryDisplayFormat
-    from datadog_api_client.v1.model.widget_size_format import WidgetSizeFormat
-    from datadog_api_client.v1.model.widget_summary_type import WidgetSummaryType
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.widget_tick_edge import WidgetTickEdge
-    from datadog_api_client.v1.model.widget_time import WidgetTime
-    from datadog_api_client.v1.model.widget_time_windows import WidgetTimeWindows
-    from datadog_api_client.v1.model.widget_vertical_align import WidgetVerticalAlign
-    from datadog_api_client.v1.model.widget_view_mode import WidgetViewMode
-    from datadog_api_client.v1.model.widget_viz_type import WidgetVizType
+    from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
+    from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
 
     globals()["AlertGraphWidgetDefinition"] = AlertGraphWidgetDefinition
     globals()["AlertValueWidgetDefinition"] = AlertValueWidgetDefinition
@@ -94,340 +49,346 @@ def lazy_import():
     globals()["EventTimelineWidgetDefinition"] = EventTimelineWidgetDefinition
     globals()["FreeTextWidgetDefinition"] = FreeTextWidgetDefinition
     globals()["GeomapWidgetDefinition"] = GeomapWidgetDefinition
-    globals()["GeomapWidgetDefinitionView"] = GeomapWidgetDefinitionView
     globals()["GroupWidgetDefinition"] = GroupWidgetDefinition
     globals()["HeatMapWidgetDefinition"] = HeatMapWidgetDefinition
     globals()["HostMapWidgetDefinition"] = HostMapWidgetDefinition
-    globals()["HostMapWidgetDefinitionStyle"] = HostMapWidgetDefinitionStyle
     globals()["IFrameWidgetDefinition"] = IFrameWidgetDefinition
     globals()["ImageWidgetDefinition"] = ImageWidgetDefinition
     globals()["LogStreamWidgetDefinition"] = LogStreamWidgetDefinition
     globals()["MonitorSummaryWidgetDefinition"] = MonitorSummaryWidgetDefinition
     globals()["NoteWidgetDefinition"] = NoteWidgetDefinition
     globals()["QueryValueWidgetDefinition"] = QueryValueWidgetDefinition
-    globals()["SLOWidgetDefinition"] = SLOWidgetDefinition
     globals()["ScatterPlotWidgetDefinition"] = ScatterPlotWidgetDefinition
+    globals()["SLOWidgetDefinition"] = SLOWidgetDefinition
     globals()["ServiceMapWidgetDefinition"] = ServiceMapWidgetDefinition
     globals()["ServiceSummaryWidgetDefinition"] = ServiceSummaryWidgetDefinition
+    globals()["SunburstWidgetDefinition"] = SunburstWidgetDefinition
     globals()["TableWidgetDefinition"] = TableWidgetDefinition
-    globals()["TableWidgetHasSearchBar"] = TableWidgetHasSearchBar
     globals()["TimeseriesWidgetDefinition"] = TimeseriesWidgetDefinition
-    globals()["TimeseriesWidgetLegendColumn"] = TimeseriesWidgetLegendColumn
-    globals()["TimeseriesWidgetLegendLayout"] = TimeseriesWidgetLegendLayout
     globals()["ToplistWidgetDefinition"] = ToplistWidgetDefinition
-    globals()["TreeMapColorBy"] = TreeMapColorBy
-    globals()["TreeMapGroupBy"] = TreeMapGroupBy
-    globals()["TreeMapSizeBy"] = TreeMapSizeBy
     globals()["TreeMapWidgetDefinition"] = TreeMapWidgetDefinition
-    globals()["TreeMapWidgetDefinitionType"] = TreeMapWidgetDefinitionType
-    globals()["TreeMapWidgetRequest"] = TreeMapWidgetRequest
-    globals()["Widget"] = Widget
-    globals()["WidgetAxis"] = WidgetAxis
-    globals()["WidgetColorPreference"] = WidgetColorPreference
-    globals()["WidgetCustomLink"] = WidgetCustomLink
-    globals()["WidgetEvent"] = WidgetEvent
-    globals()["WidgetEventSize"] = WidgetEventSize
-    globals()["WidgetGrouping"] = WidgetGrouping
-    globals()["WidgetHorizontalAlign"] = WidgetHorizontalAlign
-    globals()["WidgetImageSizing"] = WidgetImageSizing
-    globals()["WidgetLayoutType"] = WidgetLayoutType
-    globals()["WidgetMargin"] = WidgetMargin
-    globals()["WidgetMarker"] = WidgetMarker
-    globals()["WidgetMessageDisplay"] = WidgetMessageDisplay
-    globals()["WidgetMonitorSummarySort"] = WidgetMonitorSummarySort
-    globals()["WidgetNodeType"] = WidgetNodeType
-    globals()["WidgetServiceSummaryDisplayFormat"] = WidgetServiceSummaryDisplayFormat
-    globals()["WidgetSizeFormat"] = WidgetSizeFormat
-    globals()["WidgetSummaryType"] = WidgetSummaryType
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["WidgetTickEdge"] = WidgetTickEdge
-    globals()["WidgetTime"] = WidgetTime
-    globals()["WidgetTimeWindows"] = WidgetTimeWindows
-    globals()["WidgetVerticalAlign"] = WidgetVerticalAlign
-    globals()["WidgetViewMode"] = WidgetViewMode
-    globals()["WidgetVizType"] = WidgetVizType
+    globals()["ListStreamWidgetDefinition"] = ListStreamWidgetDefinition
+    globals()["FunnelWidgetDefinition"] = FunnelWidgetDefinition
 
 
 class WidgetDefinition(ModelComposed):
-    """NOTE: This class is auto generated by OpenAPI Generator.
-    Ref: https://openapi-generator.tech
+    def __init__(self, *args, **kwargs):
+        """
+        [Definition of the widget](https://docs.datadoghq.com/dashboards/widgets/).
 
-    Do not edit the class manually.
+        :param alert_id: ID of the alert to use in the widget.
+        :type alert_id: str
 
-    Attributes:
-      allowed_values (dict): The key is the tuple path to the attribute
-          and the for var_name this is (var_name,). The value is a dict
-          with a capitalized key describing the allowed value and an allowed
-          value. These dicts store the allowed enum values.
-      attribute_map (dict): The key is attribute name
-          and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
-      validations (dict): The key is the tuple path to the attribute
-          and the for var_name this is (var_name,). The value is a dict
-          that stores validations for max_length, min_length, max_items,
-          min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
-          inclusive_minimum, and regex.
-      additional_properties_type (tuple): A tuple of classes accepted
-          as additional properties values.
-    """
+        :param time: Time setting for the widget.
+        :type time: WidgetTime, optional
 
-    allowed_values = {}
+        :param title: The title of the widget.
+        :type title: str, optional
 
-    validations = {
-        ("requests",): {
-            "max_items": 1,
-            "min_items": 1,
-        },
-        ("filters",): {
-            "min_items": 1,
-        },
-    }
+        :param title_align: How to align the text on the widget.
+        :type title_align: WidgetTextAlign, optional
+
+        :param title_size: Size of the title.
+        :type title_size: str, optional
+
+        :param type: Type of the alert graph widget.
+        :type type: AlertGraphWidgetDefinitionType
+
+        :param viz_type: Whether to display the Alert Graph as a timeseries or a top list.
+        :type viz_type: WidgetVizType
+
+        :param precision: Number of decimal to show. If not defined, will use the raw value.
+        :type precision: int, optional
+
+        :param text_align: How to align the text on the widget.
+        :type text_align: WidgetTextAlign, optional
+
+        :param unit: Unit to display with the value.
+        :type unit: str, optional
+
+        :param custom_links: List of custom links.
+        :type custom_links: [WidgetCustomLink], optional
+
+        :param requests: Array of one request object to display in the widget.
+
+            See the dedicated [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)
+             to learn how to build the `REQUEST_SCHEMA`.
+        :type requests: [ChangeWidgetRequest]
+
+        :param check: Name of the check to use in the widget.
+        :type check: str
+
+        :param group: Group reporting a single check.
+        :type group: str, optional
+
+        :param group_by: List of tag prefixes to group by in the case of a cluster check.
+        :type group_by: [str], optional
+
+        :param grouping: The kind of grouping to use.
+        :type grouping: WidgetGrouping
+
+        :param tags: List of tags used to filter the groups reporting a cluster check.
+        :type tags: [str], optional
+
+        :param legend_size: (Deprecated) The widget legend was replaced by a tooltip and sidebar.
+        :type legend_size: str, optional
+
+        :param markers: List of markers.
+        :type markers: [WidgetMarker], optional
+
+        :param show_legend: (Deprecated) The widget legend was replaced by a tooltip and sidebar.
+        :type show_legend: bool, optional
+
+        :param xaxis: X Axis controls for the distribution widget.
+        :type xaxis: DistributionWidgetXAxis, optional
+
+        :param yaxis: Y Axis controls for the distribution widget.
+        :type yaxis: DistributionWidgetYAxis, optional
+
+        :param event_size: Size to use to display an event.
+        :type event_size: WidgetEventSize, optional
+
+        :param query: Query to filter the event stream with.
+        :type query: str
+
+        :param tags_execution: The execution method for multi-value filters. Can be either and or or.
+        :type tags_execution: str, optional
+
+        :param color: Color of the text.
+        :type color: str, optional
+
+        :param font_size: Size of the text.
+        :type font_size: str, optional
+
+        :param text: Text to display.
+        :type text: str
+
+        :param style: The style to apply to the widget.
+        :type style: GeomapWidgetDefinitionStyle
+
+        :param view: The view of the world that the map should render.
+        :type view: GeomapWidgetDefinitionView
+
+        :param background_color: Background color of the group title.
+        :type background_color: str, optional
+
+        :param banner_img: URL of image to display as a banner for the group.
+        :type banner_img: str, optional
+
+        :param layout_type: Layout type of the group.
+        :type layout_type: WidgetLayoutType
+
+        :param show_title: Whether to show the title or not.
+        :type show_title: bool, optional
+
+        :param widgets: List of widget groups.
+        :type widgets: [Widget]
+
+        :param events: List of widget events.
+        :type events: [WidgetEvent], optional
+
+        :param no_group_hosts: Whether to show the hosts that don’t fit in a group.
+        :type no_group_hosts: bool, optional
+
+        :param no_metric_hosts: Whether to show the hosts with no metrics.
+        :type no_metric_hosts: bool, optional
+
+        :param node_type: Which type of node to use in the map.
+        :type node_type: WidgetNodeType, optional
+
+        :param notes: Notes on the title.
+        :type notes: str, optional
+
+        :param scope: List of tags used to filter the map.
+        :type scope: [str], optional
+
+        :param url: URL of the iframe.
+        :type url: str
+
+        :param has_background: Whether to display a background or not.
+        :type has_background: bool, optional
+
+        :param has_border: Whether to display a border or not.
+        :type has_border: bool, optional
+
+        :param horizontal_align: Horizontal alignment.
+        :type horizontal_align: WidgetHorizontalAlign, optional
+
+        :param margin: Size of the margins around the image.
+            **Note**: `small` and `large` values are deprecated.
+        :type margin: WidgetMargin, optional
+
+        :param sizing: How to size the image on the widget. The values are based on the image `object-fit` CSS properties.
+            **Note**: `zoom`, `fit` and `center` values are deprecated.
+        :type sizing: WidgetImageSizing, optional
+
+        :param url_dark_theme: URL of the image in dark mode.
+        :type url_dark_theme: str, optional
+
+        :param vertical_align: Vertical alignment.
+        :type vertical_align: WidgetVerticalAlign, optional
+
+        :param columns: Which columns to display on the widget.
+        :type columns: [str], optional
+
+        :param indexes: An array of index names to query in the stream. Use [] to query all indexes at once.
+        :type indexes: [str], optional
+
+        :param logset: ID of the log set to use.
+        :type logset: str, optional
+
+        :param message_display: Amount of log lines to display
+        :type message_display: WidgetMessageDisplay, optional
+
+        :param show_date_column: Whether to show the date column or not
+        :type show_date_column: bool, optional
+
+        :param show_message_column: Whether to show the message column or not
+        :type show_message_column: bool, optional
+
+        :param sort: Which column and order to sort by
+        :type sort: WidgetFieldSort, optional
+
+        :param color_preference: Which color to use on the widget.
+        :type color_preference: WidgetColorPreference, optional
+
+        :param count: The number of monitors to display.
+        :type count: int, optional
+
+        :param display_format: What to display on the widget.
+        :type display_format: WidgetMonitorSummaryDisplayFormat, optional
+
+        :param hide_zero_counts: Whether to show counts of 0 or not.
+        :type hide_zero_counts: bool, optional
+
+        :param show_last_triggered: Whether to show the time that has elapsed since the monitor/group triggered.
+        :type show_last_triggered: bool, optional
+
+        :param start: The start of the list. Typically 0.
+        :type start: int, optional
+
+        :param summary_type: Which summary type should be used.
+        :type summary_type: WidgetSummaryType, optional
+
+        :param content: Content of the note.
+        :type content: str
+
+        :param has_padding: Whether to add padding or not.
+        :type has_padding: bool, optional
+
+        :param show_tick: Whether to show a tick or not.
+        :type show_tick: bool, optional
+
+        :param tick_edge: Define how you want to align the text on the widget.
+        :type tick_edge: WidgetTickEdge, optional
+
+        :param tick_pos: Where to position the tick on an edge.
+        :type tick_pos: str, optional
+
+        :param autoscale: Whether to use auto-scaling or not.
+        :type autoscale: bool, optional
+
+        :param custom_unit: Display a unit of your choice on the widget.
+        :type custom_unit: str, optional
+
+        :param color_by_groups: List of groups used for colors.
+        :type color_by_groups: [str], optional
+
+        :param global_time_target: Defined global time target.
+        :type global_time_target: str, optional
+
+        :param show_error_budget: Defined error budget.
+        :type show_error_budget: bool, optional
+
+        :param slo_id: ID of the SLO displayed.
+        :type slo_id: str, optional
+
+        :param time_windows: Times being monitored.
+        :type time_windows: [WidgetTimeWindows], optional
+
+        :param view_mode: Define how you want the SLO to be displayed.
+        :type view_mode: WidgetViewMode, optional
+
+        :param view_type: Type of view displayed by the widget.
+        :type view_type: str
+
+        :param filters: Your environment and primary tag (or * if enabled for your account).
+        :type filters: [str]
+
+        :param service: The ID of the service you want to map.
+        :type service: str
+
+        :param env: APM environment.
+        :type env: str
+
+        :param show_breakdown: Whether to show the latency breakdown or not.
+        :type show_breakdown: bool, optional
+
+        :param show_distribution: Whether to show the latency distribution or not.
+        :type show_distribution: bool, optional
+
+        :param show_errors: Whether to show the error metrics or not.
+        :type show_errors: bool, optional
+
+        :param show_hits: Whether to show the hits metrics or not.
+        :type show_hits: bool, optional
+
+        :param show_latency: Whether to show the latency metrics or not.
+        :type show_latency: bool, optional
+
+        :param show_resource_list: Whether to show the resource list or not.
+        :type show_resource_list: bool, optional
+
+        :param size_format: Size of the widget.
+        :type size_format: WidgetSizeFormat, optional
+
+        :param span_name: APM span name.
+        :type span_name: str
+
+        :param hide_total: Show the total value in this widget.
+        :type hide_total: bool, optional
+
+        :param legend: Configuration of the legend.
+        :type legend: SunburstWidgetLegend, optional
+
+        :param has_search_bar: Controls the display of the search bar.
+        :type has_search_bar: TableWidgetHasSearchBar, optional
+
+        :param legend_columns: Columns displayed in the legend.
+        :type legend_columns: [TimeseriesWidgetLegendColumn], optional
+
+        :param legend_layout: Layout of the legend.
+        :type legend_layout: TimeseriesWidgetLegendLayout, optional
+
+        :param right_yaxis: Axis controls for the widget.
+        :type right_yaxis: WidgetAxis, optional
+
+        :param color_by: The attribute used to determine color in the widget.
+        :type color_by: TreeMapColorBy, optional
+
+        :param size_by: The attribute used to determine size in the widget.
+        :type size_by: TreeMapSizeBy, optional
+        """
+        super().__init__(kwargs)
+
+        self._check_pos_args(args)
+
+    @classmethod
+    def _from_openapi_data(cls, *args, **kwargs):
+        """Helper creating a new instance from a response."""
+
+        self = super(WidgetDefinition, cls)._from_openapi_data(kwargs)
+
+        self._check_pos_args(args)
+
+        return self
 
     @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (
-            bool,
-            date,
-            datetime,
-            dict,
-            float,
-            int,
-            list,
-            str,
-            none_type,
-        )  # noqa: E501
-
-    _nullable = False
-
-    @cached_property
-    def openapi_types():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-
-        Returns
-            openapi_types (dict): The key is attribute name
-                and the value is attribute type.
-        """
-        return {}
-
-    @cached_property
-    def discriminator():
-        return None
-
-    attribute_map = {}
-
-    required_properties = set(
-        [
-            "_data_store",
-            "_check_type",
-            "_spec_property_naming",
-            "_path_to_item",
-            "_configuration",
-            "_visited_composed_classes",
-            "_composed_instances",
-            "_var_name_to_model_instances",
-            "_additional_properties_model_instances",
-        ]
-    )
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
-        """WidgetDefinition - a model defined in OpenAPI
-
-        Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            time (WidgetTime): [optional]  # noqa: E501
-            title (str): Title of your widget.. [optional]  # noqa: E501
-            title_align (WidgetTextAlign): [optional]  # noqa: E501
-            title_size (str): Size of the title.. [optional]  # noqa: E501
-            precision (int): Number of decimals to show. If not defined, the widget uses the raw value.. [optional]  # noqa: E501
-            text_align (WidgetTextAlign): [optional]  # noqa: E501
-            unit (str): Unit to display with the value.. [optional]  # noqa: E501
-            custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
-            group ([str]): List of tag prefixes to group by.. [optional]  # noqa: E501
-            tags ([str]): List of tags used to filter the groups reporting a cluster check.. [optional]  # noqa: E501
-            legend_size (str): Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".. [optional]  # noqa: E501
-            markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
-            show_legend (bool): (screenboard only) Show the legend for this widget.. [optional]  # noqa: E501
-            xaxis (WidgetAxis): [optional]  # noqa: E501
-            yaxis (WidgetAxis): [optional]  # noqa: E501
-            event_size (WidgetEventSize): [optional]  # noqa: E501
-            tags_execution (str): The execution method for multi-value filters. Can be either and or or.. [optional]  # noqa: E501
-            color (str): Color of the text.. [optional]  # noqa: E501
-            font_size (str): Size of the text.. [optional]  # noqa: E501
-            background_color (str): Background color of the note.. [optional]  # noqa: E501
-            banner_img (str): URL of image to display as a banner for the group.. [optional]  # noqa: E501
-            show_title (bool): Whether to show the title or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            events ([WidgetEvent]): List of widget events.. [optional]  # noqa: E501
-            no_group_hosts (bool): Whether to show the hosts that don’t fit in a group.. [optional]  # noqa: E501
-            no_metric_hosts (bool): Whether to show the hosts with no metrics.. [optional]  # noqa: E501
-            node_type (WidgetNodeType): [optional]  # noqa: E501
-            notes (str): Notes on the title.. [optional]  # noqa: E501
-            scope ([str]): List of tags used to filter the map.. [optional]  # noqa: E501
-            has_background (bool): Whether to display a background or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            has_border (bool): Whether to display a border or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            horizontal_align (WidgetHorizontalAlign): [optional]  # noqa: E501
-            margin (WidgetMargin): [optional]  # noqa: E501
-            sizing (WidgetImageSizing): [optional]  # noqa: E501
-            url_dark_theme (str): URL of the image in dark mode.. [optional]  # noqa: E501
-            vertical_align (WidgetVerticalAlign): [optional]  # noqa: E501
-            columns ([str]): Which columns to display on the widget.. [optional]  # noqa: E501
-            indexes ([str]): An array of index names to query in the stream. Use [] to query all indexes at once.. [optional]  # noqa: E501
-            logset (str): ID of the log set to use.. [optional]  # noqa: E501
-            message_display (WidgetMessageDisplay): [optional]  # noqa: E501
-            show_date_column (bool): Whether to show the date column or not. [optional]  # noqa: E501
-            show_message_column (bool): Whether to show the message column or not. [optional]  # noqa: E501
-            sort (WidgetMonitorSummarySort): [optional]  # noqa: E501
-            color_preference (WidgetColorPreference): [optional]  # noqa: E501
-            count (int): The number of monitors to display.. [optional]  # noqa: E501
-            display_format (WidgetServiceSummaryDisplayFormat): [optional]  # noqa: E501
-            hide_zero_counts (bool): Whether to show counts of 0 or not.. [optional]  # noqa: E501
-            show_last_triggered (bool): Whether to show the time that has elapsed since the monitor/group triggered.. [optional]  # noqa: E501
-            start (int): The start of the list. Typically 0.. [optional]  # noqa: E501
-            summary_type (WidgetSummaryType): [optional]  # noqa: E501
-            has_padding (bool): Whether to add padding or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            show_tick (bool): Whether to show a tick or not.. [optional]  # noqa: E501
-            tick_edge (WidgetTickEdge): [optional]  # noqa: E501
-            tick_pos (str): Where to position the tick on an edge.. [optional]  # noqa: E501
-            autoscale (bool): Whether to use auto-scaling or not.. [optional]  # noqa: E501
-            custom_unit (str): Display a unit of your choice on the widget.. [optional]  # noqa: E501
-            color_by_groups ([str]): List of groups used for colors.. [optional]  # noqa: E501
-            global_time_target (str): Defined global time target.. [optional]  # noqa: E501
-            show_error_budget (bool): Defined error budget.. [optional]  # noqa: E501
-            slo_id (str): ID of the SLO displayed.. [optional]  # noqa: E501
-            time_windows ([WidgetTimeWindows]): Times being monitored.. [optional]  # noqa: E501
-            view_mode (WidgetViewMode): [optional]  # noqa: E501
-            show_breakdown (bool): Whether to show the latency breakdown or not.. [optional]  # noqa: E501
-            show_distribution (bool): Whether to show the latency distribution or not.. [optional]  # noqa: E501
-            show_errors (bool): Whether to show the error metrics or not.. [optional]  # noqa: E501
-            show_hits (bool): Whether to show the hits metrics or not.. [optional]  # noqa: E501
-            show_latency (bool): Whether to show the latency metrics or not.. [optional]  # noqa: E501
-            show_resource_list (bool): Whether to show the resource list or not.. [optional]  # noqa: E501
-            size_format (WidgetSizeFormat): [optional]  # noqa: E501
-            has_search_bar (TableWidgetHasSearchBar): [optional]  # noqa: E501
-            legend_columns ([TimeseriesWidgetLegendColumn]): Columns displayed in the legend.. [optional]  # noqa: E501
-            legend_layout (TimeseriesWidgetLegendLayout): [optional]  # noqa: E501
-            right_yaxis (WidgetAxis): [optional]  # noqa: E501
-            alert_id (str): ID of the alert to use in the widget.. [optional]  # noqa: E501
-            type (TreeMapWidgetDefinitionType): [optional]  # noqa: E501
-            viz_type (WidgetVizType): [optional]  # noqa: E501
-            requests ([TreeMapWidgetRequest]): List of top list widget requests.. [optional]  # noqa: E501
-            check (str): Name of the check to use in the widget.. [optional]  # noqa: E501
-            group_by (TreeMapGroupBy): [optional]  # noqa: E501
-            grouping (WidgetGrouping): [optional]  # noqa: E501
-            query (str): Query to filter the monitors with.. [optional]  # noqa: E501
-            text (str): Text to display.. [optional]  # noqa: E501
-            style (HostMapWidgetDefinitionStyle): [optional]  # noqa: E501
-            view (GeomapWidgetDefinitionView): [optional]  # noqa: E501
-            layout_type (WidgetLayoutType): [optional]  # noqa: E501
-            widgets ([Widget]): List of widget groups.. [optional]  # noqa: E501
-            url (str): URL of the image.. [optional]  # noqa: E501
-            content (str): Content of the note.. [optional]  # noqa: E501
-            view_type (str): Type of view displayed by the widget.. [optional] if omitted the server will use the default value of "detail"  # noqa: E501
-            filters ([str]): Your environment and primary tag (or * if enabled for your account).. [optional]  # noqa: E501
-            service (str): APM service.. [optional]  # noqa: E501
-            env (str): APM environment.. [optional]  # noqa: E501
-            span_name (str): APM span name.. [optional]  # noqa: E501
-            color_by (TreeMapColorBy): [optional]  # noqa: E501
-            size_by (TreeMapSizeBy): [optional]  # noqa: E501
-        """
-
-        _check_type = kwargs.pop("_check_type", True)
-        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
-        _path_to_item = kwargs.pop("_path_to_item", ())
-        _configuration = kwargs.pop("_configuration", None)
-        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
-
-        if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
-                % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
-
-        self._data_store = {}
-        self._check_type = _check_type
-        self._spec_property_naming = _spec_property_naming
-        self._path_to_item = _path_to_item
-        self._configuration = _configuration
-        self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
-
-        constant_args = {
-            "_check_type": _check_type,
-            "_path_to_item": _path_to_item,
-            "_spec_property_naming": _spec_property_naming,
-            "_configuration": _configuration,
-            "_visited_composed_classes": self._visited_composed_classes,
-        }
-        required_args = {}
-        model_args = {}
-        model_args.update(required_args)
-        model_args.update(kwargs)
-        composed_info = validate_get_composed_info(constant_args, model_args, self)
-        self._composed_instances = composed_info[0]
-        self._var_name_to_model_instances = composed_info[1]
-        self._additional_properties_model_instances = composed_info[2]
-        unused_args = composed_info[3]
-
-        for var_name, var_value in required_args.items():
-            setattr(self, var_name, var_value)
-        for var_name, var_value in kwargs.items():
-            if (
-                var_name in unused_args
-                and self._configuration is not None
-                and self._configuration.discard_unknown_keys
-                and not self._additional_properties_model_instances
-            ):
-                # discard variable.
-                continue
-            setattr(self, var_name, var_value)
-
-    @cached_property
-    def _composed_schemas():
+    def _composed_schemas(_):
         # we need this here to make our import statements work
         # we must store _composed_schemas in here so the code is only run
         # when we invoke this method. If we kept this at the class
-        # level we would get an error beause the class level
+        # level we would get an error because the class level
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
@@ -454,13 +415,16 @@ class WidgetDefinition(ModelComposed):
                 MonitorSummaryWidgetDefinition,
                 NoteWidgetDefinition,
                 QueryValueWidgetDefinition,
-                SLOWidgetDefinition,
                 ScatterPlotWidgetDefinition,
+                SLOWidgetDefinition,
                 ServiceMapWidgetDefinition,
                 ServiceSummaryWidgetDefinition,
+                SunburstWidgetDefinition,
                 TableWidgetDefinition,
                 TimeseriesWidgetDefinition,
                 ToplistWidgetDefinition,
                 TreeMapWidgetDefinition,
+                ListStreamWidgetDefinition,
+                FunnelWidgetDefinition,
             ],
         }

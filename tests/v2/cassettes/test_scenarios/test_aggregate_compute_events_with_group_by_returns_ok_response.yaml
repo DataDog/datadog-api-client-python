@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"compute":[{"aggregation":"count","interval":"5m","type":"timeseries"}],"filter":{"from":"now-15m","indexes":["main"],"query":"*","to":"now"},"group_by":[{"facet":"host","missing":"miss","sort":{"aggregation":"pc90","metric":"@duration","order":"asc","type":"measure"},"total":"recall"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
+  response:
+    body:
+      string: '{"meta":{"status":"done","request_id":"pddv1ChZjajVGdnloOFRydURjT01RakZPRGJRIiwKHAubHcvWGIRKaJwUb1Qgc-peEYojhMk6Z3opAHYSDOMLcdT0IUoqNWaYdA","elapsed":10},"data":{"buckets":[{"computes":{"c0":[{"value":28,"time":"2022-02-23T10:40:00.000Z"},{"value":80,"time":"2022-02-23T10:45:00.000Z"},{"value":80,"time":"2022-02-23T10:50:00.000Z"},{"value":42,"time":"2022-02-23T10:55:00.000Z"}]},"by":{"host":"07266d86-ec5b-40cb-4060-e4d9"}},{"computes":{"c0":[{"value":32,"time":"2022-02-23T10:40:00.000Z"},{"value":80,"time":"2022-02-23T10:45:00.000Z"},{"value":80,"time":"2022-02-23T10:50:00.000Z"},{"value":40,"time":"2022-02-23T10:55:00.000Z"}]},"by":{"host":"4a5a50c3-5d34-4009-74aa-38d8"}},{"computes":{"c0":[{"value":28,"time":"2022-02-23T10:40:00.000Z"},{"value":80,"time":"2022-02-23T10:45:00.000Z"},{"value":80,"time":"2022-02-23T10:50:00.000Z"},{"value":44,"time":"2022-02-23T10:55:00.000Z"}]},"by":{"host":"3a1410f9-5b3b-44a8-52bc-5269"}},{"computes":{"c0":[{"value":32,"time":"2022-02-23T10:40:00.000Z"},{"value":80,"time":"2022-02-23T10:45:00.000Z"},{"value":80,"time":"2022-02-23T10:50:00.000Z"},{"value":42,"time":"2022-02-23T10:55:00.000Z"}]},"by":{"host":"e17b600e-a2cf-4d23-4eb2-e648"}},{"computes":{"c0":[{"value":28,"time":"2022-02-23T10:40:00.000Z"},{"value":80,"time":"2022-02-23T10:45:00.000Z"},{"value":80,"time":"2022-02-23T10:50:00.000Z"},{"value":44,"time":"2022-02-23T10:55:00.000Z"}]},"by":{"host":"3a6c8709-df68-49b2-5992-351d"}},{"computes":{"c0":[{"value":28,"time":"2022-02-23T10:40:00.000Z"},{"value":80,"time":"2022-02-23T10:45:00.000Z"},{"value":80,"time":"2022-02-23T10:50:00.000Z"},{"value":42,"time":"2022-02-23T10:55:00.000Z"}]},"by":{"host":"f301493f-d994-4237-4a99-b382"}},{"computes":{"c0":[{"value":28,"time":"2022-02-23T10:40:00.000Z"},{"value":80,"time":"2022-02-23T10:45:00.000Z"},{"value":80,"time":"2022-02-23T10:50:00.000Z"},{"value":42,"time":"2022-02-23T10:55:00.000Z"}]},"by":{"host":"4d77dd12-b3be-41fd-753b-fcbb"}},{"computes":{"c0":[{"value":32,"time":"2022-02-23T10:40:00.000Z"},{"value":80,"time":"2022-02-23T10:45:00.000Z"},{"value":80,"time":"2022-02-23T10:50:00.000Z"},{"value":40,"time":"2022-02-23T10:55:00.000Z"}]},"by":{"host":"2961e831-36b5-4c2b-5853-b6d5"}},{"computes":{"c0":[{"value":32,"time":"2022-02-23T10:40:00.000Z"},{"value":80,"time":"2022-02-23T10:45:00.000Z"},{"value":80,"time":"2022-02-23T10:50:00.000Z"},{"value":42,"time":"2022-02-23T10:55:00.000Z"}]},"by":{"host":"cec04667-4f47-4d64-4bf1-b449"}},{"computes":{"c0":[{"value":32,"time":"2022-02-23T10:40:00.000Z"},{"value":80,"time":"2022-02-23T10:45:00.000Z"},{"value":80,"time":"2022-02-23T10:50:00.000Z"},{"value":42,"time":"2022-02-23T10:55:00.000Z"}]},"by":{"host":"352e5c4f-9d7d-4b5e-414f-4199"}},{"computes":{"c0":[{"value":332,"time":"2022-02-23T10:40:00.000Z"},{"value":880,"time":"2022-02-23T10:45:00.000Z"},{"value":880,"time":"2022-02-23T10:50:00.000Z"},{"value":460,"time":"2022-02-23T10:55:00.000Z"}]},"by":{"host":"recall"}}]}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

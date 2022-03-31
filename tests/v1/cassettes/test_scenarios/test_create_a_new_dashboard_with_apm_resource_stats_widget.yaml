@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_apm_resource_stats_widget-1641430229","widgets":[{"definition":{"requests":[{"queries":[{"data_source":"apm_resource_stats","env":"ci","group_by":["resource_name"],"name":"query1","operation_name":"cassandra.query","primary_tag_name":"datacenter","primary_tag_value":"edge-eu1.prod.dog","service":"cassandra","stat":"hits"}],"response_format":"scalar"}],"title":"","title_align":"left","title_size":"16","type":"query_table"},"layout":{"height":4,"width":4,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"cpv-tgq-6ui","title":"Test-Create_a_new_dashboard_with_apm_resource_stats_widget-1641430229","url":"/dashboard/cpv-tgq-6ui/test-createanewdashboardwithapmresourcestatswidget-1641430229","created_at":"2022-01-06T00:50:29.319306+00:00","modified_at":"2022-01-06T00:50:29.319306+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"type":"query_table","requests":[{"response_format":"scalar","queries":[{"primary_tag_value":"edge-eu1.prod.dog","stat":"hits","data_source":"apm_resource_stats","name":"query1","service":"cassandra","group_by":["resource_name"],"env":"ci","primary_tag_name":"datacenter","operation_name":"cassandra.query"}]}],"title_align":"left","title_size":"16","title":""},"layout":{"y":0,"width":4,"x":0,"height":4},"id":8923865513771047}],"layout_type":"ordered"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/cpv-tgq-6ui
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"cpv-tgq-6ui"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

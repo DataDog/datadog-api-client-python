@@ -15,6 +15,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n     \"attribute_key\": \"{{ unique_lower_alnum }}\",\n     \"attribute_value\": \"{{ unique }}\"\n    },\n    \"relationships\": {\n       \"role\": {\n         \"data\": {\n           \"id\": \"{{ role.data.id }}\",\n           \"type\": \"{{ role.data.type }}\"\n         }\n      }\n    },\n    \"type\": \"authn_mappings\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"authn_mapping\" in the system",
+    "key": "authn_mapping",
+    "tag": "AuthN Mappings",
+    "operationId": "CreateAuthNMapping"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n    },\n    \"type\": \"application_keys\"\n  }\n}"
       }
     ],
@@ -22,6 +34,38 @@
     "key": "application_key",
     "tag": "Key Management",
     "operationId": "CreateCurrentUserApplicationKey"
+  },
+  {
+    "parameters": [
+      {
+        "name": "dashboard_list_id",
+        "source": "dashboard_list.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"dashboards\": [\n    {\n      \"id\": \"{{ dashboard.id }}\",\n      \"type\": \"custom_timeboard\"\n    }\n  ]\n}"
+      }
+    ],
+    "step": "the \"dashboard_list\" has the \"dashboard\"",
+    "key": "dashboard_list_dashboard",
+    "tag": "Dashboard Lists",
+    "operationId": "CreateDashboardListItems"
+  },
+  {
+    "parameters": [
+      {
+        "name": "dashboard_list_id",
+        "source": "dashboard_list.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"dashboards\": [\n    {\n      \"id\": \"{{ screenboard_dashboard.id }}\",\n      \"type\": \"custom_screenboard\"\n    }\n  ]\n}"
+      }
+    ],
+    "step": "the \"dashboard_list\" has the \"screenboard_dashboard\"",
+    "key": "dashboard_list_screenboard_dashboard",
+    "tag": "Dashboard Lists",
+    "operationId": "CreateDashboardListItems"
   },
   {
     "parameters": [
@@ -118,6 +162,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"agent_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"My Agent rule\",\n      \"expression\": \"exec.file.name == \\\"sh\\\"\",\n      \"enabled\": true\n     }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"agent_rule\" in the system",
+    "key": "agent_rule",
+    "tag": "Cloud Workload Security",
+    "operationId": "CreateCloudWorkloadSecurityAgentRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"security_filters\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"query\": \"service:{{ unique_alnum }}\",\n      \"exclusion_filters\":[\n        {\n          \"name\": \"Exclude logs from staging\",\n          \"query\": \"source:staging\"\n        }\n     ],\n      \"filtered_data_type\":\"logs\",\n      \"is_enabled\": true\n     }\n  }\n}"
       }
     ],
@@ -130,13 +186,41 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"name\": \"{{ unique }}\",\n  \"queries\": [{\n    \"query\": \"@test:true\",\n    \"aggregation\": \"count\",\n    \"groupByFields\": [],\n    \"distinctFields\": [],\n    \"metric\": \"\"\n  }],\n  \"filters\": [],\n  \"cases\": [{\n    \"name\": \"\",\n    \"status\": \"info\",\n    \"condition\": \"a > 0\",\n    \"notifications\": []\n  }],\n  \"options\": {\n    \"evaluationWindow\": 900,\n    \"keepAlive\": 3600,\n    \"maxSignalDuration\": 86400\n  },\n  \"message\": \"Test rule\",\n  \"tags\": [],\n  \"isEnabled\": true\n}"
+        "value": "{\n  \"name\": \"{{ unique }}\",\n  \"queries\": [{\n    \"query\": \"@test:true\",\n    \"aggregation\": \"count\",\n    \"groupByFields\": [],\n    \"distinctFields\": [],\n    \"metric\": \"\"\n  }],\n  \"filters\": [],\n  \"cases\": [{\n    \"name\": \"\",\n    \"status\": \"info\",\n    \"condition\": \"a > 0\",\n    \"notifications\": []\n  }],\n  \"options\": {\n    \"evaluationWindow\": 900,\n    \"keepAlive\": 3600,\n    \"maxSignalDuration\": 86400\n  },\n  \"message\": \"Test rule\",\n  \"tags\": [],\n  \"isEnabled\": true,\n  \"type\": \"log_detection\"\n}"
       }
     ],
     "step": "there is a valid \"security_rule\" in the system",
     "key": "security_rule",
     "tag": "Security Monitoring",
     "operationId": "CreateSecurityMonitoringRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"email\": \"{{ unique }}@datadoghq.com\",\n      \"title\": \"user title\",\n      \"service_account\": true\n     },\n     \"type\": \"users\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"service_account_user\" in the system",
+    "key": "service_account_user",
+    "tag": "Users",
+    "operationId": "CreateServiceAccount"
+  },
+  {
+    "parameters": [
+      {
+        "name": "service_account_id",
+        "value": "\"{{ service_account_user.data.id }}\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n    },\n    \"type\": \"application_keys\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"service_account_application_key\" for \"service_account_user\"",
+    "key": "service_account_application_key",
+    "tag": "Service Accounts",
+    "operationId": "CreateServiceAccountApplicationKey"
   },
   {
     "parameters": [

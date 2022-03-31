@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"description":null,"is_read_only":false,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_heatmap_widget-1641430233","widgets":[{"definition":{"requests":[{"q":"avg:system.cpu.user{*}
+      by {service}","style":{"palette":"dog_classic"}}],"time":{},"title":"","title_align":"left","title_size":"16","type":"heatmap"},"layout":{"height":15,"width":47,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":[],"description":null,"restricted_roles":[],"author_name":null,"template_variables":[],"is_read_only":false,"id":"itn-x76-j9p","title":"Test-Create_a_new_dashboard_with_heatmap_widget-1641430233","url":"/dashboard/itn-x76-j9p/test-createanewdashboardwithheatmapwidget-1641430233","created_at":"2022-01-06T00:50:34.035679+00:00","modified_at":"2022-01-06T00:50:34.035679+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"title_size":"16","title":"","title_align":"left","time":{},"requests":[{"q":"avg:system.cpu.user{*}
+        by {service}","style":{"palette":"dog_classic"}}],"type":"heatmap"},"layout":{"y":0,"width":47,"x":0,"height":15},"id":3967109255591210}],"layout_type":"free"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/itn-x76-j9p
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"itn-x76-j9p"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

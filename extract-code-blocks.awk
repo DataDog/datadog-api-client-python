@@ -32,11 +32,12 @@ function camel(value) {
     # NOTE special cases for all caps groups which we can't handle otherwise
     gsub("Aws", "AWS", head);
     gsub("Gcp", "GCP", head);
+    gsub("Slo", "SLO", head);
     return head;
 }
 
 /^# datadog_api_client\.v[0-9]*\.(.+)Api/ {
-    tag = slug(substr($2, 23, length($2)-25));
+    tag = tolower(slug(substr($2, 23, length($2)-25)));
 }
 /^##? \*\*.+\*\*/ {
     operation_id = camel(substr($2, 3, length($2)-4));
@@ -48,7 +49,11 @@ function camel(value) {
             close(out_file);
         }
         system("mkdir -p " output "/" tag);
-        out_file=output "/" tag "/" operation_id ".pybeta";
+        out_file=output "/" tag "/" operation_id ".py";
+        if (system("[ -f " out_file " ]") == 0) {
+            printf "skipped: "
+            in_code_block = 0;
+        }
         print out_file;
     } else {
         print "Can't parse " FILENAME > "/dev/stderr"

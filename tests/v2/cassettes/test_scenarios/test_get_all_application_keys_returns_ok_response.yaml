@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Get_all_Application_keys_returns_OK_response-1641829854"},"type":"application_keys"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys
+  response:
+    body:
+      string: '{"data":{"type":"application_keys","id":"ef21234e-4593-402a-9d2c-c74f365ad331","attributes":{"name":"Test-Get_all_Application_keys_returns_OK_response-1641829854","created_at":"2022-01-10T15:50:54.691829+00:00","last4":"xxxx","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/application_keys
+  response:
+    body:
+      string: '{"meta":{"page":{"total_filtered_count":21},"max_allowed_per_user":1000},"data":[{"type":"application_keys","id":"109352f1-8828-5305-8e07-f9224517a443","attributes":{"name":"1PASSWD_SHARED","created_at":"2021-04-15T14:20:28.940731+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"application_keys","id":"2e7607a6-0589-506d-a2eb-031267b12758","attributes":{"name":"datadog-api-client-go
+        azp","created_at":"2021-04-15T15:51:25.012740+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},{"type":"application_keys","id":"9550d220-6483-515b-a59c-fb1985ab84af","attributes":{"name":"datadog-api-client-java
+        azp","created_at":"2021-04-15T15:51:06.920975+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},{"type":"application_keys","id":"b6c79d32-2a4a-5549-b2d2-f9ca9da5533b","attributes":{"name":"datadog-api-client-python
+        azp","created_at":"2021-04-16T12:36:45.731594+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},{"type":"application_keys","id":"3ca848d1-0392-5776-955a-8e46d9bfc1c9","attributes":{"name":"datadog-api-client-ruby
+        azp","created_at":"2021-04-16T07:37:26.812295+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},{"type":"application_keys","id":"cdc6cacf-b958-50f7-8a50-bdf3e5b003f4","attributes":{"name":"datadog-api-client-typescript
+        azp","created_at":"2021-04-16T07:52:35.988358+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},{"type":"application_keys","id":"85c63381-6392-57db-ab31-2e4772882785","attributes":{"name":"datadog-api-spec
+        gh","created_at":"2021-04-16T11:21:35.770268+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},{"type":"application_keys","id":"e0c5cf11-00a7-5937-bd91-af665c665af9","attributes":{"name":"datadog-cloudformation-resources
+        ci","created_at":"2021-07-05T15:06:46.010096+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},{"type":"application_keys","id":"fcc93355-d5a6-5a59-9712-37f6bb662023","attributes":{"name":"datadogpy
+        azp","created_at":"2021-04-15T15:28:27.208937+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},{"type":"application_keys","id":"b231bb6d-e3ee-5fa4-969d-03fea7293d15","attributes":{"name":"Get
+        app keys","created_at":"2021-05-25T09:40:46.767264+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},{"type":"application_keys","id":"666a9e06-0a49-51aa-9f3a-6d4954d38b9f","attributes":{"name":"Hippo","created_at":"2021-04-15T14:19:16.368956+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"35d26b5f-eba0-11e9-a77a-876976ea2f77"}}}},{"type":"application_keys","id":"bedbcfc2-a1f5-53f4-8da0-912dad42be59","attributes":{"name":"Jiri","created_at":"2021-04-16T10:07:24.951636+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"9a56dfbc-009f-11ea-a77b-0b2eff7a464c"}}}},{"type":"application_keys","id":"b35e8f9a-a94b-5b20-8ec2-4b76dd2e13e1","attributes":{"name":"Romain","created_at":"2021-04-19T14:01:09.155025+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"application_keys","id":"589462a7-d1c9-559c-bbda-578b76475cb5","attributes":{"name":"Sherzod","created_at":"2021-04-22T13:21:12.318791+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"6018c832-80a7-11ea-93dd-43183212bc7a"}}}},{"type":"application_keys","id":"6e93352a-06eb-4101-9bd2-59455a0c6e60","attributes":{"name":"terraform-config","created_at":"2021-12-17T20:38:35.465545+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"application_keys","id":"180e1ea3-5079-5fb3-a3d2-3a79ebad9f30","attributes":{"name":"terraform-provider-datadog
+        azp","created_at":"2021-04-15T15:33:01.766357+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},{"type":"application_keys","id":"77184987-1d9b-463f-a96a-68f5d8d68bd0","attributes":{"name":"Test-Create_an_app_key_for_this_service_account_returns_Created_response-1640112926","created_at":"2021-12-21T18:55:26.947587+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"0a71355b-7514-4661-ab6c-e507f15e22cf"}}}},{"type":"application_keys","id":"b630d042-d295-4fb0-ac6a-e1c105857594","attributes":{"name":"Test-Create_an_Application_key_for_current_user_returns_Created_response-1640112920","created_at":"2021-12-21T18:55:20.747757+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"application_keys","id":"ef21234e-4593-402a-9d2c-c74f365ad331","attributes":{"name":"Test-Get_all_Application_keys_returns_OK_response-1641829854","created_at":"2022-01-10T15:50:54.691829+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"application_keys","id":"b7bdfafa-c0e9-48bd-84bc-4ca1e4a09e87","attributes":{"name":"Test-Typescript-Create_an_app_key_for_this_service_account_returns_Created_response-1640112778","created_at":"2021-12-21T18:52:58.717436+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"c612c8b1-6366-439c-a6e3-db50f6806c2e"}}}},{"type":"application_keys","id":"568341e8-0afc-4ddb-98da-7323223575f2","attributes":{"name":"Test-Typescript-Create_an_Application_key_for_current_user_returns_Created_response-1640112755","created_at":"2021-12-21T18:52:35.271781+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/ef21234e-4593-402a-9d2c-c74f365ad331
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

@@ -1,0 +1,155 @@
+{%- set refs = get_references_for_model(model, name) %}
+{%- if refs %}
+def lazy_import():
+{%- for ref in refs %}
+    from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
+{%- endfor %}
+{# keep new line #}
+{%- for ref in refs %}
+    globals()["{{ ref }}"] = {{ ref }}
+{%- endfor %}
+{%- endif %}
+
+class {{ name }}(ModelNormal):
+
+{%- set validation_ns = namespace(started=false) %}
+{%- for attr, definition in model.get("properties", {}).items() %}
+{%- set has_validation = (
+      (not definition.nullable and required) or
+      definition.maxLength is defined or
+      definition.minLength is defined or
+      definition.maximum is defined or
+      definition.minimum is defined or
+      definition.pattern is defined or
+      definition.maxItems is defined or
+      definition.minItems is defined
+    ) %}
+{%- if has_validation %}
+{%- if not validation_ns.started %}
+    validations = {
+{%- set validation_ns.started = true %}
+{%- endif %}
+        "{{ attr|attribute_name }}": {
+{%- if definition.maxLength is defined %}
+            "max_length": {{ definition.maxLength }},
+{%- endif %}
+{%- if definition.minLength is defined %}
+            "min_length": {{ definition.minLength }},
+{%- endif %}
+{%- if definition.maxItems is defined %}
+            "max_items": {{ definition.maxItems }},
+{%- endif %}
+{%- if definition.minItems is defined %}
+            "min_items": {{ definition.minItems }},
+{%- endif %}
+{%- if definition.maximum is defined %}
+            "{% if definition.exclusiveMaximum %}exclusive{% else %}inclusive{% endif %}_maximum": {{ definition.maximum }},
+{%- endif %}
+{%- if definition.minimum is defined %}
+            "{% if definition.exclusiveMinimum %}exclusive{% else %}inclusive{% endif %}_minimum": {{ definition.minimum }},
+{%- endif %}
+        },
+{%- endif %}
+{%- endfor %}
+{%- if validation_ns.started %}
+    }
+{%- endif %}
+
+{%- if model.get("additionalProperties") %}
+    @cached_property
+    def additional_properties_type(_):
+{%- if refs %}
+        lazy_import()
+{%- endif %}
+        return ({{ type_to_python(model["additionalProperties"]) }},)
+{%- endif %}
+
+{%- if model.nullable %}
+    _nullable = True
+{%- endif %}
+
+{%- if model.properties %}
+    @cached_property
+    def openapi_types(_):
+{%- if refs %}
+        lazy_import()
+{%- endif %}
+        return {
+{%- for attr in model.properties %}
+            "{{ attr|attribute_name }}": {{ get_types_for_attribute(model, attr, current_name=name) }},
+{%- endfor %}
+        }
+{%- endif %}
+
+{%- for attr in model.properties %}
+{%- if loop.first %}
+    attribute_map = {
+{%- endif %}
+        "{{ attr|attribute_name }}": "{{ attr }}",
+{%- if loop.last %}
+    }
+{%- endif %}
+{%- endfor %}
+
+{%- set read_only_ns = namespace(started=false) %}
+{%- for attr, definition in model.get("properties", {}).items() %}
+        {%- if definition.readOnly %}
+{%- if not read_only_ns.started %}
+    read_only_vars = {
+{%- set read_only_ns.started = true %}
+{%- endif %}
+        "{{ attr|attribute_name }}",
+        {%- endif %}
+{%- endfor %}
+{%- if read_only_ns.started %}
+    }
+{%- endif %}
+
+    def __init__(self,
+{%- for attr, definition in model.get("properties", {}).items() %}
+        {%- if attr in model.get("required", []) and (definition.get("default") == None or definition.enum) %} {{ attr|attribute_name }},{% endif %}
+{%- endfor %} *args, **kwargs):
+        """
+        {{ model.description.replace("\\", "\\\\")|indent(8) }}
+{%- for attr, definition in model.get("properties", {}).items() %}
+{# keep new line #}
+        :param {{ attr|attribute_name }}: {{ definition.description|indent(12) }}
+        :type {{ attr|attribute_name }}: {{ get_type_for_attribute(model, attr, current_name=name) }}{% if definition.nullable %}, none_type{% endif %}{% if attr not in model.get("required", []) %}, optional{% endif %}
+{%- endfor %}
+        """
+        super().__init__(kwargs)
+
+{%- for attr, definition in model.get("properties", {}).items() %}
+        {%- if attr in model.get("required", []) and definition.get("default") != None and not definition.enum %}
+        {{ attr|attribute_name }} = kwargs.get("{{ attr|attribute_name }}", {{ definition["default"]|format_value }})
+        {%- endif %}
+{%- endfor %}
+
+        self._check_pos_args(args)
+
+{% for attr in model.properties %}
+        {%- if attr in model.get("required", []) %}
+        self.{{ attr|attribute_name }} = {{ attr|attribute_name }}{% endif %}
+{%- endfor %}
+
+    @classmethod
+    def _from_openapi_data(cls,
+{%- for attr, definition in model.get("properties", {}).items() %}
+        {%- if attr in model.get("required", []) and (definition.get("default") == None or definition.enum) %} {{ attr|attribute_name }},{% endif %}
+{%- endfor %} *args, **kwargs):
+        """Helper creating a new instance from a response."""
+{%- for attr, definition in model.get("properties", {}).items() %}
+        {%- if attr in model.get("required", []) and definition.get("default") != None and not definition.enum %}
+        {{ attr|attribute_name }} = kwargs.get("{{ attr|attribute_name }}", {{ definition["default"]|format_value }})
+        {%- endif %}
+{%- endfor %}
+
+        self = super({{ name }}, cls)._from_openapi_data(kwargs)
+
+        self._check_pos_args(args)
+
+{% for attr in model.properties %}
+        {%- if attr in model.get("required", []) %}
+        self.{{ attr|attribute_name }} = {{ attr|attribute_name }}{% endif %}
+{%- endfor %}
+        return self

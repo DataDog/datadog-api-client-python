@@ -1,129 +1,37 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"compute":{"aggregation_type":"count"},"filter":{"query":"source:Test-Update_a_log_based_metric_returns_OK_response-1618572734"}},"id":"Test-Update_a_log_based_metric_returns_OK_response-1618572734","type":"logs_metrics"}}'
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"count"},"filter":{"query":"source:Test-Update_a_log_based_metric_returns_OK_response-1642429227"}},"id":"Test-Update_a_log_based_metric_returns_OK_response-1642429227","type":"logs_metrics"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '245'
+      - application/json
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '5536740900455914768'
-      x-datadog-trace-id:
-      - '9123706114407913677'
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/config/metrics
   response:
     body:
-      string: '{"data":{"id":"Test_Update_a_log_based_metric_returns_OK_response_1618572734","attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_returns_OK_response-1618572734"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
+      string: '{"data":{"attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_returns_OK_response-1642429227"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics","id":"Test_Update_a_log_based_metric_returns_OK_response_1642429227"}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '259'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
-      - application/json;charset=utf-8
-      date:
-      - Fri, 16 Apr 2021 11:32:15 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
-      x-dd-version:
-      - '35.4327367'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '100'
-      x-ratelimit-period:
-      - '3600'
-      x-ratelimit-remaining:
-      - '71'
-      x-ratelimit-reset:
-      - '1666'
+      - application/json
     status:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_returns_OK_response-1618572734-updated"}},"type":"logs_metrics"}}'
+    body: '{"data":{"attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_returns_OK_response-1642429227-updated"}},"type":"logs_metrics"}}'
     headers:
       accept:
-      - application/json, */*;q=0.8
-      connection:
-      - close
-      content-length:
-      - '145'
+      - application/json
       content-type:
       - application/json
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '3636589976653094606'
-      x-datadog-trace-id:
-      - '9123706114407913677'
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Update_a_log_based_metric_returns_OK_response_1618572734
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Update_a_log_based_metric_returns_OK_response_1642429227
   response:
     body:
-      string: '{"data":{"id":"Test_Update_a_log_based_metric_returns_OK_response_1618572734","attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_returns_OK_response-1618572734-updated"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
+      string: '{"data":{"attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_returns_OK_response-1642429227-updated"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics","id":"Test_Update_a_log_based_metric_returns_OK_response_1642429227"}}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '267'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
-      - application/json;charset=utf-8
-      date:
-      - Fri, 16 Apr 2021 11:32:15 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
-      x-dd-version:
-      - '35.4327367'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '100'
-      x-ratelimit-period:
-      - '3600'
-      x-ratelimit-remaining:
-      - '70'
-      x-ratelimit-reset:
-      - '1665'
+      - application/json
     status:
       code: 200
       message: OK
@@ -131,57 +39,15 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
-      x-datadog-parent-id:
-      - '5916166563492954344'
-      x-datadog-trace-id:
-      - '9123706114407913677'
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Update_a_log_based_metric_returns_OK_response_1618572734
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Update_a_log_based_metric_returns_OK_response_1642429227
   response:
     body:
       string: '{}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-disposition:
-      - inline
-      content-length:
-      - '2'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
-      - application/json;charset=utf-8
-      date:
-      - Fri, 16 Apr 2021 11:32:15 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - F5gm0Rce1/Abr9/0Fw8HAqWfiz0FdiH8er/AXnN6lOn3L6KyGgbsLCwgPlob1No8
-      x-dd-version:
-      - '35.4327367'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '100'
-      x-ratelimit-period:
-      - '3600'
-      x-ratelimit-remaining:
-      - '69'
-      x-ratelimit-reset:
-      - '1665'
+      - application/json
     status:
       code: 200
       message: OK

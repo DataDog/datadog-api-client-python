@@ -1,0 +1,106 @@
+{%- set ref = get_type_for_items(model) %}
+{%- if ref  %}
+def lazy_import():
+    from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
+
+    globals()["{{ ref }}"] = {{ ref }}
+{%- endif %}
+
+class {{ name }}(ModelSimple):
+
+{% set validation_ns = namespace(started=false) %}
+{%- set has_validation = (
+      (not model.nullable and required) or
+      model.maxLength is defined or
+      model.minLength is defined or
+      model.maximum is defined or
+      model.minimum is defined or
+      model.pattern is defined or
+      model.maxItems is defined or
+      model.minItems is defined
+    ) %}
+{%- if has_validation %}
+{%- if not validation_ns.started %}
+    validations = {
+{%- set validation_ns.started = true %}
+{%- endif %}
+        "value": {
+{%- if model.maxLength is defined %}
+            "max_length": {{ model.maxLength }},
+{%- endif %}
+{%- if model.minLength is defined %}
+            "min_length": {{ model.minLength }},
+{%- endif %}
+{%- if model.maxItems is defined %}
+            "max_items": {{ model.maxItems }},
+{%- endif %}
+{%- if model.minItems is defined %}
+            "min_items": {{ model.minItems }},
+{%- endif %}
+{%- if model.maximum is defined %}
+            "inclusive_maximum": {{ model.maximum }},
+{%- endif %}
+{%- if model.minimum is defined %}
+            "inclusive_minimum": {{ model.minimum }},
+{%- endif %}
+        },
+{%- endif %}
+{%- if validation_ns.started %}
+    }
+{%- endif %}
+
+    @cached_property
+    def openapi_types(_):
+{%- if ref %}
+        lazy_import()
+        return {
+            "value": ([{{ ref }}],),
+        }
+{%- else %}
+        return {
+            "value": ([{{ type_to_python(model.get("items")) }}{%- if model["items"].get("nullable") %}, none_type{%- endif %}],),
+        }
+{%- endif %}
+
+    def __init__(self, *args, **kwargs):
+        """
+        {{ model.description|indent(8) }}
+
+        Note that value can be passed either in args or in kwargs, but not in both.
+
+        :param value: {{ model.description }}{%- if "default" in model and model.default != None %} If omitted defaults to "{{ model.default }}".{%- endif %}
+{%- if ref %}
+        :type value: [{{ ref }}]
+{%- else %}
+        :type value: [{{ type_to_python(model.get("items")) }}{%- if model["items"].get("nullable") %}, none_type{%- endif %}]
+{%- endif %}
+        """
+        super().__init__(kwargs)
+
+        if "value" in kwargs:
+            value = kwargs.pop("value")
+        elif args:
+            args = list(args)
+            value = args.pop(0)
+{%- if "default" in model and model.default != None %}
+        else:
+            value = "{{ model.default }}"
+{%- else %}
+        else:
+            raise ApiTypeError(
+                "value is required, but not passed in args or kwargs and doesn't have default",
+                path_to_item=self._path_to_item,
+                valid_classes=(self.__class__,),
+            )
+{%- endif %}
+
+        self._check_pos_args(args)
+
+        self.value = value
+
+        self._check_kw_args(kwargs)
+
+    @classmethod
+    def _from_openapi_data(cls, *args, **kwargs):
+        """Helper creating a new instance from a response."""
+        return cls(*args, **kwargs)

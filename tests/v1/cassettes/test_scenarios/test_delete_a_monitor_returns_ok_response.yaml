@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Delete_a_monitor_returns_OK_response-1641430256","options":{"enable_logs_sample":true,"escalation_message":"the
+      situation has escalated","evaluation_delay":700,"groupby_simple_monitor":true,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notify_audit":false,"notify_no_data":false,"renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":24},"priority":3,"query":"logs(\"service:foo
+      AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
+      > 2","tags":["test:testdeleteamonitorreturnsokresponse1641430256","env:ci"],"type":"log
+      alert"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/monitor
+  response:
+    body:
+      string: '{"restricted_roles":null,"tags":["test:testdeleteamonitorreturnsokresponse1641430256","env:ci"],"deleted":null,"query":"logs(\"service:foo
+        AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
+        > 2","message":"some message Notify: @hipchat-channel","id":59800638,"multi":true,"name":"Test-Delete_a_monitor_returns_OK_response-1641430256","created":"2022-01-06T00:50:56.247027+00:00","created_at":1641430256000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2022-01-06T00:50:56.247027+00:00","priority":3,"overall_state_modified":null,"overall_state":"No
+        Data","type":"log alert","options":{"notify_audit":false,"locked":false,"timeout_h":24,"renotify_interval":60,"include_tags":true,"no_data_timeframe":null,"silenced":{},"new_host_delay":600,"require_full_window":true,"notify_no_data":false,"enable_logs_sample":true,"groupby_simple_monitor":true,"escalation_message":"the
+        situation has escalated","evaluation_delay":700,"thresholds":{"critical":2,"warning":1}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/monitor/59800638
+  response:
+    body:
+      string: '{"deleted_monitor_id":59800638}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/monitor/59800638
+  response:
+    body:
+      string: '{"errors":["Monitor not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

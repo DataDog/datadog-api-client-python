@@ -1,18 +1,3 @@
-# flake8: noqa
-
-# Import all APIs into this package.
-# If you have many APIs here with many many models used in each API this may
-# raise a `RecursionError`.
-# In order to avoid this, import only the API that you directly need like:
-#
-#   from .api.aws_integration_api import AWSIntegrationApi
-#
-# or import this package, but before doing it, use:
-#
-#   import sys
-#   sys.setrecursionlimit(n)
-
-# Import APIs into API package:
 from datadog_api_client.v1.api.aws_integration_api import AWSIntegrationApi
 from datadog_api_client.v1.api.aws_logs_integration_api import AWSLogsIntegrationApi
 from datadog_api_client.v1.api.authentication_api import AuthenticationApi
@@ -42,3 +27,4 @@ from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v1.api.tags_api import TagsApi
 from datadog_api_client.v1.api.usage_metering_api import UsageMeteringApi
 from datadog_api_client.v1.api.users_api import UsersApi
+from datadog_api_client.v1.api.webhooks_integration_api import WebhooksIntegrationApi

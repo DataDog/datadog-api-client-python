@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"config":{"assertions":[{"operator":"isInMoreThan","target":10,"type":"certificate"}],"request":{"host":"datadoghq.com","port":443}},"locations":["aws:us-east-2"],"message":"BDD
+      test payload: synthetics_api_ssl_test_payload.json","name":"Test-Create_an_API_SSL_test_returns_OK_Returns_the_created_test_details_response-1645550411","options":{"accept_self_signed":true,"checkCertificateRevocation":true,"tick_every":60},"subtype":"ssl","tags":["testing:api"],"type":"api"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
+  response:
+    body:
+      string: '{"status":"live","public_id":"t4n-wba-ghj","tags":["testing:api"],"org_id":321813,"locations":["aws:us-east-2"],"message":"BDD
+        test payload: synthetics_api_ssl_test_payload.json","deleted_at":null,"name":"Test-Create_an_API_SSL_test_returns_OK_Returns_the_created_test_details_response-1645550411","monitor_id":64655318,"type":"api","created_at":"2022-02-22T17:20:12.060843+00:00","modified_at":"2022-02-22T17:20:12.060843+00:00","subtype":"ssl","config":{"request":{"host":"datadoghq.com","port":443},"assertions":[{"operator":"isInMoreThan","type":"certificate","target":10}]},"options":{"accept_self_signed":true,"checkCertificateRevocation":true,"tick_every":60}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"public_ids":["t4n-wba-ghj"]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
+  response:
+    body:
+      string: '{"deleted_tests":[{"deleted_at":"2022-02-22T17:20:12.356340+00:00","public_id":"t4n-wba-ghj"}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

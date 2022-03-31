@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_a_formulas_and_functions_change_widget-1641430224","widgets":[{"definition":{"requests":[{"change_type":"absolute","compare_to":"hour_before","formulas":[{"formula":"hour_before(query1)"},{"formula":"query1"}],"increase_good":true,"order_by":"change","order_dir":"desc","queries":[{"compute":{"aggregation":"count"},"data_source":"logs","group_by":[],"indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"change"},"layout":{"height":4,"width":4,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"jfv-7es-bv2","title":"Test-Create_a_new_dashboard_with_a_formulas_and_functions_change_widget-1641430224","url":"/dashboard/jfv-7es-bv2/test-createanewdashboardwithaformulasandfunctionschangewidget-1641430224","created_at":"2022-01-06T00:50:25.077294+00:00","modified_at":"2022-01-06T00:50:25.077294+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"title_size":"16","title":"","title_align":"left","time":{},"requests":[{"formulas":[{"formula":"hour_before(query1)"},{"formula":"query1"}],"order_by":"change","order_dir":"desc","compare_to":"hour_before","response_format":"scalar","increase_good":true,"queries":[{"search":{"query":""},"data_source":"logs","compute":{"aggregation":"count"},"name":"query1","indexes":["*"],"group_by":[]}],"change_type":"absolute"}],"type":"change"},"layout":{"y":0,"width":4,"x":0,"height":4},"id":5329680147350539}],"layout_type":"ordered"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/jfv-7es-bv2
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"jfv-7es-bv2"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

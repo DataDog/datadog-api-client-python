@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/hosts?include_hosts_metadata=true
+  response:
+    body:
+      string: '{"exact_total_matching":true,"total_returned":1,"host_list":[{"last_reported_time":1640288946,"name":"vagrant","is_muted":false,"mute_timeout":null,"apps":["ntp","agent"],"tags_by_source":{"Datadog":["host:vagrant"]},"up":true,"metrics":{"load":0.031666666,"iowait":0.0434962,"cpu":0.6632819},"sources":["agent"],"meta":{"socket-hostname":"vagrant","nixV":["ubuntu","18.04",""],"pythonV":"3.8.11","macV":["","",""],"cpuCores":1,"agent_flavor":"agent","platform":"linux","timezones":["UTC"],"winV":["","",""],"machine":"amd64","install_method":{"tool":"install_script","installer_version":"install_script-1.7.1","tool_version":"install_script"},"fbsdV":["","",""],"gohai":"{\"cpu\":{\"cache_size\":\"8192
+        KB\",\"cpu_cores\":\"1\",\"cpu_logical_processors\":\"1\",\"family\":\"6\",\"mhz\":\"2711.998\",\"model\":\"142\",\"model_name\":\"Intel(R)
+        Core(TM) i7-8559U CPU @ 2.70GHz\",\"stepping\":\"10\",\"vendor_id\":\"GenuineIntel\"},\"filesystem\":[{\"kb_size\":\"3966892\",\"mounted_on\":\"/dev\",\"name\":\"udev\"},{\"kb_size\":\"797396\",\"mounted_on\":\"/run\",\"name\":\"tmpfs\"},{\"kb_size\":\"64800356\",\"mounted_on\":\"/\",\"name\":\"/dev/mapper/vagrant--vg-root\"},{\"kb_size\":\"3986968\",\"mounted_on\":\"/dev/shm\",\"name\":\"tmpfs\"},{\"kb_size\":\"5120\",\"mounted_on\":\"/run/lock\",\"name\":\"tmpfs\"},{\"kb_size\":\"3986968\",\"mounted_on\":\"/sys/fs/cgroup\",\"name\":\"tmpfs\"},{\"kb_size\":\"488245288\",\"mounted_on\":\"/vagrant\",\"name\":\"/vagrant\"},{\"kb_size\":\"797392\",\"mounted_on\":\"/run/user/1000\",\"name\":\"tmpfs\"}],\"memory\":{\"swap_total\":\"1003516kB\",\"total\":\"7973940kB\"},\"network\":{\"interfaces\":[{\"ipv4\":\"10.0.2.15\",\"ipv4-network\":\"10.0.2.0/24\",\"ipv6\":\"fe80::a00:27ff:fec2:be11\",\"ipv6-network\":\"fe80::/64\",\"macaddress\":\"08:00:27:c2:be:11\",\"name\":\"eth0\"},{\"ipv4\":\"192.168.122.1\",\"ipv4-network\":\"192.168.122.0/24\",\"macaddress\":\"52:54:00:6f:1c:bf\",\"name\":\"virbr0\"}],\"ipaddress\":\"10.0.2.15\",\"ipaddressv6\":\"fe80::a00:27ff:fec2:be11\",\"macaddress\":\"08:00:27:c2:be:11\"},\"platform\":{\"GOOARCH\":\"amd64\",\"GOOS\":\"linux\",\"goV\":\"1.16.7\",\"hardware_platform\":\"x86_64\",\"hostname\":\"vagrant\",\"kernel_name\":\"Linux\",\"kernel_release\":\"4.15.0-29-generic\",\"kernel_version\":\"#31-Ubuntu
+        SMP Tue Jul 17 15:39:52 UTC 2018\",\"machine\":\"x86_64\",\"os\":\"GNU/Linux\",\"processor\":\"x86_64\",\"pythonV\":\"2.7.15rc1\"}}","network":null,"logs_agent":{"transport":""},"host_id":1036078308,"agent_version":"7.32.3","processor":"Intel(R)
+        Core(TM) i7-8559U CPU @ 2.70GHz","socket-fqdn":"vagrant.vm.","agent_checks":[["ntp","ntp","ntp:d884b5186b651429","OK","",""]]},"host_name":"vagrant","id":1036078308,"aliases":["vagrant"]}],"total_matching":1}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

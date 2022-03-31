@@ -1,9 +1,55 @@
 repos:
 - repo: local
   hooks:
-  - id: generated
-    name: Do not commit generated files
-    language: fail
-    entry: Unstage generated files with 'git reset --' command
-    files: '^datadog_api_client/v.*'
-    verbose: true
+  - id: generate
+    name: Generate
+    language: system
+    entry: make
+    files: '^(\.generator/.*|\.pre-commit-config\.yaml|Makefile)'
+    pass_filenames: false
+  - id: docs
+    name: Format documentation
+    stages: [manual]
+    language: node
+    language_version: 14.12.0
+    entry: prettier --write --list-different --ignore-unknown README.md
+    "types": [text]
+    files: 'README.md'
+    pass_filenames: false
+    additional_dependencies:
+      # When updating the version of prettier, make sure to check the  pre-commit file
+      # And keep the `entry` here up to date https://github.com/pre-commit/mirrors-prettier/blob/master/.pre-commit-hooks.yaml
+      - prettier@2.5.1
+  - id: api-docs
+    name: Generate API docs
+    stages: [manual]
+    language: python
+    entry: sphinx-apidoc --output-dir docs --force --no-toc --templatedir docs/_templates src/datadog_api_client *apis *models *version.py
+    pass_filenames: false
+    additional_dependencies:
+      - Sphinx
+  - id: generator
+    name: generator
+    language: python
+    entry: bash -c "cd .generator && poetry install && poetry run python -m generator ./schemas/v1/openapi.yaml ./schemas/v2/openapi.yaml -o ../src/"
+    files: "^.generator/(config|schemas/v1|src|poetry.lock|pyproject.toml)"
+    stages: [manual]
+    pass_filenames: false
+    additional_dependencies:
+      - "poetry"
+- repo: https://github.com/psf/black
+  rev: 22.3.0
+  hooks:
+  - id: black
+    stages: [manual]
+    entry: black --fast --line-length 120 src tests
+    files: '^(src|tests)'
+    pass_filenames: false
+- repo: https://github.com/myint/autoflake
+  rev: v1.4
+  hooks:
+  - id: autoflake
+    stages: [manual]
+    entry: autoflake --remove-all-unused-imports --ignore-init-module-imports --in-place --recursive src tests
+    files: '^(src|tests)'
+    pass_filenames: false

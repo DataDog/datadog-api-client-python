@@ -1,5 +1,191 @@
 # Changelog
 
+## 1.10.0 / 2022-03-02
+
+### Fixed
+* Add missing type to enum by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/844
+* Add nullable user relationships to incidents and use this relationship schema for `commander_user` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/799
+* Fix event intake response by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/849
+* Use custom generator by @therve in https://github.com/DataDog/datadog-api-client-python/pull/853
+### Added
+* [Synthetics] Add missing option for SSL tests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/851
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/1.9.0...1.10.0
+
+## 1.9.0 / 2022-02-17
+
+### Fixed
+* Add missing type to `CloudWorkloadSecurityAgentRuleAttributes` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/841
+### Added
+* Add organization metadata to additional Usage API responses by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/809
+* Add support for formula and function in monitors by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/815
+* Add endpoint for managing SAML AuthN mappings by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/813
+* [Synthetics] Add `isCritical` to browser test steps by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/826
+* Add metrics bulk-config endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/818
+* Add support for "estimated usage attribution" by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/839
+* Add org metadata for all hourly usage endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/843
+### Changed
+* Add CSPM usage fields and change properties to nullable doubles by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/795
+* Add synthetics test result failure field by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/811
+* Fix funnel steps definition by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/832
+* Store unknown model properties in `_data_store` map by @therve in https://github.com/DataDog/datadog-api-client-python/pull/837
+* Extract incident meta object by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/838
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/1.8.0...1.9.0
+
+## 1.8.0 / 2022-01-20
+
+* [Added] Add `filter[deleted]` parameter for searching recently deleted dashboards. See [#787](https://github.com/DataDog/datadog-api-client-python/pull/787).
+* [Added] Add support for authentication and proxy options in Synthetics. See [#742](https://github.com/DataDog/datadog-api-client-python/pull/742).
+* [Added] Support formulas and functions in Treemap Widget. See [#782](https://github.com/DataDog/datadog-api-client-python/pull/782).
+* [Added] Add Cloud Workload Security Agent Rules API. See [#769](https://github.com/DataDog/datadog-api-client-python/pull/769).
+* [Added] Add `offset` and `limit` parameters to usage listing endpoint. See [#774](https://github.com/DataDog/datadog-api-client-python/pull/774).
+* [Added] Add monthly usage attribution API spec. See [#754](https://github.com/DataDog/datadog-api-client-python/pull/754).
+* [Added] Add missing hosts metadata fields. See [#747](https://github.com/DataDog/datadog-api-client-python/pull/747).
+* [Added] Add `replay_session_count ` and update documentation for `rum_session_count`. See [#773](https://github.com/DataDog/datadog-api-client-python/pull/773).
+* [Added] Add retry options for a step in Synthetics multistep test. See [#758](https://github.com/DataDog/datadog-api-client-python/pull/758).
+* [Added] Document `author_name` in dashboard response. See [#755](https://github.com/DataDog/datadog-api-client-python/pull/755).
+* [Added] Add organization metadata for RUM sessions usage and expose `rum_browser_and_mobile_session_count`. See [#748](https://github.com/DataDog/datadog-api-client-python/pull/748).
+* [Added] Add endpoint to retrieve hourly usage attribution. See [#724](https://github.com/DataDog/datadog-api-client-python/pull/724).
+* [Added] Add support for scoped application keys. See [#705](https://github.com/DataDog/datadog-api-client-python/pull/705).
+* [Added] Add endpoint for cloning roles. See [#732](https://github.com/DataDog/datadog-api-client-python/pull/732).
+* [Added] Add organization metadata for audit logs, CWS, CSPM, DBM. See [#740](https://github.com/DataDog/datadog-api-client-python/pull/740).
+* [Added] Add `ci-pipelines alert` to monitors enum. See [#731](https://github.com/DataDog/datadog-api-client-python/pull/731).
+* [Added] Add support for sunburst widget in dashboard. See [#736](https://github.com/DataDog/datadog-api-client-python/pull/736).
+* [Added] Add async client to Python. See [#737](https://github.com/DataDog/datadog-api-client-python/pull/737).
+* [Fixed] Clarify required fields for `SyntheticsAPIStep`, `SyntheticsAPITest`, and `SyntheticsBrowserTest`. See [#667](https://github.com/DataDog/datadog-api-client-python/pull/667).
+* [Fixed] Fixes to Cloud Workload Security API. See [#785](https://github.com/DataDog/datadog-api-client-python/pull/785).
+* [Fixed] Make downtime weekdays nullable. See [#761](https://github.com/DataDog/datadog-api-client-python/pull/761).
+* [Fixed] Do type conversion all the time in Python. See [#757](https://github.com/DataDog/datadog-api-client-python/pull/757).
+* [Fixed] Fix a typo in an incident field attribute description. See [#713](https://github.com/DataDog/datadog-api-client-python/pull/713).
+* [Fixed] Fix `SecurityMonitoringSignal.attributes.tags` type. See [#716](https://github.com/DataDog/datadog-api-client-python/pull/716).
+* [Changed] Remove read only fields in `EventCreateRequest`. See [#783](https://github.com/DataDog/datadog-api-client-python/pull/783).
+* [Changed] Change pagination arguments for querying usage attribution. See [#753](https://github.com/DataDog/datadog-api-client-python/pull/753).
+* [Deprecated] Remove session counts from RUM units response. See [#728](https://github.com/DataDog/datadog-api-client-python/pull/728).
+* [Removed] Remove deprecated AgentRule field in Security Rules API for CWS. See [#746](https://github.com/DataDog/datadog-api-client-python/pull/746).
+
+## 1.7.0 / 2021-12-10
+
+* [Added] [dashboards formulas and functions] Add formulas and functions support to change widget. See [#567](https://github.com/DataDog/datadog-api-client-python/pull/567).
+* [Added] Add RUM Units to usage metering API. See [#657](https://github.com/DataDog/datadog-api-client-python/pull/657).
+* [Added] Add trigger synthetics tests endpoint. See [#642](https://github.com/DataDog/datadog-api-client-python/pull/642).
+* [Added] [Synthetics] Add support for UDP API tests. See [#662](https://github.com/DataDog/datadog-api-client-python/pull/662).
+* [Added] Add support for `websocket` synthetics tests. See [#674](https://github.com/DataDog/datadog-api-client-python/pull/674).
+* [Added] Add support for profiled Fargate tasks in Usage API. See [#670](https://github.com/DataDog/datadog-api-client-python/pull/670).
+* [Added] Add 429 error responses. See [#675](https://github.com/DataDog/datadog-api-client-python/pull/675).
+* [Added] Document query in `MonitorSearchResult`. See [#690](https://github.com/DataDog/datadog-api-client-python/pull/690).
+* [Added] Expose `public_id` and `org_name` in Usage API response. See [#692](https://github.com/DataDog/datadog-api-client-python/pull/692).
+* [Added] Add endpoint to get corrections applied to an SLO. See [#689](https://github.com/DataDog/datadog-api-client-python/pull/689).
+* [Added] Expose estimated logs usage in Usage Attribution API. See [#700](https://github.com/DataDog/datadog-api-client-python/pull/700).
+* [Added] Add Limit Note for Hourly Requests. See [#699](https://github.com/DataDog/datadog-api-client-python/pull/699).
+* [Fixed] Fix type for `ratio_in_month` in usage metering. See [#652](https://github.com/DataDog/datadog-api-client-python/pull/652).
+* [Fixed] Change `UsageNetworkFlowsHour.indexed_event_count` to match actual API. See [#661](https://github.com/DataDog/datadog-api-client-python/pull/661).
+* [Fixed] SLO Correction attributes `rrule` and `duration` can be nullable. See [#665](https://github.com/DataDog/datadog-api-client-python/pull/665).
+* [Fixed] Mark `batch_id` in Synthetics Trigger CI response as nullable. See [#677](https://github.com/DataDog/datadog-api-client-python/pull/677).
+* [Fixed] Remove event title length constraint. See [#682](https://github.com/DataDog/datadog-api-client-python/pull/682).
+* [Fixed] Fix monitor `timeout_h` example and limits. See [#687](https://github.com/DataDog/datadog-api-client-python/pull/687).
+* [Fixed] Be more resilient to plain text errors. See [#696](https://github.com/DataDog/datadog-api-client-python/pull/696).
+* [Fixed] Make python fail properly on invalid header. See [#711](https://github.com/DataDog/datadog-api-client-python/pull/711).
+* [Fixed] Remove python unused conversion arguments calls. See [#714](https://github.com/DataDog/datadog-api-client-python/pull/714).
+* [Changed] [Synthetics] Fix required target in assertions and type in step results. See [#666](https://github.com/DataDog/datadog-api-client-python/pull/666).
+* [Changed] Reorganize python params_map. See [#710](https://github.com/DataDog/datadog-api-client-python/pull/710).
+
+## 1.6.0 / 2021-11-09
+
+* [Added] Add support for Azure `automute` option. See [#647](https://github.com/DataDog/datadog-api-client-python/pull/647).
+* [Added] Add v2 intake endpoint. See [#640](https://github.com/DataDog/datadog-api-client-python/pull/640).
+* [Added] Add support for RRULE fields in SLO corrections. See [#600](https://github.com/DataDog/datadog-api-client-python/pull/600).
+* [Added] Add aggregations attribute to v2 metric tag configuration. See [#577](https://github.com/DataDog/datadog-api-client-python/pull/577).
+* [Added] Add `apm_stats_query` property to `DistributionWidgetRequest`. See [#628](https://github.com/DataDog/datadog-api-client-python/pull/628).
+* [Fixed] Use plural form for dbm hosts usage properties. See [#611](https://github.com/DataDog/datadog-api-client-python/pull/611).
+* [Fixed] Make monitor properties `priority` and `restricted_roles` nullable. See [#627](https://github.com/DataDog/datadog-api-client-python/pull/627).
+* [Changed] Update Synthetics CI test metadata. See [#610](https://github.com/DataDog/datadog-api-client-python/pull/610).
+* [Deprecated] Update property descriptions for Dashboard RBAC release. See [#639](https://github.com/DataDog/datadog-api-client-python/pull/639).
+
+## 1.5.0 / 2021-10-15
+
+* [Added] Add `type` and `is_template` properties to notebooks. See [#615](https://github.com/DataDog/datadog-api-client-python/pull/615).
+* [Added] Add `renotify_occurrences` and `renotify_statuses` monitor options. See [#613](https://github.com/DataDog/datadog-api-client-python/pull/613).
+* [Added] Add `servername` property to SSL Synthetics tests request. See [#603](https://github.com/DataDog/datadog-api-client-python/pull/603).
+* [Added] Document encoding in metrics intake. See [#604](https://github.com/DataDog/datadog-api-client-python/pull/604).
+* [Added] Add support for formulas and functions in the Scatterplot Widget for dashboards. See [#587](https://github.com/DataDog/datadog-api-client-python/pull/587).
+* [Added] Add support for gzip and deflate encoding. See [#593](https://github.com/DataDog/datadog-api-client-python/pull/593).
+* [Added] Add information about creator to Synthetics tests details. See [#596](https://github.com/DataDog/datadog-api-client-python/pull/596).
+* [Added] Add support for funnel widget in dashboards. See [#590](https://github.com/DataDog/datadog-api-client-python/pull/590).
+* [Added] Add formula and function APM resource stats query definition for dashboards. See [#582](https://github.com/DataDog/datadog-api-client-python/pull/582).
+* [Added] ApmDependencyStatsQuery for formulas and functions dashboard widgets. See [#581](https://github.com/DataDog/datadog-api-client-python/pull/581).
+* [Fixed] Fix handling of primitive types in oneOfs. See [#621](https://github.com/DataDog/datadog-api-client-python/pull/621).
+* [Fixed] Remove event title length constraint. See [#598](https://github.com/DataDog/datadog-api-client-python/pull/598).
+* [Fixed] Allow nullable date in notebook cells. See [#607](https://github.com/DataDog/datadog-api-client-python/pull/607).
+* [Fixed] `IncidentFieldAttributesMultipleValue` can be nullable. See [#602](https://github.com/DataDog/datadog-api-client-python/pull/602).
+* [Fixed] Fix incidents schemas. See [#601](https://github.com/DataDog/datadog-api-client-python/pull/601).
+* [Fixed] Make sure that OpenAPI definition are valid with real server responses. See [#595](https://github.com/DataDog/datadog-api-client-python/pull/595).
+* [Fixed] Fix typo in usage attribution field names for profiled containers. See [#597](https://github.com/DataDog/datadog-api-client-python/pull/597).
+* [Fixed] Make the name property required for APM Dependency Stat Query widget. See [#586](https://github.com/DataDog/datadog-api-client-python/pull/586).
+* [Fixed] Mark SLO Correction Type as required. See [#568](https://github.com/DataDog/datadog-api-client-python/pull/568).
+* [Changed] Enable compression in responses. See [#612](https://github.com/DataDog/datadog-api-client-python/pull/612).
+* [Changed] Use AVG aggregation function for DBM queries. See [#592](https://github.com/DataDog/datadog-api-client-python/pull/592).
+
+## 1.4.O / 2021-09-14
+
+* [Added] Add restricted roles for Synthetics global variables. See [#550](https://github.com/DataDog/datadog-api-client-python/pull/550).
+* [Added] Add events data source to Dashboard widgets. See [#545](https://github.com/DataDog/datadog-api-client-python/pull/545).
+* [Added] Add support for security monitoring rule `type` property. See [#544](https://github.com/DataDog/datadog-api-client-python/pull/544).
+* [Added] Add `batch_id` to the synthetics trigger endpoint response. See [#556](https://github.com/DataDog/datadog-api-client-python/pull/556).
+* [Added] Add `audit alert` monitor type. See [#559](https://github.com/DataDog/datadog-api-client-python/pull/559).
+* [Added] Add DBM usage endpoint. See [#546](https://github.com/DataDog/datadog-api-client-python/pull/546).
+* [Added] Add config variables to Synthetics browser test config. See [#563](https://github.com/DataDog/datadog-api-client-python/pull/563).
+* [Added] Add `available_values` property to template variables schema. See [#564](https://github.com/DataDog/datadog-api-client-python/pull/564).
+* [Added] Add `follow_redirects` options to test request in Synthetics. See [#571](https://github.com/DataDog/datadog-api-client-python/pull/571).
+* [Fixed] Minor fixes of the incident schema. See [#552](https://github.com/DataDog/datadog-api-client-python/pull/552).
+* [Fixed] Make SLO history metadata unit nullable. See [#555](https://github.com/DataDog/datadog-api-client-python/pull/555).
+* [Fixed] Fix python unparsed serialization. See [#569](https://github.com/DataDog/datadog-api-client-python/pull/569).
+* [Fixed] Fix SLO history error response type for overall errors. See [#570](https://github.com/DataDog/datadog-api-client-python/pull/570).
+* [Changed] Fix SLO history schema for groups and monitors fields. See [#575](https://github.com/DataDog/datadog-api-client-python/pull/575).
+* [Changed] Remove metadata from required list for metric SLO history endpoint. See [#579](https://github.com/DataDog/datadog-api-client-python/pull/579).
+
+## 1.3.0 / 2021-08-16
+
+* [Added] Add Webhooks integration support. See [#549](https://github.com/DataDog/datadog-api-client-python/pull/549).
+* [Added] Add missing synthetics variable parser type `x_path`. See [#548](https://github.com/DataDog/datadog-api-client-python/pull/548).
+* [Added] Add `audit_stream` to `ListStreamSource`. See [#536](https://github.com/DataDog/datadog-api-client-python/pull/536).
+* [Added] Add percentile to dashboard `WidgetAggregator` schema. See [#532](https://github.com/DataDog/datadog-api-client-python/pull/532).
+* [Added] Add `id_str` property to Event response. See [#538](https://github.com/DataDog/datadog-api-client-python/pull/538).
+* [Added] Add edge to Synthetics devices. See [#542](https://github.com/DataDog/datadog-api-client-python/pull/542).
+* [Added] Add endpoints to manage Service Accounts v2. See [#523](https://github.com/DataDog/datadog-api-client-python/pull/523).
+* [Added] Add `new_group_delay` and deprecate `new_host_delay` monitor properties. See [#535](https://github.com/DataDog/datadog-api-client-python/pull/535).
+* [Added] Add `include_descendants` param to usage attribution API. See [#540](https://github.com/DataDog/datadog-api-client-python/pull/540).
+* [Added] Update to latest openapi generator image. See [#528](https://github.com/DataDog/datadog-api-client-python/pull/528).
+* [Added] Add support for list widget in dashboards. See [#504](https://github.com/DataDog/datadog-api-client-python/pull/504).
+* [Added] Extend table widget requests to support formulas and functions. See [#526](https://github.com/DataDog/datadog-api-client-python/pull/526).
+* [Added] Add CSPM to usage attribution. See [#518](https://github.com/DataDog/datadog-api-client-python/pull/518).
+* [Added] Add support for dashboard bulk delete, restore endpoints. See [#501](https://github.com/DataDog/datadog-api-client-python/pull/501).
+* [Added] Add support for audit logs data source in dashboards. See [#521](https://github.com/DataDog/datadog-api-client-python/pull/521).
+* [Added] Add `allow_insecure` option for multistep steps in Synthetics. See [#515](https://github.com/DataDog/datadog-api-client-python/pull/515).
+* [Fixed] Improve resiliency of the Python SDK. See [#531](https://github.com/DataDog/datadog-api-client-python/pull/531).
+* [Fixed] Fix serialization of query metrics response containing nullable points. See [#516](https://github.com/DataDog/datadog-api-client-python/pull/516).
+* [Fixed] Fix `status` property name for browser error status in Synthetics. See [#517](https://github.com/DataDog/datadog-api-client-python/pull/517).
+* [Changed] Add separate schema for deleting AWS account. See [#513](https://github.com/DataDog/datadog-api-client-python/pull/513).
+* [Removed] Remove deprecated endpoints `/api/v1/usage/traces` and `/api/v1/usage/tracing-without-limits`. See [#519](https://github.com/DataDog/datadog-api-client-python/pull/519).
+
+## 1.2.0 / 2021-07-08
+
+* [Added] Add support for `GET /api/v2/application_keys/{app_key_id}`. See [#502](https://github.com/DataDog/datadog-api-client-python/pull/502).
+* [Added] Add `meta` property with pagination info to SLOCorrectionList endpoint response. See [#499](https://github.com/DataDog/datadog-api-client-python/pull/499).
+* [Added] Add support for treemap widget. See [#494](https://github.com/DataDog/datadog-api-client-python/pull/494).
+* [Added] Add missing properties `query_index` and `tag_set` to `MetricsQueryMetadata`. See [#468](https://github.com/DataDog/datadog-api-client-python/pull/468).
+* [Added] Add missing fields `hasExtendedTitle`, `type`, `version` and `updateAuthorId` for Security Monitoring Rule endpoints. See [#483](https://github.com/DataDog/datadog-api-client-python/pull/483).
+* [Added] Dashboard RBAC role support. See [#478](https://github.com/DataDog/datadog-api-client-python/pull/478).
+* [Added] Add missing fields in usage billable summary keys. See [#477](https://github.com/DataDog/datadog-api-client-python/pull/477).
+* [Fixed] Remove US only constraint for AWS tag filtering. See [#490](https://github.com/DataDog/datadog-api-client-python/pull/490).
+* [Fixed] Add BDD tests to synthetics. See [#489](https://github.com/DataDog/datadog-api-client-python/pull/489).
+* [Fixed] Fix Python type checking. See [#487](https://github.com/DataDog/datadog-api-client-python/pull/487).
+* [Fixed] Handle null in query metrics unit. See [#486](https://github.com/DataDog/datadog-api-client-python/pull/486).
+* [Changed] Specify format of `report_id` parameter. See [#510](https://github.com/DataDog/datadog-api-client-python/pull/510).
+* [Changed] Remove Synthetics tick interval enum. See [#488](https://github.com/DataDog/datadog-api-client-python/pull/488).
+
 ## 1.1.0 / 2021-06-08
 
 * [Added] Add CWS to usage metering endpoint. See [#458](https://github.com/DataDog/datadog-api-client-python/pull/458).

@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Edit_an_application_key_owned_by_current_user_returns_OK_response-1641829848"},"type":"application_keys"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys
+  response:
+    body:
+      string: '{"data":{"type":"application_keys","id":"30b069a4-91b3-498e-8e51-e93610933fa9","attributes":{"name":"Test-Edit_an_application_key_owned_by_current_user_returns_OK_response-1641829848","created_at":"2022-01-10T15:50:49.125111+00:00","last4":"xxxx","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Edit_an_application_key_owned_by_current_user_returns_OK_response-1641829848-updated"},"id":"30b069a4-91b3-498e-8e51-e93610933fa9","type":"application_keys"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/30b069a4-91b3-498e-8e51-e93610933fa9
+  response:
+    body:
+      string: '{"data":{"type":"application_keys","id":"30b069a4-91b3-498e-8e51-e93610933fa9","attributes":{"name":"Test-Edit_an_application_key_owned_by_current_user_returns_OK_response-1641829848-updated","created_at":"2022-01-10T15:50:49.125111+00:00","last4":"xxxx","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/30b069a4-91b3-498e-8e51-e93610933fa9
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

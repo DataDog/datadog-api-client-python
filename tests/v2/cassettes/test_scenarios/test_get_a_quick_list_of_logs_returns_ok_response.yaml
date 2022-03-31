@@ -3,55 +3,15 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json, */*;q=0.8
-      connection:
-      - close
-      host:
-      - api.datadoghq.com
-      user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
-      x-datadog-parent-id:
-      - '5095942047695828255'
-      x-datadog-trace-id:
-      - '5095942047695828255'
+      - application/json
     method: GET
     uri: https://api.datadoghq.com/api/v2/logs/events?filter%5Bquery%5D=datadog-agent&filter%5Bindex%5D=main&filter%5Bfrom%5D=2020-09-17T11%3A48%3A36%2B01%3A00&filter%5Bto%5D=2020-09-17T12%3A48%3A36%2B01%3A00&page%5Blimit%5D=5
   response:
     body:
       string: '{"data":[]}'
     headers:
-      cache-control:
-      - no-cache
-      connection:
-      - close
-      content-length:
-      - '11'
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
-      date:
-      - Thu, 15 Apr 2021 13:02:10 GMT
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      x-content-type-options:
-      - nosniff
-      x-dd-debug:
-      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
-      x-dd-version:
-      - '35.4318655'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '300'
-      x-ratelimit-period:
-      - '3600'
-      x-ratelimit-remaining:
-      - '298'
-      x-ratelimit-reset:
-      - '3470'
     status:
       code: 200
       message: OK

@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"disabled":true,"name":"updated"},"id":"00000000-dead-beef-dead-ffffffffffff","type":"users"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/users/00000000-dead-beef-dead-ffffffffffff
+  response:
+    body:
+      string: '{"errors":["00000000-dead-beef-dead-ffffffffffff not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

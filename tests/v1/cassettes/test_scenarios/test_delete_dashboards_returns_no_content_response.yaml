@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Delete_dashboards_returns_No_Content_response-1641826574
+      with Profile Metrics Query","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"jmg-kif-uya","title":"Test-Delete_dashboards_returns_No_Content_response-1641826574
+        with Profile Metrics Query","url":"/dashboard/jmg-kif-uya/test-deletedashboardsreturnsnocontentresponse-1641826574-with-profile-metrics-qu","created_at":"2022-01-10T14:56:15.292289+00:00","modified_at":"2022-01-10T14:56:15.292289+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"id":8862039508448497}],"layout_type":"ordered"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":[{"id":"jmg-kif-uya","type":"dashboard"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/jmg-kif-uya
+  response:
+    body:
+      string: '{"errors": ["Dashboard with ID jmg-kif-uya not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

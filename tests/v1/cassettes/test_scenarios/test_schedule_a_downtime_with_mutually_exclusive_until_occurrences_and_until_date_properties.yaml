@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"end":1641433849,"message":"Test-Schedule_a_downtime_with_mutually_exclusive_until_occurrences_and_until_date_properties-1641430249","recurrence":{"period":1,"type":"weeks","until_date":1643244649,"until_occurrences":3,"week_days":["Mon","Tue","Wed","Thu","Fri"]},"scope":["*"],"start":1641430249,"timezone":"Etc/UTC"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/downtime
+  response:
+    body:
+      string: '{"errors":["You must provide only provide one of (until_occurrences,
+        until_date)"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

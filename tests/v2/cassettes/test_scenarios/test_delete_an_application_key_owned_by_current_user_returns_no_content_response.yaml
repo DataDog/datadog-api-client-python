@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Delete_an_Application_key_owned_by_current_user_returns_No_Content_response-1641826583"},"type":"application_keys"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys
+  response:
+    body:
+      string: '{"data":{"type":"application_keys","id":"8c0eeda4-0be7-4ff3-a84f-d107adc6345c","attributes":{"name":"Test-Delete_an_Application_key_owned_by_current_user_returns_No_Content_response-1641826583","created_at":"2022-01-10T14:56:24.051310+00:00","last4":"xxxx","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/8c0eeda4-0be7-4ff3-a84f-d107adc6345c
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/8c0eeda4-0be7-4ff3-a84f-d107adc6345c
+  response:
+    body:
+      string: '{"errors": ["Application key not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

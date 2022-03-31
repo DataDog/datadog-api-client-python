@@ -1,0 +1,82 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-List_all_AuthN_Mappings_returns_OK_response-1644413615"},"type":"roles"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/roles
+  response:
+    body:
+      string: '{"data":{"type":"roles","id":"e217f56e-89ac-11ec-80b7-da7ad0900002","attributes":{"name":"Test-List_all_AuthN_Mappings_returns_OK_response-1644413615","created_at":"2022-02-09T13:33:36.223522+00:00","modified_at":"2022-02-09T13:33:36.295061+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"},{"type":"permissions","id":"12efc20e-d36c-11eb-a9b8-da7ad0900002"},{"type":"permissions","id":"97971c1c-e895-11eb-b13c-da7ad0900002"},{"type":"permissions","id":"7605ef24-f376-11eb-b90b-da7ad0900002"}]}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"attribute_key":"testlistallauthnmappingsreturnsokresponse1644413615","attribute_value":"Test-List_all_AuthN_Mappings_returns_OK_response-1644413615"},"relationships":{"role":{"data":{"id":"e217f56e-89ac-11ec-80b7-da7ad0900002","type":"roles"}}},"type":"authn_mappings"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/authn_mappings
+  response:
+    body:
+      string: '{"included":[{"type":"roles","id":"e217f56e-89ac-11ec-80b7-da7ad0900002","attributes":{"name":"Test-List_all_AuthN_Mappings_returns_OK_response-1644413615","created_at":"2022-02-09T13:33:36.223522+00:00","modified_at":"2022-02-09T13:33:36.295061+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"},{"type":"permissions","id":"12efc20e-d36c-11eb-a9b8-da7ad0900002"},{"type":"permissions","id":"97971c1c-e895-11eb-b13c-da7ad0900002"},{"type":"permissions","id":"7605ef24-f376-11eb-b90b-da7ad0900002"}]}}}],"data":{"type":"authn_mappings","id":"e217f56f-89ac-11ec-80b7-da7ad0900002","attributes":{"attribute_key":"testlistallauthnmappingsreturnsokresponse1644413615","attribute_value":"Test-List_all_AuthN_Mappings_returns_OK_response-1644413615","created_at":"2022-02-09T13:33:36.799760+00:00","modified_at":"2022-02-09T13:33:36.799760+00:00"},"relationships":{"role":{"data":{"type":"roles","id":"e217f56e-89ac-11ec-80b7-da7ad0900002"}}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/authn_mappings
+  response:
+    body:
+      string: '{"included":[{"type":"roles","id":"e217f56e-89ac-11ec-80b7-da7ad0900002","attributes":{"name":"Test-List_all_AuthN_Mappings_returns_OK_response-1644413615","created_at":"2022-02-09T13:33:36.223522+00:00","modified_at":"2022-02-09T13:33:36.295061+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"},{"type":"permissions","id":"12efc20e-d36c-11eb-a9b8-da7ad0900002"},{"type":"permissions","id":"97971c1c-e895-11eb-b13c-da7ad0900002"},{"type":"permissions","id":"7605ef24-f376-11eb-b90b-da7ad0900002"}]}}}],"meta":{"page":{"total_filtered_count":1,"total_count":1}},"data":[{"type":"authn_mappings","id":"e217f56f-89ac-11ec-80b7-da7ad0900002","attributes":{"attribute_key":"testlistallauthnmappingsreturnsokresponse1644413615","attribute_value":"Test-List_all_AuthN_Mappings_returns_OK_response-1644413615","created_at":"2022-02-09T13:33:36.799760+00:00","modified_at":"2022-02-09T13:33:36.799760+00:00"},"relationships":{"role":{"data":{"type":"roles","id":"e217f56e-89ac-11ec-80b7-da7ad0900002"}}}}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/authn_mappings/e217f56f-89ac-11ec-80b7-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/roles/e217f56e-89ac-11ec-80b7-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
