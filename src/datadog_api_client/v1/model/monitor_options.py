@@ -59,7 +59,14 @@ class MonitorOptions(ModelNormal):
             "renotify_occurrences": (int, none_type),
             "renotify_statuses": ([MonitorRenotifyStatusType], none_type),
             "require_full_window": (bool,),
-            "silenced": ({str: (int,)},),
+            "silenced": (
+                {
+                    str: (
+                        int,
+                        none_type,
+                    )
+                },
+            ),
             "synthetics_check_id": (str, none_type),
             "threshold_windows": (MonitorThresholdWindowOptions,),
             "thresholds": (MonitorThresholds,),
@@ -185,7 +192,7 @@ class MonitorOptions(ModelNormal):
         :type require_full_window: bool, optional
 
         :param silenced: Information about the downtime applied to the monitor.
-        :type silenced: {str: (int,)}, optional
+        :type silenced: {str: (int, none_type,)}, optional
 
         :param synthetics_check_id: ID of the corresponding Synthetic check.
         :type synthetics_check_id: str, none_type, optional
