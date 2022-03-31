@@ -34,6 +34,7 @@ class CloudWorkloadSecurityApi:
                 "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules",
                 "operation_id": "create_cloud_workload_security_agent_rule",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -54,6 +55,7 @@ class CloudWorkloadSecurityApi:
                 "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules/{agent_rule_id}",
                 "operation_id": "delete_cloud_workload_security_agent_rule",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -78,6 +80,7 @@ class CloudWorkloadSecurityApi:
                 "endpoint_path": "/api/v2/security/cloud_workload/policy/download",
                 "operation_id": "download_cloud_workload_policy_file",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={},
@@ -95,6 +98,7 @@ class CloudWorkloadSecurityApi:
                 "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules/{agent_rule_id}",
                 "operation_id": "get_cloud_workload_security_agent_rule",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -119,6 +123,7 @@ class CloudWorkloadSecurityApi:
                 "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules",
                 "operation_id": "list_cloud_workload_security_agent_rules",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={},
@@ -136,6 +141,7 @@ class CloudWorkloadSecurityApi:
                 "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules/{agent_rule_id}",
                 "operation_id": "update_cloud_workload_security_agent_rule",
                 "http_method": "PATCH",
+                "version": "v2",
                 "servers": None,
             },
             params_map={

@@ -47,6 +47,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/variables",
                 "operation_id": "create_global_variable",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -67,6 +68,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/private-locations",
                 "operation_id": "create_private_location",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -87,6 +89,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests/api",
                 "operation_id": "create_synthetics_api_test",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -107,6 +110,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests/browser",
                 "operation_id": "create_synthetics_browser_test",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -127,6 +131,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/variables/{variable_id}",
                 "operation_id": "delete_global_variable",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -151,6 +156,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/private-locations/{location_id}",
                 "operation_id": "delete_private_location",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -175,6 +181,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests/delete",
                 "operation_id": "delete_tests",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -195,6 +202,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/variables/{variable_id}",
                 "operation_id": "edit_global_variable",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -221,6 +229,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests/api/{public_id}",
                 "operation_id": "get_api_test",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -245,6 +254,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests/{public_id}/results",
                 "operation_id": "get_api_test_latest_results",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -285,6 +295,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests/{public_id}/results/{result_id}",
                 "operation_id": "get_api_test_result",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -315,6 +326,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests/browser/{public_id}",
                 "operation_id": "get_browser_test",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -339,6 +351,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests/browser/{public_id}/results",
                 "operation_id": "get_browser_test_latest_results",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -379,6 +392,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests/browser/{public_id}/results/{result_id}",
                 "operation_id": "get_browser_test_result",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -409,6 +423,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/variables/{variable_id}",
                 "operation_id": "get_global_variable",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -433,6 +448,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/private-locations/{location_id}",
                 "operation_id": "get_private_location",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -457,6 +473,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/ci/batch/{batch_id}",
                 "operation_id": "get_synthetics_ci_batch",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -481,6 +498,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests/{public_id}",
                 "operation_id": "get_test",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -505,6 +523,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/variables",
                 "operation_id": "list_global_variables",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},
@@ -522,6 +541,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/locations",
                 "operation_id": "list_locations",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},
@@ -539,6 +559,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests",
                 "operation_id": "list_tests",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},
@@ -556,6 +577,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests/trigger/ci",
                 "operation_id": "trigger_ci_tests",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -576,6 +598,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests/trigger",
                 "operation_id": "trigger_tests",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -596,6 +619,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests/api/{public_id}",
                 "operation_id": "update_api_test",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -622,6 +646,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests/browser/{public_id}",
                 "operation_id": "update_browser_test",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -648,6 +673,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/private-locations/{location_id}",
                 "operation_id": "update_private_location",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -674,6 +700,7 @@ class SyntheticsApi:
                 "endpoint_path": "/api/v1/synthetics/tests/{public_id}/status",
                 "operation_id": "update_test_pause_status",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

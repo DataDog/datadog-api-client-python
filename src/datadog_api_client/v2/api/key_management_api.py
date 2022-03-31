@@ -29,6 +29,7 @@ class KeyManagementApi:
                 "endpoint_path": "/api/v2/api_keys",
                 "operation_id": "create_api_key",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -49,6 +50,7 @@ class KeyManagementApi:
                 "endpoint_path": "/api/v2/current_user/application_keys",
                 "operation_id": "create_current_user_application_key",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -69,6 +71,7 @@ class KeyManagementApi:
                 "endpoint_path": "/api/v2/api_keys/{api_key_id}",
                 "operation_id": "delete_api_key",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -93,6 +96,7 @@ class KeyManagementApi:
                 "endpoint_path": "/api/v2/application_keys/{app_key_id}",
                 "operation_id": "delete_application_key",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -117,6 +121,7 @@ class KeyManagementApi:
                 "endpoint_path": "/api/v2/current_user/application_keys/{app_key_id}",
                 "operation_id": "delete_current_user_application_key",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -141,6 +146,7 @@ class KeyManagementApi:
                 "endpoint_path": "/api/v2/api_keys/{api_key_id}",
                 "operation_id": "get_api_key",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -170,6 +176,7 @@ class KeyManagementApi:
                 "endpoint_path": "/api/v2/application_keys/{app_key_id}",
                 "operation_id": "get_application_key",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -199,6 +206,7 @@ class KeyManagementApi:
                 "endpoint_path": "/api/v2/current_user/application_keys/{app_key_id}",
                 "operation_id": "get_current_user_application_key",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -223,6 +231,7 @@ class KeyManagementApi:
                 "endpoint_path": "/api/v2/api_keys",
                 "operation_id": "list_api_keys",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -286,6 +295,7 @@ class KeyManagementApi:
                 "endpoint_path": "/api/v2/application_keys",
                 "operation_id": "list_application_keys",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -334,6 +344,7 @@ class KeyManagementApi:
                 "endpoint_path": "/api/v2/current_user/application_keys",
                 "operation_id": "list_current_user_application_keys",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -382,6 +393,7 @@ class KeyManagementApi:
                 "endpoint_path": "/api/v2/api_keys/{api_key_id}",
                 "operation_id": "update_api_key",
                 "http_method": "PATCH",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -408,6 +420,7 @@ class KeyManagementApi:
                 "endpoint_path": "/api/v2/application_keys/{app_key_id}",
                 "operation_id": "update_application_key",
                 "http_method": "PATCH",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -434,6 +447,7 @@ class KeyManagementApi:
                 "endpoint_path": "/api/v2/current_user/application_keys/{app_key_id}",
                 "operation_id": "update_current_user_application_key",
                 "http_method": "PATCH",
+                "version": "v2",
                 "servers": None,
             },
             params_map={

@@ -1,8 +1,9 @@
 import pytest
 
-from datadog_api_client.v1 import Configuration, ApiClient
-from datadog_api_client.v1.api import metrics_api
+from datadog_api_client.api_client import ApiClient
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.exceptions import ApiValueError
+from datadog_api_client.v1.api import metrics_api
 
 
 def test_invalid_header():

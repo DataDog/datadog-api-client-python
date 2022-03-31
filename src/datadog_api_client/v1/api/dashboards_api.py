@@ -24,6 +24,7 @@ class DashboardsApi:
                 "endpoint_path": "/api/v1/dashboard",
                 "operation_id": "create_dashboard",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -44,6 +45,7 @@ class DashboardsApi:
                 "endpoint_path": "/api/v1/dashboard/{dashboard_id}",
                 "operation_id": "delete_dashboard",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -68,6 +70,7 @@ class DashboardsApi:
                 "endpoint_path": "/api/v1/dashboard",
                 "operation_id": "delete_dashboards",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -88,6 +91,7 @@ class DashboardsApi:
                 "endpoint_path": "/api/v1/dashboard/{dashboard_id}",
                 "operation_id": "get_dashboard",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -112,6 +116,7 @@ class DashboardsApi:
                 "endpoint_path": "/api/v1/dashboard",
                 "operation_id": "list_dashboards",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -140,6 +145,7 @@ class DashboardsApi:
                 "endpoint_path": "/api/v1/dashboard",
                 "operation_id": "restore_dashboards",
                 "http_method": "PATCH",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -160,6 +166,7 @@ class DashboardsApi:
                 "endpoint_path": "/api/v1/dashboard/{dashboard_id}",
                 "operation_id": "update_dashboard",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

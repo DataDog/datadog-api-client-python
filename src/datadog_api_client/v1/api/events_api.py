@@ -24,6 +24,7 @@ class EventsApi:
                 "endpoint_path": "/api/v1/events",
                 "operation_id": "create_event",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -44,6 +45,7 @@ class EventsApi:
                 "endpoint_path": "/api/v1/events/{event_id}",
                 "operation_id": "get_event",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -68,6 +70,7 @@ class EventsApi:
                 "endpoint_path": "/api/v1/events",
                 "operation_id": "list_events",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

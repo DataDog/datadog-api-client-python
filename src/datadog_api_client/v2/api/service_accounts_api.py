@@ -25,6 +25,7 @@ class ServiceAccountsApi:
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/application_keys",
                 "operation_id": "create_service_account_application_key",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -51,6 +52,7 @@ class ServiceAccountsApi:
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id}",
                 "operation_id": "delete_service_account_application_key",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -81,6 +83,7 @@ class ServiceAccountsApi:
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id}",
                 "operation_id": "get_service_account_application_key",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -111,6 +114,7 @@ class ServiceAccountsApi:
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/application_keys",
                 "operation_id": "list_service_account_application_keys",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -165,6 +169,7 @@ class ServiceAccountsApi:
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id}",
                 "operation_id": "update_service_account_application_key",
                 "http_method": "PATCH",
+                "version": "v2",
                 "servers": None,
             },
             params_map={

@@ -23,6 +23,7 @@ class LogsMetricsApi:
                 "endpoint_path": "/api/v2/logs/config/metrics",
                 "operation_id": "create_logs_metric",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -43,6 +44,7 @@ class LogsMetricsApi:
                 "endpoint_path": "/api/v2/logs/config/metrics/{metric_id}",
                 "operation_id": "delete_logs_metric",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -67,6 +69,7 @@ class LogsMetricsApi:
                 "endpoint_path": "/api/v2/logs/config/metrics/{metric_id}",
                 "operation_id": "get_logs_metric",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -91,6 +94,7 @@ class LogsMetricsApi:
                 "endpoint_path": "/api/v2/logs/config/metrics",
                 "operation_id": "list_logs_metrics",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={},
@@ -108,6 +112,7 @@ class LogsMetricsApi:
                 "endpoint_path": "/api/v2/logs/config/metrics/{metric_id}",
                 "operation_id": "update_logs_metric",
                 "http_method": "PATCH",
+                "version": "v2",
                 "servers": None,
             },
             params_map={

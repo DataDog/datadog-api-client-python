@@ -22,6 +22,7 @@ class DowntimesApi:
                 "endpoint_path": "/api/v1/downtime/{downtime_id}",
                 "operation_id": "cancel_downtime",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -46,6 +47,7 @@ class DowntimesApi:
                 "endpoint_path": "/api/v1/downtime/cancel/by_scope",
                 "operation_id": "cancel_downtimes_by_scope",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -66,6 +68,7 @@ class DowntimesApi:
                 "endpoint_path": "/api/v1/downtime",
                 "operation_id": "create_downtime",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -86,6 +89,7 @@ class DowntimesApi:
                 "endpoint_path": "/api/v1/downtime/{downtime_id}",
                 "operation_id": "get_downtime",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -110,6 +114,7 @@ class DowntimesApi:
                 "endpoint_path": "/api/v1/downtime",
                 "operation_id": "list_downtimes",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -133,6 +138,7 @@ class DowntimesApi:
                 "endpoint_path": "/api/v1/monitor/{monitor_id}/downtimes",
                 "operation_id": "list_monitor_downtimes",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -157,6 +163,7 @@ class DowntimesApi:
                 "endpoint_path": "/api/v1/downtime/{downtime_id}",
                 "operation_id": "update_downtime",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

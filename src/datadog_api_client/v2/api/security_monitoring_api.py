@@ -33,6 +33,7 @@ class SecurityMonitoringApi:
                 "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters",
                 "operation_id": "create_security_filter",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -53,6 +54,7 @@ class SecurityMonitoringApi:
                 "endpoint_path": "/api/v2/security_monitoring/rules",
                 "operation_id": "create_security_monitoring_rule",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -73,6 +75,7 @@ class SecurityMonitoringApi:
                 "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters/{security_filter_id}",
                 "operation_id": "delete_security_filter",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -97,6 +100,7 @@ class SecurityMonitoringApi:
                 "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}",
                 "operation_id": "delete_security_monitoring_rule",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -121,6 +125,7 @@ class SecurityMonitoringApi:
                 "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters/{security_filter_id}",
                 "operation_id": "get_security_filter",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -145,6 +150,7 @@ class SecurityMonitoringApi:
                 "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}",
                 "operation_id": "get_security_monitoring_rule",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -169,6 +175,7 @@ class SecurityMonitoringApi:
                 "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters",
                 "operation_id": "list_security_filters",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={},
@@ -186,6 +193,7 @@ class SecurityMonitoringApi:
                 "endpoint_path": "/api/v2/security_monitoring/rules",
                 "operation_id": "list_security_monitoring_rules",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -214,6 +222,7 @@ class SecurityMonitoringApi:
                 "endpoint_path": "/api/v2/security_monitoring/signals",
                 "operation_id": "list_security_monitoring_signals",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -265,6 +274,7 @@ class SecurityMonitoringApi:
                 "endpoint_path": "/api/v2/security_monitoring/signals/search",
                 "operation_id": "search_security_monitoring_signals",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -284,6 +294,7 @@ class SecurityMonitoringApi:
                 "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters/{security_filter_id}",
                 "operation_id": "update_security_filter",
                 "http_method": "PATCH",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -310,6 +321,7 @@ class SecurityMonitoringApi:
                 "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}",
                 "operation_id": "update_security_monitoring_rule",
                 "http_method": "PUT",
+                "version": "v2",
                 "servers": None,
             },
             params_map={

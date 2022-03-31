@@ -24,6 +24,7 @@ class IncidentServicesApi:
                 "endpoint_path": "/api/v2/services",
                 "operation_id": "create_incident_service",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -44,6 +45,7 @@ class IncidentServicesApi:
                 "endpoint_path": "/api/v2/services/{service_id}",
                 "operation_id": "delete_incident_service",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -68,6 +70,7 @@ class IncidentServicesApi:
                 "endpoint_path": "/api/v2/services/{service_id}",
                 "operation_id": "get_incident_service",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -97,6 +100,7 @@ class IncidentServicesApi:
                 "endpoint_path": "/api/v2/services",
                 "operation_id": "list_incident_services",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -135,6 +139,7 @@ class IncidentServicesApi:
                 "endpoint_path": "/api/v2/services/{service_id}",
                 "operation_id": "update_incident_service",
                 "http_method": "PATCH",
+                "version": "v2",
                 "servers": None,
             },
             params_map={

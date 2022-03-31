@@ -62,6 +62,8 @@ from jinja2 import Template, Environment, meta
 from pytest_bdd import given, parsers, then, when
 
 from datadog_api_client import exceptions
+from datadog_api_client.api_client import ApiClient
+from datadog_api_client.configuration import Configuration
 
 logging.basicConfig()
 
@@ -357,11 +359,6 @@ def package_name(api_version):
     return "datadog_api_client." + api_version
 
 
-@pytest.fixture
-def _package(package_name):
-    return importlib.import_module(package_name)
-
-
 @pytest.fixture(scope="module")
 def undo_operations():
     result = {}
@@ -376,8 +373,8 @@ def undo_operations():
     return result
 
 
-def build_configuration(package):
-    c = package.Configuration()
+def build_configuration():
+    c = Configuration()
     c.connection_pool_maxsize = 0
     c.debug = debug = os.getenv("DEBUG") in {"true", "1", "yes", "on"}
     if debug:  # enable vcr logs for DEBUG=true
@@ -390,13 +387,13 @@ def build_configuration(package):
 
 
 @pytest.fixture
-def configuration(_package):
-    return build_configuration(_package)
+def configuration():
+    return build_configuration()
 
 
 @pytest.fixture
-def client(_package, context, configuration):
-    with _package.ApiClient(configuration) as api_client:
+def client(configuration):
+    with ApiClient(configuration) as api_client:
         yield api_client
 
 
@@ -479,7 +476,7 @@ def build_given(version, operation):
         package_name = f"datadog_api_client.{version}"
 
         # make sure we have a fresh instance of API client and configuration
-        configuration = build_configuration(importlib.import_module(package_name))
+        configuration = build_configuration()
         configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "fake")
         configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
 
@@ -488,7 +485,7 @@ def build_given(version, operation):
             configuration.unstable_operations[operation_name] = True
 
         package = importlib.import_module(f"{package_name}.api.{module_name}_api")
-        with package.ApiClient(configuration) as client:
+        with ApiClient(configuration) as client:
             api = getattr(package, name + "Api")(client)
             operation_method = getattr(api, operation_name)
 
@@ -568,14 +565,14 @@ def undo(package_name, undo_operations, client):
 
 
 @when("the request is sent")
-def execute_request(undo, context, client, api_version, _package):
+def execute_request(undo, context, client, api_version):
     """Execute the prepared request."""
     api_request = context["api_request"]
 
     try:
         response = api_request["request"](*api_request["args"], **api_request["kwargs"])
         # Reserialise the response body to JSON to facilitate test assertions
-        response_body_json = _package.ApiClient.sanitize_for_serialization(response[0])
+        response_body_json = client.sanitize_for_serialization(response[0])
         api_request["response"] = [response_body_json, response[1], response[2]]
     except exceptions.ApiException as e:
         # If we have an exception, make a stub response object to use for assertions

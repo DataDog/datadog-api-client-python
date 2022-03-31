@@ -1,0 +1,144 @@
+interactions:
+- request:
+    body: '{"name":"Test-Update_items_of_a_dashboard_list_returns_OK_response-1647890211"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual
+  response:
+    body:
+      string: '{"is_favorite":false,"name":"Test-Update_items_of_a_dashboard_list_returns_OK_response-1647890211","dashboard_count":0,"author":{"handle":"frog@datadoghq.com","name":null},"created":"2022-03-21T19:16:51.788428+00:00","type":"manual_dashboard_list","dashboards":null,"modified":"2022-03-21T19:16:51.788437+00:00","id":284066}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Update_items_of_a_dashboard_list_returns_OK_response-1647890211
+      with Profile Metrics Query","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"niu-g3w-pmy","title":"Test-Update_items_of_a_dashboard_list_returns_OK_response-1647890211
+        with Profile Metrics Query","url":"/dashboard/niu-g3w-pmy/test-updateitemsofadashboardlistreturnsokresponse-1647890211-with-profile-metric","created_at":"2022-03-21T19:16:52.105822+00:00","modified_at":"2022-03-21T19:16:52.105822+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"id":7025397435910312}],"layout_type":"ordered"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"layout_type":"free","title":"Test-Update_items_of_a_dashboard_list_returns_OK_response-1647890211
+      with Profile Metrics Query","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"},"layout":{"height":10,"width":10,"x":10,"y":10}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"kqn-ck6-7nq","title":"Test-Update_items_of_a_dashboard_list_returns_OK_response-1647890211
+        with Profile Metrics Query","url":"/dashboard/kqn-ck6-7nq/test-updateitemsofadashboardlistreturnsokresponse-1647890211-with-profile-metric","created_at":"2022-03-21T19:16:52.400846+00:00","modified_at":"2022-03-21T19:16:52.400846+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"layout":{"y":10,"width":10,"x":10,"height":10},"id":2927684530303517}],"layout_type":"free"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"dashboards":[{"id":"niu-g3w-pmy","type":"custom_timeboard"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/dashboard/lists/manual/284066/dashboards
+  response:
+    body:
+      string: '{"added_dashboards_to_list":[{"type":"custom_timeboard","id":"niu-g3w-pmy"}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"dashboards":[{"id":"kqn-ck6-7nq","type":"custom_screenboard"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/dashboard/lists/manual/284066/dashboards
+  response:
+    body:
+      string: '{"dashboards":[{"type":"custom_screenboard","id":"kqn-ck6-7nq"}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/kqn-ck6-7nq
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"kqn-ck6-7nq"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/niu-g3w-pmy
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"niu-g3w-pmy"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual/284066
+  response:
+    body:
+      string: '{"deleted_dashboard_list_id":284066}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -22,6 +22,7 @@ class PagerDutyIntegrationApi:
                 "endpoint_path": "/api/v1/integration/pagerduty/configuration/services",
                 "operation_id": "create_pager_duty_integration_service",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -42,6 +43,7 @@ class PagerDutyIntegrationApi:
                 "endpoint_path": "/api/v1/integration/pagerduty/configuration/services/{service_name}",
                 "operation_id": "delete_pager_duty_integration_service",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -66,6 +68,7 @@ class PagerDutyIntegrationApi:
                 "endpoint_path": "/api/v1/integration/pagerduty/configuration/services/{service_name}",
                 "operation_id": "get_pager_duty_integration_service",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -90,6 +93,7 @@ class PagerDutyIntegrationApi:
                 "endpoint_path": "/api/v1/integration/pagerduty/configuration/services/{service_name}",
                 "operation_id": "update_pager_duty_integration_service",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

@@ -21,6 +21,7 @@ class SlackIntegrationApi:
                 "endpoint_path": "/api/v1/integration/slack/configuration/accounts/{account_name}/channels",
                 "operation_id": "create_slack_integration_channel",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -47,6 +48,7 @@ class SlackIntegrationApi:
                 "endpoint_path": "/api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name}",
                 "operation_id": "get_slack_integration_channel",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -77,6 +79,7 @@ class SlackIntegrationApi:
                 "endpoint_path": "/api/v1/integration/slack/configuration/accounts/{account_name}/channels",
                 "operation_id": "get_slack_integration_channels",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -101,6 +104,7 @@ class SlackIntegrationApi:
                 "endpoint_path": "/api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name}",
                 "operation_id": "remove_slack_integration_channel",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -131,6 +135,7 @@ class SlackIntegrationApi:
                 "endpoint_path": "/api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name}",
                 "operation_id": "update_slack_integration_channel",
                 "http_method": "PATCH",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

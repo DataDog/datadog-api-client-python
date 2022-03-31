@@ -25,6 +25,7 @@ class AuditApi:
                 "endpoint_path": "/api/v2/audit/events",
                 "operation_id": "list_audit_logs",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -76,6 +77,7 @@ class AuditApi:
                 "endpoint_path": "/api/v2/audit/events/search",
                 "operation_id": "search_audit_logs",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={

@@ -20,6 +20,7 @@ class IPRangesApi:
                 "endpoint_path": "/",
                 "operation_id": "get_ip_ranges",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": [
                     {
                         "url": "https://{subdomain}.{site}",

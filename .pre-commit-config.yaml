@@ -28,20 +28,11 @@ repos:
     pass_filenames: false
     additional_dependencies:
       - Sphinx
-  - id: generator-v1
-    name: generator-v1
+  - id: generator
+    name: generator
     language: python
-    entry: bash -c "cd .generator && poetry install && poetry run python -m generator -i ./schemas/v1/openapi.yaml -o ../src/"
+    entry: bash -c "cd .generator && poetry install && poetry run python -m generator ./schemas/v1/openapi.yaml ./schemas/v2/openapi.yaml -o ../src/"
     files: "^.generator/(config|schemas/v1|src|poetry.lock|pyproject.toml)"
-    stages: [manual]
-    pass_filenames: false
-    additional_dependencies:
-      - "poetry"
-  - id: generator-v2
-    name: generator-v2
-    language: python
-    entry: bash -c "cd .generator && poetry install && poetry run python -m generator -i ./schemas/v2/openapi.yaml -o ../src/"
-    files: "^.generator/(config|schemas/v2|src|poetry.lock|pyproject.toml)"
     stages: [manual]
     pass_filenames: false
     additional_dependencies:

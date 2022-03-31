@@ -23,6 +23,7 @@ class LogsApi:
                 "endpoint_path": "/api/v1/logs-queries/list",
                 "operation_id": "list_logs",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -43,6 +44,7 @@ class LogsApi:
                 "endpoint_path": "/v1/input",
                 "operation_id": "submit_log",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": [
                     {
                         "url": "https://{subdomain}.{site}",
