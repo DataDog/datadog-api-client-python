@@ -50,7 +50,11 @@ def type_to_python(schema, alternative_name=None):
         return "[{}]".format(type_to_python(schema["items"]))
     elif type_ == "object":
         if "additionalProperties" in schema:
-            return "{{str: ({},)}}".format(type_to_python(schema["additionalProperties"]))
+            nested_schema = schema["additionalProperties"]
+            nested_name = type_to_python(nested_schema)
+            if nested_schema.get("nullable"):
+                nested_name += ", none_type"
+            return "{{str: ({},)}}".format(nested_name)
         return (
             alternative_name
             if alternative_name
