@@ -26,6 +26,7 @@ class AWSIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws",
                 "operation_id": "create_aws_account",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -46,6 +47,7 @@ class AWSIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws/filtering",
                 "operation_id": "create_aws_tag_filter",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -66,6 +68,7 @@ class AWSIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws/generate_new_external_id",
                 "operation_id": "create_new_aws_external_id",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -86,6 +89,7 @@ class AWSIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws",
                 "operation_id": "delete_aws_account",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -106,6 +110,7 @@ class AWSIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws/filtering",
                 "operation_id": "delete_aws_tag_filter",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -126,6 +131,7 @@ class AWSIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws/available_namespace_rules",
                 "operation_id": "list_available_aws_namespaces",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},
@@ -143,6 +149,7 @@ class AWSIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws",
                 "operation_id": "list_aws_accounts",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -176,6 +183,7 @@ class AWSIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws/filtering",
                 "operation_id": "list_aws_tag_filters",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -200,6 +208,7 @@ class AWSIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws",
                 "operation_id": "update_aws_account",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

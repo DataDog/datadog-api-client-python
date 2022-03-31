@@ -29,6 +29,7 @@ class UsersApi:
                 "endpoint_path": "/api/v2/service_accounts",
                 "operation_id": "create_service_account",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -49,6 +50,7 @@ class UsersApi:
                 "endpoint_path": "/api/v2/users",
                 "operation_id": "create_user",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -69,6 +71,7 @@ class UsersApi:
                 "endpoint_path": "/api/v2/users/{user_id}",
                 "operation_id": "disable_user",
                 "http_method": "DELETE",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -93,6 +96,7 @@ class UsersApi:
                 "endpoint_path": "/api/v2/user_invitations/{user_invitation_uuid}",
                 "operation_id": "get_invitation",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -117,6 +121,7 @@ class UsersApi:
                 "endpoint_path": "/api/v2/users/{user_id}",
                 "operation_id": "get_user",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -141,6 +146,7 @@ class UsersApi:
                 "endpoint_path": "/api/v2/users/{user_id}/orgs",
                 "operation_id": "list_user_organizations",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -165,6 +171,7 @@ class UsersApi:
                 "endpoint_path": "/api/v2/users/{user_id}/permissions",
                 "operation_id": "list_user_permissions",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -189,6 +196,7 @@ class UsersApi:
                 "endpoint_path": "/api/v2/users",
                 "operation_id": "list_users",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -237,6 +245,7 @@ class UsersApi:
                 "endpoint_path": "/api/v2/user_invitations",
                 "operation_id": "send_invitations",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -257,6 +266,7 @@ class UsersApi:
                 "endpoint_path": "/api/v2/users/{user_id}",
                 "operation_id": "update_user",
                 "http_method": "PATCH",
+                "version": "v2",
                 "servers": None,
             },
             params_map={

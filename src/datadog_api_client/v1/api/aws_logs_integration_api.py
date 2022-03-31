@@ -24,6 +24,7 @@ class AWSLogsIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws/logs/check_async",
                 "operation_id": "check_aws_logs_lambda_async",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -44,6 +45,7 @@ class AWSLogsIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws/logs/services_async",
                 "operation_id": "check_aws_logs_services_async",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -64,6 +66,7 @@ class AWSLogsIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws/logs",
                 "operation_id": "create_aws_lambda_arn",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -84,6 +87,7 @@ class AWSLogsIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws/logs",
                 "operation_id": "delete_aws_lambda_arn",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -104,6 +108,7 @@ class AWSLogsIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws/logs/services",
                 "operation_id": "enable_aws_log_services",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -124,6 +129,7 @@ class AWSLogsIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws/logs",
                 "operation_id": "list_aws_logs_integrations",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},
@@ -141,6 +147,7 @@ class AWSLogsIntegrationApi:
                 "endpoint_path": "/api/v1/integration/aws/logs/services",
                 "operation_id": "list_aws_logs_services",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},

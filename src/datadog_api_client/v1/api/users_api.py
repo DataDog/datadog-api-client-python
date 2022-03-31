@@ -23,6 +23,7 @@ class UsersApi:
                 "endpoint_path": "/api/v1/user",
                 "operation_id": "create_user",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -43,6 +44,7 @@ class UsersApi:
                 "endpoint_path": "/api/v1/user/{user_handle}",
                 "operation_id": "disable_user",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -67,6 +69,7 @@ class UsersApi:
                 "endpoint_path": "/api/v1/user/{user_handle}",
                 "operation_id": "get_user",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -91,6 +94,7 @@ class UsersApi:
                 "endpoint_path": "/api/v1/user",
                 "operation_id": "list_users",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},
@@ -108,6 +112,7 @@ class UsersApi:
                 "endpoint_path": "/api/v1/user/{user_handle}",
                 "operation_id": "update_user",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

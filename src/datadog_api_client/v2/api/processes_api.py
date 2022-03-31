@@ -20,6 +20,7 @@ class ProcessesApi:
                 "endpoint_path": "/api/v2/processes",
                 "operation_id": "list_processes",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={

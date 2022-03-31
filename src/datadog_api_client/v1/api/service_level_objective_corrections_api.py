@@ -23,6 +23,7 @@ class ServiceLevelObjectiveCorrectionsApi:
                 "endpoint_path": "/api/v1/slo/correction",
                 "operation_id": "create_slo_correction",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -43,6 +44,7 @@ class ServiceLevelObjectiveCorrectionsApi:
                 "endpoint_path": "/api/v1/slo/correction/{slo_correction_id}",
                 "operation_id": "delete_slo_correction",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -67,6 +69,7 @@ class ServiceLevelObjectiveCorrectionsApi:
                 "endpoint_path": "/api/v1/slo/correction/{slo_correction_id}",
                 "operation_id": "get_slo_correction",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -91,6 +94,7 @@ class ServiceLevelObjectiveCorrectionsApi:
                 "endpoint_path": "/api/v1/slo/correction",
                 "operation_id": "list_slo_correction",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},
@@ -108,6 +112,7 @@ class ServiceLevelObjectiveCorrectionsApi:
                 "endpoint_path": "/api/v1/slo/correction/{slo_correction_id}",
                 "operation_id": "update_slo_correction",
                 "http_method": "PATCH",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

@@ -23,6 +23,7 @@ class NotebooksApi:
                 "endpoint_path": "/api/v1/notebooks",
                 "operation_id": "create_notebook",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -43,6 +44,7 @@ class NotebooksApi:
                 "endpoint_path": "/api/v1/notebooks/{notebook_id}",
                 "operation_id": "delete_notebook",
                 "http_method": "DELETE",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -67,6 +69,7 @@ class NotebooksApi:
                 "endpoint_path": "/api/v1/notebooks/{notebook_id}",
                 "operation_id": "get_notebook",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -91,6 +94,7 @@ class NotebooksApi:
                 "endpoint_path": "/api/v1/notebooks",
                 "operation_id": "list_notebooks",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -159,6 +163,7 @@ class NotebooksApi:
                 "endpoint_path": "/api/v1/notebooks/{notebook_id}",
                 "operation_id": "update_notebook",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

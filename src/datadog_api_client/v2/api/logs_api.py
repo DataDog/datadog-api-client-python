@@ -29,6 +29,7 @@ class LogsApi:
                 "endpoint_path": "/api/v2/logs/analytics/aggregate",
                 "operation_id": "aggregate_logs",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -49,6 +50,7 @@ class LogsApi:
                 "endpoint_path": "/api/v2/logs/events/search",
                 "operation_id": "list_logs",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -68,6 +70,7 @@ class LogsApi:
                 "endpoint_path": "/api/v2/logs/events",
                 "operation_id": "list_logs_get",
                 "http_method": "GET",
+                "version": "v2",
                 "servers": None,
             },
             params_map={
@@ -124,6 +127,7 @@ class LogsApi:
                 "endpoint_path": "/api/v2/logs",
                 "operation_id": "submit_log",
                 "http_method": "POST",
+                "version": "v2",
                 "servers": [
                     {
                         "url": "https://{subdomain}.{site}",

@@ -20,6 +20,7 @@ class AuthenticationApi:
                 "endpoint_path": "/api/v1/validate",
                 "operation_id": "validate",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},

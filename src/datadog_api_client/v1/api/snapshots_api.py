@@ -20,6 +20,7 @@ class SnapshotsApi:
                 "endpoint_path": "/api/v1/graph/snapshot",
                 "operation_id": "get_graph_snapshot",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

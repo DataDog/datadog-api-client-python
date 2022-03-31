@@ -23,6 +23,7 @@ class HostsApi:
                 "endpoint_path": "/api/v1/hosts/totals",
                 "operation_id": "get_host_totals",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -46,6 +47,7 @@ class HostsApi:
                 "endpoint_path": "/api/v1/hosts",
                 "operation_id": "list_hosts",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -104,6 +106,7 @@ class HostsApi:
                 "endpoint_path": "/api/v1/host/{host_name}/mute",
                 "operation_id": "mute_host",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -130,6 +133,7 @@ class HostsApi:
                 "endpoint_path": "/api/v1/host/{host_name}/unmute",
                 "operation_id": "unmute_host",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

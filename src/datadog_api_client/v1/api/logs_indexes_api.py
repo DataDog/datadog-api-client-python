@@ -23,6 +23,7 @@ class LogsIndexesApi:
                 "endpoint_path": "/api/v1/logs/config/indexes",
                 "operation_id": "create_logs_index",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -43,6 +44,7 @@ class LogsIndexesApi:
                 "endpoint_path": "/api/v1/logs/config/indexes/{name}",
                 "operation_id": "get_logs_index",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -67,6 +69,7 @@ class LogsIndexesApi:
                 "endpoint_path": "/api/v1/logs/config/index-order",
                 "operation_id": "get_logs_index_order",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},
@@ -84,6 +87,7 @@ class LogsIndexesApi:
                 "endpoint_path": "/api/v1/logs/config/indexes",
                 "operation_id": "list_log_indexes",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={},
@@ -101,6 +105,7 @@ class LogsIndexesApi:
                 "endpoint_path": "/api/v1/logs/config/indexes/{name}",
                 "operation_id": "update_logs_index",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -127,6 +132,7 @@ class LogsIndexesApi:
                 "endpoint_path": "/api/v1/logs/config/index-order",
                 "operation_id": "update_logs_index_order",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={

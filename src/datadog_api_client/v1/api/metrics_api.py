@@ -26,6 +26,7 @@ class MetricsApi:
                 "endpoint_path": "/api/v1/metrics/{metric_name}",
                 "operation_id": "get_metric_metadata",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -50,6 +51,7 @@ class MetricsApi:
                 "endpoint_path": "/api/v1/metrics",
                 "operation_id": "list_active_metrics",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -84,6 +86,7 @@ class MetricsApi:
                 "endpoint_path": "/api/v1/search",
                 "operation_id": "list_metrics",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -108,6 +111,7 @@ class MetricsApi:
                 "endpoint_path": "/api/v1/query",
                 "operation_id": "query_metrics",
                 "http_method": "GET",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -144,6 +148,7 @@ class MetricsApi:
                 "endpoint_path": "/api/v1/series",
                 "operation_id": "submit_metrics",
                 "http_method": "POST",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
@@ -169,6 +174,7 @@ class MetricsApi:
                 "endpoint_path": "/api/v1/metrics/{metric_name}",
                 "operation_id": "update_metric_metadata",
                 "http_method": "PUT",
+                "version": "v1",
                 "servers": None,
             },
             params_map={
