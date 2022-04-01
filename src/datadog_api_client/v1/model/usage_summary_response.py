@@ -26,7 +26,6 @@ class UsageSummaryResponse(ModelNormal):
             "agent_host_top99p_sum": (int,),
             "apm_azure_app_service_host_top99p_sum": (int,),
             "apm_host_top99p_sum": (int,),
-            "apm_ingested_spans_billable_bytes_agg_sum": (int,),
             "audit_logs_lines_indexed_agg_sum": (int,),
             "avg_profiled_fargate_tasks_sum": (int,),
             "aws_host_top99p_sum": (int,),
@@ -101,7 +100,6 @@ class UsageSummaryResponse(ModelNormal):
         "agent_host_top99p_sum": "agent_host_top99p_sum",
         "apm_azure_app_service_host_top99p_sum": "apm_azure_app_service_host_top99p_sum",
         "apm_host_top99p_sum": "apm_host_top99p_sum",
-        "apm_ingested_spans_billable_bytes_agg_sum": "apm_ingested_spans_billable_bytes_agg_sum",
         "audit_logs_lines_indexed_agg_sum": "audit_logs_lines_indexed_agg_sum",
         "avg_profiled_fargate_tasks_sum": "avg_profiled_fargate_tasks_sum",
         "aws_host_top99p_sum": "aws_host_top99p_sum",
@@ -184,9 +182,6 @@ class UsageSummaryResponse(ModelNormal):
 
         :param apm_host_top99p_sum: Shows the 99th percentile of all distinct APM hosts over all hours in the current months for all organizations.
         :type apm_host_top99p_sum: int, optional
-
-        :param apm_ingested_spans_billable_bytes_agg_sum: Shows the sum of all ingested APM span bytes over all hours in the current months for all organizations.
-        :type apm_ingested_spans_billable_bytes_agg_sum: int, optional
 
         :param audit_logs_lines_indexed_agg_sum: Shows the sum of all audit logs lines indexed over all hours in the current months for all organizations.
         :type audit_logs_lines_indexed_agg_sum: int, optional
@@ -383,7 +378,7 @@ class UsageSummaryResponse(ModelNormal):
         :param trace_search_indexed_events_count_agg_sum: Shows the sum of all Indexed Spans indexed over all hours in the current months for all organizations.
         :type trace_search_indexed_events_count_agg_sum: int, optional
 
-        :param twol_ingested_events_bytes_agg_sum: Shows the sum of all tracing without limits bytes ingested over all hours in the current months for all organizations.
+        :param twol_ingested_events_bytes_agg_sum: Shows the sum of all ingested APM span bytes over all hours in the current months for all organizations.
         :type twol_ingested_events_bytes_agg_sum: int, optional
 
         :param usage: An array of objects regarding hourly usage.

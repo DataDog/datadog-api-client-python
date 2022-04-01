@@ -16,7 +16,6 @@ class UsageIngestedSpansHour(ModelNormal):
         return {
             "hour": (datetime,),
             "ingested_events_bytes": (int,),
-            "ingested_spans_billable_bytes": (int,),
             "org_name": (str,),
             "public_id": (str,),
         }
@@ -24,7 +23,6 @@ class UsageIngestedSpansHour(ModelNormal):
     attribute_map = {
         "hour": "hour",
         "ingested_events_bytes": "ingested_events_bytes",
-        "ingested_spans_billable_bytes": "ingested_spans_billable_bytes",
         "org_name": "org_name",
         "public_id": "public_id",
     }
@@ -36,11 +34,8 @@ class UsageIngestedSpansHour(ModelNormal):
         :param hour: The hour for the usage.
         :type hour: datetime, optional
 
-        :param ingested_events_bytes: Use `ingested_spans_billable_bytes` as of 2022-03-01. Contains the total number of bytes ingested during a given hour using an old method of calculating span volume.
+        :param ingested_events_bytes: Contains the total number of bytes ingested for APM spans during a given hour.
         :type ingested_events_bytes: int, optional
-
-        :param ingested_spans_billable_bytes: Contains the total number of bytes ingested during a given hour.
-        :type ingested_spans_billable_bytes: int, optional
 
         :param org_name: The organization name.
         :type org_name: str, optional
