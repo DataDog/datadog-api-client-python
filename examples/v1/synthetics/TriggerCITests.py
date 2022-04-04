@@ -19,7 +19,9 @@ from datadog_api_client.v1.model.synthetics_test_options_retry import Synthetics
 body = SyntheticsCITestBody(
     tests=[
         SyntheticsCITest(
-            basic_auth=SyntheticsBasicAuthWeb(password="", type=SyntheticsBasicAuthWebType("web"), username=""),
+            basic_auth=SyntheticsBasicAuthWeb(
+                password="PaSSw0RD!", type=SyntheticsBasicAuthWebType("web"), username="my_username"
+            ),
             device_ids=[SyntheticsDeviceID("laptop_large")],
             locations=["aws:eu-west-3"],
             metadata=SyntheticsCIBatchMetadata(
