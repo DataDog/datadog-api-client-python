@@ -6,6 +6,7 @@
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
 )
 
 
@@ -14,7 +15,7 @@ class UsageTopAvgMetricsPagination(ModelNormal):
     def openapi_types(_):
         return {
             "limit": (int,),
-            "next_record_id": (str,),
+            "next_record_id": (str, none_type),
             "total_number_of_records": (int,),
         }
 
@@ -32,7 +33,7 @@ class UsageTopAvgMetricsPagination(ModelNormal):
         :type limit: int, optional
 
         :param next_record_id: The cursor to get the next results (if any). To make the next request, use the same parameters and add `next_record_id`.
-        :type next_record_id: str, optional
+        :type next_record_id: str, none_type, optional
 
         :param total_number_of_records: Total number of records.
         :type total_number_of_records: int, optional

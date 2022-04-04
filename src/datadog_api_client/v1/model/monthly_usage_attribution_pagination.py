@@ -6,6 +6,7 @@
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
 )
 
 
@@ -13,7 +14,7 @@ class MonthlyUsageAttributionPagination(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "next_record_id": (str,),
+            "next_record_id": (str, none_type),
         }
 
     attribute_map = {
@@ -25,7 +26,7 @@ class MonthlyUsageAttributionPagination(ModelNormal):
         The metadata for the current pagination.
 
         :param next_record_id: The cursor to use to get the next results, if any. To make the next request, use the same parameters with the addition of the `next_record_id`.
-        :type next_record_id: str, optional
+        :type next_record_id: str, none_type, optional
         """
         super().__init__(kwargs)
 

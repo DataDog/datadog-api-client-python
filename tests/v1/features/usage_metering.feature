@@ -562,3 +562,13 @@ Feature: Usage Metering
     And request contains "start_month" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
+
+  @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Paginate Monthly Usage Attribution
+    Given there is a valid "monthly_usage_attribution" response
+    And new "GetMonthlyUsageAttribution" request
+    And request contains "next_record_id" parameter from "monthly_usage_attribution.metadata.pagination.next_record_id"
+    And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "fields" parameter with value "infra_host_usage"
+    When the request is sent
+    Then the response status is 200 OK
