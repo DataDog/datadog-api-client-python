@@ -28,7 +28,7 @@ class SyntheticsBasicAuth(ModelComposed):
         :type password: str
 
         :param type: The type of basic authentication to use when performing the test.
-        :type type: SyntheticsBasicAuthWebType, optional
+        :type type: SyntheticsBasicAuthWebType
 
         :param username: Username to use for the basic authentication.
         :type username: str

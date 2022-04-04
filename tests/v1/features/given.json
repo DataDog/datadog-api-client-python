@@ -15,18 +15,6 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"layout_type\": \"free\",\n  \"title\": \"{{ unique }} with Profile Metrics Query\",\n  \"widgets\": [\n    {\n      \"layout\": {\n        \"height\": 10,\n        \"width\": 10,\n        \"x\": 10,\n        \"y\": 10\n      },\n      \"definition\": {\n        \"type\": \"timeseries\",\n        \"requests\": [\n          {\n            \"profile_metrics_query\": {\n              \"compute\": {\n                \"aggregation\": \"sum\",\n                \"facet\": \"@prof_core_cpu_cores\"\n              },\n              \"search\": {\n                \"query\": \"runtime:jvm\"\n              },\n              \"group_by\": [\n                {\n                  \"facet\": \"service\",\n                  \"limit\": 10,\n                  \"sort\": {\n                    \"aggregation\": \"sum\",\n                    \"order\": \"desc\",\n                    \"facet\": \"@prof_core_cpu_cores\"\n                  }\n                }\n              ]\n            }\n          }\n        ]\n      }\n    }\n  ]\n}\n"
-      }
-    ],
-    "step": "there is a valid \"screenboard_dashboard\" in the system",
-    "key": "screenboard_dashboard",
-    "tag": "Dashboards",
-    "operationId": "CreateDashboard"
-  },
-  {
-    "parameters": [
-      {
-        "name": "body",
         "value": "{\n  \"name\": \"{{ unique }}\"\n}"
       }
     ],
