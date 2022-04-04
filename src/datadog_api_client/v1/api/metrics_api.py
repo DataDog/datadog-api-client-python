@@ -299,7 +299,7 @@ class MetricsApi:
         >>> thread = api.list_metrics(q, async_req=True)
         >>> result = thread.get()
 
-        :param q: Query string to search metrics upon. Must be prefixed with `metrics:`.
+        :param q: Query string to search metrics upon. Can optionally be prefixed with `metrics:`.
         :type q: str
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
