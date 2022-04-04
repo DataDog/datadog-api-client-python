@@ -9,6 +9,6 @@ configuration = Configuration()
 configuration.unstable_operations["get_specified_monthly_custom_reports"] = True
 with ApiClient(configuration) as api_client:
     api_instance = UsageMeteringApi(api_client)
-    response = api_instance.get_specified_monthly_custom_reports(report_id="report_id")
+    response = api_instance.get_specified_monthly_custom_reports(report_id="2021-05-01")
 
     print(response)

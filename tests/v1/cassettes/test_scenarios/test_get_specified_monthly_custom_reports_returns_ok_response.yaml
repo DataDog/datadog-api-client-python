@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json;datetime-format=rfc3339
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/monthly_custom_reports/2021-05-01
+  response:
+    body:
+      string: '{"meta":{"page":{"total_count":1}},"data":{"type":"reports","id":"2021-05-01","attributes":{"tags":["project"],"start_date":"2021-05-01","end_date":"2021-06-01","size":12397,"computed_on":"2021-06-01T18:47:43+00:00","location":"https://dd-michelada-custom-reporting-prod.s3.amazonaws.com/org_month_custom_reporting/1.0/2021/05/0/550/monthly_report_2021-05.zip?AWSAccessKeyId=ASIAWYLNJGWWCXCR4V7V&Signature=izgOSTDQwRnELRSMM%2BF10Nlhq8A%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEGsaCXVzLWVhc3QtMSJHMEUCIEXGsulBAsPHdZRek1V56QMDUifIBwCWlJLQbiXZtZeZAiEA7XmK8wJwFM9FYFTuWqXd%2FAZOgScwd2EElr%2FUMJU8EHYqtAII9P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw0NjQ2MjI1MzIwMTIiDIBxf%2FLE%2F8pisemenyqIAvOZUzJItp6MlR%2BAasSF7mKWn8dqAbcSWsSIk26bBfnZnJKIapLNO87CNK5XY%2BRQGlQtiedFTeM70882IMR4yeTbHR2V%2F1IhNorCwuitJ9Bt3pfyEIA5wfFm30vPk%2F8TpTxh3kU9yDksIy3LKhh72zH%2BOE58W41Xsbe%2B1Up7EjH6MvwgGTnkdro%2BADAaC%2Bk2E7ziAzRTh8bVqDbyt6nFw38sCiAxISIzLyKUNSE2LF4V6R%2FoKM2OYjKkCAtcEyuaZlruLuyq64HDXOasTZPGdPEPnKn1HDYa95i4SDoJcRJeFNQFmG2xtueUx63zOg8dMRfEeCEwOhbS6y9pmcCsqYOMzcVDW8UNxDD1wZKSBjqdARNDm0Wuz7QRUfPFC9L4WZPg1POnUSKJ40XYyzWYbn9hKNocw0vyFUVx07mFUUBKZhPBJQHFTWhabDq%2FmVWCV%2FDQ73ruhCMjx7%2Bo0tnGUGuY3fTzBkDTSfoEsoAKYdWcMWXcFwnnItX3Q3Y8TwWUoy1hyB1QDc1zIVxid1PqnV5%2FBnTYYzGw8Z2zFaPR%2FMt%2FCJaLPwBEvc%2F7v6IrqUA%3D&Expires=1648665976"}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
