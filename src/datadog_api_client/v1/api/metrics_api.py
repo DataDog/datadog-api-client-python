@@ -394,7 +394,7 @@ class MetricsApi:
 
         - 64 bits for the timestamp
         - 32 bits for the value
-        - 20 bytes for the metric names
+        - 40 bytes for the metric names
         - 50 bytes for the timeseries
         - The full payload is approximately 100 bytes. However, with the DogStatsD API,
         compression is applied, which reduces the payload size.
