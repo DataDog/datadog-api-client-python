@@ -124,6 +124,13 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].queries[0].operation_name" is equal to "cassandra.query"
 
   @team:DataDog/dashboards
+  Scenario: Create a new dashboard with apm_issue_stream list_stream widget
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"apm_issue_stream","query_string":""},"response_format":"event_list"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/dashboards
   Scenario: Create a new dashboard with check_status widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/check_status_widget.json"
@@ -296,6 +303,13 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "query_value"
     And the response "widgets[0].definition.requests[0].queries[0].query" is equal to "avg:system.cpu.user{*}"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with rum_issue_stream list_stream widget
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"rum_issue_stream","query_string":""},"response_format":"event_list"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/dashboards
   Scenario: Create a new dashboard with scatterplot widget
