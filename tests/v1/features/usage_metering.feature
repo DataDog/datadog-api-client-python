@@ -61,15 +61,16 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get all custom metrics by hourly average returns "Bad Request" response
     Given new "GetUsageTopAvgMetrics" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get all custom metrics by hourly average returns "OK" response
     Given new "GetUsageTopAvgMetrics" request
+    And request contains "day" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
@@ -82,20 +83,23 @@ Feature: Usage Metering
   @generated @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get billable usage across your account returns "OK" response
     Given new "GetUsageBillableSummary" request
+    And request contains "month" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly logs usage by retention returns "Bad Request" response
     Given new "GetUsageLogsByRetention" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly logs usage by retention returns "OK" response
     Given new "GetUsageLogsByRetention" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
@@ -136,10 +140,11 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Cloud Workload Security returns "OK" response
     Given new "GetUsageCWS" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
@@ -150,24 +155,27 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Database Monitoring returns "OK" response
     Given new "GetUsageDBM" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Fargate returns "Bad Request" response
     Given new "GetUsageFargate" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Fargate returns "OK" response
     Given new "GetUsageFargate" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
@@ -187,73 +195,83 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Lambda returns "Bad Request" response
     Given new "GetUsageLambda" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Lambda returns "OK" response
     Given new "GetUsageLambda" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Logs by Index returns "Bad Request" response
     Given new "GetUsageLogsByIndex" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Logs by Index returns "OK" response
     Given new "GetUsageLogsByIndex" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Logs returns "Bad Request" response
     Given new "GetUsageLogs" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Logs returns "OK" response
     Given new "GetUsageLogs" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Network Flows returns "Bad Request" response
     Given new "GetUsageNetworkFlows" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Network Flows returns "OK" response
     Given new "GetUsageNetworkFlows" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Network Hosts returns "Bad Request" response
     Given new "GetUsageNetworkHosts" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Network Hosts returns "OK" response
     Given new "GetUsageNetworkHosts" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
@@ -273,17 +291,19 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for RUM Sessions returns "Bad Request" response
     Given new "GetUsageRumSessions" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for RUM Sessions returns "OK" response
     Given new "GetUsageRumSessions" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
@@ -294,10 +314,11 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for RUM Units returns "OK" response
     Given new "GetUsageRumUnits" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
@@ -324,38 +345,43 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Sensitive Data Scanner returns "OK" response
     Given new "GetUsageSDS" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Synthetics API Checks returns "Bad Request" response
     Given new "GetUsageSyntheticsAPI" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Synthetics API Checks returns "OK" response
     Given new "GetUsageSyntheticsAPI" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Synthetics Browser Checks returns "Bad Request" response
     Given new "GetUsageSyntheticsBrowser" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Synthetics Browser Checks returns "OK" response
     Given new "GetUsageSyntheticsBrowser" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
@@ -396,38 +422,43 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for audit logs returns "OK" response
     Given new "GetUsageAuditLogs" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for custom metrics returns "Bad Request" response
     Given new "GetUsageTimeseries" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for custom metrics returns "OK" response
     Given new "GetUsageTimeseries" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for hosts and containers returns "Bad Request" response
     Given new "GetUsageHosts" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for hosts and containers returns "OK" response
     Given new "GetUsageHosts" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
@@ -503,11 +534,11 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @replay-only @team:DataDog/red-zone-revenue-query
   Scenario: Get specified daily custom reports returns "OK" response
     Given operation "GetSpecifiedDailyCustomReports" enabled
     And new "GetSpecifiedDailyCustomReports" request
-    And request contains "report_id" parameter from "REPLACE.ME"
+    And request contains "report_id" parameter with value "2022-03-20"
     When the request is sent
     Then the response status is 200 OK
 
@@ -527,22 +558,22 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @replay-only @team:DataDog/red-zone-revenue-query
   Scenario: Get specified monthly custom reports returns "OK" response
     Given operation "GetSpecifiedMonthlyCustomReports" enabled
     And new "GetSpecifiedMonthlyCustomReports" request
-    And request contains "report_id" parameter from "REPLACE.ME"
+    And request contains "report_id" parameter with value "2021-05-01"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get the list of available daily custom reports returns "OK" response
     Given operation "GetDailyCustomReports" enabled
     And new "GetDailyCustomReports" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get the list of available monthly custom reports returns "OK" response
     Given operation "GetMonthlyCustomReports" enabled
     And new "GetMonthlyCustomReports" request

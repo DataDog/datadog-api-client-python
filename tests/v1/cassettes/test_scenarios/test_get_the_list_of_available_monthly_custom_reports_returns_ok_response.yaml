@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json;datetime-format=rfc3339
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/monthly_custom_reports
+  response:
+    body:
+      string: '{"meta":{"page":{"total_count":13}},"data":[{"type":"reports","id":"2022-02-01","attributes":{"tags":["project"],"start_date":"2022-02-01","end_date":"2022-03-01","size":20340,"computed_on":"2022-03-08T20:44:56+00:00"}},{"type":"reports","id":"2022-01-01","attributes":{"tags":["project"],"start_date":"2022-01-01","end_date":"2022-02-01","size":22697,"computed_on":"2022-02-01T16:50:14+00:00"}},{"type":"reports","id":"2021-12-01","attributes":{"tags":["project"],"start_date":"2021-12-01","end_date":"2022-01-01","size":29169,"computed_on":"2022-01-01T15:54:13+00:00"}},{"type":"reports","id":"2021-11-01","attributes":{"tags":["project"],"start_date":"2021-11-01","end_date":"2021-12-01","size":19416,"computed_on":"2021-12-01T18:17:01+00:00"}},{"type":"reports","id":"2021-10-01","attributes":{"tags":["project"],"start_date":"2021-10-01","end_date":"2021-11-01","size":27977,"computed_on":"2021-11-01T15:14:43+00:00"}},{"type":"reports","id":"2021-09-01","attributes":{"tags":["project"],"start_date":"2021-09-01","end_date":"2021-10-01","size":20126,"computed_on":"2021-10-01T17:53:32+00:00"}},{"type":"reports","id":"2021-08-01","attributes":{"tags":["project"],"start_date":"2021-08-01","end_date":"2021-09-01","size":21429,"computed_on":"2021-09-01T18:05:42+00:00"}},{"type":"reports","id":"2021-07-01","attributes":{"tags":["project"],"start_date":"2021-07-01","end_date":"2021-08-01","size":21226,"computed_on":"2021-08-01T21:02:05+00:00"}},{"type":"reports","id":"2021-06-01","attributes":{"tags":["project"],"start_date":"2021-06-01","end_date":"2021-07-01","size":19206,"computed_on":"2021-07-02T01:10:11+00:00"}},{"type":"reports","id":"2021-05-01","attributes":{"tags":["project"],"start_date":"2021-05-01","end_date":"2021-06-01","size":12397,"computed_on":"2021-06-01T18:47:43+00:00"}},{"type":"reports","id":"2021-04-01","attributes":{"tags":["project"],"start_date":"2021-04-01","end_date":"2021-05-01","size":24230,"computed_on":"2021-05-01T20:21:29+00:00"}},{"type":"reports","id":"2021-03-01","attributes":{"tags":["project"],"start_date":"2021-03-01","end_date":"2021-04-01","size":33516,"computed_on":"2021-04-15T18:59:09+00:00"}},{"type":"reports","id":"2021-02-01","attributes":{"tags":["project"],"start_date":"2021-02-01","end_date":"2021-03-01","size":35757,"computed_on":"2021-03-02T15:37:35+00:00"}}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

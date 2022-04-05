@@ -1,0 +1,65 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json;datetime-format=rfc3339
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/usage/synthetics_browser?start_hr=2022-03-27T00%3A41%3A28.503Z&end_hr=2022-03-29T00%3A41%3A28.503Z
+  response:
+    body:
+      string: '{"usage":[{"org_name":"DD Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T00:00:00+00:00","check_calls_count":1181},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T01:00:00+00:00","check_calls_count":1190},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T02:00:00+00:00","check_calls_count":1180},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T03:00:00+00:00","check_calls_count":1197},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T04:00:00+00:00","check_calls_count":1178},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T05:00:00+00:00","check_calls_count":1180},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T06:00:00+00:00","check_calls_count":1174},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T07:00:00+00:00","check_calls_count":1163},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T08:00:00+00:00","check_calls_count":1167},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T09:00:00+00:00","check_calls_count":1182},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T10:00:00+00:00","check_calls_count":1195},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T11:00:00+00:00","check_calls_count":1178},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T12:00:00+00:00","check_calls_count":1170},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T13:00:00+00:00","check_calls_count":1192},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T14:00:00+00:00","check_calls_count":1170},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T15:00:00+00:00","check_calls_count":1171},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T16:00:00+00:00","check_calls_count":1172},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T17:00:00+00:00","check_calls_count":1182},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T18:00:00+00:00","check_calls_count":1171},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T19:00:00+00:00","check_calls_count":1150},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T20:00:00+00:00","check_calls_count":1155},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T21:00:00+00:00","check_calls_count":1182},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T22:00:00+00:00","check_calls_count":1173},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-27T23:00:00+00:00","check_calls_count":1161},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T00:00:00+00:00","check_calls_count":1189},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T01:00:00+00:00","check_calls_count":1200},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T02:00:00+00:00","check_calls_count":1183},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T03:00:00+00:00","check_calls_count":1175},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T04:00:00+00:00","check_calls_count":1185},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T05:00:00+00:00","check_calls_count":1177},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T06:00:00+00:00","check_calls_count":1178},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T07:00:00+00:00","check_calls_count":1169},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T08:00:00+00:00","check_calls_count":1151},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T09:00:00+00:00","check_calls_count":1178},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T10:00:00+00:00","check_calls_count":1170},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T11:00:00+00:00","check_calls_count":1138},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T12:00:00+00:00","check_calls_count":1169},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T13:00:00+00:00","check_calls_count":1161},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T14:00:00+00:00","check_calls_count":1165},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T15:00:00+00:00","check_calls_count":1155},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T16:00:00+00:00","check_calls_count":1157},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T17:00:00+00:00","check_calls_count":1173},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T18:00:00+00:00","check_calls_count":567},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T19:00:00+00:00","check_calls_count":0},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T20:00:00+00:00","check_calls_count":0},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T21:00:00+00:00","check_calls_count":49},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T22:00:00+00:00","check_calls_count":0},{"org_name":"DD
+        Integration Tests (321813)","browser_check_calls_count":0,"public_id":"fasjyydbcgwwc2uc","hour":"2022-03-28T23:00:00+00:00","check_calls_count":0}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
