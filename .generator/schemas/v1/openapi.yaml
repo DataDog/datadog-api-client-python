@@ -1270,6 +1270,7 @@ components:
       properties:
         deleted_monitor_id:
           description: ID of the deleted monitor.
+          example: 666486743
           format: int64
           type: integer
       readOnly: true
@@ -21650,6 +21651,7 @@ paths:
         required: true
         schema:
           items:
+            example: 666486743
             format: int64
             type: integer
           type: array
@@ -21925,6 +21927,7 @@ paths:
         name: monitor_id
         required: true
         schema:
+          example: 666486743
           format: int64
           type: integer
       - description: Delete the monitor even if it's referenced by other resources
@@ -21988,6 +21991,7 @@ paths:
         name: monitor_id
         required: true
         schema:
+          example: 666486743
           format: int64
           type: integer
       - description: When specified, shows additional information about the group
@@ -22044,6 +22048,7 @@ paths:
         name: monitor_id
         required: true
         schema:
+          example: 666486743
           format: int64
           type: integer
       requestBody:
@@ -22145,6 +22150,60 @@ paths:
       x-menu-order: 7
       x-undo:
         type: safe
+  /api/v1/monitor/{monitor_id}/validate:
+    post:
+      description: Validate the monitor provided in the request.
+      operationId: ValidateExistingMonitor
+      parameters:
+      - description: The ID of the monitor
+        in: path
+        name: monitor_id
+        required: true
+        schema:
+          example: 666486743
+          format: int64
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Monitor'
+        description: Monitor request object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                example: {}
+                type: object
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Invalid JSON
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Forbidden
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - monitors_write
+      summary: Validate an existing monitor
+      tags:
+      - Monitors
+      x-codegen-request-body-name: body
+      x-menu-order: 8
+      x-undo:
+        type: idempotent
   /api/v1/monthly_custom_reports:
     get:
       description: Get monthly custom reports.
