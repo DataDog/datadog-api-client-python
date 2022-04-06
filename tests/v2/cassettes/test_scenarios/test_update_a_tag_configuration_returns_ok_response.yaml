@@ -1,0 +1,70 @@
+interactions:
+- request:
+    body: '{"series":[{"metric":"TestUpdateatagconfigurationreturnsOKresponse1648572657","points":[[1648572657,1.1]],"tags":["test:ExampleSubmitmetricsreturnsPayloadacceptedresponse"],"type":"gauge"}]}'
+    headers:
+      accept:
+      - text/json
+      content-type:
+      - text/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/series
+  response:
+    body:
+      string: '{"status": "ok"}'
+    headers:
+      content-type:
+      - text/json
+    status:
+      code: 202
+      message: Accepted
+- request:
+    body: '{"data":{"attributes":{"metric_type":"gauge","tags":["app","datacenter","TestUpdateatagconfigurationreturnsOKresponse1648572657"]},"id":"TestUpdateatagconfigurationreturnsOKresponse1648572657","type":"manage_tags"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/metrics/TestUpdateatagconfigurationreturnsOKresponse1648572657/tags
+  response:
+    body:
+      string: '{"data":{"type":"manage_tags","id":"TestUpdateatagconfigurationreturnsOKresponse1648572657","attributes":{"tags":["datacenter","app","TestUpdateatagconfigurationreturnsOKresponse1648572657"],"created_at":"2022-03-29T16:50:58.686271+00:00","modified_at":"2022-03-29T16:50:58.686271+00:00","metric_type":"gauge","aggregations":[{"space":"avg","time":"avg"}]}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"tags":["app"]},"id":"TestUpdateatagconfigurationreturnsOKresponse1648572657","type":"manage_tags"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/metrics/TestUpdateatagconfigurationreturnsOKresponse1648572657/tags
+  response:
+    body:
+      string: '{"data":{"type":"manage_tags","id":"TestUpdateatagconfigurationreturnsOKresponse1648572657","attributes":{"tags":["app"],"created_at":"2022-03-29T16:50:58.686271+00:00","modified_at":"2022-03-29T16:50:59.386565+00:00","metric_type":"gauge","aggregations":[{"space":"avg","time":"avg"}]}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/metrics/TestUpdateatagconfigurationreturnsOKresponse1648572657/tags
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

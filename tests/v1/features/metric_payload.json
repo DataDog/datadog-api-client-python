@@ -1,0 +1,17 @@
+{
+  "series": [
+    {
+      "metric": "{{ unique_alnum }}",
+      "type": "gauge",
+      "points": [
+        [
+          {{ timestamp("now") }},
+          1.1
+        ]
+      ],
+      "tags": [
+        "test:ExampleSubmitmetricsreturnsPayloadacceptedresponse"
+      ]
+    }
+  ]
+}

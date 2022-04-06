@@ -1,0 +1,68 @@
+interactions:
+- request:
+    body: '{"series":[{"metric":"TestListtagsbymetricnamereturnsSuccessresponse1648572430","points":[[1648572430,1.1]],"tags":["test:ExampleSubmitmetricsreturnsPayloadacceptedresponse"],"type":"gauge"}]}'
+    headers:
+      accept:
+      - text/json
+      content-type:
+      - text/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/series
+  response:
+    body:
+      string: '{"status": "ok"}'
+    headers:
+      content-type:
+      - text/json
+    status:
+      code: 202
+      message: Accepted
+- request:
+    body: '{"data":{"attributes":{"metric_type":"gauge","tags":["app","datacenter","TestListtagsbymetricnamereturnsSuccessresponse1648572430"]},"id":"TestListtagsbymetricnamereturnsSuccessresponse1648572430","type":"manage_tags"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/metrics/TestListtagsbymetricnamereturnsSuccessresponse1648572430/tags
+  response:
+    body:
+      string: '{"data":{"type":"manage_tags","id":"TestListtagsbymetricnamereturnsSuccessresponse1648572430","attributes":{"tags":["datacenter","app","TestListtagsbymetricnamereturnsSuccessresponse1648572430"],"created_at":"2022-03-29T16:47:10.957888+00:00","modified_at":"2022-03-29T16:47:10.957888+00:00","metric_type":"gauge","aggregations":[{"space":"avg","time":"avg"}]}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/metrics/TestListtagsbymetricnamereturnsSuccessresponse1648572430/all-tags
+  response:
+    body:
+      string: '{"data":{"type":"metrics","id":"TestListtagsbymetricnamereturnsSuccessresponse1648572430","attributes":{"tags":[]}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/metrics/TestListtagsbymetricnamereturnsSuccessresponse1648572430/tags
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
