@@ -31,9 +31,7 @@ body = SyntheticsBrowserTest(
         assertions=[],
         config_variables=[SyntheticsConfigVariable(name="VARIABLE_NAME", type=SyntheticsConfigVariableType("text"))],
         request=SyntheticsTestRequest(
-            basic_auth=SyntheticsBasicAuthWeb(
-                password="PaSSw0RD!", type=SyntheticsBasicAuthWebType("web"), username="my_username"
-            ),
+            basic_auth=SyntheticsBasicAuthWeb(password="", type=SyntheticsBasicAuthWebType("web"), username=""),
             certificate=SyntheticsTestRequestCertificate(
                 cert=SyntheticsTestRequestCertificateItem(), key=SyntheticsTestRequestCertificateItem()
             ),

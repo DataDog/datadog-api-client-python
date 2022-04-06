@@ -30,7 +30,7 @@ body = Dashboard(
                 title_align=WidgetTextAlign("left"),
                 time=WidgetTime(),
                 type=AlertGraphWidgetDefinitionType("alert_graph"),
-                alert_id="7",
+                alert_id="1",
                 viz_type=WidgetVizType("timeseries"),
             ),
         )

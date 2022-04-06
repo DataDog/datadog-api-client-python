@@ -34,7 +34,7 @@ class UsageIngestedSpansHour(ModelNormal):
         :param hour: The hour for the usage.
         :type hour: datetime, optional
 
-        :param ingested_events_bytes: Contains the total number of bytes ingested for APM spans during a given hour.
+        :param ingested_events_bytes: Contains the total number of bytes ingested during a given hour.
         :type ingested_events_bytes: int, optional
 
         :param org_name: The organization name.

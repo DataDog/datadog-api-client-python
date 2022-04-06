@@ -14,7 +14,6 @@ def lazy_import():
     from datadog_api_client.v1.model.query_value_widget_request import QueryValueWidgetRequest
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.widget_time import WidgetTime
-    from datadog_api_client.v1.model.timeseries_background import TimeseriesBackground
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.query_value_widget_definition_type import QueryValueWidgetDefinitionType
 
@@ -22,7 +21,6 @@ def lazy_import():
     globals()["QueryValueWidgetRequest"] = QueryValueWidgetRequest
     globals()["WidgetTextAlign"] = WidgetTextAlign
     globals()["WidgetTime"] = WidgetTime
-    globals()["TimeseriesBackground"] = TimeseriesBackground
     globals()["WidgetTextAlign"] = WidgetTextAlign
     globals()["QueryValueWidgetDefinitionType"] = QueryValueWidgetDefinitionType
 
@@ -46,7 +44,6 @@ class QueryValueWidgetDefinition(ModelNormal):
             "requests": ([QueryValueWidgetRequest],),
             "text_align": (WidgetTextAlign,),
             "time": (WidgetTime,),
-            "timeseries_background": (TimeseriesBackground,),
             "title": (str,),
             "title_align": (WidgetTextAlign,),
             "title_size": (str,),
@@ -61,7 +58,6 @@ class QueryValueWidgetDefinition(ModelNormal):
         "requests": "requests",
         "text_align": "text_align",
         "time": "time",
-        "timeseries_background": "timeseries_background",
         "title": "title",
         "title_align": "title_align",
         "title_size": "title_size",
@@ -92,9 +88,6 @@ class QueryValueWidgetDefinition(ModelNormal):
 
         :param time: Time setting for the widget.
         :type time: WidgetTime, optional
-
-        :param timeseries_background: Set a timeseries on the widget background.
-        :type timeseries_background: TimeseriesBackground, optional
 
         :param title: Title of your widget.
         :type title: str, optional

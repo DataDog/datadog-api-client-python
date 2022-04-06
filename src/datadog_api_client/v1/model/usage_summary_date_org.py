@@ -331,7 +331,7 @@ class UsageSummaryDateOrg(ModelNormal):
         :param trace_search_indexed_events_count_sum: Shows the sum of all Indexed Spans indexed over all hours in the current date for the given org.
         :type trace_search_indexed_events_count_sum: int, optional
 
-        :param twol_ingested_events_bytes_sum: Shows the sum of all ingested APM span bytes over all hours in the current date for the given org.
+        :param twol_ingested_events_bytes_sum: Shows the sum of all tracing without limits bytes ingested over all hours in the current date for the given org.
         :type twol_ingested_events_bytes_sum: int, optional
 
         :param vsphere_host_top99p: Shows the 99th percentile of all vSphere hosts over all hours in the current date for the given org.

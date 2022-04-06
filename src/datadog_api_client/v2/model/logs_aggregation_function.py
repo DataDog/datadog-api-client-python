@@ -25,7 +25,6 @@ class LogsAggregationFunction(ModelSimple):
             "MIN": "min",
             "MAX": "max",
             "AVG": "avg",
-            "MEDIAN": "median",
         },
     }
 
@@ -41,7 +40,7 @@ class LogsAggregationFunction(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["count", "cardinality", "pc75", "pc90", "pc95", "pc98", "pc99", "sum", "min", "max", "avg", "median"].
+        :param value: Must be one of ["count", "cardinality", "pc75", "pc90", "pc95", "pc98", "pc99", "sum", "min", "max", "avg"].
         :type value: str
         """
         super().__init__(kwargs)

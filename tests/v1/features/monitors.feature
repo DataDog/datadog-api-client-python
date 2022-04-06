@@ -217,28 +217,3 @@ Feature: Monitors
     And body from file "monitor_payload.json"
     When the request is sent
     Then the response status is 200 OK
-
-  @team:DataDog/monitor-app
-  Scenario: Validate an existing monitor returns "Invalid JSON" response
-    Given there is a valid "monitor" in the system
-    And new "ValidateExistingMonitor" request
-    And request contains "monitor_id" parameter from "monitor.id"
-    And body with value {"type": "log alert", "query": "query"}
-    When the request is sent
-    Then the response status is 400 Invalid JSON
-
-  @skip @team:DataDog/monitor-app
-  Scenario: Validate an existing monitor returns "Item not found error" response
-    Given new "ValidateExistingMonitor" request
-    And request contains "monitor_id" parameter with value 0
-    When the request is sent
-    Then the response status is 404 Item not found error
-
-  @team:DataDog/monitor-app
-  Scenario: Validate an existing monitor returns "OK" response
-    Given there is a valid "monitor" in the system
-    And new "ValidateExistingMonitor" request
-    And request contains "monitor_id" parameter from "monitor.id"
-    And body from file "monitor_payload.json"
-    When the request is sent
-    Then the response status is 200 OK

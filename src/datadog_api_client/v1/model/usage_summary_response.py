@@ -378,7 +378,7 @@ class UsageSummaryResponse(ModelNormal):
         :param trace_search_indexed_events_count_agg_sum: Shows the sum of all Indexed Spans indexed over all hours in the current months for all organizations.
         :type trace_search_indexed_events_count_agg_sum: int, optional
 
-        :param twol_ingested_events_bytes_agg_sum: Shows the sum of all ingested APM span bytes over all hours in the current months for all organizations.
+        :param twol_ingested_events_bytes_agg_sum: Shows the sum of all tracing without limits bytes ingested over all hours in the current months for all organizations.
         :type twol_ingested_events_bytes_agg_sum: int, optional
 
         :param usage: An array of objects regarding hourly usage.

@@ -612,8 +612,6 @@ from datadog_api_client.v1.model.table_widget_has_search_bar import TableWidgetH
 from datadog_api_client.v1.model.table_widget_request import TableWidgetRequest
 from datadog_api_client.v1.model.tag_to_hosts import TagToHosts
 from datadog_api_client.v1.model.target_format_type import TargetFormatType
-from datadog_api_client.v1.model.timeseries_background import TimeseriesBackground
-from datadog_api_client.v1.model.timeseries_background_type import TimeseriesBackgroundType
 from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
 from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
 from datadog_api_client.v1.model.timeseries_widget_expression_alias import TimeseriesWidgetExpressionAlias
