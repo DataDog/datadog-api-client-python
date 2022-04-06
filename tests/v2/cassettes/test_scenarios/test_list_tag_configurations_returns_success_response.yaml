@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"metric_type":"gauge","tags":["app","datacenter","TestListtagconfigurationsreturnsSuccessresponse1648477792"]},"id":"test.metric.1","type":"manage_tags"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/metrics/test.metric.1/tags
+  response:
+    body:
+      string: '{"errors": ["New gauge/count/rate conflicts with existing tag configuration,
+        use PATCH to update"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 409
+      message: Conflict
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/metrics
+  response:
+    body:
+      string: '{"status":"error","code":502,"errors":["Bad Gateway"],"statuspage":"http://status.datadoghq.com","twitter":"http://twitter.com/datadogops","email":"support@datadoghq.com"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 502
+      message: Bad Gateway
+version: 1

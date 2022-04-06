@@ -17,7 +17,7 @@ body = MetricTagConfigurationCreateRequest(
         type=MetricTagConfigurationType("manage_tags"),
         id="ExampleCreateatagconfigurationreturnsCreatedresponse",
         attributes=MetricTagConfigurationCreateAttributes(
-            tags=["app", "datacenter"], metric_type=MetricTagConfigurationMetricTypes("distribution")
+            tags=["app", "datacenter"], metric_type=MetricTagConfigurationMetricTypes("gauge")
         ),
     )
 )

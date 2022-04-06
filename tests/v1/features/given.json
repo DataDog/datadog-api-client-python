@@ -111,6 +111,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"series\": [\n    {\n      \"metric\": \"{{ unique_alnum }}\",\n      \"type\": \"gauge\",\n      \"points\": [\n        [\n          {{ timestamp(\"now\") }},\n          1.1\n        ]\n      ],\n      \"tags\": [\n        \"test:ExampleSubmitmetricsreturnsPayloadacceptedresponse\"\n      ]\n    }\n  ]\n}\n"
+      }
+    ],
+    "step": "there is a valid \"metric\" in the system",
+    "key": "metric",
+    "tag": "Metrics",
+    "operationId": "SubmitMetrics"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"type\": \"metric\",\n  \"name\": \"{{ unique }}\",\n  \"thresholds\": [{\n    \"timeframe\": \"7d\",\n    \"target\": 95.0,\n    \"warning\": 98.0\n  }],\n  \"query\": {\n    \"numerator\": \"sum:httpservice.hits{code:2xx}.as_count()\",\n    \"denominator\": \"sum:httpservice.hits{!code:3xx}.as_count()\"\n  }\n}"
       }
     ],
