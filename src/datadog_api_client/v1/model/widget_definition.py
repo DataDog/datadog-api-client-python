@@ -291,6 +291,9 @@ class WidgetDefinition(ModelComposed):
         :param custom_unit: Display a unit of your choice on the widget.
         :type custom_unit: str, optional
 
+        :param timeseries_background: Set a timeseries on the widget background.
+        :type timeseries_background: TimeseriesBackground, optional
+
         :param color_by_groups: List of groups used for colors.
         :type color_by_groups: [str], optional
 

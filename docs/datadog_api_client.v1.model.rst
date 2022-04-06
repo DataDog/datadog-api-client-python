@@ -4321,6 +4321,22 @@ target\_format\_type
    :undoc-members:
    :show-inheritance:
 
+timeseries\_background
+----------------------
+
+.. automodule:: datadog_api_client.v1.model.timeseries_background
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+timeseries\_background\_type
+----------------------------
+
+.. automodule:: datadog_api_client.v1.model.timeseries_background_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 timeseries\_widget\_definition
 ------------------------------
 

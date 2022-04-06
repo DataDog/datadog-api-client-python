@@ -62,6 +62,13 @@ Feature: Dashboards
     Then the response status is 200 OK
 
   @team:DataDog/dashboards
+  Scenario: Create a new dashboard with a query value widget using timeseries background
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with QVW Timeseries Background", "widgets": [{"definition":{"title_size":"16","title":"","title_align":"left","precision":2,"time":{},"autoscale":true,"requests":[{"formulas":[{"formula":"query1"}],"response_format":"scalar","queries":[{"query":"sum:my.cool.count.metric{*}","data_source":"metrics","name":"query1","aggregator":"percentile"}]}],"type":"query_value","timeseries_background":{"type":"area","yaxis":{"include_zero":true}}},"layout":{"y":0,"x":0,"height":2,"width":2}}]}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/dashboards
   Scenario: Create a new dashboard with alert_graph widget
     Given there is a valid "monitor" in the system
     And new "CreateDashboard" request
