@@ -34,7 +34,7 @@ Feature: Synthetics
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a browser test returns "- JSON format is wrong" response
     Given new "CreateSyntheticsBrowserTest" request
-    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
+    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "", "type": "web", "username": ""}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
@@ -49,7 +49,7 @@ Feature: Synthetics
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a browser test returns "Test quota is reached" response
     Given new "CreateSyntheticsBrowserTest" request
-    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
+    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "", "type": "web", "username": ""}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
     When the request is sent
     Then the response status is 402 Test quota is reached
 
@@ -213,7 +213,7 @@ Feature: Synthetics
   Scenario: Edit a browser test returns "- JSON format is wrong" response
     Given new "UpdateBrowserTest" request
     And request contains "public_id" parameter from "REPLACE.ME"
-    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
+    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "", "type": "web", "username": ""}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
@@ -221,7 +221,7 @@ Feature: Synthetics
   Scenario: Edit a browser test returns "- Synthetic Monitoring is not activated for the user" response
     Given new "UpdateBrowserTest" request
     And request contains "public_id" parameter from "REPLACE.ME"
-    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
+    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "", "type": "web", "username": ""}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
     When the request is sent
     Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
@@ -229,7 +229,7 @@ Feature: Synthetics
   Scenario: Edit a browser test returns "OK" response
     Given new "UpdateBrowserTest" request
     And request contains "public_id" parameter from "REPLACE.ME"
-    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
+    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "", "type": "web", "username": ""}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -513,13 +513,13 @@ Feature: Synthetics
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Trigger tests from CI/CD pipelines returns "JSON format is wrong" response
     Given new "TriggerCITests" request
-    And body with value {"tests": [{"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "deviceIds": ["laptop_large"], "locations": ["aws:eu-west-3"], "metadata": {"ci": {"pipeline": {}, "provider": {}}, "git": {}}, "public_id": "aaa-aaa-aaa", "retry": {}}]}
+    And body with value {"tests": [{"basicAuth": {"password": "", "type": "web", "username": ""}, "deviceIds": ["laptop_large"], "locations": ["aws:eu-west-3"], "metadata": {"ci": {"pipeline": {}, "provider": {}}, "git": {}}, "public_id": "aaa-aaa-aaa", "retry": {}}]}
     When the request is sent
     Then the response status is 400 JSON format is wrong
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Trigger tests from CI/CD pipelines returns "OK" response
     Given new "TriggerCITests" request
-    And body with value {"tests": [{"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "deviceIds": ["laptop_large"], "locations": ["aws:eu-west-3"], "metadata": {"ci": {"pipeline": {}, "provider": {}}, "git": {}}, "public_id": "aaa-aaa-aaa", "retry": {}}]}
+    And body with value {"tests": [{"basicAuth": {"password": "", "type": "web", "username": ""}, "deviceIds": ["laptop_large"], "locations": ["aws:eu-west-3"], "metadata": {"ci": {"pipeline": {}, "provider": {}}, "git": {}}, "public_id": "aaa-aaa-aaa", "retry": {}}]}
     When the request is sent
     Then the response status is 200 OK

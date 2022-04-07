@@ -54,23 +54,21 @@ Feature: Metrics
     When the request is sent
     Then the response status is 409 Conflict
 
-  @replay-only @team:DataDog/points-aggregation
+  @skip @team:DataDog/points-aggregation
   Scenario: Create a tag configuration returns "Created" response
     Given operation "CreateTagConfiguration" enabled
     And new "CreateTagConfiguration" request
-    And there is a valid "metric" in the system
     And request contains "metric_name" parameter with value "{{ unique_alnum }}"
-    And body with value {"data": {"type": "manage_tags", "id": "{{ unique_alnum }}", "attributes": {"tags": ["app","datacenter"], "metric_type": "gauge"}}}
+    And body with value {"data": {"type": "manage_tags", "id": "{{ unique_alnum }}", "attributes": {"tags": ["app","datacenter"], "metric_type": "distribution"}}}
     When the request is sent
     Then the response status is 201 Created
 
-  @replay-only @team:DataDog/points-aggregation
+  @skip @team:DataDog/points-aggregation
   Scenario: Delete a tag configuration returns "No Content" response
-    Given there is a valid "metric" in the system
-    And there is a valid "metric_tag_configuration" in the system
+    Given there is a valid "metric_tag_configuration" in the system
     And operation "DeleteTagConfiguration" enabled
     And new "DeleteTagConfiguration" request
-    And request contains "metric_name" parameter with value "{{ unique_alnum }}"
+    And request contains "metric_name" parameter from "metric_tag_configuration.data.id"
     When the request is sent
     Then the response status is 204 No Content
 
@@ -96,15 +94,14 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/points-aggregation
+  @skip @team:DataDog/points-aggregation
   Scenario: List distinct metric volumes by metric name returns "Success" response
-    Given there is a valid "metric" in the system
-    And there is a valid "metric_tag_configuration" in the system
+    Given there is a valid "metric_tag_configuration" in the system
     And new "ListVolumesByMetricName" request
-    And request contains "metric_name" parameter with value "{{ unique_alnum }}"
+    And request contains "metric_name" parameter from "metric_tag_configuration.data.id"
     When the request is sent
     Then the response status is 200 Success
-    And the response "data.type" is equal to "metric_volumes"
+    And the response "data.id" has the same value as "metric_tag_configuration.data.id"
 
   @generated @skip @team:DataDog/points-aggregation
   Scenario: List tag configuration by name returns "Not Found" response
@@ -114,10 +111,9 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/points-aggregation
+  @skip @team:DataDog/points-aggregation
   Scenario: List tag configuration by name returns "Success" response
-    Given there is a valid "metric" in the system
-    And there is a valid "metric_tag_configuration" in the system
+    Given there is a valid "metric_tag_configuration" in the system
     And operation "ListTagConfigurationByName" enabled
     And new "ListTagConfigurationByName" request
     And request contains "metric_name" parameter from "metric_tag_configuration.data.id"
@@ -134,24 +130,19 @@ Feature: Metrics
 
   @skip @team:DataDog/points-aggregation
   Scenario: List tag configurations returns "Success" response
-    Given operation "ListTagConfigurations" enabled
+    Given there is a valid "metric_tag_configuration" in the system
+    And operation "ListTagConfigurations" enabled
     And new "ListTagConfigurations" request
+    And request contains "filter[tags_configured]" parameter with value "{{ unique_alnum }}"
     When the request is sent
     Then the response status is 200 Success
+    And the response "data[0].id" has the same value as "metric_tag_configuration.data.id"
 
   @team:DataDog/points-aggregation
   Scenario: List tag configurations with a tag filter returns "Success" response
     Given operation "ListTagConfigurations" enabled
     And new "ListTagConfigurations" request
     And request contains "filter[tags]" parameter with value "{{ unique_alnum }}"
-    When the request is sent
-    Then the response status is 200 Success
-
-  @team:DataDog/points-aggregation
-  Scenario: List tag configurations with configured filter returns "Success" response
-    Given operation "ListTagConfigurations" enabled
-    And new "ListTagConfigurations" request
-    And request contains "filter[configured]" parameter with value true
     When the request is sent
     Then the response status is 200 Success
 
@@ -169,10 +160,9 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/points-aggregation
+  @skip @team:DataDog/points-aggregation
   Scenario: List tags by metric name returns "Success" response
-    Given there is a valid "metric" in the system
-    And there is a valid "metric_tag_configuration" in the system
+    Given there is a valid "metric_tag_configuration" in the system
     And new "ListTagsByMetricName" request
     And request contains "metric_name" parameter from "metric_tag_configuration.data.id"
     When the request is sent
@@ -188,10 +178,9 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/points-aggregation
+  @skip @team:DataDog/points-aggregation
   Scenario: Update a tag configuration returns "OK" response
     Given operation "UpdateTagConfiguration" enabled
-    And there is a valid "metric" in the system
     And there is a valid "metric_tag_configuration" in the system
     And new "UpdateTagConfiguration" request
     And request contains "metric_name" parameter from "metric_tag_configuration.data.id"

@@ -299,7 +299,7 @@ class MetricsApi:
         >>> thread = api.list_metrics(q, async_req=True)
         >>> result = thread.get()
 
-        :param q: Query string to search metrics upon. Can optionally be prefixed with `metrics:`.
+        :param q: Query string to search metrics upon. Must be prefixed with `metrics:`.
         :type q: str
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -394,7 +394,7 @@ class MetricsApi:
 
         - 64 bits for the timestamp
         - 32 bits for the value
-        - 40 bytes for the metric names
+        - 20 bytes for the metric names
         - 50 bytes for the timeseries
         - The full payload is approximately 100 bytes. However, with the DogStatsD API,
         compression is applied, which reduces the payload size.

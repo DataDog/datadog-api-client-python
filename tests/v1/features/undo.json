@@ -736,12 +736,6 @@
       "type": "safe"
     }
   },
-  "ValidateExistingMonitor": {
-    "tag": "Monitors",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
   "GetMonthlyCustomReports": {
     "tag": "Usage Metering",
     "undo": {

@@ -1364,20 +1364,6 @@ class UsageMeteringApi:
 
         Get Hourly Usage Attribution.
 
-        This API endpoint is paginated. To make sure you receive all records, check if the value of `next_record_id` is
-        set in the response. If it is, make another request and pass `next_record_id` as a parameter.
-        Pseudo code example:
-
-        ```
-        response := GetHourlyUsageAttribution(start_month)
-        cursor := response.metadata.pagination.next_record_id
-        WHILE cursor != null BEGIN
-          sleep(5 seconds)  # Avoid running into rate limit
-          response := GetHourlyUsageAttribution(start_month, next_record_id=cursor)
-          cursor := response.metadata.pagination.next_record_id
-        END
-        ```
-
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1394,8 +1380,6 @@ class UsageMeteringApi:
         :param next_record_id: List following results with a next_record_id provided in the previous query.
         :type next_record_id: str, optional
         :param tag_breakdown_keys: Comma separated list of tags used to group usage. If no value is provided the usage will not be broken down by tags.
-
-            To see which tags are available, look for the value of `tag_config_source` in the API response.
         :type tag_breakdown_keys: str, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -1577,20 +1561,6 @@ class UsageMeteringApi:
 
         Get Monthly Usage Attribution.
 
-        This API endpoint is paginated. To make sure you receive all records, check if the value of `next_record_id` is
-        set in the response. If it is, make another request and pass `next_record_id` as a parameter.
-        Pseudo code example:
-
-        ```
-        response := GetMonthlyUsageAttribution(start_month)
-        cursor := response.metadata.pagination.next_record_id
-        WHILE cursor != null BEGIN
-          sleep(5 seconds)  # Avoid running into rate limit
-          response := GetMonthlyUsageAttribution(start_month, next_record_id=cursor)
-          cursor := response.metadata.pagination.next_record_id
-        END
-        ```
-
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
@@ -1608,9 +1578,7 @@ class UsageMeteringApi:
         :type sort_direction: UsageSortDirection, optional
         :param sort_name: The field to sort by.
         :type sort_name: MonthlyUsageAttributionSupportedMetrics, optional
-        :param tag_breakdown_keys: Comma separated list of tag keys used to group usage. If no value is provided the usage will not be broken down by tags.
-
-            To see which tags are available, look for the value of `tag_config_source` in the API response.
+        :param tag_breakdown_keys: Comma separated list of tags used to group usage. If no value is provided the usage will not be broken down by tags.
         :type tag_breakdown_keys: str, optional
         :param next_record_id: List following results with a next_record_id provided in the previous query.
         :type next_record_id: str, optional

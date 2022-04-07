@@ -12,8 +12,8 @@ with ApiClient(configuration) as api_client:
     response = api_instance.list_logs_get(
         filter_query="datadog-agent",
         filter_index="main",
-        filter_from=datetime(2020, 9, 17, 11, 48, 36, tzinfo=tzoffset(None, 3600)),
-        filter_to=datetime(2020, 9, 17, 12, 48, 36, tzinfo=tzoffset(None, 3600)),
+        filter_from=datetime.datetime(2020, 9, 17, 11, 48, 36, tzinfo=tzoffset(None, 3600)),
+        filter_to=datetime.datetime(2020, 9, 17, 12, 48, 36, tzinfo=tzoffset(None, 3600)),
         page_limit=5,
     )
 

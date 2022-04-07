@@ -9,6 +9,8 @@ configuration = Configuration()
 configuration.unstable_operations["list_tag_configurations"] = True
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
-    response = api_instance.list_tag_configurations()
+    response = api_instance.list_tag_configurations(
+        filter_tags_configured="ExampleListtagconfigurationsreturnsSuccessresponse"
+    )
 
     print(response)
