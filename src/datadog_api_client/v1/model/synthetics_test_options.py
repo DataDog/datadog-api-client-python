@@ -12,10 +12,12 @@ from datadog_api_client.model_utils import (
 def lazy_import():
     from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
     from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
+    from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
     from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
 
     globals()["SyntheticsDeviceID"] = SyntheticsDeviceID
     globals()["SyntheticsTestOptionsMonitorOptions"] = SyntheticsTestOptionsMonitorOptions
+    globals()["SyntheticsRestrictedRoles"] = SyntheticsRestrictedRoles
     globals()["SyntheticsTestOptionsRetry"] = SyntheticsTestOptionsRetry
 
 
@@ -47,6 +49,7 @@ class SyntheticsTestOptions(ModelNormal):
             "monitor_options": (SyntheticsTestOptionsMonitorOptions,),
             "monitor_priority": (int,),
             "no_screenshot": (bool,),
+            "restricted_roles": (SyntheticsRestrictedRoles,),
             "retry": (SyntheticsTestOptionsRetry,),
             "tick_every": (int,),
         }
@@ -64,6 +67,7 @@ class SyntheticsTestOptions(ModelNormal):
         "monitor_options": "monitor_options",
         "monitor_priority": "monitor_priority",
         "no_screenshot": "noScreenshot",
+        "restricted_roles": "restricted_roles",
         "retry": "retry",
         "tick_every": "tick_every",
     }
@@ -110,6 +114,9 @@ class SyntheticsTestOptions(ModelNormal):
 
         :param no_screenshot: Prevents saving screenshots of the steps.
         :type no_screenshot: bool, optional
+
+        :param restricted_roles: A list of role identifiers that can be pulled from the Roles API, for restricting read and write access.
+        :type restricted_roles: SyntheticsRestrictedRoles, optional
 
         :param retry: Object describing the retry strategy to apply to a Synthetic test.
         :type retry: SyntheticsTestOptionsRetry, optional

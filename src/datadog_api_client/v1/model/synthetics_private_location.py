@@ -10,8 +10,10 @@ from datadog_api_client.model_utils import (
 
 
 def lazy_import():
+    from datadog_api_client.v1.model.synthetics_private_location_metadata import SyntheticsPrivateLocationMetadata
     from datadog_api_client.v1.model.synthetics_private_location_secrets import SyntheticsPrivateLocationSecrets
 
+    globals()["SyntheticsPrivateLocationMetadata"] = SyntheticsPrivateLocationMetadata
     globals()["SyntheticsPrivateLocationSecrets"] = SyntheticsPrivateLocationSecrets
 
 
@@ -22,6 +24,7 @@ class SyntheticsPrivateLocation(ModelNormal):
         return {
             "description": (str,),
             "id": (str,),
+            "metadata": (SyntheticsPrivateLocationMetadata,),
             "name": (str,),
             "secrets": (SyntheticsPrivateLocationSecrets,),
             "tags": ([str],),
@@ -30,6 +33,7 @@ class SyntheticsPrivateLocation(ModelNormal):
     attribute_map = {
         "description": "description",
         "id": "id",
+        "metadata": "metadata",
         "name": "name",
         "secrets": "secrets",
         "tags": "tags",
@@ -48,6 +52,9 @@ class SyntheticsPrivateLocation(ModelNormal):
 
         :param id: Unique identifier of the private location.
         :type id: str, optional
+
+        :param metadata: Object containing metadata about the private location.
+        :type metadata: SyntheticsPrivateLocationMetadata, optional
 
         :param name: Name of the private location.
         :type name: str
