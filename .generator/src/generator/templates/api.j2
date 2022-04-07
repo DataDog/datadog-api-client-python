@@ -185,4 +185,24 @@ class {{ classname }}:
         kwargs["{{ name|attribute_name }}"] = {{ name|attribute_name }}
 {% endfor %}
         return self._{{ operation.operationId|safe_snake_case }}_endpoint.call_with_http_info(**kwargs)
+    {%- if operation["x-pagination"] %}
+
+    def {{ operation.operationId|safe_snake_case }}_with_pagination(self, {% for name, parameter in operation|parameters if parameter.required %}{{name|attribute_name}}, {% endfor %}**kwargs):
+        kwargs = self._{{ operation.operationId|safe_snake_case }}_endpoint.default_arguments(kwargs)
+{%- for name, parameter in operation|parameters if parameter.required %}
+        kwargs["{{ name|attribute_name }}"] = {{ name|attribute_name }}
+{% endfor %}
+        {%- set pagination = operation["x-pagination"] %}
+        {%- if pagination.pageOffset %}
+        page_size = kwargs.get("{{ pagination.pageOffset.limitParam|attribute_name }}", 20)
+        kwargs["{{ pagination.pageOffset.limitParam|attribute_name }}"] = page_size
+        while True:
+            response = self._{{ operation.operationId|safe_snake_case }}_endpoint.call_with_http_info(**kwargs)
+            for item in response.{{ pagination.pageOffset.resultsPath|attribute_name }}:
+                yield item
+            if len(response.{{ pagination.pageOffset.resultsPath|attribute_name }}) < page_size:
+                break
+            kwargs["{{ pagination.pageOffset.pageOffsetParam|attribute_name }}"] = kwargs.get("{{ pagination.pageOffset.pageOffsetParam|attribute_name }}", 0) + page_size
+        {%- endif %}
+    {%- endif %}
 {% endfor %}
