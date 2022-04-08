@@ -434,6 +434,7 @@ def collection_format(parameter):
         return matrix.get((style, explode), "multi")
 
 
+<<<<<<< HEAD
 def generate_value(schema, use_random=False, prefix=None):
     spec = schema.spec
     if not use_random:
@@ -569,3 +570,18 @@ class Operation:
         return Schema(
             next(iter(self.spec["requestBody"]["content"].values()))["schema"]
         )
+
+
+def get_default(operation, attribute_path):
+    attrs = attribute_path.split(".")
+    for name, parameter in parameters(operation):
+        if name == attrs[0]:
+            break
+    if name == attribute_path:
+        return parameter["schema"]["default"]
+
+    if name == "body":
+        parameter = parameter["content"]["application/json"]["schema"]
+    for attr in attrs[1:]:
+        parameter = parameter["properties"][attr]
+    return parameter["default"]
