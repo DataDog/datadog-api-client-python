@@ -196,18 +196,19 @@ class {{ classname }}:
 {% endfor %}
         {%- set pagination = operation["x-pagination"] %}
         page_size = get_attribute_from_path(kwargs, "{{ pagination.limitParam|attribute_path }}", {{ pagination.defaultLimit }})
-        set_attribute_from_path(kwargs, "{{ pagination.limitParam|attribute_path }}", page_size)
+        endpoint = self._{{ operation.operationId|safe_snake_case }}_endpoint
+        set_attribute_from_path(kwargs, "{{ pagination.limitParam|attribute_path }}", page_size, endpoint.params_map)
         while True:
-            response = self._{{ operation.operationId|safe_snake_case }}_endpoint.call_with_http_info(**kwargs)
+            response = endpoint.call_with_http_info(**kwargs)
             for item in get_attribute_from_path(response, "{{ pagination.resultsPath|attribute_path }}"):
                 yield item
             if len(get_attribute_from_path(response, "{{ pagination.resultsPath|attribute_path }}")) < page_size:
                 break
-            {%- if pagination.pageOffset %}
-            set_attribute_from_path(kwargs, "{{ pagination.pageOffset.pageOffsetParam|attribute_path }}", get_attribute_from_path(kwargs, "{{ pagination.pageOffset.pageOffsetParam|attribute_path }}", 0) + page_size)
+            {%- if pagination.pageOffsetParam %}
+            set_attribute_from_path(kwargs, "{{ pagination.pageOffsetParam|attribute_path }}", get_attribute_from_path(kwargs, "{{ pagination.pageOffsetParam|attribute_path }}", 0) + page_size, endpoint.params_map)
             {%- endif %}
-            {%- if pagination.cursor %}
-	    set_attribute_from_path(kwargs, "{{ pagination.cursor.cursorParam|attribute_path }}", get_attribute_from_path(response, "{{ pagination.cursor.cursorPath }}"))
+            {%- if pagination.cursorParam %}
+	    set_attribute_from_path(kwargs, "{{ pagination.cursorParam|attribute_path }}", get_attribute_from_path(response, "{{ pagination.cursorPath }}"), endpoint.params_map)
             {%- endif %}
     {%- endif %}
 {% endfor %}

@@ -2032,10 +2032,18 @@ def get_attribute_from_path(obj, path, default=None):
     return obj
 
 
-def set_attribute_from_path(obj, path, value):
+def set_attribute_from_path(obj, path, value, params_map):
     elts = path.split(".")
     last = elts.pop(-1)
-    for elt in elts:
-        obj = obj[elt]
+    root = None
+    for i, elt in enumerate(elts):
+        if i:
+            root = root.openapi_types[elt][0]
+        else:
+            root = params_map[elt]["openapi_types"][0]
+        try:
+            obj = obj[elt]
+        except (KeyError, AttributeError):
+            obj = root()
     obj[last] = value
 {# keep new line #}
