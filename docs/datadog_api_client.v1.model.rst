@@ -3977,6 +3977,14 @@ synthetics\_private\_location\_creation\_response\_result\_encryption
    :undoc-members:
    :show-inheritance:
 
+synthetics\_private\_location\_metadata
+---------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_private_location_metadata
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 synthetics\_private\_location\_secrets
 --------------------------------------
 
@@ -3997,6 +4005,14 @@ synthetics\_private\_location\_secrets\_config\_decryption
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_private_location_secrets_config_decryption
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+synthetics\_restricted\_roles
+-----------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_restricted_roles
    :members:
    :undoc-members:
    :show-inheritance:

@@ -15,7 +15,7 @@ def lazy_import():
     globals()["SyntheticsRestrictedRoles"] = SyntheticsRestrictedRoles
 
 
-class SyntheticsGlobalVariableAttributes(ModelNormal):
+class SyntheticsPrivateLocationMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
         lazy_import()
@@ -29,7 +29,7 @@ class SyntheticsGlobalVariableAttributes(ModelNormal):
 
     def __init__(self, *args, **kwargs):
         """
-        Attributes of the global variable.
+        Object containing metadata about the private location.
 
         :param restricted_roles: A list of role identifiers that can be pulled from the Roles API, for restricting read and write access.
         :type restricted_roles: SyntheticsRestrictedRoles, optional
@@ -42,7 +42,7 @@ class SyntheticsGlobalVariableAttributes(ModelNormal):
     def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
-        self = super(SyntheticsGlobalVariableAttributes, cls)._from_openapi_data(kwargs)
+        self = super(SyntheticsPrivateLocationMetadata, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
 

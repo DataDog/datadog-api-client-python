@@ -958,7 +958,7 @@
       "parameters": [
         {
           "name": "location_id",
-          "source": "private_location"
+          "source": "private_location.id"
         }
       ],
       "type": "unsafe"

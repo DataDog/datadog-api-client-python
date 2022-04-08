@@ -12,6 +12,7 @@ from datadog_api_client.v1.model.synthetics_assertion_operator import Synthetics
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
 from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
 from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
+from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
 from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
 from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
@@ -36,6 +37,7 @@ body = SyntheticsAPITest(
     options=SyntheticsTestOptions(
         device_ids=[SyntheticsDeviceID("laptop_large")],
         monitor_options=SyntheticsTestOptionsMonitorOptions(),
+        restricted_roles=SyntheticsRestrictedRoles(["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]),
         retry=SyntheticsTestOptionsRetry(),
     ),
     status=SyntheticsTestPauseStatus("live"),

@@ -34,7 +34,7 @@ Feature: Synthetics
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a browser test returns "- JSON format is wrong" response
     Given new "CreateSyntheticsBrowserTest" request
-    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
+    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
@@ -49,42 +49,43 @@ Feature: Synthetics
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a browser test returns "Test quota is reached" response
     Given new "CreateSyntheticsBrowserTest" request
-    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
+    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
     When the request is sent
     Then the response status is 402 Test quota is reached
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a global variable returns "Invalid request" response
     Given new "CreateGlobalVariable" request
-    And body with value {"attributes": {"restricted_roles": []}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
+    And body with value {"attributes": {"restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
     When the request is sent
     Then the response status is 400 Invalid request
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a global variable returns "OK" response
     Given new "CreateGlobalVariable" request
-    And body with value {"attributes": {"restricted_roles": []}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
+    And body with value {"attributes": {"restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/synthetics-app
+  @team:DataDog/synthetics-app
   Scenario: Create a private location returns "OK" response
-    Given new "CreatePrivateLocation" request
-    And body with value {"description": "Description of private location", "name": "New private location", "tags": ["team:front"]}
+    Given there is a valid "role" in the system
+    And new "CreatePrivateLocation" request
+    And body with value {"description": "Test {{ unique }} description", "metadata": {"restricted_roles": ["{{ role.data.id }}"]}, "name": "{{ unique }}", "tags": ["test:{{ unique_lower_alnum }}"]}
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a private location returns "Private locations are not activated for the user" response
     Given new "CreatePrivateLocation" request
-    And body with value {"description": "Description of private location", "name": "New private location", "tags": ["team:front"]}
+    And body with value {"description": "Description of private location", "metadata": {"restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]}, "name": "New private location", "tags": ["team:front"]}
     When the request is sent
     Then the response status is 404 Private locations are not activated for the user
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a private location returns "Quota reached for private locations" response
     Given new "CreatePrivateLocation" request
-    And body with value {"description": "Description of private location", "name": "New private location", "tags": ["team:front"]}
+    And body with value {"description": "Description of private location", "metadata": {"restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]}, "name": "New private location", "tags": ["team:front"]}
     When the request is sent
     Then the response status is 402 Quota reached for private locations
 
@@ -107,21 +108,21 @@ Feature: Synthetics
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create an API test returns "- JSON format is wrong" response
     Given new "CreateSyntheticsAPITest" request
-    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
+    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create an API test returns "OK - Returns the created test details." response
     Given new "CreateSyntheticsAPITest" request
-    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
+    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
     When the request is sent
     Then the response status is 200 OK - Returns the created test details.
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create an API test returns "Test quota is reached" response
     Given new "CreateSyntheticsAPITest" request
-    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
+    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
     When the request is sent
     Then the response status is 402 Test quota is reached
 
@@ -213,7 +214,7 @@ Feature: Synthetics
   Scenario: Edit a browser test returns "- JSON format is wrong" response
     Given new "UpdateBrowserTest" request
     And request contains "public_id" parameter from "REPLACE.ME"
-    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
+    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
@@ -221,7 +222,7 @@ Feature: Synthetics
   Scenario: Edit a browser test returns "- Synthetic Monitoring is not activated for the user" response
     Given new "UpdateBrowserTest" request
     And request contains "public_id" parameter from "REPLACE.ME"
-    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
+    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
     When the request is sent
     Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
@@ -229,7 +230,7 @@ Feature: Synthetics
   Scenario: Edit a browser test returns "OK" response
     Given new "UpdateBrowserTest" request
     And request contains "public_id" parameter from "REPLACE.ME"
-    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
+    And body with value {"config": {"assertions": [], "configVariables": [{"name": "VARIABLE_NAME", "type": "text"}], "request": {"basicAuth": {"password": "PaSSw0RD!", "type": "web", "username": "my_username"}, "certificate": {"cert": {}, "key": {}}, "method": "GET", "proxy": {"url": "https://example.com"}, "url": "https://example.com"}, "variables": [{"name": "VARIABLE_NAME", "type": "text"}]}, "locations": ["aws:eu-west-3"], "message": "", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}}, "status": "live", "steps": [{"type": "assertElementContent"}], "tags": ["env:prod"], "type": "browser"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -237,7 +238,7 @@ Feature: Synthetics
   Scenario: Edit a global variable returns "Invalid request" response
     Given new "EditGlobalVariable" request
     And request contains "variable_id" parameter from "REPLACE.ME"
-    And body with value {"attributes": {"restricted_roles": []}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
+    And body with value {"attributes": {"restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
     When the request is sent
     Then the response status is 400 Invalid request
 
@@ -245,7 +246,7 @@ Feature: Synthetics
   Scenario: Edit a global variable returns "OK" response
     Given new "EditGlobalVariable" request
     And request contains "variable_id" parameter from "REPLACE.ME"
-    And body with value {"attributes": {"restricted_roles": []}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
+    And body with value {"attributes": {"restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -253,7 +254,7 @@ Feature: Synthetics
   Scenario: Edit a private location returns "- Private locations are not activated for the user" response
     Given new "UpdatePrivateLocation" request
     And request contains "location_id" parameter from "REPLACE.ME"
-    And body with value {"description": "Description of private location", "name": "New private location", "tags": ["team:front"]}
+    And body with value {"description": "Description of private location", "metadata": {"restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]}, "name": "New private location", "tags": ["team:front"]}
     When the request is sent
     Then the response status is 404 - Private locations are not activated for the user
 
@@ -261,7 +262,7 @@ Feature: Synthetics
   Scenario: Edit a private location returns "OK" response
     Given new "UpdatePrivateLocation" request
     And request contains "location_id" parameter from "REPLACE.ME"
-    And body with value {"description": "Description of private location", "name": "New private location", "tags": ["team:front"]}
+    And body with value {"description": "Description of private location", "metadata": {"restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]}, "name": "New private location", "tags": ["team:front"]}
     When the request is sent
     Then the response status is 200 OK
 
@@ -269,7 +270,7 @@ Feature: Synthetics
   Scenario: Edit an API test returns "- JSON format is wrong" response
     Given new "UpdateAPITest" request
     And request contains "public_id" parameter from "REPLACE.ME"
-    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
+    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
@@ -277,7 +278,7 @@ Feature: Synthetics
   Scenario: Edit an API test returns "- Synthetic Monitoring is not activated for the user" response
     Given new "UpdateAPITest" request
     And request contains "public_id" parameter from "REPLACE.ME"
-    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
+    And body with value {"config": {"assertions": [{"operator": "lessThan", "target": 1000, "type": "responseTime"}], "request": {"method": "GET", "url": "https://example.com"}}, "locations": ["aws:eu-west-3"], "message": "Notification message", "name": "Example test name", "options": {"device_ids": ["laptop_large"], "monitor_options": {}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}}, "status": "live", "subtype": "http", "tags": ["env:production"], "type": "api"}
     When the request is sent
     Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
