@@ -31,6 +31,7 @@ def cli(specs, output):
     env.filters["camel_case"] = formatter.camel_case
     env.filters["collection_format"] = openapi.collection_format
     env.filters["format_value"] = formatter.format_value
+    env.filters["attribute_path"] = formatter.attribute_path
     env.filters["parameter_schema"] = openapi.parameter_schema
     env.filters["parameters"] = openapi.parameters
     env.filters["return_type"] = openapi.return_type

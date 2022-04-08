@@ -2019,4 +2019,23 @@ class UnparsedObject(ModelNormal):
         for var_name, var_value in kwargs.items():
             self.__dict__[var_name] = var_value
             self.__dict__["_data_store"][var_name] = var_value
+
+
+def get_attribute_from_path(obj, path, default=None):
+    for elt in path.split("."):
+        try:
+            obj = obj[elt]
+        except (KeyError, AttributeError):
+            if default is None:
+                raise
+            return default
+    return obj
+
+
+def set_attribute_from_path(obj, path, value):
+    elts = path.split(".")
+    last = elts.pop(-1)
+    for elt in elts:
+        obj = obj[elt]
+    obj[last] = value
 {# keep new line #}

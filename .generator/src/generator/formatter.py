@@ -49,3 +49,7 @@ def format_value(value, quotes='"'):
 def get_name(schema):
     if hasattr(schema, "__reference__"):
         return schema.__reference__["$ref"].split("/")[-1]
+
+
+def attribute_path(attribute):
+    return ".".join(attribute_name(a) for a in attribute.split("."))

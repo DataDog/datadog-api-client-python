@@ -5,6 +5,8 @@ from {{ package }}.api_client import ApiClient, Endpoint as _Endpoint
 from {{ package }}.model_utils import (
     date,
     datetime,
+    set_attribute_from_path,
+    get_attribute_from_path,
     file_type,
     none_type,
 )
@@ -193,16 +195,19 @@ class {{ classname }}:
         kwargs["{{ name|attribute_name }}"] = {{ name|attribute_name }}
 {% endfor %}
         {%- set pagination = operation["x-pagination"] %}
-        {%- if pagination.pageOffset %}
-        page_size = kwargs.get("{{ pagination.pageOffset.limitParam|attribute_name }}", 20)
-        kwargs["{{ pagination.pageOffset.limitParam|attribute_name }}"] = page_size
+        page_size = get_attribute_from_path(kwargs, "{{ pagination.limitParam|attribute_path }}", {{ pagination.defaultLimit }})
+        set_attribute_from_path(kwargs, "{{ pagination.limitParam|attribute_path }}", page_size)
         while True:
             response = self._{{ operation.operationId|safe_snake_case }}_endpoint.call_with_http_info(**kwargs)
-            for item in response.{{ pagination.pageOffset.resultsPath|attribute_name }}:
+            for item in get_attribute_from_path(response, "{{ pagination.resultsPath|attribute_path }}"):
                 yield item
-            if len(response.{{ pagination.pageOffset.resultsPath|attribute_name }}) < page_size:
+            if len(get_attribute_from_path(response, "{{ pagination.resultsPath|attribute_path }}")) < page_size:
                 break
-            kwargs["{{ pagination.pageOffset.pageOffsetParam|attribute_name }}"] = kwargs.get("{{ pagination.pageOffset.pageOffsetParam|attribute_name }}", 0) + page_size
-        {%- endif %}
+            {%- if pagination.pageOffset %}
+            set_attribute_from_path(kwargs, "{{ pagination.pageOffset.pageOffsetParam|attribute_path }}", get_attribute_from_path(kwargs, "{{ pagination.pageOffset.pageOffsetParam|attribute_path }}", 0) + page_size)
+            {%- endif %}
+            {%- if pagination.cursor %}
+	    set_attribute_from_path(kwargs, "{{ pagination.cursor.cursorParam|attribute_path }}", get_attribute_from_path(response, "{{ pagination.cursor.cursorPath }}"))
+            {%- endif %}
     {%- endif %}
 {% endfor %}
