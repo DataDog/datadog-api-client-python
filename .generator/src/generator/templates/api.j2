@@ -192,9 +192,7 @@ class {{ classname }}:
 
     def {{ operation.operationId|safe_snake_case }}_with_pagination(self, {% for name, parameter in operation|parameters if parameter.required %}{{name|attribute_name}}, {% endfor %}**kwargs):
         """{{ operation.summary|indent(8) }}.
-{% if operation.description %}
-        {{ operation.description.replace("\\", "\\\\")|indent(8) }}
-{% endif %}
+
         Provide a paginated version of :meth:`{{ operation.operationId|safe_snake_case }}`, returning all items.
 {# keep new line #}
 {%- for name, parameter in operation|parameters if parameter.required %}
