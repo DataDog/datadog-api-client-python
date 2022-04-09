@@ -585,3 +585,15 @@ def get_default(operation, attribute_path):
     for attr in attrs[1:]:
         parameter = parameter["properties"][attr]
     return parameter["default"]
+
+
+def get_type_at_path(operation, attribute_path):
+    for code, response in operation.get("responses", {}).items():
+        if int(code) >= 300:
+            continue
+        for content in response.get("content", {}).values():
+            if "schema" in content:
+                break
+    for attr in attribute_path.split("."):
+        content = content["schema"]["properties"][attr]
+    return get_type_for_items(content)
