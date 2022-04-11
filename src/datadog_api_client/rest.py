@@ -269,6 +269,8 @@ class AsyncRESTClientObject:
                                  (connection, read) timeouts.
         """
         assert not post_params, "not supported for now"
+        if body is not None:
+            body = json.dumps(body)
         response = await self._client.request(url, method, headers, query_params, body, timeouts=_request_timeout)
 
         if not 200 <= response.status_code <= 299:
