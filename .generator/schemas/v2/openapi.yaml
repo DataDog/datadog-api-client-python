@@ -7189,6 +7189,11 @@ paths:
       tags:
       - Audit
       x-menu-order: 2
+      x-pagination:
+        cursorParam: page[cursor]
+        cursorPath: meta.page.after
+        limitParam: page[limit]
+        resultsPath: data
       x-undo:
         type: safe
   /api/v2/audit/events/search:
@@ -7228,6 +7233,11 @@ paths:
       - Audit
       x-codegen-request-body-name: body
       x-menu-order: 1
+      x-pagination:
+        cursorParam: body.page.cursor
+        cursorPath: meta.page.after
+        limitParam: body.page.limit
+        resultsPath: data
       x-undo:
         type: safe
   /api/v2/authn_mappings:
@@ -7925,6 +7935,10 @@ paths:
       summary: Get a list of incidents
       tags:
       - Incidents
+      x-pagination:
+        limitParam: page[size]
+        pageOffsetParam: page[offset]
+        resultsPath: data
       x-undo:
         type: safe
       x-unstable: '**Note**: This endpoint is in public beta.
@@ -9006,6 +9020,11 @@ paths:
       tags:
       - Logs
       x-menu-order: 3
+      x-pagination:
+        cursorParam: page[cursor]
+        cursorPath: meta.page.after
+        limitParam: page[limit]
+        resultsPath: data
       x-undo:
         type: safe
   /api/v2/logs/events/search:
@@ -9053,6 +9072,11 @@ paths:
       - Logs
       x-codegen-request-body-name: body
       x-menu-order: 2
+      x-pagination:
+        cursorParam: body.page.cursor
+        cursorPath: meta.page.after
+        limitParam: body.page.limit
+        resultsPath: data
       x-undo:
         type: safe
   /api/v2/metrics:
@@ -9726,6 +9750,11 @@ paths:
       tags:
       - Processes
       x-menu-order: 1
+      x-pagination:
+        cursorParam: page[cursor]
+        cursorPath: meta.page.after
+        limitParam: page[limit]
+        resultsPath: data
       x-undo:
         type: safe
   /api/v2/roles:
@@ -10451,6 +10480,11 @@ paths:
       tags:
       - RUM
       x-menu-order: 2
+      x-pagination:
+        cursorParam: page[cursor]
+        cursorPath: meta.page.after
+        limitParam: page[limit]
+        resultsPath: data
       x-undo:
         type: safe
   /api/v2/rum/events/search:
@@ -10493,6 +10527,11 @@ paths:
       - RUM
       x-codegen-request-body-name: body
       x-menu-order: 1
+      x-pagination:
+        cursorParam: body.page.cursor
+        cursorPath: meta.page.after
+        limitParam: body.page.limit
+        resultsPath: data
       x-undo:
         type: safe
   /api/v2/security/cloud_workload/policy/download:
@@ -11116,6 +11155,11 @@ paths:
       tags:
       - Security Monitoring
       x-menu-order: 7
+      x-pagination:
+        cursorParam: page[cursor]
+        cursorPath: meta.page.after
+        limitParam: page[limit]
+        resultsPath: data
       x-undo:
         type: safe
       x-unstable: '**Note**: This endpoint is in public beta.
@@ -11158,6 +11202,11 @@ paths:
       - Security Monitoring
       x-codegen-request-body-name: body
       x-menu-order: 6
+      x-pagination:
+        cursorParam: body.page.cursor
+        cursorPath: meta.page.after
+        limitParam: body.page.limit
+        resultsPath: data
       x-undo:
         type: safe
       x-unstable: '**Note**: This endpoint is in public beta.

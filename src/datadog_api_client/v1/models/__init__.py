@@ -563,6 +563,7 @@ from datadog_api_client.v1.model.synthetics_private_location_creation_response i
 from datadog_api_client.v1.model.synthetics_private_location_creation_response_result_encryption import (
     SyntheticsPrivateLocationCreationResponseResultEncryption,
 )
+from datadog_api_client.v1.model.synthetics_private_location_metadata import SyntheticsPrivateLocationMetadata
 from datadog_api_client.v1.model.synthetics_private_location_secrets import SyntheticsPrivateLocationSecrets
 from datadog_api_client.v1.model.synthetics_private_location_secrets_authentication import (
     SyntheticsPrivateLocationSecretsAuthentication,
@@ -570,6 +571,7 @@ from datadog_api_client.v1.model.synthetics_private_location_secrets_authenticat
 from datadog_api_client.v1.model.synthetics_private_location_secrets_config_decryption import (
     SyntheticsPrivateLocationSecretsConfigDecryption,
 )
+from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
 from datadog_api_client.v1.model.synthetics_ssl_certificate import SyntheticsSSLCertificate
 from datadog_api_client.v1.model.synthetics_ssl_certificate_issuer import SyntheticsSSLCertificateIssuer
 from datadog_api_client.v1.model.synthetics_ssl_certificate_subject import SyntheticsSSLCertificateSubject
