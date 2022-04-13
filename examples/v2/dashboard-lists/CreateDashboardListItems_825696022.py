@@ -16,7 +16,12 @@ DASHBOARD_LIST_ID = environ["DASHBOARD_LIST_ID"]
 SCREENBOARD_DASHBOARD_ID = environ["SCREENBOARD_DASHBOARD_ID"]
 
 body = DashboardListAddItemsRequest(
-    dashboards=[DashboardListItemRequest(id=SCREENBOARD_DASHBOARD_ID, type=DashboardType("custom_screenboard"))]
+    dashboards=[
+        DashboardListItemRequest(
+            id=SCREENBOARD_DASHBOARD_ID,
+            type=DashboardType("custom_screenboard"),
+        ),
+    ],
 )
 
 configuration = Configuration()

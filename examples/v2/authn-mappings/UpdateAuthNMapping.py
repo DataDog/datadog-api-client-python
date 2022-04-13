@@ -22,13 +22,21 @@ ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 
 body = AuthNMappingUpdateRequest(
     data=AuthNMappingUpdateData(
-        attributes=AuthNMappingUpdateAttributes(attribute_key="member-of", attribute_value="Development"),
+        attributes=AuthNMappingUpdateAttributes(
+            attribute_key="member-of",
+            attribute_value="Development",
+        ),
         id=AUTHN_MAPPING_DATA_ID,
         relationships=AuthNMappingUpdateRelationships(
-            role=RelationshipToRole(data=RelationshipToRoleData(id=ROLE_DATA_ID, type=RolesType("roles")))
+            role=RelationshipToRole(
+                data=RelationshipToRoleData(
+                    id=ROLE_DATA_ID,
+                    type=RolesType("roles"),
+                ),
+            ),
         ),
         type=AuthNMappingsType("authn_mappings"),
-    )
+    ),
 )
 
 configuration = Configuration()

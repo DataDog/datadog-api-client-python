@@ -27,22 +27,29 @@ body = Dashboard(
                 requests=[
                     TimeseriesWidgetRequest(
                         profile_metrics_query=LogQueryDefinition(
-                            compute=LogsQueryCompute(aggregation="sum", facet="@prof_core_cpu_cores"),
-                            search=LogQueryDefinitionSearch(query="runtime:jvm"),
+                            compute=LogsQueryCompute(
+                                aggregation="sum",
+                                facet="@prof_core_cpu_cores",
+                            ),
+                            search=LogQueryDefinitionSearch(
+                                query="runtime:jvm",
+                            ),
                             group_by=[
                                 LogQueryDefinitionGroupBy(
                                     facet="service",
                                     limit=10,
                                     sort=LogQueryDefinitionGroupBySort(
-                                        aggregation="sum", order=WidgetSort("desc"), facet="@prof_core_cpu_cores"
+                                        aggregation="sum",
+                                        order=WidgetSort("desc"),
+                                        facet="@prof_core_cpu_cores",
                                     ),
-                                )
+                                ),
                             ],
-                        )
-                    )
+                        ),
+                    ),
                 ],
-            )
-        )
+            ),
+        ),
     ],
 )
 

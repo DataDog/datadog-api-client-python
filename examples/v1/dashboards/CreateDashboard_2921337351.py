@@ -19,7 +19,12 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=72, height=72),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=72,
+                height=72,
+            ),
             definition=ServiceSummaryWidgetDefinition(
                 title="Service Summary",
                 time=WidgetTime(),
@@ -36,7 +41,7 @@ body = Dashboard(
                 size_format=WidgetSizeFormat("medium"),
                 display_format=WidgetServiceSummaryDisplayFormat("two_column"),
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

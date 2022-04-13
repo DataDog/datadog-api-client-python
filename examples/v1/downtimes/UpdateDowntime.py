@@ -10,7 +10,9 @@ from datadog_api_client.v1.model.downtime import Downtime
 # there is a valid "downtime" in the system
 DOWNTIME_ID = environ["DOWNTIME_ID"]
 
-body = Downtime(message="Example-Update_a_downtime_returns_OK_response-updated")
+body = Downtime(
+    message="Example-Update_a_downtime_returns_OK_response-updated",
+)
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:

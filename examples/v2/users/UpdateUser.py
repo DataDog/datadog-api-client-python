@@ -15,8 +15,13 @@ USER_DATA_ID = environ["USER_DATA_ID"]
 
 body = UserUpdateRequest(
     data=UserUpdateData(
-        id=USER_DATA_ID, type=UsersType("users"), attributes=UserUpdateAttributes(name="updated", disabled=True)
-    )
+        id=USER_DATA_ID,
+        type=UsersType("users"),
+        attributes=UserUpdateAttributes(
+            name="updated",
+            disabled=True,
+        ),
+    ),
 )
 
 configuration = Configuration()

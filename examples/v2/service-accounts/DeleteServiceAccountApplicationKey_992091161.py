@@ -16,5 +16,6 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = ServiceAccountsApi(api_client)
     api_instance.delete_service_account_application_key(
-        service_account_id=SERVICE_ACCOUNT_USER_DATA_ID, app_key_id=SERVICE_ACCOUNT_APPLICATION_KEY_DATA_ID
+        service_account_id=SERVICE_ACCOUNT_USER_DATA_ID,
+        app_key_id=SERVICE_ACCOUNT_APPLICATION_KEY_DATA_ID,
     )

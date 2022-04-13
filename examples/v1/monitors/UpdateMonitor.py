@@ -20,7 +20,10 @@ body = MonitorUpdateRequest(
         new_group_delay=600,
         new_host_delay=None,
         renotify_interval=None,
-        thresholds=MonitorThresholds(critical=2.0, warning=None),
+        thresholds=MonitorThresholds(
+            critical=2.0,
+            warning=None,
+        ),
         timeout_h=None,
     ),
 )

@@ -9,9 +9,13 @@ from datadog_api_client.v1.model.organization_create_body import OrganizationCre
 from datadog_api_client.v1.model.organization_subscription import OrganizationSubscription
 
 body = OrganizationCreateBody(
-    billing=OrganizationBilling(type="parent_billing"),
+    billing=OrganizationBilling(
+        type="parent_billing",
+    ),
     name="New child org",
-    subscription=OrganizationSubscription(type="pro"),
+    subscription=OrganizationSubscription(
+        type="pro",
+    ),
 )
 
 configuration = Configuration()

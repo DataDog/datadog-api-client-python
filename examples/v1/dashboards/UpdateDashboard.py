@@ -30,13 +30,21 @@ body = Dashboard(
                 type=ListStreamWidgetDefinitionType("list_stream"),
                 requests=[
                     ListStreamWidgetRequest(
-                        columns=[ListStreamColumn(width=ListStreamColumnWidth("auto"), field="timestamp")],
-                        query=ListStreamQuery(data_source=ListStreamSource("issue_stream"), query_string=""),
+                        columns=[
+                            ListStreamColumn(
+                                width=ListStreamColumnWidth("auto"),
+                                field="timestamp",
+                            ),
+                        ],
+                        query=ListStreamQuery(
+                            data_source=ListStreamSource("issue_stream"),
+                            query_string="",
+                        ),
                         response_format=ListStreamResponseFormat("event_list"),
-                    )
+                    ),
                 ],
-            )
-        )
+            ),
+        ),
     ],
 )
 

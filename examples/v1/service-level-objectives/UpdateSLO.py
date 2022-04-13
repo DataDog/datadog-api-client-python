@@ -18,9 +18,16 @@ SLO_DATA_0_NAME = environ["SLO_DATA_0_NAME"]
 body = ServiceLevelObjective(
     type=SLOType("metric"),
     name=SLO_DATA_0_NAME,
-    thresholds=[SLOThreshold(target=97.0, timeframe=SLOTimeframe("7d"), warning=98.0)],
+    thresholds=[
+        SLOThreshold(
+            target=97.0,
+            timeframe=SLOTimeframe("7d"),
+            warning=98.0,
+        ),
+    ],
     query=ServiceLevelObjectiveQuery(
-        numerator="sum:httpservice.hits{code:2xx}.as_count()", denominator="sum:httpservice.hits{!code:3xx}.as_count()"
+        numerator="sum:httpservice.hits{code:2xx}.as_count()",
+        denominator="sum:httpservice.hits{!code:3xx}.as_count()",
     ),
 )
 

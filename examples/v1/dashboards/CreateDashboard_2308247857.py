@@ -23,7 +23,12 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=47, height=15),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=47,
+                height=15,
+            ),
             definition=AlertGraphWidgetDefinition(
                 title="",
                 title_size="16",
@@ -33,7 +38,7 @@ body = Dashboard(
                 alert_id="7",
                 viz_type=WidgetVizType("timeseries"),
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

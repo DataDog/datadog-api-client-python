@@ -23,12 +23,16 @@ body = Dashboard(
                 type=FunnelWidgetDefinitionType("funnel"),
                 requests=[
                     FunnelWidgetRequest(
-                        query=FunnelQuery(data_source=FunnelSource("rum"), query_string="", steps=[]),
+                        query=FunnelQuery(
+                            data_source=FunnelSource("rum"),
+                            query_string="",
+                            steps=[],
+                        ),
                         request_type=FunnelRequestType("funnel"),
-                    )
+                    ),
                 ],
-            )
-        )
+            ),
+        ),
     ],
 )
 

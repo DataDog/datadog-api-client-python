@@ -11,7 +11,13 @@ from datadog_api_client.v1.model.synthetics_trigger_test import SyntheticsTrigge
 # there is a valid "synthetics_api_test" in the system
 SYNTHETICS_API_TEST_PUBLIC_ID = environ["SYNTHETICS_API_TEST_PUBLIC_ID"]
 
-body = SyntheticsTriggerBody(tests=[SyntheticsTriggerTest(public_id=SYNTHETICS_API_TEST_PUBLIC_ID)])
+body = SyntheticsTriggerBody(
+    tests=[
+        SyntheticsTriggerTest(
+            public_id=SYNTHETICS_API_TEST_PUBLIC_ID,
+        ),
+    ],
+)
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:

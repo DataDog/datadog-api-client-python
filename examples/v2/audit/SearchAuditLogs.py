@@ -11,9 +11,18 @@ from datadog_api_client.v2.model.audit_logs_search_events_request import AuditLo
 from datadog_api_client.v2.model.audit_logs_sort import AuditLogsSort
 
 body = AuditLogsSearchEventsRequest(
-    filter=AuditLogsQueryFilter(_from="now-15m", query="@type:session AND @session.type:user", to="now"),
-    options=AuditLogsQueryOptions(time_offset=0, timezone="GMT"),
-    page=AuditLogsQueryPageOptions(limit=25),
+    filter=AuditLogsQueryFilter(
+        _from="now-15m",
+        query="@type:session AND @session.type:user",
+        to="now",
+    ),
+    options=AuditLogsQueryOptions(
+        time_offset=0,
+        timezone="GMT",
+    ),
+    page=AuditLogsQueryPageOptions(
+        limit=25,
+    ),
     sort=AuditLogsSort("timestamp"),
 )
 

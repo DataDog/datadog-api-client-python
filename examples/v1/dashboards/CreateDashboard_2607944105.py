@@ -18,16 +18,23 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=15, height=8),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=15,
+                height=8,
+            ),
             definition=CheckStatusWidgetDefinition(
                 title_size="16",
                 title_align=WidgetTextAlign("left"),
                 type=CheckStatusWidgetDefinitionType("check_status"),
                 check="datadog.agent.up",
                 grouping=WidgetGrouping("check"),
-                tags=["*"],
+                tags=[
+                    "*",
+                ],
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

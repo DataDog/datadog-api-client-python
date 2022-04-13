@@ -9,4 +9,6 @@ configuration = Configuration()
 configuration.unstable_operations["delete_tag_configuration"] = True
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
-    api_instance.delete_tag_configuration(metric_name="ExampleDeleteatagconfigurationreturnsNoContentresponse")
+    api_instance.delete_tag_configuration(
+        metric_name="ExampleDeleteatagconfigurationreturnsNoContentresponse",
+    )

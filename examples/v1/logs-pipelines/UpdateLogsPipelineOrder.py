@@ -6,7 +6,13 @@ from datadog_api_client.v1 import ApiClient, Configuration
 from datadog_api_client.v1.api.logs_pipelines_api import LogsPipelinesApi
 from datadog_api_client.v1.model.logs_pipelines_order import LogsPipelinesOrder
 
-body = LogsPipelinesOrder(pipeline_ids=["tags", "org_ids", "products"])
+body = LogsPipelinesOrder(
+    pipeline_ids=[
+        "tags",
+        "org_ids",
+        "products",
+    ],
+)
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:

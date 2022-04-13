@@ -21,10 +21,15 @@ body = UserInvitationsRequest(
         UserInvitationData(
             type=UserInvitationsType("user_invitations"),
             relationships=UserInvitationRelationships(
-                user=RelationshipToUser(data=RelationshipToUserData(type=UsersType("users"), id=USER_DATA_ID))
+                user=RelationshipToUser(
+                    data=RelationshipToUserData(
+                        type=UsersType("users"),
+                        id=USER_DATA_ID,
+                    ),
+                ),
             ),
-        )
-    ]
+        ),
+    ],
 )
 
 configuration = Configuration()

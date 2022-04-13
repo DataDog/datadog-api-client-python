@@ -25,10 +25,13 @@ body = IncidentUpdateRequest(
         type=IncidentType("incidents"),
         relationships=IncidentUpdateRelationships(
             commander_user=NullableRelationshipToUser(
-                data=NullableRelationshipToUserData(id=USER_DATA_ID, type=UsersType("users"))
-            )
+                data=NullableRelationshipToUserData(
+                    id=USER_DATA_ID,
+                    type=UsersType("users"),
+                ),
+            ),
         ),
-    )
+    ),
 )
 
 configuration = Configuration()

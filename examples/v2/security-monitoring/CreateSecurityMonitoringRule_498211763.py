@@ -30,13 +30,16 @@ body = SecurityMonitoringRuleCreatePayload(
             group_by_fields=[],
             distinct_fields=[],
             metric="",
-        )
+        ),
     ],
     filters=[],
     cases=[
         SecurityMonitoringRuleCaseCreate(
-            name="", status=SecurityMonitoringRuleSeverity("info"), condition="a > 0", notifications=[]
-        )
+            name="",
+            status=SecurityMonitoringRuleSeverity("info"),
+            condition="a > 0",
+            notifications=[],
+        ),
     ],
     options=SecurityMonitoringRuleOptions(
         evaluation_window=SecurityMonitoringRuleEvaluationWindow(900),

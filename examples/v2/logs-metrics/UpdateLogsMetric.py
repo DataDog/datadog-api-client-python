@@ -19,9 +19,11 @@ body = LogsMetricUpdateRequest(
     data=LogsMetricUpdateData(
         type=LogsMetricType("logs_metrics"),
         attributes=LogsMetricUpdateAttributes(
-            filter=LogsMetricFilter(query="service:web* AND @http.status_code:[200 TO 299]-updated")
+            filter=LogsMetricFilter(
+                query="service:web* AND @http.status_code:[200 TO 299]-updated",
+            ),
         ),
-    )
+    ),
 )
 
 configuration = Configuration()

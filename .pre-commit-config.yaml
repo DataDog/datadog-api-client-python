@@ -37,19 +37,28 @@ repos:
     pass_filenames: false
     additional_dependencies:
       - "poetry"
+  - id: examples
+    name: examples
+    language: python
+    entry: bash -c "cd .generator && poetry install && poetry run pytest"
+    files: "^.generator/"
+    stages: [manual]
+    pass_filenames: false
+    additional_dependencies:
+      - "poetry"
 - repo: https://github.com/psf/black
   rev: 22.3.0
   hooks:
   - id: black
     stages: [manual]
-    entry: black --fast --line-length 120 src tests
-    files: '^(src|tests)'
+    entry: black --fast --line-length 120 src examples tests
+    files: '^(src|examples|tests)'
     pass_filenames: false
 - repo: https://github.com/myint/autoflake
   rev: v1.4
   hooks:
   - id: autoflake
     stages: [manual]
-    entry: autoflake --remove-all-unused-imports --ignore-init-module-imports --in-place --recursive src tests
-    files: '^(src|tests)'
+    entry: autoflake --remove-all-unused-imports --ignore-init-module-imports --in-place --recursive src examples tests
+    files: '^(src|examples|tests)'
     pass_filenames: false

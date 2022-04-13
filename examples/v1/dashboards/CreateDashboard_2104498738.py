@@ -36,10 +36,14 @@ body = Dashboard(
                     table=ScatterplotTableRequest(
                         formulas=[
                             ScatterplotWidgetFormula(
-                                formula="query1", dimension=ScatterplotDimension("x"), alias="my-query1"
+                                formula="query1",
+                                dimension=ScatterplotDimension("x"),
+                                alias="my-query1",
                             ),
                             ScatterplotWidgetFormula(
-                                formula="query2", dimension=ScatterplotDimension("y"), alias="my-query2"
+                                formula="query2",
+                                dimension=ScatterplotDimension("y"),
+                                alias="my-query2",
                             ),
                         ],
                         queries=[
@@ -57,11 +61,16 @@ body = Dashboard(
                             ),
                         ],
                         response_format=FormulaAndFunctionResponseFormat("scalar"),
-                    )
+                    ),
                 ),
             ),
-            layout=WidgetLayout(x=0, y=0, width=4, height=2),
-        )
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=4,
+                height=2,
+            ),
+        ),
     ],
     layout_type=DashboardLayoutType("ordered"),
 )

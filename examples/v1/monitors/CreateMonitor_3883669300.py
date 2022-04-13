@@ -29,28 +29,41 @@ body = Monitor(
     type=MonitorType("rum alert"),
     query='formula("query2 / query1 * 100").last("15m") >= 0.8',
     message="some message Notify: @hipchat-channel",
-    tags=["test:examplecreatearumformulaandfunctionsmonitorreturnsokresponse", "env:ci"],
+    tags=[
+        "test:examplecreatearumformulaandfunctionsmonitorreturnsokresponse",
+        "env:ci",
+    ],
     priority=3,
     options=MonitorOptions(
-        thresholds=MonitorThresholds(critical=0.8),
+        thresholds=MonitorThresholds(
+            critical=0.8,
+        ),
         variables=[
             MonitorFormulaAndFunctionEventQueryDefinition(
                 data_source=MonitorFormulaAndFunctionEventsDataSource("rum"),
                 name="query2",
-                search=MonitorFormulaAndFunctionEventQueryDefinitionSearch(query=""),
-                indexes=["*"],
+                search=MonitorFormulaAndFunctionEventQueryDefinitionSearch(
+                    query="",
+                ),
+                indexes=[
+                    "*",
+                ],
                 compute=MonitorFormulaAndFunctionEventQueryDefinitionCompute(
-                    aggregation=MonitorFormulaAndFunctionEventAggregation("count")
+                    aggregation=MonitorFormulaAndFunctionEventAggregation("count"),
                 ),
                 group_by=[],
             ),
             MonitorFormulaAndFunctionEventQueryDefinition(
                 data_source=MonitorFormulaAndFunctionEventsDataSource("rum"),
                 name="query1",
-                search=MonitorFormulaAndFunctionEventQueryDefinitionSearch(query="status:error"),
-                indexes=["*"],
+                search=MonitorFormulaAndFunctionEventQueryDefinitionSearch(
+                    query="status:error",
+                ),
+                indexes=[
+                    "*",
+                ],
                 compute=MonitorFormulaAndFunctionEventQueryDefinitionCompute(
-                    aggregation=MonitorFormulaAndFunctionEventAggregation("count")
+                    aggregation=MonitorFormulaAndFunctionEventAggregation("count"),
                 ),
                 group_by=[],
             ),

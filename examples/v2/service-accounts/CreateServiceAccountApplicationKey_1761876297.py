@@ -16,10 +16,10 @@ SERVICE_ACCOUNT_USER_DATA_ID = environ["SERVICE_ACCOUNT_USER_DATA_ID"]
 body = ApplicationKeyCreateRequest(
     data=ApplicationKeyCreateData(
         attributes=ApplicationKeyCreateAttributes(
-            name="Example-Create_an_app_key_for_this_service_account_returns_Created_response"
+            name="Example-Create_an_app_key_for_this_service_account_returns_Created_response",
         ),
         type=ApplicationKeysType("application_keys"),
-    )
+    ),
 )
 
 configuration = Configuration()

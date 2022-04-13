@@ -13,4 +13,6 @@ configuration = Configuration()
 configuration.unstable_operations["delete_incident_service"] = True
 with ApiClient(configuration) as api_client:
     api_instance = IncidentServicesApi(api_client)
-    api_instance.delete_incident_service(service_id=SERVICE_DATA_ID)
+    api_instance.delete_incident_service(
+        service_id=SERVICE_DATA_ID,
+    )

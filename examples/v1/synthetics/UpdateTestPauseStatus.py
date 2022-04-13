@@ -9,7 +9,9 @@ from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload imp
     SyntheticsUpdateTestPauseStatusPayload,
 )
 
-body = SyntheticsUpdateTestPauseStatusPayload(new_status=SyntheticsTestPauseStatus("live"))
+body = SyntheticsUpdateTestPauseStatusPayload(
+    new_status=SyntheticsTestPauseStatus("live"),
+)
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:

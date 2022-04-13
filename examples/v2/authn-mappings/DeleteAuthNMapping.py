@@ -12,4 +12,6 @@ AUTHN_MAPPING_DATA_ID = environ["AUTHN_MAPPING_DATA_ID"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = AuthNMappingsApi(api_client)
-    api_instance.delete_authn_mapping(authn_mapping_id=AUTHN_MAPPING_DATA_ID)
+    api_instance.delete_authn_mapping(
+        authn_mapping_id=AUTHN_MAPPING_DATA_ID,
+    )

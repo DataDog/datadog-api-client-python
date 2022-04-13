@@ -17,10 +17,14 @@ body = ApplicationKeyCreateRequest(
     data=ApplicationKeyCreateData(
         attributes=ApplicationKeyCreateAttributes(
             name="Example-Create_an_application_key_with_scopes_for_this_service_account_returns_Created_response",
-            scopes=["dashboards_read", "dashboards_write", "dashboards_public_share"],
+            scopes=[
+                "dashboards_read",
+                "dashboards_write",
+                "dashboards_public_share",
+            ],
         ),
         type=ApplicationKeysType("application_keys"),
-    )
+    ),
 )
 
 configuration = Configuration()

@@ -25,7 +25,7 @@ body = SecurityFilterUpdateRequest(
             version=1,
         ),
         type=SecurityFilterType("security_filters"),
-    )
+    ),
 )
 
 configuration = Configuration()

@@ -12,6 +12,8 @@ DOWNTIME_ID = environ["DOWNTIME_ID"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = DowntimesApi(api_client)
-    response = api_instance.get_downtime(downtime_id=int(DOWNTIME_ID))
+    response = api_instance.get_downtime(
+        downtime_id=int(DOWNTIME_ID),
+    )
 
     print(response)

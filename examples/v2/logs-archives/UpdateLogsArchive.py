@@ -17,7 +17,8 @@ body = LogsArchiveCreateRequest(
             destination=LogsArchiveDestinationAzure(
                 container="container-name",
                 integration=LogsArchiveIntegrationAzure(
-                    client_id="aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa", tenant_id="aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa"
+                    client_id="aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa",
+                    tenant_id="aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa",
                 ),
                 storage_account="account-name",
                 type=LogsArchiveDestinationAzureType("azure"),
@@ -25,10 +26,13 @@ body = LogsArchiveCreateRequest(
             include_tags=False,
             name="Nginx Archive",
             query="source:nginx",
-            rehydration_tags=["team:intake", "team:app"],
+            rehydration_tags=[
+                "team:intake",
+                "team:app",
+            ],
         ),
         type="archives",
-    )
+    ),
 )
 
 configuration = Configuration()

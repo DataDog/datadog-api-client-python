@@ -34,13 +34,24 @@ from datadog_api_client.v2.model.security_monitoring_rule_severity import Securi
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
 
 body = SecurityMonitoringRuleUpdatePayload(
-    cases=[SecurityMonitoringRuleCase(notifications=[], status=SecurityMonitoringRuleSeverity("critical"))],
-    filters=[SecurityMonitoringFilter(action=SecurityMonitoringFilterAction("require"))],
+    cases=[
+        SecurityMonitoringRuleCase(
+            notifications=[],
+            status=SecurityMonitoringRuleSeverity("critical"),
+        ),
+    ],
+    filters=[
+        SecurityMonitoringFilter(
+            action=SecurityMonitoringFilterAction("require"),
+        ),
+    ],
     has_extended_title=True,
     options=SecurityMonitoringRuleOptions(
         detection_method=SecurityMonitoringRuleDetectionMethod("threshold"),
         evaluation_window=SecurityMonitoringRuleEvaluationWindow(0),
-        impossible_travel_options=SecurityMonitoringRuleImpossibleTravelOptions(baseline_user_locations=True),
+        impossible_travel_options=SecurityMonitoringRuleImpossibleTravelOptions(
+            baseline_user_locations=True,
+        ),
         keep_alive=SecurityMonitoringRuleKeepAlive(0),
         max_signal_duration=SecurityMonitoringRuleMaxSignalDuration(0),
         new_value_options=SecurityMonitoringRuleNewValueOptions(
@@ -50,8 +61,10 @@ body = SecurityMonitoringRuleUpdatePayload(
     ),
     queries=[
         SecurityMonitoringRuleQuery(
-            aggregation=SecurityMonitoringRuleQueryAggregation("count"), distinct_fields=[], group_by_fields=[]
-        )
+            aggregation=SecurityMonitoringRuleQueryAggregation("count"),
+            distinct_fields=[],
+            group_by_fields=[],
+        ),
     ],
     tags=[],
     version=1,

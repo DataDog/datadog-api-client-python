@@ -15,7 +15,9 @@ body = Downtime(
     message="Example-Schedule_a_monitor_downtime_returns_OK_response",
     start=int(datetime.now().timestamp()),
     timezone="Etc/UTC",
-    scope=["test:examplescheduleamonitordowntimereturnsokresponse"],
+    scope=[
+        "test:examplescheduleamonitordowntimereturnsokresponse",
+    ],
     monitor_id=int(MONITOR_ID),
 )
 

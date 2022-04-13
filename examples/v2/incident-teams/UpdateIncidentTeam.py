@@ -16,8 +16,11 @@ TEAM_DATA_ID = environ["TEAM_DATA_ID"]
 
 body = IncidentTeamUpdateRequest(
     data=IncidentTeamUpdateData(
-        type=IncidentTeamType("teams"), attributes=IncidentTeamUpdateAttributes(name="team name-updated")
-    )
+        type=IncidentTeamType("teams"),
+        attributes=IncidentTeamUpdateAttributes(
+            name="team name-updated",
+        ),
+    ),
 )
 
 configuration = Configuration()

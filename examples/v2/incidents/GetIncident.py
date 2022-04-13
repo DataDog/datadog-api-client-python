@@ -13,6 +13,8 @@ configuration = Configuration()
 configuration.unstable_operations["get_incident"] = True
 with ApiClient(configuration) as api_client:
     api_instance = IncidentsApi(api_client)
-    response = api_instance.get_incident(incident_id=INCIDENT_DATA_ID)
+    response = api_instance.get_incident(
+        incident_id=INCIDENT_DATA_ID,
+    )
 
     print(response)

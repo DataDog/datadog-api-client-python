@@ -12,9 +12,20 @@ from datadog_api_client.v2.model.logs_query_filter import LogsQueryFilter
 
 body = LogsAggregateRequest(
     compute=[
-        LogsCompute(aggregation=LogsAggregationFunction("count"), interval="5m", type=LogsComputeType("timeseries"))
+        LogsCompute(
+            aggregation=LogsAggregationFunction("count"),
+            interval="5m",
+            type=LogsComputeType("timeseries"),
+        ),
     ],
-    filter=LogsQueryFilter(_from="now-15m", indexes=["main"], query="*", to="now"),
+    filter=LogsQueryFilter(
+        _from="now-15m",
+        indexes=[
+            "main",
+        ],
+        query="*",
+        to="now",
+    ),
 )
 
 configuration = Configuration()

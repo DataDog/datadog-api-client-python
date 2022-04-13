@@ -12,4 +12,6 @@ NOTEBOOK_DATA_ID = environ["NOTEBOOK_DATA_ID"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = NotebooksApi(api_client)
-    api_instance.delete_notebook(notebook_id=int(NOTEBOOK_DATA_ID))
+    api_instance.delete_notebook(
+        notebook_id=int(NOTEBOOK_DATA_ID),
+    )

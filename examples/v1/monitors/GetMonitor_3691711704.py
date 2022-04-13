@@ -12,6 +12,8 @@ SYNTHETICS_API_TEST_MONITOR_ID = environ["SYNTHETICS_API_TEST_MONITOR_ID"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = MonitorsApi(api_client)
-    response = api_instance.get_monitor(monitor_id=int(SYNTHETICS_API_TEST_MONITOR_ID))
+    response = api_instance.get_monitor(
+        monitor_id=int(SYNTHETICS_API_TEST_MONITOR_ID),
+    )
 
     print(response)

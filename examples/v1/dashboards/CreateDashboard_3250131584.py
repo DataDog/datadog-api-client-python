@@ -17,7 +17,12 @@ body = Dashboard(
     description=None,
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=47, height=9),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=47,
+                height=9,
+            ),
             definition=EventTimelineWidgetDefinition(
                 title="",
                 title_size="16",
@@ -26,7 +31,7 @@ body = Dashboard(
                 query="status:error priority:all",
                 tags_execution="and",
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

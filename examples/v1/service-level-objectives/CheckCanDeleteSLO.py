@@ -8,6 +8,8 @@ from datadog_api_client.v1.api.service_level_objectives_api import ServiceLevelO
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = ServiceLevelObjectivesApi(api_client)
-    response = api_instance.check_can_delete_slo(ids="ids")
+    response = api_instance.check_can_delete_slo(
+        ids="ids",
+    )
 
     print(response)

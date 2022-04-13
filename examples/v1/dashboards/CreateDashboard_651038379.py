@@ -17,13 +17,18 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=12, height=12),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=12,
+                height=12,
+            ),
             definition=ImageWidgetDefinition(
                 type=ImageWidgetDefinitionType("image"),
                 url="https://example.com/image.png",
                 sizing=WidgetImageSizing("cover"),
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

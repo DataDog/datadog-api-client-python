@@ -12,4 +12,6 @@ WEBHOOK_NAME = environ["WEBHOOK_NAME"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = WebhooksIntegrationApi(api_client)
-    api_instance.delete_webhooks_integration(webhook_name=WEBHOOK_NAME)
+    api_instance.delete_webhooks_integration(
+        webhook_name=WEBHOOK_NAME,
+    )

@@ -21,7 +21,12 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=15, height=8),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=15,
+                height=8,
+            ),
             definition=AlertValueWidgetDefinition(
                 title="",
                 title_size="16",
@@ -32,7 +37,7 @@ body = Dashboard(
                 text_align=WidgetTextAlign("left"),
                 precision=2,
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

@@ -35,7 +35,11 @@ body = Dashboard(
                 autoscale=True,
                 requests=[
                     QueryValueWidgetRequest(
-                        formulas=[WidgetFormula(formula="query1")],
+                        formulas=[
+                            WidgetFormula(
+                                formula="query1",
+                            ),
+                        ],
                         response_format=FormulaAndFunctionResponseFormat("scalar"),
                         queries=[
                             FormulaAndFunctionMetricQueryDefinition(
@@ -43,14 +47,19 @@ body = Dashboard(
                                 data_source=FormulaAndFunctionMetricDataSource("metrics"),
                                 name="query1",
                                 aggregator=FormulaAndFunctionMetricAggregation("percentile"),
-                            )
+                            ),
                         ],
-                    )
+                    ),
                 ],
                 type=QueryValueWidgetDefinitionType("query_value"),
             ),
-            layout=WidgetLayout(y=0, x=0, height=2, width=2),
-        )
+            layout=WidgetLayout(
+                y=0,
+                x=0,
+                height=2,
+                width=2,
+            ),
+        ),
     ],
 )
 

@@ -15,8 +15,13 @@ DASHBOARD_ID = environ["DASHBOARD_ID"]
 
 body = DashboardBulkDeleteRequest(
     data=DashboardBulkActionDataList(
-        [DashboardBulkActionData(id=DASHBOARD_ID, type=DashboardResourceType("dashboard"))]
-    )
+        [
+            DashboardBulkActionData(
+                id=DASHBOARD_ID,
+                type=DashboardResourceType("dashboard"),
+            ),
+        ]
+    ),
 )
 
 configuration = Configuration()

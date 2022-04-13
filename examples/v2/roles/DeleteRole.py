@@ -12,4 +12,6 @@ ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = RolesApi(api_client)
-    api_instance.delete_role(role_id=ROLE_DATA_ID)
+    api_instance.delete_role(
+        role_id=ROLE_DATA_ID,
+    )

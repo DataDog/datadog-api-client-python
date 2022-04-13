@@ -12,6 +12,8 @@ DASHBOARD_ID = environ["DASHBOARD_ID"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = DashboardsApi(api_client)
-    response = api_instance.delete_dashboard(dashboard_id=DASHBOARD_ID)
+    response = api_instance.delete_dashboard(
+        dashboard_id=DASHBOARD_ID,
+    )
 
     print(response)

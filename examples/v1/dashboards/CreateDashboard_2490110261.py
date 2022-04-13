@@ -36,21 +36,30 @@ body = Dashboard(
                         response_format=FormulaAndFunctionResponseFormat("timeseries"),
                         queries=[
                             FormulaAndFunctionEventQueryDefinition(
-                                search=FormulaAndFunctionEventQueryDefinitionSearch(query=""),
+                                search=FormulaAndFunctionEventQueryDefinitionSearch(
+                                    query="",
+                                ),
                                 data_source=FormulaAndFunctionEventsDataSource("audit"),
                                 compute=FormulaAndFunctionEventQueryDefinitionCompute(
-                                    aggregation=FormulaAndFunctionEventAggregation("count")
+                                    aggregation=FormulaAndFunctionEventAggregation("count"),
                                 ),
                                 name="query1",
-                                indexes=["*"],
+                                indexes=[
+                                    "*",
+                                ],
                                 group_by=[],
-                            )
+                            ),
                         ],
-                    )
+                    ),
                 ],
             ),
-            layout=WidgetLayout(x=2, y=0, width=4, height=2),
-        )
+            layout=WidgetLayout(
+                x=2,
+                y=0,
+                width=4,
+                height=2,
+            ),
+        ),
     ],
 )
 

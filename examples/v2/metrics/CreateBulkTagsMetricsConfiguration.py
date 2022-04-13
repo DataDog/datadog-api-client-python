@@ -18,14 +18,21 @@ USER_DATA_ATTRIBUTES_EMAIL = environ["USER_DATA_ATTRIBUTES_EMAIL"]
 body = MetricBulkTagConfigCreateRequest(
     data=MetricBulkTagConfigCreate(
         attributes=MetricBulkTagConfigCreateAttributes(
-            emails=MetricBulkTagConfigEmailList([USER_DATA_ATTRIBUTES_EMAIL]),
+            emails=MetricBulkTagConfigEmailList(
+                [
+                    USER_DATA_ATTRIBUTES_EMAIL,
+                ]
+            ),
             tags=MetricBulkTagConfigTagNameList(
-                ["test", "exampleconfiguretagsformultiplemetricsreturnsacceptedresponse"]
+                [
+                    "test",
+                    "exampleconfiguretagsformultiplemetricsreturnsacceptedresponse",
+                ]
             ),
         ),
         id="system.load.1",
         type=MetricBulkConfigureTagsType("metric_bulk_configure_tags"),
-    )
+    ),
 )
 
 configuration = Configuration()

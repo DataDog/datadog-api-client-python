@@ -24,7 +24,7 @@ body = CloudWorkloadSecurityAgentRuleCreateRequest(
             name="examplecreateacloudworkloadsecurityagentrulereturnsokresponse",
         ),
         type=CloudWorkloadSecurityAgentRuleType("agent_rule"),
-    )
+    ),
 )
 
 configuration = Configuration()

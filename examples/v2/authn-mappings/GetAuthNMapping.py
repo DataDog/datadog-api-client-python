@@ -12,6 +12,8 @@ AUTHN_MAPPING_DATA_ID = environ["AUTHN_MAPPING_DATA_ID"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = AuthNMappingsApi(api_client)
-    response = api_instance.get_authn_mapping(authn_mapping_id=AUTHN_MAPPING_DATA_ID)
+    response = api_instance.get_authn_mapping(
+        authn_mapping_id=AUTHN_MAPPING_DATA_ID,
+    )
 
     print(response)

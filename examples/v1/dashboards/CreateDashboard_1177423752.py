@@ -20,7 +20,12 @@ body = Dashboard(
     description=None,
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=47, height=15),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=47,
+                height=15,
+            ),
             definition=HeatMapWidgetDefinition(
                 title="",
                 title_size="16",
@@ -29,11 +34,14 @@ body = Dashboard(
                 type=HeatMapWidgetDefinitionType("heatmap"),
                 requests=[
                     HeatMapWidgetRequest(
-                        q="avg:system.cpu.user{*} by {service}", style=WidgetStyle(palette="dog_classic")
-                    )
+                        q="avg:system.cpu.user{*} by {service}",
+                        style=WidgetStyle(
+                            palette="dog_classic",
+                        ),
+                    ),
                 ],
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

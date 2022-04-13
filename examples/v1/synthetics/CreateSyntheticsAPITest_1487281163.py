@@ -43,7 +43,11 @@ body = SyntheticsAPITest(
             ),
             SyntheticsAssertionJSONPathTarget(
                 operator=SyntheticsAssertionJSONPathOperator("validatesJSONPath"),
-                target=SyntheticsAssertionJSONPathTargetTarget(json_path="topKey", operator="isNot", target_value="0"),
+                target=SyntheticsAssertionJSONPathTargetTarget(
+                    json_path="topKey",
+                    operator="isNot",
+                    target_value="0",
+                ),
                 type=SyntheticsAssertionType("body"),
             ),
         ],
@@ -53,27 +57,36 @@ body = SyntheticsAPITest(
                 name="PROPERTY",
                 pattern="content-type",
                 type=SyntheticsConfigVariableType("text"),
-            )
+            ),
         ],
         request=SyntheticsTestRequest(
             certificate=SyntheticsTestRequestCertificate(
                 cert=SyntheticsTestRequestCertificateItem(
-                    content="cert-content", filename="cert-filename", updated_at="2020-10-16T09:23:24.857Z"
+                    content="cert-content",
+                    filename="cert-filename",
+                    updated_at="2020-10-16T09:23:24.857Z",
                 ),
                 key=SyntheticsTestRequestCertificateItem(
-                    content="key-content", filename="key-filename", updated_at="2020-10-16T09:23:24.857Z"
+                    content="key-content",
+                    filename="key-filename",
+                    updated_at="2020-10-16T09:23:24.857Z",
                 ),
             ),
             headers=SyntheticsTestHeaders(
-                unique="examplecreateanapihttptestreturnsokreturnsthecreatedtestdetailsresponse"
+                unique="examplecreateanapihttptestreturnsokreturnsthecreatedtestdetailsresponse",
             ),
             method=HTTPMethod("GET"),
             timeout=10.0,
             url="https://datadoghq.com",
-            proxy=SyntheticsTestRequestProxy(url="https://datadoghq.com", headers=SyntheticsTestHeaders()),
+            proxy=SyntheticsTestRequestProxy(
+                url="https://datadoghq.com",
+                headers=SyntheticsTestHeaders(),
+            ),
         ),
     ),
-    locations=["aws:us-east-2"],
+    locations=[
+        "aws:us-east-2",
+    ],
     message="BDD test payload: synthetics_api_http_test_payload.json",
     name="Example-Create_an_API_HTTP_test_returns_OK_Returns_the_created_test_details_response",
     options=SyntheticsTestOptions(
@@ -84,11 +97,16 @@ body = SyntheticsAPITest(
         min_location_failed=1,
         monitor_name="Example-Create_an_API_HTTP_test_returns_OK_Returns_the_created_test_details_response",
         monitor_priority=5,
-        retry=SyntheticsTestOptionsRetry(count=3, interval=10.0),
+        retry=SyntheticsTestOptionsRetry(
+            count=3,
+            interval=10.0,
+        ),
         tick_every=60,
     ),
     subtype=SyntheticsTestDetailsSubType("http"),
-    tags=["testing:api"],
+    tags=[
+        "testing:api",
+    ],
     type=SyntheticsAPITestType("api"),
 )
 

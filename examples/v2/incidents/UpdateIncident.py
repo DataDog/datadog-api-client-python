@@ -25,12 +25,13 @@ body = IncidentUpdateRequest(
         attributes=IncidentUpdateAttributes(
             fields=dict(
                 state=IncidentFieldAttributesSingleValue(
-                    type=IncidentFieldAttributesSingleValueType("dropdown"), value="resolved"
-                )
+                    type=IncidentFieldAttributesSingleValueType("dropdown"),
+                    value="resolved",
+                ),
             ),
             title="A test incident title-updated",
         ),
-    )
+    ),
 )
 
 configuration = Configuration()

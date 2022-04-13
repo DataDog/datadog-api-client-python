@@ -8,7 +8,13 @@ from datadog_api_client.v1.model.slack_integration_channel import SlackIntegrati
 from datadog_api_client.v1.model.slack_integration_channel_display import SlackIntegrationChannelDisplay
 
 body = SlackIntegrationChannel(
-    display=SlackIntegrationChannelDisplay(message=True, notified=True, snapshot=True, tags=True), name="#general"
+    display=SlackIntegrationChannelDisplay(
+        message=True,
+        notified=True,
+        snapshot=True,
+        tags=True,
+    ),
+    name="#general",
 )
 
 configuration = Configuration()
