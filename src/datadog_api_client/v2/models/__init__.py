@@ -108,6 +108,7 @@ from datadog_api_client.v2.model.http_log import HTTPLog
 from datadog_api_client.v2.model.http_log_error import HTTPLogError
 from datadog_api_client.v2.model.http_log_errors import HTTPLogErrors
 from datadog_api_client.v2.model.http_log_item import HTTPLogItem
+from datadog_api_client.v2.model.idp_metadata_form_data import IdPMetadataFormData
 from datadog_api_client.v2.model.incident_create_attributes import IncidentCreateAttributes
 from datadog_api_client.v2.model.incident_create_data import IncidentCreateData
 from datadog_api_client.v2.model.incident_create_relationships import IncidentCreateRelationships

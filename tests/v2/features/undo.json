@@ -519,6 +519,12 @@
       "type": "safe"
     }
   },
+  "UploadIdPMetadata": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DownloadCloudWorkloadPolicyFile": {
     "tag": "Cloud Workload Security",
     "undo": {
