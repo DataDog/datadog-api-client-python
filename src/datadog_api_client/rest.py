@@ -131,7 +131,7 @@ class RESTClientObject:
                     headers["Content-Type"] = "application/json"
                 if query_params:
                     url += "?" + urlencode(query_params)
-                if ("Content-Type" not in headers) or (re.search("json", headers["Content-Type"], re.IGNORECASE)):
+                if "Content-Type" not in headers or re.search("json", headers["Content-Type"], re.IGNORECASE):
                     request_body = None
                     if body is not None:
                         request_body = json.dumps(body)
@@ -194,7 +194,12 @@ class RESTClientObject:
             # For `GET`, `HEAD`
             else:
                 r = self.pool_manager.request(
-                    method, url, fields=query_params, preload_content=_preload_content, timeout=timeout, headers=headers
+                    method,
+                    url,
+                    fields=query_params,
+                    preload_content=_preload_content,
+                    timeout=timeout,
+                    headers=headers,
                 )
         except urllib3.exceptions.SSLError as e:
             msg = "{0}\n{1}".format(type(e).__name__, str(e))
@@ -269,7 +274,21 @@ class AsyncRESTClientObject:
                                  (connection, read) timeouts.
         """
         assert not post_params, "not supported for now"
-        response = await self._client.request(url, method, headers, query_params, body, timeouts=_request_timeout)
+        request_body = None
+        if (
+            "Content-Type" not in headers
+            or re.search("json", headers["Content-Type"], re.IGNORECASE)
+            and body is not None
+        ):
+            request_body = json.dumps(body)
+            if headers.get("Content-Encoding") == "gzip":
+                compress = zlib.compressobj(wbits=16 + zlib.MAX_WBITS)
+                request_body = compress.compress(request_body.encode("utf-8")) + compress.flush()
+            elif headers.get("Content-Encoding") == "deflate":
+                request_body = zlib.compress(request_body.encode("utf-8"))
+        response = await self._client.request(
+            url, method, headers, query_params, request_body, timeouts=_request_timeout
+        )
 
         if not 200 <= response.status_code <= 299:
             data = b""
