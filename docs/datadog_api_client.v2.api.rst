@@ -97,6 +97,14 @@ metrics\_api
    :undoc-members:
    :show-inheritance:
 
+organizations\_api
+------------------
+
+.. automodule:: datadog_api_client.v2.api.organizations_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 processes\_api
 --------------
 
