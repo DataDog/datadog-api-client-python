@@ -225,12 +225,12 @@ class ServiceLevelObjectivesApi:
             api_client=api_client,
         )
 
-        self._list_sl_os_endpoint = _Endpoint(
+        self._list_slos_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo",
-                "operation_id": "list_sl_os",
+                "operation_id": "list_slos",
                 "http_method": "GET",
                 "version": "v1",
                 "servers": None,
@@ -641,7 +641,7 @@ class ServiceLevelObjectivesApi:
 
         return self._get_slo_history_endpoint.call_with_http_info(**kwargs)
 
-    def list_sl_os(self, **kwargs):
+    def list_slos(self, **kwargs):
         """Get all SLOs.
 
         Get a list of service level objective objects for your organization.
@@ -649,7 +649,7 @@ class ServiceLevelObjectivesApi:
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
 
-        >>> thread = api.list_sl_os(async_req=True)
+        >>> thread = api.list_slos(async_req=True)
         >>> result = thread.get()
 
         :param ids: A comma separated list of the IDs of the service level objectives objects.
@@ -690,8 +690,8 @@ class ServiceLevelObjectivesApi:
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOListResponse
         """
-        kwargs = self._list_sl_os_endpoint.default_arguments(kwargs)
-        return self._list_sl_os_endpoint.call_with_http_info(**kwargs)
+        kwargs = self._list_slos_endpoint.default_arguments(kwargs)
+        return self._list_slos_endpoint.call_with_http_info(**kwargs)
 
     def update_slo(self, slo_id, body, **kwargs):
         """Update an SLO.
