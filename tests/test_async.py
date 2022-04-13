@@ -1,4 +1,5 @@
 import os
+import time
 
 import pytest
 
@@ -41,3 +42,31 @@ async def test_basic():
         _, code, headers = await api_instance.list_dashboards(_return_http_data_only=False)
         assert code == 200
         assert headers["Content-Type"] == "application/json"
+
+
+@pytest.mark.asyncio
+async def test_body():
+    if os.getenv("RECORD", "false").lower() != "none":
+        pytest.skip("Integration test")
+    configuration = Configuration()
+    configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "fake")
+    configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
+    configuration.debug = os.getenv("DEBUG") in {"true", "1", "yes", "on"}
+    if "DD_TEST_SITE" in os.environ:
+        configuration.server_index = 2
+        configuration.server_variables["site"] = os.environ["DD_TEST_SITE"]
+
+    body = {
+        "series": [
+            {
+                "metric": "system.load.1",
+                "points": [[time.time(), 0.7]],
+                "tags": ["test:async_test"],
+            },
+        ]
+    }
+
+    async with AsyncApiClient(configuration) as api_client:
+        api_instance = metrics_api.MetricsApi(api_client)
+        _, code, headers = await api_instance.submit_metrics(body=body, _return_http_data_only=False)
+        assert code == 202
