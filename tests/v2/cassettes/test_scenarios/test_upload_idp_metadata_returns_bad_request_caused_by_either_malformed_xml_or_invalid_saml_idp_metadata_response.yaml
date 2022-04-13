@@ -1,0 +1,24 @@
+interactions:
+- request:
+    body: "--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\r\
+      \nContent-Disposition: form-data; name=\"idp_file\"; filename=\"invalid_idp_metadata.xml\"\
+      \r\nContent-Type: application/xml\r\n\r\n<?xml version=\"1.0\" encoding=\"UTF-8\"\
+      ?>\ni am > bad xml\n\r\n--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx--\r\
+      \n"
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - multipart/form-data; boundary=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/saml_configurations/idp_metadata
+  response:
+    body:
+      string: '{"errors": ["Invalid metadata"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
