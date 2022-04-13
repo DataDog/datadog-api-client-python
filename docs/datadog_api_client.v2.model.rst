@@ -705,6 +705,14 @@ http\_log\_item
    :undoc-members:
    :show-inheritance:
 
+idp\_metadata\_form\_data
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.idp_metadata_form_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 incident\_create\_attributes
 ----------------------------
 
