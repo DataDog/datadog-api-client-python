@@ -91,6 +91,15 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
+  @replay-only @skip @team:DataDog/incident-app @with-pagination
+  Scenario: Get a list of incidents returns "OK" response with pagination
+    Given operation "ListIncidents" enabled
+    And new "ListIncidents" request
+    And request contains "page[size]" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @generated @skip @team:DataDog/incident-app
   Scenario: Get the details of an incident returns "Bad Request" response
     Given operation "GetIncident" enabled

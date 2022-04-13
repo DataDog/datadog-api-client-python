@@ -1,0 +1,49 @@
+interactions:
+- request:
+    body: '{"filter":{"from":"now-15m","to":"now"},"options":{"timezone":"GMT"},"page":{"limit":2},"sort":"timestamp"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/audit/events/search
+  response:
+    body:
+      string: '{"meta":{"page":{"after":"eyJhZnRlciI6IkFRQUFBWUFpT2hZV1JxeFgzUUFBQUFCQldVRnBUMmh2VFVGQlFrczVOa2wwVFZKVFYycEJRVUUifQ"}},"data":[{"attributes":{"attributes":{"status":"info","http":{"status_code":"200","url_details":{"path":"/api/v1/synthetics/enforced_tags","host":"us1.prod.dog"},"method":"GET","useragent":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/100.0.4896.75 Safari/537.36"},"network":{"bytes_read":0,"client":{"ip":"84.102.253.215"},"bytes_written":104},"timestamp":"2022-04-13T09:21:13.750599","usr":{"email":"foo@example.com","id":"foo@example.com","uuid":"0ed5718a-10e0-11ec-8246-da7ad0900002"},"action":"accessed","org":{"uuid":"8dee7c38-00cb-11ea-a77b-8b5a08d3b091"},"evt":{"name":"Request","actor":{"type":"USER"}},"auth_method":"SESSION"},"message":"GET
+        request made to /api/v1/synthetics/enforced_tags by foo@example.com with response
+        200","tags":["source:audit"],"timestamp":"2022-04-13T09:21:13.750Z"},"type":"audit","id":"AQAAAYAiOhYWi7EZ-QAAAABBWUFpT2hvT0FBRGJLTGZoSU50TEVRQUE"},{"attributes":{"attributes":{"status":"info","http":{"status_code":"200","url_details":{"path":"/api/v2/query/timeseries","host":"us1.prod.dog"},"method":"POST","useragent":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/100.0.4896.75 Safari/537.36"},"network":{"bytes_read":494,"client":{"ip":"149.14.155.42"},"bytes_written":108896},"timestamp":"2022-04-13T09:21:13.750249","usr":{"email":"foo@example.com","id":"foo@example.com","uuid":"32e2d7b6-52e4-11ec-a7e4-da7ad0900002"},"action":"accessed","org":{"uuid":"8dee7c38-00cb-11ea-a77b-8b5a08d3b091"},"evt":{"name":"Request","actor":{"type":"USER"}},"auth_method":"SESSION"},"message":"POST
+        request made to /api/v2/query/timeseries by foo@example.com with response
+        200","tags":["source:audit"],"timestamp":"2022-04-13T09:21:13.750Z"},"type":"audit","id":"AQAAAYAiOhYWRqxX3QAAAABBWUFpT2hvTUFBQks5Nkl0TVJTV2pBQUE"}],"links":{"next":"https://api.datadoghq.com/api/v2/audit/events?sort=timestamp&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFpT2hZV1JxeFgzUUFBQUFCQldVRnBUMmh2VFVGQlFrczVOa2wwVFZKVFYycEJRVUUifQ&page%5Blimit%5D=2&filter%5Bfrom%5D=now-15m"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"filter":{"from":"now-15m","to":"now"},"options":{"timezone":"GMT"},"page":{"cursor":"eyJhZnRlciI6IkFRQUFBWUFpT2hZV1JxeFgzUUFBQUFCQldVRnBUMmh2VFVGQlFrczVOa2wwVFZKVFYycEJRVUUifQ","limit":2},"sort":"timestamp"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/audit/events/search
+  response:
+    body:
+      string: '{"meta":{"page":{"after":"eyJhZnRlciI6IkFRQUFBWUFpT2hnV2pkb1otUUFBQUFCQldVRnBUMmgzVFVGQlJHSkxUR1pvU1U1MFRrOW5RVUUifQ"}},"data":[{"attributes":{"attributes":{"status":"info","http":{"status_code":"200","url_details":{"path":"/series/batch_query","host":"us1.prod.dog"},"method":"POST","useragent":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)
+        Version/15.4 Safari/605.1.15"},"network":{"bytes_read":818,"client":{"ip":"185.12.36.70"},"bytes_written":60804},"timestamp":"2022-04-13T09:21:14.260084","usr":{"email":"foo@example.com","id":"foo@example.com","uuid":"a9c5deae-eb9f-11e9-a77a-a386b4bf357a"},"action":"accessed","org":{"uuid":"8dee7c38-00cb-11ea-a77b-8b5a08d3b091"},"evt":{"name":"Request","actor":{"type":"USER"}},"auth_method":"SESSION"},"message":"POST
+        request made to /series/batch_query by foo@example.com with response 200","tags":["source:audit"],"timestamp":"2022-04-13T09:21:14.260Z"},"type":"audit","id":"AQAAAYAiOhgURpZX3QAAAABBWUFpT2hudkFBQks5Nkl0TVJTV2RnQUE"}],"links":{"next":"https://api.datadoghq.com/api/v2/audit/events?sort=timestamp&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFpT2hnV2pkb1otUUFBQUFCQldVRnBUMmgzVFVGQlJHSkxUR1pvU1U1MFRrOW5RVUUifQ&page%5Blimit%5D=2&filter%5Bfrom%5D=now-15m"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
