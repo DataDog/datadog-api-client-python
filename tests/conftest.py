@@ -588,6 +588,26 @@ def execute_request(undo, context, client, api_version):
     context["undo_operations"].append(lambda: undo(api, api_version, operation_id, response))
 
 
+@when("the request with pagination is sent")
+def execute_request_with_pagination(undo, context, client, api_version):
+    """Execute the prepared paginated request."""
+    api_request = context["api_request"]
+
+    kwargs = api_request["kwargs"]
+    kwargs["_return_http_data_only"] = True
+    method = getattr(api_request["api"], f"{api_request['request'].__name__}_with_pagination")
+    try:
+        response = list(method(*api_request["args"], **kwargs))
+        # Reserialise the response body to JSON to facilitate test assertions
+        response_body_json = client.sanitize_for_serialization(response)
+        api_request["response"] = [response_body_json, 200, None]
+    except exceptions.ApiException as e:
+        # If we have an exception, make a stub response object to use for assertions
+        # Instead of finding the response class of the method, we use the fact that all
+        # responses returned have an ordered response of body|status|headers
+        api_request["response"] = [e.body, e.status, e.headers]
+
+
 @then(parsers.parse("the response status is {status:d} {description}"))
 def the_status_is(context, status, description):
     """Check the status."""
@@ -612,6 +632,12 @@ def expect_equal_value(context, response_path, fixture_path):
 def expect_equal_length(context, response_path, fixture_length):
     response_value = glom(context["api_request"]["response"][0], response_path)
     assert fixture_length == len(response_value)
+
+
+@then(parsers.parse('the response has {fixture_length:d} items'))
+def expect_equal_response_items(context, fixture_length):
+    response = context["api_request"]["response"][0]
+    assert fixture_length == len(response)
 
 
 @then(parsers.parse('the response "{response_path}" is false'))
