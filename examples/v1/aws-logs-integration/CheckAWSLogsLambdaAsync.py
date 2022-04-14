@@ -7,7 +7,8 @@ from datadog_api_client.v1.api.aws_logs_integration_api import AWSLogsIntegratio
 from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccountAndLambdaRequest
 
 body = AWSAccountAndLambdaRequest(
-    account_id="1234567", lambda_arn="arn:aws:lambda:us-east-1:1234567:function:LogsCollectionAPITest"
+    account_id="1234567",
+    lambda_arn="arn:aws:lambda:us-east-1:1234567:function:LogsCollectionAPITest",
 )
 
 configuration = Configuration()

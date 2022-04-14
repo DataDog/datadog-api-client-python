@@ -7,7 +7,11 @@ from datadog_api_client.v1.api.aws_integration_api import AWSIntegrationApi
 from datadog_api_client.v1.model.aws_namespace import AWSNamespace
 from datadog_api_client.v1.model.aws_tag_filter_create_request import AWSTagFilterCreateRequest
 
-body = AWSTagFilterCreateRequest(account_id="1234567", namespace=AWSNamespace("elb"), tag_filter_str="prod*")
+body = AWSTagFilterCreateRequest(
+    account_id="1234567",
+    namespace=AWSNamespace("elb"),
+    tag_filter_str="prod*",
+)
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:

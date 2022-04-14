@@ -16,10 +16,10 @@ ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 body = RoleCloneRequest(
     data=RoleClone(
         attributes=RoleCloneAttributes(
-            name="Example-Create_a_new_role_by_cloning_an_existing_role_returns_OK_response clone"
+            name="Example-Create_a_new_role_by_cloning_an_existing_role_returns_OK_response clone",
         ),
         type=RolesType("roles"),
-    )
+    ),
 )
 
 configuration = Configuration()

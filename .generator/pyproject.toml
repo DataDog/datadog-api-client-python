@@ -11,6 +11,9 @@ click = "8.0.1"
 PyYAML = "6.0"
 jsonref = "0.2"
 jinja2 = "3.0.3"
+pytest = "^7.1.1"
+pytest-bdd = "^5.0.0"
+dateutils = "^0.6.12"
 
 [tool.poetry.dev-dependencies]
 

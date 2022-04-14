@@ -25,7 +25,12 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=47, height=15),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=47,
+                height=15,
+            ),
             definition=QueryValueWidgetDefinition(
                 title="",
                 title_size="16",
@@ -41,14 +46,14 @@ body = Dashboard(
                                 data_source=FormulaAndFunctionMetricDataSource("metrics"),
                                 query="avg:system.cpu.user{*}",
                                 aggregator=FormulaAndFunctionMetricAggregation("avg"),
-                            )
+                            ),
                         ],
-                    )
+                    ),
                 ],
                 autoscale=True,
                 precision=2,
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

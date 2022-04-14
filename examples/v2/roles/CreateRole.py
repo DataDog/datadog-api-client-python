@@ -11,8 +11,11 @@ from datadog_api_client.v2.model.roles_type import RolesType
 
 body = RoleCreateRequest(
     data=RoleCreateData(
-        type=RolesType("roles"), attributes=RoleCreateAttributes(name="Example-Create_role_returns_OK_response")
-    )
+        type=RolesType("roles"),
+        attributes=RoleCreateAttributes(
+            name="Example-Create_role_returns_OK_response",
+        ),
+    ),
 )
 
 configuration = Configuration()

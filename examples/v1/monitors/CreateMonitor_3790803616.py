@@ -14,9 +14,16 @@ body = Monitor(
     type=MonitorType("ci-pipelines alert"),
     query='ci-pipelines("ci_level:pipeline @git.branch:staging* @ci.status:error").rollup("count").by("@git.branch,@ci.pipeline.name").last("5m") >= 1',
     message="some message Notify: @hipchat-channel",
-    tags=["test:examplecreateacipipelinesmonitorreturnsokresponse", "env:ci"],
+    tags=[
+        "test:examplecreateacipipelinesmonitorreturnsokresponse",
+        "env:ci",
+    ],
     priority=3,
-    options=MonitorOptions(thresholds=MonitorThresholds(critical=1.0)),
+    options=MonitorOptions(
+        thresholds=MonitorThresholds(
+            critical=1.0,
+        ),
+    ),
 )
 
 configuration = Configuration()

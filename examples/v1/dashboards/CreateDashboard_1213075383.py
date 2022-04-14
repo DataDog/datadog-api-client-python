@@ -28,7 +28,12 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=47, height=15),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=47,
+                height=15,
+            ),
             definition=ToplistWidgetDefinition(
                 title="",
                 title_size="16",
@@ -43,18 +48,22 @@ body = Dashboard(
                                 name="query1",
                                 query="avg:system.cpu.user{*} by {service}",
                                 aggregator=FormulaAndFunctionMetricAggregation("avg"),
-                            )
+                            ),
                         ],
                         formulas=[
                             WidgetFormula(
-                                formula="query1", limit=WidgetFormulaLimit(count=10, order=QuerySortOrder("desc"))
-                            )
+                                formula="query1",
+                                limit=WidgetFormulaLimit(
+                                    count=10,
+                                    order=QuerySortOrder("desc"),
+                                ),
+                            ),
                         ],
                         response_format=FormulaAndFunctionResponseFormat("scalar"),
-                    )
+                    ),
                 ],
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

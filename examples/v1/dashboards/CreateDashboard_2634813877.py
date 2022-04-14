@@ -18,7 +18,12 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=47, height=38),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=47,
+                height=38,
+            ),
             definition=EventStreamWidgetDefinition(
                 title="",
                 title_size="16",
@@ -28,7 +33,7 @@ body = Dashboard(
                 tags_execution="and",
                 event_size=WidgetEventSize("s"),
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

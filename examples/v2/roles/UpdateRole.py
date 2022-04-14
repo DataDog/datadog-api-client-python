@@ -16,8 +16,12 @@ ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 
 body = RoleUpdateRequest(
     data=RoleUpdateData(
-        id=ROLE_DATA_ID, type=RolesType("roles"), attributes=RoleUpdateAttributes(name="developers-updated")
-    )
+        id=ROLE_DATA_ID,
+        type=RolesType("roles"),
+        attributes=RoleUpdateAttributes(
+            name="developers-updated",
+        ),
+    ),
 )
 
 configuration = Configuration()

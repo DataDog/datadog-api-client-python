@@ -14,9 +14,16 @@ body = Monitor(
     type=MonitorType("error-tracking alert"),
     query='error-tracking-rum("service:foo AND @error.source:source").rollup("count").by("@issue.id").last("1h") >= 1',
     message="some message",
-    tags=["test:examplecreateanerrortrackingmonitorreturnsokresponse", "env:ci"],
+    tags=[
+        "test:examplecreateanerrortrackingmonitorreturnsokresponse",
+        "env:ci",
+    ],
     priority=3,
-    options=MonitorOptions(thresholds=MonitorThresholds(critical=1.0)),
+    options=MonitorOptions(
+        thresholds=MonitorThresholds(
+            critical=1.0,
+        ),
+    ),
 )
 
 configuration = Configuration()

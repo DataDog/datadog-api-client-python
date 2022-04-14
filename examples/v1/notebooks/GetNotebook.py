@@ -12,6 +12,8 @@ NOTEBOOK_DATA_ID = environ["NOTEBOOK_DATA_ID"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = NotebooksApi(api_client)
-    response = api_instance.get_notebook(notebook_id=int(NOTEBOOK_DATA_ID))
+    response = api_instance.get_notebook(
+        notebook_id=int(NOTEBOOK_DATA_ID),
+    )
 
     print(response)

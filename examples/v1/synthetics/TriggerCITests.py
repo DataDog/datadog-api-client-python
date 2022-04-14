@@ -20,20 +20,27 @@ body = SyntheticsCITestBody(
     tests=[
         SyntheticsCITest(
             basic_auth=SyntheticsBasicAuthWeb(
-                password="PaSSw0RD!", type=SyntheticsBasicAuthWebType("web"), username="my_username"
+                password="PaSSw0RD!",
+                type=SyntheticsBasicAuthWebType("web"),
+                username="my_username",
             ),
-            device_ids=[SyntheticsDeviceID("laptop_large")],
-            locations=["aws:eu-west-3"],
+            device_ids=[
+                SyntheticsDeviceID("laptop_large"),
+            ],
+            locations=[
+                "aws:eu-west-3",
+            ],
             metadata=SyntheticsCIBatchMetadata(
                 ci=SyntheticsCIBatchMetadataCI(
-                    pipeline=SyntheticsCIBatchMetadataPipeline(), provider=SyntheticsCIBatchMetadataProvider()
+                    pipeline=SyntheticsCIBatchMetadataPipeline(),
+                    provider=SyntheticsCIBatchMetadataProvider(),
                 ),
                 git=SyntheticsCIBatchMetadataGit(),
             ),
             public_id="aaa-aaa-aaa",
             retry=SyntheticsTestOptionsRetry(),
-        )
-    ]
+        ),
+    ],
 )
 
 configuration = Configuration()

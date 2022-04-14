@@ -9,7 +9,9 @@ from datadog_api_client.v1.model.event_create_request import EventCreateRequest
 body = EventCreateRequest(
     title="Example-Post_an_event_with_a_long_title_returns_OK_response very very very looooooooong looooooooooooong loooooooooooooooooooooong looooooooooooooooooooooooooong title with 100+ characters",
     text="A text message.",
-    tags=["test:ExamplePostaneventwithalongtitlereturnsOKresponse"],
+    tags=[
+        "test:ExamplePostaneventwithalongtitlereturnsOKresponse",
+    ],
 )
 
 configuration = Configuration()

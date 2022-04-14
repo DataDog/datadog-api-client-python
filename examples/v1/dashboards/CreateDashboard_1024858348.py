@@ -34,25 +34,41 @@ body = Dashboard(
                 type=TreeMapWidgetDefinitionType("treemap"),
                 requests=[
                     TreeMapWidgetRequest(
-                        formulas=[WidgetFormula(formula="hour_before(query1)"), WidgetFormula(formula="query1")],
+                        formulas=[
+                            WidgetFormula(
+                                formula="hour_before(query1)",
+                            ),
+                            WidgetFormula(
+                                formula="query1",
+                            ),
+                        ],
                         queries=[
                             FormulaAndFunctionEventQueryDefinition(
                                 data_source=FormulaAndFunctionEventsDataSource("logs"),
                                 name="query1",
-                                search=FormulaAndFunctionEventQueryDefinitionSearch(query=""),
-                                indexes=["*"],
+                                search=FormulaAndFunctionEventQueryDefinitionSearch(
+                                    query="",
+                                ),
+                                indexes=[
+                                    "*",
+                                ],
                                 compute=FormulaAndFunctionEventQueryDefinitionCompute(
-                                    aggregation=FormulaAndFunctionEventAggregation("count")
+                                    aggregation=FormulaAndFunctionEventAggregation("count"),
                                 ),
                                 group_by=[],
-                            )
+                            ),
                         ],
                         response_format=FormulaAndFunctionResponseFormat("scalar"),
-                    )
+                    ),
                 ],
             ),
-            layout=WidgetLayout(x=0, y=0, width=4, height=4),
-        )
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=4,
+                height=4,
+            ),
+        ),
     ],
     layout_type=DashboardLayoutType("ordered"),
 )

@@ -10,7 +10,9 @@ from datadog_api_client.v1.model.webhooks_integration_update_request import Webh
 # there is a valid "webhook" in the system
 WEBHOOK_NAME = environ["WEBHOOK_NAME"]
 
-body = WebhooksIntegrationUpdateRequest(url="https://example.com/webhook-updated")
+body = WebhooksIntegrationUpdateRequest(
+    url="https://example.com/webhook-updated",
+)
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:

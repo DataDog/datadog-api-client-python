@@ -18,7 +18,10 @@ body = Monitor(
     type=MonitorType("log alert"),
     query='logs("service:foo AND type:error").index("main").rollup("count").by("source").last("5m") > 2',
     message="some message Notify: @hipchat-channel",
-    tags=["test:examplevalidateanexistingmonitorreturnsokresponse", "env:ci"],
+    tags=[
+        "test:examplevalidateanexistingmonitorreturnsokresponse",
+        "env:ci",
+    ],
     priority=3,
     options=MonitorOptions(
         enable_logs_sample=True,
@@ -34,7 +37,10 @@ body = Monitor(
         renotify_interval=60,
         require_full_window=True,
         timeout_h=24,
-        thresholds=MonitorThresholds(critical=2.0, warning=1.0),
+        thresholds=MonitorThresholds(
+            critical=2.0,
+            warning=1.0,
+        ),
     ),
 )
 

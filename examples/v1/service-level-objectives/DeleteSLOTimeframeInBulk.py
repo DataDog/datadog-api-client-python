@@ -7,7 +7,16 @@ from datadog_api_client.v1.api.service_level_objectives_api import ServiceLevelO
 from datadog_api_client.v1.model.slo_bulk_delete import SLOBulkDelete
 from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
 
-body = SLOBulkDelete(id1=[SLOTimeframe("7d"), SLOTimeframe("30d")], id2=[SLOTimeframe("7d"), SLOTimeframe("30d")])
+body = SLOBulkDelete(
+    id1=[
+        SLOTimeframe("7d"),
+        SLOTimeframe("30d"),
+    ],
+    id2=[
+        SLOTimeframe("7d"),
+        SLOTimeframe("30d"),
+    ],
+)
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:

@@ -24,10 +24,15 @@ body = AuthNMappingCreateRequest(
             attribute_value="Example-Create_an_AuthN_Mapping_returns_OK_response",
         ),
         relationships=AuthNMappingCreateRelationships(
-            role=RelationshipToRole(data=RelationshipToRoleData(id=ROLE_DATA_ID, type=RolesType("roles")))
+            role=RelationshipToRole(
+                data=RelationshipToRoleData(
+                    id=ROLE_DATA_ID,
+                    type=RolesType("roles"),
+                ),
+            ),
         ),
         type=AuthNMappingsType("authn_mappings"),
-    )
+    ),
 )
 
 configuration = Configuration()

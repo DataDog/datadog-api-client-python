@@ -12,10 +12,14 @@ from datadog_api_client.v2.model.logs_archive_order_definition_type import LogsA
 body = LogsArchiveOrder(
     data=LogsArchiveOrderDefinition(
         attributes=LogsArchiveOrderAttributes(
-            archive_ids=["a2zcMylnM4OCHpYusxIi1g", "a2zcMylnM4OCHpYusxIi2g", "a2zcMylnM4OCHpYusxIi3g"]
+            archive_ids=[
+                "a2zcMylnM4OCHpYusxIi1g",
+                "a2zcMylnM4OCHpYusxIi2g",
+                "a2zcMylnM4OCHpYusxIi3g",
+            ],
         ),
         type=LogsArchiveOrderDefinitionType("archive_order"),
-    )
+    ),
 )
 
 configuration = Configuration()

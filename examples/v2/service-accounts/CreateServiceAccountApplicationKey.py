@@ -13,10 +13,14 @@ body = ApplicationKeyCreateRequest(
     data=ApplicationKeyCreateData(
         attributes=ApplicationKeyCreateAttributes(
             name="Application Key for managing dashboards",
-            scopes=["dashboards_read", "dashboards_write", "dashboards_public_share"],
+            scopes=[
+                "dashboards_read",
+                "dashboards_write",
+                "dashboards_public_share",
+            ],
         ),
         type=ApplicationKeysType("application_keys"),
-    )
+    ),
 )
 
 configuration = Configuration()

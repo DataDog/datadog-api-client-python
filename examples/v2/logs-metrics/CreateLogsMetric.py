@@ -16,9 +16,11 @@ body = LogsMetricCreateRequest(
         id="Example-Create_a_log_based_metric_returns_OK_response",
         type=LogsMetricType("logs_metrics"),
         attributes=LogsMetricCreateAttributes(
-            compute=LogsMetricCompute(aggregation_type=LogsMetricComputeAggregationType("count"))
+            compute=LogsMetricCompute(
+                aggregation_type=LogsMetricComputeAggregationType("count"),
+            ),
         ),
-    )
+    ),
 )
 
 configuration = Configuration()

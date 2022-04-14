@@ -27,22 +27,35 @@ body = SyntheticsAPITest(
                 operator=SyntheticsAssertionOperator("lessThan"),
                 target=1000,
                 type=SyntheticsAssertionType("responseTime"),
-            )
+            ),
         ],
-        request=SyntheticsTestRequest(method=HTTPMethod("GET"), url="https://example.com"),
+        request=SyntheticsTestRequest(
+            method=HTTPMethod("GET"),
+            url="https://example.com",
+        ),
     ),
-    locations=["aws:eu-west-3"],
+    locations=[
+        "aws:eu-west-3",
+    ],
     message="Notification message",
     name="Example test name",
     options=SyntheticsTestOptions(
-        device_ids=[SyntheticsDeviceID("laptop_large")],
+        device_ids=[
+            SyntheticsDeviceID("laptop_large"),
+        ],
         monitor_options=SyntheticsTestOptionsMonitorOptions(),
-        restricted_roles=SyntheticsRestrictedRoles(["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]),
+        restricted_roles=SyntheticsRestrictedRoles(
+            [
+                "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            ]
+        ),
         retry=SyntheticsTestOptionsRetry(),
     ),
     status=SyntheticsTestPauseStatus("live"),
     subtype=SyntheticsTestDetailsSubType("http"),
-    tags=["env:production"],
+    tags=[
+        "env:production",
+    ],
     type=SyntheticsAPITestType("api"),
 )
 

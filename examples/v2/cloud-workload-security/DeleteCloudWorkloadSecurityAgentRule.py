@@ -12,4 +12,6 @@ AGENT_RULE_DATA_ID = environ["AGENT_RULE_DATA_ID"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = CloudWorkloadSecurityApi(api_client)
-    api_instance.delete_cloud_workload_security_agent_rule(agent_rule_id=AGENT_RULE_DATA_ID)
+    api_instance.delete_cloud_workload_security_agent_rule(
+        agent_rule_id=AGENT_RULE_DATA_ID,
+    )

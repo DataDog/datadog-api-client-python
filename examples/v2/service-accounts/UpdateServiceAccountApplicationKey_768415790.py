@@ -21,8 +21,10 @@ body = ApplicationKeyUpdateRequest(
     data=ApplicationKeyUpdateData(
         id=SERVICE_ACCOUNT_APPLICATION_KEY_DATA_ID,
         type=ApplicationKeysType("application_keys"),
-        attributes=ApplicationKeyUpdateAttributes(name="Application Key for managing dashboards-updated"),
-    )
+        attributes=ApplicationKeyUpdateAttributes(
+            name="Application Key for managing dashboards-updated",
+        ),
+    ),
 )
 
 configuration = Configuration()

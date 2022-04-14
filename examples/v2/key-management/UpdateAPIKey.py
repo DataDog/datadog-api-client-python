@@ -17,8 +17,10 @@ body = APIKeyUpdateRequest(
     data=APIKeyUpdateData(
         type=APIKeysType("api_keys"),
         id=API_KEY_DATA_ID,
-        attributes=APIKeyUpdateAttributes(name="Example-Edit_an_API_key_returns_OK_response"),
-    )
+        attributes=APIKeyUpdateAttributes(
+            name="Example-Edit_an_API_key_returns_OK_response",
+        ),
+    ),
 )
 
 configuration = Configuration()

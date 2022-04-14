@@ -13,6 +13,8 @@ configuration = Configuration()
 configuration.unstable_operations["get_slo_corrections"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ServiceLevelObjectivesApi(api_client)
-    response = api_instance.get_slo_corrections(slo_id=SLO_DATA_0_ID)
+    response = api_instance.get_slo_corrections(
+        slo_id=SLO_DATA_0_ID,
+    )
 
     print(response)

@@ -13,6 +13,8 @@ configuration = Configuration()
 configuration.unstable_operations["list_incident_teams"] = True
 with ApiClient(configuration) as api_client:
     api_instance = IncidentTeamsApi(api_client)
-    response = api_instance.list_incident_teams(filter=TEAM_DATA_ATTRIBUTES_NAME)
+    response = api_instance.list_incident_teams(
+        filter=TEAM_DATA_ATTRIBUTES_NAME,
+    )
 
     print(response)

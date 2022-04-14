@@ -30,9 +30,15 @@ body = SyntheticsAPITest(
             ),
         ],
         config_variables=[],
-        request=SyntheticsTestRequest(host="https://datadoghq.com", message="message", port=443),
+        request=SyntheticsTestRequest(
+            host="https://datadoghq.com",
+            message="message",
+            port=443,
+        ),
     ),
-    locations=["aws:us-east-2"],
+    locations=[
+        "aws:us-east-2",
+    ],
     message="BDD test payload: synthetics_api_test_udp_payload.json",
     name="Example-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response",
     options=SyntheticsTestOptions(
@@ -43,11 +49,16 @@ body = SyntheticsAPITest(
         min_location_failed=1,
         monitor_name="Example-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response",
         monitor_priority=5,
-        retry=SyntheticsTestOptionsRetry(count=3, interval=10.0),
+        retry=SyntheticsTestOptionsRetry(
+            count=3,
+            interval=10.0,
+        ),
         tick_every=60,
     ),
     subtype=SyntheticsTestDetailsSubType("udp"),
-    tags=["testing:api"],
+    tags=[
+        "testing:api",
+    ],
     type=SyntheticsAPITestType("api"),
 )
 

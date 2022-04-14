@@ -16,7 +16,12 @@ DASHBOARD_LIST_ID = environ["DASHBOARD_LIST_ID"]
 DASHBOARD_ID = environ["DASHBOARD_ID"]
 
 body = DashboardListAddItemsRequest(
-    dashboards=[DashboardListItemRequest(id=DASHBOARD_ID, type=DashboardType("custom_timeboard"))]
+    dashboards=[
+        DashboardListItemRequest(
+            id=DASHBOARD_ID,
+            type=DashboardType("custom_timeboard"),
+        ),
+    ],
 )
 
 configuration = Configuration()

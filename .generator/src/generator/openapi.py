@@ -1,6 +1,10 @@
+import hashlib
 import json
 import pathlib
+import random
+import uuid
 import yaml
+
 from jsonref import JsonRef
 from yaml import CSafeLoader
 
@@ -58,7 +62,12 @@ def type_to_python(schema, alternative_name=None):
         return (
             alternative_name
             if alternative_name
-            and ("properties" in schema or "oneOf" in schema or "anyOf" in schema or "allOf" in schema)
+            and (
+                "properties" in schema
+                or "oneOf" in schema
+                or "anyOf" in schema
+                or "allOf" in schema
+            )
             else "dict"
         )
     elif type_ == "null":
@@ -70,7 +79,9 @@ def type_to_python(schema, alternative_name=None):
 def get_type_for_attribute(schema, attribute, current_name=None):
     """Return Python type name for the attribute."""
     child_schema = schema.get("properties", {}).get(attribute)
-    alternative_name = current_name + formatter.camel_case(attribute) if current_name else None
+    alternative_name = (
+        current_name + formatter.camel_case(attribute) if current_name else None
+    )
     return type_to_python(child_schema, alternative_name=alternative_name)
 
 
@@ -155,7 +166,9 @@ def child_models(schema, alternative_name=None, seen=None):
             yield name, schema
 
         for key, child in schema.get("properties", {}).items():
-            yield from child_models(child, alternative_name=name + formatter.camel_case(key), seen=seen)
+            yield from child_models(
+                child, alternative_name=name + formatter.camel_case(key), seen=seen
+            )
 
     if current_name and schema.get("type") == "array":
         if name in seen:
@@ -211,7 +224,11 @@ def get_references_for_model(model, model_name):
     result = []
     top_name = formatter.get_name(model) or model_name
     for key, definition in model.get("properties", {}).items():
-        if definition.get("type") == "object" or definition.get("enum") or definition.get("oneOf"):
+        if (
+            definition.get("type") == "object"
+            or definition.get("enum")
+            or definition.get("oneOf")
+        ):
             name = formatter.get_name(definition)
             if name:
                 result.append(name)
@@ -322,7 +339,8 @@ def get_api_models(operations):
             break
         for content in operation.get("parameters", []):
             if "schema" in content and (
-                content["schema"].get("type") in ("object", "array") or content["schema"].get("enum")
+                content["schema"].get("type") in ("object", "array")
+                or content["schema"].get("enum")
             ):
                 name = formatter.get_name(content["schema"])
                 if name and name not in seen:
@@ -349,7 +367,9 @@ def parameters(operation):
 
     if "requestBody" in operation:
         if "multipart/form-data" in operation["requestBody"]["content"]:
-            parent = operation["requestBody"]["content"]["multipart/form-data"]["schema"]
+            parent = operation["requestBody"]["content"]["multipart/form-data"][
+                "schema"
+            ]
             for name, schema in parent["properties"].items():
                 yield name, {
                     "in": "form",
@@ -412,3 +432,140 @@ def collection_format(parameter):
         style = parameter.get("style", in_to_style[in_])
         explode = parameter.get("explode", True if style == "form" else False)
         return matrix.get((style, explode), "multi")
+
+
+def generate_value(schema, use_random=False, prefix=None):
+    spec = schema.spec
+    if not use_random:
+        if "example" in spec:
+            return spec["example"]
+        if "default" in spec:
+            return spec["default"]
+
+    if spec["type"] == "string":
+        if use_random:
+            return str(
+                uuid.UUID(
+                    bytes=hashlib.sha256(
+                        str(prefix or schema.keys).encode("utf-8"),
+                    ).digest()[:16]
+                )
+            )
+        return "string"
+    elif spec["type"] == "integer":
+        return (
+            random.randint(0, 32000) if use_random else len(str(prefix or schema.keys))
+        )
+    elif spec["type"] == "number":
+        return random.random() if use_random else 1.0 / len(str(prefix or schema.keys))
+    elif spec["type"] == "boolean":
+        return True
+    elif spec["type"] == "array":
+        return [generate_value(schema[0], use_random=use_random)]
+    elif spec["type"] == "object":
+        return {
+            key: generate_value(schema[key], use_random=use_random)
+            for key in spec["properties"]
+        }
+    else:
+        raise TypeError(f"Unknown type: {spec['type']}")
+
+
+class Schema:
+    def __init__(self, spec, value=None, keys=None):
+        self.spec = spec
+        self.value = value if value is not None else generate_value
+        self.keys = keys or tuple()
+
+    def __getattr__(self, key):
+        return self[key]
+
+    def __getitem__(self, key):
+        type_ = self.spec.get("type", "object")
+        if type_ == "object":
+            try:
+                return self.__class__(
+                    self.spec["properties"][key],
+                    value=self.value,
+                    keys=self.keys + (key,),
+                )
+            except KeyError:
+                if "oneOf" in self.spec:
+                    for schema in self.spec["oneOf"]:
+                        if schema.get("type", "object") == "object":
+                            try:
+                                return self.__class__(
+                                    schema["properties"][key],
+                                    value=self.value,
+                                    keys=self.keys + (key,),
+                                )
+                            except KeyError:
+                                pass
+            raise KeyError(
+                f"{key} not found in {self.spec.get('properties', {}).keys()}: {self.spec}"
+            )
+        if type_ == "array":
+            return self.__class__(
+                self.spec["items"], value=self.value, keys=self.keys + (key,)
+            )
+
+        raise KeyError(f"{key} not found in {self.spec}")
+
+    def __repr__(self):
+        value = self.value(self)
+        if isinstance(value, (dict, list)):
+            return json.dumps(value, indent=2)
+        return str(value)
+
+
+class Operation:
+    def __init__(self, name, spec, method, path):
+        self.name = name
+        self.spec = spec
+        self.method = method
+        self.path = path
+
+    def server_url_and_method(self, spec, server_index=0, server_variables=None):
+        def format_server(server, path):
+            url = server["url"] + path
+            # replace potential path variables
+            for variable, value in server_variables.items():
+                url = url.replace("{" + variable + "}", value)
+            # replace server variables if they were not replace before
+            for variable in server["variables"]:
+                if variable in server_variables:
+                    continue
+                url = url.replace(
+                    "{" + variable + "}", server["variables"][variable]["default"]
+                )
+            return url
+
+        server_variables = server_variables or {}
+        if "servers" in self.spec:
+            server = self.spec["servers"][server_index]
+        else:
+            server = spec["servers"][server_index]
+        return format_server(server, self.path), self.method
+
+    def response_code_and_accept_type(self):
+        for response in self.spec["responses"]:
+            return int(response), next(
+                iter(self.spec["responses"][response].get("content", {None: None}))
+            )
+        return None, None
+
+    def request_content_type(self):
+        return next(iter(self.spec.get("requestBody", {}).get("content", {None: None})))
+
+    def response(self):
+        for response in self.spec["responses"]:
+            return Schema(
+                next(iter((self.spec["responses"][response]["content"].values())))[
+                    "schema"
+                ]
+            )
+
+    def request(self):
+        return Schema(
+            next(iter(self.spec["requestBody"]["content"].values()))["schema"]
+        )

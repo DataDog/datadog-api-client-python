@@ -19,8 +19,12 @@ body = MetricTagConfigurationUpdateRequest(
     data=MetricTagConfigurationUpdateData(
         type=MetricTagConfigurationType("manage_tags"),
         id=METRIC_TAG_CONFIGURATION_DATA_ID,
-        attributes=MetricTagConfigurationUpdateAttributes(tags=["app"]),
-    )
+        attributes=MetricTagConfigurationUpdateAttributes(
+            tags=[
+                "app",
+            ],
+        ),
+    ),
 )
 
 configuration = Configuration()

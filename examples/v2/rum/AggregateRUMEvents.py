@@ -16,12 +16,30 @@ from datadog_api_client.v2.model.rum_query_page_options import RUMQueryPageOptio
 
 body = RUMAggregateRequest(
     compute=[
-        RUMCompute(aggregation=RUMAggregationFunction("pc90"), metric="@view.time_spent", type=RUMComputeType("total"))
+        RUMCompute(
+            aggregation=RUMAggregationFunction("pc90"),
+            metric="@view.time_spent",
+            type=RUMComputeType("total"),
+        ),
     ],
-    filter=RUMQueryFilter(_from="now-15m", query="@type:view AND @session.type:user", to="now"),
-    group_by=[RUMGroupBy(facet="@view.time_spent", limit=10, total=RUMGroupByTotal(False))],
-    options=RUMQueryOptions(timezone="GMT"),
-    page=RUMQueryPageOptions(limit=25),
+    filter=RUMQueryFilter(
+        _from="now-15m",
+        query="@type:view AND @session.type:user",
+        to="now",
+    ),
+    group_by=[
+        RUMGroupBy(
+            facet="@view.time_spent",
+            limit=10,
+            total=RUMGroupByTotal(False),
+        ),
+    ],
+    options=RUMQueryOptions(
+        timezone="GMT",
+    ),
+    page=RUMQueryPageOptions(
+        limit=25,
+    ),
 )
 
 configuration = Configuration()

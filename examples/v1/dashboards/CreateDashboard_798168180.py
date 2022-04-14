@@ -46,13 +46,18 @@ body = Dashboard(
                                 env="ci",
                                 primary_tag_name="datacenter",
                                 operation_name="cassandra.query",
-                            )
+                            ),
                         ],
-                    )
+                    ),
                 ],
             ),
-            layout=WidgetLayout(x=0, y=0, width=4, height=4),
-        )
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=4,
+                height=4,
+            ),
+        ),
     ],
     layout_type=DashboardLayoutType("ordered"),
 )

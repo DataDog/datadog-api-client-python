@@ -10,7 +10,9 @@ body = AzureAccount(
     automute=True,
     client_id="testc7f6-1234-5678-9101-3fcbf464test",
     client_secret="testingx./Sw*g/Y33t..R1cH+hScMDt",
-    errors=["*"],
+    errors=[
+        "*",
+    ],
     host_filters="key:value,filter:example",
     new_client_id="new1c7f6-1234-5678-9101-3fcbf464test",
     new_tenant_name="new1c44-1234-5678-9101-cc00736ftest",

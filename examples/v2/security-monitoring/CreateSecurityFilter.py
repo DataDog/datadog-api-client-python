@@ -14,14 +14,19 @@ from datadog_api_client.v2.model.security_filter_type import SecurityFilterType
 body = SecurityFilterCreateRequest(
     data=SecurityFilterCreateData(
         attributes=SecurityFilterCreateAttributes(
-            exclusion_filters=[SecurityFilterExclusionFilter(name="Exclude staging", query="source:staging")],
+            exclusion_filters=[
+                SecurityFilterExclusionFilter(
+                    name="Exclude staging",
+                    query="source:staging",
+                ),
+            ],
             filtered_data_type=SecurityFilterFilteredDataType("logs"),
             is_enabled=True,
             name="Example-Create_a_security_filter_returns_OK_response",
             query="service:ExampleCreateasecurityfilterreturnsOKresponse",
         ),
         type=SecurityFilterType("security_filters"),
-    )
+    ),
 )
 
 configuration = Configuration()

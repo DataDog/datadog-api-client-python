@@ -12,6 +12,8 @@ ROLE_DATA_ATTRIBUTES_NAME = environ["ROLE_DATA_ATTRIBUTES_NAME"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = RolesApi(api_client)
-    response = api_instance.list_roles(filter=ROLE_DATA_ATTRIBUTES_NAME)
+    response = api_instance.list_roles(
+        filter=ROLE_DATA_ATTRIBUTES_NAME,
+    )
 
     print(response)

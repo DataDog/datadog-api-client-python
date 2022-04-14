@@ -16,9 +16,17 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=18, height=24),
-            definition=NoteWidgetDefinition(type=NoteWidgetDefinitionType("note"), content="# Example Note"),
-        )
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=18,
+                height=24,
+            ),
+            definition=NoteWidgetDefinition(
+                type=NoteWidgetDefinitionType("note"),
+                content="# Example Note",
+            ),
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

@@ -15,10 +15,19 @@ body = MetricsPayload(
         Series(
             metric="system.load.1",
             type="gauge",
-            points=[Point([datetime.now().timestamp(), 1.1])],
-            tags=["test:ExampleSubmitdeflatemetricsreturnsPayloadacceptedresponse"],
-        )
-    ]
+            points=[
+                Point(
+                    [
+                        datetime.now().timestamp(),
+                        1.1,
+                    ]
+                ),
+            ],
+            tags=[
+                "test:ExampleSubmitdeflatemetricsreturnsPayloadacceptedresponse",
+            ],
+        ),
+    ],
 )
 
 configuration = Configuration()

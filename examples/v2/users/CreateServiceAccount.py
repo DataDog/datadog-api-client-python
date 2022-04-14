@@ -26,9 +26,16 @@ body = ServiceAccountCreateRequest(
             service_account=True,
         ),
         relationships=UserRelationships(
-            roles=RelationshipToRoles(data=[RelationshipToRoleData(id=ROLE_DATA_ID, type=RolesType("roles"))])
+            roles=RelationshipToRoles(
+                data=[
+                    RelationshipToRoleData(
+                        id=ROLE_DATA_ID,
+                        type=RolesType("roles"),
+                    ),
+                ],
+            ),
         ),
-    )
+    ),
 )
 
 configuration = Configuration()

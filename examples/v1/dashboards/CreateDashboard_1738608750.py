@@ -17,7 +17,12 @@ body = Dashboard(
     description=None,
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=24, height=6),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=24,
+                height=6,
+            ),
             definition=FreeTextWidgetDefinition(
                 type=FreeTextWidgetDefinitionType("free_text"),
                 text="Example free text",
@@ -25,7 +30,7 @@ body = Dashboard(
                 font_size="auto",
                 text_align=WidgetTextAlign("left"),
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

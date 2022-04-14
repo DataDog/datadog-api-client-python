@@ -9,4 +9,6 @@ configuration = Configuration()
 configuration.unstable_operations["delete_slo_correction"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ServiceLevelObjectiveCorrectionsApi(api_client)
-    api_instance.delete_slo_correction(slo_correction_id="slo_correction_id")
+    api_instance.delete_slo_correction(
+        slo_correction_id="slo_correction_id",
+    )

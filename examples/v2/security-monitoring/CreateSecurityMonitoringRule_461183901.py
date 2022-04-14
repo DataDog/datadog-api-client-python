@@ -29,13 +29,21 @@ body = SecurityMonitoringRuleCreatePayload(
     queries=[
         SecurityMonitoringRuleQueryCreate(
             aggregation=SecurityMonitoringRuleQueryAggregation("geo_data"),
-            group_by_fields=["@usr.id"],
+            group_by_fields=[
+                "@usr.id",
+            ],
             distinct_fields=[],
             metric="@network.client.geoip",
             query="*",
-        )
+        ),
     ],
-    cases=[SecurityMonitoringRuleCaseCreate(name="", status=SecurityMonitoringRuleSeverity("info"), notifications=[])],
+    cases=[
+        SecurityMonitoringRuleCaseCreate(
+            name="",
+            status=SecurityMonitoringRuleSeverity("info"),
+            notifications=[],
+        ),
+    ],
     has_extended_title=True,
     message="test",
     is_enabled=True,
@@ -44,7 +52,9 @@ body = SecurityMonitoringRuleCreatePayload(
         evaluation_window=SecurityMonitoringRuleEvaluationWindow(900),
         keep_alive=SecurityMonitoringRuleKeepAlive(3600),
         detection_method=SecurityMonitoringRuleDetectionMethod("impossible_travel"),
-        impossible_travel_options=SecurityMonitoringRuleImpossibleTravelOptions(baseline_user_locations=False),
+        impossible_travel_options=SecurityMonitoringRuleImpossibleTravelOptions(
+            baseline_user_locations=False,
+        ),
     ),
     name="Example-Create_a_detection_rule_with_type_impossible_travel_returns_OK_response",
     type=SecurityMonitoringRuleTypeCreate("log_detection"),

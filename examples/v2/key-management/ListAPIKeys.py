@@ -12,6 +12,8 @@ API_KEY_DATA_ATTRIBUTES_NAME = environ["API_KEY_DATA_ATTRIBUTES_NAME"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = KeyManagementApi(api_client)
-    response = api_instance.list_api_keys(filter=API_KEY_DATA_ATTRIBUTES_NAME)
+    response = api_instance.list_api_keys(
+        filter=API_KEY_DATA_ATTRIBUTES_NAME,
+    )
 
     print(response)

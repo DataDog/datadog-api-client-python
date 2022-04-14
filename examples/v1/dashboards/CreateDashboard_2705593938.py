@@ -32,20 +32,29 @@ body = Dashboard(
                 requests=[
                     SunburstWidgetRequest(
                         response_format=FormulaAndFunctionResponseFormat("scalar"),
-                        formulas=[WidgetFormula(formula="query1")],
+                        formulas=[
+                            WidgetFormula(
+                                formula="query1",
+                            ),
+                        ],
                         queries=[
                             FormulaAndFunctionMetricQueryDefinition(
                                 query="sum:system.mem.used{*} by {service}",
                                 data_source=FormulaAndFunctionMetricDataSource("metrics"),
                                 name="query1",
                                 aggregator=FormulaAndFunctionMetricAggregation("sum"),
-                            )
+                            ),
                         ],
-                    )
+                    ),
                 ],
             ),
-            layout=WidgetLayout(x=0, y=0, width=4, height=4),
-        )
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=4,
+                height=4,
+            ),
+        ),
     ],
     layout_type=DashboardLayoutType("ordered"),
 )

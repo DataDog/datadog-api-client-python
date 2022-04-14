@@ -11,10 +11,16 @@ from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRe
 body = SyntheticsPrivateLocation(
     description="Description of private location",
     metadata=SyntheticsPrivateLocationMetadata(
-        restricted_roles=SyntheticsRestrictedRoles(["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"])
+        restricted_roles=SyntheticsRestrictedRoles(
+            [
+                "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            ]
+        ),
     ),
     name="New private location",
-    tags=["team:front"],
+    tags=[
+        "team:front",
+    ],
 )
 
 configuration = Configuration()

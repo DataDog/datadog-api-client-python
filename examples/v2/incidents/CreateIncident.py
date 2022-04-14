@@ -29,16 +29,20 @@ body = IncidentCreateRequest(
             customer_impacted=False,
             fields=dict(
                 state=IncidentFieldAttributesSingleValue(
-                    type=IncidentFieldAttributesSingleValueType("dropdown"), value="resolved"
-                )
+                    type=IncidentFieldAttributesSingleValueType("dropdown"),
+                    value="resolved",
+                ),
             ),
         ),
         relationships=IncidentCreateRelationships(
             commander_user=NullableRelationshipToUser(
-                data=NullableRelationshipToUserData(type=UsersType("users"), id=USER_DATA_ID)
-            )
+                data=NullableRelationshipToUserData(
+                    type=UsersType("users"),
+                    id=USER_DATA_ID,
+                ),
+            ),
         ),
-    )
+    ),
 )
 
 configuration = Configuration()

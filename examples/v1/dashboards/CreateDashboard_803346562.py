@@ -32,12 +32,17 @@ body = Dashboard(
                             name="cassandra.query",
                             primary_tag="datacenter:dc1",
                             row_type=ApmStatsQueryRowType("service"),
-                        )
-                    )
+                        ),
+                    ),
                 ],
             ),
-            layout=WidgetLayout(x=0, y=0, width=4, height=4),
-        )
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=4,
+                height=4,
+            ),
+        ),
     ],
     layout_type=DashboardLayoutType("ordered"),
 )

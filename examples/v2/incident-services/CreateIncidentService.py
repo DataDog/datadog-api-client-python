@@ -13,9 +13,9 @@ body = IncidentServiceCreateRequest(
     data=IncidentServiceCreateData(
         type=IncidentServiceType("services"),
         attributes=IncidentServiceCreateAttributes(
-            name="Example-Create_a_new_incident_service_returns_CREATED_response"
+            name="Example-Create_a_new_incident_service_returns_CREATED_response",
         ),
-    )
+    ),
 )
 
 configuration = Configuration()

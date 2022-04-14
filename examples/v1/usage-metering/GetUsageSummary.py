@@ -10,6 +10,8 @@ from dateutil.tz import tzutc
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = UsageMeteringApi(api_client)
-    response = api_instance.get_usage_summary(start_month=datetime(2021, 11, 11, 11, 11, 11, 111000, tzinfo=tzutc()))
+    response = api_instance.get_usage_summary(
+        start_month=datetime(2021, 11, 11, 11, 11, 11, 111000, tzinfo=tzutc()),
+    )
 
     print(response)

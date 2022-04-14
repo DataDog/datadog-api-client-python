@@ -20,7 +20,12 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=50, height=25),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=50,
+                height=25,
+            ),
             definition=MonitorSummaryWidgetDefinition(
                 type=MonitorSummaryWidgetDefinitionType("manage_status"),
                 summary_type=WidgetSummaryType("monitors"),
@@ -33,7 +38,7 @@ body = Dashboard(
                 count=50,
                 start=0,
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

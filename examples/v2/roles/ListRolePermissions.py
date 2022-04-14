@@ -12,6 +12,8 @@ ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = RolesApi(api_client)
-    response = api_instance.list_role_permissions(role_id=ROLE_DATA_ID)
+    response = api_instance.list_role_permissions(
+        role_id=ROLE_DATA_ID,
+    )
 
     print(response)

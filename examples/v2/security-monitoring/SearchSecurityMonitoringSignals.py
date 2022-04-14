@@ -22,7 +22,8 @@ body = SecurityMonitoringSignalListRequest(
         to=datetime(2019, 1, 3, 9, 42, 36, 320000, tzinfo=tzutc()),
     ),
     page=SecurityMonitoringSignalListRequestPage(
-        cursor="eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", limit=25
+        cursor="eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==",
+        limit=25,
     ),
     sort=SecurityMonitoringSignalsSort("timestamp"),
 )

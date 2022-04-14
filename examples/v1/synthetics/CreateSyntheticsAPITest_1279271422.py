@@ -28,7 +28,7 @@ body = SyntheticsAPITest(
                 name="PROPERTY",
                 pattern="content-type",
                 type=SyntheticsConfigVariableType("text"),
-            )
+            ),
         ],
         steps=[
             SyntheticsAPIStep(
@@ -38,17 +38,26 @@ body = SyntheticsAPITest(
                         operator=SyntheticsAssertionOperator("is"),
                         type=SyntheticsAssertionType("statusCode"),
                         target=200,
-                    )
+                    ),
                 ],
                 is_critical=True,
                 name="request is sent",
-                request=SyntheticsTestRequest(method=HTTPMethod("GET"), timeout=10.0, url="https://datadoghq.com"),
-                retry=SyntheticsTestOptionsRetry(count=5, interval=1000.0),
+                request=SyntheticsTestRequest(
+                    method=HTTPMethod("GET"),
+                    timeout=10.0,
+                    url="https://datadoghq.com",
+                ),
+                retry=SyntheticsTestOptionsRetry(
+                    count=5,
+                    interval=1000.0,
+                ),
                 subtype=SyntheticsAPIStepSubtype("http"),
-            )
+            ),
         ],
     ),
-    locations=["aws:us-east-2"],
+    locations=[
+        "aws:us-east-2",
+    ],
     message="BDD test payload: synthetics_api_test_multi_step_payload.json",
     name="Example-Create_an_API_test_with_multi_subtype_returns_OK_Returns_the_created_test_details_response",
     options=SyntheticsTestOptions(
@@ -59,11 +68,16 @@ body = SyntheticsAPITest(
         min_location_failed=1,
         monitor_name="Example-Create_an_API_test_with_multi_subtype_returns_OK_Returns_the_created_test_details_response",
         monitor_priority=5,
-        retry=SyntheticsTestOptionsRetry(count=3, interval=1000.0),
+        retry=SyntheticsTestOptionsRetry(
+            count=3,
+            interval=1000.0,
+        ),
         tick_every=60,
     ),
     subtype=SyntheticsTestDetailsSubType("multi"),
-    tags=["testing:api"],
+    tags=[
+        "testing:api",
+    ],
     type=SyntheticsAPITestType("api"),
 )
 

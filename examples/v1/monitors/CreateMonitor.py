@@ -16,9 +16,14 @@ body = Monitor(
     type=MonitorType("log alert"),
     query='logs("service:foo AND type:error").index("main").rollup("count").by("source").last("5m") > 2',
     message="some message Notify: @hipchat-channel",
-    tags=["test:examplecreateamonitorreturnsokresponse", "env:ci"],
+    tags=[
+        "test:examplecreateamonitorreturnsokresponse",
+        "env:ci",
+    ],
     priority=3,
-    restricted_roles=[ROLE_DATA_ID],
+    restricted_roles=[
+        ROLE_DATA_ID,
+    ],
 )
 
 configuration = Configuration()

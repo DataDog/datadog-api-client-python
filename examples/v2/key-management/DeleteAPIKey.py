@@ -12,4 +12,6 @@ API_KEY_DATA_ID = environ["API_KEY_DATA_ID"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = KeyManagementApi(api_client)
-    api_instance.delete_api_key(api_key_id=API_KEY_DATA_ID)
+    api_instance.delete_api_key(
+        api_key_id=API_KEY_DATA_ID,
+    )

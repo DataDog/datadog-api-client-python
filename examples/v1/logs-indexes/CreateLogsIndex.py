@@ -11,8 +11,18 @@ from datadog_api_client.v1.model.logs_index import LogsIndex
 
 body = LogsIndex(
     daily_limit=300000000,
-    exclusion_filters=[LogsExclusion(filter=LogsExclusionFilter(query="*", sample_rate=1.0), name="payment")],
-    filter=LogsFilter(query="source:python"),
+    exclusion_filters=[
+        LogsExclusion(
+            filter=LogsExclusionFilter(
+                query="*",
+                sample_rate=1.0,
+            ),
+            name="payment",
+        ),
+    ],
+    filter=LogsFilter(
+        query="source:python",
+    ),
     name="main",
     num_retention_days=15,
 )

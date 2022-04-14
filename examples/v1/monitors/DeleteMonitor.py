@@ -12,6 +12,8 @@ MONITOR_ID = environ["MONITOR_ID"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = MonitorsApi(api_client)
-    response = api_instance.delete_monitor(monitor_id=int(MONITOR_ID))
+    response = api_instance.delete_monitor(
+        monitor_id=int(MONITOR_ID),
+    )
 
     print(response)

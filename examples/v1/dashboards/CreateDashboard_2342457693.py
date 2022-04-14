@@ -29,7 +29,12 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=47, height=15),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=47,
+                height=15,
+            ),
             definition=ScatterPlotWidgetDefinition(
                 title="",
                 title_size="16",
@@ -39,8 +44,16 @@ body = Dashboard(
                 requests=ScatterPlotWidgetDefinitionRequests(
                     table=ScatterplotTableRequest(
                         formulas=[
-                            ScatterplotWidgetFormula(formula="query1", dimension=ScatterplotDimension("x"), alias=""),
-                            ScatterplotWidgetFormula(formula="query2", dimension=ScatterplotDimension("y"), alias=""),
+                            ScatterplotWidgetFormula(
+                                formula="query1",
+                                dimension=ScatterplotDimension("x"),
+                                alias="",
+                            ),
+                            ScatterplotWidgetFormula(
+                                formula="query2",
+                                dimension=ScatterplotDimension("y"),
+                                alias="",
+                            ),
                         ],
                         queries=[
                             FormulaAndFunctionMetricQueryDefinition(
@@ -57,13 +70,23 @@ body = Dashboard(
                             ),
                         ],
                         response_format=FormulaAndFunctionResponseFormat("scalar"),
-                    )
+                    ),
                 ),
-                xaxis=WidgetAxis(scale="linear", include_zero=True, min="auto", max="auto"),
-                yaxis=WidgetAxis(scale="linear", include_zero=True, min="auto", max="auto"),
+                xaxis=WidgetAxis(
+                    scale="linear",
+                    include_zero=True,
+                    min="auto",
+                    max="auto",
+                ),
+                yaxis=WidgetAxis(
+                    scale="linear",
+                    include_zero=True,
+                    min="auto",
+                    max="auto",
+                ),
                 color_by_groups=[],
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

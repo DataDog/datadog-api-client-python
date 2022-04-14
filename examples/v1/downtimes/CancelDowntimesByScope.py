@@ -10,7 +10,9 @@ from datadog_api_client.v1.model.cancel_downtimes_by_scope_request import Cancel
 # there is a valid "downtime" in the system
 DOWNTIME_SCOPE_0 = environ["DOWNTIME_SCOPE_0"]
 
-body = CancelDowntimesByScopeRequest(scope=DOWNTIME_SCOPE_0)
+body = CancelDowntimesByScopeRequest(
+    scope=DOWNTIME_SCOPE_0,
+)
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:

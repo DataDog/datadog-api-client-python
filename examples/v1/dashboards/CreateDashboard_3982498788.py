@@ -27,13 +27,15 @@ body = Dashboard(
                         q="sum:trace.test.errors{env:prod,service:datadog-api-spec} by {resource_name}.as_count()",
                         on_right_yaxis=False,
                         style=WidgetRequestStyle(
-                            palette="warm", line_type=WidgetLineType("solid"), line_width=WidgetLineWidth("normal")
+                            palette="warm",
+                            line_type=WidgetLineType("solid"),
+                            line_width=WidgetLineWidth("normal"),
                         ),
                         display_type=WidgetDisplayType("bars"),
-                    )
+                    ),
                 ],
-            )
-        )
+            ),
+        ),
     ],
 )
 

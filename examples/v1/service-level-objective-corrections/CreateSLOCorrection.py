@@ -27,7 +27,7 @@ body = SLOCorrectionCreateRequest(
             timezone="UTC",
         ),
         type=SLOCorrectionType("correction"),
-    )
+    ),
 )
 
 configuration = Configuration()
