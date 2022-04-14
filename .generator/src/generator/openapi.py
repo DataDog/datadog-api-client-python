@@ -434,7 +434,6 @@ def collection_format(parameter):
         return matrix.get((style, explode), "multi")
 
 
-<<<<<<< HEAD
 def generate_value(schema, use_random=False, prefix=None):
     spec = schema.spec
     if not use_random:
