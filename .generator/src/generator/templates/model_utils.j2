@@ -2022,6 +2022,7 @@ class UnparsedObject(ModelNormal):
 
 
 def get_attribute_from_path(obj, path, default=None):
+    """Return an attribute at `path` from the passed object."""
     for elt in path.split("."):
         try:
             obj = obj[elt]
@@ -2033,6 +2034,7 @@ def get_attribute_from_path(obj, path, default=None):
 
 
 def set_attribute_from_path(obj, path, value, params_map):
+    """Set an attribute at `path` with the given value."""
     elts = path.split(".")
     last = elts.pop(-1)
     root = None
