@@ -1,0 +1,59 @@
+interactions:
+- request:
+    body: '{"filter":{"from":"now-15m","query":"@type:session AND @session.type:user","to":"now"},"options":{"time_offset":0,"timezone":"GMT"},"page":{"limit":2},"sort":"timestamp"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/rum/events/search
+  response:
+    body:
+      string: '{"meta":{"page":{"after":"eyJhZnRlciI6IkFRQUFBWUFkeXBJYXB1d21Sd0FBQUFCeWMxOWlNVGcxTW1Fd1l5MDROV0V5TFRRNFlqWXRZak0wTnkxbVpUSXhN"}},"data":[{"attributes":{"attributes":{"resource":{"first_byte":{"duration":210600000,"start":1500000},"url":"https://example.com/something","status_code":200,"provider":{"domain":"datadoghq.com","type":"first
+        party","name":"unknown"},"id":"bd12c722-d1fd-4af6-888a-fdd255eff318","download":{"duration":300000,"start":212100000},"url_host":"example.com","url_scheme":"https","duration":212400000,"url_path_group":"/something","url_path":"/something","type":"xhr","method":"POST","size":4107},"service":"web-ui","os":{"version":"10.15.7","name":"Mac
+        OS X","version_major":"10"},"_dd":{"trace_id":"4461593448038214218","format_version":2,"span_id":"2615287548010540048"},"application":{"id":"ac8218cf-498b-4d33-bd44-151095959547"},"session":{"ip":"52.17.186.3","has_replay":true,"plan":"replay","useragent":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/99.0.4844.84 Safari/537.36","type":"user","id":"0a64704e-ab4a-44e6-971f-12598c0c6964"},"usr":{"is_datadog_employee":false,"email":"alice.doe@example.com","org_id":94691,"name":"Alice
+        Doe","id":"1586212"},"context":{"browser_storage_api":{"usage":0,"quota":299977904946},"navbar_display_type":"side-small","app_type":"python-static-spa","org_id":94691,"screen":{"height":1080.0,"width":1920.0,"window_height":946.0,"window_width":1920.0,"pixel_ratio":1.0},"browser_test":false,"datadog_version":"35.7643717","theme":"light","usr":{"handle":"alice.doe@example.com","id":"1586212"},"device":{"cookie_id":"id"},"page_load_status":"loaded_once","dashboard":{"reflowType":"fixed","dashboardSize":{"right":1920,"bottom":103.5,"top":87.5,"height":16.0,"width":1854,"left":50.0},"isHighDensityLayout":false,"title":"Eco
+        Driving / Driver Efficiency","isHighDensityEnabled":false,"dashType":"custom_timeboard","isSPA":true,"layoutType":"ordered","isPublicDashboard":false,"widgetCount":83.0,"isTvMode":false,"id":"3ik-gwn-p5b"}},"type":"resource","device":{"model":"Mac","type":"Desktop","name":"Mac","brand":"Apple"},"browser":{"version":"99.0.4844.84","name":"Chrome","version_major":"99"},"geo":{"city":"Dublin","country_iso_code":"IE","country":"Ireland","continent_code":"EU","country_subdivision":"Leinster","as":{"domain":"amazon.com","type":"hosting","name":"Amazon.com,
+        Inc."},"location":[0.1234,1.234],"continent":"Europe"},"view":{"url_path":"/dashboard/xxx","name":"/dashboard/:screenId(/:screenName)","url":"https://app.datadoghq.com/dashboad/xxx?fullscreen_end_ts=1649692509728&fullscreen_paused=false&fullscreen_section=overview&fullscreen_start_ts=1649087709728&fullscreen_widget=743246&from_ts=1649153072626&to_ts=1649757872626&live=true","referrer":"","url_host":"app.datadoghq.com","url_scheme":"https","url_path_group":"/dashboard/?","url_query":{"fullscreen_widget":"743246","to_ts":"1649757872626","fullscreen_section":"overview","fullscreen_end_ts":"1649692509728","fullscreen_start_ts":"1649087709728","from_ts":"1649153072626","live":"true","fullscreen_paused":"false"},"id":"b1c5b7e1-42a6-4382-a8e2-a101db88a7c6"}},"tags":["sdk_version:4.7.1_d78dfe50c99519039ccc0b5bd0ca4b68b01003b1","datacenter:main.env","source:browser","env:prod","version:35.7643717","env:prod","sdk_version:4.7.1_d78dfe50c99519039ccc0b5bd0ca4b68b01003b1","datacenter:main.env","source:browser","service:web-ui","version:35.7643717"],"service":"web-ui","timestamp":"2022-04-12T10:04:37.029Z"},"type":"rum","id":"AQAAAYAdO3MlOKUnZwAAAABBWUFkTzNTQUFBRHRjcnpYcC1kNUhnQUU"},{"attributes":{"attributes":{"resource":{"url":"https://static.datadoghq.com/static/c/single-page-app_LogsFavorites.493d30ca539726b7fc61.min.js","url_scheme":"https","url_host":"static.datadoghq.com","provider":{"domain":"datadoghq.com","type":"unknown","name":"unknown"},"duration":12600000,"url_path_group":"/static/c/?","url_path":"/static/c/single-page-app_LogsFavorites.493d30ca539726b7fc61.min.js","type":"js","id":"80939f26-8972-4d49-9108-f37fe0a732af"},"service":"web-ui","os":{"version":"10.15.7","name":"Mac
+        OS X","version_major":"10"},"_dd":{"format_version":2},"application":{"id":"ac8218cf-498b-4d33-bd44-151095959547"},"session":{"ip":"18.171.9.38","plan":"replay","type":"user","id":"c842a0cc-0717-41ed-9319-53806b57eefc","useragent":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/100.0.4896.75 Safari/537.36"},"usr":{"is_datadog_employee":false,"email":"john.doe@example.com","org_id":1000000111,"name":"john.doe@example.com","id":"1000344937"},"context":{"browser_storage_api":{"usage":0,"quota":299977904946},"navbar_display_type":"side","app_type":"python-static-spa","org_id":1000000111,"screen":{"height":960.0,"width":1536.0,"window_height":739.0,"window_width":1536.0,"pixel_ratio":2.0},"browser_test":false,"datadog_version":"35.7643717","theme":"light","usr":{"handle":"john.doe@example.com","id":"1000344937"}},"type":"resource","device":{"model":"Mac","type":"Desktop","name":"Mac","brand":"Apple"},"browser":{"version":"100.0.4896.75","name":"Chrome","version_major":"100"},"geo":{"city":"London","country_iso_code":"GB","country":"United
+        Kingdom","continent_code":"EU","country_subdivision":"England","as":{"domain":"amazon.com","type":"hosting","name":"Amazon.com,
+        Inc."},"location":[0.1234,1.234],"continent":"Europe"},"view":{"name":"/monitors/:id/edit","url":"https://example.datadoghq.eu/monitors/12345/edit","referrer":"https://example.datadoghq.eu/monitors/12345?from_ts=1649720111217&to_ts=1649736027006&eval_ts=1649736027006","url_host":"example.datadoghq.eu","url_scheme":"https","url_path_group":"/monitors/?/edit","url_path":"/monitors/12345/edit","id":"c29e0f27-30aa-4e13-b4b9-4eddc396684b"}},"tags":["sdk_version:4.7.1","datacenter:split.env","source:browser","env:prod","version:35.7643717","env:prod","sdk_version:4.7.1","datacenter:split.env","source:browser","version:35.7643717","service:web-ui"],"service":"web-ui","timestamp":"2022-04-12T10:04:36.895Z"},"type":"rum","id":"AQAAAYAdO3KfpzfngAAAAABBWUFkTzNSV0FBQ29pNkphck1fdU1nQUM"}],"links":{"next":"https://api.datadoghq.com/api/v2/rum/events?page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFkTzNLZnB6Zm5nQUFBQUFCQldVRmtUek5TVjBGQlEyOXBOa3BoY2sxZmRVMW5RVU0ifQ&page%5Blimit%5D=2"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"filter":{"from":"now-15m","query":"@type:session AND @session.type:user","to":"now"},"options":{"time_offset":0,"timezone":"GMT"},"page":{"cursor":"eyJhZnRlciI6IkFRQUFBWUFkeXBJYXB1d21Sd0FBQUFCeWMxOWlNVGcxTW1Fd1l5MDROV0V5TFRRNFlqWXRZak0wTnkxbVpUSXhN","limit":2},"sort":"timestamp"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/rum/events/search
+  response:
+    body:
+      string: '{"meta":{"page":{"after":"eyJhZnRlciI6IkFRQUFBWUFkTzNLYXN2VDNLd0FBQUFCQldVRmtUek5UVFVGQlFrOXRiRkZaY3kwNGFVcDNRVWMifQ"}},"data":[{"attributes":{"attributes":{"resource":{"url":"https://static.datadoghq.com/static/c/single-page-app_NotebookFavorites.2f9e47e4ed9212539194.min.js","url_scheme":"https","url_host":"static.datadoghq.com","provider":{"domain":"datadoghq.com","type":"unknown","name":"unknown"},"duration":19000000,"url_path_group":"/static/c/?","url_path":"/static/c/single-page-app_NotebookFavorites.2f9e47e4ed9212539194.min.js","type":"js","id":"889b6e2e-ebfe-4a46-9207-4dd4ceb097a7"},"service":"web-ui","os":{"version":"10.15.7","name":"Mac
+        OS X","version_major":"10"},"_dd":{"format_version":2},"application":{"id":"ac8218cf-498b-4d33-bd44-151095959547"},"session":{"ip":"18.171.9.38","plan":"replay","type":"user","id":"c842a0cc-0717-41ed-9319-53806b57eefc","useragent":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/100.0.4896.75 Safari/537.36"},"usr":{"is_datadog_employee":false,"email":"john.doe@example.com","org_id":1000000111,"name":"john.doe@example.com","id":"1000344937"},"context":{"browser_storage_api":{"usage":0,"quota":299977904946},"navbar_display_type":"side","app_type":"python-static-spa","org_id":1000000111,"screen":{"height":960.0,"width":1536.0,"window_height":739.0,"window_width":1536.0,"pixel_ratio":2.0},"browser_test":false,"datadog_version":"35.7643717","theme":"light","usr":{"handle":"john.doe@example.com","id":"1000344937"}},"type":"resource","device":{"model":"Mac","type":"Desktop","name":"Mac","brand":"Apple"},"browser":{"version":"100.0.4896.75","name":"Chrome","version_major":"100"},"geo":{"city":"London","country_iso_code":"GB","country":"United
+        Kingdom","continent_code":"EU","country_subdivision":"England","as":{"domain":"amazon.com","type":"hosting","name":"Amazon.com,
+        Inc."},"location":[0.1234,1.234],"continent":"Europe"},"view":{"name":"/monitors/:id/edit","url":"https://example.datadoghq.eu/monitors/12345/edit","referrer":"https://example.datadoghq.eu/monitors/12345?from_ts=1649720111217&to_ts=1649736027006&eval_ts=1649736027006","url_host":"example.datadoghq.eu","url_scheme":"https","url_path_group":"/monitors/?/edit","url_path":"/monitors/12345/edit","id":"c29e0f27-30aa-4e13-b4b9-4eddc396684b"}},"tags":["sdk_version:4.7.1","datacenter:split.env","source:browser","env:prod","version:35.7643717","env:prod","sdk_version:4.7.1","datacenter:split.env","source:browser","version:35.7643717","service:web-ui"],"service":"web-ui","timestamp":"2022-04-12T10:04:36.894Z"},"type":"rum","id":"AQAAAYAdO3KepzfnfwAAAABBWUFkTzNSV0FBQ29pNkphck1fdU1nQUI"}],"links":{"next":"https://api.datadoghq.com/api/v2/rum/events?page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFkTzNLYXN2VDNLd0FBQUFCQldVRmtUek5UVFVGQlFrOXRiRkZaY3kwNGFVcDNRVWMifQ&page%5Blimit%5D=2"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

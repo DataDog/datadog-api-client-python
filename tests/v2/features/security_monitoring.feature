@@ -116,6 +116,15 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @replay-only @skip @team:DataDog/security-monitoring @with-pagination
+  Scenario: Get a list of security signals returns "OK" response with pagination
+    Given operation "SearchSecurityMonitoringSignals" enabled
+    And new "SearchSecurityMonitoringSignals" request
+    And body with value {"filter": {"from": "{{ timeISO("now-15m") }}", "query": "security:attack status:high", "to": "{{ timeISO("now") }}"}, "page": {"limit": 2}, "sort": "timestamp"}
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a quick list of security signals returns "Bad Request" response
     Given operation "ListSecurityMonitoringSignals" enabled
@@ -129,6 +138,15 @@ Feature: Security Monitoring
     And new "ListSecurityMonitoringSignals" request
     When the request is sent
     Then the response status is 200 OK
+
+  @replay-only @skip @team:DataDog/security-monitoring @with-pagination
+  Scenario: Get a quick list of security signals returns "OK" response with pagination
+    Given operation "ListSecurityMonitoringSignals" enabled
+    And new "ListSecurityMonitoringSignals" request
+    And request contains "page[limit]" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
 
   @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a rule's details returns "Not Found" response

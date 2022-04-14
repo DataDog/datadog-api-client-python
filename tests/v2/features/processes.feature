@@ -21,3 +21,10 @@ Feature: Processes
     And request contains "page[limit]" parameter with value 2
     When the request is sent
     Then the response status is 200 OK
+
+  @replay-only @skip @team:DataDog/processes @with-pagination
+  Scenario: Get all processes returns "OK" response with pagination
+    Given request contains "page[limit]" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items

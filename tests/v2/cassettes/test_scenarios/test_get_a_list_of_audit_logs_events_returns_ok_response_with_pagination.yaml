@@ -1,0 +1,37 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/audit/events?page%5Blimit%5D=2
+  response:
+    body:
+      string: '{"meta":{"page":{"after":"eyJhZnRlciI6IkFRQUFBWUFpUWhuWTNTSHVVUUFBQUFCQldVRnBVV2h4UmtGQlEwczJhSGMyTWtoNGNuUjNRVUUifQ"}},"data":[{"attributes":{"attributes":{"status":"info","tags":["agent_hostname:i-086c6dfaa6bd27468","agent_version:7.35.0","root_config_version:4","old_snapshot_version:1419839","last_snapshot_version:1419845"],"timestamp":"2022-04-13T09:29:59Z","usr":{"id":"1ad9c690-ee90-4dca-80ad-034e916623ab","email":"1ad9c690-ee90-4dca-80ad-034e916623ab"},"action":"update_config","org":{"uuid":"8dee7c38-00cb-11ea-a77b-8b5a08d3b091"},"evt":{"actor":{"type":"Other"}},"auth_method":"API
+        + App Key"},"message":"Agent configuration successfuly updated","tags":["source:audit"],"timestamp":"2022-04-13T09:29:59.000Z"},"type":"audit","id":"AQAAAYAiQhnY3SfuUQAAAABBWUFpUWhxSEFBQ0s2aHc2Mkh4cnZRQUE"},{"attributes":{"attributes":{"status":"info","tags":["agent_hostname:i-0a31006532ef57785","agent_version:7.35.0","root_config_version:4","old_snapshot_version:1419839","last_snapshot_version:1419845"],"timestamp":"2022-04-13T09:29:59Z","usr":{"id":"1ad9c690-ee90-4dca-80ad-034e916623ab","email":"1ad9c690-ee90-4dca-80ad-034e916623ab"},"action":"update_config","org":{"uuid":"8dee7c38-00cb-11ea-a77b-8b5a08d3b091"},"evt":{"actor":{"type":"Other"}},"auth_method":"API
+        + App Key"},"message":"Agent configuration successfuly updated","tags":["source:audit"],"timestamp":"2022-04-13T09:29:59.000Z"},"type":"audit","id":"AQAAAYAiQhnY3SHuUQAAAABBWUFpUWhxRkFBQ0s2aHc2Mkh4cnR3QUE"}],"links":{"next":"https://api.datadoghq.com/api/v2/audit/events?page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFpUWhuWTNTSHVVUUFBQUFCQldVRnBVV2h4UmtGQlEwczJhSGMyTWtoNGNuUjNRVUUifQ&page%5Blimit%5D=2"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/audit/events?page%5Blimit%5D=2&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFpUWhuWTNTSHVVUUFBQUFCQldVRnBVV2h4UmtGQlEwczJhSGMyTWtoNGNuUjNRVUUifQ
+  response:
+    body:
+      string: '{"meta":{"page":{"after":"eyJhZnRlciI6IkFRQUFBWUFpUWhuWTNRM3VVUUFBQUFCQldVRnBVV2h3YmtGQlEwczJhSGMyTWtoNGNtOTNRVUUifQ"}},"data":[{"attributes":{"attributes":{"status":"info","tags":["agent_hostname:i-029aff430be77ea83","agent_version:7.35.0","root_config_version:4","old_snapshot_version:1419839","last_snapshot_version:1419845"],"timestamp":"2022-04-13T09:29:59Z","usr":{"id":"1ad9c690-ee90-4dca-80ad-034e916623ab","email":"1ad9c690-ee90-4dca-80ad-034e916623ab"},"action":"update_config","org":{"uuid":"8dee7c38-00cb-11ea-a77b-8b5a08d3b091"},"evt":{"actor":{"type":"Other"}},"auth_method":"API
+        + App Key"},"message":"Agent configuration successfuly updated","tags":["source:audit"],"timestamp":"2022-04-13T09:29:59.000Z"},"type":"audit","id":"AQAAAYAiQhnY3RvuUQAAAABBWUFpUWhwekFBQ0s2aHc2Mkh4cnNRQUE"}],"links":{"next":"https://api.datadoghq.com/api/v2/audit/events?page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFpUWhuWTNRM3VVUUFBQUFCQldVRnBVV2h3YmtGQlEwczJhSGMyTWtoNGNtOTNRVUUifQ&page%5Blimit%5D=2"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

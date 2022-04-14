@@ -19,6 +19,14 @@ Feature: Audit
     When the request is sent
     Then the response status is 200 OK
 
+  @replay-only @skip @team:DataDog/team-aaa @with-pagination
+  Scenario: Get a list of Audit Logs events returns "OK" response with pagination
+    Given new "ListAuditLogs" request
+    And request contains "page[limit]" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @generated @skip @team:DataDog/team-aaa
   Scenario: Search Audit Logs events returns "Bad Request" response
     Given new "SearchAuditLogs" request
@@ -32,3 +40,11 @@ Feature: Audit
     And body with value {"filter": {"from": "now-15m", "query": "@type:session AND @session.type:user", "to": "now"}, "options": {"time_offset": 0, "timezone": "GMT"}, "page": {"limit": 25}, "sort": "timestamp"}
     When the request is sent
     Then the response status is 200 OK
+
+  @replay-only @skip @team:DataDog/team-aaa @with-pagination
+  Scenario: Search Audit Logs events returns "OK" response with pagination
+    Given new "SearchAuditLogs" request
+    And body with value {"filter": {"from": "now-15m", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"limit": 2}, "sort": "timestamp"}
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
