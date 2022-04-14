@@ -239,7 +239,7 @@ class {{ classname }}:
             set_attribute_from_path(kwargs, "{{ pagination.pageOffsetParam|attribute_path }}", get_attribute_from_path(kwargs, "{{ pagination.pageOffsetParam|attribute_path }}", 0) + page_size, endpoint.params_map)
             {%- endif %}
             {%- if pagination.cursorParam %}
-	    set_attribute_from_path(kwargs, "{{ pagination.cursorParam|attribute_path }}", get_attribute_from_path(response, "{{ pagination.cursorPath }}"), endpoint.params_map)
+            set_attribute_from_path(kwargs, "{{ pagination.cursorParam|attribute_path }}", get_attribute_from_path(response, "{{ pagination.cursorPath }}"), endpoint.params_map)
             {%- endif %}
     {%- endif %}
 {% endfor %}
