@@ -70,7 +70,7 @@ class SyntheticsBatchResult(ModelNormal):
         :param result_id: The ID of the result to get.
         :type result_id: str, optional
 
-        :param retries: Total duration in millisecond of the test.
+        :param retries: Number of times this result has been retried.
         :type retries: float, optional
 
         :param status: Determines whether or not the batch has passed, failed, or is in progress.
