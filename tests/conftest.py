@@ -467,7 +467,7 @@ def request_parameter_with_value(context, name, value):
     context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = json.loads(tpl)
 
 
-@given(parsers.parse('there is a {sleep_time} second delay'))
+@given(parsers.parse("there is a {sleep_time} second delay"))
 def set_delay(context, sleep_time):
     time.sleep(int(sleep_time))
 

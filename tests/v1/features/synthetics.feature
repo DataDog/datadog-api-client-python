@@ -410,6 +410,7 @@ Feature: Synthetics
   Scenario: Get an API test result returns result with failure object
     Given there is a "synthetics_api_test_with_wrong_dns" in the system
     And the "synthetics_api_test_with_wrong_dns" is triggered
+    And there is a 5 second delay
     And new "GetAPITestResult" request
     And request contains "public_id" parameter from "synthetics_api_test_with_wrong_dns.public_id"
     And request contains "result_id" parameter from "synthetics_api_test_with_wrong_dns_result.results[0].result_id"

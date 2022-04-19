@@ -100,6 +100,7 @@ Feature: Metrics
   Scenario: List distinct metric volumes by metric name returns "Success" response
     Given there is a valid "metric" in the system
     And there is a valid "metric_tag_configuration" in the system
+    And there is a 10 second delay
     And new "ListVolumesByMetricName" request
     And request contains "metric_name" parameter with value "{{ unique_alnum }}"
     When the request is sent
