@@ -32,7 +32,7 @@ body = Dashboard(
                             ),
                         ],
                         query=ListStreamQuery(
-                            data_source=ListStreamSource("issue_stream"),
+                            data_source=ListStreamSource("apm_issue_stream"),
                             query_string="",
                         ),
                         response_format=ListStreamResponseFormat("event_list"),
