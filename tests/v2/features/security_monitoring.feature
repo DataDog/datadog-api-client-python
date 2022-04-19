@@ -116,7 +116,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip @team:DataDog/security-monitoring @with-pagination
+  @replay-only @skip-go @skip-java @skip-ruby @skip-typescript @team:DataDog/security-monitoring @with-pagination
   Scenario: Get a list of security signals returns "OK" response with pagination
     Given operation "SearchSecurityMonitoringSignals" enabled
     And new "SearchSecurityMonitoringSignals" request
@@ -139,7 +139,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip @team:DataDog/security-monitoring @with-pagination
+  @replay-only @skip-go @skip-java @skip-ruby @skip-typescript @team:DataDog/security-monitoring @with-pagination
   Scenario: Get a quick list of security signals returns "OK" response with pagination
     Given operation "ListSecurityMonitoringSignals" enabled
     And new "ListSecurityMonitoringSignals" request

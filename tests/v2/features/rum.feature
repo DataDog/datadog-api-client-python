@@ -33,7 +33,7 @@ Feature: RUM
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip @team:DataDog/rum-back @with-pagination
+  @replay-only @skip-go @skip-java @skip-ruby @skip-typescript @team:DataDog/rum-back @with-pagination
   Scenario: Get a list of RUM events returns "OK" response with pagination
     Given new "ListRUMEvents" request
     And request contains "page[limit]" parameter with value 2
@@ -55,7 +55,7 @@ Feature: RUM
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip @team:DataDog/rum-back @with-pagination
+  @replay-only @skip-go @skip-java @skip-ruby @skip-typescript @team:DataDog/rum-back @with-pagination
   Scenario: Search RUM events returns "OK" response with pagination
     Given new "SearchRUMEvents" request
     And body with value {"filter": {"from": "now-15m", "query": "@type:session AND @session.type:user", "to": "now"}, "options": {"time_offset": 0, "timezone": "GMT"}, "page": {"limit": 2}, "sort": "timestamp"}

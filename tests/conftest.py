@@ -634,7 +634,7 @@ def expect_equal_length(context, response_path, fixture_length):
     assert fixture_length == len(response_value)
 
 
-@then(parsers.parse('the response has {fixture_length:d} items'))
+@then(parsers.parse("the response has {fixture_length:d} items"))
 def expect_equal_response_items(context, fixture_length):
     response = context["api_request"]["response"][0]
     assert fixture_length == len(response)
