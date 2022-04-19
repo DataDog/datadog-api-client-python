@@ -52,7 +52,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip @team:DataDog/logs-app @with-pagination
+  @replay-only @skip-go @skip-java @skip-ruby @skip-typescript @team:DataDog/logs-app @with-pagination
   Scenario: Get a list of logs returns "OK" response with pagination
     Given a valid "appKeyAuth" key in the system
     And new "ListLogsGet" request
@@ -89,7 +89,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip @team:DataDog/logs-app @with-pagination
+  @replay-only @skip-go @skip-java @skip-ruby @skip-typescript @team:DataDog/logs-app @with-pagination
   Scenario: Search logs returns "OK" response with pagination
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request

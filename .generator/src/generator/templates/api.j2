@@ -5,6 +5,8 @@ from {{ package }}.api_client import ApiClient, Endpoint as _Endpoint
 from {{ package }}.model_utils import (
     date,
     datetime,
+    set_attribute_from_path,
+    get_attribute_from_path,
     file_type,
     none_type,
 )
@@ -185,4 +187,59 @@ class {{ classname }}:
         kwargs["{{ name|attribute_name }}"] = {{ name|attribute_name }}
 {% endfor %}
         return self._{{ operation.operationId|safe_snake_case }}_endpoint.call_with_http_info(**kwargs)
+    {%- if operation["x-pagination"] %}
+    {%- set pagination = operation["x-pagination"] %}
+
+    def {{ operation.operationId|safe_snake_case }}_with_pagination(self, {% for name, parameter in operation|parameters if parameter.required %}{{name|attribute_name}}, {% endfor %}**kwargs):
+        """{{ operation.summary|indent(8) }}.
+
+        Provide a paginated version of :meth:`{{ operation.operationId|safe_snake_case }}`, returning all items.
+{# keep new line #}
+{%- for name, parameter in operation|parameters if parameter.required %}
+{%- if parameter.description %}
+        :param {{ name|attribute_name }}: {{ parameter.description|indent(12) }}{% if parameter.default %} Defaults to {{ parameter.default }}.{% endif %}{% endif %}
+        :type {{ name|attribute_name }}: {{ get_type_for_parameter(parameter) }}
+{%- endfor %}
+{%- for name, parameter in operation|parameters if not parameter.required %}
+{%- if parameter.description %}
+        :param {{ name|attribute_name }}: {{ parameter.description|indent(12) }}{%- if parameter.default %} If omitted the server will use the default value of {{ parameter.default }}.{% endif %}{% endif %}
+        :type {{ name|attribute_name }}: {{ get_type_for_parameter(parameter) }}, optional
+{%- endfor %}
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[{{ get_type_at_path(operation, pagination.resultsPath) }}]
+        """
+        kwargs = self._{{ operation.operationId|safe_snake_case }}_endpoint.default_arguments(kwargs)
+{%- for name, parameter in operation|parameters if parameter.required %}
+        kwargs["{{ name|attribute_name }}"] = {{ name|attribute_name }}
+{% endfor %}
+        page_size = get_attribute_from_path(kwargs, "{{ pagination.limitParam|attribute_path }}", {{ get_default(operation, pagination.limitParam) }})
+        endpoint = self._{{ operation.operationId|safe_snake_case }}_endpoint
+        set_attribute_from_path(kwargs, "{{ pagination.limitParam|attribute_path }}", page_size, endpoint.params_map)
+        while True:
+            response = endpoint.call_with_http_info(**kwargs)
+            for item in get_attribute_from_path(response, "{{ pagination.resultsPath|attribute_path }}"):
+                yield item
+            if len(get_attribute_from_path(response, "{{ pagination.resultsPath|attribute_path }}")) < page_size:
+                break
+            {%- if pagination.pageOffsetParam %}
+            set_attribute_from_path(kwargs, "{{ pagination.pageOffsetParam|attribute_path }}", get_attribute_from_path(kwargs, "{{ pagination.pageOffsetParam|attribute_path }}", 0) + page_size, endpoint.params_map)
+            {%- endif %}
+            {%- if pagination.cursorParam %}
+            set_attribute_from_path(kwargs, "{{ pagination.cursorParam|attribute_path }}", get_attribute_from_path(response, "{{ pagination.cursorPath }}"), endpoint.params_map)
+            {%- endif %}
+    {%- endif %}
 {% endfor %}

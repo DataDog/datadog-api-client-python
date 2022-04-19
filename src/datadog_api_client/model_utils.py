@@ -2021,3 +2021,32 @@ class UnparsedObject(ModelNormal):
         for var_name, var_value in kwargs.items():
             self.__dict__[var_name] = var_value
             self.__dict__["_data_store"][var_name] = var_value
+
+
+def get_attribute_from_path(obj, path, default=None):
+    """Return an attribute at `path` from the passed object."""
+    for elt in path.split("."):
+        try:
+            obj = obj[elt]
+        except (KeyError, AttributeError):
+            if default is None:
+                raise
+            return default
+    return obj
+
+
+def set_attribute_from_path(obj, path, value, params_map):
+    """Set an attribute at `path` with the given value."""
+    elts = path.split(".")
+    last = elts.pop(-1)
+    root = None
+    for i, elt in enumerate(elts):
+        if i:
+            root = root.openapi_types[elt][0]
+        else:
+            root = params_map[elt]["openapi_types"][0]
+        try:
+            obj = obj[elt]
+        except (KeyError, AttributeError):
+            obj = root()
+    obj[last] = value

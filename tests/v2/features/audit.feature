@@ -19,7 +19,7 @@ Feature: Audit
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip @team:DataDog/team-aaa @with-pagination
+  @replay-only @skip-go @skip-java @skip-ruby @skip-typescript @team:DataDog/team-aaa @with-pagination
   Scenario: Get a list of Audit Logs events returns "OK" response with pagination
     Given new "ListAuditLogs" request
     And request contains "page[limit]" parameter with value 2
@@ -41,7 +41,7 @@ Feature: Audit
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip @team:DataDog/team-aaa @with-pagination
+  @replay-only @skip-go @skip-java @skip-ruby @skip-typescript @team:DataDog/team-aaa @with-pagination
   Scenario: Search Audit Logs events returns "OK" response with pagination
     Given new "SearchAuditLogs" request
     And body with value {"filter": {"from": "now-15m", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"limit": 2}, "sort": "timestamp"}

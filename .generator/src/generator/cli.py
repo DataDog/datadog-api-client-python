@@ -31,6 +31,7 @@ def cli(specs, output):
     env.filters["camel_case"] = formatter.camel_case
     env.filters["collection_format"] = openapi.collection_format
     env.filters["format_value"] = formatter.format_value
+    env.filters["attribute_path"] = formatter.attribute_path
     env.filters["parameter_schema"] = openapi.parameter_schema
     env.filters["parameters"] = openapi.parameters
     env.filters["return_type"] = openapi.return_type
@@ -51,6 +52,8 @@ def cli(specs, output):
     env.globals["get_oneof_types"] = openapi.get_oneof_types
     env.globals["get_oneof_models"] = openapi.get_oneof_models
     env.globals["type_to_python"] = openapi.type_to_python
+    env.globals["get_default"] = openapi.get_default
+    env.globals["get_type_at_path"] = openapi.get_type_at_path
 
     api_j2 = env.get_template("api.j2")
     apis_j2 = env.get_template("apis.j2")
