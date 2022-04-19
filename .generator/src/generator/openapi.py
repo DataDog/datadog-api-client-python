@@ -581,7 +581,7 @@ def get_default(operation, attribute_path):
         return parameter["schema"]["default"]
 
     if name == "body":
-        parameter = parameter["content"]["application/json"]["schema"]
+        parameter = next(iter(parameter["content"].values()))["schema"]
     for attr in attrs[1:]:
         parameter = parameter["properties"][attr]
     return parameter["default"]
