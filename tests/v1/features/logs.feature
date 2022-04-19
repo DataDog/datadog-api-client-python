@@ -26,7 +26,7 @@ Feature: Logs
   Scenario: Search test logs returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request
-    And body with value {"index": "main", "query": "service:web*", "sort": "asc", "time": {"from": "{{ timeISO("now - 1h") }}", "timezone": "Europe/Paris", "to": "{{ timeISO("now") }}" }}
+    And body with value {"index": "main", "query": "host:Test*", "sort": "asc", "time": {"from": "{{ timeISO("now - 1h") }}", "timezone": "Europe/Paris", "to": "{{ timeISO("now") }}" }}
     When the request is sent
     Then the response status is 200 OK
 
