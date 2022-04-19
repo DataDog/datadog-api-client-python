@@ -34,7 +34,7 @@ class LogContent(ModelNormal):
             "host": (str,),
             "message": (str,),
             "service": (str,),
-            "tags": ([bool, date, datetime, dict, float, int, list, str, none_type],),
+            "tags": ([str],),
             "timestamp": (datetime,),
         }
 
@@ -68,7 +68,7 @@ class LogContent(ModelNormal):
         :type service: str, optional
 
         :param tags: Array of tags associated with your log.
-        :type tags: [bool, date, datetime, dict, float, int, list, str, none_type], optional
+        :type tags: [str], optional
 
         :param timestamp: Timestamp of your log.
         :type timestamp: datetime, optional
