@@ -263,7 +263,7 @@ Feature: Dashboards
   @team:DataDog/dashboards
   Scenario: Create a new dashboard with list_stream widget
     Given new "CreateDashboard" request
-    And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"issue_stream","query_string":""},"response_format":"event_list"}]}}]}
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"apm_issue_stream","query_string":""},"response_format":"event_list"}]}}]}
     When the request is sent
     Then the response status is 200 OK
 
@@ -510,7 +510,7 @@ Feature: Dashboards
     Given there is a valid "dashboard" in the system
     And new "UpdateDashboard" request
     And request contains "dashboard_id" parameter from "dashboard.id"
-    And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","description":"Updated description","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"issue_stream","query_string":""},"response_format":"event_list"}]}}]}
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","description":"Updated description","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"apm_issue_stream","query_string":""},"response_format":"event_list"}]}}]}
     When the request is sent
     Then the response status is 200 OK
     And the response "description" is equal to "Updated description"
