@@ -91,7 +91,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip-go @skip-java @skip-ruby @skip-typescript @team:DataDog/incident-app @with-pagination
+  @replay-only @skip-go @skip-java @skip-typescript @team:DataDog/incident-app @with-pagination
   Scenario: Get a list of incidents returns "OK" response with pagination
     Given operation "ListIncidents" enabled
     And new "ListIncidents" request

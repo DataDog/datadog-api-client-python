@@ -22,7 +22,7 @@ Feature: Processes
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip-go @skip-java @skip-ruby @skip-typescript @team:DataDog/processes @with-pagination
+  @replay-only @skip-go @skip-java @skip-typescript @team:DataDog/processes @with-pagination
   Scenario: Get all processes returns "OK" response with pagination
     Given request contains "page[limit]" parameter with value 2
     When the request with pagination is sent
