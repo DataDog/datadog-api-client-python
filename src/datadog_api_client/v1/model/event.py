@@ -34,6 +34,7 @@ class Event(ModelNormal):
             "host": (str,),
             "id": (int,),
             "id_str": (str,),
+            "monitor_id": (int,),
             "payload": (str,),
             "priority": (EventPriority,),
             "source_type_name": (str,),
@@ -50,6 +51,7 @@ class Event(ModelNormal):
         "host": "host",
         "id": "id",
         "id_str": "id_str",
+        "monitor_id": "monitor_id",
         "payload": "payload",
         "priority": "priority",
         "source_type_name": "source_type_name",
@@ -91,6 +93,10 @@ class Event(ModelNormal):
         :param id_str: Handling IDs as large 64-bit numbers can cause loss of accuracy issues with some programming languages.
             Instead, use the string representation of the Event ID to avoid losing accuracy.
         :type id_str: str, optional
+
+        :param monitor_id: Integer ID of the monitor.
+            The `monitor_id` is only available if the event has an associated monitor.
+        :type monitor_id: int, optional
 
         :param payload: Payload of the event.
         :type payload: str, optional
