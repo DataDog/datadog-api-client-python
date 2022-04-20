@@ -782,6 +782,12 @@
       "type": "idempotent"
     }
   },
+  "GetUsageObservabilityPipelines": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "SendInvitations": {
     "tag": "Users",
     "undo": {

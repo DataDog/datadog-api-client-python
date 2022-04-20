@@ -673,6 +673,14 @@ full\_application\_key\_attributes
    :undoc-members:
    :show-inheritance:
 
+hourly\_usage\_type
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.hourly_usage_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 http\_log
 ---------
 
@@ -3277,6 +3285,46 @@ service\_account\_create\_request
 ---------------------------------
 
 .. automodule:: datadog_api_client.v2.model.service_account_create_request
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+usage\_attributes\_object
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_attributes_object
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+usage\_data\_object
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_data_object
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+usage\_observability\_pipelines\_response
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_observability_pipelines_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+usage\_time\_series\_object
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_time_series_object
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+usage\_time\_series\_type
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_time_series_type
    :members:
    :undoc-members:
    :show-inheritance:
