@@ -75,6 +75,7 @@ class UsageSummaryResponse(ModelNormal):
             "mobile_rum_units_agg_sum": (int,),
             "netflow_indexed_events_count_agg_sum": (int,),
             "npm_host_top99p_sum": (int,),
+            "observability_pipelines_bytes_processed_agg_sum": (int,),
             "online_archive_events_count_agg_sum": (int,),
             "opentelemetry_host_top99p_sum": (int,),
             "profiling_container_agent_count_avg": (int,),
@@ -149,6 +150,7 @@ class UsageSummaryResponse(ModelNormal):
         "mobile_rum_units_agg_sum": "mobile_rum_units_agg_sum",
         "netflow_indexed_events_count_agg_sum": "netflow_indexed_events_count_agg_sum",
         "npm_host_top99p_sum": "npm_host_top99p_sum",
+        "observability_pipelines_bytes_processed_agg_sum": "observability_pipelines_bytes_processed_agg_sum",
         "online_archive_events_count_agg_sum": "online_archive_events_count_agg_sum",
         "opentelemetry_host_top99p_sum": "opentelemetry_host_top99p_sum",
         "profiling_container_agent_count_avg": "profiling_container_agent_count_avg",
@@ -329,6 +331,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param npm_host_top99p_sum: Shows the 99th percentile of all distinct Networks hosts over all hours in the current months for all organizations.
         :type npm_host_top99p_sum: int, optional
+
+        :param observability_pipelines_bytes_processed_agg_sum: Sum of all observability pipelines bytes processed over all hours in the current months for all organizations.
+        :type observability_pipelines_bytes_processed_agg_sum: int, optional
 
         :param online_archive_events_count_agg_sum: Sum of all online archived events over all hours in the current months for all organizations.
         :type online_archive_events_count_agg_sum: int, optional

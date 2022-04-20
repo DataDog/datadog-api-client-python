@@ -108,6 +108,7 @@ from datadog_api_client.v2.model.http_log import HTTPLog
 from datadog_api_client.v2.model.http_log_error import HTTPLogError
 from datadog_api_client.v2.model.http_log_errors import HTTPLogErrors
 from datadog_api_client.v2.model.http_log_item import HTTPLogItem
+from datadog_api_client.v2.model.hourly_usage_type import HourlyUsageType
 from datadog_api_client.v2.model.idp_metadata_form_data import IdPMetadataFormData
 from datadog_api_client.v2.model.incident_create_attributes import IncidentCreateAttributes
 from datadog_api_client.v2.model.incident_create_data import IncidentCreateData
@@ -478,6 +479,11 @@ from datadog_api_client.v2.model.security_monitoring_signals_sort import Securit
 from datadog_api_client.v2.model.service_account_create_attributes import ServiceAccountCreateAttributes
 from datadog_api_client.v2.model.service_account_create_data import ServiceAccountCreateData
 from datadog_api_client.v2.model.service_account_create_request import ServiceAccountCreateRequest
+from datadog_api_client.v2.model.usage_attributes_object import UsageAttributesObject
+from datadog_api_client.v2.model.usage_data_object import UsageDataObject
+from datadog_api_client.v2.model.usage_observability_pipelines_response import UsageObservabilityPipelinesResponse
+from datadog_api_client.v2.model.usage_time_series_object import UsageTimeSeriesObject
+from datadog_api_client.v2.model.usage_time_series_type import UsageTimeSeriesType
 from datadog_api_client.v2.model.user import User
 from datadog_api_client.v2.model.user_attributes import UserAttributes
 from datadog_api_client.v2.model.user_create_attributes import UserCreateAttributes

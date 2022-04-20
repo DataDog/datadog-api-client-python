@@ -145,6 +145,14 @@ service\_accounts\_api
    :undoc-members:
    :show-inheritance:
 
+usage\_metering\_api
+--------------------
+
+.. automodule:: datadog_api_client.v2.api.usage_metering_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 users\_api
 ----------
 
