@@ -158,7 +158,7 @@ def pytest_bdd_after_scenario(request, feature, scenario):
 
 def pytest_bdd_apply_tag(tag, function):
     """Register tags as custom markers and skip test for '@skip' ones."""
-    skip_tags = {}
+    skip_tags = {"with-pagination"}
     if tag in skip_tags:
         marker = pytest.mark.skip(reason=f"skipped because '{tag}' in {skip_tags}")
         marker(function)
