@@ -386,6 +386,15 @@ Feature: Dashboards
     And the response "widgets[0].definition.type" is equal to "trace_service"
     And the response "widgets[0].definition.env" is equal to "none"
 
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with trace_stream widget
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"},{"width":"auto","field":"service"}],"query":{"data_source":"trace_stream","query_string":""},"response_format":"event_list"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "list_stream"
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "trace_stream"
+
   @generated @skip @team:DataDog/dashboards
   Scenario: Delete a dashboard returns "Dashboards Not Found" response
     Given new "DeleteDashboard" request

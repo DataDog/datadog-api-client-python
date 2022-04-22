@@ -17,6 +17,7 @@ class ListStreamSource(ModelSimple):
             "AUDIT_STREAM": "audit_stream",
             "RUM_ISSUE_STREAM": "rum_issue_stream",
             "APM_ISSUE_STREAM": "apm_issue_stream",
+            "TRACE_STREAM": "trace_stream",
         },
     }
 
@@ -32,7 +33,7 @@ class ListStreamSource(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: If omitted defaults to "apm_issue_stream". Must be one of ["logs_stream", "audit_stream", "rum_issue_stream", "apm_issue_stream"].
+        :param value: If omitted defaults to "apm_issue_stream". Must be one of ["logs_stream", "audit_stream", "rum_issue_stream", "apm_issue_stream", "trace_stream"].
         :type value: str
         """
         super().__init__(kwargs)

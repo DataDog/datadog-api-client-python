@@ -478,6 +478,8 @@ class MonitorsApi:
         - **`operator`** `<`, `<=`, `>`, `>=`, `==`, or `!=`.
         - **`#`** an integer or decimal number used to set the threshold.
 
+        **NOTE** Only available on US1-FED, US3, US5 and in closed beta on EU and US1.
+
         **Process Alert Query**
 
         Example: `processes(search).over(tags).rollup('count').last(timeframe) operator #`
