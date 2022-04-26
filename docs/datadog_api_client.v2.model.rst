@@ -433,6 +433,14 @@ authn\_mappings\_type
    :undoc-members:
    :show-inheritance:
 
+chargeback\_breakdown
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.chargeback_breakdown
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 cloud\_workload\_security\_agent\_rule\_attributes
 --------------------------------------------------
 
@@ -541,6 +549,38 @@ content\_encoding
 -----------------
 
 .. automodule:: datadog_api_client.v2.model.content_encoding
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cost\_by\_org
+-------------
+
+.. automodule:: datadog_api_client.v2.model.cost_by_org
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cost\_by\_org\_attributes
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_by_org_attributes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cost\_by\_org\_response
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_by_org_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cost\_by\_org\_type
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_by_org_type
    :members:
    :undoc-members:
    :show-inheritance:

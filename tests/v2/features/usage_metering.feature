@@ -13,18 +13,33 @@ Feature: Usage Metering
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
     And an instance of "UsageMetering" API
-    And new "GetUsageObservabilityPipelines" request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get Cost Across Multi-Org Account returns "Bad Request" response
+    Given new "GetCostByOrg" request
+    And request contains "start_month" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:DataDog/red-zone-revenue-query
+  Scenario: Get Cost Across Multi-Org Account returns "OK" response
+    Given new "GetCostByOrg" request
+    And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Observability Pipelines returns "Bad Request" response
-    Given request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    Given new "GetUsageObservabilityPipelines" request
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
     And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Observability Pipelines returns "OK" response
-    Given request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    Given new "GetUsageObservabilityPipelines" request
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
     And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK

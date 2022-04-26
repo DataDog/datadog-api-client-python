@@ -52,6 +52,7 @@ from datadog_api_client.v2.model.authn_mapping_update_request import AuthNMappin
 from datadog_api_client.v2.model.authn_mappings_response import AuthNMappingsResponse
 from datadog_api_client.v2.model.authn_mappings_sort import AuthNMappingsSort
 from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
+from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_attributes import (
     CloudWorkloadSecurityAgentRuleAttributes,
 )
@@ -88,6 +89,10 @@ from datadog_api_client.v2.model.cloud_workload_security_agent_rules_list_respon
     CloudWorkloadSecurityAgentRulesListResponse,
 )
 from datadog_api_client.v2.model.content_encoding import ContentEncoding
+from datadog_api_client.v2.model.cost_by_org import CostByOrg
+from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
+from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
+from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
 from datadog_api_client.v2.model.creator import Creator
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
 from datadog_api_client.v2.model.dashboard_list_add_items_response import DashboardListAddItemsResponse

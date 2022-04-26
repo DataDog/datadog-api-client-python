@@ -782,6 +782,12 @@
       "type": "idempotent"
     }
   },
+  "GetCostByOrg": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageObservabilityPipelines": {
     "tag": "Usage Metering",
     "undo": {
