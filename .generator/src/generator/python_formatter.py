@@ -213,9 +213,13 @@ def format_data_with_schema_dict(
     parameters = ""
     if "properties" in schema:
         for k, v in data.items():
+            if k in schema["properties"]:
+                sub_schema = schema["properties"][k]
+            else:
+                sub_schema = schema["additionalProperties"]
             value, extra_imports = format_data_with_schema(
                 v,
-                schema["properties"][k],
+                sub_schema,
                 replace_values=replace_values,
                 default_name=name + camel_case(k) if name else None,
                 version=version,
@@ -223,7 +227,7 @@ def format_data_with_schema_dict(
             parameters += f"{escape_reserved_keyword(safe_snake_case(k))}={value}, "
             imports = _merge_imports(imports, extra_imports)
 
-    if schema.get("additionalProperties"):
+    if schema.get("additionalProperties") and not schema.get("properties"):
         for k, v in data.items():
             value, extra_imports = format_data_with_schema(
                 v,
