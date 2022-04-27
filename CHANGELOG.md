@@ -1,5 +1,52 @@
 # Changelog
 
+## 1.11.0 / 2022-04-27
+
+### Fixed
+* Fix type for `date` field in `LogsByRetentionMonthlyUsage` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/864
+* Fix org name maximum by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/894
+* Fix pagination for top avg metrics endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/899
+* Rename models and operations with mixed cases by @therve in https://github.com/DataDog/datadog-api-client-python/pull/904
+* Fix generation of oneOf types by @jirikuncar in https://github.com/DataDog/datadog-api-client-python/pull/921
+* Allow bool coercion/conversion by @therve in https://github.com/DataDog/datadog-api-client-python/pull/922
+* Fix type of nullable additionalProperties by @jirikuncar in https://github.com/DataDog/datadog-api-client-python/pull/926
+* Make type optional for synthetics basic auth model by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/933
+* Fix camel case version of `ListSLOs` by @jirikuncar in https://github.com/DataDog/datadog-api-client-python/pull/955
+* Serialize body in async client by @therve in https://github.com/DataDog/datadog-api-client-python/pull/952
+* Set correct type for `tags` property by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/950
+### Added
+* Add impossible travel detection method by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/855
+* Add CI App usage endpoint and usage summary columns by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/860
+* [RUM] Add search endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/859
+* Add support for getting online archive usage by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/868
+* Add endpoint for retrieving audit logs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/866
+* Add support for Error Tracking monitors by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/896
+* Add support for `ci-pipelines` monitor using Formulas and Functions by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/906
+* Add aggregate endpoint for RUM by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/919
+* Add  `median` aggregation functions to RUM and logs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/931
+* Add endpoint for validation of existing monitors by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/932
+* Create new ListStreamSource types in order to deprecate ISSUE_STREAM by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/939
+* [Query Value Widget] Add the timeseries background by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/930
+* Add `restricted_roles` to Synthetics tests and private locations by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/941
+* Add v2 SAML config IdP Metadata upload endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/948
+* Support pagination in Python by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/957
+* Add Usage API endpoint for observability-pipelines and add properties to v1 GetUsageSummary by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/928
+* Add Historical Chargeback Summary endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/967
+### Changed
+* Move shared modules outside of versions by @therve in https://github.com/DataDog/datadog-api-client-python/pull/870
+* Bump minimum python by @therve in https://github.com/DataDog/datadog-api-client-python/pull/883
+* Migrate to a global configuration by @therve in https://github.com/DataDog/datadog-api-client-python/pull/900
+### Removed
+* Remove `lambda_usage` and `lambda_percentage` from usage API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/914
+* [dashboards] Removed `issue_stream` type from `ListStreamSource` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/944
+### Deprecated
+* [monitors] Deprecate `locked` property and clarify documentation for `restricted_roles` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/888
+
+## New Contributors
+* @juan-fernandez made their first contribution in https://github.com/DataDog/datadog-api-client-python/pull/869
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/1.10.0...1.11.0
+
 ## 1.10.0 / 2022-03-02
 
 ### Fixed
