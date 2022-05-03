@@ -3329,6 +3329,14 @@ service\_account\_create\_request
    :undoc-members:
    :show-inheritance:
 
+usage\_application\_security\_monitoring\_response
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_application_security_monitoring_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 usage\_attributes\_object
 -------------------------
 
