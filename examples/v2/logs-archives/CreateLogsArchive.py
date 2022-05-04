@@ -26,6 +26,7 @@ body = LogsArchiveCreateRequest(
             include_tags=False,
             name="Nginx Archive",
             query="source:nginx",
+            rehydration_max_scan_size_in_gb=100,
             rehydration_tags=[
                 "team:intake",
                 "team:app",
