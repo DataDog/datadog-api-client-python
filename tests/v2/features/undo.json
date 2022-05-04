@@ -782,12 +782,6 @@
       "type": "idempotent"
     }
   },
-  "GetUsageApplicationSecurityMonitoring": {
-    "tag": "Usage Metering",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "GetCostByOrg": {
     "tag": "Usage Metering",
     "undo": {

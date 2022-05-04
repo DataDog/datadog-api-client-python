@@ -484,9 +484,6 @@ from datadog_api_client.v2.model.security_monitoring_signals_sort import Securit
 from datadog_api_client.v2.model.service_account_create_attributes import ServiceAccountCreateAttributes
 from datadog_api_client.v2.model.service_account_create_data import ServiceAccountCreateData
 from datadog_api_client.v2.model.service_account_create_request import ServiceAccountCreateRequest
-from datadog_api_client.v2.model.usage_application_security_monitoring_response import (
-    UsageApplicationSecurityMonitoringResponse,
-)
 from datadog_api_client.v2.model.usage_attributes_object import UsageAttributesObject
 from datadog_api_client.v2.model.usage_data_object import UsageDataObject
 from datadog_api_client.v2.model.usage_observability_pipelines_response import UsageObservabilityPipelinesResponse
