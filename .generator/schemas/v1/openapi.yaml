@@ -23955,7 +23955,7 @@ paths:
       summary: Get details of batch
       tags:
       - Synthetics
-      x-menu-order: 27
+      x-menu-order: 15
       x-undo:
         type: safe
   /api/v1/synthetics/locations:
@@ -23981,7 +23981,7 @@ paths:
       summary: Get all locations (public and private)
       tags:
       - Synthetics
-      x-menu-order: 24
+      x-menu-order: 25
       x-undo:
         type: safe
   /api/v1/synthetics/private-locations:
@@ -24025,7 +24025,7 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 21
+      x-menu-order: 22
       x-undo:
         operationId: DeletePrivateLocation
         parameters:
@@ -24064,7 +24064,7 @@ paths:
       summary: Delete a private location
       tags:
       - Synthetics
-      x-menu-order: 25
+      x-menu-order: 26
       x-undo:
         type: idempotent
     get:
@@ -24102,7 +24102,7 @@ paths:
       summary: Get a private location
       tags:
       - Synthetics
-      x-menu-order: 22
+      x-menu-order: 23
       x-undo:
         type: safe
     put:
@@ -24148,7 +24148,7 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 23
+      x-menu-order: 24
       x-undo:
         type: idempotent
   /api/v1/synthetics/tests:
@@ -24825,7 +24825,7 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 15
+      x-menu-order: 16
       x-undo:
         type: idempotent
   /api/v1/synthetics/tests/trigger:
@@ -24953,7 +24953,7 @@ paths:
       summary: Get a test configuration
       tags:
       - Synthetics
-      x-menu-order: 26
+      x-menu-order: 27
       x-undo:
         type: safe
   /api/v1/synthetics/tests/{public_id}/results:
@@ -25162,7 +25162,7 @@ paths:
       summary: Get all global variables
       tags:
       - Synthetics
-      x-menu-order: 16
+      x-menu-order: 17
       x-undo:
         type: safe
     post:
@@ -25205,7 +25205,7 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 17
+      x-menu-order: 18
       x-undo:
         operationId: DeleteGlobalVariable
         parameters:
@@ -25254,7 +25254,7 @@ paths:
       summary: Delete a global variable
       tags:
       - Synthetics
-      x-menu-order: 20
+      x-menu-order: 21
       x-undo:
         type: idempotent
     get:
@@ -25346,7 +25346,7 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 18
+      x-menu-order: 20
       x-undo:
         type: idempotent
   /api/v1/tags/hosts:
