@@ -29,6 +29,7 @@ body = Downtime(
     start=int(datetime.now().timestamp()),
     end=int((datetime.now() + relativedelta(hours=1)).timestamp()),
     timezone="Etc/UTC",
+    mute_first_recovery_notification=True,
 )
 
 configuration = Configuration()

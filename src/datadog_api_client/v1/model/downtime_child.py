@@ -44,6 +44,7 @@ class DowntimeChild(ModelNormal):
             "message": (str,),
             "monitor_id": (int, none_type),
             "monitor_tags": ([str],),
+            "mute_first_recovery_notification": (bool,),
             "parent_id": (int, none_type),
             "recurrence": (DowntimeRecurrence,),
             "scope": ([str],),
@@ -63,6 +64,7 @@ class DowntimeChild(ModelNormal):
         "message": "message",
         "monitor_id": "monitor_id",
         "monitor_tags": "monitor_tags",
+        "mute_first_recovery_notification": "mute_first_recovery_notification",
         "parent_id": "parent_id",
         "recurrence": "recurrence",
         "scope": "scope",
@@ -121,6 +123,9 @@ class DowntimeChild(ModelNormal):
             The resulting downtime applies to monitors that match ALL provided monitor tags.
             For example, `service:postgres` **AND** `team:frontend`.
         :type monitor_tags: [str], optional
+
+        :param mute_first_recovery_notification: If the first recovery notification during a downtime should be muted.
+        :type mute_first_recovery_notification: bool, optional
 
         :param parent_id: ID of the parent Downtime.
         :type parent_id: int, none_type, optional
