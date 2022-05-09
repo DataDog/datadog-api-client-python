@@ -38,7 +38,7 @@ Feature: AuthN Mappings
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/team-aaa
+  @skip-typescript @team:DataDog/team-aaa
   Scenario: Delete an AuthN Mapping returns "OK" response
     Given there is a valid "role" in the system
     And there is a valid "authn_mapping" in the system

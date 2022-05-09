@@ -49,7 +49,7 @@ Feature: Incident Teams
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @skip-typescript @team:Datadog/incident-app
   Scenario: Delete an existing incident team returns "OK" response
     Given there is a valid "team" in the system
     And operation "DeleteIncidentTeam" enabled
