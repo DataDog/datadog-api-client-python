@@ -66,7 +66,7 @@ class SLOCorrectionResponseAttributes(ModelNormal):
         :param category: Category the SLO correction belongs to.
         :type category: SLOCorrectionCategory, optional
 
-        :param created_at: The epoch timestamp of when the correction was created at
+        :param created_at: The epoch timestamp of when the correction was created at.
         :type created_at: int, optional
 
         :param creator: Object describing the creator of the shared element.
@@ -81,17 +81,17 @@ class SLOCorrectionResponseAttributes(ModelNormal):
         :param end: Ending time of the correction in epoch seconds.
         :type end: int, optional
 
-        :param modified_at: The epoch timestamp of when the correction was modified at
+        :param modified_at: The epoch timestamp of when the correction was modified at.
         :type modified_at: int, optional
 
         :param modifier: Modifier of the object.
         :type modifier: SLOCorrectionResponseAttributesModifier, none_type, optional
 
         :param rrule: The recurrence rules as defined in the iCalendar RFC 5545. The supported rules for SLO corrections
-            are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.
+            are `FREQ`, `INTERVAL`, `COUNT`, and `UNTIL`.
         :type rrule: str, none_type, optional
 
-        :param slo_id: ID of the SLO that this correction will be applied to.
+        :param slo_id: ID of the SLO that this correction applies to.
         :type slo_id: str, optional
 
         :param start: Starting time of the correction in epoch seconds.
