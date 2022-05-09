@@ -1793,7 +1793,7 @@ components:
           description: 'The type of event being posted. Option examples include nagios,
             hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc.
 
-            A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).'
+            The list of standard source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).'
           type: string
         tags:
           description: A list of tags to apply to the event.
@@ -8206,7 +8206,7 @@ components:
           example: FREQ=DAILY;INTERVAL=10;COUNT=5
           type: string
         slo_id:
-          description: ID of the SLO that this correction will be applied to.
+          description: ID of the SLO that this correction applies to.
           example: sloId
           type: string
         start:
@@ -8247,7 +8247,7 @@ components:
         category:
           $ref: '#/components/schemas/SLOCorrectionCategory'
         created_at:
-          description: The epoch timestamp of when the correction was created at
+          description: The epoch timestamp of when the correction was created at.
           format: int64
           type: integer
         creator:
@@ -8267,7 +8267,7 @@ components:
           format: int64
           type: integer
         modified_at:
-          description: The epoch timestamp of when the correction was modified at
+          description: The epoch timestamp of when the correction was modified at.
           format: int64
           type: integer
         modifier:
@@ -8276,12 +8276,12 @@ components:
           description: 'The recurrence rules as defined in the iCalendar RFC 5545.
             The supported rules for SLO corrections
 
-            are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.'
+            are `FREQ`, `INTERVAL`, `COUNT`, and `UNTIL`.'
           example: FREQ=DAILY;INTERVAL=10;COUNT=5
           nullable: true
           type: string
         slo_id:
-          description: ID of the SLO that this correction will be applied to.
+          description: ID of the SLO that this correction applies to.
           type: string
         start:
           description: Starting time of the correction in epoch seconds.
@@ -8352,7 +8352,7 @@ components:
           description: 'The recurrence rules as defined in the iCalendar RFC 5545.
             The supported rules for SLO corrections
 
-            are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.'
+            are `FREQ`, `INTERVAL`, `COUNT`, and `UNTIL`.'
           example: FREQ=DAILY;INTERVAL=10;COUNT=5
           type: string
         start:
@@ -23581,7 +23581,7 @@ paths:
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
     patch:
-      description: Update the specified SLO correction object object.
+      description: Update the specified SLO correction object.
       operationId: UpdateSLOCorrection
       parameters:
       - description: The ID of the SLO correction object.
@@ -25930,8 +25930,7 @@ paths:
         type: safe
   /api/v1/usage/ci-app:
     get:
-      description: Get hourly usage for CI Visibility (Tests, Pipeline, Combo, and
-        Spans).
+      description: Get hourly usage for CI Visibility (Tests, Pipeline, and Spans).
       operationId: GetUsageCIApp
       parameters:
       - description: 'Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]`

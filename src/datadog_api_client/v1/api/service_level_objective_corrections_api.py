@@ -307,7 +307,7 @@ class ServiceLevelObjectiveCorrectionsApi:
     def update_slo_correction(self, slo_correction_id, body, **kwargs):
         """Update an SLO correction.
 
-        Update the specified SLO correction object object.
+        Update the specified SLO correction object.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
