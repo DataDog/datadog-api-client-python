@@ -12,12 +12,10 @@ from datadog_api_client.model_utils import (
 def lazy_import():
     from datadog_api_client.v1.model.logs_query_compute import LogsQueryCompute
     from datadog_api_client.v1.model.log_query_definition_group_by import LogQueryDefinitionGroupBy
-    from datadog_api_client.v1.model.logs_query_compute import LogsQueryCompute
     from datadog_api_client.v1.model.log_query_definition_search import LogQueryDefinitionSearch
 
     globals()["LogsQueryCompute"] = LogsQueryCompute
     globals()["LogQueryDefinitionGroupBy"] = LogQueryDefinitionGroupBy
-    globals()["LogsQueryCompute"] = LogsQueryCompute
     globals()["LogQueryDefinitionSearch"] = LogQueryDefinitionSearch
 
 

@@ -15,7 +15,6 @@ def lazy_import():
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.widget_time import WidgetTime
     from datadog_api_client.v1.model.timeseries_background import TimeseriesBackground
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.query_value_widget_definition_type import QueryValueWidgetDefinitionType
 
     globals()["WidgetCustomLink"] = WidgetCustomLink
@@ -23,7 +22,6 @@ def lazy_import():
     globals()["WidgetTextAlign"] = WidgetTextAlign
     globals()["WidgetTime"] = WidgetTime
     globals()["TimeseriesBackground"] = TimeseriesBackground
-    globals()["WidgetTextAlign"] = WidgetTextAlign
     globals()["QueryValueWidgetDefinitionType"] = QueryValueWidgetDefinitionType
 
 

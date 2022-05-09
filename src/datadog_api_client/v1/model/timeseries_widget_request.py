@@ -11,35 +11,21 @@ from datadog_api_client.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.widget_formula import WidgetFormula
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.timeseries_widget_expression_alias import TimeseriesWidgetExpressionAlias
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
     from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 
     globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
     globals()["WidgetDisplayType"] = WidgetDisplayType
-    globals()["LogQueryDefinition"] = LogQueryDefinition
     globals()["WidgetFormula"] = WidgetFormula
-    globals()["LogQueryDefinition"] = LogQueryDefinition
     globals()["TimeseriesWidgetExpressionAlias"] = TimeseriesWidgetExpressionAlias
-    globals()["LogQueryDefinition"] = LogQueryDefinition
     globals()["ProcessQueryDefinition"] = ProcessQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
     globals()["FormulaAndFunctionQueryDefinition"] = FormulaAndFunctionQueryDefinition
     globals()["FormulaAndFunctionResponseFormat"] = FormulaAndFunctionResponseFormat
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
     globals()["WidgetRequestStyle"] = WidgetRequestStyle
 
 

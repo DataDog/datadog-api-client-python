@@ -13,11 +13,7 @@ def lazy_import():
     from datadog_api_client.v1.model.synthetics_test_request_certificate_item import (
         SyntheticsTestRequestCertificateItem,
     )
-    from datadog_api_client.v1.model.synthetics_test_request_certificate_item import (
-        SyntheticsTestRequestCertificateItem,
-    )
 
-    globals()["SyntheticsTestRequestCertificateItem"] = SyntheticsTestRequestCertificateItem
     globals()["SyntheticsTestRequestCertificateItem"] = SyntheticsTestRequestCertificateItem
 
 

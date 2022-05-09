@@ -20,7 +20,6 @@ def lazy_import():
     from datadog_api_client.v1.model.widget_time import WidgetTime
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
-    from datadog_api_client.v1.model.widget_axis import WidgetAxis
 
     globals()["WidgetCustomLink"] = WidgetCustomLink
     globals()["WidgetEvent"] = WidgetEvent
@@ -32,7 +31,6 @@ def lazy_import():
     globals()["WidgetTime"] = WidgetTime
     globals()["WidgetTextAlign"] = WidgetTextAlign
     globals()["TimeseriesWidgetDefinitionType"] = TimeseriesWidgetDefinitionType
-    globals()["WidgetAxis"] = WidgetAxis
 
 
 class TimeseriesWidgetDefinition(ModelNormal):

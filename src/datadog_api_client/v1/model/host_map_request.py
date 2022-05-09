@@ -11,22 +11,10 @@ from datadog_api_client.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
 
     globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
     globals()["ProcessQueryDefinition"] = ProcessQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
 
 
 class HostMapRequest(ModelNormal):

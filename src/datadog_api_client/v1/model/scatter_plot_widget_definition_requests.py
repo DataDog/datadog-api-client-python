@@ -12,10 +12,8 @@ from datadog_api_client.model_utils import (
 def lazy_import():
     from datadog_api_client.v1.model.scatterplot_table_request import ScatterplotTableRequest
     from datadog_api_client.v1.model.scatter_plot_request import ScatterPlotRequest
-    from datadog_api_client.v1.model.scatter_plot_request import ScatterPlotRequest
 
     globals()["ScatterplotTableRequest"] = ScatterplotTableRequest
-    globals()["ScatterPlotRequest"] = ScatterPlotRequest
     globals()["ScatterPlotRequest"] = ScatterPlotRequest
 
 
