@@ -233,7 +233,7 @@ def get_references_for_model(model, model_name):
             if name:
                 result[name] = None
             elif definition.get("properties") and top_name:
-                result.add(top_name + formatter.camel_case(key))
+                result[top_name + formatter.camel_case(key)] = None
             elif definition.get("additionalProperties"):
                 name = formatter.get_name(definition["additionalProperties"])
                 if name:
