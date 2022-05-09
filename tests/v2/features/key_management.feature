@@ -55,7 +55,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 201 Created
 
-  @team:DataDog/team-aaa
+  @skip-typescript @team:DataDog/team-aaa
   Scenario: Delete an API key returns "No Content" response
     Given there is a valid "api_key" in the system
     And new "DeleteAPIKey" request
@@ -70,7 +70,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/team-aaa
+  @skip-typescript @team:DataDog/team-aaa
   Scenario: Delete an Application key owned by current user returns "No Content" response
     Given there is a valid "application_key" in the system
     And new "DeleteCurrentUserApplicationKey" request
@@ -78,7 +78,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/team-aaa
+  @skip-typescript @team:DataDog/team-aaa
   Scenario: Delete an Application key returns "No Content" response
     Given there is a valid "application_key" in the system
     And new "DeleteApplicationKey" request

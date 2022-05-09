@@ -64,7 +64,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 201 Created
 
-  @replay-only @team:DataDog/points-aggregation
+  @replay-only @skip-typescript @team:DataDog/points-aggregation
   Scenario: Delete a tag configuration returns "No Content" response
     Given there is a valid "metric" in the system
     And there is a valid "metric_tag_configuration" in the system

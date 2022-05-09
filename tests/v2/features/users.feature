@@ -52,7 +52,7 @@ Feature: Users
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/team-aaa
+  @skip-typescript @team:DataDog/team-aaa
   Scenario: Disable a user returns "OK" response
     Given there is a valid "user" in the system
     And new "DisableUser" request

@@ -11,14 +11,14 @@ Feature: Downtimes
     And a valid "appKeyAuth" key in the system
     And an instance of "Downtimes" API
 
-  @team:DataDog/monitor-app
+  @skip-typescript @team:DataDog/monitor-app
   Scenario: Cancel a downtime returns "Downtime not found" response
     Given new "CancelDowntime" request
     And request contains "downtime_id" parameter with value 0
     When the request is sent
     Then the response status is 404 Downtime not found
 
-  @team:DataDog/monitor-app
+  @skip-typescript @team:DataDog/monitor-app
   Scenario: Cancel a downtime returns "OK" response
     Given there is a valid "downtime" in the system
     And new "CancelDowntime" request

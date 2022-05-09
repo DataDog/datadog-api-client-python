@@ -60,7 +60,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @skip-typescript @team:DataDog/incident-app
   Scenario: Delete an existing incident returns "OK" response
     Given operation "DeleteIncident" enabled
     And there is a valid "incident" in the system
