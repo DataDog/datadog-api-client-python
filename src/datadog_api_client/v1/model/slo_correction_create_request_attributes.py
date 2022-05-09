@@ -61,7 +61,7 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
             are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.
         :type rrule: str, optional
 
-        :param slo_id: ID of the SLO that this correction will be applied to.
+        :param slo_id: ID of the SLO that this correction applies to.
         :type slo_id: str
 
         :param start: Starting time of the correction in epoch seconds.
