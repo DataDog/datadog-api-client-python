@@ -11,9 +11,7 @@ from datadog_api_client.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v1.model.slo_history_metrics_series import SLOHistoryMetricsSeries
-    from datadog_api_client.v1.model.slo_history_metrics_series import SLOHistoryMetricsSeries
 
-    globals()["SLOHistoryMetricsSeries"] = SLOHistoryMetricsSeries
     globals()["SLOHistoryMetricsSeries"] = SLOHistoryMetricsSeries
 
 

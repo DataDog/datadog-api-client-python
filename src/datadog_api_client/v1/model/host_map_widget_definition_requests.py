@@ -11,9 +11,7 @@ from datadog_api_client.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v1.model.host_map_request import HostMapRequest
-    from datadog_api_client.v1.model.host_map_request import HostMapRequest
 
-    globals()["HostMapRequest"] = HostMapRequest
     globals()["HostMapRequest"] = HostMapRequest
 
 

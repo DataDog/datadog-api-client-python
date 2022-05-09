@@ -16,14 +16,12 @@ def lazy_import():
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.scatter_plot_widget_definition_type import ScatterPlotWidgetDefinitionType
     from datadog_api_client.v1.model.widget_axis import WidgetAxis
-    from datadog_api_client.v1.model.widget_axis import WidgetAxis
 
     globals()["WidgetCustomLink"] = WidgetCustomLink
     globals()["ScatterPlotWidgetDefinitionRequests"] = ScatterPlotWidgetDefinitionRequests
     globals()["WidgetTime"] = WidgetTime
     globals()["WidgetTextAlign"] = WidgetTextAlign
     globals()["ScatterPlotWidgetDefinitionType"] = ScatterPlotWidgetDefinitionType
-    globals()["WidgetAxis"] = WidgetAxis
     globals()["WidgetAxis"] = WidgetAxis
 
 

@@ -221,7 +221,7 @@ def models(spec):
 
 
 def get_references_for_model(model, model_name):
-    result = []
+    result = {}
     top_name = formatter.get_name(model) or model_name
     for key, definition in model.get("properties", {}).items():
         if (
@@ -231,33 +231,33 @@ def get_references_for_model(model, model_name):
         ):
             name = formatter.get_name(definition)
             if name:
-                result.append(name)
+                result[name] = None
             elif definition.get("properties") and top_name:
-                result.append(top_name + formatter.camel_case(key))
+                result.add(top_name + formatter.camel_case(key))
             elif definition.get("additionalProperties"):
                 name = formatter.get_name(definition["additionalProperties"])
                 if name:
-                    result.append(name)
+                    result[name] = None
         elif definition.get("type") == "array":
             name = formatter.get_name(definition)
             if name:
-                result.append(name)
+                result[name] = None
             else:
                 name = formatter.get_name(definition.get("items"))
                 if name:
-                    result.append(name)
+                    result[name] = None
         elif definition.get("properties") and top_name:
-            result.append(top_name + formatter.camel_case(key))
+            result[top_name + formatter.camel_case(key)] = None
     if model.get("additionalProperties"):
         definition = model["additionalProperties"]
         name = formatter.get_name(definition)
         if name:
-            result.append(name)
+            result[name] = None
         elif definition.get("type") == "array":
             name = formatter.get_name(definition.get("items"))
             if name:
-                result.append(name)
-    return result
+                result[name] = None
+    return list(result)
 
 
 def get_oneof_parameters(model):
