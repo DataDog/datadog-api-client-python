@@ -1935,7 +1935,7 @@ class UsageMeteringApi:
     def get_usage_ci_app(self, start_hr, **kwargs):
         """Get hourly usage for CI Visibility.
 
-        Get hourly usage for CI Visibility (Tests, Pipeline, Combo, and Spans).
+        Get hourly usage for CI Visibility (Tests, Pipeline, and Spans).
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
