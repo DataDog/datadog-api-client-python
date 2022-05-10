@@ -525,6 +525,15 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/red-zone-revenue-query
+  Scenario: Get mobile hourly usage for RUM Sessions returns "OK" response
+    Given new "GetUsageRumSessions" request
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "type" parameter with value "mobile"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get specified daily custom reports returns "Not Found" response
     Given operation "GetSpecifiedDailyCustomReports" enabled

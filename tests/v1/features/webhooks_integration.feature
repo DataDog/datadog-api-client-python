@@ -44,7 +44,7 @@ Feature: Webhooks Integration
     When the request is sent
     Then the response status is 404 Item Not Found
 
-  @skip-typescript @skip-terraform-config @team:Datadog/collaboration-integrations
+  @skip-terraform-config @skip-typescript @team:Datadog/collaboration-integrations
   Scenario: Delete a custom variable returns "OK" response
     Given there is a valid "webhook_custom_variable" in the system
     And new "DeleteWebhooksIntegrationCustomVariable" request
@@ -59,7 +59,7 @@ Feature: Webhooks Integration
     When the request is sent
     Then the response status is 404 Item Not Found
 
-  @skip-typescript @skip-terraform-config @team:Datadog/collaboration-integrations
+  @skip-terraform-config @skip-typescript @team:Datadog/collaboration-integrations
   Scenario: Delete a webhook returns "OK" response
     Given there is a valid "webhook" in the system
     And new "DeleteWebhooksIntegration" request
