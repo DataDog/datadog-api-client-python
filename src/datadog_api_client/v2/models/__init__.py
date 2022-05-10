@@ -489,6 +489,7 @@ from datadog_api_client.v2.model.usage_application_security_monitoring_response 
 )
 from datadog_api_client.v2.model.usage_attributes_object import UsageAttributesObject
 from datadog_api_client.v2.model.usage_data_object import UsageDataObject
+from datadog_api_client.v2.model.usage_lambda_traced_invocations_response import UsageLambdaTracedInvocationsResponse
 from datadog_api_client.v2.model.usage_observability_pipelines_response import UsageObservabilityPipelinesResponse
 from datadog_api_client.v2.model.usage_time_series_object import UsageTimeSeriesObject
 from datadog_api_client.v2.model.usage_time_series_type import UsageTimeSeriesType

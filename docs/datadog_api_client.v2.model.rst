@@ -3353,6 +3353,14 @@ usage\_data\_object
    :undoc-members:
    :show-inheritance:
 
+usage\_lambda\_traced\_invocations\_response
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_lambda_traced_invocations_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 usage\_observability\_pipelines\_response
 -----------------------------------------
 
