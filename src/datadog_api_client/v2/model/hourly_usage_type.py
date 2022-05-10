@@ -16,6 +16,7 @@ class HourlyUsageType(ModelSimple):
         "value": {
             "APP_SEC_HOST_COUNT": "app_sec_host_count",
             "OBSERVABILITY_PIPELINES_BYTES_PROCESSSED": "observability_pipelines_bytes_processed",
+            "LAMBDA_TRACED_INVOCATIONS_COUNT": "lambda_traced_invocations_count",
         },
     }
 
@@ -31,7 +32,7 @@ class HourlyUsageType(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["app_sec_host_count", "observability_pipelines_bytes_processed"].
+        :param value: Must be one of ["app_sec_host_count", "observability_pipelines_bytes_processed", "lambda_traced_invocations_count"].
         :type value: str
         """
         super().__init__(kwargs)
