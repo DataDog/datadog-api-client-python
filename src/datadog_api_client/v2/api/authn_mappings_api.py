@@ -114,12 +114,6 @@ class AuthNMappingsApi:
                     "attribute": "sort",
                     "location": "query",
                 },
-                "include": {
-                    "openapi_types": ([str],),
-                    "attribute": "include",
-                    "location": "query",
-                    "collection_format": "multi",
-                },
                 "filter": {
                     "openapi_types": (str,),
                     "attribute": "filter",
@@ -308,8 +302,6 @@ class AuthNMappingsApi:
         :type page_number: int, optional
         :param sort: Sort AuthN Mappings depending on the given field.
         :type sort: AuthNMappingsSort, optional
-        :param include: Include additional information in the response.
-        :type include: [str], optional
         :param filter: Filter all mappings by the given string.
         :type filter: str, optional
         :param _return_http_data_only: Response data without head status
