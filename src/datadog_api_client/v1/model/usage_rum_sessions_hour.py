@@ -7,6 +7,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
 )
 
 
@@ -18,9 +19,10 @@ class UsageRumSessionsHour(ModelNormal):
             "org_name": (str,),
             "public_id": (str,),
             "replay_session_count": (int,),
-            "session_count": (int,),
-            "session_count_android": (int,),
-            "session_count_ios": (int,),
+            "session_count": (int, none_type),
+            "session_count_android": (int, none_type),
+            "session_count_ios": (int, none_type),
+            "session_count_reactnative": (int, none_type),
         }
 
     attribute_map = {
@@ -31,6 +33,7 @@ class UsageRumSessionsHour(ModelNormal):
         "session_count": "session_count",
         "session_count_android": "session_count_android",
         "session_count_ios": "session_count_ios",
+        "session_count_reactnative": "session_count_reactnative",
     }
 
     def __init__(self, *args, **kwargs):
@@ -50,13 +53,16 @@ class UsageRumSessionsHour(ModelNormal):
         :type replay_session_count: int, optional
 
         :param session_count: Contains the number of browser RUM Lite Sessions.
-        :type session_count: int, optional
+        :type session_count: int, none_type, optional
 
         :param session_count_android: Contains the number of mobile RUM Sessions on Android (data available beginning December 1, 2020).
-        :type session_count_android: int, optional
+        :type session_count_android: int, none_type, optional
 
         :param session_count_ios: Contains the number of mobile RUM Sessions on iOS (data available beginning December 1, 2020).
-        :type session_count_ios: int, optional
+        :type session_count_ios: int, none_type, optional
+
+        :param session_count_reactnative: Contains the number of mobile RUM Sessions on React Native (data available beginning May 1, 2022).
+        :type session_count_reactnative: int, none_type, optional
         """
         super().__init__(kwargs)
 
