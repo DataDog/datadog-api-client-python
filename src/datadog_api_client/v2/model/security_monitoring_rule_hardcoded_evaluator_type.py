@@ -4,21 +4,16 @@
 
 
 from datadog_api_client.model_utils import (
-    ApiTypeError,
     ModelSimple,
     cached_property,
 )
 
 
-class SecurityMonitoringRuleDetectionMethod(ModelSimple):
+class SecurityMonitoringRuleHardcodedEvaluatorType(ModelSimple):
 
     allowed_values = {
         "value": {
-            "THRESHOLD": "threshold",
-            "NEW_VALUE": "new_value",
-            "ANOMALY_DETECTION": "anomaly_detection",
-            "IMPOSSIBLE_TRAVEL": "impossible_travel",
-            "HARDCODED": "hardcoded",
+            "LOG4SHELL": "log4shell",
         },
     }
 
@@ -30,11 +25,11 @@ class SecurityMonitoringRuleDetectionMethod(ModelSimple):
 
     def __init__(self, *args, **kwargs):
         """
-        The detection method.
+        Hardcoded evaluator type.
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["threshold", "new_value", "anomaly_detection", "impossible_travel", "hardcoded"].
+        :param value: If omitted defaults to "log4shell". Must be one of ["log4shell"].
         :type value: str
         """
         super().__init__(kwargs)
@@ -45,11 +40,7 @@ class SecurityMonitoringRuleDetectionMethod(ModelSimple):
             args = list(args)
             value = args.pop(0)
         else:
-            raise ApiTypeError(
-                "value is required, but not passed in args or kwargs and doesn't have default",
-                path_to_item=self._path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            value = "log4shell"
 
         self._check_pos_args(args)
 

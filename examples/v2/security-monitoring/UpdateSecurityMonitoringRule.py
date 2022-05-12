@@ -11,6 +11,9 @@ from datadog_api_client.v2.model.security_monitoring_rule_detection_method impor
 from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
     SecurityMonitoringRuleEvaluationWindow,
 )
+from datadog_api_client.v2.model.security_monitoring_rule_hardcoded_evaluator_type import (
+    SecurityMonitoringRuleHardcodedEvaluatorType,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_impossible_travel_options import (
     SecurityMonitoringRuleImpossibleTravelOptions,
 )
@@ -49,6 +52,7 @@ body = SecurityMonitoringRuleUpdatePayload(
     options=SecurityMonitoringRuleOptions(
         detection_method=SecurityMonitoringRuleDetectionMethod("threshold"),
         evaluation_window=SecurityMonitoringRuleEvaluationWindow(0),
+        hardcoded_evaluator_type=SecurityMonitoringRuleHardcodedEvaluatorType("log4shell"),
         impossible_travel_options=SecurityMonitoringRuleImpossibleTravelOptions(
             baseline_user_locations=True,
         ),

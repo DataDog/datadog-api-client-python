@@ -3097,6 +3097,14 @@ security\_monitoring\_rule\_evaluation\_window
    :undoc-members:
    :show-inheritance:
 
+security\_monitoring\_rule\_hardcoded\_evaluator\_type
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_hardcoded_evaluator_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 security\_monitoring\_rule\_impossible\_travel\_options
 -------------------------------------------------------
 
