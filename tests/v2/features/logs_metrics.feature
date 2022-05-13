@@ -37,7 +37,7 @@ Feature: Logs Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-typescript @team:DataDog/logs-backend
+  @team:DataDog/logs-backend
   Scenario: Delete a log-based metric returns "OK" response
     Given there is a valid "logs_metric" in the system
     And new "DeleteLogsMetric" request

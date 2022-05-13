@@ -31,14 +31,14 @@ Feature: Cloud Workload Security
     And the response "data.type" is equal to "agent_rule"
     And the response "data.attributes.description" is equal to "Test Agent rule"
 
-  @skip-typescript @team:DataDog/cws-backend @team:DataDog/security-monitoring
+  @team:DataDog/cws-backend @team:DataDog/security-monitoring
   Scenario: Delete a Cloud Workload Security Agent rule returns "Not Found" response
     Given new "DeleteCloudWorkloadSecurityAgentRule" request
     And request contains "agent_rule_id" parameter with value "abc-123-xyz"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-typescript @team:DataDog/cws-backend @team:DataDog/security-monitoring
+  @team:DataDog/cws-backend @team:DataDog/security-monitoring
   Scenario: Delete a Cloud Workload Security Agent rule returns "OK" response
     Given there is a valid "agent_rule" in the system
     And new "DeleteCloudWorkloadSecurityAgentRule" request

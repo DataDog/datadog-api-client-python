@@ -416,7 +416,7 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 404 Dashboards Not Found
 
-  @skip-typescript @team:DataDog/dashboards
+  @team:DataDog/dashboards
   Scenario: Delete dashboards returns "No Content" response
     Given there is a valid "dashboard" in the system
     And new "DeleteDashboards" request
@@ -480,7 +480,7 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 404 Dashboards Not Found
 
-  @skip-typescript @team:DataDog/dashboards
+  @team:DataDog/dashboards
   Scenario: Restore deleted dashboards returns "No Content" response
     Given there is a valid "dashboard" in the system
     And the "dashboard" was deleted
