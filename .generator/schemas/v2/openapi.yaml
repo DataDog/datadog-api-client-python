@@ -5958,12 +5958,14 @@ components:
       - new_value
       - anomaly_detection
       - impossible_travel
+      - hardcoded
       type: string
       x-enum-varnames:
       - THRESHOLD
       - NEW_VALUE
       - ANOMALY_DETECTION
       - IMPOSSIBLE_TRAVEL
+      - HARDCODED
     SecurityMonitoringRuleEvaluationWindow:
       description: 'A time window is specified to match when at least one of the cases
         matches true. This is a sliding window
@@ -5989,6 +5991,13 @@ components:
       - THIRTY_MINUTES
       - ONE_HOUR
       - TWO_HOURS
+    SecurityMonitoringRuleHardcodedEvaluatorType:
+      description: Hardcoded evaluator type.
+      enum:
+      - log4shell
+      type: string
+      x-enum-varnames:
+      - LOG4SHELL
     SecurityMonitoringRuleImpossibleTravelOptions:
       description: Options on impossible travel rules.
       properties:
@@ -6111,6 +6120,8 @@ components:
           $ref: '#/components/schemas/SecurityMonitoringRuleDetectionMethod'
         evaluationWindow:
           $ref: '#/components/schemas/SecurityMonitoringRuleEvaluationWindow'
+        hardcodedEvaluatorType:
+          $ref: '#/components/schemas/SecurityMonitoringRuleHardcodedEvaluatorType'
         impossibleTravelOptions:
           $ref: '#/components/schemas/SecurityMonitoringRuleImpossibleTravelOptions'
         keepAlive:
