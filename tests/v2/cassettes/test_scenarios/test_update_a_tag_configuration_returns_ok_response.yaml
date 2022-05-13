@@ -1,9 +1,9 @@
 interactions:
 - request:
-    body: '{"series":[{"metric":"TestUpdateatagconfigurationreturnsOKresponse1648572657","points":[[1648572657,1.1]],"tags":["test:ExampleSubmitmetricsreturnsPayloadacceptedresponse"],"type":"gauge"}]}'
+    body: '{"series":[{"metric":"TestUpdateatagconfigurationreturnsOKresponse1652354372","points":[[1652354372,1.1]],"tags":["test:ExampleSubmitmetricsreturnsPayloadacceptedresponse"],"type":"gauge"}]}'
     headers:
       accept:
-      - text/json
+      - text/json, application/json
       content-type:
       - text/json
     method: POST
@@ -18,17 +18,17 @@ interactions:
       code: 202
       message: Accepted
 - request:
-    body: '{"data":{"attributes":{"metric_type":"gauge","tags":["app","datacenter","TestUpdateatagconfigurationreturnsOKresponse1648572657"]},"id":"TestUpdateatagconfigurationreturnsOKresponse1648572657","type":"manage_tags"}}'
+    body: '{"data":{"attributes":{"metric_type":"gauge","tags":["app","datacenter","TestUpdateatagconfigurationreturnsOKresponse1652354372"]},"id":"TestUpdateatagconfigurationreturnsOKresponse1652354372","type":"manage_tags"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/metrics/TestUpdateatagconfigurationreturnsOKresponse1648572657/tags
+    uri: https://api.datadoghq.com/api/v2/metrics/TestUpdateatagconfigurationreturnsOKresponse1652354372/tags
   response:
     body:
-      string: '{"data":{"type":"manage_tags","id":"TestUpdateatagconfigurationreturnsOKresponse1648572657","attributes":{"tags":["datacenter","app","TestUpdateatagconfigurationreturnsOKresponse1648572657"],"created_at":"2022-03-29T16:50:58.686271+00:00","modified_at":"2022-03-29T16:50:58.686271+00:00","metric_type":"gauge","aggregations":[{"space":"avg","time":"avg"}]}}}'
+      string: '{"data":{"type":"manage_tags","id":"TestUpdateatagconfigurationreturnsOKresponse1652354372","attributes":{"tags":["datacenter","TestUpdateatagconfigurationreturnsOKresponse1652354372","app"],"created_at":"2022-05-12T11:19:33.257425+00:00","modified_at":"2022-05-12T11:19:33.257425+00:00","metric_type":"gauge","aggregations":[{"space":"avg","time":"avg"}]}}}'
     headers:
       content-type:
       - application/json
@@ -36,17 +36,17 @@ interactions:
       code: 201
       message: Created
 - request:
-    body: '{"data":{"attributes":{"tags":["app"]},"id":"TestUpdateatagconfigurationreturnsOKresponse1648572657","type":"manage_tags"}}'
+    body: '{"data":{"attributes":{"tags":["app"]},"id":"TestUpdateatagconfigurationreturnsOKresponse1652354372","type":"manage_tags"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/metrics/TestUpdateatagconfigurationreturnsOKresponse1648572657/tags
+    uri: https://api.datadoghq.com/api/v2/metrics/TestUpdateatagconfigurationreturnsOKresponse1652354372/tags
   response:
     body:
-      string: '{"data":{"type":"manage_tags","id":"TestUpdateatagconfigurationreturnsOKresponse1648572657","attributes":{"tags":["app"],"created_at":"2022-03-29T16:50:58.686271+00:00","modified_at":"2022-03-29T16:50:59.386565+00:00","metric_type":"gauge","aggregations":[{"space":"avg","time":"avg"}]}}}'
+      string: '{"data":{"type":"manage_tags","id":"TestUpdateatagconfigurationreturnsOKresponse1652354372","attributes":{"tags":["app"],"created_at":"2022-05-12T11:19:33.257425+00:00","modified_at":"2022-05-12T11:19:33.820520+00:00","metric_type":"gauge","aggregations":[{"space":"avg","time":"avg"}]}}}'
     headers:
       content-type:
       - application/json
@@ -57,9 +57,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/metrics/TestUpdateatagconfigurationreturnsOKresponse1648572657/tags
+    uri: https://api.datadoghq.com/api/v2/metrics/TestUpdateatagconfigurationreturnsOKresponse1652354372/tags
   response:
     body:
       string: ''

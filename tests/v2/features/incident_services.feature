@@ -49,7 +49,7 @@ Feature: Incident Services
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-typescript @team:Datadog/incident-app
+  @team:Datadog/incident-app
   Scenario: Delete an existing incident service returns "OK" response
     Given there is a valid "service" in the system
     And operation "DeleteIncidentService" enabled

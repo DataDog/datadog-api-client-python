@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1641924703"},"type":"agent_rule"}}'
+      == \"sh\"","name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1652349088"},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -11,9 +11,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
   response:
     body:
-      string: '{"data":{"attributes":{"category":"Process Activity","name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1641924703","creator":{"handle":"frog@datadoghq.com","name":null},"description":"My
-        Agent rule","enabled":true,"defaultRule":false,"version":1,"updater":{"handle":"frog@datadoghq.com","name":null},"updateDate":1641924703522,"creationDate":1641924703522,"expression":"exec.file.name
-        == \"sh\""},"type":"agent_rule","id":"q6i-5md-xld"}}'
+      string: '{"data":{"attributes":{"category":"Process Activity","name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1652349088","creator":{"handle":"frog@datadoghq.com","name":null},"description":"My
+        Agent rule","enabled":true,"defaultRule":false,"version":1,"updater":{"handle":"frog@datadoghq.com","name":null},"updateDate":1652349088786,"creationDate":1652349088786,"expression":"exec.file.name
+        == \"sh\""},"type":"agent_rule","id":"ivl-0d3-hga"}}'
     headers:
       content-type:
       - application/json;charset=utf-8
@@ -29,12 +29,12 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/q6i-5md-xld
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/ivl-0d3-hga
   response:
     body:
-      string: '{"data":{"attributes":{"category":"Process Activity","name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1641924703","creator":{"handle":"frog@datadoghq.com","name":null},"description":"Test
-        Agent rule","enabled":true,"defaultRule":false,"version":2,"updater":{"handle":"frog@datadoghq.com","name":null},"updateDate":1641924703969,"creationDate":1641924703522,"expression":"exec.file.name
-        == \"sh\""},"type":"agent_rule","id":"q6i-5md-xld"}}'
+      string: '{"data":{"attributes":{"category":"Process Activity","name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1652349088","creator":{"handle":"frog@datadoghq.com","name":null},"description":"Test
+        Agent rule","enabled":true,"defaultRule":false,"version":2,"updater":{"handle":"frog@datadoghq.com","name":null},"updateDate":1652349089262,"creationDate":1652349088786,"expression":"exec.file.name
+        == \"sh\""},"type":"agent_rule","id":"ivl-0d3-hga"}}'
     headers:
       content-type:
       - application/json;charset=utf-8
@@ -45,13 +45,15 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/q6i-5md-xld
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/ivl-0d3-hga
   response:
     body:
       string: ''
-    headers: {}
+    headers:
+      content-type:
+      - application/json;charset=utf-8
     status:
       code: 204
       message: No Content

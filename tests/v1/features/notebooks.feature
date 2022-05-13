@@ -31,14 +31,14 @@ Feature: Notebooks
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-typescript @team:DataDog/notebooks
+  @team:DataDog/notebooks
   Scenario: Delete a notebook returns "Not Found" response
     Given new "DeleteNotebook" request
     And request contains "notebook_id" parameter with value 123456
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-typescript @team:DataDog/notebooks
+  @team:DataDog/notebooks
   Scenario: Delete a notebook returns "OK" response
     Given new "DeleteNotebook" request
     And there is a valid "notebook" in the system

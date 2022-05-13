@@ -63,7 +63,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-typescript @team:DataDog/security-monitoring
+  @team:DataDog/security-monitoring
   Scenario: Delete a security filter returns "No Content" response
     Given there is a valid "security_filter" in the system
     And new "DeleteSecurityFilter" request
@@ -92,7 +92,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-typescript @team:DataDog/security-monitoring
+  @team:DataDog/security-monitoring
   Scenario: Delete an existing rule returns "OK" response
     Given there is a valid "security_rule" in the system
     And new "DeleteSecurityMonitoringRule" request

@@ -46,7 +46,7 @@ Feature: Service Accounts
     And the response "data.attributes.scopes" is equal to ["dashboards_read", "dashboards_write", "dashboards_public_share"]
     And the response "data.relationships.owned_by.data.id" has the same value as "service_account_user.data.id"
 
-  @skip-typescript @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Delete an app key owned by this service account returns "No Content" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_application_key" for "service_account_user"

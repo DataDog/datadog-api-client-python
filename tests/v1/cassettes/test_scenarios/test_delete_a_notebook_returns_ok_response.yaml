@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"cells":[{"attributes":{"definition":{"text":"#
-      Test-Delete_a_notebook_returns_OK_response-1641826578 notebook text","type":"markdown"}},"type":"notebook_cells"}],"name":"Test-Delete_a_notebook_returns_OK_response-1641826578","time":{"live_span":"1h"}},"type":"notebooks"}}'
+      Test-Delete_a_notebook_returns_OK_response-1652349007 notebook text","type":"markdown"}},"type":"notebook_cells"}],"name":"Test-Delete_a_notebook_returns_OK_response-1652349007","time":{"live_span":"1h"}},"type":"notebooks"}}'
     headers:
       accept:
       - application/json
@@ -11,8 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/notebooks
   response:
     body:
-      string: '{"data":{"type":"notebooks","id":1779491,"attributes":{"name":"Test-Delete_a_notebook_returns_OK_response-1641826578","cells":[{"attributes":{"definition":{"text":"#
-        Test-Delete_a_notebook_returns_OK_response-1641826578 notebook text","type":"markdown"}},"type":"notebook_cells","id":"uwyokkao"}],"time":{"live_span":"1h"},"metadata":{"is_favorite":false,"is_template":false,"type":null,"take_snapshots":false},"template_variables":[],"status":"published","modified":"2022-01-10T14:56:18.518824+00:00","created":"2022-01-10T14:56:18.518824+00:00","author":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}}'
+      string: '{"data":{"type":"notebooks","id":2466032,"attributes":{"name":"Test-Delete_a_notebook_returns_OK_response-1652349007","cells":[{"attributes":{"definition":{"text":"#
+        Test-Delete_a_notebook_returns_OK_response-1652349007 notebook text","type":"markdown"}},"type":"notebook_cells","id":"t6d9lkvx"}],"time":{"live_span":"1h"},"metadata":{"is_favorite":false,"is_template":false,"type":null,"take_snapshots":false},"template_variables":[],"status":"published","modified":"2022-05-12T09:50:07.586654+00:00","created":"2022-05-12T09:50:07.586654+00:00","author":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}}'
     headers:
       content-type:
       - application/json
@@ -23,9 +23,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/notebooks/1779491
+    uri: https://api.datadoghq.com/api/v1/notebooks/2466032
   response:
     body:
       string: ''
@@ -37,9 +37,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/notebooks/1779491
+    uri: https://api.datadoghq.com/api/v1/notebooks/2466032
   response:
     body:
       string: '{"errors": ["Notebook not found"]}'

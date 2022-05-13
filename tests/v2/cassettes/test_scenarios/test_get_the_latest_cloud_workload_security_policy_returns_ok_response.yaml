@@ -3,28 +3,16 @@ interactions:
     body: null
     headers:
       accept:
-      - application/yaml
+      - application/yaml, application/json
     method: GET
     uri: https://api.datadoghq.com/api/v2/security/cloud_workload/policy/download
   response:
     body:
       string: "# IMPORTANT: Edits to this file will not be reflected in the Datadog\
         \ App and will be overwritten with new policy file downloads. Please modify\
-        \ rules in the Datadog App for full functionality.\nversion: '1641984938977'\n\
-        rules:\n- id: Test_Create_a_detection_rule_with_type_workload_security_returns_OK_response_1640112926_kernel_module_unlink_2\n\
-        \  version: ad34b541\n  description: Test-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1640112926\n\
-        \  expression: (open.flags & ((O_CREAT|O_RDWR|O_WRONLY|O_TRUNC)) > 0)\n- id:\
-        \ Test_Python_Create_a_detection_rule_with_type_workload_security_returns_OK_response_1638987059_kernel_module_unlink_2\n\
-        \  version: ad34b541\n  description: Test-Python-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1638987059\n\
-        \  expression: (open.flags & ((O_CREAT|O_RDWR|O_WRONLY|O_TRUNC)) > 0)\n- id:\
-        \ Test_Typescript_Create_a_detection_rule_with_type_workload_security_returns_OK_response_1640111630_kernel_module_unlink_2\n\
-        \  version: ad34b541\n  description: Test-Typescript-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1640111630\n\
-        \  expression: (open.flags & ((O_CREAT|O_RDWR|O_WRONLY|O_TRUNC)) > 0)\n- id:\
-        \ Test_Typescript_Create_a_detection_rule_with_type_workload_security_returns_OK_response_1640112776_kernel_module_unlink_2\n\
-        \  version: ad34b541\n  description: Test-Typescript-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1640112776\n\
-        \  expression: (open.flags & ((O_CREAT|O_RDWR|O_WRONLY|O_TRUNC)) > 0)\n- id:\
-        \ apparmor_modified_tty\n  version: a7f3b5c2\n  description: AppArmor Profile\
-        \ Modified\n  expression: exec.file.name in [\"aa-disable\", \"aa-complain\"\
+        \ rules in the Datadog App for full functionality.\nversion: '1652349086649'\n\
+        rules:\n- id: apparmor_modified_tty\n  version: a7f3b5c2\n  description: AppArmor\
+        \ Profile Modified\n  expression: exec.file.name in [\"aa-disable\", \"aa-complain\"\
         , \"aa-audit\"] && exec.tty_name\n    !=\"\"\n- id: aws_metadata_service\n\
         \  version: 4601e52e\n  description: EC2 Instance Metadata Service Accessed\
         \ via Network Utility\n  expression: exec.file.path in [\"/usr/bin/wget\"\
@@ -124,28 +112,28 @@ interactions:
         \ AT Job Creation\n  expression: \"(\\n    (utimes.file.path in [ ~\\\"/var/spool/cron/*\\\
         \" ])\\n    && process.file.path\\\n    \\ not in [ \\\"/usr/bin/at\\\", \\\
         \"/usr/bin/crontab\\\" ]\\n)\"\n- id: database_shell_execution\n  version:\
-        \ 3508c713\n  description: Database spawned shell/utility\n  expression: \"\
-        (exec.file.path in [ \\\"/bin/dash\\\", \\\"/usr/bin/dash\\\",\\n  \\\"/bin/sh\\\
-        \"\\\n    , \\\"/bin/static-sh\\\", \\\"/usr/bin/sh\\\",\\n  \\\"/usr/bin/bash\\\
-        \",\\n  \\\"/bin/bash-static\\\"\\\n    ,\\n  \\\"/usr/bin/zsh\\\",\\n  \\\
-        \"/usr/bin/ash\\\",\\n  \\\"/usr/bin/csh\\\",\\n  \\\"/usr/bin/ksh\\\"\\\n\
-        \    ,\\n  \\\"/usr/bin/tcsh\\\",\\n  \\\"/usr/lib/initramfs-tools/bin/busybox\\\
-        \",\\n  \\\"/bin/busybox\\\"\\\n    ,\\n  \\\"/usr/bin/fish\\\",\\n  \\\"\
-        /bin/ksh93\\\",\\n  \\\"/bin/rksh\\\", \\\"/bin/rksh93\\\",\\n\\\n    \\ \
-        \ \\\"/bin/lksh\\\",\\n  \\\"/bin/mksh\\\", \\\"/bin/mksh-static\\\",\\n \
-        \ \\\"/usr/bin/csharp\\\"\\\n    ,\\n  \\\"/bin/posh\\\",\\n  \\\"/usr/bin/rc\\\
-        \",\\n  \\\"/bin/sash\\\",\\n  \\\"/usr/bin/yash\\\"\\\n    ,\\n  \\\"/bin/zsh5\\\
-        \", \\\"/bin/zsh5-static\\\" ] ||\\n exec.file.path in [\\\"/usr/bin/wget\\\
-        \"\\\n    , \\\"/usr/bin/curl\\\"] ||\\n exec.file.path in [\\\"/bin/cat\\\
-        \",\\\"/bin/chgrp\\\",\\\"/bin/chmod\\\"\\\n    ,\\\"/bin/chown\\\",\\\"/bin/cp\\\
-        \",\\\"/bin/date\\\",\\\"/bin/dd\\\",\\\"/bin/df\\\",\\\"/bin/dir\\\"\\\n\
-        \    ,\\\"/bin/echo\\\",\\\"/bin/ln\\\",\\\"/bin/ls\\\",\\\"/bin/mkdir\\\"\
-        ,\\\"/bin/mknod\\\",\\\"/bin/mktemp\\\"\\\n    ,\\\"/bin/mv\\\",\\\"/bin/pwd\\\
-        \",\\\"/bin/readlink\\\",\\\"/bin/rm\\\",\\\"/bin/rmdir\\\",\\\"/bin/sleep\\\
-        \"\\\n    ,\\\"/bin/stty\\\",\\\"/bin/sync\\\",\\\"/bin/touch\\\",\\\"/bin/uname\\\
-        \",\\\"/bin/vdir\\\",\\\"/usr/bin/arch\\\"\\\n    ,\\\"/usr/bin/b2sum\\\"\
-        ,\\\"/usr/bin/base32\\\",\\\"/usr/bin/base64\\\",\\\"/usr/bin/basename\\\"\
-        \\\n    ,\\\"/usr/bin/chcon\\\",\\\"/usr/bin/cksum\\\",\\\"/usr/bin/comm\\\
+        \ 3508c713\n  description: A database application spawned a shell, shell utility,\
+        \ or HTTP utility\n  expression: \"(exec.file.path in [ \\\"/bin/dash\\\"\
+        , \\\"/usr/bin/dash\\\",\\n  \\\"/bin/sh\\\"\\\n    , \\\"/bin/static-sh\\\
+        \", \\\"/usr/bin/sh\\\",\\n  \\\"/usr/bin/bash\\\",\\n  \\\"/bin/bash-static\\\
+        \"\\\n    ,\\n  \\\"/usr/bin/zsh\\\",\\n  \\\"/usr/bin/ash\\\",\\n  \\\"/usr/bin/csh\\\
+        \",\\n  \\\"/usr/bin/ksh\\\"\\\n    ,\\n  \\\"/usr/bin/tcsh\\\",\\n  \\\"\
+        /usr/lib/initramfs-tools/bin/busybox\\\",\\n  \\\"/bin/busybox\\\"\\\n   \
+        \ ,\\n  \\\"/usr/bin/fish\\\",\\n  \\\"/bin/ksh93\\\",\\n  \\\"/bin/rksh\\\
+        \", \\\"/bin/rksh93\\\",\\n\\\n    \\  \\\"/bin/lksh\\\",\\n  \\\"/bin/mksh\\\
+        \", \\\"/bin/mksh-static\\\",\\n  \\\"/usr/bin/csharp\\\"\\\n    ,\\n  \\\"\
+        /bin/posh\\\",\\n  \\\"/usr/bin/rc\\\",\\n  \\\"/bin/sash\\\",\\n  \\\"/usr/bin/yash\\\
+        \"\\\n    ,\\n  \\\"/bin/zsh5\\\", \\\"/bin/zsh5-static\\\" ] ||\\n exec.file.path\
+        \ in [\\\"/usr/bin/wget\\\"\\\n    , \\\"/usr/bin/curl\\\"] ||\\n exec.file.path\
+        \ in [\\\"/bin/cat\\\",\\\"/bin/chgrp\\\",\\\"/bin/chmod\\\"\\\n    ,\\\"\
+        /bin/chown\\\",\\\"/bin/cp\\\",\\\"/bin/date\\\",\\\"/bin/dd\\\",\\\"/bin/df\\\
+        \",\\\"/bin/dir\\\"\\\n    ,\\\"/bin/echo\\\",\\\"/bin/ln\\\",\\\"/bin/ls\\\
+        \",\\\"/bin/mkdir\\\",\\\"/bin/mknod\\\",\\\"/bin/mktemp\\\"\\\n    ,\\\"\
+        /bin/mv\\\",\\\"/bin/pwd\\\",\\\"/bin/readlink\\\",\\\"/bin/rm\\\",\\\"/bin/rmdir\\\
+        \",\\\"/bin/sleep\\\"\\\n    ,\\\"/bin/stty\\\",\\\"/bin/sync\\\",\\\"/bin/touch\\\
+        \",\\\"/bin/uname\\\",\\\"/bin/vdir\\\",\\\"/usr/bin/arch\\\"\\\n    ,\\\"\
+        /usr/bin/b2sum\\\",\\\"/usr/bin/base32\\\",\\\"/usr/bin/base64\\\",\\\"/usr/bin/basename\\\
+        \"\\\n    ,\\\"/usr/bin/chcon\\\",\\\"/usr/bin/cksum\\\",\\\"/usr/bin/comm\\\
         \",\\\"/usr/bin/csplit\\\",\\\"\\\n    /usr/bin/cut\\\",\\\"/usr/bin/dircolors\\\
         \",\\\"/usr/bin/dirname\\\",\\\"/usr/bin/du\\\",\\\"\\\n    /usr/bin/env\\\
         \",\\\"/usr/bin/expand\\\",\\\"/usr/bin/expr\\\",\\\"/usr/bin/factor\\\",\\\
@@ -169,29 +157,37 @@ interactions:
         \",\\\"/usr/bin/unlink\\\"\\\n    ,\\\"/usr/bin/users\\\",\\\"/usr/bin/wc\\\
         \",\\\"/usr/bin/who\\\",\\\"/usr/bin/whoami\\\",\\\"/usr/sbin/chroot\\\"\\\
         \n    ]) &&\\nprocess.ancestors.file.name in [\\\"mysqld\\\", \\\"mongod\\\
-        \", \\\"postgres\\\"]\"\n- id: java_shell_execution\n  version: 24c2eb7c\n\
-        \  description: Java process spawned shell/utility\n  expression: \"(exec.file.path\
-        \ in [ \\\"/bin/dash\\\", \\\"/usr/bin/dash\\\",\\n  \\\"/bin/sh\\\"\\\n \
-        \   , \\\"/bin/static-sh\\\", \\\"/usr/bin/sh\\\",\\n  \\\"/usr/bin/bash\\\
-        \",\\n  \\\"/bin/bash-static\\\"\\\n    ,\\n  \\\"/usr/bin/zsh\\\",\\n  \\\
-        \"/usr/bin/ash\\\",\\n  \\\"/usr/bin/csh\\\",\\n  \\\"/usr/bin/ksh\\\"\\\n\
-        \    ,\\n  \\\"/usr/bin/tcsh\\\",\\n  \\\"/usr/lib/initramfs-tools/bin/busybox\\\
-        \",\\n  \\\"/bin/busybox\\\"\\\n    ,\\n  \\\"/usr/bin/fish\\\",\\n  \\\"\
-        /bin/ksh93\\\",\\n  \\\"/bin/rksh\\\", \\\"/bin/rksh93\\\",\\n\\\n    \\ \
-        \ \\\"/bin/lksh\\\",\\n  \\\"/bin/mksh\\\", \\\"/bin/mksh-static\\\",\\n \
-        \ \\\"/usr/bin/csharp\\\"\\\n    ,\\n  \\\"/bin/posh\\\",\\n  \\\"/usr/bin/rc\\\
-        \",\\n  \\\"/bin/sash\\\",\\n  \\\"/usr/bin/yash\\\"\\\n    ,\\n  \\\"/bin/zsh5\\\
-        \", \\\"/bin/zsh5-static\\\" ] ||\\n exec.file.path in [\\\"/usr/bin/wget\\\
-        \"\\\n    , \\\"/usr/bin/curl\\\"] ||\\n exec.file.path in [\\\"/bin/cat\\\
-        \",\\\"/bin/chgrp\\\",\\\"/bin/chmod\\\"\\\n    ,\\\"/bin/chown\\\",\\\"/bin/cp\\\
-        \",\\\"/bin/date\\\",\\\"/bin/dd\\\",\\\"/bin/df\\\",\\\"/bin/dir\\\"\\\n\
-        \    ,\\\"/bin/echo\\\",\\\"/bin/ln\\\",\\\"/bin/ls\\\",\\\"/bin/mkdir\\\"\
-        ,\\\"/bin/mknod\\\",\\\"/bin/mktemp\\\"\\\n    ,\\\"/bin/mv\\\",\\\"/bin/pwd\\\
-        \",\\\"/bin/readlink\\\",\\\"/bin/rm\\\",\\\"/bin/rmdir\\\",\\\"/bin/sleep\\\
-        \"\\\n    ,\\\"/bin/stty\\\",\\\"/bin/sync\\\",\\\"/bin/touch\\\",\\\"/bin/uname\\\
-        \",\\\"/bin/vdir\\\",\\\"/usr/bin/arch\\\"\\\n    ,\\\"/usr/bin/b2sum\\\"\
-        ,\\\"/usr/bin/base32\\\",\\\"/usr/bin/base64\\\",\\\"/usr/bin/basename\\\"\
-        \\\n    ,\\\"/usr/bin/chcon\\\",\\\"/usr/bin/cksum\\\",\\\"/usr/bin/comm\\\
+        \", \\\"postgres\\\"] &&\\n\\\n    !(process.ancestors.file.name == \\\"initdb\\\
+        \" &&\\nexec.args == ~\\\"*locale -a*\\\")\"\n- id: dirty_pipe_attempt\n \
+        \ version: 8814807c\n  description: Potential Dirty pipe exploitation attempt\n\
+        \  expression: (splice.pipe_entry_flag & PIPE_BUF_FLAG_CAN_MERGE) != 0 &&\
+        \ (splice.pipe_exit_flag\n    & PIPE_BUF_FLAG_CAN_MERGE) == 0\n- id: dirty_pipe_exploitation\n\
+        \  version: 9bcacfe3\n  description: Potential Dirty pipe exploitation\n \
+        \ expression: (splice.pipe_exit_flag & PIPE_BUF_FLAG_CAN_MERGE) > 0\n- id:\
+        \ example_agent_rule\n  version: 28ba1078\n  description: An example agent\
+        \ rule generated in terraform\n  expression: exec.file.name == \"java\"\n\
+        - id: java_shell_execution\n  version: 24c2eb7c\n  description: Java process\
+        \ spawned shell/utility\n  expression: \"(exec.file.path in [ \\\"/bin/dash\\\
+        \", \\\"/usr/bin/dash\\\",\\n  \\\"/bin/sh\\\"\\\n    , \\\"/bin/static-sh\\\
+        \", \\\"/usr/bin/sh\\\",\\n  \\\"/usr/bin/bash\\\",\\n  \\\"/bin/bash-static\\\
+        \"\\\n    ,\\n  \\\"/usr/bin/zsh\\\",\\n  \\\"/usr/bin/ash\\\",\\n  \\\"/usr/bin/csh\\\
+        \",\\n  \\\"/usr/bin/ksh\\\"\\\n    ,\\n  \\\"/usr/bin/tcsh\\\",\\n  \\\"\
+        /usr/lib/initramfs-tools/bin/busybox\\\",\\n  \\\"/bin/busybox\\\"\\\n   \
+        \ ,\\n  \\\"/usr/bin/fish\\\",\\n  \\\"/bin/ksh93\\\",\\n  \\\"/bin/rksh\\\
+        \", \\\"/bin/rksh93\\\",\\n\\\n    \\  \\\"/bin/lksh\\\",\\n  \\\"/bin/mksh\\\
+        \", \\\"/bin/mksh-static\\\",\\n  \\\"/usr/bin/csharp\\\"\\\n    ,\\n  \\\"\
+        /bin/posh\\\",\\n  \\\"/usr/bin/rc\\\",\\n  \\\"/bin/sash\\\",\\n  \\\"/usr/bin/yash\\\
+        \"\\\n    ,\\n  \\\"/bin/zsh5\\\", \\\"/bin/zsh5-static\\\" ] ||\\n exec.file.path\
+        \ in [\\\"/usr/bin/wget\\\"\\\n    , \\\"/usr/bin/curl\\\"] ||\\n exec.file.path\
+        \ in [\\\"/bin/cat\\\",\\\"/bin/chgrp\\\",\\\"/bin/chmod\\\"\\\n    ,\\\"\
+        /bin/chown\\\",\\\"/bin/cp\\\",\\\"/bin/date\\\",\\\"/bin/dd\\\",\\\"/bin/df\\\
+        \",\\\"/bin/dir\\\"\\\n    ,\\\"/bin/echo\\\",\\\"/bin/ln\\\",\\\"/bin/ls\\\
+        \",\\\"/bin/mkdir\\\",\\\"/bin/mknod\\\",\\\"/bin/mktemp\\\"\\\n    ,\\\"\
+        /bin/mv\\\",\\\"/bin/pwd\\\",\\\"/bin/readlink\\\",\\\"/bin/rm\\\",\\\"/bin/rmdir\\\
+        \",\\\"/bin/sleep\\\"\\\n    ,\\\"/bin/stty\\\",\\\"/bin/sync\\\",\\\"/bin/touch\\\
+        \",\\\"/bin/uname\\\",\\\"/bin/vdir\\\",\\\"/usr/bin/arch\\\"\\\n    ,\\\"\
+        /usr/bin/b2sum\\\",\\\"/usr/bin/base32\\\",\\\"/usr/bin/base64\\\",\\\"/usr/bin/basename\\\
+        \"\\\n    ,\\\"/usr/bin/chcon\\\",\\\"/usr/bin/cksum\\\",\\\"/usr/bin/comm\\\
         \",\\\"/usr/bin/csplit\\\",\\\"\\\n    /usr/bin/cut\\\",\\\"/usr/bin/dircolors\\\
         \",\\\"/usr/bin/dirname\\\",\\\"/usr/bin/du\\\",\\\"\\\n    /usr/bin/env\\\
         \",\\\"/usr/bin/expand\\\",\\\"/usr/bin/expr\\\",\\\"/usr/bin/factor\\\",\\\
@@ -246,9 +242,18 @@ interactions:
         \n    \\ not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
         \", \\\"\\\n    /usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"\
         /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"\\\n    ] && process.ancestors.file.path\
-        \ != \\\"/usr/bin/kmod\\\"\\n)\"\n- id: kernel_module_open\n  version: 55f9569\n\
-        \  description: A kernel module was added to /lib/modules/\n  expression:\
-        \ \"(\\n    open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY) > 0 &&\\n    (open.file.path\\\
+        \ != \\\"/usr/bin/kmod\\\"\\n)\"\n- id: kernel_module_load\n  version: 904592b4\n\
+        \  description: A kernel module was loaded\n  expression: load_module.name\
+        \ != \"\"\n- id: kernel_module_load_container\n  version: 139b666a\n  description:\
+        \ A container loaded a new kernel module\n  expression: load_module.name !=\
+        \ \"\" && container.id !=\"\"\n- id: kernel_module_load_from_memory\n  version:\
+        \ 78122acd\n  description: A kernel module was loaded from memory\n  expression:\
+        \ load_module.loaded_from_memory == true\n- id: kernel_module_load_from_memory_container\n\
+        \  version: a277c753\n  description: A kernel module was loaded from memory\
+        \ inside a container\n  expression: load_module.loaded_from_memory == true\
+        \ && container.id !=\"\"\n- id: kernel_module_open\n  version: 55f9569\n \
+        \ description: A kernel module was added to /lib/modules/\n  expression: \"\
+        (\\n    open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY) > 0 &&\\n    (open.file.path\\\
         \n    \\ in [ ~\\\"/lib/modules/*\\\", ~\\\"/usr/lib/modules/*\\\" ])\\n \
         \   && process.file.path\\\n    \\ not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\
         \", \\\"/usr/bin/apt-config\\\", \\\"\\\n    /usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\
@@ -288,21 +293,32 @@ interactions:
         , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\", \\\"\\\n    /usr/bin/dpkg\\\
         \", \\\"/usr/bin/aptitude-curses\\\", \\\"/usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
         \"\\\n    ] && process.ancestors.file.path != \\\"/usr/bin/kmod\\\"\\n)\"\n\
-        - id: net_util\n  version: c3f2117b\n  description: Network utility executed\n\
-        \  expression: \"(exec.file.path in [\\\"/usr/bin/socat\\\", \\\"/usr/bin/dig\\\
-        \", \\\"/usr/bin/nslookup\\\"\\\n    , \\\"/usr/bin/netcat\\\", \\\"/usr/bin/nc\\\
-        \"] ||\\n exec.file.path in [\\\"/usr/bin/wget\\\"\\\n    , \\\"/usr/bin/curl\\\
-        \"]) &&\\ncontainer.id == \\\"\\\" && (exec.args not in [ ~\\\"*localhost*\\\
-        \"\\\n    , ~\\\"*127.0.0.1*\\\", ~\\\"*motd.ubuntu.com*\\\" ] || process.ancestors.comm\
-        \ != \\\"50-motd-news\\\"\\\n    )\"\n- id: net_util_in_container\n  version:\
-        \ 69e03ac1\n  description: Network utility executed in container\n  expression:\
-        \ \"(exec.file.path in [\\\"/usr/bin/socat\\\", \\\"/usr/bin/dig\\\", \\\"\
-        /usr/bin/nslookup\\\"\\\n    , \\\"/usr/bin/netcat\\\", \\\"/usr/bin/nc\\\"\
-        ] ||\\n exec.file.path in [\\\"/usr/bin/wget\\\"\\\n    , \\\"/usr/bin/curl\\\
-        \"]) &&\\ncontainer.id != \\\"\\\" && (exec.args not in [ ~\\\"*localhost*\\\
-        \"\\\n    , ~\\\"*127.0.0.1*\\\", ~\\\"*motd.ubuntu.com*\\\" ] || process.ancestors.comm\
-        \ != \\\"50-motd-news\\\"\\\n    )\"\n- id: nsswitch_conf_mod_chmod\n  version:\
-        \ d301aedf\n  description: Nsswitch Configuration Modified\n  expression:\
+        - id: net_util\n  version: fc362090\n  description: A network utility was\
+        \ executed from a suspicious location\n  expression: \"(exec.file.path in\
+        \ [\\\"/usr/bin/socat\\\", \\\"/usr/bin/dig\\\", \\\"/usr/bin/nslookup\\\"\
+        \\\n    , \\\"/usr/bin/netcat\\\", \\\"/usr/bin/nc\\\"] ||\\n exec.file.path\
+        \ in [\\\"/usr/bin/wget\\\"\\\n    , \\\"/usr/bin/curl\\\"]) &&\\ncontainer.id\
+        \ == \\\"\\\" && (exec.args not in [ ~\\\"*localhost*\\\"\\\n    , ~\\\"*127.0.0.1*\\\
+        \", ~\\\"*motd.ubuntu.com*\\\" ] || process.ancestors.comm != \\\"50-motd-news\\\
+        \"\\\n    ) && process.ancestors.file.path in [ ~\\\"/tmp/**\\\", ~\\\"/var/tmp/**\\\
+        \", ~\\\"/home/**\\\"\\\n    , ~\\\"/run/user/**\\\" ]\"\n- id: net_util_in_container\n\
+        \  version: 69e03ac1\n  description: A network utility was executed from a\
+        \ suspicious location in a container\n  expression: \"(exec.file.path in [\\\
+        \"/usr/bin/socat\\\", \\\"/usr/bin/dig\\\", \\\"/usr/bin/nslookup\\\"\\\n\
+        \    , \\\"/usr/bin/netcat\\\", \\\"/usr/bin/nc\\\"] ||\\n exec.file.path\
+        \ in [\\\"/usr/bin/wget\\\"\\\n    , \\\"/usr/bin/curl\\\"]) &&\\ncontainer.id\
+        \ != \\\"\\\" && (exec.args not in [ ~\\\"*localhost*\\\"\\\n    , ~\\\"*127.0.0.1*\\\
+        \", ~\\\"*motd.ubuntu.com*\\\" ] || process.ancestors.comm != \\\"50-motd-news\\\
+        \"\\\n    ) && process.ancestors.file.path in [ ~\\\"/tmp/**\\\", ~\\\"/var/tmp/**\\\
+        \", ~\\\"/home/**\\\"\\\n    , ~\\\"/run/user/**\\\" ]\"\n- id: new_binary_execution_in_container\n\
+        \  version: 9dc42e1d\n  description: A container executed a new a binary not\
+        \ found in the container image\n  expression: container.id !=\"\" && !process.file.in_upper_layer\
+        \ && process.file.modification_time\n    < 30s && exec.file.name !=\"\"\n\
+        - id: new_kernel_module_audit\n  version: 904592b4\n  description: A kernel\
+        \ module was loaded\n  expression: load_module.name != \"\"\n- id: new_kernel_module_audit_container\n\
+        \  version: 139b666a\n  description: A kernel module was loaded\n  expression:\
+        \ load_module.name != \"\" && container.id !=\"\"\n- id: nsswitch_conf_mod_chmod\n\
+        \  version: d301aedf\n  description: Nsswitch Configuration Modified\n  expression:\
         \ \"(\\n    (chmod.file.path in [ \\\"/etc/nsswitch.conf\\\" ])\\n) && chmod.mode\\\
         \n    \\ != chmod.file.mode\"\n- id: nsswitch_conf_mod_chown\n  version: '69383592'\n\
         \  description: Nsswitch Configuration Modified\n  expression: \"(\\n    (chown.file.path\
@@ -429,14 +445,15 @@ interactions:
         \"]\\n    && process.ancestors.file.path\\\n    \\ not in [\\\"/usr/bin/apt\\\
         \", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\", \\\"\\\n    /usr/bin/dpkg\\\
         \", \\\"/usr/bin/aptitude-curses\\\", \\\"/usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"\\\n    ]\\n)\"\n- id: potential_web_shell\n  version: 4a0a50e5\n  description:\
-        \ Webapp process spawned shell/utility\n  expression: \"(exec.file.path in\
-        \ [ \\\"/bin/dash\\\", \\\"/usr/bin/dash\\\",\\n  \\\"/bin/sh\\\"\\\n    ,\
-        \ \\\"/bin/static-sh\\\", \\\"/usr/bin/sh\\\",\\n  \\\"/usr/bin/bash\\\",\\\
-        n  \\\"/bin/bash-static\\\"\\\n    ,\\n  \\\"/usr/bin/zsh\\\",\\n  \\\"/usr/bin/ash\\\
-        \",\\n  \\\"/usr/bin/csh\\\",\\n  \\\"/usr/bin/ksh\\\"\\\n    ,\\n  \\\"/usr/bin/tcsh\\\
-        \",\\n  \\\"/usr/lib/initramfs-tools/bin/busybox\\\",\\n  \\\"/bin/busybox\\\
-        \"\\\n    ,\\n  \\\"/usr/bin/fish\\\",\\n  \\\"/bin/ksh93\\\",\\n  \\\"/bin/rksh\\\
+        \"\\\n    ]\\n)\"\n- id: potential_web_shell\n  version: dcaa6f4d\n  description:\
+        \ A webapp process (language engine or webserver) spawned a shell, shell\n\
+        \    utility, or HTTP utility\n  expression: \"(exec.file.path in [ \\\"/bin/dash\\\
+        \", \\\"/usr/bin/dash\\\",\\n  \\\"/bin/sh\\\"\\\n    , \\\"/bin/static-sh\\\
+        \", \\\"/usr/bin/sh\\\",\\n  \\\"/usr/bin/bash\\\",\\n  \\\"/bin/bash-static\\\
+        \"\\\n    ,\\n  \\\"/usr/bin/zsh\\\",\\n  \\\"/usr/bin/ash\\\",\\n  \\\"/usr/bin/csh\\\
+        \",\\n  \\\"/usr/bin/ksh\\\"\\\n    ,\\n  \\\"/usr/bin/tcsh\\\",\\n  \\\"\
+        /usr/lib/initramfs-tools/bin/busybox\\\",\\n  \\\"/bin/busybox\\\"\\\n   \
+        \ ,\\n  \\\"/usr/bin/fish\\\",\\n  \\\"/bin/ksh93\\\",\\n  \\\"/bin/rksh\\\
         \", \\\"/bin/rksh93\\\",\\n\\\n    \\  \\\"/bin/lksh\\\",\\n  \\\"/bin/mksh\\\
         \", \\\"/bin/mksh-static\\\",\\n  \\\"/usr/bin/csharp\\\"\\\n    ,\\n  \\\"\
         /bin/posh\\\",\\n  \\\"/usr/bin/rc\\\",\\n  \\\"/bin/sash\\\",\\n  \\\"/usr/bin/yash\\\
@@ -474,9 +491,18 @@ interactions:
         \",\\\"/usr/bin/unlink\\\"\\\n    ,\\\"/usr/bin/users\\\",\\\"/usr/bin/wc\\\
         \",\\\"/usr/bin/who\\\",\\\"/usr/bin/whoami\\\",\\\"/usr/sbin/chroot\\\"\\\
         \n    ]) &&\\n(process.ancestors.file.name in [~\\\"python2*\\\", ~\\\"python3*\\\
-        \", \\\"node\\\"\\\n    , \\\"apache2\\\", \\\"nginx\\\"] || process.ancestors.file.name\
-        \ =~ \\\"php*\\\") &&\\nprocess.ancestors.comm\\\n    \\ not in [\\\"pip3\\\
-        \", \\\"pip\\\", \\\"npm\\\"]\"\n- id: runc_modification\n  version: c7144439\n\
+        \", \\\"node\\\"\\\n    , \\\"apache2\\\", \\\"nginx\\\", ~\\\"tomcat*\\\"\
+        ] || process.ancestors.file.name =~ \\\"php*\\\"\\\n    ) &&\\nprocess.ancestors.comm\
+        \ not in [\\\"pip3\\\", \\\"pip\\\", \\\"npm\\\"]\"\n- id: ptrace_antidebug\n\
+        \  version: a6289ff7\n  description: A process uses an anti-debugging technique\
+        \ to block debuggers\n  expression: ptrace.request == PTRACE_TRACEME\n- id:\
+        \ ptrace_injection\n  version: 6d290a43\n  description: A process attempted\
+        \ to inject code into another process\n  expression: ptrace.request == PTRACE_POKETEXT\
+        \ || ptrace.request == PTRACE_POKEDATA\n    || ptrace.request == PTRACE_POKEUSR\n\
+        - id: pwnkit_privilege_escalation\n  version: c83bbabc\n  description: A process\
+        \ was spawned with indicators of exploitation of CVE-2021-4034\n  expression:\
+        \ (exec.file.path == \"/usr/bin/pkexec\" && exec.envs in [~\"*SHELL*\", ~\"\
+        *PATH*\"]\n    && exec.uid != 0)\n- id: runc_modification\n  version: c7144439\n\
         \  description: Runc Binary Modified\n  expression: 'open.file.path in [\"\
         /usr/bin/runc\", \"/usr/sbin/runc\", \"/usr/bin/docker-runc\"]\n\n    && open.flags\
         \ & O_CREAT|O_TRUNC|O_RDWR|O_WRONLY > 0\n\n    && process.file.path not in\
@@ -553,11 +579,10 @@ interactions:
         /usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\", \\\
         \"\\\n    /usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"/usr/bin/rpm\\\
         \", \\\"/usr/bin/unattended-upgrade\\\"\\\n    ]\\n)\"\n- id: suspicious_container_client\n\
-        \  version: 8b9461f4\n  description: Container management utility in container\n\
-        \  expression: \"exec.file.path in [\\\"/usr/bin/docker\\\", \\\"/usr/local/bin/docker\\\
-        \",\\n\\\n    \\ \\\"/usr/bin/kubectl\\\", \\\"/usr/local/bin/kubectl\\\"\
-        ] && container.id != \\\"\\\"\"\n- id: systemd_modification_chmod\n  version:\
-        \ b0643139\n  description: Systemd Modification\n  expression: \"(\\n    (chmod.file.path\
+        \  version: 8b9461f4\n  description: A container management utility was executed\
+        \ in a container\n  expression: exec.file.name in [\"docker\", \"kubectl\"\
+        ] && container.id != \"\"\n- id: systemd_modification_chmod\n  version: b0643139\n\
+        \  description: Systemd Modification\n  expression: \"(\\n    (chmod.file.path\
         \ in [ ~\\\"/lib/systemd/system/*\\\", ~\\\"/usr/lib/systemd/system/*\\\"\\\
         \n    , ~\\\"/etc/systemd/system/*\\\" ])\\n    && process.file.path not in\
         \ [\\\"/usr/bin/apt\\\"\\\n    , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
@@ -606,9 +631,189 @@ interactions:
         \"\\\n    , ~\\\"/etc/systemd/system/*\\\" ])\\n    && process.file.path not\
         \ in [\\\"/usr/bin/apt\\\"\\\n    , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
         \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\"\\\n    , \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n)\"\n- id: user_created_tty\n\
-        \  version: 5b5f4a52\n  description: User Created Interactively\n  expression:\
-        \ exec.file.name in [\"useradd\", \"newusers\"] && exec.tty_name !=\"\"\n"
+        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n)\"\n- id: testtypescriptcreateacloudworkloadsecurityagentrulereturnsokresponse1651997883\n\
+        \  version: f43786f8\n  description: Test Agent rule\n  expression: exec.file.name\
+        \ == \"sh\"\n- id: testtypescriptdeleteacloudworkloadsecurityagentrulereturnsokresponse1651997884\n\
+        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
+        \ == \"sh\"\n- id: testtypescriptgetacloudworkloadsecurityagentrulereturnsokresponse1651997885\n\
+        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
+        \ == \"sh\"\n- id: testtypescriptgetallcloudworkloadsecurityagentrulesreturnsokresponse1651867149\n\
+        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
+        \ == \"sh\"\n- id: testtypescriptgetallcloudworkloadsecurityagentrulesreturnsokresponse1651912469\n\
+        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
+        \ == \"sh\"\n- id: testtypescriptgetallcloudworkloadsecurityagentrulesreturnsokresponse1651915814\n\
+        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
+        \ == \"sh\"\n- id: testtypescriptgetallcloudworkloadsecurityagentrulesreturnsokresponse1651943471\n\
+        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
+        \ == \"sh\"\n- id: testtypescriptgetallcloudworkloadsecurityagentrulesreturnsokresponse1651997885\n\
+        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
+        \ == \"sh\"\n- id: testtypescriptgetallcloudworkloadsecurityagentrulesreturnsokresponse1652008845\n\
+        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
+        \ == \"sh\"\n- id: testtypescriptupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1651997886\n\
+        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
+        \ == \"sh\"\n- id: testtypescriptupdateacloudworkloadsecurityagentrulereturnsokresponse1651997887\n\
+        \  version: f43786f8\n  description: Test Agent rule\n  expression: exec.file.name\
+        \ == \"sh\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643386657\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643386695\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643386742\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643386809\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643386858\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643386909\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643387039\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643387090\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643387148\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643387484\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643387531\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643387579\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388161\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388208\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388257\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388666\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388726\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388847\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388890\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388939\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389111\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389165\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389210\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389339\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389389\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389484\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389530\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389627\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389685\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389756\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389931\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389977\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643390108\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643390130\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643390151\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643391687\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643391707\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643391729\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643391983\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392003\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392026\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392419\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392438\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392458\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392885\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392903\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392923\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643386718\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643386786\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643386831\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643386882\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643387014\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643387063\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643387120\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643387461\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643387505\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643387554\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643387992\n\
+        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643388137\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643388182\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643388230\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643388700\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643388825\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643388866\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643388912\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389088\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389136\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389186\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389317\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389363\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389411\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389460\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389507\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389553\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389911\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389955\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643390389\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643390410\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643390432\n\
+        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
+        \ == \"go\"\n- id: user_created_tty\n  version: 5b5f4a52\n  description: User\
+        \ Created Interactively\n  expression: exec.file.name in [\"useradd\", \"\
+        newusers\"] && exec.tty_name !=\"\"\n"
     headers:
       content-type:
       - application/yaml
