@@ -98,6 +98,23 @@ async def main():
 asyncio.run(main())
 ```
 
+### Pagination
+
+Several listing operations have a pagination method to help consume all the items available.
+For examples, to retrieve all your incidents:
+
+```python
+from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client.v2.api.incidents_api import IncidentsApi
+
+configuration = Configuration()
+configuration.unstable_operations["list_incidents"] = True
+with ApiClient(configuration) as api_client:
+    api_instance = IncidentsApi(api_client)
+    for incident in api_instance.list_incidents_with_pagination():
+        print(incident.id)
+```
+
 ## Documentation for API Endpoints and Models
 
 Documentation for API endpoints and models are available on [readthedocs](https://datadog-api-client.readthedocs.io/).
