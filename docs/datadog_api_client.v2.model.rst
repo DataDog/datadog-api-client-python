@@ -1993,6 +1993,46 @@ metric\_distinct\_volume\_type
    :undoc-members:
    :show-inheritance:
 
+metric\_estimate
+----------------
+
+.. automodule:: datadog_api_client.v2.model.metric_estimate
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_estimate\_attributes
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_estimate_attributes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_estimate\_resource\_type
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_estimate_resource_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_estimate\_response
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_estimate_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_estimate\_type
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_estimate_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 metric\_ingested\_indexed\_volume
 ---------------------------------
 
