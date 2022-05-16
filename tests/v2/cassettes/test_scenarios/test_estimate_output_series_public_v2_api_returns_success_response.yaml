@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/metrics/system.cpu.idle/estimate?filter%5Bgroups%5D=app%2Chost&filter%5Bnum_aggregations%5D=4
+  response:
+    body:
+      string: '{"data":{"attributes":{"estimated_output_series":68,"estimate_type":"count_or_gauge","estimated_at":"2022-05-14T09:31:28.108179Z"},"type":"metric_cardinality_estimate","id":"system.cpu.idle"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

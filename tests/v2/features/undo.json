@@ -366,6 +366,12 @@
       "type": "safe"
     }
   },
+  "EstimateMetricsOutputSeries": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteTagConfiguration": {
     "tag": "Metrics",
     "undo": {
