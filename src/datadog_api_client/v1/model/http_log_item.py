@@ -11,6 +11,10 @@ from datadog_api_client.model_utils import (
 
 class HTTPLogItem(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return (str,)
+
+    @cached_property
     def openapi_types(_):
         return {
             "ddsource": (str,),
