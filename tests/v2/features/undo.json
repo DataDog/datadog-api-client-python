@@ -660,6 +660,12 @@
       "type": "safe"
     }
   },
+  "SubmitMetrics": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateServiceAccount": {
     "tag": "Users",
     "undo": {

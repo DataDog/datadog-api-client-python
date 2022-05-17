@@ -58,7 +58,7 @@ class Series(ModelNormal):
         :param tags: A list of tags associated with the metric.
         :type tags: [str], optional
 
-        :param type: The type of the metric either `count`, `gauge`, or `rate`.
+        :param type: The type of the metric. Valid types are "",`count`, `gauge`, and `rate`.
         :type type: str, optional
         """
         super().__init__(kwargs)
