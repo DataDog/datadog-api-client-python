@@ -1,5 +1,5 @@
 """
-Estimate Output Series - Public v2 API returns "Success" response
+Tag Configuration Cardinality Estimator returns "Success" response
 """
 
 from datadog_api_client.v2 import ApiClient, Configuration
