@@ -2,7 +2,7 @@
 Delete a GCP integration returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.gcp_integration_api import GCPIntegrationApi
 from datadog_api_client.v1.model.gcp_account import GCPAccount
 

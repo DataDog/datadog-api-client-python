@@ -2,7 +2,7 @@
 Search RUM events returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_api import RUMApi
 from datadog_api_client.v2.model.rum_query_filter import RUMQueryFilter
 from datadog_api_client.v2.model.rum_query_options import RUMQueryOptions

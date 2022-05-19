@@ -3,7 +3,7 @@ Update an SLO returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.service_level_objectives_api import ServiceLevelObjectivesApi
 from datadog_api_client.v1.model.service_level_objective import ServiceLevelObjective
 from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery

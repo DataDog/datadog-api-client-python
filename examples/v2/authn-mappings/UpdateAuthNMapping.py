@@ -3,7 +3,7 @@ Edit an AuthN Mapping returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.authn_mappings_api import AuthNMappingsApi
 from datadog_api_client.v2.model.authn_mapping_update_attributes import AuthNMappingUpdateAttributes
 from datadog_api_client.v2.model.authn_mapping_update_data import AuthNMappingUpdateData

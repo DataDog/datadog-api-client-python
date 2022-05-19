@@ -2,7 +2,7 @@
 Create role returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.model.role_create_attributes import RoleCreateAttributes
 from datadog_api_client.v2.model.role_create_data import RoleCreateData

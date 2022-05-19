@@ -13,7 +13,7 @@
 {%- for package, values in context._imports.items() %}
 from {{ package }} import {{ values|sort|join(', ') }}
 {%- endfor %}
-from datadog_api_client.{{ version }} import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.{{ version }}.api.{{ context.api_instance.name|safe_snake_case }}_api import {{ context.api_instance.name }}Api
 {%- for package in imports|sort %}
 from {{ package }} import {{ imports[package]|sort|join(', ') }}

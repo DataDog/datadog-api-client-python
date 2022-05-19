@@ -3,7 +3,7 @@ Get a webhook integration returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.webhooks_integration_api import WebhooksIntegrationApi
 
 # there is a valid "webhook" in the system

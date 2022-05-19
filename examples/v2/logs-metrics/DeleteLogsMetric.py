@@ -3,7 +3,7 @@ Delete a log-based metric returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.logs_metrics_api import LogsMetricsApi
 
 # there is a valid "logs_metric" in the system

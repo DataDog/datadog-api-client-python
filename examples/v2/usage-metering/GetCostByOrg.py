@@ -4,7 +4,7 @@ Get Cost Across Multi-Org Account returns "OK" response
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
 
 configuration = Configuration()

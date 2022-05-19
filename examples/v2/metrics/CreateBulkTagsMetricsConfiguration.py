@@ -3,7 +3,7 @@ Configure tags for multiple metrics returns "Accepted" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.model.metric_bulk_configure_tags_type import MetricBulkConfigureTagsType
 from datadog_api_client.v2.model.metric_bulk_tag_config_create import MetricBulkTagConfigCreate

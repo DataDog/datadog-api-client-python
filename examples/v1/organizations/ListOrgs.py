@@ -2,7 +2,7 @@
 List your managed organizations returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.organizations_api import OrganizationsApi
 
 configuration = Configuration()
