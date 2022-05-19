@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Create_a_ci_tests_formula_and_functions_monitor_returns_OK_response-1652438435","options":{"thresholds":{"critical":0.8},"variables":[{"compute":{"aggregation":"count"},"data_source":"ci_tests","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"@test.status:fail"}},{"compute":{"aggregation":"count"},"data_source":"ci_tests","group_by":[],"indexes":["*"],"name":"query2","search":{"query":""}}]},"priority":3,"query":"formula(\"query1
+      / query2 * 100\").last(\"15m\") >= 0.8","tags":["test:testcreateacitestsformulaandfunctionsmonitorreturnsokresponse1652438435","env:ci"],"type":"ci-tests
+      alert"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/monitor
+  response:
+    body:
+      string: '{"restricted_roles":null,"tags":["test:testcreateacitestsformulaandfunctionsmonitorreturnsokresponse1652438435","env:ci"],"deleted":null,"query":"formula(\"query1
+        / query2 * 100\").last(\"15m\") >= 0.8","message":"some message Notify: @hipchat-channel","id":71427772,"multi":false,"name":"Test-Create_a_ci_tests_formula_and_functions_monitor_returns_OK_response-1652438435","created":"2022-05-13T10:40:35.341131+00:00","created_at":1652438435000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2022-05-13T10:40:35.341131+00:00","priority":3,"overall_state_modified":null,"overall_state":"No
+        Data","type":"ci-tests alert","options":{"notify_audit":false,"silenced":{},"include_tags":true,"thresholds":{"critical":0.8},"new_host_delay":300,"notify_no_data":false,"groupby_simple_monitor":false,"variables":[{"search":{"query":"@test.status:fail"},"data_source":"ci_tests","compute":{"aggregation":"count"},"name":"query1","indexes":["*"],"group_by":[]},{"search":{"query":""},"data_source":"ci_tests","compute":{"aggregation":"count"},"name":"query2","indexes":["*"],"group_by":[]}]}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/monitor/71427772
+  response:
+    body:
+      string: '{"deleted_monitor_id":71427772}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
