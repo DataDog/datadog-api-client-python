@@ -9,6 +9,7 @@ from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasi
 from datadog_api_client.v1.model.synthetics_basic_auth_web_type import SyntheticsBasicAuthWebType
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
 from datadog_api_client.v1.model.synthetics_browser_test_config import SyntheticsBrowserTestConfig
+from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
 from datadog_api_client.v1.model.synthetics_browser_test_type import SyntheticsBrowserTestType
 from datadog_api_client.v1.model.synthetics_browser_variable import SyntheticsBrowserVariable
 from datadog_api_client.v1.model.synthetics_browser_variable_type import SyntheticsBrowserVariableType
@@ -75,6 +76,11 @@ body = SyntheticsBrowserTest(
             ]
         ),
         retry=SyntheticsTestOptionsRetry(),
+        rum_settings=SyntheticsBrowserTestRumSettings(
+            application_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            client_token_id=12345,
+            is_enabled=True,
+        ),
     ),
     status=SyntheticsTestPauseStatus("live"),
     steps=[

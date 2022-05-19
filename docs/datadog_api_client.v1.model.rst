@@ -3689,6 +3689,14 @@ synthetics\_browser\_test\_result\_short\_result
    :undoc-members:
    :show-inheritance:
 
+synthetics\_browser\_test\_rum\_settings
+----------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_browser_test_rum_settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 synthetics\_browser\_test\_type
 -------------------------------
 
