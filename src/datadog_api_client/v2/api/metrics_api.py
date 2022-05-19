@@ -539,9 +539,9 @@ class MetricsApi:
         return self._delete_tag_configuration_endpoint.call_with_http_info(**kwargs)
 
     def estimate_metrics_output_series(self, metric_name, **kwargs):
-        """Estimate Output Series - Public v2 API.
+        """Tag Configuration Cardinality Estimator.
 
-        Returns a cardinality estimate for a metric with a given tag, percentile, and number of aggregations configuration.
+        Returns the estimated cardinality for a metric with a given tag, percentile and number of aggregations configuration using Metrics without Limits&trade;.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -551,7 +551,7 @@ class MetricsApi:
 
         :param metric_name: The name of the metric.
         :type metric_name: str
-        :param filter_groups: Filtered tag groups that the metric is configured to query with.
+        :param filter_groups: Filtered tag keys that the metric is configured to query with.
         :type filter_groups: str, optional
         :param filter_hours_ago: The number of hours of look back (from now) to estimate cardinality with.
         :type filter_hours_ago: int, optional
