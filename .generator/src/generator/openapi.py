@@ -152,7 +152,7 @@ def child_models(schema, alternative_name=None, seen=None):
             return
 
         if name is None:
-            raise ValueError(f"Schema {schema} has no name")
+            return
 
         if name in seen:
             return
