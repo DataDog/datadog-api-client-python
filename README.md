@@ -101,10 +101,10 @@ asyncio.run(main())
 ### Pagination
 
 Several listing operations have a pagination method to help consume all the items available.
-For examples, to retrieve all your incidents:
+For example, to retrieve all your incidents:
 
 ```python
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.incidents_api import IncidentsApi
 
 configuration = Configuration()
