@@ -2,7 +2,7 @@
 Get the list of available daily custom reports returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.usage_metering_api import UsageMeteringApi
 
 configuration = Configuration()

@@ -2,7 +2,7 @@
 Bulk Delete SLO Timeframes returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.service_level_objectives_api import ServiceLevelObjectivesApi
 from datadog_api_client.v1.model.slo_bulk_delete import SLOBulkDelete
 from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe

@@ -2,7 +2,7 @@
 Update a Slack integration channel returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.slack_integration_api import SlackIntegrationApi
 from datadog_api_client.v1.model.slack_integration_channel import SlackIntegrationChannel
 from datadog_api_client.v1.model.slack_integration_channel_display import SlackIntegrationChannelDisplay

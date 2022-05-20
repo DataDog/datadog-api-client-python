@@ -2,7 +2,7 @@
 Check that an AWS Lambda Function exists returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.aws_logs_integration_api import AWSLogsIntegrationApi
 from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccountAndLambdaRequest
 

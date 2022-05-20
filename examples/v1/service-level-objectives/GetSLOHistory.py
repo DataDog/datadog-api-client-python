@@ -5,7 +5,7 @@ Get an SLO's history returns "OK" response
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.service_level_objectives_api import ServiceLevelObjectivesApi
 
 # there is a valid "slo" in the system

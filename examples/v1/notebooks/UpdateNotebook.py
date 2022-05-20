@@ -3,7 +3,7 @@ Update a notebook returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.notebooks_api import NotebooksApi
 from datadog_api_client.v1.model.notebook_cell_create_request import NotebookCellCreateRequest
 from datadog_api_client.v1.model.notebook_cell_resource_type import NotebookCellResourceType

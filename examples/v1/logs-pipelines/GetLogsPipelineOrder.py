@@ -2,7 +2,7 @@
 Get pipeline order returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.logs_pipelines_api import LogsPipelinesApi
 
 configuration = Configuration()

@@ -2,7 +2,7 @@
 Get all notebooks returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.notebooks_api import NotebooksApi
 
 configuration = Configuration()

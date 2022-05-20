@@ -3,7 +3,7 @@ Create a new role by cloning an existing role returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.model.role_clone import RoleClone
 from datadog_api_client.v2.model.role_clone_attributes import RoleCloneAttributes

@@ -2,7 +2,7 @@
 Create an API test with multi subtype returns "OK - Returns the created test details." response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v1.model.http_method import HTTPMethod
 from datadog_api_client.v1.model.synthetics_api_step import SyntheticsAPIStep

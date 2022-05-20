@@ -2,7 +2,7 @@
 Check if SLOs can be safely deleted returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.service_level_objectives_api import ServiceLevelObjectivesApi
 
 configuration = Configuration()
