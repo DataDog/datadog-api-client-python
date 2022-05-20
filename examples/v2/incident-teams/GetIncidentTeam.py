@@ -3,7 +3,7 @@ Get details of an incident team returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.incident_teams_api import IncidentTeamsApi
 
 # there is a valid "team" in the system

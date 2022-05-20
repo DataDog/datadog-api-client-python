@@ -2,7 +2,7 @@
 Get user details returns "OK for get user" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.users_api import UsersApi
 
 configuration = Configuration()

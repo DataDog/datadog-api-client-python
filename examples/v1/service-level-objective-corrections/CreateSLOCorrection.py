@@ -5,7 +5,7 @@ Create an SLO correction returns "OK" response
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.service_level_objective_corrections_api import ServiceLevelObjectiveCorrectionsApi
 from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
 from datadog_api_client.v1.model.slo_correction_create_data import SLOCorrectionCreateData

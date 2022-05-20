@@ -2,7 +2,7 @@
 Create a new incident service returns "CREATED" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.incident_services_api import IncidentServicesApi
 from datadog_api_client.v2.model.incident_service_create_attributes import IncidentServiceCreateAttributes
 from datadog_api_client.v2.model.incident_service_create_data import IncidentServiceCreateData

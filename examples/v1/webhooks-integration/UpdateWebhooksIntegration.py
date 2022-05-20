@@ -3,7 +3,7 @@ Update a webhook returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.webhooks_integration_api import WebhooksIntegrationApi
 from datadog_api_client.v1.model.webhooks_integration_update_request import WebhooksIntegrationUpdateRequest
 

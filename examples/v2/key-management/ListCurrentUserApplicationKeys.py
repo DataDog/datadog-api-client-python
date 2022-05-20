@@ -2,7 +2,7 @@
 Get all application keys owned by current user returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.key_management_api import KeyManagementApi
 
 configuration = Configuration()

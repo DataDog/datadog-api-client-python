@@ -2,7 +2,7 @@
 Get the list of all tests returns "OK - Returns the list of all Synthetic tests." response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 
 configuration = Configuration()

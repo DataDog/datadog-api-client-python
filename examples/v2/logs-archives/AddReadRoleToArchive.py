@@ -2,7 +2,7 @@
 Grant role to an archive returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.logs_archives_api import LogsArchivesApi
 from datadog_api_client.v2.model.relationship_to_role import RelationshipToRole
 from datadog_api_client.v2.model.relationship_to_role_data import RelationshipToRoleData

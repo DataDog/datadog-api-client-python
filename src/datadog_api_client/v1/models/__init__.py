@@ -515,6 +515,7 @@ from datadog_api_client.v1.model.synthetics_browser_test_result_short import Syn
 from datadog_api_client.v1.model.synthetics_browser_test_result_short_result import (
     SyntheticsBrowserTestResultShortResult,
 )
+from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
 from datadog_api_client.v1.model.synthetics_browser_test_type import SyntheticsBrowserTestType
 from datadog_api_client.v1.model.synthetics_browser_variable import SyntheticsBrowserVariable
 from datadog_api_client.v1.model.synthetics_browser_variable_type import SyntheticsBrowserVariableType

@@ -2,7 +2,7 @@
 Create a new incident team returns "CREATED" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.incident_teams_api import IncidentTeamsApi
 from datadog_api_client.v2.model.incident_team_create_attributes import IncidentTeamCreateAttributes
 from datadog_api_client.v2.model.incident_team_create_data import IncidentTeamCreateData

@@ -2,7 +2,7 @@
 Delete an application key for this service account returns "No Content" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
 
 configuration = Configuration()

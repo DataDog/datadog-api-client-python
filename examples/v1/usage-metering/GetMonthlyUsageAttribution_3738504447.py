@@ -5,7 +5,7 @@ Paginate Monthly Usage Attribution
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.usage_metering_api import UsageMeteringApi
 from datadog_api_client.v1.model.monthly_usage_attribution_supported_metrics import (
     MonthlyUsageAttributionSupportedMetrics,

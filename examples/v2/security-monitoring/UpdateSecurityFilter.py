@@ -3,7 +3,7 @@ Update a security filter returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
 from datadog_api_client.v2.model.security_filter_type import SecurityFilterType

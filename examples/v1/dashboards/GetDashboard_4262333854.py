@@ -3,7 +3,7 @@ Get a dashboard returns 'author_name'
 """
 
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 
 # there is a valid "dashboard" in the system
