@@ -4,19 +4,16 @@
 
 
 from datadog_api_client.model_utils import (
-    ApiTypeError,
     ModelSimple,
     cached_property,
 )
 
 
-class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
+class MetricContentEncoding(ModelSimple):
 
     allowed_values = {
         "value": {
-            "RUM": "rum",
-            "CI_PIPELINES": "ci_pipelines",
-            "CI_TESTS": "ci_tests",
+            "DEFLATE": "deflate",
         },
     }
 
@@ -28,11 +25,11 @@ class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
 
     def __init__(self, *args, **kwargs):
         """
-        Data source for event platform-based queries.
+        HTTP header used to compress the media-type.
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["rum", "ci_pipelines", "ci_tests"].
+        :param value: If omitted defaults to "deflate". Must be one of ["deflate"].
         :type value: str
         """
         super().__init__(kwargs)
@@ -43,11 +40,7 @@ class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
             args = list(args)
             value = args.pop(0)
         else:
-            raise ApiTypeError(
-                "value is required, but not passed in args or kwargs and doesn't have default",
-                path_to_item=self._path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            value = "deflate"
 
         self._check_pos_args(args)
 

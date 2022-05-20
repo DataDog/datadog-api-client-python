@@ -10,43 +10,32 @@ from datadog_api_client.model_utils import (
 )
 
 
-class MonitorType(ModelSimple):
+class MetricIntakeType(ModelSimple):
 
     allowed_values = {
         "value": {
-            "COMPOSITE": "composite",
-            "EVENT_ALERT": "event alert",
-            "LOG_ALERT": "log alert",
-            "METRIC_ALERT": "metric alert",
-            "PROCESS_ALERT": "process alert",
-            "QUERY_ALERT": "query alert",
-            "RUM_ALERT": "rum alert",
-            "SERVICE_CHECK": "service check",
-            "SYNTHETICS_ALERT": "synthetics alert",
-            "TRACE_ANALYTICS_ALERT": "trace-analytics alert",
-            "SLO_ALERT": "slo alert",
-            "EVENT_V2_ALERT": "event-v2 alert",
-            "AUDIT_ALERT": "audit alert",
-            "CI_PIPELINES_ALERT": "ci-pipelines alert",
-            "CI_TESTS_ALERT": "ci-tests alert",
-            "ERROR_TRACKING_ALERT": "error-tracking alert",
+            "UNSPECIFIED": 0,
+            "COUNT": 1,
+            "RATE": 2,
+            "GAUGE": 3,
+            "UNSPECIFIED_LEGACY": 15,
         },
     }
 
     @cached_property
     def openapi_types(_):
         return {
-            "value": (str,),
+            "value": (int,),
         }
 
     def __init__(self, *args, **kwargs):
         """
-        The type of the monitor. For more information about `type`, see the [monitor options](https://docs.datadoghq.com/monitors/guide/monitor_api_options/) docs.
+        The type of metric.
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["composite", "event alert", "log alert", "metric alert", "process alert", "query alert", "rum alert", "service check", "synthetics alert", "trace-analytics alert", "slo alert", "event-v2 alert", "audit alert", "ci-pipelines alert", "ci-tests alert", "error-tracking alert"].
-        :type value: str
+        :param value: Must be one of [0, 1, 2, 3, 15].
+        :type value: int
         """
         super().__init__(kwargs)
 

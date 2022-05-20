@@ -4,19 +4,18 @@
 
 
 from datadog_api_client.model_utils import (
-    ApiTypeError,
     ModelSimple,
     cached_property,
 )
 
 
-class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
+class MetricEstimateType(ModelSimple):
 
     allowed_values = {
         "value": {
-            "RUM": "rum",
-            "CI_PIPELINES": "ci_pipelines",
-            "CI_TESTS": "ci_tests",
+            "COUNT_OR_GAUGE": "count_or_gauge",
+            "DISTRIBUTION": "distribution",
+            "PERCENTILE": "percentile",
         },
     }
 
@@ -28,11 +27,11 @@ class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
 
     def __init__(self, *args, **kwargs):
         """
-        Data source for event platform-based queries.
+        Estimate type based on the queried configuration. By default, `count_or_gauge` is returned. `distribution` is returned for distribution metrics without percentiles enabled. Lastly, `percentile` is returned if `filter[pct]=true` is queried with a distribution metric.
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["rum", "ci_pipelines", "ci_tests"].
+        :param value: If omitted defaults to "count_or_gauge". Must be one of ["count_or_gauge", "distribution", "percentile"].
         :type value: str
         """
         super().__init__(kwargs)
@@ -43,11 +42,7 @@ class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
             args = list(args)
             value = args.pop(0)
         else:
-            raise ApiTypeError(
-                "value is required, but not passed in args or kwargs and doesn't have default",
-                path_to_item=self._path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            value = "count_or_gauge"
 
         self._check_pos_args(args)
 

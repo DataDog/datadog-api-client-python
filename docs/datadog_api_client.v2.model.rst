@@ -1209,6 +1209,14 @@ incidents\_response
    :undoc-members:
    :show-inheritance:
 
+intake\_payload\_accepted
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.intake_payload_accepted
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 list\_application\_keys\_response
 ---------------------------------
 
@@ -1937,6 +1945,14 @@ metric\_bulk\_tag\_config\_tag\_name\_list
    :undoc-members:
    :show-inheritance:
 
+metric\_content\_encoding
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_content_encoding
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 metric\_custom\_aggregation
 ---------------------------
 
@@ -1993,6 +2009,46 @@ metric\_distinct\_volume\_type
    :undoc-members:
    :show-inheritance:
 
+metric\_estimate
+----------------
+
+.. automodule:: datadog_api_client.v2.model.metric_estimate
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_estimate\_attributes
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_estimate_attributes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_estimate\_resource\_type
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_estimate_resource_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_estimate\_response
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_estimate_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_estimate\_type
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_estimate_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 metric\_ingested\_indexed\_volume
 ---------------------------------
 
@@ -2013,6 +2069,62 @@ metric\_ingested\_indexed\_volume\_type
 ---------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.metric_ingested_indexed_volume_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_intake\_type
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_intake_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_metadata
+----------------
+
+.. automodule:: datadog_api_client.v2.model.metric_metadata
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_origin
+--------------
+
+.. automodule:: datadog_api_client.v2.model.metric_origin
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_payload
+---------------
+
+.. automodule:: datadog_api_client.v2.model.metric_payload
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_point
+-------------
+
+.. automodule:: datadog_api_client.v2.model.metric_point
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_resource
+----------------
+
+.. automodule:: datadog_api_client.v2.model.metric_resource
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+metric\_series
+--------------
+
+.. automodule:: datadog_api_client.v2.model.metric_series
    :members:
    :undoc-members:
    :show-inheritance:

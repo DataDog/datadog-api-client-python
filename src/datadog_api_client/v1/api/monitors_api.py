@@ -546,6 +546,19 @@ class MonitorsApi:
 
         **NOTE** CI Pipeline monitors are in alpha on US1, EU, US3 and US5.
 
+        **CI Tests Alert Query**
+
+        Example: `ci-tests(query).rollup(rollup_method[, measure]).last(time_window) operator #`
+
+        - **`query`** The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
+        - **`rollup_method`** The stats roll-up method - supports `count`, `avg`, and `cardinality`.
+        - **`measure`** For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
+        - **`time_window`** #m (between 1 and 2880), #h (between 1 and 48).
+        - **`operator`** `<`, `<=`, `>`, `>=`, `==`, or `!=`.
+        - **`#`** an integer or decimal number used to set the threshold.
+
+        **NOTE** CI Test monitors are available only in closed beta on US1, EU, US3 and US5.
+
         **Error Tracking Alert Query**
 
         Example(RUM): `error-tracking-rum(query).rollup(rollup_method[, measure]).last(time_window) operator #`
