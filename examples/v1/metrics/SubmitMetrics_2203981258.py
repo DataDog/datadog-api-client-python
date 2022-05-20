@@ -3,7 +3,7 @@ Submit deflate metrics returns "Payload accepted" response
 """
 
 from datetime import datetime
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.metrics_api import MetricsApi
 from datadog_api_client.v1.model.metric_content_encoding import MetricContentEncoding
 from datadog_api_client.v1.model.metrics_payload import MetricsPayload

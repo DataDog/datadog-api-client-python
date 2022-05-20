@@ -2,7 +2,7 @@
 Update your organization returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.organizations_api import OrganizationsApi
 from datadog_api_client.v1.model.access_role import AccessRole
 from datadog_api_client.v1.model.organization import Organization

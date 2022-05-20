@@ -463,15 +463,7 @@ class ApiClient(object):
         :param accepts: List of headers.
         :return: Accept (e.g. application/json).
         """
-        if not accepts:
-            return
-
-        accepts = [x.lower() for x in accepts]
-
-        if "application/json" in accepts:
-            return "application/json"
-        else:
-            return ", ".join(accepts)
+        return ", ".join(accepts)
 
     def select_header_content_type(self, content_types):
         """Returns `Content-Type` based on an array of content_types provided.

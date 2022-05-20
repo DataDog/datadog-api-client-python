@@ -2,7 +2,7 @@
 Search Audit Logs events returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.audit_api import AuditApi
 from datadog_api_client.v2.model.audit_logs_query_filter import AuditLogsQueryFilter
 from datadog_api_client.v2.model.audit_logs_query_options import AuditLogsQueryOptions

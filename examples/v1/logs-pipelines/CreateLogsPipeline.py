@@ -2,7 +2,7 @@
 Create a pipeline returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.logs_pipelines_api import LogsPipelinesApi
 from datadog_api_client.v1.model.logs_filter import LogsFilter
 from datadog_api_client.v1.model.logs_grok_parser import LogsGrokParser

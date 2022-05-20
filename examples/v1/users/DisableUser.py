@@ -2,7 +2,7 @@
 Disable a user returns "User disabled" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.users_api import UsersApi
 
 configuration = Configuration()

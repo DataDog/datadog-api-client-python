@@ -2,7 +2,7 @@
 Get a rule's details returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 
 configuration = Configuration()

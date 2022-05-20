@@ -2,7 +2,7 @@
 Get all channels in a Slack integration returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.slack_integration_api import SlackIntegrationApi
 
 configuration = Configuration()

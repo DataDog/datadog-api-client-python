@@ -3,7 +3,7 @@ Get items of a Dashboard List returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 
 # there is a valid "dashboard_list" in the system

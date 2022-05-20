@@ -2,7 +2,7 @@
 Create a security filter returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.model.security_filter_create_attributes import SecurityFilterCreateAttributes
 from datadog_api_client.v2.model.security_filter_create_data import SecurityFilterCreateData

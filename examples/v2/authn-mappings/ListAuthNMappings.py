@@ -2,7 +2,7 @@
 List all AuthN Mappings returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.authn_mappings_api import AuthNMappingsApi
 
 configuration = Configuration()

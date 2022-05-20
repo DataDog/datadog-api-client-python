@@ -3,7 +3,7 @@ Update an existing incident team returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.incident_teams_api import IncidentTeamsApi
 from datadog_api_client.v2.model.incident_team_type import IncidentTeamType
 from datadog_api_client.v2.model.incident_team_update_attributes import IncidentTeamUpdateAttributes

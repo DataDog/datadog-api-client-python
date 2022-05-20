@@ -3,7 +3,7 @@ Update an existing incident returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.incidents_api import IncidentsApi
 from datadog_api_client.v2.model.incident_field_attributes_single_value import IncidentFieldAttributesSingleValue
 from datadog_api_client.v2.model.incident_field_attributes_single_value_type import (
