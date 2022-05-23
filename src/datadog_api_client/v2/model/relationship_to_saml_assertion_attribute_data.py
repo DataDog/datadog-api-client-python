@@ -16,17 +16,11 @@ def lazy_import():
 
 
 class RelationshipToSAMLAssertionAttributeData(ModelNormal):
-    validations = {
-        "id": {
-            "inclusive_maximum": 2147483647,
-        },
-    }
-
     @cached_property
     def openapi_types(_):
         lazy_import()
         return {
-            "id": (int,),
+            "id": (str,),
             "type": (SAMLAssertionAttributesType,),
         }
 
@@ -40,7 +34,7 @@ class RelationshipToSAMLAssertionAttributeData(ModelNormal):
         Data of AuthN Mapping relationship to SAML Assertion Attribute.
 
         :param id: The ID of the SAML assertion attribute.
-        :type id: int
+        :type id: str
 
         :param type: SAML assertion attributes resource type.
         :type type: SAMLAssertionAttributesType
