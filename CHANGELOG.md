@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.12 / 2022-05-23
+
+### Fixed
+* Remove duplicated lazy imports by @therve in https://github.com/DataDog/datadog-api-client-python/pull/983
+* Remove unused pararameter from authn mapping by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/986
+### Added
+* Expose v2 usage endpoint for application security monitoring by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/978
+* Add `rehydration_max_scan_size_in_gb` field to Logs Archives by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/973
+* Add `mute_first_recovery_notification` option to downtime by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/942
+* Add lambda traced invocations usage endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/984
+* Expose new usage field for react sessions by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/987
+* Add missing option and enum value for SecurityMonitoringRule by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/993
+* Adds docs for metric estimate endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/975
+* Allow additional log attributes by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/966
+* Add v2 endpoint for submitting series by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/911
+* Add `ci-tests` monitor type by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/992
+* Add RUM settings schema to synthetics tests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1001
+* Add v1 signal triage endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/997
+### Deprecated
+* Deprecate old usage apis by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/989
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/1.11.0...1.12
+
 ## 1.11.0 / 2022-04-27
 
 ### Fixed
