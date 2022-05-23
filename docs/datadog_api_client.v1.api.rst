@@ -161,6 +161,14 @@ pager\_duty\_integration\_api
    :undoc-members:
    :show-inheritance:
 
+security\_monitoring\_api
+-------------------------
+
+.. automodule:: datadog_api_client.v1.api.security_monitoring_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 service\_checks\_api
 --------------------
 
