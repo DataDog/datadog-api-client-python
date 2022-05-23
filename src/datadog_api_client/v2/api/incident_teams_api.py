@@ -250,7 +250,7 @@ class IncidentTeamsApi:
     def get_incident_team(self, team_id, **kwargs):
         """Get details of an incident team.
 
-        Get details of an incident team. If the `include[users]` query parameter is provided,
+        Get details of an incident team. If the ``include[users]`` query parameter is provided,
         the included attribute will contain the users related to these incident teams.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -297,7 +297,7 @@ class IncidentTeamsApi:
     def list_incident_teams(self, **kwargs):
         """Get a list of all incident teams.
 
-        Get all incident teams for the requesting user's organization. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident teams.
+        Get all incident teams for the requesting user's organization. If the ``include[users]`` query parameter is provided, the included attribute will contain the users related to these incident teams.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

@@ -36,6 +36,7 @@ def cli(specs, output):
     env.filters["parameters"] = openapi.parameters
     env.filters["return_type"] = openapi.return_type
     env.filters["safe_snake_case"] = openapi.safe_snake_case
+    env.filters["docstring"] = formatter.docstring
 
     env.globals["enumerate"] = enumerate
     env.globals["package"] = PACKAGE_NAME

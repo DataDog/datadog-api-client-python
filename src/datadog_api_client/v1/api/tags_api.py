@@ -179,7 +179,7 @@ class TagsApi:
         :param body: Update host tags request body.
         :type body: HostTags
         :param source: The source of the tags.
-            [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
+            `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_.
         :type source: str, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -229,7 +229,7 @@ class TagsApi:
         :param host_name: This endpoint allows you to remove all user-assigned tags for a single host.
         :type host_name: str
         :param source: The source of the tags (for example chef, puppet).
-            [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
+            `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_.
         :type source: str, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -367,7 +367,7 @@ class TagsApi:
         :param body: Add tags to host
         :type body: HostTags
         :param source: The source of the tags (for example chef, puppet).
-            [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value)
+            `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_
         :type source: str, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

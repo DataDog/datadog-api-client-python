@@ -137,7 +137,7 @@ class UsersApi:
 
         Create a user for your organization.
 
-        **Note**: Users can only be created with the admin access role
+        **Note**\ : Users can only be created with the admin access role
         if application keys belong to administrators.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -184,7 +184,7 @@ class UsersApi:
 
         Delete a user from an organization.
 
-        **Note**: This endpoint can only be used with application keys belonging to
+        **Note**\ : This endpoint can only be used with application keys belonging to
         administrators.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -315,7 +315,7 @@ class UsersApi:
 
         Update a user information.
 
-        **Note**: It can only be used with application keys belonging to administrators.
+        **Note**\ : It can only be used with application keys belonging to administrators.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

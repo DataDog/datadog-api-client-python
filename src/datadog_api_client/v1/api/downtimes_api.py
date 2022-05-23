@@ -230,7 +230,7 @@ class DowntimesApi:
     def cancel_downtimes_by_scope(self, body, **kwargs):
         """Cancel downtimes by scope.
 
-        Delete all downtimes that match the scope of `X`.
+        Delete all downtimes that match the scope of ``X``.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -318,7 +318,7 @@ class DowntimesApi:
     def get_downtime(self, downtime_id, **kwargs):
         """Get a downtime.
 
-        Get downtime detail by `downtime_id`.
+        Get downtime detail by ``downtime_id``.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -448,7 +448,7 @@ class DowntimesApi:
     def update_downtime(self, downtime_id, body, **kwargs):
         """Update a downtime.
 
-        Update a single downtime by `downtime_id`.
+        Update a single downtime by ``downtime_id``.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

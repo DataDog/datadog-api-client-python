@@ -24,7 +24,7 @@ class OrganizationBilling(ModelNormal):
         """
         A JSON array of billing type.
 
-        :param type: The type of billing. Only `parent_billing` is supported.
+        :param type: The type of billing. Only ``parent_billing`` is supported.
         :type type: str, optional
         """
         super().__init__(kwargs)

@@ -146,13 +146,13 @@ class OrganizationsApi:
         Create a child organization.
 
         This endpoint requires the
-        [multi-organization account](https://docs.datadoghq.com/account_management/multi_organization/)
+        `multi-organization account <https://docs.datadoghq.com/account_management/multi_organization/>`_
         feature and must be enabled by
-        [contacting support](https://docs.datadoghq.com/help/).
+        `contacting support <https://docs.datadoghq.com/help/>`_.
 
         Once a new child organization is created, you can interact with it
-        by using the `org.public_id`, `api_key.key`, and
-        `application_key.hash` provided in the response.
+        by using the ``org.public_id``\ , ``api_key.key``\ , and
+        ``application_key.hash`` provided in the response.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -204,7 +204,7 @@ class OrganizationsApi:
         >>> thread = api.get_org(public_id, async_req=True)
         >>> result = thread.get()
 
-        :param public_id: The `public_id` of the organization you are operating within.
+        :param public_id: The ``public_id`` of the organization you are operating within.
         :type public_id: str
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -288,7 +288,7 @@ class OrganizationsApi:
         >>> thread = api.update_org(public_id, body, async_req=True)
         >>> result = thread.get()
 
-        :param public_id: The `public_id` of the organization you are operating within.
+        :param public_id: The ``public_id`` of the organization you are operating within.
         :type public_id: str
         :type body: Organization
         :param _return_http_data_only: Response data without head status
@@ -330,9 +330,12 @@ class OrganizationsApi:
         There are a couple of options for updating the Identity Provider (IdP)
         metadata from your SAML IdP.
 
-        * **Multipart Form-Data**: Post the IdP metadata file using a form post.
 
-        * **XML Body:** Post the IdP metadata file as the body of the request.
+        *
+          **Multipart Form-Data**\ : Post the IdP metadata file using a form post.
+
+        *
+          **XML Body:** Post the IdP metadata file as the body of the request.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -340,7 +343,7 @@ class OrganizationsApi:
         >>> thread = api.upload_idp_for_org(public_id, idp_file, async_req=True)
         >>> result = thread.get()
 
-        :param public_id: The `public_id` of the organization you are operating with
+        :param public_id: The ``public_id`` of the organization you are operating with
         :type public_id: str
         :param idp_file: The path to the XML metadata file you wish to upload.
         :type idp_file: file_type

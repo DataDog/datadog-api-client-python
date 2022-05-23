@@ -318,8 +318,8 @@ class NotebooksApi:
     def list_notebooks(self, **kwargs):
         """Get all notebooks.
 
-        Get all notebooks. This can also be used to search for notebooks with a particular `query` in the notebook
-        `name` or author `handle`.
+        Get all notebooks. This can also be used to search for notebooks with a particular ``query`` in the notebook
+        ``name`` or author ``handle``.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -327,21 +327,21 @@ class NotebooksApi:
         >>> thread = api.list_notebooks(async_req=True)
         >>> result = thread.get()
 
-        :param author_handle: Return notebooks created by the given `author_handle`.
+        :param author_handle: Return notebooks created by the given ``author_handle``.
         :type author_handle: str, optional
-        :param exclude_author_handle: Return notebooks not created by the given `author_handle`.
+        :param exclude_author_handle: Return notebooks not created by the given ``author_handle``.
         :type exclude_author_handle: str, optional
         :param start: The index of the first notebook you want returned.
         :type start: int, optional
         :param count: The number of notebooks to be returned.
         :type count: int, optional
-        :param sort_field: Sort by field `modified`, `name`, or `created`.
+        :param sort_field: Sort by field ``modified``\ , ``name``\ , or ``created``.
         :type sort_field: str, optional
-        :param sort_dir: Sort by direction `asc` or `desc`.
+        :param sort_dir: Sort by direction ``asc`` or ``desc``.
         :type sort_dir: str, optional
-        :param query: Return only notebooks with `query` string in notebook name or author handle.
+        :param query: Return only notebooks with ``query`` string in notebook name or author handle.
         :type query: str, optional
-        :param include_cells: Value of `false` excludes the `cells` and global `time` for each notebook.
+        :param include_cells: Value of ``false`` excludes the ``cells`` and global ``time`` for each notebook.
         :type include_cells: bool, optional
         :param is_template: True value returns only template notebooks. Default is false (returns only non-template notebooks).
         :type is_template: bool, optional

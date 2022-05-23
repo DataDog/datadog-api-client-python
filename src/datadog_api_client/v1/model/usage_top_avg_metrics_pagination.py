@@ -32,7 +32,7 @@ class UsageTopAvgMetricsPagination(ModelNormal):
         :param limit: Maximum amount of records to be returned.
         :type limit: int, optional
 
-        :param next_record_id: The cursor to get the next results (if any). To make the next request, use the same parameters and add `next_record_id`.
+        :param next_record_id: The cursor to get the next results (if any). To make the next request, use the same parameters and add ``next_record_id``.
         :type next_record_id: str, none_type, optional
 
         :param total_number_of_records: Total number of records.

@@ -391,7 +391,7 @@ class LogsPipelinesApi:
 
         Update a given pipeline configuration to change it’s processors or their order.
 
-        **Note**: Using this method updates your pipeline configuration by **replacing**
+        **Note**\ : Using this method updates your pipeline configuration by **replacing**
         your current configuration with the new one sent to your Datadog organization.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -443,7 +443,7 @@ class LogsPipelinesApi:
         Update the order of your pipelines. Since logs are processed sequentially, reordering a pipeline may change
         the structure and content of the data processed by other pipelines and their processors.
 
-        **Note**: Using the `PUT` method updates your pipeline order by replacing your current order
+        **Note**\ : Using the ``PUT`` method updates your pipeline order by replacing your current order
         with the new one sent to your Datadog organization.
 
         This method makes a synchronous HTTP request by default. To make an

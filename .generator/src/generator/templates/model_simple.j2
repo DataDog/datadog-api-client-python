@@ -64,7 +64,7 @@ class {{ name }}(ModelSimple):
 
     def __init__(self, *args, **kwargs):
         """
-        {{ model.description|indent(8) }}
+        {{ model.description|docstring|indent(8) }}
 
         Note that value can be passed either in args or in kwargs, but not in both.
 

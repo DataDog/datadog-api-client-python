@@ -177,8 +177,8 @@ class EventsApi:
 
         This endpoint allows you to query for event details.
 
-        **Note**: If the event you’re querying contains markdown formatting of any kind,
-        you may see characters such as `%`,`\\`,`n` in your output.
+        **Note**\ : If the event you’re querying contains markdown formatting of any kind,
+        you may see characters such as ``%``\ ,\ ``\``\ ,\ ``n`` in your output.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -224,13 +224,17 @@ class EventsApi:
 
         The event stream can be queried and filtered by time, priority, sources and tags.
 
-        **Notes**:
-        - If the event you’re querying contains markdown formatting of any kind,
-        you may see characters such as `%`,`\\`,`n` in your output.
+        **Notes**\ :
 
-        - This endpoint returns a maximum of `1000` most recent results. To return additional results,
-        identify the last timestamp of the last result and set that as the `end` query time to
-        paginate the results. You can also use the page parameter to specify which set of `1000` results to return.
+
+        *
+          If the event you’re querying contains markdown formatting of any kind,
+          you may see characters such as ``%``\ ,\ ``\``\ ,\ ``n`` in your output.
+
+        *
+          This endpoint returns a maximum of ``1000`` most recent results. To return additional results,
+          identify the last timestamp of the last result and set that as the ``end`` query time to
+          paginate the results. You can also use the page parameter to specify which set of ``1000`` results to return.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -242,21 +246,21 @@ class EventsApi:
         :type start: int
         :param end: POSIX timestamp.
         :type end: int
-        :param priority: Priority of your events, either `low` or `normal`.
+        :param priority: Priority of your events, either ``low`` or ``normal``.
         :type priority: EventPriority, optional
         :param sources: A comma separated string of sources.
         :type sources: str, optional
         :param tags: A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope.
         :type tags: str, optional
-        :param unaggregated: Set unaggregated to `true` to return all events within the specified [`start`,`end`] timeframe.
+        :param unaggregated: Set unaggregated to ``true`` to return all events within the specified [\ ``start``\ ,\ ``end``\ ] timeframe.
             Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe,
-            it won't be available in the output. Aggregated events with `is_aggregate=true` in the response will still be returned unless exclude_aggregate is set to `true.`
+            it won't be available in the output. Aggregated events with ``is_aggregate=true`` in the response will still be returned unless exclude_aggregate is set to ``true.``
         :type unaggregated: bool, optional
-        :param exclude_aggregate: Set `exclude_aggregate` to `true` to only return unaggregated events where `is_aggregate=false` in the response. If the `exclude_aggregate` parameter is set to `true`,
-            then the unaggregated parameter is ignored and will be `true` by default.
+        :param exclude_aggregate: Set ``exclude_aggregate`` to ``true`` to only return unaggregated events where ``is_aggregate=false`` in the response. If the ``exclude_aggregate`` parameter is set to ``true``\ ,
+            then the unaggregated parameter is ignored and will be ``true`` by default.
         :type exclude_aggregate: bool, optional
-        :param page: By default 1000 results are returned per request. Set page to the number of the page to return with `0` being the first page. The page parameter can only be used
-            when either unaggregated or exclude_aggregate is set to `true.`
+        :param page: By default 1000 results are returned per request. Set page to the number of the page to return with ``0`` being the first page. The page parameter can only be used
+            when either unaggregated or exclude_aggregate is set to ``true.``
         :type page: int, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

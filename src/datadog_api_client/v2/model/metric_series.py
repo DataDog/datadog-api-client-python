@@ -52,7 +52,7 @@ class MetricSeries(ModelNormal):
     def __init__(self, metric, points, *args, **kwargs):
         """
         A metric to submit to Datadog.
-        See [Datadog metrics](https://docs.datadoghq.com/developers/metrics/#custom-metrics-properties).
+        See `Datadog metrics <https://docs.datadoghq.com/developers/metrics/#custom-metrics-properties>`_.
 
         :param interval: If the type of the metric is rate or count, define the corresponding interval.
         :type interval: int, optional

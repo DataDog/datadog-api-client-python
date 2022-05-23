@@ -84,18 +84,26 @@ class SyntheticsAPITest(ModelNormal):
         :param public_id: The public ID for the test.
         :type public_id: str, optional
 
-        :param status: Define whether you want to start (`live`) or pause (`paused`) a
+        :param status: Define whether you want to start (\ ``live``\ ) or pause (\ ``paused``\ ) a
             Synthetic test.
         :type status: SyntheticsTestPauseStatus, optional
 
+<<<<<<< HEAD
         :param subtype: The subtype of the Synthetic API test, `http`, `ssl`, `tcp`,
             `dns`, `icmp`, `udp`, `websocket`, `grpc` or `multi`.
+||||||| parent of 463459ed2 (Improve docstring rendering)
+        :param subtype: The subtype of the Synthetic API test, `http`, `ssl`, `tcp`,
+            `dns`, `icmp`, `udp`, `websocket` or `multi`.
+=======
+        :param subtype: The subtype of the Synthetic API test, ``http``\ , ``ssl``\ , ``tcp``\ ,
+            ``dns``\ , ``icmp``\ , ``udp``\ , ``websocket`` or ``multi``.
+>>>>>>> 463459ed2 (Improve docstring rendering)
         :type subtype: SyntheticsTestDetailsSubType, optional
 
         :param tags: Array of tags attached to the test.
         :type tags: [str], optional
 
-        :param type: Type of the Synthetic test, `api`.
+        :param type: Type of the Synthetic test, ``api``.
         :type type: SyntheticsAPITestType
         """
         super().__init__(kwargs)

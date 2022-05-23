@@ -51,14 +51,14 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
         :param description: Description of the correction being made.
         :type description: str, optional
 
-        :param duration: Length of time (in seconds) for a specified `rrule` recurring SLO correction.
+        :param duration: Length of time (in seconds) for a specified ``rrule`` recurring SLO correction.
         :type duration: int, optional
 
         :param end: Ending time of the correction in epoch seconds.
         :type end: int, optional
 
         :param rrule: The recurrence rules as defined in the iCalendar RFC 5545. The supported rules for SLO corrections
-            are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.
+            are ``FREQ``\ , ``INTERVAL``\ , ``COUNT`` and ``UNTIL``.
         :type rrule: str, optional
 
         :param slo_id: ID of the SLO that this correction applies to.

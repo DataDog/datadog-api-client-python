@@ -163,11 +163,9 @@ class RUMApi:
         """Get a list of RUM events.
 
         List endpoint returns events that match a RUM search query.
-        [Results are paginated][1].
+        `Results are paginated <https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination>`_.
 
         Use this endpoint to see your latest RUM events.
-
-        [1]: https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -268,11 +266,9 @@ class RUMApi:
         """Search RUM events.
 
         List endpoint returns RUM events that match a RUM search query.
-        [Results are paginated][1].
+        `Results are paginated <https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination>`_.
 
         Use this endpoint to build complex RUM events filtering and search.
-
-        [1]: https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

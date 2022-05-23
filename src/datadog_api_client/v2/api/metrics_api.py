@@ -357,7 +357,7 @@ class MetricsApi:
         Results can be sent to a set of account email addresses, just like the same operation in the Datadog web app.
         If multiple calls include the same metric, the last configuration applied (not by submit order) is used, do not
         expect deterministic ordering of concurrent calls.
-        Can only be used with application keys of users with the `Manage Tags for Metrics` permission.
+        Can only be used with application keys of users with the ``Manage Tags for Metrics`` permission.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -403,7 +403,7 @@ class MetricsApi:
         Create and define a list of queryable tag keys for an existing count/gauge/rate/distribution metric.
         Optionally, include percentile aggregations on any distribution metric or configure custom aggregations
         on any count, rate, or gauge metric.
-        Can only be used with application keys of users with the `Manage Tags for Metrics` permission.
+        Can only be used with application keys of users with the ``Manage Tags for Metrics`` permission.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -453,7 +453,7 @@ class MetricsApi:
         Delete all custom lists of queryable tag keys for a set of existing count, gauge, rate, and distribution metrics.
         Metrics are selected by passing a metric name prefix.
         Results can be sent to a set of account email addresses, just like the same operation in the Datadog web app.
-        Can only be used with application keys of users with the `Manage Tags for Metrics` permission.
+        Can only be used with application keys of users with the ``Manage Tags for Metrics`` permission.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -497,7 +497,7 @@ class MetricsApi:
         """Delete a tag configuration.
 
         Deletes a metric's tag configuration. Can only be used with application
-        keys from users with the `Manage Tags for Metrics` permission.
+        keys from users with the ``Manage Tags for Metrics`` permission.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -555,7 +555,7 @@ class MetricsApi:
         :type filter_groups: str, optional
         :param filter_hours_ago: The number of hours of look back (from now) to estimate cardinality with.
         :type filter_hours_ago: int, optional
-        :param filter_num_aggregations: The number of aggregations that a `count`, `rate`, or `gauge` metric is configured to use. Max number of aggregation combos is 9.
+        :param filter_num_aggregations: The number of aggregations that a ``count``\ , ``rate``\ , or ``gauge`` metric is configured to use. Max number of aggregation combos is 9.
         :type filter_num_aggregations: int, optional
         :param filter_pct: A boolean, for distribution metrics only, to estimate cardinality if the metric includes additional percentile aggregators.
         :type filter_pct: bool, optional
@@ -743,7 +743,7 @@ class MetricsApi:
 
         Custom distribution metrics will return both ingested and indexed custom metric volumes.
         For Metrics without Limits&trade; beta customers, all metrics will return both ingested/indexed volumes.
-        Custom metrics generated in-app from other products will return `null` for ingested volumes.
+        Custom metrics generated in-app from other products will return ``null`` for ingested volumes.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -792,11 +792,12 @@ class MetricsApi:
 
         If you’re submitting metrics directly to the Datadog API without using DogStatsD, expect:
 
-        - 64 bits for the timestamp
-        - 64 bits for the value
-        - 20 bytes for the metric names
-        - 50 bytes for the timeseries
-        - The full payload is approximately 100 bytes.
+
+        * 64 bits for the timestamp
+        * 64 bits for the value
+        * 20 bytes for the metric names
+        * 50 bytes for the timeseries
+        * The full payload is approximately 100 bytes.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -843,7 +844,7 @@ class MetricsApi:
 
         Update the tag configuration of a metric or percentile aggregations of a distribution metric or custom aggregations
         of a count, rate, or gauge metric.
-        Can only be used with application keys from users with the `Manage Tags for Metrics` permission.
+        Can only be used with application keys from users with the ``Manage Tags for Metrics`` permission.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

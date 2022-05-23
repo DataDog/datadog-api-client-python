@@ -31,7 +31,7 @@ class NotebookMarkdownCellDefinition(ModelNormal):
 
     def __init__(self, text, type, *args, **kwargs):
         """
-        Text in a notebook is formatted with [Markdown](https://daringfireball.net/projects/markdown/), which enables the use of headings, subheadings, links, images, lists, and code blocks.
+        Text in a notebook is formatted with `Markdown <https://daringfireball.net/projects/markdown/>`_\ , which enables the use of headings, subheadings, links, images, lists, and code blocks.
 
         :param text: The markdown content.
         :type text: str

@@ -45,7 +45,7 @@ class CloudWorkloadSecurityAgentRuleData(ModelNormal):
         :param id: The ID of the Agent rule.
         :type id: str, optional
 
-        :param type: The type of the resource. The value should always be `agent_rule`.
+        :param type: The type of the resource. The value should always be ``agent_rule``.
         :type type: CloudWorkloadSecurityAgentRuleType, optional
         """
         super().__init__(kwargs)

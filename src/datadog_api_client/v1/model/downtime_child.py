@@ -98,9 +98,9 @@ class DowntimeChild(ModelNormal):
         :param disabled: If a downtime has been disabled.
         :type disabled: bool, optional
 
-        :param downtime_type: `0` for a downtime applied on `*` or all,
-            `1` when the downtime is only scoped to hosts,
-            or `2` when the downtime is scoped to anything but hosts.
+        :param downtime_type: ``0`` for a downtime applied on ``*`` or all,
+            ``1`` when the downtime is only scoped to hosts,
+            or ``2`` when the downtime is scoped to anything but hosts.
         :type downtime_type: int, optional
 
         :param end: POSIX timestamp to end the downtime. If not provided,
@@ -111,7 +111,7 @@ class DowntimeChild(ModelNormal):
         :type id: int, optional
 
         :param message: A message to include with notifications for this downtime.
-            Email notifications can be sent to specific users by using the same `@username` notation as events.
+            Email notifications can be sent to specific users by using the same ``@username`` notation as events.
         :type message: str, optional
 
         :param monitor_id: A single monitor to which the downtime applies.
@@ -121,7 +121,7 @@ class DowntimeChild(ModelNormal):
         :param monitor_tags: A comma-separated list of monitor tags. For example, tags that are applied directly to monitors,
             not tags that are used in monitor queries (which are filtered by the scope parameter), to which the downtime applies.
             The resulting downtime applies to monitors that match ALL provided monitor tags.
-            For example, `service:postgres` **AND** `team:frontend`.
+            For example, ``service:postgres`` **AND** ``team:frontend``.
         :type monitor_tags: [str], optional
 
         :param mute_first_recovery_notification: If the first recovery notification during a downtime should be muted.
@@ -133,9 +133,9 @@ class DowntimeChild(ModelNormal):
         :param recurrence: An object defining the recurrence of the downtime.
         :type recurrence: DowntimeRecurrence, none_type, optional
 
-        :param scope: The scope(s) to which the downtime applies. For example, `host:app2`.
-            Provide multiple scopes as a comma-separated list like `env:dev,env:prod`.
-            The resulting downtime applies to sources that matches ALL provided scopes (`env:dev` **AND** `env:prod`).
+        :param scope: The scope(s) to which the downtime applies. For example, ``host:app2``.
+            Provide multiple scopes as a comma-separated list like ``env:dev,env:prod``.
+            The resulting downtime applies to sources that matches ALL provided scopes (\ ``env:dev`` **AND** ``env:prod``\ ).
         :type scope: [str], optional
 
         :param start: POSIX timestamp to start the downtime.

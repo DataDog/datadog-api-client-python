@@ -98,7 +98,7 @@ class Host(ModelNormal):
         :param tags_by_source: List of tags for each source (AWS, Datadog Agent, Chef..).
         :type tags_by_source: {str: ([str],)}, optional
 
-        :param up: Displays UP when the expected metrics are received and displays `???` if no metrics are received.
+        :param up: Displays UP when the expected metrics are received and displays ``???`` if no metrics are received.
         :type up: bool, optional
         """
         super().__init__(kwargs)

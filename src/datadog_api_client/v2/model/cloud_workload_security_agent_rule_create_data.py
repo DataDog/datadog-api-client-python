@@ -40,7 +40,7 @@ class CloudWorkloadSecurityAgentRuleCreateData(ModelNormal):
         :param attributes: Create a new Cloud Workload Security Agent rule.
         :type attributes: CloudWorkloadSecurityAgentRuleCreateAttributes
 
-        :param type: The type of the resource. The value should always be `agent_rule`.
+        :param type: The type of the resource. The value should always be ``agent_rule``.
         :type type: CloudWorkloadSecurityAgentRuleType
         """
         super().__init__(kwargs)

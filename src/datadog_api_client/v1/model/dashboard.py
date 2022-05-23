@@ -95,7 +95,7 @@ class Dashboard(ModelNormal):
         :param id: ID of the dashboard.
         :type id: str, optional
 
-        :param is_read_only: Whether this dashboard is read-only. If True, only the author and admins can make changes to it. Prefer using `restricted_roles` to manage write authorization.
+        :param is_read_only: Whether this dashboard is read-only. If True, only the author and admins can make changes to it. Prefer using ``restricted_roles`` to manage write authorization.
         :type is_read_only: bool, optional
 
         :param layout_type: Layout type of the dashboard.

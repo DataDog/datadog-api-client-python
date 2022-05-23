@@ -54,7 +54,7 @@ class SyntheticsBrowserTestConfig(ModelNormal):
         :param request: Object describing the Synthetic test request.
         :type request: SyntheticsTestRequest
 
-        :param set_cookie: Cookies to be used for the request, using the [Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) syntax.
+        :param set_cookie: Cookies to be used for the request, using the `Set-Cookie <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie>`_ syntax.
         :type set_cookie: str, optional
 
         :param variables: Array of variables used for the test steps.

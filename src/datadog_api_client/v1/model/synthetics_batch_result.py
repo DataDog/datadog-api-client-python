@@ -82,7 +82,7 @@ class SyntheticsBatchResult(ModelNormal):
         :param test_public_id: The public ID of the Synthetic test.
         :type test_public_id: str, optional
 
-        :param test_type: Type of the Synthetic test, either `api` or `browser`.
+        :param test_type: Type of the Synthetic test, either ``api`` or ``browser``.
         :type test_type: SyntheticsTestDetailsType, optional
         """
         super().__init__(kwargs)

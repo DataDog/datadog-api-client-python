@@ -24,7 +24,7 @@ class GeomapWidgetDefinitionView(ModelNormal):
         """
         The view of the world that the map should render.
 
-        :param focus: The 2-letter ISO code of a country to focus the map on. Or `WORLD`.
+        :param focus: The 2-letter ISO code of a country to focus the map on. Or ``WORLD``.
         :type focus: str
         """
         super().__init__(kwargs)

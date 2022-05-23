@@ -44,7 +44,7 @@ class RUMAggregateSort(ModelNormal):
         :param aggregation: An aggregation function.
         :type aggregation: RUMAggregationFunction, optional
 
-        :param metric: The metric to sort by (only used for `type=measure`).
+        :param metric: The metric to sort by (only used for ``type=measure``\ ).
         :type metric: str, optional
 
         :param order: The order to use, ascending or descending.

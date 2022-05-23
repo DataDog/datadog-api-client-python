@@ -189,8 +189,8 @@ class DashboardsApi:
     def create_dashboard(self, body, **kwargs):
         """Create a new dashboard.
 
-        Create a dashboard using the specified options. When defining queries in your widgets, take note of which queries should have the `as_count()` or `as_rate()` modifiers appended.
-        Refer to the following [documentation](https://docs.datadoghq.com/developers/metrics/type_modifiers/?tab=count#in-application-modifiers) for more information on these modifiers.
+        Create a dashboard using the specified options. When defining queries in your widgets, take note of which queries should have the ``as_count()`` or ``as_rate()`` modifiers appended.
+        Refer to the following `documentation <https://docs.datadoghq.com/developers/metrics/type_modifiers/?tab=count#in-application-modifiers>`_ for more information on these modifiers.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -368,7 +368,7 @@ class DashboardsApi:
 
         Get all dashboards.
 
-        **Note**: This query will only return custom created or cloned dashboards.
+        **Note**\ : This query will only return custom created or cloned dashboards.
         This query will not return preset dashboards.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -377,11 +377,11 @@ class DashboardsApi:
         >>> thread = api.list_dashboards(async_req=True)
         >>> result = thread.get()
 
-        :param filter_shared: When `true`, this query only returns shared custom created
+        :param filter_shared: When ``true``\ , this query only returns shared custom created
             or cloned dashboards.
         :type filter_shared: bool, optional
-        :param filter_deleted: When `true`, this query returns only deleted custom-created
-            or cloned dashboards. This parameter is incompatible with `filter[shared]`.
+        :param filter_deleted: When ``true``\ , this query returns only deleted custom-created
+            or cloned dashboards. This parameter is incompatible with ``filter[shared]``.
         :type filter_deleted: bool, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

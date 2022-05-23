@@ -31,17 +31,18 @@ class MetricCustomAggregations(ModelSimple):
                 Gauge metrics require the (time: avg, space: avg) aggregation.
                 Additional time & space combinations are also available:
 
-                - time: avg, space: avg
-                - time: avg, space: max
-                - time: avg, space: min
-                - time: avg, space: sum
-                - time: count, space: sum
-                - time: max, space: max
-                - time: min, space: min
-                - time: sum, space: avg
-                - time: sum, space: sum
 
-                Can only be applied to metrics that have a `metric_type` of `count`, `rate`, or `gauge`.
+                * time: avg, space: avg
+                * time: avg, space: max
+                * time: avg, space: min
+                * time: avg, space: sum
+                * time: count, space: sum
+                * time: max, space: max
+                * time: min, space: min
+                * time: sum, space: avg
+                * time: sum, space: sum
+
+                Can only be applied to metrics that have a ``metric_type`` of ``count``\ , ``rate``\ , or ``gauge``.
 
                 Note that value can be passed either in args or in kwargs, but not in both.
 

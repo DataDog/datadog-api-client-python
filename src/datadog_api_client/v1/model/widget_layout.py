@@ -45,13 +45,13 @@ class WidgetLayout(ModelNormal):
 
     def __init__(self, height, width, x, y, *args, **kwargs):
         """
-        The layout for a widget on a `free` or **new dashboard layout** dashboard.
+        The layout for a widget on a ``free`` or **new dashboard layout** dashboard.
 
         :param height: The height of the widget. Should be a non-negative integer.
         :type height: int
 
         :param is_column_break: Whether the widget should be the first one on the second column in high density or not.
-            **Note**: Only for the **new dashboard layout** and only one widget in the dashboard should have this property set to `true`.
+            **Note**\ : Only for the **new dashboard layout** and only one widget in the dashboard should have this property set to ``true``.
         :type is_column_break: bool, optional
 
         :param width: The width of the widget. Should be a non-negative integer.

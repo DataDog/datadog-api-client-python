@@ -54,7 +54,7 @@ class TreeMapWidgetDefinition(ModelNormal):
 
     def __init__(self, requests, type, *args, **kwargs):
         """
-        The treemap visualization found on the Host Dashboards comes from the output of `ps auxww`. This is not continuously run on your hosts. Instead, it’s run once on Agent start/restart. The treemap is only supported for process data on a single host dashboard — this may not be reused in other dashboards or for other metrics.
+        The treemap visualization found on the Host Dashboards comes from the output of ``ps auxww``. This is not continuously run on your hosts. Instead, it’s run once on Agent start/restart. The treemap is only supported for process data on a single host dashboard — this may not be reused in other dashboards or for other metrics.
 
         :param color_by: The attribute used to determine color in the widget.
         :type color_by: TreeMapColorBy, optional

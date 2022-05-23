@@ -48,10 +48,10 @@ class GCPAccount(ModelNormal):
         """
         Your Google Cloud Platform Account.
 
-        :param auth_provider_x509_cert_url: Should be `https://www.googleapis.com/oauth2/v1/certs`.
+        :param auth_provider_x509_cert_url: Should be ``https://www.googleapis.com/oauth2/v1/certs``.
         :type auth_provider_x509_cert_url: str, optional
 
-        :param auth_uri: Should be `https://accounts.google.com/o/oauth2/auth`.
+        :param auth_uri: Should be ``https://accounts.google.com/o/oauth2/auth``.
         :type auth_uri: str, optional
 
         :param automute: Silence monitors for expected GCE instance shutdowns.
@@ -63,8 +63,8 @@ class GCPAccount(ModelNormal):
         :param client_id: Your ID found in your JSON service account key.
         :type client_id: str, optional
 
-        :param client_x509_cert_url: Should be `https://www.googleapis.com/robot/v1/metadata/x509/$CLIENT_EMAIL`
-            where `$CLIENT_EMAIL` is the email found in your JSON service account key.
+        :param client_x509_cert_url: Should be ``https://www.googleapis.com/robot/v1/metadata/x509/$CLIENT_EMAIL``
+            where ``$CLIENT_EMAIL`` is the email found in your JSON service account key.
         :type client_x509_cert_url: str, optional
 
         :param errors: An array of errors.
@@ -83,7 +83,7 @@ class GCPAccount(ModelNormal):
         :param project_id: Your Google Cloud project ID found in your JSON service account key.
         :type project_id: str, optional
 
-        :param token_uri: Should be `https://accounts.google.com/o/oauth2/token`.
+        :param token_uri: Should be ``https://accounts.google.com/o/oauth2/token``.
         :type token_uri: str, optional
 
         :param type: The value for service_account found in your JSON service account key.

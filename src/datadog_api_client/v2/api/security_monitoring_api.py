@@ -348,7 +348,7 @@ class SecurityMonitoringApi:
 
         Create a security filter.
 
-        See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/)
+        See the `security filter guide <https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/>`_
         for more examples.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -526,7 +526,7 @@ class SecurityMonitoringApi:
 
         Get the details of a specific security filter.
 
-        See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/)
+        See the `security filter guide <https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/>`_
         for more examples.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -930,7 +930,7 @@ class SecurityMonitoringApi:
     def update_security_monitoring_rule(self, rule_id, body, **kwargs):
         """Update an existing rule.
 
-        Update an existing rule. When updating `cases`, `queries` or `options`, the whole field
+        Update an existing rule. When updating ``cases``\ , ``queries`` or ``options``\ , the whole field
         must be included. For example, when modifying a query all queries must be included.
         Default rules can only be updated to be enabled and to change notifications.
 

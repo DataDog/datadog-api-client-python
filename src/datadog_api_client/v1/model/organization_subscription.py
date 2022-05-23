@@ -24,7 +24,7 @@ class OrganizationSubscription(ModelNormal):
         """
         Subscription definition.
 
-        :param type: The subscription type. Types available are `trial`, `free`, and `pro`.
+        :param type: The subscription type. Types available are ``trial``\ , ``free``\ , and ``pro``.
         :type type: str, optional
         """
         super().__init__(kwargs)

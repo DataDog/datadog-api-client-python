@@ -698,7 +698,7 @@ class KeyManagementApi:
 
         :param api_key_id: The ID of the API key.
         :type api_key_id: str
-        :param include: Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`.
+        :param include: Comma separated list of resource paths for related resources to include in the response. Supported resource paths are ``created_by`` and ``modified_by``.
         :type include: str, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -744,7 +744,7 @@ class KeyManagementApi:
 
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
-        :param include: Resource path for related resources to include in the response. Only `owned_by` is supported.
+        :param include: Resource path for related resources to include in the response. Only ``owned_by`` is supported.
         :type include: str, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -850,7 +850,7 @@ class KeyManagementApi:
         :type filter_modified_at_start: str, optional
         :param filter_modified_at_end: Only include API keys modified on or before the specified date.
         :type filter_modified_at_end: str, optional
-        :param include: Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`.
+        :param include: Comma separated list of resource paths for related resources to include in the response. Supported resource paths are ``created_by`` and ``modified_by``.
         :type include: str, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

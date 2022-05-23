@@ -41,7 +41,7 @@ class NotebookHeatMapCellAttributes(ModelNormal):
 
     def __init__(self, definition, *args, **kwargs):
         """
-        The attributes of a notebook `heatmap` cell.
+        The attributes of a notebook ``heatmap`` cell.
 
         :param definition: The heat map visualization shows metrics aggregated across many tags, such as hosts. The more hosts that have a particular value, the darker that square is.
         :type definition: HeatMapWidgetDefinition

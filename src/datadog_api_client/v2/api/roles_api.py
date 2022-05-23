@@ -615,7 +615,7 @@ class RolesApi:
     def get_role(self, role_id, **kwargs):
         """Get a role.
 
-        Get a role in the organization specified by the role’s `role_id`.
+        Get a role in the organization specified by the role’s ``role_id``.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -757,7 +757,7 @@ class RolesApi:
         :type page_number: int, optional
         :param sort: Sort roles depending on the given field. Sort order is **ascending** by default.
             Sort order is **descending** if the field is prefixed by a negative sign, for example:
-            `sort=-name`.
+            ``sort=-name``.
         :type sort: RolesSort, optional
         :param filter: Filter all roles by the given string.
         :type filter: str, optional
@@ -809,7 +809,7 @@ class RolesApi:
         :type page_number: int, optional
         :param sort: User attribute to order results by. Sort order is **ascending** by default.
             Sort order is **descending** if the field is prefixed by a negative sign,
-            for example `sort=-name`. Options: `name`, `email`, `status`.
+            for example ``sort=-name``. Options: ``name``\ , ``email``\ , ``status``.
         :type sort: str, optional
         :param filter: Filter all users by the given string. Defaults to no filtering.
         :type filter: str, optional

@@ -41,7 +41,7 @@ class NotebookDistributionCellAttributes(ModelNormal):
 
     def __init__(self, definition, *args, **kwargs):
         """
-        The attributes of a notebook `distribution` cell.
+        The attributes of a notebook ``distribution`` cell.
 
         :param definition: The Distribution visualization is another way of showing metrics
             aggregated across one or several tags, such as hosts.

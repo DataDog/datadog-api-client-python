@@ -395,7 +395,7 @@ class ServiceLevelObjectivesApi:
 
         Permanently delete the specified service level objective object.
 
-        If an SLO is used in a dashboard, the `DELETE /v1/slo/` endpoint returns
+        If an SLO is used in a dashboard, the ``DELETE /v1/slo/`` endpoint returns
         a 409 conflict error because the SLO is referenced in a dashboard.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -597,13 +597,13 @@ class ServiceLevelObjectivesApi:
 
         :param slo_id: The ID of the service level objective object.
         :type slo_id: str
-        :param from_ts: The `from` timestamp for the query window in epoch seconds.
+        :param from_ts: The ``from`` timestamp for the query window in epoch seconds.
         :type from_ts: int
-        :param to_ts: The `to` timestamp for the query window in epoch seconds.
+        :param to_ts: The ``to`` timestamp for the query window in epoch seconds.
         :type to_ts: int
-        :param target: The SLO target. If `target` is passed in, the response will include the remaining error budget and a timeframe value of `custom`.
+        :param target: The SLO target. If ``target`` is passed in, the response will include the remaining error budget and a timeframe value of ``custom``.
         :type target: float, optional
-        :param apply_correction: Defaults to `true`. If any SLO corrections are applied and this parameter is set to `false`,
+        :param apply_correction: Defaults to ``true``. If any SLO corrections are applied and this parameter is set to ``false``\ ,
             then the corrections will not be applied and the SLI values will not be affected.
         :type apply_correction: bool, optional
         :param _return_http_data_only: Response data without head status

@@ -212,7 +212,7 @@ class HostsApi:
         :type filter: str, optional
         :param sort_field: Sort hosts by this field.
         :type sort_field: str, optional
-        :param sort_dir: Direction of sort. Options include `asc` and `desc`.
+        :param sort_dir: Direction of sort. Options include ``asc`` and ``desc``.
         :type sort_dir: str, optional
         :param start: Host result to start search from.
         :type start: int, optional

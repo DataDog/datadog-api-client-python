@@ -299,7 +299,7 @@ class MetricsApi:
         >>> thread = api.list_metrics(q, async_req=True)
         >>> result = thread.get()
 
-        :param q: Query string to search metrics upon. Can optionally be prefixed with `metrics:`.
+        :param q: Query string to search metrics upon. Can optionally be prefixed with ``metrics:``.
         :type q: str
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -392,12 +392,13 @@ class MetricsApi:
 
         If you’re submitting metrics directly to the Datadog API without using DogStatsD, expect:
 
-        - 64 bits for the timestamp
-        - 64 bits for the value
-        - 40 bytes for the metric names
-        - 50 bytes for the timeseries
-        - The full payload is approximately 100 bytes. However, with the DogStatsD API,
-        compression is applied, which reduces the payload size.
+
+        * 64 bits for the timestamp
+        * 64 bits for the value
+        * 40 bytes for the metric names
+        * 50 bytes for the timeseries
+        * The full payload is approximately 100 bytes. However, with the DogStatsD API,
+          compression is applied, which reduces the payload size.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -442,7 +443,7 @@ class MetricsApi:
     def update_metric_metadata(self, metric_name, body, **kwargs):
         """Edit metric metadata.
 
-        Edit metadata of a specific metric. Find out more about [supported types](https://docs.datadoghq.com/developers/metrics).
+        Edit metadata of a specific metric. Find out more about `supported types <https://docs.datadoghq.com/developers/metrics>`_.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

@@ -135,7 +135,7 @@ class {{ classname }}:
     def {{ operation.operationId|safe_snake_case }}(self, {% for name, parameter in operation|parameters if parameter.required %}{{name|attribute_name}}, {% endfor %}**kwargs):
         """{{ operation.summary|indent(8) }}.
 {% if operation.description %}
-        {{ operation.description.replace("\\", "\\\\")|indent(8) }}
+        {{ operation.description|docstring|indent(8) }}
 {% endif %}
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -147,12 +147,12 @@ class {{ classname }}:
 
 {%- for name, parameter in operation|parameters if parameter.required %}
 {%- if parameter.description %}
-        :param {{ name|attribute_name }}: {{ parameter.description|indent(12) }}{% if parameter.default %} Defaults to {{ parameter.default }}.{% endif %}{% endif %}
+        :param {{ name|attribute_name }}: {{ parameter.description|docstring|indent(12) }}{% if parameter.default %} Defaults to {{ parameter.default }}.{% endif %}{% endif %}
         :type {{ name|attribute_name }}: {{ get_type_for_parameter(parameter) }}
 {%- endfor %}
 {%- for name, parameter in operation|parameters if not parameter.required %}
 {%- if parameter.description %}
-        :param {{ name|attribute_name }}: {{ parameter.description|indent(12) }}{%- if parameter.default %} If omitted the server will use the default value of {{ parameter.default }}.{% endif %}{% endif %}
+        :param {{ name|attribute_name }}: {{ parameter.description|docstring|indent(12) }}{%- if parameter.default %} If omitted the server will use the default value of {{ parameter.default }}.{% endif %}{% endif %}
         :type {{ name|attribute_name }}: {{ get_type_for_parameter(parameter) }}, optional
 {%- endfor %}
         :param _return_http_data_only: Response data without head status
@@ -197,12 +197,12 @@ class {{ classname }}:
 {# keep new line #}
 {%- for name, parameter in operation|parameters if parameter.required %}
 {%- if parameter.description %}
-        :param {{ name|attribute_name }}: {{ parameter.description|indent(12) }}{% if parameter.default %} Defaults to {{ parameter.default }}.{% endif %}{% endif %}
+        :param {{ name|attribute_name }}: {{ parameter.description|docstring|indent(12) }}{% if parameter.default %} Defaults to {{ parameter.default }}.{% endif %}{% endif %}
         :type {{ name|attribute_name }}: {{ get_type_for_parameter(parameter) }}
 {%- endfor %}
 {%- for name, parameter in operation|parameters if not parameter.required %}
 {%- if parameter.description %}
-        :param {{ name|attribute_name }}: {{ parameter.description|indent(12) }}{%- if parameter.default %} If omitted the server will use the default value of {{ parameter.default }}.{% endif %}{% endif %}
+        :param {{ name|attribute_name }}: {{ parameter.description|docstring|indent(12) }}{%- if parameter.default %} If omitted the server will use the default value of {{ parameter.default }}.{% endif %}{% endif %}
         :type {{ name|attribute_name }}: {{ get_type_for_parameter(parameter) }}, optional
 {%- endfor %}
         :param _request_timeout: Timeout setting for this request. If one

@@ -70,10 +70,10 @@ class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
         :param operation_name: Name of operation on service.
         :type operation_name: str, optional
 
-        :param primary_tag_name: Name of the second primary tag used within APM. Required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog
+        :param primary_tag_name: Name of the second primary tag used within APM. Required when ``primary_tag_value`` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog
         :type primary_tag_name: str, optional
 
-        :param primary_tag_value: Value of the second primary tag by which to filter APM data. `primary_tag_name` must also be specified.
+        :param primary_tag_value: Value of the second primary tag by which to filter APM data. ``primary_tag_name`` must also be specified.
         :type primary_tag_value: str, optional
 
         :param resource_name: APM resource name.

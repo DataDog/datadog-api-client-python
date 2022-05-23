@@ -41,9 +41,11 @@ class ServiceChecksApi:
 
         Submit a list of Service Checks.
 
-        **Notes**:
-        - A valid API key is required.
-        - Service checks can be submitted up to 10 minutes in the past.
+        **Notes**\ :
+
+
+        * A valid API key is required.
+        * Service checks can be submitted up to 10 minutes in the past.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

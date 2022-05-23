@@ -250,7 +250,7 @@ class IncidentServicesApi:
     def get_incident_service(self, service_id, **kwargs):
         """Get details of an incident service.
 
-        Get details of an incident service. If the `include[users]` query parameter is provided,
+        Get details of an incident service. If the ``include[users]`` query parameter is provided,
         the included attribute will contain the users related to these incident services.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -297,7 +297,7 @@ class IncidentServicesApi:
     def list_incident_services(self, **kwargs):
         """Get a list of all incident services.
 
-        Get all incident services uploaded for the requesting user's organization. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident services.
+        Get all incident services uploaded for the requesting user's organization. If the ``include[users]`` query parameter is provided, the included attribute will contain the users related to these incident services.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

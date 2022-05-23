@@ -128,13 +128,13 @@ class SyntheticsTestOptions(ModelNormal):
         :param rum_settings: The RUM data collection settings for the Synthetic browser test.
             **Note:** There are 3 ways to format RUM settings:
 
-            `{ isEnabled: false }`
+            ``{ isEnabled: false }``
             RUM data is not collected.
 
-            `{ isEnabled: true }`
+            ``{ isEnabled: true }``
             RUM data is collected from the Synthetic test's default application.
 
-            `{ isEnabled: true, applicationId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", clientTokenId: 12345 }`
+            ``{ isEnabled: true, applicationId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", clientTokenId: 12345 }``
             RUM data is collected using the specified application.
         :type rum_settings: SyntheticsBrowserTestRumSettings, optional
 
