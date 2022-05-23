@@ -19,6 +19,10 @@ from datadog_api_client.v2.model.logs_list_request import LogsListRequest
 
 
 class LogsApi:
+    """
+    Search your logs and send them to your Datadog platform over HTTP.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

@@ -12,6 +12,10 @@ from datadog_api_client.v2.model.incident_team_update_request import IncidentTea
 
 
 class IncidentTeamsApi:
+    """
+    Create, update, delete and retrieve teams which can be associated with incidents.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

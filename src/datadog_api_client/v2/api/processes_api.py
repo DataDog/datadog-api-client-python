@@ -12,6 +12,10 @@ from datadog_api_client.v2.model.process_summaries_response import ProcessSummar
 
 
 class ProcessesApi:
+    """
+    The processes API allows you to query processes data for your organization.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

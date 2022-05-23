@@ -16,7 +16,9 @@ from {{ package }}.{{ version }}.model.{{ model|safe_snake_case }} import {{ mod
 
 {% set classname = name.replace(" ", "") + "Api" %}
 class {{ classname }}:
-
+    """
+    {{ description|docstring|indent(4) }}
+    """
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

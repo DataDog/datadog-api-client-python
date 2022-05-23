@@ -10,6 +10,13 @@ from datadog_api_client.v1.model.cancel_downtimes_by_scope_request import Cancel
 
 
 class DowntimesApi:
+    """
+    `Downtiming <https://docs.datadoghq.com/monitors/notify/downtimes>`_ gives
+    you greater control over monitor notifications by allowing you to globally exclude
+    scopes from alerting. Downtime settings, which can be scheduled with start and
+    end times, prevent all alerting related to specified Datadog tags.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

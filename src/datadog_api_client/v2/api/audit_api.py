@@ -15,6 +15,10 @@ from datadog_api_client.v2.model.audit_logs_search_events_request import AuditLo
 
 
 class AuditApi:
+    """
+    Search your Audit Logs events over HTTP.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

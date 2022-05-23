@@ -9,6 +9,21 @@ from datadog_api_client.v1.model.host_tags import HostTags
 
 
 class TagsApi:
+    """
+    The tag endpoint allows you to assign tags to hosts,
+    for example: ``role:database``. Those tags are applied to
+    all metrics sent by the host. Refer to hosts by name
+    (\ ``yourhost.example.com``\ ) when fetching and applying
+    tags to a particular host.
+
+    The component of your infrastructure responsible for a tag is identified
+    by a source. For example, some valid sources include nagios, hudson, jenkins,
+    users, feed, chef, puppet, git, bitbucket, fabric, capistrano, etc.
+
+    Read more about tags on the dedicated
+    `documentation page <https://docs.datadoghq.com/tagging>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

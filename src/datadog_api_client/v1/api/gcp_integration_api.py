@@ -9,6 +9,11 @@ from datadog_api_client.v1.model.gcp_account_list_response import GCPAccountList
 
 
 class GCPIntegrationApi:
+    """
+    Configure your Datadog-Google Cloud Platform (GCP) integration directly
+    through the Datadog API. Read more about the `Datadog-Google Cloud Platform integration <https://docs.datadoghq.com/integrations/google_cloud_platform>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

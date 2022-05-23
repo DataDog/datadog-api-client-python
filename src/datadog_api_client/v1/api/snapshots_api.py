@@ -8,6 +8,10 @@ from datadog_api_client.v1.model.graph_snapshot import GraphSnapshot
 
 
 class SnapshotsApi:
+    """
+    Take graph snapshots using the API.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

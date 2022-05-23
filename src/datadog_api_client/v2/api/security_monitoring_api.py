@@ -23,6 +23,11 @@ from datadog_api_client.v2.model.security_monitoring_signal_list_request import 
 
 
 class SecurityMonitoringApi:
+    """
+    Detection rules for generating signals and listing of generated
+    signals.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

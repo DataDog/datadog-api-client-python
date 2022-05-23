@@ -9,6 +9,11 @@ from datadog_api_client.v1.model.azure_account_list_response import AzureAccount
 
 
 class AzureIntegrationApi:
+    """
+    Configure your Datadog-Azure integration directly through the Datadog API.
+    For more information, see the `Datadog-Azure integration page <https://docs.datadoghq.com/integrations/azure>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

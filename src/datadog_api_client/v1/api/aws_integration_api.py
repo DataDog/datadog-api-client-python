@@ -14,6 +14,11 @@ from datadog_api_client.v1.model.aws_tag_filter_create_request import AWSTagFilt
 
 
 class AWSIntegrationApi:
+    """
+    Configure your Datadog-AWS integration directly through the Datadog API.
+    For more information, see the `AWS integration page <https://docs.datadoghq.com/integrations/amazon_web_services>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

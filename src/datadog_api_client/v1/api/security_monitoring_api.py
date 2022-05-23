@@ -11,6 +11,11 @@ from datadog_api_client.v1.model.signal_state_update_request import SignalStateU
 
 
 class SecurityMonitoringApi:
+    """
+    Detection rules for generating signals and listing of generated
+    signals.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

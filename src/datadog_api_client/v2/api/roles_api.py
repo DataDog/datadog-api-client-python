@@ -19,6 +19,17 @@ from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 
 
 class RolesApi:
+    """
+    The Roles API is used to create and manage Datadog roles, what
+    `global permissions <https://docs.datadoghq.com/account_management/rbac/>`_
+    they grant, and which users belong to them.
+
+    Permissions related to specific account assets can be granted to roles
+    in the Datadog application without using this API. For example, granting
+    read access on a specific log index to a role can be done in Datadog from the
+    `Pipelines page <https://app.datadoghq.com/logs/pipelines>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

@@ -17,6 +17,15 @@ from datadog_api_client.v1.model.slo_history_response import SLOHistoryResponse
 
 
 class ServiceLevelObjectivesApi:
+    """
+    `Service Level Objectives <https://docs.datadoghq.com/monitors/service_level_objectives/#configuration>`_
+    (or SLOs) are a key part of the site reliability engineering toolkit.
+    SLOs provide a framework for defining clear targets around application performance,
+    which ultimately help teams provide a consistent customer experience,
+    balance feature development with platform stability,
+    and improve communication with internal and external users.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

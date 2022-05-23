@@ -11,6 +11,12 @@ from datadog_api_client.v1.model.notebook_update_request import NotebookUpdateRe
 
 
 class NotebooksApi:
+    """
+    Interact with your notebooks through the API to make it easier to organize, find, and
+    share all of your notebooks with your team and organization. For more information, see the
+    `Notebooks documentation <https://docs.datadoghq.com/notebooks/>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

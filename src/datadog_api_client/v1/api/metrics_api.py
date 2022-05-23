@@ -14,6 +14,23 @@ from datadog_api_client.v1.model.metrics_payload import MetricsPayload
 
 
 class MetricsApi:
+    """
+    The metrics endpoint allows you to:
+
+
+    * Post metrics data so it can be graphed on Datadog’s dashboards
+    * Query metrics from any time period
+    * Modify tag configurations for metrics
+    * View tags and volumes for metrics
+
+    **Note**\ : A graph can only contain a set number of points
+    and as the timeframe over which a metric is viewed increases,
+    aggregation between points occurs to stay below that set number.
+
+    The Post, Patch, and Delete ``manage_tags`` API methods can only be performed by
+    a user who has the ``Manage Tags for Metrics`` permission.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

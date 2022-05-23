@@ -6,7 +6,6 @@ authentication\_api
 
 .. automodule:: datadog_api_client.v1.api.authentication_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 aws\_integration\_api
@@ -14,7 +13,6 @@ aws\_integration\_api
 
 .. automodule:: datadog_api_client.v1.api.aws_integration_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 aws\_logs\_integration\_api
@@ -22,7 +20,6 @@ aws\_logs\_integration\_api
 
 .. automodule:: datadog_api_client.v1.api.aws_logs_integration_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 azure\_integration\_api
@@ -30,7 +27,6 @@ azure\_integration\_api
 
 .. automodule:: datadog_api_client.v1.api.azure_integration_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 dashboard\_lists\_api
@@ -38,7 +34,6 @@ dashboard\_lists\_api
 
 .. automodule:: datadog_api_client.v1.api.dashboard_lists_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 dashboards\_api
@@ -46,7 +41,6 @@ dashboards\_api
 
 .. automodule:: datadog_api_client.v1.api.dashboards_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 downtimes\_api
@@ -54,7 +48,6 @@ downtimes\_api
 
 .. automodule:: datadog_api_client.v1.api.downtimes_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 events\_api
@@ -62,7 +55,6 @@ events\_api
 
 .. automodule:: datadog_api_client.v1.api.events_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 gcp\_integration\_api
@@ -70,7 +62,6 @@ gcp\_integration\_api
 
 .. automodule:: datadog_api_client.v1.api.gcp_integration_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 hosts\_api
@@ -78,7 +69,6 @@ hosts\_api
 
 .. automodule:: datadog_api_client.v1.api.hosts_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 ip\_ranges\_api
@@ -86,7 +76,6 @@ ip\_ranges\_api
 
 .. automodule:: datadog_api_client.v1.api.ip_ranges_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 key\_management\_api
@@ -94,7 +83,6 @@ key\_management\_api
 
 .. automodule:: datadog_api_client.v1.api.key_management_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 logs\_api
@@ -102,7 +90,6 @@ logs\_api
 
 .. automodule:: datadog_api_client.v1.api.logs_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 logs\_indexes\_api
@@ -110,7 +97,6 @@ logs\_indexes\_api
 
 .. automodule:: datadog_api_client.v1.api.logs_indexes_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 logs\_pipelines\_api
@@ -118,7 +104,6 @@ logs\_pipelines\_api
 
 .. automodule:: datadog_api_client.v1.api.logs_pipelines_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 metrics\_api
@@ -126,7 +111,6 @@ metrics\_api
 
 .. automodule:: datadog_api_client.v1.api.metrics_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 monitors\_api
@@ -134,7 +118,6 @@ monitors\_api
 
 .. automodule:: datadog_api_client.v1.api.monitors_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 notebooks\_api
@@ -142,7 +125,6 @@ notebooks\_api
 
 .. automodule:: datadog_api_client.v1.api.notebooks_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 organizations\_api
@@ -150,7 +132,6 @@ organizations\_api
 
 .. automodule:: datadog_api_client.v1.api.organizations_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 pager\_duty\_integration\_api
@@ -158,7 +139,6 @@ pager\_duty\_integration\_api
 
 .. automodule:: datadog_api_client.v1.api.pager_duty_integration_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 security\_monitoring\_api
@@ -166,7 +146,6 @@ security\_monitoring\_api
 
 .. automodule:: datadog_api_client.v1.api.security_monitoring_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 service\_checks\_api
@@ -174,7 +153,6 @@ service\_checks\_api
 
 .. automodule:: datadog_api_client.v1.api.service_checks_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 service\_level\_objective\_corrections\_api
@@ -182,7 +160,6 @@ service\_level\_objective\_corrections\_api
 
 .. automodule:: datadog_api_client.v1.api.service_level_objective_corrections_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 service\_level\_objectives\_api
@@ -190,7 +167,6 @@ service\_level\_objectives\_api
 
 .. automodule:: datadog_api_client.v1.api.service_level_objectives_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 slack\_integration\_api
@@ -198,7 +174,6 @@ slack\_integration\_api
 
 .. automodule:: datadog_api_client.v1.api.slack_integration_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 snapshots\_api
@@ -206,7 +181,6 @@ snapshots\_api
 
 .. automodule:: datadog_api_client.v1.api.snapshots_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 synthetics\_api
@@ -214,7 +188,6 @@ synthetics\_api
 
 .. automodule:: datadog_api_client.v1.api.synthetics_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 tags\_api
@@ -222,7 +195,6 @@ tags\_api
 
 .. automodule:: datadog_api_client.v1.api.tags_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 usage\_metering\_api
@@ -230,7 +202,6 @@ usage\_metering\_api
 
 .. automodule:: datadog_api_client.v1.api.usage_metering_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 users\_api
@@ -238,7 +209,6 @@ users\_api
 
 .. automodule:: datadog_api_client.v1.api.users_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 webhooks\_integration\_api
@@ -246,11 +216,9 @@ webhooks\_integration\_api
 
 .. automodule:: datadog_api_client.v1.api.webhooks_integration_api
    :members:
-   :undoc-members:
    :show-inheritance:
 
 
 .. automodule:: datadog_api_client.v1.api
    :members:
-   :undoc-members:
    :show-inheritance:

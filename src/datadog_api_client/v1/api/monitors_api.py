@@ -13,6 +13,13 @@ from datadog_api_client.v1.model.monitor_update_request import MonitorUpdateRequ
 
 
 class MonitorsApi:
+    """
+    `Monitors <https://docs.datadoghq.com/monitors>`_ allow you to watch a metric or check that you care about and
+    notifies your team when a defined threshold has exceeded.
+
+    For more information, see `Creating Monitors <https://docs.datadoghq.com/monitors/create/types/>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

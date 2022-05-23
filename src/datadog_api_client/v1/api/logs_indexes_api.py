@@ -11,6 +11,11 @@ from datadog_api_client.v1.model.logs_index_update_request import LogsIndexUpdat
 
 
 class LogsIndexesApi:
+    """
+    Manage configuration of `log indexes <https://docs.datadoghq.com/logs/indexes/>`_.
+    You need an API and application key with Admin rights to interact with this endpoint.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

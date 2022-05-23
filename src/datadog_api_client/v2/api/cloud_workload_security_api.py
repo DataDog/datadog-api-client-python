@@ -22,6 +22,10 @@ from datadog_api_client.v2.model.cloud_workload_security_agent_rule_update_reque
 
 
 class CloudWorkloadSecurityApi:
+    """
+    Workload activity security rules for generating events using the Datadog security Agent.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

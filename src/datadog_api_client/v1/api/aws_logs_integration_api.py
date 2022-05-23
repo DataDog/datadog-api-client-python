@@ -12,6 +12,11 @@ from datadog_api_client.v1.model.aws_logs_services_request import AWSLogsService
 
 
 class AWSLogsIntegrationApi:
+    """
+    Configure your Datadog-AWS-Logs integration directly through Datadog API.
+    For more information, see the `AWS integration page <https://docs.datadoghq.com/api/?lang=bash#integration-aws-logs>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -439,7 +444,9 @@ class AWSLogsIntegrationApi:
     def list_aws_logs_services(self, **kwargs):
         """Get list of AWS log ready services.
 
-        Get the list of current AWS services that Datadog offers automatic log collection. Use returned service IDs with the services parameter for the Enable an AWS service log collection API endpoint.
+        Get the list of current AWS services that Datadog offers automatic log
+        collection. Use returned service IDs with the services parameter for
+        the Enable an AWS service log collection API endpoint.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

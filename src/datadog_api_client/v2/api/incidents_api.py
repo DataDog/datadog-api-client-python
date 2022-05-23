@@ -16,6 +16,10 @@ from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRe
 
 
 class IncidentsApi:
+    """
+    Manage incident response.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

@@ -17,6 +17,10 @@ from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 
 
 class UsersApi:
+    """
+    Create, edit, and disable users.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

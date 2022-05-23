@@ -17,6 +17,10 @@ from datadog_api_client.v2.model.rum_search_events_request import RUMSearchEvent
 
 
 class RUMApi:
+    """
+    Search or aggregate your RUM events over HTTP.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

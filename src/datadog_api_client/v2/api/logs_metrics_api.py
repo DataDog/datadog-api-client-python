@@ -11,6 +11,10 @@ from datadog_api_client.v2.model.logs_metric_update_request import LogsMetricUpd
 
 
 class LogsMetricsApi:
+    """
+    Manage configuration of `log-based metrics <https://app.datadoghq.com/logs/pipelines/generate-metrics>`_ for your organization.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
