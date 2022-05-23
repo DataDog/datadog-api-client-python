@@ -142,9 +142,9 @@ class UsageMeteringApi:
         )
 
     def get_cost_by_org(self, start_month, **kwargs):
-        """Get Cost Across Multi-Org Account.
+        """Get cost across multi-org account.
 
-        Get Cost Across Multi-Org Account.
+        Get cost across multi-org account.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

@@ -1360,9 +1360,9 @@ class UsageMeteringApi:
         return self._get_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_hourly_usage_attribution(self, start_hr, usage_type, **kwargs):
-        """Get Hourly Usage Attribution.
+        """Get hourly usage attribution.
 
-        Get Hourly Usage Attribution.
+        Get hourly usage attribution.
 
         This API endpoint is paginated. To make sure you receive all records, check if the value of `next_record_id` is
         set in the response. If it is, make another request and pass `next_record_id` as a parameter.
@@ -1573,9 +1573,9 @@ class UsageMeteringApi:
         return self._get_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_monthly_usage_attribution(self, start_month, fields, **kwargs):
-        """Get Monthly Usage Attribution.
+        """Get monthly usage attribution.
 
-        Get Monthly Usage Attribution.
+        Get monthly usage attribution.
 
         This API endpoint is paginated. To make sure you receive all records, check if the value of `next_record_id` is
         set in the response. If it is, make another request and pass `next_record_id` as a parameter.
@@ -1783,9 +1783,9 @@ class UsageMeteringApi:
         return self._get_usage_analyzed_logs_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_attribution(self, start_month, fields, **kwargs):
-        """Get Usage Attribution.
+        """Get usage attribution.
 
-        Get Usage Attribution.
+        Get usage attribution.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
