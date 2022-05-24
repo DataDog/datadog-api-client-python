@@ -165,7 +165,8 @@ Feature: Metrics
 
   @team:DataDog/points-aggregation
   Scenario: List tag configurations with configured filter returns "Success" response
-    Given operation "ListTagConfigurations" enabled
+    Given a valid "appKeyAuth" key in the system
+    And operation "ListTagConfigurations" enabled
     And new "ListTagConfigurations" request
     And request contains "filter[configured]" parameter with value true
     When the request is sent
