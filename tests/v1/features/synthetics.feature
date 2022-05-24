@@ -100,6 +100,14 @@ Feature: Synthetics
     Then the response status is 402 Quota reached for private locations
 
   @team:DataDog/synthetics-app
+  Scenario: Create an API GRPC test returns "OK - Returns the created test details." response
+    Given new "CreateSyntheticsAPITest" request
+    And body from file "synthetics_api_grpc_test_payload.json"
+    When the request is sent
+    Then the response status is 200 OK - Returns the created test details.
+    And the response "name" is equal to "{{ unique }}"
+
+  @team:DataDog/synthetics-app
   Scenario: Create an API HTTP test returns "OK - Returns the created test details." response
     Given new "CreateSyntheticsAPITest" request
     And body from file "synthetics_api_http_test_payload.json"
