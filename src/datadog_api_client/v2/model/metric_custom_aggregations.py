@@ -26,43 +26,27 @@ class MetricCustomAggregations(ModelSimple):
 
     def __init__(self, *args, **kwargs):
         """
-                A list of queryable aggregation combinations for a count, rate, or gauge metric.
-                By default, count and rate metrics require the (time: sum, space: sum) aggregation and
-                Gauge metrics require the (time: avg, space: avg) aggregation.
-                Additional time & space combinations are also available:
-
-
-                * time: avg, space: avg
-                * time: avg, space: max
-                * time: avg, space: min
-                * time: avg, space: sum
-                * time: count, space: sum
-                * time: max, space: max
-                * time: min, space: min
-                * time: sum, space: avg
-                * time: sum, space: sum
-
-                Can only be applied to metrics that have a ``metric_type`` of ``count``\ , ``rate``\ , or ``gauge``.
-
-                Note that value can be passed either in args or in kwargs, but not in both.
-
-                :param value: A list of queryable aggregation combinations for a count, rate, or gauge metric.
+        A list of queryable aggregation combinations for a count, rate, or gauge metric.
         By default, count and rate metrics require the (time: sum, space: sum) aggregation and
         Gauge metrics require the (time: avg, space: avg) aggregation.
         Additional time & space combinations are also available:
 
-        - time: avg, space: avg
-        - time: avg, space: max
-        - time: avg, space: min
-        - time: avg, space: sum
-        - time: count, space: sum
-        - time: max, space: max
-        - time: min, space: min
-        - time: sum, space: avg
-        - time: sum, space: sum
 
-        Can only be applied to metrics that have a `metric_type` of `count`, `rate`, or `gauge`.
-                :type value: [MetricCustomAggregation]
+        * time: avg, space: avg
+        * time: avg, space: max
+        * time: avg, space: min
+        * time: avg, space: sum
+        * time: count, space: sum
+        * time: max, space: max
+        * time: min, space: min
+        * time: sum, space: avg
+        * time: sum, space: sum
+
+        Can only be applied to metrics that have a ``metric_type`` of ``count``\ , ``rate``\ , or ``gauge``.
+
+        Note that value can be passed either in args or in kwargs, but not in both.
+
+        :type value: [MetricCustomAggregation]
         """
         super().__init__(kwargs)
 

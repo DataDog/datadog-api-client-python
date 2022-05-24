@@ -23,7 +23,6 @@ class SyntheticsRestrictedRoles(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: A list of role identifiers that can be pulled from the Roles API, for restricting read and write access.
         :type value: [str]
         """
         super().__init__(kwargs)

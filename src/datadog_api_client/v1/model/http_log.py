@@ -30,7 +30,6 @@ class HTTPLog(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Structured log message.
         :type value: [HTTPLogItem]
         """
         super().__init__(kwargs)

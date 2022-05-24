@@ -30,7 +30,6 @@ class SlackIntegrationChannels(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: A list of configured Slack channels.
         :type value: [SlackIntegrationChannel]
         """
         super().__init__(kwargs)

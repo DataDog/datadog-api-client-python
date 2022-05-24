@@ -23,7 +23,6 @@ class MonitorSearchCount(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Search facets.
         :type value: [dict]
         """
         super().__init__(kwargs)

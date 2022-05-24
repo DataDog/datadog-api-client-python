@@ -67,8 +67,10 @@ class {{ name }}(ModelSimple):
         {{ model.description|docstring|indent(8) }}
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        :param value: {{ model.description }}{%- if "default" in model and model.default != None %} If omitted defaults to "{{ model.default }}".{%- endif %}
+{# empty line #}
+{%- if "default" in model and model.default != None %}
+        :param value: If omitted defaults to "{{ model.default }}".
+{%- endif %}
 {%- if ref %}
         :type value: [{{ ref }}]
 {%- else %}

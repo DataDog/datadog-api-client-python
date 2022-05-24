@@ -30,7 +30,6 @@ class LogsPipelineList(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Array of pipeline ID strings.
         :type value: [LogsPipeline]
         """
         super().__init__(kwargs)

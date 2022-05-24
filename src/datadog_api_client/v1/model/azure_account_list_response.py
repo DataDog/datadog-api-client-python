@@ -30,7 +30,6 @@ class AzureAccountListResponse(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Accounts configured for your organization.
         :type value: [AzureAccount]
         """
         super().__init__(kwargs)
