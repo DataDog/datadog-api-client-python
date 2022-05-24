@@ -14,53 +14,6 @@ Feature: Usage Metering
     And a valid "appKeyAuth" key in the system
     And an instance of "UsageMetering" API
 
-  @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get Hourly Usage Attribution returns "Bad Request" response
-    Given operation "GetHourlyUsageAttribution" enabled
-    And new "GetHourlyUsageAttribution" request
-    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
-    And request contains "usage_type" parameter with value "not_a_product"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @team:DataDog/red-zone-revenue-query
-  Scenario: Get Hourly Usage Attribution returns "OK" response
-    Given operation "GetHourlyUsageAttribution" enabled
-    And new "GetHourlyUsageAttribution" request
-    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
-    And request contains "usage_type" parameter with value "infra_host_usage"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get Monthly Usage Attribution returns "Bad Request" response
-    Given operation "GetMonthlyUsageAttribution" enabled
-    And new "GetMonthlyUsageAttribution" request
-    And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
-    And request contains "fields" parameter with value "not_a_product"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @team:DataDog/red-zone-revenue-query
-  Scenario: Get Monthly Usage Attribution returns "OK" response
-    Given operation "GetMonthlyUsageAttribution" enabled
-    And new "GetMonthlyUsageAttribution" request
-    And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
-    And request contains "fields" parameter with value "infra_host_usage"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @team:DataDog/red-zone-revenue-query
-  Scenario: Get Usage Attribution returns "OK" response
-    Given operation "GetUsageAttribution" enabled
-    And new "GetUsageAttribution" request
-    And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
-    And request contains "fields" parameter with value "*"
-    And request contains "offset" parameter with value 0
-    And request contains "limit" parameter with value 1
-    When the request is sent
-    Then the response status is 200 OK
-
   @team:DataDog/red-zone-revenue-query
   Scenario: Get all custom metrics by hourly average returns "Bad Request" response
     Given new "GetUsageTopAvgMetrics" request
@@ -99,6 +52,24 @@ Feature: Usage Metering
     Given new "GetUsageLogsByRetention" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
     And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage attribution returns "Bad Request" response
+    Given operation "GetHourlyUsageAttribution" enabled
+    And new "GetHourlyUsageAttribution" request
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "usage_type" parameter with value "not_a_product"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage attribution returns "OK" response
+    Given operation "GetHourlyUsageAttribution" enabled
+    And new "GetHourlyUsageAttribution" request
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "usage_type" parameter with value "infra_host_usage"
     When the request is sent
     Then the response status is 200 OK
 
@@ -534,6 +505,24 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get monthly usage attribution returns "Bad Request" response
+    Given operation "GetMonthlyUsageAttribution" enabled
+    And new "GetMonthlyUsageAttribution" request
+    And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "fields" parameter with value "not_a_product"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/red-zone-revenue-query
+  Scenario: Get monthly usage attribution returns "OK" response
+    Given operation "GetMonthlyUsageAttribution" enabled
+    And new "GetMonthlyUsageAttribution" request
+    And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "fields" parameter with value "infra_host_usage"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get specified daily custom reports returns "Not Found" response
     Given operation "GetSpecifiedDailyCustomReports" enabled
@@ -602,8 +591,19 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/red-zone-revenue-query
+  Scenario: Get usage attribution returns "OK" response
+    Given operation "GetUsageAttribution" enabled
+    And new "GetUsageAttribution" request
+    And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "fields" parameter with value "*"
+    And request contains "offset" parameter with value 0
+    And request contains "limit" parameter with value 1
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Paginate Monthly Usage Attribution
+  Scenario: Paginate monthly usage attribution
     Given there is a valid "monthly_usage_attribution" response
     And new "GetMonthlyUsageAttribution" request
     And request contains "next_record_id" parameter from "monthly_usage_attribution.metadata.pagination.next_record_id"

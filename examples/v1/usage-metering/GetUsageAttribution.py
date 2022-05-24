@@ -1,5 +1,5 @@
 """
-Get Usage Attribution returns "OK" response
+Get usage attribution returns "OK" response
 """
 
 from datetime import datetime
