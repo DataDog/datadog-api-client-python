@@ -34,8 +34,7 @@ jobs:
         with:
           path: docs/.sphinx
           key: sphinx-${{ hashFiles('docs/.sphinx/*') }}
-          restore-keys:
-            - "sphinx-"
+          restore-keys: sphinx-
 
       - name: Build documentation
         run: tox -e docs
