@@ -30,10 +30,12 @@ jobs:
         run: pip install tox
 
       - name: Cache sphinx
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: docs/.sphinx
-          key: sphinx
+          key: sphinx-${{ hashFiles('docs/.sphinx/*') }}
+          restore-keys:
+            - "sphinx-"
 
       - name: Build documentation
         run: tox -e docs
