@@ -45,6 +45,14 @@ jobs:
           key: sphinx-${{ fromJson(steps.set_commit.outputs.spec_json).spec_versions.v2.spec_repo_commit }}
           restore-keys: sphinx-
 
+      - uses: actions/download-artifact@v2
+        with:
+          name: documentation
+          path: site
+
+      - name: Uncompress site
+        run: tar xzf site/site.tar.gz && rm site/site.tar.gz
+
       - name: Build documentation
         run: tox -e docs
 
