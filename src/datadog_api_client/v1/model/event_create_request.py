@@ -96,7 +96,7 @@ class EventCreateRequest(ModelNormal):
         :type tags: [str], optional
 
         :param text: The body of the event. Limited to 4000 characters. The text supports markdown.
-            To use markdown in the event text, start the text block with ``%%% \n`` and end the text block with ``\n %%%``.
+            To use markdown in the event text, start the text block with ``%%% \\n`` and end the text block with ``\\n %%%``.
             Use ``msg_text`` with the Datadog Ruby library.
         :type text: str
 

@@ -63,4 +63,4 @@ class CustomRenderer(m2r2.RestRenderer):
 
 
 def docstring(text):
-    return m2r2.convert(text, renderer=CustomRenderer())[1:-1]
+    return m2r2.convert(text.replace("\\n", "\\\\n"), renderer=CustomRenderer())[1:-1]
