@@ -453,69 +453,29 @@ class MonitorsApi:
 
         Example: ``"check".over(tags).last(count).by(group).count_by_status()``
 
-<<<<<<< HEAD
-        - `check` name of the check, for example `datadog.agent.up`
-        - `tags` one or more quoted tags (comma-separated), or "*". for example: `.over("env:prod", "role:db")`; `over` cannot be blank.
-        - `count` must be at greater than or equal to your max threshold (defined in the `options`). It is limited to 100.
-        For example, if you've specified to notify on 1 critical, 3 ok, and 2 warn statuses, `count` should be at least 3.
-        - `group` must be specified for check monitors. Per-check grouping is already explicitly known for some service checks.
-        For example, Postgres integration monitors are tagged by `db`, `host`, and `port`, and Network monitors by `host`, `instance`, and `url`. See [Service Checks](https://docs.datadoghq.com/api/latest/service-checks/) documentation for more information.
-||||||| parent of 13e9705ef (Improve docstring rendering)
-        - **`check`** name of the check, for example `datadog.agent.up`
-        - **`tags`** one or more quoted tags (comma-separated), or "*". for example: `.over("env:prod", "role:db")`; **`over`** cannot be blank.
-        - **`count`** must be at greater than or equal to your max threshold (defined in the `options`). It is limited to 100.
-        For example, if you've specified to notify on 1 critical, 3 ok, and 2 warn statuses, `count` should be at least 3.
-        - **`group`** must be specified for check monitors. Per-check grouping is already explicitly known for some service checks.
-        For example, Postgres integration monitors are tagged by `db`, `host`, and `port`, and Network monitors by `host`, `instance`, and `url`. See [Service Checks](https://docs.datadoghq.com/api/latest/service-checks/) documentation for more information.
-=======
 
-        * **\ ``check``\ ** name of the check, for example ``datadog.agent.up``
-        * **\ ``tags``\ ** one or more quoted tags (comma-separated), or "*". for example: ``.over("env:prod", "role:db")``\ ; **\ ``over``\ ** cannot be blank.
-        * **\ ``count``\ ** must be at greater than or equal to your max threshold (defined in the ``options``\ ). It is limited to 100.
+        * ``check`` name of the check, for example ``datadog.agent.up``
+        * ``tags`` one or more quoted tags (comma-separated), or "*". for example: ``.over("env:prod", "role:db")``\ ; ``over`` cannot be blank.
+        * ``count`` must be at greater than or equal to your max threshold (defined in the ``options``\ ). It is limited to 100.
           For example, if you've specified to notify on 1 critical, 3 ok, and 2 warn statuses, ``count`` should be at least 3.
-        * **\ ``group``\ ** must be specified for check monitors. Per-check grouping is already explicitly known for some service checks.
+        * ``group`` must be specified for check monitors. Per-check grouping is already explicitly known for some service checks.
           For example, Postgres integration monitors are tagged by ``db``\ , ``host``\ , and ``port``\ , and Network monitors by ``host``\ , ``instance``\ , and ``url``. See `Service Checks <https://docs.datadoghq.com/api/latest/service-checks/>`_ documentation for more information.
->>>>>>> 13e9705ef (Improve docstring rendering)
 
         **Event Alert Query**
 
         Example: ``events('sources:nagios status:error,warning priority:normal tags: "string query"').rollup("count").last("1h")"``
 
-<<<<<<< HEAD
-        - `event`, the event query string:
-        - `string_query` free text query to match against event title and text.
-        - `sources` event sources (comma-separated).
-        - `status` event statuses (comma-separated). Valid options: error, warn, and info.
-        - `priority` event priorities (comma-separated). Valid options: low, normal, all.
-        - `host` event reporting host (comma-separated).
-        - `tags` event tags (comma-separated).
-        - `excluded_tags` excluded event tags (comma-separated).
-        - `rollup` the stats roll-up method. `count` is the only supported method now.
-        - `last` the timeframe to roll up the counts. Examples: 45m, 4h. Supported timeframes: m, h and d. This value should not exceed 48 hours.
-||||||| parent of 13e9705ef (Improve docstring rendering)
-        - **`event`**, the event query string:
-        - **`string_query`** free text query to match against event title and text.
-        - **`sources`** event sources (comma-separated).
-        - **`status`** event statuses (comma-separated). Valid options: error, warn, and info.
-        - **`priority`** event priorities (comma-separated). Valid options: low, normal, all.
-        - **`host`** event reporting host (comma-separated).
-        - **`tags`** event tags (comma-separated).
-        - **`excluded_tags`** excluded event tags (comma-separated).
-        - **`rollup`** the stats roll-up method. `count` is the only supported method now.
-        - **`last`** the timeframe to roll up the counts. Examples: 45m, 4h. Supported timeframes: m, h and d. This value should not exceed 48 hours.
-=======
->>>>>>> 13e9705ef (Improve docstring rendering)
 
-        * **\ ``event``\ **\ , the event query string:
-        * **\ ``string_query``\ ** free text query to match against event title and text.
-        * **\ ``sources``\ ** event sources (comma-separated).
-        * **\ ``status``\ ** event statuses (comma-separated). Valid options: error, warn, and info.
-        * **\ ``priority``\ ** event priorities (comma-separated). Valid options: low, normal, all.
-        * **\ ``host``\ ** event reporting host (comma-separated).
-        * **\ ``tags``\ ** event tags (comma-separated).
-        * **\ ``excluded_tags``\ ** excluded event tags (comma-separated).
-        * **\ ``rollup``\ ** the stats roll-up method. ``count`` is the only supported method now.
-        * **\ ``last``\ ** the timeframe to roll up the counts. Examples: 45m, 4h. Supported timeframes: m, h and d. This value should not exceed 48 hours.
+        * ``event``\ , the event query string:
+        * ``string_query`` free text query to match against event title and text.
+        * ``sources`` event sources (comma-separated).
+        * ``status`` event statuses (comma-separated). Valid options: error, warn, and info.
+        * ``priority`` event priorities (comma-separated). Valid options: low, normal, all.
+        * ``host`` event reporting host (comma-separated).
+        * ``tags`` event tags (comma-separated).
+        * ``excluded_tags`` excluded event tags (comma-separated).
+        * ``rollup`` the stats roll-up method. ``count`` is the only supported method now.
+        * ``last`` the timeframe to roll up the counts. Examples: 45m, 4h. Supported timeframes: m, h and d. This value should not exceed 48 hours.
 
         **NOTE** The Event Alert Query is being deprecated and replaced by the Event V2 Alert Query. For more information, see the `Event Migration guide <https://docs.datadoghq.com/events/guides/migrating_to_new_events_features/>`_.
 
@@ -523,163 +483,71 @@ class MonitorsApi:
 
         Example: ``events(query).rollup(rollup_method[, measure]).last(time_window) operator #``
 
-<<<<<<< HEAD
-        - `query` The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
-        - `rollup_method` The stats roll-up method - supports `count`, `avg` and `cardinality`.
-        - `measure` For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
-        - `time_window` #m (between 1 and 2880), #h (between 1 and 48).
-        - `operator` `<`, `<=`, `>`, `>=`, `==`, or `!=`.
-        - `#` an integer or decimal number used to set the threshold.
-||||||| parent of 13e9705ef (Improve docstring rendering)
-        - **`query`** The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
-        - **`rollup_method`** The stats roll-up method - supports `count`, `avg` and `cardinality`.
-        - **`measure`** For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
-        - **`time_window`** #m (between 1 and 2880), #h (between 1 and 48).
-        - **`operator`** `<`, `<=`, `>`, `>=`, `==`, or `!=`.
-        - **`#`** an integer or decimal number used to set the threshold.
-=======
 
-        * **\ ``query``\ ** The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
-        * **\ ``rollup_method``\ ** The stats roll-up method - supports ``count``\ , ``avg`` and ``cardinality``.
-        * **\ ``measure``\ ** For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
-        * **\ ``time_window``\ ** #m (between 1 and 2880), #h (between 1 and 48).
-        * **\ ``operator``\ ** ``<``\ , ``<=``\ , ``>``\ , ``>=``\ , ``==``\ , or ``!=``.
-        * **\ ``#``\ ** an integer or decimal number used to set the threshold.
->>>>>>> 13e9705ef (Improve docstring rendering)
+        * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
+        * ``rollup_method`` The stats roll-up method - supports ``count``\ , ``avg`` and ``cardinality``.
+        * ``measure`` For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
+        * ``time_window`` #m (between 1 and 2880), #h (between 1 and 48).
+        * ``operator`` ``<``\ , ``<=``\ , ``>``\ , ``>=``\ , ``==``\ , or ``!=``.
+        * ``#`` an integer or decimal number used to set the threshold.
 
         **Process Alert Query**
 
         Example: ``processes(search).over(tags).rollup('count').last(timeframe) operator #``
 
-<<<<<<< HEAD
-        - `search` free text search string for querying processes.
-        Matching processes match results on the [Live Processes](https://docs.datadoghq.com/infrastructure/process/?tab=linuxwindows) page.
-        - `tags` one or more tags (comma-separated)
-        - `timeframe` the timeframe to roll up the counts. Examples: 10m, 4h. Supported timeframes: s, m, h and d
-        - `operator` <, <=, >, >=, ==, or !=
-        - `#` an integer or decimal number used to set the threshold
-||||||| parent of 13e9705ef (Improve docstring rendering)
-        - **`search`** free text search string for querying processes.
-        Matching processes match results on the [Live Processes](https://docs.datadoghq.com/infrastructure/process/?tab=linuxwindows) page.
-        - **`tags`** one or more tags (comma-separated)
-        - **`timeframe`** the timeframe to roll up the counts. Examples: 10m, 4h. Supported timeframes: s, m, h and d
-        - **`operator`** <, <=, >, >=, ==, or !=
-        - **`#`** an integer or decimal number used to set the threshold
-=======
 
-        * **\ ``search``\ ** free text search string for querying processes.
+        * ``search`` free text search string for querying processes.
           Matching processes match results on the `Live Processes <https://docs.datadoghq.com/infrastructure/process/?tab=linuxwindows>`_ page.
-        * **\ ``tags``\ ** one or more tags (comma-separated)
-        * **\ ``timeframe``\ ** the timeframe to roll up the counts. Examples: 10m, 4h. Supported timeframes: s, m, h and d
-        * **\ ``operator``\ ** <, <=, >, >=, ==, or !=
-        * **\ ``#``\ ** an integer or decimal number used to set the threshold
->>>>>>> 13e9705ef (Improve docstring rendering)
+        * ``tags`` one or more tags (comma-separated)
+        * ``timeframe`` the timeframe to roll up the counts. Examples: 10m, 4h. Supported timeframes: s, m, h and d
+        * ``operator`` <, <=, >, >=, ==, or !=
+        * ``#`` an integer or decimal number used to set the threshold
 
         **Logs Alert Query**
 
         Example: ``logs(query).index(index_name).rollup(rollup_method[, measure]).last(time_window) operator #``
 
-<<<<<<< HEAD
-        - `query` The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
-        - `index_name` For multi-index organizations, the log index in which the request is performed.
-        - `rollup_method` The stats roll-up method - supports `count`, `avg` and `cardinality`.
-        - `measure` For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
-        - `time_window` #m (between 1 and 2880), #h (between 1 and 48).
-        - `operator` `<`, `<=`, `>`, `>=`, `==`, or `!=`.
-        - `#` an integer or decimal number used to set the threshold.
-||||||| parent of 13e9705ef (Improve docstring rendering)
-        - **`query`** The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
-        - **`index_name`** For multi-index organizations, the log index in which the request is performed.
-        - **`rollup_method`** The stats roll-up method - supports `count`, `avg` and `cardinality`.
-        - **`measure`** For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
-        - **`time_window`** #m (between 1 and 2880), #h (between 1 and 48).
-        - **`operator`** `<`, `<=`, `>`, `>=`, `==`, or `!=`.
-        - **`#`** an integer or decimal number used to set the threshold.
-=======
 
-        * **\ ``query``\ ** The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
-        * **\ ``index_name``\ ** For multi-index organizations, the log index in which the request is performed.
-        * **\ ``rollup_method``\ ** The stats roll-up method - supports ``count``\ , ``avg`` and ``cardinality``.
-        * **\ ``measure``\ ** For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
-        * **\ ``time_window``\ ** #m (between 1 and 2880), #h (between 1 and 48).
-        * **\ ``operator``\ ** ``<``\ , ``<=``\ , ``>``\ , ``>=``\ , ``==``\ , or ``!=``.
-        * **\ ``#``\ ** an integer or decimal number used to set the threshold.
->>>>>>> 13e9705ef (Improve docstring rendering)
+        * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
+        * ``index_name`` For multi-index organizations, the log index in which the request is performed.
+        * ``rollup_method`` The stats roll-up method - supports ``count``\ , ``avg`` and ``cardinality``.
+        * ``measure`` For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
+        * ``time_window`` #m (between 1 and 2880), #h (between 1 and 48).
+        * ``operator`` ``<``\ , ``<=``\ , ``>``\ , ``>=``\ , ``==``\ , or ``!=``.
+        * ``#`` an integer or decimal number used to set the threshold.
 
         **Composite Query**
 
         Example: ``12345 && 67890``\ , where ``12345`` and ``67890`` are the IDs of non-composite monitors
 
-<<<<<<< HEAD
-        * `name` [*required*, *default* = **dynamic, based on query**]: The name of the alert.
-        * `message` [*required*, *default* = **dynamic, based on query**]: A message to include with notifications for this monitor.
-        Email notifications can be sent to specific users by using the same '@username' notation as events.
-        * `tags` [*optional*, *default* = **empty list**]: A list of tags to associate with your monitor.
-        When getting all monitor details via the API, use the `monitor_tags` argument to filter results by these tags.
-        It is only available via the API and isn't visible or editable in the Datadog UI.
-||||||| parent of 13e9705ef (Improve docstring rendering)
-        * **`name`** [*required*, *default* = **dynamic, based on query**]: The name of the alert.
-        * **`message`** [*required*, *default* = **dynamic, based on query**]: A message to include with notifications for this monitor.
-        Email notifications can be sent to specific users by using the same '@username' notation as events.
-        * **`tags`** [*optional*, *default* = **empty list**]: A list of tags to associate with your monitor.
-        When getting all monitor details via the API, use the `monitor_tags` argument to filter results by these tags.
-        It is only available via the API and isn't visible or editable in the Datadog UI.
-=======
 
-        * **\ ``name``\ ** [\ *required*\ , *default* = **dynamic, based on query**\ ]: The name of the alert.
-        * **\ ``message``\ ** [\ *required*\ , *default* = **dynamic, based on query**\ ]: A message to include with notifications for this monitor.
+        * ``name`` [\ *required*\ , *default* = **dynamic, based on query**\ ]: The name of the alert.
+        * ``message`` [\ *required*\ , *default* = **dynamic, based on query**\ ]: A message to include with notifications for this monitor.
           Email notifications can be sent to specific users by using the same '@username' notation as events.
-        * **\ ``tags``\ ** [\ *optional*\ , *default* = **empty list**\ ]: A list of tags to associate with your monitor.
+        * ``tags`` [\ *optional*\ , *default* = **empty list**\ ]: A list of tags to associate with your monitor.
           When getting all monitor details via the API, use the ``monitor_tags`` argument to filter results by these tags.
           It is only available via the API and isn't visible or editable in the Datadog UI.
->>>>>>> 13e9705ef (Improve docstring rendering)
 
         **SLO Alert Query**
 
         Example: ``error_budget("slo_id").over("time_window") operator #``
 
-<<<<<<< HEAD
-        - `slo_id`: The alphanumeric SLO ID of the SLO you are configuring the alert for.
-        - `time_window`: The time window of the SLO target you wish to alert on. Valid options: `7d`, `30d`, `90d`.
-        - `operator`: `>=` or `>`
-||||||| parent of 13e9705ef (Improve docstring rendering)
-        - **`slo_id`**: The alphanumeric SLO ID of the SLO you are configuring the alert for.
-        - **`time_window`**: The time window of the SLO target you wish to alert on. Valid options: `7d`, `30d`, `90d`.
-        - **`operator`**: `>=` or `>`
-=======
 
-        * **\ ``slo_id``\ **\ : The alphanumeric SLO ID of the SLO you are configuring the alert for.
-        * **\ ``time_window``\ **\ : The time window of the SLO target you wish to alert on. Valid options: ``7d``\ , ``30d``\ , ``90d``.
-        * **\ ``operator``\ **\ : ``>=`` or ``>``
->>>>>>> 13e9705ef (Improve docstring rendering)
+        * ``slo_id``\ : The alphanumeric SLO ID of the SLO you are configuring the alert for.
+        * `time_window`: The time window of the SLO target you wish to alert on. Valid options: ``7d``\ , ``30d``\ , ``90d``.
+        * ``operator``\ : ``>=`` or ``>``
 
         **Audit Alert Query**
 
         Example: ``audits(query).rollup(rollup_method[, measure]).last(time_window) operator #``
 
-<<<<<<< HEAD
-        - `query` The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
-        - `rollup_method` The stats roll-up method - supports `count`, `avg` and `cardinality`.
-        - `measure` For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
-        - `time_window` #m (between 1 and 2880), #h (between 1 and 48).
-        - `operator` `<`, `<=`, `>`, `>=`, `==`, or `!=`.
-        - `#` an integer or decimal number used to set the threshold.
-||||||| parent of 13e9705ef (Improve docstring rendering)
-        - **`query`** The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
-        - **`rollup_method`** The stats roll-up method - supports `count`, `avg` and `cardinality`.
-        - **`measure`** For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
-        - **`time_window`** #m (between 1 and 2880), #h (between 1 and 48).
-        - **`operator`** `<`, `<=`, `>`, `>=`, `==`, or `!=`.
-        - **`#`** an integer or decimal number used to set the threshold.
-=======
 
-        * **\ ``query``\ ** The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
-        * **\ ``rollup_method``\ ** The stats roll-up method - supports ``count``\ , ``avg`` and ``cardinality``.
-        * **\ ``measure``\ ** For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
-        * **\ ``time_window``\ ** #m (between 1 and 2880), #h (between 1 and 48).
-        * **\ ``operator``\ ** ``<``\ , ``<=``\ , ``>``\ , ``>=``\ , ``==``\ , or ``!=``.
-        * **\ ``#``\ ** an integer or decimal number used to set the threshold.
->>>>>>> 13e9705ef (Improve docstring rendering)
+        * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
+        * ``rollup_method`` The stats roll-up method - supports ``count``\ , ``avg`` and ``cardinality``.
+        * ``measure`` For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
+        * ``time_window`` #m (between 1 and 2880), #h (between 1 and 48).
+        * ``operator`` ``<``\ , ``<=``\ , ``>``\ , ``>=``\ , ``==``\ , or ``!=``.
+        * ``#`` an integer or decimal number used to set the threshold.
 
         **NOTE** Only available on US1-FED and in closed beta on US1, EU, US3, and US5.
 
@@ -687,29 +555,13 @@ class MonitorsApi:
 
         Example: ``ci-pipelines(query).rollup(rollup_method[, measure]).last(time_window) operator #``
 
-<<<<<<< HEAD
-        - `query` The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
-        - `rollup_method` The stats roll-up method - supports `count`, `avg`, and `cardinality`.
-        - `measure` For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
-        - `time_window` #m (between 1 and 2880), #h (between 1 and 48).
-        - `operator` `<`, `<=`, `>`, `>=`, `==`, or `!=`.
-        - `#` an integer or decimal number used to set the threshold.
-||||||| parent of 13e9705ef (Improve docstring rendering)
-        - **`query`** The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
-        - **`rollup_method`** The stats roll-up method - supports `count`, `avg`, and `cardinality`.
-        - **`measure`** For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
-        - **`time_window`** #m (between 1 and 2880), #h (between 1 and 48).
-        - **`operator`** `<`, `<=`, `>`, `>=`, `==`, or `!=`.
-        - **`#`** an integer or decimal number used to set the threshold.
-=======
 
-        * **\ ``query``\ ** The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
-        * **\ ``rollup_method``\ ** The stats roll-up method - supports ``count``\ , ``avg``\ , and ``cardinality``.
-        * **\ ``measure``\ ** For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
-        * **\ ``time_window``\ ** #m (between 1 and 2880), #h (between 1 and 48).
-        * **\ ``operator``\ ** ``<``\ , ``<=``\ , ``>``\ , ``>=``\ , ``==``\ , or ``!=``.
-        * **\ ``#``\ ** an integer or decimal number used to set the threshold.
->>>>>>> 13e9705ef (Improve docstring rendering)
+        * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
+        * ``rollup_method`` The stats roll-up method - supports ``count``\ , ``avg``\ , and ``cardinality``.
+        * ``measure`` For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
+        * ``time_window`` #m (between 1 and 2880), #h (between 1 and 48).
+        * ``operator`` ``<``\ , ``<=``\ , ``>``\ , ``>=``\ , ``==``\ , or ``!=``.
+        * ``#`` an integer or decimal number used to set the threshold.
 
         **NOTE** CI Pipeline monitors are in alpha on US1, EU, US3 and US5.
 
@@ -717,29 +569,13 @@ class MonitorsApi:
 
         Example: ``ci-tests(query).rollup(rollup_method[, measure]).last(time_window) operator #``
 
-<<<<<<< HEAD
-        - `query` The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
-        - `rollup_method` The stats roll-up method - supports `count`, `avg`, and `cardinality`.
-        - `measure` For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
-        - `time_window` #m (between 1 and 2880), #h (between 1 and 48).
-        - `operator` `<`, `<=`, `>`, `>=`, `==`, or `!=`.
-        - `#` an integer or decimal number used to set the threshold.
-||||||| parent of 13e9705ef (Improve docstring rendering)
-        - **`query`** The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
-        - **`rollup_method`** The stats roll-up method - supports `count`, `avg`, and `cardinality`.
-        - **`measure`** For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
-        - **`time_window`** #m (between 1 and 2880), #h (between 1 and 48).
-        - **`operator`** `<`, `<=`, `>`, `>=`, `==`, or `!=`.
-        - **`#`** an integer or decimal number used to set the threshold.
-=======
 
-        * **\ ``query``\ ** The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
-        * **\ ``rollup_method``\ ** The stats roll-up method - supports ``count``\ , ``avg``\ , and ``cardinality``.
-        * **\ ``measure``\ ** For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
-        * **\ ``time_window``\ ** #m (between 1 and 2880), #h (between 1 and 48).
-        * **\ ``operator``\ ** ``<``\ , ``<=``\ , ``>``\ , ``>=``\ , ``==``\ , or ``!=``.
-        * **\ ``#``\ ** an integer or decimal number used to set the threshold.
->>>>>>> 13e9705ef (Improve docstring rendering)
+        * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
+        * ``rollup_method`` The stats roll-up method - supports ``count``\ , ``avg``\ , and ``cardinality``.
+        * ``measure`` For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
+        * ``time_window`` #m (between 1 and 2880), #h (between 1 and 48).
+        * ``operator`` ``<``\ , ``<=``\ , ``>``\ , ``>=``\ , ``==``\ , or ``!=``.
+        * ``#`` an integer or decimal number used to set the threshold.
 
         **NOTE** CI Test monitors are available only in closed beta on US1, EU, US3 and US5.
 
@@ -748,29 +584,13 @@ class MonitorsApi:
         Example(RUM): ``error-tracking-rum(query).rollup(rollup_method[, measure]).last(time_window) operator #``
         Example(APM Traces): ``error-tracking-traces(query).rollup(rollup_method[, measure]).last(time_window) operator #``
 
-<<<<<<< HEAD
-        - `query` The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
-        - `rollup_method` The stats roll-up method - supports `count`, `avg`, and `cardinality`.
-        - `measure` For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
-        - `time_window` #m (between 1 and 2880), #h (between 1 and 48).
-        - `operator` `<`, `<=`, `>`, `>=`, `==`, or `!=`.
-        - `#` an integer or decimal number used to set the threshold.
-||||||| parent of 13e9705ef (Improve docstring rendering)
-        - **`query`** The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
-        - **`rollup_method`** The stats roll-up method - supports `count`, `avg`, and `cardinality`.
-        - **`measure`** For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
-        - **`time_window`** #m (between 1 and 2880), #h (between 1 and 48).
-        - **`operator`** `<`, `<=`, `>`, `>=`, `==`, or `!=`.
-        - **`#`** an integer or decimal number used to set the threshold.
-=======
 
-        * **\ ``query``\ ** The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
-        * **\ ``rollup_method``\ ** The stats roll-up method - supports ``count``\ , ``avg``\ , and ``cardinality``.
-        * **\ ``measure``\ ** For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
-        * **\ ``time_window``\ ** #m (between 1 and 2880), #h (between 1 and 48).
-        * **\ ``operator``\ ** ``<``\ , ``<=``\ , ``>``\ , ``>=``\ , ``==``\ , or ``!=``.
-        * **\ ``#``\ ** an integer or decimal number used to set the threshold.
->>>>>>> 13e9705ef (Improve docstring rendering)
+        * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
+        * ``rollup_method`` The stats roll-up method - supports ``count``\ , ``avg``\ , and ``cardinality``.
+        * ``measure`` For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
+        * ``time_window`` #m (between 1 and 2880), #h (between 1 and 48).
+        * ``operator`` ``<``\ , ``<=``\ , ``>``\ , ``>=``\ , ``==``\ , or ``!=``.
+        * ``#`` an integer or decimal number used to set the threshold.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
