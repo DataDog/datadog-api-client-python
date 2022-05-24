@@ -58,6 +58,11 @@ def attribute_path(attribute):
 
 
 class CustomRenderer(m2r2.RestRenderer):
+    def double_emphasis(self, text):
+        if "``" in text:
+            text = text.replace("\ ``", "").replace("``\ ", "")
+        return super().double_emphasis(text)
+
     def header(self, text, level, raw=None):
         return "\n{}\n".format(self.double_emphasis(text))
 

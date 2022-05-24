@@ -101,7 +101,7 @@ class ServiceLevelObjective(ModelNormal):
         :type modified_at: int, optional
 
         :param monitor_ids: A list of monitor ids that defines the scope of a monitor service level
-            objective. **Required if type is ``monitor``\ **.
+            objective. **Required if type is monitor**.
         :type monitor_ids: [int], optional
 
         :param monitor_tags: The union of monitor tags for all monitors referenced by the ``monitor_ids``
@@ -115,7 +115,7 @@ class ServiceLevelObjective(ModelNormal):
         :param name: The name of the service level objective object.
         :type name: str
 
-        :param query: A metric SLI query. **Required if type is ``metric``\ **. Note that Datadog only allows the sum by aggregator
+        :param query: A metric SLI query. **Required if type is metric**. Note that Datadog only allows the sum by aggregator
             to be used because this will sum up all request counts instead of averaging them, or taking the max or
             min of all of those requests.
         :type query: ServiceLevelObjectiveQuery, optional
