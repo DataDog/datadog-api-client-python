@@ -29,6 +29,7 @@ class SyntheticsAssertionType(ModelSimple):
             "PACKETS_RECEIVED": "packetsReceived",
             "NETWORK_HOP": "networkHop",
             "RECEIVED_MESSAGE": "receivedMessage",
+            "CONNECTION": "connection",
         },
     }
 
@@ -44,7 +45,7 @@ class SyntheticsAssertionType(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["body", "header", "statusCode", "certificate", "responseTime", "property", "recordEvery", "recordSome", "tlsVersion", "minTlsVersion", "latency", "packetLossPercentage", "packetsReceived", "networkHop", "receivedMessage"].
+        :param value: Must be one of ["body", "header", "statusCode", "certificate", "responseTime", "property", "recordEvery", "recordSome", "tlsVersion", "minTlsVersion", "latency", "packetLossPercentage", "packetsReceived", "networkHop", "receivedMessage", "connection"].
         :type value: str
         """
         super().__init__(kwargs)
