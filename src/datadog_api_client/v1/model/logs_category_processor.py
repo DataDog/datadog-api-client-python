@@ -55,13 +55,7 @@ class LogsCategoryProcessor(ModelNormal):
         * Once defined in the Category Processor, you can map categories to log status using the Log Status Remapper.
 
         :param categories: Array of filters to match or not a log and their
-<<<<<<< HEAD
-            corresponding `name` to assign a custom value to the log.
-||||||| parent of 83787ec9b (Improve docstring rendering)
-            corresponding `name`to assign a custom value to the log.
-=======
-            corresponding ``name``\ to assign a custom value to the log.
->>>>>>> 83787ec9b (Improve docstring rendering)
+            corresponding ``name`` to assign a custom value to the log.
         :type categories: [LogsCategoryProcessorCategory]
 
         :param is_enabled: Whether or not the processor is enabled.
