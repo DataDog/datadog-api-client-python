@@ -59,7 +59,7 @@ class LogsListRequest(ModelNormal):
         :param query: The search query - following the log search syntax.
         :type query: str, optional
 
-        :param sort: Time-ascending `asc` or time-descending `desc`results.
+        :param sort: Time-ascending `asc` or time-descending `desc` results.
         :type sort: LogsSort, optional
 
         :param start_at: Hash identifier of the first log to return in the list, available in a log `id` attribute.
