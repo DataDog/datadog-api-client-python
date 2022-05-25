@@ -103,16 +103,8 @@ class SyntheticsTestDetails(ModelNormal):
         :param steps: For browser test, the steps of the test.
         :type steps: [SyntheticsStep], optional
 
-<<<<<<< HEAD
-        :param subtype: The subtype of the Synthetic API test, `http`, `ssl`, `tcp`,
-            `dns`, `icmp`, `udp`, `websocket`, `grpc` or `multi`.
-||||||| parent of 463459ed2 (Improve docstring rendering)
-        :param subtype: The subtype of the Synthetic API test, `http`, `ssl`, `tcp`,
-            `dns`, `icmp`, `udp`, `websocket` or `multi`.
-=======
         :param subtype: The subtype of the Synthetic API test, ``http``\ , ``ssl``\ , ``tcp``\ ,
-            ``dns``\ , ``icmp``\ , ``udp``\ , ``websocket`` or ``multi``.
->>>>>>> 463459ed2 (Improve docstring rendering)
+            ``dns``\ , ``icmp``\ , ``udp``\ , ``websocket``\ , ``grpc`` or ``multi``.
         :type subtype: SyntheticsTestDetailsSubType, optional
 
         :param tags: Array of tags attached to the test.

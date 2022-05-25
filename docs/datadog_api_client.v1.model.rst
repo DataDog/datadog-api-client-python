@@ -3667,7 +3667,6 @@ synthetics\_test\_metadata
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_metadata
    :members:
-   :undoc-members:
    :show-inheritance:
 
 synthetics\_test\_monitor\_status
