@@ -164,7 +164,7 @@ def pytest_bdd_apply_tag(tag, function):
     if tag in skip_tags:
         marker = pytest.mark.skip(reason=f"skipped because of '{tag} in {skip_tags}")
         marker(function)
-        return True
+    return True
 
 
 def snake_case(value):

@@ -820,7 +820,7 @@ class RolesApi:
         :type page_number: int, optional
         :param sort: User attribute to order results by. Sort order is **ascending** by default.
             Sort order is **descending** if the field is prefixed by a negative sign,
-            for example ``sort=-name``. Options: ``name``\ , ``email``\ , ``status``.
+            for example ``sort=-name``. Options: ``name`` , ``email`` , ``status``.
         :type sort: str, optional
         :param filter: Filter all users by the given string. Defaults to no filtering.
         :type filter: str, optional

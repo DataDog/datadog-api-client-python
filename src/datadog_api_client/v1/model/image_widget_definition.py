@@ -65,11 +65,11 @@ class ImageWidgetDefinition(ModelNormal):
         :type horizontal_align: WidgetHorizontalAlign, optional
 
         :param margin: Size of the margins around the image.
-            **Note**\ : ``small`` and ``large`` values are deprecated.
+            **Note** : ``small`` and ``large`` values are deprecated.
         :type margin: WidgetMargin, optional
 
         :param sizing: How to size the image on the widget. The values are based on the image ``object-fit`` CSS properties.
-            **Note**\ : ``zoom``\ , ``fit`` and ``center`` values are deprecated.
+            **Note** : ``zoom`` , ``fit`` and ``center`` values are deprecated.
         :type sizing: WidgetImageSizing, optional
 
         :param type: Type of the image widget.

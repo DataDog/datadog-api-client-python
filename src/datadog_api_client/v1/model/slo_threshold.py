@@ -44,7 +44,7 @@ class SLOThreshold(ModelNormal):
         :type target: float
 
         :param target_display: A string representation of the target that indicates its precision.
-            It uses trailing zeros to show significant decimal places (for example ``98.00``\ ).
+            It uses trailing zeros to show significant decimal places (for example ``98.00`` ).
 
             Always included in service level objective responses. Ignored in
             create/update requests.

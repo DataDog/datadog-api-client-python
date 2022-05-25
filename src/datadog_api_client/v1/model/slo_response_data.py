@@ -69,7 +69,7 @@ class SLOResponseData(ModelNormal):
     def __init__(self, *args, **kwargs):
         """
         A service level objective object includes a service level indicator, thresholds
-        for one or more timeframes, and metadata (\ ``name``\ , ``description``\ , ``tags``\ , etc.).
+        for one or more timeframes, and metadata ( ``name`` , ``description`` , ``tags`` , etc.).
 
         :param configured_alert_ids: A list of SLO monitors IDs that reference this SLO. This field is returned only when ``with_configured_alert_ids`` parameter is true in query.
         :type configured_alert_ids: [int], optional
@@ -84,7 +84,7 @@ class SLOResponseData(ModelNormal):
 
         :param description: A user-defined description of the service level objective.
 
-            Always included in service level objective responses (but may be ``null``\ ).
+            Always included in service level objective responses (but may be ``null`` ).
             Optional in create/update requests.
         :type description: str, none_type, optional
 

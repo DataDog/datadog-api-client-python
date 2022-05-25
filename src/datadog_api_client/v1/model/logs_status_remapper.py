@@ -48,7 +48,7 @@ class LogsStatusRemapper(ModelNormal):
         * Strings beginning with ``w`` (case-insensitive) map to ``warning`` (4)
         * Strings beginning with ``n`` (case-insensitive) map to ``notice`` (5)
         * Strings beginning with ``i`` (case-insensitive) map to ``info`` (6)
-        * Strings beginning with ``d``\ , ``trace`` or ``verbose`` (case-insensitive) map to ``debug`` (7)
+        * Strings beginning with ``d`` , ``trace`` or ``verbose`` (case-insensitive) map to ``debug`` (7)
         * Strings beginning with ``o`` or matching ``OK`` or ``Success`` (case-insensitive) map to OK
         *
           All others map to ``info`` (6)

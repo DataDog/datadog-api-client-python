@@ -72,7 +72,7 @@ class SnapshotsApi:
         """Take graph snapshots.
 
         Take graph snapshots.
-        **Note**\ : When a snapshot is created, there is some delay before it is available.
+        **Note** : When a snapshot is created, there is some delay before it is available.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

@@ -39,7 +39,7 @@ class WidgetCustomLink(ModelNormal):
         :param link: The URL of the custom link. URL must include ``http`` or ``https``. A relative URL must start with ``/``.
         :type link: str, optional
 
-        :param override_label: The label ID that refers to a context menu link. Can be ``logs``\ , ``hosts``\ , ``traces``\ , ``profiles``\ , ``processes``\ , ``containers``\ , or ``rum``.
+        :param override_label: The label ID that refers to a context menu link. Can be ``logs`` , ``hosts`` , ``traces`` , ``profiles`` , ``processes`` , ``containers`` , or ``rum``.
         :type override_label: str, optional
         """
         super().__init__(kwargs)

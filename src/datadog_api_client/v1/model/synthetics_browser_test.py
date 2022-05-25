@@ -84,7 +84,7 @@ class SyntheticsBrowserTest(ModelNormal):
         :param public_id: The public ID of the test.
         :type public_id: str, optional
 
-        :param status: Define whether you want to start (\ ``live``\ ) or pause (\ ``paused``\ ) a
+        :param status: Define whether you want to start ( ``live`` ) or pause ( ``paused`` ) a
             Synthetic test.
         :type status: SyntheticsTestPauseStatus, optional
 

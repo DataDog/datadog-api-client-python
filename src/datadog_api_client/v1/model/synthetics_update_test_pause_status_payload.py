@@ -31,7 +31,7 @@ class SyntheticsUpdateTestPauseStatusPayload(ModelNormal):
         """
         Object to start or pause an existing Synthetic test.
 
-        :param new_status: Define whether you want to start (\ ``live``\ ) or pause (\ ``paused``\ ) a
+        :param new_status: Define whether you want to start ( ``live`` ) or pause ( ``paused`` ) a
             Synthetic test.
         :type new_status: SyntheticsTestPauseStatus, optional
         """

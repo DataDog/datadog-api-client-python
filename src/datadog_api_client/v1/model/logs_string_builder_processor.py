@@ -45,7 +45,7 @@ class LogsStringBuilderProcessor(ModelNormal):
 
         The template is defined by both raw text and blocks with the syntax ``%{attribute_path}``.
 
-        **Notes**\ :
+        **Notes** :
 
 
         * The processor only accepts attributes with values or an array of values in the blocks.

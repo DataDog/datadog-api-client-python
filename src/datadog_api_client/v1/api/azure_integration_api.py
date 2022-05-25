@@ -303,7 +303,7 @@ class AzureIntegrationApi:
         """Update an Azure integration.
 
         Update a Datadog-Azure integration. Requires an existing ``tenant_name`` and ``client_id``.
-        Any other fields supplied will overwrite existing values. To overwrite ``tenant_name`` or ``client_id``\ ,
+        Any other fields supplied will overwrite existing values. To overwrite ``tenant_name`` or ``client_id`` ,
         use ``new_tenant_name`` and ``new_client_id``. To leave a field unchanged, do not supply that field in the payload.
 
         This method makes a synchronous HTTP request by default. To make an

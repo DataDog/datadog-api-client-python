@@ -51,7 +51,7 @@ class MetricTagConfigurationUpdateAttributes(ModelNormal):
             * time: sum, space: avg
             * time: sum, space: sum
 
-            Can only be applied to metrics that have a ``metric_type`` of ``count``\ , ``rate``\ , or ``gauge``.
+            Can only be applied to metrics that have a ``metric_type`` of ``count`` , ``rate`` , or ``gauge``.
         :type aggregations: MetricCustomAggregations, optional
 
         :param include_percentiles: Toggle to include/exclude percentiles for a distribution metric.
