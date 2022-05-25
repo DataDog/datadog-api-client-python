@@ -8,13 +8,6 @@ access\_role
    :members:
    :show-inheritance:
 
-add\_signal\_to\_incident\_request
-----------------------------------
-
-.. automodule:: datadog_api_client.v1.model.add_signal_to_incident_request
-   :members:
-   :show-inheritance:
-
 agent\_check
 ------------
 
@@ -467,6 +460,48 @@ deleted\_monitor
 ----------------
 
 .. automodule:: datadog_api_client.v1.model.deleted_monitor
+   :members:
+   :show-inheritance:
+
+distribution\_point
+-------------------
+
+.. automodule:: datadog_api_client.v1.model.distribution_point
+   :members:
+   :show-inheritance:
+
+distribution\_point\_data
+-------------------------
+
+.. automodule:: datadog_api_client.v1.model.distribution_point_data
+   :members:
+   :show-inheritance:
+
+distribution\_points\_content\_encoding
+---------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.distribution_points_content_encoding
+   :members:
+   :show-inheritance:
+
+distribution\_points\_payload
+-----------------------------
+
+.. automodule:: datadog_api_client.v1.model.distribution_points_payload
+   :members:
+   :show-inheritance:
+
+distribution\_points\_series
+----------------------------
+
+.. automodule:: datadog_api_client.v1.model.distribution_points_series
+   :members:
+   :show-inheritance:
+
+distribution\_points\_type
+--------------------------
+
+.. automodule:: datadog_api_client.v1.model.distribution_points_type
    :members:
    :show-inheritance:
 
@@ -2591,34 +2626,6 @@ service\_summary\_widget\_definition\_type
    :members:
    :show-inheritance:
 
-signal\_archive\_reason
------------------------
-
-.. automodule:: datadog_api_client.v1.model.signal_archive_reason
-   :members:
-   :show-inheritance:
-
-signal\_assignee\_update\_request
----------------------------------
-
-.. automodule:: datadog_api_client.v1.model.signal_assignee_update_request
-   :members:
-   :show-inheritance:
-
-signal\_state\_update\_request
-------------------------------
-
-.. automodule:: datadog_api_client.v1.model.signal_state_update_request
-   :members:
-   :show-inheritance:
-
-signal\_triage\_state
----------------------
-
-.. automodule:: datadog_api_client.v1.model.signal_triage_state
-   :members:
-   :show-inheritance:
-
 slack\_integration\_channel
 ---------------------------
 
@@ -2924,13 +2931,6 @@ slo\_widget\_definition\_type
 -----------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_widget_definition_type
-   :members:
-   :show-inheritance:
-
-successful\_signal\_update\_response
-------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.successful_signal_update_response
    :members:
    :show-inheritance:
 
@@ -3659,13 +3659,6 @@ synthetics\_test\_headers
 -------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_headers
-   :members:
-   :show-inheritance:
-
-synthetics\_test\_metadata
---------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_test_metadata
    :members:
    :show-inheritance:
 

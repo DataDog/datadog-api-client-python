@@ -183,6 +183,12 @@
       "type": "idempotent"
     }
   },
+  "SubmitDistributionPoints": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListDowntimes": {
     "tag": "Downtimes",
     "undo": {
@@ -833,24 +839,6 @@
     "tag": "Metrics",
     "undo": {
       "type": "safe"
-    }
-  },
-  "AddSecurityMonitoringSignalToIncident": {
-    "tag": "Security Monitoring",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "EditSecurityMonitoringSignalAssignee": {
-    "tag": "Security Monitoring",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "EditSecurityMonitoringSignalState": {
-    "tag": "Security Monitoring",
-    "undo": {
-      "type": "idempotent"
     }
   },
   "SubmitMetrics": {

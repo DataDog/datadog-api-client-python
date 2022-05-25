@@ -104,7 +104,7 @@ class SyntheticsTestDetails(ModelNormal):
         :type steps: [SyntheticsStep], optional
 
         :param subtype: The subtype of the Synthetic API test, ``http`` , ``ssl`` , ``tcp`` ,
-            ``dns`` , ``icmp`` , ``udp`` , ``websocket`` , ``grpc`` or ``multi``.
+            ``dns`` , ``icmp`` , ``udp`` , ``websocket`` or ``multi``.
         :type subtype: SyntheticsTestDetailsSubType, optional
 
         :param tags: Array of tags attached to the test.

@@ -38,7 +38,7 @@ class MonthlyUsageAttributionResponse(ModelNormal):
         :param metadata: The object containing document metadata.
         :type metadata: MonthlyUsageAttributionMetadata, optional
 
-        :param usage: Get usage summary by tag(s).
+        :param usage: Get Usage Summary by tag(s).
         :type usage: [MonthlyUsageAttributionBody], optional
         """
         super().__init__(kwargs)

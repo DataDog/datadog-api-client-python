@@ -4,11 +4,13 @@
 
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
+from datadog_api_client.v1.model.distribution_points_content_encoding import DistributionPointsContentEncoding
+from datadog_api_client.v1.model.distribution_points_payload import DistributionPointsPayload
 from datadog_api_client.v1.model.metrics_list_response import MetricsListResponse
 from datadog_api_client.v1.model.metric_metadata import MetricMetadata
 from datadog_api_client.v1.model.metrics_query_response import MetricsQueryResponse
 from datadog_api_client.v1.model.metric_search_response import MetricSearchResponse
-from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
 from datadog_api_client.v1.model.metric_content_encoding import MetricContentEncoding
 from datadog_api_client.v1.model.metrics_payload import MetricsPayload
 
@@ -155,6 +157,32 @@ class MetricsApi:
                 "accept": ["application/json"],
                 "content_type": [],
             },
+            api_client=api_client,
+        )
+
+        self._submit_distribution_points_endpoint = _Endpoint(
+            settings={
+                "response_type": (IntakePayloadAccepted,),
+                "auth": ["apiKeyAuth"],
+                "endpoint_path": "/api/v1/distribution_points",
+                "operation_id": "submit_distribution_points",
+                "http_method": "POST",
+                "version": "v1",
+                "servers": None,
+            },
+            params_map={
+                "content_encoding": {
+                    "openapi_types": (DistributionPointsContentEncoding,),
+                    "attribute": "Content-Encoding",
+                    "location": "header",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (DistributionPointsPayload,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["text/json", "application/json"], "content_type": ["text/json"]},
             api_client=api_client,
         )
 
@@ -400,6 +428,51 @@ class MetricsApi:
         kwargs["query"] = query
 
         return self._query_metrics_endpoint.call_with_http_info(**kwargs)
+
+    def submit_distribution_points(self, body, **kwargs):
+        """Submit distribution points.
+
+        The distribution points end-point allows you to post distribution data that can be graphed on Datadog’s dashboards.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True.
+
+        >>> thread = api.submit_distribution_points(body, async_req=True)
+        >>> result = thread.get()
+
+        :type body: DistributionPointsPayload
+        :param content_encoding: HTTP header used to compress the media-type.
+        :type content_encoding: DistributionPointsContentEncoding, optional
+        :param _return_http_data_only: Response data without head status
+            code and headers. Default is True.
+        :type _return_http_data_only: bool
+        :param _preload_content: If False, the urllib3.HTTPResponse object
+            will be returned without reading/decoding response data.
+            Default is True.
+        :type _preload_content: bool
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+        :param async_req: Execute request asynchronously.
+        :type async_req: bool
+
+        :return: If the method is called asynchronously, returns the request thread.
+        :rtype: IntakePayloadAccepted
+        """
+        kwargs = self._submit_distribution_points_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+
+        return self._submit_distribution_points_endpoint.call_with_http_info(**kwargs)
 
     def submit_metrics(self, body, **kwargs):
         """Submit metrics.

@@ -96,7 +96,7 @@ class LogsProcessor(ModelComposed):
         :type is_encoded: bool, optional
 
         :param categories: Array of filters to match or not a log and their
-            corresponding `name` to assign a custom value to the log.
+            corresponding `name`to assign a custom value to the log.
         :type categories: [LogsCategoryProcessorCategory]
 
         :param expression: Arithmetic operation between one or more log attributes.

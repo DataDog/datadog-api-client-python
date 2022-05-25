@@ -1,5 +1,5 @@
 """
-Get hourly usage attribution returns "OK" response
+Get Hourly Usage Attribution returns "OK" response
 """
 
 from datetime import datetime

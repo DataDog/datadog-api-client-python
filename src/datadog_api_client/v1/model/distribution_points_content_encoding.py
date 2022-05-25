@@ -4,19 +4,16 @@
 
 
 from datadog_api_client.model_utils import (
-    ApiTypeError,
     ModelSimple,
     cached_property,
 )
 
 
-class SignalTriageState(ModelSimple):
+class DistributionPointsContentEncoding(ModelSimple):
 
     allowed_values = {
         "value": {
-            "OPEN": "open",
-            "ARCHIVED": "archived",
-            "UNDER_REVIEW": "under_review",
+            "DEFLATE": "deflate",
         },
     }
 
@@ -28,11 +25,11 @@ class SignalTriageState(ModelSimple):
 
     def __init__(self, *args, **kwargs):
         """
-        The new triage state of the signal.
+        HTTP header used to compress the media-type.
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["open", "archived", "under_review"].
+        :param value: If omitted defaults to "deflate". Must be one of ["deflate"].
         :type value: str
         """
         super().__init__(kwargs)
@@ -43,11 +40,7 @@ class SignalTriageState(ModelSimple):
             args = list(args)
             value = args.pop(0)
         else:
-            raise ApiTypeError(
-                "value is required, but not passed in args or kwargs and doesn't have default",
-                path_to_item=self._path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            value = "deflate"
 
         self._check_pos_args(args)
 

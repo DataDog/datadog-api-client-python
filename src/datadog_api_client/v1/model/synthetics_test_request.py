@@ -13,14 +13,12 @@ def lazy_import():
     from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
     from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
     from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
-    from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
     from datadog_api_client.v1.model.http_method import HTTPMethod
     from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
 
     globals()["SyntheticsBasicAuth"] = SyntheticsBasicAuth
     globals()["SyntheticsTestRequestCertificate"] = SyntheticsTestRequestCertificate
     globals()["SyntheticsTestHeaders"] = SyntheticsTestHeaders
-    globals()["SyntheticsTestMetadata"] = SyntheticsTestMetadata
     globals()["HTTPMethod"] = HTTPMethod
     globals()["SyntheticsTestRequestProxy"] = SyntheticsTestRequestProxy
 
@@ -51,7 +49,6 @@ class SyntheticsTestRequest(ModelNormal):
             "headers": (SyntheticsTestHeaders,),
             "host": (str,),
             "message": (str,),
-            "metadata": (SyntheticsTestMetadata,),
             "method": (HTTPMethod,),
             "no_saving_response_body": (bool,),
             "number_of_packets": (int,),
@@ -59,7 +56,6 @@ class SyntheticsTestRequest(ModelNormal):
             "proxy": (SyntheticsTestRequestProxy,),
             "query": (dict,),
             "servername": (str,),
-            "service": (str,),
             "should_track_hops": (bool,),
             "timeout": (float,),
             "url": (str,),
@@ -76,7 +72,6 @@ class SyntheticsTestRequest(ModelNormal):
         "headers": "headers",
         "host": "host",
         "message": "message",
-        "metadata": "metadata",
         "method": "method",
         "no_saving_response_body": "noSavingResponseBody",
         "number_of_packets": "numberOfPackets",
@@ -84,7 +79,6 @@ class SyntheticsTestRequest(ModelNormal):
         "proxy": "proxy",
         "query": "query",
         "servername": "servername",
-        "service": "service",
         "should_track_hops": "shouldTrackHops",
         "timeout": "timeout",
         "url": "url",
@@ -124,9 +118,6 @@ class SyntheticsTestRequest(ModelNormal):
         :param message: Message to send for UDP or WebSocket tests.
         :type message: str, optional
 
-        :param metadata: Metadata to include when performing the gRPC test.
-        :type metadata: SyntheticsTestMetadata, optional
-
         :param method: The HTTP method.
         :type method: HTTPMethod, optional
 
@@ -149,9 +140,6 @@ class SyntheticsTestRequest(ModelNormal):
             allowing the server to present one of multiple possible certificates on
             the same IP address and TCP port number.
         :type servername: str, optional
-
-        :param service: gRPC service on which you want to perform the healthcheck.
-        :type service: str, optional
 
         :param should_track_hops: Turns on a traceroute probe to discover all gateways along the path to the host destination.
         :type should_track_hops: bool, optional

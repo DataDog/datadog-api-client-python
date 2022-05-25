@@ -18,7 +18,6 @@ from datadog_api_client.v1.api.monitors_api import MonitorsApi
 from datadog_api_client.v1.api.notebooks_api import NotebooksApi
 from datadog_api_client.v1.api.organizations_api import OrganizationsApi
 from datadog_api_client.v1.api.pager_duty_integration_api import PagerDutyIntegrationApi
-from datadog_api_client.v1.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v1.api.service_checks_api import ServiceChecksApi
 from datadog_api_client.v1.api.service_level_objective_corrections_api import ServiceLevelObjectiveCorrectionsApi
 from datadog_api_client.v1.api.service_level_objectives_api import ServiceLevelObjectivesApi

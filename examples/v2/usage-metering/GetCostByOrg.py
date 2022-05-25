@@ -1,5 +1,5 @@
 """
-Get cost across multi-org account returns "OK" response
+Get Cost Across Multi-Org Account returns "OK" response
 """
 
 from datetime import datetime

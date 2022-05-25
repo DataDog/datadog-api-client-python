@@ -22,7 +22,6 @@ class SyntheticsTestDetailsSubType(ModelSimple):
             "ICMP": "icmp",
             "UDP": "udp",
             "WEBSOCKET": "websocket",
-            "GRPC": "grpc",
         },
     }
 
@@ -35,11 +34,11 @@ class SyntheticsTestDetailsSubType(ModelSimple):
     def __init__(self, *args, **kwargs):
         """
         The subtype of the Synthetic API test, `http`, `ssl`, `tcp`,
-        `dns`, `icmp`, `udp`, `websocket`, `grpc` or `multi`.
+        `dns`, `icmp`, `udp`, `websocket` or `multi`.
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["http", "ssl", "tcp", "dns", "multi", "icmp", "udp", "websocket", "grpc"].
+        :param value: Must be one of ["http", "ssl", "tcp", "dns", "multi", "icmp", "udp", "websocket"].
         :type value: str
         """
         super().__init__(kwargs)

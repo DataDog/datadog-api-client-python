@@ -26,7 +26,7 @@ class AuthNMappingIncluded(ModelComposed):
         :type attributes: SAMLAssertionAttributeAttributes, optional
 
         :param id: The ID of the SAML assertion attribute.
-        :type id: str
+        :type id: int
 
         :param type: SAML assertion attributes resource type.
         :type type: SAMLAssertionAttributesType

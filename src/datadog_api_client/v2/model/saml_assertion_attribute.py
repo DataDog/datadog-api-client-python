@@ -18,12 +18,18 @@ def lazy_import():
 
 
 class SAMLAssertionAttribute(ModelNormal):
+    validations = {
+        "id": {
+            "inclusive_maximum": 2147483647,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         lazy_import()
         return {
             "attributes": (SAMLAssertionAttributeAttributes,),
-            "id": (str,),
+            "id": (int,),
             "type": (SAMLAssertionAttributesType,),
         }
 
@@ -41,7 +47,7 @@ class SAMLAssertionAttribute(ModelNormal):
         :type attributes: SAMLAssertionAttributeAttributes, optional
 
         :param id: The ID of the SAML assertion attribute.
-        :type id: str
+        :type id: int
 
         :param type: SAML assertion attributes resource type.
         :type type: SAMLAssertionAttributesType

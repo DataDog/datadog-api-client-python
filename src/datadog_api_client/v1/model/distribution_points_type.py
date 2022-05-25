@@ -4,20 +4,16 @@
 
 
 from datadog_api_client.model_utils import (
-    ApiTypeError,
     ModelSimple,
     cached_property,
 )
 
 
-class SignalArchiveReason(ModelSimple):
+class DistributionPointsType(ModelSimple):
 
     allowed_values = {
         "value": {
-            "NONE": "none",
-            "FALSE_POSITIVE": "false_positive",
-            "TESTING_OR_MAINTENANCE": "testing_or_maintenance",
-            "OTHER": "other",
+            "DISTRIBUTION": "distribution",
         },
     }
 
@@ -29,11 +25,11 @@ class SignalArchiveReason(ModelSimple):
 
     def __init__(self, *args, **kwargs):
         """
-        Reason why a signal has been archived.
+        The type of the distribution point.
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["none", "false_positive", "testing_or_maintenance", "other"].
+        :param value: If omitted defaults to "distribution". Must be one of ["distribution"].
         :type value: str
         """
         super().__init__(kwargs)
@@ -44,11 +40,7 @@ class SignalArchiveReason(ModelSimple):
             args = list(args)
             value = args.pop(0)
         else:
-            raise ApiTypeError(
-                "value is required, but not passed in args or kwargs and doesn't have default",
-                path_to_item=self._path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            value = "distribution"
 
         self._check_pos_args(args)
 

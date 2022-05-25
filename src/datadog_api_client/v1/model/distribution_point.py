@@ -7,32 +7,34 @@ from datadog_api_client.model_utils import (
     ApiTypeError,
     ModelSimple,
     cached_property,
+    date,
+    datetime,
+    none_type,
 )
 
 
-class LogsSort(ModelSimple):
+class DistributionPoint(ModelSimple):
 
-    allowed_values = {
+    validations = {
         "value": {
-            "TIME_ASCENDING": "asc",
-            "TIME_DESCENDING": "desc",
+            "max_items": 2,
+            "min_items": 2,
         },
     }
 
     @cached_property
     def openapi_types(_):
         return {
-            "value": (str,),
+            "value": ([bool, date, datetime, dict, float, int, list, str, none_type],),
         }
 
     def __init__(self, *args, **kwargs):
         """
-        Time-ascending `asc` or time-descending `desc`results.
+        Array of distribution points.
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["asc", "desc"].
-        :type value: str
+        :type value: [bool, date, datetime, dict, float, int, list, str, none_type]
         """
         super().__init__(kwargs)
 
