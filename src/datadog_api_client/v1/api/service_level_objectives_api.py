@@ -316,41 +316,12 @@ class ServiceLevelObjectivesApi:
         Check if an SLO can be safely deleted. For example,
         assure an SLO can be deleted without disrupting a dashboard.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.check_can_delete_slo(ids, async_req=True)
-        >>> result = thread.get()
-
         :param ids: A comma separated list of the IDs of the service level objectives objects.
         :type ids: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: CheckCanDeleteSLOResponse
         """
-        kwargs = self._check_can_delete_slo_endpoint.default_arguments(kwargs)
         kwargs["ids"] = ids
 
         return self._check_can_delete_slo_endpoint.call_with_http_info(**kwargs)
@@ -360,41 +331,12 @@ class ServiceLevelObjectivesApi:
 
         Create a service level objective object.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_slo(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Service level objective request object.
         :type body: ServiceLevelObjectiveRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOListResponse
         """
-        kwargs = self._create_slo_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._create_slo_endpoint.call_with_http_info(**kwargs)
@@ -407,43 +349,14 @@ class ServiceLevelObjectivesApi:
         If an SLO is used in a dashboard, the ``DELETE /v1/slo/`` endpoint returns
         a 409 conflict error because the SLO is referenced in a dashboard.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_slo(slo_id, async_req=True)
-        >>> result = thread.get()
-
         :param slo_id: The ID of the service level objective.
         :type slo_id: str
         :param force: Delete the monitor even if it's referenced by other resources (for example SLO, composite monitor).
         :type force: str, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLODeleteResponse
         """
-        kwargs = self._delete_slo_endpoint.default_arguments(kwargs)
         kwargs["slo_id"] = slo_id
 
         return self._delete_slo_endpoint.call_with_http_info(**kwargs)
@@ -457,41 +370,12 @@ class ServiceLevelObjectivesApi:
         service level objective objects. If all thresholds are deleted, the service level
         objective object is deleted as well.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_slo_timeframe_in_bulk(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Delete multiple service level objective objects request body.
         :type body: SLOBulkDelete
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOBulkDeleteResponse
         """
-        kwargs = self._delete_slo_timeframe_in_bulk_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._delete_slo_timeframe_in_bulk_endpoint.call_with_http_info(**kwargs)
@@ -501,43 +385,14 @@ class ServiceLevelObjectivesApi:
 
         Get a service level objective object.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_slo(slo_id, async_req=True)
-        >>> result = thread.get()
-
         :param slo_id: The ID of the service level objective object.
         :type slo_id: str
         :param with_configured_alert_ids: Get the IDs of SLO monitors that reference this SLO.
         :type with_configured_alert_ids: bool, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOResponse
         """
-        kwargs = self._get_slo_endpoint.default_arguments(kwargs)
         kwargs["slo_id"] = slo_id
 
         return self._get_slo_endpoint.call_with_http_info(**kwargs)
@@ -547,41 +402,12 @@ class ServiceLevelObjectivesApi:
 
         Get corrections applied to an SLO
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_slo_corrections(slo_id, async_req=True)
-        >>> result = thread.get()
-
         :param slo_id: The ID of the service level objective object.
         :type slo_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOCorrectionListResponse
         """
-        kwargs = self._get_slo_corrections_endpoint.default_arguments(kwargs)
         kwargs["slo_id"] = slo_id
 
         return self._get_slo_corrections_endpoint.call_with_http_info(**kwargs)
@@ -598,12 +424,6 @@ class ServiceLevelObjectivesApi:
         **Note:** There are different response formats for event based and time based SLOs.
         Examples of both are shown.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_slo_history(slo_id, from_ts, to_ts, async_req=True)
-        >>> result = thread.get()
-
         :param slo_id: The ID of the service level objective object.
         :type slo_id: str
         :param from_ts: The ``from`` timestamp for the query window in epoch seconds.
@@ -615,33 +435,10 @@ class ServiceLevelObjectivesApi:
         :param apply_correction: Defaults to ``true``. If any SLO corrections are applied and this parameter is set to ``false`` ,
             then the corrections will not be applied and the SLI values will not be affected.
         :type apply_correction: bool, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOHistoryResponse
         """
-        kwargs = self._get_slo_history_endpoint.default_arguments(kwargs)
         kwargs["slo_id"] = slo_id
 
         kwargs["from_ts"] = from_ts
@@ -655,12 +452,6 @@ class ServiceLevelObjectivesApi:
 
         Get a list of service level objective objects for your organization.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_slos(async_req=True)
-        >>> result = thread.get()
-
         :param ids: A comma separated list of the IDs of the service level objectives objects.
         :type ids: str, optional
         :param query: The query string to filter results based on SLO names.
@@ -673,33 +464,10 @@ class ServiceLevelObjectivesApi:
         :type limit: int, optional
         :param offset: The specific offset to use as the beginning of the returned response.
         :type offset: int, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOListResponse
         """
-        kwargs = self._list_slos_endpoint.default_arguments(kwargs)
         return self._list_slos_endpoint.call_with_http_info(**kwargs)
 
     def update_slo(self, slo_id, body, **kwargs):
@@ -707,43 +475,14 @@ class ServiceLevelObjectivesApi:
 
         Update the specified service level objective object.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_slo(slo_id, body, async_req=True)
-        >>> result = thread.get()
-
         :param slo_id: The ID of the service level objective object.
         :type slo_id: str
         :param body: The edited service level objective request object.
         :type body: ServiceLevelObjective
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOListResponse
         """
-        kwargs = self._update_slo_endpoint.default_arguments(kwargs)
         kwargs["slo_id"] = slo_id
 
         kwargs["body"] = body

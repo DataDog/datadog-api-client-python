@@ -104,12 +104,6 @@ class AuditApi:
 
         Use this endpoint to see your latest Audit Logs events.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_audit_logs(async_req=True)
-        >>> result = thread.get()
-
         :param filter_query: Search query following Audit Logs syntax.
         :type filter_query: str, optional
         :param filter_from: Minimum timestamp for requested events.
@@ -122,33 +116,10 @@ class AuditApi:
         :type page_cursor: str, optional
         :param page_limit: Maximum number of events in the response.
         :type page_limit: int, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuditLogsEventsResponse
         """
-        kwargs = self._list_audit_logs_endpoint.default_arguments(kwargs)
         return self._list_audit_logs_endpoint.call_with_http_info(**kwargs)
 
     def list_audit_logs_with_pagination(self, **kwargs):
@@ -168,24 +139,10 @@ class AuditApi:
         :type page_cursor: str, optional
         :param page_limit: Maximum number of events in the response.
         :type page_limit: int, optional
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[AuditLogsEvent]
         """
-        kwargs = self._list_audit_logs_endpoint.default_arguments(kwargs)
         page_size = get_attribute_from_path(kwargs, "page_limit", 10)
         endpoint = self._list_audit_logs_endpoint
         set_attribute_from_path(kwargs, "page_limit", page_size, endpoint.params_map)
@@ -207,40 +164,11 @@ class AuditApi:
 
         Use this endpoint to build complex Audit Logs events filtering and search.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.search_audit_logs(async_req=True)
-        >>> result = thread.get()
-
         :type body: AuditLogsSearchEventsRequest, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuditLogsEventsResponse
         """
-        kwargs = self._search_audit_logs_endpoint.default_arguments(kwargs)
         return self._search_audit_logs_endpoint.call_with_http_info(**kwargs)
 
     def search_audit_logs_with_pagination(self, **kwargs):
@@ -249,24 +177,10 @@ class AuditApi:
         Provide a paginated version of :meth:`search_audit_logs`, returning all items.
 
         :type body: AuditLogsSearchEventsRequest, optional
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[AuditLogsEvent]
         """
-        kwargs = self._search_audit_logs_endpoint.default_arguments(kwargs)
         page_size = get_attribute_from_path(kwargs, "body.page.limit", 10)
         endpoint = self._search_audit_logs_endpoint
         set_attribute_from_path(kwargs, "body.page.limit", page_size, endpoint.params_map)

@@ -735,41 +735,12 @@ class SyntheticsApi:
 
         Create a Synthetics global variable.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_global_variable(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Details of the global variable to create.
         :type body: SyntheticsGlobalVariable
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsGlobalVariable
         """
-        kwargs = self._create_global_variable_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._create_global_variable_endpoint.call_with_http_info(**kwargs)
@@ -779,41 +750,12 @@ class SyntheticsApi:
 
         Create a new Synthetics private location.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_private_location(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Details of the private location to create.
         :type body: SyntheticsPrivateLocation
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsPrivateLocationCreationResponse
         """
-        kwargs = self._create_private_location_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._create_private_location_endpoint.call_with_http_info(**kwargs)
@@ -823,41 +765,12 @@ class SyntheticsApi:
 
         Create a Synthetic API test.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_synthetics_api_test(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Details of the test to create.
         :type body: SyntheticsAPITest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsAPITest
         """
-        kwargs = self._create_synthetics_api_test_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._create_synthetics_api_test_endpoint.call_with_http_info(**kwargs)
@@ -867,41 +780,12 @@ class SyntheticsApi:
 
         Create a Synthetic browser test.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_synthetics_browser_test(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Details of the test to create.
         :type body: SyntheticsBrowserTest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsBrowserTest
         """
-        kwargs = self._create_synthetics_browser_test_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._create_synthetics_browser_test_endpoint.call_with_http_info(**kwargs)
@@ -911,41 +795,12 @@ class SyntheticsApi:
 
         Delete a Synthetics global variable.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_global_variable(variable_id, async_req=True)
-        >>> result = thread.get()
-
         :param variable_id: The ID of the global variable.
         :type variable_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._delete_global_variable_endpoint.default_arguments(kwargs)
         kwargs["variable_id"] = variable_id
 
         return self._delete_global_variable_endpoint.call_with_http_info(**kwargs)
@@ -955,41 +810,12 @@ class SyntheticsApi:
 
         Delete a Synthetics private location.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_private_location(location_id, async_req=True)
-        >>> result = thread.get()
-
         :param location_id: The ID of the private location.
         :type location_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._delete_private_location_endpoint.default_arguments(kwargs)
         kwargs["location_id"] = location_id
 
         return self._delete_private_location_endpoint.call_with_http_info(**kwargs)
@@ -999,41 +825,12 @@ class SyntheticsApi:
 
         Delete multiple Synthetic tests by ID.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_tests(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Public ID list of the Synthetic tests to be deleted.
         :type body: SyntheticsDeleteTestsPayload
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsDeleteTestsResponse
         """
-        kwargs = self._delete_tests_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._delete_tests_endpoint.call_with_http_info(**kwargs)
@@ -1043,43 +840,14 @@ class SyntheticsApi:
 
         Edit a Synthetics global variable.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.edit_global_variable(variable_id, body, async_req=True)
-        >>> result = thread.get()
-
         :param variable_id: The ID of the global variable.
         :type variable_id: str
         :param body: Details of the global variable to update.
         :type body: SyntheticsGlobalVariable
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsGlobalVariable
         """
-        kwargs = self._edit_global_variable_endpoint.default_arguments(kwargs)
         kwargs["variable_id"] = variable_id
 
         kwargs["body"] = body
@@ -1092,41 +860,12 @@ class SyntheticsApi:
         Get the detailed configuration associated with
         a Synthetic API test.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_api_test(public_id, async_req=True)
-        >>> result = thread.get()
-
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsAPITest
         """
-        kwargs = self._get_api_test_endpoint.default_arguments(kwargs)
         kwargs["public_id"] = public_id
 
         return self._get_api_test_endpoint.call_with_http_info(**kwargs)
@@ -1136,12 +875,6 @@ class SyntheticsApi:
 
         Get the last 50 test results summaries for a given Synthetics API test.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_api_test_latest_results(public_id, async_req=True)
-        >>> result = thread.get()
-
         :param public_id: The public ID of the test for which to search results for.
         :type public_id: str
         :param from_ts: Timestamp in milliseconds from which to start querying results.
@@ -1150,33 +883,10 @@ class SyntheticsApi:
         :type to_ts: int, optional
         :param probe_dc: Locations for which to query results.
         :type probe_dc: [str], optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsGetAPITestLatestResultsResponse
         """
-        kwargs = self._get_api_test_latest_results_endpoint.default_arguments(kwargs)
         kwargs["public_id"] = public_id
 
         return self._get_api_test_latest_results_endpoint.call_with_http_info(**kwargs)
@@ -1186,43 +896,14 @@ class SyntheticsApi:
 
         Get a specific full result from a given (API) Synthetic test.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_api_test_result(public_id, result_id, async_req=True)
-        >>> result = thread.get()
-
         :param public_id: The public ID of the API test to which the target result belongs.
         :type public_id: str
         :param result_id: The ID of the result to get.
         :type result_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsAPITestResultFull
         """
-        kwargs = self._get_api_test_result_endpoint.default_arguments(kwargs)
         kwargs["public_id"] = public_id
 
         kwargs["result_id"] = result_id
@@ -1235,41 +916,12 @@ class SyntheticsApi:
         Get the detailed configuration (including steps) associated with
         a Synthetic browser test.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_browser_test(public_id, async_req=True)
-        >>> result = thread.get()
-
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsBrowserTest
         """
-        kwargs = self._get_browser_test_endpoint.default_arguments(kwargs)
         kwargs["public_id"] = public_id
 
         return self._get_browser_test_endpoint.call_with_http_info(**kwargs)
@@ -1278,12 +930,6 @@ class SyntheticsApi:
         """Get a browser test's latest results summaries.
 
         Get the last 50 test results summaries for a given Synthetics Browser test.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_browser_test_latest_results(public_id, async_req=True)
-        >>> result = thread.get()
 
         :param public_id: The public ID of the browser test for which to search results
             for.
@@ -1294,33 +940,10 @@ class SyntheticsApi:
         :type to_ts: int, optional
         :param probe_dc: Locations for which to query results.
         :type probe_dc: [str], optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsGetBrowserTestLatestResultsResponse
         """
-        kwargs = self._get_browser_test_latest_results_endpoint.default_arguments(kwargs)
         kwargs["public_id"] = public_id
 
         return self._get_browser_test_latest_results_endpoint.call_with_http_info(**kwargs)
@@ -1330,44 +953,15 @@ class SyntheticsApi:
 
         Get a specific full result from a given (browser) Synthetic test.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_browser_test_result(public_id, result_id, async_req=True)
-        >>> result = thread.get()
-
         :param public_id: The public ID of the browser test to which the target result
             belongs.
         :type public_id: str
         :param result_id: The ID of the result to get.
         :type result_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsBrowserTestResultFull
         """
-        kwargs = self._get_browser_test_result_endpoint.default_arguments(kwargs)
         kwargs["public_id"] = public_id
 
         kwargs["result_id"] = result_id
@@ -1379,41 +973,12 @@ class SyntheticsApi:
 
         Get the detailed configuration of a global variable.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_global_variable(variable_id, async_req=True)
-        >>> result = thread.get()
-
         :param variable_id: The ID of the global variable.
         :type variable_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsGlobalVariable
         """
-        kwargs = self._get_global_variable_endpoint.default_arguments(kwargs)
         kwargs["variable_id"] = variable_id
 
         return self._get_global_variable_endpoint.call_with_http_info(**kwargs)
@@ -1423,41 +988,12 @@ class SyntheticsApi:
 
         Get a Synthetics private location.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_private_location(location_id, async_req=True)
-        >>> result = thread.get()
-
         :param location_id: The ID of the private location.
         :type location_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsPrivateLocation
         """
-        kwargs = self._get_private_location_endpoint.default_arguments(kwargs)
         kwargs["location_id"] = location_id
 
         return self._get_private_location_endpoint.call_with_http_info(**kwargs)
@@ -1467,41 +1003,12 @@ class SyntheticsApi:
 
         Get a batch's updated details.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_synthetics_ci_batch(batch_id, async_req=True)
-        >>> result = thread.get()
-
         :param batch_id: The ID of the batch.
         :type batch_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsBatchDetails
         """
-        kwargs = self._get_synthetics_ci_batch_endpoint.default_arguments(kwargs)
         kwargs["batch_id"] = batch_id
 
         return self._get_synthetics_ci_batch_endpoint.call_with_http_info(**kwargs)
@@ -1511,41 +1018,12 @@ class SyntheticsApi:
 
         Get the detailed configuration associated with a Synthetics test.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_test(public_id, async_req=True)
-        >>> result = thread.get()
-
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsTestDetails
         """
-        kwargs = self._get_test_endpoint.default_arguments(kwargs)
         kwargs["public_id"] = public_id
 
         return self._get_test_endpoint.call_with_http_info(**kwargs)
@@ -1555,39 +1033,10 @@ class SyntheticsApi:
 
         Get the list of all Synthetics global variables.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_global_variables(async_req=True)
-        >>> result = thread.get()
-
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsListGlobalVariablesResponse
         """
-        kwargs = self._list_global_variables_endpoint.default_arguments(kwargs)
         return self._list_global_variables_endpoint.call_with_http_info(**kwargs)
 
     def list_locations(self, **kwargs):
@@ -1596,39 +1045,10 @@ class SyntheticsApi:
         Get the list of public and private locations available for Synthetic
         tests. No arguments required.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_locations(async_req=True)
-        >>> result = thread.get()
-
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsLocations
         """
-        kwargs = self._list_locations_endpoint.default_arguments(kwargs)
         return self._list_locations_endpoint.call_with_http_info(**kwargs)
 
     def list_tests(self, **kwargs):
@@ -1636,39 +1056,10 @@ class SyntheticsApi:
 
         Get the list of all Synthetic tests.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_tests(async_req=True)
-        >>> result = thread.get()
-
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsListTestsResponse
         """
-        kwargs = self._list_tests_endpoint.default_arguments(kwargs)
         return self._list_tests_endpoint.call_with_http_info(**kwargs)
 
     def trigger_ci_tests(self, body, **kwargs):
@@ -1676,41 +1067,12 @@ class SyntheticsApi:
 
         Trigger a set of Synthetics tests for continuous integration.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.trigger_ci_tests(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Details of the test to trigger.
         :type body: SyntheticsCITestBody
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsTriggerCITestsResponse
         """
-        kwargs = self._trigger_ci_tests_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._trigger_ci_tests_endpoint.call_with_http_info(**kwargs)
@@ -1720,41 +1082,12 @@ class SyntheticsApi:
 
         Trigger a set of Synthetics tests.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.trigger_tests(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: The identifiers of the tests to trigger.
         :type body: SyntheticsTriggerBody
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsTriggerCITestsResponse
         """
-        kwargs = self._trigger_tests_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._trigger_tests_endpoint.call_with_http_info(**kwargs)
@@ -1764,43 +1097,14 @@ class SyntheticsApi:
 
         Edit the configuration of a Synthetic API test.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_api_test(public_id, body, async_req=True)
-        >>> result = thread.get()
-
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
         :param body: New test details to be saved.
         :type body: SyntheticsAPITest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsAPITest
         """
-        kwargs = self._update_api_test_endpoint.default_arguments(kwargs)
         kwargs["public_id"] = public_id
 
         kwargs["body"] = body
@@ -1812,43 +1116,14 @@ class SyntheticsApi:
 
         Edit the configuration of a Synthetic browser test.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_browser_test(public_id, body, async_req=True)
-        >>> result = thread.get()
-
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
         :param body: New test details to be saved.
         :type body: SyntheticsBrowserTest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsBrowserTest
         """
-        kwargs = self._update_browser_test_endpoint.default_arguments(kwargs)
         kwargs["public_id"] = public_id
 
         kwargs["body"] = body
@@ -1860,43 +1135,14 @@ class SyntheticsApi:
 
         Edit a Synthetics private location.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_private_location(location_id, body, async_req=True)
-        >>> result = thread.get()
-
         :param location_id: The ID of the private location.
         :type location_id: str
         :param body: Details of the private location to be updated.
         :type body: SyntheticsPrivateLocation
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsPrivateLocation
         """
-        kwargs = self._update_private_location_endpoint.default_arguments(kwargs)
         kwargs["location_id"] = location_id
 
         kwargs["body"] = body
@@ -1908,43 +1154,14 @@ class SyntheticsApi:
 
         Pause or start a Synthetics test by changing the status.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_test_pause_status(public_id, body, async_req=True)
-        >>> result = thread.get()
-
         :param public_id: The public ID of the Synthetic test to update.
         :type public_id: str
         :param body: Status to set the given Synthetic test to.
         :type body: SyntheticsUpdateTestPauseStatusPayload
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: bool
         """
-        kwargs = self._update_test_pause_status_endpoint.default_arguments(kwargs)
         kwargs["public_id"] = public_id
 
         kwargs["body"] = body

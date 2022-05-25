@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 
 
 class RESTClientObject:
-    def __init__(self, configuration, pools_size=4, maxsize=None):
+    def __init__(self, configuration, pools_size=4, maxsize=4):
         # urllib3.PoolManager will pass all kw parameters to connectionpool
         # https://github.com/shazow/urllib3/blob/f9409436f83aeb79fbaf090181cd81b784f1b8ce/urllib3/poolmanager.py#L75
         # https://github.com/shazow/urllib3/blob/f9409436f83aeb79fbaf090181cd81b784f1b8ce/urllib3/connectionpool.py#L680
@@ -48,12 +48,6 @@ class RESTClientObject:
 
         if configuration.socket_options is not None:
             addition_pool_args["socket_options"] = configuration.socket_options
-
-        if maxsize is None:
-            if configuration.connection_pool_maxsize is not None:
-                maxsize = configuration.connection_pool_maxsize
-            else:
-                maxsize = 4
 
         # https pool manager
         if configuration.proxy:
@@ -87,8 +81,8 @@ class RESTClientObject:
         headers=None,
         body=None,
         post_params=None,
-        _preload_content=True,
-        _request_timeout=None,
+        preload_content=True,
+        request_timeout=None,
     ):
         """Perform requests.
 
@@ -100,13 +94,13 @@ class RESTClientObject:
         :param post_params: request post parameters,
                             `application/x-www-form-urlencoded`
                             and `multipart/form-data`
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
+        :param preload_content: if False, the urllib3.HTTPResponse object will
+                                be returned without reading/decoding response
+                                data. Default is True.
+        :param request_timeout: timeout setting for this request. If one
+                                number provided, it will be total request
+                                timeout. It can also be a pair (tuple) of
+                                (connection, read) timeouts.
         """
         method = method.upper()
         assert method in ["GET", "HEAD", "DELETE", "POST", "PUT", "PATCH", "OPTIONS"]
@@ -118,11 +112,11 @@ class RESTClientObject:
         headers = headers or {}
 
         timeout = None
-        if _request_timeout:
-            if isinstance(_request_timeout, (int, float)):
-                timeout = urllib3.Timeout(total=_request_timeout)
-            elif isinstance(_request_timeout, tuple) and len(_request_timeout) == 2:
-                timeout = urllib3.Timeout(connect=_request_timeout[0], read=_request_timeout[1])
+        if request_timeout:
+            if isinstance(request_timeout, (int, float)):
+                timeout = urllib3.Timeout(total=request_timeout)
+            elif isinstance(request_timeout, tuple) and len(request_timeout) == 2:
+                timeout = urllib3.Timeout(connect=request_timeout[0], read=request_timeout[1])
 
         try:
             # For `POST`, `PUT`, `PATCH`, `OPTIONS`, `DELETE`
@@ -148,7 +142,7 @@ class RESTClientObject:
                         method,
                         url,
                         body=request_body,
-                        preload_content=_preload_content,
+                        preload_content=preload_content,
                         timeout=timeout,
                         headers=headers,
                     )
@@ -158,7 +152,7 @@ class RESTClientObject:
                         url,
                         fields=post_params,
                         encode_multipart=False,
-                        preload_content=_preload_content,
+                        preload_content=preload_content,
                         timeout=timeout,
                         headers=headers,
                     )
@@ -172,7 +166,7 @@ class RESTClientObject:
                         url,
                         fields=post_params,
                         encode_multipart=True,
-                        preload_content=_preload_content,
+                        preload_content=preload_content,
                         timeout=timeout,
                         headers=headers,
                     )
@@ -185,7 +179,7 @@ class RESTClientObject:
                         method,
                         url,
                         body=request_body,
-                        preload_content=_preload_content,
+                        preload_content=preload_content,
                         timeout=timeout,
                         headers=headers,
                     )
@@ -198,13 +192,13 @@ class RESTClientObject:
             # For `GET`, `HEAD`
             else:
                 r = self.pool_manager.request(
-                    method, url, fields=query_params, preload_content=_preload_content, timeout=timeout, headers=headers
+                    method, url, fields=query_params, preload_content=preload_content, timeout=timeout, headers=headers
                 )
         except urllib3.exceptions.SSLError as e:
             msg = "{0}\n{1}".format(type(e).__name__, str(e))
             raise ApiException(status=0, reason=msg)
 
-        if _preload_content:
+        if preload_content:
             # log response body
             logger.debug("response body: %s", r.data)
 
@@ -251,8 +245,8 @@ class AsyncRESTClientObject:
         headers=None,
         body=None,
         post_params=None,
-        _preload_content=True,
-        _request_timeout=None,
+        preload_content=True,
+        request_timeout=None,
     ):
         """Perform requests.
 
@@ -264,13 +258,13 @@ class AsyncRESTClientObject:
         :param post_params: request post parameters,
                             `application/x-www-form-urlencoded`
                             and `multipart/form-data`
-        :param _preload_content: if False, the raw HTTP response object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
+        :param preload_content: if False, the raw HTTP response object will
+                                be returned without reading/decoding response
+                                data. Default is True.
+        :param request_timeout: timeout setting for this request. If one
+                                number provided, it will be total request
+                                timeout. It can also be a pair (tuple) of
+                                (connection, read) timeouts.
         """
         assert not post_params, "not supported for now"
         request_body = None
@@ -286,12 +280,12 @@ class AsyncRESTClientObject:
             elif headers.get("Content-Encoding") == "deflate":
                 request_body = zlib.compress(request_body.encode("utf-8"))
         response = await self._client.request(
-            url, method, headers, query_params, request_body, timeouts=_request_timeout
+            url, method, headers, query_params, request_body, timeouts=request_timeout
         )
 
         if not 200 <= response.status_code <= 299:
             data = b""
-            if _preload_content:
+            if preload_content:
                 data = await response.content()
             r = _AioSonicResponseWrapper(response, data)
 

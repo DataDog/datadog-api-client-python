@@ -74,12 +74,6 @@ class SnapshotsApi:
         Take graph snapshots.
         **Note** : When a snapshot is created, there is some delay before it is available.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_graph_snapshot(start, end, async_req=True)
-        >>> result = thread.get()
-
         :param start: The POSIX timestamp of the start of the query.
         :type start: int
         :param end: The POSIX timestamp of the end of the query.
@@ -94,33 +88,10 @@ class SnapshotsApi:
         :type graph_def: str, optional
         :param title: A title for the graph. If no title is specified, the graph does not have a title.
         :type title: str, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: GraphSnapshot
         """
-        kwargs = self._get_graph_snapshot_endpoint.default_arguments(kwargs)
         kwargs["start"] = start
 
         kwargs["end"] = end

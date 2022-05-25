@@ -352,41 +352,12 @@ class MonitorsApi:
 
         Check if the given monitors can be deleted.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.check_can_delete_monitor(monitor_ids, async_req=True)
-        >>> result = thread.get()
-
         :param monitor_ids: The IDs of the monitor to check.
         :type monitor_ids: [int]
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: CheckCanDeleteMonitorResponse
         """
-        kwargs = self._check_can_delete_monitor_endpoint.default_arguments(kwargs)
         kwargs["monitor_ids"] = monitor_ids
 
         return self._check_can_delete_monitor_endpoint.call_with_http_info(**kwargs)
@@ -592,41 +563,12 @@ class MonitorsApi:
         * ``operator`` ``<`` , ``<=`` , ``>`` , ``>=`` , ``==`` , or ``!=``.
         * ``#`` an integer or decimal number used to set the threshold.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_monitor(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Create a monitor request body.
         :type body: Monitor
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: Monitor
         """
-        kwargs = self._create_monitor_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._create_monitor_endpoint.call_with_http_info(**kwargs)
@@ -636,43 +578,14 @@ class MonitorsApi:
 
         Delete the specified monitor
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_monitor(monitor_id, async_req=True)
-        >>> result = thread.get()
-
         :param monitor_id: The ID of the monitor.
         :type monitor_id: int
         :param force: Delete the monitor even if it's referenced by other resources (for example SLO, composite monitor).
         :type force: str, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: DeletedMonitor
         """
-        kwargs = self._delete_monitor_endpoint.default_arguments(kwargs)
         kwargs["monitor_id"] = monitor_id
 
         return self._delete_monitor_endpoint.call_with_http_info(**kwargs)
@@ -682,43 +595,14 @@ class MonitorsApi:
 
         Get details about the specified monitor from your organization.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_monitor(monitor_id, async_req=True)
-        >>> result = thread.get()
-
         :param monitor_id: The ID of the monitor
         :type monitor_id: int
         :param group_states: When specified, shows additional information about the group states. Choose one or more from ``all`` , ``alert`` , ``warn`` , and ``no data``.
         :type group_states: str, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: Monitor
         """
-        kwargs = self._get_monitor_endpoint.default_arguments(kwargs)
         kwargs["monitor_id"] = monitor_id
 
         return self._get_monitor_endpoint.call_with_http_info(**kwargs)
@@ -727,12 +611,6 @@ class MonitorsApi:
         """Get all monitor details.
 
         Get details about the specified monitor from your organization.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_monitors(async_req=True)
-        >>> result = thread.get()
 
         :param group_states: When specified, shows additional information about the group states.
             Choose one or more from ``all`` , ``alert`` , ``warn`` , and ``no data``.
@@ -753,33 +631,10 @@ class MonitorsApi:
         :type page: int, optional
         :param page_size: The number of monitors to return per page. If the page argument is not specified, the default behavior returns all monitors without a ``page_size`` limit. However, if page is specified and ``page_size`` is not, the argument defaults to 100.
         :type page_size: int, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: [Monitor]
         """
-        kwargs = self._list_monitors_endpoint.default_arguments(kwargs)
         return self._list_monitors_endpoint.call_with_http_info(**kwargs)
 
     def search_monitor_groups(self, **kwargs):
@@ -787,12 +642,6 @@ class MonitorsApi:
 
         Search and filter your monitor groups details.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.search_monitor_groups(async_req=True)
-        >>> result = thread.get()
-
         :param query: After entering a search query in your `Manage Monitor page <https://app.datadoghq.com/monitors/manage>`_ use the query parameter value in the
             URL of the page as value for this parameter. Consult the dedicated `manage monitor documentation </monitors/manage/#find-the-monitors>`_
             page to learn more.
@@ -810,33 +659,10 @@ class MonitorsApi:
             * ``status``
             * ``tags``
         :type sort: str, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: MonitorGroupSearchResponse
         """
-        kwargs = self._search_monitor_groups_endpoint.default_arguments(kwargs)
         return self._search_monitor_groups_endpoint.call_with_http_info(**kwargs)
 
     def search_monitors(self, **kwargs):
@@ -844,12 +670,6 @@ class MonitorsApi:
 
         Search and filter your monitors details.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.search_monitors(async_req=True)
-        >>> result = thread.get()
-
         :param query: After entering a search query in your `Manage Monitor page <https://app.datadoghq.com/monitors/manage>`_ use the query parameter value in the
             URL of the page as value for this parameter. Consult the dedicated `manage monitor documentation </monitors/manage/#find-the-monitors>`_
             page to learn more.
@@ -867,33 +687,10 @@ class MonitorsApi:
             * ``status``
             * ``tags``
         :type sort: str, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: MonitorSearchResponse
         """
-        kwargs = self._search_monitors_endpoint.default_arguments(kwargs)
         return self._search_monitors_endpoint.call_with_http_info(**kwargs)
 
     def update_monitor(self, monitor_id, body, **kwargs):
@@ -901,43 +698,14 @@ class MonitorsApi:
 
         Edit the specified monitor.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_monitor(monitor_id, body, async_req=True)
-        >>> result = thread.get()
-
         :param monitor_id: The ID of the monitor.
         :type monitor_id: int
         :param body: Edit a monitor request body.
         :type body: MonitorUpdateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: Monitor
         """
-        kwargs = self._update_monitor_endpoint.default_arguments(kwargs)
         kwargs["monitor_id"] = monitor_id
 
         kwargs["body"] = body
@@ -949,43 +717,14 @@ class MonitorsApi:
 
         Validate the monitor provided in the request.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.validate_existing_monitor(monitor_id, body, async_req=True)
-        >>> result = thread.get()
-
         :param monitor_id: The ID of the monitor
         :type monitor_id: int
         :param body: Monitor request object
         :type body: Monitor
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
-        kwargs = self._validate_existing_monitor_endpoint.default_arguments(kwargs)
         kwargs["monitor_id"] = monitor_id
 
         kwargs["body"] = body
@@ -997,41 +736,12 @@ class MonitorsApi:
 
         Validate the monitor provided in the request.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.validate_monitor(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Monitor request object
         :type body: Monitor
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
-        kwargs = self._validate_monitor_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._validate_monitor_endpoint.call_with_http_info(**kwargs)

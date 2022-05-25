@@ -161,41 +161,12 @@ class HostsApi:
         This endpoint returns the total number of active and up hosts in your Datadog account.
         Active means the host has reported in the past hour, and up means it has reported in the past two hours.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_host_totals(async_req=True)
-        >>> result = thread.get()
-
         :param _from: Number of seconds from which you want to get total number of active hosts.
         :type _from: int, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: HostTotals
         """
-        kwargs = self._get_host_totals_endpoint.default_arguments(kwargs)
         return self._get_host_totals_endpoint.call_with_http_info(**kwargs)
 
     def list_hosts(self, **kwargs):
@@ -205,12 +176,6 @@ class HostsApi:
         Hosts live within the past 3 hours are included by default.
         Retention is 7 days.
         Results are paginated with a max of 1000 results at a time.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_hosts(async_req=True)
-        >>> result = thread.get()
 
         :param filter: String to filter search results.
         :type filter: str, optional
@@ -228,33 +193,10 @@ class HostsApi:
         :type include_muted_hosts_data: bool, optional
         :param include_hosts_metadata: Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.).
         :type include_hosts_metadata: bool, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: HostListResponse
         """
-        kwargs = self._list_hosts_endpoint.default_arguments(kwargs)
         return self._list_hosts_endpoint.call_with_http_info(**kwargs)
 
     def mute_host(self, host_name, body, **kwargs):
@@ -262,43 +204,14 @@ class HostsApi:
 
         Mute a host.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.mute_host(host_name, body, async_req=True)
-        >>> result = thread.get()
-
         :param host_name: Name of the host to mute.
         :type host_name: str
         :param body: Mute a host request body.
         :type body: HostMuteSettings
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: HostMuteResponse
         """
-        kwargs = self._mute_host_endpoint.default_arguments(kwargs)
         kwargs["host_name"] = host_name
 
         kwargs["body"] = body
@@ -310,41 +223,12 @@ class HostsApi:
 
         Unmutes a host. This endpoint takes no JSON arguments.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.unmute_host(host_name, async_req=True)
-        >>> result = thread.get()
-
         :param host_name: Name of the host to unmute.
         :type host_name: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: HostMuteResponse
         """
-        kwargs = self._unmute_host_endpoint.default_arguments(kwargs)
         kwargs["host_name"] = host_name
 
         return self._unmute_host_endpoint.call_with_http_info(**kwargs)

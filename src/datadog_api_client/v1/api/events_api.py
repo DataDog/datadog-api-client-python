@@ -139,41 +139,12 @@ class EventsApi:
         This endpoint allows you to post events to the stream.
         Tag them, set priority and event aggregate them with other events.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_event(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Event request object
         :type body: EventCreateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: EventCreateResponse
         """
-        kwargs = self._create_event_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._create_event_endpoint.call_with_http_info(**kwargs)
@@ -186,41 +157,12 @@ class EventsApi:
         **Note** : If the event you’re querying contains markdown formatting of any kind,
         you may see characters such as ``%`` , ``\`` , ``n`` in your output.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_event(event_id, async_req=True)
-        >>> result = thread.get()
-
         :param event_id: The ID of the event.
         :type event_id: int
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: EventResponse
         """
-        kwargs = self._get_event_endpoint.default_arguments(kwargs)
         kwargs["event_id"] = event_id
 
         return self._get_event_endpoint.call_with_http_info(**kwargs)
@@ -242,12 +184,6 @@ class EventsApi:
           identify the last timestamp of the last result and set that as the ``end`` query time to
           paginate the results. You can also use the page parameter to specify which set of ``1000`` results to return.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_events(start, end, async_req=True)
-        >>> result = thread.get()
-
         :param start: POSIX timestamp.
         :type start: int
         :param end: POSIX timestamp.
@@ -268,33 +204,10 @@ class EventsApi:
         :param page: By default 1000 results are returned per request. Set page to the number of the page to return with ``0`` being the first page. The page parameter can only be used
             when either unaggregated or exclude_aggregate is set to ``true.``
         :type page: int, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
 
         :return: If the method is called asynchronously, returns the request thread.
         :rtype: EventListResponse
         """
-        kwargs = self._list_events_endpoint.default_arguments(kwargs)
         kwargs["start"] = start
 
         kwargs["end"] = end
