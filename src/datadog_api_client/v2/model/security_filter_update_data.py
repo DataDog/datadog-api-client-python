@@ -38,7 +38,7 @@ class SecurityFilterUpdateData(ModelNormal):
         :param attributes: The security filters properties to be updated.
         :type attributes: SecurityFilterUpdateAttributes
 
-        :param type: The type of the resource. The value should always be `security_filters`.
+        :param type: The type of the resource. The value should always be ``security_filters``.
         :type type: SecurityFilterType
         """
         super().__init__(kwargs)

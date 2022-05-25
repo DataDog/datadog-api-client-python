@@ -12,6 +12,11 @@ from datadog_api_client.v1.model.aws_logs_services_request import AWSLogsService
 
 
 class AWSLogsIntegrationApi:
+    """
+    Configure your Datadog-AWS-Logs integration directly through Datadog API.
+    For more information, see the `AWS integration page <https://docs.datadoghq.com/api/?lang=bash#integration-aws-logs>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -165,10 +170,11 @@ class AWSLogsIntegrationApi:
         is the same as for Enable an AWS service log collection. Subsequent requests will always repeat the above, so this
         endpoint can be polled intermittently instead of blocking.
 
-        - Returns a status of 'created' when it's checking if the Lambda exists in the account.
-        - Returns a status of 'waiting' while checking.
-        - Returns a status of 'checked and ok' if the Lambda exists.
-        - Returns a status of 'error' if the Lambda does not exist.
+
+        * Returns a status of 'created' when it's checking if the Lambda exists in the account.
+        * Returns a status of 'waiting' while checking.
+        * Returns a status of 'checked and ok' if the Lambda exists.
+        * Returns a status of 'error' if the Lambda does not exist.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -213,15 +219,16 @@ class AWSLogsIntegrationApi:
         """Check permissions for log services.
 
         Test if permissions are present to add log-forwarding triggers for the
-        given services and AWS account. Input is the same as for `EnableAWSLogServices`.
+        given services and AWS account. Input is the same as for ``EnableAWSLogServices``.
         Done async, so can be repeatedly polled in a non-blocking fashion until
         the async request completes.
 
-        - Returns a status of `created` when it's checking if the permissions exists
+
+        * Returns a status of ``created`` when it's checking if the permissions exists
           in the AWS account.
-        - Returns a status of `waiting` while checking.
-        - Returns a status of `checked and ok` if the Lambda exists.
-        - Returns a status of `error` if the Lambda does not exist.
+        * Returns a status of ``waiting`` while checking.
+        * Returns a status of ``checked and ok`` if the Lambda exists.
+        * Returns a status of ``error`` if the Lambda does not exist.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -353,7 +360,7 @@ class AWSLogsIntegrationApi:
     def enable_aws_log_services(self, body, **kwargs):
         """Enable an AWS Logs integration.
 
-        Enable automatic log collection for a list of services. This should be run after running `CreateAWSLambdaARN` to save the configuration.
+        Enable automatic log collection for a list of services. This should be run after running ``CreateAWSLambdaARN`` to save the configuration.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

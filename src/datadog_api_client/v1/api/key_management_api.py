@@ -13,6 +13,13 @@ from datadog_api_client.v1.model.application_key import ApplicationKey
 
 
 class KeyManagementApi:
+    """
+    Manage your Datadog API and application keys. You need an API key and
+    an application key for a user with the required permissions to interact
+    with these endpoints. The full list of API and application keys can be
+    seen on your `Datadog API page <https://app.datadoghq.com/account/settings#api>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

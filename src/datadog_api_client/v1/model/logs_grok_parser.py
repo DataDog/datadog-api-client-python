@@ -47,8 +47,8 @@ class LogsGrokParser(ModelNormal):
 
     def __init__(self, grok, type, *args, **kwargs):
         """
-        Create custom grok rules to parse the full message or [a specific attribute of your raw event](https://docs.datadoghq.com/logs/log_configuration/parsing/#advanced-settings).
-        For more information, see the [parsing section](https://docs.datadoghq.com/logs/log_configuration/parsing).
+        Create custom grok rules to parse the full message or `a specific attribute of your raw event <https://docs.datadoghq.com/logs/log_configuration/parsing/#advanced-settings>`_.
+        For more information, see the `parsing section <https://docs.datadoghq.com/logs/log_configuration/parsing>`_.
 
         :param grok: Set of rules for the grok parser.
         :type grok: LogsGrokParserRules

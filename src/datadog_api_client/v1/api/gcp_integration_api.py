@@ -9,6 +9,11 @@ from datadog_api_client.v1.model.gcp_account_list_response import GCPAccountList
 
 
 class GCPIntegrationApi:
+    """
+    Configure your Datadog-Google Cloud Platform (GCP) integration directly
+    through the Datadog API. Read more about the `Datadog-Google Cloud Platform integration <https://docs.datadoghq.com/integrations/google_cloud_platform>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -227,8 +232,8 @@ class GCPIntegrationApi:
         """Update a GCP integration.
 
         Update a Datadog-GCP integrations host_filters and/or auto-mute.
-        Requires a `project_id` and `client_email`, however these fields cannot be updated.
-        If you need to update these fields, delete and use the create (`POST`) endpoint.
+        Requires a ``project_id`` and ``client_email`` , however these fields cannot be updated.
+        If you need to update these fields, delete and use the create ( ``POST`` ) endpoint.
         The unspecified fields will keep their original values.
 
         This method makes a synchronous HTTP request by default. To make an

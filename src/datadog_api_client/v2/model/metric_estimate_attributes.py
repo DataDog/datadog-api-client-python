@@ -36,7 +36,7 @@ class MetricEstimateAttributes(ModelNormal):
         """
         Object containing the definition of a metric estimate attribute.
 
-        :param estimate_type: Estimate type based on the queried configuration. By default, `count_or_gauge` is returned. `distribution` is returned for distribution metrics without percentiles enabled. Lastly, `percentile` is returned if `filter[pct]=true` is queried with a distribution metric.
+        :param estimate_type: Estimate type based on the queried configuration. By default, ``count_or_gauge`` is returned. ``distribution`` is returned for distribution metrics without percentiles enabled. Lastly, ``percentile`` is returned if ``filter[pct]=true`` is queried with a distribution metric.
         :type estimate_type: MetricEstimateType, optional
 
         :param estimated_at: Timestamp when the cardinality estimate was requested.

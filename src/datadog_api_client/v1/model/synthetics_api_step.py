@@ -63,7 +63,7 @@ class SyntheticsAPIStep(ModelNormal):
         :type extracted_values: [SyntheticsParsingOptions], optional
 
         :param is_critical: Determines whether or not to consider the entire test as failed if this step fails.
-            Can be used only if `allowFailure` is `true`.
+            Can be used only if ``allowFailure`` is ``true``.
         :type is_critical: bool, optional
 
         :param name: The name of the step.
@@ -75,7 +75,7 @@ class SyntheticsAPIStep(ModelNormal):
         :param retry: Object describing the retry strategy to apply to a Synthetic test.
         :type retry: SyntheticsTestOptionsRetry, optional
 
-        :param subtype: The subtype of the Synthetic multistep API test step, currently only supporting `http`.
+        :param subtype: The subtype of the Synthetic multistep API test step, currently only supporting ``http``.
         :type subtype: SyntheticsAPIStepSubtype
         """
         super().__init__(kwargs)

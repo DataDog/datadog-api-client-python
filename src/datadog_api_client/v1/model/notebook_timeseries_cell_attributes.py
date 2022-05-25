@@ -41,7 +41,7 @@ class NotebookTimeseriesCellAttributes(ModelNormal):
 
     def __init__(self, definition, *args, **kwargs):
         """
-        The attributes of a notebook `timeseries` cell.
+        The attributes of a notebook ``timeseries`` cell.
 
         :param definition: The timeseries visualization allows you to display the evolution of one or more metrics, log events, or Indexed Spans over time.
         :type definition: TimeseriesWidgetDefinition

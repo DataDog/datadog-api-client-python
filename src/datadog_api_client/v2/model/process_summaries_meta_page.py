@@ -34,7 +34,7 @@ class ProcessSummariesMetaPage(ModelNormal):
         Paging attributes.
 
         :param after: The cursor used to get the next results, if any. To make the next request, use the same
-            parameters with the addition of the `page[cursor]`.
+            parameters with the addition of the ``page[cursor]``.
         :type after: str, optional
 
         :param size: Number of results returned.

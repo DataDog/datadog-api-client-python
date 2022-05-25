@@ -49,10 +49,10 @@ class LogQueryDefinition(ModelNormal):
         :param group_by: List of tag prefixes to group by in the case of a cluster check.
         :type group_by: [LogQueryDefinitionGroupBy], optional
 
-        :param index: A coma separated-list of index names. Use "*" query all indexes at once. [Multiple Indexes](https://docs.datadoghq.com/logs/indexes/#multiple-indexes)
+        :param index: A coma separated-list of index names. Use "*" query all indexes at once. `Multiple Indexes <https://docs.datadoghq.com/logs/indexes/#multiple-indexes>`_
         :type index: str, optional
 
-        :param multi_compute: This field is mutually exclusive with `compute`.
+        :param multi_compute: This field is mutually exclusive with ``compute``.
         :type multi_compute: [LogsQueryCompute], optional
 
         :param search: The query being made on the logs.

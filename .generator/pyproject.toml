@@ -14,6 +14,7 @@ jinja2 = "3.0.3"
 pytest = "^7.1.1"
 pytest-bdd = "^5.0.0"
 python-dateutil = "2.8.2"
+m2r2 = "0.3.2"
 
 [tool.poetry.dev-dependencies]
 

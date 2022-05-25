@@ -70,8 +70,8 @@ class Event(ModelNormal):
         Object representing an event.
 
         :param alert_type: If an alert event is enabled, set its type.
-            For example, `error`, `warning`, `info`, `success`, `user_update`,
-            `recommendation`, and `snapshot`.
+            For example, ``error`` , ``warning`` , ``info`` , ``success`` , ``user_update`` ,
+            ``recommendation`` , and ``snapshot``.
         :type alert_type: EventAlertType, optional
 
         :param date_happened: POSIX timestamp of the event. Must be sent as an integer (that is no quotes).
@@ -95,19 +95,19 @@ class Event(ModelNormal):
         :param payload: Payload of the event.
         :type payload: str, optional
 
-        :param priority: The priority of the event. For example, `normal` or `low`.
+        :param priority: The priority of the event. For example, ``normal`` or ``low``.
         :type priority: EventPriority, none_type, optional
 
         :param source_type_name: The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc.
-            The list of standard source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
+            The list of standard source attribute values `available here <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_.
         :type source_type_name: str, optional
 
         :param tags: A list of tags to apply to the event.
         :type tags: [str], optional
 
         :param text: The body of the event. Limited to 4000 characters. The text supports markdown.
-            To use markdown in the event text, start the text block with `%%% \n` and end the text block with `\n %%%`.
-            Use `msg_text` with the Datadog Ruby library.
+            To use markdown in the event text, start the text block with ``%%% \\n`` and end the text block with ``\\n %%%``.
+            Use ``msg_text`` with the Datadog Ruby library.
         :type text: str, optional
 
         :param title: The event title.

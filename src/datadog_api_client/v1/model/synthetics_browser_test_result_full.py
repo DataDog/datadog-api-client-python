@@ -68,9 +68,11 @@ class SyntheticsBrowserTestResultFull(ModelNormal):
         :type result_id: str, optional
 
         :param status: The status of your Synthetic monitor.
-            * `O` for not triggered
-            * `1` for triggered
-            * `2` for no data
+
+
+            * ``O`` for not triggered
+            * ``1`` for triggered
+            * ``2`` for no data
         :type status: SyntheticsTestMonitorStatus, optional
         """
         super().__init__(kwargs)

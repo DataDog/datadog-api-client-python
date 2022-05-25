@@ -119,7 +119,7 @@ class SyntheticsStepDetail(ModelNormal):
         :type step_id: int, optional
 
         :param sub_test_step_details: If this steps include a sub-test.
-            [Subtests documentation](https://docs.datadoghq.com/synthetics/browser_tests/advanced_options/#subtests).
+            `Subtests documentation <https://docs.datadoghq.com/synthetics/browser_tests/advanced_options/#subtests>`_.
         :type sub_test_step_details: [SyntheticsStepDetail], optional
 
         :param time_to_interactive: Time before starting the step.

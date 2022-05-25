@@ -38,7 +38,7 @@ class UsageAttributionResponse(ModelNormal):
         :param metadata: The object containing document metadata.
         :type metadata: UsageAttributionMetadata, optional
 
-        :param usage: Get Usage Summary by tag(s).
+        :param usage: Get usage summary by tag(s).
         :type usage: [UsageAttributionBody], optional
         """
         super().__init__(kwargs)

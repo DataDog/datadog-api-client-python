@@ -54,7 +54,6 @@ class FunnelWidgetDefinition(ModelNormal):
         """
         The funnel visualization displays a funnel of user sessions that maps a sequence of view navigation and user interaction in your application.
 
-
         :param requests: Request payload used to query items.
         :type requests: [FunnelWidgetRequest]
 

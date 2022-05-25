@@ -9,6 +9,21 @@ from datadog_api_client.v1.model.service_checks import ServiceChecks
 
 
 class ServiceChecksApi:
+    """
+    The service check endpoint allows you to post check statuses for use with monitors.
+    Service check messages are limited to 500 characters. If a check is posted with a message
+    containing more than 500 characters, only the first 500 characters are displayed. Messages
+    are limited for checks with a Critical or Warning status, they are dropped for checks with
+    an OK status.
+
+
+    * `Read more about Service Check monitors. <https://docs.datadoghq.com/monitors/create/types/host/?tab=checkalert>`_
+    * `Read more about Process Check monitors. <https://docs.datadoghq.com/monitors/create/types/process_check/?tab=checkalert>`_
+    * `Read more about Network Check monitors. <https://docs.datadoghq.com/monitors/create/types/network/?tab=checkalert>`_
+    * `Read more about Custom Check monitors. <https://docs.datadoghq.com/monitors/create/types/custom_check/?tab=checkalert>`_
+    * `Read more about Service Check and status codes. <https://docs.datadoghq.com/developers/service_checks/>`_
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -41,9 +56,11 @@ class ServiceChecksApi:
 
         Submit a list of Service Checks.
 
-        **Notes**:
-        - A valid API key is required.
-        - Service checks can be submitted up to 10 minutes in the past.
+        **Notes** :
+
+
+        * A valid API key is required.
+        * Service checks can be submitted up to 10 minutes in the past.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

@@ -41,7 +41,7 @@ class SyntheticsAssertionJSONPathTarget(ModelNormal):
 
     def __init__(self, operator, type, *args, **kwargs):
         """
-        An assertion for the `validatesJSONPath` operator.
+        An assertion for the ``validatesJSONPath`` operator.
 
         :param operator: Assertion operator to apply.
         :type operator: SyntheticsAssertionJSONPathOperator
@@ -49,7 +49,7 @@ class SyntheticsAssertionJSONPathTarget(ModelNormal):
         :param _property: The associated assertion property.
         :type _property: str, optional
 
-        :param target: Composed target for `validatesJSONPath` operator.
+        :param target: Composed target for ``validatesJSONPath`` operator.
         :type target: SyntheticsAssertionJSONPathTargetTarget, optional
 
         :param type: Type of the assertion.

@@ -1,5 +1,5 @@
 """
-Get Monthly Usage Attribution returns "OK" response
+Get monthly usage attribution returns "OK" response
 """
 
 from datetime import datetime

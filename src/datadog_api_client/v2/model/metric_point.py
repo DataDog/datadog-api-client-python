@@ -24,7 +24,7 @@ class MetricPoint(ModelNormal):
 
     def __init__(self, *args, **kwargs):
         """
-        A point object is of the form `{POSIX_timestamp, numeric_value}`.
+        A point object is of the form ``{POSIX_timestamp, numeric_value}``.
 
         :param timestamp: The timestamp should be in seconds and current.
             Current is defined as not more than 10 minutes in the future or more than 1 hour in the past.

@@ -1,5 +1,5 @@
 """
-Paginate Monthly Usage Attribution
+Paginate monthly usage attribution
 """
 
 from datetime import datetime

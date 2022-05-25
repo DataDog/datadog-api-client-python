@@ -71,7 +71,7 @@ class IPRanges(ModelNormal):
         :param logs: Available prefix information for the Logs endpoints.
         :type logs: IPPrefixesLogs, optional
 
-        :param modified: Date when last updated, in the form `YYYY-MM-DD-hh-mm-ss`.
+        :param modified: Date when last updated, in the form ``YYYY-MM-DD-hh-mm-ss``.
         :type modified: str, optional
 
         :param process: Available prefix information for the Process endpoints.

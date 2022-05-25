@@ -41,7 +41,7 @@ class SyntheticsParsingOptions(ModelNormal):
         """
         Parsing options for variables to extract.
 
-        :param field: When type is `http_header`, name of the header to use to extract the value.
+        :param field: When type is ``http_header`` , name of the header to use to extract the value.
         :type field: str, optional
 
         :param name: Name of the variable to extract.

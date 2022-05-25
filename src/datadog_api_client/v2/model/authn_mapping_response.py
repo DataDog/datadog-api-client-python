@@ -11,8 +11,10 @@ from datadog_api_client.model_utils import (
 
 def lazy_import():
     from datadog_api_client.v2.model.authn_mapping import AuthNMapping
+    from datadog_api_client.v2.model.authn_mapping_included import AuthNMappingIncluded
 
     globals()["AuthNMapping"] = AuthNMapping
+    globals()["AuthNMappingIncluded"] = AuthNMappingIncluded
 
 
 class AuthNMappingResponse(ModelNormal):
@@ -21,10 +23,12 @@ class AuthNMappingResponse(ModelNormal):
         lazy_import()
         return {
             "data": (AuthNMapping,),
+            "included": ([AuthNMappingIncluded],),
         }
 
     attribute_map = {
         "data": "data",
+        "included": "included",
     }
 
     def __init__(self, *args, **kwargs):
@@ -33,6 +37,9 @@ class AuthNMappingResponse(ModelNormal):
 
         :param data: The AuthN Mapping object returned by API.
         :type data: AuthNMapping, optional
+
+        :param included: Included data in the AuthN Mapping response.
+        :type included: [AuthNMappingIncluded], optional
         """
         super().__init__(kwargs)
 

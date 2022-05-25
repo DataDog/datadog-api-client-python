@@ -30,7 +30,6 @@ class UsageAttributionAggregates(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: An array of available aggregates.
         :type value: [UsageAttributionAggregatesBody]
         """
         super().__init__(kwargs)

@@ -29,9 +29,9 @@ class NotebookMarkdownCellAttributes(ModelNormal):
 
     def __init__(self, definition, *args, **kwargs):
         """
-        The attributes of a notebook `markdown` cell.
+        The attributes of a notebook ``markdown`` cell.
 
-        :param definition: Text in a notebook is formatted with [Markdown](https://daringfireball.net/projects/markdown/), which enables the use of headings, subheadings, links, images, lists, and code blocks.
+        :param definition: Text in a notebook is formatted with `Markdown <https://daringfireball.net/projects/markdown/>`_ , which enables the use of headings, subheadings, links, images, lists, and code blocks.
         :type definition: NotebookMarkdownCellDefinition
         """
         super().__init__(kwargs)

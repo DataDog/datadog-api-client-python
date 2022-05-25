@@ -35,8 +35,8 @@ class SLOHistoryMetricsSeries(ModelNormal):
 
     def __init__(self, count, sum, values, *args, **kwargs):
         """
-        A representation of `metric` based SLO time series for the provided queries.
-        This is the same response type from `batch_query` endpoint.
+        A representation of ``metric`` based SLO time series for the provided queries.
+        This is the same response type from ``batch_query`` endpoint.
 
         :param count: Count of submitted metrics.
         :type count: int

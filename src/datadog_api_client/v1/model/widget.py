@@ -37,18 +37,21 @@ class Widget(ModelNormal):
         """
         Information about widget.
 
-        **Note**: The `layout` property is required for widgets in dashboards with `free` `layout_type`.
-              For the **new dashboard layout**, the `layout` property depends on the `reflow_type` of the dashboard.
-              - If `reflow_type` is `fixed`, `layout` is required.
-              - If `reflow_type` is `auto`, `layout` should not be set.
+        **Note** : The ``layout`` property is required for widgets in dashboards with ``free`` ``layout_type``.
+              For the **new dashboard layout** , the ``layout`` property depends on the ``reflow_type`` of the dashboard.
 
-        :param definition: [Definition of the widget](https://docs.datadoghq.com/dashboards/widgets/).
+        .. code-block::
+
+             - If `reflow_type` is `fixed`, `layout` is required.
+             - If `reflow_type` is `auto`, `layout` should not be set.
+
+        :param definition: `Definition of the widget <https://docs.datadoghq.com/dashboards/widgets/>`_.
         :type definition: WidgetDefinition
 
         :param id: ID of the widget.
         :type id: int, optional
 
-        :param layout: The layout for a widget on a `free` or **new dashboard layout** dashboard.
+        :param layout: The layout for a widget on a ``free`` or **new dashboard layout** dashboard.
         :type layout: WidgetLayout, optional
         """
         super().__init__(kwargs)

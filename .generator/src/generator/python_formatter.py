@@ -250,7 +250,7 @@ def format_data_with_schema_dict(
                 version=version,
             )
             parameters += f"{escape_reserved_keyword(k)}={value}, "
-            imports |= extra_imports
+            imports = _merge_imports(imports, extra_imports)
 
     if not name and "oneOf" not in schema:
         if (

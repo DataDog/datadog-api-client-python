@@ -44,7 +44,7 @@ class LogsArithmeticProcessor(ModelNormal):
         This enables you to remap different time attributes with different units into a single attribute,
         or to compute operations on attributes within the same log.
 
-        The formula can use parentheses and the basic arithmetic operators `-`, `+`, `*`, `/`.
+        The formula can use parentheses and the basic arithmetic operators ``-`` , ``+`` , ``*`` , ``/``.
 
         By default, the calculation is skipped if an attribute is missing.
         Select “Replace missing attribute by 0” to automatically populate
@@ -52,14 +52,15 @@ class LogsArithmeticProcessor(ModelNormal):
         An attribute is missing if it is not found in the log attributes,
         or if it cannot be converted to a number.
 
-        *Notes*:
+        *Notes* :
 
-        - The operator `-` needs to be space split in the formula as it can also be contained in attribute names.
-        - If the target attribute already exists, it is overwritten by the result of the formula.
-        - Results are rounded up to the 9th decimal. For example, if the result of the formula is `0.1234567891`,
-          the actual value stored for the attribute is `0.123456789`.
-        - If you need to scale a unit of measure,
-          see [Scale Filter](https://docs.datadoghq.com/logs/log_configuration/parsing/?tab=filter#matcher-and-filter).
+
+        * The operator ``-`` needs to be space split in the formula as it can also be contained in attribute names.
+        * If the target attribute already exists, it is overwritten by the result of the formula.
+        * Results are rounded up to the 9th decimal. For example, if the result of the formula is ``0.1234567891`` ,
+          the actual value stored for the attribute is ``0.123456789``.
+        * If you need to scale a unit of measure,
+          see `Scale Filter <https://docs.datadoghq.com/logs/log_configuration/parsing/?tab=filter#matcher-and-filter>`_.
 
         :param expression: Arithmetic operation between one or more log attributes.
         :type expression: str
@@ -67,7 +68,7 @@ class LogsArithmeticProcessor(ModelNormal):
         :param is_enabled: Whether or not the processor is enabled.
         :type is_enabled: bool, optional
 
-        :param is_replace_missing: If `true`, it replaces all missing attributes of expression by `0`, `false`
+        :param is_replace_missing: If ``true`` , it replaces all missing attributes of expression by ``0`` , ``false``
             skip the operation if an attribute is missing.
         :type is_replace_missing: bool, optional
 

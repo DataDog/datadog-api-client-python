@@ -44,9 +44,9 @@ class LogsIndexUpdateRequest(ModelNormal):
         :param daily_limit: The number of log events you can send in this index per day before you are rate-limited.
         :type daily_limit: int, optional
 
-        :param disable_daily_limit: If true, sets the `daily_limit` value to null and the index is not limited on a daily basis (any
-            specified `daily_limit` value in the request is ignored). If false or omitted, the index's current
-            `daily_limit` is maintained.
+        :param disable_daily_limit: If true, sets the ``daily_limit`` value to null and the index is not limited on a daily basis (any
+            specified ``daily_limit`` value in the request is ignored). If false or omitted, the index's current
+            ``daily_limit`` is maintained.
         :type disable_daily_limit: bool, optional
 
         :param exclusion_filters: An array of exclusion objects. The logs are tested against the query of each filter,

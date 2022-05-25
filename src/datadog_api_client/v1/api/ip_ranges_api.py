@@ -8,6 +8,10 @@ from datadog_api_client.v1.model.ip_ranges import IPRanges
 
 
 class IPRangesApi:
+    """
+    Get a list of IP prefixes belonging to Datadog.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

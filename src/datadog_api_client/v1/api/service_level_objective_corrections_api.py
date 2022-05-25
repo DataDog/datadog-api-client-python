@@ -11,6 +11,13 @@ from datadog_api_client.v1.model.slo_correction_update_request import SLOCorrect
 
 
 class ServiceLevelObjectiveCorrectionsApi:
+    """
+    SLO Status Corrections allow you to prevent specific time periods from negatively impacting
+    your SLO’s status and error budget. You can use Status Corrections for various purposes, such
+    as removing planned maintenance windows, non-business hours, or other time periods that do
+    not correspond to genuine issues.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

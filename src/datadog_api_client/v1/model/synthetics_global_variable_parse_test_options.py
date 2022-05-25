@@ -37,9 +37,9 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
 
     def __init__(self, parser, type, *args, **kwargs):
         """
-        Parser options to use for retrieving a Synthetics global variable from a Synthetics Test. Used in conjunction with `parse_test_public_id`.
+        Parser options to use for retrieving a Synthetics global variable from a Synthetics Test. Used in conjunction with ``parse_test_public_id``.
 
-        :param field: When type is `http_header`, name of the header to use to extract the value.
+        :param field: When type is ``http_header`` , name of the header to use to extract the value.
         :type field: str, optional
 
         :param parser: Details of the parser to use for the global variable.

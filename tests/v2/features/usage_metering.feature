@@ -15,14 +15,14 @@ Feature: Usage Metering
     And an instance of "UsageMetering" API
 
   @generated @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get Cost Across Multi-Org Account returns "Bad Request" response
+  Scenario: Get cost across multi-org account returns "Bad Request" response
     Given new "GetCostByOrg" request
     And request contains "start_month" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @replay-only @team:DataDog/red-zone-revenue-query
-  Scenario: Get Cost Across Multi-Org Account returns "OK" response
+  Scenario: Get cost across multi-org account returns "OK" response
     Given new "GetCostByOrg" request
     And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent

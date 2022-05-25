@@ -34,7 +34,7 @@ class SLOResponse(ModelNormal):
         A service level objective response containing a single service level objective.
 
         :param data: A service level objective object includes a service level indicator, thresholds
-            for one or more timeframes, and metadata (`name`, `description`, `tags`, etc.).
+            for one or more timeframes, and metadata ( ``name`` , ``description`` , ``tags`` , etc.).
         :type data: SLOResponseData, optional
 
         :param errors: An array of error messages. Each endpoint documents how/whether this field is

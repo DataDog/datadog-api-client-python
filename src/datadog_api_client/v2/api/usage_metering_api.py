@@ -16,6 +16,19 @@ from datadog_api_client.v2.model.usage_observability_pipelines_response import U
 
 
 class UsageMeteringApi:
+    """
+    The usage metering API allows you to get hourly, daily, and
+    monthly usage across multiple facets of Datadog.
+    This API is available to all Pro and Enterprise customers.
+    Usage is only accessible for `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
+
+    **Note** : Usage data is delayed by up to 72 hours from when it was incurred.
+    It is retained for 15 months.
+
+    You can retrieve up to 24 hours of hourly usage data for multiple organizations,
+    and up to two months of hourly usage data for a single organization in one request.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -142,9 +155,9 @@ class UsageMeteringApi:
         )
 
     def get_cost_by_org(self, start_month, **kwargs):
-        """Get Cost Across Multi-Org Account.
+        """Get cost across multi-org account.
 
-        Get Cost Across Multi-Org Account.
+        Get cost across multi-org account. Cost by org data for a given month becomes available no later than the 16th of the following month.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -152,9 +165,9 @@ class UsageMeteringApi:
         >>> thread = api.get_cost_by_org(start_month, async_req=True)
         >>> result = thread.get()
 
-        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for cost beginning this month.
+        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost beginning this month.
         :type start_month: datetime
-        :param end_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for cost ending this month.
+        :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost ending this month.
         :type end_month: datetime, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -198,9 +211,9 @@ class UsageMeteringApi:
         >>> thread = api.get_usage_application_security_monitoring(start_hr, async_req=True)
         >>> result = thread.get()
 
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -245,9 +258,9 @@ class UsageMeteringApi:
         >>> thread = api.get_usage_lambda_traced_invocations(start_hr, async_req=True)
         >>> result = thread.get()
 
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status
@@ -292,9 +305,9 @@ class UsageMeteringApi:
         >>> thread = api.get_usage_observability_pipelines(start_hr, async_req=True)
         >>> result = thread.get()
 
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
         :param _return_http_data_only: Response data without head status

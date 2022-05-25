@@ -13,7 +13,6 @@ api\_client
 
 .. automodule:: datadog_api_client.api_client
    :members:
-   :undoc-members:
    :show-inheritance:
 
 configuration
@@ -21,7 +20,6 @@ configuration
 
 .. automodule:: datadog_api_client.configuration
    :members:
-   :undoc-members:
    :show-inheritance:
 
 exceptions
@@ -29,7 +27,6 @@ exceptions
 
 .. automodule:: datadog_api_client.exceptions
    :members:
-   :undoc-members:
    :show-inheritance:
 
 model\_utils
@@ -37,7 +34,6 @@ model\_utils
 
 .. automodule:: datadog_api_client.model_utils
    :members:
-   :undoc-members:
    :show-inheritance:
 
 rest
@@ -45,11 +41,9 @@ rest
 
 .. automodule:: datadog_api_client.rest
    :members:
-   :undoc-members:
    :show-inheritance:
 
 
 .. automodule:: datadog_api_client
    :members:
-   :undoc-members:
    :show-inheritance:

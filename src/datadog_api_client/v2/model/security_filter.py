@@ -43,7 +43,7 @@ class SecurityFilter(ModelNormal):
         :param id: The ID of the security filter.
         :type id: str, optional
 
-        :param type: The type of the resource. The value should always be `security_filters`.
+        :param type: The type of the resource. The value should always be ``security_filters``.
         :type type: SecurityFilterType, optional
         """
         super().__init__(kwargs)

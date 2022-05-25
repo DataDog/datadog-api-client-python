@@ -26,7 +26,7 @@ class NotebooksResponsePage(ModelNormal):
         """
         Pagination metadata returned by the API.
 
-        :param total_count: The total number of notebooks that would be returned if the request was not filtered by `start` and `count` parameters.
+        :param total_count: The total number of notebooks that would be returned if the request was not filtered by ``start`` and ``count`` parameters.
         :type total_count: int, optional
 
         :param total_filtered_count: The total number of notebooks returned.
