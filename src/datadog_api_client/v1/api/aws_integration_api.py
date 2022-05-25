@@ -300,8 +300,8 @@ class AWSIntegrationApi:
         >>> thread = api.create_aws_tag_filter(body, async_req=True)
         >>> result = thread.get()
 
-        :param body: Set an AWS tag filter using an ``aws_account_identifier``\ , ``namespace``\ , and filtering string.
-            Namespace options are ``application_elb``\ , ``elb``\ , ``lambda``\ , ``network_elb``\ , ``rds``\ , ``sqs``\ , and ``custom``.
+        :param body: Set an AWS tag filter using an ``aws_account_identifier`` , ``namespace`` , and filtering string.
+            Namespace options are ``application_elb`` , ``elb`` , ``lambda`` , ``network_elb`` , ``rds`` , ``sqs`` , and ``custom``.
         :type body: AWSTagFilterCreateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

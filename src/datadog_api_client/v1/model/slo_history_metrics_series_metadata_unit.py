@@ -37,7 +37,7 @@ class SLOHistoryMetricsSeriesMetadataUnit(ModelNormal):
         """
         An Object of metric units.
 
-        :param family: The family of metric unit, for example ``bytes`` is the family for ``kibibyte``\ , ``byte``\ , and ``bit`` units.
+        :param family: The family of metric unit, for example ``bytes`` is the family for ``kibibyte`` , ``byte`` , and ``bit`` units.
         :type family: str, optional
 
         :param id: The ID of the metric unit.

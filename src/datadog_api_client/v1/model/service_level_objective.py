@@ -67,7 +67,7 @@ class ServiceLevelObjective(ModelNormal):
     def __init__(self, name, thresholds, type, *args, **kwargs):
         """
         A service level objective object includes a service level indicator, thresholds
-        for one or more timeframes, and metadata (\ ``name``\ , ``description``\ , ``tags``\ , etc.).
+        for one or more timeframes, and metadata ( ``name`` , ``description`` , ``tags`` , etc.).
 
         :param created_at: Creation timestamp (UNIX time in seconds)
 
@@ -79,7 +79,7 @@ class ServiceLevelObjective(ModelNormal):
 
         :param description: A user-defined description of the service level objective.
 
-            Always included in service level objective responses (but may be ``null``\ ).
+            Always included in service level objective responses (but may be ``null`` ).
             Optional in create/update requests.
         :type description: str, none_type, optional
 

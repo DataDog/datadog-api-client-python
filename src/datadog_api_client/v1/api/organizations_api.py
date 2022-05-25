@@ -155,7 +155,7 @@ class OrganizationsApi:
         `contacting support <https://docs.datadoghq.com/help/>`_.
 
         Once a new child organization is created, you can interact with it
-        by using the ``org.public_id``\ , ``api_key.key``\ , and
+        by using the ``org.public_id`` , ``api_key.key`` , and
         ``application_key.hash`` provided in the response.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -336,7 +336,7 @@ class OrganizationsApi:
 
 
         *
-          **Multipart Form-Data**\ : Post the IdP metadata file using a form post.
+          **Multipart Form-Data** : Post the IdP metadata file using a form post.
 
         *
           **XML Body:** Post the IdP metadata file as the body of the request.

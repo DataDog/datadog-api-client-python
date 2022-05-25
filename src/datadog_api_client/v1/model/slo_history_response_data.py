@@ -95,7 +95,7 @@ class SLOHistoryResponseData(ModelNormal):
         :param type: The type of the service level objective.
         :type type: SLOType, optional
 
-        :param type_id: A numeric representation of the type of the service level objective (\ ``0`` for
+        :param type_id: A numeric representation of the type of the service level objective ( ``0`` for
             monitor, ``1`` for metric). Always included in service level objective responses.
             Ignored in create/update requests.
         :type type_id: SLOTypeNumeric, optional

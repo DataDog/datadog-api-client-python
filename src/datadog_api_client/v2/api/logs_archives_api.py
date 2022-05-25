@@ -262,7 +262,7 @@ class LogsArchivesApi:
     def add_read_role_to_archive(self, archive_id, body, **kwargs):
         """Grant role to an archive.
 
-        Adds a read role to an archive. (\ `Roles API <https://docs.datadoghq.com/api/v2/roles/>`_\ )
+        Adds a read role to an archive. ( `Roles API <https://docs.datadoghq.com/api/v2/roles/>`_ )
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -566,7 +566,7 @@ class LogsArchivesApi:
     def remove_role_from_archive(self, archive_id, body, **kwargs):
         """Revoke role from an archive.
 
-        Removes a role from an archive. (\ `Roles API <https://docs.datadoghq.com/api/v2/roles/>`_\ )
+        Removes a role from an archive. ( `Roles API <https://docs.datadoghq.com/api/v2/roles/>`_ )
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -615,7 +615,7 @@ class LogsArchivesApi:
 
         Update a given archive configuration.
 
-        **Note**\ : Using this method updates your archive configuration by **replacing**
+        **Note** : Using this method updates your archive configuration by **replacing**
         your current configuration with the new one sent to your Datadog organization.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -667,7 +667,7 @@ class LogsArchivesApi:
         Update the order of your archives. Since logs are processed sequentially, reordering an archive may change
         the structure and content of the data processed by other archives.
 
-        **Note**\ : Using the ``PUT`` method updates your archive's order by replacing the current order
+        **Note** : Using the ``PUT`` method updates your archive's order by replacing the current order
         with the new one.
 
         This method makes a synchronous HTTP request by default. To make an

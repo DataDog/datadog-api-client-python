@@ -119,7 +119,7 @@ class MonitorOptions(ModelNormal):
         :param enable_logs_sample: Whether or not to send a log sample when the log monitor triggers.
         :type enable_logs_sample: bool, optional
 
-        :param escalation_message: We recommend using the `is_renotify <https://docs.datadoghq.com/monitors/notify/?tab=is_alert#renotify>`_\ ,
+        :param escalation_message: We recommend using the `is_renotify <https://docs.datadoghq.com/monitors/notify/?tab=is_alert#renotify>`_ ,
             block in the original message instead.
             A message to include with a re-notification. Supports the ``@username`` notification we allow elsewhere.
             Not applicable if ``renotify_interval`` is ``None``.
@@ -138,8 +138,8 @@ class MonitorOptions(ModelNormal):
             **Examples**
 
 
-            * If ``True``\ , ``[Triggered on {host:h1}] Monitor Title``
-            * If ``False``\ , ``[Triggered] Monitor Title``
+            * If ``True`` , ``[Triggered on {host:h1}] Monitor Title``
+            * If ``False`` , ``[Triggered] Monitor Title``
         :type include_tags: bool, optional
 
         :param locked: Whether or not the monitor is locked (only editable by creator and admins). Use ``restricted_roles`` instead.
@@ -149,7 +149,7 @@ class MonitorOptions(ModelNormal):
         :type min_failure_duration: int, none_type, optional
 
         :param min_location_failed: The minimum number of locations in failure at the same time during
-            at least one moment in the ``min_failure_duration`` period (\ ``min_location_failed`` and ``min_failure_duration``
+            at least one moment in the ``min_failure_duration`` period ( ``min_location_failed`` and ``min_failure_duration``
             are part of the advanced alerting rules - integer, >= 1).
         :type min_location_failed: int, none_type, optional
 

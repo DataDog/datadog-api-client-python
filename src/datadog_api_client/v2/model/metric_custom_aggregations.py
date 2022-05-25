@@ -42,7 +42,7 @@ class MetricCustomAggregations(ModelSimple):
         * time: sum, space: avg
         * time: sum, space: sum
 
-        Can only be applied to metrics that have a ``metric_type`` of ``count``\ , ``rate``\ , or ``gauge``.
+        Can only be applied to metrics that have a ``metric_type`` of ``count`` , ``rate`` , or ``gauge``.
 
         Note that value can be passed either in args or in kwargs, but not in both.
 

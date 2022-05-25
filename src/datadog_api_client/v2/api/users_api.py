@@ -617,15 +617,15 @@ class UsersApi:
         :type page_number: int, optional
         :param sort: User attribute to order results by. Sort order is ascending by default.
             Sort order is descending if the field
-            is prefixed by a negative sign, for example ``sort=-name``. Options: ``name``\ ,
-            ``modified_at``\ , ``user_count``.
+            is prefixed by a negative sign, for example ``sort=-name``. Options: ``name`` ,
+            ``modified_at`` , ``user_count``.
         :type sort: str, optional
-        :param sort_dir: Direction of sort. Options: ``asc``\ , ``desc``.
+        :param sort_dir: Direction of sort. Options: ``asc`` , ``desc``.
         :type sort_dir: QuerySortOrder, optional
         :param filter: Filter all users by the given string. Defaults to no filtering.
         :type filter: str, optional
         :param filter_status: Filter on status attribute.
-            Comma separated list, with possible values ``Active``\ , ``Pending``\ , and ``Disabled``.
+            Comma separated list, with possible values ``Active`` , ``Pending`` , and ``Disabled``.
             Defaults to no filtering.
         :type filter_status: str, optional
         :param _return_http_data_only: Response data without head status

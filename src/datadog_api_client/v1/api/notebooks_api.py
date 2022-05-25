@@ -341,7 +341,7 @@ class NotebooksApi:
         :type start: int, optional
         :param count: The number of notebooks to be returned.
         :type count: int, optional
-        :param sort_field: Sort by field ``modified``\ , ``name``\ , or ``created``.
+        :param sort_field: Sort by field ``modified`` , ``name`` , or ``created``.
         :type sort_field: str, optional
         :param sort_dir: Sort by direction ``asc`` or ``desc``.
         :type sort_dir: str, optional

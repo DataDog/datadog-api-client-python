@@ -43,7 +43,7 @@ class LogsCategoryProcessor(ModelNormal):
         to a log matching a provided search query. Use categories to create groups for an analytical view.
         For example, URL groups, machine groups, environments, and response time buckets.
 
-        **Notes**\ :
+        **Notes** :
 
 
         * The syntax of the query is the one of Logs Explorer search bar.

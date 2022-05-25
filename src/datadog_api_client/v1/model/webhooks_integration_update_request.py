@@ -42,7 +42,7 @@ class WebhooksIntegrationUpdateRequest(ModelNormal):
 
         *All properties are optional.*
 
-        :param custom_headers: If ``null``\ , uses no header.
+        :param custom_headers: If ``null`` , uses no header.
             If given a JSON payload, these will be headers attached to your webhook.
         :type custom_headers: str, optional
 
@@ -54,7 +54,7 @@ class WebhooksIntegrationUpdateRequest(ModelNormal):
             `monitor notifications <https://docs.datadoghq.com/monitors/notify>`_.
         :type name: str, optional
 
-        :param payload: If ``null``\ , uses the default payload.
+        :param payload: If ``null`` , uses the default payload.
             If given a JSON payload, the webhook returns the payload
             specified by the given payload.
             `Webhooks variable usage <https://docs.datadoghq.com/integrations/webhooks/#usage>`_.

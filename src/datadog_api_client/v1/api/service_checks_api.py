@@ -56,7 +56,7 @@ class ServiceChecksApi:
 
         Submit a list of Service Checks.
 
-        **Notes**\ :
+        **Notes** :
 
 
         * A valid API key is required.
