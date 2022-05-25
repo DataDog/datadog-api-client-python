@@ -74,9 +74,9 @@ class LogsAttributeRemapper(ModelNormal):
         :param target: Final attribute or tag name to remap the sources to.
         :type target: str
 
-        :param target_format: If the ``target_type`` of the remapper is ``attribute``\ , try to cast the value to a new specific type.
-            If the cast is not possible, the original type is kept. ``string``\ , ``integer``\ , or ``double`` are the possible types.
-            If the ``target_type`` is ``tag``\ , this parameter may not be specified.
+        :param target_format: If the ``target_type`` of the remapper is ``attribute`` , try to cast the value to a new specific type.
+            If the cast is not possible, the original type is kept. ``string`` , ``integer`` , or ``double`` are the possible types.
+            If the ``target_type`` is ``tag`` , this parameter may not be specified.
         :type target_format: TargetFormatType, optional
 
         :param target_type: Defines if the final attribute or tag name is from log ``attribute`` or ``tag``.

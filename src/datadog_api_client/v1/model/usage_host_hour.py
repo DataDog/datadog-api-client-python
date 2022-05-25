@@ -89,7 +89,7 @@ class UsageHostHour(ModelNormal):
         :type heroku_host_count: int, optional
 
         :param host_count: Contains the total number of billable infrastructure hosts reporting during a given hour.
-            This is the sum of ``agent_host_count``\ , ``aws_host_count``\ , and ``gcp_host_count``.
+            This is the sum of ``agent_host_count`` , ``aws_host_count`` , and ``gcp_host_count``.
         :type host_count: int, optional
 
         :param hour: The hour for the usage.

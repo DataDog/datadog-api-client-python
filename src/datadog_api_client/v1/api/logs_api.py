@@ -129,9 +129,9 @@ class LogsApi:
         List endpoint returns logs that match a log search query.
         `Results are paginated </logs/guide/collect-multiple-logs-with-pagination>`_.
 
-        **If you are considering archiving logs for your organization,
+        If you are considering archiving logs for your organization,
         consider use of the Datadog archive capabilities instead of the log list API.
-        See `Datadog Logs Archive documentation <https://docs.datadoghq.com/logs/archives>`_.**
+        See `Datadog Logs Archive documentation <https://docs.datadoghq.com/logs/archives>`_.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

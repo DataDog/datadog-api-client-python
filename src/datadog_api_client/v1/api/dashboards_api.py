@@ -373,7 +373,7 @@ class DashboardsApi:
 
         Get all dashboards.
 
-        **Note**\ : This query will only return custom created or cloned dashboards.
+        **Note** : This query will only return custom created or cloned dashboards.
         This query will not return preset dashboards.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -382,10 +382,10 @@ class DashboardsApi:
         >>> thread = api.list_dashboards(async_req=True)
         >>> result = thread.get()
 
-        :param filter_shared: When ``true``\ , this query only returns shared custom created
+        :param filter_shared: When ``true`` , this query only returns shared custom created
             or cloned dashboards.
         :type filter_shared: bool, optional
-        :param filter_deleted: When ``true``\ , this query returns only deleted custom-created
+        :param filter_deleted: When ``true`` , this query returns only deleted custom-created
             or cloned dashboards. This parameter is incompatible with ``filter[shared]``.
         :type filter_deleted: bool, optional
         :param _return_http_data_only: Response data without head status

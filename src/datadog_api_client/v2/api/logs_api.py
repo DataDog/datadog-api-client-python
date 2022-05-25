@@ -259,9 +259,9 @@ class LogsApi:
 
         Use this endpoint to build complex logs filtering and search.
 
-        **If you are considering archiving logs for your organization,
+        If you are considering archiving logs for your organization,
         consider use of the Datadog archive capabilities instead of the log list API.
-        See `Datadog Logs Archive documentation <https://docs.datadoghq.com/logs/archives>`_.**
+        See `Datadog Logs Archive documentation <https://docs.datadoghq.com/logs/archives>`_.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -344,9 +344,9 @@ class LogsApi:
 
         Use this endpoint to see your latest logs.
 
-        **If you are considering archiving logs for your organization,
+        If you are considering archiving logs for your organization,
         consider use of the Datadog archive capabilities instead of the log list API.
-        See `Datadog Logs Archive documentation <https://docs.datadoghq.com/logs/archives>`_.**
+        See `Datadog Logs Archive documentation <https://docs.datadoghq.com/logs/archives>`_.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

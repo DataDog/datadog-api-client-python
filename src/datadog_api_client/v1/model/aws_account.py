@@ -50,7 +50,7 @@ class AWSAccount(ModelNormal):
         :param account_id: Your AWS Account ID without dashes.
         :type account_id: str, optional
 
-        :param account_specific_namespace_rules: An object, (in the form ``{"namespace1":true/false, "namespace2":true/false}``\ ),
+        :param account_specific_namespace_rules: An object, (in the form ``{"namespace1":true/false, "namespace2":true/false}`` ),
             that enables or disables metric collection for specific AWS namespaces for this
             AWS account only.
         :type account_specific_namespace_rules: {str: (bool,)}, optional
@@ -61,7 +61,7 @@ class AWSAccount(ModelNormal):
         :param excluded_regions: An array of AWS regions to exclude from metrics collection.
         :type excluded_regions: [str], optional
 
-        :param filter_tags: The array of EC2 tags (in the form ``key:value``\ ) defines a filter that Datadog uses when collecting metrics from EC2.
+        :param filter_tags: The array of EC2 tags (in the form ``key:value`` ) defines a filter that Datadog uses when collecting metrics from EC2.
             Wildcards, such as ``?`` (for single characters) and ``*`` (for multiple characters) can also be used.
             Only hosts that match one of the defined tags
             will be imported into Datadog. The rest will be ignored.
@@ -69,7 +69,7 @@ class AWSAccount(ModelNormal):
             For example, ``env:production,instance-type:c1.*,!region:us-east-1``
         :type filter_tags: [str], optional
 
-        :param host_tags: Array of tags (in the form ``key:value``\ ) to add to all hosts
+        :param host_tags: Array of tags (in the form ``key:value`` ) to add to all hosts
             and metrics reporting through this integration.
         :type host_tags: [str], optional
 

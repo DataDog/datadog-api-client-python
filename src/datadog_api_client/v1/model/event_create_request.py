@@ -67,8 +67,8 @@ class EventCreateRequest(ModelNormal):
         :type aggregation_key: str, optional
 
         :param alert_type: If an alert event is enabled, set its type.
-            For example, ``error``\ , ``warning``\ , ``info``\ , ``success``\ , ``user_update``\ ,
-            ``recommendation``\ , and ``snapshot``.
+            For example, ``error`` , ``warning`` , ``info`` , ``success`` , ``user_update`` ,
+            ``recommendation`` , and ``snapshot``.
         :type alert_type: EventAlertType, optional
 
         :param date_happened: POSIX timestamp of the event. Must be sent as an integer (that is no quotes).

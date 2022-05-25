@@ -117,8 +117,8 @@ class MetricsQueryMetadata(ModelNormal):
         :type tag_set: [str], optional
 
         :param unit: Detailed information about the metric unit.
-            First element describes the "primary unit" (for example, ``bytes`` in ``bytes per second``\ ),
-            second describes the "per unit" (for example, ``second`` in ``bytes per second``\ ).
+            First element describes the "primary unit" (for example, ``bytes`` in ``bytes per second`` ),
+            second describes the "per unit" (for example, ``second`` in ``bytes per second`` ).
         :type unit: [MetricsQueryUnit], optional
         """
         super().__init__(kwargs)

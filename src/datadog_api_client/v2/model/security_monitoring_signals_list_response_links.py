@@ -24,7 +24,7 @@ class SecurityMonitoringSignalsListResponseLinks(ModelNormal):
         """
         Links attributes.
 
-        :param next: The link for the next set of results. **Note**\ : The request can also be made using the
+        :param next: The link for the next set of results. **Note** : The request can also be made using the
             POST endpoint.
         :type next: str, optional
         """

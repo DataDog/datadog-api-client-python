@@ -96,15 +96,15 @@ class SyntheticsTestDetails(ModelNormal):
         :param public_id: The test public ID.
         :type public_id: str, optional
 
-        :param status: Define whether you want to start (\ ``live``\ ) or pause (\ ``paused``\ ) a
+        :param status: Define whether you want to start ( ``live`` ) or pause ( ``paused`` ) a
             Synthetic test.
         :type status: SyntheticsTestPauseStatus, optional
 
         :param steps: For browser test, the steps of the test.
         :type steps: [SyntheticsStep], optional
 
-        :param subtype: The subtype of the Synthetic API test, ``http``\ , ``ssl``\ , ``tcp``\ ,
-            ``dns``\ , ``icmp``\ , ``udp``\ , ``websocket``\ , ``grpc`` or ``multi``.
+        :param subtype: The subtype of the Synthetic API test, ``http`` , ``ssl`` , ``tcp`` ,
+            ``dns`` , ``icmp`` , ``udp`` , ``websocket`` , ``grpc`` or ``multi``.
         :type subtype: SyntheticsTestDetailsSubType, optional
 
         :param tags: Array of tags attached to the test.

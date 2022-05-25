@@ -44,7 +44,7 @@ class WidgetAxis(ModelNormal):
         :param min: Specifies minimum value to show on the y-axis. It takes a number, or auto for default behavior.
         :type min: str, optional
 
-        :param scale: Specifies the scale type. Possible values are ``linear``\ , ``log``\ , ``sqrt``\ , ``pow##`` (for example ``pow2``\ , ``pow0.5`` etc.).
+        :param scale: Specifies the scale type. Possible values are ``linear`` , ``log`` , ``sqrt`` , ``pow##`` (for example ``pow2`` , ``pow0.5`` etc.).
         :type scale: str, optional
         """
         super().__init__(kwargs)

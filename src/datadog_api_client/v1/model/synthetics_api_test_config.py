@@ -52,7 +52,7 @@ class SyntheticsAPITestConfig(ModelNormal):
         :param request: Object describing the Synthetic test request.
         :type request: SyntheticsTestRequest, optional
 
-        :param steps: When the test subtype is ``multi``\ , the steps of the test.
+        :param steps: When the test subtype is ``multi`` , the steps of the test.
         :type steps: [SyntheticsAPIStep], optional
         """
         super().__init__(kwargs)

@@ -23,7 +23,7 @@ class MetricsApi:
     * Modify tag configurations for metrics
     * View tags and volumes for metrics
 
-    **Note**\ : A graph can only contain a set number of points
+    **Note** : A graph can only contain a set number of points
     and as the timeframe over which a metric is viewed increases,
     aggregation between points occurs to stay below that set number.
 

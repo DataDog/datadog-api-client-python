@@ -37,7 +37,7 @@ class NotebookCellResponse(ModelNormal):
         """
         The description of a notebook cell response.
 
-        :param attributes: The attributes of a notebook cell response. Valid cell types are ``markdown``\ , ``timeseries``\ , ``toplist``\ , ``heatmap``\ , ``distribution``\ ,
+        :param attributes: The attributes of a notebook cell response. Valid cell types are ``markdown`` , ``timeseries`` , ``toplist`` , ``heatmap`` , ``distribution`` ,
             ``log_stream``. `More information on each graph visualization type. <https://docs.datadoghq.com/dashboards/widgets/>`_
         :type attributes: NotebookCellResponseAttributes
 

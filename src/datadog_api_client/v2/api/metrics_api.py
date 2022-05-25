@@ -32,7 +32,7 @@ class MetricsApi:
     * Modify tag configurations for metrics
     * View tags and volumes for metrics
 
-    **Note**\ : A graph can only contain a set number of points
+    **Note** : A graph can only contain a set number of points
     and as the timeframe over which a metric is viewed increases,
     aggregation between points occurs to stay below that set number.
 
@@ -572,7 +572,7 @@ class MetricsApi:
         :type filter_groups: str, optional
         :param filter_hours_ago: The number of hours of look back (from now) to estimate cardinality with.
         :type filter_hours_ago: int, optional
-        :param filter_num_aggregations: The number of aggregations that a ``count``\ , ``rate``\ , or ``gauge`` metric is configured to use. Max number of aggregation combos is 9.
+        :param filter_num_aggregations: The number of aggregations that a ``count`` , ``rate`` , or ``gauge`` metric is configured to use. Max number of aggregation combos is 9.
         :type filter_num_aggregations: int, optional
         :param filter_pct: A boolean, for distribution metrics only, to estimate cardinality if the metric includes additional percentile aggregators.
         :type filter_pct: bool, optional

@@ -60,12 +60,14 @@ def attribute_path(attribute):
 class CustomRenderer(m2r2.RestRenderer):
     def double_emphasis(self, text):
         if "``" in text:
-            text = text.replace("\ ``", "").replace("``\ ", "")
-        return super().double_emphasis(text)
+            text = text.replace("\\ ``", "").replace("``\\ ", "")
+        if "`_" in text:
+            return text
+        return "\\ **{}**\\ ".format(text)
 
     def header(self, text, level, raw=None):
         return "\n{}\n".format(self.double_emphasis(text))
 
 
 def docstring(text):
-    return m2r2.convert(text.replace("\\n", "\\\\n"), renderer=CustomRenderer())[1:-1]
+    return m2r2.convert(text.replace("\\n", "\\\\n"), renderer=CustomRenderer())[1:-1].replace("\\ ", " ")

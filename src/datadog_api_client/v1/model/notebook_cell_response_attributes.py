@@ -28,7 +28,7 @@ def lazy_import():
 class NotebookCellResponseAttributes(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
-        The attributes of a notebook cell response. Valid cell types are ``markdown``\ , ``timeseries``\ , ``toplist``\ , ``heatmap``\ , ``distribution``\ ,
+        The attributes of a notebook cell response. Valid cell types are ``markdown`` , ``timeseries`` , ``toplist`` , ``heatmap`` , ``distribution`` ,
         ``log_stream``. `More information on each graph visualization type. <https://docs.datadoghq.com/dashboards/widgets/>`_
 
         :param definition: Text in a notebook is formatted with [Markdown](https://daringfireball.net/projects/markdown/), which enables the use of headings, subheadings, links, images, lists, and code blocks.

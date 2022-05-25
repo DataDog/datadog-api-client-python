@@ -62,7 +62,7 @@ class UsageMeteringApi:
     This API is available to all Pro and Enterprise customers.
     Usage is only accessible for `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
 
-    **Note**\ : Usage data is delayed by up to 72 hours from when it was incurred.
+    **Note** : Usage data is delayed by up to 72 hours from when it was incurred.
     It is retained for 15 months.
 
     You can retrieve up to 24 hours of hourly usage data for multiple organizations,
