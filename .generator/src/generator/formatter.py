@@ -61,6 +61,8 @@ class CustomRenderer(m2r2.RestRenderer):
     def double_emphasis(self, text):
         if "``" in text:
             text = text.replace("\ ``", "").replace("``\ ", "")
+        if "`_" in text:
+            return text
         return super().double_emphasis(text)
 
     def header(self, text, level, raw=None):
