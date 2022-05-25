@@ -38,7 +38,7 @@ class SecurityFilterCreateData(ModelNormal):
         :param attributes: Object containing the attributes of the security filter to be created.
         :type attributes: SecurityFilterCreateAttributes
 
-        :param type: The type of the resource. The value should always be `security_filters`.
+        :param type: The type of the resource. The value should always be ``security_filters``.
         :type type: SecurityFilterType
         """
         super().__init__(kwargs)

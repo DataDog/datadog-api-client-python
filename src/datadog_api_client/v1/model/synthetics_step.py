@@ -44,7 +44,7 @@ class SyntheticsStep(ModelNormal):
         :param allow_failure: A boolean set to allow this step to fail.
         :type allow_failure: bool, optional
 
-        :param is_critical: A boolean to use in addition to `allowFailure` to determine if the test should be marked as failed when the step fails.
+        :param is_critical: A boolean to use in addition to ``allowFailure`` to determine if the test should be marked as failed when the step fails.
         :type is_critical: bool, optional
 
         :param name: The name of the step.

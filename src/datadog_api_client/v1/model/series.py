@@ -41,7 +41,7 @@ class Series(ModelNormal):
     def __init__(self, metric, points, *args, **kwargs):
         """
         A metric to submit to Datadog.
-        See [Datadog metrics](https://docs.datadoghq.com/developers/metrics/#custom-metrics-properties).
+        See `Datadog metrics <https://docs.datadoghq.com/developers/metrics/#custom-metrics-properties>`_.
 
         :param host: The name of the host that produced the metric.
         :type host: str, optional
@@ -58,7 +58,7 @@ class Series(ModelNormal):
         :param tags: A list of tags associated with the metric.
         :type tags: [str], optional
 
-        :param type: The type of the metric. Valid types are "",`count`, `gauge`, and `rate`.
+        :param type: The type of the metric. Valid types are "",\ ``count``\ , ``gauge``\ , and ``rate``.
         :type type: str, optional
         """
         super().__init__(kwargs)

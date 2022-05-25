@@ -40,7 +40,7 @@ class CloudWorkloadSecurityAgentRuleUpdateData(ModelNormal):
         :param attributes: Update an existing Cloud Workload Security Agent rule.
         :type attributes: CloudWorkloadSecurityAgentRuleUpdateAttributes
 
-        :param type: The type of the resource. The value should always be `agent_rule`.
+        :param type: The type of the resource. The value should always be ``agent_rule``.
         :type type: CloudWorkloadSecurityAgentRuleType
         """
         super().__init__(kwargs)

@@ -20,7 +20,7 @@ def lazy_import():
 class NotebookUpdateCell(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
-        Updating a notebook can either insert new cell(s) or update existing cell(s) by including the cell `id`.
+        Updating a notebook can either insert new cell(s) or update existing cell(s) by including the cell ``id``.
         To delete existing cell(s), simply omit it from the list of cells.
 
         :param attributes: The attributes of a notebook cell in create cell request. Valid cell types are `markdown`, `timeseries`, `toplist`, `heatmap`, `distribution`,

@@ -10,6 +10,11 @@ from datadog_api_client.v1.model.pager_duty_service_key import PagerDutyServiceK
 
 
 class PagerDutyIntegrationApi:
+    """
+    Configure your `Datadog-PagerDuty integration <https://docs.datadoghq.com/api/?lang=bash#integration-pagerduty>`_
+    directly through the Datadog API.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

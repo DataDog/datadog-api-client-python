@@ -37,7 +37,7 @@ class NotebookLogStreamCellAttributes(ModelNormal):
 
     def __init__(self, definition, *args, **kwargs):
         """
-        The attributes of a notebook `log_stream` cell.
+        The attributes of a notebook ``log_stream`` cell.
 
         :param definition: The Log Stream displays a log flow matching the defined query. Only available on FREE layout dashboards.
         :type definition: LogStreamWidgetDefinition

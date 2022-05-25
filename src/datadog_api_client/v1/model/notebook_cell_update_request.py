@@ -37,8 +37,8 @@ class NotebookCellUpdateRequest(ModelNormal):
         """
         The description of a notebook cell update request.
 
-        :param attributes: The attributes of a notebook cell in update cell request. Valid cell types are `markdown`, `timeseries`, `toplist`, `heatmap`, `distribution`,
-            `log_stream`. [More information on each graph visualization type.](https://docs.datadoghq.com/dashboards/widgets/)
+        :param attributes: The attributes of a notebook cell in update cell request. Valid cell types are ``markdown``\ , ``timeseries``\ , ``toplist``\ , ``heatmap``\ , ``distribution``\ ,
+            ``log_stream``. `More information on each graph visualization type. <https://docs.datadoghq.com/dashboards/widgets/>`_
         :type attributes: NotebookCellUpdateRequestAttributes
 
         :param id: Notebook cell ID.

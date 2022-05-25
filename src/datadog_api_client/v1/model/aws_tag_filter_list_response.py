@@ -29,7 +29,7 @@ class AWSTagFilterListResponse(ModelNormal):
 
     def __init__(self, *args, **kwargs):
         """
-        An array of tag filter rules by `namespace` and tag filter string.
+        An array of tag filter rules by ``namespace`` and tag filter string.
 
         :param filters: An array of tag filters.
         :type filters: [AWSTagFilter], optional

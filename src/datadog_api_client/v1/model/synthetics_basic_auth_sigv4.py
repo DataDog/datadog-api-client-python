@@ -39,21 +39,21 @@ class SyntheticsBasicAuthSigv4(ModelNormal):
 
     def __init__(self, access_key, secret_key, type, *args, **kwargs):
         """
-        Object to handle `SIGV4` authentication when performing the test.
+        Object to handle ``SIGV4`` authentication when performing the test.
 
-        :param access_key: Access key for the `SIGV4` authentication.
+        :param access_key: Access key for the ``SIGV4`` authentication.
         :type access_key: str
 
-        :param region: Region for the `SIGV4` authentication.
+        :param region: Region for the ``SIGV4`` authentication.
         :type region: str, optional
 
-        :param secret_key: Secret key for the `SIGV4` authentication.
+        :param secret_key: Secret key for the ``SIGV4`` authentication.
         :type secret_key: str
 
-        :param service_name: Service name for the `SIGV4` authentication.
+        :param service_name: Service name for the ``SIGV4`` authentication.
         :type service_name: str, optional
 
-        :param session_token: Session token for the `SIGV4` authentication.
+        :param session_token: Session token for the ``SIGV4`` authentication.
         :type session_token: str, optional
 
         :param type: The type of authentication to use when performing the test.

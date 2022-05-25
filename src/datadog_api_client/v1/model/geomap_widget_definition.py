@@ -69,10 +69,10 @@ class GeomapWidgetDefinition(ModelNormal):
         :param custom_links: A list of custom links.
         :type custom_links: [WidgetCustomLink], optional
 
-        :param requests: Array of one request object to display in the widget. The request must contain a `group-by` tag whose value is a country ISO code.
+        :param requests: Array of one request object to display in the widget. The request must contain a ``group-by`` tag whose value is a country ISO code.
 
-            See the [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)
-            for information about building the `REQUEST_SCHEMA`.
+            See the `Request JSON schema documentation <https://docs.datadoghq.com/dashboards/graphing_json/request_json>`_
+            for information about building the ``REQUEST_SCHEMA``.
         :type requests: [GeomapWidgetRequest]
 
         :param style: The style to apply to the widget.

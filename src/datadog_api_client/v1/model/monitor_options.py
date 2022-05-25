@@ -119,14 +119,14 @@ class MonitorOptions(ModelNormal):
         :param enable_logs_sample: Whether or not to send a log sample when the log monitor triggers.
         :type enable_logs_sample: bool, optional
 
-        :param escalation_message: We recommend using the [is_renotify](https://docs.datadoghq.com/monitors/notify/?tab=is_alert#renotify),
+        :param escalation_message: We recommend using the `is_renotify <https://docs.datadoghq.com/monitors/notify/?tab=is_alert#renotify>`_\ ,
             block in the original message instead.
-            A message to include with a re-notification. Supports the `@username` notification we allow elsewhere.
-            Not applicable if `renotify_interval` is `None`.
+            A message to include with a re-notification. Supports the ``@username`` notification we allow elsewhere.
+            Not applicable if ``renotify_interval`` is ``None``.
         :type escalation_message: str, optional
 
-        :param evaluation_delay: Time (in seconds) to delay evaluation, as a non-negative integer. For example, if the value is set to `300` (5min),
-            the timeframe is set to `last_5m` and the time is 7:00, the monitor evaluates data from 6:50 to 6:55.
+        :param evaluation_delay: Time (in seconds) to delay evaluation, as a non-negative integer. For example, if the value is set to ``300`` (5min),
+            the timeframe is set to ``last_5m`` and the time is 7:00, the monitor evaluates data from 6:50 to 6:55.
             This is useful for AWS CloudWatch and other backfilled metrics to ensure the monitor always has data during evaluation.
         :type evaluation_delay: int, none_type, optional
 
@@ -136,18 +136,20 @@ class MonitorOptions(ModelNormal):
         :param include_tags: A Boolean indicating whether notifications from this monitor automatically inserts its triggering tags into the title.
 
             **Examples**
-            - If `True`, `[Triggered on {host:h1}] Monitor Title`
-            - If `False`, `[Triggered] Monitor Title`
+
+
+            * If ``True``\ , ``[Triggered on {host:h1}] Monitor Title``
+            * If ``False``\ , ``[Triggered] Monitor Title``
         :type include_tags: bool, optional
 
-        :param locked: Whether or not the monitor is locked (only editable by creator and admins). Use `restricted_roles` instead.
+        :param locked: Whether or not the monitor is locked (only editable by creator and admins). Use ``restricted_roles`` instead.
         :type locked: bool, optional
 
         :param min_failure_duration: How long the test should be in failure before alerting (integer, number of seconds, max 7200).
         :type min_failure_duration: int, none_type, optional
 
         :param min_location_failed: The minimum number of locations in failure at the same time during
-            at least one moment in the `min_failure_duration` period (`min_location_failed` and `min_failure_duration`
+            at least one moment in the ``min_failure_duration`` period (\ ``min_location_failed`` and ``min_failure_duration``
             are part of the advanced alerting rules - integer, >= 1).
         :type min_location_failed: int, none_type, optional
 
@@ -187,7 +189,7 @@ class MonitorOptions(ModelNormal):
         :type renotify_statuses: [MonitorRenotifyStatusType], none_type, optional
 
         :param require_full_window: A Boolean indicating whether this monitor needs a full window of data before it’s evaluated.
-            We highly recommend you set this to `false` for sparse metrics,
+            We highly recommend you set this to ``false`` for sparse metrics,
             otherwise some evaluations are skipped. Default is false.
         :type require_full_window: bool, optional
 

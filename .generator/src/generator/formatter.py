@@ -2,6 +2,8 @@
 import keyword
 import re
 
+import m2r2
+
 KEYWORDS = set(keyword.kwlist)
 KEYWORDS.add("property")
 
@@ -53,3 +55,17 @@ def get_name(schema):
 
 def attribute_path(attribute):
     return ".".join(attribute_name(a) for a in attribute.split("."))
+
+
+class CustomRenderer(m2r2.RestRenderer):
+    def double_emphasis(self, text):
+        if "``" in text:
+            text = text.replace("\ ``", "").replace("``\ ", "")
+        return super().double_emphasis(text)
+
+    def header(self, text, level, raw=None):
+        return "\n{}\n".format(self.double_emphasis(text))
+
+
+def docstring(text):
+    return m2r2.convert(text.replace("\\n", "\\\\n"), renderer=CustomRenderer())[1:-1]

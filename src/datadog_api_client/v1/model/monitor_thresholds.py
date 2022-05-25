@@ -35,22 +35,22 @@ class MonitorThresholds(ModelNormal):
         """
         List of the different monitor threshold available.
 
-        :param critical: The monitor `CRITICAL` threshold.
+        :param critical: The monitor ``CRITICAL`` threshold.
         :type critical: float, optional
 
-        :param critical_recovery: The monitor `CRITICAL` recovery threshold.
+        :param critical_recovery: The monitor ``CRITICAL`` recovery threshold.
         :type critical_recovery: float, none_type, optional
 
-        :param ok: The monitor `OK` threshold.
+        :param ok: The monitor ``OK`` threshold.
         :type ok: float, none_type, optional
 
         :param unknown: The monitor UNKNOWN threshold.
         :type unknown: float, none_type, optional
 
-        :param warning: The monitor `WARNING` threshold.
+        :param warning: The monitor ``WARNING`` threshold.
         :type warning: float, none_type, optional
 
-        :param warning_recovery: The monitor `WARNING` recovery threshold.
+        :param warning_recovery: The monitor ``WARNING`` recovery threshold.
         :type warning_recovery: float, none_type, optional
         """
         super().__init__(kwargs)

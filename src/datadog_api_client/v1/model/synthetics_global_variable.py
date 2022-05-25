@@ -66,7 +66,7 @@ class SyntheticsGlobalVariable(ModelNormal):
         :param name: Name of the global variable. Unique across Synthetics global variables.
         :type name: str
 
-        :param parse_test_options: Parser options to use for retrieving a Synthetics global variable from a Synthetics Test. Used in conjunction with `parse_test_public_id`.
+        :param parse_test_options: Parser options to use for retrieving a Synthetics global variable from a Synthetics Test. Used in conjunction with ``parse_test_public_id``.
         :type parse_test_options: SyntheticsGlobalVariableParseTestOptions, optional
 
         :param parse_test_public_id: A Synthetic test ID to use as a test to generate the variable value.

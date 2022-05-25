@@ -10,6 +10,10 @@ from datadog_api_client.model_utils import (
 
 
 class OrganizationsApi:
+    """
+    Create, edit, and manage your organizations. Read more about `multi-org accounts <https://docs.datadoghq.com/account_management/multi_organization>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

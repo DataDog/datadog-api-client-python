@@ -101,10 +101,10 @@ class MonitorSearchResult(ModelNormal):
         :param query: The monitor query.
         :type query: str, optional
 
-        :param scopes: The scope(s) to which the downtime applies, for example `host:app2`.
-            Provide multiple scopes as a comma-separated list, for example `env:dev,env:prod`.
+        :param scopes: The scope(s) to which the downtime applies, for example ``host:app2``.
+            Provide multiple scopes as a comma-separated list, for example ``env:dev,env:prod``.
             The resulting downtime applies to sources that matches ALL provided scopes
-            (that is `env:dev AND env:prod`), NOT any of them.
+            (that is ``env:dev AND env:prod``\ ), NOT any of them.
         :type scopes: [str], optional
 
         :param status: The different states your monitor can be in.
@@ -113,7 +113,7 @@ class MonitorSearchResult(ModelNormal):
         :param tags: Tags associated with the monitor.
         :type tags: [str], optional
 
-        :param type: The type of the monitor. For more information about `type`, see the [monitor options](https://docs.datadoghq.com/monitors/guide/monitor_api_options/) docs.
+        :param type: The type of the monitor. For more information about ``type``\ , see the `monitor options <https://docs.datadoghq.com/monitors/guide/monitor_api_options/>`_ docs.
         :type type: MonitorType, optional
         """
         super().__init__(kwargs)

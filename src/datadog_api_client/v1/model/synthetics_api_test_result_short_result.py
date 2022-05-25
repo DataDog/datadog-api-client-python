@@ -37,7 +37,7 @@ class SyntheticsAPITestResultShortResult(ModelNormal):
         :type passed: bool, optional
 
         :param timings: Object containing all metrics and their values collected for a Synthetic API test.
-            Learn more about those metrics in [Synthetics documentation](https://docs.datadoghq.com/synthetics/#metrics).
+            Learn more about those metrics in `Synthetics documentation <https://docs.datadoghq.com/synthetics/#metrics>`_.
         :type timings: SyntheticsTiming, optional
         """
         super().__init__(kwargs)

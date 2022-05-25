@@ -37,7 +37,7 @@ class SecurityMonitoringRuleCaseCreate(ModelNormal):
         """
         Case when signal is generated.
 
-        :param condition: A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated
+        :param condition: A rule case contains logical operations (\ ``>``\ ,\ ``>=``\ , ``&&``\ , ``||``\ ) to determine if a signal should be generated
             based on the event counts in the previously defined queries.
         :type condition: str, optional
 

@@ -9,6 +9,21 @@ from datadog_api_client.v1.model.host_tags import HostTags
 
 
 class TagsApi:
+    """
+    The tag endpoint allows you to assign tags to hosts,
+    for example: ``role:database``. Those tags are applied to
+    all metrics sent by the host. Refer to hosts by name
+    (\ ``yourhost.example.com``\ ) when fetching and applying
+    tags to a particular host.
+
+    The component of your infrastructure responsible for a tag is identified
+    by a source. For example, some valid sources include nagios, hudson, jenkins,
+    users, feed, chef, puppet, git, bitbucket, fabric, capistrano, etc.
+
+    Read more about tags on the dedicated
+    `documentation page <https://docs.datadoghq.com/tagging>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -179,7 +194,7 @@ class TagsApi:
         :param body: Update host tags request body.
         :type body: HostTags
         :param source: The source of the tags.
-            [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
+            `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_.
         :type source: str, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -229,7 +244,7 @@ class TagsApi:
         :param host_name: This endpoint allows you to remove all user-assigned tags for a single host.
         :type host_name: str
         :param source: The source of the tags (for example chef, puppet).
-            [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
+            `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_.
         :type source: str, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -367,7 +382,7 @@ class TagsApi:
         :param body: Add tags to host
         :type body: HostTags
         :param source: The source of the tags (for example chef, puppet).
-            [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value)
+            `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_
         :type source: str, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

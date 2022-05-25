@@ -37,7 +37,7 @@ class SyntheticsBasicAuthNTLM(ModelNormal):
 
     def __init__(self, type, *args, **kwargs):
         """
-        Object to handle `NTLM` authentication when performing the test.
+        Object to handle ``NTLM`` authentication when performing the test.
 
         :param domain: Domain for the authentication to use when performing the test.
         :type domain: str, optional

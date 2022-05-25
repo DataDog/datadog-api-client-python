@@ -25,7 +25,7 @@ class OrganizationSettingsSamlIdpInitiatedLogin(ModelNormal):
         Has one property enabled (boolean).
 
         :param enabled: Whether SAML IdP initiated login is enabled, learn more
-            in the [SAML documentation](https://docs.datadoghq.com/account_management/saml/#idp-initiated-login).
+            in the `SAML documentation <https://docs.datadoghq.com/account_management/saml/#idp-initiated-login>`_.
         :type enabled: bool, optional
         """
         super().__init__(kwargs)

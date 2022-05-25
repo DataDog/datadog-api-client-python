@@ -49,7 +49,7 @@ class LogsGeoIPParser(ModelNormal):
         :param sources: Array of source attributes.
         :type sources: [str]
 
-        :param target: Name of the parent attribute that contains all the extracted details from the `sources`.
+        :param target: Name of the parent attribute that contains all the extracted details from the ``sources``.
         :type target: str
 
         :param type: Type of GeoIP parser.

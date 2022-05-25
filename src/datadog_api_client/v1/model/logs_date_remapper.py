@@ -37,12 +37,14 @@ class LogsDateRemapper(ModelNormal):
         """
         As Datadog receives logs, it timestamps them using the value(s) from any of these default attributes.
 
-          - `timestamp`
-          - `date`
-          - `_timestamp`
-          - `Timestamp`
-          - `eventTime`
-          - `published_date`
+
+        * ``timestamp``
+        * ``date``
+        * ``_timestamp``
+        * ``Timestamp``
+        * ``eventTime``
+        *
+          ``published_date``
 
           If your logs put their dates in an attribute not in this list,
           use the log date Remapper Processor to define their date attribute as the official log timestamp.

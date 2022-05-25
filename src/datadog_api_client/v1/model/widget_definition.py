@@ -74,7 +74,7 @@ def lazy_import():
 class WidgetDefinition(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
-        [Definition of the widget](https://docs.datadoghq.com/dashboards/widgets/).
+        `Definition of the widget <https://docs.datadoghq.com/dashboards/widgets/>`_.
 
         :param alert_id: ID of the alert to use in the widget.
         :type alert_id: str

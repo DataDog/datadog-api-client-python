@@ -23,7 +23,6 @@ class MetricBulkTagConfigTagNameList(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: A list of tag names to apply to the configuration.
         :type value: [str]
         """
         super().__init__(kwargs)

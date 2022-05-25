@@ -68,7 +68,7 @@ class MonitorFormulaAndFunctionEventQueryDefinition(ModelNormal):
         :param group_by: Group by options.
         :type group_by: [MonitorFormulaAndFunctionEventQueryGroupBy], optional
 
-        :param indexes: An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.
+        :param indexes: An array of index names to query in the stream. Omit or use ``[]`` to query all indexes at once.
         :type indexes: [str], optional
 
         :param name: Name of the query for use in formulas.

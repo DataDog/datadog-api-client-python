@@ -19,6 +19,17 @@ from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 
 
 class RolesApi:
+    """
+    The Roles API is used to create and manage Datadog roles, what
+    `global permissions <https://docs.datadoghq.com/account_management/rbac/>`_
+    they grant, and which users belong to them.
+
+    Permissions related to specific account assets can be granted to roles
+    in the Datadog application without using this API. For example, granting
+    read access on a specific log index to a role can be done in Datadog from the
+    `Pipelines page <https://app.datadoghq.com/logs/pipelines>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -615,7 +626,7 @@ class RolesApi:
     def get_role(self, role_id, **kwargs):
         """Get a role.
 
-        Get a role in the organization specified by the role’s `role_id`.
+        Get a role in the organization specified by the role’s ``role_id``.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -757,7 +768,7 @@ class RolesApi:
         :type page_number: int, optional
         :param sort: Sort roles depending on the given field. Sort order is **ascending** by default.
             Sort order is **descending** if the field is prefixed by a negative sign, for example:
-            `sort=-name`.
+            ``sort=-name``.
         :type sort: RolesSort, optional
         :param filter: Filter all roles by the given string.
         :type filter: str, optional
@@ -809,7 +820,7 @@ class RolesApi:
         :type page_number: int, optional
         :param sort: User attribute to order results by. Sort order is **ascending** by default.
             Sort order is **descending** if the field is prefixed by a negative sign,
-            for example `sort=-name`. Options: `name`, `email`, `status`.
+            for example ``sort=-name``. Options: ``name``\ , ``email``\ , ``status``.
         :type sort: str, optional
         :param filter: Filter all users by the given string. Defaults to no filtering.
         :type filter: str, optional

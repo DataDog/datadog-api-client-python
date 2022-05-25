@@ -13,6 +13,10 @@ from datadog_api_client.v2.model.application_key_update_request import Applicati
 
 
 class ServiceAccountsApi:
+    """
+    Create, edit, and disable service accounts.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

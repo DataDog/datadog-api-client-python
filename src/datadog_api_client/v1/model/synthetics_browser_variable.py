@@ -38,7 +38,7 @@ class SyntheticsBrowserVariable(ModelNormal):
     def __init__(self, name, type, *args, **kwargs):
         """
         Object defining a variable that can be used in your browser test.
-        Learn more in the [Browser test Actions documentation](https://docs.datadoghq.com/synthetics/browser_tests/actions#variable).
+        Learn more in the `Browser test Actions documentation <https://docs.datadoghq.com/synthetics/browser_tests/actions#variable>`_.
 
         :param example: Example for the variable.
         :type example: str, optional

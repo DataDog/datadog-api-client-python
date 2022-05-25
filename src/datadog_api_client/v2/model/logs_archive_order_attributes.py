@@ -24,7 +24,7 @@ class LogsArchiveOrderAttributes(ModelNormal):
         """
         The attributes associated with the archive order.
 
-        :param archive_ids: An ordered array of `<ARCHIVE_ID>` strings, the order of archive IDs in the array
+        :param archive_ids: An ordered array of ``<ARCHIVE_ID>`` strings, the order of archive IDs in the array
             define the overall archives order for Datadog.
         :type archive_ids: [str]
         """

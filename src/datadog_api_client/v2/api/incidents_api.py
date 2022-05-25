@@ -16,6 +16,10 @@ from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRe
 
 
 class IncidentsApi:
+    """
+    Manage incident response.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -257,7 +261,7 @@ class IncidentsApi:
     def get_incident(self, incident_id, **kwargs):
         """Get the details of an incident.
 
-        Get the details of an incident by `incident_id`.
+        Get the details of an incident by ``incident_id``.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

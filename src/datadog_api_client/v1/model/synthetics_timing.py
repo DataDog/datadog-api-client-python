@@ -39,7 +39,7 @@ class SyntheticsTiming(ModelNormal):
     def __init__(self, *args, **kwargs):
         """
         Object containing all metrics and their values collected for a Synthetic API test.
-        Learn more about those metrics in [Synthetics documentation](https://docs.datadoghq.com/synthetics/#metrics).
+        Learn more about those metrics in `Synthetics documentation <https://docs.datadoghq.com/synthetics/#metrics>`_.
 
         :param dns: The duration in millisecond of the DNS lookup.
         :type dns: float, optional

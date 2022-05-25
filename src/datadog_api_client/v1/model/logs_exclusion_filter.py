@@ -26,7 +26,7 @@ class LogsExclusionFilter(ModelNormal):
         """
         Exclusion filter is defined by a query, a sampling rule, and a active/inactive toggle.
 
-        :param query: Default query is `*`, meaning all logs flowing in the index would be excluded.
+        :param query: Default query is ``*``\ , meaning all logs flowing in the index would be excluded.
             Scope down exclusion filter to only a subset of logs with a log query.
         :type query: str, optional
 

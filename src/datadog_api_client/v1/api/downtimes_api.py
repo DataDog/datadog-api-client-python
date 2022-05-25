@@ -10,6 +10,13 @@ from datadog_api_client.v1.model.cancel_downtimes_by_scope_request import Cancel
 
 
 class DowntimesApi:
+    """
+    `Downtiming <https://docs.datadoghq.com/monitors/notify/downtimes>`_ gives
+    you greater control over monitor notifications by allowing you to globally exclude
+    scopes from alerting. Downtime settings, which can be scheduled with start and
+    end times, prevent all alerting related to specified Datadog tags.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -230,7 +237,7 @@ class DowntimesApi:
     def cancel_downtimes_by_scope(self, body, **kwargs):
         """Cancel downtimes by scope.
 
-        Delete all downtimes that match the scope of `X`.
+        Delete all downtimes that match the scope of ``X``.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -318,7 +325,7 @@ class DowntimesApi:
     def get_downtime(self, downtime_id, **kwargs):
         """Get a downtime.
 
-        Get downtime detail by `downtime_id`.
+        Get downtime detail by ``downtime_id``.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -448,7 +455,7 @@ class DowntimesApi:
     def update_downtime(self, downtime_id, body, **kwargs):
         """Update a downtime.
 
-        Update a single downtime by `downtime_id`.
+        Update a single downtime by ``downtime_id``.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

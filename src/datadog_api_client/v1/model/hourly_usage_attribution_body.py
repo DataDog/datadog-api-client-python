@@ -57,7 +57,7 @@ class HourlyUsageAttributionBody(ModelNormal):
         :param public_id: The organization public ID.
         :type public_id: str, optional
 
-        :param tag_config_source: The source of the usage attribution tag configuration and the selected tags in the format of `<source_org_name>:::<selected tag 1>///<selected tag 2>///<selected tag 3>`.
+        :param tag_config_source: The source of the usage attribution tag configuration and the selected tags in the format of ``<source_org_name>:::<selected tag 1>///<selected tag 2>///<selected tag 3>``.
         :type tag_config_source: str, optional
 
         :param tags: Usage Summary by tag name.

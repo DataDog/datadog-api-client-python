@@ -32,7 +32,6 @@ class RUMAggregateBucketValueTimeseries(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: A timeseries array.
         :type value: [RUMAggregateBucketValueTimeseriesPoint]
         """
         super().__init__(kwargs)
