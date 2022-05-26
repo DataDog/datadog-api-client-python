@@ -86,24 +86,21 @@ Feature: Service Level Objectives
 
   @generated @skip @team:DataDog/slo-app
   Scenario: Get Corrections For an SLO returns "Bad Request" response
-    Given operation "GetSLOCorrections" enabled
-    And new "GetSLOCorrections" request
+    Given new "GetSLOCorrections" request
     And request contains "slo_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/slo-app
   Scenario: Get Corrections For an SLO returns "Not Found" response
-    Given operation "GetSLOCorrections" enabled
-    And new "GetSLOCorrections" request
+    Given new "GetSLOCorrections" request
     And request contains "slo_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @team:DataDog/slo-app
   Scenario: Get Corrections For an SLO returns "OK" response
-    Given operation "GetSLOCorrections" enabled
-    And there is a valid "slo" in the system
+    Given there is a valid "slo" in the system
     And there is a valid "correction" for "slo"
     And new "GetSLOCorrections" request
     And request contains "slo_id" parameter from "slo.data[0].id"
