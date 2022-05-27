@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_index import LogsIndex
-
-    globals()["LogsIndex"] = LogsIndex
-
-
 class LogsIndexListResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_index import LogsIndex
+
         return {
             "indexes": ([LogsIndex],),
         }

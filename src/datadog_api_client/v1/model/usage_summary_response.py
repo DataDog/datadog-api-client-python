@@ -10,18 +10,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_by_retention import LogsByRetention
-    from datadog_api_client.v1.model.usage_summary_date import UsageSummaryDate
-
-    globals()["LogsByRetention"] = LogsByRetention
-    globals()["UsageSummaryDate"] = UsageSummaryDate
-
-
 class UsageSummaryResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_by_retention import LogsByRetention
+        from datadog_api_client.v1.model.usage_summary_date import UsageSummaryDate
+
         return {
             "agent_host_top99p_sum": (int,),
             "apm_azure_app_service_host_top99p_sum": (int,),

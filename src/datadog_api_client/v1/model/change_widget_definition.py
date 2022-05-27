@@ -9,20 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
-    from datadog_api_client.v1.model.change_widget_request import ChangeWidgetRequest
-    from datadog_api_client.v1.model.widget_time import WidgetTime
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.change_widget_definition_type import ChangeWidgetDefinitionType
-
-    globals()["WidgetCustomLink"] = WidgetCustomLink
-    globals()["ChangeWidgetRequest"] = ChangeWidgetRequest
-    globals()["WidgetTime"] = WidgetTime
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["ChangeWidgetDefinitionType"] = ChangeWidgetDefinitionType
-
-
 class ChangeWidgetDefinition(ModelNormal):
     validations = {
         "requests": {
@@ -33,7 +19,12 @@ class ChangeWidgetDefinition(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+        from datadog_api_client.v1.model.change_widget_request import ChangeWidgetRequest
+        from datadog_api_client.v1.model.widget_time import WidgetTime
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.change_widget_definition_type import ChangeWidgetDefinitionType
+
         return {
             "custom_links": ([WidgetCustomLink],),
             "requests": ([ChangeWidgetRequest],),

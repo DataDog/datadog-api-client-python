@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
-    from datadog_api_client.v2.model.security_filter_type import SecurityFilterType
-
-    globals()["SecurityFilterAttributes"] = SecurityFilterAttributes
-    globals()["SecurityFilterType"] = SecurityFilterType
-
-
 class SecurityFilter(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
+        from datadog_api_client.v2.model.security_filter_type import SecurityFilterType
+
         return {
             "attributes": (SecurityFilterAttributes,),
             "id": (str,),

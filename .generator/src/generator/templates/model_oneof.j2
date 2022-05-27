@@ -1,13 +1,4 @@
 {%- set refs = get_oneof_models(model) %}
-{%- if refs %}
-def lazy_import():
-{%- for ref in refs %}
-    from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
-{%- endfor %}
-{%- for ref in refs %}
-    globals()["{{ ref }}"] = {{ ref }}
-{%- endfor %}
-{%- endif %}
 
 class {{ name }}(ModelComposed):
 
@@ -48,7 +39,9 @@ class {{ name }}(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
 {%- if refs %}
-        lazy_import()
+{%- for ref in refs %}
+        from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
+{%- endfor %}
 {%- endif %}
         return {
             "anyOf": [],

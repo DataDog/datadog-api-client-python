@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.aws_logs_lambda import AWSLogsLambda
-
-    globals()["AWSLogsLambda"] = AWSLogsLambda
-
-
 class AWSLogsListResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.aws_logs_lambda import AWSLogsLambda
+
         return {
             "account_id": (str,),
             "lambdas": ([AWSLogsLambda],),

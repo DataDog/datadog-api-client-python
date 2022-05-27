@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_sds_hour import UsageSDSHour
-
-    globals()["UsageSDSHour"] = UsageSDSHour
-
-
 class UsageSDSResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_sds_hour import UsageSDSHour
+
         return {
             "usage": ([UsageSDSHour],),
         }

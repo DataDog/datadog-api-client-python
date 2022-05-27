@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.authn_mapping_attributes import AuthNMappingAttributes
-    from datadog_api_client.v2.model.authn_mapping_relationships import AuthNMappingRelationships
-    from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
-
-    globals()["AuthNMappingAttributes"] = AuthNMappingAttributes
-    globals()["AuthNMappingRelationships"] = AuthNMappingRelationships
-    globals()["AuthNMappingsType"] = AuthNMappingsType
-
-
 class AuthNMapping(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.authn_mapping_attributes import AuthNMappingAttributes
+        from datadog_api_client.v2.model.authn_mapping_relationships import AuthNMappingRelationships
+        from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
+
         return {
             "attributes": (AuthNMappingAttributes,),
             "id": (str,),

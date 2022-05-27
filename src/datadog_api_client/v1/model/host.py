@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.host_meta import HostMeta
-    from datadog_api_client.v1.model.host_metrics import HostMetrics
-
-    globals()["HostMeta"] = HostMeta
-    globals()["HostMetrics"] = HostMetrics
-
-
 class Host(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.host_meta import HostMeta
+        from datadog_api_client.v1.model.host_metrics import HostMetrics
+
         return {
             "aliases": ([str],),
             "apps": ([str],),

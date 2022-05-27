@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.rum_aggregate_bucket_value import RUMAggregateBucketValue
-
-    globals()["RUMAggregateBucketValue"] = RUMAggregateBucketValue
-
-
 class RUMBucketResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.rum_aggregate_bucket_value import RUMAggregateBucketValue
+
         return {
             "by": ({str: (str,)},),
             "computes": ({str: (RUMAggregateBucketValue,)},),

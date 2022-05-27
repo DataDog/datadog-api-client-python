@@ -9,34 +9,22 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition_compute import (
-        MonitorFormulaAndFunctionEventQueryDefinitionCompute,
-    )
-    from datadog_api_client.v1.model.monitor_formula_and_function_events_data_source import (
-        MonitorFormulaAndFunctionEventsDataSource,
-    )
-    from datadog_api_client.v1.model.monitor_formula_and_function_event_query_group_by import (
-        MonitorFormulaAndFunctionEventQueryGroupBy,
-    )
-    from datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition_search import (
-        MonitorFormulaAndFunctionEventQueryDefinitionSearch,
-    )
-
-    globals()[
-        "MonitorFormulaAndFunctionEventQueryDefinitionCompute"
-    ] = MonitorFormulaAndFunctionEventQueryDefinitionCompute
-    globals()["MonitorFormulaAndFunctionEventsDataSource"] = MonitorFormulaAndFunctionEventsDataSource
-    globals()["MonitorFormulaAndFunctionEventQueryGroupBy"] = MonitorFormulaAndFunctionEventQueryGroupBy
-    globals()[
-        "MonitorFormulaAndFunctionEventQueryDefinitionSearch"
-    ] = MonitorFormulaAndFunctionEventQueryDefinitionSearch
-
-
 class MonitorFormulaAndFunctionEventQueryDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition_compute import (
+            MonitorFormulaAndFunctionEventQueryDefinitionCompute,
+        )
+        from datadog_api_client.v1.model.monitor_formula_and_function_events_data_source import (
+            MonitorFormulaAndFunctionEventsDataSource,
+        )
+        from datadog_api_client.v1.model.monitor_formula_and_function_event_query_group_by import (
+            MonitorFormulaAndFunctionEventQueryGroupBy,
+        )
+        from datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition_search import (
+            MonitorFormulaAndFunctionEventQueryDefinitionSearch,
+        )
+
         return {
             "compute": (MonitorFormulaAndFunctionEventQueryDefinitionCompute,),
             "data_source": (MonitorFormulaAndFunctionEventsDataSource,),

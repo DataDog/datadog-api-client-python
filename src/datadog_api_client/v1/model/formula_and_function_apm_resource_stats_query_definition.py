@@ -9,22 +9,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_data_source import (
-        FormulaAndFunctionApmResourceStatsDataSource,
-    )
-    from datadog_api_client.v1.model.formula_and_function_apm_resource_stat_name import (
-        FormulaAndFunctionApmResourceStatName,
-    )
-
-    globals()["FormulaAndFunctionApmResourceStatsDataSource"] = FormulaAndFunctionApmResourceStatsDataSource
-    globals()["FormulaAndFunctionApmResourceStatName"] = FormulaAndFunctionApmResourceStatName
-
-
 class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_data_source import (
+            FormulaAndFunctionApmResourceStatsDataSource,
+        )
+        from datadog_api_client.v1.model.formula_and_function_apm_resource_stat_name import (
+            FormulaAndFunctionApmResourceStatName,
+        )
+
         return {
             "data_source": (FormulaAndFunctionApmResourceStatsDataSource,),
             "env": (str,),

@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.notebook_metadata_type import NotebookMetadataType
-
-    globals()["NotebookMetadataType"] = NotebookMetadataType
-
-
 class NotebookMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.notebook_metadata_type import NotebookMetadataType
+
         return {
             "is_template": (bool,),
             "take_snapshots": (bool,),

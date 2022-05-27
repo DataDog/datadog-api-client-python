@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.aws_account import AWSAccount
-
-    globals()["AWSAccount"] = AWSAccount
-
-
 class AWSAccountListResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.aws_account import AWSAccount
+
         return {
             "accounts": ([AWSAccount],),
         }

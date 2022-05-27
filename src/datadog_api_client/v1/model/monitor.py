@@ -11,20 +11,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.creator import Creator
-    from datadog_api_client.v1.model.monitor_options import MonitorOptions
-    from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
-    from datadog_api_client.v1.model.monitor_state import MonitorState
-    from datadog_api_client.v1.model.monitor_type import MonitorType
-
-    globals()["Creator"] = Creator
-    globals()["MonitorOptions"] = MonitorOptions
-    globals()["MonitorOverallStates"] = MonitorOverallStates
-    globals()["MonitorState"] = MonitorState
-    globals()["MonitorType"] = MonitorType
-
-
 class Monitor(ModelNormal):
     validations = {
         "priority": {
@@ -35,7 +21,12 @@ class Monitor(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.creator import Creator
+        from datadog_api_client.v1.model.monitor_options import MonitorOptions
+        from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
+        from datadog_api_client.v1.model.monitor_state import MonitorState
+        from datadog_api_client.v1.model.monitor_type import MonitorType
+
         return {
             "created": (datetime,),
             "creator": (Creator,),

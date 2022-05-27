@@ -10,18 +10,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_archive_destination import LogsArchiveDestination
-    from datadog_api_client.v2.model.logs_archive_state import LogsArchiveState
-
-    globals()["LogsArchiveDestination"] = LogsArchiveDestination
-    globals()["LogsArchiveState"] = LogsArchiveState
-
-
 class LogsArchiveAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_archive_destination import LogsArchiveDestination
+        from datadog_api_client.v2.model.logs_archive_state import LogsArchiveState
+
         return {
             "destination": (LogsArchiveDestination,),
             "include_tags": (bool,),

@@ -10,14 +10,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.point import Point
-    from datadog_api_client.v1.model.metrics_query_unit import MetricsQueryUnit
-
-    globals()["Point"] = Point
-    globals()["MetricsQueryUnit"] = MetricsQueryUnit
-
-
 class MetricsQueryMetadata(ModelNormal):
     validations = {
         "unit": {
@@ -28,7 +20,9 @@ class MetricsQueryMetadata(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.point import Point
+        from datadog_api_client.v1.model.metrics_query_unit import MetricsQueryUnit
+
         return {
             "aggr": (str, none_type),
             "display_name": (str,),

@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_lookup_processor_type import LogsLookupProcessorType
-
-    globals()["LogsLookupProcessorType"] = LogsLookupProcessorType
-
-
 class LogsLookupProcessor(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_lookup_processor_type import LogsLookupProcessorType
+
         return {
             "default_lookup": (str,),
             "is_enabled": (bool,),

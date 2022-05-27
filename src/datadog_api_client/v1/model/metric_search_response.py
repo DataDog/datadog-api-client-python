@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.metric_search_response_results import MetricSearchResponseResults
-
-    globals()["MetricSearchResponseResults"] = MetricSearchResponseResults
-
-
 class MetricSearchResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.metric_search_response_results import MetricSearchResponseResults
+
         return {
             "results": (MetricSearchResponseResults,),
         }

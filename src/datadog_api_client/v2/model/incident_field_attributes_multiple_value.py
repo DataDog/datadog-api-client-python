@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.incident_field_attributes_value_type import IncidentFieldAttributesValueType
-
-    globals()["IncidentFieldAttributesValueType"] = IncidentFieldAttributesValueType
-
-
 class IncidentFieldAttributesMultipleValue(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.incident_field_attributes_value_type import IncidentFieldAttributesValueType
+
         return {
             "type": (IncidentFieldAttributesValueType,),
             "value": ([str], none_type),

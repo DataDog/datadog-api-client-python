@@ -9,26 +9,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_history_monitor import SLOHistoryMonitor
-    from datadog_api_client.v1.model.slo_history_sli_data import SLOHistorySLIData
-    from datadog_api_client.v1.model.slo_history_metrics import SLOHistoryMetrics
-    from datadog_api_client.v1.model.slo_threshold import SLOThreshold
-    from datadog_api_client.v1.model.slo_type import SLOType
-    from datadog_api_client.v1.model.slo_type_numeric import SLOTypeNumeric
-
-    globals()["SLOHistoryMonitor"] = SLOHistoryMonitor
-    globals()["SLOHistorySLIData"] = SLOHistorySLIData
-    globals()["SLOHistoryMetrics"] = SLOHistoryMetrics
-    globals()["SLOThreshold"] = SLOThreshold
-    globals()["SLOType"] = SLOType
-    globals()["SLOTypeNumeric"] = SLOTypeNumeric
-
-
 class SLOHistoryResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_history_monitor import SLOHistoryMonitor
+        from datadog_api_client.v1.model.slo_history_sli_data import SLOHistorySLIData
+        from datadog_api_client.v1.model.slo_history_metrics import SLOHistoryMetrics
+        from datadog_api_client.v1.model.slo_threshold import SLOThreshold
+        from datadog_api_client.v1.model.slo_type import SLOType
+        from datadog_api_client.v1.model.slo_type_numeric import SLOTypeNumeric
+
         return {
             "from_ts": (int,),
             "group_by": ([str],),

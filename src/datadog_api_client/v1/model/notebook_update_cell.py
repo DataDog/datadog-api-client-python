@@ -9,14 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.notebook_cell_create_request import NotebookCellCreateRequest
-    from datadog_api_client.v1.model.notebook_cell_update_request import NotebookCellUpdateRequest
-
-    globals()["NotebookCellCreateRequest"] = NotebookCellCreateRequest
-    globals()["NotebookCellUpdateRequest"] = NotebookCellUpdateRequest
-
-
 class NotebookUpdateCell(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
@@ -56,7 +48,9 @@ class NotebookUpdateCell(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        lazy_import()
+        from datadog_api_client.v1.model.notebook_cell_create_request import NotebookCellCreateRequest
+        from datadog_api_client.v1.model.notebook_cell_update_request import NotebookCellUpdateRequest
+
         return {
             "anyOf": [],
             "allOf": [],

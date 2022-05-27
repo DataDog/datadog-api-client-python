@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
-
-    globals()["NullableRelationshipToUser"] = NullableRelationshipToUser
-
-
 class IncidentCreateRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
+
         return {
             "commander_user": (NullableRelationshipToUser,),
         }

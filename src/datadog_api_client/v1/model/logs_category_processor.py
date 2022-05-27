@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_category_processor_category import LogsCategoryProcessorCategory
-    from datadog_api_client.v1.model.logs_category_processor_type import LogsCategoryProcessorType
-
-    globals()["LogsCategoryProcessorCategory"] = LogsCategoryProcessorCategory
-    globals()["LogsCategoryProcessorType"] = LogsCategoryProcessorType
-
-
 class LogsCategoryProcessor(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_category_processor_category import LogsCategoryProcessorCategory
+        from datadog_api_client.v1.model.logs_category_processor_type import LogsCategoryProcessorType
+
         return {
             "categories": ([LogsCategoryProcessorCategory],),
             "is_enabled": (bool,),

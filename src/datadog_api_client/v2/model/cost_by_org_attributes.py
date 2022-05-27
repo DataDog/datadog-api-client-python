@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
-
-    globals()["ChargebackBreakdown"] = ChargebackBreakdown
-
-
 class CostByOrgAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
+
         return {
             "charges": ([ChargebackBreakdown],),
             "date": (datetime,),

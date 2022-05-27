@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.authn_mapping import AuthNMapping
-    from datadog_api_client.v2.model.authn_mapping_included import AuthNMappingIncluded
-
-    globals()["AuthNMapping"] = AuthNMapping
-    globals()["AuthNMappingIncluded"] = AuthNMappingIncluded
-
-
 class AuthNMappingResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.authn_mapping import AuthNMapping
+        from datadog_api_client.v2.model.authn_mapping_included import AuthNMappingIncluded
+
         return {
             "data": (AuthNMapping,),
             "included": ([AuthNMappingIncluded],),

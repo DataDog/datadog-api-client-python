@@ -9,16 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.service_map_widget_definition_type import ServiceMapWidgetDefinitionType
-
-    globals()["WidgetCustomLink"] = WidgetCustomLink
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["ServiceMapWidgetDefinitionType"] = ServiceMapWidgetDefinitionType
-
-
 class ServiceMapWidgetDefinition(ModelNormal):
     validations = {
         "filters": {
@@ -28,7 +18,10 @@ class ServiceMapWidgetDefinition(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.service_map_widget_definition_type import ServiceMapWidgetDefinitionType
+
         return {
             "custom_links": ([WidgetCustomLink],),
             "filters": ([str],),

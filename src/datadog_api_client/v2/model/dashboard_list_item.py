@@ -10,14 +10,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.creator import Creator
-    from datadog_api_client.v2.model.dashboard_type import DashboardType
-
-    globals()["Creator"] = Creator
-    globals()["DashboardType"] = DashboardType
-
-
 class DashboardListItem(ModelNormal):
     validations = {
         "popularity": {
@@ -27,7 +19,9 @@ class DashboardListItem(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.creator import Creator
+        from datadog_api_client.v2.model.dashboard_type import DashboardType
+
         return {
             "author": (Creator,),
             "created": (datetime,),

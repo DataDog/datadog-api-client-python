@@ -9,26 +9,18 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_color_preference import WidgetColorPreference
-    from datadog_api_client.v1.model.widget_monitor_summary_display_format import WidgetMonitorSummaryDisplayFormat
-    from datadog_api_client.v1.model.widget_monitor_summary_sort import WidgetMonitorSummarySort
-    from datadog_api_client.v1.model.widget_summary_type import WidgetSummaryType
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.monitor_summary_widget_definition_type import MonitorSummaryWidgetDefinitionType
-
-    globals()["WidgetColorPreference"] = WidgetColorPreference
-    globals()["WidgetMonitorSummaryDisplayFormat"] = WidgetMonitorSummaryDisplayFormat
-    globals()["WidgetMonitorSummarySort"] = WidgetMonitorSummarySort
-    globals()["WidgetSummaryType"] = WidgetSummaryType
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["MonitorSummaryWidgetDefinitionType"] = MonitorSummaryWidgetDefinitionType
-
-
 class MonitorSummaryWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_color_preference import WidgetColorPreference
+        from datadog_api_client.v1.model.widget_monitor_summary_display_format import WidgetMonitorSummaryDisplayFormat
+        from datadog_api_client.v1.model.widget_monitor_summary_sort import WidgetMonitorSummarySort
+        from datadog_api_client.v1.model.widget_summary_type import WidgetSummaryType
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.monitor_summary_widget_definition_type import (
+            MonitorSummaryWidgetDefinitionType,
+        )
+
         return {
             "color_preference": (WidgetColorPreference,),
             "count": (int,),

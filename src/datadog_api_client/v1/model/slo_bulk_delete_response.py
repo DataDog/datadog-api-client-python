@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_bulk_delete_response_data import SLOBulkDeleteResponseData
-    from datadog_api_client.v1.model.slo_bulk_delete_error import SLOBulkDeleteError
-
-    globals()["SLOBulkDeleteResponseData"] = SLOBulkDeleteResponseData
-    globals()["SLOBulkDeleteError"] = SLOBulkDeleteError
-
-
 class SLOBulkDeleteResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_bulk_delete_response_data import SLOBulkDeleteResponseData
+        from datadog_api_client.v1.model.slo_bulk_delete_error import SLOBulkDeleteError
+
         return {
             "data": (SLOBulkDeleteResponseData,),
             "errors": ([SLOBulkDeleteError],),

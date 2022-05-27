@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_basic_auth_sigv4_type import SyntheticsBasicAuthSigv4Type
-
-    globals()["SyntheticsBasicAuthSigv4Type"] = SyntheticsBasicAuthSigv4Type
-
-
 class SyntheticsBasicAuthSigv4(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_basic_auth_sigv4_type import SyntheticsBasicAuthSigv4Type
+
         return {
             "access_key": (str,),
             "region": (str,),

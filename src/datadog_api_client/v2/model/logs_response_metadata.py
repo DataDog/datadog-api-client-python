@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_response_metadata_page import LogsResponseMetadataPage
-    from datadog_api_client.v2.model.logs_aggregate_response_status import LogsAggregateResponseStatus
-    from datadog_api_client.v2.model.logs_warning import LogsWarning
-
-    globals()["LogsResponseMetadataPage"] = LogsResponseMetadataPage
-    globals()["LogsAggregateResponseStatus"] = LogsAggregateResponseStatus
-    globals()["LogsWarning"] = LogsWarning
-
-
 class LogsResponseMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_response_metadata_page import LogsResponseMetadataPage
+        from datadog_api_client.v2.model.logs_aggregate_response_status import LogsAggregateResponseStatus
+        from datadog_api_client.v2.model.logs_warning import LogsWarning
+
         return {
             "elapsed": (int,),
             "page": (LogsResponseMetadataPage,),

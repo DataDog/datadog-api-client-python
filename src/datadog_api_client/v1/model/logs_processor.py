@@ -9,40 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_grok_parser import LogsGrokParser
-    from datadog_api_client.v1.model.logs_date_remapper import LogsDateRemapper
-    from datadog_api_client.v1.model.logs_status_remapper import LogsStatusRemapper
-    from datadog_api_client.v1.model.logs_service_remapper import LogsServiceRemapper
-    from datadog_api_client.v1.model.logs_message_remapper import LogsMessageRemapper
-    from datadog_api_client.v1.model.logs_attribute_remapper import LogsAttributeRemapper
-    from datadog_api_client.v1.model.logs_url_parser import LogsURLParser
-    from datadog_api_client.v1.model.logs_user_agent_parser import LogsUserAgentParser
-    from datadog_api_client.v1.model.logs_category_processor import LogsCategoryProcessor
-    from datadog_api_client.v1.model.logs_arithmetic_processor import LogsArithmeticProcessor
-    from datadog_api_client.v1.model.logs_string_builder_processor import LogsStringBuilderProcessor
-    from datadog_api_client.v1.model.logs_pipeline_processor import LogsPipelineProcessor
-    from datadog_api_client.v1.model.logs_geo_ip_parser import LogsGeoIPParser
-    from datadog_api_client.v1.model.logs_lookup_processor import LogsLookupProcessor
-    from datadog_api_client.v1.model.logs_trace_remapper import LogsTraceRemapper
-
-    globals()["LogsGrokParser"] = LogsGrokParser
-    globals()["LogsDateRemapper"] = LogsDateRemapper
-    globals()["LogsStatusRemapper"] = LogsStatusRemapper
-    globals()["LogsServiceRemapper"] = LogsServiceRemapper
-    globals()["LogsMessageRemapper"] = LogsMessageRemapper
-    globals()["LogsAttributeRemapper"] = LogsAttributeRemapper
-    globals()["LogsURLParser"] = LogsURLParser
-    globals()["LogsUserAgentParser"] = LogsUserAgentParser
-    globals()["LogsCategoryProcessor"] = LogsCategoryProcessor
-    globals()["LogsArithmeticProcessor"] = LogsArithmeticProcessor
-    globals()["LogsStringBuilderProcessor"] = LogsStringBuilderProcessor
-    globals()["LogsPipelineProcessor"] = LogsPipelineProcessor
-    globals()["LogsGeoIPParser"] = LogsGeoIPParser
-    globals()["LogsLookupProcessor"] = LogsLookupProcessor
-    globals()["LogsTraceRemapper"] = LogsTraceRemapper
-
-
 class LogsProcessor(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
@@ -145,7 +111,22 @@ class LogsProcessor(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        lazy_import()
+        from datadog_api_client.v1.model.logs_grok_parser import LogsGrokParser
+        from datadog_api_client.v1.model.logs_date_remapper import LogsDateRemapper
+        from datadog_api_client.v1.model.logs_status_remapper import LogsStatusRemapper
+        from datadog_api_client.v1.model.logs_service_remapper import LogsServiceRemapper
+        from datadog_api_client.v1.model.logs_message_remapper import LogsMessageRemapper
+        from datadog_api_client.v1.model.logs_attribute_remapper import LogsAttributeRemapper
+        from datadog_api_client.v1.model.logs_url_parser import LogsURLParser
+        from datadog_api_client.v1.model.logs_user_agent_parser import LogsUserAgentParser
+        from datadog_api_client.v1.model.logs_category_processor import LogsCategoryProcessor
+        from datadog_api_client.v1.model.logs_arithmetic_processor import LogsArithmeticProcessor
+        from datadog_api_client.v1.model.logs_string_builder_processor import LogsStringBuilderProcessor
+        from datadog_api_client.v1.model.logs_pipeline_processor import LogsPipelineProcessor
+        from datadog_api_client.v1.model.logs_geo_ip_parser import LogsGeoIPParser
+        from datadog_api_client.v1.model.logs_lookup_processor import LogsLookupProcessor
+        from datadog_api_client.v1.model.logs_trace_remapper import LogsTraceRemapper
+
         return {
             "anyOf": [],
             "allOf": [],

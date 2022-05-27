@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_archive_attributes import LogsArchiveAttributes
-
-    globals()["LogsArchiveAttributes"] = LogsArchiveAttributes
-
-
 class LogsArchiveDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_archive_attributes import LogsArchiveAttributes
+
         return {
             "attributes": (LogsArchiveAttributes,),
             "id": (str,),

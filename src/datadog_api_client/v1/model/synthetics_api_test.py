@@ -9,24 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_api_test_config import SyntheticsAPITestConfig
-    from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
-    from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
-    from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
-    from datadog_api_client.v1.model.synthetics_api_test_type import SyntheticsAPITestType
-
-    globals()["SyntheticsAPITestConfig"] = SyntheticsAPITestConfig
-    globals()["SyntheticsTestOptions"] = SyntheticsTestOptions
-    globals()["SyntheticsTestPauseStatus"] = SyntheticsTestPauseStatus
-    globals()["SyntheticsTestDetailsSubType"] = SyntheticsTestDetailsSubType
-    globals()["SyntheticsAPITestType"] = SyntheticsAPITestType
-
-
 class SyntheticsAPITest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_api_test_config import SyntheticsAPITestConfig
+        from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
+        from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
+        from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
+        from datadog_api_client.v1.model.synthetics_api_test_type import SyntheticsAPITestType
+
         return {
             "config": (SyntheticsAPITestConfig,),
             "locations": ([str],),

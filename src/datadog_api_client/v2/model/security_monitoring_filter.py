@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
-
-    globals()["SecurityMonitoringFilterAction"] = SecurityMonitoringFilterAction
-
-
 class SecurityMonitoringFilter(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
+
         return {
             "action": (SecurityMonitoringFilterAction,),
             "query": (str,),

@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.user_invitation_response_data import UserInvitationResponseData
-
-    globals()["UserInvitationResponseData"] = UserInvitationResponseData
-
-
 class UserInvitationResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.user_invitation_response_data import UserInvitationResponseData
+
         return {
             "data": (UserInvitationResponseData,),
         }

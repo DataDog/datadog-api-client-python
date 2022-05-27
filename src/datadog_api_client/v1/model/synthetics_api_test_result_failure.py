@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_api_test_failure_code import SyntheticsApiTestFailureCode
-
-    globals()["SyntheticsApiTestFailureCode"] = SyntheticsApiTestFailureCode
-
-
 class SyntheticsApiTestResultFailure(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_api_test_failure_code import SyntheticsApiTestFailureCode
+
         return {
             "code": (SyntheticsApiTestFailureCode,),
             "message": (str,),

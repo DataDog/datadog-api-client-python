@@ -9,22 +9,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_private_location_secrets_authentication import (
-        SyntheticsPrivateLocationSecretsAuthentication,
-    )
-    from datadog_api_client.v1.model.synthetics_private_location_secrets_config_decryption import (
-        SyntheticsPrivateLocationSecretsConfigDecryption,
-    )
-
-    globals()["SyntheticsPrivateLocationSecretsAuthentication"] = SyntheticsPrivateLocationSecretsAuthentication
-    globals()["SyntheticsPrivateLocationSecretsConfigDecryption"] = SyntheticsPrivateLocationSecretsConfigDecryption
-
-
 class SyntheticsPrivateLocationSecrets(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_private_location_secrets_authentication import (
+            SyntheticsPrivateLocationSecretsAuthentication,
+        )
+        from datadog_api_client.v1.model.synthetics_private_location_secrets_config_decryption import (
+            SyntheticsPrivateLocationSecretsConfigDecryption,
+        )
+
         return {
             "authentication": (SyntheticsPrivateLocationSecretsAuthentication,),
             "config_decryption": (SyntheticsPrivateLocationSecretsConfigDecryption,),

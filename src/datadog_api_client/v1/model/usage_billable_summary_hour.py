@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_billable_summary_keys import UsageBillableSummaryKeys
-
-    globals()["UsageBillableSummaryKeys"] = UsageBillableSummaryKeys
-
-
 class UsageBillableSummaryHour(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_billable_summary_keys import UsageBillableSummaryKeys
+
         return {
             "billing_plan": (str,),
             "end_date": (datetime,),

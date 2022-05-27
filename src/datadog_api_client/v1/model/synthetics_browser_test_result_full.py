@@ -9,22 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_browser_test_result_full_check import (
-        SyntheticsBrowserTestResultFullCheck,
-    )
-    from datadog_api_client.v1.model.synthetics_browser_test_result_data import SyntheticsBrowserTestResultData
-    from datadog_api_client.v1.model.synthetics_test_monitor_status import SyntheticsTestMonitorStatus
-
-    globals()["SyntheticsBrowserTestResultFullCheck"] = SyntheticsBrowserTestResultFullCheck
-    globals()["SyntheticsBrowserTestResultData"] = SyntheticsBrowserTestResultData
-    globals()["SyntheticsTestMonitorStatus"] = SyntheticsTestMonitorStatus
-
-
 class SyntheticsBrowserTestResultFull(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_browser_test_result_full_check import (
+            SyntheticsBrowserTestResultFullCheck,
+        )
+        from datadog_api_client.v1.model.synthetics_browser_test_result_data import SyntheticsBrowserTestResultData
+        from datadog_api_client.v1.model.synthetics_test_monitor_status import SyntheticsTestMonitorStatus
+
         return {
             "check": (SyntheticsBrowserTestResultFullCheck,),
             "check_time": (float,),

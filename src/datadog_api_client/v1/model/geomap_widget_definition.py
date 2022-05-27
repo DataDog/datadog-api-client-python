@@ -9,24 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
-    from datadog_api_client.v1.model.geomap_widget_request import GeomapWidgetRequest
-    from datadog_api_client.v1.model.geomap_widget_definition_style import GeomapWidgetDefinitionStyle
-    from datadog_api_client.v1.model.widget_time import WidgetTime
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.geomap_widget_definition_type import GeomapWidgetDefinitionType
-    from datadog_api_client.v1.model.geomap_widget_definition_view import GeomapWidgetDefinitionView
-
-    globals()["WidgetCustomLink"] = WidgetCustomLink
-    globals()["GeomapWidgetRequest"] = GeomapWidgetRequest
-    globals()["GeomapWidgetDefinitionStyle"] = GeomapWidgetDefinitionStyle
-    globals()["WidgetTime"] = WidgetTime
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["GeomapWidgetDefinitionType"] = GeomapWidgetDefinitionType
-    globals()["GeomapWidgetDefinitionView"] = GeomapWidgetDefinitionView
-
-
 class GeomapWidgetDefinition(ModelNormal):
     validations = {
         "requests": {
@@ -37,7 +19,14 @@ class GeomapWidgetDefinition(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+        from datadog_api_client.v1.model.geomap_widget_request import GeomapWidgetRequest
+        from datadog_api_client.v1.model.geomap_widget_definition_style import GeomapWidgetDefinitionStyle
+        from datadog_api_client.v1.model.widget_time import WidgetTime
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.geomap_widget_definition_type import GeomapWidgetDefinitionType
+        from datadog_api_client.v1.model.geomap_widget_definition_view import GeomapWidgetDefinitionView
+
         return {
             "custom_links": ([WidgetCustomLink],),
             "requests": ([GeomapWidgetRequest],),

@@ -9,30 +9,18 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
-    from datadog_api_client.v1.model.widget_formula import WidgetFormula
-    from datadog_api_client.v1.model.timeseries_widget_expression_alias import TimeseriesWidgetExpressionAlias
-    from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
-    from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
-    from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
-    from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
-
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["WidgetDisplayType"] = WidgetDisplayType
-    globals()["WidgetFormula"] = WidgetFormula
-    globals()["TimeseriesWidgetExpressionAlias"] = TimeseriesWidgetExpressionAlias
-    globals()["ProcessQueryDefinition"] = ProcessQueryDefinition
-    globals()["FormulaAndFunctionQueryDefinition"] = FormulaAndFunctionQueryDefinition
-    globals()["FormulaAndFunctionResponseFormat"] = FormulaAndFunctionResponseFormat
-    globals()["WidgetRequestStyle"] = WidgetRequestStyle
-
-
 class TimeseriesWidgetRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
+        from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
+        from datadog_api_client.v1.model.widget_formula import WidgetFormula
+        from datadog_api_client.v1.model.timeseries_widget_expression_alias import TimeseriesWidgetExpressionAlias
+        from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
+        from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
+        from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+        from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
+
         return {
             "apm_query": (LogQueryDefinition,),
             "audit_query": (LogQueryDefinition,),

@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_snmp_hour import UsageSNMPHour
-
-    globals()["UsageSNMPHour"] = UsageSNMPHour
-
-
 class UsageSNMPResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_snmp_hour import UsageSNMPHour
+
         return {
             "usage": ([UsageSNMPHour],),
         }

@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_response_data import SLOResponseData
-
-    globals()["SLOResponseData"] = SLOResponseData
-
-
 class SLOResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_response_data import SLOResponseData
+
         return {
             "data": (SLOResponseData,),
             "errors": ([str],),

@@ -9,18 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_cloud_security_posture_management_hour import (
-        UsageCloudSecurityPostureManagementHour,
-    )
-
-    globals()["UsageCloudSecurityPostureManagementHour"] = UsageCloudSecurityPostureManagementHour
-
-
 class UsageCloudSecurityPostureManagementResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_cloud_security_posture_management_hour import (
+            UsageCloudSecurityPostureManagementHour,
+        )
+
         return {
             "usage": ([UsageCloudSecurityPostureManagementHour],),
         }

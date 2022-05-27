@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_config_variable_type import SyntheticsConfigVariableType
-
-    globals()["SyntheticsConfigVariableType"] = SyntheticsConfigVariableType
-
-
 class SyntheticsConfigVariable(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_config_variable_type import SyntheticsConfigVariableType
+
         return {
             "example": (str,),
             "id": (str,),

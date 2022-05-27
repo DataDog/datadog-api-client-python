@@ -9,18 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_api_test_result_short_result import SyntheticsAPITestResultShortResult
-    from datadog_api_client.v1.model.synthetics_test_monitor_status import SyntheticsTestMonitorStatus
-
-    globals()["SyntheticsAPITestResultShortResult"] = SyntheticsAPITestResultShortResult
-    globals()["SyntheticsTestMonitorStatus"] = SyntheticsTestMonitorStatus
-
-
 class SyntheticsAPITestResultShort(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_api_test_result_short_result import (
+            SyntheticsAPITestResultShortResult,
+        )
+        from datadog_api_client.v1.model.synthetics_test_monitor_status import SyntheticsTestMonitorStatus
+
         return {
             "check_time": (float,),
             "probe_dc": (str,),

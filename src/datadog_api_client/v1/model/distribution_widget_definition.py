@@ -9,24 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_marker import WidgetMarker
-    from datadog_api_client.v1.model.distribution_widget_request import DistributionWidgetRequest
-    from datadog_api_client.v1.model.widget_time import WidgetTime
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.distribution_widget_definition_type import DistributionWidgetDefinitionType
-    from datadog_api_client.v1.model.distribution_widget_x_axis import DistributionWidgetXAxis
-    from datadog_api_client.v1.model.distribution_widget_y_axis import DistributionWidgetYAxis
-
-    globals()["WidgetMarker"] = WidgetMarker
-    globals()["DistributionWidgetRequest"] = DistributionWidgetRequest
-    globals()["WidgetTime"] = WidgetTime
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["DistributionWidgetDefinitionType"] = DistributionWidgetDefinitionType
-    globals()["DistributionWidgetXAxis"] = DistributionWidgetXAxis
-    globals()["DistributionWidgetYAxis"] = DistributionWidgetYAxis
-
-
 class DistributionWidgetDefinition(ModelNormal):
     validations = {
         "requests": {
@@ -37,7 +19,14 @@ class DistributionWidgetDefinition(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_marker import WidgetMarker
+        from datadog_api_client.v1.model.distribution_widget_request import DistributionWidgetRequest
+        from datadog_api_client.v1.model.widget_time import WidgetTime
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.distribution_widget_definition_type import DistributionWidgetDefinitionType
+        from datadog_api_client.v1.model.distribution_widget_x_axis import DistributionWidgetXAxis
+        from datadog_api_client.v1.model.distribution_widget_y_axis import DistributionWidgetYAxis
+
         return {
             "legend_size": (str,),
             "markers": ([WidgetMarker],),

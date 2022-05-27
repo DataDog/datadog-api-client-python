@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_fargate_hour import UsageFargateHour
-
-    globals()["UsageFargateHour"] = UsageFargateHour
-
-
 class UsageFargateResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_fargate_hour import UsageFargateHour
+
         return {
             "usage": ([UsageFargateHour],),
         }

@@ -9,18 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.security_monitoring_signals_list_response_meta_page import (
-        SecurityMonitoringSignalsListResponseMetaPage,
-    )
-
-    globals()["SecurityMonitoringSignalsListResponseMetaPage"] = SecurityMonitoringSignalsListResponseMetaPage
-
-
 class SecurityMonitoringSignalsListResponseMeta(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.security_monitoring_signals_list_response_meta_page import (
+            SecurityMonitoringSignalsListResponseMetaPage,
+        )
+
         return {
             "page": (SecurityMonitoringSignalsListResponseMetaPage,),
         }

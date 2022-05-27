@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.aws_logs_async_error import AWSLogsAsyncError
-
-    globals()["AWSLogsAsyncError"] = AWSLogsAsyncError
-
-
 class AWSLogsAsyncResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.aws_logs_async_error import AWSLogsAsyncError
+
         return {
             "errors": ([AWSLogsAsyncError],),
             "status": (str,),

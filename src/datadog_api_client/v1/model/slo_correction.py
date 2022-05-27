@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_correction_response_attributes import SLOCorrectionResponseAttributes
-    from datadog_api_client.v1.model.slo_correction_type import SLOCorrectionType
-
-    globals()["SLOCorrectionResponseAttributes"] = SLOCorrectionResponseAttributes
-    globals()["SLOCorrectionType"] = SLOCorrectionType
-
-
 class SLOCorrection(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_correction_response_attributes import SLOCorrectionResponseAttributes
+        from datadog_api_client.v1.model.slo_correction_type import SLOCorrectionType
+
         return {
             "attributes": (SLOCorrectionResponseAttributes,),
             "id": (str,),

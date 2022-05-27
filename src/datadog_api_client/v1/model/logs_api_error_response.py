@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_api_error import LogsAPIError
-
-    globals()["LogsAPIError"] = LogsAPIError
-
-
 class LogsAPIErrorResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_api_error import LogsAPIError
+
         return {
             "error": (LogsAPIError,),
         }

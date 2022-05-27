@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_error_budget_remaining_data import SLOErrorBudgetRemainingData
-    from datadog_api_client.v1.model.slo_history_response_error_with_type import SLOHistoryResponseErrorWithType
-
-    globals()["SLOErrorBudgetRemainingData"] = SLOErrorBudgetRemainingData
-    globals()["SLOHistoryResponseErrorWithType"] = SLOHistoryResponseErrorWithType
-
-
 class SLOHistorySLIData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_error_budget_remaining_data import SLOErrorBudgetRemainingData
+        from datadog_api_client.v1.model.slo_history_response_error_with_type import SLOHistoryResponseErrorWithType
+
         return {
             "error_budget_remaining": (SLOErrorBudgetRemainingData,),
             "errors": ([SLOHistoryResponseErrorWithType],),

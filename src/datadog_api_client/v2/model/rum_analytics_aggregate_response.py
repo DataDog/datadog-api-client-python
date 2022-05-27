@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.rum_aggregation_buckets_response import RUMAggregationBucketsResponse
-    from datadog_api_client.v2.model.rum_response_links import RUMResponseLinks
-    from datadog_api_client.v2.model.rum_response_metadata import RUMResponseMetadata
-
-    globals()["RUMAggregationBucketsResponse"] = RUMAggregationBucketsResponse
-    globals()["RUMResponseLinks"] = RUMResponseLinks
-    globals()["RUMResponseMetadata"] = RUMResponseMetadata
-
-
 class RUMAnalyticsAggregateResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.rum_aggregation_buckets_response import RUMAggregationBucketsResponse
+        from datadog_api_client.v2.model.rum_response_links import RUMResponseLinks
+        from datadog_api_client.v2.model.rum_response_metadata import RUMResponseMetadata
+
         return {
             "data": (RUMAggregationBucketsResponse,),
             "links": (RUMResponseLinks,),

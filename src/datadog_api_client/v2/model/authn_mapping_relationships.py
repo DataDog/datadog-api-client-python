@@ -9,20 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.relationship_to_role import RelationshipToRole
-    from datadog_api_client.v2.model.relationship_to_saml_assertion_attribute import (
-        RelationshipToSAMLAssertionAttribute,
-    )
-
-    globals()["RelationshipToRole"] = RelationshipToRole
-    globals()["RelationshipToSAMLAssertionAttribute"] = RelationshipToSAMLAssertionAttribute
-
-
 class AuthNMappingRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.relationship_to_role import RelationshipToRole
+        from datadog_api_client.v2.model.relationship_to_saml_assertion_attribute import (
+            RelationshipToSAMLAssertionAttribute,
+        )
+
         return {
             "role": (RelationshipToRole,),
             "saml_assertion_attribute": (RelationshipToSAMLAssertionAttribute,),

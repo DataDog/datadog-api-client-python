@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
-
-    globals()["SyntheticsTestPauseStatus"] = SyntheticsTestPauseStatus
-
-
 class SyntheticsUpdateTestPauseStatusPayload(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
+
         return {
             "new_status": (SyntheticsTestPauseStatus,),
         }

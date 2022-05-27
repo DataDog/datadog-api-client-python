@@ -9,14 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_sort import LogsSort
-    from datadog_api_client.v1.model.logs_list_request_time import LogsListRequestTime
-
-    globals()["LogsSort"] = LogsSort
-    globals()["LogsListRequestTime"] = LogsListRequestTime
-
-
 class LogsListRequest(ModelNormal):
     validations = {
         "limit": {
@@ -26,7 +18,9 @@ class LogsListRequest(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_sort import LogsSort
+        from datadog_api_client.v1.model.logs_list_request_time import LogsListRequestTime
+
         return {
             "index": (str,),
             "limit": (int,),

@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.monthly_usage_attribution_metadata import MonthlyUsageAttributionMetadata
-    from datadog_api_client.v1.model.monthly_usage_attribution_body import MonthlyUsageAttributionBody
-
-    globals()["MonthlyUsageAttributionMetadata"] = MonthlyUsageAttributionMetadata
-    globals()["MonthlyUsageAttributionBody"] = MonthlyUsageAttributionBody
-
-
 class MonthlyUsageAttributionResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.monthly_usage_attribution_metadata import MonthlyUsageAttributionMetadata
+        from datadog_api_client.v1.model.monthly_usage_attribution_body import MonthlyUsageAttributionBody
+
         return {
             "metadata": (MonthlyUsageAttributionMetadata,),
             "usage": ([MonthlyUsageAttributionBody],),

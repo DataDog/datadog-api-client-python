@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_aggregate_response_data import LogsAggregateResponseData
-    from datadog_api_client.v2.model.logs_response_metadata import LogsResponseMetadata
-
-    globals()["LogsAggregateResponseData"] = LogsAggregateResponseData
-    globals()["LogsResponseMetadata"] = LogsResponseMetadata
-
-
 class LogsAggregateResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_aggregate_response_data import LogsAggregateResponseData
+        from datadog_api_client.v2.model.logs_response_metadata import LogsResponseMetadata
+
         return {
             "data": (LogsAggregateResponseData,),
             "meta": (LogsResponseMetadata,),

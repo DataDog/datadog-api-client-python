@@ -10,18 +10,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
-    from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
-
-    globals()["MetricCustomAggregations"] = MetricCustomAggregations
-    globals()["MetricTagConfigurationMetricTypes"] = MetricTagConfigurationMetricTypes
-
-
 class MetricTagConfigurationAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
+        from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
+
         return {
             "aggregations": (MetricCustomAggregations,),
             "created_at": (datetime,),

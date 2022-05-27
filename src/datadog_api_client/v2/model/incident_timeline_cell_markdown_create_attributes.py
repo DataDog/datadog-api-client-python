@@ -9,24 +9,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.incident_timeline_cell_markdown_content_type import (
-        IncidentTimelineCellMarkdownContentType,
-    )
-    from datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attributes_content import (
-        IncidentTimelineCellMarkdownCreateAttributesContent,
-    )
-
-    globals()["IncidentTimelineCellMarkdownContentType"] = IncidentTimelineCellMarkdownContentType
-    globals()[
-        "IncidentTimelineCellMarkdownCreateAttributesContent"
-    ] = IncidentTimelineCellMarkdownCreateAttributesContent
-
-
 class IncidentTimelineCellMarkdownCreateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.incident_timeline_cell_markdown_content_type import (
+            IncidentTimelineCellMarkdownContentType,
+        )
+        from datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attributes_content import (
+            IncidentTimelineCellMarkdownCreateAttributesContent,
+        )
+
         return {
             "cell_type": (IncidentTimelineCellMarkdownContentType,),
             "content": (IncidentTimelineCellMarkdownCreateAttributesContent,),

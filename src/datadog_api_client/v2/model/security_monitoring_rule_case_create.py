@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
-
-    globals()["SecurityMonitoringRuleSeverity"] = SecurityMonitoringRuleSeverity
-
-
 class SecurityMonitoringRuleCaseCreate(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
+
         return {
             "condition": (str,),
             "name": (str,),

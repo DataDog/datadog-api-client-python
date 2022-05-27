@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.target_format_type import TargetFormatType
-    from datadog_api_client.v1.model.logs_attribute_remapper_type import LogsAttributeRemapperType
-
-    globals()["TargetFormatType"] = TargetFormatType
-    globals()["LogsAttributeRemapperType"] = LogsAttributeRemapperType
-
-
 class LogsAttributeRemapper(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.target_format_type import TargetFormatType
+        from datadog_api_client.v1.model.logs_attribute_remapper_type import LogsAttributeRemapperType
+
         return {
             "is_enabled": (bool,),
             "name": (str,),
