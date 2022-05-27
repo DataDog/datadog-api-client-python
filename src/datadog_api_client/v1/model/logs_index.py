@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_exclusion import LogsExclusion
-    from datadog_api_client.v1.model.logs_filter import LogsFilter
-
-    globals()["LogsExclusion"] = LogsExclusion
-    globals()["LogsFilter"] = LogsFilter
-
-
 class LogsIndex(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_exclusion import LogsExclusion
+        from datadog_api_client.v1.model.logs_filter import LogsFilter
+
         return {
             "daily_limit": (int,),
             "exclusion_filters": ([LogsExclusion],),

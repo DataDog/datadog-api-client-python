@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.user_create_attributes import UserCreateAttributes
-    from datadog_api_client.v2.model.user_relationships import UserRelationships
-    from datadog_api_client.v2.model.users_type import UsersType
-
-    globals()["UserCreateAttributes"] = UserCreateAttributes
-    globals()["UserRelationships"] = UserRelationships
-    globals()["UsersType"] = UsersType
-
-
 class UserCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.user_create_attributes import UserCreateAttributes
+        from datadog_api_client.v2.model.user_relationships import UserRelationships
+        from datadog_api_client.v2.model.users_type import UsersType
+
         return {
             "attributes": (UserCreateAttributes,),
             "relationships": (UserRelationships,),

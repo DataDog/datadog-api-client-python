@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_layout_type import WidgetLayoutType
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.group_widget_definition_type import GroupWidgetDefinitionType
-    from datadog_api_client.v1.model.widget import Widget
-
-    globals()["WidgetLayoutType"] = WidgetLayoutType
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["GroupWidgetDefinitionType"] = GroupWidgetDefinitionType
-    globals()["Widget"] = Widget
-
-
 class GroupWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_layout_type import WidgetLayoutType
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.group_widget_definition_type import GroupWidgetDefinitionType
+        from datadog_api_client.v1.model.widget import Widget
+
         return {
             "background_color": (str,),
             "banner_img": (str,),

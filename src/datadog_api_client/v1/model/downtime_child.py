@@ -10,12 +10,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
-
-    globals()["DowntimeRecurrence"] = DowntimeRecurrence
-
-
 class DowntimeChild(ModelNormal):
     validations = {
         "creator_id": {
@@ -32,7 +26,8 @@ class DowntimeChild(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
+
         return {
             "active": (bool,),
             "canceled": (int, none_type),

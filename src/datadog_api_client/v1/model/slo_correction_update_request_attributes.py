@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
-
-    globals()["SLOCorrectionCategory"] = SLOCorrectionCategory
-
-
 class SLOCorrectionUpdateRequestAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
+
         return {
             "category": (SLOCorrectionCategory,),
             "description": (str,),

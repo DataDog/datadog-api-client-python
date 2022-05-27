@@ -9,24 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
-    from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
-    from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
-    from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
-    from datadog_api_client.v1.model.synthetics_api_step_subtype import SyntheticsAPIStepSubtype
-
-    globals()["SyntheticsAssertion"] = SyntheticsAssertion
-    globals()["SyntheticsParsingOptions"] = SyntheticsParsingOptions
-    globals()["SyntheticsTestRequest"] = SyntheticsTestRequest
-    globals()["SyntheticsTestOptionsRetry"] = SyntheticsTestOptionsRetry
-    globals()["SyntheticsAPIStepSubtype"] = SyntheticsAPIStepSubtype
-
-
 class SyntheticsAPIStep(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
+        from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
+        from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
+        from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
+        from datadog_api_client.v1.model.synthetics_api_step_subtype import SyntheticsAPIStepSubtype
+
         return {
             "allow_failure": (bool,),
             "assertions": ([SyntheticsAssertion],),

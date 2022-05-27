@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_browser_variable_type import SyntheticsBrowserVariableType
-
-    globals()["SyntheticsBrowserVariableType"] = SyntheticsBrowserVariableType
-
-
 class SyntheticsBrowserVariable(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_browser_variable_type import SyntheticsBrowserVariableType
+
         return {
             "example": (str,),
             "id": (str,),

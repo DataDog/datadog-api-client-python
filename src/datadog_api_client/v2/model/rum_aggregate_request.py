@@ -9,24 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.rum_compute import RUMCompute
-    from datadog_api_client.v2.model.rum_query_filter import RUMQueryFilter
-    from datadog_api_client.v2.model.rum_group_by import RUMGroupBy
-    from datadog_api_client.v2.model.rum_query_options import RUMQueryOptions
-    from datadog_api_client.v2.model.rum_query_page_options import RUMQueryPageOptions
-
-    globals()["RUMCompute"] = RUMCompute
-    globals()["RUMQueryFilter"] = RUMQueryFilter
-    globals()["RUMGroupBy"] = RUMGroupBy
-    globals()["RUMQueryOptions"] = RUMQueryOptions
-    globals()["RUMQueryPageOptions"] = RUMQueryPageOptions
-
-
 class RUMAggregateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.rum_compute import RUMCompute
+        from datadog_api_client.v2.model.rum_query_filter import RUMQueryFilter
+        from datadog_api_client.v2.model.rum_group_by import RUMGroupBy
+        from datadog_api_client.v2.model.rum_query_options import RUMQueryOptions
+        from datadog_api_client.v2.model.rum_query_page_options import RUMQueryPageOptions
+
         return {
             "compute": ([RUMCompute],),
             "filter": (RUMQueryFilter,),

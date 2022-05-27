@@ -9,18 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.metric_bulk_tag_config_status_attributes import MetricBulkTagConfigStatusAttributes
-    from datadog_api_client.v2.model.metric_bulk_configure_tags_type import MetricBulkConfigureTagsType
-
-    globals()["MetricBulkTagConfigStatusAttributes"] = MetricBulkTagConfigStatusAttributes
-    globals()["MetricBulkConfigureTagsType"] = MetricBulkConfigureTagsType
-
-
 class MetricBulkTagConfigStatus(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.metric_bulk_tag_config_status_attributes import (
+            MetricBulkTagConfigStatusAttributes,
+        )
+        from datadog_api_client.v2.model.metric_bulk_configure_tags_type import MetricBulkConfigureTagsType
+
         return {
             "attributes": (MetricBulkTagConfigStatusAttributes,),
             "id": (str,),

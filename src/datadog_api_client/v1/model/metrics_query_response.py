@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.metrics_query_metadata import MetricsQueryMetadata
-
-    globals()["MetricsQueryMetadata"] = MetricsQueryMetadata
-
-
 class MetricsQueryResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.metrics_query_metadata import MetricsQueryMetadata
+
         return {
             "error": (str,),
             "from_date": (int,),

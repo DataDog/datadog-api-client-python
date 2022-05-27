@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.funnel_source import FunnelSource
-    from datadog_api_client.v1.model.funnel_step import FunnelStep
-
-    globals()["FunnelSource"] = FunnelSource
-    globals()["FunnelStep"] = FunnelStep
-
-
 class FunnelQuery(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.funnel_source import FunnelSource
+        from datadog_api_client.v1.model.funnel_step import FunnelStep
+
         return {
             "data_source": (FunnelSource,),
             "query_string": (str,),

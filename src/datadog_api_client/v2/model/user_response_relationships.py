@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.relationship_to_organization import RelationshipToOrganization
-    from datadog_api_client.v2.model.relationship_to_organizations import RelationshipToOrganizations
-    from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
-    from datadog_api_client.v2.model.relationship_to_roles import RelationshipToRoles
-
-    globals()["RelationshipToOrganization"] = RelationshipToOrganization
-    globals()["RelationshipToOrganizations"] = RelationshipToOrganizations
-    globals()["RelationshipToUsers"] = RelationshipToUsers
-    globals()["RelationshipToRoles"] = RelationshipToRoles
-
-
 class UserResponseRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.relationship_to_organization import RelationshipToOrganization
+        from datadog_api_client.v2.model.relationship_to_organizations import RelationshipToOrganizations
+        from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
+        from datadog_api_client.v2.model.relationship_to_roles import RelationshipToRoles
+
         return {
             "org": (RelationshipToOrganization,),
             "other_orgs": (RelationshipToOrganizations,),

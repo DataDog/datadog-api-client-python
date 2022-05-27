@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.process_summary import ProcessSummary
-    from datadog_api_client.v2.model.process_summaries_meta import ProcessSummariesMeta
-
-    globals()["ProcessSummary"] = ProcessSummary
-    globals()["ProcessSummariesMeta"] = ProcessSummariesMeta
-
-
 class ProcessSummariesResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.process_summary import ProcessSummary
+        from datadog_api_client.v2.model.process_summaries_meta import ProcessSummariesMeta
+
         return {
             "data": ([ProcessSummary],),
             "meta": (ProcessSummariesMeta,),

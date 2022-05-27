@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_metric_response_attributes import LogsMetricResponseAttributes
-    from datadog_api_client.v2.model.logs_metric_type import LogsMetricType
-
-    globals()["LogsMetricResponseAttributes"] = LogsMetricResponseAttributes
-    globals()["LogsMetricType"] = LogsMetricType
-
-
 class LogsMetricResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_metric_response_attributes import LogsMetricResponseAttributes
+        from datadog_api_client.v2.model.logs_metric_type import LogsMetricType
+
         return {
             "attributes": (LogsMetricResponseAttributes,),
             "id": (str,),

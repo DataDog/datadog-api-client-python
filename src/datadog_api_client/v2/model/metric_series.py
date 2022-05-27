@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.metric_metadata import MetricMetadata
-    from datadog_api_client.v2.model.metric_point import MetricPoint
-    from datadog_api_client.v2.model.metric_resource import MetricResource
-    from datadog_api_client.v2.model.metric_intake_type import MetricIntakeType
-
-    globals()["MetricMetadata"] = MetricMetadata
-    globals()["MetricPoint"] = MetricPoint
-    globals()["MetricResource"] = MetricResource
-    globals()["MetricIntakeType"] = MetricIntakeType
-
-
 class MetricSeries(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.metric_metadata import MetricMetadata
+        from datadog_api_client.v2.model.metric_point import MetricPoint
+        from datadog_api_client.v2.model.metric_resource import MetricResource
+        from datadog_api_client.v2.model.metric_intake_type import MetricIntakeType
+
         return {
             "interval": (int,),
             "metadata": (MetricMetadata,),

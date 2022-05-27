@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_warning_type import SyntheticsWarningType
-
-    globals()["SyntheticsWarningType"] = SyntheticsWarningType
-
-
 class SyntheticsStepDetailWarning(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_warning_type import SyntheticsWarningType
+
         return {
             "message": (str,),
             "type": (SyntheticsWarningType,),

@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_geo_ip_parser_type import LogsGeoIPParserType
-
-    globals()["LogsGeoIPParserType"] = LogsGeoIPParserType
-
-
 class LogsGeoIPParser(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_geo_ip_parser_type import LogsGeoIPParserType
+
         return {
             "is_enabled": (bool,),
             "name": (str,),

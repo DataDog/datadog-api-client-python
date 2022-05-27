@@ -9,18 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.notebook_update_cell import NotebookUpdateCell
-    from datadog_api_client.v1.model.notebook_metadata import NotebookMetadata
-    from datadog_api_client.v1.model.notebook_status import NotebookStatus
-    from datadog_api_client.v1.model.notebook_global_time import NotebookGlobalTime
-
-    globals()["NotebookUpdateCell"] = NotebookUpdateCell
-    globals()["NotebookMetadata"] = NotebookMetadata
-    globals()["NotebookStatus"] = NotebookStatus
-    globals()["NotebookGlobalTime"] = NotebookGlobalTime
-
-
 class NotebookUpdateDataAttributes(ModelNormal):
     validations = {
         "name": {
@@ -31,7 +19,11 @@ class NotebookUpdateDataAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.notebook_update_cell import NotebookUpdateCell
+        from datadog_api_client.v1.model.notebook_metadata import NotebookMetadata
+        from datadog_api_client.v1.model.notebook_status import NotebookStatus
+        from datadog_api_client.v1.model.notebook_global_time import NotebookGlobalTime
+
         return {
             "cells": ([NotebookUpdateCell],),
             "metadata": (NotebookMetadata,),

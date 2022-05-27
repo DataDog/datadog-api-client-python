@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_retention_sum_usage import LogsRetentionSumUsage
-
-    globals()["LogsRetentionSumUsage"] = LogsRetentionSumUsage
-
-
 class LogsByRetentionMonthlyUsage(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_retention_sum_usage import LogsRetentionSumUsage
+
         return {
             "date": (datetime,),
             "usage": ([LogsRetentionSumUsage],),

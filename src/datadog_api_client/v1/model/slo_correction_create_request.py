@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_correction_create_data import SLOCorrectionCreateData
-
-    globals()["SLOCorrectionCreateData"] = SLOCorrectionCreateData
-
-
 class SLOCorrectionCreateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_correction_create_data import SLOCorrectionCreateData
+
         return {
             "data": (SLOCorrectionCreateData,),
         }

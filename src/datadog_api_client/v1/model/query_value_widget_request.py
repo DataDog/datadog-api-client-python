@@ -9,28 +9,17 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_aggregator import WidgetAggregator
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
-    from datadog_api_client.v1.model.widget_formula import WidgetFormula
-    from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
-    from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
-    from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
-
-    globals()["WidgetAggregator"] = WidgetAggregator
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["WidgetConditionalFormat"] = WidgetConditionalFormat
-    globals()["WidgetFormula"] = WidgetFormula
-    globals()["ProcessQueryDefinition"] = ProcessQueryDefinition
-    globals()["FormulaAndFunctionQueryDefinition"] = FormulaAndFunctionQueryDefinition
-    globals()["FormulaAndFunctionResponseFormat"] = FormulaAndFunctionResponseFormat
-
-
 class QueryValueWidgetRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_aggregator import WidgetAggregator
+        from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
+        from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
+        from datadog_api_client.v1.model.widget_formula import WidgetFormula
+        from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
+        from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
+        from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+
         return {
             "aggregator": (WidgetAggregator,),
             "apm_query": (LogQueryDefinition,),

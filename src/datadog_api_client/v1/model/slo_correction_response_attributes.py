@@ -10,22 +10,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
-    from datadog_api_client.v1.model.creator import Creator
-    from datadog_api_client.v1.model.slo_correction_response_attributes_modifier import (
-        SLOCorrectionResponseAttributesModifier,
-    )
-
-    globals()["SLOCorrectionCategory"] = SLOCorrectionCategory
-    globals()["Creator"] = Creator
-    globals()["SLOCorrectionResponseAttributesModifier"] = SLOCorrectionResponseAttributesModifier
-
-
 class SLOCorrectionResponseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
+        from datadog_api_client.v1.model.creator import Creator
+        from datadog_api_client.v1.model.slo_correction_response_attributes_modifier import (
+            SLOCorrectionResponseAttributesModifier,
+        )
+
         return {
             "category": (SLOCorrectionCategory,),
             "created_at": (int,),

@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
-
-    globals()["MetricCustomAggregations"] = MetricCustomAggregations
-
-
 class MetricTagConfigurationUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
+
         return {
             "aggregations": (MetricCustomAggregations,),
             "include_percentiles": (bool,),

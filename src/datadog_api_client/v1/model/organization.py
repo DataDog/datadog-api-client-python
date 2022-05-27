@@ -9,16 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.organization_billing import OrganizationBilling
-    from datadog_api_client.v1.model.organization_settings import OrganizationSettings
-    from datadog_api_client.v1.model.organization_subscription import OrganizationSubscription
-
-    globals()["OrganizationBilling"] = OrganizationBilling
-    globals()["OrganizationSettings"] = OrganizationSettings
-    globals()["OrganizationSubscription"] = OrganizationSubscription
-
-
 class Organization(ModelNormal):
     validations = {
         "name": {
@@ -28,7 +18,10 @@ class Organization(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.organization_billing import OrganizationBilling
+        from datadog_api_client.v1.model.organization_settings import OrganizationSettings
+        from datadog_api_client.v1.model.organization_subscription import OrganizationSubscription
+
         return {
             "billing": (OrganizationBilling,),
             "created": (str,),

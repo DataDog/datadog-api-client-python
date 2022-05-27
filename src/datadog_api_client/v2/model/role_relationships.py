@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.relationship_to_permissions import RelationshipToPermissions
-    from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
-
-    globals()["RelationshipToPermissions"] = RelationshipToPermissions
-    globals()["RelationshipToUsers"] = RelationshipToUsers
-
-
 class RoleRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.relationship_to_permissions import RelationshipToPermissions
+        from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
+
         return {
             "permissions": (RelationshipToPermissions,),
             "users": (RelationshipToUsers,),

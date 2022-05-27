@@ -9,18 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.monitor_formula_and_function_event_query_group_by_sort import (
-        MonitorFormulaAndFunctionEventQueryGroupBySort,
-    )
-
-    globals()["MonitorFormulaAndFunctionEventQueryGroupBySort"] = MonitorFormulaAndFunctionEventQueryGroupBySort
-
-
 class MonitorFormulaAndFunctionEventQueryGroupBy(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.monitor_formula_and_function_event_query_group_by_sort import (
+            MonitorFormulaAndFunctionEventQueryGroupBySort,
+        )
+
         return {
             "facet": (str,),
             "limit": (int,),

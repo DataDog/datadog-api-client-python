@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.user import User
-    from datadog_api_client.v2.model.user_response_included_item import UserResponseIncludedItem
-
-    globals()["User"] = User
-    globals()["UserResponseIncludedItem"] = UserResponseIncludedItem
-
-
 class UserResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.user import User
+        from datadog_api_client.v2.model.user_response_included_item import UserResponseIncludedItem
+
         return {
             "data": (User,),
             "included": ([UserResponseIncludedItem],),

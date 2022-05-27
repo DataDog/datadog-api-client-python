@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_basic_auth_web_type import SyntheticsBasicAuthWebType
-
-    globals()["SyntheticsBasicAuthWebType"] = SyntheticsBasicAuthWebType
-
-
 class SyntheticsBasicAuthWeb(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_basic_auth_web_type import SyntheticsBasicAuthWebType
+
         return {
             "password": (str,),
             "type": (SyntheticsBasicAuthWebType,),

@@ -9,32 +9,19 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.widget_change_type import WidgetChangeType
-    from datadog_api_client.v1.model.widget_compare_to import WidgetCompareTo
-    from datadog_api_client.v1.model.widget_formula import WidgetFormula
-    from datadog_api_client.v1.model.widget_order_by import WidgetOrderBy
-    from datadog_api_client.v1.model.widget_sort import WidgetSort
-    from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
-    from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
-    from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
-
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["WidgetChangeType"] = WidgetChangeType
-    globals()["WidgetCompareTo"] = WidgetCompareTo
-    globals()["WidgetFormula"] = WidgetFormula
-    globals()["WidgetOrderBy"] = WidgetOrderBy
-    globals()["WidgetSort"] = WidgetSort
-    globals()["ProcessQueryDefinition"] = ProcessQueryDefinition
-    globals()["FormulaAndFunctionQueryDefinition"] = FormulaAndFunctionQueryDefinition
-    globals()["FormulaAndFunctionResponseFormat"] = FormulaAndFunctionResponseFormat
-
-
 class ChangeWidgetRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
+        from datadog_api_client.v1.model.widget_change_type import WidgetChangeType
+        from datadog_api_client.v1.model.widget_compare_to import WidgetCompareTo
+        from datadog_api_client.v1.model.widget_formula import WidgetFormula
+        from datadog_api_client.v1.model.widget_order_by import WidgetOrderBy
+        from datadog_api_client.v1.model.widget_sort import WidgetSort
+        from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
+        from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
+        from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+
         return {
             "apm_query": (LogQueryDefinition,),
             "change_type": (WidgetChangeType,),

@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.hourly_usage_attribution_metadata import HourlyUsageAttributionMetadata
-    from datadog_api_client.v1.model.hourly_usage_attribution_body import HourlyUsageAttributionBody
-
-    globals()["HourlyUsageAttributionMetadata"] = HourlyUsageAttributionMetadata
-    globals()["HourlyUsageAttributionBody"] = HourlyUsageAttributionBody
-
-
 class HourlyUsageAttributionResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.hourly_usage_attribution_metadata import HourlyUsageAttributionMetadata
+        from datadog_api_client.v1.model.hourly_usage_attribution_body import HourlyUsageAttributionBody
+
         return {
             "metadata": (HourlyUsageAttributionMetadata,),
             "usage": ([HourlyUsageAttributionBody],),

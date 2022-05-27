@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_pipeline import LogsPipeline
-
-    globals()["LogsPipeline"] = LogsPipeline
-
-
 class LogsPipelineList(ModelSimple):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_pipeline import LogsPipeline
+
         return {
             "value": ([LogsPipeline],),
         }

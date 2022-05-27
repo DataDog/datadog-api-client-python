@@ -1,14 +1,4 @@
 {%- set refs = get_references_for_model(model, name) %}
-{%- if refs %}
-def lazy_import():
-{%- for ref in refs %}
-    from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
-{%- endfor %}
-{# keep new line #}
-{%- for ref in refs %}
-    globals()["{{ ref }}"] = {{ ref }}
-{%- endfor %}
-{%- endif %}
 
 class {{ name }}(ModelNormal):
 
@@ -59,7 +49,9 @@ class {{ name }}(ModelNormal):
     @cached_property
     def additional_properties_type(_):
 {%- if refs %}
-        lazy_import()
+{%- for ref in refs %}
+        from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
+{%- endfor %}
 {%- endif %}
         return ({{ type_to_python(model["additionalProperties"]) }},)
 {%- endif %}
@@ -72,7 +64,9 @@ class {{ name }}(ModelNormal):
     @cached_property
     def openapi_types(_):
 {%- if refs %}
-        lazy_import()
+{%- for ref in refs %}
+        from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
+{%- endfor %}
 {%- endif %}
         return {
 {%- for attr in model.properties %}

@@ -9,24 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
-    from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
-    from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
-    from datadog_api_client.v2.model.security_monitoring_rule_query_create import SecurityMonitoringRuleQueryCreate
-    from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
-
-    globals()["SecurityMonitoringRuleCaseCreate"] = SecurityMonitoringRuleCaseCreate
-    globals()["SecurityMonitoringFilter"] = SecurityMonitoringFilter
-    globals()["SecurityMonitoringRuleOptions"] = SecurityMonitoringRuleOptions
-    globals()["SecurityMonitoringRuleQueryCreate"] = SecurityMonitoringRuleQueryCreate
-    globals()["SecurityMonitoringRuleTypeCreate"] = SecurityMonitoringRuleTypeCreate
-
-
 class SecurityMonitoringRuleCreatePayload(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
+        from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
+        from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
+        from datadog_api_client.v2.model.security_monitoring_rule_query_create import SecurityMonitoringRuleQueryCreate
+        from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
+
         return {
             "cases": ([SecurityMonitoringRuleCaseCreate],),
             "filters": ([SecurityMonitoringFilter],),

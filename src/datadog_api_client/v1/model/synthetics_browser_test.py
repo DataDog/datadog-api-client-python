@@ -9,24 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_browser_test_config import SyntheticsBrowserTestConfig
-    from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
-    from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
-    from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
-    from datadog_api_client.v1.model.synthetics_browser_test_type import SyntheticsBrowserTestType
-
-    globals()["SyntheticsBrowserTestConfig"] = SyntheticsBrowserTestConfig
-    globals()["SyntheticsTestOptions"] = SyntheticsTestOptions
-    globals()["SyntheticsTestPauseStatus"] = SyntheticsTestPauseStatus
-    globals()["SyntheticsStep"] = SyntheticsStep
-    globals()["SyntheticsBrowserTestType"] = SyntheticsBrowserTestType
-
-
 class SyntheticsBrowserTest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_browser_test_config import SyntheticsBrowserTestConfig
+        from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
+        from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
+        from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
+        from datadog_api_client.v1.model.synthetics_browser_test_type import SyntheticsBrowserTestType
+
         return {
             "config": (SyntheticsBrowserTestConfig,),
             "locations": ([str],),

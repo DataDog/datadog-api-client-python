@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.application_key_create_attributes import ApplicationKeyCreateAttributes
-    from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
-
-    globals()["ApplicationKeyCreateAttributes"] = ApplicationKeyCreateAttributes
-    globals()["ApplicationKeysType"] = ApplicationKeysType
-
-
 class ApplicationKeyCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.application_key_create_attributes import ApplicationKeyCreateAttributes
+        from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
+
         return {
             "attributes": (ApplicationKeyCreateAttributes,),
             "type": (ApplicationKeysType,),

@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.security_filter import SecurityFilter
-    from datadog_api_client.v2.model.security_filter_meta import SecurityFilterMeta
-
-    globals()["SecurityFilter"] = SecurityFilter
-    globals()["SecurityFilterMeta"] = SecurityFilterMeta
-
-
 class SecurityFilterResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.security_filter import SecurityFilter
+        from datadog_api_client.v2.model.security_filter_meta import SecurityFilterMeta
+
         return {
             "data": (SecurityFilter,),
             "meta": (SecurityFilterMeta,),

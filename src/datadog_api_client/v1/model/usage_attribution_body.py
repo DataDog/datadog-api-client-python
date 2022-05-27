@@ -10,18 +10,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_attribution_tag_names import UsageAttributionTagNames
-    from datadog_api_client.v1.model.usage_attribution_values import UsageAttributionValues
-
-    globals()["UsageAttributionTagNames"] = UsageAttributionTagNames
-    globals()["UsageAttributionValues"] = UsageAttributionValues
-
-
 class UsageAttributionBody(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_attribution_tag_names import UsageAttributionTagNames
+        from datadog_api_client.v1.model.usage_attribution_values import UsageAttributionValues
+
         return {
             "month": (datetime,),
             "org_name": (str,),

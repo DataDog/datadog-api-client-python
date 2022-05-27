@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_arithmetic_processor_type import LogsArithmeticProcessorType
-
-    globals()["LogsArithmeticProcessorType"] = LogsArithmeticProcessorType
-
-
 class LogsArithmeticProcessor(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_arithmetic_processor_type import LogsArithmeticProcessorType
+
         return {
             "expression": (str,),
             "is_enabled": (bool,),

@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.http_log_item import HTTPLogItem
-
-    globals()["HTTPLogItem"] = HTTPLogItem
-
-
 class HTTPLog(ModelSimple):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.http_log_item import HTTPLogItem
+
         return {
             "value": ([HTTPLogItem],),
         }

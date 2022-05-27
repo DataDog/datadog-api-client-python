@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.point import Point
-
-    globals()["Point"] = Point
-
-
 class Series(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.point import Point
+
         return {
             "host": (str,),
             "interval": (int, none_type),

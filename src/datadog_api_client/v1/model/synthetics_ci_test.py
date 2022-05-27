@@ -9,24 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
-    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
-    from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
-    from datadog_api_client.v1.model.synthetics_ci_batch_metadata import SyntheticsCIBatchMetadata
-    from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
-
-    globals()["SyntheticsBasicAuth"] = SyntheticsBasicAuth
-    globals()["SyntheticsDeviceID"] = SyntheticsDeviceID
-    globals()["SyntheticsTestHeaders"] = SyntheticsTestHeaders
-    globals()["SyntheticsCIBatchMetadata"] = SyntheticsCIBatchMetadata
-    globals()["SyntheticsTestOptionsRetry"] = SyntheticsTestOptionsRetry
-
-
 class SyntheticsCITest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
+        from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
+        from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
+        from datadog_api_client.v1.model.synthetics_ci_batch_metadata import SyntheticsCIBatchMetadata
+        from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
+
         return {
             "allow_insecure_certificates": (bool,),
             "basic_auth": (SyntheticsBasicAuth,),

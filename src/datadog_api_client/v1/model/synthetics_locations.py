@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_location import SyntheticsLocation
-
-    globals()["SyntheticsLocation"] = SyntheticsLocation
-
-
 class SyntheticsLocations(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_location import SyntheticsLocation
+
         return {
             "locations": ([SyntheticsLocation],),
         }

@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.gcp_account import GCPAccount
-
-    globals()["GCPAccount"] = GCPAccount
-
-
 class GCPAccountListResponse(ModelSimple):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.gcp_account import GCPAccount
+
         return {
             "value": ([GCPAccount],),
         }

@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.hourly_usage_attribution_pagination import HourlyUsageAttributionPagination
-
-    globals()["HourlyUsageAttributionPagination"] = HourlyUsageAttributionPagination
-
-
 class HourlyUsageAttributionMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.hourly_usage_attribution_pagination import HourlyUsageAttributionPagination
+
         return {
             "pagination": (HourlyUsageAttributionPagination,),
         }

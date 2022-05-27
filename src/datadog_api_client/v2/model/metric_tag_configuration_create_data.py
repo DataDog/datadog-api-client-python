@@ -9,20 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.metric_tag_configuration_create_attributes import (
-        MetricTagConfigurationCreateAttributes,
-    )
-    from datadog_api_client.v2.model.metric_tag_configuration_type import MetricTagConfigurationType
-
-    globals()["MetricTagConfigurationCreateAttributes"] = MetricTagConfigurationCreateAttributes
-    globals()["MetricTagConfigurationType"] = MetricTagConfigurationType
-
-
 class MetricTagConfigurationCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.metric_tag_configuration_create_attributes import (
+            MetricTagConfigurationCreateAttributes,
+        )
+        from datadog_api_client.v2.model.metric_tag_configuration_type import MetricTagConfigurationType
+
         return {
             "attributes": (MetricTagConfigurationCreateAttributes,),
             "id": (str,),

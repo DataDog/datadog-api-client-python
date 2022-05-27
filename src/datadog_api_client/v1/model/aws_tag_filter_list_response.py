@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.aws_tag_filter import AWSTagFilter
-
-    globals()["AWSTagFilter"] = AWSTagFilter
-
-
 class AWSTagFilterListResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.aws_tag_filter import AWSTagFilter
+
         return {
             "filters": ([AWSTagFilter],),
         }

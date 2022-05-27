@@ -9,24 +9,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_forget_after import (
-        SecurityMonitoringRuleNewValueOptionsForgetAfter,
-    )
-    from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_duration import (
-        SecurityMonitoringRuleNewValueOptionsLearningDuration,
-    )
-
-    globals()["SecurityMonitoringRuleNewValueOptionsForgetAfter"] = SecurityMonitoringRuleNewValueOptionsForgetAfter
-    globals()[
-        "SecurityMonitoringRuleNewValueOptionsLearningDuration"
-    ] = SecurityMonitoringRuleNewValueOptionsLearningDuration
-
-
 class SecurityMonitoringRuleNewValueOptions(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_forget_after import (
+            SecurityMonitoringRuleNewValueOptionsForgetAfter,
+        )
+        from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_duration import (
+            SecurityMonitoringRuleNewValueOptionsLearningDuration,
+        )
+
         return {
             "forget_after": (SecurityMonitoringRuleNewValueOptionsForgetAfter,),
             "learning_duration": (SecurityMonitoringRuleNewValueOptionsLearningDuration,),

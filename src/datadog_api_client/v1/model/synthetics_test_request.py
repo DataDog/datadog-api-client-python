@@ -9,22 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
-    from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
-    from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
-    from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
-    from datadog_api_client.v1.model.http_method import HTTPMethod
-    from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
-
-    globals()["SyntheticsBasicAuth"] = SyntheticsBasicAuth
-    globals()["SyntheticsTestRequestCertificate"] = SyntheticsTestRequestCertificate
-    globals()["SyntheticsTestHeaders"] = SyntheticsTestHeaders
-    globals()["SyntheticsTestMetadata"] = SyntheticsTestMetadata
-    globals()["HTTPMethod"] = HTTPMethod
-    globals()["SyntheticsTestRequestProxy"] = SyntheticsTestRequestProxy
-
-
 class SyntheticsTestRequest(ModelNormal):
     validations = {
         "dns_server_port": {
@@ -39,7 +23,13 @@ class SyntheticsTestRequest(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
+        from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
+        from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
+        from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
+        from datadog_api_client.v1.model.http_method import HTTPMethod
+        from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
+
         return {
             "allow_insecure": (bool,),
             "basic_auth": (SyntheticsBasicAuth,),

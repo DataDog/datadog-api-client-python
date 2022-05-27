@@ -10,22 +10,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.creator import Creator
-    from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
-    from datadog_api_client.v1.model.slo_threshold import SLOThreshold
-    from datadog_api_client.v1.model.slo_type import SLOType
-
-    globals()["Creator"] = Creator
-    globals()["ServiceLevelObjectiveQuery"] = ServiceLevelObjectiveQuery
-    globals()["SLOThreshold"] = SLOThreshold
-    globals()["SLOType"] = SLOType
-
-
 class ServiceLevelObjective(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.creator import Creator
+        from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
+        from datadog_api_client.v1.model.slo_threshold import SLOThreshold
+        from datadog_api_client.v1.model.slo_type import SLOType
+
         return {
             "created_at": (int,),
             "creator": (Creator,),

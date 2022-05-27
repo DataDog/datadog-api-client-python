@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_comparator import WidgetComparator
-    from datadog_api_client.v1.model.widget_palette import WidgetPalette
-
-    globals()["WidgetComparator"] = WidgetComparator
-    globals()["WidgetPalette"] = WidgetPalette
-
-
 class WidgetConditionalFormat(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_comparator import WidgetComparator
+        from datadog_api_client.v1.model.widget_palette import WidgetPalette
+
         return {
             "comparator": (WidgetComparator,),
             "custom_bg_color": (str,),

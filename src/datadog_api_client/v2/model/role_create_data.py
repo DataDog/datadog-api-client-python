@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.role_create_attributes import RoleCreateAttributes
-    from datadog_api_client.v2.model.role_relationships import RoleRelationships
-    from datadog_api_client.v2.model.roles_type import RolesType
-
-    globals()["RoleCreateAttributes"] = RoleCreateAttributes
-    globals()["RoleRelationships"] = RoleRelationships
-    globals()["RolesType"] = RolesType
-
-
 class RoleCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.role_create_attributes import RoleCreateAttributes
+        from datadog_api_client.v2.model.role_relationships import RoleRelationships
+        from datadog_api_client.v2.model.roles_type import RolesType
+
         return {
             "attributes": (RoleCreateAttributes,),
             "relationships": (RoleRelationships,),

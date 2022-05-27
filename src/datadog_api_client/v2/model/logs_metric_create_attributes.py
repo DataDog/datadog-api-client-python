@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_metric_compute import LogsMetricCompute
-    from datadog_api_client.v2.model.logs_metric_filter import LogsMetricFilter
-    from datadog_api_client.v2.model.logs_metric_group_by import LogsMetricGroupBy
-
-    globals()["LogsMetricCompute"] = LogsMetricCompute
-    globals()["LogsMetricFilter"] = LogsMetricFilter
-    globals()["LogsMetricGroupBy"] = LogsMetricGroupBy
-
-
 class LogsMetricCreateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_metric_compute import LogsMetricCompute
+        from datadog_api_client.v2.model.logs_metric_filter import LogsMetricFilter
+        from datadog_api_client.v2.model.logs_metric_group_by import LogsMetricGroupBy
+
         return {
             "compute": (LogsMetricCompute,),
             "filter": (LogsMetricFilter,),

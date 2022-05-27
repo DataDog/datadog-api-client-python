@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_synthetics_api_hour import UsageSyntheticsAPIHour
-
-    globals()["UsageSyntheticsAPIHour"] = UsageSyntheticsAPIHour
-
-
 class UsageSyntheticsAPIResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_synthetics_api_hour import UsageSyntheticsAPIHour
+
         return {
             "usage": ([UsageSyntheticsAPIHour],),
         }

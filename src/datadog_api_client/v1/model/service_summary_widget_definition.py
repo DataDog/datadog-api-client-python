@@ -9,24 +9,17 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_service_summary_display_format import WidgetServiceSummaryDisplayFormat
-    from datadog_api_client.v1.model.widget_size_format import WidgetSizeFormat
-    from datadog_api_client.v1.model.widget_time import WidgetTime
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.service_summary_widget_definition_type import ServiceSummaryWidgetDefinitionType
-
-    globals()["WidgetServiceSummaryDisplayFormat"] = WidgetServiceSummaryDisplayFormat
-    globals()["WidgetSizeFormat"] = WidgetSizeFormat
-    globals()["WidgetTime"] = WidgetTime
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["ServiceSummaryWidgetDefinitionType"] = ServiceSummaryWidgetDefinitionType
-
-
 class ServiceSummaryWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_service_summary_display_format import WidgetServiceSummaryDisplayFormat
+        from datadog_api_client.v1.model.widget_size_format import WidgetSizeFormat
+        from datadog_api_client.v1.model.widget_time import WidgetTime
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.service_summary_widget_definition_type import (
+            ServiceSummaryWidgetDefinitionType,
+        )
+
         return {
             "display_format": (WidgetServiceSummaryDisplayFormat,),
             "env": (str,),
