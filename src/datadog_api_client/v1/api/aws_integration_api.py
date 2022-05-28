@@ -252,8 +252,6 @@ class AWSIntegrationApi:
 
         :param body: AWS Request Object
         :type body: AWSAccount
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AWSAccountCreateResponse
         """
         kwargs["body"] = body
@@ -268,8 +266,6 @@ class AWSIntegrationApi:
         :param body: Set an AWS tag filter using an ``aws_account_identifier`` , ``namespace`` , and filtering string.
             Namespace options are ``application_elb`` , ``elb`` , ``lambda`` , ``network_elb`` , ``rds`` , ``sqs`` , and ``custom``.
         :type body: AWSTagFilterCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body
@@ -285,8 +281,6 @@ class AWSIntegrationApi:
             For more information about your AWS account Role name,
             see the `Datadog AWS integration configuration info <https://docs.datadoghq.com/integrations/amazon_web_services/#setup>`_.
         :type body: AWSAccount
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AWSAccountCreateResponse
         """
         kwargs["body"] = body
@@ -300,8 +294,6 @@ class AWSIntegrationApi:
 
         :param body: AWS request object
         :type body: AWSAccountDeleteRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body
@@ -315,8 +307,6 @@ class AWSIntegrationApi:
 
         :param body: Delete a tag filtering entry for a given AWS account and ``dd-aws`` namespace.
         :type body: AWSTagFilterDeleteRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body
@@ -328,8 +318,6 @@ class AWSIntegrationApi:
 
         List all namespace rules for a given Datadog-AWS integration. This endpoint takes no arguments.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: [str]
         """
         return self._list_available_aws_namespaces_endpoint.call_with_http_info(**kwargs)
@@ -345,8 +333,6 @@ class AWSIntegrationApi:
         :type role_name: str, optional
         :param access_key_id: Only return AWS accounts that matches this ``access_key_id``.
         :type access_key_id: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AWSAccountListResponse
         """
         return self._list_aws_accounts_endpoint.call_with_http_info(**kwargs)
@@ -358,8 +344,6 @@ class AWSIntegrationApi:
 
         :param account_id: Only return AWS filters that matches this ``account_id``.
         :type account_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AWSTagFilterListResponse
         """
         kwargs["account_id"] = account_id
@@ -381,8 +365,6 @@ class AWSIntegrationApi:
         :param access_key_id: Only return AWS accounts that matches this ``access_key_id``.
             Required if none of the other two options are specified.
         :type access_key_id: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body

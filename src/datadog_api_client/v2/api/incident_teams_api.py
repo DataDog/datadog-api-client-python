@@ -170,8 +170,6 @@ class IncidentTeamsApi:
 
         :param body: Incident Team Payload.
         :type body: IncidentTeamCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentTeamResponse
         """
         kwargs["body"] = body
@@ -185,8 +183,6 @@ class IncidentTeamsApi:
 
         :param team_id: The ID of the incident team.
         :type team_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["team_id"] = team_id
@@ -203,8 +199,6 @@ class IncidentTeamsApi:
         :type team_id: str
         :param include: Specifies which types of related objects should be included in the response.
         :type include: IncidentRelatedObject, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentTeamResponse
         """
         kwargs["team_id"] = team_id
@@ -224,8 +218,6 @@ class IncidentTeamsApi:
         :type page_offset: int, optional
         :param filter: A search query that filters teams by name.
         :type filter: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentTeamsResponse
         """
         return self._list_incident_teams_endpoint.call_with_http_info(**kwargs)
@@ -239,8 +231,6 @@ class IncidentTeamsApi:
         :type team_id: str
         :param body: Incident Team Payload.
         :type body: IncidentTeamUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentTeamResponse
         """
         kwargs["team_id"] = team_id

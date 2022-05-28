@@ -146,8 +146,6 @@ class UsersApi:
 
         :param body: User object that needs to be created.
         :type body: User
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UserResponse
         """
         kwargs["body"] = body
@@ -164,8 +162,6 @@ class UsersApi:
 
         :param user_handle: The handle of the user.
         :type user_handle: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UserDisableResponse
         """
         kwargs["user_handle"] = user_handle
@@ -179,8 +175,6 @@ class UsersApi:
 
         :param user_handle: The ID of the user.
         :type user_handle: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UserResponse
         """
         kwargs["user_handle"] = user_handle
@@ -192,8 +186,6 @@ class UsersApi:
 
         List all users for your organization.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UserListResponse
         """
         return self._list_users_endpoint.call_with_http_info(**kwargs)
@@ -209,8 +201,6 @@ class UsersApi:
         :type user_handle: str
         :param body: Description of the update.
         :type body: User
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UserResponse
         """
         kwargs["user_handle"] = user_handle

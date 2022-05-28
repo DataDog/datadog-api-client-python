@@ -358,8 +358,6 @@ class SecurityMonitoringApi:
 
         :param body: The definition of the new security filter.
         :type body: SecurityFilterCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityFilterResponse
         """
         kwargs["body"] = body
@@ -372,8 +370,6 @@ class SecurityMonitoringApi:
         Create a detection rule.
 
         :type body: SecurityMonitoringRuleCreatePayload
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityMonitoringRuleResponse
         """
         kwargs["body"] = body
@@ -387,8 +383,6 @@ class SecurityMonitoringApi:
 
         :param security_filter_id: The ID of the security filter.
         :type security_filter_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["security_filter_id"] = security_filter_id
@@ -402,8 +396,6 @@ class SecurityMonitoringApi:
 
         :param rule_id: The ID of the rule.
         :type rule_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["rule_id"] = rule_id
@@ -420,8 +412,6 @@ class SecurityMonitoringApi:
 
         :param security_filter_id: The ID of the security filter.
         :type security_filter_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityFilterResponse
         """
         kwargs["security_filter_id"] = security_filter_id
@@ -435,8 +425,6 @@ class SecurityMonitoringApi:
 
         :param rule_id: The ID of the rule.
         :type rule_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityMonitoringRuleResponse
         """
         kwargs["rule_id"] = rule_id
@@ -448,8 +436,6 @@ class SecurityMonitoringApi:
 
         Get the list of configured security filters with their definitions.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityFiltersResponse
         """
         return self._list_security_filters_endpoint.call_with_http_info(**kwargs)
@@ -463,8 +449,6 @@ class SecurityMonitoringApi:
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityMonitoringListRulesResponse
         """
         return self._list_security_monitoring_rules_endpoint.call_with_http_info(**kwargs)
@@ -488,8 +472,6 @@ class SecurityMonitoringApi:
         :type page_cursor: str, optional
         :param page_limit: The maximum number of security signals in the response.
         :type page_limit: int, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityMonitoringSignalsListResponse
         """
         return self._list_security_monitoring_signals_endpoint.call_with_http_info(**kwargs)
@@ -536,8 +518,6 @@ class SecurityMonitoringApi:
         security signals.
 
         :type body: SecurityMonitoringSignalListRequest, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityMonitoringSignalsListResponse
         """
         return self._search_security_monitoring_signals_endpoint.call_with_http_info(**kwargs)
@@ -575,8 +555,6 @@ class SecurityMonitoringApi:
         :type security_filter_id: str
         :param body: New definition of the security filter.
         :type body: SecurityFilterUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityFilterResponse
         """
         kwargs["security_filter_id"] = security_filter_id
@@ -595,8 +573,6 @@ class SecurityMonitoringApi:
         :param rule_id: The ID of the rule.
         :type rule_id: str
         :type body: SecurityMonitoringRuleUpdatePayload
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityMonitoringRuleResponse
         """
         kwargs["rule_id"] = rule_id

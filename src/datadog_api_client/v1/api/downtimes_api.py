@@ -197,8 +197,6 @@ class DowntimesApi:
 
         :param downtime_id: ID of the downtime to cancel.
         :type downtime_id: int
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["downtime_id"] = downtime_id
@@ -212,8 +210,6 @@ class DowntimesApi:
 
         :param body: Scope to cancel downtimes for.
         :type body: CancelDowntimesByScopeRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: CanceledDowntimesIds
         """
         kwargs["body"] = body
@@ -227,8 +223,6 @@ class DowntimesApi:
 
         :param body: Schedule a downtime request body.
         :type body: Downtime
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: Downtime
         """
         kwargs["body"] = body
@@ -242,8 +236,6 @@ class DowntimesApi:
 
         :param downtime_id: ID of the downtime to fetch.
         :type downtime_id: int
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: Downtime
         """
         kwargs["downtime_id"] = downtime_id
@@ -257,8 +249,6 @@ class DowntimesApi:
 
         :param current_only: Only return downtimes that are active when the request is made.
         :type current_only: bool, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: [Downtime]
         """
         return self._list_downtimes_endpoint.call_with_http_info(**kwargs)
@@ -270,8 +260,6 @@ class DowntimesApi:
 
         :param monitor_id: The id of the monitor
         :type monitor_id: int
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: [Downtime]
         """
         kwargs["monitor_id"] = monitor_id
@@ -287,8 +275,6 @@ class DowntimesApi:
         :type downtime_id: int
         :param body: Update a downtime request body.
         :type body: Downtime
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: Downtime
         """
         kwargs["downtime_id"] = downtime_id

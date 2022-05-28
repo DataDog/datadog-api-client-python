@@ -377,8 +377,6 @@ class MetricsApi:
         Can only be used with application keys of users with the ``Manage Tags for Metrics`` permission.
 
         :type body: MetricBulkTagConfigCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MetricBulkTagConfigResponse
         """
         kwargs["body"] = body
@@ -396,8 +394,6 @@ class MetricsApi:
         :param metric_name: The name of the metric.
         :type metric_name: str
         :type body: MetricTagConfigurationCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MetricTagConfigurationResponse
         """
         kwargs["metric_name"] = metric_name
@@ -415,8 +411,6 @@ class MetricsApi:
         Can only be used with application keys of users with the ``Manage Tags for Metrics`` permission.
 
         :type body: MetricBulkTagConfigDeleteRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MetricBulkTagConfigResponse
         """
         kwargs["body"] = body
@@ -431,8 +425,6 @@ class MetricsApi:
 
         :param metric_name: The name of the metric.
         :type metric_name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["metric_name"] = metric_name
@@ -456,8 +448,6 @@ class MetricsApi:
         :type filter_pct: bool, optional
         :param filter_timespan_h: A window, in hours, from the look back to estimate cardinality with.
         :type filter_timespan_h: int, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MetricEstimateResponse
         """
         kwargs["metric_name"] = metric_name
@@ -471,8 +461,6 @@ class MetricsApi:
 
         :param metric_name: The name of the metric.
         :type metric_name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MetricTagConfigurationResponse
         """
         kwargs["metric_name"] = metric_name
@@ -500,8 +488,6 @@ class MetricsApi:
         :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] query.
             Defaults value is 3600 (1 hour), maximum value is 172,800 (2 days).
         :type window_seconds: int, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MetricsAndMetricTagConfigurationsResponse
         """
         return self._list_tag_configurations_endpoint.call_with_http_info(**kwargs)
@@ -513,8 +499,6 @@ class MetricsApi:
 
         :param metric_name: The name of the metric.
         :type metric_name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MetricAllTagsResponse
         """
         kwargs["metric_name"] = metric_name
@@ -530,8 +514,6 @@ class MetricsApi:
 
         :param metric_name: The name of the metric.
         :type metric_name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MetricVolumesResponse
         """
         kwargs["metric_name"] = metric_name
@@ -556,8 +538,6 @@ class MetricsApi:
         :type body: MetricPayload
         :param content_encoding: HTTP header used to compress the media-type.
         :type content_encoding: MetricContentEncoding, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IntakePayloadAccepted
         """
         kwargs["body"] = body
@@ -574,8 +554,6 @@ class MetricsApi:
         :param metric_name: The name of the metric.
         :type metric_name: str
         :type body: MetricTagConfigurationUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MetricTagConfigurationResponse
         """
         kwargs["metric_name"] = metric_name

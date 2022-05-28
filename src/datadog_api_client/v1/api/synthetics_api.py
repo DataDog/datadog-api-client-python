@@ -737,8 +737,6 @@ class SyntheticsApi:
 
         :param body: Details of the global variable to create.
         :type body: SyntheticsGlobalVariable
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsGlobalVariable
         """
         kwargs["body"] = body
@@ -752,8 +750,6 @@ class SyntheticsApi:
 
         :param body: Details of the private location to create.
         :type body: SyntheticsPrivateLocation
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsPrivateLocationCreationResponse
         """
         kwargs["body"] = body
@@ -767,8 +763,6 @@ class SyntheticsApi:
 
         :param body: Details of the test to create.
         :type body: SyntheticsAPITest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsAPITest
         """
         kwargs["body"] = body
@@ -782,8 +776,6 @@ class SyntheticsApi:
 
         :param body: Details of the test to create.
         :type body: SyntheticsBrowserTest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsBrowserTest
         """
         kwargs["body"] = body
@@ -797,8 +789,6 @@ class SyntheticsApi:
 
         :param variable_id: The ID of the global variable.
         :type variable_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["variable_id"] = variable_id
@@ -812,8 +802,6 @@ class SyntheticsApi:
 
         :param location_id: The ID of the private location.
         :type location_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["location_id"] = location_id
@@ -827,8 +815,6 @@ class SyntheticsApi:
 
         :param body: Public ID list of the Synthetic tests to be deleted.
         :type body: SyntheticsDeleteTestsPayload
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsDeleteTestsResponse
         """
         kwargs["body"] = body
@@ -844,8 +830,6 @@ class SyntheticsApi:
         :type variable_id: str
         :param body: Details of the global variable to update.
         :type body: SyntheticsGlobalVariable
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsGlobalVariable
         """
         kwargs["variable_id"] = variable_id
@@ -862,8 +846,6 @@ class SyntheticsApi:
 
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsAPITest
         """
         kwargs["public_id"] = public_id
@@ -883,8 +865,6 @@ class SyntheticsApi:
         :type to_ts: int, optional
         :param probe_dc: Locations for which to query results.
         :type probe_dc: [str], optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsGetAPITestLatestResultsResponse
         """
         kwargs["public_id"] = public_id
@@ -900,8 +880,6 @@ class SyntheticsApi:
         :type public_id: str
         :param result_id: The ID of the result to get.
         :type result_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsAPITestResultFull
         """
         kwargs["public_id"] = public_id
@@ -918,8 +896,6 @@ class SyntheticsApi:
 
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsBrowserTest
         """
         kwargs["public_id"] = public_id
@@ -940,8 +916,6 @@ class SyntheticsApi:
         :type to_ts: int, optional
         :param probe_dc: Locations for which to query results.
         :type probe_dc: [str], optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsGetBrowserTestLatestResultsResponse
         """
         kwargs["public_id"] = public_id
@@ -958,8 +932,6 @@ class SyntheticsApi:
         :type public_id: str
         :param result_id: The ID of the result to get.
         :type result_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsBrowserTestResultFull
         """
         kwargs["public_id"] = public_id
@@ -975,8 +947,6 @@ class SyntheticsApi:
 
         :param variable_id: The ID of the global variable.
         :type variable_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsGlobalVariable
         """
         kwargs["variable_id"] = variable_id
@@ -990,8 +960,6 @@ class SyntheticsApi:
 
         :param location_id: The ID of the private location.
         :type location_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsPrivateLocation
         """
         kwargs["location_id"] = location_id
@@ -1005,8 +973,6 @@ class SyntheticsApi:
 
         :param batch_id: The ID of the batch.
         :type batch_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsBatchDetails
         """
         kwargs["batch_id"] = batch_id
@@ -1020,8 +986,6 @@ class SyntheticsApi:
 
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsTestDetails
         """
         kwargs["public_id"] = public_id
@@ -1033,8 +997,6 @@ class SyntheticsApi:
 
         Get the list of all Synthetics global variables.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsListGlobalVariablesResponse
         """
         return self._list_global_variables_endpoint.call_with_http_info(**kwargs)
@@ -1045,8 +1007,6 @@ class SyntheticsApi:
         Get the list of public and private locations available for Synthetic
         tests. No arguments required.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsLocations
         """
         return self._list_locations_endpoint.call_with_http_info(**kwargs)
@@ -1056,8 +1016,6 @@ class SyntheticsApi:
 
         Get the list of all Synthetic tests.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsListTestsResponse
         """
         return self._list_tests_endpoint.call_with_http_info(**kwargs)
@@ -1069,8 +1027,6 @@ class SyntheticsApi:
 
         :param body: Details of the test to trigger.
         :type body: SyntheticsCITestBody
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsTriggerCITestsResponse
         """
         kwargs["body"] = body
@@ -1084,8 +1040,6 @@ class SyntheticsApi:
 
         :param body: The identifiers of the tests to trigger.
         :type body: SyntheticsTriggerBody
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsTriggerCITestsResponse
         """
         kwargs["body"] = body
@@ -1101,8 +1055,6 @@ class SyntheticsApi:
         :type public_id: str
         :param body: New test details to be saved.
         :type body: SyntheticsAPITest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsAPITest
         """
         kwargs["public_id"] = public_id
@@ -1120,8 +1072,6 @@ class SyntheticsApi:
         :type public_id: str
         :param body: New test details to be saved.
         :type body: SyntheticsBrowserTest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsBrowserTest
         """
         kwargs["public_id"] = public_id
@@ -1139,8 +1089,6 @@ class SyntheticsApi:
         :type location_id: str
         :param body: Details of the private location to be updated.
         :type body: SyntheticsPrivateLocation
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SyntheticsPrivateLocation
         """
         kwargs["location_id"] = location_id
@@ -1158,8 +1106,6 @@ class SyntheticsApi:
         :type public_id: str
         :param body: Status to set the given Synthetic test to.
         :type body: SyntheticsUpdateTestPauseStatusPayload
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: bool
         """
         kwargs["public_id"] = public_id

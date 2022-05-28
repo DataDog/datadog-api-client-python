@@ -190,8 +190,6 @@ class TagsApi:
         :param source: The source of the tags.
             `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_.
         :type source: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: HostTags
         """
         kwargs["host_name"] = host_name
@@ -211,8 +209,6 @@ class TagsApi:
         :param source: The source of the tags (for example chef, puppet).
             `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_.
         :type source: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["host_name"] = host_name
@@ -228,8 +224,6 @@ class TagsApi:
         :type host_name: str
         :param source: Source to filter.
         :type source: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: HostTags
         """
         kwargs["host_name"] = host_name
@@ -243,8 +237,6 @@ class TagsApi:
 
         :param source: When specified, filters host list to those tags with the specified source.
         :type source: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: TagToHosts
         """
         return self._list_host_tags_endpoint.call_with_http_info(**kwargs)
@@ -262,8 +254,6 @@ class TagsApi:
         :param source: The source of the tags (for example chef, puppet).
             `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_
         :type source: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: HostTags
         """
         kwargs["host_name"] = host_name

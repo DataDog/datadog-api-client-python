@@ -134,8 +134,6 @@ class AzureIntegrationApi:
 
         :param body: Create a Datadog-Azure integration for your Datadog account request body.
         :type body: AzureAccount
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body
@@ -149,8 +147,6 @@ class AzureIntegrationApi:
 
         :param body: Delete a given Datadog-Azure integration request body.
         :type body: AzureAccount
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body
@@ -162,8 +158,6 @@ class AzureIntegrationApi:
 
         List all Datadog-Azure integrations configured in your Datadog account.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AzureAccountListResponse
         """
         return self._list_azure_integration_endpoint.call_with_http_info(**kwargs)
@@ -175,8 +169,6 @@ class AzureIntegrationApi:
 
         :param body: Update a Datadog-Azure integration's host filters request body.
         :type body: AzureAccount
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body
@@ -192,8 +184,6 @@ class AzureIntegrationApi:
 
         :param body: Update a Datadog-Azure integration request body.
         :type body: AzureAccount
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body

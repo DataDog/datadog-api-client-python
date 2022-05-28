@@ -115,7 +115,7 @@ class ApiClient(object):
             if response_type == (file_type,):
                 content_disposition = response.getheader("Content-Disposition")
                 return_data = deserialize_file(
-                    response.data, self.configuration, content_disposition=content_disposition
+                    response.data, self.configuration.temp_folder_path, content_disposition=content_disposition
                 )
             else:
                 encoding = "utf-8"
@@ -539,7 +539,7 @@ class AsyncApiClient(ApiClient):
                 content_disposition = response.headers.get("Content-Disposition")
                 response_data = await response.content()
                 return_data = deserialize_file(
-                    response_data, self.configuration, content_disposition=content_disposition
+                    response_data, self.configuration.temp_folder_path, content_disposition=content_disposition
                 )
             else:
                 response_data = await response.text()

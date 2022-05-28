@@ -318,8 +318,6 @@ class ServiceLevelObjectivesApi:
 
         :param ids: A comma separated list of the IDs of the service level objectives objects.
         :type ids: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: CheckCanDeleteSLOResponse
         """
         kwargs["ids"] = ids
@@ -333,8 +331,6 @@ class ServiceLevelObjectivesApi:
 
         :param body: Service level objective request object.
         :type body: ServiceLevelObjectiveRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOListResponse
         """
         kwargs["body"] = body
@@ -353,8 +349,6 @@ class ServiceLevelObjectivesApi:
         :type slo_id: str
         :param force: Delete the monitor even if it's referenced by other resources (for example SLO, composite monitor).
         :type force: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLODeleteResponse
         """
         kwargs["slo_id"] = slo_id
@@ -372,8 +366,6 @@ class ServiceLevelObjectivesApi:
 
         :param body: Delete multiple service level objective objects request body.
         :type body: SLOBulkDelete
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOBulkDeleteResponse
         """
         kwargs["body"] = body
@@ -389,8 +381,6 @@ class ServiceLevelObjectivesApi:
         :type slo_id: str
         :param with_configured_alert_ids: Get the IDs of SLO monitors that reference this SLO.
         :type with_configured_alert_ids: bool, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOResponse
         """
         kwargs["slo_id"] = slo_id
@@ -404,8 +394,6 @@ class ServiceLevelObjectivesApi:
 
         :param slo_id: The ID of the service level objective object.
         :type slo_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOCorrectionListResponse
         """
         kwargs["slo_id"] = slo_id
@@ -435,8 +423,6 @@ class ServiceLevelObjectivesApi:
         :param apply_correction: Defaults to ``true``. If any SLO corrections are applied and this parameter is set to ``false`` ,
             then the corrections will not be applied and the SLI values will not be affected.
         :type apply_correction: bool, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOHistoryResponse
         """
         kwargs["slo_id"] = slo_id
@@ -464,8 +450,6 @@ class ServiceLevelObjectivesApi:
         :type limit: int, optional
         :param offset: The specific offset to use as the beginning of the returned response.
         :type offset: int, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOListResponse
         """
         return self._list_slos_endpoint.call_with_http_info(**kwargs)
@@ -479,8 +463,6 @@ class ServiceLevelObjectivesApi:
         :type slo_id: str
         :param body: The edited service level objective request object.
         :type body: ServiceLevelObjective
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOListResponse
         """
         kwargs["slo_id"] = slo_id

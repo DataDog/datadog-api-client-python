@@ -199,8 +199,6 @@ class DashboardsApi:
 
         :param body: Create a dashboard request body.
         :type body: Dashboard
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: Dashboard
         """
         kwargs["body"] = body
@@ -214,8 +212,6 @@ class DashboardsApi:
 
         :param dashboard_id: The ID of the dashboard.
         :type dashboard_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: DashboardDeleteResponse
         """
         kwargs["dashboard_id"] = dashboard_id
@@ -229,8 +225,6 @@ class DashboardsApi:
 
         :param body: Delete dashboards request body.
         :type body: DashboardBulkDeleteRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["body"] = body
@@ -244,8 +238,6 @@ class DashboardsApi:
 
         :param dashboard_id: The ID of the dashboard.
         :type dashboard_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: Dashboard
         """
         kwargs["dashboard_id"] = dashboard_id
@@ -266,8 +258,6 @@ class DashboardsApi:
         :param filter_deleted: When ``true`` , this query returns only deleted custom-created
             or cloned dashboards. This parameter is incompatible with ``filter[shared]``.
         :type filter_deleted: bool, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: DashboardSummary
         """
         return self._list_dashboards_endpoint.call_with_http_info(**kwargs)
@@ -279,8 +269,6 @@ class DashboardsApi:
 
         :param body: Restore dashboards request body.
         :type body: DashboardRestoreRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["body"] = body
@@ -296,8 +284,6 @@ class DashboardsApi:
         :type dashboard_id: str
         :param body: Update Dashboard request body.
         :type body: Dashboard
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: Dashboard
         """
         kwargs["dashboard_id"] = dashboard_id

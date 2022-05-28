@@ -403,8 +403,6 @@ class RolesApi:
         :param role_id: The unique identifier of the role.
         :type role_id: str
         :type body: RelationshipToPermission
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: PermissionsResponse
         """
         kwargs["role_id"] = role_id
@@ -421,8 +419,6 @@ class RolesApi:
         :param role_id: The unique identifier of the role.
         :type role_id: str
         :type body: RelationshipToUser
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsersResponse
         """
         kwargs["role_id"] = role_id
@@ -439,8 +435,6 @@ class RolesApi:
         :param role_id: The unique identifier of the role.
         :type role_id: str
         :type body: RoleCloneRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: RoleResponse
         """
         kwargs["role_id"] = role_id
@@ -455,8 +449,6 @@ class RolesApi:
         Create a new role for your organization.
 
         :type body: RoleCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: RoleCreateResponse
         """
         kwargs["body"] = body
@@ -470,8 +462,6 @@ class RolesApi:
 
         :param role_id: The unique identifier of the role.
         :type role_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["role_id"] = role_id
@@ -485,8 +475,6 @@ class RolesApi:
 
         :param role_id: The unique identifier of the role.
         :type role_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: RoleResponse
         """
         kwargs["role_id"] = role_id
@@ -498,8 +486,6 @@ class RolesApi:
 
         Returns a list of all permissions, including name, description, and ID.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: PermissionsResponse
         """
         return self._list_permissions_endpoint.call_with_http_info(**kwargs)
@@ -511,8 +497,6 @@ class RolesApi:
 
         :param role_id: The unique identifier of the role.
         :type role_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: PermissionsResponse
         """
         kwargs["role_id"] = role_id
@@ -534,8 +518,6 @@ class RolesApi:
         :type sort: RolesSort, optional
         :param filter: Filter all roles by the given string.
         :type filter: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: RolesResponse
         """
         return self._list_roles_endpoint.call_with_http_info(**kwargs)
@@ -557,8 +539,6 @@ class RolesApi:
         :type sort: str, optional
         :param filter: Filter all users by the given string. Defaults to no filtering.
         :type filter: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsersResponse
         """
         kwargs["role_id"] = role_id
@@ -573,8 +553,6 @@ class RolesApi:
         :param role_id: The unique identifier of the role.
         :type role_id: str
         :type body: RelationshipToPermission
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: PermissionsResponse
         """
         kwargs["role_id"] = role_id
@@ -591,8 +569,6 @@ class RolesApi:
         :param role_id: The unique identifier of the role.
         :type role_id: str
         :type body: RelationshipToUser
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsersResponse
         """
         kwargs["role_id"] = role_id
@@ -609,8 +585,6 @@ class RolesApi:
         :param role_id: The unique identifier of the role.
         :type role_id: str
         :type body: RoleUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: RoleUpdateResponse
         """
         kwargs["role_id"] = role_id

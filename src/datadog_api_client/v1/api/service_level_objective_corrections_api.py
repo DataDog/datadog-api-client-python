@@ -146,8 +146,6 @@ class ServiceLevelObjectiveCorrectionsApi:
 
         :param body: Create an SLO Correction
         :type body: SLOCorrectionCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOCorrectionResponse
         """
         kwargs["body"] = body
@@ -161,8 +159,6 @@ class ServiceLevelObjectiveCorrectionsApi:
 
         :param slo_correction_id: The ID of the SLO correction object.
         :type slo_correction_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["slo_correction_id"] = slo_correction_id
@@ -176,8 +172,6 @@ class ServiceLevelObjectiveCorrectionsApi:
 
         :param slo_correction_id: The ID of the SLO correction object.
         :type slo_correction_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOCorrectionResponse
         """
         kwargs["slo_correction_id"] = slo_correction_id
@@ -189,8 +183,6 @@ class ServiceLevelObjectiveCorrectionsApi:
 
         Get all Service Level Objective corrections.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOCorrectionListResponse
         """
         return self._list_slo_correction_endpoint.call_with_http_info(**kwargs)
@@ -204,8 +196,6 @@ class ServiceLevelObjectiveCorrectionsApi:
         :type slo_correction_id: str
         :param body: The edited SLO correction object.
         :type body: SLOCorrectionUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SLOCorrectionResponse
         """
         kwargs["slo_correction_id"] = slo_correction_id

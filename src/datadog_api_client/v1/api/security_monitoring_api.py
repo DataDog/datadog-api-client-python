@@ -111,8 +111,6 @@ class SecurityMonitoringApi:
         :type signal_id: str
         :param body: Attributes describing the signal update.
         :type body: AddSignalToIncidentRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SuccessfulSignalUpdateResponse
         """
         kwargs["signal_id"] = signal_id
@@ -130,8 +128,6 @@ class SecurityMonitoringApi:
         :type signal_id: str
         :param body: Attributes describing the signal update.
         :type body: SignalAssigneeUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SuccessfulSignalUpdateResponse
         """
         kwargs["signal_id"] = signal_id
@@ -149,8 +145,6 @@ class SecurityMonitoringApi:
         :type signal_id: str
         :param body: Attributes describing the signal update.
         :type body: SignalStateUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SuccessfulSignalUpdateResponse
         """
         kwargs["signal_id"] = signal_id

@@ -177,8 +177,6 @@ class IncidentsApi:
 
         :param body: Incident payload.
         :type body: IncidentCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentResponse
         """
         kwargs["body"] = body
@@ -192,8 +190,6 @@ class IncidentsApi:
 
         :param incident_id: The UUID of the incident.
         :type incident_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["incident_id"] = incident_id
@@ -209,8 +205,6 @@ class IncidentsApi:
         :type incident_id: str
         :param include: Specifies which types of related objects should be included in the response.
         :type include: [IncidentRelatedObject], optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentResponse
         """
         kwargs["incident_id"] = incident_id
@@ -228,8 +222,6 @@ class IncidentsApi:
         :type page_size: int, optional
         :param page_offset: Specific offset to use as the beginning of the returned page.
         :type page_offset: int, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentsResponse
         """
         return self._list_incidents_endpoint.call_with_http_info(**kwargs)
@@ -276,8 +268,6 @@ class IncidentsApi:
         :type body: IncidentUpdateRequest
         :param include: Specifies which types of related objects should be included in the response.
         :type include: [IncidentRelatedObject], optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentResponse
         """
         kwargs["incident_id"] = incident_id

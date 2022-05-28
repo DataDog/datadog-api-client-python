@@ -144,8 +144,6 @@ class DashboardListsApi:
 
         :param body: Create a dashboard list request body.
         :type body: DashboardList
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: DashboardList
         """
         kwargs["body"] = body
@@ -159,8 +157,6 @@ class DashboardListsApi:
 
         :param list_id: ID of the dashboard list to delete.
         :type list_id: int
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: DashboardListDeleteResponse
         """
         kwargs["list_id"] = list_id
@@ -174,8 +170,6 @@ class DashboardListsApi:
 
         :param list_id: ID of the dashboard list to fetch.
         :type list_id: int
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: DashboardList
         """
         kwargs["list_id"] = list_id
@@ -187,8 +181,6 @@ class DashboardListsApi:
 
         Fetch all of your existing dashboard list definitions.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: DashboardListListResponse
         """
         return self._list_dashboard_lists_endpoint.call_with_http_info(**kwargs)
@@ -202,8 +194,6 @@ class DashboardListsApi:
         :type list_id: int
         :param body: Update a dashboard list request body.
         :type body: DashboardList
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: DashboardList
         """
         kwargs["list_id"] = list_id

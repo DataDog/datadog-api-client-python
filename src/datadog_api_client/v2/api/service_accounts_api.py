@@ -207,8 +207,6 @@ class ServiceAccountsApi:
         :param service_account_id: The ID of the service account.
         :type service_account_id: str
         :type body: ApplicationKeyCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApplicationKeyResponse
         """
         kwargs["service_account_id"] = service_account_id
@@ -226,8 +224,6 @@ class ServiceAccountsApi:
         :type service_account_id: str
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["service_account_id"] = service_account_id
@@ -245,8 +241,6 @@ class ServiceAccountsApi:
         :type service_account_id: str
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: PartialApplicationKeyResponse
         """
         kwargs["service_account_id"] = service_account_id
@@ -276,8 +270,6 @@ class ServiceAccountsApi:
         :type filter_created_at_start: str, optional
         :param filter_created_at_end: Only include application keys created on or before the specified date.
         :type filter_created_at_end: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ListApplicationKeysResponse
         """
         kwargs["service_account_id"] = service_account_id
@@ -294,8 +286,6 @@ class ServiceAccountsApi:
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
         :type body: ApplicationKeyUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: PartialApplicationKeyResponse
         """
         kwargs["service_account_id"] = service_account_id

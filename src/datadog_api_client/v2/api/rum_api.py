@@ -126,8 +126,6 @@ class RUMApi:
         The API endpoint to aggregate RUM events into buckets of computed metrics and timeseries.
 
         :type body: RUMAggregateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: RUMAnalyticsAggregateResponse
         """
         kwargs["body"] = body
@@ -154,8 +152,6 @@ class RUMApi:
         :type page_cursor: str, optional
         :param page_limit: Maximum number of events in the response.
         :type page_limit: int, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: RUMEventsResponse
         """
         return self._list_rum_events_endpoint.call_with_http_info(**kwargs)
@@ -203,8 +199,6 @@ class RUMApi:
         Use this endpoint to build complex RUM events filtering and search.
 
         :type body: RUMSearchEventsRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: RUMEventsResponse
         """
         kwargs["body"] = body

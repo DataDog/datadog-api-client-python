@@ -160,8 +160,6 @@ class OrganizationsApi:
 
         :param body: Organization object that needs to be created
         :type body: OrganizationCreateBody
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: OrganizationCreateResponse
         """
         kwargs["body"] = body
@@ -175,8 +173,6 @@ class OrganizationsApi:
 
         :param public_id: The ``public_id`` of the organization you are operating within.
         :type public_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: OrganizationResponse
         """
         kwargs["public_id"] = public_id
@@ -188,8 +184,6 @@ class OrganizationsApi:
 
         List your managed organizations.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: OrganizationListResponse
         """
         return self._list_orgs_endpoint.call_with_http_info(**kwargs)
@@ -202,8 +196,6 @@ class OrganizationsApi:
         :param public_id: The ``public_id`` of the organization you are operating within.
         :type public_id: str
         :type body: Organization
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: OrganizationResponse
         """
         kwargs["public_id"] = public_id
@@ -229,8 +221,6 @@ class OrganizationsApi:
         :type public_id: str
         :param idp_file: The path to the XML metadata file you wish to upload.
         :type idp_file: file_type
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IdpResponse
         """
         kwargs["public_id"] = public_id

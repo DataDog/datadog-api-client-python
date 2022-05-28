@@ -150,7 +150,6 @@ class {{ classname }}:
         :type {{ name|attribute_name }}: {{ get_type_for_parameter(parameter) }}, optional
 {%- endfor %}
 
-        :return: If the method is called asynchronously, returns the request thread.
 {%- set returnType = operation|return_type %}
         :rtype: {% if returnType %}{{ returnType }}{% else %}None{% endif %}
         """

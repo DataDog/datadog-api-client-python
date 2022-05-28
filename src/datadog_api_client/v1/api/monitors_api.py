@@ -354,8 +354,6 @@ class MonitorsApi:
 
         :param monitor_ids: The IDs of the monitor to check.
         :type monitor_ids: [int]
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: CheckCanDeleteMonitorResponse
         """
         kwargs["monitor_ids"] = monitor_ids
@@ -565,8 +563,6 @@ class MonitorsApi:
 
         :param body: Create a monitor request body.
         :type body: Monitor
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: Monitor
         """
         kwargs["body"] = body
@@ -582,8 +578,6 @@ class MonitorsApi:
         :type monitor_id: int
         :param force: Delete the monitor even if it's referenced by other resources (for example SLO, composite monitor).
         :type force: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: DeletedMonitor
         """
         kwargs["monitor_id"] = monitor_id
@@ -599,8 +593,6 @@ class MonitorsApi:
         :type monitor_id: int
         :param group_states: When specified, shows additional information about the group states. Choose one or more from ``all`` , ``alert`` , ``warn`` , and ``no data``.
         :type group_states: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: Monitor
         """
         kwargs["monitor_id"] = monitor_id
@@ -631,8 +623,6 @@ class MonitorsApi:
         :type page: int, optional
         :param page_size: The number of monitors to return per page. If the page argument is not specified, the default behavior returns all monitors without a ``page_size`` limit. However, if page is specified and ``page_size`` is not, the argument defaults to 100.
         :type page_size: int, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: [Monitor]
         """
         return self._list_monitors_endpoint.call_with_http_info(**kwargs)
@@ -659,8 +649,6 @@ class MonitorsApi:
             * ``status``
             * ``tags``
         :type sort: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MonitorGroupSearchResponse
         """
         return self._search_monitor_groups_endpoint.call_with_http_info(**kwargs)
@@ -687,8 +675,6 @@ class MonitorsApi:
             * ``status``
             * ``tags``
         :type sort: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MonitorSearchResponse
         """
         return self._search_monitors_endpoint.call_with_http_info(**kwargs)
@@ -702,8 +688,6 @@ class MonitorsApi:
         :type monitor_id: int
         :param body: Edit a monitor request body.
         :type body: MonitorUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: Monitor
         """
         kwargs["monitor_id"] = monitor_id
@@ -721,8 +705,6 @@ class MonitorsApi:
         :type monitor_id: int
         :param body: Monitor request object
         :type body: Monitor
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["monitor_id"] = monitor_id
@@ -738,8 +720,6 @@ class MonitorsApi:
 
         :param body: Monitor request object
         :type body: Monitor
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body

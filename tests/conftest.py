@@ -476,6 +476,8 @@ def build_given(version, operation):
         configuration = build_configuration()
         configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "fake")
         configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
+        configuration.check_input_type = False
+        configuration.return_http_data_only = True
 
         # enable unstable operation
         if operation_name in configuration.unstable_operations:
@@ -496,13 +498,7 @@ def build_given(version, operation):
             kwargs = {
                 escape_reserved_keyword(snake_case(p["name"])): build_param(p) for p in operation.get("parameters", [])
             }
-            configuration.check_input_type = False
-            configuration.return_http_data_only = True
-            try:
-                result = operation_method(**kwargs)
-            finally:
-                configuration.check_input_type = True
-                configuration.return_http_data_only = False
+            result = operation_method(**kwargs)
 
             # register undo method
             context["undo_operations"].append(lambda: undo(api, version, operation_name, result, client=client))

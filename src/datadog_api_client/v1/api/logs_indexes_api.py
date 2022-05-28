@@ -158,8 +158,6 @@ class LogsIndexesApi:
 
         :param body: Object containing the new index.
         :type body: LogsIndex
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsIndex
         """
         kwargs["body"] = body
@@ -173,8 +171,6 @@ class LogsIndexesApi:
 
         :param name: Name of the log index.
         :type name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsIndex
         """
         kwargs["name"] = name
@@ -186,8 +182,6 @@ class LogsIndexesApi:
 
         Get the current order of your log indexes. This endpoint takes no JSON arguments.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsIndexesOrder
         """
         return self._get_logs_index_order_endpoint.call_with_http_info(**kwargs)
@@ -198,8 +192,6 @@ class LogsIndexesApi:
         The Index object describes the configuration of a log index.
         This endpoint returns an array of the ``LogIndex`` objects of your organization.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsIndexListResponse
         """
         return self._list_log_indexes_endpoint.call_with_http_info(**kwargs)
@@ -217,8 +209,6 @@ class LogsIndexesApi:
         :type name: str
         :param body: Object containing the new ``LogsIndexUpdateRequest``.
         :type body: LogsIndexUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsIndex
         """
         kwargs["name"] = name
@@ -235,8 +225,6 @@ class LogsIndexesApi:
 
         :param body: Object containing the new ordered list of index names
         :type body: LogsIndexesOrder
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsIndexesOrder
         """
         kwargs["body"] = body

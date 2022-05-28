@@ -230,8 +230,6 @@ class WebhooksIntegrationApi:
 
         :param body: Create a webhooks integration request body.
         :type body: WebhooksIntegration
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: WebhooksIntegration
         """
         kwargs["body"] = body
@@ -245,8 +243,6 @@ class WebhooksIntegrationApi:
 
         :param body: Define a custom variable request body.
         :type body: WebhooksIntegrationCustomVariable
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: WebhooksIntegrationCustomVariableResponse
         """
         kwargs["body"] = body
@@ -260,8 +256,6 @@ class WebhooksIntegrationApi:
 
         :param webhook_name: The name of the webhook.
         :type webhook_name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["webhook_name"] = webhook_name
@@ -275,8 +269,6 @@ class WebhooksIntegrationApi:
 
         :param custom_variable_name: The name of the custom variable.
         :type custom_variable_name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["custom_variable_name"] = custom_variable_name
@@ -290,8 +282,6 @@ class WebhooksIntegrationApi:
 
         :param webhook_name: The name of the webhook.
         :type webhook_name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: WebhooksIntegration
         """
         kwargs["webhook_name"] = webhook_name
@@ -308,8 +298,6 @@ class WebhooksIntegrationApi:
 
         :param custom_variable_name: The name of the custom variable.
         :type custom_variable_name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: WebhooksIntegrationCustomVariableResponse
         """
         kwargs["custom_variable_name"] = custom_variable_name
@@ -325,8 +313,6 @@ class WebhooksIntegrationApi:
         :type webhook_name: str
         :param body: Update an existing Datadog-Webhooks integration.
         :type body: WebhooksIntegrationUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: WebhooksIntegration
         """
         kwargs["webhook_name"] = webhook_name
@@ -344,8 +330,6 @@ class WebhooksIntegrationApi:
         :type custom_variable_name: str
         :param body: Update an existing custom variable request body.
         :type body: WebhooksIntegrationCustomVariableUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: WebhooksIntegrationCustomVariableResponse
         """
         kwargs["custom_variable_name"] = custom_variable_name

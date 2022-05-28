@@ -116,8 +116,6 @@ class AuditApi:
         :type page_cursor: str, optional
         :param page_limit: Maximum number of events in the response.
         :type page_limit: int, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuditLogsEventsResponse
         """
         return self._list_audit_logs_endpoint.call_with_http_info(**kwargs)
@@ -165,8 +163,6 @@ class AuditApi:
         Use this endpoint to build complex Audit Logs events filtering and search.
 
         :type body: AuditLogsSearchEventsRequest, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuditLogsEventsResponse
         """
         return self._search_audit_logs_endpoint.call_with_http_info(**kwargs)

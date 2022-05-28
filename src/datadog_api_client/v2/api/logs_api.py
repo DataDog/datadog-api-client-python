@@ -214,8 +214,6 @@ class LogsApi:
         The API endpoint to aggregate events into buckets and compute metrics and timeseries.
 
         :type body: LogsAggregateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsAggregateResponse
         """
         kwargs["body"] = body
@@ -235,8 +233,6 @@ class LogsApi:
         See `Datadog Logs Archive documentation <https://docs.datadoghq.com/logs/archives>`_.
 
         :type body: LogsListRequest, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsListResponse
         """
         return self._list_logs_endpoint.call_with_http_info(**kwargs)
@@ -291,8 +287,6 @@ class LogsApi:
         :type page_cursor: str, optional
         :param page_limit: Maximum number of logs in the response.
         :type page_limit: int, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsListResponse
         """
         return self._list_logs_get_endpoint.call_with_http_info(**kwargs)
@@ -372,8 +366,6 @@ class LogsApi:
         :type content_encoding: ContentEncoding, optional
         :param ddtags: Log tags can be passed as query parameters with ``text/plain`` content type.
         :type ddtags: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body

@@ -166,8 +166,6 @@ class AuthNMappingsApi:
         Create an AuthN Mapping.
 
         :type body: AuthNMappingCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuthNMappingResponse
         """
         kwargs["body"] = body
@@ -181,8 +179,6 @@ class AuthNMappingsApi:
 
         :param authn_mapping_id: The UUID of the AuthN Mapping.
         :type authn_mapping_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["authn_mapping_id"] = authn_mapping_id
@@ -196,8 +192,6 @@ class AuthNMappingsApi:
 
         :param authn_mapping_id: The UUID of the AuthN Mapping.
         :type authn_mapping_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuthNMappingResponse
         """
         kwargs["authn_mapping_id"] = authn_mapping_id
@@ -217,8 +211,6 @@ class AuthNMappingsApi:
         :type sort: AuthNMappingsSort, optional
         :param filter: Filter all mappings by the given string.
         :type filter: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuthNMappingsResponse
         """
         return self._list_authn_mappings_endpoint.call_with_http_info(**kwargs)
@@ -231,8 +223,6 @@ class AuthNMappingsApi:
         :param authn_mapping_id: The UUID of the AuthN Mapping.
         :type authn_mapping_id: str
         :type body: AuthNMappingUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuthNMappingResponse
         """
         kwargs["authn_mapping_id"] = authn_mapping_id

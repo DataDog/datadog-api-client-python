@@ -49,8 +49,6 @@ class OrganizationsApi:
 
         :param idp_file: The IdP metadata XML file
         :type idp_file: file_type, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         return self._upload_idp_metadata_endpoint.call_with_http_info(**kwargs)

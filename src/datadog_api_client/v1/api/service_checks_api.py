@@ -64,8 +64,6 @@ class ServiceChecksApi:
 
         :param body: Service Check request body.
         :type body: ServiceChecks
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IntakePayloadAccepted
         """
         kwargs["body"] = body

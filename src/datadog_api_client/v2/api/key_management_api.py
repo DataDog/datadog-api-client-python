@@ -480,8 +480,6 @@ class KeyManagementApi:
         Create an API key.
 
         :type body: APIKeyCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: APIKeyResponse
         """
         kwargs["body"] = body
@@ -494,8 +492,6 @@ class KeyManagementApi:
         Create an application key for current user
 
         :type body: ApplicationKeyCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApplicationKeyResponse
         """
         kwargs["body"] = body
@@ -509,8 +505,6 @@ class KeyManagementApi:
 
         :param api_key_id: The ID of the API key.
         :type api_key_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["api_key_id"] = api_key_id
@@ -524,8 +518,6 @@ class KeyManagementApi:
 
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["app_key_id"] = app_key_id
@@ -539,8 +531,6 @@ class KeyManagementApi:
 
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["app_key_id"] = app_key_id
@@ -556,8 +546,6 @@ class KeyManagementApi:
         :type api_key_id: str
         :param include: Comma separated list of resource paths for related resources to include in the response. Supported resource paths are ``created_by`` and ``modified_by``.
         :type include: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: APIKeyResponse
         """
         kwargs["api_key_id"] = api_key_id
@@ -573,8 +561,6 @@ class KeyManagementApi:
         :type app_key_id: str
         :param include: Resource path for related resources to include in the response. Only ``owned_by`` is supported.
         :type include: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApplicationKeyResponse
         """
         kwargs["app_key_id"] = app_key_id
@@ -588,8 +574,6 @@ class KeyManagementApi:
 
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApplicationKeyResponse
         """
         kwargs["app_key_id"] = app_key_id
@@ -621,8 +605,6 @@ class KeyManagementApi:
         :type filter_modified_at_end: str, optional
         :param include: Comma separated list of resource paths for related resources to include in the response. Supported resource paths are ``created_by`` and ``modified_by``.
         :type include: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: APIKeysResponse
         """
         return self._list_api_keys_endpoint.call_with_http_info(**kwargs)
@@ -646,8 +628,6 @@ class KeyManagementApi:
         :type filter_created_at_start: str, optional
         :param filter_created_at_end: Only include application keys created on or before the specified date.
         :type filter_created_at_end: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ListApplicationKeysResponse
         """
         return self._list_application_keys_endpoint.call_with_http_info(**kwargs)
@@ -671,8 +651,6 @@ class KeyManagementApi:
         :type filter_created_at_start: str, optional
         :param filter_created_at_end: Only include application keys created on or before the specified date.
         :type filter_created_at_end: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ListApplicationKeysResponse
         """
         return self._list_current_user_application_keys_endpoint.call_with_http_info(**kwargs)
@@ -685,8 +663,6 @@ class KeyManagementApi:
         :param api_key_id: The ID of the API key.
         :type api_key_id: str
         :type body: APIKeyUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: APIKeyResponse
         """
         kwargs["api_key_id"] = api_key_id
@@ -703,8 +679,6 @@ class KeyManagementApi:
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
         :type body: ApplicationKeyUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApplicationKeyResponse
         """
         kwargs["app_key_id"] = app_key_id
@@ -721,8 +695,6 @@ class KeyManagementApi:
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
         :type body: ApplicationKeyUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApplicationKeyResponse
         """
         kwargs["app_key_id"] = app_key_id

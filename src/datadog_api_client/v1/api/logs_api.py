@@ -135,8 +135,6 @@ class LogsApi:
 
         :param body: Logs filter
         :type body: LogsListRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsListResponse
         """
         kwargs["body"] = body
@@ -177,8 +175,6 @@ class LogsApi:
         :type content_encoding: ContentEncoding, optional
         :param ddtags: Log tags can be passed as query parameters with ``text/plain`` content type.
         :type ddtags: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body

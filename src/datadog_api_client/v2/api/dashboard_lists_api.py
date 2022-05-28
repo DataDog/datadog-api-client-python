@@ -140,8 +140,6 @@ class DashboardListsApi:
         :type dashboard_list_id: int
         :param body: Dashboards to add to the dashboard list.
         :type body: DashboardListAddItemsRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: DashboardListAddItemsResponse
         """
         kwargs["dashboard_list_id"] = dashboard_list_id
@@ -159,8 +157,6 @@ class DashboardListsApi:
         :type dashboard_list_id: int
         :param body: Dashboards to delete from the dashboard list.
         :type body: DashboardListDeleteItemsRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: DashboardListDeleteItemsResponse
         """
         kwargs["dashboard_list_id"] = dashboard_list_id
@@ -176,8 +172,6 @@ class DashboardListsApi:
 
         :param dashboard_list_id: ID of the dashboard list to get items from.
         :type dashboard_list_id: int
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: DashboardListItems
         """
         kwargs["dashboard_list_id"] = dashboard_list_id
@@ -193,8 +187,6 @@ class DashboardListsApi:
         :type dashboard_list_id: int
         :param body: New dashboards of the dashboard list.
         :type body: DashboardListUpdateItemsRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: DashboardListUpdateItemsResponse
         """
         kwargs["dashboard_list_id"] = dashboard_list_id

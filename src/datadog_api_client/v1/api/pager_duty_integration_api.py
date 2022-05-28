@@ -125,8 +125,6 @@ class PagerDutyIntegrationApi:
 
         :param body: Create a new service object request body.
         :type body: PagerDutyService
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: PagerDutyServiceName
         """
         kwargs["body"] = body
@@ -140,8 +138,6 @@ class PagerDutyIntegrationApi:
 
         :param service_name: The service name
         :type service_name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["service_name"] = service_name
@@ -155,8 +151,6 @@ class PagerDutyIntegrationApi:
 
         :param service_name: The service name.
         :type service_name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: PagerDutyServiceName
         """
         kwargs["service_name"] = service_name
@@ -172,8 +166,6 @@ class PagerDutyIntegrationApi:
         :type service_name: str
         :param body: Update an existing service object request body.
         :type body: PagerDutyServiceKey
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["service_name"] = service_name

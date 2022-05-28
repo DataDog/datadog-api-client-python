@@ -141,8 +141,6 @@ class EventsApi:
 
         :param body: Event request object
         :type body: EventCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: EventCreateResponse
         """
         kwargs["body"] = body
@@ -159,8 +157,6 @@ class EventsApi:
 
         :param event_id: The ID of the event.
         :type event_id: int
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: EventResponse
         """
         kwargs["event_id"] = event_id
@@ -204,8 +200,6 @@ class EventsApi:
         :param page: By default 1000 results are returned per request. Set page to the number of the page to return with ``0`` being the first page. The page parameter can only be used
             when either unaggregated or exclude_aggregate is set to ``true.``
         :type page: int, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: EventListResponse
         """
         kwargs["start"] = start

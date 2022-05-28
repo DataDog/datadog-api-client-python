@@ -144,8 +144,6 @@ class LogsMetricsApi:
 
         :param body: The definition of the new log-based metric.
         :type body: LogsMetricCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsMetricResponse
         """
         kwargs["body"] = body
@@ -159,8 +157,6 @@ class LogsMetricsApi:
 
         :param metric_id: The name of the log-based metric.
         :type metric_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["metric_id"] = metric_id
@@ -174,8 +170,6 @@ class LogsMetricsApi:
 
         :param metric_id: The name of the log-based metric.
         :type metric_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsMetricResponse
         """
         kwargs["metric_id"] = metric_id
@@ -187,8 +181,6 @@ class LogsMetricsApi:
 
         Get the list of configured log-based metrics with their definitions.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsMetricsResponse
         """
         return self._list_logs_metrics_endpoint.call_with_http_info(**kwargs)
@@ -203,8 +195,6 @@ class LogsMetricsApi:
         :type metric_id: str
         :param body: New definition of the log-based metric.
         :type body: LogsMetricUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsMetricResponse
         """
         kwargs["metric_id"] = metric_id

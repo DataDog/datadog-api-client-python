@@ -218,8 +218,6 @@ class MetricsApi:
 
         :param metric_name: Name of the metric for which to get metadata.
         :type metric_name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MetricMetadata
         """
         kwargs["metric_name"] = metric_name
@@ -239,8 +237,6 @@ class MetricsApi:
         :param tag_filter: Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions.
             Cannot be combined with other filters.
         :type tag_filter: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MetricsListResponse
         """
         kwargs["_from"] = _from
@@ -254,8 +250,6 @@ class MetricsApi:
 
         :param q: Query string to search metrics upon. Can optionally be prefixed with ``metrics:``.
         :type q: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MetricSearchResponse
         """
         kwargs["q"] = q
@@ -273,8 +267,6 @@ class MetricsApi:
         :type to: int
         :param query: Query string.
         :type query: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MetricsQueryResponse
         """
         kwargs["_from"] = _from
@@ -304,8 +296,6 @@ class MetricsApi:
         :type body: MetricsPayload
         :param content_encoding: HTTP header used to compress the media-type.
         :type content_encoding: MetricContentEncoding, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IntakePayloadAccepted
         """
         kwargs["body"] = body
@@ -321,8 +311,6 @@ class MetricsApi:
         :type metric_name: str
         :param body: New metadata.
         :type body: MetricMetadata
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: MetricMetadata
         """
         kwargs["metric_name"] = metric_name

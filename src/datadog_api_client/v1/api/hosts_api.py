@@ -163,8 +163,6 @@ class HostsApi:
 
         :param _from: Number of seconds from which you want to get total number of active hosts.
         :type _from: int, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: HostTotals
         """
         return self._get_host_totals_endpoint.call_with_http_info(**kwargs)
@@ -193,8 +191,6 @@ class HostsApi:
         :type include_muted_hosts_data: bool, optional
         :param include_hosts_metadata: Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.).
         :type include_hosts_metadata: bool, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: HostListResponse
         """
         return self._list_hosts_endpoint.call_with_http_info(**kwargs)
@@ -208,8 +204,6 @@ class HostsApi:
         :type host_name: str
         :param body: Mute a host request body.
         :type body: HostMuteSettings
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: HostMuteResponse
         """
         kwargs["host_name"] = host_name
@@ -225,8 +219,6 @@ class HostsApi:
 
         :param host_name: Name of the host to unmute.
         :type host_name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: HostMuteResponse
         """
         kwargs["host_name"] = host_name

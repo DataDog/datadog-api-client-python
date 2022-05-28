@@ -107,8 +107,6 @@ class GCPIntegrationApi:
 
         :param body: Create a Datadog-GCP integration.
         :type body: GCPAccount
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body
@@ -122,8 +120,6 @@ class GCPIntegrationApi:
 
         :param body: Delete a given Datadog-GCP integration.
         :type body: GCPAccount
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body
@@ -135,8 +131,6 @@ class GCPIntegrationApi:
 
         List all Datadog-GCP integrations configured in your Datadog account.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: GCPAccountListResponse
         """
         return self._list_gcp_integration_endpoint.call_with_http_info(**kwargs)
@@ -151,8 +145,6 @@ class GCPIntegrationApi:
 
         :param body: Update a Datadog-GCP integration.
         :type body: GCPAccount
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body

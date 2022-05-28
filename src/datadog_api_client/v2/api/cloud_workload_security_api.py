@@ -172,8 +172,6 @@ class CloudWorkloadSecurityApi:
 
         :param body: The definition of the new Agent rule.
         :type body: CloudWorkloadSecurityAgentRuleCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: CloudWorkloadSecurityAgentRuleResponse
         """
         kwargs["body"] = body
@@ -187,8 +185,6 @@ class CloudWorkloadSecurityApi:
 
         :param agent_rule_id: The ID of the Agent rule.
         :type agent_rule_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["agent_rule_id"] = agent_rule_id
@@ -202,8 +198,6 @@ class CloudWorkloadSecurityApi:
         Cloud Workload Security rules, and downloads them as a .policy file. This file can then be deployed to
         your agents to update the policy running in your environment.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: file_type
         """
         return self._download_cloud_workload_policy_file_endpoint.call_with_http_info(**kwargs)
@@ -215,8 +209,6 @@ class CloudWorkloadSecurityApi:
 
         :param agent_rule_id: The ID of the Agent rule.
         :type agent_rule_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: CloudWorkloadSecurityAgentRuleResponse
         """
         kwargs["agent_rule_id"] = agent_rule_id
@@ -228,8 +220,6 @@ class CloudWorkloadSecurityApi:
 
         Get the list of Agent rules.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: CloudWorkloadSecurityAgentRulesListResponse
         """
         return self._list_cloud_workload_security_agent_rules_endpoint.call_with_http_info(**kwargs)
@@ -244,8 +234,6 @@ class CloudWorkloadSecurityApi:
         :type agent_rule_id: str
         :param body: New definition of the Agent rule.
         :type body: CloudWorkloadSecurityAgentRuleUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: CloudWorkloadSecurityAgentRuleResponse
         """
         kwargs["agent_rule_id"] = agent_rule_id

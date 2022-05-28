@@ -175,8 +175,6 @@ class SlackIntegrationApi:
         :type account_name: str
         :param body: Payload describing Slack channel to be created
         :type body: SlackIntegrationChannel
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SlackIntegrationChannel
         """
         kwargs["account_name"] = account_name
@@ -194,8 +192,6 @@ class SlackIntegrationApi:
         :type account_name: str
         :param channel_name: The name of the Slack channel being operated on.
         :type channel_name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SlackIntegrationChannel
         """
         kwargs["account_name"] = account_name
@@ -211,8 +207,6 @@ class SlackIntegrationApi:
 
         :param account_name: Your Slack account name.
         :type account_name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SlackIntegrationChannels
         """
         kwargs["account_name"] = account_name
@@ -228,8 +222,6 @@ class SlackIntegrationApi:
         :type account_name: str
         :param channel_name: The name of the Slack channel being operated on.
         :type channel_name: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["account_name"] = account_name
@@ -249,8 +241,6 @@ class SlackIntegrationApi:
         :type channel_name: str
         :param body: Payload describing fields and values to be updated.
         :type body: SlackIntegrationChannel
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SlackIntegrationChannel
         """
         kwargs["account_name"] = account_name

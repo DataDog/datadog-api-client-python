@@ -296,8 +296,6 @@ class UsersApi:
         Create a service account for your organization.
 
         :type body: ServiceAccountCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UserResponse
         """
         kwargs["body"] = body
@@ -310,8 +308,6 @@ class UsersApi:
         Create a user for your organization.
 
         :type body: UserCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UserResponse
         """
         kwargs["body"] = body
@@ -326,8 +322,6 @@ class UsersApi:
 
         :param user_id: The ID of the user.
         :type user_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["user_id"] = user_id
@@ -341,8 +335,6 @@ class UsersApi:
 
         :param user_invitation_uuid: The UUID of the user invitation.
         :type user_invitation_uuid: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UserInvitationResponse
         """
         kwargs["user_invitation_uuid"] = user_invitation_uuid
@@ -356,8 +348,6 @@ class UsersApi:
 
         :param user_id: The ID of the user.
         :type user_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UserResponse
         """
         kwargs["user_id"] = user_id
@@ -372,8 +362,6 @@ class UsersApi:
 
         :param user_id: The ID of the user.
         :type user_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UserResponse
         """
         kwargs["user_id"] = user_id
@@ -388,8 +376,6 @@ class UsersApi:
 
         :param user_id: The ID of the user.
         :type user_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: PermissionsResponse
         """
         kwargs["user_id"] = user_id
@@ -419,8 +405,6 @@ class UsersApi:
             Comma separated list, with possible values ``Active`` , ``Pending`` , and ``Disabled``.
             Defaults to no filtering.
         :type filter_status: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsersResponse
         """
         return self._list_users_endpoint.call_with_http_info(**kwargs)
@@ -431,8 +415,6 @@ class UsersApi:
         Sends emails to one or more users inviting them to join the organization.
 
         :type body: UserInvitationsRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UserInvitationsResponse
         """
         kwargs["body"] = body
@@ -448,8 +430,6 @@ class UsersApi:
         :param user_id: The ID of the user.
         :type user_id: str
         :type body: UserUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UserResponse
         """
         kwargs["user_id"] = user_id

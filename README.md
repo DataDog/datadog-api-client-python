@@ -102,7 +102,6 @@ with ThreadedApiClient(configuration) as api_client:
     print(dashbooards)
 ```
 
-
 ### Asyncio support
 
 The library supports asynchronous operations when using `AsyncApiClient` for the transport. When that client is used,

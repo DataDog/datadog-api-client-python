@@ -163,8 +163,6 @@ class UsageMeteringApi:
         :type start_month: datetime
         :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost ending this month.
         :type end_month: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: CostByOrgResponse
         """
         kwargs["start_month"] = start_month
@@ -181,8 +179,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageApplicationSecurityMonitoringResponse
         """
         kwargs["start_hr"] = start_hr
@@ -199,8 +195,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageLambdaTracedInvocationsResponse
         """
         kwargs["start_hr"] = start_hr
@@ -217,8 +211,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageObservabilityPipelinesResponse
         """
         kwargs["start_hr"] = start_hr

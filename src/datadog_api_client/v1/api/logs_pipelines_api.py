@@ -208,8 +208,6 @@ class LogsPipelinesApi:
 
         :param body: Definition of the new pipeline.
         :type body: LogsPipeline
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsPipeline
         """
         kwargs["body"] = body
@@ -224,8 +222,6 @@ class LogsPipelinesApi:
 
         :param pipeline_id: ID of the pipeline to delete.
         :type pipeline_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["pipeline_id"] = pipeline_id
@@ -240,8 +236,6 @@ class LogsPipelinesApi:
 
         :param pipeline_id: ID of the pipeline to get.
         :type pipeline_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsPipeline
         """
         kwargs["pipeline_id"] = pipeline_id
@@ -254,8 +248,6 @@ class LogsPipelinesApi:
         Get the current order of your pipelines.
         This endpoint takes no JSON arguments.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsPipelinesOrder
         """
         return self._get_logs_pipeline_order_endpoint.call_with_http_info(**kwargs)
@@ -266,8 +258,6 @@ class LogsPipelinesApi:
         Get all pipelines from your organization.
         This endpoint takes no JSON arguments.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsPipelineList
         """
         return self._list_logs_pipelines_endpoint.call_with_http_info(**kwargs)
@@ -284,8 +274,6 @@ class LogsPipelinesApi:
         :type pipeline_id: str
         :param body: New definition of the pipeline.
         :type body: LogsPipeline
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsPipeline
         """
         kwargs["pipeline_id"] = pipeline_id
@@ -305,8 +293,6 @@ class LogsPipelinesApi:
 
         :param body: Object containing the new ordered list of pipeline IDs.
         :type body: LogsPipelinesOrder
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsPipelinesOrder
         """
         kwargs["body"] = body

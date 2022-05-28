@@ -1347,8 +1347,6 @@ class UsageMeteringApi:
         :type sort_dir: UsageSortDirection, optional
         :param sort: The field to sort by: ``[computed_on, size, start_date, end_date]``.
         :type sort: UsageSort, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageCustomReportsResponse
         """
         return self._get_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
@@ -1385,6 +1383,7 @@ class UsageMeteringApi:
 
             To see which tags are available, look for the value of ``tag_config_source`` in the API response.
         :type tag_breakdown_keys: str, optional
+<<<<<<< HEAD
 <<<<<<< HEAD
         :param include_descendants: Include child org usage in the response. Defaults to ``true``.
         :type include_descendants: bool, optional
@@ -1437,6 +1436,11 @@ class UsageMeteringApi:
 >>>>>>> 2009fcb79 (Refactor API client)
 
         :return: If the method is called asynchronously, returns the request thread.
+||||||| parent of 3b6dc07ed (Small tweak)
+
+        :return: If the method is called asynchronously, returns the request thread.
+=======
+>>>>>>> 3b6dc07ed (Small tweak)
         :rtype: HourlyUsageAttributionResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1455,8 +1459,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageIncidentManagementResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1473,8 +1475,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageIngestedSpansResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1494,8 +1494,6 @@ class UsageMeteringApi:
         :type sort_dir: UsageSortDirection, optional
         :param sort: The field to sort by: ``[computed_on, size, start_date, end_date]``.
         :type sort: UsageSort, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageCustomReportsResponse
         """
         return self._get_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
@@ -1537,6 +1535,7 @@ class UsageMeteringApi:
         :param next_record_id: List following results with a next_record_id provided in the previous query.
         :type next_record_id: str, optional
 <<<<<<< HEAD
+<<<<<<< HEAD
         :param include_descendants: Include child org usage in the response. Defaults to ``true``.
         :type include_descendants: bool, optional
         :param _return_http_data_only: Response data without head status
@@ -1588,6 +1587,11 @@ class UsageMeteringApi:
 >>>>>>> 2009fcb79 (Refactor API client)
 
         :return: If the method is called asynchronously, returns the request thread.
+||||||| parent of 3b6dc07ed (Small tweak)
+
+        :return: If the method is called asynchronously, returns the request thread.
+=======
+>>>>>>> 3b6dc07ed (Small tweak)
         :rtype: MonthlyUsageAttributionResponse
         """
         kwargs["start_month"] = start_month
@@ -1603,8 +1607,6 @@ class UsageMeteringApi:
 
         :param report_id: Date of the report in the format ``YYYY-MM-DD``.
         :type report_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSpecifiedCustomReportsResponse
         """
         kwargs["report_id"] = report_id
@@ -1618,8 +1620,6 @@ class UsageMeteringApi:
 
         :param report_id: Date of the report in the format ``YYYY-MM-DD``.
         :type report_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSpecifiedCustomReportsResponse
         """
         kwargs["report_id"] = report_id
@@ -1636,8 +1636,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageAnalyzedLogsResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1666,8 +1664,6 @@ class UsageMeteringApi:
         :type offset: int, optional
         :param limit: Maximum number of records to be returned.
         :type limit: int, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageAttributionResponse
         """
         kwargs["start_month"] = start_month
@@ -1686,8 +1682,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageAuditLogsResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1701,8 +1695,6 @@ class UsageMeteringApi:
 
         :param month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage starting this month.
         :type month: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageBillableSummaryResponse
         """
         return self._get_usage_billable_summary_endpoint.call_with_http_info(**kwargs)
@@ -1717,8 +1709,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageCIVisibilityResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1735,8 +1725,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageCloudSecurityPostureManagementResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1753,8 +1741,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageCWSResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1771,8 +1757,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageDBMResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1788,8 +1772,6 @@ class UsageMeteringApi:
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageFargateResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1805,8 +1787,6 @@ class UsageMeteringApi:
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageHostsResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1822,8 +1802,6 @@ class UsageMeteringApi:
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageIndexedSpansResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1840,8 +1818,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageIoTResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1857,8 +1833,6 @@ class UsageMeteringApi:
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageLambdaResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1874,8 +1848,6 @@ class UsageMeteringApi:
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageLogsResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1893,8 +1865,6 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :param index_name: Comma-separated list of log index names.
         :type index_name: [str], optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageLogsByIndexResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1911,8 +1881,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageLogsByRetentionResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1929,8 +1897,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageNetworkFlowsResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1946,8 +1912,6 @@ class UsageMeteringApi:
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageNetworkHostsResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1964,8 +1928,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageOnlineArchiveResponse
         """
         kwargs["start_hr"] = start_hr
@@ -1982,8 +1944,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageProfilingResponse
         """
         kwargs["start_hr"] = start_hr
@@ -2001,8 +1961,6 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :param type: RUM type: ``[browser, mobile]``. Defaults to ``browser``.
         :type type: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageRumSessionsResponse
         """
         kwargs["start_hr"] = start_hr
@@ -2018,8 +1976,6 @@ class UsageMeteringApi:
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageRumUnitsResponse
         """
         kwargs["start_hr"] = start_hr
@@ -2036,8 +1992,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSDSResponse
         """
         kwargs["start_hr"] = start_hr
@@ -2054,8 +2008,6 @@ class UsageMeteringApi:
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSNMPResponse
         """
         kwargs["start_hr"] = start_hr
@@ -2074,8 +2026,6 @@ class UsageMeteringApi:
         :type end_month: datetime, optional
         :param include_org_details: Include usage summaries for each sub-org.
         :type include_org_details: bool, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSummaryResponse
         """
         kwargs["start_month"] = start_month
@@ -2091,8 +2041,6 @@ class UsageMeteringApi:
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSyntheticsResponse
         """
         kwargs["start_hr"] = start_hr
@@ -2108,8 +2056,6 @@ class UsageMeteringApi:
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSyntheticsAPIResponse
         """
         kwargs["start_hr"] = start_hr
@@ -2125,8 +2071,6 @@ class UsageMeteringApi:
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSyntheticsBrowserResponse
         """
         kwargs["start_hr"] = start_hr
@@ -2142,8 +2086,6 @@ class UsageMeteringApi:
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageTimeseriesResponse
         """
         kwargs["start_hr"] = start_hr
@@ -2165,8 +2107,6 @@ class UsageMeteringApi:
         :type limit: int, optional
         :param next_record_id: List following results with a next_record_id provided in the previous query.
         :type next_record_id: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageTopAvgMetricsResponse
         """
         return self._get_usage_top_avg_metrics_endpoint.call_with_http_info(**kwargs)

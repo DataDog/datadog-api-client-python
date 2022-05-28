@@ -48,8 +48,6 @@ class AuthenticationApi:
 
         Check if the API key (not the APP key) is valid. If invalid, a 403 is returned.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuthenticationValidationResponse
         """
         return self._validate_endpoint.call_with_http_info(**kwargs)

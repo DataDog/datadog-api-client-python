@@ -96,8 +96,6 @@ class ProcessesApi:
         :param page_cursor: String to query the next page of results.
             This key is provided with each valid response from the API in ``meta.page.after``.
         :type page_cursor: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ProcessSummariesResponse
         """
         return self._list_processes_endpoint.call_with_http_info(**kwargs)

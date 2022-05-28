@@ -196,8 +196,6 @@ class NotebooksApi:
 
         :param body: The JSON description of the notebook you want to create.
         :type body: NotebookCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: NotebookResponse
         """
         kwargs["body"] = body
@@ -211,8 +209,6 @@ class NotebooksApi:
 
         :param notebook_id: Unique ID, assigned when you create the notebook.
         :type notebook_id: int
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["notebook_id"] = notebook_id
@@ -226,8 +222,6 @@ class NotebooksApi:
 
         :param notebook_id: Unique ID, assigned when you create the notebook.
         :type notebook_id: int
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: NotebookResponse
         """
         kwargs["notebook_id"] = notebook_id
@@ -260,8 +254,6 @@ class NotebooksApi:
         :type is_template: bool, optional
         :param type: If type is provided, returns only notebooks with that metadata type. Default does not have type filtering.
         :type type: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: NotebooksResponse
         """
         return self._list_notebooks_endpoint.call_with_http_info(**kwargs)
@@ -275,8 +267,6 @@ class NotebooksApi:
         :type notebook_id: int
         :param body: Update notebook request body.
         :type body: NotebookUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: NotebookResponse
         """
         kwargs["notebook_id"] = notebook_id

@@ -83,8 +83,6 @@ class IPRangesApi:
 
         Get information about Datadog IP ranges.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IPRanges
         """
         return self._get_ip_ranges_endpoint.call_with_http_info(**kwargs)

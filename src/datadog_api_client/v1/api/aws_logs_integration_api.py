@@ -178,8 +178,6 @@ class AWSLogsIntegrationApi:
 
         :param body: Check AWS Log Lambda Async request body.
         :type body: AWSAccountAndLambdaRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AWSLogsAsyncResponse
         """
         kwargs["body"] = body
@@ -203,8 +201,6 @@ class AWSLogsIntegrationApi:
 
         :param body: Check AWS Logs Async Services request body.
         :type body: AWSLogsServicesRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AWSLogsAsyncResponse
         """
         kwargs["body"] = body
@@ -218,8 +214,6 @@ class AWSLogsIntegrationApi:
 
         :param body: AWS Log Lambda Async request body.
         :type body: AWSAccountAndLambdaRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body
@@ -233,8 +227,6 @@ class AWSLogsIntegrationApi:
 
         :param body: Delete AWS Lambda ARN request body.
         :type body: AWSAccountAndLambdaRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body
@@ -248,8 +240,6 @@ class AWSLogsIntegrationApi:
 
         :param body: Enable AWS Log Services request body.
         :type body: AWSLogsServicesRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: dict
         """
         kwargs["body"] = body
@@ -261,8 +251,6 @@ class AWSLogsIntegrationApi:
 
         List all Datadog-AWS Logs integrations configured in your Datadog account.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: [AWSLogsListResponse]
         """
         return self._list_aws_logs_integrations_endpoint.call_with_http_info(**kwargs)
@@ -272,8 +260,6 @@ class AWSLogsIntegrationApi:
 
         Get the list of current AWS services that Datadog offers automatic log collection. Use returned service IDs with the services parameter for the Enable an AWS service log collection API endpoint.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: [AWSLogsListServicesResponse]
         """
         return self._list_aws_logs_services_endpoint.call_with_http_info(**kwargs)

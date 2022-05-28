@@ -263,8 +263,6 @@ class KeyManagementApi:
         Creates an API key with a given name.
 
         :type body: ApiKey
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApiKeyResponse
         """
         kwargs["body"] = body
@@ -277,8 +275,6 @@ class KeyManagementApi:
         Create an application key with a given name.
 
         :type body: ApplicationKey
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApplicationKeyResponse
         """
         kwargs["body"] = body
@@ -292,8 +288,6 @@ class KeyManagementApi:
 
         :param key: The specific API key you are working with.
         :type key: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApiKeyResponse
         """
         kwargs["key"] = key
@@ -307,8 +301,6 @@ class KeyManagementApi:
 
         :param key: The specific APP key you are working with.
         :type key: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApplicationKeyResponse
         """
         kwargs["key"] = key
@@ -322,8 +314,6 @@ class KeyManagementApi:
 
         :param key: The specific API key you are working with.
         :type key: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApiKeyResponse
         """
         kwargs["key"] = key
@@ -337,8 +327,6 @@ class KeyManagementApi:
 
         :param key: The specific APP key you are working with.
         :type key: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApplicationKeyResponse
         """
         kwargs["key"] = key
@@ -350,8 +338,6 @@ class KeyManagementApi:
 
         Get all API keys available for your account.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApiKeyListResponse
         """
         return self._list_api_keys_endpoint.call_with_http_info(**kwargs)
@@ -361,8 +347,6 @@ class KeyManagementApi:
 
         Get all application keys available for your Datadog account.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApplicationKeyListResponse
         """
         return self._list_application_keys_endpoint.call_with_http_info(**kwargs)
@@ -375,8 +359,6 @@ class KeyManagementApi:
         :param key: The specific API key you are working with.
         :type key: str
         :type body: ApiKey
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApiKeyResponse
         """
         kwargs["key"] = key
@@ -393,8 +375,6 @@ class KeyManagementApi:
         :param key: The specific APP key you are working with.
         :type key: str
         :type body: ApplicationKey
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: ApplicationKeyResponse
         """
         kwargs["key"] = key

@@ -170,8 +170,6 @@ class IncidentServicesApi:
 
         :param body: Incident Service Payload.
         :type body: IncidentServiceCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentServiceResponse
         """
         kwargs["body"] = body
@@ -185,8 +183,6 @@ class IncidentServicesApi:
 
         :param service_id: The ID of the incident service.
         :type service_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["service_id"] = service_id
@@ -203,8 +199,6 @@ class IncidentServicesApi:
         :type service_id: str
         :param include: Specifies which types of related objects should be included in the response.
         :type include: IncidentRelatedObject, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentServiceResponse
         """
         kwargs["service_id"] = service_id
@@ -224,8 +218,6 @@ class IncidentServicesApi:
         :type page_offset: int, optional
         :param filter: A search query that filters services by name.
         :type filter: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentServicesResponse
         """
         return self._list_incident_services_endpoint.call_with_http_info(**kwargs)
@@ -239,8 +231,6 @@ class IncidentServicesApi:
         :type service_id: str
         :param body: Incident Service Payload.
         :type body: IncidentServiceUpdateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentServiceResponse
         """
         kwargs["service_id"] = service_id

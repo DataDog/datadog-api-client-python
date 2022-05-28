@@ -88,8 +88,6 @@ class SnapshotsApi:
         :type graph_def: str, optional
         :param title: A title for the graph. If no title is specified, the graph does not have a title.
         :type title: str, optional
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: GraphSnapshot
         """
         kwargs["start"] = start

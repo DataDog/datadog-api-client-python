@@ -267,8 +267,6 @@ class LogsArchivesApi:
         :param archive_id: The ID of the archive.
         :type archive_id: str
         :type body: RelationshipToRole
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["archive_id"] = archive_id
@@ -284,8 +282,6 @@ class LogsArchivesApi:
 
         :param body: The definition of the new archive.
         :type body: LogsArchiveCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsArchive
         """
         kwargs["body"] = body
@@ -299,8 +295,6 @@ class LogsArchivesApi:
 
         :param archive_id: The ID of the archive.
         :type archive_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["archive_id"] = archive_id
@@ -314,8 +308,6 @@ class LogsArchivesApi:
 
         :param archive_id: The ID of the archive.
         :type archive_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsArchive
         """
         kwargs["archive_id"] = archive_id
@@ -328,8 +320,6 @@ class LogsArchivesApi:
         Get the current order of your archives.
         This endpoint takes no JSON arguments.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsArchiveOrder
         """
         return self._get_logs_archive_order_endpoint.call_with_http_info(**kwargs)
@@ -341,8 +331,6 @@ class LogsArchivesApi:
 
         :param archive_id: The ID of the archive.
         :type archive_id: str
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: RolesResponse
         """
         kwargs["archive_id"] = archive_id
@@ -354,8 +342,6 @@ class LogsArchivesApi:
 
         Get the list of configured logs archives with their definitions.
 
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsArchives
         """
         return self._list_logs_archives_endpoint.call_with_http_info(**kwargs)
@@ -368,8 +354,6 @@ class LogsArchivesApi:
         :param archive_id: The ID of the archive.
         :type archive_id: str
         :type body: RelationshipToRole
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
         kwargs["archive_id"] = archive_id
@@ -390,8 +374,6 @@ class LogsArchivesApi:
         :type archive_id: str
         :param body: New definition of the archive.
         :type body: LogsArchiveCreateRequest
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsArchive
         """
         kwargs["archive_id"] = archive_id
@@ -411,8 +393,6 @@ class LogsArchivesApi:
 
         :param body: An object containing the new ordered list of archive IDs.
         :type body: LogsArchiveOrder
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsArchiveOrder
         """
         kwargs["body"] = body
