@@ -10,6 +10,8 @@ from yaml import CSafeLoader
 
 from . import formatter
 
+PRIMITIVE_TYPES = ["string", "number", "boolean", "integer"]
+
 with (pathlib.Path(__file__).parent / "replacement.json").open() as f:
     EDGE_CASES = json.load(f)
 
@@ -20,20 +22,7 @@ def load(filename):
         return JsonRef.replace_refs(yaml.load(fp, Loader=CSafeLoader))
 
 
-def type_to_python(schema, alternative_name=None):
-    """Return Python type name for the type."""
-    name = formatter.get_name(schema)
-    if name:
-        if "enum" in schema:
-            return name
-        if schema.get("type", "object") in ("object", "array"):
-            return name
-
-    type_ = schema.get("type")
-    if type_ is None:
-        if "items" in schema:
-            type_ = "array"
-
+def type_ty_python_helper(type_, schema, alternative_name=None, in_list=False):
     if type_ is None:
         return "bool, date, datetime, dict, float, int, list, str, none_type"
 
@@ -51,7 +40,7 @@ def type_to_python(schema, alternative_name=None):
     elif type_ == "boolean":
         return "bool"
     elif type_ == "array":
-        return "[{}]".format(type_to_python(schema["items"]))
+        return "[{}]".format(type_to_python(schema["items"], in_list=True))
     elif type_ == "object":
         if "additionalProperties" in schema:
             nested_schema = schema["additionalProperties"]
@@ -74,6 +63,32 @@ def type_to_python(schema, alternative_name=None):
         return "none_type"
     else:
         raise ValueError(f"Unknown type {type_}")
+
+
+def type_to_python(schema, alternative_name=None, in_list=False):
+    """Return Python type name for the type."""
+    name = formatter.get_name(schema)
+    if name:
+        if "enum" in schema:
+            return name
+        if schema.get("type", "object") in ("object", "array"):
+            return name
+
+    type_ = schema.get("type")
+    if type_ is None:
+        if "oneOf" in schema and in_list:
+            type_ = ""
+            for child in schema["oneOf"]:
+                # We do not generate model for nested primitive oneOfs
+                if in_list and "items" in child and child["items"].get("type") in PRIMITIVE_TYPES:
+                    type_ += f"{type_ty_python_helper(child.get('type'), child, in_list=in_list)},"
+                else:
+                    type_ += f"{type_to_python(child, in_list=in_list)},"
+            return type_
+        if "items" in schema:
+            type_ = "array"
+
+    return type_ty_python_helper(type_, schema, alternative_name=alternative_name, in_list=in_list)
 
 
 def get_type_for_attribute(schema, attribute, current_name=None):
@@ -120,7 +135,7 @@ def get_enum_default(model):
     return model["enum"][0] if len(model["enum"]) == 1 else model.get("default")
 
 
-def child_models(schema, alternative_name=None, seen=None):
+def child_models(schema, alternative_name=None, seen=None, in_list=False):
     seen = seen or set()
     current_name = formatter.get_name(schema)
     name = current_name or alternative_name
@@ -133,6 +148,9 @@ def child_models(schema, alternative_name=None, seen=None):
     if "oneOf" in schema:
         has_sub_models = True
         for child in schema["oneOf"]:
+            # Don't generate models for nested primitive types
+            if in_list and child.get("type") in PRIMITIVE_TYPES:
+                return
             yield from child_models(child, seen=seen)
     if "anyOf" in schema:
         has_sub_models = True
@@ -144,6 +162,7 @@ def child_models(schema, alternative_name=None, seen=None):
             schema["items"],
             None,
             seen=seen,
+            in_list=True
         )
 
     if schema.get("type") == "object" or "properties" in schema or has_sub_models:
