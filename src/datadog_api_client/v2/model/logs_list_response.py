@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.log import Log
-    from datadog_api_client.v2.model.logs_list_response_links import LogsListResponseLinks
-    from datadog_api_client.v2.model.logs_response_metadata import LogsResponseMetadata
-
-    globals()["Log"] = Log
-    globals()["LogsListResponseLinks"] = LogsListResponseLinks
-    globals()["LogsResponseMetadata"] = LogsResponseMetadata
-
-
 class LogsListResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.log import Log
+        from datadog_api_client.v2.model.logs_list_response_links import LogsListResponseLinks
+        from datadog_api_client.v2.model.logs_response_metadata import LogsResponseMetadata
+
         return {
             "data": ([Log],),
             "links": (LogsListResponseLinks,),

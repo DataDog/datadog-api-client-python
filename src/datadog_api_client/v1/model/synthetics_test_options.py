@@ -9,20 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
-    from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
-    from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
-    from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
-    from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
-
-    globals()["SyntheticsDeviceID"] = SyntheticsDeviceID
-    globals()["SyntheticsTestOptionsMonitorOptions"] = SyntheticsTestOptionsMonitorOptions
-    globals()["SyntheticsRestrictedRoles"] = SyntheticsRestrictedRoles
-    globals()["SyntheticsTestOptionsRetry"] = SyntheticsTestOptionsRetry
-    globals()["SyntheticsBrowserTestRumSettings"] = SyntheticsBrowserTestRumSettings
-
-
 class SyntheticsTestOptions(ModelNormal):
     validations = {
         "monitor_priority": {
@@ -37,7 +23,14 @@ class SyntheticsTestOptions(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
+        from datadog_api_client.v1.model.synthetics_test_options_monitor_options import (
+            SyntheticsTestOptionsMonitorOptions,
+        )
+        from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
+        from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
+        from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
+
         return {
             "accept_self_signed": (bool,),
             "allow_insecure": (bool,),

@@ -10,24 +10,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.monitor_options_aggregation import MonitorOptionsAggregation
-    from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
-    from datadog_api_client.v1.model.monitor_renotify_status_type import MonitorRenotifyStatusType
-    from datadog_api_client.v1.model.monitor_threshold_window_options import MonitorThresholdWindowOptions
-    from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
-    from datadog_api_client.v1.model.monitor_formula_and_function_query_definition import (
-        MonitorFormulaAndFunctionQueryDefinition,
-    )
-
-    globals()["MonitorOptionsAggregation"] = MonitorOptionsAggregation
-    globals()["MonitorDeviceID"] = MonitorDeviceID
-    globals()["MonitorRenotifyStatusType"] = MonitorRenotifyStatusType
-    globals()["MonitorThresholdWindowOptions"] = MonitorThresholdWindowOptions
-    globals()["MonitorThresholds"] = MonitorThresholds
-    globals()["MonitorFormulaAndFunctionQueryDefinition"] = MonitorFormulaAndFunctionQueryDefinition
-
-
 class MonitorOptions(ModelNormal):
     validations = {
         "min_failure_duration": {
@@ -38,7 +20,15 @@ class MonitorOptions(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.monitor_options_aggregation import MonitorOptionsAggregation
+        from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
+        from datadog_api_client.v1.model.monitor_renotify_status_type import MonitorRenotifyStatusType
+        from datadog_api_client.v1.model.monitor_threshold_window_options import MonitorThresholdWindowOptions
+        from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
+        from datadog_api_client.v1.model.monitor_formula_and_function_query_definition import (
+            MonitorFormulaAndFunctionQueryDefinition,
+        )
+
         return {
             "aggregation": (MonitorOptionsAggregation,),
             "device_ids": ([MonitorDeviceID],),

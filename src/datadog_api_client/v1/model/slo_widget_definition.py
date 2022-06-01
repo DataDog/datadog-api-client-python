@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_time_windows import WidgetTimeWindows
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.slo_widget_definition_type import SLOWidgetDefinitionType
-    from datadog_api_client.v1.model.widget_view_mode import WidgetViewMode
-
-    globals()["WidgetTimeWindows"] = WidgetTimeWindows
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["SLOWidgetDefinitionType"] = SLOWidgetDefinitionType
-    globals()["WidgetViewMode"] = WidgetViewMode
-
-
 class SLOWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_time_windows import WidgetTimeWindows
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.slo_widget_definition_type import SLOWidgetDefinitionType
+        from datadog_api_client.v1.model.widget_view_mode import WidgetViewMode
+
         return {
             "global_time_target": (str,),
             "show_error_budget": (bool,),

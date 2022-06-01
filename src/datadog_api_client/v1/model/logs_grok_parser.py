@@ -9,14 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_grok_parser_rules import LogsGrokParserRules
-    from datadog_api_client.v1.model.logs_grok_parser_type import LogsGrokParserType
-
-    globals()["LogsGrokParserRules"] = LogsGrokParserRules
-    globals()["LogsGrokParserType"] = LogsGrokParserType
-
-
 class LogsGrokParser(ModelNormal):
     validations = {
         "samples": {
@@ -26,7 +18,9 @@ class LogsGrokParser(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_grok_parser_rules import LogsGrokParserRules
+        from datadog_api_client.v1.model.logs_grok_parser_type import LogsGrokParserType
+
         return {
             "grok": (LogsGrokParserRules,),
             "is_enabled": (bool,),

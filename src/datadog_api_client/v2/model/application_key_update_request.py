@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.application_key_update_data import ApplicationKeyUpdateData
-
-    globals()["ApplicationKeyUpdateData"] = ApplicationKeyUpdateData
-
-
 class ApplicationKeyUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.application_key_update_data import ApplicationKeyUpdateData
+
         return {
             "data": (ApplicationKeyUpdateData,),
         }

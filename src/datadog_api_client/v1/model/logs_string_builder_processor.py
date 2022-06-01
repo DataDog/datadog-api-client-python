@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_string_builder_processor_type import LogsStringBuilderProcessorType
-
-    globals()["LogsStringBuilderProcessorType"] = LogsStringBuilderProcessorType
-
-
 class LogsStringBuilderProcessor(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_string_builder_processor_type import LogsStringBuilderProcessorType
+
         return {
             "is_enabled": (bool,),
             "is_replace_missing": (bool,),

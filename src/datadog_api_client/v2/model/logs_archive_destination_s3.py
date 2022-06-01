@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_archive_integration_s3 import LogsArchiveIntegrationS3
-    from datadog_api_client.v2.model.logs_archive_destination_s3_type import LogsArchiveDestinationS3Type
-
-    globals()["LogsArchiveIntegrationS3"] = LogsArchiveIntegrationS3
-    globals()["LogsArchiveDestinationS3Type"] = LogsArchiveDestinationS3Type
-
-
 class LogsArchiveDestinationS3(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_archive_integration_s3 import LogsArchiveIntegrationS3
+        from datadog_api_client.v2.model.logs_archive_destination_s3_type import LogsArchiveDestinationS3Type
+
         return {
             "bucket": (str,),
             "integration": (LogsArchiveIntegrationS3,),

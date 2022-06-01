@@ -10,18 +10,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_trigger_ci_test_location import SyntheticsTriggerCITestLocation
-    from datadog_api_client.v1.model.synthetics_trigger_ci_test_run_result import SyntheticsTriggerCITestRunResult
-
-    globals()["SyntheticsTriggerCITestLocation"] = SyntheticsTriggerCITestLocation
-    globals()["SyntheticsTriggerCITestRunResult"] = SyntheticsTriggerCITestRunResult
-
-
 class SyntheticsTriggerCITestsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_trigger_ci_test_location import SyntheticsTriggerCITestLocation
+        from datadog_api_client.v1.model.synthetics_trigger_ci_test_run_result import SyntheticsTriggerCITestRunResult
+
         return {
             "batch_id": (str, none_type),
             "locations": ([SyntheticsTriggerCITestLocation],),

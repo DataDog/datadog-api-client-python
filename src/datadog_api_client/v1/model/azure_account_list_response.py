@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.azure_account import AzureAccount
-
-    globals()["AzureAccount"] = AzureAccount
-
-
 class AzureAccountListResponse(ModelSimple):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.azure_account import AzureAccount
+
         return {
             "value": ([AzureAccount],),
         }

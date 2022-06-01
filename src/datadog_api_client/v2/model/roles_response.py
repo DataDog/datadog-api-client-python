@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.role import Role
-    from datadog_api_client.v2.model.response_meta_attributes import ResponseMetaAttributes
-
-    globals()["Role"] = Role
-    globals()["ResponseMetaAttributes"] = ResponseMetaAttributes
-
-
 class RolesResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.role import Role
+        from datadog_api_client.v2.model.response_meta_attributes import ResponseMetaAttributes
+
         return {
             "data": ([Role],),
             "meta": (ResponseMetaAttributes,),

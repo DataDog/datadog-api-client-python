@@ -10,18 +10,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_aggregate_bucket_value_timeseries_point import (
-        LogsAggregateBucketValueTimeseriesPoint,
-    )
-
-    globals()["LogsAggregateBucketValueTimeseriesPoint"] = LogsAggregateBucketValueTimeseriesPoint
-
-
 class LogsAggregateBucketValueTimeseries(ModelSimple):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_aggregate_bucket_value_timeseries_point import (
+            LogsAggregateBucketValueTimeseriesPoint,
+        )
+
         return {
             "value": ([LogsAggregateBucketValueTimeseriesPoint],),
         }

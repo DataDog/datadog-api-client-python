@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
-    from datadog_api_client.v1.model.synthetics_test_execution_rule import SyntheticsTestExecutionRule
-    from datadog_api_client.v1.model.synthetics_status import SyntheticsStatus
-    from datadog_api_client.v1.model.synthetics_test_details_type import SyntheticsTestDetailsType
-
-    globals()["SyntheticsDeviceID"] = SyntheticsDeviceID
-    globals()["SyntheticsTestExecutionRule"] = SyntheticsTestExecutionRule
-    globals()["SyntheticsStatus"] = SyntheticsStatus
-    globals()["SyntheticsTestDetailsType"] = SyntheticsTestDetailsType
-
-
 class SyntheticsBatchResult(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
+        from datadog_api_client.v1.model.synthetics_test_execution_rule import SyntheticsTestExecutionRule
+        from datadog_api_client.v1.model.synthetics_status import SyntheticsStatus
+        from datadog_api_client.v1.model.synthetics_test_details_type import SyntheticsTestDetailsType
+
         return {
             "device": (SyntheticsDeviceID,),
             "duration": (float,),

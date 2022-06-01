@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.process_summaries_meta_page import ProcessSummariesMetaPage
-
-    globals()["ProcessSummariesMetaPage"] = ProcessSummariesMetaPage
-
-
 class ProcessSummariesMeta(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.process_summaries_meta_page import ProcessSummariesMetaPage
+
         return {
             "page": (ProcessSummariesMetaPage,),
         }

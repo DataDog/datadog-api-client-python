@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.apm_stats_query_column_type import ApmStatsQueryColumnType
-    from datadog_api_client.v1.model.apm_stats_query_row_type import ApmStatsQueryRowType
-
-    globals()["ApmStatsQueryColumnType"] = ApmStatsQueryColumnType
-    globals()["ApmStatsQueryRowType"] = ApmStatsQueryRowType
-
-
 class ApmStatsQueryDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.apm_stats_query_column_type import ApmStatsQueryColumnType
+        from datadog_api_client.v1.model.apm_stats_query_row_type import ApmStatsQueryRowType
+
         return {
             "columns": ([ApmStatsQueryColumnType],),
             "env": (str,),

@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.list_stream_column import ListStreamColumn
-    from datadog_api_client.v1.model.list_stream_query import ListStreamQuery
-    from datadog_api_client.v1.model.list_stream_response_format import ListStreamResponseFormat
-
-    globals()["ListStreamColumn"] = ListStreamColumn
-    globals()["ListStreamQuery"] = ListStreamQuery
-    globals()["ListStreamResponseFormat"] = ListStreamResponseFormat
-
-
 class ListStreamWidgetRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.list_stream_column import ListStreamColumn
+        from datadog_api_client.v1.model.list_stream_query import ListStreamQuery
+        from datadog_api_client.v1.model.list_stream_response_format import ListStreamResponseFormat
+
         return {
             "columns": ([ListStreamColumn],),
             "query": (ListStreamQuery,),

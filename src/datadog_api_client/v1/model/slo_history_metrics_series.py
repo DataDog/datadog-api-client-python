@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_history_metrics_series_metadata import SLOHistoryMetricsSeriesMetadata
-
-    globals()["SLOHistoryMetricsSeriesMetadata"] = SLOHistoryMetricsSeriesMetadata
-
-
 class SLOHistoryMetricsSeries(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_history_metrics_series_metadata import SLOHistoryMetricsSeriesMetadata
+
         return {
             "count": (int,),
             "metadata": (SLOHistoryMetricsSeriesMetadata,),

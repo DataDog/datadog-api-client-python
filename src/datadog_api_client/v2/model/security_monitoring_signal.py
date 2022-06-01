@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.security_monitoring_signal_attributes import SecurityMonitoringSignalAttributes
-    from datadog_api_client.v2.model.security_monitoring_signal_type import SecurityMonitoringSignalType
-
-    globals()["SecurityMonitoringSignalAttributes"] = SecurityMonitoringSignalAttributes
-    globals()["SecurityMonitoringSignalType"] = SecurityMonitoringSignalType
-
-
 class SecurityMonitoringSignal(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.security_monitoring_signal_attributes import SecurityMonitoringSignalAttributes
+        from datadog_api_client.v2.model.security_monitoring_signal_type import SecurityMonitoringSignalType
+
         return {
             "attributes": (SecurityMonitoringSignalAttributes,),
             "id": (str,),

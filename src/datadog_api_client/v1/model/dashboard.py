@@ -11,24 +11,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
-    from datadog_api_client.v1.model.dashboard_reflow_type import DashboardReflowType
-    from datadog_api_client.v1.model.dashboard_template_variable_preset import DashboardTemplateVariablePreset
-    from datadog_api_client.v1.model.dashboard_template_variable import DashboardTemplateVariable
-    from datadog_api_client.v1.model.widget import Widget
-
-    globals()["DashboardLayoutType"] = DashboardLayoutType
-    globals()["DashboardReflowType"] = DashboardReflowType
-    globals()["DashboardTemplateVariablePreset"] = DashboardTemplateVariablePreset
-    globals()["DashboardTemplateVariable"] = DashboardTemplateVariable
-    globals()["Widget"] = Widget
-
-
 class Dashboard(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
+        from datadog_api_client.v1.model.dashboard_reflow_type import DashboardReflowType
+        from datadog_api_client.v1.model.dashboard_template_variable_preset import DashboardTemplateVariablePreset
+        from datadog_api_client.v1.model.dashboard_template_variable import DashboardTemplateVariable
+        from datadog_api_client.v1.model.widget import Widget
+
         return {
             "author_handle": (str,),
             "author_name": (str, none_type),

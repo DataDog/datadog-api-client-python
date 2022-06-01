@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.audit_logs_event import AuditLogsEvent
-    from datadog_api_client.v2.model.audit_logs_response_links import AuditLogsResponseLinks
-    from datadog_api_client.v2.model.audit_logs_response_metadata import AuditLogsResponseMetadata
-
-    globals()["AuditLogsEvent"] = AuditLogsEvent
-    globals()["AuditLogsResponseLinks"] = AuditLogsResponseLinks
-    globals()["AuditLogsResponseMetadata"] = AuditLogsResponseMetadata
-
-
 class AuditLogsEventsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.audit_logs_event import AuditLogsEvent
+        from datadog_api_client.v2.model.audit_logs_response_links import AuditLogsResponseLinks
+        from datadog_api_client.v2.model.audit_logs_response_metadata import AuditLogsResponseMetadata
+
         return {
             "data": ([AuditLogsEvent],),
             "links": (AuditLogsResponseLinks,),

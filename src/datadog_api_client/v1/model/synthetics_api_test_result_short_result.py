@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_timing import SyntheticsTiming
-
-    globals()["SyntheticsTiming"] = SyntheticsTiming
-
-
 class SyntheticsAPITestResultShortResult(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_timing import SyntheticsTiming
+
         return {
             "passed": (bool,),
             "timings": (SyntheticsTiming,),

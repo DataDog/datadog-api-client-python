@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
-    from datadog_api_client.v2.model.organizations_type import OrganizationsType
-
-    globals()["OrganizationAttributes"] = OrganizationAttributes
-    globals()["OrganizationsType"] = OrganizationsType
-
-
 class Organization(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
+        from datadog_api_client.v2.model.organizations_type import OrganizationsType
+
         return {
             "attributes": (OrganizationAttributes,),
             "id": (str,),

@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_sort import WidgetSort
-
-    globals()["WidgetSort"] = WidgetSort
-
-
 class LogQueryDefinitionGroupBySort(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_sort import WidgetSort
+
         return {
             "aggregation": (str,),
             "facet": (str,),

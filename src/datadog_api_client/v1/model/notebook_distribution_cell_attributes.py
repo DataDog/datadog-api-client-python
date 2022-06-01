@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
-    from datadog_api_client.v1.model.notebook_graph_size import NotebookGraphSize
-    from datadog_api_client.v1.model.notebook_split_by import NotebookSplitBy
-    from datadog_api_client.v1.model.notebook_cell_time import NotebookCellTime
-
-    globals()["DistributionWidgetDefinition"] = DistributionWidgetDefinition
-    globals()["NotebookGraphSize"] = NotebookGraphSize
-    globals()["NotebookSplitBy"] = NotebookSplitBy
-    globals()["NotebookCellTime"] = NotebookCellTime
-
-
 class NotebookDistributionCellAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
+        from datadog_api_client.v1.model.notebook_graph_size import NotebookGraphSize
+        from datadog_api_client.v1.model.notebook_split_by import NotebookSplitBy
+        from datadog_api_client.v1.model.notebook_cell_time import NotebookCellTime
+
         return {
             "definition": (DistributionWidgetDefinition,),
             "graph_size": (NotebookGraphSize,),

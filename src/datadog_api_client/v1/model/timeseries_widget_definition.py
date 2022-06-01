@@ -9,30 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
-    from datadog_api_client.v1.model.widget_event import WidgetEvent
-    from datadog_api_client.v1.model.timeseries_widget_legend_column import TimeseriesWidgetLegendColumn
-    from datadog_api_client.v1.model.timeseries_widget_legend_layout import TimeseriesWidgetLegendLayout
-    from datadog_api_client.v1.model.widget_marker import WidgetMarker
-    from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidgetRequest
-    from datadog_api_client.v1.model.widget_axis import WidgetAxis
-    from datadog_api_client.v1.model.widget_time import WidgetTime
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
-
-    globals()["WidgetCustomLink"] = WidgetCustomLink
-    globals()["WidgetEvent"] = WidgetEvent
-    globals()["TimeseriesWidgetLegendColumn"] = TimeseriesWidgetLegendColumn
-    globals()["TimeseriesWidgetLegendLayout"] = TimeseriesWidgetLegendLayout
-    globals()["WidgetMarker"] = WidgetMarker
-    globals()["TimeseriesWidgetRequest"] = TimeseriesWidgetRequest
-    globals()["WidgetAxis"] = WidgetAxis
-    globals()["WidgetTime"] = WidgetTime
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["TimeseriesWidgetDefinitionType"] = TimeseriesWidgetDefinitionType
-
-
 class TimeseriesWidgetDefinition(ModelNormal):
     validations = {
         "requests": {
@@ -42,7 +18,17 @@ class TimeseriesWidgetDefinition(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+        from datadog_api_client.v1.model.widget_event import WidgetEvent
+        from datadog_api_client.v1.model.timeseries_widget_legend_column import TimeseriesWidgetLegendColumn
+        from datadog_api_client.v1.model.timeseries_widget_legend_layout import TimeseriesWidgetLegendLayout
+        from datadog_api_client.v1.model.widget_marker import WidgetMarker
+        from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidgetRequest
+        from datadog_api_client.v1.model.widget_axis import WidgetAxis
+        from datadog_api_client.v1.model.widget_time import WidgetTime
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
+
         return {
             "custom_links": ([WidgetCustomLink],),
             "events": ([WidgetEvent],),

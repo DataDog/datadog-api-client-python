@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_message_remapper_type import LogsMessageRemapperType
-
-    globals()["LogsMessageRemapperType"] = LogsMessageRemapperType
-
-
 class LogsMessageRemapper(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_message_remapper_type import LogsMessageRemapperType
+
         return {
             "is_enabled": (bool,),
             "name": (str,),

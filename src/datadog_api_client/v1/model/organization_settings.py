@@ -9,28 +9,21 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.organization_settings_saml import OrganizationSettingsSaml
-    from datadog_api_client.v1.model.access_role import AccessRole
-    from datadog_api_client.v1.model.organization_settings_saml_autocreate_users_domains import (
-        OrganizationSettingsSamlAutocreateUsersDomains,
-    )
-    from datadog_api_client.v1.model.organization_settings_saml_idp_initiated_login import (
-        OrganizationSettingsSamlIdpInitiatedLogin,
-    )
-    from datadog_api_client.v1.model.organization_settings_saml_strict_mode import OrganizationSettingsSamlStrictMode
-
-    globals()["OrganizationSettingsSaml"] = OrganizationSettingsSaml
-    globals()["AccessRole"] = AccessRole
-    globals()["OrganizationSettingsSamlAutocreateUsersDomains"] = OrganizationSettingsSamlAutocreateUsersDomains
-    globals()["OrganizationSettingsSamlIdpInitiatedLogin"] = OrganizationSettingsSamlIdpInitiatedLogin
-    globals()["OrganizationSettingsSamlStrictMode"] = OrganizationSettingsSamlStrictMode
-
-
 class OrganizationSettings(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.organization_settings_saml import OrganizationSettingsSaml
+        from datadog_api_client.v1.model.access_role import AccessRole
+        from datadog_api_client.v1.model.organization_settings_saml_autocreate_users_domains import (
+            OrganizationSettingsSamlAutocreateUsersDomains,
+        )
+        from datadog_api_client.v1.model.organization_settings_saml_idp_initiated_login import (
+            OrganizationSettingsSamlIdpInitiatedLogin,
+        )
+        from datadog_api_client.v1.model.organization_settings_saml_strict_mode import (
+            OrganizationSettingsSamlStrictMode,
+        )
+
         return {
             "private_widget_share": (bool,),
             "saml": (OrganizationSettingsSaml,),

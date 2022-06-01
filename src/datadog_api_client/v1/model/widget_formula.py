@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
-    from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
-    from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
-
-    globals()["TableWidgetCellDisplayMode"] = TableWidgetCellDisplayMode
-    globals()["WidgetConditionalFormat"] = WidgetConditionalFormat
-    globals()["WidgetFormulaLimit"] = WidgetFormulaLimit
-
-
 class WidgetFormula(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
+        from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
+        from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
+
         return {
             "alias": (str,),
             "cell_display_mode": (TableWidgetCellDisplayMode,),

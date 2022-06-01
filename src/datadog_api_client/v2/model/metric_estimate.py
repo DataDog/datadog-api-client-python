@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.metric_estimate_attributes import MetricEstimateAttributes
-    from datadog_api_client.v2.model.metric_estimate_resource_type import MetricEstimateResourceType
-
-    globals()["MetricEstimateAttributes"] = MetricEstimateAttributes
-    globals()["MetricEstimateResourceType"] = MetricEstimateResourceType
-
-
 class MetricEstimate(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.metric_estimate_attributes import MetricEstimateAttributes
+        from datadog_api_client.v2.model.metric_estimate_resource_type import MetricEstimateResourceType
+
         return {
             "attributes": (MetricEstimateAttributes,),
             "id": (str,),

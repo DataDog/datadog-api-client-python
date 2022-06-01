@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_ci_batch_metadata import SyntheticsCIBatchMetadata
-    from datadog_api_client.v1.model.synthetics_batch_result import SyntheticsBatchResult
-    from datadog_api_client.v1.model.synthetics_status import SyntheticsStatus
-
-    globals()["SyntheticsCIBatchMetadata"] = SyntheticsCIBatchMetadata
-    globals()["SyntheticsBatchResult"] = SyntheticsBatchResult
-    globals()["SyntheticsStatus"] = SyntheticsStatus
-
-
 class SyntheticsBatchDetailsData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_ci_batch_metadata import SyntheticsCIBatchMetadata
+        from datadog_api_client.v1.model.synthetics_batch_result import SyntheticsBatchResult
+        from datadog_api_client.v1.model.synthetics_status import SyntheticsStatus
+
         return {
             "metadata": (SyntheticsCIBatchMetadata,),
             "results": ([SyntheticsBatchResult],),

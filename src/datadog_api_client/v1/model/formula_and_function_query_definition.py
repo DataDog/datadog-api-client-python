@@ -9,32 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
-        FormulaAndFunctionMetricQueryDefinition,
-    )
-    from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
-        FormulaAndFunctionEventQueryDefinition,
-    )
-    from datadog_api_client.v1.model.formula_and_function_process_query_definition import (
-        FormulaAndFunctionProcessQueryDefinition,
-    )
-    from datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_query_definition import (
-        FormulaAndFunctionApmDependencyStatsQueryDefinition,
-    )
-    from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_definition import (
-        FormulaAndFunctionApmResourceStatsQueryDefinition,
-    )
-
-    globals()["FormulaAndFunctionMetricQueryDefinition"] = FormulaAndFunctionMetricQueryDefinition
-    globals()["FormulaAndFunctionEventQueryDefinition"] = FormulaAndFunctionEventQueryDefinition
-    globals()["FormulaAndFunctionProcessQueryDefinition"] = FormulaAndFunctionProcessQueryDefinition
-    globals()[
-        "FormulaAndFunctionApmDependencyStatsQueryDefinition"
-    ] = FormulaAndFunctionApmDependencyStatsQueryDefinition
-    globals()["FormulaAndFunctionApmResourceStatsQueryDefinition"] = FormulaAndFunctionApmResourceStatsQueryDefinition
-
-
 class FormulaAndFunctionQueryDefinition(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
@@ -129,7 +103,22 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        lazy_import()
+        from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
+            FormulaAndFunctionMetricQueryDefinition,
+        )
+        from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
+            FormulaAndFunctionEventQueryDefinition,
+        )
+        from datadog_api_client.v1.model.formula_and_function_process_query_definition import (
+            FormulaAndFunctionProcessQueryDefinition,
+        )
+        from datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_query_definition import (
+            FormulaAndFunctionApmDependencyStatsQueryDefinition,
+        )
+        from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_definition import (
+            FormulaAndFunctionApmResourceStatsQueryDefinition,
+        )
+
         return {
             "anyOf": [],
             "allOf": [],

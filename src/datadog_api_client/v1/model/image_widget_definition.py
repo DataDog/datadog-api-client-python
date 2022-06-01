@@ -9,24 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontalAlign
-    from datadog_api_client.v1.model.widget_margin import WidgetMargin
-    from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
-    from datadog_api_client.v1.model.image_widget_definition_type import ImageWidgetDefinitionType
-    from datadog_api_client.v1.model.widget_vertical_align import WidgetVerticalAlign
-
-    globals()["WidgetHorizontalAlign"] = WidgetHorizontalAlign
-    globals()["WidgetMargin"] = WidgetMargin
-    globals()["WidgetImageSizing"] = WidgetImageSizing
-    globals()["ImageWidgetDefinitionType"] = ImageWidgetDefinitionType
-    globals()["WidgetVerticalAlign"] = WidgetVerticalAlign
-
-
 class ImageWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontalAlign
+        from datadog_api_client.v1.model.widget_margin import WidgetMargin
+        from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
+        from datadog_api_client.v1.model.image_widget_definition_type import ImageWidgetDefinitionType
+        from datadog_api_client.v1.model.widget_vertical_align import WidgetVerticalAlign
+
         return {
             "has_background": (bool,),
             "has_border": (bool,),

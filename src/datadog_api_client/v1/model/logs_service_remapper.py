@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_service_remapper_type import LogsServiceRemapperType
-
-    globals()["LogsServiceRemapperType"] = LogsServiceRemapperType
-
-
 class LogsServiceRemapper(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_service_remapper_type import LogsServiceRemapperType
+
         return {
             "is_enabled": (bool,),
             "name": (str,),

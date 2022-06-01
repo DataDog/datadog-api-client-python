@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.rum_aggregation_function import RUMAggregationFunction
-    from datadog_api_client.v2.model.rum_sort_order import RUMSortOrder
-    from datadog_api_client.v2.model.rum_aggregate_sort_type import RUMAggregateSortType
-
-    globals()["RUMAggregationFunction"] = RUMAggregationFunction
-    globals()["RUMSortOrder"] = RUMSortOrder
-    globals()["RUMAggregateSortType"] = RUMAggregateSortType
-
-
 class RUMAggregateSort(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.rum_aggregation_function import RUMAggregationFunction
+        from datadog_api_client.v2.model.rum_sort_order import RUMSortOrder
+        from datadog_api_client.v2.model.rum_aggregate_sort_type import RUMAggregateSortType
+
         return {
             "aggregation": (RUMAggregationFunction,),
             "metric": (str,),

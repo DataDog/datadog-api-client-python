@@ -9,22 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_global_variable_attributes import SyntheticsGlobalVariableAttributes
-    from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options import (
-        SyntheticsGlobalVariableParseTestOptions,
-    )
-    from datadog_api_client.v1.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
-
-    globals()["SyntheticsGlobalVariableAttributes"] = SyntheticsGlobalVariableAttributes
-    globals()["SyntheticsGlobalVariableParseTestOptions"] = SyntheticsGlobalVariableParseTestOptions
-    globals()["SyntheticsGlobalVariableValue"] = SyntheticsGlobalVariableValue
-
-
 class SyntheticsGlobalVariable(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_global_variable_attributes import SyntheticsGlobalVariableAttributes
+        from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options import (
+            SyntheticsGlobalVariableParseTestOptions,
+        )
+        from datadog_api_client.v1.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
+
         return {
             "attributes": (SyntheticsGlobalVariableAttributes,),
             "description": (str,),

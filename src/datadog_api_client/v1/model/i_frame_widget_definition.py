@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.i_frame_widget_definition_type import IFrameWidgetDefinitionType
-
-    globals()["IFrameWidgetDefinitionType"] = IFrameWidgetDefinitionType
-
-
 class IFrameWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.i_frame_widget_definition_type import IFrameWidgetDefinitionType
+
         return {
             "type": (IFrameWidgetDefinitionType,),
             "url": (str,),

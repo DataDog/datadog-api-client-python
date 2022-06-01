@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.service_level_objective import ServiceLevelObjective
-    from datadog_api_client.v1.model.slo_list_response_metadata import SLOListResponseMetadata
-
-    globals()["ServiceLevelObjective"] = ServiceLevelObjective
-    globals()["SLOListResponseMetadata"] = SLOListResponseMetadata
-
-
 class SLOListResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.service_level_objective import ServiceLevelObjective
+        from datadog_api_client.v1.model.slo_list_response_metadata import SLOListResponseMetadata
+
         return {
             "data": ([ServiceLevelObjective],),
             "errors": ([str],),

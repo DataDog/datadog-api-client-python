@@ -9,18 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
-        SecurityMonitoringRuleQueryAggregation,
-    )
-
-    globals()["SecurityMonitoringRuleQueryAggregation"] = SecurityMonitoringRuleQueryAggregation
-
-
 class SecurityMonitoringRuleQueryCreate(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
+            SecurityMonitoringRuleQueryAggregation,
+        )
+
         return {
             "aggregation": (SecurityMonitoringRuleQueryAggregation,),
             "distinct_fields": ([str],),

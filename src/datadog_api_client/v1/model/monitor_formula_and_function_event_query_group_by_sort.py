@@ -9,20 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.monitor_formula_and_function_event_aggregation import (
-        MonitorFormulaAndFunctionEventAggregation,
-    )
-    from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
-
-    globals()["MonitorFormulaAndFunctionEventAggregation"] = MonitorFormulaAndFunctionEventAggregation
-    globals()["QuerySortOrder"] = QuerySortOrder
-
-
 class MonitorFormulaAndFunctionEventQueryGroupBySort(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.monitor_formula_and_function_event_aggregation import (
+            MonitorFormulaAndFunctionEventAggregation,
+        )
+        from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
+
         return {
             "aggregation": (MonitorFormulaAndFunctionEventAggregation,),
             "metric": (str,),

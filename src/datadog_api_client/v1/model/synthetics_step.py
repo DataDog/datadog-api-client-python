@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
-
-    globals()["SyntheticsStepType"] = SyntheticsStepType
-
-
 class SyntheticsStep(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
+
         return {
             "allow_failure": (bool,),
             "is_critical": (bool,),

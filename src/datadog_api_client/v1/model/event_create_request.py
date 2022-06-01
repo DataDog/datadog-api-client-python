@@ -9,14 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.event_alert_type import EventAlertType
-    from datadog_api_client.v1.model.event_priority import EventPriority
-
-    globals()["EventAlertType"] = EventAlertType
-    globals()["EventPriority"] = EventPriority
-
-
 class EventCreateRequest(ModelNormal):
     validations = {
         "aggregation_key": {
@@ -29,7 +21,9 @@ class EventCreateRequest(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.event_alert_type import EventAlertType
+        from datadog_api_client.v1.model.event_priority import EventPriority
+
         return {
             "aggregation_key": (str,),
             "alert_type": (EventAlertType,),

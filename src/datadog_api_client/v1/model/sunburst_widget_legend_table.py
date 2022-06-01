@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.sunburst_widget_legend_table_type import SunburstWidgetLegendTableType
-
-    globals()["SunburstWidgetLegendTableType"] = SunburstWidgetLegendTableType
-
-
 class SunburstWidgetLegendTable(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.sunburst_widget_legend_table_type import SunburstWidgetLegendTableType
+
         return {
             "type": (SunburstWidgetLegendTableType,),
         }

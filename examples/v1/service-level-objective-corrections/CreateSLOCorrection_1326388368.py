@@ -31,7 +31,6 @@ body = SLOCorrectionCreateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_slo_correction"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ServiceLevelObjectiveCorrectionsApi(api_client)
     response = api_instance.create_slo_correction(body=body)

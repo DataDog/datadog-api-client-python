@@ -9,22 +9,17 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_assertion_json_path_operator import SyntheticsAssertionJSONPathOperator
-    from datadog_api_client.v1.model.synthetics_assertion_json_path_target_target import (
-        SyntheticsAssertionJSONPathTargetTarget,
-    )
-    from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
-
-    globals()["SyntheticsAssertionJSONPathOperator"] = SyntheticsAssertionJSONPathOperator
-    globals()["SyntheticsAssertionJSONPathTargetTarget"] = SyntheticsAssertionJSONPathTargetTarget
-    globals()["SyntheticsAssertionType"] = SyntheticsAssertionType
-
-
 class SyntheticsAssertionJSONPathTarget(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_assertion_json_path_operator import (
+            SyntheticsAssertionJSONPathOperator,
+        )
+        from datadog_api_client.v1.model.synthetics_assertion_json_path_target_target import (
+            SyntheticsAssertionJSONPathTargetTarget,
+        )
+        from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
+
         return {
             "operator": (SyntheticsAssertionJSONPathOperator,),
             "_property": (str,),

@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
-
-    globals()["SLOTimeframe"] = SLOTimeframe
-
-
 class SLOBulkDelete(ModelNormal):
     @cached_property
     def additional_properties_type(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
+
         return ([SLOTimeframe],)
 
     def __init__(self, *args, **kwargs):

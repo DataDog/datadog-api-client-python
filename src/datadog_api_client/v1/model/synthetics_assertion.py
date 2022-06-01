@@ -9,14 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
-    from datadog_api_client.v1.model.synthetics_assertion_json_path_target import SyntheticsAssertionJSONPathTarget
-
-    globals()["SyntheticsAssertionTarget"] = SyntheticsAssertionTarget
-    globals()["SyntheticsAssertionJSONPathTarget"] = SyntheticsAssertionJSONPathTarget
-
-
 class SyntheticsAssertion(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
@@ -58,7 +50,9 @@ class SyntheticsAssertion(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
+        from datadog_api_client.v1.model.synthetics_assertion_json_path_target import SyntheticsAssertionJSONPathTarget
+
         return {
             "anyOf": [],
             "allOf": [],

@@ -9,16 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.formula_and_function_event_aggregation import FormulaAndFunctionEventAggregation
-
-    globals()["FormulaAndFunctionEventAggregation"] = FormulaAndFunctionEventAggregation
-
-
 class FormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.formula_and_function_event_aggregation import (
+            FormulaAndFunctionEventAggregation,
+        )
+
         return {
             "aggregation": (FormulaAndFunctionEventAggregation,),
             "interval": (int,),

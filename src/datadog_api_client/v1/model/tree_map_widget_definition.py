@@ -9,20 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.tree_map_color_by import TreeMapColorBy
-    from datadog_api_client.v1.model.tree_map_group_by import TreeMapGroupBy
-    from datadog_api_client.v1.model.tree_map_widget_request import TreeMapWidgetRequest
-    from datadog_api_client.v1.model.tree_map_size_by import TreeMapSizeBy
-    from datadog_api_client.v1.model.tree_map_widget_definition_type import TreeMapWidgetDefinitionType
-
-    globals()["TreeMapColorBy"] = TreeMapColorBy
-    globals()["TreeMapGroupBy"] = TreeMapGroupBy
-    globals()["TreeMapWidgetRequest"] = TreeMapWidgetRequest
-    globals()["TreeMapSizeBy"] = TreeMapSizeBy
-    globals()["TreeMapWidgetDefinitionType"] = TreeMapWidgetDefinitionType
-
-
 class TreeMapWidgetDefinition(ModelNormal):
     validations = {
         "requests": {
@@ -33,7 +19,12 @@ class TreeMapWidgetDefinition(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.tree_map_color_by import TreeMapColorBy
+        from datadog_api_client.v1.model.tree_map_group_by import TreeMapGroupBy
+        from datadog_api_client.v1.model.tree_map_widget_request import TreeMapWidgetRequest
+        from datadog_api_client.v1.model.tree_map_size_by import TreeMapSizeBy
+        from datadog_api_client.v1.model.tree_map_widget_definition_type import TreeMapWidgetDefinitionType
+
         return {
             "color_by": (TreeMapColorBy,),
             "group_by": (TreeMapGroupBy,),

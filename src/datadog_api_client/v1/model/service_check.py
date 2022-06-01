@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.service_check_status import ServiceCheckStatus
-
-    globals()["ServiceCheckStatus"] = ServiceCheckStatus
-
-
 class ServiceCheck(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.service_check_status import ServiceCheckStatus
+
         return {
             "check": (str,),
             "host_name": (str,),

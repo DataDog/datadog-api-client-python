@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
-    from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
-
-    globals()["CostByOrgAttributes"] = CostByOrgAttributes
-    globals()["CostByOrgType"] = CostByOrgType
-
-
 class CostByOrg(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
+        from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
+
         return {
             "attributes": (CostByOrgAttributes,),
             "id": (str,),

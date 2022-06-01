@@ -9,24 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.widget_formula import WidgetFormula
-    from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
-    from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
-    from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
-
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["WidgetFormula"] = WidgetFormula
-    globals()["ProcessQueryDefinition"] = ProcessQueryDefinition
-    globals()["FormulaAndFunctionQueryDefinition"] = FormulaAndFunctionQueryDefinition
-    globals()["FormulaAndFunctionResponseFormat"] = FormulaAndFunctionResponseFormat
-
-
 class SunburstWidgetRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
+        from datadog_api_client.v1.model.widget_formula import WidgetFormula
+        from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
+        from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
+        from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+
         return {
             "apm_query": (LogQueryDefinition,),
             "audit_query": (LogQueryDefinition,),

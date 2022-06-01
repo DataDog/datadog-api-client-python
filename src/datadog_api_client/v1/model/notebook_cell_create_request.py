@@ -9,18 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.notebook_cell_create_request_attributes import NotebookCellCreateRequestAttributes
-    from datadog_api_client.v1.model.notebook_cell_resource_type import NotebookCellResourceType
-
-    globals()["NotebookCellCreateRequestAttributes"] = NotebookCellCreateRequestAttributes
-    globals()["NotebookCellResourceType"] = NotebookCellResourceType
-
-
 class NotebookCellCreateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.notebook_cell_create_request_attributes import (
+            NotebookCellCreateRequestAttributes,
+        )
+        from datadog_api_client.v1.model.notebook_cell_resource_type import NotebookCellResourceType
+
         return {
             "attributes": (NotebookCellCreateRequestAttributes,),
             "type": (NotebookCellResourceType,),

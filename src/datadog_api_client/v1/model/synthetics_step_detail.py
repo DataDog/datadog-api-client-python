@@ -12,28 +12,17 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_browser_error import SyntheticsBrowserError
-    from datadog_api_client.v1.model.synthetics_check_type import SyntheticsCheckType
-    from datadog_api_client.v1.model.synthetics_playing_tab import SyntheticsPlayingTab
-    from datadog_api_client.v1.model.synthetics_step_detail import SyntheticsStepDetail
-    from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
-    from datadog_api_client.v1.model.synthetics_core_web_vitals import SyntheticsCoreWebVitals
-    from datadog_api_client.v1.model.synthetics_step_detail_warning import SyntheticsStepDetailWarning
-
-    globals()["SyntheticsBrowserError"] = SyntheticsBrowserError
-    globals()["SyntheticsCheckType"] = SyntheticsCheckType
-    globals()["SyntheticsPlayingTab"] = SyntheticsPlayingTab
-    globals()["SyntheticsStepDetail"] = SyntheticsStepDetail
-    globals()["SyntheticsStepType"] = SyntheticsStepType
-    globals()["SyntheticsCoreWebVitals"] = SyntheticsCoreWebVitals
-    globals()["SyntheticsStepDetailWarning"] = SyntheticsStepDetailWarning
-
-
 class SyntheticsStepDetail(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_browser_error import SyntheticsBrowserError
+        from datadog_api_client.v1.model.synthetics_check_type import SyntheticsCheckType
+        from datadog_api_client.v1.model.synthetics_playing_tab import SyntheticsPlayingTab
+        from datadog_api_client.v1.model.synthetics_step_detail import SyntheticsStepDetail
+        from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
+        from datadog_api_client.v1.model.synthetics_core_web_vitals import SyntheticsCoreWebVitals
+        from datadog_api_client.v1.model.synthetics_step_detail_warning import SyntheticsStepDetailWarning
+
         return {
             "browser_errors": ([SyntheticsBrowserError],),
             "check_type": (SyntheticsCheckType,),

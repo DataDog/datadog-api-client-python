@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_list_response_metadata_page import SLOListResponseMetadataPage
-
-    globals()["SLOListResponseMetadataPage"] = SLOListResponseMetadataPage
-
-
 class SLOListResponseMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_list_response_metadata_page import SLOListResponseMetadataPage
+
         return {
             "page": (SLOListResponseMetadataPage,),
         }

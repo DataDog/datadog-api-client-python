@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.access_role import AccessRole
-
-    globals()["AccessRole"] = AccessRole
-
-
 class User(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.access_role import AccessRole
+
         return {
             "access_role": (AccessRole,),
             "disabled": (bool,),

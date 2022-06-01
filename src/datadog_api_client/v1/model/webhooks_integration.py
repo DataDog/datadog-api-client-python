@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.webhooks_integration_encoding import WebhooksIntegrationEncoding
-
-    globals()["WebhooksIntegrationEncoding"] = WebhooksIntegrationEncoding
-
-
 class WebhooksIntegration(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.webhooks_integration_encoding import WebhooksIntegrationEncoding
+
         return {
             "custom_headers": (str, none_type),
             "encode_as": (WebhooksIntegrationEncoding,),

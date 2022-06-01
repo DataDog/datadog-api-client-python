@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slack_integration_channel_display import SlackIntegrationChannelDisplay
-
-    globals()["SlackIntegrationChannelDisplay"] = SlackIntegrationChannelDisplay
-
-
 class SlackIntegrationChannel(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slack_integration_channel_display import SlackIntegrationChannelDisplay
+
         return {
             "display": (SlackIntegrationChannelDisplay,),
             "name": (str,),

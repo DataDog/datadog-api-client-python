@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.dashboard_summary_definition import DashboardSummaryDefinition
-
-    globals()["DashboardSummaryDefinition"] = DashboardSummaryDefinition
-
-
 class DashboardSummary(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.dashboard_summary_definition import DashboardSummaryDefinition
+
         return {
             "dashboards": ([DashboardSummaryDefinition],),
         }

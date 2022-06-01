@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
-    from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
-
-    globals()["SAMLAssertionAttributeAttributes"] = SAMLAssertionAttributeAttributes
-    globals()["SAMLAssertionAttributesType"] = SAMLAssertionAttributesType
-
-
 class SAMLAssertionAttribute(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
+        from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
+
         return {
             "attributes": (SAMLAssertionAttributeAttributes,),
             "id": (str,),

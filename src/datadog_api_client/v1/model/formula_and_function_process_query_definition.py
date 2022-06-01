@@ -9,22 +9,17 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.formula_and_function_metric_aggregation import FormulaAndFunctionMetricAggregation
-    from datadog_api_client.v1.model.formula_and_function_process_query_data_source import (
-        FormulaAndFunctionProcessQueryDataSource,
-    )
-    from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
-
-    globals()["FormulaAndFunctionMetricAggregation"] = FormulaAndFunctionMetricAggregation
-    globals()["FormulaAndFunctionProcessQueryDataSource"] = FormulaAndFunctionProcessQueryDataSource
-    globals()["QuerySortOrder"] = QuerySortOrder
-
-
 class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.formula_and_function_metric_aggregation import (
+            FormulaAndFunctionMetricAggregation,
+        )
+        from datadog_api_client.v1.model.formula_and_function_process_query_data_source import (
+            FormulaAndFunctionProcessQueryDataSource,
+        )
+        from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
+
         return {
             "aggregator": (FormulaAndFunctionMetricAggregation,),
             "data_source": (FormulaAndFunctionProcessQueryDataSource,),

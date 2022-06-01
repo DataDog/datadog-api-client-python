@@ -9,18 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.metric_bulk_tag_config_create_attributes import MetricBulkTagConfigCreateAttributes
-    from datadog_api_client.v2.model.metric_bulk_configure_tags_type import MetricBulkConfigureTagsType
-
-    globals()["MetricBulkTagConfigCreateAttributes"] = MetricBulkTagConfigCreateAttributes
-    globals()["MetricBulkConfigureTagsType"] = MetricBulkConfigureTagsType
-
-
 class MetricBulkTagConfigCreate(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.metric_bulk_tag_config_create_attributes import (
+            MetricBulkTagConfigCreateAttributes,
+        )
+        from datadog_api_client.v2.model.metric_bulk_configure_tags_type import MetricBulkConfigureTagsType
+
         return {
             "attributes": (MetricBulkTagConfigCreateAttributes,),
             "id": (str,),

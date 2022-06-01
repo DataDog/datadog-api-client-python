@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
-
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["ProcessQueryDefinition"] = ProcessQueryDefinition
-
-
 class HostMapRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
+        from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
+
         return {
             "apm_query": (LogQueryDefinition,),
             "event_query": (LogQueryDefinition,),

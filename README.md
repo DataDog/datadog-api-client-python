@@ -40,6 +40,16 @@ with ApiClient(configuration) as api_client:
     print(response)
 ```
 
+### Authentication
+
+By default the library will use the `DD_API_KEY` and `DD_APP_KEY` environment variables to authenticate against the Datadog API.
+To provide your own set of credentials, you need to set some keys on the configuration:
+
+```python
+configuration.api_key["apiKeyAuth"] = "<API KEY>"
+configuration.api_key["appKeyAuth"] = "<APPLICATION KEY>"
+```
+
 ### Unstable Endpoints
 
 This client includes access to Datadog API endpoints while they are in an unstable state and may undergo breaking changes. An extra configuration step is required to enable these endpoints:
