@@ -14,12 +14,10 @@ class WidgetEvent(ModelNormal):
     def openapi_types(_):
         return {
             "q": (str,),
-            "tags_execution": (str,),
         }
 
     attribute_map = {
         "q": "q",
-        "tags_execution": "tags_execution",
     }
 
     def __init__(self, q, *args, **kwargs):
@@ -31,9 +29,6 @@ class WidgetEvent(ModelNormal):
 
         :param q: Query definition.
         :type q: str
-
-        :param tags_execution: The execution method for multi-value filters.
-        :type tags_execution: str, optional
         """
         super().__init__(kwargs)
 

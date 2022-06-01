@@ -20,7 +20,6 @@ class EventStreamWidgetDefinition(ModelNormal):
         return {
             "event_size": (WidgetEventSize,),
             "query": (str,),
-            "tags_execution": (str,),
             "time": (WidgetTime,),
             "title": (str,),
             "title_align": (WidgetTextAlign,),
@@ -31,7 +30,6 @@ class EventStreamWidgetDefinition(ModelNormal):
     attribute_map = {
         "event_size": "event_size",
         "query": "query",
-        "tags_execution": "tags_execution",
         "time": "time",
         "title": "title",
         "title_align": "title_align",
@@ -49,9 +47,6 @@ class EventStreamWidgetDefinition(ModelNormal):
 
         :param query: Query to filter the event stream with.
         :type query: str
-
-        :param tags_execution: The execution method for multi-value filters. Can be either and or or.
-        :type tags_execution: str, optional
 
         :param time: Time setting for the widget.
         :type time: WidgetTime, optional

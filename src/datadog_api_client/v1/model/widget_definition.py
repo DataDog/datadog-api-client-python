@@ -89,9 +89,6 @@ class WidgetDefinition(ModelComposed):
         :param query: Query to filter the event stream with.
         :type query: str
 
-        :param tags_execution: The execution method for multi-value filters. Can be either and or or.
-        :type tags_execution: str, optional
-
         :param color: Color of the text.
         :type color: str, optional
 

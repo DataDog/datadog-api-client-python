@@ -18,7 +18,6 @@ class EventTimelineWidgetDefinition(ModelNormal):
 
         return {
             "query": (str,),
-            "tags_execution": (str,),
             "time": (WidgetTime,),
             "title": (str,),
             "title_align": (WidgetTextAlign,),
@@ -28,7 +27,6 @@ class EventTimelineWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "query": "query",
-        "tags_execution": "tags_execution",
         "time": "time",
         "title": "title",
         "title_align": "title_align",
@@ -42,9 +40,6 @@ class EventTimelineWidgetDefinition(ModelNormal):
 
         :param query: Query to filter the event timeline with.
         :type query: str
-
-        :param tags_execution: The execution method for multi-value filters. Can be either and or or.
-        :type tags_execution: str, optional
 
         :param time: Time setting for the widget.
         :type time: WidgetTime, optional
