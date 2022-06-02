@@ -104,24 +104,6 @@ def escape_reserved_keyword(word):
     return word
 
 
-def pytest_bdd_before_scenario(request, feature, scenario):
-    if tracer is not None:
-        span = tracer.current_span()
-        if span is not None:
-            span.set_tag("test.name", scenario.name)
-            span.set_tag("test.suite", scenario.feature.filename.split("tests")[-1])
-
-            codeowners = [f"@{tag[5:]}" for tag in scenario.tags | scenario.feature.tags if tag.startswith("team:")]
-            if codeowners:
-                try:
-                    default_value = span.get_tag("test.codeowners")
-                    default_codeowners = json.loads(default_value)
-                    codeowners.extend(default_codeowners)
-                except Exception:
-                    pass
-                span.set_tag("test.codeowners", json.dumps(codeowners))
-
-
 def pytest_bdd_after_scenario(request, feature, scenario):
     try:
         ctx = request.getfixturevalue("context")
@@ -129,33 +111,6 @@ def pytest_bdd_after_scenario(request, feature, scenario):
         return
     for undo in reversed(ctx["undo_operations"]):
         undo()
-
-
-def pytest_bdd_before_step(request, feature, scenario, step, step_func):
-    if tracer is None:
-        return
-
-    span = tracer.start_span(
-        step.type,
-        resource=step.name,
-        span_type=step.type,
-        child_of=tracer.current_span(),
-        activate=True,
-    )
-    setattr(step_func, "__dd_span__", span)
-
-
-def pytest_bdd_after_step(request, feature, scenario, step, step_func, step_func_args):
-    span = getattr(step_func, "__dd_span__", None)
-    if span is not None:
-        span.finish()
-
-
-def pytest_bdd_step_error(request, feature, scenario, step, step_func, step_func_args, exception):
-    span = getattr(step_func, "__dd_span__", None)
-    if span is not None:
-        span.set_exc_info(type(exception), exception, exception.__traceback__)
-        span.finish()
 
 
 def pytest_bdd_apply_tag(tag, function):
