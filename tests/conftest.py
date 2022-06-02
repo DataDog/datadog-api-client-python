@@ -42,6 +42,7 @@ try:
                 "%40test.service%3A{}%20%40ci.pipeline.id%3A{}&index=citest".format(dd_service, ci_pipeline_id)
             )
 
+
 except ImportError:
     if os.getenv("CI", "false") == "true" and RECORD == "none":
         raise
@@ -238,8 +239,22 @@ def disable_recording(request):
 @pytest.fixture
 def vcr_config():
     config = dict(
-        filter_headers=("DD-API-KEY", "DD-APPLICATION-KEY", "User-Agent", "Accept-Encoding"),
-        match_on=["method", "scheme", "host", "port", "path", "query", "body", "headers"],
+        filter_headers=(
+            "DD-API-KEY",
+            "DD-APPLICATION-KEY",
+            "User-Agent",
+            "Accept-Encoding",
+        ),
+        match_on=[
+            "method",
+            "scheme",
+            "host",
+            "port",
+            "path",
+            "query",
+            "body",
+            "headers",
+        ],
     )
     if tracer:
         from urllib.parse import urlparse
@@ -456,7 +471,13 @@ def build_given(version, operation):
             result = operation_method(**kwargs)
 
             # register undo method
-            context["undo_operations"].append(lambda: undo(api, version, operation_name, result, client=client))
+            def undo_operation():
+                return undo(api, version, operation_name, result, client=client)
+
+            if tracer:
+                undo_operation = tracer.wrap(name="undo", resource=operation["step"])(undo_operation)
+
+            context["undo_operations"].append(undo_operation)
 
             # optional re-shaping
             if "source" in operation:
@@ -535,7 +556,13 @@ def execute_request(undo, context, client, api_version):
     operation_id = api_request["request"].__name__
     response = api_request["response"][0]
 
-    context["undo_operations"].append(lambda: undo(api, api_version, operation_id, response))
+    def undo_operation():
+        return undo(api, api_version, operation_id, response)
+
+    if tracer:
+        undo_operation = tracer.wrap(name="undo", resource="execute request")(undo_operation)
+
+    context["undo_operations"].append(undo_operation)
 
 
 @when("the request with pagination is sent")
