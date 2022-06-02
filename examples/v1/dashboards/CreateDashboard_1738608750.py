@@ -2,7 +2,7 @@
 Create a new dashboard with free_text widget
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -17,7 +17,12 @@ body = Dashboard(
     description=None,
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=24, height=6),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=24,
+                height=6,
+            ),
             definition=FreeTextWidgetDefinition(
                 type=FreeTextWidgetDefinitionType("free_text"),
                 text="Example free text",
@@ -25,7 +30,7 @@ body = Dashboard(
                 font_size="auto",
                 text_align=WidgetTextAlign("left"),
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

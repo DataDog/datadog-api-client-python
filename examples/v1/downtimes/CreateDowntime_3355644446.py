@@ -4,7 +4,7 @@ Schedule a monitor downtime returns "OK" response
 
 from datetime import datetime
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.downtimes_api import DowntimesApi
 from datadog_api_client.v1.model.downtime import Downtime
 
@@ -15,7 +15,9 @@ body = Downtime(
     message="Example-Schedule_a_monitor_downtime_returns_OK_response",
     start=int(datetime.now().timestamp()),
     timezone="Etc/UTC",
-    scope=["test:examplescheduleamonitordowntimereturnsokresponse"],
+    scope=[
+        "test:examplescheduleamonitordowntimereturnsokresponse",
+    ],
     monitor_id=int(MONITOR_ID),
 )
 

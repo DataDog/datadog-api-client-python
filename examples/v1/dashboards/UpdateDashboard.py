@@ -3,7 +3,7 @@ Update a dashboard returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -30,13 +30,21 @@ body = Dashboard(
                 type=ListStreamWidgetDefinitionType("list_stream"),
                 requests=[
                     ListStreamWidgetRequest(
-                        columns=[ListStreamColumn(width=ListStreamColumnWidth("auto"), field="timestamp")],
-                        query=ListStreamQuery(data_source=ListStreamSource("issue_stream"), query_string=""),
+                        columns=[
+                            ListStreamColumn(
+                                width=ListStreamColumnWidth("auto"),
+                                field="timestamp",
+                            ),
+                        ],
+                        query=ListStreamQuery(
+                            data_source=ListStreamSource("apm_issue_stream"),
+                            query_string="",
+                        ),
                         response_format=ListStreamResponseFormat("event_list"),
-                    )
+                    ),
                 ],
-            )
-        )
+            ),
+        ),
     ],
 )
 

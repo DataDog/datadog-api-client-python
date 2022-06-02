@@ -3,7 +3,7 @@ Remove commander from an incident returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.incidents_api import IncidentsApi
 from datadog_api_client.v2.model.incident_type import IncidentType
 from datadog_api_client.v2.model.incident_update_data import IncidentUpdateData
@@ -20,9 +20,11 @@ body = IncidentUpdateRequest(
         id=INCIDENT_DATA_ID,
         type=IncidentType("incidents"),
         relationships=IncidentUpdateRelationships(
-            commander_user=NullableRelationshipToUser(data=NullableRelationshipToUserData(None))
+            commander_user=NullableRelationshipToUser(
+                data=NullableRelationshipToUserData(None),
+            ),
         ),
-    )
+    ),
 )
 
 configuration = Configuration()

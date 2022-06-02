@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.security_filter_create_attributes import SecurityFilterCreateAttributes
-    from datadog_api_client.v2.model.security_filter_type import SecurityFilterType
-
-    globals()["SecurityFilterCreateAttributes"] = SecurityFilterCreateAttributes
-    globals()["SecurityFilterType"] = SecurityFilterType
-
-
 class SecurityFilterCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.security_filter_create_attributes import SecurityFilterCreateAttributes
+        from datadog_api_client.v2.model.security_filter_type import SecurityFilterType
+
         return {
             "attributes": (SecurityFilterCreateAttributes,),
             "type": (SecurityFilterType,),
@@ -38,7 +32,7 @@ class SecurityFilterCreateData(ModelNormal):
         :param attributes: Object containing the attributes of the security filter to be created.
         :type attributes: SecurityFilterCreateAttributes
 
-        :param type: The type of the resource. The value should always be `security_filters`.
+        :param type: The type of the resource. The value should always be ``security_filters``.
         :type type: SecurityFilterType
         """
         super().__init__(kwargs)

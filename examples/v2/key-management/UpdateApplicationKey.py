@@ -3,7 +3,7 @@ Edit an application key returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.key_management_api import KeyManagementApi
 from datadog_api_client.v2.model.application_key_update_attributes import ApplicationKeyUpdateAttributes
 from datadog_api_client.v2.model.application_key_update_data import ApplicationKeyUpdateData
@@ -18,8 +18,10 @@ body = ApplicationKeyUpdateRequest(
     data=ApplicationKeyUpdateData(
         id=APPLICATION_KEY_DATA_ID,
         type=ApplicationKeysType("application_keys"),
-        attributes=ApplicationKeyUpdateAttributes(name="Application Key for managing dashboards-updated"),
-    )
+        attributes=ApplicationKeyUpdateAttributes(
+            name="Application Key for managing dashboards-updated",
+        ),
+    ),
 )
 
 configuration = Configuration()

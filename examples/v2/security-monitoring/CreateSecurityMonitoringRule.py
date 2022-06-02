@@ -2,7 +2,7 @@
 Create a detection rule returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
 from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
@@ -29,13 +29,16 @@ body = SecurityMonitoringRuleCreatePayload(
             group_by_fields=[],
             distinct_fields=[],
             metric="",
-        )
+        ),
     ],
     filters=[],
     cases=[
         SecurityMonitoringRuleCaseCreate(
-            name="", status=SecurityMonitoringRuleSeverity("info"), condition="a > 0", notifications=[]
-        )
+            name="",
+            status=SecurityMonitoringRuleSeverity("info"),
+            condition="a > 0",
+            notifications=[],
+        ),
     ],
     options=SecurityMonitoringRuleOptions(
         evaluation_window=SecurityMonitoringRuleEvaluationWindow(900),

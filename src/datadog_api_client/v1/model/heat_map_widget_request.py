@@ -9,32 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.event_query_definition import EventQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.widget_style import WidgetStyle
-
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["EventQueryDefinition"] = EventQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["ProcessQueryDefinition"] = ProcessQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["WidgetStyle"] = WidgetStyle
-
-
 class HeatMapWidgetRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
+        from datadog_api_client.v1.model.event_query_definition import EventQueryDefinition
+        from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
+        from datadog_api_client.v1.model.widget_style import WidgetStyle
+
         return {
             "apm_query": (LogQueryDefinition,),
             "event_query": (EventQueryDefinition,),

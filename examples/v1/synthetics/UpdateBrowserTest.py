@@ -2,13 +2,14 @@
 Edit a browser test returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v1.model.http_method import HTTPMethod
 from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasicAuthWeb
 from datadog_api_client.v1.model.synthetics_basic_auth_web_type import SyntheticsBasicAuthWebType
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
 from datadog_api_client.v1.model.synthetics_browser_test_config import SyntheticsBrowserTestConfig
+from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
 from datadog_api_client.v1.model.synthetics_browser_test_type import SyntheticsBrowserTestType
 from datadog_api_client.v1.model.synthetics_browser_variable import SyntheticsBrowserVariable
 from datadog_api_client.v1.model.synthetics_browser_variable_type import SyntheticsBrowserVariableType
@@ -30,32 +31,66 @@ from datadog_api_client.v1.model.synthetics_test_request_proxy import Synthetics
 body = SyntheticsBrowserTest(
     config=SyntheticsBrowserTestConfig(
         assertions=[],
-        config_variables=[SyntheticsConfigVariable(name="VARIABLE_NAME", type=SyntheticsConfigVariableType("text"))],
+        config_variables=[
+            SyntheticsConfigVariable(
+                name="VARIABLE_NAME",
+                type=SyntheticsConfigVariableType("text"),
+            ),
+        ],
         request=SyntheticsTestRequest(
             basic_auth=SyntheticsBasicAuthWeb(
-                password="PaSSw0RD!", type=SyntheticsBasicAuthWebType("web"), username="my_username"
+                password="PaSSw0RD!",
+                type=SyntheticsBasicAuthWebType("web"),
+                username="my_username",
             ),
             certificate=SyntheticsTestRequestCertificate(
-                cert=SyntheticsTestRequestCertificateItem(), key=SyntheticsTestRequestCertificateItem()
+                cert=SyntheticsTestRequestCertificateItem(),
+                key=SyntheticsTestRequestCertificateItem(),
             ),
             method=HTTPMethod("GET"),
-            proxy=SyntheticsTestRequestProxy(url="https://example.com"),
+            proxy=SyntheticsTestRequestProxy(
+                url="https://example.com",
+            ),
             url="https://example.com",
         ),
-        variables=[SyntheticsBrowserVariable(name="VARIABLE_NAME", type=SyntheticsBrowserVariableType("text"))],
+        variables=[
+            SyntheticsBrowserVariable(
+                name="VARIABLE_NAME",
+                type=SyntheticsBrowserVariableType("text"),
+            ),
+        ],
     ),
-    locations=["aws:eu-west-3"],
+    locations=[
+        "aws:eu-west-3",
+    ],
     message="",
     name="Example test name",
     options=SyntheticsTestOptions(
-        device_ids=[SyntheticsDeviceID("laptop_large")],
+        device_ids=[
+            SyntheticsDeviceID("laptop_large"),
+        ],
         monitor_options=SyntheticsTestOptionsMonitorOptions(),
-        restricted_roles=SyntheticsRestrictedRoles(["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]),
+        restricted_roles=SyntheticsRestrictedRoles(
+            [
+                "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            ]
+        ),
         retry=SyntheticsTestOptionsRetry(),
+        rum_settings=SyntheticsBrowserTestRumSettings(
+            application_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            client_token_id=12345,
+            is_enabled=True,
+        ),
     ),
     status=SyntheticsTestPauseStatus("live"),
-    steps=[SyntheticsStep(type=SyntheticsStepType("assertElementContent"))],
-    tags=["env:prod"],
+    steps=[
+        SyntheticsStep(
+            type=SyntheticsStepType("assertElementContent"),
+        ),
+    ],
+    tags=[
+        "env:prod",
+    ],
     type=SyntheticsBrowserTestType("browser"),
 )
 

@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.rum_response_page import RUMResponsePage
-    from datadog_api_client.v2.model.rum_response_status import RUMResponseStatus
-    from datadog_api_client.v2.model.rum_warning import RUMWarning
-
-    globals()["RUMResponsePage"] = RUMResponsePage
-    globals()["RUMResponseStatus"] = RUMResponseStatus
-    globals()["RUMWarning"] = RUMWarning
-
-
 class RUMResponseMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.rum_response_page import RUMResponsePage
+        from datadog_api_client.v2.model.rum_response_status import RUMResponseStatus
+        from datadog_api_client.v2.model.rum_warning import RUMWarning
+
         return {
             "elapsed": (int,),
             "page": (RUMResponsePage,),

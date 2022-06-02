@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.monitor_search_response_counts import MonitorSearchResponseCounts
-    from datadog_api_client.v1.model.monitor_search_response_metadata import MonitorSearchResponseMetadata
-    from datadog_api_client.v1.model.monitor_search_result import MonitorSearchResult
-
-    globals()["MonitorSearchResponseCounts"] = MonitorSearchResponseCounts
-    globals()["MonitorSearchResponseMetadata"] = MonitorSearchResponseMetadata
-    globals()["MonitorSearchResult"] = MonitorSearchResult
-
-
 class MonitorSearchResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.monitor_search_response_counts import MonitorSearchResponseCounts
+        from datadog_api_client.v1.model.monitor_search_response_metadata import MonitorSearchResponseMetadata
+        from datadog_api_client.v1.model.monitor_search_result import MonitorSearchResult
+
         return {
             "counts": (MonitorSearchResponseCounts,),
             "metadata": (MonitorSearchResponseMetadata,),

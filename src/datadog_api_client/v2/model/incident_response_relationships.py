@@ -9,26 +9,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
-    from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
-    from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas import (
-        RelationshipToIncidentIntegrationMetadatas,
-    )
-    from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
-    from datadog_api_client.v2.model.relationship_to_incident_postmortem import RelationshipToIncidentPostmortem
-
-    globals()["NullableRelationshipToUser"] = NullableRelationshipToUser
-    globals()["RelationshipToUser"] = RelationshipToUser
-    globals()["RelationshipToIncidentIntegrationMetadatas"] = RelationshipToIncidentIntegrationMetadatas
-    globals()["RelationshipToUser"] = RelationshipToUser
-    globals()["RelationshipToIncidentPostmortem"] = RelationshipToIncidentPostmortem
-
-
 class IncidentResponseRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
+        from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
+        from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas import (
+            RelationshipToIncidentIntegrationMetadatas,
+        )
+        from datadog_api_client.v2.model.relationship_to_incident_postmortem import RelationshipToIncidentPostmortem
+
         return {
             "commander_user": (NullableRelationshipToUser,),
             "created_by_user": (RelationshipToUser,),

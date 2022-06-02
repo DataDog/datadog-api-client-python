@@ -9,14 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
-    from datadog_api_client.v2.model.role import Role
-
-    globals()["SAMLAssertionAttribute"] = SAMLAssertionAttribute
-    globals()["Role"] = Role
-
-
 class AuthNMappingIncluded(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
@@ -26,7 +18,7 @@ class AuthNMappingIncluded(ModelComposed):
         :type attributes: SAMLAssertionAttributeAttributes, optional
 
         :param id: The ID of the SAML assertion attribute.
-        :type id: int
+        :type id: str
 
         :param type: SAML assertion attributes resource type.
         :type type: SAMLAssertionAttributesType
@@ -57,7 +49,9 @@ class AuthNMappingIncluded(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        lazy_import()
+        from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
+        from datadog_api_client.v2.model.role import Role
+
         return {
             "anyOf": [],
             "allOf": [],

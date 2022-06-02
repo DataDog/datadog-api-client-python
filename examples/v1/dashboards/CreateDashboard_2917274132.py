@@ -2,7 +2,7 @@
 Create a new dashboard with manage_status widget
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -20,7 +20,12 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=50, height=25),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=50,
+                height=25,
+            ),
             definition=MonitorSummaryWidgetDefinition(
                 type=MonitorSummaryWidgetDefinitionType("manage_status"),
                 summary_type=WidgetSummaryType("monitors"),
@@ -33,7 +38,7 @@ body = Dashboard(
                 count=50,
                 start=0,
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

@@ -10,18 +10,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_by_retention import LogsByRetention
-    from datadog_api_client.v1.model.usage_summary_date import UsageSummaryDate
-
-    globals()["LogsByRetention"] = LogsByRetention
-    globals()["UsageSummaryDate"] = UsageSummaryDate
-
-
 class UsageSummaryResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_by_retention import LogsByRetention
+        from datadog_api_client.v1.model.usage_summary_date import UsageSummaryDate
+
         return {
             "agent_host_top99p_sum": (int,),
             "apm_azure_app_service_host_top99p_sum": (int,),
@@ -72,9 +66,11 @@ class UsageSummaryResponse(ModelNormal):
             "mobile_rum_session_count_agg_sum": (int,),
             "mobile_rum_session_count_android_agg_sum": (int,),
             "mobile_rum_session_count_ios_agg_sum": (int,),
+            "mobile_rum_session_count_reactnative_agg_sum": (int,),
             "mobile_rum_units_agg_sum": (int,),
             "netflow_indexed_events_count_agg_sum": (int,),
             "npm_host_top99p_sum": (int,),
+            "observability_pipelines_bytes_processed_agg_sum": (int,),
             "online_archive_events_count_agg_sum": (int,),
             "opentelemetry_host_top99p_sum": (int,),
             "profiling_container_agent_count_avg": (int,),
@@ -146,9 +142,11 @@ class UsageSummaryResponse(ModelNormal):
         "mobile_rum_session_count_agg_sum": "mobile_rum_session_count_agg_sum",
         "mobile_rum_session_count_android_agg_sum": "mobile_rum_session_count_android_agg_sum",
         "mobile_rum_session_count_ios_agg_sum": "mobile_rum_session_count_ios_agg_sum",
+        "mobile_rum_session_count_reactnative_agg_sum": "mobile_rum_session_count_reactnative_agg_sum",
         "mobile_rum_units_agg_sum": "mobile_rum_units_agg_sum",
         "netflow_indexed_events_count_agg_sum": "netflow_indexed_events_count_agg_sum",
         "npm_host_top99p_sum": "npm_host_top99p_sum",
+        "observability_pipelines_bytes_processed_agg_sum": "observability_pipelines_bytes_processed_agg_sum",
         "online_archive_events_count_agg_sum": "online_archive_events_count_agg_sum",
         "opentelemetry_host_top99p_sum": "opentelemetry_host_top99p_sum",
         "profiling_container_agent_count_avg": "profiling_container_agent_count_avg",
@@ -321,6 +319,9 @@ class UsageSummaryResponse(ModelNormal):
         :param mobile_rum_session_count_ios_agg_sum: Shows the sum of all mobile RUM Sessions on iOS over all hours in the current months for all organizations.
         :type mobile_rum_session_count_ios_agg_sum: int, optional
 
+        :param mobile_rum_session_count_reactnative_agg_sum: Shows the sum of all mobile RUM Sessions on React Native over all hours in the current months for all organizations.
+        :type mobile_rum_session_count_reactnative_agg_sum: int, optional
+
         :param mobile_rum_units_agg_sum: Shows the sum of all mobile RUM units over all hours in the current months for all organizations.
         :type mobile_rum_units_agg_sum: int, optional
 
@@ -329,6 +330,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param npm_host_top99p_sum: Shows the 99th percentile of all distinct Networks hosts over all hours in the current months for all organizations.
         :type npm_host_top99p_sum: int, optional
+
+        :param observability_pipelines_bytes_processed_agg_sum: Sum of all observability pipelines bytes processed over all hours in the current months for all organizations.
+        :type observability_pipelines_bytes_processed_agg_sum: int, optional
 
         :param online_archive_events_count_agg_sum: Sum of all online archived events over all hours in the current months for all organizations.
         :type online_archive_events_count_agg_sum: int, optional

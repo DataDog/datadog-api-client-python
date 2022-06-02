@@ -2,7 +2,7 @@
 Create a new dashboard with event_timeline widget
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -17,7 +17,12 @@ body = Dashboard(
     description=None,
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=47, height=9),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=47,
+                height=9,
+            ),
             definition=EventTimelineWidgetDefinition(
                 title="",
                 title_size="16",
@@ -26,7 +31,7 @@ body = Dashboard(
                 query="status:error priority:all",
                 tags_execution="and",
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

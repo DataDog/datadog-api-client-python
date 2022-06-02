@@ -3,7 +3,7 @@ Update a log-based metric returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.logs_metrics_api import LogsMetricsApi
 from datadog_api_client.v2.model.logs_metric_filter import LogsMetricFilter
 from datadog_api_client.v2.model.logs_metric_type import LogsMetricType
@@ -19,9 +19,11 @@ body = LogsMetricUpdateRequest(
     data=LogsMetricUpdateData(
         type=LogsMetricType("logs_metrics"),
         attributes=LogsMetricUpdateAttributes(
-            filter=LogsMetricFilter(query="service:web* AND @http.status_code:[200 TO 299]-updated")
+            filter=LogsMetricFilter(
+                query="service:web* AND @http.status_code:[200 TO 299]-updated",
+            ),
         ),
-    )
+    ),
 )
 
 configuration = Configuration()

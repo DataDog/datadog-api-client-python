@@ -2,7 +2,7 @@
 Create a new dashboard with a formulas and functions change widget
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
 from datadog_api_client.v1.model.change_widget_definition_type import ChangeWidgetDefinitionType
@@ -43,18 +43,29 @@ body = Dashboard(
                 type=ChangeWidgetDefinitionType("change"),
                 requests=[
                     ChangeWidgetRequest(
-                        formulas=[WidgetFormula(formula="hour_before(query1)"), WidgetFormula(formula="query1")],
+                        formulas=[
+                            WidgetFormula(
+                                formula="hour_before(query1)",
+                            ),
+                            WidgetFormula(
+                                formula="query1",
+                            ),
+                        ],
                         queries=[
                             FormulaAndFunctionEventQueryDefinition(
                                 data_source=FormulaAndFunctionEventsDataSource("logs"),
                                 name="query1",
-                                search=FormulaAndFunctionEventQueryDefinitionSearch(query=""),
-                                indexes=["*"],
+                                search=FormulaAndFunctionEventQueryDefinitionSearch(
+                                    query="",
+                                ),
+                                indexes=[
+                                    "*",
+                                ],
                                 compute=FormulaAndFunctionEventQueryDefinitionCompute(
-                                    aggregation=FormulaAndFunctionEventAggregation("count")
+                                    aggregation=FormulaAndFunctionEventAggregation("count"),
                                 ),
                                 group_by=[],
-                            )
+                            ),
                         ],
                         response_format=FormulaAndFunctionResponseFormat("scalar"),
                         compare_to=WidgetCompareTo("hour_before"),
@@ -62,11 +73,16 @@ body = Dashboard(
                         order_by=WidgetOrderBy("change"),
                         change_type=WidgetChangeType("absolute"),
                         order_dir=WidgetSort("desc"),
-                    )
+                    ),
                 ],
             ),
-            layout=WidgetLayout(x=0, y=0, width=4, height=4),
-        )
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=4,
+                height=4,
+            ),
+        ),
     ],
     layout_type=DashboardLayoutType("ordered"),
 )

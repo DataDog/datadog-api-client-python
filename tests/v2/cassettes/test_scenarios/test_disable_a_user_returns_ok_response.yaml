@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"email":"Test-Disable_a_user_returns_OK_response-1641826593@datadoghq.com","title":"user
+    body: '{"data":{"attributes":{"email":"Test-Disable_a_user_returns_OK_response-1652349216@datadoghq.com","title":"user
       title"},"type":"users"}}'
     headers:
       accept:
@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"80726a36-7225-11ec-b5d3-da7ad0900002","attributes":{"name":null,"handle":"test-disable_a_user_returns_ok_response-1641826593@datadoghq.com","created_at":"2022-01-10T14:56:33.596225+00:00","modified_at":"2022-01-10T14:56:33.648991+00:00","email":"test-disable_a_user_returns_ok_response-1641826593@datadoghq.com","icon":"https://secure.gravatar.com/avatar/1abd8fd8ed99582e40d59125a77c8078?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"649b7e06-d1d9-11ec-ad3d-da7ad0900002","attributes":{"name":null,"handle":"test-disable_a_user_returns_ok_response-1652349216@datadoghq.com","created_at":"2022-05-12T09:53:36.764381+00:00","modified_at":"2022-05-12T09:53:36.851751+00:00","email":"test-disable_a_user_returns_ok_response-1652349216@datadoghq.com","icon":"https://secure.gravatar.com/avatar/0be9a183f9c8c81ab435f271e21830c2?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       content-type:
@@ -23,9 +23,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/80726a36-7225-11ec-b5d3-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/649b7e06-d1d9-11ec-ad3d-da7ad0900002
   response:
     body:
       string: ''
@@ -37,12 +37,12 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/80726a36-7225-11ec-b5d3-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/649b7e06-d1d9-11ec-ad3d-da7ad0900002
   response:
     body:
-      string: '{"errors": ["80726a36-7225-11ec-b5d3-da7ad0900002 not found"]}'
+      string: '{"errors": ["649b7e06-d1d9-11ec-ad3d-da7ad0900002 not found"]}'
     headers:
       content-type:
       - application/json

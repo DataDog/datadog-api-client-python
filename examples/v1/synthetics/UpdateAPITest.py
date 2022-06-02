@@ -3,7 +3,7 @@ Edit an API test returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v1.model.http_method import HTTPMethod
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
@@ -36,7 +36,7 @@ body = SyntheticsAPITest(
         assertions=[
             SyntheticsAssertionTarget(
                 operator=SyntheticsAssertionOperator("is"),
-                property="{{ PROPERTY }}",
+                _property="{{ PROPERTY }}",
                 target="text/html",
                 type=SyntheticsAssertionType("header"),
             ),
@@ -47,7 +47,11 @@ body = SyntheticsAPITest(
             ),
             SyntheticsAssertionJSONPathTarget(
                 operator=SyntheticsAssertionJSONPathOperator("validatesJSONPath"),
-                target=SyntheticsAssertionJSONPathTargetTarget(json_path="topKey", operator="isNot", target_value="0"),
+                target=SyntheticsAssertionJSONPathTargetTarget(
+                    json_path="topKey",
+                    operator="isNot",
+                    target_value="0",
+                ),
                 type=SyntheticsAssertionType("body"),
             ),
         ],
@@ -57,24 +61,30 @@ body = SyntheticsAPITest(
                 name="PROPERTY",
                 pattern="content-type",
                 type=SyntheticsConfigVariableType("text"),
-            )
+            ),
         ],
         request=SyntheticsTestRequest(
             certificate=SyntheticsTestRequestCertificate(
                 cert=SyntheticsTestRequestCertificateItem(
-                    filename="cert-filename", updated_at="2020-10-16T09:23:24.857Z"
+                    filename="cert-filename",
+                    updated_at="2020-10-16T09:23:24.857Z",
                 ),
                 key=SyntheticsTestRequestCertificateItem(
-                    filename="key-filename", updated_at="2020-10-16T09:23:24.857Z"
+                    filename="key-filename",
+                    updated_at="2020-10-16T09:23:24.857Z",
                 ),
             ),
-            headers=SyntheticsTestHeaders(unique="exampleeditanapitestreturnsokresponse"),
+            headers=SyntheticsTestHeaders(
+                unique="exampleeditanapitestreturnsokresponse",
+            ),
             method=HTTPMethod("GET"),
             timeout=10.0,
             url="https://datadoghq.com",
         ),
     ),
-    locations=["aws:us-east-2"],
+    locations=[
+        "aws:us-east-2",
+    ],
     message="BDD test payload: synthetics_api_test_payload.json",
     name="Example-Edit_an_API_test_returns_OK_response-updated",
     options=SyntheticsTestOptions(
@@ -85,12 +95,17 @@ body = SyntheticsAPITest(
         min_location_failed=1,
         monitor_name="Test-TestSyntheticsAPITestLifecycle-1623076664",
         monitor_priority=5,
-        retry=SyntheticsTestOptionsRetry(count=3, interval=10.0),
+        retry=SyntheticsTestOptionsRetry(
+            count=3,
+            interval=10.0,
+        ),
         tick_every=60,
     ),
     status=SyntheticsTestPauseStatus("live"),
     subtype=SyntheticsTestDetailsSubType("http"),
-    tags=["testing:api"],
+    tags=[
+        "testing:api",
+    ],
     type=SyntheticsAPITestType("api"),
 )
 

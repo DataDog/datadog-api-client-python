@@ -4,6 +4,10 @@
 
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
+)
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
 from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
 from datadog_api_client.v2.model.incident_response import IncidentResponse
@@ -12,6 +16,10 @@ from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRe
 
 
 class IncidentsApi:
+    """
+    Manage incident response.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -253,7 +261,7 @@ class IncidentsApi:
     def get_incident(self, incident_id, **kwargs):
         """Get the details of an incident.
 
-        Get the details of an incident by `incident_id`.
+        Get the details of an incident by ``incident_id``.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -341,6 +349,51 @@ class IncidentsApi:
         """
         kwargs = self._list_incidents_endpoint.default_arguments(kwargs)
         return self._list_incidents_endpoint.call_with_http_info(**kwargs)
+
+    def list_incidents_with_pagination(self, **kwargs):
+        """Get a list of incidents.
+
+        Provide a paginated version of :meth:`list_incidents`, returning all items.
+
+        :param include: Specifies which types of related objects should be included in the response.
+        :type include: [IncidentRelatedObject], optional
+        :param page_size: Size for a given page.
+        :type page_size: int, optional
+        :param page_offset: Specific offset to use as the beginning of the returned page.
+        :type page_offset: int, optional
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[IncidentResponseData]
+        """
+        kwargs = self._list_incidents_endpoint.default_arguments(kwargs)
+        page_size = get_attribute_from_path(kwargs, "page_size", 10)
+        endpoint = self._list_incidents_endpoint
+        set_attribute_from_path(kwargs, "page_size", page_size, endpoint.params_map)
+        while True:
+            response = endpoint.call_with_http_info(**kwargs)
+            for item in get_attribute_from_path(response, "data"):
+                yield item
+            if len(get_attribute_from_path(response, "data")) < page_size:
+                break
+            set_attribute_from_path(
+                kwargs,
+                "page_offset",
+                get_attribute_from_path(kwargs, "page_offset", 0) + page_size,
+                endpoint.params_map,
+            )
 
     def update_incident(self, incident_id, body, **kwargs):
         """Update an existing incident.

@@ -3,7 +3,7 @@ Delete an app key owned by this service account returns "No Content" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
 
 # there is a valid "service_account_user" in the system
@@ -16,5 +16,6 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = ServiceAccountsApi(api_client)
     api_instance.delete_service_account_application_key(
-        service_account_id=SERVICE_ACCOUNT_USER_DATA_ID, app_key_id=SERVICE_ACCOUNT_APPLICATION_KEY_DATA_ID
+        service_account_id=SERVICE_ACCOUNT_USER_DATA_ID,
+        app_key_id=SERVICE_ACCOUNT_APPLICATION_KEY_DATA_ID,
     )

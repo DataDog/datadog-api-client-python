@@ -3,7 +3,7 @@ Create an app key for this service account returns "Created" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
 from datadog_api_client.v2.model.application_key_create_attributes import ApplicationKeyCreateAttributes
 from datadog_api_client.v2.model.application_key_create_data import ApplicationKeyCreateData
@@ -16,10 +16,10 @@ SERVICE_ACCOUNT_USER_DATA_ID = environ["SERVICE_ACCOUNT_USER_DATA_ID"]
 body = ApplicationKeyCreateRequest(
     data=ApplicationKeyCreateData(
         attributes=ApplicationKeyCreateAttributes(
-            name="Example-Create_an_app_key_for_this_service_account_returns_Created_response"
+            name="Example-Create_an_app_key_for_this_service_account_returns_Created_response",
         ),
         type=ApplicationKeysType("application_keys"),
-    )
+    ),
 )
 
 configuration = Configuration()

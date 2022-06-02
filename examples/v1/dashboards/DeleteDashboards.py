@@ -3,7 +3,7 @@ Delete dashboards returns "No Content" response
 """
 
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard_bulk_action_data import DashboardBulkActionData
 from datadog_api_client.v1.model.dashboard_bulk_action_data_list import DashboardBulkActionDataList
@@ -15,8 +15,13 @@ DASHBOARD_ID = environ["DASHBOARD_ID"]
 
 body = DashboardBulkDeleteRequest(
     data=DashboardBulkActionDataList(
-        [DashboardBulkActionData(id=DASHBOARD_ID, type=DashboardResourceType("dashboard"))]
-    )
+        [
+            DashboardBulkActionData(
+                id=DASHBOARD_ID,
+                type=DashboardResourceType("dashboard"),
+            ),
+        ]
+    ),
 )
 
 configuration = Configuration()

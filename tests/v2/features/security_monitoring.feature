@@ -116,6 +116,15 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @replay-only @team:DataDog/security-monitoring @with-pagination
+  Scenario: Get a list of security signals returns "OK" response with pagination
+    Given operation "SearchSecurityMonitoringSignals" enabled
+    And new "SearchSecurityMonitoringSignals" request
+    And body with value {"filter": {"from": "{{ timeISO("now-15m") }}", "query": "security:attack status:high", "to": "{{ timeISO("now") }}"}, "page": {"limit": 2}, "sort": "timestamp"}
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a quick list of security signals returns "Bad Request" response
     Given operation "ListSecurityMonitoringSignals" enabled
@@ -129,6 +138,15 @@ Feature: Security Monitoring
     And new "ListSecurityMonitoringSignals" request
     When the request is sent
     Then the response status is 200 OK
+
+  @replay-only @team:DataDog/security-monitoring @with-pagination
+  Scenario: Get a quick list of security signals returns "OK" response with pagination
+    Given operation "ListSecurityMonitoringSignals" enabled
+    And new "ListSecurityMonitoringSignals" request
+    And request contains "page[limit]" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
 
   @generated @skip @team:DataDog/security-monitoring
   Scenario: Get a rule's details returns "Not Found" response
@@ -214,7 +232,7 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "Bad Request" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": []}], "tags": [], "version": 1}
+    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": []}], "tags": [], "version": 1}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -222,7 +240,7 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "Not Found" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": []}], "tags": [], "version": 1}
+    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": []}], "tags": [], "version": 1}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -230,6 +248,6 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": []}], "tags": [], "version": 1}
+    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": []}], "tags": [], "version": 1}
     When the request is sent
     Then the response status is 200 OK

@@ -2,7 +2,7 @@
 Create a notebook returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.notebooks_api import NotebooksApi
 from datadog_api_client.v1.model.notebook_cell_create_request import NotebookCellCreateRequest
 from datadog_api_client.v1.model.notebook_cell_resource_type import NotebookCellResourceType
@@ -38,7 +38,7 @@ body = NotebookCreateRequest(
                         definition=NotebookMarkdownCellDefinition(
                             text="## Some test markdown\n\n```js\nvar x, y;\nx = 5;\ny = 6;\n```",
                             type=NotebookMarkdownCellDefinitionType("markdown"),
-                        )
+                        ),
                     ),
                     type=NotebookCellResourceType("notebook_cells"),
                 ),
@@ -54,14 +54,19 @@ body = NotebookCreateRequest(
                                         line_width=WidgetLineWidth("normal"),
                                         palette="dog_classic",
                                     ),
-                                )
+                                ),
                             ],
                             show_legend=True,
                             type=TimeseriesWidgetDefinitionType("timeseries"),
-                            yaxis=WidgetAxis(scale="linear"),
+                            yaxis=WidgetAxis(
+                                scale="linear",
+                            ),
                         ),
                         graph_size=NotebookGraphSize("m"),
-                        split_by=NotebookSplitBy(keys=[], tags=[]),
+                        split_by=NotebookSplitBy(
+                            keys=[],
+                            tags=[],
+                        ),
                         time=NotebookCellTime(None),
                     ),
                     type=NotebookCellResourceType("notebook_cells"),
@@ -69,10 +74,12 @@ body = NotebookCreateRequest(
             ],
             name="Example-Create_a_notebook_returns_OK_response",
             status=NotebookStatus("published"),
-            time=NotebookRelativeTime(live_span=WidgetLiveSpan("1h")),
+            time=NotebookRelativeTime(
+                live_span=WidgetLiveSpan("1h"),
+            ),
         ),
         type=NotebookResourceType("notebooks"),
-    )
+    ),
 )
 
 configuration = Configuration()

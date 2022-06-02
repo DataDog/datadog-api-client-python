@@ -835,6 +835,24 @@
       "type": "safe"
     }
   },
+  "AddSecurityMonitoringSignalToIncident": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "EditSecurityMonitoringSignalAssignee": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "EditSecurityMonitoringSignalState": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "SubmitMetrics": {
     "tag": "Metrics",
     "undo": {

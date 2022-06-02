@@ -2,7 +2,7 @@
 Create a user returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.users_api import UsersApi
 from datadog_api_client.v2.model.user_create_attributes import UserCreateAttributes
 from datadog_api_client.v2.model.user_create_data import UserCreateData
@@ -13,9 +13,10 @@ body = UserCreateRequest(
     data=UserCreateData(
         type=UsersType("users"),
         attributes=UserCreateAttributes(
-            name="Datadog API Client Python", email="Example-Create_a_user_returns_OK_response@datadoghq.com"
+            name="Datadog API Client Python",
+            email="Example-Create_a_user_returns_OK_response@datadoghq.com",
         ),
-    )
+    ),
 )
 
 configuration = Configuration()

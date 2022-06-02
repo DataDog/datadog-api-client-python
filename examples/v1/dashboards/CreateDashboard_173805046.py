@@ -3,7 +3,7 @@ Create a new dashboard with slo widget
 """
 
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -23,19 +23,26 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=60, height=21),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=60,
+                height=21,
+            ),
             definition=SLOWidgetDefinition(
                 title_size="16",
                 title_align=WidgetTextAlign("left"),
                 type=SLOWidgetDefinitionType("slo"),
                 view_type="detail",
-                time_windows=[WidgetTimeWindows("7d")],
+                time_windows=[
+                    WidgetTimeWindows("7d"),
+                ],
                 slo_id=SLO_DATA_0_ID,
                 show_error_budget=True,
                 view_mode=WidgetViewMode("overall"),
                 global_time_target="0",
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

@@ -3,7 +3,7 @@ Add custom timeboard dashboard to an existing dashboard list returns "OK" respon
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
 from datadog_api_client.v2.model.dashboard_list_item_request import DashboardListItemRequest
@@ -16,7 +16,12 @@ DASHBOARD_LIST_ID = environ["DASHBOARD_LIST_ID"]
 DASHBOARD_ID = environ["DASHBOARD_ID"]
 
 body = DashboardListAddItemsRequest(
-    dashboards=[DashboardListItemRequest(id=DASHBOARD_ID, type=DashboardType("custom_timeboard"))]
+    dashboards=[
+        DashboardListItemRequest(
+            id=DASHBOARD_ID,
+            type=DashboardType("custom_timeboard"),
+        ),
+    ],
 )
 
 configuration = Configuration()

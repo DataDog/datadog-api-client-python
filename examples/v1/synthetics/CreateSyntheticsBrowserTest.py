@@ -2,7 +2,7 @@
 Create a browser test returns "OK - Returns the created test details." response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v1.model.http_method import HTTPMethod
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
@@ -26,27 +26,39 @@ body = SyntheticsBrowserTest(
                 name="PROPERTY",
                 pattern="content-type",
                 type=SyntheticsConfigVariableType("text"),
-            )
+            ),
         ],
-        request=SyntheticsTestRequest(method=HTTPMethod("GET"), url="https://datadoghq.com"),
+        request=SyntheticsTestRequest(
+            method=HTTPMethod("GET"),
+            url="https://datadoghq.com",
+        ),
         set_cookie="name:test",
     ),
-    locations=["aws:us-east-2"],
+    locations=[
+        "aws:us-east-2",
+    ],
     message="Test message",
     name="Example-Create_a_browser_test_returns_OK_Returns_the_created_test_details_response",
     options=SyntheticsTestOptions(
         accept_self_signed=False,
         allow_insecure=True,
-        device_ids=[SyntheticsDeviceID("tablet")],
+        device_ids=[
+            SyntheticsDeviceID("tablet"),
+        ],
         disable_cors=True,
         follow_redirects=True,
         min_failure_duration=10,
         min_location_failed=1,
         no_screenshot=True,
-        retry=SyntheticsTestOptionsRetry(count=3, interval=10.0),
+        retry=SyntheticsTestOptionsRetry(
+            count=3,
+            interval=10.0,
+        ),
         tick_every=300,
     ),
-    tags=["testing:browser"],
+    tags=[
+        "testing:browser",
+    ],
     type=SyntheticsBrowserTestType("browser"),
     steps=[
         SyntheticsStep(
@@ -55,7 +67,7 @@ body = SyntheticsBrowserTest(
             name="Refresh page",
             params=dict(),
             type=SyntheticsStepType("refresh"),
-        )
+        ),
     ],
 )
 

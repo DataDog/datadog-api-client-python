@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_custom_reports_data import UsageCustomReportsData
-    from datadog_api_client.v1.model.usage_custom_reports_meta import UsageCustomReportsMeta
-
-    globals()["UsageCustomReportsData"] = UsageCustomReportsData
-    globals()["UsageCustomReportsMeta"] = UsageCustomReportsMeta
-
-
 class UsageCustomReportsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_custom_reports_data import UsageCustomReportsData
+        from datadog_api_client.v1.model.usage_custom_reports_meta import UsageCustomReportsMeta
+
         return {
             "data": ([UsageCustomReportsData],),
             "meta": (UsageCustomReportsMeta,),

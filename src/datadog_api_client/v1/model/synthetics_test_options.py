@@ -9,18 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
-    from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
-    from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
-    from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
-
-    globals()["SyntheticsDeviceID"] = SyntheticsDeviceID
-    globals()["SyntheticsTestOptionsMonitorOptions"] = SyntheticsTestOptionsMonitorOptions
-    globals()["SyntheticsRestrictedRoles"] = SyntheticsRestrictedRoles
-    globals()["SyntheticsTestOptionsRetry"] = SyntheticsTestOptionsRetry
-
-
 class SyntheticsTestOptions(ModelNormal):
     validations = {
         "monitor_priority": {
@@ -35,7 +23,14 @@ class SyntheticsTestOptions(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
+        from datadog_api_client.v1.model.synthetics_test_options_monitor_options import (
+            SyntheticsTestOptionsMonitorOptions,
+        )
+        from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
+        from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
+        from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
+
         return {
             "accept_self_signed": (bool,),
             "allow_insecure": (bool,),
@@ -51,6 +46,7 @@ class SyntheticsTestOptions(ModelNormal):
             "no_screenshot": (bool,),
             "restricted_roles": (SyntheticsRestrictedRoles,),
             "retry": (SyntheticsTestOptionsRetry,),
+            "rum_settings": (SyntheticsBrowserTestRumSettings,),
             "tick_every": (int,),
         }
 
@@ -69,6 +65,7 @@ class SyntheticsTestOptions(ModelNormal):
         "no_screenshot": "noScreenshot",
         "restricted_roles": "restricted_roles",
         "retry": "retry",
+        "rum_settings": "rumSettings",
         "tick_every": "tick_every",
     }
 
@@ -120,6 +117,19 @@ class SyntheticsTestOptions(ModelNormal):
 
         :param retry: Object describing the retry strategy to apply to a Synthetic test.
         :type retry: SyntheticsTestOptionsRetry, optional
+
+        :param rum_settings: The RUM data collection settings for the Synthetic browser test.
+            **Note:** There are 3 ways to format RUM settings:
+
+            ``{ isEnabled: false }``
+            RUM data is not collected.
+
+            ``{ isEnabled: true }``
+            RUM data is collected from the Synthetic test's default application.
+
+            ``{ isEnabled: true, applicationId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", clientTokenId: 12345 }``
+            RUM data is collected using the specified application.
+        :type rum_settings: SyntheticsBrowserTestRumSettings, optional
 
         :param tick_every: The frequency at which to run the Synthetic test (in seconds).
         :type tick_every: int, optional

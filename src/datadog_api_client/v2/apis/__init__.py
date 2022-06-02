@@ -16,4 +16,5 @@ from datadog_api_client.v2.api.rum_api import RUMApi
 from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
+from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
 from datadog_api_client.v2.api.users_api import UsersApi

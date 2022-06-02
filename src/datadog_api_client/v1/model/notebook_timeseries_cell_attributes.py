@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
-    from datadog_api_client.v1.model.notebook_graph_size import NotebookGraphSize
-    from datadog_api_client.v1.model.notebook_split_by import NotebookSplitBy
-    from datadog_api_client.v1.model.notebook_cell_time import NotebookCellTime
-
-    globals()["TimeseriesWidgetDefinition"] = TimeseriesWidgetDefinition
-    globals()["NotebookGraphSize"] = NotebookGraphSize
-    globals()["NotebookSplitBy"] = NotebookSplitBy
-    globals()["NotebookCellTime"] = NotebookCellTime
-
-
 class NotebookTimeseriesCellAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
+        from datadog_api_client.v1.model.notebook_graph_size import NotebookGraphSize
+        from datadog_api_client.v1.model.notebook_split_by import NotebookSplitBy
+        from datadog_api_client.v1.model.notebook_cell_time import NotebookCellTime
+
         return {
             "definition": (TimeseriesWidgetDefinition,),
             "graph_size": (NotebookGraphSize,),
@@ -41,7 +33,7 @@ class NotebookTimeseriesCellAttributes(ModelNormal):
 
     def __init__(self, definition, *args, **kwargs):
         """
-        The attributes of a notebook `timeseries` cell.
+        The attributes of a notebook ``timeseries`` cell.
 
         :param definition: The timeseries visualization allows you to display the evolution of one or more metrics, log events, or Indexed Spans over time.
         :type definition: TimeseriesWidgetDefinition

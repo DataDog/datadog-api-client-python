@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
-
-    globals()["SyntheticsStepType"] = SyntheticsStepType
-
-
 class SyntheticsStep(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
+
         return {
             "allow_failure": (bool,),
             "is_critical": (bool,),
@@ -44,7 +39,7 @@ class SyntheticsStep(ModelNormal):
         :param allow_failure: A boolean set to allow this step to fail.
         :type allow_failure: bool, optional
 
-        :param is_critical: A boolean to use in addition to `allowFailure` to determine if the test should be marked as failed when the step fails.
+        :param is_critical: A boolean to use in addition to ``allowFailure`` to determine if the test should be marked as failed when the step fails.
         :type is_critical: bool, optional
 
         :param name: The name of the step.

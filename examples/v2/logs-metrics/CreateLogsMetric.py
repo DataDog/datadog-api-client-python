@@ -2,7 +2,7 @@
 Create a log-based metric returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.logs_metrics_api import LogsMetricsApi
 from datadog_api_client.v2.model.logs_metric_compute import LogsMetricCompute
 from datadog_api_client.v2.model.logs_metric_compute_aggregation_type import LogsMetricComputeAggregationType
@@ -16,9 +16,11 @@ body = LogsMetricCreateRequest(
         id="Example-Create_a_log_based_metric_returns_OK_response",
         type=LogsMetricType("logs_metrics"),
         attributes=LogsMetricCreateAttributes(
-            compute=LogsMetricCompute(aggregation_type=LogsMetricComputeAggregationType("count"))
+            compute=LogsMetricCompute(
+                aggregation_type=LogsMetricComputeAggregationType("count"),
+            ),
         ),
-    )
+    ),
 )
 
 configuration = Configuration()

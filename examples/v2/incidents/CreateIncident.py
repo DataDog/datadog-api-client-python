@@ -3,7 +3,7 @@ Create an incident returns "CREATED" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.incidents_api import IncidentsApi
 from datadog_api_client.v2.model.incident_create_attributes import IncidentCreateAttributes
 from datadog_api_client.v2.model.incident_create_data import IncidentCreateData
@@ -29,16 +29,20 @@ body = IncidentCreateRequest(
             customer_impacted=False,
             fields=dict(
                 state=IncidentFieldAttributesSingleValue(
-                    type=IncidentFieldAttributesSingleValueType("dropdown"), value="resolved"
-                )
+                    type=IncidentFieldAttributesSingleValueType("dropdown"),
+                    value="resolved",
+                ),
             ),
         ),
         relationships=IncidentCreateRelationships(
             commander_user=NullableRelationshipToUser(
-                data=NullableRelationshipToUserData(type=UsersType("users"), id=USER_DATA_ID)
-            )
+                data=NullableRelationshipToUserData(
+                    type=UsersType("users"),
+                    id=USER_DATA_ID,
+                ),
+            ),
         ),
-    )
+    ),
 )
 
 configuration = Configuration()

@@ -4,8 +4,11 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
+import difflib
 import os
 import sys
+
+from sphinx.domains.python import PythonDomain
 
 sys.path.insert(0, os.path.abspath("../src"))
 
@@ -71,3 +74,64 @@ html_theme_options = {
 }
 
 add_module_names = False
+
+autoclass_content = "both"
+
+
+def find_obj(domain, env, modname, classname, name, type, searchmode=0):
+    # skip parens
+    if name[-2:] == '()':
+        name = name[:-2]
+
+    if not name:
+        return []
+
+    matches = []
+
+    newname = None
+    if searchmode == 1:
+        if type is None:
+            objtypes = list(domain.object_types)
+        else:
+            objtypes = domain.objtypes_for_role(type)
+        if objtypes is not None:
+            if modname and classname:
+                fullname = modname + '.' + classname + '.' + name
+                if fullname in domain.objects and domain.objects[fullname].objtype in objtypes:
+                    newname = fullname
+            if not newname:
+                if modname and modname + '.' + name in domain.objects and \
+                   domain.objects[modname + '.' + name].objtype in objtypes:
+                    newname = modname + '.' + name
+                elif name in domain.objects and domain.objects[name].objtype in objtypes:
+                    newname = name
+                else:
+                    # "fuzzy" searching mode
+                    searchname = '.' + name
+                    matches = [(oname, domain.objects[oname]) for oname in domain.objects
+                               if oname.endswith(searchname) and
+                               domain.objects[oname].objtype in objtypes]
+                    if len(matches) > 1:
+                        close_match = difflib.get_close_matches(modname, [m[0] for m in matches], n=1, cutoff=0.1)
+                        if close_match:
+                            matches = [m for m in matches if m[0] == close_match[0]]
+    else:
+        # NOTE: searching for exact match, object type is not considered
+        if name in domain.objects:
+            newname = name
+        elif type == 'mod':
+            # only exact matches allowed for modules
+            return []
+        elif classname and classname + '.' + name in domain.objects:
+            newname = classname + '.' + name
+        elif modname and modname + '.' + name in domain.objects:
+            newname = modname + '.' + name
+        elif modname and classname and \
+                modname + '.' + classname + '.' + name in domain.objects:
+            newname = modname + '.' + classname + '.' + name
+    if newname is not None:
+        matches.append((newname, domain.objects[newname]))
+    return matches
+
+
+PythonDomain.find_obj = find_obj

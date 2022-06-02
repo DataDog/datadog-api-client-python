@@ -2,7 +2,7 @@
 Create a new dashboard with hostmap widget
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -21,19 +21,31 @@ body = Dashboard(
     description=None,
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=47, height=22),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=47,
+                height=22,
+            ),
             definition=HostMapWidgetDefinition(
                 title="",
                 title_size="16",
                 title_align=WidgetTextAlign("left"),
                 type=HostMapWidgetDefinitionType("hostmap"),
-                requests=HostMapWidgetDefinitionRequests(fill=HostMapRequest(q="avg:system.cpu.user{*} by {host}")),
+                requests=HostMapWidgetDefinitionRequests(
+                    fill=HostMapRequest(
+                        q="avg:system.cpu.user{*} by {host}",
+                    ),
+                ),
                 node_type=WidgetNodeType("host"),
                 no_metric_hosts=True,
                 no_group_hosts=True,
-                style=HostMapWidgetDefinitionStyle(palette="green_to_orange", palette_flip=False),
+                style=HostMapWidgetDefinitionStyle(
+                    palette="green_to_orange",
+                    palette_flip=False,
+                ),
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

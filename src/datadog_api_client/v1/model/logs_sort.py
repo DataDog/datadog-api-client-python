@@ -27,7 +27,7 @@ class LogsSort(ModelSimple):
 
     def __init__(self, *args, **kwargs):
         """
-        Time-ascending `asc` or time-descending `desc`results.
+        Time-ascending `asc` or time-descending `desc` results.
 
         Note that value can be passed either in args or in kwargs, but not in both.
 

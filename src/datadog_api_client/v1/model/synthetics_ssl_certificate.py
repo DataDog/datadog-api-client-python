@@ -10,18 +10,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_ssl_certificate_issuer import SyntheticsSSLCertificateIssuer
-    from datadog_api_client.v1.model.synthetics_ssl_certificate_subject import SyntheticsSSLCertificateSubject
-
-    globals()["SyntheticsSSLCertificateIssuer"] = SyntheticsSSLCertificateIssuer
-    globals()["SyntheticsSSLCertificateSubject"] = SyntheticsSSLCertificateSubject
-
-
 class SyntheticsSSLCertificate(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_ssl_certificate_issuer import SyntheticsSSLCertificateIssuer
+        from datadog_api_client.v1.model.synthetics_ssl_certificate_subject import SyntheticsSSLCertificateSubject
+
         return {
             "cipher": (str,),
             "exponent": (float,),

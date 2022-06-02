@@ -2,7 +2,7 @@
 Create a ci-pipelines formula and functions monitor returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.monitors_api import MonitorsApi
 from datadog_api_client.v1.model.monitor import Monitor
 from datadog_api_client.v1.model.monitor_formula_and_function_event_aggregation import (
@@ -29,28 +29,41 @@ body = Monitor(
     type=MonitorType("ci-pipelines alert"),
     query='formula("query1 / query2 * 100").last("15m") >= 0.8',
     message="some message Notify: @hipchat-channel",
-    tags=["test:examplecreateacipipelinesformulaandfunctionsmonitorreturnsokresponse", "env:ci"],
+    tags=[
+        "test:examplecreateacipipelinesformulaandfunctionsmonitorreturnsokresponse",
+        "env:ci",
+    ],
     priority=3,
     options=MonitorOptions(
-        thresholds=MonitorThresholds(critical=0.8),
+        thresholds=MonitorThresholds(
+            critical=0.8,
+        ),
         variables=[
             MonitorFormulaAndFunctionEventQueryDefinition(
                 data_source=MonitorFormulaAndFunctionEventsDataSource("ci_pipelines"),
                 name="query1",
-                search=MonitorFormulaAndFunctionEventQueryDefinitionSearch(query="@ci.status:error"),
-                indexes=["*"],
+                search=MonitorFormulaAndFunctionEventQueryDefinitionSearch(
+                    query="@ci.status:error",
+                ),
+                indexes=[
+                    "*",
+                ],
                 compute=MonitorFormulaAndFunctionEventQueryDefinitionCompute(
-                    aggregation=MonitorFormulaAndFunctionEventAggregation("count")
+                    aggregation=MonitorFormulaAndFunctionEventAggregation("count"),
                 ),
                 group_by=[],
             ),
             MonitorFormulaAndFunctionEventQueryDefinition(
                 data_source=MonitorFormulaAndFunctionEventsDataSource("ci_pipelines"),
                 name="query2",
-                search=MonitorFormulaAndFunctionEventQueryDefinitionSearch(query=""),
-                indexes=["*"],
+                search=MonitorFormulaAndFunctionEventQueryDefinitionSearch(
+                    query="",
+                ),
+                indexes=[
+                    "*",
+                ],
                 compute=MonitorFormulaAndFunctionEventQueryDefinitionCompute(
-                    aggregation=MonitorFormulaAndFunctionEventAggregation("count")
+                    aggregation=MonitorFormulaAndFunctionEventAggregation("count"),
                 ),
                 group_by=[],
             ),

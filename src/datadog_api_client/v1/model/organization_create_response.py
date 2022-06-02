@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.api_key import ApiKey
-    from datadog_api_client.v1.model.application_key import ApplicationKey
-    from datadog_api_client.v1.model.organization import Organization
-    from datadog_api_client.v1.model.user import User
-
-    globals()["ApiKey"] = ApiKey
-    globals()["ApplicationKey"] = ApplicationKey
-    globals()["Organization"] = Organization
-    globals()["User"] = User
-
-
 class OrganizationCreateResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.api_key import ApiKey
+        from datadog_api_client.v1.model.application_key import ApplicationKey
+        from datadog_api_client.v1.model.organization import Organization
+        from datadog_api_client.v1.model.user import User
+
         return {
             "api_key": (ApiKey,),
             "application_key": (ApplicationKey,),

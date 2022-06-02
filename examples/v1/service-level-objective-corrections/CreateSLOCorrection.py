@@ -5,7 +5,7 @@ Create an SLO correction returns "OK" response
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.service_level_objective_corrections_api import ServiceLevelObjectiveCorrectionsApi
 from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
 from datadog_api_client.v1.model.slo_correction_create_data import SLOCorrectionCreateData
@@ -27,11 +27,10 @@ body = SLOCorrectionCreateRequest(
             timezone="UTC",
         ),
         type=SLOCorrectionType("correction"),
-    )
+    ),
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_slo_correction"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ServiceLevelObjectiveCorrectionsApi(api_client)
     response = api_instance.create_slo_correction(body=body)

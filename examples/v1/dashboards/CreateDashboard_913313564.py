@@ -2,7 +2,7 @@
 Create a new dashboard with iframe widget
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -16,11 +16,17 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=12, height=12),
-            definition=IFrameWidgetDefinition(
-                type=IFrameWidgetDefinitionType("iframe"), url="https://docs.datadoghq.com/api/latest/"
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=12,
+                height=12,
             ),
-        )
+            definition=IFrameWidgetDefinition(
+                type=IFrameWidgetDefinitionType("iframe"),
+                url="https://docs.datadoghq.com/api/latest/",
+            ),
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

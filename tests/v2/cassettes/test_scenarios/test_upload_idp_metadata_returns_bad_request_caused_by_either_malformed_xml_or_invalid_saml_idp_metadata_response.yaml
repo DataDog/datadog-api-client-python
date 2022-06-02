@@ -7,7 +7,7 @@ interactions:
       \n"
     headers:
       accept:
-      - application/json
+      - '*/*'
       content-type:
       - multipart/form-data; boundary=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     method: POST

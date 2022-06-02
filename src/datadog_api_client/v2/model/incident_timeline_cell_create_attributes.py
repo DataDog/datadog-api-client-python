@@ -9,14 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attributes import (
-        IncidentTimelineCellMarkdownCreateAttributes,
-    )
-
-    globals()["IncidentTimelineCellMarkdownCreateAttributes"] = IncidentTimelineCellMarkdownCreateAttributes
-
-
 class IncidentTimelineCellCreateAttributes(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
@@ -54,7 +46,10 @@ class IncidentTimelineCellCreateAttributes(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        lazy_import()
+        from datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attributes import (
+            IncidentTimelineCellMarkdownCreateAttributes,
+        )
+
         return {
             "anyOf": [],
             "allOf": [],

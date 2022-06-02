@@ -3,7 +3,7 @@ Edit an API key returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.key_management_api import KeyManagementApi
 from datadog_api_client.v2.model.api_key_update_attributes import APIKeyUpdateAttributes
 from datadog_api_client.v2.model.api_key_update_data import APIKeyUpdateData
@@ -17,8 +17,10 @@ body = APIKeyUpdateRequest(
     data=APIKeyUpdateData(
         type=APIKeysType("api_keys"),
         id=API_KEY_DATA_ID,
-        attributes=APIKeyUpdateAttributes(name="Example-Edit_an_API_key_returns_OK_response"),
-    )
+        attributes=APIKeyUpdateAttributes(
+            name="Example-Edit_an_API_key_returns_OK_response",
+        ),
+    ),
 )
 
 configuration = Configuration()

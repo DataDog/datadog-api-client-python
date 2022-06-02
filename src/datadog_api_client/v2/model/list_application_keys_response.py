@@ -9,18 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.partial_application_key import PartialApplicationKey
-    from datadog_api_client.v2.model.application_key_response_included_item import ApplicationKeyResponseIncludedItem
-
-    globals()["PartialApplicationKey"] = PartialApplicationKey
-    globals()["ApplicationKeyResponseIncludedItem"] = ApplicationKeyResponseIncludedItem
-
-
 class ListApplicationKeysResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.partial_application_key import PartialApplicationKey
+        from datadog_api_client.v2.model.application_key_response_included_item import (
+            ApplicationKeyResponseIncludedItem,
+        )
+
         return {
             "data": ([PartialApplicationKey],),
             "included": ([ApplicationKeyResponseIncludedItem],),

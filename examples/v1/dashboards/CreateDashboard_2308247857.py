@@ -3,7 +3,7 @@ Create a new dashboard with alert_graph widget
 """
 
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.alert_graph_widget_definition import AlertGraphWidgetDefinition
 from datadog_api_client.v1.model.alert_graph_widget_definition_type import AlertGraphWidgetDefinitionType
@@ -23,7 +23,12 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=47, height=15),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=47,
+                height=15,
+            ),
             definition=AlertGraphWidgetDefinition(
                 title="",
                 title_size="16",
@@ -33,7 +38,7 @@ body = Dashboard(
                 alert_id="7",
                 viz_type=WidgetVizType("timeseries"),
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

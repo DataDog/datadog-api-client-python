@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.target_format_type import TargetFormatType
-    from datadog_api_client.v1.model.logs_attribute_remapper_type import LogsAttributeRemapperType
-
-    globals()["TargetFormatType"] = TargetFormatType
-    globals()["LogsAttributeRemapperType"] = LogsAttributeRemapperType
-
-
 class LogsAttributeRemapper(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.target_format_type import TargetFormatType
+        from datadog_api_client.v1.model.logs_attribute_remapper_type import LogsAttributeRemapperType
+
         return {
             "is_enabled": (bool,),
             "name": (str,),
@@ -50,8 +44,8 @@ class LogsAttributeRemapper(ModelNormal):
     def __init__(self, sources, target, type, *args, **kwargs):
         """
         The remapper processor remaps any source attribute(s) or tag to another target attribute or tag.
-        Constraints on the tag/attribute name are explained in the [Tag Best Practice documentation](https://docs.datadoghq.com/logs/guide/log-parsing-best-practice).
-        Some additional constraints are applied as `:` or `,` are not allowed in the target tag/attribute name.
+        Constraints on the tag/attribute name are explained in the `Tag Best Practice documentation <https://docs.datadoghq.com/logs/guide/log-parsing-best-practice>`_.
+        Some additional constraints are applied as ``:`` or ``,`` are not allowed in the target tag/attribute name.
 
         :param is_enabled: Whether or not the processor is enabled.
         :type is_enabled: bool, optional
@@ -65,7 +59,7 @@ class LogsAttributeRemapper(ModelNormal):
         :param preserve_source: Remove or preserve the remapped source element.
         :type preserve_source: bool, optional
 
-        :param source_type: Defines if the sources are from log `attribute` or `tag`.
+        :param source_type: Defines if the sources are from log ``attribute`` or ``tag``.
         :type source_type: str, optional
 
         :param sources: Array of source attributes.
@@ -74,12 +68,12 @@ class LogsAttributeRemapper(ModelNormal):
         :param target: Final attribute or tag name to remap the sources to.
         :type target: str
 
-        :param target_format: If the `target_type` of the remapper is `attribute`, try to cast the value to a new specific type.
-            If the cast is not possible, the original type is kept. `string`, `integer`, or `double` are the possible types.
-            If the `target_type` is `tag`, this parameter may not be specified.
+        :param target_format: If the ``target_type`` of the remapper is ``attribute`` , try to cast the value to a new specific type.
+            If the cast is not possible, the original type is kept. ``string`` , ``integer`` , or ``double`` are the possible types.
+            If the ``target_type`` is ``tag`` , this parameter may not be specified.
         :type target_format: TargetFormatType, optional
 
-        :param target_type: Defines if the final attribute or tag name is from log `attribute` or `tag`.
+        :param target_type: Defines if the final attribute or tag name is from log ``attribute`` or ``tag``.
         :type target_type: str, optional
 
         :param type: Type of logs attribute remapper.

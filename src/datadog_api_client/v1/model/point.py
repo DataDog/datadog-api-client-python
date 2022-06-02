@@ -32,7 +32,6 @@ class Point(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Array of timeseries points.
         :type value: [float, none_type]
         """
         super().__init__(kwargs)

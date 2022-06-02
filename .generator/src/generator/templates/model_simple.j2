@@ -1,10 +1,4 @@
 {%- set ref = get_type_for_items(model) %}
-{%- if ref  %}
-def lazy_import():
-    from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
-
-    globals()["{{ ref }}"] = {{ ref }}
-{%- endif %}
 
 class {{ name }}(ModelSimple):
 
@@ -52,7 +46,7 @@ class {{ name }}(ModelSimple):
     @cached_property
     def openapi_types(_):
 {%- if ref %}
-        lazy_import()
+        from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
         return {
             "value": ([{{ ref }}],),
         }
@@ -64,11 +58,13 @@ class {{ name }}(ModelSimple):
 
     def __init__(self, *args, **kwargs):
         """
-        {{ model.description|indent(8) }}
+        {{ model.description|docstring|indent(8) }}
 
         Note that value can be passed either in args or in kwargs, but not in both.
-
-        :param value: {{ model.description }}{%- if "default" in model and model.default != None %} If omitted defaults to "{{ model.default }}".{%- endif %}
+{# empty line #}
+{%- if "default" in model and model.default != None %}
+        :param value: If omitted defaults to "{{ model.default }}".
+{%- endif %}
 {%- if ref %}
         :type value: [{{ ref }}]
 {%- else %}

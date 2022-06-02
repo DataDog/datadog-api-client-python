@@ -9,22 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
-    from datadog_api_client.v1.model.sunburst_widget_legend import SunburstWidgetLegend
-    from datadog_api_client.v1.model.sunburst_widget_request import SunburstWidgetRequest
-    from datadog_api_client.v1.model.widget_time import WidgetTime
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.sunburst_widget_definition_type import SunburstWidgetDefinitionType
-
-    globals()["WidgetCustomLink"] = WidgetCustomLink
-    globals()["SunburstWidgetLegend"] = SunburstWidgetLegend
-    globals()["SunburstWidgetRequest"] = SunburstWidgetRequest
-    globals()["WidgetTime"] = WidgetTime
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["SunburstWidgetDefinitionType"] = SunburstWidgetDefinitionType
-
-
 class SunburstWidgetDefinition(ModelNormal):
     validations = {
         "requests": {
@@ -34,7 +18,13 @@ class SunburstWidgetDefinition(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+        from datadog_api_client.v1.model.sunburst_widget_legend import SunburstWidgetLegend
+        from datadog_api_client.v1.model.sunburst_widget_request import SunburstWidgetRequest
+        from datadog_api_client.v1.model.widget_time import WidgetTime
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.sunburst_widget_definition_type import SunburstWidgetDefinitionType
+
         return {
             "custom_links": ([WidgetCustomLink],),
             "hide_total": (bool,),

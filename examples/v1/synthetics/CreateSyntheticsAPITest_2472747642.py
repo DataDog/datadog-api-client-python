@@ -2,7 +2,7 @@
 Create an API test with WEBSOCKET subtype returns "OK - Returns the created test details." response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_api_test_config import SyntheticsAPITestConfig
@@ -30,9 +30,14 @@ body = SyntheticsAPITest(
             ),
         ],
         config_variables=[],
-        request=SyntheticsTestRequest(url="ws://datadoghq.com", message="message"),
+        request=SyntheticsTestRequest(
+            url="ws://datadoghq.com",
+            message="message",
+        ),
     ),
-    locations=["aws:us-east-2"],
+    locations=[
+        "aws:us-east-2",
+    ],
     message="BDD test payload: synthetics_api_test_websocket_payload.json",
     name="Example-Create_an_API_test_with_WEBSOCKET_subtype_returns_OK_Returns_the_created_test_details_response",
     options=SyntheticsTestOptions(
@@ -43,11 +48,16 @@ body = SyntheticsAPITest(
         min_location_failed=1,
         monitor_name="Example-Create_an_API_test_with_WEBSOCKET_subtype_returns_OK_Returns_the_created_test_details_response",
         monitor_priority=5,
-        retry=SyntheticsTestOptionsRetry(count=3, interval=10.0),
+        retry=SyntheticsTestOptionsRetry(
+            count=3,
+            interval=10.0,
+        ),
         tick_every=60,
     ),
     subtype=SyntheticsTestDetailsSubType("websocket"),
-    tags=["testing:api"],
+    tags=[
+        "testing:api",
+    ],
     type=SyntheticsAPITestType("api"),
 )
 

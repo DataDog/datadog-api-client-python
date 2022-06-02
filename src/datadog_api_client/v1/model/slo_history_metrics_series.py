@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_history_metrics_series_metadata import SLOHistoryMetricsSeriesMetadata
-
-    globals()["SLOHistoryMetricsSeriesMetadata"] = SLOHistoryMetricsSeriesMetadata
-
-
 class SLOHistoryMetricsSeries(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_history_metrics_series_metadata import SLOHistoryMetricsSeriesMetadata
+
         return {
             "count": (int,),
             "metadata": (SLOHistoryMetricsSeriesMetadata,),
@@ -35,8 +30,8 @@ class SLOHistoryMetricsSeries(ModelNormal):
 
     def __init__(self, count, sum, values, *args, **kwargs):
         """
-        A representation of `metric` based SLO time series for the provided queries.
-        This is the same response type from `batch_query` endpoint.
+        A representation of ``metric`` based SLO time series for the provided queries.
+        This is the same response type from ``batch_query`` endpoint.
 
         :param count: Count of submitted metrics.
         :type count: int

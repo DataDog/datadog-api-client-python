@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.check_can_delete_monitor_response_data import CheckCanDeleteMonitorResponseData
-
-    globals()["CheckCanDeleteMonitorResponseData"] = CheckCanDeleteMonitorResponseData
-
-
 class CheckCanDeleteMonitorResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.check_can_delete_monitor_response_data import CheckCanDeleteMonitorResponseData
+
         return {
             "data": (CheckCanDeleteMonitorResponseData,),
             "errors": ({str: ([str],)},),

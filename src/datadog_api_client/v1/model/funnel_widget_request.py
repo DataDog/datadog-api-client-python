@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.funnel_query import FunnelQuery
-    from datadog_api_client.v1.model.funnel_request_type import FunnelRequestType
-
-    globals()["FunnelQuery"] = FunnelQuery
-    globals()["FunnelRequestType"] = FunnelRequestType
-
-
 class FunnelWidgetRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.funnel_query import FunnelQuery
+        from datadog_api_client.v1.model.funnel_request_type import FunnelRequestType
+
         return {
             "query": (FunnelQuery,),
             "request_type": (FunnelRequestType,),

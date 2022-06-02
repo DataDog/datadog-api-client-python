@@ -9,18 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
-    from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
-    from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
-    from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
-
-    globals()["SecurityMonitoringRuleCase"] = SecurityMonitoringRuleCase
-    globals()["SecurityMonitoringFilter"] = SecurityMonitoringFilter
-    globals()["SecurityMonitoringRuleOptions"] = SecurityMonitoringRuleOptions
-    globals()["SecurityMonitoringRuleQuery"] = SecurityMonitoringRuleQuery
-
-
 class SecurityMonitoringRuleUpdatePayload(ModelNormal):
     validations = {
         "version": {
@@ -30,7 +18,11 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
+        from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
+        from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
+        from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
+
         return {
             "cases": ([SecurityMonitoringRuleCase],),
             "filters": ([SecurityMonitoringFilter],),

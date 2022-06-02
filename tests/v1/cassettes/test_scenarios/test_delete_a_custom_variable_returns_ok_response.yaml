@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"is_secret":false,"name":"TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1641833861","value":"variable-value"}'
+    body: '{"is_secret":false,"name":"TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1652349041","value":"variable-value"}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables
   response:
     body:
-      string: '{"is_secret":false,"name":"TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1641833861","value":"variable-value"}'
+      string: '{"is_secret":false,"name":"TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1652349041","value":"variable-value"}'
     headers:
       content-type:
       - application/json
@@ -21,9 +21,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1641833861
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1652349041
   response:
     body:
       string: '{}'
@@ -37,9 +37,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1641833861
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1652349041
   response:
     body:
       string: '{"errors": ["Custom variable does not exist"]}'

@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.incident_response_data import IncidentResponseData
-    from datadog_api_client.v2.model.incident_response_included_item import IncidentResponseIncludedItem
-
-    globals()["IncidentResponseData"] = IncidentResponseData
-    globals()["IncidentResponseIncludedItem"] = IncidentResponseIncludedItem
-
-
 class IncidentResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.incident_response_data import IncidentResponseData
+        from datadog_api_client.v2.model.incident_response_included_item import IncidentResponseIncludedItem
+
         return {
             "data": (IncidentResponseData,),
             "included": ([IncidentResponseIncludedItem],),

@@ -2,7 +2,7 @@
 Create a ci-pipelines monitor returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.monitors_api import MonitorsApi
 from datadog_api_client.v1.model.monitor import Monitor
 from datadog_api_client.v1.model.monitor_options import MonitorOptions
@@ -14,9 +14,16 @@ body = Monitor(
     type=MonitorType("ci-pipelines alert"),
     query='ci-pipelines("ci_level:pipeline @git.branch:staging* @ci.status:error").rollup("count").by("@git.branch,@ci.pipeline.name").last("5m") >= 1',
     message="some message Notify: @hipchat-channel",
-    tags=["test:examplecreateacipipelinesmonitorreturnsokresponse", "env:ci"],
+    tags=[
+        "test:examplecreateacipipelinesmonitorreturnsokresponse",
+        "env:ci",
+    ],
     priority=3,
-    options=MonitorOptions(thresholds=MonitorThresholds(critical=1.0)),
+    options=MonitorOptions(
+        thresholds=MonitorThresholds(
+            critical=1.0,
+        ),
+    ),
 )
 
 configuration = Configuration()

@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
-    from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
-    from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
-    from datadog_api_client.v1.model.synthetics_api_step import SyntheticsAPIStep
-
-    globals()["SyntheticsAssertion"] = SyntheticsAssertion
-    globals()["SyntheticsConfigVariable"] = SyntheticsConfigVariable
-    globals()["SyntheticsTestRequest"] = SyntheticsTestRequest
-    globals()["SyntheticsAPIStep"] = SyntheticsAPIStep
-
-
 class SyntheticsAPITestConfig(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
+        from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
+        from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
+        from datadog_api_client.v1.model.synthetics_api_step import SyntheticsAPIStep
+
         return {
             "assertions": ([SyntheticsAssertion],),
             "config_variables": ([SyntheticsConfigVariable],),
@@ -52,7 +44,7 @@ class SyntheticsAPITestConfig(ModelNormal):
         :param request: Object describing the Synthetic test request.
         :type request: SyntheticsTestRequest, optional
 
-        :param steps: When the test subtype is `multi`, the steps of the test.
+        :param steps: When the test subtype is ``multi`` , the steps of the test.
         :type steps: [SyntheticsAPIStep], optional
         """
         super().__init__(kwargs)

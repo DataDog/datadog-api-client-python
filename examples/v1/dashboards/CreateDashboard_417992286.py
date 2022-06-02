@@ -2,7 +2,7 @@
 Create a new dashboard with note widget
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -16,9 +16,17 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=18, height=24),
-            definition=NoteWidgetDefinition(type=NoteWidgetDefinitionType("note"), content="# Example Note"),
-        )
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=18,
+                height=24,
+            ),
+            definition=NoteWidgetDefinition(
+                type=NoteWidgetDefinitionType("note"),
+                content="# Example Note",
+            ),
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

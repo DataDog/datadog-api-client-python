@@ -3,7 +3,7 @@ Delete custom screenboard dashboard from an existing dashboard list returns "OK"
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.model.dashboard_list_delete_items_request import DashboardListDeleteItemsRequest
 from datadog_api_client.v2.model.dashboard_list_item_request import DashboardListItemRequest
@@ -16,7 +16,12 @@ DASHBOARD_LIST_ID = environ["DASHBOARD_LIST_ID"]
 SCREENBOARD_DASHBOARD_ID = environ["SCREENBOARD_DASHBOARD_ID"]
 
 body = DashboardListDeleteItemsRequest(
-    dashboards=[DashboardListItemRequest(id=SCREENBOARD_DASHBOARD_ID, type=DashboardType("custom_screenboard"))]
+    dashboards=[
+        DashboardListItemRequest(
+            id=SCREENBOARD_DASHBOARD_ID,
+            type=DashboardType("custom_screenboard"),
+        ),
+    ],
 )
 
 configuration = Configuration()

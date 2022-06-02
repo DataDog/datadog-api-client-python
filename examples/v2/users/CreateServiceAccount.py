@@ -3,7 +3,7 @@ Create a service account returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.users_api import UsersApi
 from datadog_api_client.v2.model.relationship_to_role_data import RelationshipToRoleData
 from datadog_api_client.v2.model.relationship_to_roles import RelationshipToRoles
@@ -26,9 +26,16 @@ body = ServiceAccountCreateRequest(
             service_account=True,
         ),
         relationships=UserRelationships(
-            roles=RelationshipToRoles(data=[RelationshipToRoleData(id=ROLE_DATA_ID, type=RolesType("roles"))])
+            roles=RelationshipToRoles(
+                data=[
+                    RelationshipToRoleData(
+                        id=ROLE_DATA_ID,
+                        type=RolesType("roles"),
+                    ),
+                ],
+            ),
         ),
-    )
+    ),
 )
 
 configuration = Configuration()

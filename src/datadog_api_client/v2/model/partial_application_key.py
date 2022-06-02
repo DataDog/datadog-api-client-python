@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.partial_application_key_attributes import PartialApplicationKeyAttributes
-    from datadog_api_client.v2.model.application_key_relationships import ApplicationKeyRelationships
-    from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
-
-    globals()["PartialApplicationKeyAttributes"] = PartialApplicationKeyAttributes
-    globals()["ApplicationKeyRelationships"] = ApplicationKeyRelationships
-    globals()["ApplicationKeysType"] = ApplicationKeysType
-
-
 class PartialApplicationKey(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.partial_application_key_attributes import PartialApplicationKeyAttributes
+        from datadog_api_client.v2.model.application_key_relationships import ApplicationKeyRelationships
+        from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
+
         return {
             "attributes": (PartialApplicationKeyAttributes,),
             "id": (str,),

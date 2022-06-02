@@ -3,7 +3,7 @@ Update a role returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.model.role_update_attributes import RoleUpdateAttributes
 from datadog_api_client.v2.model.role_update_data import RoleUpdateData
@@ -16,8 +16,12 @@ ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 
 body = RoleUpdateRequest(
     data=RoleUpdateData(
-        id=ROLE_DATA_ID, type=RolesType("roles"), attributes=RoleUpdateAttributes(name="developers-updated")
-    )
+        id=ROLE_DATA_ID,
+        type=RolesType("roles"),
+        attributes=RoleUpdateAttributes(
+            name="developers-updated",
+        ),
+    ),
 )
 
 configuration = Configuration()

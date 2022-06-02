@@ -25,7 +25,7 @@ class MonthlyUsageAttributionPagination(ModelNormal):
         """
         The metadata for the current pagination.
 
-        :param next_record_id: The cursor to use to get the next results, if any. To make the next request, use the same parameters with the addition of the `next_record_id`.
+        :param next_record_id: The cursor to use to get the next results, if any. To make the next request, use the same parameters with the addition of the ``next_record_id``.
         :type next_record_id: str, none_type, optional
         """
         super().__init__(kwargs)

@@ -3,7 +3,7 @@ Update an SLO returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.service_level_objectives_api import ServiceLevelObjectivesApi
 from datadog_api_client.v1.model.service_level_objective import ServiceLevelObjective
 from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
@@ -18,9 +18,16 @@ SLO_DATA_0_NAME = environ["SLO_DATA_0_NAME"]
 body = ServiceLevelObjective(
     type=SLOType("metric"),
     name=SLO_DATA_0_NAME,
-    thresholds=[SLOThreshold(target=97.0, timeframe=SLOTimeframe("7d"), warning=98.0)],
+    thresholds=[
+        SLOThreshold(
+            target=97.0,
+            timeframe=SLOTimeframe("7d"),
+            warning=98.0,
+        ),
+    ],
     query=ServiceLevelObjectiveQuery(
-        numerator="sum:httpservice.hits{code:2xx}.as_count()", denominator="sum:httpservice.hits{!code:3xx}.as_count()"
+        numerator="sum:httpservice.hits{code:2xx}.as_count()",
+        denominator="sum:httpservice.hits{!code:3xx}.as_count()",
     ),
 )
 

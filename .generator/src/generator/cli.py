@@ -31,10 +31,12 @@ def cli(specs, output):
     env.filters["camel_case"] = formatter.camel_case
     env.filters["collection_format"] = openapi.collection_format
     env.filters["format_value"] = formatter.format_value
+    env.filters["attribute_path"] = formatter.attribute_path
     env.filters["parameter_schema"] = openapi.parameter_schema
     env.filters["parameters"] = openapi.parameters
     env.filters["return_type"] = openapi.return_type
     env.filters["safe_snake_case"] = openapi.safe_snake_case
+    env.filters["docstring"] = formatter.docstring
 
     env.globals["enumerate"] = enumerate
     env.globals["package"] = PACKAGE_NAME
@@ -51,6 +53,8 @@ def cli(specs, output):
     env.globals["get_oneof_types"] = openapi.get_oneof_types
     env.globals["get_oneof_models"] = openapi.get_oneof_models
     env.globals["type_to_python"] = openapi.type_to_python
+    env.globals["get_default"] = openapi.get_default
+    env.globals["get_type_at_path"] = openapi.get_type_at_path
 
     api_j2 = env.get_template("api.j2")
     apis_j2 = env.get_template("apis.j2")
@@ -109,12 +113,14 @@ def cli(specs, output):
         with models_path.open("w") as fp:
             fp.write(models_j2.render(models=sorted(models)))
 
+        tags_by_name = {tag["name"]: tag for tag in spec["tags"]}
+
         for name, operations in apis.items():
             filename = openapi.safe_snake_case(name) + "_api.py"
             api_path = package / "api" / filename
             api_path.parent.mkdir(parents=True, exist_ok=True)
             with api_path.open("w") as fp:
-                fp.write(api_j2.render(name=name, operations=operations))
+                fp.write(api_j2.render(name=name, operations=operations, description=tags_by_name[name]["description"]))
 
         api_init_path = package / "api" / "__init__.py"
         with api_init_path.open("w") as fp:

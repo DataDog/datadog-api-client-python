@@ -18,6 +18,7 @@ class SecurityMonitoringRuleDetectionMethod(ModelSimple):
             "NEW_VALUE": "new_value",
             "ANOMALY_DETECTION": "anomaly_detection",
             "IMPOSSIBLE_TRAVEL": "impossible_travel",
+            "HARDCODED": "hardcoded",
         },
     }
 
@@ -33,7 +34,7 @@ class SecurityMonitoringRuleDetectionMethod(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["threshold", "new_value", "anomaly_detection", "impossible_travel"].
+        :param value: Must be one of ["threshold", "new_value", "anomaly_detection", "impossible_travel", "hardcoded"].
         :type value: str
         """
         super().__init__(kwargs)

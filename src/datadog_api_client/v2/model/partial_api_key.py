@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.partial_api_key_attributes import PartialAPIKeyAttributes
-    from datadog_api_client.v2.model.api_key_relationships import APIKeyRelationships
-    from datadog_api_client.v2.model.api_keys_type import APIKeysType
-
-    globals()["PartialAPIKeyAttributes"] = PartialAPIKeyAttributes
-    globals()["APIKeyRelationships"] = APIKeyRelationships
-    globals()["APIKeysType"] = APIKeysType
-
-
 class PartialAPIKey(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.partial_api_key_attributes import PartialAPIKeyAttributes
+        from datadog_api_client.v2.model.api_key_relationships import APIKeyRelationships
+        from datadog_api_client.v2.model.api_keys_type import APIKeysType
+
         return {
             "attributes": (PartialAPIKeyAttributes,),
             "id": (str,),

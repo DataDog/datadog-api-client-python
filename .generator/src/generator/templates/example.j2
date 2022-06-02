@@ -1,0 +1,57 @@
+"""
+{{ scenario.name|wordwrap(width=120)}}
+"""
+{% if context._given -%}
+    {# Include 'from os import environ' used in given statements. #}
+    {%- set given = context._imports["os"].add("environ") -%}
+{%- endif -%}
+{%- set parameters, imports = format_parameters(context.api_request.kwargs, spec=operation_spec, replace_values=context._replace_values, version=version) %}
+{%- if context.body %}
+{%- set body, imports = format_data_with_schema(context.body.value, context.api_request.schema.spec, replace_values=context._replace_values, version=version, imports=imports) %}
+{%- endif %}
+
+{%- for package, values in context._imports.items() %}
+from {{ package }} import {{ values|sort|join(', ') }}
+{%- endfor %}
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.{{ version }}.api.{{ context.api_instance.name|safe_snake_case }}_api import {{ context.api_instance.name }}Api
+{%- for package in imports|sort %}
+from {{ package }} import {{ imports[package]|sort|join(', ') }}
+{%- endfor %}
+{%- for name, values in context._given.items() %}
+
+# {{ name }}
+{%- for value in values|sort %}
+{{ value }} = environ["{{ value }}"]
+{%- endfor %}
+{%- endfor %}
+
+{%- if context.body %}
+
+body = {{ body }}
+{%- endif %}
+
+configuration = Configuration()
+
+{%- for operation in context._enable_operations %}
+configuration.unstable_operations["{{ operation|safe_snake_case }}"] = True
+{%- endfor %}
+with ApiClient(configuration) as api_client:
+    api_instance = {{ context.api_instance.name }}Api(api_client)
+    {%- if context.status_code != 204 and context.api_response.content %}
+    response = api_instance.{{ context.api_request.operation_id|safe_snake_case }}({{ parameters }}{% if body %}body=body{% endif %})
+
+    {%- for contentType, schema in context.api_response.content.items() %}
+    {%- if contentType.startswith("application/json") or contentType.startswith("text/json") %}
+
+    print(response)
+    {%- elif schema.get("schema", {}).get("format") == "binary" %}
+
+    print(response.read())
+    {%- else %}
+    {{ 1/0 }}
+    {%- endif %}
+    {%- endfor %}
+    {%- else %}
+    api_instance.{{ context.api_request.operation_id|safe_snake_case }}({{ parameters }}{% if body %}body=body{% endif %})
+    {%- endif %}

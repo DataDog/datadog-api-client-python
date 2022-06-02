@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"exclusion_filters":[{"name":"Exclude logs from
-      staging","query":"source:staging"}],"filtered_data_type":"logs","is_enabled":true,"name":"Test-Delete_a_security_filter_returns_No_Content_response-1641826587","query":"service:TestDeleteasecurityfilterreturnsNoContentresponse1641826587"},"type":"security_filters"}}'
+      staging","query":"source:staging"}],"filtered_data_type":"logs","is_enabled":true,"name":"Test-Delete_a_security_filter_returns_No_Content_response-1652349191","query":"service:TestDeleteasecurityfilterreturnsNoContentresponse1652349191"},"type":"security_filters"}}'
     headers:
       accept:
       - application/json
@@ -11,8 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters
   response:
     body:
-      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Delete_a_security_filter_returns_No_Content_response-1641826587","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
-        logs from staging"}],"version":1,"query":"service:TestDeleteasecurityfilterreturnsNoContentresponse1641826587","is_builtin":false},"type":"security_filters","id":"whv-r8o-zmp"}}'
+      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Delete_a_security_filter_returns_No_Content_response-1652349191","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
+        logs from staging"}],"version":1,"query":"service:TestDeleteasecurityfilterreturnsNoContentresponse1652349191","is_builtin":false},"type":"security_filters","id":"7zq-iqt-o0r"}}'
     headers:
       content-type:
       - application/json;charset=utf-8
@@ -23,13 +23,15 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/whv-r8o-zmp
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/7zq-iqt-o0r
   response:
     body:
       string: ''
-    headers: {}
+    headers:
+      content-type:
+      - application/json;charset=utf-8
     status:
       code: 204
       message: No Content
@@ -37,12 +39,12 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/whv-r8o-zmp
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/7zq-iqt-o0r
   response:
     body:
-      string: '{"errors":["not_found(Security filter with id ''whv-r8o-zmp'' not found)"]}'
+      string: '{"errors":["not_found(Security filter with id ''7zq-iqt-o0r'' not found)"]}'
     headers:
       content-type:
       - application/json

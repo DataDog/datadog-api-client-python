@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: '{"filter":{"from":"now-15m","indexes":["main"],"to":"now"},"options":{"timezone":"GMT"},"page":{"limit":2},"sort":"timestamp"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/logs/events/search
+  response:
+    body:
+      string: '{"meta":{"page":{"after":"eyJhZnRlciI6IkFRQUFBWUFaZGJvSjdkR3dOZ0FBQUFCQldVRmFaR0p5TVVGQlEwczRPRU4zWW1aMVVESlJRVUUifQ"}},"data":[{"attributes":{"status":"ok","tags":["source:sinatra","env:integrations-lab","source:sinatra","application_id:41256269-671b-4d79-91d5-3bf848376425","application_name:test-space-org-cc","cf_instance_ip:10.0.40.5","env:integrations-lab","instance_index:0","space_name:datadog-application-monitoring-space","uri:test-space-org-cc.apps.integrations-lab.devenv.dog"],"timestamp":"2022-04-11T16:29:47.000Z","host":"05f9b9df-ae45-4c8b-66bf-e24c","attributes":{"duration":2700000.0,"http":{"url_details":{"path":"/"},"status_category":"OK","url":"/","status_code":200,"version":"1.1","method":"GET"},"network":{"client":{"ip":"169.254.0.1"},"bytes_written":117},"date_access":1649694587000},"message":"169.254.0.1
+        - - [11/Apr/2022:16:29:47 +0000] \"GET / HTTP/1.1\" 200 117 0.0027"},"type":"log","id":"AQAAAYAZdbh47dGwNwAAAABBWUFaZGJyMUFBQ0s4OEN3YmZ1UDJRQUI"},{"attributes":{"status":"info","timestamp":"2022-04-11T16:29:47.401Z","host":"05f9b9df-ae45-4c8b-66bf-e24c","message":"I,
+        [2022-04-11T16:29:47.400621 #14]  INFO -- : Index page hit","tags":["source:sinatra","env:integrations-lab","source:sinatra","application_id:41256269-671b-4d79-91d5-3bf848376425","application_name:test-space-org-cc","cf_instance_ip:10.0.40.5","env:integrations-lab","instance_index:0","space_name:datadog-application-monitoring-space","uri:test-space-org-cc.apps.integrations-lab.devenv.dog","datadog.pipelines:false"]},"type":"log","id":"AQAAAYAZdboJ7dGwNgAAAABBWUFaZGJyMUFBQ0s4OEN3YmZ1UDJRQUE"}],"links":{"next":"https://api.datadoghq.com/api/v2/logs/events?sort=timestamp&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFaZGJvSjdkR3dOZ0FBQUFCQldVRmFaR0p5TVVGQlEwczRPRU4zWW1aMVVESlJRVUUifQ&filter%5Bfrom%5D=now-15m&filter%5Bindexes%5D=main&page%5Blimit%5D=2"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"filter":{"from":"now-15m","indexes":["main"],"to":"now"},"options":{"timezone":"GMT"},"page":{"cursor":"eyJhZnRlciI6IkFRQUFBWUFaZGJvSjdkR3dOZ0FBQUFCQldVRmFaR0p5TVVGQlEwczRPRU4zWW1aMVVESlJRVUUifQ","limit":2},"sort":"timestamp"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/logs/events/search
+  response:
+    body:
+      string: '{"meta":{"page":{"after":"eyJhZnRlciI6IkFRQUFBWUFaZGJvSzdkR3dPUUFBQUFCQldVRmFaR0p5TVVGQlEwczRPRU4zWW1aMVVESlJRVVEifQ"}},"data":[{"attributes":{"status":"info","timestamp":"2022-04-11T16:29:47.402Z","host":"05f9b9df-ae45-4c8b-66bf-e24c","message":"169.254.0.1
+        - - [11/Apr/2022:16:29:47 UTC] \"GET / HTTP/1.1\" 200 117","tags":["source:sinatra","env:integrations-lab","source:sinatra","application_id:41256269-671b-4d79-91d5-3bf848376425","application_name:test-space-org-cc","cf_instance_ip:10.0.40.5","env:integrations-lab","instance_index:0","space_name:datadog-application-monitoring-space","uri:test-space-org-cc.apps.integrations-lab.devenv.dog","datadog.pipelines:false"]},"type":"log","id":"AQAAAYAZdboK7dGwOAAAAABBWUFaZGJyMUFBQ0s4OEN3YmZ1UDJRQUM"}],"links":{"next":"https://api.datadoghq.com/api/v2/logs/events?sort=timestamp&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFaZGJvSzdkR3dPUUFBQUFCQldVRmFaR0p5TVVGQlEwczRPRU4zWW1aMVVESlJRVVEifQ&filter%5Bfrom%5D=now-15m&filter%5Bindexes%5D=main&page%5Blimit%5D=2"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

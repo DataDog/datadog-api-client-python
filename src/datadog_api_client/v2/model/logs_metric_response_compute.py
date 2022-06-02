@@ -9,18 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_metric_response_compute_aggregation_type import (
-        LogsMetricResponseComputeAggregationType,
-    )
-
-    globals()["LogsMetricResponseComputeAggregationType"] = LogsMetricResponseComputeAggregationType
-
-
 class LogsMetricResponseCompute(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_metric_response_compute_aggregation_type import (
+            LogsMetricResponseComputeAggregationType,
+        )
+
         return {
             "aggregation_type": (LogsMetricResponseComputeAggregationType,),
             "path": (str,),

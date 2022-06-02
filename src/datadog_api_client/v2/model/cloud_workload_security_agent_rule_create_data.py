@@ -9,20 +9,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_create_attributes import (
-        CloudWorkloadSecurityAgentRuleCreateAttributes,
-    )
-    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_type import CloudWorkloadSecurityAgentRuleType
-
-    globals()["CloudWorkloadSecurityAgentRuleCreateAttributes"] = CloudWorkloadSecurityAgentRuleCreateAttributes
-    globals()["CloudWorkloadSecurityAgentRuleType"] = CloudWorkloadSecurityAgentRuleType
-
-
 class CloudWorkloadSecurityAgentRuleCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.cloud_workload_security_agent_rule_create_attributes import (
+            CloudWorkloadSecurityAgentRuleCreateAttributes,
+        )
+        from datadog_api_client.v2.model.cloud_workload_security_agent_rule_type import (
+            CloudWorkloadSecurityAgentRuleType,
+        )
+
         return {
             "attributes": (CloudWorkloadSecurityAgentRuleCreateAttributes,),
             "type": (CloudWorkloadSecurityAgentRuleType,),
@@ -40,7 +36,7 @@ class CloudWorkloadSecurityAgentRuleCreateData(ModelNormal):
         :param attributes: Create a new Cloud Workload Security Agent rule.
         :type attributes: CloudWorkloadSecurityAgentRuleCreateAttributes
 
-        :param type: The type of the resource. The value should always be `agent_rule`.
+        :param type: The type of the resource. The value should always be ``agent_rule``.
         :type type: CloudWorkloadSecurityAgentRuleType
         """
         super().__init__(kwargs)

@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.http_log_item import HTTPLogItem
-
-    globals()["HTTPLogItem"] = HTTPLogItem
-
-
 class HTTPLog(ModelSimple):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.http_log_item import HTTPLogItem
+
         return {
             "value": ([HTTPLogItem],),
         }
@@ -30,7 +25,6 @@ class HTTPLog(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Structured log message.
         :type value: [HTTPLogItem]
         """
         super().__init__(kwargs)

@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"name":"Test-Update_an_SLO_correction_returns_OK_response-1641829832","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
+    body: '{"name":"Test-Update_an_SLO_correction_returns_OK_response-1652349022","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/slo
   response:
     body:
-      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"f6dc10e24dfa527da8390cce3d7d1f60","name":"Test-Update_an_SLO_correction_returns_OK_response-1641829832","created_at":1641829832,"tags":[],"modified_at":1641829832,"type":"metric"}],"error":null}'
+      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"c20f6845962c5776b1440ed8d324d6fe","name":"Test-Update_an_SLO_correction_returns_OK_response-1652349022","created_at":1652349022,"tags":[],"modified_at":1652349022,"type":"metric"}],"error":null}'
     headers:
       content-type:
       - application/json
@@ -18,7 +18,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"category":"Other","description":"Test Correction","end":1641833432,"slo_id":"f6dc10e24dfa527da8390cce3d7d1f60","start":1641829832,"timezone":"UTC"},"type":"correction"}}'
+    body: '{"data":{"attributes":{"category":"Other","description":"Test Correction","end":1652352622,"slo_id":"c20f6845962c5776b1440ed8d324d6fe","start":1652349022,"timezone":"UTC"},"type":"correction"}}'
     headers:
       accept:
       - application/json
@@ -28,7 +28,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/slo/correction
   response:
     body:
-      string: '{"data":{"type":"correction","id":"0b31d95c-722d-11ec-b5d6-da7ad0900002","attributes":{"slo_id":"f6dc10e24dfa527da8390cce3d7d1f60","start":1641829832,"end":1641833432,"description":"Test
+      string: '{"data":{"type":"correction","id":"f12e44e4-d1d8-11ec-9dc0-da7ad0902002","attributes":{"slo_id":"c20f6845962c5776b1440ed8d324d6fe","start":1652349022,"end":1652352622,"description":"Test
         Correction","category":"Other","timezone":"UTC","created_at":null,"modified_at":null,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":null}}}'
     headers:
       content-type:
@@ -37,17 +37,17 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"category":"Deployment","description":"Test-Update_an_SLO_correction_returns_OK_response-1641829832","end":1641833432,"start":1641829832,"timezone":"UTC"},"type":"correction"}}'
+    body: '{"data":{"attributes":{"category":"Deployment","description":"Test-Update_an_SLO_correction_returns_OK_response-1652349022","end":1652352622,"start":1652349022,"timezone":"UTC"},"type":"correction"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v1/slo/correction/0b31d95c-722d-11ec-b5d6-da7ad0900002
+    uri: https://api.datadoghq.com/api/v1/slo/correction/f12e44e4-d1d8-11ec-9dc0-da7ad0902002
   response:
     body:
-      string: '{"data":{"type":"correction","id":"0b31d95c-722d-11ec-b5d6-da7ad0900002","attributes":{"slo_id":"f6dc10e24dfa527da8390cce3d7d1f60","start":1641829832,"end":1641833432,"description":"Test-Update_an_SLO_correction_returns_OK_response-1641829832","category":"Deployment","timezone":"UTC","created_at":1641829832,"modified_at":1641829833,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}}}}}'
+      string: '{"data":{"type":"correction","id":"f12e44e4-d1d8-11ec-9dc0-da7ad0902002","attributes":{"slo_id":"c20f6845962c5776b1440ed8d324d6fe","start":1652349022,"end":1652352622,"description":"Test-Update_an_SLO_correction_returns_OK_response-1652349022","category":"Deployment","timezone":"UTC","created_at":1652349023,"modified_at":1652349023,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}}}}}'
     headers:
       content-type:
       - application/json
@@ -58,9 +58,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/correction/0b31d95c-722d-11ec-b5d6-da7ad0900002
+    uri: https://api.datadoghq.com/api/v1/slo/correction/f12e44e4-d1d8-11ec-9dc0-da7ad0902002
   response:
     body:
       string: ''
@@ -74,10 +74,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/f6dc10e24dfa527da8390cce3d7d1f60
+    uri: https://api.datadoghq.com/api/v1/slo/c20f6845962c5776b1440ed8d324d6fe
   response:
     body:
-      string: '{"data":["f6dc10e24dfa527da8390cce3d7d1f60"],"error":null}'
+      string: '{"data":["c20f6845962c5776b1440ed8d324d6fe"],"error":null}'
     headers:
       content-type:
       - application/json

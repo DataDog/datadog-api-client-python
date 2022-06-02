@@ -6,6 +6,8 @@
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
     datetime,
+    set_attribute_from_path,
+    get_attribute_from_path,
 )
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
@@ -21,6 +23,11 @@ from datadog_api_client.v2.model.security_monitoring_signal_list_request import 
 
 
 class SecurityMonitoringApi:
+    """
+    Detection rules for generating signals and listing of generated
+    signals.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -346,7 +353,7 @@ class SecurityMonitoringApi:
 
         Create a security filter.
 
-        See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/)
+        See the `security filter guide <https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/>`_
         for more examples.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -524,7 +531,7 @@ class SecurityMonitoringApi:
 
         Get the details of a specific security filter.
 
-        See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/)
+        See the `security filter guide <https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/>`_
         for more examples.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -748,6 +755,54 @@ class SecurityMonitoringApi:
         kwargs = self._list_security_monitoring_signals_endpoint.default_arguments(kwargs)
         return self._list_security_monitoring_signals_endpoint.call_with_http_info(**kwargs)
 
+    def list_security_monitoring_signals_with_pagination(self, **kwargs):
+        """Get a quick list of security signals.
+
+        Provide a paginated version of :meth:`list_security_monitoring_signals`, returning all items.
+
+        :param filter_query: The search query for security signals.
+        :type filter_query: str, optional
+        :param filter_from: The minimum timestamp for requested security signals.
+        :type filter_from: datetime, optional
+        :param filter_to: The maximum timestamp for requested security signals.
+        :type filter_to: datetime, optional
+        :param sort: The order of the security signals in results.
+        :type sort: SecurityMonitoringSignalsSort, optional
+        :param page_cursor: A list of results using the cursor provided in the previous query.
+        :type page_cursor: str, optional
+        :param page_limit: The maximum number of security signals in the response.
+        :type page_limit: int, optional
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[SecurityMonitoringSignal]
+        """
+        kwargs = self._list_security_monitoring_signals_endpoint.default_arguments(kwargs)
+        page_size = get_attribute_from_path(kwargs, "page_limit", 10)
+        endpoint = self._list_security_monitoring_signals_endpoint
+        set_attribute_from_path(kwargs, "page_limit", page_size, endpoint.params_map)
+        while True:
+            response = endpoint.call_with_http_info(**kwargs)
+            for item in get_attribute_from_path(response, "data"):
+                yield item
+            if len(get_attribute_from_path(response, "data")) < page_size:
+                break
+            set_attribute_from_path(
+                kwargs, "page_cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
+            )
+
     def search_security_monitoring_signals(self, **kwargs):
         """Get a list of security signals.
 
@@ -790,6 +845,43 @@ class SecurityMonitoringApi:
         """
         kwargs = self._search_security_monitoring_signals_endpoint.default_arguments(kwargs)
         return self._search_security_monitoring_signals_endpoint.call_with_http_info(**kwargs)
+
+    def search_security_monitoring_signals_with_pagination(self, **kwargs):
+        """Get a list of security signals.
+
+        Provide a paginated version of :meth:`search_security_monitoring_signals`, returning all items.
+
+        :type body: SecurityMonitoringSignalListRequest, optional
+        :param _request_timeout: Timeout setting for this request. If one
+            number provided, it will be total request timeout. It can also be a
+            pair (tuple) of (connection, read) timeouts.  Default is None.
+        :type _request_timeout: float/tuple
+        :param _check_input_type: Specifies if type checking should be done one
+            the data sent to the server. Default is True.
+        :type _check_input_type: bool
+        :param _check_return_type: Specifies if type checking should be done
+            one the data received from the server. Default is True.
+        :type _check_return_type: bool
+        :param _host_index: Specifies the index of the server that we want to
+            use. Default is read from the configuration.
+        :type _host_index: int/None
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[SecurityMonitoringSignal]
+        """
+        kwargs = self._search_security_monitoring_signals_endpoint.default_arguments(kwargs)
+        page_size = get_attribute_from_path(kwargs, "body.page.limit", 10)
+        endpoint = self._search_security_monitoring_signals_endpoint
+        set_attribute_from_path(kwargs, "body.page.limit", page_size, endpoint.params_map)
+        while True:
+            response = endpoint.call_with_http_info(**kwargs)
+            for item in get_attribute_from_path(response, "data"):
+                yield item
+            if len(get_attribute_from_path(response, "data")) < page_size:
+                break
+            set_attribute_from_path(
+                kwargs, "body.page.cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
+            )
 
     def update_security_filter(self, security_filter_id, body, **kwargs):
         """Update a security filter.
@@ -843,7 +935,7 @@ class SecurityMonitoringApi:
     def update_security_monitoring_rule(self, rule_id, body, **kwargs):
         """Update an existing rule.
 
-        Update an existing rule. When updating `cases`, `queries` or `options`, the whole field
+        Update an existing rule. When updating ``cases`` , ``queries`` or ``options`` , the whole field
         must be included. For example, when modifying a query all queries must be included.
         Default rules can only be updated to be enabled and to change notifications.
 

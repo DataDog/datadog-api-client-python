@@ -3,7 +3,7 @@ Edit an AuthN Mapping returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.authn_mappings_api import AuthNMappingsApi
 from datadog_api_client.v2.model.authn_mapping_update_attributes import AuthNMappingUpdateAttributes
 from datadog_api_client.v2.model.authn_mapping_update_data import AuthNMappingUpdateData
@@ -22,13 +22,21 @@ ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 
 body = AuthNMappingUpdateRequest(
     data=AuthNMappingUpdateData(
-        attributes=AuthNMappingUpdateAttributes(attribute_key="member-of", attribute_value="Development"),
+        attributes=AuthNMappingUpdateAttributes(
+            attribute_key="member-of",
+            attribute_value="Development",
+        ),
         id=AUTHN_MAPPING_DATA_ID,
         relationships=AuthNMappingUpdateRelationships(
-            role=RelationshipToRole(data=RelationshipToRoleData(id=ROLE_DATA_ID, type=RolesType("roles")))
+            role=RelationshipToRole(
+                data=RelationshipToRoleData(
+                    id=ROLE_DATA_ID,
+                    type=RolesType("roles"),
+                ),
+            ),
         ),
         type=AuthNMappingsType("authn_mappings"),
-    )
+    ),
 )
 
 configuration = Configuration()

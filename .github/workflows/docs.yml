@@ -29,11 +29,21 @@ jobs:
       - name: Install tox
         run: pip install tox
 
+      - name: Set spec commit
+        id: set_commit
+        run: |
+          content=`cat .apigentools-info`
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          echo "::set-output name=spec_json::$content"
+
       - name: Cache sphinx
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: docs/.sphinx
-          key: sphinx
+          key: sphinx-${{ fromJson(steps.set_commit.outputs.spec_json).spec_versions.v2.spec_repo_commit }}
+          restore-keys: sphinx-
 
       - name: Build documentation
         run: tox -e docs

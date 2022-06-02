@@ -52,6 +52,15 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 OK
 
+  @replay-only @team:DataDog/logs-app @with-pagination
+  Scenario: Get a list of logs returns "OK" response with pagination
+    Given a valid "appKeyAuth" key in the system
+    And new "ListLogsGet" request
+    And request contains "page[limit]" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @team:DataDog/logs-app
   Scenario: Get a quick list of logs returns "OK" response
     Given a valid "appKeyAuth" key in the system
@@ -79,6 +88,15 @@ Feature: Logs
     And body with value {"filter": {"query": "datadog-agent", "indexes": ["main"], "from": "2020-09-17T11:48:36+01:00", "to": "2020-09-17T12:48:36+01:00"}, "sort": "timestamp", "page": {"limit": 5}}
     When the request is sent
     Then the response status is 200 OK
+
+  @replay-only @team:DataDog/logs-app @with-pagination
+  Scenario: Search logs returns "OK" response with pagination
+    Given a valid "appKeyAuth" key in the system
+    And new "ListLogs" request
+    And body with value {"filter": {"from": "now-15m", "indexes": ["main"], "to": "now"}, "options": {"timezone": "GMT"}, "page": {"limit": 2}, "sort": "timestamp"}
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
 
   @integration-only @skip-terraform-config @skip-validation @team:DataDog/logs-backend @team:DataDog/logs-intake
   Scenario: Send deflate logs returns "Request accepted for processing (always 202 empty JSON)." response
@@ -117,9 +135,9 @@ Feature: Logs
     When the request is sent
     Then the response status is 408 Request Timeout
 
-  @generated @skip @team:DataDog/logs-backend @team:DataDog/logs-intake
+  @skip-go @skip-typescript @team:DataDog/logs-backend @team:DataDog/logs-intake
   Scenario: Send logs returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
-    And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
+    And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment", "status": "error"}]
     When the request is sent
     Then the response status is 202 Request accepted for processing (always 202 empty JSON).

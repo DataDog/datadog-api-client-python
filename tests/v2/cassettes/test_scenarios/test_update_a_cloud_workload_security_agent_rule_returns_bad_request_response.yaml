@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1641924701"},"type":"agent_rule"}}'
+      == \"sh\"","name":"testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1652349086"},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -11,9 +11,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
   response:
     body:
-      string: '{"data":{"attributes":{"category":"Process Activity","name":"testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1641924701","creator":{"handle":"frog@datadoghq.com","name":null},"description":"My
-        Agent rule","enabled":true,"defaultRule":false,"version":1,"updater":{"handle":"frog@datadoghq.com","name":null},"updateDate":1641924701807,"creationDate":1641924701807,"expression":"exec.file.name
-        == \"sh\""},"type":"agent_rule","id":"dhc-tmb-os1"}}'
+      string: '{"data":{"attributes":{"category":"Process Activity","name":"testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1652349086","creator":{"handle":"frog@datadoghq.com","name":null},"description":"My
+        Agent rule","enabled":true,"defaultRule":false,"version":1,"updater":{"handle":"frog@datadoghq.com","name":null},"updateDate":1652349087367,"creationDate":1652349087367,"expression":"exec.file.name
+        == \"sh\""},"type":"agent_rule","id":"ezf-mkn-g0o"}}'
     headers:
       content-type:
       - application/json;charset=utf-8
@@ -29,11 +29,11 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/dhc-tmb-os1
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/ezf-mkn-g0o
   response:
     body:
       string: '{"errors":["input_validation_error(Field ''expression'' is invalid:
-        rule `testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1641924701`
+        rule `testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1652349086`
         definition error: syntax error: 1:18: unexpected token \"sh\" (expected \"~\"))"]}'
     headers:
       content-type:
@@ -45,13 +45,15 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/dhc-tmb-os1
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/ezf-mkn-g0o
   response:
     body:
       string: ''
-    headers: {}
+    headers:
+      content-type:
+      - application/json;charset=utf-8
     status:
       code: 204
       message: No Content

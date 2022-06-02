@@ -10,6 +10,12 @@ from datadog_api_client.v1.model.dashboard_list_delete_response import Dashboard
 
 
 class DashboardListsApi:
+    """
+    Interact with your dashboard lists through the API to
+    organize, find, and share all of your dashboards with your team and
+    organization.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

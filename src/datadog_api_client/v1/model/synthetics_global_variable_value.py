@@ -30,7 +30,7 @@ class SyntheticsGlobalVariableValue(ModelNormal):
         :type secure: bool, optional
 
         :param value: Value of the global variable. When reading a global variable,
-            the value will not be present if the variable is hidden with the `secure` property.
+            the value will not be present if the variable is hidden with the ``secure`` property.
         :type value: str, optional
         """
         super().__init__(kwargs)

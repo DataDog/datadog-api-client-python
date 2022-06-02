@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.list_stream_column_width import ListStreamColumnWidth
-
-    globals()["ListStreamColumnWidth"] = ListStreamColumnWidth
-
-
 class ListStreamColumn(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.list_stream_column_width import ListStreamColumnWidth
+
         return {
             "field": (str,),
             "width": (ListStreamColumnWidth,),

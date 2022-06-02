@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_line_type import WidgetLineType
-    from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
-
-    globals()["WidgetLineType"] = WidgetLineType
-    globals()["WidgetLineWidth"] = WidgetLineWidth
-
-
 class WidgetRequestStyle(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_line_type import WidgetLineType
+        from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
+
         return {
             "line_type": (WidgetLineType,),
             "line_width": (WidgetLineWidth,),

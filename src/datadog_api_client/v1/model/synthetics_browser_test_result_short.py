@@ -9,20 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_browser_test_result_short_result import (
-        SyntheticsBrowserTestResultShortResult,
-    )
-    from datadog_api_client.v1.model.synthetics_test_monitor_status import SyntheticsTestMonitorStatus
-
-    globals()["SyntheticsBrowserTestResultShortResult"] = SyntheticsBrowserTestResultShortResult
-    globals()["SyntheticsTestMonitorStatus"] = SyntheticsTestMonitorStatus
-
-
 class SyntheticsBrowserTestResultShort(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_browser_test_result_short_result import (
+            SyntheticsBrowserTestResultShortResult,
+        )
+        from datadog_api_client.v1.model.synthetics_test_monitor_status import SyntheticsTestMonitorStatus
+
         return {
             "check_time": (float,),
             "probe_dc": (str,),
@@ -56,9 +50,11 @@ class SyntheticsBrowserTestResultShort(ModelNormal):
         :type result_id: str, optional
 
         :param status: The status of your Synthetic monitor.
-            * `O` for not triggered
-            * `1` for triggered
-            * `2` for no data
+
+
+            * ``O`` for not triggered
+            * ``1`` for triggered
+            * ``2`` for no data
         :type status: SyntheticsTestMonitorStatus, optional
         """
         super().__init__(kwargs)

@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.agent_check import AgentCheck
-    from datadog_api_client.v1.model.host_meta_install_method import HostMetaInstallMethod
-
-    globals()["AgentCheck"] = AgentCheck
-    globals()["HostMetaInstallMethod"] = HostMetaInstallMethod
-
-
 class HostMeta(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.agent_check import AgentCheck
+        from datadog_api_client.v1.model.host_meta_install_method import HostMetaInstallMethod
+
         return {
             "agent_checks": ([AgentCheck],),
             "agent_version": (str,),

@@ -2,7 +2,7 @@
 Create a new dashboard with funnel widget
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -23,12 +23,16 @@ body = Dashboard(
                 type=FunnelWidgetDefinitionType("funnel"),
                 requests=[
                     FunnelWidgetRequest(
-                        query=FunnelQuery(data_source=FunnelSource("rum"), query_string="", steps=[]),
+                        query=FunnelQuery(
+                            data_source=FunnelSource("rum"),
+                            query_string="",
+                            steps=[],
+                        ),
                         request_type=FunnelRequestType("funnel"),
-                    )
+                    ),
                 ],
-            )
-        )
+            ),
+        ),
     ],
 )
 

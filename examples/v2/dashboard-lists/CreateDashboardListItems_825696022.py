@@ -3,7 +3,7 @@ Add custom screenboard dashboard to an existing dashboard list returns "OK" resp
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
 from datadog_api_client.v2.model.dashboard_list_item_request import DashboardListItemRequest
@@ -16,7 +16,12 @@ DASHBOARD_LIST_ID = environ["DASHBOARD_LIST_ID"]
 SCREENBOARD_DASHBOARD_ID = environ["SCREENBOARD_DASHBOARD_ID"]
 
 body = DashboardListAddItemsRequest(
-    dashboards=[DashboardListItemRequest(id=SCREENBOARD_DASHBOARD_ID, type=DashboardType("custom_screenboard"))]
+    dashboards=[
+        DashboardListItemRequest(
+            id=SCREENBOARD_DASHBOARD_ID,
+            type=DashboardType("custom_screenboard"),
+        ),
+    ],
 )
 
 configuration = Configuration()

@@ -2,7 +2,7 @@
 Aggregate compute events with group by returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.logs_api import LogsApi
 from datadog_api_client.v2.model.logs_aggregate_request import LogsAggregateRequest
 from datadog_api_client.v2.model.logs_aggregate_sort import LogsAggregateSort
@@ -18,9 +18,20 @@ from datadog_api_client.v2.model.logs_sort_order import LogsSortOrder
 
 body = LogsAggregateRequest(
     compute=[
-        LogsCompute(aggregation=LogsAggregationFunction("count"), interval="5m", type=LogsComputeType("timeseries"))
+        LogsCompute(
+            aggregation=LogsAggregationFunction("count"),
+            interval="5m",
+            type=LogsComputeType("timeseries"),
+        ),
     ],
-    filter=LogsQueryFilter(_from="now-15m", indexes=["main"], query="*", to="now"),
+    filter=LogsQueryFilter(
+        _from="now-15m",
+        indexes=[
+            "main",
+        ],
+        query="*",
+        to="now",
+    ),
     group_by=[
         LogsGroupBy(
             facet="host",
@@ -32,7 +43,7 @@ body = LogsAggregateRequest(
                 metric="@duration",
             ),
             total=LogsGroupByTotal("recall"),
-        )
+        ),
     ],
 )
 

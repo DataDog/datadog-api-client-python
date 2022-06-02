@@ -9,20 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.tree_map_color_by import TreeMapColorBy
-    from datadog_api_client.v1.model.tree_map_group_by import TreeMapGroupBy
-    from datadog_api_client.v1.model.tree_map_widget_request import TreeMapWidgetRequest
-    from datadog_api_client.v1.model.tree_map_size_by import TreeMapSizeBy
-    from datadog_api_client.v1.model.tree_map_widget_definition_type import TreeMapWidgetDefinitionType
-
-    globals()["TreeMapColorBy"] = TreeMapColorBy
-    globals()["TreeMapGroupBy"] = TreeMapGroupBy
-    globals()["TreeMapWidgetRequest"] = TreeMapWidgetRequest
-    globals()["TreeMapSizeBy"] = TreeMapSizeBy
-    globals()["TreeMapWidgetDefinitionType"] = TreeMapWidgetDefinitionType
-
-
 class TreeMapWidgetDefinition(ModelNormal):
     validations = {
         "requests": {
@@ -33,7 +19,12 @@ class TreeMapWidgetDefinition(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.tree_map_color_by import TreeMapColorBy
+        from datadog_api_client.v1.model.tree_map_group_by import TreeMapGroupBy
+        from datadog_api_client.v1.model.tree_map_widget_request import TreeMapWidgetRequest
+        from datadog_api_client.v1.model.tree_map_size_by import TreeMapSizeBy
+        from datadog_api_client.v1.model.tree_map_widget_definition_type import TreeMapWidgetDefinitionType
+
         return {
             "color_by": (TreeMapColorBy,),
             "group_by": (TreeMapGroupBy,),
@@ -54,7 +45,7 @@ class TreeMapWidgetDefinition(ModelNormal):
 
     def __init__(self, requests, type, *args, **kwargs):
         """
-        The treemap visualization found on the Host Dashboards comes from the output of `ps auxww`. This is not continuously run on your hosts. Instead, it’s run once on Agent start/restart. The treemap is only supported for process data on a single host dashboard — this may not be reused in other dashboards or for other metrics.
+        The treemap visualization found on the Host Dashboards comes from the output of ``ps auxww``. This is not continuously run on your hosts. Instead, it’s run once on Agent start/restart. The treemap is only supported for process data on a single host dashboard — this may not be reused in other dashboards or for other metrics.
 
         :param color_by: The attribute used to determine color in the widget.
         :type color_by: TreeMapColorBy, optional

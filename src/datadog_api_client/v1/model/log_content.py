@@ -34,7 +34,7 @@ class LogContent(ModelNormal):
             "host": (str,),
             "message": (str,),
             "service": (str,),
-            "tags": ([bool, date, datetime, dict, float, int, list, str, none_type],),
+            "tags": ([str],),
             "timestamp": (datetime,),
         }
 
@@ -57,7 +57,7 @@ class LogContent(ModelNormal):
         :param host: Name of the machine from where the logs are being sent.
         :type host: str, optional
 
-        :param message: The message [reserved attribute](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes)
+        :param message: The message `reserved attribute <https://docs.datadoghq.com/logs/log_collection/#reserved-attributes>`_
             of your log. By default, Datadog ingests the value of the message attribute as the body of the log entry.
             That value is then highlighted and displayed in the Logstream, where it is indexed for full text search.
         :type message: str, optional
@@ -68,7 +68,7 @@ class LogContent(ModelNormal):
         :type service: str, optional
 
         :param tags: Array of tags associated with your log.
-        :type tags: [bool, date, datetime, dict, float, int, list, str, none_type], optional
+        :type tags: [str], optional
 
         :param timestamp: Timestamp of your log.
         :type timestamp: datetime, optional

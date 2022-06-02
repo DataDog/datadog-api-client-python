@@ -2,7 +2,7 @@
 Submit a Service Check returns "Payload accepted" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.service_checks_api import ServiceChecksApi
 from datadog_api_client.v1.model.service_check import ServiceCheck
 from datadog_api_client.v1.model.service_check_status import ServiceCheckStatus
@@ -14,8 +14,10 @@ body = ServiceChecks(
             check="app.ok",
             host_name="host",
             status=ServiceCheckStatus(0),
-            tags=["test:ExampleSubmitaServiceCheckreturnsPayloadacceptedresponse"],
-        )
+            tags=[
+                "test:ExampleSubmitaServiceCheckreturnsPayloadacceptedresponse",
+            ],
+        ),
     ]
 )
 

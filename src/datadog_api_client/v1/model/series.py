@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.point import Point
-
-    globals()["Point"] = Point
-
-
 class Series(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.point import Point
+
         return {
             "host": (str,),
             "interval": (int, none_type),
@@ -41,7 +36,7 @@ class Series(ModelNormal):
     def __init__(self, metric, points, *args, **kwargs):
         """
         A metric to submit to Datadog.
-        See [Datadog metrics](https://docs.datadoghq.com/developers/metrics/#custom-metrics-properties).
+        See `Datadog metrics <https://docs.datadoghq.com/developers/metrics/#custom-metrics-properties>`_.
 
         :param host: The name of the host that produced the metric.
         :type host: str, optional
@@ -58,7 +53,7 @@ class Series(ModelNormal):
         :param tags: A list of tags associated with the metric.
         :type tags: [str], optional
 
-        :param type: The type of the metric either `count`, `gauge`, or `rate`.
+        :param type: The type of the metric. Valid types are "", ``count`` , ``gauge`` , and ``rate``.
         :type type: str, optional
         """
         super().__init__(kwargs)

@@ -3,7 +3,7 @@ Revoke permission returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.model.permissions_type import PermissionsType
 from datadog_api_client.v2.model.relationship_to_permission import RelationshipToPermission
@@ -16,7 +16,10 @@ ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 PERMISSION_ID = environ["PERMISSION_ID"]
 
 body = RelationshipToPermission(
-    data=RelationshipToPermissionData(id=PERMISSION_ID, type=PermissionsType("permissions"))
+    data=RelationshipToPermissionData(
+        id=PERMISSION_ID,
+        type=PermissionsType("permissions"),
+    ),
 )
 
 configuration = Configuration()

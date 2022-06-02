@@ -2,7 +2,7 @@
 Create a new dashboard with check_status widget
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
 from datadog_api_client.v1.model.check_status_widget_definition_type import CheckStatusWidgetDefinitionType
@@ -18,16 +18,23 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=15, height=8),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=15,
+                height=8,
+            ),
             definition=CheckStatusWidgetDefinition(
                 title_size="16",
                 title_align=WidgetTextAlign("left"),
                 type=CheckStatusWidgetDefinitionType("check_status"),
                 check="datadog.agent.up",
                 grouping=WidgetGrouping("check"),
-                tags=["*"],
+                tags=[
+                    "*",
+                ],
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

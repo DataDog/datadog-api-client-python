@@ -9,16 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.notebook_markdown_cell_definition_type import NotebookMarkdownCellDefinitionType
-
-    globals()["NotebookMarkdownCellDefinitionType"] = NotebookMarkdownCellDefinitionType
-
-
 class NotebookMarkdownCellDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.notebook_markdown_cell_definition_type import (
+            NotebookMarkdownCellDefinitionType,
+        )
+
         return {
             "text": (str,),
             "type": (NotebookMarkdownCellDefinitionType,),
@@ -31,7 +28,7 @@ class NotebookMarkdownCellDefinition(ModelNormal):
 
     def __init__(self, text, type, *args, **kwargs):
         """
-        Text in a notebook is formatted with [Markdown](https://daringfireball.net/projects/markdown/), which enables the use of headings, subheadings, links, images, lists, and code blocks.
+        Text in a notebook is formatted with `Markdown <https://daringfireball.net/projects/markdown/>`_ , which enables the use of headings, subheadings, links, images, lists, and code blocks.
 
         :param text: The markdown content.
         :type text: str

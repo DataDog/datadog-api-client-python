@@ -14,6 +14,23 @@ from datadog_api_client.v1.model.metrics_payload import MetricsPayload
 
 
 class MetricsApi:
+    """
+    The metrics endpoint allows you to:
+
+
+    * Post metrics data so it can be graphed on Datadog’s dashboards
+    * Query metrics from any time period
+    * Modify tag configurations for metrics
+    * View tags and volumes for metrics
+
+    **Note** : A graph can only contain a set number of points
+    and as the timeframe over which a metric is viewed increases,
+    aggregation between points occurs to stay below that set number.
+
+    The Post, Patch, and Delete ``manage_tags`` API methods can only be performed by
+    a user who has the ``Manage Tags for Metrics`` permission.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -299,7 +316,7 @@ class MetricsApi:
         >>> thread = api.list_metrics(q, async_req=True)
         >>> result = thread.get()
 
-        :param q: Query string to search metrics upon. Can optionally be prefixed with `metrics:`.
+        :param q: Query string to search metrics upon. Can optionally be prefixed with ``metrics:``.
         :type q: str
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
@@ -392,12 +409,13 @@ class MetricsApi:
 
         If you’re submitting metrics directly to the Datadog API without using DogStatsD, expect:
 
-        - 64 bits for the timestamp
-        - 32 bits for the value
-        - 40 bytes for the metric names
-        - 50 bytes for the timeseries
-        - The full payload is approximately 100 bytes. However, with the DogStatsD API,
-        compression is applied, which reduces the payload size.
+
+        * 64 bits for the timestamp
+        * 64 bits for the value
+        * 40 bytes for the metric names
+        * 50 bytes for the timeseries
+        * The full payload is approximately 100 bytes. However, with the DogStatsD API,
+          compression is applied, which reduces the payload size.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -442,7 +460,7 @@ class MetricsApi:
     def update_metric_metadata(self, metric_name, body, **kwargs):
         """Edit metric metadata.
 
-        Edit metadata of a specific metric. Find out more about [supported types](https://docs.datadoghq.com/developers/metrics).
+        Edit metadata of a specific metric. Find out more about `supported types <https://docs.datadoghq.com/developers/metrics>`_.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

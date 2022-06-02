@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.notebook_update_data import NotebookUpdateData
-
-    globals()["NotebookUpdateData"] = NotebookUpdateData
-
-
 class NotebookUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.notebook_update_data import NotebookUpdateData
+
         return {
             "data": (NotebookUpdateData,),
         }

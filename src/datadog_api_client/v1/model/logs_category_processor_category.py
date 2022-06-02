@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_filter import LogsFilter
-
-    globals()["LogsFilter"] = LogsFilter
-
-
 class LogsCategoryProcessorCategory(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_filter import LogsFilter
+
         return {
             "filter": (LogsFilter,),
             "name": (str,),

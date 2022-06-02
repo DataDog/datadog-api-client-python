@@ -2,7 +2,7 @@
 Create a new dashboard with apm resource stats widget
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -45,14 +45,21 @@ body = Dashboard(
                                 env="ci",
                                 primary_tag_name="datacenter",
                                 operation_name="cassandra.query",
-                                group_by=["resource_name"],
-                            )
+                                group_by=[
+                                    "resource_name",
+                                ],
+                            ),
                         ],
-                    )
+                    ),
                 ],
             ),
-            layout=WidgetLayout(x=0, y=0, width=4, height=4),
-        )
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=4,
+                height=4,
+            ),
+        ),
     ],
     layout_type=DashboardLayoutType("ordered"),
 )

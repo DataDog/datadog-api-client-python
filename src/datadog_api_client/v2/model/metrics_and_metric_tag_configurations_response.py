@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.metrics_and_metric_tag_configurations import MetricsAndMetricTagConfigurations
-
-    globals()["MetricsAndMetricTagConfigurations"] = MetricsAndMetricTagConfigurations
-
-
 class MetricsAndMetricTagConfigurationsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.metrics_and_metric_tag_configurations import MetricsAndMetricTagConfigurations
+
         return {
             "data": ([MetricsAndMetricTagConfigurations],),
         }

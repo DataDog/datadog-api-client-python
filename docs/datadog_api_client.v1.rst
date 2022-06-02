@@ -10,5 +10,4 @@ datadog\_api\_client.v1
 
 .. automodule:: datadog_api_client.v1
    :members:
-   :undoc-members:
    :show-inheritance:

@@ -2,7 +2,7 @@
 Create a new dashboard with query_table widget
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -30,7 +30,12 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=54, height=32),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=54,
+                height=32,
+            ),
             definition=TableWidgetDefinition(
                 title="",
                 title_size="16",
@@ -45,22 +50,25 @@ body = Dashboard(
                                 name="query1",
                                 query="avg:system.cpu.user{*} by {host}",
                                 aggregator=FormulaAndFunctionMetricAggregation("avg"),
-                            )
+                            ),
                         ],
                         formulas=[
                             WidgetFormula(
                                 formula="query1",
-                                limit=WidgetFormulaLimit(count=500, order=QuerySortOrder("desc")),
+                                limit=WidgetFormulaLimit(
+                                    count=500,
+                                    order=QuerySortOrder("desc"),
+                                ),
                                 conditional_formats=[],
                                 cell_display_mode=TableWidgetCellDisplayMode("bar"),
-                            )
+                            ),
                         ],
                         response_format=FormulaAndFunctionResponseFormat("scalar"),
-                    )
+                    ),
                 ],
                 has_search_bar=TableWidgetHasSearchBar("auto"),
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

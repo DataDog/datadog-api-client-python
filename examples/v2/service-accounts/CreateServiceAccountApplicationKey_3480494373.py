@@ -3,7 +3,7 @@ Create an application key with scopes for this service account returns "Created"
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
 from datadog_api_client.v2.model.application_key_create_attributes import ApplicationKeyCreateAttributes
 from datadog_api_client.v2.model.application_key_create_data import ApplicationKeyCreateData
@@ -17,10 +17,14 @@ body = ApplicationKeyCreateRequest(
     data=ApplicationKeyCreateData(
         attributes=ApplicationKeyCreateAttributes(
             name="Example-Create_an_application_key_with_scopes_for_this_service_account_returns_Created_response",
-            scopes=["dashboards_read", "dashboards_write", "dashboards_public_share"],
+            scopes=[
+                "dashboards_read",
+                "dashboards_write",
+                "dashboards_public_share",
+            ],
         ),
         type=ApplicationKeysType("application_keys"),
-    )
+    ),
 )
 
 configuration = Configuration()

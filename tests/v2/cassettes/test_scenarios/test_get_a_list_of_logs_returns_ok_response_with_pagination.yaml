@@ -1,0 +1,37 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/logs/events?page%5Blimit%5D=2
+  response:
+    body:
+      string: '{"meta":{"page":{"after":"eyJhZnRlciI6IkFRQUFBWUFkTDlRUW1jT2g2Z0FBQUFCQldVRmtUQzFPUzBGQlFucExkREpLZFZOYVlrTjNRVVEifQ"}},"data":[{"attributes":{"status":"info","timestamp":"2022-04-12T09:51:55.414Z","host":"fe74f1c9-b3bb-45a9-6610-ea12","message":"-
+        -> /","tags":["source:sinatra","env:integrations-lab","source:sinatra","application_id:a7bebd67-1991-4e9e-8d44-399acf2f13e8","application_name:logs-backend-demo","cf_instance_ip:10.0.40.5","env:integrations-lab","instance_index:0","space_name:system","uri:logs-backend-demo.apps.integrations-lab.devenv.dog","datadog.pipelines:false"]},"type":"log","id":"AQAAAYAdL9QWY-VoZwAAAABBWUFkTDlZNEFBQ3RpUllvSWd4TWlRQUQ"},{"attributes":{"status":"info","timestamp":"2022-04-12T09:51:55.408Z","host":"59fe9540-24f4-48c4-4fc4-1c34","message":"-
+        -> /","tags":["source:sinatra","env:integrations-lab","source:sinatra","application_id:41256269-671b-4d79-91d5-3bf848376425","application_name:test-space-org-cc","cf_instance_ip:10.0.40.11","env:integrations-lab","instance_index:1","space_name:datadog-application-monitoring-space","uri:test-space-org-cc.apps.integrations-lab.devenv.dog","datadog.pipelines:false"]},"type":"log","id":"AQAAAYAdL9QQmcOh6gAAAABBWUFkTC1OS0FBQnpLdDJKdVNaYkN3QUQ"}],"links":{"next":"https://api.datadoghq.com/api/v2/logs/events?page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFkTDlRUW1jT2g2Z0FBQUFCQldVRmtUQzFPUzBGQlFucExkREpLZFZOYVlrTjNRVVEifQ&page%5Blimit%5D=2"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/logs/events?page%5Blimit%5D=2&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFkTDlRUW1jT2g2Z0FBQUFCQldVRmtUQzFPUzBGQlFucExkREpLZFZOYVlrTjNRVVEifQ
+  response:
+    body:
+      string: '{"meta":{"page":{"after":"eyJhZnRlciI6IkFRQUFBWUFkTDlKNG1jT2g2QUFBQUFCQldVRmtUQzFPUzBGQlFucExkREpLZFZOYVlrTjNRVUkifQ"}},"data":[{"attributes":{"status":"ok","tags":["source:sinatra","env:integrations-lab","source:sinatra","application_id:a7bebd67-1991-4e9e-8d44-399acf2f13e8","application_name:logs-backend-demo","cf_instance_ip:10.0.40.5","env:integrations-lab","instance_index:0","space_name:system","uri:logs-backend-demo.apps.integrations-lab.devenv.dog"],"timestamp":"2022-04-12T09:51:55.000Z","host":"fe74f1c9-b3bb-45a9-6610-ea12","attributes":{"duration":1800000.0,"http":{"url_details":{"path":"/"},"status_category":"OK","url":"/","status_code":200,"version":"1.1","method":"GET"},"network":{"client":{"ip":"169.254.0.1"},"bytes_written":117},"date_access":1649757115000},"message":"169.254.0.1
+        - - [12/Apr/2022:09:51:55 +0000] \"GET / HTTP/1.1\" 200 117 0.0018"},"type":"log","id":"AQAAAYAdL9J4Y-VoZQAAAABBWUFkTDlZNEFBQ3RpUllvSWd4TWlRQUI"}],"links":{"next":"https://api.datadoghq.com/api/v2/logs/events?page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFkTDlKNG1jT2g2QUFBQUFCQldVRmtUQzFPUzBGQlFucExkREpLZFZOYVlrTjNRVUkifQ&page%5Blimit%5D=2"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

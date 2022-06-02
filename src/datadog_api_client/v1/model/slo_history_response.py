@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_history_response_data import SLOHistoryResponseData
-    from datadog_api_client.v1.model.slo_history_response_error import SLOHistoryResponseError
-
-    globals()["SLOHistoryResponseData"] = SLOHistoryResponseData
-    globals()["SLOHistoryResponseError"] = SLOHistoryResponseError
-
-
 class SLOHistoryResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_history_response_data import SLOHistoryResponseData
+        from datadog_api_client.v1.model.slo_history_response_error import SLOHistoryResponseError
+
         return {
             "data": (SLOHistoryResponseData,),
             "errors": ([SLOHistoryResponseError],),

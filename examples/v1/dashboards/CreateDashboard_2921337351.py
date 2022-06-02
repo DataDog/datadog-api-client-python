@@ -2,7 +2,7 @@
 Create a new dashboard with trace_service widget
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -19,7 +19,12 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=72, height=72),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=72,
+                height=72,
+            ),
             definition=ServiceSummaryWidgetDefinition(
                 title="Service Summary",
                 time=WidgetTime(),
@@ -36,7 +41,7 @@ body = Dashboard(
                 size_format=WidgetSizeFormat("medium"),
                 display_format=WidgetServiceSummaryDisplayFormat("two_column"),
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

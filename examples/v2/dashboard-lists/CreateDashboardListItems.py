@@ -2,14 +2,19 @@
 Add Items to a Dashboard List returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
 from datadog_api_client.v2.model.dashboard_list_item_request import DashboardListItemRequest
 from datadog_api_client.v2.model.dashboard_type import DashboardType
 
 body = DashboardListAddItemsRequest(
-    dashboards=[DashboardListItemRequest(id="q5j-nti-fv6", type=DashboardType("host_timeboard"))]
+    dashboards=[
+        DashboardListItemRequest(
+            id="q5j-nti-fv6",
+            type=DashboardType("host_timeboard"),
+        ),
+    ],
 )
 
 configuration = Configuration()

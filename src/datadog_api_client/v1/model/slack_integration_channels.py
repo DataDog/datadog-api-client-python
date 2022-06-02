@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slack_integration_channel import SlackIntegrationChannel
-
-    globals()["SlackIntegrationChannel"] = SlackIntegrationChannel
-
-
 class SlackIntegrationChannels(ModelSimple):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slack_integration_channel import SlackIntegrationChannel
+
         return {
             "value": ([SlackIntegrationChannel],),
         }
@@ -30,7 +25,6 @@ class SlackIntegrationChannels(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: A list of configured Slack channels.
         :type value: [SlackIntegrationChannel]
         """
         super().__init__(kwargs)

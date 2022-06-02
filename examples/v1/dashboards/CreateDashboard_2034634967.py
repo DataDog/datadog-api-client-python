@@ -2,7 +2,7 @@
 Create a new dashboard with servicemap widget
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -17,16 +17,24 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=47, height=15),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=47,
+                height=15,
+            ),
             definition=ServiceMapWidgetDefinition(
                 title="",
                 title_size="16",
                 title_align=WidgetTextAlign("left"),
                 type=ServiceMapWidgetDefinitionType("servicemap"),
                 service="",
-                filters=["env:none", "environment:*"],
+                filters=[
+                    "env:none",
+                    "environment:*",
+                ],
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

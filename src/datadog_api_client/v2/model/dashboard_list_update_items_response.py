@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.dashboard_list_item_response import DashboardListItemResponse
-
-    globals()["DashboardListItemResponse"] = DashboardListItemResponse
-
-
 class DashboardListUpdateItemsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.dashboard_list_item_response import DashboardListItemResponse
+
         return {
             "dashboards": ([DashboardListItemResponse],),
         }

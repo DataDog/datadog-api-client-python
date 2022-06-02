@@ -9,34 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.apm_stats_query_definition import ApmStatsQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
-    from datadog_api_client.v1.model.widget_style import WidgetStyle
-
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["ApmStatsQueryDefinition"] = ApmStatsQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["ProcessQueryDefinition"] = ProcessQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["LogQueryDefinition"] = LogQueryDefinition
-    globals()["WidgetStyle"] = WidgetStyle
-
-
 class DistributionWidgetRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
+        from datadog_api_client.v1.model.apm_stats_query_definition import ApmStatsQueryDefinition
+        from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
+        from datadog_api_client.v1.model.widget_style import WidgetStyle
+
         return {
             "apm_query": (LogQueryDefinition,),
             "apm_stats_query": (ApmStatsQueryDefinition,),

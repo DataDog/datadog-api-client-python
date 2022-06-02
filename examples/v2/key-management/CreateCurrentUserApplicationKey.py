@@ -2,7 +2,7 @@
 Create an application key for current user returns "Created" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.key_management_api import KeyManagementApi
 from datadog_api_client.v2.model.application_key_create_attributes import ApplicationKeyCreateAttributes
 from datadog_api_client.v2.model.application_key_create_data import ApplicationKeyCreateData
@@ -13,10 +13,14 @@ body = ApplicationKeyCreateRequest(
     data=ApplicationKeyCreateData(
         attributes=ApplicationKeyCreateAttributes(
             name="Application Key for managing dashboards",
-            scopes=["dashboards_read", "dashboards_write", "dashboards_public_share"],
+            scopes=[
+                "dashboards_read",
+                "dashboards_write",
+                "dashboards_public_share",
+            ],
         ),
         type=ApplicationKeysType("application_keys"),
-    )
+    ),
 )
 
 configuration = Configuration()

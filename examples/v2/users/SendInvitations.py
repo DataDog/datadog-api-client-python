@@ -3,7 +3,7 @@ Send invitation emails returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.users_api import UsersApi
 from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 from datadog_api_client.v2.model.relationship_to_user_data import RelationshipToUserData
@@ -21,10 +21,15 @@ body = UserInvitationsRequest(
         UserInvitationData(
             type=UserInvitationsType("user_invitations"),
             relationships=UserInvitationRelationships(
-                user=RelationshipToUser(data=RelationshipToUserData(type=UsersType("users"), id=USER_DATA_ID))
+                user=RelationshipToUser(
+                    data=RelationshipToUserData(
+                        type=UsersType("users"),
+                        id=USER_DATA_ID,
+                    ),
+                ),
             ),
-        )
-    ]
+        ),
+    ],
 )
 
 configuration = Configuration()

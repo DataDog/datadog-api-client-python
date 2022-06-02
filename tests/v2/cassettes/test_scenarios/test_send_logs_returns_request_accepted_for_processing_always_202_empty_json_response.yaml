@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '[{"ddsource":"nginx","ddtags":"env:staging,version:5.1","hostname":"i-012345678","message":"2019-11-19T14:37:58,995
+      INFO [process.name][20081] Hello World","service":"payment","status":"error"}]'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://http-intake.logs.datadoghq.com/api/v2/logs
+  response:
+    body:
+      string: '{}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 202
+      message: Accepted
+version: 1

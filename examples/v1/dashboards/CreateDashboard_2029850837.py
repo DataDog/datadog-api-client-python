@@ -2,7 +2,7 @@
 Create a new dashboard with log_stream widget
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -20,21 +20,34 @@ body = Dashboard(
     description="",
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=47, height=36),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=47,
+                height=36,
+            ),
             definition=LogStreamWidgetDefinition(
                 title="",
                 title_size="16",
                 title_align=WidgetTextAlign("left"),
                 type=LogStreamWidgetDefinitionType("log_stream"),
-                indexes=["main"],
+                indexes=[
+                    "main",
+                ],
                 query="",
-                sort=WidgetFieldSort(column="time", order=WidgetSort("desc")),
-                columns=["host", "service"],
+                sort=WidgetFieldSort(
+                    column="time",
+                    order=WidgetSort("desc"),
+                ),
+                columns=[
+                    "host",
+                    "service",
+                ],
                 show_date_column=True,
                 show_message_column=True,
                 message_display=WidgetMessageDisplay("expanded-md"),
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),

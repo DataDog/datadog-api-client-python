@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"email":"Test-Configure_tags_for_multiple_metrics_returns_Accepted_response-1648572650@datadoghq.com","title":"user
+    body: '{"data":{"attributes":{"email":"Test-Configure_tags_for_multiple_metrics_returns_Accepted_response-1652349149@datadoghq.com","title":"user
       title"},"type":"users"}}'
     headers:
       accept:
@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"644595b6-af80-11ec-9083-da7ad0900002","attributes":{"name":null,"handle":"test-configure_tags_for_multiple_metrics_returns_accepted_response-1648572650@datadoghq.com","created_at":"2022-03-29T16:50:51.458189+00:00","modified_at":"2022-03-29T16:50:51.505052+00:00","email":"test-configure_tags_for_multiple_metrics_returns_accepted_response-1648572650@datadoghq.com","icon":"https://secure.gravatar.com/avatar/89de541493f01f9349b107331dc8148f?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"3cf23548-d1d9-11ec-ad3d-da7ad0900002","attributes":{"name":null,"handle":"test-configure_tags_for_multiple_metrics_returns_accepted_response-1652349149@datadoghq.com","created_at":"2022-05-12T09:52:30.224025+00:00","modified_at":"2022-05-12T09:52:30.279356+00:00","email":"test-configure_tags_for_multiple_metrics_returns_accepted_response-1652349149@datadoghq.com","icon":"https://secure.gravatar.com/avatar/37b97ed3403eaebb504eab5b74a44f2a?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       content-type:
@@ -20,7 +20,7 @@ interactions:
       code: 201
       message: Created
 - request:
-    body: '{"data":{"attributes":{"emails":["test-configure_tags_for_multiple_metrics_returns_accepted_response-1648572650@datadoghq.com"],"tags":["test","testconfiguretagsformultiplemetricsreturnsacceptedresponse1648572650"]},"id":"system.load.1","type":"metric_bulk_configure_tags"}}'
+    body: '{"data":{"attributes":{"emails":["test-configure_tags_for_multiple_metrics_returns_accepted_response-1652349149@datadoghq.com"],"tags":["test","testconfiguretagsformultiplemetricsreturnsacceptedresponse1652349149"]},"id":"system.load.1","type":"metric_bulk_configure_tags"}}'
     headers:
       accept:
       - application/json
@@ -30,7 +30,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/metrics/config/bulk-tags
   response:
     body:
-      string: '{"data":{"type":"metric_bulk_configure_tags","id":"system.load.1","attributes":{"tags":["test","testconfiguretagsformultiplemetricsreturnsacceptedresponse1648572650"],"emails":["test-configure_tags_for_multiple_metrics_returns_accepted_response-1648572650@datadoghq.com"],"status":"Accepted"}}}'
+      string: '{"data":{"type":"metric_bulk_configure_tags","id":"system.load.1","attributes":{"tags":["test","testconfiguretagsformultiplemetricsreturnsacceptedresponse1652349149"],"emails":["test-configure_tags_for_multiple_metrics_returns_accepted_response-1652349149@datadoghq.com"],"status":"Accepted"}}}'
     headers:
       content-type:
       - application/json
@@ -38,7 +38,7 @@ interactions:
       code: 202
       message: Accepted
 - request:
-    body: '{"data":{"attributes":{"emails":["test-configure_tags_for_multiple_metrics_returns_accepted_response-1648572650@datadoghq.com"],"status":"Accepted","tags":["test","testconfiguretagsformultiplemetricsreturnsacceptedresponse1648572650"]},"id":"system.load.1","type":"metric_bulk_configure_tags"}}'
+    body: '{"data":{"attributes":{"emails":["test-configure_tags_for_multiple_metrics_returns_accepted_response-1652349149@datadoghq.com"],"status":"Accepted","tags":["test","testconfiguretagsformultiplemetricsreturnsacceptedresponse1652349149"]},"id":"system.load.1","type":"metric_bulk_configure_tags"}}'
     headers:
       accept:
       - application/json
@@ -48,7 +48,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/metrics/config/bulk-tags
   response:
     body:
-      string: '{"data":{"type":"metric_bulk_configure_tags","id":"system.load.1","attributes":{"emails":["test-configure_tags_for_multiple_metrics_returns_accepted_response-1648572650@datadoghq.com"],"status":"Accepted"}}}'
+      string: '{"data":{"type":"metric_bulk_configure_tags","id":"system.load.1","attributes":{"emails":["test-configure_tags_for_multiple_metrics_returns_accepted_response-1652349149@datadoghq.com"],"status":"Accepted"}}}'
     headers:
       content-type:
       - application/json
@@ -59,9 +59,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/644595b6-af80-11ec-9083-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/3cf23548-d1d9-11ec-ad3d-da7ad0900002
   response:
     body:
       string: ''

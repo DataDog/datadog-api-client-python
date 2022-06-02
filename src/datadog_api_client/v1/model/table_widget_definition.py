@@ -9,26 +9,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
-    from datadog_api_client.v1.model.table_widget_has_search_bar import TableWidgetHasSearchBar
-    from datadog_api_client.v1.model.table_widget_request import TableWidgetRequest
-    from datadog_api_client.v1.model.widget_time import WidgetTime
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.table_widget_definition_type import TableWidgetDefinitionType
-
-    globals()["WidgetCustomLink"] = WidgetCustomLink
-    globals()["TableWidgetHasSearchBar"] = TableWidgetHasSearchBar
-    globals()["TableWidgetRequest"] = TableWidgetRequest
-    globals()["WidgetTime"] = WidgetTime
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["TableWidgetDefinitionType"] = TableWidgetDefinitionType
-
-
 class TableWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+        from datadog_api_client.v1.model.table_widget_has_search_bar import TableWidgetHasSearchBar
+        from datadog_api_client.v1.model.table_widget_request import TableWidgetRequest
+        from datadog_api_client.v1.model.widget_time import WidgetTime
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.table_widget_definition_type import TableWidgetDefinitionType
+
         return {
             "custom_links": ([WidgetCustomLink],),
             "has_search_bar": (TableWidgetHasSearchBar,),

@@ -2,7 +2,7 @@
 Create a new dashboard with geomap widget
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -40,7 +40,12 @@ body = Dashboard(
     description=None,
     widgets=[
         Widget(
-            layout=WidgetLayout(x=0, y=0, width=47, height=30),
+            layout=WidgetLayout(
+                x=0,
+                y=0,
+                width=47,
+                height=30,
+            ),
             definition=GeomapWidgetDefinition(
                 title="",
                 title_size="16",
@@ -51,17 +56,25 @@ body = Dashboard(
                     GeomapWidgetRequest(
                         formulas=[
                             WidgetFormula(
-                                formula="query1", limit=WidgetFormulaLimit(count=250, order=QuerySortOrder("desc"))
-                            )
+                                formula="query1",
+                                limit=WidgetFormulaLimit(
+                                    count=250,
+                                    order=QuerySortOrder("desc"),
+                                ),
+                            ),
                         ],
                         queries=[
                             FormulaAndFunctionEventQueryDefinition(
                                 name="query1",
                                 data_source=FormulaAndFunctionEventsDataSource("rum"),
-                                search=FormulaAndFunctionEventQueryDefinitionSearch(query=""),
-                                indexes=["*"],
+                                search=FormulaAndFunctionEventQueryDefinitionSearch(
+                                    query="",
+                                ),
+                                indexes=[
+                                    "*",
+                                ],
                                 compute=FormulaAndFunctionEventQueryDefinitionCompute(
-                                    aggregation=FormulaAndFunctionEventAggregation("count")
+                                    aggregation=FormulaAndFunctionEventAggregation("count"),
                                 ),
                                 group_by=[
                                     FormulaAndFunctionEventQueryGroupBy(
@@ -71,17 +84,22 @@ body = Dashboard(
                                             order=QuerySortOrder("desc"),
                                             aggregation=FormulaAndFunctionEventAggregation("count"),
                                         ),
-                                    )
+                                    ),
                                 ],
-                            )
+                            ),
                         ],
                         response_format=FormulaAndFunctionResponseFormat("scalar"),
-                    )
+                    ),
                 ],
-                style=GeomapWidgetDefinitionStyle(palette="hostmap_blues", palette_flip=False),
-                view=GeomapWidgetDefinitionView(focus="WORLD"),
+                style=GeomapWidgetDefinitionStyle(
+                    palette="hostmap_blues",
+                    palette_flip=False,
+                ),
+                view=GeomapWidgetDefinitionView(
+                    focus="WORLD",
+                ),
             ),
-        )
+        ),
     ],
     template_variables=[],
     layout_type=DashboardLayoutType("free"),
