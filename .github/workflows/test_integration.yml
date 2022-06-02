@@ -66,7 +66,7 @@ jobs:
           pip install --upgrade wheel setuptools build
       - name: Install
         run: |
-          pip install --disable-pip-version-check git+https://github.com/DataDog/dd-trace-py.git@jirikuncar/CIAPP-3214/codeowners-per-test#egg=ddtrace
+          pip install --disable-pip-version-check git+https://github.com/DataDog/dd-trace-py.git#egg=ddtrace
           pip install --disable-pip-version-check -e .[tests]
       - name: Test
         run: ./run-tests.sh
