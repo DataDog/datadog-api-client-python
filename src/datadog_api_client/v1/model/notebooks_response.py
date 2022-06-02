@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.notebooks_response_data import NotebooksResponseData
-    from datadog_api_client.v1.model.notebooks_response_meta import NotebooksResponseMeta
-
-    globals()["NotebooksResponseData"] = NotebooksResponseData
-    globals()["NotebooksResponseMeta"] = NotebooksResponseMeta
-
-
 class NotebooksResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.notebooks_response_data import NotebooksResponseData
+        from datadog_api_client.v1.model.notebooks_response_meta import NotebooksResponseMeta
+
         return {
             "data": ([NotebooksResponseData],),
             "meta": (NotebooksResponseMeta,),

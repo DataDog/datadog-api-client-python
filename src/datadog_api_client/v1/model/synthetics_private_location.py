@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_private_location_metadata import SyntheticsPrivateLocationMetadata
-    from datadog_api_client.v1.model.synthetics_private_location_secrets import SyntheticsPrivateLocationSecrets
-
-    globals()["SyntheticsPrivateLocationMetadata"] = SyntheticsPrivateLocationMetadata
-    globals()["SyntheticsPrivateLocationSecrets"] = SyntheticsPrivateLocationSecrets
-
-
 class SyntheticsPrivateLocation(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_private_location_metadata import SyntheticsPrivateLocationMetadata
+        from datadog_api_client.v1.model.synthetics_private_location_secrets import SyntheticsPrivateLocationSecrets
+
         return {
             "description": (str,),
             "id": (str,),

@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_top_avg_metrics_pagination import UsageTopAvgMetricsPagination
-
-    globals()["UsageTopAvgMetricsPagination"] = UsageTopAvgMetricsPagination
-
-
 class UsageTopAvgMetricsMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_top_avg_metrics_pagination import UsageTopAvgMetricsPagination
+
         return {
             "day": (datetime,),
             "month": (datetime,),

@@ -9,6 +9,11 @@ from datadog_api_client.v1.model.slack_integration_channel import SlackIntegrati
 
 
 class SlackIntegrationApi:
+    """
+    Configure your `Datadog-Slack integration <https://docs.datadoghq.com/integrations/slack>`_
+    directly through the Datadog API.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_ssl_certificate import SyntheticsSSLCertificate
-    from datadog_api_client.v1.model.synthetics_test_process_status import SyntheticsTestProcessStatus
-    from datadog_api_client.v1.model.synthetics_api_test_result_failure import SyntheticsApiTestResultFailure
-    from datadog_api_client.v1.model.synthetics_timing import SyntheticsTiming
-
-    globals()["SyntheticsSSLCertificate"] = SyntheticsSSLCertificate
-    globals()["SyntheticsTestProcessStatus"] = SyntheticsTestProcessStatus
-    globals()["SyntheticsApiTestResultFailure"] = SyntheticsApiTestResultFailure
-    globals()["SyntheticsTiming"] = SyntheticsTiming
-
-
 class SyntheticsAPITestResultData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_ssl_certificate import SyntheticsSSLCertificate
+        from datadog_api_client.v1.model.synthetics_test_process_status import SyntheticsTestProcessStatus
+        from datadog_api_client.v1.model.synthetics_api_test_result_failure import SyntheticsApiTestResultFailure
+        from datadog_api_client.v1.model.synthetics_timing import SyntheticsTiming
+
         return {
             "cert": (SyntheticsSSLCertificate,),
             "event_type": (SyntheticsTestProcessStatus,),
@@ -78,7 +70,7 @@ class SyntheticsAPITestResultData(ModelNormal):
         :type response_size: int, optional
 
         :param timings: Object containing all metrics and their values collected for a Synthetic API test.
-            Learn more about those metrics in [Synthetics documentation](https://docs.datadoghq.com/synthetics/#metrics).
+            Learn more about those metrics in `Synthetics documentation <https://docs.datadoghq.com/synthetics/#metrics>`_.
         :type timings: SyntheticsTiming, optional
         """
         super().__init__(kwargs)

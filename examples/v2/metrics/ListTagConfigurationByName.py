@@ -3,7 +3,7 @@ List tag configuration by name returns "Success" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.metrics_api import MetricsApi
 
 # there is a valid "metric_tag_configuration" in the system

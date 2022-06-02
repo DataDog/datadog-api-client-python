@@ -9,20 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.metric_ingested_indexed_volume_attributes import (
-        MetricIngestedIndexedVolumeAttributes,
-    )
-    from datadog_api_client.v2.model.metric_ingested_indexed_volume_type import MetricIngestedIndexedVolumeType
-
-    globals()["MetricIngestedIndexedVolumeAttributes"] = MetricIngestedIndexedVolumeAttributes
-    globals()["MetricIngestedIndexedVolumeType"] = MetricIngestedIndexedVolumeType
-
-
 class MetricIngestedIndexedVolume(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.metric_ingested_indexed_volume_attributes import (
+            MetricIngestedIndexedVolumeAttributes,
+        )
+        from datadog_api_client.v2.model.metric_ingested_indexed_volume_type import MetricIngestedIndexedVolumeType
+
         return {
             "attributes": (MetricIngestedIndexedVolumeAttributes,),
             "id": (str,),

@@ -8,6 +8,7 @@ import re
 import ssl
 from urllib.parse import urlencode
 import zlib
+import zstandard as zstd
 
 import urllib3  # type: ignore
 
@@ -136,10 +137,13 @@ class RESTClientObject:
                     if body is not None:
                         request_body = json.dumps(body)
                         if headers.get("Content-Encoding") == "gzip":
-                            compress = zlib.compressobj(wbits=16 + zlib.MAX_WBITS)
-                            request_body = compress.compress(request_body.encode("utf-8")) + compress.flush()
+                            compressor = zlib.compressobj(wbits=16 + zlib.MAX_WBITS)
+                            request_body = compressor.compress(request_body.encode("utf-8")) + compress.flush()
                         elif headers.get("Content-Encoding") == "deflate":
                             request_body = zlib.compress(request_body.encode("utf-8"))
+                        elif headers.get("Content-Encoding") == "zstd1":
+                            compressor = zstd.ZstdCompressor()
+                            request_body = compressor.compress(request_body.encode("utf-8"))
                     r = self.pool_manager.request(
                         method,
                         url,

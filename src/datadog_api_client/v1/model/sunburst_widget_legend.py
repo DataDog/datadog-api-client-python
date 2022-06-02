@@ -9,14 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.sunburst_widget_legend_table import SunburstWidgetLegendTable
-    from datadog_api_client.v1.model.sunburst_widget_legend_inline_automatic import SunburstWidgetLegendInlineAutomatic
-
-    globals()["SunburstWidgetLegendTable"] = SunburstWidgetLegendTable
-    globals()["SunburstWidgetLegendInlineAutomatic"] = SunburstWidgetLegendInlineAutomatic
-
-
 class SunburstWidgetLegend(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
@@ -54,7 +46,11 @@ class SunburstWidgetLegend(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        lazy_import()
+        from datadog_api_client.v1.model.sunburst_widget_legend_table import SunburstWidgetLegendTable
+        from datadog_api_client.v1.model.sunburst_widget_legend_inline_automatic import (
+            SunburstWidgetLegendInlineAutomatic,
+        )
+
         return {
             "anyOf": [],
             "allOf": [],

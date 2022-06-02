@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.log import Log
-
-    globals()["Log"] = Log
-
-
 class LogsListResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.log import Log
+
         return {
             "logs": ([Log],),
             "next_log_id": (str,),
@@ -35,7 +30,7 @@ class LogsListResponse(ModelNormal):
         """
         Response object with all logs matching the request and pagination information.
 
-        :param logs: Array of logs matching the request and the `nextLogId` if sent.
+        :param logs: Array of logs matching the request and the ``nextLogId`` if sent.
         :type logs: [Log], optional
 
         :param next_log_id: Hash identifier of the next log to return in the list.

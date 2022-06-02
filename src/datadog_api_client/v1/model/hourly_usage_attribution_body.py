@@ -10,18 +10,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_attribution_tag_names import UsageAttributionTagNames
-    from datadog_api_client.v1.model.hourly_usage_attribution_usage_type import HourlyUsageAttributionUsageType
-
-    globals()["UsageAttributionTagNames"] = UsageAttributionTagNames
-    globals()["HourlyUsageAttributionUsageType"] = HourlyUsageAttributionUsageType
-
-
 class HourlyUsageAttributionBody(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_attribution_tag_names import UsageAttributionTagNames
+        from datadog_api_client.v1.model.hourly_usage_attribution_usage_type import HourlyUsageAttributionUsageType
+
         return {
             "hour": (datetime,),
             "org_name": (str,),
@@ -57,7 +51,7 @@ class HourlyUsageAttributionBody(ModelNormal):
         :param public_id: The organization public ID.
         :type public_id: str, optional
 
-        :param tag_config_source: The source of the usage attribution tag configuration and the selected tags in the format of `<source_org_name>:::<selected tag 1>///<selected tag 2>///<selected tag 3>`.
+        :param tag_config_source: The source of the usage attribution tag configuration and the selected tags in the format of ``<source_org_name>:::<selected tag 1>///<selected tag 2>///<selected tag 3>``.
         :type tag_config_source: str, optional
 
         :param tags: Usage Summary by tag name.

@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.creator import Creator
-
-    globals()["Creator"] = Creator
-
-
 class DashboardList(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.creator import Creator
+
         return {
             "author": (Creator,),
             "created": (datetime,),

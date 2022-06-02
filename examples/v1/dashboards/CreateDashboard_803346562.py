@@ -2,7 +2,7 @@
 Create a new dashboard with distribution widget and apm stats data
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.apm_stats_query_definition import ApmStatsQueryDefinition
 from datadog_api_client.v1.model.apm_stats_query_row_type import ApmStatsQueryRowType

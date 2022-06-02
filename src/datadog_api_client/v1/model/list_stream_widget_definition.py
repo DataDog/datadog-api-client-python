@@ -9,18 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.list_stream_widget_request import ListStreamWidgetRequest
-    from datadog_api_client.v1.model.widget_time import WidgetTime
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.list_stream_widget_definition_type import ListStreamWidgetDefinitionType
-
-    globals()["ListStreamWidgetRequest"] = ListStreamWidgetRequest
-    globals()["WidgetTime"] = WidgetTime
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["ListStreamWidgetDefinitionType"] = ListStreamWidgetDefinitionType
-
-
 class ListStreamWidgetDefinition(ModelNormal):
     validations = {
         "requests": {
@@ -31,7 +19,11 @@ class ListStreamWidgetDefinition(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.list_stream_widget_request import ListStreamWidgetRequest
+        from datadog_api_client.v1.model.widget_time import WidgetTime
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.list_stream_widget_definition_type import ListStreamWidgetDefinitionType
+
         return {
             "legend_size": (str,),
             "requests": ([ListStreamWidgetRequest],),
@@ -58,7 +50,6 @@ class ListStreamWidgetDefinition(ModelNormal):
         """
         The list stream visualization displays a table of recent events in your application that
         match a search criteria using user-defined columns.
-
 
         :param legend_size: Available legend sizes for a widget. Should be one of "0", "2", "4", "8", "16", or "auto".
         :type legend_size: str, optional

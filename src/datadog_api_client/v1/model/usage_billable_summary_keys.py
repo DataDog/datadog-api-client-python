@@ -9,78 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
-
-
 class UsageBillableSummaryKeys(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+
         return {
             "apm_host_sum": (UsageBillableSummaryBody,),
             "apm_host_top99p": (UsageBillableSummaryBody,),

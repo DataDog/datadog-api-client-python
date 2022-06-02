@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_top_avg_metrics_metadata import UsageTopAvgMetricsMetadata
-    from datadog_api_client.v1.model.usage_top_avg_metrics_hour import UsageTopAvgMetricsHour
-
-    globals()["UsageTopAvgMetricsMetadata"] = UsageTopAvgMetricsMetadata
-    globals()["UsageTopAvgMetricsHour"] = UsageTopAvgMetricsHour
-
-
 class UsageTopAvgMetricsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_top_avg_metrics_metadata import UsageTopAvgMetricsMetadata
+        from datadog_api_client.v1.model.usage_top_avg_metrics_hour import UsageTopAvgMetricsHour
+
         return {
             "metadata": (UsageTopAvgMetricsMetadata,),
             "usage": ([UsageTopAvgMetricsHour],),

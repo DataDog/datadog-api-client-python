@@ -27,7 +27,7 @@ class AuthenticationValidationResponse(ModelNormal):
         """
         Represent validation endpoint responses.
 
-        :param valid: Return `true` if the authentication response is valid.
+        :param valid: Return ``true`` if the authentication response is valid.
         :type valid: bool, optional
         """
         super().__init__(kwargs)

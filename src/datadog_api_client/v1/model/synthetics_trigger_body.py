@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_trigger_test import SyntheticsTriggerTest
-
-    globals()["SyntheticsTriggerTest"] = SyntheticsTriggerTest
-
-
 class SyntheticsTriggerBody(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_trigger_test import SyntheticsTriggerTest
+
         return {
             "tests": ([SyntheticsTriggerTest],),
         }

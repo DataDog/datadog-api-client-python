@@ -9,26 +9,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.authn_mapping_attributes import AuthNMappingAttributes
-    from datadog_api_client.v2.model.authn_mapping_included import AuthNMappingIncluded
-    from datadog_api_client.v2.model.authn_mapping_relationships import AuthNMappingRelationships
-    from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
-
-    globals()["AuthNMappingAttributes"] = AuthNMappingAttributes
-    globals()["AuthNMappingIncluded"] = AuthNMappingIncluded
-    globals()["AuthNMappingRelationships"] = AuthNMappingRelationships
-    globals()["AuthNMappingsType"] = AuthNMappingsType
-
-
 class AuthNMapping(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.authn_mapping_attributes import AuthNMappingAttributes
+        from datadog_api_client.v2.model.authn_mapping_relationships import AuthNMappingRelationships
+        from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
+
         return {
             "attributes": (AuthNMappingAttributes,),
             "id": (str,),
-            "included": ([AuthNMappingIncluded],),
             "relationships": (AuthNMappingRelationships,),
             "type": (AuthNMappingsType,),
         }
@@ -36,7 +26,6 @@ class AuthNMapping(ModelNormal):
     attribute_map = {
         "attributes": "attributes",
         "id": "id",
-        "included": "included",
         "relationships": "relationships",
         "type": "type",
     }
@@ -50,9 +39,6 @@ class AuthNMapping(ModelNormal):
 
         :param id: ID of the AuthN Mapping.
         :type id: str
-
-        :param included: Included data in the AuthN Mapping response.
-        :type included: [AuthNMappingIncluded], optional
 
         :param relationships: All relationships associated with AuthN Mapping.
         :type relationships: AuthNMappingRelationships, optional

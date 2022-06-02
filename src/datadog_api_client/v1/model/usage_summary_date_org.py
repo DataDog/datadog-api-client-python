@@ -56,6 +56,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "mobile_rum_lite_session_count_sum": (int,),
             "mobile_rum_session_count_android_sum": (int,),
             "mobile_rum_session_count_ios_sum": (int,),
+            "mobile_rum_session_count_reactnative_sum": (int,),
             "mobile_rum_session_count_sum": (int,),
             "mobile_rum_units_sum": (int,),
             "name": (str,),
@@ -123,6 +124,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "mobile_rum_lite_session_count_sum": "mobile_rum_lite_session_count_sum",
         "mobile_rum_session_count_android_sum": "mobile_rum_session_count_android_sum",
         "mobile_rum_session_count_ios_sum": "mobile_rum_session_count_ios_sum",
+        "mobile_rum_session_count_reactnative_sum": "mobile_rum_session_count_reactnative_sum",
         "mobile_rum_session_count_sum": "mobile_rum_session_count_sum",
         "mobile_rum_units_sum": "mobile_rum_units_sum",
         "name": "name",
@@ -278,6 +280,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param mobile_rum_session_count_ios_sum: Shows the sum of all mobile RUM Sessions on iOS over all hours in the current date for the given org.
         :type mobile_rum_session_count_ios_sum: int, optional
+
+        :param mobile_rum_session_count_reactnative_sum: Shows the sum of all mobile RUM Sessions on React Native over all hours in the current date for the given org.
+        :type mobile_rum_session_count_reactnative_sum: int, optional
 
         :param mobile_rum_session_count_sum: Shows the sum of all mobile RUM Sessions over all hours in the current date for the given org.
         :type mobile_rum_session_count_sum: int, optional

@@ -3,7 +3,7 @@ Delete an AuthN Mapping returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.authn_mappings_api import AuthNMappingsApi
 
 # there is a valid "authn_mapping" in the system

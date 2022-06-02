@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_summary_date_org import UsageSummaryDateOrg
-
-    globals()["UsageSummaryDateOrg"] = UsageSummaryDateOrg
-
-
 class UsageSummaryDate(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_summary_date_org import UsageSummaryDateOrg
+
         return {
             "agent_host_top99p": (int,),
             "apm_azure_app_service_host_top99p": (int,),
@@ -64,6 +59,7 @@ class UsageSummaryDate(ModelNormal):
             "mobile_rum_lite_session_count_sum": (int,),
             "mobile_rum_session_count_android_sum": (int,),
             "mobile_rum_session_count_ios_sum": (int,),
+            "mobile_rum_session_count_reactnative_sum": (int,),
             "mobile_rum_session_count_sum": (int,),
             "mobile_rum_units_sum": (int,),
             "netflow_indexed_events_count_sum": (int,),
@@ -130,6 +126,7 @@ class UsageSummaryDate(ModelNormal):
         "mobile_rum_lite_session_count_sum": "mobile_rum_lite_session_count_sum",
         "mobile_rum_session_count_android_sum": "mobile_rum_session_count_android_sum",
         "mobile_rum_session_count_ios_sum": "mobile_rum_session_count_ios_sum",
+        "mobile_rum_session_count_reactnative_sum": "mobile_rum_session_count_reactnative_sum",
         "mobile_rum_session_count_sum": "mobile_rum_session_count_sum",
         "mobile_rum_units_sum": "mobile_rum_units_sum",
         "netflow_indexed_events_count_sum": "netflow_indexed_events_count_sum",
@@ -284,6 +281,9 @@ class UsageSummaryDate(ModelNormal):
 
         :param mobile_rum_session_count_ios_sum: Shows the sum of all mobile RUM Sessions on iOS over all hours in the current date for all organizations.
         :type mobile_rum_session_count_ios_sum: int, optional
+
+        :param mobile_rum_session_count_reactnative_sum: Shows the sum of all mobile RUM Sessions on React Native over all hours in the current date for all organizations.
+        :type mobile_rum_session_count_reactnative_sum: int, optional
 
         :param mobile_rum_session_count_sum: Shows the sum of all mobile RUM Sessions over all hours in the current date for all organizations
         :type mobile_rum_session_count_sum: int, optional

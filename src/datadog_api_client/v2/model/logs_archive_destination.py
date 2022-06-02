@@ -9,16 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_archive_destination_azure import LogsArchiveDestinationAzure
-    from datadog_api_client.v2.model.logs_archive_destination_gcs import LogsArchiveDestinationGCS
-    from datadog_api_client.v2.model.logs_archive_destination_s3 import LogsArchiveDestinationS3
-
-    globals()["LogsArchiveDestinationAzure"] = LogsArchiveDestinationAzure
-    globals()["LogsArchiveDestinationGCS"] = LogsArchiveDestinationGCS
-    globals()["LogsArchiveDestinationS3"] = LogsArchiveDestinationS3
-
-
 class LogsArchiveDestination(ModelComposed):
 
     _nullable = True
@@ -71,7 +61,10 @@ class LogsArchiveDestination(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        lazy_import()
+        from datadog_api_client.v2.model.logs_archive_destination_azure import LogsArchiveDestinationAzure
+        from datadog_api_client.v2.model.logs_archive_destination_gcs import LogsArchiveDestinationGCS
+        from datadog_api_client.v2.model.logs_archive_destination_s3 import LogsArchiveDestinationS3
+
         return {
             "anyOf": [],
             "allOf": [],

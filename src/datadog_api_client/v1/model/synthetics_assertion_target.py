@@ -12,18 +12,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
-    from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
-
-    globals()["SyntheticsAssertionOperator"] = SyntheticsAssertionOperator
-    globals()["SyntheticsAssertionType"] = SyntheticsAssertionType
-
-
 class SyntheticsAssertionTarget(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
+        from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
+
         return {
             "operator": (SyntheticsAssertionOperator,),
             "_property": (str,),

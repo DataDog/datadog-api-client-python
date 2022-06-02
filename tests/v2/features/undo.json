@@ -366,6 +366,12 @@
       "type": "safe"
     }
   },
+  "EstimateMetricsOutputSeries": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteTagConfiguration": {
     "tag": "Metrics",
     "undo": {
@@ -654,6 +660,12 @@
       "type": "safe"
     }
   },
+  "SubmitMetrics": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateServiceAccount": {
     "tag": "Users",
     "undo": {
@@ -780,6 +792,24 @@
     "tag": "Incident Teams",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "GetUsageApplicationSecurityMonitoring": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCostByOrg": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetUsageLambdaTracedInvocations": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
     }
   },
   "GetUsageObservabilityPipelines": {

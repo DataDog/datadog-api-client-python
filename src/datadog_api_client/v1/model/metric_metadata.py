@@ -45,7 +45,7 @@ class MetricMetadata(ModelNormal):
         :param integration: Name of the integration that sent the metric if applicable.
         :type integration: str, optional
 
-        :param per_unit: Per unit of the metric such as `second` in `bytes per second`.
+        :param per_unit: Per unit of the metric such as ``second`` in ``bytes per second``.
         :type per_unit: str, optional
 
         :param short_name: A more human-readable and abbreviated version of the metric name.
@@ -54,10 +54,10 @@ class MetricMetadata(ModelNormal):
         :param statsd_interval: StatsD flush interval of the metric in seconds if applicable.
         :type statsd_interval: int, optional
 
-        :param type: Metric type such as `gauge` or `rate`.
+        :param type: Metric type such as ``gauge`` or ``rate``.
         :type type: str, optional
 
-        :param unit: Primary unit of the metric such as `byte` or `operation`.
+        :param unit: Primary unit of the metric such as ``byte`` or ``operation``.
         :type unit: str, optional
         """
         super().__init__(kwargs)

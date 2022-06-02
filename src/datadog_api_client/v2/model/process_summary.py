@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.process_summary_attributes import ProcessSummaryAttributes
-    from datadog_api_client.v2.model.process_summary_type import ProcessSummaryType
-
-    globals()["ProcessSummaryAttributes"] = ProcessSummaryAttributes
-    globals()["ProcessSummaryType"] = ProcessSummaryType
-
-
 class ProcessSummary(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.process_summary_attributes import ProcessSummaryAttributes
+        from datadog_api_client.v2.model.process_summary_type import ProcessSummaryType
+
         return {
             "attributes": (ProcessSummaryAttributes,),
             "id": (str,),

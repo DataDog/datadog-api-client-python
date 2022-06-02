@@ -2,7 +2,7 @@
 Create an API HTTP test returns "OK - Returns the created test details." response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v1.model.http_method import HTTPMethod
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
@@ -32,7 +32,7 @@ body = SyntheticsAPITest(
         assertions=[
             SyntheticsAssertionTarget(
                 operator=SyntheticsAssertionOperator("is"),
-                property="{{ PROPERTY }}",
+                _property="{{ PROPERTY }}",
                 target="text/html",
                 type=SyntheticsAssertionType("header"),
             ),

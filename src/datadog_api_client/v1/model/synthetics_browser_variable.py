@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_browser_variable_type import SyntheticsBrowserVariableType
-
-    globals()["SyntheticsBrowserVariableType"] = SyntheticsBrowserVariableType
-
-
 class SyntheticsBrowserVariable(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_browser_variable_type import SyntheticsBrowserVariableType
+
         return {
             "example": (str,),
             "id": (str,),
@@ -38,7 +33,7 @@ class SyntheticsBrowserVariable(ModelNormal):
     def __init__(self, name, type, *args, **kwargs):
         """
         Object defining a variable that can be used in your browser test.
-        Learn more in the [Browser test Actions documentation](https://docs.datadoghq.com/synthetics/browser_tests/actions#variable).
+        Learn more in the `Browser test Actions documentation <https://docs.datadoghq.com/synthetics/browser_tests/actions#variable>`_.
 
         :param example: Example for the variable.
         :type example: str, optional

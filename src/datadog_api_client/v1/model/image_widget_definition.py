@@ -9,24 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontalAlign
-    from datadog_api_client.v1.model.widget_margin import WidgetMargin
-    from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
-    from datadog_api_client.v1.model.image_widget_definition_type import ImageWidgetDefinitionType
-    from datadog_api_client.v1.model.widget_vertical_align import WidgetVerticalAlign
-
-    globals()["WidgetHorizontalAlign"] = WidgetHorizontalAlign
-    globals()["WidgetMargin"] = WidgetMargin
-    globals()["WidgetImageSizing"] = WidgetImageSizing
-    globals()["ImageWidgetDefinitionType"] = ImageWidgetDefinitionType
-    globals()["WidgetVerticalAlign"] = WidgetVerticalAlign
-
-
 class ImageWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontalAlign
+        from datadog_api_client.v1.model.widget_margin import WidgetMargin
+        from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
+        from datadog_api_client.v1.model.image_widget_definition_type import ImageWidgetDefinitionType
+        from datadog_api_client.v1.model.widget_vertical_align import WidgetVerticalAlign
+
         return {
             "has_background": (bool,),
             "has_border": (bool,),
@@ -65,11 +56,11 @@ class ImageWidgetDefinition(ModelNormal):
         :type horizontal_align: WidgetHorizontalAlign, optional
 
         :param margin: Size of the margins around the image.
-            **Note**: `small` and `large` values are deprecated.
+            **Note** : ``small`` and ``large`` values are deprecated.
         :type margin: WidgetMargin, optional
 
-        :param sizing: How to size the image on the widget. The values are based on the image `object-fit` CSS properties.
-            **Note**: `zoom`, `fit` and `center` values are deprecated.
+        :param sizing: How to size the image on the widget. The values are based on the image ``object-fit`` CSS properties.
+            **Note** : ``zoom`` , ``fit`` and ``center`` values are deprecated.
         :type sizing: WidgetImageSizing, optional
 
         :param type: Type of the image widget.

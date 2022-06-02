@@ -24,7 +24,7 @@ class AuditLogsResponsePage(ModelNormal):
         """
         Paging attributes.
 
-        :param after: The cursor to use to get the next results, if any. To make the next request, use the same parameters with the addition of `page[cursor]`.
+        :param after: The cursor to use to get the next results, if any. To make the next request, use the same parameters with the addition of ``page[cursor]``.
         :type after: str, optional
         """
         super().__init__(kwargs)

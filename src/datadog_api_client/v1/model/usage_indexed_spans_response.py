@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_indexed_spans_hour import UsageIndexedSpansHour
-
-    globals()["UsageIndexedSpansHour"] = UsageIndexedSpansHour
-
-
 class UsageIndexedSpansResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_indexed_spans_hour import UsageIndexedSpansHour
+
         return {
             "usage": ([UsageIndexedSpansHour],),
         }

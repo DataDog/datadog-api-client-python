@@ -16,6 +16,7 @@ class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
         "value": {
             "RUM": "rum",
             "CI_PIPELINES": "ci_pipelines",
+            "CI_TESTS": "ci_tests",
         },
     }
 
@@ -31,7 +32,7 @@ class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["rum", "ci_pipelines"].
+        :param value: Must be one of ["rum", "ci_pipelines", "ci_tests"].
         :type value: str
         """
         super().__init__(kwargs)

@@ -9,24 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
-    from datadog_api_client.v1.model.query_value_widget_request import QueryValueWidgetRequest
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.widget_time import WidgetTime
-    from datadog_api_client.v1.model.timeseries_background import TimeseriesBackground
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.query_value_widget_definition_type import QueryValueWidgetDefinitionType
-
-    globals()["WidgetCustomLink"] = WidgetCustomLink
-    globals()["QueryValueWidgetRequest"] = QueryValueWidgetRequest
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["WidgetTime"] = WidgetTime
-    globals()["TimeseriesBackground"] = TimeseriesBackground
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["QueryValueWidgetDefinitionType"] = QueryValueWidgetDefinitionType
-
-
 class QueryValueWidgetDefinition(ModelNormal):
     validations = {
         "requests": {
@@ -37,7 +19,13 @@ class QueryValueWidgetDefinition(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+        from datadog_api_client.v1.model.query_value_widget_request import QueryValueWidgetRequest
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.widget_time import WidgetTime
+        from datadog_api_client.v1.model.timeseries_background import TimeseriesBackground
+        from datadog_api_client.v1.model.query_value_widget_definition_type import QueryValueWidgetDefinitionType
+
         return {
             "autoscale": (bool,),
             "custom_links": ([WidgetCustomLink],),

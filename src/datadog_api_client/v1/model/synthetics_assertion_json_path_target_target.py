@@ -39,7 +39,7 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
 
     def __init__(self, *args, **kwargs):
         """
-        Composed target for `validatesJSONPath` operator.
+        Composed target for ``validatesJSONPath`` operator.
 
         :param json_path: The JSON path to assert.
         :type json_path: str, optional

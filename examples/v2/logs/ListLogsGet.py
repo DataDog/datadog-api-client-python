@@ -2,7 +2,7 @@
 Get a list of logs returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.logs_api import LogsApi
 
 configuration = Configuration()

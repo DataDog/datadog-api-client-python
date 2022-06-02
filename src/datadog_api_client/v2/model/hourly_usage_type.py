@@ -4,6 +4,7 @@
 
 
 from datadog_api_client.model_utils import (
+    ApiTypeError,
     ModelSimple,
     cached_property,
 )
@@ -13,7 +14,9 @@ class HourlyUsageType(ModelSimple):
 
     allowed_values = {
         "value": {
+            "APP_SEC_HOST_COUNT": "app_sec_host_count",
             "OBSERVABILITY_PIPELINES_BYTES_PROCESSSED": "observability_pipelines_bytes_processed",
+            "LAMBDA_TRACED_INVOCATIONS_COUNT": "lambda_traced_invocations_count",
         },
     }
 
@@ -29,7 +32,7 @@ class HourlyUsageType(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: If omitted defaults to "observability_pipelines_bytes_processed". Must be one of ["observability_pipelines_bytes_processed"].
+        :param value: Must be one of ["app_sec_host_count", "observability_pipelines_bytes_processed", "lambda_traced_invocations_count"].
         :type value: str
         """
         super().__init__(kwargs)
@@ -40,7 +43,11 @@ class HourlyUsageType(ModelSimple):
             args = list(args)
             value = args.pop(0)
         else:
-            value = "observability_pipelines_bytes_processed"
+            raise ApiTypeError(
+                "value is required, but not passed in args or kwargs and doesn't have default",
+                path_to_item=self._path_to_item,
+                valid_classes=(self.__class__,),
+            )
 
         self._check_pos_args(args)
 

@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.series import Series
-
-    globals()["Series"] = Series
-
-
 class MetricsPayload(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.series import Series
+
         return {
             "series": ([Series],),
         }

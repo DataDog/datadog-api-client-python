@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
-    from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
-    from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
-    from datadog_api_client.v1.model.synthetics_browser_variable import SyntheticsBrowserVariable
-
-    globals()["SyntheticsAssertion"] = SyntheticsAssertion
-    globals()["SyntheticsConfigVariable"] = SyntheticsConfigVariable
-    globals()["SyntheticsTestRequest"] = SyntheticsTestRequest
-    globals()["SyntheticsBrowserVariable"] = SyntheticsBrowserVariable
-
-
 class SyntheticsBrowserTestConfig(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
+        from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
+        from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
+        from datadog_api_client.v1.model.synthetics_browser_variable import SyntheticsBrowserVariable
+
         return {
             "assertions": ([SyntheticsAssertion],),
             "config_variables": ([SyntheticsConfigVariable],),
@@ -54,7 +46,7 @@ class SyntheticsBrowserTestConfig(ModelNormal):
         :param request: Object describing the Synthetic test request.
         :type request: SyntheticsTestRequest
 
-        :param set_cookie: Cookies to be used for the request, using the [Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) syntax.
+        :param set_cookie: Cookies to be used for the request, using the `Set-Cookie <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie>`_ syntax.
         :type set_cookie: str, optional
 
         :param variables: Array of variables used for the test steps.

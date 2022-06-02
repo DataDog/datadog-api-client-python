@@ -9,16 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.security_filter_exclusion_filter_response import (
-        SecurityFilterExclusionFilterResponse,
-    )
-    from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
-
-    globals()["SecurityFilterExclusionFilterResponse"] = SecurityFilterExclusionFilterResponse
-    globals()["SecurityFilterFilteredDataType"] = SecurityFilterFilteredDataType
-
-
 class SecurityFilterAttributes(ModelNormal):
     validations = {
         "version": {
@@ -28,7 +18,11 @@ class SecurityFilterAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.security_filter_exclusion_filter_response import (
+            SecurityFilterExclusionFilterResponse,
+        )
+        from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
+
         return {
             "exclusion_filters": ([SecurityFilterExclusionFilterResponse],),
             "filtered_data_type": (SecurityFilterFilteredDataType,),

@@ -2,7 +2,7 @@
 Create a dashboard list returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v1.model.dashboard_list import DashboardList
 

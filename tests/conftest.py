@@ -170,7 +170,7 @@ def pytest_bdd_apply_tag(tag, function):
     if tag in skip_tags:
         marker = pytest.mark.skip(reason=f"skipped because of '{tag} in {skip_tags}")
         marker(function)
-        return True
+    return True
 
 
 def snake_case(value):
@@ -283,9 +283,8 @@ def disable_recording(request):
 @pytest.fixture
 def vcr_config():
     config = dict(
-        filter_headers=("DD-API-KEY", "DD-APPLICATION-KEY"),
-        filter_query_parameters=("api_key", "application_key"),
-        match_on=["method", "scheme", "host", "port", "path", "query", "body"],
+        filter_headers=("DD-API-KEY", "DD-APPLICATION-KEY", "User-Agent", "Accept-Encoding"),
+        match_on=["method", "scheme", "host", "port", "path", "query", "body", "headers"],
     )
     if tracer:
         from urllib.parse import urlparse

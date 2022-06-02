@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"name":"Test-Create_an_SLO_correction_with_rrule_returns_OK_response-1641829825","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
+    body: '{"name":"Test-Create_an_SLO_correction_with_rrule_returns_OK_response-1652349014","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/slo
   response:
     body:
-      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"5c5220a5a01e5e5eb15edb3034de34bc","name":"Test-Create_an_SLO_correction_with_rrule_returns_OK_response-1641829825","created_at":1641829826,"tags":[],"modified_at":1641829826,"type":"metric"}],"error":null}'
+      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"24892d3875ee57e7a9e1320ebffa3916","name":"Test-Create_an_SLO_correction_with_rrule_returns_OK_response-1652349014","created_at":1652349014,"tags":[],"modified_at":1652349014,"type":"metric"}],"error":null}'
     headers:
       content-type:
       - application/json
@@ -18,7 +18,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"category":"Scheduled Maintenance","description":"Test-Create_an_SLO_correction_with_rrule_returns_OK_response-1641829825","duration":3600,"rrule":"FREQ=DAILY;INTERVAL=10;COUNT=5","slo_id":"5c5220a5a01e5e5eb15edb3034de34bc","start":1641829825,"timezone":"UTC"},"type":"correction"}}'
+    body: '{"data":{"attributes":{"category":"Scheduled Maintenance","description":"Test-Create_an_SLO_correction_with_rrule_returns_OK_response-1652349014","duration":3600,"rrule":"FREQ=DAILY;INTERVAL=10;COUNT=5","slo_id":"24892d3875ee57e7a9e1320ebffa3916","start":1652349014,"timezone":"UTC"},"type":"correction"}}'
     headers:
       accept:
       - application/json
@@ -28,7 +28,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/slo/correction
   response:
     body:
-      string: '{"data":{"type":"correction","id":"07962672-722d-11ec-b5d6-da7ad0900002","attributes":{"slo_id":"5c5220a5a01e5e5eb15edb3034de34bc","start":1641829825,"end":null,"description":"Test-Create_an_SLO_correction_with_rrule_returns_OK_response-1641829825","category":"Scheduled
+      string: '{"data":{"type":"correction","id":"ec8f9488-d1d8-11ec-bc64-da7ad0902002","attributes":{"slo_id":"24892d3875ee57e7a9e1320ebffa3916","start":1652349014,"end":null,"description":"Test-Create_an_SLO_correction_with_rrule_returns_OK_response-1652349014","category":"Scheduled
         Maintenance","timezone":"UTC","created_at":null,"modified_at":null,"rrule":"FREQ=DAILY;INTERVAL=10;COUNT=5","duration":3600,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":null}}}'
     headers:
       content-type:
@@ -40,9 +40,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/correction/07962672-722d-11ec-b5d6-da7ad0900002
+    uri: https://api.datadoghq.com/api/v1/slo/correction/ec8f9488-d1d8-11ec-bc64-da7ad0902002
   response:
     body:
       string: ''
@@ -56,10 +56,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/5c5220a5a01e5e5eb15edb3034de34bc
+    uri: https://api.datadoghq.com/api/v1/slo/24892d3875ee57e7a9e1320ebffa3916
   response:
     body:
-      string: '{"data":["5c5220a5a01e5e5eb15edb3034de34bc"],"error":null}'
+      string: '{"data":["24892d3875ee57e7a9e1320ebffa3916"],"error":null}'
     headers:
       content-type:
       - application/json

@@ -11,6 +11,11 @@ from datadog_api_client.v1.model.logs_index_update_request import LogsIndexUpdat
 
 
 class LogsIndexesApi:
+    """
+    Manage configuration of `log indexes <https://docs.datadoghq.com/logs/indexes/>`_.
+    You need an API and application key with Admin rights to interact with this endpoint.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -278,7 +283,7 @@ class LogsIndexesApi:
         """Get all indexes.
 
         The Index object describes the configuration of a log index.
-        This endpoint returns an array of the `LogIndex` objects of your organization.
+        This endpoint returns an array of the ``LogIndex`` objects of your organization.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -321,7 +326,7 @@ class LogsIndexesApi:
         Update an index as identified by its name.
         Returns the Index object passed in the request body when the request is successful.
 
-        Using the `PUT` method updates your index’s configuration by **replacing**
+        Using the ``PUT`` method updates your index’s configuration by **replacing**
         your current configuration with the new one sent to your Datadog organization.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -332,7 +337,7 @@ class LogsIndexesApi:
 
         :param name: Name of the log index.
         :type name: str
-        :param body: Object containing the new `LogsIndexUpdateRequest`.
+        :param body: Object containing the new ``LogsIndexUpdateRequest``.
         :type body: LogsIndexUpdateRequest
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

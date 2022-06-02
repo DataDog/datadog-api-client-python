@@ -11,18 +11,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
-    from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
-
-    globals()["IncidentFieldAttributes"] = IncidentFieldAttributes
-    globals()["IncidentNotificationHandle"] = IncidentNotificationHandle
-
-
 class IncidentResponseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
+        from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
+
         return {
             "created": (datetime,),
             "customer_impact_duration": (int,),
@@ -82,7 +76,7 @@ class IncidentResponseAttributes(ModelNormal):
         :type created: datetime, optional
 
         :param customer_impact_duration: Length of the incident's customer impact in seconds.
-            Equals the difference between `customer_impact_start` and `customer_impact_end`.
+            Equals the difference between ``customer_impact_start`` and ``customer_impact_end``.
         :type customer_impact_duration: int, optional
 
         :param customer_impact_end: Timestamp when customers were no longer impacted by the incident.
@@ -119,16 +113,16 @@ class IncidentResponseAttributes(ModelNormal):
         :type resolved: datetime, none_type, optional
 
         :param time_to_detect: The amount of time in seconds to detect the incident.
-            Equals the difference between `customer_impact_start` and `detected`.
+            Equals the difference between ``customer_impact_start`` and ``detected``.
         :type time_to_detect: int, optional
 
-        :param time_to_internal_response: The amount of time in seconds to call incident after detection. Equals the difference of `detected` and `created`.
+        :param time_to_internal_response: The amount of time in seconds to call incident after detection. Equals the difference of ``detected`` and ``created``.
         :type time_to_internal_response: int, optional
 
-        :param time_to_repair: The amount of time in seconds to resolve customer impact after detecting the issue. Equals the difference between `customer_impact_end` and `detected`.
+        :param time_to_repair: The amount of time in seconds to resolve customer impact after detecting the issue. Equals the difference between ``customer_impact_end`` and ``detected``.
         :type time_to_repair: int, optional
 
-        :param time_to_resolve: The amount of time in seconds to resolve the incident after it was created. Equals the difference between `created` and `resolved`.
+        :param time_to_resolve: The amount of time in seconds to resolve the incident after it was created. Equals the difference between ``created`` and ``resolved``.
         :type time_to_resolve: int, optional
 
         :param title: The title of the incident, which summarizes what happened.

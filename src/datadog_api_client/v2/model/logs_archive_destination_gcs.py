@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_archive_integration_gcs import LogsArchiveIntegrationGCS
-    from datadog_api_client.v2.model.logs_archive_destination_gcs_type import LogsArchiveDestinationGCSType
-
-    globals()["LogsArchiveIntegrationGCS"] = LogsArchiveIntegrationGCS
-    globals()["LogsArchiveDestinationGCSType"] = LogsArchiveDestinationGCSType
-
-
 class LogsArchiveDestinationGCS(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_archive_integration_gcs import LogsArchiveIntegrationGCS
+        from datadog_api_client.v2.model.logs_archive_destination_gcs_type import LogsArchiveDestinationGCSType
+
         return {
             "bucket": (str,),
             "integration": (LogsArchiveIntegrationGCS,),

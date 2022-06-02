@@ -15,13 +15,8 @@ from jinja2 import Environment, FileSystemLoader, Template
 from pytest_bdd import given, parsers, then, when
 
 from generator import openapi
-from generator.utils import camel_case, given_variables, snake_case, untitle_case
 
-from generator.python_formatter import (
-    format_parameters as format_parameters_python,
-    format_data_with_schema as format_data_with_schema_python,
-    safe_snake_case,
-)
+from generator.formatter import format_parameters, format_data_with_schema, safe_snake_case, snake_case
 
 
 MODIFIED_FEATURES = {
@@ -84,28 +79,18 @@ class FloatEncoder(json.JSONEncoder):
         return result
 
 
-def json_dumps(*args, **kwargs):
-    if CLIENT_REPO_NAME == "terraform-config":
-        kwargs.setdefault("cls", FloatEncoder)
-    return json.dumps(*args, **kwargs)
-
-
 JINJA_ENV = Environment(loader=FileSystemLoader(pathlib.Path(__file__).parent / "src" / "generator" / "templates"))
 JINJA_ENV.filters["tojson"] = json.dumps
 JINJA_ENV.filters["snake_case"] = snake_case
 JINJA_ENV.filters["safe_snake_case"] = safe_snake_case
-JINJA_ENV.filters["camel_case"] = camel_case
-JINJA_ENV.filters["untitle_case"] = untitle_case
-JINJA_ENV.globals["format_data_with_schema_python"] = format_data_with_schema_python
-JINJA_ENV.globals["format_parameters_python"] = format_parameters_python
-JINJA_ENV.globals["given_variables"] = given_variables
+JINJA_ENV.globals["format_data_with_schema"] = format_data_with_schema
+JINJA_ENV.globals["format_parameters"] = format_parameters
 
 PYTHON_EXAMPLE_J2 = JINJA_ENV.get_template("example.j2")
 
 
 def pytest_bdd_after_scenario(request, feature, scenario):
     try:
-        specs = request.getfixturevalue("specs")
         operation_specs = request.getfixturevalue("operation_specs")
         version = request.getfixturevalue("api_version")
         context = request.getfixturevalue("context")
@@ -547,7 +532,7 @@ def the_status_is(context, status, description):
 @then(parsers.parse('the response "{response_path}" is equal to {value}'))
 def expect_equal(context, response_path, value):
     """Compare a response attribute to a value."""
-    pass
+
 
 @then(
     parsers.parse(
@@ -556,16 +541,13 @@ def expect_equal(context, response_path, value):
 )
 def expect_equal_value(context, response_path, fixture_path):
     """Compare a response attribute to another attribute."""
-    pass
 
 
 @then(parsers.parse('the response "{response_path}" has length {fixture_length:d}'))
 def expect_equal_length(context, response_path, fixture_length):
     """Check the length of a response attribute."""
-    pass
 
 
 @then(parsers.parse('the response "{response_path}" is false'))
 def expect_false(context, response_path):
     """Check that a response attribute is false."""
-    pass

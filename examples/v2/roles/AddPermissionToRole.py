@@ -3,7 +3,7 @@ Grant permission to a role returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.model.permissions_type import PermissionsType
 from datadog_api_client.v2.model.relationship_to_permission import RelationshipToPermission

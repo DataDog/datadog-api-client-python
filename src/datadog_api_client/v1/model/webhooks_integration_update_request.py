@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.webhooks_integration_encoding import WebhooksIntegrationEncoding
-
-    globals()["WebhooksIntegrationEncoding"] = WebhooksIntegrationEncoding
-
-
 class WebhooksIntegrationUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.webhooks_integration_encoding import WebhooksIntegrationEncoding
+
         return {
             "custom_headers": (str,),
             "encode_as": (WebhooksIntegrationEncoding,),
@@ -42,22 +37,22 @@ class WebhooksIntegrationUpdateRequest(ModelNormal):
 
         *All properties are optional.*
 
-        :param custom_headers: If `null`, uses no header.
+        :param custom_headers: If ``null`` , uses no header.
             If given a JSON payload, these will be headers attached to your webhook.
         :type custom_headers: str, optional
 
-        :param encode_as: Encoding type. Can be given either `json` or `form`.
+        :param encode_as: Encoding type. Can be given either ``json`` or ``form``.
         :type encode_as: WebhooksIntegrationEncoding, optional
 
-        :param name: The name of the webhook. It corresponds with `<WEBHOOK_NAME>`.
+        :param name: The name of the webhook. It corresponds with ``<WEBHOOK_NAME>``.
             Learn more on how to use it in
-            [monitor notifications](https://docs.datadoghq.com/monitors/notify).
+            `monitor notifications <https://docs.datadoghq.com/monitors/notify>`_.
         :type name: str, optional
 
-        :param payload: If `null`, uses the default payload.
+        :param payload: If ``null`` , uses the default payload.
             If given a JSON payload, the webhook returns the payload
             specified by the given payload.
-            [Webhooks variable usage](https://docs.datadoghq.com/integrations/webhooks/#usage).
+            `Webhooks variable usage <https://docs.datadoghq.com/integrations/webhooks/#usage>`_.
         :type payload: str, none_type, optional
 
         :param url: URL of the webhook.

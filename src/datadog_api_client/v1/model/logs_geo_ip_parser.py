@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_geo_ip_parser_type import LogsGeoIPParserType
-
-    globals()["LogsGeoIPParserType"] = LogsGeoIPParserType
-
-
 class LogsGeoIPParser(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_geo_ip_parser_type import LogsGeoIPParserType
+
         return {
             "is_enabled": (bool,),
             "name": (str,),
@@ -49,7 +44,7 @@ class LogsGeoIPParser(ModelNormal):
         :param sources: Array of source attributes.
         :type sources: [str]
 
-        :param target: Name of the parent attribute that contains all the extracted details from the `sources`.
+        :param target: Name of the parent attribute that contains all the extracted details from the ``sources``.
         :type target: str
 
         :param type: Type of GeoIP parser.

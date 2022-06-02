@@ -9,27 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.notebook_markdown_cell_attributes import NotebookMarkdownCellAttributes
-    from datadog_api_client.v1.model.notebook_timeseries_cell_attributes import NotebookTimeseriesCellAttributes
-    from datadog_api_client.v1.model.notebook_toplist_cell_attributes import NotebookToplistCellAttributes
-    from datadog_api_client.v1.model.notebook_heat_map_cell_attributes import NotebookHeatMapCellAttributes
-    from datadog_api_client.v1.model.notebook_distribution_cell_attributes import NotebookDistributionCellAttributes
-    from datadog_api_client.v1.model.notebook_log_stream_cell_attributes import NotebookLogStreamCellAttributes
-
-    globals()["NotebookMarkdownCellAttributes"] = NotebookMarkdownCellAttributes
-    globals()["NotebookTimeseriesCellAttributes"] = NotebookTimeseriesCellAttributes
-    globals()["NotebookToplistCellAttributes"] = NotebookToplistCellAttributes
-    globals()["NotebookHeatMapCellAttributes"] = NotebookHeatMapCellAttributes
-    globals()["NotebookDistributionCellAttributes"] = NotebookDistributionCellAttributes
-    globals()["NotebookLogStreamCellAttributes"] = NotebookLogStreamCellAttributes
-
-
 class NotebookCellResponseAttributes(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
-        The attributes of a notebook cell response. Valid cell types are `markdown`, `timeseries`, `toplist`, `heatmap`, `distribution`,
-        `log_stream`. [More information on each graph visualization type.](https://docs.datadoghq.com/dashboards/widgets/)
+        The attributes of a notebook cell response. Valid cell types are ``markdown`` , ``timeseries`` , ``toplist`` , ``heatmap`` , ``distribution`` ,
+        ``log_stream``. `More information on each graph visualization type. <https://docs.datadoghq.com/dashboards/widgets/>`_
 
         :param definition: Text in a notebook is formatted with [Markdown](https://daringfireball.net/projects/markdown/), which enables the use of headings, subheadings, links, images, lists, and code blocks.
         :type definition: NotebookMarkdownCellDefinition
@@ -66,7 +50,13 @@ class NotebookCellResponseAttributes(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        lazy_import()
+        from datadog_api_client.v1.model.notebook_markdown_cell_attributes import NotebookMarkdownCellAttributes
+        from datadog_api_client.v1.model.notebook_timeseries_cell_attributes import NotebookTimeseriesCellAttributes
+        from datadog_api_client.v1.model.notebook_toplist_cell_attributes import NotebookToplistCellAttributes
+        from datadog_api_client.v1.model.notebook_heat_map_cell_attributes import NotebookHeatMapCellAttributes
+        from datadog_api_client.v1.model.notebook_distribution_cell_attributes import NotebookDistributionCellAttributes
+        from datadog_api_client.v1.model.notebook_log_stream_cell_attributes import NotebookLogStreamCellAttributes
+
         return {
             "anyOf": [],
             "allOf": [],

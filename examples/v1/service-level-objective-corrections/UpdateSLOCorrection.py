@@ -5,7 +5,7 @@ Update an SLO correction returns "OK" response
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.service_level_objective_corrections_api import ServiceLevelObjectiveCorrectionsApi
 from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
 from datadog_api_client.v1.model.slo_correction_type import SLOCorrectionType
@@ -30,7 +30,6 @@ body = SLOCorrectionUpdateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["update_slo_correction"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ServiceLevelObjectiveCorrectionsApi(api_client)
     response = api_instance.update_slo_correction(slo_correction_id=CORRECTION_DATA_ID, body=body)

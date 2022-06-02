@@ -9,16 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasicAuthWeb
-    from datadog_api_client.v1.model.synthetics_basic_auth_sigv4 import SyntheticsBasicAuthSigv4
-    from datadog_api_client.v1.model.synthetics_basic_auth_ntlm import SyntheticsBasicAuthNTLM
-
-    globals()["SyntheticsBasicAuthWeb"] = SyntheticsBasicAuthWeb
-    globals()["SyntheticsBasicAuthSigv4"] = SyntheticsBasicAuthSigv4
-    globals()["SyntheticsBasicAuthNTLM"] = SyntheticsBasicAuthNTLM
-
-
 class SyntheticsBasicAuth(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
@@ -77,7 +67,10 @@ class SyntheticsBasicAuth(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasicAuthWeb
+        from datadog_api_client.v1.model.synthetics_basic_auth_sigv4 import SyntheticsBasicAuthSigv4
+        from datadog_api_client.v1.model.synthetics_basic_auth_ntlm import SyntheticsBasicAuthNTLM
+
         return {
             "anyOf": [],
             "allOf": [],

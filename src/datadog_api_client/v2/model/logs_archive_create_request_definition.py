@@ -9,16 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_archive_create_request_attributes import LogsArchiveCreateRequestAttributes
-
-    globals()["LogsArchiveCreateRequestAttributes"] = LogsArchiveCreateRequestAttributes
-
-
 class LogsArchiveCreateRequestDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_archive_create_request_attributes import (
+            LogsArchiveCreateRequestAttributes,
+        )
+
         return {
             "attributes": (LogsArchiveCreateRequestAttributes,),
             "type": (str,),

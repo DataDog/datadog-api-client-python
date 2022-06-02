@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_metric_create_data import LogsMetricCreateData
-
-    globals()["LogsMetricCreateData"] = LogsMetricCreateData
-
-
 class LogsMetricCreateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_metric_create_data import LogsMetricCreateData
+
         return {
             "data": (LogsMetricCreateData,),
         }

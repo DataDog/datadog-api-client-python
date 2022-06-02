@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_basic_auth_sigv4_type import SyntheticsBasicAuthSigv4Type
-
-    globals()["SyntheticsBasicAuthSigv4Type"] = SyntheticsBasicAuthSigv4Type
-
-
 class SyntheticsBasicAuthSigv4(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_basic_auth_sigv4_type import SyntheticsBasicAuthSigv4Type
+
         return {
             "access_key": (str,),
             "region": (str,),
@@ -39,21 +34,21 @@ class SyntheticsBasicAuthSigv4(ModelNormal):
 
     def __init__(self, access_key, secret_key, type, *args, **kwargs):
         """
-        Object to handle `SIGV4` authentication when performing the test.
+        Object to handle ``SIGV4`` authentication when performing the test.
 
-        :param access_key: Access key for the `SIGV4` authentication.
+        :param access_key: Access key for the ``SIGV4`` authentication.
         :type access_key: str
 
-        :param region: Region for the `SIGV4` authentication.
+        :param region: Region for the ``SIGV4`` authentication.
         :type region: str, optional
 
-        :param secret_key: Secret key for the `SIGV4` authentication.
+        :param secret_key: Secret key for the ``SIGV4`` authentication.
         :type secret_key: str
 
-        :param service_name: Service name for the `SIGV4` authentication.
+        :param service_name: Service name for the ``SIGV4`` authentication.
         :type service_name: str, optional
 
-        :param session_token: Session token for the `SIGV4` authentication.
+        :param session_token: Session token for the ``SIGV4`` authentication.
         :type session_token: str, optional
 
         :param type: The type of authentication to use when performing the test.

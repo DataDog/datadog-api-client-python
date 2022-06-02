@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
-    from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
-    from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
-    from datadog_api_client.v1.model.synthetics_browser_variable import SyntheticsBrowserVariable
-
-    globals()["SyntheticsAssertion"] = SyntheticsAssertion
-    globals()["SyntheticsConfigVariable"] = SyntheticsConfigVariable
-    globals()["SyntheticsTestRequest"] = SyntheticsTestRequest
-    globals()["SyntheticsBrowserVariable"] = SyntheticsBrowserVariable
-
-
 class SyntheticsTestConfig(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
+        from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
+        from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
+        from datadog_api_client.v1.model.synthetics_browser_variable import SyntheticsBrowserVariable
+
         return {
             "assertions": ([SyntheticsAssertion],),
             "config_variables": ([SyntheticsConfigVariable],),

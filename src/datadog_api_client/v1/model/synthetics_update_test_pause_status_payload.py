@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
-
-    globals()["SyntheticsTestPauseStatus"] = SyntheticsTestPauseStatus
-
-
 class SyntheticsUpdateTestPauseStatusPayload(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
+
         return {
             "new_status": (SyntheticsTestPauseStatus,),
         }
@@ -31,7 +26,7 @@ class SyntheticsUpdateTestPauseStatusPayload(ModelNormal):
         """
         Object to start or pause an existing Synthetic test.
 
-        :param new_status: Define whether you want to start (`live`) or pause (`paused`) a
+        :param new_status: Define whether you want to start ( ``live`` ) or pause ( ``paused`` ) a
             Synthetic test.
         :type new_status: SyntheticsTestPauseStatus, optional
         """

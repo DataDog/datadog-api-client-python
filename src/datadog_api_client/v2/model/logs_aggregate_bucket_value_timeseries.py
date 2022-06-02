@@ -10,18 +10,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_aggregate_bucket_value_timeseries_point import (
-        LogsAggregateBucketValueTimeseriesPoint,
-    )
-
-    globals()["LogsAggregateBucketValueTimeseriesPoint"] = LogsAggregateBucketValueTimeseriesPoint
-
-
 class LogsAggregateBucketValueTimeseries(ModelSimple):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_aggregate_bucket_value_timeseries_point import (
+            LogsAggregateBucketValueTimeseriesPoint,
+        )
+
         return {
             "value": ([LogsAggregateBucketValueTimeseriesPoint],),
         }
@@ -32,7 +27,6 @@ class LogsAggregateBucketValueTimeseries(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: A timeseries array
         :type value: [LogsAggregateBucketValueTimeseriesPoint]
         """
         super().__init__(kwargs)

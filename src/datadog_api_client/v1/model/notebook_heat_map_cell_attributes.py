@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
-    from datadog_api_client.v1.model.notebook_graph_size import NotebookGraphSize
-    from datadog_api_client.v1.model.notebook_split_by import NotebookSplitBy
-    from datadog_api_client.v1.model.notebook_cell_time import NotebookCellTime
-
-    globals()["HeatMapWidgetDefinition"] = HeatMapWidgetDefinition
-    globals()["NotebookGraphSize"] = NotebookGraphSize
-    globals()["NotebookSplitBy"] = NotebookSplitBy
-    globals()["NotebookCellTime"] = NotebookCellTime
-
-
 class NotebookHeatMapCellAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
+        from datadog_api_client.v1.model.notebook_graph_size import NotebookGraphSize
+        from datadog_api_client.v1.model.notebook_split_by import NotebookSplitBy
+        from datadog_api_client.v1.model.notebook_cell_time import NotebookCellTime
+
         return {
             "definition": (HeatMapWidgetDefinition,),
             "graph_size": (NotebookGraphSize,),
@@ -41,7 +33,7 @@ class NotebookHeatMapCellAttributes(ModelNormal):
 
     def __init__(self, definition, *args, **kwargs):
         """
-        The attributes of a notebook `heatmap` cell.
+        The attributes of a notebook ``heatmap`` cell.
 
         :param definition: The heat map visualization shows metrics aggregated across many tags, such as hosts. The more hosts that have a particular value, the darker that square is.
         :type definition: HeatMapWidgetDefinition

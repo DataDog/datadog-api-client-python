@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.notebook_response_data_attributes import NotebookResponseDataAttributes
-    from datadog_api_client.v1.model.notebook_resource_type import NotebookResourceType
-
-    globals()["NotebookResponseDataAttributes"] = NotebookResponseDataAttributes
-    globals()["NotebookResourceType"] = NotebookResourceType
-
-
 class NotebookResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.notebook_response_data_attributes import NotebookResponseDataAttributes
+        from datadog_api_client.v1.model.notebook_resource_type import NotebookResourceType
+
         return {
             "attributes": (NotebookResponseDataAttributes,),
             "id": (int,),

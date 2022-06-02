@@ -9,14 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.metric_distinct_volume import MetricDistinctVolume
-    from datadog_api_client.v2.model.metric_ingested_indexed_volume import MetricIngestedIndexedVolume
-
-    globals()["MetricDistinctVolume"] = MetricDistinctVolume
-    globals()["MetricIngestedIndexedVolume"] = MetricIngestedIndexedVolume
-
-
 class MetricVolumes(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
@@ -54,7 +46,9 @@ class MetricVolumes(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        lazy_import()
+        from datadog_api_client.v2.model.metric_distinct_volume import MetricDistinctVolume
+        from datadog_api_client.v2.model.metric_ingested_indexed_volume import MetricIngestedIndexedVolume
+
         return {
             "anyOf": [],
             "allOf": [],

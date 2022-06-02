@@ -9,24 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_message_display import WidgetMessageDisplay
-    from datadog_api_client.v1.model.widget_field_sort import WidgetFieldSort
-    from datadog_api_client.v1.model.widget_time import WidgetTime
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.log_stream_widget_definition_type import LogStreamWidgetDefinitionType
-
-    globals()["WidgetMessageDisplay"] = WidgetMessageDisplay
-    globals()["WidgetFieldSort"] = WidgetFieldSort
-    globals()["WidgetTime"] = WidgetTime
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["LogStreamWidgetDefinitionType"] = LogStreamWidgetDefinitionType
-
-
 class LogStreamWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_message_display import WidgetMessageDisplay
+        from datadog_api_client.v1.model.widget_field_sort import WidgetFieldSort
+        from datadog_api_client.v1.model.widget_time import WidgetTime
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.log_stream_widget_definition_type import LogStreamWidgetDefinitionType
+
         return {
             "columns": ([str],),
             "indexes": ([str],),

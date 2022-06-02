@@ -9,6 +9,11 @@ from datadog_api_client.v1.model.azure_account_list_response import AzureAccount
 
 
 class AzureIntegrationApi:
+    """
+    Configure your Datadog-Azure integration directly through the Datadog API.
+    For more information, see the `Datadog-Azure integration page <https://docs.datadoghq.com/integrations/azure>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -121,10 +126,10 @@ class AzureIntegrationApi:
 
         Create a Datadog-Azure integration.
 
-        Using the `POST` method updates your integration configuration by adding your new
+        Using the ``POST`` method updates your integration configuration by adding your new
         configuration to the existing one in your Datadog organization.
 
-        Using the `PUT` method updates your integration configuration by replacing your
+        Using the ``PUT`` method updates your integration configuration by replacing your
         current configuration with the new one sent to your Datadog organization.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -297,9 +302,9 @@ class AzureIntegrationApi:
     def update_azure_integration(self, body, **kwargs):
         """Update an Azure integration.
 
-        Update a Datadog-Azure integration. Requires an existing `tenant_name` and `client_id`.
-        Any other fields supplied will overwrite existing values. To overwrite `tenant_name` or `client_id`,
-        use `new_tenant_name` and `new_client_id`. To leave a field unchanged, do not supply that field in the payload.
+        Update a Datadog-Azure integration. Requires an existing ``tenant_name`` and ``client_id``.
+        Any other fields supplied will overwrite existing values. To overwrite ``tenant_name`` or ``client_id`` ,
+        use ``new_tenant_name`` and ``new_client_id``. To leave a field unchanged, do not supply that field in the payload.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.

@@ -12,6 +12,12 @@ from datadog_api_client.v2.model.authn_mapping_update_request import AuthNMappin
 
 
 class AuthNMappingsApi:
+    """
+    `AuthN Mappings API <https://docs.datadoghq.com/account_management/authn_mapping/?tab=example>`_
+    is used to automatically map group of users to roles in Datadog using attributes
+    sent from Identity Providers.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -113,12 +119,6 @@ class AuthNMappingsApi:
                     "openapi_types": (AuthNMappingsSort,),
                     "attribute": "sort",
                     "location": "query",
-                },
-                "include": {
-                    "openapi_types": ([str],),
-                    "attribute": "include",
-                    "location": "query",
-                    "collection_format": "multi",
                 },
                 "filter": {
                     "openapi_types": (str,),
@@ -308,8 +308,6 @@ class AuthNMappingsApi:
         :type page_number: int, optional
         :param sort: Sort AuthN Mappings depending on the given field.
         :type sort: AuthNMappingsSort, optional
-        :param include: Include additional information in the response.
-        :type include: [str], optional
         :param filter: Filter all mappings by the given string.
         :type filter: str, optional
         :param _return_http_data_only: Response data without head status

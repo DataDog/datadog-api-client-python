@@ -2,7 +2,7 @@
 Create a child organization returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.organizations_api import OrganizationsApi
 from datadog_api_client.v1.model.organization_billing import OrganizationBilling
 from datadog_api_client.v1.model.organization_create_body import OrganizationCreateBody

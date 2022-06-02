@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_aggregate_bucket_value import LogsAggregateBucketValue
-
-    globals()["LogsAggregateBucketValue"] = LogsAggregateBucketValue
-
-
 class LogsAggregateBucket(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_aggregate_bucket_value import LogsAggregateBucketValue
+
         return {
             "by": ({str: (str,)},),
             "computes": ({str: (LogsAggregateBucketValue,)},),

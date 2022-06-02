@@ -9,24 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
-    from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
-    from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
-    from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
-    from datadog_api_client.v1.model.synthetics_api_step_subtype import SyntheticsAPIStepSubtype
-
-    globals()["SyntheticsAssertion"] = SyntheticsAssertion
-    globals()["SyntheticsParsingOptions"] = SyntheticsParsingOptions
-    globals()["SyntheticsTestRequest"] = SyntheticsTestRequest
-    globals()["SyntheticsTestOptionsRetry"] = SyntheticsTestOptionsRetry
-    globals()["SyntheticsAPIStepSubtype"] = SyntheticsAPIStepSubtype
-
-
 class SyntheticsAPIStep(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
+        from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
+        from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
+        from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
+        from datadog_api_client.v1.model.synthetics_api_step_subtype import SyntheticsAPIStepSubtype
+
         return {
             "allow_failure": (bool,),
             "assertions": ([SyntheticsAssertion],),
@@ -63,7 +54,7 @@ class SyntheticsAPIStep(ModelNormal):
         :type extracted_values: [SyntheticsParsingOptions], optional
 
         :param is_critical: Determines whether or not to consider the entire test as failed if this step fails.
-            Can be used only if `allowFailure` is `true`.
+            Can be used only if ``allowFailure`` is ``true``.
         :type is_critical: bool, optional
 
         :param name: The name of the step.
@@ -75,7 +66,7 @@ class SyntheticsAPIStep(ModelNormal):
         :param retry: Object describing the retry strategy to apply to a Synthetic test.
         :type retry: SyntheticsTestOptionsRetry, optional
 
-        :param subtype: The subtype of the Synthetic multistep API test step, currently only supporting `http`.
+        :param subtype: The subtype of the Synthetic multistep API test step, currently only supporting ``http``.
         :type subtype: SyntheticsAPIStepSubtype
         """
         super().__init__(kwargs)

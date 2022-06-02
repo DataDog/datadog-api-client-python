@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"name":"Test-Get_API_key_returns_OK_response-1641829851"},"type":"api_keys"}}'
+    body: '{"data":{"attributes":{"name":"Test-Get_API_key_returns_OK_response-1652349133"},"type":"api_keys"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/api_keys
   response:
     body:
-      string: '{"data":{"type":"api_keys","attributes":{"created_at":"2022-01-10T15:50:51.533345+00:00","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","last4":"xxxx","modified_at":"2022-01-10T15:50:51.533345+00:00","name":"Test-Get_API_key_returns_OK_response-1641829851"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"686482bd-15ff-4772-b044-11bf283de878"}}'
+      string: '{"data":{"type":"api_keys","attributes":{"created_at":"2022-05-12T09:52:13.583089+00:00","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","last4":"xxxx","modified_at":"2022-05-12T09:52:13.583089+00:00","name":"Test-Get_API_key_returns_OK_response-1652349133"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"leak_information":{"data":null}},"id":"d1029ab0-413b-467f-a2a6-1d49238fc386"}}'
     headers:
       content-type:
       - application/json
@@ -23,10 +23,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/api_keys/686482bd-15ff-4772-b044-11bf283de878
+    uri: https://api.datadoghq.com/api/v2/api_keys/d1029ab0-413b-467f-a2a6-1d49238fc386
   response:
     body:
-      string: '{"data":{"type":"api_keys","attributes":{"created_at":"2022-01-10T15:50:51.533345+00:00","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","last4":"xxxx","modified_at":"2022-01-10T15:50:51.533345+00:00","name":"Test-Get_API_key_returns_OK_response-1641829851"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"686482bd-15ff-4772-b044-11bf283de878"}}'
+      string: '{"data":{"type":"api_keys","attributes":{"created_at":"2022-05-12T09:52:13.583089+00:00","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","last4":"xxxx","modified_at":"2022-05-12T09:52:13.583089+00:00","name":"Test-Get_API_key_returns_OK_response-1652349133"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"leak_information":{"data":null}},"id":"d1029ab0-413b-467f-a2a6-1d49238fc386"}}'
     headers:
       content-type:
       - application/json
@@ -37,9 +37,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/api_keys/686482bd-15ff-4772-b044-11bf283de878
+    uri: https://api.datadoghq.com/api/v2/api_keys/d1029ab0-413b-467f-a2a6-1d49238fc386
   response:
     body:
       string: ''

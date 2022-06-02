@@ -24,7 +24,7 @@ class OrganizationSettingsSamlAutocreateUsersDomains(ModelNormal):
 
     def __init__(self, *args, **kwargs):
         """
-        Has two properties, `enabled` (boolean) and `domains`, which is a list of domains without the @ symbol.
+        Has two properties, ``enabled`` (boolean) and ``domains`` , which is a list of domains without the @ symbol.
 
         :param domains: List of domains where the SAML automated user creation is enabled.
         :type domains: [str], optional

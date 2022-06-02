@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"cells":[{"attributes":{"definition":{"text":"#
-      Test-Get_a_notebook_returns_OK_response-1641829821 notebook text","type":"markdown"}},"type":"notebook_cells"}],"name":"Test-Get_a_notebook_returns_OK_response-1641829821","time":{"live_span":"1h"}},"type":"notebooks"}}'
+      Test-Get_a_notebook_returns_OK_response-1652349008 notebook text","type":"markdown"}},"type":"notebook_cells"}],"name":"Test-Get_a_notebook_returns_OK_response-1652349008","time":{"live_span":"1h"}},"type":"notebooks"}}'
     headers:
       accept:
       - application/json
@@ -11,8 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/notebooks
   response:
     body:
-      string: '{"data":{"type":"notebooks","id":1779977,"attributes":{"name":"Test-Get_a_notebook_returns_OK_response-1641829821","cells":[{"attributes":{"definition":{"text":"#
-        Test-Get_a_notebook_returns_OK_response-1641829821 notebook text","type":"markdown"}},"type":"notebook_cells","id":"jv3xmpp3"}],"time":{"live_span":"1h"},"metadata":{"is_favorite":false,"is_template":false,"type":null,"take_snapshots":false},"template_variables":[],"status":"published","modified":"2022-01-10T15:50:22.101502+00:00","created":"2022-01-10T15:50:22.101502+00:00","author":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}}'
+      string: '{"data":{"type":"notebooks","id":2466033,"attributes":{"name":"Test-Get_a_notebook_returns_OK_response-1652349008","cells":[{"attributes":{"definition":{"text":"#
+        Test-Get_a_notebook_returns_OK_response-1652349008 notebook text","type":"markdown"}},"type":"notebook_cells","id":"hzy6fag9"}],"time":{"live_span":"1h"},"metadata":{"is_favorite":false,"is_template":false,"type":null,"take_snapshots":false},"template_variables":[],"status":"published","modified":"2022-05-12T09:50:08.997931+00:00","created":"2022-05-12T09:50:08.997931+00:00","author":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}}'
     headers:
       content-type:
       - application/json
@@ -25,11 +25,11 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v1/notebooks/1779977
+    uri: https://api.datadoghq.com/api/v1/notebooks/2466033
   response:
     body:
-      string: '{"data":{"type":"notebooks","id":1779977,"attributes":{"name":"Test-Get_a_notebook_returns_OK_response-1641829821","cells":[{"attributes":{"definition":{"text":"#
-        Test-Get_a_notebook_returns_OK_response-1641829821 notebook text","type":"markdown"}},"type":"notebook_cells","id":"jv3xmpp3"}],"time":{"live_span":"1h"},"metadata":{"is_favorite":false,"is_template":false,"type":null,"take_snapshots":false},"template_variables":[],"status":"published","modified":"2022-01-10T15:50:22.101502+00:00","created":"2022-01-10T15:50:22.101502+00:00","author":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}}'
+      string: '{"data":{"type":"notebooks","id":2466033,"attributes":{"name":"Test-Get_a_notebook_returns_OK_response-1652349008","cells":[{"attributes":{"definition":{"text":"#
+        Test-Get_a_notebook_returns_OK_response-1652349008 notebook text","type":"markdown"}},"type":"notebook_cells","id":"hzy6fag9"}],"time":{"live_span":"1h"},"metadata":{"is_favorite":false,"is_template":false,"type":null,"take_snapshots":false},"template_variables":[],"status":"published","modified":"2022-05-12T09:50:08.997931+00:00","created":"2022-05-12T09:50:08.997931+00:00","author":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}}'
     headers:
       content-type:
       - application/json
@@ -40,9 +40,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/notebooks/1779977
+    uri: https://api.datadoghq.com/api/v1/notebooks/2466033
   response:
     body:
       string: ''

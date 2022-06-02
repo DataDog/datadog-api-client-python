@@ -3,7 +3,7 @@ Get a user invitation returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.users_api import UsersApi
 
 # the "user" has a "user_invitation"

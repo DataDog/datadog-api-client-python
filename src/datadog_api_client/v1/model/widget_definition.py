@@ -9,72 +9,10 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.alert_graph_widget_definition import AlertGraphWidgetDefinition
-    from datadog_api_client.v1.model.alert_value_widget_definition import AlertValueWidgetDefinition
-    from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
-    from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
-    from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
-    from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
-    from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
-    from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
-    from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
-    from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
-    from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
-    from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
-    from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
-    from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
-    from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWidgetDefinition
-    from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
-    from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
-    from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
-    from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
-    from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
-    from datadog_api_client.v1.model.service_map_widget_definition import ServiceMapWidgetDefinition
-    from datadog_api_client.v1.model.service_summary_widget_definition import ServiceSummaryWidgetDefinition
-    from datadog_api_client.v1.model.sunburst_widget_definition import SunburstWidgetDefinition
-    from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
-    from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
-    from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
-    from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
-    from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
-    from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
-
-    globals()["AlertGraphWidgetDefinition"] = AlertGraphWidgetDefinition
-    globals()["AlertValueWidgetDefinition"] = AlertValueWidgetDefinition
-    globals()["ChangeWidgetDefinition"] = ChangeWidgetDefinition
-    globals()["CheckStatusWidgetDefinition"] = CheckStatusWidgetDefinition
-    globals()["DistributionWidgetDefinition"] = DistributionWidgetDefinition
-    globals()["EventStreamWidgetDefinition"] = EventStreamWidgetDefinition
-    globals()["EventTimelineWidgetDefinition"] = EventTimelineWidgetDefinition
-    globals()["FreeTextWidgetDefinition"] = FreeTextWidgetDefinition
-    globals()["GeomapWidgetDefinition"] = GeomapWidgetDefinition
-    globals()["GroupWidgetDefinition"] = GroupWidgetDefinition
-    globals()["HeatMapWidgetDefinition"] = HeatMapWidgetDefinition
-    globals()["HostMapWidgetDefinition"] = HostMapWidgetDefinition
-    globals()["IFrameWidgetDefinition"] = IFrameWidgetDefinition
-    globals()["ImageWidgetDefinition"] = ImageWidgetDefinition
-    globals()["LogStreamWidgetDefinition"] = LogStreamWidgetDefinition
-    globals()["MonitorSummaryWidgetDefinition"] = MonitorSummaryWidgetDefinition
-    globals()["NoteWidgetDefinition"] = NoteWidgetDefinition
-    globals()["QueryValueWidgetDefinition"] = QueryValueWidgetDefinition
-    globals()["ScatterPlotWidgetDefinition"] = ScatterPlotWidgetDefinition
-    globals()["SLOWidgetDefinition"] = SLOWidgetDefinition
-    globals()["ServiceMapWidgetDefinition"] = ServiceMapWidgetDefinition
-    globals()["ServiceSummaryWidgetDefinition"] = ServiceSummaryWidgetDefinition
-    globals()["SunburstWidgetDefinition"] = SunburstWidgetDefinition
-    globals()["TableWidgetDefinition"] = TableWidgetDefinition
-    globals()["TimeseriesWidgetDefinition"] = TimeseriesWidgetDefinition
-    globals()["ToplistWidgetDefinition"] = ToplistWidgetDefinition
-    globals()["TreeMapWidgetDefinition"] = TreeMapWidgetDefinition
-    globals()["ListStreamWidgetDefinition"] = ListStreamWidgetDefinition
-    globals()["FunnelWidgetDefinition"] = FunnelWidgetDefinition
-
-
 class WidgetDefinition(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
-        [Definition of the widget](https://docs.datadoghq.com/dashboards/widgets/).
+        `Definition of the widget <https://docs.datadoghq.com/dashboards/widgets/>`_.
 
         :param alert_id: ID of the alert to use in the widget.
         :type alert_id: str
@@ -395,7 +333,36 @@ class WidgetDefinition(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        lazy_import()
+        from datadog_api_client.v1.model.alert_graph_widget_definition import AlertGraphWidgetDefinition
+        from datadog_api_client.v1.model.alert_value_widget_definition import AlertValueWidgetDefinition
+        from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
+        from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
+        from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
+        from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
+        from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
+        from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
+        from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
+        from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
+        from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
+        from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
+        from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
+        from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
+        from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWidgetDefinition
+        from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
+        from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
+        from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
+        from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
+        from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
+        from datadog_api_client.v1.model.service_map_widget_definition import ServiceMapWidgetDefinition
+        from datadog_api_client.v1.model.service_summary_widget_definition import ServiceSummaryWidgetDefinition
+        from datadog_api_client.v1.model.sunburst_widget_definition import SunburstWidgetDefinition
+        from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
+        from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
+        from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
+        from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
+        from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
+        from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
+
         return {
             "anyOf": [],
             "allOf": [],

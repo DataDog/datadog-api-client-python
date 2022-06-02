@@ -10,22 +10,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
-    from datadog_api_client.v1.model.creator import Creator
-    from datadog_api_client.v1.model.slo_correction_response_attributes_modifier import (
-        SLOCorrectionResponseAttributesModifier,
-    )
-
-    globals()["SLOCorrectionCategory"] = SLOCorrectionCategory
-    globals()["Creator"] = Creator
-    globals()["SLOCorrectionResponseAttributesModifier"] = SLOCorrectionResponseAttributesModifier
-
-
 class SLOCorrectionResponseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
+        from datadog_api_client.v1.model.creator import Creator
+        from datadog_api_client.v1.model.slo_correction_response_attributes_modifier import (
+            SLOCorrectionResponseAttributesModifier,
+        )
+
         return {
             "category": (SLOCorrectionCategory,),
             "created_at": (int,),
@@ -66,7 +59,7 @@ class SLOCorrectionResponseAttributes(ModelNormal):
         :param category: Category the SLO correction belongs to.
         :type category: SLOCorrectionCategory, optional
 
-        :param created_at: The epoch timestamp of when the correction was created at
+        :param created_at: The epoch timestamp of when the correction was created at.
         :type created_at: int, optional
 
         :param creator: Object describing the creator of the shared element.
@@ -75,23 +68,23 @@ class SLOCorrectionResponseAttributes(ModelNormal):
         :param description: Description of the correction being made.
         :type description: str, optional
 
-        :param duration: Length of time (in seconds) for a specified `rrule` recurring SLO correction.
+        :param duration: Length of time (in seconds) for a specified ``rrule`` recurring SLO correction.
         :type duration: int, none_type, optional
 
         :param end: Ending time of the correction in epoch seconds.
         :type end: int, optional
 
-        :param modified_at: The epoch timestamp of when the correction was modified at
+        :param modified_at: The epoch timestamp of when the correction was modified at.
         :type modified_at: int, optional
 
         :param modifier: Modifier of the object.
         :type modifier: SLOCorrectionResponseAttributesModifier, none_type, optional
 
         :param rrule: The recurrence rules as defined in the iCalendar RFC 5545. The supported rules for SLO corrections
-            are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.
+            are ``FREQ`` , ``INTERVAL`` , ``COUNT`` , and ``UNTIL``.
         :type rrule: str, none_type, optional
 
-        :param slo_id: ID of the SLO that this correction will be applied to.
+        :param slo_id: ID of the SLO that this correction applies to.
         :type slo_id: str, optional
 
         :param start: Starting time of the correction in epoch seconds.

@@ -11,6 +11,10 @@ from datadog_api_client.v1.model.host_totals import HostTotals
 
 
 class HostsApi:
+    """
+    Get information about your live hosts in Datadog.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -212,7 +216,7 @@ class HostsApi:
         :type filter: str, optional
         :param sort_field: Sort hosts by this field.
         :type sort_field: str, optional
-        :param sort_dir: Direction of sort. Options include `asc` and `desc`.
+        :param sort_dir: Direction of sort. Options include ``asc`` and ``desc``.
         :type sort_dir: str, optional
         :param start: Host result to start search from.
         :type start: int, optional

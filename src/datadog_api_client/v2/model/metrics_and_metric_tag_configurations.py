@@ -9,14 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.metric import Metric
-    from datadog_api_client.v2.model.metric_tag_configuration import MetricTagConfiguration
-
-    globals()["Metric"] = Metric
-    globals()["MetricTagConfiguration"] = MetricTagConfiguration
-
-
 class MetricsAndMetricTagConfigurations(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
@@ -54,7 +46,9 @@ class MetricsAndMetricTagConfigurations(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        lazy_import()
+        from datadog_api_client.v2.model.metric import Metric
+        from datadog_api_client.v2.model.metric_tag_configuration import MetricTagConfiguration
+
         return {
             "anyOf": [],
             "allOf": [],

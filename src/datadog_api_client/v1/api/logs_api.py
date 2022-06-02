@@ -11,6 +11,10 @@ from datadog_api_client.v1.model.http_log import HTTPLog
 
 
 class LogsApi:
+    """
+    Search your logs and send them to your Datadog platform over HTTP.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -123,14 +127,11 @@ class LogsApi:
         """Search logs.
 
         List endpoint returns logs that match a log search query.
-        [Results are paginated][1].
+        `Results are paginated </logs/guide/collect-multiple-logs-with-pagination>`_.
 
-        **If you are considering archiving logs for your organization,
+        If you are considering archiving logs for your organization,
         consider use of the Datadog archive capabilities instead of the log list API.
-        See [Datadog Logs Archive documentation][2].**
-
-        [1]: /logs/guide/collect-multiple-logs-with-pagination
-        [2]: https://docs.datadoghq.com/logs/archives
+        See `Datadog Logs Archive documentation <https://docs.datadoghq.com/logs/archives>`_.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -176,23 +177,28 @@ class LogsApi:
 
         Send your logs to your Datadog platform over HTTP. Limits per HTTP request are:
 
-        - Maximum content size per payload (uncompressed): 5MB
-        - Maximum size for a single log: 1MB
-        - Maximum array size if sending multiple logs in an array: 1000 entries
+
+        * Maximum content size per payload (uncompressed): 5MB
+        * Maximum size for a single log: 1MB
+        * Maximum array size if sending multiple logs in an array: 1000 entries
 
         Any log exceeding 1MB is accepted and truncated by Datadog:
-        - For a single log request, the API truncates the log at 1MB and returns a 2xx.
-        - For a multi-logs request, the API processes all logs, truncates only logs larger than 1MB, and returns a 2xx.
+
+
+        * For a single log request, the API truncates the log at 1MB and returns a 2xx.
+        * For a multi-logs request, the API processes all logs, truncates only logs larger than 1MB, and returns a 2xx.
 
         Datadog recommends sending your logs compressed.
-        Add the `Content-Encoding: gzip` header to the request when sending compressed logs.
+        Add the ``Content-Encoding: gzip`` header to the request when sending compressed logs.
 
         The status codes answered by the HTTP API are:
-        - 200: OK
-        - 400: Bad request (likely an issue in the payload formatting)
-        - 403: Permission issue (likely using an invalid API Key)
-        - 413: Payload too large (batch is above 5MB uncompressed)
-        - 5xx: Internal error, request should be retried after some time
+
+
+        * 200: OK
+        * 400: Bad request (likely an issue in the payload formatting)
+        * 403: Permission issue (likely using an invalid API Key)
+        * 413: Payload too large (batch is above 5MB uncompressed)
+        * 5xx: Internal error, request should be retried after some time
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True.
@@ -204,7 +210,7 @@ class LogsApi:
         :type body: HTTPLog
         :param content_encoding: HTTP header used to compress the media-type.
         :type content_encoding: ContentEncoding, optional
-        :param ddtags: Log tags can be passed as query parameters with `text/plain` content type.
+        :param ddtags: Log tags can be passed as query parameters with ``text/plain`` content type.
         :type ddtags: str, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.

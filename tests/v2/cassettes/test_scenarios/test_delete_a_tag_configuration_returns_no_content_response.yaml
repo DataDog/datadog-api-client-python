@@ -1,9 +1,9 @@
 interactions:
 - request:
-    body: '{"series":[{"metric":"TestDeleteatagconfigurationreturnsNoContentresponse1648560542","points":[[1648560542,1.1]],"tags":["test:ExampleSubmitmetricsreturnsPayloadacceptedresponse"],"type":"gauge"}]}'
+    body: '{"series":[{"metric":"TestDeleteatagconfigurationreturnsNoContentresponse1652354788","points":[[1652354788,1.1]],"tags":["test:ExampleSubmitmetricsreturnsPayloadacceptedresponse"],"type":"gauge"}]}'
     headers:
       accept:
-      - text/json
+      - text/json, application/json
       content-type:
       - text/json
     method: POST
@@ -18,17 +18,17 @@ interactions:
       code: 202
       message: Accepted
 - request:
-    body: '{"data":{"attributes":{"metric_type":"gauge","tags":["app","datacenter","TestDeleteatagconfigurationreturnsNoContentresponse1648560542"]},"id":"TestDeleteatagconfigurationreturnsNoContentresponse1648560542","type":"manage_tags"}}'
+    body: '{"data":{"attributes":{"metric_type":"gauge","tags":["app","datacenter","TestDeleteatagconfigurationreturnsNoContentresponse1652354788"]},"id":"TestDeleteatagconfigurationreturnsNoContentresponse1652354788","type":"manage_tags"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/metrics/TestDeleteatagconfigurationreturnsNoContentresponse1648560542/tags
+    uri: https://api.datadoghq.com/api/v2/metrics/TestDeleteatagconfigurationreturnsNoContentresponse1652354788/tags
   response:
     body:
-      string: '{"data":{"type":"manage_tags","id":"TestDeleteatagconfigurationreturnsNoContentresponse1648560542","attributes":{"tags":["datacenter","app","TestDeleteatagconfigurationreturnsNoContentresponse1648560542"],"created_at":"2022-03-29T13:29:03.991675+00:00","modified_at":"2022-03-29T13:29:03.991675+00:00","metric_type":"gauge","aggregations":[{"space":"avg","time":"avg"}]}}}'
+      string: '{"data":{"type":"manage_tags","id":"TestDeleteatagconfigurationreturnsNoContentresponse1652354788","attributes":{"tags":["datacenter","app","TestDeleteatagconfigurationreturnsNoContentresponse1652354788"],"created_at":"2022-05-12T11:26:33.849417+00:00","modified_at":"2022-05-12T11:26:33.849417+00:00","metric_type":"gauge","aggregations":[{"space":"avg","time":"avg"}]}}}'
     headers:
       content-type:
       - application/json
@@ -39,9 +39,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/metrics/TestDeleteatagconfigurationreturnsNoContentresponse1648560542/tags
+    uri: https://api.datadoghq.com/api/v2/metrics/TestDeleteatagconfigurationreturnsNoContentresponse1652354788/tags
   response:
     body:
       string: ''
@@ -53,12 +53,12 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/metrics/TestDeleteatagconfigurationreturnsNoContentresponse1648560542/tags
+    uri: https://api.datadoghq.com/api/v2/metrics/TestDeleteatagconfigurationreturnsNoContentresponse1652354788/tags
   response:
     body:
-      string: '{"errors": ["TestDeleteatagconfigurationreturnsNoContentresponse1648560542
+      string: '{"errors": ["TestDeleteatagconfigurationreturnsNoContentresponse1652354788
         not found"]}'
     headers:
       content-type:

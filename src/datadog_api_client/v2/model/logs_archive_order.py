@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_archive_order_definition import LogsArchiveOrderDefinition
-
-    globals()["LogsArchiveOrderDefinition"] = LogsArchiveOrderDefinition
-
-
 class LogsArchiveOrder(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_archive_order_definition import LogsArchiveOrderDefinition
+
         return {
             "data": (LogsArchiveOrderDefinition,),
         }

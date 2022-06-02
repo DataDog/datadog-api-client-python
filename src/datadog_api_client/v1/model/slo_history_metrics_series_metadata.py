@@ -10,16 +10,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_history_metrics_series_metadata_unit import SLOHistoryMetricsSeriesMetadataUnit
-
-    globals()["SLOHistoryMetricsSeriesMetadataUnit"] = SLOHistoryMetricsSeriesMetadataUnit
-
-
 class SLOHistoryMetricsSeriesMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_history_metrics_series_metadata_unit import (
+            SLOHistoryMetricsSeriesMetadataUnit,
+        )
+
         return {
             "aggr": (str,),
             "expression": (str,),

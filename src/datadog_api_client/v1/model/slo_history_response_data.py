@@ -9,28 +9,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_history_monitor import SLOHistoryMonitor
-    from datadog_api_client.v1.model.slo_history_monitor import SLOHistoryMonitor
-    from datadog_api_client.v1.model.slo_history_sli_data import SLOHistorySLIData
-    from datadog_api_client.v1.model.slo_history_metrics import SLOHistoryMetrics
-    from datadog_api_client.v1.model.slo_threshold import SLOThreshold
-    from datadog_api_client.v1.model.slo_type import SLOType
-    from datadog_api_client.v1.model.slo_type_numeric import SLOTypeNumeric
-
-    globals()["SLOHistoryMonitor"] = SLOHistoryMonitor
-    globals()["SLOHistoryMonitor"] = SLOHistoryMonitor
-    globals()["SLOHistorySLIData"] = SLOHistorySLIData
-    globals()["SLOHistoryMetrics"] = SLOHistoryMetrics
-    globals()["SLOThreshold"] = SLOThreshold
-    globals()["SLOType"] = SLOType
-    globals()["SLOTypeNumeric"] = SLOTypeNumeric
-
-
 class SLOHistoryResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_history_monitor import SLOHistoryMonitor
+        from datadog_api_client.v1.model.slo_history_sli_data import SLOHistorySLIData
+        from datadog_api_client.v1.model.slo_history_metrics import SLOHistoryMetrics
+        from datadog_api_client.v1.model.slo_threshold import SLOThreshold
+        from datadog_api_client.v1.model.slo_type import SLOType
+        from datadog_api_client.v1.model.slo_type_numeric import SLOTypeNumeric
+
         return {
             "from_ts": (int,),
             "group_by": ([str],),
@@ -61,44 +49,44 @@ class SLOHistoryResponseData(ModelNormal):
         """
         An array of service level objective objects.
 
-        :param from_ts: The `from` timestamp in epoch seconds.
+        :param from_ts: The ``from`` timestamp in epoch seconds.
         :type from_ts: int, optional
 
-        :param group_by: For `metric` based SLOs where the query includes a group-by clause, this represents the list of grouping parameters.
+        :param group_by: For ``metric`` based SLOs where the query includes a group-by clause, this represents the list of grouping parameters.
 
-            This is not included in responses for `monitor` based SLOs.
+            This is not included in responses for ``monitor`` based SLOs.
         :type group_by: [str], optional
 
         :param groups: For grouped SLOs, this represents SLI data for specific groups.
 
-            This is not included in the responses for `metric` based SLOs.
+            This is not included in the responses for ``metric`` based SLOs.
         :type groups: [SLOHistoryMonitor], optional
 
         :param monitors: For multi-monitor SLOs, this represents SLI data for specific monitors.
 
-            This is not included in the responses for `metric` based SLOs.
+            This is not included in the responses for ``metric`` based SLOs.
         :type monitors: [SLOHistoryMonitor], optional
 
         :param overall: An object that holds an SLI value and its associated data. It can represent an SLO's overall SLI value.
             This can also represent the SLI value for a specific monitor in multi-monitor SLOs, or a group in grouped SLOs.
         :type overall: SLOHistorySLIData, optional
 
-        :param series: A `metric` based SLO history response.
+        :param series: A ``metric`` based SLO history response.
 
-            This is not included in responses for `monitor` based SLOs.
+            This is not included in responses for ``monitor`` based SLOs.
         :type series: SLOHistoryMetrics, optional
 
         :param thresholds: mapping of string timeframe to the SLO threshold.
         :type thresholds: {str: (SLOThreshold,)}, optional
 
-        :param to_ts: The `to` timestamp in epoch seconds.
+        :param to_ts: The ``to`` timestamp in epoch seconds.
         :type to_ts: int, optional
 
         :param type: The type of the service level objective.
         :type type: SLOType, optional
 
-        :param type_id: A numeric representation of the type of the service level objective (`0` for
-            monitor, `1` for metric). Always included in service level objective responses.
+        :param type_id: A numeric representation of the type of the service level objective ( ``0`` for
+            monitor, ``1`` for metric). Always included in service level objective responses.
             Ignored in create/update requests.
         :type type_id: SLOTypeNumeric, optional
         """

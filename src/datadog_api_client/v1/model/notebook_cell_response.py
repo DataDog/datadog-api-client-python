@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.notebook_cell_response_attributes import NotebookCellResponseAttributes
-    from datadog_api_client.v1.model.notebook_cell_resource_type import NotebookCellResourceType
-
-    globals()["NotebookCellResponseAttributes"] = NotebookCellResponseAttributes
-    globals()["NotebookCellResourceType"] = NotebookCellResourceType
-
-
 class NotebookCellResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.notebook_cell_response_attributes import NotebookCellResponseAttributes
+        from datadog_api_client.v1.model.notebook_cell_resource_type import NotebookCellResourceType
+
         return {
             "attributes": (NotebookCellResponseAttributes,),
             "id": (str,),
@@ -37,8 +31,8 @@ class NotebookCellResponse(ModelNormal):
         """
         The description of a notebook cell response.
 
-        :param attributes: The attributes of a notebook cell response. Valid cell types are `markdown`, `timeseries`, `toplist`, `heatmap`, `distribution`,
-            `log_stream`. [More information on each graph visualization type.](https://docs.datadoghq.com/dashboards/widgets/)
+        :param attributes: The attributes of a notebook cell response. Valid cell types are ``markdown`` , ``timeseries`` , ``toplist`` , ``heatmap`` , ``distribution`` ,
+            ``log_stream``. `More information on each graph visualization type. <https://docs.datadoghq.com/dashboards/widgets/>`_
         :type attributes: NotebookCellResponseAttributes
 
         :param id: Notebook cell ID.

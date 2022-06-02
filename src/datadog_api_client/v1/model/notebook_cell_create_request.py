@@ -9,18 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.notebook_cell_create_request_attributes import NotebookCellCreateRequestAttributes
-    from datadog_api_client.v1.model.notebook_cell_resource_type import NotebookCellResourceType
-
-    globals()["NotebookCellCreateRequestAttributes"] = NotebookCellCreateRequestAttributes
-    globals()["NotebookCellResourceType"] = NotebookCellResourceType
-
-
 class NotebookCellCreateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.notebook_cell_create_request_attributes import (
+            NotebookCellCreateRequestAttributes,
+        )
+        from datadog_api_client.v1.model.notebook_cell_resource_type import NotebookCellResourceType
+
         return {
             "attributes": (NotebookCellCreateRequestAttributes,),
             "type": (NotebookCellResourceType,),
@@ -35,8 +31,8 @@ class NotebookCellCreateRequest(ModelNormal):
         """
         The description of a notebook cell create request.
 
-        :param attributes: The attributes of a notebook cell in create cell request. Valid cell types are `markdown`, `timeseries`, `toplist`, `heatmap`, `distribution`,
-            `log_stream`. [More information on each graph visualization type.](https://docs.datadoghq.com/dashboards/widgets/)
+        :param attributes: The attributes of a notebook cell in create cell request. Valid cell types are ``markdown`` , ``timeseries`` , ``toplist`` , ``heatmap`` , ``distribution`` ,
+            ``log_stream``. `More information on each graph visualization type. <https://docs.datadoghq.com/dashboards/widgets/>`_
         :type attributes: NotebookCellCreateRequestAttributes
 
         :param type: Type of the Notebook Cell resource.

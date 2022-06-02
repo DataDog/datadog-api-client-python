@@ -2,7 +2,7 @@
 Create an archive returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.logs_archives_api import LogsArchivesApi
 from datadog_api_client.v2.model.logs_archive_create_request import LogsArchiveCreateRequest
 from datadog_api_client.v2.model.logs_archive_create_request_attributes import LogsArchiveCreateRequestAttributes
@@ -26,6 +26,7 @@ body = LogsArchiveCreateRequest(
             include_tags=False,
             name="Nginx Archive",
             query="source:nginx",
+            rehydration_max_scan_size_in_gb=100,
             rehydration_tags=[
                 "team:intake",
                 "team:app",

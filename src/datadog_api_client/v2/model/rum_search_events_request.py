@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.rum_query_filter import RUMQueryFilter
-    from datadog_api_client.v2.model.rum_query_options import RUMQueryOptions
-    from datadog_api_client.v2.model.rum_query_page_options import RUMQueryPageOptions
-    from datadog_api_client.v2.model.rum_sort import RUMSort
-
-    globals()["RUMQueryFilter"] = RUMQueryFilter
-    globals()["RUMQueryOptions"] = RUMQueryOptions
-    globals()["RUMQueryPageOptions"] = RUMQueryPageOptions
-    globals()["RUMSort"] = RUMSort
-
-
 class RUMSearchEventsRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.rum_query_filter import RUMQueryFilter
+        from datadog_api_client.v2.model.rum_query_options import RUMQueryOptions
+        from datadog_api_client.v2.model.rum_query_page_options import RUMQueryPageOptions
+        from datadog_api_client.v2.model.rum_sort import RUMSort
+
         return {
             "filter": (RUMQueryFilter,),
             "options": (RUMQueryOptions,),

@@ -40,6 +40,16 @@ with ApiClient(configuration) as api_client:
     print(response)
 ```
 
+### Authentication
+
+By default the library will use the `DD_API_KEY` and `DD_APP_KEY` environment variables to authenticate against the Datadog API.
+To provide your own set of credentials, you need to set some keys on the configuration:
+
+```python
+configuration.api_key["apiKeyAuth"] = "<API KEY>"
+configuration.api_key["appKeyAuth"] = "<APPLICATION KEY>"
+```
+
 ### Unstable Endpoints
 
 This client includes access to Datadog API endpoints while they are in an unstable state and may undergo breaking changes. An extra configuration step is required to enable these endpoints:
@@ -96,6 +106,23 @@ async def main():
         print(dashbooards)
 
 asyncio.run(main())
+```
+
+### Pagination
+
+Several listing operations have a pagination method to help consume all the items available.
+For example, to retrieve all your incidents:
+
+```python
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v2.api.incidents_api import IncidentsApi
+
+configuration = Configuration()
+configuration.unstable_operations["list_incidents"] = True
+with ApiClient(configuration) as api_client:
+    api_instance = IncidentsApi(api_client)
+    for incident in api_instance.list_incidents_with_pagination():
+        print(incident.id)
 ```
 
 ## Documentation for API Endpoints and Models

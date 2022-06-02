@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_user_agent_parser_type import LogsUserAgentParserType
-
-    globals()["LogsUserAgentParserType"] = LogsUserAgentParserType
-
-
 class LogsUserAgentParser(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_user_agent_parser_type import LogsUserAgentParserType
+
         return {
             "is_enabled": (bool,),
             "is_encoded": (bool,),
@@ -54,7 +49,7 @@ class LogsUserAgentParser(ModelNormal):
         :param sources: Array of source attributes.
         :type sources: [str]
 
-        :param target: Name of the parent attribute that contains all the extracted details from the `sources`.
+        :param target: Name of the parent attribute that contains all the extracted details from the ``sources``.
         :type target: str
 
         :param type: Type of logs User-Agent parser.

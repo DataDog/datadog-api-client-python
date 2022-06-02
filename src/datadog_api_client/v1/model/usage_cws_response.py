@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_cws_hour import UsageCWSHour
-
-    globals()["UsageCWSHour"] = UsageCWSHour
-
-
 class UsageCWSResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_cws_hour import UsageCWSHour
+
         return {
             "usage": ([UsageCWSHour],),
         }

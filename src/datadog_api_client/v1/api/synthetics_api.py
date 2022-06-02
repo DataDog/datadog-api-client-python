@@ -35,6 +35,16 @@ from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlo
 
 
 class SyntheticsApi:
+    """
+    Datadog Synthetics uses simulated user requests and browser rendering to help you ensure uptime,
+    identify regional issues, and track your application performance. Datadog Synthetics tests come in
+    two different flavors, `API tests <https://docs.datadoghq.com/synthetics/api_tests/?tab=httptest>`_
+    and `browser tests <https://docs.datadoghq.com/synthetics/browser_tests>`_. You can use Datadog’s API to
+    manage both test types programmatically.
+
+    For more information about Synthetics, see the `Synthetics overview <https://docs.datadoghq.com/synthetics/>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()

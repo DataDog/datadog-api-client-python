@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.metrics_query_metadata import MetricsQueryMetadata
-
-    globals()["MetricsQueryMetadata"] = MetricsQueryMetadata
-
-
 class MetricsQueryResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.metrics_query_metadata import MetricsQueryMetadata
+
         return {
             "error": (str,),
             "from_date": (int,),
@@ -58,7 +53,7 @@ class MetricsQueryResponse(ModelNormal):
         """
         Response Object that includes your query and the list of metrics retrieved.
 
-        :param error: Message indicating the errors if status is not `ok`.
+        :param error: Message indicating the errors if status is not ``ok``.
         :type error: str, optional
 
         :param from_date: Start of requested time window, milliseconds since Unix epoch.
@@ -67,7 +62,7 @@ class MetricsQueryResponse(ModelNormal):
         :param group_by: List of tag keys on which to group.
         :type group_by: [str], optional
 
-        :param message: Message indicating `success` if status is `ok`.
+        :param message: Message indicating ``success`` if status is ``ok``.
         :type message: str, optional
 
         :param query: Query string

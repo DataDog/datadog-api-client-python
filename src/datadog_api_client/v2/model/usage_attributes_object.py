@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.usage_time_series_object import UsageTimeSeriesObject
-    from datadog_api_client.v2.model.hourly_usage_type import HourlyUsageType
-
-    globals()["UsageTimeSeriesObject"] = UsageTimeSeriesObject
-    globals()["HourlyUsageType"] = HourlyUsageType
-
-
 class UsageAttributesObject(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.usage_time_series_object import UsageTimeSeriesObject
+        from datadog_api_client.v2.model.hourly_usage_type import HourlyUsageType
+
         return {
             "org_name": (str,),
             "product_family": (str,),

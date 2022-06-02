@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_private_location import SyntheticsPrivateLocation
-    from datadog_api_client.v1.model.synthetics_private_location_creation_response_result_encryption import (
-        SyntheticsPrivateLocationCreationResponseResultEncryption,
-    )
-
-    globals()["SyntheticsPrivateLocation"] = SyntheticsPrivateLocation
-    globals()[
-        "SyntheticsPrivateLocationCreationResponseResultEncryption"
-    ] = SyntheticsPrivateLocationCreationResponseResultEncryption
-
-
 class SyntheticsPrivateLocationCreationResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_private_location import SyntheticsPrivateLocation
+        from datadog_api_client.v1.model.synthetics_private_location_creation_response_result_encryption import (
+            SyntheticsPrivateLocationCreationResponseResultEncryption,
+        )
+
         return {
             "config": (dict,),
             "private_location": (SyntheticsPrivateLocation,),

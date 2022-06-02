@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.audit_logs_event_attributes import AuditLogsEventAttributes
-    from datadog_api_client.v2.model.audit_logs_event_type import AuditLogsEventType
-
-    globals()["AuditLogsEventAttributes"] = AuditLogsEventAttributes
-    globals()["AuditLogsEventType"] = AuditLogsEventType
-
-
 class AuditLogsEvent(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.audit_logs_event_attributes import AuditLogsEventAttributes
+        from datadog_api_client.v2.model.audit_logs_event_type import AuditLogsEventType
+
         return {
             "attributes": (AuditLogsEventAttributes,),
             "id": (str,),

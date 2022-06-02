@@ -9,28 +9,17 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_test_config import SyntheticsTestConfig
-    from datadog_api_client.v1.model.creator import Creator
-    from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
-    from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
-    from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
-    from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
-    from datadog_api_client.v1.model.synthetics_test_details_type import SyntheticsTestDetailsType
-
-    globals()["SyntheticsTestConfig"] = SyntheticsTestConfig
-    globals()["Creator"] = Creator
-    globals()["SyntheticsTestOptions"] = SyntheticsTestOptions
-    globals()["SyntheticsTestPauseStatus"] = SyntheticsTestPauseStatus
-    globals()["SyntheticsStep"] = SyntheticsStep
-    globals()["SyntheticsTestDetailsSubType"] = SyntheticsTestDetailsSubType
-    globals()["SyntheticsTestDetailsType"] = SyntheticsTestDetailsType
-
-
 class SyntheticsTestDetails(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_test_config import SyntheticsTestConfig
+        from datadog_api_client.v1.model.creator import Creator
+        from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
+        from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
+        from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
+        from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
+        from datadog_api_client.v1.model.synthetics_test_details_type import SyntheticsTestDetailsType
+
         return {
             "config": (SyntheticsTestConfig,),
             "creator": (Creator,),
@@ -96,21 +85,21 @@ class SyntheticsTestDetails(ModelNormal):
         :param public_id: The test public ID.
         :type public_id: str, optional
 
-        :param status: Define whether you want to start (`live`) or pause (`paused`) a
+        :param status: Define whether you want to start ( ``live`` ) or pause ( ``paused`` ) a
             Synthetic test.
         :type status: SyntheticsTestPauseStatus, optional
 
         :param steps: For browser test, the steps of the test.
         :type steps: [SyntheticsStep], optional
 
-        :param subtype: The subtype of the Synthetic API test, `http`, `ssl`, `tcp`,
-            `dns`, `icmp`, `udp`, `websocket` or `multi`.
+        :param subtype: The subtype of the Synthetic API test, ``http`` , ``ssl`` , ``tcp`` ,
+            ``dns`` , ``icmp`` , ``udp`` , ``websocket`` , ``grpc`` or ``multi``.
         :type subtype: SyntheticsTestDetailsSubType, optional
 
         :param tags: Array of tags attached to the test.
         :type tags: [str], optional
 
-        :param type: Type of the Synthetic test, either `api` or `browser`.
+        :param type: Type of the Synthetic test, either ``api`` or ``browser``.
         :type type: SyntheticsTestDetailsType, optional
         """
         super().__init__(kwargs)

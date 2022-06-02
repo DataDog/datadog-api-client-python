@@ -9,18 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.sunburst_widget_legend_inline_automatic_type import (
-        SunburstWidgetLegendInlineAutomaticType,
-    )
-
-    globals()["SunburstWidgetLegendInlineAutomaticType"] = SunburstWidgetLegendInlineAutomaticType
-
-
 class SunburstWidgetLegendInlineAutomatic(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.sunburst_widget_legend_inline_automatic_type import (
+            SunburstWidgetLegendInlineAutomaticType,
+        )
+
         return {
             "hide_percent": (bool,),
             "hide_value": (bool,),

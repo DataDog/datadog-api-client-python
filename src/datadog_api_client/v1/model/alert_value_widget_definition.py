@@ -9,20 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.alert_value_widget_definition_type import AlertValueWidgetDefinitionType
-
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["AlertValueWidgetDefinitionType"] = AlertValueWidgetDefinitionType
-
-
 class AlertValueWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.alert_value_widget_definition_type import AlertValueWidgetDefinitionType
+
         return {
             "alert_id": (str,),
             "precision": (int,),

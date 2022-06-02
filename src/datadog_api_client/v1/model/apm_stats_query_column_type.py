@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
-    from datadog_api_client.v1.model.widget_sort import WidgetSort
-
-    globals()["TableWidgetCellDisplayMode"] = TableWidgetCellDisplayMode
-    globals()["WidgetSort"] = WidgetSort
-
-
 class ApmStatsQueryColumnType(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
+        from datadog_api_client.v1.model.widget_sort import WidgetSort
+
         return {
             "alias": (str,),
             "cell_display_mode": (TableWidgetCellDisplayMode,),
