@@ -14,6 +14,7 @@ with ApiClient(configuration) as api_client:
     api_instance = KeyManagementApi(api_client)
     response = api_instance.get_api_key(
         api_key_id=API_KEY_DATA_ID,
+        include="created_by,modified_by",
     )
 
     print(response)
