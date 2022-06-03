@@ -64,7 +64,7 @@ class ApiClient(object):
         self.close()
 
     def close(self):
-        pass
+        self.rest_client.pool_manager.clear()
 
     def _build_rest_client(self):
         return rest.RESTClientObject(self.configuration)
@@ -442,6 +442,7 @@ class ThreadedApiClient(ApiClient):
         return rest.RESTClientObject(self.configuration, maxsize=self.connection_pool_maxsize)
 
     def close(self):
+        self.rest_client.pool_manager.clear()
         if self._pool:
             self._pool.close()
             self._pool.join()

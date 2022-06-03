@@ -509,8 +509,6 @@ def build_given(version, operation):
 
             # store response in fixtures
             context[operation["key"]] = result
-            # Make sure that all connections are released
-            client.rest_client.pool_manager.clear()
 
     return wrapper
 
