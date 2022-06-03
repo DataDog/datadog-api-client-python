@@ -22,7 +22,7 @@ from datadog_api_client.v2.model.security_monitoring_signals_sort import Securit
 from datadog_api_client.v2.model.security_monitoring_signal_list_request import SecurityMonitoringSignalListRequest
 
 
-class SecurityMonitoringApi:
+class SecurityPlatformApi:
     """
     Detection rules for generating signals and listing of generated
     signals.

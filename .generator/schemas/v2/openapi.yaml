@@ -11278,7 +11278,7 @@ paths:
         - security_monitoring_filters_read
       summary: Get all security filters
       tags:
-      - Security Monitoring
+      - Security Platform
       x-undo:
         type: safe
     post:
@@ -11318,7 +11318,7 @@ paths:
         - security_monitoring_filters_write
       summary: Create a security filter
       tags:
-      - Security Monitoring
+      - Security Platform
       x-codegen-request-body-name: body
       x-given:
         security_filter:
@@ -11359,7 +11359,7 @@ paths:
         - security_monitoring_filters_write
       summary: Delete a security filter
       tags:
-      - Security Monitoring
+      - Security Platform
       x-undo:
         type: idempotent
     get:
@@ -11392,7 +11392,7 @@ paths:
         - security_monitoring_filters_read
       summary: Get a security filter
       tags:
-      - Security Monitoring
+      - Security Platform
       x-undo:
         type: safe
     patch:
@@ -11433,7 +11433,7 @@ paths:
         - security_monitoring_filters_write
       summary: Update a security filter
       tags:
-      - Security Monitoring
+      - Security Platform
       x-codegen-request-body-name: body
       x-undo:
         type: idempotent
@@ -11462,7 +11462,7 @@ paths:
         - security_monitoring_rules_read
       summary: List rules
       tags:
-      - Security Monitoring
+      - Security Platform
       x-menu-order: 1
       x-undo:
         type: safe
@@ -11495,7 +11495,7 @@ paths:
         - security_monitoring_rules_write
       summary: Create a detection rule
       tags:
-      - Security Monitoring
+      - Security Platform
       x-codegen-request-body-name: body
       x-given:
         security_rule:
@@ -11539,7 +11539,7 @@ paths:
         - security_monitoring_rules_write
       summary: Delete an existing rule
       tags:
-      - Security Monitoring
+      - Security Platform
       x-menu-order: 5
       x-undo:
         type: idempotent
@@ -11566,7 +11566,7 @@ paths:
         - security_monitoring_rules_read
       summary: Get a rule's details
       tags:
-      - Security Monitoring
+      - Security Platform
       x-menu-order: 3
       x-undo:
         type: safe
@@ -11611,7 +11611,7 @@ paths:
         - security_monitoring_rules_write
       summary: Update an existing rule
       tags:
-      - Security Monitoring
+      - Security Platform
       x-codegen-request-body-name: body
       x-menu-order: 4
       x-undo:
@@ -11693,7 +11693,7 @@ paths:
         - security_monitoring_signals_read
       summary: Get a quick list of security signals
       tags:
-      - Security Monitoring
+      - Security Platform
       x-menu-order: 7
       x-pagination:
         cursorParam: page[cursor]
@@ -11702,9 +11702,6 @@ paths:
         resultsPath: data
       x-undo:
         type: safe
-      x-unstable: '**Note**: This endpoint is in public beta.
-
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v2/security_monitoring/signals/search:
     post:
       description: 'Returns security signals that match a search query.
@@ -11739,7 +11736,7 @@ paths:
         - security_monitoring_signals_read
       summary: Get a list of security signals
       tags:
-      - Security Monitoring
+      - Security Platform
       x-codegen-request-body-name: body
       x-menu-order: 6
       x-pagination:
@@ -11749,9 +11746,6 @@ paths:
         resultsPath: data
       x-undo:
         type: safe
-      x-unstable: '**Note**: This endpoint is in public beta.
-
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v2/series:
     post:
       description: "The metrics end-point allows you to post time-series data that
@@ -13301,7 +13295,7 @@ tags:
 - description: 'Detection rules for generating signals and listing of generated
 
     signals.'
-  name: Security Monitoring
+  name: Security Platform
 - description: Create, edit, and disable service accounts.
   name: Service Accounts
 - description: 'The usage metering API allows you to get hourly, daily, and

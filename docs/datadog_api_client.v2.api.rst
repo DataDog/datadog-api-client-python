@@ -113,10 +113,10 @@ rum\_api
    :members:
    :show-inheritance:
 
-security\_monitoring\_api
--------------------------
+security\_platform\_api
+-----------------------
 
-.. automodule:: datadog_api_client.v2.api.security_monitoring_api
+.. automodule:: datadog_api_client.v2.api.security_platform_api
    :members:
    :show-inheritance:
 

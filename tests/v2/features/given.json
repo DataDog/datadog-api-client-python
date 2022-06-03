@@ -179,7 +179,7 @@
     ],
     "step": "there is a valid \"security_filter\" in the system",
     "key": "security_filter",
-    "tag": "Security Monitoring",
+    "tag": "Security Platform",
     "operationId": "CreateSecurityFilter"
   },
   {
@@ -191,7 +191,7 @@
     ],
     "step": "there is a valid \"security_rule\" in the system",
     "key": "security_rule",
-    "tag": "Security Monitoring",
+    "tag": "Security Platform",
     "operationId": "CreateSecurityMonitoringRule"
   },
   {

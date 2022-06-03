@@ -3,7 +3,7 @@ Update an existing rule returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
+from datadog_api_client.v2.api.security_platform_api import SecurityPlatformApi
 from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
 from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
@@ -76,7 +76,7 @@ body = SecurityMonitoringRuleUpdatePayload(
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
-    api_instance = SecurityMonitoringApi(api_client)
+    api_instance = SecurityPlatformApi(api_client)
     response = api_instance.update_security_monitoring_rule(rule_id="rule_id", body=body)
 
     print(response)
