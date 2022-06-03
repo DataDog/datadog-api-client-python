@@ -113,6 +113,12 @@ def pytest_bdd_before_scenario(request, feature, scenario):
 
             codeowners = [f"@{tag[5:]}" for tag in scenario.tags | scenario.feature.tags if tag.startswith("team:")]
             if codeowners:
+                try:
+                    default_value = span.get_tag("test.codeowners")
+                    default_codeowners = json.loads(default_value)
+                    codeowners.extend(default_codeowners)
+                except Exception:
+                    pass
                 span.set_tag("test.codeowners", json.dumps(codeowners))
 
 
