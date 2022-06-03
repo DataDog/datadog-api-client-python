@@ -136,7 +136,7 @@ class RESTClientObject:
                         request_body = json.dumps(body)
                         if headers.get("Content-Encoding") == "gzip":
                             compressor = zlib.compressobj(wbits=16 + zlib.MAX_WBITS)
-                            request_body = compressor.compress(request_body.encode("utf-8")) + compress.flush()
+                            request_body = compressor.compress(request_body.encode("utf-8")) + compressor.flush()
                         elif headers.get("Content-Encoding") == "deflate":
                             request_body = zlib.compress(request_body.encode("utf-8"))
                         elif headers.get("Content-Encoding") == "zstd1":
