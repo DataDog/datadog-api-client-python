@@ -203,8 +203,11 @@ Feature: Key Management
     Given there is a valid "api_key" in the system
     And new "GetAPIKey" request
     And request contains "api_key_id" parameter from "api_key.data.id"
+    And request contains "include" parameter with value "created_by,modified_by"
     When the request is sent
     Then the response status is 200 OK
+    And the response "included" has length 1
+    And the response "included[0].type" is equal to "users"
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get all API keys returns "Bad Request" response
