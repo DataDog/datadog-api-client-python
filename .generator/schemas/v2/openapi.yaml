@@ -9575,10 +9575,6 @@ paths:
       x-menu-order: 5
       x-undo:
         type: safe
-      x-unstable: "**Note: Use of this endpoint for count/gauge/rate metric types
-        is only accessible for Metrics without Limits&trade; beta customers.\nIf you\u2019re
-        interested in Metrics without Limits&trade;, please contact your Customer
-        Success Manager.**"
   /api/v2/metrics/config/bulk-tags:
     delete:
       description: 'Delete all custom lists of queryable tag keys for a set of existing
@@ -9885,10 +9881,6 @@ paths:
       x-menu-order: 4
       x-undo:
         type: idempotent
-      x-unstable: "**Note: Use of this endpoint for count/gauge/rate metric types
-        is only accessible for Metrics without Limits&trade; beta customers.\nIf you\u2019re
-        interested in Metrics without Limits&trade;, please contact your Customer
-        Success Manager.**"
     get:
       description: Returns the tag configuration for the given metric name.
       operationId: ListTagConfigurationByName
@@ -9925,10 +9917,6 @@ paths:
       x-menu-order: 2
       x-undo:
         type: safe
-      x-unstable: "**Note: Use of this endpoint for count/gauge/rate metric types
-        is only accessible for Metrics without Limits&trade; beta customers.\nIf you\u2019re
-        interested in Metrics without Limits&trade;, please contact your Customer
-        Success Manager.**"
     patch:
       description: 'Update the tag configuration of a metric or percentile aggregations
         of a distribution metric or custom aggregations
@@ -9984,10 +9972,6 @@ paths:
       x-menu-order: 3
       x-undo:
         type: idempotent
-      x-unstable: "**Note: Use of this endpoint for count/gauge/rate metric types
-        is only accessible for Metrics without Limits&trade; beta customers.\nIf you\u2019re
-        interested in Metrics without Limits&trade;, please contact your Customer
-        Success Manager.**"
     post:
       description: 'Create and define a list of queryable tag keys for an existing
         count/gauge/rate/distribution metric.
@@ -10061,20 +10045,10 @@ paths:
         - name: metric_name
           source: data.id
         type: unsafe
-      x-unstable: "**Note: Use of this endpoint for count/gauge/rate metric types
-        is only accessible for Metrics without Limits&trade; beta customers.\nIf you\u2019re
-        interested in Metrics without Limits&trade;, please contact your Customer
-        Success Manager.**"
   /api/v2/metrics/{metric_name}/volumes:
     get:
       description: 'View distinct metrics volumes for the given metric name.
 
-
-        Custom distribution metrics will return both ingested and indexed custom metric
-        volumes.
-
-        For Metrics without Limits&trade; beta customers, all metrics will return
-        both ingested/indexed volumes.
 
         Custom metrics generated in-app from other products will return `null` for
         ingested volumes.'

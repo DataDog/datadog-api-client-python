@@ -10,7 +10,6 @@ from datadog_api_client.v2.api.metrics_api import MetricsApi
 METRIC_TAG_CONFIGURATION_DATA_ID = environ["METRIC_TAG_CONFIGURATION_DATA_ID"]
 
 configuration = Configuration()
-configuration.unstable_operations["list_tag_configuration_by_name"] = True
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
     response = api_instance.list_tag_configuration_by_name(
