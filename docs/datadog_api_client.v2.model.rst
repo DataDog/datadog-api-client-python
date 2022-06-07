@@ -1989,6 +1989,90 @@ nullable\_relationship\_to\_user\_data
    :members:
    :show-inheritance:
 
+opsgenie\_service\_create\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_service_create_attributes
+   :members:
+   :show-inheritance:
+
+opsgenie\_service\_create\_data
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_service_create_data
+   :members:
+   :show-inheritance:
+
+opsgenie\_service\_create\_request
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_service_create_request
+   :members:
+   :show-inheritance:
+
+opsgenie\_service\_region\_type
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_service_region_type
+   :members:
+   :show-inheritance:
+
+opsgenie\_service\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_service_response
+   :members:
+   :show-inheritance:
+
+opsgenie\_service\_response\_attributes
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_service_response_attributes
+   :members:
+   :show-inheritance:
+
+opsgenie\_service\_response\_data
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_service_response_data
+   :members:
+   :show-inheritance:
+
+opsgenie\_service\_type
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_service_type
+   :members:
+   :show-inheritance:
+
+opsgenie\_service\_update\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_service_update_attributes
+   :members:
+   :show-inheritance:
+
+opsgenie\_service\_update\_data
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_service_update_data
+   :members:
+   :show-inheritance:
+
+opsgenie\_service\_update\_request
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_service_update_request
+   :members:
+   :show-inheritance:
+
+opsgenie\_services\_response
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_services_response
+   :members:
+   :show-inheritance:
+
 organization
 ------------
 
