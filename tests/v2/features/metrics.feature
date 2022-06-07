@@ -41,6 +41,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/points-aggregation
   Scenario: Create a tag configuration returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
+    And operation "CreateTagConfiguration" enabled
     And new "CreateTagConfiguration" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"include_percentiles": false, "metric_type": "distribution", "tags": ["app", "datacenter"]}, "id": "http.endpoint.request", "type": "manage_tags"}}
@@ -50,6 +51,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/points-aggregation
   Scenario: Create a tag configuration returns "Conflict" response
     Given a valid "appKeyAuth" key in the system
+    And operation "CreateTagConfiguration" enabled
     And new "CreateTagConfiguration" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"include_percentiles": false, "metric_type": "distribution", "tags": ["app", "datacenter"]}, "id": "http.endpoint.request", "type": "manage_tags"}}
@@ -59,6 +61,7 @@ Feature: Metrics
   @replay-only @team:DataDog/points-aggregation
   Scenario: Create a tag configuration returns "Created" response
     Given a valid "appKeyAuth" key in the system
+    And operation "CreateTagConfiguration" enabled
     And new "CreateTagConfiguration" request
     And there is a valid "metric" in the system
     And request contains "metric_name" parameter with value "{{ unique_alnum }}"
@@ -71,6 +74,7 @@ Feature: Metrics
     Given there is a valid "metric" in the system
     And there is a valid "metric_tag_configuration" in the system
     And a valid "appKeyAuth" key in the system
+    And operation "DeleteTagConfiguration" enabled
     And new "DeleteTagConfiguration" request
     And request contains "metric_name" parameter with value "{{ unique_alnum }}"
     When the request is sent
@@ -79,6 +83,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/points-aggregation
   Scenario: Delete a tag configuration returns "Not found" response
     Given a valid "appKeyAuth" key in the system
+    And operation "DeleteTagConfiguration" enabled
     And new "DeleteTagConfiguration" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
@@ -114,6 +119,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/points-aggregation
   Scenario: List tag configuration by name returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
+    And operation "ListTagConfigurationByName" enabled
     And new "ListTagConfigurationByName" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
@@ -124,6 +130,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric" in the system
     And there is a valid "metric_tag_configuration" in the system
+    And operation "ListTagConfigurationByName" enabled
     And new "ListTagConfigurationByName" request
     And request contains "metric_name" parameter from "metric_tag_configuration.data.id"
     When the request is sent
@@ -133,6 +140,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/points-aggregation
   Scenario: List tag configurations returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
+    And operation "ListTagConfigurations" enabled
     And new "ListTagConfigurations" request
     When the request is sent
     Then the response status is 400 Bad Request
@@ -141,6 +149,7 @@ Feature: Metrics
   Scenario: List tag configurations returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric_tag_configuration" in the system
+    And operation "ListTagConfigurations" enabled
     And new "ListTagConfigurations" request
     When the request is sent
     Then the response status is 200 Success
@@ -148,6 +157,7 @@ Feature: Metrics
   @team:DataDog/points-aggregation
   Scenario: List tag configurations with a tag filter returns "Success" response
     Given a valid "appKeyAuth" key in the system
+    And operation "ListTagConfigurations" enabled
     And new "ListTagConfigurations" request
     And request contains "filter[tags]" parameter with value "{{ unique_alnum }}"
     When the request is sent
@@ -156,6 +166,7 @@ Feature: Metrics
   @team:DataDog/points-aggregation
   Scenario: List tag configurations with configured filter returns "Success" response
     Given a valid "appKeyAuth" key in the system
+    And operation "ListTagConfigurations" enabled
     And new "ListTagConfigurations" request
     And request contains "filter[configured]" parameter with value true
     When the request is sent
@@ -236,6 +247,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/points-aggregation
   Scenario: Update a tag configuration returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
+    And operation "UpdateTagConfiguration" enabled
     And new "UpdateTagConfiguration" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"group_by": ["app", "datacenter"], "include_percentiles": false}, "id": "http.endpoint.request", "type": "manage_tags"}}
@@ -245,6 +257,7 @@ Feature: Metrics
   @replay-only @team:DataDog/points-aggregation
   Scenario: Update a tag configuration returns "OK" response
     Given a valid "appKeyAuth" key in the system
+    And operation "UpdateTagConfiguration" enabled
     And there is a valid "metric" in the system
     And there is a valid "metric_tag_configuration" in the system
     And new "UpdateTagConfiguration" request
@@ -257,6 +270,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/points-aggregation
   Scenario: Update a tag configuration returns "Unprocessable Entity" response
     Given a valid "appKeyAuth" key in the system
+    And operation "UpdateTagConfiguration" enabled
     And new "UpdateTagConfiguration" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"group_by": ["app", "datacenter"], "include_percentiles": false}, "id": "http.endpoint.request", "type": "manage_tags"}}

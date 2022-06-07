@@ -9575,6 +9575,10 @@ paths:
       x-menu-order: 5
       x-undo:
         type: safe
+      x-unstable: "**Note: Use of this endpoint for count/gauge/rate metric types
+        is only accessible for Metrics without Limits&trade; beta customers.\nIf you\u2019re
+        interested in Metrics without Limits&trade;, please contact your Customer
+        Success Manager.**"
   /api/v2/metrics/config/bulk-tags:
     delete:
       description: 'Delete all custom lists of queryable tag keys for a set of existing
@@ -9881,6 +9885,10 @@ paths:
       x-menu-order: 4
       x-undo:
         type: idempotent
+      x-unstable: "**Note: Use of this endpoint for count/gauge/rate metric types
+        is only accessible for Metrics without Limits&trade; beta customers.\nIf you\u2019re
+        interested in Metrics without Limits&trade;, please contact your Customer
+        Success Manager.**"
     get:
       description: Returns the tag configuration for the given metric name.
       operationId: ListTagConfigurationByName
@@ -9917,6 +9925,10 @@ paths:
       x-menu-order: 2
       x-undo:
         type: safe
+      x-unstable: "**Note: Use of this endpoint for count/gauge/rate metric types
+        is only accessible for Metrics without Limits&trade; beta customers.\nIf you\u2019re
+        interested in Metrics without Limits&trade;, please contact your Customer
+        Success Manager.**"
     patch:
       description: 'Update the tag configuration of a metric or percentile aggregations
         of a distribution metric or custom aggregations
@@ -9972,6 +9984,10 @@ paths:
       x-menu-order: 3
       x-undo:
         type: idempotent
+      x-unstable: "**Note: Use of this endpoint for count/gauge/rate metric types
+        is only accessible for Metrics without Limits&trade; beta customers.\nIf you\u2019re
+        interested in Metrics without Limits&trade;, please contact your Customer
+        Success Manager.**"
     post:
       description: 'Create and define a list of queryable tag keys for an existing
         count/gauge/rate/distribution metric.
@@ -10045,10 +10061,20 @@ paths:
         - name: metric_name
           source: data.id
         type: unsafe
+      x-unstable: "**Note: Use of this endpoint for count/gauge/rate metric types
+        is only accessible for Metrics without Limits&trade; beta customers.\nIf you\u2019re
+        interested in Metrics without Limits&trade;, please contact your Customer
+        Success Manager.**"
   /api/v2/metrics/{metric_name}/volumes:
     get:
       description: 'View distinct metrics volumes for the given metric name.
 
+
+        Custom distribution metrics will return both ingested and indexed custom metric
+        volumes.
+
+        For Metrics without Limits&trade; beta customers, all metrics will return
+        both ingested/indexed volumes.
 
         Custom metrics generated in-app from other products will return `null` for
         ingested volumes.'
@@ -11252,7 +11278,7 @@ paths:
         - security_monitoring_filters_read
       summary: Get all security filters
       tags:
-      - Security Monitoring
+      - Security Platform
       x-undo:
         type: safe
     post:
@@ -11292,7 +11318,7 @@ paths:
         - security_monitoring_filters_write
       summary: Create a security filter
       tags:
-      - Security Monitoring
+      - Security Platform
       x-codegen-request-body-name: body
       x-given:
         security_filter:
@@ -11333,7 +11359,7 @@ paths:
         - security_monitoring_filters_write
       summary: Delete a security filter
       tags:
-      - Security Monitoring
+      - Security Platform
       x-undo:
         type: idempotent
     get:
@@ -11366,7 +11392,7 @@ paths:
         - security_monitoring_filters_read
       summary: Get a security filter
       tags:
-      - Security Monitoring
+      - Security Platform
       x-undo:
         type: safe
     patch:
@@ -11407,7 +11433,7 @@ paths:
         - security_monitoring_filters_write
       summary: Update a security filter
       tags:
-      - Security Monitoring
+      - Security Platform
       x-codegen-request-body-name: body
       x-undo:
         type: idempotent
@@ -11436,7 +11462,7 @@ paths:
         - security_monitoring_rules_read
       summary: List rules
       tags:
-      - Security Monitoring
+      - Security Platform
       x-menu-order: 1
       x-undo:
         type: safe
@@ -11469,7 +11495,7 @@ paths:
         - security_monitoring_rules_write
       summary: Create a detection rule
       tags:
-      - Security Monitoring
+      - Security Platform
       x-codegen-request-body-name: body
       x-given:
         security_rule:
@@ -11513,7 +11539,7 @@ paths:
         - security_monitoring_rules_write
       summary: Delete an existing rule
       tags:
-      - Security Monitoring
+      - Security Platform
       x-menu-order: 5
       x-undo:
         type: idempotent
@@ -11540,7 +11566,7 @@ paths:
         - security_monitoring_rules_read
       summary: Get a rule's details
       tags:
-      - Security Monitoring
+      - Security Platform
       x-menu-order: 3
       x-undo:
         type: safe
@@ -11585,7 +11611,7 @@ paths:
         - security_monitoring_rules_write
       summary: Update an existing rule
       tags:
-      - Security Monitoring
+      - Security Platform
       x-codegen-request-body-name: body
       x-menu-order: 4
       x-undo:
@@ -11667,7 +11693,7 @@ paths:
         - security_monitoring_signals_read
       summary: Get a quick list of security signals
       tags:
-      - Security Monitoring
+      - Security Platform
       x-menu-order: 7
       x-pagination:
         cursorParam: page[cursor]
@@ -11676,9 +11702,6 @@ paths:
         resultsPath: data
       x-undo:
         type: safe
-      x-unstable: '**Note**: This endpoint is in public beta.
-
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v2/security_monitoring/signals/search:
     post:
       description: 'Returns security signals that match a search query.
@@ -11713,7 +11736,7 @@ paths:
         - security_monitoring_signals_read
       summary: Get a list of security signals
       tags:
-      - Security Monitoring
+      - Security Platform
       x-codegen-request-body-name: body
       x-menu-order: 6
       x-pagination:
@@ -11723,9 +11746,6 @@ paths:
         resultsPath: data
       x-undo:
         type: safe
-      x-unstable: '**Note**: This endpoint is in public beta.
-
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v2/series:
     post:
       description: "The metrics end-point allows you to post time-series data that
@@ -13275,7 +13295,7 @@ tags:
 - description: 'Detection rules for generating signals and listing of generated
 
     signals.'
-  name: Security Monitoring
+  name: Security Platform
 - description: Create, edit, and disable service accounts.
   name: Service Accounts
 - description: 'The usage metering API allows you to get hourly, daily, and

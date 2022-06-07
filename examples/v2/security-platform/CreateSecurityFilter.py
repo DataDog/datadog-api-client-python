@@ -3,7 +3,7 @@ Create a security filter returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
+from datadog_api_client.v2.api.security_platform_api import SecurityPlatformApi
 from datadog_api_client.v2.model.security_filter_create_attributes import SecurityFilterCreateAttributes
 from datadog_api_client.v2.model.security_filter_create_data import SecurityFilterCreateData
 from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
@@ -22,8 +22,8 @@ body = SecurityFilterCreateRequest(
             ],
             filtered_data_type=SecurityFilterFilteredDataType("logs"),
             is_enabled=True,
-            name="Example-Create_a_security_filter_returns_OK_response",
-            query="service:ExampleCreateasecurityfilterreturnsOKresponse",
+            name="Custom security filter",
+            query="service:api",
         ),
         type=SecurityFilterType("security_filters"),
     ),
@@ -31,7 +31,7 @@ body = SecurityFilterCreateRequest(
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
-    api_instance = SecurityMonitoringApi(api_client)
+    api_instance = SecurityPlatformApi(api_client)
     response = api_instance.create_security_filter(body=body)
 
     print(response)
