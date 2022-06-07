@@ -13,13 +13,13 @@ class SyntheticsCoreWebVitals(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "cls": (int,),
+            "_cls": (int,),
             "lcp": (int,),
             "url": (str,),
         }
 
     attribute_map = {
-        "cls": "cls",
+        "_cls": "cls",
         "lcp": "lcp",
         "url": "url",
     }
@@ -28,8 +28,8 @@ class SyntheticsCoreWebVitals(ModelNormal):
         """
         Core Web Vitals attached to a browser test step.
 
-        :param cls: Cumulative Layout Shift.
-        :type cls: int, optional
+        :param _cls: Cumulative Layout Shift.
+        :type _cls: int, optional
 
         :param lcp: Largest Contentful Paint in milliseconds.
         :type lcp: int, optional

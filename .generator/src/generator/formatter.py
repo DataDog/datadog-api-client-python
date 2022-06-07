@@ -24,6 +24,7 @@ if replacement_file.exists():
 
 KEYWORDS = set(keyword.kwlist)
 KEYWORDS.add("property")
+KEYWORDS.add("cls")
 
 PATTERN_DOUBLE_UNDERSCORE = re.compile(r"__+")
 PATTERN_LEADING_ALPHA = re.compile(r"(.)([A-Z][a-z]+)")
