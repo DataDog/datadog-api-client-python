@@ -151,6 +151,11 @@ class UsageMeteringApi:
                     "attribute": "tag_breakdown_keys",
                     "location": "query",
                 },
+                "include_descendants": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_descendants",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
@@ -304,6 +309,11 @@ class UsageMeteringApi:
                 "next_record_id": {
                     "openapi_types": (str,),
                     "attribute": "next_record_id",
+                    "location": "query",
+                },
+                "include_descendants": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_descendants",
                     "location": "query",
                 },
             },
@@ -1410,6 +1420,8 @@ class UsageMeteringApi:
 
             To see which tags are available, look for the value of ``tag_config_source`` in the API response.
         :type tag_breakdown_keys: str, optional
+        :param include_descendants: Include child org usage in the response. Defaults to ``true``.
+        :type include_descendants: bool, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
@@ -1627,6 +1639,8 @@ class UsageMeteringApi:
         :type tag_breakdown_keys: str, optional
         :param next_record_id: List following results with a next_record_id provided in the previous query.
         :type next_record_id: str, optional
+        :param include_descendants: Include child org usage in the response. Defaults to ``true``.
+        :type include_descendants: bool, optional
         :param _return_http_data_only: Response data without head status
             code and headers. Default is True.
         :type _return_http_data_only: bool
