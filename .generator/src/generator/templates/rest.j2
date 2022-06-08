@@ -6,7 +6,6 @@ import re
 import ssl
 from urllib.parse import urlencode
 import zlib
-import zstandard as zstd
 
 import urllib3  # type: ignore
 
@@ -134,6 +133,8 @@ class RESTClientObject:
                         elif headers.get("Content-Encoding") == "deflate":
                             request_body = zlib.compress(request_body.encode("utf-8"))
                         elif headers.get("Content-Encoding") == "zstd1":
+                            import zstandard as zstd
+
                             compressor = zstd.ZstdCompressor()
                             request_body = compressor.compress(request_body.encode("utf-8"))
                     r = self.pool_manager.request(
