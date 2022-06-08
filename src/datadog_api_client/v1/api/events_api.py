@@ -153,7 +153,7 @@ class EventsApi:
         This endpoint allows you to query for event details.
 
         **Note** : If the event you’re querying contains markdown formatting of any kind,
-        you may see characters such as ``%`` , ``\`` , ``n`` in your output.
+        you may see characters such as ``%`` , ``\\`` , ``n`` in your output.
 
         :param event_id: The ID of the event.
         :type event_id: int
@@ -173,7 +173,7 @@ class EventsApi:
 
         *
           If the event you’re querying contains markdown formatting of any kind,
-          you may see characters such as ``%`` , ``\`` , ``n`` in your output.
+          you may see characters such as ``%`` , ``\\`` , ``n`` in your output.
 
         *
           This endpoint returns a maximum of ``1000`` most recent results. To return additional results,

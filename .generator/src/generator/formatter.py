@@ -95,7 +95,7 @@ class CustomRenderer(m2r2.RestRenderer):
 
 
 def docstring(text):
-    return m2r2.convert(text.replace("\\n", "\\\\n"), renderer=CustomRenderer())[1:-1].replace("\\ ", " ")
+    return m2r2.convert(text.replace("\\n", "\\\\n"), renderer=CustomRenderer())[1:-1].replace("\\ ", " ").replace("\\`", "\\\\`")
 
 
 def _merge_imports(a, b):
