@@ -156,41 +156,10 @@ class LogsIndexesApi:
 
         Creates a new index. Returns the Index object passed in the request body when the request is successful.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_logs_index(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Object containing the new index.
         :type body: LogsIndex
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsIndex
         """
-        kwargs = self._create_logs_index_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._create_logs_index_endpoint.call_with_http_info(**kwargs)
@@ -200,41 +169,10 @@ class LogsIndexesApi:
 
         Get one log index from your organization. This endpoint takes no JSON arguments.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_logs_index(name, async_req=True)
-        >>> result = thread.get()
-
         :param name: Name of the log index.
         :type name: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsIndex
         """
-        kwargs = self._get_logs_index_endpoint.default_arguments(kwargs)
         kwargs["name"] = name
 
         return self._get_logs_index_endpoint.call_with_http_info(**kwargs)
@@ -244,39 +182,8 @@ class LogsIndexesApi:
 
         Get the current order of your log indexes. This endpoint takes no JSON arguments.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_logs_index_order(async_req=True)
-        >>> result = thread.get()
-
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsIndexesOrder
         """
-        kwargs = self._get_logs_index_order_endpoint.default_arguments(kwargs)
         return self._get_logs_index_order_endpoint.call_with_http_info(**kwargs)
 
     def list_log_indexes(self, **kwargs):
@@ -285,39 +192,8 @@ class LogsIndexesApi:
         The Index object describes the configuration of a log index.
         This endpoint returns an array of the ``LogIndex`` objects of your organization.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_log_indexes(async_req=True)
-        >>> result = thread.get()
-
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsIndexListResponse
         """
-        kwargs = self._list_log_indexes_endpoint.default_arguments(kwargs)
         return self._list_log_indexes_endpoint.call_with_http_info(**kwargs)
 
     def update_logs_index(self, name, body, **kwargs):
@@ -329,43 +205,12 @@ class LogsIndexesApi:
         Using the ``PUT`` method updates your index’s configuration by **replacing**
         your current configuration with the new one sent to your Datadog organization.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_logs_index(name, body, async_req=True)
-        >>> result = thread.get()
-
         :param name: Name of the log index.
         :type name: str
         :param body: Object containing the new ``LogsIndexUpdateRequest``.
         :type body: LogsIndexUpdateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsIndex
         """
-        kwargs = self._update_logs_index_endpoint.default_arguments(kwargs)
         kwargs["name"] = name
 
         kwargs["body"] = body
@@ -378,41 +223,10 @@ class LogsIndexesApi:
         This endpoint updates the index order of your organization.
         It returns the index order object passed in the request body when the request is successful.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_logs_index_order(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Object containing the new ordered list of index names
         :type body: LogsIndexesOrder
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsIndexesOrder
         """
-        kwargs = self._update_logs_index_order_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._update_logs_index_order_endpoint.call_with_http_info(**kwargs)

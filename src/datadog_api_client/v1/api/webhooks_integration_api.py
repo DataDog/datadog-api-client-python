@@ -228,41 +228,10 @@ class WebhooksIntegrationApi:
 
         Creates an endpoint with the name ``<WEBHOOK_NAME>``.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_webhooks_integration(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Create a webhooks integration request body.
         :type body: WebhooksIntegration
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: WebhooksIntegration
         """
-        kwargs = self._create_webhooks_integration_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._create_webhooks_integration_endpoint.call_with_http_info(**kwargs)
@@ -272,41 +241,10 @@ class WebhooksIntegrationApi:
 
         Creates an endpoint with the name ``<CUSTOM_VARIABLE_NAME>``.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_webhooks_integration_custom_variable(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Define a custom variable request body.
         :type body: WebhooksIntegrationCustomVariable
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: WebhooksIntegrationCustomVariableResponse
         """
-        kwargs = self._create_webhooks_integration_custom_variable_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._create_webhooks_integration_custom_variable_endpoint.call_with_http_info(**kwargs)
@@ -316,41 +254,10 @@ class WebhooksIntegrationApi:
 
         Deletes the endpoint with the name ``<WEBHOOK NAME>``.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_webhooks_integration(webhook_name, async_req=True)
-        >>> result = thread.get()
-
         :param webhook_name: The name of the webhook.
         :type webhook_name: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._delete_webhooks_integration_endpoint.default_arguments(kwargs)
         kwargs["webhook_name"] = webhook_name
 
         return self._delete_webhooks_integration_endpoint.call_with_http_info(**kwargs)
@@ -360,41 +267,10 @@ class WebhooksIntegrationApi:
 
         Deletes the endpoint with the name ``<CUSTOM_VARIABLE_NAME>``.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_webhooks_integration_custom_variable(custom_variable_name, async_req=True)
-        >>> result = thread.get()
-
         :param custom_variable_name: The name of the custom variable.
         :type custom_variable_name: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._delete_webhooks_integration_custom_variable_endpoint.default_arguments(kwargs)
         kwargs["custom_variable_name"] = custom_variable_name
 
         return self._delete_webhooks_integration_custom_variable_endpoint.call_with_http_info(**kwargs)
@@ -404,41 +280,10 @@ class WebhooksIntegrationApi:
 
         Gets the content of the webhook with the name ``<WEBHOOK_NAME>``.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_webhooks_integration(webhook_name, async_req=True)
-        >>> result = thread.get()
-
         :param webhook_name: The name of the webhook.
         :type webhook_name: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: WebhooksIntegration
         """
-        kwargs = self._get_webhooks_integration_endpoint.default_arguments(kwargs)
         kwargs["webhook_name"] = webhook_name
 
         return self._get_webhooks_integration_endpoint.call_with_http_info(**kwargs)
@@ -451,41 +296,10 @@ class WebhooksIntegrationApi:
         If the custom variable is secret, the value does not return in the
         response payload.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_webhooks_integration_custom_variable(custom_variable_name, async_req=True)
-        >>> result = thread.get()
-
         :param custom_variable_name: The name of the custom variable.
         :type custom_variable_name: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: WebhooksIntegrationCustomVariableResponse
         """
-        kwargs = self._get_webhooks_integration_custom_variable_endpoint.default_arguments(kwargs)
         kwargs["custom_variable_name"] = custom_variable_name
 
         return self._get_webhooks_integration_custom_variable_endpoint.call_with_http_info(**kwargs)
@@ -495,43 +309,12 @@ class WebhooksIntegrationApi:
 
         Updates the endpoint with the name ``<WEBHOOK_NAME>``.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_webhooks_integration(webhook_name, body, async_req=True)
-        >>> result = thread.get()
-
         :param webhook_name: The name of the webhook.
         :type webhook_name: str
         :param body: Update an existing Datadog-Webhooks integration.
         :type body: WebhooksIntegrationUpdateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: WebhooksIntegration
         """
-        kwargs = self._update_webhooks_integration_endpoint.default_arguments(kwargs)
         kwargs["webhook_name"] = webhook_name
 
         kwargs["body"] = body
@@ -543,43 +326,12 @@ class WebhooksIntegrationApi:
 
         Updates the endpoint with the name ``<CUSTOM_VARIABLE_NAME>``.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_webhooks_integration_custom_variable(custom_variable_name, body, async_req=True)
-        >>> result = thread.get()
-
         :param custom_variable_name: The name of the custom variable.
         :type custom_variable_name: str
         :param body: Update an existing custom variable request body.
         :type body: WebhooksIntegrationCustomVariableUpdateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: WebhooksIntegrationCustomVariableResponse
         """
-        kwargs = self._update_webhooks_integration_custom_variable_endpoint.default_arguments(kwargs)
         kwargs["custom_variable_name"] = custom_variable_name
 
         kwargs["body"] = body
