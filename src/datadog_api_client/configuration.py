@@ -114,7 +114,7 @@ class Configuration:
         The validation of enums is performed for variables with defined enum values before.
     :param ssl_ca_cert: The path to a file of concatenated CA certificates
         in PEM format.
-    :param compress: Boolean indicating whether we accept encoding responses or not.
+    :param compress: Boolean indicating whether encoded responses are accepted or not.
     :type compress: bool
     :param return_http_data_only: Response data without head status
         code and headers. Default is True.
@@ -133,7 +133,7 @@ class Configuration:
     :param check_return_type: Specifies if type checking should be done
         one the data received from the server. Default is True.
     :type check_return_type: bool
-    :param spec_property_naming:
+    :param spec_property_naming: Whether names in properties are expected to respect the spec or use snake case.
     :type spec_property_naming: bool
     """
 
