@@ -98,8 +98,8 @@ configuration = Configuration()
 with ThreadedApiClient(configuration) as api_client:
     api_instance = dashboards_api.DashboardsApi(api_client)
     result = api_instance.list_dashboards()
-    dashbooards = result.get()
-    print(dashbooards)
+    dashboards = result.get()
+    print(dashboards)
 ```
 
 ### Asyncio support
