@@ -83,6 +83,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"opsgenie_api_key\": \"00000000-0000-0000-0000-000000000000\",\n      \"region\": \"us\"\n     },\n     \"type\": \"opsgenie-service\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"opsgenie_service\" in the system",
+    "key": "opsgenie_service",
+    "tag": "Opsgenie Integration",
+    "operationId": "CreateOpsgenieService"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"id\": \"{{ unique }}\",\n    \"attributes\": {\n      \"filter\": {\n        \"query\": \"source:{{ unique }}\"\n      },\n      \"compute\": {\n        \"aggregation_type\": \"count\"\n      }\n    },\n    \"type\": \"logs_metrics\"\n  }\n}"
       }
     ],
