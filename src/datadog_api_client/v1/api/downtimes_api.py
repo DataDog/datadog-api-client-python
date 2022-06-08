@@ -195,41 +195,10 @@ class DowntimesApi:
 
         Cancel a downtime.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.cancel_downtime(downtime_id, async_req=True)
-        >>> result = thread.get()
-
         :param downtime_id: ID of the downtime to cancel.
         :type downtime_id: int
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._cancel_downtime_endpoint.default_arguments(kwargs)
         kwargs["downtime_id"] = downtime_id
 
         return self._cancel_downtime_endpoint.call_with_http_info(**kwargs)
@@ -239,41 +208,10 @@ class DowntimesApi:
 
         Delete all downtimes that match the scope of ``X``.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.cancel_downtimes_by_scope(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Scope to cancel downtimes for.
         :type body: CancelDowntimesByScopeRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: CanceledDowntimesIds
         """
-        kwargs = self._cancel_downtimes_by_scope_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._cancel_downtimes_by_scope_endpoint.call_with_http_info(**kwargs)
@@ -283,41 +221,10 @@ class DowntimesApi:
 
         Schedule a downtime.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_downtime(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Schedule a downtime request body.
         :type body: Downtime
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: Downtime
         """
-        kwargs = self._create_downtime_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._create_downtime_endpoint.call_with_http_info(**kwargs)
@@ -327,41 +234,10 @@ class DowntimesApi:
 
         Get downtime detail by ``downtime_id``.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_downtime(downtime_id, async_req=True)
-        >>> result = thread.get()
-
         :param downtime_id: ID of the downtime to fetch.
         :type downtime_id: int
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: Downtime
         """
-        kwargs = self._get_downtime_endpoint.default_arguments(kwargs)
         kwargs["downtime_id"] = downtime_id
 
         return self._get_downtime_endpoint.call_with_http_info(**kwargs)
@@ -371,41 +247,10 @@ class DowntimesApi:
 
         Get all scheduled downtimes.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_downtimes(async_req=True)
-        >>> result = thread.get()
-
         :param current_only: Only return downtimes that are active when the request is made.
         :type current_only: bool, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: [Downtime]
         """
-        kwargs = self._list_downtimes_endpoint.default_arguments(kwargs)
         return self._list_downtimes_endpoint.call_with_http_info(**kwargs)
 
     def list_monitor_downtimes(self, monitor_id, **kwargs):
@@ -413,41 +258,10 @@ class DowntimesApi:
 
         Get all active downtimes for the specified monitor.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_monitor_downtimes(monitor_id, async_req=True)
-        >>> result = thread.get()
-
         :param monitor_id: The id of the monitor
         :type monitor_id: int
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: [Downtime]
         """
-        kwargs = self._list_monitor_downtimes_endpoint.default_arguments(kwargs)
         kwargs["monitor_id"] = monitor_id
 
         return self._list_monitor_downtimes_endpoint.call_with_http_info(**kwargs)
@@ -457,43 +271,12 @@ class DowntimesApi:
 
         Update a single downtime by ``downtime_id``.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_downtime(downtime_id, body, async_req=True)
-        >>> result = thread.get()
-
         :param downtime_id: ID of the downtime to update.
         :type downtime_id: int
         :param body: Update a downtime request body.
         :type body: Downtime
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: Downtime
         """
-        kwargs = self._update_downtime_endpoint.default_arguments(kwargs)
         kwargs["downtime_id"] = downtime_id
 
         kwargs["body"] = body

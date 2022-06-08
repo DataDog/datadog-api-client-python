@@ -170,41 +170,10 @@ class CloudWorkloadSecurityApi:
 
         Create a new Agent rule with the given parameters.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_cloud_workload_security_agent_rule(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: The definition of the new Agent rule.
         :type body: CloudWorkloadSecurityAgentRuleCreateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: CloudWorkloadSecurityAgentRuleResponse
         """
-        kwargs = self._create_cloud_workload_security_agent_rule_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._create_cloud_workload_security_agent_rule_endpoint.call_with_http_info(**kwargs)
@@ -214,41 +183,10 @@ class CloudWorkloadSecurityApi:
 
         Delete a specific Agent rule.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_cloud_workload_security_agent_rule(agent_rule_id, async_req=True)
-        >>> result = thread.get()
-
         :param agent_rule_id: The ID of the Agent rule.
         :type agent_rule_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._delete_cloud_workload_security_agent_rule_endpoint.default_arguments(kwargs)
         kwargs["agent_rule_id"] = agent_rule_id
 
         return self._delete_cloud_workload_security_agent_rule_endpoint.call_with_http_info(**kwargs)
@@ -260,39 +198,8 @@ class CloudWorkloadSecurityApi:
         Cloud Workload Security rules, and downloads them as a .policy file. This file can then be deployed to
         your agents to update the policy running in your environment.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.download_cloud_workload_policy_file(async_req=True)
-        >>> result = thread.get()
-
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: file_type
         """
-        kwargs = self._download_cloud_workload_policy_file_endpoint.default_arguments(kwargs)
         return self._download_cloud_workload_policy_file_endpoint.call_with_http_info(**kwargs)
 
     def get_cloud_workload_security_agent_rule(self, agent_rule_id, **kwargs):
@@ -300,41 +207,10 @@ class CloudWorkloadSecurityApi:
 
         Get the details of a specific Agent rule.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_cloud_workload_security_agent_rule(agent_rule_id, async_req=True)
-        >>> result = thread.get()
-
         :param agent_rule_id: The ID of the Agent rule.
         :type agent_rule_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: CloudWorkloadSecurityAgentRuleResponse
         """
-        kwargs = self._get_cloud_workload_security_agent_rule_endpoint.default_arguments(kwargs)
         kwargs["agent_rule_id"] = agent_rule_id
 
         return self._get_cloud_workload_security_agent_rule_endpoint.call_with_http_info(**kwargs)
@@ -344,39 +220,8 @@ class CloudWorkloadSecurityApi:
 
         Get the list of Agent rules.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_cloud_workload_security_agent_rules(async_req=True)
-        >>> result = thread.get()
-
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: CloudWorkloadSecurityAgentRulesListResponse
         """
-        kwargs = self._list_cloud_workload_security_agent_rules_endpoint.default_arguments(kwargs)
         return self._list_cloud_workload_security_agent_rules_endpoint.call_with_http_info(**kwargs)
 
     def update_cloud_workload_security_agent_rule(self, agent_rule_id, body, **kwargs):
@@ -385,43 +230,12 @@ class CloudWorkloadSecurityApi:
         Update a specific Agent rule.
         Returns the Agent rule object when the request is successful.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_cloud_workload_security_agent_rule(agent_rule_id, body, async_req=True)
-        >>> result = thread.get()
-
         :param agent_rule_id: The ID of the Agent rule.
         :type agent_rule_id: str
         :param body: New definition of the Agent rule.
         :type body: CloudWorkloadSecurityAgentRuleUpdateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: CloudWorkloadSecurityAgentRuleResponse
         """
-        kwargs = self._update_cloud_workload_security_agent_rule_endpoint.default_arguments(kwargs)
         kwargs["agent_rule_id"] = agent_rule_id
 
         kwargs["body"] = body
