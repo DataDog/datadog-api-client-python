@@ -175,41 +175,10 @@ class IncidentsApi:
 
         Create an incident.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_incident(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Incident payload.
         :type body: IncidentCreateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentResponse
         """
-        kwargs = self._create_incident_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
 
         return self._create_incident_endpoint.call_with_http_info(**kwargs)
@@ -219,41 +188,10 @@ class IncidentsApi:
 
         Deletes an existing incident from the users organization.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_incident(incident_id, async_req=True)
-        >>> result = thread.get()
-
         :param incident_id: The UUID of the incident.
         :type incident_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._delete_incident_endpoint.default_arguments(kwargs)
         kwargs["incident_id"] = incident_id
 
         return self._delete_incident_endpoint.call_with_http_info(**kwargs)
@@ -263,43 +201,12 @@ class IncidentsApi:
 
         Get the details of an incident by ``incident_id``.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_incident(incident_id, async_req=True)
-        >>> result = thread.get()
-
         :param incident_id: The UUID of the incident.
         :type incident_id: str
         :param include: Specifies which types of related objects should be included in the response.
         :type include: [IncidentRelatedObject], optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentResponse
         """
-        kwargs = self._get_incident_endpoint.default_arguments(kwargs)
         kwargs["incident_id"] = incident_id
 
         return self._get_incident_endpoint.call_with_http_info(**kwargs)
@@ -309,45 +216,14 @@ class IncidentsApi:
 
         Get all incidents for the user's organization.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_incidents(async_req=True)
-        >>> result = thread.get()
-
         :param include: Specifies which types of related objects should be included in the response.
         :type include: [IncidentRelatedObject], optional
         :param page_size: Size for a given page.
         :type page_size: int, optional
         :param page_offset: Specific offset to use as the beginning of the returned page.
         :type page_offset: int, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentsResponse
         """
-        kwargs = self._list_incidents_endpoint.default_arguments(kwargs)
         return self._list_incidents_endpoint.call_with_http_info(**kwargs)
 
     def list_incidents_with_pagination(self, **kwargs):
@@ -361,24 +237,10 @@ class IncidentsApi:
         :type page_size: int, optional
         :param page_offset: Specific offset to use as the beginning of the returned page.
         :type page_offset: int, optional
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[IncidentResponseData]
         """
-        kwargs = self._list_incidents_endpoint.default_arguments(kwargs)
         page_size = get_attribute_from_path(kwargs, "page_size", 10)
         endpoint = self._list_incidents_endpoint
         set_attribute_from_path(kwargs, "page_size", page_size, endpoint.params_map)
@@ -400,45 +262,14 @@ class IncidentsApi:
 
         Updates an incident. Provide only the attributes that should be updated as this request is a partial update.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_incident(incident_id, body, async_req=True)
-        >>> result = thread.get()
-
         :param incident_id: The UUID of the incident.
         :type incident_id: str
         :param body: Incident Payload.
         :type body: IncidentUpdateRequest
         :param include: Specifies which types of related objects should be included in the response.
         :type include: [IncidentRelatedObject], optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentResponse
         """
-        kwargs = self._update_incident_endpoint.default_arguments(kwargs)
         kwargs["incident_id"] = incident_id
 
         kwargs["body"] = body

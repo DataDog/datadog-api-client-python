@@ -85,6 +85,23 @@ If you want to enable requests logging, set the `debug` flag on your configurati
 configuration.debug = True
 ```
 
+### Threads support
+
+You can run API calls in a thread by using `ThreadedApiClient` in place of `ApiClient`. API calls will then
+return a `AsyncResult` instance on which you can call get to retrieve the result:
+
+```python
+from datadog_api_client import Configuration, ThreadedApiClient
+from datadog_api_client.v1.api import dashboards_api
+
+configuration = Configuration()
+with ThreadedApiClient(configuration) as api_client:
+    api_instance = dashboards_api.DashboardsApi(api_client)
+    result = api_instance.list_dashboards()
+    dashboards = result.get()
+    print(dashboards)
+```
+
 ### Asyncio support
 
 The library supports asynchronous operations when using `AsyncApiClient` for the transport. When that client is used,

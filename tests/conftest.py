@@ -113,6 +113,12 @@ def pytest_bdd_before_scenario(request, feature, scenario):
 
             codeowners = [f"@{tag[5:]}" for tag in scenario.tags | scenario.feature.tags if tag.startswith("team:")]
             if codeowners:
+                try:
+                    default_value = span.get_tag("test.codeowners")
+                    default_codeowners = json.loads(default_value)
+                    codeowners.extend(default_codeowners)
+                except Exception:
+                    pass
                 span.set_tag("test.codeowners", json.dumps(codeowners))
 
 
@@ -373,7 +379,7 @@ def undo_operations():
 
 
 def build_configuration():
-    c = Configuration()
+    c = Configuration(return_http_data_only=False, spec_property_naming=True)
     c.connection_pool_maxsize = 0
     c.debug = debug = os.getenv("DEBUG") in {"true", "1", "yes", "on"}
     if debug:  # enable vcr logs for DEBUG=true
@@ -422,16 +428,7 @@ def api_request(configuration, context, name):
         "api": api["api"],
         "request": getattr(api["api"], snake_case(name)),
         "args": [],
-        "kwargs": {
-            "_host_index": configuration.server_index,
-            "_check_input_type": True,
-            "async_req": False,
-            "_check_return_type": True,
-            "_return_http_data_only": False,
-            "_preload_content": True,
-            "_request_timeout": None,
-            "_spec_property_naming": True,
-        },
+        "kwargs": {},
         "response": (None, None, None),
     }
 
@@ -456,6 +453,7 @@ def request_body_from_file(context, path, package_name):
 @given(parsers.parse('request contains "{name}" parameter from "{path}"'))
 def request_parameter(context, name, path):
     """Set request parameter."""
+
     context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = glom(context, path)
 
 
@@ -478,6 +476,8 @@ def build_given(version, operation):
         configuration = build_configuration()
         configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "fake")
         configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
+        configuration.check_input_type = False
+        configuration.return_http_data_only = True
 
         # enable unstable operation
         if operation_name in configuration.unstable_operations:
@@ -498,7 +498,6 @@ def build_given(version, operation):
             kwargs = {
                 escape_reserved_keyword(snake_case(p["name"])): build_param(p) for p in operation.get("parameters", [])
             }
-            kwargs["_check_input_type"] = False
             result = operation_method(**kwargs)
 
             # register undo method
@@ -510,9 +509,6 @@ def build_given(version, operation):
 
             # store response in fixtures
             context[operation["key"]] = result
-
-            # Make sure that all connections are released
-            client.rest_client.pool_manager.clear()
 
     return wrapper
 
@@ -593,7 +589,7 @@ def execute_request_with_pagination(undo, context, client, api_version):
     api_request = context["api_request"]
 
     kwargs = api_request["kwargs"]
-    kwargs["_return_http_data_only"] = True
+    client.configuration.return_http_data_only = True
     method = getattr(api_request["api"], f"{api_request['request'].__name__}_with_pagination")
     try:
         response = list(method(*api_request["args"], **kwargs))
@@ -605,6 +601,8 @@ def execute_request_with_pagination(undo, context, client, api_version):
         # Instead of finding the response class of the method, we use the fact that all
         # responses returned have an ordered response of body|status|headers
         api_request["response"] = [e.body, e.status, e.headers]
+    finally:
+        client.configuration.return_http_data_only = False
 
 
 @then(parsers.parse("the response status is {status:d} {description}"))

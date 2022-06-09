@@ -207,6 +207,43 @@
       "type": "idempotent"
     }
   },
+  "ListOpsgenieServices": {
+    "tag": "Opsgenie Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOpsgenieService": {
+    "tag": "Opsgenie Integration",
+    "undo": {
+      "operationId": "DeleteOpsgenieService",
+      "parameters": [
+        {
+          "name": "integration_service_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOpsgenieService": {
+    "tag": "Opsgenie Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetOpsgenieService": {
+    "tag": "Opsgenie Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateOpsgenieService": {
+    "tag": "Opsgenie Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "SubmitLog": {
     "tag": "Logs",
     "undo": {

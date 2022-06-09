@@ -32,7 +32,7 @@ body = SyntheticsAPITest(
         assertions=[
             SyntheticsAssertionTarget(
                 operator=SyntheticsAssertionOperator("is"),
-                property="{{ PROPERTY }}",
+                _property="{{ PROPERTY }}",
                 target="text/html",
                 type=SyntheticsAssertionType("header"),
             ),

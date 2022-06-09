@@ -5,7 +5,6 @@
 import copy
 import logging
 import os
-import multiprocessing
 import urllib3  # type: ignore
 
 from http import client as http_client
@@ -115,7 +114,27 @@ class Configuration:
         The validation of enums is performed for variables with defined enum values before.
     :param ssl_ca_cert: The path to a file of concatenated CA certificates
         in PEM format.
-    :param compress: Boolean indicating whether we accept encoding responses or not.
+    :param compress: Boolean indicating whether encoded responses are accepted or not.
+    :type compress: bool
+    :param return_http_data_only: Response data without head status
+        code and headers. Default is True.
+    :type return_http_data_only: bool
+    :param preload_content: If False, the urllib3.HTTPResponse object
+        will be returned without reading/decoding response data.
+        Default is True.
+    :type preload_content: bool
+    :param request_timeout: Timeout setting for this request. If one
+        number provided, it will be total request timeout. It can also be a
+        pair (tuple) of (connection, read) timeouts.  Default is None.
+    :type request_timeout: float/tuple
+    :param check_input_type: Specifies if type checking should be done one
+        the data sent to the server. Default is True.
+    :type check_input_type: bool
+    :param check_return_type: Specifies if type checking should be done
+        one the data received from the server. Default is True.
+    :type check_return_type: bool
+    :param spec_property_naming: Whether names in properties are expected to respect the spec or use snake case.
+    :type spec_property_naming: bool
     """
 
     def __init__(
@@ -134,6 +153,12 @@ class Configuration:
         server_operation_variables=None,
         ssl_ca_cert=None,
         compress=True,
+        return_http_data_only=True,
+        preload_content=True,
+        request_timeout=None,
+        check_input_type=True,
+        check_return_type=True,
+        spec_property_naming=False,
     ):
         """Constructor."""
         self._base_path = "https://api.datadoghq.com" if host is None else host
@@ -173,7 +198,6 @@ class Configuration:
         self.key_file = None
         self.assert_hostname = None
 
-        self.connection_pool_maxsize = multiprocessing.cpu_count() * 5
         self.proxy = None
         self.proxy_headers = None
         self.safe_chars_for_path_param = ""
@@ -186,6 +210,13 @@ class Configuration:
 
         # Will translate to a Accept-Encoding header
         self.compress = compress
+
+        self.return_http_data_only = return_http_data_only
+        self.preload_content = preload_content
+        self.request_timeout = request_timeout
+        self.check_input_type = check_input_type
+        self.check_return_type = check_return_type
+        self.spec_property_naming = spec_property_naming
 
         # Keep track of unstable operations
         self.unstable_operations = _UnstableOperations(
@@ -203,11 +234,6 @@ class Configuration:
                 "v2.get_incident": False,
                 "v2.list_incidents": False,
                 "v2.update_incident": False,
-                "v2.create_tag_configuration": False,
-                "v2.delete_tag_configuration": False,
-                "v2.list_tag_configuration_by_name": False,
-                "v2.list_tag_configurations": False,
-                "v2.update_tag_configuration": False,
                 "v2.list_security_monitoring_signals": False,
                 "v2.search_security_monitoring_signals": False,
                 "v2.create_incident_service": False,
