@@ -6,6 +6,9 @@
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    date,
+    datetime,
+    none_type,
 )
 
 
@@ -24,7 +27,21 @@ class SyntheticsAPITestResultData(ModelNormal):
             "http_status_code": (int,),
             "request_headers": ({str: (dict,)},),
             "response_body": (str,),
-            "response_headers": ({str: (dict,)},),
+            "response_headers": (
+                {
+                    str: (
+                        bool,
+                        date,
+                        datetime,
+                        dict,
+                        float,
+                        int,
+                        list,
+                        str,
+                        none_type,
+                    )
+                },
+            ),
             "response_size": (int,),
             "timings": (SyntheticsTiming,),
         }
@@ -64,7 +81,7 @@ class SyntheticsAPITestResultData(ModelNormal):
         :type response_body: str, optional
 
         :param response_headers: Response headers returned for the API test.
-        :type response_headers: {str: (dict,)}, optional
+        :type response_headers: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
 
         :param response_size: Global size in byte of the API test response.
         :type response_size: int, optional

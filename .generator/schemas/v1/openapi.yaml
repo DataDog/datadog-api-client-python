@@ -10196,7 +10196,6 @@ components:
         responseHeaders:
           additionalProperties:
             description: Returned request header.
-            type: object
           description: Response headers returned for the API test.
           type: object
         responseSize:
