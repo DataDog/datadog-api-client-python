@@ -4,11 +4,13 @@
 
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
+from datadog_api_client.v1.model.distribution_points_content_encoding import DistributionPointsContentEncoding
+from datadog_api_client.v1.model.distribution_points_payload import DistributionPointsPayload
 from datadog_api_client.v1.model.metrics_list_response import MetricsListResponse
 from datadog_api_client.v1.model.metric_metadata import MetricMetadata
 from datadog_api_client.v1.model.metrics_query_response import MetricsQueryResponse
 from datadog_api_client.v1.model.metric_search_response import MetricSearchResponse
-from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
 from datadog_api_client.v1.model.metric_content_encoding import MetricContentEncoding
 from datadog_api_client.v1.model.metrics_payload import MetricsPayload
 
@@ -158,6 +160,32 @@ class MetricsApi:
             api_client=api_client,
         )
 
+        self._submit_distribution_points_endpoint = _Endpoint(
+            settings={
+                "response_type": (IntakePayloadAccepted,),
+                "auth": ["apiKeyAuth"],
+                "endpoint_path": "/api/v1/distribution_points",
+                "operation_id": "submit_distribution_points",
+                "http_method": "POST",
+                "version": "v1",
+                "servers": None,
+            },
+            params_map={
+                "content_encoding": {
+                    "openapi_types": (DistributionPointsContentEncoding,),
+                    "attribute": "Content-Encoding",
+                    "location": "header",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (DistributionPointsPayload,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["text/json", "application/json"], "content_type": ["text/json"]},
+            api_client=api_client,
+        )
+
         self._submit_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (IntakePayloadAccepted,),
@@ -276,6 +304,20 @@ class MetricsApi:
         kwargs["query"] = query
 
         return self._query_metrics_endpoint.call_with_http_info(**kwargs)
+
+    def submit_distribution_points(self, body, **kwargs):
+        """Submit distribution points.
+
+        The distribution points end-point allows you to post distribution data that can be graphed on Datadog’s dashboards.
+
+        :type body: DistributionPointsPayload
+        :param content_encoding: HTTP header used to compress the media-type.
+        :type content_encoding: DistributionPointsContentEncoding, optional
+        :rtype: IntakePayloadAccepted
+        """
+        kwargs["body"] = body
+
+        return self._submit_distribution_points_endpoint.call_with_http_info(**kwargs)
 
     def submit_metrics(self, body, **kwargs):
         """Submit metrics.

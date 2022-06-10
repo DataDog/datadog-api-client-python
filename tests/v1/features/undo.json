@@ -183,6 +183,12 @@
       "type": "idempotent"
     }
   },
+  "SubmitDistributionPoints": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListDowntimes": {
     "tag": "Downtimes",
     "undo": {

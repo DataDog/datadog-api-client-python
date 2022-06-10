@@ -470,6 +470,41 @@ deleted\_monitor
    :members:
    :show-inheritance:
 
+distribution\_point
+-------------------
+
+.. automodule:: datadog_api_client.v1.model.distribution_point
+   :members:
+   :show-inheritance:
+
+distribution\_points\_content\_encoding
+---------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.distribution_points_content_encoding
+   :members:
+   :show-inheritance:
+
+distribution\_points\_payload
+-----------------------------
+
+.. automodule:: datadog_api_client.v1.model.distribution_points_payload
+   :members:
+   :show-inheritance:
+
+distribution\_points\_series
+----------------------------
+
+.. automodule:: datadog_api_client.v1.model.distribution_points_series
+   :members:
+   :show-inheritance:
+
+distribution\_points\_type
+--------------------------
+
+.. automodule:: datadog_api_client.v1.model.distribution_points_type
+   :members:
+   :show-inheritance:
+
 distribution\_widget\_definition
 --------------------------------
 

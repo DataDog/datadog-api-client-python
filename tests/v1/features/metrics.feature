@@ -108,6 +108,14 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
+  @integration-only @skip-terraform-config @skip-validation @team:DataDog/metrics-aggregation
+  Scenario: Submit deflate distribution points returns "Payload accepted" response
+    Given new "SubmitDistributionPoints" request
+    And body with value {"series": [{"metric": "system.load.1.dist", "points": [[{{ timestamp("now") }}, [1.0, 2.0]]]}]}
+    And request contains "Content-Encoding" parameter with value "deflate"
+    When the request is sent
+    Then the response status is 202 Payload accepted
+
   @integration-only @skip-terraform-config @skip-validation @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Submit deflate metrics returns "Payload accepted" response
     Given new "SubmitMetrics" request
@@ -115,6 +123,34 @@ Feature: Metrics
     And request contains "Content-Encoding" parameter with value "deflate"
     When the request is sent
     Then the response status is 202 Payload accepted
+
+  @integration-only @skip-terraform-config @skip-validation @team:DataDog/metrics-aggregation
+  Scenario: Submit distribution points returns "Bad Request" response
+    Given new "SubmitDistributionPoints" request
+    And body with value {"series": [{"metric": "system.load.1.dist", "points": [[1475317847.0, 1.0]]}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @integration-only @skip-terraform-config @skip-validation @team:DataDog/metrics-aggregation
+  Scenario: Submit distribution points returns "Payload accepted" response
+    Given new "SubmitDistributionPoints" request
+    And body with value {"series": [{"metric": "system.load.1.dist", "points": [[{{ timestamp("now") }}, [1.0, 2.0]]]}]}
+    When the request is sent
+    Then the response status is 202 Payload accepted
+
+  @generated @skip @team:DataDog/metrics-aggregation
+  Scenario: Submit distribution points returns "Payload too large" response
+    Given new "SubmitDistributionPoints" request
+    And body with value {"series": [{"metric": "system.load.1", "points": [[1475317847.0, [1.0, 2.0]]]}]}
+    When the request is sent
+    Then the response status is 413 Payload too large
+
+  @generated @skip @team:DataDog/metrics-aggregation
+  Scenario: Submit distribution points returns "Request timeout" response
+    Given new "SubmitDistributionPoints" request
+    And body with value {"series": [{"metric": "system.load.1", "points": [[1475317847.0, [1.0, 2.0]]]}]}
+    When the request is sent
+    Then the response status is 408 Request timeout
 
   @skip @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Submit metrics returns "Bad Request" response
