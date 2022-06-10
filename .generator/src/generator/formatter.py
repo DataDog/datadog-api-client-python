@@ -201,6 +201,8 @@ def format_data_with_schema(
                     result = result[len("datetime.") :]
                 if "tzutc" in result:
                     imports["dateutil.tz"].add("tzutc")
+                if "tzoffset" in result:
+                    imports["dateutil.tz"].add("tzoffset")
                 return result
 
             formatter = {
