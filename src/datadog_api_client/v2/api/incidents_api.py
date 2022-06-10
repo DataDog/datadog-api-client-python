@@ -1,12 +1,16 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
     set_attribute_from_path,
     get_attribute_from_path,
+    UnsetType,
+    unset,
 )
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
 from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
@@ -170,7 +174,10 @@ class IncidentsApi:
             api_client=api_client,
         )
 
-    def create_incident(self, body, **kwargs):
+    def create_incident(
+        self,
+        body: IncidentCreateRequest,
+    ) -> IncidentResponse:
         """Create an incident.
 
         Create an incident.
@@ -179,11 +186,15 @@ class IncidentsApi:
         :type body: IncidentCreateRequest
         :rtype: IncidentResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_incident_endpoint.call_with_http_info(**kwargs)
 
-    def delete_incident(self, incident_id, **kwargs):
+    def delete_incident(
+        self,
+        incident_id: str,
+    ) -> None:
         """Delete an existing incident.
 
         Deletes an existing incident from the users organization.
@@ -192,11 +203,17 @@ class IncidentsApi:
         :type incident_id: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["incident_id"] = incident_id
 
         return self._delete_incident_endpoint.call_with_http_info(**kwargs)
 
-    def get_incident(self, incident_id, **kwargs):
+    def get_incident(
+        self,
+        incident_id: str,
+        *,
+        include: Union[List[IncidentRelatedObject], UnsetType] = unset,
+    ) -> IncidentResponse:
         """Get the details of an incident.
 
         Get the details of an incident by ``incident_id``.
@@ -207,11 +224,21 @@ class IncidentsApi:
         :type include: [IncidentRelatedObject], optional
         :rtype: IncidentResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["incident_id"] = incident_id
+
+        if include is not unset:
+            kwargs["include"] = include
 
         return self._get_incident_endpoint.call_with_http_info(**kwargs)
 
-    def list_incidents(self, **kwargs):
+    def list_incidents(
+        self,
+        *,
+        include: Union[List[IncidentRelatedObject], UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+    ) -> IncidentsResponse:
         """Get a list of incidents.
 
         Get all incidents for the user's organization.
@@ -224,6 +251,16 @@ class IncidentsApi:
         :type page_offset: int, optional
         :rtype: IncidentsResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
         return self._list_incidents_endpoint.call_with_http_info(**kwargs)
 
     def list_incidents_with_pagination(self, **kwargs):
@@ -257,7 +294,13 @@ class IncidentsApi:
                 endpoint.params_map,
             )
 
-    def update_incident(self, incident_id, body, **kwargs):
+    def update_incident(
+        self,
+        incident_id: str,
+        body: IncidentUpdateRequest,
+        *,
+        include: Union[List[IncidentRelatedObject], UnsetType] = unset,
+    ) -> IncidentResponse:
         """Update an existing incident.
 
         Updates an incident. Provide only the attributes that should be updated as this request is a partial update.
@@ -270,7 +313,11 @@ class IncidentsApi:
         :type include: [IncidentRelatedObject], optional
         :rtype: IncidentResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["incident_id"] = incident_id
+
+        if include is not unset:
+            kwargs["include"] = include
 
         kwargs["body"] = body
 

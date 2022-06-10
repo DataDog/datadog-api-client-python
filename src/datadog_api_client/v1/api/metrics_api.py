@@ -1,12 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+<<<<<<< HEAD
 from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
 from datadog_api_client.v1.model.distribution_points_content_encoding import DistributionPointsContentEncoding
 from datadog_api_client.v1.model.distribution_points_payload import DistributionPointsPayload
+||||||| parent of 507957976 (Add typing information)
+=======
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
+>>>>>>> 507957976 (Add typing information)
 from datadog_api_client.v1.model.metrics_list_response import MetricsListResponse
 from datadog_api_client.v1.model.metric_metadata import MetricMetadata
 from datadog_api_client.v1.model.metrics_query_response import MetricsQueryResponse
@@ -239,7 +249,10 @@ class MetricsApi:
             api_client=api_client,
         )
 
-    def get_metric_metadata(self, metric_name, **kwargs):
+    def get_metric_metadata(
+        self,
+        metric_name: str,
+    ) -> MetricMetadata:
         """Get metric metadata.
 
         Get metadata about a specific metric.
@@ -248,11 +261,18 @@ class MetricsApi:
         :type metric_name: str
         :rtype: MetricMetadata
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["metric_name"] = metric_name
 
         return self._get_metric_metadata_endpoint.call_with_http_info(**kwargs)
 
-    def list_active_metrics(self, _from, **kwargs):
+    def list_active_metrics(
+        self,
+        _from: int,
+        *,
+        host: Union[str, UnsetType] = unset,
+        tag_filter: Union[str, UnsetType] = unset,
+    ) -> MetricsListResponse:
         """Get active metrics list.
 
         Get the list of actively reporting metrics from a given time until now.
@@ -267,11 +287,21 @@ class MetricsApi:
         :type tag_filter: str, optional
         :rtype: MetricsListResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["_from"] = _from
+
+        if host is not unset:
+            kwargs["host"] = host
+
+        if tag_filter is not unset:
+            kwargs["tag_filter"] = tag_filter
 
         return self._list_active_metrics_endpoint.call_with_http_info(**kwargs)
 
-    def list_metrics(self, q, **kwargs):
+    def list_metrics(
+        self,
+        q: str,
+    ) -> MetricSearchResponse:
         """Search metrics.
 
         Search for metrics from the last 24 hours in Datadog.
@@ -280,11 +310,17 @@ class MetricsApi:
         :type q: str
         :rtype: MetricSearchResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["q"] = q
 
         return self._list_metrics_endpoint.call_with_http_info(**kwargs)
 
-    def query_metrics(self, _from, to, query, **kwargs):
+    def query_metrics(
+        self,
+        _from: int,
+        to: int,
+        query: str,
+    ) -> MetricsQueryResponse:
         """Query timeseries points.
 
         Query timeseries points.
@@ -297,6 +333,7 @@ class MetricsApi:
         :type query: str
         :rtype: MetricsQueryResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["_from"] = _from
 
         kwargs["to"] = to
@@ -305,6 +342,7 @@ class MetricsApi:
 
         return self._query_metrics_endpoint.call_with_http_info(**kwargs)
 
+<<<<<<< HEAD
     def submit_distribution_points(self, body, **kwargs):
         """Submit distribution points.
 
@@ -320,6 +358,16 @@ class MetricsApi:
         return self._submit_distribution_points_endpoint.call_with_http_info(**kwargs)
 
     def submit_metrics(self, body, **kwargs):
+||||||| parent of 507957976 (Add typing information)
+    def submit_metrics(self, body, **kwargs):
+=======
+    def submit_metrics(
+        self,
+        body: MetricsPayload,
+        *,
+        content_encoding: Union[MetricContentEncoding, UnsetType] = unset,
+    ) -> IntakePayloadAccepted:
+>>>>>>> 507957976 (Add typing information)
         """Submit metrics.
 
         The metrics end-point allows you to post time-series data that can be graphed on Datadog’s dashboards.
@@ -340,11 +388,19 @@ class MetricsApi:
         :type content_encoding: MetricContentEncoding, optional
         :rtype: IntakePayloadAccepted
         """
+        kwargs: Dict[str, Any] = {}
+        if content_encoding is not unset:
+            kwargs["content_encoding"] = content_encoding
+
         kwargs["body"] = body
 
         return self._submit_metrics_endpoint.call_with_http_info(**kwargs)
 
-    def update_metric_metadata(self, metric_name, body, **kwargs):
+    def update_metric_metadata(
+        self,
+        metric_name: str,
+        body: MetricMetadata,
+    ) -> MetricMetadata:
         """Edit metric metadata.
 
         Edit metadata of a specific metric. Find out more about `supported types <https://docs.datadoghq.com/developers/metrics>`_.
@@ -355,6 +411,7 @@ class MetricsApi:
         :type body: MetricMetadata
         :rtype: MetricMetadata
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["metric_name"] = metric_name
 
         kwargs["body"] = body

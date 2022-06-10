@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v1.model.event_list_response import EventListResponse
 from datadog_api_client.v1.model.event_priority import EventPriority
 from datadog_api_client.v1.model.event_create_response import EventCreateResponse
@@ -133,7 +139,10 @@ class EventsApi:
             api_client=api_client,
         )
 
-    def create_event(self, body, **kwargs):
+    def create_event(
+        self,
+        body: EventCreateRequest,
+    ) -> EventCreateResponse:
         """Post an event.
 
         This endpoint allows you to post events to the stream.
@@ -143,11 +152,15 @@ class EventsApi:
         :type body: EventCreateRequest
         :rtype: EventCreateResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_event_endpoint.call_with_http_info(**kwargs)
 
-    def get_event(self, event_id, **kwargs):
+    def get_event(
+        self,
+        event_id: int,
+    ) -> EventResponse:
         """Get an event.
 
         This endpoint allows you to query for event details.
@@ -159,11 +172,23 @@ class EventsApi:
         :type event_id: int
         :rtype: EventResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["event_id"] = event_id
 
         return self._get_event_endpoint.call_with_http_info(**kwargs)
 
-    def list_events(self, start, end, **kwargs):
+    def list_events(
+        self,
+        start: int,
+        end: int,
+        *,
+        priority: Union[EventPriority, UnsetType] = unset,
+        sources: Union[str, UnsetType] = unset,
+        tags: Union[str, UnsetType] = unset,
+        unaggregated: Union[bool, UnsetType] = unset,
+        exclude_aggregate: Union[bool, UnsetType] = unset,
+        page: Union[int, UnsetType] = unset,
+    ) -> EventListResponse:
         """Query the event stream.
 
         The event stream can be queried and filtered by time, priority, sources and tags.
@@ -202,8 +227,27 @@ class EventsApi:
         :type page: int, optional
         :rtype: EventListResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start"] = start
 
         kwargs["end"] = end
+
+        if priority is not unset:
+            kwargs["priority"] = priority
+
+        if sources is not unset:
+            kwargs["sources"] = sources
+
+        if tags is not unset:
+            kwargs["tags"] = tags
+
+        if unaggregated is not unset:
+            kwargs["unaggregated"] = unaggregated
+
+        if exclude_aggregate is not unset:
+            kwargs["exclude_aggregate"] = exclude_aggregate
+
+        if page is not unset:
+            kwargs["page"] = page
 
         return self._list_events_endpoint.call_with_http_info(**kwargs)

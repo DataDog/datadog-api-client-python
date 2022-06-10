@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v1.model.tag_to_hosts import TagToHosts
 from datadog_api_client.v1.model.host_tags import HostTags
 
@@ -177,7 +183,13 @@ class TagsApi:
             api_client=api_client,
         )
 
-    def create_host_tags(self, host_name, body, **kwargs):
+    def create_host_tags(
+        self,
+        host_name: str,
+        body: HostTags,
+        *,
+        source: Union[str, UnsetType] = unset,
+    ) -> HostTags:
         """Add tags to a host.
 
         This endpoint allows you to add new tags to a host,
@@ -192,13 +204,22 @@ class TagsApi:
         :type source: str, optional
         :rtype: HostTags
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["host_name"] = host_name
+
+        if source is not unset:
+            kwargs["source"] = source
 
         kwargs["body"] = body
 
         return self._create_host_tags_endpoint.call_with_http_info(**kwargs)
 
-    def delete_host_tags(self, host_name, **kwargs):
+    def delete_host_tags(
+        self,
+        host_name: str,
+        *,
+        source: Union[str, UnsetType] = unset,
+    ) -> None:
         """Remove host tags.
 
         This endpoint allows you to remove all user-assigned tags
@@ -211,11 +232,20 @@ class TagsApi:
         :type source: str, optional
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["host_name"] = host_name
+
+        if source is not unset:
+            kwargs["source"] = source
 
         return self._delete_host_tags_endpoint.call_with_http_info(**kwargs)
 
-    def get_host_tags(self, host_name, **kwargs):
+    def get_host_tags(
+        self,
+        host_name: str,
+        *,
+        source: Union[str, UnsetType] = unset,
+    ) -> HostTags:
         """Get host tags.
 
         Return the list of tags that apply to a given host.
@@ -226,11 +256,19 @@ class TagsApi:
         :type source: str, optional
         :rtype: HostTags
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["host_name"] = host_name
+
+        if source is not unset:
+            kwargs["source"] = source
 
         return self._get_host_tags_endpoint.call_with_http_info(**kwargs)
 
-    def list_host_tags(self, **kwargs):
+    def list_host_tags(
+        self,
+        *,
+        source: Union[str, UnsetType] = unset,
+    ) -> TagToHosts:
         """Get Tags.
 
         Return a mapping of tags to hosts for your whole infrastructure.
@@ -239,9 +277,19 @@ class TagsApi:
         :type source: str, optional
         :rtype: TagToHosts
         """
+        kwargs: Dict[str, Any] = {}
+        if source is not unset:
+            kwargs["source"] = source
+
         return self._list_host_tags_endpoint.call_with_http_info(**kwargs)
 
-    def update_host_tags(self, host_name, body, **kwargs):
+    def update_host_tags(
+        self,
+        host_name: str,
+        body: HostTags,
+        *,
+        source: Union[str, UnsetType] = unset,
+    ) -> HostTags:
         """Update host tags.
 
         This endpoint allows you to update/replace all tags in
@@ -256,7 +304,11 @@ class TagsApi:
         :type source: str, optional
         :rtype: HostTags
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["host_name"] = host_name
+
+        if source is not unset:
+            kwargs["source"] = source
 
         kwargs["body"] = body
 

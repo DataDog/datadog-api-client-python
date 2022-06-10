@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.api_key_list_response import ApiKeyListResponse
@@ -257,7 +259,10 @@ class KeyManagementApi:
             api_client=api_client,
         )
 
-    def create_api_key(self, body, **kwargs):
+    def create_api_key(
+        self,
+        body: ApiKey,
+    ) -> ApiKeyResponse:
         """Create an API key.
 
         Creates an API key with a given name.
@@ -265,11 +270,15 @@ class KeyManagementApi:
         :type body: ApiKey
         :rtype: ApiKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_api_key_endpoint.call_with_http_info(**kwargs)
 
-    def create_application_key(self, body, **kwargs):
+    def create_application_key(
+        self,
+        body: ApplicationKey,
+    ) -> ApplicationKeyResponse:
         """Create an application key.
 
         Create an application key with a given name.
@@ -277,11 +286,15 @@ class KeyManagementApi:
         :type body: ApplicationKey
         :rtype: ApplicationKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_application_key_endpoint.call_with_http_info(**kwargs)
 
-    def delete_api_key(self, key, **kwargs):
+    def delete_api_key(
+        self,
+        key: str,
+    ) -> ApiKeyResponse:
         """Delete an API key.
 
         Delete a given API key.
@@ -290,11 +303,15 @@ class KeyManagementApi:
         :type key: str
         :rtype: ApiKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["key"] = key
 
         return self._delete_api_key_endpoint.call_with_http_info(**kwargs)
 
-    def delete_application_key(self, key, **kwargs):
+    def delete_application_key(
+        self,
+        key: str,
+    ) -> ApplicationKeyResponse:
         """Delete an application key.
 
         Delete a given application key.
@@ -303,11 +320,15 @@ class KeyManagementApi:
         :type key: str
         :rtype: ApplicationKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["key"] = key
 
         return self._delete_application_key_endpoint.call_with_http_info(**kwargs)
 
-    def get_api_key(self, key, **kwargs):
+    def get_api_key(
+        self,
+        key: str,
+    ) -> ApiKeyResponse:
         """Get API key.
 
         Get a given API key.
@@ -316,11 +337,15 @@ class KeyManagementApi:
         :type key: str
         :rtype: ApiKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["key"] = key
 
         return self._get_api_key_endpoint.call_with_http_info(**kwargs)
 
-    def get_application_key(self, key, **kwargs):
+    def get_application_key(
+        self,
+        key: str,
+    ) -> ApplicationKeyResponse:
         """Get an application key.
 
         Get a given application key.
@@ -329,29 +354,40 @@ class KeyManagementApi:
         :type key: str
         :rtype: ApplicationKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["key"] = key
 
         return self._get_application_key_endpoint.call_with_http_info(**kwargs)
 
-    def list_api_keys(self, **kwargs):
+    def list_api_keys(
+        self,
+    ) -> ApiKeyListResponse:
         """Get all API keys.
 
         Get all API keys available for your account.
 
         :rtype: ApiKeyListResponse
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_api_keys_endpoint.call_with_http_info(**kwargs)
 
-    def list_application_keys(self, **kwargs):
+    def list_application_keys(
+        self,
+    ) -> ApplicationKeyListResponse:
         """Get all application keys.
 
         Get all application keys available for your Datadog account.
 
         :rtype: ApplicationKeyListResponse
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_application_keys_endpoint.call_with_http_info(**kwargs)
 
-    def update_api_key(self, key, body, **kwargs):
+    def update_api_key(
+        self,
+        key: str,
+        body: ApiKey,
+    ) -> ApiKeyResponse:
         """Edit an API key.
 
         Edit an API key name.
@@ -361,13 +397,18 @@ class KeyManagementApi:
         :type body: ApiKey
         :rtype: ApiKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["key"] = key
 
         kwargs["body"] = body
 
         return self._update_api_key_endpoint.call_with_http_info(**kwargs)
 
-    def update_application_key(self, key, body, **kwargs):
+    def update_application_key(
+        self,
+        key: str,
+        body: ApplicationKey,
+    ) -> ApplicationKeyResponse:
         """Edit an application key.
 
         Edit an application key name.
@@ -377,6 +418,7 @@ class KeyManagementApi:
         :type body: ApplicationKey
         :rtype: ApplicationKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["key"] = key
 
         kwargs["body"] = body

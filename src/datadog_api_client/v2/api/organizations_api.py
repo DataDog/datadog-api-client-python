@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
     file_type,
+    UnsetType,
+    unset,
 )
 
 
@@ -40,7 +44,11 @@ class OrganizationsApi:
             api_client=api_client,
         )
 
-    def upload_idp_metadata(self, **kwargs):
+    def upload_idp_metadata(
+        self,
+        *,
+        idp_file: Union[file_type, UnsetType] = unset,
+    ) -> None:
         """Upload IdP metadata.
 
         Endpoint for uploading IdP metadata for SAML setup.
@@ -51,4 +59,8 @@ class OrganizationsApi:
         :type idp_file: file_type, optional
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
+        if idp_file is not unset:
+            kwargs["idp_file"] = idp_file
+
         return self._upload_idp_metadata_endpoint.call_with_http_info(**kwargs)

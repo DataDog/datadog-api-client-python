@@ -1,13 +1,17 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
     datetime,
     set_attribute_from_path,
     get_attribute_from_path,
+    UnsetType,
+    unset,
 )
 from datadog_api_client.v2.model.rum_analytics_aggregate_response import RUMAnalyticsAggregateResponse
 from datadog_api_client.v2.model.rum_aggregate_request import RUMAggregateRequest
@@ -120,7 +124,10 @@ class RUMApi:
             api_client=api_client,
         )
 
-    def aggregate_rum_events(self, body, **kwargs):
+    def aggregate_rum_events(
+        self,
+        body: RUMAggregateRequest,
+    ) -> RUMAnalyticsAggregateResponse:
         """Aggregate RUM events.
 
         The API endpoint to aggregate RUM events into buckets of computed metrics and timeseries.
@@ -128,11 +135,21 @@ class RUMApi:
         :type body: RUMAggregateRequest
         :rtype: RUMAnalyticsAggregateResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._aggregate_rum_events_endpoint.call_with_http_info(**kwargs)
 
-    def list_rum_events(self, **kwargs):
+    def list_rum_events(
+        self,
+        *,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_from: Union[datetime, UnsetType] = unset,
+        filter_to: Union[datetime, UnsetType] = unset,
+        sort: Union[RUMSort, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> RUMEventsResponse:
         """Get a list of RUM events.
 
         List endpoint returns events that match a RUM search query.
@@ -154,6 +171,25 @@ class RUMApi:
         :type page_limit: int, optional
         :rtype: RUMEventsResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
         return self._list_rum_events_endpoint.call_with_http_info(**kwargs)
 
     def list_rum_events_with_pagination(self, **kwargs):
@@ -190,7 +226,10 @@ class RUMApi:
                 kwargs, "page_cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
             )
 
-    def search_rum_events(self, body, **kwargs):
+    def search_rum_events(
+        self,
+        body: RUMSearchEventsRequest,
+    ) -> RUMEventsResponse:
         """Search RUM events.
 
         List endpoint returns RUM events that match a RUM search query.
@@ -201,6 +240,7 @@ class RUMApi:
         :type body: RUMSearchEventsRequest
         :rtype: RUMEventsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._search_rum_events_endpoint.call_with_http_info(**kwargs)

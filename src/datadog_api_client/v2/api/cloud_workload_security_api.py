@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
@@ -165,7 +167,10 @@ class CloudWorkloadSecurityApi:
             api_client=api_client,
         )
 
-    def create_cloud_workload_security_agent_rule(self, body, **kwargs):
+    def create_cloud_workload_security_agent_rule(
+        self,
+        body: CloudWorkloadSecurityAgentRuleCreateRequest,
+    ) -> CloudWorkloadSecurityAgentRuleResponse:
         """Create a Cloud Workload Security Agent rule.
 
         Create a new Agent rule with the given parameters.
@@ -174,11 +179,15 @@ class CloudWorkloadSecurityApi:
         :type body: CloudWorkloadSecurityAgentRuleCreateRequest
         :rtype: CloudWorkloadSecurityAgentRuleResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_cloud_workload_security_agent_rule_endpoint.call_with_http_info(**kwargs)
 
-    def delete_cloud_workload_security_agent_rule(self, agent_rule_id, **kwargs):
+    def delete_cloud_workload_security_agent_rule(
+        self,
+        agent_rule_id: str,
+    ) -> None:
         """Delete a Cloud Workload Security Agent rule.
 
         Delete a specific Agent rule.
@@ -187,11 +196,14 @@ class CloudWorkloadSecurityApi:
         :type agent_rule_id: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["agent_rule_id"] = agent_rule_id
 
         return self._delete_cloud_workload_security_agent_rule_endpoint.call_with_http_info(**kwargs)
 
-    def download_cloud_workload_policy_file(self, **kwargs):
+    def download_cloud_workload_policy_file(
+        self,
+    ) -> file_type:
         """Get the latest Cloud Workload Security policy.
 
         The download endpoint generates a Cloud Workload Security policy file from your currently active
@@ -200,9 +212,13 @@ class CloudWorkloadSecurityApi:
 
         :rtype: file_type
         """
+        kwargs: Dict[str, Any] = {}
         return self._download_cloud_workload_policy_file_endpoint.call_with_http_info(**kwargs)
 
-    def get_cloud_workload_security_agent_rule(self, agent_rule_id, **kwargs):
+    def get_cloud_workload_security_agent_rule(
+        self,
+        agent_rule_id: str,
+    ) -> CloudWorkloadSecurityAgentRuleResponse:
         """Get a Cloud Workload Security Agent rule.
 
         Get the details of a specific Agent rule.
@@ -211,20 +227,28 @@ class CloudWorkloadSecurityApi:
         :type agent_rule_id: str
         :rtype: CloudWorkloadSecurityAgentRuleResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["agent_rule_id"] = agent_rule_id
 
         return self._get_cloud_workload_security_agent_rule_endpoint.call_with_http_info(**kwargs)
 
-    def list_cloud_workload_security_agent_rules(self, **kwargs):
+    def list_cloud_workload_security_agent_rules(
+        self,
+    ) -> CloudWorkloadSecurityAgentRulesListResponse:
         """Get all Cloud Workload Security Agent rules.
 
         Get the list of Agent rules.
 
         :rtype: CloudWorkloadSecurityAgentRulesListResponse
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_cloud_workload_security_agent_rules_endpoint.call_with_http_info(**kwargs)
 
-    def update_cloud_workload_security_agent_rule(self, agent_rule_id, body, **kwargs):
+    def update_cloud_workload_security_agent_rule(
+        self,
+        agent_rule_id: str,
+        body: CloudWorkloadSecurityAgentRuleUpdateRequest,
+    ) -> CloudWorkloadSecurityAgentRuleResponse:
         """Update a Cloud Workload Security Agent rule.
 
         Update a specific Agent rule.
@@ -236,6 +260,7 @@ class CloudWorkloadSecurityApi:
         :type body: CloudWorkloadSecurityAgentRuleUpdateRequest
         :rtype: CloudWorkloadSecurityAgentRuleResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["agent_rule_id"] = agent_rule_id
 
         kwargs["body"] = body

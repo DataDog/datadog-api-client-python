@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, List
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccountAndLambdaRequest
@@ -163,7 +165,10 @@ class AWSLogsIntegrationApi:
             api_client=api_client,
         )
 
-    def check_aws_logs_lambda_async(self, body, **kwargs):
+    def check_aws_logs_lambda_async(
+        self,
+        body: AWSAccountAndLambdaRequest,
+    ) -> AWSLogsAsyncResponse:
         """Check that an AWS Lambda Function exists.
 
         Test if permissions are present to add a log-forwarding triggers for the given services and AWS account. The input
@@ -180,11 +185,15 @@ class AWSLogsIntegrationApi:
         :type body: AWSAccountAndLambdaRequest
         :rtype: AWSLogsAsyncResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._check_aws_logs_lambda_async_endpoint.call_with_http_info(**kwargs)
 
-    def check_aws_logs_services_async(self, body, **kwargs):
+    def check_aws_logs_services_async(
+        self,
+        body: AWSLogsServicesRequest,
+    ) -> AWSLogsAsyncResponse:
         """Check permissions for log services.
 
         Test if permissions are present to add log-forwarding triggers for the
@@ -203,11 +212,15 @@ class AWSLogsIntegrationApi:
         :type body: AWSLogsServicesRequest
         :rtype: AWSLogsAsyncResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._check_aws_logs_services_async_endpoint.call_with_http_info(**kwargs)
 
-    def create_aws_lambda_arn(self, body, **kwargs):
+    def create_aws_lambda_arn(
+        self,
+        body: AWSAccountAndLambdaRequest,
+    ) -> dict:
         """Add AWS Log Lambda ARN.
 
         Attach the Lambda ARN of the Lambda created for the Datadog-AWS log collection to your AWS account ID to enable log collection.
@@ -216,11 +229,15 @@ class AWSLogsIntegrationApi:
         :type body: AWSAccountAndLambdaRequest
         :rtype: dict
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_aws_lambda_arn_endpoint.call_with_http_info(**kwargs)
 
-    def delete_aws_lambda_arn(self, body, **kwargs):
+    def delete_aws_lambda_arn(
+        self,
+        body: AWSAccountAndLambdaRequest,
+    ) -> dict:
         """Delete an AWS Logs integration.
 
         Delete a Datadog-AWS logs configuration by removing the specific Lambda ARN associated with a given AWS account.
@@ -229,11 +246,15 @@ class AWSLogsIntegrationApi:
         :type body: AWSAccountAndLambdaRequest
         :rtype: dict
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._delete_aws_lambda_arn_endpoint.call_with_http_info(**kwargs)
 
-    def enable_aws_log_services(self, body, **kwargs):
+    def enable_aws_log_services(
+        self,
+        body: AWSLogsServicesRequest,
+    ) -> dict:
         """Enable an AWS Logs integration.
 
         Enable automatic log collection for a list of services. This should be run after running ``CreateAWSLambdaARN`` to save the configuration.
@@ -242,24 +263,31 @@ class AWSLogsIntegrationApi:
         :type body: AWSLogsServicesRequest
         :rtype: dict
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._enable_aws_log_services_endpoint.call_with_http_info(**kwargs)
 
-    def list_aws_logs_integrations(self, **kwargs):
+    def list_aws_logs_integrations(
+        self,
+    ) -> List[AWSLogsListResponse]:
         """List all AWS Logs integrations.
 
         List all Datadog-AWS Logs integrations configured in your Datadog account.
 
         :rtype: [AWSLogsListResponse]
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_aws_logs_integrations_endpoint.call_with_http_info(**kwargs)
 
-    def list_aws_logs_services(self, **kwargs):
+    def list_aws_logs_services(
+        self,
+    ) -> List[AWSLogsListServicesResponse]:
         """Get list of AWS log ready services.
 
         Get the list of current AWS services that Datadog offers automatic log collection. Use returned service IDs with the services parameter for the Enable an AWS service log collection API endpoint.
 
         :rtype: [AWSLogsListServicesResponse]
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_aws_logs_services_endpoint.call_with_http_info(**kwargs)

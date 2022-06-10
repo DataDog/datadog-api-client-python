@@ -1,13 +1,17 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
     datetime,
     set_attribute_from_path,
     get_attribute_from_path,
+    UnsetType,
+    unset,
 )
 from datadog_api_client.v2.model.audit_logs_events_response import AuditLogsEventsResponse
 from datadog_api_client.v2.model.audit_logs_sort import AuditLogsSort
@@ -96,7 +100,16 @@ class AuditApi:
             api_client=api_client,
         )
 
-    def list_audit_logs(self, **kwargs):
+    def list_audit_logs(
+        self,
+        *,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_from: Union[datetime, UnsetType] = unset,
+        filter_to: Union[datetime, UnsetType] = unset,
+        sort: Union[AuditLogsSort, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> AuditLogsEventsResponse:
         """Get a list of Audit Logs events.
 
         List endpoint returns events that match a Audit Logs search query.
@@ -118,6 +131,25 @@ class AuditApi:
         :type page_limit: int, optional
         :rtype: AuditLogsEventsResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
         return self._list_audit_logs_endpoint.call_with_http_info(**kwargs)
 
     def list_audit_logs_with_pagination(self, **kwargs):
@@ -154,7 +186,11 @@ class AuditApi:
                 kwargs, "page_cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
             )
 
-    def search_audit_logs(self, **kwargs):
+    def search_audit_logs(
+        self,
+        *,
+        body: Union[AuditLogsSearchEventsRequest, UnsetType] = unset,
+    ) -> AuditLogsEventsResponse:
         """Search Audit Logs events.
 
         List endpoint returns Audit Logs events that match an Audit search query.
@@ -165,6 +201,10 @@ class AuditApi:
         :type body: AuditLogsSearchEventsRequest, optional
         :rtype: AuditLogsEventsResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if body is not unset:
+            kwargs["body"] = body
+
         return self._search_audit_logs_endpoint.call_with_http_info(**kwargs)
 
     def search_audit_logs_with_pagination(self, **kwargs):

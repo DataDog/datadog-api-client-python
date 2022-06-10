@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.user_list_response import UserListResponse
@@ -136,7 +138,10 @@ class UsersApi:
             api_client=api_client,
         )
 
-    def create_user(self, body, **kwargs):
+    def create_user(
+        self,
+        body: User,
+    ) -> UserResponse:
         """Create a user.
 
         Create a user for your organization.
@@ -148,11 +153,15 @@ class UsersApi:
         :type body: User
         :rtype: UserResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_user_endpoint.call_with_http_info(**kwargs)
 
-    def disable_user(self, user_handle, **kwargs):
+    def disable_user(
+        self,
+        user_handle: str,
+    ) -> UserDisableResponse:
         """Disable a user.
 
         Delete a user from an organization.
@@ -164,11 +173,15 @@ class UsersApi:
         :type user_handle: str
         :rtype: UserDisableResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["user_handle"] = user_handle
 
         return self._disable_user_endpoint.call_with_http_info(**kwargs)
 
-    def get_user(self, user_handle, **kwargs):
+    def get_user(
+        self,
+        user_handle: str,
+    ) -> UserResponse:
         """Get user details.
 
         Get a user's details.
@@ -177,20 +190,28 @@ class UsersApi:
         :type user_handle: str
         :rtype: UserResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["user_handle"] = user_handle
 
         return self._get_user_endpoint.call_with_http_info(**kwargs)
 
-    def list_users(self, **kwargs):
+    def list_users(
+        self,
+    ) -> UserListResponse:
         """List all users.
 
         List all users for your organization.
 
         :rtype: UserListResponse
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_users_endpoint.call_with_http_info(**kwargs)
 
-    def update_user(self, user_handle, body, **kwargs):
+    def update_user(
+        self,
+        user_handle: str,
+        body: User,
+    ) -> UserResponse:
         """Update a user.
 
         Update a user information.
@@ -203,6 +224,7 @@ class UsersApi:
         :type body: User
         :rtype: UserResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["user_handle"] = user_handle
 
         kwargs["body"] = body

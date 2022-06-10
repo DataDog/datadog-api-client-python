@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v1.model.notebooks_response import NotebooksResponse
 from datadog_api_client.v1.model.notebook_response import NotebookResponse
 from datadog_api_client.v1.model.notebook_create_request import NotebookCreateRequest
@@ -189,7 +195,10 @@ class NotebooksApi:
             api_client=api_client,
         )
 
-    def create_notebook(self, body, **kwargs):
+    def create_notebook(
+        self,
+        body: NotebookCreateRequest,
+    ) -> NotebookResponse:
         """Create a notebook.
 
         Create a notebook using the specified options.
@@ -198,11 +207,15 @@ class NotebooksApi:
         :type body: NotebookCreateRequest
         :rtype: NotebookResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_notebook_endpoint.call_with_http_info(**kwargs)
 
-    def delete_notebook(self, notebook_id, **kwargs):
+    def delete_notebook(
+        self,
+        notebook_id: int,
+    ) -> None:
         """Delete a notebook.
 
         Delete a notebook using the specified ID.
@@ -211,11 +224,15 @@ class NotebooksApi:
         :type notebook_id: int
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["notebook_id"] = notebook_id
 
         return self._delete_notebook_endpoint.call_with_http_info(**kwargs)
 
-    def get_notebook(self, notebook_id, **kwargs):
+    def get_notebook(
+        self,
+        notebook_id: int,
+    ) -> NotebookResponse:
         """Get a notebook.
 
         Get a notebook using the specified notebook ID.
@@ -224,11 +241,25 @@ class NotebooksApi:
         :type notebook_id: int
         :rtype: NotebookResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["notebook_id"] = notebook_id
 
         return self._get_notebook_endpoint.call_with_http_info(**kwargs)
 
-    def list_notebooks(self, **kwargs):
+    def list_notebooks(
+        self,
+        *,
+        author_handle: Union[str, UnsetType] = unset,
+        exclude_author_handle: Union[str, UnsetType] = unset,
+        start: Union[int, UnsetType] = unset,
+        count: Union[int, UnsetType] = unset,
+        sort_field: Union[str, UnsetType] = unset,
+        sort_dir: Union[str, UnsetType] = unset,
+        query: Union[str, UnsetType] = unset,
+        include_cells: Union[bool, UnsetType] = unset,
+        is_template: Union[bool, UnsetType] = unset,
+        type: Union[str, UnsetType] = unset,
+    ) -> NotebooksResponse:
         """Get all notebooks.
 
         Get all notebooks. This can also be used to search for notebooks with a particular ``query`` in the notebook
@@ -256,9 +287,44 @@ class NotebooksApi:
         :type type: str, optional
         :rtype: NotebooksResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if author_handle is not unset:
+            kwargs["author_handle"] = author_handle
+
+        if exclude_author_handle is not unset:
+            kwargs["exclude_author_handle"] = exclude_author_handle
+
+        if start is not unset:
+            kwargs["start"] = start
+
+        if count is not unset:
+            kwargs["count"] = count
+
+        if sort_field is not unset:
+            kwargs["sort_field"] = sort_field
+
+        if sort_dir is not unset:
+            kwargs["sort_dir"] = sort_dir
+
+        if query is not unset:
+            kwargs["query"] = query
+
+        if include_cells is not unset:
+            kwargs["include_cells"] = include_cells
+
+        if is_template is not unset:
+            kwargs["is_template"] = is_template
+
+        if type is not unset:
+            kwargs["type"] = type
+
         return self._list_notebooks_endpoint.call_with_http_info(**kwargs)
 
-    def update_notebook(self, notebook_id, body, **kwargs):
+    def update_notebook(
+        self,
+        notebook_id: int,
+        body: NotebookUpdateRequest,
+    ) -> NotebookResponse:
         """Update a notebook.
 
         Update a notebook using the specified ID.
@@ -269,6 +335,7 @@ class NotebooksApi:
         :type body: NotebookUpdateRequest
         :rtype: NotebookResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["notebook_id"] = notebook_id
 
         kwargs["body"] = body

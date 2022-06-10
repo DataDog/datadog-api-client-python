@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v1.model.slo_list_response import SLOListResponse
 from datadog_api_client.v1.model.service_level_objective_request import ServiceLevelObjectiveRequest
 from datadog_api_client.v1.model.slo_bulk_delete_response import SLOBulkDeleteResponse
@@ -391,7 +397,10 @@ class ServiceLevelObjectivesApi:
             api_client=api_client,
         )
 
-    def check_can_delete_slo(self, ids, **kwargs):
+    def check_can_delete_slo(
+        self,
+        ids: str,
+    ) -> CheckCanDeleteSLOResponse:
         """Check if SLOs can be safely deleted.
 
         Check if an SLO can be safely deleted. For example,
@@ -401,11 +410,15 @@ class ServiceLevelObjectivesApi:
         :type ids: str
         :rtype: CheckCanDeleteSLOResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["ids"] = ids
 
         return self._check_can_delete_slo_endpoint.call_with_http_info(**kwargs)
 
-    def create_slo(self, body, **kwargs):
+    def create_slo(
+        self,
+        body: ServiceLevelObjectiveRequest,
+    ) -> SLOListResponse:
         """Create an SLO object.
 
         Create a service level objective object.
@@ -414,11 +427,17 @@ class ServiceLevelObjectivesApi:
         :type body: ServiceLevelObjectiveRequest
         :rtype: SLOListResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_slo_endpoint.call_with_http_info(**kwargs)
 
-    def delete_slo(self, slo_id, **kwargs):
+    def delete_slo(
+        self,
+        slo_id: str,
+        *,
+        force: Union[str, UnsetType] = unset,
+    ) -> SLODeleteResponse:
         """Delete an SLO.
 
         Permanently delete the specified service level objective object.
@@ -432,11 +451,18 @@ class ServiceLevelObjectivesApi:
         :type force: str, optional
         :rtype: SLODeleteResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["slo_id"] = slo_id
+
+        if force is not unset:
+            kwargs["force"] = force
 
         return self._delete_slo_endpoint.call_with_http_info(**kwargs)
 
-    def delete_slo_timeframe_in_bulk(self, body, **kwargs):
+    def delete_slo_timeframe_in_bulk(
+        self,
+        body: SLOBulkDelete,
+    ) -> SLOBulkDeleteResponse:
         """Bulk Delete SLO Timeframes.
 
         Delete (or partially delete) multiple service level objective objects.
@@ -449,11 +475,17 @@ class ServiceLevelObjectivesApi:
         :type body: SLOBulkDelete
         :rtype: SLOBulkDeleteResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._delete_slo_timeframe_in_bulk_endpoint.call_with_http_info(**kwargs)
 
-    def get_slo(self, slo_id, **kwargs):
+    def get_slo(
+        self,
+        slo_id: str,
+        *,
+        with_configured_alert_ids: Union[bool, UnsetType] = unset,
+    ) -> SLOResponse:
         """Get an SLO's details.
 
         Get a service level objective object.
@@ -464,11 +496,18 @@ class ServiceLevelObjectivesApi:
         :type with_configured_alert_ids: bool, optional
         :rtype: SLOResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["slo_id"] = slo_id
+
+        if with_configured_alert_ids is not unset:
+            kwargs["with_configured_alert_ids"] = with_configured_alert_ids
 
         return self._get_slo_endpoint.call_with_http_info(**kwargs)
 
-    def get_slo_corrections(self, slo_id, **kwargs):
+    def get_slo_corrections(
+        self,
+        slo_id: str,
+    ) -> SLOCorrectionListResponse:
         """Get Corrections For an SLO.
 
         Get corrections applied to an SLO
@@ -477,11 +516,20 @@ class ServiceLevelObjectivesApi:
         :type slo_id: str
         :rtype: SLOCorrectionListResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["slo_id"] = slo_id
 
         return self._get_slo_corrections_endpoint.call_with_http_info(**kwargs)
 
-    def get_slo_history(self, slo_id, from_ts, to_ts, **kwargs):
+    def get_slo_history(
+        self,
+        slo_id: str,
+        from_ts: int,
+        to_ts: int,
+        *,
+        target: Union[float, UnsetType] = unset,
+        apply_correction: Union[bool, UnsetType] = unset,
+    ) -> SLOHistoryResponse:
         """Get an SLO's history.
 
         Get a specific SLO’s history, regardless of its SLO type.
@@ -506,15 +554,31 @@ class ServiceLevelObjectivesApi:
         :type apply_correction: bool, optional
         :rtype: SLOHistoryResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["slo_id"] = slo_id
 
         kwargs["from_ts"] = from_ts
 
         kwargs["to_ts"] = to_ts
 
+        if target is not unset:
+            kwargs["target"] = target
+
+        if apply_correction is not unset:
+            kwargs["apply_correction"] = apply_correction
+
         return self._get_slo_history_endpoint.call_with_http_info(**kwargs)
 
-    def list_slos(self, **kwargs):
+    def list_slos(
+        self,
+        *,
+        ids: Union[str, UnsetType] = unset,
+        query: Union[str, UnsetType] = unset,
+        tags_query: Union[str, UnsetType] = unset,
+        metrics_query: Union[str, UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+        offset: Union[int, UnsetType] = unset,
+    ) -> SLOListResponse:
         """Get all SLOs.
 
         Get a list of service level objective objects for your organization.
@@ -533,8 +597,28 @@ class ServiceLevelObjectivesApi:
         :type offset: int, optional
         :rtype: SLOListResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if ids is not unset:
+            kwargs["ids"] = ids
+
+        if query is not unset:
+            kwargs["query"] = query
+
+        if tags_query is not unset:
+            kwargs["tags_query"] = tags_query
+
+        if metrics_query is not unset:
+            kwargs["metrics_query"] = metrics_query
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        if offset is not unset:
+            kwargs["offset"] = offset
+
         return self._list_slos_endpoint.call_with_http_info(**kwargs)
 
+<<<<<<< HEAD
     def search_slo(self, **kwargs):
         """Search for SLOs.
 
@@ -551,6 +635,15 @@ class ServiceLevelObjectivesApi:
         return self._search_slo_endpoint.call_with_http_info(**kwargs)
 
     def update_slo(self, slo_id, body, **kwargs):
+||||||| parent of 507957976 (Add typing information)
+    def update_slo(self, slo_id, body, **kwargs):
+=======
+    def update_slo(
+        self,
+        slo_id: str,
+        body: ServiceLevelObjective,
+    ) -> SLOListResponse:
+>>>>>>> 507957976 (Add typing information)
         """Update an SLO.
 
         Update the specified service level objective object.
@@ -561,6 +654,7 @@ class ServiceLevelObjectivesApi:
         :type body: ServiceLevelObjective
         :rtype: SLOListResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["slo_id"] = slo_id
 
         kwargs["body"] = body

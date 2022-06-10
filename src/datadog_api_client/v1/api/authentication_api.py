@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.authentication_validation_response import AuthenticationValidationResponse
@@ -43,11 +45,14 @@ class AuthenticationApi:
             api_client=api_client,
         )
 
-    def validate(self, **kwargs):
+    def validate(
+        self,
+    ) -> AuthenticationValidationResponse:
         """Validate API key.
 
         Check if the API key (not the APP key) is valid. If invalid, a 403 is returned.
 
         :rtype: AuthenticationValidationResponse
         """
+        kwargs: Dict[str, Any] = {}
         return self._validate_endpoint.call_with_http_info(**kwargs)

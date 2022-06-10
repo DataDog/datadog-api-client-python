@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.ip_ranges import IPRanges
@@ -78,11 +80,14 @@ class IPRangesApi:
             api_client=api_client,
         )
 
-    def get_ip_ranges(self, **kwargs):
+    def get_ip_ranges(
+        self,
+    ) -> IPRanges:
         """List IP Ranges.
 
         Get information about Datadog IP ranges.
 
         :rtype: IPRanges
         """
+        kwargs: Dict[str, Any] = {}
         return self._get_ip_ranges_endpoint.call_with_http_info(**kwargs)

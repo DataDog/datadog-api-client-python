@@ -1,13 +1,17 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
     datetime,
     set_attribute_from_path,
     get_attribute_from_path,
+    UnsetType,
+    unset,
 )
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
@@ -348,7 +352,10 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
-    def create_security_filter(self, body, **kwargs):
+    def create_security_filter(
+        self,
+        body: SecurityFilterCreateRequest,
+    ) -> SecurityFilterResponse:
         """Create a security filter.
 
         Create a security filter.
@@ -360,11 +367,15 @@ class SecurityMonitoringApi:
         :type body: SecurityFilterCreateRequest
         :rtype: SecurityFilterResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_security_filter_endpoint.call_with_http_info(**kwargs)
 
-    def create_security_monitoring_rule(self, body, **kwargs):
+    def create_security_monitoring_rule(
+        self,
+        body: SecurityMonitoringRuleCreatePayload,
+    ) -> SecurityMonitoringRuleResponse:
         """Create a detection rule.
 
         Create a detection rule.
@@ -372,11 +383,15 @@ class SecurityMonitoringApi:
         :type body: SecurityMonitoringRuleCreatePayload
         :rtype: SecurityMonitoringRuleResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
 
-    def delete_security_filter(self, security_filter_id, **kwargs):
+    def delete_security_filter(
+        self,
+        security_filter_id: str,
+    ) -> None:
         """Delete a security filter.
 
         Delete a specific security filter.
@@ -385,11 +400,15 @@ class SecurityMonitoringApi:
         :type security_filter_id: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["security_filter_id"] = security_filter_id
 
         return self._delete_security_filter_endpoint.call_with_http_info(**kwargs)
 
-    def delete_security_monitoring_rule(self, rule_id, **kwargs):
+    def delete_security_monitoring_rule(
+        self,
+        rule_id: str,
+    ) -> None:
         """Delete an existing rule.
 
         Delete an existing rule. Default rules cannot be deleted.
@@ -398,11 +417,15 @@ class SecurityMonitoringApi:
         :type rule_id: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["rule_id"] = rule_id
 
         return self._delete_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
 
-    def get_security_filter(self, security_filter_id, **kwargs):
+    def get_security_filter(
+        self,
+        security_filter_id: str,
+    ) -> SecurityFilterResponse:
         """Get a security filter.
 
         Get the details of a specific security filter.
@@ -414,11 +437,15 @@ class SecurityMonitoringApi:
         :type security_filter_id: str
         :rtype: SecurityFilterResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["security_filter_id"] = security_filter_id
 
         return self._get_security_filter_endpoint.call_with_http_info(**kwargs)
 
-    def get_security_monitoring_rule(self, rule_id, **kwargs):
+    def get_security_monitoring_rule(
+        self,
+        rule_id: str,
+    ) -> SecurityMonitoringRuleResponse:
         """Get a rule's details.
 
         Get a rule's details.
@@ -427,20 +454,29 @@ class SecurityMonitoringApi:
         :type rule_id: str
         :rtype: SecurityMonitoringRuleResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["rule_id"] = rule_id
 
         return self._get_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
 
-    def list_security_filters(self, **kwargs):
+    def list_security_filters(
+        self,
+    ) -> SecurityFiltersResponse:
         """Get all security filters.
 
         Get the list of configured security filters with their definitions.
 
         :rtype: SecurityFiltersResponse
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_security_filters_endpoint.call_with_http_info(**kwargs)
 
-    def list_security_monitoring_rules(self, **kwargs):
+    def list_security_monitoring_rules(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> SecurityMonitoringListRulesResponse:
         """List rules.
 
         List rules.
@@ -451,9 +487,25 @@ class SecurityMonitoringApi:
         :type page_number: int, optional
         :rtype: SecurityMonitoringListRulesResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
         return self._list_security_monitoring_rules_endpoint.call_with_http_info(**kwargs)
 
-    def list_security_monitoring_signals(self, **kwargs):
+    def list_security_monitoring_signals(
+        self,
+        *,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_from: Union[datetime, UnsetType] = unset,
+        filter_to: Union[datetime, UnsetType] = unset,
+        sort: Union[SecurityMonitoringSignalsSort, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> SecurityMonitoringSignalsListResponse:
         """Get a quick list of security signals.
 
         The list endpoint returns security signals that match a search query.
@@ -474,6 +526,25 @@ class SecurityMonitoringApi:
         :type page_limit: int, optional
         :rtype: SecurityMonitoringSignalsListResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
         return self._list_security_monitoring_signals_endpoint.call_with_http_info(**kwargs)
 
     def list_security_monitoring_signals_with_pagination(self, **kwargs):
@@ -510,7 +581,11 @@ class SecurityMonitoringApi:
                 kwargs, "page_cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
             )
 
-    def search_security_monitoring_signals(self, **kwargs):
+    def search_security_monitoring_signals(
+        self,
+        *,
+        body: Union[SecurityMonitoringSignalListRequest, UnsetType] = unset,
+    ) -> SecurityMonitoringSignalsListResponse:
         """Get a list of security signals.
 
         Returns security signals that match a search query.
@@ -520,6 +595,10 @@ class SecurityMonitoringApi:
         :type body: SecurityMonitoringSignalListRequest, optional
         :rtype: SecurityMonitoringSignalsListResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if body is not unset:
+            kwargs["body"] = body
+
         return self._search_security_monitoring_signals_endpoint.call_with_http_info(**kwargs)
 
     def search_security_monitoring_signals_with_pagination(self, **kwargs):
@@ -545,7 +624,11 @@ class SecurityMonitoringApi:
                 kwargs, "body.page.cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
             )
 
-    def update_security_filter(self, security_filter_id, body, **kwargs):
+    def update_security_filter(
+        self,
+        security_filter_id: str,
+        body: SecurityFilterUpdateRequest,
+    ) -> SecurityFilterResponse:
         """Update a security filter.
 
         Update a specific security filter.
@@ -557,13 +640,18 @@ class SecurityMonitoringApi:
         :type body: SecurityFilterUpdateRequest
         :rtype: SecurityFilterResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["security_filter_id"] = security_filter_id
 
         kwargs["body"] = body
 
         return self._update_security_filter_endpoint.call_with_http_info(**kwargs)
 
-    def update_security_monitoring_rule(self, rule_id, body, **kwargs):
+    def update_security_monitoring_rule(
+        self,
+        rule_id: str,
+        body: SecurityMonitoringRuleUpdatePayload,
+    ) -> SecurityMonitoringRuleResponse:
         """Update an existing rule.
 
         Update an existing rule. When updating ``cases`` , ``queries`` or ``options`` , the whole field
@@ -575,6 +663,7 @@ class SecurityMonitoringApi:
         :type body: SecurityMonitoringRuleUpdatePayload
         :rtype: SecurityMonitoringRuleResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["rule_id"] = rule_id
 
         kwargs["body"] = body
