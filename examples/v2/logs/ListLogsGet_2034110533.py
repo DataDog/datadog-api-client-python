@@ -5,6 +5,7 @@ Get a quick list of logs returns "OK" response
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.logs_api import LogsApi
 from datetime import datetime
+from dateutil.tz import tzoffset
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
