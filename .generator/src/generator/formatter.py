@@ -12,6 +12,7 @@ import m2r2
 
 
 MODEL_IMPORT_TPL = "datadog_api_client.{version}.model.{name}"
+PRIMITIVE_TYPES = ["string", "number", "boolean", "integer"]
 
 EDGE_CASES = {}
 replacement_file = (
@@ -237,6 +238,24 @@ def format_data_with_schema_list(
     """Format data with schema."""
     assert version is not None
     name, imports = get_name_and_imports(schema, version, imports)
+
+    if "oneOf" in schema:
+        for sub_schema in schema["oneOf"]:
+            try:
+                value, one_of_imports = format_data_with_schema(
+                    data,
+                    sub_schema,
+                    replace_values=replace_values,
+                    version=version,
+                )
+            except (KeyError, ValueError) as e:
+                continue
+            # Workaround to not generate schema for primitive nested oneOfs
+            if sub_schema.get("items", {}).get("type") in PRIMITIVE_TYPES:
+                return data, imports
+
+            return value, one_of_imports
+        raise ValueError(f"{data} is not valid oneOf {schema}")
 
     parameters = ""
     for d in data:
