@@ -191,6 +191,7 @@ def format_data_with_schema(
     else:
         if schema.get("nullable") and data is None:
             parameters = repr(data)
+            return parameters, imports
         else:
 
             def format_datetime(x):

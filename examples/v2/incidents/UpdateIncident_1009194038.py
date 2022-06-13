@@ -10,7 +10,6 @@ from datadog_api_client.v2.model.incident_update_data import IncidentUpdateData
 from datadog_api_client.v2.model.incident_update_relationships import IncidentUpdateRelationships
 from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRequest
 from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
-from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
 
 # there is a valid "incident" in the system
 INCIDENT_DATA_ID = environ["INCIDENT_DATA_ID"]
@@ -21,7 +20,7 @@ body = IncidentUpdateRequest(
         type=IncidentType("incidents"),
         relationships=IncidentUpdateRelationships(
             commander_user=NullableRelationshipToUser(
-                data=NullableRelationshipToUserData(None),
+                data=None,
             ),
         ),
     ),
