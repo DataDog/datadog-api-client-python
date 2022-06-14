@@ -234,8 +234,6 @@ class Configuration:
                 "v2.get_incident": False,
                 "v2.list_incidents": False,
                 "v2.update_incident": False,
-                "v2.list_security_monitoring_signals": False,
-                "v2.search_security_monitoring_signals": False,
                 "v2.create_incident_service": False,
                 "v2.delete_incident_service": False,
                 "v2.get_incident_service": False,

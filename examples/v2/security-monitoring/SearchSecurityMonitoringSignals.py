@@ -29,7 +29,6 @@ body = SecurityMonitoringSignalListRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["search_security_monitoring_signals"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.search_security_monitoring_signals(body=body)
