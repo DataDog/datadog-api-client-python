@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Update_a_single_service_object_returns_OK_response-1654804626","opsgenie_api_key":"00000000-0000-0000-0000-000000000000","region":"us"},"type":"opsgenie-service"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integration/opsgenie/services
+  response:
+    body:
+      string: '{"data":{"attributes":{"region":"us","name":"Test-Update_a_single_service_object_returns_OK_response-1654804626","custom_url":null},"type":"opsgenie-service","id":"0b04ddfb-b00a-4243-baed-33ff1bff0909"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Update_a_single_service_object_returns_OK_response-1654804626--updated","opsgenie_api_key":"00000000-0000-0000-0000-000000000000","region":"eu"},"id":"0b04ddfb-b00a-4243-baed-33ff1bff0909","type":"opsgenie-service"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/integration/opsgenie/services/0b04ddfb-b00a-4243-baed-33ff1bff0909
+  response:
+    body:
+      string: '{"data":{"attributes":{"region":"eu","name":"Test-Update_a_single_service_object_returns_OK_response-1654804626--updated","custom_url":null},"type":"opsgenie-service","id":"0b04ddfb-b00a-4243-baed-33ff1bff0909"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integration/opsgenie/services/0b04ddfb-b00a-4243-baed-33ff1bff0909
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
