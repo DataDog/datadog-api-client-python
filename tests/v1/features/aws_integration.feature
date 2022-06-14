@@ -139,7 +139,7 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 409 Conflict Error
 
-  @replay-only @team:DataDog/cloud-integrations
+  @replay-only @skip-typescript @team:DataDog/cloud-integrations
   Scenario: Update an AWS integration returns "OK" response
     Given new "UpdateAWSAccount" request
     And body with value {"account_id": "123456789012", "account_specific_namespace_rules": {"auto_scaling": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "resource_collection_enabled": true, "role_name": "datadog-role"}
