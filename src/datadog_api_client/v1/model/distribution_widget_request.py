@@ -15,6 +15,12 @@ class DistributionWidgetRequest(ModelNormal):
         from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
         from datadog_api_client.v1.model.apm_stats_query_definition import ApmStatsQueryDefinition
         from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
+        from datadog_api_client.v1.model.distribution_widget_histogram_request_query import (
+            DistributionWidgetHistogramRequestQuery,
+        )
+        from datadog_api_client.v1.model.distribution_widget_histogram_request_type import (
+            DistributionWidgetHistogramRequestType,
+        )
         from datadog_api_client.v1.model.widget_style import WidgetStyle
 
         return {
@@ -26,6 +32,8 @@ class DistributionWidgetRequest(ModelNormal):
             "process_query": (ProcessQueryDefinition,),
             "profile_metrics_query": (LogQueryDefinition,),
             "q": (str,),
+            "query": (DistributionWidgetHistogramRequestQuery,),
+            "request_type": (DistributionWidgetHistogramRequestType,),
             "rum_query": (LogQueryDefinition,),
             "security_query": (LogQueryDefinition,),
             "style": (WidgetStyle,),
@@ -40,6 +48,8 @@ class DistributionWidgetRequest(ModelNormal):
         "process_query": "process_query",
         "profile_metrics_query": "profile_metrics_query",
         "q": "q",
+        "query": "query",
+        "request_type": "request_type",
         "rum_query": "rum_query",
         "security_query": "security_query",
         "style": "style",
@@ -72,6 +82,12 @@ class DistributionWidgetRequest(ModelNormal):
 
         :param q: Widget query.
         :type q: str, optional
+
+        :param query: Query definition for Distribution Widget Histogram Request
+        :type query: DistributionWidgetHistogramRequestQuery, optional
+
+        :param request_type: Request type for the histogram request.
+        :type request_type: DistributionWidgetHistogramRequestType, optional
 
         :param rum_query: The log query.
         :type rum_query: LogQueryDefinition, optional

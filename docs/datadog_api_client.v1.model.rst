@@ -519,6 +519,20 @@ distribution\_widget\_definition\_type
    :members:
    :show-inheritance:
 
+distribution\_widget\_histogram\_request\_query
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.distribution_widget_histogram_request_query
+   :members:
+   :show-inheritance:
+
+distribution\_widget\_histogram\_request\_type
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.distribution_widget_histogram_request_type
+   :members:
+   :show-inheritance:
+
 distribution\_widget\_request
 -----------------------------
 
