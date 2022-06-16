@@ -108,7 +108,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @integration-only @skip-terraform-config @skip-validation @team:DataDog/metrics-aggregation
+  @skip-terraform-config @skip-validation @team:DataDog/metrics-aggregation
   Scenario: Submit deflate distribution points returns "Payload accepted" response
     Given new "SubmitDistributionPoints" request
     And body with value {"series": [{"metric": "system.load.1.dist", "points": [[{{ timestamp("now") }}, [1.0, 2.0]]]}]}
@@ -116,7 +116,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 202 Payload accepted
 
-  @integration-only @skip-terraform-config @skip-validation @team:DataDog/metrics-intake @team:DataDog/metrics-query
+  @skip-terraform-config @skip-validation @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Submit deflate metrics returns "Payload accepted" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "type": "gauge", "points": [[{{ timestamp("now") }}, 1.1]], "tags": ["test:{{ unique_alnum }}"]}]}
