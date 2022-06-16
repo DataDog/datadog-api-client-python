@@ -60,6 +60,16 @@ class SnapshotsApi:
                     "attribute": "title",
                     "location": "query",
                 },
+                "height": {
+                    "openapi_types": (int,),
+                    "attribute": "height",
+                    "location": "query",
+                },
+                "width": {
+                    "openapi_types": (int,),
+                    "attribute": "width",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -88,6 +98,10 @@ class SnapshotsApi:
         :type graph_def: str, optional
         :param title: A title for the graph. If no title is specified, the graph does not have a title.
         :type title: str, optional
+        :param height: The height of the graph. If no height is specified, the graph's original height is used.
+        :type height: int, optional
+        :param width: The width of the graph. If no width is specified, the graph's original width is used.
+        :type width: int, optional
         :rtype: GraphSnapshot
         """
         kwargs["start"] = start
