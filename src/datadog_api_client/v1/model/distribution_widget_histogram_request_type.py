@@ -4,27 +4,16 @@
 
 
 from datadog_api_client.model_utils import (
-    ApiTypeError,
     ModelSimple,
     cached_property,
 )
 
 
-class FormulaAndFunctionApmResourceStatName(ModelSimple):
+class DistributionWidgetHistogramRequestType(ModelSimple):
 
     allowed_values = {
         "value": {
-            "ERRORS": "errors",
-            "ERROR_RATE": "error_rate",
-            "HITS": "hits",
-            "LATENCY_AVG": "latency_avg",
-            "LATENCY_DISTRIBUTION": "latency_distribution",
-            "LATENCY_MAX": "latency_max",
-            "LATENCY_P50": "latency_p50",
-            "LATENCY_P75": "latency_p75",
-            "LATENCY_P90": "latency_p90",
-            "LATENCY_P95": "latency_p95",
-            "LATENCY_P99": "latency_p99",
+            "HISTOGRAM": "histogram",
         },
     }
 
@@ -36,11 +25,11 @@ class FormulaAndFunctionApmResourceStatName(ModelSimple):
 
     def __init__(self, *args, **kwargs):
         """
-        APM resource stat name.
+        Request type for the histogram request.
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["errors", "error_rate", "hits", "latency_avg", "latency_distribution", "latency_max", "latency_p50", "latency_p75", "latency_p90", "latency_p95", "latency_p99"].
+        :param value: If omitted defaults to "histogram". Must be one of ["histogram"].
         :type value: str
         """
         super().__init__(kwargs)
@@ -51,11 +40,7 @@ class FormulaAndFunctionApmResourceStatName(ModelSimple):
             args = list(args)
             value = args.pop(0)
         else:
-            raise ApiTypeError(
-                "value is required, but not passed in args or kwargs and doesn't have default",
-                path_to_item=self._path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            value = "histogram"
 
         self._check_pos_args(args)
 

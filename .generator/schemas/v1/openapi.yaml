@@ -1449,6 +1449,25 @@ components:
       type: string
       x-enum-varnames:
       - DISTRIBUTION
+    DistributionWidgetHistogramRequestQuery:
+      description: Query definition for Distribution Widget Histogram Request
+      example:
+        data_source: metrics
+        name: query1
+        query: histogram:trace.Load{*}
+      oneOf:
+      - $ref: '#/components/schemas/FormulaAndFunctionMetricQueryDefinition'
+      - $ref: '#/components/schemas/FormulaAndFunctionEventQueryDefinition'
+      - $ref: '#/components/schemas/FormulaAndFunctionApmResourceStatsQueryDefinition'
+      type: object
+    DistributionWidgetHistogramRequestType:
+      description: Request type for the histogram request.
+      enum:
+      - histogram
+      example: histogram
+      type: string
+      x-enum-varnames:
+      - HISTOGRAM
     DistributionWidgetRequest:
       description: Updated distribution widget.
       properties:
@@ -1469,6 +1488,10 @@ components:
         q:
           description: Widget query.
           type: string
+        query:
+          $ref: '#/components/schemas/DistributionWidgetHistogramRequestQuery'
+        request_type:
+          $ref: '#/components/schemas/DistributionWidgetHistogramRequestType'
         rum_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         security_query:
@@ -2249,6 +2272,7 @@ components:
       - error_rate
       - hits
       - latency_avg
+      - latency_distribution
       - latency_max
       - latency_p50
       - latency_p75
@@ -2262,6 +2286,7 @@ components:
       - ERROR_RATE
       - HITS
       - LATENCY_AVG
+      - LATENCY_DISTRIBUTION
       - LATENCY_MAX
       - LATENCY_P50
       - LATENCY_P75

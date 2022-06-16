@@ -72,6 +72,12 @@ from datadog_api_client.v1.model.distribution_points_series import DistributionP
 from datadog_api_client.v1.model.distribution_points_type import DistributionPointsType
 from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
 from datadog_api_client.v1.model.distribution_widget_definition_type import DistributionWidgetDefinitionType
+from datadog_api_client.v1.model.distribution_widget_histogram_request_query import (
+    DistributionWidgetHistogramRequestQuery,
+)
+from datadog_api_client.v1.model.distribution_widget_histogram_request_type import (
+    DistributionWidgetHistogramRequestType,
+)
 from datadog_api_client.v1.model.distribution_widget_request import DistributionWidgetRequest
 from datadog_api_client.v1.model.distribution_widget_x_axis import DistributionWidgetXAxis
 from datadog_api_client.v1.model.distribution_widget_y_axis import DistributionWidgetYAxis
