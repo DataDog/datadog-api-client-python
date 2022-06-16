@@ -15,6 +15,8 @@ with ApiClient(configuration) as api_client:
         start=int((datetime.now() + relativedelta(days=-1)).timestamp()),
         end=int(datetime.now().timestamp()),
         title="System load",
+        height=400,
+        width=600,
     )
 
     print(response)

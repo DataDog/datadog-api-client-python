@@ -21,5 +21,7 @@ Feature: Snapshots
     And request contains "end" parameter with value {{ timestamp("now") }}
     And request contains "metric_query" parameter with value "avg:system.load.1{*}"
     And request contains "title" parameter with value "System load"
+    And request contains "height" parameter with value 400
+    And request contains "width" parameter with value 600
     When the request is sent
     Then the response status is 200 OK
