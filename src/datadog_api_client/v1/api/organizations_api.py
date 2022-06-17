@@ -182,7 +182,7 @@ class OrganizationsApi:
     def list_orgs(self, **kwargs):
         """List your managed organizations.
 
-        List your managed organizations.
+        This endpoint returns data on your top-level organization.
 
         :rtype: OrganizationListResponse
         """
