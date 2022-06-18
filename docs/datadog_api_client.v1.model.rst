@@ -2346,6 +2346,13 @@ notebooks\_response\_page
    :members:
    :show-inheritance:
 
+org\_downgraded\_response
+-------------------------
+
+.. automodule:: datadog_api_client.v1.model.org_downgraded_response
+   :members:
+   :show-inheritance:
+
 organization
 ------------
 

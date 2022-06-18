@@ -381,6 +381,7 @@ from datadog_api_client.v1.model.notebooks_response_data import NotebooksRespons
 from datadog_api_client.v1.model.notebooks_response_data_attributes import NotebooksResponseDataAttributes
 from datadog_api_client.v1.model.notebooks_response_meta import NotebooksResponseMeta
 from datadog_api_client.v1.model.notebooks_response_page import NotebooksResponsePage
+from datadog_api_client.v1.model.org_downgraded_response import OrgDowngradedResponse
 from datadog_api_client.v1.model.organization import Organization
 from datadog_api_client.v1.model.organization_billing import OrganizationBilling
 from datadog_api_client.v1.model.organization_create_body import OrganizationCreateBody
