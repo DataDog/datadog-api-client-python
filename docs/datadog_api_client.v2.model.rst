@@ -2941,6 +2941,20 @@ security\_monitoring\_rule\_new\_value\_options\_learning\_duration
    :members:
    :show-inheritance:
 
+security\_monitoring\_rule\_new\_value\_options\_learning\_method
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_method
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_rule\_new\_value\_options\_learning\_threshold
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_threshold
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_rule\_options
 -----------------------------------
 

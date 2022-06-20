@@ -9,31 +9,29 @@ from datadog_api_client.model_utils import (
 )
 
 
-class SecurityMonitoringRuleNewValueOptionsLearningDuration(ModelSimple):
+class SecurityMonitoringRuleNewValueOptionsLearningMethod(ModelSimple):
 
     allowed_values = {
         "value": {
-            "ZERO_DAYS": 0,
-            "ONE_DAY": 1,
-            "SEVEN_DAYS": 7,
+            "DURATION": "duration",
+            "THRESHOLD": "threshold",
         },
     }
 
     @cached_property
     def openapi_types(_):
         return {
-            "value": (int,),
+            "value": (str,),
         }
 
     def __init__(self, *args, **kwargs):
         """
-        The duration in days during which values are learned, and after which signals will be generated for values that
-        weren't learned. If set to 0, a signal will be generated for all new values after the first value is learned.
+        The learning method used to determine when signals should be generated for values that weren't learned.
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: If omitted defaults to 0. Must be one of [0, 1, 7].
-        :type value: int
+        :param value: If omitted defaults to "duration". Must be one of ["duration", "threshold"].
+        :type value: str
         """
         super().__init__(kwargs)
 
@@ -43,7 +41,7 @@ class SecurityMonitoringRuleNewValueOptionsLearningDuration(ModelSimple):
             args = list(args)
             value = args.pop(0)
         else:
-            value = 0
+            value = "duration"
 
         self._check_pos_args(args)
 
