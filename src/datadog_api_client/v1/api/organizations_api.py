@@ -12,7 +12,6 @@ from datadog_api_client.v1.model.organization_create_response import Organizatio
 from datadog_api_client.v1.model.organization_create_body import OrganizationCreateBody
 from datadog_api_client.v1.model.organization_response import OrganizationResponse
 from datadog_api_client.v1.model.organization import Organization
-from datadog_api_client.v1.model.org_downgraded_response import OrgDowngradedResponse
 from datadog_api_client.v1.model.idp_response import IdpResponse
 
 
@@ -44,31 +43,6 @@ class OrganizationsApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._downgrade_org_endpoint = _Endpoint(
-            settings={
-                "response_type": (OrgDowngradedResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v1/org/{public_id}/downgrade",
-                "operation_id": "downgrade_org",
-                "http_method": "POST",
-                "version": "v1",
-                "servers": None,
-            },
-            params_map={
-                "public_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "public_id",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-                "content_type": [],
-            },
             api_client=api_client,
         )
 
@@ -191,19 +165,6 @@ class OrganizationsApi:
         kwargs["body"] = body
 
         return self._create_child_org_endpoint.call_with_http_info(**kwargs)
-
-    def downgrade_org(self, public_id, **kwargs):
-        """Spin-off Child Organization.
-
-        Only available for MSP customers. Removes a child organization from the hierarchy of the master organization and places the child organization on a 30-day trial.
-
-        :param public_id: The ``public_id`` of the organization you are operating within.
-        :type public_id: str
-        :rtype: OrgDowngradedResponse
-        """
-        kwargs["public_id"] = public_id
-
-        return self._downgrade_org_endpoint.call_with_http_info(**kwargs)
 
     def get_org(self, public_id, **kwargs):
         """Get organization information.

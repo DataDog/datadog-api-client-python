@@ -51,7 +51,6 @@ body = Organization(
     subscription=OrganizationSubscription(
         type="pro",
     ),
-    trial=False,
 )
 
 configuration = Configuration()

@@ -30,7 +30,6 @@ class Organization(ModelNormal):
             "public_id": (str,),
             "settings": (OrganizationSettings,),
             "subscription": (OrganizationSubscription,),
-            "trial": (bool,),
         }
 
     attribute_map = {
@@ -41,7 +40,6 @@ class Organization(ModelNormal):
         "public_id": "public_id",
         "settings": "settings",
         "subscription": "subscription",
-        "trial": "trial",
     }
     read_only_vars = {
         "created",
@@ -71,9 +69,6 @@ class Organization(ModelNormal):
 
         :param subscription: Subscription definition.
         :type subscription: OrganizationSubscription, optional
-
-        :param trial: Only available for MSP customers. Allows child organizations to be created on a trial plan.
-        :type trial: bool, optional
         """
         super().__init__(kwargs)
 

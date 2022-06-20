@@ -28,12 +28,6 @@ from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_forg
 from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_duration import (
     SecurityMonitoringRuleNewValueOptionsLearningDuration,
 )
-from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_method import (
-    SecurityMonitoringRuleNewValueOptionsLearningMethod,
-)
-from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_threshold import (
-    SecurityMonitoringRuleNewValueOptionsLearningThreshold,
-)
 from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
 from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
 from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
@@ -67,8 +61,6 @@ body = SecurityMonitoringRuleUpdatePayload(
         new_value_options=SecurityMonitoringRuleNewValueOptions(
             forget_after=SecurityMonitoringRuleNewValueOptionsForgetAfter(1),
             learning_duration=SecurityMonitoringRuleNewValueOptionsLearningDuration(0),
-            learning_method=SecurityMonitoringRuleNewValueOptionsLearningMethod("duration"),
-            learning_threshold=SecurityMonitoringRuleNewValueOptionsLearningThreshold(0),
         ),
     ),
     queries=[

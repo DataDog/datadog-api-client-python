@@ -823,12 +823,6 @@
       "type": "idempotent"
     }
   },
-  "DowngradeOrg": {
-    "tag": "Organizations",
-    "undo": {
-      "type": "unsafe"
-    }
-  },
   "UploadIdPForOrg": {
     "tag": "Organizations",
     "undo": {
