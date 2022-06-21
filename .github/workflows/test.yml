@@ -1,6 +1,6 @@
 name: Run Tests
 
-en:
+env:
   GIT_AUTHOR_EMAIL: "packages@datadoghq.com"
   GIT_AUTHOR_NAME: "ci.datadog-api-spec"
 
