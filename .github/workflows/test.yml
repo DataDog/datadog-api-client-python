@@ -1,6 +1,6 @@
 name: Run Tests
 
-env:
+en:
   GIT_AUTHOR_EMAIL: "packages@datadoghq.com"
   GIT_AUTHOR_NAME: "ci.datadog-api-spec"
 
@@ -101,6 +101,12 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: "3.10"
+      - name: Upgrade pip
+        run: |
+          python -m pip install --upgrade pip
+          pip install --upgrade wheel setuptools build
+      - name: Install
+        run: pip install --disable-pip-version-check pyflakes
       - name: Check examples
         run: ./check-examples.sh
         shell: bash
