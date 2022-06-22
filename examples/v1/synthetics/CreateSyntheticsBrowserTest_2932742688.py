@@ -14,6 +14,8 @@ from datadog_api_client.v1.model.synthetics_config_variable_type import Syntheti
 from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
 from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
 from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
+from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
+from datadog_api_client.v1.model.synthetics_test_execution_rule import SyntheticsTestExecutionRule
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
 from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
 from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
@@ -61,6 +63,9 @@ body = SyntheticsBrowserTest(
             client_token_id=123456,
         ),
         tick_every=300,
+        ci=SyntheticsTestCiOptions(
+            execution_rule=SyntheticsTestExecutionRule("skipped"),
+        ),
     ),
     tags=[
         "testing:browser",

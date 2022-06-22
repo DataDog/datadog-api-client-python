@@ -599,6 +599,7 @@ from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
 from datadog_api_client.v1.model.synthetics_step_detail import SyntheticsStepDetail
 from datadog_api_client.v1.model.synthetics_step_detail_warning import SyntheticsStepDetailWarning
 from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
+from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
 from datadog_api_client.v1.model.synthetics_test_config import SyntheticsTestConfig
 from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
 from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType

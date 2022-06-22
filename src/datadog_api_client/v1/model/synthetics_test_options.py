@@ -23,6 +23,7 @@ class SyntheticsTestOptions(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
         from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
         from datadog_api_client.v1.model.synthetics_test_options_monitor_options import (
             SyntheticsTestOptionsMonitorOptions,
@@ -35,6 +36,7 @@ class SyntheticsTestOptions(ModelNormal):
             "accept_self_signed": (bool,),
             "allow_insecure": (bool,),
             "check_certificate_revocation": (bool,),
+            "ci": (SyntheticsTestCiOptions,),
             "device_ids": ([SyntheticsDeviceID],),
             "disable_cors": (bool,),
             "follow_redirects": (bool,),
@@ -54,6 +56,7 @@ class SyntheticsTestOptions(ModelNormal):
         "accept_self_signed": "accept_self_signed",
         "allow_insecure": "allow_insecure",
         "check_certificate_revocation": "checkCertificateRevocation",
+        "ci": "ci",
         "device_ids": "device_ids",
         "disable_cors": "disableCors",
         "follow_redirects": "follow_redirects",
@@ -82,6 +85,9 @@ class SyntheticsTestOptions(ModelNormal):
 
         :param check_certificate_revocation: For SSL test, whether or not the test should fail on revoked certificate in stapled OCSP.
         :type check_certificate_revocation: bool, optional
+
+        :param ci: CI/CD options for a Synthetic test.
+        :type ci: SyntheticsTestCiOptions, optional
 
         :param device_ids: For browser test, array with the different device IDs used to run the test.
         :type device_ids: [SyntheticsDeviceID], optional

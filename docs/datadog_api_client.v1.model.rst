@@ -3676,6 +3676,13 @@ synthetics\_step\_type
    :members:
    :show-inheritance:
 
+synthetics\_test\_ci\_options
+-----------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_test_ci_options
+   :members:
+   :show-inheritance:
+
 synthetics\_test\_config
 ------------------------
 
