@@ -19,6 +19,8 @@ from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
 from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
 from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
 from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
+from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
+from datadog_api_client.v1.model.synthetics_test_execution_rule import SyntheticsTestExecutionRule
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
 from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
 from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
@@ -66,6 +68,9 @@ body = SyntheticsBrowserTest(
     message="",
     name="Example test name",
     options=SyntheticsTestOptions(
+        ci=SyntheticsTestCiOptions(
+            execution_rule=SyntheticsTestExecutionRule("blocking"),
+        ),
         device_ids=[
             SyntheticsDeviceID("laptop_large"),
         ],
