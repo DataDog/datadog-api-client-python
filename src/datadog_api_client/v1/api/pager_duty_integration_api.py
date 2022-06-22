@@ -11,7 +11,7 @@ from datadog_api_client.v1.model.pager_duty_service_key import PagerDutyServiceK
 
 class PagerDutyIntegrationApi:
     """
-    Configure your `Datadog-PagerDuty integration <https://docs.datadoghq.com/api/?lang=bash#integration-pagerduty>`_
+    Configure your `Datadog-PagerDuty integration <https://docs.datadoghq.com/integrations/pagerduty/>`_
     directly through the Datadog API.
     """
 

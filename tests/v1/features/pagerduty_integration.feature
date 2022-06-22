@@ -1,8 +1,8 @@
 @endpoint(pagerduty-integration) @endpoint(pagerduty-integration-v1)
 Feature: PagerDuty Integration
   Configure your [Datadog-PagerDuty
-  integration](https://docs.datadoghq.com/api/?lang=bash#integration-
-  pagerduty) directly through the Datadog API.
+  integration](https://docs.datadoghq.com/integrations/pagerduty/) directly
+  through the Datadog API.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
