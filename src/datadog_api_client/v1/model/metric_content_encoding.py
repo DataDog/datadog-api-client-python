@@ -13,7 +13,9 @@ class MetricContentEncoding(ModelSimple):
 
     allowed_values = {
         "value": {
+            "ZSTD": "zstd",
             "DEFLATE": "deflate",
+            "GZIP": "gzip",
         },
     }
 
@@ -29,7 +31,7 @@ class MetricContentEncoding(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: If omitted defaults to "deflate". Must be one of ["deflate"].
+        :param value: If omitted defaults to "deflate". Must be one of ["zstd", "deflate", "gzip"].
         :type value: str
         """
         super().__init__(kwargs)

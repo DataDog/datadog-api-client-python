@@ -67,7 +67,7 @@ class MetricSeries(ModelNormal):
         :param tags: A list of tags associated with the metric.
         :type tags: [str], optional
 
-        :param type: The type of metric.
+        :param type: The type of metric. The available types are 0(unspecified), 1(count), 2(rate), 3(gauge)
         :type type: MetricIntakeType, optional
 
         :param unit: The unit of point value.

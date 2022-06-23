@@ -216,6 +216,14 @@ Feature: Metrics
     When the request is sent
     Then the response status is 408 Request timeout
 
+  @team:DataDog/metrics-intake @team:DataDog/metrics-query
+  Scenario: Submit metrics with compression returns "Payload accepted" response
+    Given new "SubmitMetrics" request
+    And request contains "Content-Encoding" parameter with value "deflate"
+    And body with value {"series": [{"metric": "system.load.1", "type": 0, "points": [{"timestamp": {{ timestamp('now') }}, "value": 0.7}]}]}
+    When the request is sent
+    Then the response status is 202 Payload accepted
+
   @generated @skip @team:DataDog/points-aggregation
   Scenario: Tag Configuration Cardinality Estimator returns "API error response." response
     Given a valid "appKeyAuth" key in the system

@@ -3899,10 +3899,15 @@ components:
       default: deflate
       description: HTTP header used to compress the media-type.
       enum:
+      - zstd1
       - deflate
+      - gzip
+      example: deflate
       type: string
       x-enum-varnames:
+      - ZSTD1
       - DEFLATE
+      - GZIP
     MetricCustomAggregation:
       description: A time and space aggregation combination for use in query.
       example:
@@ -4108,13 +4113,13 @@ components:
       x-enum-varnames:
       - METRIC_VOLUMES
     MetricIntakeType:
-      description: The type of metric.
+      description: The type of metric. The available types are 0(unspecified), 1(count),
+        2(rate), 3(gauge)
       enum:
       - 0
       - 1
       - 2
       - 3
-      - 15
       format: int32
       type: integer
       x-enum-varnames:
@@ -4122,7 +4127,6 @@ components:
       - COUNT
       - RATE
       - GAUGE
-      - UNSPECIFIED_LEGACY
     MetricMetadata:
       description: Metadata for the metric.
       properties:
@@ -13600,7 +13604,7 @@ tags:
     that set number.\n\nThe Post, Patch, and Delete `manage_tags` API methods can
     only be performed by\na user who has the `Manage Tags for Metrics` permission."
   name: Metrics
-- description: 'Configure your [Datadog Opsgenie integration](https://docs.datadoghq.com/integrations/opsgenie/)
+- description: 'Configure your [Datadog Opsgenie integration](https://docs.datadoghq.com/api/latest/opsgenie-integration)
 
     directly through the Datadog API.'
   externalDocs:

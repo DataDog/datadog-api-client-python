@@ -1,8 +1,8 @@
 @endpoint(opsgenie-integration) @endpoint(opsgenie-integration-v2)
 Feature: Opsgenie Integration
   Configure your [Datadog Opsgenie
-  integration](https://docs.datadoghq.com/integrations/opsgenie/) directly
-  through the Datadog API.
+  integration](https://docs.datadoghq.com/api/latest/opsgenie-integration)
+  directly through the Datadog API.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

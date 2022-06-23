@@ -939,12 +939,6 @@
       "type": "idempotent"
     }
   },
-  "SearchSLO": {
-    "tag": "Service Level Objectives",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "DeleteSLO": {
     "tag": "Service Level Objectives",
     "undo": {

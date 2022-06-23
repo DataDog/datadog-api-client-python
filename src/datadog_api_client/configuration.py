@@ -229,7 +229,6 @@ class Configuration:
                 "v1.get_specified_monthly_custom_reports": False,
                 "v1.get_usage_attribution": False,
                 "v1.get_slo_history": False,
-                "v1.search_slo": False,
                 "v2.create_incident": False,
                 "v2.delete_incident": False,
                 "v2.get_incident": False,

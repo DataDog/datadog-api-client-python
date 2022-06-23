@@ -112,7 +112,7 @@ class SLOResponseData(ModelNormal):
         :param name: The name of the service level objective object.
         :type name: str, optional
 
-        :param query: A metric-based SLO. **Required if type is metric**. Note that Datadog only allows the sum by aggregator
+        :param query: A metric SLI query. **Required if type is metric**. Note that Datadog only allows the sum by aggregator
             to be used because this will sum up all request counts instead of averaging them, or taking the max or
             min of all of those requests.
         :type query: ServiceLevelObjectiveQuery, optional
