@@ -65,7 +65,7 @@ class SLOHistoryMetrics(ModelNormal):
         :param resp_version: The series response version type. This mimics ``batch_query`` response type.
         :type resp_version: int
 
-        :param times: An array of query timestamps in EPOCH milliseconds
+        :param times: An array of query timestamps in EPOCH milliseconds.
         :type times: [float]
         """
         super().__init__(kwargs)

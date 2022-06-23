@@ -2570,6 +2570,69 @@ scatterplot\_widget\_formula
    :members:
    :show-inheritance:
 
+search\_slo\_response
+---------------------
+
+.. automodule:: datadog_api_client.v1.model.search_slo_response
+   :members:
+   :show-inheritance:
+
+search\_slo\_response\_data
+---------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_slo_response_data
+   :members:
+   :show-inheritance:
+
+search\_slo\_response\_data\_attributes
+---------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_slo_response_data_attributes
+   :members:
+   :show-inheritance:
+
+search\_slo\_response\_data\_attributes\_facets
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_slo_response_data_attributes_facets
+   :members:
+   :show-inheritance:
+
+search\_slo\_response\_data\_attributes\_facets\_object\_int
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_slo_response_data_attributes_facets_object_int
+   :members:
+   :show-inheritance:
+
+search\_slo\_response\_data\_attributes\_facets\_object\_string
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_slo_response_data_attributes_facets_object_string
+   :members:
+   :show-inheritance:
+
+search\_slo\_response\_links
+----------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_slo_response_links
+   :members:
+   :show-inheritance:
+
+search\_slo\_response\_meta
+---------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_slo_response_meta
+   :members:
+   :show-inheritance:
+
+search\_slo\_response\_meta\_page
+---------------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_slo_response_meta_page
+   :members:
+   :show-inheritance:
+
 series
 ------
 
