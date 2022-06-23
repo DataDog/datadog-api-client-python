@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"series":[{"metric":"system.load.1","points":[{"timestamp":1650641018,"value":0.7}],"type":0}]}'
+    body: '{"series":[{"metric":"system.load.1","points":[{"timestamp":1652898272,"value":0.7}],"type":0}]}'
     headers:
       accept:
       - application/json

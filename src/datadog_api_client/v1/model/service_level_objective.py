@@ -75,7 +75,7 @@ class ServiceLevelObjective(ModelNormal):
             Optional in create/update requests.
         :type description: str, none_type, optional
 
-        :param groups: A list of (up to 20) monitor groups that narrow the scope of a monitor service level objective.
+        :param groups: A list of (up to 100) monitor groups that narrow the scope of a monitor service level objective.
 
             Included in service level objective responses if it is not empty. Optional in
             create/update requests for monitor service level objectives, but may only be
@@ -98,7 +98,7 @@ class ServiceLevelObjective(ModelNormal):
 
         :param monitor_tags: The union of monitor tags for all monitors referenced by the ``monitor_ids``
             field.
-            Always included in service level objective responses for monitor service level
+            Always included in service level objective responses for monitor-based service level
             objectives (but may be empty). Ignored in create/update requests. Does not
             affect which monitors are included in the service level objective (that is
             determined entirely by the ``monitor_ids`` field).
@@ -107,7 +107,7 @@ class ServiceLevelObjective(ModelNormal):
         :param name: The name of the service level objective object.
         :type name: str
 
-        :param query: A metric SLI query. **Required if type is metric**. Note that Datadog only allows the sum by aggregator
+        :param query: A metric-based SLO. **Required if type is metric**. Note that Datadog only allows the sum by aggregator
             to be used because this will sum up all request counts instead of averaging them, or taking the max or
             min of all of those requests.
         :type query: ServiceLevelObjectiveQuery, optional
