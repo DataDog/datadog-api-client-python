@@ -80,7 +80,7 @@ class CloudWorkloadSecurityApi:
         self._download_cloud_workload_policy_file_endpoint = _Endpoint(
             settings={
                 "response_type": (file_type,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security/cloud_workload/policy/download",
                 "operation_id": "download_cloud_workload_policy_file",
                 "http_method": "GET",
