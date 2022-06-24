@@ -40,7 +40,7 @@ jobs:
           private_key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
           repository: DataDog/datadog-api-spec
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Post pending status check
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
         uses: DataDog/github-actions/post-status-check@v1.0.0
@@ -50,9 +50,10 @@ jobs:
           status: pending
           context: integration
       - name: Set up Python 3.10
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: "3.10"
+          cache: "pip"
       - name: Upgrade pip
         run: |
           python -m pip install --upgrade pip
