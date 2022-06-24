@@ -1,5 +1,37 @@
 # Changelog
 
+## 2.0.0 / 2022-06-24
+
+### Fixed
+* AuthN Mapping spec cleanup to match implementation by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1006
+* Fix compress call by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1028
+* Add cls to the list of keywords by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1038
+* Fix additionalProperties on SyntheticsAPITestResultData by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1036
+* Fix synthetics vitals type by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1039
+### Added
+* Add connection to synthetics assertion type enum by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1010
+* Add grpc subtype to synthetics tests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/985
+* Add support for `zstd1` Content-Encoding by @jirikuncar in https://github.com/DataDog/datadog-api-client-python/pull/946
+* Add include descendants to monthly and hourly usage attribution APIs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1032
+* Add v2 endpoints for Opsgenie Integration by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1021
+* Add distribution points intake endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1019
+* Add height and width params to graph snapshot by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1048
+* Add support for defining histogram requests in Distribution widgets by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1030
+* Add DowngradeOrg endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1050
+* Add new options for new value detection type on security monitoring rules by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1042
+* Add ci execution rule in Synthetics options by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1043
+* Add SLO Search API endpoint  by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/949
+### Changed
+* Remove unstable marker from SLO corrections API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1020
+* Remove unstable/beta note since Metrics Without Limits is GA by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1029
+* Refactor API client by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1018
+* Remove unstable marker on security list signal endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1047
+
+## New Contributors
+* @jybp made their first contribution in https://github.com/DataDog/datadog-api-client-python/pull/1063
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/1.12...2.0.0
+
 ## 1.12 / 2022-05-23
 
 ### Fixed

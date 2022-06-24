@@ -178,6 +178,24 @@ Feature: Service Level Objectives
     Then the response status is 200 OK
     And the response "data.series.res_type" is equal to "time_series"
 
+  @generated @skip @team:DataDog/slo-app
+  Scenario: Search for SLOs returns "Bad Request" response
+    Given operation "SearchSLO" enabled
+    And new "SearchSLO" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/slo-app
+  Scenario: Search for SLOs returns "OK" response
+    Given there is a valid "slo" in the system
+    And operation "SearchSLO" enabled
+    And new "SearchSLO" request
+    And request contains "query" parameter from "slo.data[0].name"
+    And request contains "page[size]" parameter with value 20
+    And request contains "page[number]" parameter with value 0
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/slo-app
   Scenario: Update an SLO returns "Bad Request" response
     Given new "UpdateSLO" request

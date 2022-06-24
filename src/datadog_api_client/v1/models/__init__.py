@@ -460,6 +460,19 @@ from datadog_api_client.v1.model.scatterplot_dimension import ScatterplotDimensi
 from datadog_api_client.v1.model.scatterplot_table_request import ScatterplotTableRequest
 from datadog_api_client.v1.model.scatterplot_widget_aggregator import ScatterplotWidgetAggregator
 from datadog_api_client.v1.model.scatterplot_widget_formula import ScatterplotWidgetFormula
+from datadog_api_client.v1.model.search_slo_response import SearchSLOResponse
+from datadog_api_client.v1.model.search_slo_response_data import SearchSLOResponseData
+from datadog_api_client.v1.model.search_slo_response_data_attributes import SearchSLOResponseDataAttributes
+from datadog_api_client.v1.model.search_slo_response_data_attributes_facets import SearchSLOResponseDataAttributesFacets
+from datadog_api_client.v1.model.search_slo_response_data_attributes_facets_object_int import (
+    SearchSLOResponseDataAttributesFacetsObjectInt,
+)
+from datadog_api_client.v1.model.search_slo_response_data_attributes_facets_object_string import (
+    SearchSLOResponseDataAttributesFacetsObjectString,
+)
+from datadog_api_client.v1.model.search_slo_response_links import SearchSLOResponseLinks
+from datadog_api_client.v1.model.search_slo_response_meta import SearchSLOResponseMeta
+from datadog_api_client.v1.model.search_slo_response_meta_page import SearchSLOResponseMetaPage
 from datadog_api_client.v1.model.series import Series
 from datadog_api_client.v1.model.service_check import ServiceCheck
 from datadog_api_client.v1.model.service_check_status import ServiceCheckStatus
@@ -599,6 +612,7 @@ from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
 from datadog_api_client.v1.model.synthetics_step_detail import SyntheticsStepDetail
 from datadog_api_client.v1.model.synthetics_step_detail_warning import SyntheticsStepDetailWarning
 from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
+from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
 from datadog_api_client.v1.model.synthetics_test_config import SyntheticsTestConfig
 from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
 from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType

@@ -12,7 +12,7 @@ from datadog_api_client.v2.model.opsgenie_service_update_request import Opsgenie
 
 class OpsgenieIntegrationApi:
     """
-    Configure your `Datadog Opsgenie integration <https://docs.datadoghq.com/api/latest/opsgenie-integration>`_
+    Configure your `Datadog Opsgenie integration <https://docs.datadoghq.com/integrations/opsgenie/>`_
     directly through the Datadog API.
     """
 
