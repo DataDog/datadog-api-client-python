@@ -15,9 +15,9 @@ body = LogsListRequest(
     query="host:Test*",
     sort=LogsSort("asc"),
     time=LogsListRequestTime(
-        _from=(datetime.now() + relativedelta(hours=-1)).isoformat(timespec="seconds"),
+        _from=(datetime.now() + relativedelta(hours=-1)),
         timezone="Europe/Paris",
-        to=datetime.now().isoformat(timespec="seconds"),
+        to=datetime.now(),
     ),
 )
 

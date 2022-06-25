@@ -13,7 +13,7 @@ configuration.unstable_operations["get_usage_attribution"] = True
 with ApiClient(configuration) as api_client:
     api_instance = UsageMeteringApi(api_client)
     response = api_instance.get_usage_attribution(
-        start_month=(datetime.now() + relativedelta(days=-3)).isoformat(timespec="seconds"),
+        start_month=(datetime.now() + relativedelta(days=-3)),
         fields=UsageAttributionSupportedMetrics("*"),
         offset=0,
         limit=1,

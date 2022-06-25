@@ -11,7 +11,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = UsageMeteringApi(api_client)
     response = api_instance.get_usage_cloud_security_posture_management(
-        start_hr=(datetime.now() + relativedelta(days=-3)).isoformat(timespec="seconds"),
+        start_hr=(datetime.now() + relativedelta(days=-3)),
     )
 
     print(response)

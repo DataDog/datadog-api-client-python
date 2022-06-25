@@ -187,7 +187,7 @@ def unique(request):
 TIME_FORMATTER = {
     "now": "datetime.now()",
     "timestamp": "{sret}.timestamp()",
-    "isoformat": '{sret}.isoformat(timespec="seconds")',
+    "isoformat": "{sret}",
     "units": {
         "s": "({sret} + relativedelta(seconds={num}))",
         "m": "({sret} + relativedelta(minutes={num}))",
