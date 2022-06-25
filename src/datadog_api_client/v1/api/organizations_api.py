@@ -198,8 +198,10 @@ class OrganizationsApi:
 
         return self._create_child_org_endpoint.call_with_http_info(**kwargs)
 
-<<<<<<< HEAD
-    def downgrade_org(self, public_id, **kwargs):
+    def downgrade_org(
+        self,
+        public_id: str,
+    ) -> OrgDowngradedResponse:
         """Spin-off Child Organization.
 
         Only available for MSP customers. Removes a child organization from the hierarchy of the master organization and places the child organization on a 30-day trial.
@@ -208,19 +210,15 @@ class OrganizationsApi:
         :type public_id: str
         :rtype: OrgDowngradedResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["public_id"] = public_id
 
         return self._downgrade_org_endpoint.call_with_http_info(**kwargs)
 
-    def get_org(self, public_id, **kwargs):
-||||||| parent of 507957976 (Add typing information)
-    def get_org(self, public_id, **kwargs):
-=======
     def get_org(
         self,
         public_id: str,
     ) -> OrganizationResponse:
->>>>>>> 507957976 (Add typing information)
         """Get organization information.
 
         Get organization information.

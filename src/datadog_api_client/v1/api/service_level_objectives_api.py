@@ -618,8 +618,13 @@ class ServiceLevelObjectivesApi:
 
         return self._list_slos_endpoint.call_with_http_info(**kwargs)
 
-<<<<<<< HEAD
-    def search_slo(self, **kwargs):
+    def search_slo(
+        self,
+        *,
+        query: Union[str, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> SearchSLOResponse:
         """Search for SLOs.
 
         Get a list of service level objective objects for your organization.
@@ -632,18 +637,23 @@ class ServiceLevelObjectivesApi:
         :type page_number: int, optional
         :rtype: SearchSLOResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if query is not unset:
+            kwargs["query"] = query
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
         return self._search_slo_endpoint.call_with_http_info(**kwargs)
 
-    def update_slo(self, slo_id, body, **kwargs):
-||||||| parent of 507957976 (Add typing information)
-    def update_slo(self, slo_id, body, **kwargs):
-=======
     def update_slo(
         self,
         slo_id: str,
         body: ServiceLevelObjective,
     ) -> SLOListResponse:
->>>>>>> 507957976 (Add typing information)
         """Update an SLO.
 
         Update the specified service level objective object.

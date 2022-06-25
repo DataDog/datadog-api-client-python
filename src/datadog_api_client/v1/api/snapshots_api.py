@@ -93,6 +93,8 @@ class SnapshotsApi:
         event_query: Union[str, UnsetType] = unset,
         graph_def: Union[str, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
+        height: Union[int, UnsetType] = unset,
+        width: Union[int, UnsetType] = unset,
     ) -> GraphSnapshot:
         """Take graph snapshots.
 
@@ -135,5 +137,11 @@ class SnapshotsApi:
 
         if title is not unset:
             kwargs["title"] = title
+
+        if height is not unset:
+            kwargs["height"] = height
+
+        if width is not unset:
+            kwargs["width"] = width
 
         return self._get_graph_snapshot_endpoint.call_with_http_info(**kwargs)

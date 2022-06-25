@@ -6,17 +6,13 @@ from __future__ import annotations
 from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
-<<<<<<< HEAD
-from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
-from datadog_api_client.v1.model.distribution_points_content_encoding import DistributionPointsContentEncoding
-from datadog_api_client.v1.model.distribution_points_payload import DistributionPointsPayload
-||||||| parent of 507957976 (Add typing information)
-=======
 from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
->>>>>>> 507957976 (Add typing information)
+from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
+from datadog_api_client.v1.model.distribution_points_content_encoding import DistributionPointsContentEncoding
+from datadog_api_client.v1.model.distribution_points_payload import DistributionPointsPayload
 from datadog_api_client.v1.model.metrics_list_response import MetricsListResponse
 from datadog_api_client.v1.model.metric_metadata import MetricMetadata
 from datadog_api_client.v1.model.metrics_query_response import MetricsQueryResponse
@@ -342,8 +338,12 @@ class MetricsApi:
 
         return self._query_metrics_endpoint.call_with_http_info(**kwargs)
 
-<<<<<<< HEAD
-    def submit_distribution_points(self, body, **kwargs):
+    def submit_distribution_points(
+        self,
+        body: DistributionPointsPayload,
+        *,
+        content_encoding: Union[DistributionPointsContentEncoding, UnsetType] = unset,
+    ) -> IntakePayloadAccepted:
         """Submit distribution points.
 
         The distribution points end-point allows you to post distribution data that can be graphed on Datadog’s dashboards.
@@ -353,21 +353,20 @@ class MetricsApi:
         :type content_encoding: DistributionPointsContentEncoding, optional
         :rtype: IntakePayloadAccepted
         """
+        kwargs: Dict[str, Any] = {}
+        if content_encoding is not unset:
+            kwargs["content_encoding"] = content_encoding
+
         kwargs["body"] = body
 
         return self._submit_distribution_points_endpoint.call_with_http_info(**kwargs)
 
-    def submit_metrics(self, body, **kwargs):
-||||||| parent of 507957976 (Add typing information)
-    def submit_metrics(self, body, **kwargs):
-=======
     def submit_metrics(
         self,
         body: MetricsPayload,
         *,
         content_encoding: Union[MetricContentEncoding, UnsetType] = unset,
     ) -> IntakePayloadAccepted:
->>>>>>> 507957976 (Add typing information)
         """Submit metrics.
 
         The metrics end-point allows you to post time-series data that can be graphed on Datadog’s dashboards.
