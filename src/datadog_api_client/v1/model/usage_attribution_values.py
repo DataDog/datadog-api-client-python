@@ -37,6 +37,8 @@ class UsageAttributionValues(ModelNormal):
             "dbm_queries_usage": (float,),
             "estimated_indexed_logs_percentage": (float,),
             "estimated_indexed_logs_usage": (float,),
+            "estimated_indexed_spans_percentage": (float,),
+            "estimated_indexed_spans_usage": (float,),
             "infra_host_percentage": (float,),
             "infra_host_usage": (float,),
             "lambda_functions_percentage": (float,),
@@ -78,6 +80,8 @@ class UsageAttributionValues(ModelNormal):
         "dbm_queries_usage": "dbm_queries_usage",
         "estimated_indexed_logs_percentage": "estimated_indexed_logs_percentage",
         "estimated_indexed_logs_usage": "estimated_indexed_logs_usage",
+        "estimated_indexed_spans_percentage": "estimated_indexed_spans_percentage",
+        "estimated_indexed_spans_usage": "estimated_indexed_spans_usage",
         "infra_host_percentage": "infra_host_percentage",
         "infra_host_usage": "infra_host_usage",
         "lambda_functions_percentage": "lambda_functions_percentage",
@@ -169,6 +173,12 @@ class UsageAttributionValues(ModelNormal):
 
         :param estimated_indexed_logs_usage: The estimated live indexed logs usage by tag(s). Note this field is in private beta.
         :type estimated_indexed_logs_usage: float, optional
+
+        :param estimated_indexed_spans_percentage: The percentage of estimated indexed spans usage by tag(s). Note this field is in private beta.
+        :type estimated_indexed_spans_percentage: float, optional
+
+        :param estimated_indexed_spans_usage: The estimated indexed spans usage by tag(s). Note this field is in private beta.
+        :type estimated_indexed_spans_usage: float, optional
 
         :param infra_host_percentage: The percentage of infrastructure host usage by tag(s).
         :type infra_host_percentage: float, optional
