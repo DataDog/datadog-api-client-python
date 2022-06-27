@@ -17,6 +17,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "api_usage": (float,),
             "apm_host_percentage": (float,),
             "apm_host_usage": (float,),
+            "appsec_percentage": (float,),
+            "appsec_usage": (float,),
             "browser_percentage": (float,),
             "browser_usage": (float,),
             "container_percentage": (float,),
@@ -52,6 +54,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "api_usage": "api_usage",
         "apm_host_percentage": "apm_host_percentage",
         "apm_host_usage": "apm_host_usage",
+        "appsec_percentage": "appsec_percentage",
+        "appsec_usage": "appsec_usage",
         "browser_percentage": "browser_percentage",
         "browser_usage": "browser_usage",
         "container_percentage": "container_percentage",
@@ -97,6 +101,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param apm_host_usage: The APM host usage by tag(s).
         :type apm_host_usage: float, optional
+
+        :param appsec_percentage: The percentage of Application Security Monitoring host usage by tag(s).
+        :type appsec_percentage: float, optional
+
+        :param appsec_usage: The Application Security Monitoring host usage by tag(s).
+        :type appsec_usage: float, optional
 
         :param browser_percentage: The percentage of synthetic browser test usage by tag(s).
         :type browser_percentage: float, optional
