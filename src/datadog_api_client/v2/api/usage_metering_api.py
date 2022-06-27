@@ -221,8 +221,14 @@ class UsageMeteringApi:
 
         return self._get_cost_by_org_endpoint.call_with_http_info(**kwargs)
 
-<<<<<<< HEAD
-    def get_estimated_cost_by_org(self, **kwargs):
+    def get_estimated_cost_by_org(
+        self,
+        *,
+        start_month: Union[datetime, UnsetType] = unset,
+        end_month: Union[datetime, UnsetType] = unset,
+        start_date: Union[datetime, UnsetType] = unset,
+        end_date: Union[datetime, UnsetType] = unset,
+    ) -> CostByOrgResponse:
         """Get estimated cost across multi-org account.
 
         Get estimated cost across multi-org account.
@@ -237,19 +243,27 @@ class UsageMeteringApi:
         :type end_date: datetime, optional
         :rtype: CostByOrgResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if start_month is not unset:
+            kwargs["start_month"] = start_month
+
+        if end_month is not unset:
+            kwargs["end_month"] = end_month
+
+        if start_date is not unset:
+            kwargs["start_date"] = start_date
+
+        if end_date is not unset:
+            kwargs["end_date"] = end_date
+
         return self._get_estimated_cost_by_org_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_application_security_monitoring(self, start_hr, **kwargs):
-||||||| parent of 59244d222 (Add typing information)
-    def get_usage_application_security_monitoring(self, start_hr, **kwargs):
-=======
     def get_usage_application_security_monitoring(
         self,
         start_hr: datetime,
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageApplicationSecurityMonitoringResponse:
->>>>>>> 59244d222 (Add typing information)
         """Get hourly usage for Application Security.
 
         Get hourly usage for Application Security .
