@@ -843,6 +843,12 @@
       "type": "safe"
     }
   },
+  "GetEstimatedCostByOrg": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageLambdaTracedInvocations": {
     "tag": "Usage Metering",
     "undo": {

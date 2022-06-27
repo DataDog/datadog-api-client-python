@@ -28,6 +28,36 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get estimated cost across multi-org account returns "Bad Request" response
+    Given new "GetEstimatedCostByOrg" request
+    And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "start_date" parameter with value "{{ timeISO('now - 3d') }}"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get estimated cost across multi-org account returns "OK" response
+    Given new "GetEstimatedCostByOrg" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @replay-only @team:DataDog/red-zone-revenue-query
+  Scenario: Get estimated cost across multi-org account with date returns "OK" response
+    Given new "GetEstimatedCostByOrg" request
+    And request contains "start_date" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_date" parameter with value "{{ timeISO('now - 3d') }}"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @replay-only @team:DataDog/red-zone-revenue-query
+  Scenario: Get estimated cost across multi-org account with month returns "OK" response
+    Given new "GetEstimatedCostByOrg" request
+    And request contains "start_month" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_month" parameter with value "{{ timeISO('now - 3d') }}"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Application Security returns "Bad Request" response
     Given new "GetUsageApplicationSecurityMonitoring" request
