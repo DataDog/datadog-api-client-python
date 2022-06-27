@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json;datetime-format=rfc3339
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/usage/estimated_cost_by_org?start_month=2022-04-20T17%3A07%3A01.561Z&end_month=2022-04-22T17%3A07%3A01.561Z
+  response:
+    body:
+      string: '{"data":[{"attributes":{"org_name":"RQ Dummy Tests","public_id":"fasjyydbcgwwc2uc","total_cost":73.17,"charges":[{"charge_type":"committed","cost":0,"product_name":"infra_host"},{"charge_type":"on_demand","cost":72,"product_name":"synthetics_api_tests"},{"charge_type":"committed","cost":1.17,"product_name":"infra_host"}],"date":"2022-04-25T17:00:00+00:00"},"type":"cost_by_org","id":"5d1702ab10f060719ae5aa1fd7ba09e3d7e0fb371b8319051c616a1fcad254e9"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
