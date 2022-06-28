@@ -12,6 +12,7 @@ import re
 import tempfile
 from types import MappingProxyType
 from typing import Collection, Mapping, Union
+
 try:
     from typing import Final
 except ImportError:
