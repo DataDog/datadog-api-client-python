@@ -56,6 +56,7 @@ body = SecurityMonitoringRuleUpdatePayload(
     ],
     has_extended_title=True,
     options=SecurityMonitoringRuleOptions(
+        decrease_criticality_based_on_env=False,
         detection_method=SecurityMonitoringRuleDetectionMethod("threshold"),
         evaluation_window=SecurityMonitoringRuleEvaluationWindow(0),
         hardcoded_evaluator_type=SecurityMonitoringRuleHardcodedEvaluatorType("log4shell"),

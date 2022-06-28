@@ -33,6 +33,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         )
 
         return {
+            "decrease_criticality_based_on_env": (bool,),
             "detection_method": (SecurityMonitoringRuleDetectionMethod,),
             "evaluation_window": (SecurityMonitoringRuleEvaluationWindow,),
             "hardcoded_evaluator_type": (SecurityMonitoringRuleHardcodedEvaluatorType,),
@@ -43,6 +44,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         }
 
     attribute_map = {
+        "decrease_criticality_based_on_env": "decreaseCriticalityBasedOnEnv",
         "detection_method": "detectionMethod",
         "evaluation_window": "evaluationWindow",
         "hardcoded_evaluator_type": "hardcodedEvaluatorType",
@@ -55,6 +57,11 @@ class SecurityMonitoringRuleOptions(ModelNormal):
     def __init__(self, *args, **kwargs):
         """
         Options on rules.
+
+        :param decrease_criticality_based_on_env: If true, signals in non-production environments have a lower severity than what is defined by the rule case, which can reduce signal noise.
+            The severity is decreased by one level: ``CRITICAL`` in production becomes ``HIGH`` in non-production, ``HIGH`` becomes ``MEDIUM`` and so on. ``INFO`` remains ``INFO``.
+            The decrement is applied when the environment tag of the signal starts with ``staging`` , ``test`` or ``dev``.
+        :type decrease_criticality_based_on_env: bool, optional
 
         :param detection_method: The detection method.
         :type detection_method: SecurityMonitoringRuleDetectionMethod, optional
