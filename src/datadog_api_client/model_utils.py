@@ -11,7 +11,11 @@ import pprint
 import re
 import tempfile
 from types import MappingProxyType
-from typing import Collection, Final, Mapping, Union
+from typing import Collection, Mapping, Union
+try:
+    from typing import Final
+except ImportError:
+    from typing_extensions import Final
 
 from dateutil.parser import parse
 
