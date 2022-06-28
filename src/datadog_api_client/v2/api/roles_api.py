@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 from datadog_api_client.v2.model.roles_response import RolesResponse
 from datadog_api_client.v2.model.roles_sort import RolesSort
@@ -395,7 +401,11 @@ class RolesApi:
             api_client=api_client,
         )
 
-    def add_permission_to_role(self, role_id, body, **kwargs):
+    def add_permission_to_role(
+        self,
+        role_id: str,
+        body: RelationshipToPermission,
+    ) -> PermissionsResponse:
         """Grant permission to a role.
 
         Adds a permission to a role.
@@ -405,13 +415,18 @@ class RolesApi:
         :type body: RelationshipToPermission
         :rtype: PermissionsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["role_id"] = role_id
 
         kwargs["body"] = body
 
         return self._add_permission_to_role_endpoint.call_with_http_info(**kwargs)
 
-    def add_user_to_role(self, role_id, body, **kwargs):
+    def add_user_to_role(
+        self,
+        role_id: str,
+        body: RelationshipToUser,
+    ) -> UsersResponse:
         """Add a user to a role.
 
         Adds a user to a role.
@@ -421,13 +436,18 @@ class RolesApi:
         :type body: RelationshipToUser
         :rtype: UsersResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["role_id"] = role_id
 
         kwargs["body"] = body
 
         return self._add_user_to_role_endpoint.call_with_http_info(**kwargs)
 
-    def clone_role(self, role_id, body, **kwargs):
+    def clone_role(
+        self,
+        role_id: str,
+        body: RoleCloneRequest,
+    ) -> RoleResponse:
         """Create a new role by cloning an existing role.
 
         Clone an existing role
@@ -437,13 +457,17 @@ class RolesApi:
         :type body: RoleCloneRequest
         :rtype: RoleResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["role_id"] = role_id
 
         kwargs["body"] = body
 
         return self._clone_role_endpoint.call_with_http_info(**kwargs)
 
-    def create_role(self, body, **kwargs):
+    def create_role(
+        self,
+        body: RoleCreateRequest,
+    ) -> RoleCreateResponse:
         """Create role.
 
         Create a new role for your organization.
@@ -451,11 +475,15 @@ class RolesApi:
         :type body: RoleCreateRequest
         :rtype: RoleCreateResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_role_endpoint.call_with_http_info(**kwargs)
 
-    def delete_role(self, role_id, **kwargs):
+    def delete_role(
+        self,
+        role_id: str,
+    ) -> None:
         """Delete role.
 
         Disables a role.
@@ -464,11 +492,15 @@ class RolesApi:
         :type role_id: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["role_id"] = role_id
 
         return self._delete_role_endpoint.call_with_http_info(**kwargs)
 
-    def get_role(self, role_id, **kwargs):
+    def get_role(
+        self,
+        role_id: str,
+    ) -> RoleResponse:
         """Get a role.
 
         Get a role in the organization specified by the role’s ``role_id``.
@@ -477,20 +509,27 @@ class RolesApi:
         :type role_id: str
         :rtype: RoleResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["role_id"] = role_id
 
         return self._get_role_endpoint.call_with_http_info(**kwargs)
 
-    def list_permissions(self, **kwargs):
+    def list_permissions(
+        self,
+    ) -> PermissionsResponse:
         """List permissions.
 
         Returns a list of all permissions, including name, description, and ID.
 
         :rtype: PermissionsResponse
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_permissions_endpoint.call_with_http_info(**kwargs)
 
-    def list_role_permissions(self, role_id, **kwargs):
+    def list_role_permissions(
+        self,
+        role_id: str,
+    ) -> PermissionsResponse:
         """List permissions for a role.
 
         Returns a list of all permissions for a single role.
@@ -499,11 +538,19 @@ class RolesApi:
         :type role_id: str
         :rtype: PermissionsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["role_id"] = role_id
 
         return self._list_role_permissions_endpoint.call_with_http_info(**kwargs)
 
-    def list_roles(self, **kwargs):
+    def list_roles(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        sort: Union[RolesSort, UnsetType] = unset,
+        filter: Union[str, UnsetType] = unset,
+    ) -> RolesResponse:
         """List roles.
 
         Returns all roles, including their names and their unique identifiers.
@@ -520,9 +567,30 @@ class RolesApi:
         :type filter: str, optional
         :rtype: RolesResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if filter is not unset:
+            kwargs["filter"] = filter
+
         return self._list_roles_endpoint.call_with_http_info(**kwargs)
 
-    def list_role_users(self, role_id, **kwargs):
+    def list_role_users(
+        self,
+        role_id: str,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+        filter: Union[str, UnsetType] = unset,
+    ) -> UsersResponse:
         """Get all users of a role.
 
         Gets all users of a role.
@@ -541,11 +609,28 @@ class RolesApi:
         :type filter: str, optional
         :rtype: UsersResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["role_id"] = role_id
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if filter is not unset:
+            kwargs["filter"] = filter
 
         return self._list_role_users_endpoint.call_with_http_info(**kwargs)
 
-    def remove_permission_from_role(self, role_id, body, **kwargs):
+    def remove_permission_from_role(
+        self,
+        role_id: str,
+        body: RelationshipToPermission,
+    ) -> PermissionsResponse:
         """Revoke permission.
 
         Removes a permission from a role.
@@ -555,13 +640,18 @@ class RolesApi:
         :type body: RelationshipToPermission
         :rtype: PermissionsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["role_id"] = role_id
 
         kwargs["body"] = body
 
         return self._remove_permission_from_role_endpoint.call_with_http_info(**kwargs)
 
-    def remove_user_from_role(self, role_id, body, **kwargs):
+    def remove_user_from_role(
+        self,
+        role_id: str,
+        body: RelationshipToUser,
+    ) -> UsersResponse:
         """Remove a user from a role.
 
         Removes a user from a role.
@@ -571,13 +661,18 @@ class RolesApi:
         :type body: RelationshipToUser
         :rtype: UsersResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["role_id"] = role_id
 
         kwargs["body"] = body
 
         return self._remove_user_from_role_endpoint.call_with_http_info(**kwargs)
 
-    def update_role(self, role_id, body, **kwargs):
+    def update_role(
+        self,
+        role_id: str,
+        body: RoleUpdateRequest,
+    ) -> RoleUpdateResponse:
         """Update a role.
 
         Edit a role. Can only be used with application keys belonging to administrators.
@@ -587,6 +682,7 @@ class RolesApi:
         :type body: RoleUpdateRequest
         :rtype: RoleUpdateResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["role_id"] = role_id
 
         kwargs["body"] = body

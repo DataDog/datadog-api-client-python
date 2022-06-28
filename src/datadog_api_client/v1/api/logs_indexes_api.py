@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.logs_indexes_order import LogsIndexesOrder
@@ -151,7 +153,10 @@ class LogsIndexesApi:
             api_client=api_client,
         )
 
-    def create_logs_index(self, body, **kwargs):
+    def create_logs_index(
+        self,
+        body: LogsIndex,
+    ) -> LogsIndex:
         """Create an index.
 
         Creates a new index. Returns the Index object passed in the request body when the request is successful.
@@ -160,11 +165,15 @@ class LogsIndexesApi:
         :type body: LogsIndex
         :rtype: LogsIndex
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_logs_index_endpoint.call_with_http_info(**kwargs)
 
-    def get_logs_index(self, name, **kwargs):
+    def get_logs_index(
+        self,
+        name: str,
+    ) -> LogsIndex:
         """Get an index.
 
         Get one log index from your organization. This endpoint takes no JSON arguments.
@@ -173,20 +182,26 @@ class LogsIndexesApi:
         :type name: str
         :rtype: LogsIndex
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["name"] = name
 
         return self._get_logs_index_endpoint.call_with_http_info(**kwargs)
 
-    def get_logs_index_order(self, **kwargs):
+    def get_logs_index_order(
+        self,
+    ) -> LogsIndexesOrder:
         """Get indexes order.
 
         Get the current order of your log indexes. This endpoint takes no JSON arguments.
 
         :rtype: LogsIndexesOrder
         """
+        kwargs: Dict[str, Any] = {}
         return self._get_logs_index_order_endpoint.call_with_http_info(**kwargs)
 
-    def list_log_indexes(self, **kwargs):
+    def list_log_indexes(
+        self,
+    ) -> LogsIndexListResponse:
         """Get all indexes.
 
         The Index object describes the configuration of a log index.
@@ -194,9 +209,14 @@ class LogsIndexesApi:
 
         :rtype: LogsIndexListResponse
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_log_indexes_endpoint.call_with_http_info(**kwargs)
 
-    def update_logs_index(self, name, body, **kwargs):
+    def update_logs_index(
+        self,
+        name: str,
+        body: LogsIndexUpdateRequest,
+    ) -> LogsIndex:
         """Update an index.
 
         Update an index as identified by its name.
@@ -211,13 +231,17 @@ class LogsIndexesApi:
         :type body: LogsIndexUpdateRequest
         :rtype: LogsIndex
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["name"] = name
 
         kwargs["body"] = body
 
         return self._update_logs_index_endpoint.call_with_http_info(**kwargs)
 
-    def update_logs_index_order(self, body, **kwargs):
+    def update_logs_index_order(
+        self,
+        body: LogsIndexesOrder,
+    ) -> LogsIndexesOrder:
         """Update indexes order.
 
         This endpoint updates the index order of your organization.
@@ -227,6 +251,7 @@ class LogsIndexesApi:
         :type body: LogsIndexesOrder
         :rtype: LogsIndexesOrder
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._update_logs_index_order_endpoint.call_with_http_info(**kwargs)

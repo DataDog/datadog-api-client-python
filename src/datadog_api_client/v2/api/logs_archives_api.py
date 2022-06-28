@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model.logs_archive_order import LogsArchiveOrder
@@ -259,7 +261,11 @@ class LogsArchivesApi:
             api_client=api_client,
         )
 
-    def add_read_role_to_archive(self, archive_id, body, **kwargs):
+    def add_read_role_to_archive(
+        self,
+        archive_id: str,
+        body: RelationshipToRole,
+    ) -> None:
         """Grant role to an archive.
 
         Adds a read role to an archive. ( `Roles API <https://docs.datadoghq.com/api/v2/roles/>`_ )
@@ -269,13 +275,17 @@ class LogsArchivesApi:
         :type body: RelationshipToRole
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["archive_id"] = archive_id
 
         kwargs["body"] = body
 
         return self._add_read_role_to_archive_endpoint.call_with_http_info(**kwargs)
 
-    def create_logs_archive(self, body, **kwargs):
+    def create_logs_archive(
+        self,
+        body: LogsArchiveCreateRequest,
+    ) -> LogsArchive:
         """Create an archive.
 
         Create an archive in your organization.
@@ -284,11 +294,15 @@ class LogsArchivesApi:
         :type body: LogsArchiveCreateRequest
         :rtype: LogsArchive
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_logs_archive_endpoint.call_with_http_info(**kwargs)
 
-    def delete_logs_archive(self, archive_id, **kwargs):
+    def delete_logs_archive(
+        self,
+        archive_id: str,
+    ) -> None:
         """Delete an archive.
 
         Delete a given archive from your organization.
@@ -297,11 +311,15 @@ class LogsArchivesApi:
         :type archive_id: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["archive_id"] = archive_id
 
         return self._delete_logs_archive_endpoint.call_with_http_info(**kwargs)
 
-    def get_logs_archive(self, archive_id, **kwargs):
+    def get_logs_archive(
+        self,
+        archive_id: str,
+    ) -> LogsArchive:
         """Get an archive.
 
         Get a specific archive from your organization.
@@ -310,11 +328,14 @@ class LogsArchivesApi:
         :type archive_id: str
         :rtype: LogsArchive
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["archive_id"] = archive_id
 
         return self._get_logs_archive_endpoint.call_with_http_info(**kwargs)
 
-    def get_logs_archive_order(self, **kwargs):
+    def get_logs_archive_order(
+        self,
+    ) -> LogsArchiveOrder:
         """Get archive order.
 
         Get the current order of your archives.
@@ -322,9 +343,13 @@ class LogsArchivesApi:
 
         :rtype: LogsArchiveOrder
         """
+        kwargs: Dict[str, Any] = {}
         return self._get_logs_archive_order_endpoint.call_with_http_info(**kwargs)
 
-    def list_archive_read_roles(self, archive_id, **kwargs):
+    def list_archive_read_roles(
+        self,
+        archive_id: str,
+    ) -> RolesResponse:
         """List read roles for an archive.
 
         Returns all read roles a given archive is restricted to.
@@ -333,20 +358,28 @@ class LogsArchivesApi:
         :type archive_id: str
         :rtype: RolesResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["archive_id"] = archive_id
 
         return self._list_archive_read_roles_endpoint.call_with_http_info(**kwargs)
 
-    def list_logs_archives(self, **kwargs):
+    def list_logs_archives(
+        self,
+    ) -> LogsArchives:
         """Get all archives.
 
         Get the list of configured logs archives with their definitions.
 
         :rtype: LogsArchives
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_logs_archives_endpoint.call_with_http_info(**kwargs)
 
-    def remove_role_from_archive(self, archive_id, body, **kwargs):
+    def remove_role_from_archive(
+        self,
+        archive_id: str,
+        body: RelationshipToRole,
+    ) -> None:
         """Revoke role from an archive.
 
         Removes a role from an archive. ( `Roles API <https://docs.datadoghq.com/api/v2/roles/>`_ )
@@ -356,13 +389,18 @@ class LogsArchivesApi:
         :type body: RelationshipToRole
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["archive_id"] = archive_id
 
         kwargs["body"] = body
 
         return self._remove_role_from_archive_endpoint.call_with_http_info(**kwargs)
 
-    def update_logs_archive(self, archive_id, body, **kwargs):
+    def update_logs_archive(
+        self,
+        archive_id: str,
+        body: LogsArchiveCreateRequest,
+    ) -> LogsArchive:
         """Update an archive.
 
         Update a given archive configuration.
@@ -376,13 +414,17 @@ class LogsArchivesApi:
         :type body: LogsArchiveCreateRequest
         :rtype: LogsArchive
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["archive_id"] = archive_id
 
         kwargs["body"] = body
 
         return self._update_logs_archive_endpoint.call_with_http_info(**kwargs)
 
-    def update_logs_archive_order(self, body, **kwargs):
+    def update_logs_archive_order(
+        self,
+        body: LogsArchiveOrder,
+    ) -> LogsArchiveOrder:
         """Update archive order.
 
         Update the order of your archives. Since logs are processed sequentially, reordering an archive may change
@@ -395,6 +437,7 @@ class LogsArchivesApi:
         :type body: LogsArchiveOrder
         :rtype: LogsArchiveOrder
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._update_logs_archive_order_endpoint.call_with_http_info(**kwargs)

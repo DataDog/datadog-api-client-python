@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.pager_duty_service_name import PagerDutyServiceName
@@ -118,7 +120,10 @@ class PagerDutyIntegrationApi:
             api_client=api_client,
         )
 
-    def create_pager_duty_integration_service(self, body, **kwargs):
+    def create_pager_duty_integration_service(
+        self,
+        body: PagerDutyService,
+    ) -> PagerDutyServiceName:
         """Create a new service object.
 
         Create a new service object in the PagerDuty integration.
@@ -127,11 +132,15 @@ class PagerDutyIntegrationApi:
         :type body: PagerDutyService
         :rtype: PagerDutyServiceName
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_pager_duty_integration_service_endpoint.call_with_http_info(**kwargs)
 
-    def delete_pager_duty_integration_service(self, service_name, **kwargs):
+    def delete_pager_duty_integration_service(
+        self,
+        service_name: str,
+    ) -> None:
         """Delete a single service object.
 
         Delete a single service object in the Datadog-PagerDuty integration.
@@ -140,11 +149,15 @@ class PagerDutyIntegrationApi:
         :type service_name: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["service_name"] = service_name
 
         return self._delete_pager_duty_integration_service_endpoint.call_with_http_info(**kwargs)
 
-    def get_pager_duty_integration_service(self, service_name, **kwargs):
+    def get_pager_duty_integration_service(
+        self,
+        service_name: str,
+    ) -> PagerDutyServiceName:
         """Get a single service object.
 
         Get service name in the Datadog-PagerDuty integration.
@@ -153,11 +166,16 @@ class PagerDutyIntegrationApi:
         :type service_name: str
         :rtype: PagerDutyServiceName
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["service_name"] = service_name
 
         return self._get_pager_duty_integration_service_endpoint.call_with_http_info(**kwargs)
 
-    def update_pager_duty_integration_service(self, service_name, body, **kwargs):
+    def update_pager_duty_integration_service(
+        self,
+        service_name: str,
+        body: PagerDutyServiceKey,
+    ) -> None:
         """Update a single service object.
 
         Update a single service object in the Datadog-PagerDuty integration.
@@ -168,6 +186,7 @@ class PagerDutyIntegrationApi:
         :type body: PagerDutyServiceKey
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["service_name"] = service_name
 
         kwargs["body"] = body

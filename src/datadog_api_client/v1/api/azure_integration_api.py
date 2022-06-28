@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.azure_account import AzureAccount
@@ -121,7 +123,10 @@ class AzureIntegrationApi:
             api_client=api_client,
         )
 
-    def create_azure_integration(self, body, **kwargs):
+    def create_azure_integration(
+        self,
+        body: AzureAccount,
+    ) -> dict:
         """Create an Azure integration.
 
         Create a Datadog-Azure integration.
@@ -136,11 +141,15 @@ class AzureIntegrationApi:
         :type body: AzureAccount
         :rtype: dict
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_azure_integration_endpoint.call_with_http_info(**kwargs)
 
-    def delete_azure_integration(self, body, **kwargs):
+    def delete_azure_integration(
+        self,
+        body: AzureAccount,
+    ) -> dict:
         """Delete an Azure integration.
 
         Delete a given Datadog-Azure integration from your Datadog account.
@@ -149,20 +158,27 @@ class AzureIntegrationApi:
         :type body: AzureAccount
         :rtype: dict
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._delete_azure_integration_endpoint.call_with_http_info(**kwargs)
 
-    def list_azure_integration(self, **kwargs):
+    def list_azure_integration(
+        self,
+    ) -> AzureAccountListResponse:
         """List all Azure integrations.
 
         List all Datadog-Azure integrations configured in your Datadog account.
 
         :rtype: AzureAccountListResponse
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_azure_integration_endpoint.call_with_http_info(**kwargs)
 
-    def update_azure_host_filters(self, body, **kwargs):
+    def update_azure_host_filters(
+        self,
+        body: AzureAccount,
+    ) -> dict:
         """Update Azure integration host filters.
 
         Update the defined list of host filters for a given Datadog-Azure integration.
@@ -171,11 +187,15 @@ class AzureIntegrationApi:
         :type body: AzureAccount
         :rtype: dict
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._update_azure_host_filters_endpoint.call_with_http_info(**kwargs)
 
-    def update_azure_integration(self, body, **kwargs):
+    def update_azure_integration(
+        self,
+        body: AzureAccount,
+    ) -> dict:
         """Update an Azure integration.
 
         Update a Datadog-Azure integration. Requires an existing ``tenant_name`` and ``client_id``.
@@ -186,6 +206,7 @@ class AzureIntegrationApi:
         :type body: AzureAccount
         :rtype: dict
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._update_azure_integration_endpoint.call_with_http_info(**kwargs)

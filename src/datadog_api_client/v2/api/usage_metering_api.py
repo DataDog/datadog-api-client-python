@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
     datetime,
+    UnsetType,
+    unset,
 )
 from datadog_api_client.v2.model.usage_application_security_monitoring_response import (
     UsageApplicationSecurityMonitoringResponse,
@@ -193,7 +197,12 @@ class UsageMeteringApi:
             api_client=api_client,
         )
 
-    def get_cost_by_org(self, start_month, **kwargs):
+    def get_cost_by_org(
+        self,
+        start_month: datetime,
+        *,
+        end_month: Union[datetime, UnsetType] = unset,
+    ) -> CostByOrgResponse:
         """Get cost across multi-org account.
 
         Get cost across multi-org account. Cost by org data for a given month becomes available no later than the 16th of the following month.
@@ -204,11 +213,22 @@ class UsageMeteringApi:
         :type end_month: datetime, optional
         :rtype: CostByOrgResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_month"] = start_month
+
+        if end_month is not unset:
+            kwargs["end_month"] = end_month
 
         return self._get_cost_by_org_endpoint.call_with_http_info(**kwargs)
 
-    def get_estimated_cost_by_org(self, **kwargs):
+    def get_estimated_cost_by_org(
+        self,
+        *,
+        start_month: Union[datetime, UnsetType] = unset,
+        end_month: Union[datetime, UnsetType] = unset,
+        start_date: Union[datetime, UnsetType] = unset,
+        end_date: Union[datetime, UnsetType] = unset,
+    ) -> CostByOrgResponse:
         """Get estimated cost across multi-org account.
 
         Get estimated cost across multi-org account.
@@ -223,9 +243,27 @@ class UsageMeteringApi:
         :type end_date: datetime, optional
         :rtype: CostByOrgResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if start_month is not unset:
+            kwargs["start_month"] = start_month
+
+        if end_month is not unset:
+            kwargs["end_month"] = end_month
+
+        if start_date is not unset:
+            kwargs["start_date"] = start_date
+
+        if end_date is not unset:
+            kwargs["end_date"] = end_date
+
         return self._get_estimated_cost_by_org_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_application_security_monitoring(self, start_hr, **kwargs):
+    def get_usage_application_security_monitoring(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageApplicationSecurityMonitoringResponse:
         """Get hourly usage for Application Security.
 
         Get hourly usage for Application Security .
@@ -237,11 +275,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageApplicationSecurityMonitoringResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_application_security_monitoring_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_lambda_traced_invocations(self, start_hr, **kwargs):
+    def get_usage_lambda_traced_invocations(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageLambdaTracedInvocationsResponse:
         """Get hourly usage for Lambda Traced Invocations.
 
         Get hourly usage for Lambda Traced Invocations.
@@ -253,11 +300,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageLambdaTracedInvocationsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_lambda_traced_invocations_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_observability_pipelines(self, start_hr, **kwargs):
+    def get_usage_observability_pipelines(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageObservabilityPipelinesResponse:
         """Get hourly usage for Observability Pipelines.
 
         Get hourly usage for Observability Pipelines.
@@ -269,6 +325,10 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageObservabilityPipelinesResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_observability_pipelines_endpoint.call_with_http_info(**kwargs)

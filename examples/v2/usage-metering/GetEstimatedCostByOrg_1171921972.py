@@ -11,8 +11,8 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = UsageMeteringApi(api_client)
     response = api_instance.get_estimated_cost_by_org(
-        start_month=(datetime.now() + relativedelta(days=-5)).isoformat(timespec="seconds"),
-        end_month=(datetime.now() + relativedelta(days=-3)).isoformat(timespec="seconds"),
+        start_month=(datetime.now() + relativedelta(days=-5)),
+        end_month=(datetime.now() + relativedelta(days=-3)),
     )
 
     print(response)

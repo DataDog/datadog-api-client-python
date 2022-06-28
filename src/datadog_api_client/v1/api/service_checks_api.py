@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
@@ -51,7 +53,10 @@ class ServiceChecksApi:
             api_client=api_client,
         )
 
-    def submit_service_check(self, body, **kwargs):
+    def submit_service_check(
+        self,
+        body: ServiceChecks,
+    ) -> IntakePayloadAccepted:
         """Submit a Service Check.
 
         Submit a list of Service Checks.
@@ -66,6 +71,7 @@ class ServiceChecksApi:
         :type body: ServiceChecks
         :rtype: IntakePayloadAccepted
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._submit_service_check_endpoint.call_with_http_info(**kwargs)

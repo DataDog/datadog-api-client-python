@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.webhooks_integration_custom_variable_response import (
@@ -223,7 +225,10 @@ class WebhooksIntegrationApi:
             api_client=api_client,
         )
 
-    def create_webhooks_integration(self, body, **kwargs):
+    def create_webhooks_integration(
+        self,
+        body: WebhooksIntegration,
+    ) -> WebhooksIntegration:
         """Create a webhooks integration.
 
         Creates an endpoint with the name ``<WEBHOOK_NAME>``.
@@ -232,11 +237,15 @@ class WebhooksIntegrationApi:
         :type body: WebhooksIntegration
         :rtype: WebhooksIntegration
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_webhooks_integration_endpoint.call_with_http_info(**kwargs)
 
-    def create_webhooks_integration_custom_variable(self, body, **kwargs):
+    def create_webhooks_integration_custom_variable(
+        self,
+        body: WebhooksIntegrationCustomVariable,
+    ) -> WebhooksIntegrationCustomVariableResponse:
         """Create a custom variable.
 
         Creates an endpoint with the name ``<CUSTOM_VARIABLE_NAME>``.
@@ -245,11 +254,15 @@ class WebhooksIntegrationApi:
         :type body: WebhooksIntegrationCustomVariable
         :rtype: WebhooksIntegrationCustomVariableResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_webhooks_integration_custom_variable_endpoint.call_with_http_info(**kwargs)
 
-    def delete_webhooks_integration(self, webhook_name, **kwargs):
+    def delete_webhooks_integration(
+        self,
+        webhook_name: str,
+    ) -> None:
         """Delete a webhook.
 
         Deletes the endpoint with the name ``<WEBHOOK NAME>``.
@@ -258,11 +271,15 @@ class WebhooksIntegrationApi:
         :type webhook_name: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["webhook_name"] = webhook_name
 
         return self._delete_webhooks_integration_endpoint.call_with_http_info(**kwargs)
 
-    def delete_webhooks_integration_custom_variable(self, custom_variable_name, **kwargs):
+    def delete_webhooks_integration_custom_variable(
+        self,
+        custom_variable_name: str,
+    ) -> None:
         """Delete a custom variable.
 
         Deletes the endpoint with the name ``<CUSTOM_VARIABLE_NAME>``.
@@ -271,11 +288,15 @@ class WebhooksIntegrationApi:
         :type custom_variable_name: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["custom_variable_name"] = custom_variable_name
 
         return self._delete_webhooks_integration_custom_variable_endpoint.call_with_http_info(**kwargs)
 
-    def get_webhooks_integration(self, webhook_name, **kwargs):
+    def get_webhooks_integration(
+        self,
+        webhook_name: str,
+    ) -> WebhooksIntegration:
         """Get a webhook integration.
 
         Gets the content of the webhook with the name ``<WEBHOOK_NAME>``.
@@ -284,11 +305,15 @@ class WebhooksIntegrationApi:
         :type webhook_name: str
         :rtype: WebhooksIntegration
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["webhook_name"] = webhook_name
 
         return self._get_webhooks_integration_endpoint.call_with_http_info(**kwargs)
 
-    def get_webhooks_integration_custom_variable(self, custom_variable_name, **kwargs):
+    def get_webhooks_integration_custom_variable(
+        self,
+        custom_variable_name: str,
+    ) -> WebhooksIntegrationCustomVariableResponse:
         """Get a custom variable.
 
         Shows the content of the custom variable with the name ``<CUSTOM_VARIABLE_NAME>``.
@@ -300,11 +325,16 @@ class WebhooksIntegrationApi:
         :type custom_variable_name: str
         :rtype: WebhooksIntegrationCustomVariableResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["custom_variable_name"] = custom_variable_name
 
         return self._get_webhooks_integration_custom_variable_endpoint.call_with_http_info(**kwargs)
 
-    def update_webhooks_integration(self, webhook_name, body, **kwargs):
+    def update_webhooks_integration(
+        self,
+        webhook_name: str,
+        body: WebhooksIntegrationUpdateRequest,
+    ) -> WebhooksIntegration:
         """Update a webhook.
 
         Updates the endpoint with the name ``<WEBHOOK_NAME>``.
@@ -315,13 +345,18 @@ class WebhooksIntegrationApi:
         :type body: WebhooksIntegrationUpdateRequest
         :rtype: WebhooksIntegration
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["webhook_name"] = webhook_name
 
         kwargs["body"] = body
 
         return self._update_webhooks_integration_endpoint.call_with_http_info(**kwargs)
 
-    def update_webhooks_integration_custom_variable(self, custom_variable_name, body, **kwargs):
+    def update_webhooks_integration_custom_variable(
+        self,
+        custom_variable_name: str,
+        body: WebhooksIntegrationCustomVariableUpdateRequest,
+    ) -> WebhooksIntegrationCustomVariableResponse:
         """Update a custom variable.
 
         Updates the endpoint with the name ``<CUSTOM_VARIABLE_NAME>``.
@@ -332,6 +367,7 @@ class WebhooksIntegrationApi:
         :type body: WebhooksIntegrationCustomVariableUpdateRequest
         :rtype: WebhooksIntegrationCustomVariableResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["custom_variable_name"] = custom_variable_name
 
         kwargs["body"] = body

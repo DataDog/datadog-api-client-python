@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 from datetime import date, datetime
+import enum
 import inspect
 import io
 import os
@@ -11,6 +12,7 @@ import re
 import tempfile
 from types import MappingProxyType
 from typing import Collection, Mapping, Union
+from typing_extensions import Final
 
 from dateutil.parser import parse
 
@@ -24,6 +26,13 @@ from datadog_api_client.exceptions import (
 none_type = type(None)
 file_type = io.IOBase
 empty_dict = MappingProxyType({})  # type: ignore
+
+
+class UnsetType(enum.Enum):
+    unset = 0
+
+
+unset: Final = UnsetType.unset
 
 
 def convert_js_args_to_python_args(fn):

@@ -113,13 +113,19 @@ def get_type_for_items(schema):
     return name
 
 
-def get_type_for_parameter(parameter):
+def get_type_for_parameter(parameter, typing=False):
     """Return Python type name for the parameter."""
     if "content" in parameter:
         assert "in" not in parameter
         for content in parameter["content"].values():
-            return type_to_python(content["schema"])
-    return type_to_python(parameter.get("schema"))
+            data = type_to_python(content["schema"])
+            if typing:
+                data = data.replace("[", "List[")
+            return data
+    data = type_to_python(parameter.get("schema"))
+    if typing:
+        data = data.replace("[", "List[")
+    return data
 
 
 def get_enum_type(schema):

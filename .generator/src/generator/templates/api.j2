@@ -1,5 +1,7 @@
 {% include "api_info.j2" %}
+from __future__ import annotations
 
+from typing import Any, Dict, List, Union
 
 from {{ package }}.api_client import ApiClient, Endpoint as _Endpoint
 from {{ package }}.model_utils import (
@@ -9,6 +11,8 @@ from {{ package }}.model_utils import (
     get_attribute_from_path,
     file_type,
     none_type,
+    UnsetType,
+    unset,
 )
 {%- for model in get_api_models(operations) %}
 from {{ package }}.{{ version }}.model.{{ model|safe_snake_case }} import {{ model }}
@@ -134,7 +138,8 @@ class {{ classname }}:
 {% endfor %}
 
 {%- for path, method, operation in operations|sort(attribute="2.operationId") %}
-    def {{ operation.operationId|safe_snake_case }}(self, {% for name, parameter in operation|parameters if parameter.required %}{{name|attribute_name}}, {% endfor %}**kwargs):
+{%- set returnType = operation|return_type %}
+    def {{ operation.operationId|safe_snake_case }}(self, {% for name, parameter in operation|parameters if parameter.required %}{{name|attribute_name}}: {{ get_type_for_parameter(parameter, typing=True) }}, {% endfor %}{% for name, parameter in operation|parameters if not parameter.required %}{% if loop.first %}*, {% endif %}{{name|attribute_name}}: Union[{{ get_type_for_parameter(parameter, typing=True) }}, UnsetType]=unset, {% endfor %}) -> {% if returnType %}{{ returnType.replace("[", "List[") }}{% else %}None{% endif %}:
         """{{ operation.summary|indent(8) }}.
 {% if operation.description %}
         {{ operation.description|docstring|indent(8) }}
@@ -153,8 +158,14 @@ class {{ classname }}:
 {%- set returnType = operation|return_type %}
         :rtype: {% if returnType %}{{ returnType }}{% else %}None{% endif %}
         """
-{%- for name, parameter in operation|parameters if parameter.required %}
+        kwargs: Dict[str, Any] = {}
+{%- for name, parameter in operation|parameters %}
+{%- if not parameter.required %}
+        if {{ name|attribute_name }} is not unset:
+            kwargs["{{ name|attribute_name }}"] = {{ name|attribute_name }}
+{%- else %}
         kwargs["{{ name|attribute_name }}"] = {{ name|attribute_name }}
+{%- endif %}
 {% endfor %}
         return self._{{ operation.operationId|safe_snake_case }}_endpoint.call_with_http_info(**kwargs)
     {%- if operation["x-pagination"] %}

@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.logs_pipelines_order import LogsPipelinesOrder
@@ -201,7 +203,10 @@ class LogsPipelinesApi:
             api_client=api_client,
         )
 
-    def create_logs_pipeline(self, body, **kwargs):
+    def create_logs_pipeline(
+        self,
+        body: LogsPipeline,
+    ) -> LogsPipeline:
         """Create a pipeline.
 
         Create a pipeline in your organization.
@@ -210,11 +215,15 @@ class LogsPipelinesApi:
         :type body: LogsPipeline
         :rtype: LogsPipeline
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_logs_pipeline_endpoint.call_with_http_info(**kwargs)
 
-    def delete_logs_pipeline(self, pipeline_id, **kwargs):
+    def delete_logs_pipeline(
+        self,
+        pipeline_id: str,
+    ) -> None:
         """Delete a pipeline.
 
         Delete a given pipeline from your organization.
@@ -224,11 +233,15 @@ class LogsPipelinesApi:
         :type pipeline_id: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["pipeline_id"] = pipeline_id
 
         return self._delete_logs_pipeline_endpoint.call_with_http_info(**kwargs)
 
-    def get_logs_pipeline(self, pipeline_id, **kwargs):
+    def get_logs_pipeline(
+        self,
+        pipeline_id: str,
+    ) -> LogsPipeline:
         """Get a pipeline.
 
         Get a specific pipeline from your organization.
@@ -238,11 +251,14 @@ class LogsPipelinesApi:
         :type pipeline_id: str
         :rtype: LogsPipeline
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["pipeline_id"] = pipeline_id
 
         return self._get_logs_pipeline_endpoint.call_with_http_info(**kwargs)
 
-    def get_logs_pipeline_order(self, **kwargs):
+    def get_logs_pipeline_order(
+        self,
+    ) -> LogsPipelinesOrder:
         """Get pipeline order.
 
         Get the current order of your pipelines.
@@ -250,9 +266,12 @@ class LogsPipelinesApi:
 
         :rtype: LogsPipelinesOrder
         """
+        kwargs: Dict[str, Any] = {}
         return self._get_logs_pipeline_order_endpoint.call_with_http_info(**kwargs)
 
-    def list_logs_pipelines(self, **kwargs):
+    def list_logs_pipelines(
+        self,
+    ) -> LogsPipelineList:
         """Get all pipelines.
 
         Get all pipelines from your organization.
@@ -260,9 +279,14 @@ class LogsPipelinesApi:
 
         :rtype: LogsPipelineList
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_logs_pipelines_endpoint.call_with_http_info(**kwargs)
 
-    def update_logs_pipeline(self, pipeline_id, body, **kwargs):
+    def update_logs_pipeline(
+        self,
+        pipeline_id: str,
+        body: LogsPipeline,
+    ) -> LogsPipeline:
         """Update a pipeline.
 
         Update a given pipeline configuration to change it’s processors or their order.
@@ -276,13 +300,17 @@ class LogsPipelinesApi:
         :type body: LogsPipeline
         :rtype: LogsPipeline
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["pipeline_id"] = pipeline_id
 
         kwargs["body"] = body
 
         return self._update_logs_pipeline_endpoint.call_with_http_info(**kwargs)
 
-    def update_logs_pipeline_order(self, body, **kwargs):
+    def update_logs_pipeline_order(
+        self,
+        body: LogsPipelinesOrder,
+    ) -> LogsPipelinesOrder:
         """Update pipeline order.
 
         Update the order of your pipelines. Since logs are processed sequentially, reordering a pipeline may change
@@ -295,6 +323,7 @@ class LogsPipelinesApi:
         :type body: LogsPipelinesOrder
         :rtype: LogsPipelinesOrder
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._update_logs_pipeline_order_endpoint.call_with_http_info(**kwargs)

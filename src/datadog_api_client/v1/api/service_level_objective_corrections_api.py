@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.slo_correction_list_response import SLOCorrectionListResponse
@@ -139,7 +141,10 @@ class ServiceLevelObjectiveCorrectionsApi:
             api_client=api_client,
         )
 
-    def create_slo_correction(self, body, **kwargs):
+    def create_slo_correction(
+        self,
+        body: SLOCorrectionCreateRequest,
+    ) -> SLOCorrectionResponse:
         """Create an SLO correction.
 
         Create an SLO Correction.
@@ -148,11 +153,15 @@ class ServiceLevelObjectiveCorrectionsApi:
         :type body: SLOCorrectionCreateRequest
         :rtype: SLOCorrectionResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_slo_correction_endpoint.call_with_http_info(**kwargs)
 
-    def delete_slo_correction(self, slo_correction_id, **kwargs):
+    def delete_slo_correction(
+        self,
+        slo_correction_id: str,
+    ) -> None:
         """Delete an SLO correction.
 
         Permanently delete the specified SLO correction object.
@@ -161,11 +170,15 @@ class ServiceLevelObjectiveCorrectionsApi:
         :type slo_correction_id: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["slo_correction_id"] = slo_correction_id
 
         return self._delete_slo_correction_endpoint.call_with_http_info(**kwargs)
 
-    def get_slo_correction(self, slo_correction_id, **kwargs):
+    def get_slo_correction(
+        self,
+        slo_correction_id: str,
+    ) -> SLOCorrectionResponse:
         """Get an SLO correction for an SLO.
 
         Get an SLO correction.
@@ -174,20 +187,28 @@ class ServiceLevelObjectiveCorrectionsApi:
         :type slo_correction_id: str
         :rtype: SLOCorrectionResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["slo_correction_id"] = slo_correction_id
 
         return self._get_slo_correction_endpoint.call_with_http_info(**kwargs)
 
-    def list_slo_correction(self, **kwargs):
+    def list_slo_correction(
+        self,
+    ) -> SLOCorrectionListResponse:
         """Get all SLO corrections.
 
         Get all Service Level Objective corrections.
 
         :rtype: SLOCorrectionListResponse
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_slo_correction_endpoint.call_with_http_info(**kwargs)
 
-    def update_slo_correction(self, slo_correction_id, body, **kwargs):
+    def update_slo_correction(
+        self,
+        slo_correction_id: str,
+        body: SLOCorrectionUpdateRequest,
+    ) -> SLOCorrectionResponse:
         """Update an SLO correction.
 
         Update the specified SLO correction object.
@@ -198,6 +219,7 @@ class ServiceLevelObjectiveCorrectionsApi:
         :type body: SLOCorrectionUpdateRequest
         :rtype: SLOCorrectionResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["slo_correction_id"] = slo_correction_id
 
         kwargs["body"] = body

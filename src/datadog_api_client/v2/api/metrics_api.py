@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response import (
     MetricsAndMetricTagConfigurationsResponse,
 )
@@ -366,7 +372,10 @@ class MetricsApi:
             api_client=api_client,
         )
 
-    def create_bulk_tags_metrics_configuration(self, body, **kwargs):
+    def create_bulk_tags_metrics_configuration(
+        self,
+        body: MetricBulkTagConfigCreateRequest,
+    ) -> MetricBulkTagConfigResponse:
         """Configure tags for multiple metrics.
 
         Create and define a list of queryable tag keys for a set of existing count, gauge, rate, and distribution metrics.
@@ -379,11 +388,16 @@ class MetricsApi:
         :type body: MetricBulkTagConfigCreateRequest
         :rtype: MetricBulkTagConfigResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_bulk_tags_metrics_configuration_endpoint.call_with_http_info(**kwargs)
 
-    def create_tag_configuration(self, metric_name, body, **kwargs):
+    def create_tag_configuration(
+        self,
+        metric_name: str,
+        body: MetricTagConfigurationCreateRequest,
+    ) -> MetricTagConfigurationResponse:
         """Create a tag configuration.
 
         Create and define a list of queryable tag keys for an existing count/gauge/rate/distribution metric.
@@ -396,13 +410,17 @@ class MetricsApi:
         :type body: MetricTagConfigurationCreateRequest
         :rtype: MetricTagConfigurationResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["metric_name"] = metric_name
 
         kwargs["body"] = body
 
         return self._create_tag_configuration_endpoint.call_with_http_info(**kwargs)
 
-    def delete_bulk_tags_metrics_configuration(self, body, **kwargs):
+    def delete_bulk_tags_metrics_configuration(
+        self,
+        body: MetricBulkTagConfigDeleteRequest,
+    ) -> MetricBulkTagConfigResponse:
         """Configure tags for multiple metrics.
 
         Delete all custom lists of queryable tag keys for a set of existing count, gauge, rate, and distribution metrics.
@@ -413,11 +431,15 @@ class MetricsApi:
         :type body: MetricBulkTagConfigDeleteRequest
         :rtype: MetricBulkTagConfigResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._delete_bulk_tags_metrics_configuration_endpoint.call_with_http_info(**kwargs)
 
-    def delete_tag_configuration(self, metric_name, **kwargs):
+    def delete_tag_configuration(
+        self,
+        metric_name: str,
+    ) -> None:
         """Delete a tag configuration.
 
         Deletes a metric's tag configuration. Can only be used with application
@@ -427,11 +449,21 @@ class MetricsApi:
         :type metric_name: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["metric_name"] = metric_name
 
         return self._delete_tag_configuration_endpoint.call_with_http_info(**kwargs)
 
-    def estimate_metrics_output_series(self, metric_name, **kwargs):
+    def estimate_metrics_output_series(
+        self,
+        metric_name: str,
+        *,
+        filter_groups: Union[str, UnsetType] = unset,
+        filter_hours_ago: Union[int, UnsetType] = unset,
+        filter_num_aggregations: Union[int, UnsetType] = unset,
+        filter_pct: Union[bool, UnsetType] = unset,
+        filter_timespan_h: Union[int, UnsetType] = unset,
+    ) -> MetricEstimateResponse:
         """Tag Configuration Cardinality Estimator.
 
         Returns the estimated cardinality for a metric with a given tag, percentile and number of aggregations configuration using Metrics without Limits&trade;.
@@ -450,11 +482,30 @@ class MetricsApi:
         :type filter_timespan_h: int, optional
         :rtype: MetricEstimateResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["metric_name"] = metric_name
+
+        if filter_groups is not unset:
+            kwargs["filter_groups"] = filter_groups
+
+        if filter_hours_ago is not unset:
+            kwargs["filter_hours_ago"] = filter_hours_ago
+
+        if filter_num_aggregations is not unset:
+            kwargs["filter_num_aggregations"] = filter_num_aggregations
+
+        if filter_pct is not unset:
+            kwargs["filter_pct"] = filter_pct
+
+        if filter_timespan_h is not unset:
+            kwargs["filter_timespan_h"] = filter_timespan_h
 
         return self._estimate_metrics_output_series_endpoint.call_with_http_info(**kwargs)
 
-    def list_tag_configuration_by_name(self, metric_name, **kwargs):
+    def list_tag_configuration_by_name(
+        self,
+        metric_name: str,
+    ) -> MetricTagConfigurationResponse:
         """List tag configuration by name.
 
         Returns the tag configuration for the given metric name.
@@ -463,11 +514,21 @@ class MetricsApi:
         :type metric_name: str
         :rtype: MetricTagConfigurationResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["metric_name"] = metric_name
 
         return self._list_tag_configuration_by_name_endpoint.call_with_http_info(**kwargs)
 
-    def list_tag_configurations(self, **kwargs):
+    def list_tag_configurations(
+        self,
+        *,
+        filter_configured: Union[bool, UnsetType] = unset,
+        filter_tags_configured: Union[str, UnsetType] = unset,
+        filter_metric_type: Union[MetricTagConfigurationMetricTypes, UnsetType] = unset,
+        filter_include_percentiles: Union[bool, UnsetType] = unset,
+        filter_tags: Union[str, UnsetType] = unset,
+        window_seconds: Union[int, UnsetType] = unset,
+    ) -> MetricsAndMetricTagConfigurationsResponse:
         """List tag configurations.
 
         Returns all configured count/gauge/rate/distribution metric names
@@ -490,9 +551,31 @@ class MetricsApi:
         :type window_seconds: int, optional
         :rtype: MetricsAndMetricTagConfigurationsResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if filter_configured is not unset:
+            kwargs["filter_configured"] = filter_configured
+
+        if filter_tags_configured is not unset:
+            kwargs["filter_tags_configured"] = filter_tags_configured
+
+        if filter_metric_type is not unset:
+            kwargs["filter_metric_type"] = filter_metric_type
+
+        if filter_include_percentiles is not unset:
+            kwargs["filter_include_percentiles"] = filter_include_percentiles
+
+        if filter_tags is not unset:
+            kwargs["filter_tags"] = filter_tags
+
+        if window_seconds is not unset:
+            kwargs["window_seconds"] = window_seconds
+
         return self._list_tag_configurations_endpoint.call_with_http_info(**kwargs)
 
-    def list_tags_by_metric_name(self, metric_name, **kwargs):
+    def list_tags_by_metric_name(
+        self,
+        metric_name: str,
+    ) -> MetricAllTagsResponse:
         """List tags by metric name.
 
         View indexed tag key-value pairs for a given metric name.
@@ -501,11 +584,15 @@ class MetricsApi:
         :type metric_name: str
         :rtype: MetricAllTagsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["metric_name"] = metric_name
 
         return self._list_tags_by_metric_name_endpoint.call_with_http_info(**kwargs)
 
-    def list_volumes_by_metric_name(self, metric_name, **kwargs):
+    def list_volumes_by_metric_name(
+        self,
+        metric_name: str,
+    ) -> MetricVolumesResponse:
         """List distinct metric volumes by metric name.
 
         View distinct metrics volumes for the given metric name.
@@ -516,11 +603,17 @@ class MetricsApi:
         :type metric_name: str
         :rtype: MetricVolumesResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["metric_name"] = metric_name
 
         return self._list_volumes_by_metric_name_endpoint.call_with_http_info(**kwargs)
 
-    def submit_metrics(self, body, **kwargs):
+    def submit_metrics(
+        self,
+        body: MetricPayload,
+        *,
+        content_encoding: Union[MetricContentEncoding, UnsetType] = unset,
+    ) -> IntakePayloadAccepted:
         """Submit metrics.
 
         The metrics end-point allows you to post time-series data that can be graphed on Datadog’s dashboards.
@@ -540,11 +633,19 @@ class MetricsApi:
         :type content_encoding: MetricContentEncoding, optional
         :rtype: IntakePayloadAccepted
         """
+        kwargs: Dict[str, Any] = {}
+        if content_encoding is not unset:
+            kwargs["content_encoding"] = content_encoding
+
         kwargs["body"] = body
 
         return self._submit_metrics_endpoint.call_with_http_info(**kwargs)
 
-    def update_tag_configuration(self, metric_name, body, **kwargs):
+    def update_tag_configuration(
+        self,
+        metric_name: str,
+        body: MetricTagConfigurationUpdateRequest,
+    ) -> MetricTagConfigurationResponse:
         """Update a tag configuration.
 
         Update the tag configuration of a metric or percentile aggregations of a distribution metric or custom aggregations
@@ -556,6 +657,7 @@ class MetricsApi:
         :type body: MetricTagConfigurationUpdateRequest
         :rtype: MetricTagConfigurationResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["metric_name"] = metric_name
 
         kwargs["body"] = body

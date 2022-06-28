@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
     datetime,
+    UnsetType,
+    unset,
 )
 from datadog_api_client.v1.model.usage_custom_reports_response import UsageCustomReportsResponse
 from datadog_api_client.v1.model.usage_sort_direction import UsageSortDirection
@@ -1334,7 +1338,14 @@ class UsageMeteringApi:
             api_client=api_client,
         )
 
-    def get_daily_custom_reports(self, **kwargs):
+    def get_daily_custom_reports(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        sort_dir: Union[UsageSortDirection, UnsetType] = unset,
+        sort: Union[UsageSort, UnsetType] = unset,
+    ) -> UsageCustomReportsResponse:
         """Get the list of available daily custom reports.
 
         Get daily custom reports.
@@ -1349,9 +1360,31 @@ class UsageMeteringApi:
         :type sort: UsageSort, optional
         :rtype: UsageCustomReportsResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if sort_dir is not unset:
+            kwargs["sort_dir"] = sort_dir
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
         return self._get_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
 
-    def get_hourly_usage_attribution(self, start_hr, usage_type, **kwargs):
+    def get_hourly_usage_attribution(
+        self,
+        start_hr: datetime,
+        usage_type: HourlyUsageAttributionUsageType,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+        next_record_id: Union[str, UnsetType] = unset,
+        tag_breakdown_keys: Union[str, UnsetType] = unset,
+        include_descendants: Union[bool, UnsetType] = unset,
+    ) -> HourlyUsageAttributionResponse:
         """Get hourly usage attribution.
 
         Get hourly usage attribution.
@@ -1387,13 +1420,31 @@ class UsageMeteringApi:
         :type include_descendants: bool, optional
         :rtype: HourlyUsageAttributionResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         kwargs["usage_type"] = usage_type
 
+        if next_record_id is not unset:
+            kwargs["next_record_id"] = next_record_id
+
+        if tag_breakdown_keys is not unset:
+            kwargs["tag_breakdown_keys"] = tag_breakdown_keys
+
+        if include_descendants is not unset:
+            kwargs["include_descendants"] = include_descendants
+
         return self._get_hourly_usage_attribution_endpoint.call_with_http_info(**kwargs)
 
-    def get_incident_management(self, start_hr, **kwargs):
+    def get_incident_management(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageIncidentManagementResponse:
         """Get hourly usage for incident management.
 
         Get hourly usage for incident management.
@@ -1405,11 +1456,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageIncidentManagementResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_incident_management_endpoint.call_with_http_info(**kwargs)
 
-    def get_ingested_spans(self, start_hr, **kwargs):
+    def get_ingested_spans(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageIngestedSpansResponse:
         """Get hourly usage for ingested spans.
 
         Get hourly usage for ingested spans.
@@ -1421,11 +1481,22 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageIngestedSpansResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_ingested_spans_endpoint.call_with_http_info(**kwargs)
 
-    def get_monthly_custom_reports(self, **kwargs):
+    def get_monthly_custom_reports(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        sort_dir: Union[UsageSortDirection, UnsetType] = unset,
+        sort: Union[UsageSort, UnsetType] = unset,
+    ) -> UsageCustomReportsResponse:
         """Get the list of available monthly custom reports.
 
         Get monthly custom reports.
@@ -1440,9 +1511,33 @@ class UsageMeteringApi:
         :type sort: UsageSort, optional
         :rtype: UsageCustomReportsResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if sort_dir is not unset:
+            kwargs["sort_dir"] = sort_dir
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
         return self._get_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
 
-    def get_monthly_usage_attribution(self, start_month, fields, **kwargs):
+    def get_monthly_usage_attribution(
+        self,
+        start_month: datetime,
+        fields: MonthlyUsageAttributionSupportedMetrics,
+        *,
+        end_month: Union[datetime, UnsetType] = unset,
+        sort_direction: Union[UsageSortDirection, UnsetType] = unset,
+        sort_name: Union[MonthlyUsageAttributionSupportedMetrics, UnsetType] = unset,
+        tag_breakdown_keys: Union[str, UnsetType] = unset,
+        next_record_id: Union[str, UnsetType] = unset,
+        include_descendants: Union[bool, UnsetType] = unset,
+    ) -> MonthlyUsageAttributionResponse:
         """Get monthly usage attribution.
 
         Get monthly usage attribution.
@@ -1482,13 +1577,35 @@ class UsageMeteringApi:
         :type include_descendants: bool, optional
         :rtype: MonthlyUsageAttributionResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_month"] = start_month
+
+        if end_month is not unset:
+            kwargs["end_month"] = end_month
 
         kwargs["fields"] = fields
 
+        if sort_direction is not unset:
+            kwargs["sort_direction"] = sort_direction
+
+        if sort_name is not unset:
+            kwargs["sort_name"] = sort_name
+
+        if tag_breakdown_keys is not unset:
+            kwargs["tag_breakdown_keys"] = tag_breakdown_keys
+
+        if next_record_id is not unset:
+            kwargs["next_record_id"] = next_record_id
+
+        if include_descendants is not unset:
+            kwargs["include_descendants"] = include_descendants
+
         return self._get_monthly_usage_attribution_endpoint.call_with_http_info(**kwargs)
 
-    def get_specified_daily_custom_reports(self, report_id, **kwargs):
+    def get_specified_daily_custom_reports(
+        self,
+        report_id: str,
+    ) -> UsageSpecifiedCustomReportsResponse:
         """Get specified daily custom reports.
 
         Get specified daily custom reports.
@@ -1497,11 +1614,15 @@ class UsageMeteringApi:
         :type report_id: str
         :rtype: UsageSpecifiedCustomReportsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["report_id"] = report_id
 
         return self._get_specified_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
 
-    def get_specified_monthly_custom_reports(self, report_id, **kwargs):
+    def get_specified_monthly_custom_reports(
+        self,
+        report_id: str,
+    ) -> UsageSpecifiedCustomReportsResponse:
         """Get specified monthly custom reports.
 
         Get specified monthly custom reports.
@@ -1510,11 +1631,17 @@ class UsageMeteringApi:
         :type report_id: str
         :rtype: UsageSpecifiedCustomReportsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["report_id"] = report_id
 
         return self._get_specified_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_analyzed_logs(self, start_hr, **kwargs):
+    def get_usage_analyzed_logs(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageAnalyzedLogsResponse:
         """Get hourly usage for analyzed logs.
 
         Get hourly usage for analyzed logs (Security Monitoring).
@@ -1526,11 +1653,26 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageAnalyzedLogsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_analyzed_logs_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_attribution(self, start_month, fields, **kwargs):
+    def get_usage_attribution(
+        self,
+        start_month: datetime,
+        fields: UsageAttributionSupportedMetrics,
+        *,
+        end_month: Union[datetime, UnsetType] = unset,
+        sort_direction: Union[UsageSortDirection, UnsetType] = unset,
+        sort_name: Union[UsageAttributionSort, UnsetType] = unset,
+        include_descendants: Union[bool, UnsetType] = unset,
+        offset: Union[int, UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+    ) -> UsageAttributionResponse:
         """Get usage attribution.
 
         Get usage attribution.
@@ -1554,13 +1696,37 @@ class UsageMeteringApi:
         :type limit: int, optional
         :rtype: UsageAttributionResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_month"] = start_month
 
         kwargs["fields"] = fields
 
+        if end_month is not unset:
+            kwargs["end_month"] = end_month
+
+        if sort_direction is not unset:
+            kwargs["sort_direction"] = sort_direction
+
+        if sort_name is not unset:
+            kwargs["sort_name"] = sort_name
+
+        if include_descendants is not unset:
+            kwargs["include_descendants"] = include_descendants
+
+        if offset is not unset:
+            kwargs["offset"] = offset
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
         return self._get_usage_attribution_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_audit_logs(self, start_hr, **kwargs):
+    def get_usage_audit_logs(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageAuditLogsResponse:
         """Get hourly usage for audit logs.
 
         Get hourly usage for audit logs.
@@ -1572,11 +1738,19 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageAuditLogsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_audit_logs_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_billable_summary(self, **kwargs):
+    def get_usage_billable_summary(
+        self,
+        *,
+        month: Union[datetime, UnsetType] = unset,
+    ) -> UsageBillableSummaryResponse:
         """Get billable usage across your account.
 
         Get billable usage across your account.
@@ -1585,9 +1759,18 @@ class UsageMeteringApi:
         :type month: datetime, optional
         :rtype: UsageBillableSummaryResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if month is not unset:
+            kwargs["month"] = month
+
         return self._get_usage_billable_summary_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_ci_app(self, start_hr, **kwargs):
+    def get_usage_ci_app(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageCIVisibilityResponse:
         """Get hourly usage for CI Visibility.
 
         Get hourly usage for CI Visibility (Tests, Pipeline, and Spans).
@@ -1599,11 +1782,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageCIVisibilityResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_ci_app_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_cloud_security_posture_management(self, start_hr, **kwargs):
+    def get_usage_cloud_security_posture_management(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageCloudSecurityPostureManagementResponse:
         """Get hourly usage for CSPM.
 
         Get hourly usage for Cloud Security Posture Management (CSPM).
@@ -1615,11 +1807,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageCloudSecurityPostureManagementResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_cloud_security_posture_management_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_cws(self, start_hr, **kwargs):
+    def get_usage_cws(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageCWSResponse:
         """Get hourly usage for Cloud Workload Security.
 
         Get hourly usage for Cloud Workload Security.
@@ -1631,11 +1832,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageCWSResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_cws_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_dbm(self, start_hr, **kwargs):
+    def get_usage_dbm(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageDBMResponse:
         """Get hourly usage for Database Monitoring.
 
         Get hourly usage for Database Monitoring
@@ -1647,11 +1857,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageDBMResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_dbm_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_fargate(self, start_hr, **kwargs):
+    def get_usage_fargate(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageFargateResponse:
         """Get hourly usage for Fargate.
 
         Get hourly usage for `Fargate <https://docs.datadoghq.com/integrations/ecs_fargate/>`_.
@@ -1662,11 +1881,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageFargateResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_fargate_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_hosts(self, start_hr, **kwargs):
+    def get_usage_hosts(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageHostsResponse:
         """Get hourly usage for hosts and containers.
 
         Get hourly usage for hosts and containers.
@@ -1677,11 +1905,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageHostsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_hosts_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_indexed_spans(self, start_hr, **kwargs):
+    def get_usage_indexed_spans(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageIndexedSpansResponse:
         """Get hourly usage for indexed spans.
 
         Get hourly usage for indexed spans.
@@ -1692,11 +1929,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageIndexedSpansResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_indexed_spans_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_internet_of_things(self, start_hr, **kwargs):
+    def get_usage_internet_of_things(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageIoTResponse:
         """Get hourly usage for IoT.
 
         Get hourly usage for IoT.
@@ -1708,11 +1954,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageIoTResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_internet_of_things_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_lambda(self, start_hr, **kwargs):
+    def get_usage_lambda(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageLambdaResponse:
         """Get hourly usage for Lambda.
 
         Get hourly usage for lambda.
@@ -1723,11 +1978,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageLambdaResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_lambda_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_logs(self, start_hr, **kwargs):
+    def get_usage_logs(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageLogsResponse:
         """Get hourly usage for Logs.
 
         Get hourly usage for logs.
@@ -1738,11 +2002,21 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageLogsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_logs_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_logs_by_index(self, start_hr, **kwargs):
+    def get_usage_logs_by_index(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+        index_name: Union[List[str], UnsetType] = unset,
+    ) -> UsageLogsByIndexResponse:
         """Get hourly usage for Logs by Index.
 
         Get hourly usage for logs by index.
@@ -1755,11 +2029,23 @@ class UsageMeteringApi:
         :type index_name: [str], optional
         :rtype: UsageLogsByIndexResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
+
+        if index_name is not unset:
+            kwargs["index_name"] = index_name
 
         return self._get_usage_logs_by_index_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_logs_by_retention(self, start_hr, **kwargs):
+    def get_usage_logs_by_retention(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageLogsByRetentionResponse:
         """Get hourly logs usage by retention.
 
         Get hourly usage for indexed logs by retention period.
@@ -1771,11 +2057,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageLogsByRetentionResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_logs_by_retention_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_network_flows(self, start_hr, **kwargs):
+    def get_usage_network_flows(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageNetworkFlowsResponse:
         """Get hourly usage for Network Flows.
 
         Get hourly usage for network flows.
@@ -1787,11 +2082,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageNetworkFlowsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_network_flows_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_network_hosts(self, start_hr, **kwargs):
+    def get_usage_network_hosts(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageNetworkHostsResponse:
         """Get hourly usage for Network Hosts.
 
         Get hourly usage for network hosts.
@@ -1802,11 +2106,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageNetworkHostsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_network_hosts_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_online_archive(self, start_hr, **kwargs):
+    def get_usage_online_archive(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageOnlineArchiveResponse:
         """Get hourly usage for Online Archive.
 
         Get hourly usage for Online Archive.
@@ -1818,11 +2131,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageOnlineArchiveResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_online_archive_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_profiling(self, start_hr, **kwargs):
+    def get_usage_profiling(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageProfilingResponse:
         """Get hourly usage for profiled hosts.
 
         Get hourly usage for profiled hosts.
@@ -1834,11 +2156,21 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageProfilingResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_profiling_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_rum_sessions(self, start_hr, **kwargs):
+    def get_usage_rum_sessions(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+        type: Union[str, UnsetType] = unset,
+    ) -> UsageRumSessionsResponse:
         """Get hourly usage for RUM Sessions.
 
         Get hourly usage for `RUM <https://docs.datadoghq.com/real_user_monitoring/>`_ Sessions.
@@ -1851,11 +2183,23 @@ class UsageMeteringApi:
         :type type: str, optional
         :rtype: UsageRumSessionsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
+
+        if type is not unset:
+            kwargs["type"] = type
 
         return self._get_usage_rum_sessions_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_rum_units(self, start_hr, **kwargs):
+    def get_usage_rum_units(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageRumUnitsResponse:
         """Get hourly usage for RUM Units.
 
         Get hourly usage for `RUM <https://docs.datadoghq.com/real_user_monitoring/>`_ Units.
@@ -1866,11 +2210,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageRumUnitsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_rum_units_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_sds(self, start_hr, **kwargs):
+    def get_usage_sds(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageSDSResponse:
         """Get hourly usage for Sensitive Data Scanner.
 
         Get hourly usage for Sensitive Data Scanner.
@@ -1882,11 +2235,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageSDSResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_sds_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_snmp(self, start_hr, **kwargs):
+    def get_usage_snmp(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageSNMPResponse:
         """Get hourly usage for SNMP devices.
 
         Get hourly usage for SNMP devices.
@@ -1898,11 +2260,21 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageSNMPResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_snmp_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_summary(self, start_month, **kwargs):
+    def get_usage_summary(
+        self,
+        start_month: datetime,
+        *,
+        end_month: Union[datetime, UnsetType] = unset,
+        include_org_details: Union[bool, UnsetType] = unset,
+    ) -> UsageSummaryResponse:
         """Get usage across your multi-org account.
 
         Get usage across your multi-org account. You must have the multi-org feature enabled.
@@ -1916,11 +2288,23 @@ class UsageMeteringApi:
         :type include_org_details: bool, optional
         :rtype: UsageSummaryResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_month"] = start_month
+
+        if end_month is not unset:
+            kwargs["end_month"] = end_month
+
+        if include_org_details is not unset:
+            kwargs["include_org_details"] = include_org_details
 
         return self._get_usage_summary_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_synthetics(self, start_hr, **kwargs):
+    def get_usage_synthetics(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageSyntheticsResponse:
         """Get hourly usage for Synthetics Checks.
 
         Get hourly usage for `Synthetics checks <https://docs.datadoghq.com/synthetics/>`_.
@@ -1931,11 +2315,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageSyntheticsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_synthetics_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_synthetics_api(self, start_hr, **kwargs):
+    def get_usage_synthetics_api(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageSyntheticsAPIResponse:
         """Get hourly usage for Synthetics API Checks.
 
         Get hourly usage for `synthetics API checks <https://docs.datadoghq.com/synthetics/>`_.
@@ -1946,11 +2339,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageSyntheticsAPIResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_synthetics_api_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_synthetics_browser(self, start_hr, **kwargs):
+    def get_usage_synthetics_browser(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageSyntheticsBrowserResponse:
         """Get hourly usage for Synthetics Browser Checks.
 
         Get hourly usage for synthetics browser checks.
@@ -1961,11 +2363,20 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageSyntheticsBrowserResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_synthetics_browser_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_timeseries(self, start_hr, **kwargs):
+    def get_usage_timeseries(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageTimeseriesResponse:
         """Get hourly usage for custom metrics.
 
         Get hourly usage for `custom metrics <https://docs.datadoghq.com/developers/metrics/custom_metrics/>`_.
@@ -1976,11 +2387,23 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :rtype: UsageTimeseriesResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_timeseries_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_top_avg_metrics(self, **kwargs):
+    def get_usage_top_avg_metrics(
+        self,
+        *,
+        month: Union[datetime, UnsetType] = unset,
+        day: Union[datetime, UnsetType] = unset,
+        names: Union[List[str], UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+        next_record_id: Union[str, UnsetType] = unset,
+    ) -> UsageTopAvgMetricsResponse:
         """Get all custom metrics by hourly average.
 
         Get all `custom metrics <https://docs.datadoghq.com/developers/metrics/custom_metrics/>`_ by hourly average. Use the month parameter to get a month-to-date data resolution or use the day parameter to get a daily resolution. One of the two is required, and only one of the two is allowed.
@@ -1997,4 +2420,20 @@ class UsageMeteringApi:
         :type next_record_id: str, optional
         :rtype: UsageTopAvgMetricsResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if month is not unset:
+            kwargs["month"] = month
+
+        if day is not unset:
+            kwargs["day"] = day
+
+        if names is not unset:
+            kwargs["names"] = names
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        if next_record_id is not unset:
+            kwargs["next_record_id"] = next_record_id
+
         return self._get_usage_top_avg_metrics_endpoint.call_with_http_info(**kwargs)

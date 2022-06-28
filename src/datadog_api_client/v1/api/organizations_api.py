@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
@@ -170,7 +172,10 @@ class OrganizationsApi:
             api_client=api_client,
         )
 
-    def create_child_org(self, body, **kwargs):
+    def create_child_org(
+        self,
+        body: OrganizationCreateBody,
+    ) -> OrganizationCreateResponse:
         """Create a child organization.
 
         Create a child organization.
@@ -188,11 +193,15 @@ class OrganizationsApi:
         :type body: OrganizationCreateBody
         :rtype: OrganizationCreateResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_child_org_endpoint.call_with_http_info(**kwargs)
 
-    def downgrade_org(self, public_id, **kwargs):
+    def downgrade_org(
+        self,
+        public_id: str,
+    ) -> OrgDowngradedResponse:
         """Spin-off Child Organization.
 
         Only available for MSP customers. Removes a child organization from the hierarchy of the master organization and places the child organization on a 30-day trial.
@@ -201,11 +210,15 @@ class OrganizationsApi:
         :type public_id: str
         :rtype: OrgDowngradedResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["public_id"] = public_id
 
         return self._downgrade_org_endpoint.call_with_http_info(**kwargs)
 
-    def get_org(self, public_id, **kwargs):
+    def get_org(
+        self,
+        public_id: str,
+    ) -> OrganizationResponse:
         """Get organization information.
 
         Get organization information.
@@ -214,20 +227,28 @@ class OrganizationsApi:
         :type public_id: str
         :rtype: OrganizationResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["public_id"] = public_id
 
         return self._get_org_endpoint.call_with_http_info(**kwargs)
 
-    def list_orgs(self, **kwargs):
+    def list_orgs(
+        self,
+    ) -> OrganizationListResponse:
         """List your managed organizations.
 
         This endpoint returns data on your top-level organization.
 
         :rtype: OrganizationListResponse
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_orgs_endpoint.call_with_http_info(**kwargs)
 
-    def update_org(self, public_id, body, **kwargs):
+    def update_org(
+        self,
+        public_id: str,
+        body: Organization,
+    ) -> OrganizationResponse:
         """Update your organization.
 
         Update your organization.
@@ -237,13 +258,18 @@ class OrganizationsApi:
         :type body: Organization
         :rtype: OrganizationResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["public_id"] = public_id
 
         kwargs["body"] = body
 
         return self._update_org_endpoint.call_with_http_info(**kwargs)
 
-    def upload_idp_for_org(self, public_id, idp_file, **kwargs):
+    def upload_idp_for_org(
+        self,
+        public_id: str,
+        idp_file: file_type,
+    ) -> IdpResponse:
         """Upload IdP metadata.
 
         There are a couple of options for updating the Identity Provider (IdP)
@@ -262,6 +288,7 @@ class OrganizationsApi:
         :type idp_file: file_type
         :rtype: IdpResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["public_id"] = public_id
 
         kwargs["idp_file"] = idp_file

@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v2.model.api_keys_response import APIKeysResponse
 from datadog_api_client.v2.model.api_keys_sort import APIKeysSort
 from datadog_api_client.v2.model.api_key_response import APIKeyResponse
@@ -474,7 +480,10 @@ class KeyManagementApi:
             api_client=api_client,
         )
 
-    def create_api_key(self, body, **kwargs):
+    def create_api_key(
+        self,
+        body: APIKeyCreateRequest,
+    ) -> APIKeyResponse:
         """Create an API key.
 
         Create an API key.
@@ -482,11 +491,15 @@ class KeyManagementApi:
         :type body: APIKeyCreateRequest
         :rtype: APIKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_api_key_endpoint.call_with_http_info(**kwargs)
 
-    def create_current_user_application_key(self, body, **kwargs):
+    def create_current_user_application_key(
+        self,
+        body: ApplicationKeyCreateRequest,
+    ) -> ApplicationKeyResponse:
         """Create an application key for current user.
 
         Create an application key for current user
@@ -494,11 +507,15 @@ class KeyManagementApi:
         :type body: ApplicationKeyCreateRequest
         :rtype: ApplicationKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_current_user_application_key_endpoint.call_with_http_info(**kwargs)
 
-    def delete_api_key(self, api_key_id, **kwargs):
+    def delete_api_key(
+        self,
+        api_key_id: str,
+    ) -> None:
         """Delete an API key.
 
         Delete an API key.
@@ -507,11 +524,15 @@ class KeyManagementApi:
         :type api_key_id: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["api_key_id"] = api_key_id
 
         return self._delete_api_key_endpoint.call_with_http_info(**kwargs)
 
-    def delete_application_key(self, app_key_id, **kwargs):
+    def delete_application_key(
+        self,
+        app_key_id: str,
+    ) -> None:
         """Delete an application key.
 
         Delete an application key
@@ -520,11 +541,15 @@ class KeyManagementApi:
         :type app_key_id: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["app_key_id"] = app_key_id
 
         return self._delete_application_key_endpoint.call_with_http_info(**kwargs)
 
-    def delete_current_user_application_key(self, app_key_id, **kwargs):
+    def delete_current_user_application_key(
+        self,
+        app_key_id: str,
+    ) -> None:
         """Delete an application key owned by current user.
 
         Delete an application key owned by current user
@@ -533,11 +558,17 @@ class KeyManagementApi:
         :type app_key_id: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["app_key_id"] = app_key_id
 
         return self._delete_current_user_application_key_endpoint.call_with_http_info(**kwargs)
 
-    def get_api_key(self, api_key_id, **kwargs):
+    def get_api_key(
+        self,
+        api_key_id: str,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> APIKeyResponse:
         """Get API key.
 
         Get an API key.
@@ -548,11 +579,20 @@ class KeyManagementApi:
         :type include: str, optional
         :rtype: APIKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["api_key_id"] = api_key_id
+
+        if include is not unset:
+            kwargs["include"] = include
 
         return self._get_api_key_endpoint.call_with_http_info(**kwargs)
 
-    def get_application_key(self, app_key_id, **kwargs):
+    def get_application_key(
+        self,
+        app_key_id: str,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> ApplicationKeyResponse:
         """Get an application key.
 
         Get an application key for your org.
@@ -563,11 +603,18 @@ class KeyManagementApi:
         :type include: str, optional
         :rtype: ApplicationKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["app_key_id"] = app_key_id
+
+        if include is not unset:
+            kwargs["include"] = include
 
         return self._get_application_key_endpoint.call_with_http_info(**kwargs)
 
-    def get_current_user_application_key(self, app_key_id, **kwargs):
+    def get_current_user_application_key(
+        self,
+        app_key_id: str,
+    ) -> ApplicationKeyResponse:
         """Get one application key owned by current user.
 
         Get an application key owned by current user
@@ -576,11 +623,24 @@ class KeyManagementApi:
         :type app_key_id: str
         :rtype: ApplicationKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["app_key_id"] = app_key_id
 
         return self._get_current_user_application_key_endpoint.call_with_http_info(**kwargs)
 
-    def list_api_keys(self, **kwargs):
+    def list_api_keys(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        sort: Union[APIKeysSort, UnsetType] = unset,
+        filter: Union[str, UnsetType] = unset,
+        filter_created_at_start: Union[str, UnsetType] = unset,
+        filter_created_at_end: Union[str, UnsetType] = unset,
+        filter_modified_at_start: Union[str, UnsetType] = unset,
+        filter_modified_at_end: Union[str, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+    ) -> APIKeysResponse:
         """Get all API keys.
 
         List all API keys available for your account.
@@ -607,9 +667,46 @@ class KeyManagementApi:
         :type include: str, optional
         :rtype: APIKeysResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if filter is not unset:
+            kwargs["filter"] = filter
+
+        if filter_created_at_start is not unset:
+            kwargs["filter_created_at_start"] = filter_created_at_start
+
+        if filter_created_at_end is not unset:
+            kwargs["filter_created_at_end"] = filter_created_at_end
+
+        if filter_modified_at_start is not unset:
+            kwargs["filter_modified_at_start"] = filter_modified_at_start
+
+        if filter_modified_at_end is not unset:
+            kwargs["filter_modified_at_end"] = filter_modified_at_end
+
+        if include is not unset:
+            kwargs["include"] = include
+
         return self._list_api_keys_endpoint.call_with_http_info(**kwargs)
 
-    def list_application_keys(self, **kwargs):
+    def list_application_keys(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        sort: Union[ApplicationKeysSort, UnsetType] = unset,
+        filter: Union[str, UnsetType] = unset,
+        filter_created_at_start: Union[str, UnsetType] = unset,
+        filter_created_at_end: Union[str, UnsetType] = unset,
+    ) -> ListApplicationKeysResponse:
         """Get all application keys.
 
         List all application keys available for your org
@@ -630,9 +727,37 @@ class KeyManagementApi:
         :type filter_created_at_end: str, optional
         :rtype: ListApplicationKeysResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if filter is not unset:
+            kwargs["filter"] = filter
+
+        if filter_created_at_start is not unset:
+            kwargs["filter_created_at_start"] = filter_created_at_start
+
+        if filter_created_at_end is not unset:
+            kwargs["filter_created_at_end"] = filter_created_at_end
+
         return self._list_application_keys_endpoint.call_with_http_info(**kwargs)
 
-    def list_current_user_application_keys(self, **kwargs):
+    def list_current_user_application_keys(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        sort: Union[ApplicationKeysSort, UnsetType] = unset,
+        filter: Union[str, UnsetType] = unset,
+        filter_created_at_start: Union[str, UnsetType] = unset,
+        filter_created_at_end: Union[str, UnsetType] = unset,
+    ) -> ListApplicationKeysResponse:
         """Get all application keys owned by current user.
 
         List all application keys available for current user
@@ -653,9 +778,32 @@ class KeyManagementApi:
         :type filter_created_at_end: str, optional
         :rtype: ListApplicationKeysResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if filter is not unset:
+            kwargs["filter"] = filter
+
+        if filter_created_at_start is not unset:
+            kwargs["filter_created_at_start"] = filter_created_at_start
+
+        if filter_created_at_end is not unset:
+            kwargs["filter_created_at_end"] = filter_created_at_end
+
         return self._list_current_user_application_keys_endpoint.call_with_http_info(**kwargs)
 
-    def update_api_key(self, api_key_id, body, **kwargs):
+    def update_api_key(
+        self,
+        api_key_id: str,
+        body: APIKeyUpdateRequest,
+    ) -> APIKeyResponse:
         """Edit an API key.
 
         Update an API key.
@@ -665,13 +813,18 @@ class KeyManagementApi:
         :type body: APIKeyUpdateRequest
         :rtype: APIKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["api_key_id"] = api_key_id
 
         kwargs["body"] = body
 
         return self._update_api_key_endpoint.call_with_http_info(**kwargs)
 
-    def update_application_key(self, app_key_id, body, **kwargs):
+    def update_application_key(
+        self,
+        app_key_id: str,
+        body: ApplicationKeyUpdateRequest,
+    ) -> ApplicationKeyResponse:
         """Edit an application key.
 
         Edit an application key
@@ -681,13 +834,18 @@ class KeyManagementApi:
         :type body: ApplicationKeyUpdateRequest
         :rtype: ApplicationKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["app_key_id"] = app_key_id
 
         kwargs["body"] = body
 
         return self._update_application_key_endpoint.call_with_http_info(**kwargs)
 
-    def update_current_user_application_key(self, app_key_id, body, **kwargs):
+    def update_current_user_application_key(
+        self,
+        app_key_id: str,
+        body: ApplicationKeyUpdateRequest,
+    ) -> ApplicationKeyResponse:
         """Edit an application key owned by current user.
 
         Edit an application key owned by current user
@@ -697,6 +855,7 @@ class KeyManagementApi:
         :type body: ApplicationKeyUpdateRequest
         :rtype: ApplicationKeyResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["app_key_id"] = app_key_id
 
         kwargs["body"] = body

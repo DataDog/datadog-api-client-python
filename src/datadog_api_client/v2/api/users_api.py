@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v2.model.user_response import UserResponse
 from datadog_api_client.v2.model.service_account_create_request import ServiceAccountCreateRequest
 from datadog_api_client.v2.model.user_invitations_response import UserInvitationsResponse
@@ -290,7 +296,10 @@ class UsersApi:
             api_client=api_client,
         )
 
-    def create_service_account(self, body, **kwargs):
+    def create_service_account(
+        self,
+        body: ServiceAccountCreateRequest,
+    ) -> UserResponse:
         """Create a service account.
 
         Create a service account for your organization.
@@ -298,11 +307,15 @@ class UsersApi:
         :type body: ServiceAccountCreateRequest
         :rtype: UserResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_service_account_endpoint.call_with_http_info(**kwargs)
 
-    def create_user(self, body, **kwargs):
+    def create_user(
+        self,
+        body: UserCreateRequest,
+    ) -> UserResponse:
         """Create a user.
 
         Create a user for your organization.
@@ -310,11 +323,15 @@ class UsersApi:
         :type body: UserCreateRequest
         :rtype: UserResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_user_endpoint.call_with_http_info(**kwargs)
 
-    def disable_user(self, user_id, **kwargs):
+    def disable_user(
+        self,
+        user_id: str,
+    ) -> None:
         """Disable a user.
 
         Disable a user. Can only be used with an application key belonging
@@ -324,11 +341,15 @@ class UsersApi:
         :type user_id: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["user_id"] = user_id
 
         return self._disable_user_endpoint.call_with_http_info(**kwargs)
 
-    def get_invitation(self, user_invitation_uuid, **kwargs):
+    def get_invitation(
+        self,
+        user_invitation_uuid: str,
+    ) -> UserInvitationResponse:
         """Get a user invitation.
 
         Returns a single user invitation by its UUID.
@@ -337,11 +358,15 @@ class UsersApi:
         :type user_invitation_uuid: str
         :rtype: UserInvitationResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["user_invitation_uuid"] = user_invitation_uuid
 
         return self._get_invitation_endpoint.call_with_http_info(**kwargs)
 
-    def get_user(self, user_id, **kwargs):
+    def get_user(
+        self,
+        user_id: str,
+    ) -> UserResponse:
         """Get user details.
 
         Get a user in the organization specified by the user’s ``user_id``.
@@ -350,11 +375,15 @@ class UsersApi:
         :type user_id: str
         :rtype: UserResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["user_id"] = user_id
 
         return self._get_user_endpoint.call_with_http_info(**kwargs)
 
-    def list_user_organizations(self, user_id, **kwargs):
+    def list_user_organizations(
+        self,
+        user_id: str,
+    ) -> UserResponse:
         """Get a user organization.
 
         Get a user organization. Returns the user information and all organizations
@@ -364,11 +393,15 @@ class UsersApi:
         :type user_id: str
         :rtype: UserResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["user_id"] = user_id
 
         return self._list_user_organizations_endpoint.call_with_http_info(**kwargs)
 
-    def list_user_permissions(self, user_id, **kwargs):
+    def list_user_permissions(
+        self,
+        user_id: str,
+    ) -> PermissionsResponse:
         """Get a user permissions.
 
         Get a user permission set. Returns a list of the user’s permissions
@@ -378,11 +411,21 @@ class UsersApi:
         :type user_id: str
         :rtype: PermissionsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["user_id"] = user_id
 
         return self._list_user_permissions_endpoint.call_with_http_info(**kwargs)
 
-    def list_users(self, **kwargs):
+    def list_users(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+        sort_dir: Union[QuerySortOrder, UnsetType] = unset,
+        filter: Union[str, UnsetType] = unset,
+        filter_status: Union[str, UnsetType] = unset,
+    ) -> UsersResponse:
         """List all users.
 
         Get the list of all users in the organization. This list includes
@@ -407,9 +450,31 @@ class UsersApi:
         :type filter_status: str, optional
         :rtype: UsersResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if sort_dir is not unset:
+            kwargs["sort_dir"] = sort_dir
+
+        if filter is not unset:
+            kwargs["filter"] = filter
+
+        if filter_status is not unset:
+            kwargs["filter_status"] = filter_status
+
         return self._list_users_endpoint.call_with_http_info(**kwargs)
 
-    def send_invitations(self, body, **kwargs):
+    def send_invitations(
+        self,
+        body: UserInvitationsRequest,
+    ) -> UserInvitationsResponse:
         """Send invitation emails.
 
         Sends emails to one or more users inviting them to join the organization.
@@ -417,11 +482,16 @@ class UsersApi:
         :type body: UserInvitationsRequest
         :rtype: UserInvitationsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._send_invitations_endpoint.call_with_http_info(**kwargs)
 
-    def update_user(self, user_id, body, **kwargs):
+    def update_user(
+        self,
+        user_id: str,
+        body: UserUpdateRequest,
+    ) -> UserResponse:
         """Update a user.
 
         Edit a user. Can only be used with an application key belonging
@@ -432,6 +502,7 @@ class UsersApi:
         :type body: UserUpdateRequest
         :rtype: UserResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["user_id"] = user_id
 
         kwargs["body"] = body

@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v1.model.dashboard_bulk_delete_request import DashboardBulkDeleteRequest
 from datadog_api_client.v1.model.dashboard_summary import DashboardSummary
 from datadog_api_client.v1.model.dashboard_restore_request import DashboardRestoreRequest
@@ -191,7 +197,10 @@ class DashboardsApi:
             api_client=api_client,
         )
 
-    def create_dashboard(self, body, **kwargs):
+    def create_dashboard(
+        self,
+        body: Dashboard,
+    ) -> Dashboard:
         """Create a new dashboard.
 
         Create a dashboard using the specified options. When defining queries in your widgets, take note of which queries should have the ``as_count()`` or ``as_rate()`` modifiers appended.
@@ -201,11 +210,15 @@ class DashboardsApi:
         :type body: Dashboard
         :rtype: Dashboard
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_dashboard_endpoint.call_with_http_info(**kwargs)
 
-    def delete_dashboard(self, dashboard_id, **kwargs):
+    def delete_dashboard(
+        self,
+        dashboard_id: str,
+    ) -> DashboardDeleteResponse:
         """Delete a dashboard.
 
         Delete a dashboard using the specified ID.
@@ -214,11 +227,15 @@ class DashboardsApi:
         :type dashboard_id: str
         :rtype: DashboardDeleteResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["dashboard_id"] = dashboard_id
 
         return self._delete_dashboard_endpoint.call_with_http_info(**kwargs)
 
-    def delete_dashboards(self, body, **kwargs):
+    def delete_dashboards(
+        self,
+        body: DashboardBulkDeleteRequest,
+    ) -> None:
         """Delete dashboards.
 
         Delete dashboards using the specified IDs. If there are any failures, no dashboards will be deleted (partial success is not allowed).
@@ -227,11 +244,15 @@ class DashboardsApi:
         :type body: DashboardBulkDeleteRequest
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._delete_dashboards_endpoint.call_with_http_info(**kwargs)
 
-    def get_dashboard(self, dashboard_id, **kwargs):
+    def get_dashboard(
+        self,
+        dashboard_id: str,
+    ) -> Dashboard:
         """Get a dashboard.
 
         Get a dashboard using the specified ID.
@@ -240,11 +261,17 @@ class DashboardsApi:
         :type dashboard_id: str
         :rtype: Dashboard
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["dashboard_id"] = dashboard_id
 
         return self._get_dashboard_endpoint.call_with_http_info(**kwargs)
 
-    def list_dashboards(self, **kwargs):
+    def list_dashboards(
+        self,
+        *,
+        filter_shared: Union[bool, UnsetType] = unset,
+        filter_deleted: Union[bool, UnsetType] = unset,
+    ) -> DashboardSummary:
         """Get all dashboards.
 
         Get all dashboards.
@@ -260,9 +287,19 @@ class DashboardsApi:
         :type filter_deleted: bool, optional
         :rtype: DashboardSummary
         """
+        kwargs: Dict[str, Any] = {}
+        if filter_shared is not unset:
+            kwargs["filter_shared"] = filter_shared
+
+        if filter_deleted is not unset:
+            kwargs["filter_deleted"] = filter_deleted
+
         return self._list_dashboards_endpoint.call_with_http_info(**kwargs)
 
-    def restore_dashboards(self, body, **kwargs):
+    def restore_dashboards(
+        self,
+        body: DashboardRestoreRequest,
+    ) -> None:
         """Restore deleted dashboards.
 
         Restore dashboards using the specified IDs. If there are any failures, no dashboards will be restored (partial success is not allowed).
@@ -271,11 +308,16 @@ class DashboardsApi:
         :type body: DashboardRestoreRequest
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._restore_dashboards_endpoint.call_with_http_info(**kwargs)
 
-    def update_dashboard(self, dashboard_id, body, **kwargs):
+    def update_dashboard(
+        self,
+        dashboard_id: str,
+        body: Dashboard,
+    ) -> Dashboard:
         """Update a dashboard.
 
         Update a dashboard using the specified ID.
@@ -286,6 +328,7 @@ class DashboardsApi:
         :type body: Dashboard
         :rtype: Dashboard
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["dashboard_id"] = dashboard_id
 
         kwargs["body"] = body

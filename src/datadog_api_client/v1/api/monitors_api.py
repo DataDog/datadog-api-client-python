@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v1.model.monitor import Monitor
 from datadog_api_client.v1.model.check_can_delete_monitor_response import CheckCanDeleteMonitorResponse
 from datadog_api_client.v1.model.monitor_group_search_response import MonitorGroupSearchResponse
@@ -347,7 +353,10 @@ class MonitorsApi:
             api_client=api_client,
         )
 
-    def check_can_delete_monitor(self, monitor_ids, **kwargs):
+    def check_can_delete_monitor(
+        self,
+        monitor_ids: List[int],
+    ) -> CheckCanDeleteMonitorResponse:
         """Check if a monitor can be deleted.
 
         Check if the given monitors can be deleted.
@@ -356,11 +365,15 @@ class MonitorsApi:
         :type monitor_ids: [int]
         :rtype: CheckCanDeleteMonitorResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["monitor_ids"] = monitor_ids
 
         return self._check_can_delete_monitor_endpoint.call_with_http_info(**kwargs)
 
-    def create_monitor(self, body, **kwargs):
+    def create_monitor(
+        self,
+        body: Monitor,
+    ) -> Monitor:
         """Create a monitor.
 
         Create a monitor using the specified options.
@@ -565,11 +578,17 @@ class MonitorsApi:
         :type body: Monitor
         :rtype: Monitor
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_monitor_endpoint.call_with_http_info(**kwargs)
 
-    def delete_monitor(self, monitor_id, **kwargs):
+    def delete_monitor(
+        self,
+        monitor_id: int,
+        *,
+        force: Union[str, UnsetType] = unset,
+    ) -> DeletedMonitor:
         """Delete a monitor.
 
         Delete the specified monitor
@@ -580,11 +599,20 @@ class MonitorsApi:
         :type force: str, optional
         :rtype: DeletedMonitor
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["monitor_id"] = monitor_id
+
+        if force is not unset:
+            kwargs["force"] = force
 
         return self._delete_monitor_endpoint.call_with_http_info(**kwargs)
 
-    def get_monitor(self, monitor_id, **kwargs):
+    def get_monitor(
+        self,
+        monitor_id: int,
+        *,
+        group_states: Union[str, UnsetType] = unset,
+    ) -> Monitor:
         """Get a monitor's details.
 
         Get details about the specified monitor from your organization.
@@ -595,11 +623,26 @@ class MonitorsApi:
         :type group_states: str, optional
         :rtype: Monitor
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["monitor_id"] = monitor_id
+
+        if group_states is not unset:
+            kwargs["group_states"] = group_states
 
         return self._get_monitor_endpoint.call_with_http_info(**kwargs)
 
-    def list_monitors(self, **kwargs):
+    def list_monitors(
+        self,
+        *,
+        group_states: Union[str, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        tags: Union[str, UnsetType] = unset,
+        monitor_tags: Union[str, UnsetType] = unset,
+        with_downtimes: Union[bool, UnsetType] = unset,
+        id_offset: Union[int, UnsetType] = unset,
+        page: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+    ) -> List[Monitor]:
         """Get all monitor details.
 
         Get details about the specified monitor from your organization.
@@ -625,9 +668,41 @@ class MonitorsApi:
         :type page_size: int, optional
         :rtype: [Monitor]
         """
+        kwargs: Dict[str, Any] = {}
+        if group_states is not unset:
+            kwargs["group_states"] = group_states
+
+        if name is not unset:
+            kwargs["name"] = name
+
+        if tags is not unset:
+            kwargs["tags"] = tags
+
+        if monitor_tags is not unset:
+            kwargs["monitor_tags"] = monitor_tags
+
+        if with_downtimes is not unset:
+            kwargs["with_downtimes"] = with_downtimes
+
+        if id_offset is not unset:
+            kwargs["id_offset"] = id_offset
+
+        if page is not unset:
+            kwargs["page"] = page
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
         return self._list_monitors_endpoint.call_with_http_info(**kwargs)
 
-    def search_monitor_groups(self, **kwargs):
+    def search_monitor_groups(
+        self,
+        *,
+        query: Union[str, UnsetType] = unset,
+        page: Union[int, UnsetType] = unset,
+        per_page: Union[int, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+    ) -> MonitorGroupSearchResponse:
         """Monitors group search.
 
         Search and filter your monitor groups details.
@@ -651,9 +726,29 @@ class MonitorsApi:
         :type sort: str, optional
         :rtype: MonitorGroupSearchResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if query is not unset:
+            kwargs["query"] = query
+
+        if page is not unset:
+            kwargs["page"] = page
+
+        if per_page is not unset:
+            kwargs["per_page"] = per_page
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
         return self._search_monitor_groups_endpoint.call_with_http_info(**kwargs)
 
-    def search_monitors(self, **kwargs):
+    def search_monitors(
+        self,
+        *,
+        query: Union[str, UnsetType] = unset,
+        page: Union[int, UnsetType] = unset,
+        per_page: Union[int, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+    ) -> MonitorSearchResponse:
         """Monitors search.
 
         Search and filter your monitors details.
@@ -677,9 +772,26 @@ class MonitorsApi:
         :type sort: str, optional
         :rtype: MonitorSearchResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if query is not unset:
+            kwargs["query"] = query
+
+        if page is not unset:
+            kwargs["page"] = page
+
+        if per_page is not unset:
+            kwargs["per_page"] = per_page
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
         return self._search_monitors_endpoint.call_with_http_info(**kwargs)
 
-    def update_monitor(self, monitor_id, body, **kwargs):
+    def update_monitor(
+        self,
+        monitor_id: int,
+        body: MonitorUpdateRequest,
+    ) -> Monitor:
         """Edit a monitor.
 
         Edit the specified monitor.
@@ -690,13 +802,18 @@ class MonitorsApi:
         :type body: MonitorUpdateRequest
         :rtype: Monitor
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["monitor_id"] = monitor_id
 
         kwargs["body"] = body
 
         return self._update_monitor_endpoint.call_with_http_info(**kwargs)
 
-    def validate_existing_monitor(self, monitor_id, body, **kwargs):
+    def validate_existing_monitor(
+        self,
+        monitor_id: int,
+        body: Monitor,
+    ) -> dict:
         """Validate an existing monitor.
 
         Validate the monitor provided in the request.
@@ -707,13 +824,17 @@ class MonitorsApi:
         :type body: Monitor
         :rtype: dict
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["monitor_id"] = monitor_id
 
         kwargs["body"] = body
 
         return self._validate_existing_monitor_endpoint.call_with_http_info(**kwargs)
 
-    def validate_monitor(self, body, **kwargs):
+    def validate_monitor(
+        self,
+        body: Monitor,
+    ) -> dict:
         """Validate a monitor.
 
         Validate the monitor provided in the request.
@@ -722,6 +843,7 @@ class MonitorsApi:
         :type body: Monitor
         :rtype: dict
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._validate_monitor_endpoint.call_with_http_info(**kwargs)

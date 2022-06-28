@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model.dashboard_list_delete_items_response import DashboardListDeleteItemsResponse
@@ -131,7 +133,11 @@ class DashboardListsApi:
             api_client=api_client,
         )
 
-    def create_dashboard_list_items(self, dashboard_list_id, body, **kwargs):
+    def create_dashboard_list_items(
+        self,
+        dashboard_list_id: int,
+        body: DashboardListAddItemsRequest,
+    ) -> DashboardListAddItemsResponse:
         """Add Items to a Dashboard List.
 
         Add dashboards to an existing dashboard list.
@@ -142,13 +148,18 @@ class DashboardListsApi:
         :type body: DashboardListAddItemsRequest
         :rtype: DashboardListAddItemsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["dashboard_list_id"] = dashboard_list_id
 
         kwargs["body"] = body
 
         return self._create_dashboard_list_items_endpoint.call_with_http_info(**kwargs)
 
-    def delete_dashboard_list_items(self, dashboard_list_id, body, **kwargs):
+    def delete_dashboard_list_items(
+        self,
+        dashboard_list_id: int,
+        body: DashboardListDeleteItemsRequest,
+    ) -> DashboardListDeleteItemsResponse:
         """Delete items from a dashboard list.
 
         Delete dashboards from an existing dashboard list.
@@ -159,13 +170,17 @@ class DashboardListsApi:
         :type body: DashboardListDeleteItemsRequest
         :rtype: DashboardListDeleteItemsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["dashboard_list_id"] = dashboard_list_id
 
         kwargs["body"] = body
 
         return self._delete_dashboard_list_items_endpoint.call_with_http_info(**kwargs)
 
-    def get_dashboard_list_items(self, dashboard_list_id, **kwargs):
+    def get_dashboard_list_items(
+        self,
+        dashboard_list_id: int,
+    ) -> DashboardListItems:
         """Get items of a Dashboard List.
 
         Fetch the dashboard list’s dashboard definitions.
@@ -174,11 +189,16 @@ class DashboardListsApi:
         :type dashboard_list_id: int
         :rtype: DashboardListItems
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["dashboard_list_id"] = dashboard_list_id
 
         return self._get_dashboard_list_items_endpoint.call_with_http_info(**kwargs)
 
-    def update_dashboard_list_items(self, dashboard_list_id, body, **kwargs):
+    def update_dashboard_list_items(
+        self,
+        dashboard_list_id: int,
+        body: DashboardListUpdateItemsRequest,
+    ) -> DashboardListUpdateItemsResponse:
         """Update items of a dashboard list.
 
         Update dashboards of an existing dashboard list.
@@ -189,6 +209,7 @@ class DashboardListsApi:
         :type body: DashboardListUpdateItemsRequest
         :rtype: DashboardListUpdateItemsResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["dashboard_list_id"] = dashboard_list_id
 
         kwargs["body"] = body

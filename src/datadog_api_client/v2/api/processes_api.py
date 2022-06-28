@@ -1,12 +1,16 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
     set_attribute_from_path,
     get_attribute_from_path,
+    UnsetType,
+    unset,
 )
 from datadog_api_client.v2.model.process_summaries_response import ProcessSummariesResponse
 
@@ -74,7 +78,16 @@ class ProcessesApi:
             api_client=api_client,
         )
 
-    def list_processes(self, **kwargs):
+    def list_processes(
+        self,
+        *,
+        search: Union[str, UnsetType] = unset,
+        tags: Union[str, UnsetType] = unset,
+        _from: Union[int, UnsetType] = unset,
+        to: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+    ) -> ProcessSummariesResponse:
         """Get all processes.
 
         Get all processes for your organization.
@@ -98,6 +111,25 @@ class ProcessesApi:
         :type page_cursor: str, optional
         :rtype: ProcessSummariesResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if search is not unset:
+            kwargs["search"] = search
+
+        if tags is not unset:
+            kwargs["tags"] = tags
+
+        if _from is not unset:
+            kwargs["_from"] = _from
+
+        if to is not unset:
+            kwargs["to"] = to
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
         return self._list_processes_endpoint.call_with_http_info(**kwargs)
 
     def list_processes_with_pagination(self, **kwargs):

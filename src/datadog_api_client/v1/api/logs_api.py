@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v1.model.logs_list_response import LogsListResponse
 from datadog_api_client.v1.model.logs_list_request import LogsListRequest
 from datadog_api_client.v1.model.content_encoding import ContentEncoding
@@ -123,7 +129,10 @@ class LogsApi:
             api_client=api_client,
         )
 
-    def list_logs(self, body, **kwargs):
+    def list_logs(
+        self,
+        body: LogsListRequest,
+    ) -> LogsListResponse:
         """Search logs.
 
         List endpoint returns logs that match a log search query.
@@ -137,11 +146,18 @@ class LogsApi:
         :type body: LogsListRequest
         :rtype: LogsListResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._list_logs_endpoint.call_with_http_info(**kwargs)
 
-    def submit_log(self, body, **kwargs):
+    def submit_log(
+        self,
+        body: HTTPLog,
+        *,
+        content_encoding: Union[ContentEncoding, UnsetType] = unset,
+        ddtags: Union[str, UnsetType] = unset,
+    ) -> dict:
         """Send logs.
 
         Send your logs to your Datadog platform over HTTP. Limits per HTTP request are:
@@ -177,6 +193,13 @@ class LogsApi:
         :type ddtags: str, optional
         :rtype: dict
         """
+        kwargs: Dict[str, Any] = {}
+        if content_encoding is not unset:
+            kwargs["content_encoding"] = content_encoding
+
+        if ddtags is not unset:
+            kwargs["ddtags"] = ddtags
+
         kwargs["body"] = body
 
         return self._submit_log_endpoint.call_with_http_info(**kwargs)

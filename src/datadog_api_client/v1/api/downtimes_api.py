@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v1.model.downtime import Downtime
 from datadog_api_client.v1.model.canceled_downtimes_ids import CanceledDowntimesIds
 from datadog_api_client.v1.model.cancel_downtimes_by_scope_request import CancelDowntimesByScopeRequest
@@ -190,7 +196,10 @@ class DowntimesApi:
             api_client=api_client,
         )
 
-    def cancel_downtime(self, downtime_id, **kwargs):
+    def cancel_downtime(
+        self,
+        downtime_id: int,
+    ) -> None:
         """Cancel a downtime.
 
         Cancel a downtime.
@@ -199,11 +208,15 @@ class DowntimesApi:
         :type downtime_id: int
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["downtime_id"] = downtime_id
 
         return self._cancel_downtime_endpoint.call_with_http_info(**kwargs)
 
-    def cancel_downtimes_by_scope(self, body, **kwargs):
+    def cancel_downtimes_by_scope(
+        self,
+        body: CancelDowntimesByScopeRequest,
+    ) -> CanceledDowntimesIds:
         """Cancel downtimes by scope.
 
         Delete all downtimes that match the scope of ``X``.
@@ -212,11 +225,15 @@ class DowntimesApi:
         :type body: CancelDowntimesByScopeRequest
         :rtype: CanceledDowntimesIds
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._cancel_downtimes_by_scope_endpoint.call_with_http_info(**kwargs)
 
-    def create_downtime(self, body, **kwargs):
+    def create_downtime(
+        self,
+        body: Downtime,
+    ) -> Downtime:
         """Schedule a downtime.
 
         Schedule a downtime.
@@ -225,11 +242,15 @@ class DowntimesApi:
         :type body: Downtime
         :rtype: Downtime
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_downtime_endpoint.call_with_http_info(**kwargs)
 
-    def get_downtime(self, downtime_id, **kwargs):
+    def get_downtime(
+        self,
+        downtime_id: int,
+    ) -> Downtime:
         """Get a downtime.
 
         Get downtime detail by ``downtime_id``.
@@ -238,11 +259,16 @@ class DowntimesApi:
         :type downtime_id: int
         :rtype: Downtime
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["downtime_id"] = downtime_id
 
         return self._get_downtime_endpoint.call_with_http_info(**kwargs)
 
-    def list_downtimes(self, **kwargs):
+    def list_downtimes(
+        self,
+        *,
+        current_only: Union[bool, UnsetType] = unset,
+    ) -> List[Downtime]:
         """Get all downtimes.
 
         Get all scheduled downtimes.
@@ -251,9 +277,16 @@ class DowntimesApi:
         :type current_only: bool, optional
         :rtype: [Downtime]
         """
+        kwargs: Dict[str, Any] = {}
+        if current_only is not unset:
+            kwargs["current_only"] = current_only
+
         return self._list_downtimes_endpoint.call_with_http_info(**kwargs)
 
-    def list_monitor_downtimes(self, monitor_id, **kwargs):
+    def list_monitor_downtimes(
+        self,
+        monitor_id: int,
+    ) -> List[Downtime]:
         """Get all downtimes for a monitor.
 
         Get all active downtimes for the specified monitor.
@@ -262,11 +295,16 @@ class DowntimesApi:
         :type monitor_id: int
         :rtype: [Downtime]
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["monitor_id"] = monitor_id
 
         return self._list_monitor_downtimes_endpoint.call_with_http_info(**kwargs)
 
-    def update_downtime(self, downtime_id, body, **kwargs):
+    def update_downtime(
+        self,
+        downtime_id: int,
+        body: Downtime,
+    ) -> Downtime:
         """Update a downtime.
 
         Update a single downtime by ``downtime_id``.
@@ -277,6 +315,7 @@ class DowntimesApi:
         :type body: Downtime
         :rtype: Downtime
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["downtime_id"] = downtime_id
 
         kwargs["body"] = body

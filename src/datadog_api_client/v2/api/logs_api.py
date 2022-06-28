@@ -1,13 +1,17 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
     datetime,
     set_attribute_from_path,
     get_attribute_from_path,
+    UnsetType,
+    unset,
 )
 from datadog_api_client.v2.model.content_encoding import ContentEncoding
 from datadog_api_client.v2.model.http_log import HTTPLog
@@ -208,7 +212,10 @@ class LogsApi:
             api_client=api_client,
         )
 
-    def aggregate_logs(self, body, **kwargs):
+    def aggregate_logs(
+        self,
+        body: LogsAggregateRequest,
+    ) -> LogsAggregateResponse:
         """Aggregate events.
 
         The API endpoint to aggregate events into buckets and compute metrics and timeseries.
@@ -216,11 +223,16 @@ class LogsApi:
         :type body: LogsAggregateRequest
         :rtype: LogsAggregateResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._aggregate_logs_endpoint.call_with_http_info(**kwargs)
 
-    def list_logs(self, **kwargs):
+    def list_logs(
+        self,
+        *,
+        body: Union[LogsListRequest, UnsetType] = unset,
+    ) -> LogsListResponse:
         """Search logs.
 
         List endpoint returns logs that match a log search query.
@@ -235,6 +247,10 @@ class LogsApi:
         :type body: LogsListRequest, optional
         :rtype: LogsListResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if body is not unset:
+            kwargs["body"] = body
+
         return self._list_logs_endpoint.call_with_http_info(**kwargs)
 
     def list_logs_with_pagination(self, **kwargs):
@@ -260,7 +276,17 @@ class LogsApi:
                 kwargs, "body.page.cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
             )
 
-    def list_logs_get(self, **kwargs):
+    def list_logs_get(
+        self,
+        *,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_index: Union[str, UnsetType] = unset,
+        filter_from: Union[datetime, UnsetType] = unset,
+        filter_to: Union[datetime, UnsetType] = unset,
+        sort: Union[LogsSort, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> LogsListResponse:
         """Get a list of logs.
 
         List endpoint returns logs that match a log search query.
@@ -289,6 +315,28 @@ class LogsApi:
         :type page_limit: int, optional
         :rtype: LogsListResponse
         """
+        kwargs: Dict[str, Any] = {}
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_index is not unset:
+            kwargs["filter_index"] = filter_index
+
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
         return self._list_logs_get_endpoint.call_with_http_info(**kwargs)
 
     def list_logs_get_with_pagination(self, **kwargs):
@@ -328,7 +376,13 @@ class LogsApi:
                 kwargs, "page_cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
             )
 
-    def submit_log(self, body, **kwargs):
+    def submit_log(
+        self,
+        body: HTTPLog,
+        *,
+        content_encoding: Union[ContentEncoding, UnsetType] = unset,
+        ddtags: Union[str, UnsetType] = unset,
+    ) -> dict:
         """Send logs.
 
         Send your logs to your Datadog platform over HTTP. Limits per HTTP request are:
@@ -368,6 +422,13 @@ class LogsApi:
         :type ddtags: str, optional
         :rtype: dict
         """
+        kwargs: Dict[str, Any] = {}
+        if content_encoding is not unset:
+            kwargs["content_encoding"] = content_encoding
+
+        if ddtags is not unset:
+            kwargs["ddtags"] = ddtags
+
         kwargs["body"] = body
 
         return self._submit_log_endpoint.call_with_http_info(**kwargs)

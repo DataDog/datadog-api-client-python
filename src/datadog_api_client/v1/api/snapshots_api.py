@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v1.model.graph_snapshot import GraphSnapshot
 
 
@@ -78,7 +84,18 @@ class SnapshotsApi:
             api_client=api_client,
         )
 
-    def get_graph_snapshot(self, start, end, **kwargs):
+    def get_graph_snapshot(
+        self,
+        start: int,
+        end: int,
+        *,
+        metric_query: Union[str, UnsetType] = unset,
+        event_query: Union[str, UnsetType] = unset,
+        graph_def: Union[str, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        height: Union[int, UnsetType] = unset,
+        width: Union[int, UnsetType] = unset,
+    ) -> GraphSnapshot:
         """Take graph snapshots.
 
         Take graph snapshots.
@@ -104,8 +121,27 @@ class SnapshotsApi:
         :type width: int, optional
         :rtype: GraphSnapshot
         """
+        kwargs: Dict[str, Any] = {}
+        if metric_query is not unset:
+            kwargs["metric_query"] = metric_query
+
         kwargs["start"] = start
 
         kwargs["end"] = end
+
+        if event_query is not unset:
+            kwargs["event_query"] = event_query
+
+        if graph_def is not unset:
+            kwargs["graph_def"] = graph_def
+
+        if title is not unset:
+            kwargs["title"] = title
+
+        if height is not unset:
+            kwargs["height"] = height
+
+        if width is not unset:
+            kwargs["width"] = width
 
         return self._get_graph_snapshot_endpoint.call_with_http_info(**kwargs)

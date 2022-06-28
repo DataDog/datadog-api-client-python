@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model.logs_metrics_response import LogsMetricsResponse
@@ -136,7 +138,10 @@ class LogsMetricsApi:
             api_client=api_client,
         )
 
-    def create_logs_metric(self, body, **kwargs):
+    def create_logs_metric(
+        self,
+        body: LogsMetricCreateRequest,
+    ) -> LogsMetricResponse:
         """Create a log-based metric.
 
         Create a metric based on your ingested logs in your organization.
@@ -146,11 +151,15 @@ class LogsMetricsApi:
         :type body: LogsMetricCreateRequest
         :rtype: LogsMetricResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_logs_metric_endpoint.call_with_http_info(**kwargs)
 
-    def delete_logs_metric(self, metric_id, **kwargs):
+    def delete_logs_metric(
+        self,
+        metric_id: str,
+    ) -> None:
         """Delete a log-based metric.
 
         Delete a specific log-based metric from your organization.
@@ -159,11 +168,15 @@ class LogsMetricsApi:
         :type metric_id: str
         :rtype: None
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["metric_id"] = metric_id
 
         return self._delete_logs_metric_endpoint.call_with_http_info(**kwargs)
 
-    def get_logs_metric(self, metric_id, **kwargs):
+    def get_logs_metric(
+        self,
+        metric_id: str,
+    ) -> LogsMetricResponse:
         """Get a log-based metric.
 
         Get a specific log-based metric from your organization.
@@ -172,20 +185,28 @@ class LogsMetricsApi:
         :type metric_id: str
         :rtype: LogsMetricResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["metric_id"] = metric_id
 
         return self._get_logs_metric_endpoint.call_with_http_info(**kwargs)
 
-    def list_logs_metrics(self, **kwargs):
+    def list_logs_metrics(
+        self,
+    ) -> LogsMetricsResponse:
         """Get all log-based metrics.
 
         Get the list of configured log-based metrics with their definitions.
 
         :rtype: LogsMetricsResponse
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_logs_metrics_endpoint.call_with_http_info(**kwargs)
 
-    def update_logs_metric(self, metric_id, body, **kwargs):
+    def update_logs_metric(
+        self,
+        metric_id: str,
+        body: LogsMetricUpdateRequest,
+    ) -> LogsMetricResponse:
         """Update a log-based metric.
 
         Update a specific log-based metric from your organization.
@@ -197,6 +218,7 @@ class LogsMetricsApi:
         :type body: LogsMetricUpdateRequest
         :rtype: LogsMetricResponse
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["metric_id"] = metric_id
 
         kwargs["body"] = body

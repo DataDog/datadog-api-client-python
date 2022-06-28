@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.gcp_account import GCPAccount
@@ -100,7 +102,10 @@ class GCPIntegrationApi:
             api_client=api_client,
         )
 
-    def create_gcp_integration(self, body, **kwargs):
+    def create_gcp_integration(
+        self,
+        body: GCPAccount,
+    ) -> dict:
         """Create a GCP integration.
 
         Create a Datadog-GCP integration.
@@ -109,11 +114,15 @@ class GCPIntegrationApi:
         :type body: GCPAccount
         :rtype: dict
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_gcp_integration_endpoint.call_with_http_info(**kwargs)
 
-    def delete_gcp_integration(self, body, **kwargs):
+    def delete_gcp_integration(
+        self,
+        body: GCPAccount,
+    ) -> dict:
         """Delete a GCP integration.
 
         Delete a given Datadog-GCP integration.
@@ -122,20 +131,27 @@ class GCPIntegrationApi:
         :type body: GCPAccount
         :rtype: dict
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._delete_gcp_integration_endpoint.call_with_http_info(**kwargs)
 
-    def list_gcp_integration(self, **kwargs):
+    def list_gcp_integration(
+        self,
+    ) -> GCPAccountListResponse:
         """List all GCP integrations.
 
         List all Datadog-GCP integrations configured in your Datadog account.
 
         :rtype: GCPAccountListResponse
         """
+        kwargs: Dict[str, Any] = {}
         return self._list_gcp_integration_endpoint.call_with_http_info(**kwargs)
 
-    def update_gcp_integration(self, body, **kwargs):
+    def update_gcp_integration(
+        self,
+        body: GCPAccount,
+    ) -> dict:
         """Update a GCP integration.
 
         Update a Datadog-GCP integrations host_filters and/or auto-mute.
@@ -147,6 +163,7 @@ class GCPIntegrationApi:
         :type body: GCPAccount
         :rtype: dict
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._update_gcp_integration_endpoint.call_with_http_info(**kwargs)
