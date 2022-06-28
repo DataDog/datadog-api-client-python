@@ -1205,6 +1205,13 @@ ip\_prefixes\_synthetics
    :members:
    :show-inheritance:
 
+ip\_prefixes\_synthetics\_private\_locations
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.ip_prefixes_synthetics_private_locations
+   :members:
+   :show-inheritance:
+
 ip\_prefixes\_webhooks
 ----------------------
 
