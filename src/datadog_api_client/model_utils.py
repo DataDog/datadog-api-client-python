@@ -12,11 +12,7 @@ import re
 import tempfile
 from types import MappingProxyType
 from typing import Collection, Mapping, Union
-
-try:
-    from typing import Final
-except ImportError:
-    from typing_extensions import Final
+from typing_extensions import Final
 
 from dateutil.parser import parse
 
