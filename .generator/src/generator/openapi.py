@@ -383,6 +383,11 @@ def get_api_models(operations):
                     if name and name not in seen:
                         seen.add(name)
                         yield name
+        if "x-pagination" in operation:
+            name = get_type_at_path(operation, operation["x-pagination"]["resultsPath"])
+            if name and name not in seen:
+                seen.add(name)
+                yield name
 
 
 def parameters(operation):
