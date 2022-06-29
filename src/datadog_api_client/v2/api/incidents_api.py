@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
@@ -14,6 +15,7 @@ from datadog_api_client.model_utils import (
 )
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
 from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
+from datadog_api_client.v2.model.incident_response_data import IncidentResponseData
 from datadog_api_client.v2.model.incident_response import IncidentResponse
 from datadog_api_client.v2.model.incident_create_request import IncidentCreateRequest
 from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRequest
@@ -263,7 +265,13 @@ class IncidentsApi:
 
         return self._list_incidents_endpoint.call_with_http_info(**kwargs)
 
-    def list_incidents_with_pagination(self, **kwargs):
+    def list_incidents_with_pagination(
+        self,
+        *,
+        include: Union[List[IncidentRelatedObject], UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[IncidentResponseData]:
         """Get a list of incidents.
 
         Provide a paginated version of :meth:`list_incidents`, returning all items.
@@ -278,19 +286,29 @@ class IncidentsApi:
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[IncidentResponseData]
         """
-        page_size = get_attribute_from_path(kwargs, "page_size", 10)
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
         endpoint = self._list_incidents_endpoint
-        set_attribute_from_path(kwargs, "page_size", page_size, endpoint.params_map)
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
         while True:
             response = endpoint.call_with_http_info(**kwargs)
             for item in get_attribute_from_path(response, "data"):
                 yield item
-            if len(get_attribute_from_path(response, "data")) < page_size:
+            if len(get_attribute_from_path(response, "data")) < local_page_size:
                 break
             set_attribute_from_path(
                 kwargs,
                 "page_offset",
-                get_attribute_from_path(kwargs, "page_offset", 0) + page_size,
+                get_attribute_from_path(kwargs, "page_offset", 0) + local_page_size,
                 endpoint.params_map,
             )
 

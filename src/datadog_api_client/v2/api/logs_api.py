@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
@@ -19,6 +20,7 @@ from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateRes
 from datadog_api_client.v2.model.logs_aggregate_request import LogsAggregateRequest
 from datadog_api_client.v2.model.logs_list_response import LogsListResponse
 from datadog_api_client.v2.model.logs_sort import LogsSort
+from datadog_api_client.v2.model.log import Log
 from datadog_api_client.v2.model.logs_list_request import LogsListRequest
 
 
@@ -253,7 +255,11 @@ class LogsApi:
 
         return self._list_logs_endpoint.call_with_http_info(**kwargs)
 
-    def list_logs_with_pagination(self, **kwargs):
+    def list_logs_with_pagination(
+        self,
+        *,
+        body: Union[LogsListRequest, UnsetType] = unset,
+    ) -> collections.abc.Iterable[Log]:
         """Search logs.
 
         Provide a paginated version of :meth:`list_logs`, returning all items.
@@ -263,14 +269,18 @@ class LogsApi:
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[Log]
         """
-        page_size = get_attribute_from_path(kwargs, "body.page.limit", 10)
+        kwargs: Dict[str, Any] = {}
+        if body is not unset:
+            kwargs["body"] = body
+
+        local_page_size = get_attribute_from_path(kwargs, "body.page.limit", 10)
         endpoint = self._list_logs_endpoint
-        set_attribute_from_path(kwargs, "body.page.limit", page_size, endpoint.params_map)
+        set_attribute_from_path(kwargs, "body.page.limit", local_page_size, endpoint.params_map)
         while True:
             response = endpoint.call_with_http_info(**kwargs)
             for item in get_attribute_from_path(response, "data"):
                 yield item
-            if len(get_attribute_from_path(response, "data")) < page_size:
+            if len(get_attribute_from_path(response, "data")) < local_page_size:
                 break
             set_attribute_from_path(
                 kwargs, "body.page.cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
@@ -339,7 +349,17 @@ class LogsApi:
 
         return self._list_logs_get_endpoint.call_with_http_info(**kwargs)
 
-    def list_logs_get_with_pagination(self, **kwargs):
+    def list_logs_get_with_pagination(
+        self,
+        *,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_index: Union[str, UnsetType] = unset,
+        filter_from: Union[datetime, UnsetType] = unset,
+        filter_to: Union[datetime, UnsetType] = unset,
+        sort: Union[LogsSort, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[Log]:
         """Get a list of logs.
 
         Provide a paginated version of :meth:`list_logs_get`, returning all items.
@@ -363,14 +383,36 @@ class LogsApi:
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[Log]
         """
-        page_size = get_attribute_from_path(kwargs, "page_limit", 10)
+        kwargs: Dict[str, Any] = {}
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_index is not unset:
+            kwargs["filter_index"] = filter_index
+
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 10)
         endpoint = self._list_logs_get_endpoint
-        set_attribute_from_path(kwargs, "page_limit", page_size, endpoint.params_map)
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
         while True:
             response = endpoint.call_with_http_info(**kwargs)
             for item in get_attribute_from_path(response, "data"):
                 yield item
-            if len(get_attribute_from_path(response, "data")) < page_size:
+            if len(get_attribute_from_path(response, "data")) < local_page_size:
                 break
             set_attribute_from_path(
                 kwargs, "page_cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map

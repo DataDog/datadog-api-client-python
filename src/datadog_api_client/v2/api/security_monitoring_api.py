@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
@@ -23,6 +24,7 @@ from datadog_api_client.v2.model.security_monitoring_rule_create_payload import 
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
 from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
+from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
 from datadog_api_client.v2.model.security_monitoring_signal_list_request import SecurityMonitoringSignalListRequest
 
 
@@ -547,7 +549,16 @@ class SecurityMonitoringApi:
 
         return self._list_security_monitoring_signals_endpoint.call_with_http_info(**kwargs)
 
-    def list_security_monitoring_signals_with_pagination(self, **kwargs):
+    def list_security_monitoring_signals_with_pagination(
+        self,
+        *,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_from: Union[datetime, UnsetType] = unset,
+        filter_to: Union[datetime, UnsetType] = unset,
+        sort: Union[SecurityMonitoringSignalsSort, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[SecurityMonitoringSignal]:
         """Get a quick list of security signals.
 
         Provide a paginated version of :meth:`list_security_monitoring_signals`, returning all items.
@@ -568,14 +579,33 @@ class SecurityMonitoringApi:
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[SecurityMonitoringSignal]
         """
-        page_size = get_attribute_from_path(kwargs, "page_limit", 10)
+        kwargs: Dict[str, Any] = {}
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 10)
         endpoint = self._list_security_monitoring_signals_endpoint
-        set_attribute_from_path(kwargs, "page_limit", page_size, endpoint.params_map)
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
         while True:
             response = endpoint.call_with_http_info(**kwargs)
             for item in get_attribute_from_path(response, "data"):
                 yield item
-            if len(get_attribute_from_path(response, "data")) < page_size:
+            if len(get_attribute_from_path(response, "data")) < local_page_size:
                 break
             set_attribute_from_path(
                 kwargs, "page_cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
@@ -601,7 +631,11 @@ class SecurityMonitoringApi:
 
         return self._search_security_monitoring_signals_endpoint.call_with_http_info(**kwargs)
 
-    def search_security_monitoring_signals_with_pagination(self, **kwargs):
+    def search_security_monitoring_signals_with_pagination(
+        self,
+        *,
+        body: Union[SecurityMonitoringSignalListRequest, UnsetType] = unset,
+    ) -> collections.abc.Iterable[SecurityMonitoringSignal]:
         """Get a list of security signals.
 
         Provide a paginated version of :meth:`search_security_monitoring_signals`, returning all items.
@@ -611,14 +645,18 @@ class SecurityMonitoringApi:
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[SecurityMonitoringSignal]
         """
-        page_size = get_attribute_from_path(kwargs, "body.page.limit", 10)
+        kwargs: Dict[str, Any] = {}
+        if body is not unset:
+            kwargs["body"] = body
+
+        local_page_size = get_attribute_from_path(kwargs, "body.page.limit", 10)
         endpoint = self._search_security_monitoring_signals_endpoint
-        set_attribute_from_path(kwargs, "body.page.limit", page_size, endpoint.params_map)
+        set_attribute_from_path(kwargs, "body.page.limit", local_page_size, endpoint.params_map)
         while True:
             response = endpoint.call_with_http_info(**kwargs)
             for item in get_attribute_from_path(response, "data"):
                 yield item
-            if len(get_attribute_from_path(response, "data")) < page_size:
+            if len(get_attribute_from_path(response, "data")) < local_page_size:
                 break
             set_attribute_from_path(
                 kwargs, "body.page.cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map

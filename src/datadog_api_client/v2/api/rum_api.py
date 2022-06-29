@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
@@ -17,6 +18,7 @@ from datadog_api_client.v2.model.rum_analytics_aggregate_response import RUMAnal
 from datadog_api_client.v2.model.rum_aggregate_request import RUMAggregateRequest
 from datadog_api_client.v2.model.rum_events_response import RUMEventsResponse
 from datadog_api_client.v2.model.rum_sort import RUMSort
+from datadog_api_client.v2.model.rum_event import RUMEvent
 from datadog_api_client.v2.model.rum_search_events_request import RUMSearchEventsRequest
 
 
@@ -192,7 +194,16 @@ class RUMApi:
 
         return self._list_rum_events_endpoint.call_with_http_info(**kwargs)
 
-    def list_rum_events_with_pagination(self, **kwargs):
+    def list_rum_events_with_pagination(
+        self,
+        *,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_from: Union[datetime, UnsetType] = unset,
+        filter_to: Union[datetime, UnsetType] = unset,
+        sort: Union[RUMSort, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[RUMEvent]:
         """Get a list of RUM events.
 
         Provide a paginated version of :meth:`list_rum_events`, returning all items.
@@ -213,14 +224,33 @@ class RUMApi:
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[RUMEvent]
         """
-        page_size = get_attribute_from_path(kwargs, "page_limit", 10)
+        kwargs: Dict[str, Any] = {}
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 10)
         endpoint = self._list_rum_events_endpoint
-        set_attribute_from_path(kwargs, "page_limit", page_size, endpoint.params_map)
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
         while True:
             response = endpoint.call_with_http_info(**kwargs)
             for item in get_attribute_from_path(response, "data"):
                 yield item
-            if len(get_attribute_from_path(response, "data")) < page_size:
+            if len(get_attribute_from_path(response, "data")) < local_page_size:
                 break
             set_attribute_from_path(
                 kwargs, "page_cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
@@ -245,7 +275,10 @@ class RUMApi:
 
         return self._search_rum_events_endpoint.call_with_http_info(**kwargs)
 
-    def search_rum_events_with_pagination(self, body, **kwargs):
+    def search_rum_events_with_pagination(
+        self,
+        body: RUMSearchEventsRequest,
+    ) -> collections.abc.Iterable[RUMEvent]:
         """Search RUM events.
 
         Provide a paginated version of :meth:`search_rum_events`, returning all items.
@@ -255,16 +288,17 @@ class RUMApi:
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[RUMEvent]
         """
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
-        page_size = get_attribute_from_path(kwargs, "body.page.limit", 10)
+        local_page_size = get_attribute_from_path(kwargs, "body.page.limit", 10)
         endpoint = self._search_rum_events_endpoint
-        set_attribute_from_path(kwargs, "body.page.limit", page_size, endpoint.params_map)
+        set_attribute_from_path(kwargs, "body.page.limit", local_page_size, endpoint.params_map)
         while True:
             response = endpoint.call_with_http_info(**kwargs)
             for item in get_attribute_from_path(response, "data"):
                 yield item
-            if len(get_attribute_from_path(response, "data")) < page_size:
+            if len(get_attribute_from_path(response, "data")) < local_page_size:
                 break
             set_attribute_from_path(
                 kwargs, "body.page.cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
