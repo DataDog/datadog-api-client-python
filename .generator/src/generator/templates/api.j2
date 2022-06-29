@@ -1,6 +1,7 @@
 {% include "api_info.j2" %}
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, List, Union
 
 from {{ package }}.api_client import ApiClient, Endpoint as _Endpoint
@@ -171,7 +172,7 @@ class {{ classname }}:
     {%- if operation["x-pagination"] %}
     {%- set pagination = operation["x-pagination"] %}
 
-    def {{ operation.operationId|safe_snake_case }}_with_pagination(self, {% for name, parameter in operation|parameters if parameter.required %}{{name|attribute_name}}, {% endfor %}**kwargs):
+    def {{ operation.operationId|safe_snake_case }}_with_pagination(self, {% for name, parameter in operation|parameters if parameter.required %}{{name|attribute_name}}: {{ get_type_for_parameter(parameter, typing=True) }}, {% endfor %}{% for name, parameter in operation|parameters if not parameter.required %}{% if loop.first %}*, {% endif %}{{name|attribute_name}}: Union[{{ get_type_for_parameter(parameter, typing=True) }}, UnsetType]=unset, {% endfor %}) -> collections.abc.Iterable[{{ get_type_at_path(operation, pagination.resultsPath) }}]:
         """{{ operation.summary|indent(8) }}.
 
         Provide a paginated version of :meth:`{{ operation.operationId|safe_snake_case }}`, returning all items.
@@ -190,20 +191,26 @@ class {{ classname }}:
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[{{ get_type_at_path(operation, pagination.resultsPath) }}]
         """
-{%- for name, parameter in operation|parameters if parameter.required %}
+        kwargs: Dict[str, Any] = {}
+{%- for name, parameter in operation|parameters %}
+{%- if not parameter.required %}
+        if {{ name|attribute_name }} is not unset:
+            kwargs["{{ name|attribute_name }}"] = {{ name|attribute_name }}
+{%- else %}
         kwargs["{{ name|attribute_name }}"] = {{ name|attribute_name }}
+{%- endif %}
 {% endfor %}
-        page_size = get_attribute_from_path(kwargs, "{{ pagination.limitParam|attribute_path }}", {{ get_default(operation, pagination.limitParam) }})
+        local_page_size = get_attribute_from_path(kwargs, "{{ pagination.limitParam|attribute_path }}", {{ get_default(operation, pagination.limitParam) }})
         endpoint = self._{{ operation.operationId|safe_snake_case }}_endpoint
-        set_attribute_from_path(kwargs, "{{ pagination.limitParam|attribute_path }}", page_size, endpoint.params_map)
+        set_attribute_from_path(kwargs, "{{ pagination.limitParam|attribute_path }}", local_page_size, endpoint.params_map)
         while True:
             response = endpoint.call_with_http_info(**kwargs)
             for item in get_attribute_from_path(response, "{{ pagination.resultsPath|attribute_path }}"):
                 yield item
-            if len(get_attribute_from_path(response, "{{ pagination.resultsPath|attribute_path }}")) < page_size:
+            if len(get_attribute_from_path(response, "{{ pagination.resultsPath|attribute_path }}")) < local_page_size:
                 break
             {%- if pagination.pageOffsetParam %}
-            set_attribute_from_path(kwargs, "{{ pagination.pageOffsetParam|attribute_path }}", get_attribute_from_path(kwargs, "{{ pagination.pageOffsetParam|attribute_path }}", 0) + page_size, endpoint.params_map)
+            set_attribute_from_path(kwargs, "{{ pagination.pageOffsetParam|attribute_path }}", get_attribute_from_path(kwargs, "{{ pagination.pageOffsetParam|attribute_path }}", 0) + local_page_size, endpoint.params_map)
             {%- endif %}
             {%- if pagination.cursorParam %}
             set_attribute_from_path(kwargs, "{{ pagination.cursorParam|attribute_path }}", get_attribute_from_path(response, "{{ pagination.cursorPath }}"), endpoint.params_map)
