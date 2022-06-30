@@ -13,19 +13,19 @@ class IntakePayloadAccepted(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "status": (str,),
+            "errors": ([str],),
         }
 
     attribute_map = {
-        "status": "status",
+        "errors": "errors",
     }
 
     def __init__(self, *args, **kwargs):
         """
         The payload accepted for intake.
 
-        :param status: The status of the intake payload.
-        :type status: str, optional
+        :param errors: A list of errors.
+        :type errors: [str], optional
         """
         super().__init__(kwargs)
 
