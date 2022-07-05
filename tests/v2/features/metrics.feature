@@ -13,7 +13,7 @@ Feature: Metrics
     Given a valid "apiKeyAuth" key in the system
     And an instance of "Metrics" API
 
-  @team:DataDog/points-aggregation
+  @skip-typescript @team:DataDog/points-aggregation
   Scenario: Configure tags for multiple metrics returns "Accepted" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "user" in the system
