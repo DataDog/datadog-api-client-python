@@ -49,10 +49,14 @@ class UsageAttributionBody(ModelNormal):
         :param public_id: The organization public ID.
         :type public_id: str, optional
 
-        :param tag_config_source: The source of the usage attribution tag configuration and the selected tags in the format ``<source_org_name>:<selected tag 1>-<selected tag 2>-<selected tag 3>``.
+        :param tag_config_source: The source of the usage attribution tag configuration and the selected tags in the format ``<source_org_name>:::<selected tag 1>///<selected tag 2>///<selected tag 3>``.
         :type tag_config_source: str, optional
 
-        :param tags: Usage Summary by tag name.
+        :param tags: Tag keys and values.
+
+            A ``null`` value here means that the requested tag breakdown cannot be applied because it does not match the `tags
+            configured for usage attribution <https://docs.datadoghq.com/account_management/billing/usage_attribution/#getting-started>`_.
+            In this scenario the API returns the total usage, not broken down by tags.
         :type tags: UsageAttributionTagNames, optional
 
         :param updated_at: Shows the the most recent hour in the current months for all organizations for which all usages were calculated.
