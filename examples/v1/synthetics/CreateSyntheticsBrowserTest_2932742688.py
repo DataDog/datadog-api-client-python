@@ -60,7 +60,7 @@ body = SyntheticsBrowserTest(
         rum_settings=SyntheticsBrowserTestRumSettings(
             is_enabled=True,
             application_id="mockApplicationId",
-            client_token_id=123456,
+            client_token_id=12345,
         ),
         tick_every=300,
         ci=SyntheticsTestCiOptions(
