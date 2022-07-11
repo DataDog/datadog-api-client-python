@@ -198,7 +198,7 @@ class MetricsApi:
         self._list_tag_configuration_by_name_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricTagConfigurationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/metrics/{metric_name}/tags",
                 "operation_id": "list_tag_configuration_by_name",
                 "http_method": "GET",

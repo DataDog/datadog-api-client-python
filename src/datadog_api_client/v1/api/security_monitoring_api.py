@@ -26,7 +26,7 @@ class SecurityMonitoringApi:
         self._add_security_monitoring_signal_to_incident_endpoint = _Endpoint(
             settings={
                 "response_type": (SuccessfulSignalUpdateResponse,),
-                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/security_analytics/signals/{signal_id}/add_to_incident",
                 "operation_id": "add_security_monitoring_signal_to_incident",
                 "http_method": "PATCH",
