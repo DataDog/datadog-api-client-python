@@ -18,7 +18,6 @@ class MetricIntakeType(ModelSimple):
             "COUNT": 1,
             "RATE": 2,
             "GAUGE": 3,
-            "UNSPECIFIED_LEGACY": 15,
         },
     }
 
@@ -30,11 +29,11 @@ class MetricIntakeType(ModelSimple):
 
     def __init__(self, *args, **kwargs):
         """
-        The type of metric.
+        The type of metric. The available types are `0` (unspecified), `1` (count), `2` (rate), and `3` (gauge).
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of [0, 1, 2, 3, 15].
+        :param value: Must be one of [0, 1, 2, 3].
         :type value: int
         """
         super().__init__(kwargs)
