@@ -6,9 +6,6 @@
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    date,
-    datetime,
-    none_type,
 )
 
 
@@ -20,17 +17,7 @@ class UsageAttributionValues(ModelNormal):
             "api_usage": (float,),
             "apm_host_percentage": (float,),
             "apm_host_usage": (float,),
-            "appsec_percentage": (
-                bool,
-                date,
-                datetime,
-                dict,
-                float,
-                int,
-                list,
-                str,
-                none_type,
-            ),
+            "appsec_percentage": (float,),
             "appsec_usage": (float,),
             "browser_percentage": (float,),
             "browser_usage": (float,),
@@ -54,6 +41,8 @@ class UsageAttributionValues(ModelNormal):
             "estimated_indexed_logs_usage": (float,),
             "estimated_indexed_spans_percentage": (float,),
             "estimated_indexed_spans_usage": (float,),
+            "estimated_ingested_spans_percentage": (float,),
+            "estimated_ingested_spans_usage": (float,),
             "infra_host_percentage": (float,),
             "infra_host_usage": (float,),
             "lambda_functions_percentage": (float,),
@@ -99,6 +88,8 @@ class UsageAttributionValues(ModelNormal):
         "estimated_indexed_logs_usage": "estimated_indexed_logs_usage",
         "estimated_indexed_spans_percentage": "estimated_indexed_spans_percentage",
         "estimated_indexed_spans_usage": "estimated_indexed_spans_usage",
+        "estimated_ingested_spans_percentage": "estimated_ingested_spans_percentage",
+        "estimated_ingested_spans_usage": "estimated_ingested_spans_usage",
         "infra_host_percentage": "infra_host_percentage",
         "infra_host_usage": "infra_host_usage",
         "lambda_functions_percentage": "lambda_functions_percentage",
@@ -132,7 +123,7 @@ class UsageAttributionValues(ModelNormal):
         :type apm_host_usage: float, optional
 
         :param appsec_percentage: The percentage of Application Security Monitoring host usage by tag(s).
-        :type appsec_percentage: bool, date, datetime, dict, float, int, list, str, none_type, optional
+        :type appsec_percentage: float, optional
 
         :param appsec_usage: The Application Security Monitoring host usage by tag(s).
         :type appsec_usage: float, optional
@@ -202,6 +193,12 @@ class UsageAttributionValues(ModelNormal):
 
         :param estimated_indexed_spans_usage: The estimated indexed spans usage by tag(s). Note this field is in private beta.
         :type estimated_indexed_spans_usage: float, optional
+
+        :param estimated_ingested_spans_percentage: The percentage of estimated ingested spans usage by tag(s). Note this field is in private beta.
+        :type estimated_ingested_spans_percentage: float, optional
+
+        :param estimated_ingested_spans_usage: The estimated ingested spans usage by tag(s). Note this field is in private beta.
+        :type estimated_ingested_spans_usage: float, optional
 
         :param infra_host_percentage: The percentage of infrastructure host usage by tag(s).
         :type infra_host_percentage: float, optional
