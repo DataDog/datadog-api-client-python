@@ -30,6 +30,9 @@ body = Downtime(
     end=int((datetime.now() + relativedelta(hours=1)).timestamp()),
     timezone="Etc/UTC",
     mute_first_recovery_notification=True,
+    monitor_tags=[
+        "tag0",
+    ],
 )
 
 configuration = Configuration()

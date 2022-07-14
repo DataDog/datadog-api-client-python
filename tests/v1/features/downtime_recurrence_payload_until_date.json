@@ -10,5 +10,8 @@
   "start": {{ timestamp("now") }},
   "end": {{ timestamp("now + 1h") }},
   "timezone": "Etc/UTC",
-  "mute_first_recovery_notification": true
+  "mute_first_recovery_notification": true,
+  "monitor_tags": [
+    "tag0"
+  ]
 }

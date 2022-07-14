@@ -9,5 +9,8 @@
   "scope": ["*"],
   "start": {{ timestamp("now") }},
   "end": {{ timestamp("now + 1h") }},
-  "timezone": "Etc/UTC"
+  "timezone": "Etc/UTC",
+  "monitor_tags": [
+    "tag0"
+  ]
 }

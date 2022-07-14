@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"end":1652352599,"message":"Test-Schedule_a_downtime_until_date-1652348999","mute_first_recovery_notification":true,"recurrence":{"period":1,"type":"weeks","until_date":1654163399,"week_days":["Mon","Tue","Wed","Thu","Fri"]},"scope":["*"],"start":1652348999,"timezone":"Etc/UTC"}'
+    body: '{"end":1657667265,"message":"Test-Schedule_a_downtime_until_date-1657663665","monitor_tags":["tag0"],"mute_first_recovery_notification":true,"recurrence":{"period":1,"type":"weeks","until_date":1659478065,"week_days":["Mon","Tue","Wed","Thu","Fri"]},"scope":["*"],"start":1657663665,"timezone":"Etc/UTC"}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/downtime
   response:
     body:
-      string: '{"recurrence":{"until_date":1654163399,"until_occurrences":null,"week_days":["Mon","Tue","Wed","Thu","Fri"],"type":"weeks","period":1},"end":1652352599,"monitor_tags":["*"],"child_id":null,"canceled":null,"monitor_id":null,"mute_first_recovery_notification":true,"created":1652349000,"org_id":321813,"modified":1652349000,"disabled":false,"start":1652348999,"creator_id":1445416,"parent_id":null,"timezone":"Etc/UTC","active":true,"scope":["*"],"message":"Test-Schedule_a_downtime_until_date-1652348999","downtime_type":0,"id":1944162290,"updater_id":null}'
+      string: '{"recurrence":{"until_date":1659478065,"until_occurrences":null,"week_days":["Mon","Tue","Wed","Thu","Fri"],"type":"weeks","period":1},"end":1657667265,"monitor_tags":["tag0"],"child_id":null,"canceled":null,"monitor_id":null,"mute_first_recovery_notification":true,"created":1657663665,"org_id":321813,"modified":1657663665,"disabled":false,"start":1657663665,"creator_id":1445416,"parent_id":null,"timezone":"Etc/UTC","active":true,"scope":["*"],"message":"Test-Schedule_a_downtime_until_date-1657663665","downtime_type":0,"id":2082107326,"updater_id":null}'
     headers:
       content-type:
       - application/json
@@ -23,7 +23,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/downtime/1944162290
+    uri: https://api.datadoghq.com/api/v1/downtime/2082107326
   response:
     body:
       string: ''
