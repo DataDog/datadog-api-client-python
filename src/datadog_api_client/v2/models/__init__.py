@@ -496,13 +496,52 @@ from datadog_api_client.v2.model.security_monitoring_rule_type_create import Sec
 from datadog_api_client.v2.model.security_monitoring_rule_type_read import SecurityMonitoringRuleTypeRead
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
 from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
+from datadog_api_client.v2.model.security_monitoring_signal_archive_reason import SecurityMonitoringSignalArchiveReason
+from datadog_api_client.v2.model.security_monitoring_signal_assignee_update_attributes import (
+    SecurityMonitoringSignalAssigneeUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_assignee_update_data import (
+    SecurityMonitoringSignalAssigneeUpdateData,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_assignee_update_request import (
+    SecurityMonitoringSignalAssigneeUpdateRequest,
+)
 from datadog_api_client.v2.model.security_monitoring_signal_attributes import SecurityMonitoringSignalAttributes
+from datadog_api_client.v2.model.security_monitoring_signal_incident_ids import SecurityMonitoringSignalIncidentIds
+from datadog_api_client.v2.model.security_monitoring_signal_incidents_update_attributes import (
+    SecurityMonitoringSignalIncidentsUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_incidents_update_data import (
+    SecurityMonitoringSignalIncidentsUpdateData,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_incidents_update_request import (
+    SecurityMonitoringSignalIncidentsUpdateRequest,
+)
 from datadog_api_client.v2.model.security_monitoring_signal_list_request import SecurityMonitoringSignalListRequest
 from datadog_api_client.v2.model.security_monitoring_signal_list_request_filter import (
     SecurityMonitoringSignalListRequestFilter,
 )
 from datadog_api_client.v2.model.security_monitoring_signal_list_request_page import (
     SecurityMonitoringSignalListRequestPage,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_state import SecurityMonitoringSignalState
+from datadog_api_client.v2.model.security_monitoring_signal_state_update_attributes import (
+    SecurityMonitoringSignalStateUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_state_update_data import (
+    SecurityMonitoringSignalStateUpdateData,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_state_update_request import (
+    SecurityMonitoringSignalStateUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_triage_attributes import (
+    SecurityMonitoringSignalTriageAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_triage_update_data import (
+    SecurityMonitoringSignalTriageUpdateData,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_triage_update_response import (
+    SecurityMonitoringSignalTriageUpdateResponse,
 )
 from datadog_api_client.v2.model.security_monitoring_signal_type import SecurityMonitoringSignalType
 from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
@@ -516,6 +555,7 @@ from datadog_api_client.v2.model.security_monitoring_signals_list_response_meta_
     SecurityMonitoringSignalsListResponseMetaPage,
 )
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
+from datadog_api_client.v2.model.security_monitoring_triage_user import SecurityMonitoringTriageUser
 from datadog_api_client.v2.model.service_account_create_attributes import ServiceAccountCreateAttributes
 from datadog_api_client.v2.model.service_account_create_data import ServiceAccountCreateData
 from datadog_api_client.v2.model.service_account_create_request import ServiceAccountCreateRequest

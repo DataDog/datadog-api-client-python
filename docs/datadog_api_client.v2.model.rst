@@ -3025,10 +3025,66 @@ security\_monitoring\_signal
    :members:
    :show-inheritance:
 
+security\_monitoring\_signal\_archive\_reason
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_archive_reason
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_assignee\_update\_attributes
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_assignee_update_attributes
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_assignee\_update\_data
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_assignee_update_data
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_assignee\_update\_request
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_assignee_update_request
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_signal\_attributes
 ----------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_signal_attributes
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_incident\_ids
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_incident_ids
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_incidents\_update\_attributes
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_incidents_update_attributes
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_incidents\_update\_data
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_incidents_update_data
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_incidents\_update\_request
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_incidents_update_request
    :members:
    :show-inheritance:
 
@@ -3050,6 +3106,55 @@ security\_monitoring\_signal\_list\_request\_page
 -------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_signal_list_request_page
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_state
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_state
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_state\_update\_attributes
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_state_update_attributes
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_state\_update\_data
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_state_update_data
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_state\_update\_request
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_state_update_request
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_triage\_attributes
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_triage_attributes
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_triage\_update\_data
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_triage_update_data
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_triage\_update\_response
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_triage_update_response
    :members:
    :show-inheritance:
 
@@ -3092,6 +3197,13 @@ security\_monitoring\_signals\_sort
 -----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_signals_sort
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_triage\_user
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_triage_user
    :members:
    :show-inheritance:
 

@@ -26,6 +26,18 @@ from datadog_api_client.v2.model.security_monitoring_signals_list_response impor
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
 from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
 from datadog_api_client.v2.model.security_monitoring_signal_list_request import SecurityMonitoringSignalListRequest
+from datadog_api_client.v2.model.security_monitoring_signal_triage_update_response import (
+    SecurityMonitoringSignalTriageUpdateResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_assignee_update_request import (
+    SecurityMonitoringSignalAssigneeUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_incidents_update_request import (
+    SecurityMonitoringSignalIncidentsUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_state_update_request import (
+    SecurityMonitoringSignalStateUpdateRequest,
+)
 
 
 class SecurityMonitoringApi:
@@ -128,6 +140,87 @@ class SecurityMonitoringApi:
                 "accept": ["*/*"],
                 "content_type": [],
             },
+            api_client=api_client,
+        )
+
+        self._edit_security_monitoring_signal_assignee_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalTriageUpdateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/{signal_id}/assignee",
+                "operation_id": "edit_security_monitoring_signal_assignee",
+                "http_method": "PATCH",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "signal_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "signal_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringSignalAssigneeUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._edit_security_monitoring_signal_incidents_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalTriageUpdateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/{signal_id}/incidents",
+                "operation_id": "edit_security_monitoring_signal_incidents",
+                "http_method": "PATCH",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "signal_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "signal_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringSignalIncidentsUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._edit_security_monitoring_signal_state_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalTriageUpdateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/{signal_id}/state",
+                "operation_id": "edit_security_monitoring_signal_state",
+                "http_method": "PATCH",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "signal_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "signal_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringSignalStateUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -423,6 +516,72 @@ class SecurityMonitoringApi:
         kwargs["rule_id"] = rule_id
 
         return self._delete_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
+
+    def edit_security_monitoring_signal_assignee(
+        self,
+        signal_id: str,
+        body: SecurityMonitoringSignalAssigneeUpdateRequest,
+    ) -> SecurityMonitoringSignalTriageUpdateResponse:
+        """Modify the triage assignee of a security signal.
+
+        Modify the triage assignee of a security signal.
+
+        :param signal_id: The ID of the signal.
+        :type signal_id: str
+        :param body: Attributes describing the signal update.
+        :type body: SecurityMonitoringSignalAssigneeUpdateRequest
+        :rtype: SecurityMonitoringSignalTriageUpdateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["signal_id"] = signal_id
+
+        kwargs["body"] = body
+
+        return self._edit_security_monitoring_signal_assignee_endpoint.call_with_http_info(**kwargs)
+
+    def edit_security_monitoring_signal_incidents(
+        self,
+        signal_id: str,
+        body: SecurityMonitoringSignalIncidentsUpdateRequest,
+    ) -> SecurityMonitoringSignalTriageUpdateResponse:
+        """Change the related incidents of a security signal.
+
+        Change the related incidents for a security signal.
+
+        :param signal_id: The ID of the signal.
+        :type signal_id: str
+        :param body: Attributes describing the signal update.
+        :type body: SecurityMonitoringSignalIncidentsUpdateRequest
+        :rtype: SecurityMonitoringSignalTriageUpdateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["signal_id"] = signal_id
+
+        kwargs["body"] = body
+
+        return self._edit_security_monitoring_signal_incidents_endpoint.call_with_http_info(**kwargs)
+
+    def edit_security_monitoring_signal_state(
+        self,
+        signal_id: str,
+        body: SecurityMonitoringSignalStateUpdateRequest,
+    ) -> SecurityMonitoringSignalTriageUpdateResponse:
+        """Change the triage state of a security signal.
+
+        Change the triage state of a security signal.
+
+        :param signal_id: The ID of the signal.
+        :type signal_id: str
+        :param body: Attributes describing the signal update.
+        :type body: SecurityMonitoringSignalStateUpdateRequest
+        :rtype: SecurityMonitoringSignalTriageUpdateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["signal_id"] = signal_id
+
+        kwargs["body"] = body
+
+        return self._edit_security_monitoring_signal_state_endpoint.call_with_http_info(**kwargs)
 
     def get_security_filter(
         self,

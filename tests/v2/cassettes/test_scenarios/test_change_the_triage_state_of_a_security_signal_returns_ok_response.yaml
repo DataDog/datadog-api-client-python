@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"archive_reason":"none","state":"open"}}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/signals/AQAAAYG1bl5K4HuUewAAAABBWUcxYmw1S0FBQmt2RmhRN0V4ZUVnQUE/state
+  response:
+    body:
+      string: '{"data":{"attributes":{"incident_ids":[2066],"state_update_user":{"handle":"bernard.le+synthetics@datadoghq.com","uuid":"2514d32c-0719-11eb-b643-63faf7d5e1bd","name":null,"id":2115689,"icon":"https://secure.gravatar.com/avatar/ae546a62b5816be30cc23792a69bd9ee?s=48&d=retro"},"assignee":{"id":-1,"name":"Unassigned","uuid":""},"state":"open","archive_reason":"none","state_update_timestamp":1657118941005},"type":"signal_metadata","id":"AQAAAYG1bl5K4HuUewAAAABBWUcxYmw1S0FBQmt2RmhRN0V4ZUVnQUE"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
