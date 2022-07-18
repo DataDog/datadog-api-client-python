@@ -57,8 +57,7 @@ Feature: Usage Metering
 
   @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage attribution returns "Bad Request" response
-    Given operation "GetHourlyUsageAttribution" enabled
-    And new "GetHourlyUsageAttribution" request
+    Given new "GetHourlyUsageAttribution" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
     And request contains "usage_type" parameter with value "not_a_product"
     When the request is sent
@@ -66,8 +65,7 @@ Feature: Usage Metering
 
   @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage attribution returns "OK" response
-    Given operation "GetHourlyUsageAttribution" enabled
-    And new "GetHourlyUsageAttribution" request
+    Given new "GetHourlyUsageAttribution" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
     And request contains "usage_type" parameter with value "infra_host_usage"
     When the request is sent
@@ -507,8 +505,7 @@ Feature: Usage Metering
 
   @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get monthly usage attribution returns "Bad Request" response
-    Given operation "GetMonthlyUsageAttribution" enabled
-    And new "GetMonthlyUsageAttribution" request
+    Given new "GetMonthlyUsageAttribution" request
     And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
     And request contains "fields" parameter with value "not_a_product"
     When the request is sent
@@ -516,8 +513,7 @@ Feature: Usage Metering
 
   @team:DataDog/red-zone-revenue-query
   Scenario: Get monthly usage attribution returns "OK" response
-    Given operation "GetMonthlyUsageAttribution" enabled
-    And new "GetMonthlyUsageAttribution" request
+    Given new "GetMonthlyUsageAttribution" request
     And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
     And request contains "fields" parameter with value "infra_host_usage"
     When the request is sent
