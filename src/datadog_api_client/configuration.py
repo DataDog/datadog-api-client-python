@@ -222,9 +222,7 @@ class Configuration:
         self.unstable_operations = _UnstableOperations(
             {
                 "v1.get_daily_custom_reports": False,
-                "v1.get_hourly_usage_attribution": False,
                 "v1.get_monthly_custom_reports": False,
-                "v1.get_monthly_usage_attribution": False,
                 "v1.get_specified_daily_custom_reports": False,
                 "v1.get_specified_monthly_custom_reports": False,
                 "v1.get_usage_attribution": False,

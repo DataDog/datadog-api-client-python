@@ -11,7 +11,6 @@ from datadog_api_client.v1.model.monthly_usage_attribution_supported_metrics imp
 )
 
 configuration = Configuration()
-configuration.unstable_operations["get_monthly_usage_attribution"] = True
 with ApiClient(configuration) as api_client:
     api_instance = UsageMeteringApi(api_client)
     response = api_instance.get_monthly_usage_attribution(
