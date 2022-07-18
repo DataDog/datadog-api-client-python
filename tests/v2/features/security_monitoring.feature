@@ -7,6 +7,54 @@ Feature: Security Monitoring
     And a valid "appKeyAuth" key in the system
     And an instance of "SecurityMonitoring" API
 
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Change the related incidents of a security signal returns "Bad Request" response
+    Given new "EditSecurityMonitoringSignalIncidents" request
+    And request contains "signal_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"incident_ids": [2066]}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Change the related incidents of a security signal returns "Not Found" response
+    Given new "EditSecurityMonitoringSignalIncidents" request
+    And request contains "signal_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"incident_ids": [2066]}}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/k9-cloud-security-platform
+  Scenario: Change the related incidents of a security signal returns "OK" response
+    Given new "EditSecurityMonitoringSignalIncidents" request
+    And request contains "signal_id" parameter with value "AQAAAYG1bl5K4HuUewAAAABBWUcxYmw1S0FBQmt2RmhRN0V4ZUVnQUE"
+    And body with value {"data": {"attributes": {"incident_ids": [2066]}}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Change the triage state of a security signal returns "Bad Request" response
+    Given new "EditSecurityMonitoringSignalState" request
+    And request contains "signal_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"archive_reason": "none", "state": "open"}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Change the triage state of a security signal returns "Not Found" response
+    Given new "EditSecurityMonitoringSignalState" request
+    And request contains "signal_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"archive_reason": "none", "state": "open"}}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/k9-cloud-security-platform
+  Scenario: Change the triage state of a security signal returns "OK" response
+    Given new "EditSecurityMonitoringSignalState" request
+    And request contains "signal_id" parameter with value "AQAAAYG1bl5K4HuUewAAAABBWUcxYmw1S0FBQmt2RmhRN0V4ZUVnQUE"
+    And body with value {"data": {"attributes": {"archive_reason": "none", "state": "open"}}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule returns "Bad Request" response
     Given new "CreateSecurityMonitoringRule" request
@@ -186,6 +234,30 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: List rules returns "OK" response
     Given new "ListSecurityMonitoringRules" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Modify the triage assignee of a security signal returns "Bad Request" response
+    Given new "EditSecurityMonitoringSignalAssignee" request
+    And request contains "signal_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"assignee": {"uuid": "773b045d-ccf8-4808-bd3b-955ef6a8c940"}}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Modify the triage assignee of a security signal returns "Not Found" response
+    Given new "EditSecurityMonitoringSignalAssignee" request
+    And request contains "signal_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"assignee": {"uuid": "773b045d-ccf8-4808-bd3b-955ef6a8c940"}}}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/k9-cloud-security-platform
+  Scenario: Modify the triage assignee of a security signal returns "OK" response
+    Given new "EditSecurityMonitoringSignalAssignee" request
+    And request contains "signal_id" parameter with value "AQAAAYG1bl5K4HuUewAAAABBWUcxYmw1S0FBQmt2RmhRN0V4ZUVnQUE"
+    And body with value {"data": {"attributes": {"assignee": {"uuid": ""}}}}
     When the request is sent
     Then the response status is 200 OK
 
