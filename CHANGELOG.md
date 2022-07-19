@@ -1,5 +1,34 @@
 # Changelog
 
+## 2.1.0 / 2022-07-19
+
+### Fixed
+* Remove include_percentiles default by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1065
+* Mark message as required for Synthetics tests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1059
+* Add synthetics results api replay only tests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1098
+### Added
+* New usage metering endpoint for estimated cost by org by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1069
+* Add estimated indexed spans usage attribution by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1068
+* Handle raw  json for additionalProperties in typescript  by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1040
+* Add Application Security Monitoring Hosts Attribution by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1070
+* Add support for security monitoring rule dynamic criticality by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1054
+* Update IP ranges with synthetics private locations section by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1075
+* Add typing information to pagination methods by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1078
+* Add new products to billable summary by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1080
+* Update usage attribution enums by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1071
+* Add estimated ingested spans to usage attribution by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1089
+* Add v2 Security monitoring signals triage operations. by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1081
+### Changed
+* Add typing to API arguments by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1076
+* Update metric intake v2 accept response by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1077
+* Add description of metric type enums by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1090
+* remove x-unstable property for usage attribution endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1097
+
+## New Contributors
+* @ganeshkumarsv made their first contribution in https://github.com/DataDog/datadog-api-client-python/pull/1095
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.0.0...2.1.0
+
 ## 2.0.0 / 2022-06-24
 
 ### Fixed
