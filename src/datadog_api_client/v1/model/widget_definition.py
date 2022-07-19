@@ -304,10 +304,10 @@ class WidgetDefinition(ModelComposed):
         :param right_yaxis: Axis controls for the widget.
         :type right_yaxis: WidgetAxis, optional
 
-        :param color_by: The attribute used to determine color in the widget.
+        :param color_by: (deprecated) The attribute formerly used to determine color in the widget.
         :type color_by: TreeMapColorBy, optional
 
-        :param size_by: The attribute used to determine size in the widget.
+        :param size_by: (deprecated) The attribute formerly used to determine size in the widget.
         :type size_by: TreeMapSizeBy, optional
         """
         super().__init__(kwargs)
