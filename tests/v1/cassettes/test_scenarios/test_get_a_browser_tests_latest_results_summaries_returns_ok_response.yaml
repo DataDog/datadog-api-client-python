@@ -1,0 +1,26 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/browser/2yy-sem-mjh/results
+  response:
+    body:
+      string: '{"last_timestamp_fetched":1652639281000,"results":[{"status":0,"check_time":1657823117511,"check_version":2,"result":{"runType":0,"tunnel":false,"errorMessage":null,"timings":null,"stepCountTotal":4,"stepCountCompleted":4,"duration":7131,"deviceId":"edge.laptop_large","passed":true,"device":{"name":"Laptop
+        Large","height":1100,"width":1440,"userAgent":"Mozilla/5.0 (X11; Linux x86_64)
+        AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36
+        Edg/101.0.1210.32 DatadogSynthetics","id":"edge.laptop_large","isMobile":false,"browser":"edge"},"errorCount":0},"probe_dc":"aws:ca-central-1","result_id":"5671719892074090418","device_id":"edge.laptop_large"},{"status":0,"check_time":1657823117502,"check_version":2,"result":{"runType":0,"tunnel":false,"errorMessage":null,"timings":null,"stepCountTotal":4,"stepCountCompleted":4,"duration":4777,"deviceId":"chrome.laptop_large","passed":true,"device":{"name":"Laptop
+        Large","height":1100,"width":1440,"userAgent":"Mozilla/5.0 (X11; Linux x86_64)
+        AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36
+        DatadogSynthetics","id":"chrome.laptop_large","isMobile":false,"browser":"chrome"},"errorCount":1},"probe_dc":"aws:ca-central-1","result_id":"4818974208458839907","device_id":"chrome.laptop_large"},{"status":0,"check_time":1657823117502,"check_version":2,"result":{"runType":0,"tunnel":false,"errorMessage":null,"timings":null,"stepCountTotal":4,"stepCountCompleted":4,"duration":5838,"deviceId":"firefox.laptop_large","passed":true,"device":{"name":"Laptop
+        Large","height":1100,"width":1440,"userAgent":"Mozilla/5.0 (X11; Linux x86_64)
+        Gecko/20100101 Firefox/98.0.2 DatadogSynthetics","id":"firefox.laptop_large","isMobile":false,"browser":"firefox"},"errorCount":0},"probe_dc":"aws:ca-central-1","result_id":"5020771801584744095","device_id":"firefox.laptop_large"}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

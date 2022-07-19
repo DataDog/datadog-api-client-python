@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/hwb-332-3xe/results/3420446318379485707
+  response:
+    body:
+      string: '{"status":0,"run_type":0,"check_time":1657824307023,"check_version":1,"result":{"dnsServer":"8.8.4.4","eventType":"finished","resolutionAttempts":[],"timings":{"firstByte":21.2,"tcp":2.4,"ssl":18,"dns":10.9,"download":0.2,"total":52.7},"subtype":"http","mainDC":"us1.prod","passed":true,"resolvedIp":"142.250.189.238","runType":0,"httpStatusCode":301,"assertionResults":[{"expected":"2000","operator":"lessThan","valid":true,"actual":52.7,"type":"responseTime"},{"expected":"301","operator":"is","valid":true,"actual":301,"type":"statusCode"},{"actual":"text/html;
+        charset=UTF-8","expected":"text/html; charset=UTF-8","valid":true,"operator":"is","property":"content-type","type":"header"}],"responseSize":220},"probe_dc":"aws:us-west-1","result_id":"3420446318379485707","check":{"type":"api","config":{"request":{"url":"https://google.com","method":"GET"},"assertions":[{"operator":"lessThan","type":"responseTime","target":2000},{"operator":"is","type":"statusCode","target":301},{"operator":"is","property":"content-type","type":"header","target":"text/html;
+        charset=UTF-8"}]},"options":{"min_location_failed":1,"monitor_options":{"include_tags":true,"notify_no_data":false,"notify_audit":false,"new_host_delay":300,"renotify_interval":0},"tick_every":60,"monitor_name":"Tesst","min_failure_duration":0,"httpVersion":"http1"}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
