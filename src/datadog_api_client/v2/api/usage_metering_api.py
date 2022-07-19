@@ -15,6 +15,7 @@ from datadog_api_client.v2.model.usage_application_security_monitoring_response 
     UsageApplicationSecurityMonitoringResponse,
 )
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
+from datadog_api_client.v2.model.hourly_usage_response import HourlyUsageResponse
 from datadog_api_client.v2.model.usage_lambda_traced_invocations_response import UsageLambdaTracedInvocationsResponse
 from datadog_api_client.v2.model.usage_observability_pipelines_response import UsageObservabilityPipelinesResponse
 
@@ -97,6 +98,66 @@ class UsageMeteringApi:
                 "end_date": {
                     "openapi_types": (datetime,),
                     "attribute": "end_date",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._get_hourly_usage_endpoint = _Endpoint(
+            settings={
+                "response_type": (HourlyUsageResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/hourly_usage",
+                "operation_id": "get_hourly_usage",
+                "http_method": "GET",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "filter_timestamp_start": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[timestamp][start]",
+                    "location": "query",
+                },
+                "filter_timestamp_end": {
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[timestamp][end]",
+                    "location": "query",
+                },
+                "filter_product_families": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "filter[product_families]",
+                    "location": "query",
+                },
+                "filter_include_descendants": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[include_descendants]",
+                    "location": "query",
+                },
+                "filter_versions": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[versions]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 500,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_next_record_id": {
+                    "openapi_types": (str,),
+                    "attribute": "page[next_record_id]",
                     "location": "query",
                 },
             },
@@ -257,6 +318,66 @@ class UsageMeteringApi:
             kwargs["end_date"] = end_date
 
         return self._get_estimated_cost_by_org_endpoint.call_with_http_info(**kwargs)
+
+    def get_hourly_usage(
+        self,
+        filter_timestamp_start: datetime,
+        filter_product_families: str,
+        *,
+        filter_timestamp_end: Union[datetime, UnsetType] = unset,
+        filter_include_descendants: Union[bool, UnsetType] = unset,
+        filter_versions: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_next_record_id: Union[str, UnsetType] = unset,
+    ) -> HourlyUsageResponse:
+        """Get hourly usage by product family.
+
+        Get hourly usage by product family
+
+        :param filter_timestamp_start: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+        :type filter_timestamp_start: datetime
+        :param filter_product_families: Comma separated list of product families to retrieve. Available families are ``all`` , ``analyzed_logs`` ,
+            ``application_security`` , ``audit_logs`` , ``serverless`` , ``ci_app`` , ``cspm`` , ``cws`` , ``dbm`` , ``fargate`` ,
+            ``infra_hosts`` , ``incident_management`` , ``indexed_logs`` , ``indexed_spans`` , ``ingested_spans`` , ``iot`` ,
+            ``lambda_traced_invocations`` , ``logs`` , ``network_flows`` , ``network_hosts`` , ``observability_pipelines`` ,
+            ``online_archive`` , ``profiling`` , ``rum`` , ``rum_browser_sessions`` , ``rum_mobile_sessions`` , ``sds`` , ``snmp`` ,
+            ``synthetics_api`` , ``synthetics_browser`` , and ``timeseries``.
+        :type filter_product_families: str
+        :param filter_timestamp_end: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
+        :type filter_timestamp_end: datetime, optional
+        :param filter_include_descendants: Include child org usage in the response. Defaults to false.
+        :type filter_include_descendants: bool, optional
+        :param filter_versions: Comma separated list of product family versions to use in the format ``product_family:version``. For example,
+            ``infra_hosts:1.0.0``. If this parameter is not used, the API will use the latest version of each requested
+            product family. Currently all families have one version ``1.0.0``.
+        :type filter_versions: str, optional
+        :param page_limit: Maximum number of results to return (between 1 and 500) - defaults to 500 if limit not specified.
+        :type page_limit: int, optional
+        :param page_next_record_id: List following results with a next_record_id provided in the previous query.
+        :type page_next_record_id: str, optional
+        :rtype: HourlyUsageResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["filter_timestamp_start"] = filter_timestamp_start
+
+        if filter_timestamp_end is not unset:
+            kwargs["filter_timestamp_end"] = filter_timestamp_end
+
+        kwargs["filter_product_families"] = filter_product_families
+
+        if filter_include_descendants is not unset:
+            kwargs["filter_include_descendants"] = filter_include_descendants
+
+        if filter_versions is not unset:
+            kwargs["filter_versions"] = filter_versions
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_next_record_id is not unset:
+            kwargs["page_next_record_id"] = page_next_record_id
+
+        return self._get_hourly_usage_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_application_security_monitoring(
         self,
