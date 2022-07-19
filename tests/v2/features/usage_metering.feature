@@ -59,6 +59,23 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage by product family returns "Bad Request" response
+    Given new "GetHourlyUsage" request
+    And request contains "filter[timestamp][start]" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "filter[product_families]" parameter with value "infra_hosts"
+    And request contains "filter[timestamp][end]" parameter with value "{{ timeISO('now - 5d') }}"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage by product family returns "OK" response
+    Given new "GetHourlyUsage" request
+    And request contains "filter[timestamp][start]" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "filter[product_families]" parameter with value "infra_hosts"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Application Security returns "Bad Request" response
     Given new "GetUsageApplicationSecurityMonitoring" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"

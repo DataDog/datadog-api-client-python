@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json;datetime-format=rfc3339
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/usage/hourly_usage?filter%5Btimestamp%5D%5Bstart%5D=2022-07-16T14%3A57%3A41.335Z&filter%5Btimestamp%5D%5Bend%5D=2022-07-14T14%3A57%3A41.335Z&filter%5Bproduct_families%5D=infra_hosts
+  response:
+    body:
+      string: '{"errors":["start_hr [YYYY-MM-DDThh] must be before end_hr [YYYY-MM-DDThh]"]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

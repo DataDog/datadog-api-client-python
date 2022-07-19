@@ -113,6 +113,12 @@ from datadog_api_client.v2.model.http_log import HTTPLog
 from datadog_api_client.v2.model.http_log_error import HTTPLogError
 from datadog_api_client.v2.model.http_log_errors import HTTPLogErrors
 from datadog_api_client.v2.model.http_log_item import HTTPLogItem
+from datadog_api_client.v2.model.hourly_usage import HourlyUsage
+from datadog_api_client.v2.model.hourly_usage_attributes import HourlyUsageAttributes
+from datadog_api_client.v2.model.hourly_usage_measurement import HourlyUsageMeasurement
+from datadog_api_client.v2.model.hourly_usage_metadata import HourlyUsageMetadata
+from datadog_api_client.v2.model.hourly_usage_pagination import HourlyUsagePagination
+from datadog_api_client.v2.model.hourly_usage_response import HourlyUsageResponse
 from datadog_api_client.v2.model.hourly_usage_type import HourlyUsageType
 from datadog_api_client.v2.model.idp_metadata_form_data import IdPMetadataFormData
 from datadog_api_client.v2.model.incident_create_attributes import IncidentCreateAttributes

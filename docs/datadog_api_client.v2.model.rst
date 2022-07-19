@@ -624,6 +624,48 @@ full\_application\_key\_attributes
    :members:
    :show-inheritance:
 
+hourly\_usage
+-------------
+
+.. automodule:: datadog_api_client.v2.model.hourly_usage
+   :members:
+   :show-inheritance:
+
+hourly\_usage\_attributes
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.hourly_usage_attributes
+   :members:
+   :show-inheritance:
+
+hourly\_usage\_measurement
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.hourly_usage_measurement
+   :members:
+   :show-inheritance:
+
+hourly\_usage\_metadata
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.hourly_usage_metadata
+   :members:
+   :show-inheritance:
+
+hourly\_usage\_pagination
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.hourly_usage_pagination
+   :members:
+   :show-inheritance:
+
+hourly\_usage\_response
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.hourly_usage_response
+   :members:
+   :show-inheritance:
+
 hourly\_usage\_type
 -------------------
 
