@@ -9,8 +9,8 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = SyntheticsApi(api_client)
     response = api_instance.get_api_test_result(
-        public_id="public_id",
-        result_id="result_id",
+        public_id="hwb-332-3xe",
+        result_id="3420446318379485707",
     )
 
     print(response)

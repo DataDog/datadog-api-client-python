@@ -1,0 +1,25 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/browser/2yy-sem-mjh/results/5671719892074090418
+  response:
+    body:
+      string: '{"status":0,"run_type":0,"check_time":1657823117511,"check_version":2,"result":{"runType":0,"browserType":"edge","eventType":"finished","stepDetails":[{"browserErrors":[],"vitalsMetrics":[{"url":"https://docs.datadoghq.com/","lcp":805.599,"cls":0.001}],"skipped":false,"description":"Navigate
+        to start URL","warnings":[],"url":"about:blank","snapshotBucketKey":false,"value":"https://docs.datadoghq.com/","rumContext":{"sessionId":"058f89c5-df45-4ecd-ada4-3cebd80ded90","applicationId":"737d835c-601a-46c1-853a-1af59907cff5","viewId":"8eaade39-8793-436f-b7fb-2e74858e0583"},"duration":2254,"emailMessageBucketKeys":false,"allowFailure":false,"screenshotBucketKey":true,"isCritical":false,"type":"goToUrlAndMeasureTti","stepId":-1},{"browserErrors":[],"vitalsMetrics":[],"skipped":false,"publicId":"s9n-dfr-cfw","description":"Type
+        text on input \"s\"","emailMessageBucketKeys":false,"url":"https://docs.datadoghq.com/","snapshotBucketKey":false,"value":"api","rumContext":{"sessionId":"058f89c5-df45-4ecd-ada4-3cebd80ded90","applicationId":"737d835c-601a-46c1-853a-1af59907cff5","viewId":"8eaade39-8793-436f-b7fb-2e74858e0583"},"duration":814,"allowFailure":false,"screenshotBucketKey":true,"isCritical":true,"type":"typeText","stepId":11943140},{"browserErrors":[],"vitalsMetrics":[{"url":"https://docs.datadoghq.com/search/?s=api","lcp":474.8}],"skipped":false,"publicId":"tzz-gum-7rc","description":"Press
+        key ''Enter''","emailMessageBucketKeys":false,"url":"https://docs.datadoghq.com/","snapshotBucketKey":false,"value":"Enter","rumContext":{"sessionId":"058f89c5-df45-4ecd-ada4-3cebd80ded90","applicationId":"737d835c-601a-46c1-853a-1af59907cff5","viewId":"2d5db8da-8605-4ca8-b001-c53b418f4cf0"},"duration":1973,"allowFailure":false,"screenshotBucketKey":true,"isCritical":true,"type":"pressKey","stepId":11943141},{"browserErrors":[],"vitalsMetrics":[{"url":"https://docs.datadoghq.com/api/latest/scopes/","lcp":434.4,"cls":0.001}],"skipped":false,"publicId":"waa-yji-ffq","description":"Click
+        on link \"API\"","emailMessageBucketKeys":false,"url":"https://docs.datadoghq.com/search/?s=api","snapshotBucketKey":false,"rumContext":{"sessionId":"058f89c5-df45-4ecd-ada4-3cebd80ded90","applicationId":"737d835c-601a-46c1-853a-1af59907cff5","viewId":"18bd7286-d1a6-4218-896b-33c9af642aa9"},"duration":2090,"allowFailure":false,"screenshotBucketKey":true,"isCritical":true,"type":"click","stepId":11943142}],"browserVersion":"101.0.1210.32","mainDC":"us1.prod","timeToInteractive":1596.800000011921,"subtype":null,"device":{"name":"Laptop
+        Large","height":1100,"width":1440,"userAgent":"Mozilla/5.0 (X11; Linux x86_64)
+        AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36
+        Edg/101.0.1210.32 DatadogSynthetics","id":"edge.laptop_large","isMobile":false,"browser":"edge"},"hasArtifacts":true,"passed":true,"duration":7131,"startUrl":"https://docs.datadoghq.com/"},"probe_dc":"aws:ca-central-1","result_id":"5671719892074090418","check":{"type":"browser","config":{"variables":[],"setCookie":"","request":{"url":"https://docs.datadoghq.com/","headers":{},"method":"GET"},"assertions":[],"configVariables":[]},"options":{"rumSettings":{"isEnabled":true,"applicationId":"737d835c-601a-46c1-853a-1af59907cff5","clientTokenId":94668},"retry":{"count":1,"interval":300},"min_location_failed":1,"monitor_options":{"include_tags":true,"notify_no_data":false,"notify_audit":false,"new_host_delay":300,"renotify_interval":0},"noScreenshot":false,"tick_every":3600,"disableCsp":false,"disableCors":false,"device_ids":["chrome.laptop_large","firefox.laptop_large","edge.laptop_large"],"min_failure_duration":600,"ignoreServerCertificateError":false}},"device_id":"edge.laptop_large"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

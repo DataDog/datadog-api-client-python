@@ -318,13 +318,15 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 404 - Synthetic is not activated for the user
 
-  @generated @skip @team:DataDog/synthetics-app
+  @replay-only @team:DataDog/synthetics-app
   Scenario: Get a browser test result returns "OK" response
     Given new "GetBrowserTestResult" request
-    And request contains "public_id" parameter from "REPLACE.ME"
-    And request contains "result_id" parameter from "REPLACE.ME"
+    And request contains "public_id" parameter with value "2yy-sem-mjh"
+    And request contains "result_id" parameter with value "5671719892074090418"
     When the request is sent
     Then the response status is 200 OK
+    And the response "result_id" is equal to "5671719892074090418"
+    And the response "probe_dc" is equal to "aws:ca-central-1"
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a browser test returns "- Synthetic is not activated for the user" response
@@ -347,12 +349,15 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 404 - Synthetic is not activated for the user
 
-  @generated @skip @team:DataDog/synthetics-app
+  @replay-only @team:DataDog/synthetics-app
   Scenario: Get a browser test's latest results summaries returns "OK" response
     Given new "GetBrowserTestLatestResults" request
-    And request contains "public_id" parameter from "REPLACE.ME"
+    And request contains "public_id" parameter with value "2yy-sem-mjh"
     When the request is sent
     Then the response status is 200 OK
+    And the response "results" has length 3
+    And the response "results[0].status" is equal to 0
+    And the response "results[0].probe_dc" is equal to "aws:ca-central-1"
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a global variable returns "Not found" response
@@ -416,13 +421,15 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 404 - Synthetic is not activated for the user
 
-  @generated @skip @team:DataDog/synthetics-app
+  @replay-only @team:DataDog/synthetics-app
   Scenario: Get an API test result returns "OK" response
     Given new "GetAPITestResult" request
-    And request contains "public_id" parameter from "REPLACE.ME"
-    And request contains "result_id" parameter from "REPLACE.ME"
+    And request contains "public_id" parameter with value "hwb-332-3xe"
+    And request contains "result_id" parameter with value "3420446318379485707"
     When the request is sent
     Then the response status is 200 OK
+    And the response "result_id" is equal to "3420446318379485707"
+    And the response "probe_dc" is equal to "aws:us-west-1"
 
   @team:DataDog/synthetics-app
   Scenario: Get an API test result returns result with failure object
@@ -457,12 +464,15 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 404 - Synthetic is not activated for the user
 
-  @generated @skip @team:DataDog/synthetics-app
+  @replay-only @team:DataDog/synthetics-app
   Scenario: Get an API test's latest results summaries returns "OK" response
     Given new "GetAPITestLatestResults" request
-    And request contains "public_id" parameter from "REPLACE.ME"
+    And request contains "public_id" parameter with value "hwb-332-3xe"
     When the request is sent
     Then the response status is 200 OK
+    And the response "results" has length 150
+    And the response "results[0].status" is equal to 0
+    And the response "results[0].probe_dc" is equal to "aws:us-west-1"
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Get details of batch returns "Batch does not exist." response

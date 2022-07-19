@@ -9,7 +9,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = SyntheticsApi(api_client)
     response = api_instance.get_browser_test_latest_results(
-        public_id="public_id",
+        public_id="2yy-sem-mjh",
     )
 
     print(response)
