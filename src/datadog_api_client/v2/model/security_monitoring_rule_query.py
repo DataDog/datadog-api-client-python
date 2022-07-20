@@ -21,6 +21,7 @@ class SecurityMonitoringRuleQuery(ModelNormal):
             "distinct_fields": ([str],),
             "group_by_fields": ([str],),
             "metric": (str,),
+            "metrics": ([str],),
             "name": (str,),
             "query": (str,),
         }
@@ -30,6 +31,7 @@ class SecurityMonitoringRuleQuery(ModelNormal):
         "distinct_fields": "distinctFields",
         "group_by_fields": "groupByFields",
         "metric": "metric",
+        "metrics": "metrics",
         "name": "name",
         "query": "query",
     }
@@ -50,6 +52,9 @@ class SecurityMonitoringRuleQuery(ModelNormal):
         :param metric: The target field to aggregate over when using the sum or max
             aggregations.
         :type metric: str, optional
+
+        :param metrics: Group of target fields to aggregate over when using the new value aggregations.
+        :type metrics: [str], optional
 
         :param name: Name of the query.
         :type name: str, optional
