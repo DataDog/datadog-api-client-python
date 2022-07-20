@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_ci_batch_metadata_ci import SyntheticsCIBatchMetadataCI
-    from datadog_api_client.v1.model.synthetics_ci_batch_metadata_git import SyntheticsCIBatchMetadataGit
-
-    globals()["SyntheticsCIBatchMetadataCI"] = SyntheticsCIBatchMetadataCI
-    globals()["SyntheticsCIBatchMetadataGit"] = SyntheticsCIBatchMetadataGit
-
-
 class SyntheticsCIBatchMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_ci_batch_metadata_ci import SyntheticsCIBatchMetadataCI
+        from datadog_api_client.v1.model.synthetics_ci_batch_metadata_git import SyntheticsCIBatchMetadataGit
+
         return {
             "ci": (SyntheticsCIBatchMetadataCI,),
             "git": (SyntheticsCIBatchMetadataGit,),

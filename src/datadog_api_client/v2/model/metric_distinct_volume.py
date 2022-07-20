@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.metric_distinct_volume_attributes import MetricDistinctVolumeAttributes
-    from datadog_api_client.v2.model.metric_distinct_volume_type import MetricDistinctVolumeType
-
-    globals()["MetricDistinctVolumeAttributes"] = MetricDistinctVolumeAttributes
-    globals()["MetricDistinctVolumeType"] = MetricDistinctVolumeType
-
-
 class MetricDistinctVolume(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.metric_distinct_volume_attributes import MetricDistinctVolumeAttributes
+        from datadog_api_client.v2.model.metric_distinct_volume_type import MetricDistinctVolumeType
+
         return {
             "attributes": (MetricDistinctVolumeAttributes,),
             "id": (str,),

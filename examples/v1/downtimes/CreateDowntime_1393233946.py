@@ -4,7 +4,7 @@ Schedule a downtime with until occurrences
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.downtimes_api import DowntimesApi
 from datadog_api_client.v1.model.downtime import Downtime
 from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
@@ -29,6 +29,9 @@ body = Downtime(
     start=int(datetime.now().timestamp()),
     end=int((datetime.now() + relativedelta(hours=1)).timestamp()),
     timezone="Etc/UTC",
+    monitor_tags=[
+        "tag0",
+    ],
 )
 
 configuration = Configuration()

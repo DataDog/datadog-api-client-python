@@ -9,20 +9,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_update_attributes import (
-        CloudWorkloadSecurityAgentRuleUpdateAttributes,
-    )
-    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_type import CloudWorkloadSecurityAgentRuleType
-
-    globals()["CloudWorkloadSecurityAgentRuleUpdateAttributes"] = CloudWorkloadSecurityAgentRuleUpdateAttributes
-    globals()["CloudWorkloadSecurityAgentRuleType"] = CloudWorkloadSecurityAgentRuleType
-
-
 class CloudWorkloadSecurityAgentRuleUpdateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.cloud_workload_security_agent_rule_update_attributes import (
+            CloudWorkloadSecurityAgentRuleUpdateAttributes,
+        )
+        from datadog_api_client.v2.model.cloud_workload_security_agent_rule_type import (
+            CloudWorkloadSecurityAgentRuleType,
+        )
+
         return {
             "attributes": (CloudWorkloadSecurityAgentRuleUpdateAttributes,),
             "type": (CloudWorkloadSecurityAgentRuleType,),
@@ -40,7 +36,7 @@ class CloudWorkloadSecurityAgentRuleUpdateData(ModelNormal):
         :param attributes: Update an existing Cloud Workload Security Agent rule.
         :type attributes: CloudWorkloadSecurityAgentRuleUpdateAttributes
 
-        :param type: The type of the resource. The value should always be `agent_rule`.
+        :param type: The type of the resource. The value should always be ``agent_rule``.
         :type type: CloudWorkloadSecurityAgentRuleType
         """
         super().__init__(kwargs)

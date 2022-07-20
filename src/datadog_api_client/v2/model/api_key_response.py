@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.full_api_key import FullAPIKey
-    from datadog_api_client.v2.model.api_key_response_included_item import APIKeyResponseIncludedItem
-
-    globals()["FullAPIKey"] = FullAPIKey
-    globals()["APIKeyResponseIncludedItem"] = APIKeyResponseIncludedItem
-
-
 class APIKeyResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.full_api_key import FullAPIKey
+        from datadog_api_client.v2.model.api_key_response_included_item import APIKeyResponseIncludedItem
+
         return {
             "data": (FullAPIKey,),
             "included": ([APIKeyResponseIncludedItem],),

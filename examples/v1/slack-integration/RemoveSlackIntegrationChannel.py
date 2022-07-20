@@ -2,7 +2,7 @@
 Remove a Slack integration channel returns "The channel was removed successfully." response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.slack_integration_api import SlackIntegrationApi
 
 configuration = Configuration()

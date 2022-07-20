@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.role_create_response_data import RoleCreateResponseData
-
-    globals()["RoleCreateResponseData"] = RoleCreateResponseData
-
-
 class RoleCreateResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.role_create_response_data import RoleCreateResponseData
+
         return {
             "data": (RoleCreateResponseData,),
         }

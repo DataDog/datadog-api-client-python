@@ -44,7 +44,7 @@ class DistributionWidgetYAxis(ModelNormal):
         :param min: Specifies minimum value to show on the y-axis. It takes a number, or auto for default behavior.
         :type min: str, optional
 
-        :param scale: Specifies the scale type. Possible values are `linear` or `log`.
+        :param scale: Specifies the scale type. Possible values are ``linear`` or ``log``.
         :type scale: str, optional
         """
         super().__init__(kwargs)

@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model.logs_archive_order import LogsArchiveOrder
@@ -13,6 +15,13 @@ from datadog_api_client.v2.model.roles_response import RolesResponse
 
 
 class LogsArchivesApi:
+    """
+    Archives forward all the logs ingested to a cloud storage system.
+
+    See the `Archives Page <https://app.datadoghq.com/logs/pipelines/archives>`_
+    for a list of the archives currently configured in web UI.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -252,452 +261,183 @@ class LogsArchivesApi:
             api_client=api_client,
         )
 
-    def add_read_role_to_archive(self, archive_id, body, **kwargs):
+    def add_read_role_to_archive(
+        self,
+        archive_id: str,
+        body: RelationshipToRole,
+    ) -> None:
         """Grant role to an archive.
 
-        Adds a read role to an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.add_read_role_to_archive(archive_id, body, async_req=True)
-        >>> result = thread.get()
+        Adds a read role to an archive. ( `Roles API <https://docs.datadoghq.com/api/v2/roles/>`_ )
 
         :param archive_id: The ID of the archive.
         :type archive_id: str
         :type body: RelationshipToRole
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._add_read_role_to_archive_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["archive_id"] = archive_id
 
         kwargs["body"] = body
 
         return self._add_read_role_to_archive_endpoint.call_with_http_info(**kwargs)
 
-    def create_logs_archive(self, body, **kwargs):
+    def create_logs_archive(
+        self,
+        body: LogsArchiveCreateRequest,
+    ) -> LogsArchive:
         """Create an archive.
 
         Create an archive in your organization.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_logs_archive(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: The definition of the new archive.
         :type body: LogsArchiveCreateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsArchive
         """
-        kwargs = self._create_logs_archive_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_logs_archive_endpoint.call_with_http_info(**kwargs)
 
-    def delete_logs_archive(self, archive_id, **kwargs):
+    def delete_logs_archive(
+        self,
+        archive_id: str,
+    ) -> None:
         """Delete an archive.
 
         Delete a given archive from your organization.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_logs_archive(archive_id, async_req=True)
-        >>> result = thread.get()
-
         :param archive_id: The ID of the archive.
         :type archive_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._delete_logs_archive_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["archive_id"] = archive_id
 
         return self._delete_logs_archive_endpoint.call_with_http_info(**kwargs)
 
-    def get_logs_archive(self, archive_id, **kwargs):
+    def get_logs_archive(
+        self,
+        archive_id: str,
+    ) -> LogsArchive:
         """Get an archive.
 
         Get a specific archive from your organization.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_logs_archive(archive_id, async_req=True)
-        >>> result = thread.get()
-
         :param archive_id: The ID of the archive.
         :type archive_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsArchive
         """
-        kwargs = self._get_logs_archive_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["archive_id"] = archive_id
 
         return self._get_logs_archive_endpoint.call_with_http_info(**kwargs)
 
-    def get_logs_archive_order(self, **kwargs):
+    def get_logs_archive_order(
+        self,
+    ) -> LogsArchiveOrder:
         """Get archive order.
 
         Get the current order of your archives.
         This endpoint takes no JSON arguments.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_logs_archive_order(async_req=True)
-        >>> result = thread.get()
-
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsArchiveOrder
         """
-        kwargs = self._get_logs_archive_order_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         return self._get_logs_archive_order_endpoint.call_with_http_info(**kwargs)
 
-    def list_archive_read_roles(self, archive_id, **kwargs):
+    def list_archive_read_roles(
+        self,
+        archive_id: str,
+    ) -> RolesResponse:
         """List read roles for an archive.
 
         Returns all read roles a given archive is restricted to.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_archive_read_roles(archive_id, async_req=True)
-        >>> result = thread.get()
-
         :param archive_id: The ID of the archive.
         :type archive_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: RolesResponse
         """
-        kwargs = self._list_archive_read_roles_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["archive_id"] = archive_id
 
         return self._list_archive_read_roles_endpoint.call_with_http_info(**kwargs)
 
-    def list_logs_archives(self, **kwargs):
+    def list_logs_archives(
+        self,
+    ) -> LogsArchives:
         """Get all archives.
 
         Get the list of configured logs archives with their definitions.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_logs_archives(async_req=True)
-        >>> result = thread.get()
-
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsArchives
         """
-        kwargs = self._list_logs_archives_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         return self._list_logs_archives_endpoint.call_with_http_info(**kwargs)
 
-    def remove_role_from_archive(self, archive_id, body, **kwargs):
+    def remove_role_from_archive(
+        self,
+        archive_id: str,
+        body: RelationshipToRole,
+    ) -> None:
         """Revoke role from an archive.
 
-        Removes a role from an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.remove_role_from_archive(archive_id, body, async_req=True)
-        >>> result = thread.get()
+        Removes a role from an archive. ( `Roles API <https://docs.datadoghq.com/api/v2/roles/>`_ )
 
         :param archive_id: The ID of the archive.
         :type archive_id: str
         :type body: RelationshipToRole
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._remove_role_from_archive_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["archive_id"] = archive_id
 
         kwargs["body"] = body
 
         return self._remove_role_from_archive_endpoint.call_with_http_info(**kwargs)
 
-    def update_logs_archive(self, archive_id, body, **kwargs):
+    def update_logs_archive(
+        self,
+        archive_id: str,
+        body: LogsArchiveCreateRequest,
+    ) -> LogsArchive:
         """Update an archive.
 
         Update a given archive configuration.
 
-        **Note**: Using this method updates your archive configuration by **replacing**
+        **Note** : Using this method updates your archive configuration by **replacing**
         your current configuration with the new one sent to your Datadog organization.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_logs_archive(archive_id, body, async_req=True)
-        >>> result = thread.get()
 
         :param archive_id: The ID of the archive.
         :type archive_id: str
         :param body: New definition of the archive.
         :type body: LogsArchiveCreateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsArchive
         """
-        kwargs = self._update_logs_archive_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["archive_id"] = archive_id
 
         kwargs["body"] = body
 
         return self._update_logs_archive_endpoint.call_with_http_info(**kwargs)
 
-    def update_logs_archive_order(self, body, **kwargs):
+    def update_logs_archive_order(
+        self,
+        body: LogsArchiveOrder,
+    ) -> LogsArchiveOrder:
         """Update archive order.
 
         Update the order of your archives. Since logs are processed sequentially, reordering an archive may change
         the structure and content of the data processed by other archives.
 
-        **Note**: Using the `PUT` method updates your archive's order by replacing the current order
+        **Note** : Using the ``PUT`` method updates your archive's order by replacing the current order
         with the new one.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_logs_archive_order(body, async_req=True)
-        >>> result = thread.get()
 
         :param body: An object containing the new ordered list of archive IDs.
         :type body: LogsArchiveOrder
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: LogsArchiveOrder
         """
-        kwargs = self._update_logs_archive_order_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._update_logs_archive_order_endpoint.call_with_http_info(**kwargs)

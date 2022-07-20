@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_archive_integration_azure import LogsArchiveIntegrationAzure
-    from datadog_api_client.v2.model.logs_archive_destination_azure_type import LogsArchiveDestinationAzureType
-
-    globals()["LogsArchiveIntegrationAzure"] = LogsArchiveIntegrationAzure
-    globals()["LogsArchiveDestinationAzureType"] = LogsArchiveDestinationAzureType
-
-
 class LogsArchiveDestinationAzure(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_archive_integration_azure import LogsArchiveIntegrationAzure
+        from datadog_api_client.v2.model.logs_archive_destination_azure_type import LogsArchiveDestinationAzureType
+
         return {
             "container": (str,),
             "integration": (LogsArchiveIntegrationAzure,),

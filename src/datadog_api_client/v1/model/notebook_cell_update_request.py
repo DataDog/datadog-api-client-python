@@ -9,18 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.notebook_cell_update_request_attributes import NotebookCellUpdateRequestAttributes
-    from datadog_api_client.v1.model.notebook_cell_resource_type import NotebookCellResourceType
-
-    globals()["NotebookCellUpdateRequestAttributes"] = NotebookCellUpdateRequestAttributes
-    globals()["NotebookCellResourceType"] = NotebookCellResourceType
-
-
 class NotebookCellUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.notebook_cell_update_request_attributes import (
+            NotebookCellUpdateRequestAttributes,
+        )
+        from datadog_api_client.v1.model.notebook_cell_resource_type import NotebookCellResourceType
+
         return {
             "attributes": (NotebookCellUpdateRequestAttributes,),
             "id": (str,),
@@ -37,8 +33,8 @@ class NotebookCellUpdateRequest(ModelNormal):
         """
         The description of a notebook cell update request.
 
-        :param attributes: The attributes of a notebook cell in update cell request. Valid cell types are `markdown`, `timeseries`, `toplist`, `heatmap`, `distribution`,
-            `log_stream`. [More information on each graph visualization type.](https://docs.datadoghq.com/dashboards/widgets/)
+        :param attributes: The attributes of a notebook cell in update cell request. Valid cell types are ``markdown`` , ``timeseries`` , ``toplist`` , ``heatmap`` , ``distribution`` ,
+            ``log_stream``. `More information on each graph visualization type. <https://docs.datadoghq.com/dashboards/widgets/>`_
         :type attributes: NotebookCellUpdateRequestAttributes
 
         :param id: Notebook cell ID.

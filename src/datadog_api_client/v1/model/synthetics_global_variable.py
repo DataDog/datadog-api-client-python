@@ -9,22 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_global_variable_attributes import SyntheticsGlobalVariableAttributes
-    from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options import (
-        SyntheticsGlobalVariableParseTestOptions,
-    )
-    from datadog_api_client.v1.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
-
-    globals()["SyntheticsGlobalVariableAttributes"] = SyntheticsGlobalVariableAttributes
-    globals()["SyntheticsGlobalVariableParseTestOptions"] = SyntheticsGlobalVariableParseTestOptions
-    globals()["SyntheticsGlobalVariableValue"] = SyntheticsGlobalVariableValue
-
-
 class SyntheticsGlobalVariable(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_global_variable_attributes import SyntheticsGlobalVariableAttributes
+        from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options import (
+            SyntheticsGlobalVariableParseTestOptions,
+        )
+        from datadog_api_client.v1.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
+
         return {
             "attributes": (SyntheticsGlobalVariableAttributes,),
             "description": (str,),
@@ -66,7 +59,7 @@ class SyntheticsGlobalVariable(ModelNormal):
         :param name: Name of the global variable. Unique across Synthetics global variables.
         :type name: str
 
-        :param parse_test_options: Parser options to use for retrieving a Synthetics global variable from a Synthetics Test. Used in conjunction with `parse_test_public_id`.
+        :param parse_test_options: Parser options to use for retrieving a Synthetics global variable from a Synthetics Test. Used in conjunction with ``parse_test_public_id``.
         :type parse_test_options: SyntheticsGlobalVariableParseTestOptions, optional
 
         :param parse_test_public_id: A Synthetic test ID to use as a test to generate the variable value.

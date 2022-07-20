@@ -4,7 +4,6 @@
 
 
 from datadog_api_client.model_utils import (
-    ApiTypeError,
     ModelSimple,
     cached_property,
 )
@@ -33,7 +32,7 @@ class SecurityMonitoringRuleNewValueOptionsLearningDuration(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of [0, 1, 7].
+        :param value: If omitted defaults to 0. Must be one of [0, 1, 7].
         :type value: int
         """
         super().__init__(kwargs)
@@ -44,11 +43,7 @@ class SecurityMonitoringRuleNewValueOptionsLearningDuration(ModelSimple):
             args = list(args)
             value = args.pop(0)
         else:
-            raise ApiTypeError(
-                "value is required, but not passed in args or kwargs and doesn't have default",
-                path_to_item=self._path_to_item,
-                valid_classes=(self.__class__,),
-            )
+            value = 0
 
         self._check_pos_args(args)
 

@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
-    from datadog_api_client.v2.model.permissions_type import PermissionsType
-
-    globals()["PermissionAttributes"] = PermissionAttributes
-    globals()["PermissionsType"] = PermissionsType
-
-
 class Permission(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
+        from datadog_api_client.v2.model.permissions_type import PermissionsType
+
         return {
             "attributes": (PermissionAttributes,),
             "id": (str,),

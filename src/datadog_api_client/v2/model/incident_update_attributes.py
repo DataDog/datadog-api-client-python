@@ -11,18 +11,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
-    from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
-
-    globals()["IncidentFieldAttributes"] = IncidentFieldAttributes
-    globals()["IncidentNotificationHandle"] = IncidentNotificationHandle
-
-
 class IncidentUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
+        from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
+
         return {
             "customer_impact_end": (datetime, none_type),
             "customer_impact_scope": (str,),

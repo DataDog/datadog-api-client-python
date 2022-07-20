@@ -9,24 +9,17 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.security_monitoring_signal_list_request_filter import (
-        SecurityMonitoringSignalListRequestFilter,
-    )
-    from datadog_api_client.v2.model.security_monitoring_signal_list_request_page import (
-        SecurityMonitoringSignalListRequestPage,
-    )
-    from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
-
-    globals()["SecurityMonitoringSignalListRequestFilter"] = SecurityMonitoringSignalListRequestFilter
-    globals()["SecurityMonitoringSignalListRequestPage"] = SecurityMonitoringSignalListRequestPage
-    globals()["SecurityMonitoringSignalsSort"] = SecurityMonitoringSignalsSort
-
-
 class SecurityMonitoringSignalListRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.security_monitoring_signal_list_request_filter import (
+            SecurityMonitoringSignalListRequestFilter,
+        )
+        from datadog_api_client.v2.model.security_monitoring_signal_list_request_page import (
+            SecurityMonitoringSignalListRequestPage,
+        )
+        from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
+
         return {
             "filter": (SecurityMonitoringSignalListRequestFilter,),
             "page": (SecurityMonitoringSignalListRequestPage,),

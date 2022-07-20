@@ -9,18 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_history_metrics_series import SLOHistoryMetricsSeries
-    from datadog_api_client.v1.model.slo_history_metrics_series import SLOHistoryMetricsSeries
-
-    globals()["SLOHistoryMetricsSeries"] = SLOHistoryMetricsSeries
-    globals()["SLOHistoryMetricsSeries"] = SLOHistoryMetricsSeries
-
-
 class SLOHistoryMetrics(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_history_metrics_series import SLOHistoryMetricsSeries
+
         return {
             "denominator": (SLOHistoryMetricsSeries,),
             "interval": (int,),
@@ -45,12 +38,12 @@ class SLOHistoryMetrics(ModelNormal):
 
     def __init__(self, denominator, interval, numerator, query, res_type, resp_version, times, *args, **kwargs):
         """
-        A `metric` based SLO history response.
+        A ``metric`` based SLO history response.
 
-        This is not included in responses for `monitor` based SLOs.
+        This is not included in responses for ``monitor`` based SLOs.
 
-        :param denominator: A representation of `metric` based SLO time series for the provided queries.
-            This is the same response type from `batch_query` endpoint.
+        :param denominator: A representation of ``metric`` based SLO time series for the provided queries.
+            This is the same response type from ``batch_query`` endpoint.
         :type denominator: SLOHistoryMetricsSeries
 
         :param interval: The aggregated query interval for the series data. It's implicit based on the query time window.
@@ -59,20 +52,20 @@ class SLOHistoryMetrics(ModelNormal):
         :param message: Optional message if there are specific query issues/warnings.
         :type message: str, optional
 
-        :param numerator: A representation of `metric` based SLO time series for the provided queries.
-            This is the same response type from `batch_query` endpoint.
+        :param numerator: A representation of ``metric`` based SLO time series for the provided queries.
+            This is the same response type from ``batch_query`` endpoint.
         :type numerator: SLOHistoryMetricsSeries
 
         :param query: The combined numerator and denominator query CSV.
         :type query: str
 
-        :param res_type: The series result type. This mimics `batch_query` response type.
+        :param res_type: The series result type. This mimics ``batch_query`` response type.
         :type res_type: str
 
-        :param resp_version: The series response version type. This mimics `batch_query` response type.
+        :param resp_version: The series response version type. This mimics ``batch_query`` response type.
         :type resp_version: int
 
-        :param times: An array of query timestamps in EPOCH milliseconds
+        :param times: An array of query timestamps in EPOCH milliseconds.
         :type times: [float]
         """
         super().__init__(kwargs)

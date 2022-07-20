@@ -9,18 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_create_data import (
-        CloudWorkloadSecurityAgentRuleCreateData,
-    )
-
-    globals()["CloudWorkloadSecurityAgentRuleCreateData"] = CloudWorkloadSecurityAgentRuleCreateData
-
-
 class CloudWorkloadSecurityAgentRuleCreateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.cloud_workload_security_agent_rule_create_data import (
+            CloudWorkloadSecurityAgentRuleCreateData,
+        )
+
         return {
             "data": (CloudWorkloadSecurityAgentRuleCreateData,),
         }

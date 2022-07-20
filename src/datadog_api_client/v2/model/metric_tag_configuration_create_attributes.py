@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
-    from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
-
-    globals()["MetricCustomAggregations"] = MetricCustomAggregations
-    globals()["MetricTagConfigurationMetricTypes"] = MetricTagConfigurationMetricTypes
-
-
 class MetricTagConfigurationCreateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
+        from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
+
         return {
             "aggregations": (MetricCustomAggregations,),
             "include_percentiles": (bool,),
@@ -44,21 +38,22 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
             Gauge metrics require the (time: avg, space: avg) aggregation.
             Additional time & space combinations are also available:
 
-            - time: avg, space: avg
-            - time: avg, space: max
-            - time: avg, space: min
-            - time: avg, space: sum
-            - time: count, space: sum
-            - time: max, space: max
-            - time: min, space: min
-            - time: sum, space: avg
-            - time: sum, space: sum
 
-            Can only be applied to metrics that have a `metric_type` of `count`, `rate`, or `gauge`.
+            * time: avg, space: avg
+            * time: avg, space: max
+            * time: avg, space: min
+            * time: avg, space: sum
+            * time: count, space: sum
+            * time: max, space: max
+            * time: min, space: min
+            * time: sum, space: avg
+            * time: sum, space: sum
+
+            Can only be applied to metrics that have a ``metric_type`` of ``count`` , ``rate`` , or ``gauge``.
         :type aggregations: MetricCustomAggregations, optional
 
         :param include_percentiles: Toggle to include/exclude percentiles for a distribution metric.
-            Defaults to false. Can only be applied to metrics that have a `metric_type` of `distribution`.
+            Defaults to false. Can only be applied to metrics that have a ``metric_type`` of ``distribution``.
         :type include_percentiles: bool, optional
 
         :param metric_type: The metric's type.

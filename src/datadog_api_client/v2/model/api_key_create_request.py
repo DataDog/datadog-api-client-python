@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.api_key_create_data import APIKeyCreateData
-
-    globals()["APIKeyCreateData"] = APIKeyCreateData
-
-
 class APIKeyCreateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.api_key_create_data import APIKeyCreateData
+
         return {
             "data": (APIKeyCreateData,),
         }

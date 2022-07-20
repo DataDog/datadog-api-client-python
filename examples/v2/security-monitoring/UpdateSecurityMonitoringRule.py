@@ -2,7 +2,7 @@
 Update an existing rule returns "OK" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
@@ -10,6 +10,9 @@ from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMo
 from datadog_api_client.v2.model.security_monitoring_rule_detection_method import SecurityMonitoringRuleDetectionMethod
 from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
     SecurityMonitoringRuleEvaluationWindow,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_hardcoded_evaluator_type import (
+    SecurityMonitoringRuleHardcodedEvaluatorType,
 )
 from datadog_api_client.v2.model.security_monitoring_rule_impossible_travel_options import (
     SecurityMonitoringRuleImpossibleTravelOptions,
@@ -24,6 +27,12 @@ from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_forg
 )
 from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_duration import (
     SecurityMonitoringRuleNewValueOptionsLearningDuration,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_method import (
+    SecurityMonitoringRuleNewValueOptionsLearningMethod,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_threshold import (
+    SecurityMonitoringRuleNewValueOptionsLearningThreshold,
 )
 from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
 from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
@@ -47,8 +56,10 @@ body = SecurityMonitoringRuleUpdatePayload(
     ],
     has_extended_title=True,
     options=SecurityMonitoringRuleOptions(
+        decrease_criticality_based_on_env=False,
         detection_method=SecurityMonitoringRuleDetectionMethod("threshold"),
         evaluation_window=SecurityMonitoringRuleEvaluationWindow(0),
+        hardcoded_evaluator_type=SecurityMonitoringRuleHardcodedEvaluatorType("log4shell"),
         impossible_travel_options=SecurityMonitoringRuleImpossibleTravelOptions(
             baseline_user_locations=True,
         ),
@@ -57,6 +68,8 @@ body = SecurityMonitoringRuleUpdatePayload(
         new_value_options=SecurityMonitoringRuleNewValueOptions(
             forget_after=SecurityMonitoringRuleNewValueOptionsForgetAfter(1),
             learning_duration=SecurityMonitoringRuleNewValueOptionsLearningDuration(0),
+            learning_method=SecurityMonitoringRuleNewValueOptionsLearningMethod("duration"),
+            learning_threshold=SecurityMonitoringRuleNewValueOptionsLearningThreshold(0),
         ),
     ),
     queries=[

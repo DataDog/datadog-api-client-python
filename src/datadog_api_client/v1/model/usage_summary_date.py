@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_summary_date_org import UsageSummaryDateOrg
-
-    globals()["UsageSummaryDateOrg"] = UsageSummaryDateOrg
-
-
 class UsageSummaryDate(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_summary_date_org import UsageSummaryDateOrg
+
         return {
             "agent_host_top99p": (int,),
             "apm_azure_app_service_host_top99p": (int,),
@@ -64,10 +59,12 @@ class UsageSummaryDate(ModelNormal):
             "mobile_rum_lite_session_count_sum": (int,),
             "mobile_rum_session_count_android_sum": (int,),
             "mobile_rum_session_count_ios_sum": (int,),
+            "mobile_rum_session_count_reactnative_sum": (int,),
             "mobile_rum_session_count_sum": (int,),
             "mobile_rum_units_sum": (int,),
             "netflow_indexed_events_count_sum": (int,),
             "npm_host_top99p": (int,),
+            "observability_pipelines_bytes_processed_sum": (int,),
             "online_archive_events_count_sum": (int,),
             "opentelemetry_host_top99p": (int,),
             "orgs": ([UsageSummaryDateOrg],),
@@ -129,10 +126,12 @@ class UsageSummaryDate(ModelNormal):
         "mobile_rum_lite_session_count_sum": "mobile_rum_lite_session_count_sum",
         "mobile_rum_session_count_android_sum": "mobile_rum_session_count_android_sum",
         "mobile_rum_session_count_ios_sum": "mobile_rum_session_count_ios_sum",
+        "mobile_rum_session_count_reactnative_sum": "mobile_rum_session_count_reactnative_sum",
         "mobile_rum_session_count_sum": "mobile_rum_session_count_sum",
         "mobile_rum_units_sum": "mobile_rum_units_sum",
         "netflow_indexed_events_count_sum": "netflow_indexed_events_count_sum",
         "npm_host_top99p": "npm_host_top99p",
+        "observability_pipelines_bytes_processed_sum": "observability_pipelines_bytes_processed_sum",
         "online_archive_events_count_sum": "online_archive_events_count_sum",
         "opentelemetry_host_top99p": "opentelemetry_host_top99p",
         "orgs": "orgs",
@@ -283,6 +282,9 @@ class UsageSummaryDate(ModelNormal):
         :param mobile_rum_session_count_ios_sum: Shows the sum of all mobile RUM Sessions on iOS over all hours in the current date for all organizations.
         :type mobile_rum_session_count_ios_sum: int, optional
 
+        :param mobile_rum_session_count_reactnative_sum: Shows the sum of all mobile RUM Sessions on React Native over all hours in the current date for all organizations.
+        :type mobile_rum_session_count_reactnative_sum: int, optional
+
         :param mobile_rum_session_count_sum: Shows the sum of all mobile RUM Sessions over all hours in the current date for all organizations
         :type mobile_rum_session_count_sum: int, optional
 
@@ -294,6 +296,9 @@ class UsageSummaryDate(ModelNormal):
 
         :param npm_host_top99p: Shows the 99th percentile of all distinct Networks hosts over all hours in the current date for all organizations.
         :type npm_host_top99p: int, optional
+
+        :param observability_pipelines_bytes_processed_sum: Sum of all observability pipelines bytes processed over all hours in the current date for the given org.
+        :type observability_pipelines_bytes_processed_sum: int, optional
 
         :param online_archive_events_count_sum: Sum of all online archived events over all hours in the current date for all organizations.
         :type online_archive_events_count_sum: int, optional

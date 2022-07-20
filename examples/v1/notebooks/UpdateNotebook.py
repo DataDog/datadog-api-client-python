@@ -3,11 +3,10 @@ Update a notebook returns "OK" response
 """
 
 from os import environ
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.notebooks_api import NotebooksApi
 from datadog_api_client.v1.model.notebook_cell_create_request import NotebookCellCreateRequest
 from datadog_api_client.v1.model.notebook_cell_resource_type import NotebookCellResourceType
-from datadog_api_client.v1.model.notebook_cell_time import NotebookCellTime
 from datadog_api_client.v1.model.notebook_graph_size import NotebookGraphSize
 from datadog_api_client.v1.model.notebook_markdown_cell_attributes import NotebookMarkdownCellAttributes
 from datadog_api_client.v1.model.notebook_markdown_cell_definition import NotebookMarkdownCellDefinition
@@ -71,7 +70,7 @@ body = NotebookUpdateRequest(
                             keys=[],
                             tags=[],
                         ),
-                        time=NotebookCellTime(None),
+                        time=None,
                     ),
                     type=NotebookCellResourceType("notebook_cells"),
                 ),

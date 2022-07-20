@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_response_data import SLOResponseData
-
-    globals()["SLOResponseData"] = SLOResponseData
-
-
 class SLOResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_response_data import SLOResponseData
+
         return {
             "data": (SLOResponseData,),
             "errors": ([str],),
@@ -34,7 +29,7 @@ class SLOResponse(ModelNormal):
         A service level objective response containing a single service level objective.
 
         :param data: A service level objective object includes a service level indicator, thresholds
-            for one or more timeframes, and metadata (`name`, `description`, `tags`, etc.).
+            for one or more timeframes, and metadata ( ``name`` , ``description`` , ``tags`` , etc.).
         :type data: SLOResponseData, optional
 
         :param errors: An array of error messages. Each endpoint documents how/whether this field is

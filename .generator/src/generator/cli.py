@@ -36,6 +36,7 @@ def cli(specs, output):
     env.filters["parameters"] = openapi.parameters
     env.filters["return_type"] = openapi.return_type
     env.filters["safe_snake_case"] = openapi.safe_snake_case
+    env.filters["docstring"] = formatter.docstring
 
     env.globals["enumerate"] = enumerate
     env.globals["package"] = PACKAGE_NAME
@@ -112,12 +113,14 @@ def cli(specs, output):
         with models_path.open("w") as fp:
             fp.write(models_j2.render(models=sorted(models)))
 
+        tags_by_name = {tag["name"]: tag for tag in spec["tags"]}
+
         for name, operations in apis.items():
             filename = openapi.safe_snake_case(name) + "_api.py"
             api_path = package / "api" / filename
             api_path.parent.mkdir(parents=True, exist_ok=True)
             with api_path.open("w") as fp:
-                fp.write(api_j2.render(name=name, operations=operations))
+                fp.write(api_j2.render(name=name, operations=operations, description=tags_by_name[name]["description"]))
 
         api_init_path = package / "api" / "__init__.py"
         with api_init_path.open("w") as fp:

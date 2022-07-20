@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.incident_team_update_attributes import IncidentTeamUpdateAttributes
-    from datadog_api_client.v2.model.incident_team_relationships import IncidentTeamRelationships
-    from datadog_api_client.v2.model.incident_team_type import IncidentTeamType
-
-    globals()["IncidentTeamUpdateAttributes"] = IncidentTeamUpdateAttributes
-    globals()["IncidentTeamRelationships"] = IncidentTeamRelationships
-    globals()["IncidentTeamType"] = IncidentTeamType
-
-
 class IncidentTeamUpdateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.incident_team_update_attributes import IncidentTeamUpdateAttributes
+        from datadog_api_client.v2.model.incident_team_relationships import IncidentTeamRelationships
+        from datadog_api_client.v2.model.incident_team_type import IncidentTeamType
+
         return {
             "attributes": (IncidentTeamUpdateAttributes,),
             "id": (str,),

@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.timeseries_background_type import TimeseriesBackgroundType
-    from datadog_api_client.v1.model.widget_axis import WidgetAxis
-
-    globals()["TimeseriesBackgroundType"] = TimeseriesBackgroundType
-    globals()["WidgetAxis"] = WidgetAxis
-
-
 class TimeseriesBackground(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.timeseries_background_type import TimeseriesBackgroundType
+        from datadog_api_client.v1.model.widget_axis import WidgetAxis
+
         return {
             "type": (TimeseriesBackgroundType,),
             "yaxis": (WidgetAxis,),

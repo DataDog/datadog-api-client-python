@@ -1,22 +1,32 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+import collections
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
     datetime,
     set_attribute_from_path,
     get_attribute_from_path,
+    UnsetType,
+    unset,
 )
 from datadog_api_client.v2.model.rum_analytics_aggregate_response import RUMAnalyticsAggregateResponse
 from datadog_api_client.v2.model.rum_aggregate_request import RUMAggregateRequest
 from datadog_api_client.v2.model.rum_events_response import RUMEventsResponse
 from datadog_api_client.v2.model.rum_sort import RUMSort
+from datadog_api_client.v2.model.rum_event import RUMEvent
 from datadog_api_client.v2.model.rum_search_events_request import RUMSearchEventsRequest
 
 
 class RUMApi:
+    """
+    Search or aggregate your RUM events over HTTP.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -116,64 +126,38 @@ class RUMApi:
             api_client=api_client,
         )
 
-    def aggregate_rum_events(self, body, **kwargs):
+    def aggregate_rum_events(
+        self,
+        body: RUMAggregateRequest,
+    ) -> RUMAnalyticsAggregateResponse:
         """Aggregate RUM events.
 
         The API endpoint to aggregate RUM events into buckets of computed metrics and timeseries.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.aggregate_rum_events(body, async_req=True)
-        >>> result = thread.get()
-
         :type body: RUMAggregateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: RUMAnalyticsAggregateResponse
         """
-        kwargs = self._aggregate_rum_events_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._aggregate_rum_events_endpoint.call_with_http_info(**kwargs)
 
-    def list_rum_events(self, **kwargs):
+    def list_rum_events(
+        self,
+        *,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_from: Union[datetime, UnsetType] = unset,
+        filter_to: Union[datetime, UnsetType] = unset,
+        sort: Union[RUMSort, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> RUMEventsResponse:
         """Get a list of RUM events.
 
         List endpoint returns events that match a RUM search query.
-        [Results are paginated][1].
+        `Results are paginated <https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination>`_.
 
         Use this endpoint to see your latest RUM events.
-
-        [1]: https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_rum_events(async_req=True)
-        >>> result = thread.get()
 
         :param filter_query: Search query following RUM syntax.
         :type filter_query: str, optional
@@ -187,36 +171,39 @@ class RUMApi:
         :type page_cursor: str, optional
         :param page_limit: Maximum number of events in the response.
         :type page_limit: int, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: RUMEventsResponse
         """
-        kwargs = self._list_rum_events_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
         return self._list_rum_events_endpoint.call_with_http_info(**kwargs)
 
-    def list_rum_events_with_pagination(self, **kwargs):
+    def list_rum_events_with_pagination(
+        self,
+        *,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_from: Union[datetime, UnsetType] = unset,
+        filter_to: Union[datetime, UnsetType] = unset,
+        sort: Union[RUMSort, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[RUMEvent]:
         """Get a list of RUM events.
 
         Provide a paginated version of :meth:`list_rum_events`, returning all items.
@@ -233,119 +220,85 @@ class RUMApi:
         :type page_cursor: str, optional
         :param page_limit: Maximum number of events in the response.
         :type page_limit: int, optional
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[RUMEvent]
         """
-        kwargs = self._list_rum_events_endpoint.default_arguments(kwargs)
-        page_size = get_attribute_from_path(kwargs, "page_limit", 10)
+        kwargs: Dict[str, Any] = {}
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 10)
         endpoint = self._list_rum_events_endpoint
-        set_attribute_from_path(kwargs, "page_limit", page_size, endpoint.params_map)
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
         while True:
             response = endpoint.call_with_http_info(**kwargs)
             for item in get_attribute_from_path(response, "data"):
                 yield item
-            if len(get_attribute_from_path(response, "data")) < page_size:
+            if len(get_attribute_from_path(response, "data")) < local_page_size:
                 break
             set_attribute_from_path(
                 kwargs, "page_cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
             )
 
-    def search_rum_events(self, body, **kwargs):
+    def search_rum_events(
+        self,
+        body: RUMSearchEventsRequest,
+    ) -> RUMEventsResponse:
         """Search RUM events.
 
         List endpoint returns RUM events that match a RUM search query.
-        [Results are paginated][1].
+        `Results are paginated <https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination>`_.
 
         Use this endpoint to build complex RUM events filtering and search.
 
-        [1]: https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.search_rum_events(body, async_req=True)
-        >>> result = thread.get()
-
         :type body: RUMSearchEventsRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: RUMEventsResponse
         """
-        kwargs = self._search_rum_events_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._search_rum_events_endpoint.call_with_http_info(**kwargs)
 
-    def search_rum_events_with_pagination(self, body, **kwargs):
+    def search_rum_events_with_pagination(
+        self,
+        body: RUMSearchEventsRequest,
+    ) -> collections.abc.Iterable[RUMEvent]:
         """Search RUM events.
 
         Provide a paginated version of :meth:`search_rum_events`, returning all items.
 
         :type body: RUMSearchEventsRequest
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[RUMEvent]
         """
-        kwargs = self._search_rum_events_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
-        page_size = get_attribute_from_path(kwargs, "body.page.limit", 10)
+        local_page_size = get_attribute_from_path(kwargs, "body.page.limit", 10)
         endpoint = self._search_rum_events_endpoint
-        set_attribute_from_path(kwargs, "body.page.limit", page_size, endpoint.params_map)
+        set_attribute_from_path(kwargs, "body.page.limit", local_page_size, endpoint.params_map)
         while True:
             response = endpoint.call_with_http_info(**kwargs)
             for item in get_attribute_from_path(response, "data"):
                 yield item
-            if len(get_attribute_from_path(response, "data")) < page_size:
+            if len(get_attribute_from_path(response, "data")) < local_page_size:
                 break
             set_attribute_from_path(
                 kwargs, "body.page.cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map

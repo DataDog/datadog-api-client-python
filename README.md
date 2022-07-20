@@ -40,6 +40,16 @@ with ApiClient(configuration) as api_client:
     print(response)
 ```
 
+### Authentication
+
+By default the library will use the `DD_API_KEY` and `DD_APP_KEY` environment variables to authenticate against the Datadog API.
+To provide your own set of credentials, you need to set some keys on the configuration:
+
+```python
+configuration.api_key["apiKeyAuth"] = "<API KEY>"
+configuration.api_key["appKeyAuth"] = "<APPLICATION KEY>"
+```
+
 ### Unstable Endpoints
 
 This client includes access to Datadog API endpoints while they are in an unstable state and may undergo breaking changes. An extra configuration step is required to enable these endpoints:
@@ -75,6 +85,23 @@ If you want to enable requests logging, set the `debug` flag on your configurati
 configuration.debug = True
 ```
 
+### Threads support
+
+You can run API calls in a thread by using `ThreadedApiClient` in place of `ApiClient`. API calls will then
+return a `AsyncResult` instance on which you can call get to retrieve the result:
+
+```python
+from datadog_api_client import Configuration, ThreadedApiClient
+from datadog_api_client.v1.api import dashboards_api
+
+configuration = Configuration()
+with ThreadedApiClient(configuration) as api_client:
+    api_instance = dashboards_api.DashboardsApi(api_client)
+    result = api_instance.list_dashboards()
+    dashboards = result.get()
+    print(dashboards)
+```
+
 ### Asyncio support
 
 The library supports asynchronous operations when using `AsyncApiClient` for the transport. When that client is used,
@@ -96,6 +123,23 @@ async def main():
         print(dashbooards)
 
 asyncio.run(main())
+```
+
+### Pagination
+
+Several listing operations have a pagination method to help consume all the items available.
+For example, to retrieve all your incidents:
+
+```python
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v2.api.incidents_api import IncidentsApi
+
+configuration = Configuration()
+configuration.unstable_operations["list_incidents"] = True
+with ApiClient(configuration) as api_client:
+    api_instance = IncidentsApi(api_client)
+    for incident in api_instance.list_incidents_with_pagination():
+        print(incident.id)
 ```
 
 ## Documentation for API Endpoints and Models

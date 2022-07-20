@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
-
-    globals()["SecurityMonitoringRuleSeverity"] = SecurityMonitoringRuleSeverity
-
-
 class SecurityMonitoringRuleCase(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
+
         return {
             "condition": (str,),
             "name": (str,),
@@ -37,7 +32,7 @@ class SecurityMonitoringRuleCase(ModelNormal):
         """
         Case when signal is generated.
 
-        :param condition: A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated
+        :param condition: A rule case contains logical operations ( ``>`` , ``>=`` , ``&&`` , ``||`` ) to determine if a signal should be generated
             based on the event counts in the previously defined queries.
         :type condition: str, optional
 

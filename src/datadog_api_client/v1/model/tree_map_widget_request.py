@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_formula import WidgetFormula
-    from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
-    from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
-
-    globals()["WidgetFormula"] = WidgetFormula
-    globals()["FormulaAndFunctionQueryDefinition"] = FormulaAndFunctionQueryDefinition
-    globals()["FormulaAndFunctionResponseFormat"] = FormulaAndFunctionResponseFormat
-
-
 class TreeMapWidgetRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_formula import WidgetFormula
+        from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
+        from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+
         return {
             "formulas": ([WidgetFormula],),
             "q": (str,),

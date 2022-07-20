@@ -10,22 +10,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.creator import Creator
-    from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
-    from datadog_api_client.v1.model.slo_threshold import SLOThreshold
-    from datadog_api_client.v1.model.slo_type import SLOType
-
-    globals()["Creator"] = Creator
-    globals()["ServiceLevelObjectiveQuery"] = ServiceLevelObjectiveQuery
-    globals()["SLOThreshold"] = SLOThreshold
-    globals()["SLOType"] = SLOType
-
-
 class ServiceLevelObjective(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.creator import Creator
+        from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
+        from datadog_api_client.v1.model.slo_threshold import SLOThreshold
+        from datadog_api_client.v1.model.slo_type import SLOType
+
         return {
             "created_at": (int,),
             "creator": (Creator,),
@@ -67,7 +59,7 @@ class ServiceLevelObjective(ModelNormal):
     def __init__(self, name, thresholds, type, *args, **kwargs):
         """
         A service level objective object includes a service level indicator, thresholds
-        for one or more timeframes, and metadata (`name`, `description`, `tags`, etc.).
+        for one or more timeframes, and metadata ( ``name`` , ``description`` , ``tags`` , etc.).
 
         :param created_at: Creation timestamp (UNIX time in seconds)
 
@@ -79,15 +71,15 @@ class ServiceLevelObjective(ModelNormal):
 
         :param description: A user-defined description of the service level objective.
 
-            Always included in service level objective responses (but may be `null`).
+            Always included in service level objective responses (but may be ``null`` ).
             Optional in create/update requests.
         :type description: str, none_type, optional
 
-        :param groups: A list of (up to 20) monitor groups that narrow the scope of a monitor service level objective.
+        :param groups: A list of (up to 100) monitor groups that narrow the scope of a monitor service level objective.
 
             Included in service level objective responses if it is not empty. Optional in
             create/update requests for monitor service level objectives, but may only be
-            used when then length of the `monitor_ids` field is one.
+            used when then length of the ``monitor_ids`` field is one.
         :type groups: [str], optional
 
         :param id: A unique identifier for the service level objective object.
@@ -101,21 +93,21 @@ class ServiceLevelObjective(ModelNormal):
         :type modified_at: int, optional
 
         :param monitor_ids: A list of monitor ids that defines the scope of a monitor service level
-            objective. **Required if type is `monitor`**.
+            objective. **Required if type is monitor**.
         :type monitor_ids: [int], optional
 
-        :param monitor_tags: The union of monitor tags for all monitors referenced by the `monitor_ids`
+        :param monitor_tags: The union of monitor tags for all monitors referenced by the ``monitor_ids``
             field.
-            Always included in service level objective responses for monitor service level
+            Always included in service level objective responses for monitor-based service level
             objectives (but may be empty). Ignored in create/update requests. Does not
             affect which monitors are included in the service level objective (that is
-            determined entirely by the `monitor_ids` field).
+            determined entirely by the ``monitor_ids`` field).
         :type monitor_tags: [str], optional
 
         :param name: The name of the service level objective object.
         :type name: str
 
-        :param query: A metric SLI query. **Required if type is `metric`**. Note that Datadog only allows the sum by aggregator
+        :param query: A metric-based SLO. **Required if type is metric**. Note that Datadog only allows the sum by aggregator
             to be used because this will sum up all request counts instead of averaging them, or taking the max or
             min of all of those requests.
         :type query: ServiceLevelObjectiveQuery, optional

@@ -6,26 +6,22 @@
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
 )
-
-
-def lazy_import():
-    from datadog_api_client.v2.model.logs_archive_destination import LogsArchiveDestination
-    from datadog_api_client.v2.model.logs_archive_state import LogsArchiveState
-
-    globals()["LogsArchiveDestination"] = LogsArchiveDestination
-    globals()["LogsArchiveState"] = LogsArchiveState
 
 
 class LogsArchiveAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_archive_destination import LogsArchiveDestination
+        from datadog_api_client.v2.model.logs_archive_state import LogsArchiveState
+
         return {
             "destination": (LogsArchiveDestination,),
             "include_tags": (bool,),
             "name": (str,),
             "query": (str,),
+            "rehydration_max_scan_size_in_gb": (int, none_type),
             "rehydration_tags": ([str],),
             "state": (LogsArchiveState,),
         }
@@ -35,6 +31,7 @@ class LogsArchiveAttributes(ModelNormal):
         "include_tags": "include_tags",
         "name": "name",
         "query": "query",
+        "rehydration_max_scan_size_in_gb": "rehydration_max_scan_size_in_gb",
         "rehydration_tags": "rehydration_tags",
         "state": "state",
     }
@@ -55,6 +52,9 @@ class LogsArchiveAttributes(ModelNormal):
 
         :param query: The archive query/filter. Logs matching this query are included in the archive.
         :type query: str
+
+        :param rehydration_max_scan_size_in_gb: Maximum scan size for rehydration from this archive.
+        :type rehydration_max_scan_size_in_gb: int, none_type, optional
 
         :param rehydration_tags: An array of tags to add to rehydrated logs from an archive.
         :type rehydration_tags: [str], optional

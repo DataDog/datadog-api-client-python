@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
-
-    globals()["SLOCorrectionCategory"] = SLOCorrectionCategory
-
-
 class SLOCorrectionCreateRequestAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
+
         return {
             "category": (SLOCorrectionCategory,),
             "description": (str,),
@@ -51,17 +46,17 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
         :param description: Description of the correction being made.
         :type description: str, optional
 
-        :param duration: Length of time (in seconds) for a specified `rrule` recurring SLO correction.
+        :param duration: Length of time (in seconds) for a specified ``rrule`` recurring SLO correction.
         :type duration: int, optional
 
         :param end: Ending time of the correction in epoch seconds.
         :type end: int, optional
 
         :param rrule: The recurrence rules as defined in the iCalendar RFC 5545. The supported rules for SLO corrections
-            are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.
+            are ``FREQ`` , ``INTERVAL`` , ``COUNT`` and ``UNTIL``.
         :type rrule: str, optional
 
-        :param slo_id: ID of the SLO that this correction will be applied to.
+        :param slo_id: ID of the SLO that this correction applies to.
         :type slo_id: str
 
         :param start: Starting time of the correction in epoch seconds.

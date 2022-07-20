@@ -9,24 +9,17 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
-    from datadog_api_client.v2.model.security_monitoring_signals_list_response_links import (
-        SecurityMonitoringSignalsListResponseLinks,
-    )
-    from datadog_api_client.v2.model.security_monitoring_signals_list_response_meta import (
-        SecurityMonitoringSignalsListResponseMeta,
-    )
-
-    globals()["SecurityMonitoringSignal"] = SecurityMonitoringSignal
-    globals()["SecurityMonitoringSignalsListResponseLinks"] = SecurityMonitoringSignalsListResponseLinks
-    globals()["SecurityMonitoringSignalsListResponseMeta"] = SecurityMonitoringSignalsListResponseMeta
-
-
 class SecurityMonitoringSignalsListResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
+        from datadog_api_client.v2.model.security_monitoring_signals_list_response_links import (
+            SecurityMonitoringSignalsListResponseLinks,
+        )
+        from datadog_api_client.v2.model.security_monitoring_signals_list_response_meta import (
+            SecurityMonitoringSignalsListResponseMeta,
+        )
+
         return {
             "data": ([SecurityMonitoringSignal],),
             "links": (SecurityMonitoringSignalsListResponseLinks,),

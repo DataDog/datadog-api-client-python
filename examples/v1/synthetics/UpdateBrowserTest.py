@@ -2,13 +2,14 @@
 Edit a browser test returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v1.model.http_method import HTTPMethod
 from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasicAuthWeb
 from datadog_api_client.v1.model.synthetics_basic_auth_web_type import SyntheticsBasicAuthWebType
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
 from datadog_api_client.v1.model.synthetics_browser_test_config import SyntheticsBrowserTestConfig
+from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
 from datadog_api_client.v1.model.synthetics_browser_test_type import SyntheticsBrowserTestType
 from datadog_api_client.v1.model.synthetics_browser_variable import SyntheticsBrowserVariable
 from datadog_api_client.v1.model.synthetics_browser_variable_type import SyntheticsBrowserVariableType
@@ -18,6 +19,8 @@ from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
 from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
 from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
 from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
+from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
+from datadog_api_client.v1.model.synthetics_test_execution_rule import SyntheticsTestExecutionRule
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
 from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
 from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
@@ -65,6 +68,9 @@ body = SyntheticsBrowserTest(
     message="",
     name="Example test name",
     options=SyntheticsTestOptions(
+        ci=SyntheticsTestCiOptions(
+            execution_rule=SyntheticsTestExecutionRule("blocking"),
+        ),
         device_ids=[
             SyntheticsDeviceID("laptop_large"),
         ],
@@ -75,6 +81,11 @@ body = SyntheticsBrowserTest(
             ]
         ),
         retry=SyntheticsTestOptionsRetry(),
+        rum_settings=SyntheticsBrowserTestRumSettings(
+            application_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            client_token_id=12345,
+            is_enabled=True,
+        ),
     ),
     status=SyntheticsTestPauseStatus("live"),
     steps=[

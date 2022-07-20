@@ -9,20 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_specified_custom_reports_attributes import (
-        UsageSpecifiedCustomReportsAttributes,
-    )
-    from datadog_api_client.v1.model.usage_reports_type import UsageReportsType
-
-    globals()["UsageSpecifiedCustomReportsAttributes"] = UsageSpecifiedCustomReportsAttributes
-    globals()["UsageReportsType"] = UsageReportsType
-
-
 class UsageSpecifiedCustomReportsData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_specified_custom_reports_attributes import (
+            UsageSpecifiedCustomReportsAttributes,
+        )
+        from datadog_api_client.v1.model.usage_reports_type import UsageReportsType
+
         return {
             "attributes": (UsageSpecifiedCustomReportsAttributes,),
             "id": (str,),

@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_metrics_q-1654267232","widgets":[{"definition":{"requests":[{"query":{"data_source":"metrics","name":"query1","query":"histogram:trace.Load{*}"},"request_type":"histogram","style":{"palette":"dog_classic"}}],"show_legend":false,"title":"Metrics
+      HOP","title_align":"left","title_size":"16","type":"distribution","xaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"},"yaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"}},"layout":{"height":2,"width":4,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"gb2-e78-emw","title":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_metrics_q-1654267232","url":"/dashboard/gb2-e78-emw/test-createadistributionwidgetusingahistogramrequestcontainingaformulasandfuncti","created_at":"2022-06-03T14:40:32.735409+00:00","modified_at":"2022-06-03T14:40:32.735409+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"title_size":"16","title":"Metrics
+        HOP","title_align":"left","yaxis":{"include_zero":true,"scale":"linear","min":"auto","max":"auto"},"show_legend":false,"xaxis":{"include_zero":true,"scale":"linear","min":"auto","max":"auto"},"requests":[{"query":{"query":"histogram:trace.Load{*}","data_source":"metrics","name":"query1"},"request_type":"histogram","style":{"palette":"dog_classic"}}],"type":"distribution"},"layout":{"y":0,"width":4,"x":0,"height":2},"id":3096166427221540}],"layout_type":"ordered"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/gb2-e78-emw
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"gb2-e78-emw"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -9,26 +9,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
-    from datadog_api_client.v1.model.widget_node_type import WidgetNodeType
-    from datadog_api_client.v1.model.host_map_widget_definition_requests import HostMapWidgetDefinitionRequests
-    from datadog_api_client.v1.model.host_map_widget_definition_style import HostMapWidgetDefinitionStyle
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.host_map_widget_definition_type import HostMapWidgetDefinitionType
-
-    globals()["WidgetCustomLink"] = WidgetCustomLink
-    globals()["WidgetNodeType"] = WidgetNodeType
-    globals()["HostMapWidgetDefinitionRequests"] = HostMapWidgetDefinitionRequests
-    globals()["HostMapWidgetDefinitionStyle"] = HostMapWidgetDefinitionStyle
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["HostMapWidgetDefinitionType"] = HostMapWidgetDefinitionType
-
-
 class HostMapWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+        from datadog_api_client.v1.model.widget_node_type import WidgetNodeType
+        from datadog_api_client.v1.model.host_map_widget_definition_requests import HostMapWidgetDefinitionRequests
+        from datadog_api_client.v1.model.host_map_widget_definition_style import HostMapWidgetDefinitionStyle
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.host_map_widget_definition_type import HostMapWidgetDefinitionType
+
         return {
             "custom_links": ([WidgetCustomLink],),
             "group": ([str],),

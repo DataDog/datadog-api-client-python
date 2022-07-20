@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Get_a_single_service_object_returns_OK_response-1655132327","opsgenie_api_key":"00000000-0000-0000-0000-000000000000","region":"us"},"type":"opsgenie-service"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integration/opsgenie/services
+  response:
+    body:
+      string: '{"data":{"attributes":{"region":"us","name":"Test-Get_a_single_service_object_returns_OK_response-1655132327","custom_url":null},"type":"opsgenie-service","id":"3ca2db9d-e088-47d1-9bfe-b88463c23f2d"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/integration/opsgenie/services/3ca2db9d-e088-47d1-9bfe-b88463c23f2d
+  response:
+    body:
+      string: '{"data":{"attributes":{"region":"us","name":"Test-Get_a_single_service_object_returns_OK_response-1655132327","custom_url":null},"type":"opsgenie-service","id":"3ca2db9d-e088-47d1-9bfe-b88463c23f2d"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integration/opsgenie/services/3ca2db9d-e088-47d1-9bfe-b88463c23f2d
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

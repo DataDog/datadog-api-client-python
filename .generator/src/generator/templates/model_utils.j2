@@ -1,6 +1,7 @@
 {% include "api_info.j2" %}
 
 from datetime import date, datetime
+import enum
 import inspect
 import io
 import os
@@ -9,6 +10,7 @@ import re
 import tempfile
 from types import MappingProxyType
 from typing import Collection, Mapping, Union
+from typing_extensions import Final
 
 from dateutil.parser import parse
 
@@ -22,6 +24,12 @@ from {{ package }}.exceptions import (
 none_type = type(None)
 file_type = io.IOBase
 empty_dict = MappingProxyType({})  # type: ignore
+
+
+class UnsetType(enum.Enum):
+    unset = 0
+
+unset: Final = UnsetType.unset
 
 
 def convert_js_args_to_python_args(fn):
@@ -1403,7 +1411,7 @@ def deserialize_model(model_data, model_class, path_to_item, check_type, configu
         return model_class._new_from_openapi_data(model_data, **kw_args)
 
 
-def deserialize_file(response_data, configuration, content_disposition=None):
+def deserialize_file(response_data, temp_folder_path, content_disposition=None):
     """Deserializes body to file.
 
     Saves response body into a file in a temporary folder, using the filename
@@ -1411,8 +1419,8 @@ def deserialize_file(response_data, configuration, content_disposition=None):
 
     :param response_data: The file data to write.
     :type response_data: str
-    :param configuration: The instance to use to convert files.
-    :type configuration: Configuration
+    :param temp_folder_path: The directory in which the client creates temporary files.
+    :type temp_folder_path: str
     :param content_disposition: The value of the Content-Disposition
         header.
     :type content_disposition: str
@@ -1421,7 +1429,7 @@ def deserialize_file(response_data, configuration, content_disposition=None):
         closing and reading the file.
     :rtype: file_type
     """
-    fd, path = tempfile.mkstemp(dir=configuration.temp_folder_path)
+    fd, path = tempfile.mkstemp(dir=temp_folder_path)
     os.close(fd)
     os.remove(path)
 
@@ -1483,7 +1491,7 @@ def attempt_convert_item(
                     input_value, valid_class, path_to_item, check_type, configuration, spec_property_naming
                 )
             elif valid_class == file_type:
-                return deserialize_file(input_value, configuration)
+                return deserialize_file(input_value, configuration.temp_folder_path)
             return deserialize_primitive(input_value, valid_class, path_to_item)
         except (ApiTypeError, ApiValueError, ApiKeyError) as conversion_exc:
             if must_convert:
@@ -1554,7 +1562,7 @@ def is_valid_type(input_class_simple, valid_classes):
 
 
 def validate_and_convert_types(
-    input_value, required_types_mixed, path_to_item, spec_property_naming, _check_type, configuration=None
+    input_value, required_types_mixed, path_to_item, spec_property_naming, check_type, configuration=None
 ):
     """Raises a TypeError is there is a problem, otherwise returns value.
 
@@ -1570,9 +1578,9 @@ def validate_and_convert_types(
         if the variables names in the input data are python variable names in PEP-8
         snake case.
     :type spec_property_naming: bool
-    :param _check_type: If True, type will be checked and conversion
+    :param check_type: If True, type will be checked and conversion
         will be attempted.
-    :type _check_type: bool
+    :type check_type: bool
     :param configuration:: The configuration class to use when converting
         file_type items.
     :type configuration: Configuration
@@ -1596,7 +1604,7 @@ def validate_and_convert_types(
             spec_property_naming,
             key_type=False,
             must_convert=True,
-            check_type=_check_type,
+            check_type=check_type,
         )
 
     # input_value's type is in valid_classes
@@ -1614,7 +1622,7 @@ def validate_and_convert_types(
                 spec_property_naming,
                 key_type=False,
                 must_convert=False,
-                check_type=_check_type,
+                check_type=check_type,
             )
 
     if child_req_types_by_current_type == {}:
@@ -1639,7 +1647,7 @@ def validate_and_convert_types(
                     inner_required_types,
                     inner_path,
                     spec_property_naming,
-                    _check_type,
+                    check_type,
                     configuration=configuration,
                 )
             )
@@ -1659,7 +1667,7 @@ def validate_and_convert_types(
                 inner_required_types,
                 inner_path,
                 spec_property_naming,
-                _check_type,
+                check_type,
                 configuration=configuration,
             )
         return result

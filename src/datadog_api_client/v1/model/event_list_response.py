@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.event import Event
-
-    globals()["Event"] = Event
-
-
 class EventListResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.event import Event
+
         return {
             "events": ([Event],),
             "status": (str,),

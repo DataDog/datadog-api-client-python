@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v2.model.incident_teams_response import IncidentTeamsResponse
 from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
 from datadog_api_client.v2.model.incident_team_response import IncidentTeamResponse
@@ -12,6 +18,10 @@ from datadog_api_client.v2.model.incident_team_update_request import IncidentTea
 
 
 class IncidentTeamsApi:
+    """
+    Create, update, delete and retrieve teams which can be associated with incidents.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -159,151 +169,76 @@ class IncidentTeamsApi:
             api_client=api_client,
         )
 
-    def create_incident_team(self, body, **kwargs):
+    def create_incident_team(
+        self,
+        body: IncidentTeamCreateRequest,
+    ) -> IncidentTeamResponse:
         """Create a new incident team.
 
         Creates a new incident team.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_incident_team(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: Incident Team Payload.
         :type body: IncidentTeamCreateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentTeamResponse
         """
-        kwargs = self._create_incident_team_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_incident_team_endpoint.call_with_http_info(**kwargs)
 
-    def delete_incident_team(self, team_id, **kwargs):
+    def delete_incident_team(
+        self,
+        team_id: str,
+    ) -> None:
         """Delete an existing incident team.
 
         Deletes an existing incident team.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_incident_team(team_id, async_req=True)
-        >>> result = thread.get()
-
         :param team_id: The ID of the incident team.
         :type team_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._delete_incident_team_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["team_id"] = team_id
 
         return self._delete_incident_team_endpoint.call_with_http_info(**kwargs)
 
-    def get_incident_team(self, team_id, **kwargs):
+    def get_incident_team(
+        self,
+        team_id: str,
+        *,
+        include: Union[IncidentRelatedObject, UnsetType] = unset,
+    ) -> IncidentTeamResponse:
         """Get details of an incident team.
 
-        Get details of an incident team. If the `include[users]` query parameter is provided,
+        Get details of an incident team. If the ``include[users]`` query parameter is provided,
         the included attribute will contain the users related to these incident teams.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_incident_team(team_id, async_req=True)
-        >>> result = thread.get()
 
         :param team_id: The ID of the incident team.
         :type team_id: str
         :param include: Specifies which types of related objects should be included in the response.
         :type include: IncidentRelatedObject, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentTeamResponse
         """
-        kwargs = self._get_incident_team_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["team_id"] = team_id
+
+        if include is not unset:
+            kwargs["include"] = include
 
         return self._get_incident_team_endpoint.call_with_http_info(**kwargs)
 
-    def list_incident_teams(self, **kwargs):
+    def list_incident_teams(
+        self,
+        *,
+        include: Union[IncidentRelatedObject, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+        filter: Union[str, UnsetType] = unset,
+    ) -> IncidentTeamsResponse:
         """Get a list of all incident teams.
 
-        Get all incident teams for the requesting user's organization. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident teams.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_incident_teams(async_req=True)
-        >>> result = thread.get()
+        Get all incident teams for the requesting user's organization. If the ``include[users]`` query parameter is provided, the included attribute will contain the users related to these incident teams.
 
         :param include: Specifies which types of related objects should be included in the response.
         :type include: IncidentRelatedObject, optional
@@ -313,77 +248,39 @@ class IncidentTeamsApi:
         :type page_offset: int, optional
         :param filter: A search query that filters teams by name.
         :type filter: str, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentTeamsResponse
         """
-        kwargs = self._list_incident_teams_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if filter is not unset:
+            kwargs["filter"] = filter
+
         return self._list_incident_teams_endpoint.call_with_http_info(**kwargs)
 
-    def update_incident_team(self, team_id, body, **kwargs):
+    def update_incident_team(
+        self,
+        team_id: str,
+        body: IncidentTeamUpdateRequest,
+    ) -> IncidentTeamResponse:
         """Update an existing incident team.
 
         Updates an existing incident team. Only provide the attributes which should be updated as this request is a partial update.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_incident_team(team_id, body, async_req=True)
-        >>> result = thread.get()
 
         :param team_id: The ID of the incident team.
         :type team_id: str
         :param body: Incident Team Payload.
         :type body: IncidentTeamUpdateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IncidentTeamResponse
         """
-        kwargs = self._update_incident_team_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["team_id"] = team_id
 
         kwargs["body"] = body

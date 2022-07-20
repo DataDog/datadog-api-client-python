@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.service_account_create_data import ServiceAccountCreateData
-
-    globals()["ServiceAccountCreateData"] = ServiceAccountCreateData
-
-
 class ServiceAccountCreateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.service_account_create_data import ServiceAccountCreateData
+
         return {
             "data": (ServiceAccountCreateData,),
         }

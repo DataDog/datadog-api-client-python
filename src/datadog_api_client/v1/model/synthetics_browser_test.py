@@ -9,24 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_browser_test_config import SyntheticsBrowserTestConfig
-    from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
-    from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
-    from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
-    from datadog_api_client.v1.model.synthetics_browser_test_type import SyntheticsBrowserTestType
-
-    globals()["SyntheticsBrowserTestConfig"] = SyntheticsBrowserTestConfig
-    globals()["SyntheticsTestOptions"] = SyntheticsTestOptions
-    globals()["SyntheticsTestPauseStatus"] = SyntheticsTestPauseStatus
-    globals()["SyntheticsStep"] = SyntheticsStep
-    globals()["SyntheticsBrowserTestType"] = SyntheticsBrowserTestType
-
-
 class SyntheticsBrowserTest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_browser_test_config import SyntheticsBrowserTestConfig
+        from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
+        from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
+        from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
+        from datadog_api_client.v1.model.synthetics_browser_test_type import SyntheticsBrowserTestType
+
         return {
             "config": (SyntheticsBrowserTestConfig,),
             "locations": ([str],),
@@ -59,7 +50,7 @@ class SyntheticsBrowserTest(ModelNormal):
         "public_id",
     }
 
-    def __init__(self, config, locations, name, options, type, *args, **kwargs):
+    def __init__(self, config, locations, message, name, options, type, *args, **kwargs):
         """
         Object containing details about a Synthetic browser test.
 
@@ -70,7 +61,7 @@ class SyntheticsBrowserTest(ModelNormal):
         :type locations: [str]
 
         :param message: Notification message associated with the test. Message can either be text or an empty string.
-        :type message: str, optional
+        :type message: str
 
         :param monitor_id: The associated monitor ID.
         :type monitor_id: int, optional
@@ -84,7 +75,7 @@ class SyntheticsBrowserTest(ModelNormal):
         :param public_id: The public ID of the test.
         :type public_id: str, optional
 
-        :param status: Define whether you want to start (`live`) or pause (`paused`) a
+        :param status: Define whether you want to start ( ``live`` ) or pause ( ``paused`` ) a
             Synthetic test.
         :type status: SyntheticsTestPauseStatus, optional
 
@@ -94,7 +85,7 @@ class SyntheticsBrowserTest(ModelNormal):
         :param tags: Array of tags attached to the test.
         :type tags: [str], optional
 
-        :param type: Type of the Synthetic test, `browser`.
+        :param type: Type of the Synthetic test, ``browser``.
         :type type: SyntheticsBrowserTestType
         """
         super().__init__(kwargs)
@@ -103,12 +94,13 @@ class SyntheticsBrowserTest(ModelNormal):
 
         self.config = config
         self.locations = locations
+        self.message = message
         self.name = name
         self.options = options
         self.type = type
 
     @classmethod
-    def _from_openapi_data(cls, config, locations, name, options, type, *args, **kwargs):
+    def _from_openapi_data(cls, config, locations, message, name, options, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsBrowserTest, cls)._from_openapi_data(kwargs)
@@ -117,6 +109,7 @@ class SyntheticsBrowserTest(ModelNormal):
 
         self.config = config
         self.locations = locations
+        self.message = message
         self.name = name
         self.options = options
         self.type = type

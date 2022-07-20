@@ -29,7 +29,7 @@ async def test_error():
 async def test_basic():
     if os.getenv("RECORD", "false").lower() != "none":
         pytest.skip("Integration test")
-    configuration = Configuration()
+    configuration = Configuration(return_http_data_only=False)
     configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "fake")
     configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
     configuration.debug = os.getenv("DEBUG") in {"true", "1", "yes", "on"}
@@ -39,7 +39,7 @@ async def test_basic():
 
     async with AsyncApiClient(configuration) as api_client:
         api_instance = dashboards_api.DashboardsApi(api_client)
-        _, code, headers = await api_instance.list_dashboards(_return_http_data_only=False)
+        _, code, headers = await api_instance.list_dashboards()
         assert code == 200
         assert headers["Content-Type"] == "application/json"
 
@@ -48,7 +48,7 @@ async def test_basic():
 async def test_body():
     if os.getenv("RECORD", "false").lower() != "none":
         pytest.skip("Integration test")
-    configuration = Configuration()
+    configuration = Configuration(return_http_data_only=False)
     configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "fake")
     configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
     configuration.debug = os.getenv("DEBUG") in {"true", "1", "yes", "on"}
@@ -68,5 +68,5 @@ async def test_body():
 
     async with AsyncApiClient(configuration) as api_client:
         api_instance = metrics_api.MetricsApi(api_client)
-        _, code, headers = await api_instance.submit_metrics(body=body, _return_http_data_only=False)
+        _, code, headers = await api_instance.submit_metrics(body=body)
         assert code == 202

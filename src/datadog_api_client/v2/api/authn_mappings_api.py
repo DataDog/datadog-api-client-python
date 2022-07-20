@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v2.model.authn_mappings_response import AuthNMappingsResponse
 from datadog_api_client.v2.model.authn_mappings_sort import AuthNMappingsSort
 from datadog_api_client.v2.model.authn_mapping_response import AuthNMappingResponse
@@ -12,6 +18,12 @@ from datadog_api_client.v2.model.authn_mapping_update_request import AuthNMappin
 
 
 class AuthNMappingsApi:
+    """
+    `AuthN Mappings API <https://docs.datadoghq.com/account_management/authn_mapping/?tab=example>`_
+    is used to automatically map group of users to roles in Datadog using attributes
+    sent from Identity Providers.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -114,12 +126,6 @@ class AuthNMappingsApi:
                     "attribute": "sort",
                     "location": "query",
                 },
-                "include": {
-                    "openapi_types": ([str],),
-                    "attribute": "include",
-                    "location": "query",
-                    "collection_format": "multi",
-                },
                 "filter": {
                     "openapi_types": (str,),
                     "attribute": "filter",
@@ -160,147 +166,67 @@ class AuthNMappingsApi:
             api_client=api_client,
         )
 
-    def create_authn_mapping(self, body, **kwargs):
+    def create_authn_mapping(
+        self,
+        body: AuthNMappingCreateRequest,
+    ) -> AuthNMappingResponse:
         """Create an AuthN Mapping.
 
         Create an AuthN Mapping.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_authn_mapping(body, async_req=True)
-        >>> result = thread.get()
-
         :type body: AuthNMappingCreateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuthNMappingResponse
         """
-        kwargs = self._create_authn_mapping_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_authn_mapping_endpoint.call_with_http_info(**kwargs)
 
-    def delete_authn_mapping(self, authn_mapping_id, **kwargs):
+    def delete_authn_mapping(
+        self,
+        authn_mapping_id: str,
+    ) -> None:
         """Delete an AuthN Mapping.
 
         Delete an AuthN Mapping specified by AuthN Mapping UUID.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_authn_mapping(authn_mapping_id, async_req=True)
-        >>> result = thread.get()
-
         :param authn_mapping_id: The UUID of the AuthN Mapping.
         :type authn_mapping_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._delete_authn_mapping_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["authn_mapping_id"] = authn_mapping_id
 
         return self._delete_authn_mapping_endpoint.call_with_http_info(**kwargs)
 
-    def get_authn_mapping(self, authn_mapping_id, **kwargs):
+    def get_authn_mapping(
+        self,
+        authn_mapping_id: str,
+    ) -> AuthNMappingResponse:
         """Get an AuthN Mapping by UUID.
 
         Get an AuthN Mapping specified by the AuthN Mapping UUID.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_authn_mapping(authn_mapping_id, async_req=True)
-        >>> result = thread.get()
-
         :param authn_mapping_id: The UUID of the AuthN Mapping.
         :type authn_mapping_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuthNMappingResponse
         """
-        kwargs = self._get_authn_mapping_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["authn_mapping_id"] = authn_mapping_id
 
         return self._get_authn_mapping_endpoint.call_with_http_info(**kwargs)
 
-    def list_authn_mappings(self, **kwargs):
+    def list_authn_mappings(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        sort: Union[AuthNMappingsSort, UnsetType] = unset,
+        filter: Union[str, UnsetType] = unset,
+    ) -> AuthNMappingsResponse:
         """List all AuthN Mappings.
 
         List all AuthN Mappings in the org.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_authn_mappings(async_req=True)
-        >>> result = thread.get()
 
         :param page_size: Size for a given page.
         :type page_size: int, optional
@@ -308,80 +234,40 @@ class AuthNMappingsApi:
         :type page_number: int, optional
         :param sort: Sort AuthN Mappings depending on the given field.
         :type sort: AuthNMappingsSort, optional
-        :param include: Include additional information in the response.
-        :type include: [str], optional
         :param filter: Filter all mappings by the given string.
         :type filter: str, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuthNMappingsResponse
         """
-        kwargs = self._list_authn_mappings_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if filter is not unset:
+            kwargs["filter"] = filter
+
         return self._list_authn_mappings_endpoint.call_with_http_info(**kwargs)
 
-    def update_authn_mapping(self, authn_mapping_id, body, **kwargs):
+    def update_authn_mapping(
+        self,
+        authn_mapping_id: str,
+        body: AuthNMappingUpdateRequest,
+    ) -> AuthNMappingResponse:
         """Edit an AuthN Mapping.
 
         Edit an AuthN Mapping.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_authn_mapping(authn_mapping_id, body, async_req=True)
-        >>> result = thread.get()
-
         :param authn_mapping_id: The UUID of the AuthN Mapping.
         :type authn_mapping_id: str
         :type body: AuthNMappingUpdateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: AuthNMappingResponse
         """
-        kwargs = self._update_authn_mapping_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["authn_mapping_id"] = authn_mapping_id
 
         kwargs["body"] = body

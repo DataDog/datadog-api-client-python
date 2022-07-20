@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_grouping import WidgetGrouping
-    from datadog_api_client.v1.model.widget_time import WidgetTime
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.check_status_widget_definition_type import CheckStatusWidgetDefinitionType
-
-    globals()["WidgetGrouping"] = WidgetGrouping
-    globals()["WidgetTime"] = WidgetTime
-    globals()["WidgetTextAlign"] = WidgetTextAlign
-    globals()["CheckStatusWidgetDefinitionType"] = CheckStatusWidgetDefinitionType
-
-
 class CheckStatusWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_grouping import WidgetGrouping
+        from datadog_api_client.v1.model.widget_time import WidgetTime
+        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+        from datadog_api_client.v1.model.check_status_widget_definition_type import CheckStatusWidgetDefinitionType
+
         return {
             "check": (str,),
             "group": (str,),

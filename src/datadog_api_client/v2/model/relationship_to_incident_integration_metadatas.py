@@ -9,18 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.relationship_to_incident_integration_metadata_data import (
-        RelationshipToIncidentIntegrationMetadataData,
-    )
-
-    globals()["RelationshipToIncidentIntegrationMetadataData"] = RelationshipToIncidentIntegrationMetadataData
-
-
 class RelationshipToIncidentIntegrationMetadatas(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.relationship_to_incident_integration_metadata_data import (
+            RelationshipToIncidentIntegrationMetadataData,
+        )
+
         return {
             "data": ([RelationshipToIncidentIntegrationMetadataData],),
         }

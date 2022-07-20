@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_browser_test_result_short import SyntheticsBrowserTestResultShort
-
-    globals()["SyntheticsBrowserTestResultShort"] = SyntheticsBrowserTestResultShort
-
-
 class SyntheticsGetBrowserTestLatestResultsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_browser_test_result_short import SyntheticsBrowserTestResultShort
+
         return {
             "last_timestamp_fetched": (int,),
             "results": ([SyntheticsBrowserTestResultShort],),

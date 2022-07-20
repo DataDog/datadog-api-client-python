@@ -9,20 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_device import SyntheticsDevice
-    from datadog_api_client.v1.model.synthetics_browser_test_result_failure import SyntheticsBrowserTestResultFailure
-    from datadog_api_client.v1.model.synthetics_step_detail import SyntheticsStepDetail
-
-    globals()["SyntheticsDevice"] = SyntheticsDevice
-    globals()["SyntheticsBrowserTestResultFailure"] = SyntheticsBrowserTestResultFailure
-    globals()["SyntheticsStepDetail"] = SyntheticsStepDetail
-
-
 class SyntheticsBrowserTestResultData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_device import SyntheticsDevice
+        from datadog_api_client.v1.model.synthetics_browser_test_result_failure import (
+            SyntheticsBrowserTestResultFailure,
+        )
+        from datadog_api_client.v1.model.synthetics_step_detail import SyntheticsStepDetail
+
         return {
             "browser_type": (str,),
             "browser_version": (str,),

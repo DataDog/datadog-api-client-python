@@ -6,25 +6,20 @@
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    date,
+    datetime,
+    none_type,
 )
-
-
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_ssl_certificate import SyntheticsSSLCertificate
-    from datadog_api_client.v1.model.synthetics_test_process_status import SyntheticsTestProcessStatus
-    from datadog_api_client.v1.model.synthetics_api_test_result_failure import SyntheticsApiTestResultFailure
-    from datadog_api_client.v1.model.synthetics_timing import SyntheticsTiming
-
-    globals()["SyntheticsSSLCertificate"] = SyntheticsSSLCertificate
-    globals()["SyntheticsTestProcessStatus"] = SyntheticsTestProcessStatus
-    globals()["SyntheticsApiTestResultFailure"] = SyntheticsApiTestResultFailure
-    globals()["SyntheticsTiming"] = SyntheticsTiming
 
 
 class SyntheticsAPITestResultData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_ssl_certificate import SyntheticsSSLCertificate
+        from datadog_api_client.v1.model.synthetics_test_process_status import SyntheticsTestProcessStatus
+        from datadog_api_client.v1.model.synthetics_api_test_result_failure import SyntheticsApiTestResultFailure
+        from datadog_api_client.v1.model.synthetics_timing import SyntheticsTiming
+
         return {
             "cert": (SyntheticsSSLCertificate,),
             "event_type": (SyntheticsTestProcessStatus,),
@@ -32,7 +27,21 @@ class SyntheticsAPITestResultData(ModelNormal):
             "http_status_code": (int,),
             "request_headers": ({str: (dict,)},),
             "response_body": (str,),
-            "response_headers": ({str: (dict,)},),
+            "response_headers": (
+                {
+                    str: (
+                        bool,
+                        date,
+                        datetime,
+                        dict,
+                        float,
+                        int,
+                        list,
+                        str,
+                        none_type,
+                    )
+                },
+            ),
             "response_size": (int,),
             "timings": (SyntheticsTiming,),
         }
@@ -72,13 +81,13 @@ class SyntheticsAPITestResultData(ModelNormal):
         :type response_body: str, optional
 
         :param response_headers: Response headers returned for the API test.
-        :type response_headers: {str: (dict,)}, optional
+        :type response_headers: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
 
         :param response_size: Global size in byte of the API test response.
         :type response_size: int, optional
 
         :param timings: Object containing all metrics and their values collected for a Synthetic API test.
-            Learn more about those metrics in [Synthetics documentation](https://docs.datadoghq.com/synthetics/#metrics).
+            Learn more about those metrics in `Synthetics documentation <https://docs.datadoghq.com/synthetics/#metrics>`_.
         :type timings: SyntheticsTiming, optional
         """
         super().__init__(kwargs)

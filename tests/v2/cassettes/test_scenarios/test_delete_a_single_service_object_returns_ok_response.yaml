@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Delete_a_single_service_object_returns_OK_response-1655132327","opsgenie_api_key":"00000000-0000-0000-0000-000000000000","region":"us"},"type":"opsgenie-service"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integration/opsgenie/services
+  response:
+    body:
+      string: '{"data":{"attributes":{"region":"us","name":"Test-Delete_a_single_service_object_returns_OK_response-1655132327","custom_url":null},"type":"opsgenie-service","id":"78050750-0312-400d-ad80-161ea7900931"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integration/opsgenie/services/78050750-0312-400d-ad80-161ea7900931
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integration/opsgenie/services/78050750-0312-400d-ad80-161ea7900931
+  response:
+    body:
+      string: '{"errors":["Service not found."]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

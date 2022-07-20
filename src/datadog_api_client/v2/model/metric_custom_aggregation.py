@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.metric_custom_space_aggregation import MetricCustomSpaceAggregation
-    from datadog_api_client.v2.model.metric_custom_time_aggregation import MetricCustomTimeAggregation
-
-    globals()["MetricCustomSpaceAggregation"] = MetricCustomSpaceAggregation
-    globals()["MetricCustomTimeAggregation"] = MetricCustomTimeAggregation
-
-
 class MetricCustomAggregation(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.metric_custom_space_aggregation import MetricCustomSpaceAggregation
+        from datadog_api_client.v2.model.metric_custom_time_aggregation import MetricCustomTimeAggregation
+
         return {
             "space": (MetricCustomSpaceAggregation,),
             "time": (MetricCustomTimeAggregation,),

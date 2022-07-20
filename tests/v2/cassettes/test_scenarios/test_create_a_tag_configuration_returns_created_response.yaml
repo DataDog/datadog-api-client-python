@@ -1,9 +1,9 @@
 interactions:
 - request:
-    body: '{"series":[{"metric":"TestCreateatagconfigurationreturnsCreatedresponse1648499546","points":[[1648499546,1.1]],"tags":["test:ExampleSubmitmetricsreturnsPayloadacceptedresponse"],"type":"gauge"}]}'
+    body: '{"series":[{"metric":"TestCreateatagconfigurationreturnsCreatedresponse1652354850","points":[[1652354850,1.1]],"tags":["test:ExampleSubmitmetricsreturnsPayloadacceptedresponse"],"type":"gauge"}]}'
     headers:
       accept:
-      - text/json
+      - text/json, application/json
       content-type:
       - text/json
     method: POST
@@ -18,17 +18,17 @@ interactions:
       code: 202
       message: Accepted
 - request:
-    body: '{"data":{"attributes":{"metric_type":"gauge","tags":["app","datacenter"]},"id":"TestCreateatagconfigurationreturnsCreatedresponse1648499546","type":"manage_tags"}}'
+    body: '{"data":{"attributes":{"metric_type":"gauge","tags":["app","datacenter"]},"id":"TestCreateatagconfigurationreturnsCreatedresponse1652354850","type":"manage_tags"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/metrics/TestCreateatagconfigurationreturnsCreatedresponse1648499546/tags
+    uri: https://api.datadoghq.com/api/v2/metrics/TestCreateatagconfigurationreturnsCreatedresponse1652354850/tags
   response:
     body:
-      string: '{"data":{"type":"manage_tags","id":"TestCreateatagconfigurationreturnsCreatedresponse1648499546","attributes":{"tags":["datacenter","app"],"created_at":"2022-03-28T20:32:28.716208+00:00","modified_at":"2022-03-28T20:32:28.716208+00:00","metric_type":"gauge","aggregations":[{"space":"avg","time":"avg"}]}}}'
+      string: '{"data":{"type":"manage_tags","id":"TestCreateatagconfigurationreturnsCreatedresponse1652354850","attributes":{"tags":["datacenter","app"],"created_at":"2022-05-12T11:27:35.411959+00:00","modified_at":"2022-05-12T11:27:35.411959+00:00","metric_type":"gauge","aggregations":[{"space":"avg","time":"avg"}]}}}'
     headers:
       content-type:
       - application/json
@@ -39,9 +39,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/metrics/TestCreateatagconfigurationreturnsCreatedresponse1648499546/tags
+    uri: https://api.datadoghq.com/api/v2/metrics/TestCreateatagconfigurationreturnsCreatedresponse1652354850/tags
   response:
     body:
       string: ''

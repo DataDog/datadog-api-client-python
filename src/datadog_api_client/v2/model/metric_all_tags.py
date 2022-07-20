@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.metric_all_tags_attributes import MetricAllTagsAttributes
-    from datadog_api_client.v2.model.metric_type import MetricType
-
-    globals()["MetricAllTagsAttributes"] = MetricAllTagsAttributes
-    globals()["MetricType"] = MetricType
-
-
 class MetricAllTags(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.metric_all_tags_attributes import MetricAllTagsAttributes
+        from datadog_api_client.v2.model.metric_type import MetricType
+
         return {
             "attributes": (MetricAllTagsAttributes,),
             "id": (str,),

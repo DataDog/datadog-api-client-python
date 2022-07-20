@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_category_processor_category import LogsCategoryProcessorCategory
-    from datadog_api_client.v1.model.logs_category_processor_type import LogsCategoryProcessorType
-
-    globals()["LogsCategoryProcessorCategory"] = LogsCategoryProcessorCategory
-    globals()["LogsCategoryProcessorType"] = LogsCategoryProcessorType
-
-
 class LogsCategoryProcessor(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_category_processor_category import LogsCategoryProcessorCategory
+        from datadog_api_client.v1.model.logs_category_processor_type import LogsCategoryProcessorType
+
         return {
             "categories": ([LogsCategoryProcessorCategory],),
             "is_enabled": (bool,),
@@ -43,18 +37,19 @@ class LogsCategoryProcessor(ModelNormal):
         to a log matching a provided search query. Use categories to create groups for an analytical view.
         For example, URL groups, machine groups, environments, and response time buckets.
 
-        **Notes**:
+        **Notes** :
 
-        - The syntax of the query is the one of Logs Explorer search bar.
+
+        * The syntax of the query is the one of Logs Explorer search bar.
           The query can be done on any log attribute or tag, whether it is a facet or not.
           Wildcards can also be used inside your query.
-        - Once the log has matched one of the Processor queries, it stops.
+        * Once the log has matched one of the Processor queries, it stops.
           Make sure they are properly ordered in case a log could match several queries.
-        - The names of the categories must be unique.
-        - Once defined in the Category Processor, you can map categories to log status using the Log Status Remapper.
+        * The names of the categories must be unique.
+        * Once defined in the Category Processor, you can map categories to log status using the Log Status Remapper.
 
         :param categories: Array of filters to match or not a log and their
-            corresponding `name`to assign a custom value to the log.
+            corresponding ``name`` to assign a custom value to the log.
         :type categories: [LogsCategoryProcessorCategory]
 
         :param is_enabled: Whether or not the processor is enabled.

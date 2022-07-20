@@ -207,6 +207,43 @@
       "type": "idempotent"
     }
   },
+  "ListOpsgenieServices": {
+    "tag": "Opsgenie Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOpsgenieService": {
+    "tag": "Opsgenie Integration",
+    "undo": {
+      "operationId": "DeleteOpsgenieService",
+      "parameters": [
+        {
+          "name": "integration_service_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOpsgenieService": {
+    "tag": "Opsgenie Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetOpsgenieService": {
+    "tag": "Opsgenie Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateOpsgenieService": {
+    "tag": "Opsgenie Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "SubmitLog": {
     "tag": "Logs",
     "undo": {
@@ -361,6 +398,12 @@
     }
   },
   "ListTagsByMetricName": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "EstimateMetricsOutputSeries": {
     "tag": "Metrics",
     "undo": {
       "type": "safe"
@@ -654,6 +697,30 @@
       "type": "safe"
     }
   },
+  "EditSecurityMonitoringSignalAssignee": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "EditSecurityMonitoringSignalIncidents": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "EditSecurityMonitoringSignalState": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "SubmitMetrics": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateServiceAccount": {
     "tag": "Users",
     "undo": {
@@ -780,6 +847,42 @@
     "tag": "Incident Teams",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "GetUsageApplicationSecurityMonitoring": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCostByOrg": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetEstimatedCostByOrg": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetHourlyUsage": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetUsageLambdaTracedInvocations": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetUsageObservabilityPipelines": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
     }
   },
   "SendInvitations": {

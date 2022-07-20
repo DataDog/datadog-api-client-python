@@ -32,7 +32,7 @@ class WebhooksIntegrationCustomVariableResponse(ModelNormal):
             If the custom variable is secret, the value is not returned in the response payload.
         :type is_secret: bool
 
-        :param name: The name of the variable. It corresponds with `<CUSTOM_VARIABLE_NAME>`. It must only contains upper-case characters, integers or underscores.
+        :param name: The name of the variable. It corresponds with ``<CUSTOM_VARIABLE_NAME>``. It must only contains upper-case characters, integers or underscores.
         :type name: str
 
         :param value: Value of the custom variable. It won't be returned if the variable is secret.

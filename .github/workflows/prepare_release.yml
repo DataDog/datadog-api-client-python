@@ -5,7 +5,6 @@ on:
     inputs:
       version:
         description: New version number (e.g. '1.2.3' without the 'v' prefix)
-        required: true
 
 jobs:
   prepare_release:
@@ -18,10 +17,29 @@ jobs:
         with:
           app_id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
           private_key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Calculate version
+        id: get_version
+        run: |
+          if [ "${VERSION}" = "" ] ; then
+            LATEST_TAG=$(git describe --tags --abbrev=0)
+            NEXT_TAG=$(echo ${LATEST_TAG} | awk '{split($0, a, "."); print a[1] "." a[2] + 1 "." a[3]}')
+            echo ::set-output name=version::$NEXT_TAG
+          else
+            echo ::set-output name=version::$VERSION
+          fi
+        env:
+          VERSION: ${{ github.event.inputs.version }}
+
       - name: Create PR
         uses: actions/github-script@v5
         env:
-          RELEASE_VERSION: ${{ github.event.inputs.version }}
+          RELEASE_VERSION: ${{ steps.get_version.outputs.version }}
         with:
           github-token: ${{ steps.get_token.outputs.token }}
           script: |

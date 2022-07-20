@@ -16,7 +16,7 @@ class SLOErrorBudgetRemainingData(ModelNormal):
 
     def __init__(self, *args, **kwargs):
         """
-        A mapping of threshold `timeframe` to the remaining error budget.
+        A mapping of threshold ``timeframe`` to the remaining error budget.
         """
         super().__init__(kwargs)
 

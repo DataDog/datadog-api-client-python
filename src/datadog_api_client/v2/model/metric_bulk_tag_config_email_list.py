@@ -23,7 +23,6 @@ class MetricBulkTagConfigEmailList(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: A list of account emails to notify when the configuration is applied.
         :type value: [str]
         """
         super().__init__(kwargs)

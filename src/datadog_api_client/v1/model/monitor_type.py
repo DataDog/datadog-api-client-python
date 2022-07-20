@@ -28,6 +28,7 @@ class MonitorType(ModelSimple):
             "EVENT_V2_ALERT": "event-v2 alert",
             "AUDIT_ALERT": "audit alert",
             "CI_PIPELINES_ALERT": "ci-pipelines alert",
+            "CI_TESTS_ALERT": "ci-tests alert",
             "ERROR_TRACKING_ALERT": "error-tracking alert",
         },
     }
@@ -44,7 +45,7 @@ class MonitorType(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Must be one of ["composite", "event alert", "log alert", "metric alert", "process alert", "query alert", "rum alert", "service check", "synthetics alert", "trace-analytics alert", "slo alert", "event-v2 alert", "audit alert", "ci-pipelines alert", "error-tracking alert"].
+        :param value: Must be one of ["composite", "event alert", "log alert", "metric alert", "process alert", "query alert", "rum alert", "service check", "synthetics alert", "trace-analytics alert", "slo alert", "event-v2 alert", "audit alert", "ci-pipelines alert", "ci-tests alert", "error-tracking alert"].
         :type value: str
         """
         super().__init__(kwargs)

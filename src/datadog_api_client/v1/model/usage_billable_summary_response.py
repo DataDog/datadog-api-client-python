@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_billable_summary_hour import UsageBillableSummaryHour
-
-    globals()["UsageBillableSummaryHour"] = UsageBillableSummaryHour
-
-
 class UsageBillableSummaryResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_billable_summary_hour import UsageBillableSummaryHour
+
         return {
             "usage": ([UsageBillableSummaryHour],),
         }

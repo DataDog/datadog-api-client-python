@@ -9,16 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_global_variable_parser_type import SyntheticsGlobalVariableParserType
-
-    globals()["SyntheticsGlobalVariableParserType"] = SyntheticsGlobalVariableParserType
-
-
 class SyntheticsVariableParser(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_global_variable_parser_type import (
+            SyntheticsGlobalVariableParserType,
+        )
+
         return {
             "type": (SyntheticsGlobalVariableParserType,),
             "value": (str,),
@@ -36,7 +33,7 @@ class SyntheticsVariableParser(ModelNormal):
         :param type: Type of parser for a Synthetics global variable from a synthetics test.
         :type type: SyntheticsGlobalVariableParserType
 
-        :param value: Regex or JSON path used for the parser. Not used with type `raw`.
+        :param value: Regex or JSON path used for the parser. Not used with type ``raw``.
         :type value: str, optional
         """
         super().__init__(kwargs)

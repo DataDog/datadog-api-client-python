@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"exclusion_filters":[{"name":"Exclude logs from
-      staging","query":"source:staging"}],"filtered_data_type":"logs","is_enabled":true,"name":"Test-Get_a_security_filter_returns_OK_response-1641829887","query":"service:TestGetasecurityfilterreturnsOKresponse1641829887"},"type":"security_filters"}}'
+      staging","query":"source:staging"}],"filtered_data_type":"logs","is_enabled":true,"name":"Test-Get_a_security_filter_returns_OK_response-1652349195","query":"service:TestGetasecurityfilterreturnsOKresponse1652349195"},"type":"security_filters"}}'
     headers:
       accept:
       - application/json
@@ -11,8 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters
   response:
     body:
-      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Get_a_security_filter_returns_OK_response-1641829887","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
-        logs from staging"}],"version":1,"query":"service:TestGetasecurityfilterreturnsOKresponse1641829887","is_builtin":false},"type":"security_filters","id":"ixg-a5r-3st"}}'
+      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Get_a_security_filter_returns_OK_response-1652349195","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
+        logs from staging"}],"version":1,"query":"service:TestGetasecurityfilterreturnsOKresponse1652349195","is_builtin":false},"type":"security_filters","id":"lgh-q3c-xlh"}}'
     headers:
       content-type:
       - application/json;charset=utf-8
@@ -25,11 +25,11 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/ixg-a5r-3st
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/lgh-q3c-xlh
   response:
     body:
-      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Get_a_security_filter_returns_OK_response-1641829887","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
-        logs from staging"}],"version":1,"query":"service:TestGetasecurityfilterreturnsOKresponse1641829887","is_builtin":false},"type":"security_filters","id":"ixg-a5r-3st"}}'
+      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Get_a_security_filter_returns_OK_response-1652349195","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
+        logs from staging"}],"version":1,"query":"service:TestGetasecurityfilterreturnsOKresponse1652349195","is_builtin":false},"type":"security_filters","id":"lgh-q3c-xlh"}}'
     headers:
       content-type:
       - application/json;charset=utf-8
@@ -40,13 +40,15 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/ixg-a5r-3st
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/lgh-q3c-xlh
   response:
     body:
       string: ''
-    headers: {}
+    headers:
+      content-type:
+      - application/json;charset=utf-8
     status:
       code: 204
       message: No Content

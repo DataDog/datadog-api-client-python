@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
-    from datadog_api_client.v1.model.notebook_graph_size import NotebookGraphSize
-    from datadog_api_client.v1.model.notebook_split_by import NotebookSplitBy
-    from datadog_api_client.v1.model.notebook_cell_time import NotebookCellTime
-
-    globals()["ToplistWidgetDefinition"] = ToplistWidgetDefinition
-    globals()["NotebookGraphSize"] = NotebookGraphSize
-    globals()["NotebookSplitBy"] = NotebookSplitBy
-    globals()["NotebookCellTime"] = NotebookCellTime
-
-
 class NotebookToplistCellAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
+        from datadog_api_client.v1.model.notebook_graph_size import NotebookGraphSize
+        from datadog_api_client.v1.model.notebook_split_by import NotebookSplitBy
+        from datadog_api_client.v1.model.notebook_cell_time import NotebookCellTime
+
         return {
             "definition": (ToplistWidgetDefinition,),
             "graph_size": (NotebookGraphSize,),
@@ -41,7 +33,7 @@ class NotebookToplistCellAttributes(ModelNormal):
 
     def __init__(self, definition, *args, **kwargs):
         """
-        The attributes of a notebook `toplist` cell.
+        The attributes of a notebook ``toplist`` cell.
 
         :param definition: The top list visualization enables you to display a list of Tag value like hostname or service with the most or least of any metric value, such as highest consumers of CPU, hosts with the least disk space, etc.
         :type definition: ToplistWidgetDefinition

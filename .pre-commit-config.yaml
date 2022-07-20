@@ -5,7 +5,7 @@ repos:
     name: Generate
     language: system
     entry: make
-    files: '^(\.generator/.*|\.pre-commit-config\.yaml|Makefile)'
+    files: '^(\.generator/.*|\.pre-commit-config\.yaml|Makefile|\tests/v*/features/.*)'
     pass_filenames: false
   - id: docs
     name: Format documentation
@@ -24,7 +24,7 @@ repos:
     name: Generate API docs
     stages: [manual]
     language: python
-    entry: sphinx-apidoc --output-dir docs --force --no-toc --templatedir docs/_templates src/datadog_api_client *apis *models *version.py
+    entry: bash -c "SPHINX_APIDOC_OPTIONS=members,show-inheritance sphinx-apidoc --output-dir docs --force --no-toc --templatedir docs/_templates src/datadog_api_client *apis *models *version.py"
     pass_filenames: false
     additional_dependencies:
       - Sphinx

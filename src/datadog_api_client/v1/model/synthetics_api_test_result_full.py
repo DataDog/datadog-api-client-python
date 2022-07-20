@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_api_test_result_full_check import SyntheticsAPITestResultFullCheck
-    from datadog_api_client.v1.model.synthetics_api_test_result_data import SyntheticsAPITestResultData
-    from datadog_api_client.v1.model.synthetics_test_monitor_status import SyntheticsTestMonitorStatus
-
-    globals()["SyntheticsAPITestResultFullCheck"] = SyntheticsAPITestResultFullCheck
-    globals()["SyntheticsAPITestResultData"] = SyntheticsAPITestResultData
-    globals()["SyntheticsTestMonitorStatus"] = SyntheticsTestMonitorStatus
-
-
 class SyntheticsAPITestResultFull(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_api_test_result_full_check import SyntheticsAPITestResultFullCheck
+        from datadog_api_client.v1.model.synthetics_api_test_result_data import SyntheticsAPITestResultData
+        from datadog_api_client.v1.model.synthetics_test_monitor_status import SyntheticsTestMonitorStatus
+
         return {
             "check": (SyntheticsAPITestResultFullCheck,),
             "check_time": (float,),
@@ -66,9 +59,11 @@ class SyntheticsAPITestResultFull(ModelNormal):
         :type result_id: str, optional
 
         :param status: The status of your Synthetic monitor.
-            * `O` for not triggered
-            * `1` for triggered
-            * `2` for no data
+
+
+            * ``O`` for not triggered
+            * ``1`` for triggered
+            * ``2`` for no data
         :type status: SyntheticsTestMonitorStatus, optional
         """
         super().__init__(kwargs)

@@ -9,14 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.notebook_relative_time import NotebookRelativeTime
-    from datadog_api_client.v1.model.notebook_absolute_time import NotebookAbsoluteTime
-
-    globals()["NotebookRelativeTime"] = NotebookRelativeTime
-    globals()["NotebookAbsoluteTime"] = NotebookAbsoluteTime
-
-
 class NotebookGlobalTime(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
@@ -57,7 +49,9 @@ class NotebookGlobalTime(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        lazy_import()
+        from datadog_api_client.v1.model.notebook_relative_time import NotebookRelativeTime
+        from datadog_api_client.v1.model.notebook_absolute_time import NotebookAbsoluteTime
+
         return {
             "anyOf": [],
             "allOf": [],

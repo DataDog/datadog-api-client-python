@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_filter import LogsFilter
-    from datadog_api_client.v1.model.logs_processor import LogsProcessor
-
-    globals()["LogsFilter"] = LogsFilter
-    globals()["LogsProcessor"] = LogsProcessor
-
-
 class LogsPipeline(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_filter import LogsFilter
+        from datadog_api_client.v1.model.logs_processor import LogsProcessor
+
         return {
             "filter": (LogsFilter,),
             "id": (str,),
@@ -51,7 +45,7 @@ class LogsPipeline(ModelNormal):
         Pipelines and processors operate on incoming logs,
         parsing and transforming them into structured attributes for easier querying.
 
-        **Note**: These endpoints are only available for admin users.
+        **Note** : These endpoints are only available for admin users.
         Make sure to use an application key created by an admin.
 
         :param filter: Filter for logs.

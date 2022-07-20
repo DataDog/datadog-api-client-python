@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_attribution_aggregates_body import UsageAttributionAggregatesBody
-
-    globals()["UsageAttributionAggregatesBody"] = UsageAttributionAggregatesBody
-
-
 class UsageAttributionAggregates(ModelSimple):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_attribution_aggregates_body import UsageAttributionAggregatesBody
+
         return {
             "value": ([UsageAttributionAggregatesBody],),
         }
@@ -30,7 +25,6 @@ class UsageAttributionAggregates(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: An array of available aggregates.
         :type value: [UsageAttributionAggregatesBody]
         """
         super().__init__(kwargs)

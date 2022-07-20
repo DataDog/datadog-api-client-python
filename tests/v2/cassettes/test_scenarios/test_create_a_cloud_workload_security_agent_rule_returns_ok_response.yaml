@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"Test Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testcreateacloudworkloadsecurityagentrulereturnsokresponse1641924695"},"type":"agent_rule"}}'
+      == \"sh\"","name":"testcreateacloudworkloadsecurityagentrulereturnsokresponse1652349080"},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -11,9 +11,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
   response:
     body:
-      string: '{"data":{"attributes":{"category":"Process Activity","name":"testcreateacloudworkloadsecurityagentrulereturnsokresponse1641924695","creator":{"handle":"frog@datadoghq.com","name":null},"description":"Test
-        Agent rule","enabled":true,"defaultRule":false,"version":1,"updater":{"handle":"frog@datadoghq.com","name":null},"updateDate":1641924696117,"creationDate":1641924696117,"expression":"exec.file.name
-        == \"sh\""},"type":"agent_rule","id":"neo-you-kxc"}}'
+      string: '{"data":{"attributes":{"category":"Process Activity","name":"testcreateacloudworkloadsecurityagentrulereturnsokresponse1652349080","creator":{"handle":"frog@datadoghq.com","name":null},"description":"Test
+        Agent rule","enabled":true,"defaultRule":false,"version":1,"updater":{"handle":"frog@datadoghq.com","name":null},"updateDate":1652349080821,"creationDate":1652349080821,"expression":"exec.file.name
+        == \"sh\""},"type":"agent_rule","id":"qb1-cn9-jwq"}}'
     headers:
       content-type:
       - application/json;charset=utf-8
@@ -24,13 +24,15 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/neo-you-kxc
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/qb1-cn9-jwq
   response:
     body:
       string: ''
-    headers: {}
+    headers:
+      content-type:
+      - application/json;charset=utf-8
     status:
       code: 204
       message: No Content

@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_query_filter import LogsQueryFilter
-    from datadog_api_client.v2.model.logs_query_options import LogsQueryOptions
-    from datadog_api_client.v2.model.logs_list_request_page import LogsListRequestPage
-    from datadog_api_client.v2.model.logs_sort import LogsSort
-
-    globals()["LogsQueryFilter"] = LogsQueryFilter
-    globals()["LogsQueryOptions"] = LogsQueryOptions
-    globals()["LogsListRequestPage"] = LogsListRequestPage
-    globals()["LogsSort"] = LogsSort
-
-
 class LogsListRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_query_filter import LogsQueryFilter
+        from datadog_api_client.v2.model.logs_query_options import LogsQueryOptions
+        from datadog_api_client.v2.model.logs_list_request_page import LogsListRequestPage
+        from datadog_api_client.v2.model.logs_sort import LogsSort
+
         return {
             "filter": (LogsQueryFilter,),
             "options": (LogsQueryOptions,),

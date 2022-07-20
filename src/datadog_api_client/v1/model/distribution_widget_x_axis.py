@@ -39,7 +39,7 @@ class DistributionWidgetXAxis(ModelNormal):
         :param min: Specifies minimum value to show on the x-axis. It takes a number, percentile (p90 === 90th percentile), or auto for default behavior.
         :type min: str, optional
 
-        :param scale: Specifies the scale type. Possible values are `linear`.
+        :param scale: Specifies the scale type. Possible values are ``linear``.
         :type scale: str, optional
         """
         super().__init__(kwargs)

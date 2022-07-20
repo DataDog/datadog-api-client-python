@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.user_attributes import UserAttributes
-    from datadog_api_client.v2.model.user_response_relationships import UserResponseRelationships
-    from datadog_api_client.v2.model.users_type import UsersType
-
-    globals()["UserAttributes"] = UserAttributes
-    globals()["UserResponseRelationships"] = UserResponseRelationships
-    globals()["UsersType"] = UsersType
-
-
 class User(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.user_attributes import UserAttributes
+        from datadog_api_client.v2.model.user_response_relationships import UserResponseRelationships
+        from datadog_api_client.v2.model.users_type import UsersType
+
         return {
             "attributes": (UserAttributes,),
             "id": (str,),

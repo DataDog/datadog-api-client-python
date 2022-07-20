@@ -10,16 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.service_check import ServiceCheck
-
-    globals()["ServiceCheck"] = ServiceCheck
-
-
 class ServiceChecks(ModelSimple):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.service_check import ServiceCheck
+
         return {
             "value": ([ServiceCheck],),
         }
@@ -30,7 +25,6 @@ class ServiceChecks(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: The service checks.
         :type value: [ServiceCheck]
         """
         super().__init__(kwargs)

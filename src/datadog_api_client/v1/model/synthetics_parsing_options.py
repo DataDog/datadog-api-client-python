@@ -9,20 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_variable_parser import SyntheticsVariableParser
-    from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type import (
-        SyntheticsGlobalVariableParseTestOptionsType,
-    )
-
-    globals()["SyntheticsVariableParser"] = SyntheticsVariableParser
-    globals()["SyntheticsGlobalVariableParseTestOptionsType"] = SyntheticsGlobalVariableParseTestOptionsType
-
-
 class SyntheticsParsingOptions(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_variable_parser import SyntheticsVariableParser
+        from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type import (
+            SyntheticsGlobalVariableParseTestOptionsType,
+        )
+
         return {
             "field": (str,),
             "name": (str,),
@@ -41,7 +35,7 @@ class SyntheticsParsingOptions(ModelNormal):
         """
         Parsing options for variables to extract.
 
-        :param field: When type is `http_header`, name of the header to use to extract the value.
+        :param field: When type is ``http_header`` , name of the header to use to extract the value.
         :type field: str, optional
 
         :param name: Name of the variable to extract.

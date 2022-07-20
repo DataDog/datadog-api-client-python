@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"name":"Test-Create_a_new_role_by_cloning_an_existing_role_returns_Bad_Request_response-1641829859"},"type":"roles"}}'
+    body: '{"data":{"attributes":{"name":"Test-Create_a_new_role_by_cloning_an_existing_role_returns_Bad_Request_response-1652349157"},"type":"roles"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/roles
   response:
     body:
-      string: '{"data":{"type":"roles","id":"1b9635a4-722d-11ec-b5d7-da7ad0900002","attributes":{"name":"Test-Create_a_new_role_by_cloning_an_existing_role_returns_Bad_Request_response-1641829859","created_at":"2022-01-10T15:51:00.356427+00:00","modified_at":"2022-01-10T15:51:00.407834+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"},{"type":"permissions","id":"12efc20e-d36c-11eb-a9b8-da7ad0900002"},{"type":"permissions","id":"97971c1c-e895-11eb-b13c-da7ad0900002"},{"type":"permissions","id":"7605ef24-f376-11eb-b90b-da7ad0900002"}]}}}}'
+      string: '{"data":{"type":"roles","id":"416935ae-d1d9-11ec-ad3d-da7ad0900002","attributes":{"name":"Test-Create_a_new_role_by_cloning_an_existing_role_returns_Bad_Request_response-1652349157","created_at":"2022-05-12T09:52:37.715539+00:00","modified_at":"2022-05-12T09:52:37.778432+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"},{"type":"permissions","id":"12efc20e-d36c-11eb-a9b8-da7ad0900002"},{"type":"permissions","id":"97971c1c-e895-11eb-b13c-da7ad0900002"},{"type":"permissions","id":"7605ef24-f376-11eb-b90b-da7ad0900002"},{"type":"permissions","id":"b6bf9ac6-9a59-11ec-8480-da7ad0900002"}]}}}}'
     headers:
       content-type:
       - application/json
@@ -25,7 +25,7 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/roles/1b9635a4-722d-11ec-b5d7-da7ad0900002/clone
+    uri: https://api.datadoghq.com/api/v2/roles/416935ae-d1d9-11ec-ad3d-da7ad0900002/clone
   response:
     body:
       string: '{"errors": ["Role names cannot be only whitespace"]}'
@@ -39,9 +39,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/roles/1b9635a4-722d-11ec-b5d7-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/roles/416935ae-d1d9-11ec-ad3d-da7ad0900002
   response:
     body:
       string: ''

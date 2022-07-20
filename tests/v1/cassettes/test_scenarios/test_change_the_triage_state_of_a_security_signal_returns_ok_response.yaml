@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"archiveReason":"none","state":"open"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v1/security_analytics/signals/AQAAAYDiB_Ol8PbzFAAAAABBWURpQl9PbEFBQU0yeXhGTG9ZV2JnQUE/state
+  response:
+    body:
+      string: '{"status":"done","elapsed":6,"hitCount":1,"type":"status","requestId":"pddv1ChZsZTVoQTlZUlRCMmZIaVp6QmtSb1FRIi0KHTZc_OyWqjtN77Y9KyBimz5OCepk1bY1rIo4vE37Egx-rD3hrV23n4SU9ds"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

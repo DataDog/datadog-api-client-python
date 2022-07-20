@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.role_update_attributes import RoleUpdateAttributes
-    from datadog_api_client.v2.model.roles_type import RolesType
-
-    globals()["RoleUpdateAttributes"] = RoleUpdateAttributes
-    globals()["RolesType"] = RolesType
-
-
 class RoleUpdateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.role_update_attributes import RoleUpdateAttributes
+        from datadog_api_client.v2.model.roles_type import RolesType
+
         return {
             "attributes": (RoleUpdateAttributes,),
             "id": (str,),

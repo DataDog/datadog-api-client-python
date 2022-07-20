@@ -1,9 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v1.model.notebooks_response import NotebooksResponse
 from datadog_api_client.v1.model.notebook_response import NotebookResponse
 from datadog_api_client.v1.model.notebook_create_request import NotebookCreateRequest
@@ -11,6 +17,12 @@ from datadog_api_client.v1.model.notebook_update_request import NotebookUpdateRe
 
 
 class NotebooksApi:
+    """
+    Interact with your notebooks through the API to make it easier to organize, find, and
+    share all of your notebooks with your team and organization. For more information, see the
+    `Notebooks documentation <https://docs.datadoghq.com/notebooks/>`_.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -183,241 +195,147 @@ class NotebooksApi:
             api_client=api_client,
         )
 
-    def create_notebook(self, body, **kwargs):
+    def create_notebook(
+        self,
+        body: NotebookCreateRequest,
+    ) -> NotebookResponse:
         """Create a notebook.
 
         Create a notebook using the specified options.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_notebook(body, async_req=True)
-        >>> result = thread.get()
-
         :param body: The JSON description of the notebook you want to create.
         :type body: NotebookCreateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: NotebookResponse
         """
-        kwargs = self._create_notebook_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_notebook_endpoint.call_with_http_info(**kwargs)
 
-    def delete_notebook(self, notebook_id, **kwargs):
+    def delete_notebook(
+        self,
+        notebook_id: int,
+    ) -> None:
         """Delete a notebook.
 
         Delete a notebook using the specified ID.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_notebook(notebook_id, async_req=True)
-        >>> result = thread.get()
-
         :param notebook_id: Unique ID, assigned when you create the notebook.
         :type notebook_id: int
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._delete_notebook_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["notebook_id"] = notebook_id
 
         return self._delete_notebook_endpoint.call_with_http_info(**kwargs)
 
-    def get_notebook(self, notebook_id, **kwargs):
+    def get_notebook(
+        self,
+        notebook_id: int,
+    ) -> NotebookResponse:
         """Get a notebook.
 
         Get a notebook using the specified notebook ID.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_notebook(notebook_id, async_req=True)
-        >>> result = thread.get()
-
         :param notebook_id: Unique ID, assigned when you create the notebook.
         :type notebook_id: int
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: NotebookResponse
         """
-        kwargs = self._get_notebook_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["notebook_id"] = notebook_id
 
         return self._get_notebook_endpoint.call_with_http_info(**kwargs)
 
-    def list_notebooks(self, **kwargs):
+    def list_notebooks(
+        self,
+        *,
+        author_handle: Union[str, UnsetType] = unset,
+        exclude_author_handle: Union[str, UnsetType] = unset,
+        start: Union[int, UnsetType] = unset,
+        count: Union[int, UnsetType] = unset,
+        sort_field: Union[str, UnsetType] = unset,
+        sort_dir: Union[str, UnsetType] = unset,
+        query: Union[str, UnsetType] = unset,
+        include_cells: Union[bool, UnsetType] = unset,
+        is_template: Union[bool, UnsetType] = unset,
+        type: Union[str, UnsetType] = unset,
+    ) -> NotebooksResponse:
         """Get all notebooks.
 
-        Get all notebooks. This can also be used to search for notebooks with a particular `query` in the notebook
-        `name` or author `handle`.
+        Get all notebooks. This can also be used to search for notebooks with a particular ``query`` in the notebook
+        ``name`` or author ``handle``.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_notebooks(async_req=True)
-        >>> result = thread.get()
-
-        :param author_handle: Return notebooks created by the given `author_handle`.
+        :param author_handle: Return notebooks created by the given ``author_handle``.
         :type author_handle: str, optional
-        :param exclude_author_handle: Return notebooks not created by the given `author_handle`.
+        :param exclude_author_handle: Return notebooks not created by the given ``author_handle``.
         :type exclude_author_handle: str, optional
         :param start: The index of the first notebook you want returned.
         :type start: int, optional
         :param count: The number of notebooks to be returned.
         :type count: int, optional
-        :param sort_field: Sort by field `modified`, `name`, or `created`.
+        :param sort_field: Sort by field ``modified`` , ``name`` , or ``created``.
         :type sort_field: str, optional
-        :param sort_dir: Sort by direction `asc` or `desc`.
+        :param sort_dir: Sort by direction ``asc`` or ``desc``.
         :type sort_dir: str, optional
-        :param query: Return only notebooks with `query` string in notebook name or author handle.
+        :param query: Return only notebooks with ``query`` string in notebook name or author handle.
         :type query: str, optional
-        :param include_cells: Value of `false` excludes the `cells` and global `time` for each notebook.
+        :param include_cells: Value of ``false`` excludes the ``cells`` and global ``time`` for each notebook.
         :type include_cells: bool, optional
         :param is_template: True value returns only template notebooks. Default is false (returns only non-template notebooks).
         :type is_template: bool, optional
         :param type: If type is provided, returns only notebooks with that metadata type. Default does not have type filtering.
         :type type: str, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: NotebooksResponse
         """
-        kwargs = self._list_notebooks_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
+        if author_handle is not unset:
+            kwargs["author_handle"] = author_handle
+
+        if exclude_author_handle is not unset:
+            kwargs["exclude_author_handle"] = exclude_author_handle
+
+        if start is not unset:
+            kwargs["start"] = start
+
+        if count is not unset:
+            kwargs["count"] = count
+
+        if sort_field is not unset:
+            kwargs["sort_field"] = sort_field
+
+        if sort_dir is not unset:
+            kwargs["sort_dir"] = sort_dir
+
+        if query is not unset:
+            kwargs["query"] = query
+
+        if include_cells is not unset:
+            kwargs["include_cells"] = include_cells
+
+        if is_template is not unset:
+            kwargs["is_template"] = is_template
+
+        if type is not unset:
+            kwargs["type"] = type
+
         return self._list_notebooks_endpoint.call_with_http_info(**kwargs)
 
-    def update_notebook(self, notebook_id, body, **kwargs):
+    def update_notebook(
+        self,
+        notebook_id: int,
+        body: NotebookUpdateRequest,
+    ) -> NotebookResponse:
         """Update a notebook.
 
         Update a notebook using the specified ID.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_notebook(notebook_id, body, async_req=True)
-        >>> result = thread.get()
 
         :param notebook_id: Unique ID, assigned when you create the notebook.
         :type notebook_id: int
         :param body: Update notebook request body.
         :type body: NotebookUpdateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: NotebookResponse
         """
-        kwargs = self._update_notebook_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["notebook_id"] = notebook_id
 
         kwargs["body"] = body

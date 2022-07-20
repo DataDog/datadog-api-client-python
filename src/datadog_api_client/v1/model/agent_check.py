@@ -26,7 +26,6 @@ class AgentCheck(ModelSimple):
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
-        :param value: Array of strings.
         :type value: [bool, date, datetime, dict, float, int, list, str, none_type]
         """
         super().__init__(kwargs)

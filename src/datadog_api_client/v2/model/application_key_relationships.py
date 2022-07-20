@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
-
-    globals()["RelationshipToUser"] = RelationshipToUser
-
-
 class ApplicationKeyRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
+
         return {
             "owned_by": (RelationshipToUser,),
         }

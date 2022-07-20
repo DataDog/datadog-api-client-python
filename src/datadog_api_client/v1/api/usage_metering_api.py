@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
     datetime,
+    UnsetType,
+    unset,
 )
 from datadog_api_client.v1.model.usage_custom_reports_response import UsageCustomReportsResponse
 from datadog_api_client.v1.model.usage_sort_direction import UsageSortDirection
@@ -56,6 +60,19 @@ from datadog_api_client.v1.model.usage_top_avg_metrics_response import UsageTopA
 
 
 class UsageMeteringApi:
+    """
+    The usage metering API allows you to get hourly, daily, and
+    monthly usage across multiple facets of Datadog.
+    This API is available to all Pro and Enterprise customers.
+    Usage is only accessible for `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
+
+    **Note** : Usage data is delayed by up to 72 hours from when it was incurred.
+    It is retained for 15 months.
+
+    You can retrieve up to 24 hours of hourly usage data for multiple organizations,
+    and up to two months of hourly usage data for a single organization in one request.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -136,6 +153,11 @@ class UsageMeteringApi:
                 "tag_breakdown_keys": {
                     "openapi_types": (str,),
                     "attribute": "tag_breakdown_keys",
+                    "location": "query",
+                },
+                "include_descendants": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_descendants",
                     "location": "query",
                 },
             },
@@ -291,6 +313,11 @@ class UsageMeteringApi:
                 "next_record_id": {
                     "openapi_types": (str,),
                     "attribute": "next_record_id",
+                    "location": "query",
+                },
+                "include_descendants": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_descendants",
                     "location": "query",
                 },
             },
@@ -1311,496 +1338,353 @@ class UsageMeteringApi:
             api_client=api_client,
         )
 
-    def get_daily_custom_reports(self, **kwargs):
+    def get_daily_custom_reports(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        sort_dir: Union[UsageSortDirection, UnsetType] = unset,
+        sort: Union[UsageSort, UnsetType] = unset,
+    ) -> UsageCustomReportsResponse:
         """Get the list of available daily custom reports.
 
         Get daily custom reports.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_daily_custom_reports(async_req=True)
-        >>> result = thread.get()
-
-        :param page_size: The number of files to return in the response. `[default=60]`.
+        :param page_size: The number of files to return in the response. ``[default=60]``.
         :type page_size: int, optional
-        :param page_number: The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`.
+        :param page_number: The identifier of the first page to return. This parameter is used for the pagination feature ``[default=0]``.
         :type page_number: int, optional
-        :param sort_dir: The direction to sort by: `[desc, asc]`.
+        :param sort_dir: The direction to sort by: ``[desc, asc]``.
         :type sort_dir: UsageSortDirection, optional
-        :param sort: The field to sort by: `[computed_on, size, start_date, end_date]`.
+        :param sort: The field to sort by: ``[computed_on, size, start_date, end_date]``.
         :type sort: UsageSort, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageCustomReportsResponse
         """
-        kwargs = self._get_daily_custom_reports_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if sort_dir is not unset:
+            kwargs["sort_dir"] = sort_dir
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
         return self._get_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
 
-    def get_hourly_usage_attribution(self, start_hr, usage_type, **kwargs):
-        """Get Hourly Usage Attribution.
+    def get_hourly_usage_attribution(
+        self,
+        start_hr: datetime,
+        usage_type: HourlyUsageAttributionUsageType,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+        next_record_id: Union[str, UnsetType] = unset,
+        tag_breakdown_keys: Union[str, UnsetType] = unset,
+        include_descendants: Union[bool, UnsetType] = unset,
+    ) -> HourlyUsageAttributionResponse:
+        """Get hourly usage attribution.
 
-        Get Hourly Usage Attribution.
+        Get hourly usage attribution.
 
-        This API endpoint is paginated. To make sure you receive all records, check if the value of `next_record_id` is
-        set in the response. If it is, make another request and pass `next_record_id` as a parameter.
+        This API endpoint is paginated. To make sure you receive all records, check if the value of ``next_record_id`` is
+        set in the response. If it is, make another request and pass ``next_record_id`` as a parameter.
         Pseudo code example:
 
-        ```
-        response := GetHourlyUsageAttribution(start_month)
-        cursor := response.metadata.pagination.next_record_id
-        WHILE cursor != null BEGIN
-          sleep(5 seconds)  # Avoid running into rate limit
-          response := GetHourlyUsageAttribution(start_month, next_record_id=cursor)
-          cursor := response.metadata.pagination.next_record_id
-        END
-        ```
+        .. code-block::
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
+           response := GetHourlyUsageAttribution(start_month)
+           cursor := response.metadata.pagination.next_record_id
+           WHILE cursor != null BEGIN
+             sleep(5 seconds)  # Avoid running into rate limit
+             response := GetHourlyUsageAttribution(start_month, next_record_id=cursor)
+             cursor := response.metadata.pagination.next_record_id
+           END
 
-        >>> thread = api.get_hourly_usage_attribution(start_hr, usage_type, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
         :param usage_type: Usage type to retrieve.
         :type usage_type: HourlyUsageAttributionUsageType
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
         :param next_record_id: List following results with a next_record_id provided in the previous query.
         :type next_record_id: str, optional
         :param tag_breakdown_keys: Comma separated list of tags used to group usage. If no value is provided the usage will not be broken down by tags.
 
-            To see which tags are available, look for the value of `tag_config_source` in the API response.
+            To see which tags are available, look for the value of ``tag_config_source`` in the API response.
         :type tag_breakdown_keys: str, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
+        :param include_descendants: Include child org usage in the response. Defaults to ``true``.
+        :type include_descendants: bool, optional
         :rtype: HourlyUsageAttributionResponse
         """
-        kwargs = self._get_hourly_usage_attribution_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         kwargs["usage_type"] = usage_type
 
+        if next_record_id is not unset:
+            kwargs["next_record_id"] = next_record_id
+
+        if tag_breakdown_keys is not unset:
+            kwargs["tag_breakdown_keys"] = tag_breakdown_keys
+
+        if include_descendants is not unset:
+            kwargs["include_descendants"] = include_descendants
+
         return self._get_hourly_usage_attribution_endpoint.call_with_http_info(**kwargs)
 
-    def get_incident_management(self, start_hr, **kwargs):
+    def get_incident_management(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageIncidentManagementResponse:
         """Get hourly usage for incident management.
 
         Get hourly usage for incident management.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_incident_management(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageIncidentManagementResponse
         """
-        kwargs = self._get_incident_management_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_incident_management_endpoint.call_with_http_info(**kwargs)
 
-    def get_ingested_spans(self, start_hr, **kwargs):
+    def get_ingested_spans(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageIngestedSpansResponse:
         """Get hourly usage for ingested spans.
 
         Get hourly usage for ingested spans.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_ingested_spans(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageIngestedSpansResponse
         """
-        kwargs = self._get_ingested_spans_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_ingested_spans_endpoint.call_with_http_info(**kwargs)
 
-    def get_monthly_custom_reports(self, **kwargs):
+    def get_monthly_custom_reports(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        sort_dir: Union[UsageSortDirection, UnsetType] = unset,
+        sort: Union[UsageSort, UnsetType] = unset,
+    ) -> UsageCustomReportsResponse:
         """Get the list of available monthly custom reports.
 
         Get monthly custom reports.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_monthly_custom_reports(async_req=True)
-        >>> result = thread.get()
-
-        :param page_size: The number of files to return in the response `[default=60].`
+        :param page_size: The number of files to return in the response ``[default=60].``
         :type page_size: int, optional
-        :param page_number: The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`.
+        :param page_number: The identifier of the first page to return. This parameter is used for the pagination feature ``[default=0]``.
         :type page_number: int, optional
-        :param sort_dir: The direction to sort by: `[desc, asc]`.
+        :param sort_dir: The direction to sort by: ``[desc, asc]``.
         :type sort_dir: UsageSortDirection, optional
-        :param sort: The field to sort by: `[computed_on, size, start_date, end_date]`.
+        :param sort: The field to sort by: ``[computed_on, size, start_date, end_date]``.
         :type sort: UsageSort, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageCustomReportsResponse
         """
-        kwargs = self._get_monthly_custom_reports_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if sort_dir is not unset:
+            kwargs["sort_dir"] = sort_dir
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
         return self._get_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
 
-    def get_monthly_usage_attribution(self, start_month, fields, **kwargs):
-        """Get Monthly Usage Attribution.
+    def get_monthly_usage_attribution(
+        self,
+        start_month: datetime,
+        fields: MonthlyUsageAttributionSupportedMetrics,
+        *,
+        end_month: Union[datetime, UnsetType] = unset,
+        sort_direction: Union[UsageSortDirection, UnsetType] = unset,
+        sort_name: Union[MonthlyUsageAttributionSupportedMetrics, UnsetType] = unset,
+        tag_breakdown_keys: Union[str, UnsetType] = unset,
+        next_record_id: Union[str, UnsetType] = unset,
+        include_descendants: Union[bool, UnsetType] = unset,
+    ) -> MonthlyUsageAttributionResponse:
+        """Get monthly usage attribution.
 
-        Get Monthly Usage Attribution.
+        Get monthly usage attribution.
 
-        This API endpoint is paginated. To make sure you receive all records, check if the value of `next_record_id` is
-        set in the response. If it is, make another request and pass `next_record_id` as a parameter.
+        This API endpoint is paginated. To make sure you receive all records, check if the value of ``next_record_id`` is
+        set in the response. If it is, make another request and pass ``next_record_id`` as a parameter.
         Pseudo code example:
 
-        ```
-        response := GetMonthlyUsageAttribution(start_month)
-        cursor := response.metadata.pagination.next_record_id
-        WHILE cursor != null BEGIN
-          sleep(5 seconds)  # Avoid running into rate limit
-          response := GetMonthlyUsageAttribution(start_month, next_record_id=cursor)
-          cursor := response.metadata.pagination.next_record_id
-        END
-        ```
+        .. code-block::
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
+           response := GetMonthlyUsageAttribution(start_month)
+           cursor := response.metadata.pagination.next_record_id
+           WHILE cursor != null BEGIN
+             sleep(5 seconds)  # Avoid running into rate limit
+             response := GetMonthlyUsageAttribution(start_month, next_record_id=cursor)
+             cursor := response.metadata.pagination.next_record_id
+           END
 
-        >>> thread = api.get_monthly_usage_attribution(start_month, fields, async_req=True)
-        >>> result = thread.get()
-
-        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month.
+        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage beginning in this month.
             Maximum of 15 months ago.
         :type start_month: datetime
-        :param fields: Comma-separated list of usage types to return, or `*` for all usage types.
+        :param fields: Comma-separated list of usage types to return, or ``*`` for all usage types.
         :type fields: MonthlyUsageAttributionSupportedMetrics
-        :param end_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.
+        :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage ending this month.
         :type end_month: datetime, optional
-        :param sort_direction: The direction to sort by: `[desc, asc]`.
+        :param sort_direction: The direction to sort by: ``[desc, asc]``.
         :type sort_direction: UsageSortDirection, optional
         :param sort_name: The field to sort by.
         :type sort_name: MonthlyUsageAttributionSupportedMetrics, optional
         :param tag_breakdown_keys: Comma separated list of tag keys used to group usage. If no value is provided the usage will not be broken down by tags.
 
-            To see which tags are available, look for the value of `tag_config_source` in the API response.
+            To see which tags are available, look for the value of ``tag_config_source`` in the API response.
         :type tag_breakdown_keys: str, optional
         :param next_record_id: List following results with a next_record_id provided in the previous query.
         :type next_record_id: str, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
+        :param include_descendants: Include child org usage in the response. Defaults to ``true``.
+        :type include_descendants: bool, optional
         :rtype: MonthlyUsageAttributionResponse
         """
-        kwargs = self._get_monthly_usage_attribution_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_month"] = start_month
+
+        if end_month is not unset:
+            kwargs["end_month"] = end_month
 
         kwargs["fields"] = fields
 
+        if sort_direction is not unset:
+            kwargs["sort_direction"] = sort_direction
+
+        if sort_name is not unset:
+            kwargs["sort_name"] = sort_name
+
+        if tag_breakdown_keys is not unset:
+            kwargs["tag_breakdown_keys"] = tag_breakdown_keys
+
+        if next_record_id is not unset:
+            kwargs["next_record_id"] = next_record_id
+
+        if include_descendants is not unset:
+            kwargs["include_descendants"] = include_descendants
+
         return self._get_monthly_usage_attribution_endpoint.call_with_http_info(**kwargs)
 
-    def get_specified_daily_custom_reports(self, report_id, **kwargs):
+    def get_specified_daily_custom_reports(
+        self,
+        report_id: str,
+    ) -> UsageSpecifiedCustomReportsResponse:
         """Get specified daily custom reports.
 
         Get specified daily custom reports.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_specified_daily_custom_reports(report_id, async_req=True)
-        >>> result = thread.get()
-
-        :param report_id: Date of the report in the format `YYYY-MM-DD`.
+        :param report_id: Date of the report in the format ``YYYY-MM-DD``.
         :type report_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSpecifiedCustomReportsResponse
         """
-        kwargs = self._get_specified_daily_custom_reports_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["report_id"] = report_id
 
         return self._get_specified_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
 
-    def get_specified_monthly_custom_reports(self, report_id, **kwargs):
+    def get_specified_monthly_custom_reports(
+        self,
+        report_id: str,
+    ) -> UsageSpecifiedCustomReportsResponse:
         """Get specified monthly custom reports.
 
         Get specified monthly custom reports.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_specified_monthly_custom_reports(report_id, async_req=True)
-        >>> result = thread.get()
-
-        :param report_id: Date of the report in the format `YYYY-MM-DD`.
+        :param report_id: Date of the report in the format ``YYYY-MM-DD``.
         :type report_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSpecifiedCustomReportsResponse
         """
-        kwargs = self._get_specified_monthly_custom_reports_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["report_id"] = report_id
 
         return self._get_specified_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_analyzed_logs(self, start_hr, **kwargs):
+    def get_usage_analyzed_logs(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageAnalyzedLogsResponse:
         """Get hourly usage for analyzed logs.
 
         Get hourly usage for analyzed logs (Security Monitoring).
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_analyzed_logs(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageAnalyzedLogsResponse
         """
-        kwargs = self._get_usage_analyzed_logs_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_analyzed_logs_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_attribution(self, start_month, fields, **kwargs):
-        """Get Usage Attribution.
+    def get_usage_attribution(
+        self,
+        start_month: datetime,
+        fields: UsageAttributionSupportedMetrics,
+        *,
+        end_month: Union[datetime, UnsetType] = unset,
+        sort_direction: Union[UsageSortDirection, UnsetType] = unset,
+        sort_name: Union[UsageAttributionSort, UnsetType] = unset,
+        include_descendants: Union[bool, UnsetType] = unset,
+        offset: Union[int, UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+    ) -> UsageAttributionResponse:
+        """Get usage attribution.
 
-        Get Usage Attribution.
+        Get usage attribution.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_attribution(start_month, fields, async_req=True)
-        >>> result = thread.get()
-
-        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month.
+        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage beginning in this month.
             Maximum of 15 months ago.
         :type start_month: datetime
-        :param fields: Comma-separated list of usage types to return, or `*` for all usage types.
+        :param fields: Comma-separated list of usage types to return, or ``*`` for all usage types.
         :type fields: UsageAttributionSupportedMetrics
-        :param end_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.
+        :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage ending this month.
         :type end_month: datetime, optional
-        :param sort_direction: The direction to sort by: `[desc, asc]`.
+        :param sort_direction: The direction to sort by: ``[desc, asc]``.
         :type sort_direction: UsageSortDirection, optional
         :param sort_name: The field to sort by.
         :type sort_name: UsageAttributionSort, optional
@@ -1810,603 +1694,332 @@ class UsageMeteringApi:
         :type offset: int, optional
         :param limit: Maximum number of records to be returned.
         :type limit: int, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageAttributionResponse
         """
-        kwargs = self._get_usage_attribution_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_month"] = start_month
 
         kwargs["fields"] = fields
 
+        if end_month is not unset:
+            kwargs["end_month"] = end_month
+
+        if sort_direction is not unset:
+            kwargs["sort_direction"] = sort_direction
+
+        if sort_name is not unset:
+            kwargs["sort_name"] = sort_name
+
+        if include_descendants is not unset:
+            kwargs["include_descendants"] = include_descendants
+
+        if offset is not unset:
+            kwargs["offset"] = offset
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
         return self._get_usage_attribution_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_audit_logs(self, start_hr, **kwargs):
+    def get_usage_audit_logs(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageAuditLogsResponse:
         """Get hourly usage for audit logs.
 
         Get hourly usage for audit logs.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_audit_logs(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageAuditLogsResponse
         """
-        kwargs = self._get_usage_audit_logs_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_audit_logs_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_billable_summary(self, **kwargs):
+    def get_usage_billable_summary(
+        self,
+        *,
+        month: Union[datetime, UnsetType] = unset,
+    ) -> UsageBillableSummaryResponse:
         """Get billable usage across your account.
 
         Get billable usage across your account.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_billable_summary(async_req=True)
-        >>> result = thread.get()
-
-        :param month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage starting this month.
+        :param month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage starting this month.
         :type month: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageBillableSummaryResponse
         """
-        kwargs = self._get_usage_billable_summary_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
+        if month is not unset:
+            kwargs["month"] = month
+
         return self._get_usage_billable_summary_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_ci_app(self, start_hr, **kwargs):
+    def get_usage_ci_app(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageCIVisibilityResponse:
         """Get hourly usage for CI Visibility.
 
-        Get hourly usage for CI Visibility (Tests, Pipeline, Combo, and Spans).
+        Get hourly usage for CI Visibility (Tests, Pipeline, and Spans).
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_ci_app(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageCIVisibilityResponse
         """
-        kwargs = self._get_usage_ci_app_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_ci_app_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_cloud_security_posture_management(self, start_hr, **kwargs):
+    def get_usage_cloud_security_posture_management(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageCloudSecurityPostureManagementResponse:
         """Get hourly usage for CSPM.
 
         Get hourly usage for Cloud Security Posture Management (CSPM).
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_cloud_security_posture_management(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageCloudSecurityPostureManagementResponse
         """
-        kwargs = self._get_usage_cloud_security_posture_management_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_cloud_security_posture_management_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_cws(self, start_hr, **kwargs):
+    def get_usage_cws(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageCWSResponse:
         """Get hourly usage for Cloud Workload Security.
 
         Get hourly usage for Cloud Workload Security.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_cws(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageCWSResponse
         """
-        kwargs = self._get_usage_cws_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_cws_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_dbm(self, start_hr, **kwargs):
+    def get_usage_dbm(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageDBMResponse:
         """Get hourly usage for Database Monitoring.
 
         Get hourly usage for Database Monitoring
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_dbm(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageDBMResponse
         """
-        kwargs = self._get_usage_dbm_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_dbm_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_fargate(self, start_hr, **kwargs):
+    def get_usage_fargate(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageFargateResponse:
         """Get hourly usage for Fargate.
 
-        Get hourly usage for [Fargate](https://docs.datadoghq.com/integrations/ecs_fargate/).
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_fargate(start_hr, async_req=True)
-        >>> result = thread.get()
+        Get hourly usage for `Fargate <https://docs.datadoghq.com/integrations/ecs_fargate/>`_.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageFargateResponse
         """
-        kwargs = self._get_usage_fargate_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_fargate_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_hosts(self, start_hr, **kwargs):
+    def get_usage_hosts(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageHostsResponse:
         """Get hourly usage for hosts and containers.
 
         Get hourly usage for hosts and containers.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_hosts(start_hr, async_req=True)
-        >>> result = thread.get()
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageHostsResponse
         """
-        kwargs = self._get_usage_hosts_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_hosts_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_indexed_spans(self, start_hr, **kwargs):
+    def get_usage_indexed_spans(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageIndexedSpansResponse:
         """Get hourly usage for indexed spans.
 
         Get hourly usage for indexed spans.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_indexed_spans(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageIndexedSpansResponse
         """
-        kwargs = self._get_usage_indexed_spans_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_indexed_spans_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_internet_of_things(self, start_hr, **kwargs):
+    def get_usage_internet_of_things(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageIoTResponse:
         """Get hourly usage for IoT.
 
         Get hourly usage for IoT.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_internet_of_things(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageIoTResponse
         """
-        kwargs = self._get_usage_internet_of_things_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_internet_of_things_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_lambda(self, start_hr, **kwargs):
+    def get_usage_lambda(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageLambdaResponse:
         """Get hourly usage for Lambda.
 
         Get hourly usage for lambda.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_lambda(start_hr, async_req=True)
-        >>> result = thread.get()
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageLambdaResponse
         """
-        kwargs = self._get_usage_lambda_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_lambda_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_logs(self, start_hr, **kwargs):
+    def get_usage_logs(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageLogsResponse:
         """Get hourly usage for Logs.
 
         Get hourly usage for logs.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_logs(start_hr, async_req=True)
-        >>> result = thread.get()
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageLogsResponse
         """
-        kwargs = self._get_usage_logs_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_logs_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_logs_by_index(self, start_hr, **kwargs):
+    def get_usage_logs_by_index(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+        index_name: Union[List[str], UnsetType] = unset,
+    ) -> UsageLogsByIndexResponse:
         """Get hourly usage for Logs by Index.
 
         Get hourly usage for logs by index.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_logs_by_index(start_hr, async_req=True)
-        >>> result = thread.get()
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -2414,702 +2027,386 @@ class UsageMeteringApi:
         :type end_hr: datetime, optional
         :param index_name: Comma-separated list of log index names.
         :type index_name: [str], optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageLogsByIndexResponse
         """
-        kwargs = self._get_usage_logs_by_index_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
+
+        if index_name is not unset:
+            kwargs["index_name"] = index_name
 
         return self._get_usage_logs_by_index_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_logs_by_retention(self, start_hr, **kwargs):
+    def get_usage_logs_by_retention(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageLogsByRetentionResponse:
         """Get hourly logs usage by retention.
 
         Get hourly usage for indexed logs by retention period.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_logs_by_retention(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageLogsByRetentionResponse
         """
-        kwargs = self._get_usage_logs_by_retention_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_logs_by_retention_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_network_flows(self, start_hr, **kwargs):
+    def get_usage_network_flows(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageNetworkFlowsResponse:
         """Get hourly usage for Network Flows.
 
         Get hourly usage for network flows.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_network_flows(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageNetworkFlowsResponse
         """
-        kwargs = self._get_usage_network_flows_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_network_flows_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_network_hosts(self, start_hr, **kwargs):
+    def get_usage_network_hosts(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageNetworkHostsResponse:
         """Get hourly usage for Network Hosts.
 
         Get hourly usage for network hosts.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_network_hosts(start_hr, async_req=True)
-        >>> result = thread.get()
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageNetworkHostsResponse
         """
-        kwargs = self._get_usage_network_hosts_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_network_hosts_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_online_archive(self, start_hr, **kwargs):
+    def get_usage_online_archive(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageOnlineArchiveResponse:
         """Get hourly usage for Online Archive.
 
         Get hourly usage for Online Archive.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_online_archive(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageOnlineArchiveResponse
         """
-        kwargs = self._get_usage_online_archive_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_online_archive_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_profiling(self, start_hr, **kwargs):
+    def get_usage_profiling(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageProfilingResponse:
         """Get hourly usage for profiled hosts.
 
         Get hourly usage for profiled hosts.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_profiling(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageProfilingResponse
         """
-        kwargs = self._get_usage_profiling_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_profiling_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_rum_sessions(self, start_hr, **kwargs):
+    def get_usage_rum_sessions(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+        type: Union[str, UnsetType] = unset,
+    ) -> UsageRumSessionsResponse:
         """Get hourly usage for RUM Sessions.
 
-        Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/) Sessions.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_rum_sessions(start_hr, async_req=True)
-        >>> result = thread.get()
+        Get hourly usage for `RUM <https://docs.datadoghq.com/real_user_monitoring/>`_ Sessions.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-        :param type: RUM type: `[browser, mobile]`. Defaults to `browser`.
+        :param type: RUM type: ``[browser, mobile]``. Defaults to ``browser``.
         :type type: str, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageRumSessionsResponse
         """
-        kwargs = self._get_usage_rum_sessions_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
+
+        if type is not unset:
+            kwargs["type"] = type
 
         return self._get_usage_rum_sessions_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_rum_units(self, start_hr, **kwargs):
+    def get_usage_rum_units(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageRumUnitsResponse:
         """Get hourly usage for RUM Units.
 
-        Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/) Units.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_rum_units(start_hr, async_req=True)
-        >>> result = thread.get()
+        Get hourly usage for `RUM <https://docs.datadoghq.com/real_user_monitoring/>`_ Units.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageRumUnitsResponse
         """
-        kwargs = self._get_usage_rum_units_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_rum_units_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_sds(self, start_hr, **kwargs):
+    def get_usage_sds(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageSDSResponse:
         """Get hourly usage for Sensitive Data Scanner.
 
         Get hourly usage for Sensitive Data Scanner.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_sds(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSDSResponse
         """
-        kwargs = self._get_usage_sds_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_sds_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_snmp(self, start_hr, **kwargs):
+    def get_usage_snmp(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageSNMPResponse:
         """Get hourly usage for SNMP devices.
 
         Get hourly usage for SNMP devices.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_snmp(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSNMPResponse
         """
-        kwargs = self._get_usage_snmp_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_snmp_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_summary(self, start_month, **kwargs):
+    def get_usage_summary(
+        self,
+        start_month: datetime,
+        *,
+        end_month: Union[datetime, UnsetType] = unset,
+        include_org_details: Union[bool, UnsetType] = unset,
+    ) -> UsageSummaryResponse:
         """Get usage across your multi-org account.
 
         Get usage across your multi-org account. You must have the multi-org feature enabled.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_summary(start_month, async_req=True)
-        >>> result = thread.get()
-
-        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month.
+        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage beginning in this month.
             Maximum of 15 months ago.
         :type start_month: datetime
-        :param end_month: Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.
+        :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage ending this month.
         :type end_month: datetime, optional
         :param include_org_details: Include usage summaries for each sub-org.
         :type include_org_details: bool, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSummaryResponse
         """
-        kwargs = self._get_usage_summary_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_month"] = start_month
+
+        if end_month is not unset:
+            kwargs["end_month"] = end_month
+
+        if include_org_details is not unset:
+            kwargs["include_org_details"] = include_org_details
 
         return self._get_usage_summary_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_synthetics(self, start_hr, **kwargs):
+    def get_usage_synthetics(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageSyntheticsResponse:
         """Get hourly usage for Synthetics Checks.
 
-        Get hourly usage for [Synthetics checks](https://docs.datadoghq.com/synthetics/).
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_synthetics(start_hr, async_req=True)
-        >>> result = thread.get()
+        Get hourly usage for `Synthetics checks <https://docs.datadoghq.com/synthetics/>`_.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSyntheticsResponse
         """
-        kwargs = self._get_usage_synthetics_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_synthetics_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_synthetics_api(self, start_hr, **kwargs):
+    def get_usage_synthetics_api(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageSyntheticsAPIResponse:
         """Get hourly usage for Synthetics API Checks.
 
-        Get hourly usage for [synthetics API checks](https://docs.datadoghq.com/synthetics/).
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_synthetics_api(start_hr, async_req=True)
-        >>> result = thread.get()
+        Get hourly usage for `synthetics API checks <https://docs.datadoghq.com/synthetics/>`_.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSyntheticsAPIResponse
         """
-        kwargs = self._get_usage_synthetics_api_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_synthetics_api_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_synthetics_browser(self, start_hr, **kwargs):
+    def get_usage_synthetics_browser(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageSyntheticsBrowserResponse:
         """Get hourly usage for Synthetics Browser Checks.
 
         Get hourly usage for synthetics browser checks.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_synthetics_browser(start_hr, async_req=True)
-        >>> result = thread.get()
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageSyntheticsBrowserResponse
         """
-        kwargs = self._get_usage_synthetics_browser_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_synthetics_browser_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_timeseries(self, start_hr, **kwargs):
+    def get_usage_timeseries(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageTimeseriesResponse:
         """Get hourly usage for custom metrics.
 
-        Get hourly usage for [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/).
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_timeseries(start_hr, async_req=True)
-        >>> result = thread.get()
+        Get hourly usage for `custom metrics <https://docs.datadoghq.com/developers/metrics/custom_metrics/>`_.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type end_hr: datetime, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageTimeseriesResponse
         """
-        kwargs = self._get_usage_timeseries_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
 
         return self._get_usage_timeseries_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_top_avg_metrics(self, **kwargs):
+    def get_usage_top_avg_metrics(
+        self,
+        *,
+        month: Union[datetime, UnsetType] = unset,
+        day: Union[datetime, UnsetType] = unset,
+        names: Union[List[str], UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+        next_record_id: Union[str, UnsetType] = unset,
+    ) -> UsageTopAvgMetricsResponse:
         """Get all custom metrics by hourly average.
 
-        Get all [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average. Use the month parameter to get a month-to-date data resolution or use the day parameter to get a daily resolution. One of the two is required, and only one of the two is allowed.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_usage_top_avg_metrics(async_req=True)
-        >>> result = thread.get()
+        Get all `custom metrics <https://docs.datadoghq.com/developers/metrics/custom_metrics/>`_ by hourly average. Use the month parameter to get a month-to-date data resolution or use the day parameter to get a daily resolution. One of the two is required, and only one of the two is allowed.
 
         :param month: Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour. (Either month or day should be specified, but not both)
         :type month: datetime, optional
@@ -3121,31 +2418,22 @@ class UsageMeteringApi:
         :type limit: int, optional
         :param next_record_id: List following results with a next_record_id provided in the previous query.
         :type next_record_id: str, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: UsageTopAvgMetricsResponse
         """
-        kwargs = self._get_usage_top_avg_metrics_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
+        if month is not unset:
+            kwargs["month"] = month
+
+        if day is not unset:
+            kwargs["day"] = day
+
+        if names is not unset:
+            kwargs["names"] = names
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        if next_record_id is not unset:
+            kwargs["next_record_id"] = next_record_id
+
         return self._get_usage_top_avg_metrics_endpoint.call_with_http_info(**kwargs)

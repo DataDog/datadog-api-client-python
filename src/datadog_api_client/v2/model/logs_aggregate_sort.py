@@ -9,20 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_aggregation_function import LogsAggregationFunction
-    from datadog_api_client.v2.model.logs_sort_order import LogsSortOrder
-    from datadog_api_client.v2.model.logs_aggregate_sort_type import LogsAggregateSortType
-
-    globals()["LogsAggregationFunction"] = LogsAggregationFunction
-    globals()["LogsSortOrder"] = LogsSortOrder
-    globals()["LogsAggregateSortType"] = LogsAggregateSortType
-
-
 class LogsAggregateSort(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_aggregation_function import LogsAggregationFunction
+        from datadog_api_client.v2.model.logs_sort_order import LogsSortOrder
+        from datadog_api_client.v2.model.logs_aggregate_sort_type import LogsAggregateSortType
+
         return {
             "aggregation": (LogsAggregationFunction,),
             "metric": (str,),
@@ -44,7 +37,7 @@ class LogsAggregateSort(ModelNormal):
         :param aggregation: An aggregation function
         :type aggregation: LogsAggregationFunction, optional
 
-        :param metric: The metric to sort by (only used for `type=measure`)
+        :param metric: The metric to sort by (only used for ``type=measure`` )
         :type metric: str, optional
 
         :param order: The order to use, ascending or descending

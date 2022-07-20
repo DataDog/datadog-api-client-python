@@ -9,24 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_api_test_config import SyntheticsAPITestConfig
-    from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
-    from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
-    from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
-    from datadog_api_client.v1.model.synthetics_api_test_type import SyntheticsAPITestType
-
-    globals()["SyntheticsAPITestConfig"] = SyntheticsAPITestConfig
-    globals()["SyntheticsTestOptions"] = SyntheticsTestOptions
-    globals()["SyntheticsTestPauseStatus"] = SyntheticsTestPauseStatus
-    globals()["SyntheticsTestDetailsSubType"] = SyntheticsTestDetailsSubType
-    globals()["SyntheticsAPITestType"] = SyntheticsAPITestType
-
-
 class SyntheticsAPITest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_api_test_config import SyntheticsAPITestConfig
+        from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
+        from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
+        from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
+        from datadog_api_client.v1.model.synthetics_api_test_type import SyntheticsAPITestType
+
         return {
             "config": (SyntheticsAPITestConfig,),
             "locations": ([str],),
@@ -59,7 +50,7 @@ class SyntheticsAPITest(ModelNormal):
         "public_id",
     }
 
-    def __init__(self, config, locations, name, options, type, *args, **kwargs):
+    def __init__(self, config, locations, message, name, options, type, *args, **kwargs):
         """
         Object containing details about a Synthetic API test.
 
@@ -70,7 +61,7 @@ class SyntheticsAPITest(ModelNormal):
         :type locations: [str]
 
         :param message: Notification message associated with the test.
-        :type message: str, optional
+        :type message: str
 
         :param monitor_id: The associated monitor ID.
         :type monitor_id: int, optional
@@ -84,18 +75,18 @@ class SyntheticsAPITest(ModelNormal):
         :param public_id: The public ID for the test.
         :type public_id: str, optional
 
-        :param status: Define whether you want to start (`live`) or pause (`paused`) a
+        :param status: Define whether you want to start ( ``live`` ) or pause ( ``paused`` ) a
             Synthetic test.
         :type status: SyntheticsTestPauseStatus, optional
 
-        :param subtype: The subtype of the Synthetic API test, `http`, `ssl`, `tcp`,
-            `dns`, `icmp`, `udp`, `websocket` or `multi`.
+        :param subtype: The subtype of the Synthetic API test, ``http`` , ``ssl`` , ``tcp`` ,
+            ``dns`` , ``icmp`` , ``udp`` , ``websocket`` , ``grpc`` or ``multi``.
         :type subtype: SyntheticsTestDetailsSubType, optional
 
         :param tags: Array of tags attached to the test.
         :type tags: [str], optional
 
-        :param type: Type of the Synthetic test, `api`.
+        :param type: Type of the Synthetic test, ``api``.
         :type type: SyntheticsAPITestType
         """
         super().__init__(kwargs)
@@ -104,12 +95,13 @@ class SyntheticsAPITest(ModelNormal):
 
         self.config = config
         self.locations = locations
+        self.message = message
         self.name = name
         self.options = options
         self.type = type
 
     @classmethod
-    def _from_openapi_data(cls, config, locations, name, options, type, *args, **kwargs):
+    def _from_openapi_data(cls, config, locations, message, name, options, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsAPITest, cls)._from_openapi_data(kwargs)
@@ -118,6 +110,7 @@ class SyntheticsAPITest(ModelNormal):
 
         self.config = config
         self.locations = locations
+        self.message = message
         self.name = name
         self.options = options
         self.type = type

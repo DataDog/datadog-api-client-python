@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.logs_aggregation_function import LogsAggregationFunction
-    from datadog_api_client.v2.model.logs_compute_type import LogsComputeType
-
-    globals()["LogsAggregationFunction"] = LogsAggregationFunction
-    globals()["LogsComputeType"] = LogsComputeType
-
-
 class LogsCompute(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.logs_aggregation_function import LogsAggregationFunction
+        from datadog_api_client.v2.model.logs_compute_type import LogsComputeType
+
         return {
             "aggregation": (LogsAggregationFunction,),
             "interval": (str,),

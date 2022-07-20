@@ -9,28 +9,22 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.formula_and_function_event_query_definition_compute import (
-        FormulaAndFunctionEventQueryDefinitionCompute,
-    )
-    from datadog_api_client.v1.model.formula_and_function_events_data_source import FormulaAndFunctionEventsDataSource
-    from datadog_api_client.v1.model.formula_and_function_event_query_group_by import (
-        FormulaAndFunctionEventQueryGroupBy,
-    )
-    from datadog_api_client.v1.model.formula_and_function_event_query_definition_search import (
-        FormulaAndFunctionEventQueryDefinitionSearch,
-    )
-
-    globals()["FormulaAndFunctionEventQueryDefinitionCompute"] = FormulaAndFunctionEventQueryDefinitionCompute
-    globals()["FormulaAndFunctionEventsDataSource"] = FormulaAndFunctionEventsDataSource
-    globals()["FormulaAndFunctionEventQueryGroupBy"] = FormulaAndFunctionEventQueryGroupBy
-    globals()["FormulaAndFunctionEventQueryDefinitionSearch"] = FormulaAndFunctionEventQueryDefinitionSearch
-
-
 class FormulaAndFunctionEventQueryDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.formula_and_function_event_query_definition_compute import (
+            FormulaAndFunctionEventQueryDefinitionCompute,
+        )
+        from datadog_api_client.v1.model.formula_and_function_events_data_source import (
+            FormulaAndFunctionEventsDataSource,
+        )
+        from datadog_api_client.v1.model.formula_and_function_event_query_group_by import (
+            FormulaAndFunctionEventQueryGroupBy,
+        )
+        from datadog_api_client.v1.model.formula_and_function_event_query_definition_search import (
+            FormulaAndFunctionEventQueryDefinitionSearch,
+        )
+
         return {
             "compute": (FormulaAndFunctionEventQueryDefinitionCompute,),
             "data_source": (FormulaAndFunctionEventsDataSource,),
@@ -62,7 +56,7 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         :param group_by: Group by options.
         :type group_by: [FormulaAndFunctionEventQueryGroupBy], optional
 
-        :param indexes: An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.
+        :param indexes: An array of index names to query in the stream. Omit or use ``[]`` to query all indexes at once.
         :type indexes: [str], optional
 
         :param name: Name of the query for use in formulas.

@@ -9,22 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_query_compute import LogsQueryCompute
-    from datadog_api_client.v1.model.log_query_definition_group_by import LogQueryDefinitionGroupBy
-    from datadog_api_client.v1.model.logs_query_compute import LogsQueryCompute
-    from datadog_api_client.v1.model.log_query_definition_search import LogQueryDefinitionSearch
-
-    globals()["LogsQueryCompute"] = LogsQueryCompute
-    globals()["LogQueryDefinitionGroupBy"] = LogQueryDefinitionGroupBy
-    globals()["LogsQueryCompute"] = LogsQueryCompute
-    globals()["LogQueryDefinitionSearch"] = LogQueryDefinitionSearch
-
-
 class LogQueryDefinition(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_query_compute import LogsQueryCompute
+        from datadog_api_client.v1.model.log_query_definition_group_by import LogQueryDefinitionGroupBy
+        from datadog_api_client.v1.model.log_query_definition_search import LogQueryDefinitionSearch
+
         return {
             "compute": (LogsQueryCompute,),
             "group_by": ([LogQueryDefinitionGroupBy],),
@@ -51,10 +42,10 @@ class LogQueryDefinition(ModelNormal):
         :param group_by: List of tag prefixes to group by in the case of a cluster check.
         :type group_by: [LogQueryDefinitionGroupBy], optional
 
-        :param index: A coma separated-list of index names. Use "*" query all indexes at once. [Multiple Indexes](https://docs.datadoghq.com/logs/indexes/#multiple-indexes)
+        :param index: A coma separated-list of index names. Use "*" query all indexes at once. `Multiple Indexes <https://docs.datadoghq.com/logs/indexes/#multiple-indexes>`_
         :type index: str, optional
 
-        :param multi_compute: This field is mutually exclusive with `compute`.
+        :param multi_compute: This field is mutually exclusive with ``compute``.
         :type multi_compute: [LogsQueryCompute], optional
 
         :param search: The query being made on the logs.

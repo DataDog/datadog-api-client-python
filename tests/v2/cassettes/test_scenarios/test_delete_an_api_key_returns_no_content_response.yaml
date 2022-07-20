@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"name":"Test-Delete_an_API_key_returns_No_Content_response-1641826582"},"type":"api_keys"}}'
+    body: '{"data":{"attributes":{"name":"Test-Delete_an_API_key_returns_No_Content_response-1652349123"},"type":"api_keys"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/api_keys
   response:
     body:
-      string: '{"data":{"type":"api_keys","attributes":{"created_at":"2022-01-10T14:56:22.680333+00:00","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","last4":"xxxx","modified_at":"2022-01-10T14:56:22.680333+00:00","name":"Test-Delete_an_API_key_returns_No_Content_response-1641826582"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"d50a8a66-3864-493c-8808-903141a7faac"}}'
+      string: '{"data":{"type":"api_keys","attributes":{"created_at":"2022-05-12T09:52:04.306086+00:00","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","last4":"xxxx","modified_at":"2022-05-12T09:52:04.306086+00:00","name":"Test-Delete_an_API_key_returns_No_Content_response-1652349123"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"leak_information":{"data":null}},"id":"67c58c24-e02f-4d1a-9c95-1e01d2544e5a"}}'
     headers:
       content-type:
       - application/json
@@ -21,9 +21,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/api_keys/d50a8a66-3864-493c-8808-903141a7faac
+    uri: https://api.datadoghq.com/api/v2/api_keys/67c58c24-e02f-4d1a-9c95-1e01d2544e5a
   response:
     body:
       string: ''
@@ -35,9 +35,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/api_keys/d50a8a66-3864-493c-8808-903141a7faac
+    uri: https://api.datadoghq.com/api/v2/api_keys/67c58c24-e02f-4d1a-9c95-1e01d2544e5a
   response:
     body:
       string: '{"errors": ["API key not found"]}'

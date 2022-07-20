@@ -2,7 +2,7 @@
 Create an API key returns "Created" response
 """
 
-from datadog_api_client.v2 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.key_management_api import KeyManagementApi
 from datadog_api_client.v2.model.api_key_create_attributes import APIKeyCreateAttributes
 from datadog_api_client.v2.model.api_key_create_data import APIKeyCreateData

@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.usage_attribution_aggregates import UsageAttributionAggregates
-    from datadog_api_client.v1.model.monthly_usage_attribution_pagination import MonthlyUsageAttributionPagination
-
-    globals()["UsageAttributionAggregates"] = UsageAttributionAggregates
-    globals()["MonthlyUsageAttributionPagination"] = MonthlyUsageAttributionPagination
-
-
 class MonthlyUsageAttributionMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.usage_attribution_aggregates import UsageAttributionAggregates
+        from datadog_api_client.v1.model.monthly_usage_attribution_pagination import MonthlyUsageAttributionPagination
+
         return {
             "aggregates": (UsageAttributionAggregates,),
             "pagination": (MonthlyUsageAttributionPagination,),

@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.audit_logs_query_filter import AuditLogsQueryFilter
-    from datadog_api_client.v2.model.audit_logs_query_options import AuditLogsQueryOptions
-    from datadog_api_client.v2.model.audit_logs_query_page_options import AuditLogsQueryPageOptions
-    from datadog_api_client.v2.model.audit_logs_sort import AuditLogsSort
-
-    globals()["AuditLogsQueryFilter"] = AuditLogsQueryFilter
-    globals()["AuditLogsQueryOptions"] = AuditLogsQueryOptions
-    globals()["AuditLogsQueryPageOptions"] = AuditLogsQueryPageOptions
-    globals()["AuditLogsSort"] = AuditLogsSort
-
-
 class AuditLogsSearchEventsRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.audit_logs_query_filter import AuditLogsQueryFilter
+        from datadog_api_client.v2.model.audit_logs_query_options import AuditLogsQueryOptions
+        from datadog_api_client.v2.model.audit_logs_query_page_options import AuditLogsQueryPageOptions
+        from datadog_api_client.v2.model.audit_logs_sort import AuditLogsSort
+
         return {
             "filter": (AuditLogsQueryFilter,),
             "options": (AuditLogsQueryOptions,),

@@ -54,6 +54,20 @@ Feature: Monitors
     Then the response status is 200 OK
 
   @team:DataDog/monitor-app
+  Scenario: Create a ci-tests formula and functions monitor returns "OK" response
+    Given new "CreateMonitor" request
+    And body with value {"name": "{{ unique }}","type": "ci-tests alert","query": "formula(\"query1 / query2 * 100\").last(\"15m\") >= 0.8","message": "some message Notify: @hipchat-channel","tags": ["test:{{ unique_lower_alnum }}", "env:ci"],"priority": 3,"options": {"thresholds": {"critical": 0.8},"variables": [{"data_source": "ci_tests","name": "query1","search": {"query": "@test.status:fail"},"indexes": ["*"],"compute": {"aggregation": "count"},"group_by": []},{"data_source": "ci_tests","name": "query2","search": {"query": ""},"indexes": ["*"],"compute": {"aggregation": "count"},"group_by": []}]}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/monitor-app
+  Scenario: Create a ci-tests monitor returns "OK" response
+    Given new "CreateMonitor" request
+    And body with value {"name": "{{ unique }}","type": "ci-tests alert","query": "ci-tests(\"type:test @git.branch:staging* @test.status:fail\").rollup(\"count\").by(\"@test.name\").last(\"5m\") >= 1","message": "some message Notify: @hipchat-channel", "tags": ["test:{{ unique_lower_alnum }}", "env:ci"],"priority": 3,"options":{"thresholds":{"critical":1}}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/monitor-app
   Scenario: Create a monitor returns "Bad Request" response
     Given new "CreateMonitor" request
     And body with value {"type": "log alert", "query": "query"}

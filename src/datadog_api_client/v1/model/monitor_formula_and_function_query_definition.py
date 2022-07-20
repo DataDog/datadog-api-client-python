@@ -9,14 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition import (
-        MonitorFormulaAndFunctionEventQueryDefinition,
-    )
-
-    globals()["MonitorFormulaAndFunctionEventQueryDefinition"] = MonitorFormulaAndFunctionEventQueryDefinition
-
-
 class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
     def __init__(self, *args, **kwargs):
         """
@@ -63,7 +55,10 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        lazy_import()
+        from datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition import (
+            MonitorFormulaAndFunctionEventQueryDefinition,
+        )
+
         return {
             "anyOf": [],
             "allOf": [],

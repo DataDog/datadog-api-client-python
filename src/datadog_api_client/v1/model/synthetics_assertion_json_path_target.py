@@ -9,22 +9,17 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.synthetics_assertion_json_path_operator import SyntheticsAssertionJSONPathOperator
-    from datadog_api_client.v1.model.synthetics_assertion_json_path_target_target import (
-        SyntheticsAssertionJSONPathTargetTarget,
-    )
-    from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
-
-    globals()["SyntheticsAssertionJSONPathOperator"] = SyntheticsAssertionJSONPathOperator
-    globals()["SyntheticsAssertionJSONPathTargetTarget"] = SyntheticsAssertionJSONPathTargetTarget
-    globals()["SyntheticsAssertionType"] = SyntheticsAssertionType
-
-
 class SyntheticsAssertionJSONPathTarget(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.synthetics_assertion_json_path_operator import (
+            SyntheticsAssertionJSONPathOperator,
+        )
+        from datadog_api_client.v1.model.synthetics_assertion_json_path_target_target import (
+            SyntheticsAssertionJSONPathTargetTarget,
+        )
+        from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
+
         return {
             "operator": (SyntheticsAssertionJSONPathOperator,),
             "_property": (str,),
@@ -41,7 +36,7 @@ class SyntheticsAssertionJSONPathTarget(ModelNormal):
 
     def __init__(self, operator, type, *args, **kwargs):
         """
-        An assertion for the `validatesJSONPath` operator.
+        An assertion for the ``validatesJSONPath`` operator.
 
         :param operator: Assertion operator to apply.
         :type operator: SyntheticsAssertionJSONPathOperator
@@ -49,7 +44,7 @@ class SyntheticsAssertionJSONPathTarget(ModelNormal):
         :param _property: The associated assertion property.
         :type _property: str, optional
 
-        :param target: Composed target for `validatesJSONPath` operator.
+        :param target: Composed target for ``validatesJSONPath`` operator.
         :type target: SyntheticsAssertionJSONPathTargetTarget, optional
 
         :param type: Type of the assertion.

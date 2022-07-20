@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
@@ -9,6 +11,21 @@ from datadog_api_client.v1.model.service_checks import ServiceChecks
 
 
 class ServiceChecksApi:
+    """
+    The service check endpoint allows you to post check statuses for use with monitors.
+    Service check messages are limited to 500 characters. If a check is posted with a message
+    containing more than 500 characters, only the first 500 characters are displayed. Messages
+    are limited for checks with a Critical or Warning status, they are dropped for checks with
+    an OK status.
+
+
+    * `Read more about Service Check monitors. <https://docs.datadoghq.com/monitors/create/types/host/?tab=checkalert>`_
+    * `Read more about Process Check monitors. <https://docs.datadoghq.com/monitors/create/types/process_check/?tab=checkalert>`_
+    * `Read more about Network Check monitors. <https://docs.datadoghq.com/monitors/create/types/network/?tab=checkalert>`_
+    * `Read more about Custom Check monitors. <https://docs.datadoghq.com/monitors/create/types/custom_check/?tab=checkalert>`_
+    * `Read more about Service Check and status codes. <https://docs.datadoghq.com/developers/service_checks/>`_
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -36,50 +53,25 @@ class ServiceChecksApi:
             api_client=api_client,
         )
 
-    def submit_service_check(self, body, **kwargs):
+    def submit_service_check(
+        self,
+        body: ServiceChecks,
+    ) -> IntakePayloadAccepted:
         """Submit a Service Check.
 
         Submit a list of Service Checks.
 
-        **Notes**:
-        - A valid API key is required.
-        - Service checks can be submitted up to 10 minutes in the past.
+        **Notes** :
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
 
-        >>> thread = api.submit_service_check(body, async_req=True)
-        >>> result = thread.get()
+        * A valid API key is required.
+        * Service checks can be submitted up to 10 minutes in the past.
 
         :param body: Service Check request body.
         :type body: ServiceChecks
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: IntakePayloadAccepted
         """
-        kwargs = self._submit_service_check_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._submit_service_check_endpoint.call_with_http_info(**kwargs)

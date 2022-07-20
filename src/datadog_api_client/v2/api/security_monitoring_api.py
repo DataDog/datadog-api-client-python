@@ -1,13 +1,18 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+import collections
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
     datetime,
     set_attribute_from_path,
     get_attribute_from_path,
+    UnsetType,
+    unset,
 )
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
@@ -19,10 +24,28 @@ from datadog_api_client.v2.model.security_monitoring_rule_create_payload import 
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
 from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
+from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
 from datadog_api_client.v2.model.security_monitoring_signal_list_request import SecurityMonitoringSignalListRequest
+from datadog_api_client.v2.model.security_monitoring_signal_triage_update_response import (
+    SecurityMonitoringSignalTriageUpdateResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_assignee_update_request import (
+    SecurityMonitoringSignalAssigneeUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_incidents_update_request import (
+    SecurityMonitoringSignalIncidentsUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_state_update_request import (
+    SecurityMonitoringSignalStateUpdateRequest,
+)
 
 
 class SecurityMonitoringApi:
+    """
+    Detection rules for generating signals and listing of generated
+    signals.
+    """
+
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient()
@@ -117,6 +140,87 @@ class SecurityMonitoringApi:
                 "accept": ["*/*"],
                 "content_type": [],
             },
+            api_client=api_client,
+        )
+
+        self._edit_security_monitoring_signal_assignee_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalTriageUpdateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/{signal_id}/assignee",
+                "operation_id": "edit_security_monitoring_signal_assignee",
+                "http_method": "PATCH",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "signal_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "signal_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringSignalAssigneeUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._edit_security_monitoring_signal_incidents_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalTriageUpdateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/{signal_id}/incidents",
+                "operation_id": "edit_security_monitoring_signal_incidents",
+                "http_method": "PATCH",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "signal_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "signal_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringSignalIncidentsUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._edit_security_monitoring_signal_state_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalTriageUpdateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/{signal_id}/state",
+                "operation_id": "edit_security_monitoring_signal_state",
+                "http_method": "PATCH",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "signal_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "signal_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringSignalStateUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -343,371 +447,231 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
-    def create_security_filter(self, body, **kwargs):
+    def create_security_filter(
+        self,
+        body: SecurityFilterCreateRequest,
+    ) -> SecurityFilterResponse:
         """Create a security filter.
 
         Create a security filter.
 
-        See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/)
+        See the `security filter guide <https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/>`_
         for more examples.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_security_filter(body, async_req=True)
-        >>> result = thread.get()
 
         :param body: The definition of the new security filter.
         :type body: SecurityFilterCreateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityFilterResponse
         """
-        kwargs = self._create_security_filter_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_security_filter_endpoint.call_with_http_info(**kwargs)
 
-    def create_security_monitoring_rule(self, body, **kwargs):
+    def create_security_monitoring_rule(
+        self,
+        body: SecurityMonitoringRuleCreatePayload,
+    ) -> SecurityMonitoringRuleResponse:
         """Create a detection rule.
 
         Create a detection rule.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.create_security_monitoring_rule(body, async_req=True)
-        >>> result = thread.get()
-
         :type body: SecurityMonitoringRuleCreatePayload
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityMonitoringRuleResponse
         """
-        kwargs = self._create_security_monitoring_rule_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
         return self._create_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
 
-    def delete_security_filter(self, security_filter_id, **kwargs):
+    def delete_security_filter(
+        self,
+        security_filter_id: str,
+    ) -> None:
         """Delete a security filter.
 
         Delete a specific security filter.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_security_filter(security_filter_id, async_req=True)
-        >>> result = thread.get()
-
         :param security_filter_id: The ID of the security filter.
         :type security_filter_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._delete_security_filter_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["security_filter_id"] = security_filter_id
 
         return self._delete_security_filter_endpoint.call_with_http_info(**kwargs)
 
-    def delete_security_monitoring_rule(self, rule_id, **kwargs):
+    def delete_security_monitoring_rule(
+        self,
+        rule_id: str,
+    ) -> None:
         """Delete an existing rule.
 
         Delete an existing rule. Default rules cannot be deleted.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.delete_security_monitoring_rule(rule_id, async_req=True)
-        >>> result = thread.get()
-
         :param rule_id: The ID of the rule.
         :type rule_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: None
         """
-        kwargs = self._delete_security_monitoring_rule_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["rule_id"] = rule_id
 
         return self._delete_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
 
-    def get_security_filter(self, security_filter_id, **kwargs):
+    def edit_security_monitoring_signal_assignee(
+        self,
+        signal_id: str,
+        body: SecurityMonitoringSignalAssigneeUpdateRequest,
+    ) -> SecurityMonitoringSignalTriageUpdateResponse:
+        """Modify the triage assignee of a security signal.
+
+        Modify the triage assignee of a security signal.
+
+        :param signal_id: The ID of the signal.
+        :type signal_id: str
+        :param body: Attributes describing the signal update.
+        :type body: SecurityMonitoringSignalAssigneeUpdateRequest
+        :rtype: SecurityMonitoringSignalTriageUpdateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["signal_id"] = signal_id
+
+        kwargs["body"] = body
+
+        return self._edit_security_monitoring_signal_assignee_endpoint.call_with_http_info(**kwargs)
+
+    def edit_security_monitoring_signal_incidents(
+        self,
+        signal_id: str,
+        body: SecurityMonitoringSignalIncidentsUpdateRequest,
+    ) -> SecurityMonitoringSignalTriageUpdateResponse:
+        """Change the related incidents of a security signal.
+
+        Change the related incidents for a security signal.
+
+        :param signal_id: The ID of the signal.
+        :type signal_id: str
+        :param body: Attributes describing the signal update.
+        :type body: SecurityMonitoringSignalIncidentsUpdateRequest
+        :rtype: SecurityMonitoringSignalTriageUpdateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["signal_id"] = signal_id
+
+        kwargs["body"] = body
+
+        return self._edit_security_monitoring_signal_incidents_endpoint.call_with_http_info(**kwargs)
+
+    def edit_security_monitoring_signal_state(
+        self,
+        signal_id: str,
+        body: SecurityMonitoringSignalStateUpdateRequest,
+    ) -> SecurityMonitoringSignalTriageUpdateResponse:
+        """Change the triage state of a security signal.
+
+        Change the triage state of a security signal.
+
+        :param signal_id: The ID of the signal.
+        :type signal_id: str
+        :param body: Attributes describing the signal update.
+        :type body: SecurityMonitoringSignalStateUpdateRequest
+        :rtype: SecurityMonitoringSignalTriageUpdateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["signal_id"] = signal_id
+
+        kwargs["body"] = body
+
+        return self._edit_security_monitoring_signal_state_endpoint.call_with_http_info(**kwargs)
+
+    def get_security_filter(
+        self,
+        security_filter_id: str,
+    ) -> SecurityFilterResponse:
         """Get a security filter.
 
         Get the details of a specific security filter.
 
-        See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/)
+        See the `security filter guide <https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/>`_
         for more examples.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_security_filter(security_filter_id, async_req=True)
-        >>> result = thread.get()
 
         :param security_filter_id: The ID of the security filter.
         :type security_filter_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityFilterResponse
         """
-        kwargs = self._get_security_filter_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["security_filter_id"] = security_filter_id
 
         return self._get_security_filter_endpoint.call_with_http_info(**kwargs)
 
-    def get_security_monitoring_rule(self, rule_id, **kwargs):
+    def get_security_monitoring_rule(
+        self,
+        rule_id: str,
+    ) -> SecurityMonitoringRuleResponse:
         """Get a rule's details.
 
         Get a rule's details.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.get_security_monitoring_rule(rule_id, async_req=True)
-        >>> result = thread.get()
-
         :param rule_id: The ID of the rule.
         :type rule_id: str
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityMonitoringRuleResponse
         """
-        kwargs = self._get_security_monitoring_rule_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["rule_id"] = rule_id
 
         return self._get_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
 
-    def list_security_filters(self, **kwargs):
+    def list_security_filters(
+        self,
+    ) -> SecurityFiltersResponse:
         """Get all security filters.
 
         Get the list of configured security filters with their definitions.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_security_filters(async_req=True)
-        >>> result = thread.get()
-
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityFiltersResponse
         """
-        kwargs = self._list_security_filters_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         return self._list_security_filters_endpoint.call_with_http_info(**kwargs)
 
-    def list_security_monitoring_rules(self, **kwargs):
+    def list_security_monitoring_rules(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> SecurityMonitoringListRulesResponse:
         """List rules.
 
         List rules.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_security_monitoring_rules(async_req=True)
-        >>> result = thread.get()
 
         :param page_size: Size for a given page.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityMonitoringListRulesResponse
         """
-        kwargs = self._list_security_monitoring_rules_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
         return self._list_security_monitoring_rules_endpoint.call_with_http_info(**kwargs)
 
-    def list_security_monitoring_signals(self, **kwargs):
+    def list_security_monitoring_signals(
+        self,
+        *,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_from: Union[datetime, UnsetType] = unset,
+        filter_to: Union[datetime, UnsetType] = unset,
+        sort: Union[SecurityMonitoringSignalsSort, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> SecurityMonitoringSignalsListResponse:
         """Get a quick list of security signals.
 
         The list endpoint returns security signals that match a search query.
         Both this endpoint and the POST endpoint can be used interchangeably when listing
         security signals.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.list_security_monitoring_signals(async_req=True)
-        >>> result = thread.get()
 
         :param filter_query: The search query for security signals.
         :type filter_query: str, optional
@@ -721,36 +685,39 @@ class SecurityMonitoringApi:
         :type page_cursor: str, optional
         :param page_limit: The maximum number of security signals in the response.
         :type page_limit: int, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityMonitoringSignalsListResponse
         """
-        kwargs = self._list_security_monitoring_signals_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
         return self._list_security_monitoring_signals_endpoint.call_with_http_info(**kwargs)
 
-    def list_security_monitoring_signals_with_pagination(self, **kwargs):
+    def list_security_monitoring_signals_with_pagination(
+        self,
+        *,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_from: Union[datetime, UnsetType] = unset,
+        filter_to: Union[datetime, UnsetType] = unset,
+        sort: Union[SecurityMonitoringSignalsSort, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[SecurityMonitoringSignal]:
         """Get a quick list of security signals.
 
         Provide a paginated version of :meth:`list_security_monitoring_signals`, returning all items.
@@ -767,209 +734,133 @@ class SecurityMonitoringApi:
         :type page_cursor: str, optional
         :param page_limit: The maximum number of security signals in the response.
         :type page_limit: int, optional
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[SecurityMonitoringSignal]
         """
-        kwargs = self._list_security_monitoring_signals_endpoint.default_arguments(kwargs)
-        page_size = get_attribute_from_path(kwargs, "page_limit", 10)
+        kwargs: Dict[str, Any] = {}
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 10)
         endpoint = self._list_security_monitoring_signals_endpoint
-        set_attribute_from_path(kwargs, "page_limit", page_size, endpoint.params_map)
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
         while True:
             response = endpoint.call_with_http_info(**kwargs)
             for item in get_attribute_from_path(response, "data"):
                 yield item
-            if len(get_attribute_from_path(response, "data")) < page_size:
+            if len(get_attribute_from_path(response, "data")) < local_page_size:
                 break
             set_attribute_from_path(
                 kwargs, "page_cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
             )
 
-    def search_security_monitoring_signals(self, **kwargs):
+    def search_security_monitoring_signals(
+        self,
+        *,
+        body: Union[SecurityMonitoringSignalListRequest, UnsetType] = unset,
+    ) -> SecurityMonitoringSignalsListResponse:
         """Get a list of security signals.
 
         Returns security signals that match a search query.
         Both this endpoint and the GET endpoint can be used interchangeably for listing
         security signals.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.search_security_monitoring_signals(async_req=True)
-        >>> result = thread.get()
-
         :type body: SecurityMonitoringSignalListRequest, optional
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityMonitoringSignalsListResponse
         """
-        kwargs = self._search_security_monitoring_signals_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
+        if body is not unset:
+            kwargs["body"] = body
+
         return self._search_security_monitoring_signals_endpoint.call_with_http_info(**kwargs)
 
-    def search_security_monitoring_signals_with_pagination(self, **kwargs):
+    def search_security_monitoring_signals_with_pagination(
+        self,
+        *,
+        body: Union[SecurityMonitoringSignalListRequest, UnsetType] = unset,
+    ) -> collections.abc.Iterable[SecurityMonitoringSignal]:
         """Get a list of security signals.
 
         Provide a paginated version of :meth:`search_security_monitoring_signals`, returning all items.
 
         :type body: SecurityMonitoringSignalListRequest, optional
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[SecurityMonitoringSignal]
         """
-        kwargs = self._search_security_monitoring_signals_endpoint.default_arguments(kwargs)
-        page_size = get_attribute_from_path(kwargs, "body.page.limit", 10)
+        kwargs: Dict[str, Any] = {}
+        if body is not unset:
+            kwargs["body"] = body
+
+        local_page_size = get_attribute_from_path(kwargs, "body.page.limit", 10)
         endpoint = self._search_security_monitoring_signals_endpoint
-        set_attribute_from_path(kwargs, "body.page.limit", page_size, endpoint.params_map)
+        set_attribute_from_path(kwargs, "body.page.limit", local_page_size, endpoint.params_map)
         while True:
             response = endpoint.call_with_http_info(**kwargs)
             for item in get_attribute_from_path(response, "data"):
                 yield item
-            if len(get_attribute_from_path(response, "data")) < page_size:
+            if len(get_attribute_from_path(response, "data")) < local_page_size:
                 break
             set_attribute_from_path(
                 kwargs, "body.page.cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
             )
 
-    def update_security_filter(self, security_filter_id, body, **kwargs):
+    def update_security_filter(
+        self,
+        security_filter_id: str,
+        body: SecurityFilterUpdateRequest,
+    ) -> SecurityFilterResponse:
         """Update a security filter.
 
         Update a specific security filter.
         Returns the security filter object when the request is successful.
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_security_filter(security_filter_id, body, async_req=True)
-        >>> result = thread.get()
-
         :param security_filter_id: The ID of the security filter.
         :type security_filter_id: str
         :param body: New definition of the security filter.
         :type body: SecurityFilterUpdateRequest
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityFilterResponse
         """
-        kwargs = self._update_security_filter_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["security_filter_id"] = security_filter_id
 
         kwargs["body"] = body
 
         return self._update_security_filter_endpoint.call_with_http_info(**kwargs)
 
-    def update_security_monitoring_rule(self, rule_id, body, **kwargs):
+    def update_security_monitoring_rule(
+        self,
+        rule_id: str,
+        body: SecurityMonitoringRuleUpdatePayload,
+    ) -> SecurityMonitoringRuleResponse:
         """Update an existing rule.
 
-        Update an existing rule. When updating `cases`, `queries` or `options`, the whole field
+        Update an existing rule. When updating ``cases`` , ``queries`` or ``options`` , the whole field
         must be included. For example, when modifying a query all queries must be included.
         Default rules can only be updated to be enabled and to change notifications.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True.
-
-        >>> thread = api.update_security_monitoring_rule(rule_id, body, async_req=True)
-        >>> result = thread.get()
 
         :param rule_id: The ID of the rule.
         :type rule_id: str
         :type body: SecurityMonitoringRuleUpdatePayload
-        :param _return_http_data_only: Response data without head status
-            code and headers. Default is True.
-        :type _return_http_data_only: bool
-        :param _preload_content: If False, the urllib3.HTTPResponse object
-            will be returned without reading/decoding response data.
-            Default is True.
-        :type _preload_content: bool
-        :param _request_timeout: Timeout setting for this request. If one
-            number provided, it will be total request timeout. It can also be a
-            pair (tuple) of (connection, read) timeouts.  Default is None.
-        :type _request_timeout: float/tuple
-        :param _check_input_type: Specifies if type checking should be done one
-            the data sent to the server. Default is True.
-        :type _check_input_type: bool
-        :param _check_return_type: Specifies if type checking should be done
-            one the data received from the server. Default is True.
-        :type _check_return_type: bool
-        :param _host_index: Specifies the index of the server that we want to
-            use. Default is read from the configuration.
-        :type _host_index: int/None
-        :param async_req: Execute request asynchronously.
-        :type async_req: bool
-
-        :return: If the method is called asynchronously, returns the request thread.
         :rtype: SecurityMonitoringRuleResponse
         """
-        kwargs = self._update_security_monitoring_rule_endpoint.default_arguments(kwargs)
+        kwargs: Dict[str, Any] = {}
         kwargs["rule_id"] = rule_id
 
         kwargs["body"] = body

@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.monthly_usage_attribution_metadata import MonthlyUsageAttributionMetadata
-    from datadog_api_client.v1.model.monthly_usage_attribution_body import MonthlyUsageAttributionBody
-
-    globals()["MonthlyUsageAttributionMetadata"] = MonthlyUsageAttributionMetadata
-    globals()["MonthlyUsageAttributionBody"] = MonthlyUsageAttributionBody
-
-
 class MonthlyUsageAttributionResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.monthly_usage_attribution_metadata import MonthlyUsageAttributionMetadata
+        from datadog_api_client.v1.model.monthly_usage_attribution_body import MonthlyUsageAttributionBody
+
         return {
             "metadata": (MonthlyUsageAttributionMetadata,),
             "usage": ([MonthlyUsageAttributionBody],),
@@ -38,7 +32,7 @@ class MonthlyUsageAttributionResponse(ModelNormal):
         :param metadata: The object containing document metadata.
         :type metadata: MonthlyUsageAttributionMetadata, optional
 
-        :param usage: Get Usage Summary by tag(s).
+        :param usage: Get usage summary by tag(s).
         :type usage: [MonthlyUsageAttributionBody], optional
         """
         super().__init__(kwargs)

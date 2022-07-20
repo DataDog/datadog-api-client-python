@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.logs_lookup_processor_type import LogsLookupProcessorType
-
-    globals()["LogsLookupProcessorType"] = LogsLookupProcessorType
-
-
 class LogsLookupProcessor(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.logs_lookup_processor_type import LogsLookupProcessorType
+
         return {
             "default_lookup": (str,),
             "is_enabled": (bool,),
@@ -55,7 +50,7 @@ class LogsLookupProcessor(ModelNormal):
         :type is_enabled: bool, optional
 
         :param lookup_table: Mapping table of values for the source attribute and their associated target attribute values,
-            formatted as `["source_key1,target_value1", "source_key2,target_value2"]`
+            formatted as ``["source_key1,target_value1", "source_key2,target_value2"]``
         :type lookup_table: [str]
 
         :param name: Name of the processor.
@@ -65,7 +60,7 @@ class LogsLookupProcessor(ModelNormal):
         :type source: str
 
         :param target: Name of the attribute that contains the corresponding value in the mapping list
-            or the `default_lookup` if not found in the mapping list.
+            or the ``default_lookup`` if not found in the mapping list.
         :type target: str
 
         :param type: Type of logs lookup processor.

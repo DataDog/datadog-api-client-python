@@ -9,27 +9,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
-    from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
-
-    globals()["SAMLAssertionAttributeAttributes"] = SAMLAssertionAttributeAttributes
-    globals()["SAMLAssertionAttributesType"] = SAMLAssertionAttributesType
-
-
 class SAMLAssertionAttribute(ModelNormal):
-    validations = {
-        "id": {
-            "inclusive_maximum": 2147483647,
-        },
-    }
-
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
+        from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
+
         return {
             "attributes": (SAMLAssertionAttributeAttributes,),
-            "id": (int,),
+            "id": (str,),
             "type": (SAMLAssertionAttributesType,),
         }
 
@@ -47,7 +35,7 @@ class SAMLAssertionAttribute(ModelNormal):
         :type attributes: SAMLAssertionAttributeAttributes, optional
 
         :param id: The ID of the SAML assertion attribute.
-        :type id: int
+        :type id: str
 
         :param type: SAML assertion attributes resource type.
         :type type: SAMLAssertionAttributesType

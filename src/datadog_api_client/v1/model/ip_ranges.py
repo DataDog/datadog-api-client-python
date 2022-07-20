@@ -9,28 +9,20 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.ip_prefixes_agents import IPPrefixesAgents
-    from datadog_api_client.v1.model.ip_prefixes_api import IPPrefixesAPI
-    from datadog_api_client.v1.model.ip_prefixes_apm import IPPrefixesAPM
-    from datadog_api_client.v1.model.ip_prefixes_logs import IPPrefixesLogs
-    from datadog_api_client.v1.model.ip_prefixes_process import IPPrefixesProcess
-    from datadog_api_client.v1.model.ip_prefixes_synthetics import IPPrefixesSynthetics
-    from datadog_api_client.v1.model.ip_prefixes_webhooks import IPPrefixesWebhooks
-
-    globals()["IPPrefixesAgents"] = IPPrefixesAgents
-    globals()["IPPrefixesAPI"] = IPPrefixesAPI
-    globals()["IPPrefixesAPM"] = IPPrefixesAPM
-    globals()["IPPrefixesLogs"] = IPPrefixesLogs
-    globals()["IPPrefixesProcess"] = IPPrefixesProcess
-    globals()["IPPrefixesSynthetics"] = IPPrefixesSynthetics
-    globals()["IPPrefixesWebhooks"] = IPPrefixesWebhooks
-
-
 class IPRanges(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.ip_prefixes_agents import IPPrefixesAgents
+        from datadog_api_client.v1.model.ip_prefixes_api import IPPrefixesAPI
+        from datadog_api_client.v1.model.ip_prefixes_apm import IPPrefixesAPM
+        from datadog_api_client.v1.model.ip_prefixes_logs import IPPrefixesLogs
+        from datadog_api_client.v1.model.ip_prefixes_process import IPPrefixesProcess
+        from datadog_api_client.v1.model.ip_prefixes_synthetics import IPPrefixesSynthetics
+        from datadog_api_client.v1.model.ip_prefixes_synthetics_private_locations import (
+            IPPrefixesSyntheticsPrivateLocations,
+        )
+        from datadog_api_client.v1.model.ip_prefixes_webhooks import IPPrefixesWebhooks
+
         return {
             "agents": (IPPrefixesAgents,),
             "api": (IPPrefixesAPI,),
@@ -39,6 +31,7 @@ class IPRanges(ModelNormal):
             "modified": (str,),
             "process": (IPPrefixesProcess,),
             "synthetics": (IPPrefixesSynthetics,),
+            "synthetics_private_locations": (IPPrefixesSyntheticsPrivateLocations,),
             "version": (int,),
             "webhooks": (IPPrefixesWebhooks,),
         }
@@ -51,6 +44,7 @@ class IPRanges(ModelNormal):
         "modified": "modified",
         "process": "process",
         "synthetics": "synthetics",
+        "synthetics_private_locations": "synthetics-private-locations",
         "version": "version",
         "webhooks": "webhooks",
     }
@@ -71,7 +65,7 @@ class IPRanges(ModelNormal):
         :param logs: Available prefix information for the Logs endpoints.
         :type logs: IPPrefixesLogs, optional
 
-        :param modified: Date when last updated, in the form `YYYY-MM-DD-hh-mm-ss`.
+        :param modified: Date when last updated, in the form ``YYYY-MM-DD-hh-mm-ss``.
         :type modified: str, optional
 
         :param process: Available prefix information for the Process endpoints.
@@ -79,6 +73,9 @@ class IPRanges(ModelNormal):
 
         :param synthetics: Available prefix information for the Synthetics endpoints.
         :type synthetics: IPPrefixesSynthetics, optional
+
+        :param synthetics_private_locations: Available prefix information for the Synthetics Private Locations endpoints.
+        :type synthetics_private_locations: IPPrefixesSyntheticsPrivateLocations, optional
 
         :param version: Version of the IP list.
         :type version: int, optional

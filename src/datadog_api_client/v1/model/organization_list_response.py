@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.organization import Organization
-
-    globals()["Organization"] = Organization
-
-
 class OrganizationListResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.organization import Organization
+
         return {
             "orgs": ([Organization],),
         }

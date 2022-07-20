@@ -25,7 +25,7 @@ class HourlyUsageAttributionPagination(ModelNormal):
         """
         The metadata for the current pagination.
 
-        :param next_record_id: The cursor to get the next results (if any). To make the next request, use the same parameters and add `next_record_id`.
+        :param next_record_id: The cursor to get the next results (if any). To make the next request, use the same parameters and add ``next_record_id``.
         :type next_record_id: str, none_type, optional
         """
         super().__init__(kwargs)

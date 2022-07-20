@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.log_attributes import LogAttributes
-    from datadog_api_client.v2.model.log_type import LogType
-
-    globals()["LogAttributes"] = LogAttributes
-    globals()["LogType"] = LogType
-
-
 class Log(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.log_attributes import LogAttributes
+        from datadog_api_client.v2.model.log_type import LogType
+
         return {
             "attributes": (LogAttributes,),
             "id": (str,),

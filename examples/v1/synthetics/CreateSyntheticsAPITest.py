@@ -2,7 +2,7 @@
 Create an API test returns "OK - Returns the created test details." response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v1.model.http_method import HTTPMethod
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
@@ -11,9 +11,12 @@ from datadog_api_client.v1.model.synthetics_api_test_type import SyntheticsAPITe
 from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
 from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
+from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
 from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
 from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
+from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
 from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
+from datadog_api_client.v1.model.synthetics_test_execution_rule import SyntheticsTestExecutionRule
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
 from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
 from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
@@ -40,6 +43,9 @@ body = SyntheticsAPITest(
     message="Notification message",
     name="Example test name",
     options=SyntheticsTestOptions(
+        ci=SyntheticsTestCiOptions(
+            execution_rule=SyntheticsTestExecutionRule("blocking"),
+        ),
         device_ids=[
             SyntheticsDeviceID("laptop_large"),
         ],
@@ -50,6 +56,11 @@ body = SyntheticsAPITest(
             ]
         ),
         retry=SyntheticsTestOptionsRetry(),
+        rum_settings=SyntheticsBrowserTestRumSettings(
+            application_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            client_token_id=12345,
+            is_enabled=True,
+        ),
     ),
     status=SyntheticsTestPauseStatus("live"),
     subtype=SyntheticsTestDetailsSubType("http"),

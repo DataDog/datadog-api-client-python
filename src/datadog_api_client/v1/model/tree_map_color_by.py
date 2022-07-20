@@ -25,7 +25,7 @@ class TreeMapColorBy(ModelSimple):
 
     def __init__(self, *args, **kwargs):
         """
-        The attribute used to determine color in the widget.
+        (deprecated) The attribute formerly used to determine color in the widget.
 
         Note that value can be passed either in args or in kwargs, but not in both.
 

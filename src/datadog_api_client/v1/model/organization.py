@@ -9,16 +9,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.organization_billing import OrganizationBilling
-    from datadog_api_client.v1.model.organization_settings import OrganizationSettings
-    from datadog_api_client.v1.model.organization_subscription import OrganizationSubscription
-
-    globals()["OrganizationBilling"] = OrganizationBilling
-    globals()["OrganizationSettings"] = OrganizationSettings
-    globals()["OrganizationSubscription"] = OrganizationSubscription
-
-
 class Organization(ModelNormal):
     validations = {
         "name": {
@@ -28,7 +18,10 @@ class Organization(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.organization_billing import OrganizationBilling
+        from datadog_api_client.v1.model.organization_settings import OrganizationSettings
+        from datadog_api_client.v1.model.organization_subscription import OrganizationSubscription
+
         return {
             "billing": (OrganizationBilling,),
             "created": (str,),
@@ -37,6 +30,7 @@ class Organization(ModelNormal):
             "public_id": (str,),
             "settings": (OrganizationSettings,),
             "subscription": (OrganizationSubscription,),
+            "trial": (bool,),
         }
 
     attribute_map = {
@@ -47,6 +41,7 @@ class Organization(ModelNormal):
         "public_id": "public_id",
         "settings": "settings",
         "subscription": "subscription",
+        "trial": "trial",
     }
     read_only_vars = {
         "created",
@@ -68,7 +63,7 @@ class Organization(ModelNormal):
         :param name: The name of the new child-organization, limited to 32 characters.
         :type name: str, optional
 
-        :param public_id: The `public_id` of the organization you are operating within.
+        :param public_id: The ``public_id`` of the organization you are operating within.
         :type public_id: str, optional
 
         :param settings: A JSON array of settings.
@@ -76,6 +71,9 @@ class Organization(ModelNormal):
 
         :param subscription: Subscription definition.
         :type subscription: OrganizationSubscription, optional
+
+        :param trial: Only available for MSP customers. Allows child organizations to be created on a trial plan.
+        :type trial: bool, optional
         """
         super().__init__(kwargs)
 

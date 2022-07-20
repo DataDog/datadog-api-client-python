@@ -3,7 +3,7 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json
+      - '*/*'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/abc-123-xyz
   response:

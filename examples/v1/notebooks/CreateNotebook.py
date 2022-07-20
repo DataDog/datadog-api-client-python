@@ -2,11 +2,10 @@
 Create a notebook returns "OK" response
 """
 
-from datadog_api_client.v1 import ApiClient, Configuration
+from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.notebooks_api import NotebooksApi
 from datadog_api_client.v1.model.notebook_cell_create_request import NotebookCellCreateRequest
 from datadog_api_client.v1.model.notebook_cell_resource_type import NotebookCellResourceType
-from datadog_api_client.v1.model.notebook_cell_time import NotebookCellTime
 from datadog_api_client.v1.model.notebook_create_data import NotebookCreateData
 from datadog_api_client.v1.model.notebook_create_data_attributes import NotebookCreateDataAttributes
 from datadog_api_client.v1.model.notebook_create_request import NotebookCreateRequest
@@ -67,7 +66,7 @@ body = NotebookCreateRequest(
                             keys=[],
                             tags=[],
                         ),
-                        time=NotebookCellTime(None),
+                        time=None,
                     ),
                     type=NotebookCellResourceType("notebook_cells"),
                 ),

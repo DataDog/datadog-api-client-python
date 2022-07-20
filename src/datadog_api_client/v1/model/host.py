@@ -9,18 +9,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.host_meta import HostMeta
-    from datadog_api_client.v1.model.host_metrics import HostMetrics
-
-    globals()["HostMeta"] = HostMeta
-    globals()["HostMetrics"] = HostMetrics
-
-
 class Host(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.host_meta import HostMeta
+        from datadog_api_client.v1.model.host_metrics import HostMetrics
+
         return {
             "aliases": ([str],),
             "apps": ([str],),
@@ -98,7 +92,7 @@ class Host(ModelNormal):
         :param tags_by_source: List of tags for each source (AWS, Datadog Agent, Chef..).
         :type tags_by_source: {str: ([str],)}, optional
 
-        :param up: Displays UP when the expected metrics are received and displays `???` if no metrics are received.
+        :param up: Displays UP when the expected metrics are received and displays ``???`` if no metrics are received.
         :type up: bool, optional
         """
         super().__init__(kwargs)

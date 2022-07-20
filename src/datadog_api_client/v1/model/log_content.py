@@ -57,7 +57,7 @@ class LogContent(ModelNormal):
         :param host: Name of the machine from where the logs are being sent.
         :type host: str, optional
 
-        :param message: The message [reserved attribute](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes)
+        :param message: The message `reserved attribute <https://docs.datadoghq.com/logs/log_collection/#reserved-attributes>`_
             of your log. By default, Datadog ingests the value of the message attribute as the body of the log entry.
             That value is then highlighted and displayed in the Logstream, where it is indexed for full text search.
         :type message: str, optional

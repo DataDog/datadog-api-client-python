@@ -183,6 +183,12 @@
       "type": "idempotent"
     }
   },
+  "SubmitDistributionPoints": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListDowntimes": {
     "tag": "Downtimes",
     "undo": {
@@ -817,6 +823,12 @@
       "type": "idempotent"
     }
   },
+  "DowngradeOrg": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
   "UploadIdPForOrg": {
     "tag": "Organizations",
     "undo": {
@@ -833,6 +845,24 @@
     "tag": "Metrics",
     "undo": {
       "type": "safe"
+    }
+  },
+  "AddSecurityMonitoringSignalToIncident": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "EditSecurityMonitoringSignalAssignee": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "EditSecurityMonitoringSignalState": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "SubmitMetrics": {
@@ -907,6 +937,12 @@
     "tag": "Service Level Objective Corrections",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "SearchSLO": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "type": "safe"
     }
   },
   "DeleteSLO": {

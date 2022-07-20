@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.list_stream_source import ListStreamSource
-
-    globals()["ListStreamSource"] = ListStreamSource
-
-
 class ListStreamQuery(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.list_stream_source import ListStreamSource
+
         return {
             "data_source": (ListStreamSource,),
             "indexes": ([str],),

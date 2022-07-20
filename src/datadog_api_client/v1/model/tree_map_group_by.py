@@ -28,7 +28,7 @@ class TreeMapGroupBy(ModelSimple):
 
     def __init__(self, *args, **kwargs):
         """
-        The attribute used to group elements in the widget.
+        (deprecated) The attribute formerly used to group elements in the widget.
 
         Note that value can be passed either in args or in kwargs, but not in both.
 

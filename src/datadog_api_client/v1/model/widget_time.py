@@ -9,16 +9,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v1.model.widget_live_span import WidgetLiveSpan
-
-    globals()["WidgetLiveSpan"] = WidgetLiveSpan
-
-
 class WidgetTime(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v1.model.widget_live_span import WidgetLiveSpan
+
         return {
             "live_span": (WidgetLiveSpan,),
         }

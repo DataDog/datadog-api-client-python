@@ -9,22 +9,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-def lazy_import():
-    from datadog_api_client.v2.model.rum_group_by_histogram import RUMGroupByHistogram
-    from datadog_api_client.v2.model.rum_group_by_missing import RUMGroupByMissing
-    from datadog_api_client.v2.model.rum_aggregate_sort import RUMAggregateSort
-    from datadog_api_client.v2.model.rum_group_by_total import RUMGroupByTotal
-
-    globals()["RUMGroupByHistogram"] = RUMGroupByHistogram
-    globals()["RUMGroupByMissing"] = RUMGroupByMissing
-    globals()["RUMAggregateSort"] = RUMAggregateSort
-    globals()["RUMGroupByTotal"] = RUMGroupByTotal
-
-
 class RUMGroupBy(ModelNormal):
     @cached_property
     def openapi_types(_):
-        lazy_import()
+        from datadog_api_client.v2.model.rum_group_by_histogram import RUMGroupByHistogram
+        from datadog_api_client.v2.model.rum_group_by_missing import RUMGroupByMissing
+        from datadog_api_client.v2.model.rum_aggregate_sort import RUMAggregateSort
+        from datadog_api_client.v2.model.rum_group_by_total import RUMGroupByTotal
+
         return {
             "facet": (str,),
             "histogram": (RUMGroupByHistogram,),

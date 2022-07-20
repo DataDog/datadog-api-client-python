@@ -5,3 +5,5 @@ if [ $? -ne 0 ]; then
     echo -e "Failed to build examples"
     exit 1
 fi
+
+pyflakes examples
