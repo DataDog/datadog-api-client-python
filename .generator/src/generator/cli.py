@@ -35,7 +35,7 @@ def cli(specs, output):
     env.filters["parameter_schema"] = openapi.parameter_schema
     env.filters["parameters"] = openapi.parameters
     env.filters["return_type"] = openapi.return_type
-    env.filters["safe_snake_case"] = openapi.safe_snake_case
+    env.filters["safe_snake_case"] = formatter.safe_snake_case
     env.filters["docstring"] = formatter.docstring
 
     env.globals["enumerate"] = enumerate
@@ -98,7 +98,7 @@ def cli(specs, output):
         package.mkdir(exist_ok=True)
 
         for name, model in models.items():
-            filename = openapi.safe_snake_case(name) + ".py"
+            filename = formatter.safe_snake_case(name) + ".py"
             model_path = package / "model" / filename
             model_path.parent.mkdir(parents=True, exist_ok=True)
             with model_path.open("w") as fp:
@@ -116,7 +116,7 @@ def cli(specs, output):
         tags_by_name = {tag["name"]: tag for tag in spec["tags"]}
 
         for name, operations in apis.items():
-            filename = openapi.safe_snake_case(name) + "_api.py"
+            filename = formatter.safe_snake_case(name) + "_api.py"
             api_path = package / "api" / filename
             api_path.parent.mkdir(parents=True, exist_ok=True)
             with api_path.open("w") as fp:

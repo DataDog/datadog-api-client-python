@@ -248,7 +248,7 @@ def format_data_with_schema_list(
                     replace_values=replace_values,
                     version=version,
                 )
-            except (KeyError, ValueError) as e:
+            except (KeyError, ValueError):
                 continue
             # Workaround to not generate schema for primitive nested oneOfs
             if sub_schema.get("items", {}).get("type") in PRIMITIVE_TYPES:

@@ -12,9 +12,6 @@ from . import formatter
 
 PRIMITIVE_TYPES = ["string", "number", "boolean", "integer"]
 
-with (pathlib.Path(__file__).parent / "replacement.json").open() as f:
-    EDGE_CASES = json.load(f)
-
 
 def load(filename):
     path = pathlib.Path(filename)
@@ -329,21 +326,6 @@ def apis(spec):
             operations.setdefault(tag, []).append((path, method, operation))
 
     return operations
-
-
-def operation(spec, operation_id):
-    for path in spec["paths"]:
-        for method in spec["paths"][path]:
-            operation = spec["paths"][path][method]
-            if operation["operationId"] == operation_id:
-                return operation
-    return None
-
-
-def safe_snake_case(value):
-    for token, replacement in EDGE_CASES.items():
-        value = value.replace(token, replacement)
-    return formatter.snake_case(value)
 
 
 def get_api_models(operations):
