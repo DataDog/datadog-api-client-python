@@ -42,6 +42,7 @@ try:
                 "%40test.service%3A{}%20%40ci.pipeline.id%3A{}&index=citest".format(dd_service, ci_pipeline_id)
             )
 
+
 except ImportError:
     if os.getenv("CI", "false") == "true" and RECORD == "none":
         raise
@@ -104,24 +105,6 @@ def escape_reserved_keyword(word):
     return word
 
 
-def pytest_bdd_before_scenario(request, feature, scenario):
-    if tracer is not None:
-        span = tracer.current_span()
-        if span is not None:
-            span.set_tag("test.name", scenario.name)
-            span.set_tag("test.suite", scenario.feature.filename.split("tests")[-1])
-
-            codeowners = [f"@{tag[5:]}" for tag in scenario.tags | scenario.feature.tags if tag.startswith("team:")]
-            if codeowners:
-                try:
-                    default_value = span.get_tag("test.codeowners")
-                    default_codeowners = json.loads(default_value)
-                    codeowners.extend(default_codeowners)
-                except Exception:
-                    pass
-                span.set_tag("test.codeowners", json.dumps(codeowners))
-
-
 def pytest_bdd_after_scenario(request, feature, scenario):
     try:
         ctx = request.getfixturevalue("context")
@@ -129,33 +112,6 @@ def pytest_bdd_after_scenario(request, feature, scenario):
         return
     for undo in reversed(ctx["undo_operations"]):
         undo()
-
-
-def pytest_bdd_before_step(request, feature, scenario, step, step_func):
-    if tracer is None:
-        return
-
-    span = tracer.start_span(
-        step.type,
-        resource=step.name,
-        span_type=step.type,
-        child_of=tracer.current_span(),
-        activate=True,
-    )
-    setattr(step_func, "__dd_span__", span)
-
-
-def pytest_bdd_after_step(request, feature, scenario, step, step_func, step_func_args):
-    span = getattr(step_func, "__dd_span__", None)
-    if span is not None:
-        span.finish()
-
-
-def pytest_bdd_step_error(request, feature, scenario, step, step_func, step_func_args, exception):
-    span = getattr(step_func, "__dd_span__", None)
-    if span is not None:
-        span.set_exc_info(type(exception), exception, exception.__traceback__)
-        span.finish()
 
 
 def pytest_bdd_apply_tag(tag, function):
@@ -283,8 +239,22 @@ def disable_recording(request):
 @pytest.fixture
 def vcr_config():
     config = dict(
-        filter_headers=("DD-API-KEY", "DD-APPLICATION-KEY", "User-Agent", "Accept-Encoding"),
-        match_on=["method", "scheme", "host", "port", "path", "query", "body", "headers"],
+        filter_headers=(
+            "DD-API-KEY",
+            "DD-APPLICATION-KEY",
+            "User-Agent",
+            "Accept-Encoding",
+        ),
+        match_on=[
+            "method",
+            "scheme",
+            "host",
+            "port",
+            "path",
+            "query",
+            "body",
+            "headers",
+        ],
     )
     if tracer:
         from urllib.parse import urlparse
@@ -501,7 +471,13 @@ def build_given(version, operation):
             result = operation_method(**kwargs)
 
             # register undo method
-            context["undo_operations"].append(lambda: undo(api, version, operation_name, result, client=client))
+            def undo_operation():
+                return undo(api, version, operation_name, result, client=client)
+
+            if tracer:
+                undo_operation = tracer.wrap(name="undo", resource=operation["step"])(undo_operation)
+
+            context["undo_operations"].append(undo_operation)
 
             # optional re-shaping
             if "source" in operation:
@@ -580,7 +556,13 @@ def execute_request(undo, context, client, api_version):
     operation_id = api_request["request"].__name__
     response = api_request["response"][0]
 
-    context["undo_operations"].append(lambda: undo(api, api_version, operation_id, response))
+    def undo_operation():
+        return undo(api, api_version, operation_id, response)
+
+    if tracer:
+        undo_operation = tracer.wrap(name="undo", resource="execute request")(undo_operation)
+
+    context["undo_operations"].append(undo_operation)
 
 
 @when("the request with pagination is sent")
