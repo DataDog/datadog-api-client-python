@@ -3,6 +3,9 @@ import pathlib
 import click
 from jinja2 import Environment, FileSystemLoader
 
+from datadog_api_client_generator.openapi import load
+from datadog_api_client_generator.formatter import camel_case
+
 from . import openapi
 from . import formatter
 
@@ -28,7 +31,7 @@ def cli(specs, output):
 
     env.filters["accept_headers"] = openapi.accept_headers
     env.filters["attribute_name"] = formatter.attribute_name
-    env.filters["camel_case"] = formatter.camel_case
+    env.filters["camel_case"] = camel_case
     env.filters["collection_format"] = openapi.collection_format
     env.filters["format_value"] = formatter.format_value
     env.filters["attribute_path"] = formatter.attribute_path
@@ -82,7 +85,7 @@ def cli(specs, output):
     all_apis = {}
 
     for spec_path in specs:
-        spec = openapi.load(spec_path)
+        spec = load(spec_path)
         env.globals["openapi"] = spec
 
         version = spec_path.parent.name

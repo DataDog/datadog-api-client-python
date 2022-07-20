@@ -5,20 +5,18 @@ from functools import singledispatch
 import pathlib
 import keyword
 import warnings
-import re
 
 import dateutil.parser
 import m2r2
+
+from datadog_api_client_generator.formatter import snake_case, camel_case
 
 
 MODEL_IMPORT_TPL = "datadog_api_client.{version}.model.{name}"
 PRIMITIVE_TYPES = ["string", "number", "boolean", "integer"]
 
 EDGE_CASES = {}
-replacement_file = (
-    pathlib.Path(__file__).parent
-    / "replacement.json"
-)
+replacement_file = pathlib.Path(__file__).parent / "replacement.json"
 if replacement_file.exists():
     with replacement_file.open() as f:
         EDGE_CASES.update(json.load(f))
@@ -27,28 +25,11 @@ KEYWORDS = set(keyword.kwlist)
 KEYWORDS.add("property")
 KEYWORDS.add("cls")
 
-PATTERN_DOUBLE_UNDERSCORE = re.compile(r"__+")
-PATTERN_LEADING_ALPHA = re.compile(r"(.)([A-Z][a-z]+)")
-PATTERN_FOLLOWING_ALPHA = re.compile(r"([a-z0-9])([A-Z])")
-PATTERN_WHITESPACE = re.compile(r"\W")
-
-
-def snake_case(value):
-    s1 = PATTERN_LEADING_ALPHA.sub(r"\1_\2", value)
-    s1 = PATTERN_FOLLOWING_ALPHA.sub(r"\1_\2", s1).lower()
-    s1 = PATTERN_WHITESPACE.sub("_", s1)
-    s1 = s1.rstrip("_")
-    return PATTERN_DOUBLE_UNDERSCORE.sub("_", s1)
-
 
 def safe_snake_case(value):
     for token, replacement in EDGE_CASES.items():
         value = value.replace(token, replacement)
     return snake_case(value)
-
-
-def camel_case(value):
-    return "".join(x.title() for x in snake_case(value).split("_"))
 
 
 def escape_reserved_keyword(word):
@@ -96,7 +77,11 @@ class CustomRenderer(m2r2.RestRenderer):
 
 
 def docstring(text):
-    return m2r2.convert(text.replace("\\n", "\\\\n"), renderer=CustomRenderer())[1:-1].replace("\\ ", " ").replace("\\`", "\\\\`")
+    return (
+        m2r2.convert(text.replace("\\n", "\\\\n"), renderer=CustomRenderer())[1:-1]
+        .replace("\\ ", " ")
+        .replace("\\`", "\\\\`")
+    )
 
 
 def _merge_imports(a, b):
@@ -111,10 +96,7 @@ def format_parameters(kwargs, spec, version, replace_values=None):
     imports = defaultdict(set)
 
     parameters_spec = {p["name"]: p for p in spec.get("parameters", [])}
-    if (
-        "requestBody" in spec
-        and "multipart/form-data" in spec["requestBody"]["content"]
-    ):
+    if "requestBody" in spec and "multipart/form-data" in spec["requestBody"]["content"]:
         parent = spec["requestBody"]["content"]["multipart/form-data"]["schema"]
         for name, schema in parent["properties"].items():
             parameters_spec[name] = {
@@ -153,9 +135,7 @@ def get_name_and_imports(schema, version=None, imports=None):
         name = schema.__reference__["$ref"].split("/")[-1]
         if "oneOf" not in schema:
             # do not include parent of oneOf schema
-            imports[
-                MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))
-            ].add(name)
+            imports[MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))].add(name)
 
     return name, imports
 
@@ -177,9 +157,7 @@ def format_data_with_schema(
     if schema.get("type") not in {"string", "integer", "boolean"} or schema.get("enum"):
         name, imports = get_name_and_imports(schema, version, imports)
     if name:
-        imports[
-            MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))
-        ].add(name)
+        imports[MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))].add(name)
 
     if "enum" in schema and data not in schema["enum"]:
         raise ValueError(f"{data} is not valid enum value {schema['enum']}")
@@ -318,15 +296,9 @@ def format_data_with_schema_dict(
             imports = _merge_imports(imports, extra_imports)
 
     if not name and "oneOf" not in schema:
-        if (
-            default_name
-            and not schema.get("additionalProperties")
-            and schema.get("properties")
-        ):
+        if default_name and not schema.get("additionalProperties") and schema.get("properties"):
             name = default_name
-            imports[
-                MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))
-            ].add(name)
+            imports[MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))].add(name)
         else:
             name = "dict"
             warnings.warn(f"Unnamed schema {schema} for {data}")

@@ -8,13 +8,13 @@ license = "Apache-2.0"
 [tool.poetry.dependencies]
 python = "^3.9"
 click = "8.0.1"
-PyYAML = "6.0"
-jsonref = "0.2"
 jinja2 = "3.0.3"
 pytest = "^7.1.1"
 pytest-bdd = "^5.0.0"
 python-dateutil = "2.8.2"
 m2r2 = "0.3.2"
+docutils = "<0.19"
+datadog-api-client-generator = { git = "https://github.com/DataDog/datadog-api-client-generator.git", branch = "main" }
 
 [tool.poetry.dev-dependencies]
 

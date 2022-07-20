@@ -14,16 +14,14 @@ from dateutil.relativedelta import relativedelta
 from jinja2 import Environment, FileSystemLoader, Template
 from pytest_bdd import given, parsers, then, when
 
+from datadog_api_client_generator.openapi import load
+from datadog_api_client_generator.formatter import snake_case
+
 from generator import openapi
+from generator.formatter import format_parameters, format_data_with_schema, safe_snake_case
 
-from generator.formatter import format_parameters, format_data_with_schema, safe_snake_case, snake_case
 
-
-MODIFIED_FEATURES = {
-    pathlib.Path(p).resolve()
-    for p in os.getenv("BDD_MODIFIED_FEATURES", "").split(" ")
-    if p
-}
+MODIFIED_FEATURES = {pathlib.Path(p).resolve() for p in os.getenv("BDD_MODIFIED_FEATURES", "").split(" ") if p}
 
 ROOT_PATH = pathlib.Path(__file__).parent.parent
 
@@ -45,9 +43,7 @@ def pytest_bdd_before_scenario(request, feature, scenario):
     if MODIFIED_FEATURES:
         current = pathlib.Path(scenario.feature.filename).resolve()
         if current not in MODIFIED_FEATURES:
-            pytest.skip(
-                f"Feature file {scenario.feature.filename} has not been modified"
-            )
+            pytest.skip(f"Feature file {scenario.feature.filename} has not been modified")
 
 
 def lookup(value, path):
@@ -128,13 +124,7 @@ def pytest_bdd_after_scenario(request, feature, scenario):
         operation_spec=operation_spec.spec,
     )
 
-    output = (
-        ROOT_PATH
-        / "examples"
-        / version
-        / group_name
-        / f"{operation_id}{unique_suffix}.py"
-    )
+    output = ROOT_PATH / "examples" / version / group_name / f"{operation_id}{unique_suffix}.py"
     output.parent.mkdir(parents=True, exist_ok=True)
 
     with output.open("w") as f:
@@ -292,12 +282,9 @@ def context(request, unique, freezed_time):
             "unique": prefix + "_{{ timestamp(0, s) }}",
             "unique_lower": prefix.lower() + "_{{ timestamp(0, s) }}",
             "unique_upper": prefix.upper() + "_{{ timestamp(0, s) }}",
-            "unique_alnum": re.sub(r"[^A-Za-z0-9]+", "", prefix)
-            + "{{ timestamp(0, s) }}",
-            "unique_lower_alnum": re.sub(r"[^A-Za-z0-9]+", "", prefix).lower()
-            + "{{ timestamp(0, s) }}",
-            "unique_upper_alnum": re.sub(r"[^A-Za-z0-9]+", "", prefix).upper()
-            + "{{ timestamp(0, s) }}",
+            "unique_alnum": re.sub(r"[^A-Za-z0-9]+", "", prefix) + "{{ timestamp(0, s) }}",
+            "unique_lower_alnum": re.sub(r"[^A-Za-z0-9]+", "", prefix).lower() + "{{ timestamp(0, s) }}",
+            "unique_upper_alnum": re.sub(r"[^A-Za-z0-9]+", "", prefix).upper() + "{{ timestamp(0, s) }}",
         },
     }
 
@@ -328,7 +315,7 @@ def specs():
     result = {}
     for f in (ROOT_PATH / ".generator" / "schemas").rglob("openapi.yaml"):
         version = f.parent.name
-        result[version] = openapi.load(f)
+        result[version] = load(f)
 
     return result
 
@@ -479,18 +466,9 @@ def build_given(version, operation):
                 value = openapi.generate_value(schema, use_random=True, prefix=key)
 
             context["_replace_values"][value] = key
-            keys = (
-                [operation["source"]] + list(schema.keys)
-                if "source" in operation
-                else schema.keys
-            )
-            json_path = "".join(
-                f"[{k}]" if isinstance(k, int) else f".{k}" for k in keys
-            ).strip(".")
-            assert (
-                context["_key_to_json_path"][operation["key"]].get(key, json_path)
-                == json_path
-            )
+            keys = [operation["source"]] + list(schema.keys) if "source" in operation else schema.keys
+            json_path = "".join(f"[{k}]" if isinstance(k, int) else f".{k}" for k in keys).strip(".")
+            assert context["_key_to_json_path"][operation["key"]].get(key, json_path) == json_path
             context["_key_to_json_path"][operation["key"]][key] = json_path
             return value
 
@@ -534,11 +512,7 @@ def expect_equal(context, response_path, value):
     """Compare a response attribute to a value."""
 
 
-@then(
-    parsers.parse(
-        'the response "{response_path}" has the same value as "{fixture_path}"'
-    )
-)
+@then(parsers.parse('the response "{response_path}" has the same value as "{fixture_path}"'))
 def expect_equal_value(context, response_path, fixture_path):
     """Compare a response attribute to another attribute."""
 
