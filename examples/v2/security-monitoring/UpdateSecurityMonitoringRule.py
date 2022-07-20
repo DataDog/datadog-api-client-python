@@ -77,6 +77,7 @@ body = SecurityMonitoringRuleUpdatePayload(
             aggregation=SecurityMonitoringRuleQueryAggregation("count"),
             distinct_fields=[],
             group_by_fields=[],
+            metrics=[],
         ),
     ],
     tags=[],
