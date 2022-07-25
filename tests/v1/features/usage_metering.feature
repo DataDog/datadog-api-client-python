@@ -88,6 +88,20 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for CI visibility returns "Bad Request" response
+    Given new "GetUsageCIApp" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for CI visibility returns "OK" response
+    Given new "GetUsageCIApp" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for CSPM returns "Bad Request" response
     Given new "GetUsageCloudSecurityPostureManagement" request
     And request contains "start_hr" parameter from "REPLACE.ME"
@@ -101,13 +115,6 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get hourly usage for Cloud Workload Security returns "Bad Request" response
-    Given new "GetUsageCWS" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
   @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Cloud Workload Security returns "OK" response
     Given new "GetUsageCWS" request
@@ -115,13 +122,6 @@ Feature: Usage Metering
     And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
-
-  @generated @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get hourly usage for Database Monitoring returns "Bad Request" response
-    Given new "GetUsageDBM" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 400 Bad Request
 
   @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Database Monitoring returns "OK" response
@@ -275,18 +275,39 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get hourly usage for RUM Units returns "Bad Request" response
-    Given new "GetUsageRumUnits" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
   @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for RUM Units returns "OK" response
     Given new "GetUsageRumUnits" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
     And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for RUM sessions returns "Bad Request" response
+    Given new "GetUsageRumSessions" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for RUM sessions returns "OK" response
+    Given new "GetUsageRumSessions" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for RUM units returns "Bad Request" response
+    Given new "GetUsageRumUnits" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for RUM units returns "OK" response
+    Given new "GetUsageRumUnits" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -305,13 +326,6 @@ Feature: Usage Metering
     And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
-
-  @generated @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get hourly usage for Sensitive Data Scanner returns "Bad Request" response
-    Given new "GetUsageSDS" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 400 Bad Request
 
   @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Sensitive Data Scanner returns "OK" response
@@ -353,20 +367,6 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get hourly usage for Synthetics Checks returns "Bad Request" response
-    Given new "GetUsageSynthetics" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get hourly usage for Synthetics Checks returns "OK" response
-    Given new "GetUsageSynthetics" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 200 OK
-
   @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for analyzed logs returns "Bad Request" response
     Given new "GetUsageAnalyzedLogs" request
@@ -398,6 +398,20 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for cloud workload security returns "Bad Request" response
+    Given new "GetUsageCWS" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for cloud workload security returns "OK" response
+    Given new "GetUsageCWS" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for custom metrics returns "Bad Request" response
     Given new "GetUsageTimeseries" request
@@ -411,6 +425,20 @@ Feature: Usage Metering
     Given new "GetUsageTimeseries" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
     And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for database monitoring returns "Bad Request" response
+    Given new "GetUsageDBM" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for database monitoring returns "OK" response
+    Given new "GetUsageDBM" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -478,6 +506,76 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for lambda returns "Bad Request" response
+    Given new "GetUsageLambda" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for lambda returns "OK" response
+    Given new "GetUsageLambda" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for logs by index returns "Bad Request" response
+    Given new "GetUsageLogsByIndex" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for logs by index returns "OK" response
+    Given new "GetUsageLogsByIndex" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for logs returns "Bad Request" response
+    Given new "GetUsageLogs" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for logs returns "OK" response
+    Given new "GetUsageLogs" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for network hosts returns "Bad Request" response
+    Given new "GetUsageNetworkHosts" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for network hosts returns "OK" response
+    Given new "GetUsageNetworkHosts" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for online archive returns "Bad Request" response
+    Given new "GetUsageOnlineArchive" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for online archive returns "OK" response
+    Given new "GetUsageOnlineArchive" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for profiled hosts returns "Bad Request" response
     Given new "GetUsageProfiling" request
@@ -491,6 +589,62 @@ Feature: Usage Metering
     Given new "GetUsageProfiling" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
     And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for sensitive data scanner returns "Bad Request" response
+    Given new "GetUsageSDS" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for sensitive data scanner returns "OK" response
+    Given new "GetUsageSDS" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for synthetics API checks returns "Bad Request" response
+    Given new "GetUsageSyntheticsAPI" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for synthetics API checks returns "OK" response
+    Given new "GetUsageSyntheticsAPI" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for synthetics browser checks returns "Bad Request" response
+    Given new "GetUsageSyntheticsBrowser" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for synthetics browser checks returns "OK" response
+    Given new "GetUsageSyntheticsBrowser" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for synthetics checks returns "Bad Request" response
+    Given new "GetUsageSynthetics" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for synthetics checks returns "OK" response
+    Given new "GetUsageSynthetics" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -605,5 +759,19 @@ Feature: Usage Metering
     And request contains "next_record_id" parameter from "monthly_usage_attribution.metadata.pagination.next_record_id"
     And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
     And request contains "fields" parameter with value "infra_host_usage"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: get hourly usage for network flows returns "Bad Request" response
+    Given new "GetUsageNetworkFlows" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: get hourly usage for network flows returns "OK" response
+    Given new "GetUsageNetworkFlows" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK

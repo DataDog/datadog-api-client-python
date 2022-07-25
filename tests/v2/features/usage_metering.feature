@@ -122,3 +122,45 @@ Feature: Usage Metering
     And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for application security returns "Bad Request" response
+    Given new "GetUsageApplicationSecurityMonitoring" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for application security returns "OK" response
+    Given new "GetUsageApplicationSecurityMonitoring" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for lambda traced invocations returns "Bad Request" response
+    Given new "GetUsageLambdaTracedInvocations" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for lambda traced invocations returns "OK" response
+    Given new "GetUsageLambdaTracedInvocations" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for observability pipelines returns "Bad Request" response
+    Given new "GetUsageObservabilityPipelines" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for observability pipelines returns "OK" response
+    Given new "GetUsageObservabilityPipelines" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK

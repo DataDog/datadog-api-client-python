@@ -1448,6 +1448,7 @@ class UsageMeteringApi:
         """Get hourly usage for incident management.
 
         Get hourly usage for incident management.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1473,6 +1474,7 @@ class UsageMeteringApi:
         """Get hourly usage for ingested spans.
 
         Get hourly usage for ingested spans.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1645,6 +1647,7 @@ class UsageMeteringApi:
         """Get hourly usage for analyzed logs.
 
         Get hourly usage for analyzed logs (Security Monitoring).
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1730,6 +1733,7 @@ class UsageMeteringApi:
         """Get hourly usage for audit logs.
 
         Get hourly usage for audit logs.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1771,9 +1775,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageCIVisibilityResponse:
-        """Get hourly usage for CI Visibility.
+        """Get hourly usage for CI visibility.
 
-        Get hourly usage for CI Visibility (Tests, Pipeline, and Spans).
+        Get hourly usage for CI visibility (tests, pipeline, and spans).
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1798,7 +1803,8 @@ class UsageMeteringApi:
     ) -> UsageCloudSecurityPostureManagementResponse:
         """Get hourly usage for CSPM.
 
-        Get hourly usage for Cloud Security Posture Management (CSPM).
+        Get hourly usage for cloud security posture management (CSPM).
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1821,9 +1827,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageCWSResponse:
-        """Get hourly usage for Cloud Workload Security.
+        """Get hourly usage for cloud workload security.
 
-        Get hourly usage for Cloud Workload Security.
+        Get hourly usage for cloud workload security.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1846,9 +1853,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageDBMResponse:
-        """Get hourly usage for Database Monitoring.
+        """Get hourly usage for database monitoring.
 
-        Get hourly usage for Database Monitoring
+        Get hourly usage for database monitoring
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1874,6 +1882,7 @@ class UsageMeteringApi:
         """Get hourly usage for Fargate.
 
         Get hourly usage for `Fargate <https://docs.datadoghq.com/integrations/ecs_fargate/>`_.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -1898,6 +1907,7 @@ class UsageMeteringApi:
         """Get hourly usage for hosts and containers.
 
         Get hourly usage for hosts and containers.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -1922,6 +1932,7 @@ class UsageMeteringApi:
         """Get hourly usage for indexed spans.
 
         Get hourly usage for indexed spans.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1946,6 +1957,7 @@ class UsageMeteringApi:
         """Get hourly usage for IoT.
 
         Get hourly usage for IoT.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1968,9 +1980,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageLambdaResponse:
-        """Get hourly usage for Lambda.
+        """Get hourly usage for lambda.
 
         Get hourly usage for lambda.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -1992,9 +2005,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageLogsResponse:
-        """Get hourly usage for Logs.
+        """Get hourly usage for logs.
 
         Get hourly usage for logs.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -2017,7 +2031,7 @@ class UsageMeteringApi:
         end_hr: Union[datetime, UnsetType] = unset,
         index_name: Union[List[str], UnsetType] = unset,
     ) -> UsageLogsByIndexResponse:
-        """Get hourly usage for Logs by Index.
+        """Get hourly usage for logs by index.
 
         Get hourly usage for logs by index.
 
@@ -2049,6 +2063,7 @@ class UsageMeteringApi:
         """Get hourly logs usage by retention.
 
         Get hourly usage for indexed logs by retention period.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -2071,9 +2086,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageNetworkFlowsResponse:
-        """Get hourly usage for Network Flows.
+        """get hourly usage for network flows.
 
         Get hourly usage for network flows.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -2096,9 +2112,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageNetworkHostsResponse:
-        """Get hourly usage for Network Hosts.
+        """Get hourly usage for network hosts.
 
         Get hourly usage for network hosts.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -2120,9 +2137,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageOnlineArchiveResponse:
-        """Get hourly usage for Online Archive.
+        """Get hourly usage for online archive.
 
-        Get hourly usage for Online Archive.
+        Get hourly usage for online archive.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -2148,6 +2166,7 @@ class UsageMeteringApi:
         """Get hourly usage for profiled hosts.
 
         Get hourly usage for profiled hosts.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -2171,9 +2190,10 @@ class UsageMeteringApi:
         end_hr: Union[datetime, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
     ) -> UsageRumSessionsResponse:
-        """Get hourly usage for RUM Sessions.
+        """Get hourly usage for RUM sessions.
 
         Get hourly usage for `RUM <https://docs.datadoghq.com/real_user_monitoring/>`_ Sessions.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -2200,9 +2220,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageRumUnitsResponse:
-        """Get hourly usage for RUM Units.
+        """Get hourly usage for RUM units.
 
         Get hourly usage for `RUM <https://docs.datadoghq.com/real_user_monitoring/>`_ Units.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -2224,9 +2245,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageSDSResponse:
-        """Get hourly usage for Sensitive Data Scanner.
+        """Get hourly usage for sensitive data scanner.
 
-        Get hourly usage for Sensitive Data Scanner.
+        Get hourly usage for sensitive data scanner.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -2252,6 +2274,7 @@ class UsageMeteringApi:
         """Get hourly usage for SNMP devices.
 
         Get hourly usage for SNMP devices.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -2305,9 +2328,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageSyntheticsResponse:
-        """Get hourly usage for Synthetics Checks.
+        """Get hourly usage for synthetics checks.
 
-        Get hourly usage for `Synthetics checks <https://docs.datadoghq.com/synthetics/>`_.
+        Get hourly usage for `synthetics checks <https://docs.datadoghq.com/synthetics/>`_.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -2329,9 +2353,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageSyntheticsAPIResponse:
-        """Get hourly usage for Synthetics API Checks.
+        """Get hourly usage for synthetics API checks.
 
         Get hourly usage for `synthetics API checks <https://docs.datadoghq.com/synthetics/>`_.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -2353,9 +2378,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageSyntheticsBrowserResponse:
-        """Get hourly usage for Synthetics Browser Checks.
+        """Get hourly usage for synthetics browser checks.
 
         Get hourly usage for synthetics browser checks.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -2380,6 +2406,7 @@ class UsageMeteringApi:
         """Get hourly usage for custom metrics.
 
         Get hourly usage for `custom metrics <https://docs.datadoghq.com/developers/metrics/custom_metrics/>`_.
+        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
