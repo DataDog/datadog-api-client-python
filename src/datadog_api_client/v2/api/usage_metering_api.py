@@ -15,6 +15,7 @@ from datadog_api_client.v2.model.usage_application_security_monitoring_response 
     UsageApplicationSecurityMonitoringResponse,
 )
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
+from datadog_api_client.v2.model.usage_custom_events_response import UsageCustomEventsResponse
 from datadog_api_client.v2.model.hourly_usage_response import HourlyUsageResponse
 from datadog_api_client.v2.model.usage_lambda_traced_invocations_response import UsageLambdaTracedInvocationsResponse
 from datadog_api_client.v2.model.usage_observability_pipelines_response import UsageObservabilityPipelinesResponse
@@ -59,6 +60,36 @@ class UsageMeteringApi:
                 "end_month": {
                     "openapi_types": (datetime,),
                     "attribute": "end_month",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._get_custom_events_count_endpoint = _Endpoint(
+            settings={
+                "response_type": (UsageCustomEventsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/custom_events",
+                "operation_id": "get_custom_events_count",
+                "http_method": "GET",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
+                },
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
                     "location": "query",
                 },
             },
@@ -281,6 +312,31 @@ class UsageMeteringApi:
             kwargs["end_month"] = end_month
 
         return self._get_cost_by_org_endpoint.call_with_http_info(**kwargs)
+
+    def get_custom_events_count(
+        self,
+        start_hr: datetime,
+        *,
+        end_hr: Union[datetime, UnsetType] = unset,
+    ) -> UsageCustomEventsResponse:
+        """Get hourly usage for Custom Events.
+
+        Get hourly usage for Custom Events.
+
+        :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
+        :type start_hr: datetime
+        :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
+            **before** this hour.
+        :type end_hr: datetime, optional
+        :rtype: UsageCustomEventsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["start_hr"] = start_hr
+
+        if end_hr is not unset:
+            kwargs["end_hr"] = end_hr
+
+        return self._get_custom_events_count_endpoint.call_with_http_info(**kwargs)
 
     def get_estimated_cost_by_org(
         self,

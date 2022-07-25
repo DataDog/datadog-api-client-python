@@ -3284,6 +3284,13 @@ usage\_attributes\_object
    :members:
    :show-inheritance:
 
+usage\_custom\_events\_response
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_custom_events_response
+   :members:
+   :show-inheritance:
+
 usage\_data\_object
 -------------------
 

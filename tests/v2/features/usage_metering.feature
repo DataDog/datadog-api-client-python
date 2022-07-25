@@ -92,6 +92,21 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for Custom Events returns "Bad Request" response
+    Given new "GetCustomEventsCount" request
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get hourly usage for Custom Events returns "OK" response
+    Given new "GetCustomEventsCount" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Lambda Traced Invocations returns "Bad Request" response
     Given new "GetUsageLambdaTracedInvocations" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"

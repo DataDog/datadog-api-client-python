@@ -569,6 +569,7 @@ from datadog_api_client.v2.model.usage_application_security_monitoring_response 
     UsageApplicationSecurityMonitoringResponse,
 )
 from datadog_api_client.v2.model.usage_attributes_object import UsageAttributesObject
+from datadog_api_client.v2.model.usage_custom_events_response import UsageCustomEventsResponse
 from datadog_api_client.v2.model.usage_data_object import UsageDataObject
 from datadog_api_client.v2.model.usage_lambda_traced_invocations_response import UsageLambdaTracedInvocationsResponse
 from datadog_api_client.v2.model.usage_observability_pipelines_response import UsageObservabilityPipelinesResponse
