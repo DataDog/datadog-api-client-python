@@ -50,8 +50,6 @@ class MetricVolumes(ModelComposed):
         from datadog_api_client.v2.model.metric_ingested_indexed_volume import MetricIngestedIndexedVolume
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 MetricDistinctVolume,
                 MetricIngestedIndexedVolume,

@@ -128,8 +128,6 @@ class LogsProcessor(ModelComposed):
         from datadog_api_client.v1.model.logs_trace_remapper import LogsTraceRemapper
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 LogsGrokParser,
                 LogsDateRemapper,

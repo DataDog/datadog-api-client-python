@@ -58,8 +58,6 @@ class NotebookCellUpdateRequestAttributes(ModelComposed):
         from datadog_api_client.v1.model.notebook_log_stream_cell_attributes import NotebookLogStreamCellAttributes
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 NotebookMarkdownCellAttributes,
                 NotebookTimeseriesCellAttributes,

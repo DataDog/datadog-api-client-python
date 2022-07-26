@@ -29,6 +29,7 @@ empty_dict = MappingProxyType({})  # type: ignore
 class UnsetType(enum.Enum):
     unset = 0
 
+
 unset: Final = UnsetType.unset
 
 
@@ -93,20 +94,14 @@ def composed_model_input_classes(cls):
     if issubclass(cls, ModelSimple) or cls in PRIMITIVE_TYPES:
         return [cls]
     elif issubclass(cls, ModelNormal):
-        if cls.discriminator is None:
-            return [cls]
-        else:
-            return get_discriminated_classes(cls)
+        return [cls]
     elif issubclass(cls, ModelComposed):
         if not cls._composed_schemas["oneOf"]:
             return []
-        if cls.discriminator is None:
-            input_classes = []
-            for c in cls._composed_schemas["oneOf"]:
-                input_classes.extend(composed_model_input_classes(c))
-            return input_classes
-        else:
-            return get_discriminated_classes(cls)
+        input_classes = []
+        for c in cls._composed_schemas["oneOf"]:
+            input_classes.extend(composed_model_input_classes(c))
+        return input_classes
     return []
 
 
@@ -137,8 +132,6 @@ class OpenApiModel(object):
     attribute_map: Mapping[str, str] = empty_dict
 
     _nullable = False
-
-    discriminator = None
 
     allowed_values: Mapping[str, Mapping[str, Union[str, int]]] = empty_dict
 
@@ -206,10 +199,6 @@ class OpenApiModel(object):
         return self.__getitem__(attr)
 
     def __new__(cls, *args, **kwargs):
-        # this function uses the discriminator to
-        # pick a new schema/class to instantiate because a discriminator
-        # propertyName value was passed in
-
         if len(args) == 1:
             arg = args[0]
             if arg is None and is_type_nullable(cls):
@@ -221,100 +210,11 @@ class OpenApiModel(object):
                 oneof_instance = get_oneof_instance(cls, model_kwargs, kwargs, model_arg=arg)
                 return oneof_instance
 
-        visited_composed_classes = kwargs.get("_visited_composed_classes", ())
-        if cls.discriminator is None or cls in visited_composed_classes:
-            # Use case 1: this openapi schema (cls) does not have a discriminator
-            # Use case 2: we have already visited this class before and are sure that we
-            # want to instantiate it this time. We have visited this class deserializing
-            # a payload with a discriminator. During that process we traveled through
-            # this class but did not make an instance of it. Now we are making an
-            # instance of a composed class which contains cls in it, so this time make an instance of cls.
-            #
-            # Here's an example of use case 2: If Animal has a discriminator
-            # petType and we pass in "Dog", and the class Dog
-            # allOf includes Animal, we move through Animal
-            # once using the discriminator, and pick Dog.
-            # Then in the composed schema dog Dog, we will make an instance of the
-            # Animal class (because Dal has allOf: Animal) but this time we won't travel
-            # through Animal's discriminator because we passed in
-            # _visited_composed_classes = (Animal,)
-
-            return super(OpenApiModel, cls).__new__(cls)
-
-        # Get the name and value of the discriminator property.
-        # The discriminator name is obtained from the discriminator meta-data
-        # and the discriminator value is obtained from the input data.
-        discr_propertyname_py = list(cls.discriminator.keys())[0]
-        discr_propertyname_js = cls.attribute_map[discr_propertyname_py]
-        if discr_propertyname_js in kwargs:
-            discr_value = kwargs[discr_propertyname_js]
-        elif discr_propertyname_py in kwargs:
-            discr_value = kwargs[discr_propertyname_py]
-        else:
-            # The input data does not contain the discriminator property.
-            path_to_item = kwargs.get("_path_to_item", ())
-            raise ApiValueError(
-                "Cannot deserialize input data due to missing discriminator. "
-                "The discriminator property '%s' is missing at path: %s" % (discr_propertyname_js, path_to_item)
-            )
-
-        # Implementation note: the last argument to get_discriminator_class
-        # is a list of visited classes. get_discriminator_class may recursively
-        # call itself and update the list of visited classes, and the initial
-        # value must be an empty list. Hence not using 'visited_composed_classes'
-        new_cls = get_discriminator_class(cls, discr_propertyname_py, discr_value, [])
-        if new_cls is None:
-            path_to_item = kwargs.get("_path_to_item", ())
-            disc_prop_value = kwargs.get(discr_propertyname_js, kwargs.get(discr_propertyname_py))
-            raise ApiValueError(
-                "Cannot deserialize input data due to invalid discriminator "
-                "value. The OpenAPI document has no mapping for discriminator "
-                "property '%s'='%s' at path: %s" % (discr_propertyname_js, disc_prop_value, path_to_item)
-            )
-
-        if new_cls in visited_composed_classes:
-            # if we are making an instance of a composed schema Descendent
-            # which allOf includes Ancestor, then Ancestor contains
-            # a discriminator that includes Descendent.
-            # So if we make an instance of Descendent, we have to make an
-            # instance of Ancestor to hold the allOf properties.
-            # This code detects that use case and makes the instance of Ancestor
-            # For example:
-            # When making an instance of Dog, _visited_composed_classes = (Dog,)
-            # then we make an instance of Animal to include in dog._composed_instances
-            # so when we are here, cls is Animal
-            # cls.discriminator != None
-            # cls not in _visited_composed_classes
-            # new_cls = Dog
-            # but we know we know that we already have Dog
-            # because it is in visited_composed_classes
-            # so make Animal here
-            return super(OpenApiModel, cls).__new__(cls)
-
-        # Build a list containing all oneOf and anyOf descendants.
-        oneof_anyof_classes = None
-        if cls._composed_schemas is not None:
-            oneof_anyof_classes = cls._composed_schemas.get("oneOf", ()) + cls._composed_schemas.get("anyOf", ())
-        oneof_anyof_child = new_cls in oneof_anyof_classes
-        kwargs["_visited_composed_classes"] = visited_composed_classes + (cls,)
-
-        if cls._composed_schemas.get("allOf") and oneof_anyof_child:
-            # Validate that we can make self because when we make the
-            # new_cls it will not include the allOf validations in self
-            self_inst = super(OpenApiModel, cls).__new__(cls)
-            self_inst.__init__(*args, **kwargs)
-
-        new_inst = new_cls.__new__(new_cls, *args, **kwargs)
-        new_inst.__init__(*args, **kwargs)
-        return new_inst
+        return super(OpenApiModel, cls).__new__(cls)
 
     @classmethod
     @convert_js_args_to_python_args
     def _new_from_openapi_data(cls, *args, **kwargs):
-        # this function uses the discriminator to
-        # pick a new schema/class to instantiate because a discriminator
-        # propertyName value was passed in
-
         if len(args) == 1:
             arg = args[0]
             if arg is None and is_type_nullable(cls):
@@ -326,90 +226,7 @@ class OpenApiModel(object):
                 oneof_instance = get_oneof_instance(cls, model_kwargs, kwargs, model_arg=arg)
                 return oneof_instance
 
-        visited_composed_classes = kwargs.get("_visited_composed_classes", ())
-        if cls.discriminator is None or cls in visited_composed_classes:
-            # Use case 1: this openapi schema (cls) does not have a discriminator
-            # Use case 2: we have already visited this class before and are sure that we
-            # want to instantiate it this time. We have visited this class deserializing
-            # a payload with a discriminator. During that process we traveled through
-            # this class but did not make an instance of it. Now we are making an
-            # instance of a composed class which contains cls in it, so this time make an instance of cls.
-            #
-            # Here's an example of use case 2: If Animal has a discriminator
-            # petType and we pass in "Dog", and the class Dog
-            # allOf includes Animal, we move through Animal
-            # once using the discriminator, and pick Dog.
-            # Then in the composed schema dog Dog, we will make an instance of the
-            # Animal class (because Dal has allOf: Animal) but this time we won't travel
-            # through Animal's discriminator because we passed in
-            # _visited_composed_classes = (Animal,)
-
-            return cls._from_openapi_data(*args, **kwargs)
-
-        # Get the name and value of the discriminator property.
-        # The discriminator name is obtained from the discriminator meta-data
-        # and the discriminator value is obtained from the input data.
-        discr_propertyname_py = list(cls.discriminator.keys())[0]
-        discr_propertyname_js = cls.attribute_map[discr_propertyname_py]
-        if discr_propertyname_js in kwargs:
-            discr_value = kwargs[discr_propertyname_js]
-        elif discr_propertyname_py in kwargs:
-            discr_value = kwargs[discr_propertyname_py]
-        else:
-            # The input data does not contain the discriminator property.
-            path_to_item = kwargs.get("_path_to_item", ())
-            raise ApiValueError(
-                "Cannot deserialize input data due to missing discriminator. "
-                "The discriminator property '%s' is missing at path: %s" % (discr_propertyname_js, path_to_item)
-            )
-
-        # Implementation note: the last argument to get_discriminator_class
-        # is a list of visited classes. get_discriminator_class may recursively
-        # call itself and update the list of visited classes, and the initial
-        # value must be an empty list. Hence not using 'visited_composed_classes'
-        new_cls = get_discriminator_class(cls, discr_propertyname_py, discr_value, [])
-        if new_cls is None:
-            path_to_item = kwargs.get("_path_to_item", ())
-            disc_prop_value = kwargs.get(discr_propertyname_js, kwargs.get(discr_propertyname_py))
-            raise ApiValueError(
-                "Cannot deserialize input data due to invalid discriminator "
-                "value. The OpenAPI document has no mapping for discriminator "
-                "property '%s'='%s' at path: %s" % (discr_propertyname_js, disc_prop_value, path_to_item)
-            )
-
-        if new_cls in visited_composed_classes:
-            # if we are making an instance of a composed schema Descendent
-            # which allOf includes Ancestor, then Ancestor contains
-            # a discriminator that includes Descendent.
-            # So if we make an instance of Descendent, we have to make an
-            # instance of Ancestor to hold the allOf properties.
-            # This code detects that use case and makes the instance of Ancestor
-            # For example:
-            # When making an instance of Dog, _visited_composed_classes = (Dog,)
-            # then we make an instance of Animal to include in dog._composed_instances
-            # so when we are here, cls is Animal
-            # cls.discriminator != None
-            # cls not in _visited_composed_classes
-            # new_cls = Dog
-            # but we know we know that we already have Dog
-            # because it is in visited_composed_classes
-            # so make Animal here
-            return cls._from_openapi_data(*args, **kwargs)
-
-        # Build a list containing all oneOf and anyOf descendants.
-        oneof_anyof_classes = None
-        if cls._composed_schemas is not None:
-            oneof_anyof_classes = cls._composed_schemas.get("oneOf", ()) + cls._composed_schemas.get("anyOf", ())
-        oneof_anyof_child = new_cls in oneof_anyof_classes
-        kwargs["_visited_composed_classes"] = visited_composed_classes + (cls,)
-
-        if cls._composed_schemas.get("allOf") and oneof_anyof_child:
-            # Validate that we can make self because when we make the
-            # new_cls it will not include the allOf validations in self
-            cls._from_openapi_data(*args, **kwargs)
-
-        new_inst = new_cls._new_from_openapi_data(*args, **kwargs)
-        return new_inst
+        return cls._from_openapi_data(*args, **kwargs)
 
     def __init__(self, kwargs):
         """
@@ -428,29 +245,17 @@ class OpenApiModel(object):
             file_type parameter.  If passed, type conversion is attempted If omitted no
             type conversion is done.
         :type _configuration: Configuration
-        :param _visited_composed_classes: This stores a tuple of classes
-            that we have traveled through so that if we see that class again we will not
-            use its discriminator again.  When traveling through a discriminator, the
-            composed schema that is is traveled through is added to this set.  For example
-            if Animal has a discriminator petType and we pass in "Dog", and the class Dog
-            allOf includes Animal, we move through Animal once using the discriminator, and
-            pick Dog.  Then in Dog, we will make an instance of the Animal class but this
-            time we won't travel through its discriminator because we passed in
-            _visited_composed_classes = (Animal,)
-        :type _visited_composed_classes: tuple
         """
         _check_type = kwargs.pop("_check_type", True)
         _spec_property_naming = kwargs.pop("_spec_property_naming", False)
         _path_to_item = kwargs.pop("_path_to_item", ())
         _configuration = kwargs.pop("_configuration", None)
-        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         self._data_store = {}
         self._check_type = _check_type
         self._spec_property_naming = _spec_property_naming
         self._path_to_item = _path_to_item
         self._configuration = _configuration
-        self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
         self._unparsed = False
 
     @classmethod
@@ -497,7 +302,6 @@ class ModelSimple(OpenApiModel):
             "_spec_property_naming",
             "_path_to_item",
             "_configuration",
-            "_visited_composed_classes",
             "_unparsed",
         ]
     )
@@ -559,7 +363,6 @@ class ModelNormal(OpenApiModel):
             "_spec_property_naming",
             "_path_to_item",
             "_configuration",
-            "_visited_composed_classes",
             "_unparsed",
         ]
     )
@@ -652,7 +455,7 @@ class ModelNormal(OpenApiModel):
 class ModelComposed(OpenApiModel):
     """
     The parent class of models whose type == object in their swagger/openapi
-    and have oneOf/allOf/anyOf.
+    and have oneOf.
 
     When one sets a property we use var_name_to_model_instances to store the value in
     the correct class instances + run any type checking + validation code.
@@ -661,7 +464,7 @@ class ModelComposed(OpenApiModel):
     This allows multiple composed schemas to contain the same property with additive
     constraints on the value.
 
-    :var _composed_schemas: Stores the anyOf/allOf/oneOf classes.
+    :var _composed_schemas: Stores the oneOf classes.
     :type _composed_schemas: dict
     :var _composed_instances: Stores a list of instances of the composed schemas
         defined in _composed_schemas. When properties are accessed in the self instance,
@@ -680,7 +483,6 @@ class ModelComposed(OpenApiModel):
             "_spec_property_naming",
             "_path_to_item",
             "_configuration",
-            "_visited_composed_classes",
             "_composed_instances",
             "_var_name_to_model_instances",
             "_additional_properties_model_instances",
@@ -695,7 +497,6 @@ class ModelComposed(OpenApiModel):
             "_path_to_item": self._path_to_item,
             "_spec_property_naming": self._spec_property_naming,
             "_configuration": self._configuration,
-            "_visited_composed_classes": self._visited_composed_classes,
         }
         composed_info = validate_get_composed_info(constant_args, kwargs, self)
         self._composed_instances = composed_info[0]
@@ -732,7 +533,7 @@ class ModelComposed(OpenApiModel):
         # get the attribute from the correct instance
         model_instances = self._var_name_to_model_instances.get(name)
         values = []
-        # A composed model stores self and child (oneof/anyOf/allOf) models under
+        # A composed model stores self and child (oneof) models under
         # self._var_name_to_model_instances.
         # Any property must exist in self and all model instances
         # The value stored in all model instances must be the same
@@ -1172,28 +973,11 @@ def remove_uncoercible(required_types_classes, current_item, spec_property_namin
     return results_classes
 
 
-def get_discriminated_classes(cls):
-    """Returns all the classes that a discriminator converts to."""
-    possible_classes = []
-    key = list(cls.discriminator.keys())[0]
-    if is_type_nullable(cls):
-        possible_classes.append(cls)
-    for discr_cls in cls.discriminator[key].values():
-        if hasattr(discr_cls, "discriminator") and discr_cls.discriminator is not None:
-            possible_classes.extend(get_discriminated_classes(discr_cls))
-        else:
-            possible_classes.append(discr_cls)
-    return possible_classes
-
-
 def get_possible_classes(cls, from_server_context):
     possible_classes = [cls]
     if from_server_context:
         return possible_classes
-    if hasattr(cls, "discriminator") and cls.discriminator is not None:
-        possible_classes = []
-        possible_classes.extend(get_discriminated_classes(cls))
-    elif issubclass(cls, ModelComposed):
+    if issubclass(cls, ModelComposed):
         possible_classes.extend(composed_model_input_classes(cls))
     return possible_classes
 
@@ -1206,8 +990,7 @@ def get_required_type_classes(required_types_mixed, spec_property_naming):
     :type required_types_mixed: tuple/list
     :param spec_property_naming: if True these values came from the server, and
         we use the data types in our endpoints.  If False, we are client side and we
-        need to include oneOf and discriminator classes inside the data types in our
-        endpoints
+        need to include oneOf classes inside the data types in our endpoints.
     :type spec_property_naming: bool
 
     :return (valid_classes, dict_valid_class_to_child_types_mixed):
@@ -1315,56 +1098,6 @@ def deserialize_primitive(data, klass, path_to_item):
             "{0}Failed to parse {1} as {2}".format(additional_message, repr(data), klass.__name__),
             path_to_item=path_to_item,
         ) from ex
-
-
-def get_discriminator_class(model_class, discr_name, discr_value, cls_visited):
-    """Returns the child class specified by the discriminator.
-
-    :param model_class: The model class.
-    :type model_class: OpenApiModel
-    :param discr_name: The name of the discriminator property.
-    :type discr_name: str
-    :param discr_value: The discriminator value.
-    :param cls_visited: List of model classes that have been visited.  Used to
-        determine the discriminator class without visiting circular references
-        indefinitely.
-    :type cls_visited: list
-
-    :return: The chosen child class that will be used to deserialize the data,
-        for example dog.Dog. If a class is not found, None is returned.
-    :rtype: class/None
-    """
-    if model_class in cls_visited:
-        # The class has already been visited and no suitable class was found.
-        return None
-    cls_visited.append(model_class)
-    used_model_class = None
-    if discr_name in model_class.discriminator:
-        class_name_to_discr_class = model_class.discriminator[discr_name]
-        used_model_class = class_name_to_discr_class.get(discr_value)
-    if used_model_class is None:
-        # We didn't find a discriminated class in class_name_to_discr_class.
-        # So look in the ancestor or descendant discriminators
-        # The discriminator mapping may exist in a descendant (anyOf, oneOf)
-        # or ancestor (allOf).
-        # Ancestor example: in the GrandparentAnimal -> ParentPet -> ChildCat
-        #   hierarchy, the discriminator mappings may be defined at any level
-        #   in the hierarchy.
-        # Descendant example: mammal -> whale/zebra/Pig -> BasquePig/DanishPig
-        #   if we try to make BasquePig from mammal, we need to travel through
-        #   the oneOf descendant discriminators to find BasquePig
-        descendant_classes = model_class._composed_schemas.get("oneOf", ()) + model_class._composed_schemas.get(
-            "anyOf", ()
-        )
-        ancestor_classes = model_class._composed_schemas.get("allOf", ())
-        possible_classes = descendant_classes + ancestor_classes
-        for cls in possible_classes:
-            # Check if the schema has inherited discriminators.
-            if hasattr(cls, "discriminator") and cls.discriminator is not None:
-                used_model_class = get_discriminator_class(cls, discr_name, discr_value, cls_visited)
-                if used_model_class is not None:
-                    return used_model_class
-    return used_model_class
 
 
 def deserialize_model(model_data, model_class, path_to_item, check_type, configuration, spec_property_naming):
@@ -1513,7 +1246,7 @@ def is_type_nullable(input_type):
 
         1. The OAS 'nullable' attribute has been specified,
         2. The type is the 'null' type,
-        3. The type is a anyOf/oneOf composed schema, and a child schema is
+        3. The type is a oneOf composed schema, and a child schema is
            the 'null' type.
 
     :param input_type: The class of the input_value that we are checking.
@@ -1526,11 +1259,8 @@ def is_type_nullable(input_type):
     if issubclass(input_type, OpenApiModel) and input_type._nullable:
         return True
     if issubclass(input_type, ModelComposed):
-        # If oneOf/anyOf, check if the 'null' type is one of the allowed types.
+        # If oneOf, check if the 'null' type is one of the allowed types.
         for t in input_type._composed_schemas.get("oneOf", ()):
-            if is_type_nullable(t):
-                return True
-        for t in input_type._composed_schemas.get("anyOf", ()):
             if is_type_nullable(t):
                 return True
     return False
@@ -1549,15 +1279,10 @@ def is_valid_type(input_class_simple, valid_classes):
     if not valid_type and (issubclass(input_class_simple, OpenApiModel) or input_class_simple is none_type):
         for valid_class in valid_classes:
             if input_class_simple is none_type and is_type_nullable(valid_class):
-                # Schema is oneOf/anyOf and the 'null' type is one of the allowed types.
+                # Schema is oneOf and the 'null' type is one of the allowed types.
                 return True
-            if not (issubclass(valid_class, OpenApiModel) and valid_class.discriminator):
+            if issubclass(valid_class, OpenApiModel):
                 continue
-            discr_propertyname_py = list(valid_class.discriminator.keys())[0]
-            discriminator_classes = valid_class.discriminator[discr_propertyname_py].values()
-            valid_type = is_valid_type(input_class_simple, discriminator_classes)
-            if valid_type:
-                return True
     return valid_type
 
 
@@ -1779,37 +1504,6 @@ def get_valid_classes_phrase(input_classes):
     return "is one of [{0}]".format(", ".join(all_class_names))
 
 
-def get_allof_instances(self, model_args, constant_args):
-    """
-    :param self: The class we are handling.
-    :param model_args: var_name to var_value used to make instances.
-    :type model_args: dict
-    :param constant_args:
-        metadata arguments:
-            _check_type
-            _path_to_item
-            _spec_property_naming
-            _configuration
-            _visited_composed_classes
-    :type constant_args: dict
-
-    :rtype: list
-    """
-    composed_instances = []
-    for allof_class in self._composed_schemas["allOf"]:
-
-        try:
-            allof_instance = allof_class(**model_args, **constant_args)
-            composed_instances.append(allof_instance)
-        except Exception as ex:
-            raise ApiValueError(
-                "Invalid inputs given to generate an instance of '%s'. The "
-                "input data was invalid for the allOf schema '%s' in the composed "
-                "schema '%s'. Error=%s" % (allof_class.__name__, allof_class.__name__, self.__class__.__name__, str(ex))
-            ) from ex
-    return composed_instances
-
-
 def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
     """
     Find the oneOf schema that matches the input data (e.g. payload).
@@ -1882,45 +1576,6 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
     return oneof_instances[0]
 
 
-def get_anyof_instances(self, model_args, constant_args):
-    """
-    :param self: the class we are handling
-    :param model_args: var_name to var_value
-        The input data, e.g. the payload that must match at least one
-        anyOf child schema in the OpenAPI document.
-    :type model_args: dict
-    :param constant_args: var_name to var_value
-        args that every model requires, including configuration, server
-        and path to item.
-    :type constant_args: dict
-
-    :rtype: list
-    """
-    anyof_instances = []
-    if len(self._composed_schemas["anyOf"]) == 0:
-        return anyof_instances
-
-    for anyof_class in self._composed_schemas["anyOf"]:
-        # The composed oneOf schema allows the 'null' type and the input data
-        # is the null value. This is a OAS >= 3.1 feature.
-        if anyof_class is none_type:
-            # skip none_types because we are deserializing dict data.
-            # none_type deserialization is handled in the __new__ method
-            continue
-
-        try:
-            anyof_instance = anyof_class(**model_args, **constant_args)
-            anyof_instances.append(anyof_instance)
-        except Exception:
-            pass
-    if len(anyof_instances) == 0:
-        raise ApiValueError(
-            "Invalid inputs given to generate an instance of %s. None of the "
-            "anyOf schemas matched the inputs." % self.__class__.__name__
-        )
-    return anyof_instances
-
-
 def get_discarded_args(self, composed_instances, model_args):
     """
     Gathers the args that were discarded by configuration.discard_unknown_keys
@@ -1930,38 +1585,23 @@ def get_discarded_args(self, composed_instances, model_args):
     # arguments passed to self were already converted to python names
     # before __init__ was called
     for instance in composed_instances:
-        if instance.__class__ in self._composed_schemas["allOf"]:
-            try:
-                keys = instance.to_dict().keys()
-                discarded_keys = model_args - keys
-                discarded_args.update(discarded_keys)
-            except Exception:
-                # allOf integer schema will throw exception
-                pass
-        else:
-            try:
-                all_keys = set(model_to_dict(instance, serialize=False).keys())
-                js_keys = model_to_dict(instance, serialize=True).keys()
-                all_keys.update(js_keys)
-                discarded_keys = model_arg_keys - all_keys
-                discarded_args.update(discarded_keys)
-            except Exception:
-                # allOf integer schema will throw exception
-                pass
+        all_keys = set(model_to_dict(instance, serialize=False).keys())
+        js_keys = model_to_dict(instance, serialize=True).keys()
+        all_keys.update(js_keys)
+        discarded_keys = model_arg_keys - all_keys
+        discarded_args.update(discarded_keys)
     return discarded_args
 
 
 def validate_get_composed_info(constant_args, model_args, self):
     """
     For composed schemas, generate schema instances for all schemas in the
-    oneOf/anyOf/allOf definition. If additional properties are allowed, also assign
+    oneOf definition. If additional properties are allowed, also assign
     those properties on all matched schemas that contain additionalProperties.
     Openapi schemas are python classes.
 
     Exceptions are raised if:
     - 0 or > 1 oneOf schema matches the model_args input data
-    - no anyOf schema matches the model_args input data
-    - any of the allOf schemas do not match the model_args input data
 
     :param constant_args: These are the args that every model requires.
     :type constant_args: dict
@@ -1986,13 +1626,9 @@ def validate_get_composed_info(constant_args, model_args, self):
     """
     # Create composed_instances
     composed_instances = []
-    allof_instances = get_allof_instances(self, model_args, constant_args)
-    composed_instances.extend(allof_instances)
     oneof_instance = get_oneof_instance(self.__class__, model_args, constant_args)
     if oneof_instance is not None:
         composed_instances.append(oneof_instance)
-    anyof_instances = get_anyof_instances(self, model_args, constant_args)
-    composed_instances.extend(anyof_instances)
 
     additional_properties_model_instances = []
     if self.additional_properties_type is not None:
@@ -2056,4 +1692,3 @@ def set_attribute_from_path(obj, path, value, params_map):
         except (KeyError, AttributeError):
             obj = root()
     obj[last] = value
-{# keep new line #}

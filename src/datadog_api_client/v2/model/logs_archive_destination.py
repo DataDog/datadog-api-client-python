@@ -66,8 +66,6 @@ class LogsArchiveDestination(ModelComposed):
         from datadog_api_client.v2.model.logs_archive_destination_s3 import LogsArchiveDestinationS3
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 LogsArchiveDestinationAzure,
                 LogsArchiveDestinationGCS,

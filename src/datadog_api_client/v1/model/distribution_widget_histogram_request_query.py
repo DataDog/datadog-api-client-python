@@ -93,8 +93,6 @@ class DistributionWidgetHistogramRequestQuery(ModelComposed):
         )
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 FormulaAndFunctionMetricQueryDefinition,
                 FormulaAndFunctionEventQueryDefinition,

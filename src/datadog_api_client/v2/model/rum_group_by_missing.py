@@ -38,8 +38,6 @@ class RUMGroupByMissing(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 str,
                 float,

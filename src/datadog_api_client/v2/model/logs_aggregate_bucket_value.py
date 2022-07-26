@@ -42,8 +42,6 @@ class LogsAggregateBucketValue(ModelComposed):
         )
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 str,
                 float,
