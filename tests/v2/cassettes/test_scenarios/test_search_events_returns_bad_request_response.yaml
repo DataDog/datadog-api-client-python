@@ -1,0 +1,24 @@
+interactions:
+- request:
+    body: '{"filter":{"from":"now-15m","query":"service:web* AND @http.status_code:[200
+      TO 299]","to":"now"},"options":{"timezone":"GMT"},"page":{"cursor":"eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==","limit":25},"sort":"timestamp"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/events/search
+  response:
+    body:
+      string: '{"errors":["{''errors'': [u\"input_validation_error(Field ''page''
+        is invalid: invalid cursor)\"]}"]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

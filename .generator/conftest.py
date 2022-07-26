@@ -143,7 +143,7 @@ def pytest_bdd_after_scenario(request, feature, scenario):
 
 def pytest_bdd_apply_tag(tag, function):
     """Register tags as custom markers and skip test for '@skip' ones."""
-    skip_tags = {"with-pagination"}
+    skip_tags = {}
     if tag in skip_tags:
         marker = pytest.mark.skip(reason=f"skipped because '{tag}' in {skip_tags}")
         marker(function)
@@ -520,7 +520,11 @@ for f in (ROOT_PATH / "tests").rglob("given.json"):
 def execute_request(context):
     """Execute the prepared request."""
     assert context["api_request"]["operation_id"] is not None
-    # NOTE add undo
+
+
+@when("the request with pagination is sent")
+def execute_request_with_pagination(context):
+    context["pagination"] = True
 
 
 @then(parsers.parse("the response status is {status:d} {description}"))
@@ -546,6 +550,11 @@ def expect_equal_value(context, response_path, fixture_path):
 @then(parsers.parse('the response "{response_path}" has length {fixture_length:d}'))
 def expect_equal_length(context, response_path, fixture_length):
     """Check the length of a response attribute."""
+
+
+@then(parsers.parse("the response has {fixture_length:d} items"))
+def expect_equal_response_items(context, fixture_length):
+    """Check the size of a response."""
 
 
 @then(parsers.parse('the response "{response_path}" is false'))
