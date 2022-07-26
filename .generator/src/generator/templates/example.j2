@@ -38,6 +38,11 @@ configuration.unstable_operations["{{ operation|safe_snake_case }}"] = True
 {%- endfor %}
 with ApiClient(configuration) as api_client:
     api_instance = {{ context.api_instance.name }}Api(api_client)
+    {%- if context.pagination %}
+    items = api_instance.{{ context.api_request.operation_id|safe_snake_case }}_with_pagination({{ parameters }}{% if body %}body=body{% endif %})
+    for item in items:
+        print(item)
+    {%- else %}
     {%- if context.status_code != 204 and context.api_response.content %}
     response = api_instance.{{ context.api_request.operation_id|safe_snake_case }}({{ parameters }}{% if body %}body=body{% endif %})
 
@@ -48,10 +53,9 @@ with ApiClient(configuration) as api_client:
     {%- elif schema.get("schema", {}).get("format") == "binary" %}
 
     print(response.read())
-    {%- else %}
-    {{ 1/0 }}
     {%- endif %}
     {%- endfor %}
     {%- else %}
     api_instance.{{ context.api_request.operation_id|safe_snake_case }}({{ parameters }}{% if body %}body=body{% endif %})
+    {%- endif %}
     {%- endif %}
