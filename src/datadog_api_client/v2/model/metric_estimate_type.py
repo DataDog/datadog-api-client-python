@@ -10,6 +10,12 @@ from datadog_api_client.model_utils import (
 
 
 class MetricEstimateType(ModelSimple):
+    """
+    Estimate type based on the queried configuration. By default, `count_or_gauge` is returned. `distribution` is returned for distribution metrics without percentiles enabled. Lastly, `percentile` is returned if `filter[pct]=true` is queried with a distribution metric.
+
+    :param value: If omitted defaults to "count_or_gauge". Must be one of ["count_or_gauge", "distribution", "percentile"].
+    :type value: str
+    """
 
     allowed_values = {
         "value": {
@@ -24,33 +30,3 @@ class MetricEstimateType(ModelSimple):
         return {
             "value": (str,),
         }
-
-    def __init__(self, *args, **kwargs):
-        """
-        Estimate type based on the queried configuration. By default, `count_or_gauge` is returned. `distribution` is returned for distribution metrics without percentiles enabled. Lastly, `percentile` is returned if `filter[pct]=true` is queried with a distribution metric.
-
-        Note that value can be passed either in args or in kwargs, but not in both.
-
-        :param value: If omitted defaults to "count_or_gauge". Must be one of ["count_or_gauge", "distribution", "percentile"].
-        :type value: str
-        """
-        super().__init__(kwargs)
-
-        if "value" in kwargs:
-            value = kwargs.pop("value")
-        elif args:
-            args = list(args)
-            value = args.pop(0)
-        else:
-            value = "count_or_gauge"
-
-        self._check_pos_args(args)
-
-        self.value = value
-
-        self._check_kw_args(kwargs)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        return cls(*args, **kwargs)

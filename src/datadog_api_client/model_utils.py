@@ -308,6 +308,16 @@ class ModelSimple(OpenApiModel):
         ]
     )
 
+    def __init__(self, value, **kwargs):
+        super().__init__(kwargs)
+        self.value = value
+        self._check_kw_args(kwargs)
+
+    @classmethod
+    def _from_openapi_data(cls, value, **kwargs):
+        """Helper creating a new instance from a response."""
+        return cls(value, **kwargs)
+
     def __setitem__(self, name, value):
         """Set the value of an attribute using square-bracket notation: `instance[attr] = val`."""
         if name in self.required_properties:

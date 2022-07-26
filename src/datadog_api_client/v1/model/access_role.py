@@ -10,6 +10,12 @@ from datadog_api_client.model_utils import (
 
 
 class AccessRole(ModelSimple):
+    """
+    The access role of the user. Options are **st** (standard user), **adm** (admin user), or **ro** (read-only user).
+
+    :param value: If omitted defaults to "st". Must be one of ["st", "adm", "ro", "ERROR"].
+    :type value: str
+    """
 
     allowed_values = {
         "value": {
@@ -25,33 +31,3 @@ class AccessRole(ModelSimple):
         return {
             "value": (str,),
         }
-
-    def __init__(self, *args, **kwargs):
-        """
-        The access role of the user. Options are **st** (standard user), **adm** (admin user), or **ro** (read-only user).
-
-        Note that value can be passed either in args or in kwargs, but not in both.
-
-        :param value: If omitted defaults to "st". Must be one of ["st", "adm", "ro", "ERROR"].
-        :type value: str
-        """
-        super().__init__(kwargs)
-
-        if "value" in kwargs:
-            value = kwargs.pop("value")
-        elif args:
-            args = list(args)
-            value = args.pop(0)
-        else:
-            value = "st"
-
-        self._check_pos_args(args)
-
-        self.value = value
-
-        self._check_kw_args(kwargs)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        return cls(*args, **kwargs)

@@ -4,13 +4,20 @@
 
 
 from datadog_api_client.model_utils import (
-    ApiTypeError,
     ModelSimple,
     cached_property,
 )
 
 
 class DashboardReflowType(ModelSimple):
+    """
+    Reflow type for a **new dashboard layout** dashboard. Set this only when layout type is 'ordered'.
+        If set to 'fixed', the dashboard expects all widgets to have a layout, and if it's set to 'auto',
+        widgets should not have layouts.
+
+    :param value: Must be one of ["auto", "fixed"].
+    :type value: str
+    """
 
     allowed_values = {
         "value": {
@@ -24,39 +31,3 @@ class DashboardReflowType(ModelSimple):
         return {
             "value": (str,),
         }
-
-    def __init__(self, *args, **kwargs):
-        """
-        Reflow type for a **new dashboard layout** dashboard. Set this only when layout type is 'ordered'.
-        If set to 'fixed', the dashboard expects all widgets to have a layout, and if it's set to 'auto',
-        widgets should not have layouts.
-
-        Note that value can be passed either in args or in kwargs, but not in both.
-
-        :param value: Must be one of ["auto", "fixed"].
-        :type value: str
-        """
-        super().__init__(kwargs)
-
-        if "value" in kwargs:
-            value = kwargs.pop("value")
-        elif args:
-            args = list(args)
-            value = args.pop(0)
-        else:
-            raise ApiTypeError(
-                "value is required, but not passed in args or kwargs and doesn't have default",
-                path_to_item=self._path_to_item,
-                valid_classes=(self.__class__,),
-            )
-
-        self._check_pos_args(args)
-
-        self.value = value
-
-        self._check_kw_args(kwargs)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        return cls(*args, **kwargs)

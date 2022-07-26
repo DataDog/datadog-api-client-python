@@ -10,6 +10,12 @@ from datadog_api_client.model_utils import (
 
 
 class APIKeysSort(ModelSimple):
+    """
+    Sorting options
+
+    :param value: If omitted defaults to "name". Must be one of ["created_at", "-created_at", "last4", "-last4", "modified_at", "-modified_at", "name", "-name"].
+    :type value: str
+    """
 
     allowed_values = {
         "value": {
@@ -29,33 +35,3 @@ class APIKeysSort(ModelSimple):
         return {
             "value": (str,),
         }
-
-    def __init__(self, *args, **kwargs):
-        """
-        Sorting options
-
-        Note that value can be passed either in args or in kwargs, but not in both.
-
-        :param value: If omitted defaults to "name". Must be one of ["created_at", "-created_at", "last4", "-last4", "modified_at", "-modified_at", "name", "-name"].
-        :type value: str
-        """
-        super().__init__(kwargs)
-
-        if "value" in kwargs:
-            value = kwargs.pop("value")
-        elif args:
-            args = list(args)
-            value = args.pop(0)
-        else:
-            value = "name"
-
-        self._check_pos_args(args)
-
-        self.value = value
-
-        self._check_kw_args(kwargs)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        return cls(*args, **kwargs)

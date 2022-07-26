@@ -10,6 +10,12 @@ from datadog_api_client.model_utils import (
 
 
 class UsageSortDirection(ModelSimple):
+    """
+    The direction to sort by.
+
+    :param value: If omitted defaults to "desc". Must be one of ["desc", "asc"].
+    :type value: str
+    """
 
     allowed_values = {
         "value": {
@@ -23,33 +29,3 @@ class UsageSortDirection(ModelSimple):
         return {
             "value": (str,),
         }
-
-    def __init__(self, *args, **kwargs):
-        """
-        The direction to sort by.
-
-        Note that value can be passed either in args or in kwargs, but not in both.
-
-        :param value: If omitted defaults to "desc". Must be one of ["desc", "asc"].
-        :type value: str
-        """
-        super().__init__(kwargs)
-
-        if "value" in kwargs:
-            value = kwargs.pop("value")
-        elif args:
-            args = list(args)
-            value = args.pop(0)
-        else:
-            value = "desc"
-
-        self._check_pos_args(args)
-
-        self.value = value
-
-        self._check_kw_args(kwargs)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        return cls(*args, **kwargs)

@@ -10,6 +10,12 @@ from datadog_api_client.model_utils import (
 
 
 class NotebookResourceType(ModelSimple):
+    """
+    Type of the Notebook resource.
+
+    :param value: If omitted defaults to "notebooks". Must be one of ["notebooks"].
+    :type value: str
+    """
 
     allowed_values = {
         "value": {
@@ -22,33 +28,3 @@ class NotebookResourceType(ModelSimple):
         return {
             "value": (str,),
         }
-
-    def __init__(self, *args, **kwargs):
-        """
-        Type of the Notebook resource.
-
-        Note that value can be passed either in args or in kwargs, but not in both.
-
-        :param value: If omitted defaults to "notebooks". Must be one of ["notebooks"].
-        :type value: str
-        """
-        super().__init__(kwargs)
-
-        if "value" in kwargs:
-            value = kwargs.pop("value")
-        elif args:
-            args = list(args)
-            value = args.pop(0)
-        else:
-            value = "notebooks"
-
-        self._check_pos_args(args)
-
-        self.value = value
-
-        self._check_kw_args(kwargs)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        return cls(*args, **kwargs)

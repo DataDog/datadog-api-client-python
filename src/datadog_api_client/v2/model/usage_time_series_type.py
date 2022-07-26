@@ -10,6 +10,12 @@ from datadog_api_client.model_utils import (
 
 
 class UsageTimeSeriesType(ModelSimple):
+    """
+    Type of usage data.
+
+    :param value: If omitted defaults to "usage_timeseries". Must be one of ["usage_timeseries"].
+    :type value: str
+    """
 
     allowed_values = {
         "value": {
@@ -22,33 +28,3 @@ class UsageTimeSeriesType(ModelSimple):
         return {
             "value": (str,),
         }
-
-    def __init__(self, *args, **kwargs):
-        """
-        Type of usage data.
-
-        Note that value can be passed either in args or in kwargs, but not in both.
-
-        :param value: If omitted defaults to "usage_timeseries". Must be one of ["usage_timeseries"].
-        :type value: str
-        """
-        super().__init__(kwargs)
-
-        if "value" in kwargs:
-            value = kwargs.pop("value")
-        elif args:
-            args = list(args)
-            value = args.pop(0)
-        else:
-            value = "usage_timeseries"
-
-        self._check_pos_args(args)
-
-        self.value = value
-
-        self._check_kw_args(kwargs)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        return cls(*args, **kwargs)
