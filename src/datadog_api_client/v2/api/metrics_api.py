@@ -628,6 +628,8 @@ class MetricsApi:
         * 50 bytes for the timeseries
         * The full payload is approximately 100 bytes.
 
+        Host name is one of the resources in the Resources field.
+
         :type body: MetricPayload
         :param content_encoding: HTTP header used to compress the media-type.
         :type content_encoding: MetricContentEncoding, optional
