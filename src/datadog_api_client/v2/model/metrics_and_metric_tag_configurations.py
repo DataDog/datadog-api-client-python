@@ -50,8 +50,6 @@ class MetricsAndMetricTagConfigurations(ModelComposed):
         from datadog_api_client.v2.model.metric_tag_configuration import MetricTagConfiguration
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 Metric,
                 MetricTagConfiguration,

@@ -54,8 +54,6 @@ class UserResponseIncludedItem(ModelComposed):
         from datadog_api_client.v2.model.role import Role
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 Organization,
                 Permission,

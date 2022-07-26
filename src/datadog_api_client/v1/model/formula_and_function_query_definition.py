@@ -120,8 +120,6 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
         )
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 FormulaAndFunctionMetricQueryDefinition,
                 FormulaAndFunctionEventQueryDefinition,

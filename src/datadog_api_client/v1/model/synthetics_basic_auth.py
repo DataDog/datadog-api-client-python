@@ -72,8 +72,6 @@ class SyntheticsBasicAuth(ModelComposed):
         from datadog_api_client.v1.model.synthetics_basic_auth_ntlm import SyntheticsBasicAuthNTLM
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 SyntheticsBasicAuthWeb,
                 SyntheticsBasicAuthSigv4,

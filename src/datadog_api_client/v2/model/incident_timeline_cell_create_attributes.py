@@ -51,8 +51,6 @@ class IncidentTimelineCellCreateAttributes(ModelComposed):
         )
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 IncidentTimelineCellMarkdownCreateAttributes,
             ],

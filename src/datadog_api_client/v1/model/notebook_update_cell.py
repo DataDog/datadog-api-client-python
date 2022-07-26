@@ -52,8 +52,6 @@ class NotebookUpdateCell(ModelComposed):
         from datadog_api_client.v1.model.notebook_cell_update_request import NotebookCellUpdateRequest
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 NotebookCellCreateRequest,
                 NotebookCellUpdateRequest,

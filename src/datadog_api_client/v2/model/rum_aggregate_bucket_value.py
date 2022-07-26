@@ -40,8 +40,6 @@ class RUMAggregateBucketValue(ModelComposed):
         from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries import RUMAggregateBucketValueTimeseries
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 str,
                 float,
