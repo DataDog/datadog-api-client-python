@@ -38,8 +38,6 @@ class LogsGroupByTotal(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 bool,
                 str,

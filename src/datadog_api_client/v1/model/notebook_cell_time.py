@@ -56,8 +56,6 @@ class NotebookCellTime(ModelComposed):
         from datadog_api_client.v1.model.notebook_absolute_time import NotebookAbsoluteTime
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 NotebookRelativeTime,
                 NotebookAbsoluteTime,

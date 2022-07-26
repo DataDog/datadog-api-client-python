@@ -52,8 +52,6 @@ class APIKeyResponseIncludedItem(ModelComposed):
         from datadog_api_client.v2.model.user import User
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 User,
             ],
