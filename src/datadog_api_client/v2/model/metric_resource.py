@@ -26,10 +26,10 @@ class MetricResource(ModelNormal):
         """
         Metric resource.
 
-        :param name: The name of the metric.
+        :param name: The name of the resource.
         :type name: str, optional
 
-        :param type: The type of metric.
+        :param type: The type of the resource.
         :type type: str, optional
         """
         super().__init__(kwargs)
