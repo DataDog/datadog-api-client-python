@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/events?filter%5Bquery%5D=datadog-agent&filter%5Bfrom%5D=2020-09-17T11%3A48%3A36%2B01%3A00&filter%5Bto%5D=2020-09-17T12%3A48%3A36%2B01%3A00&page%5Blimit%5D=5
+  response:
+    body:
+      string: '{"data":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -170,6 +170,18 @@
       "type": "safe"
     }
   },
+  "ListEvents": {
+    "tag": "Events",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchEvents": {
+    "tag": "Events",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListIncidents": {
     "tag": "Incidents",
     "undo": {

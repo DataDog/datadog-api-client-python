@@ -1,0 +1,47 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/events?filter%5Bfrom%5D=now-15m&filter%5Bto%5D=now&page%5Blimit%5D=2
+  response:
+    body:
+      string: '{"meta":{"page":{"after":"eyJhZnRlciI6IkFnQUFBWUdDRldoUV9BZHZQZ0FBQUFBQUFBQVlBQUFBQUVGWlIwTkdWMmhSUVVGQ1VIQk5UMjQxVURKZllVZzFTUUFBQUNRQUFBQUFNREU0TVRneU1UVXROekF5TUMwMFpXTTJMV0l3WVdJdFpEVTFZbU0zTlRZMlpUUTMifQ"}},"data":[{"attributes":{"attributes":{"status":"info","event_object":"adip","service":"undefined","title":"[Synthetics]
+        EVMGT pipeline test","timestamp":1655744852000,"hostname":"do ani","priority":"normal","aggregation_key":"adip","evt":{"source_id":100,"type":"api","id":"6567977849972254562"}},"message":"Synthetics
+        test check that this event has the right content in the right format at the
+        end of the event-pipeline output","tags":["environment:staging","source:my_apps","source:my_apps","environment:staging"],"timestamp":"2022-06-20T17:07:32Z"},"type":"event","id":"AgAAAYGCFXAgIVFvPgAAAAAAAAAYAAAAAEFZR0NGWEFnQUFBeFhHdU9OeF91OEZjSwAAACQAAAAAMDE4MTgyMTUtNzAyMC00ZWM2LWIwYWItZDU1YmM3NTY2ZTQ3"},{"attributes":{"attributes":{"status":"info","event_object":"adip","service":"undefined","title":"[Synthetics]
+        EVMGT pipeline test","timestamp":1655744850000,"hostname":"do ani","priority":"normal","aggregation_key":"adip","evt":{"source_id":100,"type":"api","id":"6567977820721297650"}},"message":"Synthetics
+        test check that this event has the right content in the right format at the
+        end of the event-pipeline output","tags":["environment:staging","source:my_apps","source:my_apps","environment:staging"],"timestamp":"2022-06-20T17:07:30Z"},"type":"event","id":"AgAAAYGCFWhQ_AdvPgAAAAAAAAAYAAAAAEFZR0NGV2hRQUFCUHBNT241UDJfYUg1SQAAACQAAAAAMDE4MTgyMTUtNzAyMC00ZWM2LWIwYWItZDU1YmM3NTY2ZTQ3"}],"links":{"next":"https://api.datadoghq.com/api/v2/events?filter%5Bfrom%5D=now-15m&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFnQUFBWUdDRldoUV9BZHZQZ0FBQUFBQUFBQVlBQUFBQUVGWlIwTkdWMmhSUVVGQ1VIQk5UMjQxVURKZllVZzFTUUFBQUNRQUFBQUFNREU0TVRneU1UVXROekF5TUMwMFpXTTJMV0l3WVdJdFpEVTFZbU0zTlRZMlpUUTMifQ&page%5Blimit%5D=2"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/events?filter%5Bfrom%5D=now-15m&filter%5Bto%5D=now&page%5Blimit%5D=2&page%5Bcursor%5D=eyJhZnRlciI6IkFnQUFBWUdDRldoUV9BZHZQZ0FBQUFBQUFBQVlBQUFBQUVGWlIwTkdWMmhSUVVGQ1VIQk5UMjQxVURKZllVZzFTUUFBQUNRQUFBQUFNREU0TVRneU1UVXROekF5TUMwMFpXTTJMV0l3WVdJdFpEVTFZbU0zTlRZMlpUUTMifQ
+  response:
+    body:
+      string: '{"meta":{"page":{"after":"eyJhZnRlciI6IkFnQUFBWUdDRlRXSTJoUnZQZ0FBQUFBQUFBQVlBQUFBQUVGWlIwTkdWRmRKUVVGRVVqbERWbEZ5ZEdoZlMxOXJRZ0FBQUNRQUFBQUFNREU0TVRneU1UVXRNelU0T0MwME1EZGhMV0V5TURndE1qUmxZekE1TmpVMVptTmkifQ"}},"data":[{"attributes":{"attributes":{"status":"info","event_object":"adip","service":"undefined","title":"[Synthetics]
+        EVMGT pipeline test","timestamp":1655744837000,"hostname":"do ani","priority":"normal","aggregation_key":"adip","evt":{"source_id":100,"type":"api","id":"6567977596797486753"}},"message":"Synthetics
+        test check that this event has the right content in the right format at the
+        end of the event-pipeline output","tags":["environment:staging","source:my_apps","source:my_apps","environment:staging"],"timestamp":"2022-06-20T17:07:17Z"},"type":"event","id":"AgAAAYGCFTWI2hRvPgAAAAAAAAAYAAAAAEFZR0NGVFdJQUFEUjlDVlFydGhfS19rQgAAACQAAAAAMDE4MTgyMTUtMzU4OC00MDdhLWEyMDgtMjRlYzA5NjU1ZmNi"}],"links":{"next":"https://api.datadoghq.com/api/v2/events?filter%5Bfrom%5D=now-15m&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFnQUFBWUdDRlRXSTJoUnZQZ0FBQUFBQUFBQVlBQUFBQUVGWlIwTkdWRmRKUVVGRVVqbERWbEZ5ZEdoZlMxOXJRZ0FBQUNRQUFBQUFNREU0TVRneU1UVXRNelU0T0MwME1EZGhMV0V5TURndE1qUmxZekE1TmpVMVptTmkifQ&page%5Blimit%5D=2"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

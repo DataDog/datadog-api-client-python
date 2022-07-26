@@ -29,6 +29,13 @@ dashboard\_lists\_api
    :members:
    :show-inheritance:
 
+events\_api
+-----------
+
+.. automodule:: datadog_api_client.v2.api.events_api
+   :members:
+   :show-inheritance:
+
 incident\_services\_api
 -----------------------
 
