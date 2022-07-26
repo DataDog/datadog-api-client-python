@@ -51,8 +51,6 @@ class IncidentFieldAttributes(ModelComposed):
         )
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 IncidentFieldAttributesSingleValue,
                 IncidentFieldAttributesMultipleValue,

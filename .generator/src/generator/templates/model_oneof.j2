@@ -44,8 +44,6 @@ class {{ name }}(ModelComposed):
 {%- endfor %}
 {%- endif %}
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
             {%- for ref in get_oneof_types(model) %}
                 {{ ref }},

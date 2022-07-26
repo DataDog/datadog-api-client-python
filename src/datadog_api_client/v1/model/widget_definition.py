@@ -364,8 +364,6 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 AlertGraphWidgetDefinition,
                 AlertValueWidgetDefinition,

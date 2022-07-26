@@ -60,8 +60,6 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
         )
 
         return {
-            "anyOf": [],
-            "allOf": [],
             "oneOf": [
                 MonitorFormulaAndFunctionEventQueryDefinition,
             ],
