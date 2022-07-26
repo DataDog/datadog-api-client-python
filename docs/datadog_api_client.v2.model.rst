@@ -596,6 +596,125 @@ dashboard\_type
    :members:
    :show-inheritance:
 
+event
+-----
+
+.. automodule:: datadog_api_client.v2.model.event
+   :members:
+   :show-inheritance:
+
+event\_attributes
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.event_attributes
+   :members:
+   :show-inheritance:
+
+event\_priority
+---------------
+
+.. automodule:: datadog_api_client.v2.model.event_priority
+   :members:
+   :show-inheritance:
+
+event\_response
+---------------
+
+.. automodule:: datadog_api_client.v2.model.event_response
+   :members:
+   :show-inheritance:
+
+event\_response\_attributes
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.event_response_attributes
+   :members:
+   :show-inheritance:
+
+event\_status\_type
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.event_status_type
+   :members:
+   :show-inheritance:
+
+event\_type
+-----------
+
+.. automodule:: datadog_api_client.v2.model.event_type
+   :members:
+   :show-inheritance:
+
+events\_list\_request
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.events_list_request
+   :members:
+   :show-inheritance:
+
+events\_list\_response
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.events_list_response
+   :members:
+   :show-inheritance:
+
+events\_list\_response\_links
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.events_list_response_links
+   :members:
+   :show-inheritance:
+
+events\_query\_filter
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.events_query_filter
+   :members:
+   :show-inheritance:
+
+events\_query\_options
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.events_query_options
+   :members:
+   :show-inheritance:
+
+events\_request\_page
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.events_request_page
+   :members:
+   :show-inheritance:
+
+events\_response\_metadata
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.events_response_metadata
+   :members:
+   :show-inheritance:
+
+events\_response\_metadata\_page
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.events_response_metadata_page
+   :members:
+   :show-inheritance:
+
+events\_sort
+------------
+
+.. automodule:: datadog_api_client.v2.model.events_sort
+   :members:
+   :show-inheritance:
+
+events\_warning
+---------------
+
+.. automodule:: datadog_api_client.v2.model.events_warning
+   :members:
+   :show-inheritance:
+
 full\_api\_key
 --------------
 
@@ -2014,6 +2133,13 @@ metrics\_and\_metric\_tag\_configurations\_response
 ---------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response
+   :members:
+   :show-inheritance:
+
+monitor\_type
+-------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_type
    :members:
    :show-inheritance:
 

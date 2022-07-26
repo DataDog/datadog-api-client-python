@@ -105,6 +105,23 @@ from datadog_api_client.v2.model.dashboard_list_items import DashboardListItems
 from datadog_api_client.v2.model.dashboard_list_update_items_request import DashboardListUpdateItemsRequest
 from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
 from datadog_api_client.v2.model.dashboard_type import DashboardType
+from datadog_api_client.v2.model.event import Event
+from datadog_api_client.v2.model.event_attributes import EventAttributes
+from datadog_api_client.v2.model.event_priority import EventPriority
+from datadog_api_client.v2.model.event_response import EventResponse
+from datadog_api_client.v2.model.event_response_attributes import EventResponseAttributes
+from datadog_api_client.v2.model.event_status_type import EventStatusType
+from datadog_api_client.v2.model.event_type import EventType
+from datadog_api_client.v2.model.events_list_request import EventsListRequest
+from datadog_api_client.v2.model.events_list_response import EventsListResponse
+from datadog_api_client.v2.model.events_list_response_links import EventsListResponseLinks
+from datadog_api_client.v2.model.events_query_filter import EventsQueryFilter
+from datadog_api_client.v2.model.events_query_options import EventsQueryOptions
+from datadog_api_client.v2.model.events_request_page import EventsRequestPage
+from datadog_api_client.v2.model.events_response_metadata import EventsResponseMetadata
+from datadog_api_client.v2.model.events_response_metadata_page import EventsResponseMetadataPage
+from datadog_api_client.v2.model.events_sort import EventsSort
+from datadog_api_client.v2.model.events_warning import EventsWarning
 from datadog_api_client.v2.model.full_api_key import FullAPIKey
 from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
 from datadog_api_client.v2.model.full_application_key import FullApplicationKey
@@ -326,6 +343,7 @@ from datadog_api_client.v2.model.metrics_and_metric_tag_configurations import Me
 from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response import (
     MetricsAndMetricTagConfigurationsResponse,
 )
+from datadog_api_client.v2.model.monitor_type import MonitorType
 from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
 from datadog_api_client.v2.model.opsgenie_service_create_attributes import OpsgenieServiceCreateAttributes
