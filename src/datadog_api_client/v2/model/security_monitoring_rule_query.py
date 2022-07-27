@@ -6,6 +6,7 @@
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
 )
 
 
@@ -21,7 +22,7 @@ class SecurityMonitoringRuleQuery(ModelNormal):
             "distinct_fields": ([str],),
             "group_by_fields": ([str],),
             "metric": (str,),
-            "metrics": ([str],),
+            "metrics": ([str], none_type),
             "name": (str,),
             "query": (str,),
         }
@@ -54,7 +55,7 @@ class SecurityMonitoringRuleQuery(ModelNormal):
         :type metric: str, optional
 
         :param metrics: Group of target fields to aggregate over when using the new value aggregations.
-        :type metrics: [str], optional
+        :type metrics: [str], none_type, optional
 
         :param name: Name of the query.
         :type name: str, optional
