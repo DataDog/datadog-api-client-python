@@ -245,6 +245,7 @@ class Configuration:
                 "v2.get_incident_team": False,
                 "v2.list_incident_teams": False,
                 "v2.update_incident_team": False,
+                "v2.get_estimated_cost_by_org": False,
             }
         )
 

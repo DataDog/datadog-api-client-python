@@ -73,13 +73,19 @@ class UsageMeteringApi:
             settings={
                 "response_type": (CostByOrgResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/usage/estimated_cost_by_org",
+                "endpoint_path": "/api/v2/usage/estimated_cost",
                 "operation_id": "get_estimated_cost_by_org",
                 "http_method": "GET",
                 "version": "v2",
                 "servers": None,
             },
             params_map={
+                "view": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "view",
+                    "location": "query",
+                },
                 "start_month": {
                     "openapi_types": (datetime,),
                     "attribute": "start_month",
@@ -284,27 +290,33 @@ class UsageMeteringApi:
 
     def get_estimated_cost_by_org(
         self,
+        view: str,
         *,
         start_month: Union[datetime, UnsetType] = unset,
         end_month: Union[datetime, UnsetType] = unset,
         start_date: Union[datetime, UnsetType] = unset,
         end_date: Union[datetime, UnsetType] = unset,
     ) -> CostByOrgResponse:
-        """Get estimated cost across multi-org account.
+        """Get estimated cost across your account.
 
-        Get estimated cost across multi-org account.
+        Get estimated cost across multi-org and single root-org accounts.
+        Estimated cost data is only available for the current month and previous month. To access historical costs prior to this, use the /cost_by_org endpoint.
 
-        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost beginning this month. Either start_month or start_date should be specified, but not both.
+        :param view: String to specify whether cost is broken down at a parent-org level or at the sub-org level. Currently, only the 'sub-org' view is supported.
+        :type view: str
+        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost beginning this month. Either start_month or start_date should be specified, but not both. (start_month cannot go beyond two months in the past)
         :type start_month: datetime, optional
         :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost ending this month.
         :type end_month: datetime, optional
-        :param start_date: Datetime in ISO-8601 format, UTC, precise to day: ``[YYYY-MM-DD]`` for cost beginning this day. Either start_month or start_date should be specified, but not both.
+        :param start_date: Datetime in ISO-8601 format, UTC, precise to day: ``[YYYY-MM-DD]`` for cost beginning this day. Either start_month or start_date should be specified, but not both. (start_date cannot go beyond two months in the past)
         :type start_date: datetime, optional
         :param end_date: Datetime in ISO-8601 format, UTC, precise to day: ``[YYYY-MM-DD]`` for cost ending this day.
         :type end_date: datetime, optional
         :rtype: CostByOrgResponse
         """
         kwargs: Dict[str, Any] = {}
+        kwargs["view"] = view
+
         if start_month is not unset:
             kwargs["start_month"] = start_month
 
@@ -337,7 +349,7 @@ class UsageMeteringApi:
         :param filter_timestamp_start: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type filter_timestamp_start: datetime
         :param filter_product_families: Comma separated list of product families to retrieve. Available families are ``all`` , ``analyzed_logs`` ,
-            ``application_security`` , ``audit_logs`` , ``serverless`` , ``ci_app`` , ``cspm`` , ``cws`` , ``dbm`` , ``fargate`` ,
+            ``application_security`` , ``audit_logs`` , ``serverless`` , ``ci_app`` , ``cspm`` , ``custom_events`` , ``cws`` , ``dbm`` , ``fargate`` ,
             ``infra_hosts`` , ``incident_management`` , ``indexed_logs`` , ``indexed_spans`` , ``ingested_spans`` , ``iot`` ,
             ``lambda_traced_invocations`` , ``logs`` , ``network_flows`` , ``network_hosts`` , ``observability_pipelines`` ,
             ``online_archive`` , ``profiling`` , ``rum`` , ``rum_browser_sessions`` , ``rum_mobile_sessions`` , ``sds`` , ``snmp`` ,

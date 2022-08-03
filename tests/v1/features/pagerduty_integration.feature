@@ -31,11 +31,11 @@ Feature: PagerDuty Integration
     Then the response status is 404 Item Not Found
 
   @generated @skip @team:Datadog/web-integrations
-  Scenario: Delete a single service object returns "OK" response
+  Scenario: Delete a single service object returns "No Content" response
     Given new "DeletePagerDutyIntegrationService" request
     And request contains "service_name" parameter from "REPLACE.ME"
     When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 204 No Content
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: Get a single service object returns "Item Not Found" response
