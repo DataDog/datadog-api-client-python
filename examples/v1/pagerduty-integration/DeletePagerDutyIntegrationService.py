@@ -1,5 +1,5 @@
 """
-Delete a single service object returns "OK" response
+Delete a single service object returns "No Content" response
 """
 
 from datadog_api_client import ApiClient, Configuration

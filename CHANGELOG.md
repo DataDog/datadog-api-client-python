@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.2.0 / 2022-08-01
+
+### Added
+* docs(dataviz): update Treemap widget definition with deprecated properties + updated description [VIZZ-2305] by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1099
+* Add hourly usage v2 endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1084
+* Add metrics field in the RuleQuery by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1085
+* Add support for Events V2 endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1057
+* [RQ-2492]: Add custom_events to list of product families in hourly-usage api. by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1108
+* Re-introduce Estimated Cost API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1116
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.1.0...2.2.0
+
 ## 2.1.0 / 2022-07-19
 
 ### Fixed
