@@ -21,6 +21,50 @@ Feature: RUM
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/rum-back
+  Scenario: Create a new RUM application returns "Bad Request" response
+    Given new "CreateRUMApplication" request
+    And body with value {"data": {"attributes": {"name": "wrong_rum_application", "type": "wrong_android"}, "type": "wrong_rum_application_type"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/rum-back
+  Scenario: Create a new RUM application returns "OK" response
+    Given new "CreateRUMApplication" request
+    And body with value {"data": {"attributes": {"name": "my_new_rum_application", "type": "ios"}, "type": "rum_application_create"}}
+    When the request is sent
+    Then the response status is 200 RUM application.
+
+  @team:DataDog/rum-back
+  Scenario: Delete a RUM application returns "No Content" response
+    Given there is a valid "rum_application" in the system
+    And new "DeleteRUMApplication" request
+    And request contains "id" parameter from "rum_application.data.id"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @team:DataDog/rum-back
+  Scenario: Delete a RUM application returns "Not Found" response
+    Given new "DeleteRUMApplication" request
+    And request contains "id" parameter with value "abcde-12345"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/rum-back
+  Scenario: Get a RUM application returns "Not Found" response
+    Given new "GetRUMApplication" request
+    And request contains "id" parameter with value "abcd1234-0000-0000-abcd-1234abcd5678"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/rum-back
+  Scenario: Get a RUM application returns "OK" response
+    Given there is a valid "rum_application" in the system
+    And new "GetRUMApplication" request
+    And request contains "id" parameter from "rum_application.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/rum-back
   Scenario: Get a list of RUM events returns "Bad Request" response
     Given new "ListRUMEvents" request
@@ -40,6 +84,18 @@ Feature: RUM
     When the request with pagination is sent
     Then the response status is 200 OK
     And the response has 3 items
+
+  @generated @skip @team:DataDog/rum-back
+  Scenario: List all the RUM applications returns "Not Found" response
+    Given new "GetRUMApplications" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/rum-back
+  Scenario: List all the RUM applications returns "OK" response
+    Given new "GetRUMApplications" request
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/rum-back
   Scenario: Search RUM events returns "Bad Request" response
@@ -62,3 +118,35 @@ Feature: RUM
     When the request with pagination is sent
     Then the response status is 200 OK
     And the response has 3 items
+
+  @generated @skip @team:DataDog/rum-back
+  Scenario: Update a RUM application returns "Bad Request" response
+    Given new "UpdateRUMApplication" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser|ios|android|react-native|flutter"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/rum-back
+  Scenario: Update a RUM application returns "Not Found" response
+    Given new "UpdateRUMApplication" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser|ios|android|react-native|flutter"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/rum-back
+  Scenario: Update a RUM application returns "OK" response
+    Given new "UpdateRUMApplication" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser|ios|android|react-native|flutter"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/rum-back
+  Scenario: Update a RUM application returns "Unprocessable Entity." response
+    Given new "UpdateRUMApplication" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser|ios|android|react-native|flutter"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity.

@@ -2724,6 +2724,97 @@ rum\_analytics\_aggregate\_response
    :members:
    :show-inheritance:
 
+rum\_application
+----------------
+
+.. automodule:: datadog_api_client.v2.model.rum_application
+   :members:
+   :show-inheritance:
+
+rum\_application\_attributes
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_application_attributes
+   :members:
+   :show-inheritance:
+
+rum\_application\_create
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_application_create
+   :members:
+   :show-inheritance:
+
+rum\_application\_create\_attributes
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_application_create_attributes
+   :members:
+   :show-inheritance:
+
+rum\_application\_create\_request
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_application_create_request
+   :members:
+   :show-inheritance:
+
+rum\_application\_create\_type
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_application_create_type
+   :members:
+   :show-inheritance:
+
+rum\_application\_response
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_application_response
+   :members:
+   :show-inheritance:
+
+rum\_application\_type
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_application_type
+   :members:
+   :show-inheritance:
+
+rum\_application\_update
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_application_update
+   :members:
+   :show-inheritance:
+
+rum\_application\_update\_attributes
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_application_update_attributes
+   :members:
+   :show-inheritance:
+
+rum\_application\_update\_request
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_application_update_request
+   :members:
+   :show-inheritance:
+
+rum\_application\_update\_type
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_application_update_type
+   :members:
+   :show-inheritance:
+
+rum\_applications\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_applications_response
+   :members:
+   :show-inheritance:
+
 rum\_bucket\_response
 ---------------------
 
