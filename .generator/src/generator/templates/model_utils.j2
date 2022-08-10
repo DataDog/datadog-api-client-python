@@ -1573,10 +1573,10 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                     oneof_instance = validate_and_convert_types(
                         model_arg,
                         (oneof_class,),
-                        constant_kwargs["_path_to_item"],
-                        constant_kwargs["_spec_property_naming"],
-                        constant_kwargs["_check_type"],
-                        configuration=constant_kwargs["_configuration"],
+                        constant_kwargs.get("_path_to_item", ()),
+                        constant_kwargs.get("_spec_property_naming", False),
+                        constant_kwargs.get("_check_type", True),
+                        configuration=constant_kwargs.get("_configuration"),
                     )
                     oneof_instances.append(oneof_instance)
         except Exception:
