@@ -16,10 +16,6 @@ from datadog_api_client.model_utils import (
 )
 from datadog_api_client.v2.model.rum_analytics_aggregate_response import RUMAnalyticsAggregateResponse
 from datadog_api_client.v2.model.rum_aggregate_request import RUMAggregateRequest
-from datadog_api_client.v2.model.rum_applications_response import RUMApplicationsResponse
-from datadog_api_client.v2.model.rum_application_response import RUMApplicationResponse
-from datadog_api_client.v2.model.rum_application_create_request import RUMApplicationCreateRequest
-from datadog_api_client.v2.model.rum_application_update_request import RUMApplicationUpdateRequest
 from datadog_api_client.v2.model.rum_events_response import RUMEventsResponse
 from datadog_api_client.v2.model.rum_sort import RUMSort
 from datadog_api_client.v2.model.rum_event import RUMEvent
@@ -54,95 +50,6 @@ class RUMApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._create_rum_application_endpoint = _Endpoint(
-            settings={
-                "response_type": (RUMApplicationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/rum/applications",
-                "operation_id": "create_rum_application",
-                "http_method": "POST",
-                "version": "v2",
-                "servers": None,
-            },
-            params_map={
-                "body": {
-                    "required": True,
-                    "openapi_types": (RUMApplicationCreateRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._delete_rum_application_endpoint = _Endpoint(
-            settings={
-                "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/rum/applications/{id}",
-                "operation_id": "delete_rum_application",
-                "http_method": "DELETE",
-                "version": "v2",
-                "servers": None,
-            },
-            params_map={
-                "id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "id",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["*/*"],
-                "content_type": [],
-            },
-            api_client=api_client,
-        )
-
-        self._get_rum_application_endpoint = _Endpoint(
-            settings={
-                "response_type": (RUMApplicationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/rum/applications/{id}",
-                "operation_id": "get_rum_application",
-                "http_method": "GET",
-                "version": "v2",
-                "servers": None,
-            },
-            params_map={
-                "id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "id",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-                "content_type": [],
-            },
-            api_client=api_client,
-        )
-
-        self._get_rum_applications_endpoint = _Endpoint(
-            settings={
-                "response_type": (RUMApplicationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/rum/applications",
-                "operation_id": "get_rum_applications",
-                "http_method": "GET",
-                "version": "v2",
-                "servers": None,
-            },
-            params_map={},
-            headers_map={
-                "accept": ["application/json"],
-                "content_type": [],
-            },
             api_client=api_client,
         )
 
@@ -219,33 +126,6 @@ class RUMApi:
             api_client=api_client,
         )
 
-        self._update_rum_application_endpoint = _Endpoint(
-            settings={
-                "response_type": (RUMApplicationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/rum/applications/{id}",
-                "operation_id": "update_rum_application",
-                "http_method": "PATCH",
-                "version": "v2",
-                "servers": None,
-            },
-            params_map={
-                "id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "id",
-                    "location": "path",
-                },
-                "body": {
-                    "required": True,
-                    "openapi_types": (RUMApplicationUpdateRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
     def aggregate_rum_events(
         self,
         body: RUMAggregateRequest,
@@ -261,68 +141,6 @@ class RUMApi:
         kwargs["body"] = body
 
         return self._aggregate_rum_events_endpoint.call_with_http_info(**kwargs)
-
-    def create_rum_application(
-        self,
-        body: RUMApplicationCreateRequest,
-    ) -> RUMApplicationResponse:
-        """Create a new RUM application.
-
-        Create a new RUM application in your organization.
-
-        :type body: RUMApplicationCreateRequest
-        :rtype: RUMApplicationResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["body"] = body
-
-        return self._create_rum_application_endpoint.call_with_http_info(**kwargs)
-
-    def delete_rum_application(
-        self,
-        id: str,
-    ) -> None:
-        """Delete a RUM application.
-
-        Delete an existing RUM application in your organization.
-
-        :param id: RUM application ID.
-        :type id: str
-        :rtype: None
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["id"] = id
-
-        return self._delete_rum_application_endpoint.call_with_http_info(**kwargs)
-
-    def get_rum_application(
-        self,
-        id: str,
-    ) -> RUMApplicationResponse:
-        """Get a RUM application.
-
-        Get the RUM application with given ID in your organization.
-
-        :param id: RUM application ID.
-        :type id: str
-        :rtype: RUMApplicationResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["id"] = id
-
-        return self._get_rum_application_endpoint.call_with_http_info(**kwargs)
-
-    def get_rum_applications(
-        self,
-    ) -> RUMApplicationsResponse:
-        """List all the RUM applications.
-
-        List all the RUM applications in your organization.
-
-        :rtype: RUMApplicationsResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        return self._get_rum_applications_endpoint.call_with_http_info(**kwargs)
 
     def list_rum_events(
         self,
@@ -485,24 +303,3 @@ class RUMApi:
             set_attribute_from_path(
                 kwargs, "body.page.cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
             )
-
-    def update_rum_application(
-        self,
-        id: str,
-        body: RUMApplicationUpdateRequest,
-    ) -> RUMApplicationResponse:
-        """Update a RUM application.
-
-        Update the RUM application with given ID in your organization.
-
-        :param id: RUM application ID.
-        :type id: str
-        :type body: RUMApplicationUpdateRequest
-        :rtype: RUMApplicationResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["id"] = id
-
-        kwargs["body"] = body
-
-        return self._update_rum_application_endpoint.call_with_http_info(**kwargs)

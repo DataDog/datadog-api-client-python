@@ -562,43 +562,6 @@
       "type": "safe"
     }
   },
-  "GetRUMApplications": {
-    "tag": "RUM",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateRUMApplication": {
-    "tag": "RUM",
-    "undo": {
-      "operationId": "DeleteRUMApplication",
-      "parameters": [
-        {
-          "name": "id",
-          "source": "data.id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeleteRUMApplication": {
-    "tag": "RUM",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetRUMApplication": {
-    "tag": "RUM",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateRUMApplication": {
-    "tag": "RUM",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
   "ListRUMEvents": {
     "tag": "RUM",
     "undo": {

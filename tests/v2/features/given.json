@@ -174,18 +174,6 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{ \"data\": {\n    \"type\": \"rum_application_create\",\n    \"attributes\": {\n        \"name\": \"test_name_create\",\n        \"type\": \"browser\"\n    }\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"rum_application\" in the system",
-    "key": "rum_application",
-    "tag": "RUM",
-    "operationId": "CreateRUMApplication"
-  },
-  {
-    "parameters": [
-      {
-        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"agent_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"My Agent rule\",\n      \"expression\": \"exec.file.name == \\\"sh\\\"\",\n      \"enabled\": true\n     }\n  }\n}"
       }
     ],

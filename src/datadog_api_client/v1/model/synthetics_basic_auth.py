@@ -70,13 +70,11 @@ class SyntheticsBasicAuth(ModelComposed):
         from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasicAuthWeb
         from datadog_api_client.v1.model.synthetics_basic_auth_sigv4 import SyntheticsBasicAuthSigv4
         from datadog_api_client.v1.model.synthetics_basic_auth_ntlm import SyntheticsBasicAuthNTLM
-        from datadog_api_client.v1.model.synthetics_basic_auth_digest import SyntheticsBasicAuthDigest
 
         return {
             "oneOf": [
                 SyntheticsBasicAuthWeb,
                 SyntheticsBasicAuthSigv4,
                 SyntheticsBasicAuthNTLM,
-                SyntheticsBasicAuthDigest,
             ],
         }
