@@ -202,6 +202,9 @@ class WidgetDefinition(ModelComposed):
         :param show_last_triggered: Whether to show the time that has elapsed since the monitor/group triggered.
         :type show_last_triggered: bool, optional
 
+        :param show_priority: Whether to show the priorities column.
+        :type show_priority: bool, optional
+
         :param start: The start of the list. Typically 0.
         :type start: int, optional
 

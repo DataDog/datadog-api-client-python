@@ -331,6 +331,16 @@ Feature: Dashboards
     And the response "widgets[0].definition.type" is equal to "manage_status"
 
   @team:DataDog/dashboards
+  Scenario: Create a new dashboard with manage_status widget and show_priority parameter
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/manage_status_widget_priority_sort.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "manage_status"
+    And the response "widgets[0].definition.show_priority" is false
+    And the response "widgets[0].definition.sort" is equal to "priority,asc"
+
+  @team:DataDog/dashboards
   Scenario: Create a new dashboard with note widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/note_widget.json"
