@@ -13,7 +13,7 @@ class WidgetMonitorSummarySort(ModelSimple):
     """
     Widget sorting methods.
 
-    :param value: Must be one of ["name", "group", "status", "tags", "triggered", "group,asc", "group,desc", "name,asc", "name,desc", "status,asc", "status,desc", "tags,asc", "tags,desc", "triggered,asc", "triggered,desc"].
+    :param value: Must be one of ["name", "group", "status", "tags", "triggered", "group,asc", "group,desc", "name,asc", "name,desc", "status,asc", "status,desc", "tags,asc", "tags,desc", "triggered,asc", "triggered,desc", "priority,asc", "priority,desc"].
     :type value: str
     """
 
@@ -34,6 +34,8 @@ class WidgetMonitorSummarySort(ModelSimple):
             "TAGS_DESCENDING": "tags,desc",
             "TRIGGERED_ASCENDING": "triggered,asc",
             "TRIGGERED_DESCENDING": "triggered,desc",
+            "PRIORITY_ASCENDING": "priority,asc",
+            "PRIORITY_DESCENDING": "priority,desc",
         },
     }
 
