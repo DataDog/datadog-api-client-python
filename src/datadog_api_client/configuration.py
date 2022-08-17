@@ -221,11 +221,6 @@ class Configuration:
         # Keep track of unstable operations
         self.unstable_operations = _UnstableOperations(
             {
-                "v1.get_daily_custom_reports": False,
-                "v1.get_monthly_custom_reports": False,
-                "v1.get_specified_daily_custom_reports": False,
-                "v1.get_specified_monthly_custom_reports": False,
-                "v1.get_usage_attribution": False,
                 "v1.get_slo_history": False,
                 "v1.search_slo": False,
                 "v2.list_events": False,

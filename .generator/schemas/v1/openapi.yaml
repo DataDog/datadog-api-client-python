@@ -17919,7 +17919,12 @@ paths:
   /api/v1/daily_custom_reports:
     get:
       deprecated: true
-      description: Get daily custom reports.
+      description: 'Get daily custom reports.
+
+        **Note:** This endpoint will be fully deprecated on December 1, 2022.
+
+        Refer to [Migrating from v1 to v2 of the Usage Attribution API](https://docs.datadoghq.com/account_management/guide/usage-attribution-migration/)
+        for the associated migration guide.'
       operationId: GetDailyCustomReports
       parameters:
       - description: The number of files to return in the response. `[default=60]`.
@@ -17979,13 +17984,15 @@ paths:
       x-menu-order: 41
       x-undo:
         type: safe
-      x-unstable: '**Note**: This endpoint is in public beta.
-
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v1/daily_custom_reports/{report_id}:
     get:
       deprecated: true
-      description: Get specified daily custom reports.
+      description: 'Get specified daily custom reports.
+
+        **Note:** This endpoint will be fully deprecated on December 1, 2022.
+
+        Refer to [Migrating from v1 to v2 of the Usage Attribution API](https://docs.datadoghq.com/account_management/guide/usage-attribution-migration/)
+        for the associated migration guide.'
       operationId: GetSpecifiedDailyCustomReports
       parameters:
       - description: Date of the report in the format `YYYY-MM-DD`.
@@ -18030,9 +18037,6 @@ paths:
       x-menu-order: 42
       x-undo:
         type: safe
-      x-unstable: '**Note**: This endpoint is in public beta.
-
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v1/dashboard:
     delete:
       description: Delete dashboards using the specified IDs. If there are any failures,
@@ -23175,7 +23179,12 @@ paths:
   /api/v1/monthly_custom_reports:
     get:
       deprecated: true
-      description: Get monthly custom reports.
+      description: 'Get monthly custom reports.
+
+        **Note:** This endpoint will be fully deprecated on December 1, 2022.
+
+        Refer to [Migrating from v1 to v2 of the Usage Attribution API](https://docs.datadoghq.com/account_management/guide/usage-attribution-migration/)
+        for the associated migration guide.'
       operationId: GetMonthlyCustomReports
       parameters:
       - description: The number of files to return in the response `[default=60].`
@@ -23235,13 +23244,15 @@ paths:
       x-menu-order: 43
       x-undo:
         type: safe
-      x-unstable: '**Note**: This endpoint is in public beta.
-
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v1/monthly_custom_reports/{report_id}:
     get:
       deprecated: true
-      description: Get specified monthly custom reports.
+      description: 'Get specified monthly custom reports.
+
+        **Note:** This endpoint will be fully deprecated on December 1, 2022.
+
+        Refer to [Migrating from v1 to v2 of the Usage Attribution API](https://docs.datadoghq.com/account_management/guide/usage-attribution-migration/)
+        for the associated migration guide.'
       operationId: GetSpecifiedMonthlyCustomReports
       parameters:
       - description: Date of the report in the format `YYYY-MM-DD`.
@@ -23292,9 +23303,6 @@ paths:
       x-menu-order: 44
       x-undo:
         type: safe
-      x-unstable: '**Note**: This endpoint is in public beta.
-
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v1/notebooks:
     get:
       description: 'Get all notebooks. This can also be used to search for notebooks
@@ -26820,7 +26828,12 @@ paths:
   /api/v1/usage/attribution:
     get:
       deprecated: true
-      description: Get usage attribution.
+      description: 'Get usage attribution.
+
+        **Note:** This endpoint will be fully deprecated on December 1, 2022.
+
+        Refer to [Migrating from v1 to v2 of the Usage Attribution API](https://docs.datadoghq.com/account_management/guide/usage-attribution-migration/)
+        for the associated migration guide.'
       operationId: GetUsageAttribution
       parameters:
       - description: 'Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]`
@@ -26909,9 +26922,6 @@ paths:
       x-menu-order: 40
       x-undo:
         type: safe
-      x-unstable: '**Note**: This endpoint is in public beta.
-
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v1/usage/audit_logs:
     get:
       description: 'Get hourly usage for audit logs.

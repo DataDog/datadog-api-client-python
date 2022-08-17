@@ -1349,6 +1349,8 @@ class UsageMeteringApi:
         """Get the list of available daily custom reports.
 
         Get daily custom reports.
+        **Note:** This endpoint will be fully deprecated on December 1, 2022.
+        Refer to `Migrating from v1 to v2 of the Usage Attribution API <https://docs.datadoghq.com/account_management/guide/usage-attribution-migration/>`_ for the associated migration guide.
 
         :param page_size: The number of files to return in the response. ``[default=60]``.
         :type page_size: int, optional
@@ -1502,6 +1504,8 @@ class UsageMeteringApi:
         """Get the list of available monthly custom reports.
 
         Get monthly custom reports.
+        **Note:** This endpoint will be fully deprecated on December 1, 2022.
+        Refer to `Migrating from v1 to v2 of the Usage Attribution API <https://docs.datadoghq.com/account_management/guide/usage-attribution-migration/>`_ for the associated migration guide.
 
         :param page_size: The number of files to return in the response ``[default=60].``
         :type page_size: int, optional
@@ -1611,6 +1615,8 @@ class UsageMeteringApi:
         """Get specified daily custom reports.
 
         Get specified daily custom reports.
+        **Note:** This endpoint will be fully deprecated on December 1, 2022.
+        Refer to `Migrating from v1 to v2 of the Usage Attribution API <https://docs.datadoghq.com/account_management/guide/usage-attribution-migration/>`_ for the associated migration guide.
 
         :param report_id: Date of the report in the format ``YYYY-MM-DD``.
         :type report_id: str
@@ -1628,6 +1634,8 @@ class UsageMeteringApi:
         """Get specified monthly custom reports.
 
         Get specified monthly custom reports.
+        **Note:** This endpoint will be fully deprecated on December 1, 2022.
+        Refer to `Migrating from v1 to v2 of the Usage Attribution API <https://docs.datadoghq.com/account_management/guide/usage-attribution-migration/>`_ for the associated migration guide.
 
         :param report_id: Date of the report in the format ``YYYY-MM-DD``.
         :type report_id: str
@@ -1679,6 +1687,8 @@ class UsageMeteringApi:
         """Get usage attribution.
 
         Get usage attribution.
+        **Note:** This endpoint will be fully deprecated on December 1, 2022.
+        Refer to `Migrating from v1 to v2 of the Usage Attribution API <https://docs.datadoghq.com/account_management/guide/usage-attribution-migration/>`_ for the associated migration guide.
 
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage beginning in this month.
             Maximum of 15 months ago.
