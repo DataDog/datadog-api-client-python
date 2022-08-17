@@ -1,9 +1,9 @@
 interactions:
 - request:
-    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Schedule_a_monitor_downtime_returns_OK_response-1652349001","options":{"enable_logs_sample":true,"escalation_message":"the
-      situation has escalated","evaluation_delay":700,"groupby_simple_monitor":true,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notify_audit":false,"notify_no_data":false,"renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":24},"priority":3,"query":"logs(\"service:foo
+    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Schedule_a_monitor_downtime_returns_OK_response-1660586679","options":{"enable_logs_sample":true,"escalation_message":"the
+      situation has escalated","evaluation_delay":700,"groupby_simple_monitor":true,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notify_audit":false,"notify_no_data":false,"on_missing_data":"show_and_notify_no_data","renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":24},"priority":3,"query":"logs(\"service:foo
       AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
-      > 2","tags":["test:testscheduleamonitordowntimereturnsokresponse1652349001","env:ci"],"type":"log
+      > 2","tags":["test:testscheduleamonitordowntimereturnsokresponse1660586679","env:ci"],"type":"log
       alert"}'
     headers:
       accept:
@@ -14,10 +14,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/monitor
   response:
     body:
-      string: '{"restricted_roles":null,"tags":["test:testscheduleamonitordowntimereturnsokresponse1652349001","env:ci"],"deleted":null,"query":"logs(\"service:foo
+      string: '{"restricted_roles":null,"tags":["test:testscheduleamonitordowntimereturnsokresponse1660586679","env:ci"],"deleted":null,"query":"logs(\"service:foo
         AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
-        > 2","message":"some message Notify: @hipchat-channel","id":71310133,"multi":true,"name":"Test-Schedule_a_monitor_downtime_returns_OK_response-1652349001","created":"2022-05-12T09:50:02.253161+00:00","created_at":1652349002000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2022-05-12T09:50:02.253161+00:00","priority":3,"overall_state_modified":null,"overall_state":"No
-        Data","type":"log alert","options":{"notify_audit":false,"locked":false,"timeout_h":24,"renotify_interval":60,"include_tags":true,"no_data_timeframe":null,"silenced":{},"new_host_delay":600,"require_full_window":true,"notify_no_data":false,"enable_logs_sample":true,"groupby_simple_monitor":true,"escalation_message":"the
+        > 2","message":"some message Notify: @hipchat-channel","id":80119043,"multi":true,"name":"Test-Schedule_a_monitor_downtime_returns_OK_response-1660586679","created":"2022-08-15T18:04:40.058772+00:00","created_at":1660586680000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2022-08-15T18:04:40.058772+00:00","priority":3,"overall_state_modified":null,"overall_state":"No
+        Data","type":"log alert","options":{"notify_audit":false,"locked":false,"timeout_h":24,"renotify_interval":60,"include_tags":true,"no_data_timeframe":null,"silenced":{},"new_host_delay":600,"on_missing_data":"show_and_notify_no_data","require_full_window":true,"notify_no_data":false,"enable_logs_sample":true,"groupby_simple_monitor":true,"escalation_message":"the
         situation has escalated","evaluation_delay":700,"thresholds":{"critical":2.0,"warning":1.0}}}'
     headers:
       content-type:
@@ -26,7 +26,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"message":"Test-Schedule_a_monitor_downtime_returns_OK_response-1652349001","monitor_id":71310133,"scope":["test:testscheduleamonitordowntimereturnsokresponse1652349001"],"start":1652349001,"timezone":"Etc/UTC"}'
+    body: '{"message":"Test-Schedule_a_monitor_downtime_returns_OK_response-1660586679","monitor_id":80119043,"scope":["test:testscheduleamonitordowntimereturnsokresponse1660586679"],"start":1660586679,"timezone":"Etc/UTC"}'
     headers:
       accept:
       - application/json
@@ -36,7 +36,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/downtime
   response:
     body:
-      string: '{"recurrence":null,"end":null,"monitor_tags":["*"],"child_id":null,"canceled":null,"monitor_id":71310133,"mute_first_recovery_notification":false,"created":1652349002,"org_id":321813,"modified":1652349002,"disabled":false,"start":1652349001,"creator_id":1445416,"parent_id":null,"timezone":"Etc/UTC","active":true,"scope":["test:testscheduleamonitordowntimereturnsokresponse1652349001"],"message":"Test-Schedule_a_monitor_downtime_returns_OK_response-1652349001","downtime_type":2,"id":1944162322,"updater_id":null}'
+      string: '{"recurrence":null,"end":null,"monitor_tags":["*"],"child_id":null,"canceled":null,"monitor_id":80119043,"mute_first_recovery_notification":false,"created":1660586680,"org_id":321813,"modified":1660586680,"disabled":false,"start":1660586679,"creator_id":1445416,"parent_id":null,"timezone":"Etc/UTC","active":true,"scope":["test:testscheduleamonitordowntimereturnsokresponse1660586679"],"message":"Test-Schedule_a_monitor_downtime_returns_OK_response-1660586679","downtime_type":2,"id":2164108453,"updater_id":null}'
     headers:
       content-type:
       - application/json
@@ -49,7 +49,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/downtime/1944162322
+    uri: https://api.datadoghq.com/api/v1/downtime/2164108453
   response:
     body:
       string: ''
@@ -63,10 +63,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/monitor/71310133
+    uri: https://api.datadoghq.com/api/v1/monitor/80119043
   response:
     body:
-      string: '{"deleted_monitor_id":71310133}'
+      string: '{"deleted_monitor_id":80119043}'
     headers:
       content-type:
       - application/json
