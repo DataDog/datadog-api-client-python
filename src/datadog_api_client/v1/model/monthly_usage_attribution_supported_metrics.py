@@ -4,13 +4,18 @@
 
 
 from datadog_api_client.model_utils import (
-    ApiTypeError,
     ModelSimple,
     cached_property,
 )
 
 
 class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
+    """
+    Supported metrics for monthly usage attribution requests.
+
+    :param value: Must be one of ["api_usage", "api_percentage", "apm_host_usage", "apm_host_percentage", "appsec_usage", "appsec_percentage", "browser_usage", "browser_percentage", "container_usage", "container_percentage", "cspm_containers_percentage", "cspm_containers_usage", "cspm_hosts_percentage", "cspm_hosts_usage", "custom_timeseries_usage", "custom_timeseries_percentage", "cws_containers_percentage", "cws_containers_usage", "cws_hosts_percentage", "cws_hosts_usage", "dbm_hosts_percentage", "dbm_hosts_usage", "dbm_queries_percentage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "estimated_indexed_spans_usage", "estimated_indexed_spans_percentage", "estimated_ingested_spans_usage", "estimated_ingested_spans_percentage", "fargate_usage", "fargate_percentage", "functions_usage", "functions_percentage", "indexed_logs_usage", "indexed_logs_percentage", "infra_host_usage", "infra_host_percentage", "invocations_usage", "invocations_percentage", "npm_host_usage", "npm_host_percentage", "profiled_container_usage", "profiled_container_percentage", "profiled_host_usage", "profiled_host_percentage", "snmp_usage", "snmp_percentage", "*"].
+    :type value: str
+    """
 
     allowed_values = {
         "value": {
@@ -71,37 +76,3 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
         return {
             "value": (str,),
         }
-
-    def __init__(self, *args, **kwargs):
-        """
-        Supported metrics for monthly usage attribution requests.
-
-        Note that value can be passed either in args or in kwargs, but not in both.
-
-        :param value: Must be one of ["api_usage", "api_percentage", "apm_host_usage", "apm_host_percentage", "appsec_usage", "appsec_percentage", "browser_usage", "browser_percentage", "container_usage", "container_percentage", "cspm_containers_percentage", "cspm_containers_usage", "cspm_hosts_percentage", "cspm_hosts_usage", "custom_timeseries_usage", "custom_timeseries_percentage", "cws_containers_percentage", "cws_containers_usage", "cws_hosts_percentage", "cws_hosts_usage", "dbm_hosts_percentage", "dbm_hosts_usage", "dbm_queries_percentage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "estimated_indexed_spans_usage", "estimated_indexed_spans_percentage", "estimated_ingested_spans_usage", "estimated_ingested_spans_percentage", "fargate_usage", "fargate_percentage", "functions_usage", "functions_percentage", "indexed_logs_usage", "indexed_logs_percentage", "infra_host_usage", "infra_host_percentage", "invocations_usage", "invocations_percentage", "npm_host_usage", "npm_host_percentage", "profiled_container_usage", "profiled_container_percentage", "profiled_host_usage", "profiled_host_percentage", "snmp_usage", "snmp_percentage", "*"].
-        :type value: str
-        """
-        super().__init__(kwargs)
-
-        if "value" in kwargs:
-            value = kwargs.pop("value")
-        elif args:
-            args = list(args)
-            value = args.pop(0)
-        else:
-            raise ApiTypeError(
-                "value is required, but not passed in args or kwargs and doesn't have default",
-                path_to_item=self._path_to_item,
-                valid_classes=(self.__class__,),
-            )
-
-        self._check_pos_args(args)
-
-        self.value = value
-
-        self._check_kw_args(kwargs)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        return cls(*args, **kwargs)

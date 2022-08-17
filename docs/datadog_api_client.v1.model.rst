@@ -2353,6 +2353,13 @@ notebooks\_response\_page
    :members:
    :show-inheritance:
 
+on\_missing\_data\_option
+-------------------------
+
+.. automodule:: datadog_api_client.v1.model.on_missing_data_option
+   :members:
+   :show-inheritance:
+
 org\_downgraded\_response
 -------------------------
 
@@ -3253,6 +3260,20 @@ synthetics\_basic\_auth
 -----------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth
+   :members:
+   :show-inheritance:
+
+synthetics\_basic\_auth\_digest
+-------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_digest
+   :members:
+   :show-inheritance:
+
+synthetics\_basic\_auth\_digest\_type
+-------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_digest_type
    :members:
    :show-inheritance:
 

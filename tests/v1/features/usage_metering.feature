@@ -675,55 +675,48 @@ Feature: Usage Metering
 
   @generated @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get specified daily custom reports returns "Not Found" response
-    Given operation "GetSpecifiedDailyCustomReports" enabled
-    And new "GetSpecifiedDailyCustomReports" request
+    Given new "GetSpecifiedDailyCustomReports" request
     And request contains "report_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @replay-only @team:DataDog/red-zone-revenue-query
   Scenario: Get specified daily custom reports returns "OK" response
-    Given operation "GetSpecifiedDailyCustomReports" enabled
-    And new "GetSpecifiedDailyCustomReports" request
+    Given new "GetSpecifiedDailyCustomReports" request
     And request contains "report_id" parameter with value "2022-03-20"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get specified monthly custom reports returns "Bad Request" response
-    Given operation "GetSpecifiedMonthlyCustomReports" enabled
-    And new "GetSpecifiedMonthlyCustomReports" request
+    Given new "GetSpecifiedMonthlyCustomReports" request
     And request contains "report_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get specified monthly custom reports returns "Not Found" response
-    Given operation "GetSpecifiedMonthlyCustomReports" enabled
-    And new "GetSpecifiedMonthlyCustomReports" request
+    Given new "GetSpecifiedMonthlyCustomReports" request
     And request contains "report_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @replay-only @team:DataDog/red-zone-revenue-query
   Scenario: Get specified monthly custom reports returns "OK" response
-    Given operation "GetSpecifiedMonthlyCustomReports" enabled
-    And new "GetSpecifiedMonthlyCustomReports" request
+    Given new "GetSpecifiedMonthlyCustomReports" request
     And request contains "report_id" parameter with value "2021-05-01"
     When the request is sent
     Then the response status is 200 OK
 
   @team:DataDog/red-zone-revenue-query
   Scenario: Get the list of available daily custom reports returns "OK" response
-    Given operation "GetDailyCustomReports" enabled
-    And new "GetDailyCustomReports" request
+    Given new "GetDailyCustomReports" request
     When the request is sent
     Then the response status is 200 OK
 
   @team:DataDog/red-zone-revenue-query
   Scenario: Get the list of available monthly custom reports returns "OK" response
-    Given operation "GetMonthlyCustomReports" enabled
-    And new "GetMonthlyCustomReports" request
+    Given new "GetMonthlyCustomReports" request
     When the request is sent
     Then the response status is 200 OK
 
@@ -743,8 +736,7 @@ Feature: Usage Metering
 
   @team:DataDog/red-zone-revenue-query
   Scenario: Get usage attribution returns "OK" response
-    Given operation "GetUsageAttribution" enabled
-    And new "GetUsageAttribution" request
+    Given new "GetUsageAttribution" request
     And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
     And request contains "fields" parameter with value "*"
     And request contains "offset" parameter with value 0

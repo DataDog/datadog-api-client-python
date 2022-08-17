@@ -8,6 +8,7 @@ from datadog_api_client.v1.model.monitor import Monitor
 from datadog_api_client.v1.model.monitor_options import MonitorOptions
 from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
 from datadog_api_client.v1.model.monitor_type import MonitorType
+from datadog_api_client.v1.model.on_missing_data_option import OnMissingDataOption
 
 body = Monitor(
     name="Example-Validate_a_monitor_returns_OK_response",
@@ -30,6 +31,7 @@ body = Monitor(
         no_data_timeframe=None,
         notify_audit=False,
         notify_no_data=False,
+        on_missing_data=OnMissingDataOption("show_and_notify_no_data"),
         renotify_interval=60,
         require_full_window=True,
         timeout_h=24,

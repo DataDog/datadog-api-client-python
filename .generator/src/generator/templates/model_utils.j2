@@ -306,6 +306,16 @@ class ModelSimple(OpenApiModel):
         ]
     )
 
+    def __init__(self, value, **kwargs):
+        super().__init__(kwargs)
+        self.value = value
+        self._check_kw_args(kwargs)
+
+    @classmethod
+    def _from_openapi_data(cls, value, **kwargs):
+        """Helper creating a new instance from a response."""
+        return cls(value, **kwargs)
+
     def __setitem__(self, name, value):
         """Set the value of an attribute using square-bracket notation: `instance[attr] = val`."""
         if name in self.required_properties:
@@ -1563,10 +1573,10 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                     oneof_instance = validate_and_convert_types(
                         model_arg,
                         (oneof_class,),
-                        constant_kwargs["_path_to_item"],
-                        constant_kwargs["_spec_property_naming"],
-                        constant_kwargs["_check_type"],
-                        configuration=constant_kwargs["_configuration"],
+                        constant_kwargs.get("_path_to_item", ()),
+                        constant_kwargs.get("_spec_property_naming", False),
+                        constant_kwargs.get("_check_type", True),
+                        configuration=constant_kwargs.get("_configuration"),
                     )
                     oneof_instances.append(oneof_instance)
         except Exception:

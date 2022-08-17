@@ -431,7 +431,7 @@ Feature: Synthetics
     And the response "result_id" is equal to "3420446318379485707"
     And the response "probe_dc" is equal to "aws:us-west-1"
 
-  @team:DataDog/synthetics-app
+  @replay-only @team:DataDog/synthetics-app
   Scenario: Get an API test result returns result with failure object
     Given there is a "synthetics_api_test_with_wrong_dns" in the system
     And the "synthetics_api_test_with_wrong_dns" is triggered

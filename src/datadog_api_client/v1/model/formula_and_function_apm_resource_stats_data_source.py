@@ -10,6 +10,12 @@ from datadog_api_client.model_utils import (
 
 
 class FormulaAndFunctionApmResourceStatsDataSource(ModelSimple):
+    """
+    Data source for APM resource stats queries.
+
+    :param value: If omitted defaults to "apm_resource_stats". Must be one of ["apm_resource_stats"].
+    :type value: str
+    """
 
     allowed_values = {
         "value": {
@@ -22,33 +28,3 @@ class FormulaAndFunctionApmResourceStatsDataSource(ModelSimple):
         return {
             "value": (str,),
         }
-
-    def __init__(self, *args, **kwargs):
-        """
-        Data source for APM resource stats queries.
-
-        Note that value can be passed either in args or in kwargs, but not in both.
-
-        :param value: If omitted defaults to "apm_resource_stats". Must be one of ["apm_resource_stats"].
-        :type value: str
-        """
-        super().__init__(kwargs)
-
-        if "value" in kwargs:
-            value = kwargs.pop("value")
-        elif args:
-            args = list(args)
-            value = args.pop(0)
-        else:
-            value = "apm_resource_stats"
-
-        self._check_pos_args(args)
-
-        self.value = value
-
-        self._check_kw_args(kwargs)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        return cls(*args, **kwargs)

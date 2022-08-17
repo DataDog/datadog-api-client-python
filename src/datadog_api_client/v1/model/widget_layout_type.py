@@ -10,6 +10,12 @@ from datadog_api_client.model_utils import (
 
 
 class WidgetLayoutType(ModelSimple):
+    """
+    Layout type of the group.
+
+    :param value: If omitted defaults to "ordered". Must be one of ["ordered"].
+    :type value: str
+    """
 
     allowed_values = {
         "value": {
@@ -22,33 +28,3 @@ class WidgetLayoutType(ModelSimple):
         return {
             "value": (str,),
         }
-
-    def __init__(self, *args, **kwargs):
-        """
-        Layout type of the group.
-
-        Note that value can be passed either in args or in kwargs, but not in both.
-
-        :param value: If omitted defaults to "ordered". Must be one of ["ordered"].
-        :type value: str
-        """
-        super().__init__(kwargs)
-
-        if "value" in kwargs:
-            value = kwargs.pop("value")
-        elif args:
-            args = list(args)
-            value = args.pop(0)
-        else:
-            value = "ordered"
-
-        self._check_pos_args(args)
-
-        self.value = value
-
-        self._check_kw_args(kwargs)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        return cls(*args, **kwargs)

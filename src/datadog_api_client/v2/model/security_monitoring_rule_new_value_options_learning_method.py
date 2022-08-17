@@ -10,6 +10,12 @@ from datadog_api_client.model_utils import (
 
 
 class SecurityMonitoringRuleNewValueOptionsLearningMethod(ModelSimple):
+    """
+    The learning method used to determine when signals should be generated for values that weren't learned.
+
+    :param value: If omitted defaults to "duration". Must be one of ["duration", "threshold"].
+    :type value: str
+    """
 
     allowed_values = {
         "value": {
@@ -23,33 +29,3 @@ class SecurityMonitoringRuleNewValueOptionsLearningMethod(ModelSimple):
         return {
             "value": (str,),
         }
-
-    def __init__(self, *args, **kwargs):
-        """
-        The learning method used to determine when signals should be generated for values that weren't learned.
-
-        Note that value can be passed either in args or in kwargs, but not in both.
-
-        :param value: If omitted defaults to "duration". Must be one of ["duration", "threshold"].
-        :type value: str
-        """
-        super().__init__(kwargs)
-
-        if "value" in kwargs:
-            value = kwargs.pop("value")
-        elif args:
-            args = list(args)
-            value = args.pop(0)
-        else:
-            value = "duration"
-
-        self._check_pos_args(args)
-
-        self.value = value
-
-        self._check_kw_args(kwargs)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        return cls(*args, **kwargs)

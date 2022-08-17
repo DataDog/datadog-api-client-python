@@ -10,6 +10,12 @@ from datadog_api_client.model_utils import (
 
 
 class AuthNMappingsType(ModelSimple):
+    """
+    AuthN Mappings resource type.
+
+    :param value: If omitted defaults to "authn_mappings". Must be one of ["authn_mappings"].
+    :type value: str
+    """
 
     allowed_values = {
         "value": {
@@ -22,33 +28,3 @@ class AuthNMappingsType(ModelSimple):
         return {
             "value": (str,),
         }
-
-    def __init__(self, *args, **kwargs):
-        """
-        AuthN Mappings resource type.
-
-        Note that value can be passed either in args or in kwargs, but not in both.
-
-        :param value: If omitted defaults to "authn_mappings". Must be one of ["authn_mappings"].
-        :type value: str
-        """
-        super().__init__(kwargs)
-
-        if "value" in kwargs:
-            value = kwargs.pop("value")
-        elif args:
-            args = list(args)
-            value = args.pop(0)
-        else:
-            value = "authn_mappings"
-
-        self._check_pos_args(args)
-
-        self.value = value
-
-        self._check_kw_args(kwargs)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        return cls(*args, **kwargs)

@@ -382,6 +382,7 @@ from datadog_api_client.v1.model.notebooks_response_data import NotebooksRespons
 from datadog_api_client.v1.model.notebooks_response_data_attributes import NotebooksResponseDataAttributes
 from datadog_api_client.v1.model.notebooks_response_meta import NotebooksResponseMeta
 from datadog_api_client.v1.model.notebooks_response_page import NotebooksResponsePage
+from datadog_api_client.v1.model.on_missing_data_option import OnMissingDataOption
 from datadog_api_client.v1.model.org_downgraded_response import OrgDowngradedResponse
 from datadog_api_client.v1.model.organization import Organization
 from datadog_api_client.v1.model.organization_billing import OrganizationBilling
@@ -525,6 +526,8 @@ from datadog_api_client.v1.model.synthetics_assertion_operator import Synthetics
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
 from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
 from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
+from datadog_api_client.v1.model.synthetics_basic_auth_digest import SyntheticsBasicAuthDigest
+from datadog_api_client.v1.model.synthetics_basic_auth_digest_type import SyntheticsBasicAuthDigestType
 from datadog_api_client.v1.model.synthetics_basic_auth_ntlm import SyntheticsBasicAuthNTLM
 from datadog_api_client.v1.model.synthetics_basic_auth_ntlm_type import SyntheticsBasicAuthNTLMType
 from datadog_api_client.v1.model.synthetics_basic_auth_sigv4 import SyntheticsBasicAuthSigv4
