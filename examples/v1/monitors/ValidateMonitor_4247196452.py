@@ -1,5 +1,5 @@
 """
-Validate a monitor returns "OK" response
+Validate a multi-alert monitor returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -11,12 +11,12 @@ from datadog_api_client.v1.model.monitor_type import MonitorType
 from datadog_api_client.v1.model.on_missing_data_option import OnMissingDataOption
 
 body = Monitor(
-    name="Example-Validate_a_monitor_returns_OK_response",
+    name="Example-Validate_a_multi_alert_monitor_returns_OK_response",
     type=MonitorType("log alert"),
     query='logs("service:foo AND type:error").index("main").rollup("count").by("source").last("5m") > 2',
     message="some message Notify: @hipchat-channel",
     tags=[
-        "test:examplevalidateamonitorreturnsokresponse",
+        "test:examplevalidateamultialertmonitorreturnsokresponse",
         "env:ci",
     ],
     priority=3,
@@ -24,7 +24,8 @@ body = Monitor(
         enable_logs_sample=True,
         escalation_message="the situation has escalated",
         evaluation_delay=700,
-        groupby_simple_monitor=True,
+        group_retention_duration="2d",
+        groupby_simple_monitor=False,
         include_tags=True,
         locked=False,
         new_host_delay=600,

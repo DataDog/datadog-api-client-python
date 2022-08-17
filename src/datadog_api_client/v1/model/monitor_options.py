@@ -22,6 +22,7 @@ class MonitorOptions(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v1.model.monitor_options_aggregation import MonitorOptionsAggregation
         from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
+        from datadog_api_client.v1.model.on_missing_data_option import OnMissingDataOption
         from datadog_api_client.v1.model.monitor_renotify_status_type import MonitorRenotifyStatusType
         from datadog_api_client.v1.model.monitor_threshold_window_options import MonitorThresholdWindowOptions
         from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
@@ -35,6 +36,7 @@ class MonitorOptions(ModelNormal):
             "enable_logs_sample": (bool,),
             "escalation_message": (str,),
             "evaluation_delay": (int, none_type),
+            "group_retention_duration": (str,),
             "groupby_simple_monitor": (bool,),
             "include_tags": (bool,),
             "locked": (bool,),
@@ -45,6 +47,7 @@ class MonitorOptions(ModelNormal):
             "no_data_timeframe": (int, none_type),
             "notify_audit": (bool,),
             "notify_no_data": (bool,),
+            "on_missing_data": (OnMissingDataOption,),
             "renotify_interval": (int, none_type),
             "renotify_occurrences": (int, none_type),
             "renotify_statuses": ([MonitorRenotifyStatusType], none_type),
@@ -70,6 +73,7 @@ class MonitorOptions(ModelNormal):
         "enable_logs_sample": "enable_logs_sample",
         "escalation_message": "escalation_message",
         "evaluation_delay": "evaluation_delay",
+        "group_retention_duration": "group_retention_duration",
         "groupby_simple_monitor": "groupby_simple_monitor",
         "include_tags": "include_tags",
         "locked": "locked",
@@ -80,6 +84,7 @@ class MonitorOptions(ModelNormal):
         "no_data_timeframe": "no_data_timeframe",
         "notify_audit": "notify_audit",
         "notify_no_data": "notify_no_data",
+        "on_missing_data": "on_missing_data",
         "renotify_interval": "renotify_interval",
         "renotify_occurrences": "renotify_occurrences",
         "renotify_statuses": "renotify_statuses",
@@ -119,6 +124,12 @@ class MonitorOptions(ModelNormal):
             the timeframe is set to ``last_5m`` and the time is 7:00, the monitor evaluates data from 6:50 to 6:55.
             This is useful for AWS CloudWatch and other backfilled metrics to ensure the monitor always has data during evaluation.
         :type evaluation_delay: int, none_type, optional
+
+        :param group_retention_duration: The time span after which groups with missing data are dropped from the monitor state.
+            The minimum value is one hour, and the maximum value is 72 hours.
+            Example values are: "60m", "1h", and "2d".
+            This option is only available for APM Trace Analytics, Audit Trail, CI, Error Tracking, Event, Logs, and RUM monitors.
+        :type group_retention_duration: str, optional
 
         :param groupby_simple_monitor: Whether the log alert monitor triggers a single alert or multiple alerts when any group breaches a threshold.
         :type groupby_simple_monitor: bool, optional
@@ -167,6 +178,13 @@ class MonitorOptions(ModelNormal):
 
         :param notify_no_data: A Boolean indicating whether this monitor notifies when data stops reporting.
         :type notify_no_data: bool, optional
+
+        :param on_missing_data: Controls how groups or monitors are treated if an evaluation does not return any data points.
+            The default option results in different behavior depending on the monitor query type.
+            For monitors using Count queries, an empty monitor evaluation is treated as 0 and is compared to the threshold conditions.
+            For monitor using any query type other than Count, for example Gauge or Rate, the monitor shows the last known status.
+            This option is only available for APM Trace Analytics, Audit Trail, CI, Error Tracking, Event, Logs, and RUM monitors.
+        :type on_missing_data: OnMissingDataOption, optional
 
         :param renotify_interval: The number of minutes after the last notification before a monitor re-notifies on the current status.
             It only re-notifies if it’s not resolved.
