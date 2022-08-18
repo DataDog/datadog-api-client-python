@@ -13,7 +13,7 @@ class SyntheticsTestProcessStatus(ModelSimple):
     """
     Status of a Synthetic test.
 
-    :param value: Must be one of ["not_scheduled", "scheduled", "started", "finished", "finished_with_error"].
+    :param value: Must be one of ["not_scheduled", "scheduled", "finished", "finished_with_error"].
     :type value: str
     """
 
@@ -21,7 +21,6 @@ class SyntheticsTestProcessStatus(ModelSimple):
         "value": {
             "NOT_SCHEDULED": "not_scheduled",
             "SCHEDULED": "scheduled",
-            "STARTED": "started",
             "FINISHED": "finished",
             "FINISHED_WITH_ERROR": "finished_with_error",
         },
