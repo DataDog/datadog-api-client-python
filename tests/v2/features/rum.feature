@@ -123,7 +123,7 @@ Feature: RUM
   Scenario: Update a RUM application returns "Bad Request" response
     Given new "UpdateRUMApplication" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser|ios|android|react-native|flutter"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -131,7 +131,7 @@ Feature: RUM
   Scenario: Update a RUM application returns "Not Found" response
     Given new "UpdateRUMApplication" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser|ios|android|react-native|flutter"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -139,7 +139,7 @@ Feature: RUM
   Scenario: Update a RUM application returns "OK" response
     Given new "UpdateRUMApplication" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser|ios|android|react-native|flutter"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -147,6 +147,6 @@ Feature: RUM
   Scenario: Update a RUM application returns "Unprocessable Entity." response
     Given new "UpdateRUMApplication" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser|ios|android|react-native|flutter"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity.

@@ -70,7 +70,7 @@ class RUMApplicationAttributes(ModelNormal):
         :param org_id: Org ID of the RUM application.
         :type org_id: int
 
-        :param type: Type of the RUM application.
+        :param type: Type of the RUM application. Supported values are ``browser`` , ``ios`` , ``android`` , ``react-native`` , ``flutter``.
         :type type: str
 
         :param updated_at: Timestamp in ms of the last update date.
