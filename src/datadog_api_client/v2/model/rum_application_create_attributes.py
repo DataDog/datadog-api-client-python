@@ -29,7 +29,7 @@ class RUMApplicationCreateAttributes(ModelNormal):
         :param name: Name of the RUM application.
         :type name: str
 
-        :param type: Type of the RUM application.
+        :param type: Type of the RUM application. Supported values are ``browser`` , ``ios`` , ``android`` , ``react-native`` , ``flutter``.
         :type type: str, optional
         """
         super().__init__(kwargs)
