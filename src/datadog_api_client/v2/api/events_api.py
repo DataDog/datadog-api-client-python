@@ -87,7 +87,7 @@ class EventsApi:
         self._search_events_endpoint = _Endpoint(
             settings={
                 "response_type": (EventsListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/events/search",
                 "operation_id": "search_events",
                 "http_method": "POST",
