@@ -13,12 +13,13 @@ class ContentEncoding(ModelSimple):
     """
     HTTP header used to compress the media-type.
 
-    :param value: Must be one of ["gzip", "deflate"].
+    :param value: Must be one of ["identity", "gzip", "deflate"].
     :type value: str
     """
 
     allowed_values = {
         "value": {
+            "IDENTITY": "identity",
             "GZIP": "gzip",
             "DEFLATE": "deflate",
         },
