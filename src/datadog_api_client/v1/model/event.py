@@ -93,7 +93,7 @@ class Event(ModelNormal):
         :type priority: EventPriority, none_type, optional
 
         :param source_type_name: The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc.
-            The list of standard source attribute values `available here <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_.
+            The list of standard source attribute values `available here <https://docs.datadoghq.com/events/guides/new_events_sources/>`_.
         :type source_type_name: str, optional
 
         :param tags: A list of tags to apply to the event.
