@@ -22380,7 +22380,7 @@ paths:
         **Event V2 Alert Query**
 
 
-        Example: `events(query).rollup(rollup_method[, measure]).last(time_window)
+        Example: `events(query).rollup(rollup_method[, measure]).by("group_by").last(time_window)
         operator #`
 
 
@@ -22390,6 +22390,9 @@ paths:
 
         - `measure` For `avg` and cardinality `rollup_method` - specify the measure
         or the facet name you want to use.
+
+        - `group_by` defines a separate alert for each facet in the group (multi-alert).
+        Each facet must be separated by a comma.
 
         - `time_window` #m (between 1 and 2880), #h (between 1 and 48).
 
@@ -22423,7 +22426,7 @@ paths:
         **Logs Alert Query**
 
 
-        Example: `logs(query).index(index_name).rollup(rollup_method[, measure]).last(time_window)
+        Example: `logs(query).index(index_name).rollup(rollup_method[, measure]).by("group_by").last(time_window)
         operator #`
 
 
@@ -22436,6 +22439,9 @@ paths:
 
         - `measure` For `avg` and cardinality `rollup_method` - specify the measure
         or the facet name you want to use.
+
+        - `group_by` defines a separate alert for each facet in the group (multi-alert).
+        Each facet must be separated by a comma.
 
         - `time_window` #m (between 1 and 2880), #h (between 1 and 48).
 
@@ -22488,7 +22494,7 @@ paths:
         **Audit Alert Query**
 
 
-        Example: `audits(query).rollup(rollup_method[, measure]).last(time_window)
+        Example: `audits(query).rollup(rollup_method[, measure]).by("group_by").last(time_window)
         operator #`
 
 
@@ -22498,6 +22504,9 @@ paths:
 
         - `measure` For `avg` and cardinality `rollup_method` - specify the measure
         or the facet name you want to use.
+
+        - `group_by` defines a separate alert for each facet in the group (multi-alert).
+        Each facet must be separated by a comma.
 
         - `time_window` #m (between 1 and 2880), #h (between 1 and 48).
 
@@ -22513,7 +22522,7 @@ paths:
         **CI Pipelines Alert Query**
 
 
-        Example: `ci-pipelines(query).rollup(rollup_method[, measure]).last(time_window)
+        Example: `ci-pipelines(query).rollup(rollup_method[, measure]).by("group_by").last(time_window)
         operator #`
 
 
@@ -22524,6 +22533,9 @@ paths:
 
         - `measure` For `avg` and cardinality `rollup_method` - specify the measure
         or the facet name you want to use.
+
+        - `group_by` defines a separate alert for each facet in the group (multi-alert).
+        Each facet must be separated by a comma.
 
         - `time_window` #m (between 1 and 2880), #h (between 1 and 48).
 
@@ -22538,7 +22550,7 @@ paths:
         **CI Tests Alert Query**
 
 
-        Example: `ci-tests(query).rollup(rollup_method[, measure]).last(time_window)
+        Example: `ci-tests(query).rollup(rollup_method[, measure]).by("group_by").last(time_window)
         operator #`
 
 
@@ -22549,6 +22561,9 @@ paths:
 
         - `measure` For `avg` and cardinality `rollup_method` - specify the measure
         or the facet name you want to use.
+
+        - `group_by` defines a separate alert for each facet in the group (multi-alert).
+        Each facet must be separated by a comma.
 
         - `time_window` #m (between 1 and 2880), #h (between 1 and 48).
 

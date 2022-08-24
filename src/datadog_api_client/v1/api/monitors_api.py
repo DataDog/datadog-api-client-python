@@ -463,12 +463,13 @@ class MonitorsApi:
 
         **Event V2 Alert Query**
 
-        Example: ``events(query).rollup(rollup_method[, measure]).last(time_window) operator #``
+        Example: ``events(query).rollup(rollup_method[, measure]).by("group_by").last(time_window) operator #``
 
 
         * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
         * ``rollup_method`` The stats roll-up method - supports ``count`` , ``avg`` and ``cardinality``.
         * ``measure`` For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
+        * ``group_by`` defines a separate alert for each facet in the group (multi-alert). Each facet must be separated by a comma.
         * ``time_window`` #m (between 1 and 2880), #h (between 1 and 48).
         * ``operator`` ``<`` , ``<=`` , ``>`` , ``>=`` , ``==`` , or ``!=``.
         * ``#`` an integer or decimal number used to set the threshold.
@@ -487,13 +488,14 @@ class MonitorsApi:
 
         **Logs Alert Query**
 
-        Example: ``logs(query).index(index_name).rollup(rollup_method[, measure]).last(time_window) operator #``
+        Example: ``logs(query).index(index_name).rollup(rollup_method[, measure]).by("group_by").last(time_window) operator #``
 
 
         * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
         * ``index_name`` For multi-index organizations, the log index in which the request is performed.
         * ``rollup_method`` The stats roll-up method - supports ``count`` , ``avg`` and ``cardinality``.
         * ``measure`` For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
+        * ``group_by`` defines a separate alert for each facet in the group (multi-alert). Each facet must be separated by a comma.
         * ``time_window`` #m (between 1 and 2880), #h (between 1 and 48).
         * ``operator`` ``<`` , ``<=`` , ``>`` , ``>=`` , ``==`` , or ``!=``.
         * ``#`` an integer or decimal number used to set the threshold.
@@ -521,12 +523,13 @@ class MonitorsApi:
 
         **Audit Alert Query**
 
-        Example: ``audits(query).rollup(rollup_method[, measure]).last(time_window) operator #``
+        Example: ``audits(query).rollup(rollup_method[, measure]).by("group_by").last(time_window) operator #``
 
 
         * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
         * ``rollup_method`` The stats roll-up method - supports ``count`` , ``avg`` and ``cardinality``.
         * ``measure`` For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
+        * ``group_by`` defines a separate alert for each facet in the group (multi-alert). Each facet must be separated by a comma.
         * ``time_window`` #m (between 1 and 2880), #h (between 1 and 48).
         * ``operator`` ``<`` , ``<=`` , ``>`` , ``>=`` , ``==`` , or ``!=``.
         * ``#`` an integer or decimal number used to set the threshold.
@@ -535,12 +538,13 @@ class MonitorsApi:
 
         **CI Pipelines Alert Query**
 
-        Example: ``ci-pipelines(query).rollup(rollup_method[, measure]).last(time_window) operator #``
+        Example: ``ci-pipelines(query).rollup(rollup_method[, measure]).by("group_by").last(time_window) operator #``
 
 
         * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
         * ``rollup_method`` The stats roll-up method - supports ``count`` , ``avg`` , and ``cardinality``.
         * ``measure`` For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
+        * ``group_by`` defines a separate alert for each facet in the group (multi-alert). Each facet must be separated by a comma.
         * ``time_window`` #m (between 1 and 2880), #h (between 1 and 48).
         * ``operator`` ``<`` , ``<=`` , ``>`` , ``>=`` , ``==`` , or ``!=``.
         * ``#`` an integer or decimal number used to set the threshold.
@@ -549,12 +553,13 @@ class MonitorsApi:
 
         **CI Tests Alert Query**
 
-        Example: ``ci-tests(query).rollup(rollup_method[, measure]).last(time_window) operator #``
+        Example: ``ci-tests(query).rollup(rollup_method[, measure]).by("group_by").last(time_window) operator #``
 
 
         * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
         * ``rollup_method`` The stats roll-up method - supports ``count`` , ``avg`` , and ``cardinality``.
         * ``measure`` For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
+        * ``group_by`` defines a separate alert for each facet in the group (multi-alert). Each facet must be separated by a comma.
         * ``time_window`` #m (between 1 and 2880), #h (between 1 and 48).
         * ``operator`` ``<`` , ``<=`` , ``>`` , ``>=`` , ``==`` , or ``!=``.
         * ``#`` an integer or decimal number used to set the threshold.
