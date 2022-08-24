@@ -11456,7 +11456,6 @@ components:
           example: 12345
           format: int64
           type: integer
-          x-secret: true
         isEnabled:
           description: Determines whether RUM data is collected during test runs.
           example: true
@@ -17490,9 +17489,6 @@ paths:
       summary: List IP Ranges
       tags:
       - IP Ranges
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /api/v1/api_key:
     get:
       description: Get all API keys available for your account.
@@ -17515,9 +17511,6 @@ paths:
       summary: Get all API keys
       tags:
       - Key Management
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: Creates an API key with a given name.
       operationId: CreateAPIKey
@@ -17552,13 +17545,6 @@ paths:
       tags:
       - Key Management
       x-codegen-request-body-name: body
-      x-menu-order: 2
-      x-undo:
-        operationId: DeleteAPIKey
-        parameters:
-        - name: key
-          source: <RESPONSE_PATH>
-        type: unsafe
   /api/v1/api_key/{key}:
     delete:
       description: Delete a given API key.
@@ -17600,9 +17586,6 @@ paths:
       summary: Delete an API key
       tags:
       - Key Management
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
     get:
       description: Get a given API key.
       operationId: GetAPIKey
@@ -17637,9 +17620,6 @@ paths:
       summary: Get API key
       tags:
       - Key Management
-      x-menu-order: 3
-      x-undo:
-        type: safe
     put:
       description: Edit an API key name.
       operationId: UpdateAPIKey
@@ -17687,9 +17667,6 @@ paths:
       tags:
       - Key Management
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v1/application_key:
     get:
       description: Get all application keys available for your Datadog account.
@@ -17712,9 +17689,6 @@ paths:
       summary: Get all application keys
       tags:
       - Key Management
-      x-menu-order: 6
-      x-undo:
-        type: safe
     post:
       description: Create an application key with a given name.
       operationId: CreateApplicationKey
@@ -17755,13 +17729,6 @@ paths:
       tags:
       - Key Management
       x-codegen-request-body-name: body
-      x-menu-order: 7
-      x-undo:
-        operationId: DeleteApplicationKey
-        parameters:
-        - name: key
-          source: <RESPONSE_PATH>
-        type: unsafe
   /api/v1/application_key/{key}:
     delete:
       description: Delete a given application key.
@@ -17797,9 +17764,6 @@ paths:
       summary: Delete an application key
       tags:
       - Key Management
-      x-menu-order: 10
-      x-undo:
-        type: idempotent
     get:
       description: Get a given application key.
       operationId: GetApplicationKey
@@ -17834,9 +17798,6 @@ paths:
       summary: Get an application key
       tags:
       - Key Management
-      x-menu-order: 8
-      x-undo:
-        type: safe
     put:
       description: Edit an application key name.
       operationId: UpdateApplicationKey
@@ -17890,9 +17851,6 @@ paths:
       tags:
       - Key Management
       x-codegen-request-body-name: body
-      x-menu-order: 9
-      x-undo:
-        type: idempotent
   /api/v1/check_run:
     post:
       description: 'Submit a list of Service Checks.
@@ -17950,9 +17908,6 @@ paths:
       tags:
       - Service Checks
       x-codegen-request-body-name: body
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /api/v1/daily_custom_reports:
     get:
       deprecated: true
@@ -18018,9 +17973,6 @@ paths:
       summary: Get the list of available daily custom reports
       tags:
       - Usage Metering
-      x-menu-order: 41
-      x-undo:
-        type: safe
   /api/v1/daily_custom_reports/{report_id}:
     get:
       deprecated: true
@@ -18071,9 +18023,6 @@ paths:
       summary: Get specified daily custom reports
       tags:
       - Usage Metering
-      x-menu-order: 42
-      x-undo:
-        type: safe
   /api/v1/dashboard:
     delete:
       description: Delete dashboards using the specified IDs. If there are any failures,
@@ -18126,9 +18075,6 @@ paths:
       tags:
       - Dashboards
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
     get:
       description: 'Get all dashboards.
 
@@ -18177,9 +18123,6 @@ paths:
       summary: Get all dashboards
       tags:
       - Dashboards
-      x-menu-order: 2
-      x-undo:
-        type: safe
     patch:
       description: Restore dashboards using the specified IDs. If there are any failures,
         no dashboards will be restored (partial success is not allowed).
@@ -18231,9 +18174,6 @@ paths:
       tags:
       - Dashboards
       x-codegen-request-body-name: body
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
     post:
       description: 'Create a dashboard using the specified options. When defining
         queries in your widgets, take note of which queries should have the `as_count()`
@@ -18279,24 +18219,6 @@ paths:
       tags:
       - Dashboards
       x-codegen-request-body-name: body
-      x-given:
-        dashboard:
-          parameters:
-          - file: dashboard_payload.json
-            name: body
-          step: there is a valid "dashboard" in the system
-        screenboard_dashboard:
-          parameters:
-          - file: screenboard_dashboard_payload.json
-            name: body
-          step: there is a valid "screenboard_dashboard" in the system
-      x-menu-order: 1
-      x-undo:
-        operationId: DeleteDashboard
-        parameters:
-        - name: dashboard_id
-          source: id
-        type: unsafe
   /api/v1/dashboard/lists/manual:
     get:
       description: Fetch all of your existing dashboard list definitions.
@@ -18324,9 +18246,6 @@ paths:
       summary: Get all dashboard lists
       tags:
       - Dashboard Lists
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: Create an empty dashboard list.
       operationId: CreateDashboardList
@@ -18367,19 +18286,6 @@ paths:
       tags:
       - Dashboard Lists
       x-codegen-request-body-name: body
-      x-given:
-        dashboard_list:
-          parameters:
-          - name: body
-            value: "{\n  \"name\": \"{{ unique }}\"\n}"
-          step: there is a valid "dashboard_list" in the system
-      x-menu-order: 2
-      x-undo:
-        operationId: DeleteDashboardList
-        parameters:
-        - name: list_id
-          source: id
-        type: unsafe
   /api/v1/dashboard/lists/manual/{list_id}:
     delete:
       description: Delete a dashboard list.
@@ -18421,9 +18327,6 @@ paths:
       summary: Delete a dashboard list
       tags:
       - Dashboard Lists
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
     get:
       description: Fetch an existing dashboard list's definition.
       operationId: GetDashboardList
@@ -18464,9 +18367,6 @@ paths:
       summary: Get a dashboard list
       tags:
       - Dashboard Lists
-      x-menu-order: 3
-      x-undo:
-        type: safe
     put:
       description: Update the name of a dashboard list.
       operationId: UpdateDashboardList
@@ -18521,9 +18421,6 @@ paths:
       tags:
       - Dashboard Lists
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v1/dashboard/{dashboard_id}:
     delete:
       description: Delete a dashboard using the specified ID.
@@ -18564,15 +18461,6 @@ paths:
       summary: Delete a dashboard
       tags:
       - Dashboards
-      x-given:
-        deleted_dashboard:
-          parameters:
-          - name: dashboard_id
-            source: dashboard.id
-          step: the "dashboard" was deleted
-      x-menu-order: 3
-      x-undo:
-        type: idempotent
     get:
       description: Get a dashboard using the specified ID.
       operationId: GetDashboard
@@ -18612,9 +18500,6 @@ paths:
       summary: Get a dashboard
       tags:
       - Dashboards
-      x-menu-order: 7
-      x-undo:
-        type: safe
     put:
       description: Update a dashboard using the specified ID.
       operationId: UpdateDashboard
@@ -18668,9 +18553,6 @@ paths:
       tags:
       - Dashboards
       x-codegen-request-body-name: body
-      x-menu-order: 6
-      x-undo:
-        type: idempotent
   /api/v1/distribution_points:
     post:
       description: "The distribution points end-point allows you to post distribution
@@ -18736,9 +18618,6 @@ paths:
       tags:
       - Metrics
       x-codegen-request-body-name: body
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /api/v1/downtime:
     get:
       description: Get all scheduled downtimes.
@@ -18775,9 +18654,6 @@ paths:
       summary: Get all downtimes
       tags:
       - Downtimes
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: Schedule a downtime.
       operationId: CreateDowntime
@@ -18818,23 +18694,6 @@ paths:
       tags:
       - Downtimes
       x-codegen-request-body-name: body
-      x-given:
-        downtime:
-          parameters:
-          - name: body
-            value: "{\n  \"message\": \"{{ unique }}\",\n  \"start\": {{ timestamp(\"now\")
-              }},\n  \"timezone\": \"Etc/UTC\",\n  \"scope\": [\"test:{{ unique_lower_alnum
-              }}\"],\n  \"recurrence\": {\n    \"type\": \"weeks\",\n    \"period\":
-              1,\n    \"week_days\": [\"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\"],\n
-              \   \"until_date\": {{ timestamp(\"now + 21d\")}}\n  }\n}"
-          step: there is a valid "downtime" in the system
-      x-menu-order: 2
-      x-undo:
-        operationId: CancelDowntime
-        parameters:
-        - name: downtime_id
-          source: id
-        type: unsafe
   /api/v1/downtime/cancel/by_scope:
     post:
       description: Delete all downtimes that match the scope of `X`.
@@ -18882,9 +18741,6 @@ paths:
       tags:
       - Downtimes
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: idempotent
   /api/v1/downtime/{downtime_id}:
     delete:
       description: Cancel a downtime.
@@ -18923,9 +18779,6 @@ paths:
       summary: Cancel a downtime
       tags:
       - Downtimes
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
     get:
       description: Get downtime detail by `downtime_id`.
       operationId: GetDowntime
@@ -18967,9 +18820,6 @@ paths:
       summary: Get a downtime
       tags:
       - Downtimes
-      x-menu-order: 5
-      x-undo:
-        type: safe
     put:
       description: Update a single downtime by `downtime_id`.
       operationId: UpdateDowntime
@@ -19026,9 +18876,6 @@ paths:
       tags:
       - Downtimes
       x-codegen-request-body-name: body
-      x-menu-order: 6
-      x-undo:
-        type: idempotent
   /api/v1/events:
     get:
       description: "The event stream can be queried and filtered by time, priority,
@@ -19139,9 +18986,6 @@ paths:
       summary: Get a list of events
       tags:
       - Events
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: 'This endpoint allows you to post events to the stream.
 
@@ -19175,9 +19019,6 @@ paths:
       tags:
       - Events
       x-codegen-request-body-name: body
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /api/v1/events/{event_id}:
     get:
       description: "This endpoint allows you to query for event details.\n\n**Note**:
@@ -19221,9 +19062,6 @@ paths:
       summary: Get an event
       tags:
       - Events
-      x-menu-order: 2
-      x-undo:
-        type: safe
   /api/v1/graph/snapshot:
     get:
       description: 'Take graph snapshots.
@@ -19318,9 +19156,6 @@ paths:
       summary: Take graph snapshots
       tags:
       - Snapshots
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /api/v1/host/{host_name}/mute:
     post:
       description: Mute a host.
@@ -19364,9 +19199,6 @@ paths:
       tags:
       - Hosts
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: safe
   /api/v1/host/{host_name}/unmute:
     post:
       description: Unmutes a host. This endpoint takes no JSON arguments.
@@ -19403,9 +19235,6 @@ paths:
       tags:
       - Hosts
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: safe
   /api/v1/hosts:
     get:
       description: 'This endpoint allows searching for hosts by name, alias, or tag.
@@ -19499,9 +19328,6 @@ paths:
       summary: Get all hosts for your organization
       tags:
       - Hosts
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /api/v1/hosts/totals:
     get:
       description: 'This endpoint returns the total number of active and up hosts
@@ -19547,9 +19373,6 @@ paths:
       summary: Get the total number of active hosts
       tags:
       - Hosts
-      x-menu-order: 2
-      x-undo:
-        type: safe
   /api/v1/integration/aws:
     delete:
       description: Delete a Datadog-AWS integration matching the specified `account_id`
@@ -19593,9 +19416,6 @@ paths:
       tags:
       - AWS Integration
       x-codegen-request-body-name: body
-      x-menu-order: 7
-      x-undo:
-        type: idempotent
     get:
       description: List all Datadog-AWS integrations available in your Datadog organization.
       operationId: ListAWSAccounts
@@ -19642,9 +19462,6 @@ paths:
       summary: List all AWS integrations
       tags:
       - AWS Integration
-      x-menu-order: 6
-      x-undo:
-        type: safe
     post:
       description: 'Create a Datadog-Amazon Web Services integration.
 
@@ -19692,11 +19509,6 @@ paths:
       tags:
       - AWS Integration
       x-codegen-request-body-name: body
-      x-menu-order: 8
-      x-undo:
-        operationId: DeleteAWSAccount
-        parameters: []
-        type: unsafe
     put:
       description: Update a Datadog-Amazon Web Services integration.
       operationId: UpdateAWSAccount
@@ -19761,9 +19573,6 @@ paths:
       tags:
       - AWS Integration
       x-codegen-request-body-name: body
-      x-menu-order: 9
-      x-undo:
-        type: safe
   /api/v1/integration/aws/available_namespace_rules:
     get:
       description: List all namespace rules for a given Datadog-AWS integration. This
@@ -19793,9 +19602,6 @@ paths:
       summary: List namespace rules
       tags:
       - AWS Integration
-      x-menu-order: 5
-      x-undo:
-        type: safe
   /api/v1/integration/aws/filtering:
     delete:
       description: Delete a tag filtering entry.
@@ -19834,9 +19640,6 @@ paths:
       tags:
       - AWS Integration
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: idempotent
     get:
       description: Get all AWS tag filters.
       operationId: ListAWSTagFilters
@@ -19871,9 +19674,6 @@ paths:
       summary: Get all AWS tag filters
       tags:
       - AWS Integration
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: Set an AWS tag filter.
       operationId: CreateAWSTagFilter
@@ -19914,11 +19714,6 @@ paths:
       tags:
       - AWS Integration
       x-codegen-request-body-name: body
-      x-menu-order: 2
-      x-undo:
-        operationId: DeleteAWSTagFilter
-        parameters: []
-        type: unsafe
   /api/v1/integration/aws/generate_new_external_id:
     put:
       description: Generate a new AWS external ID for a given AWS account ID and role
@@ -19960,9 +19755,6 @@ paths:
       tags:
       - AWS Integration
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v1/integration/aws/logs:
     delete:
       description: Delete a Datadog-AWS logs configuration by removing the specific
@@ -20000,9 +19792,6 @@ paths:
       tags:
       - AWS Logs Integration
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: idempotent
     get:
       description: List all Datadog-AWS Logs integrations configured in your Datadog
         account.
@@ -20043,9 +19832,6 @@ paths:
       summary: List all AWS Logs integrations
       tags:
       - AWS Logs Integration
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: Attach the Lambda ARN of the Lambda created for the Datadog-AWS
         log collection to your AWS account ID to enable log collection.
@@ -20082,11 +19868,6 @@ paths:
       tags:
       - AWS Logs Integration
       x-codegen-request-body-name: body
-      x-menu-order: 2
-      x-undo:
-        operationId: DeleteAWSLambdaARN
-        parameters: []
-        type: unsafe
   /api/v1/integration/aws/logs/check_async:
     post:
       description: 'Test if permissions are present to add a log-forwarding triggers
@@ -20143,9 +19924,6 @@ paths:
       tags:
       - AWS Logs Integration
       x-codegen-request-body-name: body
-      x-menu-order: 7
-      x-undo:
-        type: safe
   /api/v1/integration/aws/logs/services:
     get:
       description: Get the list of current AWS services that Datadog offers automatic
@@ -20185,9 +19963,6 @@ paths:
       summary: Get list of AWS log ready services
       tags:
       - AWS Logs Integration
-      x-menu-order: 4
-      x-undo:
-        type: safe
     post:
       description: Enable automatic log collection for a list of services. This should
         be run after running `CreateAWSLambdaARN` to save the configuration.
@@ -20224,10 +19999,6 @@ paths:
       tags:
       - AWS Logs Integration
       x-codegen-request-body-name: body
-      x-menu-order: 5
-      x-undo:
-        operationId: TODO
-        type: unsafe
   /api/v1/integration/aws/logs/services_async:
     post:
       description: "Test if permissions are present to add log-forwarding triggers
@@ -20270,9 +20041,6 @@ paths:
       tags:
       - AWS Logs Integration
       x-codegen-request-body-name: body
-      x-menu-order: 6
-      x-undo:
-        type: safe
   /api/v1/integration/azure:
     delete:
       description: Delete a given Datadog-Azure integration from your Datadog account.
@@ -20310,9 +20078,6 @@ paths:
       tags:
       - Azure Integration
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: idempotent
     get:
       description: List all Datadog-Azure integrations configured in your Datadog
         account.
@@ -20341,9 +20106,6 @@ paths:
       summary: List all Azure integrations
       tags:
       - Azure Integration
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: 'Create a Datadog-Azure integration.
 
@@ -20393,11 +20155,6 @@ paths:
       tags:
       - Azure Integration
       x-codegen-request-body-name: body
-      x-menu-order: 2
-      x-undo:
-        operationId: DeleteAzureIntegration
-        parameters: []
-        type: unsafe
     put:
       description: 'Update a Datadog-Azure integration. Requires an existing `tenant_name`
         and `client_id`.
@@ -20441,9 +20198,6 @@ paths:
       tags:
       - Azure Integration
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v1/integration/azure/host_filters:
     post:
       description: Update the defined list of host filters for a given Datadog-Azure
@@ -20482,9 +20236,6 @@ paths:
       tags:
       - Azure Integration
       x-codegen-request-body-name: body
-      x-menu-order: 5
-      x-undo:
-        type: safe
   /api/v1/integration/gcp:
     delete:
       description: Delete a given Datadog-GCP integration.
@@ -20522,9 +20273,6 @@ paths:
       tags:
       - GCP Integration
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: idempotent
     get:
       description: List all Datadog-GCP integrations configured in your Datadog account.
       operationId: ListGCPIntegration
@@ -20552,9 +20300,6 @@ paths:
       summary: List all GCP integrations
       tags:
       - GCP Integration
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: Create a Datadog-GCP integration.
       operationId: CreateGCPIntegration
@@ -20591,11 +20336,6 @@ paths:
       tags:
       - GCP Integration
       x-codegen-request-body-name: body
-      x-menu-order: 2
-      x-undo:
-        operationId: DeleteGCPIntegration
-        parameters: []
-        type: unsafe
     put:
       description: 'Update a Datadog-GCP integrations host_filters and/or auto-mute.
 
@@ -20639,9 +20379,6 @@ paths:
       tags:
       - GCP Integration
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v1/integration/pagerduty/configuration/services:
     post:
       description: Create a new service object in the PagerDuty integration.
@@ -20678,13 +20415,6 @@ paths:
       tags:
       - PagerDuty Integration
       x-codegen-request-body-name: body
-      x-menu-order: 1
-      x-undo:
-        operationId: DeletePagerDutyIntegrationService
-        parameters:
-        - name: service_name
-          source: service_name
-        type: unsafe
   /api/v1/integration/pagerduty/configuration/services/{service_name}:
     delete:
       description: Delete a single service object in the Datadog-PagerDuty integration.
@@ -20716,9 +20446,6 @@ paths:
       summary: Delete a single service object
       tags:
       - PagerDuty Integration
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
     get:
       description: Get service name in the Datadog-PagerDuty integration.
       operationId: GetPagerDutyIntegrationService
@@ -20753,9 +20480,6 @@ paths:
       summary: Get a single service object
       tags:
       - PagerDuty Integration
-      x-menu-order: 2
-      x-undo:
-        type: safe
     put:
       description: Update a single service object in the Datadog-PagerDuty integration.
       operationId: UpdatePagerDutyIntegrationService
@@ -20800,9 +20524,6 @@ paths:
       tags:
       - PagerDuty Integration
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: idempotent
   /api/v1/integration/slack/configuration/accounts/{account_name}/channels:
     get:
       description: Get a list of all channels configured for your Datadog-Slack integration.
@@ -20839,9 +20560,6 @@ paths:
       summary: Get all channels in a Slack integration
       tags:
       - Slack Integration
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: Add a channel to your Datadog-Slack integration.
       operationId: CreateSlackIntegrationChannel
@@ -20885,9 +20603,6 @@ paths:
       tags:
       - Slack Integration
       x-codegen-request-body-name: body
-      x-menu-order: 2
-      x-undo:
-        type: unsafe
   /api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name}:
     delete:
       description: Remove a channel from your Datadog-Slack integration.
@@ -20921,9 +20636,6 @@ paths:
       summary: Remove a Slack integration channel
       tags:
       - Slack Integration
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
     get:
       description: Get a channel configured for your Datadog-Slack integration.
       operationId: GetSlackIntegrationChannel
@@ -20960,9 +20672,6 @@ paths:
       summary: Get a Slack integration channel
       tags:
       - Slack Integration
-      x-menu-order: 3
-      x-undo:
-        type: safe
     patch:
       description: Update a channel used in your Datadog-Slack integration.
       operationId: UpdateSlackIntegrationChannel
@@ -21007,9 +20716,6 @@ paths:
       tags:
       - Slack Integration
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v1/integration/webhooks/configuration/custom-variables:
     post:
       description: Creates an endpoint with the name `<CUSTOM_VARIABLE_NAME>`.
@@ -21046,20 +20752,6 @@ paths:
       tags:
       - Webhooks Integration
       x-codegen-request-body-name: body
-      x-given:
-        webhook_custom_variable:
-          parameters:
-          - name: body
-            value: "{\n  \"name\": \"{{ unique_upper_alnum }}\",\n  \"value\": \"variable-value\",\n
-              \ \"is_secret\": false\n}"
-          step: there is a valid "webhook_custom_variable" in the system
-      x-menu-order: 5
-      x-undo:
-        operationId: DeleteWebhooksIntegrationCustomVariable
-        parameters:
-        - name: custom_variable_name
-          source: name
-        type: unsafe
   /api/v1/integration/webhooks/configuration/custom-variables/{custom_variable_name}:
     delete:
       description: Deletes the endpoint with the name `<CUSTOM_VARIABLE_NAME>`.
@@ -21091,9 +20783,6 @@ paths:
       summary: Delete a custom variable
       tags:
       - Webhooks Integration
-      x-menu-order: 8
-      x-undo:
-        type: idempotent
     get:
       description: 'Shows the content of the custom variable with the name `<CUSTOM_VARIABLE_NAME>`.
 
@@ -21139,9 +20828,6 @@ paths:
       summary: Get a custom variable
       tags:
       - Webhooks Integration
-      x-menu-order: 6
-      x-undo:
-        type: safe
     put:
       description: Updates the endpoint with the name `<CUSTOM_VARIABLE_NAME>`.
       operationId: UpdateWebhooksIntegrationCustomVariable
@@ -21190,9 +20876,6 @@ paths:
       tags:
       - Webhooks Integration
       x-codegen-request-body-name: body
-      x-menu-order: 7
-      x-undo:
-        type: safe
   /api/v1/integration/webhooks/configuration/webhooks:
     post:
       description: Creates an endpoint with the name `<WEBHOOK_NAME>`.
@@ -21229,19 +20912,6 @@ paths:
       tags:
       - Webhooks Integration
       x-codegen-request-body-name: body
-      x-given:
-        webhook:
-          parameters:
-          - name: body
-            value: "{\n  \"name\": \"{{ unique }}\",\n  \"url\": \"http://example.com/webhook\"\n}"
-          step: there is a valid "webhook" in the system
-      x-menu-order: 1
-      x-undo:
-        operationId: DeleteWebhooksIntegration
-        parameters:
-        - name: webhook_name
-          source: name
-        type: unsafe
   /api/v1/integration/webhooks/configuration/webhooks/{webhook_name}:
     delete:
       description: Deletes the endpoint with the name `<WEBHOOK NAME>`.
@@ -21273,9 +20943,6 @@ paths:
       summary: Delete a webhook
       tags:
       - Webhooks Integration
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
     get:
       description: Gets the content of the webhook with the name `<WEBHOOK_NAME>`.
       operationId: GetWebhooksIntegration
@@ -21316,9 +20983,6 @@ paths:
       summary: Get a webhook integration
       tags:
       - Webhooks Integration
-      x-menu-order: 2
-      x-undo:
-        type: safe
     put:
       description: Updates the endpoint with the name `<WEBHOOK_NAME>`.
       operationId: UpdateWebhooksIntegration
@@ -21367,9 +21031,6 @@ paths:
       tags:
       - Webhooks Integration
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: safe
   /api/v1/logs-queries/list:
     post:
       description: 'List endpoint returns logs that match a log search query.
@@ -21420,9 +21081,6 @@ paths:
       tags:
       - Logs
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: safe
   /api/v1/logs/config/index-order:
     get:
       description: Get the current order of your log indexes. This endpoint takes
@@ -21450,9 +21108,6 @@ paths:
       summary: Get indexes order
       tags:
       - Logs Indexes
-      x-menu-order: 5
-      x-undo:
-        type: safe
     put:
       description: 'This endpoint updates the index order of your organization.
 
@@ -21491,9 +21146,6 @@ paths:
       tags:
       - Logs Indexes
       x-codegen-request-body-name: body
-      x-menu-order: 6
-      x-undo:
-        type: idempotent
   /api/v1/logs/config/indexes:
     get:
       description: 'The Index object describes the configuration of a log index.
@@ -21522,9 +21174,6 @@ paths:
       summary: Get all indexes
       tags:
       - Logs Indexes
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: Creates a new index. Returns the Index object passed in the request
         body when the request is successful.
@@ -21561,11 +21210,6 @@ paths:
       tags:
       - Logs Indexes
       x-codegen-request-body-name: body
-      x-menu-order: 2
-      x-undo:
-        operationId: TODO
-        parameters: []
-        type: unsafe
   /api/v1/logs/config/indexes/{name}:
     get:
       description: Get one log index from your organization. This endpoint takes no
@@ -21602,9 +21246,6 @@ paths:
       summary: Get an index
       tags:
       - Logs Indexes
-      x-menu-order: 3
-      x-undo:
-        type: safe
     put:
       description: "Update an index as identified by its name.\nReturns the Index
         object passed in the request body when the request is successful.\n\nUsing
@@ -21654,9 +21295,6 @@ paths:
       tags:
       - Logs Indexes
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v1/logs/config/pipeline-order:
     get:
       description: 'Get the current order of your pipelines.
@@ -21685,9 +21323,6 @@ paths:
       summary: Get pipeline order
       tags:
       - Logs Pipelines
-      x-menu-order: 1
-      x-undo:
-        type: safe
     put:
       description: 'Update the order of your pipelines. Since logs are processed sequentially,
         reordering a pipeline may change
@@ -21739,9 +21374,6 @@ paths:
       tags:
       - Logs Pipelines
       x-codegen-request-body-name: body
-      x-menu-order: 2
-      x-undo:
-        type: idempotent
   /api/v1/logs/config/pipelines:
     get:
       description: 'Get all pipelines from your organization.
@@ -21770,9 +21402,6 @@ paths:
       summary: Get all pipelines
       tags:
       - Logs Pipelines
-      x-menu-order: 3
-      x-undo:
-        type: safe
     post:
       description: Create a pipeline in your organization.
       operationId: CreateLogsPipeline
@@ -21808,13 +21437,6 @@ paths:
       tags:
       - Logs Pipelines
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        operationId: DeleteLogsPipeline
-        parameters:
-        - name: pipeline_id
-          source: id
-        type: unsafe
   /api/v1/logs/config/pipelines/{pipeline_id}:
     delete:
       description: 'Delete a given pipeline from your organization.
@@ -21848,9 +21470,6 @@ paths:
       summary: Delete a pipeline
       tags:
       - Logs Pipelines
-      x-menu-order: 6
-      x-undo:
-        type: idempotent
     get:
       description: 'Get a specific pipeline from your organization.
 
@@ -21891,9 +21510,6 @@ paths:
       summary: Get a pipeline
       tags:
       - Logs Pipelines
-      x-menu-order: 5
-      x-undo:
-        type: safe
     put:
       description: "Update a given pipeline configuration to change it\u2019s processors
         or their order.\n\n**Note**: Using this method updates your pipeline configuration
@@ -21939,9 +21555,6 @@ paths:
       tags:
       - Logs Pipelines
       x-codegen-request-body-name: body
-      x-menu-order: 7
-      x-undo:
-        type: idempotent
   /api/v1/metrics:
     get:
       description: Get the list of actively reporting metrics from a given time until
@@ -22002,9 +21615,6 @@ paths:
       summary: Get active metrics list
       tags:
       - Metrics
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /api/v1/metrics/{metric_name}:
     get:
       description: Get metadata about a specific metric.
@@ -22045,9 +21655,6 @@ paths:
       summary: Get metric metadata
       tags:
       - Metrics
-      x-menu-order: 2
-      x-undo:
-        type: safe
     put:
       description: Edit metadata of a specific metric. Find out more about [supported
         types](https://docs.datadoghq.com/developers/metrics).
@@ -22097,9 +21704,6 @@ paths:
       tags:
       - Metrics
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: idempotent
   /api/v1/monitor:
     get:
       description: Get details about the specified monitor from your organization.
@@ -22210,9 +21814,6 @@ paths:
       summary: Get all monitor details
       tags:
       - Monitors
-      x-menu-order: 2
-      x-undo:
-        type: safe
     post:
       description: 'Create a monitor using the specified options.
 
@@ -22635,19 +22236,6 @@ paths:
       tags:
       - Monitors
       x-codegen-request-body-name: body
-      x-given:
-        monitor:
-          parameters:
-          - file: monitor_payload.json
-            name: body
-          step: there is a valid "monitor" in the system
-      x-menu-order: 1
-      x-undo:
-        operationId: DeleteMonitor
-        parameters:
-        - name: monitor_id
-          source: id
-        type: unsafe
   /api/v1/monitor/can_delete:
     get:
       description: Check if the given monitors can be deleted.
@@ -22700,9 +22288,6 @@ paths:
       summary: Check if a monitor can be deleted
       tags:
       - Monitors
-      x-menu-order: 6
-      x-undo:
-        type: safe
   /api/v1/monitor/groups/search:
     get:
       description: Search and filter your monitor groups details.
@@ -22789,9 +22374,6 @@ paths:
       summary: Monitors group search
       tags:
       - Monitors
-      x-menu-order: 2
-      x-undo:
-        type: safe
   /api/v1/monitor/search:
     get:
       description: Search and filter your monitors details.
@@ -22878,9 +22460,6 @@ paths:
       summary: Monitors search
       tags:
       - Monitors
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /api/v1/monitor/validate:
     post:
       description: Validate the monitor provided in the request.
@@ -22923,9 +22502,6 @@ paths:
       tags:
       - Monitors
       x-codegen-request-body-name: body
-      x-menu-order: 7
-      x-undo:
-        type: idempotent
   /api/v1/monitor/{monitor_id}:
     delete:
       description: Delete the specified monitor
@@ -22988,9 +22564,6 @@ paths:
       summary: Delete a monitor
       tags:
       - Monitors
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
     get:
       description: Get details about the specified monitor from your organization.
       operationId: GetMonitor
@@ -23045,9 +22618,6 @@ paths:
       summary: Get a monitor's details
       tags:
       - Monitors
-      x-menu-order: 4
-      x-undo:
-        type: safe
     put:
       description: Edit the specified monitor.
       operationId: UpdateMonitor
@@ -23109,9 +22679,6 @@ paths:
       tags:
       - Monitors
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: idempotent
   /api/v1/monitor/{monitor_id}/downtimes:
     get:
       description: Get all active downtimes for the specified monitor.
@@ -23156,9 +22723,6 @@ paths:
       tags:
       - Downtimes
       x-codegen-request-body-name: body
-      x-menu-order: 7
-      x-undo:
-        type: safe
   /api/v1/monitor/{monitor_id}/validate:
     post:
       description: Validate the monitor provided in the request.
@@ -23210,9 +22774,6 @@ paths:
       tags:
       - Monitors
       x-codegen-request-body-name: body
-      x-menu-order: 8
-      x-undo:
-        type: idempotent
   /api/v1/monthly_custom_reports:
     get:
       deprecated: true
@@ -23278,9 +22839,6 @@ paths:
       summary: Get the list of available monthly custom reports
       tags:
       - Usage Metering
-      x-menu-order: 43
-      x-undo:
-        type: safe
   /api/v1/monthly_custom_reports/{report_id}:
     get:
       deprecated: true
@@ -23337,9 +22895,6 @@ paths:
       summary: Get specified monthly custom reports
       tags:
       - Usage Metering
-      x-menu-order: 44
-      x-undo:
-        type: safe
   /api/v1/notebooks:
     get:
       description: 'Get all notebooks. This can also be used to search for notebooks
@@ -23462,8 +23017,6 @@ paths:
       summary: Get all notebooks
       tags:
       - Notebooks
-      x-undo:
-        type: safe
     post:
       description: Create a notebook using the specified options.
       operationId: CreateNotebook
@@ -23536,18 +23089,6 @@ paths:
       tags:
       - Notebooks
       x-codegen-request-body-name: body
-      x-given:
-        notebook:
-          parameters:
-          - file: notebook_payload.json
-            name: body
-          step: there is a valid "notebook" in the system
-      x-undo:
-        operationId: DeleteNotebook
-        parameters:
-        - name: notebook_id
-          source: data.id
-        type: unsafe
   /api/v1/notebooks/{notebook_id}:
     delete:
       description: Delete a notebook using the specified ID.
@@ -23586,8 +23127,6 @@ paths:
       summary: Delete a notebook
       tags:
       - Notebooks
-      x-undo:
-        type: idempotent
     get:
       description: Get a notebook using the specified notebook ID.
       operationId: GetNotebook
@@ -23629,8 +23168,6 @@ paths:
       summary: Get a notebook
       tags:
       - Notebooks
-      x-undo:
-        type: safe
     put:
       description: Update a notebook using the specified ID.
       operationId: UpdateNotebook
@@ -23724,8 +23261,6 @@ paths:
       tags:
       - Notebooks
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
   /api/v1/org:
     get:
       description: This endpoint returns data on your top-level organization.
@@ -23748,9 +23283,6 @@ paths:
       summary: List your managed organizations
       tags:
       - Organizations
-      x-menu-order: 2
-      x-undo:
-        type: safe
     post:
       description: 'Create a child organization.
 
@@ -23802,11 +23334,6 @@ paths:
       tags:
       - Organizations
       x-codegen-request-body-name: body
-      x-menu-order: 1
-      x-undo:
-        operationId: TODO
-        parameters: []
-        type: unsafe
   /api/v1/org/{public_id}:
     get:
       description: Get organization information.
@@ -23843,9 +23370,6 @@ paths:
       summary: Get organization information
       tags:
       - Organizations
-      x-menu-order: 3
-      x-undo:
-        type: safe
     put:
       description: Update your organization.
       operationId: UpdateOrg
@@ -23888,9 +23412,6 @@ paths:
       tags:
       - Organizations
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v1/org/{public_id}/downgrade:
     post:
       description: Only available for MSP customers. Removes a child organization
@@ -23929,9 +23450,6 @@ paths:
       summary: Spin-off Child Organization
       tags:
       - Organizations
-      x-menu-order: 6
-      x-undo:
-        type: unsafe
   /api/v1/org/{public_id}/idp_metadata:
     post:
       description: 'There are a couple of options for updating the Identity Provider
@@ -23990,9 +23508,6 @@ paths:
       tags:
       - Organizations
       x-codegen-request-body-name: body
-      x-menu-order: 5
-      x-undo:
-        type: safe
   /api/v1/query:
     get:
       description: Query timeseries points.
@@ -24047,9 +23562,6 @@ paths:
       summary: Query timeseries points
       tags:
       - Metrics
-      x-menu-order: 5
-      x-undo:
-        type: safe
   /api/v1/search:
     get:
       description: Search for metrics from the last 24 hours in Datadog.
@@ -24090,9 +23602,6 @@ paths:
       summary: Search metrics
       tags:
       - Metrics
-      x-menu-order: 4
-      x-undo:
-        type: safe
   /api/v1/security_analytics/signals/{signal_id}/add_to_incident:
     patch:
       description: Add a security signal to an incident. This makes it possible to
@@ -24139,8 +23648,6 @@ paths:
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
   /api/v1/security_analytics/signals/{signal_id}/assignee:
     patch:
       description: Modify the triage assignee of a security signal.
@@ -24185,8 +23692,6 @@ paths:
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
   /api/v1/security_analytics/signals/{signal_id}/state:
     patch:
       description: Change the triage state of a security signal.
@@ -24231,8 +23736,6 @@ paths:
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
   /api/v1/series:
     post:
       description: "The metrics end-point allows you to post time-series data that
@@ -24305,15 +23808,6 @@ paths:
       tags:
       - Metrics
       x-codegen-request-body-name: body
-      x-given:
-        metric:
-          parameters:
-          - file: metric_payload.json
-            name: body
-          step: there is a valid "metric" in the system
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /api/v1/slo:
     get:
       description: Get a list of service level objective objects for your organization.
@@ -24393,9 +23887,6 @@ paths:
       summary: Get all SLOs
       tags:
       - Service Level Objectives
-      x-menu-order: 2
-      x-undo:
-        type: safe
     post:
       description: Create a service level objective object.
       operationId: CreateSLO
@@ -24431,23 +23922,6 @@ paths:
       tags:
       - Service Level Objectives
       x-codegen-request-body-name: body
-      x-given:
-        slo:
-          parameters:
-          - name: body
-            value: "{\n  \"type\": \"metric\",\n  \"name\": \"{{ unique }}\",\n  \"thresholds\":
-              [{\n    \"timeframe\": \"7d\",\n    \"target\": 95.0,\n    \"warning\":
-              98.0\n  }],\n  \"query\": {\n    \"numerator\": \"sum:httpservice.hits{code:2xx}.as_count()\",\n
-              \   \"denominator\": \"sum:httpservice.hits{!code:3xx}.as_count()\"\n
-              \ }\n}"
-          step: there is a valid "slo" in the system
-      x-menu-order: 1
-      x-undo:
-        operationId: DeleteSLO
-        parameters:
-        - name: slo_id
-          source: data[0].id
-        type: unsafe
   /api/v1/slo/bulk_delete:
     post:
       description: 'Delete (or partially delete) multiple service level objective
@@ -24493,9 +23967,6 @@ paths:
       tags:
       - Service Level Objectives
       x-codegen-request-body-name: body
-      x-menu-order: 8
-      x-undo:
-        type: idempotent
   /api/v1/slo/can_delete:
     get:
       description: 'Check if an SLO can be safely deleted. For example,
@@ -24541,9 +24012,6 @@ paths:
       summary: Check if SLOs can be safely deleted
       tags:
       - Service Level Objectives
-      x-menu-order: 7
-      x-undo:
-        type: safe
   /api/v1/slo/correction:
     get:
       description: Get all Service Level Objective corrections.
@@ -24566,9 +24034,6 @@ paths:
       summary: Get all SLO corrections
       tags:
       - Service Level Objective Corrections
-      x-menu-order: 2
-      x-undo:
-        type: safe
     post:
       description: Create an SLO Correction.
       operationId: CreateSLOCorrection
@@ -24610,23 +24075,6 @@ paths:
       tags:
       - Service Level Objective Corrections
       x-codegen-request-body-name: body
-      x-given:
-        correction:
-          parameters:
-          - name: body
-            value: "{\n  \"data\": {\n    \"attributes\": {\n      \"slo_id\": \"{{
-              slo.data[0].id }}\",\n      \"start\": {{ timestamp(\"now\") }},\n      \"end\":
-              {{ timestamp(\"now + 1h\") }},\n      \"category\": \"Other\",\n      \"timezone\":
-              \"UTC\",\n      \"description\": \"Test Correction\"\n     },\n     \"type\":
-              \"correction\"\n  }\n}"
-          step: there is a valid "correction" for "slo"
-      x-menu-order: 1
-      x-undo:
-        operationId: DeleteSLOCorrection
-        parameters:
-        - name: slo_correction_id
-          source: data.id
-        type: unsafe
   /api/v1/slo/correction/{slo_correction_id}:
     delete:
       description: Permanently delete the specified SLO correction object.
@@ -24658,9 +24106,6 @@ paths:
       summary: Delete an SLO correction
       tags:
       - Service Level Objective Corrections
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
     get:
       description: Get an SLO correction.
       operationId: GetSLOCorrection
@@ -24695,9 +24140,6 @@ paths:
       summary: Get an SLO correction for an SLO
       tags:
       - Service Level Objective Corrections
-      x-menu-order: 3
-      x-undo:
-        type: safe
     patch:
       description: Update the specified SLO correction object.
       operationId: UpdateSLOCorrection
@@ -24746,9 +24188,6 @@ paths:
       tags:
       - Service Level Objective Corrections
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v1/slo/search:
     get:
       description: Get a list of service level objective objects for your organization.
@@ -24829,9 +24268,6 @@ paths:
       summary: Search for SLOs
       tags:
       - Service Level Objectives
-      x-menu-order: 1
-      x-undo:
-        type: safe
       x-unstable: '**Note**: Note: This endpoint is in public beta for US regions.
 
         It is not currently supported in the EU region.
@@ -24890,9 +24326,6 @@ paths:
       summary: Delete an SLO
       tags:
       - Service Level Objectives
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
     get:
       description: Get a service level objective object.
       operationId: GetSLO
@@ -24934,9 +24367,6 @@ paths:
       summary: Get an SLO's details
       tags:
       - Service Level Objectives
-      x-menu-order: 4
-      x-undo:
-        type: safe
     put:
       description: Update the specified service level objective object.
       operationId: UpdateSLO
@@ -24985,9 +24415,6 @@ paths:
       tags:
       - Service Level Objectives
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: idempotent
   /api/v1/slo/{slo_id}/corrections:
     get:
       description: Get corrections applied to an SLO
@@ -25029,9 +24456,6 @@ paths:
       summary: Get Corrections For an SLO
       tags:
       - Service Level Objectives
-      x-menu-order: 6
-      x-undo:
-        type: safe
   /api/v1/slo/{slo_id}/history:
     get:
       description: "Get a specific SLO\u2019s history, regardless of its SLO type.\n\nThe
@@ -25113,9 +24537,6 @@ paths:
       summary: Get an SLO's history
       tags:
       - Service Level Objectives
-      x-menu-order: 6
-      x-undo:
-        type: safe
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -25153,9 +24574,6 @@ paths:
       summary: Get details of batch
       tags:
       - Synthetics
-      x-menu-order: 15
-      x-undo:
-        type: safe
   /api/v1/synthetics/locations:
     get:
       description: 'Get the list of public and private locations available for Synthetic
@@ -25179,9 +24597,6 @@ paths:
       summary: Get all locations (public and private)
       tags:
       - Synthetics
-      x-menu-order: 25
-      x-undo:
-        type: safe
   /api/v1/synthetics/private-locations:
     post:
       description: Create a new Synthetics private location.
@@ -25223,13 +24638,6 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 22
-      x-undo:
-        operationId: DeletePrivateLocation
-        parameters:
-        - name: location_id
-          source: private_location.id
-        type: unsafe
   /api/v1/synthetics/private-locations/{location_id}:
     delete:
       description: Delete a Synthetics private location.
@@ -25262,9 +24670,6 @@ paths:
       summary: Delete a private location
       tags:
       - Synthetics
-      x-menu-order: 26
-      x-undo:
-        type: idempotent
     get:
       description: Get a Synthetics private location.
       operationId: GetPrivateLocation
@@ -25300,9 +24705,6 @@ paths:
       summary: Get a private location
       tags:
       - Synthetics
-      x-menu-order: 23
-      x-undo:
-        type: safe
     put:
       description: Edit a Synthetics private location.
       operationId: UpdatePrivateLocation
@@ -25346,9 +24748,6 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 24
-      x-undo:
-        type: idempotent
   /api/v1/synthetics/tests:
     get:
       description: Get the list of all Synthetic tests.
@@ -25382,9 +24781,6 @@ paths:
       summary: Get the list of all tests
       tags:
       - Synthetics
-      x-menu-order: 10
-      x-undo:
-        type: safe
   /api/v1/synthetics/tests/api:
     post:
       description: Create a Synthetic API test.
@@ -25553,24 +24949,6 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-given:
-        synthetics_api_test:
-          parameters:
-          - file: synthetics_api_http_test_payload.json
-            name: body
-          step: there is a valid "synthetics_api_test" in the system
-        synthetics_api_test_with_wrong_dns:
-          parameters:
-          - file: synthetics_api_test_with_wrong_dns.json
-            name: body
-          step: there is a "synthetics_api_test_with_wrong_dns" in the system
-      x-menu-order: 1
-      x-undo:
-        operationId: DeleteTests
-        parameters:
-        - name: body
-          template: '{"public_ids": ["{{ public_id }}"]}'
-        type: unsafe
   /api/v1/synthetics/tests/api/{public_id}:
     get:
       description: 'Get the detailed configuration associated with
@@ -25615,9 +24993,6 @@ paths:
       summary: Get an API test
       tags:
       - Synthetics
-      x-menu-order: 8
-      x-undo:
-        type: safe
     put:
       description: Edit the configuration of a Synthetic API test.
       operationId: UpdateAPITest
@@ -25677,9 +25052,6 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: idempotent
   /api/v1/synthetics/tests/browser:
     post:
       description: Create a Synthetic browser test.
@@ -25729,13 +25101,6 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 2
-      x-undo:
-        operationId: DeleteTests
-        parameters:
-        - name: body
-          template: '{"public_ids": ["{{ public_id }}"]}'
-        type: unsafe
   /api/v1/synthetics/tests/browser/{public_id}:
     get:
       description: 'Get the detailed configuration (including steps) associated with
@@ -25780,9 +25145,6 @@ paths:
       summary: Get a browser test
       tags:
       - Synthetics
-      x-menu-order: 9
-      x-undo:
-        type: safe
     put:
       description: Edit the configuration of a Synthetic browser test.
       operationId: UpdateBrowserTest
@@ -25842,9 +25204,6 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v1/synthetics/tests/browser/{public_id}/results:
     get:
       description: Get the last 50 test results summaries for a given Synthetics Browser
@@ -25913,9 +25272,6 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 14
-      x-undo:
-        type: safe
   /api/v1/synthetics/tests/browser/{public_id}/results/{result_id}:
     get:
       description: Get a specific full result from a given (browser) Synthetic test.
@@ -25966,9 +25322,6 @@ paths:
       summary: Get a browser test result
       tags:
       - Synthetics
-      x-menu-order: 12
-      x-undo:
-        type: safe
   /api/v1/synthetics/tests/delete:
     post:
       description: Delete multiple Synthetic tests by ID.
@@ -26023,9 +25376,6 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 16
-      x-undo:
-        type: idempotent
   /api/v1/synthetics/tests/trigger:
     post:
       description: Trigger a set of Synthetics tests.
@@ -26061,16 +25411,6 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-given:
-        synthetics_api_test_with_wrong_dns_result:
-          parameters:
-          - name: body
-            value: '{"tests": [{"public_id": "{{ synthetics_api_test_with_wrong_dns.public_id
-              }}"}]}'
-          step: the "synthetics_api_test_with_wrong_dns" is triggered
-      x-menu-order: 7
-      x-undo:
-        type: safe
   /api/v1/synthetics/tests/trigger/ci:
     post:
       description: Trigger a set of Synthetics tests for continuous integration.
@@ -26106,9 +25446,6 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 6
-      x-undo:
-        type: idempotent
   /api/v1/synthetics/tests/{public_id}:
     get:
       description: Get the detailed configuration associated with a Synthetics test.
@@ -26151,9 +25488,6 @@ paths:
       summary: Get a test configuration
       tags:
       - Synthetics
-      x-menu-order: 27
-      x-undo:
-        type: safe
   /api/v1/synthetics/tests/{public_id}/results:
     get:
       description: Get the last 50 test results summaries for a given Synthetics API
@@ -26220,9 +25554,6 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 13
-      x-undo:
-        type: safe
   /api/v1/synthetics/tests/{public_id}/results/{result_id}:
     get:
       description: Get a specific full result from a given (API) Synthetic test.
@@ -26271,9 +25602,6 @@ paths:
       summary: Get an API test result
       tags:
       - Synthetics
-      x-menu-order: 11
-      x-undo:
-        type: safe
   /api/v1/synthetics/tests/{public_id}/status:
     put:
       description: Pause or start a Synthetics test by changing the status.
@@ -26330,9 +25658,6 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
   /api/v1/synthetics/variables:
     get:
       description: Get the list of all Synthetics global variables.
@@ -26360,9 +25685,6 @@ paths:
       summary: Get all global variables
       tags:
       - Synthetics
-      x-menu-order: 17
-      x-undo:
-        type: safe
     post:
       description: Create a Synthetics global variable.
       operationId: CreateGlobalVariable
@@ -26403,13 +25725,6 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 18
-      x-undo:
-        operationId: DeleteGlobalVariable
-        parameters:
-        - name: variable_id
-          source: id
-        type: unsafe
   /api/v1/synthetics/variables/{variable_id}:
     delete:
       description: Delete a Synthetics global variable.
@@ -26452,9 +25767,6 @@ paths:
       summary: Delete a global variable
       tags:
       - Synthetics
-      x-menu-order: 21
-      x-undo:
-        type: idempotent
     get:
       description: Get the detailed configuration of a global variable.
       operationId: GetGlobalVariable
@@ -26494,9 +25806,6 @@ paths:
       summary: Get a global variable
       tags:
       - Synthetics
-      x-menu-order: 19
-      x-undo:
-        type: safe
     put:
       description: Edit a Synthetics global variable.
       operationId: EditGlobalVariable
@@ -26544,9 +25853,6 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
-      x-menu-order: 20
-      x-undo:
-        type: idempotent
   /api/v1/tags/hosts:
     get:
       description: Return a mapping of tags to hosts for your whole infrastructure.
@@ -26587,9 +25893,6 @@ paths:
       summary: Get Tags
       tags:
       - Tags
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /api/v1/tags/hosts/{host_name}:
     delete:
       description: 'This endpoint allows you to remove all user-assigned tags
@@ -26632,9 +25935,6 @@ paths:
       summary: Remove host tags
       tags:
       - Tags
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
     get:
       description: Return the list of tags that apply to a given host.
       operationId: GetHostTags
@@ -26676,9 +25976,6 @@ paths:
       summary: Get host tags
       tags:
       - Tags
-      x-menu-order: 2
-      x-undo:
-        type: safe
     post:
       description: 'This endpoint allows you to add new tags to a host,
 
@@ -26733,15 +26030,6 @@ paths:
       tags:
       - Tags
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        operationId: DeleteHostTags
-        parameters:
-        - name: host_name
-          source: <RESPONSE_PATH>
-        - name: source
-          source: <RESPONSE_PATH>
-        type: unsafe
     put:
       description: 'This endpoint allows you to update/replace all tags in
 
@@ -26795,9 +26083,6 @@ paths:
       tags:
       - Tags
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v1/usage/analyzed_logs:
     get:
       description: 'Get hourly usage for analyzed logs (Security Monitoring).
@@ -26859,9 +26144,6 @@ paths:
       summary: Get hourly usage for analyzed logs
       tags:
       - Usage Metering
-      x-menu-order: 23
-      x-undo:
-        type: safe
   /api/v1/usage/attribution:
     get:
       deprecated: true
@@ -26956,9 +26238,6 @@ paths:
       summary: Get usage attribution
       tags:
       - Usage Metering
-      x-menu-order: 40
-      x-undo:
-        type: safe
   /api/v1/usage/audit_logs:
     get:
       description: 'Get hourly usage for audit logs.
@@ -27020,9 +26299,6 @@ paths:
       summary: Get hourly usage for audit logs
       tags:
       - Usage Metering
-      x-menu-order: 29
-      x-undo:
-        type: safe
   /api/v1/usage/aws_lambda:
     get:
       description: 'Get hourly usage for lambda.
@@ -27082,9 +26358,6 @@ paths:
       summary: Get hourly usage for lambda
       tags:
       - Usage Metering
-      x-menu-order: 19
-      x-undo:
-        type: safe
   /api/v1/usage/billable-summary:
     get:
       description: Get billable usage across your account.
@@ -27131,9 +26404,6 @@ paths:
       summary: Get billable usage across your account
       tags:
       - Usage Metering
-      x-menu-order: 5
-      x-undo:
-        type: safe
   /api/v1/usage/ci-app:
     get:
       description: 'Get hourly usage for CI visibility (tests, pipeline, and spans).
@@ -27195,9 +26465,6 @@ paths:
       summary: Get hourly usage for CI visibility
       tags:
       - Usage Metering
-      x-menu-order: 35
-      x-undo:
-        type: safe
   /api/v1/usage/cspm:
     get:
       description: 'Get hourly usage for cloud security posture management (CSPM).
@@ -27259,9 +26526,6 @@ paths:
       summary: Get hourly usage for CSPM
       tags:
       - Usage Metering
-      x-menu-order: 28
-      x-undo:
-        type: safe
   /api/v1/usage/cws:
     get:
       description: 'Get hourly usage for cloud workload security.
@@ -27323,9 +26587,6 @@ paths:
       summary: Get hourly usage for cloud workload security
       tags:
       - Usage Metering
-      x-menu-order: 30
-      x-undo:
-        type: safe
   /api/v1/usage/dbm:
     get:
       description: 'Get hourly usage for database monitoring
@@ -27387,9 +26648,6 @@ paths:
       summary: Get hourly usage for database monitoring
       tags:
       - Usage Metering
-      x-menu-order: 31
-      x-undo:
-        type: safe
   /api/v1/usage/fargate:
     get:
       description: 'Get hourly usage for [Fargate](https://docs.datadoghq.com/integrations/ecs_fargate/).
@@ -27449,9 +26707,6 @@ paths:
       summary: Get hourly usage for Fargate
       tags:
       - Usage Metering
-      x-menu-order: 18
-      x-undo:
-        type: safe
   /api/v1/usage/hosts:
     get:
       description: 'Get hourly usage for hosts and containers.
@@ -27511,9 +26766,6 @@ paths:
       summary: Get hourly usage for hosts and containers
       tags:
       - Usage Metering
-      x-menu-order: 11
-      x-undo:
-        type: safe
   /api/v1/usage/hourly-attribution:
     get:
       description: "Get hourly usage attribution.\n\nThis API endpoint is paginated.
@@ -27601,9 +26853,6 @@ paths:
       summary: Get hourly usage attribution
       tags:
       - Usage Metering
-      x-menu-order: 2
-      x-undo:
-        type: safe
   /api/v1/usage/incident-management:
     get:
       description: 'Get hourly usage for incident management.
@@ -27665,9 +26914,6 @@ paths:
       summary: Get hourly usage for incident management
       tags:
       - Usage Metering
-      x-menu-order: 26
-      x-undo:
-        type: safe
   /api/v1/usage/indexed-spans:
     get:
       description: 'Get hourly usage for indexed spans.
@@ -27727,9 +26973,6 @@ paths:
       summary: Get hourly usage for indexed spans
       tags:
       - Usage Metering
-      x-menu-order: 14
-      x-undo:
-        type: safe
   /api/v1/usage/ingested-spans:
     get:
       description: 'Get hourly usage for ingested spans.
@@ -27791,9 +27034,6 @@ paths:
       summary: Get hourly usage for ingested spans
       tags:
       - Usage Metering
-      x-menu-order: 25
-      x-undo:
-        type: safe
   /api/v1/usage/iot:
     get:
       description: 'Get hourly usage for IoT.
@@ -27855,9 +27095,6 @@ paths:
       summary: Get hourly usage for IoT
       tags:
       - Usage Metering
-      x-menu-order: 27
-      x-undo:
-        type: safe
   /api/v1/usage/logs:
     get:
       description: 'Get hourly usage for logs.
@@ -27917,9 +27154,6 @@ paths:
       summary: Get hourly usage for logs
       tags:
       - Usage Metering
-      x-menu-order: 12
-      x-undo:
-        type: safe
   /api/v1/usage/logs-by-retention:
     get:
       description: 'Get hourly usage for indexed logs by retention period.
@@ -27981,9 +27215,6 @@ paths:
       summary: Get hourly logs usage by retention
       tags:
       - Usage Metering
-      x-menu-order: 10
-      x-undo:
-        type: safe
   /api/v1/usage/logs_by_index:
     get:
       description: Get hourly usage for logs by index.
@@ -28046,9 +27277,6 @@ paths:
       summary: Get hourly usage for logs by index
       tags:
       - Usage Metering
-      x-menu-order: 9
-      x-undo:
-        type: safe
   /api/v1/usage/monthly-attribution:
     get:
       description: "Get monthly usage attribution.\n\nThis API endpoint is paginated.
@@ -28149,17 +27377,6 @@ paths:
       summary: Get monthly usage attribution
       tags:
       - Usage Metering
-      x-given:
-        monthly_usage_attribution:
-          parameters:
-          - name: start_month
-            value: '"{{ timeISO(''now - 3d'') }}"'
-          - name: fields
-            value: '"infra_host_usage"'
-          step: there is a valid "monthly_usage_attribution" response
-      x-menu-order: 3
-      x-undo:
-        type: safe
   /api/v1/usage/network_flows:
     get:
       description: 'Get hourly usage for network flows.
@@ -28221,9 +27438,6 @@ paths:
       summary: get hourly usage for network flows
       tags:
       - Usage Metering
-      x-menu-order: 22
-      x-undo:
-        type: safe
   /api/v1/usage/network_hosts:
     get:
       description: 'Get hourly usage for network hosts.
@@ -28283,9 +27497,6 @@ paths:
       summary: Get hourly usage for network hosts
       tags:
       - Usage Metering
-      x-menu-order: 21
-      x-undo:
-        type: safe
   /api/v1/usage/online-archive:
     get:
       description: 'Get hourly usage for online archive.
@@ -28347,9 +27558,6 @@ paths:
       summary: Get hourly usage for online archive
       tags:
       - Usage Metering
-      x-menu-order: 36
-      x-undo:
-        type: safe
   /api/v1/usage/profiling:
     get:
       description: 'Get hourly usage for profiled hosts.
@@ -28411,9 +27619,6 @@ paths:
       summary: Get hourly usage for profiled hosts
       tags:
       - Usage Metering
-      x-menu-order: 34
-      x-undo:
-        type: safe
   /api/v1/usage/rum:
     get:
       description: 'Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/)
@@ -28474,9 +27679,6 @@ paths:
       summary: Get hourly usage for RUM units
       tags:
       - Usage Metering
-      x-menu-order: 33
-      x-undo:
-        type: safe
   /api/v1/usage/rum_sessions:
     get:
       description: 'Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/)
@@ -28543,9 +27745,6 @@ paths:
       summary: Get hourly usage for RUM sessions
       tags:
       - Usage Metering
-      x-menu-order: 20
-      x-undo:
-        type: safe
   /api/v1/usage/sds:
     get:
       description: 'Get hourly usage for sensitive data scanner.
@@ -28607,9 +27806,6 @@ paths:
       summary: Get hourly usage for sensitive data scanner
       tags:
       - Usage Metering
-      x-menu-order: 32
-      x-undo:
-        type: safe
   /api/v1/usage/snmp:
     get:
       description: 'Get hourly usage for SNMP devices.
@@ -28671,9 +27867,6 @@ paths:
       summary: Get hourly usage for SNMP devices
       tags:
       - Usage Metering
-      x-menu-order: 24
-      x-undo:
-        type: safe
   /api/v1/usage/summary:
     get:
       description: Get usage across your multi-org account. You must have the multi-org
@@ -28737,9 +27930,6 @@ paths:
       summary: Get usage across your multi-org account
       tags:
       - Usage Metering
-      x-menu-order: 8
-      x-undo:
-        type: safe
   /api/v1/usage/synthetics:
     get:
       deprecated: true
@@ -28800,9 +27990,6 @@ paths:
       summary: Get hourly usage for synthetics checks
       tags:
       - Usage Metering
-      x-menu-order: 15
-      x-undo:
-        type: safe
   /api/v1/usage/synthetics_api:
     get:
       description: 'Get hourly usage for [synthetics API checks](https://docs.datadoghq.com/synthetics/).
@@ -28862,9 +28049,6 @@ paths:
       summary: Get hourly usage for synthetics API checks
       tags:
       - Usage Metering
-      x-menu-order: 16
-      x-undo:
-        type: safe
   /api/v1/usage/synthetics_browser:
     get:
       description: 'Get hourly usage for synthetics browser checks.
@@ -28924,9 +28108,6 @@ paths:
       summary: Get hourly usage for synthetics browser checks
       tags:
       - Usage Metering
-      x-menu-order: 17
-      x-undo:
-        type: safe
   /api/v1/usage/timeseries:
     get:
       description: 'Get hourly usage for [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/).
@@ -28986,9 +28167,6 @@ paths:
       summary: Get hourly usage for custom metrics
       tags:
       - Usage Metering
-      x-menu-order: 13
-      x-undo:
-        type: safe
   /api/v1/usage/top_avg_metrics:
     get:
       description: Get all [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/)
@@ -29072,9 +28250,6 @@ paths:
       summary: Get all custom metrics by hourly average
       tags:
       - Usage Metering
-      x-menu-order: 7
-      x-undo:
-        type: safe
   /api/v1/user:
     get:
       description: List all users for your organization.
@@ -29101,9 +28276,6 @@ paths:
       summary: List all users
       tags:
       - Users
-      x-menu-order: 2
-      x-undo:
-        type: safe
     post:
       description: 'Create a user for your organization.
 
@@ -29155,13 +28327,6 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
-      x-menu-order: 1
-      x-undo:
-        operationId: DisableUser
-        parameters:
-        - name: user_handle
-          source: user.handle
-        type: unsafe
   /api/v1/user/{user_handle}:
     delete:
       description: 'Delete a user from an organization.
@@ -29210,9 +28375,6 @@ paths:
       summary: Disable a user
       tags:
       - Users
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
     get:
       description: Get a user's details.
       operationId: GetUser
@@ -29249,9 +28411,6 @@ paths:
       summary: Get user details
       tags:
       - Users
-      x-menu-order: 3
-      x-undo:
-        type: safe
     put:
       description: 'Update a user information.
 
@@ -29305,9 +28464,6 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v1/validate:
     get:
       description: Check if the API key (not the APP key) is valid. If invalid, a
@@ -29334,9 +28490,6 @@ paths:
       summary: Validate API key
       tags:
       - Authentication
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /v1/input:
     post:
       deprecated: true
@@ -29504,9 +28657,6 @@ paths:
       tags:
       - Logs
       x-codegen-request-body-name: body
-      x-menu-order: 1
-      x-undo:
-        type: safe
 security:
 - apiKeyAuth: []
   appKeyAuth: []
