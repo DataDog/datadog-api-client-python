@@ -1871,7 +1871,6 @@ components:
           description: The API key.
           readOnly: true
           type: string
-          x-secret: true
         last4:
           description: The last four characters of the API key.
           example: abcd
@@ -1879,7 +1878,6 @@ components:
           minLength: 4
           readOnly: true
           type: string
-          x-secret: true
         modified_at:
           description: Date the API key was last modified.
           example: '2020-11-23T10:00:00.000Z'
@@ -1915,7 +1913,6 @@ components:
           description: The application key.
           readOnly: true
           type: string
-          x-secret: true
         last4:
           description: The last four characters of the application key.
           example: abcd
@@ -1923,7 +1920,6 @@ components:
           minLength: 4
           readOnly: true
           type: string
-          x-secret: true
         name:
           description: Name of the application key.
           example: Application Key for managing dashboards
@@ -5251,7 +5247,6 @@ components:
           minLength: 4
           readOnly: true
           type: string
-          x-secret: true
         modified_at:
           description: Date the API key was last modified.
           example: '2020-11-23T10:00:00.000Z'
@@ -5290,7 +5285,6 @@ components:
           minLength: 4
           readOnly: true
           type: string
-          x-secret: true
         name:
           description: Name of the application key.
           example: Application Key for managing dashboards
@@ -8296,8 +8290,6 @@ paths:
       summary: Get all API keys
       tags:
       - Key Management
-      x-undo:
-        type: safe
     post:
       description: Create an API key.
       operationId: CreateAPIKey
@@ -8332,19 +8324,6 @@ paths:
       tags:
       - Key Management
       x-codegen-request-body-name: body
-      x-given:
-        api_key:
-          parameters:
-          - name: body
-            value: "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{
-              unique }}\"\n    },\n    \"type\": \"api_keys\"\n  }\n}"
-          step: there is a valid "api_key" in the system
-      x-undo:
-        operationId: DeleteAPIKey
-        parameters:
-        - name: api_key_id
-          source: data.id
-        type: unsafe
   /api/v2/api_keys/{api_key_id}:
     delete:
       description: Delete an API key.
@@ -8371,8 +8350,6 @@ paths:
       summary: Delete an API key
       tags:
       - Key Management
-      x-undo:
-        type: idempotent
     get:
       description: Get an API key.
       operationId: GetAPIKey
@@ -8403,8 +8380,6 @@ paths:
       summary: Get API key
       tags:
       - Key Management
-      x-undo:
-        type: safe
     patch:
       description: Update an API key.
       operationId: UpdateAPIKey
@@ -8447,8 +8422,6 @@ paths:
       tags:
       - Key Management
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
   /api/v2/application_keys:
     get:
       description: List all application keys available for your org
@@ -8490,8 +8463,6 @@ paths:
       summary: Get all application keys
       tags:
       - Key Management
-      x-undo:
-        type: safe
   /api/v2/application_keys/{app_key_id}:
     delete:
       description: Delete an application key
@@ -8519,8 +8490,6 @@ paths:
       tags:
       - Key Management
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
     get:
       description: Get an application key for your org.
       operationId: GetApplicationKey
@@ -8557,8 +8526,6 @@ paths:
       summary: Get an application key
       tags:
       - Key Management
-      x-undo:
-        type: safe
     patch:
       description: Edit an application key
       operationId: UpdateApplicationKey
@@ -8601,8 +8568,6 @@ paths:
       tags:
       - Key Management
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
   /api/v2/audit/events:
     get:
       description: 'List endpoint returns events that match a Audit Logs search query.
@@ -8679,14 +8644,11 @@ paths:
       summary: Get a list of Audit Logs events
       tags:
       - Audit
-      x-menu-order: 2
       x-pagination:
         cursorParam: page[cursor]
         cursorPath: meta.page.after
         limitParam: page[limit]
         resultsPath: data
-      x-undo:
-        type: safe
   /api/v2/audit/events/search:
     post:
       description: 'List endpoint returns Audit Logs events that match an Audit search
@@ -8723,14 +8685,11 @@ paths:
       tags:
       - Audit
       x-codegen-request-body-name: body
-      x-menu-order: 1
       x-pagination:
         cursorParam: body.page.cursor
         cursorPath: meta.page.after
         limitParam: body.page.limit
         resultsPath: data
-      x-undo:
-        type: safe
   /api/v2/authn_mappings:
     get:
       description: List all AuthN Mappings in the org.
@@ -8772,10 +8731,7 @@ paths:
       summary: List all AuthN Mappings
       tags:
       - AuthN Mappings
-      x-menu-order: 4
       x-permission: OPEN()
-      x-undo:
-        type: safe
     post:
       description: Create an AuthN Mapping.
       operationId: CreateAuthNMapping
@@ -8821,25 +8777,7 @@ paths:
       tags:
       - AuthN Mappings
       x-codegen-request-body-name: body
-      x-given:
-        authn_mapping:
-          parameters:
-          - name: body
-            value: "{\n  \"data\": {\n    \"attributes\": {\n     \"attribute_key\":
-              \"{{ unique_lower_alnum }}\",\n     \"attribute_value\": \"{{ unique
-              }}\"\n    },\n    \"relationships\": {\n       \"role\": {\n         \"data\":
-              {\n           \"id\": \"{{ role.data.id }}\",\n           \"type\":
-              \"{{ role.data.type }}\"\n         }\n      }\n    },\n    \"type\":
-              \"authn_mappings\"\n  }\n}"
-          step: there is a valid "authn_mapping" in the system
-      x-menu-order: 5
       x-permission: OR(USER_ACCESS_MANAGE)
-      x-undo:
-        operationId: DeleteAuthNMapping
-        parameters:
-        - name: authn_mapping_id
-          source: data.id
-        type: unsafe
   /api/v2/authn_mappings/{authn_mapping_id}:
     delete:
       description: Delete an AuthN Mapping specified by AuthN Mapping UUID.
@@ -8871,10 +8809,7 @@ paths:
       summary: Delete an AuthN Mapping
       tags:
       - AuthN Mappings
-      x-menu-order: 3
       x-permission: OR(USER_ACCESS_MANAGE)
-      x-undo:
-        type: idempotent
     get:
       description: Get an AuthN Mapping specified by the AuthN Mapping UUID.
       operationId: GetAuthNMapping
@@ -8908,10 +8843,7 @@ paths:
       summary: Get an AuthN Mapping by UUID
       tags:
       - AuthN Mappings
-      x-menu-order: 1
       x-permission: OPEN()
-      x-undo:
-        type: safe
     patch:
       description: Edit an AuthN Mapping.
       operationId: UpdateAuthNMapping
@@ -8971,10 +8903,7 @@ paths:
       tags:
       - AuthN Mappings
       x-codegen-request-body-name: body
-      x-menu-order: 2
       x-permission: OR(USER_ACCESS_MANAGE)
-      x-undo:
-        type: idempotent
   /api/v2/current_user/application_keys:
     get:
       description: List all application keys available for current user
@@ -9016,8 +8945,6 @@ paths:
       summary: Get all application keys owned by current user
       tags:
       - Key Management
-      x-undo:
-        type: safe
     post:
       description: Create an application key for current user
       operationId: CreateCurrentUserApplicationKey
@@ -9052,19 +8979,6 @@ paths:
       tags:
       - Key Management
       x-codegen-request-body-name: body
-      x-given:
-        application_key:
-          parameters:
-          - name: body
-            value: "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{
-              unique }}\"\n    },\n    \"type\": \"application_keys\"\n  }\n}"
-          step: there is a valid "application_key" in the system
-      x-undo:
-        operationId: DeleteCurrentUserApplicationKey
-        parameters:
-        - name: app_key_id
-          source: data.id
-        type: unsafe
   /api/v2/current_user/application_keys/{app_key_id}:
     delete:
       description: Delete an application key owned by current user
@@ -9091,8 +9005,6 @@ paths:
       summary: Delete an application key owned by current user
       tags:
       - Key Management
-      x-undo:
-        type: idempotent
     get:
       description: Get an application key owned by current user
       operationId: GetCurrentUserApplicationKey
@@ -9122,8 +9034,6 @@ paths:
       summary: Get one application key owned by current user
       tags:
       - Key Management
-      x-undo:
-        type: safe
     patch:
       description: Edit an application key owned by current user
       operationId: UpdateCurrentUserApplicationKey
@@ -9166,8 +9076,6 @@ paths:
       tags:
       - Key Management
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
   /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards:
     delete:
       description: Delete dashboards from an existing dashboard list.
@@ -9218,9 +9126,6 @@ paths:
       tags:
       - Dashboard Lists
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
     get:
       description: "Fetch the dashboard list\u2019s dashboard definitions."
       operationId: GetDashboardListItems
@@ -9261,9 +9166,6 @@ paths:
       summary: Get items of a Dashboard List
       tags:
       - Dashboard Lists
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: Add dashboards to an existing dashboard list.
       operationId: CreateDashboardListItems
@@ -9313,26 +9215,6 @@ paths:
       tags:
       - Dashboard Lists
       x-codegen-request-body-name: body
-      x-given:
-        dashboard_list_dashboard:
-          parameters:
-          - name: dashboard_list_id
-            source: dashboard_list.id
-          - name: body
-            value: "{\n  \"dashboards\": [\n    {\n      \"id\": \"{{ dashboard.id
-              }}\",\n      \"type\": \"custom_timeboard\"\n    }\n  ]\n}"
-          step: the "dashboard_list" has the "dashboard"
-        dashboard_list_screenboard_dashboard:
-          parameters:
-          - name: dashboard_list_id
-            source: dashboard_list.id
-          - name: body
-            value: "{\n  \"dashboards\": [\n    {\n      \"id\": \"{{ screenboard_dashboard.id
-              }}\",\n      \"type\": \"custom_screenboard\"\n    }\n  ]\n}"
-          step: the "dashboard_list" has the "screenboard_dashboard"
-      x-menu-order: 2
-      x-undo:
-        type: safe
     put:
       description: Update dashboards of an existing dashboard list.
       operationId: UpdateDashboardListItems
@@ -9382,9 +9264,6 @@ paths:
       tags:
       - Dashboard Lists
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: safe
   /api/v2/events:
     get:
       description: 'List endpoint returns events that match an events search query.
@@ -9458,14 +9337,11 @@ paths:
       summary: Get a list of events
       tags:
       - Events
-      x-menu-order: 1
       x-pagination:
         cursorParam: page[cursor]
         cursorPath: meta.page.after
         limitParam: page[limit]
         resultsPath: data
-      x-undo:
-        type: safe
       x-unstable: '**Note**: This endpoint is in private beta.
 
         For access, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -9506,14 +9382,11 @@ paths:
       tags:
       - Events
       x-codegen-request-body-name: body
-      x-menu-order: 2
       x-pagination:
         cursorParam: body.page.cursor
         cursorPath: meta.page.after
         limitParam: body.page.limit
         resultsPath: data
-      x-undo:
-        type: safe
       x-unstable: '**Note**: This endpoint is in private beta.
 
         For access, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -9554,8 +9427,6 @@ paths:
         limitParam: page[size]
         pageOffsetParam: page[offset]
         resultsPath: data
-      x-undo:
-        type: safe
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -9595,20 +9466,6 @@ paths:
       tags:
       - Incidents
       x-codegen-request-body-name: body
-      x-given:
-        incident:
-          parameters:
-          - name: body
-            value: "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"{{
-              unique }}\",\n      \"customer_impacted\": false\n     },\n     \"type\":
-              \"incidents\"\n  }\n}"
-          step: there is a valid "incident" in the system
-      x-undo:
-        operationId: DeleteIncident
-        parameters:
-        - name: incident_id
-          source: data.id
-        type: unsafe
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -9639,8 +9496,6 @@ paths:
       summary: Delete an existing incident
       tags:
       - Incidents
-      x-undo:
-        type: idempotent
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -9675,8 +9530,6 @@ paths:
       summary: Get the details of an incident
       tags:
       - Incidents
-      x-undo:
-        type: safe
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -9720,8 +9573,6 @@ paths:
       tags:
       - Incidents
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -9743,9 +9594,6 @@ paths:
       summary: Get all service objects
       tags:
       - Opsgenie Integration
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: Create a new service object in the Opsgenie integration.
       operationId: CreateOpsgenieService
@@ -9775,22 +9623,6 @@ paths:
       tags:
       - Opsgenie Integration
       x-codegen-request-body-name: body
-      x-given:
-        opsgenie_service:
-          parameters:
-          - name: body
-            value: "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{
-              unique }}\",\n      \"opsgenie_api_key\": \"00000000-0000-0000-0000-000000000000\",\n
-              \     \"region\": \"us\"\n     },\n     \"type\": \"opsgenie-service\"\n
-              \ }\n}"
-          step: there is a valid "opsgenie_service" in the system
-      x-menu-order: 2
-      x-undo:
-        operationId: DeleteOpsgenieService
-        parameters:
-        - name: integration_service_id
-          source: data.id
-        type: unsafe
   /api/v2/integration/opsgenie/services/{integration_service_id}:
     delete:
       description: Delete a single service object in the Datadog Opsgenie integration.
@@ -9811,9 +9643,6 @@ paths:
       summary: Delete a single service object
       tags:
       - Opsgenie Integration
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
     get:
       description: Get a single service from the Datadog Opsgenie integration.
       operationId: GetOpsgenieService
@@ -9839,9 +9668,6 @@ paths:
       summary: Get a single service object
       tags:
       - Opsgenie Integration
-      x-menu-order: 3
-      x-undo:
-        type: safe
     patch:
       description: Update a single service object in the Datadog Opsgenie integration.
       operationId: UpdateOpsgenieService
@@ -9875,9 +9701,6 @@ paths:
       tags:
       - Opsgenie Integration
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v2/logs:
     post:
       description: 'Send your logs to your Datadog platform over HTTP. Limits per
@@ -10101,9 +9924,6 @@ paths:
       tags:
       - Logs
       x-codegen-request-body-name: body
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /api/v2/logs/analytics/aggregate:
     post:
       description: The API endpoint to aggregate events into buckets and compute metrics
@@ -10132,9 +9952,6 @@ paths:
       tags:
       - Logs
       x-codegen-request-body-name: body
-      x-menu-order: 2
-      x-undo:
-        type: safe
   /api/v2/logs/config/archive-order:
     get:
       description: 'Get the current order of your archives.
@@ -10163,9 +9980,6 @@ paths:
       summary: Get archive order
       tags:
       - Logs Archives
-      x-menu-order: 9
-      x-undo:
-        type: safe
     put:
       description: 'Update the order of your archives. Since logs are processed sequentially,
         reordering an archive may change
@@ -10216,9 +10030,6 @@ paths:
       tags:
       - Logs Archives
       x-codegen-request-body-name: body
-      x-menu-order: 10
-      x-undo:
-        type: safe
   /api/v2/logs/config/archives:
     get:
       description: Get the list of configured logs archives with their definitions.
@@ -10245,9 +10056,6 @@ paths:
       summary: Get all archives
       tags:
       - Logs Archives
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: Create an archive in your organization.
       operationId: CreateLogsArchive
@@ -10283,13 +10091,6 @@ paths:
       tags:
       - Logs Archives
       x-codegen-request-body-name: body
-      x-menu-order: 2
-      x-undo:
-        operationId: DeleteLogsArchive
-        parameters:
-        - name: archive_id
-          source: data.id
-        type: unsafe
   /api/v2/logs/config/archives/{archive_id}:
     delete:
       description: Delete a given archive from your organization.
@@ -10322,9 +10123,6 @@ paths:
       summary: Delete an archive
       tags:
       - Logs Archives
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
     get:
       description: Get a specific archive from your organization.
       operationId: GetLogsArchive
@@ -10364,9 +10162,6 @@ paths:
       summary: Get an archive
       tags:
       - Logs Archives
-      x-menu-order: 3
-      x-undo:
-        type: safe
     put:
       description: 'Update a given archive configuration.
 
@@ -10415,9 +10210,6 @@ paths:
       tags:
       - Logs Archives
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: safe
   /api/v2/logs/config/archives/{archive_id}/readers:
     delete:
       description: Removes a role from an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))
@@ -10457,9 +10249,6 @@ paths:
       tags:
       - Logs Archives
       x-codegen-request-body-name: body
-      x-menu-order: 8
-      x-undo:
-        type: idempotent
     get:
       description: Returns all read roles a given archive is restricted to.
       operationId: ListArchiveReadRoles
@@ -10500,9 +10289,6 @@ paths:
       tags:
       - Logs Archives
       x-codegen-request-body-name: body
-      x-menu-order: 6
-      x-undo:
-        type: safe
     post:
       description: Adds a read role to an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))
       operationId: AddReadRoleToArchive
@@ -10541,9 +10327,6 @@ paths:
       tags:
       - Logs Archives
       x-codegen-request-body-name: body
-      x-menu-order: 7
-      x-undo:
-        type: unsafe
   /api/v2/logs/config/metrics:
     get:
       description: Get the list of configured log-based metrics with their definitions.
@@ -10566,9 +10349,6 @@ paths:
       summary: Get all log-based metrics
       tags:
       - Logs Metrics
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: 'Create a metric based on your ingested logs in your organization.
 
@@ -10601,22 +10381,6 @@ paths:
       tags:
       - Logs Metrics
       x-codegen-request-body-name: body
-      x-given:
-        logs_metric:
-          parameters:
-          - name: body
-            value: "{\n  \"data\": {\n    \"id\": \"{{ unique }}\",\n    \"attributes\":
-              {\n      \"filter\": {\n        \"query\": \"source:{{ unique }}\"\n
-              \     },\n      \"compute\": {\n        \"aggregation_type\": \"count\"\n
-              \     }\n    },\n    \"type\": \"logs_metrics\"\n  }\n}"
-          step: there is a valid "logs_metric" in the system
-      x-menu-order: 2
-      x-undo:
-        operationId: DeleteLogsMetric
-        parameters:
-        - name: metric_id
-          source: data.id
-        type: unsafe
   /api/v2/logs/config/metrics/{metric_id}:
     delete:
       description: Delete a specific log-based metric from your organization.
@@ -10635,9 +10399,6 @@ paths:
       summary: Delete a log-based metric
       tags:
       - Logs Metrics
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
     get:
       description: Get a specific log-based metric from your organization.
       operationId: GetLogsMetric
@@ -10663,9 +10424,6 @@ paths:
       summary: Get a log-based metric
       tags:
       - Logs Metrics
-      x-menu-order: 3
-      x-undo:
-        type: safe
     patch:
       description: 'Update a specific log-based metric from your organization.
 
@@ -10700,9 +10458,6 @@ paths:
       tags:
       - Logs Metrics
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v2/logs/events:
     get:
       description: 'List endpoint returns logs that match a log search query.
@@ -10797,14 +10552,11 @@ paths:
       summary: Get a list of logs
       tags:
       - Logs
-      x-menu-order: 4
       x-pagination:
         cursorParam: page[cursor]
         cursorPath: meta.page.after
         limitParam: page[limit]
         resultsPath: data
-      x-undo:
-        type: safe
   /api/v2/logs/events/search:
     post:
       description: 'List endpoint returns logs that match a log search query.
@@ -10849,14 +10601,11 @@ paths:
       tags:
       - Logs
       x-codegen-request-body-name: body
-      x-menu-order: 3
       x-pagination:
         cursorParam: body.page.cursor
         cursorPath: meta.page.after
         limitParam: body.page.limit
         resultsPath: data
-      x-undo:
-        type: safe
   /api/v2/metrics:
     get:
       description: 'Returns all configured count/gauge/rate/distribution metric names
@@ -10948,9 +10697,6 @@ paths:
       summary: List tag configurations
       tags:
       - Metrics
-      x-menu-order: 5
-      x-undo:
-        type: safe
   /api/v2/metrics/config/bulk-tags:
     delete:
       description: 'Delete all custom lists of queryable tag keys for a set of existing
@@ -11005,9 +10751,6 @@ paths:
       tags:
       - Metrics
       x-codegen-request-body-name: body
-      x-menu-order: 9
-      x-undo:
-        type: idempotent
     post:
       description: 'Create and define a list of queryable tag keys for a set of existing
         count, gauge, rate, and distribution metrics.
@@ -11067,13 +10810,6 @@ paths:
       tags:
       - Metrics
       x-codegen-request-body-name: body
-      x-menu-order: 8
-      x-undo:
-        operationId: DeleteBulkTagsMetricsConfiguration
-        parameters:
-        - name: body
-          source: ''
-        type: unsafe
   /api/v2/metrics/{metric_name}/all-tags:
     get:
       description: View indexed tag key-value pairs for a given metric name.
@@ -11118,9 +10854,6 @@ paths:
       summary: List tags by metric name
       tags:
       - Metrics
-      x-menu-order: 6
-      x-undo:
-        type: safe
   /api/v2/metrics/{metric_name}/estimate:
     get:
       description: Returns the estimated cardinality for a metric with a given tag,
@@ -11216,12 +10949,9 @@ paths:
           staging_low_urgency: '@slack-points-aggr-stg-ops'
         team: points-aggregation
         team_escalation: '[Points Aggregation] Primary'
-      x-menu-order: 10
       x-permission:
         operator: OPEN
         permissions: []
-      x-undo:
-        type: safe
   /api/v2/metrics/{metric_name}/tags:
     delete:
       description: 'Deletes a metric''s tag configuration. Can only be used with application
@@ -11254,9 +10984,6 @@ paths:
       summary: Delete a tag configuration
       tags:
       - Metrics
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
     get:
       description: Returns the tag configuration for the given metric name.
       operationId: ListTagConfigurationByName
@@ -11295,9 +11022,6 @@ paths:
       summary: List tag configuration by name
       tags:
       - Metrics
-      x-menu-order: 2
-      x-undo:
-        type: safe
     patch:
       description: 'Update the tag configuration of a metric or percentile aggregations
         of a distribution metric or custom aggregations
@@ -11350,9 +11074,6 @@ paths:
       tags:
       - Metrics
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: idempotent
     post:
       description: 'Create and define a list of queryable tag keys for an existing
         count/gauge/rate/distribution metric.
@@ -11408,24 +11129,6 @@ paths:
       tags:
       - Metrics
       x-codegen-request-body-name: body
-      x-given:
-        metric_tag_configuration:
-          parameters:
-          - name: metric_name
-            value: '"{{ unique_alnum }}"'
-          - name: body
-            value: "{\n  \"data\": {\n    \"attributes\": {\n      \"tags\":[\"app\",
-              \"datacenter\", \"{{ unique_alnum }}\"],\n      \"metric_type\":\"gauge\"\n
-              \    },\n     \"type\": \"manage_tags\",\n     \"id\": \"{{ unique_alnum
-              }}\"\n  }\n}"
-          step: there is a valid "metric_tag_configuration" in the system
-      x-menu-order: 1
-      x-undo:
-        operationId: DeleteTagConfiguration
-        parameters:
-        - name: metric_name
-          source: data.id
-        type: unsafe
   /api/v2/metrics/{metric_name}/volumes:
     get:
       description: 'View distinct metrics volumes for the given metric name.
@@ -11474,9 +11177,6 @@ paths:
       summary: List distinct metric volumes by metric name
       tags:
       - Metrics
-      x-menu-order: 7
-      x-undo:
-        type: safe
   /api/v2/permissions:
     get:
       description: Returns a list of all permissions, including name, description,
@@ -11510,13 +11210,6 @@ paths:
       summary: List permissions
       tags:
       - Roles
-      x-given:
-        permission:
-          source: data[0]
-          step: there is a valid "permission" in the system
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /api/v2/processes:
     get:
       description: Get all processes for your organization.
@@ -11607,14 +11300,11 @@ paths:
       summary: Get all processes
       tags:
       - Processes
-      x-menu-order: 1
       x-pagination:
         cursorParam: page[cursor]
         cursorPath: meta.page.after
         limitParam: page[limit]
         resultsPath: data
-      x-undo:
-        type: safe
   /api/v2/roles:
     get:
       description: Returns all roles, including their names and their unique identifiers.
@@ -11662,9 +11352,6 @@ paths:
       summary: List roles
       tags:
       - Roles
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: Create a new role for your organization.
       operationId: CreateRole
@@ -11704,20 +11391,6 @@ paths:
       tags:
       - Roles
       x-codegen-request-body-name: body
-      x-given:
-        role:
-          parameters:
-          - name: body
-            value: "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{
-              unique }}\"\n     },\n     \"type\": \"roles\"\n  }\n}"
-          step: there is a valid "role" in the system
-      x-menu-order: 2
-      x-undo:
-        operationId: DeleteRole
-        parameters:
-        - name: role_id
-          source: data.id
-        type: unsafe
   /api/v2/roles/{role_id}:
     delete:
       description: Disables a role.
@@ -11750,9 +11423,6 @@ paths:
       tags:
       - Roles
       x-codegen-request-body-name: body
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
     get:
       description: "Get a role in the organization specified by the role\u2019s `role_id`."
       operationId: GetRole
@@ -11787,9 +11457,6 @@ paths:
       tags:
       - Roles
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: safe
     patch:
       description: Edit a role. Can only be used with application keys belonging to
         administrators.
@@ -11844,9 +11511,6 @@ paths:
       tags:
       - Roles
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v2/roles/{role_id}/clone:
     post:
       description: Clone an existing role
@@ -11901,14 +11565,7 @@ paths:
       tags:
       - Roles
       x-codegen-request-body-name: body
-      x-menu-order: 12
       x-permission: OR(USER_ACCESS_MANAGE)
-      x-undo:
-        operationId: DeleteRole
-        parameters:
-        - name: role_id
-          source: data.id
-        type: unsafe
   /api/v2/roles/{role_id}/permissions:
     delete:
       description: Removes a permission from a role.
@@ -11957,9 +11614,6 @@ paths:
       tags:
       - Roles
       x-codegen-request-body-name: body
-      x-menu-order: 8
-      x-undo:
-        type: idempotent
     get:
       description: Returns a list of all permissions for a single role.
       operationId: ListRolePermissions
@@ -11994,9 +11648,6 @@ paths:
       tags:
       - Roles
       x-codegen-request-body-name: body
-      x-menu-order: 6
-      x-undo:
-        type: safe
     post:
       description: Adds a permission to a role.
       operationId: AddPermissionToRole
@@ -12044,18 +11695,6 @@ paths:
       tags:
       - Roles
       x-codegen-request-body-name: body
-      x-given:
-        permission_role:
-          parameters:
-          - name: role_id
-            source: role.data.id
-          - name: body
-            value: "{\n  \"data\": {\n    \"id\": \"{{ permission.id }}\",\n    \"type\":
-              \"{{ permission.type }}\"\n  }\n}"
-          step: the "permission" is granted to the "role"
-      x-menu-order: 7
-      x-undo:
-        type: safe
   /api/v2/roles/{role_id}/users:
     delete:
       description: Removes a user from a role.
@@ -12104,9 +11743,6 @@ paths:
       tags:
       - Roles
       x-codegen-request-body-name: body
-      x-menu-order: 11
-      x-undo:
-        type: idempotent
     get:
       description: Gets all users of a role.
       operationId: ListRoleUsers
@@ -12160,9 +11796,6 @@ paths:
       summary: Get all users of a role
       tags:
       - Roles
-      x-menu-order: 9
-      x-undo:
-        type: safe
     post:
       description: Adds a user to a role.
       operationId: AddUserToRole
@@ -12210,18 +11843,6 @@ paths:
       tags:
       - Roles
       x-codegen-request-body-name: body
-      x-given:
-        permission_role:
-          parameters:
-          - name: role_id
-            source: role.data.id
-          - name: body
-            value: "{\n  \"data\": {\n    \"id\": \"{{ user.data.id }}\",\n    \"type\":
-              \"{{ user.data.type }}\"\n  }\n}"
-          step: the "user" has the "role"
-      x-menu-order: 10
-      x-undo:
-        type: safe
   /api/v2/rum/analytics/aggregate:
     post:
       description: The API endpoint to aggregate RUM events into buckets of computed
@@ -12254,9 +11875,6 @@ paths:
       tags:
       - RUM
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: safe
   /api/v2/rum/applications:
     get:
       description: List all the RUM applications in your organization.
@@ -12275,8 +11893,6 @@ paths:
       summary: List all the RUM applications
       tags:
       - RUM
-      x-undo:
-        type: safe
     post:
       description: Create a new RUM application in your organization.
       operationId: CreateRUMApplication
@@ -12301,20 +11917,6 @@ paths:
       tags:
       - RUM
       x-codegen-request-body-name: body
-      x-given:
-        rum_application:
-          parameters:
-          - name: body
-            value: "{ \"data\": {\n    \"type\": \"rum_application_create\",\n    \"attributes\":
-              {\n        \"name\": \"test_name_create\",\n        \"type\": \"browser\"\n
-              \   }\n  }\n}"
-          step: there is a valid "rum_application" in the system
-      x-undo:
-        operationId: DeleteRUMApplication
-        parameters:
-        - name: id
-          source: data.id
-        type: unsafe
   /api/v2/rum/applications/{id}:
     delete:
       description: Delete an existing RUM application in your organization.
@@ -12336,8 +11938,6 @@ paths:
       summary: Delete a RUM application
       tags:
       - RUM
-      x-undo:
-        type: idempotent
     get:
       description: Get the RUM application with given ID in your organization.
       operationId: GetRUMApplication
@@ -12362,8 +11962,6 @@ paths:
       summary: Get a RUM application
       tags:
       - RUM
-      x-undo:
-        type: safe
     patch:
       description: Update the RUM application with given ID in your organization.
       operationId: UpdateRUMApplication
@@ -12403,8 +12001,6 @@ paths:
       tags:
       - RUM
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
   /api/v2/rum/events:
     get:
       description: 'List endpoint returns events that match a RUM search query.
@@ -12485,14 +12081,11 @@ paths:
       summary: Get a list of RUM events
       tags:
       - RUM
-      x-menu-order: 2
       x-pagination:
         cursorParam: page[cursor]
         cursorPath: meta.page.after
         limitParam: page[limit]
         resultsPath: data
-      x-undo:
-        type: safe
   /api/v2/rum/events/search:
     post:
       description: 'List endpoint returns RUM events that match a RUM search query.
@@ -12532,14 +12125,11 @@ paths:
       tags:
       - RUM
       x-codegen-request-body-name: body
-      x-menu-order: 1
       x-pagination:
         cursorParam: body.page.cursor
         cursorPath: meta.page.after
         limitParam: body.page.limit
         resultsPath: data
-      x-undo:
-        type: safe
   /api/v2/saml_configurations/idp_metadata:
     post:
       description: 'Endpoint for uploading IdP metadata for SAML setup.
@@ -12574,9 +12164,6 @@ paths:
       tags:
       - Organizations
       x-codegen-request-body-name: body
-      x-menu-order: 1
-      x-undo:
-        type: idempotent
   /api/v2/security/cloud_workload/policy/download:
     get:
       description: 'The download endpoint generates a Cloud Workload Security policy
@@ -12602,9 +12189,6 @@ paths:
       summary: Get the latest Cloud Workload Security policy
       tags:
       - Cloud Workload Security
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /api/v2/security_monitoring/cloud_workload_security/agent_rules:
     get:
       description: Get the list of Agent rules.
@@ -12623,9 +12207,6 @@ paths:
       summary: Get all Cloud Workload Security Agent rules
       tags:
       - Cloud Workload Security
-      x-menu-order: 3
-      x-undo:
-        type: safe
     post:
       description: Create a new Agent rule with the given parameters.
       operationId: CreateCloudWorkloadSecurityAgentRule
@@ -12655,22 +12236,6 @@ paths:
       tags:
       - Cloud Workload Security
       x-codegen-request-body-name: body
-      x-given:
-        agent_rule:
-          parameters:
-          - name: body
-            value: "{\n  \"data\": {\n    \"type\": \"agent_rule\",\n    \"attributes\":
-              {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\":
-              \"My Agent rule\",\n      \"expression\": \"exec.file.name == \\\"sh\\\"\",\n
-              \     \"enabled\": true\n     }\n  }\n}"
-          step: there is a valid "agent_rule" in the system
-      x-menu-order: 4
-      x-undo:
-        operationId: DeleteCloudWorkloadSecurityAgentRule
-        parameters:
-        - name: agent_rule_id
-          source: data.id
-        type: unsafe
   /api/v2/security_monitoring/cloud_workload_security/agent_rules/{agent_rule_id}:
     delete:
       description: Delete a specific Agent rule.
@@ -12689,9 +12254,6 @@ paths:
       summary: Delete a Cloud Workload Security Agent rule
       tags:
       - Cloud Workload Security
-      x-menu-order: 6
-      x-undo:
-        type: idempotent
     get:
       description: Get the details of a specific Agent rule.
       operationId: GetCloudWorkloadSecurityAgentRule
@@ -12713,9 +12275,6 @@ paths:
       summary: Get a Cloud Workload Security Agent rule
       tags:
       - Cloud Workload Security
-      x-menu-order: 2
-      x-undo:
-        type: safe
     patch:
       description: 'Update a specific Agent rule.
 
@@ -12751,9 +12310,6 @@ paths:
       tags:
       - Cloud Workload Security
       x-codegen-request-body-name: body
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
   /api/v2/security_monitoring/configuration/security_filters:
     get:
       description: Get the list of configured security filters with their definitions.
@@ -12777,8 +12333,6 @@ paths:
       summary: Get all security filters
       tags:
       - Security Monitoring
-      x-undo:
-        type: safe
     post:
       description: 'Create a security filter.
 
@@ -12818,23 +12372,6 @@ paths:
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
-      x-given:
-        security_filter:
-          parameters:
-          - name: body
-            value: "{\n  \"data\": {\n    \"type\": \"security_filters\",\n    \"attributes\":
-              {\n      \"name\": \"{{ unique }}\",\n      \"query\": \"service:{{
-              unique_alnum }}\",\n      \"exclusion_filters\":[\n        {\n          \"name\":
-              \"Exclude logs from staging\",\n          \"query\": \"source:staging\"\n
-              \       }\n     ],\n      \"filtered_data_type\":\"logs\",\n      \"is_enabled\":
-              true\n     }\n  }\n}"
-          step: there is a valid "security_filter" in the system
-      x-undo:
-        operationId: DeleteSecurityFilter
-        parameters:
-        - name: security_filter_id
-          source: data.id
-        type: unsafe
   /api/v2/security_monitoring/configuration/security_filters/{security_filter_id}:
     delete:
       description: Delete a specific security filter.
@@ -12858,8 +12395,6 @@ paths:
       summary: Delete a security filter
       tags:
       - Security Monitoring
-      x-undo:
-        type: idempotent
     get:
       description: 'Get the details of a specific security filter.
 
@@ -12891,8 +12426,6 @@ paths:
       summary: Get a security filter
       tags:
       - Security Monitoring
-      x-undo:
-        type: safe
     patch:
       description: 'Update a specific security filter.
 
@@ -12933,8 +12466,6 @@ paths:
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
   /api/v2/security_monitoring/rules:
     get:
       description: List rules.
@@ -12961,9 +12492,6 @@ paths:
       summary: List rules
       tags:
       - Security Monitoring
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: Create a detection rule.
       operationId: CreateSecurityMonitoringRule
@@ -12995,26 +12523,6 @@ paths:
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
-      x-given:
-        security_rule:
-          parameters:
-          - name: body
-            value: "{\n  \"name\": \"{{ unique }}\",\n  \"queries\": [{\n    \"query\":
-              \"@test:true\",\n    \"aggregation\": \"count\",\n    \"groupByFields\":
-              [],\n    \"distinctFields\": [],\n    \"metric\": \"\"\n  }],\n  \"filters\":
-              [],\n  \"cases\": [{\n    \"name\": \"\",\n    \"status\": \"info\",\n
-              \   \"condition\": \"a > 0\",\n    \"notifications\": []\n  }],\n  \"options\":
-              {\n    \"evaluationWindow\": 900,\n    \"keepAlive\": 3600,\n    \"maxSignalDuration\":
-              86400\n  },\n  \"message\": \"Test rule\",\n  \"tags\": [],\n  \"isEnabled\":
-              true,\n  \"type\": \"log_detection\"\n}"
-          step: there is a valid "security_rule" in the system
-      x-menu-order: 2
-      x-undo:
-        operationId: DeleteSecurityMonitoringRule
-        parameters:
-        - name: rule_id
-          source: id
-        type: unsafe
   /api/v2/security_monitoring/rules/{rule_id}:
     delete:
       description: Delete an existing rule. Default rules cannot be deleted.
@@ -13038,9 +12546,6 @@ paths:
       summary: Delete an existing rule
       tags:
       - Security Monitoring
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
     get:
       description: Get a rule's details.
       operationId: GetSecurityMonitoringRule
@@ -13065,9 +12570,6 @@ paths:
       summary: Get a rule's details
       tags:
       - Security Monitoring
-      x-menu-order: 3
-      x-undo:
-        type: safe
     put:
       description: 'Update an existing rule. When updating `cases`, `queries` or `options`,
         the whole field
@@ -13111,9 +12613,6 @@ paths:
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v2/security_monitoring/signals:
     get:
       description: 'The list endpoint returns security signals that match a search
@@ -13192,14 +12691,11 @@ paths:
       summary: Get a quick list of security signals
       tags:
       - Security Monitoring
-      x-menu-order: 7
       x-pagination:
         cursorParam: page[cursor]
         cursorPath: meta.page.after
         limitParam: page[limit]
         resultsPath: data
-      x-undo:
-        type: safe
   /api/v2/security_monitoring/signals/search:
     post:
       description: 'Returns security signals that match a search query.
@@ -13236,14 +12732,11 @@ paths:
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
-      x-menu-order: 6
       x-pagination:
         cursorParam: body.page.cursor
         cursorPath: meta.page.after
         limitParam: body.page.limit
         resultsPath: data
-      x-undo:
-        type: safe
   /api/v2/security_monitoring/signals/{signal_id}/assignee:
     patch:
       description: Modify the triage assignee of a security signal.
@@ -13288,8 +12781,6 @@ paths:
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
   /api/v2/security_monitoring/signals/{signal_id}/incidents:
     patch:
       description: Change the related incidents for a security signal.
@@ -13334,8 +12825,6 @@ paths:
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
   /api/v2/security_monitoring/signals/{signal_id}/state:
     patch:
       description: Change the triage state of a security signal.
@@ -13380,8 +12869,6 @@ paths:
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
   /api/v2/series:
     post:
       description: "The metrics end-point allows you to post time-series data that
@@ -13453,9 +12940,6 @@ paths:
       tags:
       - Metrics
       x-codegen-request-body-name: body
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /api/v2/service_accounts:
     post:
       description: Create a service account for your organization.
@@ -13491,21 +12975,6 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
-      x-given:
-        service_account_user:
-          parameters:
-          - name: body
-            value: "{\n  \"data\": {\n    \"attributes\": {\n      \"email\": \"{{
-              unique }}@datadoghq.com\",\n      \"title\": \"user title\",\n      \"service_account\":
-              true\n     },\n     \"type\": \"users\"\n  }\n}"
-          step: there is a valid "service_account_user" in the system
-      x-menu-order: 1
-      x-undo:
-        operationId: DisableUser
-        parameters:
-        - name: user_id
-          source: data.id
-        type: unsafe
   /api/v2/service_accounts/{service_account_id}/application_keys:
     get:
       description: List all application keys available for this service account.
@@ -13548,8 +13017,6 @@ paths:
       summary: List application keys for this service account
       tags:
       - Service Accounts
-      x-undo:
-        type: safe
     post:
       description: Create an application key for this service account.
       operationId: CreateServiceAccountApplicationKey
@@ -13586,23 +13053,6 @@ paths:
       tags:
       - Service Accounts
       x-codegen-request-body-name: body
-      x-given:
-        service_account_application_key:
-          parameters:
-          - name: service_account_id
-            value: '"{{ service_account_user.data.id }}"'
-          - name: body
-            value: "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{
-              unique }}\"\n    },\n    \"type\": \"application_keys\"\n  }\n}"
-          step: there is a valid "service_account_application_key" for "service_account_user"
-      x-undo:
-        operationId: DeleteServiceAccountApplicationKey
-        parameters:
-        - name: app_key_id
-          source: data.id
-        - name: service_account_id
-          source: data.relationships.owned_by.data.id
-        type: unsafe
   /api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id}:
     delete:
       description: Delete an application key owned by this service account.
@@ -13630,9 +13080,6 @@ paths:
       summary: Delete an application key for this service account
       tags:
       - Service Accounts
-      x-menu-order: 3
-      x-undo:
-        type: idempotent
     get:
       description: Get an application key owned by this service account.
       operationId: GetServiceAccountApplicationKey
@@ -13663,9 +13110,6 @@ paths:
       summary: Get one application key for this service account
       tags:
       - Service Accounts
-      x-menu-order: 1
-      x-undo:
-        type: safe
     patch:
       description: Edit an application key owned by this service account.
       operationId: UpdateServiceAccountApplicationKey
@@ -13709,9 +13153,6 @@ paths:
       tags:
       - Service Accounts
       x-codegen-request-body-name: body
-      x-menu-order: 2
-      x-undo:
-        type: idempotent
   /api/v2/services:
     get:
       description: Get all incident services uploaded for the requesting user's organization.
@@ -13748,8 +13189,6 @@ paths:
       summary: Get a list of all incident services
       tags:
       - Incident Services
-      x-undo:
-        type: safe
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -13789,19 +13228,6 @@ paths:
       tags:
       - Incident Services
       x-codegen-request-body-name: body
-      x-given:
-        service:
-          parameters:
-          - name: body
-            value: "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{
-              unique }}\"\n     },\n     \"type\": \"services\"\n  }\n}"
-          step: there is a valid "service" in the system
-      x-undo:
-        operationId: DeleteIncidentService
-        parameters:
-        - name: service_id
-          source: data.id
-        type: unsafe
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -13832,8 +13258,6 @@ paths:
       summary: Delete an existing incident service
       tags:
       - Incident Services
-      x-undo:
-        type: idempotent
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -13871,8 +13295,6 @@ paths:
       summary: Get details of an incident service
       tags:
       - Incident Services
-      x-undo:
-        type: safe
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -13915,8 +13337,6 @@ paths:
       tags:
       - Incident Services
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -13956,8 +13376,6 @@ paths:
       summary: Get a list of all incident teams
       tags:
       - Incident Teams
-      x-undo:
-        type: safe
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -13997,19 +13415,6 @@ paths:
       tags:
       - Incident Teams
       x-codegen-request-body-name: body
-      x-given:
-        team:
-          parameters:
-          - name: body
-            value: "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{
-              unique }}\"\n     },\n     \"type\": \"teams\"\n  }\n}"
-          step: there is a valid "team" in the system
-      x-undo:
-        operationId: DeleteIncidentTeam
-        parameters:
-        - name: team_id
-          source: data.id
-        type: unsafe
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -14040,8 +13445,6 @@ paths:
       summary: Delete an existing incident team
       tags:
       - Incident Teams
-      x-undo:
-        type: idempotent
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -14079,8 +13482,6 @@ paths:
       summary: Get details of an incident team
       tags:
       - Incident Teams
-      x-undo:
-        type: safe
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -14123,8 +13524,6 @@ paths:
       tags:
       - Incident Teams
       x-codegen-request-body-name: body
-      x-undo:
-        type: idempotent
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -14187,9 +13586,6 @@ paths:
       summary: Get hourly usage for application security
       tags:
       - Usage Metering
-      x-menu-order: 38
-      x-undo:
-        type: safe
   /api/v2/usage/cost_by_org:
     get:
       description: Get cost across multi-org account. Cost by org data for a given
@@ -14245,9 +13641,6 @@ paths:
       summary: Get cost across multi-org account
       tags:
       - Usage Metering
-      x-menu-order: 5
-      x-undo:
-        type: safe
   /api/v2/usage/estimated_cost:
     get:
       description: 'Get estimated cost across multi-org and single root-org accounts.
@@ -14332,9 +13725,6 @@ paths:
       summary: Get estimated cost across your account
       tags:
       - Usage Metering
-      x-menu-order: 6
-      x-undo:
-        type: safe
       x-unstable: '**Note**: This endpoint is in public beta.
 
         Only the sub-org view is available currently, the summary view will be released
@@ -14450,9 +13840,6 @@ paths:
       summary: Get hourly usage by product family
       tags:
       - Usage Metering
-      x-menu-order: 1
-      x-undo:
-        type: safe
   /api/v2/usage/lambda_traced_invocations:
     get:
       description: 'Get hourly usage for lambda traced invocations.
@@ -14512,9 +13899,6 @@ paths:
       summary: Get hourly usage for lambda traced invocations
       tags:
       - Usage Metering
-      x-menu-order: 37
-      x-undo:
-        type: safe
   /api/v2/usage/observability_pipelines:
     get:
       description: 'Get hourly usage for observability pipelines.
@@ -14574,9 +13958,6 @@ paths:
       summary: Get hourly usage for observability pipelines
       tags:
       - Usage Metering
-      x-menu-order: 39
-      x-undo:
-        type: safe
   /api/v2/user_invitations:
     post:
       description: Sends emails to one or more users inviting them to join the organization.
@@ -14617,18 +13998,6 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
-      x-given:
-        user_invitation:
-          parameters:
-          - name: body
-            value: "{\n  \"data\": [\n    {\n      \"relationships\": {\"user\": {\"data\":
-              {\n        \"id\": \"{{ user.data.id }}\",\n        \"type\": \"{{ user.data.type
-              }}\"\n      }}},\n      \"type\": \"user_invitations\"\n    }\n  ]\n}"
-          source: data[0]
-          step: the "user" has a "user_invitation"
-      x-menu-order: 8
-      x-undo:
-        type: safe
   /api/v2/user_invitations/{user_invitation_uuid}:
     get:
       description: Returns a single user invitation by its UUID.
@@ -14671,9 +14040,6 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
-      x-menu-order: 9
-      x-undo:
-        type: safe
   /api/v2/users:
     get:
       description: 'Get the list of all users in the organization. This list includes
@@ -14750,9 +14116,6 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
-      x-menu-order: 1
-      x-undo:
-        type: safe
     post:
       description: Create a user for your organization.
       operationId: CreateUser
@@ -14792,21 +14155,6 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
-      x-given:
-        user:
-          parameters:
-          - name: body
-            value: "{\n  \"data\": {\n    \"attributes\": {\n      \"email\": \"{{
-              unique }}@datadoghq.com\",\n      \"title\": \"user title\"\n     },\n
-              \    \"type\": \"users\"\n  }\n}"
-          step: there is a valid "user" in the system
-      x-menu-order: 2
-      x-undo:
-        operationId: DisableUser
-        parameters:
-        - name: user_id
-          source: data.id
-        type: unsafe
   /api/v2/users/{user_id}:
     delete:
       description: 'Disable a user. Can only be used with an application key belonging
@@ -14841,9 +14189,6 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
-      x-menu-order: 5
-      x-undo:
-        type: idempotent
     get:
       description: "Get a user in the organization specified by the user\u2019s `user_id`."
       operationId: GetUser
@@ -14878,9 +14223,6 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
-      x-menu-order: 3
-      x-undo:
-        type: safe
     patch:
       description: 'Edit a user. Can only be used with an application key belonging
 
@@ -14936,9 +14278,6 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
-      x-menu-order: 4
-      x-undo:
-        type: idempotent
   /api/v2/users/{user_id}/orgs:
     get:
       description: 'Get a user organization. Returns the user information and all
@@ -14977,9 +14316,6 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
-      x-menu-order: 6
-      x-undo:
-        type: safe
   /api/v2/users/{user_id}/permissions:
     get:
       description: "Get a user permission set. Returns a list of the user\u2019s permissions\ngranted
@@ -15016,9 +14352,6 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
-      x-menu-order: 7
-      x-undo:
-        type: safe
 security:
 - apiKeyAuth: []
   appKeyAuth: []
