@@ -28,7 +28,7 @@ class LogsWarning(ModelNormal):
         """
         A warning message indicating something that went wrong with the query
 
-        :param code: A unique code for this type of warning
+        :param code: A unique code for this type of warning updated
         :type code: str, optional
 
         :param detail: A detailed explanation of this specific warning
