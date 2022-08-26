@@ -38,6 +38,7 @@ class UsageSummaryResponse(ModelNormal):
             "container_avg_sum": (int,),
             "container_hwm_sum": (int,),
             "cspm_aas_host_top99p_sum": (int,),
+            "cspm_aws_host_top99p_sum": (int,),
             "cspm_azure_host_top99p_sum": (int,),
             "cspm_container_avg_sum": (int,),
             "cspm_container_hwm_sum": (int,),
@@ -114,6 +115,7 @@ class UsageSummaryResponse(ModelNormal):
         "container_avg_sum": "container_avg_sum",
         "container_hwm_sum": "container_hwm_sum",
         "cspm_aas_host_top99p_sum": "cspm_aas_host_top99p_sum",
+        "cspm_aws_host_top99p_sum": "cspm_aws_host_top99p_sum",
         "cspm_azure_host_top99p_sum": "cspm_azure_host_top99p_sum",
         "cspm_container_avg_sum": "cspm_container_avg_sum",
         "cspm_container_hwm_sum": "cspm_container_hwm_sum",
@@ -234,6 +236,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param cspm_aas_host_top99p_sum: Shows the 99th percentile of all Cloud Security Posture Management Azure app services hosts over all hours in the current months for all organizations.
         :type cspm_aas_host_top99p_sum: int, optional
+
+        :param cspm_aws_host_top99p_sum: Shows the 99th percentile of all Cloud Security Posture Management AWS hosts over all hours in the current months for all organizations.
+        :type cspm_aws_host_top99p_sum: int, optional
 
         :param cspm_azure_host_top99p_sum: Shows the 99th percentile of all Cloud Security Posture Management Azure hosts over all hours in the current months for all organizations.
         :type cspm_azure_host_top99p_sum: int, optional
