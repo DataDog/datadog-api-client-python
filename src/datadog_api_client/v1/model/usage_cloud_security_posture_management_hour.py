@@ -16,6 +16,7 @@ class UsageCloudSecurityPostureManagementHour(ModelNormal):
     def openapi_types(_):
         return {
             "aas_host_count": (float, none_type),
+            "aws_host_count": (float, none_type),
             "azure_host_count": (float, none_type),
             "compliance_host_count": (float, none_type),
             "container_count": (float, none_type),
@@ -27,6 +28,7 @@ class UsageCloudSecurityPostureManagementHour(ModelNormal):
 
     attribute_map = {
         "aas_host_count": "aas_host_count",
+        "aws_host_count": "aws_host_count",
         "azure_host_count": "azure_host_count",
         "compliance_host_count": "compliance_host_count",
         "container_count": "container_count",
@@ -42,6 +44,9 @@ class UsageCloudSecurityPostureManagementHour(ModelNormal):
 
         :param aas_host_count: The number of Cloud Security Posture Management Azure app services hosts during a given hour.
         :type aas_host_count: float, none_type, optional
+
+        :param aws_host_count: The number of Cloud Security Posture Management AWS hosts during a given hour.
+        :type aws_host_count: float, none_type, optional
 
         :param azure_host_count: The number of Cloud Security Posture Management Azure hosts during a given hour.
         :type azure_host_count: float, none_type, optional
