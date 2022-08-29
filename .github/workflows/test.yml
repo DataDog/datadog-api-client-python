@@ -132,5 +132,5 @@ jobs:
         with:
           github-token: ${{ steps.get_token.outputs.token }}
           repo: datadog-api-spec
-          status: ${{ needs.test.result == 'success' && needs.examples.result == 'success' && 'success' || 'failure' }}
+          status: ${{ (needs.test.result == 'cancelled' || needs.examples.result == 'cancelled') && 'pending' || needs.test.result == 'success' && needs.examples.result == 'success' && 'success' || 'failure' }}
           context: unit
