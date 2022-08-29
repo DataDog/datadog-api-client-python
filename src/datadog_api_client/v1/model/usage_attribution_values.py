@@ -41,6 +41,8 @@ class UsageAttributionValues(ModelNormal):
             "estimated_indexed_logs_usage": (float,),
             "estimated_indexed_spans_percentage": (float,),
             "estimated_indexed_spans_usage": (float,),
+            "estimated_ingested_logs_percentage": (float,),
+            "estimated_ingested_logs_usage": (float,),
             "estimated_ingested_spans_percentage": (float,),
             "estimated_ingested_spans_usage": (float,),
             "infra_host_percentage": (float,),
@@ -88,6 +90,8 @@ class UsageAttributionValues(ModelNormal):
         "estimated_indexed_logs_usage": "estimated_indexed_logs_usage",
         "estimated_indexed_spans_percentage": "estimated_indexed_spans_percentage",
         "estimated_indexed_spans_usage": "estimated_indexed_spans_usage",
+        "estimated_ingested_logs_percentage": "estimated_ingested_logs_percentage",
+        "estimated_ingested_logs_usage": "estimated_ingested_logs_usage",
         "estimated_ingested_spans_percentage": "estimated_ingested_spans_percentage",
         "estimated_ingested_spans_usage": "estimated_ingested_spans_usage",
         "infra_host_percentage": "infra_host_percentage",
@@ -193,6 +197,12 @@ class UsageAttributionValues(ModelNormal):
 
         :param estimated_indexed_spans_usage: The estimated indexed spans usage by tag(s). Note this field is in private beta.
         :type estimated_indexed_spans_usage: float, optional
+
+        :param estimated_ingested_logs_percentage: The percentage of estimated live ingested logs usage by tag(s). Note this field is in private beta.
+        :type estimated_ingested_logs_percentage: float, optional
+
+        :param estimated_ingested_logs_usage: The estimated live ingested logs usage by tag(s). Note this field is in private beta.
+        :type estimated_ingested_logs_usage: float, optional
 
         :param estimated_ingested_spans_percentage: The percentage of estimated ingested spans usage by tag(s). Note this field is in private beta.
         :type estimated_ingested_spans_percentage: float, optional

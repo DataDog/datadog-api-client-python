@@ -22,6 +22,7 @@ class UsageBillableSummaryHour(ModelNormal):
             "org_name": (str,),
             "public_id": (str,),
             "ratio_in_month": (float,),
+            "region": (str,),
             "start_date": (datetime,),
             "usage": (UsageBillableSummaryKeys,),
         }
@@ -33,6 +34,7 @@ class UsageBillableSummaryHour(ModelNormal):
         "org_name": "org_name",
         "public_id": "public_id",
         "ratio_in_month": "ratio_in_month",
+        "region": "region",
         "start_date": "start_date",
         "usage": "usage",
     }
@@ -58,6 +60,9 @@ class UsageBillableSummaryHour(ModelNormal):
 
         :param ratio_in_month: Shows usage aggregation for a billing period.
         :type ratio_in_month: float, optional
+
+        :param region: The region of the organization.
+        :type region: str, optional
 
         :param start_date: Shows the first date of usage.
         :type start_date: datetime, optional

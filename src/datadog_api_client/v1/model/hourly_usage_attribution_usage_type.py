@@ -13,7 +13,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
     """
     Supported products for hourly usage attribution requests.
 
-    :param value: Must be one of ["api_usage", "apm_host_usage", "appsec_usage", "browser_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "dbm_hosts_usage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_indexed_spans_usage", "estimated_ingested_spans_usage", "fargate_usage", "functions_usage", "indexed_logs_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "profiled_container_usage", "profiled_host_usage", "snmp_usage"].
+    :param value: Must be one of ["api_usage", "apm_host_usage", "appsec_usage", "browser_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "dbm_hosts_usage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_ingested_logs_usage", "estimated_indexed_spans_usage", "estimated_ingested_spans_usage", "fargate_usage", "functions_usage", "indexed_logs_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "profiled_container_usage", "profiled_host_usage", "snmp_usage"].
     :type value: str
     """
 
@@ -32,6 +32,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
             "DBM_HOSTS_USAGE": "dbm_hosts_usage",
             "DBM_QUERIES_USAGE": "dbm_queries_usage",
             "ESTIMATED_INDEXED_LOGS_USAGE": "estimated_indexed_logs_usage",
+            "ESTIMATED_INGESTED_LOGS_USAGE": "estimated_ingested_logs_usage",
             "ESTIMATED_INDEXED_SPANS_USAGE": "estimated_indexed_spans_usage",
             "ESTIMATED_INGESTED_SPANS_USAGE": "estimated_ingested_spans_usage",
             "FARGATE_USAGE": "fargate_usage",
