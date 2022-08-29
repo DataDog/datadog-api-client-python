@@ -13,17 +13,20 @@ class RoleUpdateData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.role_update_attributes import RoleUpdateAttributes
+        from datadog_api_client.v2.model.role_relationships import RoleRelationships
         from datadog_api_client.v2.model.roles_type import RolesType
 
         return {
             "attributes": (RoleUpdateAttributes,),
             "id": (str,),
+            "relationships": (RoleRelationships,),
             "type": (RolesType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
         "id": "id",
+        "relationships": "relationships",
         "type": "type",
     }
 
@@ -36,6 +39,9 @@ class RoleUpdateData(ModelNormal):
 
         :param id: The unique identifier of the role.
         :type id: str
+
+        :param relationships: Relationships of the role object.
+        :type relationships: RoleRelationships, optional
 
         :param type: Roles type.
         :type type: RolesType
