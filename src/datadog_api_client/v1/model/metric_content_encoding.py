@@ -13,13 +13,14 @@ class MetricContentEncoding(ModelSimple):
     """
     HTTP header used to compress the media-type.
 
-    :param value: If omitted defaults to "deflate". Must be one of ["deflate"].
+    :param value: If omitted defaults to "deflate". Must be one of ["deflate", "gzip"].
     :type value: str
     """
 
     allowed_values = {
         "value": {
             "DEFLATE": "deflate",
+            "GZIP": "gzip",
         },
     }
 
