@@ -68,6 +68,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "opentelemetry_host_top99p": (int,),
             "profiling_host_top99p": (int,),
             "public_id": (str,),
+            "region": (str,),
             "rum_browser_and_mobile_session_count": (int,),
             "rum_session_count_sum": (int,),
             "rum_total_session_count_sum": (int,),
@@ -137,6 +138,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "opentelemetry_host_top99p": "opentelemetry_host_top99p",
         "profiling_host_top99p": "profiling_host_top99p",
         "public_id": "public_id",
+        "region": "region",
         "rum_browser_and_mobile_session_count": "rum_browser_and_mobile_session_count",
         "rum_session_count_sum": "rum_session_count_sum",
         "rum_total_session_count_sum": "rum_total_session_count_sum",
@@ -318,6 +320,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param public_id: The organization public id.
         :type public_id: str, optional
+
+        :param region: The region of the organization.
+        :type region: str, optional
 
         :param rum_browser_and_mobile_session_count: Shows the sum of all mobile sessions and all browser lite and legacy sessions over all hours in the current date for the given org.
         :type rum_browser_and_mobile_session_count: int, optional
