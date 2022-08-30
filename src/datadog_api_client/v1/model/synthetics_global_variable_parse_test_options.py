@@ -19,25 +19,30 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
 
         return {
             "field": (str,),
+            "local_variable_name": (str,),
             "parser": (SyntheticsVariableParser,),
             "type": (SyntheticsGlobalVariableParseTestOptionsType,),
         }
 
     attribute_map = {
         "field": "field",
+        "local_variable_name": "localVariableName",
         "parser": "parser",
         "type": "type",
     }
 
-    def __init__(self, parser, type, *args, **kwargs):
+    def __init__(self, type, *args, **kwargs):
         """
         Parser options to use for retrieving a Synthetics global variable from a Synthetics Test. Used in conjunction with ``parse_test_public_id``.
 
         :param field: When type is ``http_header`` , name of the header to use to extract the value.
         :type field: str, optional
 
+        :param local_variable_name: When type is ``local_variable`` , name of the local variable to use to extract the value.
+        :type local_variable_name: str, optional
+
         :param parser: Details of the parser to use for the global variable.
-        :type parser: SyntheticsVariableParser
+        :type parser: SyntheticsVariableParser, optional
 
         :param type: Property of the Synthetics Test Response to use for a Synthetics global variable.
         :type type: SyntheticsGlobalVariableParseTestOptionsType
@@ -46,17 +51,15 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
 
         self._check_pos_args(args)
 
-        self.parser = parser
         self.type = type
 
     @classmethod
-    def _from_openapi_data(cls, parser, type, *args, **kwargs):
+    def _from_openapi_data(cls, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsGlobalVariableParseTestOptions, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
 
-        self.parser = parser
         self.type = type
         return self

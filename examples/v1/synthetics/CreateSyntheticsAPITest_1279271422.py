@@ -15,10 +15,16 @@ from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAs
 from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
 from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
 from datadog_api_client.v1.model.synthetics_config_variable_type import SyntheticsConfigVariableType
+from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type import (
+    SyntheticsGlobalVariableParseTestOptionsType,
+)
+from datadog_api_client.v1.model.synthetics_global_variable_parser_type import SyntheticsGlobalVariableParserType
+from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
 from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
 from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
 from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
+from datadog_api_client.v1.model.synthetics_variable_parser import SyntheticsVariableParser
 
 body = SyntheticsAPITest(
     config=SyntheticsAPITestConfig(
@@ -38,6 +44,16 @@ body = SyntheticsAPITest(
                         operator=SyntheticsAssertionOperator("is"),
                         type=SyntheticsAssertionType("statusCode"),
                         target=200,
+                    ),
+                ],
+                extracted_values=[
+                    SyntheticsParsingOptions(
+                        field="server",
+                        name="EXTRACTED_VALUE",
+                        parser=SyntheticsVariableParser(
+                            type=SyntheticsGlobalVariableParserType("raw"),
+                        ),
+                        type=SyntheticsGlobalVariableParseTestOptionsType("http_header"),
                     ),
                 ],
                 is_critical=True,
