@@ -13,7 +13,7 @@ class FormulaAndFunctionEventsDataSource(ModelSimple):
     """
     Data source for event platform-based queries.
 
-    :param value: Must be one of ["logs", "spans", "network", "rum", "security_signals", "profiles", "audit", "events"].
+    :param value: Must be one of ["logs", "spans", "network", "rum", "security_signals", "profiles", "audit", "events", "ci_tests"].
     :type value: str
     """
 
@@ -27,6 +27,7 @@ class FormulaAndFunctionEventsDataSource(ModelSimple):
             "PROFILES": "profiles",
             "AUDIT": "audit",
             "EVENTS": "events",
+            "CI_TESTS": "ci_tests",
         },
     }
 

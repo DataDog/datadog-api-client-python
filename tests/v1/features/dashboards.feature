@@ -441,6 +441,15 @@ Feature: Dashboards
     And the response "widgets[0].definition.type" is equal to "trace_service"
     And the response "widgets[0].definition.env" is equal to "none"
 
+  @team:DataDog/dashboards
+  Scenario: Create a new timeseries widget with ci_tests data source
+    Given new "CreateDashboard" request
+    And body with value {"title":"{{ unique }} with ci_tests datasource","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_tests","name":"query1","search":{"query":"test_level:test"},"indexes":["*"],"compute":{"aggregation":"count"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "ci_tests"
+    And the response "widgets[0].definition.requests[0].queries[0].search.query" is equal to "test_level:test"
+
   @generated @skip @team:DataDog/dashboards
   Scenario: Delete a dashboard returns "Dashboards Not Found" response
     Given new "DeleteDashboard" request
