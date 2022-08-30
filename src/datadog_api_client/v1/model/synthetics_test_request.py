@@ -35,6 +35,7 @@ class SyntheticsTestRequest(ModelNormal):
             "basic_auth": (SyntheticsBasicAuth,),
             "body": (str,),
             "certificate": (SyntheticsTestRequestCertificate,),
+            "certificate_domains": ([str],),
             "dns_server": (str,),
             "dns_server_port": (int,),
             "follow_redirects": (bool,),
@@ -60,6 +61,7 @@ class SyntheticsTestRequest(ModelNormal):
         "basic_auth": "basicAuth",
         "body": "body",
         "certificate": "certificate",
+        "certificate_domains": "certificateDomains",
         "dns_server": "dnsServer",
         "dns_server_port": "dnsServerPort",
         "follow_redirects": "follow_redirects",
@@ -95,6 +97,9 @@ class SyntheticsTestRequest(ModelNormal):
 
         :param certificate: Client certificate to use when performing the test request.
         :type certificate: SyntheticsTestRequestCertificate, optional
+
+        :param certificate_domains: By default, the client certificate is applied on the domain of the starting URL for browser tests. If you want your client certificate to be applied on other domains instead, add them in ``certificateDomains``.
+        :type certificate_domains: [str], optional
 
         :param dns_server: DNS server to use for DNS tests.
         :type dns_server: str, optional

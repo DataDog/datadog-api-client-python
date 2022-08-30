@@ -39,7 +39,10 @@ class SyntheticsTestOptions(ModelNormal):
             "ci": (SyntheticsTestCiOptions,),
             "device_ids": ([SyntheticsDeviceID],),
             "disable_cors": (bool,),
+            "disable_csp": (bool,),
             "follow_redirects": (bool,),
+            "ignore_server_certificate_error": (bool,),
+            "initial_navigation_timeout": (int,),
             "min_failure_duration": (int,),
             "min_location_failed": (int,),
             "monitor_name": (str,),
@@ -59,7 +62,10 @@ class SyntheticsTestOptions(ModelNormal):
         "ci": "ci",
         "device_ids": "device_ids",
         "disable_cors": "disableCors",
+        "disable_csp": "disableCsp",
         "follow_redirects": "follow_redirects",
+        "ignore_server_certificate_error": "ignoreServerCertificateError",
+        "initial_navigation_timeout": "initialNavigationTimeout",
         "min_failure_duration": "min_failure_duration",
         "min_location_failed": "min_location_failed",
         "monitor_name": "monitor_name",
@@ -95,8 +101,17 @@ class SyntheticsTestOptions(ModelNormal):
         :param disable_cors: Whether or not to disable CORS mechanism.
         :type disable_cors: bool, optional
 
+        :param disable_csp: Disable Content Security Policy for browser tests.
+        :type disable_csp: bool, optional
+
         :param follow_redirects: For API HTTP test, whether or not the test should follow redirects.
         :type follow_redirects: bool, optional
+
+        :param ignore_server_certificate_error: Ignore server certificate error.
+        :type ignore_server_certificate_error: bool, optional
+
+        :param initial_navigation_timeout: Timeout before declaring the initial step as failed (in seconds) for browser tests.
+        :type initial_navigation_timeout: int, optional
 
         :param min_failure_duration: Minimum amount of time in failure required to trigger an alert.
         :type min_failure_duration: int, optional
