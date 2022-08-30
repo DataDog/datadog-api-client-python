@@ -49,6 +49,7 @@ body = SyntheticsBrowserTest(
                 cert=SyntheticsTestRequestCertificateItem(),
                 key=SyntheticsTestRequestCertificateItem(),
             ),
+            certificate_domains=[],
             method=HTTPMethod("GET"),
             proxy=SyntheticsTestRequestProxy(
                 url="https://example.com",

@@ -9,7 +9,11 @@
           "type": "text"
         }
       ],
-      "request": { "method": "GET", "url": "https://datadoghq.com" },
+      "request": {
+        "method": "GET",
+        "url": "https://datadoghq.com",
+        "certificateDomains": ["https://datadoghq.com"]
+      },
       "setCookie": "name:test"
     },
     "locations": ["aws:us-east-2"],
@@ -33,7 +37,10 @@
       "tick_every": 300,
       "ci": {
         "executionRule": "skipped"
-      }
+      },
+      "ignoreServerCertificateError": true,
+      "disableCsp": true,
+      "initialNavigationTimeout": 200
     },
     "tags": ["testing:browser"],
     "type": "browser",

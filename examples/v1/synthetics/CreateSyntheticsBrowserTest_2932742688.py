@@ -34,6 +34,9 @@ body = SyntheticsBrowserTest(
         request=SyntheticsTestRequest(
             method=HTTPMethod("GET"),
             url="https://datadoghq.com",
+            certificate_domains=[
+                "https://datadoghq.com",
+            ],
         ),
         set_cookie="name:test",
     ),
@@ -66,6 +69,9 @@ body = SyntheticsBrowserTest(
         ci=SyntheticsTestCiOptions(
             execution_rule=SyntheticsTestExecutionRule("skipped"),
         ),
+        ignore_server_certificate_error=True,
+        disable_csp=True,
+        initial_navigation_timeout=200,
     ),
     tags=[
         "testing:browser",
