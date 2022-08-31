@@ -13,7 +13,7 @@ class SyntheticsGlobalVariableParseTestOptionsType(ModelSimple):
     """
     Property of the Synthetics Test Response to use for a Synthetics global variable.
 
-    :param value: Must be one of ["http_body", "http_header"].
+    :param value: Must be one of ["http_body", "http_header", "local_variable"].
     :type value: str
     """
 
@@ -21,6 +21,7 @@ class SyntheticsGlobalVariableParseTestOptionsType(ModelSimple):
         "value": {
             "HTTP_BODY": "http_body",
             "HTTP_HEADER": "http_header",
+            "LOCAL_VARIABLE": "local_variable",
         },
     }
 

@@ -29,6 +29,7 @@ body = SyntheticsGlobalVariable(
     name="MY_VARIABLE",
     parse_test_options=SyntheticsGlobalVariableParseTestOptions(
         field="content-type",
+        local_variable_name="LOCAL_VARIABLE",
         parser=SyntheticsVariableParser(
             type=SyntheticsGlobalVariableParserType("regex"),
             value=".*",

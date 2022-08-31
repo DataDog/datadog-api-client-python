@@ -11898,13 +11898,17 @@ components:
             the value.
           example: content-type
           type: string
+        localVariableName:
+          description: When type is `local_variable`, name of the local variable to
+            use to extract the value.
+          example: LOCAL_VARIABLE
+          type: string
         parser:
           $ref: '#/components/schemas/SyntheticsVariableParser'
         type:
           $ref: '#/components/schemas/SyntheticsGlobalVariableParseTestOptionsType'
       required:
       - type
-      - parser
       type: object
     SyntheticsGlobalVariableParseTestOptionsType:
       description: Property of the Synthetics Test Response to use for a Synthetics
@@ -11912,11 +11916,13 @@ components:
       enum:
       - http_body
       - http_header
+      - local_variable
       example: http_body
       type: string
       x-enum-varnames:
       - HTTP_BODY
       - HTTP_HEADER
+      - LOCAL_VARIABLE
     SyntheticsGlobalVariableParserType:
       description: Type of parser for a Synthetics global variable from a synthetics
         test.

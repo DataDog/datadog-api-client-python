@@ -159,6 +159,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"config\": {\n    \"configVariables\": [\n      {\n        \"example\": \"content-type\",\n        \"name\": \"PROPERTY\",\n        \"pattern\": \"content-type\",\n        \"type\": \"text\"\n      }\n    ],\n    \"steps\": [\n      {\n        \"allowFailure\": true,\n        \"assertions\": [\n          {\n            \"operator\": \"is\",\n            \"type\": \"statusCode\",\n            \"target\": 200\n          }\n        ],\n        \"extractedValues\": [\n          {\n            \"field\": \"server\",\n            \"name\": \"EXTRACTED_VALUE\",\n            \"parser\": {\n              \"type\": \"raw\"\n            },\n            \"type\": \"http_header\"\n          }\n        ],\n        \"isCritical\": true,\n        \"name\": \"request is sent\",\n        \"request\": {\n          \"method\": \"GET\",\n          \"timeout\": 10,\n          \"url\": \"https://datadoghq.com\"\n        },\n        \"retry\": {\n          \"count\": 5,\n          \"interval\": 1000\n        },\n        \"subtype\": \"http\"\n      }\n    ]\n  },\n  \"locations\": [\"aws:us-east-2\"],\n  \"message\": \"BDD test payload: synthetics_api_test_multi_step_payload.json\",\n  \"name\": \"{{ unique }}\",\n  \"options\": {\n    \"accept_self_signed\": false,\n    \"allow_insecure\": true,\n    \"follow_redirects\": true,\n    \"min_failure_duration\": 10,\n    \"min_location_failed\": 1,\n    \"monitor_name\": \"{{ unique }}\",\n    \"monitor_priority\": 5,\n    \"retry\": { \"count\": 3, \"interval\": 1000 },\n    \"tick_every\": 60\n  },\n  \"subtype\": \"multi\",\n  \"tags\": [\"testing:api\"],\n  \"type\": \"api\"\n}\n"
+      }
+    ],
+    "step": "there is a valid \"synthetics_api_test_multi_step\" in the system",
+    "key": "synthetics_api_test_multi_step",
+    "tag": "Synthetics",
+    "operationId": "CreateSyntheticsAPITest"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"message\": \"Testing wrong DNS error\",\n  \"name\": \"{{ unique }}\",\n  \"tags\": [],\n  \"type\": \"api\",\n  \"subtype\": \"http\",\n  \"locations\": [\"aws:eu-west-3\"],\n  \"config\": {\n    \"assertions\": [\n      {\n        \"operator\": \"lessThan\",\n        \"type\": \"responseTime\",\n        \"target\": 1000\n      }\n    ],\n    \"request\": {\n      \"method\": \"GET\",\n      \"url\": \"https://app.datadfoghq.com\"\n    }\n  },\n  \"options\": {\n    \"tick_every\": 86400,\n    \"monitor_options\": {\n      \"renotify_interval\": 0\n    },\n    \"min_failure_duration\": 0,\n    \"min_location_failed\": 1\n  }\n}\n"
       }
     ],
@@ -178,6 +190,18 @@
     "key": "synthetics_api_test_with_wrong_dns_result",
     "tag": "Synthetics",
     "operationId": "TriggerTests"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"description\": \"\",\n  \"name\": \"GLOBAL_VARIABLE_PAYLOAD\",\n  \"tags\": [],\n  \"value\": {\n    \"secure\": false,\n    \"value\": \"\"\n  },\n  \"parse_test_public_id\": \"{{ synthetics_api_test_multi_step.public_id }}\",\n  \"parse_test_options\": {\n    \"type\": \"local_variable\",\n    \"localVariableName\": \"EXTRACTED_VALUE\"\n  }\n}\n"
+      }
+    ],
+    "step": "there is a valid \"synthetics_global_variable\" in the system",
+    "key": "synthetics_global_variable",
+    "tag": "Synthetics",
+    "operationId": "CreateGlobalVariable"
   },
   {
     "parameters": [
