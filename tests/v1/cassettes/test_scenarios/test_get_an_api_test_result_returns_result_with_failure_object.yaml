@@ -48,7 +48,7 @@ interactions:
   response:
     body:
       string: '{"status":1,"run_type":3,"check_time":1644495859933,"check_version":1,"result":{"subtype":"http","eventType":"finished","timings":{"total":45.8,"dns":14.5},"failure":{"message":"Error
-        during DNS resolution (ENOTFOUND).","code":"DNS"},"mainDC":"us1.prod","passed":false,"error":"Error
+        during DNS resolution of hostname app.datadfoghq.com (ENOTFOUND).","code":"DNS"},"mainDC":"us1.prod","passed":false,"error":"Error
         during DNS resolution (ENOTFOUND).","runType":3,"enrichment":{}},"probe_dc":"aws:eu-west-3","result_id":"990211588540730529","check":{"type":"api","config":{"request":{"url":"https://app.datadfoghq.com","method":"GET"},"assertions":[{"operator":"lessThan","type":"responseTime","target":1000}]},"options":{"monitor_options":{"notify_audit":false,"locked":false,"include_tags":true,"new_host_delay":300,"notify_no_data":false,"renotify_interval":0},"tick_every":86400,"min_failure_duration":0,"min_location_failed":1}}}'
     headers:
       content-type:

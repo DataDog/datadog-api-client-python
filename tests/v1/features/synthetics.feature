@@ -449,7 +449,7 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK
     And the response "result.failure.code" is equal to "DNS"
-    And the response "result.failure.message" is equal to "Error during DNS resolution (ENOTFOUND)."
+    And the response "result.failure.message" is equal to "Error during DNS resolution of hostname app.datadfoghq.com (ENOTFOUND)."
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Get an API test returns "- Synthetic Monitoring is not activated for the user" response
