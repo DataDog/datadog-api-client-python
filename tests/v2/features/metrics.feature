@@ -85,6 +85,63 @@ Feature: Metrics
     Then the response status is 404 Not found
 
   @generated @skip @team:DataDog/points-aggregation
+  Scenario: Get a list of metrics returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListTagConfigurations" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:DataDog/points-aggregation
+  Scenario: Get a list of metrics returns "Success" response
+    Given a valid "appKeyAuth" key in the system
+    And there is a valid "metric_tag_configuration" in the system
+    And new "ListTagConfigurations" request
+    When the request is sent
+    Then the response status is 200 Success
+
+  @team:DataDog/points-aggregation
+  Scenario: Get a list of metrics with a tag filter returns "Success" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListTagConfigurations" request
+    And request contains "filter[tags]" parameter with value "{{ unique_alnum }}"
+    When the request is sent
+    Then the response status is 200 Success
+
+  @team:DataDog/points-aggregation
+  Scenario: Get a list of metrics with configured filter returns "Success" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListTagConfigurations" request
+    And request contains "filter[configured]" parameter with value true
+    When the request is sent
+    Then the response status is 200 Success
+
+  @generated @skip @team:DataDog/points-aggregation
+  Scenario: List active tags and aggregations returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListActiveMetricConfigurations" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/points-aggregation
+  Scenario: List active tags and aggregations returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListActiveMetricConfigurations" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/points-aggregation
+  Scenario: List active tags and aggregations returns "Success" response
+    Given a valid "appKeyAuth" key in the system
+    And there is a valid "metric" in the system
+    And new "ListActiveMetricConfigurations" request
+    And request contains "metric_name" parameter with value "{{ unique_alnum }}"
+    When the request is sent
+    Then the response status is 200 Success
+    And the response "data.type" is equal to "actively_queried_configurations"
+
+  @generated @skip @team:DataDog/points-aggregation
   Scenario: List distinct metric volumes by metric name returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListVolumesByMetricName" request
@@ -129,37 +186,6 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 Success
     And the response "data.id" has the same value as "metric_tag_configuration.data.id"
-
-  @generated @skip @team:DataDog/points-aggregation
-  Scenario: List tag configurations returns "Bad Request" response
-    Given a valid "appKeyAuth" key in the system
-    And new "ListTagConfigurations" request
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @skip @team:DataDog/points-aggregation
-  Scenario: List tag configurations returns "Success" response
-    Given a valid "appKeyAuth" key in the system
-    And there is a valid "metric_tag_configuration" in the system
-    And new "ListTagConfigurations" request
-    When the request is sent
-    Then the response status is 200 Success
-
-  @team:DataDog/points-aggregation
-  Scenario: List tag configurations with a tag filter returns "Success" response
-    Given a valid "appKeyAuth" key in the system
-    And new "ListTagConfigurations" request
-    And request contains "filter[tags]" parameter with value "{{ unique_alnum }}"
-    When the request is sent
-    Then the response status is 200 Success
-
-  @team:DataDog/points-aggregation
-  Scenario: List tag configurations with configured filter returns "Success" response
-    Given a valid "appKeyAuth" key in the system
-    And new "ListTagConfigurations" request
-    And request contains "filter[configured]" parameter with value true
-    When the request is sent
-    Then the response status is 200 Success
 
   @generated @skip @team:DataDog/points-aggregation
   Scenario: List tags by metric name returns "Bad Request" response

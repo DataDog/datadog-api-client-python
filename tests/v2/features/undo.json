@@ -409,6 +409,12 @@
       "type": "unsafe"
     }
   },
+  "ListActiveMetricConfigurations": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListTagsByMetricName": {
     "tag": "Metrics",
     "undo": {

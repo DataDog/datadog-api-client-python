@@ -1,5 +1,5 @@
 """
-List tag configurations with a tag filter returns "Success" response
+Get a list of metrics with configured filter returns "Success" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -9,7 +9,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
     response = api_instance.list_tag_configurations(
-        filter_tags="ExampleListtagconfigurationswithatagfilterreturnsSuccessresponse",
+        filter_configured=True,
     )
 
     print(response)

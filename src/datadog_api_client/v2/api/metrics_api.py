@@ -17,6 +17,9 @@ from datadog_api_client.v2.model.metric_tag_configuration_metric_types import Me
 from datadog_api_client.v2.model.metric_bulk_tag_config_response import MetricBulkTagConfigResponse
 from datadog_api_client.v2.model.metric_bulk_tag_config_delete_request import MetricBulkTagConfigDeleteRequest
 from datadog_api_client.v2.model.metric_bulk_tag_config_create_request import MetricBulkTagConfigCreateRequest
+from datadog_api_client.v2.model.metric_suggested_tags_and_aggregations_response import (
+    MetricSuggestedTagsAndAggregationsResponse,
+)
 from datadog_api_client.v2.model.metric_all_tags_response import MetricAllTagsResponse
 from datadog_api_client.v2.model.metric_estimate_response import MetricEstimateResponse
 from datadog_api_client.v2.model.metric_tag_configuration_response import MetricTagConfigurationResponse
@@ -195,6 +198,36 @@ class MetricsApi:
             api_client=api_client,
         )
 
+        self._list_active_metric_configurations_endpoint = _Endpoint(
+            settings={
+                "response_type": (MetricSuggestedTagsAndAggregationsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/{metric_name}/active-configurations",
+                "operation_id": "list_active_metric_configurations",
+                "http_method": "GET",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "metric_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "metric_name",
+                    "location": "path",
+                },
+                "window_seconds": {
+                    "openapi_types": (int,),
+                    "attribute": "window[seconds]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
         self._list_tag_configuration_by_name_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricTagConfigurationResponse,),
@@ -249,6 +282,11 @@ class MetricsApi:
                 "filter_include_percentiles": {
                     "openapi_types": (bool,),
                     "attribute": "filter[include_percentiles]",
+                    "location": "query",
+                },
+                "filter_queried": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[queried]",
                     "location": "query",
                 },
                 "filter_tags": {
@@ -502,6 +540,31 @@ class MetricsApi:
 
         return self._estimate_metrics_output_series_endpoint.call_with_http_info(**kwargs)
 
+    def list_active_metric_configurations(
+        self,
+        metric_name: str,
+        *,
+        window_seconds: Union[int, UnsetType] = unset,
+    ) -> MetricSuggestedTagsAndAggregationsResponse:
+        """List active tags and aggregations.
+
+        List tags and aggregations that are actively queried on dashboards and monitors for a given metric name.
+
+        :param metric_name: The name of the metric.
+        :type metric_name: str
+        :param window_seconds: The number of seconds of look back (from now).
+            Default value is 604,800 (1 week), minimum value is 7200 (2 hours), maximum value is 2,630,000 (1 month).
+        :type window_seconds: int, optional
+        :rtype: MetricSuggestedTagsAndAggregationsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["metric_name"] = metric_name
+
+        if window_seconds is not unset:
+            kwargs["window_seconds"] = window_seconds
+
+        return self._list_active_metric_configurations_endpoint.call_with_http_info(**kwargs)
+
     def list_tag_configuration_by_name(
         self,
         metric_name: str,
@@ -526,28 +589,31 @@ class MetricsApi:
         filter_tags_configured: Union[str, UnsetType] = unset,
         filter_metric_type: Union[MetricTagConfigurationMetricTypes, UnsetType] = unset,
         filter_include_percentiles: Union[bool, UnsetType] = unset,
+        filter_queried: Union[bool, UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
         window_seconds: Union[int, UnsetType] = unset,
     ) -> MetricsAndMetricTagConfigurationsResponse:
-        """List tag configurations.
+        """Get a list of metrics.
 
-        Returns all configured count/gauge/rate/distribution metric names
-        (with additional filters if specified).
+        Returns all metrics (matching additional filters if specified).
 
-        :param filter_configured: Filter metrics that have configured tags.
+        :param filter_configured: Filter custom metrics that have configured tags.
         :type filter_configured: bool, optional
         :param filter_tags_configured: Filter tag configurations by configured tags.
         :type filter_tags_configured: str, optional
-        :param filter_metric_type: Filter tag configurations by metric type.
+        :param filter_metric_type: Filter metrics by metric type.
         :type filter_metric_type: MetricTagConfigurationMetricTypes, optional
         :param filter_include_percentiles: Filter distributions with additional percentile
             aggregations enabled or disabled.
         :type filter_include_percentiles: bool, optional
+        :param filter_queried: Filter custom metrics that have or have not been queried in the specified window[seconds].
+            If no window is provided or the window is less than 2 hours, a default of 2 hours will be applied.
+        :type filter_queried: bool, optional
         :param filter_tags: Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions.
-            Cannot be combined with other filters.
+            Can only be combined with the filter[queried] filter.
         :type filter_tags: str, optional
-        :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] query.
-            Defaults value is 3600 (1 hour), maximum value is 172,800 (2 days).
+        :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] or filter[queried] query.
+            Defaults value is 3600 (1 hour), maximum value is 1,209,600 (2 weeks).
         :type window_seconds: int, optional
         :rtype: MetricsAndMetricTagConfigurationsResponse
         """
@@ -563,6 +629,9 @@ class MetricsApi:
 
         if filter_include_percentiles is not unset:
             kwargs["filter_include_percentiles"] = filter_include_percentiles
+
+        if filter_queried is not unset:
+            kwargs["filter_queried"] = filter_queried
 
         if filter_tags is not unset:
             kwargs["filter_tags"] = filter_tags
