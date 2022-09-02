@@ -283,6 +283,7 @@ from datadog_api_client.v2.model.logs_sort import LogsSort
 from datadog_api_client.v2.model.logs_sort_order import LogsSortOrder
 from datadog_api_client.v2.model.logs_warning import LogsWarning
 from datadog_api_client.v2.model.metric import Metric
+from datadog_api_client.v2.model.metric_active_configuration_type import MetricActiveConfigurationType
 from datadog_api_client.v2.model.metric_all_tags import MetricAllTags
 from datadog_api_client.v2.model.metric_all_tags_attributes import MetricAllTagsAttributes
 from datadog_api_client.v2.model.metric_all_tags_response import MetricAllTagsResponse
@@ -321,6 +322,12 @@ from datadog_api_client.v2.model.metric_payload import MetricPayload
 from datadog_api_client.v2.model.metric_point import MetricPoint
 from datadog_api_client.v2.model.metric_resource import MetricResource
 from datadog_api_client.v2.model.metric_series import MetricSeries
+from datadog_api_client.v2.model.metric_suggested_aggregations import MetricSuggestedAggregations
+from datadog_api_client.v2.model.metric_suggested_tags_and_aggregations import MetricSuggestedTagsAndAggregations
+from datadog_api_client.v2.model.metric_suggested_tags_and_aggregations_response import (
+    MetricSuggestedTagsAndAggregationsResponse,
+)
+from datadog_api_client.v2.model.metric_suggested_tags_attributes import MetricSuggestedTagsAttributes
 from datadog_api_client.v2.model.metric_tag_configuration import MetricTagConfiguration
 from datadog_api_client.v2.model.metric_tag_configuration_attributes import MetricTagConfigurationAttributes
 from datadog_api_client.v2.model.metric_tag_configuration_create_attributes import (

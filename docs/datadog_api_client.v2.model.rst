@@ -1758,6 +1758,13 @@ metric
    :members:
    :show-inheritance:
 
+metric\_active\_configuration\_type
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_active_configuration_type
+   :members:
+   :show-inheritance:
+
 metric\_all\_tags
 -----------------
 
@@ -2021,6 +2028,34 @@ metric\_series
 --------------
 
 .. automodule:: datadog_api_client.v2.model.metric_series
+   :members:
+   :show-inheritance:
+
+metric\_suggested\_aggregations
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_suggested_aggregations
+   :members:
+   :show-inheritance:
+
+metric\_suggested\_tags\_and\_aggregations
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_suggested_tags_and_aggregations
+   :members:
+   :show-inheritance:
+
+metric\_suggested\_tags\_and\_aggregations\_response
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_suggested_tags_and_aggregations_response
+   :members:
+   :show-inheritance:
+
+metric\_suggested\_tags\_attributes
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_suggested_tags_attributes
    :members:
    :show-inheritance:
 
