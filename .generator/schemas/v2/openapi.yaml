@@ -3816,6 +3816,9 @@ components:
       properties:
         aggregation_type:
           $ref: '#/components/schemas/LogsMetricComputeAggregationType'
+        includePercentiles:
+          description: Whether to calculate percentiles for the metric
+          type: boolean
         path:
           description: The path to the value the log-based metric will aggregate on
             (only used if the aggregation type is a "distribution").
@@ -3925,6 +3928,9 @@ components:
       properties:
         aggregation_type:
           $ref: '#/components/schemas/LogsMetricResponseComputeAggregationType'
+        includePercentiles:
+          description: Whether to calculate percentiles for the metric
+          type: boolean
         path:
           description: The path to the value the log-based metric will aggregate on
             (only used if the aggregation type is a "distribution").

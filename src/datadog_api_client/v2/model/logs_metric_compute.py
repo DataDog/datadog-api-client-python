@@ -16,11 +16,13 @@ class LogsMetricCompute(ModelNormal):
 
         return {
             "aggregation_type": (LogsMetricComputeAggregationType,),
+            "include_percentiles": (bool,),
             "path": (str,),
         }
 
     attribute_map = {
         "aggregation_type": "aggregation_type",
+        "include_percentiles": "includePercentiles",
         "path": "path",
     }
 
@@ -30,6 +32,9 @@ class LogsMetricCompute(ModelNormal):
 
         :param aggregation_type: The type of aggregation to use.
         :type aggregation_type: LogsMetricComputeAggregationType
+
+        :param include_percentiles: Whether to calculate percentiles for the metric
+        :type include_percentiles: bool, optional
 
         :param path: The path to the value the log-based metric will aggregate on (only used if the aggregation type is a "distribution").
         :type path: str, optional
