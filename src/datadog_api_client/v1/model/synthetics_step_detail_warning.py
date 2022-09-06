@@ -24,7 +24,7 @@ class SyntheticsStepDetailWarning(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, message, type, *args, **kwargs):
+    def __init__(self_, message, type, *args, **kwargs):
         """
         Object collecting warnings for a given step.
 
@@ -36,19 +36,7 @@ class SyntheticsStepDetailWarning(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.message = message
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, message, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsStepDetailWarning, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.message = message
-        self.type = type
-        return self
+        self_.message = message
+        self_.type = type

@@ -32,7 +32,7 @@ class SyntheticsBasicAuthSigv4(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, access_key, secret_key, type, *args, **kwargs):
+    def __init__(self_, access_key, secret_key, type, *args, **kwargs):
         """
         Object to handle ``SIGV4`` authentication when performing the test.
 
@@ -56,21 +56,8 @@ class SyntheticsBasicAuthSigv4(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.access_key = access_key
-        self.secret_key = secret_key
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, access_key, secret_key, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsBasicAuthSigv4, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.access_key = access_key
-        self.secret_key = secret_key
-        self.type = type
-        return self
+        self_.access_key = access_key
+        self_.secret_key = secret_key
+        self_.type = type

@@ -22,7 +22,7 @@ class LogsArchiveIntegrationAzure(ModelNormal):
         "tenant_id": "tenant_id",
     }
 
-    def __init__(self, client_id, tenant_id, *args, **kwargs):
+    def __init__(self_, client_id, tenant_id, *args, **kwargs):
         """
         The Azure archive's integration destination.
 
@@ -34,19 +34,7 @@ class LogsArchiveIntegrationAzure(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.client_id = client_id
-        self.tenant_id = tenant_id
-
-    @classmethod
-    def _from_openapi_data(cls, client_id, tenant_id, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsArchiveIntegrationAzure, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.client_id = client_id
-        self.tenant_id = tenant_id
-        return self
+        self_.client_id = client_id
+        self_.tenant_id = tenant_id

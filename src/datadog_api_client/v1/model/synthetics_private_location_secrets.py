@@ -29,7 +29,7 @@ class SyntheticsPrivateLocationSecrets(ModelNormal):
         "config_decryption": "config_decryption",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         Secrets for the private location. Only present in the response when creating the private location.
 
@@ -41,14 +41,4 @@ class SyntheticsPrivateLocationSecrets(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsPrivateLocationSecrets, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

@@ -22,7 +22,7 @@ class UsageLambdaResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         Response containing the number of lambda functions and sum of the invocations of all lambda functions
         for each hour for a given organization.
@@ -32,14 +32,4 @@ class UsageLambdaResponse(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(UsageLambdaResponse, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

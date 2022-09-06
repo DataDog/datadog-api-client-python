@@ -22,7 +22,7 @@ class LogsExclusionFilter(ModelNormal):
         "sample_rate": "sample_rate",
     }
 
-    def __init__(self, sample_rate, *args, **kwargs):
+    def __init__(self_, sample_rate, *args, **kwargs):
         """
         Exclusion filter is defined by a query, a sampling rule, and a active/inactive toggle.
 
@@ -36,17 +36,6 @@ class LogsExclusionFilter(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.sample_rate = sample_rate
-
-    @classmethod
-    def _from_openapi_data(cls, sample_rate, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsExclusionFilter, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.sample_rate = sample_rate
-        return self
+        self_.sample_rate = sample_rate

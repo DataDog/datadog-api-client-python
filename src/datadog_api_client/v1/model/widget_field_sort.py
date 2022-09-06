@@ -24,7 +24,7 @@ class WidgetFieldSort(ModelNormal):
         "order": "order",
     }
 
-    def __init__(self, column, order, *args, **kwargs):
+    def __init__(self_, column, order, *args, **kwargs):
         """
         Which column and order to sort by
 
@@ -36,19 +36,7 @@ class WidgetFieldSort(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.column = column
-        self.order = order
-
-    @classmethod
-    def _from_openapi_data(cls, column, order, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(WidgetFieldSort, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.column = column
-        self.order = order
-        return self
+        self_.column = column
+        self_.order = order

@@ -26,7 +26,7 @@ class SecurityMonitoringSignalIncidentsUpdateAttributes(ModelNormal):
         "version": "version",
     }
 
-    def __init__(self, incident_ids, *args, **kwargs):
+    def __init__(self_, incident_ids, *args, **kwargs):
         """
         Attributes describing the new list of related signals for a security signal.
 
@@ -38,17 +38,6 @@ class SecurityMonitoringSignalIncidentsUpdateAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.incident_ids = incident_ids
-
-    @classmethod
-    def _from_openapi_data(cls, incident_ids, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SecurityMonitoringSignalIncidentsUpdateAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.incident_ids = incident_ids
-        return self
+        self_.incident_ids = incident_ids

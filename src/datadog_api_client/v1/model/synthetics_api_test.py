@@ -50,7 +50,7 @@ class SyntheticsAPITest(ModelNormal):
         "public_id",
     }
 
-    def __init__(self, config, locations, message, name, options, type, *args, **kwargs):
+    def __init__(self_, config, locations, message, name, options, type, *args, **kwargs):
         """
         Object containing details about a Synthetic API test.
 
@@ -91,27 +91,11 @@ class SyntheticsAPITest(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.config = config
-        self.locations = locations
-        self.message = message
-        self.name = name
-        self.options = options
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, config, locations, message, name, options, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsAPITest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.config = config
-        self.locations = locations
-        self.message = message
-        self.name = name
-        self.options = options
-        self.type = type
-        return self
+        self_.config = config
+        self_.locations = locations
+        self_.message = message
+        self_.name = name
+        self_.options = options
+        self_.type = type

@@ -26,7 +26,7 @@ class ListStreamQuery(ModelNormal):
         "query_string": "query_string",
     }
 
-    def __init__(self, data_source, query_string, *args, **kwargs):
+    def __init__(self_, data_source, query_string, *args, **kwargs):
         """
         Updated list stream widget.
 
@@ -41,19 +41,7 @@ class ListStreamQuery(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.data_source = data_source
-        self.query_string = query_string
-
-    @classmethod
-    def _from_openapi_data(cls, data_source, query_string, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ListStreamQuery, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.data_source = data_source
-        self.query_string = query_string
-        return self
+        self_.data_source = data_source
+        self_.query_string = query_string

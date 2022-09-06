@@ -27,7 +27,7 @@ class OpsgenieServiceUpdateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, attributes, id, type, *args, **kwargs):
+    def __init__(self_, attributes, id, type, *args, **kwargs):
         """
         Opsgenie service for an update request.
 
@@ -42,21 +42,8 @@ class OpsgenieServiceUpdateData(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.attributes = attributes
-        self.id = id
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, attributes, id, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(OpsgenieServiceUpdateData, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.attributes = attributes
-        self.id = id
-        self.type = type
-        return self
+        self_.attributes = attributes
+        self_.id = id
+        self_.type = type

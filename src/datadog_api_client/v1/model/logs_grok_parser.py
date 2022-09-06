@@ -39,7 +39,7 @@ class LogsGrokParser(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, grok, type, *args, **kwargs):
+    def __init__(self_, grok, type, *args, **kwargs):
         """
         Create custom grok rules to parse the full message or `a specific attribute of your raw event <https://docs.datadoghq.com/logs/log_configuration/parsing/#advanced-settings>`_.
         For more information, see the `parsing section <https://docs.datadoghq.com/logs/log_configuration/parsing>`_.
@@ -65,22 +65,8 @@ class LogsGrokParser(ModelNormal):
         super().__init__(kwargs)
         source = kwargs.get("source", "message")
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.grok = grok
-        self.source = source
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, grok, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        source = kwargs.get("source", "message")
-
-        self = super(LogsGrokParser, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.grok = grok
-        self.source = source
-        self.type = type
-        return self
+        self_.grok = grok
+        self_.source = source
+        self_.type = type

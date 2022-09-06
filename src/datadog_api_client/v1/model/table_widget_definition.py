@@ -41,7 +41,7 @@ class TableWidgetDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, requests, type, *args, **kwargs):
+    def __init__(self_, requests, type, *args, **kwargs):
         """
         The table visualization is available on timeboards and screenboards. It displays columns of metrics grouped by tag key.
 
@@ -71,19 +71,7 @@ class TableWidgetDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.requests = requests
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, requests, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(TableWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.requests = requests
-        self.type = type
-        return self
+        self_.requests = requests
+        self_.type = type

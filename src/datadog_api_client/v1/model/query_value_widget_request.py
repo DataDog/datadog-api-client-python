@@ -56,7 +56,7 @@ class QueryValueWidgetRequest(ModelNormal):
         "security_query": "security_query",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         Updated query value widget.
 
@@ -107,14 +107,4 @@ class QueryValueWidgetRequest(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(QueryValueWidgetRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

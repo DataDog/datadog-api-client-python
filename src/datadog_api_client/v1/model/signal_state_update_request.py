@@ -29,7 +29,7 @@ class SignalStateUpdateRequest(ModelNormal):
         "version": "version",
     }
 
-    def __init__(self, state, *args, **kwargs):
+    def __init__(self_, state, *args, **kwargs):
         """
         Attributes describing the change of state for a given state.
 
@@ -47,17 +47,6 @@ class SignalStateUpdateRequest(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.state = state
-
-    @classmethod
-    def _from_openapi_data(cls, state, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SignalStateUpdateRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.state = state
-        return self
+        self_.state = state

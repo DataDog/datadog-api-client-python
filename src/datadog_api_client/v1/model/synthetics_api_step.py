@@ -40,7 +40,7 @@ class SyntheticsAPIStep(ModelNormal):
         "subtype": "subtype",
     }
 
-    def __init__(self, name, request, subtype, *args, **kwargs):
+    def __init__(self_, name, request, subtype, *args, **kwargs):
         """
         The steps used in a Synthetics multistep API test.
 
@@ -72,24 +72,9 @@ class SyntheticsAPIStep(ModelNormal):
         super().__init__(kwargs)
         assertions = kwargs.get("assertions", [])
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.assertions = assertions
-        self.name = name
-        self.request = request
-        self.subtype = subtype
-
-    @classmethod
-    def _from_openapi_data(cls, name, request, subtype, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        assertions = kwargs.get("assertions", [])
-
-        self = super(SyntheticsAPIStep, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.assertions = assertions
-        self.name = name
-        self.request = request
-        self.subtype = subtype
-        return self
+        self_.assertions = assertions
+        self_.name = name
+        self_.request = request
+        self_.subtype = subtype

@@ -25,7 +25,7 @@ class IncidentFieldAttributesMultipleValue(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         A field with potentially multiple values selected.
 
@@ -37,14 +37,4 @@ class IncidentFieldAttributesMultipleValue(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(IncidentFieldAttributesMultipleValue, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

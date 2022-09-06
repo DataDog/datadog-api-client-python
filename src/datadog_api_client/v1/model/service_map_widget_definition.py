@@ -42,7 +42,7 @@ class ServiceMapWidgetDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, filters, service, type, *args, **kwargs):
+    def __init__(self_, filters, service, type, *args, **kwargs):
         """
         This widget displays a map of a service to all of the services that call it, and all of the services that it calls.
 
@@ -69,21 +69,8 @@ class ServiceMapWidgetDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.filters = filters
-        self.service = service
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, filters, service, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ServiceMapWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.filters = filters
-        self.service = service
-        self.type = type
-        return self
+        self_.filters = filters
+        self_.service = service
+        self_.type = type

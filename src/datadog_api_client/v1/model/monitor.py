@@ -75,7 +75,7 @@ class Monitor(ModelNormal):
         "state",
     }
 
-    def __init__(self, query, type, *args, **kwargs):
+    def __init__(self_, query, type, *args, **kwargs):
         """
         Object describing a monitor.
 
@@ -129,19 +129,7 @@ class Monitor(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.query = query
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, query, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(Monitor, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.query = query
-        self.type = type
-        return self
+        self_.query = query
+        self_.type = type

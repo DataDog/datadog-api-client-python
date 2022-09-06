@@ -56,7 +56,7 @@ class QueryValueWidgetDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, requests, type, *args, **kwargs):
+    def __init__(self_, requests, type, *args, **kwargs):
         """
         Query values display the current value of a given metric, APM, or log query.
 
@@ -98,19 +98,7 @@ class QueryValueWidgetDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.requests = requests
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, requests, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(QueryValueWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.requests = requests
-        self.type = type
-        return self
+        self_.requests = requests
+        self_.type = type

@@ -22,7 +22,7 @@ class SecurityFilterExclusionFilter(ModelNormal):
         "query": "query",
     }
 
-    def __init__(self, name, query, *args, **kwargs):
+    def __init__(self_, name, query, *args, **kwargs):
         """
         Exclusion filter for the security filter.
 
@@ -34,19 +34,7 @@ class SecurityFilterExclusionFilter(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.name = name
-        self.query = query
-
-    @classmethod
-    def _from_openapi_data(cls, name, query, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SecurityFilterExclusionFilter, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.name = name
-        self.query = query
-        return self
+        self_.name = name
+        self_.query = query

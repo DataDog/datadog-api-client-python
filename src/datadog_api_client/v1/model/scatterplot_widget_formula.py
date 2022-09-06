@@ -26,7 +26,7 @@ class ScatterplotWidgetFormula(ModelNormal):
         "formula": "formula",
     }
 
-    def __init__(self, dimension, formula, *args, **kwargs):
+    def __init__(self_, dimension, formula, *args, **kwargs):
         """
         Formula to be used in a Scatterplot widget query.
 
@@ -41,19 +41,7 @@ class ScatterplotWidgetFormula(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.dimension = dimension
-        self.formula = formula
-
-    @classmethod
-    def _from_openapi_data(cls, dimension, formula, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ScatterplotWidgetFormula, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.dimension = dimension
-        self.formula = formula
-        return self
+        self_.dimension = dimension
+        self_.formula = formula

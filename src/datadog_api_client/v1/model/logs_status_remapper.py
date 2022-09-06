@@ -28,7 +28,7 @@ class LogsStatusRemapper(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, sources, type, *args, **kwargs):
+    def __init__(self_, sources, type, *args, **kwargs):
         """
         Use this Processor if you want to assign some attributes as the official status.
 
@@ -65,19 +65,7 @@ class LogsStatusRemapper(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.sources = sources
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, sources, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsStatusRemapper, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.sources = sources
-        self.type = type
-        return self
+        self_.sources = sources
+        self_.type = type

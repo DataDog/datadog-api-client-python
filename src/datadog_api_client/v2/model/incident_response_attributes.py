@@ -68,7 +68,7 @@ class IncidentResponseAttributes(ModelNormal):
         "time_to_resolve",
     }
 
-    def __init__(self, title, *args, **kwargs):
+    def __init__(self_, title, *args, **kwargs):
         """
         The incident's attributes from a response.
 
@@ -130,17 +130,6 @@ class IncidentResponseAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.title = title
-
-    @classmethod
-    def _from_openapi_data(cls, title, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(IncidentResponseAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.title = title
-        return self
+        self_.title = title

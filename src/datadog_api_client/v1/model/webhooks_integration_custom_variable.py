@@ -24,7 +24,7 @@ class WebhooksIntegrationCustomVariable(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self, is_secret, name, value, *args, **kwargs):
+    def __init__(self_, is_secret, name, value, *args, **kwargs):
         """
         Custom variable for Webhook integration.
 
@@ -40,21 +40,8 @@ class WebhooksIntegrationCustomVariable(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.is_secret = is_secret
-        self.name = name
-        self.value = value
-
-    @classmethod
-    def _from_openapi_data(cls, is_secret, name, value, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(WebhooksIntegrationCustomVariable, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.is_secret = is_secret
-        self.name = name
-        self.value = value
-        return self
+        self_.is_secret = is_secret
+        self_.name = name
+        self_.value = value

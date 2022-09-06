@@ -22,7 +22,7 @@ class PagerDutyService(ModelNormal):
         "service_name": "service_name",
     }
 
-    def __init__(self, service_key, service_name, *args, **kwargs):
+    def __init__(self_, service_key, service_name, *args, **kwargs):
         """
         The PagerDuty service that is available for integration with Datadog.
 
@@ -34,19 +34,7 @@ class PagerDutyService(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.service_key = service_key
-        self.service_name = service_name
-
-    @classmethod
-    def _from_openapi_data(cls, service_key, service_name, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(PagerDutyService, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.service_key = service_key
-        self.service_name = service_name
-        return self
+        self_.service_key = service_key
+        self_.service_name = service_name

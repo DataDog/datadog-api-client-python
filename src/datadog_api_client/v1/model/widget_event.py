@@ -22,7 +22,7 @@ class WidgetEvent(ModelNormal):
         "tags_execution": "tags_execution",
     }
 
-    def __init__(self, q, *args, **kwargs):
+    def __init__(self_, q, *args, **kwargs):
         """
         Event overlay control options.
 
@@ -37,17 +37,6 @@ class WidgetEvent(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.q = q
-
-    @classmethod
-    def _from_openapi_data(cls, q, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(WidgetEvent, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.q = q
-        return self
+        self_.q = q

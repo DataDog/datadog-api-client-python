@@ -31,7 +31,7 @@ class NotebookToplistCellAttributes(ModelNormal):
         "time": "time",
     }
 
-    def __init__(self, definition, *args, **kwargs):
+    def __init__(self_, definition, *args, **kwargs):
         """
         The attributes of a notebook ``toplist`` cell.
 
@@ -49,17 +49,6 @@ class NotebookToplistCellAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.definition = definition
-
-    @classmethod
-    def _from_openapi_data(cls, definition, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(NotebookToplistCellAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.definition = definition
-        return self
+        self_.definition = definition

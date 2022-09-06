@@ -41,7 +41,7 @@ class MetricSeries(ModelNormal):
         "unit": "unit",
     }
 
-    def __init__(self, metric, points, *args, **kwargs):
+    def __init__(self_, metric, points, *args, **kwargs):
         """
         A metric to submit to Datadog.
         See `Datadog metrics <https://docs.datadoghq.com/developers/metrics/#custom-metrics-properties>`_.
@@ -75,19 +75,7 @@ class MetricSeries(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.metric = metric
-        self.points = points
-
-    @classmethod
-    def _from_openapi_data(cls, metric, points, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(MetricSeries, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.metric = metric
-        self.points = points
-        return self
+        self_.metric = metric
+        self_.points = points

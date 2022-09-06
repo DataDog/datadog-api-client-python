@@ -31,7 +31,7 @@ class IncidentTimelineCellMarkdownCreateAttributes(ModelNormal):
         "important": "important",
     }
 
-    def __init__(self, cell_type, content, *args, **kwargs):
+    def __init__(self_, cell_type, content, *args, **kwargs):
         """
         Timeline cell data for Markdown timeline cells for a create request.
 
@@ -46,19 +46,7 @@ class IncidentTimelineCellMarkdownCreateAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.cell_type = cell_type
-        self.content = content
-
-    @classmethod
-    def _from_openapi_data(cls, cell_type, content, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(IncidentTimelineCellMarkdownCreateAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.cell_type = cell_type
-        self.content = content
-        return self
+        self_.cell_type = cell_type
+        self_.content = content

@@ -28,7 +28,7 @@ class SyntheticsBrowserError(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, description, name, type, *args, **kwargs):
+    def __init__(self_, description, name, type, *args, **kwargs):
         """
         Error response object for a browser test.
 
@@ -46,21 +46,8 @@ class SyntheticsBrowserError(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.description = description
-        self.name = name
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, description, name, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsBrowserError, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.description = description
-        self.name = name
-        self.type = type
-        return self
+        self_.description = description
+        self_.name = name
+        self_.type = type

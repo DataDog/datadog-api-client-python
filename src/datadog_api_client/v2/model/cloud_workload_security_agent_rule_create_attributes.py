@@ -26,7 +26,7 @@ class CloudWorkloadSecurityAgentRuleCreateAttributes(ModelNormal):
         "name": "name",
     }
 
-    def __init__(self, expression, name, *args, **kwargs):
+    def __init__(self_, expression, name, *args, **kwargs):
         """
         Create a new Cloud Workload Security Agent rule.
 
@@ -44,19 +44,7 @@ class CloudWorkloadSecurityAgentRuleCreateAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.expression = expression
-        self.name = name
-
-    @classmethod
-    def _from_openapi_data(cls, expression, name, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(CloudWorkloadSecurityAgentRuleCreateAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.expression = expression
-        self.name = name
-        return self
+        self_.expression = expression
+        self_.name = name

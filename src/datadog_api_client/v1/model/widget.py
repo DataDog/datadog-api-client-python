@@ -27,7 +27,7 @@ class Widget(ModelNormal):
         "layout": "layout",
     }
 
-    def __init__(self, definition, *args, **kwargs):
+    def __init__(self_, definition, *args, **kwargs):
         """
         Information about widget.
 
@@ -50,17 +50,6 @@ class Widget(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.definition = definition
-
-    @classmethod
-    def _from_openapi_data(cls, definition, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(Widget, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.definition = definition
-        return self
+        self_.definition = definition

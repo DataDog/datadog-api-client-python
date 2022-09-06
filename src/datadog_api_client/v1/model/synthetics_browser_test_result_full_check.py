@@ -22,7 +22,7 @@ class SyntheticsBrowserTestResultFullCheck(ModelNormal):
         "config": "config",
     }
 
-    def __init__(self, config, *args, **kwargs):
+    def __init__(self_, config, *args, **kwargs):
         """
         Object describing the browser test configuration.
 
@@ -31,17 +31,6 @@ class SyntheticsBrowserTestResultFullCheck(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.config = config
-
-    @classmethod
-    def _from_openapi_data(cls, config, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsBrowserTestResultFullCheck, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.config = config
-        return self
+        self_.config = config

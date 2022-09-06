@@ -26,7 +26,7 @@ class WidgetCustomLink(ModelNormal):
         "override_label": "override_label",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         Custom links help you connect a data value to a URL, like a Datadog page or your AWS console.
 
@@ -44,14 +44,4 @@ class WidgetCustomLink(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(WidgetCustomLink, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

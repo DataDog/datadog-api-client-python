@@ -33,7 +33,7 @@ class LogsURLParser(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, type, *args, **kwargs):
+    def __init__(self_, type, *args, **kwargs):
         """
         This processor extracts query parameters and other important parameters from a URL.
 
@@ -59,23 +59,8 @@ class LogsURLParser(ModelNormal):
         sources = kwargs.get("sources", ["http.url"])
         target = kwargs.get("target", "http.url_details")
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.sources = sources
-        self.target = target
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        sources = kwargs.get("sources", ["http.url"])
-        target = kwargs.get("target", "http.url_details")
-
-        self = super(LogsURLParser, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.sources = sources
-        self.target = target
-        self.type = type
-        return self
+        self_.sources = sources
+        self_.target = target
+        self_.type = type

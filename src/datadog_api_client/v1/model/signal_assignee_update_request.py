@@ -22,7 +22,7 @@ class SignalAssigneeUpdateRequest(ModelNormal):
         "version": "version",
     }
 
-    def __init__(self, assignee, *args, **kwargs):
+    def __init__(self_, assignee, *args, **kwargs):
         """
         Attributes describing an assignee update operation over a security signal.
 
@@ -34,17 +34,6 @@ class SignalAssigneeUpdateRequest(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.assignee = assignee
-
-    @classmethod
-    def _from_openapi_data(cls, assignee, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SignalAssigneeUpdateRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.assignee = assignee
-        return self
+        self_.assignee = assignee

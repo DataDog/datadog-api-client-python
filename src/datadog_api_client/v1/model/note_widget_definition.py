@@ -43,7 +43,7 @@ class NoteWidgetDefinition(ModelNormal):
         "vertical_align": "vertical_align",
     }
 
-    def __init__(self, content, type, *args, **kwargs):
+    def __init__(self_, content, type, *args, **kwargs):
         """
         The notes and links widget is similar to free text widget, but allows for more formatting options.
 
@@ -79,19 +79,7 @@ class NoteWidgetDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.content = content
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, content, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(NoteWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.content = content
-        self.type = type
-        return self
+        self_.content = content
+        self_.type = type

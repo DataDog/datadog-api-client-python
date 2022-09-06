@@ -22,7 +22,7 @@ class EventQueryDefinition(ModelNormal):
         "tags_execution": "tags_execution",
     }
 
-    def __init__(self, search, tags_execution, *args, **kwargs):
+    def __init__(self_, search, tags_execution, *args, **kwargs):
         """
         The event query.
 
@@ -34,19 +34,7 @@ class EventQueryDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.search = search
-        self.tags_execution = tags_execution
-
-    @classmethod
-    def _from_openapi_data(cls, search, tags_execution, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(EventQueryDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.search = search
-        self.tags_execution = tags_execution
-        return self
+        self_.search = search
+        self_.tags_execution = tags_execution

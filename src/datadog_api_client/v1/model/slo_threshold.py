@@ -30,7 +30,7 @@ class SLOThreshold(ModelNormal):
         "warning_display": "warning_display",
     }
 
-    def __init__(self, target, timeframe, *args, **kwargs):
+    def __init__(self_, target, timeframe, *args, **kwargs):
         """
         SLO thresholds (target and optionally warning) for a single time window.
 
@@ -60,19 +60,7 @@ class SLOThreshold(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.target = target
-        self.timeframe = timeframe
-
-    @classmethod
-    def _from_openapi_data(cls, target, timeframe, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SLOThreshold, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.target = target
-        self.timeframe = timeframe
-        return self
+        self_.target = target
+        self_.timeframe = timeframe

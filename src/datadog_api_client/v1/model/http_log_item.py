@@ -32,7 +32,7 @@ class HTTPLogItem(ModelNormal):
         "service": "service",
     }
 
-    def __init__(self, message, *args, **kwargs):
+    def __init__(self_, message, *args, **kwargs):
         """
         Logs that are sent over HTTP.
 
@@ -59,17 +59,6 @@ class HTTPLogItem(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.message = message
-
-    @classmethod
-    def _from_openapi_data(cls, message, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(HTTPLogItem, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.message = message
-        return self
+        self_.message = message

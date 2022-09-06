@@ -28,7 +28,7 @@ class FormulaAndFunctionEventQueryGroupBy(ModelNormal):
         "sort": "sort",
     }
 
-    def __init__(self, facet, *args, **kwargs):
+    def __init__(self_, facet, *args, **kwargs):
         """
         List of objects used to group by.
 
@@ -43,17 +43,6 @@ class FormulaAndFunctionEventQueryGroupBy(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.facet = facet
-
-    @classmethod
-    def _from_openapi_data(cls, facet, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(FormulaAndFunctionEventQueryGroupBy, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.facet = facet
-        return self
+        self_.facet = facet

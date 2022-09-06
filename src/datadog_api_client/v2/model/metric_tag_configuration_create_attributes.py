@@ -29,7 +29,7 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
         "tags": "tags",
     }
 
-    def __init__(self, metric_type, *args, **kwargs):
+    def __init__(self_, metric_type, *args, **kwargs):
         """
         Object containing the definition of a metric tag configuration to be created.
 
@@ -65,20 +65,7 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
         super().__init__(kwargs)
         tags = kwargs.get("tags", [])
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.metric_type = metric_type
-        self.tags = tags
-
-    @classmethod
-    def _from_openapi_data(cls, metric_type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        tags = kwargs.get("tags", [])
-
-        self = super(MetricTagConfigurationCreateAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.metric_type = metric_type
-        self.tags = tags
-        return self
+        self_.metric_type = metric_type
+        self_.tags = tags

@@ -28,7 +28,7 @@ class HTTPLogError(ModelNormal):
         "message": "message",
     }
 
-    def __init__(self, code, message, *args, **kwargs):
+    def __init__(self_, code, message, *args, **kwargs):
         """
         Invalid query performed.
 
@@ -40,19 +40,7 @@ class HTTPLogError(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.code = code
-        self.message = message
-
-    @classmethod
-    def _from_openapi_data(cls, code, message, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(HTTPLogError, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.code = code
-        self.message = message
-        return self
+        self_.code = code
+        self_.message = message

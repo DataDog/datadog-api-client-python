@@ -33,7 +33,7 @@ class IncidentServiceResponseData(ModelNormal):
         "relationships",
     }
 
-    def __init__(self, id, type, *args, **kwargs):
+    def __init__(self_, id, type, *args, **kwargs):
         """
         Incident Service data from responses.
 
@@ -51,19 +51,7 @@ class IncidentServiceResponseData(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.id = id
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, id, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(IncidentServiceResponseData, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.id = id
-        self.type = type
-        return self
+        self_.id = id
+        self_.type = type

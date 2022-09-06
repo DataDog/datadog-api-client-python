@@ -22,7 +22,7 @@ class SyntheticsTriggerBody(ModelNormal):
         "tests": "tests",
     }
 
-    def __init__(self, tests, *args, **kwargs):
+    def __init__(self_, tests, *args, **kwargs):
         """
         Object describing the synthetics tests to trigger.
 
@@ -31,17 +31,6 @@ class SyntheticsTriggerBody(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.tests = tests
-
-    @classmethod
-    def _from_openapi_data(cls, tests, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsTriggerBody, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.tests = tests
-        return self
+        self_.tests = tests

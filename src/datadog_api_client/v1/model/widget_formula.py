@@ -32,7 +32,7 @@ class WidgetFormula(ModelNormal):
         "limit": "limit",
     }
 
-    def __init__(self, formula, *args, **kwargs):
+    def __init__(self_, formula, *args, **kwargs):
         """
         Formula to be used in a widget query.
 
@@ -53,17 +53,6 @@ class WidgetFormula(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.formula = formula
-
-    @classmethod
-    def _from_openapi_data(cls, formula, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(WidgetFormula, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.formula = formula
-        return self
+        self_.formula = formula

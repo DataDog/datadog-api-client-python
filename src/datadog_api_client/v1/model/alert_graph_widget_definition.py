@@ -37,7 +37,7 @@ class AlertGraphWidgetDefinition(ModelNormal):
         "viz_type": "viz_type",
     }
 
-    def __init__(self, alert_id, type, viz_type, *args, **kwargs):
+    def __init__(self_, alert_id, type, viz_type, *args, **kwargs):
         """
         Alert graphs are timeseries graphs showing the current status of any monitor defined on your system.
 
@@ -64,21 +64,8 @@ class AlertGraphWidgetDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.alert_id = alert_id
-        self.type = type
-        self.viz_type = viz_type
-
-    @classmethod
-    def _from_openapi_data(cls, alert_id, type, viz_type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(AlertGraphWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.alert_id = alert_id
-        self.type = type
-        self.viz_type = viz_type
-        return self
+        self_.alert_id = alert_id
+        self_.type = type
+        self_.viz_type = viz_type

@@ -22,7 +22,7 @@ class GeomapWidgetDefinitionStyle(ModelNormal):
         "palette_flip": "palette_flip",
     }
 
-    def __init__(self, palette, palette_flip, *args, **kwargs):
+    def __init__(self_, palette, palette_flip, *args, **kwargs):
         """
         The style to apply to the widget.
 
@@ -34,19 +34,7 @@ class GeomapWidgetDefinitionStyle(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.palette = palette
-        self.palette_flip = palette_flip
-
-    @classmethod
-    def _from_openapi_data(cls, palette, palette_flip, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(GeomapWidgetDefinitionStyle, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.palette = palette
-        self.palette_flip = palette_flip
-        return self
+        self_.palette = palette
+        self_.palette_flip = palette_flip

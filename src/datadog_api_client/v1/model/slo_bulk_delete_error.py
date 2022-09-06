@@ -26,7 +26,7 @@ class SLOBulkDeleteError(ModelNormal):
         "timeframe": "timeframe",
     }
 
-    def __init__(self, id, message, timeframe, *args, **kwargs):
+    def __init__(self_, id, message, timeframe, *args, **kwargs):
         """
         Object describing the error.
 
@@ -43,21 +43,8 @@ class SLOBulkDeleteError(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.id = id
-        self.message = message
-        self.timeframe = timeframe
-
-    @classmethod
-    def _from_openapi_data(cls, id, message, timeframe, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SLOBulkDeleteError, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.id = id
-        self.message = message
-        self.timeframe = timeframe
-        return self
+        self_.id = id
+        self_.message = message
+        self_.timeframe = timeframe

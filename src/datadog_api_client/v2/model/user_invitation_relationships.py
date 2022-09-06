@@ -22,7 +22,7 @@ class UserInvitationRelationships(ModelNormal):
         "user": "user",
     }
 
-    def __init__(self, user, *args, **kwargs):
+    def __init__(self_, user, *args, **kwargs):
         """
         Relationships data for user invitation.
 
@@ -31,17 +31,6 @@ class UserInvitationRelationships(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.user = user
-
-    @classmethod
-    def _from_openapi_data(cls, user, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(UserInvitationRelationships, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.user = user
-        return self
+        self_.user = user

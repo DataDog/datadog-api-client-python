@@ -28,7 +28,7 @@ class OpsgenieServiceCreateAttributes(ModelNormal):
         "region": "region",
     }
 
-    def __init__(self, name, opsgenie_api_key, region, *args, **kwargs):
+    def __init__(self_, name, opsgenie_api_key, region, *args, **kwargs):
         """
         The Opsgenie service attributes for a create request.
 
@@ -46,21 +46,8 @@ class OpsgenieServiceCreateAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.name = name
-        self.opsgenie_api_key = opsgenie_api_key
-        self.region = region
-
-    @classmethod
-    def _from_openapi_data(cls, name, opsgenie_api_key, region, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(OpsgenieServiceCreateAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.name = name
-        self.opsgenie_api_key = opsgenie_api_key
-        self.region = region
-        return self
+        self_.name = name
+        self_.opsgenie_api_key = opsgenie_api_key
+        self_.region = region

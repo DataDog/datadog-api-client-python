@@ -24,7 +24,7 @@ class AddSignalToIncidentRequest(ModelNormal):
         "version": "version",
     }
 
-    def __init__(self, incident_id, *args, **kwargs):
+    def __init__(self_, incident_id, *args, **kwargs):
         """
         Attributes describing which incident to add the signal to.
 
@@ -39,17 +39,6 @@ class AddSignalToIncidentRequest(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.incident_id = incident_id
-
-    @classmethod
-    def _from_openapi_data(cls, incident_id, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(AddSignalToIncidentRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.incident_id = incident_id
-        return self
+        self_.incident_id = incident_id

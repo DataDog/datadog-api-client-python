@@ -31,7 +31,7 @@ class DistributionPointsSeries(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, metric, points, *args, **kwargs):
+    def __init__(self_, metric, points, *args, **kwargs):
         """
         A distribution points metric to submit to Datadog.
 
@@ -52,19 +52,7 @@ class DistributionPointsSeries(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.metric = metric
-        self.points = points
-
-    @classmethod
-    def _from_openapi_data(cls, metric, points, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(DistributionPointsSeries, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.metric = metric
-        self.points = points
-        return self
+        self_.metric = metric
+        self_.points = points

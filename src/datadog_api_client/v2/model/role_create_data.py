@@ -28,7 +28,7 @@ class RoleCreateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, attributes, *args, **kwargs):
+    def __init__(self_, attributes, *args, **kwargs):
         """
         Data related to the creation of a role.
 
@@ -43,17 +43,6 @@ class RoleCreateData(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.attributes = attributes
-
-    @classmethod
-    def _from_openapi_data(cls, attributes, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(RoleCreateData, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.attributes = attributes
-        return self
+        self_.attributes = attributes

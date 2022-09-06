@@ -31,7 +31,7 @@ class WebhooksIntegration(ModelNormal):
         "url": "url",
     }
 
-    def __init__(self, name, url, *args, **kwargs):
+    def __init__(self_, name, url, *args, **kwargs):
         """
         Datadog-Webhooks integration.
 
@@ -58,19 +58,7 @@ class WebhooksIntegration(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.name = name
-        self.url = url
-
-    @classmethod
-    def _from_openapi_data(cls, name, url, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(WebhooksIntegration, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.name = name
-        self.url = url
-        return self
+        self_.name = name
+        self_.url = url

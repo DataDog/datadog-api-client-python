@@ -32,7 +32,7 @@ class ServiceCheck(ModelNormal):
         "timestamp": "timestamp",
     }
 
-    def __init__(self, check, host_name, status, tags, *args, **kwargs):
+    def __init__(self_, check, host_name, status, tags, *args, **kwargs):
         """
         An object containing service check and status.
 
@@ -56,23 +56,9 @@ class ServiceCheck(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.check = check
-        self.host_name = host_name
-        self.status = status
-        self.tags = tags
-
-    @classmethod
-    def _from_openapi_data(cls, check, host_name, status, tags, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ServiceCheck, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.check = check
-        self.host_name = host_name
-        self.status = status
-        self.tags = tags
-        return self
+        self_.check = check
+        self_.host_name = host_name
+        self_.status = status
+        self_.tags = tags

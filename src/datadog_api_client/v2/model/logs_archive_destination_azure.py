@@ -33,7 +33,7 @@ class LogsArchiveDestinationAzure(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, container, integration, storage_account, type, *args, **kwargs):
+    def __init__(self_, container, integration, storage_account, type, *args, **kwargs):
         """
         The Azure archive destination.
 
@@ -57,23 +57,9 @@ class LogsArchiveDestinationAzure(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.container = container
-        self.integration = integration
-        self.storage_account = storage_account
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, container, integration, storage_account, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsArchiveDestinationAzure, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.container = container
-        self.integration = integration
-        self.storage_account = storage_account
-        self.type = type
-        return self
+        self_.container = container
+        self_.integration = integration
+        self_.storage_account = storage_account
+        self_.type = type

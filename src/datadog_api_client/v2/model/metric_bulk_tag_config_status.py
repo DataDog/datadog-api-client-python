@@ -29,7 +29,7 @@ class MetricBulkTagConfigStatus(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, id, type, *args, **kwargs):
+    def __init__(self_, id, type, *args, **kwargs):
         """
         The status of a request to bulk configure metric tags.
         It contains the fields from the original request for reference.
@@ -45,19 +45,7 @@ class MetricBulkTagConfigStatus(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.id = id
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, id, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(MetricBulkTagConfigStatus, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.id = id
-        self.type = type
-        return self
+        self_.id = id
+        self_.type = type

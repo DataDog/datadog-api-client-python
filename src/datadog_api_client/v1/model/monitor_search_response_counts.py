@@ -28,7 +28,7 @@ class MonitorSearchResponseCounts(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         The counts of monitors per different criteria.
 
@@ -46,14 +46,4 @@ class MonitorSearchResponseCounts(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(MonitorSearchResponseCounts, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

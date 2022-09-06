@@ -28,7 +28,7 @@ class ListStreamWidgetRequest(ModelNormal):
         "response_format": "response_format",
     }
 
-    def __init__(self, columns, query, response_format, *args, **kwargs):
+    def __init__(self_, columns, query, response_format, *args, **kwargs):
         """
         Updated list stream widget.
 
@@ -43,21 +43,8 @@ class ListStreamWidgetRequest(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.columns = columns
-        self.query = query
-        self.response_format = response_format
-
-    @classmethod
-    def _from_openapi_data(cls, columns, query, response_format, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ListStreamWidgetRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.columns = columns
-        self.query = query
-        self.response_format = response_format
-        return self
+        self_.columns = columns
+        self_.query = query
+        self_.response_format = response_format

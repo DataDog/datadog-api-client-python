@@ -66,7 +66,7 @@ class Dashboard(ModelNormal):
         "url",
     }
 
-    def __init__(self, layout_type, title, widgets, *args, **kwargs):
+    def __init__(self_, layout_type, title, widgets, *args, **kwargs):
         """
         A dashboard is Datadog’s tool for visually tracking, analyzing, and displaying
         key performance metrics, which enable you to monitor the health of your infrastructure.
@@ -123,21 +123,8 @@ class Dashboard(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.layout_type = layout_type
-        self.title = title
-        self.widgets = widgets
-
-    @classmethod
-    def _from_openapi_data(cls, layout_type, title, widgets, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(Dashboard, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.layout_type = layout_type
-        self.title = title
-        self.widgets = widgets
-        return self
+        self_.layout_type = layout_type
+        self_.title = title
+        self_.widgets = widgets

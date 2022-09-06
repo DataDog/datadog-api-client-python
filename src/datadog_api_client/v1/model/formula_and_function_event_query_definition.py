@@ -43,7 +43,7 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         "search": "search",
     }
 
-    def __init__(self, compute, data_source, name, *args, **kwargs):
+    def __init__(self_, compute, data_source, name, *args, **kwargs):
         """
         A formula and functions events query.
 
@@ -67,21 +67,8 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.compute = compute
-        self.data_source = data_source
-        self.name = name
-
-    @classmethod
-    def _from_openapi_data(cls, compute, data_source, name, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(FormulaAndFunctionEventQueryDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.compute = compute
-        self.data_source = data_source
-        self.name = name
-        return self
+        self_.compute = compute
+        self_.data_source = data_source
+        self_.name = name

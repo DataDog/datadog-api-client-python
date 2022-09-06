@@ -28,7 +28,7 @@ class IncidentTeamResponse(ModelNormal):
         "included",
     }
 
-    def __init__(self, data, *args, **kwargs):
+    def __init__(self_, data, *args, **kwargs):
         """
         Response with an incident team payload.
 
@@ -40,17 +40,6 @@ class IncidentTeamResponse(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.data = data
-
-    @classmethod
-    def _from_openapi_data(cls, data, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(IncidentTeamResponse, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.data = data
-        return self
+        self_.data = data
