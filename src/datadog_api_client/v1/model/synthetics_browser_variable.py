@@ -30,7 +30,7 @@ class SyntheticsBrowserVariable(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, name, type, *args, **kwargs):
+    def __init__(self_, name, type, *args, **kwargs):
         """
         Object defining a variable that can be used in your browser test.
         Learn more in the `Browser test Actions documentation <https://docs.datadoghq.com/synthetics/browser_tests/actions#variable>`_.
@@ -52,19 +52,7 @@ class SyntheticsBrowserVariable(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.name = name
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, name, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsBrowserVariable, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.name = name
-        self.type = type
-        return self
+        self_.name = name
+        self_.type = type

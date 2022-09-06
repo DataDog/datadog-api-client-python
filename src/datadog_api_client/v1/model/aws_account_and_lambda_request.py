@@ -22,7 +22,7 @@ class AWSAccountAndLambdaRequest(ModelNormal):
         "lambda_arn": "lambda_arn",
     }
 
-    def __init__(self, account_id, lambda_arn, *args, **kwargs):
+    def __init__(self_, account_id, lambda_arn, *args, **kwargs):
         """
         AWS account ID and Lambda ARN.
 
@@ -34,19 +34,7 @@ class AWSAccountAndLambdaRequest(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.account_id = account_id
-        self.lambda_arn = lambda_arn
-
-    @classmethod
-    def _from_openapi_data(cls, account_id, lambda_arn, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(AWSAccountAndLambdaRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.account_id = account_id
-        self.lambda_arn = lambda_arn
-        return self
+        self_.account_id = account_id
+        self_.lambda_arn = lambda_arn

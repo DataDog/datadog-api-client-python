@@ -51,7 +51,7 @@ class GeomapWidgetDefinition(ModelNormal):
         "view": "view",
     }
 
-    def __init__(self, requests, style, type, view, *args, **kwargs):
+    def __init__(self_, requests, style, type, view, *args, **kwargs):
         """
         This visualization displays a series of values by country on a world map.
 
@@ -87,23 +87,9 @@ class GeomapWidgetDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.requests = requests
-        self.style = style
-        self.type = type
-        self.view = view
-
-    @classmethod
-    def _from_openapi_data(cls, requests, style, type, view, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(GeomapWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.requests = requests
-        self.style = style
-        self.type = type
-        self.view = view
-        return self
+        self_.requests = requests
+        self_.style = style
+        self_.type = type
+        self_.view = view

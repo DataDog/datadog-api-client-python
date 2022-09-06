@@ -31,7 +31,7 @@ class LogsCategoryProcessor(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, categories, target, type, *args, **kwargs):
+    def __init__(self_, categories, target, type, *args, **kwargs):
         """
         Use the Category Processor to add a new attribute (without spaces or special characters in the new attribute name)
         to a log matching a provided search query. Use categories to create groups for an analytical view.
@@ -66,21 +66,8 @@ class LogsCategoryProcessor(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.categories = categories
-        self.target = target
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, categories, target, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsCategoryProcessor, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.categories = categories
-        self.target = target
-        self.type = type
-        return self
+        self_.categories = categories
+        self_.target = target
+        self_.type = type

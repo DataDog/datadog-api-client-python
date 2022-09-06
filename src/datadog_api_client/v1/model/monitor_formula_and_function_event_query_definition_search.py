@@ -20,7 +20,7 @@ class MonitorFormulaAndFunctionEventQueryDefinitionSearch(ModelNormal):
         "query": "query",
     }
 
-    def __init__(self, query, *args, **kwargs):
+    def __init__(self_, query, *args, **kwargs):
         """
         Search options.
 
@@ -29,17 +29,6 @@ class MonitorFormulaAndFunctionEventQueryDefinitionSearch(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.query = query
-
-    @classmethod
-    def _from_openapi_data(cls, query, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(MonitorFormulaAndFunctionEventQueryDefinitionSearch, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.query = query
-        return self
+        self_.query = query

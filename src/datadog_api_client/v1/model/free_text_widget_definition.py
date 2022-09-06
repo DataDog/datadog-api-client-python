@@ -31,7 +31,7 @@ class FreeTextWidgetDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, text, type, *args, **kwargs):
+    def __init__(self_, text, type, *args, **kwargs):
         """
         Free text is a widget that allows you to add headings to your screenboard. Commonly used to state the overall purpose of the dashboard. Only available on FREE layout dashboards.
 
@@ -52,19 +52,7 @@ class FreeTextWidgetDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.text = text
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, text, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(FreeTextWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.text = text
-        self.type = type
-        return self
+        self_.text = text
+        self_.type = type

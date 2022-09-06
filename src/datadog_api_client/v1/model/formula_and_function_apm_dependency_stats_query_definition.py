@@ -45,7 +45,7 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
         "stat": "stat",
     }
 
-    def __init__(self, data_source, env, name, operation_name, resource_name, service, stat, *args, **kwargs):
+    def __init__(self_, data_source, env, name, operation_name, resource_name, service, stat, *args, **kwargs):
         """
         A formula and functions APM dependency stats query.
 
@@ -81,29 +81,12 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.data_source = data_source
-        self.env = env
-        self.name = name
-        self.operation_name = operation_name
-        self.resource_name = resource_name
-        self.service = service
-        self.stat = stat
-
-    @classmethod
-    def _from_openapi_data(cls, data_source, env, name, operation_name, resource_name, service, stat, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(FormulaAndFunctionApmDependencyStatsQueryDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.data_source = data_source
-        self.env = env
-        self.name = name
-        self.operation_name = operation_name
-        self.resource_name = resource_name
-        self.service = service
-        self.stat = stat
-        return self
+        self_.data_source = data_source
+        self_.env = env
+        self_.name = name
+        self_.operation_name = operation_name
+        self_.resource_name = resource_name
+        self_.service = service
+        self_.stat = stat

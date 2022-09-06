@@ -20,7 +20,7 @@ class LogsArchiveOrderAttributes(ModelNormal):
         "archive_ids": "archive_ids",
     }
 
-    def __init__(self, archive_ids, *args, **kwargs):
+    def __init__(self_, archive_ids, *args, **kwargs):
         """
         The attributes associated with the archive order.
 
@@ -30,17 +30,6 @@ class LogsArchiveOrderAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.archive_ids = archive_ids
-
-    @classmethod
-    def _from_openapi_data(cls, archive_ids, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsArchiveOrderAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.archive_ids = archive_ids
-        return self
+        self_.archive_ids = archive_ids

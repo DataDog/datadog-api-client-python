@@ -21,7 +21,7 @@ class IdpFormData(ModelNormal):
         "idp_file": "idp_file",
     }
 
-    def __init__(self, idp_file, *args, **kwargs):
+    def __init__(self_, idp_file, *args, **kwargs):
         """
         Object describing the IdP configuration.
 
@@ -30,17 +30,6 @@ class IdpFormData(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.idp_file = idp_file
-
-    @classmethod
-    def _from_openapi_data(cls, idp_file, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(IdpFormData, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.idp_file = idp_file
-        return self
+        self_.idp_file = idp_file

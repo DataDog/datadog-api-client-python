@@ -26,7 +26,7 @@ class NotebookMarkdownCellDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, text, type, *args, **kwargs):
+    def __init__(self_, text, type, *args, **kwargs):
         """
         Text in a notebook is formatted with `Markdown <https://daringfireball.net/projects/markdown/>`_ , which enables the use of headings, subheadings, links, images, lists, and code blocks.
 
@@ -38,19 +38,7 @@ class NotebookMarkdownCellDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.text = text
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, text, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(NotebookMarkdownCellDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.text = text
-        self.type = type
-        return self
+        self_.text = text
+        self_.type = type

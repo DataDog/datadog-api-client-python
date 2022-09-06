@@ -26,7 +26,7 @@ class WidgetMarker(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self, value, *args, **kwargs):
+    def __init__(self_, value, *args, **kwargs):
         """
         Markers allow you to add visual conditional formatting for your graphs.
 
@@ -49,17 +49,6 @@ class WidgetMarker(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.value = value
-
-    @classmethod
-    def _from_openapi_data(cls, value, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(WidgetMarker, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.value = value
-        return self
+        self_.value = value

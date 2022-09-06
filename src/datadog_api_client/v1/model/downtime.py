@@ -79,7 +79,7 @@ class Downtime(ModelNormal):
         "updater_id",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         Downtiming gives you greater control over monitor notifications by
         allowing you to globally exclude scopes from alerting.
@@ -154,14 +154,4 @@ class Downtime(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(Downtime, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

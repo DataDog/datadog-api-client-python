@@ -26,7 +26,7 @@ class LogQueryDefinitionGroupBySort(ModelNormal):
         "order": "order",
     }
 
-    def __init__(self, aggregation, order, *args, **kwargs):
+    def __init__(self_, aggregation, order, *args, **kwargs):
         """
         Define a sorting method.
 
@@ -41,19 +41,7 @@ class LogQueryDefinitionGroupBySort(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.aggregation = aggregation
-        self.order = order
-
-    @classmethod
-    def _from_openapi_data(cls, aggregation, order, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogQueryDefinitionGroupBySort, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.aggregation = aggregation
-        self.order = order
-        return self
+        self_.aggregation = aggregation
+        self_.order = order

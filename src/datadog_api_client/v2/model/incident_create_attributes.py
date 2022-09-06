@@ -34,7 +34,7 @@ class IncidentCreateAttributes(ModelNormal):
         "title": "title",
     }
 
-    def __init__(self, customer_impacted, title, *args, **kwargs):
+    def __init__(self_, customer_impacted, title, *args, **kwargs):
         """
         The incident's attributes for a create request.
 
@@ -55,19 +55,7 @@ class IncidentCreateAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.customer_impacted = customer_impacted
-        self.title = title
-
-    @classmethod
-    def _from_openapi_data(cls, customer_impacted, title, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(IncidentCreateAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.customer_impacted = customer_impacted
-        self.title = title
-        return self
+        self_.customer_impacted = customer_impacted
+        self_.title = title

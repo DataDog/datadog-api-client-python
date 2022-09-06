@@ -26,7 +26,7 @@ class SyntheticsBasicAuthWeb(ModelNormal):
         "username": "username",
     }
 
-    def __init__(self, password, username, *args, **kwargs):
+    def __init__(self_, password, username, *args, **kwargs):
         """
         Object to handle basic authentication when performing the test.
 
@@ -41,19 +41,7 @@ class SyntheticsBasicAuthWeb(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.password = password
-        self.username = username
-
-    @classmethod
-    def _from_openapi_data(cls, password, username, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsBasicAuthWeb, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.password = password
-        self.username = username
-        return self
+        self_.password = password
+        self_.username = username

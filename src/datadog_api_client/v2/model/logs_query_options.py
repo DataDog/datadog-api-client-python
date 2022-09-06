@@ -22,7 +22,7 @@ class LogsQueryOptions(ModelNormal):
         "timezone": "timezone",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         Global query options that are used during the query.
         Note: You should only supply timezone or time offset but not both otherwise the query will fail.
@@ -35,14 +35,4 @@ class LogsQueryOptions(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsQueryOptions, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

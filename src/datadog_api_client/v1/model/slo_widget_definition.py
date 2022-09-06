@@ -43,7 +43,7 @@ class SLOWidgetDefinition(ModelNormal):
         "view_type": "view_type",
     }
 
-    def __init__(self, type, *args, **kwargs):
+    def __init__(self_, type, *args, **kwargs):
         """
         Use the SLO and uptime widget to track your SLOs (Service Level Objectives) and uptime on screenboards and timeboards.
 
@@ -80,20 +80,7 @@ class SLOWidgetDefinition(ModelNormal):
         super().__init__(kwargs)
         view_type = kwargs.get("view_type", "detail")
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.type = type
-        self.view_type = view_type
-
-    @classmethod
-    def _from_openapi_data(cls, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        view_type = kwargs.get("view_type", "detail")
-
-        self = super(SLOWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.type = type
-        self.view_type = view_type
-        return self
+        self_.type = type
+        self_.view_type = view_type

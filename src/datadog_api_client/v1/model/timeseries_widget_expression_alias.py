@@ -22,7 +22,7 @@ class TimeseriesWidgetExpressionAlias(ModelNormal):
         "expression": "expression",
     }
 
-    def __init__(self, expression, *args, **kwargs):
+    def __init__(self_, expression, *args, **kwargs):
         """
         Define an expression alias.
 
@@ -34,17 +34,6 @@ class TimeseriesWidgetExpressionAlias(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.expression = expression
-
-    @classmethod
-    def _from_openapi_data(cls, expression, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(TimeseriesWidgetExpressionAlias, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.expression = expression
-        return self
+        self_.expression = expression

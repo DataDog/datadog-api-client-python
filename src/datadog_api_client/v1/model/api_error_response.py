@@ -20,7 +20,7 @@ class APIErrorResponse(ModelNormal):
         "errors": "errors",
     }
 
-    def __init__(self, errors, *args, **kwargs):
+    def __init__(self_, errors, *args, **kwargs):
         """
         Error response object.
 
@@ -29,17 +29,6 @@ class APIErrorResponse(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.errors = errors
-
-    @classmethod
-    def _from_openapi_data(cls, errors, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(APIErrorResponse, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.errors = errors
-        return self
+        self_.errors = errors

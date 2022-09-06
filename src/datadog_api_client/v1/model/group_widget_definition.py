@@ -39,7 +39,7 @@ class GroupWidgetDefinition(ModelNormal):
         "widgets": "widgets",
     }
 
-    def __init__(self, layout_type, type, widgets, *args, **kwargs):
+    def __init__(self_, layout_type, type, widgets, *args, **kwargs):
         """
         The groups widget allows you to keep similar graphs together on your timeboard. Each group has a custom header, can hold one to many graphs, and is collapsible.
 
@@ -69,21 +69,8 @@ class GroupWidgetDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.layout_type = layout_type
-        self.type = type
-        self.widgets = widgets
-
-    @classmethod
-    def _from_openapi_data(cls, layout_type, type, widgets, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(GroupWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.layout_type = layout_type
-        self.type = type
-        self.widgets = widgets
-        return self
+        self_.layout_type = layout_type
+        self_.type = type
+        self_.widgets = widgets

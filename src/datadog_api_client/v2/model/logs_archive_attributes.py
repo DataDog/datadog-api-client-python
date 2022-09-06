@@ -36,7 +36,7 @@ class LogsArchiveAttributes(ModelNormal):
         "state": "state",
     }
 
-    def __init__(self, destination, name, query, *args, **kwargs):
+    def __init__(self_, destination, name, query, *args, **kwargs):
         """
         The attributes associated with the archive.
 
@@ -64,21 +64,8 @@ class LogsArchiveAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.destination = destination
-        self.name = name
-        self.query = query
-
-    @classmethod
-    def _from_openapi_data(cls, destination, name, query, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsArchiveAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.destination = destination
-        self.name = name
-        self.query = query
-        return self
+        self_.destination = destination
+        self_.name = name
+        self_.query = query

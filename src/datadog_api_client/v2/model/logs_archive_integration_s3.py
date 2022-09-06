@@ -22,7 +22,7 @@ class LogsArchiveIntegrationS3(ModelNormal):
         "role_name": "role_name",
     }
 
-    def __init__(self, account_id, role_name, *args, **kwargs):
+    def __init__(self_, account_id, role_name, *args, **kwargs):
         """
         The S3 Archive's integration destination.
 
@@ -34,19 +34,7 @@ class LogsArchiveIntegrationS3(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.account_id = account_id
-        self.role_name = role_name
-
-    @classmethod
-    def _from_openapi_data(cls, account_id, role_name, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsArchiveIntegrationS3, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.account_id = account_id
-        self.role_name = role_name
-        return self
+        self_.account_id = account_id
+        self_.role_name = role_name

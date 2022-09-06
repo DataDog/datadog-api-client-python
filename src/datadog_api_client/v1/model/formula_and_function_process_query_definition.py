@@ -44,7 +44,7 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
         "text_filter": "text_filter",
     }
 
-    def __init__(self, data_source, metric, name, *args, **kwargs):
+    def __init__(self_, data_source, metric, name, *args, **kwargs):
         """
         Process query using formulas and functions.
 
@@ -77,21 +77,8 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.data_source = data_source
-        self.metric = metric
-        self.name = name
-
-    @classmethod
-    def _from_openapi_data(cls, data_source, metric, name, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(FormulaAndFunctionProcessQueryDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.data_source = data_source
-        self.metric = metric
-        self.name = name
-        return self
+        self_.data_source = data_source
+        self_.metric = metric
+        self_.name = name

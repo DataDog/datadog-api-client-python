@@ -56,7 +56,7 @@ class ServiceLevelObjective(ModelNormal):
         "modified_at",
     }
 
-    def __init__(self, name, thresholds, type, *args, **kwargs):
+    def __init__(self_, name, thresholds, type, *args, **kwargs):
         """
         A service level objective object includes a service level indicator, thresholds
         for one or more timeframes, and metadata ( ``name`` , ``description`` , ``tags`` , etc.).
@@ -126,21 +126,8 @@ class ServiceLevelObjective(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.name = name
-        self.thresholds = thresholds
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, name, thresholds, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ServiceLevelObjective, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.name = name
-        self.thresholds = thresholds
-        self.type = type
-        return self
+        self_.name = name
+        self_.thresholds = thresholds
+        self_.type = type

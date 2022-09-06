@@ -28,7 +28,7 @@ class LogsDateRemapper(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, sources, type, *args, **kwargs):
+    def __init__(self_, sources, type, *args, **kwargs):
         """
         As Datadog receives logs, it timestamps them using the value(s) from any of these default attributes.
 
@@ -66,19 +66,7 @@ class LogsDateRemapper(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.sources = sources
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, sources, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsDateRemapper, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.sources = sources
-        self.type = type
-        return self
+        self_.sources = sources
+        self_.type = type

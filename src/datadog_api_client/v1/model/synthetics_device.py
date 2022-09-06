@@ -30,7 +30,7 @@ class SyntheticsDevice(ModelNormal):
         "width": "width",
     }
 
-    def __init__(self, height, id, name, width, *args, **kwargs):
+    def __init__(self_, height, id, name, width, *args, **kwargs):
         """
         Object describing the device used to perform the Synthetic test.
 
@@ -51,23 +51,9 @@ class SyntheticsDevice(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.height = height
-        self.id = id
-        self.name = name
-        self.width = width
-
-    @classmethod
-    def _from_openapi_data(cls, height, id, name, width, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsDevice, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.height = height
-        self.id = id
-        self.name = name
-        self.width = width
-        return self
+        self_.height = height
+        self_.id = id
+        self_.name = name
+        self_.width = width

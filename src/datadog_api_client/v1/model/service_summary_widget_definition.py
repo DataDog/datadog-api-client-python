@@ -58,7 +58,7 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, env, service, span_name, type, *args, **kwargs):
+    def __init__(self_, env, service, span_name, type, *args, **kwargs):
         """
         The service summary displays the graphs of a chosen service in your screenboard. Only available on FREE layout dashboards.
 
@@ -112,23 +112,9 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.env = env
-        self.service = service
-        self.span_name = span_name
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, env, service, span_name, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ServiceSummaryWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.env = env
-        self.service = service
-        self.span_name = span_name
-        self.type = type
-        return self
+        self_.env = env
+        self_.service = service
+        self_.span_name = span_name
+        self_.type = type

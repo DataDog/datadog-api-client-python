@@ -45,7 +45,7 @@ class SLOHistorySLIData(ModelNormal):
         "uptime": "uptime",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         An object that holds an SLI value and its associated data. It can represent an SLO's overall SLI value.
         This can also represent the SLI value for a specific monitor in multi-monitor SLOs, or a group in grouped SLOs.
@@ -89,14 +89,4 @@ class SLOHistorySLIData(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SLOHistorySLIData, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

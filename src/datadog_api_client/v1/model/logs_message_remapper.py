@@ -28,7 +28,7 @@ class LogsMessageRemapper(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, type, *args, **kwargs):
+    def __init__(self_, type, *args, **kwargs):
         """
         The message is a key attribute in Datadog.
         It is displayed in the message column of the Log Explorer and you can do full string search on it.
@@ -52,20 +52,7 @@ class LogsMessageRemapper(ModelNormal):
         super().__init__(kwargs)
         sources = kwargs.get("sources", ["msg"])
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.sources = sources
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        sources = kwargs.get("sources", ["msg"])
-
-        self = super(LogsMessageRemapper, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.sources = sources
-        self.type = type
-        return self
+        self_.sources = sources
+        self_.type = type

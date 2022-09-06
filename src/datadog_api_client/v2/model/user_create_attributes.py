@@ -24,7 +24,7 @@ class UserCreateAttributes(ModelNormal):
         "title": "title",
     }
 
-    def __init__(self, email, *args, **kwargs):
+    def __init__(self_, email, *args, **kwargs):
         """
         Attributes of the created user.
 
@@ -39,17 +39,6 @@ class UserCreateAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.email = email
-
-    @classmethod
-    def _from_openapi_data(cls, email, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(UserCreateAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.email = email
-        return self
+        self_.email = email

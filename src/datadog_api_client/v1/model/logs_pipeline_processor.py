@@ -32,7 +32,7 @@ class LogsPipelineProcessor(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, type, *args, **kwargs):
+    def __init__(self_, type, *args, **kwargs):
         """
         Nested Pipelines are pipelines within a pipeline. Use Nested Pipelines to split the processing into two steps.
         For example, first use a high-level filtering such as team and then a second level of filtering based on the
@@ -57,17 +57,6 @@ class LogsPipelineProcessor(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsPipelineProcessor, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.type = type
-        return self
+        self_.type = type

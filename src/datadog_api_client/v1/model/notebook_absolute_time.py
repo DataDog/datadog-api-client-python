@@ -25,7 +25,7 @@ class NotebookAbsoluteTime(ModelNormal):
         "start": "start",
     }
 
-    def __init__(self, end, start, *args, **kwargs):
+    def __init__(self_, end, start, *args, **kwargs):
         """
         Absolute timeframe.
 
@@ -40,19 +40,7 @@ class NotebookAbsoluteTime(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.end = end
-        self.start = start
-
-    @classmethod
-    def _from_openapi_data(cls, end, start, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(NotebookAbsoluteTime, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.end = end
-        self.start = start
-        return self
+        self_.end = end
+        self_.start = start

@@ -22,7 +22,7 @@ class LogsArchiveIntegrationGCS(ModelNormal):
         "project_id": "project_id",
     }
 
-    def __init__(self, client_email, project_id, *args, **kwargs):
+    def __init__(self_, client_email, project_id, *args, **kwargs):
         """
         The GCS archive's integration destination.
 
@@ -34,19 +34,7 @@ class LogsArchiveIntegrationGCS(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.client_email = client_email
-        self.project_id = project_id
-
-    @classmethod
-    def _from_openapi_data(cls, client_email, project_id, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsArchiveIntegrationGCS, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.client_email = client_email
-        self.project_id = project_id
-        return self
+        self_.client_email = client_email
+        self_.project_id = project_id

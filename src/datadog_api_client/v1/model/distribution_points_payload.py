@@ -22,7 +22,7 @@ class DistributionPointsPayload(ModelNormal):
         "series": "series",
     }
 
-    def __init__(self, series, *args, **kwargs):
+    def __init__(self_, series, *args, **kwargs):
         """
         The distribution points payload.
 
@@ -31,17 +31,6 @@ class DistributionPointsPayload(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.series = series
-
-    @classmethod
-    def _from_openapi_data(cls, series, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(DistributionPointsPayload, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.series = series
-        return self
+        self_.series = series

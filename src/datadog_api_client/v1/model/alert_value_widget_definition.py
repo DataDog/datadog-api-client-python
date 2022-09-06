@@ -37,7 +37,7 @@ class AlertValueWidgetDefinition(ModelNormal):
         "unit": "unit",
     }
 
-    def __init__(self, alert_id, type, *args, **kwargs):
+    def __init__(self_, alert_id, type, *args, **kwargs):
         """
         Alert values are query values showing the current value of the metric in any monitor defined on your system.
 
@@ -67,19 +67,7 @@ class AlertValueWidgetDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.alert_id = alert_id
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, alert_id, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(AlertValueWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.alert_id = alert_id
-        self.type = type
-        return self
+        self_.alert_id = alert_id
+        self_.type = type

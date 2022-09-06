@@ -35,7 +35,7 @@ class ApmStatsQueryDefinition(ModelNormal):
         "service": "service",
     }
 
-    def __init__(self, env, name, primary_tag, row_type, service, *args, **kwargs):
+    def __init__(self_, env, name, primary_tag, row_type, service, *args, **kwargs):
         """
         The APM stats query for table and distributions widgets.
 
@@ -62,25 +62,10 @@ class ApmStatsQueryDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.env = env
-        self.name = name
-        self.primary_tag = primary_tag
-        self.row_type = row_type
-        self.service = service
-
-    @classmethod
-    def _from_openapi_data(cls, env, name, primary_tag, row_type, service, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ApmStatsQueryDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.env = env
-        self.name = name
-        self.primary_tag = primary_tag
-        self.row_type = row_type
-        self.service = service
-        return self
+        self_.env = env
+        self_.name = name
+        self_.primary_tag = primary_tag
+        self_.row_type = row_type
+        self_.service = service

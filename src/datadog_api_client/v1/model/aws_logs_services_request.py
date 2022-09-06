@@ -22,7 +22,7 @@ class AWSLogsServicesRequest(ModelNormal):
         "services": "services",
     }
 
-    def __init__(self, account_id, services, *args, **kwargs):
+    def __init__(self_, account_id, services, *args, **kwargs):
         """
         A list of current AWS services for which Datadog offers automatic log collection.
 
@@ -34,19 +34,7 @@ class AWSLogsServicesRequest(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.account_id = account_id
-        self.services = services
-
-    @classmethod
-    def _from_openapi_data(cls, account_id, services, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(AWSLogsServicesRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.account_id = account_id
-        self.services = services
-        return self
+        self_.account_id = account_id
+        self_.services = services

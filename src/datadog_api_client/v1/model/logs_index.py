@@ -36,7 +36,7 @@ class LogsIndex(ModelNormal):
         "is_rate_limited",
     }
 
-    def __init__(self, filter, name, *args, **kwargs):
+    def __init__(self_, filter, name, *args, **kwargs):
         """
         Object describing a Datadog Log index.
 
@@ -64,19 +64,7 @@ class LogsIndex(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.filter = filter
-        self.name = name
-
-    @classmethod
-    def _from_openapi_data(cls, filter, name, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsIndex, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.filter = filter
-        self.name = name
-        return self
+        self_.filter = filter
+        self_.name = name

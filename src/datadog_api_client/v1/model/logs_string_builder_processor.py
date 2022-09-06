@@ -32,7 +32,7 @@ class LogsStringBuilderProcessor(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, target, template, type, *args, **kwargs):
+    def __init__(self_, target, template, type, *args, **kwargs):
         """
         Use the string builder processor to add a new attribute (without spaces or special characters)
         to a log with the result of the provided template.
@@ -70,21 +70,8 @@ class LogsStringBuilderProcessor(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.target = target
-        self.template = template
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, target, template, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsStringBuilderProcessor, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.target = target
-        self.template = template
-        self.type = type
-        return self
+        self_.target = target
+        self_.template = template
+        self_.type = type

@@ -40,7 +40,7 @@ class NotebookCreateDataAttributes(ModelNormal):
         "time": "time",
     }
 
-    def __init__(self, cells, name, time, *args, **kwargs):
+    def __init__(self_, cells, name, time, *args, **kwargs):
         """
         The data attributes of a notebook.
 
@@ -61,21 +61,8 @@ class NotebookCreateDataAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.cells = cells
-        self.name = name
-        self.time = time
-
-    @classmethod
-    def _from_openapi_data(cls, cells, name, time, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(NotebookCreateDataAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.cells = cells
-        self.name = name
-        self.time = time
-        return self
+        self_.cells = cells
+        self_.name = name
+        self_.time = time

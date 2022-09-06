@@ -10,7 +10,7 @@ from datadog_api_client.model_utils import (
 
 
 class NotebookCellUpdateRequestAttributes(ModelComposed):
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         The attributes of a notebook cell in update cell request. Valid cell types are ``markdown`` , ``timeseries`` , ``toplist`` , ``heatmap`` , ``distribution`` ,
         ``log_stream``. `More information on each graph visualization type. <https://docs.datadoghq.com/dashboards/widgets/>`_
@@ -29,17 +29,7 @@ class NotebookCellUpdateRequestAttributes(ModelComposed):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(NotebookCellUpdateRequestAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

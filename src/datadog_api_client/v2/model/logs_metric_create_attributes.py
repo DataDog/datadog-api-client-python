@@ -28,7 +28,7 @@ class LogsMetricCreateAttributes(ModelNormal):
         "group_by": "group_by",
     }
 
-    def __init__(self, compute, *args, **kwargs):
+    def __init__(self_, compute, *args, **kwargs):
         """
         The object describing the Datadog log-based metric to create.
 
@@ -43,17 +43,6 @@ class LogsMetricCreateAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.compute = compute
-
-    @classmethod
-    def _from_openapi_data(cls, compute, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsMetricCreateAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.compute = compute
-        return self
+        self_.compute = compute

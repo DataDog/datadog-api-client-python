@@ -22,7 +22,7 @@ class IncidentCreateRelationships(ModelNormal):
         "commander_user": "commander_user",
     }
 
-    def __init__(self, commander_user, *args, **kwargs):
+    def __init__(self_, commander_user, *args, **kwargs):
         """
         The relationships the incident will have with other resources once created.
 
@@ -31,17 +31,6 @@ class IncidentCreateRelationships(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.commander_user = commander_user
-
-    @classmethod
-    def _from_openapi_data(cls, commander_user, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(IncidentCreateRelationships, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.commander_user = commander_user
-        return self
+        self_.commander_user = commander_user

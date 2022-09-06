@@ -55,7 +55,7 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, query, type, *args, **kwargs):
+    def __init__(self_, query, type, *args, **kwargs):
         """
         The monitor summary widget displays a summary view of all your Datadog monitors, or a subset based on a query. Only available on FREE layout dashboards.
 
@@ -103,19 +103,7 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.query = query
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, query, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(MonitorSummaryWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.query = query
-        self.type = type
-        return self
+        self_.query = query
+        self_.type = type

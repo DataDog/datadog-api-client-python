@@ -33,7 +33,7 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
         "query": "query",
     }
 
-    def __init__(self, data_source, name, query, *args, **kwargs):
+    def __init__(self_, data_source, name, query, *args, **kwargs):
         """
         A formula and functions metrics query.
 
@@ -51,21 +51,8 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.data_source = data_source
-        self.name = name
-        self.query = query
-
-    @classmethod
-    def _from_openapi_data(cls, data_source, name, query, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(FormulaAndFunctionMetricQueryDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.data_source = data_source
-        self.name = name
-        self.query = query
-        return self
+        self_.data_source = data_source
+        self_.name = name
+        self_.query = query

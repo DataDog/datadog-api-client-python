@@ -22,7 +22,7 @@ class LogsGrokParserRules(ModelNormal):
         "support_rules": "support_rules",
     }
 
-    def __init__(self, match_rules, *args, **kwargs):
+    def __init__(self_, match_rules, *args, **kwargs):
         """
         Set of rules for the grok parser.
 
@@ -34,17 +34,6 @@ class LogsGrokParserRules(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.match_rules = match_rules
-
-    @classmethod
-    def _from_openapi_data(cls, match_rules, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsGrokParserRules, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.match_rules = match_rules
-        return self
+        self_.match_rules = match_rules

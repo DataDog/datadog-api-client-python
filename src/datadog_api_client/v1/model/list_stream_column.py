@@ -24,7 +24,7 @@ class ListStreamColumn(ModelNormal):
         "width": "width",
     }
 
-    def __init__(self, field, width, *args, **kwargs):
+    def __init__(self_, field, width, *args, **kwargs):
         """
         Widget column.
 
@@ -36,19 +36,7 @@ class ListStreamColumn(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.field = field
-        self.width = width
-
-    @classmethod
-    def _from_openapi_data(cls, field, width, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ListStreamColumn, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.field = field
-        self.width = width
-        return self
+        self_.field = field
+        self_.width = width

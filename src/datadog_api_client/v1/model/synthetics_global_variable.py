@@ -43,7 +43,7 @@ class SyntheticsGlobalVariable(ModelNormal):
         "id",
     }
 
-    def __init__(self, description, name, tags, value, *args, **kwargs):
+    def __init__(self_, description, name, tags, value, *args, **kwargs):
         """
         Synthetics global variable.
 
@@ -73,23 +73,9 @@ class SyntheticsGlobalVariable(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.description = description
-        self.name = name
-        self.tags = tags
-        self.value = value
-
-    @classmethod
-    def _from_openapi_data(cls, description, name, tags, value, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsGlobalVariable, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.description = description
-        self.name = name
-        self.tags = tags
-        self.value = value
-        return self
+        self_.description = description
+        self_.name = name
+        self_.tags = tags
+        self_.value = value

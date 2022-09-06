@@ -47,7 +47,7 @@ class LogContent(ModelNormal):
         "timestamp": "timestamp",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         JSON object containing all log attributes and their associated values.
 
@@ -75,14 +75,4 @@ class LogContent(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogContent, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

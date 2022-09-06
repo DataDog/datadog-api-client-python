@@ -24,7 +24,7 @@ class SecurityMonitoringSignalAssigneeUpdateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self, data, *args, **kwargs):
+    def __init__(self_, data, *args, **kwargs):
         """
         Request body for changing the assignee of a given security monitoring signal.
 
@@ -33,17 +33,6 @@ class SecurityMonitoringSignalAssigneeUpdateRequest(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.data = data
-
-    @classmethod
-    def _from_openapi_data(cls, data, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SecurityMonitoringSignalAssigneeUpdateRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.data = data
-        return self
+        self_.data = data

@@ -45,7 +45,7 @@ class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
         "stat": "stat",
     }
 
-    def __init__(self, data_source, env, name, service, stat, *args, **kwargs):
+    def __init__(self_, data_source, env, name, service, stat, *args, **kwargs):
         """
         APM resource stats query using formulas and functions.
 
@@ -81,25 +81,10 @@ class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.data_source = data_source
-        self.env = env
-        self.name = name
-        self.service = service
-        self.stat = stat
-
-    @classmethod
-    def _from_openapi_data(cls, data_source, env, name, service, stat, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(FormulaAndFunctionApmResourceStatsQueryDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.data_source = data_source
-        self.env = env
-        self.name = name
-        self.service = service
-        self.stat = stat
-        return self
+        self_.data_source = data_source
+        self_.env = env
+        self_.name = name
+        self_.service = service
+        self_.stat = stat

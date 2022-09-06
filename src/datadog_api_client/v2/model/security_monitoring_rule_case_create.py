@@ -28,7 +28,7 @@ class SecurityMonitoringRuleCaseCreate(ModelNormal):
         "status": "status",
     }
 
-    def __init__(self, status, *args, **kwargs):
+    def __init__(self_, status, *args, **kwargs):
         """
         Case when signal is generated.
 
@@ -47,17 +47,6 @@ class SecurityMonitoringRuleCaseCreate(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.status = status
-
-    @classmethod
-    def _from_openapi_data(cls, status, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SecurityMonitoringRuleCaseCreate, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.status = status
-        return self
+        self_.status = status

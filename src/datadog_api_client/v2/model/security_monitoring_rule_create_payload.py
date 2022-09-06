@@ -44,7 +44,7 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, cases, is_enabled, message, name, options, queries, *args, **kwargs):
+    def __init__(self_, cases, is_enabled, message, name, options, queries, *args, **kwargs):
         """
         Create a new rule.
 
@@ -80,27 +80,11 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.cases = cases
-        self.is_enabled = is_enabled
-        self.message = message
-        self.name = name
-        self.options = options
-        self.queries = queries
-
-    @classmethod
-    def _from_openapi_data(cls, cases, is_enabled, message, name, options, queries, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SecurityMonitoringRuleCreatePayload, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.cases = cases
-        self.is_enabled = is_enabled
-        self.message = message
-        self.name = name
-        self.options = options
-        self.queries = queries
-        return self
+        self_.cases = cases
+        self_.is_enabled = is_enabled
+        self_.message = message
+        self_.name = name
+        self_.options = options
+        self_.queries = queries

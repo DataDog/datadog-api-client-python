@@ -34,7 +34,7 @@ class SyntheticsAssertionJSONPathTarget(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, operator, type, *args, **kwargs):
+    def __init__(self_, operator, type, *args, **kwargs):
         """
         An assertion for the ``validatesJSONPath`` operator.
 
@@ -52,19 +52,7 @@ class SyntheticsAssertionJSONPathTarget(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.operator = operator
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, operator, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsAssertionJSONPathTarget, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.operator = operator
-        self.type = type
-        return self
+        self_.operator = operator
+        self_.type = type

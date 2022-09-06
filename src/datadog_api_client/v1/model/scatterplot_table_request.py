@@ -28,7 +28,7 @@ class ScatterplotTableRequest(ModelNormal):
         "response_format": "response_format",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         Scatterplot request containing formulas and functions.
 
@@ -43,14 +43,4 @@ class ScatterplotTableRequest(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ScatterplotTableRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

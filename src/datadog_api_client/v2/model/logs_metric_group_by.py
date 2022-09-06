@@ -22,7 +22,7 @@ class LogsMetricGroupBy(ModelNormal):
         "tag_name": "tag_name",
     }
 
-    def __init__(self, path, *args, **kwargs):
+    def __init__(self_, path, *args, **kwargs):
         """
         A group by rule.
 
@@ -34,17 +34,6 @@ class LogsMetricGroupBy(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.path = path
-
-    @classmethod
-    def _from_openapi_data(cls, path, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsMetricGroupBy, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.path = path
-        return self
+        self_.path = path

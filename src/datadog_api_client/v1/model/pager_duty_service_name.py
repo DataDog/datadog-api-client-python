@@ -20,7 +20,7 @@ class PagerDutyServiceName(ModelNormal):
         "service_name": "service_name",
     }
 
-    def __init__(self, service_name, *args, **kwargs):
+    def __init__(self_, service_name, *args, **kwargs):
         """
         PagerDuty service object name.
 
@@ -29,17 +29,6 @@ class PagerDutyServiceName(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.service_name = service_name
-
-    @classmethod
-    def _from_openapi_data(cls, service_name, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(PagerDutyServiceName, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.service_name = service_name
-        return self
+        self_.service_name = service_name

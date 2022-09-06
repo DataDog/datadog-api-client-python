@@ -99,7 +99,7 @@ class {{ name }}(ModelNormal):
     }
 {%- endif %}
 
-    def __init__(self,
+    def __init__(self_,
 {%- for attr, definition in model.get("properties", {}).items() %}
         {%- if attr in model.get("required", []) and (definition.get("default") == None or definition.enum) %} {{ attr|attribute_name }},{% endif %}
 {%- endfor %} *args, **kwargs):
@@ -119,31 +119,9 @@ class {{ name }}(ModelNormal):
         {%- endif %}
 {%- endfor %}
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
 {% for attr in model.properties %}
         {%- if attr in model.get("required", []) %}
-        self.{{ attr|attribute_name }} = {{ attr|attribute_name }}{% endif %}
+        self_.{{ attr|attribute_name }} = {{ attr|attribute_name }}{% endif %}
 {%- endfor %}
-
-    @classmethod
-    def _from_openapi_data(cls,
-{%- for attr, definition in model.get("properties", {}).items() %}
-        {%- if attr in model.get("required", []) and (definition.get("default") == None or definition.enum) %} {{ attr|attribute_name }},{% endif %}
-{%- endfor %} *args, **kwargs):
-        """Helper creating a new instance from a response."""
-{%- for attr, definition in model.get("properties", {}).items() %}
-        {%- if attr in model.get("required", []) and definition.get("default") != None and not definition.enum %}
-        {{ attr|attribute_name }} = kwargs.get("{{ attr|attribute_name }}", {{ definition["default"]|format_value }})
-        {%- endif %}
-{%- endfor %}
-
-        self = super({{ name }}, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-{% for attr in model.properties %}
-        {%- if attr in model.get("required", []) %}
-        self.{{ attr|attribute_name }} = {{ attr|attribute_name }}{% endif %}
-{%- endfor %}
-        return self
