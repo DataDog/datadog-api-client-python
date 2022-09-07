@@ -9,7 +9,7 @@ from datadog_api_client.v1.model.aws_tag_filter_create_request import AWSTagFilt
 
 body = AWSTagFilterCreateRequest(
     account_id="1234567",
-    namespace=AWSNamespace("elb"),
+    namespace=AWSNamespace.ELB,
     tag_filter_str="prod*",
 )
 

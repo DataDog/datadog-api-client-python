@@ -18,10 +18,8 @@ class RUMAggregateSortType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ALPHABETICAL": "alphabetical",
-            "MEASURE": "measure",
-        },
+        "alphabetical",
+        "measure",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class RUMAggregateSortType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+RUMAggregateSortType.ALPHABETICAL = RUMAggregateSortType("alphabetical")
+RUMAggregateSortType.MEASURE = RUMAggregateSortType("measure")

@@ -18,16 +18,14 @@ class WidgetTimeWindows(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SEVEN_DAYS": "7d",
-            "THIRTY_DAYS": "30d",
-            "NINETY_DAYS": "90d",
-            "WEEK_TO_DATE": "week_to_date",
-            "PREVIOUS_WEEK": "previous_week",
-            "MONTH_TO_DATE": "month_to_date",
-            "PREVIOUS_MONTH": "previous_month",
-            "GLOBAL_TIME": "global_time",
-        },
+        "7d",
+        "30d",
+        "90d",
+        "week_to_date",
+        "previous_week",
+        "month_to_date",
+        "previous_month",
+        "global_time",
     }
 
     @cached_property
@@ -35,3 +33,13 @@ class WidgetTimeWindows(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetTimeWindows.SEVEN_DAYS = WidgetTimeWindows("7d")
+WidgetTimeWindows.THIRTY_DAYS = WidgetTimeWindows("30d")
+WidgetTimeWindows.NINETY_DAYS = WidgetTimeWindows("90d")
+WidgetTimeWindows.WEEK_TO_DATE = WidgetTimeWindows("week_to_date")
+WidgetTimeWindows.PREVIOUS_WEEK = WidgetTimeWindows("previous_week")
+WidgetTimeWindows.MONTH_TO_DATE = WidgetTimeWindows("month_to_date")
+WidgetTimeWindows.PREVIOUS_MONTH = WidgetTimeWindows("previous_month")
+WidgetTimeWindows.GLOBAL_TIME = WidgetTimeWindows("global_time")

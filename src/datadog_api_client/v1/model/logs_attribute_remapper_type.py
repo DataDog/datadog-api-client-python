@@ -18,9 +18,7 @@ class LogsAttributeRemapperType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ATTRIBUTE_REMAPPER": "attribute-remapper",
-        },
+        "attribute-remapper",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsAttributeRemapperType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsAttributeRemapperType.ATTRIBUTE_REMAPPER = LogsAttributeRemapperType("attribute-remapper")

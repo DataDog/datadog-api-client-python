@@ -18,10 +18,8 @@ class LogsComputeType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TIMESERIES": "timeseries",
-            "TOTAL": "total",
-        },
+        "timeseries",
+        "total",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class LogsComputeType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsComputeType.TIMESERIES = LogsComputeType("timeseries")
+LogsComputeType.TOTAL = LogsComputeType("total")

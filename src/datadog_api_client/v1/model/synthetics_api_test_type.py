@@ -18,9 +18,7 @@ class SyntheticsAPITestType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "API": "api",
-        },
+        "api",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SyntheticsAPITestType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsAPITestType.API = SyntheticsAPITestType("api")

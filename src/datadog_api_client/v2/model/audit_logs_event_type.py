@@ -18,9 +18,7 @@ class AuditLogsEventType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "Audit": "audit",
-        },
+        "audit",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class AuditLogsEventType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+AuditLogsEventType.Audit = AuditLogsEventType("audit")

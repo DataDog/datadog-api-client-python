@@ -18,9 +18,7 @@ class LogType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "LOG": "log",
-        },
+        "log",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogType.LOG = LogType("log")

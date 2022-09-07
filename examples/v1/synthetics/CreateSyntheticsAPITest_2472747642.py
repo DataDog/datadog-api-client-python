@@ -19,14 +19,14 @@ body = SyntheticsAPITest(
     config=SyntheticsAPITestConfig(
         assertions=[
             SyntheticsAssertionTarget(
-                operator=SyntheticsAssertionOperator("is"),
+                operator=SyntheticsAssertionOperator.IS,
                 target="message",
-                type=SyntheticsAssertionType("receivedMessage"),
+                type=SyntheticsAssertionType.RECEIVED_MESSAGE,
             ),
             SyntheticsAssertionTarget(
-                operator=SyntheticsAssertionOperator("lessThan"),
+                operator=SyntheticsAssertionOperator.LESS_THAN,
                 target=2000,
-                type=SyntheticsAssertionType("responseTime"),
+                type=SyntheticsAssertionType.RESPONSE_TIME,
             ),
         ],
         config_variables=[],
@@ -54,11 +54,11 @@ body = SyntheticsAPITest(
         ),
         tick_every=60,
     ),
-    subtype=SyntheticsTestDetailsSubType("websocket"),
+    subtype=SyntheticsTestDetailsSubType.WEBSOCKET,
     tags=[
         "testing:api",
     ],
-    type=SyntheticsAPITestType("api"),
+    type=SyntheticsAPITestType.API,
 )
 
 configuration = Configuration()

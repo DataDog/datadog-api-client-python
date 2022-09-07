@@ -18,9 +18,7 @@ class LogsMessageRemapperType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MESSAGE_REMAPPER": "message-remapper",
-        },
+        "message-remapper",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsMessageRemapperType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsMessageRemapperType.MESSAGE_REMAPPER = LogsMessageRemapperType("message-remapper")

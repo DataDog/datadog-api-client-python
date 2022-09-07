@@ -18,10 +18,8 @@ class LogsAggregateSortType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ALPHABETICAL": "alphabetical",
-            "MEASURE": "measure",
-        },
+        "alphabetical",
+        "measure",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class LogsAggregateSortType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsAggregateSortType.ALPHABETICAL = LogsAggregateSortType("alphabetical")
+LogsAggregateSortType.MEASURE = LogsAggregateSortType("measure")

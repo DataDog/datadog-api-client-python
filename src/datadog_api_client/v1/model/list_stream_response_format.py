@@ -18,9 +18,7 @@ class ListStreamResponseFormat(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "EVENT_LIST": "event_list",
-        },
+        "event_list",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class ListStreamResponseFormat(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ListStreamResponseFormat.EVENT_LIST = ListStreamResponseFormat("event_list")

@@ -19,13 +19,11 @@ class WidgetMargin(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SM": "sm",
-            "MD": "md",
-            "LG": "lg",
-            "SMALL": "small",
-            "LARGE": "large",
-        },
+        "sm",
+        "md",
+        "lg",
+        "small",
+        "large",
     }
 
     @cached_property
@@ -33,3 +31,10 @@ class WidgetMargin(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetMargin.SM = WidgetMargin("sm")
+WidgetMargin.MD = WidgetMargin("md")
+WidgetMargin.LG = WidgetMargin("lg")
+WidgetMargin.SMALL = WidgetMargin("small")
+WidgetMargin.LARGE = WidgetMargin("large")

@@ -18,9 +18,7 @@ class MetricBulkConfigureTagsType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "BULK_MANAGE_TAGS": "metric_bulk_configure_tags",
-        },
+        "metric_bulk_configure_tags",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class MetricBulkConfigureTagsType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MetricBulkConfigureTagsType.BULK_MANAGE_TAGS = MetricBulkConfigureTagsType("metric_bulk_configure_tags")

@@ -19,18 +19,16 @@ class SecurityMonitoringRuleKeepAlive(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ZERO_MINUTES": 0,
-            "ONE_MINUTE": 60,
-            "FIVE_MINUTES": 300,
-            "TEN_MINUTES": 600,
-            "FIFTEEN_MINUTES": 900,
-            "THIRTY_MINUTES": 1800,
-            "ONE_HOUR": 3600,
-            "TWO_HOURS": 7200,
-            "THREE_HOURS": 10800,
-            "SIX_HOURS": 21600,
-        },
+        0,
+        60,
+        300,
+        600,
+        900,
+        1800,
+        3600,
+        7200,
+        10800,
+        21600,
     }
 
     @cached_property
@@ -38,3 +36,15 @@ class SecurityMonitoringRuleKeepAlive(ModelSimple):
         return {
             "value": (int,),
         }
+
+
+SecurityMonitoringRuleKeepAlive.ZERO_MINUTES = SecurityMonitoringRuleKeepAlive(0)
+SecurityMonitoringRuleKeepAlive.ONE_MINUTE = SecurityMonitoringRuleKeepAlive(60)
+SecurityMonitoringRuleKeepAlive.FIVE_MINUTES = SecurityMonitoringRuleKeepAlive(300)
+SecurityMonitoringRuleKeepAlive.TEN_MINUTES = SecurityMonitoringRuleKeepAlive(600)
+SecurityMonitoringRuleKeepAlive.FIFTEEN_MINUTES = SecurityMonitoringRuleKeepAlive(900)
+SecurityMonitoringRuleKeepAlive.THIRTY_MINUTES = SecurityMonitoringRuleKeepAlive(1800)
+SecurityMonitoringRuleKeepAlive.ONE_HOUR = SecurityMonitoringRuleKeepAlive(3600)
+SecurityMonitoringRuleKeepAlive.TWO_HOURS = SecurityMonitoringRuleKeepAlive(7200)
+SecurityMonitoringRuleKeepAlive.THREE_HOURS = SecurityMonitoringRuleKeepAlive(10800)
+SecurityMonitoringRuleKeepAlive.SIX_HOURS = SecurityMonitoringRuleKeepAlive(21600)

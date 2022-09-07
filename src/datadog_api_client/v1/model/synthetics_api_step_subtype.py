@@ -18,9 +18,7 @@ class SyntheticsAPIStepSubtype(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "HTTP": "http",
-        },
+        "http",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SyntheticsAPIStepSubtype(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsAPIStepSubtype.HTTP = SyntheticsAPIStepSubtype("http")

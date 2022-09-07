@@ -31,10 +31,10 @@ body = SyntheticsGlobalVariable(
         field="content-type",
         local_variable_name="LOCAL_VARIABLE",
         parser=SyntheticsVariableParser(
-            type=SyntheticsGlobalVariableParserType("regex"),
+            type=SyntheticsGlobalVariableParserType.REGEX,
             value=".*",
         ),
-        type=SyntheticsGlobalVariableParseTestOptionsType("http_body"),
+        type=SyntheticsGlobalVariableParseTestOptionsType.HTTP_BODY,
     ),
     parse_test_public_id="abc-def-123",
     tags=[

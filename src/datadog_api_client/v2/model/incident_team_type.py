@@ -18,9 +18,7 @@ class IncidentTeamType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TEAMS": "teams",
-        },
+        "teams",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class IncidentTeamType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+IncidentTeamType.TEAMS = IncidentTeamType("teams")

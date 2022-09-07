@@ -18,9 +18,7 @@ class IncidentTimelineCellMarkdownContentType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MARKDOWN": "markdown",
-        },
+        "markdown",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class IncidentTimelineCellMarkdownContentType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+IncidentTimelineCellMarkdownContentType.MARKDOWN = IncidentTimelineCellMarkdownContentType("markdown")

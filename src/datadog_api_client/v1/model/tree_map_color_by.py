@@ -18,9 +18,7 @@ class TreeMapColorBy(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "USER": "user",
-        },
+        "user",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class TreeMapColorBy(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+TreeMapColorBy.USER = TreeMapColorBy("user")

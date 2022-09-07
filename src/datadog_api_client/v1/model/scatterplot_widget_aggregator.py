@@ -18,13 +18,11 @@ class ScatterplotWidgetAggregator(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AVERAGE": "avg",
-            "LAST": "last",
-            "MAXIMUM": "max",
-            "MINIMUM": "min",
-            "SUM": "sum",
-        },
+        "avg",
+        "last",
+        "max",
+        "min",
+        "sum",
     }
 
     @cached_property
@@ -32,3 +30,10 @@ class ScatterplotWidgetAggregator(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ScatterplotWidgetAggregator.AVERAGE = ScatterplotWidgetAggregator("avg")
+ScatterplotWidgetAggregator.LAST = ScatterplotWidgetAggregator("last")
+ScatterplotWidgetAggregator.MAXIMUM = ScatterplotWidgetAggregator("max")
+ScatterplotWidgetAggregator.MINIMUM = ScatterplotWidgetAggregator("min")
+ScatterplotWidgetAggregator.SUM = ScatterplotWidgetAggregator("sum")

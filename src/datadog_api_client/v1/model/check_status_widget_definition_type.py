@@ -18,9 +18,7 @@ class CheckStatusWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CHECK_STATUS": "check_status",
-        },
+        "check_status",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class CheckStatusWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+CheckStatusWidgetDefinitionType.CHECK_STATUS = CheckStatusWidgetDefinitionType("check_status")

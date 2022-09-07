@@ -18,12 +18,10 @@ class UsageSort(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "COMPUTED_ON": "computed_on",
-            "SIZE": "size",
-            "START_DATE": "start_date",
-            "END_DATE": "end_date",
-        },
+        "computed_on",
+        "size",
+        "start_date",
+        "end_date",
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class UsageSort(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+UsageSort.COMPUTED_ON = UsageSort("computed_on")
+UsageSort.SIZE = UsageSort("size")
+UsageSort.START_DATE = UsageSort("start_date")
+UsageSort.END_DATE = UsageSort("end_date")

@@ -18,10 +18,8 @@ class RUMSort(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TIMESTAMP_ASCENDING": "timestamp",
-            "TIMESTAMP_DESCENDING": "-timestamp",
-        },
+        "timestamp",
+        "-timestamp",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class RUMSort(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+RUMSort.TIMESTAMP_ASCENDING = RUMSort("timestamp")
+RUMSort.TIMESTAMP_DESCENDING = RUMSort("-timestamp")

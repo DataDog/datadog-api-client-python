@@ -18,10 +18,8 @@ class LogsAggregateResponseStatus(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DONE": "done",
-            "TIMEOUT": "timeout",
-        },
+        "done",
+        "timeout",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class LogsAggregateResponseStatus(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsAggregateResponseStatus.DONE = LogsAggregateResponseStatus("done")
+LogsAggregateResponseStatus.TIMEOUT = LogsAggregateResponseStatus("timeout")

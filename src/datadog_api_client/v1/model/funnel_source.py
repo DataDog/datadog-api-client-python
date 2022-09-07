@@ -18,9 +18,7 @@ class FunnelSource(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "RUM": "rum",
-        },
+        "rum",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class FunnelSource(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+FunnelSource.RUM = FunnelSource("rum")

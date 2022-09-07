@@ -49,9 +49,9 @@ body = Dashboard(
             definition=GeomapWidgetDefinition(
                 title="",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
+                title_align=WidgetTextAlign.LEFT,
                 time=WidgetTime(),
-                type=GeomapWidgetDefinitionType("geomap"),
+                type=GeomapWidgetDefinitionType.GEOMAP,
                 requests=[
                     GeomapWidgetRequest(
                         formulas=[
@@ -59,14 +59,14 @@ body = Dashboard(
                                 formula="query1",
                                 limit=WidgetFormulaLimit(
                                     count=250,
-                                    order=QuerySortOrder("desc"),
+                                    order=QuerySortOrder.DESC,
                                 ),
                             ),
                         ],
                         queries=[
                             FormulaAndFunctionEventQueryDefinition(
                                 name="query1",
-                                data_source=FormulaAndFunctionEventsDataSource("rum"),
+                                data_source=FormulaAndFunctionEventsDataSource.RUM,
                                 search=FormulaAndFunctionEventQueryDefinitionSearch(
                                     query="",
                                 ),
@@ -74,21 +74,21 @@ body = Dashboard(
                                     "*",
                                 ],
                                 compute=FormulaAndFunctionEventQueryDefinitionCompute(
-                                    aggregation=FormulaAndFunctionEventAggregation("count"),
+                                    aggregation=FormulaAndFunctionEventAggregation.COUNT,
                                 ),
                                 group_by=[
                                     FormulaAndFunctionEventQueryGroupBy(
                                         facet="@geo.country_iso_code",
                                         limit=250,
                                         sort=FormulaAndFunctionEventQueryGroupBySort(
-                                            order=QuerySortOrder("desc"),
-                                            aggregation=FormulaAndFunctionEventAggregation("count"),
+                                            order=QuerySortOrder.DESC,
+                                            aggregation=FormulaAndFunctionEventAggregation.COUNT,
                                         ),
                                     ),
                                 ],
                             ),
                         ],
-                        response_format=FormulaAndFunctionResponseFormat("scalar"),
+                        response_format=FormulaAndFunctionResponseFormat.SCALAR,
                     ),
                 ],
                 style=GeomapWidgetDefinitionStyle(
@@ -102,7 +102,7 @@ body = Dashboard(
         ),
     ],
     template_variables=[],
-    layout_type=DashboardLayoutType("free"),
+    layout_type=DashboardLayoutType.FREE,
     is_read_only=False,
     notify_list=[],
 )

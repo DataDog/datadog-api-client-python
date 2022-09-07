@@ -18,12 +18,10 @@ class ScatterplotDimension(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "X": "x",
-            "Y": "y",
-            "RADIUS": "radius",
-            "COLOR": "color",
-        },
+        "x",
+        "y",
+        "radius",
+        "color",
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class ScatterplotDimension(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ScatterplotDimension.X = ScatterplotDimension("x")
+ScatterplotDimension.Y = ScatterplotDimension("y")
+ScatterplotDimension.RADIUS = ScatterplotDimension("radius")
+ScatterplotDimension.COLOR = ScatterplotDimension("color")

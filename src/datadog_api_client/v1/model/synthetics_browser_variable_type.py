@@ -18,13 +18,11 @@ class SyntheticsBrowserVariableType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ELEMENT": "element",
-            "EMAIL": "email",
-            "GLOBAL": "global",
-            "JAVASCRIPT": "javascript",
-            "TEXT": "text",
-        },
+        "element",
+        "email",
+        "global",
+        "javascript",
+        "text",
     }
 
     @cached_property
@@ -32,3 +30,10 @@ class SyntheticsBrowserVariableType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsBrowserVariableType.ELEMENT = SyntheticsBrowserVariableType("element")
+SyntheticsBrowserVariableType.EMAIL = SyntheticsBrowserVariableType("email")
+SyntheticsBrowserVariableType.GLOBAL = SyntheticsBrowserVariableType("global")
+SyntheticsBrowserVariableType.JAVASCRIPT = SyntheticsBrowserVariableType("javascript")
+SyntheticsBrowserVariableType.TEXT = SyntheticsBrowserVariableType("text")

@@ -18,10 +18,8 @@ class WidgetChangeType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ABSOLUTE": "absolute",
-            "RELATIVE": "relative",
-        },
+        "absolute",
+        "relative",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class WidgetChangeType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetChangeType.ABSOLUTE = WidgetChangeType("absolute")
+WidgetChangeType.RELATIVE = WidgetChangeType("relative")

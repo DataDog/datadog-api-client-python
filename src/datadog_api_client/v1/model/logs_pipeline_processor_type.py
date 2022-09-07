@@ -18,9 +18,7 @@ class LogsPipelineProcessorType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "PIPELINE": "pipeline",
-        },
+        "pipeline",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsPipelineProcessorType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsPipelineProcessorType.PIPELINE = LogsPipelineProcessorType("pipeline")

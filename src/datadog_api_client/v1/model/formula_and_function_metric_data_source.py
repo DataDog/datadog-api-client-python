@@ -18,9 +18,7 @@ class FormulaAndFunctionMetricDataSource(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "METRICS": "metrics",
-        },
+        "metrics",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class FormulaAndFunctionMetricDataSource(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+FormulaAndFunctionMetricDataSource.METRICS = FormulaAndFunctionMetricDataSource("metrics")

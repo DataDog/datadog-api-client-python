@@ -18,12 +18,10 @@ class MetricTagConfigurationMetricTypes(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "GAUGE": "gauge",
-            "COUNT": "count",
-            "RATE": "rate",
-            "DISTRIBUTION": "distribution",
-        },
+        "gauge",
+        "count",
+        "rate",
+        "distribution",
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class MetricTagConfigurationMetricTypes(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MetricTagConfigurationMetricTypes.GAUGE = MetricTagConfigurationMetricTypes("gauge")
+MetricTagConfigurationMetricTypes.COUNT = MetricTagConfigurationMetricTypes("count")
+MetricTagConfigurationMetricTypes.RATE = MetricTagConfigurationMetricTypes("rate")
+MetricTagConfigurationMetricTypes.DISTRIBUTION = MetricTagConfigurationMetricTypes("distribution")

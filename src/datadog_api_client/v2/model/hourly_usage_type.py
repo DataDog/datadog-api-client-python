@@ -18,11 +18,9 @@ class HourlyUsageType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "APP_SEC_HOST_COUNT": "app_sec_host_count",
-            "OBSERVABILITY_PIPELINES_BYTES_PROCESSSED": "observability_pipelines_bytes_processed",
-            "LAMBDA_TRACED_INVOCATIONS_COUNT": "lambda_traced_invocations_count",
-        },
+        "app_sec_host_count",
+        "observability_pipelines_bytes_processed",
+        "lambda_traced_invocations_count",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class HourlyUsageType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+HourlyUsageType.APP_SEC_HOST_COUNT = HourlyUsageType("app_sec_host_count")
+HourlyUsageType.OBSERVABILITY_PIPELINES_BYTES_PROCESSSED = HourlyUsageType("observability_pipelines_bytes_processed")
+HourlyUsageType.LAMBDA_TRACED_INVOCATIONS_COUNT = HourlyUsageType("lambda_traced_invocations_count")

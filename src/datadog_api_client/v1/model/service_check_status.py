@@ -18,12 +18,10 @@ class ServiceCheckStatus(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "OK": 0,
-            "WARNING": 1,
-            "CRITICAL": 2,
-            "UNKNOWN": 3,
-        },
+        0,
+        1,
+        2,
+        3,
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class ServiceCheckStatus(ModelSimple):
         return {
             "value": (int,),
         }
+
+
+ServiceCheckStatus.OK = ServiceCheckStatus(0)
+ServiceCheckStatus.WARNING = ServiceCheckStatus(1)
+ServiceCheckStatus.CRITICAL = ServiceCheckStatus(2)
+ServiceCheckStatus.UNKNOWN = ServiceCheckStatus(3)

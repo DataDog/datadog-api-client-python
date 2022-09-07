@@ -18,9 +18,7 @@ class SLOCorrectionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CORRECTION": "correction",
-        },
+        "correction",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SLOCorrectionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SLOCorrectionType.CORRECTION = SLOCorrectionType("correction")

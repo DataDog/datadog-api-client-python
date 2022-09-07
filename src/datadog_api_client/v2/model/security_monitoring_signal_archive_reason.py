@@ -18,12 +18,10 @@ class SecurityMonitoringSignalArchiveReason(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NONE": "none",
-            "FALSE_POSITIVE": "false_positive",
-            "TESTING_OR_MAINTENANCE": "testing_or_maintenance",
-            "OTHER": "other",
-        },
+        "none",
+        "false_positive",
+        "testing_or_maintenance",
+        "other",
     }
 
     @cached_property
@@ -31,3 +29,11 @@ class SecurityMonitoringSignalArchiveReason(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SecurityMonitoringSignalArchiveReason.NONE = SecurityMonitoringSignalArchiveReason("none")
+SecurityMonitoringSignalArchiveReason.FALSE_POSITIVE = SecurityMonitoringSignalArchiveReason("false_positive")
+SecurityMonitoringSignalArchiveReason.TESTING_OR_MAINTENANCE = SecurityMonitoringSignalArchiveReason(
+    "testing_or_maintenance"
+)
+SecurityMonitoringSignalArchiveReason.OTHER = SecurityMonitoringSignalArchiveReason("other")

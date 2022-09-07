@@ -18,10 +18,8 @@ class FormulaAndFunctionResponseFormat(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TIMESERIES": "timeseries",
-            "SCALAR": "scalar",
-        },
+        "timeseries",
+        "scalar",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class FormulaAndFunctionResponseFormat(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+FormulaAndFunctionResponseFormat.TIMESERIES = FormulaAndFunctionResponseFormat("timeseries")
+FormulaAndFunctionResponseFormat.SCALAR = FormulaAndFunctionResponseFormat("scalar")

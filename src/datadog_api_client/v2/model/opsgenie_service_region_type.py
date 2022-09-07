@@ -18,11 +18,9 @@ class OpsgenieServiceRegionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "US": "us",
-            "EU": "eu",
-            "CUSTOM": "custom",
-        },
+        "us",
+        "eu",
+        "custom",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class OpsgenieServiceRegionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+OpsgenieServiceRegionType.US = OpsgenieServiceRegionType("us")
+OpsgenieServiceRegionType.EU = OpsgenieServiceRegionType("eu")
+OpsgenieServiceRegionType.CUSTOM = OpsgenieServiceRegionType("custom")

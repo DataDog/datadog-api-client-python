@@ -18,9 +18,7 @@ class LogsStatusRemapperType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "STATUS_REMAPPER": "status-remapper",
-        },
+        "status-remapper",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsStatusRemapperType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsStatusRemapperType.STATUS_REMAPPER = LogsStatusRemapperType("status-remapper")

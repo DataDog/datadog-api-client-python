@@ -38,9 +38,9 @@ body = Dashboard(
             definition=ChangeWidgetDefinition(
                 title="",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
+                title_align=WidgetTextAlign.LEFT,
                 time=WidgetTime(),
-                type=ChangeWidgetDefinitionType("change"),
+                type=ChangeWidgetDefinitionType.CHANGE,
                 requests=[
                     ChangeWidgetRequest(
                         formulas=[
@@ -53,7 +53,7 @@ body = Dashboard(
                         ],
                         queries=[
                             FormulaAndFunctionEventQueryDefinition(
-                                data_source=FormulaAndFunctionEventsDataSource("logs"),
+                                data_source=FormulaAndFunctionEventsDataSource.LOGS,
                                 name="query1",
                                 search=FormulaAndFunctionEventQueryDefinitionSearch(
                                     query="",
@@ -62,17 +62,17 @@ body = Dashboard(
                                     "*",
                                 ],
                                 compute=FormulaAndFunctionEventQueryDefinitionCompute(
-                                    aggregation=FormulaAndFunctionEventAggregation("count"),
+                                    aggregation=FormulaAndFunctionEventAggregation.COUNT,
                                 ),
                                 group_by=[],
                             ),
                         ],
-                        response_format=FormulaAndFunctionResponseFormat("scalar"),
-                        compare_to=WidgetCompareTo("hour_before"),
+                        response_format=FormulaAndFunctionResponseFormat.SCALAR,
+                        compare_to=WidgetCompareTo.HOUR_BEFORE,
                         increase_good=True,
-                        order_by=WidgetOrderBy("change"),
-                        change_type=WidgetChangeType("absolute"),
-                        order_dir=WidgetSort("desc"),
+                        order_by=WidgetOrderBy.CHANGE,
+                        change_type=WidgetChangeType.ABSOLUTE,
+                        order_dir=WidgetSort.DESCENDING,
                     ),
                 ],
             ),
@@ -84,7 +84,7 @@ body = Dashboard(
             ),
         ),
     ],
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
 )
 
 configuration = Configuration()

@@ -18,9 +18,7 @@ class SecurityFilterType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SECURITY_FILTERS": "security_filters",
-        },
+        "security_filters",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SecurityFilterType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SecurityFilterType.SECURITY_FILTERS = SecurityFilterType("security_filters")

@@ -18,10 +18,8 @@ class SyntheticsConfigVariableType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "GLOBAL": "global",
-            "TEXT": "text",
-        },
+        "global",
+        "text",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class SyntheticsConfigVariableType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsConfigVariableType.GLOBAL = SyntheticsConfigVariableType("global")
+SyntheticsConfigVariableType.TEXT = SyntheticsConfigVariableType("text")

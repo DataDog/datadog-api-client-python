@@ -18,22 +18,20 @@ class SyntheticsCheckType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "EQUALS": "equals",
-            "NOT_EQUALS": "notEquals",
-            "CONTAINS": "contains",
-            "NOT_CONTAINS": "notContains",
-            "STARTS_WITH": "startsWith",
-            "NOT_STARTS_WITH": "notStartsWith",
-            "GREATER": "greater",
-            "LOWER": "lower",
-            "GREATER_EQUALS": "greaterEquals",
-            "LOWER_EQUALS": "lowerEquals",
-            "MATCH_REGEX": "matchRegex",
-            "BETWEEN": "between",
-            "IS_EMPTY": "isEmpty",
-            "NOT_IS_EMPTY": "notIsEmpty",
-        },
+        "equals",
+        "notEquals",
+        "contains",
+        "notContains",
+        "startsWith",
+        "notStartsWith",
+        "greater",
+        "lower",
+        "greaterEquals",
+        "lowerEquals",
+        "matchRegex",
+        "between",
+        "isEmpty",
+        "notIsEmpty",
     }
 
     @cached_property
@@ -41,3 +39,19 @@ class SyntheticsCheckType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsCheckType.EQUALS = SyntheticsCheckType("equals")
+SyntheticsCheckType.NOT_EQUALS = SyntheticsCheckType("notEquals")
+SyntheticsCheckType.CONTAINS = SyntheticsCheckType("contains")
+SyntheticsCheckType.NOT_CONTAINS = SyntheticsCheckType("notContains")
+SyntheticsCheckType.STARTS_WITH = SyntheticsCheckType("startsWith")
+SyntheticsCheckType.NOT_STARTS_WITH = SyntheticsCheckType("notStartsWith")
+SyntheticsCheckType.GREATER = SyntheticsCheckType("greater")
+SyntheticsCheckType.LOWER = SyntheticsCheckType("lower")
+SyntheticsCheckType.GREATER_EQUALS = SyntheticsCheckType("greaterEquals")
+SyntheticsCheckType.LOWER_EQUALS = SyntheticsCheckType("lowerEquals")
+SyntheticsCheckType.MATCH_REGEX = SyntheticsCheckType("matchRegex")
+SyntheticsCheckType.BETWEEN = SyntheticsCheckType("between")
+SyntheticsCheckType.IS_EMPTY = SyntheticsCheckType("isEmpty")
+SyntheticsCheckType.NOT_IS_EMPTY = SyntheticsCheckType("notIsEmpty")

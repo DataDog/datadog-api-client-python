@@ -18,9 +18,7 @@ class IncidentIntegrationMetadataType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "INCIDENT_INTEGRATIONS": "incident_integrations",
-        },
+        "incident_integrations",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class IncidentIntegrationMetadataType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+IncidentIntegrationMetadataType.INCIDENT_INTEGRATIONS = IncidentIntegrationMetadataType("incident_integrations")

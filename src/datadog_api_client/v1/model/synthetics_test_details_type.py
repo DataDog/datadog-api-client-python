@@ -18,10 +18,8 @@ class SyntheticsTestDetailsType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "API": "api",
-            "BROWSER": "browser",
-        },
+        "api",
+        "browser",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class SyntheticsTestDetailsType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsTestDetailsType.API = SyntheticsTestDetailsType("api")
+SyntheticsTestDetailsType.BROWSER = SyntheticsTestDetailsType("browser")

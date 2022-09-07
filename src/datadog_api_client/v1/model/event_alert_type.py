@@ -20,15 +20,13 @@ class EventAlertType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ERROR": "error",
-            "WARNING": "warning",
-            "INFO": "info",
-            "SUCCESS": "success",
-            "USER_UPDATE": "user_update",
-            "RECOMMENDATION": "recommendation",
-            "SNAPSHOT": "snapshot",
-        },
+        "error",
+        "warning",
+        "info",
+        "success",
+        "user_update",
+        "recommendation",
+        "snapshot",
     }
 
     @cached_property
@@ -36,3 +34,12 @@ class EventAlertType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+EventAlertType.ERROR = EventAlertType("error")
+EventAlertType.WARNING = EventAlertType("warning")
+EventAlertType.INFO = EventAlertType("info")
+EventAlertType.SUCCESS = EventAlertType("success")
+EventAlertType.USER_UPDATE = EventAlertType("user_update")
+EventAlertType.RECOMMENDATION = EventAlertType("recommendation")
+EventAlertType.SNAPSHOT = EventAlertType("snapshot")

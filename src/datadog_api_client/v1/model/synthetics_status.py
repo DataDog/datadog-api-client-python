@@ -18,11 +18,9 @@ class SyntheticsStatus(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "PASSED": "passed",
-            "skipped": "skipped",
-            "failed": "failed",
-        },
+        "passed",
+        "skipped",
+        "failed",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class SyntheticsStatus(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsStatus.PASSED = SyntheticsStatus("passed")
+SyntheticsStatus.skipped = SyntheticsStatus("skipped")
+SyntheticsStatus.failed = SyntheticsStatus("failed")

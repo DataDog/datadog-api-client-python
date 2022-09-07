@@ -14,14 +14,14 @@ from datadog_api_client.v2.model.metric_tag_configuration_type import MetricTagC
 
 body = MetricTagConfigurationCreateRequest(
     data=MetricTagConfigurationCreateData(
-        type=MetricTagConfigurationType("manage_tags"),
+        type=MetricTagConfigurationType.MANAGE_TAGS,
         id="ExampleCreateatagconfigurationreturnsCreatedresponse",
         attributes=MetricTagConfigurationCreateAttributes(
             tags=[
                 "app",
                 "datacenter",
             ],
-            metric_type=MetricTagConfigurationMetricTypes("gauge"),
+            metric_type=MetricTagConfigurationMetricTypes.GAUGE,
         ),
     ),
 )

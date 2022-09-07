@@ -18,15 +18,13 @@ class AWSNamespace(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ELB": "elb",
-            "APPLICATION_ELB": "application_elb",
-            "SQS": "sqs",
-            "RDS": "rds",
-            "CUSTOM": "custom",
-            "NETWORK_ELB": "network_elb",
-            "LAMBDA": "lambda",
-        },
+        "elb",
+        "application_elb",
+        "sqs",
+        "rds",
+        "custom",
+        "network_elb",
+        "lambda",
     }
 
     @cached_property
@@ -34,3 +32,12 @@ class AWSNamespace(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+AWSNamespace.ELB = AWSNamespace("elb")
+AWSNamespace.APPLICATION_ELB = AWSNamespace("application_elb")
+AWSNamespace.SQS = AWSNamespace("sqs")
+AWSNamespace.RDS = AWSNamespace("rds")
+AWSNamespace.CUSTOM = AWSNamespace("custom")
+AWSNamespace.NETWORK_ELB = AWSNamespace("network_elb")
+AWSNamespace.LAMBDA = AWSNamespace("lambda")

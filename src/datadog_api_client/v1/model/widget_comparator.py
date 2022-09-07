@@ -18,12 +18,10 @@ class WidgetComparator(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "GREATER_THAN": ">",
-            "GREATER_THAN_OR_EQUAL_TO": ">=",
-            "LESS_THAN": "<",
-            "LESS_THAN_OR_EQUAL_TO": "<=",
-        },
+        ">",
+        ">=",
+        "<",
+        "<=",
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class WidgetComparator(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetComparator.GREATER_THAN = WidgetComparator(">")
+WidgetComparator.GREATER_THAN_OR_EQUAL_TO = WidgetComparator(">=")
+WidgetComparator.LESS_THAN = WidgetComparator("<")
+WidgetComparator.LESS_THAN_OR_EQUAL_TO = WidgetComparator("<=")

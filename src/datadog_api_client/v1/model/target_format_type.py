@@ -20,12 +20,10 @@ class TargetFormatType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AUTO": "auto",
-            "STRING": "string",
-            "INTEGER": "integer",
-            "DOUBLE": "double",
-        },
+        "auto",
+        "string",
+        "integer",
+        "double",
     }
 
     @cached_property
@@ -33,3 +31,9 @@ class TargetFormatType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+TargetFormatType.AUTO = TargetFormatType("auto")
+TargetFormatType.STRING = TargetFormatType("string")
+TargetFormatType.INTEGER = TargetFormatType("integer")
+TargetFormatType.DOUBLE = TargetFormatType("double")

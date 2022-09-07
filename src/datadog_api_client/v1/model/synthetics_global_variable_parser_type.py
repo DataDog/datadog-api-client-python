@@ -18,12 +18,10 @@ class SyntheticsGlobalVariableParserType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "RAW": "raw",
-            "JSON_PATH": "json_path",
-            "REGEX": "regex",
-            "X_PATH": "x_path",
-        },
+        "raw",
+        "json_path",
+        "regex",
+        "x_path",
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class SyntheticsGlobalVariableParserType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsGlobalVariableParserType.RAW = SyntheticsGlobalVariableParserType("raw")
+SyntheticsGlobalVariableParserType.JSON_PATH = SyntheticsGlobalVariableParserType("json_path")
+SyntheticsGlobalVariableParserType.REGEX = SyntheticsGlobalVariableParserType("regex")
+SyntheticsGlobalVariableParserType.X_PATH = SyntheticsGlobalVariableParserType("x_path")

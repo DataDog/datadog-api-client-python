@@ -18,9 +18,7 @@ class SyntheticsBasicAuthSigv4Type(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SIGV4": "sigv4",
-        },
+        "sigv4",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SyntheticsBasicAuthSigv4Type(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsBasicAuthSigv4Type.SIGV4 = SyntheticsBasicAuthSigv4Type("sigv4")

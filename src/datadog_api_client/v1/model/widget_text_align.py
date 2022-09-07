@@ -18,11 +18,9 @@ class WidgetTextAlign(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CENTER": "center",
-            "LEFT": "left",
-            "RIGHT": "right",
-        },
+        "center",
+        "left",
+        "right",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class WidgetTextAlign(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetTextAlign.CENTER = WidgetTextAlign("center")
+WidgetTextAlign.LEFT = WidgetTextAlign("left")
+WidgetTextAlign.RIGHT = WidgetTextAlign("right")

@@ -18,11 +18,9 @@ class WidgetLineWidth(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NORMAL": "normal",
-            "THICK": "thick",
-            "THIN": "thin",
-        },
+        "normal",
+        "thick",
+        "thin",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class WidgetLineWidth(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetLineWidth.NORMAL = WidgetLineWidth("normal")
+WidgetLineWidth.THICK = WidgetLineWidth("thick")
+WidgetLineWidth.THIN = WidgetLineWidth("thin")

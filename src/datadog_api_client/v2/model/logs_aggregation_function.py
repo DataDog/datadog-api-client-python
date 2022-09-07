@@ -18,20 +18,18 @@ class LogsAggregationFunction(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "COUNT": "count",
-            "CARDINALITY": "cardinality",
-            "PERCENTILE_75": "pc75",
-            "PERCENTILE_90": "pc90",
-            "PERCENTILE_95": "pc95",
-            "PERCENTILE_98": "pc98",
-            "PERCENTILE_99": "pc99",
-            "SUM": "sum",
-            "MIN": "min",
-            "MAX": "max",
-            "AVG": "avg",
-            "MEDIAN": "median",
-        },
+        "count",
+        "cardinality",
+        "pc75",
+        "pc90",
+        "pc95",
+        "pc98",
+        "pc99",
+        "sum",
+        "min",
+        "max",
+        "avg",
+        "median",
     }
 
     @cached_property
@@ -39,3 +37,17 @@ class LogsAggregationFunction(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsAggregationFunction.COUNT = LogsAggregationFunction("count")
+LogsAggregationFunction.CARDINALITY = LogsAggregationFunction("cardinality")
+LogsAggregationFunction.PERCENTILE_75 = LogsAggregationFunction("pc75")
+LogsAggregationFunction.PERCENTILE_90 = LogsAggregationFunction("pc90")
+LogsAggregationFunction.PERCENTILE_95 = LogsAggregationFunction("pc95")
+LogsAggregationFunction.PERCENTILE_98 = LogsAggregationFunction("pc98")
+LogsAggregationFunction.PERCENTILE_99 = LogsAggregationFunction("pc99")
+LogsAggregationFunction.SUM = LogsAggregationFunction("sum")
+LogsAggregationFunction.MIN = LogsAggregationFunction("min")
+LogsAggregationFunction.MAX = LogsAggregationFunction("max")
+LogsAggregationFunction.AVG = LogsAggregationFunction("avg")
+LogsAggregationFunction.MEDIAN = LogsAggregationFunction("median")

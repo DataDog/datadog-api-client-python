@@ -18,9 +18,7 @@ class MonitorSummaryWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MANAGE_STATUS": "manage_status",
-        },
+        "manage_status",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class MonitorSummaryWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MonitorSummaryWidgetDefinitionType.MANAGE_STATUS = MonitorSummaryWidgetDefinitionType("manage_status")

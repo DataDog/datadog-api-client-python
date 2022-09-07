@@ -18,9 +18,7 @@ class DashboardResourceType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DASHBOARD": "dashboard",
-        },
+        "dashboard",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class DashboardResourceType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+DashboardResourceType.DASHBOARD = DashboardResourceType("dashboard")

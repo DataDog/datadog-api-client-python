@@ -18,9 +18,7 @@ class DistributionPointsContentEncoding(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DEFLATE": "deflate",
-        },
+        "deflate",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class DistributionPointsContentEncoding(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+DistributionPointsContentEncoding.DEFLATE = DistributionPointsContentEncoding("deflate")

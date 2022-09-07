@@ -18,9 +18,7 @@ class ApplicationKeysType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "APPLICATION_KEYS": "application_keys",
-        },
+        "application_keys",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class ApplicationKeysType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ApplicationKeysType.APPLICATION_KEYS = ApplicationKeysType("application_keys")

@@ -18,12 +18,10 @@ class MetricIntakeType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "UNSPECIFIED": 0,
-            "COUNT": 1,
-            "RATE": 2,
-            "GAUGE": 3,
-        },
+        0,
+        1,
+        2,
+        3,
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class MetricIntakeType(ModelSimple):
         return {
             "value": (int,),
         }
+
+
+MetricIntakeType.UNSPECIFIED = MetricIntakeType(0)
+MetricIntakeType.COUNT = MetricIntakeType(1)
+MetricIntakeType.RATE = MetricIntakeType(2)
+MetricIntakeType.GAUGE = MetricIntakeType(3)

@@ -18,13 +18,11 @@ class TimeseriesWidgetLegendColumn(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "VALUE": "value",
-            "AVG": "avg",
-            "SUM": "sum",
-            "MIN": "min",
-            "MAX": "max",
-        },
+        "value",
+        "avg",
+        "sum",
+        "min",
+        "max",
     }
 
     @cached_property
@@ -32,3 +30,10 @@ class TimeseriesWidgetLegendColumn(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+TimeseriesWidgetLegendColumn.VALUE = TimeseriesWidgetLegendColumn("value")
+TimeseriesWidgetLegendColumn.AVG = TimeseriesWidgetLegendColumn("avg")
+TimeseriesWidgetLegendColumn.SUM = TimeseriesWidgetLegendColumn("sum")
+TimeseriesWidgetLegendColumn.MIN = TimeseriesWidgetLegendColumn("min")
+TimeseriesWidgetLegendColumn.MAX = TimeseriesWidgetLegendColumn("max")

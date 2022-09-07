@@ -18,20 +18,18 @@ class FormulaAndFunctionEventAggregation(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "COUNT": "count",
-            "CARDINALITY": "cardinality",
-            "MEDIAN": "median",
-            "PC75": "pc75",
-            "PC90": "pc90",
-            "PC95": "pc95",
-            "PC98": "pc98",
-            "PC99": "pc99",
-            "SUM": "sum",
-            "MIN": "min",
-            "MAX": "max",
-            "AVG": "avg",
-        },
+        "count",
+        "cardinality",
+        "median",
+        "pc75",
+        "pc90",
+        "pc95",
+        "pc98",
+        "pc99",
+        "sum",
+        "min",
+        "max",
+        "avg",
     }
 
     @cached_property
@@ -39,3 +37,17 @@ class FormulaAndFunctionEventAggregation(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+FormulaAndFunctionEventAggregation.COUNT = FormulaAndFunctionEventAggregation("count")
+FormulaAndFunctionEventAggregation.CARDINALITY = FormulaAndFunctionEventAggregation("cardinality")
+FormulaAndFunctionEventAggregation.MEDIAN = FormulaAndFunctionEventAggregation("median")
+FormulaAndFunctionEventAggregation.PC75 = FormulaAndFunctionEventAggregation("pc75")
+FormulaAndFunctionEventAggregation.PC90 = FormulaAndFunctionEventAggregation("pc90")
+FormulaAndFunctionEventAggregation.PC95 = FormulaAndFunctionEventAggregation("pc95")
+FormulaAndFunctionEventAggregation.PC98 = FormulaAndFunctionEventAggregation("pc98")
+FormulaAndFunctionEventAggregation.PC99 = FormulaAndFunctionEventAggregation("pc99")
+FormulaAndFunctionEventAggregation.SUM = FormulaAndFunctionEventAggregation("sum")
+FormulaAndFunctionEventAggregation.MIN = FormulaAndFunctionEventAggregation("min")
+FormulaAndFunctionEventAggregation.MAX = FormulaAndFunctionEventAggregation("max")
+FormulaAndFunctionEventAggregation.AVG = FormulaAndFunctionEventAggregation("avg")

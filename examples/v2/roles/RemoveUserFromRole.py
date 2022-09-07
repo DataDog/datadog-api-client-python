@@ -18,7 +18,7 @@ USER_DATA_ID = environ["USER_DATA_ID"]
 body = RelationshipToUser(
     data=RelationshipToUserData(
         id=USER_DATA_ID,
-        type=UsersType("users"),
+        type=UsersType.USERS,
     ),
 )
 

@@ -19,20 +19,18 @@ class SecurityMonitoringRuleMaxSignalDuration(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ZERO_MINUTES": 0,
-            "ONE_MINUTE": 60,
-            "FIVE_MINUTES": 300,
-            "TEN_MINUTES": 600,
-            "FIFTEEN_MINUTES": 900,
-            "THIRTY_MINUTES": 1800,
-            "ONE_HOUR": 3600,
-            "TWO_HOURS": 7200,
-            "THREE_HOURS": 10800,
-            "SIX_HOURS": 21600,
-            "TWELVE_HOURS": 43200,
-            "ONE_DAY": 86400,
-        },
+        0,
+        60,
+        300,
+        600,
+        900,
+        1800,
+        3600,
+        7200,
+        10800,
+        21600,
+        43200,
+        86400,
     }
 
     @cached_property
@@ -40,3 +38,17 @@ class SecurityMonitoringRuleMaxSignalDuration(ModelSimple):
         return {
             "value": (int,),
         }
+
+
+SecurityMonitoringRuleMaxSignalDuration.ZERO_MINUTES = SecurityMonitoringRuleMaxSignalDuration(0)
+SecurityMonitoringRuleMaxSignalDuration.ONE_MINUTE = SecurityMonitoringRuleMaxSignalDuration(60)
+SecurityMonitoringRuleMaxSignalDuration.FIVE_MINUTES = SecurityMonitoringRuleMaxSignalDuration(300)
+SecurityMonitoringRuleMaxSignalDuration.TEN_MINUTES = SecurityMonitoringRuleMaxSignalDuration(600)
+SecurityMonitoringRuleMaxSignalDuration.FIFTEEN_MINUTES = SecurityMonitoringRuleMaxSignalDuration(900)
+SecurityMonitoringRuleMaxSignalDuration.THIRTY_MINUTES = SecurityMonitoringRuleMaxSignalDuration(1800)
+SecurityMonitoringRuleMaxSignalDuration.ONE_HOUR = SecurityMonitoringRuleMaxSignalDuration(3600)
+SecurityMonitoringRuleMaxSignalDuration.TWO_HOURS = SecurityMonitoringRuleMaxSignalDuration(7200)
+SecurityMonitoringRuleMaxSignalDuration.THREE_HOURS = SecurityMonitoringRuleMaxSignalDuration(10800)
+SecurityMonitoringRuleMaxSignalDuration.SIX_HOURS = SecurityMonitoringRuleMaxSignalDuration(21600)
+SecurityMonitoringRuleMaxSignalDuration.TWELVE_HOURS = SecurityMonitoringRuleMaxSignalDuration(43200)
+SecurityMonitoringRuleMaxSignalDuration.ONE_DAY = SecurityMonitoringRuleMaxSignalDuration(86400)

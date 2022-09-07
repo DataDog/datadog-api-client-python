@@ -18,11 +18,9 @@ class ApmStatsQueryRowType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SERVICE": "service",
-            "RESOURCE": "resource",
-            "SPAN": "span",
-        },
+        "service",
+        "resource",
+        "span",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class ApmStatsQueryRowType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ApmStatsQueryRowType.SERVICE = ApmStatsQueryRowType("service")
+ApmStatsQueryRowType.RESOURCE = ApmStatsQueryRowType("resource")
+ApmStatsQueryRowType.SPAN = ApmStatsQueryRowType("span")

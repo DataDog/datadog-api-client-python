@@ -18,10 +18,8 @@ class SecurityMonitoringRuleTypeCreate(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "LOG_DETECTION": "log_detection",
-            "WORKLOAD_SECURITY": "workload_security",
-        },
+        "log_detection",
+        "workload_security",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class SecurityMonitoringRuleTypeCreate(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SecurityMonitoringRuleTypeCreate.LOG_DETECTION = SecurityMonitoringRuleTypeCreate("log_detection")
+SecurityMonitoringRuleTypeCreate.WORKLOAD_SECURITY = SecurityMonitoringRuleTypeCreate("workload_security")

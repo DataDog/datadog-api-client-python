@@ -18,11 +18,9 @@ class SecurityMonitoringSignalState(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "OPEN": "open",
-            "ARCHIVED": "archived",
-            "UNDER_REVIEW": "under_review",
-        },
+        "open",
+        "archived",
+        "under_review",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class SecurityMonitoringSignalState(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SecurityMonitoringSignalState.OPEN = SecurityMonitoringSignalState("open")
+SecurityMonitoringSignalState.ARCHIVED = SecurityMonitoringSignalState("archived")
+SecurityMonitoringSignalState.UNDER_REVIEW = SecurityMonitoringSignalState("under_review")

@@ -18,9 +18,7 @@ class SyntheticsBrowserTestType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "BROWSER": "browser",
-        },
+        "browser",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SyntheticsBrowserTestType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsBrowserTestType.BROWSER = SyntheticsBrowserTestType("browser")

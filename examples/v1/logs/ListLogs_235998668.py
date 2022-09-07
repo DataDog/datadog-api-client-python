@@ -13,7 +13,7 @@ from datadog_api_client.v1.model.logs_sort import LogsSort
 body = LogsListRequest(
     index="main",
     query="host:Test*",
-    sort=LogsSort("asc"),
+    sort=LogsSort.TIME_ASCENDING,
     time=LogsListRequestTime(
         _from=(datetime.now() + relativedelta(hours=-1)),
         timezone="Europe/Paris",

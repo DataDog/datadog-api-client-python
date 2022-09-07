@@ -18,10 +18,8 @@ class TreeMapSizeBy(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "PCT_CPU": "pct_cpu",
-            "PCT_MEM": "pct_mem",
-        },
+        "pct_cpu",
+        "pct_mem",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class TreeMapSizeBy(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+TreeMapSizeBy.PCT_CPU = TreeMapSizeBy("pct_cpu")
+TreeMapSizeBy.PCT_MEM = TreeMapSizeBy("pct_mem")

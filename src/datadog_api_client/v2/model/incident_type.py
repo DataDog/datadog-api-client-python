@@ -18,9 +18,7 @@ class IncidentType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "INCIDENTS": "incidents",
-        },
+        "incidents",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class IncidentType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+IncidentType.INCIDENTS = IncidentType("incidents")

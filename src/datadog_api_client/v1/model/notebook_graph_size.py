@@ -18,13 +18,11 @@ class NotebookGraphSize(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "EXTRA_SMALL": "xs",
-            "SMALL": "s",
-            "MEDIUM": "m",
-            "LARGE": "l",
-            "EXTRA_LARGE": "xl",
-        },
+        "xs",
+        "s",
+        "m",
+        "l",
+        "xl",
     }
 
     @cached_property
@@ -32,3 +30,10 @@ class NotebookGraphSize(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+NotebookGraphSize.EXTRA_SMALL = NotebookGraphSize("xs")
+NotebookGraphSize.SMALL = NotebookGraphSize("s")
+NotebookGraphSize.MEDIUM = NotebookGraphSize("m")
+NotebookGraphSize.LARGE = NotebookGraphSize("l")
+NotebookGraphSize.EXTRA_LARGE = NotebookGraphSize("xl")

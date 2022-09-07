@@ -18,20 +18,18 @@ class SyntheticsDeviceID(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "LAPTOP_LARGE": "laptop_large",
-            "TABLET": "tablet",
-            "MOBILE_SMALL": "mobile_small",
-            "CHROME_LAPTOP_LARGE": "chrome.laptop_large",
-            "CHROME_TABLET": "chrome.tablet",
-            "CHROME_MOBILE_SMALL": "chrome.mobile_small",
-            "FIREFOX_LAPTOP_LARGE": "firefox.laptop_large",
-            "FIREFOX_TABLET": "firefox.tablet",
-            "FIREFOX_MOBILE_SMALL": "firefox.mobile_small",
-            "EDGE_LAPTOP_LARGE": "edge.laptop_large",
-            "EDGE_TABLET": "edge.tablet",
-            "EDGE_MOBILE_SMALL": "edge.mobile_small",
-        },
+        "laptop_large",
+        "tablet",
+        "mobile_small",
+        "chrome.laptop_large",
+        "chrome.tablet",
+        "chrome.mobile_small",
+        "firefox.laptop_large",
+        "firefox.tablet",
+        "firefox.mobile_small",
+        "edge.laptop_large",
+        "edge.tablet",
+        "edge.mobile_small",
     }
 
     @cached_property
@@ -39,3 +37,17 @@ class SyntheticsDeviceID(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsDeviceID.LAPTOP_LARGE = SyntheticsDeviceID("laptop_large")
+SyntheticsDeviceID.TABLET = SyntheticsDeviceID("tablet")
+SyntheticsDeviceID.MOBILE_SMALL = SyntheticsDeviceID("mobile_small")
+SyntheticsDeviceID.CHROME_LAPTOP_LARGE = SyntheticsDeviceID("chrome.laptop_large")
+SyntheticsDeviceID.CHROME_TABLET = SyntheticsDeviceID("chrome.tablet")
+SyntheticsDeviceID.CHROME_MOBILE_SMALL = SyntheticsDeviceID("chrome.mobile_small")
+SyntheticsDeviceID.FIREFOX_LAPTOP_LARGE = SyntheticsDeviceID("firefox.laptop_large")
+SyntheticsDeviceID.FIREFOX_TABLET = SyntheticsDeviceID("firefox.tablet")
+SyntheticsDeviceID.FIREFOX_MOBILE_SMALL = SyntheticsDeviceID("firefox.mobile_small")
+SyntheticsDeviceID.EDGE_LAPTOP_LARGE = SyntheticsDeviceID("edge.laptop_large")
+SyntheticsDeviceID.EDGE_TABLET = SyntheticsDeviceID("edge.tablet")
+SyntheticsDeviceID.EDGE_MOBILE_SMALL = SyntheticsDeviceID("edge.mobile_small")

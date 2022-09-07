@@ -18,11 +18,9 @@ class WidgetViewMode(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "OVERALL": "overall",
-            "COMPONENT": "component",
-            "BOTH": "both",
-        },
+        "overall",
+        "component",
+        "both",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class WidgetViewMode(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetViewMode.OVERALL = WidgetViewMode("overall")
+WidgetViewMode.COMPONENT = WidgetViewMode("component")
+WidgetViewMode.BOTH = WidgetViewMode("both")

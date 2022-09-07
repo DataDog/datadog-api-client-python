@@ -18,10 +18,8 @@ class AuditLogsSort(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TIMESTAMP_ASCENDING": "timestamp",
-            "TIMESTAMP_DESCENDING": "-timestamp",
-        },
+        "timestamp",
+        "-timestamp",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class AuditLogsSort(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+AuditLogsSort.TIMESTAMP_ASCENDING = AuditLogsSort("timestamp")
+AuditLogsSort.TIMESTAMP_DESCENDING = AuditLogsSort("-timestamp")

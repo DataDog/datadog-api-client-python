@@ -18,9 +18,7 @@ class FunnelRequestType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "FUNNEL": "funnel",
-        },
+        "funnel",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class FunnelRequestType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+FunnelRequestType.FUNNEL = FunnelRequestType("funnel")

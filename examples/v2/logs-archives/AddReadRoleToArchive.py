@@ -11,7 +11,7 @@ from datadog_api_client.v2.model.roles_type import RolesType
 body = RelationshipToRole(
     data=RelationshipToRoleData(
         id="3653d3c6-0c75-11ea-ad28-fb5701eabc7d",
-        type=RolesType("roles"),
+        type=RolesType.ROLES,
     ),
 )
 

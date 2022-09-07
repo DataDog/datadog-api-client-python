@@ -29,15 +29,15 @@ body = Dashboard(
             definition=LogStreamWidgetDefinition(
                 title="",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
-                type=LogStreamWidgetDefinitionType("log_stream"),
+                title_align=WidgetTextAlign.LEFT,
+                type=LogStreamWidgetDefinitionType.LOG_STREAM,
                 indexes=[
                     "main",
                 ],
                 query="",
                 sort=WidgetFieldSort(
                     column="time",
-                    order=WidgetSort("desc"),
+                    order=WidgetSort.DESCENDING,
                 ),
                 columns=[
                     "host",
@@ -45,12 +45,12 @@ body = Dashboard(
                 ],
                 show_date_column=True,
                 show_message_column=True,
-                message_display=WidgetMessageDisplay("expanded-md"),
+                message_display=WidgetMessageDisplay.EXPANDED_MEDIUM,
             ),
         ),
     ],
     template_variables=[],
-    layout_type=DashboardLayoutType("free"),
+    layout_type=DashboardLayoutType.FREE,
     is_read_only=False,
     notify_list=[],
 )

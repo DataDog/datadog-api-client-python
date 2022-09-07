@@ -18,9 +18,7 @@ class APIKeysType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "API_KEYS": "api_keys",
-        },
+        "api_keys",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class APIKeysType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+APIKeysType.API_KEYS = APIKeysType("api_keys")

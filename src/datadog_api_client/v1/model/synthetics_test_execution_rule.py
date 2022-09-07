@@ -18,11 +18,9 @@ class SyntheticsTestExecutionRule(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "BLOCKING": "blocking",
-            "NON_BLOCKING": "non_blocking",
-            "SKIPPED": "skipped",
-        },
+        "blocking",
+        "non_blocking",
+        "skipped",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class SyntheticsTestExecutionRule(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsTestExecutionRule.BLOCKING = SyntheticsTestExecutionRule("blocking")
+SyntheticsTestExecutionRule.NON_BLOCKING = SyntheticsTestExecutionRule("non_blocking")
+SyntheticsTestExecutionRule.SKIPPED = SyntheticsTestExecutionRule("skipped")

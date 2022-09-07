@@ -15,7 +15,7 @@ body = EventsListRequest(
         _from="2020-09-17T11:48:36+01:00",
         to="2020-09-17T12:48:36+01:00",
     ),
-    sort=EventsSort("timestamp"),
+    sort=EventsSort.TIMESTAMP_ASCENDING,
     page=EventsRequestPage(
         limit=5,
     ),

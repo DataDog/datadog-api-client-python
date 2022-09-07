@@ -18,9 +18,7 @@ class MetricDistinctVolumeType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DISTINCT_METRIC_VOLUMES": "distinct_metric_volumes",
-        },
+        "distinct_metric_volumes",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class MetricDistinctVolumeType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MetricDistinctVolumeType.DISTINCT_METRIC_VOLUMES = MetricDistinctVolumeType("distinct_metric_volumes")

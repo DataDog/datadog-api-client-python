@@ -18,9 +18,7 @@ class DistributionPointsType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DISTRIBUTION": "distribution",
-        },
+        "distribution",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class DistributionPointsType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+DistributionPointsType.DISTRIBUTION = DistributionPointsType("distribution")

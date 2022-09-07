@@ -18,9 +18,7 @@ class QueryValueWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "QUERY_VALUE": "query_value",
-        },
+        "query_value",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class QueryValueWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+QueryValueWidgetDefinitionType.QUERY_VALUE = QueryValueWidgetDefinitionType("query_value")

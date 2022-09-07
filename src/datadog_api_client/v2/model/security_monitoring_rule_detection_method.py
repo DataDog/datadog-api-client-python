@@ -18,13 +18,11 @@ class SecurityMonitoringRuleDetectionMethod(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "THRESHOLD": "threshold",
-            "NEW_VALUE": "new_value",
-            "ANOMALY_DETECTION": "anomaly_detection",
-            "IMPOSSIBLE_TRAVEL": "impossible_travel",
-            "HARDCODED": "hardcoded",
-        },
+        "threshold",
+        "new_value",
+        "anomaly_detection",
+        "impossible_travel",
+        "hardcoded",
     }
 
     @cached_property
@@ -32,3 +30,10 @@ class SecurityMonitoringRuleDetectionMethod(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SecurityMonitoringRuleDetectionMethod.THRESHOLD = SecurityMonitoringRuleDetectionMethod("threshold")
+SecurityMonitoringRuleDetectionMethod.NEW_VALUE = SecurityMonitoringRuleDetectionMethod("new_value")
+SecurityMonitoringRuleDetectionMethod.ANOMALY_DETECTION = SecurityMonitoringRuleDetectionMethod("anomaly_detection")
+SecurityMonitoringRuleDetectionMethod.IMPOSSIBLE_TRAVEL = SecurityMonitoringRuleDetectionMethod("impossible_travel")
+SecurityMonitoringRuleDetectionMethod.HARDCODED = SecurityMonitoringRuleDetectionMethod("hardcoded")

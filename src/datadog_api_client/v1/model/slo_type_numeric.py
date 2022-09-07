@@ -20,10 +20,8 @@ class SLOTypeNumeric(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MONITOR": 0,
-            "METRIC": 1,
-        },
+        0,
+        1,
     }
 
     @cached_property
@@ -31,3 +29,7 @@ class SLOTypeNumeric(ModelSimple):
         return {
             "value": (int,),
         }
+
+
+SLOTypeNumeric.MONITOR = SLOTypeNumeric(0)
+SLOTypeNumeric.METRIC = SLOTypeNumeric(1)

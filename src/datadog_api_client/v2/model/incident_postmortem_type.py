@@ -18,9 +18,7 @@ class IncidentPostmortemType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "INCIDENT_POSTMORTEMS": "incident_postmortems",
-        },
+        "incident_postmortems",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class IncidentPostmortemType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+IncidentPostmortemType.INCIDENT_POSTMORTEMS = IncidentPostmortemType("incident_postmortems")

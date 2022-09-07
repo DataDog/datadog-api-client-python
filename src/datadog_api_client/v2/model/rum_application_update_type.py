@@ -18,9 +18,7 @@ class RUMApplicationUpdateType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "RUM_APPLICATION_UPDATE": "rum_application_update",
-        },
+        "rum_application_update",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class RUMApplicationUpdateType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+RUMApplicationUpdateType.RUM_APPLICATION_UPDATE = RUMApplicationUpdateType("rum_application_update")

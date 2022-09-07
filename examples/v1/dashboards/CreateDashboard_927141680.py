@@ -15,20 +15,20 @@ from datadog_api_client.v1.model.funnel_widget_request import FunnelWidgetReques
 from datadog_api_client.v1.model.widget import Widget
 
 body = Dashboard(
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
     title="Example-Create_a_new_dashboard_with_funnel_widget with funnel widget",
     widgets=[
         Widget(
             definition=FunnelWidgetDefinition(
-                type=FunnelWidgetDefinitionType("funnel"),
+                type=FunnelWidgetDefinitionType.FUNNEL,
                 requests=[
                     FunnelWidgetRequest(
                         query=FunnelQuery(
-                            data_source=FunnelSource("rum"),
+                            data_source=FunnelSource.RUM,
                             query_string="",
                             steps=[],
                         ),
-                        request_type=FunnelRequestType("funnel"),
+                        request_type=FunnelRequestType.FUNNEL,
                     ),
                 ],
             ),

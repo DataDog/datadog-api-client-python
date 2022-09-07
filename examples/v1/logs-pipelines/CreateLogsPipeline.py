@@ -24,7 +24,7 @@ body = LogsPipeline(
             is_enabled=False,
             samples=[],
             source="message",
-            type=LogsGrokParserType("grok-parser"),
+            type=LogsGrokParserType.GROK_PARSER,
         ),
     ],
 )

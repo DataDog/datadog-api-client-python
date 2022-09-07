@@ -18,9 +18,7 @@ class LogsGrokParserType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "GROK_PARSER": "grok-parser",
-        },
+        "grok-parser",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsGrokParserType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsGrokParserType.GROK_PARSER = LogsGrokParserType("grok-parser")

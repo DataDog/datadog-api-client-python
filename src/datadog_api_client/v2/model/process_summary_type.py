@@ -18,9 +18,7 @@ class ProcessSummaryType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "PROCESS": "process",
-        },
+        "process",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class ProcessSummaryType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ProcessSummaryType.PROCESS = ProcessSummaryType("process")

@@ -18,11 +18,9 @@ class ContentEncoding(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "IDENTITY": "identity",
-            "GZIP": "gzip",
-            "DEFLATE": "deflate",
-        },
+        "identity",
+        "gzip",
+        "deflate",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class ContentEncoding(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ContentEncoding.IDENTITY = ContentEncoding("identity")
+ContentEncoding.GZIP = ContentEncoding("gzip")
+ContentEncoding.DEFLATE = ContentEncoding("deflate")

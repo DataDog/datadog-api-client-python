@@ -18,9 +18,7 @@ class FunnelWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "FUNNEL": "funnel",
-        },
+        "funnel",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class FunnelWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+FunnelWidgetDefinitionType.FUNNEL = FunnelWidgetDefinitionType("funnel")

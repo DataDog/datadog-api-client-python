@@ -19,11 +19,9 @@ class SecurityMonitoringRuleNewValueOptionsLearningDuration(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ZERO_DAYS": 0,
-            "ONE_DAY": 1,
-            "SEVEN_DAYS": 7,
-        },
+        0,
+        1,
+        7,
     }
 
     @cached_property
@@ -31,3 +29,12 @@ class SecurityMonitoringRuleNewValueOptionsLearningDuration(ModelSimple):
         return {
             "value": (int,),
         }
+
+
+SecurityMonitoringRuleNewValueOptionsLearningDuration.ZERO_DAYS = SecurityMonitoringRuleNewValueOptionsLearningDuration(
+    0
+)
+SecurityMonitoringRuleNewValueOptionsLearningDuration.ONE_DAY = SecurityMonitoringRuleNewValueOptionsLearningDuration(1)
+SecurityMonitoringRuleNewValueOptionsLearningDuration.SEVEN_DAYS = (
+    SecurityMonitoringRuleNewValueOptionsLearningDuration(7)
+)

@@ -18,9 +18,7 @@ class ChangeWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CHANGE": "change",
-        },
+        "change",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class ChangeWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ChangeWidgetDefinitionType.CHANGE = ChangeWidgetDefinitionType("change")

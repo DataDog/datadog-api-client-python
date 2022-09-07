@@ -18,16 +18,14 @@ class FormulaAndFunctionMetricAggregation(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AVG": "avg",
-            "MIN": "min",
-            "MAX": "max",
-            "SUM": "sum",
-            "LAST": "last",
-            "AREA": "area",
-            "L2NORM": "l2norm",
-            "PERCENTILE": "percentile",
-        },
+        "avg",
+        "min",
+        "max",
+        "sum",
+        "last",
+        "area",
+        "l2norm",
+        "percentile",
     }
 
     @cached_property
@@ -35,3 +33,13 @@ class FormulaAndFunctionMetricAggregation(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+FormulaAndFunctionMetricAggregation.AVG = FormulaAndFunctionMetricAggregation("avg")
+FormulaAndFunctionMetricAggregation.MIN = FormulaAndFunctionMetricAggregation("min")
+FormulaAndFunctionMetricAggregation.MAX = FormulaAndFunctionMetricAggregation("max")
+FormulaAndFunctionMetricAggregation.SUM = FormulaAndFunctionMetricAggregation("sum")
+FormulaAndFunctionMetricAggregation.LAST = FormulaAndFunctionMetricAggregation("last")
+FormulaAndFunctionMetricAggregation.AREA = FormulaAndFunctionMetricAggregation("area")
+FormulaAndFunctionMetricAggregation.L2NORM = FormulaAndFunctionMetricAggregation("l2norm")
+FormulaAndFunctionMetricAggregation.PERCENTILE = FormulaAndFunctionMetricAggregation("percentile")

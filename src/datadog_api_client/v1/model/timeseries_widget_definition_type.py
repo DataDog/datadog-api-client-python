@@ -18,9 +18,7 @@ class TimeseriesWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TIMESERIES": "timeseries",
-        },
+        "timeseries",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class TimeseriesWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+TimeseriesWidgetDefinitionType.TIMESERIES = TimeseriesWidgetDefinitionType("timeseries")

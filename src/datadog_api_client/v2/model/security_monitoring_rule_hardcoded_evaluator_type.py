@@ -18,9 +18,7 @@ class SecurityMonitoringRuleHardcodedEvaluatorType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "LOG4SHELL": "log4shell",
-        },
+        "log4shell",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SecurityMonitoringRuleHardcodedEvaluatorType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SecurityMonitoringRuleHardcodedEvaluatorType.LOG4SHELL = SecurityMonitoringRuleHardcodedEvaluatorType("log4shell")

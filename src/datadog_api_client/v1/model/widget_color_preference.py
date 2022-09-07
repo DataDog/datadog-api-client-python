@@ -18,10 +18,8 @@ class WidgetColorPreference(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "BACKGROUND": "background",
-            "TEXT": "text",
-        },
+        "background",
+        "text",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class WidgetColorPreference(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetColorPreference.BACKGROUND = WidgetColorPreference("background")
+WidgetColorPreference.TEXT = WidgetColorPreference("text")

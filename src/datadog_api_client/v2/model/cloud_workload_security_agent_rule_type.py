@@ -18,9 +18,7 @@ class CloudWorkloadSecurityAgentRuleType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AGENT_RULE": "agent_rule",
-        },
+        "agent_rule",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class CloudWorkloadSecurityAgentRuleType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+CloudWorkloadSecurityAgentRuleType.AGENT_RULE = CloudWorkloadSecurityAgentRuleType("agent_rule")

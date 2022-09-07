@@ -39,16 +39,16 @@ body = Dashboard(
             definition=TimeseriesWidgetDefinition(
                 title="",
                 show_legend=True,
-                legend_layout=TimeseriesWidgetLegendLayout("auto"),
+                legend_layout=TimeseriesWidgetLegendLayout.AUTO,
                 legend_columns=[
-                    TimeseriesWidgetLegendColumn("avg"),
-                    TimeseriesWidgetLegendColumn("min"),
-                    TimeseriesWidgetLegendColumn("max"),
-                    TimeseriesWidgetLegendColumn("value"),
-                    TimeseriesWidgetLegendColumn("sum"),
+                    TimeseriesWidgetLegendColumn.AVG,
+                    TimeseriesWidgetLegendColumn.MIN,
+                    TimeseriesWidgetLegendColumn.MAX,
+                    TimeseriesWidgetLegendColumn.VALUE,
+                    TimeseriesWidgetLegendColumn.SUM,
                 ],
                 time=WidgetTime(),
-                type=TimeseriesWidgetDefinitionType("timeseries"),
+                type=TimeseriesWidgetDefinitionType.TIMESERIES,
                 requests=[
                     TimeseriesWidgetRequest(
                         formulas=[
@@ -58,7 +58,7 @@ body = Dashboard(
                         ],
                         queries=[
                             FormulaAndFunctionEventQueryDefinition(
-                                data_source=FormulaAndFunctionEventsDataSource("ci_tests"),
+                                data_source=FormulaAndFunctionEventsDataSource.CI_TESTS,
                                 name="query1",
                                 search=FormulaAndFunctionEventQueryDefinitionSearch(
                                     query="test_level:test",
@@ -67,25 +67,25 @@ body = Dashboard(
                                     "*",
                                 ],
                                 compute=FormulaAndFunctionEventQueryDefinitionCompute(
-                                    aggregation=FormulaAndFunctionEventAggregation("count"),
+                                    aggregation=FormulaAndFunctionEventAggregation.COUNT,
                                 ),
                                 group_by=[],
                             ),
                         ],
-                        response_format=FormulaAndFunctionResponseFormat("timeseries"),
+                        response_format=FormulaAndFunctionResponseFormat.TIMESERIES,
                         style=WidgetRequestStyle(
                             palette="dog_classic",
-                            line_type=WidgetLineType("solid"),
-                            line_width=WidgetLineWidth("normal"),
+                            line_type=WidgetLineType.SOLID,
+                            line_width=WidgetLineWidth.NORMAL,
                         ),
-                        display_type=WidgetDisplayType("line"),
+                        display_type=WidgetDisplayType.LINE,
                     ),
                 ],
             ),
         ),
     ],
-    layout_type=DashboardLayoutType("ordered"),
-    reflow_type=DashboardReflowType("auto"),
+    layout_type=DashboardLayoutType.ORDERED,
+    reflow_type=DashboardReflowType.AUTO,
 )
 
 configuration = Configuration()

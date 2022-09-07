@@ -19,12 +19,10 @@ class SLOErrorTimeframe(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SEVEN_DAYS": "7d",
-            "THIRTY_DAYS": "30d",
-            "NINETY_DAYS": "90d",
-            "ALL": "all",
-        },
+        "7d",
+        "30d",
+        "90d",
+        "all",
     }
 
     @cached_property
@@ -32,3 +30,9 @@ class SLOErrorTimeframe(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SLOErrorTimeframe.SEVEN_DAYS = SLOErrorTimeframe("7d")
+SLOErrorTimeframe.THIRTY_DAYS = SLOErrorTimeframe("30d")
+SLOErrorTimeframe.NINETY_DAYS = SLOErrorTimeframe("90d")
+SLOErrorTimeframe.ALL = SLOErrorTimeframe("all")

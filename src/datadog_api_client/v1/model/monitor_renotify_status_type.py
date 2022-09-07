@@ -18,11 +18,9 @@ class MonitorRenotifyStatusType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ALERT": "alert",
-            "WARN": "warn",
-            "NO_DATA": "no data",
-        },
+        "alert",
+        "warn",
+        "no data",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class MonitorRenotifyStatusType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MonitorRenotifyStatusType.ALERT = MonitorRenotifyStatusType("alert")
+MonitorRenotifyStatusType.WARN = MonitorRenotifyStatusType("warn")
+MonitorRenotifyStatusType.NO_DATA = MonitorRenotifyStatusType("no data")

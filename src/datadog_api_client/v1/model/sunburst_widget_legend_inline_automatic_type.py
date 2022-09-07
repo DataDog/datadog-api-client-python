@@ -18,10 +18,8 @@ class SunburstWidgetLegendInlineAutomaticType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "INLINE": "inline",
-            "AUTOMATIC": "automatic",
-        },
+        "inline",
+        "automatic",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class SunburstWidgetLegendInlineAutomaticType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SunburstWidgetLegendInlineAutomaticType.INLINE = SunburstWidgetLegendInlineAutomaticType("inline")
+SunburstWidgetLegendInlineAutomaticType.AUTOMATIC = SunburstWidgetLegendInlineAutomaticType("automatic")

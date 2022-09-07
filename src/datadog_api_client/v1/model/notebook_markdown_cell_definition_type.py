@@ -18,9 +18,7 @@ class NotebookMarkdownCellDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MARKDOWN": "markdown",
-        },
+        "markdown",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class NotebookMarkdownCellDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+NotebookMarkdownCellDefinitionType.MARKDOWN = NotebookMarkdownCellDefinitionType("markdown")

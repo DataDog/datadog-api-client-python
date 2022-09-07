@@ -18,12 +18,10 @@ class AccessRole(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "STANDARD": "st",
-            "ADMIN": "adm",
-            "READ_ONLY": "ro",
-            "ERROR": "ERROR",
-        },
+        "st",
+        "adm",
+        "ro",
+        "ERROR",
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class AccessRole(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+AccessRole.STANDARD = AccessRole("st")
+AccessRole.ADMIN = AccessRole("adm")
+AccessRole.READ_ONLY = AccessRole("ro")
+AccessRole.ERROR = AccessRole("ERROR")

@@ -18,20 +18,18 @@ class AuthNMappingsSort(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CREATED_AT_ASCENDING": "created_at",
-            "CREATED_AT_DESCENDING": "-created_at",
-            "ROLE_ID_ASCENDING": "role_id",
-            "ROLE_ID_DESCENDING": "-role_id",
-            "SAML_ASSERTION_ATTRIBUTE_ID_ASCENDING": "saml_assertion_attribute_id",
-            "SAML_ASSERTION_ATTRIBUTE_ID_DESCENDING": "-saml_assertion_attribute_id",
-            "ROLE_NAME_ASCENDING": "role.name",
-            "ROLE_NAME_DESCENDING": "-role.name",
-            "SAML_ASSERTION_ATTRIBUTE_KEY_ASCENDING": "saml_assertion_attribute.attribute_key",
-            "SAML_ASSERTION_ATTRIBUTE_KEY_DESCENDING": "-saml_assertion_attribute.attribute_key",
-            "SAML_ASSERTION_ATTRIBUTE_VALUE_ASCENDING": "saml_assertion_attribute.attribute_value",
-            "SAML_ASSERTION_ATTRIBUTE_VALUE_DESCENDING": "-saml_assertion_attribute.attribute_value",
-        },
+        "created_at",
+        "-created_at",
+        "role_id",
+        "-role_id",
+        "saml_assertion_attribute_id",
+        "-saml_assertion_attribute_id",
+        "role.name",
+        "-role.name",
+        "saml_assertion_attribute.attribute_key",
+        "-saml_assertion_attribute.attribute_key",
+        "saml_assertion_attribute.attribute_value",
+        "-saml_assertion_attribute.attribute_value",
     }
 
     @cached_property
@@ -39,3 +37,21 @@ class AuthNMappingsSort(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+AuthNMappingsSort.CREATED_AT_ASCENDING = AuthNMappingsSort("created_at")
+AuthNMappingsSort.CREATED_AT_DESCENDING = AuthNMappingsSort("-created_at")
+AuthNMappingsSort.ROLE_ID_ASCENDING = AuthNMappingsSort("role_id")
+AuthNMappingsSort.ROLE_ID_DESCENDING = AuthNMappingsSort("-role_id")
+AuthNMappingsSort.SAML_ASSERTION_ATTRIBUTE_ID_ASCENDING = AuthNMappingsSort("saml_assertion_attribute_id")
+AuthNMappingsSort.SAML_ASSERTION_ATTRIBUTE_ID_DESCENDING = AuthNMappingsSort("-saml_assertion_attribute_id")
+AuthNMappingsSort.ROLE_NAME_ASCENDING = AuthNMappingsSort("role.name")
+AuthNMappingsSort.ROLE_NAME_DESCENDING = AuthNMappingsSort("-role.name")
+AuthNMappingsSort.SAML_ASSERTION_ATTRIBUTE_KEY_ASCENDING = AuthNMappingsSort("saml_assertion_attribute.attribute_key")
+AuthNMappingsSort.SAML_ASSERTION_ATTRIBUTE_KEY_DESCENDING = AuthNMappingsSort("-saml_assertion_attribute.attribute_key")
+AuthNMappingsSort.SAML_ASSERTION_ATTRIBUTE_VALUE_ASCENDING = AuthNMappingsSort(
+    "saml_assertion_attribute.attribute_value"
+)
+AuthNMappingsSort.SAML_ASSERTION_ATTRIBUTE_VALUE_DESCENDING = AuthNMappingsSort(
+    "-saml_assertion_attribute.attribute_value"
+)

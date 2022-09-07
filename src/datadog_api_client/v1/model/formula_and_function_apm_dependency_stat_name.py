@@ -18,15 +18,13 @@ class FormulaAndFunctionApmDependencyStatName(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AVG_DURATION": "avg_duration",
-            "AVG_ROOT_DURATION": "avg_root_duration",
-            "AVG_SPANS_PER_TRACE": "avg_spans_per_trace",
-            "ERROR_RATE": "error_rate",
-            "PCT_EXEC_TIME": "pct_exec_time",
-            "PCT_OF_TRACES": "pct_of_traces",
-            "TOTAL_TRACES_COUNT": "total_traces_count",
-        },
+        "avg_duration",
+        "avg_root_duration",
+        "avg_spans_per_trace",
+        "error_rate",
+        "pct_exec_time",
+        "pct_of_traces",
+        "total_traces_count",
     }
 
     @cached_property
@@ -34,3 +32,16 @@ class FormulaAndFunctionApmDependencyStatName(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+FormulaAndFunctionApmDependencyStatName.AVG_DURATION = FormulaAndFunctionApmDependencyStatName("avg_duration")
+FormulaAndFunctionApmDependencyStatName.AVG_ROOT_DURATION = FormulaAndFunctionApmDependencyStatName("avg_root_duration")
+FormulaAndFunctionApmDependencyStatName.AVG_SPANS_PER_TRACE = FormulaAndFunctionApmDependencyStatName(
+    "avg_spans_per_trace"
+)
+FormulaAndFunctionApmDependencyStatName.ERROR_RATE = FormulaAndFunctionApmDependencyStatName("error_rate")
+FormulaAndFunctionApmDependencyStatName.PCT_EXEC_TIME = FormulaAndFunctionApmDependencyStatName("pct_exec_time")
+FormulaAndFunctionApmDependencyStatName.PCT_OF_TRACES = FormulaAndFunctionApmDependencyStatName("pct_of_traces")
+FormulaAndFunctionApmDependencyStatName.TOTAL_TRACES_COUNT = FormulaAndFunctionApmDependencyStatName(
+    "total_traces_count"
+)

@@ -18,10 +18,8 @@ class FormulaAndFunctionProcessQueryDataSource(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "PROCESS": "process",
-            "CONTAINER": "container",
-        },
+        "process",
+        "container",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class FormulaAndFunctionProcessQueryDataSource(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+FormulaAndFunctionProcessQueryDataSource.PROCESS = FormulaAndFunctionProcessQueryDataSource("process")
+FormulaAndFunctionProcessQueryDataSource.CONTAINER = FormulaAndFunctionProcessQueryDataSource("container")

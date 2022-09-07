@@ -18,11 +18,9 @@ class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "RUM": "rum",
-            "CI_PIPELINES": "ci_pipelines",
-            "CI_TESTS": "ci_tests",
-        },
+        "rum",
+        "ci_pipelines",
+        "ci_tests",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MonitorFormulaAndFunctionEventsDataSource.RUM = MonitorFormulaAndFunctionEventsDataSource("rum")
+MonitorFormulaAndFunctionEventsDataSource.CI_PIPELINES = MonitorFormulaAndFunctionEventsDataSource("ci_pipelines")
+MonitorFormulaAndFunctionEventsDataSource.CI_TESTS = MonitorFormulaAndFunctionEventsDataSource("ci_tests")

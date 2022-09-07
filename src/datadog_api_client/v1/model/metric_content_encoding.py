@@ -18,10 +18,8 @@ class MetricContentEncoding(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DEFLATE": "deflate",
-            "GZIP": "gzip",
-        },
+        "deflate",
+        "gzip",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class MetricContentEncoding(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MetricContentEncoding.DEFLATE = MetricContentEncoding("deflate")
+MetricContentEncoding.GZIP = MetricContentEncoding("gzip")

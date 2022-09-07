@@ -18,9 +18,7 @@ class MetricTagConfigurationType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MANAGE_TAGS": "manage_tags",
-        },
+        "manage_tags",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class MetricTagConfigurationType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MetricTagConfigurationType.MANAGE_TAGS = MetricTagConfigurationType("manage_tags")

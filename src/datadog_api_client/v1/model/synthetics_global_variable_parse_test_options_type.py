@@ -18,11 +18,9 @@ class SyntheticsGlobalVariableParseTestOptionsType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "HTTP_BODY": "http_body",
-            "HTTP_HEADER": "http_header",
-            "LOCAL_VARIABLE": "local_variable",
-        },
+        "http_body",
+        "http_header",
+        "local_variable",
     }
 
     @cached_property
@@ -30,3 +28,10 @@ class SyntheticsGlobalVariableParseTestOptionsType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsGlobalVariableParseTestOptionsType.HTTP_BODY = SyntheticsGlobalVariableParseTestOptionsType("http_body")
+SyntheticsGlobalVariableParseTestOptionsType.HTTP_HEADER = SyntheticsGlobalVariableParseTestOptionsType("http_header")
+SyntheticsGlobalVariableParseTestOptionsType.LOCAL_VARIABLE = SyntheticsGlobalVariableParseTestOptionsType(
+    "local_variable"
+)

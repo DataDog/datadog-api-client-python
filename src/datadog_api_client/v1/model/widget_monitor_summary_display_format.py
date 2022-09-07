@@ -18,11 +18,9 @@ class WidgetMonitorSummaryDisplayFormat(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "COUNTS": "counts",
-            "COUNTS_AND_LIST": "countsAndList",
-            "LIST": "list",
-        },
+        "counts",
+        "countsAndList",
+        "list",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class WidgetMonitorSummaryDisplayFormat(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetMonitorSummaryDisplayFormat.COUNTS = WidgetMonitorSummaryDisplayFormat("counts")
+WidgetMonitorSummaryDisplayFormat.COUNTS_AND_LIST = WidgetMonitorSummaryDisplayFormat("countsAndList")
+WidgetMonitorSummaryDisplayFormat.LIST = WidgetMonitorSummaryDisplayFormat("list")

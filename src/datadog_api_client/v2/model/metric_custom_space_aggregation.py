@@ -18,12 +18,10 @@ class MetricCustomSpaceAggregation(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AVG": "avg",
-            "MAX": "max",
-            "MIN": "min",
-            "SUM": "sum",
-        },
+        "avg",
+        "max",
+        "min",
+        "sum",
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class MetricCustomSpaceAggregation(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MetricCustomSpaceAggregation.AVG = MetricCustomSpaceAggregation("avg")
+MetricCustomSpaceAggregation.MAX = MetricCustomSpaceAggregation("max")
+MetricCustomSpaceAggregation.MIN = MetricCustomSpaceAggregation("min")
+MetricCustomSpaceAggregation.SUM = MetricCustomSpaceAggregation("sum")

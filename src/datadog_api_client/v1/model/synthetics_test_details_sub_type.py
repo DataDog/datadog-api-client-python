@@ -19,17 +19,15 @@ class SyntheticsTestDetailsSubType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "HTTP": "http",
-            "SSL": "ssl",
-            "TCP": "tcp",
-            "DNS": "dns",
-            "MULTI": "multi",
-            "ICMP": "icmp",
-            "UDP": "udp",
-            "WEBSOCKET": "websocket",
-            "GRPC": "grpc",
-        },
+        "http",
+        "ssl",
+        "tcp",
+        "dns",
+        "multi",
+        "icmp",
+        "udp",
+        "websocket",
+        "grpc",
     }
 
     @cached_property
@@ -37,3 +35,14 @@ class SyntheticsTestDetailsSubType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsTestDetailsSubType.HTTP = SyntheticsTestDetailsSubType("http")
+SyntheticsTestDetailsSubType.SSL = SyntheticsTestDetailsSubType("ssl")
+SyntheticsTestDetailsSubType.TCP = SyntheticsTestDetailsSubType("tcp")
+SyntheticsTestDetailsSubType.DNS = SyntheticsTestDetailsSubType("dns")
+SyntheticsTestDetailsSubType.MULTI = SyntheticsTestDetailsSubType("multi")
+SyntheticsTestDetailsSubType.ICMP = SyntheticsTestDetailsSubType("icmp")
+SyntheticsTestDetailsSubType.UDP = SyntheticsTestDetailsSubType("udp")
+SyntheticsTestDetailsSubType.WEBSOCKET = SyntheticsTestDetailsSubType("websocket")
+SyntheticsTestDetailsSubType.GRPC = SyntheticsTestDetailsSubType("grpc")

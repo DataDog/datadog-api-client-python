@@ -18,13 +18,11 @@ class SyntheticsPlayingTab(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MAIN_TAB": -1,
-            "NEW_TAB": 0,
-            "TAB_1": 1,
-            "TAB_2": 2,
-            "TAB_3": 3,
-        },
+        -1,
+        0,
+        1,
+        2,
+        3,
     }
 
     @cached_property
@@ -32,3 +30,10 @@ class SyntheticsPlayingTab(ModelSimple):
         return {
             "value": (int,),
         }
+
+
+SyntheticsPlayingTab.MAIN_TAB = SyntheticsPlayingTab(-1)
+SyntheticsPlayingTab.NEW_TAB = SyntheticsPlayingTab(0)
+SyntheticsPlayingTab.TAB_1 = SyntheticsPlayingTab(1)
+SyntheticsPlayingTab.TAB_2 = SyntheticsPlayingTab(2)
+SyntheticsPlayingTab.TAB_3 = SyntheticsPlayingTab(3)

@@ -18,13 +18,11 @@ class MetricCustomTimeAggregation(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AVG": "avg",
-            "COUNT": "count",
-            "MAX": "max",
-            "MIN": "min",
-            "SUM": "sum",
-        },
+        "avg",
+        "count",
+        "max",
+        "min",
+        "sum",
     }
 
     @cached_property
@@ -32,3 +30,10 @@ class MetricCustomTimeAggregation(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MetricCustomTimeAggregation.AVG = MetricCustomTimeAggregation("avg")
+MetricCustomTimeAggregation.COUNT = MetricCustomTimeAggregation("count")
+MetricCustomTimeAggregation.MAX = MetricCustomTimeAggregation("max")
+MetricCustomTimeAggregation.MIN = MetricCustomTimeAggregation("min")
+MetricCustomTimeAggregation.SUM = MetricCustomTimeAggregation("sum")

@@ -18,9 +18,7 @@ class LogsUserAgentParserType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "USER_AGENT_PARSER": "user-agent-parser",
-        },
+        "user-agent-parser",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsUserAgentParserType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsUserAgentParserType.USER_AGENT_PARSER = LogsUserAgentParserType("user-agent-parser")

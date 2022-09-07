@@ -18,14 +18,12 @@ class WidgetAggregator(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AVERAGE": "avg",
-            "LAST": "last",
-            "MAXIMUM": "max",
-            "MINIMUM": "min",
-            "SUM": "sum",
-            "PERCENTILE": "percentile",
-        },
+        "avg",
+        "last",
+        "max",
+        "min",
+        "sum",
+        "percentile",
     }
 
     @cached_property
@@ -33,3 +31,11 @@ class WidgetAggregator(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetAggregator.AVERAGE = WidgetAggregator("avg")
+WidgetAggregator.LAST = WidgetAggregator("last")
+WidgetAggregator.MAXIMUM = WidgetAggregator("max")
+WidgetAggregator.MINIMUM = WidgetAggregator("min")
+WidgetAggregator.SUM = WidgetAggregator("sum")
+WidgetAggregator.PERCENTILE = WidgetAggregator("percentile")

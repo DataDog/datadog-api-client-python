@@ -18,12 +18,10 @@ class LogsArchiveState(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "UNKNOWN": "UNKNOWN",
-            "WORKING": "WORKING",
-            "FAILING": "FAILING",
-            "WORKING_AUTH_LEGACY": "WORKING_AUTH_LEGACY",
-        },
+        "UNKNOWN",
+        "WORKING",
+        "FAILING",
+        "WORKING_AUTH_LEGACY",
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class LogsArchiveState(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsArchiveState.UNKNOWN = LogsArchiveState("UNKNOWN")
+LogsArchiveState.WORKING = LogsArchiveState("WORKING")
+LogsArchiveState.FAILING = LogsArchiveState("FAILING")
+LogsArchiveState.WORKING_AUTH_LEGACY = LogsArchiveState("WORKING_AUTH_LEGACY")

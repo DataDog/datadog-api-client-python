@@ -18,11 +18,9 @@ class WidgetVerticalAlign(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CENTER": "center",
-            "TOP": "top",
-            "BOTTOM": "bottom",
-        },
+        "center",
+        "top",
+        "bottom",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class WidgetVerticalAlign(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetVerticalAlign.CENTER = WidgetVerticalAlign("center")
+WidgetVerticalAlign.TOP = WidgetVerticalAlign("top")
+WidgetVerticalAlign.BOTTOM = WidgetVerticalAlign("bottom")

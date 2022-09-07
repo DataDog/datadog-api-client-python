@@ -13,7 +13,7 @@ with ApiClient(configuration) as api_client:
     api_instance = UsageMeteringApi(api_client)
     response = api_instance.get_hourly_usage_attribution(
         start_hr=(datetime.now() + relativedelta(days=-3)),
-        usage_type=HourlyUsageAttributionUsageType("infra_host_usage"),
+        usage_type=HourlyUsageAttributionUsageType.INFRA_HOST_USAGE,
     )
 
     print(response)

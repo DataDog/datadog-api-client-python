@@ -18,10 +18,8 @@ class IncidentFieldAttributesSingleValueType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DROPDOWN": "dropdown",
-            "TEXTBOX": "textbox",
-        },
+        "dropdown",
+        "textbox",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class IncidentFieldAttributesSingleValueType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+IncidentFieldAttributesSingleValueType.DROPDOWN = IncidentFieldAttributesSingleValueType("dropdown")
+IncidentFieldAttributesSingleValueType.TEXTBOX = IncidentFieldAttributesSingleValueType("textbox")

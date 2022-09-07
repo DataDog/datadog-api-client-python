@@ -18,9 +18,7 @@ class UsageReportsType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "REPORTS": "reports",
-        },
+        "reports",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class UsageReportsType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+UsageReportsType.REPORTS = UsageReportsType("reports")

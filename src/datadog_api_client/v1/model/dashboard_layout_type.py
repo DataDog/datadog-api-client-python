@@ -18,10 +18,8 @@ class DashboardLayoutType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ORDERED": "ordered",
-            "FREE": "free",
-        },
+        "ordered",
+        "free",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class DashboardLayoutType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+DashboardLayoutType.ORDERED = DashboardLayoutType("ordered")
+DashboardLayoutType.FREE = DashboardLayoutType("free")

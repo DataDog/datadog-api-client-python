@@ -18,9 +18,7 @@ class EventType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "EVENT": "event",
-        },
+        "event",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class EventType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+EventType.EVENT = EventType("event")

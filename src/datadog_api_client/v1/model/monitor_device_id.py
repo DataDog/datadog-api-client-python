@@ -18,17 +18,15 @@ class MonitorDeviceID(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "LAPTOP_LARGE": "laptop_large",
-            "TABLET": "tablet",
-            "MOBILE_SMALL": "mobile_small",
-            "CHROME_LAPTOP_LARGE": "chrome.laptop_large",
-            "CHROME_TABLET": "chrome.tablet",
-            "CHROME_MOBILE_SMALL": "chrome.mobile_small",
-            "FIREFOX_LAPTOP_LARGE": "firefox.laptop_large",
-            "FIREFOX_TABLET": "firefox.tablet",
-            "FIREFOX_MOBILE_SMALL": "firefox.mobile_small",
-        },
+        "laptop_large",
+        "tablet",
+        "mobile_small",
+        "chrome.laptop_large",
+        "chrome.tablet",
+        "chrome.mobile_small",
+        "firefox.laptop_large",
+        "firefox.tablet",
+        "firefox.mobile_small",
     }
 
     @cached_property
@@ -36,3 +34,14 @@ class MonitorDeviceID(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MonitorDeviceID.LAPTOP_LARGE = MonitorDeviceID("laptop_large")
+MonitorDeviceID.TABLET = MonitorDeviceID("tablet")
+MonitorDeviceID.MOBILE_SMALL = MonitorDeviceID("mobile_small")
+MonitorDeviceID.CHROME_LAPTOP_LARGE = MonitorDeviceID("chrome.laptop_large")
+MonitorDeviceID.CHROME_TABLET = MonitorDeviceID("chrome.tablet")
+MonitorDeviceID.CHROME_MOBILE_SMALL = MonitorDeviceID("chrome.mobile_small")
+MonitorDeviceID.FIREFOX_LAPTOP_LARGE = MonitorDeviceID("firefox.laptop_large")
+MonitorDeviceID.FIREFOX_TABLET = MonitorDeviceID("firefox.tablet")
+MonitorDeviceID.FIREFOX_MOBILE_SMALL = MonitorDeviceID("firefox.mobile_small")

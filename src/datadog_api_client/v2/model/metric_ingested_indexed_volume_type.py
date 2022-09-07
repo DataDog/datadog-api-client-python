@@ -18,9 +18,7 @@ class MetricIngestedIndexedVolumeType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "METRIC_VOLUMES": "metric_volumes",
-        },
+        "metric_volumes",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class MetricIngestedIndexedVolumeType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MetricIngestedIndexedVolumeType.METRIC_VOLUMES = MetricIngestedIndexedVolumeType("metric_volumes")

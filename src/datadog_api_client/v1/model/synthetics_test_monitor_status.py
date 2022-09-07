@@ -21,11 +21,9 @@ class SyntheticsTestMonitorStatus(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "UNTRIGGERED": 0,
-            "TRIGGERED": 1,
-            "NO_DATA": 2,
-        },
+        0,
+        1,
+        2,
     }
 
     @cached_property
@@ -33,3 +31,8 @@ class SyntheticsTestMonitorStatus(ModelSimple):
         return {
             "value": (int,),
         }
+
+
+SyntheticsTestMonitorStatus.UNTRIGGERED = SyntheticsTestMonitorStatus(0)
+SyntheticsTestMonitorStatus.TRIGGERED = SyntheticsTestMonitorStatus(1)
+SyntheticsTestMonitorStatus.NO_DATA = SyntheticsTestMonitorStatus(2)

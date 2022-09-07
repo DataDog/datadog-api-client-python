@@ -20,10 +20,8 @@ class DashboardReflowType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AUTO": "auto",
-            "FIXED": "fixed",
-        },
+        "auto",
+        "fixed",
     }
 
     @cached_property
@@ -31,3 +29,7 @@ class DashboardReflowType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+DashboardReflowType.AUTO = DashboardReflowType("auto")
+DashboardReflowType.FIXED = DashboardReflowType("fixed")

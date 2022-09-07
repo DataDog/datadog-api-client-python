@@ -18,11 +18,9 @@ class WidgetSizeFormat(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SMALL": "small",
-            "MEDIUM": "medium",
-            "LARGE": "large",
-        },
+        "small",
+        "medium",
+        "large",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class WidgetSizeFormat(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetSizeFormat.SMALL = WidgetSizeFormat("small")
+WidgetSizeFormat.MEDIUM = WidgetSizeFormat("medium")
+WidgetSizeFormat.LARGE = WidgetSizeFormat("large")

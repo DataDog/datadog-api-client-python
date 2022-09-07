@@ -18,10 +18,8 @@ class SecurityMonitoringSignalsSort(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TIMESTAMP_ASCENDING": "timestamp",
-            "TIMESTAMP_DESCENDING": "-timestamp",
-        },
+        "timestamp",
+        "-timestamp",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class SecurityMonitoringSignalsSort(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SecurityMonitoringSignalsSort.TIMESTAMP_ASCENDING = SecurityMonitoringSignalsSort("timestamp")
+SecurityMonitoringSignalsSort.TIMESTAMP_DESCENDING = SecurityMonitoringSignalsSort("-timestamp")

@@ -18,14 +18,12 @@ class SecurityMonitoringRuleQueryAggregation(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "COUNT": "count",
-            "CARDINALITY": "cardinality",
-            "SUM": "sum",
-            "MAX": "max",
-            "NEW_VALUE": "new_value",
-            "GEO_DATA": "geo_data",
-        },
+        "count",
+        "cardinality",
+        "sum",
+        "max",
+        "new_value",
+        "geo_data",
     }
 
     @cached_property
@@ -33,3 +31,11 @@ class SecurityMonitoringRuleQueryAggregation(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SecurityMonitoringRuleQueryAggregation.COUNT = SecurityMonitoringRuleQueryAggregation("count")
+SecurityMonitoringRuleQueryAggregation.CARDINALITY = SecurityMonitoringRuleQueryAggregation("cardinality")
+SecurityMonitoringRuleQueryAggregation.SUM = SecurityMonitoringRuleQueryAggregation("sum")
+SecurityMonitoringRuleQueryAggregation.MAX = SecurityMonitoringRuleQueryAggregation("max")
+SecurityMonitoringRuleQueryAggregation.NEW_VALUE = SecurityMonitoringRuleQueryAggregation("new_value")
+SecurityMonitoringRuleQueryAggregation.GEO_DATA = SecurityMonitoringRuleQueryAggregation("geo_data")

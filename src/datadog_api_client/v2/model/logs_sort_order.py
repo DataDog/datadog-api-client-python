@@ -18,10 +18,8 @@ class LogsSortOrder(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ASCENDING": "asc",
-            "DESCENDING": "desc",
-        },
+        "asc",
+        "desc",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class LogsSortOrder(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsSortOrder.ASCENDING = LogsSortOrder("asc")
+LogsSortOrder.DESCENDING = LogsSortOrder("desc")

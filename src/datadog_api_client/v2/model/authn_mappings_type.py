@@ -18,9 +18,7 @@ class AuthNMappingsType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AUTHN_MAPPINGS": "authn_mappings",
-        },
+        "authn_mappings",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class AuthNMappingsType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+AuthNMappingsType.AUTHN_MAPPINGS = AuthNMappingsType("authn_mappings")

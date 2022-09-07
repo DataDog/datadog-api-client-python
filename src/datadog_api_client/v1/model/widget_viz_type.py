@@ -18,10 +18,8 @@ class WidgetVizType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TIMESERIES": "timeseries",
-            "TOPLIST": "toplist",
-        },
+        "timeseries",
+        "toplist",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class WidgetVizType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetVizType.TIMESERIES = WidgetVizType("timeseries")
+WidgetVizType.TOPLIST = WidgetVizType("toplist")

@@ -18,9 +18,7 @@ class HostMapWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "HOSTMAP": "hostmap",
-        },
+        "hostmap",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class HostMapWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+HostMapWidgetDefinitionType.HOSTMAP = HostMapWidgetDefinitionType("hostmap")

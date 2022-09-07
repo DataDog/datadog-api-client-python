@@ -18,9 +18,7 @@ class OrganizationsType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ORGS": "orgs",
-        },
+        "orgs",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class OrganizationsType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+OrganizationsType.ORGS = OrganizationsType("orgs")

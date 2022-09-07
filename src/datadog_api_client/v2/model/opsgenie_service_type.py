@@ -18,9 +18,7 @@ class OpsgenieServiceType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "OPSGENIE_SERVICE": "opsgenie-service",
-        },
+        "opsgenie-service",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class OpsgenieServiceType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+OpsgenieServiceType.OPSGENIE_SERVICE = OpsgenieServiceType("opsgenie-service")

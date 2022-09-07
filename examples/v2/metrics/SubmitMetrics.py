@@ -15,7 +15,7 @@ body = MetricPayload(
     series=[
         MetricSeries(
             metric="system.load.1",
-            type=MetricIntakeType(0),
+            type=MetricIntakeType.UNSPECIFIED,
             points=[
                 MetricPoint(
                     timestamp=int(datetime.now().timestamp()),

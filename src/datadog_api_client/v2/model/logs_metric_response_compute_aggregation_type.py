@@ -18,10 +18,8 @@ class LogsMetricResponseComputeAggregationType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "COUNT": "count",
-            "DISTRIBUTION": "distribution",
-        },
+        "count",
+        "distribution",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class LogsMetricResponseComputeAggregationType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsMetricResponseComputeAggregationType.COUNT = LogsMetricResponseComputeAggregationType("count")
+LogsMetricResponseComputeAggregationType.DISTRIBUTION = LogsMetricResponseComputeAggregationType("distribution")

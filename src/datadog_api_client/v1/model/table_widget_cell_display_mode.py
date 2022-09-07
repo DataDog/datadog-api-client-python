@@ -18,10 +18,8 @@ class TableWidgetCellDisplayMode(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NUMBER": "number",
-            "BAR": "bar",
-        },
+        "number",
+        "bar",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class TableWidgetCellDisplayMode(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+TableWidgetCellDisplayMode.NUMBER = TableWidgetCellDisplayMode("number")
+TableWidgetCellDisplayMode.BAR = TableWidgetCellDisplayMode("bar")

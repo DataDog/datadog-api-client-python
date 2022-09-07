@@ -24,7 +24,7 @@ PERMISSION_ID = environ["PERMISSION_ID"]
 body = RoleUpdateRequest(
     data=RoleUpdateData(
         id=ROLE_DATA_ID,
-        type=RolesType("roles"),
+        type=RolesType.ROLES,
         attributes=RoleUpdateAttributes(
             name="developers-updated",
         ),
@@ -33,7 +33,7 @@ body = RoleUpdateRequest(
                 data=[
                     RelationshipToPermissionData(
                         id=PERMISSION_ID,
-                        type=PermissionsType("permissions"),
+                        type=PermissionsType.PERMISSIONS,
                     ),
                 ],
             ),

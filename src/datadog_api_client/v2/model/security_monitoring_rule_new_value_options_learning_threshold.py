@@ -18,10 +18,8 @@ class SecurityMonitoringRuleNewValueOptionsLearningThreshold(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ZERO_OCCURRENCES": 0,
-            "ONE_OCCURRENCE": 1,
-        },
+        0,
+        1,
     }
 
     @cached_property
@@ -29,3 +27,11 @@ class SecurityMonitoringRuleNewValueOptionsLearningThreshold(ModelSimple):
         return {
             "value": (int,),
         }
+
+
+SecurityMonitoringRuleNewValueOptionsLearningThreshold.ZERO_OCCURRENCES = (
+    SecurityMonitoringRuleNewValueOptionsLearningThreshold(0)
+)
+SecurityMonitoringRuleNewValueOptionsLearningThreshold.ONE_OCCURRENCE = (
+    SecurityMonitoringRuleNewValueOptionsLearningThreshold(1)
+)

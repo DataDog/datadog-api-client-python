@@ -18,9 +18,7 @@ class ToplistWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TOPLIST": "toplist",
-        },
+        "toplist",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class ToplistWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ToplistWidgetDefinitionType.TOPLIST = ToplistWidgetDefinitionType("toplist")

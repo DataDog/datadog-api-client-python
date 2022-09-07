@@ -18,9 +18,7 @@ class SecurityMonitoringSignalType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SIGNAL": "signal",
-        },
+        "signal",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SecurityMonitoringSignalType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SecurityMonitoringSignalType.SIGNAL = SecurityMonitoringSignalType("signal")

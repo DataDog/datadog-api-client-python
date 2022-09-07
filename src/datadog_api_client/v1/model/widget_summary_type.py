@@ -18,11 +18,9 @@ class WidgetSummaryType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MONITORS": "monitors",
-            "GROUPS": "groups",
-            "COMBINED": "combined",
-        },
+        "monitors",
+        "groups",
+        "combined",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class WidgetSummaryType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetSummaryType.MONITORS = WidgetSummaryType("monitors")
+WidgetSummaryType.GROUPS = WidgetSummaryType("groups")
+WidgetSummaryType.COMBINED = WidgetSummaryType("combined")

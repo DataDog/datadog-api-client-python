@@ -18,12 +18,10 @@ class WidgetOrderBy(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CHANGE": "change",
-            "NAME": "name",
-            "PRESENT": "present",
-            "PAST": "past",
-        },
+        "change",
+        "name",
+        "present",
+        "past",
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class WidgetOrderBy(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetOrderBy.CHANGE = WidgetOrderBy("change")
+WidgetOrderBy.NAME = WidgetOrderBy("name")
+WidgetOrderBy.PRESENT = WidgetOrderBy("present")
+WidgetOrderBy.PAST = WidgetOrderBy("past")

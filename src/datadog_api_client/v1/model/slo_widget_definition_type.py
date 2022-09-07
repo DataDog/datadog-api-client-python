@@ -18,9 +18,7 @@ class SLOWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SLO": "slo",
-        },
+        "slo",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SLOWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SLOWidgetDefinitionType.SLO = SLOWidgetDefinitionType("slo")

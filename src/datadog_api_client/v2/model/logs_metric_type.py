@@ -18,9 +18,7 @@ class LogsMetricType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "LOGS_METRICS": "logs_metrics",
-        },
+        "logs_metrics",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsMetricType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsMetricType.LOGS_METRICS = LogsMetricType("logs_metrics")

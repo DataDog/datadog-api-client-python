@@ -11,7 +11,7 @@ from datadog_api_client.v1.model.monitor_type import MonitorType
 
 body = Monitor(
     name="Example-Create_an_Error_Tracking_monitor_returns_OK_response",
-    type=MonitorType("error-tracking alert"),
+    type=MonitorType.ERROR_TRACKING_ALERT,
     query='error-tracking-rum("service:foo AND @error.source:source").rollup("count").by("@issue.id").last("1h") >= 1',
     message="some message",
     tags=[

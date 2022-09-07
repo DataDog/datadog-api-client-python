@@ -18,10 +18,8 @@ class UsageSortDirection(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DESC": "desc",
-            "ASC": "asc",
-        },
+        "desc",
+        "asc",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class UsageSortDirection(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+UsageSortDirection.DESC = UsageSortDirection("desc")
+UsageSortDirection.ASC = UsageSortDirection("asc")

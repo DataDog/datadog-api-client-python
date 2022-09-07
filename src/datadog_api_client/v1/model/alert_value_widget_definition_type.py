@@ -18,9 +18,7 @@ class AlertValueWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ALERT_VALUE": "alert_value",
-        },
+        "alert_value",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class AlertValueWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+AlertValueWidgetDefinitionType.ALERT_VALUE = AlertValueWidgetDefinitionType("alert_value")

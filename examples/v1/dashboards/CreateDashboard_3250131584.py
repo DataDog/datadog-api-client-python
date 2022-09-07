@@ -26,15 +26,15 @@ body = Dashboard(
             definition=EventTimelineWidgetDefinition(
                 title="",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
-                type=EventTimelineWidgetDefinitionType("event_timeline"),
+                title_align=WidgetTextAlign.LEFT,
+                type=EventTimelineWidgetDefinitionType.EVENT_TIMELINE,
                 query="status:error priority:all",
                 tags_execution="and",
             ),
         ),
     ],
     template_variables=[],
-    layout_type=DashboardLayoutType("free"),
+    layout_type=DashboardLayoutType.FREE,
     is_read_only=False,
     notify_list=[],
 )

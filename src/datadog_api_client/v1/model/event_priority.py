@@ -18,10 +18,8 @@ class EventPriority(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NORMAL": "normal",
-            "LOW": "low",
-        },
+        "normal",
+        "low",
     }
 
     _nullable = True
@@ -31,3 +29,7 @@ class EventPriority(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+EventPriority.NORMAL = EventPriority("normal")
+EventPriority.LOW = EventPriority("low")

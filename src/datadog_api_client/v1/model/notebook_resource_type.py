@@ -18,9 +18,7 @@ class NotebookResourceType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NOTEBOOKS": "notebooks",
-        },
+        "notebooks",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class NotebookResourceType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+NotebookResourceType.NOTEBOOKS = NotebookResourceType("notebooks")

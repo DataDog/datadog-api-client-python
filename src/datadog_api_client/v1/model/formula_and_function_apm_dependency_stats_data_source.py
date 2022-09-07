@@ -18,9 +18,7 @@ class FormulaAndFunctionApmDependencyStatsDataSource(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "APM_DEPENDENCY_STATS": "apm_dependency_stats",
-        },
+        "apm_dependency_stats",
     }
 
     @cached_property
@@ -28,3 +26,8 @@ class FormulaAndFunctionApmDependencyStatsDataSource(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+FormulaAndFunctionApmDependencyStatsDataSource.APM_DEPENDENCY_STATS = FormulaAndFunctionApmDependencyStatsDataSource(
+    "apm_dependency_stats"
+)

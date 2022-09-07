@@ -18,9 +18,7 @@ class EventTimelineWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "EVENT_TIMELINE": "event_timeline",
-        },
+        "event_timeline",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class EventTimelineWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+EventTimelineWidgetDefinitionType.EVENT_TIMELINE = EventTimelineWidgetDefinitionType("event_timeline")

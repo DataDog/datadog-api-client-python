@@ -18,10 +18,8 @@ class RUMResponseStatus(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DONE": "done",
-            "TIMEOUT": "timeout",
-        },
+        "done",
+        "timeout",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class RUMResponseStatus(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+RUMResponseStatus.DONE = RUMResponseStatus("done")
+RUMResponseStatus.TIMEOUT = RUMResponseStatus("timeout")

@@ -30,19 +30,19 @@ body = Dashboard(
             definition=TableWidgetDefinition(
                 title="",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
-                type=TableWidgetDefinitionType("query_table"),
+                title_align=WidgetTextAlign.LEFT,
+                type=TableWidgetDefinitionType.QUERY_TABLE,
                 requests=[
                     TableWidgetRequest(
-                        response_format=FormulaAndFunctionResponseFormat("scalar"),
+                        response_format=FormulaAndFunctionResponseFormat.SCALAR,
                         queries=[
                             FormulaAndFunctionApmDependencyStatsQueryDefinition(
                                 primary_tag_value="edge-eu1.prod.dog",
-                                stat=FormulaAndFunctionApmDependencyStatName("avg_duration"),
+                                stat=FormulaAndFunctionApmDependencyStatName.AVG_DURATION,
                                 resource_name="DELETE FROM monitor_history.monitor_state_change_history WHERE org_id = ? AND monitor_id IN ? AND group = ?",
                                 name="query1",
                                 service="cassandra",
-                                data_source=FormulaAndFunctionApmDependencyStatsDataSource("apm_dependency_stats"),
+                                data_source=FormulaAndFunctionApmDependencyStatsDataSource.APM_DEPENDENCY_STATS,
                                 env="ci",
                                 primary_tag_name="datacenter",
                                 operation_name="cassandra.query",
@@ -59,7 +59,7 @@ body = Dashboard(
             ),
         ),
     ],
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
 )
 
 configuration = Configuration()

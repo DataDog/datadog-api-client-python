@@ -18,9 +18,7 @@ class MetricType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "METRICS": "metrics",
-        },
+        "metrics",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class MetricType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MetricType.METRICS = MetricType("metrics")

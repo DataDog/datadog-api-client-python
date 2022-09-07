@@ -23,7 +23,7 @@ body = RUMSearchEventsRequest(
     page=RUMQueryPageOptions(
         limit=25,
     ),
-    sort=RUMSort("timestamp"),
+    sort=RUMSort.TIMESTAMP_ASCENDING,
 )
 
 configuration = Configuration()

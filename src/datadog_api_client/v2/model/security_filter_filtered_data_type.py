@@ -18,9 +18,7 @@ class SecurityFilterFilteredDataType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "LOGS": "logs",
-        },
+        "logs",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SecurityFilterFilteredDataType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SecurityFilterFilteredDataType.LOGS = SecurityFilterFilteredDataType("logs")

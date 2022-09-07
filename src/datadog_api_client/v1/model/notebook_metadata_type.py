@@ -18,13 +18,11 @@ class NotebookMetadataType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "POSTMORTEM": "postmortem",
-            "RUNBOOK": "runbook",
-            "INVESTIGATION": "investigation",
-            "DOCUMENTATION": "documentation",
-            "REPORT": "report",
-        },
+        "postmortem",
+        "runbook",
+        "investigation",
+        "documentation",
+        "report",
     }
 
     _nullable = True
@@ -34,3 +32,10 @@ class NotebookMetadataType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+NotebookMetadataType.POSTMORTEM = NotebookMetadataType("postmortem")
+NotebookMetadataType.RUNBOOK = NotebookMetadataType("runbook")
+NotebookMetadataType.INVESTIGATION = NotebookMetadataType("investigation")
+NotebookMetadataType.DOCUMENTATION = NotebookMetadataType("documentation")
+NotebookMetadataType.REPORT = NotebookMetadataType("report")

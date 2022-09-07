@@ -23,7 +23,7 @@ body = AuditLogsSearchEventsRequest(
     page=AuditLogsQueryPageOptions(
         limit=25,
     ),
-    sort=AuditLogsSort("timestamp"),
+    sort=AuditLogsSort.TIMESTAMP_ASCENDING,
 )
 
 configuration = Configuration()

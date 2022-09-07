@@ -18,9 +18,7 @@ class ServiceMapWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SERVICEMAP": "servicemap",
-        },
+        "servicemap",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class ServiceMapWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ServiceMapWidgetDefinitionType.SERVICEMAP = ServiceMapWidgetDefinitionType("servicemap")

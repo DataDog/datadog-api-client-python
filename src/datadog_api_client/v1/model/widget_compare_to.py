@@ -18,12 +18,10 @@ class WidgetCompareTo(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "HOUR_BEFORE": "hour_before",
-            "DAY_BEFORE": "day_before",
-            "WEEK_BEFORE": "week_before",
-            "MONTH_BEFORE": "month_before",
-        },
+        "hour_before",
+        "day_before",
+        "week_before",
+        "month_before",
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class WidgetCompareTo(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetCompareTo.HOUR_BEFORE = WidgetCompareTo("hour_before")
+WidgetCompareTo.DAY_BEFORE = WidgetCompareTo("day_before")
+WidgetCompareTo.WEEK_BEFORE = WidgetCompareTo("week_before")
+WidgetCompareTo.MONTH_BEFORE = WidgetCompareTo("month_before")

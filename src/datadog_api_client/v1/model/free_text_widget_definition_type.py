@@ -18,9 +18,7 @@ class FreeTextWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "FREE_TEXT": "free_text",
-        },
+        "free_text",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class FreeTextWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+FreeTextWidgetDefinitionType.FREE_TEXT = FreeTextWidgetDefinitionType("free_text")

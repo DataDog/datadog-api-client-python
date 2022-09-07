@@ -18,11 +18,9 @@ class WidgetDisplayType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AREA": "area",
-            "BARS": "bars",
-            "LINE": "line",
-        },
+        "area",
+        "bars",
+        "line",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class WidgetDisplayType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetDisplayType.AREA = WidgetDisplayType("area")
+WidgetDisplayType.BARS = WidgetDisplayType("bars")
+WidgetDisplayType.LINE = WidgetDisplayType("line")

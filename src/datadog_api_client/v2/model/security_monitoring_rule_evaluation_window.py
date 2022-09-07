@@ -19,16 +19,14 @@ class SecurityMonitoringRuleEvaluationWindow(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ZERO_MINUTES": 0,
-            "ONE_MINUTE": 60,
-            "FIVE_MINUTES": 300,
-            "TEN_MINUTES": 600,
-            "FIFTEEN_MINUTES": 900,
-            "THIRTY_MINUTES": 1800,
-            "ONE_HOUR": 3600,
-            "TWO_HOURS": 7200,
-        },
+        0,
+        60,
+        300,
+        600,
+        900,
+        1800,
+        3600,
+        7200,
     }
 
     @cached_property
@@ -36,3 +34,13 @@ class SecurityMonitoringRuleEvaluationWindow(ModelSimple):
         return {
             "value": (int,),
         }
+
+
+SecurityMonitoringRuleEvaluationWindow.ZERO_MINUTES = SecurityMonitoringRuleEvaluationWindow(0)
+SecurityMonitoringRuleEvaluationWindow.ONE_MINUTE = SecurityMonitoringRuleEvaluationWindow(60)
+SecurityMonitoringRuleEvaluationWindow.FIVE_MINUTES = SecurityMonitoringRuleEvaluationWindow(300)
+SecurityMonitoringRuleEvaluationWindow.TEN_MINUTES = SecurityMonitoringRuleEvaluationWindow(600)
+SecurityMonitoringRuleEvaluationWindow.FIFTEEN_MINUTES = SecurityMonitoringRuleEvaluationWindow(900)
+SecurityMonitoringRuleEvaluationWindow.THIRTY_MINUTES = SecurityMonitoringRuleEvaluationWindow(1800)
+SecurityMonitoringRuleEvaluationWindow.ONE_HOUR = SecurityMonitoringRuleEvaluationWindow(3600)
+SecurityMonitoringRuleEvaluationWindow.TWO_HOURS = SecurityMonitoringRuleEvaluationWindow(7200)

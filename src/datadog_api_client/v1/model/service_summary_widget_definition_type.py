@@ -18,9 +18,7 @@ class ServiceSummaryWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TRACE_SERVICE": "trace_service",
-        },
+        "trace_service",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class ServiceSummaryWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ServiceSummaryWidgetDefinitionType.TRACE_SERVICE = ServiceSummaryWidgetDefinitionType("trace_service")

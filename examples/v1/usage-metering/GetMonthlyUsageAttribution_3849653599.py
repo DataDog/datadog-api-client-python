@@ -21,7 +21,7 @@ with ApiClient(configuration) as api_client:
     api_instance = UsageMeteringApi(api_client)
     response = api_instance.get_monthly_usage_attribution(
         start_month=(datetime.now() + relativedelta(days=-3)),
-        fields=MonthlyUsageAttributionSupportedMetrics("infra_host_usage"),
+        fields=MonthlyUsageAttributionSupportedMetrics.INFRA_HOST_USAGE,
         next_record_id=MONTHLY_USAGE_ATTRIBUTION_METADATA_PAGINATION_NEXT_RECORD_ID,
     )
 

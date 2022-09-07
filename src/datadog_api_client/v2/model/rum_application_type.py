@@ -18,9 +18,7 @@ class RUMApplicationType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "RUM_APPLICATION": "rum_application",
-        },
+        "rum_application",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class RUMApplicationType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+RUMApplicationType.RUM_APPLICATION = RUMApplicationType("rum_application")

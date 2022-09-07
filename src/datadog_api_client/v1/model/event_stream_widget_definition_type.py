@@ -18,9 +18,7 @@ class EventStreamWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "EVENT_STREAM": "event_stream",
-        },
+        "event_stream",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class EventStreamWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+EventStreamWidgetDefinitionType.EVENT_STREAM = EventStreamWidgetDefinitionType("event_stream")

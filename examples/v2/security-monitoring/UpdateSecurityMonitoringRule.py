@@ -46,35 +46,35 @@ body = SecurityMonitoringRuleUpdatePayload(
     cases=[
         SecurityMonitoringRuleCase(
             notifications=[],
-            status=SecurityMonitoringRuleSeverity("critical"),
+            status=SecurityMonitoringRuleSeverity.CRITICAL,
         ),
     ],
     filters=[
         SecurityMonitoringFilter(
-            action=SecurityMonitoringFilterAction("require"),
+            action=SecurityMonitoringFilterAction.REQUIRE,
         ),
     ],
     has_extended_title=True,
     options=SecurityMonitoringRuleOptions(
         decrease_criticality_based_on_env=False,
-        detection_method=SecurityMonitoringRuleDetectionMethod("threshold"),
-        evaluation_window=SecurityMonitoringRuleEvaluationWindow(0),
-        hardcoded_evaluator_type=SecurityMonitoringRuleHardcodedEvaluatorType("log4shell"),
+        detection_method=SecurityMonitoringRuleDetectionMethod.THRESHOLD,
+        evaluation_window=SecurityMonitoringRuleEvaluationWindow.ZERO_MINUTES,
+        hardcoded_evaluator_type=SecurityMonitoringRuleHardcodedEvaluatorType.LOG4SHELL,
         impossible_travel_options=SecurityMonitoringRuleImpossibleTravelOptions(
             baseline_user_locations=True,
         ),
-        keep_alive=SecurityMonitoringRuleKeepAlive(0),
-        max_signal_duration=SecurityMonitoringRuleMaxSignalDuration(0),
+        keep_alive=SecurityMonitoringRuleKeepAlive.ZERO_MINUTES,
+        max_signal_duration=SecurityMonitoringRuleMaxSignalDuration.ZERO_MINUTES,
         new_value_options=SecurityMonitoringRuleNewValueOptions(
-            forget_after=SecurityMonitoringRuleNewValueOptionsForgetAfter(1),
-            learning_duration=SecurityMonitoringRuleNewValueOptionsLearningDuration(0),
-            learning_method=SecurityMonitoringRuleNewValueOptionsLearningMethod("duration"),
-            learning_threshold=SecurityMonitoringRuleNewValueOptionsLearningThreshold(0),
+            forget_after=SecurityMonitoringRuleNewValueOptionsForgetAfter.ONE_DAY,
+            learning_duration=SecurityMonitoringRuleNewValueOptionsLearningDuration.ZERO_DAYS,
+            learning_method=SecurityMonitoringRuleNewValueOptionsLearningMethod.DURATION,
+            learning_threshold=SecurityMonitoringRuleNewValueOptionsLearningThreshold.ZERO_OCCURRENCES,
         ),
     ),
     queries=[
         SecurityMonitoringRuleQuery(
-            aggregation=SecurityMonitoringRuleQueryAggregation("count"),
+            aggregation=SecurityMonitoringRuleQueryAggregation.COUNT,
             distinct_fields=[],
             group_by_fields=[],
             metrics=[],

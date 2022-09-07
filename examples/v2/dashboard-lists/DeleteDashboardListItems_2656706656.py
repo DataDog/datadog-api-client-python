@@ -19,7 +19,7 @@ body = DashboardListDeleteItemsRequest(
     dashboards=[
         DashboardListItemRequest(
             id=DASHBOARD_ID,
-            type=DashboardType("custom_timeboard"),
+            type=DashboardType.CUSTOM_TIMEBOARD,
         ),
     ],
 )

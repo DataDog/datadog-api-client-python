@@ -21,16 +21,16 @@ body = SyntheticsAPITest(
     config=SyntheticsAPITestConfig(
         assertions=[
             SyntheticsAssertionTarget(
-                operator=SyntheticsAssertionOperator("is"),
+                operator=SyntheticsAssertionOperator.IS,
                 target=1,
-                type=SyntheticsAssertionType("grpcHealthcheckStatus"),
+                type=SyntheticsAssertionType.GRPC_HEALTHCHECK_STATUS,
             ),
         ],
         request=SyntheticsTestRequest(
             host="localhost",
             port=50051,
             service="Hello",
-            method=HTTPMethod("GET"),
+            method=HTTPMethod.GET,
             message="",
             metadata=SyntheticsTestMetadata(),
         ),
@@ -49,11 +49,11 @@ body = SyntheticsAPITest(
         monitor_name="Example-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response",
         tick_every=60,
     ),
-    subtype=SyntheticsTestDetailsSubType("grpc"),
+    subtype=SyntheticsTestDetailsSubType.GRPC,
     tags=[
         "testing:api",
     ],
-    type=SyntheticsAPITestType("api"),
+    type=SyntheticsAPITestType.API,
 )
 
 configuration = Configuration()

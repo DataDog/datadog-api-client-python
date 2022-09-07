@@ -31,24 +31,24 @@ body = SyntheticsAPITest(
     config=SyntheticsAPITestConfig(
         assertions=[
             SyntheticsAssertionTarget(
-                operator=SyntheticsAssertionOperator("is"),
+                operator=SyntheticsAssertionOperator.IS,
                 _property="{{ PROPERTY }}",
                 target="text/html",
-                type=SyntheticsAssertionType("header"),
+                type=SyntheticsAssertionType.HEADER,
             ),
             SyntheticsAssertionTarget(
-                operator=SyntheticsAssertionOperator("lessThan"),
+                operator=SyntheticsAssertionOperator.LESS_THAN,
                 target=2000,
-                type=SyntheticsAssertionType("responseTime"),
+                type=SyntheticsAssertionType.RESPONSE_TIME,
             ),
             SyntheticsAssertionJSONPathTarget(
-                operator=SyntheticsAssertionJSONPathOperator("validatesJSONPath"),
+                operator=SyntheticsAssertionJSONPathOperator.VALIDATES_JSON_PATH,
                 target=SyntheticsAssertionJSONPathTargetTarget(
                     json_path="topKey",
                     operator="isNot",
                     target_value="0",
                 ),
-                type=SyntheticsAssertionType("body"),
+                type=SyntheticsAssertionType.BODY,
             ),
         ],
         config_variables=[
@@ -56,7 +56,7 @@ body = SyntheticsAPITest(
                 example="content-type",
                 name="PROPERTY",
                 pattern="content-type",
-                type=SyntheticsConfigVariableType("text"),
+                type=SyntheticsConfigVariableType.TEXT,
             ),
         ],
         request=SyntheticsTestRequest(
@@ -75,7 +75,7 @@ body = SyntheticsAPITest(
             headers=SyntheticsTestHeaders(
                 unique="examplecreateanapihttptestreturnsokreturnsthecreatedtestdetailsresponse",
             ),
-            method=HTTPMethod("GET"),
+            method=HTTPMethod.GET,
             timeout=10.0,
             url="https://datadoghq.com",
             proxy=SyntheticsTestRequestProxy(
@@ -103,11 +103,11 @@ body = SyntheticsAPITest(
         ),
         tick_every=60,
     ),
-    subtype=SyntheticsTestDetailsSubType("http"),
+    subtype=SyntheticsTestDetailsSubType.HTTP,
     tags=[
         "testing:api",
     ],
-    type=SyntheticsAPITestType("api"),
+    type=SyntheticsAPITestType.API,
 )
 
 configuration = Configuration()

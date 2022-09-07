@@ -18,9 +18,7 @@ class DistributionWidgetHistogramRequestType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "HISTOGRAM": "histogram",
-        },
+        "histogram",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class DistributionWidgetHistogramRequestType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+DistributionWidgetHistogramRequestType.HISTOGRAM = DistributionWidgetHistogramRequestType("histogram")

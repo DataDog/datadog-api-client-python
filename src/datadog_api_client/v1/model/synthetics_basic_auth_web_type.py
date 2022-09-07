@@ -18,9 +18,7 @@ class SyntheticsBasicAuthWebType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "WEB": "web",
-        },
+        "web",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SyntheticsBasicAuthWebType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsBasicAuthWebType.WEB = SyntheticsBasicAuthWebType("web")

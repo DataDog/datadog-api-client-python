@@ -19,16 +19,14 @@ class WidgetImageSizing(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "FILL": "fill",
-            "CONTAIN": "contain",
-            "COVER": "cover",
-            "NONE": "none",
-            "SCALEDOWN": "scale-down",
-            "ZOOM": "zoom",
-            "FIT": "fit",
-            "CENTER": "center",
-        },
+        "fill",
+        "contain",
+        "cover",
+        "none",
+        "scale-down",
+        "zoom",
+        "fit",
+        "center",
     }
 
     @cached_property
@@ -36,3 +34,13 @@ class WidgetImageSizing(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetImageSizing.FILL = WidgetImageSizing("fill")
+WidgetImageSizing.CONTAIN = WidgetImageSizing("contain")
+WidgetImageSizing.COVER = WidgetImageSizing("cover")
+WidgetImageSizing.NONE = WidgetImageSizing("none")
+WidgetImageSizing.SCALEDOWN = WidgetImageSizing("scale-down")
+WidgetImageSizing.ZOOM = WidgetImageSizing("zoom")
+WidgetImageSizing.FIT = WidgetImageSizing("fit")
+WidgetImageSizing.CENTER = WidgetImageSizing("center")

@@ -18,11 +18,9 @@ class TableWidgetHasSearchBar(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ALWAYS": "always",
-            "NEVER": "never",
-            "AUTO": "auto",
-        },
+        "always",
+        "never",
+        "auto",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class TableWidgetHasSearchBar(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+TableWidgetHasSearchBar.ALWAYS = TableWidgetHasSearchBar("always")
+TableWidgetHasSearchBar.NEVER = TableWidgetHasSearchBar("never")
+TableWidgetHasSearchBar.AUTO = TableWidgetHasSearchBar("auto")

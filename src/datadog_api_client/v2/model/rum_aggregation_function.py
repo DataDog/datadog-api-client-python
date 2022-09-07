@@ -18,20 +18,18 @@ class RUMAggregationFunction(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "COUNT": "count",
-            "CARDINALITY": "cardinality",
-            "PERCENTILE_75": "pc75",
-            "PERCENTILE_90": "pc90",
-            "PERCENTILE_95": "pc95",
-            "PERCENTILE_98": "pc98",
-            "PERCENTILE_99": "pc99",
-            "SUM": "sum",
-            "MIN": "min",
-            "MAX": "max",
-            "AVG": "avg",
-            "MEDIAN": "median",
-        },
+        "count",
+        "cardinality",
+        "pc75",
+        "pc90",
+        "pc95",
+        "pc98",
+        "pc99",
+        "sum",
+        "min",
+        "max",
+        "avg",
+        "median",
     }
 
     @cached_property
@@ -39,3 +37,17 @@ class RUMAggregationFunction(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+RUMAggregationFunction.COUNT = RUMAggregationFunction("count")
+RUMAggregationFunction.CARDINALITY = RUMAggregationFunction("cardinality")
+RUMAggregationFunction.PERCENTILE_75 = RUMAggregationFunction("pc75")
+RUMAggregationFunction.PERCENTILE_90 = RUMAggregationFunction("pc90")
+RUMAggregationFunction.PERCENTILE_95 = RUMAggregationFunction("pc95")
+RUMAggregationFunction.PERCENTILE_98 = RUMAggregationFunction("pc98")
+RUMAggregationFunction.PERCENTILE_99 = RUMAggregationFunction("pc99")
+RUMAggregationFunction.SUM = RUMAggregationFunction("sum")
+RUMAggregationFunction.MIN = RUMAggregationFunction("min")
+RUMAggregationFunction.MAX = RUMAggregationFunction("max")
+RUMAggregationFunction.AVG = RUMAggregationFunction("avg")
+RUMAggregationFunction.MEDIAN = RUMAggregationFunction("median")

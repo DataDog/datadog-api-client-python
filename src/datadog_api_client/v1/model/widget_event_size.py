@@ -18,10 +18,8 @@ class WidgetEventSize(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SMALL": "s",
-            "LARGE": "l",
-        },
+        "s",
+        "l",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class WidgetEventSize(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetEventSize.SMALL = WidgetEventSize("s")
+WidgetEventSize.LARGE = WidgetEventSize("l")

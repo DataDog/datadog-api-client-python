@@ -18,15 +18,13 @@ class MonitorOverallStates(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ALERT": "Alert",
-            "IGNORED": "Ignored",
-            "NO_DATA": "No Data",
-            "OK": "OK",
-            "SKIPPED": "Skipped",
-            "UNKNOWN": "Unknown",
-            "WARN": "Warn",
-        },
+        "Alert",
+        "Ignored",
+        "No Data",
+        "OK",
+        "Skipped",
+        "Unknown",
+        "Warn",
     }
 
     @cached_property
@@ -34,3 +32,12 @@ class MonitorOverallStates(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MonitorOverallStates.ALERT = MonitorOverallStates("Alert")
+MonitorOverallStates.IGNORED = MonitorOverallStates("Ignored")
+MonitorOverallStates.NO_DATA = MonitorOverallStates("No Data")
+MonitorOverallStates.OK = MonitorOverallStates("OK")
+MonitorOverallStates.SKIPPED = MonitorOverallStates("Skipped")
+MonitorOverallStates.UNKNOWN = MonitorOverallStates("Unknown")
+MonitorOverallStates.WARN = MonitorOverallStates("Warn")

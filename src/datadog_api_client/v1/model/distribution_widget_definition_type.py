@@ -18,9 +18,7 @@ class DistributionWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DISTRIBUTION": "distribution",
-        },
+        "distribution",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class DistributionWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+DistributionWidgetDefinitionType.DISTRIBUTION = DistributionWidgetDefinitionType("distribution")

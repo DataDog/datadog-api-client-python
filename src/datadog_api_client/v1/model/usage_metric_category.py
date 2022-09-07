@@ -18,10 +18,8 @@ class UsageMetricCategory(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "STANDARD": "standard",
-            "CUSTOM": "custom",
-        },
+        "standard",
+        "custom",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class UsageMetricCategory(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+UsageMetricCategory.STANDARD = UsageMetricCategory("standard")
+UsageMetricCategory.CUSTOM = UsageMetricCategory("custom")

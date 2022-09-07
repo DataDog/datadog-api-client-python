@@ -18,10 +18,8 @@ class AuditLogsResponseStatus(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DONE": "done",
-            "TIMEOUT": "timeout",
-        },
+        "done",
+        "timeout",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class AuditLogsResponseStatus(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+AuditLogsResponseStatus.DONE = AuditLogsResponseStatus("done")
+AuditLogsResponseStatus.TIMEOUT = AuditLogsResponseStatus("timeout")

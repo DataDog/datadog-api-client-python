@@ -18,10 +18,8 @@ class SunburstWidgetLegendTableType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TABLE": "table",
-            "NONE": "none",
-        },
+        "table",
+        "none",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class SunburstWidgetLegendTableType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SunburstWidgetLegendTableType.TABLE = SunburstWidgetLegendTableType("table")
+SunburstWidgetLegendTableType.NONE = SunburstWidgetLegendTableType("none")

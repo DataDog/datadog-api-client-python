@@ -18,10 +18,8 @@ class SecurityMonitoringRuleNewValueOptionsLearningMethod(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DURATION": "duration",
-            "THRESHOLD": "threshold",
-        },
+        "duration",
+        "threshold",
     }
 
     @cached_property
@@ -29,3 +27,11 @@ class SecurityMonitoringRuleNewValueOptionsLearningMethod(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SecurityMonitoringRuleNewValueOptionsLearningMethod.DURATION = SecurityMonitoringRuleNewValueOptionsLearningMethod(
+    "duration"
+)
+SecurityMonitoringRuleNewValueOptionsLearningMethod.THRESHOLD = SecurityMonitoringRuleNewValueOptionsLearningMethod(
+    "threshold"
+)

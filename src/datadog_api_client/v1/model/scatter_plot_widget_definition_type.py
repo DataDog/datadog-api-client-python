@@ -18,9 +18,7 @@ class ScatterPlotWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SCATTERPLOT": "scatterplot",
-        },
+        "scatterplot",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class ScatterPlotWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ScatterPlotWidgetDefinitionType.SCATTERPLOT = ScatterPlotWidgetDefinitionType("scatterplot")

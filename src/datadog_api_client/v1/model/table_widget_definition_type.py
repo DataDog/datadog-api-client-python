@@ -18,9 +18,7 @@ class TableWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "QUERY_TABLE": "query_table",
-        },
+        "query_table",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class TableWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+TableWidgetDefinitionType.QUERY_TABLE = TableWidgetDefinitionType("query_table")

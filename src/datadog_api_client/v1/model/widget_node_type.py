@@ -18,10 +18,8 @@ class WidgetNodeType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "HOST": "host",
-            "CONTAINER": "container",
-        },
+        "host",
+        "container",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class WidgetNodeType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetNodeType.HOST = WidgetNodeType("host")
+WidgetNodeType.CONTAINER = WidgetNodeType("container")

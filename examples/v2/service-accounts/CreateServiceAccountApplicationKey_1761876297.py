@@ -18,7 +18,7 @@ body = ApplicationKeyCreateRequest(
         attributes=ApplicationKeyCreateAttributes(
             name="Example-Create_an_app_key_for_this_service_account_returns_Created_response",
         ),
-        type=ApplicationKeysType("application_keys"),
+        type=ApplicationKeysType.APPLICATION_KEYS,
     ),
 )
 

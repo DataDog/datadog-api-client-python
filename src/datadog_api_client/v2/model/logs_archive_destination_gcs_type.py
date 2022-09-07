@@ -18,9 +18,7 @@ class LogsArchiveDestinationGCSType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "GCS": "gcs",
-        },
+        "gcs",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsArchiveDestinationGCSType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsArchiveDestinationGCSType.GCS = LogsArchiveDestinationGCSType("gcs")

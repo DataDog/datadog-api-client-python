@@ -18,9 +18,7 @@ class SunburstWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SUNBURST": "sunburst",
-        },
+        "sunburst",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SunburstWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SunburstWidgetDefinitionType.SUNBURST = SunburstWidgetDefinitionType("sunburst")

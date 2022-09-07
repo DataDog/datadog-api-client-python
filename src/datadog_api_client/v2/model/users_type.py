@@ -18,9 +18,7 @@ class UsersType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "USERS": "users",
-        },
+        "users",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class UsersType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+UsersType.USERS = UsersType("users")

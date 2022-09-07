@@ -18,20 +18,18 @@ class MonitorFormulaAndFunctionEventAggregation(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "COUNT": "count",
-            "CARDINALITY": "cardinality",
-            "MEDIAN": "median",
-            "PC75": "pc75",
-            "PC90": "pc90",
-            "PC95": "pc95",
-            "PC98": "pc98",
-            "PC99": "pc99",
-            "SUM": "sum",
-            "MIN": "min",
-            "MAX": "max",
-            "AVG": "avg",
-        },
+        "count",
+        "cardinality",
+        "median",
+        "pc75",
+        "pc90",
+        "pc95",
+        "pc98",
+        "pc99",
+        "sum",
+        "min",
+        "max",
+        "avg",
     }
 
     @cached_property
@@ -39,3 +37,17 @@ class MonitorFormulaAndFunctionEventAggregation(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MonitorFormulaAndFunctionEventAggregation.COUNT = MonitorFormulaAndFunctionEventAggregation("count")
+MonitorFormulaAndFunctionEventAggregation.CARDINALITY = MonitorFormulaAndFunctionEventAggregation("cardinality")
+MonitorFormulaAndFunctionEventAggregation.MEDIAN = MonitorFormulaAndFunctionEventAggregation("median")
+MonitorFormulaAndFunctionEventAggregation.PC75 = MonitorFormulaAndFunctionEventAggregation("pc75")
+MonitorFormulaAndFunctionEventAggregation.PC90 = MonitorFormulaAndFunctionEventAggregation("pc90")
+MonitorFormulaAndFunctionEventAggregation.PC95 = MonitorFormulaAndFunctionEventAggregation("pc95")
+MonitorFormulaAndFunctionEventAggregation.PC98 = MonitorFormulaAndFunctionEventAggregation("pc98")
+MonitorFormulaAndFunctionEventAggregation.PC99 = MonitorFormulaAndFunctionEventAggregation("pc99")
+MonitorFormulaAndFunctionEventAggregation.SUM = MonitorFormulaAndFunctionEventAggregation("sum")
+MonitorFormulaAndFunctionEventAggregation.MIN = MonitorFormulaAndFunctionEventAggregation("min")
+MonitorFormulaAndFunctionEventAggregation.MAX = MonitorFormulaAndFunctionEventAggregation("max")
+MonitorFormulaAndFunctionEventAggregation.AVG = MonitorFormulaAndFunctionEventAggregation("avg")

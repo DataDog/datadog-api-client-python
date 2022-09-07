@@ -18,10 +18,8 @@ class SyntheticsBrowserErrorType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NETWORK": "network",
-            "JS": "js",
-        },
+        "network",
+        "js",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class SyntheticsBrowserErrorType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsBrowserErrorType.NETWORK = SyntheticsBrowserErrorType("network")
+SyntheticsBrowserErrorType.JS = SyntheticsBrowserErrorType("js")

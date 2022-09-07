@@ -30,14 +30,14 @@ body = Dashboard(
             definition=HostMapWidgetDefinition(
                 title="",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
-                type=HostMapWidgetDefinitionType("hostmap"),
+                title_align=WidgetTextAlign.LEFT,
+                type=HostMapWidgetDefinitionType.HOSTMAP,
                 requests=HostMapWidgetDefinitionRequests(
                     fill=HostMapRequest(
                         q="avg:system.cpu.user{*} by {host}",
                     ),
                 ),
-                node_type=WidgetNodeType("host"),
+                node_type=WidgetNodeType.HOST,
                 no_metric_hosts=True,
                 no_group_hosts=True,
                 style=HostMapWidgetDefinitionStyle(
@@ -48,7 +48,7 @@ body = Dashboard(
         ),
     ],
     template_variables=[],
-    layout_type=DashboardLayoutType("free"),
+    layout_type=DashboardLayoutType.FREE,
     is_read_only=False,
     notify_list=[],
 )

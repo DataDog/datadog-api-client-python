@@ -18,9 +18,7 @@ class IncidentServiceType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SERVICES": "services",
-        },
+        "services",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class IncidentServiceType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+IncidentServiceType.SERVICES = IncidentServiceType("services")

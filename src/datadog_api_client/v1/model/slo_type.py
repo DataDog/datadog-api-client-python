@@ -18,10 +18,8 @@ class SLOType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "METRIC": "metric",
-            "MONITOR": "monitor",
-        },
+        "metric",
+        "monitor",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class SLOType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SLOType.METRIC = SLOType("metric")
+SLOType.MONITOR = SLOType("monitor")

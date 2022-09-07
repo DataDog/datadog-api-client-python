@@ -18,9 +18,7 @@ class LogsURLParserType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "URL_PARSER": "url-parser",
-        },
+        "url-parser",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsURLParserType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsURLParserType.URL_PARSER = LogsURLParserType("url-parser")

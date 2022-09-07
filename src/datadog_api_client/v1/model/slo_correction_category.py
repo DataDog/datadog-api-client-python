@@ -18,12 +18,10 @@ class SLOCorrectionCategory(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SCHEDULED_MAINTENANCE": "Scheduled Maintenance",
-            "OUTSIDE_BUSINESS_HOURS": "Outside Business Hours",
-            "DEPLOYMENT": "Deployment",
-            "OTHER": "Other",
-        },
+        "Scheduled Maintenance",
+        "Outside Business Hours",
+        "Deployment",
+        "Other",
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class SLOCorrectionCategory(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SLOCorrectionCategory.SCHEDULED_MAINTENANCE = SLOCorrectionCategory("Scheduled Maintenance")
+SLOCorrectionCategory.OUTSIDE_BUSINESS_HOURS = SLOCorrectionCategory("Outside Business Hours")
+SLOCorrectionCategory.DEPLOYMENT = SLOCorrectionCategory("Deployment")
+SLOCorrectionCategory.OTHER = SLOCorrectionCategory("Other")

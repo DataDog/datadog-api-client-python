@@ -18,9 +18,7 @@ class LogsArchiveOrderDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ARCHIVE_ORDER": "archive_order",
-        },
+        "archive_order",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsArchiveOrderDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsArchiveOrderDefinitionType.ARCHIVE_ORDER = LogsArchiveOrderDefinitionType("archive_order")

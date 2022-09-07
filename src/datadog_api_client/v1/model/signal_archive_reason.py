@@ -18,12 +18,10 @@ class SignalArchiveReason(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NONE": "none",
-            "FALSE_POSITIVE": "false_positive",
-            "TESTING_OR_MAINTENANCE": "testing_or_maintenance",
-            "OTHER": "other",
-        },
+        "none",
+        "false_positive",
+        "testing_or_maintenance",
+        "other",
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class SignalArchiveReason(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SignalArchiveReason.NONE = SignalArchiveReason("none")
+SignalArchiveReason.FALSE_POSITIVE = SignalArchiveReason("false_positive")
+SignalArchiveReason.TESTING_OR_MAINTENANCE = SignalArchiveReason("testing_or_maintenance")
+SignalArchiveReason.OTHER = SignalArchiveReason("other")

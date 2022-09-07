@@ -18,9 +18,7 @@ class RUMEventType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "RUM": "rum",
-        },
+        "rum",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class RUMEventType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+RUMEventType.RUM = RUMEventType("rum")

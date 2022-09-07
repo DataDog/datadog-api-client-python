@@ -18,9 +18,7 @@ class GeomapWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "GEOMAP": "geomap",
-        },
+        "geomap",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class GeomapWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+GeomapWidgetDefinitionType.GEOMAP = GeomapWidgetDefinitionType("geomap")

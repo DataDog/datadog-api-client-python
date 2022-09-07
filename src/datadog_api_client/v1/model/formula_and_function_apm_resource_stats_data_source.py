@@ -18,9 +18,7 @@ class FormulaAndFunctionApmResourceStatsDataSource(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "APM_RESOURCE_STATS": "apm_resource_stats",
-        },
+        "apm_resource_stats",
     }
 
     @cached_property
@@ -28,3 +26,8 @@ class FormulaAndFunctionApmResourceStatsDataSource(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+FormulaAndFunctionApmResourceStatsDataSource.APM_RESOURCE_STATS = FormulaAndFunctionApmResourceStatsDataSource(
+    "apm_resource_stats"
+)

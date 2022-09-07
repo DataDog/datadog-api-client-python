@@ -18,12 +18,10 @@ class SyntheticsTestProcessStatus(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NOT_SCHEDULED": "not_scheduled",
-            "SCHEDULED": "scheduled",
-            "FINISHED": "finished",
-            "FINISHED_WITH_ERROR": "finished_with_error",
-        },
+        "not_scheduled",
+        "scheduled",
+        "finished",
+        "finished_with_error",
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class SyntheticsTestProcessStatus(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsTestProcessStatus.NOT_SCHEDULED = SyntheticsTestProcessStatus("not_scheduled")
+SyntheticsTestProcessStatus.SCHEDULED = SyntheticsTestProcessStatus("scheduled")
+SyntheticsTestProcessStatus.FINISHED = SyntheticsTestProcessStatus("finished")
+SyntheticsTestProcessStatus.FINISHED_WITH_ERROR = SyntheticsTestProcessStatus("finished_with_error")

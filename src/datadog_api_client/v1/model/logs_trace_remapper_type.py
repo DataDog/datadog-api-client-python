@@ -18,9 +18,7 @@ class LogsTraceRemapperType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TRACE_ID_REMAPPER": "trace-id-remapper",
-        },
+        "trace-id-remapper",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsTraceRemapperType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsTraceRemapperType.TRACE_ID_REMAPPER = LogsTraceRemapperType("trace-id-remapper")

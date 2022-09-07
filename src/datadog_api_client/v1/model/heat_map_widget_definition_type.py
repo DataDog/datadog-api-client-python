@@ -18,9 +18,7 @@ class HeatMapWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "HEATMAP": "heatmap",
-        },
+        "heatmap",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class HeatMapWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+HeatMapWidgetDefinitionType.HEATMAP = HeatMapWidgetDefinitionType("heatmap")

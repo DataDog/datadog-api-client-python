@@ -18,9 +18,7 @@ class SyntheticsAssertionJSONPathOperator(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "VALIDATES_JSON_PATH": "validatesJSONPath",
-        },
+        "validatesJSONPath",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SyntheticsAssertionJSONPathOperator(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsAssertionJSONPathOperator.VALIDATES_JSON_PATH = SyntheticsAssertionJSONPathOperator("validatesJSONPath")

@@ -18,9 +18,7 @@ class IncidentRelatedObject(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "USERS": "users",
-        },
+        "users",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class IncidentRelatedObject(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+IncidentRelatedObject.USERS = IncidentRelatedObject("users")

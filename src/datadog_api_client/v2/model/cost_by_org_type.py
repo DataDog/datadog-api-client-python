@@ -18,9 +18,7 @@ class CostByOrgType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "COST_BY_ORG": "cost_by_org",
-        },
+        "cost_by_org",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class CostByOrgType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+CostByOrgType.COST_BY_ORG = CostByOrgType("cost_by_org")

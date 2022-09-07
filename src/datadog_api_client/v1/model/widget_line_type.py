@@ -18,11 +18,9 @@ class WidgetLineType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DASHED": "dashed",
-            "DOTTED": "dotted",
-            "SOLID": "solid",
-        },
+        "dashed",
+        "dotted",
+        "solid",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class WidgetLineType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetLineType.DASHED = WidgetLineType("dashed")
+WidgetLineType.DOTTED = WidgetLineType("dotted")
+WidgetLineType.SOLID = WidgetLineType("solid")

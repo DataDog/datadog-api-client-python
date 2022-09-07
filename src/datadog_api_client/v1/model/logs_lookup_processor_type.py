@@ -18,9 +18,7 @@ class LogsLookupProcessorType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "LOOKUP_PROCESSOR": "lookup-processor",
-        },
+        "lookup-processor",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsLookupProcessorType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsLookupProcessorType.LOOKUP_PROCESSOR = LogsLookupProcessorType("lookup-processor")

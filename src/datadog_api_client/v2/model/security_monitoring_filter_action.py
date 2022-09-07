@@ -18,10 +18,8 @@ class SecurityMonitoringFilterAction(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "REQUIRE": "require",
-            "SUPPRESS": "suppress",
-        },
+        "require",
+        "suppress",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class SecurityMonitoringFilterAction(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SecurityMonitoringFilterAction.REQUIRE = SecurityMonitoringFilterAction("require")
+SecurityMonitoringFilterAction.SUPPRESS = SecurityMonitoringFilterAction("suppress")

@@ -19,10 +19,8 @@ class SyntheticsTestPauseStatus(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "LIVE": "live",
-            "PAUSED": "paused",
-        },
+        "live",
+        "paused",
     }
 
     @cached_property
@@ -30,3 +28,7 @@ class SyntheticsTestPauseStatus(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsTestPauseStatus.LIVE = SyntheticsTestPauseStatus("live")
+SyntheticsTestPauseStatus.PAUSED = SyntheticsTestPauseStatus("paused")

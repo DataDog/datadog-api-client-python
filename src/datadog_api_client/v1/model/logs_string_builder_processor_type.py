@@ -18,9 +18,7 @@ class LogsStringBuilderProcessorType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "STRING_BUILDER_PROCESSOR": "string-builder-processor",
-        },
+        "string-builder-processor",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsStringBuilderProcessorType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsStringBuilderProcessorType.STRING_BUILDER_PROCESSOR = LogsStringBuilderProcessorType("string-builder-processor")

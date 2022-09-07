@@ -18,11 +18,9 @@ class WidgetMessageDisplay(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "INLINE": "inline",
-            "EXPANDED_MEDIUM": "expanded-md",
-            "EXPANDED_LARGE": "expanded-lg",
-        },
+        "inline",
+        "expanded-md",
+        "expanded-lg",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class WidgetMessageDisplay(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetMessageDisplay.INLINE = WidgetMessageDisplay("inline")
+WidgetMessageDisplay.EXPANDED_MEDIUM = WidgetMessageDisplay("expanded-md")
+WidgetMessageDisplay.EXPANDED_LARGE = WidgetMessageDisplay("expanded-lg")

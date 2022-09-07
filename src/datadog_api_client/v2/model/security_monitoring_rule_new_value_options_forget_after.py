@@ -18,14 +18,12 @@ class SecurityMonitoringRuleNewValueOptionsForgetAfter(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ONE_DAY": 1,
-            "TWO_DAYS": 2,
-            "ONE_WEEK": 7,
-            "TWO_WEEKS": 14,
-            "THREE_WEEKS": 21,
-            "FOUR_WEEKS": 28,
-        },
+        1,
+        2,
+        7,
+        14,
+        21,
+        28,
     }
 
     @cached_property
@@ -33,3 +31,11 @@ class SecurityMonitoringRuleNewValueOptionsForgetAfter(ModelSimple):
         return {
             "value": (int,),
         }
+
+
+SecurityMonitoringRuleNewValueOptionsForgetAfter.ONE_DAY = SecurityMonitoringRuleNewValueOptionsForgetAfter(1)
+SecurityMonitoringRuleNewValueOptionsForgetAfter.TWO_DAYS = SecurityMonitoringRuleNewValueOptionsForgetAfter(2)
+SecurityMonitoringRuleNewValueOptionsForgetAfter.ONE_WEEK = SecurityMonitoringRuleNewValueOptionsForgetAfter(7)
+SecurityMonitoringRuleNewValueOptionsForgetAfter.TWO_WEEKS = SecurityMonitoringRuleNewValueOptionsForgetAfter(14)
+SecurityMonitoringRuleNewValueOptionsForgetAfter.THREE_WEEKS = SecurityMonitoringRuleNewValueOptionsForgetAfter(21)
+SecurityMonitoringRuleNewValueOptionsForgetAfter.FOUR_WEEKS = SecurityMonitoringRuleNewValueOptionsForgetAfter(28)

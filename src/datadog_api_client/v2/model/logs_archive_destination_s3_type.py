@@ -18,9 +18,7 @@ class LogsArchiveDestinationS3Type(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "S3": "s3",
-        },
+        "s3",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsArchiveDestinationS3Type(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsArchiveDestinationS3Type.S3 = LogsArchiveDestinationS3Type("s3")

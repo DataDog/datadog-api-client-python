@@ -18,9 +18,7 @@ class NoteWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NOTE": "note",
-        },
+        "note",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class NoteWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+NoteWidgetDefinitionType.NOTE = NoteWidgetDefinitionType("note")

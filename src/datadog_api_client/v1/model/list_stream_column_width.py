@@ -18,11 +18,9 @@ class ListStreamColumnWidth(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AUTO": "auto",
-            "COMPACT": "compact",
-            "FULL": "full",
-        },
+        "auto",
+        "compact",
+        "full",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class ListStreamColumnWidth(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ListStreamColumnWidth.AUTO = ListStreamColumnWidth("auto")
+ListStreamColumnWidth.COMPACT = ListStreamColumnWidth("compact")
+ListStreamColumnWidth.FULL = ListStreamColumnWidth("full")

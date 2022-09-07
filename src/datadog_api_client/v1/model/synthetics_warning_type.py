@@ -18,9 +18,7 @@ class SyntheticsWarningType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "USER_LOCATOR": "user_locator",
-        },
+        "user_locator",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SyntheticsWarningType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsWarningType.USER_LOCATOR = SyntheticsWarningType("user_locator")

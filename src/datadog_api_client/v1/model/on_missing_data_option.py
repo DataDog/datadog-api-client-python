@@ -22,12 +22,10 @@ class OnMissingDataOption(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DEFAULT": "default",
-            "SHOW_NO_DATA": "show_no_data",
-            "SHOW_AND_NOTIFY_NO_DATA": "show_and_notify_no_data",
-            "RESOLVE": "resolve",
-        },
+        "default",
+        "show_no_data",
+        "show_and_notify_no_data",
+        "resolve",
     }
 
     @cached_property
@@ -35,3 +33,9 @@ class OnMissingDataOption(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+OnMissingDataOption.DEFAULT = OnMissingDataOption("default")
+OnMissingDataOption.SHOW_NO_DATA = OnMissingDataOption("show_no_data")
+OnMissingDataOption.SHOW_AND_NOTIFY_NO_DATA = OnMissingDataOption("show_and_notify_no_data")
+OnMissingDataOption.RESOLVE = OnMissingDataOption("resolve")

@@ -18,9 +18,7 @@ class PermissionsType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "PERMISSIONS": "permissions",
-        },
+        "permissions",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class PermissionsType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+PermissionsType.PERMISSIONS = PermissionsType("permissions")

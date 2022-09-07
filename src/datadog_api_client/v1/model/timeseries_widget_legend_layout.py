@@ -18,11 +18,9 @@ class TimeseriesWidgetLegendLayout(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AUTO": "auto",
-            "HORIZONTAL": "horizontal",
-            "VERTICAL": "vertical",
-        },
+        "auto",
+        "horizontal",
+        "vertical",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class TimeseriesWidgetLegendLayout(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+TimeseriesWidgetLegendLayout.AUTO = TimeseriesWidgetLegendLayout("auto")
+TimeseriesWidgetLegendLayout.HORIZONTAL = TimeseriesWidgetLegendLayout("horizontal")
+TimeseriesWidgetLegendLayout.VERTICAL = TimeseriesWidgetLegendLayout("vertical")

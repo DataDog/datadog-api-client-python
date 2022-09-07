@@ -23,13 +23,13 @@ body = Dashboard(
                 height=24,
             ),
             definition=NoteWidgetDefinition(
-                type=NoteWidgetDefinitionType("note"),
+                type=NoteWidgetDefinitionType.NOTE,
                 content="# Example Note",
             ),
         ),
     ],
     template_variables=[],
-    layout_type=DashboardLayoutType("free"),
+    layout_type=DashboardLayoutType.FREE,
     is_read_only=False,
     notify_list=[],
 )

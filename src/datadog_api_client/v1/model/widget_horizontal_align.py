@@ -18,11 +18,9 @@ class WidgetHorizontalAlign(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CENTER": "center",
-            "LEFT": "left",
-            "RIGHT": "right",
-        },
+        "center",
+        "left",
+        "right",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class WidgetHorizontalAlign(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetHorizontalAlign.CENTER = WidgetHorizontalAlign("center")
+WidgetHorizontalAlign.LEFT = WidgetHorizontalAlign("left")
+WidgetHorizontalAlign.RIGHT = WidgetHorizontalAlign("right")

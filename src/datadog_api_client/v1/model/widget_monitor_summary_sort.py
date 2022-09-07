@@ -18,25 +18,23 @@ class WidgetMonitorSummarySort(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NAME": "name",
-            "GROUP": "group",
-            "STATUS": "status",
-            "TAGS": "tags",
-            "TRIGGERED": "triggered",
-            "GROUP_ASCENDING": "group,asc",
-            "GROUP_DESCENDING": "group,desc",
-            "NAME_ASCENDING": "name,asc",
-            "NAME_DESCENDING": "name,desc",
-            "STATUS_ASCENDING": "status,asc",
-            "STATUS_DESCENDING": "status,desc",
-            "TAGS_ASCENDING": "tags,asc",
-            "TAGS_DESCENDING": "tags,desc",
-            "TRIGGERED_ASCENDING": "triggered,asc",
-            "TRIGGERED_DESCENDING": "triggered,desc",
-            "PRIORITY_ASCENDING": "priority,asc",
-            "PRIORITY_DESCENDING": "priority,desc",
-        },
+        "name",
+        "group",
+        "status",
+        "tags",
+        "triggered",
+        "group,asc",
+        "group,desc",
+        "name,asc",
+        "name,desc",
+        "status,asc",
+        "status,desc",
+        "tags,asc",
+        "tags,desc",
+        "triggered,asc",
+        "triggered,desc",
+        "priority,asc",
+        "priority,desc",
     }
 
     @cached_property
@@ -44,3 +42,22 @@ class WidgetMonitorSummarySort(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetMonitorSummarySort.NAME = WidgetMonitorSummarySort("name")
+WidgetMonitorSummarySort.GROUP = WidgetMonitorSummarySort("group")
+WidgetMonitorSummarySort.STATUS = WidgetMonitorSummarySort("status")
+WidgetMonitorSummarySort.TAGS = WidgetMonitorSummarySort("tags")
+WidgetMonitorSummarySort.TRIGGERED = WidgetMonitorSummarySort("triggered")
+WidgetMonitorSummarySort.GROUP_ASCENDING = WidgetMonitorSummarySort("group,asc")
+WidgetMonitorSummarySort.GROUP_DESCENDING = WidgetMonitorSummarySort("group,desc")
+WidgetMonitorSummarySort.NAME_ASCENDING = WidgetMonitorSummarySort("name,asc")
+WidgetMonitorSummarySort.NAME_DESCENDING = WidgetMonitorSummarySort("name,desc")
+WidgetMonitorSummarySort.STATUS_ASCENDING = WidgetMonitorSummarySort("status,asc")
+WidgetMonitorSummarySort.STATUS_DESCENDING = WidgetMonitorSummarySort("status,desc")
+WidgetMonitorSummarySort.TAGS_ASCENDING = WidgetMonitorSummarySort("tags,asc")
+WidgetMonitorSummarySort.TAGS_DESCENDING = WidgetMonitorSummarySort("tags,desc")
+WidgetMonitorSummarySort.TRIGGERED_ASCENDING = WidgetMonitorSummarySort("triggered,asc")
+WidgetMonitorSummarySort.TRIGGERED_DESCENDING = WidgetMonitorSummarySort("triggered,desc")
+WidgetMonitorSummarySort.PRIORITY_ASCENDING = WidgetMonitorSummarySort("priority,asc")
+WidgetMonitorSummarySort.PRIORITY_DESCENDING = WidgetMonitorSummarySort("priority,desc")

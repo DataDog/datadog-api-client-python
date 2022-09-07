@@ -18,13 +18,11 @@ class SecurityMonitoringRuleSeverity(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "INFO": "info",
-            "LOW": "low",
-            "MEDIUM": "medium",
-            "HIGH": "high",
-            "CRITICAL": "critical",
-        },
+        "info",
+        "low",
+        "medium",
+        "high",
+        "critical",
     }
 
     @cached_property
@@ -32,3 +30,10 @@ class SecurityMonitoringRuleSeverity(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SecurityMonitoringRuleSeverity.INFO = SecurityMonitoringRuleSeverity("info")
+SecurityMonitoringRuleSeverity.LOW = SecurityMonitoringRuleSeverity("low")
+SecurityMonitoringRuleSeverity.MEDIUM = SecurityMonitoringRuleSeverity("medium")
+SecurityMonitoringRuleSeverity.HIGH = SecurityMonitoringRuleSeverity("high")
+SecurityMonitoringRuleSeverity.CRITICAL = SecurityMonitoringRuleSeverity("critical")

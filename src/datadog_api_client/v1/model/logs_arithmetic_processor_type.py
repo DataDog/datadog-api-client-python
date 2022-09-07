@@ -18,9 +18,7 @@ class LogsArithmeticProcessorType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ARITHMETIC_PROCESSOR": "arithmetic-processor",
-        },
+        "arithmetic-processor",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsArithmeticProcessorType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsArithmeticProcessorType.ARITHMETIC_PROCESSOR = LogsArithmeticProcessorType("arithmetic-processor")

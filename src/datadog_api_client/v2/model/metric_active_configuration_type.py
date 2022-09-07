@@ -18,9 +18,7 @@ class MetricActiveConfigurationType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ACTIVELY_QUERIED_CONFIGURATIONS": "actively_queried_configurations",
-        },
+        "actively_queried_configurations",
     }
 
     @cached_property
@@ -28,3 +26,8 @@ class MetricActiveConfigurationType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MetricActiveConfigurationType.ACTIVELY_QUERIED_CONFIGURATIONS = MetricActiveConfigurationType(
+    "actively_queried_configurations"
+)

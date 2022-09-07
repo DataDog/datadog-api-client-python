@@ -18,9 +18,7 @@ class WidgetLayoutType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ORDERED": "ordered",
-        },
+        "ordered",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class WidgetLayoutType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetLayoutType.ORDERED = WidgetLayoutType("ordered")

@@ -18,10 +18,8 @@ class WidgetGrouping(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CHECK": "check",
-            "CLUSTER": "cluster",
-        },
+        "check",
+        "cluster",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class WidgetGrouping(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetGrouping.CHECK = WidgetGrouping("check")
+WidgetGrouping.CLUSTER = WidgetGrouping("cluster")

@@ -18,9 +18,7 @@ class ListStreamWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "LIST_STREAM": "list_stream",
-        },
+        "list_stream",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class ListStreamWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ListStreamWidgetDefinitionType.LIST_STREAM = ListStreamWidgetDefinitionType("list_stream")

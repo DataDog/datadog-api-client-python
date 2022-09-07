@@ -18,11 +18,9 @@ class WidgetServiceSummaryDisplayFormat(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ONE_COLUMN": "one_column",
-            "TWO_COLUMN": "two_column",
-            "THREE_COLUMN": "three_column",
-        },
+        "one_column",
+        "two_column",
+        "three_column",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class WidgetServiceSummaryDisplayFormat(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetServiceSummaryDisplayFormat.ONE_COLUMN = WidgetServiceSummaryDisplayFormat("one_column")
+WidgetServiceSummaryDisplayFormat.TWO_COLUMN = WidgetServiceSummaryDisplayFormat("two_column")
+WidgetServiceSummaryDisplayFormat.THREE_COLUMN = WidgetServiceSummaryDisplayFormat("three_column")

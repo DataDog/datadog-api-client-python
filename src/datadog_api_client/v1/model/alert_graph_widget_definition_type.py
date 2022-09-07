@@ -18,9 +18,7 @@ class AlertGraphWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ALERT_GRAPH": "alert_graph",
-        },
+        "alert_graph",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class AlertGraphWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+AlertGraphWidgetDefinitionType.ALERT_GRAPH = AlertGraphWidgetDefinitionType("alert_graph")

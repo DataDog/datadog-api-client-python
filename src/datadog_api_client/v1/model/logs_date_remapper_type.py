@@ -18,9 +18,7 @@ class LogsDateRemapperType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DATE_REMAPPER": "date-remapper",
-        },
+        "date-remapper",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsDateRemapperType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsDateRemapperType.DATE_REMAPPER = LogsDateRemapperType("date-remapper")

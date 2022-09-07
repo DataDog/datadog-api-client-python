@@ -18,12 +18,10 @@ class SecurityMonitoringRuleTypeRead(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "LOG_DETECTION": "log_detection",
-            "INFRASTRUCTURE_CONFIGURATION": "infrastructure_configuration",
-            "WORKLOAD_SECURITY": "workload_security",
-            "CLOUD_CONFIGURATION": "cloud_configuration",
-        },
+        "log_detection",
+        "infrastructure_configuration",
+        "workload_security",
+        "cloud_configuration",
     }
 
     @cached_property
@@ -31,3 +29,11 @@ class SecurityMonitoringRuleTypeRead(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SecurityMonitoringRuleTypeRead.LOG_DETECTION = SecurityMonitoringRuleTypeRead("log_detection")
+SecurityMonitoringRuleTypeRead.INFRASTRUCTURE_CONFIGURATION = SecurityMonitoringRuleTypeRead(
+    "infrastructure_configuration"
+)
+SecurityMonitoringRuleTypeRead.WORKLOAD_SECURITY = SecurityMonitoringRuleTypeRead("workload_security")
+SecurityMonitoringRuleTypeRead.CLOUD_CONFIGURATION = SecurityMonitoringRuleTypeRead("cloud_configuration")

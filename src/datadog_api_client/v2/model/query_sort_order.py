@@ -18,10 +18,8 @@ class QuerySortOrder(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ASC": "asc",
-            "DESC": "desc",
-        },
+        "asc",
+        "desc",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class QuerySortOrder(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+QuerySortOrder.ASC = QuerySortOrder("asc")
+QuerySortOrder.DESC = QuerySortOrder("desc")

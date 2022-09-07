@@ -18,11 +18,9 @@ class MetricEstimateType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "COUNT_OR_GAUGE": "count_or_gauge",
-            "DISTRIBUTION": "distribution",
-            "PERCENTILE": "percentile",
-        },
+        "count_or_gauge",
+        "distribution",
+        "percentile",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class MetricEstimateType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MetricEstimateType.COUNT_OR_GAUGE = MetricEstimateType("count_or_gauge")
+MetricEstimateType.DISTRIBUTION = MetricEstimateType("distribution")
+MetricEstimateType.PERCENTILE = MetricEstimateType("percentile")

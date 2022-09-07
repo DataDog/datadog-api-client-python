@@ -18,10 +18,8 @@ class WebhooksIntegrationEncoding(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "JSON": "json",
-            "FORM": "form",
-        },
+        "json",
+        "form",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class WebhooksIntegrationEncoding(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WebhooksIntegrationEncoding.JSON = WebhooksIntegrationEncoding("json")
+WebhooksIntegrationEncoding.FORM = WebhooksIntegrationEncoding("form")

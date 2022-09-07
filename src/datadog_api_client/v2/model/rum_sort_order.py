@@ -18,10 +18,8 @@ class RUMSortOrder(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ASCENDING": "asc",
-            "DESCENDING": "desc",
-        },
+        "asc",
+        "desc",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class RUMSortOrder(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+RUMSortOrder.ASCENDING = RUMSortOrder("asc")
+RUMSortOrder.DESCENDING = RUMSortOrder("desc")

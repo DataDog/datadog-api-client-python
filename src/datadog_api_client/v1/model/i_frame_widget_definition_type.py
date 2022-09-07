@@ -18,9 +18,7 @@ class IFrameWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "IFRAME": "iframe",
-        },
+        "iframe",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class IFrameWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+IFrameWidgetDefinitionType.IFRAME = IFrameWidgetDefinitionType("iframe")

@@ -17,7 +17,7 @@ METRIC_TAG_CONFIGURATION_DATA_ID = environ["METRIC_TAG_CONFIGURATION_DATA_ID"]
 
 body = MetricTagConfigurationUpdateRequest(
     data=MetricTagConfigurationUpdateData(
-        type=MetricTagConfigurationType("manage_tags"),
+        type=MetricTagConfigurationType.MANAGE_TAGS,
         id=METRIC_TAG_CONFIGURATION_DATA_ID,
         attributes=MetricTagConfigurationUpdateAttributes(
             tags=[

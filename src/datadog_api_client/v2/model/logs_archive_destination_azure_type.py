@@ -18,9 +18,7 @@ class LogsArchiveDestinationAzureType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AZURE": "azure",
-        },
+        "azure",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsArchiveDestinationAzureType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsArchiveDestinationAzureType.AZURE = LogsArchiveDestinationAzureType("azure")

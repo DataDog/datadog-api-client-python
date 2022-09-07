@@ -18,14 +18,12 @@ class ApplicationKeysSort(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CREATED_AT_ASCENDING": "created_at",
-            "CREATED_AT_DESCENDING": "-created_at",
-            "LAST4_ASCENDING": "last4",
-            "LAST4_DESCENDING": "-last4",
-            "NAME_ASCENDING": "name",
-            "NAME_DESCENDING": "-name",
-        },
+        "created_at",
+        "-created_at",
+        "last4",
+        "-last4",
+        "name",
+        "-name",
     }
 
     @cached_property
@@ -33,3 +31,11 @@ class ApplicationKeysSort(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ApplicationKeysSort.CREATED_AT_ASCENDING = ApplicationKeysSort("created_at")
+ApplicationKeysSort.CREATED_AT_DESCENDING = ApplicationKeysSort("-created_at")
+ApplicationKeysSort.LAST4_ASCENDING = ApplicationKeysSort("last4")
+ApplicationKeysSort.LAST4_DESCENDING = ApplicationKeysSort("-last4")
+ApplicationKeysSort.NAME_ASCENDING = ApplicationKeysSort("name")
+ApplicationKeysSort.NAME_DESCENDING = ApplicationKeysSort("-name")

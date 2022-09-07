@@ -18,9 +18,7 @@ class UserInvitationsType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "USER_INVITATIONS": "user_invitations",
-        },
+        "user_invitations",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class UserInvitationsType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+UserInvitationsType.USER_INVITATIONS = UserInvitationsType("user_invitations")

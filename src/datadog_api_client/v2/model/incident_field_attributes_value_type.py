@@ -18,12 +18,10 @@ class IncidentFieldAttributesValueType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MULTISELECT": "multiselect",
-            "TEXTARRAY": "textarray",
-            "METRICTAG": "metrictag",
-            "AUTOCOMPLETE": "autocomplete",
-        },
+        "multiselect",
+        "textarray",
+        "metrictag",
+        "autocomplete",
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class IncidentFieldAttributesValueType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+IncidentFieldAttributesValueType.MULTISELECT = IncidentFieldAttributesValueType("multiselect")
+IncidentFieldAttributesValueType.TEXTARRAY = IncidentFieldAttributesValueType("textarray")
+IncidentFieldAttributesValueType.METRICTAG = IncidentFieldAttributesValueType("metrictag")
+IncidentFieldAttributesValueType.AUTOCOMPLETE = IncidentFieldAttributesValueType("autocomplete")

@@ -90,10 +90,6 @@ def composed_model_input_classes(cls):
 class OpenApiModel(object):
     """The base class for all OpenAPIModels.
 
-    :var allowed_values: The key is the name of the attribute. The value is a dict
-        with a capitalized key describing the allowed value and an allowed
-        value. These dicts store the allowed enum values.
-    :type allowed_values: dict
     :var attribute_map: The key is attribute name and the value is json
         key in definition.
     :type attribute_map: dict
@@ -114,8 +110,6 @@ class OpenApiModel(object):
     attribute_map: Mapping[str, str] = empty_dict
 
     _nullable = False
-
-    allowed_values: Mapping[str, Mapping[str, Union[str, int]]] = empty_dict
 
     validations: Mapping[str, Mapping[str, int]] = empty_dict
 
@@ -151,13 +145,6 @@ class OpenApiModel(object):
                 self._check_type,
                 configuration=self._configuration,
             )
-        if name in self.allowed_values:
-            try:
-                check_allowed_values(list(self.allowed_values[name].values()), name, value)
-            except ApiValueError:
-                self.__dict__["_data_store"][name] = value
-                self._unparsed = True
-                return
         if name in self.validations:
             check_validations(self.validations[name], name, value, self._configuration)
         self.__dict__["_data_store"][name] = value
@@ -271,7 +258,12 @@ class ModelSimple(OpenApiModel):
     """
     The parent class of models whose type != object in their
     swagger/openapi.
+
+    :var allowed_values: Set of allowed values.
+    :type allowed_values: set
     """
+
+    allowed_values: Collection[str] = frozenset()
 
     required_properties = set(
         [
@@ -294,6 +286,14 @@ class ModelSimple(OpenApiModel):
         if name in self.required_properties:
             self.__dict__[name] = value
             return
+
+        if self.allowed_values and name == "value":
+            try:
+                check_allowed_values(self.allowed_values, name, value)
+            except ApiValueError:
+                self.__dict__["_data_store"][name] = value
+                self._unparsed = True
+                return
 
         self.set_attribute(name, value)
 
@@ -681,24 +681,24 @@ def get_simple_class(input_value):
 def check_allowed_values(allowed_values, input_variable, input_values):
     """Raises an exception if the input_values are not allowed.
 
-    :type allowed_values: list
+    :type allowed_values: set
     :param input_variable: The name of the input variable.
     :type input_variable: str
     :param input_values: The values that we are checking to see if they are in
         allowed_values.
     :type input_values: list/str/int/float/date/datetime
     """
-    if isinstance(input_values, list) and not set(input_values).issubset(set(allowed_values)):
-        invalid_values = (", ".join(map(str, set(input_values) - set(allowed_values))),)
+    if isinstance(input_values, list) and not set(input_values).issubset(allowed_values):
+        invalid_values = (", ".join(map(str, set(input_values) - allowed_values)),)
         raise ApiValueError(
             "Invalid values for `%s` [%s], must be a subset of [%s]"
-            % (input_variable, invalid_values, ", ".join(map(str, allowed_values)))
+            % (input_variable, invalid_values, ", ".join(str(v) for v in allowed_values))
         )
-    elif isinstance(input_values, dict) and not set(input_values.keys()).issubset(set(allowed_values)):
-        invalid_values = ", ".join(map(str, set(input_values.keys()) - set(allowed_values)))
+    elif isinstance(input_values, dict) and not set(input_values.keys()).issubset(allowed_values):
+        invalid_values = ", ".join(map(str, set(input_values.keys()) - allowed_values))
         raise ApiValueError(
             "Invalid keys in `%s` [%s], must be a subset of [%s]"
-            % (input_variable, invalid_values, ", ".join(map(str, allowed_values)))
+            % (input_variable, invalid_values, ", ".join(str(v) for v in allowed_values))
         )
     elif not isinstance(input_values, (list, dict)) and input_values not in allowed_values:
         raise ApiValueError(

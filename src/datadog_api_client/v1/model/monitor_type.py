@@ -18,24 +18,22 @@ class MonitorType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "COMPOSITE": "composite",
-            "EVENT_ALERT": "event alert",
-            "LOG_ALERT": "log alert",
-            "METRIC_ALERT": "metric alert",
-            "PROCESS_ALERT": "process alert",
-            "QUERY_ALERT": "query alert",
-            "RUM_ALERT": "rum alert",
-            "SERVICE_CHECK": "service check",
-            "SYNTHETICS_ALERT": "synthetics alert",
-            "TRACE_ANALYTICS_ALERT": "trace-analytics alert",
-            "SLO_ALERT": "slo alert",
-            "EVENT_V2_ALERT": "event-v2 alert",
-            "AUDIT_ALERT": "audit alert",
-            "CI_PIPELINES_ALERT": "ci-pipelines alert",
-            "CI_TESTS_ALERT": "ci-tests alert",
-            "ERROR_TRACKING_ALERT": "error-tracking alert",
-        },
+        "composite",
+        "event alert",
+        "log alert",
+        "metric alert",
+        "process alert",
+        "query alert",
+        "rum alert",
+        "service check",
+        "synthetics alert",
+        "trace-analytics alert",
+        "slo alert",
+        "event-v2 alert",
+        "audit alert",
+        "ci-pipelines alert",
+        "ci-tests alert",
+        "error-tracking alert",
     }
 
     @cached_property
@@ -43,3 +41,21 @@ class MonitorType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MonitorType.COMPOSITE = MonitorType("composite")
+MonitorType.EVENT_ALERT = MonitorType("event alert")
+MonitorType.LOG_ALERT = MonitorType("log alert")
+MonitorType.METRIC_ALERT = MonitorType("metric alert")
+MonitorType.PROCESS_ALERT = MonitorType("process alert")
+MonitorType.QUERY_ALERT = MonitorType("query alert")
+MonitorType.RUM_ALERT = MonitorType("rum alert")
+MonitorType.SERVICE_CHECK = MonitorType("service check")
+MonitorType.SYNTHETICS_ALERT = MonitorType("synthetics alert")
+MonitorType.TRACE_ANALYTICS_ALERT = MonitorType("trace-analytics alert")
+MonitorType.SLO_ALERT = MonitorType("slo alert")
+MonitorType.EVENT_V2_ALERT = MonitorType("event-v2 alert")
+MonitorType.AUDIT_ALERT = MonitorType("audit alert")
+MonitorType.CI_PIPELINES_ALERT = MonitorType("ci-pipelines alert")
+MonitorType.CI_TESTS_ALERT = MonitorType("ci-tests alert")
+MonitorType.ERROR_TRACKING_ALERT = MonitorType("error-tracking alert")

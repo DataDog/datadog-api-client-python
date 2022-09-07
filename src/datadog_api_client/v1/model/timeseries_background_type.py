@@ -18,10 +18,8 @@ class TimeseriesBackgroundType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "BARS": "bars",
-            "AREA": "area",
-        },
+        "bars",
+        "area",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class TimeseriesBackgroundType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+TimeseriesBackgroundType.BARS = TimeseriesBackgroundType("bars")
+TimeseriesBackgroundType.AREA = TimeseriesBackgroundType("area")

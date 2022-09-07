@@ -18,9 +18,7 @@ class GroupWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "GROUP": "group",
-        },
+        "group",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class GroupWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+GroupWidgetDefinitionType.GROUP = GroupWidgetDefinitionType("group")

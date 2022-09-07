@@ -16,7 +16,7 @@ body = RUMApplicationUpdateRequest(
             type="browser",
         ),
         id="abcd1234-0000-0000-abcd-1234abcd5678",
-        type=RUMApplicationUpdateType("rum_application_update"),
+        type=RUMApplicationUpdateType.RUM_APPLICATION_UPDATE,
     ),
 )
 

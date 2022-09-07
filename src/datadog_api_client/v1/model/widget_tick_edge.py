@@ -18,12 +18,10 @@ class WidgetTickEdge(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "BOTTOM": "bottom",
-            "LEFT": "left",
-            "RIGHT": "right",
-            "TOP": "top",
-        },
+        "bottom",
+        "left",
+        "right",
+        "top",
     }
 
     @cached_property
@@ -31,3 +29,9 @@ class WidgetTickEdge(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetTickEdge.BOTTOM = WidgetTickEdge("bottom")
+WidgetTickEdge.LEFT = WidgetTickEdge("left")
+WidgetTickEdge.RIGHT = WidgetTickEdge("right")
+WidgetTickEdge.TOP = WidgetTickEdge("top")

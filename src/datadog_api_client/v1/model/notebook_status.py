@@ -18,9 +18,7 @@ class NotebookStatus(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "PUBLISHED": "published",
-        },
+        "published",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class NotebookStatus(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+NotebookStatus.PUBLISHED = NotebookStatus("published")

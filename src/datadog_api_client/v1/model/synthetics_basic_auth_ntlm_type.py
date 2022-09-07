@@ -18,9 +18,7 @@ class SyntheticsBasicAuthNTLMType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NTLM": "ntlm",
-        },
+        "ntlm",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SyntheticsBasicAuthNTLMType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsBasicAuthNTLMType.NTLM = SyntheticsBasicAuthNTLMType("ntlm")

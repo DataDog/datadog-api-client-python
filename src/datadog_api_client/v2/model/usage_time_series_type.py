@@ -18,9 +18,7 @@ class UsageTimeSeriesType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "USAGE_TIMESERIES": "usage_timeseries",
-        },
+        "usage_timeseries",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class UsageTimeSeriesType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+UsageTimeSeriesType.USAGE_TIMESERIES = UsageTimeSeriesType("usage_timeseries")

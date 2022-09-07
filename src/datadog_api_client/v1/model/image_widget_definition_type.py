@@ -18,9 +18,7 @@ class ImageWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "IMAGE": "image",
-        },
+        "image",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class ImageWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+ImageWidgetDefinitionType.IMAGE = ImageWidgetDefinitionType("image")

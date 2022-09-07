@@ -34,18 +34,18 @@ body = Dashboard(
             definition=QueryValueWidgetDefinition(
                 title="",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
+                title_align=WidgetTextAlign.LEFT,
                 time=WidgetTime(),
-                type=QueryValueWidgetDefinitionType("query_value"),
+                type=QueryValueWidgetDefinitionType.QUERY_VALUE,
                 requests=[
                     QueryValueWidgetRequest(
-                        response_format=FormulaAndFunctionResponseFormat("scalar"),
+                        response_format=FormulaAndFunctionResponseFormat.SCALAR,
                         queries=[
                             FormulaAndFunctionMetricQueryDefinition(
                                 name="query1",
-                                data_source=FormulaAndFunctionMetricDataSource("metrics"),
+                                data_source=FormulaAndFunctionMetricDataSource.METRICS,
                                 query="avg:system.cpu.user{*}",
-                                aggregator=FormulaAndFunctionMetricAggregation("avg"),
+                                aggregator=FormulaAndFunctionMetricAggregation.AVG,
                             ),
                         ],
                     ),
@@ -56,7 +56,7 @@ body = Dashboard(
         ),
     ],
     template_variables=[],
-    layout_type=DashboardLayoutType("free"),
+    layout_type=DashboardLayoutType.FREE,
     is_read_only=False,
     notify_list=[],
 )

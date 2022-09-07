@@ -19,9 +19,9 @@ from datadog_api_client.v2.model.logs_sort_order import LogsSortOrder
 body = LogsAggregateRequest(
     compute=[
         LogsCompute(
-            aggregation=LogsAggregationFunction("count"),
+            aggregation=LogsAggregationFunction.COUNT,
             interval="5m",
-            type=LogsComputeType("timeseries"),
+            type=LogsComputeType.TIMESERIES,
         ),
     ],
     filter=LogsQueryFilter(
@@ -37,9 +37,9 @@ body = LogsAggregateRequest(
             facet="host",
             missing=LogsGroupByMissing("miss"),
             sort=LogsAggregateSort(
-                type=LogsAggregateSortType("measure"),
-                order=LogsSortOrder("asc"),
-                aggregation=LogsAggregationFunction("pc90"),
+                type=LogsAggregateSortType.MEASURE,
+                order=LogsSortOrder.ASCENDING,
+                aggregation=LogsAggregationFunction.PERCENTILE_90,
                 metric="@duration",
             ),
             total=LogsGroupByTotal("recall"),

@@ -18,10 +18,8 @@ class WidgetSort(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ASCENDING": "asc",
-            "DESCENDING": "desc",
-        },
+        "asc",
+        "desc",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class WidgetSort(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+WidgetSort.ASCENDING = WidgetSort("asc")
+WidgetSort.DESCENDING = WidgetSort("desc")

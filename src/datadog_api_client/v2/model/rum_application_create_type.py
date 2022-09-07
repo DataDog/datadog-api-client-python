@@ -18,9 +18,7 @@ class RUMApplicationCreateType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "RUM_APPLICATION_CREATE": "rum_application_create",
-        },
+        "rum_application_create",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class RUMApplicationCreateType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+RUMApplicationCreateType.RUM_APPLICATION_CREATE = RUMApplicationCreateType("rum_application_create")

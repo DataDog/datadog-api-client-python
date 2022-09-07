@@ -18,9 +18,7 @@ class LogStreamWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "LOG_STREAM": "log_stream",
-        },
+        "log_stream",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogStreamWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogStreamWidgetDefinitionType.LOG_STREAM = LogStreamWidgetDefinitionType("log_stream")

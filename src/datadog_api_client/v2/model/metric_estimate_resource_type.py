@@ -18,9 +18,7 @@ class MetricEstimateResourceType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "METRIC_CARDINALITY_ESTIMATE": "metric_cardinality_estimate",
-        },
+        "metric_cardinality_estimate",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class MetricEstimateResourceType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+MetricEstimateResourceType.METRIC_CARDINALITY_ESTIMATE = MetricEstimateResourceType("metric_cardinality_estimate")

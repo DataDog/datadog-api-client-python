@@ -18,11 +18,9 @@ class SignalTriageState(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "OPEN": "open",
-            "ARCHIVED": "archived",
-            "UNDER_REVIEW": "under_review",
-        },
+        "open",
+        "archived",
+        "under_review",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class SignalTriageState(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SignalTriageState.OPEN = SignalTriageState("open")
+SignalTriageState.ARCHIVED = SignalTriageState("archived")
+SignalTriageState.UNDER_REVIEW = SignalTriageState("under_review")

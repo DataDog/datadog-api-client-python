@@ -18,10 +18,8 @@ class LogsSort(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TIMESTAMP_ASCENDING": "timestamp",
-            "TIMESTAMP_DESCENDING": "-timestamp",
-        },
+        "timestamp",
+        "-timestamp",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class LogsSort(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsSort.TIMESTAMP_ASCENDING = LogsSort("timestamp")
+LogsSort.TIMESTAMP_DESCENDING = LogsSort("-timestamp")

@@ -18,9 +18,7 @@ class RolesType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ROLES": "roles",
-        },
+        "roles",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class RolesType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+RolesType.ROLES = RolesType("roles")

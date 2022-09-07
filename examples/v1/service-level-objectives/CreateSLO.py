@@ -11,7 +11,7 @@ from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
 from datadog_api_client.v1.model.slo_type import SLOType
 
 body = ServiceLevelObjectiveRequest(
-    type=SLOType("metric"),
+    type=SLOType.METRIC,
     description="string",
     groups=[
         "env:test",
@@ -31,7 +31,7 @@ body = ServiceLevelObjectiveRequest(
         SLOThreshold(
             target=95.0,
             target_display="95.0",
-            timeframe=SLOTimeframe("7d"),
+            timeframe=SLOTimeframe.SEVEN_DAYS,
             warning=98.0,
             warning_display="98.0",
         ),

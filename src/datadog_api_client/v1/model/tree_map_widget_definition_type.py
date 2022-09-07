@@ -18,9 +18,7 @@ class TreeMapWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TREEMAP": "treemap",
-        },
+        "treemap",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class TreeMapWidgetDefinitionType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+TreeMapWidgetDefinitionType.TREEMAP = TreeMapWidgetDefinitionType("treemap")

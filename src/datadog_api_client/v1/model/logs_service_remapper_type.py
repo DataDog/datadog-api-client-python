@@ -18,9 +18,7 @@ class LogsServiceRemapperType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SERVICE_REMAPPER": "service-remapper",
-        },
+        "service-remapper",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsServiceRemapperType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsServiceRemapperType.SERVICE_REMAPPER = LogsServiceRemapperType("service-remapper")

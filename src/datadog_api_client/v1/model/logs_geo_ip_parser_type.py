@@ -18,9 +18,7 @@ class LogsGeoIPParserType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "GEO_IP_PARSER": "geo-ip-parser",
-        },
+        "geo-ip-parser",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsGeoIPParserType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsGeoIPParserType.GEO_IP_PARSER = LogsGeoIPParserType("geo-ip-parser")

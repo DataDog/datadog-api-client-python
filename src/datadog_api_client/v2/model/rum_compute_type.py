@@ -18,10 +18,8 @@ class RUMComputeType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TIMESERIES": "timeseries",
-            "TOTAL": "total",
-        },
+        "timeseries",
+        "total",
     }
 
     @cached_property
@@ -29,3 +27,7 @@ class RUMComputeType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+RUMComputeType.TIMESERIES = RUMComputeType("timeseries")
+RUMComputeType.TOTAL = RUMComputeType("total")

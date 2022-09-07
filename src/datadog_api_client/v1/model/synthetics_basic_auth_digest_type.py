@@ -18,9 +18,7 @@ class SyntheticsBasicAuthDigestType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DIGEST": "digest",
-        },
+        "digest",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class SyntheticsBasicAuthDigestType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+SyntheticsBasicAuthDigestType.DIGEST = SyntheticsBasicAuthDigestType("digest")

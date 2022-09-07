@@ -18,9 +18,7 @@ class LogsCategoryProcessorType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CATEGORY_PROCESSOR": "category-processor",
-        },
+        "category-processor",
     }
 
     @cached_property
@@ -28,3 +26,6 @@ class LogsCategoryProcessorType(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+LogsCategoryProcessorType.CATEGORY_PROCESSOR = LogsCategoryProcessorType("category-processor")

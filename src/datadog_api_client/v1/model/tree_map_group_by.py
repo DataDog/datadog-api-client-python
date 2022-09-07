@@ -18,11 +18,9 @@ class TreeMapGroupBy(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "USER": "user",
-            "FAMILY": "family",
-            "PROCESS": "process",
-        },
+        "user",
+        "family",
+        "process",
     }
 
     @cached_property
@@ -30,3 +28,8 @@ class TreeMapGroupBy(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+TreeMapGroupBy.USER = TreeMapGroupBy("user")
+TreeMapGroupBy.FAMILY = TreeMapGroupBy("family")
+TreeMapGroupBy.PROCESS = TreeMapGroupBy("process")
