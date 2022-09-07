@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetSizeFormat(ModelSimple):
     """
@@ -22,6 +24,9 @@ class WidgetSizeFormat(ModelSimple):
         "medium",
         "large",
     }
+    SMALL: ClassVar["WidgetSizeFormat"]
+    MEDIUM: ClassVar["WidgetSizeFormat"]
+    LARGE: ClassVar["WidgetSizeFormat"]
 
     @cached_property
     def openapi_types(_):

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetGrouping(ModelSimple):
     """
@@ -21,6 +23,8 @@ class WidgetGrouping(ModelSimple):
         "check",
         "cluster",
     }
+    CHECK: ClassVar["WidgetGrouping"]
+    CLUSTER: ClassVar["WidgetGrouping"]
 
     @cached_property
     def openapi_types(_):

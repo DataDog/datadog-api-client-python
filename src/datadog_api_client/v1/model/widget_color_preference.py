@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetColorPreference(ModelSimple):
     """
@@ -21,6 +23,8 @@ class WidgetColorPreference(ModelSimple):
         "background",
         "text",
     }
+    BACKGROUND: ClassVar["WidgetColorPreference"]
+    TEXT: ClassVar["WidgetColorPreference"]
 
     @cached_property
     def openapi_types(_):

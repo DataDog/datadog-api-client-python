@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsTestDetailsType(ModelSimple):
     """
@@ -21,6 +23,8 @@ class SyntheticsTestDetailsType(ModelSimple):
         "api",
         "browser",
     }
+    API: ClassVar["SyntheticsTestDetailsType"]
+    BROWSER: ClassVar["SyntheticsTestDetailsType"]
 
     @cached_property
     def openapi_types(_):

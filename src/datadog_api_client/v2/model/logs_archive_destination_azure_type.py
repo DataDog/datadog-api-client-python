@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsArchiveDestinationAzureType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class LogsArchiveDestinationAzureType(ModelSimple):
     allowed_values = {
         "azure",
     }
+    AZURE: ClassVar["LogsArchiveDestinationAzureType"]
 
     @cached_property
     def openapi_types(_):

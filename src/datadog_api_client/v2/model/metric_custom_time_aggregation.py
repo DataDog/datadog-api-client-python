@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MetricCustomTimeAggregation(ModelSimple):
     """
@@ -24,6 +26,11 @@ class MetricCustomTimeAggregation(ModelSimple):
         "min",
         "sum",
     }
+    AVG: ClassVar["MetricCustomTimeAggregation"]
+    COUNT: ClassVar["MetricCustomTimeAggregation"]
+    MAX: ClassVar["MetricCustomTimeAggregation"]
+    MIN: ClassVar["MetricCustomTimeAggregation"]
+    SUM: ClassVar["MetricCustomTimeAggregation"]
 
     @cached_property
     def openapi_types(_):

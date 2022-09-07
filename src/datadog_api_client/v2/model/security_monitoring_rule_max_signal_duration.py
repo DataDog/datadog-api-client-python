@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityMonitoringRuleMaxSignalDuration(ModelSimple):
     """
@@ -32,6 +34,18 @@ class SecurityMonitoringRuleMaxSignalDuration(ModelSimple):
         43200,
         86400,
     }
+    ZERO_MINUTES: ClassVar["SecurityMonitoringRuleMaxSignalDuration"]
+    ONE_MINUTE: ClassVar["SecurityMonitoringRuleMaxSignalDuration"]
+    FIVE_MINUTES: ClassVar["SecurityMonitoringRuleMaxSignalDuration"]
+    TEN_MINUTES: ClassVar["SecurityMonitoringRuleMaxSignalDuration"]
+    FIFTEEN_MINUTES: ClassVar["SecurityMonitoringRuleMaxSignalDuration"]
+    THIRTY_MINUTES: ClassVar["SecurityMonitoringRuleMaxSignalDuration"]
+    ONE_HOUR: ClassVar["SecurityMonitoringRuleMaxSignalDuration"]
+    TWO_HOURS: ClassVar["SecurityMonitoringRuleMaxSignalDuration"]
+    THREE_HOURS: ClassVar["SecurityMonitoringRuleMaxSignalDuration"]
+    SIX_HOURS: ClassVar["SecurityMonitoringRuleMaxSignalDuration"]
+    TWELVE_HOURS: ClassVar["SecurityMonitoringRuleMaxSignalDuration"]
+    ONE_DAY: ClassVar["SecurityMonitoringRuleMaxSignalDuration"]
 
     @cached_property
     def openapi_types(_):

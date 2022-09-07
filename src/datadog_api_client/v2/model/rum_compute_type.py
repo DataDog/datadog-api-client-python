@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class RUMComputeType(ModelSimple):
     """
@@ -21,6 +23,8 @@ class RUMComputeType(ModelSimple):
         "timeseries",
         "total",
     }
+    TIMESERIES: ClassVar["RUMComputeType"]
+    TOTAL: ClassVar["RUMComputeType"]
 
     @cached_property
     def openapi_types(_):

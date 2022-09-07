@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsArchiveDestinationS3Type(ModelSimple):
     """
@@ -20,6 +22,7 @@ class LogsArchiveDestinationS3Type(ModelSimple):
     allowed_values = {
         "s3",
     }
+    S3: ClassVar["LogsArchiveDestinationS3Type"]
 
     @cached_property
     def openapi_types(_):

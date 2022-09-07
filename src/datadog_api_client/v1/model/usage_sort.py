@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class UsageSort(ModelSimple):
     """
@@ -23,6 +25,10 @@ class UsageSort(ModelSimple):
         "start_date",
         "end_date",
     }
+    COMPUTED_ON: ClassVar["UsageSort"]
+    SIZE: ClassVar["UsageSort"]
+    START_DATE: ClassVar["UsageSort"]
+    END_DATE: ClassVar["UsageSort"]
 
     @cached_property
     def openapi_types(_):

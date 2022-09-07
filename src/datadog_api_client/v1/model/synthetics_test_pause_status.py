@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsTestPauseStatus(ModelSimple):
     """
@@ -22,6 +24,8 @@ class SyntheticsTestPauseStatus(ModelSimple):
         "live",
         "paused",
     }
+    LIVE: ClassVar["SyntheticsTestPauseStatus"]
+    PAUSED: ClassVar["SyntheticsTestPauseStatus"]
 
     @cached_property
     def openapi_types(_):

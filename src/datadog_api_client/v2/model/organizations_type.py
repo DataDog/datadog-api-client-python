@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class OrganizationsType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class OrganizationsType(ModelSimple):
     allowed_values = {
         "orgs",
     }
+    ORGS: ClassVar["OrganizationsType"]
 
     @cached_property
     def openapi_types(_):

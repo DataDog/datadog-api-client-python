@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class UsageAttributionSupportedMetrics(ModelSimple):
     """
@@ -60,6 +62,47 @@ class UsageAttributionSupportedMetrics(ModelSimple):
         "estimated_ingested_spans_percentage",
         "*",
     }
+    CUSTOM_TIMESERIES_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    CONTAINER_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    SNMP_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    APM_HOST_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    BROWSER_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    NPM_HOST_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    INFRA_HOST_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    CUSTOM_TIMESERIES_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    CONTAINER_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    API_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    APM_HOST_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    INFRA_HOST_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    SNMP_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    BROWSER_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    API_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    NPM_HOST_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    LAMBDA_FUNCTIONS_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    LAMBDA_FUNCTIONS_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    LAMBDA_INVOCATIONS_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    LAMBDA_INVOCATIONS_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    FARGATE_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    FARGATE_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    PROFILED_HOST_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    PROFILED_HOST_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    PROFILED_CONTAINER_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    PROFILED_CONTAINER_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    DBM_HOSTS_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    DBM_HOSTS_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    DBM_QUERIES_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    DBM_QUERIES_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    ESTIMATED_INDEXED_LOGS_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    ESTIMATED_INDEXED_LOGS_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    ESTIMATED_INGESTED_LOGS_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    ESTIMATED_INGESTED_LOGS_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    APPSEC_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    APPSEC_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    ESTIMATED_INDEXED_SPANS_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    ESTIMATED_INDEXED_SPANS_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    ESTIMATED_INGESTED_SPANS_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    ESTIMATED_INGESTED_SPANS_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
+    ALL: ClassVar["UsageAttributionSupportedMetrics"]
 
     @cached_property
     def openapi_types(_):

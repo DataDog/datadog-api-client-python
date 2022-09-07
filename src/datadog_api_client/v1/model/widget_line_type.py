@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetLineType(ModelSimple):
     """
@@ -22,6 +24,9 @@ class WidgetLineType(ModelSimple):
         "dotted",
         "solid",
     }
+    DASHED: ClassVar["WidgetLineType"]
+    DOTTED: ClassVar["WidgetLineType"]
+    SOLID: ClassVar["WidgetLineType"]
 
     @cached_property
     def openapi_types(_):

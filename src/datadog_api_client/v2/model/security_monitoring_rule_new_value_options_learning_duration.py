@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityMonitoringRuleNewValueOptionsLearningDuration(ModelSimple):
     """
@@ -23,6 +25,9 @@ class SecurityMonitoringRuleNewValueOptionsLearningDuration(ModelSimple):
         1,
         7,
     }
+    ZERO_DAYS: ClassVar["SecurityMonitoringRuleNewValueOptionsLearningDuration"]
+    ONE_DAY: ClassVar["SecurityMonitoringRuleNewValueOptionsLearningDuration"]
+    SEVEN_DAYS: ClassVar["SecurityMonitoringRuleNewValueOptionsLearningDuration"]
 
     @cached_property
     def openapi_types(_):

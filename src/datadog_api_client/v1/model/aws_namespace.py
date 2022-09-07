@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class AWSNamespace(ModelSimple):
     """
@@ -26,6 +28,13 @@ class AWSNamespace(ModelSimple):
         "network_elb",
         "lambda",
     }
+    ELB: ClassVar["AWSNamespace"]
+    APPLICATION_ELB: ClassVar["AWSNamespace"]
+    SQS: ClassVar["AWSNamespace"]
+    RDS: ClassVar["AWSNamespace"]
+    CUSTOM: ClassVar["AWSNamespace"]
+    NETWORK_ELB: ClassVar["AWSNamespace"]
+    LAMBDA: ClassVar["AWSNamespace"]
 
     @cached_property
     def openapi_types(_):

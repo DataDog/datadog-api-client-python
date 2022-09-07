@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class FormulaAndFunctionApmDependencyStatsDataSource(ModelSimple):
     """
@@ -20,6 +22,7 @@ class FormulaAndFunctionApmDependencyStatsDataSource(ModelSimple):
     allowed_values = {
         "apm_dependency_stats",
     }
+    APM_DEPENDENCY_STATS: ClassVar["FormulaAndFunctionApmDependencyStatsDataSource"]
 
     @cached_property
     def openapi_types(_):

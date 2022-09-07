@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsApiTestFailureCode(ModelSimple):
     """
@@ -45,6 +47,32 @@ class SyntheticsApiTestFailureCode(ModelSimple):
         "UNKNOWN",
         "INTERNAL_ERROR",
     }
+    BODY_TOO_LARGE: ClassVar["SyntheticsApiTestFailureCode"]
+    DENIED: ClassVar["SyntheticsApiTestFailureCode"]
+    TOO_MANY_REDIRECTS: ClassVar["SyntheticsApiTestFailureCode"]
+    AUTHENTICATION_ERROR: ClassVar["SyntheticsApiTestFailureCode"]
+    DECRYPTION: ClassVar["SyntheticsApiTestFailureCode"]
+    INVALID_CHAR_IN_HEADER: ClassVar["SyntheticsApiTestFailureCode"]
+    HEADER_TOO_LARGE: ClassVar["SyntheticsApiTestFailureCode"]
+    HEADERS_INCOMPATIBLE_CONTENT_LENGTH: ClassVar["SyntheticsApiTestFailureCode"]
+    INVALID_REQUEST: ClassVar["SyntheticsApiTestFailureCode"]
+    REQUIRES_UPDATE: ClassVar["SyntheticsApiTestFailureCode"]
+    UNESCAPED_CHARACTERS_IN_REQUEST_PATH: ClassVar["SyntheticsApiTestFailureCode"]
+    MALFORMED_RESPONSE: ClassVar["SyntheticsApiTestFailureCode"]
+    INCORRECT_ASSERTION: ClassVar["SyntheticsApiTestFailureCode"]
+    CONNREFUSED: ClassVar["SyntheticsApiTestFailureCode"]
+    CONNRESET: ClassVar["SyntheticsApiTestFailureCode"]
+    DNS: ClassVar["SyntheticsApiTestFailureCode"]
+    HOSTUNREACH: ClassVar["SyntheticsApiTestFailureCode"]
+    NETUNREACH: ClassVar["SyntheticsApiTestFailureCode"]
+    TIMEOUT: ClassVar["SyntheticsApiTestFailureCode"]
+    SSL: ClassVar["SyntheticsApiTestFailureCode"]
+    OCSP: ClassVar["SyntheticsApiTestFailureCode"]
+    INVALID_TEST: ClassVar["SyntheticsApiTestFailureCode"]
+    TUNNEL: ClassVar["SyntheticsApiTestFailureCode"]
+    WEBSOCKET: ClassVar["SyntheticsApiTestFailureCode"]
+    UNKNOWN: ClassVar["SyntheticsApiTestFailureCode"]
+    INTERNAL_ERROR: ClassVar["SyntheticsApiTestFailureCode"]
 
     @cached_property
     def openapi_types(_):

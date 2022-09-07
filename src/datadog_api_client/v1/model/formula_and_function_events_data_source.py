@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class FormulaAndFunctionEventsDataSource(ModelSimple):
     """
@@ -28,6 +30,15 @@ class FormulaAndFunctionEventsDataSource(ModelSimple):
         "events",
         "ci_tests",
     }
+    LOGS: ClassVar["FormulaAndFunctionEventsDataSource"]
+    SPANS: ClassVar["FormulaAndFunctionEventsDataSource"]
+    NETWORK: ClassVar["FormulaAndFunctionEventsDataSource"]
+    RUM: ClassVar["FormulaAndFunctionEventsDataSource"]
+    SECURITY_SIGNALS: ClassVar["FormulaAndFunctionEventsDataSource"]
+    PROFILES: ClassVar["FormulaAndFunctionEventsDataSource"]
+    AUDIT: ClassVar["FormulaAndFunctionEventsDataSource"]
+    EVENTS: ClassVar["FormulaAndFunctionEventsDataSource"]
+    CI_TESTS: ClassVar["FormulaAndFunctionEventsDataSource"]
 
     @cached_property
     def openapi_types(_):

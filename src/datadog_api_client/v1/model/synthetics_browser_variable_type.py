@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsBrowserVariableType(ModelSimple):
     """
@@ -24,6 +26,11 @@ class SyntheticsBrowserVariableType(ModelSimple):
         "javascript",
         "text",
     }
+    ELEMENT: ClassVar["SyntheticsBrowserVariableType"]
+    EMAIL: ClassVar["SyntheticsBrowserVariableType"]
+    GLOBAL: ClassVar["SyntheticsBrowserVariableType"]
+    JAVASCRIPT: ClassVar["SyntheticsBrowserVariableType"]
+    TEXT: ClassVar["SyntheticsBrowserVariableType"]
 
     @cached_property
     def openapi_types(_):

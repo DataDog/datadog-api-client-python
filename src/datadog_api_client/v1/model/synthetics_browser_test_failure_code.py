@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsBrowserTestFailureCode(ModelSimple):
     """
@@ -52,6 +54,39 @@ class SyntheticsBrowserTestFailureCode(ModelSimple):
         "UPLOAD_FILES_DYNAMIC_ELEMENT",
         "UPLOAD_FILES_NAME",
     }
+    API_REQUEST_FAILURE: ClassVar["SyntheticsBrowserTestFailureCode"]
+    ASSERTION_FAILURE: ClassVar["SyntheticsBrowserTestFailureCode"]
+    DOWNLOAD_FILE_TOO_LARGE: ClassVar["SyntheticsBrowserTestFailureCode"]
+    ELEMENT_NOT_INTERACTABLE: ClassVar["SyntheticsBrowserTestFailureCode"]
+    EMAIL_VARIABLE_NOT_DEFINED: ClassVar["SyntheticsBrowserTestFailureCode"]
+    EVALUATE_JAVASCRIPT: ClassVar["SyntheticsBrowserTestFailureCode"]
+    EVALUATE_JAVASCRIPT_CONTEXT: ClassVar["SyntheticsBrowserTestFailureCode"]
+    EXTRACT_VARIABLE: ClassVar["SyntheticsBrowserTestFailureCode"]
+    FORBIDDEN_URL: ClassVar["SyntheticsBrowserTestFailureCode"]
+    FRAME_DETACHED: ClassVar["SyntheticsBrowserTestFailureCode"]
+    INCONSISTENCIES: ClassVar["SyntheticsBrowserTestFailureCode"]
+    INTERNAL_ERROR: ClassVar["SyntheticsBrowserTestFailureCode"]
+    INVALID_TYPE_TEXT_DELAY: ClassVar["SyntheticsBrowserTestFailureCode"]
+    INVALID_URL: ClassVar["SyntheticsBrowserTestFailureCode"]
+    INVALID_VARIABLE_PATTERN: ClassVar["SyntheticsBrowserTestFailureCode"]
+    INVISIBLE_ELEMENT: ClassVar["SyntheticsBrowserTestFailureCode"]
+    LOCATE_ELEMENT: ClassVar["SyntheticsBrowserTestFailureCode"]
+    NAVIGATE_TO_LINK: ClassVar["SyntheticsBrowserTestFailureCode"]
+    OPEN_URL: ClassVar["SyntheticsBrowserTestFailureCode"]
+    PRESS_KEY: ClassVar["SyntheticsBrowserTestFailureCode"]
+    SERVER_CERTIFICATE: ClassVar["SyntheticsBrowserTestFailureCode"]
+    SELECT_OPTION: ClassVar["SyntheticsBrowserTestFailureCode"]
+    STEP_TIMEOUT: ClassVar["SyntheticsBrowserTestFailureCode"]
+    SUB_TEST_NOT_PASSED: ClassVar["SyntheticsBrowserTestFailureCode"]
+    TEST_TIMEOUT: ClassVar["SyntheticsBrowserTestFailureCode"]
+    TOO_MANY_HTTP_REQUESTS: ClassVar["SyntheticsBrowserTestFailureCode"]
+    UNAVAILABLE_BROWSER: ClassVar["SyntheticsBrowserTestFailureCode"]
+    UNKNOWN: ClassVar["SyntheticsBrowserTestFailureCode"]
+    UNSUPPORTED_AUTH_SCHEMA: ClassVar["SyntheticsBrowserTestFailureCode"]
+    UPLOAD_FILES_ELEMENT_TYPE: ClassVar["SyntheticsBrowserTestFailureCode"]
+    UPLOAD_FILES_DIALOG: ClassVar["SyntheticsBrowserTestFailureCode"]
+    UPLOAD_FILES_DYNAMIC_ELEMENT: ClassVar["SyntheticsBrowserTestFailureCode"]
+    UPLOAD_FILES_NAME: ClassVar["SyntheticsBrowserTestFailureCode"]
 
     @cached_property
     def openapi_types(_):

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityMonitoringRuleSeverity(ModelSimple):
     """
@@ -24,6 +26,11 @@ class SecurityMonitoringRuleSeverity(ModelSimple):
         "high",
         "critical",
     }
+    INFO: ClassVar["SecurityMonitoringRuleSeverity"]
+    LOW: ClassVar["SecurityMonitoringRuleSeverity"]
+    MEDIUM: ClassVar["SecurityMonitoringRuleSeverity"]
+    HIGH: ClassVar["SecurityMonitoringRuleSeverity"]
+    CRITICAL: ClassVar["SecurityMonitoringRuleSeverity"]
 
     @cached_property
     def openapi_types(_):

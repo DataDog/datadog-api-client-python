@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class AuthNMappingsSort(ModelSimple):
     """
@@ -31,6 +33,18 @@ class AuthNMappingsSort(ModelSimple):
         "saml_assertion_attribute.attribute_value",
         "-saml_assertion_attribute.attribute_value",
     }
+    CREATED_AT_ASCENDING: ClassVar["AuthNMappingsSort"]
+    CREATED_AT_DESCENDING: ClassVar["AuthNMappingsSort"]
+    ROLE_ID_ASCENDING: ClassVar["AuthNMappingsSort"]
+    ROLE_ID_DESCENDING: ClassVar["AuthNMappingsSort"]
+    SAML_ASSERTION_ATTRIBUTE_ID_ASCENDING: ClassVar["AuthNMappingsSort"]
+    SAML_ASSERTION_ATTRIBUTE_ID_DESCENDING: ClassVar["AuthNMappingsSort"]
+    ROLE_NAME_ASCENDING: ClassVar["AuthNMappingsSort"]
+    ROLE_NAME_DESCENDING: ClassVar["AuthNMappingsSort"]
+    SAML_ASSERTION_ATTRIBUTE_KEY_ASCENDING: ClassVar["AuthNMappingsSort"]
+    SAML_ASSERTION_ATTRIBUTE_KEY_DESCENDING: ClassVar["AuthNMappingsSort"]
+    SAML_ASSERTION_ATTRIBUTE_VALUE_ASCENDING: ClassVar["AuthNMappingsSort"]
+    SAML_ASSERTION_ATTRIBUTE_VALUE_DESCENDING: ClassVar["AuthNMappingsSort"]
 
     @cached_property
     def openapi_types(_):

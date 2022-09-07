@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetMonitorSummarySort(ModelSimple):
     """
@@ -36,6 +38,23 @@ class WidgetMonitorSummarySort(ModelSimple):
         "priority,asc",
         "priority,desc",
     }
+    NAME: ClassVar["WidgetMonitorSummarySort"]
+    GROUP: ClassVar["WidgetMonitorSummarySort"]
+    STATUS: ClassVar["WidgetMonitorSummarySort"]
+    TAGS: ClassVar["WidgetMonitorSummarySort"]
+    TRIGGERED: ClassVar["WidgetMonitorSummarySort"]
+    GROUP_ASCENDING: ClassVar["WidgetMonitorSummarySort"]
+    GROUP_DESCENDING: ClassVar["WidgetMonitorSummarySort"]
+    NAME_ASCENDING: ClassVar["WidgetMonitorSummarySort"]
+    NAME_DESCENDING: ClassVar["WidgetMonitorSummarySort"]
+    STATUS_ASCENDING: ClassVar["WidgetMonitorSummarySort"]
+    STATUS_DESCENDING: ClassVar["WidgetMonitorSummarySort"]
+    TAGS_ASCENDING: ClassVar["WidgetMonitorSummarySort"]
+    TAGS_DESCENDING: ClassVar["WidgetMonitorSummarySort"]
+    TRIGGERED_ASCENDING: ClassVar["WidgetMonitorSummarySort"]
+    TRIGGERED_DESCENDING: ClassVar["WidgetMonitorSummarySort"]
+    PRIORITY_ASCENDING: ClassVar["WidgetMonitorSummarySort"]
+    PRIORITY_DESCENDING: ClassVar["WidgetMonitorSummarySort"]
 
     @cached_property
     def openapi_types(_):

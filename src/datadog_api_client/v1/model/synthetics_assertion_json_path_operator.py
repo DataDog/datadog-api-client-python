@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsAssertionJSONPathOperator(ModelSimple):
     """
@@ -20,6 +22,7 @@ class SyntheticsAssertionJSONPathOperator(ModelSimple):
     allowed_values = {
         "validatesJSONPath",
     }
+    VALIDATES_JSON_PATH: ClassVar["SyntheticsAssertionJSONPathOperator"]
 
     @cached_property
     def openapi_types(_):

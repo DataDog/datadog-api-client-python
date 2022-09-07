@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SignalArchiveReason(ModelSimple):
     """
@@ -23,6 +25,10 @@ class SignalArchiveReason(ModelSimple):
         "testing_or_maintenance",
         "other",
     }
+    NONE: ClassVar["SignalArchiveReason"]
+    FALSE_POSITIVE: ClassVar["SignalArchiveReason"]
+    TESTING_OR_MAINTENANCE: ClassVar["SignalArchiveReason"]
+    OTHER: ClassVar["SignalArchiveReason"]
 
     @cached_property
     def openapi_types(_):

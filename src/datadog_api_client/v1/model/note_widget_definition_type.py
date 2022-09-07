@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class NoteWidgetDefinitionType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class NoteWidgetDefinitionType(ModelSimple):
     allowed_values = {
         "note",
     }
+    NOTE: ClassVar["NoteWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):

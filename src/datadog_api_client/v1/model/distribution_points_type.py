@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class DistributionPointsType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class DistributionPointsType(ModelSimple):
     allowed_values = {
         "distribution",
     }
+    DISTRIBUTION: ClassVar["DistributionPointsType"]
 
     @cached_property
     def openapi_types(_):

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsArchiveState(ModelSimple):
     """
@@ -23,6 +25,10 @@ class LogsArchiveState(ModelSimple):
         "FAILING",
         "WORKING_AUTH_LEGACY",
     }
+    UNKNOWN: ClassVar["LogsArchiveState"]
+    WORKING: ClassVar["LogsArchiveState"]
+    FAILING: ClassVar["LogsArchiveState"]
+    WORKING_AUTH_LEGACY: ClassVar["LogsArchiveState"]
 
     @cached_property
     def openapi_types(_):

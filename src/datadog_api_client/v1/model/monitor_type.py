@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MonitorType(ModelSimple):
     """
@@ -35,6 +37,22 @@ class MonitorType(ModelSimple):
         "ci-tests alert",
         "error-tracking alert",
     }
+    COMPOSITE: ClassVar["MonitorType"]
+    EVENT_ALERT: ClassVar["MonitorType"]
+    LOG_ALERT: ClassVar["MonitorType"]
+    METRIC_ALERT: ClassVar["MonitorType"]
+    PROCESS_ALERT: ClassVar["MonitorType"]
+    QUERY_ALERT: ClassVar["MonitorType"]
+    RUM_ALERT: ClassVar["MonitorType"]
+    SERVICE_CHECK: ClassVar["MonitorType"]
+    SYNTHETICS_ALERT: ClassVar["MonitorType"]
+    TRACE_ANALYTICS_ALERT: ClassVar["MonitorType"]
+    SLO_ALERT: ClassVar["MonitorType"]
+    EVENT_V2_ALERT: ClassVar["MonitorType"]
+    AUDIT_ALERT: ClassVar["MonitorType"]
+    CI_PIPELINES_ALERT: ClassVar["MonitorType"]
+    CI_TESTS_ALERT: ClassVar["MonitorType"]
+    ERROR_TRACKING_ALERT: ClassVar["MonitorType"]
 
     @cached_property
     def openapi_types(_):

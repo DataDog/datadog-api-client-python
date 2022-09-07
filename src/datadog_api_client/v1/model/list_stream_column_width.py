@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class ListStreamColumnWidth(ModelSimple):
     """
@@ -22,6 +24,9 @@ class ListStreamColumnWidth(ModelSimple):
         "compact",
         "full",
     }
+    AUTO: ClassVar["ListStreamColumnWidth"]
+    COMPACT: ClassVar["ListStreamColumnWidth"]
+    FULL: ClassVar["ListStreamColumnWidth"]
 
     @cached_property
     def openapi_types(_):

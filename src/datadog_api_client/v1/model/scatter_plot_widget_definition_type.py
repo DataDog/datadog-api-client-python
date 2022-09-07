@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class ScatterPlotWidgetDefinitionType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class ScatterPlotWidgetDefinitionType(ModelSimple):
     allowed_values = {
         "scatterplot",
     }
+    SCATTERPLOT: ClassVar["ScatterPlotWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):

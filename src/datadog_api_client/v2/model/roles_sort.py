@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class RolesSort(ModelSimple):
     """
@@ -25,6 +27,12 @@ class RolesSort(ModelSimple):
         "user_count",
         "-user_count",
     }
+    NAME_ASCENDING: ClassVar["RolesSort"]
+    NAME_DESCENDING: ClassVar["RolesSort"]
+    MODIFIED_AT_ASCENDING: ClassVar["RolesSort"]
+    MODIFIED_AT_DESCENDING: ClassVar["RolesSort"]
+    USER_COUNT_ASCENDING: ClassVar["RolesSort"]
+    USER_COUNT_DESCENDING: ClassVar["RolesSort"]
 
     @cached_property
     def openapi_types(_):

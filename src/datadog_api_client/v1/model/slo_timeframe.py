@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SLOTimeframe(ModelSimple):
     """
@@ -23,6 +25,10 @@ class SLOTimeframe(ModelSimple):
         "90d",
         "custom",
     }
+    SEVEN_DAYS: ClassVar["SLOTimeframe"]
+    THIRTY_DAYS: ClassVar["SLOTimeframe"]
+    NINETY_DAYS: ClassVar["SLOTimeframe"]
+    CUSTOM: ClassVar["SLOTimeframe"]
 
     @cached_property
     def openapi_types(_):

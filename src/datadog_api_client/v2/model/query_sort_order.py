@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class QuerySortOrder(ModelSimple):
     """
@@ -21,6 +23,8 @@ class QuerySortOrder(ModelSimple):
         "asc",
         "desc",
     }
+    ASC: ClassVar["QuerySortOrder"]
+    DESC: ClassVar["QuerySortOrder"]
 
     @cached_property
     def openapi_types(_):

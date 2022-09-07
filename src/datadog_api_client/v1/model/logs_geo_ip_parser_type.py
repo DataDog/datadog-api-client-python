@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsGeoIPParserType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class LogsGeoIPParserType(ModelSimple):
     allowed_values = {
         "geo-ip-parser",
     }
+    GEO_IP_PARSER: ClassVar["LogsGeoIPParserType"]
 
     @cached_property
     def openapi_types(_):

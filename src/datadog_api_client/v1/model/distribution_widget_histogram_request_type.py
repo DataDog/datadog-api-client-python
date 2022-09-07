@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class DistributionWidgetHistogramRequestType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class DistributionWidgetHistogramRequestType(ModelSimple):
     allowed_values = {
         "histogram",
     }
+    HISTOGRAM: ClassVar["DistributionWidgetHistogramRequestType"]
 
     @cached_property
     def openapi_types(_):

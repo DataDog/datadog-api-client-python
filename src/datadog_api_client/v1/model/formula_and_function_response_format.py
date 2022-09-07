@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class FormulaAndFunctionResponseFormat(ModelSimple):
     """
@@ -21,6 +23,8 @@ class FormulaAndFunctionResponseFormat(ModelSimple):
         "timeseries",
         "scalar",
     }
+    TIMESERIES: ClassVar["FormulaAndFunctionResponseFormat"]
+    SCALAR: ClassVar["FormulaAndFunctionResponseFormat"]
 
     @cached_property
     def openapi_types(_):

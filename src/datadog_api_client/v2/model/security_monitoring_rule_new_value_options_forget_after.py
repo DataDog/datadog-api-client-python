@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityMonitoringRuleNewValueOptionsForgetAfter(ModelSimple):
     """
@@ -25,6 +27,12 @@ class SecurityMonitoringRuleNewValueOptionsForgetAfter(ModelSimple):
         21,
         28,
     }
+    ONE_DAY: ClassVar["SecurityMonitoringRuleNewValueOptionsForgetAfter"]
+    TWO_DAYS: ClassVar["SecurityMonitoringRuleNewValueOptionsForgetAfter"]
+    ONE_WEEK: ClassVar["SecurityMonitoringRuleNewValueOptionsForgetAfter"]
+    TWO_WEEKS: ClassVar["SecurityMonitoringRuleNewValueOptionsForgetAfter"]
+    THREE_WEEKS: ClassVar["SecurityMonitoringRuleNewValueOptionsForgetAfter"]
+    FOUR_WEEKS: ClassVar["SecurityMonitoringRuleNewValueOptionsForgetAfter"]
 
     @cached_property
     def openapi_types(_):

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MetricContentEncoding(ModelSimple):
     """
@@ -22,6 +24,9 @@ class MetricContentEncoding(ModelSimple):
         "zstd1",
         "gzip",
     }
+    DEFLATE: ClassVar["MetricContentEncoding"]
+    ZSTD1: ClassVar["MetricContentEncoding"]
+    GZIP: ClassVar["MetricContentEncoding"]
 
     @cached_property
     def openapi_types(_):

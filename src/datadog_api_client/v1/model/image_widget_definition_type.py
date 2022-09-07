@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class ImageWidgetDefinitionType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class ImageWidgetDefinitionType(ModelSimple):
     allowed_values = {
         "image",
     }
+    IMAGE: ClassVar["ImageWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):

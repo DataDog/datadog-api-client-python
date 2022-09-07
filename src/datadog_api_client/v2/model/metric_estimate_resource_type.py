@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MetricEstimateResourceType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class MetricEstimateResourceType(ModelSimple):
     allowed_values = {
         "metric_cardinality_estimate",
     }
+    METRIC_CARDINALITY_ESTIMATE: ClassVar["MetricEstimateResourceType"]
 
     @cached_property
     def openapi_types(_):

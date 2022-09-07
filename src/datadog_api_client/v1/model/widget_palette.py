@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetPalette(ModelSimple):
     """
@@ -38,6 +40,25 @@ class WidgetPalette(ModelSimple):
         "black_on_light_green",
         "black_on_light_red",
     }
+    BLUE: ClassVar["WidgetPalette"]
+    CUSTOM_BACKGROUND: ClassVar["WidgetPalette"]
+    CUSTOM_IMAGE: ClassVar["WidgetPalette"]
+    CUSTOM_TEXT: ClassVar["WidgetPalette"]
+    GRAY_ON_WHITE: ClassVar["WidgetPalette"]
+    GREY: ClassVar["WidgetPalette"]
+    GREEN: ClassVar["WidgetPalette"]
+    ORANGE: ClassVar["WidgetPalette"]
+    RED: ClassVar["WidgetPalette"]
+    RED_ON_WHITE: ClassVar["WidgetPalette"]
+    WHITE_ON_GRAY: ClassVar["WidgetPalette"]
+    WHITE_ON_GREEN: ClassVar["WidgetPalette"]
+    GREEN_ON_WHITE: ClassVar["WidgetPalette"]
+    WHITE_ON_RED: ClassVar["WidgetPalette"]
+    WHITE_ON_YELLOW: ClassVar["WidgetPalette"]
+    YELLOW_ON_WHITE: ClassVar["WidgetPalette"]
+    BLACK_ON_LIGHT_YELLOW: ClassVar["WidgetPalette"]
+    BLACK_ON_LIGHT_GREEN: ClassVar["WidgetPalette"]
+    BLACK_ON_LIGHT_RED: ClassVar["WidgetPalette"]
 
     @cached_property
     def openapi_types(_):

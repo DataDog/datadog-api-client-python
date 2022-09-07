@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityMonitoringSignalState(ModelSimple):
     """
@@ -22,6 +24,9 @@ class SecurityMonitoringSignalState(ModelSimple):
         "archived",
         "under_review",
     }
+    OPEN: ClassVar["SecurityMonitoringSignalState"]
+    ARCHIVED: ClassVar["SecurityMonitoringSignalState"]
+    UNDER_REVIEW: ClassVar["SecurityMonitoringSignalState"]
 
     @cached_property
     def openapi_types(_):

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityMonitoringRuleQueryAggregation(ModelSimple):
     """
@@ -25,6 +27,12 @@ class SecurityMonitoringRuleQueryAggregation(ModelSimple):
         "new_value",
         "geo_data",
     }
+    COUNT: ClassVar["SecurityMonitoringRuleQueryAggregation"]
+    CARDINALITY: ClassVar["SecurityMonitoringRuleQueryAggregation"]
+    SUM: ClassVar["SecurityMonitoringRuleQueryAggregation"]
+    MAX: ClassVar["SecurityMonitoringRuleQueryAggregation"]
+    NEW_VALUE: ClassVar["SecurityMonitoringRuleQueryAggregation"]
+    GEO_DATA: ClassVar["SecurityMonitoringRuleQueryAggregation"]
 
     @cached_property
     def openapi_types(_):

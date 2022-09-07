@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class FormulaAndFunctionMetricAggregation(ModelSimple):
     """
@@ -27,6 +29,14 @@ class FormulaAndFunctionMetricAggregation(ModelSimple):
         "l2norm",
         "percentile",
     }
+    AVG: ClassVar["FormulaAndFunctionMetricAggregation"]
+    MIN: ClassVar["FormulaAndFunctionMetricAggregation"]
+    MAX: ClassVar["FormulaAndFunctionMetricAggregation"]
+    SUM: ClassVar["FormulaAndFunctionMetricAggregation"]
+    LAST: ClassVar["FormulaAndFunctionMetricAggregation"]
+    AREA: ClassVar["FormulaAndFunctionMetricAggregation"]
+    L2NORM: ClassVar["FormulaAndFunctionMetricAggregation"]
+    PERCENTILE: ClassVar["FormulaAndFunctionMetricAggregation"]
 
     @cached_property
     def openapi_types(_):

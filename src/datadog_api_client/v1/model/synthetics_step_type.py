@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsStepType(ModelSimple):
     """
@@ -44,6 +46,31 @@ class SyntheticsStepType(ModelSimple):
         "uploadFiles",
         "wait",
     }
+    ASSERT_CURRENT_URL: ClassVar["SyntheticsStepType"]
+    ASSERT_ELEMENT_ATTRIBUTE: ClassVar["SyntheticsStepType"]
+    ASSERT_ELEMENT_CONTENT: ClassVar["SyntheticsStepType"]
+    ASSERT_ELEMENT_PRESENT: ClassVar["SyntheticsStepType"]
+    ASSERT_EMAIL: ClassVar["SyntheticsStepType"]
+    ASSERT_FILE_DOWNLOAD: ClassVar["SyntheticsStepType"]
+    ASSERT_FROM_JAVASCRIPT: ClassVar["SyntheticsStepType"]
+    ASSERT_PAGE_CONTAINS: ClassVar["SyntheticsStepType"]
+    ASSERT_PAGE_LACKS: ClassVar["SyntheticsStepType"]
+    CLICK: ClassVar["SyntheticsStepType"]
+    EXTRACT_FROM_JAVASCRIPT: ClassVar["SyntheticsStepType"]
+    EXTRACT_VARIABLE: ClassVar["SyntheticsStepType"]
+    GO_TO_EMAIL_LINK: ClassVar["SyntheticsStepType"]
+    GO_TO_URL: ClassVar["SyntheticsStepType"]
+    GO_TO_URL_AND_MEASURE_TTI: ClassVar["SyntheticsStepType"]
+    HOVER: ClassVar["SyntheticsStepType"]
+    PLAY_SUB_TEST: ClassVar["SyntheticsStepType"]
+    PRESS_KEY: ClassVar["SyntheticsStepType"]
+    REFRESH: ClassVar["SyntheticsStepType"]
+    RUN_API_TEST: ClassVar["SyntheticsStepType"]
+    SCROLL: ClassVar["SyntheticsStepType"]
+    SELECT_OPTION: ClassVar["SyntheticsStepType"]
+    TYPE_TEXT: ClassVar["SyntheticsStepType"]
+    UPLOAD_FILES: ClassVar["SyntheticsStepType"]
+    WAIT: ClassVar["SyntheticsStepType"]
 
     @cached_property
     def openapi_types(_):

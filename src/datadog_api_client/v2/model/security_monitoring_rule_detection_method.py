@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityMonitoringRuleDetectionMethod(ModelSimple):
     """
@@ -24,6 +26,11 @@ class SecurityMonitoringRuleDetectionMethod(ModelSimple):
         "impossible_travel",
         "hardcoded",
     }
+    THRESHOLD: ClassVar["SecurityMonitoringRuleDetectionMethod"]
+    NEW_VALUE: ClassVar["SecurityMonitoringRuleDetectionMethod"]
+    ANOMALY_DETECTION: ClassVar["SecurityMonitoringRuleDetectionMethod"]
+    IMPOSSIBLE_TRAVEL: ClassVar["SecurityMonitoringRuleDetectionMethod"]
+    HARDCODED: ClassVar["SecurityMonitoringRuleDetectionMethod"]
 
     @cached_property
     def openapi_types(_):

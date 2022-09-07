@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MonitorRenotifyStatusType(ModelSimple):
     """
@@ -22,6 +24,9 @@ class MonitorRenotifyStatusType(ModelSimple):
         "warn",
         "no data",
     }
+    ALERT: ClassVar["MonitorRenotifyStatusType"]
+    WARN: ClassVar["MonitorRenotifyStatusType"]
+    NO_DATA: ClassVar["MonitorRenotifyStatusType"]
 
     @cached_property
     def openapi_types(_):

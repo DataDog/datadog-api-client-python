@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class DistributionWidgetDefinitionType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class DistributionWidgetDefinitionType(ModelSimple):
     allowed_values = {
         "distribution",
     }
+    DISTRIBUTION: ClassVar["DistributionWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):

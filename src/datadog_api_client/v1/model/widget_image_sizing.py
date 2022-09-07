@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetImageSizing(ModelSimple):
     """
@@ -28,6 +30,14 @@ class WidgetImageSizing(ModelSimple):
         "fit",
         "center",
     }
+    FILL: ClassVar["WidgetImageSizing"]
+    CONTAIN: ClassVar["WidgetImageSizing"]
+    COVER: ClassVar["WidgetImageSizing"]
+    NONE: ClassVar["WidgetImageSizing"]
+    SCALEDOWN: ClassVar["WidgetImageSizing"]
+    ZOOM: ClassVar["WidgetImageSizing"]
+    FIT: ClassVar["WidgetImageSizing"]
+    CENTER: ClassVar["WidgetImageSizing"]
 
     @cached_property
     def openapi_types(_):

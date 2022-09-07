@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class FormulaAndFunctionApmDependencyStatName(ModelSimple):
     """
@@ -26,6 +28,13 @@ class FormulaAndFunctionApmDependencyStatName(ModelSimple):
         "pct_of_traces",
         "total_traces_count",
     }
+    AVG_DURATION: ClassVar["FormulaAndFunctionApmDependencyStatName"]
+    AVG_ROOT_DURATION: ClassVar["FormulaAndFunctionApmDependencyStatName"]
+    AVG_SPANS_PER_TRACE: ClassVar["FormulaAndFunctionApmDependencyStatName"]
+    ERROR_RATE: ClassVar["FormulaAndFunctionApmDependencyStatName"]
+    PCT_EXEC_TIME: ClassVar["FormulaAndFunctionApmDependencyStatName"]
+    PCT_OF_TRACES: ClassVar["FormulaAndFunctionApmDependencyStatName"]
+    TOTAL_TRACES_COUNT: ClassVar["FormulaAndFunctionApmDependencyStatName"]
 
     @cached_property
     def openapi_types(_):

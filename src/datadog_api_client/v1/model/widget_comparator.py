@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetComparator(ModelSimple):
     """
@@ -23,6 +25,10 @@ class WidgetComparator(ModelSimple):
         "<",
         "<=",
     }
+    GREATER_THAN: ClassVar["WidgetComparator"]
+    GREATER_THAN_OR_EQUAL_TO: ClassVar["WidgetComparator"]
+    LESS_THAN: ClassVar["WidgetComparator"]
+    LESS_THAN_OR_EQUAL_TO: ClassVar["WidgetComparator"]
 
     @cached_property
     def openapi_types(_):

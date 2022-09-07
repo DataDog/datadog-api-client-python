@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetHorizontalAlign(ModelSimple):
     """
@@ -22,6 +24,9 @@ class WidgetHorizontalAlign(ModelSimple):
         "left",
         "right",
     }
+    CENTER: ClassVar["WidgetHorizontalAlign"]
+    LEFT: ClassVar["WidgetHorizontalAlign"]
+    RIGHT: ClassVar["WidgetHorizontalAlign"]
 
     @cached_property
     def openapi_types(_):

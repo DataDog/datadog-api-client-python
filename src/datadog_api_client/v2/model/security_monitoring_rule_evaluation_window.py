@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityMonitoringRuleEvaluationWindow(ModelSimple):
     """
@@ -28,6 +30,14 @@ class SecurityMonitoringRuleEvaluationWindow(ModelSimple):
         3600,
         7200,
     }
+    ZERO_MINUTES: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
+    ONE_MINUTE: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
+    FIVE_MINUTES: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
+    TEN_MINUTES: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
+    FIFTEEN_MINUTES: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
+    THIRTY_MINUTES: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
+    ONE_HOUR: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
+    TWO_HOURS: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
 
     @cached_property
     def openapi_types(_):

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class ListStreamSource(ModelSimple):
     """
@@ -24,6 +26,11 @@ class ListStreamSource(ModelSimple):
         "apm_issue_stream",
         "logs_pattern_stream",
     }
+    LOGS_STREAM: ClassVar["ListStreamSource"]
+    AUDIT_STREAM: ClassVar["ListStreamSource"]
+    RUM_ISSUE_STREAM: ClassVar["ListStreamSource"]
+    APM_ISSUE_STREAM: ClassVar["ListStreamSource"]
+    LOGS_PATTERN_STREAM: ClassVar["ListStreamSource"]
 
     @cached_property
     def openapi_types(_):

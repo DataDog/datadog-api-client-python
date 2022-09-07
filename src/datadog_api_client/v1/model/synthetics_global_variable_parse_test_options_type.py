@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsGlobalVariableParseTestOptionsType(ModelSimple):
     """
@@ -22,6 +24,9 @@ class SyntheticsGlobalVariableParseTestOptionsType(ModelSimple):
         "http_header",
         "local_variable",
     }
+    HTTP_BODY: ClassVar["SyntheticsGlobalVariableParseTestOptionsType"]
+    HTTP_HEADER: ClassVar["SyntheticsGlobalVariableParseTestOptionsType"]
+    LOCAL_VARIABLE: ClassVar["SyntheticsGlobalVariableParseTestOptionsType"]
 
     @cached_property
     def openapi_types(_):

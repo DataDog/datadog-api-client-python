@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MetricEstimateType(ModelSimple):
     """
@@ -22,6 +24,9 @@ class MetricEstimateType(ModelSimple):
         "distribution",
         "percentile",
     }
+    COUNT_OR_GAUGE: ClassVar["MetricEstimateType"]
+    DISTRIBUTION: ClassVar["MetricEstimateType"]
+    PERCENTILE: ClassVar["MetricEstimateType"]
 
     @cached_property
     def openapi_types(_):

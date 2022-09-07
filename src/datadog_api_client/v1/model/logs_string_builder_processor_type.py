@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsStringBuilderProcessorType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class LogsStringBuilderProcessorType(ModelSimple):
     allowed_values = {
         "string-builder-processor",
     }
+    STRING_BUILDER_PROCESSOR: ClassVar["LogsStringBuilderProcessorType"]
 
     @cached_property
     def openapi_types(_):

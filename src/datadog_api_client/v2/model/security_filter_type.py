@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityFilterType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class SecurityFilterType(ModelSimple):
     allowed_values = {
         "security_filters",
     }
+    SECURITY_FILTERS: ClassVar["SecurityFilterType"]
 
     @cached_property
     def openapi_types(_):

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class FormulaAndFunctionApmResourceStatName(ModelSimple):
     """
@@ -30,6 +32,17 @@ class FormulaAndFunctionApmResourceStatName(ModelSimple):
         "latency_p95",
         "latency_p99",
     }
+    ERRORS: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    ERROR_RATE: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    HITS: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_AVG: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_DISTRIBUTION: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_MAX: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_P50: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_P75: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_P90: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_P95: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_P99: ClassVar["FormulaAndFunctionApmResourceStatName"]
 
     @cached_property
     def openapi_types(_):

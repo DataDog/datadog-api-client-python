@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsBrowserTestType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class SyntheticsBrowserTestType(ModelSimple):
     allowed_values = {
         "browser",
     }
+    BROWSER: ClassVar["SyntheticsBrowserTestType"]
 
     @cached_property
     def openapi_types(_):

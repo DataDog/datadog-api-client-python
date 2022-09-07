@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsAggregationFunction(ModelSimple):
     """
@@ -31,6 +33,18 @@ class LogsAggregationFunction(ModelSimple):
         "avg",
         "median",
     }
+    COUNT: ClassVar["LogsAggregationFunction"]
+    CARDINALITY: ClassVar["LogsAggregationFunction"]
+    PERCENTILE_75: ClassVar["LogsAggregationFunction"]
+    PERCENTILE_90: ClassVar["LogsAggregationFunction"]
+    PERCENTILE_95: ClassVar["LogsAggregationFunction"]
+    PERCENTILE_98: ClassVar["LogsAggregationFunction"]
+    PERCENTILE_99: ClassVar["LogsAggregationFunction"]
+    SUM: ClassVar["LogsAggregationFunction"]
+    MIN: ClassVar["LogsAggregationFunction"]
+    MAX: ClassVar["LogsAggregationFunction"]
+    AVG: ClassVar["LogsAggregationFunction"]
+    MEDIAN: ClassVar["LogsAggregationFunction"]
 
     @cached_property
     def openapi_types(_):

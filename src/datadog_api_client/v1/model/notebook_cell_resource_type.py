@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class NotebookCellResourceType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class NotebookCellResourceType(ModelSimple):
     allowed_values = {
         "notebook_cells",
     }
+    NOTEBOOK_CELLS: ClassVar["NotebookCellResourceType"]
 
     @cached_property
     def openapi_types(_):

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsCheckType(ModelSimple):
     """
@@ -33,6 +35,20 @@ class SyntheticsCheckType(ModelSimple):
         "isEmpty",
         "notIsEmpty",
     }
+    EQUALS: ClassVar["SyntheticsCheckType"]
+    NOT_EQUALS: ClassVar["SyntheticsCheckType"]
+    CONTAINS: ClassVar["SyntheticsCheckType"]
+    NOT_CONTAINS: ClassVar["SyntheticsCheckType"]
+    STARTS_WITH: ClassVar["SyntheticsCheckType"]
+    NOT_STARTS_WITH: ClassVar["SyntheticsCheckType"]
+    GREATER: ClassVar["SyntheticsCheckType"]
+    LOWER: ClassVar["SyntheticsCheckType"]
+    GREATER_EQUALS: ClassVar["SyntheticsCheckType"]
+    LOWER_EQUALS: ClassVar["SyntheticsCheckType"]
+    MATCH_REGEX: ClassVar["SyntheticsCheckType"]
+    BETWEEN: ClassVar["SyntheticsCheckType"]
+    IS_EMPTY: ClassVar["SyntheticsCheckType"]
+    NOT_IS_EMPTY: ClassVar["SyntheticsCheckType"]
 
     @cached_property
     def openapi_types(_):

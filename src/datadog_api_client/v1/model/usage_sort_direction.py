@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class UsageSortDirection(ModelSimple):
     """
@@ -21,6 +23,8 @@ class UsageSortDirection(ModelSimple):
         "desc",
         "asc",
     }
+    DESC: ClassVar["UsageSortDirection"]
+    ASC: ClassVar["UsageSortDirection"]
 
     @cached_property
     def openapi_types(_):

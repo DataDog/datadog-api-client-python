@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetLiveSpan(ModelSimple):
     """
@@ -34,6 +36,21 @@ class WidgetLiveSpan(ModelSimple):
         "1y",
         "alert",
     }
+    PAST_ONE_MINUTE: ClassVar["WidgetLiveSpan"]
+    PAST_FIVE_MINUTES: ClassVar["WidgetLiveSpan"]
+    PAST_TEN_MINUTES: ClassVar["WidgetLiveSpan"]
+    PAST_FIFTEEN_MINUTES: ClassVar["WidgetLiveSpan"]
+    PAST_THIRTY_MINUTES: ClassVar["WidgetLiveSpan"]
+    PAST_ONE_HOUR: ClassVar["WidgetLiveSpan"]
+    PAST_FOUR_HOURS: ClassVar["WidgetLiveSpan"]
+    PAST_ONE_DAY: ClassVar["WidgetLiveSpan"]
+    PAST_TWO_DAYS: ClassVar["WidgetLiveSpan"]
+    PAST_ONE_WEEK: ClassVar["WidgetLiveSpan"]
+    PAST_ONE_MONTH: ClassVar["WidgetLiveSpan"]
+    PAST_THREE_MONTHS: ClassVar["WidgetLiveSpan"]
+    PAST_SIX_MONTHS: ClassVar["WidgetLiveSpan"]
+    PAST_ONE_YEAR: ClassVar["WidgetLiveSpan"]
+    ALERT: ClassVar["WidgetLiveSpan"]
 
     @cached_property
     def openapi_types(_):

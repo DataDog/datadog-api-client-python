@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class HTTPMethod(ModelSimple):
     """
@@ -26,6 +28,13 @@ class HTTPMethod(ModelSimple):
         "HEAD",
         "OPTIONS",
     }
+    GET: ClassVar["HTTPMethod"]
+    POST: ClassVar["HTTPMethod"]
+    PATCH: ClassVar["HTTPMethod"]
+    PUT: ClassVar["HTTPMethod"]
+    DELETE: ClassVar["HTTPMethod"]
+    HEAD: ClassVar["HTTPMethod"]
+    OPTIONS: ClassVar["HTTPMethod"]
 
     @cached_property
     def openapi_types(_):

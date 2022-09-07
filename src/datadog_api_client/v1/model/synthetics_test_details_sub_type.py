@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsTestDetailsSubType(ModelSimple):
     """
@@ -29,6 +31,15 @@ class SyntheticsTestDetailsSubType(ModelSimple):
         "websocket",
         "grpc",
     }
+    HTTP: ClassVar["SyntheticsTestDetailsSubType"]
+    SSL: ClassVar["SyntheticsTestDetailsSubType"]
+    TCP: ClassVar["SyntheticsTestDetailsSubType"]
+    DNS: ClassVar["SyntheticsTestDetailsSubType"]
+    MULTI: ClassVar["SyntheticsTestDetailsSubType"]
+    ICMP: ClassVar["SyntheticsTestDetailsSubType"]
+    UDP: ClassVar["SyntheticsTestDetailsSubType"]
+    WEBSOCKET: ClassVar["SyntheticsTestDetailsSubType"]
+    GRPC: ClassVar["SyntheticsTestDetailsSubType"]
 
     @cached_property
     def openapi_types(_):

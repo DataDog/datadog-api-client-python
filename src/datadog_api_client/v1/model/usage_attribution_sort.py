@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class UsageAttributionSort(ModelSimple):
     """
@@ -49,6 +51,36 @@ class UsageAttributionSort(ModelSimple):
         "estimated_ingested_spans_usage",
         "estimated_ingested_spans_percentage",
     }
+    API_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    SNMP_USAGE: ClassVar["UsageAttributionSort"]
+    APM_HOST_USAGE: ClassVar["UsageAttributionSort"]
+    API_USAGE: ClassVar["UsageAttributionSort"]
+    APPSEC_USAGE: ClassVar["UsageAttributionSort"]
+    APPSEC_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    CONTAINER_USAGE: ClassVar["UsageAttributionSort"]
+    CUSTOM_TIMESERIES_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    CONTAINER_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    APM_HOST_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    NPM_HOST_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    BROWSER_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    BROWSER_USAGE: ClassVar["UsageAttributionSort"]
+    INFRA_HOST_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    SNMP_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    NPM_HOST_USAGE: ClassVar["UsageAttributionSort"]
+    INFRA_HOST_USAGE: ClassVar["UsageAttributionSort"]
+    CUSTOM_TIMESERIES_USAGE: ClassVar["UsageAttributionSort"]
+    LAMBDA_FUNCTIONS_USAGE: ClassVar["UsageAttributionSort"]
+    LAMBDA_FUNCTIONS_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    LAMBDA_INVOCATIONS_USAGE: ClassVar["UsageAttributionSort"]
+    LAMBDA_INVOCATIONS_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    ESTIMATED_INDEXED_LOGS_USAGE: ClassVar["UsageAttributionSort"]
+    ESTIMATED_INDEXED_LOGS_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    ESTIMATED_INGESTED_LOGS_USAGE: ClassVar["UsageAttributionSort"]
+    ESTIMATED_INGESTED_LOGS_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    ESTIMATED_INDEXED_SPANS_USAGE: ClassVar["UsageAttributionSort"]
+    ESTIMATED_INDEXED_SPANS_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    ESTIMATED_INGESTED_SPANS_USAGE: ClassVar["UsageAttributionSort"]
+    ESTIMATED_INGESTED_SPANS_PERCENTAGE: ClassVar["UsageAttributionSort"]
 
     @cached_property
     def openapi_types(_):

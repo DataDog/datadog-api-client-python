@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class NotebookGraphSize(ModelSimple):
     """
@@ -24,6 +26,11 @@ class NotebookGraphSize(ModelSimple):
         "l",
         "xl",
     }
+    EXTRA_SMALL: ClassVar["NotebookGraphSize"]
+    SMALL: ClassVar["NotebookGraphSize"]
+    MEDIUM: ClassVar["NotebookGraphSize"]
+    LARGE: ClassVar["NotebookGraphSize"]
+    EXTRA_LARGE: ClassVar["NotebookGraphSize"]
 
     @cached_property
     def openapi_types(_):

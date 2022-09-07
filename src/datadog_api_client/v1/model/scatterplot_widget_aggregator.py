@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class ScatterplotWidgetAggregator(ModelSimple):
     """
@@ -24,6 +26,11 @@ class ScatterplotWidgetAggregator(ModelSimple):
         "min",
         "sum",
     }
+    AVERAGE: ClassVar["ScatterplotWidgetAggregator"]
+    LAST: ClassVar["ScatterplotWidgetAggregator"]
+    MAXIMUM: ClassVar["ScatterplotWidgetAggregator"]
+    MINIMUM: ClassVar["ScatterplotWidgetAggregator"]
+    SUM: ClassVar["ScatterplotWidgetAggregator"]
 
     @cached_property
     def openapi_types(_):

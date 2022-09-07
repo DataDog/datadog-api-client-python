@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsAssertionOperator(ModelSimple):
     """
@@ -32,6 +34,19 @@ class SyntheticsAssertionOperator(ModelSimple):
         "isInMoreThan",
         "isInLessThan",
     }
+    CONTAINS: ClassVar["SyntheticsAssertionOperator"]
+    DOES_NOT_CONTAIN: ClassVar["SyntheticsAssertionOperator"]
+    IS: ClassVar["SyntheticsAssertionOperator"]
+    IS_NOT: ClassVar["SyntheticsAssertionOperator"]
+    LESS_THAN: ClassVar["SyntheticsAssertionOperator"]
+    LESS_THAN_OR_EQUAL: ClassVar["SyntheticsAssertionOperator"]
+    MORE_THAN: ClassVar["SyntheticsAssertionOperator"]
+    MORE_THAN_OR_EQUAL: ClassVar["SyntheticsAssertionOperator"]
+    MATCHES: ClassVar["SyntheticsAssertionOperator"]
+    DOES_NOT_MATCH: ClassVar["SyntheticsAssertionOperator"]
+    VALIDATES: ClassVar["SyntheticsAssertionOperator"]
+    IS_IN_MORE_DAYS_THAN: ClassVar["SyntheticsAssertionOperator"]
+    IS_IN_LESS_DAYS_THAN: ClassVar["SyntheticsAssertionOperator"]
 
     @cached_property
     def openapi_types(_):

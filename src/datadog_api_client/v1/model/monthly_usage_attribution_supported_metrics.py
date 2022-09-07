@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
     """
@@ -70,6 +72,57 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
         "snmp_percentage",
         "*",
     }
+    API_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    API_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    APM_HOST_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    APM_HOST_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    APPSEC_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    APPSEC_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    BROWSER_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    BROWSER_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CONTAINER_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CONTAINER_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CSPM_CONTAINERS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CSPM_CONTAINERS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CSPM_HOSTS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CSPM_HOSTS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CUSTOM_TIMESERIES_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CUSTOM_TIMESERIES_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CWS_CONTAINERS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CWS_CONTAINERS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CWS_HOSTS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CWS_HOSTS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    DBM_HOSTS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    DBM_HOSTS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    DBM_QUERIES_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    DBM_QUERIES_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    ESTIMATED_INDEXED_LOGS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    ESTIMATED_INDEXED_LOGS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    ESTIMATED_INGESTED_LOGS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    ESTIMATED_INGESTED_LOGS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    ESTIMATED_INDEXED_SPANS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    ESTIMATED_INDEXED_SPANS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    ESTIMATED_INGESTED_SPANS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    ESTIMATED_INGESTED_SPANS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    FARGATE_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    FARGATE_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    FUNCTIONS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    FUNCTIONS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    INDEXED_LOGS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    INDEXED_LOGS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    INFRA_HOST_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    INFRA_HOST_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    INVOCATIONS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    INVOCATIONS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    NPM_HOST_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    NPM_HOST_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    PROFILED_CONTAINER_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    PROFILED_CONTAINER_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    PROFILED_HOST_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    PROFILED_HOST_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    SNMP_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    SNMP_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    ALL: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
 
     @cached_property
     def openapi_types(_):

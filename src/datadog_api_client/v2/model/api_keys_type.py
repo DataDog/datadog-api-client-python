@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class APIKeysType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class APIKeysType(ModelSimple):
     allowed_values = {
         "api_keys",
     }
+    API_KEYS: ClassVar["APIKeysType"]
 
     @cached_property
     def openapi_types(_):

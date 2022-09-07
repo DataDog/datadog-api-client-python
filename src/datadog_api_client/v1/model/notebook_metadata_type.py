@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class NotebookMetadataType(ModelSimple):
     """
@@ -24,6 +26,11 @@ class NotebookMetadataType(ModelSimple):
         "documentation",
         "report",
     }
+    POSTMORTEM: ClassVar["NotebookMetadataType"]
+    RUNBOOK: ClassVar["NotebookMetadataType"]
+    INVESTIGATION: ClassVar["NotebookMetadataType"]
+    DOCUMENTATION: ClassVar["NotebookMetadataType"]
+    REPORT: ClassVar["NotebookMetadataType"]
 
     _nullable = True
 

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class ApplicationKeysSort(ModelSimple):
     """
@@ -25,6 +27,12 @@ class ApplicationKeysSort(ModelSimple):
         "name",
         "-name",
     }
+    CREATED_AT_ASCENDING: ClassVar["ApplicationKeysSort"]
+    CREATED_AT_DESCENDING: ClassVar["ApplicationKeysSort"]
+    LAST4_ASCENDING: ClassVar["ApplicationKeysSort"]
+    LAST4_DESCENDING: ClassVar["ApplicationKeysSort"]
+    NAME_ASCENDING: ClassVar["ApplicationKeysSort"]
+    NAME_DESCENDING: ClassVar["ApplicationKeysSort"]
 
     @cached_property
     def openapi_types(_):

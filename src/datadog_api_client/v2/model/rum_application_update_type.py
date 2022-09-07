@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class RUMApplicationUpdateType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class RUMApplicationUpdateType(ModelSimple):
     allowed_values = {
         "rum_application_update",
     }
+    RUM_APPLICATION_UPDATE: ClassVar["RUMApplicationUpdateType"]
 
     @cached_property
     def openapi_types(_):

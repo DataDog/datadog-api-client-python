@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetAggregator(ModelSimple):
     """
@@ -25,6 +27,12 @@ class WidgetAggregator(ModelSimple):
         "sum",
         "percentile",
     }
+    AVERAGE: ClassVar["WidgetAggregator"]
+    LAST: ClassVar["WidgetAggregator"]
+    MAXIMUM: ClassVar["WidgetAggregator"]
+    MINIMUM: ClassVar["WidgetAggregator"]
+    SUM: ClassVar["WidgetAggregator"]
+    PERCENTILE: ClassVar["WidgetAggregator"]
 
     @cached_property
     def openapi_types(_):

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetDisplayType(ModelSimple):
     """
@@ -22,6 +24,9 @@ class WidgetDisplayType(ModelSimple):
         "bars",
         "line",
     }
+    AREA: ClassVar["WidgetDisplayType"]
+    BARS: ClassVar["WidgetDisplayType"]
+    LINE: ClassVar["WidgetDisplayType"]
 
     @cached_property
     def openapi_types(_):

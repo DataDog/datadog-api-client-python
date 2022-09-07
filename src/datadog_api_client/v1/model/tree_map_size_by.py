@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class TreeMapSizeBy(ModelSimple):
     """
@@ -21,6 +23,8 @@ class TreeMapSizeBy(ModelSimple):
         "pct_cpu",
         "pct_mem",
     }
+    PCT_CPU: ClassVar["TreeMapSizeBy"]
+    PCT_MEM: ClassVar["TreeMapSizeBy"]
 
     @cached_property
     def openapi_types(_):

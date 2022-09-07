@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class EventAlertType(ModelSimple):
     """
@@ -28,6 +30,13 @@ class EventAlertType(ModelSimple):
         "recommendation",
         "snapshot",
     }
+    ERROR: ClassVar["EventAlertType"]
+    WARNING: ClassVar["EventAlertType"]
+    INFO: ClassVar["EventAlertType"]
+    SUCCESS: ClassVar["EventAlertType"]
+    USER_UPDATE: ClassVar["EventAlertType"]
+    RECOMMENDATION: ClassVar["EventAlertType"]
+    SNAPSHOT: ClassVar["EventAlertType"]
 
     @cached_property
     def openapi_types(_):

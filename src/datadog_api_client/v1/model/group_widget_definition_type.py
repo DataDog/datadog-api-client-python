@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class GroupWidgetDefinitionType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class GroupWidgetDefinitionType(ModelSimple):
     allowed_values = {
         "group",
     }
+    GROUP: ClassVar["GroupWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):

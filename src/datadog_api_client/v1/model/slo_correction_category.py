@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SLOCorrectionCategory(ModelSimple):
     """
@@ -23,6 +25,10 @@ class SLOCorrectionCategory(ModelSimple):
         "Deployment",
         "Other",
     }
+    SCHEDULED_MAINTENANCE: ClassVar["SLOCorrectionCategory"]
+    OUTSIDE_BUSINESS_HOURS: ClassVar["SLOCorrectionCategory"]
+    DEPLOYMENT: ClassVar["SLOCorrectionCategory"]
+    OTHER: ClassVar["SLOCorrectionCategory"]
 
     @cached_property
     def openapi_types(_):

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetTickEdge(ModelSimple):
     """
@@ -23,6 +25,10 @@ class WidgetTickEdge(ModelSimple):
         "right",
         "top",
     }
+    BOTTOM: ClassVar["WidgetTickEdge"]
+    LEFT: ClassVar["WidgetTickEdge"]
+    RIGHT: ClassVar["WidgetTickEdge"]
+    TOP: ClassVar["WidgetTickEdge"]
 
     @cached_property
     def openapi_types(_):

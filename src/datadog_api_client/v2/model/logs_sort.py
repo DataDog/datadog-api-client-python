@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsSort(ModelSimple):
     """
@@ -21,6 +23,8 @@ class LogsSort(ModelSimple):
         "timestamp",
         "-timestamp",
     }
+    TIMESTAMP_ASCENDING: ClassVar["LogsSort"]
+    TIMESTAMP_DESCENDING: ClassVar["LogsSort"]
 
     @cached_property
     def openapi_types(_):

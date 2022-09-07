@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class TimeseriesWidgetLegendLayout(ModelSimple):
     """
@@ -22,6 +24,9 @@ class TimeseriesWidgetLegendLayout(ModelSimple):
         "horizontal",
         "vertical",
     }
+    AUTO: ClassVar["TimeseriesWidgetLegendLayout"]
+    HORIZONTAL: ClassVar["TimeseriesWidgetLegendLayout"]
+    VERTICAL: ClassVar["TimeseriesWidgetLegendLayout"]
 
     @cached_property
     def openapi_types(_):

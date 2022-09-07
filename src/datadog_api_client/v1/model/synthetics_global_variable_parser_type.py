@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsGlobalVariableParserType(ModelSimple):
     """
@@ -23,6 +25,10 @@ class SyntheticsGlobalVariableParserType(ModelSimple):
         "regex",
         "x_path",
     }
+    RAW: ClassVar["SyntheticsGlobalVariableParserType"]
+    JSON_PATH: ClassVar["SyntheticsGlobalVariableParserType"]
+    REGEX: ClassVar["SyntheticsGlobalVariableParserType"]
+    X_PATH: ClassVar["SyntheticsGlobalVariableParserType"]
 
     @cached_property
     def openapi_types(_):

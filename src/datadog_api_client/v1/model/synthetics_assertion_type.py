@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsAssertionType(ModelSimple):
     """
@@ -36,6 +38,23 @@ class SyntheticsAssertionType(ModelSimple):
         "grpcHealthcheckStatus",
         "connection",
     }
+    BODY: ClassVar["SyntheticsAssertionType"]
+    HEADER: ClassVar["SyntheticsAssertionType"]
+    STATUS_CODE: ClassVar["SyntheticsAssertionType"]
+    CERTIFICATE: ClassVar["SyntheticsAssertionType"]
+    RESPONSE_TIME: ClassVar["SyntheticsAssertionType"]
+    PROPERTY: ClassVar["SyntheticsAssertionType"]
+    RECORD_EVERY: ClassVar["SyntheticsAssertionType"]
+    RECORD_SOME: ClassVar["SyntheticsAssertionType"]
+    TLS_VERSION: ClassVar["SyntheticsAssertionType"]
+    MIN_TLS_VERSION: ClassVar["SyntheticsAssertionType"]
+    LATENCY: ClassVar["SyntheticsAssertionType"]
+    PACKET_LOSS_PERCENTAGE: ClassVar["SyntheticsAssertionType"]
+    PACKETS_RECEIVED: ClassVar["SyntheticsAssertionType"]
+    NETWORK_HOP: ClassVar["SyntheticsAssertionType"]
+    RECEIVED_MESSAGE: ClassVar["SyntheticsAssertionType"]
+    GRPC_HEALTHCHECK_STATUS: ClassVar["SyntheticsAssertionType"]
+    CONNECTION: ClassVar["SyntheticsAssertionType"]
 
     @cached_property
     def openapi_types(_):

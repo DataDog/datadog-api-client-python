@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsDateRemapperType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class LogsDateRemapperType(ModelSimple):
     allowed_values = {
         "date-remapper",
     }
+    DATE_REMAPPER: ClassVar["LogsDateRemapperType"]
 
     @cached_property
     def openapi_types(_):

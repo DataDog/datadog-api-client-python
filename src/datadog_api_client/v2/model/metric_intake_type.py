@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MetricIntakeType(ModelSimple):
     """
@@ -23,6 +25,10 @@ class MetricIntakeType(ModelSimple):
         2,
         3,
     }
+    UNSPECIFIED: ClassVar["MetricIntakeType"]
+    COUNT: ClassVar["MetricIntakeType"]
+    RATE: ClassVar["MetricIntakeType"]
+    GAUGE: ClassVar["MetricIntakeType"]
 
     @cached_property
     def openapi_types(_):

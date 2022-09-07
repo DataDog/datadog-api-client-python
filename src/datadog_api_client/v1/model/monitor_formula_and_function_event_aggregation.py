@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MonitorFormulaAndFunctionEventAggregation(ModelSimple):
     """
@@ -31,6 +33,18 @@ class MonitorFormulaAndFunctionEventAggregation(ModelSimple):
         "max",
         "avg",
     }
+    COUNT: ClassVar["MonitorFormulaAndFunctionEventAggregation"]
+    CARDINALITY: ClassVar["MonitorFormulaAndFunctionEventAggregation"]
+    MEDIAN: ClassVar["MonitorFormulaAndFunctionEventAggregation"]
+    PC75: ClassVar["MonitorFormulaAndFunctionEventAggregation"]
+    PC90: ClassVar["MonitorFormulaAndFunctionEventAggregation"]
+    PC95: ClassVar["MonitorFormulaAndFunctionEventAggregation"]
+    PC98: ClassVar["MonitorFormulaAndFunctionEventAggregation"]
+    PC99: ClassVar["MonitorFormulaAndFunctionEventAggregation"]
+    SUM: ClassVar["MonitorFormulaAndFunctionEventAggregation"]
+    MIN: ClassVar["MonitorFormulaAndFunctionEventAggregation"]
+    MAX: ClassVar["MonitorFormulaAndFunctionEventAggregation"]
+    AVG: ClassVar["MonitorFormulaAndFunctionEventAggregation"]
 
     @cached_property
     def openapi_types(_):

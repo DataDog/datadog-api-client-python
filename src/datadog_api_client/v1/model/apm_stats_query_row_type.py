@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class ApmStatsQueryRowType(ModelSimple):
     """
@@ -22,6 +24,9 @@ class ApmStatsQueryRowType(ModelSimple):
         "resource",
         "span",
     }
+    SERVICE: ClassVar["ApmStatsQueryRowType"]
+    RESOURCE: ClassVar["ApmStatsQueryRowType"]
+    SPAN: ClassVar["ApmStatsQueryRowType"]
 
     @cached_property
     def openapi_types(_):

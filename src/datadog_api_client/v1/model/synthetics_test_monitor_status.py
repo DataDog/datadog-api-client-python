@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsTestMonitorStatus(ModelSimple):
     """
@@ -25,6 +27,9 @@ class SyntheticsTestMonitorStatus(ModelSimple):
         1,
         2,
     }
+    UNTRIGGERED: ClassVar["SyntheticsTestMonitorStatus"]
+    TRIGGERED: ClassVar["SyntheticsTestMonitorStatus"]
+    NO_DATA: ClassVar["SyntheticsTestMonitorStatus"]
 
     @cached_property
     def openapi_types(_):

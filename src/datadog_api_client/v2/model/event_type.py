@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class EventType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class EventType(ModelSimple):
     allowed_values = {
         "event",
     }
+    EVENT: ClassVar["EventType"]
 
     @cached_property
     def openapi_types(_):

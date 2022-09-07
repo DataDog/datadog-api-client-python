@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetVizType(ModelSimple):
     """
@@ -21,6 +23,8 @@ class WidgetVizType(ModelSimple):
         "timeseries",
         "toplist",
     }
+    TIMESERIES: ClassVar["WidgetVizType"]
+    TOPLIST: ClassVar["WidgetVizType"]
 
     @cached_property
     def openapi_types(_):

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class ServiceSummaryWidgetDefinitionType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class ServiceSummaryWidgetDefinitionType(ModelSimple):
     allowed_values = {
         "trace_service",
     }
+    TRACE_SERVICE: ClassVar["ServiceSummaryWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class RUMAggregateSortType(ModelSimple):
     """
@@ -21,6 +23,8 @@ class RUMAggregateSortType(ModelSimple):
         "alphabetical",
         "measure",
     }
+    ALPHABETICAL: ClassVar["RUMAggregateSortType"]
+    MEASURE: ClassVar["RUMAggregateSortType"]
 
     @cached_property
     def openapi_types(_):

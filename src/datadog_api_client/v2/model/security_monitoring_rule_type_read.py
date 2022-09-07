@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityMonitoringRuleTypeRead(ModelSimple):
     """
@@ -23,6 +25,10 @@ class SecurityMonitoringRuleTypeRead(ModelSimple):
         "workload_security",
         "cloud_configuration",
     }
+    LOG_DETECTION: ClassVar["SecurityMonitoringRuleTypeRead"]
+    INFRASTRUCTURE_CONFIGURATION: ClassVar["SecurityMonitoringRuleTypeRead"]
+    WORKLOAD_SECURITY: ClassVar["SecurityMonitoringRuleTypeRead"]
+    CLOUD_CONFIGURATION: ClassVar["SecurityMonitoringRuleTypeRead"]
 
     @cached_property
     def openapi_types(_):

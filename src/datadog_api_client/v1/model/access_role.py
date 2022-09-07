@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class AccessRole(ModelSimple):
     """
@@ -23,6 +25,10 @@ class AccessRole(ModelSimple):
         "ro",
         "ERROR",
     }
+    STANDARD: ClassVar["AccessRole"]
+    ADMIN: ClassVar["AccessRole"]
+    READ_ONLY: ClassVar["AccessRole"]
+    ERROR: ClassVar["AccessRole"]
 
     @cached_property
     def openapi_types(_):

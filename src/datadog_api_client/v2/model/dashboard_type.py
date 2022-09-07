@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class DashboardType(ModelSimple):
     """
@@ -24,6 +26,11 @@ class DashboardType(ModelSimple):
         "integration_timeboard",
         "host_timeboard",
     }
+    CUSTOM_TIMEBOARD: ClassVar["DashboardType"]
+    CUSTOM_SCREENBOARD: ClassVar["DashboardType"]
+    INTEGRATION_SCREENBOARD: ClassVar["DashboardType"]
+    INTEGRATION_TIMEBOARD: ClassVar["DashboardType"]
+    HOST_TIMEBOARD: ClassVar["DashboardType"]
 
     @cached_property
     def openapi_types(_):

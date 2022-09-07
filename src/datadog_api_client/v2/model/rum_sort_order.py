@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class RUMSortOrder(ModelSimple):
     """
@@ -21,6 +23,8 @@ class RUMSortOrder(ModelSimple):
         "asc",
         "desc",
     }
+    ASCENDING: ClassVar["RUMSortOrder"]
+    DESCENDING: ClassVar["RUMSortOrder"]
 
     @cached_property
     def openapi_types(_):

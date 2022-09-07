@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class TableWidgetHasSearchBar(ModelSimple):
     """
@@ -22,6 +24,9 @@ class TableWidgetHasSearchBar(ModelSimple):
         "never",
         "auto",
     }
+    ALWAYS: ClassVar["TableWidgetHasSearchBar"]
+    NEVER: ClassVar["TableWidgetHasSearchBar"]
+    AUTO: ClassVar["TableWidgetHasSearchBar"]
 
     @cached_property
     def openapi_types(_):

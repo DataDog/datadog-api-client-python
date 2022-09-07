@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsArchiveDestinationGCSType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class LogsArchiveDestinationGCSType(ModelSimple):
     allowed_values = {
         "gcs",
     }
+    GCS: ClassVar["LogsArchiveDestinationGCSType"]
 
     @cached_property
     def openapi_types(_):

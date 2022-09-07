@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class TreeMapWidgetDefinitionType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class TreeMapWidgetDefinitionType(ModelSimple):
     allowed_values = {
         "treemap",
     }
+    TREEMAP: ClassVar["TreeMapWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class OpsgenieServiceRegionType(ModelSimple):
     """
@@ -22,6 +24,9 @@ class OpsgenieServiceRegionType(ModelSimple):
         "eu",
         "custom",
     }
+    US: ClassVar["OpsgenieServiceRegionType"]
+    EU: ClassVar["OpsgenieServiceRegionType"]
+    CUSTOM: ClassVar["OpsgenieServiceRegionType"]
 
     @cached_property
     def openapi_types(_):

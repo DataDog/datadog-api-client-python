@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class TimeseriesWidgetLegendColumn(ModelSimple):
     """
@@ -24,6 +26,11 @@ class TimeseriesWidgetLegendColumn(ModelSimple):
         "min",
         "max",
     }
+    VALUE: ClassVar["TimeseriesWidgetLegendColumn"]
+    AVG: ClassVar["TimeseriesWidgetLegendColumn"]
+    SUM: ClassVar["TimeseriesWidgetLegendColumn"]
+    MIN: ClassVar["TimeseriesWidgetLegendColumn"]
+    MAX: ClassVar["TimeseriesWidgetLegendColumn"]
 
     @cached_property
     def openapi_types(_):

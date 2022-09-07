@@ -11,7 +11,7 @@ import pprint
 import re
 import tempfile
 from types import MappingProxyType
-from typing import Collection, Mapping
+from typing import Collection, Mapping, Union
 from typing_extensions import Final
 
 from dateutil.parser import parse
@@ -265,7 +265,7 @@ class ModelSimple(OpenApiModel):
     :type allowed_values: set
     """
 
-    allowed_values: Collection[str] = frozenset()
+    allowed_values: Collection[Union[str, int]] = frozenset()
 
     required_properties = set(
         [

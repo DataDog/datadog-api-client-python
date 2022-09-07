@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class HourlyUsageAttributionUsageType(ModelSimple):
     """
@@ -44,6 +46,31 @@ class HourlyUsageAttributionUsageType(ModelSimple):
         "profiled_host_usage",
         "snmp_usage",
     }
+    API_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    APM_HOST_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    APPSEC_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    BROWSER_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    CONTAINER_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    CSPM_CONTAINERS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    CSPM_HOSTS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    CUSTOM_TIMESERIES_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    CWS_CONTAINERS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    CWS_HOSTS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    DBM_HOSTS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    DBM_QUERIES_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    ESTIMATED_INDEXED_LOGS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    ESTIMATED_INGESTED_LOGS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    ESTIMATED_INDEXED_SPANS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    ESTIMATED_INGESTED_SPANS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    FARGATE_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    FUNCTIONS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    INDEXED_LOGS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    INFRA_HOST_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    INVOCATIONS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    NPM_HOST_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    PROFILED_CONTAINER_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    PROFILED_HOST_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    SNMP_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
 
     @cached_property
     def openapi_types(_):

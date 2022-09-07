@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class OnMissingDataOption(ModelSimple):
     """
@@ -27,6 +29,10 @@ class OnMissingDataOption(ModelSimple):
         "show_and_notify_no_data",
         "resolve",
     }
+    DEFAULT: ClassVar["OnMissingDataOption"]
+    SHOW_NO_DATA: ClassVar["OnMissingDataOption"]
+    SHOW_AND_NOTIFY_NO_DATA: ClassVar["OnMissingDataOption"]
+    RESOLVE: ClassVar["OnMissingDataOption"]
 
     @cached_property
     def openapi_types(_):

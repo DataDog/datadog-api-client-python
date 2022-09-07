@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetEventSize(ModelSimple):
     """
@@ -21,6 +23,8 @@ class WidgetEventSize(ModelSimple):
         "s",
         "l",
     }
+    SMALL: ClassVar["WidgetEventSize"]
+    LARGE: ClassVar["WidgetEventSize"]
 
     @cached_property
     def openapi_types(_):

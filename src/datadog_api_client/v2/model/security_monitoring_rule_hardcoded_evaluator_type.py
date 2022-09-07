@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityMonitoringRuleHardcodedEvaluatorType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class SecurityMonitoringRuleHardcodedEvaluatorType(ModelSimple):
     allowed_values = {
         "log4shell",
     }
+    LOG4SHELL: ClassVar["SecurityMonitoringRuleHardcodedEvaluatorType"]
 
     @cached_property
     def openapi_types(_):

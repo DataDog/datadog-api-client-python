@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MonitorDeviceID(ModelSimple):
     """
@@ -28,6 +30,15 @@ class MonitorDeviceID(ModelSimple):
         "firefox.tablet",
         "firefox.mobile_small",
     }
+    LAPTOP_LARGE: ClassVar["MonitorDeviceID"]
+    TABLET: ClassVar["MonitorDeviceID"]
+    MOBILE_SMALL: ClassVar["MonitorDeviceID"]
+    CHROME_LAPTOP_LARGE: ClassVar["MonitorDeviceID"]
+    CHROME_TABLET: ClassVar["MonitorDeviceID"]
+    CHROME_MOBILE_SMALL: ClassVar["MonitorDeviceID"]
+    FIREFOX_LAPTOP_LARGE: ClassVar["MonitorDeviceID"]
+    FIREFOX_TABLET: ClassVar["MonitorDeviceID"]
+    FIREFOX_MOBILE_SMALL: ClassVar["MonitorDeviceID"]
 
     @cached_property
     def openapi_types(_):

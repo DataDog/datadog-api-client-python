@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SunburstWidgetDefinitionType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class SunburstWidgetDefinitionType(ModelSimple):
     allowed_values = {
         "sunburst",
     }
+    SUNBURST: ClassVar["SunburstWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):

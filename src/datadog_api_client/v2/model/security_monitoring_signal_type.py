@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityMonitoringSignalType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class SecurityMonitoringSignalType(ModelSimple):
     allowed_values = {
         "signal",
     }
+    SIGNAL: ClassVar["SecurityMonitoringSignalType"]
 
     @cached_property
     def openapi_types(_):

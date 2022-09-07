@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsAttributeRemapperType(ModelSimple):
     """
@@ -20,6 +22,7 @@ class LogsAttributeRemapperType(ModelSimple):
     allowed_values = {
         "attribute-remapper",
     }
+    ATTRIBUTE_REMAPPER: ClassVar["LogsAttributeRemapperType"]
 
     @cached_property
     def openapi_types(_):

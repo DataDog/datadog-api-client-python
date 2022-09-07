@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetTimeWindows(ModelSimple):
     """
@@ -27,6 +29,14 @@ class WidgetTimeWindows(ModelSimple):
         "previous_month",
         "global_time",
     }
+    SEVEN_DAYS: ClassVar["WidgetTimeWindows"]
+    THIRTY_DAYS: ClassVar["WidgetTimeWindows"]
+    NINETY_DAYS: ClassVar["WidgetTimeWindows"]
+    WEEK_TO_DATE: ClassVar["WidgetTimeWindows"]
+    PREVIOUS_WEEK: ClassVar["WidgetTimeWindows"]
+    MONTH_TO_DATE: ClassVar["WidgetTimeWindows"]
+    PREVIOUS_MONTH: ClassVar["WidgetTimeWindows"]
+    GLOBAL_TIME: ClassVar["WidgetTimeWindows"]
 
     @cached_property
     def openapi_types(_):
