@@ -27,7 +27,7 @@ class DashboardListItems(ModelNormal):
         "total",
     }
 
-    def __init__(self, dashboards, *args, **kwargs):
+    def __init__(self_, dashboards, *args, **kwargs):
         """
         Dashboards within a list.
 
@@ -39,17 +39,6 @@ class DashboardListItems(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.dashboards = dashboards
-
-    @classmethod
-    def _from_openapi_data(cls, dashboards, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(DashboardListItems, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.dashboards = dashboards
-        return self
+        self_.dashboards = dashboards

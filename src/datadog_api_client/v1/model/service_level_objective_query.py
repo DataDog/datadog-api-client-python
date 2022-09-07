@@ -22,7 +22,7 @@ class ServiceLevelObjectiveQuery(ModelNormal):
         "numerator": "numerator",
     }
 
-    def __init__(self, denominator, numerator, *args, **kwargs):
+    def __init__(self_, denominator, numerator, *args, **kwargs):
         """
         A metric-based SLO. **Required if type is metric**. Note that Datadog only allows the sum by aggregator
         to be used because this will sum up all request counts instead of averaging them, or taking the max or
@@ -36,19 +36,7 @@ class ServiceLevelObjectiveQuery(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.denominator = denominator
-        self.numerator = numerator
-
-    @classmethod
-    def _from_openapi_data(cls, denominator, numerator, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ServiceLevelObjectiveQuery, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.denominator = denominator
-        self.numerator = numerator
-        return self
+        self_.denominator = denominator
+        self_.numerator = numerator

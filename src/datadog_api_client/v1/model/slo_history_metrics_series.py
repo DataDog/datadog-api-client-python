@@ -28,7 +28,7 @@ class SLOHistoryMetricsSeries(ModelNormal):
         "values": "values",
     }
 
-    def __init__(self, count, sum, values, *args, **kwargs):
+    def __init__(self_, count, sum, values, *args, **kwargs):
         """
         A representation of ``metric`` based SLO time series for the provided queries.
         This is the same response type from ``batch_query`` endpoint.
@@ -47,21 +47,8 @@ class SLOHistoryMetricsSeries(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.count = count
-        self.sum = sum
-        self.values = values
-
-    @classmethod
-    def _from_openapi_data(cls, count, sum, values, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SLOHistoryMetricsSeries, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.count = count
-        self.sum = sum
-        self.values = values
-        return self
+        self_.count = count
+        self_.sum = sum
+        self_.values = values

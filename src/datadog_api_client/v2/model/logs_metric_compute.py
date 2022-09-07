@@ -24,7 +24,7 @@ class LogsMetricCompute(ModelNormal):
         "path": "path",
     }
 
-    def __init__(self, aggregation_type, *args, **kwargs):
+    def __init__(self_, aggregation_type, *args, **kwargs):
         """
         The compute rule to compute the log-based metric.
 
@@ -36,17 +36,6 @@ class LogsMetricCompute(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.aggregation_type = aggregation_type
-
-    @classmethod
-    def _from_openapi_data(cls, aggregation_type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsMetricCompute, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.aggregation_type = aggregation_type
-        return self
+        self_.aggregation_type = aggregation_type

@@ -20,7 +20,7 @@ class IncidentServiceUpdateAttributes(ModelNormal):
         "name": "name",
     }
 
-    def __init__(self, name, *args, **kwargs):
+    def __init__(self_, name, *args, **kwargs):
         """
         The incident service's attributes for an update request.
 
@@ -29,17 +29,6 @@ class IncidentServiceUpdateAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.name = name
-
-    @classmethod
-    def _from_openapi_data(cls, name, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(IncidentServiceUpdateAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.name = name
-        return self
+        self_.name = name

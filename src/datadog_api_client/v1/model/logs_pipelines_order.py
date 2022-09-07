@@ -20,7 +20,7 @@ class LogsPipelinesOrder(ModelNormal):
         "pipeline_ids": "pipeline_ids",
     }
 
-    def __init__(self, pipeline_ids, *args, **kwargs):
+    def __init__(self_, pipeline_ids, *args, **kwargs):
         """
         Object containing the ordered list of pipeline IDs.
 
@@ -30,17 +30,6 @@ class LogsPipelinesOrder(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.pipeline_ids = pipeline_ids
-
-    @classmethod
-    def _from_openapi_data(cls, pipeline_ids, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsPipelinesOrder, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.pipeline_ids = pipeline_ids
-        return self
+        self_.pipeline_ids = pipeline_ids

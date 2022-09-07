@@ -24,7 +24,7 @@ class SyntheticsTestRequestProxy(ModelNormal):
         "url": "url",
     }
 
-    def __init__(self, url, *args, **kwargs):
+    def __init__(self_, url, *args, **kwargs):
         """
         The proxy to perform the test.
 
@@ -36,17 +36,6 @@ class SyntheticsTestRequestProxy(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.url = url
-
-    @classmethod
-    def _from_openapi_data(cls, url, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsTestRequestProxy, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.url = url
-        return self
+        self_.url = url

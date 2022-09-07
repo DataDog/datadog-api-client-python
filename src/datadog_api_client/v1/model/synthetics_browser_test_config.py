@@ -33,7 +33,7 @@ class SyntheticsBrowserTestConfig(ModelNormal):
         "variables": "variables",
     }
 
-    def __init__(self, request, *args, **kwargs):
+    def __init__(self_, request, *args, **kwargs):
         """
         Configuration object for a Synthetic browser test.
 
@@ -55,20 +55,7 @@ class SyntheticsBrowserTestConfig(ModelNormal):
         super().__init__(kwargs)
         assertions = kwargs.get("assertions", [])
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.assertions = assertions
-        self.request = request
-
-    @classmethod
-    def _from_openapi_data(cls, request, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        assertions = kwargs.get("assertions", [])
-
-        self = super(SyntheticsBrowserTestConfig, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.assertions = assertions
-        self.request = request
-        return self
+        self_.assertions = assertions
+        self_.request = request

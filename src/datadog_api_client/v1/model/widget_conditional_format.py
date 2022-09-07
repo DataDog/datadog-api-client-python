@@ -39,7 +39,7 @@ class WidgetConditionalFormat(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self, comparator, palette, value, *args, **kwargs):
+    def __init__(self_, comparator, palette, value, *args, **kwargs):
         """
         Define a conditional format for the widget.
 
@@ -72,21 +72,8 @@ class WidgetConditionalFormat(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.comparator = comparator
-        self.palette = palette
-        self.value = value
-
-    @classmethod
-    def _from_openapi_data(cls, comparator, palette, value, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(WidgetConditionalFormat, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.comparator = comparator
-        self.palette = palette
-        self.value = value
-        return self
+        self_.comparator = comparator
+        self_.palette = palette
+        self_.value = value

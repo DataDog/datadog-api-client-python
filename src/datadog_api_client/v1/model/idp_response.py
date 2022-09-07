@@ -20,7 +20,7 @@ class IdpResponse(ModelNormal):
         "message": "message",
     }
 
-    def __init__(self, message, *args, **kwargs):
+    def __init__(self_, message, *args, **kwargs):
         """
         The IdP response object.
 
@@ -29,17 +29,6 @@ class IdpResponse(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.message = message
-
-    @classmethod
-    def _from_openapi_data(cls, message, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(IdpResponse, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.message = message
-        return self
+        self_.message = message

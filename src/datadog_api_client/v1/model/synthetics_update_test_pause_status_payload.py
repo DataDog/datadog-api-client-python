@@ -22,7 +22,7 @@ class SyntheticsUpdateTestPauseStatusPayload(ModelNormal):
         "new_status": "new_status",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         Object to start or pause an existing Synthetic test.
 
@@ -32,14 +32,4 @@ class SyntheticsUpdateTestPauseStatusPayload(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsUpdateTestPauseStatusPayload, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

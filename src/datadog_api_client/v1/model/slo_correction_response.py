@@ -22,7 +22,7 @@ class SLOCorrectionResponse(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         The response object of an SLO correction.
 
@@ -31,14 +31,4 @@ class SLOCorrectionResponse(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SLOCorrectionResponse, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

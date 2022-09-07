@@ -26,7 +26,7 @@ class LogsArchiveCreateRequestDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         The definition of an archive.
 
@@ -39,18 +39,6 @@ class LogsArchiveCreateRequestDefinition(ModelNormal):
         super().__init__(kwargs)
         type = kwargs.get("type", "archives")
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        type = kwargs.get("type", "archives")
-
-        self = super(LogsArchiveCreateRequestDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.type = type
-        return self
+        self_.type = type

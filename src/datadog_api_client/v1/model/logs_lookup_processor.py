@@ -34,7 +34,7 @@ class LogsLookupProcessor(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, lookup_table, source, target, type, *args, **kwargs):
+    def __init__(self_, lookup_table, source, target, type, *args, **kwargs):
         """
         Use the Lookup Processor to define a mapping between a log attribute
         and a human readable value saved in the processors mapping table.
@@ -68,23 +68,9 @@ class LogsLookupProcessor(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.lookup_table = lookup_table
-        self.source = source
-        self.target = target
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, lookup_table, source, target, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsLookupProcessor, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.lookup_table = lookup_table
-        self.source = source
-        self.target = target
-        self.type = type
-        return self
+        self_.lookup_table = lookup_table
+        self_.source = source
+        self_.target = target
+        self_.type = type

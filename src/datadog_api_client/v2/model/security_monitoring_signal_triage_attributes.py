@@ -54,7 +54,7 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
         "state_update_user": "state_update_user",
     }
 
-    def __init__(self, assignee, incident_ids, state, *args, **kwargs):
+    def __init__(self_, assignee, incident_ids, state, *args, **kwargs):
         """
         Attributes describing a triage state update operation over a security signal.
 
@@ -87,21 +87,8 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.assignee = assignee
-        self.incident_ids = incident_ids
-        self.state = state
-
-    @classmethod
-    def _from_openapi_data(cls, assignee, incident_ids, state, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SecurityMonitoringSignalTriageAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.assignee = assignee
-        self.incident_ids = incident_ids
-        self.state = state
-        return self
+        self_.assignee = assignee
+        self_.incident_ids = incident_ids
+        self_.state = state

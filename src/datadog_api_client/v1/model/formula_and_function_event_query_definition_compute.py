@@ -28,7 +28,7 @@ class FormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
         "metric": "metric",
     }
 
-    def __init__(self, aggregation, *args, **kwargs):
+    def __init__(self_, aggregation, *args, **kwargs):
         """
         Compute options.
 
@@ -43,17 +43,6 @@ class FormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.aggregation = aggregation
-
-    @classmethod
-    def _from_openapi_data(cls, aggregation, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(FormulaAndFunctionEventQueryDefinitionCompute, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.aggregation = aggregation
-        return self
+        self_.aggregation = aggregation

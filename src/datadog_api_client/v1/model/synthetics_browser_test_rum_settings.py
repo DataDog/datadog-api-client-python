@@ -24,7 +24,7 @@ class SyntheticsBrowserTestRumSettings(ModelNormal):
         "is_enabled": "isEnabled",
     }
 
-    def __init__(self, is_enabled, *args, **kwargs):
+    def __init__(self_, is_enabled, *args, **kwargs):
         """
         The RUM data collection settings for the Synthetic browser test.
         **Note:** There are 3 ways to format RUM settings:
@@ -49,17 +49,6 @@ class SyntheticsBrowserTestRumSettings(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.is_enabled = is_enabled
-
-    @classmethod
-    def _from_openapi_data(cls, is_enabled, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsBrowserTestRumSettings, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.is_enabled = is_enabled
-        return self
+        self_.is_enabled = is_enabled

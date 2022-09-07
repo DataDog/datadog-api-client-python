@@ -37,7 +37,7 @@ class MetricsQueryUnit(ModelNormal):
         "short_name",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         Object containing the metric unit family, scale factor, name, and short name.
 
@@ -58,14 +58,4 @@ class MetricsQueryUnit(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(MetricsQueryUnit, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

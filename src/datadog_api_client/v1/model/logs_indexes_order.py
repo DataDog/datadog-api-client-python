@@ -20,7 +20,7 @@ class LogsIndexesOrder(ModelNormal):
         "index_names": "index_names",
     }
 
-    def __init__(self, index_names, *args, **kwargs):
+    def __init__(self_, index_names, *args, **kwargs):
         """
         Object containing the ordered list of log index names.
 
@@ -31,17 +31,6 @@ class LogsIndexesOrder(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.index_names = index_names
-
-    @classmethod
-    def _from_openapi_data(cls, index_names, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsIndexesOrder, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.index_names = index_names
-        return self
+        self_.index_names = index_names

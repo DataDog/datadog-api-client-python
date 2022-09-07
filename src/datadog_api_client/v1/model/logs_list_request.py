@@ -39,7 +39,7 @@ class LogsListRequest(ModelNormal):
         "time": "time",
     }
 
-    def __init__(self, time, *args, **kwargs):
+    def __init__(self_, time, *args, **kwargs):
         """
         Object to send with the request to retrieve a list of logs from your Organization.
 
@@ -68,17 +68,6 @@ class LogsListRequest(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.time = time
-
-    @classmethod
-    def _from_openapi_data(cls, time, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsListRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.time = time
-        return self
+        self_.time = time

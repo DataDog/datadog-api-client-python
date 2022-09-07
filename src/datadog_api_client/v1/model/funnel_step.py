@@ -22,7 +22,7 @@ class FunnelStep(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self, facet, value, *args, **kwargs):
+    def __init__(self_, facet, value, *args, **kwargs):
         """
         The funnel step.
 
@@ -34,19 +34,7 @@ class FunnelStep(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.facet = facet
-        self.value = value
-
-    @classmethod
-    def _from_openapi_data(cls, facet, value, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(FunnelStep, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.facet = facet
-        self.value = value
-        return self
+        self_.facet = facet
+        self_.value = value

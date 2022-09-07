@@ -26,7 +26,7 @@ class SecurityMonitoringTriageUser(ModelNormal):
         "uuid": "uuid",
     }
 
-    def __init__(self, uuid, *args, **kwargs):
+    def __init__(self_, uuid, *args, **kwargs):
         """
         Object representing a given user entity.
 
@@ -44,17 +44,6 @@ class SecurityMonitoringTriageUser(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.uuid = uuid
-
-    @classmethod
-    def _from_openapi_data(cls, uuid, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SecurityMonitoringTriageUser, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.uuid = uuid
-        return self
+        self_.uuid = uuid

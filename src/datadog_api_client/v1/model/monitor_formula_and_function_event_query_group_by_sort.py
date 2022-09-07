@@ -29,7 +29,7 @@ class MonitorFormulaAndFunctionEventQueryGroupBySort(ModelNormal):
         "order": "order",
     }
 
-    def __init__(self, aggregation, *args, **kwargs):
+    def __init__(self_, aggregation, *args, **kwargs):
         """
         Options for sorting group by results.
 
@@ -44,17 +44,6 @@ class MonitorFormulaAndFunctionEventQueryGroupBySort(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.aggregation = aggregation
-
-    @classmethod
-    def _from_openapi_data(cls, aggregation, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(MonitorFormulaAndFunctionEventQueryGroupBySort, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.aggregation = aggregation
-        return self
+        self_.aggregation = aggregation

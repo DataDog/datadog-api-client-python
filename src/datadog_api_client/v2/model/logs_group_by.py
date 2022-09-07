@@ -35,7 +35,7 @@ class LogsGroupBy(ModelNormal):
         "total": "total",
     }
 
-    def __init__(self, facet, *args, **kwargs):
+    def __init__(self_, facet, *args, **kwargs):
         """
         A group by rule
 
@@ -60,17 +60,6 @@ class LogsGroupBy(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.facet = facet
-
-    @classmethod
-    def _from_openapi_data(cls, facet, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsGroupBy, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.facet = facet
-        return self
+        self_.facet = facet

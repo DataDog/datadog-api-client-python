@@ -22,7 +22,7 @@ class SLOHistoryResponseErrorWithType(ModelNormal):
         "error_type": "error_type",
     }
 
-    def __init__(self, error_message, error_type, *args, **kwargs):
+    def __init__(self_, error_message, error_type, *args, **kwargs):
         """
         An object describing the error with error type and error message.
 
@@ -34,19 +34,7 @@ class SLOHistoryResponseErrorWithType(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.error_message = error_message
-        self.error_type = error_type
-
-    @classmethod
-    def _from_openapi_data(cls, error_message, error_type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SLOHistoryResponseErrorWithType, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.error_message = error_message
-        self.error_type = error_type
-        return self
+        self_.error_message = error_message
+        self_.error_type = error_type

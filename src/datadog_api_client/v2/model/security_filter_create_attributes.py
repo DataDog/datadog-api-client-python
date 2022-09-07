@@ -31,7 +31,7 @@ class SecurityFilterCreateAttributes(ModelNormal):
         "query": "query",
     }
 
-    def __init__(self, exclusion_filters, filtered_data_type, is_enabled, name, query, *args, **kwargs):
+    def __init__(self_, exclusion_filters, filtered_data_type, is_enabled, name, query, *args, **kwargs):
         """
         Object containing the attributes of the security filter to be created.
 
@@ -52,25 +52,10 @@ class SecurityFilterCreateAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.exclusion_filters = exclusion_filters
-        self.filtered_data_type = filtered_data_type
-        self.is_enabled = is_enabled
-        self.name = name
-        self.query = query
-
-    @classmethod
-    def _from_openapi_data(cls, exclusion_filters, filtered_data_type, is_enabled, name, query, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SecurityFilterCreateAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.exclusion_filters = exclusion_filters
-        self.filtered_data_type = filtered_data_type
-        self.is_enabled = is_enabled
-        self.name = name
-        self.query = query
-        return self
+        self_.exclusion_filters = exclusion_filters
+        self_.filtered_data_type = filtered_data_type
+        self_.is_enabled = is_enabled
+        self_.name = name
+        self_.query = query

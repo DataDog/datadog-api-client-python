@@ -43,7 +43,7 @@ class WidgetLayout(ModelNormal):
         "y": "y",
     }
 
-    def __init__(self, height, width, x, y, *args, **kwargs):
+    def __init__(self_, height, width, x, y, *args, **kwargs):
         """
         The layout for a widget on a ``free`` or **new dashboard layout** dashboard.
 
@@ -65,23 +65,9 @@ class WidgetLayout(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.height = height
-        self.width = width
-        self.x = x
-        self.y = y
-
-    @classmethod
-    def _from_openapi_data(cls, height, width, x, y, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(WidgetLayout, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.height = height
-        self.width = width
-        self.x = x
-        self.y = y
-        return self
+        self_.height = height
+        self_.width = width
+        self_.x = x
+        self_.y = y

@@ -32,7 +32,7 @@ class LogsArithmeticProcessor(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, expression, target, type, *args, **kwargs):
+    def __init__(self_, expression, target, type, *args, **kwargs):
         """
         Use the Arithmetic Processor to add a new attribute (without spaces or special characters
         in the new attribute name) to a log with the result of the provided formula.
@@ -78,21 +78,8 @@ class LogsArithmeticProcessor(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.expression = expression
-        self.target = target
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, expression, target, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsArithmeticProcessor, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.expression = expression
-        self.target = target
-        self.type = type
-        return self
+        self_.expression = expression
+        self_.target = target
+        self_.type = type

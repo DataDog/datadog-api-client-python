@@ -20,7 +20,7 @@ class PagerDutyServiceKey(ModelNormal):
         "service_key": "service_key",
     }
 
-    def __init__(self, service_key, *args, **kwargs):
+    def __init__(self_, service_key, *args, **kwargs):
         """
         PagerDuty service object key.
 
@@ -29,17 +29,6 @@ class PagerDutyServiceKey(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.service_key = service_key
-
-    @classmethod
-    def _from_openapi_data(cls, service_key, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(PagerDutyServiceKey, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.service_key = service_key
-        return self
+        self_.service_key = service_key

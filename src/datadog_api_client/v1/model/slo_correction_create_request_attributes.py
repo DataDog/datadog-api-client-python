@@ -36,7 +36,7 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
         "timezone": "timezone",
     }
 
-    def __init__(self, category, slo_id, start, *args, **kwargs):
+    def __init__(self_, category, slo_id, start, *args, **kwargs):
         """
         The attribute object associated with the SLO correction to be created.
 
@@ -67,21 +67,8 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.category = category
-        self.slo_id = slo_id
-        self.start = start
-
-    @classmethod
-    def _from_openapi_data(cls, category, slo_id, start, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SLOCorrectionCreateRequestAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.category = category
-        self.slo_id = slo_id
-        self.start = start
-        return self
+        self_.category = category
+        self_.slo_id = slo_id
+        self_.start = start

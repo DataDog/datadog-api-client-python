@@ -25,7 +25,7 @@ class LogsListRequestTime(ModelNormal):
         "to": "to",
     }
 
-    def __init__(self, _from, to, *args, **kwargs):
+    def __init__(self_, _from, to, *args, **kwargs):
         """
         Timeframe to retrieve the log from.
 
@@ -41,19 +41,7 @@ class LogsListRequestTime(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self._from = _from
-        self.to = to
-
-    @classmethod
-    def _from_openapi_data(cls, _from, to, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsListRequestTime, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self._from = _from
-        self.to = to
-        return self
+        self_._from = _from
+        self_.to = to

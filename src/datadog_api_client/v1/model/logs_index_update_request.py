@@ -31,7 +31,7 @@ class LogsIndexUpdateRequest(ModelNormal):
         "num_retention_days": "num_retention_days",
     }
 
-    def __init__(self, filter, *args, **kwargs):
+    def __init__(self_, filter, *args, **kwargs):
         """
         Object for updating a Datadog Log index.
 
@@ -60,17 +60,6 @@ class LogsIndexUpdateRequest(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.filter = filter
-
-    @classmethod
-    def _from_openapi_data(cls, filter, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsIndexUpdateRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.filter = filter
-        return self
+        self_.filter = filter

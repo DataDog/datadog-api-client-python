@@ -32,7 +32,7 @@ class LogsUserAgentParser(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, type, *args, **kwargs):
+    def __init__(self_, type, *args, **kwargs):
         """
         The User-Agent parser takes a User-Agent attribute and extracts the OS, browser, device, and other user data.
         It recognizes major bots like the Google Bot, Yahoo Slurp, and Bing.
@@ -59,23 +59,8 @@ class LogsUserAgentParser(ModelNormal):
         sources = kwargs.get("sources", ["http.useragent"])
         target = kwargs.get("target", "http.useragent_details")
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.sources = sources
-        self.target = target
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        sources = kwargs.get("sources", ["http.useragent"])
-        target = kwargs.get("target", "http.useragent_details")
-
-        self = super(LogsUserAgentParser, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.sources = sources
-        self.target = target
-        self.type = type
-        return self
+        self_.sources = sources
+        self_.target = target
+        self_.type = type

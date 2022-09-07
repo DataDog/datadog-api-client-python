@@ -37,7 +37,7 @@ class RUMApplicationAttributes(ModelNormal):
     }
 
     def __init__(
-        self,
+        self_,
         application_id,
         created_at,
         created_by_handle,
@@ -81,43 +81,13 @@ class RUMApplicationAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.application_id = application_id
-        self.created_at = created_at
-        self.created_by_handle = created_by_handle
-        self.name = name
-        self.org_id = org_id
-        self.type = type
-        self.updated_at = updated_at
-        self.updated_by_handle = updated_by_handle
-
-    @classmethod
-    def _from_openapi_data(
-        cls,
-        application_id,
-        created_at,
-        created_by_handle,
-        name,
-        org_id,
-        type,
-        updated_at,
-        updated_by_handle,
-        *args,
-        **kwargs
-    ):
-        """Helper creating a new instance from a response."""
-
-        self = super(RUMApplicationAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.application_id = application_id
-        self.created_at = created_at
-        self.created_by_handle = created_by_handle
-        self.name = name
-        self.org_id = org_id
-        self.type = type
-        self.updated_at = updated_at
-        self.updated_by_handle = updated_by_handle
-        return self
+        self_.application_id = application_id
+        self_.created_at = created_at
+        self_.created_by_handle = created_by_handle
+        self_.name = name
+        self_.org_id = org_id
+        self_.type = type
+        self_.updated_at = updated_at
+        self_.updated_by_handle = updated_by_handle

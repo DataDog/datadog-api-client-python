@@ -32,7 +32,7 @@ class ProcessQueryDefinition(ModelNormal):
         "search_by": "search_by",
     }
 
-    def __init__(self, metric, *args, **kwargs):
+    def __init__(self_, metric, *args, **kwargs):
         """
         The process query to use in the widget.
 
@@ -50,17 +50,6 @@ class ProcessQueryDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.metric = metric
-
-    @classmethod
-    def _from_openapi_data(cls, metric, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ProcessQueryDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.metric = metric
-        return self
+        self_.metric = metric

@@ -52,7 +52,7 @@ class SyntheticsCITest(ModelNormal):
         "variables": "variables",
     }
 
-    def __init__(self, public_id, *args, **kwargs):
+    def __init__(self_, public_id, *args, **kwargs):
         """
         Test configuration for Synthetics CI
 
@@ -100,17 +100,6 @@ class SyntheticsCITest(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.public_id = public_id
-
-    @classmethod
-    def _from_openapi_data(cls, public_id, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsCITest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.public_id = public_id
-        return self
+        self_.public_id = public_id

@@ -41,7 +41,7 @@ class LogsAttributeRemapper(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, sources, target, type, *args, **kwargs):
+    def __init__(self_, sources, target, type, *args, **kwargs):
         """
         The remapper processor remaps any source attribute(s) or tag to another target attribute or tag.
         Constraints on the tag/attribute name are explained in the `Tag Best Practice documentation <https://docs.datadoghq.com/logs/guide/log-parsing-best-practice>`_.
@@ -81,21 +81,8 @@ class LogsAttributeRemapper(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.sources = sources
-        self.target = target
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, sources, target, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsAttributeRemapper, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.sources = sources
-        self.target = target
-        self.type = type
-        return self
+        self_.sources = sources
+        self_.target = target
+        self_.type = type

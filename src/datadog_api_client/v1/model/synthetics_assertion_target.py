@@ -42,7 +42,7 @@ class SyntheticsAssertionTarget(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, operator, target, type, *args, **kwargs):
+    def __init__(self_, operator, target, type, *args, **kwargs):
         """
         An assertion which uses a simple target.
 
@@ -60,21 +60,8 @@ class SyntheticsAssertionTarget(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.operator = operator
-        self.target = target
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, operator, target, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsAssertionTarget, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.operator = operator
-        self.target = target
-        self.type = type
-        return self
+        self_.operator = operator
+        self_.target = target
+        self_.type = type

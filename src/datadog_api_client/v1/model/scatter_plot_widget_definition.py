@@ -47,7 +47,7 @@ class ScatterPlotWidgetDefinition(ModelNormal):
         "yaxis": "yaxis",
     }
 
-    def __init__(self, requests, type, *args, **kwargs):
+    def __init__(self_, requests, type, *args, **kwargs):
         """
         The scatter plot visualization allows you to graph a chosen scope over two different metrics with their respective aggregation.
 
@@ -83,19 +83,7 @@ class ScatterPlotWidgetDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.requests = requests
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, requests, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ScatterPlotWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.requests = requests
-        self.type = type
-        return self
+        self_.requests = requests
+        self_.type = type

@@ -22,7 +22,7 @@ class NotebookSplitBy(ModelNormal):
         "tags": "tags",
     }
 
-    def __init__(self, keys, tags, *args, **kwargs):
+    def __init__(self_, keys, tags, *args, **kwargs):
         """
         Object describing how to split the graph to display multiple visualizations per request.
 
@@ -34,19 +34,7 @@ class NotebookSplitBy(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.keys = keys
-        self.tags = tags
-
-    @classmethod
-    def _from_openapi_data(cls, keys, tags, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(NotebookSplitBy, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.keys = keys
-        self.tags = tags
-        return self
+        self_.keys = keys
+        self_.tags = tags

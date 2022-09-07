@@ -25,7 +25,7 @@ class UserInvitationData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, relationships, type, *args, **kwargs):
+    def __init__(self_, relationships, type, *args, **kwargs):
         """
         Object to create a user invitation.
 
@@ -37,19 +37,7 @@ class UserInvitationData(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.relationships = relationships
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, relationships, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(UserInvitationData, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.relationships = relationships
-        self.type = type
-        return self
+        self_.relationships = relationships
+        self_.type = type

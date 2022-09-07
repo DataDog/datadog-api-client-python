@@ -25,7 +25,7 @@ class MetricCustomAggregation(ModelNormal):
         "time": "time",
     }
 
-    def __init__(self, space, time, *args, **kwargs):
+    def __init__(self_, space, time, *args, **kwargs):
         """
         A time and space aggregation combination for use in query.
 
@@ -37,19 +37,7 @@ class MetricCustomAggregation(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.space = space
-        self.time = time
-
-    @classmethod
-    def _from_openapi_data(cls, space, time, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(MetricCustomAggregation, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.space = space
-        self.time = time
-        return self
+        self_.space = space
+        self_.time = time

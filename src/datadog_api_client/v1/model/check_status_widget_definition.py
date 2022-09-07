@@ -43,7 +43,7 @@ class CheckStatusWidgetDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, check, grouping, type, *args, **kwargs):
+    def __init__(self_, check, grouping, type, *args, **kwargs):
         """
         Check status shows the current status or number of results for any check performed.
 
@@ -79,21 +79,8 @@ class CheckStatusWidgetDefinition(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.check = check
-        self.grouping = grouping
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, check, grouping, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(CheckStatusWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.check = check
-        self.grouping = grouping
-        self.type = type
-        return self
+        self_.check = check
+        self_.grouping = grouping
+        self_.type = type

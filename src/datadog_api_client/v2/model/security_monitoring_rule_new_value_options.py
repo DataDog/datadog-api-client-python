@@ -39,7 +39,7 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
         "learning_threshold": "learningThreshold",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         Options on new value rules.
 
@@ -58,14 +58,4 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SecurityMonitoringRuleNewValueOptions, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

@@ -23,7 +23,7 @@ class ApplicationKeyUpdateAttributes(ModelNormal):
         "scopes": "scopes",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         Attributes used to update an application Key.
 
@@ -35,14 +35,4 @@ class ApplicationKeyUpdateAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ApplicationKeyUpdateAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        self_._check_pos_args(args)

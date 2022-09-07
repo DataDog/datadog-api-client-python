@@ -27,7 +27,7 @@ class FunnelQuery(ModelNormal):
         "steps": "steps",
     }
 
-    def __init__(self, data_source, query_string, steps, *args, **kwargs):
+    def __init__(self_, data_source, query_string, steps, *args, **kwargs):
         """
         Updated funnel widget.
 
@@ -42,21 +42,8 @@ class FunnelQuery(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.data_source = data_source
-        self.query_string = query_string
-        self.steps = steps
-
-    @classmethod
-    def _from_openapi_data(cls, data_source, query_string, steps, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(FunnelQuery, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.data_source = data_source
-        self.query_string = query_string
-        self.steps = steps
-        return self
+        self_.data_source = data_source
+        self_.query_string = query_string
+        self_.steps = steps

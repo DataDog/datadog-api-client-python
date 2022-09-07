@@ -24,7 +24,7 @@ class NotebookRelativeTime(ModelNormal):
         "live_span": "live_span",
     }
 
-    def __init__(self, live_span, *args, **kwargs):
+    def __init__(self_, live_span, *args, **kwargs):
         """
         Relative timeframe.
 
@@ -33,17 +33,6 @@ class NotebookRelativeTime(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+        self_._check_pos_args(args)
 
-        self.live_span = live_span
-
-    @classmethod
-    def _from_openapi_data(cls, live_span, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(NotebookRelativeTime, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.live_span = live_span
-        return self
+        self_.live_span = live_span
