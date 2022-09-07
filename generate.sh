@@ -15,7 +15,6 @@ pre_commit_wrapper () {
   if [[ -n $exit_code ]]; then
     re="([^0-9]|^)$exit_code([^0-9]|$)"
     if ! grep -qE "$re" <<< "$acceptable_errors" ; then
-      echo "$out"
       echo "pre-commit subcommand failed with error_code: $exit_code. See output above"
       exit "$exit_code";
     fi
