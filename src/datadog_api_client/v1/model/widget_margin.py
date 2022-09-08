@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetMargin(ModelSimple):
     """
@@ -19,17 +21,27 @@ class WidgetMargin(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SM": "sm",
-            "MD": "md",
-            "LG": "lg",
-            "SMALL": "small",
-            "LARGE": "large",
-        },
+        "sm",
+        "md",
+        "lg",
+        "small",
+        "large",
     }
+    SM: ClassVar["WidgetMargin"]
+    MD: ClassVar["WidgetMargin"]
+    LG: ClassVar["WidgetMargin"]
+    SMALL: ClassVar["WidgetMargin"]
+    LARGE: ClassVar["WidgetMargin"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetMargin.SM = WidgetMargin("sm")
+WidgetMargin.MD = WidgetMargin("md")
+WidgetMargin.LG = WidgetMargin("lg")
+WidgetMargin.SMALL = WidgetMargin("small")
+WidgetMargin.LARGE = WidgetMargin("large")

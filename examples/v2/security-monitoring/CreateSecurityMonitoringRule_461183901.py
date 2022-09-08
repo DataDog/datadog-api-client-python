@@ -28,7 +28,7 @@ from datadog_api_client.v2.model.security_monitoring_rule_type_create import Sec
 body = SecurityMonitoringRuleCreatePayload(
     queries=[
         SecurityMonitoringRuleQueryCreate(
-            aggregation=SecurityMonitoringRuleQueryAggregation("geo_data"),
+            aggregation=SecurityMonitoringRuleQueryAggregation.GEO_DATA,
             group_by_fields=[
                 "@usr.id",
             ],
@@ -40,7 +40,7 @@ body = SecurityMonitoringRuleCreatePayload(
     cases=[
         SecurityMonitoringRuleCaseCreate(
             name="",
-            status=SecurityMonitoringRuleSeverity("info"),
+            status=SecurityMonitoringRuleSeverity.INFO,
             notifications=[],
         ),
     ],
@@ -48,16 +48,16 @@ body = SecurityMonitoringRuleCreatePayload(
     message="test",
     is_enabled=True,
     options=SecurityMonitoringRuleOptions(
-        max_signal_duration=SecurityMonitoringRuleMaxSignalDuration(86400),
-        evaluation_window=SecurityMonitoringRuleEvaluationWindow(900),
-        keep_alive=SecurityMonitoringRuleKeepAlive(3600),
-        detection_method=SecurityMonitoringRuleDetectionMethod("impossible_travel"),
+        max_signal_duration=SecurityMonitoringRuleMaxSignalDuration.ONE_DAY,
+        evaluation_window=SecurityMonitoringRuleEvaluationWindow.FIFTEEN_MINUTES,
+        keep_alive=SecurityMonitoringRuleKeepAlive.ONE_HOUR,
+        detection_method=SecurityMonitoringRuleDetectionMethod.IMPOSSIBLE_TRAVEL,
         impossible_travel_options=SecurityMonitoringRuleImpossibleTravelOptions(
             baseline_user_locations=False,
         ),
     ),
     name="Example-Create_a_detection_rule_with_type_impossible_travel_returns_OK_response",
-    type=SecurityMonitoringRuleTypeCreate("log_detection"),
+    type=SecurityMonitoringRuleTypeCreate.LOG_DETECTION,
     tags=[],
     filters=[],
 )

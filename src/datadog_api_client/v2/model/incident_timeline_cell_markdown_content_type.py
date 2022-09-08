@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class IncidentTimelineCellMarkdownContentType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class IncidentTimelineCellMarkdownContentType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MARKDOWN": "markdown",
-        },
+        "markdown",
     }
+    MARKDOWN: ClassVar["IncidentTimelineCellMarkdownContentType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+IncidentTimelineCellMarkdownContentType.MARKDOWN = IncidentTimelineCellMarkdownContentType("markdown")

@@ -15,7 +15,7 @@ body = MetricPayload(
     series=[
         MetricSeries(
             metric="system.load.1",
-            type=MetricIntakeType(0),
+            type=MetricIntakeType.UNSPECIFIED,
             points=[
                 MetricPoint(
                     timestamp=int(datetime.now().timestamp()),
@@ -29,6 +29,6 @@ body = MetricPayload(
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
-    response = api_instance.submit_metrics(content_encoding=MetricContentEncoding("zstd1"), body=body)
+    response = api_instance.submit_metrics(content_encoding=MetricContentEncoding.ZSTD1, body=body)
 
     print(response)

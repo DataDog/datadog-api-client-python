@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsMessageRemapperType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class LogsMessageRemapperType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MESSAGE_REMAPPER": "message-remapper",
-        },
+        "message-remapper",
     }
+    MESSAGE_REMAPPER: ClassVar["LogsMessageRemapperType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+LogsMessageRemapperType.MESSAGE_REMAPPER = LogsMessageRemapperType("message-remapper")

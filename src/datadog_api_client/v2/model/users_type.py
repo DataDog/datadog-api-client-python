@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class UsersType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class UsersType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "USERS": "users",
-        },
+        "users",
     }
+    USERS: ClassVar["UsersType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+UsersType.USERS = UsersType("users")

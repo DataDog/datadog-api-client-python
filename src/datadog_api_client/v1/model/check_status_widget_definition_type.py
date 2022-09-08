@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class CheckStatusWidgetDefinitionType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class CheckStatusWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CHECK_STATUS": "check_status",
-        },
+        "check_status",
     }
+    CHECK_STATUS: ClassVar["CheckStatusWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+CheckStatusWidgetDefinitionType.CHECK_STATUS = CheckStatusWidgetDefinitionType("check_status")

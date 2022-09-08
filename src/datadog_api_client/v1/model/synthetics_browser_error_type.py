@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsBrowserErrorType(ModelSimple):
     """
@@ -18,14 +20,18 @@ class SyntheticsBrowserErrorType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NETWORK": "network",
-            "JS": "js",
-        },
+        "network",
+        "js",
     }
+    NETWORK: ClassVar["SyntheticsBrowserErrorType"]
+    JS: ClassVar["SyntheticsBrowserErrorType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsBrowserErrorType.NETWORK = SyntheticsBrowserErrorType("network")
+SyntheticsBrowserErrorType.JS = SyntheticsBrowserErrorType("js")

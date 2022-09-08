@@ -18,7 +18,7 @@ PERMISSION_ID = environ["PERMISSION_ID"]
 body = RelationshipToPermission(
     data=RelationshipToPermissionData(
         id=PERMISSION_ID,
-        type=PermissionsType("permissions"),
+        type=PermissionsType.PERMISSIONS,
     ),
 )
 

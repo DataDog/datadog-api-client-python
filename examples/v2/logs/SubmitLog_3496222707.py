@@ -23,6 +23,6 @@ body = HTTPLog(
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = LogsApi(api_client)
-    response = api_instance.submit_log(content_encoding=ContentEncoding("gzip"), body=body)
+    response = api_instance.submit_log(content_encoding=ContentEncoding.GZIP, body=body)
 
     print(response)

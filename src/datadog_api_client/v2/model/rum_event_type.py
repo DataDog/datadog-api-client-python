@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class RUMEventType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class RUMEventType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "RUM": "rum",
-        },
+        "rum",
     }
+    RUM: ClassVar["RUMEventType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+RUMEventType.RUM = RUMEventType("rum")

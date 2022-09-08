@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SunburstWidgetLegendTableType(ModelSimple):
     """
@@ -18,14 +20,18 @@ class SunburstWidgetLegendTableType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TABLE": "table",
-            "NONE": "none",
-        },
+        "table",
+        "none",
     }
+    TABLE: ClassVar["SunburstWidgetLegendTableType"]
+    NONE: ClassVar["SunburstWidgetLegendTableType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SunburstWidgetLegendTableType.TABLE = SunburstWidgetLegendTableType("table")
+SunburstWidgetLegendTableType.NONE = SunburstWidgetLegendTableType("none")

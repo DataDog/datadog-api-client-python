@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class DashboardLayoutType(ModelSimple):
     """
@@ -18,14 +20,18 @@ class DashboardLayoutType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ORDERED": "ordered",
-            "FREE": "free",
-        },
+        "ordered",
+        "free",
     }
+    ORDERED: ClassVar["DashboardLayoutType"]
+    FREE: ClassVar["DashboardLayoutType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+DashboardLayoutType.ORDERED = DashboardLayoutType("ordered")
+DashboardLayoutType.FREE = DashboardLayoutType("free")

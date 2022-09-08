@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetMessageDisplay(ModelSimple):
     """
@@ -18,15 +20,21 @@ class WidgetMessageDisplay(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "INLINE": "inline",
-            "EXPANDED_MEDIUM": "expanded-md",
-            "EXPANDED_LARGE": "expanded-lg",
-        },
+        "inline",
+        "expanded-md",
+        "expanded-lg",
     }
+    INLINE: ClassVar["WidgetMessageDisplay"]
+    EXPANDED_MEDIUM: ClassVar["WidgetMessageDisplay"]
+    EXPANDED_LARGE: ClassVar["WidgetMessageDisplay"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetMessageDisplay.INLINE = WidgetMessageDisplay("inline")
+WidgetMessageDisplay.EXPANDED_MEDIUM = WidgetMessageDisplay("expanded-md")
+WidgetMessageDisplay.EXPANDED_LARGE = WidgetMessageDisplay("expanded-lg")

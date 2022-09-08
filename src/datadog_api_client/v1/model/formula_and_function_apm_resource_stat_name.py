@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class FormulaAndFunctionApmResourceStatName(ModelSimple):
     """
@@ -18,23 +20,47 @@ class FormulaAndFunctionApmResourceStatName(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ERRORS": "errors",
-            "ERROR_RATE": "error_rate",
-            "HITS": "hits",
-            "LATENCY_AVG": "latency_avg",
-            "LATENCY_DISTRIBUTION": "latency_distribution",
-            "LATENCY_MAX": "latency_max",
-            "LATENCY_P50": "latency_p50",
-            "LATENCY_P75": "latency_p75",
-            "LATENCY_P90": "latency_p90",
-            "LATENCY_P95": "latency_p95",
-            "LATENCY_P99": "latency_p99",
-        },
+        "errors",
+        "error_rate",
+        "hits",
+        "latency_avg",
+        "latency_distribution",
+        "latency_max",
+        "latency_p50",
+        "latency_p75",
+        "latency_p90",
+        "latency_p95",
+        "latency_p99",
     }
+    ERRORS: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    ERROR_RATE: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    HITS: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_AVG: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_DISTRIBUTION: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_MAX: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_P50: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_P75: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_P90: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_P95: ClassVar["FormulaAndFunctionApmResourceStatName"]
+    LATENCY_P99: ClassVar["FormulaAndFunctionApmResourceStatName"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+FormulaAndFunctionApmResourceStatName.ERRORS = FormulaAndFunctionApmResourceStatName("errors")
+FormulaAndFunctionApmResourceStatName.ERROR_RATE = FormulaAndFunctionApmResourceStatName("error_rate")
+FormulaAndFunctionApmResourceStatName.HITS = FormulaAndFunctionApmResourceStatName("hits")
+FormulaAndFunctionApmResourceStatName.LATENCY_AVG = FormulaAndFunctionApmResourceStatName("latency_avg")
+FormulaAndFunctionApmResourceStatName.LATENCY_DISTRIBUTION = FormulaAndFunctionApmResourceStatName(
+    "latency_distribution"
+)
+FormulaAndFunctionApmResourceStatName.LATENCY_MAX = FormulaAndFunctionApmResourceStatName("latency_max")
+FormulaAndFunctionApmResourceStatName.LATENCY_P50 = FormulaAndFunctionApmResourceStatName("latency_p50")
+FormulaAndFunctionApmResourceStatName.LATENCY_P75 = FormulaAndFunctionApmResourceStatName("latency_p75")
+FormulaAndFunctionApmResourceStatName.LATENCY_P90 = FormulaAndFunctionApmResourceStatName("latency_p90")
+FormulaAndFunctionApmResourceStatName.LATENCY_P95 = FormulaAndFunctionApmResourceStatName("latency_p95")
+FormulaAndFunctionApmResourceStatName.LATENCY_P99 = FormulaAndFunctionApmResourceStatName("latency_p99")

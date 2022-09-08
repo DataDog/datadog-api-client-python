@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WebhooksIntegrationEncoding(ModelSimple):
     """
@@ -18,14 +20,18 @@ class WebhooksIntegrationEncoding(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "JSON": "json",
-            "FORM": "form",
-        },
+        "json",
+        "form",
     }
+    JSON: ClassVar["WebhooksIntegrationEncoding"]
+    FORM: ClassVar["WebhooksIntegrationEncoding"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WebhooksIntegrationEncoding.JSON = WebhooksIntegrationEncoding("json")
+WebhooksIntegrationEncoding.FORM = WebhooksIntegrationEncoding("form")

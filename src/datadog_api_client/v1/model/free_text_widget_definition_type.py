@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class FreeTextWidgetDefinitionType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class FreeTextWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "FREE_TEXT": "free_text",
-        },
+        "free_text",
     }
+    FREE_TEXT: ClassVar["FreeTextWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+FreeTextWidgetDefinitionType.FREE_TEXT = FreeTextWidgetDefinitionType("free_text")

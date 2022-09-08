@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class OpsgenieServiceType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class OpsgenieServiceType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "OPSGENIE_SERVICE": "opsgenie-service",
-        },
+        "opsgenie-service",
     }
+    OPSGENIE_SERVICE: ClassVar["OpsgenieServiceType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+OpsgenieServiceType.OPSGENIE_SERVICE = OpsgenieServiceType("opsgenie-service")

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsPipelineProcessorType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class LogsPipelineProcessorType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "PIPELINE": "pipeline",
-        },
+        "pipeline",
     }
+    PIPELINE: ClassVar["LogsPipelineProcessorType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+LogsPipelineProcessorType.PIPELINE = LogsPipelineProcessorType("pipeline")

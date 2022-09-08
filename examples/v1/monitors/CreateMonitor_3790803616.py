@@ -11,7 +11,7 @@ from datadog_api_client.v1.model.monitor_type import MonitorType
 
 body = Monitor(
     name="Example-Create_a_ci_pipelines_monitor_returns_OK_response",
-    type=MonitorType("ci-pipelines alert"),
+    type=MonitorType.CI_PIPELINES_ALERT,
     query='ci-pipelines("ci_level:pipeline @git.branch:staging* @ci.status:error").rollup("count").by("@git.branch,@ci.pipeline.name").last("5m") >= 1',
     message="some message Notify: @hipchat-channel",
     tags=[

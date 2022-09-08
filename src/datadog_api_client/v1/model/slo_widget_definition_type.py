@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SLOWidgetDefinitionType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class SLOWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SLO": "slo",
-        },
+        "slo",
     }
+    SLO: ClassVar["SLOWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SLOWidgetDefinitionType.SLO = SLOWidgetDefinitionType("slo")

@@ -24,7 +24,7 @@ body = LogsListRequest(
     page=LogsListRequestPage(
         limit=2,
     ),
-    sort=LogsSort("timestamp"),
+    sort=LogsSort.TIMESTAMP_ASCENDING,
 )
 
 configuration = Configuration()

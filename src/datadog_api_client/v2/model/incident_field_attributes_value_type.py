@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class IncidentFieldAttributesValueType(ModelSimple):
     """
@@ -18,16 +20,24 @@ class IncidentFieldAttributesValueType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MULTISELECT": "multiselect",
-            "TEXTARRAY": "textarray",
-            "METRICTAG": "metrictag",
-            "AUTOCOMPLETE": "autocomplete",
-        },
+        "multiselect",
+        "textarray",
+        "metrictag",
+        "autocomplete",
     }
+    MULTISELECT: ClassVar["IncidentFieldAttributesValueType"]
+    TEXTARRAY: ClassVar["IncidentFieldAttributesValueType"]
+    METRICTAG: ClassVar["IncidentFieldAttributesValueType"]
+    AUTOCOMPLETE: ClassVar["IncidentFieldAttributesValueType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+IncidentFieldAttributesValueType.MULTISELECT = IncidentFieldAttributesValueType("multiselect")
+IncidentFieldAttributesValueType.TEXTARRAY = IncidentFieldAttributesValueType("textarray")
+IncidentFieldAttributesValueType.METRICTAG = IncidentFieldAttributesValueType("metrictag")
+IncidentFieldAttributesValueType.AUTOCOMPLETE = IncidentFieldAttributesValueType("autocomplete")

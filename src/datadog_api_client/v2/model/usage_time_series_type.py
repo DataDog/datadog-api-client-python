@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class UsageTimeSeriesType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class UsageTimeSeriesType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "USAGE_TIMESERIES": "usage_timeseries",
-        },
+        "usage_timeseries",
     }
+    USAGE_TIMESERIES: ClassVar["UsageTimeSeriesType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+UsageTimeSeriesType.USAGE_TIMESERIES = UsageTimeSeriesType("usage_timeseries")

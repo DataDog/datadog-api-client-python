@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class TreeMapSizeBy(ModelSimple):
     """
@@ -18,14 +20,18 @@ class TreeMapSizeBy(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "PCT_CPU": "pct_cpu",
-            "PCT_MEM": "pct_mem",
-        },
+        "pct_cpu",
+        "pct_mem",
     }
+    PCT_CPU: ClassVar["TreeMapSizeBy"]
+    PCT_MEM: ClassVar["TreeMapSizeBy"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+TreeMapSizeBy.PCT_CPU = TreeMapSizeBy("pct_cpu")
+TreeMapSizeBy.PCT_MEM = TreeMapSizeBy("pct_mem")

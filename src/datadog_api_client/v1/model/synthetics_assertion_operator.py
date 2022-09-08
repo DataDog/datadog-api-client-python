@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsAssertionOperator(ModelSimple):
     """
@@ -18,25 +20,51 @@ class SyntheticsAssertionOperator(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CONTAINS": "contains",
-            "DOES_NOT_CONTAIN": "doesNotContain",
-            "IS": "is",
-            "IS_NOT": "isNot",
-            "LESS_THAN": "lessThan",
-            "LESS_THAN_OR_EQUAL": "lessThanOrEqual",
-            "MORE_THAN": "moreThan",
-            "MORE_THAN_OR_EQUAL": "moreThanOrEqual",
-            "MATCHES": "matches",
-            "DOES_NOT_MATCH": "doesNotMatch",
-            "VALIDATES": "validates",
-            "IS_IN_MORE_DAYS_THAN": "isInMoreThan",
-            "IS_IN_LESS_DAYS_THAN": "isInLessThan",
-        },
+        "contains",
+        "doesNotContain",
+        "is",
+        "isNot",
+        "lessThan",
+        "lessThanOrEqual",
+        "moreThan",
+        "moreThanOrEqual",
+        "matches",
+        "doesNotMatch",
+        "validates",
+        "isInMoreThan",
+        "isInLessThan",
     }
+    CONTAINS: ClassVar["SyntheticsAssertionOperator"]
+    DOES_NOT_CONTAIN: ClassVar["SyntheticsAssertionOperator"]
+    IS: ClassVar["SyntheticsAssertionOperator"]
+    IS_NOT: ClassVar["SyntheticsAssertionOperator"]
+    LESS_THAN: ClassVar["SyntheticsAssertionOperator"]
+    LESS_THAN_OR_EQUAL: ClassVar["SyntheticsAssertionOperator"]
+    MORE_THAN: ClassVar["SyntheticsAssertionOperator"]
+    MORE_THAN_OR_EQUAL: ClassVar["SyntheticsAssertionOperator"]
+    MATCHES: ClassVar["SyntheticsAssertionOperator"]
+    DOES_NOT_MATCH: ClassVar["SyntheticsAssertionOperator"]
+    VALIDATES: ClassVar["SyntheticsAssertionOperator"]
+    IS_IN_MORE_DAYS_THAN: ClassVar["SyntheticsAssertionOperator"]
+    IS_IN_LESS_DAYS_THAN: ClassVar["SyntheticsAssertionOperator"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsAssertionOperator.CONTAINS = SyntheticsAssertionOperator("contains")
+SyntheticsAssertionOperator.DOES_NOT_CONTAIN = SyntheticsAssertionOperator("doesNotContain")
+SyntheticsAssertionOperator.IS = SyntheticsAssertionOperator("is")
+SyntheticsAssertionOperator.IS_NOT = SyntheticsAssertionOperator("isNot")
+SyntheticsAssertionOperator.LESS_THAN = SyntheticsAssertionOperator("lessThan")
+SyntheticsAssertionOperator.LESS_THAN_OR_EQUAL = SyntheticsAssertionOperator("lessThanOrEqual")
+SyntheticsAssertionOperator.MORE_THAN = SyntheticsAssertionOperator("moreThan")
+SyntheticsAssertionOperator.MORE_THAN_OR_EQUAL = SyntheticsAssertionOperator("moreThanOrEqual")
+SyntheticsAssertionOperator.MATCHES = SyntheticsAssertionOperator("matches")
+SyntheticsAssertionOperator.DOES_NOT_MATCH = SyntheticsAssertionOperator("doesNotMatch")
+SyntheticsAssertionOperator.VALIDATES = SyntheticsAssertionOperator("validates")
+SyntheticsAssertionOperator.IS_IN_MORE_DAYS_THAN = SyntheticsAssertionOperator("isInMoreThan")
+SyntheticsAssertionOperator.IS_IN_LESS_DAYS_THAN = SyntheticsAssertionOperator("isInLessThan")

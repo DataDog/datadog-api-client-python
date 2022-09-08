@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SLOTypeNumeric(ModelSimple):
     """
@@ -20,14 +22,18 @@ class SLOTypeNumeric(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MONITOR": 0,
-            "METRIC": 1,
-        },
+        0,
+        1,
     }
+    MONITOR: ClassVar["SLOTypeNumeric"]
+    METRIC: ClassVar["SLOTypeNumeric"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (int,),
         }
+
+
+SLOTypeNumeric.MONITOR = SLOTypeNumeric(0)
+SLOTypeNumeric.METRIC = SLOTypeNumeric(1)

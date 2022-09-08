@@ -17,9 +17,9 @@ from datadog_api_client.v2.model.rum_query_page_options import RUMQueryPageOptio
 body = RUMAggregateRequest(
     compute=[
         RUMCompute(
-            aggregation=RUMAggregationFunction("pc90"),
+            aggregation=RUMAggregationFunction.PERCENTILE_90,
             metric="@view.time_spent",
-            type=RUMComputeType("total"),
+            type=RUMComputeType.TOTAL,
         ),
     ],
     filter=RUMQueryFilter(

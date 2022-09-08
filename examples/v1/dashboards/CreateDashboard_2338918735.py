@@ -17,25 +17,25 @@ from datadog_api_client.v1.model.list_stream_widget_request import ListStreamWid
 from datadog_api_client.v1.model.widget import Widget
 
 body = Dashboard(
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
     title="Example-Create_a_new_dashboard_with_list_stream_widget with list_stream widget",
     widgets=[
         Widget(
             definition=ListStreamWidgetDefinition(
-                type=ListStreamWidgetDefinitionType("list_stream"),
+                type=ListStreamWidgetDefinitionType.LIST_STREAM,
                 requests=[
                     ListStreamWidgetRequest(
                         columns=[
                             ListStreamColumn(
-                                width=ListStreamColumnWidth("auto"),
+                                width=ListStreamColumnWidth.AUTO,
                                 field="timestamp",
                             ),
                         ],
                         query=ListStreamQuery(
-                            data_source=ListStreamSource("apm_issue_stream"),
+                            data_source=ListStreamSource.APM_ISSUE_STREAM,
                             query_string="",
                         ),
-                        response_format=ListStreamResponseFormat("event_list"),
+                        response_format=ListStreamResponseFormat.EVENT_LIST,
                     ),
                 ],
             ),

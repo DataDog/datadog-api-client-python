@@ -30,18 +30,18 @@ body = Dashboard(
             definition=TableWidgetDefinition(
                 title="",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
-                type=TableWidgetDefinitionType("query_table"),
+                title_align=WidgetTextAlign.LEFT,
+                type=TableWidgetDefinitionType.QUERY_TABLE,
                 requests=[
                     TableWidgetRequest(
-                        response_format=FormulaAndFunctionResponseFormat("scalar"),
+                        response_format=FormulaAndFunctionResponseFormat.SCALAR,
                         queries=[
                             FormulaAndFunctionApmResourceStatsQueryDefinition(
                                 primary_tag_value="edge-eu1.prod.dog",
-                                stat=FormulaAndFunctionApmResourceStatName("hits"),
+                                stat=FormulaAndFunctionApmResourceStatName.HITS,
                                 name="query1",
                                 service="cassandra",
-                                data_source=FormulaAndFunctionApmResourceStatsDataSource("apm_resource_stats"),
+                                data_source=FormulaAndFunctionApmResourceStatsDataSource.APM_RESOURCE_STATS,
                                 env="ci",
                                 primary_tag_name="datacenter",
                                 operation_name="cassandra.query",
@@ -61,7 +61,7 @@ body = Dashboard(
             ),
         ),
     ],
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
 )
 
 configuration = Configuration()

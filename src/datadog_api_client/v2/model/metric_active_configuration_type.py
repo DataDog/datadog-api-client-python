@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MetricActiveConfigurationType(ModelSimple):
     """
@@ -18,13 +20,17 @@ class MetricActiveConfigurationType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ACTIVELY_QUERIED_CONFIGURATIONS": "actively_queried_configurations",
-        },
+        "actively_queried_configurations",
     }
+    ACTIVELY_QUERIED_CONFIGURATIONS: ClassVar["MetricActiveConfigurationType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+MetricActiveConfigurationType.ACTIVELY_QUERIED_CONFIGURATIONS = MetricActiveConfigurationType(
+    "actively_queried_configurations"
+)

@@ -13,7 +13,7 @@ body = ServiceChecks(
         ServiceCheck(
             check="app.ok",
             host_name="host",
-            status=ServiceCheckStatus(0),
+            status=ServiceCheckStatus.OK,
             tags=[
                 "test:ExampleSubmitaServiceCheckreturnsPayloadacceptedresponse",
             ],

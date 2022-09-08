@@ -23,13 +23,13 @@ USER_DATA_ID = environ["USER_DATA_ID"]
 
 body = IncidentCreateRequest(
     data=IncidentCreateData(
-        type=IncidentType("incidents"),
+        type=IncidentType.INCIDENTS,
         attributes=IncidentCreateAttributes(
             title="Example-Create_an_incident_returns_CREATED_response",
             customer_impacted=False,
             fields=dict(
                 state=IncidentFieldAttributesSingleValue(
-                    type=IncidentFieldAttributesSingleValueType("dropdown"),
+                    type=IncidentFieldAttributesSingleValueType.DROPDOWN,
                     value="resolved",
                 ),
             ),
@@ -37,7 +37,7 @@ body = IncidentCreateRequest(
         relationships=IncidentCreateRelationships(
             commander_user=NullableRelationshipToUser(
                 data=NullableRelationshipToUserData(
-                    type=UsersType("users"),
+                    type=UsersType.USERS,
                     id=USER_DATA_ID,
                 ),
             ),

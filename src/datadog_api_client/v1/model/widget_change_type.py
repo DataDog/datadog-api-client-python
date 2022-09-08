@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetChangeType(ModelSimple):
     """
@@ -18,14 +20,18 @@ class WidgetChangeType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ABSOLUTE": "absolute",
-            "RELATIVE": "relative",
-        },
+        "absolute",
+        "relative",
     }
+    ABSOLUTE: ClassVar["WidgetChangeType"]
+    RELATIVE: ClassVar["WidgetChangeType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetChangeType.ABSOLUTE = WidgetChangeType("absolute")
+WidgetChangeType.RELATIVE = WidgetChangeType("relative")

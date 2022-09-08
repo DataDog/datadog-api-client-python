@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SunburstWidgetLegendInlineAutomaticType(ModelSimple):
     """
@@ -18,14 +20,18 @@ class SunburstWidgetLegendInlineAutomaticType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "INLINE": "inline",
-            "AUTOMATIC": "automatic",
-        },
+        "inline",
+        "automatic",
     }
+    INLINE: ClassVar["SunburstWidgetLegendInlineAutomaticType"]
+    AUTOMATIC: ClassVar["SunburstWidgetLegendInlineAutomaticType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SunburstWidgetLegendInlineAutomaticType.INLINE = SunburstWidgetLegendInlineAutomaticType("inline")
+SunburstWidgetLegendInlineAutomaticType.AUTOMATIC = SunburstWidgetLegendInlineAutomaticType("automatic")

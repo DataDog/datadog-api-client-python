@@ -21,7 +21,7 @@ body = EventsListRequest(
     page=EventsRequestPage(
         limit=2,
     ),
-    sort=EventsSort("timestamp"),
+    sort=EventsSort.TIMESTAMP_ASCENDING,
 )
 
 configuration = Configuration()

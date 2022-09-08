@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MetricCustomSpaceAggregation(ModelSimple):
     """
@@ -18,16 +20,24 @@ class MetricCustomSpaceAggregation(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AVG": "avg",
-            "MAX": "max",
-            "MIN": "min",
-            "SUM": "sum",
-        },
+        "avg",
+        "max",
+        "min",
+        "sum",
     }
+    AVG: ClassVar["MetricCustomSpaceAggregation"]
+    MAX: ClassVar["MetricCustomSpaceAggregation"]
+    MIN: ClassVar["MetricCustomSpaceAggregation"]
+    SUM: ClassVar["MetricCustomSpaceAggregation"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+MetricCustomSpaceAggregation.AVG = MetricCustomSpaceAggregation("avg")
+MetricCustomSpaceAggregation.MAX = MetricCustomSpaceAggregation("max")
+MetricCustomSpaceAggregation.MIN = MetricCustomSpaceAggregation("min")
+MetricCustomSpaceAggregation.SUM = MetricCustomSpaceAggregation("sum")

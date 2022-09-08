@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class EventStatusType(ModelSimple):
     """
@@ -20,20 +22,36 @@ class EventStatusType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "FAILURE": "failure",
-            "ERROR": "error",
-            "WARNING": "warning",
-            "INFO": "info",
-            "SUCCESS": "success",
-            "USER_UPDATE": "user_update",
-            "RECOMMENDATION": "recommendation",
-            "SNAPSHOT": "snapshot",
-        },
+        "failure",
+        "error",
+        "warning",
+        "info",
+        "success",
+        "user_update",
+        "recommendation",
+        "snapshot",
     }
+    FAILURE: ClassVar["EventStatusType"]
+    ERROR: ClassVar["EventStatusType"]
+    WARNING: ClassVar["EventStatusType"]
+    INFO: ClassVar["EventStatusType"]
+    SUCCESS: ClassVar["EventStatusType"]
+    USER_UPDATE: ClassVar["EventStatusType"]
+    RECOMMENDATION: ClassVar["EventStatusType"]
+    SNAPSHOT: ClassVar["EventStatusType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+EventStatusType.FAILURE = EventStatusType("failure")
+EventStatusType.ERROR = EventStatusType("error")
+EventStatusType.WARNING = EventStatusType("warning")
+EventStatusType.INFO = EventStatusType("info")
+EventStatusType.SUCCESS = EventStatusType("success")
+EventStatusType.USER_UPDATE = EventStatusType("user_update")
+EventStatusType.RECOMMENDATION = EventStatusType("recommendation")
+EventStatusType.SNAPSHOT = EventStatusType("snapshot")

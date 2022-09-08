@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetTickEdge(ModelSimple):
     """
@@ -18,16 +20,24 @@ class WidgetTickEdge(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "BOTTOM": "bottom",
-            "LEFT": "left",
-            "RIGHT": "right",
-            "TOP": "top",
-        },
+        "bottom",
+        "left",
+        "right",
+        "top",
     }
+    BOTTOM: ClassVar["WidgetTickEdge"]
+    LEFT: ClassVar["WidgetTickEdge"]
+    RIGHT: ClassVar["WidgetTickEdge"]
+    TOP: ClassVar["WidgetTickEdge"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetTickEdge.BOTTOM = WidgetTickEdge("bottom")
+WidgetTickEdge.LEFT = WidgetTickEdge("left")
+WidgetTickEdge.RIGHT = WidgetTickEdge("right")
+WidgetTickEdge.TOP = WidgetTickEdge("top")

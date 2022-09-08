@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class PermissionsType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class PermissionsType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "PERMISSIONS": "permissions",
-        },
+        "permissions",
     }
+    PERMISSIONS: ClassVar["PermissionsType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+PermissionsType.PERMISSIONS = PermissionsType("permissions")

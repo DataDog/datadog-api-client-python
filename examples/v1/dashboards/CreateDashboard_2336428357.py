@@ -39,17 +39,17 @@ body = Dashboard(
             definition=TableWidgetDefinition(
                 title="",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
+                title_align=WidgetTextAlign.LEFT,
                 time=WidgetTime(),
-                type=TableWidgetDefinitionType("query_table"),
+                type=TableWidgetDefinitionType.QUERY_TABLE,
                 requests=[
                     TableWidgetRequest(
                         queries=[
                             FormulaAndFunctionMetricQueryDefinition(
-                                data_source=FormulaAndFunctionMetricDataSource("metrics"),
+                                data_source=FormulaAndFunctionMetricDataSource.METRICS,
                                 name="query1",
                                 query="avg:system.cpu.user{*} by {host}",
-                                aggregator=FormulaAndFunctionMetricAggregation("avg"),
+                                aggregator=FormulaAndFunctionMetricAggregation.AVG,
                             ),
                         ],
                         formulas=[
@@ -57,21 +57,21 @@ body = Dashboard(
                                 formula="query1",
                                 limit=WidgetFormulaLimit(
                                     count=500,
-                                    order=QuerySortOrder("desc"),
+                                    order=QuerySortOrder.DESC,
                                 ),
                                 conditional_formats=[],
-                                cell_display_mode=TableWidgetCellDisplayMode("bar"),
+                                cell_display_mode=TableWidgetCellDisplayMode.BAR,
                             ),
                         ],
-                        response_format=FormulaAndFunctionResponseFormat("scalar"),
+                        response_format=FormulaAndFunctionResponseFormat.SCALAR,
                     ),
                 ],
-                has_search_bar=TableWidgetHasSearchBar("auto"),
+                has_search_bar=TableWidgetHasSearchBar.AUTO,
             ),
         ),
     ],
     template_variables=[],
-    layout_type=DashboardLayoutType("free"),
+    layout_type=DashboardLayoutType.FREE,
     is_read_only=False,
     notify_list=[],
 )

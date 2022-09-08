@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetSummaryType(ModelSimple):
     """
@@ -18,15 +20,21 @@ class WidgetSummaryType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MONITORS": "monitors",
-            "GROUPS": "groups",
-            "COMBINED": "combined",
-        },
+        "monitors",
+        "groups",
+        "combined",
     }
+    MONITORS: ClassVar["WidgetSummaryType"]
+    GROUPS: ClassVar["WidgetSummaryType"]
+    COMBINED: ClassVar["WidgetSummaryType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetSummaryType.MONITORS = WidgetSummaryType("monitors")
+WidgetSummaryType.GROUPS = WidgetSummaryType("groups")
+WidgetSummaryType.COMBINED = WidgetSummaryType("combined")

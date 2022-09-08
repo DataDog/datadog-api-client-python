@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class ServiceMapWidgetDefinitionType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class ServiceMapWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SERVICEMAP": "servicemap",
-        },
+        "servicemap",
     }
+    SERVICEMAP: ClassVar["ServiceMapWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+ServiceMapWidgetDefinitionType.SERVICEMAP = ServiceMapWidgetDefinitionType("servicemap")

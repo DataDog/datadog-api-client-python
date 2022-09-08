@@ -17,7 +17,7 @@ LOGS_METRIC_DATA_ID = environ["LOGS_METRIC_DATA_ID"]
 
 body = LogsMetricUpdateRequest(
     data=LogsMetricUpdateData(
-        type=LogsMetricType("logs_metrics"),
+        type=LogsMetricType.LOGS_METRICS,
         attributes=LogsMetricUpdateAttributes(
             filter=LogsMetricFilter(
                 query="service:web* AND @http.status_code:[200 TO 299]-updated",

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetTextAlign(ModelSimple):
     """
@@ -18,15 +20,21 @@ class WidgetTextAlign(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CENTER": "center",
-            "LEFT": "left",
-            "RIGHT": "right",
-        },
+        "center",
+        "left",
+        "right",
     }
+    CENTER: ClassVar["WidgetTextAlign"]
+    LEFT: ClassVar["WidgetTextAlign"]
+    RIGHT: ClassVar["WidgetTextAlign"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetTextAlign.CENTER = WidgetTextAlign("center")
+WidgetTextAlign.LEFT = WidgetTextAlign("left")
+WidgetTextAlign.RIGHT = WidgetTextAlign("right")

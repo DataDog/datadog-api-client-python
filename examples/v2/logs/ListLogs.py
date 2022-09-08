@@ -18,7 +18,7 @@ body = LogsListRequest(
         _from="2020-09-17T11:48:36+01:00",
         to="2020-09-17T12:48:36+01:00",
     ),
-    sort=LogsSort("timestamp"),
+    sort=LogsSort.TIMESTAMP_ASCENDING,
     page=LogsListRequestPage(
         limit=5,
     ),

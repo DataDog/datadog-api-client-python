@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsConfigVariableType(ModelSimple):
     """
@@ -18,14 +20,18 @@ class SyntheticsConfigVariableType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "GLOBAL": "global",
-            "TEXT": "text",
-        },
+        "global",
+        "text",
     }
+    GLOBAL: ClassVar["SyntheticsConfigVariableType"]
+    TEXT: ClassVar["SyntheticsConfigVariableType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsConfigVariableType.GLOBAL = SyntheticsConfigVariableType("global")
+SyntheticsConfigVariableType.TEXT = SyntheticsConfigVariableType("text")

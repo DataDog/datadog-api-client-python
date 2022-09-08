@@ -30,37 +30,37 @@ body = Dashboard(
             definition=ScatterPlotWidgetDefinition(
                 title="",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
-                type=ScatterPlotWidgetDefinitionType("scatterplot"),
+                title_align=WidgetTextAlign.LEFT,
+                type=ScatterPlotWidgetDefinitionType.SCATTERPLOT,
                 requests=ScatterPlotWidgetDefinitionRequests(
                     table=ScatterplotTableRequest(
                         formulas=[
                             ScatterplotWidgetFormula(
                                 formula="query1",
-                                dimension=ScatterplotDimension("x"),
+                                dimension=ScatterplotDimension.X,
                                 alias="my-query1",
                             ),
                             ScatterplotWidgetFormula(
                                 formula="query2",
-                                dimension=ScatterplotDimension("y"),
+                                dimension=ScatterplotDimension.Y,
                                 alias="my-query2",
                             ),
                         ],
                         queries=[
                             FormulaAndFunctionMetricQueryDefinition(
-                                data_source=FormulaAndFunctionMetricDataSource("metrics"),
+                                data_source=FormulaAndFunctionMetricDataSource.METRICS,
                                 name="query1",
                                 query="avg:system.cpu.user{*} by {service}",
-                                aggregator=FormulaAndFunctionMetricAggregation("avg"),
+                                aggregator=FormulaAndFunctionMetricAggregation.AVG,
                             ),
                             FormulaAndFunctionMetricQueryDefinition(
-                                data_source=FormulaAndFunctionMetricDataSource("metrics"),
+                                data_source=FormulaAndFunctionMetricDataSource.METRICS,
                                 name="query2",
                                 query="avg:system.mem.used{*} by {service}",
-                                aggregator=FormulaAndFunctionMetricAggregation("avg"),
+                                aggregator=FormulaAndFunctionMetricAggregation.AVG,
                             ),
                         ],
-                        response_format=FormulaAndFunctionResponseFormat("scalar"),
+                        response_format=FormulaAndFunctionResponseFormat.SCALAR,
                     ),
                 ),
             ),
@@ -72,7 +72,7 @@ body = Dashboard(
             ),
         ),
     ],
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
 )
 
 configuration = Configuration()

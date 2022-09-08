@@ -19,14 +19,14 @@ SLO_DATA_0_ID = environ["SLO_DATA_0_ID"]
 body = SLOCorrectionCreateRequest(
     data=SLOCorrectionCreateData(
         attributes=SLOCorrectionCreateRequestAttributes(
-            category=SLOCorrectionCategory("Scheduled Maintenance"),
+            category=SLOCorrectionCategory.SCHEDULED_MAINTENANCE,
             description="Example-Create_an_SLO_correction_returns_OK_response",
             end=int((datetime.now() + relativedelta(hours=1)).timestamp()),
             slo_id=SLO_DATA_0_ID,
             start=int(datetime.now().timestamp()),
             timezone="UTC",
         ),
-        type=SLOCorrectionType("correction"),
+        type=SLOCorrectionType.CORRECTION,
     ),
 )
 

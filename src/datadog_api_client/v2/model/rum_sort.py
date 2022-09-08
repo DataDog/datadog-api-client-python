@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class RUMSort(ModelSimple):
     """
@@ -18,14 +20,18 @@ class RUMSort(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TIMESTAMP_ASCENDING": "timestamp",
-            "TIMESTAMP_DESCENDING": "-timestamp",
-        },
+        "timestamp",
+        "-timestamp",
     }
+    TIMESTAMP_ASCENDING: ClassVar["RUMSort"]
+    TIMESTAMP_DESCENDING: ClassVar["RUMSort"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+RUMSort.TIMESTAMP_ASCENDING = RUMSort("timestamp")
+RUMSort.TIMESTAMP_DESCENDING = RUMSort("-timestamp")

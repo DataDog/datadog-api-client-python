@@ -9,7 +9,7 @@ from datadog_api_client.v1.model.aws_tag_filter_delete_request import AWSTagFilt
 
 body = AWSTagFilterDeleteRequest(
     account_id="FAKEAC0FAKEAC2FAKEAC",
-    namespace=AWSNamespace("elb"),
+    namespace=AWSNamespace.ELB,
 )
 
 configuration = Configuration()

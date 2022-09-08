@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class TimeseriesWidgetLegendLayout(ModelSimple):
     """
@@ -18,15 +20,21 @@ class TimeseriesWidgetLegendLayout(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AUTO": "auto",
-            "HORIZONTAL": "horizontal",
-            "VERTICAL": "vertical",
-        },
+        "auto",
+        "horizontal",
+        "vertical",
     }
+    AUTO: ClassVar["TimeseriesWidgetLegendLayout"]
+    HORIZONTAL: ClassVar["TimeseriesWidgetLegendLayout"]
+    VERTICAL: ClassVar["TimeseriesWidgetLegendLayout"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+TimeseriesWidgetLegendLayout.AUTO = TimeseriesWidgetLegendLayout("auto")
+TimeseriesWidgetLegendLayout.HORIZONTAL = TimeseriesWidgetLegendLayout("horizontal")
+TimeseriesWidgetLegendLayout.VERTICAL = TimeseriesWidgetLegendLayout("vertical")

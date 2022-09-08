@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetServiceSummaryDisplayFormat(ModelSimple):
     """
@@ -18,15 +20,21 @@ class WidgetServiceSummaryDisplayFormat(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ONE_COLUMN": "one_column",
-            "TWO_COLUMN": "two_column",
-            "THREE_COLUMN": "three_column",
-        },
+        "one_column",
+        "two_column",
+        "three_column",
     }
+    ONE_COLUMN: ClassVar["WidgetServiceSummaryDisplayFormat"]
+    TWO_COLUMN: ClassVar["WidgetServiceSummaryDisplayFormat"]
+    THREE_COLUMN: ClassVar["WidgetServiceSummaryDisplayFormat"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetServiceSummaryDisplayFormat.ONE_COLUMN = WidgetServiceSummaryDisplayFormat("one_column")
+WidgetServiceSummaryDisplayFormat.TWO_COLUMN = WidgetServiceSummaryDisplayFormat("two_column")
+WidgetServiceSummaryDisplayFormat.THREE_COLUMN = WidgetServiceSummaryDisplayFormat("three_column")

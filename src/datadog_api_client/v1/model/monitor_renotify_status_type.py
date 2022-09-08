@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MonitorRenotifyStatusType(ModelSimple):
     """
@@ -18,15 +20,21 @@ class MonitorRenotifyStatusType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ALERT": "alert",
-            "WARN": "warn",
-            "NO_DATA": "no data",
-        },
+        "alert",
+        "warn",
+        "no data",
     }
+    ALERT: ClassVar["MonitorRenotifyStatusType"]
+    WARN: ClassVar["MonitorRenotifyStatusType"]
+    NO_DATA: ClassVar["MonitorRenotifyStatusType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+MonitorRenotifyStatusType.ALERT = MonitorRenotifyStatusType("alert")
+MonitorRenotifyStatusType.WARN = MonitorRenotifyStatusType("warn")
+MonitorRenotifyStatusType.NO_DATA = MonitorRenotifyStatusType("no data")

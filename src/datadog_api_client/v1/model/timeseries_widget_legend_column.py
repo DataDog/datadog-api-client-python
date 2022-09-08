@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class TimeseriesWidgetLegendColumn(ModelSimple):
     """
@@ -18,17 +20,27 @@ class TimeseriesWidgetLegendColumn(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "VALUE": "value",
-            "AVG": "avg",
-            "SUM": "sum",
-            "MIN": "min",
-            "MAX": "max",
-        },
+        "value",
+        "avg",
+        "sum",
+        "min",
+        "max",
     }
+    VALUE: ClassVar["TimeseriesWidgetLegendColumn"]
+    AVG: ClassVar["TimeseriesWidgetLegendColumn"]
+    SUM: ClassVar["TimeseriesWidgetLegendColumn"]
+    MIN: ClassVar["TimeseriesWidgetLegendColumn"]
+    MAX: ClassVar["TimeseriesWidgetLegendColumn"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+TimeseriesWidgetLegendColumn.VALUE = TimeseriesWidgetLegendColumn("value")
+TimeseriesWidgetLegendColumn.AVG = TimeseriesWidgetLegendColumn("avg")
+TimeseriesWidgetLegendColumn.SUM = TimeseriesWidgetLegendColumn("sum")
+TimeseriesWidgetLegendColumn.MIN = TimeseriesWidgetLegendColumn("min")
+TimeseriesWidgetLegendColumn.MAX = TimeseriesWidgetLegendColumn("max")

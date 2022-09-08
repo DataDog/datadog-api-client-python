@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MetricCustomTimeAggregation(ModelSimple):
     """
@@ -18,17 +20,27 @@ class MetricCustomTimeAggregation(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AVG": "avg",
-            "COUNT": "count",
-            "MAX": "max",
-            "MIN": "min",
-            "SUM": "sum",
-        },
+        "avg",
+        "count",
+        "max",
+        "min",
+        "sum",
     }
+    AVG: ClassVar["MetricCustomTimeAggregation"]
+    COUNT: ClassVar["MetricCustomTimeAggregation"]
+    MAX: ClassVar["MetricCustomTimeAggregation"]
+    MIN: ClassVar["MetricCustomTimeAggregation"]
+    SUM: ClassVar["MetricCustomTimeAggregation"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+MetricCustomTimeAggregation.AVG = MetricCustomTimeAggregation("avg")
+MetricCustomTimeAggregation.COUNT = MetricCustomTimeAggregation("count")
+MetricCustomTimeAggregation.MAX = MetricCustomTimeAggregation("max")
+MetricCustomTimeAggregation.MIN = MetricCustomTimeAggregation("min")
+MetricCustomTimeAggregation.SUM = MetricCustomTimeAggregation("sum")

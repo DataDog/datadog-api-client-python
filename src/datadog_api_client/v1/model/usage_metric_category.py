@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class UsageMetricCategory(ModelSimple):
     """
@@ -18,14 +20,18 @@ class UsageMetricCategory(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "STANDARD": "standard",
-            "CUSTOM": "custom",
-        },
+        "standard",
+        "custom",
     }
+    STANDARD: ClassVar["UsageMetricCategory"]
+    CUSTOM: ClassVar["UsageMetricCategory"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+UsageMetricCategory.STANDARD = UsageMetricCategory("standard")
+UsageMetricCategory.CUSTOM = UsageMetricCategory("custom")

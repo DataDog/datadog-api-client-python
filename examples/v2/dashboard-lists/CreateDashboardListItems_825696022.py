@@ -19,7 +19,7 @@ body = DashboardListAddItemsRequest(
     dashboards=[
         DashboardListItemRequest(
             id=SCREENBOARD_DASHBOARD_ID,
-            type=DashboardType("custom_screenboard"),
+            type=DashboardType.CUSTOM_SCREENBOARD,
         ),
     ],
 )

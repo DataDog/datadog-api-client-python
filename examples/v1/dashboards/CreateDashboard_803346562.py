@@ -22,8 +22,8 @@ body = Dashboard(
             definition=DistributionWidgetDefinition(
                 title="",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
-                type=DistributionWidgetDefinitionType("distribution"),
+                title_align=WidgetTextAlign.LEFT,
+                type=DistributionWidgetDefinitionType.DISTRIBUTION,
                 requests=[
                     DistributionWidgetRequest(
                         apm_stats_query=ApmStatsQueryDefinition(
@@ -31,7 +31,7 @@ body = Dashboard(
                             service="cassandra",
                             name="cassandra.query",
                             primary_tag="datacenter:dc1",
-                            row_type=ApmStatsQueryRowType("service"),
+                            row_type=ApmStatsQueryRowType.SERVICE,
                         ),
                     ),
                 ],
@@ -44,7 +44,7 @@ body = Dashboard(
             ),
         ),
     ],
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
 )
 
 configuration = Configuration()

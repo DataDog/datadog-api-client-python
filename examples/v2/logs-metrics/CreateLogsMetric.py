@@ -14,10 +14,10 @@ from datadog_api_client.v2.model.logs_metric_type import LogsMetricType
 body = LogsMetricCreateRequest(
     data=LogsMetricCreateData(
         id="Example-Create_a_log_based_metric_returns_OK_response",
-        type=LogsMetricType("logs_metrics"),
+        type=LogsMetricType.LOGS_METRICS,
         attributes=LogsMetricCreateAttributes(
             compute=LogsMetricCompute(
-                aggregation_type=LogsMetricComputeAggregationType("count"),
+                aggregation_type=LogsMetricComputeAggregationType.COUNT,
             ),
         ),
     ),

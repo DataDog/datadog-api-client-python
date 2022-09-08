@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsCategoryProcessorType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class LogsCategoryProcessorType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CATEGORY_PROCESSOR": "category-processor",
-        },
+        "category-processor",
     }
+    CATEGORY_PROCESSOR: ClassVar["LogsCategoryProcessorType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+LogsCategoryProcessorType.CATEGORY_PROCESSOR = LogsCategoryProcessorType("category-processor")

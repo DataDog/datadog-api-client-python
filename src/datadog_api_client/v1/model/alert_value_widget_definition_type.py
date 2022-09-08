@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class AlertValueWidgetDefinitionType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class AlertValueWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ALERT_VALUE": "alert_value",
-        },
+        "alert_value",
     }
+    ALERT_VALUE: ClassVar["AlertValueWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+AlertValueWidgetDefinitionType.ALERT_VALUE = AlertValueWidgetDefinitionType("alert_value")

@@ -16,12 +16,12 @@ SLO_DATA_0_ID = environ["SLO_DATA_0_ID"]
 SLO_DATA_0_NAME = environ["SLO_DATA_0_NAME"]
 
 body = ServiceLevelObjective(
-    type=SLOType("metric"),
+    type=SLOType.METRIC,
     name=SLO_DATA_0_NAME,
     thresholds=[
         SLOThreshold(
             target=97.0,
-            timeframe=SLOTimeframe("7d"),
+            timeframe=SLOTimeframe.SEVEN_DAYS,
             warning=98.0,
         ),
     ],

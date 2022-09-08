@@ -27,7 +27,7 @@ body = SyntheticsGlobalVariable(
     ),
     parse_test_public_id=SYNTHETICS_API_TEST_MULTI_STEP_PUBLIC_ID,
     parse_test_options=SyntheticsGlobalVariableParseTestOptions(
-        type=SyntheticsGlobalVariableParseTestOptionsType("local_variable"),
+        type=SyntheticsGlobalVariableParseTestOptionsType.LOCAL_VARIABLE,
         local_variable_name="EXTRACTED_VALUE",
     ),
 )

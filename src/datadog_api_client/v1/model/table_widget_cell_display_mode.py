@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class TableWidgetCellDisplayMode(ModelSimple):
     """
@@ -18,14 +20,18 @@ class TableWidgetCellDisplayMode(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NUMBER": "number",
-            "BAR": "bar",
-        },
+        "number",
+        "bar",
     }
+    NUMBER: ClassVar["TableWidgetCellDisplayMode"]
+    BAR: ClassVar["TableWidgetCellDisplayMode"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+TableWidgetCellDisplayMode.NUMBER = TableWidgetCellDisplayMode("number")
+TableWidgetCellDisplayMode.BAR = TableWidgetCellDisplayMode("bar")

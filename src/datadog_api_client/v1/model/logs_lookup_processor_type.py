@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsLookupProcessorType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class LogsLookupProcessorType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "LOOKUP_PROCESSOR": "lookup-processor",
-        },
+        "lookup-processor",
     }
+    LOOKUP_PROCESSOR: ClassVar["LogsLookupProcessorType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+LogsLookupProcessorType.LOOKUP_PROCESSOR = LogsLookupProcessorType("lookup-processor")

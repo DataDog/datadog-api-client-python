@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class UsageSort(ModelSimple):
     """
@@ -18,16 +20,24 @@ class UsageSort(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "COMPUTED_ON": "computed_on",
-            "SIZE": "size",
-            "START_DATE": "start_date",
-            "END_DATE": "end_date",
-        },
+        "computed_on",
+        "size",
+        "start_date",
+        "end_date",
     }
+    COMPUTED_ON: ClassVar["UsageSort"]
+    SIZE: ClassVar["UsageSort"]
+    START_DATE: ClassVar["UsageSort"]
+    END_DATE: ClassVar["UsageSort"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+UsageSort.COMPUTED_ON = UsageSort("computed_on")
+UsageSort.SIZE = UsageSort("size")
+UsageSort.START_DATE = UsageSort("start_date")
+UsageSort.END_DATE = UsageSort("end_date")

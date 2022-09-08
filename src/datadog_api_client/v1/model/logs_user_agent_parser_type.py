@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsUserAgentParserType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class LogsUserAgentParserType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "USER_AGENT_PARSER": "user-agent-parser",
-        },
+        "user-agent-parser",
     }
+    USER_AGENT_PARSER: ClassVar["LogsUserAgentParserType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+LogsUserAgentParserType.USER_AGENT_PARSER = LogsUserAgentParserType("user-agent-parser")

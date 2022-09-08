@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class DashboardReflowType(ModelSimple):
     """
@@ -20,14 +22,18 @@ class DashboardReflowType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AUTO": "auto",
-            "FIXED": "fixed",
-        },
+        "auto",
+        "fixed",
     }
+    AUTO: ClassVar["DashboardReflowType"]
+    FIXED: ClassVar["DashboardReflowType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+DashboardReflowType.AUTO = DashboardReflowType("auto")
+DashboardReflowType.FIXED = DashboardReflowType("fixed")

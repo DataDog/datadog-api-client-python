@@ -18,12 +18,12 @@ from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_sort import WidgetSort
 
 body = Dashboard(
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
     title="Example-Create_a_new_dashboard_returns_OK_response with Profile Metrics Query",
     widgets=[
         Widget(
             definition=TimeseriesWidgetDefinition(
-                type=TimeseriesWidgetDefinitionType("timeseries"),
+                type=TimeseriesWidgetDefinitionType.TIMESERIES,
                 requests=[
                     TimeseriesWidgetRequest(
                         profile_metrics_query=LogQueryDefinition(
@@ -40,7 +40,7 @@ body = Dashboard(
                                     limit=10,
                                     sort=LogQueryDefinitionGroupBySort(
                                         aggregation="sum",
-                                        order=WidgetSort("desc"),
+                                        order=WidgetSort.DESCENDING,
                                         facet="@prof_core_cpu_cores",
                                     ),
                                 ),

@@ -29,9 +29,9 @@ body = Dashboard(
             definition=HeatMapWidgetDefinition(
                 title="",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
+                title_align=WidgetTextAlign.LEFT,
                 time=WidgetTime(),
-                type=HeatMapWidgetDefinitionType("heatmap"),
+                type=HeatMapWidgetDefinitionType.HEATMAP,
                 requests=[
                     HeatMapWidgetRequest(
                         q="avg:system.cpu.user{*} by {service}",
@@ -44,7 +44,7 @@ body = Dashboard(
         ),
     ],
     template_variables=[],
-    layout_type=DashboardLayoutType("free"),
+    layout_type=DashboardLayoutType.FREE,
     is_read_only=False,
     notify_list=[],
 )

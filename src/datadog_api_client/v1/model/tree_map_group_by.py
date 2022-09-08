@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class TreeMapGroupBy(ModelSimple):
     """
@@ -18,15 +20,21 @@ class TreeMapGroupBy(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "USER": "user",
-            "FAMILY": "family",
-            "PROCESS": "process",
-        },
+        "user",
+        "family",
+        "process",
     }
+    USER: ClassVar["TreeMapGroupBy"]
+    FAMILY: ClassVar["TreeMapGroupBy"]
+    PROCESS: ClassVar["TreeMapGroupBy"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+TreeMapGroupBy.USER = TreeMapGroupBy("user")
+TreeMapGroupBy.FAMILY = TreeMapGroupBy("family")
+TreeMapGroupBy.PROCESS = TreeMapGroupBy("process")

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsTestExecutionRule(ModelSimple):
     """
@@ -18,15 +20,21 @@ class SyntheticsTestExecutionRule(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "BLOCKING": "blocking",
-            "NON_BLOCKING": "non_blocking",
-            "SKIPPED": "skipped",
-        },
+        "blocking",
+        "non_blocking",
+        "skipped",
     }
+    BLOCKING: ClassVar["SyntheticsTestExecutionRule"]
+    NON_BLOCKING: ClassVar["SyntheticsTestExecutionRule"]
+    SKIPPED: ClassVar["SyntheticsTestExecutionRule"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsTestExecutionRule.BLOCKING = SyntheticsTestExecutionRule("blocking")
+SyntheticsTestExecutionRule.NON_BLOCKING = SyntheticsTestExecutionRule("non_blocking")
+SyntheticsTestExecutionRule.SKIPPED = SyntheticsTestExecutionRule("skipped")

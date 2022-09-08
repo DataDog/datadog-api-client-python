@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class TimeseriesBackgroundType(ModelSimple):
     """
@@ -18,14 +20,18 @@ class TimeseriesBackgroundType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "BARS": "bars",
-            "AREA": "area",
-        },
+        "bars",
+        "area",
     }
+    BARS: ClassVar["TimeseriesBackgroundType"]
+    AREA: ClassVar["TimeseriesBackgroundType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+TimeseriesBackgroundType.BARS = TimeseriesBackgroundType("bars")
+TimeseriesBackgroundType.AREA = TimeseriesBackgroundType("area")

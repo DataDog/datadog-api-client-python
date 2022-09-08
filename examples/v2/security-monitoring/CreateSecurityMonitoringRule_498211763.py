@@ -26,7 +26,7 @@ body = SecurityMonitoringRuleCreatePayload(
     queries=[
         SecurityMonitoringRuleQueryCreate(
             query="@test:true",
-            aggregation=SecurityMonitoringRuleQueryAggregation("count"),
+            aggregation=SecurityMonitoringRuleQueryAggregation.COUNT,
             group_by_fields=[],
             distinct_fields=[],
             metric="",
@@ -36,20 +36,20 @@ body = SecurityMonitoringRuleCreatePayload(
     cases=[
         SecurityMonitoringRuleCaseCreate(
             name="",
-            status=SecurityMonitoringRuleSeverity("info"),
+            status=SecurityMonitoringRuleSeverity.INFO,
             condition="a > 0",
             notifications=[],
         ),
     ],
     options=SecurityMonitoringRuleOptions(
-        evaluation_window=SecurityMonitoringRuleEvaluationWindow(900),
-        keep_alive=SecurityMonitoringRuleKeepAlive(3600),
-        max_signal_duration=SecurityMonitoringRuleMaxSignalDuration(86400),
+        evaluation_window=SecurityMonitoringRuleEvaluationWindow.FIFTEEN_MINUTES,
+        keep_alive=SecurityMonitoringRuleKeepAlive.ONE_HOUR,
+        max_signal_duration=SecurityMonitoringRuleMaxSignalDuration.ONE_DAY,
     ),
     message="Test rule",
     tags=[],
     is_enabled=True,
-    type=SecurityMonitoringRuleTypeCreate("workload_security"),
+    type=SecurityMonitoringRuleTypeCreate.WORKLOAD_SECURITY,
 )
 
 configuration = Configuration()

@@ -24,14 +24,14 @@ body = Dashboard(
                 height=12,
             ),
             definition=ImageWidgetDefinition(
-                type=ImageWidgetDefinitionType("image"),
+                type=ImageWidgetDefinitionType.IMAGE,
                 url="https://example.com/image.png",
-                sizing=WidgetImageSizing("cover"),
+                sizing=WidgetImageSizing.COVER,
             ),
         ),
     ],
     template_variables=[],
-    layout_type=DashboardLayoutType("free"),
+    layout_type=DashboardLayoutType.FREE,
     is_read_only=False,
     notify_list=[],
 )

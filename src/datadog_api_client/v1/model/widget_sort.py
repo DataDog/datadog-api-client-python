@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetSort(ModelSimple):
     """
@@ -18,14 +20,18 @@ class WidgetSort(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ASCENDING": "asc",
-            "DESCENDING": "desc",
-        },
+        "asc",
+        "desc",
     }
+    ASCENDING: ClassVar["WidgetSort"]
+    DESCENDING: ClassVar["WidgetSort"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetSort.ASCENDING = WidgetSort("asc")
+WidgetSort.DESCENDING = WidgetSort("desc")

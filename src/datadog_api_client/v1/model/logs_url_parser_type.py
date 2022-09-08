@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsURLParserType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class LogsURLParserType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "URL_PARSER": "url-parser",
-        },
+        "url-parser",
     }
+    URL_PARSER: ClassVar["LogsURLParserType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+LogsURLParserType.URL_PARSER = LogsURLParserType("url-parser")

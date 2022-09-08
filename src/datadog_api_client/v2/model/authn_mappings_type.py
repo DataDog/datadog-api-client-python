@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class AuthNMappingsType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class AuthNMappingsType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AUTHN_MAPPINGS": "authn_mappings",
-        },
+        "authn_mappings",
     }
+    AUTHN_MAPPINGS: ClassVar["AuthNMappingsType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+AuthNMappingsType.AUTHN_MAPPINGS = AuthNMappingsType("authn_mappings")

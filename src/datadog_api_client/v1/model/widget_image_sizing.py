@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetImageSizing(ModelSimple):
     """
@@ -19,20 +21,36 @@ class WidgetImageSizing(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "FILL": "fill",
-            "CONTAIN": "contain",
-            "COVER": "cover",
-            "NONE": "none",
-            "SCALEDOWN": "scale-down",
-            "ZOOM": "zoom",
-            "FIT": "fit",
-            "CENTER": "center",
-        },
+        "fill",
+        "contain",
+        "cover",
+        "none",
+        "scale-down",
+        "zoom",
+        "fit",
+        "center",
     }
+    FILL: ClassVar["WidgetImageSizing"]
+    CONTAIN: ClassVar["WidgetImageSizing"]
+    COVER: ClassVar["WidgetImageSizing"]
+    NONE: ClassVar["WidgetImageSizing"]
+    SCALEDOWN: ClassVar["WidgetImageSizing"]
+    ZOOM: ClassVar["WidgetImageSizing"]
+    FIT: ClassVar["WidgetImageSizing"]
+    CENTER: ClassVar["WidgetImageSizing"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetImageSizing.FILL = WidgetImageSizing("fill")
+WidgetImageSizing.CONTAIN = WidgetImageSizing("contain")
+WidgetImageSizing.COVER = WidgetImageSizing("cover")
+WidgetImageSizing.NONE = WidgetImageSizing("none")
+WidgetImageSizing.SCALEDOWN = WidgetImageSizing("scale-down")
+WidgetImageSizing.ZOOM = WidgetImageSizing("zoom")
+WidgetImageSizing.FIT = WidgetImageSizing("fit")
+WidgetImageSizing.CENTER = WidgetImageSizing("center")

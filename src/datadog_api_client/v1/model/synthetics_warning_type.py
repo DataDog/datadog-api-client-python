@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsWarningType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class SyntheticsWarningType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "USER_LOCATOR": "user_locator",
-        },
+        "user_locator",
     }
+    USER_LOCATOR: ClassVar["SyntheticsWarningType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsWarningType.USER_LOCATOR = SyntheticsWarningType("user_locator")

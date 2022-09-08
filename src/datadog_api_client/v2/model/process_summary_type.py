@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class ProcessSummaryType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class ProcessSummaryType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "PROCESS": "process",
-        },
+        "process",
     }
+    PROCESS: ClassVar["ProcessSummaryType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+ProcessSummaryType.PROCESS = ProcessSummaryType("process")

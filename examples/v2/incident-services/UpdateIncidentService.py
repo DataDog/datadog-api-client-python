@@ -16,7 +16,7 @@ SERVICE_DATA_ID = environ["SERVICE_DATA_ID"]
 
 body = IncidentServiceUpdateRequest(
     data=IncidentServiceUpdateData(
-        type=IncidentServiceType("services"),
+        type=IncidentServiceType.SERVICES,
         attributes=IncidentServiceUpdateAttributes(
             name="service name-updated",
         ),

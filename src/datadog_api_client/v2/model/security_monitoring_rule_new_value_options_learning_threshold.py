@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityMonitoringRuleNewValueOptionsLearningThreshold(ModelSimple):
     """
@@ -18,14 +20,22 @@ class SecurityMonitoringRuleNewValueOptionsLearningThreshold(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ZERO_OCCURRENCES": 0,
-            "ONE_OCCURRENCE": 1,
-        },
+        0,
+        1,
     }
+    ZERO_OCCURRENCES: ClassVar["SecurityMonitoringRuleNewValueOptionsLearningThreshold"]
+    ONE_OCCURRENCE: ClassVar["SecurityMonitoringRuleNewValueOptionsLearningThreshold"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (int,),
         }
+
+
+SecurityMonitoringRuleNewValueOptionsLearningThreshold.ZERO_OCCURRENCES = (
+    SecurityMonitoringRuleNewValueOptionsLearningThreshold(0)
+)
+SecurityMonitoringRuleNewValueOptionsLearningThreshold.ONE_OCCURRENCE = (
+    SecurityMonitoringRuleNewValueOptionsLearningThreshold(1)
+)

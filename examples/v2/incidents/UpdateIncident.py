@@ -21,11 +21,11 @@ INCIDENT_DATA_ID = environ["INCIDENT_DATA_ID"]
 body = IncidentUpdateRequest(
     data=IncidentUpdateData(
         id=INCIDENT_DATA_ID,
-        type=IncidentType("incidents"),
+        type=IncidentType.INCIDENTS,
         attributes=IncidentUpdateAttributes(
             fields=dict(
                 state=IncidentFieldAttributesSingleValue(
-                    type=IncidentFieldAttributesSingleValueType("dropdown"),
+                    type=IncidentFieldAttributesSingleValueType.DROPDOWN,
                     value="resolved",
                 ),
             ),

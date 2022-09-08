@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsStatus(ModelSimple):
     """
@@ -18,15 +20,21 @@ class SyntheticsStatus(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "PASSED": "passed",
-            "skipped": "skipped",
-            "failed": "failed",
-        },
+        "passed",
+        "skipped",
+        "failed",
     }
+    PASSED: ClassVar["SyntheticsStatus"]
+    skipped: ClassVar["SyntheticsStatus"]
+    failed: ClassVar["SyntheticsStatus"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsStatus.PASSED = SyntheticsStatus("passed")
+SyntheticsStatus.skipped = SyntheticsStatus("skipped")
+SyntheticsStatus.failed = SyntheticsStatus("failed")

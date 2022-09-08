@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class CloudWorkloadSecurityAgentRuleType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class CloudWorkloadSecurityAgentRuleType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AGENT_RULE": "agent_rule",
-        },
+        "agent_rule",
     }
+    AGENT_RULE: ClassVar["CloudWorkloadSecurityAgentRuleType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+CloudWorkloadSecurityAgentRuleType.AGENT_RULE = CloudWorkloadSecurityAgentRuleType("agent_rule")

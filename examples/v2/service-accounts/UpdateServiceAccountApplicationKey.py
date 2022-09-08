@@ -20,7 +20,7 @@ body = ApplicationKeyUpdateRequest(
             ],
         ),
         id="00112233-4455-6677-8899-aabbccddeeff",
-        type=ApplicationKeysType("application_keys"),
+        type=ApplicationKeysType.APPLICATION_KEYS,
     ),
 )
 

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class ToplistWidgetDefinitionType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class ToplistWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TOPLIST": "toplist",
-        },
+        "toplist",
     }
+    TOPLIST: ClassVar["ToplistWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+ToplistWidgetDefinitionType.TOPLIST = ToplistWidgetDefinitionType("toplist")

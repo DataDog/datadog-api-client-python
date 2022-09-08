@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class DistributionPointsContentEncoding(ModelSimple):
     """
@@ -18,13 +20,15 @@ class DistributionPointsContentEncoding(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DEFLATE": "deflate",
-        },
+        "deflate",
     }
+    DEFLATE: ClassVar["DistributionPointsContentEncoding"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+DistributionPointsContentEncoding.DEFLATE = DistributionPointsContentEncoding("deflate")

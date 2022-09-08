@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsTraceRemapperType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class LogsTraceRemapperType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TRACE_ID_REMAPPER": "trace-id-remapper",
-        },
+        "trace-id-remapper",
     }
+    TRACE_ID_REMAPPER: ClassVar["LogsTraceRemapperType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+LogsTraceRemapperType.TRACE_ID_REMAPPER = LogsTraceRemapperType("trace-id-remapper")

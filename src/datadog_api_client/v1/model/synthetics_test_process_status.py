@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsTestProcessStatus(ModelSimple):
     """
@@ -18,16 +20,24 @@ class SyntheticsTestProcessStatus(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NOT_SCHEDULED": "not_scheduled",
-            "SCHEDULED": "scheduled",
-            "FINISHED": "finished",
-            "FINISHED_WITH_ERROR": "finished_with_error",
-        },
+        "not_scheduled",
+        "scheduled",
+        "finished",
+        "finished_with_error",
     }
+    NOT_SCHEDULED: ClassVar["SyntheticsTestProcessStatus"]
+    SCHEDULED: ClassVar["SyntheticsTestProcessStatus"]
+    FINISHED: ClassVar["SyntheticsTestProcessStatus"]
+    FINISHED_WITH_ERROR: ClassVar["SyntheticsTestProcessStatus"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsTestProcessStatus.NOT_SCHEDULED = SyntheticsTestProcessStatus("not_scheduled")
+SyntheticsTestProcessStatus.SCHEDULED = SyntheticsTestProcessStatus("scheduled")
+SyntheticsTestProcessStatus.FINISHED = SyntheticsTestProcessStatus("finished")
+SyntheticsTestProcessStatus.FINISHED_WITH_ERROR = SyntheticsTestProcessStatus("finished_with_error")
