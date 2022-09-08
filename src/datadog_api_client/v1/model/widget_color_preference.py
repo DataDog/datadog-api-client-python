@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetColorPreference(ModelSimple):
     """
@@ -18,14 +20,18 @@ class WidgetColorPreference(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "BACKGROUND": "background",
-            "TEXT": "text",
-        },
+        "background",
+        "text",
     }
+    BACKGROUND: ClassVar["WidgetColorPreference"]
+    TEXT: ClassVar["WidgetColorPreference"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetColorPreference.BACKGROUND = WidgetColorPreference("background")
+WidgetColorPreference.TEXT = WidgetColorPreference("text")

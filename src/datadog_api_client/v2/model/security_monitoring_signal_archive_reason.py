@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityMonitoringSignalArchiveReason(ModelSimple):
     """
@@ -18,16 +20,26 @@ class SecurityMonitoringSignalArchiveReason(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NONE": "none",
-            "FALSE_POSITIVE": "false_positive",
-            "TESTING_OR_MAINTENANCE": "testing_or_maintenance",
-            "OTHER": "other",
-        },
+        "none",
+        "false_positive",
+        "testing_or_maintenance",
+        "other",
     }
+    NONE: ClassVar["SecurityMonitoringSignalArchiveReason"]
+    FALSE_POSITIVE: ClassVar["SecurityMonitoringSignalArchiveReason"]
+    TESTING_OR_MAINTENANCE: ClassVar["SecurityMonitoringSignalArchiveReason"]
+    OTHER: ClassVar["SecurityMonitoringSignalArchiveReason"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SecurityMonitoringSignalArchiveReason.NONE = SecurityMonitoringSignalArchiveReason("none")
+SecurityMonitoringSignalArchiveReason.FALSE_POSITIVE = SecurityMonitoringSignalArchiveReason("false_positive")
+SecurityMonitoringSignalArchiveReason.TESTING_OR_MAINTENANCE = SecurityMonitoringSignalArchiveReason(
+    "testing_or_maintenance"
+)
+SecurityMonitoringSignalArchiveReason.OTHER = SecurityMonitoringSignalArchiveReason("other")

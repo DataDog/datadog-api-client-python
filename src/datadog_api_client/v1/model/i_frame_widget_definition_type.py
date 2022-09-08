@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class IFrameWidgetDefinitionType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class IFrameWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "IFRAME": "iframe",
-        },
+        "iframe",
     }
+    IFRAME: ClassVar["IFrameWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+IFrameWidgetDefinitionType.IFRAME = IFrameWidgetDefinitionType("iframe")

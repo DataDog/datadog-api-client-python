@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetNodeType(ModelSimple):
     """
@@ -18,14 +20,18 @@ class WidgetNodeType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "HOST": "host",
-            "CONTAINER": "container",
-        },
+        "host",
+        "container",
     }
+    HOST: ClassVar["WidgetNodeType"]
+    CONTAINER: ClassVar["WidgetNodeType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetNodeType.HOST = WidgetNodeType("host")
+WidgetNodeType.CONTAINER = WidgetNodeType("container")

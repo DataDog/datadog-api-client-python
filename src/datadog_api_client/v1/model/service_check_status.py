@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class ServiceCheckStatus(ModelSimple):
     """
@@ -18,16 +20,24 @@ class ServiceCheckStatus(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "OK": 0,
-            "WARNING": 1,
-            "CRITICAL": 2,
-            "UNKNOWN": 3,
-        },
+        0,
+        1,
+        2,
+        3,
     }
+    OK: ClassVar["ServiceCheckStatus"]
+    WARNING: ClassVar["ServiceCheckStatus"]
+    CRITICAL: ClassVar["ServiceCheckStatus"]
+    UNKNOWN: ClassVar["ServiceCheckStatus"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (int,),
         }
+
+
+ServiceCheckStatus.OK = ServiceCheckStatus(0)
+ServiceCheckStatus.WARNING = ServiceCheckStatus(1)
+ServiceCheckStatus.CRITICAL = ServiceCheckStatus(2)
+ServiceCheckStatus.UNKNOWN = ServiceCheckStatus(3)

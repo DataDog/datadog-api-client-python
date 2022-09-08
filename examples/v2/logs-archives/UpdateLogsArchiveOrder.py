@@ -18,7 +18,7 @@ body = LogsArchiveOrder(
                 "a2zcMylnM4OCHpYusxIi3g",
             ],
         ),
-        type=LogsArchiveOrderDefinitionType("archive_order"),
+        type=LogsArchiveOrderDefinitionType.ARCHIVE_ORDER,
     ),
 )
 

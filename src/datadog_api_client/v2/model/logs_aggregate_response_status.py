@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsAggregateResponseStatus(ModelSimple):
     """
@@ -18,14 +20,18 @@ class LogsAggregateResponseStatus(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DONE": "done",
-            "TIMEOUT": "timeout",
-        },
+        "done",
+        "timeout",
     }
+    DONE: ClassVar["LogsAggregateResponseStatus"]
+    TIMEOUT: ClassVar["LogsAggregateResponseStatus"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+LogsAggregateResponseStatus.DONE = LogsAggregateResponseStatus("done")
+LogsAggregateResponseStatus.TIMEOUT = LogsAggregateResponseStatus("timeout")

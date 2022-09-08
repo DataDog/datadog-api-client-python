@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsArithmeticProcessorType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class LogsArithmeticProcessorType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ARITHMETIC_PROCESSOR": "arithmetic-processor",
-        },
+        "arithmetic-processor",
     }
+    ARITHMETIC_PROCESSOR: ClassVar["LogsArithmeticProcessorType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+LogsArithmeticProcessorType.ARITHMETIC_PROCESSOR = LogsArithmeticProcessorType("arithmetic-processor")

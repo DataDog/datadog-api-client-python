@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class FunnelRequestType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class FunnelRequestType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "FUNNEL": "funnel",
-        },
+        "funnel",
     }
+    FUNNEL: ClassVar["FunnelRequestType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+FunnelRequestType.FUNNEL = FunnelRequestType("funnel")

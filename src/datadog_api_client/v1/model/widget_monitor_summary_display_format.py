@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetMonitorSummaryDisplayFormat(ModelSimple):
     """
@@ -18,15 +20,21 @@ class WidgetMonitorSummaryDisplayFormat(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "COUNTS": "counts",
-            "COUNTS_AND_LIST": "countsAndList",
-            "LIST": "list",
-        },
+        "counts",
+        "countsAndList",
+        "list",
     }
+    COUNTS: ClassVar["WidgetMonitorSummaryDisplayFormat"]
+    COUNTS_AND_LIST: ClassVar["WidgetMonitorSummaryDisplayFormat"]
+    LIST: ClassVar["WidgetMonitorSummaryDisplayFormat"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetMonitorSummaryDisplayFormat.COUNTS = WidgetMonitorSummaryDisplayFormat("counts")
+WidgetMonitorSummaryDisplayFormat.COUNTS_AND_LIST = WidgetMonitorSummaryDisplayFormat("countsAndList")
+WidgetMonitorSummaryDisplayFormat.LIST = WidgetMonitorSummaryDisplayFormat("list")

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsMetricResponseComputeAggregationType(ModelSimple):
     """
@@ -18,14 +20,18 @@ class LogsMetricResponseComputeAggregationType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "COUNT": "count",
-            "DISTRIBUTION": "distribution",
-        },
+        "count",
+        "distribution",
     }
+    COUNT: ClassVar["LogsMetricResponseComputeAggregationType"]
+    DISTRIBUTION: ClassVar["LogsMetricResponseComputeAggregationType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+LogsMetricResponseComputeAggregationType.COUNT = LogsMetricResponseComputeAggregationType("count")
+LogsMetricResponseComputeAggregationType.DISTRIBUTION = LogsMetricResponseComputeAggregationType("distribution")

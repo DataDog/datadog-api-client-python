@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MonitorOverallStates(ModelSimple):
     """
@@ -18,19 +20,33 @@ class MonitorOverallStates(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ALERT": "Alert",
-            "IGNORED": "Ignored",
-            "NO_DATA": "No Data",
-            "OK": "OK",
-            "SKIPPED": "Skipped",
-            "UNKNOWN": "Unknown",
-            "WARN": "Warn",
-        },
+        "Alert",
+        "Ignored",
+        "No Data",
+        "OK",
+        "Skipped",
+        "Unknown",
+        "Warn",
     }
+    ALERT: ClassVar["MonitorOverallStates"]
+    IGNORED: ClassVar["MonitorOverallStates"]
+    NO_DATA: ClassVar["MonitorOverallStates"]
+    OK: ClassVar["MonitorOverallStates"]
+    SKIPPED: ClassVar["MonitorOverallStates"]
+    UNKNOWN: ClassVar["MonitorOverallStates"]
+    WARN: ClassVar["MonitorOverallStates"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+MonitorOverallStates.ALERT = MonitorOverallStates("Alert")
+MonitorOverallStates.IGNORED = MonitorOverallStates("Ignored")
+MonitorOverallStates.NO_DATA = MonitorOverallStates("No Data")
+MonitorOverallStates.OK = MonitorOverallStates("OK")
+MonitorOverallStates.SKIPPED = MonitorOverallStates("Skipped")
+MonitorOverallStates.UNKNOWN = MonitorOverallStates("Unknown")
+MonitorOverallStates.WARN = MonitorOverallStates("Warn")

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityMonitoringFilterAction(ModelSimple):
     """
@@ -18,14 +20,18 @@ class SecurityMonitoringFilterAction(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "REQUIRE": "require",
-            "SUPPRESS": "suppress",
-        },
+        "require",
+        "suppress",
     }
+    REQUIRE: ClassVar["SecurityMonitoringFilterAction"]
+    SUPPRESS: ClassVar["SecurityMonitoringFilterAction"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SecurityMonitoringFilterAction.REQUIRE = SecurityMonitoringFilterAction("require")
+SecurityMonitoringFilterAction.SUPPRESS = SecurityMonitoringFilterAction("suppress")

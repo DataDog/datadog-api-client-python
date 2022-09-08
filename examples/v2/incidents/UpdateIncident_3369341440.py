@@ -22,12 +22,12 @@ USER_DATA_ID = environ["USER_DATA_ID"]
 body = IncidentUpdateRequest(
     data=IncidentUpdateData(
         id=INCIDENT_DATA_ID,
-        type=IncidentType("incidents"),
+        type=IncidentType.INCIDENTS,
         relationships=IncidentUpdateRelationships(
             commander_user=NullableRelationshipToUser(
                 data=NullableRelationshipToUserData(
                     id=USER_DATA_ID,
-                    type=UsersType("users"),
+                    type=UsersType.USERS,
                 ),
             ),
         ),

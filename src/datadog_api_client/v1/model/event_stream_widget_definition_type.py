@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class EventStreamWidgetDefinitionType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class EventStreamWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "EVENT_STREAM": "event_stream",
-        },
+        "event_stream",
     }
+    EVENT_STREAM: ClassVar["EventStreamWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+EventStreamWidgetDefinitionType.EVENT_STREAM = EventStreamWidgetDefinitionType("event_stream")

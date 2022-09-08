@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SAMLAssertionAttributesType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class SAMLAssertionAttributesType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SAML_ASSERTION_ATTRIBUTES": "saml_assertion_attributes",
-        },
+        "saml_assertion_attributes",
     }
+    SAML_ASSERTION_ATTRIBUTES: ClassVar["SAMLAssertionAttributesType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SAMLAssertionAttributesType.SAML_ASSERTION_ATTRIBUTES = SAMLAssertionAttributesType("saml_assertion_attributes")

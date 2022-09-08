@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetDisplayType(ModelSimple):
     """
@@ -18,15 +20,21 @@ class WidgetDisplayType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AREA": "area",
-            "BARS": "bars",
-            "LINE": "line",
-        },
+        "area",
+        "bars",
+        "line",
     }
+    AREA: ClassVar["WidgetDisplayType"]
+    BARS: ClassVar["WidgetDisplayType"]
+    LINE: ClassVar["WidgetDisplayType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetDisplayType.AREA = WidgetDisplayType("area")
+WidgetDisplayType.BARS = WidgetDisplayType("bars")
+WidgetDisplayType.LINE = WidgetDisplayType("line")

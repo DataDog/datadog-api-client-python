@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class ContentEncoding(ModelSimple):
     """
@@ -18,15 +20,21 @@ class ContentEncoding(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "IDENTITY": "identity",
-            "GZIP": "gzip",
-            "DEFLATE": "deflate",
-        },
+        "identity",
+        "gzip",
+        "deflate",
     }
+    IDENTITY: ClassVar["ContentEncoding"]
+    GZIP: ClassVar["ContentEncoding"]
+    DEFLATE: ClassVar["ContentEncoding"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+ContentEncoding.IDENTITY = ContentEncoding("identity")
+ContentEncoding.GZIP = ContentEncoding("gzip")
+ContentEncoding.DEFLATE = ContentEncoding("deflate")

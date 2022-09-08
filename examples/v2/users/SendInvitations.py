@@ -19,11 +19,11 @@ USER_DATA_ID = environ["USER_DATA_ID"]
 body = UserInvitationsRequest(
     data=[
         UserInvitationData(
-            type=UserInvitationsType("user_invitations"),
+            type=UserInvitationsType.USER_INVITATIONS,
             relationships=UserInvitationRelationships(
                 user=RelationshipToUser(
                     data=RelationshipToUserData(
-                        type=UsersType("users"),
+                        type=UsersType.USERS,
                         id=USER_DATA_ID,
                     ),
                 ),

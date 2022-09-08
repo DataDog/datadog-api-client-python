@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsAPITestType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class SyntheticsAPITestType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "API": "api",
-        },
+        "api",
     }
+    API: ClassVar["SyntheticsAPITestType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsAPITestType.API = SyntheticsAPITestType("api")

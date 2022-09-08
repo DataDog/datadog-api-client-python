@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class FormulaAndFunctionMetricDataSource(ModelSimple):
     """
@@ -18,13 +20,15 @@ class FormulaAndFunctionMetricDataSource(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "METRICS": "metrics",
-        },
+        "metrics",
     }
+    METRICS: ClassVar["FormulaAndFunctionMetricDataSource"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+FormulaAndFunctionMetricDataSource.METRICS = FormulaAndFunctionMetricDataSource("metrics")

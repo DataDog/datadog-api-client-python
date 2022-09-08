@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsBasicAuthNTLMType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class SyntheticsBasicAuthNTLMType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NTLM": "ntlm",
-        },
+        "ntlm",
     }
+    NTLM: ClassVar["SyntheticsBasicAuthNTLMType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsBasicAuthNTLMType.NTLM = SyntheticsBasicAuthNTLMType("ntlm")

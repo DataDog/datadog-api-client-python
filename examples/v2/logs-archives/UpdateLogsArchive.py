@@ -21,7 +21,7 @@ body = LogsArchiveCreateRequest(
                     tenant_id="aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa",
                 ),
                 storage_account="account-name",
-                type=LogsArchiveDestinationAzureType("azure"),
+                type=LogsArchiveDestinationAzureType.AZURE,
             ),
             include_tags=False,
             name="Nginx Archive",

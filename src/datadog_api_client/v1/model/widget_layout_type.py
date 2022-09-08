@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetLayoutType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class WidgetLayoutType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ORDERED": "ordered",
-        },
+        "ordered",
     }
+    ORDERED: ClassVar["WidgetLayoutType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetLayoutType.ORDERED = WidgetLayoutType("ordered")

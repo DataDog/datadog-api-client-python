@@ -31,7 +31,7 @@ body = MetricBulkTagConfigCreateRequest(
             ),
         ),
         id="system.load.1",
-        type=MetricBulkConfigureTagsType("metric_bulk_configure_tags"),
+        type=MetricBulkConfigureTagsType.BULK_MANAGE_TAGS,
     ),
 )
 

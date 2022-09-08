@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class EventPriority(ModelSimple):
     """
@@ -18,11 +20,11 @@ class EventPriority(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NORMAL": "normal",
-            "LOW": "low",
-        },
+        "normal",
+        "low",
     }
+    NORMAL: ClassVar["EventPriority"]
+    LOW: ClassVar["EventPriority"]
 
     _nullable = True
 
@@ -31,3 +33,7 @@ class EventPriority(ModelSimple):
         return {
             "value": (str,),
         }
+
+
+EventPriority.NORMAL = EventPriority("normal")
+EventPriority.LOW = EventPriority("low")

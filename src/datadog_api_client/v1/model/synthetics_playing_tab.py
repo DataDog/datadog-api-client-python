@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsPlayingTab(ModelSimple):
     """
@@ -18,17 +20,27 @@ class SyntheticsPlayingTab(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MAIN_TAB": -1,
-            "NEW_TAB": 0,
-            "TAB_1": 1,
-            "TAB_2": 2,
-            "TAB_3": 3,
-        },
+        -1,
+        0,
+        1,
+        2,
+        3,
     }
+    MAIN_TAB: ClassVar["SyntheticsPlayingTab"]
+    NEW_TAB: ClassVar["SyntheticsPlayingTab"]
+    TAB_1: ClassVar["SyntheticsPlayingTab"]
+    TAB_2: ClassVar["SyntheticsPlayingTab"]
+    TAB_3: ClassVar["SyntheticsPlayingTab"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (int,),
         }
+
+
+SyntheticsPlayingTab.MAIN_TAB = SyntheticsPlayingTab(-1)
+SyntheticsPlayingTab.NEW_TAB = SyntheticsPlayingTab(0)
+SyntheticsPlayingTab.TAB_1 = SyntheticsPlayingTab(1)
+SyntheticsPlayingTab.TAB_2 = SyntheticsPlayingTab(2)
+SyntheticsPlayingTab.TAB_3 = SyntheticsPlayingTab(3)

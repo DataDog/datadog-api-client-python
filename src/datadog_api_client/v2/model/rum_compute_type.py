@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class RUMComputeType(ModelSimple):
     """
@@ -18,14 +20,18 @@ class RUMComputeType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TIMESERIES": "timeseries",
-            "TOTAL": "total",
-        },
+        "timeseries",
+        "total",
     }
+    TIMESERIES: ClassVar["RUMComputeType"]
+    TOTAL: ClassVar["RUMComputeType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+RUMComputeType.TIMESERIES = RUMComputeType("timeseries")
+RUMComputeType.TOTAL = RUMComputeType("total")

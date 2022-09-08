@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SLOCorrectionType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class SLOCorrectionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CORRECTION": "correction",
-        },
+        "correction",
     }
+    CORRECTION: ClassVar["SLOCorrectionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SLOCorrectionType.CORRECTION = SLOCorrectionType("correction")

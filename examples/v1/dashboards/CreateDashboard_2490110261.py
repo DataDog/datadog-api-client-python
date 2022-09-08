@@ -25,23 +25,23 @@ from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
 
 body = Dashboard(
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
     title="Example-Create_a_new_dashboard_with_an_audit_logs_query with Audit Logs Query",
     widgets=[
         Widget(
             definition=TimeseriesWidgetDefinition(
-                type=TimeseriesWidgetDefinitionType("timeseries"),
+                type=TimeseriesWidgetDefinitionType.TIMESERIES,
                 requests=[
                     TimeseriesWidgetRequest(
-                        response_format=FormulaAndFunctionResponseFormat("timeseries"),
+                        response_format=FormulaAndFunctionResponseFormat.TIMESERIES,
                         queries=[
                             FormulaAndFunctionEventQueryDefinition(
                                 search=FormulaAndFunctionEventQueryDefinitionSearch(
                                     query="",
                                 ),
-                                data_source=FormulaAndFunctionEventsDataSource("audit"),
+                                data_source=FormulaAndFunctionEventsDataSource.AUDIT,
                                 compute=FormulaAndFunctionEventQueryDefinitionCompute(
-                                    aggregation=FormulaAndFunctionEventAggregation("count"),
+                                    aggregation=FormulaAndFunctionEventAggregation.COUNT,
                                 ),
                                 name="query1",
                                 indexes=[

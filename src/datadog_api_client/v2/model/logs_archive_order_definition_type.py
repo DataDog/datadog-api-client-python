@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsArchiveOrderDefinitionType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class LogsArchiveOrderDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ARCHIVE_ORDER": "archive_order",
-        },
+        "archive_order",
     }
+    ARCHIVE_ORDER: ClassVar["LogsArchiveOrderDefinitionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+LogsArchiveOrderDefinitionType.ARCHIVE_ORDER = LogsArchiveOrderDefinitionType("archive_order")

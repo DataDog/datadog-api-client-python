@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetLineWidth(ModelSimple):
     """
@@ -18,15 +20,21 @@ class WidgetLineWidth(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NORMAL": "normal",
-            "THICK": "thick",
-            "THIN": "thin",
-        },
+        "normal",
+        "thick",
+        "thin",
     }
+    NORMAL: ClassVar["WidgetLineWidth"]
+    THICK: ClassVar["WidgetLineWidth"]
+    THIN: ClassVar["WidgetLineWidth"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetLineWidth.NORMAL = WidgetLineWidth("normal")
+WidgetLineWidth.THICK = WidgetLineWidth("thick")
+WidgetLineWidth.THIN = WidgetLineWidth("thin")

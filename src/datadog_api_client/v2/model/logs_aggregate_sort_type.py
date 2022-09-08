@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsAggregateSortType(ModelSimple):
     """
@@ -18,14 +20,18 @@ class LogsAggregateSortType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ALPHABETICAL": "alphabetical",
-            "MEASURE": "measure",
-        },
+        "alphabetical",
+        "measure",
     }
+    ALPHABETICAL: ClassVar["LogsAggregateSortType"]
+    MEASURE: ClassVar["LogsAggregateSortType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+LogsAggregateSortType.ALPHABETICAL = LogsAggregateSortType("alphabetical")
+LogsAggregateSortType.MEASURE = LogsAggregateSortType("measure")

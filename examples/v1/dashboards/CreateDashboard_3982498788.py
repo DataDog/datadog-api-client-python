@@ -16,22 +16,22 @@ from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
 from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 
 body = Dashboard(
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
     title="Example-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes with timeseries widget",
     widgets=[
         Widget(
             definition=TimeseriesWidgetDefinition(
-                type=TimeseriesWidgetDefinitionType("timeseries"),
+                type=TimeseriesWidgetDefinitionType.TIMESERIES,
                 requests=[
                     TimeseriesWidgetRequest(
                         q="sum:trace.test.errors{env:prod,service:datadog-api-spec} by {resource_name}.as_count()",
                         on_right_yaxis=False,
                         style=WidgetRequestStyle(
                             palette="warm",
-                            line_type=WidgetLineType("solid"),
-                            line_width=WidgetLineWidth("normal"),
+                            line_type=WidgetLineType.SOLID,
+                            line_width=WidgetLineWidth.NORMAL,
                         ),
-                        display_type=WidgetDisplayType("bars"),
+                        display_type=WidgetDisplayType.BARS,
                     ),
                 ],
             ),

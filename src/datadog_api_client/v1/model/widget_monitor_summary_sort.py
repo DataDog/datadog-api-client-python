@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetMonitorSummarySort(ModelSimple):
     """
@@ -18,29 +20,63 @@ class WidgetMonitorSummarySort(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NAME": "name",
-            "GROUP": "group",
-            "STATUS": "status",
-            "TAGS": "tags",
-            "TRIGGERED": "triggered",
-            "GROUP_ASCENDING": "group,asc",
-            "GROUP_DESCENDING": "group,desc",
-            "NAME_ASCENDING": "name,asc",
-            "NAME_DESCENDING": "name,desc",
-            "STATUS_ASCENDING": "status,asc",
-            "STATUS_DESCENDING": "status,desc",
-            "TAGS_ASCENDING": "tags,asc",
-            "TAGS_DESCENDING": "tags,desc",
-            "TRIGGERED_ASCENDING": "triggered,asc",
-            "TRIGGERED_DESCENDING": "triggered,desc",
-            "PRIORITY_ASCENDING": "priority,asc",
-            "PRIORITY_DESCENDING": "priority,desc",
-        },
+        "name",
+        "group",
+        "status",
+        "tags",
+        "triggered",
+        "group,asc",
+        "group,desc",
+        "name,asc",
+        "name,desc",
+        "status,asc",
+        "status,desc",
+        "tags,asc",
+        "tags,desc",
+        "triggered,asc",
+        "triggered,desc",
+        "priority,asc",
+        "priority,desc",
     }
+    NAME: ClassVar["WidgetMonitorSummarySort"]
+    GROUP: ClassVar["WidgetMonitorSummarySort"]
+    STATUS: ClassVar["WidgetMonitorSummarySort"]
+    TAGS: ClassVar["WidgetMonitorSummarySort"]
+    TRIGGERED: ClassVar["WidgetMonitorSummarySort"]
+    GROUP_ASCENDING: ClassVar["WidgetMonitorSummarySort"]
+    GROUP_DESCENDING: ClassVar["WidgetMonitorSummarySort"]
+    NAME_ASCENDING: ClassVar["WidgetMonitorSummarySort"]
+    NAME_DESCENDING: ClassVar["WidgetMonitorSummarySort"]
+    STATUS_ASCENDING: ClassVar["WidgetMonitorSummarySort"]
+    STATUS_DESCENDING: ClassVar["WidgetMonitorSummarySort"]
+    TAGS_ASCENDING: ClassVar["WidgetMonitorSummarySort"]
+    TAGS_DESCENDING: ClassVar["WidgetMonitorSummarySort"]
+    TRIGGERED_ASCENDING: ClassVar["WidgetMonitorSummarySort"]
+    TRIGGERED_DESCENDING: ClassVar["WidgetMonitorSummarySort"]
+    PRIORITY_ASCENDING: ClassVar["WidgetMonitorSummarySort"]
+    PRIORITY_DESCENDING: ClassVar["WidgetMonitorSummarySort"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetMonitorSummarySort.NAME = WidgetMonitorSummarySort("name")
+WidgetMonitorSummarySort.GROUP = WidgetMonitorSummarySort("group")
+WidgetMonitorSummarySort.STATUS = WidgetMonitorSummarySort("status")
+WidgetMonitorSummarySort.TAGS = WidgetMonitorSummarySort("tags")
+WidgetMonitorSummarySort.TRIGGERED = WidgetMonitorSummarySort("triggered")
+WidgetMonitorSummarySort.GROUP_ASCENDING = WidgetMonitorSummarySort("group,asc")
+WidgetMonitorSummarySort.GROUP_DESCENDING = WidgetMonitorSummarySort("group,desc")
+WidgetMonitorSummarySort.NAME_ASCENDING = WidgetMonitorSummarySort("name,asc")
+WidgetMonitorSummarySort.NAME_DESCENDING = WidgetMonitorSummarySort("name,desc")
+WidgetMonitorSummarySort.STATUS_ASCENDING = WidgetMonitorSummarySort("status,asc")
+WidgetMonitorSummarySort.STATUS_DESCENDING = WidgetMonitorSummarySort("status,desc")
+WidgetMonitorSummarySort.TAGS_ASCENDING = WidgetMonitorSummarySort("tags,asc")
+WidgetMonitorSummarySort.TAGS_DESCENDING = WidgetMonitorSummarySort("tags,desc")
+WidgetMonitorSummarySort.TRIGGERED_ASCENDING = WidgetMonitorSummarySort("triggered,asc")
+WidgetMonitorSummarySort.TRIGGERED_DESCENDING = WidgetMonitorSummarySort("triggered,desc")
+WidgetMonitorSummarySort.PRIORITY_ASCENDING = WidgetMonitorSummarySort("priority,asc")
+WidgetMonitorSummarySort.PRIORITY_DESCENDING = WidgetMonitorSummarySort("priority,desc")

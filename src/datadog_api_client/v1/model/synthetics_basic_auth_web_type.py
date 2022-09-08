@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsBasicAuthWebType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class SyntheticsBasicAuthWebType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "WEB": "web",
-        },
+        "web",
     }
+    WEB: ClassVar["SyntheticsBasicAuthWebType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsBasicAuthWebType.WEB = SyntheticsBasicAuthWebType("web")

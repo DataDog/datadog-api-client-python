@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class AccessRole(ModelSimple):
     """
@@ -18,16 +20,24 @@ class AccessRole(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "STANDARD": "st",
-            "ADMIN": "adm",
-            "READ_ONLY": "ro",
-            "ERROR": "ERROR",
-        },
+        "st",
+        "adm",
+        "ro",
+        "ERROR",
     }
+    STANDARD: ClassVar["AccessRole"]
+    ADMIN: ClassVar["AccessRole"]
+    READ_ONLY: ClassVar["AccessRole"]
+    ERROR: ClassVar["AccessRole"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+AccessRole.STANDARD = AccessRole("st")
+AccessRole.ADMIN = AccessRole("adm")
+AccessRole.READ_ONLY = AccessRole("ro")
+AccessRole.ERROR = AccessRole("ERROR")

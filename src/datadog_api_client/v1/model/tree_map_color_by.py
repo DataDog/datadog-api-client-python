@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class TreeMapColorBy(ModelSimple):
     """
@@ -18,13 +20,15 @@ class TreeMapColorBy(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "USER": "user",
-        },
+        "user",
     }
+    USER: ClassVar["TreeMapColorBy"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+TreeMapColorBy.USER = TreeMapColorBy("user")

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsAssertionType(ModelSimple):
     """
@@ -18,29 +20,63 @@ class SyntheticsAssertionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "BODY": "body",
-            "HEADER": "header",
-            "STATUS_CODE": "statusCode",
-            "CERTIFICATE": "certificate",
-            "RESPONSE_TIME": "responseTime",
-            "PROPERTY": "property",
-            "RECORD_EVERY": "recordEvery",
-            "RECORD_SOME": "recordSome",
-            "TLS_VERSION": "tlsVersion",
-            "MIN_TLS_VERSION": "minTlsVersion",
-            "LATENCY": "latency",
-            "PACKET_LOSS_PERCENTAGE": "packetLossPercentage",
-            "PACKETS_RECEIVED": "packetsReceived",
-            "NETWORK_HOP": "networkHop",
-            "RECEIVED_MESSAGE": "receivedMessage",
-            "GRPC_HEALTHCHECK_STATUS": "grpcHealthcheckStatus",
-            "CONNECTION": "connection",
-        },
+        "body",
+        "header",
+        "statusCode",
+        "certificate",
+        "responseTime",
+        "property",
+        "recordEvery",
+        "recordSome",
+        "tlsVersion",
+        "minTlsVersion",
+        "latency",
+        "packetLossPercentage",
+        "packetsReceived",
+        "networkHop",
+        "receivedMessage",
+        "grpcHealthcheckStatus",
+        "connection",
     }
+    BODY: ClassVar["SyntheticsAssertionType"]
+    HEADER: ClassVar["SyntheticsAssertionType"]
+    STATUS_CODE: ClassVar["SyntheticsAssertionType"]
+    CERTIFICATE: ClassVar["SyntheticsAssertionType"]
+    RESPONSE_TIME: ClassVar["SyntheticsAssertionType"]
+    PROPERTY: ClassVar["SyntheticsAssertionType"]
+    RECORD_EVERY: ClassVar["SyntheticsAssertionType"]
+    RECORD_SOME: ClassVar["SyntheticsAssertionType"]
+    TLS_VERSION: ClassVar["SyntheticsAssertionType"]
+    MIN_TLS_VERSION: ClassVar["SyntheticsAssertionType"]
+    LATENCY: ClassVar["SyntheticsAssertionType"]
+    PACKET_LOSS_PERCENTAGE: ClassVar["SyntheticsAssertionType"]
+    PACKETS_RECEIVED: ClassVar["SyntheticsAssertionType"]
+    NETWORK_HOP: ClassVar["SyntheticsAssertionType"]
+    RECEIVED_MESSAGE: ClassVar["SyntheticsAssertionType"]
+    GRPC_HEALTHCHECK_STATUS: ClassVar["SyntheticsAssertionType"]
+    CONNECTION: ClassVar["SyntheticsAssertionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsAssertionType.BODY = SyntheticsAssertionType("body")
+SyntheticsAssertionType.HEADER = SyntheticsAssertionType("header")
+SyntheticsAssertionType.STATUS_CODE = SyntheticsAssertionType("statusCode")
+SyntheticsAssertionType.CERTIFICATE = SyntheticsAssertionType("certificate")
+SyntheticsAssertionType.RESPONSE_TIME = SyntheticsAssertionType("responseTime")
+SyntheticsAssertionType.PROPERTY = SyntheticsAssertionType("property")
+SyntheticsAssertionType.RECORD_EVERY = SyntheticsAssertionType("recordEvery")
+SyntheticsAssertionType.RECORD_SOME = SyntheticsAssertionType("recordSome")
+SyntheticsAssertionType.TLS_VERSION = SyntheticsAssertionType("tlsVersion")
+SyntheticsAssertionType.MIN_TLS_VERSION = SyntheticsAssertionType("minTlsVersion")
+SyntheticsAssertionType.LATENCY = SyntheticsAssertionType("latency")
+SyntheticsAssertionType.PACKET_LOSS_PERCENTAGE = SyntheticsAssertionType("packetLossPercentage")
+SyntheticsAssertionType.PACKETS_RECEIVED = SyntheticsAssertionType("packetsReceived")
+SyntheticsAssertionType.NETWORK_HOP = SyntheticsAssertionType("networkHop")
+SyntheticsAssertionType.RECEIVED_MESSAGE = SyntheticsAssertionType("receivedMessage")
+SyntheticsAssertionType.GRPC_HEALTHCHECK_STATUS = SyntheticsAssertionType("grpcHealthcheckStatus")
+SyntheticsAssertionType.CONNECTION = SyntheticsAssertionType("connection")

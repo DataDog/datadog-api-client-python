@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class RUMResponseStatus(ModelSimple):
     """
@@ -18,14 +20,18 @@ class RUMResponseStatus(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DONE": "done",
-            "TIMEOUT": "timeout",
-        },
+        "done",
+        "timeout",
     }
+    DONE: ClassVar["RUMResponseStatus"]
+    TIMEOUT: ClassVar["RUMResponseStatus"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+RUMResponseStatus.DONE = RUMResponseStatus("done")
+RUMResponseStatus.TIMEOUT = RUMResponseStatus("timeout")

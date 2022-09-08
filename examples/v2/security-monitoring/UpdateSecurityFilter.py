@@ -18,13 +18,13 @@ body = SecurityFilterUpdateRequest(
     data=SecurityFilterUpdateData(
         attributes=SecurityFilterUpdateAttributes(
             exclusion_filters=[],
-            filtered_data_type=SecurityFilterFilteredDataType("logs"),
+            filtered_data_type=SecurityFilterFilteredDataType.LOGS,
             is_enabled=True,
             name="Example-Update_a_security_filter_returns_OK_response",
             query="service:ExampleUpdateasecurityfilterreturnsOKresponse",
             version=1,
         ),
-        type=SecurityFilterType("security_filters"),
+        type=SecurityFilterType.SECURITY_FILTERS,
     ),
 )
 

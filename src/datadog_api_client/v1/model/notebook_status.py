@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class NotebookStatus(ModelSimple):
     """
@@ -18,13 +20,15 @@ class NotebookStatus(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "PUBLISHED": "published",
-        },
+        "published",
     }
+    PUBLISHED: ClassVar["NotebookStatus"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+NotebookStatus.PUBLISHED = NotebookStatus("published")

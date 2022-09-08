@@ -13,7 +13,7 @@ from dateutil.tz import tzutc
 body = LogsListRequest(
     index="retention-3,retention-15",
     query="service:web* AND @http.status_code:[200 TO 299]",
-    sort=LogsSort("asc"),
+    sort=LogsSort.TIME_ASCENDING,
     time=LogsListRequestTime(
         _from=datetime(2020, 2, 2, 2, 2, 2, 202000, tzinfo=tzutc()),
         to=datetime(2020, 2, 20, 2, 2, 2, 202000, tzinfo=tzutc()),

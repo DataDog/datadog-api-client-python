@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsAPIStepSubtype(ModelSimple):
     """
@@ -18,13 +20,15 @@ class SyntheticsAPIStepSubtype(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "HTTP": "http",
-        },
+        "http",
     }
+    HTTP: ClassVar["SyntheticsAPIStepSubtype"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsAPIStepSubtype.HTTP = SyntheticsAPIStepSubtype("http")

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class GeomapWidgetDefinitionType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class GeomapWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "GEOMAP": "geomap",
-        },
+        "geomap",
     }
+    GEOMAP: ClassVar["GeomapWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+GeomapWidgetDefinitionType.GEOMAP = GeomapWidgetDefinitionType("geomap")

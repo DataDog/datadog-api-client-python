@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class HostMapWidgetDefinitionType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class HostMapWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "HOSTMAP": "hostmap",
-        },
+        "hostmap",
     }
+    HOSTMAP: ClassVar["HostMapWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+HostMapWidgetDefinitionType.HOSTMAP = HostMapWidgetDefinitionType("hostmap")

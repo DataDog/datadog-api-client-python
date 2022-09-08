@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class ScatterplotDimension(ModelSimple):
     """
@@ -18,16 +20,24 @@ class ScatterplotDimension(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "X": "x",
-            "Y": "y",
-            "RADIUS": "radius",
-            "COLOR": "color",
-        },
+        "x",
+        "y",
+        "radius",
+        "color",
     }
+    X: ClassVar["ScatterplotDimension"]
+    Y: ClassVar["ScatterplotDimension"]
+    RADIUS: ClassVar["ScatterplotDimension"]
+    COLOR: ClassVar["ScatterplotDimension"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+ScatterplotDimension.X = ScatterplotDimension("x")
+ScatterplotDimension.Y = ScatterplotDimension("y")
+ScatterplotDimension.RADIUS = ScatterplotDimension("radius")
+ScatterplotDimension.COLOR = ScatterplotDimension("color")

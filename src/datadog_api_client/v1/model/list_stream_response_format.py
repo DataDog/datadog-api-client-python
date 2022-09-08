@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class ListStreamResponseFormat(ModelSimple):
     """
@@ -18,13 +20,15 @@ class ListStreamResponseFormat(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "EVENT_LIST": "event_list",
-        },
+        "event_list",
     }
+    EVENT_LIST: ClassVar["ListStreamResponseFormat"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+ListStreamResponseFormat.EVENT_LIST = ListStreamResponseFormat("event_list")

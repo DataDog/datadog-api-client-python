@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class IncidentRelatedObject(ModelSimple):
     """
@@ -18,13 +20,15 @@ class IncidentRelatedObject(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "USERS": "users",
-        },
+        "users",
     }
+    USERS: ClassVar["IncidentRelatedObject"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+IncidentRelatedObject.USERS = IncidentRelatedObject("users")

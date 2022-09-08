@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class NotebookMarkdownCellDefinitionType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class NotebookMarkdownCellDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MARKDOWN": "markdown",
-        },
+        "markdown",
     }
+    MARKDOWN: ClassVar["NotebookMarkdownCellDefinitionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+NotebookMarkdownCellDefinitionType.MARKDOWN = NotebookMarkdownCellDefinitionType("markdown")

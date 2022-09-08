@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class APIKeysSort(ModelSimple):
     """
@@ -18,20 +20,36 @@ class APIKeysSort(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "CREATED_AT_ASCENDING": "created_at",
-            "CREATED_AT_DESCENDING": "-created_at",
-            "LAST4_ASCENDING": "last4",
-            "LAST4_DESCENDING": "-last4",
-            "MODIFIED_AT_ASCENDING": "modified_at",
-            "MODIFIED_AT_DESCENDING": "-modified_at",
-            "NAME_ASCENDING": "name",
-            "NAME_DESCENDING": "-name",
-        },
+        "created_at",
+        "-created_at",
+        "last4",
+        "-last4",
+        "modified_at",
+        "-modified_at",
+        "name",
+        "-name",
     }
+    CREATED_AT_ASCENDING: ClassVar["APIKeysSort"]
+    CREATED_AT_DESCENDING: ClassVar["APIKeysSort"]
+    LAST4_ASCENDING: ClassVar["APIKeysSort"]
+    LAST4_DESCENDING: ClassVar["APIKeysSort"]
+    MODIFIED_AT_ASCENDING: ClassVar["APIKeysSort"]
+    MODIFIED_AT_DESCENDING: ClassVar["APIKeysSort"]
+    NAME_ASCENDING: ClassVar["APIKeysSort"]
+    NAME_DESCENDING: ClassVar["APIKeysSort"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+APIKeysSort.CREATED_AT_ASCENDING = APIKeysSort("created_at")
+APIKeysSort.CREATED_AT_DESCENDING = APIKeysSort("-created_at")
+APIKeysSort.LAST4_ASCENDING = APIKeysSort("last4")
+APIKeysSort.LAST4_DESCENDING = APIKeysSort("-last4")
+APIKeysSort.MODIFIED_AT_ASCENDING = APIKeysSort("modified_at")
+APIKeysSort.MODIFIED_AT_DESCENDING = APIKeysSort("-modified_at")
+APIKeysSort.NAME_ASCENDING = APIKeysSort("name")
+APIKeysSort.NAME_DESCENDING = APIKeysSort("-name")

@@ -9,8 +9,8 @@ from datadog_api_client.v1.model.signal_state_update_request import SignalStateU
 from datadog_api_client.v1.model.signal_triage_state import SignalTriageState
 
 body = SignalStateUpdateRequest(
-    archive_reason=SignalArchiveReason("none"),
-    state=SignalTriageState("open"),
+    archive_reason=SignalArchiveReason.NONE,
+    state=SignalTriageState.OPEN,
 )
 
 configuration = Configuration()

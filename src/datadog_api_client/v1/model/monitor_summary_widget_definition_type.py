@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MonitorSummaryWidgetDefinitionType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class MonitorSummaryWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MANAGE_STATUS": "manage_status",
-        },
+        "manage_status",
     }
+    MANAGE_STATUS: ClassVar["MonitorSummaryWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+MonitorSummaryWidgetDefinitionType.MANAGE_STATUS = MonitorSummaryWidgetDefinitionType("manage_status")

@@ -33,7 +33,7 @@ body = SyntheticsAPITest(
                 example="content-type",
                 name="PROPERTY",
                 pattern="content-type",
-                type=SyntheticsConfigVariableType("text"),
+                type=SyntheticsConfigVariableType.TEXT,
             ),
         ],
         steps=[
@@ -41,8 +41,8 @@ body = SyntheticsAPITest(
                 allow_failure=True,
                 assertions=[
                     SyntheticsAssertionTarget(
-                        operator=SyntheticsAssertionOperator("is"),
-                        type=SyntheticsAssertionType("statusCode"),
+                        operator=SyntheticsAssertionOperator.IS,
+                        type=SyntheticsAssertionType.STATUS_CODE,
                         target=200,
                     ),
                 ],
@@ -51,15 +51,15 @@ body = SyntheticsAPITest(
                         field="server",
                         name="EXTRACTED_VALUE",
                         parser=SyntheticsVariableParser(
-                            type=SyntheticsGlobalVariableParserType("raw"),
+                            type=SyntheticsGlobalVariableParserType.RAW,
                         ),
-                        type=SyntheticsGlobalVariableParseTestOptionsType("http_header"),
+                        type=SyntheticsGlobalVariableParseTestOptionsType.HTTP_HEADER,
                     ),
                 ],
                 is_critical=True,
                 name="request is sent",
                 request=SyntheticsTestRequest(
-                    method=HTTPMethod("GET"),
+                    method=HTTPMethod.GET,
                     timeout=10.0,
                     url="https://datadoghq.com",
                 ),
@@ -67,7 +67,7 @@ body = SyntheticsAPITest(
                     count=5,
                     interval=1000.0,
                 ),
-                subtype=SyntheticsAPIStepSubtype("http"),
+                subtype=SyntheticsAPIStepSubtype.HTTP,
             ),
         ],
     ),
@@ -90,11 +90,11 @@ body = SyntheticsAPITest(
         ),
         tick_every=60,
     ),
-    subtype=SyntheticsTestDetailsSubType("multi"),
+    subtype=SyntheticsTestDetailsSubType.MULTI,
     tags=[
         "testing:api",
     ],
-    type=SyntheticsAPITestType("api"),
+    type=SyntheticsAPITestType.API,
 )
 
 configuration = Configuration()

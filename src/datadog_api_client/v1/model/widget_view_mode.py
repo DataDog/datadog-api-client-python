@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class WidgetViewMode(ModelSimple):
     """
@@ -18,15 +20,21 @@ class WidgetViewMode(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "OVERALL": "overall",
-            "COMPONENT": "component",
-            "BOTH": "both",
-        },
+        "overall",
+        "component",
+        "both",
     }
+    OVERALL: ClassVar["WidgetViewMode"]
+    COMPONENT: ClassVar["WidgetViewMode"]
+    BOTH: ClassVar["WidgetViewMode"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetViewMode.OVERALL = WidgetViewMode("overall")
+WidgetViewMode.COMPONENT = WidgetViewMode("component")
+WidgetViewMode.BOTH = WidgetViewMode("both")

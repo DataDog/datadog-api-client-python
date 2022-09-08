@@ -18,7 +18,7 @@ SLO_DATA_0_ID = environ["SLO_DATA_0_ID"]
 body = SLOCorrectionCreateRequest(
     data=SLOCorrectionCreateData(
         attributes=SLOCorrectionCreateRequestAttributes(
-            category=SLOCorrectionCategory("Scheduled Maintenance"),
+            category=SLOCorrectionCategory.SCHEDULED_MAINTENANCE,
             description="Example-Create_an_SLO_correction_with_rrule_returns_OK_response",
             slo_id=SLO_DATA_0_ID,
             start=int(datetime.now().timestamp()),
@@ -26,7 +26,7 @@ body = SLOCorrectionCreateRequest(
             rrule="FREQ=DAILY;INTERVAL=10;COUNT=5",
             timezone="UTC",
         ),
-        type=SLOCorrectionType("correction"),
+        type=SLOCorrectionType.CORRECTION,
     ),
 )
 

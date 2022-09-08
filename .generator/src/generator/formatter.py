@@ -188,6 +188,9 @@ def format_data_with_schema(
         parameters = replace_values[data]
         if schema.get("format") in ("int32", "int64"):
             parameters = f"int({parameters})"
+    elif "enum" in schema:
+        parameters = schema["x-enum-varnames"][schema["enum"].index(data)]
+        return f"{name}.{parameters}", imports
     else:
         if schema.get("nullable") and data is None:
             parameters = repr(data)

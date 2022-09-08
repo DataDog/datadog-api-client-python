@@ -18,9 +18,9 @@ body = SyntheticsAPITest(
     config=SyntheticsAPITestConfig(
         assertions=[
             SyntheticsAssertionTarget(
-                operator=SyntheticsAssertionOperator("isInMoreThan"),
+                operator=SyntheticsAssertionOperator.IS_IN_MORE_DAYS_THAN,
                 target=10,
-                type=SyntheticsAssertionType("certificate"),
+                type=SyntheticsAssertionType.CERTIFICATE,
             ),
         ],
         request=SyntheticsTestRequest(
@@ -38,11 +38,11 @@ body = SyntheticsAPITest(
         check_certificate_revocation=True,
         tick_every=60,
     ),
-    subtype=SyntheticsTestDetailsSubType("ssl"),
+    subtype=SyntheticsTestDetailsSubType.SSL,
     tags=[
         "testing:api",
     ],
-    type=SyntheticsAPITestType("api"),
+    type=SyntheticsAPITestType.API,
 )
 
 configuration = Configuration()

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class TargetFormatType(ModelSimple):
     """
@@ -20,16 +22,24 @@ class TargetFormatType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AUTO": "auto",
-            "STRING": "string",
-            "INTEGER": "integer",
-            "DOUBLE": "double",
-        },
+        "auto",
+        "string",
+        "integer",
+        "double",
     }
+    AUTO: ClassVar["TargetFormatType"]
+    STRING: ClassVar["TargetFormatType"]
+    INTEGER: ClassVar["TargetFormatType"]
+    DOUBLE: ClassVar["TargetFormatType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+TargetFormatType.AUTO = TargetFormatType("auto")
+TargetFormatType.STRING = TargetFormatType("string")
+TargetFormatType.INTEGER = TargetFormatType("integer")
+TargetFormatType.DOUBLE = TargetFormatType("double")

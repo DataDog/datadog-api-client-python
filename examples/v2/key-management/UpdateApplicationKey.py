@@ -17,7 +17,7 @@ APPLICATION_KEY_DATA_ID = environ["APPLICATION_KEY_DATA_ID"]
 body = ApplicationKeyUpdateRequest(
     data=ApplicationKeyUpdateData(
         id=APPLICATION_KEY_DATA_ID,
-        type=ApplicationKeysType("application_keys"),
+        type=ApplicationKeysType.APPLICATION_KEYS,
         attributes=ApplicationKeyUpdateAttributes(
             name="Application Key for managing dashboards-updated",
         ),

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class HTTPMethod(ModelSimple):
     """
@@ -18,19 +20,33 @@ class HTTPMethod(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "GET": "GET",
-            "POST": "POST",
-            "PATCH": "PATCH",
-            "PUT": "PUT",
-            "DELETE": "DELETE",
-            "HEAD": "HEAD",
-            "OPTIONS": "OPTIONS",
-        },
+        "GET",
+        "POST",
+        "PATCH",
+        "PUT",
+        "DELETE",
+        "HEAD",
+        "OPTIONS",
     }
+    GET: ClassVar["HTTPMethod"]
+    POST: ClassVar["HTTPMethod"]
+    PATCH: ClassVar["HTTPMethod"]
+    PUT: ClassVar["HTTPMethod"]
+    DELETE: ClassVar["HTTPMethod"]
+    HEAD: ClassVar["HTTPMethod"]
+    OPTIONS: ClassVar["HTTPMethod"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+HTTPMethod.GET = HTTPMethod("GET")
+HTTPMethod.POST = HTTPMethod("POST")
+HTTPMethod.PATCH = HTTPMethod("PATCH")
+HTTPMethod.PUT = HTTPMethod("PUT")
+HTTPMethod.DELETE = HTTPMethod("DELETE")
+HTTPMethod.HEAD = HTTPMethod("HEAD")
+HTTPMethod.OPTIONS = HTTPMethod("OPTIONS")

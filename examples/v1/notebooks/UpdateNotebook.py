@@ -40,48 +40,48 @@ body = NotebookUpdateRequest(
                     attributes=NotebookMarkdownCellAttributes(
                         definition=NotebookMarkdownCellDefinition(
                             text="## Some test markdown\n\n```js\nvar x, y;\nx = 5;\ny = 6;\n```",
-                            type=NotebookMarkdownCellDefinitionType("markdown"),
+                            type=NotebookMarkdownCellDefinitionType.MARKDOWN,
                         ),
                     ),
-                    type=NotebookCellResourceType("notebook_cells"),
+                    type=NotebookCellResourceType.NOTEBOOK_CELLS,
                 ),
                 NotebookCellCreateRequest(
                     attributes=NotebookTimeseriesCellAttributes(
                         definition=TimeseriesWidgetDefinition(
                             requests=[
                                 TimeseriesWidgetRequest(
-                                    display_type=WidgetDisplayType("line"),
+                                    display_type=WidgetDisplayType.LINE,
                                     q="avg:system.load.1{*}",
                                     style=WidgetRequestStyle(
-                                        line_type=WidgetLineType("solid"),
-                                        line_width=WidgetLineWidth("normal"),
+                                        line_type=WidgetLineType.SOLID,
+                                        line_width=WidgetLineWidth.NORMAL,
                                         palette="dog_classic",
                                     ),
                                 ),
                             ],
                             show_legend=True,
-                            type=TimeseriesWidgetDefinitionType("timeseries"),
+                            type=TimeseriesWidgetDefinitionType.TIMESERIES,
                             yaxis=WidgetAxis(
                                 scale="linear",
                             ),
                         ),
-                        graph_size=NotebookGraphSize("m"),
+                        graph_size=NotebookGraphSize.MEDIUM,
                         split_by=NotebookSplitBy(
                             keys=[],
                             tags=[],
                         ),
                         time=None,
                     ),
-                    type=NotebookCellResourceType("notebook_cells"),
+                    type=NotebookCellResourceType.NOTEBOOK_CELLS,
                 ),
             ],
             name="Example-Update_a_notebook_returns_OK_response-updated",
-            status=NotebookStatus("published"),
+            status=NotebookStatus.PUBLISHED,
             time=NotebookRelativeTime(
-                live_span=WidgetLiveSpan("1h"),
+                live_span=WidgetLiveSpan.PAST_ONE_HOUR,
             ),
         ),
-        type=NotebookResourceType("notebooks"),
+        type=NotebookResourceType.NOTEBOOKS,
     ),
 )
 

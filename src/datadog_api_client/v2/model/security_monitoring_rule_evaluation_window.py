@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SecurityMonitoringRuleEvaluationWindow(ModelSimple):
     """
@@ -19,20 +21,36 @@ class SecurityMonitoringRuleEvaluationWindow(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ZERO_MINUTES": 0,
-            "ONE_MINUTE": 60,
-            "FIVE_MINUTES": 300,
-            "TEN_MINUTES": 600,
-            "FIFTEEN_MINUTES": 900,
-            "THIRTY_MINUTES": 1800,
-            "ONE_HOUR": 3600,
-            "TWO_HOURS": 7200,
-        },
+        0,
+        60,
+        300,
+        600,
+        900,
+        1800,
+        3600,
+        7200,
     }
+    ZERO_MINUTES: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
+    ONE_MINUTE: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
+    FIVE_MINUTES: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
+    TEN_MINUTES: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
+    FIFTEEN_MINUTES: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
+    THIRTY_MINUTES: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
+    ONE_HOUR: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
+    TWO_HOURS: ClassVar["SecurityMonitoringRuleEvaluationWindow"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (int,),
         }
+
+
+SecurityMonitoringRuleEvaluationWindow.ZERO_MINUTES = SecurityMonitoringRuleEvaluationWindow(0)
+SecurityMonitoringRuleEvaluationWindow.ONE_MINUTE = SecurityMonitoringRuleEvaluationWindow(60)
+SecurityMonitoringRuleEvaluationWindow.FIVE_MINUTES = SecurityMonitoringRuleEvaluationWindow(300)
+SecurityMonitoringRuleEvaluationWindow.TEN_MINUTES = SecurityMonitoringRuleEvaluationWindow(600)
+SecurityMonitoringRuleEvaluationWindow.FIFTEEN_MINUTES = SecurityMonitoringRuleEvaluationWindow(900)
+SecurityMonitoringRuleEvaluationWindow.THIRTY_MINUTES = SecurityMonitoringRuleEvaluationWindow(1800)
+SecurityMonitoringRuleEvaluationWindow.ONE_HOUR = SecurityMonitoringRuleEvaluationWindow(3600)
+SecurityMonitoringRuleEvaluationWindow.TWO_HOURS = SecurityMonitoringRuleEvaluationWindow(7200)

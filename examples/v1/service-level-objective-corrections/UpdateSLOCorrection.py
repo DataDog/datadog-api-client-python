@@ -19,13 +19,13 @@ CORRECTION_DATA_ID = environ["CORRECTION_DATA_ID"]
 body = SLOCorrectionUpdateRequest(
     data=SLOCorrectionUpdateData(
         attributes=SLOCorrectionUpdateRequestAttributes(
-            category=SLOCorrectionCategory("Deployment"),
+            category=SLOCorrectionCategory.DEPLOYMENT,
             description="Example-Update_an_SLO_correction_returns_OK_response",
             end=int((datetime.now() + relativedelta(hours=1)).timestamp()),
             start=int(datetime.now().timestamp()),
             timezone="UTC",
         ),
-        type=SLOCorrectionType("correction"),
+        type=SLOCorrectionType.CORRECTION,
     ),
 )
 

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SLOTimeframe(ModelSimple):
     """
@@ -18,16 +20,24 @@ class SLOTimeframe(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SEVEN_DAYS": "7d",
-            "THIRTY_DAYS": "30d",
-            "NINETY_DAYS": "90d",
-            "CUSTOM": "custom",
-        },
+        "7d",
+        "30d",
+        "90d",
+        "custom",
     }
+    SEVEN_DAYS: ClassVar["SLOTimeframe"]
+    THIRTY_DAYS: ClassVar["SLOTimeframe"]
+    NINETY_DAYS: ClassVar["SLOTimeframe"]
+    CUSTOM: ClassVar["SLOTimeframe"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SLOTimeframe.SEVEN_DAYS = SLOTimeframe("7d")
+SLOTimeframe.THIRTY_DAYS = SLOTimeframe("30d")
+SLOTimeframe.NINETY_DAYS = SLOTimeframe("90d")
+SLOTimeframe.CUSTOM = SLOTimeframe("custom")

@@ -21,11 +21,11 @@ body = SyntheticsCITestBody(
         SyntheticsCITest(
             basic_auth=SyntheticsBasicAuthWeb(
                 password="PaSSw0RD!",
-                type=SyntheticsBasicAuthWebType("web"),
+                type=SyntheticsBasicAuthWebType.WEB,
                 username="my_username",
             ),
             device_ids=[
-                SyntheticsDeviceID("laptop_large"),
+                SyntheticsDeviceID.LAPTOP_LARGE,
             ],
             locations=[
                 "aws:eu-west-3",

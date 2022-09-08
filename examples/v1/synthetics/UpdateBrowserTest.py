@@ -36,13 +36,13 @@ body = SyntheticsBrowserTest(
         config_variables=[
             SyntheticsConfigVariable(
                 name="VARIABLE_NAME",
-                type=SyntheticsConfigVariableType("text"),
+                type=SyntheticsConfigVariableType.TEXT,
             ),
         ],
         request=SyntheticsTestRequest(
             basic_auth=SyntheticsBasicAuthWeb(
                 password="PaSSw0RD!",
-                type=SyntheticsBasicAuthWebType("web"),
+                type=SyntheticsBasicAuthWebType.WEB,
                 username="my_username",
             ),
             certificate=SyntheticsTestRequestCertificate(
@@ -50,7 +50,7 @@ body = SyntheticsBrowserTest(
                 key=SyntheticsTestRequestCertificateItem(),
             ),
             certificate_domains=[],
-            method=HTTPMethod("GET"),
+            method=HTTPMethod.GET,
             proxy=SyntheticsTestRequestProxy(
                 url="https://example.com",
             ),
@@ -59,7 +59,7 @@ body = SyntheticsBrowserTest(
         variables=[
             SyntheticsBrowserVariable(
                 name="VARIABLE_NAME",
-                type=SyntheticsBrowserVariableType("text"),
+                type=SyntheticsBrowserVariableType.TEXT,
             ),
         ],
     ),
@@ -70,10 +70,10 @@ body = SyntheticsBrowserTest(
     name="Example test name",
     options=SyntheticsTestOptions(
         ci=SyntheticsTestCiOptions(
-            execution_rule=SyntheticsTestExecutionRule("blocking"),
+            execution_rule=SyntheticsTestExecutionRule.BLOCKING,
         ),
         device_ids=[
-            SyntheticsDeviceID("laptop_large"),
+            SyntheticsDeviceID.LAPTOP_LARGE,
         ],
         monitor_options=SyntheticsTestOptionsMonitorOptions(),
         restricted_roles=SyntheticsRestrictedRoles(
@@ -88,16 +88,16 @@ body = SyntheticsBrowserTest(
             is_enabled=True,
         ),
     ),
-    status=SyntheticsTestPauseStatus("live"),
+    status=SyntheticsTestPauseStatus.LIVE,
     steps=[
         SyntheticsStep(
-            type=SyntheticsStepType("assertElementContent"),
+            type=SyntheticsStepType.ASSERT_ELEMENT_CONTENT,
         ),
     ],
     tags=[
         "env:prod",
     ],
-    type=SyntheticsBrowserTestType("browser"),
+    type=SyntheticsBrowserTestType.BROWSER,
 )
 
 configuration = Configuration()

@@ -26,7 +26,7 @@ from datadog_api_client.v1.model.monitor_type import MonitorType
 
 body = Monitor(
     name="Example-Create_a_ci_tests_formula_and_functions_monitor_returns_OK_response",
-    type=MonitorType("ci-tests alert"),
+    type=MonitorType.CI_TESTS_ALERT,
     query='formula("query1 / query2 * 100").last("15m") >= 0.8',
     message="some message Notify: @hipchat-channel",
     tags=[
@@ -40,7 +40,7 @@ body = Monitor(
         ),
         variables=[
             MonitorFormulaAndFunctionEventQueryDefinition(
-                data_source=MonitorFormulaAndFunctionEventsDataSource("ci_tests"),
+                data_source=MonitorFormulaAndFunctionEventsDataSource.CI_TESTS,
                 name="query1",
                 search=MonitorFormulaAndFunctionEventQueryDefinitionSearch(
                     query="@test.status:fail",
@@ -49,12 +49,12 @@ body = Monitor(
                     "*",
                 ],
                 compute=MonitorFormulaAndFunctionEventQueryDefinitionCompute(
-                    aggregation=MonitorFormulaAndFunctionEventAggregation("count"),
+                    aggregation=MonitorFormulaAndFunctionEventAggregation.COUNT,
                 ),
                 group_by=[],
             ),
             MonitorFormulaAndFunctionEventQueryDefinition(
-                data_source=MonitorFormulaAndFunctionEventsDataSource("ci_tests"),
+                data_source=MonitorFormulaAndFunctionEventsDataSource.CI_TESTS,
                 name="query2",
                 search=MonitorFormulaAndFunctionEventQueryDefinitionSearch(
                     query="",
@@ -63,7 +63,7 @@ body = Monitor(
                     "*",
                 ],
                 compute=MonitorFormulaAndFunctionEventQueryDefinitionCompute(
-                    aggregation=MonitorFormulaAndFunctionEventAggregation("count"),
+                    aggregation=MonitorFormulaAndFunctionEventAggregation.COUNT,
                 ),
                 group_by=[],
             ),

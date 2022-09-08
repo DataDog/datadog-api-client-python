@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsBasicAuthDigestType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class SyntheticsBasicAuthDigestType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DIGEST": "digest",
-        },
+        "digest",
     }
+    DIGEST: ClassVar["SyntheticsBasicAuthDigestType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsBasicAuthDigestType.DIGEST = SyntheticsBasicAuthDigestType("digest")

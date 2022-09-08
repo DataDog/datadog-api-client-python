@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class IncidentIntegrationMetadataType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class IncidentIntegrationMetadataType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "INCIDENT_INTEGRATIONS": "incident_integrations",
-        },
+        "incident_integrations",
     }
+    INCIDENT_INTEGRATIONS: ClassVar["IncidentIntegrationMetadataType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+IncidentIntegrationMetadataType.INCIDENT_INTEGRATIONS = IncidentIntegrationMetadataType("incident_integrations")

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class RUMApplicationCreateType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class RUMApplicationCreateType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "RUM_APPLICATION_CREATE": "rum_application_create",
-        },
+        "rum_application_create",
     }
+    RUM_APPLICATION_CREATE: ClassVar["RUMApplicationCreateType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+RUMApplicationCreateType.RUM_APPLICATION_CREATE = RUMApplicationCreateType("rum_application_create")

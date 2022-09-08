@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MetricDistinctVolumeType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class MetricDistinctVolumeType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DISTINCT_METRIC_VOLUMES": "distinct_metric_volumes",
-        },
+        "distinct_metric_volumes",
     }
+    DISTINCT_METRIC_VOLUMES: ClassVar["MetricDistinctVolumeType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+MetricDistinctVolumeType.DISTINCT_METRIC_VOLUMES = MetricDistinctVolumeType("distinct_metric_volumes")

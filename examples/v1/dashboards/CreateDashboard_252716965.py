@@ -30,9 +30,9 @@ body = Dashboard(
             definition=DistributionWidgetDefinition(
                 title="Metrics HOP",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
+                title_align=WidgetTextAlign.LEFT,
                 show_legend=False,
-                type=DistributionWidgetDefinitionType("distribution"),
+                type=DistributionWidgetDefinitionType.DISTRIBUTION,
                 xaxis=DistributionWidgetXAxis(
                     max="auto",
                     include_zero=True,
@@ -49,10 +49,10 @@ body = Dashboard(
                     DistributionWidgetRequest(
                         query=FormulaAndFunctionMetricQueryDefinition(
                             query="histogram:trace.Load{*}",
-                            data_source=FormulaAndFunctionMetricDataSource("metrics"),
+                            data_source=FormulaAndFunctionMetricDataSource.METRICS,
                             name="query1",
                         ),
-                        request_type=DistributionWidgetHistogramRequestType("histogram"),
+                        request_type=DistributionWidgetHistogramRequestType.HISTOGRAM,
                         style=WidgetStyle(
                             palette="dog_classic",
                         ),
@@ -67,7 +67,7 @@ body = Dashboard(
             ),
         ),
     ],
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
 )
 
 configuration = Configuration()

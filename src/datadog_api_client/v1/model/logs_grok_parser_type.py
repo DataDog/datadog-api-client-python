@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsGrokParserType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class LogsGrokParserType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "GROK_PARSER": "grok-parser",
-        },
+        "grok-parser",
     }
+    GROK_PARSER: ClassVar["LogsGrokParserType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+LogsGrokParserType.GROK_PARSER = LogsGrokParserType("grok-parser")

@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class TableWidgetDefinitionType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class TableWidgetDefinitionType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "QUERY_TABLE": "query_table",
-        },
+        "query_table",
     }
+    QUERY_TABLE: ClassVar["TableWidgetDefinitionType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+TableWidgetDefinitionType.QUERY_TABLE = TableWidgetDefinitionType("query_table")

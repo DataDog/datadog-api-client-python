@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class LogsComputeType(ModelSimple):
     """
@@ -18,14 +20,18 @@ class LogsComputeType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "TIMESERIES": "timeseries",
-            "TOTAL": "total",
-        },
+        "timeseries",
+        "total",
     }
+    TIMESERIES: ClassVar["LogsComputeType"]
+    TOTAL: ClassVar["LogsComputeType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+LogsComputeType.TIMESERIES = LogsComputeType("timeseries")
+LogsComputeType.TOTAL = LogsComputeType("total")

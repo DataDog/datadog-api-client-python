@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class SyntheticsBasicAuthSigv4Type(ModelSimple):
     """
@@ -18,13 +20,15 @@ class SyntheticsBasicAuthSigv4Type(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SIGV4": "sigv4",
-        },
+        "sigv4",
     }
+    SIGV4: ClassVar["SyntheticsBasicAuthSigv4Type"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsBasicAuthSigv4Type.SIGV4 = SyntheticsBasicAuthSigv4Type("sigv4")

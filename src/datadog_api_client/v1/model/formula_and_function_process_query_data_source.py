@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class FormulaAndFunctionProcessQueryDataSource(ModelSimple):
     """
@@ -18,14 +20,18 @@ class FormulaAndFunctionProcessQueryDataSource(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "PROCESS": "process",
-            "CONTAINER": "container",
-        },
+        "process",
+        "container",
     }
+    PROCESS: ClassVar["FormulaAndFunctionProcessQueryDataSource"]
+    CONTAINER: ClassVar["FormulaAndFunctionProcessQueryDataSource"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+FormulaAndFunctionProcessQueryDataSource.PROCESS = FormulaAndFunctionProcessQueryDataSource("process")
+FormulaAndFunctionProcessQueryDataSource.CONTAINER = FormulaAndFunctionProcessQueryDataSource("container")

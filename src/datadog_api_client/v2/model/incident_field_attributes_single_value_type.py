@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class IncidentFieldAttributesSingleValueType(ModelSimple):
     """
@@ -18,14 +20,18 @@ class IncidentFieldAttributesSingleValueType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "DROPDOWN": "dropdown",
-            "TEXTBOX": "textbox",
-        },
+        "dropdown",
+        "textbox",
     }
+    DROPDOWN: ClassVar["IncidentFieldAttributesSingleValueType"]
+    TEXTBOX: ClassVar["IncidentFieldAttributesSingleValueType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+IncidentFieldAttributesSingleValueType.DROPDOWN = IncidentFieldAttributesSingleValueType("dropdown")
+IncidentFieldAttributesSingleValueType.TEXTBOX = IncidentFieldAttributesSingleValueType("textbox")

@@ -26,10 +26,10 @@ body = Dashboard(
             ),
             definition=CheckStatusWidgetDefinition(
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
-                type=CheckStatusWidgetDefinitionType("check_status"),
+                title_align=WidgetTextAlign.LEFT,
+                type=CheckStatusWidgetDefinitionType.CHECK_STATUS,
                 check="datadog.agent.up",
-                grouping=WidgetGrouping("check"),
+                grouping=WidgetGrouping.CHECK,
                 tags=[
                     "*",
                 ],
@@ -37,7 +37,7 @@ body = Dashboard(
         ),
     ],
     template_variables=[],
-    layout_type=DashboardLayoutType("free"),
+    layout_type=DashboardLayoutType.FREE,
     is_read_only=False,
     notify_list=[],
 )

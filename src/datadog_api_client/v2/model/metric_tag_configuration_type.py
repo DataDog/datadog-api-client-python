@@ -8,6 +8,8 @@ from datadog_api_client.model_utils import (
     cached_property,
 )
 
+from typing import ClassVar
+
 
 class MetricTagConfigurationType(ModelSimple):
     """
@@ -18,13 +20,15 @@ class MetricTagConfigurationType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "MANAGE_TAGS": "manage_tags",
-        },
+        "manage_tags",
     }
+    MANAGE_TAGS: ClassVar["MetricTagConfigurationType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+MetricTagConfigurationType.MANAGE_TAGS = MetricTagConfigurationType("manage_tags")

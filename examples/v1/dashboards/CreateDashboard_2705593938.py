@@ -27,11 +27,11 @@ body = Dashboard(
             definition=SunburstWidgetDefinition(
                 title="",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
-                type=SunburstWidgetDefinitionType("sunburst"),
+                title_align=WidgetTextAlign.LEFT,
+                type=SunburstWidgetDefinitionType.SUNBURST,
                 requests=[
                     SunburstWidgetRequest(
-                        response_format=FormulaAndFunctionResponseFormat("scalar"),
+                        response_format=FormulaAndFunctionResponseFormat.SCALAR,
                         formulas=[
                             WidgetFormula(
                                 formula="query1",
@@ -40,9 +40,9 @@ body = Dashboard(
                         queries=[
                             FormulaAndFunctionMetricQueryDefinition(
                                 query="sum:system.mem.used{*} by {service}",
-                                data_source=FormulaAndFunctionMetricDataSource("metrics"),
+                                data_source=FormulaAndFunctionMetricDataSource.METRICS,
                                 name="query1",
-                                aggregator=FormulaAndFunctionMetricAggregation("sum"),
+                                aggregator=FormulaAndFunctionMetricAggregation.SUM,
                             ),
                         ],
                     ),
@@ -56,7 +56,7 @@ body = Dashboard(
             ),
         ),
     ],
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
 )
 
 configuration = Configuration()
