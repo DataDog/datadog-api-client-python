@@ -236,7 +236,10 @@ class AsyncRESTClientObject:
     def __init__(self, configuration):
         import aiosonic  # type: ignore
 
-        self._client = aiosonic.HTTPClient()
+        proxy = None
+        if configuration.proxy:
+            proxy = aiosonic.Proxy(configuration.proxy, configuration.proxy_headers)
+        self._client = aiosonic.HTTPClient(proxy=proxy)
 
     async def request(
         self,
