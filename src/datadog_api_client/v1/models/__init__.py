@@ -663,6 +663,12 @@ from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidg
 from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
 from datadog_api_client.v1.model.toplist_widget_definition_type import ToplistWidgetDefinitionType
 from datadog_api_client.v1.model.toplist_widget_request import ToplistWidgetRequest
+from datadog_api_client.v1.model.topology_map_widget_definition import TopologyMapWidgetDefinition
+from datadog_api_client.v1.model.topology_map_widget_definition_type import TopologyMapWidgetDefinitionType
+from datadog_api_client.v1.model.topology_query import TopologyQuery
+from datadog_api_client.v1.model.topology_query_data_source import TopologyQueryDataSource
+from datadog_api_client.v1.model.topology_request import TopologyRequest
+from datadog_api_client.v1.model.topology_request_type import TopologyRequestType
 from datadog_api_client.v1.model.tree_map_color_by import TreeMapColorBy
 from datadog_api_client.v1.model.tree_map_group_by import TreeMapGroupBy
 from datadog_api_client.v1.model.tree_map_size_by import TreeMapSizeBy

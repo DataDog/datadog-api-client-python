@@ -4082,6 +4082,48 @@ toplist\_widget\_request
    :members:
    :show-inheritance:
 
+topology\_map\_widget\_definition
+---------------------------------
+
+.. automodule:: datadog_api_client.v1.model.topology_map_widget_definition
+   :members:
+   :show-inheritance:
+
+topology\_map\_widget\_definition\_type
+---------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.topology_map_widget_definition_type
+   :members:
+   :show-inheritance:
+
+topology\_query
+---------------
+
+.. automodule:: datadog_api_client.v1.model.topology_query
+   :members:
+   :show-inheritance:
+
+topology\_query\_data\_source
+-----------------------------
+
+.. automodule:: datadog_api_client.v1.model.topology_query_data_source
+   :members:
+   :show-inheritance:
+
+topology\_request
+-----------------
+
+.. automodule:: datadog_api_client.v1.model.topology_request
+   :members:
+   :show-inheritance:
+
+topology\_request\_type
+-----------------------
+
+.. automodule:: datadog_api_client.v1.model.topology_request_type
+   :members:
+   :show-inheritance:
+
 tree\_map\_color\_by
 --------------------
 
