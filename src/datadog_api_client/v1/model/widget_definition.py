@@ -355,6 +355,7 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
         from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
         from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
+        from datadog_api_client.v1.model.topology_map_widget_definition import TopologyMapWidgetDefinition
 
         return {
             "oneOf": [
@@ -387,5 +388,6 @@ class WidgetDefinition(ModelComposed):
                 TreeMapWidgetDefinition,
                 ListStreamWidgetDefinition,
                 FunnelWidgetDefinition,
+                TopologyMapWidgetDefinition,
             ],
         }

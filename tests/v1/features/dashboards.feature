@@ -433,6 +433,18 @@ Feature: Dashboards
     And the response "widgets[0].definition.type" is equal to "toplist"
 
   @team:DataDog/dashboards
+  Scenario: Create a new dashboard with topology_map widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/topology_map_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "topology_map"
+    And the response "widgets[0].definition.requests[0].request_type" is equal to "topology"
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "service_map"
+    And the response "widgets[0].definition.requests[0].query.service" is equal to ""
+    And the response "widgets[0].definition.requests[0].query.filters" is equal to ["env:none","environment:*"]
+
+  @team:DataDog/dashboards
   Scenario: Create a new dashboard with trace_service widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/trace_service_widget.json"
