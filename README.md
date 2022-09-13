@@ -85,6 +85,14 @@ If you want to enable requests logging, set the `debug` flag on your configurati
 configuration.debug = True
 ```
 
+### Configure proxy
+
+You can configure the client to use proxy by setting the `proxy` key on configuration object:
+
+```python
+configuration.proxy = "http://127.0.0.1:80"
+```
+
 ### Threads support
 
 You can run API calls in a thread by using `ThreadedApiClient` in place of `ApiClient`. API calls will then
