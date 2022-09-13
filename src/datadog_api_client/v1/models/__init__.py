@@ -430,6 +430,7 @@ from datadog_api_client.v1.model.slo_correction_type import SLOCorrectionType
 from datadog_api_client.v1.model.slo_correction_update_data import SLOCorrectionUpdateData
 from datadog_api_client.v1.model.slo_correction_update_request import SLOCorrectionUpdateRequest
 from datadog_api_client.v1.model.slo_correction_update_request_attributes import SLOCorrectionUpdateRequestAttributes
+from datadog_api_client.v1.model.slo_creator import SLOCreator
 from datadog_api_client.v1.model.slo_delete_response import SLODeleteResponse
 from datadog_api_client.v1.model.slo_error_budget_remaining_data import SLOErrorBudgetRemainingData
 from datadog_api_client.v1.model.slo_error_timeframe import SLOErrorTimeframe
@@ -446,6 +447,8 @@ from datadog_api_client.v1.model.slo_history_sli_data import SLOHistorySLIData
 from datadog_api_client.v1.model.slo_list_response import SLOListResponse
 from datadog_api_client.v1.model.slo_list_response_metadata import SLOListResponseMetadata
 from datadog_api_client.v1.model.slo_list_response_metadata_page import SLOListResponseMetadataPage
+from datadog_api_client.v1.model.slo_overall_statuses import SLOOverallStatuses
+from datadog_api_client.v1.model.slo_raw_error_budget_remaining import SLORawErrorBudgetRemaining
 from datadog_api_client.v1.model.slo_response import SLOResponse
 from datadog_api_client.v1.model.slo_response_data import SLOResponseData
 from datadog_api_client.v1.model.slo_threshold import SLOThreshold
@@ -462,6 +465,7 @@ from datadog_api_client.v1.model.scatterplot_dimension import ScatterplotDimensi
 from datadog_api_client.v1.model.scatterplot_table_request import ScatterplotTableRequest
 from datadog_api_client.v1.model.scatterplot_widget_aggregator import ScatterplotWidgetAggregator
 from datadog_api_client.v1.model.scatterplot_widget_formula import ScatterplotWidgetFormula
+from datadog_api_client.v1.model.search_slo_query import SearchSLOQuery
 from datadog_api_client.v1.model.search_slo_response import SearchSLOResponse
 from datadog_api_client.v1.model.search_slo_response_data import SearchSLOResponseData
 from datadog_api_client.v1.model.search_slo_response_data_attributes import SearchSLOResponseDataAttributes
@@ -475,6 +479,9 @@ from datadog_api_client.v1.model.search_slo_response_data_attributes_facets_obje
 from datadog_api_client.v1.model.search_slo_response_links import SearchSLOResponseLinks
 from datadog_api_client.v1.model.search_slo_response_meta import SearchSLOResponseMeta
 from datadog_api_client.v1.model.search_slo_response_meta_page import SearchSLOResponseMetaPage
+from datadog_api_client.v1.model.search_slo_threshold import SearchSLOThreshold
+from datadog_api_client.v1.model.search_slo_timeframe import SearchSLOTimeframe
+from datadog_api_client.v1.model.search_service_level_objective import SearchServiceLevelObjective
 from datadog_api_client.v1.model.series import Series
 from datadog_api_client.v1.model.service_check import ServiceCheck
 from datadog_api_client.v1.model.service_check_status import ServiceCheckStatus
