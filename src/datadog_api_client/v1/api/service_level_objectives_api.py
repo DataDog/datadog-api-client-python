@@ -307,6 +307,7 @@ class ServiceLevelObjectivesApi:
                                 "default_value": "datadoghq.com",
                                 "enum_values": [
                                     "datadoghq.com",
+                                    "datadoghq.eu",
                                     "us3.datadoghq.com",
                                     "us5.datadoghq.com",
                                     "ddog-gov.com",
@@ -360,6 +361,11 @@ class ServiceLevelObjectivesApi:
                 "page_number": {
                     "openapi_types": (int,),
                     "attribute": "page[number]",
+                    "location": "query",
+                },
+                "include_facets": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_facets",
                     "location": "query",
                 },
             },
@@ -624,17 +630,22 @@ class ServiceLevelObjectivesApi:
         query: Union[str, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
         page_number: Union[int, UnsetType] = unset,
+        include_facets: Union[bool, UnsetType] = unset,
     ) -> SearchSLOResponse:
         """Search for SLOs.
 
         Get a list of service level objective objects for your organization.
 
         :param query: The query string to filter results based on SLO names.
+            Some examples of queries include ``service:<service-name>``
+            and ``<slo-name>``.
         :type query: str, optional
         :param page_size: The number of files to return in the response ``[default=10]``.
         :type page_size: int, optional
         :param page_number: The identifier of the first page to return. This parameter is used for the pagination feature ``[default=0]``.
         :type page_number: int, optional
+        :param include_facets: Whether or not to return facet information in the response ``[default=false]``.
+        :type include_facets: bool, optional
         :rtype: SearchSLOResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -646,6 +657,9 @@ class ServiceLevelObjectivesApi:
 
         if page_number is not unset:
             kwargs["page_number"] = page_number
+
+        if include_facets is not unset:
+            kwargs["include_facets"] = include_facets
 
         return self._search_slo_endpoint.call_with_http_info(**kwargs)
 

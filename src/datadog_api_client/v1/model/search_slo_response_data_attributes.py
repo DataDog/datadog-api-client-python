@@ -15,11 +15,11 @@ class SearchSLOResponseDataAttributes(ModelNormal):
         from datadog_api_client.v1.model.search_slo_response_data_attributes_facets import (
             SearchSLOResponseDataAttributesFacets,
         )
-        from datadog_api_client.v1.model.service_level_objective import ServiceLevelObjective
+        from datadog_api_client.v1.model.search_service_level_objective import SearchServiceLevelObjective
 
         return {
             "facets": (SearchSLOResponseDataAttributesFacets,),
-            "slo": ([ServiceLevelObjective],),
+            "slo": ([SearchServiceLevelObjective],),
         }
 
     attribute_map = {
@@ -35,7 +35,7 @@ class SearchSLOResponseDataAttributes(ModelNormal):
         :type facets: SearchSLOResponseDataAttributesFacets, optional
 
         :param slo: SLOs
-        :type slo: [ServiceLevelObjective], optional
+        :type slo: [SearchServiceLevelObjective], optional
         """
         super().__init__(kwargs)
 

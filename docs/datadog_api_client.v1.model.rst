@@ -2584,6 +2584,20 @@ scatterplot\_widget\_formula
    :members:
    :show-inheritance:
 
+search\_service\_level\_objective
+---------------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_service_level_objective
+   :members:
+   :show-inheritance:
+
+search\_slo\_query
+------------------
+
+.. automodule:: datadog_api_client.v1.model.search_slo_query
+   :members:
+   :show-inheritance:
+
 search\_slo\_response
 ---------------------
 
@@ -2644,6 +2658,20 @@ search\_slo\_response\_meta\_page
 ---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.search_slo_response_meta_page
+   :members:
+   :show-inheritance:
+
+search\_slo\_threshold
+----------------------
+
+.. automodule:: datadog_api_client.v1.model.search_slo_threshold
+   :members:
+   :show-inheritance:
+
+search\_slo\_timeframe
+----------------------
+
+.. automodule:: datadog_api_client.v1.model.search_slo_timeframe
    :members:
    :show-inheritance:
 
@@ -2892,6 +2920,13 @@ slo\_correction\_update\_request\_attributes
    :members:
    :show-inheritance:
 
+slo\_creator
+------------
+
+.. automodule:: datadog_api_client.v1.model.slo_creator
+   :members:
+   :show-inheritance:
+
 slo\_delete\_response
 ---------------------
 
@@ -3001,6 +3036,20 @@ slo\_list\_response\_metadata\_page
 -----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_list_response_metadata_page
+   :members:
+   :show-inheritance:
+
+slo\_overall\_statuses
+----------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_overall_statuses
+   :members:
+   :show-inheritance:
+
+slo\_raw\_error\_budget\_remaining
+----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_raw_error_budget_remaining
    :members:
    :show-inheritance:
 
