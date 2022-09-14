@@ -15,6 +15,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         return {
             "api_percentage": (float,),
             "api_usage": (float,),
+            "apm_fargate_percentage": (float,),
+            "apm_fargate_usage": (float,),
             "apm_host_percentage": (float,),
             "apm_host_usage": (float,),
             "appsec_percentage": (float,),
@@ -56,6 +58,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
     attribute_map = {
         "api_percentage": "api_percentage",
         "api_usage": "api_usage",
+        "apm_fargate_percentage": "apm_fargate_percentage",
+        "apm_fargate_usage": "apm_fargate_usage",
         "apm_host_percentage": "apm_host_percentage",
         "apm_host_usage": "apm_host_usage",
         "appsec_percentage": "appsec_percentage",
@@ -103,6 +107,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param api_usage: The synthetic API test usage by tag(s).
         :type api_usage: float, optional
+
+        :param apm_fargate_percentage: The percentage of APM ECS Fargate task usage by tag(s).
+        :type apm_fargate_percentage: float, optional
+
+        :param apm_fargate_usage: The APM ECS Fargate task usage by tag(s).
+        :type apm_fargate_usage: float, optional
 
         :param apm_host_percentage: The percentage of APM host usage by tag(s).
         :type apm_host_percentage: float, optional

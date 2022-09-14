@@ -14,6 +14,7 @@ class UsageFargateHour(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "apm_fargate_count": (int,),
             "avg_profiled_fargate_tasks": (int,),
             "hour": (datetime,),
             "org_name": (str,),
@@ -22,6 +23,7 @@ class UsageFargateHour(ModelNormal):
         }
 
     attribute_map = {
+        "apm_fargate_count": "apm_fargate_count",
         "avg_profiled_fargate_tasks": "avg_profiled_fargate_tasks",
         "hour": "hour",
         "org_name": "org_name",
@@ -32,6 +34,9 @@ class UsageFargateHour(ModelNormal):
     def __init__(self_, *args, **kwargs):
         """
         Number of Fargate tasks run and hourly usage.
+
+        :param apm_fargate_count: The high-water mark of APM ECS Fargate tasks during the given hour.
+        :type apm_fargate_count: int, optional
 
         :param avg_profiled_fargate_tasks: The average profiled task count for Fargate Profiling.
         :type avg_profiled_fargate_tasks: int, optional

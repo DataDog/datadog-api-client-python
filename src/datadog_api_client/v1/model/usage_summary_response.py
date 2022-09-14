@@ -19,6 +19,7 @@ class UsageSummaryResponse(ModelNormal):
         return {
             "agent_host_top99p_sum": (int,),
             "apm_azure_app_service_host_top99p_sum": (int,),
+            "apm_fargate_count_avg_sum": (int,),
             "apm_host_top99p_sum": (int,),
             "audit_logs_lines_indexed_agg_sum": (int,),
             "avg_profiled_fargate_tasks_sum": (int,),
@@ -96,6 +97,7 @@ class UsageSummaryResponse(ModelNormal):
     attribute_map = {
         "agent_host_top99p_sum": "agent_host_top99p_sum",
         "apm_azure_app_service_host_top99p_sum": "apm_azure_app_service_host_top99p_sum",
+        "apm_fargate_count_avg_sum": "apm_fargate_count_avg_sum",
         "apm_host_top99p_sum": "apm_host_top99p_sum",
         "audit_logs_lines_indexed_agg_sum": "audit_logs_lines_indexed_agg_sum",
         "avg_profiled_fargate_tasks_sum": "avg_profiled_fargate_tasks_sum",
@@ -179,6 +181,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param apm_azure_app_service_host_top99p_sum: Shows the 99th percentile of all Azure app services using APM over all hours in the current months all organizations.
         :type apm_azure_app_service_host_top99p_sum: int, optional
+
+        :param apm_fargate_count_avg_sum: Shows the average of all APM ECS Fargate tasks over all hours in the current months for all organizations.
+        :type apm_fargate_count_avg_sum: int, optional
 
         :param apm_host_top99p_sum: Shows the 99th percentile of all distinct APM hosts over all hours in the current months for all organizations.
         :type apm_host_top99p_sum: int, optional
