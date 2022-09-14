@@ -85,6 +85,14 @@ If you want to enable requests logging, set the `debug` flag on your configurati
 configuration.debug = True
 ```
 
+### Configure proxy
+
+You can configure the client to use proxy by setting the `proxy` key on configuration object:
+
+```python
+configuration.proxy = "http://127.0.0.1:80"
+```
+
 ### Threads support
 
 You can run API calls in a thread by using `ThreadedApiClient` in place of `ApiClient`. API calls will then
@@ -92,11 +100,11 @@ return a `AsyncResult` instance on which you can call get to retrieve the result
 
 ```python
 from datadog_api_client import Configuration, ThreadedApiClient
-from datadog_api_client.v1.api import dashboards_api
+from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 
 configuration = Configuration()
 with ThreadedApiClient(configuration) as api_client:
-    api_instance = dashboards_api.DashboardsApi(api_client)
+    api_instance = DashboardsApi(api_client)
     result = api_instance.list_dashboards()
     dashboards = result.get()
     print(dashboards)
@@ -113,14 +121,14 @@ To make async support available, you need to install the extra `async` qualifier
 import asyncio
 
 from datadog_api_client import Configuration, AsyncApiClient
-from datadog_api_client.v1.api import dashboards_api
+from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 
 async def main():
     configuration = Configuration()
     async with AsyncApiClient(configuration) as api_client:
-        api_instance = dashboards_api.DashboardsApi(api_client)
-        dashbooards = await api_instance.list_dashboards()
-        print(dashbooards)
+        api_instance = DashboardsApi(api_client)
+        dashboards = await api_instance.list_dashboards()
+        print(dashboards)
 
 asyncio.run(main())
 ```
