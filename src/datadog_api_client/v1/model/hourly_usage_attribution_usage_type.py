@@ -15,12 +15,13 @@ class HourlyUsageAttributionUsageType(ModelSimple):
     """
     Supported products for hourly usage attribution requests.
 
-    :param value: Must be one of ["api_usage", "apm_host_usage", "appsec_usage", "browser_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "dbm_hosts_usage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_ingested_logs_usage", "estimated_indexed_spans_usage", "estimated_ingested_spans_usage", "fargate_usage", "functions_usage", "indexed_logs_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "profiled_container_usage", "profiled_host_usage", "snmp_usage"].
+    :param value: Must be one of ["api_usage", "apm_fargate_usage", "apm_host_usage", "appsec_usage", "browser_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "dbm_hosts_usage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_ingested_logs_usage", "estimated_indexed_spans_usage", "estimated_ingested_spans_usage", "fargate_usage", "functions_usage", "indexed_logs_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "profiled_container_usage", "profiled_host_usage", "snmp_usage"].
     :type value: str
     """
 
     allowed_values = {
         "api_usage",
+        "apm_fargate_usage",
         "apm_host_usage",
         "appsec_usage",
         "browser_usage",
@@ -47,6 +48,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
         "snmp_usage",
     }
     API_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    APM_FARGATE_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     APM_HOST_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     APPSEC_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     BROWSER_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
@@ -80,6 +82,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
 
 
 HourlyUsageAttributionUsageType.API_USAGE = HourlyUsageAttributionUsageType("api_usage")
+HourlyUsageAttributionUsageType.APM_FARGATE_USAGE = HourlyUsageAttributionUsageType("apm_fargate_usage")
 HourlyUsageAttributionUsageType.APM_HOST_USAGE = HourlyUsageAttributionUsageType("apm_host_usage")
 HourlyUsageAttributionUsageType.APPSEC_USAGE = HourlyUsageAttributionUsageType("appsec_usage")
 HourlyUsageAttributionUsageType.BROWSER_USAGE = HourlyUsageAttributionUsageType("browser_usage")
