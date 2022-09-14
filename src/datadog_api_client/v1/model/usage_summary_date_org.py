@@ -15,6 +15,7 @@ class UsageSummaryDateOrg(ModelNormal):
         return {
             "agent_host_top99p": (int,),
             "apm_azure_app_service_host_top99p": (int,),
+            "apm_fargate_count_avg": (int,),
             "apm_host_top99p": (int,),
             "audit_logs_lines_indexed_sum": (int,),
             "avg_profiled_fargate_tasks": (int,),
@@ -85,6 +86,7 @@ class UsageSummaryDateOrg(ModelNormal):
     attribute_map = {
         "agent_host_top99p": "agent_host_top99p",
         "apm_azure_app_service_host_top99p": "apm_azure_app_service_host_top99p",
+        "apm_fargate_count_avg": "apm_fargate_count_avg",
         "apm_host_top99p": "apm_host_top99p",
         "audit_logs_lines_indexed_sum": "audit_logs_lines_indexed_sum",
         "avg_profiled_fargate_tasks": "avg_profiled_fargate_tasks",
@@ -161,6 +163,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param apm_azure_app_service_host_top99p: Shows the 99th percentile of all Azure app services using APM over all hours in the current date for the given org.
         :type apm_azure_app_service_host_top99p: int, optional
+
+        :param apm_fargate_count_avg: Shows the average of all APM ECS Fargate tasks over all hours in the current months for the given org.
+        :type apm_fargate_count_avg: int, optional
 
         :param apm_host_top99p: Shows the 99th percentile of all distinct APM hosts over all hours in the current date for the given org.
         :type apm_host_top99p: int, optional
