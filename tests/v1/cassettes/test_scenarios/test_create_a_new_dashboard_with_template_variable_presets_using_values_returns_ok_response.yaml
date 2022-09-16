@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{"description":null,"is_read_only":false,"layout_type":"ordered","notify_list":[],"reflow_type":"auto","restricted_roles":[],"template_variable_presets":[{"name":"my
+      saved view","template_variables":[{"name":"datacenter","values":["*","my-host"]}]}],"template_variables":[{"available_values":["my-host","host1","host2"],"defaults":["my-host"],"name":"host1","prefix":"host"}],"title":"","widgets":[{"definition":{"requests":{"fill":{"q":"avg:system.cpu.user{*}"}},"type":"hostmap"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":[],"description":null,"restricted_roles":[],"author_name":null,"template_variable_presets":[{"template_variables":[{"values":["*","my-host"],"name":"datacenter"}],"name":"my
+        saved view"}],"template_variables":[{"prefix":"host","defaults":["my-host"],"available_values":["my-host","host1","host2"],"name":"host1"}],"is_read_only":false,"id":"6j2-ja3-r9z","title":"","url":"/dashboard/6j2-ja3-r9z/","created_at":"2022-09-12T20:05:50.380181+00:00","modified_at":"2022-09-12T20:05:50.380181+00:00","reflow_type":"auto","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":{"fill":{"q":"avg:system.cpu.user{*}"}},"type":"hostmap"},"id":8337056750682432}],"layout_type":"ordered"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/6j2-ja3-r9z
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"6j2-ja3-r9z"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
