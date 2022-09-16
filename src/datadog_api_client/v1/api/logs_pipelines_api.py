@@ -16,7 +16,6 @@ class LogsPipelinesApi:
     Pipelines and processors operate on incoming logs, parsing
     and transforming them into structured attributes for easier querying.
 
-
     *
       See the `pipelines configuration page <https://app.datadoghq.com/logs/pipelines>`_
       for a list of the pipelines and processors currently configured in web UI.

@@ -163,13 +163,11 @@ class LogsApi:
 
         Send your logs to your Datadog platform over HTTP. Limits per HTTP request are:
 
-
         * Maximum content size per payload (uncompressed): 5MB
         * Maximum size for a single log: 1MB
         * Maximum array size if sending multiple logs in an array: 1000 entries
 
         Any log exceeding 1MB is accepted and truncated by Datadog:
-
 
         * For a single log request, the API truncates the log at 1MB and returns a 2xx.
         * For a multi-logs request, the API processes all logs, truncates only logs larger than 1MB, and returns a 2xx.
@@ -178,7 +176,6 @@ class LogsApi:
         Add the ``Content-Encoding: gzip`` header to the request when sending compressed logs.
 
         The status codes answered by the HTTP API are:
-
 
         * 200: OK
         * 400: Bad request (likely an issue in the payload formatting)

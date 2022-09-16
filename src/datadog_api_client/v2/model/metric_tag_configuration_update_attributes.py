@@ -35,7 +35,6 @@ class MetricTagConfigurationUpdateAttributes(ModelNormal):
             Gauge metrics require the (time: avg, space: avg) aggregation.
             Additional time & space combinations are also available:
 
-
             * time: avg, space: avg
             * time: avg, space: max
             * time: avg, space: min

@@ -138,7 +138,6 @@ class MonitorOptions(ModelNormal):
 
             **Examples**
 
-
             * If ``True`` , ``[Triggered on {host:h1}] Monitor Title``
             * If ``False`` , ``[Triggered] Monitor Title``
         :type include_tags: bool, optional

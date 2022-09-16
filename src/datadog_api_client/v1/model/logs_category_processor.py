@@ -39,7 +39,6 @@ class LogsCategoryProcessor(ModelNormal):
 
         **Notes** :
 
-
         * The syntax of the query is the one of Logs Explorer search bar.
           The query can be done on any log attribute or tag, whether it is a facet or not.
           Wildcards can also be used inside your query.

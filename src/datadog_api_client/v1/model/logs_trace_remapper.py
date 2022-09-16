@@ -32,7 +32,6 @@ class LogsTraceRemapper(ModelNormal):
         """
         There are two ways to improve correlation between application traces and logs.
 
-
         #.
            Follow the documentation on `how to inject a trace ID in the application logs <https://docs.datadoghq.com/tracing/connect_logs_and_traces>`_
            and by default log integrations take care of all the rest of the setup.

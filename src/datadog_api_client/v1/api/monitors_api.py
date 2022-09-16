@@ -382,7 +382,6 @@ class MonitorsApi:
 
         The type of monitor chosen from:
 
-
         * anomaly: ``query alert``
         * APM: ``query alert`` or ``trace-analytics alert``
         * composite: ``composite``
@@ -410,7 +409,6 @@ class MonitorsApi:
 
         Example: ``time_aggr(time_window):space_aggr:metric{tags} [by {key}] operator #``
 
-
         * ``time_aggr`` : avg, sum, max, min, change, or pct_change
         * ``time_window`` : ``last_#m`` (with ``#`` between 1 and 10080 depending on the monitor type) or ``last_#h`` (with ``#`` between 1 and 168 depending on the monitor type) or ``last_1d`` , or ``last_1w``
         * ``space_aggr`` : avg, sum, min, or max
@@ -421,7 +419,6 @@ class MonitorsApi:
 
         If you are using the ``_change_`` or ``_pct_change_`` time aggregator, instead use ``change_aggr(time_aggr(time_window),
         timeshift):space_aggr:metric{tags} [by {key}] operator #`` with:
-
 
         * ``change_aggr`` change, pct_change
         * ``time_aggr`` avg, sum, max, min `Learn more <https://docs.datadoghq.com/monitors/create/types/#define-the-conditions>`_
@@ -435,7 +432,6 @@ class MonitorsApi:
 
         Example: ``"check".over(tags).last(count).by(group).count_by_status()``
 
-
         * ``check`` name of the check, for example ``datadog.agent.up``
         * ``tags`` one or more quoted tags (comma-separated), or "*". for example: ``.over("env:prod", "role:db")`` ; ``over`` cannot be blank.
         * ``count`` must be at greater than or equal to your max threshold (defined in the ``options`` ). It is limited to 100.
@@ -446,7 +442,6 @@ class MonitorsApi:
         **Event Alert Query**
 
         Example: ``events('sources:nagios status:error,warning priority:normal tags: "string query"').rollup("count").last("1h")"``
-
 
         * ``event`` , the event query string:
         * ``string_query`` free text query to match against event title and text.
@@ -465,7 +460,6 @@ class MonitorsApi:
 
         Example: ``events(query).rollup(rollup_method[, measure]).last(time_window) operator #``
 
-
         * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
         * ``rollup_method`` The stats roll-up method - supports ``count`` , ``avg`` and ``cardinality``.
         * ``measure`` For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
@@ -477,7 +471,6 @@ class MonitorsApi:
 
         Example: ``processes(search).over(tags).rollup('count').last(timeframe) operator #``
 
-
         * ``search`` free text search string for querying processes.
           Matching processes match results on the `Live Processes <https://docs.datadoghq.com/infrastructure/process/?tab=linuxwindows>`_ page.
         * ``tags`` one or more tags (comma-separated)
@@ -488,7 +481,6 @@ class MonitorsApi:
         **Logs Alert Query**
 
         Example: ``logs(query).index(index_name).rollup(rollup_method[, measure]).last(time_window) operator #``
-
 
         * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
         * ``index_name`` For multi-index organizations, the log index in which the request is performed.
@@ -502,7 +494,6 @@ class MonitorsApi:
 
         Example: ``12345 && 67890`` , where ``12345`` and ``67890`` are the IDs of non-composite monitors
 
-
         * ``name`` [ *required* , *default* = **dynamic, based on query** ]: The name of the alert.
         * ``message`` [ *required* , *default* = **dynamic, based on query** ]: A message to include with notifications for this monitor.
           Email notifications can be sent to specific users by using the same '@username' notation as events.
@@ -514,7 +505,6 @@ class MonitorsApi:
 
         Example: ``error_budget("slo_id").over("time_window") operator #``
 
-
         * ``slo_id`` : The alphanumeric SLO ID of the SLO you are configuring the alert for.
         * `time_window`: The time window of the SLO target you wish to alert on. Valid options: ``7d`` , ``30d`` , ``90d``.
         * ``operator`` : ``>=`` or ``>``
@@ -522,7 +512,6 @@ class MonitorsApi:
         **Audit Alert Query**
 
         Example: ``audits(query).rollup(rollup_method[, measure]).last(time_window) operator #``
-
 
         * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
         * ``rollup_method`` The stats roll-up method - supports ``count`` , ``avg`` and ``cardinality``.
@@ -537,7 +526,6 @@ class MonitorsApi:
 
         Example: ``ci-pipelines(query).rollup(rollup_method[, measure]).last(time_window) operator #``
 
-
         * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
         * ``rollup_method`` The stats roll-up method - supports ``count`` , ``avg`` , and ``cardinality``.
         * ``measure`` For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
@@ -550,7 +538,6 @@ class MonitorsApi:
         **CI Tests Alert Query**
 
         Example: ``ci-tests(query).rollup(rollup_method[, measure]).last(time_window) operator #``
-
 
         * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
         * ``rollup_method`` The stats roll-up method - supports ``count`` , ``avg`` , and ``cardinality``.
@@ -565,7 +552,6 @@ class MonitorsApi:
 
         Example(RUM): ``error-tracking-rum(query).rollup(rollup_method[, measure]).last(time_window) operator #``
         Example(APM Traces): ``error-tracking-traces(query).rollup(rollup_method[, measure]).last(time_window) operator #``
-
 
         * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
         * ``rollup_method`` The stats roll-up method - supports ``count`` , ``avg`` , and ``cardinality``.
@@ -719,7 +705,6 @@ class MonitorsApi:
         :type per_page: int, optional
         :param sort: String for sort order, composed of field and sort order separate by a comma, for example ``name,asc``. Supported sort directions: ``asc`` , ``desc``. Supported fields:
 
-
             * ``name``
             * ``status``
             * ``tags``
@@ -764,7 +749,6 @@ class MonitorsApi:
         :param per_page: Number of monitors to return per page.
         :type per_page: int, optional
         :param sort: String for sort order, composed of field and sort order separate by a comma, for example ``name,asc``. Supported sort directions: ``asc`` , ``desc``. Supported fields:
-
 
             * ``name``
             * ``status``

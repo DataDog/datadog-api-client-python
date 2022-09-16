@@ -49,7 +49,6 @@ class LogsArithmeticProcessor(ModelNormal):
 
         *Notes* :
 
-
         * The operator ``-`` needs to be space split in the formula as it can also be contained in attribute names.
         * If the target attribute already exists, it is overwritten by the result of the formula.
         * Results are rounded up to the 9th decimal. For example, if the result of the formula is ``0.1234567891`` ,

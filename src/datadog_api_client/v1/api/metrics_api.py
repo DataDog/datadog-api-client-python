@@ -25,7 +25,6 @@ class MetricsApi:
     """
     The metrics endpoint allows you to:
 
-
     * Post metrics data so it can be graphed on Datadog’s dashboards
     * Query metrics from any time period
     * Modify tag configurations for metrics
@@ -373,7 +372,6 @@ class MetricsApi:
         The maximum payload size is 3.2 megabytes (3200000 bytes). Compressed payloads must have a decompressed size of less than 62 megabytes (62914560 bytes).
 
         If you’re submitting metrics directly to the Datadog API without using DogStatsD, expect:
-
 
         * 64 bits for the timestamp
         * 64 bits for the value

@@ -42,7 +42,6 @@ class LogsStringBuilderProcessor(ModelNormal):
 
         **Notes** :
 
-
         * The processor only accepts attributes with values or an array of values in the blocks.
         * If an attribute cannot be used (object or array of object),
           it is replaced by an empty string or the entire operation is skipped depending on your selection.
