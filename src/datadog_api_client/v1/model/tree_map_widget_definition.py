@@ -53,19 +53,19 @@ class TreeMapWidgetDefinition(ModelNormal):
         """
         The treemap visualization enables you to display hierarchical and nested data. It is well suited for queries that describe part-whole relationships, such as resource usage by availability zone, data center, or team.
 
-        :param color_by: (deprecated) The attribute formerly used to determine color in the widget.
+        :param color_by: (deprecated) The attribute formerly used to determine color in the widget. **Deprecated**.
         :type color_by: TreeMapColorBy, optional
 
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
 
-        :param group_by: (deprecated) The attribute formerly used to group elements in the widget.
+        :param group_by: (deprecated) The attribute formerly used to group elements in the widget. **Deprecated**.
         :type group_by: TreeMapGroupBy, optional
 
         :param requests: List of treemap widget requests.
         :type requests: [TreeMapWidgetRequest]
 
-        :param size_by: (deprecated) The attribute formerly used to determine size in the widget.
+        :param size_by: (deprecated) The attribute formerly used to determine size in the widget. **Deprecated**.
         :type size_by: TreeMapSizeBy, optional
 
         :param time: Time setting for the widget.

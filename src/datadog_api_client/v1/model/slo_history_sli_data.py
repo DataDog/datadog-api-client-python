@@ -84,7 +84,7 @@ class SLOHistorySLIData(ModelNormal):
         :param span_precision: The amount of decimal places the SLI value is accurate to for the given from ``&&`` to timestamp.
         :type span_precision: float, optional
 
-        :param uptime: Use ``sli_value`` instead.
+        :param uptime: Use ``sli_value`` instead. **Deprecated**.
         :type uptime: float, optional
         """
         super().__init__(kwargs)

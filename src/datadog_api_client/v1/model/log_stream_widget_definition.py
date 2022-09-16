@@ -60,7 +60,7 @@ class LogStreamWidgetDefinition(ModelNormal):
         :param indexes: An array of index names to query in the stream. Use [] to query all indexes at once.
         :type indexes: [str], optional
 
-        :param logset: ID of the log set to use.
+        :param logset: ID of the log set to use. **Deprecated**.
         :type logset: str, optional
 
         :param message_display: Amount of log lines to display
