@@ -159,7 +159,7 @@ class LogsApi:
         content_encoding: Union[ContentEncoding, UnsetType] = unset,
         ddtags: Union[str, UnsetType] = unset,
     ) -> dict:
-        """Send logs.
+        """Send logs. **Deprecated**.
 
         Send your logs to your Datadog platform over HTTP. Limits per HTTP request are:
 

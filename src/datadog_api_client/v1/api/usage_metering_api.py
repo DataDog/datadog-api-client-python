@@ -1347,7 +1347,7 @@ class UsageMeteringApi:
         sort_dir: Union[UsageSortDirection, UnsetType] = unset,
         sort: Union[UsageSort, UnsetType] = unset,
     ) -> UsageCustomReportsResponse:
-        """Get the list of available daily custom reports.
+        """Get the list of available daily custom reports. **Deprecated**.
 
         Get daily custom reports.
         **Note:** This endpoint will be fully deprecated on December 1, 2022.
@@ -1503,7 +1503,7 @@ class UsageMeteringApi:
         sort_dir: Union[UsageSortDirection, UnsetType] = unset,
         sort: Union[UsageSort, UnsetType] = unset,
     ) -> UsageCustomReportsResponse:
-        """Get the list of available monthly custom reports.
+        """Get the list of available monthly custom reports. **Deprecated**.
 
         Get monthly custom reports.
         **Note:** This endpoint will be fully deprecated on December 1, 2022.
@@ -1615,7 +1615,7 @@ class UsageMeteringApi:
         self,
         report_id: str,
     ) -> UsageSpecifiedCustomReportsResponse:
-        """Get specified daily custom reports.
+        """Get specified daily custom reports. **Deprecated**.
 
         Get specified daily custom reports.
         **Note:** This endpoint will be fully deprecated on December 1, 2022.
@@ -1635,7 +1635,7 @@ class UsageMeteringApi:
         self,
         report_id: str,
     ) -> UsageSpecifiedCustomReportsResponse:
-        """Get specified monthly custom reports.
+        """Get specified monthly custom reports. **Deprecated**.
 
         Get specified monthly custom reports.
         **Note:** This endpoint will be fully deprecated on December 1, 2022.
@@ -1689,7 +1689,7 @@ class UsageMeteringApi:
         offset: Union[int, UnsetType] = unset,
         limit: Union[int, UnsetType] = unset,
     ) -> UsageAttributionResponse:
-        """Get usage attribution.
+        """Get usage attribution. **Deprecated**.
 
         Get usage attribution.
         **Note:** This endpoint will be fully deprecated on December 1, 2022.
@@ -2344,7 +2344,7 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageSyntheticsResponse:
-        """Get hourly usage for synthetics checks.
+        """Get hourly usage for synthetics checks. **Deprecated**.
 
         Get hourly usage for `synthetics checks <https://docs.datadoghq.com/synthetics/>`_.
         **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
