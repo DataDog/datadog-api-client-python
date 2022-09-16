@@ -4,3 +4,11 @@
 
 from datadog_api_client.api_client import ApiClient, AsyncApiClient, ThreadedApiClient
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.exceptions import (
+    OpenApiException,
+    ApiAttributeError,
+    ApiTypeError,
+    ApiValueError,
+    ApiKeyError,
+    ApiException,
+)

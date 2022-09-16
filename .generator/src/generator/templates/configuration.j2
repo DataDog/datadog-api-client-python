@@ -383,7 +383,7 @@ class Configuration:
         :return: An array of host settings
         """
         return [
-{%- for server in specs.v2.servers %}
+{%- for server in spec.servers %}
             {
                 "url": "{{ server.url }}",
                 "description": "{{ server.description|default("No description provided") }}",
@@ -464,7 +464,7 @@ class Configuration:
         :return: The Auth Settings information dict.
         """
         auth = {}
-{%- for name, schema in specs.v2.components.securitySchemes.items() %}
+{%- for name, schema in spec.components.securitySchemes.items() %}
 {%- if schema.type == "apiKey" %}
         if "{{name}}" in self.api_key{% if "x-auth-id-alias" in schema %} or "{{ schema["x-auth-id-alias"] }}" in self.api_key{% endif %}:
             auth["{{name}}"] = {
