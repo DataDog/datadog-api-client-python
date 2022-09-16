@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import collections
 from typing import Any, Dict, List, Union
+import warnings
 
 from {{ package }}.api_client import ApiClient, Endpoint as _Endpoint
 from {{ package }}.model_utils import (
@@ -168,6 +169,9 @@ class {{ classname }}:
         kwargs["{{ name|attribute_name }}"] = {{ name|attribute_name }}
 {%- endif %}
 {% endfor %}
+{%- if operation.deprecated %}
+        warnings.warn("{{ operation.operationId|safe_snake_case }} is deprecated", DeprecationWarning, stacklevel=2)
+{%- endif %}
         return self._{{ operation.operationId|safe_snake_case }}_endpoint.call_with_http_info(**kwargs)
     {%- if operation["x-pagination"] %}
     {%- set pagination = operation["x-pagination"] %}

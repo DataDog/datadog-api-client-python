@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, List, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
@@ -1375,6 +1376,7 @@ class UsageMeteringApi:
         if sort is not unset:
             kwargs["sort"] = sort
 
+        warnings.warn("get_daily_custom_reports is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_hourly_usage_attribution(
@@ -1530,6 +1532,7 @@ class UsageMeteringApi:
         if sort is not unset:
             kwargs["sort"] = sort
 
+        warnings.warn("get_monthly_custom_reports is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_monthly_usage_attribution(
@@ -1625,6 +1628,7 @@ class UsageMeteringApi:
         kwargs: Dict[str, Any] = {}
         kwargs["report_id"] = report_id
 
+        warnings.warn("get_specified_daily_custom_reports is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_specified_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_specified_monthly_custom_reports(
@@ -1644,6 +1648,7 @@ class UsageMeteringApi:
         kwargs: Dict[str, Any] = {}
         kwargs["report_id"] = report_id
 
+        warnings.warn("get_specified_monthly_custom_reports is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_specified_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_analyzed_logs(
@@ -1732,6 +1737,7 @@ class UsageMeteringApi:
         if limit is not unset:
             kwargs["limit"] = limit
 
+        warnings.warn("get_usage_attribution is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_attribution_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_audit_logs(
@@ -2355,6 +2361,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_synthetics is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_synthetics_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_synthetics_api(

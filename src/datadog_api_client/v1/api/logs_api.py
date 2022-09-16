@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
@@ -202,4 +203,5 @@ class LogsApi:
 
         kwargs["body"] = body
 
+        warnings.warn("submit_log is deprecated", DeprecationWarning, stacklevel=2)
         return self._submit_log_endpoint.call_with_http_info(**kwargs)
