@@ -16,6 +16,7 @@ class DashboardTemplateVariable(ModelNormal):
         return {
             "available_values": ([str], none_type),
             "default": (str, none_type),
+            "defaults": ([str],),
             "name": (str,),
             "prefix": (str, none_type),
         }
@@ -23,6 +24,7 @@ class DashboardTemplateVariable(ModelNormal):
     attribute_map = {
         "available_values": "available_values",
         "default": "default",
+        "defaults": "defaults",
         "name": "name",
         "prefix": "prefix",
     }
@@ -34,8 +36,11 @@ class DashboardTemplateVariable(ModelNormal):
         :param available_values: The list of values that the template variable drop-down is limited to.
         :type available_values: [str], none_type, optional
 
-        :param default: The default value for the template variable on dashboard load.
+        :param default: (deprecated) The default value for the template variable on dashboard load. Cannot be used in conjunction with ``defaults``.
         :type default: str, none_type, optional
+
+        :param defaults: One or many default values for template variables on load. If more than one default is specified, they will be unioned together with ``OR``. Cannot be used in conjunction with ``default``.
+        :type defaults: [str], optional
 
         :param name: The name of the variable.
         :type name: str

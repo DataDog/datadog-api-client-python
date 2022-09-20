@@ -57,7 +57,7 @@ Feature: Dashboards
   @generated @skip @team:DataDog/dashboards
   Scenario: Create a new dashboard returns "Bad Request" response
     Given new "CreateDashboard" request
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variable_presets": [{"template_variables": [{}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variable_presets": [{"template_variables": [{"values": []}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "defaults": ["my-host-1", "my-host-2"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -413,6 +413,41 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].queries[0].aggregator" is equal to "sum"
     And the response "widgets[0].definition.requests[0].formulas[0].formula" is equal to "query1"
 
+  @skip-typescript @team:DataDog/dashboards
+  Scenario: Create a new dashboard with template variable defaults and default returns "Bad Request" response
+    Given new "CreateDashboard" request
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "defaults": ["my-host"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with template variable defaults returns "OK" response
+    Given new "CreateDashboard" request
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "defaults": ["my-host"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with template variable defaults whose value has no length returns "Bad Request" response
+    Given new "CreateDashboard" request
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "defaults": [""], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with template variable presets using values and value returns "Bad Request" response
+    Given new "CreateDashboard" request
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variable_presets": [{"name": "my saved view", "template_variables": [{"name": "datacenter", "value": "*", "values": [ "*" ]}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "defaults": ["my-host"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with template variable presets using values returns "OK" response
+    Given new "CreateDashboard" request
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variable_presets": [{"name": "my saved view", "template_variables": [{"name": "datacenter", "values": ["*", "my-host"]}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "defaults": ["my-host"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/dashboards
   Scenario: Create a new dashboard with timeseries widget containing style attributes
     Given new "CreateDashboard" request
@@ -569,7 +604,7 @@ Feature: Dashboards
   Scenario: Update a dashboard returns "Bad Request" response
     Given new "UpdateDashboard" request
     And request contains "dashboard_id" parameter from "REPLACE.ME"
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variable_presets": [{"template_variables": [{}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variable_presets": [{"template_variables": [{"values": []}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "defaults": ["my-host-1", "my-host-2"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -577,7 +612,7 @@ Feature: Dashboards
   Scenario: Update a dashboard returns "Item Not Found" response
     Given new "UpdateDashboard" request
     And request contains "dashboard_id" parameter from "REPLACE.ME"
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variable_presets": [{"template_variables": [{}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variable_presets": [{"template_variables": [{"values": []}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "defaults": ["my-host-1", "my-host-2"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 404 Item Not Found
 
