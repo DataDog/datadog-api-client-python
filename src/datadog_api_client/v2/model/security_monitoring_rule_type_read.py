@@ -15,17 +15,19 @@ class SecurityMonitoringRuleTypeRead(ModelSimple):
     """
     The rule type.
 
-    :param value: Must be one of ["log_detection", "infrastructure_configuration", "workload_security", "cloud_configuration"].
+    :param value: Must be one of ["log_detection", "signal_correlation", "infrastructure_configuration", "workload_security", "cloud_configuration"].
     :type value: str
     """
 
     allowed_values = {
         "log_detection",
+        "signal_correlation",
         "infrastructure_configuration",
         "workload_security",
         "cloud_configuration",
     }
     LOG_DETECTION: ClassVar["SecurityMonitoringRuleTypeRead"]
+    SIGNAL_CORRELATION: ClassVar["SecurityMonitoringRuleTypeRead"]
     INFRASTRUCTURE_CONFIGURATION: ClassVar["SecurityMonitoringRuleTypeRead"]
     WORKLOAD_SECURITY: ClassVar["SecurityMonitoringRuleTypeRead"]
     CLOUD_CONFIGURATION: ClassVar["SecurityMonitoringRuleTypeRead"]
@@ -38,6 +40,7 @@ class SecurityMonitoringRuleTypeRead(ModelSimple):
 
 
 SecurityMonitoringRuleTypeRead.LOG_DETECTION = SecurityMonitoringRuleTypeRead("log_detection")
+SecurityMonitoringRuleTypeRead.SIGNAL_CORRELATION = SecurityMonitoringRuleTypeRead("signal_correlation")
 SecurityMonitoringRuleTypeRead.INFRASTRUCTURE_CONFIGURATION = SecurityMonitoringRuleTypeRead(
     "infrastructure_configuration"
 )

@@ -7277,6 +7277,18 @@ components:
       properties:
         aggregation:
           $ref: '#/components/schemas/SecurityMonitoringRuleQueryAggregation'
+        correlatedByFields:
+          description: Fields to group by for Signal Correlation rules.
+          items:
+            description: Field.
+            type: string
+          type: array
+        correlatedQueryIndex:
+          description: Index of the rule query used to retrieve the correlated field
+            for Signal Correlation rules.
+          format: int32
+          maximum: 9
+          type: integer
         distinctFields:
           description: Field for which the cardinality is measured. Sent as an array.
           items:
@@ -7307,6 +7319,9 @@ components:
         query:
           description: Query to run on logs.
           type: string
+        ruleId:
+          description: Rule ID to match on signals for Signal Correlation rules.
+          type: string
       type: object
     SecurityMonitoringRuleQueryAggregation:
       description: The aggregation type.
@@ -7317,6 +7332,7 @@ components:
       - max
       - new_value
       - geo_data
+      - event_count
       type: string
       x-enum-varnames:
       - COUNT
@@ -7325,11 +7341,24 @@ components:
       - MAX
       - NEW_VALUE
       - GEO_DATA
+      - EVENT_COUNT
     SecurityMonitoringRuleQueryCreate:
       description: Query for matching rule.
       properties:
         aggregation:
           $ref: '#/components/schemas/SecurityMonitoringRuleQueryAggregation'
+        correlatedByFields:
+          description: Fields to group by for Signal Correlation rules.
+          items:
+            description: Field.
+            type: string
+          type: array
+        correlatedQueryIndex:
+          description: Index of the rule query used to retrieve the correlated field
+            for Signal Correlation rules.
+          format: int32
+          maximum: 9
+          type: integer
         distinctFields:
           description: Field for which the cardinality is measured. Sent as an array.
           items:
@@ -7361,8 +7390,9 @@ components:
           description: Query to run on logs.
           example: a > 3
           type: string
-      required:
-      - query
+        ruleId:
+          description: Rule ID to match on signals for Signal Correlation rules.
+          type: string
       type: object
     SecurityMonitoringRuleResponse:
       description: Rule.
@@ -7451,21 +7481,25 @@ components:
       description: The rule type.
       enum:
       - log_detection
+      - signal_correlation
       - workload_security
       type: string
       x-enum-varnames:
       - LOG_DETECTION
+      - SIGNAL_CORRELATION
       - WORKLOAD_SECURITY
     SecurityMonitoringRuleTypeRead:
       description: The rule type.
       enum:
       - log_detection
+      - signal_correlation
       - infrastructure_configuration
       - workload_security
       - cloud_configuration
       type: string
       x-enum-varnames:
       - LOG_DETECTION
+      - SIGNAL_CORRELATION
       - INFRASTRUCTURE_CONFIGURATION
       - WORKLOAD_SECURITY
       - CLOUD_CONFIGURATION
