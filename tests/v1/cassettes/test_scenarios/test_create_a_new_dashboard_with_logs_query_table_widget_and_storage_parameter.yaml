@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_logs_query_table_widget_and_storage_parameter-1663859189
+      with query table widget and storage parameter","widgets":[{"definition":{"requests":[{"formulas":[{"cell_display_mode":"bar","conditional_formats":[],"formula":"query1","limit":{"count":50,"order":"desc"}}],"queries":[{"compute":{"aggregation":"count"},"data_source":"logs","group_by":[],"indexes":["*"],"name":"query1","search":{"query":""},"storage":"online_archives"}],"response_format":"scalar"}],"type":"query_table"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"3my-5nt-jfx","title":"Test-Create_a_new_dashboard_with_logs_query_table_widget_and_storage_parameter-1663859189
+        with query table widget and storage parameter","url":"/dashboard/3my-5nt-jfx/test-createanewdashboardwithlogsquerytablewidgetandstorageparameter-1663859189-w","created_at":"2022-09-22T15:06:29.565373+00:00","modified_at":"2022-09-22T15:06:29.565373+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"formulas":[{"formula":"query1","cell_display_mode":"bar","limit":{"count":50,"order":"desc"},"conditional_formats":[]}],"response_format":"scalar","queries":[{"search":{"query":""},"data_source":"logs","compute":{"aggregation":"count"},"name":"query1","storage":"online_archives","indexes":["*"],"group_by":[]}]}],"type":"query_table"},"id":7645558730591730}],"layout_type":"ordered"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/3my-5nt-jfx
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"3my-5nt-jfx"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

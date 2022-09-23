@@ -18,12 +18,14 @@ class ListStreamQuery(ModelNormal):
             "data_source": (ListStreamSource,),
             "indexes": ([str],),
             "query_string": (str,),
+            "storage": (str,),
         }
 
     attribute_map = {
         "data_source": "data_source",
         "indexes": "indexes",
         "query_string": "query_string",
+        "storage": "storage",
     }
 
     def __init__(self_, data_source, query_string, *args, **kwargs):
@@ -38,6 +40,9 @@ class ListStreamQuery(ModelNormal):
 
         :param query_string: Widget query.
         :type query_string: str
+
+        :param storage: Option for storage location. Feature in Private Beta.
+        :type storage: str, optional
         """
         super().__init__(kwargs)
 
