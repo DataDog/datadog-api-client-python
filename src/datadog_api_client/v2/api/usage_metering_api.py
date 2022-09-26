@@ -81,7 +81,6 @@ class UsageMeteringApi:
             },
             params_map={
                 "view": {
-                    "required": True,
                     "openapi_types": (str,),
                     "attribute": "view",
                     "location": "query",
@@ -104,6 +103,41 @@ class UsageMeteringApi:
                 "end_date": {
                     "openapi_types": (datetime,),
                     "attribute": "end_date",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._get_historical_cost_by_org_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostByOrgResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/historical_cost",
+                "operation_id": "get_historical_cost_by_org",
+                "http_method": "GET",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "view": {
+                    "openapi_types": (str,),
+                    "attribute": "view",
+                    "location": "query",
+                },
+                "start_month": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_month",
+                    "location": "query",
+                },
+                "end_month": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_month",
                     "location": "query",
                 },
             },
@@ -272,7 +306,11 @@ class UsageMeteringApi:
     ) -> CostByOrgResponse:
         """Get cost across multi-org account.
 
-        Get cost across multi-org account. Cost by org data for a given month becomes available no later than the 16th of the following month.
+        Get cost across multi-org account.
+        Cost by org data for a given month becomes available no later than the 16th of the following month.
+        **Note:** This endpoint has been deprecated. Please use the new endpoint
+        ` ``/historical_cost`` <https://docs.datadoghq.com/api/latest/usage-metering/#get-historical-cost-across-your-account>`_
+        instead.
 
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost beginning this month.
         :type start_month: datetime
@@ -290,8 +328,8 @@ class UsageMeteringApi:
 
     def get_estimated_cost_by_org(
         self,
-        view: str,
         *,
+        view: Union[str, UnsetType] = unset,
         start_month: Union[datetime, UnsetType] = unset,
         end_month: Union[datetime, UnsetType] = unset,
         start_date: Union[datetime, UnsetType] = unset,
@@ -300,10 +338,11 @@ class UsageMeteringApi:
         """Get estimated cost across your account.
 
         Get estimated cost across multi-org and single root-org accounts.
-        Estimated cost data is only available for the current month and previous month. To access historical costs prior to this, use the /cost_by_org endpoint.
+        Estimated cost data is only available for the current month and previous month.
+        To access historical costs prior to this, use the ``/historical_cost`` endpoint.
 
-        :param view: String to specify whether cost is broken down at a parent-org level or at the sub-org level. Currently, only the 'sub-org' view is supported.
-        :type view: str
+        :param view: String to specify whether cost is broken down at a parent-org level or at the sub-org level. Available views are ``summary`` and ``sub-org``. Defaults to ``summary``.
+        :type view: str, optional
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost beginning this month. Either start_month or start_date should be specified, but not both. (start_month cannot go beyond two months in the past)
         :type start_month: datetime, optional
         :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost ending this month.
@@ -315,7 +354,8 @@ class UsageMeteringApi:
         :rtype: CostByOrgResponse
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["view"] = view
+        if view is not unset:
+            kwargs["view"] = view
 
         if start_month is not unset:
             kwargs["start_month"] = start_month
@@ -330,6 +370,37 @@ class UsageMeteringApi:
             kwargs["end_date"] = end_date
 
         return self._get_estimated_cost_by_org_endpoint.call_with_http_info(**kwargs)
+
+    def get_historical_cost_by_org(
+        self,
+        start_month: datetime,
+        *,
+        view: Union[str, UnsetType] = unset,
+        end_month: Union[datetime, UnsetType] = unset,
+    ) -> CostByOrgResponse:
+        """Get historical cost across your account.
+
+        Get historical cost across multi-org and single root-org accounts.
+        Cost data for a given month becomes available no later than the 16th of the following month.
+
+        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost beginning this month.
+        :type start_month: datetime
+        :param view: String to specify whether cost is broken down at a parent-org level or at the sub-org level. Available views are ``summary`` and ``sub-org``.  Defaults to ``summary``.
+        :type view: str, optional
+        :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost ending this month.
+        :type end_month: datetime, optional
+        :rtype: CostByOrgResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if view is not unset:
+            kwargs["view"] = view
+
+        kwargs["start_month"] = start_month
+
+        if end_month is not unset:
+            kwargs["end_month"] = end_month
+
+        return self._get_historical_cost_by_org_endpoint.call_with_http_info(**kwargs)
 
     def get_hourly_usage(
         self,

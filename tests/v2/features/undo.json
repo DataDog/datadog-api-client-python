@@ -928,6 +928,12 @@
       "type": "safe"
     }
   },
+  "GetHistoricalCostByOrg": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetHourlyUsage": {
     "tag": "Usage Metering",
     "undo": {
