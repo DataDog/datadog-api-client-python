@@ -4,47 +4,13 @@
 
 
 from datadog_api_client.model_utils import (
-    ModelNormal,
+    ModelComposed,
     cached_property,
 )
 
 
-class SecurityMonitoringRuleCreatePayload(ModelNormal):
-    @cached_property
-    def openapi_types(_):
-        from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
-        from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
-        from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
-        from datadog_api_client.v2.model.security_monitoring_rule_query_create import SecurityMonitoringRuleQueryCreate
-        from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
-
-        return {
-            "cases": ([SecurityMonitoringRuleCaseCreate],),
-            "filters": ([SecurityMonitoringFilter],),
-            "has_extended_title": (bool,),
-            "is_enabled": (bool,),
-            "message": (str,),
-            "name": (str,),
-            "options": (SecurityMonitoringRuleOptions,),
-            "queries": ([SecurityMonitoringRuleQueryCreate],),
-            "tags": ([str],),
-            "type": (SecurityMonitoringRuleTypeCreate,),
-        }
-
-    attribute_map = {
-        "cases": "cases",
-        "filters": "filters",
-        "has_extended_title": "hasExtendedTitle",
-        "is_enabled": "isEnabled",
-        "message": "message",
-        "name": "name",
-        "options": "options",
-        "queries": "queries",
-        "tags": "tags",
-        "type": "type",
-    }
-
-    def __init__(self_, cases, is_enabled, message, name, options, queries, *args, **kwargs):
+class SecurityMonitoringRuleCreatePayload(ModelComposed):
+    def __init__(self_, *args, **kwargs):
         """
         Create a new rule.
 
@@ -70,7 +36,7 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
         :type options: SecurityMonitoringRuleOptions
 
         :param queries: Queries for selecting logs which are part of the rule.
-        :type queries: [SecurityMonitoringRuleQueryCreate]
+        :type queries: [SecurityMonitoringStandardRuleQueryCreate]
 
         :param tags: Tags for generated signals.
         :type tags: [str], optional
@@ -82,9 +48,25 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
 
         self_._check_pos_args(args)
 
-        self_.cases = cases
-        self_.is_enabled = is_enabled
-        self_.message = message
-        self_.name = name
-        self_.options = options
-        self_.queries = queries
+    @cached_property
+    def _composed_schemas(_):
+        # we need this here to make our import statements work
+        # we must store _composed_schemas in here so the code is only run
+        # when we invoke this method. If we kept this at the class
+        # level we would get an error because the class level
+        # code would be run when this module is imported, and these composed
+        # classes don't exist yet because their module has not finished
+        # loading
+        from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
+            SecurityMonitoringStandardRuleCreatePayload,
+        )
+        from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload import (
+            SecurityMonitoringSignalRuleCreatePayload,
+        )
+
+        return {
+            "oneOf": [
+                SecurityMonitoringStandardRuleCreatePayload,
+                SecurityMonitoringSignalRuleCreatePayload,
+            ],
+        }

@@ -9,7 +9,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class SecurityMonitoringRuleQueryCreate(ModelNormal):
+class SecurityMonitoringStandardRuleQuery(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
@@ -36,7 +36,7 @@ class SecurityMonitoringRuleQueryCreate(ModelNormal):
         "query": "query",
     }
 
-    def __init__(self_, query, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         Query for matching rule.
 
@@ -60,10 +60,8 @@ class SecurityMonitoringRuleQueryCreate(ModelNormal):
         :type name: str, optional
 
         :param query: Query to run on logs.
-        :type query: str
+        :type query: str, optional
         """
         super().__init__(kwargs)
 
         self_._check_pos_args(args)
-
-        self_.query = query

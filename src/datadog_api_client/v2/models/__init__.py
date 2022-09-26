@@ -533,7 +533,6 @@ from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityM
 from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
     SecurityMonitoringRuleQueryAggregation,
 )
-from datadog_api_client.v2.model.security_monitoring_rule_query_create import SecurityMonitoringRuleQueryCreate
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
 from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
@@ -568,6 +567,16 @@ from datadog_api_client.v2.model.security_monitoring_signal_list_request_filter 
 from datadog_api_client.v2.model.security_monitoring_signal_list_request_page import (
     SecurityMonitoringSignalListRequestPage,
 )
+from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload import (
+    SecurityMonitoringSignalRuleCreatePayload,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_rule_query import SecurityMonitoringSignalRuleQuery
+from datadog_api_client.v2.model.security_monitoring_signal_rule_query_create import (
+    SecurityMonitoringSignalRuleQueryCreate,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_rule_type_create import (
+    SecurityMonitoringSignalRuleTypeCreate,
+)
 from datadog_api_client.v2.model.security_monitoring_signal_state import SecurityMonitoringSignalState
 from datadog_api_client.v2.model.security_monitoring_signal_state_update_attributes import (
     SecurityMonitoringSignalStateUpdateAttributes,
@@ -599,6 +608,13 @@ from datadog_api_client.v2.model.security_monitoring_signals_list_response_meta_
     SecurityMonitoringSignalsListResponseMetaPage,
 )
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
+from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
+    SecurityMonitoringStandardRuleCreatePayload,
+)
+from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
+from datadog_api_client.v2.model.security_monitoring_standard_rule_query_create import (
+    SecurityMonitoringStandardRuleQueryCreate,
+)
 from datadog_api_client.v2.model.security_monitoring_triage_user import SecurityMonitoringTriageUser
 from datadog_api_client.v2.model.service_account_create_attributes import ServiceAccountCreateAttributes
 from datadog_api_client.v2.model.service_account_create_data import ServiceAccountCreateData

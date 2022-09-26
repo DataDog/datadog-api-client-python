@@ -4,38 +4,12 @@
 
 
 from datadog_api_client.model_utils import (
-    ModelNormal,
+    ModelComposed,
     cached_property,
 )
 
 
-class SecurityMonitoringRuleQuery(ModelNormal):
-    @cached_property
-    def openapi_types(_):
-        from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
-            SecurityMonitoringRuleQueryAggregation,
-        )
-
-        return {
-            "aggregation": (SecurityMonitoringRuleQueryAggregation,),
-            "distinct_fields": ([str],),
-            "group_by_fields": ([str],),
-            "metric": (str,),
-            "metrics": ([str],),
-            "name": (str,),
-            "query": (str,),
-        }
-
-    attribute_map = {
-        "aggregation": "aggregation",
-        "distinct_fields": "distinctFields",
-        "group_by_fields": "groupByFields",
-        "metric": "metric",
-        "metrics": "metrics",
-        "name": "name",
-        "query": "query",
-    }
-
+class SecurityMonitoringRuleQuery(ModelComposed):
     def __init__(self_, *args, **kwargs):
         """
         Query for matching rule.
@@ -61,7 +35,37 @@ class SecurityMonitoringRuleQuery(ModelNormal):
 
         :param query: Query to run on logs.
         :type query: str, optional
+
+        :param correlated_by_fields: Fields to group by.
+        :type correlated_by_fields: [str], optional
+
+        :param correlated_query_index: Index of the rule query used to retrieve the correlated field.
+        :type correlated_query_index: int, optional
+
+        :param rule_id: Rule ID to match on signals.
+        :type rule_id: str, optional
         """
         super().__init__(kwargs)
 
         self_._check_pos_args(args)
+
+    @cached_property
+    def _composed_schemas(_):
+        # we need this here to make our import statements work
+        # we must store _composed_schemas in here so the code is only run
+        # when we invoke this method. If we kept this at the class
+        # level we would get an error because the class level
+        # code would be run when this module is imported, and these composed
+        # classes don't exist yet because their module has not finished
+        # loading
+        from datadog_api_client.v2.model.security_monitoring_standard_rule_query import (
+            SecurityMonitoringStandardRuleQuery,
+        )
+        from datadog_api_client.v2.model.security_monitoring_signal_rule_query import SecurityMonitoringSignalRuleQuery
+
+        return {
+            "oneOf": [
+                SecurityMonitoringStandardRuleQuery,
+                SecurityMonitoringSignalRuleQuery,
+            ],
+        }
