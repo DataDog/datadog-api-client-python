@@ -411,6 +411,17 @@ Feature: Dashboards
     And the response "widgets[0].definition.filters" is equal to ["env:none","environment:*"]
 
   @team:DataDog/dashboards
+  Scenario: Create a new dashboard with slo list widget
+    Given there is a valid "slo" in the system
+    And new "CreateDashboard" request
+    And body from file "dashboards_json_payload/slo_list_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "slo_list"
+    And the response "widgets[0].definition.requests[0].query.query_string" is equal to "env:prod AND service:my-app"
+    And the response "widgets[0].definition.requests[0].query.limit" is equal to 75
+
+  @team:DataDog/dashboards
   Scenario: Create a new dashboard with slo widget
     Given there is a valid "slo" in the system
     And new "CreateDashboard" request
