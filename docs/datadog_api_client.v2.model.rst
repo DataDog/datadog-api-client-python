@@ -3270,13 +3270,6 @@ security\_monitoring\_rule\_query\_aggregation
    :members:
    :show-inheritance:
 
-security\_monitoring\_rule\_query\_create
------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_query_create
-   :members:
-   :show-inheritance:
-
 security\_monitoring\_rule\_response
 ------------------------------------
 
@@ -3403,6 +3396,34 @@ security\_monitoring\_signal\_list\_request\_page
    :members:
    :show-inheritance:
 
+security\_monitoring\_signal\_rule\_create\_payload
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_rule\_query
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_rule_query
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_rule\_query\_create
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_rule_query_create
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_rule\_type\_create
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_rule_type_create
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_signal\_state
 -----------------------------------
 
@@ -3491,6 +3512,27 @@ security\_monitoring\_signals\_sort
 -----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_signals_sort
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_standard\_rule\_create\_payload
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_standard\_rule\_query
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_query
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_standard\_rule\_query\_create
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_query_create
    :members:
    :show-inheritance:
 
