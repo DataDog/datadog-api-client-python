@@ -752,6 +752,12 @@
       "type": "safe"
     }
   },
+  "GetSecurityMonitoringSignal": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "EditSecurityMonitoringSignalAssignee": {
     "tag": "Security Monitoring",
     "undo": {

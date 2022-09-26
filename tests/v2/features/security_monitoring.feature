@@ -219,6 +219,20 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @replay-only @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a signal's details returns "Not Found" response
+    Given new "GetSecurityMonitoringSignal" request
+    And request contains "signal_id" parameter with value "AQAAAYNqUBVU4-rffwAAAABBWU5xVUJWVUFBQjJBd3ptCL3QUEm3nt2"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a signal's details returns "OK" response
+    Given new "GetSecurityMonitoringSignal" request
+    And request contains "signal_id" parameter with value "AQAAAYNqUBVU4-rffwAAAABBWU5xVUJWVUFBQjJBd3ptMDdQUnF3QUE"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/k9-cloud-security-platform
   Scenario: Get all security filters returns "OK" response
     Given new "ListSecurityFilters" request
