@@ -36,7 +36,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         "query": "query",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(self_, query, *args, **kwargs):
         """
         Query for matching rule.
 
@@ -60,8 +60,10 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         :type name: str, optional
 
         :param query: Query to run on logs.
-        :type query: str, optional
+        :type query: str
         """
         super().__init__(kwargs)
 
         self_._check_pos_args(args)
+
+        self_.query = query

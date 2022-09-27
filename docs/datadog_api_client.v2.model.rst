@@ -3410,13 +3410,6 @@ security\_monitoring\_signal\_rule\_query
    :members:
    :show-inheritance:
 
-security\_monitoring\_signal\_rule\_query\_create
--------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_rule_query_create
-   :members:
-   :show-inheritance:
-
 security\_monitoring\_signal\_rule\_type\_create
 ------------------------------------------------
 
@@ -3526,13 +3519,6 @@ security\_monitoring\_standard\_rule\_query
 -------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_query
-   :members:
-   :show-inheritance:
-
-security\_monitoring\_standard\_rule\_query\_create
----------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_query_create
    :members:
    :show-inheritance:
 

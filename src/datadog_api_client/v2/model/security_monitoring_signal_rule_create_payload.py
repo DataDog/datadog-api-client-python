@@ -15,9 +15,7 @@ class SecurityMonitoringSignalRuleCreatePayload(ModelNormal):
         from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
         from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
         from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
-        from datadog_api_client.v2.model.security_monitoring_signal_rule_query_create import (
-            SecurityMonitoringSignalRuleQueryCreate,
-        )
+        from datadog_api_client.v2.model.security_monitoring_signal_rule_query import SecurityMonitoringSignalRuleQuery
         from datadog_api_client.v2.model.security_monitoring_signal_rule_type_create import (
             SecurityMonitoringSignalRuleTypeCreate,
         )
@@ -30,7 +28,7 @@ class SecurityMonitoringSignalRuleCreatePayload(ModelNormal):
             "message": (str,),
             "name": (str,),
             "options": (SecurityMonitoringRuleOptions,),
-            "queries": ([SecurityMonitoringSignalRuleQueryCreate],),
+            "queries": ([SecurityMonitoringSignalRuleQuery],),
             "tags": ([str],),
             "type": (SecurityMonitoringSignalRuleTypeCreate,),
         }
@@ -74,7 +72,7 @@ class SecurityMonitoringSignalRuleCreatePayload(ModelNormal):
         :type options: SecurityMonitoringRuleOptions
 
         :param queries: Queries for selecting signals which are part of the rule.
-        :type queries: [SecurityMonitoringSignalRuleQueryCreate]
+        :type queries: [SecurityMonitoringSignalRuleQuery]
 
         :param tags: Tags for generated signals.
         :type tags: [str], optional

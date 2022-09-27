@@ -34,7 +34,7 @@ class SecurityMonitoringRuleQuery(ModelComposed):
         :type name: str, optional
 
         :param query: Query to run on logs.
-        :type query: str, optional
+        :type query: str
 
         :param correlated_by_fields: Fields to group by.
         :type correlated_by_fields: [str], optional
@@ -43,7 +43,7 @@ class SecurityMonitoringRuleQuery(ModelComposed):
         :type correlated_query_index: int, optional
 
         :param rule_id: Rule ID to match on signals.
-        :type rule_id: str, optional
+        :type rule_id: str
         """
         super().__init__(kwargs)
 

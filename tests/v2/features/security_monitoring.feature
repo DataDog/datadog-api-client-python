@@ -321,7 +321,7 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "Bad Request" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": [], "metrics": []}], "tags": [], "version": 1}
+    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": [], "metrics": [], "query": "a > 3"}], "tags": [], "version": 1}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -329,7 +329,7 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "Not Found" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": [], "metrics": []}], "tags": [], "version": 1}
+    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": [], "metrics": [], "query": "a > 3"}], "tags": [], "version": 1}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -337,6 +337,6 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": [], "metrics": []}], "tags": [], "version": 1}
+    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": [], "metrics": [], "query": "a > 3"}], "tags": [], "version": 1}
     When the request is sent
     Then the response status is 200 OK

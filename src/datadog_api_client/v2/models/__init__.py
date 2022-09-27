@@ -571,9 +571,6 @@ from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload 
     SecurityMonitoringSignalRuleCreatePayload,
 )
 from datadog_api_client.v2.model.security_monitoring_signal_rule_query import SecurityMonitoringSignalRuleQuery
-from datadog_api_client.v2.model.security_monitoring_signal_rule_query_create import (
-    SecurityMonitoringSignalRuleQueryCreate,
-)
 from datadog_api_client.v2.model.security_monitoring_signal_rule_type_create import (
     SecurityMonitoringSignalRuleTypeCreate,
 )
@@ -612,9 +609,6 @@ from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payloa
     SecurityMonitoringStandardRuleCreatePayload,
 )
 from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
-from datadog_api_client.v2.model.security_monitoring_standard_rule_query_create import (
-    SecurityMonitoringStandardRuleQueryCreate,
-)
 from datadog_api_client.v2.model.security_monitoring_triage_user import SecurityMonitoringTriageUser
 from datadog_api_client.v2.model.service_account_create_attributes import ServiceAccountCreateAttributes
 from datadog_api_client.v2.model.service_account_create_data import ServiceAccountCreateData

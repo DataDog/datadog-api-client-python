@@ -21,14 +21,12 @@ from datadog_api_client.v2.model.security_monitoring_rule_type_create import Sec
 from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
     SecurityMonitoringStandardRuleCreatePayload,
 )
-from datadog_api_client.v2.model.security_monitoring_standard_rule_query_create import (
-    SecurityMonitoringStandardRuleQueryCreate,
-)
+from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
 
 body = SecurityMonitoringStandardRuleCreatePayload(
     name="Example-Create_a_detection_rule_with_type_workload_security_returns_OK_response",
     queries=[
-        SecurityMonitoringStandardRuleQueryCreate(
+        SecurityMonitoringStandardRuleQuery(
             query="@test:true",
             aggregation=SecurityMonitoringRuleQueryAggregation.COUNT,
             group_by_fields=[],
