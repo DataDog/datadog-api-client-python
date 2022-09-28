@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class SecurityMonitoringSignalRuleTypeCreate(ModelSimple):
+class SecurityMonitoringSignalRuleType(ModelSimple):
     """
     The rule type.
 
@@ -22,7 +22,7 @@ class SecurityMonitoringSignalRuleTypeCreate(ModelSimple):
     allowed_values = {
         "signal_correlation",
     }
-    SIGNAL_CORRELATION: ClassVar["SecurityMonitoringSignalRuleTypeCreate"]
+    SIGNAL_CORRELATION: ClassVar["SecurityMonitoringSignalRuleType"]
 
     @cached_property
     def openapi_types(_):
@@ -31,4 +31,4 @@ class SecurityMonitoringSignalRuleTypeCreate(ModelSimple):
         }
 
 
-SecurityMonitoringSignalRuleTypeCreate.SIGNAL_CORRELATION = SecurityMonitoringSignalRuleTypeCreate("signal_correlation")
+SecurityMonitoringSignalRuleType.SIGNAL_CORRELATION = SecurityMonitoringSignalRuleType("signal_correlation")

@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
-      rule","name":"Test-Delete_an_existing_rule_returns_OK_response-1652349193","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:true"}],"tags":[],"type":"log_detection"}'
+      rule","name":"Test-Delete_an_existing_rule_returns_OK_response-1664284017","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:true"}],"tags":[],"type":"log_detection"}'
     headers:
       accept:
       - application/json
@@ -12,8 +12,8 @@ interactions:
   response:
     body:
       string: '{"creationAuthorId":1445416,"tags":[],"isEnabled":true,"hasExtendedTitle":false,"message":"Test
-        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1652349194387,"filters":[],"queries":[{"distinctFields":[],"name":"","metric":"","aggregation":"count","groupByFields":[],"query":"@test:true"}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
-        > 0"}],"type":"log_detection","id":"rsi-g0p-3jz","isDefault":false,"name":"Test-Delete_an_existing_rule_returns_OK_response-1652349193"}
+        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1664284018198,"filters":[],"queries":[{"query":"@test:true","groupByFields":[],"aggregation":"count","name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
+        > 0"}],"type":"log_detection","id":"glg-ejh-8oy","isDefault":false,"name":"Test-Delete_an_existing_rule_returns_OK_response-1664284017"}
 
         '
     headers:
@@ -28,7 +28,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/rsi-g0p-3jz
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/glg-ejh-8oy
   response:
     body:
       string: ''
@@ -42,10 +42,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/rsi-g0p-3jz
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/glg-ejh-8oy
   response:
     body:
-      string: '{"errors":["Threat detection rule not found: rsi-g0p-3jz"]}
+      string: '{"errors":["Threat detection rule not found: glg-ejh-8oy"]}
 
         '
     headers:

@@ -21,12 +21,8 @@ from datadog_api_client.v2.model.security_monitoring_rule_severity import Securi
 from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload import (
     SecurityMonitoringSignalRuleCreatePayload,
 )
-from datadog_api_client.v2.model.security_monitoring_signal_rule_query_create import (
-    SecurityMonitoringSignalRuleQueryCreate,
-)
-from datadog_api_client.v2.model.security_monitoring_signal_rule_type_create import (
-    SecurityMonitoringSignalRuleTypeCreate,
-)
+from datadog_api_client.v2.model.security_monitoring_signal_rule_query import SecurityMonitoringSignalRuleQuery
+from datadog_api_client.v2.model.security_monitoring_signal_rule_type import SecurityMonitoringSignalRuleType
 
 # there is a valid "security_rule" in the system
 SECURITY_RULE_ID = environ["SECURITY_RULE_ID"]
@@ -37,7 +33,7 @@ SECURITY_RULE_BIS_ID = environ["SECURITY_RULE_BIS_ID"]
 body = SecurityMonitoringSignalRuleCreatePayload(
     name="Example-Create_a_detection_rule_with_type_signal_correlation_returns_OK_response_signal_rule",
     queries=[
-        SecurityMonitoringSignalRuleQueryCreate(
+        SecurityMonitoringSignalRuleQuery(
             rule_id=SECURITY_RULE_ID,
             aggregation=SecurityMonitoringRuleQueryAggregation.EVENT_COUNT,
             correlated_by_fields=[
@@ -45,7 +41,7 @@ body = SecurityMonitoringSignalRuleCreatePayload(
             ],
             correlated_query_index=1,
         ),
-        SecurityMonitoringSignalRuleQueryCreate(
+        SecurityMonitoringSignalRuleQuery(
             rule_id=SECURITY_RULE_BIS_ID,
             aggregation=SecurityMonitoringRuleQueryAggregation.EVENT_COUNT,
             correlated_by_fields=[
@@ -70,7 +66,7 @@ body = SecurityMonitoringSignalRuleCreatePayload(
     message="Test signal correlation rule",
     tags=[],
     is_enabled=True,
-    type=SecurityMonitoringSignalRuleTypeCreate.SIGNAL_CORRELATION,
+    type=SecurityMonitoringSignalRuleType.SIGNAL_CORRELATION,
 )
 
 configuration = Configuration()
