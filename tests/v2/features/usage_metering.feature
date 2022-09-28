@@ -47,7 +47,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/red-zone-revenue-query
+  @replay-only @team:DataDog/red-zone-revenue-query
   Scenario: Get historical cost across your account returns "OK" response
     Given new "GetHistoricalCostByOrg" request
     And request contains "start_month" parameter with value "{{ timeISO('now - 1m') }}"
