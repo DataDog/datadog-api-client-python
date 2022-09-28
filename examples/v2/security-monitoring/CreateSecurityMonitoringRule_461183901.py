@@ -25,13 +25,11 @@ from datadog_api_client.v2.model.security_monitoring_rule_type_create import Sec
 from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
     SecurityMonitoringStandardRuleCreatePayload,
 )
-from datadog_api_client.v2.model.security_monitoring_standard_rule_query_create import (
-    SecurityMonitoringStandardRuleQueryCreate,
-)
+from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
 
 body = SecurityMonitoringStandardRuleCreatePayload(
     queries=[
-        SecurityMonitoringStandardRuleQueryCreate(
+        SecurityMonitoringStandardRuleQuery(
             aggregation=SecurityMonitoringRuleQueryAggregation.GEO_DATA,
             group_by_fields=[
                 "@usr.id",

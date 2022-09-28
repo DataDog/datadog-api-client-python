@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"cases":[{"status":"info"}],"isEnabled":true,"message":"Test rule","name":"Test-Create_a_detection_rule_returns_Bad_Request_response-1663594809","options":{},"queries":[{"query":""}],"tags":[]}'
+    body: '{"cases":[{"status":"info"}],"isEnabled":true,"message":"Test rule","name":"Test-Create_a_detection_rule_returns_Bad_Request_response-1664284008","options":{},"queries":[{"query":""}],"tags":[]}'
     headers:
       accept:
       - application/json

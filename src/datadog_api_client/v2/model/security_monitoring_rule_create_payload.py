@@ -36,7 +36,7 @@ class SecurityMonitoringRuleCreatePayload(ModelComposed):
         :type options: SecurityMonitoringRuleOptions
 
         :param queries: Queries for selecting logs which are part of the rule.
-        :type queries: [SecurityMonitoringStandardRuleQueryCreate]
+        :type queries: [SecurityMonitoringStandardRuleQuery]
 
         :param tags: Tags for generated signals.
         :type tags: [str], optional

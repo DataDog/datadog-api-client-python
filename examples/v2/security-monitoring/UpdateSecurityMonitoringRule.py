@@ -78,6 +78,7 @@ body = SecurityMonitoringRuleUpdatePayload(
             distinct_fields=[],
             group_by_fields=[],
             metrics=[],
+            query="a > 3",
         ),
     ],
     tags=[],

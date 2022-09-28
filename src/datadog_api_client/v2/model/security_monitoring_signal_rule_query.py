@@ -40,7 +40,7 @@ class SecurityMonitoringSignalRuleQuery(ModelNormal):
         "rule_id": "ruleId",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(self_, rule_id, *args, **kwargs):
         """
         Query for matching rule on signals
 
@@ -60,8 +60,10 @@ class SecurityMonitoringSignalRuleQuery(ModelNormal):
         :type name: str, optional
 
         :param rule_id: Rule ID to match on signals.
-        :type rule_id: str, optional
+        :type rule_id: str
         """
         super().__init__(kwargs)
 
         self_._check_pos_args(args)
+
+        self_.rule_id = rule_id
