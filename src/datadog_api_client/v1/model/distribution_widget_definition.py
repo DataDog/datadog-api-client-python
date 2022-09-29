@@ -61,7 +61,7 @@ class DistributionWidgetDefinition(ModelNormal):
         aggregated across one or several tags, such as hosts.
         Unlike the heat map, a distribution graph’s x-axis is quantity rather than time.
 
-        :param legend_size: (Deprecated) The widget legend was replaced by a tooltip and sidebar.
+        :param legend_size: (Deprecated) The widget legend was replaced by a tooltip and sidebar. **Deprecated**.
         :type legend_size: str, optional
 
         :param markers: List of markers.
@@ -73,7 +73,7 @@ class DistributionWidgetDefinition(ModelNormal):
              to learn how to build the ``REQUEST_SCHEMA``.
         :type requests: [DistributionWidgetRequest]
 
-        :param show_legend: (Deprecated) The widget legend was replaced by a tooltip and sidebar.
+        :param show_legend: (Deprecated) The widget legend was replaced by a tooltip and sidebar. **Deprecated**.
         :type show_legend: bool, optional
 
         :param time: Time setting for the widget.

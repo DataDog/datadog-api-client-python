@@ -108,7 +108,7 @@ class MonitorOptions(ModelNormal):
         :param aggregation: Type of aggregation performed in the monitor query.
         :type aggregation: MonitorOptionsAggregation, optional
 
-        :param device_ids: IDs of the device the Synthetics monitor is running on.
+        :param device_ids: IDs of the device the Synthetics monitor is running on. **Deprecated**.
         :type device_ids: [MonitorDeviceID], optional
 
         :param enable_logs_sample: Whether or not to send a log sample when the log monitor triggers.
@@ -138,12 +138,11 @@ class MonitorOptions(ModelNormal):
 
             **Examples**
 
-
             * If ``True`` , ``[Triggered on {host:h1}] Monitor Title``
             * If ``False`` , ``[Triggered] Monitor Title``
         :type include_tags: bool, optional
 
-        :param locked: Whether or not the monitor is locked (only editable by creator and admins). Use ``restricted_roles`` instead.
+        :param locked: Whether or not the monitor is locked (only editable by creator and admins). Use ``restricted_roles`` instead. **Deprecated**.
         :type locked: bool, optional
 
         :param min_failure_duration: How long the test should be in failure before alerting (integer, number of seconds, max 7200).
@@ -165,7 +164,7 @@ class MonitorOptions(ModelNormal):
             to fully start before starting the evaluation of monitor results.
             Should be a non negative integer.
 
-            Use new_group_delay instead.
+            Use new_group_delay instead. **Deprecated**.
         :type new_host_delay: int, none_type, optional
 
         :param no_data_timeframe: The number of minutes before a monitor notifies after data stops reporting.
@@ -201,10 +200,10 @@ class MonitorOptions(ModelNormal):
             otherwise some evaluations are skipped. Default is false.
         :type require_full_window: bool, optional
 
-        :param silenced: Information about the downtime applied to the monitor.
+        :param silenced: Information about the downtime applied to the monitor. **Deprecated**.
         :type silenced: {str: (int, none_type,)}, optional
 
-        :param synthetics_check_id: ID of the corresponding Synthetic check.
+        :param synthetics_check_id: ID of the corresponding Synthetic check. **Deprecated**.
         :type synthetics_check_id: str, none_type, optional
 
         :param threshold_windows: Alerting time window options.

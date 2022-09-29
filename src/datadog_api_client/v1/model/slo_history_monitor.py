@@ -71,7 +71,7 @@ class SLOHistoryMonitor(ModelNormal):
         :param name: For groups in a grouped SLO, this is the group name. For monitors in a multi-monitor SLO, this is the monitor name.
         :type name: str, optional
 
-        :param precision: The amount of decimal places the SLI value is accurate to for the given from ``&&`` to timestamp. Use ``span_precision`` instead.
+        :param precision: The amount of decimal places the SLI value is accurate to for the given from ``&&`` to timestamp. Use ``span_precision`` instead. **Deprecated**.
         :type precision: float, optional
 
         :param preview: For ``monitor`` based SLOs, when ``true`` this indicates that a replay is in progress to give an accurate uptime
@@ -84,7 +84,7 @@ class SLOHistoryMonitor(ModelNormal):
         :param span_precision: The amount of decimal places the SLI value is accurate to for the given from ``&&`` to timestamp.
         :type span_precision: float, optional
 
-        :param uptime: Use ``sli_value`` instead.
+        :param uptime: Use ``sli_value`` instead. **Deprecated**.
         :type uptime: float, optional
         """
         super().__init__(kwargs)

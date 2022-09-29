@@ -18,7 +18,6 @@ class ServiceChecksApi:
     are limited for checks with a Critical or Warning status, they are dropped for checks with
     an OK status.
 
-
     * `Read more about Service Check monitors. <https://docs.datadoghq.com/monitors/create/types/host/?tab=checkalert>`_
     * `Read more about Process Check monitors. <https://docs.datadoghq.com/monitors/create/types/process_check/?tab=checkalert>`_
     * `Read more about Network Check monitors. <https://docs.datadoghq.com/monitors/create/types/network/?tab=checkalert>`_
@@ -62,7 +61,6 @@ class ServiceChecksApi:
         Submit a list of Service Checks.
 
         **Notes** :
-
 
         * A valid API key is required.
         * Service checks can be submitted up to 10 minutes in the past.

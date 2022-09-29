@@ -37,13 +37,13 @@ class OrganizationCreateBody(ModelNormal):
         """
         Object describing an organization to create.
 
-        :param billing: A JSON array of billing type.
+        :param billing: A JSON array of billing type. **Deprecated**.
         :type billing: OrganizationBilling, optional
 
         :param name: The name of the new child-organization, limited to 32 characters.
         :type name: str
 
-        :param subscription: Subscription definition.
+        :param subscription: Subscription definition. **Deprecated**.
         :type subscription: OrganizationSubscription, optional
         """
         super().__init__(kwargs)

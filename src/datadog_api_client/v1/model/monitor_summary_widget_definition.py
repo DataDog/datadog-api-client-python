@@ -62,7 +62,7 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
         :param color_preference: Which color to use on the widget.
         :type color_preference: WidgetColorPreference, optional
 
-        :param count: The number of monitors to display.
+        :param count: The number of monitors to display. **Deprecated**.
         :type count: int, optional
 
         :param display_format: What to display on the widget.
@@ -83,7 +83,7 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
         :param sort: Widget sorting methods.
         :type sort: WidgetMonitorSummarySort, optional
 
-        :param start: The start of the list. Typically 0.
+        :param start: The start of the list. Typically 0. **Deprecated**.
         :type start: int, optional
 
         :param summary_type: Which summary type should be used.
