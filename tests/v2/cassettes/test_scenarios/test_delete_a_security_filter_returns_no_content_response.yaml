@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"exclusion_filters":[{"name":"Exclude logs from
-      staging","query":"source:staging"}],"filtered_data_type":"logs","is_enabled":true,"name":"Test-Delete_a_security_filter_returns_No_Content_response-1652349191","query":"service:TestDeleteasecurityfilterreturnsNoContentresponse1652349191"},"type":"security_filters"}}'
+      staging","query":"source:staging"}],"filtered_data_type":"logs","is_enabled":true,"name":"Test-Delete_a_security_filter_returns_No_Content_response-1664284016","query":"service:TestDeleteasecurityfilterreturnsNoContentresponse1664284016"},"type":"security_filters"}}'
     headers:
       accept:
       - application/json
@@ -11,11 +11,13 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters
   response:
     body:
-      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Delete_a_security_filter_returns_No_Content_response-1652349191","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
-        logs from staging"}],"version":1,"query":"service:TestDeleteasecurityfilterreturnsNoContentresponse1652349191","is_builtin":false},"type":"security_filters","id":"7zq-iqt-o0r"}}'
+      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Delete_a_security_filter_returns_No_Content_response-1664284016","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
+        logs from staging"}],"version":1,"query":"service:TestDeleteasecurityfilterreturnsNoContentresponse1664284016","is_builtin":false},"type":"security_filters","id":"d9w-8nc-bzo"}}
+
+        '
     headers:
       content-type:
-      - application/json;charset=utf-8
+      - application/json
     status:
       code: 200
       message: OK
@@ -25,13 +27,13 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/7zq-iqt-o0r
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/d9w-8nc-bzo
   response:
     body:
       string: ''
     headers:
       content-type:
-      - application/json;charset=utf-8
+      - text/html; charset=utf-8
     status:
       code: 204
       message: No Content
@@ -41,10 +43,12 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/7zq-iqt-o0r
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/d9w-8nc-bzo
   response:
     body:
-      string: '{"errors":["not_found(Security filter with id ''7zq-iqt-o0r'' not found)"]}'
+      string: '{"errors":["not_found(Security filter with id ''d9w-8nc-bzo'' not found)"]}
+
+        '
     headers:
       content-type:
       - application/json

@@ -70,6 +70,7 @@ Feature: Synthetics
     And body from file "synthetics_global_variable_payload.json"
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" is equal to "GLOBAL_VARIABLE_PAYLOAD_{{ unique_upper_alnum }}"
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a global variable returns "Invalid request" response

@@ -195,6 +195,7 @@ Feature: Service Level Objectives
     And request contains "page[number]" parameter with value 0
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.attributes.slos[0].data.attributes.name" is equal to "{{ slo.data[0].name }}"
 
   @team:DataDog/slo-app
   Scenario: Update an SLO returns "Bad Request" response

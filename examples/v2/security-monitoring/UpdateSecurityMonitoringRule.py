@@ -35,12 +35,12 @@ from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_lear
     SecurityMonitoringRuleNewValueOptionsLearningThreshold,
 )
 from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
-from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
 from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
     SecurityMonitoringRuleQueryAggregation,
 )
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
+from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
 
 body = SecurityMonitoringRuleUpdatePayload(
     cases=[
@@ -73,11 +73,12 @@ body = SecurityMonitoringRuleUpdatePayload(
         ),
     ),
     queries=[
-        SecurityMonitoringRuleQuery(
+        SecurityMonitoringStandardRuleQuery(
             aggregation=SecurityMonitoringRuleQueryAggregation.COUNT,
             distinct_fields=[],
             group_by_fields=[],
             metrics=[],
+            query="a > 3",
         ),
     ],
     tags=[],
