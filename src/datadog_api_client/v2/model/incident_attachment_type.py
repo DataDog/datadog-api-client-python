@@ -11,20 +11,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class IncidentRelatedObject(ModelSimple):
+class IncidentAttachmentType(ModelSimple):
     """
-    Object related to an incident.
+    The incident attachment resource type.
 
-    :param value: Must be one of ["users", "attachments"].
+    :param value: If omitted defaults to "incident_attachments". Must be one of ["incident_attachments"].
     :type value: str
     """
 
     allowed_values = {
-        "users",
-        "attachments",
+        "incident_attachments",
     }
-    USERS: ClassVar["IncidentRelatedObject"]
-    ATTACHMENTS: ClassVar["IncidentRelatedObject"]
+    INCIDENT_ATTACHMENTS: ClassVar["IncidentAttachmentType"]
 
     @cached_property
     def openapi_types(_):
@@ -33,5 +31,4 @@ class IncidentRelatedObject(ModelSimple):
         }
 
 
-IncidentRelatedObject.USERS = IncidentRelatedObject("users")
-IncidentRelatedObject.ATTACHMENTS = IncidentRelatedObject("attachments")
+IncidentAttachmentType.INCIDENT_ATTACHMENTS = IncidentAttachmentType("incident_attachments")

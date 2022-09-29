@@ -19,6 +19,11 @@ from datadog_api_client.v2.model.incident_response_data import IncidentResponseD
 from datadog_api_client.v2.model.incident_response import IncidentResponse
 from datadog_api_client.v2.model.incident_create_request import IncidentCreateRequest
 from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRequest
+from datadog_api_client.v2.model.incident_attachments_response import IncidentAttachmentsResponse
+from datadog_api_client.v2.model.incident_attachment_related_object import IncidentAttachmentRelatedObject
+from datadog_api_client.v2.model.incident_attachment_attachment_type import IncidentAttachmentAttachmentType
+from datadog_api_client.v2.model.incident_attachment_update_response import IncidentAttachmentUpdateResponse
+from datadog_api_client.v2.model.incident_attachment_update_request import IncidentAttachmentUpdateRequest
 
 
 class IncidentsApi:
@@ -108,6 +113,43 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._list_incident_attachments_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentAttachmentsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/attachments",
+                "operation_id": "list_incident_attachments",
+                "http_method": "GET",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": ([IncidentAttachmentRelatedObject],),
+                    "attribute": "include",
+                    "location": "query",
+                    "collection_format": "csv",
+                },
+                "filter_attachment_type": {
+                    "openapi_types": ([IncidentAttachmentAttachmentType],),
+                    "attribute": "filter[attachment_type]",
+                    "location": "query",
+                    "collection_format": "csv",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
         self._list_incidents_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentsResponse,),
@@ -176,6 +218,39 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._update_incident_attachments_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentAttachmentUpdateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/attachments",
+                "operation_id": "update_incident_attachments",
+                "http_method": "PATCH",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": ([IncidentAttachmentRelatedObject],),
+                    "attribute": "include",
+                    "location": "query",
+                    "collection_format": "csv",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentAttachmentUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_incident(
         self,
         body: IncidentCreateRequest,
@@ -233,6 +308,36 @@ class IncidentsApi:
             kwargs["include"] = include
 
         return self._get_incident_endpoint.call_with_http_info(**kwargs)
+
+    def list_incident_attachments(
+        self,
+        incident_id: str,
+        *,
+        include: Union[List[IncidentAttachmentRelatedObject], UnsetType] = unset,
+        filter_attachment_type: Union[List[IncidentAttachmentAttachmentType], UnsetType] = unset,
+    ) -> IncidentAttachmentsResponse:
+        """Get a list of attachments.
+
+        Get all attachments for a given incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param include: Specifies which types of related objects are included in the response.
+        :type include: [IncidentAttachmentRelatedObject], optional
+        :param filter_attachment_type: Specifies which types of attachments are included in the response.
+        :type filter_attachment_type: [IncidentAttachmentAttachmentType], optional
+        :rtype: IncidentAttachmentsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        if filter_attachment_type is not unset:
+            kwargs["filter_attachment_type"] = filter_attachment_type
+
+        return self._list_incident_attachments_endpoint.call_with_http_info(**kwargs)
 
     def list_incidents(
         self,
@@ -340,3 +445,32 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._update_incident_endpoint.call_with_http_info(**kwargs)
+
+    def update_incident_attachments(
+        self,
+        incident_id: str,
+        body: IncidentAttachmentUpdateRequest,
+        *,
+        include: Union[List[IncidentAttachmentRelatedObject], UnsetType] = unset,
+    ) -> IncidentAttachmentUpdateResponse:
+        """Create, update, and delete incident attachments.
+
+        The bulk update endpoint for creating, updating, and deleting attachments for a given incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param body: Incident Attachment Payload.
+        :type body: IncidentAttachmentUpdateRequest
+        :param include: Specifies which types of related objects are included in the response.
+        :type include: [IncidentAttachmentRelatedObject], optional
+        :rtype: IncidentAttachmentUpdateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._update_incident_attachments_endpoint.call_with_http_info(**kwargs)
