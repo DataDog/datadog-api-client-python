@@ -9,22 +9,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-class IncidentResponseIncludedItem(ModelComposed):
+class IncidentAttachmentAttributes(ModelComposed):
     def __init__(self_, *args, **kwargs):
         """
-        An object related to an incident that is included in the response.
+        The attributes object for an attachment.
 
-        :param attributes: Attributes of user object returned by the API.
-        :type attributes: UserAttributes, optional
+        :param attachment: The postmortem attachment.
+        :type attachment: IncidentAttachmentsPostmortemAttributesAttachmentObject
 
-        :param id: ID of the user.
-        :type id: str, optional
-
-        :param relationships: Relationships of the user object returned by the API.
-        :type relationships: UserResponseRelationships, optional
-
-        :param type: Users resource type.
-        :type type: UsersType, optional
+        :param attachment_type: The type of postmortem attachment attributes.
+        :type attachment_type: IncidentAttachmentPostmortemAttachmentType
         """
         super().__init__(kwargs)
 
@@ -39,12 +33,14 @@ class IncidentResponseIncludedItem(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.user import User
-        from datadog_api_client.v2.model.incident_attachment_data import IncidentAttachmentData
+        from datadog_api_client.v2.model.incident_attachment_postmortem_attributes import (
+            IncidentAttachmentPostmortemAttributes,
+        )
+        from datadog_api_client.v2.model.incident_attachment_link_attributes import IncidentAttachmentLinkAttributes
 
         return {
             "oneOf": [
-                User,
-                IncidentAttachmentData,
+                IncidentAttachmentPostmortemAttributes,
+                IncidentAttachmentLinkAttributes,
             ],
         }

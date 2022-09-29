@@ -9,10 +9,10 @@ from datadog_api_client.model_utils import (
 )
 
 
-class IncidentResponseIncludedItem(ModelComposed):
+class IncidentAttachmentsResponseIncludedItem(ModelComposed):
     def __init__(self_, *args, **kwargs):
         """
-        An object related to an incident that is included in the response.
+        An object related to an attachment that is included in the response.
 
         :param attributes: Attributes of user object returned by the API.
         :type attributes: UserAttributes, optional
@@ -40,11 +40,9 @@ class IncidentResponseIncludedItem(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v2.model.user import User
-        from datadog_api_client.v2.model.incident_attachment_data import IncidentAttachmentData
 
         return {
             "oneOf": [
                 User,
-                IncidentAttachmentData,
             ],
         }

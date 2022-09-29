@@ -12,32 +12,35 @@ from datadog_api_client.model_utils import (
 class IncidentResponseRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.relationship_to_incident_attachment import RelationshipToIncidentAttachment
         from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
         from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
         from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas import (
             RelationshipToIncidentIntegrationMetadatas,
         )
-        from datadog_api_client.v2.model.relationship_to_incident_postmortem import RelationshipToIncidentPostmortem
 
         return {
+            "attachments": (RelationshipToIncidentAttachment,),
             "commander_user": (NullableRelationshipToUser,),
             "created_by_user": (RelationshipToUser,),
             "integrations": (RelationshipToIncidentIntegrationMetadatas,),
             "last_modified_by_user": (RelationshipToUser,),
-            "postmortem": (RelationshipToIncidentPostmortem,),
         }
 
     attribute_map = {
+        "attachments": "attachments",
         "commander_user": "commander_user",
         "created_by_user": "created_by_user",
         "integrations": "integrations",
         "last_modified_by_user": "last_modified_by_user",
-        "postmortem": "postmortem",
     }
 
     def __init__(self_, *args, **kwargs):
         """
         The incident's relationships from a response.
+
+        :param attachments: A relationship reference for attachments.
+        :type attachments: RelationshipToIncidentAttachment, optional
 
         :param commander_user: Relationship to user.
         :type commander_user: NullableRelationshipToUser, optional
@@ -50,9 +53,6 @@ class IncidentResponseRelationships(ModelNormal):
 
         :param last_modified_by_user: Relationship to user.
         :type last_modified_by_user: RelationshipToUser, optional
-
-        :param postmortem: A relationship reference for postmortems.
-        :type postmortem: RelationshipToIncidentPostmortem, optional
         """
         super().__init__(kwargs)
 
