@@ -1,6 +1,6 @@
 {
   "description": "",
-  "name": "GLOBAL_VARIABLE_PAYLOAD",
+  "name": "GLOBAL_VARIABLE_PAYLOAD_{{ unique_upper_alnum }}",
   "tags": [],
   "value": {
     "secure": false,
