@@ -2591,6 +2591,20 @@ search\_service\_level\_objective
    :members:
    :show-inheritance:
 
+search\_service\_level\_objective\_attributes
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_service_level_objective_attributes
+   :members:
+   :show-inheritance:
+
+search\_service\_level\_objective\_data
+---------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_service_level_objective_data
+   :members:
+   :show-inheritance:
+
 search\_slo\_query
 ------------------
 

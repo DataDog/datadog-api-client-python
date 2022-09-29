@@ -487,6 +487,8 @@ from datadog_api_client.v1.model.search_slo_response_meta_page import SearchSLOR
 from datadog_api_client.v1.model.search_slo_threshold import SearchSLOThreshold
 from datadog_api_client.v1.model.search_slo_timeframe import SearchSLOTimeframe
 from datadog_api_client.v1.model.search_service_level_objective import SearchServiceLevelObjective
+from datadog_api_client.v1.model.search_service_level_objective_attributes import SearchServiceLevelObjectiveAttributes
+from datadog_api_client.v1.model.search_service_level_objective_data import SearchServiceLevelObjectiveData
 from datadog_api_client.v1.model.series import Series
 from datadog_api_client.v1.model.service_check import ServiceCheck
 from datadog_api_client.v1.model.service_check_status import ServiceCheckStatus
