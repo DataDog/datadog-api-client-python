@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
@@ -304,7 +305,7 @@ class UsageMeteringApi:
         *,
         end_month: Union[datetime, UnsetType] = unset,
     ) -> CostByOrgResponse:
-        """Get cost across multi-org account.
+        """Get cost across multi-org account. **Deprecated**.
 
         Get cost across multi-org account.
         Cost by org data for a given month becomes available no later than the 16th of the following month.
@@ -324,6 +325,7 @@ class UsageMeteringApi:
         if end_month is not unset:
             kwargs["end_month"] = end_month
 
+        warnings.warn("get_cost_by_org is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_cost_by_org_endpoint.call_with_http_info(**kwargs)
 
     def get_estimated_cost_by_org(
