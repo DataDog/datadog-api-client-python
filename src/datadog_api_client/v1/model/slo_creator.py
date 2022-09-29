@@ -16,7 +16,7 @@ class SLOCreator(ModelNormal):
     def openapi_types(_):
         return {
             "email": (str,),
-            "id": (str,),
+            "id": (int,),
             "name": (str,),
         }
 
@@ -34,7 +34,7 @@ class SLOCreator(ModelNormal):
         :type email: str, optional
 
         :param id: User ID of the creator.
-        :type id: str, optional
+        :type id: int, optional
 
         :param name: Name of the creator.
         :type name: str, optional
