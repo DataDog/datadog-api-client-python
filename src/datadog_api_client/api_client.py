@@ -132,8 +132,7 @@ class ApiClient(object):
 
         if return_http_data_only:
             return return_data
-        else:
-            return (return_data, response.status, response.getheaders())
+        return (return_data, response.status, response.getheaders())
 
     def parameters_to_multipart(self, params, collection_types):
         """Get parameters as list of tuples, formatting as json if value is collection_types.
@@ -171,7 +170,7 @@ class ApiClient(object):
         :return: The serialized form of data.
         """
         if isinstance(obj, (ModelNormal, ModelComposed)):
-            return {key: cls.sanitize_for_serialization(val) for key, val in model_to_dict(obj, serialize=True).items()}
+            return {key: cls.sanitize_for_serialization(val) for key, val in model_to_dict(obj).items()}
         elif isinstance(obj, io.IOBase):
             return cls.get_file_data_and_close_file(obj)
         elif isinstance(obj, (str, int, float, bool)) or obj is None:
@@ -305,7 +304,7 @@ class ApiClient(object):
 
         # post parameters
         if post_params or files:
-            post_params = post_params if post_params else []
+            post_params = post_params or []
             post_params = self.sanitize_for_serialization(post_params)
             post_params = self.parameters_to_tuples(post_params, collection_formats)
             post_params.extend(self.files_parameters(files))
@@ -337,7 +336,7 @@ class ApiClient(object):
             check_type,
         )
 
-    def parameters_to_tuples(self, params, collection_formats) -> List[Tuple[str, str]]:
+    def parameters_to_tuples(self, params, collection_formats) -> List[Tuple[str, Any]]:
         """Get parameters as list of tuples, formatting collections.
 
         :param params: Parameters as dict or list of two-tuples
@@ -425,8 +424,7 @@ class ApiClient(object):
 
         if "application/json" in content_types or "*/*" in content_types:
             return "application/json"
-        else:
-            return content_types[0]
+        return content_types[0]
 
 
 class ThreadedApiClient(ApiClient):
@@ -551,8 +549,7 @@ class AsyncApiClient(ApiClient):
 
         if return_http_data_only:
             return return_data
-        else:
-            return (return_data, response.status_code, response.headers)
+        return (return_data, response.status_code, response.headers)
 
 
 class Endpoint(object):
