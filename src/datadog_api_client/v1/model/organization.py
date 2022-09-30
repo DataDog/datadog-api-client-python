@@ -51,7 +51,7 @@ class Organization(ModelNormal):
         """
         Create, edit, and manage organizations.
 
-        :param billing: A JSON array of billing type.
+        :param billing: A JSON array of billing type. **Deprecated**.
         :type billing: OrganizationBilling, optional
 
         :param created: Date of the organization creation.
@@ -69,7 +69,7 @@ class Organization(ModelNormal):
         :param settings: A JSON array of settings.
         :type settings: OrganizationSettings, optional
 
-        :param subscription: Subscription definition.
+        :param subscription: Subscription definition. **Deprecated**.
         :type subscription: OrganizationSubscription, optional
 
         :param trial: Only available for MSP customers. Allows child organizations to be created on a trial plan.

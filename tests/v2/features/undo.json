@@ -219,6 +219,18 @@
       "type": "idempotent"
     }
   },
+  "ListIncidentAttachments": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIncidentAttachments": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListOpsgenieServices": {
     "tag": "Opsgenie Integration",
     "undo": {
@@ -752,6 +764,12 @@
       "type": "safe"
     }
   },
+  "GetSecurityMonitoringSignal": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "EditSecurityMonitoringSignalAssignee": {
     "tag": "Security Monitoring",
     "undo": {
@@ -917,6 +935,12 @@
     }
   },
   "GetEstimatedCostByOrg": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetHistoricalCostByOrg": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"

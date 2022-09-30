@@ -1,0 +1,113 @@
+interactions:
+- request:
+    body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
+      rule","name":"Test-Create_a_detection_rule_with_type_signal_correlation_returns_OK_response-1664284011","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:true"}],"tags":[],"type":"log_detection"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
+  response:
+    body:
+      string: '{"creationAuthorId":1445416,"tags":[],"isEnabled":true,"hasExtendedTitle":false,"message":"Test
+        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1664284011737,"filters":[],"queries":[{"query":"@test:true","groupByFields":[],"aggregation":"count","name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
+        > 0"}],"type":"log_detection","id":"bvi-e5q-fw2","isDefault":false,"name":"Test-Create_a_detection_rule_with_type_signal_correlation_returns_OK_response-1664284011"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
+      rule Bis","name":"Test-Create_a_detection_rule_with_type_signal_correlation_returns_OK_response-1664284011_bis","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:false"}],"tags":[],"type":"log_detection"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
+  response:
+    body:
+      string: '{"creationAuthorId":1445416,"tags":[],"isEnabled":true,"hasExtendedTitle":false,"message":"Test
+        rule Bis","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1664284012131,"filters":[],"queries":[{"query":"@test:false","groupByFields":[],"aggregation":"count","name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
+        > 0"}],"type":"log_detection","id":"iik-vtr-194","isDefault":false,"name":"Test-Create_a_detection_rule_with_type_signal_correlation_returns_OK_response-1664284011_bis"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"cases":[{"condition":"a > 0 && b > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
+      signal correlation rule","name":"Test-Create_a_detection_rule_with_type_signal_correlation_returns_OK_response-1664284011_signal_rule","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"event_count","correlatedByFields":["host"],"correlatedQueryIndex":1,"ruleId":"bvi-e5q-fw2"},{"aggregation":"event_count","correlatedByFields":["host"],"ruleId":"iik-vtr-194"}],"tags":[],"type":"signal_correlation"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
+  response:
+    body:
+      string: '{"creationAuthorId":1445416,"tags":[],"isEnabled":true,"hasExtendedTitle":false,"message":"Test
+        signal correlation rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1664284012602,"filters":[],"queries":[{"distinctFields":[],"correlatedByFields":["host"],"name":"","ruleId":"bvi-e5q-fw2","aggregation":"event_count","groupByFields":[],"correlatedQueryIndex":1},{"distinctFields":[],"correlatedByFields":["host"],"name":"","ruleId":"iik-vtr-194","aggregation":"event_count","groupByFields":[]}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
+        > 0 && b > 0"}],"type":"signal_correlation","id":"l1e-bel-iqm","isDefault":false,"name":"Test-Create_a_detection_rule_with_type_signal_correlation_returns_OK_response-1664284011_signal_rule"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/l1e-bel-iqm
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/iik-vtr-194
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/bvi-e5q-fw2
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

@@ -6,6 +6,7 @@
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
 )
 
 
@@ -14,9 +15,9 @@ class SearchSLOResponseLinks(ModelNormal):
     def openapi_types(_):
         return {
             "first": (str,),
-            "last": (str,),
+            "last": (str, none_type),
             "next": (str,),
-            "prev": (str,),
+            "prev": (str, none_type),
             "self": (str,),
         }
 
@@ -36,13 +37,13 @@ class SearchSLOResponseLinks(ModelNormal):
         :type first: str, optional
 
         :param last: Link to first page.
-        :type last: str, optional
+        :type last: str, none_type, optional
 
         :param next: Link to the next page.
         :type next: str, optional
 
         :param prev: Link to previous page.
-        :type prev: str, optional
+        :type prev: str, none_type, optional
 
         :param self: Link to current page.
         :type self: str, optional

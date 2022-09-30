@@ -274,6 +274,31 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._get_security_monitoring_signal_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignal,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/{signal_id}",
+                "operation_id": "get_security_monitoring_signal",
+                "http_method": "GET",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "signal_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "signal_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
         self._list_security_filters_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityFiltersResponse,),
@@ -619,6 +644,23 @@ class SecurityMonitoringApi:
         kwargs["rule_id"] = rule_id
 
         return self._get_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
+
+    def get_security_monitoring_signal(
+        self,
+        signal_id: str,
+    ) -> SecurityMonitoringSignal:
+        """Get a signal's details.
+
+        Get a signal's details.
+
+        :param signal_id: The ID of the signal.
+        :type signal_id: str
+        :rtype: SecurityMonitoringSignal
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["signal_id"] = signal_id
+
+        return self._get_security_monitoring_signal_endpoint.call_with_http_info(**kwargs)
 
     def list_security_filters(
         self,

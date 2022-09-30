@@ -5,7 +5,6 @@ Create a detection rule with type 'impossible_travel' returns "OK" response
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
-from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
 from datadog_api_client.v2.model.security_monitoring_rule_detection_method import SecurityMonitoringRuleDetectionMethod
 from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
     SecurityMonitoringRuleEvaluationWindow,
@@ -21,13 +20,16 @@ from datadog_api_client.v2.model.security_monitoring_rule_options import Securit
 from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
     SecurityMonitoringRuleQueryAggregation,
 )
-from datadog_api_client.v2.model.security_monitoring_rule_query_create import SecurityMonitoringRuleQueryCreate
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
 from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
+from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
+    SecurityMonitoringStandardRuleCreatePayload,
+)
+from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
 
-body = SecurityMonitoringRuleCreatePayload(
+body = SecurityMonitoringStandardRuleCreatePayload(
     queries=[
-        SecurityMonitoringRuleQueryCreate(
+        SecurityMonitoringStandardRuleQuery(
             aggregation=SecurityMonitoringRuleQueryAggregation.GEO_DATA,
             group_by_fields=[
                 "@usr.id",

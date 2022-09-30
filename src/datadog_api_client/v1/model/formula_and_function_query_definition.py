@@ -38,6 +38,9 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
         :param search: Search options.
         :type search: FormulaAndFunctionEventQueryDefinitionSearch, optional
 
+        :param storage: Option for storage location. Feature in Private Beta.
+        :type storage: str, optional
+
         :param is_normalized_cpu: Whether to normalize the CPU percentages.
         :type is_normalized_cpu: bool, optional
 

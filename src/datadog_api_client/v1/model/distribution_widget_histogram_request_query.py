@@ -38,6 +38,9 @@ class DistributionWidgetHistogramRequestQuery(ModelComposed):
         :param search: Search options.
         :type search: FormulaAndFunctionEventQueryDefinitionSearch, optional
 
+        :param storage: Option for storage location. Feature in Private Beta.
+        :type storage: str, optional
+
         :param env: APM environment.
         :type env: str
 

@@ -28,7 +28,6 @@ class IncidentResponseAttributes(ModelNormal):
             "fields": ({str: (IncidentFieldAttributes,)},),
             "modified": (datetime,),
             "notification_handles": ([IncidentNotificationHandle], none_type),
-            "postmortem_id": (str,),
             "public_id": (int,),
             "resolved": (datetime, none_type),
             "time_to_detect": (int,),
@@ -49,7 +48,6 @@ class IncidentResponseAttributes(ModelNormal):
         "fields": "fields",
         "modified": "modified",
         "notification_handles": "notification_handles",
-        "postmortem_id": "postmortem_id",
         "public_id": "public_id",
         "resolved": "resolved",
         "time_to_detect": "time_to_detect",
@@ -102,9 +100,6 @@ class IncidentResponseAttributes(ModelNormal):
 
         :param notification_handles: Notification handles that will be notified of the incident during update.
         :type notification_handles: [IncidentNotificationHandle], none_type, optional
-
-        :param postmortem_id: The UUID of the postmortem object attached to the incident.
-        :type postmortem_id: str, optional
 
         :param public_id: The monotonically increasing integer ID for the incident.
         :type public_id: int, optional

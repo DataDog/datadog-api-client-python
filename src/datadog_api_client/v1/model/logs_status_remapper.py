@@ -34,7 +34,6 @@ class LogsStatusRemapper(ModelNormal):
 
         Each incoming status value is mapped as follows.
 
-
         * Integers from 0 to 7 map to the Syslog severity standards
         * Strings beginning with ``emerg`` or f (case-insensitive) map to ``emerg`` (0)
         * Strings beginning with ``a`` (case-insensitive) map to ``alert`` (1)

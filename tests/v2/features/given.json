@@ -82,6 +82,22 @@
   {
     "parameters": [
       {
+        "name": "incident_id",
+        "source": "incident.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": [\n    {\n      \"attributes\": {\n        \"attachment_type\": \"link\",\n        \"attachment\": {\n          \"documentUrl\": \"https://www.example.com/doc\",\n          \"title\": \"Important Doc\"\n        }\n      },\n      \"type\": \"incident_attachments\"\n    }\n  ]\n}"
+      }
+    ],
+    "step": "the \"incident\" has an \"incident_attachment\"",
+    "key": "incident_attachment",
+    "tag": "Incidents",
+    "operationId": "UpdateIncidentAttachments"
+  },
+  {
+    "parameters": [
+      {
         "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"opsgenie_api_key\": \"00000000-0000-0000-0000-000000000000\",\n      \"region\": \"us\"\n     },\n     \"type\": \"opsgenie-service\"\n  }\n}"
       }
@@ -215,6 +231,18 @@
     ],
     "step": "there is a valid \"security_rule\" in the system",
     "key": "security_rule",
+    "tag": "Security Monitoring",
+    "operationId": "CreateSecurityMonitoringRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"name\": \"{{ unique }}_bis\",\n  \"queries\": [{\n    \"query\": \"@test:false\",\n    \"aggregation\": \"count\",\n    \"groupByFields\": [],\n    \"distinctFields\": [],\n    \"metric\": \"\"\n  }],\n  \"filters\": [],\n  \"cases\": [{\n    \"name\": \"\",\n    \"status\": \"info\",\n    \"condition\": \"a > 0\",\n    \"notifications\": []\n  }],\n  \"options\": {\n    \"evaluationWindow\": 900,\n    \"keepAlive\": 3600,\n    \"maxSignalDuration\": 86400\n  },\n  \"message\": \"Test rule Bis\",\n  \"tags\": [],\n  \"isEnabled\": true,\n  \"type\": \"log_detection\"\n}"
+      }
+    ],
+    "step": "there is a valid \"security_rule_bis\" in the system",
+    "key": "security_rule_bis",
     "tag": "Security Monitoring",
     "operationId": "CreateSecurityMonitoringRule"
   },

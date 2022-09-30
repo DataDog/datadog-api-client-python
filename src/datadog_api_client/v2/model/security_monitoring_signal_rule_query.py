@@ -9,7 +9,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-class SecurityMonitoringRuleQueryCreate(ModelNormal):
+class SecurityMonitoringSignalRuleQuery(ModelNormal):
+    validations = {
+        "correlated_query_index": {
+            "inclusive_maximum": 9,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
@@ -18,40 +24,34 @@ class SecurityMonitoringRuleQueryCreate(ModelNormal):
 
         return {
             "aggregation": (SecurityMonitoringRuleQueryAggregation,),
-            "distinct_fields": ([str],),
-            "group_by_fields": ([str],),
-            "metric": (str,),
+            "correlated_by_fields": ([str],),
+            "correlated_query_index": (int,),
             "metrics": ([str],),
             "name": (str,),
-            "query": (str,),
+            "rule_id": (str,),
         }
 
     attribute_map = {
         "aggregation": "aggregation",
-        "distinct_fields": "distinctFields",
-        "group_by_fields": "groupByFields",
-        "metric": "metric",
+        "correlated_by_fields": "correlatedByFields",
+        "correlated_query_index": "correlatedQueryIndex",
         "metrics": "metrics",
         "name": "name",
-        "query": "query",
+        "rule_id": "ruleId",
     }
 
-    def __init__(self_, query, *args, **kwargs):
+    def __init__(self_, rule_id, *args, **kwargs):
         """
-        Query for matching rule.
+        Query for matching rule on signals
 
         :param aggregation: The aggregation type.
         :type aggregation: SecurityMonitoringRuleQueryAggregation, optional
 
-        :param distinct_fields: Field for which the cardinality is measured. Sent as an array.
-        :type distinct_fields: [str], optional
+        :param correlated_by_fields: Fields to group by.
+        :type correlated_by_fields: [str], optional
 
-        :param group_by_fields: Fields to group by.
-        :type group_by_fields: [str], optional
-
-        :param metric: The target field to aggregate over when using the sum or max
-            aggregations.
-        :type metric: str, optional
+        :param correlated_query_index: Index of the rule query used to retrieve the correlated field.
+        :type correlated_query_index: int, optional
 
         :param metrics: Group of target fields to aggregate over when using the new value aggregations.
         :type metrics: [str], optional
@@ -59,11 +59,11 @@ class SecurityMonitoringRuleQueryCreate(ModelNormal):
         :param name: Name of the query.
         :type name: str, optional
 
-        :param query: Query to run on logs.
-        :type query: str
+        :param rule_id: Rule ID to match on signals.
+        :type rule_id: str
         """
         super().__init__(kwargs)
 
         self_._check_pos_args(args)
 
-        self_.query = query
+        self_.rule_id = rule_id

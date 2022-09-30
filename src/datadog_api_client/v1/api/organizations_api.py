@@ -275,7 +275,6 @@ class OrganizationsApi:
         There are a couple of options for updating the Identity Provider (IdP)
         metadata from your SAML IdP.
 
-
         *
           **Multipart Form-Data** : Post the IdP metadata file using a form post.
 

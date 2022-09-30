@@ -32,6 +32,7 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
             "indexes": ([str],),
             "name": (str,),
             "search": (FormulaAndFunctionEventQueryDefinitionSearch,),
+            "storage": (str,),
         }
 
     attribute_map = {
@@ -41,6 +42,7 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         "indexes": "indexes",
         "name": "name",
         "search": "search",
+        "storage": "storage",
     }
 
     def __init__(self_, compute, data_source, name, *args, **kwargs):
@@ -64,6 +66,9 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
 
         :param search: Search options.
         :type search: FormulaAndFunctionEventQueryDefinitionSearch, optional
+
+        :param storage: Option for storage location. Feature in Private Beta.
+        :type storage: str, optional
         """
         super().__init__(kwargs)
 

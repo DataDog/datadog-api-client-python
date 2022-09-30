@@ -32,7 +32,6 @@ class LogsDateRemapper(ModelNormal):
         """
         As Datadog receives logs, it timestamps them using the value(s) from any of these default attributes.
 
-
         * ``timestamp``
         * ``date``
         * ``_timestamp``

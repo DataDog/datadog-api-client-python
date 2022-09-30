@@ -827,6 +827,132 @@ idp\_metadata\_form\_data
    :members:
    :show-inheritance:
 
+incident\_attachment\_attachment\_type
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachment_attachment_type
+   :members:
+   :show-inheritance:
+
+incident\_attachment\_attributes
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachment_attributes
+   :members:
+   :show-inheritance:
+
+incident\_attachment\_data
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachment_data
+   :members:
+   :show-inheritance:
+
+incident\_attachment\_link\_attachment\_type
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachment_link_attachment_type
+   :members:
+   :show-inheritance:
+
+incident\_attachment\_link\_attributes
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachment_link_attributes
+   :members:
+   :show-inheritance:
+
+incident\_attachment\_link\_attributes\_attachment\_object
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachment_link_attributes_attachment_object
+   :members:
+   :show-inheritance:
+
+incident\_attachment\_postmortem\_attachment\_type
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachment_postmortem_attachment_type
+   :members:
+   :show-inheritance:
+
+incident\_attachment\_postmortem\_attributes
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachment_postmortem_attributes
+   :members:
+   :show-inheritance:
+
+incident\_attachment\_related\_object
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachment_related_object
+   :members:
+   :show-inheritance:
+
+incident\_attachment\_relationships
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachment_relationships
+   :members:
+   :show-inheritance:
+
+incident\_attachment\_type
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachment_type
+   :members:
+   :show-inheritance:
+
+incident\_attachment\_update\_attributes
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachment_update_attributes
+   :members:
+   :show-inheritance:
+
+incident\_attachment\_update\_data
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachment_update_data
+   :members:
+   :show-inheritance:
+
+incident\_attachment\_update\_request
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachment_update_request
+   :members:
+   :show-inheritance:
+
+incident\_attachment\_update\_response
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachment_update_response
+   :members:
+   :show-inheritance:
+
+incident\_attachments\_postmortem\_attributes\_attachment\_object
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachments_postmortem_attributes_attachment_object
+   :members:
+   :show-inheritance:
+
+incident\_attachments\_response
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachments_response
+   :members:
+   :show-inheritance:
+
+incident\_attachments\_response\_included\_item
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_attachments_response_included_item
+   :members:
+   :show-inheritance:
+
 incident\_create\_attributes
 ----------------------------
 
@@ -2416,6 +2542,20 @@ query\_sort\_order
    :members:
    :show-inheritance:
 
+relationship\_to\_incident\_attachment
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_incident_attachment
+   :members:
+   :show-inheritance:
+
+relationship\_to\_incident\_attachment\_data
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_incident_attachment_data
+   :members:
+   :show-inheritance:
+
 relationship\_to\_incident\_integration\_metadata\_data
 -------------------------------------------------------
 
@@ -3270,13 +3410,6 @@ security\_monitoring\_rule\_query\_aggregation
    :members:
    :show-inheritance:
 
-security\_monitoring\_rule\_query\_create
------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_query_create
-   :members:
-   :show-inheritance:
-
 security\_monitoring\_rule\_response
 ------------------------------------
 
@@ -3403,6 +3536,34 @@ security\_monitoring\_signal\_list\_request\_page
    :members:
    :show-inheritance:
 
+security\_monitoring\_signal\_rule\_create\_payload
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_rule\_query
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_rule_query
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_rule\_response
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_rule_response
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_rule\_type
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_rule_type
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_signal\_state
 -----------------------------------
 
@@ -3491,6 +3652,27 @@ security\_monitoring\_signals\_sort
 -----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_signals_sort
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_standard\_rule\_create\_payload
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_standard\_rule\_query
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_query
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_standard\_rule\_response
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_response
    :members:
    :show-inheritance:
 

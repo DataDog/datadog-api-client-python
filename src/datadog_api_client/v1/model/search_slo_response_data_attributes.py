@@ -19,12 +19,12 @@ class SearchSLOResponseDataAttributes(ModelNormal):
 
         return {
             "facets": (SearchSLOResponseDataAttributesFacets,),
-            "slo": ([SearchServiceLevelObjective],),
+            "slos": ([SearchServiceLevelObjective],),
         }
 
     attribute_map = {
         "facets": "facets",
-        "slo": "slo",
+        "slos": "slos",
     }
 
     def __init__(self_, *args, **kwargs):
@@ -34,8 +34,8 @@ class SearchSLOResponseDataAttributes(ModelNormal):
         :param facets: Facets
         :type facets: SearchSLOResponseDataAttributesFacets, optional
 
-        :param slo: SLOs
-        :type slo: [SearchServiceLevelObjective], optional
+        :param slos: SLOs
+        :type slos: [SearchServiceLevelObjective], optional
         """
         super().__init__(kwargs)
 

@@ -19,7 +19,7 @@ SYNTHETICS_API_TEST_MULTI_STEP_PUBLIC_ID = environ["SYNTHETICS_API_TEST_MULTI_ST
 
 body = SyntheticsGlobalVariable(
     description="",
-    name="GLOBAL_VARIABLE_PAYLOAD",
+    name="GLOBAL_VARIABLE_PAYLOAD_EXAMPLECREATEAGLOBALVARIABLEFROMTESTRETURNSOKRESPONSE",
     tags=[],
     value=SyntheticsGlobalVariableValue(
         secure=False,

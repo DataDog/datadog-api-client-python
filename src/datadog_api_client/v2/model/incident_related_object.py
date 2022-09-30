@@ -15,14 +15,16 @@ class IncidentRelatedObject(ModelSimple):
     """
     Object related to an incident.
 
-    :param value: If omitted defaults to "users". Must be one of ["users"].
+    :param value: Must be one of ["users", "attachments"].
     :type value: str
     """
 
     allowed_values = {
         "users",
+        "attachments",
     }
     USERS: ClassVar["IncidentRelatedObject"]
+    ATTACHMENTS: ClassVar["IncidentRelatedObject"]
 
     @cached_property
     def openapi_types(_):
@@ -32,3 +34,4 @@ class IncidentRelatedObject(ModelSimple):
 
 
 IncidentRelatedObject.USERS = IncidentRelatedObject("users")
+IncidentRelatedObject.ATTACHMENTS = IncidentRelatedObject("attachments")

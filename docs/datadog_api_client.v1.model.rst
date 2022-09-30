@@ -2591,6 +2591,20 @@ search\_service\_level\_objective
    :members:
    :show-inheritance:
 
+search\_service\_level\_objective\_attributes
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_service_level_objective_attributes
+   :members:
+   :show-inheritance:
+
+search\_service\_level\_objective\_data
+---------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_service_level_objective_data
+   :members:
+   :show-inheritance:
+
 search\_slo\_query
 ------------------
 
@@ -3036,6 +3050,41 @@ slo\_list\_response\_metadata\_page
 -----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_list_response_metadata_page
+   :members:
+   :show-inheritance:
+
+slo\_list\_widget\_definition
+-----------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_list_widget_definition
+   :members:
+   :show-inheritance:
+
+slo\_list\_widget\_definition\_type
+-----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_list_widget_definition_type
+   :members:
+   :show-inheritance:
+
+slo\_list\_widget\_query
+------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_list_widget_query
+   :members:
+   :show-inheritance:
+
+slo\_list\_widget\_request
+--------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_list_widget_request
+   :members:
+   :show-inheritance:
+
+slo\_list\_widget\_request\_type
+--------------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_list_widget_request_type
    :members:
    :show-inheritance:
 

@@ -36,7 +36,7 @@ class DashboardTemplateVariable(ModelNormal):
         :param available_values: The list of values that the template variable drop-down is limited to.
         :type available_values: [str], none_type, optional
 
-        :param default: (deprecated) The default value for the template variable on dashboard load. Cannot be used in conjunction with ``defaults``.
+        :param default: (deprecated) The default value for the template variable on dashboard load. Cannot be used in conjunction with ``defaults``. **Deprecated**.
         :type default: str, none_type, optional
 
         :param defaults: One or many default values for template variables on load. If more than one default is specified, they will be unioned together with ``OR``. Cannot be used in conjunction with ``default``.

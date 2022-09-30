@@ -37,7 +37,7 @@ class DashboardTemplateVariablePresetValue(ModelNormal):
         :param name: The name of the variable.
         :type name: str, optional
 
-        :param value: (deprecated) The value of the template variable within the saved view. Cannot be used in conjunction with ``values``.
+        :param value: (deprecated) The value of the template variable within the saved view. Cannot be used in conjunction with ``values``. **Deprecated**.
         :type value: str, optional
 
         :param values: One or many template variable values within the saved view, which will be unioned together using ``OR`` if more than one is specified. Cannot be used in conjunction with ``value``.
