@@ -444,7 +444,7 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].queries[0].aggregator" is equal to "sum"
     And the response "widgets[0].definition.requests[0].formulas[0].formula" is equal to "query1"
 
-  @skip-typescript @team:DataDog/dashboards
+  @team:DataDog/dashboards
   Scenario: Create a new dashboard with template variable defaults and default returns "Bad Request" response
     Given new "CreateDashboard" request
     And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "defaults": ["my-host"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}

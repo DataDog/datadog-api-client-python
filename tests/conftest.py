@@ -540,7 +540,7 @@ def execute_request(undo, context, client, api_version):
 
     params_map = getattr(api_request["api"], f'_{api_request["request"].__name__}_endpoint').params_map
     for k, v in api_request["kwargs"].items():
-        api_request["kwargs"][k] = client.deserialize(v, params_map[k]['openapi_types'], True)
+        api_request["kwargs"][k] = client.deserialize(v, params_map[k]["openapi_types"], True)
 
     try:
         response = api_request["request"](*api_request["args"], **api_request["kwargs"])
@@ -574,7 +574,7 @@ def execute_request_with_pagination(undo, context, client, api_version):
 
     params_map = getattr(api_request["api"], f'_{api_request["request"].__name__}_endpoint').params_map
     for k, v in api_request["kwargs"].items():
-        api_request["kwargs"][k] = client.deserialize(v, params_map[k]['openapi_types'], True)
+        api_request["kwargs"][k] = client.deserialize(v, params_map[k]["openapi_types"], True)
 
     kwargs = api_request["kwargs"]
     client.configuration.return_http_data_only = True
