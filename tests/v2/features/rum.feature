@@ -91,7 +91,7 @@ Feature: RUM
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-back
+  @team:DataDog/rum-back
   Scenario: List all the RUM applications returns "OK" response
     Given new "GetRUMApplications" request
     When the request is sent
@@ -135,18 +135,20 @@ Feature: RUM
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-back
+  @team:DataDog/rum-back
   Scenario: Update a RUM application returns "OK" response
-    Given new "UpdateRUMApplication" request
-    And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+    Given there is a valid "rum_application" in the system
+    And new "UpdateRUMApplication" request
+    And request contains "id" parameter from "rum_application.data.id"
+    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser"}, "id": "{{ rum_application.data.id }}","type": "rum_application_update"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/rum-back
+  @team:DataDog/rum-back
   Scenario: Update a RUM application returns "Unprocessable Entity." response
-    Given new "UpdateRUMApplication" request
-    And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+    Given there is a valid "rum_application" in the system
+    And new "UpdateRUMApplication" request
+    And request contains "id" parameter from "rum_application.data.id"
+    And body with value {"data": {"id": "this_id_will_not_match", "type": "rum_application_update"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity.
