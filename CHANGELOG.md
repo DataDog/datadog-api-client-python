@@ -1,5 +1,33 @@
 # Changelog
 
+## 2.4.0 / 2022-10-03
+
+### Fixed
+* Refactor RuleQuery models by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1183
+* Fix SearchSLO response structure by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1184
+* Handle deprecation of APIs and attributes by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1170
+### Added
+* Add ListActiveConfigurations endpoint and add new filter[queried] param to list tag configurations endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1120
+* Improve enum handling by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1159
+* Support proxy in async client by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1162
+* Add doesNotExist to synthetics operator enum by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1153
+* Add TopologyMapWidget to dashboard schema by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1157
+* Add Overall Status support to SLO Search API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1158
+* Add APM Fargate to Usage Metering API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1152
+* Add support for template variable multiselect in dashboards by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1163
+* Add storage option to widget query definitions by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1167
+* Add support for retrieving a security signal by ID by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1175
+* Add support for signal correlation API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1168
+* Add support for SLO List widget by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1174
+* Add new historical_cost endpoint, and update estimate_cost by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1166
+* Add support for incident attachment APIs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1181
+
+## New Contributors
+* @nkzou made their first contribution in https://github.com/DataDog/datadog-api-client-python/pull/1151
+* @dependabot made their first contribution in https://github.com/DataDog/datadog-api-client-python/pull/1171
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.3.0...2.4.0
+
 ## 2.3.0 / 2022-08-31
 
 ### Fixed
