@@ -46,6 +46,7 @@ class MonitorOptions(ModelNormal):
             "new_host_delay": (int, none_type),
             "no_data_timeframe": (int, none_type),
             "notify_audit": (bool,),
+            "notify_by": ([str],),
             "notify_no_data": (bool,),
             "on_missing_data": (OnMissingDataOption,),
             "renotify_interval": (int, none_type),
@@ -83,6 +84,7 @@ class MonitorOptions(ModelNormal):
         "new_host_delay": "new_host_delay",
         "no_data_timeframe": "no_data_timeframe",
         "notify_audit": "notify_audit",
+        "notify_by": "notify_by",
         "notify_no_data": "notify_no_data",
         "on_missing_data": "on_missing_data",
         "renotify_interval": "renotify_interval",
@@ -174,6 +176,13 @@ class MonitorOptions(ModelNormal):
 
         :param notify_audit: A Boolean indicating whether tagged users is notified on changes to this monitor.
         :type notify_audit: bool, optional
+
+        :param notify_by: Controls what granularity a monitor alerts on. Only available for multi-alerts.
+            For instance, a monitor grouped by ``cluster`` , ``namespace`` , ``pod`` can be configured to only notify on each
+            new ``cluster`` violating the alert conditions by setting ``notify_by`` to ``["cluster"]``. Tags mentioned
+            in ``notify_by`` have to be a subset of the grouping tags in the query.
+            For example, a query grouped by ``cluster`` , ``namespace`` cannot notify on ``region``.
+        :type notify_by: [str], optional
 
         :param notify_no_data: A Boolean indicating whether this monitor notifies when data stops reporting.
         :type notify_no_data: bool, optional
