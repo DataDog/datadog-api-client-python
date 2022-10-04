@@ -6042,12 +6042,20 @@ components:
       - rum
       - ci_pipelines
       - ci_tests
+      - audit
+      - events
+      - logs
+      - spans
       example: rum
       type: string
       x-enum-varnames:
       - RUM
       - CI_PIPELINES
       - CI_TESTS
+      - AUDIT
+      - EVENTS
+      - LOGS
+      - SPANS
     MonitorFormulaAndFunctionQueryDefinition:
       description: A formula and function query.
       oneOf:
