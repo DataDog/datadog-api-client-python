@@ -2314,9 +2314,9 @@ class UsageMeteringApi:
         end_month: Union[datetime, UnsetType] = unset,
         include_org_details: Union[bool, UnsetType] = unset,
     ) -> UsageSummaryResponse:
-        """Get usage across your multi-org account.
+        """Get usage across your account.
 
-        Get usage across your multi-org account. You must have the multi-org feature enabled.
+        Get all usage across your account.
 
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage beginning in this month.
             Maximum of 15 months ago.

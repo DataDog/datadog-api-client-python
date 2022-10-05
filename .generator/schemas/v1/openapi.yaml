@@ -28539,8 +28539,7 @@ paths:
       - Usage Metering
   /api/v1/usage/summary:
     get:
-      description: Get usage across your multi-org account. You must have the multi-org
-        feature enabled.
+      description: Get all usage across your account.
       operationId: GetUsageSummary
       parameters:
       - description: 'Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]`
@@ -28597,7 +28596,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - usage_read
-      summary: Get usage across your multi-org account
+      summary: Get usage across your account
       tags:
       - Usage Metering
   /api/v1/usage/synthetics:

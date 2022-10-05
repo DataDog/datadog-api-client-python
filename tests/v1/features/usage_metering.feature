@@ -721,14 +721,14 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get usage across your multi-org account returns "Bad Request" response
+  Scenario: Get usage across your account returns "Bad Request" response
     Given new "GetUsageSummary" request
     And request contains "start_month" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get usage across your multi-org account returns "OK" response
+  Scenario: Get usage across your account returns "OK" response
     Given new "GetUsageSummary" request
     And request contains "start_month" parameter from "REPLACE.ME"
     When the request is sent
