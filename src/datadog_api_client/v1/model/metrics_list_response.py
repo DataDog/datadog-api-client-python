@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -22,7 +26,9 @@ class MetricsListResponse(ModelNormal):
         "metrics": "metrics",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_, _from: Union[str, UnsetType] = unset, metrics: Union[List[str], UnsetType] = unset, *args, **kwargs
+    ):
         """
         Object listing all metric names stored by Datadog since a given time.
 
@@ -32,6 +38,10 @@ class MetricsListResponse(ModelNormal):
         :param metrics: List of metric names.
         :type metrics: [str], optional
         """
+        if _from is not unset:
+            kwargs["_from"] = _from
+        if metrics is not unset:
+            kwargs["metrics"] = metrics
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -26,7 +30,15 @@ class ServiceAccountCreateAttributes(ModelNormal):
         "title": "title",
     }
 
-    def __init__(self_, email, service_account, *args, **kwargs):
+    def __init__(
+        self_,
+        email: str,
+        service_account: bool,
+        name: Union[str, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Attributes of the created user.
 
@@ -42,6 +54,10 @@ class ServiceAccountCreateAttributes(ModelNormal):
         :param title: The title of the user.
         :type title: str, optional
         """
+        if name is not unset:
+            kwargs["name"] = name
+        if title is not unset:
+            kwargs["title"] = title
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

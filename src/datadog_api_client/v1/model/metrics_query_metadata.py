@@ -1,13 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.point import Point
+    from datadog_api_client.v1.model.metrics_query_unit import MetricsQueryUnit
 
 
 class MetricsQueryMetadata(ModelNormal):
@@ -70,7 +79,24 @@ class MetricsQueryMetadata(ModelNormal):
         "unit",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        aggr: Union[str, none_type, UnsetType] = unset,
+        display_name: Union[str, UnsetType] = unset,
+        end: Union[int, UnsetType] = unset,
+        expression: Union[str, UnsetType] = unset,
+        interval: Union[int, UnsetType] = unset,
+        length: Union[int, UnsetType] = unset,
+        metric: Union[str, UnsetType] = unset,
+        pointlist: Union[List[Point], UnsetType] = unset,
+        query_index: Union[int, UnsetType] = unset,
+        scope: Union[str, UnsetType] = unset,
+        start: Union[int, UnsetType] = unset,
+        tag_set: Union[List[str], UnsetType] = unset,
+        unit: Union[List[MetricsQueryUnit], UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Object containing all metric names returned and their associated metadata.
 
@@ -115,6 +141,32 @@ class MetricsQueryMetadata(ModelNormal):
             second describes the "per unit" (for example, ``second`` in ``bytes per second`` ).
         :type unit: [MetricsQueryUnit], optional
         """
+        if aggr is not unset:
+            kwargs["aggr"] = aggr
+        if display_name is not unset:
+            kwargs["display_name"] = display_name
+        if end is not unset:
+            kwargs["end"] = end
+        if expression is not unset:
+            kwargs["expression"] = expression
+        if interval is not unset:
+            kwargs["interval"] = interval
+        if length is not unset:
+            kwargs["length"] = length
+        if metric is not unset:
+            kwargs["metric"] = metric
+        if pointlist is not unset:
+            kwargs["pointlist"] = pointlist
+        if query_index is not unset:
+            kwargs["query_index"] = query_index
+        if scope is not unset:
+            kwargs["scope"] = scope
+        if start is not unset:
+            kwargs["start"] = start
+        if tag_set is not unset:
+            kwargs["tag_set"] = tag_set
+        if unit is not unset:
+            kwargs["unit"] = unit
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

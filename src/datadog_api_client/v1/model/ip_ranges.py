@@ -1,12 +1,29 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.ip_prefixes_agents import IPPrefixesAgents
+    from datadog_api_client.v1.model.ip_prefixes_api import IPPrefixesAPI
+    from datadog_api_client.v1.model.ip_prefixes_apm import IPPrefixesAPM
+    from datadog_api_client.v1.model.ip_prefixes_logs import IPPrefixesLogs
+    from datadog_api_client.v1.model.ip_prefixes_process import IPPrefixesProcess
+    from datadog_api_client.v1.model.ip_prefixes_synthetics import IPPrefixesSynthetics
+    from datadog_api_client.v1.model.ip_prefixes_synthetics_private_locations import (
+        IPPrefixesSyntheticsPrivateLocations,
+    )
+    from datadog_api_client.v1.model.ip_prefixes_webhooks import IPPrefixesWebhooks
 
 
 class IPRanges(ModelNormal):
@@ -49,7 +66,21 @@ class IPRanges(ModelNormal):
         "webhooks": "webhooks",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        agents: Union[IPPrefixesAgents, UnsetType] = unset,
+        api: Union[IPPrefixesAPI, UnsetType] = unset,
+        apm: Union[IPPrefixesAPM, UnsetType] = unset,
+        logs: Union[IPPrefixesLogs, UnsetType] = unset,
+        modified: Union[str, UnsetType] = unset,
+        process: Union[IPPrefixesProcess, UnsetType] = unset,
+        synthetics: Union[IPPrefixesSynthetics, UnsetType] = unset,
+        synthetics_private_locations: Union[IPPrefixesSyntheticsPrivateLocations, UnsetType] = unset,
+        version: Union[int, UnsetType] = unset,
+        webhooks: Union[IPPrefixesWebhooks, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         IP ranges.
 
@@ -83,6 +114,26 @@ class IPRanges(ModelNormal):
         :param webhooks: Available prefix information for the Webhook endpoints.
         :type webhooks: IPPrefixesWebhooks, optional
         """
+        if agents is not unset:
+            kwargs["agents"] = agents
+        if api is not unset:
+            kwargs["api"] = api
+        if apm is not unset:
+            kwargs["apm"] = apm
+        if logs is not unset:
+            kwargs["logs"] = logs
+        if modified is not unset:
+            kwargs["modified"] = modified
+        if process is not unset:
+            kwargs["process"] = process
+        if synthetics is not unset:
+            kwargs["synthetics"] = synthetics
+        if synthetics_private_locations is not unset:
+            kwargs["synthetics_private_locations"] = synthetics_private_locations
+        if version is not unset:
+            kwargs["version"] = version
+        if webhooks is not unset:
+            kwargs["webhooks"] = webhooks
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

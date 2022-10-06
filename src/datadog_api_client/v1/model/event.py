@@ -1,12 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.event_alert_type import EventAlertType
+    from datadog_api_client.v1.model.event_priority import EventPriority
 
 
 class Event(ModelNormal):
@@ -59,7 +68,24 @@ class Event(ModelNormal):
         "url",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        alert_type: Union[EventAlertType, UnsetType] = unset,
+        date_happened: Union[int, UnsetType] = unset,
+        device_name: Union[str, UnsetType] = unset,
+        host: Union[str, UnsetType] = unset,
+        id: Union[int, UnsetType] = unset,
+        id_str: Union[str, UnsetType] = unset,
+        payload: Union[str, UnsetType] = unset,
+        priority: Union[EventPriority, UnsetType] = unset,
+        source_type_name: Union[str, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        text: Union[str, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        url: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Object representing an event.
 
@@ -110,6 +136,32 @@ class Event(ModelNormal):
         :param url: URL of the event.
         :type url: str, optional
         """
+        if alert_type is not unset:
+            kwargs["alert_type"] = alert_type
+        if date_happened is not unset:
+            kwargs["date_happened"] = date_happened
+        if device_name is not unset:
+            kwargs["device_name"] = device_name
+        if host is not unset:
+            kwargs["host"] = host
+        if id is not unset:
+            kwargs["id"] = id
+        if id_str is not unset:
+            kwargs["id_str"] = id_str
+        if payload is not unset:
+            kwargs["payload"] = payload
+        if priority is not unset:
+            kwargs["priority"] = priority
+        if source_type_name is not unset:
+            kwargs["source_type_name"] = source_type_name
+        if tags is not unset:
+            kwargs["tags"] = tags
+        if text is not unset:
+            kwargs["text"] = text
+        if title is not unset:
+            kwargs["title"] = title
+        if url is not unset:
+            kwargs["url"] = url
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -9,7 +11,14 @@ from datadog_api_client.model_utils import (
     date,
     datetime,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
+    from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
 
 
 class SyntheticsAssertionTarget(ModelNormal):
@@ -42,7 +51,15 @@ class SyntheticsAssertionTarget(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, operator, target, type, *args, **kwargs):
+    def __init__(
+        self_,
+        operator: SyntheticsAssertionOperator,
+        target: Any,
+        type: SyntheticsAssertionType,
+        _property: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         An assertion which uses a simple target.
 
@@ -58,6 +75,8 @@ class SyntheticsAssertionTarget(ModelNormal):
         :param type: Type of the assertion.
         :type type: SyntheticsAssertionType
         """
+        if _property is not unset:
+            kwargs["_property"] = _property
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

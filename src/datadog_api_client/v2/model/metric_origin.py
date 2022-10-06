@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -36,7 +40,14 @@ class MetricOrigin(ModelNormal):
         "service": "service",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        metric_type: Union[int, UnsetType] = unset,
+        product: Union[int, UnsetType] = unset,
+        service: Union[int, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Metric origin information.
 
@@ -49,6 +60,12 @@ class MetricOrigin(ModelNormal):
         :param service: The origin service code
         :type service: int, optional
         """
+        if metric_type is not unset:
+            kwargs["metric_type"] = metric_type
+        if product is not unset:
+            kwargs["product"] = product
+        if service is not unset:
+            kwargs["service"] = service
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

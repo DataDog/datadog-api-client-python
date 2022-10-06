@@ -1,5 +1,7 @@
 {% include "api_info.j2" %}
+from __future__ import annotations
 
+from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from {{ package }}.model_utils import (
     ApiTypeError,
@@ -11,6 +13,8 @@ from {{ package }}.model_utils import (
     datetime,
     file_type,
     none_type,
+    unset,
+    UnsetType,
 )
 
 {% if "enum" in model -%}

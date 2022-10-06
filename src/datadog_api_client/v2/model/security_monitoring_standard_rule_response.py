@@ -1,12 +1,24 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
+    from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
+    from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
+    from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
+    from datadog_api_client.v2.model.security_monitoring_rule_type_read import SecurityMonitoringRuleTypeRead
 
 
 class SecurityMonitoringStandardRuleResponse(ModelNormal):
@@ -60,7 +72,28 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         "version": "version",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        cases: Union[List[SecurityMonitoringRuleCase], UnsetType] = unset,
+        created_at: Union[int, UnsetType] = unset,
+        creation_author_id: Union[int, UnsetType] = unset,
+        filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
+        has_extended_title: Union[bool, UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
+        is_default: Union[bool, UnsetType] = unset,
+        is_deleted: Union[bool, UnsetType] = unset,
+        is_enabled: Union[bool, UnsetType] = unset,
+        message: Union[str, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        options: Union[SecurityMonitoringRuleOptions, UnsetType] = unset,
+        queries: Union[List[SecurityMonitoringStandardRuleQuery], UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        type: Union[SecurityMonitoringRuleTypeRead, UnsetType] = unset,
+        update_author_id: Union[int, UnsetType] = unset,
+        version: Union[int, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Rule.
 
@@ -115,6 +148,40 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         :param version: The version of the rule.
         :type version: int, optional
         """
+        if cases is not unset:
+            kwargs["cases"] = cases
+        if created_at is not unset:
+            kwargs["created_at"] = created_at
+        if creation_author_id is not unset:
+            kwargs["creation_author_id"] = creation_author_id
+        if filters is not unset:
+            kwargs["filters"] = filters
+        if has_extended_title is not unset:
+            kwargs["has_extended_title"] = has_extended_title
+        if id is not unset:
+            kwargs["id"] = id
+        if is_default is not unset:
+            kwargs["is_default"] = is_default
+        if is_deleted is not unset:
+            kwargs["is_deleted"] = is_deleted
+        if is_enabled is not unset:
+            kwargs["is_enabled"] = is_enabled
+        if message is not unset:
+            kwargs["message"] = message
+        if name is not unset:
+            kwargs["name"] = name
+        if options is not unset:
+            kwargs["options"] = options
+        if queries is not unset:
+            kwargs["queries"] = queries
+        if tags is not unset:
+            kwargs["tags"] = tags
+        if type is not unset:
+            kwargs["type"] = type
+        if update_author_id is not unset:
+            kwargs["update_author_id"] = update_author_id
+        if version is not unset:
+            kwargs["version"] = version
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

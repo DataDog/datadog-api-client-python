@@ -1,12 +1,16 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
 
 
@@ -41,7 +45,17 @@ class DowntimeRecurrence(ModelNormal):
         "week_days": "week_days",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        period: Union[int, UnsetType] = unset,
+        rrule: Union[str, UnsetType] = unset,
+        type: Union[str, UnsetType] = unset,
+        until_date: Union[int, none_type, UnsetType] = unset,
+        until_occurrences: Union[int, none_type, UnsetType] = unset,
+        week_days: Union[List[str], none_type, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         An object defining the recurrence of the downtime.
 
@@ -72,6 +86,18 @@ class DowntimeRecurrence(ModelNormal):
             Only applicable when type is weeks. First letter must be capitalized.
         :type week_days: [str], none_type, optional
         """
+        if period is not unset:
+            kwargs["period"] = period
+        if rrule is not unset:
+            kwargs["rrule"] = rrule
+        if type is not unset:
+            kwargs["type"] = type
+        if until_date is not unset:
+            kwargs["until_date"] = until_date
+        if until_occurrences is not unset:
+            kwargs["until_occurrences"] = until_occurrences
+        if week_days is not unset:
+            kwargs["week_days"] = week_days
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

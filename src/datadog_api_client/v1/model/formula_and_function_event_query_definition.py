@@ -1,12 +1,29 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.formula_and_function_event_query_definition_compute import (
+        FormulaAndFunctionEventQueryDefinitionCompute,
+    )
+    from datadog_api_client.v1.model.formula_and_function_events_data_source import FormulaAndFunctionEventsDataSource
+    from datadog_api_client.v1.model.formula_and_function_event_query_group_by import (
+        FormulaAndFunctionEventQueryGroupBy,
+    )
+    from datadog_api_client.v1.model.formula_and_function_event_query_definition_search import (
+        FormulaAndFunctionEventQueryDefinitionSearch,
+    )
 
 
 class FormulaAndFunctionEventQueryDefinition(ModelNormal):
@@ -45,7 +62,18 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         "storage": "storage",
     }
 
-    def __init__(self_, compute, data_source, name, *args, **kwargs):
+    def __init__(
+        self_,
+        compute: FormulaAndFunctionEventQueryDefinitionCompute,
+        data_source: FormulaAndFunctionEventsDataSource,
+        name: str,
+        group_by: Union[List[FormulaAndFunctionEventQueryGroupBy], UnsetType] = unset,
+        indexes: Union[List[str], UnsetType] = unset,
+        search: Union[FormulaAndFunctionEventQueryDefinitionSearch, UnsetType] = unset,
+        storage: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         A formula and functions events query.
 
@@ -70,6 +98,14 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         :param storage: Option for storage location. Feature in Private Beta.
         :type storage: str, optional
         """
+        if group_by is not unset:
+            kwargs["group_by"] = group_by
+        if indexes is not unset:
+            kwargs["indexes"] = indexes
+        if search is not unset:
+            kwargs["search"] = search
+        if storage is not unset:
+            kwargs["storage"] = storage
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -34,7 +38,19 @@ class SearchSLOResponseMetaPage(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        first_number: Union[int, UnsetType] = unset,
+        last_number: Union[int, UnsetType] = unset,
+        next_number: Union[int, UnsetType] = unset,
+        number: Union[int, UnsetType] = unset,
+        prev_number: Union[int, UnsetType] = unset,
+        size: Union[int, UnsetType] = unset,
+        total: Union[int, UnsetType] = unset,
+        type: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Pagination metadata returned by the API.
 
@@ -62,6 +78,22 @@ class SearchSLOResponseMetaPage(ModelNormal):
         :param type: Type of pagination.
         :type type: str, optional
         """
+        if first_number is not unset:
+            kwargs["first_number"] = first_number
+        if last_number is not unset:
+            kwargs["last_number"] = last_number
+        if next_number is not unset:
+            kwargs["next_number"] = next_number
+        if number is not unset:
+            kwargs["number"] = number
+        if prev_number is not unset:
+            kwargs["prev_number"] = prev_number
+        if size is not unset:
+            kwargs["size"] = size
+        if total is not unset:
+            kwargs["total"] = total
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

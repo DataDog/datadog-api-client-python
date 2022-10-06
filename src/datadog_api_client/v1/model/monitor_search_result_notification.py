@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -26,7 +30,7 @@ class MonitorSearchResultNotification(ModelNormal):
         "name",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(self_, handle: Union[str, UnsetType] = unset, name: Union[str, UnsetType] = unset, *args, **kwargs):
         """
         A notification triggered by the monitor.
 
@@ -36,6 +40,10 @@ class MonitorSearchResultNotification(ModelNormal):
         :param name: The username receiving the notification
         :type name: str, optional
         """
+        if handle is not unset:
+            kwargs["handle"] = handle
+        if name is not unset:
+            kwargs["name"] = name
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

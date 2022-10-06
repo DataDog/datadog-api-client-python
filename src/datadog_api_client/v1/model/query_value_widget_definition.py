@@ -1,12 +1,25 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+    from datadog_api_client.v1.model.query_value_widget_request import QueryValueWidgetRequest
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    from datadog_api_client.v1.model.timeseries_background import TimeseriesBackground
+    from datadog_api_client.v1.model.query_value_widget_definition_type import QueryValueWidgetDefinitionType
 
 
 class QueryValueWidgetDefinition(ModelNormal):
@@ -56,7 +69,23 @@ class QueryValueWidgetDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, requests, type, *args, **kwargs):
+    def __init__(
+        self_,
+        requests: List[QueryValueWidgetRequest],
+        type: QueryValueWidgetDefinitionType,
+        autoscale: Union[bool, UnsetType] = unset,
+        custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        custom_unit: Union[str, UnsetType] = unset,
+        precision: Union[int, UnsetType] = unset,
+        text_align: Union[WidgetTextAlign, UnsetType] = unset,
+        time: Union[WidgetTime, UnsetType] = unset,
+        timeseries_background: Union[TimeseriesBackground, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        title_align: Union[WidgetTextAlign, UnsetType] = unset,
+        title_size: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Query values display the current value of a given metric, APM, or log query.
 
@@ -96,6 +125,26 @@ class QueryValueWidgetDefinition(ModelNormal):
         :param type: Type of the query value widget.
         :type type: QueryValueWidgetDefinitionType
         """
+        if autoscale is not unset:
+            kwargs["autoscale"] = autoscale
+        if custom_links is not unset:
+            kwargs["custom_links"] = custom_links
+        if custom_unit is not unset:
+            kwargs["custom_unit"] = custom_unit
+        if precision is not unset:
+            kwargs["precision"] = precision
+        if text_align is not unset:
+            kwargs["text_align"] = text_align
+        if time is not unset:
+            kwargs["time"] = time
+        if timeseries_background is not unset:
+            kwargs["timeseries_background"] = timeseries_background
+        if title is not unset:
+            kwargs["title"] = title
+        if title_align is not unset:
+            kwargs["title_align"] = title_align
+        if title_size is not unset:
+            kwargs["title_size"] = title_size
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

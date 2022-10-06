@@ -1,12 +1,23 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.metric_tag_configuration_create_attributes import (
+        MetricTagConfigurationCreateAttributes,
+    )
+    from datadog_api_client.v2.model.metric_tag_configuration_type import MetricTagConfigurationType
 
 
 class MetricTagConfigurationCreateData(ModelNormal):
@@ -29,7 +40,14 @@ class MetricTagConfigurationCreateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id, type, *args, **kwargs):
+    def __init__(
+        self_,
+        id: str,
+        type: MetricTagConfigurationType,
+        attributes: Union[MetricTagConfigurationCreateAttributes, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Object for a single metric to be configure tags on.
 
@@ -42,6 +60,8 @@ class MetricTagConfigurationCreateData(ModelNormal):
         :param type: The metric tag configuration resource type.
         :type type: MetricTagConfigurationType
         """
+        if attributes is not unset:
+            kwargs["attributes"] = attributes
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

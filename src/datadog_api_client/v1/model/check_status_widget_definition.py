@@ -1,12 +1,23 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_grouping import WidgetGrouping
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.check_status_widget_definition_type import CheckStatusWidgetDefinitionType
 
 
 class CheckStatusWidgetDefinition(ModelNormal):
@@ -43,7 +54,21 @@ class CheckStatusWidgetDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, check, grouping, type, *args, **kwargs):
+    def __init__(
+        self_,
+        check: str,
+        grouping: WidgetGrouping,
+        type: CheckStatusWidgetDefinitionType,
+        group: Union[str, UnsetType] = unset,
+        group_by: Union[List[str], UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        time: Union[WidgetTime, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        title_align: Union[WidgetTextAlign, UnsetType] = unset,
+        title_size: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Check status shows the current status or number of results for any check performed.
 
@@ -77,6 +102,20 @@ class CheckStatusWidgetDefinition(ModelNormal):
         :param type: Type of the check status widget.
         :type type: CheckStatusWidgetDefinitionType
         """
+        if group is not unset:
+            kwargs["group"] = group
+        if group_by is not unset:
+            kwargs["group_by"] = group_by
+        if tags is not unset:
+            kwargs["tags"] = tags
+        if time is not unset:
+            kwargs["time"] = time
+        if title is not unset:
+            kwargs["title"] = title
+        if title_align is not unset:
+            kwargs["title_align"] = title_align
+        if title_size is not unset:
+            kwargs["title_size"] = title_size
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

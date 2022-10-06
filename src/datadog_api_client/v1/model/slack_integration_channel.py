@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.slack_integration_channel_display import SlackIntegrationChannelDisplay
 
 
 class SlackIntegrationChannel(ModelNormal):
@@ -24,7 +32,13 @@ class SlackIntegrationChannel(ModelNormal):
         "name": "name",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        display: Union[SlackIntegrationChannelDisplay, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         The Slack channel configuration.
 
@@ -34,6 +48,10 @@ class SlackIntegrationChannel(ModelNormal):
         :param name: Your channel name.
         :type name: str, optional
         """
+        if display is not unset:
+            kwargs["display"] = display
+        if name is not unset:
+            kwargs["name"] = name
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

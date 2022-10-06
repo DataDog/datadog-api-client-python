@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.slo_history_metrics_series import SLOHistoryMetricsSeries
 
 
 class SLOHistoryMetrics(ModelNormal):
@@ -36,7 +44,19 @@ class SLOHistoryMetrics(ModelNormal):
         "times": "times",
     }
 
-    def __init__(self_, denominator, interval, numerator, query, res_type, resp_version, times, *args, **kwargs):
+    def __init__(
+        self_,
+        denominator: SLOHistoryMetricsSeries,
+        interval: int,
+        numerator: SLOHistoryMetricsSeries,
+        query: str,
+        res_type: str,
+        resp_version: int,
+        times: List[float],
+        message: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         A ``metric`` based SLO history response.
 
@@ -68,6 +88,8 @@ class SLOHistoryMetrics(ModelNormal):
         :param times: An array of query timestamps in EPOCH milliseconds.
         :type times: [float]
         """
+        if message is not unset:
+            kwargs["message"] = message
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

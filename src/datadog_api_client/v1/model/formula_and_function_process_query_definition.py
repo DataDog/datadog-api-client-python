@@ -1,12 +1,24 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.formula_and_function_metric_aggregation import FormulaAndFunctionMetricAggregation
+    from datadog_api_client.v1.model.formula_and_function_process_query_data_source import (
+        FormulaAndFunctionProcessQueryDataSource,
+    )
+    from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
 
 
 class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
@@ -44,7 +56,20 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
         "text_filter": "text_filter",
     }
 
-    def __init__(self_, data_source, metric, name, *args, **kwargs):
+    def __init__(
+        self_,
+        data_source: FormulaAndFunctionProcessQueryDataSource,
+        metric: str,
+        name: str,
+        aggregator: Union[FormulaAndFunctionMetricAggregation, UnsetType] = unset,
+        is_normalized_cpu: Union[bool, UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+        sort: Union[QuerySortOrder, UnsetType] = unset,
+        tag_filters: Union[List[str], UnsetType] = unset,
+        text_filter: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Process query using formulas and functions.
 
@@ -75,6 +100,18 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
         :param text_filter: Text to use as filter.
         :type text_filter: str, optional
         """
+        if aggregator is not unset:
+            kwargs["aggregator"] = aggregator
+        if is_normalized_cpu is not unset:
+            kwargs["is_normalized_cpu"] = is_normalized_cpu
+        if limit is not unset:
+            kwargs["limit"] = limit
+        if sort is not unset:
+            kwargs["sort"] = sort
+        if tag_filters is not unset:
+            kwargs["tag_filters"] = tag_filters
+        if text_filter is not unset:
+            kwargs["text_filter"] = text_filter
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

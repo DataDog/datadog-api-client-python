@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -30,7 +34,17 @@ class UsageCIVisibilityHour(ModelNormal):
         "public_id": "public_id",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        ci_pipeline_indexed_spans: Union[int, UnsetType] = unset,
+        ci_test_indexed_spans: Union[int, UnsetType] = unset,
+        ci_visibility_pipeline_committers: Union[int, UnsetType] = unset,
+        ci_visibility_test_committers: Union[int, UnsetType] = unset,
+        org_name: Union[str, UnsetType] = unset,
+        public_id: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         CI visibility usage in a given hour.
 
@@ -52,6 +66,18 @@ class UsageCIVisibilityHour(ModelNormal):
         :param public_id: The organization public ID.
         :type public_id: str, optional
         """
+        if ci_pipeline_indexed_spans is not unset:
+            kwargs["ci_pipeline_indexed_spans"] = ci_pipeline_indexed_spans
+        if ci_test_indexed_spans is not unset:
+            kwargs["ci_test_indexed_spans"] = ci_test_indexed_spans
+        if ci_visibility_pipeline_committers is not unset:
+            kwargs["ci_visibility_pipeline_committers"] = ci_visibility_pipeline_committers
+        if ci_visibility_test_committers is not unset:
+            kwargs["ci_visibility_test_committers"] = ci_visibility_test_committers
+        if org_name is not unset:
+            kwargs["org_name"] = org_name
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

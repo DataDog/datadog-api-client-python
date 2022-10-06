@@ -1,12 +1,16 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
 
 
@@ -27,7 +31,14 @@ class SearchSLOQuery(ModelNormal):
         "numerator": "numerator",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        denominator: Union[str, UnsetType] = unset,
+        metrics: Union[List[str], none_type, UnsetType] = unset,
+        numerator: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         A metric-based SLO. **Required if type is metric**. Note that Datadog only allows the sum by aggregator
         to be used because this will sum up all request counts instead of averaging them, or taking the max or
@@ -43,6 +54,12 @@ class SearchSLOQuery(ModelNormal):
         :param numerator: A Datadog metric query for good events.
         :type numerator: str, optional
         """
+        if denominator is not unset:
+            kwargs["denominator"] = denominator
+        if metrics is not unset:
+            kwargs["metrics"] = metrics
+        if numerator is not unset:
+            kwargs["numerator"] = numerator
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

@@ -42,9 +42,11 @@ def cli(specs, output):
     env.globals["package"] = PACKAGE_NAME
     env.globals["get_name"] = formatter.get_name
     env.globals["get_type_for_attribute"] = openapi.get_type_for_attribute
+    env.globals["get_typing_for_attribute"] = openapi.get_typing_for_attribute
     env.globals["get_types_for_attribute"] = openapi.get_types_for_attribute
     env.globals["get_type_for_parameter"] = openapi.get_type_for_parameter
     env.globals["get_references_for_model"] = openapi.get_references_for_model
+    env.globals["get_oneof_references_for_model"] = openapi.get_oneof_references_for_model
     env.globals["get_oneof_parameters"] = openapi.get_oneof_parameters
     env.globals["get_type_for_items"] = openapi.get_type_for_items
     env.globals["get_api_models"] = openapi.get_api_models

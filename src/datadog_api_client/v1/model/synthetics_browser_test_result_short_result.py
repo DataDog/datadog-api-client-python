@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_device import SyntheticsDevice
 
 
 class SyntheticsBrowserTestResultShortResult(ModelNormal):
@@ -30,7 +38,16 @@ class SyntheticsBrowserTestResultShortResult(ModelNormal):
         "step_count_total": "stepCountTotal",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        device: Union[SyntheticsDevice, UnsetType] = unset,
+        duration: Union[float, UnsetType] = unset,
+        error_count: Union[int, UnsetType] = unset,
+        step_count_completed: Union[int, UnsetType] = unset,
+        step_count_total: Union[int, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Object with the result of the last browser test run.
 
@@ -49,6 +66,16 @@ class SyntheticsBrowserTestResultShortResult(ModelNormal):
         :param step_count_total: Total amount of browser test steps.
         :type step_count_total: int, optional
         """
+        if device is not unset:
+            kwargs["device"] = device
+        if duration is not unset:
+            kwargs["duration"] = duration
+        if error_count is not unset:
+            kwargs["error_count"] = error_count
+        if step_count_completed is not unset:
+            kwargs["step_count_completed"] = step_count_completed
+        if step_count_total is not unset:
+            kwargs["step_count_total"] = step_count_total
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

@@ -1,12 +1,25 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_data_source import (
+        FormulaAndFunctionApmResourceStatsDataSource,
+    )
+    from datadog_api_client.v1.model.formula_and_function_apm_resource_stat_name import (
+        FormulaAndFunctionApmResourceStatName,
+    )
 
 
 class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
@@ -45,7 +58,21 @@ class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
         "stat": "stat",
     }
 
-    def __init__(self_, data_source, env, name, service, stat, *args, **kwargs):
+    def __init__(
+        self_,
+        data_source: FormulaAndFunctionApmResourceStatsDataSource,
+        env: str,
+        name: str,
+        service: str,
+        stat: FormulaAndFunctionApmResourceStatName,
+        group_by: Union[List[str], UnsetType] = unset,
+        operation_name: Union[str, UnsetType] = unset,
+        primary_tag_name: Union[str, UnsetType] = unset,
+        primary_tag_value: Union[str, UnsetType] = unset,
+        resource_name: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         APM resource stats query using formulas and functions.
 
@@ -79,6 +106,16 @@ class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
         :param stat: APM resource stat name.
         :type stat: FormulaAndFunctionApmResourceStatName
         """
+        if group_by is not unset:
+            kwargs["group_by"] = group_by
+        if operation_name is not unset:
+            kwargs["operation_name"] = operation_name
+        if primary_tag_name is not unset:
+            kwargs["primary_tag_name"] = primary_tag_name
+        if primary_tag_value is not unset:
+            kwargs["primary_tag_value"] = primary_tag_value
+        if resource_name is not unset:
+            kwargs["resource_name"] = resource_name
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

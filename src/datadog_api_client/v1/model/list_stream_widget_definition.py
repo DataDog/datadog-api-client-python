@@ -1,12 +1,23 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.list_stream_widget_request import ListStreamWidgetRequest
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.list_stream_widget_definition_type import ListStreamWidgetDefinitionType
 
 
 class ListStreamWidgetDefinition(ModelNormal):
@@ -46,7 +57,19 @@ class ListStreamWidgetDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, requests, type, *args, **kwargs):
+    def __init__(
+        self_,
+        requests: List[ListStreamWidgetRequest],
+        type: ListStreamWidgetDefinitionType,
+        legend_size: Union[str, UnsetType] = unset,
+        show_legend: Union[bool, UnsetType] = unset,
+        time: Union[WidgetTime, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        title_align: Union[WidgetTextAlign, UnsetType] = unset,
+        title_size: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         The list stream visualization displays a table of recent events in your application that
         match a search criteria using user-defined columns.
@@ -75,6 +98,18 @@ class ListStreamWidgetDefinition(ModelNormal):
         :param type: Type of the list stream widget.
         :type type: ListStreamWidgetDefinitionType
         """
+        if legend_size is not unset:
+            kwargs["legend_size"] = legend_size
+        if show_legend is not unset:
+            kwargs["show_legend"] = show_legend
+        if time is not unset:
+            kwargs["time"] = time
+        if title is not unset:
+            kwargs["title"] = title
+        if title_align is not unset:
+            kwargs["title_align"] = title_align
+        if title_size is not unset:
+            kwargs["title_size"] = title_size
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

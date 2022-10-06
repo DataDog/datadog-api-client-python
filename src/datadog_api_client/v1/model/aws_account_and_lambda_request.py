@@ -1,6 +1,7 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
@@ -22,7 +23,7 @@ class AWSAccountAndLambdaRequest(ModelNormal):
         "lambda_arn": "lambda_arn",
     }
 
-    def __init__(self_, account_id, lambda_arn, *args, **kwargs):
+    def __init__(self_, account_id: str, lambda_arn: str, *args, **kwargs):
         """
         AWS account ID and Lambda ARN.
 

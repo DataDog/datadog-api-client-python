@@ -1,12 +1,16 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
 
 
@@ -31,7 +35,17 @@ class UsageFargateHour(ModelNormal):
         "tasks_count": "tasks_count",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        apm_fargate_count: Union[int, UnsetType] = unset,
+        avg_profiled_fargate_tasks: Union[int, UnsetType] = unset,
+        hour: Union[datetime, UnsetType] = unset,
+        org_name: Union[str, UnsetType] = unset,
+        public_id: Union[str, UnsetType] = unset,
+        tasks_count: Union[int, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Number of Fargate tasks run and hourly usage.
 
@@ -53,6 +67,18 @@ class UsageFargateHour(ModelNormal):
         :param tasks_count: The number of Fargate tasks run.
         :type tasks_count: int, optional
         """
+        if apm_fargate_count is not unset:
+            kwargs["apm_fargate_count"] = apm_fargate_count
+        if avg_profiled_fargate_tasks is not unset:
+            kwargs["avg_profiled_fargate_tasks"] = avg_profiled_fargate_tasks
+        if hour is not unset:
+            kwargs["hour"] = hour
+        if org_name is not unset:
+            kwargs["org_name"] = org_name
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
+        if tasks_count is not unset:
+            kwargs["tasks_count"] = tasks_count
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

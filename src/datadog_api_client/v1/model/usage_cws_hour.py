@@ -1,12 +1,16 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
 
 
@@ -29,7 +33,16 @@ class UsageCWSHour(ModelNormal):
         "public_id": "public_id",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        cws_container_count: Union[int, UnsetType] = unset,
+        cws_host_count: Union[int, UnsetType] = unset,
+        hour: Union[datetime, UnsetType] = unset,
+        org_name: Union[str, UnsetType] = unset,
+        public_id: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Cloud Workload Security usage for a given organization for a given hour.
 
@@ -48,6 +61,16 @@ class UsageCWSHour(ModelNormal):
         :param public_id: The organization public ID.
         :type public_id: str, optional
         """
+        if cws_container_count is not unset:
+            kwargs["cws_container_count"] = cws_container_count
+        if cws_host_count is not unset:
+            kwargs["cws_host_count"] = cws_host_count
+        if hour is not unset:
+            kwargs["hour"] = hour
+        if org_name is not unset:
+            kwargs["org_name"] = org_name
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

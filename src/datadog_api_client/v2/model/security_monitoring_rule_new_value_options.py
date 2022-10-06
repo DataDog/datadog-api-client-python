@@ -1,12 +1,31 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_forget_after import (
+        SecurityMonitoringRuleNewValueOptionsForgetAfter,
+    )
+    from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_duration import (
+        SecurityMonitoringRuleNewValueOptionsLearningDuration,
+    )
+    from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_method import (
+        SecurityMonitoringRuleNewValueOptionsLearningMethod,
+    )
+    from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_threshold import (
+        SecurityMonitoringRuleNewValueOptionsLearningThreshold,
+    )
 
 
 class SecurityMonitoringRuleNewValueOptions(ModelNormal):
@@ -39,7 +58,15 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
         "learning_threshold": "learningThreshold",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        forget_after: Union[SecurityMonitoringRuleNewValueOptionsForgetAfter, UnsetType] = unset,
+        learning_duration: Union[SecurityMonitoringRuleNewValueOptionsLearningDuration, UnsetType] = unset,
+        learning_method: Union[SecurityMonitoringRuleNewValueOptionsLearningMethod, UnsetType] = unset,
+        learning_threshold: Union[SecurityMonitoringRuleNewValueOptionsLearningThreshold, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Options on new value rules.
 
@@ -56,6 +83,14 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
         :param learning_threshold: A number of occurrences after which signals will be generated for values that weren't learned.
         :type learning_threshold: SecurityMonitoringRuleNewValueOptionsLearningThreshold, optional
         """
+        if forget_after is not unset:
+            kwargs["forget_after"] = forget_after
+        if learning_duration is not unset:
+            kwargs["learning_duration"] = learning_duration
+        if learning_method is not unset:
+            kwargs["learning_method"] = learning_method
+        if learning_threshold is not unset:
+            kwargs["learning_threshold"] = learning_threshold
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

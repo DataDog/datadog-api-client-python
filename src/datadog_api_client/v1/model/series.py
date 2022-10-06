@@ -1,13 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.point import Point
 
 
 class Series(ModelNormal):
@@ -33,7 +41,17 @@ class Series(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, metric, points, *args, **kwargs):
+    def __init__(
+        self_,
+        metric: str,
+        points: List[Point],
+        host: Union[str, UnsetType] = unset,
+        interval: Union[int, none_type, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        type: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         A metric to submit to Datadog.
         See `Datadog metrics <https://docs.datadoghq.com/developers/metrics/#custom-metrics-properties>`_.
@@ -56,6 +74,14 @@ class Series(ModelNormal):
         :param type: The type of the metric. Valid types are "", ``count`` , ``gauge`` , and ``rate``.
         :type type: str, optional
         """
+        if host is not unset:
+            kwargs["host"] = host
+        if interval is not unset:
+            kwargs["interval"] = interval
+        if tags is not unset:
+            kwargs["tags"] = tags
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

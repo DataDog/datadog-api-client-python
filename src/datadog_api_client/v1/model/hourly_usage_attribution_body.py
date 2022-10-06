@@ -1,13 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.usage_attribution_tag_names import UsageAttributionTagNames
+    from datadog_api_client.v1.model.hourly_usage_attribution_usage_type import HourlyUsageAttributionUsageType
 
 
 class HourlyUsageAttributionBody(ModelNormal):
@@ -38,7 +47,19 @@ class HourlyUsageAttributionBody(ModelNormal):
         "usage_type": "usage_type",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        hour: Union[datetime, UnsetType] = unset,
+        org_name: Union[str, UnsetType] = unset,
+        public_id: Union[str, UnsetType] = unset,
+        tag_config_source: Union[str, UnsetType] = unset,
+        tags: Union[UsageAttributionTagNames, UnsetType] = unset,
+        total_usage_sum: Union[float, UnsetType] = unset,
+        updated_at: Union[str, UnsetType] = unset,
+        usage_type: Union[HourlyUsageAttributionUsageType, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         The usage for one set of tags for one hour.
 
@@ -70,6 +91,22 @@ class HourlyUsageAttributionBody(ModelNormal):
         :param usage_type: Supported products for hourly usage attribution requests.
         :type usage_type: HourlyUsageAttributionUsageType, optional
         """
+        if hour is not unset:
+            kwargs["hour"] = hour
+        if org_name is not unset:
+            kwargs["org_name"] = org_name
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
+        if tag_config_source is not unset:
+            kwargs["tag_config_source"] = tag_config_source
+        if tags is not unset:
+            kwargs["tags"] = tags
+        if total_usage_sum is not unset:
+            kwargs["total_usage_sum"] = total_usage_sum
+        if updated_at is not unset:
+            kwargs["updated_at"] = updated_at
+        if usage_type is not unset:
+            kwargs["usage_type"] = usage_type
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

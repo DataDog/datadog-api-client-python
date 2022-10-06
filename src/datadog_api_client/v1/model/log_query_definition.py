@@ -1,12 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.logs_query_compute import LogsQueryCompute
+    from datadog_api_client.v1.model.log_query_definition_group_by import LogQueryDefinitionGroupBy
+    from datadog_api_client.v1.model.log_query_definition_search import LogQueryDefinitionSearch
 
 
 class LogQueryDefinition(ModelNormal):
@@ -32,7 +42,16 @@ class LogQueryDefinition(ModelNormal):
         "search": "search",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        compute: Union[LogsQueryCompute, UnsetType] = unset,
+        group_by: Union[List[LogQueryDefinitionGroupBy], UnsetType] = unset,
+        index: Union[str, UnsetType] = unset,
+        multi_compute: Union[List[LogsQueryCompute], UnsetType] = unset,
+        search: Union[LogQueryDefinitionSearch, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         The log query.
 
@@ -51,6 +70,16 @@ class LogQueryDefinition(ModelNormal):
         :param search: The query being made on the logs.
         :type search: LogQueryDefinitionSearch, optional
         """
+        if compute is not unset:
+            kwargs["compute"] = compute
+        if group_by is not unset:
+            kwargs["group_by"] = group_by
+        if index is not unset:
+            kwargs["index"] = index
+        if multi_compute is not unset:
+            kwargs["multi_compute"] = multi_compute
+        if search is not unset:
+            kwargs["search"] = search
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

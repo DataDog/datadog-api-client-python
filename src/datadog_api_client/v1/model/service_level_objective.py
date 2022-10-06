@@ -1,13 +1,24 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.creator import Creator
+    from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
+    from datadog_api_client.v1.model.slo_threshold import SLOThreshold
+    from datadog_api_client.v1.model.slo_type import SLOType
 
 
 class ServiceLevelObjective(ModelNormal):
@@ -56,7 +67,24 @@ class ServiceLevelObjective(ModelNormal):
         "modified_at",
     }
 
-    def __init__(self_, name, thresholds, type, *args, **kwargs):
+    def __init__(
+        self_,
+        name: str,
+        thresholds: List[SLOThreshold],
+        type: SLOType,
+        created_at: Union[int, UnsetType] = unset,
+        creator: Union[Creator, UnsetType] = unset,
+        description: Union[str, none_type, UnsetType] = unset,
+        groups: Union[List[str], UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
+        modified_at: Union[int, UnsetType] = unset,
+        monitor_ids: Union[List[int], UnsetType] = unset,
+        monitor_tags: Union[List[str], UnsetType] = unset,
+        query: Union[ServiceLevelObjectiveQuery, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         A service level objective object includes a service level indicator, thresholds
         for one or more timeframes, and metadata ( ``name`` , ``description`` , ``tags`` , etc.).
@@ -124,6 +152,26 @@ class ServiceLevelObjective(ModelNormal):
         :param type: The type of the service level objective.
         :type type: SLOType
         """
+        if created_at is not unset:
+            kwargs["created_at"] = created_at
+        if creator is not unset:
+            kwargs["creator"] = creator
+        if description is not unset:
+            kwargs["description"] = description
+        if groups is not unset:
+            kwargs["groups"] = groups
+        if id is not unset:
+            kwargs["id"] = id
+        if modified_at is not unset:
+            kwargs["modified_at"] = modified_at
+        if monitor_ids is not unset:
+            kwargs["monitor_ids"] = monitor_ids
+        if monitor_tags is not unset:
+            kwargs["monitor_tags"] = monitor_tags
+        if query is not unset:
+            kwargs["query"] = query
+        if tags is not unset:
+            kwargs["tags"] = tags
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

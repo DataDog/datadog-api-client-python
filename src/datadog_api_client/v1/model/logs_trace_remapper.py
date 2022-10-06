@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.logs_trace_remapper_type import LogsTraceRemapperType
 
 
 class LogsTraceRemapper(ModelNormal):
@@ -28,7 +36,15 @@ class LogsTraceRemapper(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, type, *args, **kwargs):
+    def __init__(
+        self_,
+        type: LogsTraceRemapperType,
+        is_enabled: Union[bool, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        sources: Union[List[str], UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         There are two ways to improve correlation between application traces and logs.
 
@@ -51,6 +67,12 @@ class LogsTraceRemapper(ModelNormal):
         :param type: Type of logs trace remapper.
         :type type: LogsTraceRemapperType
         """
+        if is_enabled is not unset:
+            kwargs["is_enabled"] = is_enabled
+        if name is not unset:
+            kwargs["name"] = name
+        if sources is not unset:
+            kwargs["sources"] = sources
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

@@ -1,12 +1,28 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Dict, List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
+    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
+    from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
+    from datadog_api_client.v1.model.synthetics_ci_batch_metadata import SyntheticsCIBatchMetadata
+    from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
+    from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasicAuthWeb
+    from datadog_api_client.v1.model.synthetics_basic_auth_sigv4 import SyntheticsBasicAuthSigv4
+    from datadog_api_client.v1.model.synthetics_basic_auth_ntlm import SyntheticsBasicAuthNTLM
+    from datadog_api_client.v1.model.synthetics_basic_auth_digest import SyntheticsBasicAuthDigest
 
 
 class SyntheticsCITest(ModelNormal):
@@ -52,7 +68,32 @@ class SyntheticsCITest(ModelNormal):
         "variables": "variables",
     }
 
-    def __init__(self_, public_id, *args, **kwargs):
+    def __init__(
+        self_,
+        public_id: str,
+        allow_insecure_certificates: Union[bool, UnsetType] = unset,
+        basic_auth: Union[
+            SyntheticsBasicAuth,
+            SyntheticsBasicAuthWeb,
+            SyntheticsBasicAuthSigv4,
+            SyntheticsBasicAuthNTLM,
+            SyntheticsBasicAuthDigest,
+            UnsetType,
+        ] = unset,
+        body: Union[str, UnsetType] = unset,
+        body_type: Union[str, UnsetType] = unset,
+        cookies: Union[str, UnsetType] = unset,
+        device_ids: Union[List[SyntheticsDeviceID], UnsetType] = unset,
+        follow_redirects: Union[bool, UnsetType] = unset,
+        headers: Union[SyntheticsTestHeaders, UnsetType] = unset,
+        locations: Union[List[str], UnsetType] = unset,
+        metadata: Union[SyntheticsCIBatchMetadata, UnsetType] = unset,
+        retry: Union[SyntheticsTestOptionsRetry, UnsetType] = unset,
+        start_url: Union[str, UnsetType] = unset,
+        variables: Union[Dict[str, str], UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Test configuration for Synthetics CI
 
@@ -98,6 +139,32 @@ class SyntheticsCITest(ModelNormal):
         :param variables: Variables to replace in the test.
         :type variables: {str: (str,)}, optional
         """
+        if allow_insecure_certificates is not unset:
+            kwargs["allow_insecure_certificates"] = allow_insecure_certificates
+        if basic_auth is not unset:
+            kwargs["basic_auth"] = basic_auth
+        if body is not unset:
+            kwargs["body"] = body
+        if body_type is not unset:
+            kwargs["body_type"] = body_type
+        if cookies is not unset:
+            kwargs["cookies"] = cookies
+        if device_ids is not unset:
+            kwargs["device_ids"] = device_ids
+        if follow_redirects is not unset:
+            kwargs["follow_redirects"] = follow_redirects
+        if headers is not unset:
+            kwargs["headers"] = headers
+        if locations is not unset:
+            kwargs["locations"] = locations
+        if metadata is not unset:
+            kwargs["metadata"] = metadata
+        if retry is not unset:
+            kwargs["retry"] = retry
+        if start_url is not unset:
+            kwargs["start_url"] = start_url
+        if variables is not unset:
+            kwargs["variables"] = variables
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

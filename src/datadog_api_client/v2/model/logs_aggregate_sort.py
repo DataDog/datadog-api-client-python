@@ -1,12 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.logs_aggregation_function import LogsAggregationFunction
+    from datadog_api_client.v2.model.logs_sort_order import LogsSortOrder
+    from datadog_api_client.v2.model.logs_aggregate_sort_type import LogsAggregateSortType
 
 
 class LogsAggregateSort(ModelNormal):
@@ -30,7 +40,15 @@ class LogsAggregateSort(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        aggregation: Union[LogsAggregationFunction, UnsetType] = unset,
+        metric: Union[str, UnsetType] = unset,
+        order: Union[LogsSortOrder, UnsetType] = unset,
+        type: Union[LogsAggregateSortType, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         A sort rule
 
@@ -46,6 +64,14 @@ class LogsAggregateSort(ModelNormal):
         :param type: The type of sorting algorithm
         :type type: LogsAggregateSortType, optional
         """
+        if aggregation is not unset:
+            kwargs["aggregation"] = aggregation
+        if metric is not unset:
+            kwargs["metric"] = metric
+        if order is not unset:
+            kwargs["order"] = order
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

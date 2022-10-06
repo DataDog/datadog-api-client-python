@@ -1,12 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_create_attributes import (
+        CloudWorkloadSecurityAgentRuleCreateAttributes,
+    )
+    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_type import CloudWorkloadSecurityAgentRuleType
 
 
 class CloudWorkloadSecurityAgentRuleCreateData(ModelNormal):
@@ -29,7 +38,13 @@ class CloudWorkloadSecurityAgentRuleCreateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes, type, *args, **kwargs):
+    def __init__(
+        self_,
+        attributes: CloudWorkloadSecurityAgentRuleCreateAttributes,
+        type: CloudWorkloadSecurityAgentRuleType,
+        *args,
+        **kwargs,
+    ):
         """
         Object for a single Agent rule.
 

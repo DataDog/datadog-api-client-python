@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -98,7 +102,51 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "snmp_usage": "snmp_usage",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        api_percentage: Union[float, UnsetType] = unset,
+        api_usage: Union[float, UnsetType] = unset,
+        apm_fargate_percentage: Union[float, UnsetType] = unset,
+        apm_fargate_usage: Union[float, UnsetType] = unset,
+        apm_host_percentage: Union[float, UnsetType] = unset,
+        apm_host_usage: Union[float, UnsetType] = unset,
+        appsec_percentage: Union[float, UnsetType] = unset,
+        appsec_usage: Union[float, UnsetType] = unset,
+        browser_percentage: Union[float, UnsetType] = unset,
+        browser_usage: Union[float, UnsetType] = unset,
+        container_percentage: Union[float, UnsetType] = unset,
+        container_usage: Union[float, UnsetType] = unset,
+        custom_timeseries_percentage: Union[float, UnsetType] = unset,
+        custom_timeseries_usage: Union[float, UnsetType] = unset,
+        estimated_indexed_logs_percentage: Union[float, UnsetType] = unset,
+        estimated_indexed_logs_usage: Union[float, UnsetType] = unset,
+        estimated_indexed_spans_percentage: Union[float, UnsetType] = unset,
+        estimated_indexed_spans_usage: Union[float, UnsetType] = unset,
+        estimated_ingested_logs_percentage: Union[float, UnsetType] = unset,
+        estimated_ingested_logs_usage: Union[float, UnsetType] = unset,
+        estimated_ingested_spans_percentage: Union[float, UnsetType] = unset,
+        estimated_ingested_spans_usage: Union[float, UnsetType] = unset,
+        fargate_percentage: Union[float, UnsetType] = unset,
+        fargate_usage: Union[float, UnsetType] = unset,
+        functions_percentage: Union[float, UnsetType] = unset,
+        functions_usage: Union[float, UnsetType] = unset,
+        indexed_logs_percentage: Union[float, UnsetType] = unset,
+        indexed_logs_usage: Union[float, UnsetType] = unset,
+        infra_host_percentage: Union[float, UnsetType] = unset,
+        infra_host_usage: Union[float, UnsetType] = unset,
+        invocations_percentage: Union[float, UnsetType] = unset,
+        invocations_usage: Union[float, UnsetType] = unset,
+        npm_host_percentage: Union[float, UnsetType] = unset,
+        npm_host_usage: Union[float, UnsetType] = unset,
+        profiled_container_percentage: Union[float, UnsetType] = unset,
+        profiled_container_usage: Union[float, UnsetType] = unset,
+        profiled_host_percentage: Union[float, UnsetType] = unset,
+        profiled_host_usage: Union[float, UnsetType] = unset,
+        snmp_percentage: Union[float, UnsetType] = unset,
+        snmp_usage: Union[float, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Fields in Usage Summary by tag(s).
 
@@ -222,6 +270,86 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param snmp_usage: The network device usage by tag(s).
         :type snmp_usage: float, optional
         """
+        if api_percentage is not unset:
+            kwargs["api_percentage"] = api_percentage
+        if api_usage is not unset:
+            kwargs["api_usage"] = api_usage
+        if apm_fargate_percentage is not unset:
+            kwargs["apm_fargate_percentage"] = apm_fargate_percentage
+        if apm_fargate_usage is not unset:
+            kwargs["apm_fargate_usage"] = apm_fargate_usage
+        if apm_host_percentage is not unset:
+            kwargs["apm_host_percentage"] = apm_host_percentage
+        if apm_host_usage is not unset:
+            kwargs["apm_host_usage"] = apm_host_usage
+        if appsec_percentage is not unset:
+            kwargs["appsec_percentage"] = appsec_percentage
+        if appsec_usage is not unset:
+            kwargs["appsec_usage"] = appsec_usage
+        if browser_percentage is not unset:
+            kwargs["browser_percentage"] = browser_percentage
+        if browser_usage is not unset:
+            kwargs["browser_usage"] = browser_usage
+        if container_percentage is not unset:
+            kwargs["container_percentage"] = container_percentage
+        if container_usage is not unset:
+            kwargs["container_usage"] = container_usage
+        if custom_timeseries_percentage is not unset:
+            kwargs["custom_timeseries_percentage"] = custom_timeseries_percentage
+        if custom_timeseries_usage is not unset:
+            kwargs["custom_timeseries_usage"] = custom_timeseries_usage
+        if estimated_indexed_logs_percentage is not unset:
+            kwargs["estimated_indexed_logs_percentage"] = estimated_indexed_logs_percentage
+        if estimated_indexed_logs_usage is not unset:
+            kwargs["estimated_indexed_logs_usage"] = estimated_indexed_logs_usage
+        if estimated_indexed_spans_percentage is not unset:
+            kwargs["estimated_indexed_spans_percentage"] = estimated_indexed_spans_percentage
+        if estimated_indexed_spans_usage is not unset:
+            kwargs["estimated_indexed_spans_usage"] = estimated_indexed_spans_usage
+        if estimated_ingested_logs_percentage is not unset:
+            kwargs["estimated_ingested_logs_percentage"] = estimated_ingested_logs_percentage
+        if estimated_ingested_logs_usage is not unset:
+            kwargs["estimated_ingested_logs_usage"] = estimated_ingested_logs_usage
+        if estimated_ingested_spans_percentage is not unset:
+            kwargs["estimated_ingested_spans_percentage"] = estimated_ingested_spans_percentage
+        if estimated_ingested_spans_usage is not unset:
+            kwargs["estimated_ingested_spans_usage"] = estimated_ingested_spans_usage
+        if fargate_percentage is not unset:
+            kwargs["fargate_percentage"] = fargate_percentage
+        if fargate_usage is not unset:
+            kwargs["fargate_usage"] = fargate_usage
+        if functions_percentage is not unset:
+            kwargs["functions_percentage"] = functions_percentage
+        if functions_usage is not unset:
+            kwargs["functions_usage"] = functions_usage
+        if indexed_logs_percentage is not unset:
+            kwargs["indexed_logs_percentage"] = indexed_logs_percentage
+        if indexed_logs_usage is not unset:
+            kwargs["indexed_logs_usage"] = indexed_logs_usage
+        if infra_host_percentage is not unset:
+            kwargs["infra_host_percentage"] = infra_host_percentage
+        if infra_host_usage is not unset:
+            kwargs["infra_host_usage"] = infra_host_usage
+        if invocations_percentage is not unset:
+            kwargs["invocations_percentage"] = invocations_percentage
+        if invocations_usage is not unset:
+            kwargs["invocations_usage"] = invocations_usage
+        if npm_host_percentage is not unset:
+            kwargs["npm_host_percentage"] = npm_host_percentage
+        if npm_host_usage is not unset:
+            kwargs["npm_host_usage"] = npm_host_usage
+        if profiled_container_percentage is not unset:
+            kwargs["profiled_container_percentage"] = profiled_container_percentage
+        if profiled_container_usage is not unset:
+            kwargs["profiled_container_usage"] = profiled_container_usage
+        if profiled_host_percentage is not unset:
+            kwargs["profiled_host_percentage"] = profiled_host_percentage
+        if profiled_host_usage is not unset:
+            kwargs["profiled_host_usage"] = profiled_host_usage
+        if snmp_percentage is not unset:
+            kwargs["snmp_percentage"] = snmp_percentage
+        if snmp_usage is not unset:
+            kwargs["snmp_usage"] = snmp_usage
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

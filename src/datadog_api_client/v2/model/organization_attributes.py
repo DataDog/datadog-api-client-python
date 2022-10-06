@@ -1,12 +1,16 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
 
 
@@ -35,7 +39,19 @@ class OrganizationAttributes(ModelNormal):
         "url": "url",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        created_at: Union[datetime, UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
+        disabled: Union[bool, UnsetType] = unset,
+        modified_at: Union[datetime, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        public_id: Union[str, UnsetType] = unset,
+        sharing: Union[str, UnsetType] = unset,
+        url: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Attributes of the organization.
 
@@ -63,6 +79,22 @@ class OrganizationAttributes(ModelNormal):
         :param url: URL of the site that this organization exists at.
         :type url: str, optional
         """
+        if created_at is not unset:
+            kwargs["created_at"] = created_at
+        if description is not unset:
+            kwargs["description"] = description
+        if disabled is not unset:
+            kwargs["disabled"] = disabled
+        if modified_at is not unset:
+            kwargs["modified_at"] = modified_at
+        if name is not unset:
+            kwargs["name"] = name
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
+        if sharing is not unset:
+            kwargs["sharing"] = sharing
+        if url is not unset:
+            kwargs["url"] = url
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

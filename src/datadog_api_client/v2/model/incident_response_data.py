@@ -1,12 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.incident_response_attributes import IncidentResponseAttributes
+    from datadog_api_client.v2.model.incident_response_relationships import IncidentResponseRelationships
+    from datadog_api_client.v2.model.incident_type import IncidentType
 
 
 class IncidentResponseData(ModelNormal):
@@ -30,7 +40,15 @@ class IncidentResponseData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id, type, *args, **kwargs):
+    def __init__(
+        self_,
+        id: str,
+        type: IncidentType,
+        attributes: Union[IncidentResponseAttributes, UnsetType] = unset,
+        relationships: Union[IncidentResponseRelationships, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Incident data from a response.
 
@@ -46,6 +64,10 @@ class IncidentResponseData(ModelNormal):
         :param type: Incident resource type.
         :type type: IncidentType
         """
+        if attributes is not unset:
+            kwargs["attributes"] = attributes
+        if relationships is not unset:
+            kwargs["relationships"] = relationships
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

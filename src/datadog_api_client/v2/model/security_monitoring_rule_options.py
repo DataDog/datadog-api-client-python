@@ -1,12 +1,38 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_monitoring_rule_detection_method import (
+        SecurityMonitoringRuleDetectionMethod,
+    )
+    from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
+        SecurityMonitoringRuleEvaluationWindow,
+    )
+    from datadog_api_client.v2.model.security_monitoring_rule_hardcoded_evaluator_type import (
+        SecurityMonitoringRuleHardcodedEvaluatorType,
+    )
+    from datadog_api_client.v2.model.security_monitoring_rule_impossible_travel_options import (
+        SecurityMonitoringRuleImpossibleTravelOptions,
+    )
+    from datadog_api_client.v2.model.security_monitoring_rule_keep_alive import SecurityMonitoringRuleKeepAlive
+    from datadog_api_client.v2.model.security_monitoring_rule_max_signal_duration import (
+        SecurityMonitoringRuleMaxSignalDuration,
+    )
+    from datadog_api_client.v2.model.security_monitoring_rule_new_value_options import (
+        SecurityMonitoringRuleNewValueOptions,
+    )
 
 
 class SecurityMonitoringRuleOptions(ModelNormal):
@@ -54,7 +80,19 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         "new_value_options": "newValueOptions",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        decrease_criticality_based_on_env: Union[bool, UnsetType] = unset,
+        detection_method: Union[SecurityMonitoringRuleDetectionMethod, UnsetType] = unset,
+        evaluation_window: Union[SecurityMonitoringRuleEvaluationWindow, UnsetType] = unset,
+        hardcoded_evaluator_type: Union[SecurityMonitoringRuleHardcodedEvaluatorType, UnsetType] = unset,
+        impossible_travel_options: Union[SecurityMonitoringRuleImpossibleTravelOptions, UnsetType] = unset,
+        keep_alive: Union[SecurityMonitoringRuleKeepAlive, UnsetType] = unset,
+        max_signal_duration: Union[SecurityMonitoringRuleMaxSignalDuration, UnsetType] = unset,
+        new_value_options: Union[SecurityMonitoringRuleNewValueOptions, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Options on rules.
 
@@ -87,6 +125,22 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         :param new_value_options: Options on new value rules.
         :type new_value_options: SecurityMonitoringRuleNewValueOptions, optional
         """
+        if decrease_criticality_based_on_env is not unset:
+            kwargs["decrease_criticality_based_on_env"] = decrease_criticality_based_on_env
+        if detection_method is not unset:
+            kwargs["detection_method"] = detection_method
+        if evaluation_window is not unset:
+            kwargs["evaluation_window"] = evaluation_window
+        if hardcoded_evaluator_type is not unset:
+            kwargs["hardcoded_evaluator_type"] = hardcoded_evaluator_type
+        if impossible_travel_options is not unset:
+            kwargs["impossible_travel_options"] = impossible_travel_options
+        if keep_alive is not unset:
+            kwargs["keep_alive"] = keep_alive
+        if max_signal_duration is not unset:
+            kwargs["max_signal_duration"] = max_signal_duration
+        if new_value_options is not unset:
+            kwargs["new_value_options"] = new_value_options
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

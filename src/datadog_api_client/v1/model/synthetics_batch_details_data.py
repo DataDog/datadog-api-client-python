@@ -1,12 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_ci_batch_metadata import SyntheticsCIBatchMetadata
+    from datadog_api_client.v1.model.synthetics_batch_result import SyntheticsBatchResult
+    from datadog_api_client.v1.model.synthetics_status import SyntheticsStatus
 
 
 class SyntheticsBatchDetailsData(ModelNormal):
@@ -28,7 +38,14 @@ class SyntheticsBatchDetailsData(ModelNormal):
         "status": "status",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        metadata: Union[SyntheticsCIBatchMetadata, UnsetType] = unset,
+        results: Union[List[SyntheticsBatchResult], UnsetType] = unset,
+        status: Union[SyntheticsStatus, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Wrapper object that contains the details of a batch.
 
@@ -41,6 +58,12 @@ class SyntheticsBatchDetailsData(ModelNormal):
         :param status: Determines whether or not the batch has passed, failed, or is in progress.
         :type status: SyntheticsStatus, optional
         """
+        if metadata is not unset:
+            kwargs["metadata"] = metadata
+        if results is not unset:
+            kwargs["results"] = results
+        if status is not unset:
+            kwargs["status"] = status
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

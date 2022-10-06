@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
 
 
 class SLOCorrectionCreateRequestAttributes(ModelNormal):
@@ -36,7 +44,19 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
         "timezone": "timezone",
     }
 
-    def __init__(self_, category, slo_id, start, *args, **kwargs):
+    def __init__(
+        self_,
+        category: SLOCorrectionCategory,
+        slo_id: str,
+        start: int,
+        description: Union[str, UnsetType] = unset,
+        duration: Union[int, UnsetType] = unset,
+        end: Union[int, UnsetType] = unset,
+        rrule: Union[str, UnsetType] = unset,
+        timezone: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         The attribute object associated with the SLO correction to be created.
 
@@ -65,6 +85,16 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
         :param timezone: The timezone to display in the UI for the correction times (defaults to "UTC").
         :type timezone: str, optional
         """
+        if description is not unset:
+            kwargs["description"] = description
+        if duration is not unset:
+            kwargs["duration"] = duration
+        if end is not unset:
+            kwargs["end"] = end
+        if rrule is not unset:
+            kwargs["rrule"] = rrule
+        if timezone is not unset:
+            kwargs["timezone"] = timezone
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

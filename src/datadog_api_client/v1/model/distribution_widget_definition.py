@@ -1,12 +1,26 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_marker import WidgetMarker
+    from datadog_api_client.v1.model.distribution_widget_request import DistributionWidgetRequest
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.distribution_widget_definition_type import DistributionWidgetDefinitionType
+    from datadog_api_client.v1.model.distribution_widget_x_axis import DistributionWidgetXAxis
+    from datadog_api_client.v1.model.distribution_widget_y_axis import DistributionWidgetYAxis
 
 
 class DistributionWidgetDefinition(ModelNormal):
@@ -55,7 +69,22 @@ class DistributionWidgetDefinition(ModelNormal):
         "yaxis": "yaxis",
     }
 
-    def __init__(self_, requests, type, *args, **kwargs):
+    def __init__(
+        self_,
+        requests: List[DistributionWidgetRequest],
+        type: DistributionWidgetDefinitionType,
+        legend_size: Union[str, UnsetType] = unset,
+        markers: Union[List[WidgetMarker], UnsetType] = unset,
+        show_legend: Union[bool, UnsetType] = unset,
+        time: Union[WidgetTime, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        title_align: Union[WidgetTextAlign, UnsetType] = unset,
+        title_size: Union[str, UnsetType] = unset,
+        xaxis: Union[DistributionWidgetXAxis, UnsetType] = unset,
+        yaxis: Union[DistributionWidgetYAxis, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         The Distribution visualization is another way of showing metrics
         aggregated across one or several tags, such as hosts.
@@ -97,6 +126,24 @@ class DistributionWidgetDefinition(ModelNormal):
         :param yaxis: Y Axis controls for the distribution widget.
         :type yaxis: DistributionWidgetYAxis, optional
         """
+        if legend_size is not unset:
+            kwargs["legend_size"] = legend_size
+        if markers is not unset:
+            kwargs["markers"] = markers
+        if show_legend is not unset:
+            kwargs["show_legend"] = show_legend
+        if time is not unset:
+            kwargs["time"] = time
+        if title is not unset:
+            kwargs["title"] = title
+        if title_align is not unset:
+            kwargs["title_align"] = title_align
+        if title_size is not unset:
+            kwargs["title_size"] = title_size
+        if xaxis is not unset:
+            kwargs["xaxis"] = xaxis
+        if yaxis is not unset:
+            kwargs["yaxis"] = yaxis
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

@@ -1,12 +1,25 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.search_slo_response_data_attributes_facets_object_string import (
+        SearchSLOResponseDataAttributesFacetsObjectString,
+    )
+    from datadog_api_client.v1.model.search_slo_response_data_attributes_facets_object_int import (
+        SearchSLOResponseDataAttributesFacetsObjectInt,
+    )
 
 
 class SearchSLOResponseDataAttributesFacets(ModelNormal):
@@ -41,7 +54,19 @@ class SearchSLOResponseDataAttributesFacets(ModelNormal):
         "timeframe": "timeframe",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        all_tags: Union[List[SearchSLOResponseDataAttributesFacetsObjectString], UnsetType] = unset,
+        creator_name: Union[List[SearchSLOResponseDataAttributesFacetsObjectString], UnsetType] = unset,
+        env_tags: Union[List[SearchSLOResponseDataAttributesFacetsObjectString], UnsetType] = unset,
+        service_tags: Union[List[SearchSLOResponseDataAttributesFacetsObjectString], UnsetType] = unset,
+        slo_type: Union[List[SearchSLOResponseDataAttributesFacetsObjectInt], UnsetType] = unset,
+        target: Union[List[SearchSLOResponseDataAttributesFacetsObjectInt], UnsetType] = unset,
+        team_tags: Union[List[SearchSLOResponseDataAttributesFacetsObjectString], UnsetType] = unset,
+        timeframe: Union[List[SearchSLOResponseDataAttributesFacetsObjectString], UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Facets
 
@@ -69,6 +94,22 @@ class SearchSLOResponseDataAttributesFacets(ModelNormal):
         :param timeframe: Timeframes of SLOs.
         :type timeframe: [SearchSLOResponseDataAttributesFacetsObjectString], optional
         """
+        if all_tags is not unset:
+            kwargs["all_tags"] = all_tags
+        if creator_name is not unset:
+            kwargs["creator_name"] = creator_name
+        if env_tags is not unset:
+            kwargs["env_tags"] = env_tags
+        if service_tags is not unset:
+            kwargs["service_tags"] = service_tags
+        if slo_type is not unset:
+            kwargs["slo_type"] = slo_type
+        if target is not unset:
+            kwargs["target"] = target
+        if team_tags is not unset:
+            kwargs["team_tags"] = team_tags
+        if timeframe is not unset:
+            kwargs["timeframe"] = timeframe
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

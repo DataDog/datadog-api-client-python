@@ -1,12 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.audit_logs_response_page import AuditLogsResponsePage
+    from datadog_api_client.v2.model.audit_logs_response_status import AuditLogsResponseStatus
+    from datadog_api_client.v2.model.audit_logs_warning import AuditLogsWarning
 
 
 class AuditLogsResponseMetadata(ModelNormal):
@@ -32,7 +42,16 @@ class AuditLogsResponseMetadata(ModelNormal):
         "warnings": "warnings",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        elapsed: Union[int, UnsetType] = unset,
+        page: Union[AuditLogsResponsePage, UnsetType] = unset,
+        request_id: Union[str, UnsetType] = unset,
+        status: Union[AuditLogsResponseStatus, UnsetType] = unset,
+        warnings: Union[List[AuditLogsWarning], UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         The metadata associated with a request.
 
@@ -52,6 +71,16 @@ class AuditLogsResponseMetadata(ModelNormal):
             warnings are present in the response.
         :type warnings: [AuditLogsWarning], optional
         """
+        if elapsed is not unset:
+            kwargs["elapsed"] = elapsed
+        if page is not unset:
+            kwargs["page"] = page
+        if request_id is not unset:
+            kwargs["request_id"] = request_id
+        if status is not unset:
+            kwargs["status"] = status
+        if warnings is not unset:
+            kwargs["warnings"] = warnings
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

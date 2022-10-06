@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_browser_error_type import SyntheticsBrowserErrorType
 
 
 class SyntheticsBrowserError(ModelNormal):
@@ -28,7 +36,15 @@ class SyntheticsBrowserError(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, description, name, type, *args, **kwargs):
+    def __init__(
+        self_,
+        description: str,
+        name: str,
+        type: SyntheticsBrowserErrorType,
+        status: Union[int, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Error response object for a browser test.
 
@@ -44,6 +60,8 @@ class SyntheticsBrowserError(ModelNormal):
         :param type: Error type returned by a browser test.
         :type type: SyntheticsBrowserErrorType
         """
+        if status is not unset:
+            kwargs["status"] = status
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

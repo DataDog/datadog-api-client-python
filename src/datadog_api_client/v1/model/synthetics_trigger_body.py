@@ -1,12 +1,18 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_trigger_test import SyntheticsTriggerTest
 
 
 class SyntheticsTriggerBody(ModelNormal):
@@ -22,7 +28,7 @@ class SyntheticsTriggerBody(ModelNormal):
         "tests": "tests",
     }
 
-    def __init__(self_, tests, *args, **kwargs):
+    def __init__(self_, tests: List[SyntheticsTriggerTest], *args, **kwargs):
         """
         Object describing the synthetics tests to trigger.
 

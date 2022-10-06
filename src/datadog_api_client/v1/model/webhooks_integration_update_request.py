@@ -1,13 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.webhooks_integration_encoding import WebhooksIntegrationEncoding
 
 
 class WebhooksIntegrationUpdateRequest(ModelNormal):
@@ -31,7 +39,16 @@ class WebhooksIntegrationUpdateRequest(ModelNormal):
         "url": "url",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        custom_headers: Union[str, UnsetType] = unset,
+        encode_as: Union[WebhooksIntegrationEncoding, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        payload: Union[str, none_type, UnsetType] = unset,
+        url: Union[str, UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Update request of a Webhooks integration object.
 
@@ -58,6 +75,16 @@ class WebhooksIntegrationUpdateRequest(ModelNormal):
         :param url: URL of the webhook.
         :type url: str, optional
         """
+        if custom_headers is not unset:
+            kwargs["custom_headers"] = custom_headers
+        if encode_as is not unset:
+            kwargs["encode_as"] = encode_as
+        if name is not unset:
+            kwargs["name"] = name
+        if payload is not unset:
+            kwargs["payload"] = payload
+        if url is not unset:
+            kwargs["url"] = url
         super().__init__(kwargs)
 
         self_._check_pos_args(args)

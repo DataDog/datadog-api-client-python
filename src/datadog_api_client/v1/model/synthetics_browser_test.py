@@ -1,12 +1,24 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_browser_test_config import SyntheticsBrowserTestConfig
+    from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
+    from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
+    from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
+    from datadog_api_client.v1.model.synthetics_browser_test_type import SyntheticsBrowserTestType
 
 
 class SyntheticsBrowserTest(ModelNormal):
@@ -50,7 +62,22 @@ class SyntheticsBrowserTest(ModelNormal):
         "public_id",
     }
 
-    def __init__(self_, config, locations, message, name, options, type, *args, **kwargs):
+    def __init__(
+        self_,
+        config: SyntheticsBrowserTestConfig,
+        locations: List[str],
+        message: str,
+        name: str,
+        options: SyntheticsTestOptions,
+        type: SyntheticsBrowserTestType,
+        monitor_id: Union[int, UnsetType] = unset,
+        public_id: Union[str, UnsetType] = unset,
+        status: Union[SyntheticsTestPauseStatus, UnsetType] = unset,
+        steps: Union[List[SyntheticsStep], UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        *args,
+        **kwargs,
+    ):
         """
         Object containing details about a Synthetic browser test.
 
@@ -88,6 +115,16 @@ class SyntheticsBrowserTest(ModelNormal):
         :param type: Type of the Synthetic test, ``browser``.
         :type type: SyntheticsBrowserTestType
         """
+        if monitor_id is not unset:
+            kwargs["monitor_id"] = monitor_id
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
+        if status is not unset:
+            kwargs["status"] = status
+        if steps is not unset:
+            kwargs["steps"] = steps
+        if tags is not unset:
+            kwargs["tags"] = tags
         super().__init__(kwargs)
 
         self_._check_pos_args(args)
