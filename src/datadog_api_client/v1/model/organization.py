@@ -67,7 +67,6 @@ class Organization(ModelNormal):
         settings: Union[OrganizationSettings, UnsetType] = unset,
         subscription: Union[OrganizationSubscription, UnsetType] = unset,
         trial: Union[bool, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -114,5 +113,3 @@ class Organization(ModelNormal):
         if trial is not unset:
             kwargs["trial"] = trial
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

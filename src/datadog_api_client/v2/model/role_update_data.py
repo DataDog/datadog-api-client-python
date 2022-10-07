@@ -46,7 +46,6 @@ class RoleUpdateData(ModelNormal):
         id: str,
         type: RolesType,
         relationships: Union[RoleRelationships, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -67,8 +66,6 @@ class RoleUpdateData(ModelNormal):
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.id = id

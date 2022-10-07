@@ -26,7 +26,7 @@ class LogsAggregateBucketValueTimeseriesPoint(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self_, time: Union[str, UnsetType] = unset, value: Union[float, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, time: Union[str, UnsetType] = unset, value: Union[float, UnsetType] = unset, **kwargs):
         """
         A timeseries point
 
@@ -41,5 +41,3 @@ class LogsAggregateBucketValueTimeseriesPoint(ModelNormal):
         if value is not unset:
             kwargs["value"] = value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

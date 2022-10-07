@@ -28,7 +28,7 @@ class IncidentUpdateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: IncidentUpdateData, *args, **kwargs):
+    def __init__(self_, data: IncidentUpdateData, **kwargs):
         """
         Update request for an incident.
 
@@ -36,7 +36,5 @@ class IncidentUpdateRequest(ModelNormal):
         :type data: IncidentUpdateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

@@ -27,11 +27,7 @@ class MetricIngestedIndexedVolumeAttributes(ModelNormal):
     }
 
     def __init__(
-        self_,
-        indexed_volume: Union[int, UnsetType] = unset,
-        ingested_volume: Union[int, UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, indexed_volume: Union[int, UnsetType] = unset, ingested_volume: Union[int, UnsetType] = unset, **kwargs
     ):
         """
         Object containing the definition of a metric's ingested and indexed volume.
@@ -47,5 +43,3 @@ class MetricIngestedIndexedVolumeAttributes(ModelNormal):
         if ingested_volume is not unset:
             kwargs["ingested_volume"] = ingested_volume
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

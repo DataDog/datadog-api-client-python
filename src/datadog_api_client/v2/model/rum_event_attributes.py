@@ -53,7 +53,6 @@ class RUMEventAttributes(ModelNormal):
         service: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         timestamp: Union[datetime, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -82,5 +81,3 @@ class RUMEventAttributes(ModelNormal):
         if timestamp is not unset:
             kwargs["timestamp"] = timestamp
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -30,7 +30,7 @@ class SearchSLOResponseMeta(ModelNormal):
         "pagination": "pagination",
     }
 
-    def __init__(self_, pagination: Union[SearchSLOResponseMetaPage, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, pagination: Union[SearchSLOResponseMetaPage, UnsetType] = unset, **kwargs):
         """
         Searches metadata returned by the API.
 
@@ -40,5 +40,3 @@ class SearchSLOResponseMeta(ModelNormal):
         if pagination is not unset:
             kwargs["pagination"] = pagination
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

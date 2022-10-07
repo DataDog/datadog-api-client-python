@@ -29,11 +29,7 @@ class UsageTimeSeriesObject(ModelNormal):
     }
 
     def __init__(
-        self_,
-        timestamp: Union[datetime, UnsetType] = unset,
-        value: Union[int, none_type, UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, timestamp: Union[datetime, UnsetType] = unset, value: Union[int, none_type, UnsetType] = unset, **kwargs
     ):
         """
         Usage timeseries data.
@@ -49,5 +45,3 @@ class UsageTimeSeriesObject(ModelNormal):
         if value is not unset:
             kwargs["value"] = value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

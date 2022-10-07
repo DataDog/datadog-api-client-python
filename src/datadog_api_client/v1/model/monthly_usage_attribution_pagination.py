@@ -25,7 +25,7 @@ class MonthlyUsageAttributionPagination(ModelNormal):
         "next_record_id": "next_record_id",
     }
 
-    def __init__(self_, next_record_id: Union[str, none_type, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, next_record_id: Union[str, none_type, UnsetType] = unset, **kwargs):
         """
         The metadata for the current pagination.
 
@@ -35,5 +35,3 @@ class MonthlyUsageAttributionPagination(ModelNormal):
         if next_record_id is not unset:
             kwargs["next_record_id"] = next_record_id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

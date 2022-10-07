@@ -32,7 +32,7 @@ class ApplicationKeyCreateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: ApplicationKeyCreateAttributes, type: ApplicationKeysType, *args, **kwargs):
+    def __init__(self_, attributes: ApplicationKeyCreateAttributes, type: ApplicationKeysType, **kwargs):
         """
         Object used to create an application key.
 
@@ -43,8 +43,6 @@ class ApplicationKeyCreateData(ModelNormal):
         :type type: ApplicationKeysType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.type = type

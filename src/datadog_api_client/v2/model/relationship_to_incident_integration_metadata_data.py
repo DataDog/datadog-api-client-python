@@ -30,7 +30,7 @@ class RelationshipToIncidentIntegrationMetadataData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id: str, type: IncidentIntegrationMetadataType, *args, **kwargs):
+    def __init__(self_, id: str, type: IncidentIntegrationMetadataType, **kwargs):
         """
         A relationship reference for an integration metadata object.
 
@@ -41,8 +41,6 @@ class RelationshipToIncidentIntegrationMetadataData(ModelNormal):
         :type type: IncidentIntegrationMetadataType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.id = id
         self_.type = type

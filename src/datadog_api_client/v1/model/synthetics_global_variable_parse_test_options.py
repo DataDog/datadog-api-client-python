@@ -48,7 +48,6 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
         field: Union[str, UnsetType] = unset,
         local_variable_name: Union[str, UnsetType] = unset,
         parser: Union[SyntheticsVariableParser, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -73,7 +72,5 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
         if parser is not unset:
             kwargs["parser"] = parser
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.type = type

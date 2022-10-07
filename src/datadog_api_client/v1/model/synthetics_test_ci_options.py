@@ -30,7 +30,7 @@ class SyntheticsTestCiOptions(ModelNormal):
         "execution_rule": "executionRule",
     }
 
-    def __init__(self_, execution_rule: Union[SyntheticsTestExecutionRule, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, execution_rule: Union[SyntheticsTestExecutionRule, UnsetType] = unset, **kwargs):
         """
         CI/CD options for a Synthetic test.
 
@@ -40,5 +40,3 @@ class SyntheticsTestCiOptions(ModelNormal):
         if execution_rule is not unset:
             kwargs["execution_rule"] = execution_rule
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

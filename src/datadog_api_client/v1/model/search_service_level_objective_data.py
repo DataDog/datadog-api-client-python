@@ -46,7 +46,6 @@ class SearchServiceLevelObjectiveData(ModelNormal):
         attributes: Union[SearchServiceLevelObjectiveAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -71,5 +70,3 @@ class SearchServiceLevelObjectiveData(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

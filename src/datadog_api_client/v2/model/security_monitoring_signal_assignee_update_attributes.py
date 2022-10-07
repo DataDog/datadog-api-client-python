@@ -32,9 +32,7 @@ class SecurityMonitoringSignalAssigneeUpdateAttributes(ModelNormal):
         "version": "version",
     }
 
-    def __init__(
-        self_, assignee: SecurityMonitoringTriageUser, version: Union[int, UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, assignee: SecurityMonitoringTriageUser, version: Union[int, UnsetType] = unset, **kwargs):
         """
         Attributes describing the new assignee of a security signal.
 
@@ -47,7 +45,5 @@ class SecurityMonitoringSignalAssigneeUpdateAttributes(ModelNormal):
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.assignee = assignee

@@ -51,7 +51,6 @@ class SecurityMonitoringSignalListRequest(ModelNormal):
         filter: Union[SecurityMonitoringSignalListRequestFilter, UnsetType] = unset,
         page: Union[SecurityMonitoringSignalListRequestPage, UnsetType] = unset,
         sort: Union[SecurityMonitoringSignalsSort, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -73,5 +72,3 @@ class SecurityMonitoringSignalListRequest(ModelNormal):
         if sort is not unset:
             kwargs["sort"] = sort
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

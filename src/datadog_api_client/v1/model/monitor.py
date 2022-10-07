@@ -105,7 +105,6 @@ class Monitor(ModelNormal):
         restricted_roles: Union[List[str], none_type, UnsetType] = unset,
         state: Union[MonitorState, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -188,8 +187,6 @@ class Monitor(ModelNormal):
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.query = query
         self_.type = type

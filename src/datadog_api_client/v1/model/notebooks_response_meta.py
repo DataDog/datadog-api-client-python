@@ -30,7 +30,7 @@ class NotebooksResponseMeta(ModelNormal):
         "page": "page",
     }
 
-    def __init__(self_, page: Union[NotebooksResponsePage, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, page: Union[NotebooksResponsePage, UnsetType] = unset, **kwargs):
         """
         Searches metadata returned by the API.
 
@@ -40,5 +40,3 @@ class NotebooksResponseMeta(ModelNormal):
         if page is not unset:
             kwargs["page"] = page
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

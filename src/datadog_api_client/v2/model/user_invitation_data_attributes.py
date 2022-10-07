@@ -37,7 +37,6 @@ class UserInvitationDataAttributes(ModelNormal):
         expires_at: Union[datetime, UnsetType] = unset,
         invite_type: Union[str, UnsetType] = unset,
         uuid: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -64,5 +63,3 @@ class UserInvitationDataAttributes(ModelNormal):
         if uuid is not unset:
             kwargs["uuid"] = uuid
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

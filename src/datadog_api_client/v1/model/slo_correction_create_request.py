@@ -30,7 +30,7 @@ class SLOCorrectionCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[SLOCorrectionCreateData, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, data: Union[SLOCorrectionCreateData, UnsetType] = unset, **kwargs):
         """
         An object that defines a correction to be applied to an SLO.
 
@@ -40,5 +40,3 @@ class SLOCorrectionCreateRequest(ModelNormal):
         if data is not unset:
             kwargs["data"] = data
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

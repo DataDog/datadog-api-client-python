@@ -45,7 +45,6 @@ class TopologyQuery(ModelNormal):
         data_source: Union[TopologyQueryDataSource, UnsetType] = unset,
         filters: Union[List[str], UnsetType] = unset,
         service: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -67,5 +66,3 @@ class TopologyQuery(ModelNormal):
         if service is not unset:
             kwargs["service"] = service
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -82,7 +82,6 @@ class DistributionWidgetDefinition(ModelNormal):
         title_size: Union[str, UnsetType] = unset,
         xaxis: Union[DistributionWidgetXAxis, UnsetType] = unset,
         yaxis: Union[DistributionWidgetYAxis, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -145,8 +144,6 @@ class DistributionWidgetDefinition(ModelNormal):
         if yaxis is not unset:
             kwargs["yaxis"] = yaxis
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.requests = requests
         self_.type = type

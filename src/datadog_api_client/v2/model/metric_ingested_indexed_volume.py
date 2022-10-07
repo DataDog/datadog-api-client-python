@@ -45,7 +45,6 @@ class MetricIngestedIndexedVolume(ModelNormal):
         attributes: Union[MetricIngestedIndexedVolumeAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         type: Union[MetricIngestedIndexedVolumeType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -67,5 +66,3 @@ class MetricIngestedIndexedVolume(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

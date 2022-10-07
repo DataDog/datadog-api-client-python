@@ -59,7 +59,6 @@ class UserAttributes(ModelNormal):
         status: Union[str, UnsetType] = unset,
         title: Union[str, none_type, UnsetType] = unset,
         verified: Union[bool, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -121,5 +120,3 @@ class UserAttributes(ModelNormal):
         if verified is not unset:
             kwargs["verified"] = verified
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

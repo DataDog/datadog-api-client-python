@@ -23,7 +23,7 @@ class LogsArchiveIntegrationAzure(ModelNormal):
         "tenant_id": "tenant_id",
     }
 
-    def __init__(self_, client_id: str, tenant_id: str, *args, **kwargs):
+    def __init__(self_, client_id: str, tenant_id: str, **kwargs):
         """
         The Azure archive's integration destination.
 
@@ -34,8 +34,6 @@ class LogsArchiveIntegrationAzure(ModelNormal):
         :type tenant_id: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.client_id = client_id
         self_.tenant_id = tenant_id

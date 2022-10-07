@@ -33,7 +33,6 @@ class AddSignalToIncidentRequest(ModelNormal):
         incident_id: int,
         add_to_signal_timeline: Union[bool, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -53,7 +52,5 @@ class AddSignalToIncidentRequest(ModelNormal):
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.incident_id = incident_id

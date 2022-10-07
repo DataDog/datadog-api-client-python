@@ -38,7 +38,6 @@ class UsageAttributionMetadata(ModelNormal):
         self_,
         aggregates: Union[UsageAttributionAggregates, UnsetType] = unset,
         pagination: Union[UsageAttributionPagination, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class UsageAttributionMetadata(ModelNormal):
         if pagination is not unset:
             kwargs["pagination"] = pagination
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

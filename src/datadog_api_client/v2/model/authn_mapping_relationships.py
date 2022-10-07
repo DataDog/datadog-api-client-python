@@ -42,7 +42,6 @@ class AuthNMappingRelationships(ModelNormal):
         self_,
         role: Union[RelationshipToRole, UnsetType] = unset,
         saml_assertion_attribute: Union[RelationshipToSAMLAssertionAttribute, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -59,5 +58,3 @@ class AuthNMappingRelationships(ModelNormal):
         if saml_assertion_attribute is not unset:
             kwargs["saml_assertion_attribute"] = saml_assertion_attribute
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

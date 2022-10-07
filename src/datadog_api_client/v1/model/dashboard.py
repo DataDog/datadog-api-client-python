@@ -96,7 +96,6 @@ class Dashboard(ModelNormal):
         template_variable_presets: Union[List[DashboardTemplateVariablePreset], none_type, UnsetType] = unset,
         template_variables: Union[List[DashboardTemplateVariable], none_type, UnsetType] = unset,
         url: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -180,8 +179,6 @@ class Dashboard(ModelNormal):
         if url is not unset:
             kwargs["url"] = url
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.layout_type = layout_type
         self_.title = title

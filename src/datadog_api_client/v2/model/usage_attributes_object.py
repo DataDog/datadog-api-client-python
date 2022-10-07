@@ -47,7 +47,6 @@ class UsageAttributesObject(ModelNormal):
         public_id: Union[str, UnsetType] = unset,
         timeseries: Union[List[UsageTimeSeriesObject], UnsetType] = unset,
         usage_type: Union[HourlyUsageType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -79,5 +78,3 @@ class UsageAttributesObject(ModelNormal):
         if usage_type is not unset:
             kwargs["usage_type"] = usage_type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

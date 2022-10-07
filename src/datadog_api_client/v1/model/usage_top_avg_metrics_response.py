@@ -38,7 +38,6 @@ class UsageTopAvgMetricsResponse(ModelNormal):
         self_,
         metadata: Union[UsageTopAvgMetricsMetadata, UnsetType] = unset,
         usage: Union[List[UsageTopAvgMetricsHour], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class UsageTopAvgMetricsResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

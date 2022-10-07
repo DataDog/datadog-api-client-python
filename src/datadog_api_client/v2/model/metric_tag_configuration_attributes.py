@@ -51,7 +51,6 @@ class MetricTagConfigurationAttributes(ModelNormal):
         metric_type: Union[MetricTagConfigurationMetricTypes, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -104,5 +103,3 @@ class MetricTagConfigurationAttributes(ModelNormal):
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

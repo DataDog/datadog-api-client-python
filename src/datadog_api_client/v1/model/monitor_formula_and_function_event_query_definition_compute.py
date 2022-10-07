@@ -43,7 +43,6 @@ class MonitorFormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
         aggregation: MonitorFormulaAndFunctionEventAggregation,
         interval: Union[int, UnsetType] = unset,
         metric: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,7 +62,5 @@ class MonitorFormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
         if metric is not unset:
             kwargs["metric"] = metric
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.aggregation = aggregation

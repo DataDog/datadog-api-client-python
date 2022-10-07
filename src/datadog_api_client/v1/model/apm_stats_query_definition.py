@@ -53,7 +53,6 @@ class ApmStatsQueryDefinition(ModelNormal):
         service: str,
         columns: Union[List[ApmStatsQueryColumnType], UnsetType] = unset,
         resource: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -85,8 +84,6 @@ class ApmStatsQueryDefinition(ModelNormal):
         if resource is not unset:
             kwargs["resource"] = resource
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.env = env
         self_.name = name

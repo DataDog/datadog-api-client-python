@@ -33,7 +33,7 @@ class WidgetFormulaLimit(ModelNormal):
     }
 
     def __init__(
-        self_, count: Union[int, UnsetType] = unset, order: Union[QuerySortOrder, UnsetType] = unset, *args, **kwargs
+        self_, count: Union[int, UnsetType] = unset, order: Union[QuerySortOrder, UnsetType] = unset, **kwargs
     ):
         """
         Options for limiting results returned.
@@ -49,5 +49,3 @@ class WidgetFormulaLimit(ModelNormal):
         if order is not unset:
             kwargs["order"] = order
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

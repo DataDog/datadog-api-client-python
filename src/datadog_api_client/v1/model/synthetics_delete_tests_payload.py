@@ -24,7 +24,7 @@ class SyntheticsDeleteTestsPayload(ModelNormal):
         "public_ids": "public_ids",
     }
 
-    def __init__(self_, public_ids: Union[List[str], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, public_ids: Union[List[str], UnsetType] = unset, **kwargs):
         """
         A JSON list of the ID or IDs of the Synthetic tests that you want
         to delete.
@@ -35,5 +35,3 @@ class SyntheticsDeleteTestsPayload(ModelNormal):
         if public_ids is not unset:
             kwargs["public_ids"] = public_ids
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

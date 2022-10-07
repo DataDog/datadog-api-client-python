@@ -67,7 +67,6 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
         sort: Union[QuerySortOrder, UnsetType] = unset,
         tag_filters: Union[List[str], UnsetType] = unset,
         text_filter: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -113,8 +112,6 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
         if text_filter is not unset:
             kwargs["text_filter"] = text_filter
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data_source = data_source
         self_.metric = metric

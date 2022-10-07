@@ -44,7 +44,6 @@ class ApplicationKey(ModelNormal):
         hash: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         owner: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -66,5 +65,3 @@ class ApplicationKey(ModelNormal):
         if owner is not unset:
             kwargs["owner"] = owner
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

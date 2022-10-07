@@ -30,7 +30,7 @@ class MetricBulkTagConfigDeleteAttributes(ModelNormal):
         "emails": "emails",
     }
 
-    def __init__(self_, emails: Union[MetricBulkTagConfigEmailList, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, emails: Union[MetricBulkTagConfigEmailList, UnsetType] = unset, **kwargs):
         """
         Optional parameters for bulk deleting metric tag configurations.
 
@@ -40,5 +40,3 @@ class MetricBulkTagConfigDeleteAttributes(ModelNormal):
         if emails is not unset:
             kwargs["emails"] = emails
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

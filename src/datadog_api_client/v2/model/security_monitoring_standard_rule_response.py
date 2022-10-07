@@ -91,7 +91,6 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         type: Union[SecurityMonitoringRuleTypeRead, UnsetType] = unset,
         update_author_id: Union[int, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -183,5 +182,3 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

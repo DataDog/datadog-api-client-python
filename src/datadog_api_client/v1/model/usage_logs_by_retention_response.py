@@ -30,7 +30,7 @@ class UsageLogsByRetentionResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageLogsByRetentionHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageLogsByRetentionHour], UnsetType] = unset, **kwargs):
         """
         Response containing the indexed logs usage broken down by retention period for an organization during a given hour.
 
@@ -40,5 +40,3 @@ class UsageLogsByRetentionResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

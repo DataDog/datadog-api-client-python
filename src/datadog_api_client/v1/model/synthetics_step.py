@@ -48,7 +48,6 @@ class SyntheticsStep(ModelNormal):
         params: Union[dict, UnsetType] = unset,
         timeout: Union[int, UnsetType] = unset,
         type: Union[SyntheticsStepType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -85,5 +84,3 @@ class SyntheticsStep(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

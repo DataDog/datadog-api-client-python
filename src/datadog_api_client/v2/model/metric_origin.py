@@ -45,7 +45,6 @@ class MetricOrigin(ModelNormal):
         metric_type: Union[int, UnsetType] = unset,
         product: Union[int, UnsetType] = unset,
         service: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -67,5 +66,3 @@ class MetricOrigin(ModelNormal):
         if service is not unset:
             kwargs["service"] = service
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

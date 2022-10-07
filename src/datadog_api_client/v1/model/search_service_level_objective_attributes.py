@@ -88,7 +88,6 @@ class SearchServiceLevelObjectiveAttributes(ModelNormal):
         slo_type: Union[SLOType, UnsetType] = unset,
         team_tags: Union[List[str], UnsetType] = unset,
         thresholds: Union[List[SearchSLOThreshold], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -184,5 +183,3 @@ class SearchServiceLevelObjectiveAttributes(ModelNormal):
         if thresholds is not unset:
             kwargs["thresholds"] = thresholds
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

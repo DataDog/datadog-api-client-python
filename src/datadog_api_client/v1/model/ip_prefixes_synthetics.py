@@ -36,7 +36,6 @@ class IPPrefixesSynthetics(ModelNormal):
         prefixes_ipv4_by_location: Union[Dict[str, List[str]], UnsetType] = unset,
         prefixes_ipv6: Union[List[str], UnsetType] = unset,
         prefixes_ipv6_by_location: Union[Dict[str, List[str]], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,5 +62,3 @@ class IPPrefixesSynthetics(ModelNormal):
         if prefixes_ipv6_by_location is not unset:
             kwargs["prefixes_ipv6_by_location"] = prefixes_ipv6_by_location
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

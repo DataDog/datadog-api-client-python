@@ -42,7 +42,6 @@ class UsageLogsByRetentionHour(ModelNormal):
         public_id: Union[str, UnsetType] = unset,
         rehydrated_indexed_events_count: Union[int, UnsetType] = unset,
         retention: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -79,5 +78,3 @@ class UsageLogsByRetentionHour(ModelNormal):
         if retention is not unset:
             kwargs["retention"] = retention
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

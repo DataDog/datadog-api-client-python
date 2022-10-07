@@ -30,7 +30,7 @@ class UsageRumUnitsResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageRumUnitsHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageRumUnitsHour], UnsetType] = unset, **kwargs):
         """
         Response containing the number of RUM Units for each hour for a given organization.
 
@@ -40,5 +40,3 @@ class UsageRumUnitsResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

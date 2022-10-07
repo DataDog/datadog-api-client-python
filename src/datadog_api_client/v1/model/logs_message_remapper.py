@@ -41,7 +41,6 @@ class LogsMessageRemapper(ModelNormal):
         type: LogsMessageRemapperType,
         is_enabled: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -70,8 +69,6 @@ class LogsMessageRemapper(ModelNormal):
             kwargs["name"] = name
         super().__init__(kwargs)
         sources = kwargs.get("sources", ["msg"])
-
-        self_._check_pos_args(args)
 
         self_.sources = sources
         self_.type = type

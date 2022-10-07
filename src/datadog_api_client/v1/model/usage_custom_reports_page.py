@@ -24,7 +24,7 @@ class UsageCustomReportsPage(ModelNormal):
         "total_count": "total_count",
     }
 
-    def __init__(self_, total_count: Union[int, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, total_count: Union[int, UnsetType] = unset, **kwargs):
         """
         The object containing page total count.
 
@@ -34,5 +34,3 @@ class UsageCustomReportsPage(ModelNormal):
         if total_count is not unset:
             kwargs["total_count"] = total_count
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

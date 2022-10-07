@@ -48,7 +48,6 @@ class SyntheticsBasicAuthSigv4(ModelNormal):
         region: Union[str, UnsetType] = unset,
         service_name: Union[str, UnsetType] = unset,
         session_token: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -79,8 +78,6 @@ class SyntheticsBasicAuthSigv4(ModelNormal):
         if session_token is not unset:
             kwargs["session_token"] = session_token
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.access_key = access_key
         self_.secret_key = secret_key

@@ -58,7 +58,6 @@ class UsageBillableSummaryHour(ModelNormal):
         region: Union[str, UnsetType] = unset,
         start_date: Union[datetime, UnsetType] = unset,
         usage: Union[UsageBillableSummaryKeys, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -110,5 +109,3 @@ class UsageBillableSummaryHour(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

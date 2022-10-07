@@ -30,7 +30,7 @@ class LogsMetricResponse(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[LogsMetricResponseData, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, data: Union[LogsMetricResponseData, UnsetType] = unset, **kwargs):
         """
         The log-based metric object.
 
@@ -40,5 +40,3 @@ class LogsMetricResponse(ModelNormal):
         if data is not unset:
             kwargs["data"] = data
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

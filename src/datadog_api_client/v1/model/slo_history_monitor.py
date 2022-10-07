@@ -68,7 +68,6 @@ class SLOHistoryMonitor(ModelNormal):
         sli_value: Union[float, UnsetType] = unset,
         span_precision: Union[float, UnsetType] = unset,
         uptime: Union[float, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -137,5 +136,3 @@ class SLOHistoryMonitor(ModelNormal):
         if uptime is not unset:
             kwargs["uptime"] = uptime
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

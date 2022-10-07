@@ -43,7 +43,6 @@ class SyntheticsBatchDetailsData(ModelNormal):
         metadata: Union[SyntheticsCIBatchMetadata, UnsetType] = unset,
         results: Union[List[SyntheticsBatchResult], UnsetType] = unset,
         status: Union[SyntheticsStatus, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -65,5 +64,3 @@ class SyntheticsBatchDetailsData(ModelNormal):
         if status is not unset:
             kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

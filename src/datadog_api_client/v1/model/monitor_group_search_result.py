@@ -61,7 +61,6 @@ class MonitorGroupSearchResult(ModelNormal):
         monitor_id: Union[int, UnsetType] = unset,
         monitor_name: Union[str, UnsetType] = unset,
         status: Union[MonitorOverallStates, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -103,5 +102,3 @@ class MonitorGroupSearchResult(ModelNormal):
         if status is not unset:
             kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -42,7 +42,6 @@ class SLOHistoryMetricsSeries(ModelNormal):
         sum: float,
         values: List[float],
         metadata: Union[SLOHistoryMetricsSeriesMetadata, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -64,8 +63,6 @@ class SLOHistoryMetricsSeries(ModelNormal):
         if metadata is not unset:
             kwargs["metadata"] = metadata
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.count = count
         self_.sum = sum

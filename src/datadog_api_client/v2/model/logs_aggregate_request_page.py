@@ -24,7 +24,7 @@ class LogsAggregateRequestPage(ModelNormal):
         "cursor": "cursor",
     }
 
-    def __init__(self_, cursor: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, cursor: Union[str, UnsetType] = unset, **kwargs):
         """
         Paging settings
 
@@ -34,5 +34,3 @@ class LogsAggregateRequestPage(ModelNormal):
         if cursor is not unset:
             kwargs["cursor"] = cursor
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

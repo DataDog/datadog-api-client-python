@@ -64,7 +64,6 @@ class SearchSLOResponseDataAttributesFacets(ModelNormal):
         target: Union[List[SearchSLOResponseDataAttributesFacetsObjectInt], UnsetType] = unset,
         team_tags: Union[List[SearchSLOResponseDataAttributesFacetsObjectString], UnsetType] = unset,
         timeframe: Union[List[SearchSLOResponseDataAttributesFacetsObjectString], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -111,5 +110,3 @@ class SearchSLOResponseDataAttributesFacets(ModelNormal):
         if timeframe is not unset:
             kwargs["timeframe"] = timeframe
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

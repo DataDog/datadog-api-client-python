@@ -43,7 +43,6 @@ class HTTPLogItem(ModelNormal):
         ddtags: Union[str, UnsetType] = unset,
         hostname: Union[str, UnsetType] = unset,
         service: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -79,7 +78,5 @@ class HTTPLogItem(ModelNormal):
         if service is not unset:
             kwargs["service"] = service
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.message = message

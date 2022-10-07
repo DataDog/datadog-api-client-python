@@ -42,7 +42,6 @@ class LogsStatusRemapper(ModelNormal):
         type: LogsStatusRemapperType,
         is_enabled: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -83,8 +82,6 @@ class LogsStatusRemapper(ModelNormal):
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.sources = sources
         self_.type = type

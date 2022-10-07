@@ -34,7 +34,7 @@ class SecurityMonitoringSignalsListResponseMeta(ModelNormal):
         "page": "page",
     }
 
-    def __init__(self_, page: Union[SecurityMonitoringSignalsListResponseMetaPage, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, page: Union[SecurityMonitoringSignalsListResponseMetaPage, UnsetType] = unset, **kwargs):
         """
         Meta attributes.
 
@@ -44,5 +44,3 @@ class SecurityMonitoringSignalsListResponseMeta(ModelNormal):
         if page is not unset:
             kwargs["page"] = page
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

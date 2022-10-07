@@ -48,7 +48,7 @@ class WidgetLayout(ModelNormal):
     }
 
     def __init__(
-        self_, height: int, width: int, x: int, y: int, is_column_break: Union[bool, UnsetType] = unset, *args, **kwargs
+        self_, height: int, width: int, x: int, y: int, is_column_break: Union[bool, UnsetType] = unset, **kwargs
     ):
         """
         The layout for a widget on a ``free`` or **new dashboard layout** dashboard.
@@ -72,8 +72,6 @@ class WidgetLayout(ModelNormal):
         if is_column_break is not unset:
             kwargs["is_column_break"] = is_column_break
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.height = height
         self_.width = width

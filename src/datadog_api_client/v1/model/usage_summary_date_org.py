@@ -228,7 +228,6 @@ class UsageSummaryDateOrg(ModelNormal):
         trace_search_indexed_events_count_sum: Union[int, UnsetType] = unset,
         twol_ingested_events_bytes_sum: Union[int, UnsetType] = unset,
         vsphere_host_top99p: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -575,5 +574,3 @@ class UsageSummaryDateOrg(ModelNormal):
         if vsphere_host_top99p is not unset:
             kwargs["vsphere_host_top99p"] = vsphere_host_top99p
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

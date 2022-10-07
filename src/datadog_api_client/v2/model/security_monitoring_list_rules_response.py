@@ -53,7 +53,6 @@ class SecurityMonitoringListRulesResponse(ModelNormal):
             UnsetType,
         ] = unset,
         meta: Union[ResponseMetaAttributes, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -70,5 +69,3 @@ class SecurityMonitoringListRulesResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -32,7 +32,7 @@ class SecurityMonitoringSignalStateUpdateData(ModelNormal):
         "attributes": "attributes",
     }
 
-    def __init__(self_, attributes: SecurityMonitoringSignalStateUpdateAttributes, *args, **kwargs):
+    def __init__(self_, attributes: SecurityMonitoringSignalStateUpdateAttributes, **kwargs):
         """
         Data containing the patch for changing the state of a signal.
 
@@ -40,7 +40,5 @@ class SecurityMonitoringSignalStateUpdateData(ModelNormal):
         :type attributes: SecurityMonitoringSignalStateUpdateAttributes
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes

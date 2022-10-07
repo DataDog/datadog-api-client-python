@@ -45,7 +45,6 @@ class SLOThreshold(ModelNormal):
         target_display: Union[str, UnsetType] = unset,
         warning: Union[float, UnsetType] = unset,
         warning_display: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -82,8 +81,6 @@ class SLOThreshold(ModelNormal):
         if warning_display is not unset:
             kwargs["warning_display"] = warning_display
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.target = target
         self_.timeframe = timeframe

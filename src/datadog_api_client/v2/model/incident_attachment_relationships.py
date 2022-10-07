@@ -30,7 +30,7 @@ class IncidentAttachmentRelationships(ModelNormal):
         "last_modified_by_user": "last_modified_by_user",
     }
 
-    def __init__(self_, last_modified_by_user: Union[RelationshipToUser, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, last_modified_by_user: Union[RelationshipToUser, UnsetType] = unset, **kwargs):
         """
         The incident attachment's relationships.
 
@@ -40,5 +40,3 @@ class IncidentAttachmentRelationships(ModelNormal):
         if last_modified_by_user is not unset:
             kwargs["last_modified_by_user"] = last_modified_by_user
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

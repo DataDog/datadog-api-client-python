@@ -91,7 +91,6 @@ class SyntheticsCITest(ModelNormal):
         retry: Union[SyntheticsTestOptionsRetry, UnsetType] = unset,
         start_url: Union[str, UnsetType] = unset,
         variables: Union[Dict[str, str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -166,7 +165,5 @@ class SyntheticsCITest(ModelNormal):
         if variables is not unset:
             kwargs["variables"] = variables
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.public_id = public_id

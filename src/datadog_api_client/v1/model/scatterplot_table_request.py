@@ -70,7 +70,6 @@ class ScatterplotTableRequest(ModelNormal):
             UnsetType,
         ] = unset,
         response_format: Union[FormulaAndFunctionResponseFormat, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -92,5 +91,3 @@ class ScatterplotTableRequest(ModelNormal):
         if response_format is not unset:
             kwargs["response_format"] = response_format
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

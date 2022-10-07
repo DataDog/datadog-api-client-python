@@ -24,7 +24,7 @@ class AWSAccountCreateResponse(ModelNormal):
         "external_id": "external_id",
     }
 
-    def __init__(self_, external_id: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, external_id: Union[str, UnsetType] = unset, **kwargs):
         """
         The Response returned by the AWS Create Account call.
 
@@ -34,5 +34,3 @@ class AWSAccountCreateResponse(ModelNormal):
         if external_id is not unset:
             kwargs["external_id"] = external_id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

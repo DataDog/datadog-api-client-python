@@ -102,7 +102,6 @@ class DistributionWidgetRequest(ModelNormal):
         rum_query: Union[LogQueryDefinition, UnsetType] = unset,
         security_query: Union[LogQueryDefinition, UnsetType] = unset,
         style: Union[WidgetStyle, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -174,5 +173,3 @@ class DistributionWidgetRequest(ModelNormal):
         if style is not unset:
             kwargs["style"] = style
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -46,7 +46,6 @@ class UsageLogsByIndexHour(ModelNormal):
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         retention: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -88,5 +87,3 @@ class UsageLogsByIndexHour(ModelNormal):
         if retention is not unset:
             kwargs["retention"] = retention
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

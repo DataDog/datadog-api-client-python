@@ -57,7 +57,6 @@ class AWSAccount(ModelNormal):
         resource_collection_enabled: Union[bool, UnsetType] = unset,
         role_name: Union[str, UnsetType] = unset,
         secret_access_key: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -127,5 +126,3 @@ class AWSAccount(ModelNormal):
         if secret_access_key is not unset:
             kwargs["secret_access_key"] = secret_access_key
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

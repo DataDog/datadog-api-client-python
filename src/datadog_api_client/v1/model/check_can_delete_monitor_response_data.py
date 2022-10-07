@@ -24,7 +24,7 @@ class CheckCanDeleteMonitorResponseData(ModelNormal):
         "ok": "ok",
     }
 
-    def __init__(self_, ok: Union[List[int], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, ok: Union[List[int], UnsetType] = unset, **kwargs):
         """
         Wrapper object with the list of monitor IDs.
 
@@ -34,5 +34,3 @@ class CheckCanDeleteMonitorResponseData(ModelNormal):
         if ok is not unset:
             kwargs["ok"] = ok
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

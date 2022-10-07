@@ -30,7 +30,7 @@ class MonitorSearchResultNotification(ModelNormal):
         "name",
     }
 
-    def __init__(self_, handle: Union[str, UnsetType] = unset, name: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, handle: Union[str, UnsetType] = unset, name: Union[str, UnsetType] = unset, **kwargs):
         """
         A notification triggered by the monitor.
 
@@ -45,5 +45,3 @@ class MonitorSearchResultNotification(ModelNormal):
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

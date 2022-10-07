@@ -46,7 +46,6 @@ class User(ModelNormal):
         id: Union[str, UnsetType] = unset,
         relationships: Union[UserResponseRelationships, UnsetType] = unset,
         type: Union[UsersType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -73,5 +72,3 @@ class User(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

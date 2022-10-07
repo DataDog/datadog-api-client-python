@@ -48,7 +48,6 @@ class LogsArithmeticProcessor(ModelNormal):
         is_enabled: Union[bool, UnsetType] = unset,
         is_replace_missing: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -100,8 +99,6 @@ class LogsArithmeticProcessor(ModelNormal):
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.expression = expression
         self_.target = target

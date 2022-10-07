@@ -32,7 +32,7 @@ class UserInvitationData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, relationships: UserInvitationRelationships, type: UserInvitationsType, *args, **kwargs):
+    def __init__(self_, relationships: UserInvitationRelationships, type: UserInvitationsType, **kwargs):
         """
         Object to create a user invitation.
 
@@ -43,8 +43,6 @@ class UserInvitationData(ModelNormal):
         :type type: UserInvitationsType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.relationships = relationships
         self_.type = type

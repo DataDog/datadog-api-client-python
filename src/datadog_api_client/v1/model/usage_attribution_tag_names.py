@@ -15,7 +15,7 @@ class UsageAttributionTagNames(ModelNormal):
     def additional_properties_type(_):
         return ([str],)
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(self_, **kwargs):
         """
         Tag keys and values.
 
@@ -24,5 +24,3 @@ class UsageAttributionTagNames(ModelNormal):
         In this scenario the API returns the total usage, not broken down by tags.
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

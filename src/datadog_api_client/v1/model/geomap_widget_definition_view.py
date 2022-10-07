@@ -21,7 +21,7 @@ class GeomapWidgetDefinitionView(ModelNormal):
         "focus": "focus",
     }
 
-    def __init__(self_, focus: str, *args, **kwargs):
+    def __init__(self_, focus: str, **kwargs):
         """
         The view of the world that the map should render.
 
@@ -29,7 +29,5 @@ class GeomapWidgetDefinitionView(ModelNormal):
         :type focus: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.focus = focus

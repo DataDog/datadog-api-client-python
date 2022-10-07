@@ -46,7 +46,6 @@ class AuthNMappingUpdateData(ModelNormal):
         type: AuthNMappingsType,
         attributes: Union[AuthNMappingUpdateAttributes, UnsetType] = unset,
         relationships: Union[AuthNMappingUpdateRelationships, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -69,8 +68,6 @@ class AuthNMappingUpdateData(ModelNormal):
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.id = id
         self_.type = type

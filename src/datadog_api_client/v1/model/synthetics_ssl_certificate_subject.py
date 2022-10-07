@@ -45,7 +45,6 @@ class SyntheticsSSLCertificateSubject(ModelNormal):
         ou: Union[str, UnsetType] = unset,
         st: Union[str, UnsetType] = unset,
         alt_name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -87,5 +86,3 @@ class SyntheticsSSLCertificateSubject(ModelNormal):
         if alt_name is not unset:
             kwargs["alt_name"] = alt_name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

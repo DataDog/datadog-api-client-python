@@ -51,7 +51,6 @@ class SyntheticsTiming(ModelNormal):
         tcp: Union[float, UnsetType] = unset,
         total: Union[float, UnsetType] = unset,
         wait: Union[float, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -104,5 +103,3 @@ class SyntheticsTiming(ModelNormal):
         if wait is not unset:
             kwargs["wait"] = wait
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -30,7 +30,7 @@ class UsageSDSResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageSDSHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageSDSHour], UnsetType] = unset, **kwargs):
         """
         Response containing the Sensitive Data Scanner usage for each hour for a given organization.
 
@@ -40,5 +40,3 @@ class UsageSDSResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

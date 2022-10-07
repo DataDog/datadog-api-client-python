@@ -26,7 +26,7 @@ class AWSLogsAsyncError(ModelNormal):
         "message": "message",
     }
 
-    def __init__(self_, code: Union[str, UnsetType] = unset, message: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, code: Union[str, UnsetType] = unset, message: Union[str, UnsetType] = unset, **kwargs):
         """
         Description of errors.
 
@@ -41,5 +41,3 @@ class AWSLogsAsyncError(ModelNormal):
         if message is not unset:
             kwargs["message"] = message
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

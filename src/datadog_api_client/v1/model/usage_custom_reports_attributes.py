@@ -39,7 +39,6 @@ class UsageCustomReportsAttributes(ModelNormal):
         size: Union[int, UnsetType] = unset,
         start_date: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -71,5 +70,3 @@ class UsageCustomReportsAttributes(ModelNormal):
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

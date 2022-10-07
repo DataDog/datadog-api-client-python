@@ -23,7 +23,7 @@ class SLOHistoryResponseErrorWithType(ModelNormal):
         "error_type": "error_type",
     }
 
-    def __init__(self_, error_message: str, error_type: str, *args, **kwargs):
+    def __init__(self_, error_message: str, error_type: str, **kwargs):
         """
         An object describing the error with error type and error message.
 
@@ -34,8 +34,6 @@ class SLOHistoryResponseErrorWithType(ModelNormal):
         :type error_type: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.error_message = error_message
         self_.error_type = error_type

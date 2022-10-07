@@ -33,7 +33,6 @@ class MonitorOptionsAggregation(ModelNormal):
         group_by: Union[str, UnsetType] = unset,
         metric: Union[str, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class MonitorOptionsAggregation(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

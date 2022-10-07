@@ -41,7 +41,6 @@ class RUMEvent(ModelNormal):
         attributes: Union[RUMEventAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         type: Union[RUMEventType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,5 +62,3 @@ class RUMEvent(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

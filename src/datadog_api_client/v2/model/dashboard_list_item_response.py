@@ -33,7 +33,7 @@ class DashboardListItemResponse(ModelNormal):
         "id",
     }
 
-    def __init__(self_, id: str, type: DashboardType, *args, **kwargs):
+    def __init__(self_, id: str, type: DashboardType, **kwargs):
         """
         A dashboard within a list.
 
@@ -44,8 +44,6 @@ class DashboardListItemResponse(ModelNormal):
         :type type: DashboardType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.id = id
         self_.type = type

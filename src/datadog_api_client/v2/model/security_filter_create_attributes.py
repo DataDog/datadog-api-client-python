@@ -45,7 +45,6 @@ class SecurityFilterCreateAttributes(ModelNormal):
         is_enabled: bool,
         name: str,
         query: str,
-        *args,
         **kwargs,
     ):
         """
@@ -67,8 +66,6 @@ class SecurityFilterCreateAttributes(ModelNormal):
         :type query: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.exclusion_filters = exclusion_filters
         self_.filtered_data_type = filtered_data_type

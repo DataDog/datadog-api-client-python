@@ -50,7 +50,6 @@ class IncidentAttachmentData(ModelNormal):
         id: str,
         relationships: IncidentAttachmentRelationships,
         type: IncidentAttachmentType,
-        *args,
         **kwargs,
     ):
         """
@@ -69,8 +68,6 @@ class IncidentAttachmentData(ModelNormal):
         :type type: IncidentAttachmentType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.id = id

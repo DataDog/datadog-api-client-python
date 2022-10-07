@@ -43,7 +43,6 @@ class SunburstWidgetLegendInlineAutomatic(ModelNormal):
         type: SunburstWidgetLegendInlineAutomaticType,
         hide_percent: Union[bool, UnsetType] = unset,
         hide_value: Union[bool, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,7 +62,5 @@ class SunburstWidgetLegendInlineAutomatic(ModelNormal):
         if hide_value is not unset:
             kwargs["hide_value"] = hide_value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.type = type

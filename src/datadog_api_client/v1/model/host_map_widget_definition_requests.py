@@ -33,11 +33,7 @@ class HostMapWidgetDefinitionRequests(ModelNormal):
     }
 
     def __init__(
-        self_,
-        fill: Union[HostMapRequest, UnsetType] = unset,
-        size: Union[HostMapRequest, UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, fill: Union[HostMapRequest, UnsetType] = unset, size: Union[HostMapRequest, UnsetType] = unset, **kwargs
     ):
         """
         List of definitions.
@@ -53,5 +49,3 @@ class HostMapWidgetDefinitionRequests(ModelNormal):
         if size is not unset:
             kwargs["size"] = size
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

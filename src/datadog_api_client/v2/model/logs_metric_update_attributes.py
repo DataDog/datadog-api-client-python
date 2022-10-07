@@ -38,7 +38,6 @@ class LogsMetricUpdateAttributes(ModelNormal):
         self_,
         filter: Union[LogsMetricFilter, UnsetType] = unset,
         group_by: Union[List[LogsMetricGroupBy], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class LogsMetricUpdateAttributes(ModelNormal):
         if group_by is not unset:
             kwargs["group_by"] = group_by
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

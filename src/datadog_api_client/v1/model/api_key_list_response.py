@@ -30,7 +30,7 @@ class ApiKeyListResponse(ModelNormal):
         "api_keys": "api_keys",
     }
 
-    def __init__(self_, api_keys: Union[List[ApiKey], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, api_keys: Union[List[ApiKey], UnsetType] = unset, **kwargs):
         """
         List of API and application keys available for a given organization.
 
@@ -40,5 +40,3 @@ class ApiKeyListResponse(ModelNormal):
         if api_keys is not unset:
             kwargs["api_keys"] = api_keys
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

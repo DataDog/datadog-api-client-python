@@ -38,7 +38,6 @@ class ProcessSummariesResponse(ModelNormal):
         self_,
         data: Union[List[ProcessSummary], UnsetType] = unset,
         meta: Union[ProcessSummariesMeta, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class ProcessSummariesResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

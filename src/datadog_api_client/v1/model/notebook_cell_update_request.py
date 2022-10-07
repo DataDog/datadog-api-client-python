@@ -55,7 +55,6 @@ class NotebookCellUpdateRequest(ModelNormal):
         ],
         id: str,
         type: NotebookCellResourceType,
-        *args,
         **kwargs,
     ):
         """
@@ -72,8 +71,6 @@ class NotebookCellUpdateRequest(ModelNormal):
         :type type: NotebookCellResourceType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.id = id

@@ -48,7 +48,6 @@ class AzureAccount(ModelNormal):
         new_client_id: Union[str, UnsetType] = unset,
         new_tenant_name: Union[str, UnsetType] = unset,
         tenant_name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -96,5 +95,3 @@ class AzureAccount(ModelNormal):
         if tenant_name is not unset:
             kwargs["tenant_name"] = tenant_name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -42,7 +42,6 @@ class SearchSLOResponseDataAttributes(ModelNormal):
         self_,
         facets: Union[SearchSLOResponseDataAttributesFacets, UnsetType] = unset,
         slos: Union[List[SearchServiceLevelObjective], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -59,5 +58,3 @@ class SearchSLOResponseDataAttributes(ModelNormal):
         if slos is not unset:
             kwargs["slos"] = slos
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

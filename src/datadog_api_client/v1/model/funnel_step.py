@@ -23,7 +23,7 @@ class FunnelStep(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self_, facet: str, value: str, *args, **kwargs):
+    def __init__(self_, facet: str, value: str, **kwargs):
         """
         The funnel step.
 
@@ -34,8 +34,6 @@ class FunnelStep(ModelNormal):
         :type value: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.facet = facet
         self_.value = value

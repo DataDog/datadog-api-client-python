@@ -41,7 +41,6 @@ class Organization(ModelNormal):
         type: OrganizationsType,
         attributes: Union[OrganizationAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -61,7 +60,5 @@ class Organization(ModelNormal):
         if id is not unset:
             kwargs["id"] = id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.type = type

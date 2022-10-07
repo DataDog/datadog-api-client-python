@@ -30,7 +30,7 @@ class ListStreamColumn(ModelNormal):
         "width": "width",
     }
 
-    def __init__(self_, field: str, width: ListStreamColumnWidth, *args, **kwargs):
+    def __init__(self_, field: str, width: ListStreamColumnWidth, **kwargs):
         """
         Widget column.
 
@@ -41,8 +41,6 @@ class ListStreamColumn(ModelNormal):
         :type width: ListStreamColumnWidth
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.field = field
         self_.width = width

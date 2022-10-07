@@ -38,7 +38,6 @@ class MetricBulkTagConfigCreateAttributes(ModelNormal):
         self_,
         emails: Union[MetricBulkTagConfigEmailList, UnsetType] = unset,
         tags: Union[MetricBulkTagConfigTagNameList, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class MetricBulkTagConfigCreateAttributes(ModelNormal):
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

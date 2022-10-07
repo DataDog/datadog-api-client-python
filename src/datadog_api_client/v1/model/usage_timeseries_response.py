@@ -30,7 +30,7 @@ class UsageTimeseriesResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageTimeseriesHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageTimeseriesHour], UnsetType] = unset, **kwargs):
         """
         Response containing hourly usage of timeseries.
 
@@ -40,5 +40,3 @@ class UsageTimeseriesResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

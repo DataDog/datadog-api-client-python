@@ -24,7 +24,7 @@ class AWSLogsLambda(ModelNormal):
         "arn": "arn",
     }
 
-    def __init__(self_, arn: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, arn: Union[str, UnsetType] = unset, **kwargs):
         """
         Description of the Lambdas.
 
@@ -34,5 +34,3 @@ class AWSLogsLambda(ModelNormal):
         if arn is not unset:
             kwargs["arn"] = arn
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

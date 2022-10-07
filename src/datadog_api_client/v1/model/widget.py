@@ -105,7 +105,6 @@ class Widget(ModelNormal):
         ],
         id: Union[int, UnsetType] = unset,
         layout: Union[WidgetLayout, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -133,7 +132,5 @@ class Widget(ModelNormal):
         if layout is not unset:
             kwargs["layout"] = layout
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.definition = definition

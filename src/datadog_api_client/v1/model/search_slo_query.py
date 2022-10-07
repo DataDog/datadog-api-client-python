@@ -36,7 +36,6 @@ class SearchSLOQuery(ModelNormal):
         denominator: Union[str, UnsetType] = unset,
         metrics: Union[List[str], none_type, UnsetType] = unset,
         numerator: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -61,5 +60,3 @@ class SearchSLOQuery(ModelNormal):
         if numerator is not unset:
             kwargs["numerator"] = numerator
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

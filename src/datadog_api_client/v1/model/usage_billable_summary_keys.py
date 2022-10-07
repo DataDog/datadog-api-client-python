@@ -267,7 +267,6 @@ class UsageBillableSummaryKeys(ModelNormal):
         synthetics_browser_checks_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         timeseries_average: Union[UsageBillableSummaryBody, UnsetType] = unset,
         timeseries_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -669,5 +668,3 @@ class UsageBillableSummaryKeys(ModelNormal):
         if timeseries_sum is not unset:
             kwargs["timeseries_sum"] = timeseries_sum
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

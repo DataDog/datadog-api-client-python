@@ -36,7 +36,6 @@ class ServiceAccountCreateAttributes(ModelNormal):
         service_account: bool,
         name: Union[str, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -59,8 +58,6 @@ class ServiceAccountCreateAttributes(ModelNormal):
         if title is not unset:
             kwargs["title"] = title
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.email = email
         self_.service_account = service_account

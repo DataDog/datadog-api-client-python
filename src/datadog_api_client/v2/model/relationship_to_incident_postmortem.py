@@ -32,7 +32,7 @@ class RelationshipToIncidentPostmortem(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: RelationshipToIncidentPostmortemData, *args, **kwargs):
+    def __init__(self_, data: RelationshipToIncidentPostmortemData, **kwargs):
         """
         A relationship reference for postmortems.
 
@@ -40,7 +40,5 @@ class RelationshipToIncidentPostmortem(ModelNormal):
         :type data: RelationshipToIncidentPostmortemData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

@@ -32,7 +32,7 @@ class SLOListWidgetRequest(ModelNormal):
         "request_type": "request_type",
     }
 
-    def __init__(self_, query: SLOListWidgetQuery, request_type: SLOListWidgetRequestType, *args, **kwargs):
+    def __init__(self_, query: SLOListWidgetQuery, request_type: SLOListWidgetRequestType, **kwargs):
         """
         Updated SLO List widget.
 
@@ -43,8 +43,6 @@ class SLOListWidgetRequest(ModelNormal):
         :type request_type: SLOListWidgetRequestType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.query = query
         self_.request_type = request_type

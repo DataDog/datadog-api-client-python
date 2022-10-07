@@ -26,9 +26,7 @@ class MetricPoint(ModelNormal):
         "value": "value",
     }
 
-    def __init__(
-        self_, timestamp: Union[int, UnsetType] = unset, value: Union[float, UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, timestamp: Union[int, UnsetType] = unset, value: Union[float, UnsetType] = unset, **kwargs):
         """
         A point object is of the form ``{POSIX_timestamp, numeric_value}``.
 
@@ -44,5 +42,3 @@ class MetricPoint(ModelNormal):
         if value is not unset:
             kwargs["value"] = value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

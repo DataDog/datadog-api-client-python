@@ -23,7 +23,7 @@ class GeomapWidgetDefinitionStyle(ModelNormal):
         "palette_flip": "palette_flip",
     }
 
-    def __init__(self_, palette: str, palette_flip: bool, *args, **kwargs):
+    def __init__(self_, palette: str, palette_flip: bool, **kwargs):
         """
         The style to apply to the widget.
 
@@ -34,8 +34,6 @@ class GeomapWidgetDefinitionStyle(ModelNormal):
         :type palette_flip: bool
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.palette = palette
         self_.palette_flip = palette_flip

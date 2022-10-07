@@ -31,7 +31,6 @@ class MonitorThresholdWindowOptions(ModelNormal):
         self_,
         recovery_window: Union[str, none_type, UnsetType] = unset,
         trigger_window: Union[str, none_type, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -48,5 +47,3 @@ class MonitorThresholdWindowOptions(ModelNormal):
         if trigger_window is not unset:
             kwargs["trigger_window"] = trigger_window
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

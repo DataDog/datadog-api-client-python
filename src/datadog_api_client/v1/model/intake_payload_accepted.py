@@ -24,7 +24,7 @@ class IntakePayloadAccepted(ModelNormal):
         "status": "status",
     }
 
-    def __init__(self_, status: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, status: Union[str, UnsetType] = unset, **kwargs):
         """
         The payload accepted for intake.
 
@@ -34,5 +34,3 @@ class IntakePayloadAccepted(ModelNormal):
         if status is not unset:
             kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

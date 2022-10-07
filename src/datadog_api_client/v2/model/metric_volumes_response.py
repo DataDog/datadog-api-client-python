@@ -35,7 +35,6 @@ class MetricVolumesResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[MetricVolumes, MetricDistinctVolume, MetricIngestedIndexedVolume, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -47,5 +46,3 @@ class MetricVolumesResponse(ModelNormal):
         if data is not unset:
             kwargs["data"] = data
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

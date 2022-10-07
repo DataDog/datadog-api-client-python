@@ -42,7 +42,6 @@ class LogsTraceRemapper(ModelNormal):
         is_enabled: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         sources: Union[List[str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -74,7 +73,5 @@ class LogsTraceRemapper(ModelNormal):
         if sources is not unset:
             kwargs["sources"] = sources
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.type = type

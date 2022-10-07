@@ -38,7 +38,6 @@ class RolesResponse(ModelNormal):
         self_,
         data: Union[List[Role], UnsetType] = unset,
         meta: Union[ResponseMetaAttributes, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class RolesResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -29,7 +29,7 @@ class NotebookAbsoluteTime(ModelNormal):
         "start": "start",
     }
 
-    def __init__(self_, end: datetime, start: datetime, live: Union[bool, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, end: datetime, start: datetime, live: Union[bool, UnsetType] = unset, **kwargs):
         """
         Absolute timeframe.
 
@@ -45,8 +45,6 @@ class NotebookAbsoluteTime(ModelNormal):
         if live is not unset:
             kwargs["live"] = live
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.end = end
         self_.start = start

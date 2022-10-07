@@ -54,7 +54,6 @@ class RUMGroupBy(ModelNormal):
         missing: Union[RUMGroupByMissing, str, float, UnsetType] = unset,
         sort: Union[RUMAggregateSort, UnsetType] = unset,
         total: Union[RUMGroupByTotal, bool, str, float, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -90,7 +89,5 @@ class RUMGroupBy(ModelNormal):
         if total is not unset:
             kwargs["total"] = total
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.facet = facet

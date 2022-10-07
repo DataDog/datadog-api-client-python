@@ -36,7 +36,6 @@ class WidgetCustomLink(ModelNormal):
         label: Union[str, UnsetType] = unset,
         link: Union[str, UnsetType] = unset,
         override_label: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,5 +62,3 @@ class WidgetCustomLink(ModelNormal):
         if override_label is not unset:
             kwargs["override_label"] = override_label
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

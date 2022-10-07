@@ -48,7 +48,6 @@ class ProcessSummaryAttributes(ModelNormal):
         tags: Union[List[str], UnsetType] = unset,
         timestamp: Union[str, UnsetType] = unset,
         user: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -95,5 +94,3 @@ class ProcessSummaryAttributes(ModelNormal):
         if user is not unset:
             kwargs["user"] = user
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

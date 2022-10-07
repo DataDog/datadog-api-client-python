@@ -27,11 +27,7 @@ class SAMLAssertionAttributeAttributes(ModelNormal):
     }
 
     def __init__(
-        self_,
-        attribute_key: Union[str, UnsetType] = unset,
-        attribute_value: Union[str, UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, attribute_key: Union[str, UnsetType] = unset, attribute_value: Union[str, UnsetType] = unset, **kwargs
     ):
         """
         Key/Value pair of attributes used in SAML assertion attributes.
@@ -47,5 +43,3 @@ class SAMLAssertionAttributeAttributes(ModelNormal):
         if attribute_value is not unset:
             kwargs["attribute_value"] = attribute_value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

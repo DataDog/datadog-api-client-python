@@ -30,7 +30,7 @@ class SyntheticsBatchDetails(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[SyntheticsBatchDetailsData, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, data: Union[SyntheticsBatchDetailsData, UnsetType] = unset, **kwargs):
         """
         Details about a batch response.
 
@@ -40,5 +40,3 @@ class SyntheticsBatchDetails(ModelNormal):
         if data is not unset:
             kwargs["data"] = data
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

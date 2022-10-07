@@ -28,7 +28,7 @@ class IncidentTeamCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: IncidentTeamCreateData, *args, **kwargs):
+    def __init__(self_, data: IncidentTeamCreateData, **kwargs):
         """
         Create request with an incident team payload.
 
@@ -36,7 +36,5 @@ class IncidentTeamCreateRequest(ModelNormal):
         :type data: IncidentTeamCreateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

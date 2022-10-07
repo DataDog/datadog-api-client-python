@@ -44,7 +44,6 @@ class ApmStatsQueryColumnType(ModelNormal):
         alias: Union[str, UnsetType] = unset,
         cell_display_mode: Union[TableWidgetCellDisplayMode, UnsetType] = unset,
         order: Union[WidgetSort, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -69,7 +68,5 @@ class ApmStatsQueryColumnType(ModelNormal):
         if order is not unset:
             kwargs["order"] = order
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name

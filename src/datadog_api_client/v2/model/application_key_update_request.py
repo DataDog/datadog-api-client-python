@@ -28,7 +28,7 @@ class ApplicationKeyUpdateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: ApplicationKeyUpdateData, *args, **kwargs):
+    def __init__(self_, data: ApplicationKeyUpdateData, **kwargs):
         """
         Request used to update an application key.
 
@@ -36,7 +36,5 @@ class ApplicationKeyUpdateRequest(ModelNormal):
         :type data: ApplicationKeyUpdateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

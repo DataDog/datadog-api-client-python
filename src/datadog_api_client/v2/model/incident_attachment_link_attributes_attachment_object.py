@@ -23,7 +23,7 @@ class IncidentAttachmentLinkAttributesAttachmentObject(ModelNormal):
         "title": "title",
     }
 
-    def __init__(self_, document_url: str, title: str, *args, **kwargs):
+    def __init__(self_, document_url: str, title: str, **kwargs):
         """
         The link attachment.
 
@@ -34,8 +34,6 @@ class IncidentAttachmentLinkAttributesAttachmentObject(ModelNormal):
         :type title: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.document_url = document_url
         self_.title = title

@@ -30,7 +30,7 @@ class UsageSyntheticsResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageSyntheticsHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageSyntheticsHour], UnsetType] = unset, **kwargs):
         """
         Response containing the number of Synthetics API tests run for each hour for a given organization.
 
@@ -40,5 +40,3 @@ class UsageSyntheticsResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

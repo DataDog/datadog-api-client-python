@@ -30,7 +30,7 @@ class UsageLogsResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageLogsHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageLogsHour], UnsetType] = unset, **kwargs):
         """
         Response containing the number of logs for each hour.
 
@@ -40,5 +40,3 @@ class UsageLogsResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -72,7 +72,6 @@ class SyntheticsBrowserTestResultData(ModelNormal):
         step_details: Union[List[SyntheticsStepDetail], UnsetType] = unset,
         thumbnails_bucket_key: Union[bool, UnsetType] = unset,
         time_to_interactive: Union[float, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -140,5 +139,3 @@ class SyntheticsBrowserTestResultData(ModelNormal):
         if time_to_interactive is not unset:
             kwargs["time_to_interactive"] = time_to_interactive
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

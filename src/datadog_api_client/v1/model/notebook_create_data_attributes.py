@@ -60,7 +60,6 @@ class NotebookCreateDataAttributes(ModelNormal):
         time: Union[NotebookGlobalTime, NotebookRelativeTime, NotebookAbsoluteTime],
         metadata: Union[NotebookMetadata, UnsetType] = unset,
         status: Union[NotebookStatus, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -86,8 +85,6 @@ class NotebookCreateDataAttributes(ModelNormal):
         if status is not unset:
             kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.cells = cells
         self_.name = name

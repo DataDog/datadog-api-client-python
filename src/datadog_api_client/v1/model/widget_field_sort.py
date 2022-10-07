@@ -30,7 +30,7 @@ class WidgetFieldSort(ModelNormal):
         "order": "order",
     }
 
-    def __init__(self_, column: str, order: WidgetSort, *args, **kwargs):
+    def __init__(self_, column: str, order: WidgetSort, **kwargs):
         """
         Which column and order to sort by
 
@@ -41,8 +41,6 @@ class WidgetFieldSort(ModelNormal):
         :type order: WidgetSort
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.column = column
         self_.order = order

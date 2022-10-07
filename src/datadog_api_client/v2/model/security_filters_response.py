@@ -38,7 +38,6 @@ class SecurityFiltersResponse(ModelNormal):
         self_,
         data: Union[List[SecurityFilter], UnsetType] = unset,
         meta: Union[SecurityFilterMeta, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class SecurityFiltersResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

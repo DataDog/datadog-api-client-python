@@ -35,12 +35,7 @@ class SyntheticsBasicAuthDigest(ModelNormal):
     }
 
     def __init__(
-        self_,
-        password: str,
-        username: str,
-        type: Union[SyntheticsBasicAuthDigestType, UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, password: str, username: str, type: Union[SyntheticsBasicAuthDigestType, UnsetType] = unset, **kwargs
     ):
         """
         Object to handle digest authentication when performing the test.
@@ -57,8 +52,6 @@ class SyntheticsBasicAuthDigest(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.password = password
         self_.username = username

@@ -53,7 +53,6 @@ class LogsIndex(ModelNormal):
         exclusion_filters: Union[List[LogsExclusion], UnsetType] = unset,
         is_rate_limited: Union[bool, UnsetType] = unset,
         num_retention_days: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -90,8 +89,6 @@ class LogsIndex(ModelNormal):
         if num_retention_days is not unset:
             kwargs["num_retention_days"] = num_retention_days
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.filter = filter
         self_.name = name

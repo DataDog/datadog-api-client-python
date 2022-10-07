@@ -22,7 +22,7 @@ class LogsPipelinesOrder(ModelNormal):
         "pipeline_ids": "pipeline_ids",
     }
 
-    def __init__(self_, pipeline_ids: List[str], *args, **kwargs):
+    def __init__(self_, pipeline_ids: List[str], **kwargs):
         """
         Object containing the ordered list of pipeline IDs.
 
@@ -31,7 +31,5 @@ class LogsPipelinesOrder(ModelNormal):
         :type pipeline_ids: [str]
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.pipeline_ids = pipeline_ids

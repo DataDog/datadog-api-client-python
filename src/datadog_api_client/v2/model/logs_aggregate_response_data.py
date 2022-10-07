@@ -30,7 +30,7 @@ class LogsAggregateResponseData(ModelNormal):
         "buckets": "buckets",
     }
 
-    def __init__(self_, buckets: Union[List[LogsAggregateBucket], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, buckets: Union[List[LogsAggregateBucket], UnsetType] = unset, **kwargs):
         """
         The query results
 
@@ -40,5 +40,3 @@ class LogsAggregateResponseData(ModelNormal):
         if buckets is not unset:
             kwargs["buckets"] = buckets
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

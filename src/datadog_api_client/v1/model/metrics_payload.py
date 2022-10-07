@@ -28,7 +28,7 @@ class MetricsPayload(ModelNormal):
         "series": "series",
     }
 
-    def __init__(self_, series: List[Series], *args, **kwargs):
+    def __init__(self_, series: List[Series], **kwargs):
         """
         The metrics' payload.
 
@@ -36,7 +36,5 @@ class MetricsPayload(ModelNormal):
         :type series: [Series]
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.series = series

@@ -66,7 +66,6 @@ class HeatMapWidgetRequest(ModelNormal):
         rum_query: Union[LogQueryDefinition, UnsetType] = unset,
         security_query: Union[LogQueryDefinition, UnsetType] = unset,
         style: Union[WidgetStyle, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -123,5 +122,3 @@ class HeatMapWidgetRequest(ModelNormal):
         if style is not unset:
             kwargs["style"] = style
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

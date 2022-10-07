@@ -42,7 +42,6 @@ class MonitorSearchResponseMetadata(ModelNormal):
         page_count: Union[int, UnsetType] = unset,
         per_page: Union[int, UnsetType] = unset,
         total_count: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -69,5 +68,3 @@ class MonitorSearchResponseMetadata(ModelNormal):
         if total_count is not unset:
             kwargs["total_count"] = total_count
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

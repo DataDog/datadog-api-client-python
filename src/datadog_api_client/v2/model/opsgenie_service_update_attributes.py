@@ -43,7 +43,6 @@ class OpsgenieServiceUpdateAttributes(ModelNormal):
         name: Union[str, UnsetType] = unset,
         opsgenie_api_key: Union[str, UnsetType] = unset,
         region: Union[OpsgenieServiceRegionType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -70,5 +69,3 @@ class OpsgenieServiceUpdateAttributes(ModelNormal):
         if region is not unset:
             kwargs["region"] = region
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

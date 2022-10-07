@@ -42,7 +42,6 @@ class SyntheticsTriggerCITestRunResult(ModelNormal):
         location: Union[int, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         result_id: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -69,5 +68,3 @@ class SyntheticsTriggerCITestRunResult(ModelNormal):
         if result_id is not unset:
             kwargs["result_id"] = result_id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

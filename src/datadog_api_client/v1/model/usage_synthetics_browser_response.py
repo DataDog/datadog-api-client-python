@@ -30,7 +30,7 @@ class UsageSyntheticsBrowserResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageSyntheticsBrowserHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageSyntheticsBrowserHour], UnsetType] = unset, **kwargs):
         """
         Response containing the number of Synthetics Browser tests run for each hour for a given organization.
 
@@ -40,5 +40,3 @@ class UsageSyntheticsBrowserResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -29,7 +29,7 @@ class UserCreateAttributes(ModelNormal):
     }
 
     def __init__(
-        self_, email: str, name: Union[str, UnsetType] = unset, title: Union[str, UnsetType] = unset, *args, **kwargs
+        self_, email: str, name: Union[str, UnsetType] = unset, title: Union[str, UnsetType] = unset, **kwargs
     ):
         """
         Attributes of the created user.
@@ -48,7 +48,5 @@ class UserCreateAttributes(ModelNormal):
         if title is not unset:
             kwargs["title"] = title
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.email = email

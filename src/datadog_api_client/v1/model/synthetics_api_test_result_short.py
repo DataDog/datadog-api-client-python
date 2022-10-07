@@ -49,7 +49,6 @@ class SyntheticsAPITestResultShort(ModelNormal):
         result: Union[SyntheticsAPITestResultShortResult, UnsetType] = unset,
         result_id: Union[str, UnsetType] = unset,
         status: Union[SyntheticsTestMonitorStatus, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -85,5 +84,3 @@ class SyntheticsAPITestResultShort(ModelNormal):
         if status is not unset:
             kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

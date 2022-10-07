@@ -36,7 +36,6 @@ class CheckCanDeleteSLOResponse(ModelNormal):
         self_,
         data: Union[CheckCanDeleteSLOResponseData, UnsetType] = unset,
         errors: Union[Dict[str, str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -53,5 +52,3 @@ class CheckCanDeleteSLOResponse(ModelNormal):
         if errors is not unset:
             kwargs["errors"] = errors
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

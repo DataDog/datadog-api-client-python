@@ -38,7 +38,6 @@ class TopologyRequest(ModelNormal):
         self_,
         query: Union[TopologyQuery, UnsetType] = unset,
         request_type: Union[TopologyRequestType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class TopologyRequest(ModelNormal):
         if request_type is not unset:
             kwargs["request_type"] = request_type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

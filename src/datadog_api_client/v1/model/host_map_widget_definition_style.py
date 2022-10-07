@@ -36,7 +36,6 @@ class HostMapWidgetDefinitionStyle(ModelNormal):
         fill_min: Union[str, UnsetType] = unset,
         palette: Union[str, UnsetType] = unset,
         palette_flip: Union[bool, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,5 +62,3 @@ class HostMapWidgetDefinitionStyle(ModelNormal):
         if palette_flip is not unset:
             kwargs["palette_flip"] = palette_flip
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -44,7 +44,6 @@ class IncidentAttachmentLinkAttributes(ModelNormal):
         self_,
         attachment: IncidentAttachmentLinkAttributesAttachmentObject,
         attachment_type: IncidentAttachmentLinkAttachmentType,
-        *args,
         **kwargs,
     ):
         """
@@ -57,8 +56,6 @@ class IncidentAttachmentLinkAttributes(ModelNormal):
         :type attachment_type: IncidentAttachmentLinkAttachmentType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attachment = attachment
         self_.attachment_type = attachment_type

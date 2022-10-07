@@ -32,7 +32,7 @@ class LogsArchiveCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[LogsArchiveCreateRequestDefinition, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, data: Union[LogsArchiveCreateRequestDefinition, UnsetType] = unset, **kwargs):
         """
         The logs archive.
 
@@ -42,5 +42,3 @@ class LogsArchiveCreateRequest(ModelNormal):
         if data is not unset:
             kwargs["data"] = data
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

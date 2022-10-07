@@ -74,7 +74,6 @@ class Host(ModelNormal):
         sources: Union[List[str], UnsetType] = unset,
         tags_by_source: Union[Dict[str, List[str]], UnsetType] = unset,
         up: Union[bool, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -151,5 +150,3 @@ class Host(ModelNormal):
         if up is not unset:
             kwargs["up"] = up
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

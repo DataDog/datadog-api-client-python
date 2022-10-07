@@ -42,7 +42,6 @@ class SLOCorrectionCreateData(ModelNormal):
         self_,
         type: SLOCorrectionType,
         attributes: Union[SLOCorrectionCreateRequestAttributes, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -57,7 +56,5 @@ class SLOCorrectionCreateData(ModelNormal):
         if attributes is not unset:
             kwargs["attributes"] = attributes
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.type = type

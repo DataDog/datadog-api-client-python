@@ -28,7 +28,7 @@ class LogsMetricCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: LogsMetricCreateData, *args, **kwargs):
+    def __init__(self_, data: LogsMetricCreateData, **kwargs):
         """
         The new log-based metric body.
 
@@ -36,7 +36,5 @@ class LogsMetricCreateRequest(ModelNormal):
         :type data: LogsMetricCreateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

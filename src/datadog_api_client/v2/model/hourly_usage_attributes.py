@@ -49,7 +49,6 @@ class HourlyUsageAttributes(ModelNormal):
         public_id: Union[str, UnsetType] = unset,
         region: Union[str, UnsetType] = unset,
         timestamp: Union[datetime, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -86,5 +85,3 @@ class HourlyUsageAttributes(ModelNormal):
         if timestamp is not unset:
             kwargs["timestamp"] = timestamp
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

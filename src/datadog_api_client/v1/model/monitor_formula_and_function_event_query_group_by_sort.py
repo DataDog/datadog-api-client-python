@@ -45,7 +45,6 @@ class MonitorFormulaAndFunctionEventQueryGroupBySort(ModelNormal):
         aggregation: MonitorFormulaAndFunctionEventAggregation,
         metric: Union[str, UnsetType] = unset,
         order: Union[QuerySortOrder, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -65,7 +64,5 @@ class MonitorFormulaAndFunctionEventQueryGroupBySort(ModelNormal):
         if order is not unset:
             kwargs["order"] = order
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.aggregation = aggregation

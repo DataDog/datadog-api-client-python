@@ -28,7 +28,7 @@ class UserInvitationRelationships(ModelNormal):
         "user": "user",
     }
 
-    def __init__(self_, user: RelationshipToUser, *args, **kwargs):
+    def __init__(self_, user: RelationshipToUser, **kwargs):
         """
         Relationships data for user invitation.
 
@@ -36,7 +36,5 @@ class UserInvitationRelationships(ModelNormal):
         :type user: RelationshipToUser
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.user = user

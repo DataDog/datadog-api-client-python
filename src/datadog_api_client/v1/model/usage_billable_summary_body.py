@@ -46,7 +46,6 @@ class UsageBillableSummaryBody(ModelNormal):
         org_billable_usage: Union[int, UnsetType] = unset,
         percentage_in_account: Union[float, UnsetType] = unset,
         usage_unit: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -88,5 +87,3 @@ class UsageBillableSummaryBody(ModelNormal):
         if usage_unit is not unset:
             kwargs["usage_unit"] = usage_unit
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

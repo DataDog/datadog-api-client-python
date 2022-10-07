@@ -75,7 +75,6 @@ class SyntheticsBrowserTest(ModelNormal):
         status: Union[SyntheticsTestPauseStatus, UnsetType] = unset,
         steps: Union[List[SyntheticsStep], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -126,8 +125,6 @@ class SyntheticsBrowserTest(ModelNormal):
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.config = config
         self_.locations = locations

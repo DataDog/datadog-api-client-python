@@ -55,7 +55,6 @@ class IncidentResponseRelationships(ModelNormal):
         created_by_user: Union[RelationshipToUser, UnsetType] = unset,
         integrations: Union[RelationshipToIncidentIntegrationMetadatas, UnsetType] = unset,
         last_modified_by_user: Union[RelationshipToUser, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -87,5 +86,3 @@ class IncidentResponseRelationships(ModelNormal):
         if last_modified_by_user is not unset:
             kwargs["last_modified_by_user"] = last_modified_by_user
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

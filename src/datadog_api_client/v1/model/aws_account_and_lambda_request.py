@@ -23,7 +23,7 @@ class AWSAccountAndLambdaRequest(ModelNormal):
         "lambda_arn": "lambda_arn",
     }
 
-    def __init__(self_, account_id: str, lambda_arn: str, *args, **kwargs):
+    def __init__(self_, account_id: str, lambda_arn: str, **kwargs):
         """
         AWS account ID and Lambda ARN.
 
@@ -34,8 +34,6 @@ class AWSAccountAndLambdaRequest(ModelNormal):
         :type lambda_arn: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.account_id = account_id
         self_.lambda_arn = lambda_arn

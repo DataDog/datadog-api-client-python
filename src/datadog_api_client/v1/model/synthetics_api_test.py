@@ -75,7 +75,6 @@ class SyntheticsAPITest(ModelNormal):
         status: Union[SyntheticsTestPauseStatus, UnsetType] = unset,
         subtype: Union[SyntheticsTestDetailsSubType, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -127,8 +126,6 @@ class SyntheticsAPITest(ModelNormal):
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.config = config
         self_.locations = locations

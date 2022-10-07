@@ -59,7 +59,6 @@ class HostMapRequest(ModelNormal):
         q: Union[str, UnsetType] = unset,
         rum_query: Union[LogQueryDefinition, UnsetType] = unset,
         security_query: Union[LogQueryDefinition, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -111,5 +110,3 @@ class HostMapRequest(ModelNormal):
         if security_query is not unset:
             kwargs["security_query"] = security_query
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

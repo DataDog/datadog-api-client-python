@@ -24,7 +24,7 @@ class SecurityMonitoringRuleImpossibleTravelOptions(ModelNormal):
         "baseline_user_locations": "baselineUserLocations",
     }
 
-    def __init__(self_, baseline_user_locations: Union[bool, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, baseline_user_locations: Union[bool, UnsetType] = unset, **kwargs):
         """
         Options on impossible travel rules.
 
@@ -35,5 +35,3 @@ class SecurityMonitoringRuleImpossibleTravelOptions(ModelNormal):
         if baseline_user_locations is not unset:
             kwargs["baseline_user_locations"] = baseline_user_locations
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

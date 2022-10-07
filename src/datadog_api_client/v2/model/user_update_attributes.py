@@ -33,7 +33,6 @@ class UserUpdateAttributes(ModelNormal):
         disabled: Union[bool, UnsetType] = unset,
         email: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class UserUpdateAttributes(ModelNormal):
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

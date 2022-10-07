@@ -38,7 +38,6 @@ class HourlyUsageAttributionResponse(ModelNormal):
         self_,
         metadata: Union[HourlyUsageAttributionMetadata, UnsetType] = unset,
         usage: Union[List[HourlyUsageAttributionBody], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class HourlyUsageAttributionResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

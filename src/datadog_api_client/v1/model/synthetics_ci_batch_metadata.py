@@ -38,7 +38,6 @@ class SyntheticsCIBatchMetadata(ModelNormal):
         self_,
         ci: Union[SyntheticsCIBatchMetadataCI, UnsetType] = unset,
         git: Union[SyntheticsCIBatchMetadataGit, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class SyntheticsCIBatchMetadata(ModelNormal):
         if git is not unset:
             kwargs["git"] = git
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

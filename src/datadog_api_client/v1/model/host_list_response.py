@@ -39,7 +39,6 @@ class HostListResponse(ModelNormal):
         host_list: Union[List[Host], UnsetType] = unset,
         total_matching: Union[int, UnsetType] = unset,
         total_returned: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -61,5 +60,3 @@ class HostListResponse(ModelNormal):
         if total_returned is not unset:
             kwargs["total_returned"] = total_returned
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

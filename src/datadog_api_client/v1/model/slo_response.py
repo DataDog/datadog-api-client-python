@@ -33,11 +33,7 @@ class SLOResponse(ModelNormal):
     }
 
     def __init__(
-        self_,
-        data: Union[SLOResponseData, UnsetType] = unset,
-        errors: Union[List[str], UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, data: Union[SLOResponseData, UnsetType] = unset, errors: Union[List[str], UnsetType] = unset, **kwargs
     ):
         """
         A service level objective response containing a single service level objective.
@@ -55,5 +51,3 @@ class SLOResponse(ModelNormal):
         if errors is not unset:
             kwargs["errors"] = errors
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

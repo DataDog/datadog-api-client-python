@@ -57,7 +57,6 @@ class HourlyUsageAttributionBody(ModelNormal):
         total_usage_sum: Union[float, UnsetType] = unset,
         updated_at: Union[str, UnsetType] = unset,
         usage_type: Union[HourlyUsageAttributionUsageType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -108,5 +107,3 @@ class HourlyUsageAttributionBody(ModelNormal):
         if usage_type is not unset:
             kwargs["usage_type"] = usage_type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

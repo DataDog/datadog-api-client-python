@@ -30,7 +30,7 @@ class ApplicationKeyRelationships(ModelNormal):
         "owned_by": "owned_by",
     }
 
-    def __init__(self_, owned_by: Union[RelationshipToUser, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, owned_by: Union[RelationshipToUser, UnsetType] = unset, **kwargs):
         """
         Resources related to the application key.
 
@@ -40,5 +40,3 @@ class ApplicationKeyRelationships(ModelNormal):
         if owned_by is not unset:
             kwargs["owned_by"] = owned_by
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

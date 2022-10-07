@@ -73,7 +73,6 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         updated_at: Union[int, UnsetType] = unset,
         updater: Union[CloudWorkloadSecurityAgentRuleUpdaterAttributes, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -135,5 +134,3 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

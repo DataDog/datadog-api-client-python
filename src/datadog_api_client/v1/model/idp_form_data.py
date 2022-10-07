@@ -22,7 +22,7 @@ class IdpFormData(ModelNormal):
         "idp_file": "idp_file",
     }
 
-    def __init__(self_, idp_file: file_type, *args, **kwargs):
+    def __init__(self_, idp_file: file_type, **kwargs):
         """
         Object describing the IdP configuration.
 
@@ -30,7 +30,5 @@ class IdpFormData(ModelNormal):
         :type idp_file: file_type
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.idp_file = idp_file

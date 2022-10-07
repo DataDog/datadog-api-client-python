@@ -27,11 +27,7 @@ class SLODeleteResponse(ModelNormal):
     }
 
     def __init__(
-        self_,
-        data: Union[List[str], UnsetType] = unset,
-        errors: Union[Dict[str, str], UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, data: Union[List[str], UnsetType] = unset, errors: Union[Dict[str, str], UnsetType] = unset, **kwargs
     ):
         """
         A response list of all service level objective deleted.
@@ -47,5 +43,3 @@ class SLODeleteResponse(ModelNormal):
         if errors is not unset:
             kwargs["errors"] = errors
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

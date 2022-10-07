@@ -30,7 +30,7 @@ class WidgetTime(ModelNormal):
         "live_span": "live_span",
     }
 
-    def __init__(self_, live_span: Union[WidgetLiveSpan, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, live_span: Union[WidgetLiveSpan, UnsetType] = unset, **kwargs):
         """
         Time setting for the widget.
 
@@ -40,5 +40,3 @@ class WidgetTime(ModelNormal):
         if live_span is not unset:
             kwargs["live_span"] = live_span
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

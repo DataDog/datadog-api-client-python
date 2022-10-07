@@ -56,7 +56,6 @@ class AlertValueWidgetDefinition(ModelNormal):
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
         title_size: Union[str, UnsetType] = unset,
         unit: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -99,8 +98,6 @@ class AlertValueWidgetDefinition(ModelNormal):
         if unit is not unset:
             kwargs["unit"] = unit
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.alert_id = alert_id
         self_.type = type

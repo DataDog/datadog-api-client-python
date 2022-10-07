@@ -43,7 +43,6 @@ class EventsListResponse(ModelNormal):
         data: Union[List[EventResponse], UnsetType] = unset,
         links: Union[EventsListResponseLinks, UnsetType] = unset,
         meta: Union[EventsResponseMetadata, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -65,5 +64,3 @@ class EventsListResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

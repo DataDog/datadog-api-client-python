@@ -89,7 +89,6 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
         type: Union[SecurityMonitoringSignalRuleType, UnsetType] = unset,
         update_author_id: Union[int, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -181,5 +180,3 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -30,7 +30,7 @@ class MonitorState(ModelNormal):
         "groups": "groups",
     }
 
-    def __init__(self_, groups: Union[Dict[str, MonitorStateGroup], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, groups: Union[Dict[str, MonitorStateGroup], UnsetType] = unset, **kwargs):
         """
         Wrapper object with the different monitor states.
 
@@ -41,5 +41,3 @@ class MonitorState(ModelNormal):
         if groups is not unset:
             kwargs["groups"] = groups
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

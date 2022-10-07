@@ -26,7 +26,7 @@ class SignalAssigneeUpdateRequest(ModelNormal):
         "version": "version",
     }
 
-    def __init__(self_, assignee: str, version: Union[int, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, assignee: str, version: Union[int, UnsetType] = unset, **kwargs):
         """
         Attributes describing an assignee update operation over a security signal.
 
@@ -39,7 +39,5 @@ class SignalAssigneeUpdateRequest(ModelNormal):
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.assignee = assignee

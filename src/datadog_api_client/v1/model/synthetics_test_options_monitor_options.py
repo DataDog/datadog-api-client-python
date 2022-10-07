@@ -31,7 +31,7 @@ class SyntheticsTestOptionsMonitorOptions(ModelNormal):
         "renotify_interval": "renotify_interval",
     }
 
-    def __init__(self_, renotify_interval: Union[int, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, renotify_interval: Union[int, UnsetType] = unset, **kwargs):
         """
         Object containing the options for a Synthetic test as a monitor
         (for example, renotification).
@@ -43,5 +43,3 @@ class SyntheticsTestOptionsMonitorOptions(ModelNormal):
         if renotify_interval is not unset:
             kwargs["renotify_interval"] = renotify_interval
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

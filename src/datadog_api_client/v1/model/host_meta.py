@@ -77,7 +77,6 @@ class HostMeta(ModelNormal):
         socket_fqdn: Union[str, UnsetType] = unset,
         socket_hostname: Union[str, UnsetType] = unset,
         win_v: Union[List[str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -159,5 +158,3 @@ class HostMeta(ModelNormal):
         if win_v is not unset:
             kwargs["win_v"] = win_v
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -28,7 +28,7 @@ class MetricTagConfigurationCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: MetricTagConfigurationCreateData, *args, **kwargs):
+    def __init__(self_, data: MetricTagConfigurationCreateData, **kwargs):
         """
         Request object that includes the metric that you would like to configure tags for.
 
@@ -36,7 +36,5 @@ class MetricTagConfigurationCreateRequest(ModelNormal):
         :type data: MetricTagConfigurationCreateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

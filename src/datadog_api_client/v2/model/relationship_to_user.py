@@ -28,7 +28,7 @@ class RelationshipToUser(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: RelationshipToUserData, *args, **kwargs):
+    def __init__(self_, data: RelationshipToUserData, **kwargs):
         """
         Relationship to user.
 
@@ -36,7 +36,5 @@ class RelationshipToUser(ModelNormal):
         :type data: RelationshipToUserData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

@@ -69,7 +69,6 @@ class SyntheticsSSLCertificate(ModelNormal):
         subject: Union[SyntheticsSSLCertificateSubject, UnsetType] = unset,
         valid_from: Union[datetime, UnsetType] = unset,
         valid_to: Union[datetime, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -136,5 +135,3 @@ class SyntheticsSSLCertificate(ModelNormal):
         if valid_to is not unset:
             kwargs["valid_to"] = valid_to
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

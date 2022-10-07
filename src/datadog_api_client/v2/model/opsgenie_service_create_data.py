@@ -32,7 +32,7 @@ class OpsgenieServiceCreateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: OpsgenieServiceCreateAttributes, type: OpsgenieServiceType, *args, **kwargs):
+    def __init__(self_, attributes: OpsgenieServiceCreateAttributes, type: OpsgenieServiceType, **kwargs):
         """
         Opsgenie service data for a create request.
 
@@ -43,8 +43,6 @@ class OpsgenieServiceCreateData(ModelNormal):
         :type type: OpsgenieServiceType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.type = type

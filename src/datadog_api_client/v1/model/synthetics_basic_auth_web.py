@@ -35,7 +35,7 @@ class SyntheticsBasicAuthWeb(ModelNormal):
     }
 
     def __init__(
-        self_, password: str, username: str, type: Union[SyntheticsBasicAuthWebType, UnsetType] = unset, *args, **kwargs
+        self_, password: str, username: str, type: Union[SyntheticsBasicAuthWebType, UnsetType] = unset, **kwargs
     ):
         """
         Object to handle basic authentication when performing the test.
@@ -52,8 +52,6 @@ class SyntheticsBasicAuthWeb(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.password = password
         self_.username = username

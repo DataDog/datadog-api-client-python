@@ -32,9 +32,7 @@ class LogsCategoryProcessorCategory(ModelNormal):
         "name": "name",
     }
 
-    def __init__(
-        self_, filter: Union[LogsFilter, UnsetType] = unset, name: Union[str, UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, filter: Union[LogsFilter, UnsetType] = unset, name: Union[str, UnsetType] = unset, **kwargs):
         """
         Object describing the logs filter.
 
@@ -49,5 +47,3 @@ class LogsCategoryProcessorCategory(ModelNormal):
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

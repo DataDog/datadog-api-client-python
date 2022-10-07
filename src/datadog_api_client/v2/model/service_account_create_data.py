@@ -43,7 +43,6 @@ class ServiceAccountCreateData(ModelNormal):
         attributes: ServiceAccountCreateAttributes,
         type: UsersType,
         relationships: Union[UserRelationships, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -61,8 +60,6 @@ class ServiceAccountCreateData(ModelNormal):
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.type = type

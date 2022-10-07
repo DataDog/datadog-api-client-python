@@ -46,7 +46,6 @@ class LogsAggregateSort(ModelNormal):
         metric: Union[str, UnsetType] = unset,
         order: Union[LogsSortOrder, UnsetType] = unset,
         type: Union[LogsAggregateSortType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -73,5 +72,3 @@ class LogsAggregateSort(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

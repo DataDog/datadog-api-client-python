@@ -70,7 +70,6 @@ class MonitorFormulaAndFunctionEventQueryDefinition(ModelNormal):
         group_by: Union[List[MonitorFormulaAndFunctionEventQueryGroupBy], UnsetType] = unset,
         indexes: Union[List[str], UnsetType] = unset,
         search: Union[MonitorFormulaAndFunctionEventQueryDefinitionSearch, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -101,8 +100,6 @@ class MonitorFormulaAndFunctionEventQueryDefinition(ModelNormal):
         if search is not unset:
             kwargs["search"] = search
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.compute = compute
         self_.data_source = data_source

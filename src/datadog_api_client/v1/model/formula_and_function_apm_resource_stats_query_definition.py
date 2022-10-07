@@ -70,7 +70,6 @@ class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
         primary_tag_name: Union[str, UnsetType] = unset,
         primary_tag_value: Union[str, UnsetType] = unset,
         resource_name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -117,8 +116,6 @@ class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
         if resource_name is not unset:
             kwargs["resource_name"] = resource_name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data_source = data_source
         self_.env = env

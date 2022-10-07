@@ -27,7 +27,7 @@ class SyntheticsPrivateLocationSecretsConfigDecryption(ModelNormal):
         "key",
     }
 
-    def __init__(self_, key: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, key: Union[str, UnsetType] = unset, **kwargs):
         """
         Private key for the private location.
 
@@ -37,5 +37,3 @@ class SyntheticsPrivateLocationSecretsConfigDecryption(ModelNormal):
         if key is not unset:
             kwargs["key"] = key
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

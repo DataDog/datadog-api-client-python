@@ -24,7 +24,7 @@ class TagToHosts(ModelNormal):
         "tags": "tags",
     }
 
-    def __init__(self_, tags: Union[Dict[str, List[str]], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, tags: Union[Dict[str, List[str]], UnsetType] = unset, **kwargs):
         """
         In this object, the key is the tag, the value is a list of host names that are reporting that tag.
 
@@ -34,5 +34,3 @@ class TagToHosts(ModelNormal):
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -28,7 +28,7 @@ class NotebookUpdateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: NotebookUpdateData, *args, **kwargs):
+    def __init__(self_, data: NotebookUpdateData, **kwargs):
         """
         The description of a notebook update request.
 
@@ -36,7 +36,5 @@ class NotebookUpdateRequest(ModelNormal):
         :type data: NotebookUpdateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

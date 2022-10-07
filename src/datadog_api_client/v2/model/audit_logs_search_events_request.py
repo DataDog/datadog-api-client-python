@@ -48,7 +48,6 @@ class AuditLogsSearchEventsRequest(ModelNormal):
         options: Union[AuditLogsQueryOptions, UnsetType] = unset,
         page: Union[AuditLogsQueryPageOptions, UnsetType] = unset,
         sort: Union[AuditLogsSort, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -76,5 +75,3 @@ class AuditLogsSearchEventsRequest(ModelNormal):
         if sort is not unset:
             kwargs["sort"] = sort
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

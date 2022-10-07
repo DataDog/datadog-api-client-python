@@ -27,7 +27,7 @@ class ApplicationKeyCreateAttributes(ModelNormal):
         "scopes": "scopes",
     }
 
-    def __init__(self_, name: str, scopes: Union[List[str], none_type, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, name: str, scopes: Union[List[str], none_type, UnsetType] = unset, **kwargs):
         """
         Attributes used to create an application Key.
 
@@ -40,7 +40,5 @@ class ApplicationKeyCreateAttributes(ModelNormal):
         if scopes is not unset:
             kwargs["scopes"] = scopes
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name

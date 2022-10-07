@@ -32,7 +32,7 @@ class EventsRequestPage(ModelNormal):
         "limit": "limit",
     }
 
-    def __init__(self_, cursor: Union[str, UnsetType] = unset, limit: Union[int, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, cursor: Union[str, UnsetType] = unset, limit: Union[int, UnsetType] = unset, **kwargs):
         """
         Pagination settings.
 
@@ -47,5 +47,3 @@ class EventsRequestPage(ModelNormal):
         if limit is not unset:
             kwargs["limit"] = limit
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

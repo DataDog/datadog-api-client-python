@@ -39,7 +39,6 @@ class AWSTagFilterCreateRequest(ModelNormal):
         account_id: Union[str, UnsetType] = unset,
         namespace: Union[AWSNamespace, UnsetType] = unset,
         tag_filter_str: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -61,5 +60,3 @@ class AWSTagFilterCreateRequest(ModelNormal):
         if tag_filter_str is not unset:
             kwargs["tag_filter_str"] = tag_filter_str
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

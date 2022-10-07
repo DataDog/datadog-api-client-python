@@ -36,7 +36,6 @@ class DistributionWidgetXAxis(ModelNormal):
         max: Union[str, UnsetType] = unset,
         min: Union[str, UnsetType] = unset,
         scale: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,5 +62,3 @@ class DistributionWidgetXAxis(ModelNormal):
         if scale is not unset:
             kwargs["scale"] = scale
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

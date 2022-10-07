@@ -60,7 +60,6 @@ class TopologyMapWidgetDefinition(ModelNormal):
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
         title_size: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -93,8 +92,6 @@ class TopologyMapWidgetDefinition(ModelNormal):
         if title_size is not unset:
             kwargs["title_size"] = title_size
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.requests = requests
         self_.type = type

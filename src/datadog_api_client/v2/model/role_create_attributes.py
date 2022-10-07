@@ -38,7 +38,6 @@ class RoleCreateAttributes(ModelNormal):
         name: str,
         created_at: Union[datetime, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -58,7 +57,5 @@ class RoleCreateAttributes(ModelNormal):
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name

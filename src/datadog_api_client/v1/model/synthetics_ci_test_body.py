@@ -30,7 +30,7 @@ class SyntheticsCITestBody(ModelNormal):
         "tests": "tests",
     }
 
-    def __init__(self_, tests: Union[List[SyntheticsCITest], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, tests: Union[List[SyntheticsCITest], UnsetType] = unset, **kwargs):
         """
         Object describing the synthetics tests to trigger.
 
@@ -40,5 +40,3 @@ class SyntheticsCITestBody(ModelNormal):
         if tests is not unset:
             kwargs["tests"] = tests
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

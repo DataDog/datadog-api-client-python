@@ -46,7 +46,6 @@ class IncidentResponseData(ModelNormal):
         type: IncidentType,
         attributes: Union[IncidentResponseAttributes, UnsetType] = unset,
         relationships: Union[IncidentResponseRelationships, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -69,8 +68,6 @@ class IncidentResponseData(ModelNormal):
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.id = id
         self_.type = type

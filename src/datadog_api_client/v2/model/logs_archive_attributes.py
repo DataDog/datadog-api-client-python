@@ -59,7 +59,6 @@ class LogsArchiveAttributes(ModelNormal):
         rehydration_max_scan_size_in_gb: Union[int, none_type, UnsetType] = unset,
         rehydration_tags: Union[List[str], UnsetType] = unset,
         state: Union[LogsArchiveState, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -96,8 +95,6 @@ class LogsArchiveAttributes(ModelNormal):
         if state is not unset:
             kwargs["state"] = state
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.destination = destination
         self_.name = name

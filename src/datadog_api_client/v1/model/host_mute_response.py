@@ -36,7 +36,6 @@ class HostMuteResponse(ModelNormal):
         end: Union[int, UnsetType] = unset,
         hostname: Union[str, UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,5 +62,3 @@ class HostMuteResponse(ModelNormal):
         if message is not unset:
             kwargs["message"] = message
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

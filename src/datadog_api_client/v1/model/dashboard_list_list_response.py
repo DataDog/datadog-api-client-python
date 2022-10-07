@@ -30,7 +30,7 @@ class DashboardListListResponse(ModelNormal):
         "dashboard_lists": "dashboard_lists",
     }
 
-    def __init__(self_, dashboard_lists: Union[List[DashboardList], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, dashboard_lists: Union[List[DashboardList], UnsetType] = unset, **kwargs):
         """
         Information on your dashboard lists.
 
@@ -40,5 +40,3 @@ class DashboardListListResponse(ModelNormal):
         if dashboard_lists is not unset:
             kwargs["dashboard_lists"] = dashboard_lists
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

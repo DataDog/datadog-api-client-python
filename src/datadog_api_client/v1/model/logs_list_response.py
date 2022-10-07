@@ -39,7 +39,6 @@ class LogsListResponse(ModelNormal):
         logs: Union[List[Log], UnsetType] = unset,
         next_log_id: Union[str, UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -62,5 +61,3 @@ class LogsListResponse(ModelNormal):
         if status is not unset:
             kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

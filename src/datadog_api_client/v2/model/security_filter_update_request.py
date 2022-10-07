@@ -28,7 +28,7 @@ class SecurityFilterUpdateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: SecurityFilterUpdateData, *args, **kwargs):
+    def __init__(self_, data: SecurityFilterUpdateData, **kwargs):
         """
         The new security filter body.
 
@@ -36,7 +36,5 @@ class SecurityFilterUpdateRequest(ModelNormal):
         :type data: SecurityFilterUpdateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

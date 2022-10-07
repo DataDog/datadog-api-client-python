@@ -48,7 +48,6 @@ class OrganizationCreateResponse(ModelNormal):
         application_key: Union[ApplicationKey, UnsetType] = unset,
         org: Union[Organization, UnsetType] = unset,
         user: Union[User, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -75,5 +74,3 @@ class OrganizationCreateResponse(ModelNormal):
         if user is not unset:
             kwargs["user"] = user
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

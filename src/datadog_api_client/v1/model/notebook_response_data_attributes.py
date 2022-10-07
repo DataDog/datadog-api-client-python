@@ -76,7 +76,6 @@ class NotebookResponseDataAttributes(ModelNormal):
         metadata: Union[NotebookMetadata, UnsetType] = unset,
         modified: Union[datetime, UnsetType] = unset,
         status: Union[NotebookStatus, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -117,8 +116,6 @@ class NotebookResponseDataAttributes(ModelNormal):
         if status is not unset:
             kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.cells = cells
         self_.name = name

@@ -28,7 +28,7 @@ class ApplicationKeyCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: ApplicationKeyCreateData, *args, **kwargs):
+    def __init__(self_, data: ApplicationKeyCreateData, **kwargs):
         """
         Request used to create an application key.
 
@@ -36,7 +36,5 @@ class ApplicationKeyCreateRequest(ModelNormal):
         :type data: ApplicationKeyCreateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

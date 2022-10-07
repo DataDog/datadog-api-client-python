@@ -49,7 +49,6 @@ class IncidentTimelineCellMarkdownCreateAttributes(ModelNormal):
         cell_type: IncidentTimelineCellMarkdownContentType,
         content: IncidentTimelineCellMarkdownCreateAttributesContent,
         important: Union[bool, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -67,8 +66,6 @@ class IncidentTimelineCellMarkdownCreateAttributes(ModelNormal):
         if important is not unset:
             kwargs["important"] = important
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.cell_type = cell_type
         self_.content = content

@@ -34,9 +34,7 @@ class SyntheticsVariableParser(ModelNormal):
         "value": "value",
     }
 
-    def __init__(
-        self_, type: SyntheticsGlobalVariableParserType, value: Union[str, UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, type: SyntheticsGlobalVariableParserType, value: Union[str, UnsetType] = unset, **kwargs):
         """
         Details of the parser to use for the global variable.
 
@@ -49,7 +47,5 @@ class SyntheticsVariableParser(ModelNormal):
         if value is not unset:
             kwargs["value"] = value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.type = type

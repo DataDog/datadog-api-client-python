@@ -36,7 +36,6 @@ class APIKeyRelationships(ModelNormal):
         self_,
         created_by: Union[RelationshipToUser, UnsetType] = unset,
         modified_by: Union[RelationshipToUser, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -53,5 +52,3 @@ class APIKeyRelationships(ModelNormal):
         if modified_by is not unset:
             kwargs["modified_by"] = modified_by
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

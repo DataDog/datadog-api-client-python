@@ -32,7 +32,7 @@ class CloudWorkloadSecurityAgentRuleCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: CloudWorkloadSecurityAgentRuleCreateData, *args, **kwargs):
+    def __init__(self_, data: CloudWorkloadSecurityAgentRuleCreateData, **kwargs):
         """
         Request object that includes the Agent rule to create.
 
@@ -40,7 +40,5 @@ class CloudWorkloadSecurityAgentRuleCreateRequest(ModelNormal):
         :type data: CloudWorkloadSecurityAgentRuleCreateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

@@ -33,7 +33,6 @@ class IncidentResponseMetaPagination(ModelNormal):
         next_offset: Union[int, UnsetType] = unset,
         offset: Union[int, UnsetType] = unset,
         size: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class IncidentResponseMetaPagination(ModelNormal):
         if size is not unset:
             kwargs["size"] = size
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

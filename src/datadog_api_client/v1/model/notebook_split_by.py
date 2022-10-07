@@ -24,7 +24,7 @@ class NotebookSplitBy(ModelNormal):
         "tags": "tags",
     }
 
-    def __init__(self_, keys: List[str], tags: List[str], *args, **kwargs):
+    def __init__(self_, keys: List[str], tags: List[str], **kwargs):
         """
         Object describing how to split the graph to display multiple visualizations per request.
 
@@ -35,8 +35,6 @@ class NotebookSplitBy(ModelNormal):
         :type tags: [str]
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.keys = keys
         self_.tags = tags

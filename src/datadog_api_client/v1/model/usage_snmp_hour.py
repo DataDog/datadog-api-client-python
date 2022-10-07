@@ -37,7 +37,6 @@ class UsageSNMPHour(ModelNormal):
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         snmp_devices: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -64,5 +63,3 @@ class UsageSNMPHour(ModelNormal):
         if snmp_devices is not unset:
             kwargs["snmp_devices"] = snmp_devices
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

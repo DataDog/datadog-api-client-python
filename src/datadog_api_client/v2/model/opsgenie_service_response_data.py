@@ -34,9 +34,7 @@ class OpsgenieServiceResponseData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(
-        self_, attributes: OpsgenieServiceResponseAttributes, id: str, type: OpsgenieServiceType, *args, **kwargs
-    ):
+    def __init__(self_, attributes: OpsgenieServiceResponseAttributes, id: str, type: OpsgenieServiceType, **kwargs):
         """
         Opsgenie service data from a response.
 
@@ -50,8 +48,6 @@ class OpsgenieServiceResponseData(ModelNormal):
         :type type: OpsgenieServiceType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.id = id

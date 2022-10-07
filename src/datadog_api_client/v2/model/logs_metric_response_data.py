@@ -41,7 +41,6 @@ class LogsMetricResponseData(ModelNormal):
         attributes: Union[LogsMetricResponseAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         type: Union[LogsMetricType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,5 +62,3 @@ class LogsMetricResponseData(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

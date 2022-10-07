@@ -99,7 +99,6 @@ class TimeseriesWidgetDefinition(ModelNormal):
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
         title_size: Union[str, UnsetType] = unset,
         yaxis: Union[WidgetAxis, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -177,8 +176,6 @@ class TimeseriesWidgetDefinition(ModelNormal):
         if yaxis is not unset:
             kwargs["yaxis"] = yaxis
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.requests = requests
         self_.type = type

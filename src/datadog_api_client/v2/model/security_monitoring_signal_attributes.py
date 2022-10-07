@@ -53,7 +53,6 @@ class SecurityMonitoringSignalAttributes(ModelNormal):
         message: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         timestamp: Union[datetime, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -81,5 +80,3 @@ class SecurityMonitoringSignalAttributes(ModelNormal):
         if timestamp is not unset:
             kwargs["timestamp"] = timestamp
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

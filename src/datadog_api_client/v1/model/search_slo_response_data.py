@@ -36,7 +36,6 @@ class SearchSLOResponseData(ModelNormal):
         self_,
         attributes: Union[SearchSLOResponseDataAttributes, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -53,5 +52,3 @@ class SearchSLOResponseData(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

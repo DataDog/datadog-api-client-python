@@ -94,7 +94,6 @@ class MetricsQueryMetadata(ModelNormal):
         start: Union[int, UnsetType] = unset,
         tag_set: Union[List[str], UnsetType] = unset,
         unit: Union[List[MetricsQueryUnit], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -168,5 +167,3 @@ class MetricsQueryMetadata(ModelNormal):
         if unit is not unset:
             kwargs["unit"] = unit
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

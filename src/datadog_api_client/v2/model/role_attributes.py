@@ -42,7 +42,6 @@ class RoleAttributes(ModelNormal):
         modified_at: Union[datetime, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         user_count: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -69,5 +68,3 @@ class RoleAttributes(ModelNormal):
         if user_count is not unset:
             kwargs["user_count"] = user_count
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

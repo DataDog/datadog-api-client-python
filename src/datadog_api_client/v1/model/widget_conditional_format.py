@@ -59,7 +59,6 @@ class WidgetConditionalFormat(ModelNormal):
         image_url: Union[str, UnsetType] = unset,
         metric: Union[str, UnsetType] = unset,
         timeframe: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -105,8 +104,6 @@ class WidgetConditionalFormat(ModelNormal):
         if timeframe is not unset:
             kwargs["timeframe"] = timeframe
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.comparator = comparator
         self_.palette = palette

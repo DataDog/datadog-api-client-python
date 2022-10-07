@@ -29,12 +29,7 @@ class LogsQueryCompute(ModelNormal):
     }
 
     def __init__(
-        self_,
-        aggregation: str,
-        facet: Union[str, UnsetType] = unset,
-        interval: Union[int, UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, aggregation: str, facet: Union[str, UnsetType] = unset, interval: Union[int, UnsetType] = unset, **kwargs
     ):
         """
         Define computation for a log query.
@@ -53,7 +48,5 @@ class LogsQueryCompute(ModelNormal):
         if interval is not unset:
             kwargs["interval"] = interval
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.aggregation = aggregation

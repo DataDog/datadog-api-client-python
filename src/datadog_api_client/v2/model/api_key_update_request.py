@@ -28,7 +28,7 @@ class APIKeyUpdateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: APIKeyUpdateData, *args, **kwargs):
+    def __init__(self_, data: APIKeyUpdateData, **kwargs):
         """
         Request used to update an API key.
 
@@ -36,7 +36,5 @@ class APIKeyUpdateRequest(ModelNormal):
         :type data: APIKeyUpdateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

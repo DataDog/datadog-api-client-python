@@ -41,7 +41,6 @@ class ScatterPlotWidgetDefinitionRequests(ModelNormal):
         table: Union[ScatterplotTableRequest, UnsetType] = unset,
         x: Union[ScatterPlotRequest, UnsetType] = unset,
         y: Union[ScatterPlotRequest, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,5 +62,3 @@ class ScatterPlotWidgetDefinitionRequests(ModelNormal):
         if y is not unset:
             kwargs["y"] = y
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

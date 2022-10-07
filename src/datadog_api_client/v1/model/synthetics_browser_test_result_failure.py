@@ -36,7 +36,6 @@ class SyntheticsBrowserTestResultFailure(ModelNormal):
         self_,
         code: Union[SyntheticsBrowserTestFailureCode, UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -53,5 +52,3 @@ class SyntheticsBrowserTestResultFailure(ModelNormal):
         if message is not unset:
             kwargs["message"] = message
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -24,7 +24,7 @@ class SyntheticsCIBatchMetadataPipeline(ModelNormal):
         "url": "url",
     }
 
-    def __init__(self_, url: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, url: Union[str, UnsetType] = unset, **kwargs):
         """
         Description of the CI pipeline.
 
@@ -34,5 +34,3 @@ class SyntheticsCIBatchMetadataPipeline(ModelNormal):
         if url is not unset:
             kwargs["url"] = url
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

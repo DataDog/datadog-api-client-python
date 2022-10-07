@@ -28,7 +28,7 @@ class RoleCloneRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: RoleClone, *args, **kwargs):
+    def __init__(self_, data: RoleClone, **kwargs):
         """
         Request to create a role by cloning an existing role.
 
@@ -36,7 +36,5 @@ class RoleCloneRequest(ModelNormal):
         :type data: RoleClone
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

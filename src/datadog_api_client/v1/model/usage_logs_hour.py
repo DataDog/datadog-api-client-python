@@ -55,7 +55,6 @@ class UsageLogsHour(ModelNormal):
         logs_rehydrated_ingested_bytes: Union[int, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -112,5 +111,3 @@ class UsageLogsHour(ModelNormal):
         if public_id is not unset:
             kwargs["public_id"] = public_id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

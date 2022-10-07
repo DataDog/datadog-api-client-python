@@ -24,7 +24,7 @@ class LogsFilter(ModelNormal):
         "query": "query",
     }
 
-    def __init__(self_, query: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, query: Union[str, UnsetType] = unset, **kwargs):
         """
         Filter for logs.
 
@@ -34,5 +34,3 @@ class LogsFilter(ModelNormal):
         if query is not unset:
             kwargs["query"] = query
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -28,7 +28,7 @@ class MetricBulkTagConfigDeleteRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: MetricBulkTagConfigDelete, *args, **kwargs):
+    def __init__(self_, data: MetricBulkTagConfigDelete, **kwargs):
         """
         Wrapper object for a single bulk tag deletion request.
 
@@ -36,7 +36,5 @@ class MetricBulkTagConfigDeleteRequest(ModelNormal):
         :type data: MetricBulkTagConfigDelete
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

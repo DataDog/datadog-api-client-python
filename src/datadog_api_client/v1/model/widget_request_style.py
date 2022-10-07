@@ -41,7 +41,6 @@ class WidgetRequestStyle(ModelNormal):
         line_type: Union[WidgetLineType, UnsetType] = unset,
         line_width: Union[WidgetLineWidth, UnsetType] = unset,
         palette: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,5 +62,3 @@ class WidgetRequestStyle(ModelNormal):
         if palette is not unset:
             kwargs["palette"] = palette
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

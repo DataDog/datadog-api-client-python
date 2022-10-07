@@ -26,7 +26,7 @@ class SecurityFilterExclusionFilterResponse(ModelNormal):
         "query": "query",
     }
 
-    def __init__(self_, name: Union[str, UnsetType] = unset, query: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, name: Union[str, UnsetType] = unset, query: Union[str, UnsetType] = unset, **kwargs):
         """
         A single exclusion filter.
 
@@ -41,5 +41,3 @@ class SecurityFilterExclusionFilterResponse(ModelNormal):
         if query is not unset:
             kwargs["query"] = query
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

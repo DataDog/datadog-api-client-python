@@ -32,7 +32,7 @@ class SLOBulkDeleteError(ModelNormal):
         "timeframe": "timeframe",
     }
 
-    def __init__(self_, id: str, message: str, timeframe: SLOErrorTimeframe, *args, **kwargs):
+    def __init__(self_, id: str, message: str, timeframe: SLOErrorTimeframe, **kwargs):
         """
         Object describing the error.
 
@@ -48,8 +48,6 @@ class SLOBulkDeleteError(ModelNormal):
         :type timeframe: SLOErrorTimeframe
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.id = id
         self_.message = message

@@ -30,7 +30,7 @@ class UsageIndexedSpansResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageIndexedSpansHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageIndexedSpansHour], UnsetType] = unset, **kwargs):
         """
         A response containing indexed spans usage.
 
@@ -40,5 +40,3 @@ class UsageIndexedSpansResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

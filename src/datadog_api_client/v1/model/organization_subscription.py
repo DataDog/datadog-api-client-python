@@ -24,7 +24,7 @@ class OrganizationSubscription(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, type: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, type: Union[str, UnsetType] = unset, **kwargs):
         """
         Subscription definition.
 
@@ -34,5 +34,3 @@ class OrganizationSubscription(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

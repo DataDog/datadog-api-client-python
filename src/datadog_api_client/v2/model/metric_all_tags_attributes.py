@@ -24,7 +24,7 @@ class MetricAllTagsAttributes(ModelNormal):
         "tags": "tags",
     }
 
-    def __init__(self_, tags: Union[List[str], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, tags: Union[List[str], UnsetType] = unset, **kwargs):
         """
         Object containing the definition of a metric's tags.
 
@@ -34,5 +34,3 @@ class MetricAllTagsAttributes(ModelNormal):
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

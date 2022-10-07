@@ -21,7 +21,7 @@ class IncidentTeamCreateAttributes(ModelNormal):
         "name": "name",
     }
 
-    def __init__(self_, name: str, *args, **kwargs):
+    def __init__(self_, name: str, **kwargs):
         """
         The incident team's attributes for a create request.
 
@@ -29,7 +29,5 @@ class IncidentTeamCreateAttributes(ModelNormal):
         :type name: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name

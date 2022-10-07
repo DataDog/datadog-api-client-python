@@ -28,7 +28,7 @@ class SyntheticsDeletedTest(ModelNormal):
     }
 
     def __init__(
-        self_, deleted_at: Union[datetime, UnsetType] = unset, public_id: Union[str, UnsetType] = unset, *args, **kwargs
+        self_, deleted_at: Union[datetime, UnsetType] = unset, public_id: Union[str, UnsetType] = unset, **kwargs
     ):
         """
         Object containing a deleted Synthetic test ID with the associated
@@ -45,5 +45,3 @@ class SyntheticsDeletedTest(ModelNormal):
         if public_id is not unset:
             kwargs["public_id"] = public_id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

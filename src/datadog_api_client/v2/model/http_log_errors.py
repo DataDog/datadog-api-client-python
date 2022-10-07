@@ -30,7 +30,7 @@ class HTTPLogErrors(ModelNormal):
         "errors": "errors",
     }
 
-    def __init__(self_, errors: Union[List[HTTPLogError], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, errors: Union[List[HTTPLogError], UnsetType] = unset, **kwargs):
         """
         Invalid query performed.
 
@@ -40,5 +40,3 @@ class HTTPLogErrors(ModelNormal):
         if errors is not unset:
             kwargs["errors"] = errors
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

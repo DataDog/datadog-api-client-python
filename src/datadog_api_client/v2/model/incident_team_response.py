@@ -42,7 +42,6 @@ class IncidentTeamResponse(ModelNormal):
         self_,
         data: IncidentTeamResponseData,
         included: Union[List[Union[IncidentTeamIncludedItems, User]], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -57,7 +56,5 @@ class IncidentTeamResponse(ModelNormal):
         if included is not unset:
             kwargs["included"] = included
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

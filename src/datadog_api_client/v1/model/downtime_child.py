@@ -103,7 +103,6 @@ class DowntimeChild(ModelNormal):
         start: Union[int, UnsetType] = unset,
         timezone: Union[str, UnsetType] = unset,
         updater_id: Union[int, none_type, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -207,5 +206,3 @@ class DowntimeChild(ModelNormal):
         if updater_id is not unset:
             kwargs["updater_id"] = updater_id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

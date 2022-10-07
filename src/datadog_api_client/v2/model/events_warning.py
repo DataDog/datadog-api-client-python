@@ -33,7 +33,6 @@ class EventsWarning(ModelNormal):
         code: Union[str, UnsetType] = unset,
         detail: Union[str, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class EventsWarning(ModelNormal):
         if title is not unset:
             kwargs["title"] = title
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

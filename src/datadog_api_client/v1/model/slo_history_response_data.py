@@ -70,7 +70,6 @@ class SLOHistoryResponseData(ModelNormal):
         to_ts: Union[int, UnsetType] = unset,
         type: Union[SLOType, UnsetType] = unset,
         type_id: Union[SLOTypeNumeric, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -138,5 +137,3 @@ class SLOHistoryResponseData(ModelNormal):
         if type_id is not unset:
             kwargs["type_id"] = type_id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

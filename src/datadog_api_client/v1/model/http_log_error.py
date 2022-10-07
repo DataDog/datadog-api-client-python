@@ -29,7 +29,7 @@ class HTTPLogError(ModelNormal):
         "message": "message",
     }
 
-    def __init__(self_, code: int, message: str, *args, **kwargs):
+    def __init__(self_, code: int, message: str, **kwargs):
         """
         Invalid query performed.
 
@@ -40,8 +40,6 @@ class HTTPLogError(ModelNormal):
         :type message: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.code = code
         self_.message = message

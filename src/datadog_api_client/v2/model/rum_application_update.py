@@ -41,7 +41,6 @@ class RUMApplicationUpdate(ModelNormal):
         id: str,
         type: RUMApplicationUpdateType,
         attributes: Union[RUMApplicationUpdateAttributes, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -59,8 +58,6 @@ class RUMApplicationUpdate(ModelNormal):
         if attributes is not unset:
             kwargs["attributes"] = attributes
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.id = id
         self_.type = type

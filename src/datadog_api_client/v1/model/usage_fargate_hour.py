@@ -43,7 +43,6 @@ class UsageFargateHour(ModelNormal):
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         tasks_count: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -80,5 +79,3 @@ class UsageFargateHour(ModelNormal):
         if tasks_count is not unset:
             kwargs["tasks_count"] = tasks_count
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

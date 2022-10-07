@@ -28,7 +28,7 @@ class RUMApplicationUpdateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: RUMApplicationUpdate, *args, **kwargs):
+    def __init__(self_, data: RUMApplicationUpdate, **kwargs):
         """
         RUM application update request.
 
@@ -36,7 +36,5 @@ class RUMApplicationUpdateRequest(ModelNormal):
         :type data: RUMApplicationUpdate
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

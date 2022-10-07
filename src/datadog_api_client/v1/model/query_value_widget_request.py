@@ -114,7 +114,6 @@ class QueryValueWidgetRequest(ModelNormal):
         response_format: Union[FormulaAndFunctionResponseFormat, UnsetType] = unset,
         rum_query: Union[LogQueryDefinition, UnsetType] = unset,
         security_query: Union[LogQueryDefinition, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -196,5 +195,3 @@ class QueryValueWidgetRequest(ModelNormal):
         if security_query is not unset:
             kwargs["security_query"] = security_query
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

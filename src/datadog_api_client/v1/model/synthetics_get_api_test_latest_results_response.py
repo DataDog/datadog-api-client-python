@@ -36,7 +36,6 @@ class SyntheticsGetAPITestLatestResultsResponse(ModelNormal):
         self_,
         last_timestamp_fetched: Union[int, UnsetType] = unset,
         results: Union[List[SyntheticsAPITestResultShort], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -53,5 +52,3 @@ class SyntheticsGetAPITestLatestResultsResponse(ModelNormal):
         if results is not unset:
             kwargs["results"] = results
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

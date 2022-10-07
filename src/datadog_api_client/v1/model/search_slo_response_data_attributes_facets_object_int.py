@@ -26,7 +26,7 @@ class SearchSLOResponseDataAttributesFacetsObjectInt(ModelNormal):
         "name": "name",
     }
 
-    def __init__(self_, count: Union[int, UnsetType] = unset, name: Union[float, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, count: Union[int, UnsetType] = unset, name: Union[float, UnsetType] = unset, **kwargs):
         """
         Facet
 
@@ -41,5 +41,3 @@ class SearchSLOResponseDataAttributesFacetsObjectInt(ModelNormal):
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

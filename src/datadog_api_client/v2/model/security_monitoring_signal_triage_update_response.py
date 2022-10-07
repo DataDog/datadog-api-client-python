@@ -32,7 +32,7 @@ class SecurityMonitoringSignalTriageUpdateResponse(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: SecurityMonitoringSignalTriageUpdateData, *args, **kwargs):
+    def __init__(self_, data: SecurityMonitoringSignalTriageUpdateData, **kwargs):
         """
         The response returned after all triage operations, containing the updated signal triage data.
 
@@ -40,7 +40,5 @@ class SecurityMonitoringSignalTriageUpdateResponse(ModelNormal):
         :type data: SecurityMonitoringSignalTriageUpdateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

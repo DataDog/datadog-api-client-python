@@ -63,7 +63,6 @@ class SecurityFilterAttributes(ModelNormal):
         name: Union[str, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -105,5 +104,3 @@ class SecurityFilterAttributes(ModelNormal):
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

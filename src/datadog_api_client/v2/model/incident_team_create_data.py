@@ -46,7 +46,6 @@ class IncidentTeamCreateData(ModelNormal):
         type: IncidentTeamType,
         attributes: Union[IncidentTeamCreateAttributes, UnsetType] = unset,
         relationships: Union[IncidentTeamRelationships, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -66,7 +65,5 @@ class IncidentTeamCreateData(ModelNormal):
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.type = type

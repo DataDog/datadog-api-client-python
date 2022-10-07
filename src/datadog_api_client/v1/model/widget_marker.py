@@ -36,7 +36,6 @@ class WidgetMarker(ModelNormal):
         display_type: Union[str, UnsetType] = unset,
         label: Union[str, UnsetType] = unset,
         time: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -65,7 +64,5 @@ class WidgetMarker(ModelNormal):
         if time is not unset:
             kwargs["time"] = time
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.value = value

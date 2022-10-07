@@ -54,7 +54,6 @@ class UsageAttributionBody(ModelNormal):
         tags: Union[UsageAttributionTagNames, UnsetType] = unset,
         updated_at: Union[str, UnsetType] = unset,
         values: Union[UsageAttributionValues, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -100,5 +99,3 @@ class UsageAttributionBody(ModelNormal):
         if values is not unset:
             kwargs["values"] = values
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

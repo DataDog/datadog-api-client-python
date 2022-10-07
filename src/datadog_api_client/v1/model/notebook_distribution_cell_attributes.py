@@ -50,7 +50,6 @@ class NotebookDistributionCellAttributes(ModelNormal):
         graph_size: Union[NotebookGraphSize, UnsetType] = unset,
         split_by: Union[NotebookSplitBy, UnsetType] = unset,
         time: Union[NotebookCellTime, NotebookRelativeTime, NotebookAbsoluteTime, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -77,7 +76,5 @@ class NotebookDistributionCellAttributes(ModelNormal):
         if time is not unset:
             kwargs["time"] = time
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.definition = definition

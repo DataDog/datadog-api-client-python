@@ -40,7 +40,6 @@ class MetricEstimateAttributes(ModelNormal):
         estimate_type: Union[MetricEstimateType, UnsetType] = unset,
         estimated_at: Union[datetime, UnsetType] = unset,
         estimated_output_series: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -62,5 +61,3 @@ class MetricEstimateAttributes(ModelNormal):
         if estimated_output_series is not unset:
             kwargs["estimated_output_series"] = estimated_output_series
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

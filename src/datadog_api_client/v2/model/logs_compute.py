@@ -44,7 +44,6 @@ class LogsCompute(ModelNormal):
         interval: Union[str, UnsetType] = unset,
         metric: Union[str, UnsetType] = unset,
         type: Union[LogsComputeType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -70,7 +69,5 @@ class LogsCompute(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.aggregation = aggregation

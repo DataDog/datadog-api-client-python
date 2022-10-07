@@ -34,7 +34,7 @@ class LogQueryDefinitionGroupBySort(ModelNormal):
         "order": "order",
     }
 
-    def __init__(self_, aggregation: str, order: WidgetSort, facet: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, aggregation: str, order: WidgetSort, facet: Union[str, UnsetType] = unset, **kwargs):
         """
         Define a sorting method.
 
@@ -50,8 +50,6 @@ class LogQueryDefinitionGroupBySort(ModelNormal):
         if facet is not unset:
             kwargs["facet"] = facet
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.aggregation = aggregation
         self_.order = order

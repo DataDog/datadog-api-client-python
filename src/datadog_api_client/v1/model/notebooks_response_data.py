@@ -37,9 +37,7 @@ class NotebooksResponseData(ModelNormal):
         "id",
     }
 
-    def __init__(
-        self_, attributes: NotebooksResponseDataAttributes, id: int, type: NotebookResourceType, *args, **kwargs
-    ):
+    def __init__(self_, attributes: NotebooksResponseDataAttributes, id: int, type: NotebookResourceType, **kwargs):
         """
         The data for a notebook in get all response.
 
@@ -53,8 +51,6 @@ class NotebooksResponseData(ModelNormal):
         :type type: NotebookResourceType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.id = id

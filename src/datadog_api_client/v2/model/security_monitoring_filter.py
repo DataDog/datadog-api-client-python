@@ -36,7 +36,6 @@ class SecurityMonitoringFilter(ModelNormal):
         self_,
         action: Union[SecurityMonitoringFilterAction, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -53,5 +52,3 @@ class SecurityMonitoringFilter(ModelNormal):
         if query is not unset:
             kwargs["query"] = query
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

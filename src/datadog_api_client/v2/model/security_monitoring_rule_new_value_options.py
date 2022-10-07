@@ -64,7 +64,6 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
         learning_duration: Union[SecurityMonitoringRuleNewValueOptionsLearningDuration, UnsetType] = unset,
         learning_method: Union[SecurityMonitoringRuleNewValueOptionsLearningMethod, UnsetType] = unset,
         learning_threshold: Union[SecurityMonitoringRuleNewValueOptionsLearningThreshold, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -92,5 +91,3 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
         if learning_threshold is not unset:
             kwargs["learning_threshold"] = learning_threshold
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

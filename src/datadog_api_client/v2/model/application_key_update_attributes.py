@@ -28,11 +28,7 @@ class ApplicationKeyUpdateAttributes(ModelNormal):
     }
 
     def __init__(
-        self_,
-        name: Union[str, UnsetType] = unset,
-        scopes: Union[List[str], none_type, UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, name: Union[str, UnsetType] = unset, scopes: Union[List[str], none_type, UnsetType] = unset, **kwargs
     ):
         """
         Attributes used to update an application Key.
@@ -48,5 +44,3 @@ class ApplicationKeyUpdateAttributes(ModelNormal):
         if scopes is not unset:
             kwargs["scopes"] = scopes
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

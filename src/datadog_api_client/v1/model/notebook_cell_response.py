@@ -53,7 +53,6 @@ class NotebookCellResponse(ModelNormal):
         ],
         id: str,
         type: NotebookCellResourceType,
-        *args,
         **kwargs,
     ):
         """
@@ -70,8 +69,6 @@ class NotebookCellResponse(ModelNormal):
         :type type: NotebookCellResourceType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.id = id

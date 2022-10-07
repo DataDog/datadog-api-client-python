@@ -41,7 +41,6 @@ class SLOListResponse(ModelNormal):
         data: Union[List[ServiceLevelObjective], UnsetType] = unset,
         errors: Union[List[str], UnsetType] = unset,
         metadata: Union[SLOListResponseMetadata, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -64,5 +63,3 @@ class SLOListResponse(ModelNormal):
         if metadata is not unset:
             kwargs["metadata"] = metadata
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -30,7 +30,7 @@ class SyntheticsListTestsResponse(ModelNormal):
         "tests": "tests",
     }
 
-    def __init__(self_, tests: Union[List[SyntheticsTestDetails], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, tests: Union[List[SyntheticsTestDetails], UnsetType] = unset, **kwargs):
         """
         Object containing an array of Synthetic tests configuration.
 
@@ -40,5 +40,3 @@ class SyntheticsListTestsResponse(ModelNormal):
         if tests is not unset:
             kwargs["tests"] = tests
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

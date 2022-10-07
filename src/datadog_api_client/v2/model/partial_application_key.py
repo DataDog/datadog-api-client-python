@@ -46,7 +46,6 @@ class PartialApplicationKey(ModelNormal):
         id: Union[str, UnsetType] = unset,
         relationships: Union[ApplicationKeyRelationships, UnsetType] = unset,
         type: Union[ApplicationKeysType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -73,5 +72,3 @@ class PartialApplicationKey(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

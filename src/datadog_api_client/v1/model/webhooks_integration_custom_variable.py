@@ -25,7 +25,7 @@ class WebhooksIntegrationCustomVariable(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self_, is_secret: bool, name: str, value: str, *args, **kwargs):
+    def __init__(self_, is_secret: bool, name: str, value: str, **kwargs):
         """
         Custom variable for Webhook integration.
 
@@ -40,8 +40,6 @@ class WebhooksIntegrationCustomVariable(ModelNormal):
         :type value: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.is_secret = is_secret
         self_.name = name

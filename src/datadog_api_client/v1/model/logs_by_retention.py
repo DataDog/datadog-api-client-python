@@ -43,7 +43,6 @@ class LogsByRetention(ModelNormal):
         orgs: Union[LogsByRetentionOrgs, UnsetType] = unset,
         usage: Union[List[LogsRetentionAggSumUsage], UnsetType] = unset,
         usage_by_month: Union[LogsByRetentionMonthlyUsage, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -65,5 +64,3 @@ class LogsByRetention(ModelNormal):
         if usage_by_month is not unset:
             kwargs["usage_by_month"] = usage_by_month
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

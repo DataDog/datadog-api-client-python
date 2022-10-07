@@ -24,7 +24,7 @@ class SyntheticsCIBatchMetadataProvider(ModelNormal):
         "name": "name",
     }
 
-    def __init__(self_, name: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, name: Union[str, UnsetType] = unset, **kwargs):
         """
         Description of the CI provider.
 
@@ -34,5 +34,3 @@ class SyntheticsCIBatchMetadataProvider(ModelNormal):
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

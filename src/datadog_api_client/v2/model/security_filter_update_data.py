@@ -32,7 +32,7 @@ class SecurityFilterUpdateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: SecurityFilterUpdateAttributes, type: SecurityFilterType, *args, **kwargs):
+    def __init__(self_, attributes: SecurityFilterUpdateAttributes, type: SecurityFilterType, **kwargs):
         """
         The new security filter properties.
 
@@ -43,8 +43,6 @@ class SecurityFilterUpdateData(ModelNormal):
         :type type: SecurityFilterType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.type = type

@@ -24,7 +24,7 @@ class CanceledDowntimesIds(ModelNormal):
         "cancelled_ids": "cancelled_ids",
     }
 
-    def __init__(self_, cancelled_ids: Union[List[int], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, cancelled_ids: Union[List[int], UnsetType] = unset, **kwargs):
         """
         Object containing array of IDs of canceled downtimes.
 
@@ -34,5 +34,3 @@ class CanceledDowntimesIds(ModelNormal):
         if cancelled_ids is not unset:
             kwargs["cancelled_ids"] = cancelled_ids
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -28,7 +28,7 @@ class UserUpdateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: UserUpdateData, *args, **kwargs):
+    def __init__(self_, data: UserUpdateData, **kwargs):
         """
         Update a user.
 
@@ -36,7 +36,5 @@ class UserUpdateRequest(ModelNormal):
         :type data: UserUpdateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

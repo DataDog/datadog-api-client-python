@@ -34,7 +34,7 @@ class FunnelQuery(ModelNormal):
         "steps": "steps",
     }
 
-    def __init__(self_, data_source: FunnelSource, query_string: str, steps: List[FunnelStep], *args, **kwargs):
+    def __init__(self_, data_source: FunnelSource, query_string: str, steps: List[FunnelStep], **kwargs):
         """
         Updated funnel widget.
 
@@ -48,8 +48,6 @@ class FunnelQuery(ModelNormal):
         :type steps: [FunnelStep]
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data_source = data_source
         self_.query_string = query_string

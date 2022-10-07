@@ -26,7 +26,7 @@ class SyntheticsPrivateLocationCreationResponseResultEncryption(ModelNormal):
         "key": "key",
     }
 
-    def __init__(self_, id: Union[str, UnsetType] = unset, key: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, id: Union[str, UnsetType] = unset, key: Union[str, UnsetType] = unset, **kwargs):
         """
         Public key for the result encryption.
 
@@ -41,5 +41,3 @@ class SyntheticsPrivateLocationCreationResponseResultEncryption(ModelNormal):
         if key is not unset:
             kwargs["key"] = key
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

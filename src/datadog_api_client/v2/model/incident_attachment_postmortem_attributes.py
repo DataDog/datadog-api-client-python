@@ -44,7 +44,6 @@ class IncidentAttachmentPostmortemAttributes(ModelNormal):
         self_,
         attachment: IncidentAttachmentsPostmortemAttributesAttachmentObject,
         attachment_type: IncidentAttachmentPostmortemAttachmentType,
-        *args,
         **kwargs,
     ):
         """
@@ -57,8 +56,6 @@ class IncidentAttachmentPostmortemAttributes(ModelNormal):
         :type attachment_type: IncidentAttachmentPostmortemAttachmentType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attachment = attachment
         self_.attachment_type = attachment_type

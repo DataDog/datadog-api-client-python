@@ -24,7 +24,7 @@ class IntakePayloadAccepted(ModelNormal):
         "errors": "errors",
     }
 
-    def __init__(self_, errors: Union[List[str], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, errors: Union[List[str], UnsetType] = unset, **kwargs):
         """
         The payload accepted for intake.
 
@@ -34,5 +34,3 @@ class IntakePayloadAccepted(ModelNormal):
         if errors is not unset:
             kwargs["errors"] = errors
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

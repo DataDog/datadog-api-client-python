@@ -28,7 +28,7 @@ class SyntheticsTriggerBody(ModelNormal):
         "tests": "tests",
     }
 
-    def __init__(self_, tests: List[SyntheticsTriggerTest], *args, **kwargs):
+    def __init__(self_, tests: List[SyntheticsTriggerTest], **kwargs):
         """
         Object describing the synthetics tests to trigger.
 
@@ -36,7 +36,5 @@ class SyntheticsTriggerBody(ModelNormal):
         :type tests: [SyntheticsTriggerTest]
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.tests = tests

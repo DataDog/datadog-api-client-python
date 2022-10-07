@@ -39,7 +39,6 @@ class NotebookMetadata(ModelNormal):
         is_template: Union[bool, UnsetType] = unset,
         take_snapshots: Union[bool, UnsetType] = unset,
         type: Union[NotebookMetadataType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -61,5 +60,3 @@ class NotebookMetadata(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

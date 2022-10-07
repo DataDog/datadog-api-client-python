@@ -28,7 +28,7 @@ class RoleCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: RoleCreateData, *args, **kwargs):
+    def __init__(self_, data: RoleCreateData, **kwargs):
         """
         Create a role.
 
@@ -36,7 +36,5 @@ class RoleCreateRequest(ModelNormal):
         :type data: RoleCreateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

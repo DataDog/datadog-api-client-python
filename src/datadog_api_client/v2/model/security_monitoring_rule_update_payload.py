@@ -81,7 +81,6 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         ] = unset,
         tags: Union[List[str], UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -138,5 +137,3 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

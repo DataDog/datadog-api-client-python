@@ -38,7 +38,6 @@ class SLOBulkDeleteResponse(ModelNormal):
         self_,
         data: Union[SLOBulkDeleteResponseData, UnsetType] = unset,
         errors: Union[List[SLOBulkDeleteError], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -60,5 +59,3 @@ class SLOBulkDeleteResponse(ModelNormal):
         if errors is not unset:
             kwargs["errors"] = errors
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -30,7 +30,7 @@ class ResponseMetaAttributes(ModelNormal):
         "page": "page",
     }
 
-    def __init__(self_, page: Union[Pagination, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, page: Union[Pagination, UnsetType] = unset, **kwargs):
         """
         Object describing meta attributes of response.
 
@@ -40,5 +40,3 @@ class ResponseMetaAttributes(ModelNormal):
         if page is not unset:
             kwargs["page"] = page
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

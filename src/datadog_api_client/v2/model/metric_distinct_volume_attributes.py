@@ -24,7 +24,7 @@ class MetricDistinctVolumeAttributes(ModelNormal):
         "distinct_volume": "distinct_volume",
     }
 
-    def __init__(self_, distinct_volume: Union[int, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, distinct_volume: Union[int, UnsetType] = unset, **kwargs):
         """
         Object containing the definition of a metric's distinct volume.
 
@@ -34,5 +34,3 @@ class MetricDistinctVolumeAttributes(ModelNormal):
         if distinct_volume is not unset:
             kwargs["distinct_volume"] = distinct_volume
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -30,7 +30,7 @@ class UsageOnlineArchiveResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageOnlineArchiveHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageOnlineArchiveHour], UnsetType] = unset, **kwargs):
         """
         Online Archive usage response.
 
@@ -40,5 +40,3 @@ class UsageOnlineArchiveResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

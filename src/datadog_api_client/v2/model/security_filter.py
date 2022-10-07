@@ -41,7 +41,6 @@ class SecurityFilter(ModelNormal):
         attributes: Union[SecurityFilterAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         type: Union[SecurityFilterType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,5 +62,3 @@ class SecurityFilter(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

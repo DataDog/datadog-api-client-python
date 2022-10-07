@@ -34,7 +34,6 @@ class UsageTopAvgMetricsPagination(ModelNormal):
         limit: Union[int, UnsetType] = unset,
         next_record_id: Union[str, none_type, UnsetType] = unset,
         total_number_of_records: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -56,5 +55,3 @@ class UsageTopAvgMetricsPagination(ModelNormal):
         if total_number_of_records is not unset:
             kwargs["total_number_of_records"] = total_number_of_records
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

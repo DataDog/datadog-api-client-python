@@ -76,7 +76,6 @@ class NotebooksResponseDataAttributes(ModelNormal):
         modified: Union[datetime, UnsetType] = unset,
         status: Union[NotebookStatus, UnsetType] = unset,
         time: Union[NotebookGlobalTime, NotebookRelativeTime, NotebookAbsoluteTime, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -121,7 +120,5 @@ class NotebooksResponseDataAttributes(ModelNormal):
         if time is not unset:
             kwargs["time"] = time
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name

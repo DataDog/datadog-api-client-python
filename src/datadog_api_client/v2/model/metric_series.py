@@ -63,7 +63,6 @@ class MetricSeries(ModelNormal):
         tags: Union[List[str], UnsetType] = unset,
         type: Union[MetricIntakeType, UnsetType] = unset,
         unit: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -112,8 +111,6 @@ class MetricSeries(ModelNormal):
         if unit is not unset:
             kwargs["unit"] = unit
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.metric = metric
         self_.points = points

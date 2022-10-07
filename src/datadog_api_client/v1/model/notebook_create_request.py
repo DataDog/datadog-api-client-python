@@ -28,7 +28,7 @@ class NotebookCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: NotebookCreateData, *args, **kwargs):
+    def __init__(self_, data: NotebookCreateData, **kwargs):
         """
         The description of a notebook create request.
 
@@ -36,7 +36,5 @@ class NotebookCreateRequest(ModelNormal):
         :type data: NotebookCreateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

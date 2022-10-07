@@ -56,7 +56,6 @@ class LogsListRequest(ModelNormal):
         query: Union[str, UnsetType] = unset,
         sort: Union[LogsSort, UnsetType] = unset,
         start_at: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -96,7 +95,5 @@ class LogsListRequest(ModelNormal):
         if start_at is not unset:
             kwargs["start_at"] = start_at
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.time = time

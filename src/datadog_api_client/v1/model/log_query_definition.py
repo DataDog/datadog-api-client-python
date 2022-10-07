@@ -49,7 +49,6 @@ class LogQueryDefinition(ModelNormal):
         index: Union[str, UnsetType] = unset,
         multi_compute: Union[List[LogsQueryCompute], UnsetType] = unset,
         search: Union[LogQueryDefinitionSearch, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -81,5 +80,3 @@ class LogQueryDefinition(ModelNormal):
         if search is not unset:
             kwargs["search"] = search
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

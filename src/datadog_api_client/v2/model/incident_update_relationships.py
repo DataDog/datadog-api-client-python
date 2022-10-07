@@ -47,7 +47,6 @@ class IncidentUpdateRelationships(ModelNormal):
         commander_user: Union[NullableRelationshipToUser, UnsetType] = unset,
         integrations: Union[RelationshipToIncidentIntegrationMetadatas, UnsetType] = unset,
         postmortem: Union[RelationshipToIncidentPostmortem, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -69,5 +68,3 @@ class IncidentUpdateRelationships(ModelNormal):
         if postmortem is not unset:
             kwargs["postmortem"] = postmortem
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

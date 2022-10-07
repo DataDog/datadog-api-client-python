@@ -32,9 +32,7 @@ class Log(ModelNormal):
         "id": "id",
     }
 
-    def __init__(
-        self_, content: Union[LogContent, UnsetType] = unset, id: Union[str, UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, content: Union[LogContent, UnsetType] = unset, id: Union[str, UnsetType] = unset, **kwargs):
         """
         Object describing a log after being processed and stored by Datadog.
 
@@ -49,5 +47,3 @@ class Log(ModelNormal):
         if id is not unset:
             kwargs["id"] = id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

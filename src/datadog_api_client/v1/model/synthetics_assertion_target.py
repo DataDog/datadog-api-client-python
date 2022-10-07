@@ -57,7 +57,6 @@ class SyntheticsAssertionTarget(ModelNormal):
         target: Any,
         type: SyntheticsAssertionType,
         _property: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -78,8 +77,6 @@ class SyntheticsAssertionTarget(ModelNormal):
         if _property is not unset:
             kwargs["_property"] = _property
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.operator = operator
         self_.target = target

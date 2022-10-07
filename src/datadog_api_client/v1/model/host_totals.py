@@ -26,9 +26,7 @@ class HostTotals(ModelNormal):
         "total_up": "total_up",
     }
 
-    def __init__(
-        self_, total_active: Union[int, UnsetType] = unset, total_up: Union[int, UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, total_active: Union[int, UnsetType] = unset, total_up: Union[int, UnsetType] = unset, **kwargs):
         """
         Total number of host currently monitored by Datadog.
 
@@ -43,5 +41,3 @@ class HostTotals(ModelNormal):
         if total_up is not unset:
             kwargs["total_up"] = total_up
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

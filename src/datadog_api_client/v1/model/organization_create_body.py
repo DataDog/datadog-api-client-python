@@ -47,7 +47,6 @@ class OrganizationCreateBody(ModelNormal):
         name: str,
         billing: Union[OrganizationBilling, UnsetType] = unset,
         subscription: Union[OrganizationSubscription, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -67,7 +66,5 @@ class OrganizationCreateBody(ModelNormal):
         if subscription is not unset:
             kwargs["subscription"] = subscription
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name

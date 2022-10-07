@@ -30,7 +30,7 @@ class SearchServiceLevelObjective(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[SearchServiceLevelObjectiveData, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, data: Union[SearchServiceLevelObjectiveData, UnsetType] = unset, **kwargs):
         """
         A service level objective data container.
 
@@ -40,5 +40,3 @@ class SearchServiceLevelObjective(ModelNormal):
         if data is not unset:
             kwargs["data"] = data
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

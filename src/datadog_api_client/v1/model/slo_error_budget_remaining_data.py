@@ -15,10 +15,8 @@ class SLOErrorBudgetRemainingData(ModelNormal):
     def additional_properties_type(_):
         return (float,)
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(self_, **kwargs):
         """
         A mapping of threshold ``timeframe`` to the remaining error budget.
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

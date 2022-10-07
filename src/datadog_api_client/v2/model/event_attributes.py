@@ -94,7 +94,6 @@ class EventAttributes(ModelNormal):
         tags: Union[List[str], UnsetType] = unset,
         timestamp: Union[int, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -202,5 +201,3 @@ class EventAttributes(ModelNormal):
         if title is not unset:
             kwargs["title"] = title
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

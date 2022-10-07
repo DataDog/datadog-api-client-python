@@ -28,7 +28,7 @@ class SecurityFilterCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: SecurityFilterCreateData, *args, **kwargs):
+    def __init__(self_, data: SecurityFilterCreateData, **kwargs):
         """
         Request object that includes the security filter that you would like to create.
 
@@ -36,7 +36,5 @@ class SecurityFilterCreateRequest(ModelNormal):
         :type data: SecurityFilterCreateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

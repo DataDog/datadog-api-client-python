@@ -40,7 +40,6 @@ class OpsgenieServiceResponseAttributes(ModelNormal):
         custom_url: Union[str, none_type, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         region: Union[OpsgenieServiceRegionType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -62,5 +61,3 @@ class OpsgenieServiceResponseAttributes(ModelNormal):
         if region is not unset:
             kwargs["region"] = region
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

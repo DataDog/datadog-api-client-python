@@ -24,7 +24,7 @@ class OrgDowngradedResponse(ModelNormal):
         "message": "message",
     }
 
-    def __init__(self_, message: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, message: Union[str, UnsetType] = unset, **kwargs):
         """
         Status of downgrade
 
@@ -34,5 +34,3 @@ class OrgDowngradedResponse(ModelNormal):
         if message is not unset:
             kwargs["message"] = message
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

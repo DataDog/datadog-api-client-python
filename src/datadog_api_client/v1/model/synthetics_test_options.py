@@ -113,7 +113,6 @@ class SyntheticsTestOptions(ModelNormal):
         retry: Union[SyntheticsTestOptionsRetry, UnsetType] = unset,
         rum_settings: Union[SyntheticsBrowserTestRumSettings, UnsetType] = unset,
         tick_every: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -233,5 +232,3 @@ class SyntheticsTestOptions(ModelNormal):
         if tick_every is not unset:
             kwargs["tick_every"] = tick_every
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

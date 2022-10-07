@@ -49,7 +49,6 @@ class WidgetFormula(ModelNormal):
         cell_display_mode: Union[TableWidgetCellDisplayMode, UnsetType] = unset,
         conditional_formats: Union[List[WidgetConditionalFormat], UnsetType] = unset,
         limit: Union[WidgetFormulaLimit, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -79,7 +78,5 @@ class WidgetFormula(ModelNormal):
         if limit is not unset:
             kwargs["limit"] = limit
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.formula = formula

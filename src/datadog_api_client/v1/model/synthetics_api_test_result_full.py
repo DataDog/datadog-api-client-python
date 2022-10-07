@@ -55,7 +55,6 @@ class SyntheticsAPITestResultFull(ModelNormal):
         result: Union[SyntheticsAPITestResultData, UnsetType] = unset,
         result_id: Union[str, UnsetType] = unset,
         status: Union[SyntheticsTestMonitorStatus, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -101,5 +100,3 @@ class SyntheticsAPITestResultFull(ModelNormal):
         if status is not unset:
             kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

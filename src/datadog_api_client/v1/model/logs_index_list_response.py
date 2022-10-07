@@ -30,7 +30,7 @@ class LogsIndexListResponse(ModelNormal):
         "indexes": "indexes",
     }
 
-    def __init__(self_, indexes: Union[List[LogsIndex], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, indexes: Union[List[LogsIndex], UnsetType] = unset, **kwargs):
         """
         Object with all Index configurations for a given organization.
 
@@ -40,5 +40,3 @@ class LogsIndexListResponse(ModelNormal):
         if indexes is not unset:
             kwargs["indexes"] = indexes
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

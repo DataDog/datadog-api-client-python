@@ -40,7 +40,6 @@ class LogsMetricResponseCompute(ModelNormal):
         self_,
         aggregation_type: Union[LogsMetricResponseComputeAggregationType, UnsetType] = unset,
         path: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -57,5 +56,3 @@ class LogsMetricResponseCompute(ModelNormal):
         if path is not unset:
             kwargs["path"] = path
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

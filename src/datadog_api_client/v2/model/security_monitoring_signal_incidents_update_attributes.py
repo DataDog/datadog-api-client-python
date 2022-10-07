@@ -35,11 +35,7 @@ class SecurityMonitoringSignalIncidentsUpdateAttributes(ModelNormal):
     }
 
     def __init__(
-        self_,
-        incident_ids: SecurityMonitoringSignalIncidentIds,
-        version: Union[int, UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, incident_ids: SecurityMonitoringSignalIncidentIds, version: Union[int, UnsetType] = unset, **kwargs
     ):
         """
         Attributes describing the new list of related signals for a security signal.
@@ -53,7 +49,5 @@ class SecurityMonitoringSignalIncidentsUpdateAttributes(ModelNormal):
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.incident_ids = incident_ids

@@ -32,7 +32,7 @@ class SecurityFilterCreateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: SecurityFilterCreateAttributes, type: SecurityFilterType, *args, **kwargs):
+    def __init__(self_, attributes: SecurityFilterCreateAttributes, type: SecurityFilterType, **kwargs):
         """
         Object for a single security filter.
 
@@ -43,8 +43,6 @@ class SecurityFilterCreateData(ModelNormal):
         :type type: SecurityFilterType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.type = type

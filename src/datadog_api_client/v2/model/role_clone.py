@@ -32,7 +32,7 @@ class RoleClone(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: RoleCloneAttributes, type: RolesType, *args, **kwargs):
+    def __init__(self_, attributes: RoleCloneAttributes, type: RolesType, **kwargs):
         """
         Data for the clone role request.
 
@@ -43,8 +43,6 @@ class RoleClone(ModelNormal):
         :type type: RolesType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.type = type

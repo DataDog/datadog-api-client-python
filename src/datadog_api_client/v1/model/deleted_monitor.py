@@ -24,7 +24,7 @@ class DeletedMonitor(ModelNormal):
         "deleted_monitor_id": "deleted_monitor_id",
     }
 
-    def __init__(self_, deleted_monitor_id: Union[int, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, deleted_monitor_id: Union[int, UnsetType] = unset, **kwargs):
         """
         Response from the delete monitor call.
 
@@ -34,5 +34,3 @@ class DeletedMonitor(ModelNormal):
         if deleted_monitor_id is not unset:
             kwargs["deleted_monitor_id"] = deleted_monitor_id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

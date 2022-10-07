@@ -106,7 +106,6 @@ class IncidentResponseAttributes(ModelNormal):
         time_to_internal_response: Union[int, UnsetType] = unset,
         time_to_repair: Union[int, UnsetType] = unset,
         time_to_resolve: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -198,7 +197,5 @@ class IncidentResponseAttributes(ModelNormal):
         if time_to_resolve is not unset:
             kwargs["time_to_resolve"] = time_to_resolve
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.title = title

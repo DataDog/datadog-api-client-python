@@ -26,7 +26,7 @@ class SLORawErrorBudgetRemaining(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self_, unit: Union[str, UnsetType] = unset, value: Union[float, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, unit: Union[str, UnsetType] = unset, value: Union[float, UnsetType] = unset, **kwargs):
         """
         Error budget remaining for an SLO.
 
@@ -41,5 +41,3 @@ class SLORawErrorBudgetRemaining(ModelNormal):
         if value is not unset:
             kwargs["value"] = value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

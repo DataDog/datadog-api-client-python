@@ -33,7 +33,6 @@ class ChargebackBreakdown(ModelNormal):
         charge_type: Union[str, UnsetType] = unset,
         cost: Union[float, UnsetType] = unset,
         product_name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class ChargebackBreakdown(ModelNormal):
         if product_name is not unset:
             kwargs["product_name"] = product_name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

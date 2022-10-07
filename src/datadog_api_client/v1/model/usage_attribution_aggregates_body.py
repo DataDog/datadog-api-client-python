@@ -33,7 +33,6 @@ class UsageAttributionAggregatesBody(ModelNormal):
         agg_type: Union[str, UnsetType] = unset,
         field: Union[str, UnsetType] = unset,
         value: Union[float, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class UsageAttributionAggregatesBody(ModelNormal):
         if value is not unset:
             kwargs["value"] = value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

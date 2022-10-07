@@ -33,7 +33,7 @@ class LogsMetricCompute(ModelNormal):
     }
 
     def __init__(
-        self_, aggregation_type: LogsMetricComputeAggregationType, path: Union[str, UnsetType] = unset, *args, **kwargs
+        self_, aggregation_type: LogsMetricComputeAggregationType, path: Union[str, UnsetType] = unset, **kwargs
     ):
         """
         The compute rule to compute the log-based metric.
@@ -47,7 +47,5 @@ class LogsMetricCompute(ModelNormal):
         if path is not unset:
             kwargs["path"] = path
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.aggregation_type = aggregation_type

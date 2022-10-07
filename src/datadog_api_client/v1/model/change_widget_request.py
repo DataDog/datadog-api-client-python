@@ -127,7 +127,6 @@ class ChangeWidgetRequest(ModelNormal):
         rum_query: Union[LogQueryDefinition, UnsetType] = unset,
         security_query: Union[LogQueryDefinition, UnsetType] = unset,
         show_present: Union[bool, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -224,5 +223,3 @@ class ChangeWidgetRequest(ModelNormal):
         if show_present is not unset:
             kwargs["show_present"] = show_present
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

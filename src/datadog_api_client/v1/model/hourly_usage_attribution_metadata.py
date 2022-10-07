@@ -30,7 +30,7 @@ class HourlyUsageAttributionMetadata(ModelNormal):
         "pagination": "pagination",
     }
 
-    def __init__(self_, pagination: Union[HourlyUsageAttributionPagination, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, pagination: Union[HourlyUsageAttributionPagination, UnsetType] = unset, **kwargs):
         """
         The object containing document metadata.
 
@@ -40,5 +40,3 @@ class HourlyUsageAttributionMetadata(ModelNormal):
         if pagination is not unset:
             kwargs["pagination"] = pagination
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

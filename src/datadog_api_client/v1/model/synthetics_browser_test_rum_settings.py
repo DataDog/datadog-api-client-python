@@ -33,7 +33,6 @@ class SyntheticsBrowserTestRumSettings(ModelNormal):
         is_enabled: bool,
         application_id: Union[str, UnsetType] = unset,
         client_token_id: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,7 +62,5 @@ class SyntheticsBrowserTestRumSettings(ModelNormal):
         if client_token_id is not unset:
             kwargs["client_token_id"] = client_token_id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.is_enabled = is_enabled

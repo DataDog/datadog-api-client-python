@@ -43,7 +43,6 @@ class RoleCreateData(ModelNormal):
         attributes: RoleCreateAttributes,
         relationships: Union[RoleRelationships, UnsetType] = unset,
         type: Union[RolesType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,7 +62,5 @@ class RoleCreateData(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes

@@ -32,7 +32,7 @@ class LogsMetricUpdateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: LogsMetricUpdateAttributes, type: LogsMetricType, *args, **kwargs):
+    def __init__(self_, attributes: LogsMetricUpdateAttributes, type: LogsMetricType, **kwargs):
         """
         The new log-based metric properties.
 
@@ -43,8 +43,6 @@ class LogsMetricUpdateData(ModelNormal):
         :type type: LogsMetricType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.type = type

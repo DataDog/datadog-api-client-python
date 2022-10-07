@@ -48,7 +48,6 @@ class IncidentTeamsResponse(ModelNormal):
         data: List[IncidentTeamResponseData],
         included: Union[List[Union[IncidentTeamIncludedItems, User]], UnsetType] = unset,
         meta: Union[IncidentResponseMeta, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -68,7 +67,5 @@ class IncidentTeamsResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

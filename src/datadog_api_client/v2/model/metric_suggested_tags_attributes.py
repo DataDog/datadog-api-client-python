@@ -36,7 +36,6 @@ class MetricSuggestedTagsAttributes(ModelNormal):
         self_,
         active_aggregations: Union[MetricSuggestedAggregations, UnsetType] = unset,
         active_tags: Union[List[str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -53,5 +52,3 @@ class MetricSuggestedTagsAttributes(ModelNormal):
         if active_tags is not unset:
             kwargs["active_tags"] = active_tags
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

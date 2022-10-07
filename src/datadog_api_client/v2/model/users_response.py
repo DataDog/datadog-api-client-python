@@ -46,7 +46,6 @@ class UsersResponse(ModelNormal):
         data: Union[List[User], UnsetType] = unset,
         included: Union[List[Union[UserResponseIncludedItem, Organization, Permission, Role]], UnsetType] = unset,
         meta: Union[ResponseMetaAttributes, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -68,5 +67,3 @@ class UsersResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

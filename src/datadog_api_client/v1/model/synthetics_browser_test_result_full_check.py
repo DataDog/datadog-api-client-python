@@ -28,7 +28,7 @@ class SyntheticsBrowserTestResultFullCheck(ModelNormal):
         "config": "config",
     }
 
-    def __init__(self_, config: SyntheticsTestConfig, *args, **kwargs):
+    def __init__(self_, config: SyntheticsTestConfig, **kwargs):
         """
         Object describing the browser test configuration.
 
@@ -36,7 +36,5 @@ class SyntheticsBrowserTestResultFullCheck(ModelNormal):
         :type config: SyntheticsTestConfig
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.config = config

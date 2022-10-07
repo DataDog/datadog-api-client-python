@@ -70,7 +70,6 @@ class IncidentCreateAttributes(ModelNormal):
             List[Union[IncidentTimelineCellCreateAttributes, IncidentTimelineCellMarkdownCreateAttributes]], UnsetType
         ] = unset,
         notification_handles: Union[List[IncidentNotificationHandle], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -98,8 +97,6 @@ class IncidentCreateAttributes(ModelNormal):
         if notification_handles is not unset:
             kwargs["notification_handles"] = notification_handles
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.customer_impacted = customer_impacted
         self_.title = title

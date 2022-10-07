@@ -23,7 +23,7 @@ class SecurityFilterExclusionFilter(ModelNormal):
         "query": "query",
     }
 
-    def __init__(self_, name: str, query: str, *args, **kwargs):
+    def __init__(self_, name: str, query: str, **kwargs):
         """
         Exclusion filter for the security filter.
 
@@ -34,8 +34,6 @@ class SecurityFilterExclusionFilter(ModelNormal):
         :type query: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name
         self_.query = query

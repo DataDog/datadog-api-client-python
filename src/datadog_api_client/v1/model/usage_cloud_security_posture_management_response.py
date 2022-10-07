@@ -34,9 +34,7 @@ class UsageCloudSecurityPostureManagementResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(
-        self_, usage: Union[List[UsageCloudSecurityPostureManagementHour], UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, usage: Union[List[UsageCloudSecurityPostureManagementHour], UnsetType] = unset, **kwargs):
         """
         The response containing the Cloud Security Posture Management usage for each hour for a given organization.
 
@@ -46,5 +44,3 @@ class UsageCloudSecurityPostureManagementResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

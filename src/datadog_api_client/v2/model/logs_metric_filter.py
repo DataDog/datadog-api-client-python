@@ -24,7 +24,7 @@ class LogsMetricFilter(ModelNormal):
         "query": "query",
     }
 
-    def __init__(self_, query: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, query: Union[str, UnsetType] = unset, **kwargs):
         """
         The log-based metric filter. Logs matching this filter will be aggregated in this metric.
 
@@ -34,5 +34,3 @@ class LogsMetricFilter(ModelNormal):
         if query is not unset:
             kwargs["query"] = query
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -28,11 +28,7 @@ class HourlyUsageMeasurement(ModelNormal):
     }
 
     def __init__(
-        self_,
-        usage_type: Union[str, UnsetType] = unset,
-        value: Union[int, none_type, UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, usage_type: Union[str, UnsetType] = unset, value: Union[int, none_type, UnsetType] = unset, **kwargs
     ):
         """
         Usage amount for a given usage type.
@@ -48,5 +44,3 @@ class HourlyUsageMeasurement(ModelNormal):
         if value is not unset:
             kwargs["value"] = value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -30,7 +30,7 @@ class UsageCustomReportsMeta(ModelNormal):
         "page": "page",
     }
 
-    def __init__(self_, page: Union[UsageCustomReportsPage, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, page: Union[UsageCustomReportsPage, UnsetType] = unset, **kwargs):
         """
         The object containing document metadata.
 
@@ -40,5 +40,3 @@ class UsageCustomReportsMeta(ModelNormal):
         if page is not unset:
             kwargs["page"] = page
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

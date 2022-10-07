@@ -30,7 +30,7 @@ class OrganizationListResponse(ModelNormal):
         "orgs": "orgs",
     }
 
-    def __init__(self_, orgs: Union[List[Organization], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, orgs: Union[List[Organization], UnsetType] = unset, **kwargs):
         """
         Response with the list of organizations.
 
@@ -40,5 +40,3 @@ class OrganizationListResponse(ModelNormal):
         if orgs is not unset:
             kwargs["orgs"] = orgs
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

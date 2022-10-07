@@ -65,7 +65,6 @@ class ImageWidgetDefinition(ModelNormal):
         sizing: Union[WidgetImageSizing, UnsetType] = unset,
         url_dark_theme: Union[str, UnsetType] = unset,
         vertical_align: Union[WidgetVerticalAlign, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -115,8 +114,6 @@ class ImageWidgetDefinition(ModelNormal):
         if vertical_align is not unset:
             kwargs["vertical_align"] = vertical_align
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.type = type
         self_.url = url

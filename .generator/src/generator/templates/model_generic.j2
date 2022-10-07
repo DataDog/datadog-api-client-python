@@ -114,7 +114,7 @@ class {{ name }}(ModelNormal):
 {%- endfor %}
 {%- for attr, definition in model.get("properties", {}).items() %}
         {%- if attr not in model.get("required", []) %} {{ attr|attribute_name }}: {{ get_typing_for_attribute(model, attr, current_name=name, optional=True) }}=unset,{% endif %}
-{%- endfor %} *args, **kwargs):
+{%- endfor %} **kwargs):
         """
         {{ model.description|docstring|indent(8) }}
 {%- for attr, definition in model.get("properties", {}).items() %}
@@ -136,8 +136,6 @@ class {{ name }}(ModelNormal):
         {{ attr|attribute_name }} = kwargs.get("{{ attr|attribute_name }}", {{ definition["default"]|format_value }})
         {%- endif %}
 {%- endfor %}
-
-        self_._check_pos_args(args)
 
 {% for attr in model.properties %}
         {%- if attr in model.get("required", []) %}

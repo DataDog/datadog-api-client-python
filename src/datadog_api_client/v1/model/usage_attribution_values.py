@@ -168,7 +168,6 @@ class UsageAttributionValues(ModelNormal):
         profiled_hosts_usage: Union[float, UnsetType] = unset,
         snmp_percentage: Union[float, UnsetType] = unset,
         snmp_usage: Union[float, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -415,5 +414,3 @@ class UsageAttributionValues(ModelNormal):
         if snmp_usage is not unset:
             kwargs["snmp_usage"] = snmp_usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

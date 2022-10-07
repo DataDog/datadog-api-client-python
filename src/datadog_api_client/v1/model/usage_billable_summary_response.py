@@ -30,7 +30,7 @@ class UsageBillableSummaryResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageBillableSummaryHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageBillableSummaryHour], UnsetType] = unset, **kwargs):
         """
         Response with monthly summary of data billed by Datadog.
 
@@ -40,5 +40,3 @@ class UsageBillableSummaryResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

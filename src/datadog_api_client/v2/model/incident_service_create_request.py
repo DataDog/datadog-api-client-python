@@ -28,7 +28,7 @@ class IncidentServiceCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: IncidentServiceCreateData, *args, **kwargs):
+    def __init__(self_, data: IncidentServiceCreateData, **kwargs):
         """
         Create request with an incident service payload.
 
@@ -36,7 +36,5 @@ class IncidentServiceCreateRequest(ModelNormal):
         :type data: IncidentServiceCreateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

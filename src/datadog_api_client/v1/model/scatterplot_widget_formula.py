@@ -34,9 +34,7 @@ class ScatterplotWidgetFormula(ModelNormal):
         "formula": "formula",
     }
 
-    def __init__(
-        self_, dimension: ScatterplotDimension, formula: str, alias: Union[str, UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, dimension: ScatterplotDimension, formula: str, alias: Union[str, UnsetType] = unset, **kwargs):
         """
         Formula to be used in a Scatterplot widget query.
 
@@ -52,8 +50,6 @@ class ScatterplotWidgetFormula(ModelNormal):
         if alias is not unset:
             kwargs["alias"] = alias
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.dimension = dimension
         self_.formula = formula

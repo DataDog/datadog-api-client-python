@@ -47,7 +47,6 @@ class FreeTextWidgetDefinition(ModelNormal):
         color: Union[str, UnsetType] = unset,
         font_size: Union[str, UnsetType] = unset,
         text_align: Union[WidgetTextAlign, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -75,8 +74,6 @@ class FreeTextWidgetDefinition(ModelNormal):
         if text_align is not unset:
             kwargs["text_align"] = text_align
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.text = text
         self_.type = type

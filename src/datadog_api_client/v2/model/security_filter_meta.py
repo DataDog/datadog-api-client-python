@@ -24,7 +24,7 @@ class SecurityFilterMeta(ModelNormal):
         "warning": "warning",
     }
 
-    def __init__(self_, warning: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, warning: Union[str, UnsetType] = unset, **kwargs):
         """
         Optional metadata associated to the response.
 
@@ -34,5 +34,3 @@ class SecurityFilterMeta(ModelNormal):
         if warning is not unset:
             kwargs["warning"] = warning
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

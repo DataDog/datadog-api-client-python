@@ -49,7 +49,6 @@ class RUMResponseMetadata(ModelNormal):
         request_id: Union[str, UnsetType] = unset,
         status: Union[RUMResponseStatus, UnsetType] = unset,
         warnings: Union[List[RUMWarning], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -82,5 +81,3 @@ class RUMResponseMetadata(ModelNormal):
         if warnings is not unset:
             kwargs["warnings"] = warnings
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

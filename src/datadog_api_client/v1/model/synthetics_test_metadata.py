@@ -15,10 +15,8 @@ class SyntheticsTestMetadata(ModelNormal):
     def additional_properties_type(_):
         return (str,)
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(self_, **kwargs):
         """
         Metadata to include when performing the gRPC test.
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

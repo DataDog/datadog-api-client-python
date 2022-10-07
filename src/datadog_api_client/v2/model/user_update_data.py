@@ -34,7 +34,7 @@ class UserUpdateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: UserUpdateAttributes, id: str, type: UsersType, *args, **kwargs):
+    def __init__(self_, attributes: UserUpdateAttributes, id: str, type: UsersType, **kwargs):
         """
         Object to update a user.
 
@@ -48,8 +48,6 @@ class UserUpdateData(ModelNormal):
         :type type: UsersType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.id = id

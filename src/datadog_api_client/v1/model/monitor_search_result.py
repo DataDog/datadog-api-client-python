@@ -88,7 +88,6 @@ class MonitorSearchResult(ModelNormal):
         status: Union[MonitorOverallStates, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         type: Union[MonitorType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -163,5 +162,3 @@ class MonitorSearchResult(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -30,7 +30,7 @@ class MetricEstimateResponse(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[MetricEstimate, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, data: Union[MetricEstimate, UnsetType] = unset, **kwargs):
         """
         Response object that includes metric cardinality estimates.
 
@@ -40,5 +40,3 @@ class MetricEstimateResponse(ModelNormal):
         if data is not unset:
             kwargs["data"] = data
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

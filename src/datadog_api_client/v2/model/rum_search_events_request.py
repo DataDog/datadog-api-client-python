@@ -48,7 +48,6 @@ class RUMSearchEventsRequest(ModelNormal):
         options: Union[RUMQueryOptions, UnsetType] = unset,
         page: Union[RUMQueryPageOptions, UnsetType] = unset,
         sort: Union[RUMSort, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -76,5 +75,3 @@ class RUMSearchEventsRequest(ModelNormal):
         if sort is not unset:
             kwargs["sort"] = sort
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -46,7 +46,6 @@ class PermissionAttributes(ModelNormal):
         group_name: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         restricted: Union[bool, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -88,5 +87,3 @@ class PermissionAttributes(ModelNormal):
         if restricted is not unset:
             kwargs["restricted"] = restricted
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -55,7 +55,6 @@ class User(ModelNormal):
         icon: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         verified: Union[bool, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -97,5 +96,3 @@ class User(ModelNormal):
         if verified is not unset:
             kwargs["verified"] = verified
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

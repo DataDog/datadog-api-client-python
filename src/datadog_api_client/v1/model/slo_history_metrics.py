@@ -54,7 +54,6 @@ class SLOHistoryMetrics(ModelNormal):
         resp_version: int,
         times: List[float],
         message: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -91,8 +90,6 @@ class SLOHistoryMetrics(ModelNormal):
         if message is not unset:
             kwargs["message"] = message
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.denominator = denominator
         self_.interval = interval

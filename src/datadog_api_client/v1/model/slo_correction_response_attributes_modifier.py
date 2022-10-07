@@ -35,7 +35,6 @@ class SLOCorrectionResponseAttributesModifier(ModelNormal):
         email: Union[str, UnsetType] = unset,
         handle: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -57,5 +56,3 @@ class SLOCorrectionResponseAttributesModifier(ModelNormal):
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

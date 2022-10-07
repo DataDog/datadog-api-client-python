@@ -30,7 +30,7 @@ class SyntheticsListGlobalVariablesResponse(ModelNormal):
         "variables": "variables",
     }
 
-    def __init__(self_, variables: Union[List[SyntheticsGlobalVariable], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, variables: Union[List[SyntheticsGlobalVariable], UnsetType] = unset, **kwargs):
         """
         Object containing an array of Synthetic global variables.
 
@@ -40,5 +40,3 @@ class SyntheticsListGlobalVariablesResponse(ModelNormal):
         if variables is not unset:
             kwargs["variables"] = variables
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -43,7 +43,6 @@ class FormulaAndFunctionEventQueryGroupBySort(ModelNormal):
         aggregation: FormulaAndFunctionEventAggregation,
         metric: Union[str, UnsetType] = unset,
         order: Union[QuerySortOrder, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,7 +62,5 @@ class FormulaAndFunctionEventQueryGroupBySort(ModelNormal):
         if order is not unset:
             kwargs["order"] = order
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.aggregation = aggregation

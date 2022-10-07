@@ -41,7 +41,6 @@ class ListStreamWidgetRequest(ModelNormal):
         columns: List[ListStreamColumn],
         query: ListStreamQuery,
         response_format: ListStreamResponseFormat,
-        *args,
         **kwargs,
     ):
         """
@@ -57,8 +56,6 @@ class ListStreamWidgetRequest(ModelNormal):
         :type response_format: ListStreamResponseFormat
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.columns = columns
         self_.query = query

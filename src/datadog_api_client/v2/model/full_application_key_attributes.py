@@ -52,7 +52,6 @@ class FullApplicationKeyAttributes(ModelNormal):
         last4: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         scopes: Union[List[str], none_type, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -84,5 +83,3 @@ class FullApplicationKeyAttributes(ModelNormal):
         if scopes is not unset:
             kwargs["scopes"] = scopes
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

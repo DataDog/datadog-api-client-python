@@ -33,7 +33,6 @@ class AWSAccountDeleteRequest(ModelNormal):
         access_key_id: Union[str, UnsetType] = unset,
         account_id: Union[str, UnsetType] = unset,
         role_name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class AWSAccountDeleteRequest(ModelNormal):
         if role_name is not unset:
             kwargs["role_name"] = role_name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

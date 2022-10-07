@@ -82,7 +82,6 @@ class ServiceLevelObjective(ModelNormal):
         monitor_tags: Union[List[str], UnsetType] = unset,
         query: Union[ServiceLevelObjectiveQuery, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -173,8 +172,6 @@ class ServiceLevelObjective(ModelNormal):
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name
         self_.thresholds = thresholds

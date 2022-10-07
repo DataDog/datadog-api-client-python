@@ -23,7 +23,7 @@ class EventQueryDefinition(ModelNormal):
         "tags_execution": "tags_execution",
     }
 
-    def __init__(self_, search: str, tags_execution: str, *args, **kwargs):
+    def __init__(self_, search: str, tags_execution: str, **kwargs):
         """
         The event query.
 
@@ -34,8 +34,6 @@ class EventQueryDefinition(ModelNormal):
         :type tags_execution: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.search = search
         self_.tags_execution = tags_execution

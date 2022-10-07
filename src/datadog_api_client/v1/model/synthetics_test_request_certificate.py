@@ -40,7 +40,6 @@ class SyntheticsTestRequestCertificate(ModelNormal):
         self_,
         cert: Union[SyntheticsTestRequestCertificateItem, UnsetType] = unset,
         key: Union[SyntheticsTestRequestCertificateItem, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -57,5 +56,3 @@ class SyntheticsTestRequestCertificate(ModelNormal):
         if key is not unset:
             kwargs["key"] = key
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

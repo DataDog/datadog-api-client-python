@@ -30,7 +30,7 @@ class UsageCIVisibilityResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageCIVisibilityHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageCIVisibilityHour], UnsetType] = unset, **kwargs):
         """
         CI visibility usage response
 
@@ -40,5 +40,3 @@ class UsageCIVisibilityResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

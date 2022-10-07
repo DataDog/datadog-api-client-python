@@ -27,7 +27,7 @@ class OrganizationSettingsSamlAutocreateUsersDomains(ModelNormal):
     }
 
     def __init__(
-        self_, domains: Union[List[str], UnsetType] = unset, enabled: Union[bool, UnsetType] = unset, *args, **kwargs
+        self_, domains: Union[List[str], UnsetType] = unset, enabled: Union[bool, UnsetType] = unset, **kwargs
     ):
         """
         Has two properties, ``enabled`` (boolean) and ``domains`` , which is a list of domains without the @ symbol.
@@ -43,5 +43,3 @@ class OrganizationSettingsSamlAutocreateUsersDomains(ModelNormal):
         if enabled is not unset:
             kwargs["enabled"] = enabled
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

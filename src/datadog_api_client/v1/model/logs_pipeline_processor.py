@@ -85,7 +85,6 @@ class LogsPipelineProcessor(ModelNormal):
             ],
             UnsetType,
         ] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -119,7 +118,5 @@ class LogsPipelineProcessor(ModelNormal):
         if processors is not unset:
             kwargs["processors"] = processors
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.type = type

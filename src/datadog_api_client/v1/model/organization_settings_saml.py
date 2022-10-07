@@ -24,7 +24,7 @@ class OrganizationSettingsSaml(ModelNormal):
         "enabled": "enabled",
     }
 
-    def __init__(self_, enabled: Union[bool, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, enabled: Union[bool, UnsetType] = unset, **kwargs):
         """
         Set the boolean property enabled to enable or disable single sign on with SAML.
         See the SAML documentation for more information about all SAML settings.
@@ -35,5 +35,3 @@ class OrganizationSettingsSaml(ModelNormal):
         if enabled is not unset:
             kwargs["enabled"] = enabled
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

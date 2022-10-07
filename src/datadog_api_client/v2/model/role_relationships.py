@@ -38,7 +38,6 @@ class RoleRelationships(ModelNormal):
         self_,
         permissions: Union[RelationshipToPermissions, UnsetType] = unset,
         users: Union[RelationshipToUsers, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class RoleRelationships(ModelNormal):
         if users is not unset:
             kwargs["users"] = users
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

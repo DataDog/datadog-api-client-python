@@ -27,11 +27,7 @@ class SLOBulkDeleteResponseData(ModelNormal):
     }
 
     def __init__(
-        self_,
-        deleted: Union[List[str], UnsetType] = unset,
-        updated: Union[List[str], UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, deleted: Union[List[str], UnsetType] = unset, updated: Union[List[str], UnsetType] = unset, **kwargs
     ):
         """
         An array of service level objective objects.
@@ -50,5 +46,3 @@ class SLOBulkDeleteResponseData(ModelNormal):
         if updated is not unset:
             kwargs["updated"] = updated
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

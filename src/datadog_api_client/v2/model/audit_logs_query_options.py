@@ -26,9 +26,7 @@ class AuditLogsQueryOptions(ModelNormal):
         "timezone": "timezone",
     }
 
-    def __init__(
-        self_, time_offset: Union[int, UnsetType] = unset, timezone: Union[str, UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, time_offset: Union[int, UnsetType] = unset, timezone: Union[str, UnsetType] = unset, **kwargs):
         """
         Global query options that are used during the query.
         Note: Specify either timezone or time offset, not both. Otherwise, the query fails.
@@ -44,5 +42,3 @@ class AuditLogsQueryOptions(ModelNormal):
         if timezone is not unset:
             kwargs["timezone"] = timezone
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

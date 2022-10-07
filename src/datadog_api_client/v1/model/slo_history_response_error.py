@@ -24,7 +24,7 @@ class SLOHistoryResponseError(ModelNormal):
         "error": "error",
     }
 
-    def __init__(self_, error: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, error: Union[str, UnsetType] = unset, **kwargs):
         """
         A list of errors while querying the history data for the service level objective.
 
@@ -34,5 +34,3 @@ class SLOHistoryResponseError(ModelNormal):
         if error is not unset:
             kwargs["error"] = error
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

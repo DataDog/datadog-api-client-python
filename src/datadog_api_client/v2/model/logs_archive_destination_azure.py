@@ -50,7 +50,6 @@ class LogsArchiveDestinationAzure(ModelNormal):
         type: LogsArchiveDestinationAzureType,
         path: Union[str, UnsetType] = unset,
         region: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -79,8 +78,6 @@ class LogsArchiveDestinationAzure(ModelNormal):
         if region is not unset:
             kwargs["region"] = region
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.container = container
         self_.integration = integration

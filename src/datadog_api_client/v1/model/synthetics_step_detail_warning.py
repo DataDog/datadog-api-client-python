@@ -30,7 +30,7 @@ class SyntheticsStepDetailWarning(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, message: str, type: SyntheticsWarningType, *args, **kwargs):
+    def __init__(self_, message: str, type: SyntheticsWarningType, **kwargs):
         """
         Object collecting warnings for a given step.
 
@@ -41,8 +41,6 @@ class SyntheticsStepDetailWarning(ModelNormal):
         :type type: SyntheticsWarningType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.message = message
         self_.type = type

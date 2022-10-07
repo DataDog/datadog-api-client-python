@@ -28,7 +28,7 @@ class DashboardRestoreRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: DashboardBulkActionDataList, *args, **kwargs):
+    def __init__(self_, data: DashboardBulkActionDataList, **kwargs):
         """
         Dashboard restore request body.
 
@@ -36,7 +36,5 @@ class DashboardRestoreRequest(ModelNormal):
         :type data: DashboardBulkActionDataList
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

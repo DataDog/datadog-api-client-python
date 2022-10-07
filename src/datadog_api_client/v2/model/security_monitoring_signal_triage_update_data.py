@@ -34,9 +34,7 @@ class SecurityMonitoringSignalTriageUpdateData(ModelNormal):
         "attributes": "attributes",
     }
 
-    def __init__(
-        self_, attributes: Union[SecurityMonitoringSignalTriageAttributes, UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, attributes: Union[SecurityMonitoringSignalTriageAttributes, UnsetType] = unset, **kwargs):
         """
         Data containing the updated triage attributes of the signal.
 
@@ -46,5 +44,3 @@ class SecurityMonitoringSignalTriageUpdateData(ModelNormal):
         if attributes is not unset:
             kwargs["attributes"] = attributes
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

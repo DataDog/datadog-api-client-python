@@ -40,7 +40,6 @@ class DashboardTemplateVariable(ModelNormal):
         default: Union[str, none_type, UnsetType] = unset,
         defaults: Union[List[str], UnsetType] = unset,
         prefix: Union[str, none_type, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -70,7 +69,5 @@ class DashboardTemplateVariable(ModelNormal):
         if prefix is not unset:
             kwargs["prefix"] = prefix
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name

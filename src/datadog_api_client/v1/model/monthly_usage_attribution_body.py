@@ -54,7 +54,6 @@ class MonthlyUsageAttributionBody(ModelNormal):
         tags: Union[UsageAttributionTagNames, UnsetType] = unset,
         updated_at: Union[datetime, UnsetType] = unset,
         values: Union[MonthlyUsageAttributionValues, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -100,5 +99,3 @@ class MonthlyUsageAttributionBody(ModelNormal):
         if values is not unset:
             kwargs["values"] = values
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

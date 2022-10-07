@@ -30,7 +30,7 @@ class UsageNetworkHostsResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageNetworkHostsHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageNetworkHostsHour], UnsetType] = unset, **kwargs):
         """
         Response containing the number of active NPM hosts for each hour for a given organization.
 
@@ -40,5 +40,3 @@ class UsageNetworkHostsResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

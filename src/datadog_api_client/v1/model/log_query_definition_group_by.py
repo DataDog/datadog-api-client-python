@@ -39,7 +39,6 @@ class LogQueryDefinitionGroupBy(ModelNormal):
         facet: str,
         limit: Union[int, UnsetType] = unset,
         sort: Union[LogQueryDefinitionGroupBySort, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -59,7 +58,5 @@ class LogQueryDefinitionGroupBy(ModelNormal):
         if sort is not unset:
             kwargs["sort"] = sort
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.facet = facet

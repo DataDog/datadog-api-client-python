@@ -36,7 +36,6 @@ class Event(ModelNormal):
         name: Union[str, UnsetType] = unset,
         source_id: Union[int, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,5 +62,3 @@ class Event(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

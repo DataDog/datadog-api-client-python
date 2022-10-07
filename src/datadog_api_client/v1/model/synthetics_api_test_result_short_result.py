@@ -33,11 +33,7 @@ class SyntheticsAPITestResultShortResult(ModelNormal):
     }
 
     def __init__(
-        self_,
-        passed: Union[bool, UnsetType] = unset,
-        timings: Union[SyntheticsTiming, UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, passed: Union[bool, UnsetType] = unset, timings: Union[SyntheticsTiming, UnsetType] = unset, **kwargs
     ):
         """
         Result of the last API test run.
@@ -54,5 +50,3 @@ class SyntheticsAPITestResultShortResult(ModelNormal):
         if timings is not unset:
             kwargs["timings"] = timings
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

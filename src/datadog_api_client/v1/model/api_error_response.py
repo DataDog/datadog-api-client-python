@@ -22,7 +22,7 @@ class APIErrorResponse(ModelNormal):
         "errors": "errors",
     }
 
-    def __init__(self_, errors: List[str], *args, **kwargs):
+    def __init__(self_, errors: List[str], **kwargs):
         """
         Error response object.
 
@@ -30,7 +30,5 @@ class APIErrorResponse(ModelNormal):
         :type errors: [str]
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.errors = errors

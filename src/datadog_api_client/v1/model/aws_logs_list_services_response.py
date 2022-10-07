@@ -26,7 +26,7 @@ class AWSLogsListServicesResponse(ModelNormal):
         "label": "label",
     }
 
-    def __init__(self_, id: Union[str, UnsetType] = unset, label: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, id: Union[str, UnsetType] = unset, label: Union[str, UnsetType] = unset, **kwargs):
         """
         The list of current AWS services for which Datadog offers automatic log collection.
 
@@ -41,5 +41,3 @@ class AWSLogsListServicesResponse(ModelNormal):
         if label is not unset:
             kwargs["label"] = label
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

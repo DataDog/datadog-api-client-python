@@ -32,9 +32,7 @@ class EventListResponse(ModelNormal):
         "status": "status",
     }
 
-    def __init__(
-        self_, events: Union[List[Event], UnsetType] = unset, status: Union[str, UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, events: Union[List[Event], UnsetType] = unset, status: Union[str, UnsetType] = unset, **kwargs):
         """
         An event list response.
 
@@ -49,5 +47,3 @@ class EventListResponse(ModelNormal):
         if status is not unset:
             kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

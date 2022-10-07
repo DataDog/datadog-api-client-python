@@ -28,7 +28,7 @@ class RUMApplicationCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: RUMApplicationCreate, *args, **kwargs):
+    def __init__(self_, data: RUMApplicationCreate, **kwargs):
         """
         RUM application creation request attributes.
 
@@ -36,7 +36,5 @@ class RUMApplicationCreateRequest(ModelNormal):
         :type data: RUMApplicationCreate
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

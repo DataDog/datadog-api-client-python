@@ -32,7 +32,7 @@ class NotebookMarkdownCellDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, text: str, type: NotebookMarkdownCellDefinitionType, *args, **kwargs):
+    def __init__(self_, text: str, type: NotebookMarkdownCellDefinitionType, **kwargs):
         """
         Text in a notebook is formatted with `Markdown <https://daringfireball.net/projects/markdown/>`_ , which enables the use of headings, subheadings, links, images, lists, and code blocks.
 
@@ -43,8 +43,6 @@ class NotebookMarkdownCellDefinition(ModelNormal):
         :type type: NotebookMarkdownCellDefinitionType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.text = text
         self_.type = type

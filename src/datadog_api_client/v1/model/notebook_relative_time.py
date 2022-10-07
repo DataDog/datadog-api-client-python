@@ -30,7 +30,7 @@ class NotebookRelativeTime(ModelNormal):
         "live_span": "live_span",
     }
 
-    def __init__(self_, live_span: WidgetLiveSpan, *args, **kwargs):
+    def __init__(self_, live_span: WidgetLiveSpan, **kwargs):
         """
         Relative timeframe.
 
@@ -38,7 +38,5 @@ class NotebookRelativeTime(ModelNormal):
         :type live_span: WidgetLiveSpan
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.live_span = live_span

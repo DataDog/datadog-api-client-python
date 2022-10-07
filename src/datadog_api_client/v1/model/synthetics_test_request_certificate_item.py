@@ -33,7 +33,6 @@ class SyntheticsTestRequestCertificateItem(ModelNormal):
         content: Union[str, UnsetType] = unset,
         filename: Union[str, UnsetType] = unset,
         updated_at: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class SyntheticsTestRequestCertificateItem(ModelNormal):
         if updated_at is not unset:
             kwargs["updated_at"] = updated_at
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

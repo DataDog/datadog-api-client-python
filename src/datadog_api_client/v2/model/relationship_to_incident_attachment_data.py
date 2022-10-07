@@ -30,7 +30,7 @@ class RelationshipToIncidentAttachmentData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id: str, type: IncidentAttachmentType, *args, **kwargs):
+    def __init__(self_, id: str, type: IncidentAttachmentType, **kwargs):
         """
         The attachment relationship data.
 
@@ -41,8 +41,6 @@ class RelationshipToIncidentAttachmentData(ModelNormal):
         :type type: IncidentAttachmentType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.id = id
         self_.type = type

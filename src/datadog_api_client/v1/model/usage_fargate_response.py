@@ -30,7 +30,7 @@ class UsageFargateResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageFargateHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageFargateHour], UnsetType] = unset, **kwargs):
         """
         Response containing the number of Fargate tasks run and hourly usage.
 
@@ -40,5 +40,3 @@ class UsageFargateResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

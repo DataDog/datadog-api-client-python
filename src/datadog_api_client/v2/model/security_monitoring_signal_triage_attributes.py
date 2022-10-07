@@ -78,7 +78,6 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
         archive_reason: Union[SecurityMonitoringSignalArchiveReason, UnsetType] = unset,
         state_update_timestamp: Union[int, UnsetType] = unset,
         state_update_user: Union[SecurityMonitoringTriageUser, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -124,8 +123,6 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
         if state_update_user is not unset:
             kwargs["state_update_user"] = state_update_user
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.assignee = assignee
         self_.incident_ids = incident_ids

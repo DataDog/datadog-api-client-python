@@ -24,7 +24,7 @@ class MetricSearchResponseResults(ModelNormal):
         "metrics": "metrics",
     }
 
-    def __init__(self_, metrics: Union[List[str], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, metrics: Union[List[str], UnsetType] = unset, **kwargs):
         """
         Search result.
 
@@ -34,5 +34,3 @@ class MetricSearchResponseResults(ModelNormal):
         if metrics is not unset:
             kwargs["metrics"] = metrics
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

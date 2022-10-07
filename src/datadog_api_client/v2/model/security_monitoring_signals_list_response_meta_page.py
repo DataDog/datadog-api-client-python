@@ -24,7 +24,7 @@ class SecurityMonitoringSignalsListResponseMetaPage(ModelNormal):
         "after": "after",
     }
 
-    def __init__(self_, after: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, after: Union[str, UnsetType] = unset, **kwargs):
         """
         Paging attributes.
 
@@ -35,5 +35,3 @@ class SecurityMonitoringSignalsListResponseMetaPage(ModelNormal):
         if after is not unset:
             kwargs["after"] = after
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

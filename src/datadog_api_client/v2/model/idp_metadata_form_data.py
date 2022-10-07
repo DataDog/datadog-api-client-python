@@ -25,7 +25,7 @@ class IdPMetadataFormData(ModelNormal):
         "idp_file": "idp_file",
     }
 
-    def __init__(self_, idp_file: Union[file_type, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, idp_file: Union[file_type, UnsetType] = unset, **kwargs):
         """
         The form data submitted to upload IdP metadata
 
@@ -35,5 +35,3 @@ class IdPMetadataFormData(ModelNormal):
         if idp_file is not unset:
             kwargs["idp_file"] = idp_file
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

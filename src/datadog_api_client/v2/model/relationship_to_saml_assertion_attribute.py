@@ -32,7 +32,7 @@ class RelationshipToSAMLAssertionAttribute(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: RelationshipToSAMLAssertionAttributeData, *args, **kwargs):
+    def __init__(self_, data: RelationshipToSAMLAssertionAttributeData, **kwargs):
         """
         AuthN Mapping relationship to SAML Assertion Attribute.
 
@@ -40,7 +40,5 @@ class RelationshipToSAMLAssertionAttribute(ModelNormal):
         :type data: RelationshipToSAMLAssertionAttributeData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

@@ -26,7 +26,7 @@ class WidgetEvent(ModelNormal):
         "tags_execution": "tags_execution",
     }
 
-    def __init__(self_, q: str, tags_execution: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, q: str, tags_execution: Union[str, UnsetType] = unset, **kwargs):
         """
         Event overlay control options.
 
@@ -42,7 +42,5 @@ class WidgetEvent(ModelNormal):
         if tags_execution is not unset:
             kwargs["tags_execution"] = tags_execution
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.q = q

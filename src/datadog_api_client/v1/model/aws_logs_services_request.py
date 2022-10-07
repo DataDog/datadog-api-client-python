@@ -24,7 +24,7 @@ class AWSLogsServicesRequest(ModelNormal):
         "services": "services",
     }
 
-    def __init__(self_, account_id: str, services: List[str], *args, **kwargs):
+    def __init__(self_, account_id: str, services: List[str], **kwargs):
         """
         A list of current AWS services for which Datadog offers automatic log collection.
 
@@ -35,8 +35,6 @@ class AWSLogsServicesRequest(ModelNormal):
         :type services: [str]
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.account_id = account_id
         self_.services = services

@@ -26,9 +26,7 @@ class IncidentNotificationHandle(ModelNormal):
         "handle": "handle",
     }
 
-    def __init__(
-        self_, display_name: Union[str, UnsetType] = unset, handle: Union[str, UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, display_name: Union[str, UnsetType] = unset, handle: Union[str, UnsetType] = unset, **kwargs):
         """
         A notification handle that will be notified at incident creation.
 
@@ -43,5 +41,3 @@ class IncidentNotificationHandle(ModelNormal):
         if handle is not unset:
             kwargs["handle"] = handle
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

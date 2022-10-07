@@ -43,7 +43,6 @@ class MetricBulkTagConfigCreate(ModelNormal):
         id: str,
         type: MetricBulkConfigureTagsType,
         attributes: Union[MetricBulkTagConfigCreateAttributes, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -61,8 +60,6 @@ class MetricBulkTagConfigCreate(ModelNormal):
         if attributes is not unset:
             kwargs["attributes"] = attributes
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.id = id
         self_.type = type

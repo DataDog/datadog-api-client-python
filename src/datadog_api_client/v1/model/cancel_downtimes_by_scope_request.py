@@ -21,7 +21,7 @@ class CancelDowntimesByScopeRequest(ModelNormal):
         "scope": "scope",
     }
 
-    def __init__(self_, scope: str, *args, **kwargs):
+    def __init__(self_, scope: str, **kwargs):
         """
         Cancel downtimes according to scope.
 
@@ -31,7 +31,5 @@ class CancelDowntimesByScopeRequest(ModelNormal):
         :type scope: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.scope = scope

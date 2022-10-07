@@ -34,7 +34,7 @@ class RUMApplication(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: RUMApplicationAttributes, id: str, type: RUMApplicationType, *args, **kwargs):
+    def __init__(self_, attributes: RUMApplicationAttributes, id: str, type: RUMApplicationType, **kwargs):
         """
         RUM application.
 
@@ -48,8 +48,6 @@ class RUMApplication(ModelNormal):
         :type type: RUMApplicationType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.id = id

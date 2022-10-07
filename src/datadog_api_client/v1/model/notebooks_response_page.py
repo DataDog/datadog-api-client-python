@@ -27,11 +27,7 @@ class NotebooksResponsePage(ModelNormal):
     }
 
     def __init__(
-        self_,
-        total_count: Union[int, UnsetType] = unset,
-        total_filtered_count: Union[int, UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, total_count: Union[int, UnsetType] = unset, total_filtered_count: Union[int, UnsetType] = unset, **kwargs
     ):
         """
         Pagination metadata returned by the API.
@@ -47,5 +43,3 @@ class NotebooksResponsePage(ModelNormal):
         if total_filtered_count is not unset:
             kwargs["total_filtered_count"] = total_filtered_count
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

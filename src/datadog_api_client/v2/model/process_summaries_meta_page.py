@@ -33,7 +33,7 @@ class ProcessSummariesMetaPage(ModelNormal):
         "size": "size",
     }
 
-    def __init__(self_, after: Union[str, UnsetType] = unset, size: Union[int, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, after: Union[str, UnsetType] = unset, size: Union[int, UnsetType] = unset, **kwargs):
         """
         Paging attributes.
 
@@ -49,5 +49,3 @@ class ProcessSummariesMetaPage(ModelNormal):
         if size is not unset:
             kwargs["size"] = size
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

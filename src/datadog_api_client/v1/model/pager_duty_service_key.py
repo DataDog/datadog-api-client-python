@@ -21,7 +21,7 @@ class PagerDutyServiceKey(ModelNormal):
         "service_key": "service_key",
     }
 
-    def __init__(self_, service_key: str, *args, **kwargs):
+    def __init__(self_, service_key: str, **kwargs):
         """
         PagerDuty service object key.
 
@@ -29,7 +29,5 @@ class PagerDutyServiceKey(ModelNormal):
         :type service_key: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.service_key = service_key

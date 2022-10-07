@@ -51,7 +51,6 @@ class RUMApplicationAttributes(ModelNormal):
         updated_at: int,
         updated_by_handle: str,
         hash: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -87,8 +86,6 @@ class RUMApplicationAttributes(ModelNormal):
         if hash is not unset:
             kwargs["hash"] = hash
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.application_id = application_id
         self_.created_at = created_at

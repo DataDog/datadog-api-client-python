@@ -28,7 +28,7 @@ class RelationshipToOrganization(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: RelationshipToOrganizationData, *args, **kwargs):
+    def __init__(self_, data: RelationshipToOrganizationData, **kwargs):
         """
         Relationship to an organization.
 
@@ -36,7 +36,5 @@ class RelationshipToOrganization(ModelNormal):
         :type data: RelationshipToOrganizationData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

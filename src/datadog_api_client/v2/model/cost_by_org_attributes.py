@@ -46,7 +46,6 @@ class CostByOrgAttributes(ModelNormal):
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         total_cost: Union[float, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -78,5 +77,3 @@ class CostByOrgAttributes(ModelNormal):
         if total_cost is not unset:
             kwargs["total_cost"] = total_cost
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

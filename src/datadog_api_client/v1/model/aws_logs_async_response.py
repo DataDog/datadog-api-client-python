@@ -36,7 +36,6 @@ class AWSLogsAsyncResponse(ModelNormal):
         self_,
         errors: Union[List[AWSLogsAsyncError], UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -53,5 +52,3 @@ class AWSLogsAsyncResponse(ModelNormal):
         if status is not unset:
             kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

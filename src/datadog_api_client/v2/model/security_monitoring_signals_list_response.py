@@ -51,7 +51,6 @@ class SecurityMonitoringSignalsListResponse(ModelNormal):
         data: Union[List[SecurityMonitoringSignal], UnsetType] = unset,
         links: Union[SecurityMonitoringSignalsListResponseLinks, UnsetType] = unset,
         meta: Union[SecurityMonitoringSignalsListResponseMeta, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -74,5 +73,3 @@ class SecurityMonitoringSignalsListResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

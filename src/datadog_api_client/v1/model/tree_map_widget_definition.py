@@ -73,7 +73,6 @@ class TreeMapWidgetDefinition(ModelNormal):
         size_by: Union[TreeMapSizeBy, UnsetType] = unset,
         time: Union[WidgetTime, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -116,8 +115,6 @@ class TreeMapWidgetDefinition(ModelNormal):
         if title is not unset:
             kwargs["title"] = title
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.requests = requests
         self_.type = type

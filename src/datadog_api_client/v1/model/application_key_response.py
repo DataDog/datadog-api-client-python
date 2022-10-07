@@ -30,7 +30,7 @@ class ApplicationKeyResponse(ModelNormal):
         "application_key": "application_key",
     }
 
-    def __init__(self_, application_key: Union[ApplicationKey, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, application_key: Union[ApplicationKey, UnsetType] = unset, **kwargs):
         """
         An application key response.
 
@@ -40,5 +40,3 @@ class ApplicationKeyResponse(ModelNormal):
         if application_key is not unset:
             kwargs["application_key"] = application_key
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

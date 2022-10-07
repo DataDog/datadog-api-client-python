@@ -43,7 +43,6 @@ class LogsGeoIPParser(ModelNormal):
         type: LogsGeoIPParserType,
         is_enabled: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -72,8 +71,6 @@ class LogsGeoIPParser(ModelNormal):
         super().__init__(kwargs)
         sources = kwargs.get("sources", ["network.client.ip"])
         target = kwargs.get("target", "network.client.geoip")
-
-        self_._check_pos_args(args)
 
         self_.sources = sources
         self_.target = target

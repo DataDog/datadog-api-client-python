@@ -60,7 +60,6 @@ class SyntheticsAPIStep(ModelNormal):
         extracted_values: Union[List[SyntheticsParsingOptions], UnsetType] = unset,
         is_critical: Union[bool, UnsetType] = unset,
         retry: Union[SyntheticsTestOptionsRetry, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -101,8 +100,6 @@ class SyntheticsAPIStep(ModelNormal):
             kwargs["retry"] = retry
         super().__init__(kwargs)
         assertions = kwargs.get("assertions", [])
-
-        self_._check_pos_args(args)
 
         self_.assertions = assertions
         self_.name = name

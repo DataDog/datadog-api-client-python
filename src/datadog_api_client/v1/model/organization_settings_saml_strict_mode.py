@@ -24,7 +24,7 @@ class OrganizationSettingsSamlStrictMode(ModelNormal):
         "enabled": "enabled",
     }
 
-    def __init__(self_, enabled: Union[bool, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, enabled: Union[bool, UnsetType] = unset, **kwargs):
         """
         Has one property enabled (boolean).
 
@@ -35,5 +35,3 @@ class OrganizationSettingsSamlStrictMode(ModelNormal):
         if enabled is not unset:
             kwargs["enabled"] = enabled
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

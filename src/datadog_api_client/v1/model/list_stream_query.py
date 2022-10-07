@@ -42,7 +42,6 @@ class ListStreamQuery(ModelNormal):
         query_string: str,
         indexes: Union[List[str], UnsetType] = unset,
         storage: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -65,8 +64,6 @@ class ListStreamQuery(ModelNormal):
         if storage is not unset:
             kwargs["storage"] = storage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data_source = data_source
         self_.query_string = query_string

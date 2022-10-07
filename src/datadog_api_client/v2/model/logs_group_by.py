@@ -54,7 +54,6 @@ class LogsGroupBy(ModelNormal):
         missing: Union[LogsGroupByMissing, str, float, UnsetType] = unset,
         sort: Union[LogsAggregateSort, UnsetType] = unset,
         total: Union[LogsGroupByTotal, bool, str, float, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -90,7 +89,5 @@ class LogsGroupBy(ModelNormal):
         if total is not unset:
             kwargs["total"] = total
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.facet = facet

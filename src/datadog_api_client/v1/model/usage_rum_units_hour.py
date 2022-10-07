@@ -40,7 +40,6 @@ class UsageRumUnitsHour(ModelNormal):
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         rum_units: Union[int, none_type, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -72,5 +71,3 @@ class UsageRumUnitsHour(ModelNormal):
         if rum_units is not unset:
             kwargs["rum_units"] = rum_units
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

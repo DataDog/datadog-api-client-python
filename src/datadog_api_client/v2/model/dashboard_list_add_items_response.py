@@ -30,9 +30,7 @@ class DashboardListAddItemsResponse(ModelNormal):
         "added_dashboards_to_list": "added_dashboards_to_list",
     }
 
-    def __init__(
-        self_, added_dashboards_to_list: Union[List[DashboardListItemResponse], UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, added_dashboards_to_list: Union[List[DashboardListItemResponse], UnsetType] = unset, **kwargs):
         """
         Response containing a list of added dashboards.
 
@@ -42,5 +40,3 @@ class DashboardListAddItemsResponse(ModelNormal):
         if added_dashboards_to_list is not unset:
             kwargs["added_dashboards_to_list"] = added_dashboards_to_list
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

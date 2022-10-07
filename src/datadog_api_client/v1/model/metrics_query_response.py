@@ -68,7 +68,6 @@ class MetricsQueryResponse(ModelNormal):
         series: Union[List[MetricsQueryMetadata], UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
         to_date: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -120,5 +119,3 @@ class MetricsQueryResponse(ModelNormal):
         if to_date is not unset:
             kwargs["to_date"] = to_date
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

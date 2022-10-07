@@ -45,7 +45,6 @@ class AuthNMappingsResponse(ModelNormal):
         data: Union[List[AuthNMapping], UnsetType] = unset,
         included: Union[List[Union[AuthNMappingIncluded, SAMLAssertionAttribute, Role]], UnsetType] = unset,
         meta: Union[ResponseMetaAttributes, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -67,5 +66,3 @@ class AuthNMappingsResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

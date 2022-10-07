@@ -30,7 +30,7 @@ class RelationshipToOrganizationData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id: str, type: OrganizationsType, *args, **kwargs):
+    def __init__(self_, id: str, type: OrganizationsType, **kwargs):
         """
         Relationship to organization object.
 
@@ -41,8 +41,6 @@ class RelationshipToOrganizationData(ModelNormal):
         :type type: OrganizationsType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.id = id
         self_.type = type

@@ -22,11 +22,9 @@ class SLOBulkDelete(ModelNormal):
 
         return ([SLOTimeframe],)
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(self_, **kwargs):
         """
         A map of service level objective object IDs to arrays of timeframes,
         which indicate the thresholds to delete for each ID.
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -43,7 +43,6 @@ class MonitorThresholds(ModelNormal):
         unknown: Union[float, none_type, UnsetType] = unset,
         warning: Union[float, none_type, UnsetType] = unset,
         warning_recovery: Union[float, none_type, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -80,5 +79,3 @@ class MonitorThresholds(ModelNormal):
         if warning_recovery is not unset:
             kwargs["warning_recovery"] = warning_recovery
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

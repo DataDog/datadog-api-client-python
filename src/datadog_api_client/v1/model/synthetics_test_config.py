@@ -52,7 +52,6 @@ class SyntheticsTestConfig(ModelNormal):
         config_variables: Union[List[SyntheticsConfigVariable], UnsetType] = unset,
         request: Union[SyntheticsTestRequest, UnsetType] = unset,
         variables: Union[List[SyntheticsBrowserVariable], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -79,5 +78,3 @@ class SyntheticsTestConfig(ModelNormal):
         if variables is not unset:
             kwargs["variables"] = variables
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

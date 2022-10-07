@@ -48,7 +48,6 @@ class EventsListRequest(ModelNormal):
         options: Union[EventsQueryOptions, UnsetType] = unset,
         page: Union[EventsRequestPage, UnsetType] = unset,
         sort: Union[EventsSort, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -76,5 +75,3 @@ class EventsListRequest(ModelNormal):
         if sort is not unset:
             kwargs["sort"] = sort
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

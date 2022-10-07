@@ -48,7 +48,6 @@ class MetricsQueryUnit(ModelNormal):
         plural: Union[str, UnsetType] = unset,
         scale_factor: Union[float, UnsetType] = unset,
         short_name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -80,5 +79,3 @@ class MetricsQueryUnit(ModelNormal):
         if short_name is not unset:
             kwargs["short_name"] = short_name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

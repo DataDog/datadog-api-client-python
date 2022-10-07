@@ -46,7 +46,6 @@ class WebhooksIntegration(ModelNormal):
         custom_headers: Union[str, none_type, UnsetType] = unset,
         encode_as: Union[WebhooksIntegrationEncoding, UnsetType] = unset,
         payload: Union[str, none_type, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -80,8 +79,6 @@ class WebhooksIntegration(ModelNormal):
         if payload is not unset:
             kwargs["payload"] = payload
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name
         self_.url = url

@@ -48,7 +48,6 @@ class SearchSLOResponseMetaPage(ModelNormal):
         size: Union[int, UnsetType] = unset,
         total: Union[int, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -95,5 +94,3 @@ class SearchSLOResponseMetaPage(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

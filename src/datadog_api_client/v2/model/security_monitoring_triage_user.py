@@ -36,7 +36,6 @@ class SecurityMonitoringTriageUser(ModelNormal):
         handle: Union[str, UnsetType] = unset,
         id: Union[int, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -61,7 +60,5 @@ class SecurityMonitoringTriageUser(ModelNormal):
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.uuid = uuid

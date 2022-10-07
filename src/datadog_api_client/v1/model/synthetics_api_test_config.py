@@ -52,7 +52,6 @@ class SyntheticsAPITestConfig(ModelNormal):
         config_variables: Union[List[SyntheticsConfigVariable], UnsetType] = unset,
         request: Union[SyntheticsTestRequest, UnsetType] = unset,
         steps: Union[List[SyntheticsAPIStep], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -79,5 +78,3 @@ class SyntheticsAPITestConfig(ModelNormal):
         if steps is not unset:
             kwargs["steps"] = steps
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

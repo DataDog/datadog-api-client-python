@@ -30,7 +30,7 @@ class AWSTagFilterListResponse(ModelNormal):
         "filters": "filters",
     }
 
-    def __init__(self_, filters: Union[List[AWSTagFilter], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, filters: Union[List[AWSTagFilter], UnsetType] = unset, **kwargs):
         """
         An array of tag filter rules by ``namespace`` and tag filter string.
 
@@ -40,5 +40,3 @@ class AWSTagFilterListResponse(ModelNormal):
         if filters is not unset:
             kwargs["filters"] = filters
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

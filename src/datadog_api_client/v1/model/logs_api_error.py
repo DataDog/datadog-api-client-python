@@ -33,7 +33,6 @@ class LogsAPIError(ModelNormal):
         code: Union[str, UnsetType] = unset,
         details: Union[List[LogsAPIError], UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class LogsAPIError(ModelNormal):
         if message is not unset:
             kwargs["message"] = message
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

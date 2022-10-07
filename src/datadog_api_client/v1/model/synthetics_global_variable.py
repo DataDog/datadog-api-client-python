@@ -65,7 +65,6 @@ class SyntheticsGlobalVariable(ModelNormal):
         id: Union[str, UnsetType] = unset,
         parse_test_options: Union[SyntheticsGlobalVariableParseTestOptions, UnsetType] = unset,
         parse_test_public_id: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -104,8 +103,6 @@ class SyntheticsGlobalVariable(ModelNormal):
         if parse_test_public_id is not unset:
             kwargs["parse_test_public_id"] = parse_test_public_id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.description = description
         self_.name = name

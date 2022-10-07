@@ -28,7 +28,7 @@ class OpsgenieServiceUpdateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: OpsgenieServiceUpdateData, *args, **kwargs):
+    def __init__(self_, data: OpsgenieServiceUpdateData, **kwargs):
         """
         Update request for an Opsgenie service.
 
@@ -36,7 +36,5 @@ class OpsgenieServiceUpdateRequest(ModelNormal):
         :type data: OpsgenieServiceUpdateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

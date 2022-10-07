@@ -46,7 +46,6 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
         json_path: Union[str, UnsetType] = unset,
         operator: Union[str, UnsetType] = unset,
         target_value: Union[Any, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -68,5 +67,3 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
         if target_value is not unset:
             kwargs["target_value"] = target_value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

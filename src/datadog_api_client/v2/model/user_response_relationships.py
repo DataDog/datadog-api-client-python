@@ -48,7 +48,6 @@ class UserResponseRelationships(ModelNormal):
         other_orgs: Union[RelationshipToOrganizations, UnsetType] = unset,
         other_users: Union[RelationshipToUsers, UnsetType] = unset,
         roles: Union[RelationshipToRoles, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -75,5 +74,3 @@ class UserResponseRelationships(ModelNormal):
         if roles is not unset:
             kwargs["roles"] = roles
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -44,7 +44,6 @@ class EventsResponseMetadata(ModelNormal):
         page: Union[EventsResponseMetadataPage, UnsetType] = unset,
         request_id: Union[str, UnsetType] = unset,
         warnings: Union[List[EventsWarning], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -72,5 +71,3 @@ class EventsResponseMetadata(ModelNormal):
         if warnings is not unset:
             kwargs["warnings"] = warnings
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

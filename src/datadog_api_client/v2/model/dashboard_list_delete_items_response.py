@@ -31,7 +31,7 @@ class DashboardListDeleteItemsResponse(ModelNormal):
     }
 
     def __init__(
-        self_, deleted_dashboards_from_list: Union[List[DashboardListItemResponse], UnsetType] = unset, *args, **kwargs
+        self_, deleted_dashboards_from_list: Union[List[DashboardListItemResponse], UnsetType] = unset, **kwargs
     ):
         """
         Response containing a list of deleted dashboards.
@@ -42,5 +42,3 @@ class DashboardListDeleteItemsResponse(ModelNormal):
         if deleted_dashboards_from_list is not unset:
             kwargs["deleted_dashboards_from_list"] = deleted_dashboards_from_list
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

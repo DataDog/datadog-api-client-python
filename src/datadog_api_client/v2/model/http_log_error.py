@@ -33,7 +33,6 @@ class HTTPLogError(ModelNormal):
         detail: Union[str, UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class HTTPLogError(ModelNormal):
         if title is not unset:
             kwargs["title"] = title
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

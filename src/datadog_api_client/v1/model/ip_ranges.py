@@ -78,7 +78,6 @@ class IPRanges(ModelNormal):
         synthetics_private_locations: Union[IPPrefixesSyntheticsPrivateLocations, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
         webhooks: Union[IPPrefixesWebhooks, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -135,5 +134,3 @@ class IPRanges(ModelNormal):
         if webhooks is not unset:
             kwargs["webhooks"] = webhooks
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

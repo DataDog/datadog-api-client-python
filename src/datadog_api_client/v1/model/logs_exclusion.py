@@ -39,7 +39,6 @@ class LogsExclusion(ModelNormal):
         name: str,
         filter: Union[LogsExclusionFilter, UnsetType] = unset,
         is_enabled: Union[bool, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -59,7 +58,5 @@ class LogsExclusion(ModelNormal):
         if is_enabled is not unset:
             kwargs["is_enabled"] = is_enabled
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name

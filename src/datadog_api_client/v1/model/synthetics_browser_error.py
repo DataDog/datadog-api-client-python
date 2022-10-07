@@ -42,7 +42,6 @@ class SyntheticsBrowserError(ModelNormal):
         name: str,
         type: SyntheticsBrowserErrorType,
         status: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,8 +62,6 @@ class SyntheticsBrowserError(ModelNormal):
         if status is not unset:
             kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.description = description
         self_.name = name

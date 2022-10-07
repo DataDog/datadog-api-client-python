@@ -155,7 +155,6 @@ class MonitorOptions(ModelNormal):
             List[Union[MonitorFormulaAndFunctionQueryDefinition, MonitorFormulaAndFunctionEventQueryDefinition]],
             UnsetType,
         ] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -338,5 +337,3 @@ class MonitorOptions(ModelNormal):
         if variables is not unset:
             kwargs["variables"] = variables
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

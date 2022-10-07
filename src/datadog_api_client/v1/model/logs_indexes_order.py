@@ -22,7 +22,7 @@ class LogsIndexesOrder(ModelNormal):
         "index_names": "index_names",
     }
 
-    def __init__(self_, index_names: List[str], *args, **kwargs):
+    def __init__(self_, index_names: List[str], **kwargs):
         """
         Object containing the ordered list of log index names.
 
@@ -32,7 +32,5 @@ class LogsIndexesOrder(ModelNormal):
         :type index_names: [str]
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.index_names = index_names

@@ -26,7 +26,7 @@ class LogsExclusionFilter(ModelNormal):
         "sample_rate": "sample_rate",
     }
 
-    def __init__(self_, sample_rate: float, query: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, sample_rate: float, query: Union[str, UnsetType] = unset, **kwargs):
         """
         Exclusion filter is defined by a query, a sampling rule, and a active/inactive toggle.
 
@@ -41,7 +41,5 @@ class LogsExclusionFilter(ModelNormal):
         if query is not unset:
             kwargs["query"] = query
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.sample_rate = sample_rate

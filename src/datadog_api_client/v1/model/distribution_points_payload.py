@@ -28,7 +28,7 @@ class DistributionPointsPayload(ModelNormal):
         "series": "series",
     }
 
-    def __init__(self_, series: List[DistributionPointsSeries], *args, **kwargs):
+    def __init__(self_, series: List[DistributionPointsSeries], **kwargs):
         """
         The distribution points payload.
 
@@ -36,7 +36,5 @@ class DistributionPointsPayload(ModelNormal):
         :type series: [DistributionPointsSeries]
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.series = series

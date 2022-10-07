@@ -30,7 +30,7 @@ class LogsByRetentionOrgUsage(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[LogsRetentionSumUsage], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[LogsRetentionSumUsage], UnsetType] = unset, **kwargs):
         """
         Indexed logs usage by retention for a single organization.
 
@@ -40,5 +40,3 @@ class LogsByRetentionOrgUsage(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -90,7 +90,6 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         keep_alive: Union[SecurityMonitoringRuleKeepAlive, UnsetType] = unset,
         max_signal_duration: Union[SecurityMonitoringRuleMaxSignalDuration, UnsetType] = unset,
         new_value_options: Union[SecurityMonitoringRuleNewValueOptions, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -142,5 +141,3 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         if new_value_options is not unset:
             kwargs["new_value_options"] = new_value_options
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

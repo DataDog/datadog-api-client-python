@@ -32,7 +32,7 @@ class CloudWorkloadSecurityAgentRuleResponse(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[CloudWorkloadSecurityAgentRuleData, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, data: Union[CloudWorkloadSecurityAgentRuleData, UnsetType] = unset, **kwargs):
         """
         Response object that includes an Agent rule.
 
@@ -42,5 +42,3 @@ class CloudWorkloadSecurityAgentRuleResponse(ModelNormal):
         if data is not unset:
             kwargs["data"] = data
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

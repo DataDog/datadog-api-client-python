@@ -38,7 +38,6 @@ class UsageAttributionResponse(ModelNormal):
         self_,
         metadata: Union[UsageAttributionMetadata, UnsetType] = unset,
         usage: Union[List[UsageAttributionBody], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class UsageAttributionResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

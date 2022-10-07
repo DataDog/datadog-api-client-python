@@ -35,7 +35,7 @@ class DashboardListItems(ModelNormal):
         "total",
     }
 
-    def __init__(self_, dashboards: List[DashboardListItem], total: Union[int, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, dashboards: List[DashboardListItem], total: Union[int, UnsetType] = unset, **kwargs):
         """
         Dashboards within a list.
 
@@ -48,7 +48,5 @@ class DashboardListItems(ModelNormal):
         if total is not unset:
             kwargs["total"] = total
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.dashboards = dashboards

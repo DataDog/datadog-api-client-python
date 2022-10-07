@@ -32,7 +32,7 @@ class FunnelWidgetRequest(ModelNormal):
         "request_type": "request_type",
     }
 
-    def __init__(self_, query: FunnelQuery, request_type: FunnelRequestType, *args, **kwargs):
+    def __init__(self_, query: FunnelQuery, request_type: FunnelRequestType, **kwargs):
         """
         Updated funnel widget.
 
@@ -43,8 +43,6 @@ class FunnelWidgetRequest(ModelNormal):
         :type request_type: FunnelRequestType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.query = query
         self_.request_type = request_type

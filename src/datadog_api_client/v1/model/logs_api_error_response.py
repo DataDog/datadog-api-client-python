@@ -30,7 +30,7 @@ class LogsAPIErrorResponse(ModelNormal):
         "error": "error",
     }
 
-    def __init__(self_, error: Union[LogsAPIError, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, error: Union[LogsAPIError, UnsetType] = unset, **kwargs):
         """
         Response returned by the Logs API when errors occur.
 
@@ -40,5 +40,3 @@ class LogsAPIErrorResponse(ModelNormal):
         if error is not unset:
             kwargs["error"] = error
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

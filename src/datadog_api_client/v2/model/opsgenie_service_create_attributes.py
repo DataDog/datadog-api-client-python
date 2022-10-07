@@ -42,7 +42,6 @@ class OpsgenieServiceCreateAttributes(ModelNormal):
         opsgenie_api_key: str,
         region: OpsgenieServiceRegionType,
         custom_url: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,8 +62,6 @@ class OpsgenieServiceCreateAttributes(ModelNormal):
         if custom_url is not unset:
             kwargs["custom_url"] = custom_url
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name
         self_.opsgenie_api_key = opsgenie_api_key

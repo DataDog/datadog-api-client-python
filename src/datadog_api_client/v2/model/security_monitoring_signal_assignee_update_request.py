@@ -32,7 +32,7 @@ class SecurityMonitoringSignalAssigneeUpdateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: SecurityMonitoringSignalAssigneeUpdateData, *args, **kwargs):
+    def __init__(self_, data: SecurityMonitoringSignalAssigneeUpdateData, **kwargs):
         """
         Request body for changing the assignee of a given security monitoring signal.
 
@@ -40,7 +40,5 @@ class SecurityMonitoringSignalAssigneeUpdateRequest(ModelNormal):
         :type data: SecurityMonitoringSignalAssigneeUpdateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

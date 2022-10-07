@@ -43,7 +43,6 @@ class FormulaAndFunctionEventQueryGroupBy(ModelNormal):
         facet: str,
         limit: Union[int, UnsetType] = unset,
         sort: Union[FormulaAndFunctionEventQueryGroupBySort, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,7 +62,5 @@ class FormulaAndFunctionEventQueryGroupBy(ModelNormal):
         if sort is not unset:
             kwargs["sort"] = sort
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.facet = facet

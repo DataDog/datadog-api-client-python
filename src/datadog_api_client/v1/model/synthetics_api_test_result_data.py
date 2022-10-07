@@ -80,7 +80,6 @@ class SyntheticsAPITestResultData(ModelNormal):
         response_headers: Union[Dict[str, Any], UnsetType] = unset,
         response_size: Union[int, UnsetType] = unset,
         timings: Union[SyntheticsTiming, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -133,5 +132,3 @@ class SyntheticsAPITestResultData(ModelNormal):
         if timings is not unset:
             kwargs["timings"] = timings
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

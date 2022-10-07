@@ -30,7 +30,7 @@ class SLOListResponseMetadata(ModelNormal):
         "page": "page",
     }
 
-    def __init__(self_, page: Union[SLOListResponseMetadataPage, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, page: Union[SLOListResponseMetadataPage, UnsetType] = unset, **kwargs):
         """
         The metadata object containing additional information about the list of SLOs.
 
@@ -40,5 +40,3 @@ class SLOListResponseMetadata(ModelNormal):
         if page is not unset:
             kwargs["page"] = page
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

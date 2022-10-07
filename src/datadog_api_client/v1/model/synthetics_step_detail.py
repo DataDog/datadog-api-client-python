@@ -104,7 +104,6 @@ class SyntheticsStepDetail(ModelNormal):
         value: Union[Any, UnsetType] = unset,
         vitals_metrics: Union[List[SyntheticsCoreWebVitals], UnsetType] = unset,
         warnings: Union[List[SyntheticsStepDetailWarning], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -197,5 +196,3 @@ class SyntheticsStepDetail(ModelNormal):
         if warnings is not unset:
             kwargs["warnings"] = warnings
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

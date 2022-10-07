@@ -30,7 +30,7 @@ class IncidentResponseMeta(ModelNormal):
         "pagination": "pagination",
     }
 
-    def __init__(self_, pagination: Union[IncidentResponseMetaPagination, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, pagination: Union[IncidentResponseMetaPagination, UnsetType] = unset, **kwargs):
         """
         The metadata object containing pagination metadata.
 
@@ -40,5 +40,3 @@ class IncidentResponseMeta(ModelNormal):
         if pagination is not unset:
             kwargs["pagination"] = pagination
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -30,7 +30,7 @@ class SyntheticsDeleteTestsResponse(ModelNormal):
         "deleted_tests": "deleted_tests",
     }
 
-    def __init__(self_, deleted_tests: Union[List[SyntheticsDeletedTest], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, deleted_tests: Union[List[SyntheticsDeletedTest], UnsetType] = unset, **kwargs):
         """
         Response object for deleting Synthetic tests.
 
@@ -41,5 +41,3 @@ class SyntheticsDeleteTestsResponse(ModelNormal):
         if deleted_tests is not unset:
             kwargs["deleted_tests"] = deleted_tests
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

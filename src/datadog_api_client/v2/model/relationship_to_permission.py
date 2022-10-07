@@ -30,7 +30,7 @@ class RelationshipToPermission(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[RelationshipToPermissionData, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, data: Union[RelationshipToPermissionData, UnsetType] = unset, **kwargs):
         """
         Relationship to a permissions object.
 
@@ -40,5 +40,3 @@ class RelationshipToPermission(ModelNormal):
         if data is not unset:
             kwargs["data"] = data
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

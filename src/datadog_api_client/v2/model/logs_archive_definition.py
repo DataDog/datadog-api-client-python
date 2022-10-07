@@ -39,11 +39,7 @@ class LogsArchiveDefinition(ModelNormal):
     }
 
     def __init__(
-        self_,
-        attributes: Union[LogsArchiveAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, attributes: Union[LogsArchiveAttributes, UnsetType] = unset, id: Union[str, UnsetType] = unset, **kwargs
     ):
         """
         The definition of an archive.
@@ -63,7 +59,5 @@ class LogsArchiveDefinition(ModelNormal):
             kwargs["id"] = id
         super().__init__(kwargs)
         type = kwargs.get("type", "archives")
-
-        self_._check_pos_args(args)
 
         self_.type = type

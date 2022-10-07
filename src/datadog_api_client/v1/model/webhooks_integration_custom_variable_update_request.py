@@ -33,7 +33,6 @@ class WebhooksIntegrationCustomVariableUpdateRequest(ModelNormal):
         is_secret: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         value: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -58,5 +57,3 @@ class WebhooksIntegrationCustomVariableUpdateRequest(ModelNormal):
         if value is not unset:
             kwargs["value"] = value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

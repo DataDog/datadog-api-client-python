@@ -42,7 +42,6 @@ class SecurityMonitoringRuleCase(ModelNormal):
         name: Union[str, UnsetType] = unset,
         notifications: Union[List[str], UnsetType] = unset,
         status: Union[SecurityMonitoringRuleSeverity, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -70,5 +69,3 @@ class SecurityMonitoringRuleCase(ModelNormal):
         if status is not unset:
             kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

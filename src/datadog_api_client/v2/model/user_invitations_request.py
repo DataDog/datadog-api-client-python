@@ -28,7 +28,7 @@ class UserInvitationsRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: List[UserInvitationData], *args, **kwargs):
+    def __init__(self_, data: List[UserInvitationData], **kwargs):
         """
         Object to invite users to join the organization.
 
@@ -36,7 +36,5 @@ class UserInvitationsRequest(ModelNormal):
         :type data: [UserInvitationData]
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

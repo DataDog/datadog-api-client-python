@@ -37,7 +37,6 @@ class IncidentFieldAttributesMultipleValue(ModelNormal):
         self_,
         type: Union[IncidentFieldAttributesValueType, UnsetType] = unset,
         value: Union[List[str], none_type, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -54,5 +53,3 @@ class IncidentFieldAttributesMultipleValue(ModelNormal):
         if value is not unset:
             kwargs["value"] = value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

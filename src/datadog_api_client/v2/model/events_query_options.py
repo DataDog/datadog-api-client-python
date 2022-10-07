@@ -26,9 +26,7 @@ class EventsQueryOptions(ModelNormal):
         "timezone": "timezone",
     }
 
-    def __init__(
-        self_, time_offset: Union[int, UnsetType] = unset, timezone: Union[str, UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, time_offset: Union[int, UnsetType] = unset, timezone: Union[str, UnsetType] = unset, **kwargs):
         """
         The global query options that are used. Either provide a timezone or a time offset but not both,
         otherwise the query fails.
@@ -44,5 +42,3 @@ class EventsQueryOptions(ModelNormal):
         if timezone is not unset:
             kwargs["timezone"] = timezone
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

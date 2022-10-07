@@ -26,7 +26,7 @@ class LogsGrokParserRules(ModelNormal):
         "support_rules": "support_rules",
     }
 
-    def __init__(self_, match_rules: str, support_rules: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, match_rules: str, support_rules: Union[str, UnsetType] = unset, **kwargs):
         """
         Set of rules for the grok parser.
 
@@ -39,7 +39,5 @@ class LogsGrokParserRules(ModelNormal):
         if support_rules is not unset:
             kwargs["support_rules"] = support_rules
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.match_rules = match_rules

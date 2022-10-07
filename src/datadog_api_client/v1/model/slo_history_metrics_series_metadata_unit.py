@@ -45,7 +45,6 @@ class SLOHistoryMetricsSeriesMetadataUnit(ModelNormal):
         plural: Union[str, none_type, UnsetType] = unset,
         scale_factor: Union[float, UnsetType] = unset,
         short_name: Union[str, none_type, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -82,5 +81,3 @@ class SLOHistoryMetricsSeriesMetadataUnit(ModelNormal):
         if short_name is not unset:
             kwargs["short_name"] = short_name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

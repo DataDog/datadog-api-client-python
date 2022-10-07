@@ -45,7 +45,6 @@ class SyntheticsBasicAuthNTLM(ModelNormal):
         password: Union[str, UnsetType] = unset,
         username: Union[str, UnsetType] = unset,
         workstation: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -75,7 +74,5 @@ class SyntheticsBasicAuthNTLM(ModelNormal):
         if workstation is not unset:
             kwargs["workstation"] = workstation
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.type = type

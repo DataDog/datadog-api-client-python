@@ -49,7 +49,6 @@ class OrganizationAttributes(ModelNormal):
         public_id: Union[str, UnsetType] = unset,
         sharing: Union[str, UnsetType] = unset,
         url: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -96,5 +95,3 @@ class OrganizationAttributes(ModelNormal):
         if url is not unset:
             kwargs["url"] = url
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

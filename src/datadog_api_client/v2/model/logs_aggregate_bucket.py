@@ -39,7 +39,6 @@ class LogsAggregateBucket(ModelNormal):
         computes: Union[
             Dict[str, Union[LogsAggregateBucketValue, str, float, LogsAggregateBucketValueTimeseries]], UnsetType
         ] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -56,5 +55,3 @@ class LogsAggregateBucket(ModelNormal):
         if computes is not unset:
             kwargs["computes"] = computes
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -26,7 +26,7 @@ class SyntheticsGlobalVariableValue(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self_, secure: Union[bool, UnsetType] = unset, value: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, secure: Union[bool, UnsetType] = unset, value: Union[str, UnsetType] = unset, **kwargs):
         """
         Value of the global variable.
 
@@ -42,5 +42,3 @@ class SyntheticsGlobalVariableValue(ModelNormal):
         if value is not unset:
             kwargs["value"] = value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

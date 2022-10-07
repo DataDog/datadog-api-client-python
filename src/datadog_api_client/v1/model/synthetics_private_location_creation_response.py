@@ -45,7 +45,6 @@ class SyntheticsPrivateLocationCreationResponse(ModelNormal):
         config: Union[dict, UnsetType] = unset,
         private_location: Union[SyntheticsPrivateLocation, UnsetType] = unset,
         result_encryption: Union[SyntheticsPrivateLocationCreationResponseResultEncryption, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -67,5 +66,3 @@ class SyntheticsPrivateLocationCreationResponse(ModelNormal):
         if result_encryption is not unset:
             kwargs["result_encryption"] = result_encryption
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

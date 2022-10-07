@@ -23,7 +23,7 @@ class LogsArchiveIntegrationS3(ModelNormal):
         "role_name": "role_name",
     }
 
-    def __init__(self_, account_id: str, role_name: str, *args, **kwargs):
+    def __init__(self_, account_id: str, role_name: str, **kwargs):
         """
         The S3 Archive's integration destination.
 
@@ -34,8 +34,6 @@ class LogsArchiveIntegrationS3(ModelNormal):
         :type role_name: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.account_id = account_id
         self_.role_name = role_name

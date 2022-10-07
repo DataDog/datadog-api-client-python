@@ -30,7 +30,7 @@ class SyntheticsGlobalVariableAttributes(ModelNormal):
         "restricted_roles": "restricted_roles",
     }
 
-    def __init__(self_, restricted_roles: Union[SyntheticsRestrictedRoles, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, restricted_roles: Union[SyntheticsRestrictedRoles, UnsetType] = unset, **kwargs):
         """
         Attributes of the global variable.
 
@@ -40,5 +40,3 @@ class SyntheticsGlobalVariableAttributes(ModelNormal):
         if restricted_roles is not unset:
             kwargs["restricted_roles"] = restricted_roles
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

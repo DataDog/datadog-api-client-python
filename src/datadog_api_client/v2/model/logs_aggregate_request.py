@@ -53,7 +53,6 @@ class LogsAggregateRequest(ModelNormal):
         group_by: Union[List[LogsGroupBy], UnsetType] = unset,
         options: Union[LogsQueryOptions, UnsetType] = unset,
         page: Union[LogsAggregateRequestPage, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -86,5 +85,3 @@ class LogsAggregateRequest(ModelNormal):
         if page is not unset:
             kwargs["page"] = page
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

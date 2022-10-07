@@ -21,7 +21,7 @@ class APIKeyUpdateAttributes(ModelNormal):
         "name": "name",
     }
 
-    def __init__(self_, name: str, *args, **kwargs):
+    def __init__(self_, name: str, **kwargs):
         """
         Attributes used to update an API Key.
 
@@ -29,7 +29,5 @@ class APIKeyUpdateAttributes(ModelNormal):
         :type name: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name

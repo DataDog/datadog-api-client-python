@@ -32,7 +32,7 @@ class NotebookUpdateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: NotebookUpdateDataAttributes, type: NotebookResourceType, *args, **kwargs):
+    def __init__(self_, attributes: NotebookUpdateDataAttributes, type: NotebookResourceType, **kwargs):
         """
         The data for a notebook update request.
 
@@ -43,8 +43,6 @@ class NotebookUpdateData(ModelNormal):
         :type type: NotebookResourceType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.type = type

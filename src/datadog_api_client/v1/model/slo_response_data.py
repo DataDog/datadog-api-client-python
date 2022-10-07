@@ -85,7 +85,6 @@ class SLOResponseData(ModelNormal):
         tags: Union[List[str], UnsetType] = unset,
         thresholds: Union[List[SLOThreshold], UnsetType] = unset,
         type: Union[SLOType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -187,5 +186,3 @@ class SLOResponseData(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

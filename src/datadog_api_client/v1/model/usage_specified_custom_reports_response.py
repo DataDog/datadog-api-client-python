@@ -38,7 +38,6 @@ class UsageSpecifiedCustomReportsResponse(ModelNormal):
         self_,
         data: Union[UsageSpecifiedCustomReportsData, UnsetType] = unset,
         meta: Union[UsageSpecifiedCustomReportsMeta, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class UsageSpecifiedCustomReportsResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

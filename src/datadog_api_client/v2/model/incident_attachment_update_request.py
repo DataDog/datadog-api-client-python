@@ -28,7 +28,7 @@ class IncidentAttachmentUpdateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: List[IncidentAttachmentUpdateData], *args, **kwargs):
+    def __init__(self_, data: List[IncidentAttachmentUpdateData], **kwargs):
         """
         The update request for an incident's attachments.
 
@@ -39,7 +39,5 @@ class IncidentAttachmentUpdateRequest(ModelNormal):
         :type data: [IncidentAttachmentUpdateData]
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

@@ -28,7 +28,7 @@ class APIKeyCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: APIKeyCreateData, *args, **kwargs):
+    def __init__(self_, data: APIKeyCreateData, **kwargs):
         """
         Request used to create an API key.
 
@@ -36,7 +36,5 @@ class APIKeyCreateRequest(ModelNormal):
         :type data: APIKeyCreateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

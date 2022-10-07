@@ -45,7 +45,6 @@ class SyntheticsDevice(ModelNormal):
         name: str,
         width: int,
         is_mobile: Union[bool, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -69,8 +68,6 @@ class SyntheticsDevice(ModelNormal):
         if is_mobile is not unset:
             kwargs["is_mobile"] = is_mobile
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.height = height
         self_.id = id

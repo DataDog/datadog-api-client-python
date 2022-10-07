@@ -38,7 +38,6 @@ class SLOHistoryResponse(ModelNormal):
         self_,
         data: Union[SLOHistoryResponseData, UnsetType] = unset,
         errors: Union[List[SLOHistoryResponseError], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class SLOHistoryResponse(ModelNormal):
         if errors is not unset:
             kwargs["errors"] = errors
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

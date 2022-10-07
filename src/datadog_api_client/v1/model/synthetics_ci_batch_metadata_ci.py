@@ -38,7 +38,6 @@ class SyntheticsCIBatchMetadataCI(ModelNormal):
         self_,
         pipeline: Union[SyntheticsCIBatchMetadataPipeline, UnsetType] = unset,
         provider: Union[SyntheticsCIBatchMetadataProvider, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class SyntheticsCIBatchMetadataCI(ModelNormal):
         if provider is not unset:
             kwargs["provider"] = provider
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

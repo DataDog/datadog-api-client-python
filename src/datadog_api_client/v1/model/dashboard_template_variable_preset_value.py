@@ -39,7 +39,6 @@ class DashboardTemplateVariablePresetValue(ModelNormal):
         name: Union[str, UnsetType] = unset,
         value: Union[str, UnsetType] = unset,
         values: Union[List[str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -61,5 +60,3 @@ class DashboardTemplateVariablePresetValue(ModelNormal):
         if values is not unset:
             kwargs["values"] = values
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

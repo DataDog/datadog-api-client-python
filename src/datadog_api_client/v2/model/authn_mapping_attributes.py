@@ -44,7 +44,6 @@ class AuthNMappingAttributes(ModelNormal):
         created_at: Union[datetime, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         saml_assertion_attribute_id: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -76,5 +75,3 @@ class AuthNMappingAttributes(ModelNormal):
         if saml_assertion_attribute_id is not unset:
             kwargs["saml_assertion_attribute_id"] = saml_assertion_attribute_id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

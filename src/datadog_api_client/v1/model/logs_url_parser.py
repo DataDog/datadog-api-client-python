@@ -47,7 +47,6 @@ class LogsURLParser(ModelNormal):
         is_enabled: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         normalize_ending_slashes: Union[bool, none_type, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -80,8 +79,6 @@ class LogsURLParser(ModelNormal):
         super().__init__(kwargs)
         sources = kwargs.get("sources", ["http.url"])
         target = kwargs.get("target", "http.url_details")
-
-        self_._check_pos_args(args)
 
         self_.sources = sources
         self_.target = target

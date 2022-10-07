@@ -51,7 +51,6 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
         rrule: Union[str, UnsetType] = unset,
         start: Union[int, UnsetType] = unset,
         timezone: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -94,5 +93,3 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
         if timezone is not unset:
             kwargs["timezone"] = timezone
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

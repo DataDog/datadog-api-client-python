@@ -73,7 +73,6 @@ class UsageHostHour(ModelNormal):
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         vsphere_host_count: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -169,5 +168,3 @@ class UsageHostHour(ModelNormal):
         if vsphere_host_count is not unset:
             kwargs["vsphere_host_count"] = vsphere_host_count
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

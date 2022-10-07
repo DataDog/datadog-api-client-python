@@ -33,11 +33,7 @@ class AWSTagFilterDeleteRequest(ModelNormal):
     }
 
     def __init__(
-        self_,
-        account_id: Union[str, UnsetType] = unset,
-        namespace: Union[AWSNamespace, UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, account_id: Union[str, UnsetType] = unset, namespace: Union[AWSNamespace, UnsetType] = unset, **kwargs
     ):
         """
         The objects used to delete an AWS tag filter entry.
@@ -53,5 +49,3 @@ class AWSTagFilterDeleteRequest(ModelNormal):
         if namespace is not unset:
             kwargs["namespace"] = namespace
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

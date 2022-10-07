@@ -26,7 +26,7 @@ class SyntheticsLocation(ModelNormal):
         "name": "name",
     }
 
-    def __init__(self_, id: Union[str, UnsetType] = unset, name: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, id: Union[str, UnsetType] = unset, name: Union[str, UnsetType] = unset, **kwargs):
         """
         Synthetic location that can be used when creating or editing a
         test.
@@ -42,5 +42,3 @@ class SyntheticsLocation(ModelNormal):
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

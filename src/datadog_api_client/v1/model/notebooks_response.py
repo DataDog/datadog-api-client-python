@@ -38,7 +38,6 @@ class NotebooksResponse(ModelNormal):
         self_,
         data: Union[List[NotebooksResponseData], UnsetType] = unset,
         meta: Union[NotebooksResponseMeta, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class NotebooksResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

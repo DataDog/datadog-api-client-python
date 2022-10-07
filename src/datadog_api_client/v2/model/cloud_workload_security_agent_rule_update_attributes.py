@@ -33,7 +33,6 @@ class CloudWorkloadSecurityAgentRuleUpdateAttributes(ModelNormal):
         description: Union[str, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         expression: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class CloudWorkloadSecurityAgentRuleUpdateAttributes(ModelNormal):
         if expression is not unset:
             kwargs["expression"] = expression
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

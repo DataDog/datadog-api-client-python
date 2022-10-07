@@ -66,7 +66,6 @@ class SyntheticsBatchResult(ModelNormal):
         test_name: Union[str, UnsetType] = unset,
         test_public_id: Union[str, UnsetType] = unset,
         test_type: Union[SyntheticsTestDetailsType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -123,5 +122,3 @@ class SyntheticsBatchResult(ModelNormal):
         if test_type is not unset:
             kwargs["test_type"] = test_type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

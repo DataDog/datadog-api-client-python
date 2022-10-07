@@ -28,7 +28,7 @@ class NullableRelationshipToUser(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: NullableRelationshipToUserData, *args, **kwargs):
+    def __init__(self_, data: NullableRelationshipToUserData, **kwargs):
         """
         Relationship to user.
 
@@ -36,7 +36,5 @@ class NullableRelationshipToUser(ModelNormal):
         :type data: NullableRelationshipToUserData, none_type
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

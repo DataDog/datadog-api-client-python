@@ -40,7 +40,6 @@ class UsageTopAvgMetricsMetadata(ModelNormal):
         day: Union[datetime, UnsetType] = unset,
         month: Union[datetime, UnsetType] = unset,
         pagination: Union[UsageTopAvgMetricsPagination, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -62,5 +61,3 @@ class UsageTopAvgMetricsMetadata(ModelNormal):
         if pagination is not unset:
             kwargs["pagination"] = pagination
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

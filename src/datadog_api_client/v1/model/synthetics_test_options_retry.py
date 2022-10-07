@@ -26,9 +26,7 @@ class SyntheticsTestOptionsRetry(ModelNormal):
         "interval": "interval",
     }
 
-    def __init__(
-        self_, count: Union[int, UnsetType] = unset, interval: Union[float, UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, count: Union[int, UnsetType] = unset, interval: Union[float, UnsetType] = unset, **kwargs):
         """
         Object describing the retry strategy to apply to a Synthetic test.
 
@@ -45,5 +43,3 @@ class SyntheticsTestOptionsRetry(ModelNormal):
         if interval is not unset:
             kwargs["interval"] = interval
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

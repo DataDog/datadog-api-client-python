@@ -43,7 +43,6 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
         metric_type: MetricTagConfigurationMetricTypes,
         aggregations: Union[MetricCustomAggregations, UnsetType] = unset,
         include_percentiles: Union[bool, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -83,8 +82,6 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
             kwargs["include_percentiles"] = include_percentiles
         super().__init__(kwargs)
         tags = kwargs.get("tags", [])
-
-        self_._check_pos_args(args)
 
         self_.metric_type = metric_type
         self_.tags = tags

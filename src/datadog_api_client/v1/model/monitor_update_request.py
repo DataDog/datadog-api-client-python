@@ -105,7 +105,6 @@ class MonitorUpdateRequest(ModelNormal):
         state: Union[MonitorState, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         type: Union[MonitorType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -192,5 +191,3 @@ class MonitorUpdateRequest(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

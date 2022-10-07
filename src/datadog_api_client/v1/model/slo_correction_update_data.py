@@ -42,7 +42,6 @@ class SLOCorrectionUpdateData(ModelNormal):
         self_,
         attributes: Union[SLOCorrectionUpdateRequestAttributes, UnsetType] = unset,
         type: Union[SLOCorrectionType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -59,5 +58,3 @@ class SLOCorrectionUpdateData(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -26,9 +26,7 @@ class SyntheticsCIBatchMetadataGit(ModelNormal):
         "commit_sha": "commitSha",
     }
 
-    def __init__(
-        self_, branch: Union[str, UnsetType] = unset, commit_sha: Union[str, UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, branch: Union[str, UnsetType] = unset, commit_sha: Union[str, UnsetType] = unset, **kwargs):
         """
         Git information.
 
@@ -43,5 +41,3 @@ class SyntheticsCIBatchMetadataGit(ModelNormal):
         if commit_sha is not unset:
             kwargs["commit_sha"] = commit_sha
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

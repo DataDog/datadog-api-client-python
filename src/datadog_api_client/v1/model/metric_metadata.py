@@ -48,7 +48,6 @@ class MetricMetadata(ModelNormal):
         statsd_interval: Union[int, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
         unit: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -90,5 +89,3 @@ class MetricMetadata(ModelNormal):
         if unit is not unset:
             kwargs["unit"] = unit
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

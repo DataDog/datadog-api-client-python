@@ -28,7 +28,7 @@ class IncidentCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: IncidentCreateData, *args, **kwargs):
+    def __init__(self_, data: IncidentCreateData, **kwargs):
         """
         Create request for an incident.
 
@@ -36,7 +36,5 @@ class IncidentCreateRequest(ModelNormal):
         :type data: IncidentCreateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

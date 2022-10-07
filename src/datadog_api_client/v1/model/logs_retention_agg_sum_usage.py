@@ -36,7 +36,6 @@ class LogsRetentionAggSumUsage(ModelNormal):
         logs_live_indexed_logs_usage_agg_sum: Union[int, UnsetType] = unset,
         logs_rehydrated_indexed_logs_usage_agg_sum: Union[int, UnsetType] = unset,
         retention: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,5 +62,3 @@ class LogsRetentionAggSumUsage(ModelNormal):
         if retention is not unset:
             kwargs["retention"] = retention
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

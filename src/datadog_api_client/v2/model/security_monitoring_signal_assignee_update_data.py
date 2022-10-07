@@ -32,7 +32,7 @@ class SecurityMonitoringSignalAssigneeUpdateData(ModelNormal):
         "attributes": "attributes",
     }
 
-    def __init__(self_, attributes: SecurityMonitoringSignalAssigneeUpdateAttributes, *args, **kwargs):
+    def __init__(self_, attributes: SecurityMonitoringSignalAssigneeUpdateAttributes, **kwargs):
         """
         Data containing the patch for changing the assignee of a signal.
 
@@ -40,7 +40,5 @@ class SecurityMonitoringSignalAssigneeUpdateData(ModelNormal):
         :type attributes: SecurityMonitoringSignalAssigneeUpdateAttributes
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes

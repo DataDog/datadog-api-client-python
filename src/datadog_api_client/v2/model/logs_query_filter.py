@@ -36,7 +36,6 @@ class LogsQueryFilter(ModelNormal):
         indexes: Union[List[str], UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
         to: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,5 +62,3 @@ class LogsQueryFilter(ModelNormal):
         if to is not unset:
             kwargs["to"] = to
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -42,7 +42,6 @@ class UsageTopAvgMetricsHour(ModelNormal):
         max_metric_hour: Union[int, UnsetType] = unset,
         metric_category: Union[UsageMetricCategory, UnsetType] = unset,
         metric_name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -69,5 +68,3 @@ class UsageTopAvgMetricsHour(ModelNormal):
         if metric_name is not unset:
             kwargs["metric_name"] = metric_name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

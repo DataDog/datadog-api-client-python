@@ -44,7 +44,6 @@ class SignalStateUpdateRequest(ModelNormal):
         archive_comment: Union[str, UnsetType] = unset,
         archive_reason: Union[SignalArchiveReason, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -69,7 +68,5 @@ class SignalStateUpdateRequest(ModelNormal):
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.state = state

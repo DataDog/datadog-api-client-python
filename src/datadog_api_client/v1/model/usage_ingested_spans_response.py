@@ -30,7 +30,7 @@ class UsageIngestedSpansResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageIngestedSpansHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageIngestedSpansHour], UnsetType] = unset, **kwargs):
         """
         Response containing the ingested spans usage for each hour for a given organization.
 
@@ -40,5 +40,3 @@ class UsageIngestedSpansResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

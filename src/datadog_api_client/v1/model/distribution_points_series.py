@@ -47,7 +47,6 @@ class DistributionPointsSeries(ModelNormal):
         host: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         type: Union[DistributionPointsType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -75,8 +74,6 @@ class DistributionPointsSeries(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.metric = metric
         self_.points = points

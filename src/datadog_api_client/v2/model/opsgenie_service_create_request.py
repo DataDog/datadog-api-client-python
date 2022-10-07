@@ -28,7 +28,7 @@ class OpsgenieServiceCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: OpsgenieServiceCreateData, *args, **kwargs):
+    def __init__(self_, data: OpsgenieServiceCreateData, **kwargs):
         """
         Create request for an Opsgenie service.
 
@@ -36,7 +36,5 @@ class OpsgenieServiceCreateRequest(ModelNormal):
         :type data: OpsgenieServiceCreateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

@@ -30,7 +30,7 @@ class LogsArchives(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[List[LogsArchiveDefinition], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, data: Union[List[LogsArchiveDefinition], UnsetType] = unset, **kwargs):
         """
         The available archives.
 
@@ -40,5 +40,3 @@ class LogsArchives(ModelNormal):
         if data is not unset:
             kwargs["data"] = data
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

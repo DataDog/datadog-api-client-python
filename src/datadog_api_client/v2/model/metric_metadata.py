@@ -30,7 +30,7 @@ class MetricMetadata(ModelNormal):
         "origin": "origin",
     }
 
-    def __init__(self_, origin: Union[MetricOrigin, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, origin: Union[MetricOrigin, UnsetType] = unset, **kwargs):
         """
         Metadata for the metric.
 
@@ -40,5 +40,3 @@ class MetricMetadata(ModelNormal):
         if origin is not unset:
             kwargs["origin"] = origin
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

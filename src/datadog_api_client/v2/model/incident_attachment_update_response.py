@@ -43,7 +43,6 @@ class IncidentAttachmentUpdateResponse(ModelNormal):
         self_,
         data: List[IncidentAttachmentData],
         included: Union[List[Union[IncidentAttachmentsResponseIncludedItem, User]], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -59,7 +58,5 @@ class IncidentAttachmentUpdateResponse(ModelNormal):
         if included is not unset:
             kwargs["included"] = included
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

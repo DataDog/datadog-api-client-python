@@ -45,7 +45,6 @@ class SyntheticsTriggerCITestsResponse(ModelNormal):
         locations: Union[List[SyntheticsTriggerCITestLocation], UnsetType] = unset,
         results: Union[List[SyntheticsTriggerCITestRunResult], UnsetType] = unset,
         triggered_check_ids: Union[List[str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -72,5 +71,3 @@ class SyntheticsTriggerCITestsResponse(ModelNormal):
         if triggered_check_ids is not unset:
             kwargs["triggered_check_ids"] = triggered_check_ids
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

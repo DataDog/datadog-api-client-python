@@ -28,7 +28,7 @@ class MetricTagConfigurationUpdateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: MetricTagConfigurationUpdateData, *args, **kwargs):
+    def __init__(self_, data: MetricTagConfigurationUpdateData, **kwargs):
         """
         Request object that includes the metric that you would like to edit the tag configuration on.
 
@@ -36,7 +36,5 @@ class MetricTagConfigurationUpdateRequest(ModelNormal):
         :type data: MetricTagConfigurationUpdateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

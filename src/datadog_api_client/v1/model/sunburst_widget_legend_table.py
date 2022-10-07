@@ -28,7 +28,7 @@ class SunburstWidgetLegendTable(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, type: SunburstWidgetLegendTableType, *args, **kwargs):
+    def __init__(self_, type: SunburstWidgetLegendTableType, **kwargs):
         """
         Configuration of table-based legend.
 
@@ -36,7 +36,5 @@ class SunburstWidgetLegendTable(ModelNormal):
         :type type: SunburstWidgetLegendTableType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.type = type

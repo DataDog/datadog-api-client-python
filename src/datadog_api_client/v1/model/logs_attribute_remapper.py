@@ -62,7 +62,6 @@ class LogsAttributeRemapper(ModelNormal):
         source_type: Union[str, UnsetType] = unset,
         target_format: Union[TargetFormatType, UnsetType] = unset,
         target_type: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -117,8 +116,6 @@ class LogsAttributeRemapper(ModelNormal):
         if target_type is not unset:
             kwargs["target_type"] = target_type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.sources = sources
         self_.target = target

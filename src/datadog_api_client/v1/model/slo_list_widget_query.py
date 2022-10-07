@@ -33,7 +33,7 @@ class SLOListWidgetQuery(ModelNormal):
         "query_string": "query_string",
     }
 
-    def __init__(self_, query_string: str, limit: Union[int, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, query_string: str, limit: Union[int, UnsetType] = unset, **kwargs):
         """
         Updated SLO List widget.
 
@@ -46,7 +46,5 @@ class SLOListWidgetQuery(ModelNormal):
         if limit is not unset:
             kwargs["limit"] = limit
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.query_string = query_string

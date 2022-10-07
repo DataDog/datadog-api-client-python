@@ -28,7 +28,7 @@ class NotebookMarkdownCellAttributes(ModelNormal):
         "definition": "definition",
     }
 
-    def __init__(self_, definition: NotebookMarkdownCellDefinition, *args, **kwargs):
+    def __init__(self_, definition: NotebookMarkdownCellDefinition, **kwargs):
         """
         The attributes of a notebook ``markdown`` cell.
 
@@ -36,7 +36,5 @@ class NotebookMarkdownCellAttributes(ModelNormal):
         :type definition: NotebookMarkdownCellDefinition
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.definition = definition

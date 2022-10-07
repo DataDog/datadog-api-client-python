@@ -53,7 +53,6 @@ class DowntimeRecurrence(ModelNormal):
         until_date: Union[int, none_type, UnsetType] = unset,
         until_occurrences: Union[int, none_type, UnsetType] = unset,
         week_days: Union[List[str], none_type, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -99,5 +98,3 @@ class DowntimeRecurrence(ModelNormal):
         if week_days is not unset:
             kwargs["week_days"] = week_days
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

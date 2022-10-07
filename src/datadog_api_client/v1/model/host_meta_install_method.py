@@ -33,7 +33,6 @@ class HostMetaInstallMethod(ModelNormal):
         installer_version: Union[str, UnsetType] = unset,
         tool: Union[str, UnsetType] = unset,
         tool_version: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class HostMetaInstallMethod(ModelNormal):
         if tool_version is not unset:
             kwargs["tool_version"] = tool_version
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

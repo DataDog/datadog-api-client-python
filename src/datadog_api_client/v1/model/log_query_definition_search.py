@@ -21,7 +21,7 @@ class LogQueryDefinitionSearch(ModelNormal):
         "query": "query",
     }
 
-    def __init__(self_, query: str, *args, **kwargs):
+    def __init__(self_, query: str, **kwargs):
         """
         The query being made on the logs.
 
@@ -29,7 +29,5 @@ class LogQueryDefinitionSearch(ModelNormal):
         :type query: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.query = query

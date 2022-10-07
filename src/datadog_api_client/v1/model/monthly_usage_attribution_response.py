@@ -38,7 +38,6 @@ class MonthlyUsageAttributionResponse(ModelNormal):
         self_,
         metadata: Union[MonthlyUsageAttributionMetadata, UnsetType] = unset,
         usage: Union[List[MonthlyUsageAttributionBody], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class MonthlyUsageAttributionResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

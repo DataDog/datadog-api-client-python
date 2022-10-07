@@ -46,7 +46,6 @@ class WebhooksIntegrationUpdateRequest(ModelNormal):
         name: Union[str, UnsetType] = unset,
         payload: Union[str, none_type, UnsetType] = unset,
         url: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -86,5 +85,3 @@ class WebhooksIntegrationUpdateRequest(ModelNormal):
         if url is not unset:
             kwargs["url"] = url
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

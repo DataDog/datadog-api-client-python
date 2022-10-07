@@ -48,7 +48,6 @@ class LogsListRequest(ModelNormal):
         options: Union[LogsQueryOptions, UnsetType] = unset,
         page: Union[LogsListRequestPage, UnsetType] = unset,
         sort: Union[LogsSort, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -76,5 +75,3 @@ class LogsListRequest(ModelNormal):
         if sort is not unset:
             kwargs["sort"] = sort
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

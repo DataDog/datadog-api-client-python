@@ -43,7 +43,6 @@ class AuditLogsEventsResponse(ModelNormal):
         data: Union[List[AuditLogsEvent], UnsetType] = unset,
         links: Union[AuditLogsResponseLinks, UnsetType] = unset,
         meta: Union[AuditLogsResponseMetadata, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -65,5 +64,3 @@ class AuditLogsEventsResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

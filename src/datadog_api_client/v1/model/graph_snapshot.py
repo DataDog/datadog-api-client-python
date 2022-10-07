@@ -33,7 +33,6 @@ class GraphSnapshot(ModelNormal):
         graph_def: Union[str, UnsetType] = unset,
         metric_query: Union[str, UnsetType] = unset,
         snapshot_url: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -57,5 +56,3 @@ class GraphSnapshot(ModelNormal):
         if snapshot_url is not unset:
             kwargs["snapshot_url"] = snapshot_url
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

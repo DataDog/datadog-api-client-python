@@ -40,7 +40,6 @@ class SearchSLOResponseLinks(ModelNormal):
         next: Union[str, UnsetType] = unset,
         prev: Union[str, none_type, UnsetType] = unset,
         self: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -72,5 +71,3 @@ class SearchSLOResponseLinks(ModelNormal):
         if self is not unset:
             kwargs["self"] = self
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

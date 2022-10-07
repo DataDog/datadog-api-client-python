@@ -24,7 +24,7 @@ class DashboardListDeleteResponse(ModelNormal):
         "deleted_dashboard_list_id": "deleted_dashboard_list_id",
     }
 
-    def __init__(self_, deleted_dashboard_list_id: Union[int, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, deleted_dashboard_list_id: Union[int, UnsetType] = unset, **kwargs):
         """
         Deleted dashboard details.
 
@@ -34,5 +34,3 @@ class DashboardListDeleteResponse(ModelNormal):
         if deleted_dashboard_list_id is not unset:
             kwargs["deleted_dashboard_list_id"] = deleted_dashboard_list_id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

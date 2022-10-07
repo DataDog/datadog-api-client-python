@@ -26,9 +26,7 @@ class HostTags(ModelNormal):
         "tags": "tags",
     }
 
-    def __init__(
-        self_, host: Union[str, UnsetType] = unset, tags: Union[List[str], UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, host: Union[str, UnsetType] = unset, tags: Union[List[str], UnsetType] = unset, **kwargs):
         """
         Set of tags to associate with your host.
 
@@ -43,5 +41,3 @@ class HostTags(ModelNormal):
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

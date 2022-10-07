@@ -24,7 +24,7 @@ class UserDisableResponse(ModelNormal):
         "message": "message",
     }
 
-    def __init__(self_, message: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, message: Union[str, UnsetType] = unset, **kwargs):
         """
         Array of user disabled for a given organization.
 
@@ -34,5 +34,3 @@ class UserDisableResponse(ModelNormal):
         if message is not unset:
             kwargs["message"] = message
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

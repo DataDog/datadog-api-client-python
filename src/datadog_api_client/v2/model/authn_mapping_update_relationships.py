@@ -30,7 +30,7 @@ class AuthNMappingUpdateRelationships(ModelNormal):
         "role": "role",
     }
 
-    def __init__(self_, role: Union[RelationshipToRole, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, role: Union[RelationshipToRole, UnsetType] = unset, **kwargs):
         """
         Relationship of AuthN Mapping update object to Role.
 
@@ -40,5 +40,3 @@ class AuthNMappingUpdateRelationships(ModelNormal):
         if role is not unset:
             kwargs["role"] = role
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

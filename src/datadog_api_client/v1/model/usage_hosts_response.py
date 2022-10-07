@@ -30,7 +30,7 @@ class UsageHostsResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageHostHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageHostHour], UnsetType] = unset, **kwargs):
         """
         Host usage response.
 
@@ -40,5 +40,3 @@ class UsageHostsResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

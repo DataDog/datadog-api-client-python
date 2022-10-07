@@ -38,7 +38,6 @@ class HourlyUsageResponse(ModelNormal):
         self_,
         data: Union[List[HourlyUsage], UnsetType] = unset,
         meta: Union[HourlyUsageMetadata, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class HourlyUsageResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -43,7 +43,6 @@ class SearchSLOResponse(ModelNormal):
         data: Union[SearchSLOResponseData, UnsetType] = unset,
         links: Union[SearchSLOResponseLinks, UnsetType] = unset,
         meta: Union[SearchSLOResponseMeta, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -65,5 +64,3 @@ class SearchSLOResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

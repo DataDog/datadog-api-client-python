@@ -33,7 +33,6 @@ class HostMetrics(ModelNormal):
         cpu: Union[float, UnsetType] = unset,
         iowait: Union[float, UnsetType] = unset,
         load: Union[float, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class HostMetrics(ModelNormal):
         if load is not unset:
             kwargs["load"] = load
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

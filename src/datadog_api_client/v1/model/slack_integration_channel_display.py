@@ -36,7 +36,6 @@ class SlackIntegrationChannelDisplay(ModelNormal):
         notified: Union[bool, UnsetType] = unset,
         snapshot: Union[bool, UnsetType] = unset,
         tags: Union[bool, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,5 +62,3 @@ class SlackIntegrationChannelDisplay(ModelNormal):
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -28,7 +28,7 @@ class AuthNMappingCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: AuthNMappingCreateData, *args, **kwargs):
+    def __init__(self_, data: AuthNMappingCreateData, **kwargs):
         """
         Request for creating an AuthN Mapping.
 
@@ -36,7 +36,5 @@ class AuthNMappingCreateRequest(ModelNormal):
         :type data: AuthNMappingCreateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

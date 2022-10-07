@@ -30,7 +30,7 @@ class DashboardSummary(ModelNormal):
         "dashboards": "dashboards",
     }
 
-    def __init__(self_, dashboards: Union[List[DashboardSummaryDefinition], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, dashboards: Union[List[DashboardSummaryDefinition], UnsetType] = unset, **kwargs):
         """
         Dashboard summary response.
 
@@ -40,5 +40,3 @@ class DashboardSummary(ModelNormal):
         if dashboards is not unset:
             kwargs["dashboards"] = dashboards
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

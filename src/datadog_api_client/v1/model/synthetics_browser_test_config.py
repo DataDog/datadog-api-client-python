@@ -49,7 +49,6 @@ class SyntheticsBrowserTestConfig(ModelNormal):
         config_variables: Union[List[SyntheticsConfigVariable], UnsetType] = unset,
         set_cookie: Union[str, UnsetType] = unset,
         variables: Union[List[SyntheticsBrowserVariable], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -78,8 +77,6 @@ class SyntheticsBrowserTestConfig(ModelNormal):
             kwargs["variables"] = variables
         super().__init__(kwargs)
         assertions = kwargs.get("assertions", [])
-
-        self_._check_pos_args(args)
 
         self_.assertions = assertions
         self_.request = request

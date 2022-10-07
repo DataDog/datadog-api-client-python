@@ -28,7 +28,7 @@ class ServiceAccountCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: ServiceAccountCreateData, *args, **kwargs):
+    def __init__(self_, data: ServiceAccountCreateData, **kwargs):
         """
         Create a service account.
 
@@ -36,7 +36,5 @@ class ServiceAccountCreateRequest(ModelNormal):
         :type data: ServiceAccountCreateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

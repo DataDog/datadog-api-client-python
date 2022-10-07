@@ -53,7 +53,6 @@ class RUMAggregateRequest(ModelNormal):
         group_by: Union[List[RUMGroupBy], UnsetType] = unset,
         options: Union[RUMQueryOptions, UnsetType] = unset,
         page: Union[RUMQueryPageOptions, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -86,5 +85,3 @@ class RUMAggregateRequest(ModelNormal):
         if page is not unset:
             kwargs["page"] = page
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

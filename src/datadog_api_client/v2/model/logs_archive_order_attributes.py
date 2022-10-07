@@ -22,7 +22,7 @@ class LogsArchiveOrderAttributes(ModelNormal):
         "archive_ids": "archive_ids",
     }
 
-    def __init__(self_, archive_ids: List[str], *args, **kwargs):
+    def __init__(self_, archive_ids: List[str], **kwargs):
         """
         The attributes associated with the archive order.
 
@@ -31,7 +31,5 @@ class LogsArchiveOrderAttributes(ModelNormal):
         :type archive_ids: [str]
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.archive_ids = archive_ids

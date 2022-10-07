@@ -27,7 +27,7 @@ class AuthenticationValidationResponse(ModelNormal):
         "valid",
     }
 
-    def __init__(self_, valid: Union[bool, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, valid: Union[bool, UnsetType] = unset, **kwargs):
         """
         Represent validation endpoint responses.
 
@@ -37,5 +37,3 @@ class AuthenticationValidationResponse(ModelNormal):
         if valid is not unset:
             kwargs["valid"] = valid
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

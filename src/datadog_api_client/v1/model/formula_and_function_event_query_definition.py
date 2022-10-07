@@ -71,7 +71,6 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         indexes: Union[List[str], UnsetType] = unset,
         search: Union[FormulaAndFunctionEventQueryDefinitionSearch, UnsetType] = unset,
         storage: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -107,8 +106,6 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         if storage is not unset:
             kwargs["storage"] = storage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.compute = compute
         self_.data_source = data_source

@@ -30,7 +30,7 @@ class UserResponse(ModelNormal):
         "user": "user",
     }
 
-    def __init__(self_, user: Union[User, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, user: Union[User, UnsetType] = unset, **kwargs):
         """
         A Datadog User.
 
@@ -40,5 +40,3 @@ class UserResponse(ModelNormal):
         if user is not unset:
             kwargs["user"] = user
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -42,7 +42,6 @@ class SyntheticsSSLCertificateIssuer(ModelNormal):
         o: Union[str, UnsetType] = unset,
         ou: Union[str, UnsetType] = unset,
         st: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -79,5 +78,3 @@ class SyntheticsSSLCertificateIssuer(ModelNormal):
         if st is not unset:
             kwargs["st"] = st
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

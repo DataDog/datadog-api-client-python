@@ -43,7 +43,6 @@ class RUMEventsResponse(ModelNormal):
         data: Union[List[RUMEvent], UnsetType] = unset,
         links: Union[RUMResponseLinks, UnsetType] = unset,
         meta: Union[RUMResponseMetadata, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -65,5 +64,3 @@ class RUMEventsResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

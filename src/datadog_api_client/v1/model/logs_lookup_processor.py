@@ -51,7 +51,6 @@ class LogsLookupProcessor(ModelNormal):
         default_lookup: Union[str, UnsetType] = unset,
         is_enabled: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -92,8 +91,6 @@ class LogsLookupProcessor(ModelNormal):
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.lookup_table = lookup_table
         self_.source = source

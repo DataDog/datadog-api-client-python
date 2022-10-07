@@ -78,7 +78,6 @@ class OrganizationSettings(ModelNormal):
         saml_idp_metadata_uploaded: Union[bool, UnsetType] = unset,
         saml_login_url: Union[str, UnsetType] = unset,
         saml_strict_mode: Union[OrganizationSettingsSamlStrictMode, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -136,5 +135,3 @@ class OrganizationSettings(ModelNormal):
         if saml_strict_mode is not unset:
             kwargs["saml_strict_mode"] = saml_strict_mode
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

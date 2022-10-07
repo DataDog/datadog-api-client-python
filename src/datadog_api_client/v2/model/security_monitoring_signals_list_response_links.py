@@ -24,7 +24,7 @@ class SecurityMonitoringSignalsListResponseLinks(ModelNormal):
         "next": "next",
     }
 
-    def __init__(self_, next: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, next: Union[str, UnsetType] = unset, **kwargs):
         """
         Links attributes.
 
@@ -35,5 +35,3 @@ class SecurityMonitoringSignalsListResponseLinks(ModelNormal):
         if next is not unset:
             kwargs["next"] = next
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

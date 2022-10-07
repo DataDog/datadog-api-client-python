@@ -39,7 +39,6 @@ class APIKeyResponse(ModelNormal):
         self_,
         data: Union[FullAPIKey, UnsetType] = unset,
         included: Union[List[Union[APIKeyResponseIncludedItem, User]], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -56,5 +55,3 @@ class APIKeyResponse(ModelNormal):
         if included is not unset:
             kwargs["included"] = included
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

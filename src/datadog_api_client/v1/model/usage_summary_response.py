@@ -258,7 +258,6 @@ class UsageSummaryResponse(ModelNormal):
         twol_ingested_events_bytes_agg_sum: Union[int, UnsetType] = unset,
         usage: Union[List[UsageSummaryDate], UnsetType] = unset,
         vsphere_host_top99p_sum: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -642,5 +641,3 @@ class UsageSummaryResponse(ModelNormal):
         if vsphere_host_top99p_sum is not unset:
             kwargs["vsphere_host_top99p_sum"] = vsphere_host_top99p_sum
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

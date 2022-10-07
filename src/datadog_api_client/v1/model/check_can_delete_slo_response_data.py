@@ -24,7 +24,7 @@ class CheckCanDeleteSLOResponseData(ModelNormal):
         "ok": "ok",
     }
 
-    def __init__(self_, ok: Union[List[str], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, ok: Union[List[str], UnsetType] = unset, **kwargs):
         """
         An array of service level objective objects.
 
@@ -34,5 +34,3 @@ class CheckCanDeleteSLOResponseData(ModelNormal):
         if ok is not unset:
             kwargs["ok"] = ok
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

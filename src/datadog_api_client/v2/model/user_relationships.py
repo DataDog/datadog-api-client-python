@@ -30,7 +30,7 @@ class UserRelationships(ModelNormal):
         "roles": "roles",
     }
 
-    def __init__(self_, roles: Union[RelationshipToRoles, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, roles: Union[RelationshipToRoles, UnsetType] = unset, **kwargs):
         """
         Relationships of the user object.
 
@@ -40,5 +40,3 @@ class UserRelationships(ModelNormal):
         if roles is not unset:
             kwargs["roles"] = roles
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

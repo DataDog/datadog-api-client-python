@@ -55,7 +55,6 @@ class LogsGrokParser(ModelNormal):
         is_enabled: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         samples: Union[List[str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -88,8 +87,6 @@ class LogsGrokParser(ModelNormal):
             kwargs["samples"] = samples
         super().__init__(kwargs)
         source = kwargs.get("source", "message")
-
-        self_._check_pos_args(args)
 
         self_.grok = grok
         self_.source = source

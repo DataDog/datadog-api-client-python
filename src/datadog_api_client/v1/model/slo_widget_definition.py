@@ -65,7 +65,6 @@ class SLOWidgetDefinition(ModelNormal):
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
         title_size: Union[str, UnsetType] = unset,
         view_mode: Union[WidgetViewMode, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -119,8 +118,6 @@ class SLOWidgetDefinition(ModelNormal):
             kwargs["view_mode"] = view_mode
         super().__init__(kwargs)
         view_type = kwargs.get("view_type", "detail")
-
-        self_._check_pos_args(args)
 
         self_.type = type
         self_.view_type = view_type

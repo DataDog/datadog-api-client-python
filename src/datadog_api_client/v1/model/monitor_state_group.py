@@ -51,7 +51,6 @@ class MonitorStateGroup(ModelNormal):
         last_triggered_ts: Union[int, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         status: Union[MonitorOverallStates, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -88,5 +87,3 @@ class MonitorStateGroup(ModelNormal):
         if status is not unset:
             kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

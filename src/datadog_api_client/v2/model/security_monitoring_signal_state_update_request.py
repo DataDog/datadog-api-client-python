@@ -32,7 +32,7 @@ class SecurityMonitoringSignalStateUpdateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: SecurityMonitoringSignalStateUpdateData, *args, **kwargs):
+    def __init__(self_, data: SecurityMonitoringSignalStateUpdateData, **kwargs):
         """
         Request body for changing the state of a given security monitoring signal.
 
@@ -40,7 +40,5 @@ class SecurityMonitoringSignalStateUpdateRequest(ModelNormal):
         :type data: SecurityMonitoringSignalStateUpdateData
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

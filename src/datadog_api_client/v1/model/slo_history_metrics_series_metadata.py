@@ -51,7 +51,6 @@ class SLOHistoryMetricsSeriesMetadata(ModelNormal):
         query_index: Union[int, UnsetType] = unset,
         scope: Union[str, UnsetType] = unset,
         unit: Union[List[SLOHistoryMetricsSeriesMetadataUnit], none_type, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -90,5 +89,3 @@ class SLOHistoryMetricsSeriesMetadata(ModelNormal):
         if unit is not unset:
             kwargs["unit"] = unit
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

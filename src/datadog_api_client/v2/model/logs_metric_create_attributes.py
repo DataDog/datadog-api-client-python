@@ -43,7 +43,6 @@ class LogsMetricCreateAttributes(ModelNormal):
         compute: LogsMetricCompute,
         filter: Union[LogsMetricFilter, UnsetType] = unset,
         group_by: Union[List[LogsMetricGroupBy], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,7 +62,5 @@ class LogsMetricCreateAttributes(ModelNormal):
         if group_by is not unset:
             kwargs["group_by"] = group_by
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.compute = compute

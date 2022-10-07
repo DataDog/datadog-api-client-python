@@ -59,7 +59,6 @@ class DashboardSummaryDefinition(ModelNormal):
         modified_at: Union[datetime, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         url: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -111,5 +110,3 @@ class DashboardSummaryDefinition(ModelNormal):
         if url is not unset:
             kwargs["url"] = url
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

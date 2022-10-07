@@ -41,7 +41,6 @@ class SecurityMonitoringSignal(ModelNormal):
         attributes: Union[SecurityMonitoringSignalAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         type: Union[SecurityMonitoringSignalType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -64,5 +63,3 @@ class SecurityMonitoringSignal(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

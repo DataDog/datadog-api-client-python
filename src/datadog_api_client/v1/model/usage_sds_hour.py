@@ -40,7 +40,6 @@ class UsageSDSHour(ModelNormal):
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         total_scanned_bytes: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -72,5 +71,3 @@ class UsageSDSHour(ModelNormal):
         if total_scanned_bytes is not unset:
             kwargs["total_scanned_bytes"] = total_scanned_bytes
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

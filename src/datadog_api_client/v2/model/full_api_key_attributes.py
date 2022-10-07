@@ -52,7 +52,6 @@ class FullAPIKeyAttributes(ModelNormal):
         last4: Union[str, UnsetType] = unset,
         modified_at: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -84,5 +83,3 @@ class FullAPIKeyAttributes(ModelNormal):
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

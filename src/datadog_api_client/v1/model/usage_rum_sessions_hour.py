@@ -50,7 +50,6 @@ class UsageRumSessionsHour(ModelNormal):
         session_count_android: Union[int, none_type, UnsetType] = unset,
         session_count_ios: Union[int, none_type, UnsetType] = unset,
         session_count_reactnative: Union[int, none_type, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -97,5 +96,3 @@ class UsageRumSessionsHour(ModelNormal):
         if session_count_reactnative is not unset:
             kwargs["session_count_reactnative"] = session_count_reactnative
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

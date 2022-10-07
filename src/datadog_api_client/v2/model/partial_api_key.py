@@ -46,7 +46,6 @@ class PartialAPIKey(ModelNormal):
         id: Union[str, UnsetType] = unset,
         relationships: Union[APIKeyRelationships, UnsetType] = unset,
         type: Union[APIKeysType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -73,5 +72,3 @@ class PartialAPIKey(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

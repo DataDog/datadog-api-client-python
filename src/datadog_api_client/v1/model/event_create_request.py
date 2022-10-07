@@ -74,7 +74,6 @@ class EventCreateRequest(ModelNormal):
         related_event_id: Union[int, UnsetType] = unset,
         source_type_name: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -140,8 +139,6 @@ class EventCreateRequest(ModelNormal):
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.text = text
         self_.title = title

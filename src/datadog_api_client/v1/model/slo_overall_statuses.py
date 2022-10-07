@@ -54,7 +54,6 @@ class SLOOverallStatuses(ModelNormal):
         status: Union[float, none_type, UnsetType] = unset,
         target: Union[float, UnsetType] = unset,
         timeframe: Union[SLOTimeframe, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -97,5 +96,3 @@ class SLOOverallStatuses(ModelNormal):
         if timeframe is not unset:
             kwargs["timeframe"] = timeframe
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

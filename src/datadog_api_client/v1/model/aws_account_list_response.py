@@ -30,7 +30,7 @@ class AWSAccountListResponse(ModelNormal):
         "accounts": "accounts",
     }
 
-    def __init__(self_, accounts: Union[List[AWSAccount], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, accounts: Union[List[AWSAccount], UnsetType] = unset, **kwargs):
         """
         List of enabled AWS accounts.
 
@@ -40,5 +40,3 @@ class AWSAccountListResponse(ModelNormal):
         if accounts is not unset:
             kwargs["accounts"] = accounts
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

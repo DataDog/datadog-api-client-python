@@ -49,7 +49,6 @@ class AuditLogsResponseMetadata(ModelNormal):
         request_id: Union[str, UnsetType] = unset,
         status: Union[AuditLogsResponseStatus, UnsetType] = unset,
         warnings: Union[List[AuditLogsWarning], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -82,5 +81,3 @@ class AuditLogsResponseMetadata(ModelNormal):
         if warnings is not unset:
             kwargs["warnings"] = warnings
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

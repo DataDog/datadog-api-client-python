@@ -35,7 +35,6 @@ class SLOCreator(ModelNormal):
         email: Union[str, UnsetType] = unset,
         id: Union[int, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -57,5 +56,3 @@ class SLOCreator(ModelNormal):
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

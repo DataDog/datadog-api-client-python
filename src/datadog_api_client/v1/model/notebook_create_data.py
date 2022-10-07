@@ -32,7 +32,7 @@ class NotebookCreateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: NotebookCreateDataAttributes, type: NotebookResourceType, *args, **kwargs):
+    def __init__(self_, attributes: NotebookCreateDataAttributes, type: NotebookResourceType, **kwargs):
         """
         The data for a notebook create request.
 
@@ -43,8 +43,6 @@ class NotebookCreateData(ModelNormal):
         :type type: NotebookResourceType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.type = type

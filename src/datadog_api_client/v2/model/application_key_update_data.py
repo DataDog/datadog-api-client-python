@@ -34,9 +34,7 @@ class ApplicationKeyUpdateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(
-        self_, attributes: ApplicationKeyUpdateAttributes, id: str, type: ApplicationKeysType, *args, **kwargs
-    ):
+    def __init__(self_, attributes: ApplicationKeyUpdateAttributes, id: str, type: ApplicationKeysType, **kwargs):
         """
         Object used to update an application key.
 
@@ -50,8 +48,6 @@ class ApplicationKeyUpdateData(ModelNormal):
         :type type: ApplicationKeysType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.id = id

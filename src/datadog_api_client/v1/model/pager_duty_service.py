@@ -23,7 +23,7 @@ class PagerDutyService(ModelNormal):
         "service_name": "service_name",
     }
 
-    def __init__(self_, service_key: str, service_name: str, *args, **kwargs):
+    def __init__(self_, service_key: str, service_name: str, **kwargs):
         """
         The PagerDuty service that is available for integration with Datadog.
 
@@ -34,8 +34,6 @@ class PagerDutyService(ModelNormal):
         :type service_name: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.service_key = service_key
         self_.service_name = service_name

@@ -42,7 +42,6 @@ class ProcessQueryDefinition(ModelNormal):
         filter_by: Union[List[str], UnsetType] = unset,
         limit: Union[int, UnsetType] = unset,
         search_by: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -67,7 +66,5 @@ class ProcessQueryDefinition(ModelNormal):
         if search_by is not unset:
             kwargs["search_by"] = search_by
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.metric = metric

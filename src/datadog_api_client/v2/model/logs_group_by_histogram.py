@@ -25,7 +25,7 @@ class LogsGroupByHistogram(ModelNormal):
         "min": "min",
     }
 
-    def __init__(self_, interval: float, max: float, min: float, *args, **kwargs):
+    def __init__(self_, interval: float, max: float, min: float, **kwargs):
         """
         Used to perform a histogram computation (only for measure facets).
         Note: At most 100 buckets are allowed, the number of buckets is (max - min)/interval.
@@ -42,8 +42,6 @@ class LogsGroupByHistogram(ModelNormal):
         :type min: float
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.interval = interval
         self_.max = max

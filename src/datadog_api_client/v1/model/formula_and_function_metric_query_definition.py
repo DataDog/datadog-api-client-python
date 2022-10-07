@@ -48,7 +48,6 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
         name: str,
         query: str,
         aggregator: Union[FormulaAndFunctionMetricAggregation, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -69,8 +68,6 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
         if aggregator is not unset:
             kwargs["aggregator"] = aggregator
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data_source = data_source
         self_.name = name

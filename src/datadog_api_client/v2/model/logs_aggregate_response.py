@@ -38,7 +38,6 @@ class LogsAggregateResponse(ModelNormal):
         self_,
         data: Union[LogsAggregateResponseData, UnsetType] = unset,
         meta: Union[LogsResponseMetadata, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class LogsAggregateResponse(ModelNormal):
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -70,7 +70,6 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
         is_upstream: Union[bool, UnsetType] = unset,
         primary_tag_name: Union[str, UnsetType] = unset,
         primary_tag_value: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -113,8 +112,6 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
         if primary_tag_value is not unset:
             kwargs["primary_tag_value"] = primary_tag_value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data_source = data_source
         self_.env = env

@@ -26,7 +26,7 @@ class TimeseriesWidgetExpressionAlias(ModelNormal):
         "expression": "expression",
     }
 
-    def __init__(self_, expression: str, alias_name: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, expression: str, alias_name: Union[str, UnsetType] = unset, **kwargs):
         """
         Define an expression alias.
 
@@ -39,7 +39,5 @@ class TimeseriesWidgetExpressionAlias(ModelNormal):
         if alias_name is not unset:
             kwargs["alias_name"] = alias_name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.expression = expression

@@ -39,7 +39,6 @@ class RUMBucketResponse(ModelNormal):
         computes: Union[
             Dict[str, Union[RUMAggregateBucketValue, str, float, RUMAggregateBucketValueTimeseries]], UnsetType
         ] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -56,5 +55,3 @@ class RUMBucketResponse(ModelNormal):
         if computes is not unset:
             kwargs["computes"] = computes
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

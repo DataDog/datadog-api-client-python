@@ -34,7 +34,7 @@ class APIKeyUpdateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: APIKeyUpdateAttributes, id: str, type: APIKeysType, *args, **kwargs):
+    def __init__(self_, attributes: APIKeyUpdateAttributes, id: str, type: APIKeysType, **kwargs):
         """
         Object used to update an API key.
 
@@ -48,8 +48,6 @@ class APIKeyUpdateData(ModelNormal):
         :type type: APIKeysType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.id = id

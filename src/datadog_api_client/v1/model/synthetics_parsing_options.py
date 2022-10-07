@@ -48,7 +48,6 @@ class SyntheticsParsingOptions(ModelNormal):
         name: Union[str, UnsetType] = unset,
         parser: Union[SyntheticsVariableParser, UnsetType] = unset,
         type: Union[SyntheticsGlobalVariableParseTestOptionsType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -75,5 +74,3 @@ class SyntheticsParsingOptions(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

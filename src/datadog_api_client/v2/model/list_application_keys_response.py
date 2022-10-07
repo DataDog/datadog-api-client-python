@@ -42,7 +42,6 @@ class ListApplicationKeysResponse(ModelNormal):
         self_,
         data: Union[List[PartialApplicationKey], UnsetType] = unset,
         included: Union[List[Union[ApplicationKeyResponseIncludedItem, User, Role]], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -59,5 +58,3 @@ class ListApplicationKeysResponse(ModelNormal):
         if included is not unset:
             kwargs["included"] = included
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

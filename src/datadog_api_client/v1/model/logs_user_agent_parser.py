@@ -46,7 +46,6 @@ class LogsUserAgentParser(ModelNormal):
         is_enabled: Union[bool, UnsetType] = unset,
         is_encoded: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -80,8 +79,6 @@ class LogsUserAgentParser(ModelNormal):
         super().__init__(kwargs)
         sources = kwargs.get("sources", ["http.useragent"])
         target = kwargs.get("target", "http.useragent_details")
-
-        self_._check_pos_args(args)
 
         self_.sources = sources
         self_.target = target

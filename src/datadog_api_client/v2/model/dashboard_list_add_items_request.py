@@ -30,7 +30,7 @@ class DashboardListAddItemsRequest(ModelNormal):
         "dashboards": "dashboards",
     }
 
-    def __init__(self_, dashboards: Union[List[DashboardListItemRequest], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, dashboards: Union[List[DashboardListItemRequest], UnsetType] = unset, **kwargs):
         """
         Request containing a list of dashboards to add.
 
@@ -40,5 +40,3 @@ class DashboardListAddItemsRequest(ModelNormal):
         if dashboards is not unset:
             kwargs["dashboards"] = dashboards
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

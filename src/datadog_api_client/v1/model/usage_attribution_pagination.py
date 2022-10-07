@@ -39,7 +39,6 @@ class UsageAttributionPagination(ModelNormal):
         sort_direction: Union[str, UnsetType] = unset,
         sort_name: Union[str, UnsetType] = unset,
         total_number_of_records: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -71,5 +70,3 @@ class UsageAttributionPagination(ModelNormal):
         if total_number_of_records is not unset:
             kwargs["total_number_of_records"] = total_number_of_records
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

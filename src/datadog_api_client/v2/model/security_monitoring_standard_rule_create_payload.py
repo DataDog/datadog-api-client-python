@@ -70,7 +70,6 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
         has_extended_title: Union[bool, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         type: Union[SecurityMonitoringRuleTypeCreate, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -115,8 +114,6 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.cases = cases
         self_.is_enabled = is_enabled

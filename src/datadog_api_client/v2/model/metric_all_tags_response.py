@@ -30,7 +30,7 @@ class MetricAllTagsResponse(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[MetricAllTags, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, data: Union[MetricAllTags, UnsetType] = unset, **kwargs):
         """
         Response object that includes a single metric's indexed tags.
 
@@ -40,5 +40,3 @@ class MetricAllTagsResponse(ModelNormal):
         if data is not unset:
             kwargs["data"] = data
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

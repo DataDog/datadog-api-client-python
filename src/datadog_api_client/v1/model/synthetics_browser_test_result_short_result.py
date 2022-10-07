@@ -45,7 +45,6 @@ class SyntheticsBrowserTestResultShortResult(ModelNormal):
         error_count: Union[int, UnsetType] = unset,
         step_count_completed: Union[int, UnsetType] = unset,
         step_count_total: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -77,5 +76,3 @@ class SyntheticsBrowserTestResultShortResult(ModelNormal):
         if step_count_total is not unset:
             kwargs["step_count_total"] = step_count_total
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

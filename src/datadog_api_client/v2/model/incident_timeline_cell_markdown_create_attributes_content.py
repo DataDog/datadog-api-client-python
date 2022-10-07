@@ -24,7 +24,7 @@ class IncidentTimelineCellMarkdownCreateAttributesContent(ModelNormal):
         "content": "content",
     }
 
-    def __init__(self_, content: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, content: Union[str, UnsetType] = unset, **kwargs):
         """
         The Markdown timeline cell contents.
 
@@ -34,5 +34,3 @@ class IncidentTimelineCellMarkdownCreateAttributesContent(ModelNormal):
         if content is not unset:
             kwargs["content"] = content
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

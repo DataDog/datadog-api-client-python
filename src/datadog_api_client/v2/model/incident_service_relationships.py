@@ -36,7 +36,6 @@ class IncidentServiceRelationships(ModelNormal):
         self_,
         created_by: Union[RelationshipToUser, UnsetType] = unset,
         last_modified_by: Union[RelationshipToUser, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -53,5 +52,3 @@ class IncidentServiceRelationships(ModelNormal):
         if last_modified_by is not unset:
             kwargs["last_modified_by"] = last_modified_by
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

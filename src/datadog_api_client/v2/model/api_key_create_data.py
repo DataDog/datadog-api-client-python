@@ -32,7 +32,7 @@ class APIKeyCreateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: APIKeyCreateAttributes, type: APIKeysType, *args, **kwargs):
+    def __init__(self_, attributes: APIKeyCreateAttributes, type: APIKeysType, **kwargs):
         """
         Object used to create an API key.
 
@@ -43,8 +43,6 @@ class APIKeyCreateData(ModelNormal):
         :type type: APIKeysType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.type = type

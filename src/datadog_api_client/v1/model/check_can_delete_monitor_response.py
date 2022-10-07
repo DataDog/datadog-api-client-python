@@ -33,11 +33,7 @@ class CheckCanDeleteMonitorResponse(ModelNormal):
     }
 
     def __init__(
-        self_,
-        data: CheckCanDeleteMonitorResponseData,
-        errors: Union[Dict[str, List[str]], UnsetType] = unset,
-        *args,
-        **kwargs,
+        self_, data: CheckCanDeleteMonitorResponseData, errors: Union[Dict[str, List[str]], UnsetType] = unset, **kwargs
     ):
         """
         Response of monitor IDs that can or can't be safely deleted.
@@ -51,7 +47,5 @@ class CheckCanDeleteMonitorResponse(ModelNormal):
         if errors is not unset:
             kwargs["errors"] = errors
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

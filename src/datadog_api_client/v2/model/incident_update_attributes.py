@@ -73,7 +73,6 @@ class IncidentUpdateAttributes(ModelNormal):
         notification_handles: Union[List[IncidentNotificationHandle], UnsetType] = unset,
         resolved: Union[datetime, none_type, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -125,5 +124,3 @@ class IncidentUpdateAttributes(ModelNormal):
         if title is not unset:
             kwargs["title"] = title
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

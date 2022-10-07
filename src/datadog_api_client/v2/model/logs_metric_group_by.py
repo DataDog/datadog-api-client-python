@@ -26,7 +26,7 @@ class LogsMetricGroupBy(ModelNormal):
         "tag_name": "tag_name",
     }
 
-    def __init__(self_, path: str, tag_name: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, path: str, tag_name: Union[str, UnsetType] = unset, **kwargs):
         """
         A group by rule.
 
@@ -39,7 +39,5 @@ class LogsMetricGroupBy(ModelNormal):
         if tag_name is not unset:
             kwargs["tag_name"] = tag_name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.path = path

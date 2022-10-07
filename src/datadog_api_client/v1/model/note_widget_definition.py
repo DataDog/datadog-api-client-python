@@ -66,7 +66,6 @@ class NoteWidgetDefinition(ModelNormal):
         tick_edge: Union[WidgetTickEdge, UnsetType] = unset,
         tick_pos: Union[str, UnsetType] = unset,
         vertical_align: Union[WidgetVerticalAlign, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -119,8 +118,6 @@ class NoteWidgetDefinition(ModelNormal):
         if vertical_align is not unset:
             kwargs["vertical_align"] = vertical_align
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.content = content
         self_.type = type

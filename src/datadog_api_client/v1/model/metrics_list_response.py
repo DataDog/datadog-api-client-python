@@ -26,9 +26,7 @@ class MetricsListResponse(ModelNormal):
         "metrics": "metrics",
     }
 
-    def __init__(
-        self_, _from: Union[str, UnsetType] = unset, metrics: Union[List[str], UnsetType] = unset, *args, **kwargs
-    ):
+    def __init__(self_, _from: Union[str, UnsetType] = unset, metrics: Union[List[str], UnsetType] = unset, **kwargs):
         """
         Object listing all metric names stored by Datadog since a given time.
 
@@ -43,5 +41,3 @@ class MetricsListResponse(ModelNormal):
         if metrics is not unset:
             kwargs["metrics"] = metrics
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

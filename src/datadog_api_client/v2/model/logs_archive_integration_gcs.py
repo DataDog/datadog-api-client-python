@@ -23,7 +23,7 @@ class LogsArchiveIntegrationGCS(ModelNormal):
         "project_id": "project_id",
     }
 
-    def __init__(self_, client_email: str, project_id: str, *args, **kwargs):
+    def __init__(self_, client_email: str, project_id: str, **kwargs):
         """
         The GCS archive's integration destination.
 
@@ -34,8 +34,6 @@ class LogsArchiveIntegrationGCS(ModelNormal):
         :type project_id: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.client_email = client_email
         self_.project_id = project_id

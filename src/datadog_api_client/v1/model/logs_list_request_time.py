@@ -29,7 +29,7 @@ class LogsListRequestTime(ModelNormal):
         "to": "to",
     }
 
-    def __init__(self_, _from: datetime, to: datetime, timezone: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, _from: datetime, to: datetime, timezone: Union[str, UnsetType] = unset, **kwargs):
         """
         Timeframe to retrieve the log from.
 
@@ -46,8 +46,6 @@ class LogsListRequestTime(ModelNormal):
         if timezone is not unset:
             kwargs["timezone"] = timezone
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_._from = _from
         self_.to = to

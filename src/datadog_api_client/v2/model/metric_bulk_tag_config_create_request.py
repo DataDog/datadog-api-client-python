@@ -28,7 +28,7 @@ class MetricBulkTagConfigCreateRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: MetricBulkTagConfigCreate, *args, **kwargs):
+    def __init__(self_, data: MetricBulkTagConfigCreate, **kwargs):
         """
         Wrapper object for a single bulk tag configuration request.
 
@@ -36,7 +36,5 @@ class MetricBulkTagConfigCreateRequest(ModelNormal):
         :type data: MetricBulkTagConfigCreate
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

@@ -47,7 +47,6 @@ class MonitorGroupSearchResponse(ModelNormal):
         counts: Union[MonitorGroupSearchResponseCounts, UnsetType] = unset,
         groups: Union[List[MonitorGroupSearchResult], UnsetType] = unset,
         metadata: Union[MonitorSearchResponseMetadata, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -69,5 +68,3 @@ class MonitorGroupSearchResponse(ModelNormal):
         if metadata is not unset:
             kwargs["metadata"] = metadata
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

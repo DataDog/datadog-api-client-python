@@ -60,7 +60,6 @@ class GroupWidgetDefinition(ModelNormal):
         show_title: Union[bool, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -101,8 +100,6 @@ class GroupWidgetDefinition(ModelNormal):
         if title_align is not unset:
             kwargs["title_align"] = title_align
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.layout_type = layout_type
         self_.type = type

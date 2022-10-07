@@ -30,7 +30,7 @@ class IFrameWidgetDefinition(ModelNormal):
         "url": "url",
     }
 
-    def __init__(self_, type: IFrameWidgetDefinitionType, url: str, *args, **kwargs):
+    def __init__(self_, type: IFrameWidgetDefinitionType, url: str, **kwargs):
         """
         The iframe widget allows you to embed a portion of any other web page on your dashboard. Only available on FREE layout dashboards.
 
@@ -41,8 +41,6 @@ class IFrameWidgetDefinition(ModelNormal):
         :type url: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.type = type
         self_.url = url

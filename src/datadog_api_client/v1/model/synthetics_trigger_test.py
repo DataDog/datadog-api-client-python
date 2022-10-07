@@ -32,7 +32,7 @@ class SyntheticsTriggerTest(ModelNormal):
         "public_id": "public_id",
     }
 
-    def __init__(self_, public_id: str, metadata: Union[SyntheticsCIBatchMetadata, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, public_id: str, metadata: Union[SyntheticsCIBatchMetadata, UnsetType] = unset, **kwargs):
         """
         Test configuration for Synthetics
 
@@ -45,7 +45,5 @@ class SyntheticsTriggerTest(ModelNormal):
         if metadata is not unset:
             kwargs["metadata"] = metadata
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.public_id = public_id

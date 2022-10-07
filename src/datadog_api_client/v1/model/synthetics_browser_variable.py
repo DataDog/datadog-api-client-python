@@ -45,7 +45,6 @@ class SyntheticsBrowserVariable(ModelNormal):
         example: Union[str, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         pattern: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -74,8 +73,6 @@ class SyntheticsBrowserVariable(ModelNormal):
         if pattern is not unset:
             kwargs["pattern"] = pattern
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name
         self_.type = type

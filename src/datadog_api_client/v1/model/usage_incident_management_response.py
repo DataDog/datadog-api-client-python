@@ -30,7 +30,7 @@ class UsageIncidentManagementResponse(ModelNormal):
         "usage": "usage",
     }
 
-    def __init__(self_, usage: Union[List[UsageIncidentManagementHour], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, usage: Union[List[UsageIncidentManagementHour], UnsetType] = unset, **kwargs):
         """
         Response containing the incident management usage for each hour for a given organization.
 
@@ -40,5 +40,3 @@ class UsageIncidentManagementResponse(ModelNormal):
         if usage is not unset:
             kwargs["usage"] = usage
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

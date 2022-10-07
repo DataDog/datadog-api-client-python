@@ -21,7 +21,7 @@ class IdpResponse(ModelNormal):
         "message": "message",
     }
 
-    def __init__(self_, message: str, *args, **kwargs):
+    def __init__(self_, message: str, **kwargs):
         """
         The IdP response object.
 
@@ -29,7 +29,5 @@ class IdpResponse(ModelNormal):
         :type message: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.message = message

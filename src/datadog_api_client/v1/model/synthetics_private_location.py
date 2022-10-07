@@ -54,7 +54,6 @@ class SyntheticsPrivateLocation(ModelNormal):
         id: Union[str, UnsetType] = unset,
         metadata: Union[SyntheticsPrivateLocationMetadata, UnsetType] = unset,
         secrets: Union[SyntheticsPrivateLocationSecrets, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -85,8 +84,6 @@ class SyntheticsPrivateLocation(ModelNormal):
         if secrets is not unset:
             kwargs["secrets"] = secrets
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.description = description
         self_.name = name

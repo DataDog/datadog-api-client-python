@@ -44,7 +44,6 @@ class LogsArchiveDestinationGCS(ModelNormal):
         integration: LogsArchiveIntegrationGCS,
         type: LogsArchiveDestinationGCSType,
         path: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -65,8 +64,6 @@ class LogsArchiveDestinationGCS(ModelNormal):
         if path is not unset:
             kwargs["path"] = path
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.bucket = bucket
         self_.integration = integration

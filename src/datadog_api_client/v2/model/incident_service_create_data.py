@@ -46,7 +46,6 @@ class IncidentServiceCreateData(ModelNormal):
         type: IncidentServiceType,
         attributes: Union[IncidentServiceCreateAttributes, UnsetType] = unset,
         relationships: Union[IncidentServiceRelationships, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -66,7 +65,5 @@ class IncidentServiceCreateData(ModelNormal):
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.type = type

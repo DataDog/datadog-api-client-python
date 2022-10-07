@@ -30,7 +30,7 @@ class SyntheticsUpdateTestPauseStatusPayload(ModelNormal):
         "new_status": "new_status",
     }
 
-    def __init__(self_, new_status: Union[SyntheticsTestPauseStatus, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, new_status: Union[SyntheticsTestPauseStatus, UnsetType] = unset, **kwargs):
         """
         Object to start or pause an existing Synthetic test.
 
@@ -41,5 +41,3 @@ class SyntheticsUpdateTestPauseStatusPayload(ModelNormal):
         if new_status is not unset:
             kwargs["new_status"] = new_status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

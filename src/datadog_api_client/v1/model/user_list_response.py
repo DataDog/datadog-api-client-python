@@ -30,7 +30,7 @@ class UserListResponse(ModelNormal):
         "users": "users",
     }
 
-    def __init__(self_, users: Union[List[User], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, users: Union[List[User], UnsetType] = unset, **kwargs):
         """
         Array of Datadog users for a given organization.
 
@@ -40,5 +40,3 @@ class UserListResponse(ModelNormal):
         if users is not unset:
             kwargs["users"] = users
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

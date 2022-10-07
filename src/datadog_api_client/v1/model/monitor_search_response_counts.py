@@ -42,7 +42,6 @@ class MonitorSearchResponseCounts(ModelNormal):
         status: Union[MonitorSearchCount, UnsetType] = unset,
         tag: Union[MonitorSearchCount, UnsetType] = unset,
         type: Union[MonitorSearchCount, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -69,5 +68,3 @@ class MonitorSearchResponseCounts(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

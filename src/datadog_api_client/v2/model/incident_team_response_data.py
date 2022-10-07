@@ -49,7 +49,6 @@ class IncidentTeamResponseData(ModelNormal):
         id: Union[str, UnsetType] = unset,
         relationships: Union[IncidentTeamRelationships, UnsetType] = unset,
         type: Union[IncidentTeamType, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -76,5 +75,3 @@ class IncidentTeamResponseData(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

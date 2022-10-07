@@ -33,7 +33,6 @@ class HostMuteSettings(ModelNormal):
         end: Union[int, UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
         override: Union[bool, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -55,5 +54,3 @@ class HostMuteSettings(ModelNormal):
         if override is not unset:
             kwargs["override"] = override
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

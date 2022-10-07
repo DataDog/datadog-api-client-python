@@ -32,7 +32,7 @@ class SyntheticsTestRequestProxy(ModelNormal):
         "url": "url",
     }
 
-    def __init__(self_, url: str, headers: Union[SyntheticsTestHeaders, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, url: str, headers: Union[SyntheticsTestHeaders, UnsetType] = unset, **kwargs):
         """
         The proxy to perform the test.
 
@@ -45,7 +45,5 @@ class SyntheticsTestRequestProxy(ModelNormal):
         if headers is not unset:
             kwargs["headers"] = headers
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.url = url

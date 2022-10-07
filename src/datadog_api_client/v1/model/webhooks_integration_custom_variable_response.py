@@ -28,7 +28,7 @@ class WebhooksIntegrationCustomVariableResponse(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self_, is_secret: bool, name: str, value: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, is_secret: bool, name: str, value: Union[str, UnsetType] = unset, **kwargs):
         """
         Custom variable for Webhook integration.
 
@@ -45,8 +45,6 @@ class WebhooksIntegrationCustomVariableResponse(ModelNormal):
         if value is not unset:
             kwargs["value"] = value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.is_secret = is_secret
         self_.name = name

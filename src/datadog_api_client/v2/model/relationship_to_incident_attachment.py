@@ -32,7 +32,7 @@ class RelationshipToIncidentAttachment(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: List[RelationshipToIncidentAttachmentData], *args, **kwargs):
+    def __init__(self_, data: List[RelationshipToIncidentAttachmentData], **kwargs):
         """
         A relationship reference for attachments.
 
@@ -40,7 +40,5 @@ class RelationshipToIncidentAttachment(ModelNormal):
         :type data: [RelationshipToIncidentAttachmentData]
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data = data

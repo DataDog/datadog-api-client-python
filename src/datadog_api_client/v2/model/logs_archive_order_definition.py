@@ -32,7 +32,7 @@ class LogsArchiveOrderDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: LogsArchiveOrderAttributes, type: LogsArchiveOrderDefinitionType, *args, **kwargs):
+    def __init__(self_, attributes: LogsArchiveOrderAttributes, type: LogsArchiveOrderDefinitionType, **kwargs):
         """
         The definition of an archive order.
 
@@ -43,8 +43,6 @@ class LogsArchiveOrderDefinition(ModelNormal):
         :type type: LogsArchiveOrderDefinitionType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.type = type

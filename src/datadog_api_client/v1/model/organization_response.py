@@ -30,7 +30,7 @@ class OrganizationResponse(ModelNormal):
         "org": "org",
     }
 
-    def __init__(self_, org: Union[Organization, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, org: Union[Organization, UnsetType] = unset, **kwargs):
         """
         Response with an organization.
 
@@ -40,5 +40,3 @@ class OrganizationResponse(ModelNormal):
         if org is not unset:
             kwargs["org"] = org
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

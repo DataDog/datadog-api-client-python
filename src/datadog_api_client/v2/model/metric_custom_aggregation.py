@@ -32,7 +32,7 @@ class MetricCustomAggregation(ModelNormal):
         "time": "time",
     }
 
-    def __init__(self_, space: MetricCustomSpaceAggregation, time: MetricCustomTimeAggregation, *args, **kwargs):
+    def __init__(self_, space: MetricCustomSpaceAggregation, time: MetricCustomTimeAggregation, **kwargs):
         """
         A time and space aggregation combination for use in query.
 
@@ -43,8 +43,6 @@ class MetricCustomAggregation(ModelNormal):
         :type time: MetricCustomTimeAggregation
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.space = space
         self_.time = time

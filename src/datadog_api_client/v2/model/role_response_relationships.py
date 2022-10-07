@@ -30,7 +30,7 @@ class RoleResponseRelationships(ModelNormal):
         "permissions": "permissions",
     }
 
-    def __init__(self_, permissions: Union[RelationshipToPermissions, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, permissions: Union[RelationshipToPermissions, UnsetType] = unset, **kwargs):
         """
         Relationships of the role object returned by the API.
 
@@ -40,5 +40,3 @@ class RoleResponseRelationships(ModelNormal):
         if permissions is not unset:
             kwargs["permissions"] = permissions
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

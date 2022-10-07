@@ -62,7 +62,6 @@ class LogAttributes(ModelNormal):
         status: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         timestamp: Union[datetime, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -108,5 +107,3 @@ class LogAttributes(ModelNormal):
         if timestamp is not unset:
             kwargs["timestamp"] = timestamp
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

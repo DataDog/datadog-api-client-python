@@ -26,7 +26,7 @@ class CloudWorkloadSecurityAgentRuleUpdaterAttributes(ModelNormal):
         "name": "name",
     }
 
-    def __init__(self_, handle: Union[str, UnsetType] = unset, name: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, handle: Union[str, UnsetType] = unset, name: Union[str, UnsetType] = unset, **kwargs):
         """
         The attributes of the user who last updated the Agent rule.
 
@@ -41,5 +41,3 @@ class CloudWorkloadSecurityAgentRuleUpdaterAttributes(ModelNormal):
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

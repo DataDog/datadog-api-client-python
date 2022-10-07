@@ -30,7 +30,7 @@ class SyntheticsPrivateLocationSecretsAuthentication(ModelNormal):
         "key",
     }
 
-    def __init__(self_, id: Union[str, UnsetType] = unset, key: Union[str, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, id: Union[str, UnsetType] = unset, key: Union[str, UnsetType] = unset, **kwargs):
         """
         Authentication part of the secrets.
 
@@ -45,5 +45,3 @@ class SyntheticsPrivateLocationSecretsAuthentication(ModelNormal):
         if key is not unset:
             kwargs["key"] = key
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

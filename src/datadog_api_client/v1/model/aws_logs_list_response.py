@@ -39,7 +39,6 @@ class AWSLogsListResponse(ModelNormal):
         account_id: Union[str, UnsetType] = unset,
         lambdas: Union[List[AWSLogsLambda], UnsetType] = unset,
         services: Union[List[str], UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -61,5 +60,3 @@ class AWSLogsListResponse(ModelNormal):
         if services is not unset:
             kwargs["services"] = services
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

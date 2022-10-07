@@ -46,7 +46,6 @@ class SyntheticsPrivateLocationSecrets(ModelNormal):
         self_,
         authentication: Union[SyntheticsPrivateLocationSecretsAuthentication, UnsetType] = unset,
         config_decryption: Union[SyntheticsPrivateLocationSecretsConfigDecryption, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -63,5 +62,3 @@ class SyntheticsPrivateLocationSecrets(ModelNormal):
         if config_decryption is not unset:
             kwargs["config_decryption"] = config_decryption
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

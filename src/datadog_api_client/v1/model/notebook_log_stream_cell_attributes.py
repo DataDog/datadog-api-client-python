@@ -45,7 +45,6 @@ class NotebookLogStreamCellAttributes(ModelNormal):
         definition: LogStreamWidgetDefinition,
         graph_size: Union[NotebookGraphSize, UnsetType] = unset,
         time: Union[NotebookCellTime, NotebookRelativeTime, NotebookAbsoluteTime, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -65,7 +64,5 @@ class NotebookLogStreamCellAttributes(ModelNormal):
         if time is not unset:
             kwargs["time"] = time
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.definition = definition

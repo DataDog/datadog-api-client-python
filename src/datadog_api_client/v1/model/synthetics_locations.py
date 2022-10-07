@@ -30,7 +30,7 @@ class SyntheticsLocations(ModelNormal):
         "locations": "locations",
     }
 
-    def __init__(self_, locations: Union[List[SyntheticsLocation], UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, locations: Union[List[SyntheticsLocation], UnsetType] = unset, **kwargs):
         """
         List of Synthetics locations.
 
@@ -40,5 +40,3 @@ class SyntheticsLocations(ModelNormal):
         if locations is not unset:
             kwargs["locations"] = locations
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

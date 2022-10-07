@@ -48,7 +48,6 @@ class ServiceCheck(ModelNormal):
         tags: List[str],
         message: Union[str, UnsetType] = unset,
         timestamp: Union[int, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -77,8 +76,6 @@ class ServiceCheck(ModelNormal):
         if timestamp is not unset:
             kwargs["timestamp"] = timestamp
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.check = check
         self_.host_name = host_name

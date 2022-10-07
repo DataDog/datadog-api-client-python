@@ -30,7 +30,7 @@ class ApiKeyResponse(ModelNormal):
         "api_key": "api_key",
     }
 
-    def __init__(self_, api_key: Union[ApiKey, UnsetType] = unset, *args, **kwargs):
+    def __init__(self_, api_key: Union[ApiKey, UnsetType] = unset, **kwargs):
         """
         An API key with its associated metadata.
 
@@ -40,5 +40,3 @@ class ApiKeyResponse(ModelNormal):
         if api_key is not unset:
             kwargs["api_key"] = api_key
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

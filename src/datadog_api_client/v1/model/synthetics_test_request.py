@@ -131,7 +131,6 @@ class SyntheticsTestRequest(ModelNormal):
         should_track_hops: Union[bool, UnsetType] = unset,
         timeout: Union[float, UnsetType] = unset,
         url: Union[str, UnsetType] = unset,
-        *args,
         **kwargs,
     ):
         """
@@ -255,5 +254,3 @@ class SyntheticsTestRequest(ModelNormal):
         if url is not unset:
             kwargs["url"] = url
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

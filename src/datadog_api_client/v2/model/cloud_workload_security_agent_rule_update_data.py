@@ -42,7 +42,6 @@ class CloudWorkloadSecurityAgentRuleUpdateData(ModelNormal):
         self_,
         attributes: CloudWorkloadSecurityAgentRuleUpdateAttributes,
         type: CloudWorkloadSecurityAgentRuleType,
-        *args,
         **kwargs,
     ):
         """
@@ -55,8 +54,6 @@ class CloudWorkloadSecurityAgentRuleUpdateData(ModelNormal):
         :type type: CloudWorkloadSecurityAgentRuleType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.type = type

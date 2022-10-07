@@ -21,7 +21,7 @@ class IncidentServiceCreateAttributes(ModelNormal):
         "name": "name",
     }
 
-    def __init__(self_, name: str, *args, **kwargs):
+    def __init__(self_, name: str, **kwargs):
         """
         The incident service's attributes for a create request.
 
@@ -29,7 +29,5 @@ class IncidentServiceCreateAttributes(ModelNormal):
         :type name: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name
