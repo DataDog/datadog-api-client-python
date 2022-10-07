@@ -79,7 +79,7 @@ class SyntheticsBrowserTest(ModelNormal):
             Synthetic test.
         :type status: SyntheticsTestPauseStatus, optional
 
-        :param steps: The steps of the test.
+        :param steps: Array of steps for the test.
         :type steps: [SyntheticsStep], optional
 
         :param tags: Array of tags attached to the test.
