@@ -98,7 +98,7 @@ class DowntimeChild(ModelNormal):
         monitor_tags: Union[List[str], UnsetType] = unset,
         mute_first_recovery_notification: Union[bool, UnsetType] = unset,
         parent_id: Union[int, none_type, UnsetType] = unset,
-        recurrence: Union[DowntimeRecurrence, UnsetType] = unset,
+        recurrence: Union[DowntimeRecurrence, none_type, UnsetType] = unset,
         scope: Union[List[str], UnsetType] = unset,
         start: Union[int, UnsetType] = unset,
         timezone: Union[str, UnsetType] = unset,

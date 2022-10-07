@@ -162,7 +162,7 @@ def get_typing_for_attribute(schema, attribute, current_name=None, optional=Fals
     child_schema = schema.get("properties", {}).get(attribute)
     alternative_name = current_name + formatter.camel_case(attribute) if current_name else None
     attr_type = typing_to_python(child_schema, alternative_name=alternative_name)
-    if child_schema.get("nullable") and not formatter.get_name(child_schema):
+    if child_schema.get("nullable"):
         if optional:
             return f"Union[{attr_type}, none_type, UnsetType]"
         return f"Union[{attr_type}, none_type]"

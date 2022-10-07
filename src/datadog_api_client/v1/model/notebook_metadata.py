@@ -8,6 +8,7 @@ from typing import TYPE_CHECKING, Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -38,7 +39,7 @@ class NotebookMetadata(ModelNormal):
         self_,
         is_template: Union[bool, UnsetType] = unset,
         take_snapshots: Union[bool, UnsetType] = unset,
-        type: Union[NotebookMetadataType, UnsetType] = unset,
+        type: Union[NotebookMetadataType, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """

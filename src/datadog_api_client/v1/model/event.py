@@ -8,6 +8,7 @@ from typing import List, TYPE_CHECKING, Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -77,7 +78,7 @@ class Event(ModelNormal):
         id: Union[int, UnsetType] = unset,
         id_str: Union[str, UnsetType] = unset,
         payload: Union[str, UnsetType] = unset,
-        priority: Union[EventPriority, UnsetType] = unset,
+        priority: Union[EventPriority, none_type, UnsetType] = unset,
         source_type_name: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         text: Union[str, UnsetType] = unset,

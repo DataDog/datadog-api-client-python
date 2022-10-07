@@ -91,7 +91,7 @@ class Downtime(ModelNormal):
     def __init__(
         self_,
         active: Union[bool, UnsetType] = unset,
-        active_child: Union[DowntimeChild, UnsetType] = unset,
+        active_child: Union[DowntimeChild, none_type, UnsetType] = unset,
         canceled: Union[int, none_type, UnsetType] = unset,
         creator_id: Union[int, UnsetType] = unset,
         disabled: Union[bool, UnsetType] = unset,
@@ -103,7 +103,7 @@ class Downtime(ModelNormal):
         monitor_tags: Union[List[str], UnsetType] = unset,
         mute_first_recovery_notification: Union[bool, UnsetType] = unset,
         parent_id: Union[int, none_type, UnsetType] = unset,
-        recurrence: Union[DowntimeRecurrence, UnsetType] = unset,
+        recurrence: Union[DowntimeRecurrence, none_type, UnsetType] = unset,
         scope: Union[List[str], UnsetType] = unset,
         start: Union[int, UnsetType] = unset,
         timezone: Union[str, UnsetType] = unset,

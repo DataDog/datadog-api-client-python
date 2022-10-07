@@ -8,6 +8,7 @@ from typing import TYPE_CHECKING, Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -44,7 +45,7 @@ class NotebookLogStreamCellAttributes(ModelNormal):
         self_,
         definition: LogStreamWidgetDefinition,
         graph_size: Union[NotebookGraphSize, UnsetType] = unset,
-        time: Union[NotebookCellTime, NotebookRelativeTime, NotebookAbsoluteTime, UnsetType] = unset,
+        time: Union[Union[NotebookCellTime, NotebookRelativeTime, NotebookAbsoluteTime], none_type, UnsetType] = unset,
         **kwargs,
     ):
         """

@@ -73,7 +73,7 @@ class SLOCorrectionResponseAttributes(ModelNormal):
         duration: Union[int, none_type, UnsetType] = unset,
         end: Union[int, UnsetType] = unset,
         modified_at: Union[int, UnsetType] = unset,
-        modifier: Union[SLOCorrectionResponseAttributesModifier, UnsetType] = unset,
+        modifier: Union[SLOCorrectionResponseAttributesModifier, none_type, UnsetType] = unset,
         rrule: Union[str, none_type, UnsetType] = unset,
         slo_id: Union[str, UnsetType] = unset,
         start: Union[int, UnsetType] = unset,

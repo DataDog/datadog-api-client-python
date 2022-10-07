@@ -8,6 +8,7 @@ from typing import TYPE_CHECKING, Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -49,7 +50,7 @@ class NotebookToplistCellAttributes(ModelNormal):
         definition: ToplistWidgetDefinition,
         graph_size: Union[NotebookGraphSize, UnsetType] = unset,
         split_by: Union[NotebookSplitBy, UnsetType] = unset,
-        time: Union[NotebookCellTime, NotebookRelativeTime, NotebookAbsoluteTime, UnsetType] = unset,
+        time: Union[Union[NotebookCellTime, NotebookRelativeTime, NotebookAbsoluteTime], none_type, UnsetType] = unset,
         **kwargs,
     ):
         """

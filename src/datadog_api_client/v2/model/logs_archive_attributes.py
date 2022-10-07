@@ -51,7 +51,10 @@ class LogsArchiveAttributes(ModelNormal):
     def __init__(
         self_,
         destination: Union[
-            LogsArchiveDestination, LogsArchiveDestinationAzure, LogsArchiveDestinationGCS, LogsArchiveDestinationS3
+            Union[
+                LogsArchiveDestination, LogsArchiveDestinationAzure, LogsArchiveDestinationGCS, LogsArchiveDestinationS3
+            ],
+            none_type,
         ],
         name: str,
         query: str,

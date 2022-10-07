@@ -3,11 +3,12 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
 )
 
 
@@ -28,7 +29,7 @@ class NullableRelationshipToUser(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: NullableRelationshipToUserData, **kwargs):
+    def __init__(self_, data: Union[NullableRelationshipToUserData, none_type], **kwargs):
         """
         Relationship to user.
 
