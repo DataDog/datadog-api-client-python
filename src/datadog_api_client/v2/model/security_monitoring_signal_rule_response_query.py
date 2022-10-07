@@ -9,7 +9,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class SecurityMonitoringSignalRuleQuery(ModelNormal):
+class SecurityMonitoringSignalRuleResponseQuery(ModelNormal):
     validations = {
         "correlated_query_index": {
             "inclusive_maximum": 9,
@@ -26,6 +26,7 @@ class SecurityMonitoringSignalRuleQuery(ModelNormal):
             "aggregation": (SecurityMonitoringRuleQueryAggregation,),
             "correlated_by_fields": ([str],),
             "correlated_query_index": (int,),
+            "default_rule_id": (str,),
             "metrics": ([str],),
             "name": (str,),
             "rule_id": (str,),
@@ -35,12 +36,13 @@ class SecurityMonitoringSignalRuleQuery(ModelNormal):
         "aggregation": "aggregation",
         "correlated_by_fields": "correlatedByFields",
         "correlated_query_index": "correlatedQueryIndex",
+        "default_rule_id": "defaultRuleId",
         "metrics": "metrics",
         "name": "name",
         "rule_id": "ruleId",
     }
 
-    def __init__(self_, rule_id, *args, **kwargs):
+    def __init__(self_, *args, **kwargs):
         """
         Query for matching rule on signals.
 
@@ -53,6 +55,9 @@ class SecurityMonitoringSignalRuleQuery(ModelNormal):
         :param correlated_query_index: Index of the rule query used to retrieve the correlated field.
         :type correlated_query_index: int, optional
 
+        :param default_rule_id: Default Rule ID to match on signals.
+        :type default_rule_id: str, optional
+
         :param metrics: Group of target fields to aggregate over when using the new value aggregations.
         :type metrics: [str], optional
 
@@ -60,10 +65,8 @@ class SecurityMonitoringSignalRuleQuery(ModelNormal):
         :type name: str, optional
 
         :param rule_id: Rule ID to match on signals.
-        :type rule_id: str
+        :type rule_id: str, optional
         """
         super().__init__(kwargs)
 
         self_._check_pos_args(args)
-
-        self_.rule_id = rule_id
