@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class AuthNMappingIncluded(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         Included data in the AuthN Mapping response.
 
@@ -28,8 +28,6 @@ class AuthNMappingIncluded(ModelComposed):
         :type relationships: RoleResponseRelationships, optional
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

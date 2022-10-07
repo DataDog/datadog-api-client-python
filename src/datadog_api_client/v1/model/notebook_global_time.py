@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class NotebookGlobalTime(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         Notebook global timeframe.
 
@@ -28,8 +28,6 @@ class NotebookGlobalTime(ModelComposed):
         :type start: datetime
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class LogsProcessor(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         Definition of a logs processor.
 
@@ -90,8 +90,6 @@ class LogsProcessor(ModelComposed):
         :type lookup_table: [str]
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

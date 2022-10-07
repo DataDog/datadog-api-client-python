@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class MetricVolumes(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         Possible response objects for a metric's volume.
 
@@ -25,8 +25,6 @@ class MetricVolumes(ModelComposed):
         :type type: MetricDistinctVolumeType, optional
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

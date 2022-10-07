@@ -11,13 +11,11 @@ from datadog_api_client.model_utils import (
 
 
 class RUMGroupByTotal(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         A resulting object to put the given computes in over all the matching records.
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

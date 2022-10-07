@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class SecurityMonitoringRuleQuery(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         Query for matching rule.
 
@@ -47,8 +47,6 @@ class SecurityMonitoringRuleQuery(ModelComposed):
         :type rule_id: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

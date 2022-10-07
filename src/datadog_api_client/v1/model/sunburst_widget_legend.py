@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class SunburstWidgetLegend(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         Configuration of the legend.
 
@@ -25,8 +25,6 @@ class SunburstWidgetLegend(ModelComposed):
         :type hide_value: bool, optional
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

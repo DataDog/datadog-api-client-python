@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class IncidentFieldAttributes(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         Dynamic fields for which selections can be made, with field names as keys.
 
@@ -22,8 +22,6 @@ class IncidentFieldAttributes(ModelComposed):
         :type value: str, none_type, optional
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class IncidentServiceIncludedItems(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         An object related to an incident service which is present in the included payload.
 
@@ -28,8 +28,6 @@ class IncidentServiceIncludedItems(ModelComposed):
         :type type: UsersType, optional
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

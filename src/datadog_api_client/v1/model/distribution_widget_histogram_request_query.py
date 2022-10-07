@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class DistributionWidgetHistogramRequestQuery(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         Query definition for Distribution Widget Histogram Request
 
@@ -64,8 +64,6 @@ class DistributionWidgetHistogramRequestQuery(ModelComposed):
         :type stat: FormulaAndFunctionApmResourceStatName
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

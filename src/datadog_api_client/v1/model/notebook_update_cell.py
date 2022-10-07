@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class NotebookUpdateCell(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         Updating a notebook can either insert new cell(s) or update existing cell(s) by including the cell ``id``.
         To delete existing cell(s), simply omit it from the list of cells.
@@ -27,8 +27,6 @@ class NotebookUpdateCell(ModelComposed):
         :type id: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

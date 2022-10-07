@@ -11,13 +11,11 @@ from datadog_api_client.model_utils import (
 
 
 class RUMGroupByMissing(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         The value to use for logs that don't have the facet used to group by.
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

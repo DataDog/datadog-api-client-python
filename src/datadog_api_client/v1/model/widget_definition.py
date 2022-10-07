@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class WidgetDefinition(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         `Definition of the widget <https://docs.datadoghq.com/dashboards/widgets/>`_.
 
@@ -315,8 +315,6 @@ class WidgetDefinition(ModelComposed):
         :type size_by: TreeMapSizeBy, optional
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

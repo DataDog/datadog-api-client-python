@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class SecurityMonitoringRuleCreatePayload(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         Create a new rule.
 
@@ -46,8 +46,6 @@ class SecurityMonitoringRuleCreatePayload(ModelComposed):
         :type type: SecurityMonitoringRuleTypeCreate, optional
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

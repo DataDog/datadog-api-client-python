@@ -11,13 +11,11 @@ from datadog_api_client.model_utils import (
 
 
 class RUMAggregateBucketValue(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         A bucket value, can be either a timeseries or a single value.
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

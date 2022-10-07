@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class SyntheticsAssertion(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         Object describing the assertions type, their associated operator,
         which property they apply, and upon which target.
@@ -29,8 +29,6 @@ class SyntheticsAssertion(ModelComposed):
         :type type: SyntheticsAssertionType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

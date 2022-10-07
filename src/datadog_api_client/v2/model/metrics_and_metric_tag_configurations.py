@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class MetricsAndMetricTagConfigurations(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         Object for a metrics and metric tag configurations.
 
@@ -25,8 +25,6 @@ class MetricsAndMetricTagConfigurations(ModelComposed):
         :type attributes: MetricTagConfigurationAttributes, optional
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

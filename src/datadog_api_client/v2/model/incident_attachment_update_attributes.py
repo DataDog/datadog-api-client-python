@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class IncidentAttachmentUpdateAttributes(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         Incident attachment attributes.
 
@@ -22,8 +22,6 @@ class IncidentAttachmentUpdateAttributes(ModelComposed):
         :type attachment_type: IncidentAttachmentPostmortemAttachmentType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

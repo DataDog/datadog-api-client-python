@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class LogsArchiveCreateRequestDestination(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         An archive's destination.
 
@@ -37,8 +37,6 @@ class LogsArchiveCreateRequestDestination(ModelComposed):
         :type bucket: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

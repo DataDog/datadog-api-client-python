@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class NotebookCellCreateRequestAttributes(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         The attributes of a notebook cell in create cell request. Valid cell types are ``markdown`` , ``timeseries`` , ``toplist`` , ``heatmap`` , ``distribution`` ,
         ``log_stream``. `More information on each graph visualization type. <https://docs.datadoghq.com/dashboards/widgets/>`_
@@ -29,8 +29,6 @@ class NotebookCellCreateRequestAttributes(ModelComposed):
         :type time: NotebookCellTime, none_type, optional
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

@@ -14,7 +14,7 @@ class LogsArchiveDestination(ModelComposed):
 
     _nullable = True
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         An archive's destination.
 
@@ -40,8 +40,6 @@ class LogsArchiveDestination(ModelComposed):
         :type bucket: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

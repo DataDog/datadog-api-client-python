@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class IncidentTimelineCellCreateAttributes(ModelComposed):
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         The timeline cell's attributes for a create request.
 
@@ -25,8 +25,6 @@ class IncidentTimelineCellCreateAttributes(ModelComposed):
         :type important: bool, optional
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

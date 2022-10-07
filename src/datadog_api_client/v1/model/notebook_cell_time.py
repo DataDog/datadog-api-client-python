@@ -14,7 +14,7 @@ class NotebookCellTime(ModelComposed):
 
     _nullable = True
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         Timeframe for the notebook cell. When 'null', the notebook global time is used.
 
@@ -31,8 +31,6 @@ class NotebookCellTime(ModelComposed):
         :type start: datetime
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):
