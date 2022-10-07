@@ -173,6 +173,8 @@ def format_data_with_schema(
     imports = imports or defaultdict(set)
     if schema.get("type") not in {"string", "integer", "boolean"} or schema.get("enum"):
         name, imports = get_name_and_imports(schema, version, imports)
+    if schema.get("oneOf"):
+        name = None
     if name:
         imports[MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))].add(name)
 

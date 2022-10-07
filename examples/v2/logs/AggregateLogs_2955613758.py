@@ -11,8 +11,6 @@ from datadog_api_client.v2.model.logs_aggregation_function import LogsAggregatio
 from datadog_api_client.v2.model.logs_compute import LogsCompute
 from datadog_api_client.v2.model.logs_compute_type import LogsComputeType
 from datadog_api_client.v2.model.logs_group_by import LogsGroupBy
-from datadog_api_client.v2.model.logs_group_by_missing import LogsGroupByMissing
-from datadog_api_client.v2.model.logs_group_by_total import LogsGroupByTotal
 from datadog_api_client.v2.model.logs_query_filter import LogsQueryFilter
 from datadog_api_client.v2.model.logs_sort_order import LogsSortOrder
 
@@ -35,14 +33,14 @@ body = LogsAggregateRequest(
     group_by=[
         LogsGroupBy(
             facet="host",
-            missing=LogsGroupByMissing("miss"),
+            missing="miss",
             sort=LogsAggregateSort(
                 type=LogsAggregateSortType.MEASURE,
                 order=LogsSortOrder.ASCENDING,
                 aggregation=LogsAggregationFunction.PERCENTILE_90,
                 metric="@duration",
             ),
-            total=LogsGroupByTotal("recall"),
+            total="recall",
         ),
     ],
 )
