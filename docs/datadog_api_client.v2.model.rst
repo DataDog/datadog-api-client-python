@@ -3557,6 +3557,13 @@ security\_monitoring\_signal\_rule\_response
    :members:
    :show-inheritance:
 
+security\_monitoring\_signal\_rule\_response\_query
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_rule_response_query
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_signal\_rule\_type
 ----------------------------------------
 

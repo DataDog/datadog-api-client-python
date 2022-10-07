@@ -600,6 +600,9 @@ from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload 
 )
 from datadog_api_client.v2.model.security_monitoring_signal_rule_query import SecurityMonitoringSignalRuleQuery
 from datadog_api_client.v2.model.security_monitoring_signal_rule_response import SecurityMonitoringSignalRuleResponse
+from datadog_api_client.v2.model.security_monitoring_signal_rule_response_query import (
+    SecurityMonitoringSignalRuleResponseQuery,
+)
 from datadog_api_client.v2.model.security_monitoring_signal_rule_type import SecurityMonitoringSignalRuleType
 from datadog_api_client.v2.model.security_monitoring_signal_state import SecurityMonitoringSignalState
 from datadog_api_client.v2.model.security_monitoring_signal_state_update_attributes import (
