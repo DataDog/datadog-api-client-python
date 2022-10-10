@@ -993,10 +993,17 @@ def change_keys_js_to_python(input_dict, model_class):
     may have undeclared properties (additionalProperties attribute in the OAS
     document).
     """
-    if not getattr(model_class, "attribute_map", None):
+    if issubclass(model_class, ModelComposed):
+        attribute_map = {}
+        for t in model_class._composed_schemas.get("oneOf", ()):
+            if issubclass(t, OpenApiModel):
+                attribute_map.update(t.attribute_map)
+    elif not getattr(model_class, "attribute_map", None):
         return input_dict
+    else:
+        attribute_map = model_class.attribute_map
     output_dict = {}
-    reversed_attr_map = {value: key for key, value in model_class.attribute_map.items()}
+    reversed_attr_map = {value: key for key, value in attribute_map.items()}
     for javascript_key, value in input_dict.items():
         python_key = reversed_attr_map.get(javascript_key)
         if python_key is None:
