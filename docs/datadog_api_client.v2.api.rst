@@ -141,6 +141,13 @@ service\_accounts\_api
    :members:
    :show-inheritance:
 
+service\_definition\_api
+------------------------
+
+.. automodule:: datadog_api_client.v2.api.service_definition_api
+   :members:
+   :show-inheritance:
+
 usage\_metering\_api
 --------------------
 
