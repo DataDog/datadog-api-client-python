@@ -1,0 +1,62 @@
+interactions:
+- request:
+    body: '{"dd-service":"service-Test-Get_a_single_service_definition_returns_OK_response-1665405239","dd-team":"my-team","docs":[{"name":"Architecture","provider":"google
+      drive","url":"https://gdrive/mygivedoc"}],"extensions":{"frogextension":"extensionfrogvalue"},"integrations":{"opsgenie":{"region":"US","service-id":"123e4567-e89b-12d3-a456-426614174000"},"pagerduty":"https://my-org.pagerduty.com/service-directory/PMyService"},"links":[{"name":"Runbook","type":"runbook","url":"https://my-runbook"}],"repos":[{"name":"Source
+      Code","provider":"GitHub","url":"https://github.com/DataDog/given"}],"schema-version":"v2","tags":["this:tag","service:tag"],"team":"super-team"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/services/definitions
+  response:
+    body:
+      string: '{"data":[{"attributes":{"meta":{"ingested-schema-version":"v2","ingestion-source":"api","last-modified-time":"2022-10-10T12:33:59.412229035Z","github-html-url":"","warnings":[]},"schema":{"links":[{"url":"https://my-runbook","type":"runbook","name":"Runbook"}],"contacts":[],"docs":[{"url":"https://gdrive/mygivedoc","name":"Architecture","provider":"google
+        drive"}],"repos":[{"url":"https://github.com/DataDog/given","name":"Source
+        Code","provider":"GitHub"}],"tags":["service:tag","this:tag"],"dd-team":"my-team","integrations":{"opsgenie":{"region":"US","service-id":"123e4567-e89b-12d3-a456-426614174000"},"pagerduty":"https://my-org.pagerduty.com/service-directory/PMyService"},"schema-version":"v2","team":"super-team","extensions":{},"dd-service":"service-test-get_a_single_service_definition_returns_ok_response-1665405239"}},"type":"service-definition"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/services/definitions/service-Test-Get_a_single_service_definition_returns_OK_response-1665405239
+  response:
+    body:
+      string: '{"data":{"attributes":{"meta":{"ingested-schema-version":"v2","ingestion-source":"api","last-modified-time":"2022-10-10T12:24:16Z","github-html-url":"","warnings":[]},"schema":{"links":[{"url":"https://my-runbook","type":"runbook","name":"Runbook"}],"contacts":[],"docs":[{"url":"https://gdrive/mygivedoc","name":"Architecture","provider":"google
+        drive"}],"repos":[{"url":"https://github.com/DataDog/given","name":"Source
+        Code","provider":"GitHub"}],"tags":["service:tag","this:tag"],"dd-team":"my-team","integrations":{"opsgenie":{"region":"US","service-id":"123e4567-e89b-12d3-a456-426614174000"},"pagerduty":"https://my-org.pagerduty.com/service-directory/PMyService"},"schema-version":"v2","team":"super-team","extensions":{},"dd-service":"service-test-get_a_single_service_definition_returns_ok_response-1665405239"}},"type":"service-definition","id":"d6822c235d26b96b47ded1a3eecba6c1"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: Not Found
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/services/definitions/service-test-get_a_single_service_definition_returns_ok_response-1665405239
+  response:
+    body:
+      string: '{"errors":["Not Found"],"error_details":[{}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1
