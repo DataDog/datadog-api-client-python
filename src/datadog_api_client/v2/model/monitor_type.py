@@ -10,6 +10,11 @@ from datadog_api_client.model_utils import (
 
 
 class MonitorType(ModelNormal):
+    validations = {
+        "group_status": {
+            "inclusive_maximum": 2147483647,
+        },
+    }
     _nullable = True
 
     @cached_property

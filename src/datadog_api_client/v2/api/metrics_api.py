@@ -170,11 +170,17 @@ class MetricsApi:
                     "location": "query",
                 },
                 "filter_hours_ago": {
+                    "validation": {
+                        "inclusive_maximum": 2147483647,
+                    },
                     "openapi_types": (int,),
                     "attribute": "filter[hours_ago]",
                     "location": "query",
                 },
                 "filter_num_aggregations": {
+                    "validation": {
+                        "inclusive_maximum": 9,
+                    },
                     "openapi_types": (int,),
                     "attribute": "filter[num_aggregations]",
                     "location": "query",
@@ -185,6 +191,9 @@ class MetricsApi:
                     "location": "query",
                 },
                 "filter_timespan_h": {
+                    "validation": {
+                        "inclusive_maximum": 2147483647,
+                    },
                     "openapi_types": (int,),
                     "attribute": "filter[timespan_h]",
                     "location": "query",
