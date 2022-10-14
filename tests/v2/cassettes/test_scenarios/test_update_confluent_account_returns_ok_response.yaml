@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"api_key":"TestUpdateConfluentaccountreturnsOKresponse1665090166","api_secret":"test-api-secret","resources":[{"id":"test-resource-id","resource_type":"kafka","tags":["tag1","tag2:val2"]}],"tags":["tag1","tag2:val2"]},"type":"confluent-cloud-accounts"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integrations/confluent-cloud/accounts
+  response:
+    body:
+      string: '{"data":{"attributes":{"api_key":"TestUpdateConfluentaccountreturnsOKresponse1665090166","resources":[{"id":"test-resource-id","resource_type":"kafka","tags":["tag1","tag2:val2"]}],"tags":["tag1","tag2:val2"]},"type":"confluent-cloud-accounts","id":"ytthkwvtde"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"api_key":"TestUpdateConfluentaccountreturnsOKresponse1665090166","api_secret":"update-secret","tags":["updated_tag:val"]},"type":"confluent-cloud-accounts"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/integrations/confluent-cloud/accounts/ytthkwvtde
+  response:
+    body:
+      string: '{"data":{"attributes":{"api_key":"TestUpdateConfluentaccountreturnsOKresponse1665090166","resources":[{"id":"test-resource-id","resource_type":"kafka","tags":["tag1","tag2:val2"]}],"tags":["updated_tag:val"]},"type":"confluent-cloud-accounts","id":"ytthkwvtde"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integrations/confluent-cloud/accounts/ytthkwvtde
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

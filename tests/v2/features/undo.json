@@ -268,6 +268,73 @@
       "type": "idempotent"
     }
   },
+  "ListConfluentAccount": {
+    "tag": "Confluent Cloud",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateConfluentAccount": {
+    "tag": "Confluent Cloud",
+    "undo": {
+      "operationId": "DeleteConfluentAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteConfluentAccount": {
+    "tag": "Confluent Cloud",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetConfluentAccount": {
+    "tag": "Confluent Cloud",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateConfluentAccount": {
+    "tag": "Confluent Cloud",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListConfluentResource": {
+    "tag": "Confluent Cloud",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateConfluentResource": {
+    "tag": "Confluent Cloud",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteConfluentResource": {
+    "tag": "Confluent Cloud",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetConfluentResource": {
+    "tag": "Confluent Cloud",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateConfluentResource": {
+    "tag": "Confluent Cloud",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "SubmitLog": {
     "tag": "Logs",
     "undo": {

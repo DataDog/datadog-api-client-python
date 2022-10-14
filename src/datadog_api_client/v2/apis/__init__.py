@@ -1,6 +1,7 @@
 from datadog_api_client.v2.api.audit_api import AuditApi
 from datadog_api_client.v2.api.authn_mappings_api import AuthNMappingsApi
 from datadog_api_client.v2.api.cloud_workload_security_api import CloudWorkloadSecurityApi
+from datadog_api_client.v2.api.confluent_cloud_api import ConfluentCloudApi
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.api.events_api import EventsApi
 from datadog_api_client.v2.api.incident_services_api import IncidentServicesApi
