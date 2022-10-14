@@ -477,6 +477,146 @@ cloud\_workload\_security\_agent\_rules\_list\_response
    :members:
    :show-inheritance:
 
+confluent\_account\_create\_request
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_create_request
+   :members:
+   :show-inheritance:
+
+confluent\_account\_create\_request\_attributes
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_create_request_attributes
+   :members:
+   :show-inheritance:
+
+confluent\_account\_create\_request\_data
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_create_request_data
+   :members:
+   :show-inheritance:
+
+confluent\_account\_resource\_attributes
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_resource_attributes
+   :members:
+   :show-inheritance:
+
+confluent\_account\_response
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_response
+   :members:
+   :show-inheritance:
+
+confluent\_account\_response\_attributes
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_response_attributes
+   :members:
+   :show-inheritance:
+
+confluent\_account\_response\_data
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_response_data
+   :members:
+   :show-inheritance:
+
+confluent\_account\_type
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_type
+   :members:
+   :show-inheritance:
+
+confluent\_account\_update\_request
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_update_request
+   :members:
+   :show-inheritance:
+
+confluent\_account\_update\_request\_attributes
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_update_request_attributes
+   :members:
+   :show-inheritance:
+
+confluent\_account\_update\_request\_data
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_update_request_data
+   :members:
+   :show-inheritance:
+
+confluent\_accounts\_response
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_accounts_response
+   :members:
+   :show-inheritance:
+
+confluent\_resource\_request
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resource_request
+   :members:
+   :show-inheritance:
+
+confluent\_resource\_request\_attributes
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resource_request_attributes
+   :members:
+   :show-inheritance:
+
+confluent\_resource\_request\_data
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resource_request_data
+   :members:
+   :show-inheritance:
+
+confluent\_resource\_response
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resource_response
+   :members:
+   :show-inheritance:
+
+confluent\_resource\_response\_attributes
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resource_response_attributes
+   :members:
+   :show-inheritance:
+
+confluent\_resource\_response\_data
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resource_response_data
+   :members:
+   :show-inheritance:
+
+confluent\_resource\_type
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resource_type
+   :members:
+   :show-inheritance:
+
+confluent\_resources\_response
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resources_response
+   :members:
+   :show-inheritance:
+
 content\_encoding
 -----------------
 
