@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,15 +14,29 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.usage_time_series_object import UsageTimeSeriesObject
+from datadog_api_client.v2.model.hourly_usage_type import HourlyUsageType
+from datadog_api_client.v2.model.usage_attributes_object import UsageAttributesObject
+from datadog_api_client.v2.model.usage_time_series_object import UsageTimeSeriesObject
+from datadog_api_client.v2.model.hourly_usage_type import HourlyUsageType
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.usage_attributes_object import UsageAttributesObject
     from datadog_api_client.v2.model.usage_time_series_type import UsageTimeSeriesType
+
+
+@dataclass
+class UsageDataObjectJSON:
+    id: str
+    org_name: Union[str, UnsetType] = unset
+    product_family: Union[str, UnsetType] = unset
+    public_id: Union[str, UnsetType] = unset
+    timeseries: Union[List[UsageTimeSeriesObject], UnsetType] = unset
+    usage_type: Union[HourlyUsageType, UnsetType] = unset
 
 
 class UsageDataObject(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.usage_attributes_object import UsageAttributesObject
         from datadog_api_client.v2.model.usage_time_series_type import UsageTimeSeriesType
 
         return {
@@ -35,6 +50,7 @@ class UsageDataObject(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = UsageDataObjectJSON
 
     def __init__(
         self_,

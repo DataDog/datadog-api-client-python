@@ -3,26 +3,39 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
 
 
+from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
     from datadog_api_client.v2.model.application_key_relationships import ApplicationKeyRelationships
     from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
+
+
+@dataclass
+class FullApplicationKeyJSON:
+    id: str
+    created_at: Union[str, UnsetType] = unset
+    key: Union[str, UnsetType] = unset
+    last4: Union[str, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    scopes: Union[List[str], none_type, UnsetType] = unset
+    owned_by: Union[str, UnsetType] = unset
 
 
 class FullApplicationKey(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
         from datadog_api_client.v2.model.application_key_relationships import ApplicationKeyRelationships
         from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
 
@@ -39,6 +52,7 @@ class FullApplicationKey(ModelNormal):
         "relationships": "relationships",
         "type": "type",
     }
+    json_api_model = FullApplicationKeyJSON
 
     def __init__(
         self_,

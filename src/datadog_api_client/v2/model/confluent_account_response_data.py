@@ -3,23 +3,36 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
+from datadog_api_client.v2.model.confluent_resource_response_attributes import ConfluentResourceResponseAttributes
+from datadog_api_client.v2.model.confluent_account_response_attributes import ConfluentAccountResponseAttributes
+from datadog_api_client.v2.model.confluent_resource_response_attributes import ConfluentResourceResponseAttributes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.confluent_account_response_attributes import ConfluentAccountResponseAttributes
     from datadog_api_client.v2.model.confluent_account_type import ConfluentAccountType
+
+
+@dataclass
+class ConfluentAccountResponseDataJSON:
+    id: str
+    api_key: Union[str, UnsetType] = unset
+    resources: Union[List[ConfluentResourceResponseAttributes], UnsetType] = unset
+    tags: Union[List[str], UnsetType] = unset
 
 
 class ConfluentAccountResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.confluent_account_response_attributes import ConfluentAccountResponseAttributes
         from datadog_api_client.v2.model.confluent_account_type import ConfluentAccountType
 
         return {
@@ -33,6 +46,7 @@ class ConfluentAccountResponseData(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = ConfluentAccountResponseDataJSON
 
     def __init__(self_, attributes: ConfluentAccountResponseAttributes, id: str, type: ConfluentAccountType, **kwargs):
         """

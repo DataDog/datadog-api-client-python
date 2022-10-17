@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -13,16 +14,28 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
     from datadog_api_client.v2.model.api_key_relationships import APIKeyRelationships
     from datadog_api_client.v2.model.api_keys_type import APIKeysType
+
+
+@dataclass
+class FullAPIKeyJSON:
+    id: str
+    created_at: Union[str, UnsetType] = unset
+    key: Union[str, UnsetType] = unset
+    last4: Union[str, UnsetType] = unset
+    modified_at: Union[str, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    created_by: Union[str, UnsetType] = unset
+    modified_by: Union[str, UnsetType] = unset
 
 
 class FullAPIKey(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
         from datadog_api_client.v2.model.api_key_relationships import APIKeyRelationships
         from datadog_api_client.v2.model.api_keys_type import APIKeysType
 
@@ -39,6 +52,7 @@ class FullAPIKey(ModelNormal):
         "relationships": "relationships",
         "type": "type",
     }
+    json_api_model = FullAPIKeyJSON
 
     def __init__(
         self_,

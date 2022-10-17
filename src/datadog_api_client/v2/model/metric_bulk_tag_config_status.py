@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -13,17 +14,27 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
+from datadog_api_client.v2.model.metric_bulk_tag_config_tag_name_list import MetricBulkTagConfigTagNameList
+from datadog_api_client.v2.model.metric_bulk_tag_config_status_attributes import MetricBulkTagConfigStatusAttributes
+from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
+from datadog_api_client.v2.model.metric_bulk_tag_config_tag_name_list import MetricBulkTagConfigTagNameList
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.metric_bulk_tag_config_status_attributes import MetricBulkTagConfigStatusAttributes
     from datadog_api_client.v2.model.metric_bulk_configure_tags_type import MetricBulkConfigureTagsType
+
+
+@dataclass
+class MetricBulkTagConfigStatusJSON:
+    id: str
+    emails: Union[MetricBulkTagConfigEmailList, UnsetType] = unset
+    status: Union[str, UnsetType] = unset
+    tags: Union[MetricBulkTagConfigTagNameList, UnsetType] = unset
 
 
 class MetricBulkTagConfigStatus(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.metric_bulk_tag_config_status_attributes import (
-            MetricBulkTagConfigStatusAttributes,
-        )
         from datadog_api_client.v2.model.metric_bulk_configure_tags_type import MetricBulkConfigureTagsType
 
         return {
@@ -37,6 +48,7 @@ class MetricBulkTagConfigStatus(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = MetricBulkTagConfigStatusJSON
 
     def __init__(
         self_,

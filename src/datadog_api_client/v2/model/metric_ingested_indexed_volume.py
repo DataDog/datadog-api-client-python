@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -13,19 +14,22 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.metric_ingested_indexed_volume_attributes import MetricIngestedIndexedVolumeAttributes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.metric_ingested_indexed_volume_attributes import (
-        MetricIngestedIndexedVolumeAttributes,
-    )
     from datadog_api_client.v2.model.metric_ingested_indexed_volume_type import MetricIngestedIndexedVolumeType
+
+
+@dataclass
+class MetricIngestedIndexedVolumeJSON:
+    id: str
+    indexed_volume: Union[int, UnsetType] = unset
+    ingested_volume: Union[int, UnsetType] = unset
 
 
 class MetricIngestedIndexedVolume(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.metric_ingested_indexed_volume_attributes import (
-            MetricIngestedIndexedVolumeAttributes,
-        )
         from datadog_api_client.v2.model.metric_ingested_indexed_volume_type import MetricIngestedIndexedVolumeType
 
         return {
@@ -39,6 +43,7 @@ class MetricIngestedIndexedVolume(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = MetricIngestedIndexedVolumeJSON
 
     def __init__(
         self_,

@@ -3,25 +3,36 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
 
 
+from datadog_api_client.v2.model.security_monitoring_signal_attributes import SecurityMonitoringSignalAttributes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.security_monitoring_signal_attributes import SecurityMonitoringSignalAttributes
     from datadog_api_client.v2.model.security_monitoring_signal_type import SecurityMonitoringSignalType
+
+
+@dataclass
+class SecurityMonitoringSignalJSON:
+    id: str
+    attributes: Union[Dict[str, Any], UnsetType] = unset
+    message: Union[str, UnsetType] = unset
+    tags: Union[List[str], UnsetType] = unset
+    timestamp: Union[datetime, UnsetType] = unset
 
 
 class SecurityMonitoringSignal(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.security_monitoring_signal_attributes import SecurityMonitoringSignalAttributes
         from datadog_api_client.v2.model.security_monitoring_signal_type import SecurityMonitoringSignalType
 
         return {
@@ -35,6 +46,7 @@ class SecurityMonitoringSignal(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = SecurityMonitoringSignalJSON
 
     def __init__(
         self_,

@@ -3,23 +3,34 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
+from datadog_api_client.v2.model.user_update_attributes import UserUpdateAttributes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.user_update_attributes import UserUpdateAttributes
     from datadog_api_client.v2.model.users_type import UsersType
+
+
+@dataclass
+class UserUpdateDataJSON:
+    id: str
+    disabled: Union[bool, UnsetType] = unset
+    email: Union[str, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
 
 
 class UserUpdateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.user_update_attributes import UserUpdateAttributes
         from datadog_api_client.v2.model.users_type import UsersType
 
         return {
@@ -33,6 +44,7 @@ class UserUpdateData(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = UserUpdateDataJSON
 
     def __init__(self_, attributes: UserUpdateAttributes, id: str, type: UsersType, **kwargs):
         """

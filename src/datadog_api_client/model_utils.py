@@ -120,6 +120,8 @@ class OpenApiModel(object):
 
     read_only_vars: Collection[str] = frozenset()
 
+    json_api_model = None
+
     def set_attribute(self, name, value):
         # this is only used to set properties on self
 
@@ -1179,9 +1181,12 @@ def attempt_convert_item(
     for valid_class in valid_classes_coercible:
         try:
             if issubclass(valid_class, OpenApiModel):
-                return deserialize_model(
+                model = deserialize_model(
                     input_value, valid_class, path_to_item, check_type, configuration, spec_property_naming
                 )
+                if configuration.use_json_api and model.json_api_model:
+                    model = to_json_api(model)
+                return model
             elif valid_class == file_type:
                 return deserialize_file(input_value, configuration.temp_folder_path)
             return deserialize_primitive(input_value, valid_class, path_to_item)
@@ -1195,6 +1200,24 @@ def attempt_convert_item(
         raise get_type_error(input_value, path_to_item, valid_classes, key_type=key_type)
     # we were unable to convert, must_convert == False
     return input_value
+
+
+def to_json_api(model):
+    cls = model.json_api_model
+    kwargs = {"id": model.id}
+    if "attributes" in model.attribute_map:
+        for attr in model.attributes.attribute_map:
+            kwargs[attr] = model.attributes.get(attr)
+    if "relationships" in model.attribute_map:
+        for attr in model.relationships.attribute_map:
+            data = model.relationships.get(attr).data
+            if isinstance(data, list):
+                kwargs[attr] = [elt.id for elt in data]
+            elif data is not None:
+                kwargs[attr] = data.id
+            else:
+                kwargs[attr] = data
+    return cls(**kwargs)
 
 
 def is_type_nullable(input_type):

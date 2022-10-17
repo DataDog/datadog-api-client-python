@@ -314,7 +314,7 @@ def get_references_for_model(model, model_name):
     return list(result)
 
 
-def get_oneof_references_for_model(model, model_name, seen=None):
+def get_oneof_references_for_model(model, model_name, seen=None, add_container=False):
     result = {}
     if seen is None:
         seen = set()
@@ -323,6 +323,8 @@ def get_oneof_references_for_model(model, model_name, seen=None):
         if name in seen:
             return []
         seen.add(name)
+        if add_container:
+            result[name] = None
 
     if model.get("oneOf"):
         for schema in model["oneOf"]:
@@ -337,12 +339,12 @@ def get_oneof_references_for_model(model, model_name, seen=None):
                     result[sub_name] = None
 
     for key, definition in model.get("properties", {}).items():
-        result.update({k: None for k in get_oneof_references_for_model(definition, model_name, seen)})
+        result.update({k: None for k in get_oneof_references_for_model(definition, model_name, seen, add_container)})
         if definition.get("items"):
-            result.update({k: None for k in get_oneof_references_for_model(definition["items"], model_name, seen)})
+            result.update({k: None for k in get_oneof_references_for_model(definition["items"], model_name, seen, add_container=add_container)})
         if definition.get("additionalProperties"):
             result.update(
-                {k: None for k in get_oneof_references_for_model(definition["additionalProperties"], model_name, seen)}
+                {k: None for k in get_oneof_references_for_model(definition["additionalProperties"], model_name, seen, add_container=add_container)}
             )
     result.pop(model_name, None)
     return list(result)
@@ -684,3 +686,52 @@ def get_type_at_path(operation, attribute_path):
     for attr in attribute_path.split("."):
         content = content["properties"][attr]
     return get_type_for_items(content)
+
+
+def is_json_api(model):
+    properties = model.get("properties", {})
+    if not ("id" in properties and "type" in properties):
+        return False
+    if "attributes" in properties:
+        attributes = properties["attributes"]
+        return not bool(attributes.get("oneOf"))
+    return False
+
+
+def json_api_attributes(model):
+    required = model.get("required", ())
+    attributes = []
+    optional_attributes = []
+    imports = []
+    for attr, definition in model["properties"].get("attributes", {}).get("properties", {}).items():
+        if attr in required:
+            attributes.append((attr, get_typing_for_attribute(model["properties"]["attributes"], attr)))
+        else:
+            optional_attributes.append((attr, get_typing_for_attribute(model["properties"]["attributes"], attr, optional=True)))
+        name = formatter.get_name(definition)
+        if name:
+            imports.append(name)
+        elif "items" in definition:
+            name = formatter.get_name(definition["items"])
+            if name:
+                imports.append(name)
+    imports.extend(get_oneof_references_for_model(model["properties"].get("attributes", {}), None, add_container=True))
+
+    required = model["properties"].get("relationships", {}).get("required", {})
+    for attr, definition in model["properties"].get("relationships", {}).get("properties", {}).items():
+        definition_type = definition["properties"]["data"].get("type")
+        to_append = attributes if attr in required else optional_attributes
+        if definition_type == "array":
+            attr_type = "List[str]"
+        else:
+            if definition["properties"]["data"].get("nullable"):
+                attr_type = "Union[str, none_type]"
+            else:
+                attr_type = "str"
+        if attr not in required:
+            if attr_type.startswith("Union"):
+                attr_type = attr_type[:-1] + ", UnsetType]"
+            else:
+                attr_type = f"Union[{attr_type}, UnsetType]"
+        to_append.append((attr, attr_type))
+    return attributes, optional_attributes, imports

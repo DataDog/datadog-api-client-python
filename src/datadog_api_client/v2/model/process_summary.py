@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,15 +14,28 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.process_summary_attributes import ProcessSummaryAttributes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.process_summary_attributes import ProcessSummaryAttributes
     from datadog_api_client.v2.model.process_summary_type import ProcessSummaryType
+
+
+@dataclass
+class ProcessSummaryJSON:
+    id: str
+    cmdline: Union[str, UnsetType] = unset
+    host: Union[str, UnsetType] = unset
+    pid: Union[int, UnsetType] = unset
+    ppid: Union[int, UnsetType] = unset
+    start: Union[str, UnsetType] = unset
+    tags: Union[List[str], UnsetType] = unset
+    timestamp: Union[str, UnsetType] = unset
+    user: Union[str, UnsetType] = unset
 
 
 class ProcessSummary(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.process_summary_attributes import ProcessSummaryAttributes
         from datadog_api_client.v2.model.process_summary_type import ProcessSummaryType
 
         return {
@@ -35,6 +49,7 @@ class ProcessSummary(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = ProcessSummaryJSON
 
     def __init__(
         self_,

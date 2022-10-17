@@ -3,23 +3,34 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
+from datadog_api_client.v2.model.restriction_policy_binding import RestrictionPolicyBinding
+from datadog_api_client.v2.model.restriction_policy_attributes import RestrictionPolicyAttributes
+from datadog_api_client.v2.model.restriction_policy_binding import RestrictionPolicyBinding
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.restriction_policy_attributes import RestrictionPolicyAttributes
     from datadog_api_client.v2.model.restriction_policy_type import RestrictionPolicyType
+
+
+@dataclass
+class RestrictionPolicyJSON:
+    id: str
+    bindings: Union[List[RestrictionPolicyBinding], UnsetType] = unset
 
 
 class RestrictionPolicy(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.restriction_policy_attributes import RestrictionPolicyAttributes
         from datadog_api_client.v2.model.restriction_policy_type import RestrictionPolicyType
 
         return {
@@ -33,6 +44,7 @@ class RestrictionPolicy(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = RestrictionPolicyJSON
 
     def __init__(self_, attributes: RestrictionPolicyAttributes, id: str, type: RestrictionPolicyType, **kwargs):
         """

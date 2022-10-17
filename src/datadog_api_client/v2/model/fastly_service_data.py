@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,15 +14,21 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.fastly_service_attributes import FastlyServiceAttributes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.fastly_service_attributes import FastlyServiceAttributes
     from datadog_api_client.v2.model.fastly_service_type import FastlyServiceType
+
+
+@dataclass
+class FastlyServiceDataJSON:
+    id: str
+    tags: Union[List[str], UnsetType] = unset
 
 
 class FastlyServiceData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.fastly_service_attributes import FastlyServiceAttributes
         from datadog_api_client.v2.model.fastly_service_type import FastlyServiceType
 
         return {
@@ -35,6 +42,7 @@ class FastlyServiceData(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = FastlyServiceDataJSON
 
     def __init__(
         self_, id: str, type: FastlyServiceType, attributes: Union[FastlyServiceAttributes, UnsetType] = unset, **kwargs

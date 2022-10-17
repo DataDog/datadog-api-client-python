@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,19 +14,26 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v1.model.usage_specified_custom_reports_attributes import UsageSpecifiedCustomReportsAttributes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.usage_specified_custom_reports_attributes import (
-        UsageSpecifiedCustomReportsAttributes,
-    )
     from datadog_api_client.v1.model.usage_reports_type import UsageReportsType
+
+
+@dataclass
+class UsageSpecifiedCustomReportsDataJSON:
+    id: str
+    computed_on: Union[str, UnsetType] = unset
+    end_date: Union[str, UnsetType] = unset
+    location: Union[str, UnsetType] = unset
+    size: Union[int, UnsetType] = unset
+    start_date: Union[str, UnsetType] = unset
+    tags: Union[List[str], UnsetType] = unset
 
 
 class UsageSpecifiedCustomReportsData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.usage_specified_custom_reports_attributes import (
-            UsageSpecifiedCustomReportsAttributes,
-        )
         from datadog_api_client.v1.model.usage_reports_type import UsageReportsType
 
         return {
@@ -39,6 +47,7 @@ class UsageSpecifiedCustomReportsData(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = UsageSpecifiedCustomReportsDataJSON
 
     def __init__(
         self_,

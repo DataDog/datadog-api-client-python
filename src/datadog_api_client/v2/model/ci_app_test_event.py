@@ -3,25 +3,38 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Any, Dict, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
 
 
+from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
+from datadog_api_client.v2.model.ci_app_event_attributes import CIAppEventAttributes
+from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.ci_app_event_attributes import CIAppEventAttributes
     from datadog_api_client.v2.model.ci_app_test_event_type_name import CIAppTestEventTypeName
+
+
+@dataclass
+class CIAppTestEventJSON:
+    id: str
+    attributes: Union[Dict[str, Any], UnsetType] = unset
+    service: Union[str, UnsetType] = unset
+    tags: Union[TagsEventAttribute, UnsetType] = unset
+    timestamp: Union[datetime, UnsetType] = unset
 
 
 class CIAppTestEvent(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.ci_app_event_attributes import CIAppEventAttributes
         from datadog_api_client.v2.model.ci_app_test_event_type_name import CIAppTestEventTypeName
 
         return {
@@ -35,6 +48,7 @@ class CIAppTestEvent(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = CIAppTestEventJSON
 
     def __init__(
         self_,

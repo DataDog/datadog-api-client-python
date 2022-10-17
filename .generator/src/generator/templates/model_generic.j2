@@ -1,13 +1,33 @@
+{%- set seen_oneof = set() %}
+{%- if is_json_api(model) %}
+{%- set attrs, optional_attrs, imports = json_api_attributes(model) %}
+{%- set seen_oneof = set(imports) %}
+{%- for ref in imports %}
+from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
+{%- endfor %}
+{% endif %}
 {%- set refs = get_references_for_model(model, name) %}
-{%- if refs %}
+{%- if set(refs) - seen_oneof %}
 if TYPE_CHECKING:
-{%- for ref in refs %}
+{%- for ref in refs if ref not in seen_oneof %}
     from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
 {%- endfor %}
-{%- for ref in get_oneof_references_for_model(model, name) %}
+{%- for ref in get_oneof_references_for_model(model, name) if ref not in seen_oneof %}
     from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
 {%- endfor %}
 {%- endif %}
+
+{% if is_json_api(model) %}
+@dataclass
+class {{ name }}JSON:
+   id: str
+{%- for attr, typing in attrs %}
+   {{ attr|attribute_name }}: {{ typing }}
+{%- endfor %}
+{%- for attr, typing in optional_attrs %}
+   {{ attr|attribute_name }}: {{ typing }} = unset
+{%- endfor %}
+{% endif %}
 
 class {{ name }}(ModelNormal):
 
@@ -57,8 +77,8 @@ class {{ name }}(ModelNormal):
 {%- if model.get("additionalProperties") %}
     @cached_property
     def additional_properties_type(_):
-{%- if refs %}
-{%- for ref in refs %}
+{%- if set(refs) - seen_oneof %}
+{%- for ref in refs if ref not in seen_oneof %}
         from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
 {%- endfor %}
 {%- endif %}
@@ -72,8 +92,8 @@ class {{ name }}(ModelNormal):
 {%- if model.properties %}
     @cached_property
     def openapi_types(_):
-{%- if refs %}
-{%- for ref in refs %}
+{%- if set(refs) - seen_oneof %}
+{%- for ref in refs if ref not in seen_oneof %}
         from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
 {%- endfor %}
 {%- endif %}
@@ -107,6 +127,9 @@ class {{ name }}(ModelNormal):
 {%- if read_only_ns.started %}
     }
 {%- endif %}
+{%- if is_json_api(model) %}
+    json_api_model = {{ name }}JSON
+{% endif %}
 
     def __init__(self_,
 {%- for attr, definition in model.get("properties", {}).items() %}

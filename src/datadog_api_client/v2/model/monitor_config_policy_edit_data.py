@@ -3,27 +3,40 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
+from datadog_api_client.v2.model.monitor_config_policy_policy import MonitorConfigPolicyPolicy
+from datadog_api_client.v2.model.monitor_config_policy_type import MonitorConfigPolicyType
+from datadog_api_client.v2.model.monitor_config_policy_attribute_edit_request import (
+    MonitorConfigPolicyAttributeEditRequest,
+)
+from datadog_api_client.v2.model.monitor_config_policy_policy import MonitorConfigPolicyPolicy
+from datadog_api_client.v2.model.monitor_config_policy_tag_policy import MonitorConfigPolicyTagPolicy
+from datadog_api_client.v2.model.monitor_config_policy_type import MonitorConfigPolicyType
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.monitor_config_policy_attribute_edit_request import (
-        MonitorConfigPolicyAttributeEditRequest,
-    )
     from datadog_api_client.v2.model.monitor_config_policy_resource_type import MonitorConfigPolicyResourceType
+
+
+@dataclass
+class MonitorConfigPolicyEditDataJSON:
+    id: str
+    policy: Union[MonitorConfigPolicyPolicy, MonitorConfigPolicyTagPolicy, UnsetType] = unset
+    policy_type: Union[MonitorConfigPolicyType, UnsetType] = unset
 
 
 class MonitorConfigPolicyEditData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.monitor_config_policy_attribute_edit_request import (
-            MonitorConfigPolicyAttributeEditRequest,
-        )
         from datadog_api_client.v2.model.monitor_config_policy_resource_type import MonitorConfigPolicyResourceType
 
         return {
@@ -37,6 +50,7 @@ class MonitorConfigPolicyEditData(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = MonitorConfigPolicyEditDataJSON
 
     def __init__(
         self_,

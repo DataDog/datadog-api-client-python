@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -13,19 +14,45 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_creator_attributes import (
+    CloudWorkloadSecurityAgentRuleCreatorAttributes,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_updater_attributes import (
+    CloudWorkloadSecurityAgentRuleUpdaterAttributes,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_attributes import (
+    CloudWorkloadSecurityAgentRuleAttributes,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_creator_attributes import (
+    CloudWorkloadSecurityAgentRuleCreatorAttributes,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_updater_attributes import (
+    CloudWorkloadSecurityAgentRuleUpdaterAttributes,
+)
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_attributes import (
-        CloudWorkloadSecurityAgentRuleAttributes,
-    )
     from datadog_api_client.v2.model.cloud_workload_security_agent_rule_type import CloudWorkloadSecurityAgentRuleType
+
+
+@dataclass
+class CloudWorkloadSecurityAgentRuleDataJSON:
+    id: str
+    category: Union[str, UnsetType] = unset
+    creation_date: Union[int, UnsetType] = unset
+    creator: Union[CloudWorkloadSecurityAgentRuleCreatorAttributes, UnsetType] = unset
+    default_rule: Union[bool, UnsetType] = unset
+    description: Union[str, UnsetType] = unset
+    enabled: Union[bool, UnsetType] = unset
+    expression: Union[str, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    updated_at: Union[int, UnsetType] = unset
+    updater: Union[CloudWorkloadSecurityAgentRuleUpdaterAttributes, UnsetType] = unset
+    version: Union[int, UnsetType] = unset
 
 
 class CloudWorkloadSecurityAgentRuleData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.cloud_workload_security_agent_rule_attributes import (
-            CloudWorkloadSecurityAgentRuleAttributes,
-        )
         from datadog_api_client.v2.model.cloud_workload_security_agent_rule_type import (
             CloudWorkloadSecurityAgentRuleType,
         )
@@ -41,6 +68,7 @@ class CloudWorkloadSecurityAgentRuleData(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = CloudWorkloadSecurityAgentRuleDataJSON
 
     def __init__(
         self_,

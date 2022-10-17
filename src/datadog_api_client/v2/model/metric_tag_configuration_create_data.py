@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,19 +14,30 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
+from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
+from datadog_api_client.v2.model.metric_tag_configuration_create_attributes import (
+    MetricTagConfigurationCreateAttributes,
+)
+from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
+from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.metric_tag_configuration_create_attributes import (
-        MetricTagConfigurationCreateAttributes,
-    )
     from datadog_api_client.v2.model.metric_tag_configuration_type import MetricTagConfigurationType
+
+
+@dataclass
+class MetricTagConfigurationCreateDataJSON:
+    id: str
+    aggregations: Union[MetricCustomAggregations, UnsetType] = unset
+    include_percentiles: Union[bool, UnsetType] = unset
+    metric_type: Union[MetricTagConfigurationMetricTypes, UnsetType] = unset
+    tags: Union[List[str], UnsetType] = unset
 
 
 class MetricTagConfigurationCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.metric_tag_configuration_create_attributes import (
-            MetricTagConfigurationCreateAttributes,
-        )
         from datadog_api_client.v2.model.metric_tag_configuration_type import MetricTagConfigurationType
 
         return {
@@ -39,6 +51,7 @@ class MetricTagConfigurationCreateData(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = MetricTagConfigurationCreateDataJSON
 
     def __init__(
         self_,

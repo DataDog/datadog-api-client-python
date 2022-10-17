@@ -3,23 +3,35 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
+from datadog_api_client.v2.model.fastly_service import FastlyService
+from datadog_api_client.v2.model.fastly_accoun_response_attributes import FastlyAccounResponseAttributes
+from datadog_api_client.v2.model.fastly_service import FastlyService
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.fastly_accoun_response_attributes import FastlyAccounResponseAttributes
     from datadog_api_client.v2.model.fastly_account_type import FastlyAccountType
+
+
+@dataclass
+class FastlyAccountResponseDataJSON:
+    id: str
+    name: Union[str, UnsetType] = unset
+    services: Union[List[FastlyService], UnsetType] = unset
 
 
 class FastlyAccountResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.fastly_accoun_response_attributes import FastlyAccounResponseAttributes
         from datadog_api_client.v2.model.fastly_account_type import FastlyAccountType
 
         return {
@@ -33,6 +45,7 @@ class FastlyAccountResponseData(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = FastlyAccountResponseDataJSON
 
     def __init__(self_, attributes: FastlyAccounResponseAttributes, id: str, type: FastlyAccountType, **kwargs):
         """

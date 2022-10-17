@@ -3,25 +3,39 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
 
 
+from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
     from datadog_api_client.v2.model.permissions_type import PermissionsType
+
+
+@dataclass
+class PermissionJSON:
+    id: str
+    created: Union[datetime, UnsetType] = unset
+    description: Union[str, UnsetType] = unset
+    display_name: Union[str, UnsetType] = unset
+    display_type: Union[str, UnsetType] = unset
+    group_name: Union[str, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    restricted: Union[bool, UnsetType] = unset
 
 
 class Permission(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
         from datadog_api_client.v2.model.permissions_type import PermissionsType
 
         return {
@@ -35,6 +49,7 @@ class Permission(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = PermissionJSON
 
     def __init__(
         self_,

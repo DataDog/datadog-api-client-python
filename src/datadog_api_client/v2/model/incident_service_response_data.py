@@ -3,26 +3,38 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
 
 
+from datadog_api_client.v2.model.incident_service_response_attributes import IncidentServiceResponseAttributes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.incident_service_response_attributes import IncidentServiceResponseAttributes
     from datadog_api_client.v2.model.incident_service_relationships import IncidentServiceRelationships
     from datadog_api_client.v2.model.incident_service_type import IncidentServiceType
+
+
+@dataclass
+class IncidentServiceResponseDataJSON:
+    id: str
+    created: Union[datetime, UnsetType] = unset
+    modified: Union[datetime, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    created_by: Union[str, UnsetType] = unset
+    last_modified_by: Union[str, UnsetType] = unset
 
 
 class IncidentServiceResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.incident_service_response_attributes import IncidentServiceResponseAttributes
         from datadog_api_client.v2.model.incident_service_relationships import IncidentServiceRelationships
         from datadog_api_client.v2.model.incident_service_type import IncidentServiceType
 
@@ -42,6 +54,7 @@ class IncidentServiceResponseData(ModelNormal):
     read_only_vars = {
         "relationships",
     }
+    json_api_model = IncidentServiceResponseDataJSON
 
     def __init__(
         self_,

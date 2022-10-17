@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,15 +14,21 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.metric_all_tags_attributes import MetricAllTagsAttributes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.metric_all_tags_attributes import MetricAllTagsAttributes
     from datadog_api_client.v2.model.metric_type import MetricType
+
+
+@dataclass
+class MetricAllTagsJSON:
+    id: str
+    tags: Union[List[str], UnsetType] = unset
 
 
 class MetricAllTags(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.metric_all_tags_attributes import MetricAllTagsAttributes
         from datadog_api_client.v2.model.metric_type import MetricType
 
         return {
@@ -35,6 +42,7 @@ class MetricAllTags(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = MetricAllTagsJSON
 
     def __init__(
         self_,
