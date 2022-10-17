@@ -61,7 +61,7 @@ class SecurityMonitoringSignalRuleQuery(ModelNormal):
         **kwargs,
     ):
         """
-        Query for matching rule on signals
+        Query for matching rule on signals.
 
         :param aggregation: The aggregation type.
         :type aggregation: SecurityMonitoringRuleQueryAggregation, optional

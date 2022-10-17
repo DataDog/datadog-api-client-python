@@ -14,6 +14,12 @@ from datadog_api_client.model_utils import (
 
 
 class RUMApplicationAttributes(ModelNormal):
+    validations = {
+        "org_id": {
+            "inclusive_maximum": 2147483647,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {

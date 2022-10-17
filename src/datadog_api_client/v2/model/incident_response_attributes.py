@@ -145,7 +145,7 @@ class IncidentResponseAttributes(ModelNormal):
         :param public_id: The monotonically increasing integer ID for the incident.
         :type public_id: int, optional
 
-        :param resolved: Timestamp when the incident's state was set to resolved.
+        :param resolved: Timestamp when the incident's state was last changed from active or stable to resolved or completed.
         :type resolved: datetime, none_type, optional
 
         :param time_to_detect: The amount of time in seconds to detect the incident.

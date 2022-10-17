@@ -38,7 +38,6 @@ class IncidentUpdateAttributes(ModelNormal):
             "detected": (datetime, none_type),
             "fields": ({str: (IncidentFieldAttributes,)},),
             "notification_handles": ([IncidentNotificationHandle],),
-            "resolved": (datetime, none_type),
             "title": (str,),
         }
 
@@ -50,7 +49,6 @@ class IncidentUpdateAttributes(ModelNormal):
         "detected": "detected",
         "fields": "fields",
         "notification_handles": "notification_handles",
-        "resolved": "resolved",
         "title": "title",
     }
 
@@ -98,9 +96,6 @@ class IncidentUpdateAttributes(ModelNormal):
 
         :param notification_handles: Notification handles that will be notified of the incident during update.
         :type notification_handles: [IncidentNotificationHandle], optional
-
-        :param resolved: Timestamp when the incident's state was set to resolved.
-        :type resolved: datetime, none_type, optional
 
         :param title: The title of the incident, which summarizes what happened.
         :type title: str, optional

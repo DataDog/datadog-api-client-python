@@ -143,6 +143,8 @@ def glom(value, path):
 
     # replace foo[index].bar by foo.index.bar
     path = PATTERN_INDEX.sub(r".\1", path)
+    if not isinstance(value, dict):
+        path = ".".join(snake_case(p) for p in path.split("."))
 
     return g(value, path) if path else value
 

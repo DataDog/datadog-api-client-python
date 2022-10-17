@@ -27,7 +27,9 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
         from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
         from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
         from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
-        from datadog_api_client.v2.model.security_monitoring_signal_rule_query import SecurityMonitoringSignalRuleQuery
+        from datadog_api_client.v2.model.security_monitoring_signal_rule_response_query import (
+            SecurityMonitoringSignalRuleResponseQuery,
+        )
         from datadog_api_client.v2.model.security_monitoring_signal_rule_type import SecurityMonitoringSignalRuleType
 
         return {
@@ -43,7 +45,7 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
             "message": (str,),
             "name": (str,),
             "options": (SecurityMonitoringRuleOptions,),
-            "queries": ([SecurityMonitoringSignalRuleQuery],),
+            "queries": ([SecurityMonitoringSignalRuleResponseQuery],),
             "tags": ([str],),
             "type": (SecurityMonitoringSignalRuleType,),
             "update_author_id": (int,),
@@ -131,7 +133,7 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
         :type options: SecurityMonitoringRuleOptions, optional
 
         :param queries: Queries for selecting logs which are part of the rule.
-        :type queries: [SecurityMonitoringSignalRuleQuery], optional
+        :type queries: [SecurityMonitoringSignalRuleResponseQuery], optional
 
         :param tags: Tags for generated signals.
         :type tags: [str], optional

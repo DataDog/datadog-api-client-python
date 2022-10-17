@@ -22,6 +22,13 @@ cloud\_workload\_security\_api
    :members:
    :show-inheritance:
 
+confluent\_cloud\_api
+---------------------
+
+.. automodule:: datadog_api_client.v2.api.confluent_cloud_api
+   :members:
+   :show-inheritance:
+
 dashboard\_lists\_api
 ---------------------
 
@@ -138,6 +145,13 @@ service\_accounts\_api
 ----------------------
 
 .. automodule:: datadog_api_client.v2.api.service_accounts_api
+   :members:
+   :show-inheritance:
+
+service\_definition\_api
+------------------------
+
+.. automodule:: datadog_api_client.v2.api.service_definition_api
    :members:
    :show-inheritance:
 

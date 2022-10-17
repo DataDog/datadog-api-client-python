@@ -477,6 +477,146 @@ cloud\_workload\_security\_agent\_rules\_list\_response
    :members:
    :show-inheritance:
 
+confluent\_account\_create\_request
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_create_request
+   :members:
+   :show-inheritance:
+
+confluent\_account\_create\_request\_attributes
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_create_request_attributes
+   :members:
+   :show-inheritance:
+
+confluent\_account\_create\_request\_data
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_create_request_data
+   :members:
+   :show-inheritance:
+
+confluent\_account\_resource\_attributes
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_resource_attributes
+   :members:
+   :show-inheritance:
+
+confluent\_account\_response
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_response
+   :members:
+   :show-inheritance:
+
+confluent\_account\_response\_attributes
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_response_attributes
+   :members:
+   :show-inheritance:
+
+confluent\_account\_response\_data
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_response_data
+   :members:
+   :show-inheritance:
+
+confluent\_account\_type
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_type
+   :members:
+   :show-inheritance:
+
+confluent\_account\_update\_request
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_update_request
+   :members:
+   :show-inheritance:
+
+confluent\_account\_update\_request\_attributes
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_update_request_attributes
+   :members:
+   :show-inheritance:
+
+confluent\_account\_update\_request\_data
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_account_update_request_data
+   :members:
+   :show-inheritance:
+
+confluent\_accounts\_response
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_accounts_response
+   :members:
+   :show-inheritance:
+
+confluent\_resource\_request
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resource_request
+   :members:
+   :show-inheritance:
+
+confluent\_resource\_request\_attributes
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resource_request_attributes
+   :members:
+   :show-inheritance:
+
+confluent\_resource\_request\_data
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resource_request_data
+   :members:
+   :show-inheritance:
+
+confluent\_resource\_response
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resource_response
+   :members:
+   :show-inheritance:
+
+confluent\_resource\_response\_attributes
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resource_response_attributes
+   :members:
+   :show-inheritance:
+
+confluent\_resource\_response\_data
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resource_response_data
+   :members:
+   :show-inheritance:
+
+confluent\_resource\_type
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resource_type
+   :members:
+   :show-inheritance:
+
+confluent\_resources\_response
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluent_resources_response
+   :members:
+   :show-inheritance:
+
 content\_encoding
 -----------------
 
@@ -3557,6 +3697,13 @@ security\_monitoring\_signal\_rule\_response
    :members:
    :show-inheritance:
 
+security\_monitoring\_signal\_rule\_response\_query
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_rule_response_query
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_signal\_rule\_type
 ----------------------------------------
 
@@ -3701,6 +3848,202 @@ service\_account\_create\_request
 ---------------------------------
 
 .. automodule:: datadog_api_client.v2.model.service_account_create_request
+   :members:
+   :show-inheritance:
+
+service\_definition\_create\_response
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_create_response
+   :members:
+   :show-inheritance:
+
+service\_definition\_data
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_data
+   :members:
+   :show-inheritance:
+
+service\_definition\_data\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_data_attributes
+   :members:
+   :show-inheritance:
+
+service\_definition\_get\_response
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_get_response
+   :members:
+   :show-inheritance:
+
+service\_definition\_meta
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_meta
+   :members:
+   :show-inheritance:
+
+service\_definition\_schema
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_schema
+   :members:
+   :show-inheritance:
+
+service\_definition\_v1
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v1
+   :members:
+   :show-inheritance:
+
+service\_definition\_v1\_contact
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v1_contact
+   :members:
+   :show-inheritance:
+
+service\_definition\_v1\_info
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v1_info
+   :members:
+   :show-inheritance:
+
+service\_definition\_v1\_integrations
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v1_integrations
+   :members:
+   :show-inheritance:
+
+service\_definition\_v1\_org
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v1_org
+   :members:
+   :show-inheritance:
+
+service\_definition\_v1\_resource
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v1_resource
+   :members:
+   :show-inheritance:
+
+service\_definition\_v1\_resource\_type
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v1_resource_type
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_contact
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_contact
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_doc
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_doc
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_email
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_email
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_email\_type
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_email_type
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_integrations
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_integrations
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_link
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_link
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_link\_type
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_link_type
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_opsgenie
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_opsgenie
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_opsgenie\_region
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_opsgenie_region
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_repo
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_repo
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_slack
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_slack
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_slack\_type
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_slack_type
+   :members:
+   :show-inheritance:
+
+service\_definitions\_create\_request
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definitions_create_request
+   :members:
+   :show-inheritance:
+
+service\_definitions\_list\_response
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definitions_list_response
    :members:
    :show-inheritance:
 

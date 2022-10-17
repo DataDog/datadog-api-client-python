@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"api_key":"TestAddresourcetoConfluentaccountreturnsOKresponse1665090164","api_secret":"test-api-secret","resources":[{"id":"test-resource-id","resource_type":"kafka","tags":["tag1","tag2:val2"]}],"tags":["tag1","tag2:val2"]},"type":"confluent-cloud-accounts"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integrations/confluent-cloud/accounts
+  response:
+    body:
+      string: '{"data":{"attributes":{"api_key":"TestAddresourcetoConfluentaccountreturnsOKresponse1665090164","resources":[{"id":"test-resource-id","resource_type":"kafka","tags":["tag1","tag2:val2"]}],"tags":["tag1","tag2:val2"]},"type":"confluent-cloud-accounts","id":"l7mlzljfqc"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"resource_type":"kafka","tags":["myTag","myTag2:myValue"]},"id":"testaddresourcetoconfluentaccountreturnsokresponse1665090164","type":"confluent-cloud-resources"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integrations/confluent-cloud/accounts/l7mlzljfqc/resources
+  response:
+    body:
+      string: '{"data":{"attributes":{"resource_type":"kafka","tags":["myTag","myTag2:myValue"]},"type":"confluent-cloud-resources","id":"testaddresourcetoconfluentaccountreturnsokresponse1665090164"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integrations/confluent-cloud/accounts/l7mlzljfqc
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
