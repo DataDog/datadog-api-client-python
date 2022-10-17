@@ -17,7 +17,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
     from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
     from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
-    from datadog_api_client.v2.model.security_monitoring_signal_rule_query import SecurityMonitoringSignalRuleQuery
+    from datadog_api_client.v2.model.security_monitoring_signal_rule_response_query import (
+        SecurityMonitoringSignalRuleResponseQuery,
+    )
     from datadog_api_client.v2.model.security_monitoring_signal_rule_type import SecurityMonitoringSignalRuleType
 
 
@@ -86,7 +88,7 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
         message: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         options: Union[SecurityMonitoringRuleOptions, UnsetType] = unset,
-        queries: Union[List[SecurityMonitoringSignalRuleQuery], UnsetType] = unset,
+        queries: Union[List[SecurityMonitoringSignalRuleResponseQuery], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         type: Union[SecurityMonitoringSignalRuleType, UnsetType] = unset,
         update_author_id: Union[int, UnsetType] = unset,
