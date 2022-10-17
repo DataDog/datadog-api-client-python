@@ -351,7 +351,7 @@ def format_data_with_schema_dict(
             warnings.warn(f"[{matched}] {data} is not valid for schema {name}")
 
     if not parameters and data:
-        parameters = ", ".join(f"{k}=\"{v}\"" for k, v in data.items())
+        parameters = ", ".join(f'{k}="{v}"' for k, v in data.items())
 
     if name:
         return f"{name}({parameters})", imports
