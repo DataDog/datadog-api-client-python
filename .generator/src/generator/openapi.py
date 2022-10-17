@@ -463,10 +463,13 @@ def get_api_models(operations):
                         seen.add(name)
                         yield name
                         if "oneOf" in content["schema"]:
-                            for name in get_oneof_types(content["schema"]):
-                                if name and name not in seen:
-                                    seen.add(name)
-                                    yield name
+                            for schema in content["schema"]["oneOf"]:
+                                type_ = schema.get("type", "object")
+                                if type_ in ("array", "object"):
+                                    name = formatter.get_name(schema)
+                                    if name and name not in seen:
+                                        seen.add(name)
+                                        yield name
         if "x-pagination" in operation:
             name = get_type_at_path(operation, operation["x-pagination"]["resultsPath"])
             if name and name not in seen:

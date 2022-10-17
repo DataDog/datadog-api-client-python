@@ -10,7 +10,6 @@ from datadog_api_client.v2.model.service_definitions_list_response import Servic
 from datadog_api_client.v2.model.service_definition_create_response import ServiceDefinitionCreateResponse
 from datadog_api_client.v2.model.service_definitions_create_request import ServiceDefinitionsCreateRequest
 from datadog_api_client.v2.model.service_definition_v2 import ServiceDefinitionV2
-from datadog_api_client.v2.model.str import str
 from datadog_api_client.v2.model.service_definition_get_response import ServiceDefinitionGetResponse
 
 
