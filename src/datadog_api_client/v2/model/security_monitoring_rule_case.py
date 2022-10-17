@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
 
 
 class SecurityMonitoringRuleCase(ModelNormal):
@@ -28,7 +36,14 @@ class SecurityMonitoringRuleCase(ModelNormal):
         "status": "status",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        condition: Union[str, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        notifications: Union[List[str], UnsetType] = unset,
+        status: Union[SecurityMonitoringRuleSeverity, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Case when signal is generated.
 
@@ -45,6 +60,12 @@ class SecurityMonitoringRuleCase(ModelNormal):
         :param status: Severity of the Security Signal.
         :type status: SecurityMonitoringRuleSeverity, optional
         """
+        if condition is not unset:
+            kwargs["condition"] = condition
+        if name is not unset:
+            kwargs["name"] = name
+        if notifications is not unset:
+            kwargs["notifications"] = notifications
+        if status is not unset:
+            kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -1,12 +1,25 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
+    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
+    from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
+    from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
+    from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
+    from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
 
 
 class SyntheticsTestOptions(ModelNormal):
@@ -78,7 +91,30 @@ class SyntheticsTestOptions(ModelNormal):
         "tick_every": "tick_every",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        accept_self_signed: Union[bool, UnsetType] = unset,
+        allow_insecure: Union[bool, UnsetType] = unset,
+        check_certificate_revocation: Union[bool, UnsetType] = unset,
+        ci: Union[SyntheticsTestCiOptions, UnsetType] = unset,
+        device_ids: Union[List[SyntheticsDeviceID], UnsetType] = unset,
+        disable_cors: Union[bool, UnsetType] = unset,
+        disable_csp: Union[bool, UnsetType] = unset,
+        follow_redirects: Union[bool, UnsetType] = unset,
+        ignore_server_certificate_error: Union[bool, UnsetType] = unset,
+        initial_navigation_timeout: Union[int, UnsetType] = unset,
+        min_failure_duration: Union[int, UnsetType] = unset,
+        min_location_failed: Union[int, UnsetType] = unset,
+        monitor_name: Union[str, UnsetType] = unset,
+        monitor_options: Union[SyntheticsTestOptionsMonitorOptions, UnsetType] = unset,
+        monitor_priority: Union[int, UnsetType] = unset,
+        no_screenshot: Union[bool, UnsetType] = unset,
+        restricted_roles: Union[SyntheticsRestrictedRoles, UnsetType] = unset,
+        retry: Union[SyntheticsTestOptionsRetry, UnsetType] = unset,
+        rum_settings: Union[SyntheticsBrowserTestRumSettings, UnsetType] = unset,
+        tick_every: Union[int, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Object describing the extra options for a Synthetic test.
 
@@ -155,6 +191,44 @@ class SyntheticsTestOptions(ModelNormal):
         :param tick_every: The frequency at which to run the Synthetic test (in seconds).
         :type tick_every: int, optional
         """
+        if accept_self_signed is not unset:
+            kwargs["accept_self_signed"] = accept_self_signed
+        if allow_insecure is not unset:
+            kwargs["allow_insecure"] = allow_insecure
+        if check_certificate_revocation is not unset:
+            kwargs["check_certificate_revocation"] = check_certificate_revocation
+        if ci is not unset:
+            kwargs["ci"] = ci
+        if device_ids is not unset:
+            kwargs["device_ids"] = device_ids
+        if disable_cors is not unset:
+            kwargs["disable_cors"] = disable_cors
+        if disable_csp is not unset:
+            kwargs["disable_csp"] = disable_csp
+        if follow_redirects is not unset:
+            kwargs["follow_redirects"] = follow_redirects
+        if ignore_server_certificate_error is not unset:
+            kwargs["ignore_server_certificate_error"] = ignore_server_certificate_error
+        if initial_navigation_timeout is not unset:
+            kwargs["initial_navigation_timeout"] = initial_navigation_timeout
+        if min_failure_duration is not unset:
+            kwargs["min_failure_duration"] = min_failure_duration
+        if min_location_failed is not unset:
+            kwargs["min_location_failed"] = min_location_failed
+        if monitor_name is not unset:
+            kwargs["monitor_name"] = monitor_name
+        if monitor_options is not unset:
+            kwargs["monitor_options"] = monitor_options
+        if monitor_priority is not unset:
+            kwargs["monitor_priority"] = monitor_priority
+        if no_screenshot is not unset:
+            kwargs["no_screenshot"] = no_screenshot
+        if restricted_roles is not unset:
+            kwargs["restricted_roles"] = restricted_roles
+        if retry is not unset:
+            kwargs["retry"] = retry
+        if rum_settings is not unset:
+            kwargs["rum_settings"] = rum_settings
+        if tick_every is not unset:
+            kwargs["tick_every"] = tick_every
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

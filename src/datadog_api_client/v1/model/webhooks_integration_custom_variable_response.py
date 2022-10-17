@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -24,7 +28,7 @@ class WebhooksIntegrationCustomVariableResponse(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self_, is_secret, name, *args, **kwargs):
+    def __init__(self_, is_secret: bool, name: str, value: Union[str, UnsetType] = unset, **kwargs):
         """
         Custom variable for Webhook integration.
 
@@ -38,9 +42,9 @@ class WebhooksIntegrationCustomVariableResponse(ModelNormal):
         :param value: Value of the custom variable. It won't be returned if the variable is secret.
         :type value: str, optional
         """
+        if value is not unset:
+            kwargs["value"] = value
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.is_secret = is_secret
         self_.name = name

@@ -1,12 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.authn_mapping_update_attributes import AuthNMappingUpdateAttributes
+    from datadog_api_client.v2.model.authn_mapping_update_relationships import AuthNMappingUpdateRelationships
+    from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
 
 
 class AuthNMappingUpdateData(ModelNormal):
@@ -30,7 +40,14 @@ class AuthNMappingUpdateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id, type, *args, **kwargs):
+    def __init__(
+        self_,
+        id: str,
+        type: AuthNMappingsType,
+        attributes: Union[AuthNMappingUpdateAttributes, UnsetType] = unset,
+        relationships: Union[AuthNMappingUpdateRelationships, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Data for updating an AuthN Mapping.
 
@@ -46,9 +63,11 @@ class AuthNMappingUpdateData(ModelNormal):
         :param type: AuthN Mappings resource type.
         :type type: AuthNMappingsType
         """
+        if attributes is not unset:
+            kwargs["attributes"] = attributes
+        if relationships is not unset:
+            kwargs["relationships"] = relationships
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.id = id
         self_.type = type

@@ -1,12 +1,25 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+    from datadog_api_client.v1.model.table_widget_has_search_bar import TableWidgetHasSearchBar
+    from datadog_api_client.v1.model.table_widget_request import TableWidgetRequest
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.table_widget_definition_type import TableWidgetDefinitionType
 
 
 class TableWidgetDefinition(ModelNormal):
@@ -41,7 +54,18 @@ class TableWidgetDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, requests, type, *args, **kwargs):
+    def __init__(
+        self_,
+        requests: List[TableWidgetRequest],
+        type: TableWidgetDefinitionType,
+        custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        has_search_bar: Union[TableWidgetHasSearchBar, UnsetType] = unset,
+        time: Union[WidgetTime, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        title_align: Union[WidgetTextAlign, UnsetType] = unset,
+        title_size: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The table visualization is available on timeboards and screenboards. It displays columns of metrics grouped by tag key.
 
@@ -69,9 +93,19 @@ class TableWidgetDefinition(ModelNormal):
         :param type: Type of the table widget.
         :type type: TableWidgetDefinitionType
         """
+        if custom_links is not unset:
+            kwargs["custom_links"] = custom_links
+        if has_search_bar is not unset:
+            kwargs["has_search_bar"] = has_search_bar
+        if time is not unset:
+            kwargs["time"] = time
+        if title is not unset:
+            kwargs["title"] = title
+        if title_align is not unset:
+            kwargs["title_align"] = title_align
+        if title_size is not unset:
+            kwargs["title_size"] = title_size
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.requests = requests
         self_.type = type

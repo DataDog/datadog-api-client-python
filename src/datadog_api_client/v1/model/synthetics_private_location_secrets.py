@@ -1,12 +1,25 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_private_location_secrets_authentication import (
+        SyntheticsPrivateLocationSecretsAuthentication,
+    )
+    from datadog_api_client.v1.model.synthetics_private_location_secrets_config_decryption import (
+        SyntheticsPrivateLocationSecretsConfigDecryption,
+    )
 
 
 class SyntheticsPrivateLocationSecrets(ModelNormal):
@@ -29,7 +42,12 @@ class SyntheticsPrivateLocationSecrets(ModelNormal):
         "config_decryption": "config_decryption",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        authentication: Union[SyntheticsPrivateLocationSecretsAuthentication, UnsetType] = unset,
+        config_decryption: Union[SyntheticsPrivateLocationSecretsConfigDecryption, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Secrets for the private location. Only present in the response when creating the private location.
 
@@ -39,6 +57,8 @@ class SyntheticsPrivateLocationSecrets(ModelNormal):
         :param config_decryption: Private key for the private location.
         :type config_decryption: SyntheticsPrivateLocationSecretsConfigDecryption, optional
         """
+        if authentication is not unset:
+            kwargs["authentication"] = authentication
+        if config_decryption is not unset:
+            kwargs["config_decryption"] = config_decryption
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

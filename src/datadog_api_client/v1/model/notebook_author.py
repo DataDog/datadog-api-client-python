@@ -1,13 +1,17 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
     none_type,
+    unset,
+    UnsetType,
 )
 
 
@@ -38,7 +42,19 @@ class NotebookAuthor(ModelNormal):
         "verified": "verified",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        created_at: Union[datetime, UnsetType] = unset,
+        disabled: Union[bool, UnsetType] = unset,
+        email: Union[str, UnsetType] = unset,
+        handle: Union[str, UnsetType] = unset,
+        icon: Union[str, UnsetType] = unset,
+        name: Union[str, none_type, UnsetType] = unset,
+        status: Union[str, UnsetType] = unset,
+        title: Union[str, none_type, UnsetType] = unset,
+        verified: Union[bool, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Attributes of user object returned by the API.
 
@@ -69,6 +85,22 @@ class NotebookAuthor(ModelNormal):
         :param verified: Whether the user is verified.
         :type verified: bool, optional
         """
+        if created_at is not unset:
+            kwargs["created_at"] = created_at
+        if disabled is not unset:
+            kwargs["disabled"] = disabled
+        if email is not unset:
+            kwargs["email"] = email
+        if handle is not unset:
+            kwargs["handle"] = handle
+        if icon is not unset:
+            kwargs["icon"] = icon
+        if name is not unset:
+            kwargs["name"] = name
+        if status is not unset:
+            kwargs["status"] = status
+        if title is not unset:
+            kwargs["title"] = title
+        if verified is not unset:
+            kwargs["verified"] = verified
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

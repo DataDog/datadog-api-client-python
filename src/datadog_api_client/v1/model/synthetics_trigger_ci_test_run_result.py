@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
 
 
 class SyntheticsTriggerCITestRunResult(ModelNormal):
@@ -28,7 +36,14 @@ class SyntheticsTriggerCITestRunResult(ModelNormal):
         "result_id": "result_id",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        device: Union[SyntheticsDeviceID, UnsetType] = unset,
+        location: Union[int, UnsetType] = unset,
+        public_id: Union[str, UnsetType] = unset,
+        result_id: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Information about a single test run.
 
@@ -44,6 +59,12 @@ class SyntheticsTriggerCITestRunResult(ModelNormal):
         :param result_id: ID of the result.
         :type result_id: str, optional
         """
+        if device is not unset:
+            kwargs["device"] = device
+        if location is not unset:
+            kwargs["location"] = location
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
+        if result_id is not unset:
+            kwargs["result_id"] = result_id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

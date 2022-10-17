@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -28,7 +32,15 @@ class WidgetAxis(ModelNormal):
         "scale": "scale",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        include_zero: Union[bool, UnsetType] = unset,
+        label: Union[str, UnsetType] = unset,
+        max: Union[str, UnsetType] = unset,
+        min: Union[str, UnsetType] = unset,
+        scale: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Axis controls for the widget.
 
@@ -47,6 +59,14 @@ class WidgetAxis(ModelNormal):
         :param scale: Specifies the scale type. Possible values are ``linear`` , ``log`` , ``sqrt`` , ``pow##`` (for example ``pow2`` , ``pow0.5`` etc.).
         :type scale: str, optional
         """
+        if include_zero is not unset:
+            kwargs["include_zero"] = include_zero
+        if label is not unset:
+            kwargs["label"] = label
+        if max is not unset:
+            kwargs["max"] = max
+        if min is not unset:
+            kwargs["min"] = min
+        if scale is not unset:
+            kwargs["scale"] = scale
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

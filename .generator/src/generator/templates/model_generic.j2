@@ -1,4 +1,13 @@
 {%- set refs = get_references_for_model(model, name) %}
+{%- if refs %}
+if TYPE_CHECKING:
+{%- for ref in refs %}
+    from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
+{%- endfor %}
+{%- for ref in get_oneof_references_for_model(model, name) %}
+    from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
+{%- endfor %}
+{%- endif %}
 
 class {{ name }}(ModelNormal):
 
@@ -101,8 +110,11 @@ class {{ name }}(ModelNormal):
 
     def __init__(self_,
 {%- for attr, definition in model.get("properties", {}).items() %}
-        {%- if attr in model.get("required", []) and (definition.get("default") == None or definition.enum) %} {{ attr|attribute_name }},{% endif %}
-{%- endfor %} *args, **kwargs):
+        {%- if attr in model.get("required", []) and (definition.get("default") == None or definition.enum) %} {{ attr|attribute_name }}: {{ get_typing_for_attribute(model, attr, current_name=name) }},{% endif %}
+{%- endfor %}
+{%- for attr, definition in model.get("properties", {}).items() %}
+        {%- if attr not in model.get("required", []) %} {{ attr|attribute_name }}: {{ get_typing_for_attribute(model, attr, current_name=name, optional=True) }}=unset,{% endif %}
+{%- endfor %} **kwargs):
         """
         {{ model.description|docstring|indent(8) }}
 {%- for attr, definition in model.get("properties", {}).items() %}
@@ -111,6 +123,12 @@ class {{ name }}(ModelNormal):
         :type {{ attr|attribute_name }}: {{ get_type_for_attribute(model, attr, current_name=name) }}{% if definition.nullable %}, none_type{% endif %}{% if attr not in model.get("required", []) %}, optional{% endif %}
 {%- endfor %}
         """
+{%- for attr, definition in model.get("properties", {}).items() %}
+        {%- if attr not in model.get("required", []) %}
+        if {{ attr|attribute_name }} is not unset:
+             kwargs["{{ attr|attribute_name }}"] = {{ attr|attribute_name }}
+        {%- endif %}
+{%- endfor %}
         super().__init__(kwargs)
 
 {%- for attr, definition in model.get("properties", {}).items() %}
@@ -118,8 +136,6 @@ class {{ name }}(ModelNormal):
         {{ attr|attribute_name }} = kwargs.get("{{ attr|attribute_name }}", {{ definition["default"]|format_value }})
         {%- endif %}
 {%- endfor %}
-
-        self_._check_pos_args(args)
 
 {% for attr in model.properties %}
         {%- if attr in model.get("required", []) %}

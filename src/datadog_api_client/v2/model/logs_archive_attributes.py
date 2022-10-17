@@ -1,13 +1,25 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.logs_archive_destination import LogsArchiveDestination
+    from datadog_api_client.v2.model.logs_archive_state import LogsArchiveState
+    from datadog_api_client.v2.model.logs_archive_destination_azure import LogsArchiveDestinationAzure
+    from datadog_api_client.v2.model.logs_archive_destination_gcs import LogsArchiveDestinationGCS
+    from datadog_api_client.v2.model.logs_archive_destination_s3 import LogsArchiveDestinationS3
 
 
 class LogsArchiveAttributes(ModelNormal):
@@ -36,7 +48,22 @@ class LogsArchiveAttributes(ModelNormal):
         "state": "state",
     }
 
-    def __init__(self_, destination, name, query, *args, **kwargs):
+    def __init__(
+        self_,
+        destination: Union[
+            Union[
+                LogsArchiveDestination, LogsArchiveDestinationAzure, LogsArchiveDestinationGCS, LogsArchiveDestinationS3
+            ],
+            none_type,
+        ],
+        name: str,
+        query: str,
+        include_tags: Union[bool, UnsetType] = unset,
+        rehydration_max_scan_size_in_gb: Union[int, none_type, UnsetType] = unset,
+        rehydration_tags: Union[List[str], UnsetType] = unset,
+        state: Union[LogsArchiveState, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The attributes associated with the archive.
 
@@ -62,9 +89,15 @@ class LogsArchiveAttributes(ModelNormal):
         :param state: The state of the archive.
         :type state: LogsArchiveState, optional
         """
+        if include_tags is not unset:
+            kwargs["include_tags"] = include_tags
+        if rehydration_max_scan_size_in_gb is not unset:
+            kwargs["rehydration_max_scan_size_in_gb"] = rehydration_max_scan_size_in_gb
+        if rehydration_tags is not unset:
+            kwargs["rehydration_tags"] = rehydration_tags
+        if state is not unset:
+            kwargs["state"] = state
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.destination = destination
         self_.name = name

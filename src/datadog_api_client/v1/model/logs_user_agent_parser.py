@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.logs_user_agent_parser_type import LogsUserAgentParserType
 
 
 class LogsUserAgentParser(ModelNormal):
@@ -32,7 +40,14 @@ class LogsUserAgentParser(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, type, *args, **kwargs):
+    def __init__(
+        self_,
+        type: LogsUserAgentParserType,
+        is_enabled: Union[bool, UnsetType] = unset,
+        is_encoded: Union[bool, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The User-Agent parser takes a User-Agent attribute and extracts the OS, browser, device, and other user data.
         It recognizes major bots like the Google Bot, Yahoo Slurp, and Bing.
@@ -55,11 +70,15 @@ class LogsUserAgentParser(ModelNormal):
         :param type: Type of logs User-Agent parser.
         :type type: LogsUserAgentParserType
         """
+        if is_enabled is not unset:
+            kwargs["is_enabled"] = is_enabled
+        if is_encoded is not unset:
+            kwargs["is_encoded"] = is_encoded
+        if name is not unset:
+            kwargs["name"] = name
         super().__init__(kwargs)
         sources = kwargs.get("sources", ["http.useragent"])
         target = kwargs.get("target", "http.useragent_details")
-
-        self_._check_pos_args(args)
 
         self_.sources = sources
         self_.target = target

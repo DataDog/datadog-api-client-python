@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.log import Log
 
 
 class LogsListResponse(ModelNormal):
@@ -26,7 +34,13 @@ class LogsListResponse(ModelNormal):
         "status": "status",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        logs: Union[List[Log], UnsetType] = unset,
+        next_log_id: Union[str, UnsetType] = unset,
+        status: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Response object with all logs matching the request and pagination information.
 
@@ -40,6 +54,10 @@ class LogsListResponse(ModelNormal):
         :param status: Status of the response.
         :type status: str, optional
         """
+        if logs is not unset:
+            kwargs["logs"] = logs
+        if next_log_id is not unset:
+            kwargs["next_log_id"] = next_log_id
+        if status is not unset:
+            kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -44,16 +48,16 @@ class RUMApplicationAttributes(ModelNormal):
 
     def __init__(
         self_,
-        application_id,
-        created_at,
-        created_by_handle,
-        name,
-        org_id,
-        type,
-        updated_at,
-        updated_by_handle,
-        *args,
-        **kwargs
+        application_id: str,
+        created_at: int,
+        created_by_handle: str,
+        name: str,
+        org_id: int,
+        type: str,
+        updated_at: int,
+        updated_by_handle: str,
+        hash: Union[str, UnsetType] = unset,
+        **kwargs,
     ):
         """
         RUM application attributes.
@@ -85,9 +89,9 @@ class RUMApplicationAttributes(ModelNormal):
         :param updated_by_handle: Handle of the updater user.
         :type updated_by_handle: str
         """
+        if hash is not unset:
+            kwargs["hash"] = hash
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.application_id = application_id
         self_.created_at = created_at

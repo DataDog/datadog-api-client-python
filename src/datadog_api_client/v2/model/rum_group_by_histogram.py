@@ -1,6 +1,7 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
@@ -24,7 +25,7 @@ class RUMGroupByHistogram(ModelNormal):
         "min": "min",
     }
 
-    def __init__(self_, interval, max, min, *args, **kwargs):
+    def __init__(self_, interval: float, max: float, min: float, **kwargs):
         """
         Used to perform a histogram computation (only for measure facets).
         Note: At most 100 buckets are allowed, the number of buckets is (max - min)/interval.
@@ -41,8 +42,6 @@ class RUMGroupByHistogram(ModelNormal):
         :type min: float
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.interval = interval
         self_.max = max

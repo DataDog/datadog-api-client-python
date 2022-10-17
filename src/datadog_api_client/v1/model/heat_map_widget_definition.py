@@ -1,12 +1,26 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+    from datadog_api_client.v1.model.widget_event import WidgetEvent
+    from datadog_api_client.v1.model.heat_map_widget_request import HeatMapWidgetRequest
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.heat_map_widget_definition_type import HeatMapWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_axis import WidgetAxis
 
 
 class HeatMapWidgetDefinition(ModelNormal):
@@ -55,7 +69,21 @@ class HeatMapWidgetDefinition(ModelNormal):
         "yaxis": "yaxis",
     }
 
-    def __init__(self_, requests, type, *args, **kwargs):
+    def __init__(
+        self_,
+        requests: List[HeatMapWidgetRequest],
+        type: HeatMapWidgetDefinitionType,
+        custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        events: Union[List[WidgetEvent], UnsetType] = unset,
+        legend_size: Union[str, UnsetType] = unset,
+        show_legend: Union[bool, UnsetType] = unset,
+        time: Union[WidgetTime, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        title_align: Union[WidgetTextAlign, UnsetType] = unset,
+        title_size: Union[str, UnsetType] = unset,
+        yaxis: Union[WidgetAxis, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The heat map visualization shows metrics aggregated across many tags, such as hosts. The more hosts that have a particular value, the darker that square is.
 
@@ -92,9 +120,25 @@ class HeatMapWidgetDefinition(ModelNormal):
         :param yaxis: Axis controls for the widget.
         :type yaxis: WidgetAxis, optional
         """
+        if custom_links is not unset:
+            kwargs["custom_links"] = custom_links
+        if events is not unset:
+            kwargs["events"] = events
+        if legend_size is not unset:
+            kwargs["legend_size"] = legend_size
+        if show_legend is not unset:
+            kwargs["show_legend"] = show_legend
+        if time is not unset:
+            kwargs["time"] = time
+        if title is not unset:
+            kwargs["title"] = title
+        if title_align is not unset:
+            kwargs["title_align"] = title_align
+        if title_size is not unset:
+            kwargs["title_size"] = title_size
+        if yaxis is not unset:
+            kwargs["yaxis"] = yaxis
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.requests = requests
         self_.type = type

@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -26,7 +30,14 @@ class WidgetMarker(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self_, value, *args, **kwargs):
+    def __init__(
+        self_,
+        value: str,
+        display_type: Union[str, UnsetType] = unset,
+        label: Union[str, UnsetType] = unset,
+        time: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Markers allow you to add visual conditional formatting for your graphs.
 
@@ -46,8 +57,12 @@ class WidgetMarker(ModelNormal):
         :param value: Value to apply. Can be a single value y = 15 or a range of values 0 < y < 10.
         :type value: str
         """
+        if display_type is not unset:
+            kwargs["display_type"] = display_type
+        if label is not unset:
+            kwargs["label"] = label
+        if time is not unset:
+            kwargs["time"] = time
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.value = value

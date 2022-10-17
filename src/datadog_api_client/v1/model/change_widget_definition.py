@@ -1,12 +1,24 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+    from datadog_api_client.v1.model.change_widget_request import ChangeWidgetRequest
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.change_widget_definition_type import ChangeWidgetDefinitionType
 
 
 class ChangeWidgetDefinition(ModelNormal):
@@ -45,7 +57,17 @@ class ChangeWidgetDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, requests, type, *args, **kwargs):
+    def __init__(
+        self_,
+        requests: List[ChangeWidgetRequest],
+        type: ChangeWidgetDefinitionType,
+        custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        time: Union[WidgetTime, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        title_align: Union[WidgetTextAlign, UnsetType] = unset,
+        title_size: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The Change graph shows you the change in a value over the time period chosen.
 
@@ -73,9 +95,17 @@ class ChangeWidgetDefinition(ModelNormal):
         :param type: Type of the change widget.
         :type type: ChangeWidgetDefinitionType
         """
+        if custom_links is not unset:
+            kwargs["custom_links"] = custom_links
+        if time is not unset:
+            kwargs["time"] = time
+        if title is not unset:
+            kwargs["title"] = title
+        if title_align is not unset:
+            kwargs["title_align"] = title_align
+        if title_size is not unset:
+            kwargs["title_size"] = title_size
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.requests = requests
         self_.type = type

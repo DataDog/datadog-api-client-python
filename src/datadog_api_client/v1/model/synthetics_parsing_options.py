@@ -1,12 +1,23 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_variable_parser import SyntheticsVariableParser
+    from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type import (
+        SyntheticsGlobalVariableParseTestOptionsType,
+    )
 
 
 class SyntheticsParsingOptions(ModelNormal):
@@ -31,7 +42,14 @@ class SyntheticsParsingOptions(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        field: Union[str, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        parser: Union[SyntheticsVariableParser, UnsetType] = unset,
+        type: Union[SyntheticsGlobalVariableParseTestOptionsType, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Parsing options for variables to extract.
 
@@ -47,6 +65,12 @@ class SyntheticsParsingOptions(ModelNormal):
         :param type: Property of the Synthetics Test Response to use for a Synthetics global variable.
         :type type: SyntheticsGlobalVariableParseTestOptionsType, optional
         """
+        if field is not unset:
+            kwargs["field"] = field
+        if name is not unset:
+            kwargs["name"] = name
+        if parser is not unset:
+            kwargs["parser"] = parser
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -1,12 +1,44 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_aggregator import WidgetAggregator
+    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
+    from datadog_api_client.v1.model.apm_stats_query_definition import ApmStatsQueryDefinition
+    from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
+    from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
+    from datadog_api_client.v1.model.widget_formula import WidgetFormula
+    from datadog_api_client.v1.model.widget_sort import WidgetSort
+    from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
+    from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
+    from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+    from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
+        FormulaAndFunctionMetricQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
+        FormulaAndFunctionEventQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_process_query_definition import (
+        FormulaAndFunctionProcessQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_query_definition import (
+        FormulaAndFunctionApmDependencyStatsQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_definition import (
+        FormulaAndFunctionApmResourceStatsQueryDefinition,
+    )
 
 
 class TableWidgetRequest(ModelNormal):
@@ -67,7 +99,41 @@ class TableWidgetRequest(ModelNormal):
         "security_query": "security_query",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        aggregator: Union[WidgetAggregator, UnsetType] = unset,
+        alias: Union[str, UnsetType] = unset,
+        apm_query: Union[LogQueryDefinition, UnsetType] = unset,
+        apm_stats_query: Union[ApmStatsQueryDefinition, UnsetType] = unset,
+        cell_display_mode: Union[List[TableWidgetCellDisplayMode], UnsetType] = unset,
+        conditional_formats: Union[List[WidgetConditionalFormat], UnsetType] = unset,
+        event_query: Union[LogQueryDefinition, UnsetType] = unset,
+        formulas: Union[List[WidgetFormula], UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+        log_query: Union[LogQueryDefinition, UnsetType] = unset,
+        network_query: Union[LogQueryDefinition, UnsetType] = unset,
+        order: Union[WidgetSort, UnsetType] = unset,
+        process_query: Union[ProcessQueryDefinition, UnsetType] = unset,
+        profile_metrics_query: Union[LogQueryDefinition, UnsetType] = unset,
+        q: Union[str, UnsetType] = unset,
+        queries: Union[
+            List[
+                Union[
+                    FormulaAndFunctionQueryDefinition,
+                    FormulaAndFunctionMetricQueryDefinition,
+                    FormulaAndFunctionEventQueryDefinition,
+                    FormulaAndFunctionProcessQueryDefinition,
+                    FormulaAndFunctionApmDependencyStatsQueryDefinition,
+                    FormulaAndFunctionApmResourceStatsQueryDefinition,
+                ]
+            ],
+            UnsetType,
+        ] = unset,
+        response_format: Union[FormulaAndFunctionResponseFormat, UnsetType] = unset,
+        rum_query: Union[LogQueryDefinition, UnsetType] = unset,
+        security_query: Union[LogQueryDefinition, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Updated table widget.
 
@@ -128,6 +194,42 @@ class TableWidgetRequest(ModelNormal):
         :param security_query: The log query.
         :type security_query: LogQueryDefinition, optional
         """
+        if aggregator is not unset:
+            kwargs["aggregator"] = aggregator
+        if alias is not unset:
+            kwargs["alias"] = alias
+        if apm_query is not unset:
+            kwargs["apm_query"] = apm_query
+        if apm_stats_query is not unset:
+            kwargs["apm_stats_query"] = apm_stats_query
+        if cell_display_mode is not unset:
+            kwargs["cell_display_mode"] = cell_display_mode
+        if conditional_formats is not unset:
+            kwargs["conditional_formats"] = conditional_formats
+        if event_query is not unset:
+            kwargs["event_query"] = event_query
+        if formulas is not unset:
+            kwargs["formulas"] = formulas
+        if limit is not unset:
+            kwargs["limit"] = limit
+        if log_query is not unset:
+            kwargs["log_query"] = log_query
+        if network_query is not unset:
+            kwargs["network_query"] = network_query
+        if order is not unset:
+            kwargs["order"] = order
+        if process_query is not unset:
+            kwargs["process_query"] = process_query
+        if profile_metrics_query is not unset:
+            kwargs["profile_metrics_query"] = profile_metrics_query
+        if q is not unset:
+            kwargs["q"] = q
+        if queries is not unset:
+            kwargs["queries"] = queries
+        if response_format is not unset:
+            kwargs["response_format"] = response_format
+        if rum_query is not unset:
+            kwargs["rum_query"] = rum_query
+        if security_query is not unset:
+            kwargs["security_query"] = security_query
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

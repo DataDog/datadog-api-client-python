@@ -1,12 +1,23 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.metric_metadata import MetricMetadata
+    from datadog_api_client.v2.model.metric_point import MetricPoint
+    from datadog_api_client.v2.model.metric_resource import MetricResource
+    from datadog_api_client.v2.model.metric_intake_type import MetricIntakeType
 
 
 class MetricSeries(ModelNormal):
@@ -41,7 +52,19 @@ class MetricSeries(ModelNormal):
         "unit": "unit",
     }
 
-    def __init__(self_, metric, points, *args, **kwargs):
+    def __init__(
+        self_,
+        metric: str,
+        points: List[MetricPoint],
+        interval: Union[int, UnsetType] = unset,
+        metadata: Union[MetricMetadata, UnsetType] = unset,
+        resources: Union[List[MetricResource], UnsetType] = unset,
+        source_type_name: Union[str, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        type: Union[MetricIntakeType, UnsetType] = unset,
+        unit: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         A metric to submit to Datadog.
         See `Datadog metrics <https://docs.datadoghq.com/developers/metrics/#custom-metrics-properties>`_.
@@ -73,9 +96,21 @@ class MetricSeries(ModelNormal):
         :param unit: The unit of point value.
         :type unit: str, optional
         """
+        if interval is not unset:
+            kwargs["interval"] = interval
+        if metadata is not unset:
+            kwargs["metadata"] = metadata
+        if resources is not unset:
+            kwargs["resources"] = resources
+        if source_type_name is not unset:
+            kwargs["source_type_name"] = source_type_name
+        if tags is not unset:
+            kwargs["tags"] = tags
+        if type is not unset:
+            kwargs["type"] = type
+        if unit is not unset:
+            kwargs["unit"] = unit
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.metric = metric
         self_.points = points

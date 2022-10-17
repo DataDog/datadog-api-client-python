@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -44,7 +48,23 @@ class GCPAccount(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        auth_provider_x509_cert_url: Union[str, UnsetType] = unset,
+        auth_uri: Union[str, UnsetType] = unset,
+        automute: Union[bool, UnsetType] = unset,
+        client_email: Union[str, UnsetType] = unset,
+        client_id: Union[str, UnsetType] = unset,
+        client_x509_cert_url: Union[str, UnsetType] = unset,
+        errors: Union[List[str], UnsetType] = unset,
+        host_filters: Union[str, UnsetType] = unset,
+        private_key: Union[str, UnsetType] = unset,
+        private_key_id: Union[str, UnsetType] = unset,
+        project_id: Union[str, UnsetType] = unset,
+        token_uri: Union[str, UnsetType] = unset,
+        type: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Your Google Cloud Platform Account.
 
@@ -89,6 +109,30 @@ class GCPAccount(ModelNormal):
         :param type: The value for service_account found in your JSON service account key.
         :type type: str, optional
         """
+        if auth_provider_x509_cert_url is not unset:
+            kwargs["auth_provider_x509_cert_url"] = auth_provider_x509_cert_url
+        if auth_uri is not unset:
+            kwargs["auth_uri"] = auth_uri
+        if automute is not unset:
+            kwargs["automute"] = automute
+        if client_email is not unset:
+            kwargs["client_email"] = client_email
+        if client_id is not unset:
+            kwargs["client_id"] = client_id
+        if client_x509_cert_url is not unset:
+            kwargs["client_x509_cert_url"] = client_x509_cert_url
+        if errors is not unset:
+            kwargs["errors"] = errors
+        if host_filters is not unset:
+            kwargs["host_filters"] = host_filters
+        if private_key is not unset:
+            kwargs["private_key"] = private_key
+        if private_key_id is not unset:
+            kwargs["private_key_id"] = private_key_id
+        if project_id is not unset:
+            kwargs["project_id"] = project_id
+        if token_uri is not unset:
+            kwargs["token_uri"] = token_uri
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

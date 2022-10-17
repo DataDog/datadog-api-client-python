@@ -1,12 +1,16 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
 
 
@@ -33,7 +37,15 @@ class AuthNMappingAttributes(ModelNormal):
         "modified_at",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        attribute_key: Union[str, UnsetType] = unset,
+        attribute_value: Union[str, UnsetType] = unset,
+        created_at: Union[datetime, UnsetType] = unset,
+        modified_at: Union[datetime, UnsetType] = unset,
+        saml_assertion_attribute_id: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Attributes of AuthN Mapping.
 
@@ -52,6 +64,14 @@ class AuthNMappingAttributes(ModelNormal):
         :param saml_assertion_attribute_id: The ID of the SAML assertion attribute.
         :type saml_assertion_attribute_id: str, optional
         """
+        if attribute_key is not unset:
+            kwargs["attribute_key"] = attribute_key
+        if attribute_value is not unset:
+            kwargs["attribute_value"] = attribute_value
+        if created_at is not unset:
+            kwargs["created_at"] = created_at
+        if modified_at is not unset:
+            kwargs["modified_at"] = modified_at
+        if saml_assertion_attribute_id is not unset:
+            kwargs["saml_assertion_attribute_id"] = saml_assertion_attribute_id
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.logs_date_remapper_type import LogsDateRemapperType
 
 
 class LogsDateRemapper(ModelNormal):
@@ -28,7 +36,14 @@ class LogsDateRemapper(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, sources, type, *args, **kwargs):
+    def __init__(
+        self_,
+        sources: List[str],
+        type: LogsDateRemapperType,
+        is_enabled: Union[bool, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         As Datadog receives logs, it timestamps them using the value(s) from any of these default attributes.
 
@@ -63,9 +78,11 @@ class LogsDateRemapper(ModelNormal):
         :param type: Type of logs date remapper.
         :type type: LogsDateRemapperType
         """
+        if is_enabled is not unset:
+            kwargs["is_enabled"] = is_enabled
+        if name is not unset:
+            kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.sources = sources
         self_.type = type

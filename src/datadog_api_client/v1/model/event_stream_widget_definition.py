@@ -1,12 +1,23 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_event_size import WidgetEventSize
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.event_stream_widget_definition_type import EventStreamWidgetDefinitionType
 
 
 class EventStreamWidgetDefinition(ModelNormal):
@@ -39,7 +50,18 @@ class EventStreamWidgetDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, query, type, *args, **kwargs):
+    def __init__(
+        self_,
+        query: str,
+        type: EventStreamWidgetDefinitionType,
+        event_size: Union[WidgetEventSize, UnsetType] = unset,
+        tags_execution: Union[str, UnsetType] = unset,
+        time: Union[WidgetTime, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        title_align: Union[WidgetTextAlign, UnsetType] = unset,
+        title_size: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The event stream is a widget version of the stream of events
         on the Event Stream view. Only available on FREE layout dashboards.
@@ -68,9 +90,19 @@ class EventStreamWidgetDefinition(ModelNormal):
         :param type: Type of the event stream widget.
         :type type: EventStreamWidgetDefinitionType
         """
+        if event_size is not unset:
+            kwargs["event_size"] = event_size
+        if tags_execution is not unset:
+            kwargs["tags_execution"] = tags_execution
+        if time is not unset:
+            kwargs["time"] = time
+        if title is not unset:
+            kwargs["title"] = title
+        if title_align is not unset:
+            kwargs["title_align"] = title_align
+        if title_size is not unset:
+            kwargs["title_size"] = title_size
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.query = query
         self_.type = type

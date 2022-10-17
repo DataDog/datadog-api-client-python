@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.list_stream_column import ListStreamColumn
+    from datadog_api_client.v1.model.list_stream_query import ListStreamQuery
+    from datadog_api_client.v1.model.list_stream_response_format import ListStreamResponseFormat
 
 
 class ListStreamWidgetRequest(ModelNormal):
@@ -28,7 +36,13 @@ class ListStreamWidgetRequest(ModelNormal):
         "response_format": "response_format",
     }
 
-    def __init__(self_, columns, query, response_format, *args, **kwargs):
+    def __init__(
+        self_,
+        columns: List[ListStreamColumn],
+        query: ListStreamQuery,
+        response_format: ListStreamResponseFormat,
+        **kwargs,
+    ):
         """
         Updated list stream widget.
 
@@ -42,8 +56,6 @@ class ListStreamWidgetRequest(ModelNormal):
         :type response_format: ListStreamResponseFormat
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.columns = columns
         self_.query = query

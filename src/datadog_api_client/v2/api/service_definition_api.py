@@ -3,12 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model.service_definitions_list_response import ServiceDefinitionsListResponse
 from datadog_api_client.v2.model.service_definition_create_response import ServiceDefinitionCreateResponse
 from datadog_api_client.v2.model.service_definitions_create_request import ServiceDefinitionsCreateRequest
+from datadog_api_client.v2.model.service_definition_v2 import ServiceDefinitionV2
 from datadog_api_client.v2.model.service_definition_get_response import ServiceDefinitionGetResponse
 
 
@@ -113,7 +114,7 @@ class ServiceDefinitionApi:
 
     def create_or_update_service_definitions(
         self,
-        body: ServiceDefinitionsCreateRequest,
+        body: Union[ServiceDefinitionsCreateRequest, ServiceDefinitionV2, str],
     ) -> ServiceDefinitionCreateResponse:
         """Create or update service definition.
 

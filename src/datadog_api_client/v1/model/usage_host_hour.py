@@ -1,12 +1,16 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
 
 
@@ -51,7 +55,26 @@ class UsageHostHour(ModelNormal):
         "vsphere_host_count": "vsphere_host_count",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        agent_host_count: Union[int, UnsetType] = unset,
+        alibaba_host_count: Union[int, UnsetType] = unset,
+        apm_azure_app_service_host_count: Union[int, UnsetType] = unset,
+        apm_host_count: Union[int, UnsetType] = unset,
+        aws_host_count: Union[int, UnsetType] = unset,
+        azure_host_count: Union[int, UnsetType] = unset,
+        container_count: Union[int, UnsetType] = unset,
+        gcp_host_count: Union[int, UnsetType] = unset,
+        heroku_host_count: Union[int, UnsetType] = unset,
+        host_count: Union[int, UnsetType] = unset,
+        hour: Union[datetime, UnsetType] = unset,
+        infra_azure_app_service: Union[int, UnsetType] = unset,
+        opentelemetry_host_count: Union[int, UnsetType] = unset,
+        org_name: Union[str, UnsetType] = unset,
+        public_id: Union[str, UnsetType] = unset,
+        vsphere_host_count: Union[int, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Number of hosts/containers recorded for each hour for a given organization.
 
@@ -112,6 +135,36 @@ class UsageHostHour(ModelNormal):
             (and were NOT running the Datadog Agent).
         :type vsphere_host_count: int, optional
         """
+        if agent_host_count is not unset:
+            kwargs["agent_host_count"] = agent_host_count
+        if alibaba_host_count is not unset:
+            kwargs["alibaba_host_count"] = alibaba_host_count
+        if apm_azure_app_service_host_count is not unset:
+            kwargs["apm_azure_app_service_host_count"] = apm_azure_app_service_host_count
+        if apm_host_count is not unset:
+            kwargs["apm_host_count"] = apm_host_count
+        if aws_host_count is not unset:
+            kwargs["aws_host_count"] = aws_host_count
+        if azure_host_count is not unset:
+            kwargs["azure_host_count"] = azure_host_count
+        if container_count is not unset:
+            kwargs["container_count"] = container_count
+        if gcp_host_count is not unset:
+            kwargs["gcp_host_count"] = gcp_host_count
+        if heroku_host_count is not unset:
+            kwargs["heroku_host_count"] = heroku_host_count
+        if host_count is not unset:
+            kwargs["host_count"] = host_count
+        if hour is not unset:
+            kwargs["hour"] = hour
+        if infra_azure_app_service is not unset:
+            kwargs["infra_azure_app_service"] = infra_azure_app_service
+        if opentelemetry_host_count is not unset:
+            kwargs["opentelemetry_host_count"] = opentelemetry_host_count
+        if org_name is not unset:
+            kwargs["org_name"] = org_name
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
+        if vsphere_host_count is not unset:
+            kwargs["vsphere_host_count"] = vsphere_host_count
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

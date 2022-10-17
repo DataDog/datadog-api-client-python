@@ -1,13 +1,17 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
     none_type,
+    unset,
+    UnsetType,
 )
 
 
@@ -36,7 +40,18 @@ class UsageRumSessionsHour(ModelNormal):
         "session_count_reactnative": "session_count_reactnative",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        hour: Union[datetime, UnsetType] = unset,
+        org_name: Union[str, UnsetType] = unset,
+        public_id: Union[str, UnsetType] = unset,
+        replay_session_count: Union[int, UnsetType] = unset,
+        session_count: Union[int, none_type, UnsetType] = unset,
+        session_count_android: Union[int, none_type, UnsetType] = unset,
+        session_count_ios: Union[int, none_type, UnsetType] = unset,
+        session_count_reactnative: Union[int, none_type, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Number of RUM Sessions recorded for each hour for a given organization.
 
@@ -64,6 +79,20 @@ class UsageRumSessionsHour(ModelNormal):
         :param session_count_reactnative: Contains the number of mobile RUM Sessions on React Native (data available beginning May 1, 2022).
         :type session_count_reactnative: int, none_type, optional
         """
+        if hour is not unset:
+            kwargs["hour"] = hour
+        if org_name is not unset:
+            kwargs["org_name"] = org_name
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
+        if replay_session_count is not unset:
+            kwargs["replay_session_count"] = replay_session_count
+        if session_count is not unset:
+            kwargs["session_count"] = session_count
+        if session_count_android is not unset:
+            kwargs["session_count_android"] = session_count_android
+        if session_count_ios is not unset:
+            kwargs["session_count_ios"] = session_count_ios
+        if session_count_reactnative is not unset:
+            kwargs["session_count_reactnative"] = session_count_reactnative
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

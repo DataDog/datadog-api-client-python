@@ -1,13 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.webhooks_integration_encoding import WebhooksIntegrationEncoding
 
 
 class WebhooksIntegration(ModelNormal):
@@ -31,7 +39,15 @@ class WebhooksIntegration(ModelNormal):
         "url": "url",
     }
 
-    def __init__(self_, name, url, *args, **kwargs):
+    def __init__(
+        self_,
+        name: str,
+        url: str,
+        custom_headers: Union[str, none_type, UnsetType] = unset,
+        encode_as: Union[WebhooksIntegrationEncoding, UnsetType] = unset,
+        payload: Union[str, none_type, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Datadog-Webhooks integration.
 
@@ -56,9 +72,13 @@ class WebhooksIntegration(ModelNormal):
         :param url: URL of the webhook.
         :type url: str
         """
+        if custom_headers is not unset:
+            kwargs["custom_headers"] = custom_headers
+        if encode_as is not unset:
+            kwargs["encode_as"] = encode_as
+        if payload is not unset:
+            kwargs["payload"] = payload
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name
         self_.url = url

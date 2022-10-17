@@ -1,13 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.search_slo_timeframe import SearchSLOTimeframe
 
 
 class SearchSLOThreshold(ModelNormal):
@@ -31,7 +39,15 @@ class SearchSLOThreshold(ModelNormal):
         "warning_display": "warning_display",
     }
 
-    def __init__(self_, target, timeframe, *args, **kwargs):
+    def __init__(
+        self_,
+        target: float,
+        timeframe: SearchSLOTimeframe,
+        target_display: Union[str, UnsetType] = unset,
+        warning: Union[float, none_type, UnsetType] = unset,
+        warning_display: Union[str, none_type, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         SLO thresholds (target and optionally warning) for a single time window.
 
@@ -59,9 +75,13 @@ class SearchSLOThreshold(ModelNormal):
             Ignored in create/update requests.
         :type warning_display: str, none_type, optional
         """
+        if target_display is not unset:
+            kwargs["target_display"] = target_display
+        if warning is not unset:
+            kwargs["warning"] = warning
+        if warning_display is not unset:
+            kwargs["warning_display"] = warning_display
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.target = target
         self_.timeframe = timeframe

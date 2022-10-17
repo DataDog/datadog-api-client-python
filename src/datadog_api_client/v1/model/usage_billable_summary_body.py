@@ -1,12 +1,16 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
 
 
@@ -33,7 +37,17 @@ class UsageBillableSummaryBody(ModelNormal):
         "usage_unit": "usage_unit",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        account_billable_usage: Union[int, UnsetType] = unset,
+        elapsed_usage_hours: Union[int, UnsetType] = unset,
+        first_billable_usage_hour: Union[datetime, UnsetType] = unset,
+        last_billable_usage_hour: Union[datetime, UnsetType] = unset,
+        org_billable_usage: Union[int, UnsetType] = unset,
+        percentage_in_account: Union[float, UnsetType] = unset,
+        usage_unit: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Response with properties for each aggregated usage type.
 
@@ -58,6 +72,18 @@ class UsageBillableSummaryBody(ModelNormal):
         :param usage_unit: Units pertaining to the usage.
         :type usage_unit: str, optional
         """
+        if account_billable_usage is not unset:
+            kwargs["account_billable_usage"] = account_billable_usage
+        if elapsed_usage_hours is not unset:
+            kwargs["elapsed_usage_hours"] = elapsed_usage_hours
+        if first_billable_usage_hour is not unset:
+            kwargs["first_billable_usage_hour"] = first_billable_usage_hour
+        if last_billable_usage_hour is not unset:
+            kwargs["last_billable_usage_hour"] = last_billable_usage_hour
+        if org_billable_usage is not unset:
+            kwargs["org_billable_usage"] = org_billable_usage
+        if percentage_in_account is not unset:
+            kwargs["percentage_in_account"] = percentage_in_account
+        if usage_unit is not unset:
+            kwargs["usage_unit"] = usage_unit
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

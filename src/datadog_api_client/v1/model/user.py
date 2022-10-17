@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.access_role import AccessRole
 
 
 class User(ModelNormal):
@@ -38,7 +46,17 @@ class User(ModelNormal):
         "verified",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        access_role: Union[AccessRole, UnsetType] = unset,
+        disabled: Union[bool, UnsetType] = unset,
+        email: Union[str, UnsetType] = unset,
+        handle: Union[str, UnsetType] = unset,
+        icon: Union[str, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        verified: Union[bool, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Create, edit, and disable users.
 
@@ -63,6 +81,18 @@ class User(ModelNormal):
         :param verified: Whether or not the user logged in Datadog at least once.
         :type verified: bool, optional
         """
+        if access_role is not unset:
+            kwargs["access_role"] = access_role
+        if disabled is not unset:
+            kwargs["disabled"] = disabled
+        if email is not unset:
+            kwargs["email"] = email
+        if handle is not unset:
+            kwargs["handle"] = handle
+        if icon is not unset:
+            kwargs["icon"] = icon
+        if name is not unset:
+            kwargs["name"] = name
+        if verified is not unset:
+            kwargs["verified"] = verified
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

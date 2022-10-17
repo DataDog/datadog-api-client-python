@@ -1,12 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.formula_and_function_metric_aggregation import FormulaAndFunctionMetricAggregation
+    from datadog_api_client.v1.model.formula_and_function_metric_data_source import FormulaAndFunctionMetricDataSource
 
 
 class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
@@ -33,7 +42,14 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
         "query": "query",
     }
 
-    def __init__(self_, data_source, name, query, *args, **kwargs):
+    def __init__(
+        self_,
+        data_source: FormulaAndFunctionMetricDataSource,
+        name: str,
+        query: str,
+        aggregator: Union[FormulaAndFunctionMetricAggregation, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         A formula and functions metrics query.
 
@@ -49,9 +65,9 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
         :param query: Metrics query definition.
         :type query: str
         """
+        if aggregator is not unset:
+            kwargs["aggregator"] = aggregator
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.data_source = data_source
         self_.name = name

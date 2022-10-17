@@ -1,12 +1,19 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_filter_exclusion_filter import SecurityFilterExclusionFilter
+    from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
 
 
 class SecurityFilterCreateAttributes(ModelNormal):
@@ -31,7 +38,15 @@ class SecurityFilterCreateAttributes(ModelNormal):
         "query": "query",
     }
 
-    def __init__(self_, exclusion_filters, filtered_data_type, is_enabled, name, query, *args, **kwargs):
+    def __init__(
+        self_,
+        exclusion_filters: List[SecurityFilterExclusionFilter],
+        filtered_data_type: SecurityFilterFilteredDataType,
+        is_enabled: bool,
+        name: str,
+        query: str,
+        **kwargs,
+    ):
         """
         Object containing the attributes of the security filter to be created.
 
@@ -51,8 +66,6 @@ class SecurityFilterCreateAttributes(ModelNormal):
         :type query: str
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.exclusion_filters = exclusion_filters
         self_.filtered_data_type = filtered_data_type

@@ -1,12 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_comparator import WidgetComparator
+    from datadog_api_client.v1.model.widget_palette import WidgetPalette
 
 
 class WidgetConditionalFormat(ModelNormal):
@@ -39,7 +48,19 @@ class WidgetConditionalFormat(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self_, comparator, palette, value, *args, **kwargs):
+    def __init__(
+        self_,
+        comparator: WidgetComparator,
+        palette: WidgetPalette,
+        value: float,
+        custom_bg_color: Union[str, UnsetType] = unset,
+        custom_fg_color: Union[str, UnsetType] = unset,
+        hide_value: Union[bool, UnsetType] = unset,
+        image_url: Union[str, UnsetType] = unset,
+        metric: Union[str, UnsetType] = unset,
+        timeframe: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Define a conditional format for the widget.
 
@@ -70,9 +91,19 @@ class WidgetConditionalFormat(ModelNormal):
         :param value: Value for the comparator.
         :type value: float
         """
+        if custom_bg_color is not unset:
+            kwargs["custom_bg_color"] = custom_bg_color
+        if custom_fg_color is not unset:
+            kwargs["custom_fg_color"] = custom_fg_color
+        if hide_value is not unset:
+            kwargs["hide_value"] = hide_value
+        if image_url is not unset:
+            kwargs["image_url"] = image_url
+        if metric is not unset:
+            kwargs["metric"] = metric
+        if timeframe is not unset:
+            kwargs["timeframe"] = timeframe
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.comparator = comparator
         self_.palette = palette

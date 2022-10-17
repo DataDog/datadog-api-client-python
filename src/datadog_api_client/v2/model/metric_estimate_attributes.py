@@ -1,13 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.metric_estimate_type import MetricEstimateType
 
 
 class MetricEstimateAttributes(ModelNormal):
@@ -27,7 +35,13 @@ class MetricEstimateAttributes(ModelNormal):
         "estimated_output_series": "estimated_output_series",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        estimate_type: Union[MetricEstimateType, UnsetType] = unset,
+        estimated_at: Union[datetime, UnsetType] = unset,
+        estimated_output_series: Union[int, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Object containing the definition of a metric estimate attribute.
 
@@ -40,6 +54,10 @@ class MetricEstimateAttributes(ModelNormal):
         :param estimated_output_series: Estimated cardinality of the metric based on the queried configuration.
         :type estimated_output_series: int, optional
         """
+        if estimate_type is not unset:
+            kwargs["estimate_type"] = estimate_type
+        if estimated_at is not unset:
+            kwargs["estimated_at"] = estimated_at
+        if estimated_output_series is not unset:
+            kwargs["estimated_output_series"] = estimated_output_series
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

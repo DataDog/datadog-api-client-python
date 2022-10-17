@@ -1,12 +1,24 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontalAlign
+    from datadog_api_client.v1.model.widget_margin import WidgetMargin
+    from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
+    from datadog_api_client.v1.model.image_widget_definition_type import ImageWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_vertical_align import WidgetVerticalAlign
 
 
 class ImageWidgetDefinition(ModelNormal):
@@ -42,7 +54,19 @@ class ImageWidgetDefinition(ModelNormal):
         "vertical_align": "vertical_align",
     }
 
-    def __init__(self_, type, url, *args, **kwargs):
+    def __init__(
+        self_,
+        type: ImageWidgetDefinitionType,
+        url: str,
+        has_background: Union[bool, UnsetType] = unset,
+        has_border: Union[bool, UnsetType] = unset,
+        horizontal_align: Union[WidgetHorizontalAlign, UnsetType] = unset,
+        margin: Union[WidgetMargin, UnsetType] = unset,
+        sizing: Union[WidgetImageSizing, UnsetType] = unset,
+        url_dark_theme: Union[str, UnsetType] = unset,
+        vertical_align: Union[WidgetVerticalAlign, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The image widget allows you to embed an image on your dashboard. An image can be a PNG, JPG, or animated GIF. Only available on FREE layout dashboards.
 
@@ -75,9 +99,21 @@ class ImageWidgetDefinition(ModelNormal):
         :param vertical_align: Vertical alignment.
         :type vertical_align: WidgetVerticalAlign, optional
         """
+        if has_background is not unset:
+            kwargs["has_background"] = has_background
+        if has_border is not unset:
+            kwargs["has_border"] = has_border
+        if horizontal_align is not unset:
+            kwargs["horizontal_align"] = horizontal_align
+        if margin is not unset:
+            kwargs["margin"] = margin
+        if sizing is not unset:
+            kwargs["sizing"] = sizing
+        if url_dark_theme is not unset:
+            kwargs["url_dark_theme"] = url_dark_theme
+        if vertical_align is not unset:
+            kwargs["vertical_align"] = vertical_align
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.type = type
         self_.url = url

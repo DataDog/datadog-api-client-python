@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
 
 
 class SyntheticsDevice(ModelNormal):
@@ -30,7 +38,15 @@ class SyntheticsDevice(ModelNormal):
         "width": "width",
     }
 
-    def __init__(self_, height, id, name, width, *args, **kwargs):
+    def __init__(
+        self_,
+        height: int,
+        id: SyntheticsDeviceID,
+        name: str,
+        width: int,
+        is_mobile: Union[bool, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Object describing the device used to perform the Synthetic test.
 
@@ -49,9 +65,9 @@ class SyntheticsDevice(ModelNormal):
         :param width: Screen width of the device.
         :type width: int
         """
+        if is_mobile is not unset:
+            kwargs["is_mobile"] = is_mobile
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.height = height
         self_.id = id

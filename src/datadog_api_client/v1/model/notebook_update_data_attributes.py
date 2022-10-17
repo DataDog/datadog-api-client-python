@@ -1,12 +1,27 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.notebook_update_cell import NotebookUpdateCell
+    from datadog_api_client.v1.model.notebook_metadata import NotebookMetadata
+    from datadog_api_client.v1.model.notebook_status import NotebookStatus
+    from datadog_api_client.v1.model.notebook_global_time import NotebookGlobalTime
+    from datadog_api_client.v1.model.notebook_cell_create_request import NotebookCellCreateRequest
+    from datadog_api_client.v1.model.notebook_cell_update_request import NotebookCellUpdateRequest
+    from datadog_api_client.v1.model.notebook_relative_time import NotebookRelativeTime
+    from datadog_api_client.v1.model.notebook_absolute_time import NotebookAbsoluteTime
 
 
 class NotebookUpdateDataAttributes(ModelNormal):
@@ -40,7 +55,15 @@ class NotebookUpdateDataAttributes(ModelNormal):
         "time": "time",
     }
 
-    def __init__(self_, cells, name, time, *args, **kwargs):
+    def __init__(
+        self_,
+        cells: List[Union[NotebookUpdateCell, NotebookCellCreateRequest, NotebookCellUpdateRequest]],
+        name: str,
+        time: Union[NotebookGlobalTime, NotebookRelativeTime, NotebookAbsoluteTime],
+        metadata: Union[NotebookMetadata, UnsetType] = unset,
+        status: Union[NotebookStatus, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The data attributes of a notebook.
 
@@ -59,9 +82,11 @@ class NotebookUpdateDataAttributes(ModelNormal):
         :param time: Notebook global timeframe.
         :type time: NotebookGlobalTime
         """
+        if metadata is not unset:
+            kwargs["metadata"] = metadata
+        if status is not unset:
+            kwargs["status"] = status
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.cells = cells
         self_.name = name

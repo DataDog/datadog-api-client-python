@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.logs_exclusion_filter import LogsExclusionFilter
 
 
 class LogsExclusion(ModelNormal):
@@ -26,7 +34,13 @@ class LogsExclusion(ModelNormal):
         "name": "name",
     }
 
-    def __init__(self_, name, *args, **kwargs):
+    def __init__(
+        self_,
+        name: str,
+        filter: Union[LogsExclusionFilter, UnsetType] = unset,
+        is_enabled: Union[bool, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Represents the index exclusion filter object from configuration API.
 
@@ -39,8 +53,10 @@ class LogsExclusion(ModelNormal):
         :param name: Name of the index exclusion filter.
         :type name: str
         """
+        if filter is not unset:
+            kwargs["filter"] = filter
+        if is_enabled is not unset:
+            kwargs["is_enabled"] = is_enabled
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.name = name

@@ -1,12 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.role_create_attributes import RoleCreateAttributes
+    from datadog_api_client.v2.model.role_relationships import RoleRelationships
+    from datadog_api_client.v2.model.roles_type import RolesType
 
 
 class RoleCreateData(ModelNormal):
@@ -28,7 +38,13 @@ class RoleCreateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes, *args, **kwargs):
+    def __init__(
+        self_,
+        attributes: RoleCreateAttributes,
+        relationships: Union[RoleRelationships, UnsetType] = unset,
+        type: Union[RolesType, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Data related to the creation of a role.
 
@@ -41,8 +57,10 @@ class RoleCreateData(ModelNormal):
         :param type: Roles type.
         :type type: RolesType, optional
         """
+        if relationships is not unset:
+            kwargs["relationships"] = relationships
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes

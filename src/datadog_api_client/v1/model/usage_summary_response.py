@@ -1,13 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.logs_by_retention import LogsByRetention
+    from datadog_api_client.v1.model.usage_summary_date import UsageSummaryDate
 
 
 class UsageSummaryResponse(ModelNormal):
@@ -172,7 +181,85 @@ class UsageSummaryResponse(ModelNormal):
         "vsphere_host_top99p_sum": "vsphere_host_top99p_sum",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        agent_host_top99p_sum: Union[int, UnsetType] = unset,
+        apm_azure_app_service_host_top99p_sum: Union[int, UnsetType] = unset,
+        apm_fargate_count_avg_sum: Union[int, UnsetType] = unset,
+        apm_host_top99p_sum: Union[int, UnsetType] = unset,
+        audit_logs_lines_indexed_agg_sum: Union[int, UnsetType] = unset,
+        avg_profiled_fargate_tasks_sum: Union[int, UnsetType] = unset,
+        aws_host_top99p_sum: Union[int, UnsetType] = unset,
+        aws_lambda_func_count: Union[int, UnsetType] = unset,
+        aws_lambda_invocations_sum: Union[int, UnsetType] = unset,
+        azure_app_service_top99p_sum: Union[int, UnsetType] = unset,
+        azure_host_top99p_sum: Union[int, UnsetType] = unset,
+        billable_ingested_bytes_agg_sum: Union[int, UnsetType] = unset,
+        browser_rum_lite_session_count_agg_sum: Union[int, UnsetType] = unset,
+        browser_rum_replay_session_count_agg_sum: Union[int, UnsetType] = unset,
+        browser_rum_units_agg_sum: Union[int, UnsetType] = unset,
+        ci_pipeline_indexed_spans_agg_sum: Union[int, UnsetType] = unset,
+        ci_test_indexed_spans_agg_sum: Union[int, UnsetType] = unset,
+        ci_visibility_pipeline_committers_hwm_sum: Union[int, UnsetType] = unset,
+        ci_visibility_test_committers_hwm_sum: Union[int, UnsetType] = unset,
+        container_avg_sum: Union[int, UnsetType] = unset,
+        container_hwm_sum: Union[int, UnsetType] = unset,
+        cspm_aas_host_top99p_sum: Union[int, UnsetType] = unset,
+        cspm_aws_host_top99p_sum: Union[int, UnsetType] = unset,
+        cspm_azure_host_top99p_sum: Union[int, UnsetType] = unset,
+        cspm_container_avg_sum: Union[int, UnsetType] = unset,
+        cspm_container_hwm_sum: Union[int, UnsetType] = unset,
+        cspm_host_top99p_sum: Union[int, UnsetType] = unset,
+        custom_ts_sum: Union[int, UnsetType] = unset,
+        cws_containers_avg_sum: Union[int, UnsetType] = unset,
+        cws_host_top99p_sum: Union[int, UnsetType] = unset,
+        dbm_host_top99p_sum: Union[int, UnsetType] = unset,
+        dbm_queries_avg_sum: Union[int, UnsetType] = unset,
+        end_date: Union[datetime, UnsetType] = unset,
+        fargate_tasks_count_avg_sum: Union[int, UnsetType] = unset,
+        fargate_tasks_count_hwm_sum: Union[int, UnsetType] = unset,
+        gcp_host_top99p_sum: Union[int, UnsetType] = unset,
+        heroku_host_top99p_sum: Union[int, UnsetType] = unset,
+        incident_management_monthly_active_users_hwm_sum: Union[int, UnsetType] = unset,
+        indexed_events_count_agg_sum: Union[int, UnsetType] = unset,
+        infra_host_top99p_sum: Union[int, UnsetType] = unset,
+        ingested_events_bytes_agg_sum: Union[int, UnsetType] = unset,
+        iot_device_agg_sum: Union[int, UnsetType] = unset,
+        iot_device_top99p_sum: Union[int, UnsetType] = unset,
+        last_updated: Union[datetime, UnsetType] = unset,
+        live_indexed_events_agg_sum: Union[int, UnsetType] = unset,
+        live_ingested_bytes_agg_sum: Union[int, UnsetType] = unset,
+        logs_by_retention: Union[LogsByRetention, UnsetType] = unset,
+        mobile_rum_lite_session_count_agg_sum: Union[int, UnsetType] = unset,
+        mobile_rum_session_count_agg_sum: Union[int, UnsetType] = unset,
+        mobile_rum_session_count_android_agg_sum: Union[int, UnsetType] = unset,
+        mobile_rum_session_count_ios_agg_sum: Union[int, UnsetType] = unset,
+        mobile_rum_session_count_reactnative_agg_sum: Union[int, UnsetType] = unset,
+        mobile_rum_units_agg_sum: Union[int, UnsetType] = unset,
+        netflow_indexed_events_count_agg_sum: Union[int, UnsetType] = unset,
+        npm_host_top99p_sum: Union[int, UnsetType] = unset,
+        observability_pipelines_bytes_processed_agg_sum: Union[int, UnsetType] = unset,
+        online_archive_events_count_agg_sum: Union[int, UnsetType] = unset,
+        opentelemetry_host_top99p_sum: Union[int, UnsetType] = unset,
+        profiling_container_agent_count_avg: Union[int, UnsetType] = unset,
+        profiling_host_count_top99p_sum: Union[int, UnsetType] = unset,
+        rehydrated_indexed_events_agg_sum: Union[int, UnsetType] = unset,
+        rehydrated_ingested_bytes_agg_sum: Union[int, UnsetType] = unset,
+        rum_browser_and_mobile_session_count: Union[int, UnsetType] = unset,
+        rum_session_count_agg_sum: Union[int, UnsetType] = unset,
+        rum_total_session_count_agg_sum: Union[int, UnsetType] = unset,
+        rum_units_agg_sum: Union[int, UnsetType] = unset,
+        sds_logs_scanned_bytes_sum: Union[int, UnsetType] = unset,
+        sds_total_scanned_bytes_sum: Union[int, UnsetType] = unset,
+        start_date: Union[datetime, UnsetType] = unset,
+        synthetics_browser_check_calls_count_agg_sum: Union[int, UnsetType] = unset,
+        synthetics_check_calls_count_agg_sum: Union[int, UnsetType] = unset,
+        trace_search_indexed_events_count_agg_sum: Union[int, UnsetType] = unset,
+        twol_ingested_events_bytes_agg_sum: Union[int, UnsetType] = unset,
+        usage: Union[List[UsageSummaryDate], UnsetType] = unset,
+        vsphere_host_top99p_sum: Union[int, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Response summarizing all usage aggregated across the months in the request for all organizations, and broken down by month and by organization.
 
@@ -401,6 +488,156 @@ class UsageSummaryResponse(ModelNormal):
         :param vsphere_host_top99p_sum: Shows the 99th percentile of all vSphere hosts over all hours in the current months for all organizations.
         :type vsphere_host_top99p_sum: int, optional
         """
+        if agent_host_top99p_sum is not unset:
+            kwargs["agent_host_top99p_sum"] = agent_host_top99p_sum
+        if apm_azure_app_service_host_top99p_sum is not unset:
+            kwargs["apm_azure_app_service_host_top99p_sum"] = apm_azure_app_service_host_top99p_sum
+        if apm_fargate_count_avg_sum is not unset:
+            kwargs["apm_fargate_count_avg_sum"] = apm_fargate_count_avg_sum
+        if apm_host_top99p_sum is not unset:
+            kwargs["apm_host_top99p_sum"] = apm_host_top99p_sum
+        if audit_logs_lines_indexed_agg_sum is not unset:
+            kwargs["audit_logs_lines_indexed_agg_sum"] = audit_logs_lines_indexed_agg_sum
+        if avg_profiled_fargate_tasks_sum is not unset:
+            kwargs["avg_profiled_fargate_tasks_sum"] = avg_profiled_fargate_tasks_sum
+        if aws_host_top99p_sum is not unset:
+            kwargs["aws_host_top99p_sum"] = aws_host_top99p_sum
+        if aws_lambda_func_count is not unset:
+            kwargs["aws_lambda_func_count"] = aws_lambda_func_count
+        if aws_lambda_invocations_sum is not unset:
+            kwargs["aws_lambda_invocations_sum"] = aws_lambda_invocations_sum
+        if azure_app_service_top99p_sum is not unset:
+            kwargs["azure_app_service_top99p_sum"] = azure_app_service_top99p_sum
+        if azure_host_top99p_sum is not unset:
+            kwargs["azure_host_top99p_sum"] = azure_host_top99p_sum
+        if billable_ingested_bytes_agg_sum is not unset:
+            kwargs["billable_ingested_bytes_agg_sum"] = billable_ingested_bytes_agg_sum
+        if browser_rum_lite_session_count_agg_sum is not unset:
+            kwargs["browser_rum_lite_session_count_agg_sum"] = browser_rum_lite_session_count_agg_sum
+        if browser_rum_replay_session_count_agg_sum is not unset:
+            kwargs["browser_rum_replay_session_count_agg_sum"] = browser_rum_replay_session_count_agg_sum
+        if browser_rum_units_agg_sum is not unset:
+            kwargs["browser_rum_units_agg_sum"] = browser_rum_units_agg_sum
+        if ci_pipeline_indexed_spans_agg_sum is not unset:
+            kwargs["ci_pipeline_indexed_spans_agg_sum"] = ci_pipeline_indexed_spans_agg_sum
+        if ci_test_indexed_spans_agg_sum is not unset:
+            kwargs["ci_test_indexed_spans_agg_sum"] = ci_test_indexed_spans_agg_sum
+        if ci_visibility_pipeline_committers_hwm_sum is not unset:
+            kwargs["ci_visibility_pipeline_committers_hwm_sum"] = ci_visibility_pipeline_committers_hwm_sum
+        if ci_visibility_test_committers_hwm_sum is not unset:
+            kwargs["ci_visibility_test_committers_hwm_sum"] = ci_visibility_test_committers_hwm_sum
+        if container_avg_sum is not unset:
+            kwargs["container_avg_sum"] = container_avg_sum
+        if container_hwm_sum is not unset:
+            kwargs["container_hwm_sum"] = container_hwm_sum
+        if cspm_aas_host_top99p_sum is not unset:
+            kwargs["cspm_aas_host_top99p_sum"] = cspm_aas_host_top99p_sum
+        if cspm_aws_host_top99p_sum is not unset:
+            kwargs["cspm_aws_host_top99p_sum"] = cspm_aws_host_top99p_sum
+        if cspm_azure_host_top99p_sum is not unset:
+            kwargs["cspm_azure_host_top99p_sum"] = cspm_azure_host_top99p_sum
+        if cspm_container_avg_sum is not unset:
+            kwargs["cspm_container_avg_sum"] = cspm_container_avg_sum
+        if cspm_container_hwm_sum is not unset:
+            kwargs["cspm_container_hwm_sum"] = cspm_container_hwm_sum
+        if cspm_host_top99p_sum is not unset:
+            kwargs["cspm_host_top99p_sum"] = cspm_host_top99p_sum
+        if custom_ts_sum is not unset:
+            kwargs["custom_ts_sum"] = custom_ts_sum
+        if cws_containers_avg_sum is not unset:
+            kwargs["cws_containers_avg_sum"] = cws_containers_avg_sum
+        if cws_host_top99p_sum is not unset:
+            kwargs["cws_host_top99p_sum"] = cws_host_top99p_sum
+        if dbm_host_top99p_sum is not unset:
+            kwargs["dbm_host_top99p_sum"] = dbm_host_top99p_sum
+        if dbm_queries_avg_sum is not unset:
+            kwargs["dbm_queries_avg_sum"] = dbm_queries_avg_sum
+        if end_date is not unset:
+            kwargs["end_date"] = end_date
+        if fargate_tasks_count_avg_sum is not unset:
+            kwargs["fargate_tasks_count_avg_sum"] = fargate_tasks_count_avg_sum
+        if fargate_tasks_count_hwm_sum is not unset:
+            kwargs["fargate_tasks_count_hwm_sum"] = fargate_tasks_count_hwm_sum
+        if gcp_host_top99p_sum is not unset:
+            kwargs["gcp_host_top99p_sum"] = gcp_host_top99p_sum
+        if heroku_host_top99p_sum is not unset:
+            kwargs["heroku_host_top99p_sum"] = heroku_host_top99p_sum
+        if incident_management_monthly_active_users_hwm_sum is not unset:
+            kwargs[
+                "incident_management_monthly_active_users_hwm_sum"
+            ] = incident_management_monthly_active_users_hwm_sum
+        if indexed_events_count_agg_sum is not unset:
+            kwargs["indexed_events_count_agg_sum"] = indexed_events_count_agg_sum
+        if infra_host_top99p_sum is not unset:
+            kwargs["infra_host_top99p_sum"] = infra_host_top99p_sum
+        if ingested_events_bytes_agg_sum is not unset:
+            kwargs["ingested_events_bytes_agg_sum"] = ingested_events_bytes_agg_sum
+        if iot_device_agg_sum is not unset:
+            kwargs["iot_device_agg_sum"] = iot_device_agg_sum
+        if iot_device_top99p_sum is not unset:
+            kwargs["iot_device_top99p_sum"] = iot_device_top99p_sum
+        if last_updated is not unset:
+            kwargs["last_updated"] = last_updated
+        if live_indexed_events_agg_sum is not unset:
+            kwargs["live_indexed_events_agg_sum"] = live_indexed_events_agg_sum
+        if live_ingested_bytes_agg_sum is not unset:
+            kwargs["live_ingested_bytes_agg_sum"] = live_ingested_bytes_agg_sum
+        if logs_by_retention is not unset:
+            kwargs["logs_by_retention"] = logs_by_retention
+        if mobile_rum_lite_session_count_agg_sum is not unset:
+            kwargs["mobile_rum_lite_session_count_agg_sum"] = mobile_rum_lite_session_count_agg_sum
+        if mobile_rum_session_count_agg_sum is not unset:
+            kwargs["mobile_rum_session_count_agg_sum"] = mobile_rum_session_count_agg_sum
+        if mobile_rum_session_count_android_agg_sum is not unset:
+            kwargs["mobile_rum_session_count_android_agg_sum"] = mobile_rum_session_count_android_agg_sum
+        if mobile_rum_session_count_ios_agg_sum is not unset:
+            kwargs["mobile_rum_session_count_ios_agg_sum"] = mobile_rum_session_count_ios_agg_sum
+        if mobile_rum_session_count_reactnative_agg_sum is not unset:
+            kwargs["mobile_rum_session_count_reactnative_agg_sum"] = mobile_rum_session_count_reactnative_agg_sum
+        if mobile_rum_units_agg_sum is not unset:
+            kwargs["mobile_rum_units_agg_sum"] = mobile_rum_units_agg_sum
+        if netflow_indexed_events_count_agg_sum is not unset:
+            kwargs["netflow_indexed_events_count_agg_sum"] = netflow_indexed_events_count_agg_sum
+        if npm_host_top99p_sum is not unset:
+            kwargs["npm_host_top99p_sum"] = npm_host_top99p_sum
+        if observability_pipelines_bytes_processed_agg_sum is not unset:
+            kwargs["observability_pipelines_bytes_processed_agg_sum"] = observability_pipelines_bytes_processed_agg_sum
+        if online_archive_events_count_agg_sum is not unset:
+            kwargs["online_archive_events_count_agg_sum"] = online_archive_events_count_agg_sum
+        if opentelemetry_host_top99p_sum is not unset:
+            kwargs["opentelemetry_host_top99p_sum"] = opentelemetry_host_top99p_sum
+        if profiling_container_agent_count_avg is not unset:
+            kwargs["profiling_container_agent_count_avg"] = profiling_container_agent_count_avg
+        if profiling_host_count_top99p_sum is not unset:
+            kwargs["profiling_host_count_top99p_sum"] = profiling_host_count_top99p_sum
+        if rehydrated_indexed_events_agg_sum is not unset:
+            kwargs["rehydrated_indexed_events_agg_sum"] = rehydrated_indexed_events_agg_sum
+        if rehydrated_ingested_bytes_agg_sum is not unset:
+            kwargs["rehydrated_ingested_bytes_agg_sum"] = rehydrated_ingested_bytes_agg_sum
+        if rum_browser_and_mobile_session_count is not unset:
+            kwargs["rum_browser_and_mobile_session_count"] = rum_browser_and_mobile_session_count
+        if rum_session_count_agg_sum is not unset:
+            kwargs["rum_session_count_agg_sum"] = rum_session_count_agg_sum
+        if rum_total_session_count_agg_sum is not unset:
+            kwargs["rum_total_session_count_agg_sum"] = rum_total_session_count_agg_sum
+        if rum_units_agg_sum is not unset:
+            kwargs["rum_units_agg_sum"] = rum_units_agg_sum
+        if sds_logs_scanned_bytes_sum is not unset:
+            kwargs["sds_logs_scanned_bytes_sum"] = sds_logs_scanned_bytes_sum
+        if sds_total_scanned_bytes_sum is not unset:
+            kwargs["sds_total_scanned_bytes_sum"] = sds_total_scanned_bytes_sum
+        if start_date is not unset:
+            kwargs["start_date"] = start_date
+        if synthetics_browser_check_calls_count_agg_sum is not unset:
+            kwargs["synthetics_browser_check_calls_count_agg_sum"] = synthetics_browser_check_calls_count_agg_sum
+        if synthetics_check_calls_count_agg_sum is not unset:
+            kwargs["synthetics_check_calls_count_agg_sum"] = synthetics_check_calls_count_agg_sum
+        if trace_search_indexed_events_count_agg_sum is not unset:
+            kwargs["trace_search_indexed_events_count_agg_sum"] = trace_search_indexed_events_count_agg_sum
+        if twol_ingested_events_bytes_agg_sum is not unset:
+            kwargs["twol_ingested_events_bytes_agg_sum"] = twol_ingested_events_bytes_agg_sum
+        if usage is not unset:
+            kwargs["usage"] = usage
+        if vsphere_host_top99p_sum is not unset:
+            kwargs["vsphere_host_top99p_sum"] = vsphere_host_top99p_sum
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -6,7 +6,7 @@ class {{ name }}(ModelComposed):
     _nullable = True
 {%- endif %}
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         {{ model.description|docstring|indent(8) }}
 {%- for attr, definition, schema in get_oneof_parameters(model) %}
@@ -16,8 +16,6 @@ class {{ name }}(ModelComposed):
 {%- endfor %}
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
     @cached_property
     def _composed_schemas(_):

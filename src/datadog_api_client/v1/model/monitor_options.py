@@ -1,13 +1,32 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Dict, List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.monitor_options_aggregation import MonitorOptionsAggregation
+    from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
+    from datadog_api_client.v1.model.on_missing_data_option import OnMissingDataOption
+    from datadog_api_client.v1.model.monitor_renotify_status_type import MonitorRenotifyStatusType
+    from datadog_api_client.v1.model.monitor_threshold_window_options import MonitorThresholdWindowOptions
+    from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
+    from datadog_api_client.v1.model.monitor_formula_and_function_query_definition import (
+        MonitorFormulaAndFunctionQueryDefinition,
+    )
+    from datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition import (
+        MonitorFormulaAndFunctionEventQueryDefinition,
+    )
 
 
 class MonitorOptions(ModelNormal):
@@ -103,7 +122,41 @@ class MonitorOptions(ModelNormal):
         "device_ids",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        aggregation: Union[MonitorOptionsAggregation, UnsetType] = unset,
+        device_ids: Union[List[MonitorDeviceID], UnsetType] = unset,
+        enable_logs_sample: Union[bool, UnsetType] = unset,
+        escalation_message: Union[str, UnsetType] = unset,
+        evaluation_delay: Union[int, none_type, UnsetType] = unset,
+        group_retention_duration: Union[str, UnsetType] = unset,
+        groupby_simple_monitor: Union[bool, UnsetType] = unset,
+        include_tags: Union[bool, UnsetType] = unset,
+        locked: Union[bool, UnsetType] = unset,
+        min_failure_duration: Union[int, none_type, UnsetType] = unset,
+        min_location_failed: Union[int, none_type, UnsetType] = unset,
+        new_group_delay: Union[int, none_type, UnsetType] = unset,
+        new_host_delay: Union[int, none_type, UnsetType] = unset,
+        no_data_timeframe: Union[int, none_type, UnsetType] = unset,
+        notify_audit: Union[bool, UnsetType] = unset,
+        notify_by: Union[List[str], UnsetType] = unset,
+        notify_no_data: Union[bool, UnsetType] = unset,
+        on_missing_data: Union[OnMissingDataOption, UnsetType] = unset,
+        renotify_interval: Union[int, none_type, UnsetType] = unset,
+        renotify_occurrences: Union[int, none_type, UnsetType] = unset,
+        renotify_statuses: Union[List[MonitorRenotifyStatusType], none_type, UnsetType] = unset,
+        require_full_window: Union[bool, UnsetType] = unset,
+        silenced: Union[Dict[str, Union[int, none_type]], UnsetType] = unset,
+        synthetics_check_id: Union[str, none_type, UnsetType] = unset,
+        threshold_windows: Union[MonitorThresholdWindowOptions, UnsetType] = unset,
+        thresholds: Union[MonitorThresholds, UnsetType] = unset,
+        timeout_h: Union[int, none_type, UnsetType] = unset,
+        variables: Union[
+            List[Union[MonitorFormulaAndFunctionQueryDefinition, MonitorFormulaAndFunctionEventQueryDefinition]],
+            UnsetType,
+        ] = unset,
+        **kwargs,
+    ):
         """
         List of options associated with your monitor.
 
@@ -228,6 +281,60 @@ class MonitorOptions(ModelNormal):
         :param variables: List of requests that can be used in the monitor query. **This feature is currently in beta.**
         :type variables: [MonitorFormulaAndFunctionQueryDefinition], optional
         """
+        if aggregation is not unset:
+            kwargs["aggregation"] = aggregation
+        if device_ids is not unset:
+            kwargs["device_ids"] = device_ids
+        if enable_logs_sample is not unset:
+            kwargs["enable_logs_sample"] = enable_logs_sample
+        if escalation_message is not unset:
+            kwargs["escalation_message"] = escalation_message
+        if evaluation_delay is not unset:
+            kwargs["evaluation_delay"] = evaluation_delay
+        if group_retention_duration is not unset:
+            kwargs["group_retention_duration"] = group_retention_duration
+        if groupby_simple_monitor is not unset:
+            kwargs["groupby_simple_monitor"] = groupby_simple_monitor
+        if include_tags is not unset:
+            kwargs["include_tags"] = include_tags
+        if locked is not unset:
+            kwargs["locked"] = locked
+        if min_failure_duration is not unset:
+            kwargs["min_failure_duration"] = min_failure_duration
+        if min_location_failed is not unset:
+            kwargs["min_location_failed"] = min_location_failed
+        if new_group_delay is not unset:
+            kwargs["new_group_delay"] = new_group_delay
+        if new_host_delay is not unset:
+            kwargs["new_host_delay"] = new_host_delay
+        if no_data_timeframe is not unset:
+            kwargs["no_data_timeframe"] = no_data_timeframe
+        if notify_audit is not unset:
+            kwargs["notify_audit"] = notify_audit
+        if notify_by is not unset:
+            kwargs["notify_by"] = notify_by
+        if notify_no_data is not unset:
+            kwargs["notify_no_data"] = notify_no_data
+        if on_missing_data is not unset:
+            kwargs["on_missing_data"] = on_missing_data
+        if renotify_interval is not unset:
+            kwargs["renotify_interval"] = renotify_interval
+        if renotify_occurrences is not unset:
+            kwargs["renotify_occurrences"] = renotify_occurrences
+        if renotify_statuses is not unset:
+            kwargs["renotify_statuses"] = renotify_statuses
+        if require_full_window is not unset:
+            kwargs["require_full_window"] = require_full_window
+        if silenced is not unset:
+            kwargs["silenced"] = silenced
+        if synthetics_check_id is not unset:
+            kwargs["synthetics_check_id"] = synthetics_check_id
+        if threshold_windows is not unset:
+            kwargs["threshold_windows"] = threshold_windows
+        if thresholds is not unset:
+            kwargs["thresholds"] = thresholds
+        if timeout_h is not unset:
+            kwargs["timeout_h"] = timeout_h
+        if variables is not unset:
+            kwargs["variables"] = variables
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -1,12 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.alert_value_widget_definition_type import AlertValueWidgetDefinitionType
 
 
 class AlertValueWidgetDefinition(ModelNormal):
@@ -37,7 +46,18 @@ class AlertValueWidgetDefinition(ModelNormal):
         "unit": "unit",
     }
 
-    def __init__(self_, alert_id, type, *args, **kwargs):
+    def __init__(
+        self_,
+        alert_id: str,
+        type: AlertValueWidgetDefinitionType,
+        precision: Union[int, UnsetType] = unset,
+        text_align: Union[WidgetTextAlign, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        title_align: Union[WidgetTextAlign, UnsetType] = unset,
+        title_size: Union[str, UnsetType] = unset,
+        unit: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Alert values are query values showing the current value of the metric in any monitor defined on your system.
 
@@ -65,9 +85,19 @@ class AlertValueWidgetDefinition(ModelNormal):
         :param unit: Unit to display with the value.
         :type unit: str, optional
         """
+        if precision is not unset:
+            kwargs["precision"] = precision
+        if text_align is not unset:
+            kwargs["text_align"] = text_align
+        if title is not unset:
+            kwargs["title"] = title
+        if title_align is not unset:
+            kwargs["title_align"] = title_align
+        if title_size is not unset:
+            kwargs["title_size"] = title_size
+        if unit is not unset:
+            kwargs["unit"] = unit
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.alert_id = alert_id
         self_.type = type

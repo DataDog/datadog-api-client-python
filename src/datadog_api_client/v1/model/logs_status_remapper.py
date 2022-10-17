@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.logs_status_remapper_type import LogsStatusRemapperType
 
 
 class LogsStatusRemapper(ModelNormal):
@@ -28,7 +36,14 @@ class LogsStatusRemapper(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, sources, type, *args, **kwargs):
+    def __init__(
+        self_,
+        sources: List[str],
+        type: LogsStatusRemapperType,
+        is_enabled: Union[bool, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Use this Processor if you want to assign some attributes as the official status.
 
@@ -62,9 +77,11 @@ class LogsStatusRemapper(ModelNormal):
         :param type: Type of logs status remapper.
         :type type: LogsStatusRemapperType
         """
+        if is_enabled is not unset:
+            kwargs["is_enabled"] = is_enabled
+        if name is not unset:
+            kwargs["name"] = name
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.sources = sources
         self_.type = type

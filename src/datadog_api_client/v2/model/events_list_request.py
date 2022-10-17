@@ -1,12 +1,23 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.events_query_filter import EventsQueryFilter
+    from datadog_api_client.v2.model.events_query_options import EventsQueryOptions
+    from datadog_api_client.v2.model.events_request_page import EventsRequestPage
+    from datadog_api_client.v2.model.events_sort import EventsSort
 
 
 class EventsListRequest(ModelNormal):
@@ -31,7 +42,14 @@ class EventsListRequest(ModelNormal):
         "sort": "sort",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        filter: Union[EventsQueryFilter, UnsetType] = unset,
+        options: Union[EventsQueryOptions, UnsetType] = unset,
+        page: Union[EventsRequestPage, UnsetType] = unset,
+        sort: Union[EventsSort, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The object sent with the request to retrieve a list of events from your organization.
 
@@ -48,6 +66,12 @@ class EventsListRequest(ModelNormal):
         :param sort: The sort parameters when querying events.
         :type sort: EventsSort, optional
         """
+        if filter is not unset:
+            kwargs["filter"] = filter
+        if options is not unset:
+            kwargs["options"] = options
+        if page is not unset:
+            kwargs["page"] = page
+        if sort is not unset:
+            kwargs["sort"] = sort
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

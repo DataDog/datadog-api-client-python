@@ -1,12 +1,24 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.incident_attachment_attributes import IncidentAttachmentAttributes
+    from datadog_api_client.v2.model.incident_attachment_relationships import IncidentAttachmentRelationships
+    from datadog_api_client.v2.model.incident_attachment_type import IncidentAttachmentType
+    from datadog_api_client.v2.model.incident_attachment_postmortem_attributes import (
+        IncidentAttachmentPostmortemAttributes,
+    )
+    from datadog_api_client.v2.model.incident_attachment_link_attributes import IncidentAttachmentLinkAttributes
 
 
 class IncidentAttachmentData(ModelNormal):
@@ -30,7 +42,16 @@ class IncidentAttachmentData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes, id, relationships, type, *args, **kwargs):
+    def __init__(
+        self_,
+        attributes: Union[
+            IncidentAttachmentAttributes, IncidentAttachmentPostmortemAttributes, IncidentAttachmentLinkAttributes
+        ],
+        id: str,
+        relationships: IncidentAttachmentRelationships,
+        type: IncidentAttachmentType,
+        **kwargs,
+    ):
         """
         A single incident attachment.
 
@@ -47,8 +68,6 @@ class IncidentAttachmentData(ModelNormal):
         :type type: IncidentAttachmentType
         """
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.attributes = attributes
         self_.id = id

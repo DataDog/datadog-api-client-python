@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Dict, List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -40,7 +44,21 @@ class AWSAccount(ModelNormal):
         "secret_access_key": "secret_access_key",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        access_key_id: Union[str, UnsetType] = unset,
+        account_id: Union[str, UnsetType] = unset,
+        account_specific_namespace_rules: Union[Dict[str, bool], UnsetType] = unset,
+        cspm_resource_collection_enabled: Union[bool, UnsetType] = unset,
+        excluded_regions: Union[List[str], UnsetType] = unset,
+        filter_tags: Union[List[str], UnsetType] = unset,
+        host_tags: Union[List[str], UnsetType] = unset,
+        metrics_collection_enabled: Union[bool, UnsetType] = unset,
+        resource_collection_enabled: Union[bool, UnsetType] = unset,
+        role_name: Union[str, UnsetType] = unset,
+        secret_access_key: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Returns the AWS account associated with this integration.
 
@@ -85,6 +103,26 @@ class AWSAccount(ModelNormal):
         :param secret_access_key: Your AWS secret access key. Only required if your AWS account is a GovCloud or China account.
         :type secret_access_key: str, optional
         """
+        if access_key_id is not unset:
+            kwargs["access_key_id"] = access_key_id
+        if account_id is not unset:
+            kwargs["account_id"] = account_id
+        if account_specific_namespace_rules is not unset:
+            kwargs["account_specific_namespace_rules"] = account_specific_namespace_rules
+        if cspm_resource_collection_enabled is not unset:
+            kwargs["cspm_resource_collection_enabled"] = cspm_resource_collection_enabled
+        if excluded_regions is not unset:
+            kwargs["excluded_regions"] = excluded_regions
+        if filter_tags is not unset:
+            kwargs["filter_tags"] = filter_tags
+        if host_tags is not unset:
+            kwargs["host_tags"] = host_tags
+        if metrics_collection_enabled is not unset:
+            kwargs["metrics_collection_enabled"] = metrics_collection_enabled
+        if resource_collection_enabled is not unset:
+            kwargs["resource_collection_enabled"] = resource_collection_enabled
+        if role_name is not unset:
+            kwargs["role_name"] = role_name
+        if secret_access_key is not unset:
+            kwargs["secret_access_key"] = secret_access_key
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

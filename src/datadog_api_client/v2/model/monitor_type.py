@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -47,7 +51,21 @@ class MonitorType(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        created_at: Union[int, UnsetType] = unset,
+        group_status: Union[int, UnsetType] = unset,
+        groups: Union[List[str], UnsetType] = unset,
+        id: Union[int, UnsetType] = unset,
+        message: Union[str, UnsetType] = unset,
+        modified: Union[int, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        query: Union[str, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        templated_name: Union[str, UnsetType] = unset,
+        type: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Attributes from the monitor that triggered the event.
 
@@ -84,6 +102,26 @@ class MonitorType(ModelNormal):
         :param type: The monitor type.
         :type type: str, optional
         """
+        if created_at is not unset:
+            kwargs["created_at"] = created_at
+        if group_status is not unset:
+            kwargs["group_status"] = group_status
+        if groups is not unset:
+            kwargs["groups"] = groups
+        if id is not unset:
+            kwargs["id"] = id
+        if message is not unset:
+            kwargs["message"] = message
+        if modified is not unset:
+            kwargs["modified"] = modified
+        if name is not unset:
+            kwargs["name"] = name
+        if query is not unset:
+            kwargs["query"] = query
+        if tags is not unset:
+            kwargs["tags"] = tags
+        if templated_name is not unset:
+            kwargs["templated_name"] = templated_name
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -1,12 +1,31 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Dict, List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
+    from datadog_api_client.v2.model.incident_timeline_cell_create_attributes import (
+        IncidentTimelineCellCreateAttributes,
+    )
+    from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
+    from datadog_api_client.v2.model.incident_field_attributes_single_value import IncidentFieldAttributesSingleValue
+    from datadog_api_client.v2.model.incident_field_attributes_multiple_value import (
+        IncidentFieldAttributesMultipleValue,
+    )
+    from datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attributes import (
+        IncidentTimelineCellMarkdownCreateAttributes,
+    )
 
 
 class IncidentCreateAttributes(ModelNormal):
@@ -34,7 +53,25 @@ class IncidentCreateAttributes(ModelNormal):
         "title": "title",
     }
 
-    def __init__(self_, customer_impacted, title, *args, **kwargs):
+    def __init__(
+        self_,
+        customer_impacted: bool,
+        title: str,
+        fields: Union[
+            Dict[
+                str,
+                Union[
+                    IncidentFieldAttributes, IncidentFieldAttributesSingleValue, IncidentFieldAttributesMultipleValue
+                ],
+            ],
+            UnsetType,
+        ] = unset,
+        initial_cells: Union[
+            List[Union[IncidentTimelineCellCreateAttributes, IncidentTimelineCellMarkdownCreateAttributes]], UnsetType
+        ] = unset,
+        notification_handles: Union[List[IncidentNotificationHandle], UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The incident's attributes for a create request.
 
@@ -53,9 +90,13 @@ class IncidentCreateAttributes(ModelNormal):
         :param title: The title of the incident, which summarizes what happened.
         :type title: str
         """
+        if fields is not unset:
+            kwargs["fields"] = fields
+        if initial_cells is not unset:
+            kwargs["initial_cells"] = initial_cells
+        if notification_handles is not unset:
+            kwargs["notification_handles"] = notification_handles
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.customer_impacted = customer_impacted
         self_.title = title

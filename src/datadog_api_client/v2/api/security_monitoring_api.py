@@ -21,6 +21,12 @@ from datadog_api_client.v2.model.security_filter_update_request import SecurityF
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
 from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
+from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
+    SecurityMonitoringStandardRuleCreatePayload,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload import (
+    SecurityMonitoringSignalRuleCreatePayload,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
 from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
@@ -494,7 +500,11 @@ class SecurityMonitoringApi:
 
     def create_security_monitoring_rule(
         self,
-        body: SecurityMonitoringRuleCreatePayload,
+        body: Union[
+            SecurityMonitoringRuleCreatePayload,
+            SecurityMonitoringStandardRuleCreatePayload,
+            SecurityMonitoringSignalRuleCreatePayload,
+        ],
     ) -> SecurityMonitoringRuleResponse:
         """Create a detection rule.
 

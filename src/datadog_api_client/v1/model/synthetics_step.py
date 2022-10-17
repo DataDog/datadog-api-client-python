@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
 
 
 class SyntheticsStep(ModelNormal):
@@ -32,7 +40,16 @@ class SyntheticsStep(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, *args, **kwargs):
+    def __init__(
+        self_,
+        allow_failure: Union[bool, UnsetType] = unset,
+        is_critical: Union[bool, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        params: Union[dict, UnsetType] = unset,
+        timeout: Union[int, UnsetType] = unset,
+        type: Union[SyntheticsStepType, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The steps used in a Synthetics browser test.
 
@@ -54,6 +71,16 @@ class SyntheticsStep(ModelNormal):
         :param type: Step type used in your Synthetic test.
         :type type: SyntheticsStepType, optional
         """
+        if allow_failure is not unset:
+            kwargs["allow_failure"] = allow_failure
+        if is_critical is not unset:
+            kwargs["is_critical"] = is_critical
+        if name is not unset:
+            kwargs["name"] = name
+        if params is not unset:
+            kwargs["params"] = params
+        if timeout is not unset:
+            kwargs["timeout"] = timeout
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)

@@ -1,12 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.signal_archive_reason import SignalArchiveReason
+    from datadog_api_client.v1.model.signal_triage_state import SignalTriageState
 
 
 class SignalStateUpdateRequest(ModelNormal):
@@ -29,7 +38,14 @@ class SignalStateUpdateRequest(ModelNormal):
         "version": "version",
     }
 
-    def __init__(self_, state, *args, **kwargs):
+    def __init__(
+        self_,
+        state: SignalTriageState,
+        archive_comment: Union[str, UnsetType] = unset,
+        archive_reason: Union[SignalArchiveReason, UnsetType] = unset,
+        version: Union[int, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Attributes describing the change of state for a given state.
 
@@ -45,8 +61,12 @@ class SignalStateUpdateRequest(ModelNormal):
         :param version: Version of the updated signal. If server side version is higher, update will be rejected.
         :type version: int, optional
         """
+        if archive_comment is not unset:
+            kwargs["archive_comment"] = archive_comment
+        if archive_reason is not unset:
+            kwargs["archive_reason"] = archive_reason
+        if version is not unset:
+            kwargs["version"] = version
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.state = state

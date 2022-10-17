@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -9,7 +11,18 @@ from datadog_api_client.model_utils import (
     date,
     datetime,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.service_definition_v1_contact import ServiceDefinitionV1Contact
+    from datadog_api_client.v2.model.service_definition_v1_resource import ServiceDefinitionV1Resource
+    from datadog_api_client.v2.model.service_definition_v1_info import ServiceDefinitionV1Info
+    from datadog_api_client.v2.model.service_definition_v1_integrations import ServiceDefinitionV1Integrations
+    from datadog_api_client.v2.model.service_definition_v1_org import ServiceDefinitionV1Org
+    from datadog_api_client.v2.model.service_definition_v1_version import ServiceDefinitionV1Version
 
 
 class ServiceDefinitionV1(ModelNormal):
@@ -58,7 +71,18 @@ class ServiceDefinitionV1(ModelNormal):
         "tags": "tags",
     }
 
-    def __init__(self_, info, schema_version, *args, **kwargs):
+    def __init__(
+        self_,
+        info: ServiceDefinitionV1Info,
+        schema_version: ServiceDefinitionV1Version,
+        contact: Union[ServiceDefinitionV1Contact, UnsetType] = unset,
+        extensions: Union[Dict[str, Any], UnsetType] = unset,
+        external_resources: Union[List[ServiceDefinitionV1Resource], UnsetType] = unset,
+        integrations: Union[ServiceDefinitionV1Integrations, UnsetType] = unset,
+        org: Union[ServiceDefinitionV1Org, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Deprecated - Service definition V1 for providing additional service metadata and integrations.
 
@@ -86,9 +110,19 @@ class ServiceDefinitionV1(ModelNormal):
         :param tags: A set of custom tags.
         :type tags: [str], optional
         """
+        if contact is not unset:
+            kwargs["contact"] = contact
+        if extensions is not unset:
+            kwargs["extensions"] = extensions
+        if external_resources is not unset:
+            kwargs["external_resources"] = external_resources
+        if integrations is not unset:
+            kwargs["integrations"] = integrations
+        if org is not unset:
+            kwargs["org"] = org
+        if tags is not unset:
+            kwargs["tags"] = tags
         super().__init__(kwargs)
-
-        self_._check_pos_args(args)
 
         self_.info = info
         self_.schema_version = schema_version
