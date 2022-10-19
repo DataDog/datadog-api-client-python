@@ -120,7 +120,7 @@ class OpenApiModel(object):
 
     read_only_vars: Collection[str] = frozenset()
 
-    json_api_model = None
+    json_api_model: Union[type, none_type] = None
 
     def set_attribute(self, name, value):
         # this is only used to set properties on self
