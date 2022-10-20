@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
-      rule","name":"Test-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1664284013","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:true"}],"tags":[],"type":"workload_security"}'
+      rule","name":"Test-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1666186597","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:true"}],"tags":[],"type":"workload_security"}'
     headers:
       accept:
       - application/json
@@ -12,8 +12,8 @@ interactions:
   response:
     body:
       string: '{"creationAuthorId":1445416,"tags":[],"isEnabled":true,"hasExtendedTitle":false,"message":"Test
-        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1664284014204,"filters":[],"queries":[{"query":"@test:true","groupByFields":[],"aggregation":"count","name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
-        > 0"}],"type":"workload_security","id":"puf-f1v-a1o","isDefault":false,"name":"Test-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1664284013"}
+        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1666186598320,"filters":[],"queries":[{"query":"@test:true","groupByFields":[],"aggregation":"count","name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
+        > 0"}],"type":"workload_security","id":"qcx-gg3-5ut","isDefault":false,"name":"Test-Create_a_detection_rule_with_type_workload_security_returns_OK_response-1666186597"}
 
         '
     headers:
@@ -28,7 +28,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/puf-f1v-a1o
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/qcx-gg3-5ut
   response:
     body:
       string: ''

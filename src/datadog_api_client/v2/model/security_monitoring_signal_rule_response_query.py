@@ -78,7 +78,7 @@ class SecurityMonitoringSignalRuleResponseQuery(ModelNormal):
         :param default_rule_id: Default Rule ID to match on signals.
         :type default_rule_id: str, optional
 
-        :param metrics: Group of target fields to aggregate over when using the new value aggregations.
+        :param metrics: Group of target fields to aggregate over.
         :type metrics: [str], optional
 
         :param name: Name of the query.
