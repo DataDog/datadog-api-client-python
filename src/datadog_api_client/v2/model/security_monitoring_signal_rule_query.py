@@ -72,7 +72,7 @@ class SecurityMonitoringSignalRuleQuery(ModelNormal):
         :param correlated_query_index: Index of the rule query used to retrieve the correlated field.
         :type correlated_query_index: int, optional
 
-        :param metrics: Group of target fields to aggregate over when using the new value aggregations.
+        :param metrics: Group of target fields to aggregate over.
         :type metrics: [str], optional
 
         :param name: Name of the query.

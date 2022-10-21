@@ -69,11 +69,11 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         :param group_by_fields: Fields to group by.
         :type group_by_fields: [str], optional
 
-        :param metric: The target field to aggregate over when using the sum or max
-            aggregations.
+        :param metric: (Deprecated) The target field to aggregate over when using the sum or max
+            aggregations. ``metrics`` field should be used instead. **Deprecated**.
         :type metric: str, optional
 
-        :param metrics: Group of target fields to aggregate over when using the new value aggregations.
+        :param metrics: Group of target fields to aggregate over when using the sum, max, geo data, or new value aggregations. The sum, max, and geo data aggregations only accept one value in this list, whereas the new value aggregation accepts up to five values.
         :type metrics: [str], optional
 
         :param name: Name of the query.
