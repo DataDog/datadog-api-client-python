@@ -386,6 +386,300 @@ chargeback\_breakdown
    :members:
    :show-inheritance:
 
+ci\_app\_aggregate\_bucket\_value
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_aggregate_bucket_value
+   :members:
+   :show-inheritance:
+
+ci\_app\_aggregate\_bucket\_value\_timeseries
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_aggregate_bucket_value_timeseries
+   :members:
+   :show-inheritance:
+
+ci\_app\_aggregate\_bucket\_value\_timeseries\_point
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_aggregate_bucket_value_timeseries_point
+   :members:
+   :show-inheritance:
+
+ci\_app\_aggregate\_sort
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_aggregate_sort
+   :members:
+   :show-inheritance:
+
+ci\_app\_aggregate\_sort\_type
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_aggregate_sort_type
+   :members:
+   :show-inheritance:
+
+ci\_app\_aggregation\_function
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_aggregation_function
+   :members:
+   :show-inheritance:
+
+ci\_app\_compute
+----------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_compute
+   :members:
+   :show-inheritance:
+
+ci\_app\_compute\_type
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_compute_type
+   :members:
+   :show-inheritance:
+
+ci\_app\_computes
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_computes
+   :members:
+   :show-inheritance:
+
+ci\_app\_event\_attributes
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_event_attributes
+   :members:
+   :show-inheritance:
+
+ci\_app\_group\_by\_histogram
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_group_by_histogram
+   :members:
+   :show-inheritance:
+
+ci\_app\_group\_by\_missing
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_group_by_missing
+   :members:
+   :show-inheritance:
+
+ci\_app\_group\_by\_total
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_group_by_total
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_type\_name
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_type_name
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_events\_request
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_events_request
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_events\_response
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_events_response
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipelines\_aggregate\_request
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipelines_aggregate_request
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipelines\_aggregation\_buckets\_response
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipelines_aggregation_buckets_response
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipelines\_analytics\_aggregate\_response
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipelines_analytics_aggregate_response
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipelines\_bucket\_response
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipelines_bucket_response
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipelines\_group\_by
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipelines_group_by
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipelines\_query\_filter
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipelines_query_filter
+   :members:
+   :show-inheritance:
+
+ci\_app\_query\_options
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_query_options
+   :members:
+   :show-inheritance:
+
+ci\_app\_query\_page\_options
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_query_page_options
+   :members:
+   :show-inheritance:
+
+ci\_app\_response\_links
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_response_links
+   :members:
+   :show-inheritance:
+
+ci\_app\_response\_metadata
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_response_metadata
+   :members:
+   :show-inheritance:
+
+ci\_app\_response\_page
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_response_page
+   :members:
+   :show-inheritance:
+
+ci\_app\_response\_status
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_response_status
+   :members:
+   :show-inheritance:
+
+ci\_app\_sort
+-------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_sort
+   :members:
+   :show-inheritance:
+
+ci\_app\_sort\_order
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_sort_order
+   :members:
+   :show-inheritance:
+
+ci\_app\_test\_event
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_test_event
+   :members:
+   :show-inheritance:
+
+ci\_app\_test\_event\_type\_name
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_test_event_type_name
+   :members:
+   :show-inheritance:
+
+ci\_app\_test\_events\_request
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_test_events_request
+   :members:
+   :show-inheritance:
+
+ci\_app\_test\_events\_response
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_test_events_response
+   :members:
+   :show-inheritance:
+
+ci\_app\_tests\_aggregate\_request
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_tests_aggregate_request
+   :members:
+   :show-inheritance:
+
+ci\_app\_tests\_aggregation\_buckets\_response
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_tests_aggregation_buckets_response
+   :members:
+   :show-inheritance:
+
+ci\_app\_tests\_analytics\_aggregate\_response
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_tests_analytics_aggregate_response
+   :members:
+   :show-inheritance:
+
+ci\_app\_tests\_bucket\_response
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_tests_bucket_response
+   :members:
+   :show-inheritance:
+
+ci\_app\_tests\_group\_by
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_tests_group_by
+   :members:
+   :show-inheritance:
+
+ci\_app\_tests\_query\_filter
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_tests_query_filter
+   :members:
+   :show-inheritance:
+
+ci\_app\_warning
+----------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_warning
+   :members:
+   :show-inheritance:
+
 cloud\_workload\_security\_agent\_rule\_attributes
 --------------------------------------------------
 
@@ -4044,6 +4338,13 @@ service\_definitions\_list\_response
 ------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.service_definitions_list_response
+   :members:
+   :show-inheritance:
+
+tags\_event\_attribute
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.tags_event_attribute
    :members:
    :show-inheritance:
 

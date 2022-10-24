@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"compute":[{"aggregation":"pc90","metric":"@duration","type":"total"}],"filter":{"from":"now-15m","query":"@ci.provider.name:github
+      AND @ci.provider.instance:github-actions","to":"now"},"group_by":[{"facet":"@ci.status","limit":10,"total":false}],"options":{"timezone":"GMT"},"page":{"limit":25}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/ci/pipelines/analytics/aggregate
+  response:
+    body:
+      string: '{"meta":{"elapsed":113,"request_id":"pddv1ChYwUEN0YnZ5dFNrdVZEbHhuSTliVEpnIiwKHGMtY3c8ixDp3d4CWjg8UkGmZ1-bi7LFmSWOebUSDClmkByOFEin86vlJg","status":"done"},"data":{"buckets":[{"by":{"@ci.status":"canceled"},"computes":{"c0":149536704640.0603}},{"by":{"@ci.status":"error"},"computes":{"c0":423086456660.7128}},{"by":{"@ci.status":"skipped"},"computes":{"c0":0.0}},{"by":{"@ci.status":"success"},"computes":{"c0":190099929600.14703}}]}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
