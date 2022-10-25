@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.5.0 / 2022-10-24
+
+### Fixed
+* Add Default Rule ID in SignalRuleResponseQuery by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1196
+* Remove incident's resolved attribute from update requests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1197
+* Fix event monitor created_at by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1198
+* Fix spectral rules by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1202
+### Added
+* Add notify_by monitor option by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1189
+* Add support for service definitions APIs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1203
+* Add support for confluent cloud integration by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1143
+* Add type annotations to models by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1200
+### Deprecated
+* Deprecate metric field of Security Monitoring Rules by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1208
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.4.0...2.5.0
+
 ## 2.4.0 / 2022-10-03
 
 ### Fixed
