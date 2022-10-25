@@ -109,6 +109,42 @@
       "type": "idempotent"
     }
   },
+  "AggregateCIAppPipelineEvents": {
+    "tag": "CI Visibility Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCIAppPipelineEvents": {
+    "tag": "CI Visibility Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchCIAppPipelineEvents": {
+    "tag": "CI Visibility Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "AggregateCIAppTestEvents": {
+    "tag": "CI Visibility Tests",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCIAppTestEvents": {
+    "tag": "CI Visibility Tests",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchCIAppTestEvents": {
+    "tag": "CI Visibility Tests",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCurrentUserApplicationKeys": {
     "tag": "Key Management",
     "undo": {

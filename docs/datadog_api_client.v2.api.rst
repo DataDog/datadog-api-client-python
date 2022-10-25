@@ -15,6 +15,20 @@ authn\_mappings\_api
    :members:
    :show-inheritance:
 
+ci\_visibility\_pipelines\_api
+------------------------------
+
+.. automodule:: datadog_api_client.v2.api.ci_visibility_pipelines_api
+   :members:
+   :show-inheritance:
+
+ci\_visibility\_tests\_api
+--------------------------
+
+.. automodule:: datadog_api_client.v2.api.ci_visibility_tests_api
+   :members:
+   :show-inheritance:
+
 cloud\_workload\_security\_api
 ------------------------------
 
