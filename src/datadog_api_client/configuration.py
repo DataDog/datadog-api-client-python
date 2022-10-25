@@ -221,7 +221,6 @@ class Configuration:
         # Keep track of unstable operations
         self.unstable_operations = _UnstableOperations(
             {
-                "v1.get_slo_history": False,
                 "v1.search_slo": False,
                 "v2.list_events": False,
                 "v2.search_events": False,

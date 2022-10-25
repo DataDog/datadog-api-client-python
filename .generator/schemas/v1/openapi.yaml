@@ -25271,9 +25271,6 @@ paths:
       summary: Get an SLO's history
       tags:
       - Service Level Objectives
-      x-unstable: '**Note**: This endpoint is in public beta.
-
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v1/synthetics/ci/batch/{batch_id}:
     get:
       description: Get a batch's updated details.
