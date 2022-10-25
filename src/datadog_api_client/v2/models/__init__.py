@@ -379,6 +379,7 @@ from datadog_api_client.v2.model.logs_response_metadata import LogsResponseMetad
 from datadog_api_client.v2.model.logs_response_metadata_page import LogsResponseMetadataPage
 from datadog_api_client.v2.model.logs_sort import LogsSort
 from datadog_api_client.v2.model.logs_sort_order import LogsSortOrder
+from datadog_api_client.v2.model.logs_storage_tier import LogsStorageTier
 from datadog_api_client.v2.model.logs_warning import LogsWarning
 from datadog_api_client.v2.model.metric import Metric
 from datadog_api_client.v2.model.metric_active_configuration_type import MetricActiveConfigurationType

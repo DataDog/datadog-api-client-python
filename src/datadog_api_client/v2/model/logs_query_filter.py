@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,13 +13,20 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.logs_storage_tier import LogsStorageTier
+
+
 class LogsQueryFilter(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.logs_storage_tier import LogsStorageTier
+
         return {
             "_from": (str,),
             "indexes": ([str],),
             "query": (str,),
+            "storage_tier": (LogsStorageTier,),
             "to": (str,),
         }
 
@@ -27,6 +34,7 @@ class LogsQueryFilter(ModelNormal):
         "_from": "from",
         "indexes": "indexes",
         "query": "query",
+        "storage_tier": "storage_tier",
         "to": "to",
     }
 
@@ -35,6 +43,7 @@ class LogsQueryFilter(ModelNormal):
         _from: Union[str, UnsetType] = unset,
         indexes: Union[List[str], UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
+        storage_tier: Union[LogsStorageTier, UnsetType] = unset,
         to: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -50,6 +59,9 @@ class LogsQueryFilter(ModelNormal):
         :param query: The search query - following the log search syntax.
         :type query: str, optional
 
+        :param storage_tier: Specifies storage type as indexes or online-archives
+        :type storage_tier: LogsStorageTier, optional
+
         :param to: The maximum time for the requested logs, supports date math and regular timestamps (milliseconds).
         :type to: str, optional
         """
@@ -59,6 +71,8 @@ class LogsQueryFilter(ModelNormal):
             kwargs["indexes"] = indexes
         if query is not unset:
             kwargs["query"] = query
+        if storage_tier is not unset:
+            kwargs["storage_tier"] = storage_tier
         if to is not unset:
             kwargs["to"] = to
         super().__init__(kwargs)

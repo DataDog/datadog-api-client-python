@@ -19,6 +19,7 @@ from datadog_api_client.v2.model.http_log import HTTPLog
 from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateResponse
 from datadog_api_client.v2.model.logs_aggregate_request import LogsAggregateRequest
 from datadog_api_client.v2.model.logs_list_response import LogsListResponse
+from datadog_api_client.v2.model.logs_storage_tier import LogsStorageTier
 from datadog_api_client.v2.model.logs_sort import LogsSort
 from datadog_api_client.v2.model.log import Log
 from datadog_api_client.v2.model.logs_list_request import LogsListRequest
@@ -104,6 +105,11 @@ class LogsApi:
                 "filter_to": {
                     "openapi_types": (datetime,),
                     "attribute": "filter[to]",
+                    "location": "query",
+                },
+                "filter_storage_tier": {
+                    "openapi_types": (LogsStorageTier,),
+                    "attribute": "filter[storage_tier]",
                     "location": "query",
                 },
                 "sort": {
@@ -293,6 +299,7 @@ class LogsApi:
         filter_index: Union[str, UnsetType] = unset,
         filter_from: Union[datetime, UnsetType] = unset,
         filter_to: Union[datetime, UnsetType] = unset,
+        filter_storage_tier: Union[LogsStorageTier, UnsetType] = unset,
         sort: Union[LogsSort, UnsetType] = unset,
         page_cursor: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
@@ -317,6 +324,8 @@ class LogsApi:
         :type filter_from: datetime, optional
         :param filter_to: Maximum timestamp for requested logs.
         :type filter_to: datetime, optional
+        :param filter_storage_tier: Specifies the storage type to be used
+        :type filter_storage_tier: LogsStorageTier, optional
         :param sort: Order of logs in results.
         :type sort: LogsSort, optional
         :param page_cursor: List following results with a cursor provided in the previous query.
@@ -338,6 +347,9 @@ class LogsApi:
         if filter_to is not unset:
             kwargs["filter_to"] = filter_to
 
+        if filter_storage_tier is not unset:
+            kwargs["filter_storage_tier"] = filter_storage_tier
+
         if sort is not unset:
             kwargs["sort"] = sort
 
@@ -356,6 +368,7 @@ class LogsApi:
         filter_index: Union[str, UnsetType] = unset,
         filter_from: Union[datetime, UnsetType] = unset,
         filter_to: Union[datetime, UnsetType] = unset,
+        filter_storage_tier: Union[LogsStorageTier, UnsetType] = unset,
         sort: Union[LogsSort, UnsetType] = unset,
         page_cursor: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
@@ -373,6 +386,8 @@ class LogsApi:
         :type filter_from: datetime, optional
         :param filter_to: Maximum timestamp for requested logs.
         :type filter_to: datetime, optional
+        :param filter_storage_tier: Specifies the storage type to be used
+        :type filter_storage_tier: LogsStorageTier, optional
         :param sort: Order of logs in results.
         :type sort: LogsSort, optional
         :param page_cursor: List following results with a cursor provided in the previous query.
@@ -395,6 +410,9 @@ class LogsApi:
 
         if filter_to is not unset:
             kwargs["filter_to"] = filter_to
+
+        if filter_storage_tier is not unset:
+            kwargs["filter_storage_tier"] = filter_storage_tier
 
         if sort is not unset:
             kwargs["sort"] = sort
