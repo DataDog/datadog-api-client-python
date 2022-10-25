@@ -199,19 +199,22 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response has 3 items
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Get a rule's details returns "Not Found" response
     Given new "GetSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "REPLACE.ME"
+    And request contains "rule_id" parameter with value "abcde-12345"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Get a rule's details returns "OK" response
     Given new "GetSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "REPLACE.ME"
+    And there is a valid "security_rule" in the system
+    And request contains "rule_id" parameter from "security_rule.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "id" has the same value as "security_rule.id"
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Get a security filter returns "Not Found" response
@@ -254,7 +257,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform
   Scenario: List rules returns "OK" response
     Given new "ListSecurityMonitoringRules" request
     When the request is sent
@@ -317,26 +320,30 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Update an existing rule returns "Bad Request" response
     Given new "UpdateSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": [], "metrics": [], "query": "a > 3"}], "tags": [], "version": 1}
+    And there is a valid "security_rule" in the system
+    And request contains "rule_id" parameter from "security_rule.id"
+    And body with value {"name":"{{ unique }}", "queries":[{"query":""}],"cases":[{"status":"info"}],"options":{},"message":"Test rule Bad","tags":[],"isEnabled":true}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Update an existing rule returns "Not Found" response
     Given new "UpdateSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": [], "metrics": [], "query": "a > 3"}], "tags": [], "version": 1}
+    And request contains "rule_id" parameter with value "abcde-12345"
+    And body with value {"name": "{{ unique }}-NotFound","queries": [{"query": "@test:true","aggregation": "count","groupByFields": [],"distinctFields": [],"metrics": []}],"filters": [],"cases": [{"name": "", "status": "info", "condition": "a > 0", "notifications": []}], "options": {"evaluationWindow": 900, "keepAlive": 3600, "maxSignalDuration": 86400}, "message": "Test rule", "tags": [], "isEnabled": true}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Update an existing rule returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": [], "metrics": [], "query": "a > 3"}], "tags": [], "version": 1}
+    And there is a valid "security_rule" in the system
+    And request contains "rule_id" parameter from "security_rule.id"
+    And body with value {"name": "{{ unique }}-Updated","queries": [{"query": "@test:true","aggregation": "count","groupByFields": [],"distinctFields": [],"metrics": []}],"filters": [],"cases": [{"name": "", "status": "info", "condition": "a > 0", "notifications": []}], "options": {"evaluationWindow": 900, "keepAlive": 3600, "maxSignalDuration": 86400}, "message": "Test rule", "tags": [], "isEnabled": true}
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}-Updated"
+    And the response "id" has the same value as "security_rule.id"
