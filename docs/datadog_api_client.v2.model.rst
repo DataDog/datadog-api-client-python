@@ -2304,6 +2304,13 @@ logs\_sort\_order
    :members:
    :show-inheritance:
 
+logs\_storage\_tier
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.logs_storage_tier
+   :members:
+   :show-inheritance:
+
 logs\_warning
 -------------
 
