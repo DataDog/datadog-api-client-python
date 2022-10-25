@@ -92,7 +92,10 @@ class UsageSummaryResponse(ModelNormal):
             "rum_session_count_agg_sum": (int,),
             "rum_total_session_count_agg_sum": (int,),
             "rum_units_agg_sum": (int,),
+            "sds_apm_scanned_bytes_sum": (int,),
+            "sds_events_scanned_bytes_sum": (int,),
             "sds_logs_scanned_bytes_sum": (int,),
+            "sds_rum_scanned_bytes_sum": (int,),
             "sds_total_scanned_bytes_sum": (int,),
             "start_date": (datetime,),
             "synthetics_browser_check_calls_count_agg_sum": (int,),
@@ -170,7 +173,10 @@ class UsageSummaryResponse(ModelNormal):
         "rum_session_count_agg_sum": "rum_session_count_agg_sum",
         "rum_total_session_count_agg_sum": "rum_total_session_count_agg_sum",
         "rum_units_agg_sum": "rum_units_agg_sum",
+        "sds_apm_scanned_bytes_sum": "sds_apm_scanned_bytes_sum",
+        "sds_events_scanned_bytes_sum": "sds_events_scanned_bytes_sum",
         "sds_logs_scanned_bytes_sum": "sds_logs_scanned_bytes_sum",
+        "sds_rum_scanned_bytes_sum": "sds_rum_scanned_bytes_sum",
         "sds_total_scanned_bytes_sum": "sds_total_scanned_bytes_sum",
         "start_date": "start_date",
         "synthetics_browser_check_calls_count_agg_sum": "synthetics_browser_check_calls_count_agg_sum",
@@ -249,7 +255,10 @@ class UsageSummaryResponse(ModelNormal):
         rum_session_count_agg_sum: Union[int, UnsetType] = unset,
         rum_total_session_count_agg_sum: Union[int, UnsetType] = unset,
         rum_units_agg_sum: Union[int, UnsetType] = unset,
+        sds_apm_scanned_bytes_sum: Union[int, UnsetType] = unset,
+        sds_events_scanned_bytes_sum: Union[int, UnsetType] = unset,
         sds_logs_scanned_bytes_sum: Union[int, UnsetType] = unset,
+        sds_rum_scanned_bytes_sum: Union[int, UnsetType] = unset,
         sds_total_scanned_bytes_sum: Union[int, UnsetType] = unset,
         start_date: Union[datetime, UnsetType] = unset,
         synthetics_browser_check_calls_count_agg_sum: Union[int, UnsetType] = unset,
@@ -461,8 +470,17 @@ class UsageSummaryResponse(ModelNormal):
         :param rum_units_agg_sum: Shows the sum of all browser and mobile RUM units over all hours in the current months for all organizations.
         :type rum_units_agg_sum: int, optional
 
+        :param sds_apm_scanned_bytes_sum: Sum of all APM bytes scanned with sensitive data scanner in the current months for all organizations.
+        :type sds_apm_scanned_bytes_sum: int, optional
+
+        :param sds_events_scanned_bytes_sum: Sum of all event stream events bytes scanned with sensitive data scanner in the current months for all organizations.
+        :type sds_events_scanned_bytes_sum: int, optional
+
         :param sds_logs_scanned_bytes_sum: Shows the sum of all bytes scanned of logs usage by the Sensitive Data Scanner over all hours in the current month for all organizations.
         :type sds_logs_scanned_bytes_sum: int, optional
+
+        :param sds_rum_scanned_bytes_sum: Sum of all RUM bytes scanned with sensitive data scanner in the current months for all organizations.
+        :type sds_rum_scanned_bytes_sum: int, optional
 
         :param sds_total_scanned_bytes_sum: Shows the sum of all bytes scanned across all usage types by the Sensitive Data Scanner over all hours in the current month for all organizations.
         :type sds_total_scanned_bytes_sum: int, optional
@@ -622,8 +640,14 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["rum_total_session_count_agg_sum"] = rum_total_session_count_agg_sum
         if rum_units_agg_sum is not unset:
             kwargs["rum_units_agg_sum"] = rum_units_agg_sum
+        if sds_apm_scanned_bytes_sum is not unset:
+            kwargs["sds_apm_scanned_bytes_sum"] = sds_apm_scanned_bytes_sum
+        if sds_events_scanned_bytes_sum is not unset:
+            kwargs["sds_events_scanned_bytes_sum"] = sds_events_scanned_bytes_sum
         if sds_logs_scanned_bytes_sum is not unset:
             kwargs["sds_logs_scanned_bytes_sum"] = sds_logs_scanned_bytes_sum
+        if sds_rum_scanned_bytes_sum is not unset:
+            kwargs["sds_rum_scanned_bytes_sum"] = sds_rum_scanned_bytes_sum
         if sds_total_scanned_bytes_sum is not unset:
             kwargs["sds_total_scanned_bytes_sum"] = sds_total_scanned_bytes_sum
         if start_date is not unset:
