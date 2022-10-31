@@ -208,7 +208,7 @@ class CloudWorkloadSecurityApi:
 
         The download endpoint generates a Cloud Workload Security policy file from your currently active
         Cloud Workload Security rules, and downloads them as a .policy file. This file can then be deployed to
-        your agents to update the policy running in your environment.
+        your Agents to update the policy running in your environment.
 
         :rtype: file_type
         """

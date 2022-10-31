@@ -1,0 +1,51 @@
+interactions:
+- request:
+    body: '{"filter":{"from":"now-30s","to":"now"},"options":{"timezone":"GMT"},"page":{"limit":2},"sort":"timestamp"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/ci/pipelines/events/search
+  response:
+    body:
+      string: '{"data":[{"id":"AgAAAYP5yrFQ-0eDTAAAAAAAAAAYAAAAAEFZUDV5ckZRQUFBLWxUZzA0Mm9yVVJJUwAAACQAAAAAMDE4M2Y5Y2EtYzhjMC00ZTVlLTk3ODktZTVlY2E0MzIyNmI3","type":"cipipeline","attributes":{"attributes":{"duration":399000000000,"github":{"conclusion":"success","html_url":"https://github.com/DataDog/repo","run_attempt":"1","event":"pull_request","app_id":"128890"},"git":{"commit":{"committer":{"date":"2022-10-21T08:58:59Z","name":"Joe","email":"support@datadoghq.com","date_timestamp":1666342739000},"author":{"name":"Joe","email":"support@datadoghq.com"},"message":"init","sha":"811f4ca3a6dcfe7b232dd3868ec405e9e492bb66"},"default_branch":"prod","repository_url":"https://github.com/DataDog/repo.git","repository":{"path":"/DataDog/repo.git","scheme":"https","name":"DataDog/repo","host":"github.com","id":"github.com/DataDog/repo"},"branch":"erkang.zhang/SYM-390/cache-test-spec"},"ci":{"pipeline":{"number":4218,"name":"ESLint","id":"3296133341-1","url":"https://github.com/DataDog/repo/actions/runs/3296133341/attempts/1"},"provider":{"instance":"github-actions","name":"github"},"status":"success"},"_top_level":1,"start":1666342755000000000},"ci_level":"pipeline","tags":["source:apm","source:apm"]}},{"id":"AgAAAYP5yr0I0OC-XAAAAAAAAAAYAAAAAEFZUDV5cjBJQUFEekl2RnhRMGRpbFYyUwAAACQAAAAAMDE4M2Y5Y2EtYzhjMC00ZTVlLTk3ODktZTVlY2E0MzIyNmI3","type":"cipipeline","attributes":{"attributes":{"duration":166000000000,"git":{"commit":{"committer":{"date":"2022-10-21T10:57:28+02:00","date_timestamp":1666342648000},"author":{"name":"Joe","email":"support@datadoghq.com"},"message":"Merge
+        pull request #39486 from DataDog/repo/output-using-sketches\n\n[RUM] Output
+        using sketches","sha":"07cb4950a3a0250e0808516108a04e432a3dcec7"},"default_branch":"cireliability/do-not-change-default-branch","repository_url":"https://gitlab.site.io/DataDog/repo.git","repository":{"path":"/DataDog/repo.git","scheme":"https","name":"DataDog/repo","host":"gitlab.site.io","id":"gitlab.site.io/DataDog/repo"},"branch":"prod"},"ci":{"pipeline":{"name":"DataDog/repo","downstream":true,"id":"10623021","url":"https://gitlab.site.io/DataDog/repo/pipelines/10623021"},"provider":{"instance":"gitlab-ci","name":"gitlab"},"is_manual":false,"parameters":["BASE_IMAGE_REPO:registry.site.io/logs-backend-base","BASE_VERSION:71","BAZEL_CI_IMAGE:registry.site.io/bazel:5@sha256:ec15d3a9e2131605d5e0fe486b9af09770b27c94a0671e5bc81a0052efc7eaac","BUILD_ECR_ID:486234852809","BUILD_IMAGE:486234852809.dkr.ecr.us-east-1.amazonaws.com/ci/logs-backend/java-builder","BUILD_IMAGE_TAG:48","CURRENT_STAGING:staging-42","DD_AGENT_HOST:","DD_ENV_TESTS:ci","DD_INTEGRATION_JUNIT_ENABLED:true","DD_INTEGRATION_MONGO_ENABLED:false","DD_INTEGRATION_OPENTRACING_ENABLED:true","DD_POSTGRES_URL:jdbc:postgresql://postgres/dogdata","DD_SERVICE:logs-backend-tests","DD_TRACING_ENABLED:true","DOCKER_IMAGE_VERSION:20.10.3","DRE_BAZEL_RULE:","DYNAMIC_BUILD_IMAGE_VERSION:dynamicbuilder-v3319810-6f683f57","ENABLE_SNAPSHOTTED_CHARTS:true","FDB_DEB_URL:https://github.com/apple/foundationdb/releases/download/6.2.30/foundationdb-clients_6.2.30-1_amd64.deb","GIT_BASE_BRANCH:prod","GIT_DEPTH:96","GO_VERSION:1.15","JAVA_VERSION:azul-17-34-19","KUBERNETES_SERVICE_ACCOUNT_OVERWRITE:logs-backend","MAVEN_CLI_OPTS:--settings
+        .ci/settings.xml --batch-mode --errors --no-transfer-progress --show-version
+        -DisCI=true -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+        -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss
+        -Dsurefire.rerunFailingTestsCount=2","MAVEN_ENV:-XX:MaxRAMPercentage=50 -Djava.awt.headless=true
+        -Djava.net.preferIPv4Stack=true","MAVEN_OPTS:-Dmaven.repo.local=/.m2 -XX:MaxRAMPercentage=50
+        -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true","S3_BUCKET:s3://dd-ci-artefacts-build-stable/logs-backend","S3_BUCKET_PIPELINE_PATH:s3://dd-ci-artefacts-build-stable/logs-backend/10623014","S3_DDBUILD_MIRROR:s3://binaries.site.io/logs-backend/mirror","S3_DDBUILD_RELEASE:s3://binaries.site.io/logs-backend/release","S3_OPTS:--region
+        us-east-1 --sse AES256 --acl bucket-owner-full-control --only-show-errors","SLACK_NOTIFIER_IMAGE:486234852809.dkr.ecr.us-east-1.amazonaws.com/slack-notifier@sha256:d35e229b35ee0c6cedcb79a908dbca6c964f8a7eeaf82f4367d7e77eb93b9b44","TRACER_URL:https://repo1.maven.org/maven2/com/datadoghq/dd-java-agent/0.108.1/dd-java-agent-0.108.1.jar","TRACER_VERSION:0.108.1"],"status":"success"},"_top_level":1,"start":1666342991000000000,"gitlab":{"pipeline_source":"parent_pipeline","result":"passed"},"env":"prod","user":{"name":"halil.sener"}},"ci_level":"pipeline","tags":["source:apm","source:apm"]}}],"meta":{"page":{"after":"eyJhZnRlciI6IkFnQUFBWVA1eXIwSTBPQy1YQUFBQUFBQUFBQVlBQUFBQUVGWlVEVjVjakJKUVVGRWVrbDJSbmhSTUdScGJGWXlVd0FBQUNRQUFBQUFNREU0TTJZNVkyRXRZemhqTUMwMFpUVmxMVGszT0RrdFpUVmxZMkUwTXpJeU5tSTMifQ"}},"links":{"next":"https://api.datadoghq.com/api/v2/ci/pipelines/events?filter%5Bfrom%5D=now-30s&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFnQUFBWVA1eXIwSTBPQy1YQUFBQUFBQUFBQVlBQUFBQUVGWlVEVjVjakJKUVVGRWVrbDJSbmhSTUdScGJGWXlVd0FBQUNRQUFBQUFNREU0TTJZNVkyRXRZemhqTUMwMFpUVmxMVGszT0RrdFpUVmxZMkUwTXpJeU5tSTMifQ&page%5Blimit%5D=2&sort=timestamp"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"filter":{"from":"now-30s","to":"now"},"options":{"timezone":"GMT"},"page":{"cursor":"eyJhZnRlciI6IkFnQUFBWVA1eXIwSTBPQy1YQUFBQUFBQUFBQVlBQUFBQUVGWlVEVjVjakJKUVVGRWVrbDJSbmhSTUdScGJGWXlVd0FBQUNRQUFBQUFNREU0TTJZNVkyRXRZemhqTUMwMFpUVmxMVGszT0RrdFpUVmxZMkUwTXpJeU5tSTMifQ","limit":2},"sort":"timestamp"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/ci/pipelines/events/search
+  response:
+    body:
+      string: '{"data":[],"meta":{"page":{"after":"eyJhZnRlciI6IkFnQUFBWVA1eXIwSTBPQy1YZ0FBQUFBQUFBQVlBQUFBQUVGWlVEVjVjakJKUVVGRVN6aHhYekY1VVVSVGFXd3lVd0FBQUNRQUFBQUFNREU0TTJZNVkyRXRZemhqTUMwMFpUVmxMVGszT0RrdFpUVmxZMkUwTXpJeU5tSTMifQ"}},"links":{"next":"https://api.datadoghq.com/api/v2/ci/pipelines/events?filter%5Bfrom%5D=now-30s&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFnQUFBWVA1eXIwSTBPQy1YZ0FBQUFBQUFBQVlBQUFBQUVGWlVEVjVjakJKUVVGRVN6aHhYekY1VVVSVGFXd3lVd0FBQUNRQUFBQUFNREU0TTJZNVkyRXRZemhqTUMwMFpUVmxMVGszT0RrdFpUVmxZMkUwTXpJeU5tSTMifQ&page%5Blimit%5D=2&sort=timestamp"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

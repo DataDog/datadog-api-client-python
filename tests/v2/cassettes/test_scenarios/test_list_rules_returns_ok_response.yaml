@@ -1,0 +1,458 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
+  response:
+    body:
+      string: '{"meta":{"page":{"total_filtered_count":10,"total_count":838}},"data":[{"updateAuthorId":0,"creationAuthorId":0,"tags":["scored:true","security:compliance","requirement:Cloud-SQL","cloud_provider:gcp","control:6.3.6","source:google_sql_database_instance","control:3.4","requirement:Communications-Security","framework:cis-gcp","requirement:Compliance","level:1","control:A.13.1.1","control:A.18.1.3","framework:soc-2","scope:google_sql_database_instance","requirement:Cardholder-Data","control:A.9.1.2","framework:iso-27001","requirement:Logical-and-Physical-Access-Control","requirement:Access-Control","framework:pci","control:CC6.1"],"type":"cloud_configuration","isEnabled":true,"hasExtendedTitle":true,"message":"##
+        Description\n\nIt is recommended to set `3625 (trace flag)` database flag  to
+        `off` for GCP SQL Server instance.\n\n## Rationale\n\nMicrosoft SQL trace
+        flags are frequently used to diagnose performance issues or to debug stored
+        procedures or complex computer systems, but they may also be recommended by
+        Microsoft Support to address behavior that is negatively impacting a specific
+        workload. All documented trace flags and those recommended by Microsoft Support
+        are fully supported in a production environment when used as directed. `3625
+        (trace log)` limits the information returned to users who are not members
+        of the sysadmin fixed server role, by masking the parameters of some error
+        messages using ''******''. Setting this in a Google Cloud flag for the instance
+        allows for security through obscurity and prevents the disclosure of sensitive
+        information. Hence, it is recommended to set this flag to `off` globally to
+        prevent the flag from being left on or turned on by bad actors. This recommendation
+        is applicable to SQL Server database instances.\n\n## Impact\n\nChanging flags
+        on a database may cause it to be restarted. The best time to do this is when
+        there is low usage.\n\n## Remediation\n\n### From the console\n\n1. Go to
+        the [Cloud SQL Instances][1] page in the Google Cloud Console.\n2. Select
+        the SQL Server instance for which you want to enable the database flag.\n3.
+        Click **Edit**.\n4. Scroll down to the Flags section.\n5. Click **Add item**
+        to set a flag that has not been set on the instance before. Choose the flag
+        `3625` from the drop-down menu, and set its value to `off`.\n6. Click **Save**.\n7.
+        Confirm your changes under the Flags section on the Overview page.\n\n###
+        From the command line\n\nConfigure the `3625` database flag for every GCP
+        SQL Server database instance using the below command.\n```\ngcloud sql instances
+        patch <INSTANCE_NAME> --database-flags \"3625=off\"\n```\n\n#### Note\nThis
+        command will overwrite all database flags previously set. To keep the flags
+        previously set and add new ones, include the values for all flags you want
+        set on the instance; any flag not specifically included is set to its default
+        value. For flags that do not take a value, specify the flag name followed
+        by an equals sign (=).\n\n\n## Additional Information\n\n- Configuring the
+        above flag restarts the GCP SQL Server instance.\n\n- Some database flag settings
+        can affect instance availability or stability, and remove the instance from
+        the Cloud SQL SLA. For information about these flags, see Operational Guidelines.\n\n##
+        References\n\n1. [https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql?view=sql-server-ver15#trace-flags][2]\n\n[1]:
+        https://console.cloud.google.com/sql/instances\n[2]: https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql?view=sql-server-ver15#trace-flags\n","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"complianceFrameworks":[{"control":"6.3.6","framework":"cis-gcp","requirement":"Cloud-SQL","version":"1.3.0"},{"control":"CC6.1","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"},{"control":"A.9.1.2","framework":"iso-27001","requirement":"Access-Control","version":"2"},{"control":"A.13.1.1","framework":"iso-27001","requirement":"Communications-Security","version":"2"},{"control":"A.18.1.3","framework":"iso-27001","requirement":"Compliance","version":"2"},{"control":"3.4","framework":"pci","requirement":"Cardholder-Data","version":"3.2.1"}],"regoRule":{"policy":"package
+        datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport
+        future.keywords.if\nimport future.keywords.in\n\neval(sql_database_instance)
+        = \"skip\" if {\n\tnot is_SQLServer(sql_database_instance)\n} else = \"fail\"
+        {\n\tdatabase_flags := sql_database_instance.settings.database_flags[_]\n\tdatabase_flags.name
+        == \"3625\"\n\tdatabase_flags.value == \"on\"\n} else = \"pass\" {\n\ttrue\n}\n\nis_SQLServer(sql_database_instance)
+        if {\n\tstartswith(sql_database_instance.database_version, \"SQLSERVER\")\n}\n\n#
+        This part remains unchanged for all rules\nresults contains result if {\n\tsome
+        resource in input.resources[input.main_resource_type]\n\tresult := dd_output.format(resource,
+        eval(resource))\n}\n","resourceTypes":["gcp_sql_database_instance"]},"validationQuery":"","resourceType":"gcp_sql_database_instance","filter":"","queryPath":"","complexRule":false},"keepAlive":21600},"version":8,"isDefault":true,"filters":[],"queries":[{"query":"resource_type:gcp_sql_database_instance","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":false,"userActivationStatus":null,"defaultGroupByFields":["@resource"],"userGroupByFields":null},"cases":[{"status":"low","notifications":[],"name":"","condition":"a
+        > 0"}],"id":"2x0-5oi-nhu","createdAt":1657310084964,"name":"''3625 (trace
+        flag)'' database flag is set to ''off'' for SQL Server Instance"},{"updateAuthorId":0,"creationAuthorId":0,"tags":["control:CC6.8","scored:true","control:2.11","cloud_provider:azure","control:A.12.4.1","level:1","source:azure.policy","requirement:Application-Updates","framework:iso-27001","framework:pci","requirement:Operations-Security","requirement:Communication-and-Information","security:compliance","requirement:Security-Center","framework:cis-azure","control:6.2","requirement:System-Operations","requirement:Monitoring-Activities","framework:soc-2","scope:azure.policy","control:CC4.1","requirement:Logical-and-Physical-Access-Control","control:CC2.1","control:CC7.2","control:CC7.1"],"type":"cloud_configuration","isEnabled":true,"hasExtendedTitle":true,"message":"##
+        Description\n\nEnable automatic provisioning of the monitoring agent to collect
+        security data.\n\n## Rationale\n\nWhen automatic provisioning of monitoring
+        agent is turned on, Azure Security Center provisions the Microsoft Monitoring
+        Agent on all existing supported Azure virtual machines and any new ones that
+        are created. The Microsoft Monitoring Agent scans for various security-related
+        configurations and events such as system updates, OS vulnerabilities, endpoint
+        protection, and provides alerts.\n\n## Remediation\n\n### From the console\n\n1.
+        Go to Security Center\n2. Click on Pricing & Settings\n3. Click on a subscription\n4.
+        Click on Data Collection\n5. Set Automatic provisioning to On\n6. Click save
+        Repeat the above for any additional subscriptions.\n\n### From the command
+        line\n\nUse the below command to set automatic provisioning of monitoring
+        agent:\n\n```bash\naz account get-access-token --query \"{subscription:subscription,accessToken:accessToken}\"
+        --out tsv | xargs -L1 bash -c ''''curl -X PUT -H \"AuthorizationBearer $1\"
+        -H \"Content-Typeapplication/json\" https://management.azure.com/subscriptions/$0/providers/Microsoft.Security/autoProvisioningSettings/default?api-version=2017-08-01-preview
+        -d@\"input.json\"''''\n```\n\nWhere input.json contains the Request body json
+        data as mentioned below. \n\n```bash\n{ \"id\"\"/subscriptions/<Your_Subscription_Id>/providers/Microsoft.Security/autoProvisioningSettings/default\",
+        \"name\"\"default\", \"type\"\"Microsoft.Security/autoProvisioningSettings\",
+        \"properties\"{ \"autoProvision\"\"On\" } }\n```\n\n## References\n\n1. https://docs.microsoft.com/en-us/azure/security-center/security-center-data-security
+        \n2. https://docs.microsoft.com/en-us/azure/security-center/security-center-enable-data-collection
+        \n3. https://msdn.microsoft.com/en-us/library/mt704062.aspx\n4. https://msdn.microsoft.com/en-us/library/mt704063.aspx\n5.
+        https://docs.microsoft.com/en-us/rest/api/securitycenter/autoprovisioningsettings/list
+        \n6. https://docs.microsoft.com/en-us/rest/api/securitycenter/autoprovisioningsettings/create
+        \n7. https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-incident-response#ir-2-preparation--setup-incident-notification\n\nAdditional
+        Information: Excluding any of the entries in `input.json` may disable the
+        specific setting by default Microsoft has recently changed APIs to get and
+        Update Automatic Provisioning setting. This recommendation is updated accordingly.\n\n##
+        CIS Controls\n\nVersion 7 3.1 - Run Automated Vulnerability Scanning Tools:
+        Utilize an up-to-date SCAP-compliant vulnerability scanning tool to automatically
+        scan all systems on the network on a weekly or more frequent basis to identify
+        all potential vulnerabilities on the organization''s systems.","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"complianceFrameworks":[{"control":"2.11","framework":"cis-azure","requirement":"Security-Center","version":"1.3.0"},{"control":"6.2","framework":"pci","requirement":"Application-Updates","version":"3.2.1"},{"control":"A.12.4.1","framework":"iso-27001","requirement":"Operations-Security","version":"2"},{"control":"CC2.1","framework":"soc-2","requirement":"Communication-and-Information","version":"2"},{"control":"CC4.1","framework":"soc-2","requirement":"Monitoring-Activities","version":"2"},{"control":"CC6.8","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"},{"control":"CC7.1","framework":"soc-2","requirement":"System-Operations","version":"2"},{"control":"CC7.2","framework":"soc-2","requirement":"System-Operations","version":"2"}],"validationQuery":"@auto_provision:Off","resourceType":"azure_security_center_auto_provisioning","filter":"","queryPath":"","complexRule":false},"keepAlive":21600},"version":7,"isDefault":true,"filters":[],"queries":[{"query":"resource_type:azure_security_center_auto_provisioning
+        (@auto_provision:Off)","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":false,"userActivationStatus":null,"defaultGroupByFields":["@resource"],"userGroupByFields":null},"cases":[{"status":"medium","notifications":[],"name":"","condition":"a
+        > 0"}],"id":"ota-kzg-lsb","createdAt":1635237006719,"name":"''Automatic provisioning
+        of monitoring agent'' is set to ''On''"},{"updateAuthorId":0,"creationAuthorId":0,"tags":["scored:true","requirement:Virtual-Machines","security:compliance","cloud_provider:azure","control:3.4.1","control:7.2","framework:cis-azure","requirement:Credentials","requirement:Compliance","scope:azure.compute","level:1","control:A.18.1.3","framework:soc-2","requirement:Cardholder-Data","framework:iso-27001","requirement:Logical-and-Physical-Access-Control","control:8.2.1","source:azure.compute","framework:pci","control:CC6.1"],"type":"cloud_configuration","isEnabled":true,"hasExtendedTitle":true,"message":"##
+        Description\n\nEnsure that OS disks (boot volumes) and data disks (non-boot
+        volumes) are encrypted with a Customer Managed Key (CMK).\n\n## Rationale\n\nEncrypting
+        the IaaS VM''s OS disk (boot volume) and data disks (non-boot volume) ensures
+        that the entire content is fully unrecoverable without a key and thus protects
+        the volume from unwarranted reads. CMK is superior encryption although requires
+        additional planning.\n\n## Remediation\n\n### From the console\n\n**Note**:
+        Disks must be detached from VMs to have encryption changed.\n\n1. Go to Virtual
+        Machines\n2. For each virtual machine, go to Settings\n3. Click on Disks\n4.
+        Click the X to detach the disk from the VM\n5. Search for disks and locate
+        the unattached disk\n6. Click the disk select Encryption\n7. Change your encryption
+        type and select your encryption set\n8. Click Save\n9. Go back to the VM and
+        re-attach the disk\n\n### Using PowerShell\n\n```powershell\n$KVRGname = ''''MyKeyVaultResourceGroup'''';
+        $VMRGName = ''''MyVirtualMachineResourceGroup''''; $vmName = ''''MySecureVM'''';
+        $KeyVaultName = ''''MySecureVault''''; $KeyVault = Get-AzKeyVault -VaultName
+        $KeyVaultName -ResourceGroupName $KVRGname; $diskEncryptionKeyVaultUrl = $KeyVault.VaultUri;
+        $KeyVaultResourceId = $KeyVault.ResourceId; Set-AzVMDiskEncryptionExtension
+        -ResourceGroupName $VMRGname -VMName $vmName -DiskEncryptionKeyVaultUrl $diskEncryptionKeyVaultUrl
+        -DiskEncryptionKeyVaultId $KeyVaultResourceId;\n```\n\n**NOTES**:\n\n- During
+        encryption, a reboot is likely required. It may take up to 15 minutes to complete
+        the process.\n\n- On Linux machines, you may need to set the `-skipVmBackup`
+        parameter.\n\n## Impact\n\nUsing CMK/BYOK entail additional management of
+        keys. You must have your key vault setup to use this.\n\n## References\n\n\n1.
+        https://docs.microsoft.com/azure/security/fundamentals/azure-disk-encryption-vms-vmss\n2.
+        https://docs.microsoft.com/en-us/azure/security-center/security-center-disk-encryption?toc=%2fazure%2fsecurity%2ftoc.json\n3.
+        https://docs.microsoft.com/azure/security/fundamentals/data-encryption-best-practices#protect-data-at-resthttps://docs.microsoft.com/azure/virtual-machines/windows/disk-encryption-portal-quickstart\n4.
+        https://docs.microsoft.com/en-us/rest/api/compute/disks/delete\n5. https://docs.microsoft.com/en-us/rest/api/compute/disks/update#encryptionsettings\n6.
+        https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-data-protection#dp-5-encrypt-sensitive-data-at-rest\n7.
+        https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disks-enable-customer-managed-keys-powershell\n\n##
+        CIS Controls\n\nVersion 7 14.8 - Encrypt Sensitive Information at Rest - Encrypt
+        all sensitive information at rest using a tool that requires a secondary authentication
+        mechanism not integrated into the operating system, in order to access the
+        information.","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"complianceFrameworks":[{"control":"7.2","framework":"cis-azure","requirement":"Virtual-Machines","version":"1.3.0"},{"control":"3.4.1","framework":"pci","requirement":"Cardholder-Data","version":"3.2.1"},{"control":"8.2.1","framework":"pci","requirement":"Credentials","version":"3.2.1"},{"control":"A.18.1.3","framework":"iso-27001","requirement":"Compliance","version":"2"},{"control":"CC6.1","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"}],"validationQuery":"-@encryption_type:EncryptionAtRestWithCustomerKey","resourceType":"azure_managed_disk","filter":"@disk_state:Attached","queryPath":"","complexRule":false},"keepAlive":21600},"version":8,"isDefault":true,"filters":[],"queries":[{"query":"resource_type:azure_managed_disk
+        @disk_state:Attached (-@encryption_type:EncryptionAtRestWithCustomerKey)","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":true,"userActivationStatus":null,"defaultGroupByFields":["@resource"],"userGroupByFields":null},"cases":[{"status":"high","notifications":[],"name":"","condition":"a
+        > 0"}],"id":"i6x-xne-idt","createdAt":1631690475494,"name":"''OS and Data''
+        disks are encrypted with CMK"},{"updateAuthorId":0,"creationAuthorId":0,"tags":["scored:true","control:CC6.7","cloud_provider:azure","requirement:Default-Security-Parameter","requirement:Credentials","requirement:Compliance","level:1","requirement:System-Acquisition-Development-and-Maintenance","control:2.2.3","requirement:Application-Updates","framework:iso-27001","scope:azure.storage","framework:pci","control:A.14.1.2","control:A.14.1.3","security:compliance","control:6.5.3","framework:cis-azure","control:4.1","control:3.1","requirement:Control-Activities","requirement:Storage-Account","source:azure.storage","control:A.18.1.3","framework:soc-2","requirement:Logical-and-Physical-Access-Control","requirement:Encryption-In-Transit","control:8.2.1","control:CC5.2","control:CC6.1"],"type":"cloud_configuration","isEnabled":true,"hasExtendedTitle":true,"message":"##
+        Description\n\nEnable data encryption in transit.\n\n## Rationale\n\nThe secure
+        transfer option enhances the security of a storage account by only allowing
+        requests to the storage account by a secure connection. For example, when
+        calling REST APIs to access storage accounts, the connection must be HTTPS.
+        Any requests using HTTP will be rejected when secure transfer required is
+        enabled. When using the Azure files service, connection without encryption
+        will fail, including scenarios using SMB 2.1, SMB  3.0 without encryption,
+        and some flavors of the Linux SMB client. Because Azure storage doesn''t support
+        HTTPS for custom domain names, this option is not applied when using a custom
+        domain name.\n\n## Remediation\n\n### From the console\n\n1. Go to Storage
+        Accounts\n2. For each storage account, go to Configuration\n3. Set Secure
+        transfer required to Enabled\n\n### From the command line\n\nInterface 2.0
+        - Use the below command to enable Secure transfer required for a Storage Account:
+        `az storage account update --name <storageAccountName> --resource-group <resourceGroupName>
+        --https-only true`\n\n## References\n\n\n1. https://docs.microsoft.com/en-us/azure/storage/blobs/security-recommendations#encryption-in-transit\n2.
+        https://docs.microsoft.com/en-us/cli/azure/storage/account?view=azure-cli-latest#az_storage_account_list\n3.
+        https://docs.microsoft.com/en-us/cli/azure/storage/account?view=azure-cli-latest#az_storage_account_update\n4.
+        https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-data-protection#dp-4-encrypt-sensitive-information-in-transit\n\n##
+        CIS Controls\n\nVersion 7 - 14.4 Encrypt All Sensitive Information in Transit\n","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"complianceFrameworks":[{"control":"3.1","framework":"cis-azure","requirement":"Storage-Account","version":"1.3.0"},{"control":"A.14.1.2","framework":"iso-27001","requirement":"System-Acquisition-Development-and-Maintenance","version":"2"},{"control":"A.14.1.3","framework":"iso-27001","requirement":"System-Acquisition-Development-and-Maintenance","version":"2"},{"control":"A.18.1.3","framework":"iso-27001","requirement":"Compliance","version":"2"},{"control":"2.2.3","framework":"pci","requirement":"Default-Security-Parameter","version":"3.2.1"},{"control":"4.1","framework":"pci","requirement":"Encryption-In-Transit","version":"3.2.1"},{"control":"6.5.3","framework":"pci","requirement":"Application-Updates","version":"3.2.1"},{"control":"8.2.1","framework":"pci","requirement":"Credentials","version":"3.2.1"},{"control":"CC5.2","framework":"soc-2","requirement":"Control-Activities","version":"2"},{"control":"CC6.1","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"},{"control":"CC6.7","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"}],"validationQuery":"-@supports_https_traffic_only:true","resourceType":"azure_storage_account","filter":"","queryPath":"","complexRule":false},"keepAlive":21600},"version":8,"isDefault":true,"filters":[],"queries":[{"query":"resource_type:azure_storage_account
+        (-@supports_https_traffic_only:true)","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":true,"userActivationStatus":null,"defaultGroupByFields":["@name"],"userGroupByFields":null},"cases":[{"status":"high","notifications":[],"name":"","condition":"a
+        > 0"}],"id":"vlg-zuu-zub","createdAt":1635847712936,"name":"''Secure transfer
+        required'' is set to ''Enabled''"},{"updateAuthorId":0,"creationAuthorId":0,"tags":["scored:true","control:CC6.7","control:CC6.6","cloud_provider:azure","requirement:Compliance","level:1","control:2.2.2","framework:iso-27001","requirement:Access-Control","scope:azure.storage","framework:pci","security:compliance","requirement:Least-Privileged-Access","control:1.2.1","control:3.7","framework:cis-azure","requirement:Communications-Security","control:7.2.1","requirement:Storage-Account","source:azure.storage","control:A.13.1.3","requirement:Default-Security-Parameters","requirement:Firewall-Configuration","control:A.13.1.1","control:A.18.1.3","framework:soc-2","control:A.9.1.2","requirement:Logical-and-Physical-Access-Control","control:CC6.1"],"type":"cloud_configuration","isEnabled":true,"hasExtendedTitle":true,"message":"##
+        Description\n\nSome Microsoft services that interact with storage accounts
+        operate from networks that can''t be granted access through network rules.
+        To help this type of service work as intended, allow the set of trusted Microsoft
+        services to bypass the network rules. These services use strong authentication
+        to access the storage account. If Allow trusted Microsoft services exception
+        is enabled, the following services, when registered in the subscription, are
+        granted access to the storage account: Azure Backup, Azure Site Recovery,
+        Azure DevTest Labs, Azure Event Grid, Azure Event Hubs, Azure Networking,
+        Azure Monitor and Azure SQL Data Warehouse.\n\n## Rationale\n\nTurning on
+        firewall rules for storage account blocks access to incoming requests for
+        data, including from other Azure services. This includes using the portal,
+        writing logs, etc. You can re-enable access to services like Monitor, Networking,
+        Hubs, and Event Grid by enabling Trusted Microsoft Services through exceptions.
+        The exception also supports backing up and restoring virtual machines using
+        unmanaged disks in storage accounts with network rules applied.\n\n## Remediation\n\n###
+        From the console\n\n1. Go to Storage Accounts\n2. For each storage account,
+        click on the settings menu called Firewalls and Virtual Networks.\n3. Ensure
+        that Allow access from selected networks is enabled.\n4. Enable Allow trusted
+        Microsoft services to access this storage account.\n5. Click Save to apply
+        your changes.\n\n### From the command line\n\nUse the following command to
+        update trusted Microsoft services: `az storage account update --name <StorageAccountName>
+        --resource-group <resourceGroupName> --bypass AzureServices`\n\n## References\n\n1.
+        https://docs.microsoft.com/en-us/azure/storage/common/storage-network-security\n2.
+        https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-network-security#ns-1-implement-security-for-internal-traffic\n3.
+        https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-governance-strategy#gs-2-define-enterprise-segmentation-strategy\n\n##
+        CIS Controls\n\nVersion 7 9.2 - Ensure Only Approved Ports, Protocols and
+        Services Are Running - Ensure that only network ports, protocols, and services
+        listening on a system with validated business needs, are running on each system.","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"complianceFrameworks":[{"control":"3.7","framework":"cis-azure","requirement":"Storage-Account","version":"1.3.0"},{"control":"1.2.1","framework":"pci","requirement":"Firewall-Configuration","version":"3.2.1"},{"control":"2.2.2","framework":"pci","requirement":"Default-Security-Parameters","version":"3.2.1"},{"control":"7.2.1","framework":"pci","requirement":"Least-Privileged-Access","version":"3.2.1"},{"control":"A.9.1.2","framework":"iso-27001","requirement":"Access-Control","version":"2"},{"control":"A.13.1.1","framework":"iso-27001","requirement":"Communications-Security","version":"2"},{"control":"A.13.1.3","framework":"iso-27001","requirement":"Communications-Security","version":"2"},{"control":"A.18.1.3","framework":"iso-27001","requirement":"Compliance","version":"2"},{"control":"CC6.1","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"},{"control":"CC6.6","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"},{"control":"CC6.7","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"}],"validationQuery":"-@network_acls.bypass:*AzureServices*","resourceType":"azure_storage_account","filter":"","queryPath":"","complexRule":false},"keepAlive":21600},"version":9,"isDefault":true,"filters":[],"queries":[{"query":"resource_type:azure_storage_account
+        (-@network_acls.bypass:*AzureServices*)","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":true,"userActivationStatus":null,"defaultGroupByFields":["@resource"],"userGroupByFields":null},"cases":[{"status":"high","notifications":[],"name":"","condition":"a
+        > 0"}],"id":"psg-u8u-lwo","createdAt":1631690476330,"name":"''Trusted Microsoft
+        Services'' is enabled for Storage Account access"},{"updateAuthorId":0,"creationAuthorId":0,"tags":["scored:true","requirement:Virtual-Machines","security:compliance","cloud_provider:azure","control:3.4.1","control:7.3","framework:cis-azure","requirement:Credentials","requirement:Compliance","scope:azure.compute","level:1","control:A.18.1.3","framework:soc-2","requirement:Cardholder-Data","framework:iso-27001","requirement:Logical-and-Physical-Access-Control","control:8.2.1","source:azure.compute","framework:pci","control:CC6.1"],"type":"cloud_configuration","isEnabled":true,"hasExtendedTitle":true,"message":"##
+        Description\n\nEnsure that unattached disks in a subscription are encrypted
+        with a customer managed key (CMK).\n\n## Rationale\n\nManaged disks are encrypted
+        by default with platform-managed keys. Using customer-managed keys may provide
+        an additional level of security or meet an organization''s regulatory requirements.
+        Encrypting managed disks ensures that its entire content is fully unrecoverable
+        without a key and thus protects the volume from unwarranted reads. Even if
+        the disk is not attached to any of the VMs, there is always a risk where a
+        compromised user account with administrative access to VM service can mount/attach
+        these data disks which may lead to sensitive information disclosure and tampering.\n\n##
+        Impact\n\nEncryption is available only on standard tier VMs. This could impact
+        cost. Utilizing and maintaining customer-managed keys requires additional
+        work to create, protect, and rotate keys.\n\n## Remediation\n\nIf data stored
+        in the disk is no longer useful, refer to [Azure documentation][1] to delete
+        unattached data disks. If data stored in the disk is important, encrypt the
+        disk. See the [Disk enable customer managed keys customer][2] or the [Encryption
+        settings][3] documentation.\n\n## References\n\n1. https://docs.microsoft.com/en-us/azure/security/fundamentals/azure-disk-encryption-vms-vmss\n2.
+        https://docs.microsoft.com/en-us/azure/security-center/security-center-disk-encryption?toc=%2fazure%2fsecurity%2ftoc.json\n3.
+        https://docs.microsoft.com/en-us/rest/api/compute/disks/delete\n4. https://docs.microsoft.com/en-us/cli/azure/disk?view=azure-cli-latest#az-disk-delete\n5.
+        https://docs.microsoft.com/en-us/rest/api/compute/disks/update#encryptionsettings\n6.
+        https://docs.microsoft.com/en-us/cli/azure/disk?view=azure-cli-latest#az-disk-update\n7.
+        https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-data-protection#dp-5-encrypt-sensitive-data-at-rest\n\n##
+        CIS Controls\n\nVersion 7 14.8 - Encrypt Sensitive Information at Rest - Encrypt
+        all sensitive information at rest using a tool that requires a secondary authentication
+        mechanism not integrated into the operating system, in order to access the
+        information.\n\n[1]: https://docs.microsoft.com/en-us/rest/api/compute/disks/delete
+        -https://docs.microsoft.com/en-us/cli/azure/disk?view=azure-cli-latest#az-disk-delete\n[2]:
+        https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-customer-managed-keys-portal\n[3]:
+        https://docs.microsoft.com/en-us/rest/api/compute/disks/update#encryptionsettings","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"complianceFrameworks":[{"control":"7.3","framework":"cis-azure","requirement":"Virtual-Machines","version":"1.3.0"},{"control":"3.4.1","framework":"pci","requirement":"Cardholder-Data","version":"3.2.1"},{"control":"8.2.1","framework":"pci","requirement":"Credentials","version":"3.2.1"},{"control":"A.18.1.3","framework":"iso-27001","requirement":"Compliance","version":"2"},{"control":"CC6.1","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"}],"validationQuery":"-@encryption_type:EncryptionAtRestWithCustomerKey","resourceType":"azure_managed_disk","filter":"@disk_state:Unattached","queryPath":"","complexRule":false},"keepAlive":21600},"version":7,"isDefault":true,"filters":[],"queries":[{"query":"resource_type:azure_managed_disk
+        @disk_state:Unattached (-@encryption_type:EncryptionAtRestWithCustomerKey)","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":true,"userActivationStatus":null,"defaultGroupByFields":["@resource"],"userGroupByFields":null},"cases":[{"status":"high","notifications":[],"name":"","condition":"a
+        > 0"}],"id":"bae-mte-pj5","createdAt":1631690476274,"name":"''Unattached disks''
+        are encrypted with CMK"},{"updateAuthorId":0,"creationAuthorId":0,"tags":["scored:true","control:10.2.7","control:10.3.6","control:10.5.4","requirement:Cloud-SQL","cloud_provider:gcp","control:10.2.6","control:10.3.5","control:10.5.3","source:google_sql_database_instance","control:10.1","requirement:Monitoring","control:10.2.1","control:10.2.5","control:10.3.4","control:A.12.4.1","control:10.2.4","control:10.3.3","control:10.2.3","control:10.3.2","control:A.12.4.3","control:10.2.2","control:10.3.1","framework:cis-gcp","level:1","scope:google_sql_database_instance","framework:iso-27001","framework:pci","requirement:Operations-Security","security:compliance","control:6.2.9","requirement:System-Operations","requirement:Control-Activities","framework:soc-2","control:10.2","control:10.3","control:CC7.2","control:CC5.2"],"type":"cloud_configuration","isEnabled":true,"hasExtendedTitle":true,"message":"##
+        Description\n\nEnable the `cloudsql.enable_pgaudit` database flag so that
+        each Cloud SQL PostgreSQL instance has centralized logging.\n\n## Rationale\n\nBecause
+        many other recommendations in this section involve turning on flags for logging\npurposes,
+        your organization needs a way to manage these logs. If you do not already
+        have a solution in \nplace, consider enabling database auditing in PostgreSQL
+        by installing the open source pgAudit extension and enabling the `cloudsql.enable_pgaudit`
+        flag. The extension provides\ndetailed session and object logging to comply
+        with government, financial, and ISO standards. It provides \nauditing capabilities
+        to mitigate threats by monitoring security events on the\ninstance. Enabling
+        the flag and the settings described below sends the logs to\nGoogle Logs Explorer
+        so that you can access them in a central location. This\nrecommendation is
+        applicable only to PostgreSQL database instances.\n\n## Impact\n\nEnabling
+        the pgAudit extension can lead to increased data storage requirements. To\nensure
+        durability of pgAudit log records in the event of unexpected storage issues,
+        \nenable the **Enable automatic storage increases** setting on the\ninstance.
+        Enabling flags on the command line will overwrite all existing flags, so you\nshould
+        apply _all_ needed flags in each CLI command. You might need to restart the\nserver
+        to see the effects of enabling flags, so update your servers at a\ntime of
+        low usage.\n\n## Remediation\n\n### Initialize the pgAudit flag\n\n#### From
+        the console\n1. Go to [GCP console][1].\n2. Select the instance to open its
+        Overview page.\n3. Click **Edit**.\n4. Scroll down and expand Flags.\n5. To
+        set a flag that has not been set on the instance before, click **Add item**.\n6.
+        Enter `cloudsql.enable_pgaudit` for the flag name and set the flag to on.\n7.
+        Click **Done**.\n8. Click **Save** to update the configuration.\n9. Confirm
+        your changes under Flags on the Overview page.\n\n#### From the command line\nRun
+        the following command by providing <INSTANCE_NAME> to enable `cloudsql.enable_pgaudit`
+        flag:\n```\ngcloud sql instances patch <INSTANCE_NAME> --database-flags=cloudsql.enable_pgaudit=on\n```\n   \n**Note**:
+        Restart the database server for this configuration change to take effect.\n\n###
+        Create the extension\n1. Connect to the the server running PostgreSQL or through
+        a SQL client of your choice.\n2. Open the PostgreSQL shell. For example, if
+        you''re using SSH to access the server, run:\n3. Run the following command
+        as a superuser:\n   ```\n   CREATE EXTENSION pgaudit;\n   ```\n### Update
+        the `pgaudit.log` flag\n\n#### From the console\n**Note**: There are multiple
+        options for updating the flag. The following instructions enable logging for
+        all databases\non a server. Read [Customizing database audit logging][4] for
+        more flag\noptions.\n\n1. Go to [GCP console][1].\n2. Select the instance
+        to open its Overview page.\n3. Click **Edit**.\n4. Scroll down and expand
+        Flags.\n5. To set a flag that has not been set on the instance before, click
+        **Add item**.\n6. Enter `pgaudit.log=all` for the flag name and set the flag
+        to on.\n7. Click **Done**.\n8. Click **Save** to update the configuration.\n9.
+        Confirm your changes under Flags on the Overview page.\n\n#### From the command
+        line\n\nRun the command:\n```\ngcloud sql instances patch <INSTANCE_NAME>
+        --database-flags \\\ncloudsql.enable_pgaudit=on,pgaudit.log=all\n```\n\n###
+        Check for the logs in Google Logs Explorer\n1. From the Google Console home
+        page, open the menu in the top left.\n2. In the menu''s Operations section,
+        select Logs Explorer.\n3. In the query box, copy in the following query:\n\n   ```\n   resource.type=\"cloudsql_database\"\n   logName=\"projects//logs/cloudaudit.googleapis.com%2Fdata_access\"\n   protoPayload.request.@type=\"type.googleapis.com/google.cloud.sql.audit.v1.PgAuditEntry\n   ```\nIf
+        it returns any log sources, they are correctly set up.\n\n## Default value\nBy
+        default `cloudsql.enable_pgaudit` database flag is set to off and the extension
+        is not enabled.\n\n## References\n1. [https://cloud.google.com/sql/docs/postgres/flags#list-flags-postgres][2]\n2.
+        [https://cloud.google.com/sql/docs/postgres/pg-audit#enable-auditing-flag][3]\n3.
+        [https://cloud.google.com/sql/docs/postgres/pg-audit#customizing-database-audit-logging][4]\n4.
+        [https://cloud.google.com/logging/docs/audit/configure-data-access#config-console-enable][5]\n\n##
+        Additional Information\n**WARNING**: This extension modifies database flag
+        values, which may require your instance to be\nrestarted. Check the [List
+        of supported flags][6] to see if your instance needs to be restarted\nwhen
+        this extension is set up.\n**Note**: Configuring the `cloudsql.enable_pgaudit`
+        database flag requires restarting the Cloud\nSQL PostgreSQL instance.\n\n##
+        CIS controls\n\nVersion 8\n8.5 - Collect Detailed Audit Logs\n- Configure
+        detailed audit logging for enterprise assets containing sensitive data.\nInclude
+        event source, date, username, timestamp, source addresses, destination\naddresses,
+        and other useful elements that could assist in a forensic investigation.\n\n8.9
+        - Centralize Audit Logs\n- Centralize, to the extent possible, audit log collection
+        and retention across\nenterprise assets.\n\n[1]: https://console.cloud.google.com/sql/instances\n[2]:
+        https://cloud.google.com/sql/docs/postgres/flags#list-flags-postgres\n[3]:
+        https://cloud.google.com/sql/docs/postgres/pg-audit#enable-auditing-flag\n[4]:
+        https://cloud.google.com/sql/docs/postgres/pg-audit#customizing-database-audit-logging\n[5]:
+        https://cloud.google.com/logging/docs/audit/configure-data-access#config-console-enable\n[6]:
+        https://cloud.google.com/sql/docs/postgres/flags\n\n","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"complianceFrameworks":[{"control":"6.2.9","framework":"cis-gcp","requirement":"Cloud-SQL","version":"1.3.0"},{"control":"10.1","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.2","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.2.1","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.2.2","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.2.3","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.2.4","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.2.5","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.2.6","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.2.7","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.3","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.3.1","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.3.2","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.3.3","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.3.4","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.3.5","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.3.6","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.5.3","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"10.5.4","framework":"pci","requirement":"Monitoring","version":"3.2.1"},{"control":"A.12.4.1","framework":"iso-27001","requirement":"Operations-Security","version":"2"},{"control":"A.12.4.3","framework":"iso-27001","requirement":"Operations-Security","version":"2"},{"control":"CC5.2","framework":"soc-2","requirement":"Control-Activities","version":"2"},{"control":"CC7.2","framework":"soc-2","requirement":"System-Operations","version":"2"}],"regoRule":{"policy":"package
+        datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport
+        future.keywords.if\nimport future.keywords.in\n\neval(sql_database_instance)
+        = \"skip\" if {\n\tnot is_PostgreSQL(sql_database_instance)\n} else = \"pass\"
+        {\n\tdatabase_flags := sql_database_instance.settings.database_flags[_]\n\tdatabase_flags.name
+        == \"cloudsql.enable_pgaudit\"\n\tdatabase_flags.value == \"on\"\n} else =
+        \"fail\" {\n\ttrue\n}\n\nis_PostgreSQL(sql_database_instance) if {\n\tstartswith(sql_database_instance.database_version,
+        \"POSTGRES_\")\n}\n\n# This part remains unchanged for all rules\nresults
+        contains result if {\n\tsome resource in input.resources[input.main_resource_type]\n\tresult
+        := dd_output.format(resource, eval(resource))\n}\n","resourceTypes":["gcp_sql_database_instance"]},"validationQuery":"","resourceType":"gcp_sql_database_instance","filter":"","queryPath":"","complexRule":false},"keepAlive":21600},"version":7,"isDefault":true,"filters":[],"queries":[{"query":"resource_type:gcp_sql_database_instance","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":false,"userActivationStatus":null,"defaultGroupByFields":["@resource"],"userGroupByFields":null},"cases":[{"status":"medium","notifications":[],"name":"","condition":"a
+        > 0"}],"id":"6hz-owg-7y7","createdAt":1657889011689,"name":"''cloudsql.enable_pgaudit''
+        database flag is set to ''on'' for centralized logging on Postgresql Instance"},{"updateAuthorId":0,"creationAuthorId":0,"tags":["control:CC6.8","scored:true","control:CC6.7","requirement:Cloud-SQL","cloud_provider:gcp","source:google_sql_database_instance","requirement:Default-Security-Parameter","framework:cis-gcp","requirement:Compliance","level:1","control:2.2.4","scope:google_sql_database_instance","framework:iso-27001","requirement:Access-Control","framework:pci","security:compliance","control:6.3.7","requirement:Least-Privileged-Access","requirement:Confidentiality","requirement:Communications-Security","control:7.1","control:C1.1","control:A.13.1.1","control:A.18.1.3","framework:soc-2","control:A.9.1.2","requirement:Logical-and-Physical-Access-Control","control:CC6.3","control:CC6.1"],"type":"cloud_configuration","isEnabled":true,"hasExtendedTitle":true,"message":"##
+        Description\n\nIt is recommended to set `contained database authentication`
+        database flag for SQL Server instances to `off`.\n\n## Rationale\n\nA contained
+        database includes all database settings and metadata required to define the
+        database and has no configuration dependencies on the instance of the Database
+        Engine where the database is installed. Users can connect to the database
+        without authenticating a login at the Database Engine level. Isolating the
+        database from the Database Engine makes it possible to easily move the database
+        to another instance of SQL Server. Contained databases have some unique threats
+        that should be understood and mitigated by SQL Server Database Engine administrators.
+        Most of the threats are related to the `USER WITH PASSWORD` authentication
+        process, which moves the authentication boundary from the Database Engine
+        level to the database level. Hence, disabling this flag is recommended. This
+        recommendation is applicable to SQL Server database instances.\n\n## Impact\n\nWhen
+        `contained database authentication` is off (`0`) for the instance, contained
+        databases cannot be created, or attached to the Database Engine. Turning on
+        logging will increase the required storage over time. Mismanaged logs may
+        cause your storage costs to increase. Setting custom flags via the command
+        line on certain instances will cause all omitted flags to be reset to defaults.
+        This may cause you to lose custom flags and could result in unforeseen complications
+        or instance restarts. Because of this, it is recommended that you apply these
+        flag changes during a period of low usage.\n\n## Remediation\n\n### From the
+        console\n\n1. Go to the [Cloud SQL Instances][1] page in the Google Cloud
+        Console.\n2. Select the SQL Server instance for which you want to enable the
+        database flag.\n3. Click **Edit**.\n4. Scroll down to the **Flags** section.\n5.
+        To set a flag that has not been set on the instance before, click **Add item**,
+        choose the flag `contained database authentication` from the drop-down menu,
+        and set its value to `off`.\n6. Click **Save**.\n7. Confirm the changes under
+        **Flags** on the Overview page.\n\n### From the command line\n\nConfigure
+        the `contained database authentication` database flag for every SQL Server
+        database instance using the below command.\n```\ngcloud sql instances patch
+        <INSTANCE_NAME> --database-flags \"contained database authentication=off\"\n```\n\n**Note**:
+        This command will overwrite all database flags previously set. To keep the
+        flags previously set and add new ones, include the values for all flags you
+        want set on the instance; any flag not specifically included is set to its
+        default value. For flags that do not take a value, specify the flag name followed
+        by an equals sign (`=`).\n\n\n## Additional Information\n\n- Configuring this
+        flag does not restart the SQL Server instance.\n\n- Some database flag settings
+        can affect instance availability or stability and remove the instance from
+        the Cloud SQL SLA. For information about these flags, see Operational Guidelines.\n\n##
+        References\n\n1. [https://cloud.google.com/sql/docs/sqlserver/flags][2]\n2.
+        [https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-ver15][3]\n3.
+        [https://docs.microsoft.com/en-us/sql/relational-databases/databases/security-best-practices-with-contained-databases?view=sql-server-ver15][4]\n\n[1]:
+        https://console.cloud.google.com/sql/instances\n[2]: https://cloud.google.com/sql/docs/sqlserver/flags\n[3]:
+        https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-ver15\n[4]:
+        https://docs.microsoft.com/en-us/sql/relational-databases/databases/security-best-practices-with-contained-databases?view=sql-server-ver15","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"complianceFrameworks":[{"control":"6.3.7","framework":"cis-gcp","requirement":"Cloud-SQL","version":"1.3.0"},{"control":"A.9.1.2","framework":"iso-27001","requirement":"Access-Control","version":"2"},{"control":"A.13.1.1","framework":"iso-27001","requirement":"Communications-Security","version":"2"},{"control":"A.18.1.3","framework":"iso-27001","requirement":"Compliance","version":"2"},{"control":"CC6.1","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"},{"control":"CC6.3","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"},{"control":"CC6.7","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"},{"control":"CC6.8","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"},{"control":"C1.1","framework":"soc-2","requirement":"Confidentiality","version":"2"},{"control":"2.2.4","framework":"pci","requirement":"Default-Security-Parameter","version":"3.2.1"},{"control":"7.1","framework":"pci","requirement":"Least-Privileged-Access","version":"3.2.1"}],"regoRule":{"policy":"package
+        datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport
+        future.keywords.if\nimport future.keywords.in\n\neval(sql_database_instance)
+        = \"skip\" if {\n\tnot is_SQLServer(sql_database_instance)\n} else = \"fail\"
+        {\n\tdatabase_flags := sql_database_instance.settings.database_flags[_]\n\tdatabase_flags.name
+        == \"contained database authentication\"\n\tdatabase_flags.value == \"on\"\n}
+        else = \"pass\" {\n\ttrue\n}\n\nis_SQLServer(sql_database_instance) if {\n\tstartswith(sql_database_instance.database_version,
+        \"SQLSERVER\")\n}\n\n# This part remains unchanged for all rules\nresults
+        contains result if {\n\tsome resource in input.resources[input.main_resource_type]\n\tresult
+        := dd_output.format(resource, eval(resource))\n}\n","resourceTypes":["gcp_sql_database_instance"]},"validationQuery":"","resourceType":"gcp_sql_database_instance","filter":"","queryPath":"","complexRule":false},"keepAlive":21600},"version":7,"isDefault":true,"filters":[],"queries":[{"query":"resource_type:gcp_sql_database_instance","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":false,"userActivationStatus":null,"defaultGroupByFields":["@resource"],"userGroupByFields":null},"cases":[{"status":"medium","notifications":[],"name":"","condition":"a
+        > 0"}],"id":"snw-rsr-ilm","createdAt":1658463161618,"name":"''contained database
+        authentication'' database flag is set to ''off'' for SQL Server Instance"},{"updateAuthorId":0,"creationAuthorId":0,"tags":["scored:true","control:CC6.6","requirement:Cloud-SQL","cloud_provider:gcp","source:google_sql_database_instance","requirement:Default-Security-Parameter","requirement:Credentials","framework:cis-gcp","requirement:Compliance","control:8.7","level:1","scope:google_sql_database_instance","control:2.2.2","framework:iso-27001","requirement:Access-Control","framework:pci","control:6.3.2","security:compliance","requirement:Least-Privileged-Access","requirement:Communications-Security","control:7.1","requirement:Control-Activities","control:A.13.1.1","control:A.18.1.3","framework:soc-2","control:A.9.1.2","requirement:Logical-and-Physical-Access-Control","control:CC5.2","control:CC6.1"],"type":"cloud_configuration","isEnabled":true,"hasExtendedTitle":true,"message":"##
+        Description\nIt is recommended that you set the `cross db ownership chaining`
+        database flag for SQL Server instance to `off`.\n\n## Rationale\nThe `cross
+        db ownership` option is used to configure cross-database ownership chaining
+        for an instance of Microsoft SQL Server. This server option allows you to
+        control cross-database ownership chaining at the database level or to allow
+        cross-database ownership chaining for all databases. Enabling `cross db ownership`
+        is not recommended unless all of the databases hosted by the instance of SQL
+        Server must participate in cross-database ownership chaining, and you are
+        aware of the security implications of this setting. This recommendation is
+        applicable to SQL Server database instances.\n\n### Impact\nUpdating flags
+        may cause the database to restart. This may cause the database to be unavailable
+        for a short amount of time, so this is best done at a time of low usage. You
+        should also determine if the tables in your databases reference another table
+        without using credentials for that database, as turning off cross database
+        ownership will break this relationship.\n\n   - Some database flag settings
+        can affect instance availability or stability, and remove the instance from
+        the Cloud SQL SLA. For information about these flags, see Operational Guidelines.\n\n   -
+        Configuring the `cross db ownership chaining` flag does not restart the Cloud
+        SQL instance.\n\n   - Note: The command to set database flags overwrites all
+        database flags previously set. To keep the existing settings while adding
+        new flags, include the values for all flags to be set on the instance. Cloud
+        SQL sets any flag not specifically included in the list to its default value.
+        For flags that do not take a value, specify the flag name followed by an equals
+        sign (\"=\").\n\n## Remediation\n\n### From the console\n1. Go to the [Cloud
+        SQL Instances page][1] in Google Cloud Console.\n2. Select the SQL Server
+        instance for which you want to enable to database flag.\n3. Click **Edit**.\n4.
+        Scroll down to the **Flags** section.\n5. To set a flag that has not been
+        set on the instance before, click **Add item**, choose the flag `cross db
+        ownership chaining` from the drop-down menu, and set its value to `off`.\n6.
+        Click **Save**.\n7. Confirm the changes under **Flags** on the Overview page.\n\n###
+        From the command line\nConfigure the `cross db ownership chaining` database
+        flag for every SQL Server database instance using the below command:\n   \n```\ngcloud
+        sql instances patch <INSTANCE_NAME> --database-flags \"cross db ownership
+        chaining=off\"\n```\n\n## References\n1. [https://cloud.google.com/sql/docs/sqlserver/flags][2]\n2.
+        [https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/cross-db-ownership-chaining-server-configuration-option?view=sql-server-ver15][3]\n\n[1]:
+        https://console.cloud.google.com/sql/instances\n[2]: https://cloud.google.com/sql/docs/sqlserver/flags\n[3]:
+        https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/cross-db-ownership-chaining-server-configuration-option?view=sql-server-ver15\n","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"complianceFrameworks":[{"control":"6.3.2","framework":"cis-gcp","requirement":"Cloud-SQL","version":"1.3.0"},{"control":"2.2.2","framework":"pci","requirement":"Default-Security-Parameter","version":"3.2.1"},{"control":"7.1","framework":"pci","requirement":"Least-Privileged-Access","version":"3.2.1"},{"control":"8.7","framework":"pci","requirement":"Credentials","version":"3.2.1"},{"control":"A.9.1.2","framework":"iso-27001","requirement":"Access-Control","version":"2"},{"control":"A.13.1.1","framework":"iso-27001","requirement":"Communications-Security","version":"2"},{"control":"A.18.1.3","framework":"iso-27001","requirement":"Compliance","version":"2"},{"control":"CC5.2","framework":"soc-2","requirement":"Control-Activities","version":"2"},{"control":"CC6.1","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"},{"control":"CC6.6","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"}],"regoRule":{"policy":"package
+        datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport
+        future.keywords.if\nimport future.keywords.in\n\neval(sql_database_instance)
+        = \"skip\" if {\n\tnot is_SQLServer(sql_database_instance)\n} else = \"fail\"
+        {\n\tdatabase_flags := sql_database_instance.settings.database_flags[_]\n\tdatabase_flags.name
+        == \"cross db ownership chaining\"\n\tdatabase_flags.value == \"on\"\n} else
+        = \"pass\" {\n\ttrue\n}\n\nis_SQLServer(sql_database_instance) if {\n\tstartswith(sql_database_instance.database_version,
+        \"SQLSERVER\")\n}\n\n# This part remains unchanged for all rules\nresults
+        contains result if {\n\tsome resource in input.resources[input.main_resource_type]\n\tresult
+        := dd_output.format(resource, eval(resource))\n}\n","resourceTypes":["gcp_sql_database_instance"]},"validationQuery":"","resourceType":"gcp_sql_database_instance","filter":"","queryPath":"","complexRule":false},"keepAlive":21600},"version":10,"isDefault":true,"filters":[],"queries":[{"query":"resource_type:gcp_sql_database_instance","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":false,"userActivationStatus":null,"defaultGroupByFields":["@resource"],"userGroupByFields":null},"cases":[{"status":"medium","notifications":[],"name":"","condition":"a
+        > 0"}],"id":"yje-u1y-rls","createdAt":1657665271111,"name":"''cross db ownership
+        chaining'' database flag is set to ''off'' for SQL Server Instance"},{"updateAuthorId":0,"creationAuthorId":0,"tags":["scored:true","control:CC6.6","requirement:Cloud-SQL","cloud_provider:gcp","source:google_sql_database_instance","requirement:Default-Security-Parameter","framework:cis-gcp","requirement:Compliance","level:1","scope:google_sql_database_instance","control:2.2.2","framework:iso-27001","requirement:Access-Control","framework:pci","security:compliance","control:6.3.1","requirement:Least-Privileged-Access","control:7.2","requirement:Communications-Security","control:7.1","requirement:Control-Activities","control:7.2.1","control:A.13.1.1","control:A.18.1.3","framework:soc-2","control:A.9.1.2","requirement:Logical-and-Physical-Access-Control","control:CC5.2","control:CC6.1"],"type":"cloud_configuration","isEnabled":true,"hasExtendedTitle":true,"message":"##
+        Description\n\nIt is recommended to set `external scripts enabled` database
+        flag for SQL Server instance to `off`.\n\n## Rationale\n\nThe `external scripts
+        enabled` flag enables the execution of scripts with certain remote language
+        extensions. This flag is `off` by default. When Advanced Analytics Services
+        is installed, during the set up, you can optionally set this flag to `on`.
+        The External Scripts Enabled feature allows scripts external to SQL, such
+        as files located in an R library, to be executed, which could adversely affect
+        the security of the system. Hence, the flag should be disabled. This recommendation
+        is applicable to SQL Server database instances.\n\n## Impact\n\nSetting custom
+        flags through the command line on certain instances can cause all omitted
+        flags to be reset to defaults. This may cause you to lose custom flags and
+        could result in unforeseen complications or instance restarts. Because of
+        this, it is recommended that you apply these flag changes during a period
+        of low usage.\n\n## Remediation\n\n### From the console\n\n1. Go to the Cloud
+        SQL Instances page in the Google Cloud Console by visiting [https://console.cloud.google.com/sql/instances][1].\n2.
+        Select the SQL Server instance for which you want to enable the database flag.\n3.
+        Click **Edit**.\n4. Scroll down to the Flag section.\n5. Click **Add item**
+        to set a flag that has not been set on the instance before. Choose the flag
+        `external scripts enabled` from the drop-down menu, and set its value to `off`.\n6.
+        Click **Save**.\n7. Confirm your changes under the Flags section on the Overview
+        page.\n\n### From the command line\n\nConfigure the `external scripts enabled`
+        database flag for every SQL Server database instance using the following command:\n\n```\ngcloud
+        sql instances patch <INSTANCE_NAME> --database-flags \"external scripts enabled=off\"\n```\n\nNote:
+        This command overwrites all database flags previously set. To keep those and
+        add new ones, include the values for all flags you want set on the instance;
+        any flag not specifically included is set to its default value. For flags
+        that do not take a value, specify the flag name followed by an equals sign
+        (=).\n\n## Default Value\n\nBy default `external scripts enabled` is `off`.\n\n##
+        Additional information\n\n- Some database flag settings can affect instance
+        availability or stability, and remove the instance from the Cloud SQL SLA.
+        For information about these flags, see Operational Guidelines.\n\n- Configuring
+        the `external scripts enabled` flag restarts the Cloud SQL instance.\n\n##
+        References\n\n1. [https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/external-scripts-enabled-server-configuration-option?view=sql-server-ver15][2]\n2.
+        [https://cloud.google.com/sql/docs/sqlserver/flags][3]\n3. [https://docs.microsoft.com/en-us/sql/advanced-analytics/concepts/security?view=sql-server-ver15][4]\n4.
+        [https://www.stigviewer.com/stig/ms_sql_server_2016_instance/2018-03-09/finding/V-79347][5]\n\n##
+        CIS Controls\n\nVersion 8 - 2.7 Allowlist Authorized Scripts\n- Use technical
+        controls, such as digital signatures and version control, to ensure that only
+        authorized scripts, such as specific .ps1, .py, etc., files, are allowed to
+        execute. Block unauthorized scripts from executing. Reassess bi-annually,
+        or more frequently.\n\nVersion 7 - 2.9 Implement Application Whitelisting
+        of Scripts\n- The organization''s application whitelisting software must ensure
+        that only authorized, digitally signed scripts (such as *.ps1, *.py, macros,
+        etc) are allowed to run on a system.\n\n[1]: https://console.cloud.google.com/sql/instances\n[2]:
+        https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/external-scripts-enabled-server-configuration-option?view=sql-server-ver15\n[3]:
+        https://cloud.google.com/sql/docs/sqlserver/flags\n[4]: https://docs.microsoft.com/en-us/sql/advanced-analytics/concepts/security?view=sql-server-ver15\n[5]:
+        https://www.stigviewer.com/stig/ms_sql_server_2016_instance/2018-03-09/finding/V-79337\n","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"complianceFrameworks":[{"control":"6.3.1","framework":"cis-gcp","requirement":"Cloud-SQL","version":"1.3.0"},{"control":"2.2.2","framework":"pci","requirement":"Default-Security-Parameter","version":"3.2.1"},{"control":"7.1","framework":"pci","requirement":"Least-Privileged-Access","version":"3.2.1"},{"control":"7.2","framework":"pci","requirement":"Least-Privileged-Access","version":"3.2.1"},{"control":"7.2.1","framework":"pci","requirement":"Least-Privileged-Access","version":"3.2.1"},{"control":"A.9.1.2","framework":"iso-27001","requirement":"Access-Control","version":"2"},{"control":"A.13.1.1","framework":"iso-27001","requirement":"Communications-Security","version":"2"},{"control":"A.18.1.3","framework":"iso-27001","requirement":"Compliance","version":"2"},{"control":"CC5.2","framework":"soc-2","requirement":"Control-Activities","version":"2"},{"control":"CC6.1","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"},{"control":"CC6.6","framework":"soc-2","requirement":"Logical-and-Physical-Access-Control","version":"2"}],"regoRule":{"policy":"package
+        datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport
+        future.keywords.if\nimport future.keywords.in\n\neval(sql_database_instance)
+        = \"skip\" if {\n\tnot is_SQLServer(sql_database_instance)\n} else = \"fail\"
+        {\n\tdatabase_flags := sql_database_instance.settings.database_flags[_]\n\tdatabase_flags.name
+        == \"external scripts enabled\"\n\tdatabase_flags.value == \"on\"\n} else
+        = \"pass\" {\n\ttrue\n}\n\nis_SQLServer(sql_database_instance) if {\n\tstartswith(sql_database_instance.database_version,
+        \"SQLSERVER\")\n}\n\n# This part remains unchanged for all rules\nresults
+        contains result if {\n\tsome resource in input.resources[input.main_resource_type]\n\tresult
+        := dd_output.format(resource, eval(resource))\n}\n","resourceTypes":["gcp_sql_database_instance"]},"validationQuery":"","resourceType":"gcp_sql_database_instance","filter":"","queryPath":"","complexRule":false},"keepAlive":21600},"version":7,"isDefault":true,"filters":[],"queries":[{"query":"resource_type:gcp_sql_database_instance","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":false,"userActivationStatus":null,"defaultGroupByFields":["@resource"],"userGroupByFields":null},"cases":[{"status":"medium","notifications":[],"name":"","condition":"a
+        > 0"}],"id":"14g-yot-4od","createdAt":1657715719319,"name":"''external scripts
+        enabled'' database flag is set to ''off'' for SQL Server Instance"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

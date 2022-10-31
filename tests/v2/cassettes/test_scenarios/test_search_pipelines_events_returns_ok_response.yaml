@@ -1,0 +1,34 @@
+interactions:
+- request:
+    body: '{"filter":{"from":"now-15m","query":"@ci.provider.name:github AND @ci.status:error","to":"now"},"options":{"timezone":"GMT"},"page":{"limit":5},"sort":"timestamp"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/ci/pipelines/events/search
+  response:
+    body:
+      string: '{"data":[{"id":"AgAAAYP5wIfA7N1YyAAAAAAAAAAYAAAAAEFZUDV3SWZBQUFBZGs5R2kyd25pbjdNMQAAACQAAAAAMDE4M2Y5YzUtYWUwZi00MzFhLWI0MWItOGU2MDg1NDM3MzAx","type":"cipipeline","attributes":{"attributes":{"duration":0,"github":{"conclusion":"failure","node_group":"","html_url":"https://github.com/DataDog/repo","run_attempt":"1","app_id":"128890"},"git":{"commit":{"sha":"95094daa15b4281c41780073ab8b77bc7c8d63d6"},"default_branch":"prod","repository_url":"https://github.com/DataDog/repo.git","repository":{"path":"/DataDog/repo.git","scheme":"https","name":"DataDog/repo","host":"github.com","id":"github.com/DataDog/repo"},"branch":"erkang.zhang/SYM-390/cache-test-spec"},"ci":{"pipeline":{"name":"Request
+        Schema diff","id":"3296065344-1"},"node":{"labels":[]},"provider":{"instance":"github-actions","name":"github"},"job":{"name":"Annotate
+        PR","id":"9025881221","url":"https://github.com/DataDog/repo/runs/9025881221"},"status":"error"},"start":1666342488000000000},"ci_level":"job","tags":["source:apm","source:apm"]}},{"id":"AgAAAYP5wZVIw5--1wAAAAAAAAAYAAAAAEFZUDV3WlZJQUFCakl1V1FZUE1TdHlxYgAAACQAAAAAMDE4M2Y5YzUtYWUwZi00MzFhLWI0MWItOGU2MDg1NDM3MzAx","type":"cipipeline","attributes":{"attributes":{"duration":247000000000,"github":{"conclusion":"failure","node_group":"GitHub
+        Actions","html_url":"https://github.com/DataDog/repo","run_attempt":"1","app_id":"128890"},"git":{"commit":{"sha":"51aec3962c7b3be87b2d656b22042ee5e2c89a3f"},"repository_url":"https://github.com/DataDog/repo.git","repository":{"path":"/DataDog/repo.git","scheme":"https","name":"DataDog/repo","host":"github.com","id":"github.com/DataDog/repo"},"branch":"master"},"ci":{"pipeline":{"name":"Staging
+        Build Deploy and Test","id":"3296065853-1"},"provider":{"instance":"github-actions","name":"github"},"step":{"name":"Run
+        Datadog Synthetic test"},"job":{"name":"test-checkouts","id":"9025825907"},"status":"error"},"start":1666342310000000000},"ci_level":"step","tags":["source:apm","source:apm"]}},{"id":"AgAAAYP5wZkww5--2gAAAAAAAAAYAAAAAEFZUDV3Wmt3QUFBN1R2bTVRRkxzaENxYgAAACQAAAAAMDE4M2Y5YzUtYWUwZi00MzFhLWI0MWItOGU2MDg1NDM3MzAx","type":"cipipeline","attributes":{"attributes":{"duration":251000000000,"github":{"conclusion":"failure","node_group":"GitHub
+        Actions","html_url":"https://github.com/DataDog/repo","run_attempt":"1","app_id":"128890"},"git":{"commit":{"sha":"51aec3962c7b3be87b2d656b22042ee5e2c89a3f"},"default_branch":"master","repository_url":"https://github.com/DataDog/repo.git","repository":{"path":"/DataDog/repo.git","scheme":"https","name":"DataDog/repo","host":"github.com","id":"github.com/DataDog/repo"},"branch":"master"},"ci":{"pipeline":{"name":"Staging
+        Build Deploy and Test","id":"3296065853-1"},"node":{"labels":["ubuntu-latest"]},"provider":{"instance":"github-actions","name":"github"},"job":{"name":"test-checkouts","id":"9025825907","url":"https://github.com/DataDog/repo/actions/runs/3296065853/jobs/5435334930"},"status":"error"},"start":1666342307000000000},"ci_level":"job","tags":["source:apm","source:apm"]}},{"id":"AgAAAYP5wmg4dbfjZwAAAAAAAAAYAAAAAEFZUDV3bWc0QUFBX0RBNlJkS1RqWkNLSAAAACQAAAAAMDE4M2Y5YzUtYWUwZi00MzFhLWI0MWItOGU2MDg1NDM3MzAx","type":"cipipeline","attributes":{"attributes":{"duration":29000000000,"github":{"conclusion":"failure","node_group":"GitHub
+        Actions","html_url":"https://github.com/DataDog/repo","run_attempt":"1","app_id":"128890"},"git":{"commit":{"sha":"62bd7b957a4db5b6926ca570b087b3cfdb9f05a7"},"repository_url":"https://github.com/DataDog/repo.git","repository":{"path":"/DataDog/repo.git","scheme":"https","name":"DataDog/repo","host":"github.com","id":"github.com/DataDog/repo"},"branch":"juanjux/APPSEC-6399-only-report-actorip-on-attack-part2"},"ci":{"pipeline":{"name":"Framework
+        tests","id":"3296098174-1"},"provider":{"instance":"github-actions","name":"github"},"step":{"name":"Run
+        tests"},"job":{"name":"starlette-testsuite-0_17_1","id":"9025869107"},"status":"error"},"start":1666342582000000000},"ci_level":"step","tags":["source:apm","source:apm"]}},{"id":"AgAAAYP5wnAIdbfjbAAAAAAAAAAYAAAAAEFZUDV3bkFJQUFENkpheXhlTXJfS3lLSAAAACQAAAAAMDE4M2Y5YzUtYWUwZi00MzFhLWI0MWItOGU2MDg1NDM3MzAx","type":"cipipeline","attributes":{"attributes":{"duration":164000000000,"github":{"conclusion":"failure","node_group":"GitHub
+        Actions","html_url":"https://github.com/DataDog/repo","run_attempt":"1","app_id":"128890"},"git":{"commit":{"sha":"62bd7b957a4db5b6926ca570b087b3cfdb9f05a7"},"default_branch":"1.x","repository_url":"https://github.com/DataDog/repo.git","repository":{"path":"/DataDog/repo.git","scheme":"https","name":"DataDog/repo","host":"github.com","id":"github.com/DataDog/repo"},"branch":"juanjux/APPSEC-6399-only-report-actorip-on-attack-part2"},"ci":{"pipeline":{"name":"Framework
+        tests","id":"3296098174-1"},"node":{"labels":["ubuntu-latest"]},"provider":{"instance":"github-actions","name":"github"},"job":{"name":"starlette-testsuite-0_17_1","id":"9025869107","url":"https://github.com/DataDog/repo/actions/runs/3296098174/jobs/5435368427"},"status":"error"},"start":1666342449000000000},"ci_level":"job","tags":["source:apm","source:apm"]}}],"meta":{"page":{"after":"eyJhZnRlciI6IkFnQUFBWVA1d25BSWRiZmpiQUFBQUFBQUFBQVlBQUFBQUVGWlVEVjNia0ZKUVVGRU5rcGhlWGhsVFhKZlMzbExTQUFBQUNRQUFBQUFNREU0TTJZNVl6VXRZV1V3WmkwME16RmhMV0kwTVdJdE9HVTJNRGcxTkRNM016QXgifQ"}},"links":{"next":"https://api.datadoghq.com/api/v2/ci/pipelines/events?filter%5Bfrom%5D=now-15m&filter%5Bquery%5D=%40ci.provider.name%3Agithub+AND+%40ci.status%3Aerror&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFnQUFBWVA1d25BSWRiZmpiQUFBQUFBQUFBQVlBQUFBQUVGWlVEVjNia0ZKUVVGRU5rcGhlWGhsVFhKZlMzbExTQUFBQUNRQUFBQUFNREU0TTJZNVl6VXRZV1V3WmkwME16RmhMV0kwTVdJdE9HVTJNRGcxTkRNM016QXgifQ&page%5Blimit%5D=5&sort=timestamp"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

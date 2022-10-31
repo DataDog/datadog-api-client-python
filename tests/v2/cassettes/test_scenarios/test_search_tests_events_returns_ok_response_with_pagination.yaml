@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"filter":{"from":"now-15m","query":"@test.status:pass AND -@language:python","to":"now"},"page":{"limit":2},"sort":"timestamp"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/ci/tests/events/search
+  response:
+    body:
+      string: '{"data":[{"id":"AQAAAYP69YODhSYeRgAAAABBWVA2OVlPREFBQjB3THBpOVlKQXRhMEg","type":"citest","attributes":{"test_level":"test","attributes":{"test_suite":{"fingerprint":"355d882863b0e6d8"},"test":{"suite":"github.com/DataDog/repo/apps/rocky/internal/catalog","full_name":"github.com/DataDog/repo/apps/rocky/internal/catalog.TestOverscan","codeowners":["@DataDog/repo"],"service":"dd-go-metrics-retrieval","name":"TestOverscan","fingerprint":"f156dcaa592eb047","type":"test","has_parameters":false,"status":"pass"},"os":{"version":"bionic"},"ci":{"pipeline":{"number":1669072,"name":"DataDog/repo","id":"10630527","url":"https://gitlab.site.io/DataDog/repo/pipelines/10630527"},"workspace_path":"/go/src/github.com/DataDog/repo","stage":{"name":"stage-1"},"provider":{"name":"gitlab"},"job":{"name":"test:go:race-bionic
+        1/2","url":"https://gitlab.site.io/DataDog/repo/-/jobs/184817229"}},"start":1666362737539000000,"runtime":{"name":"go","version":"1.19.2"},"language":"go","env":"test","duration":0,"git":{"commit":{"committer":{"date":"2022-10-21T14:24:33+00:00","name":"ci.dd-go","email":"support@datadoghq.com","date_timestamp":1666362273000},"author":{"date":"2022-10-21T14:24:33+00:00","name":"ci.dd-go","email":"support@datadoghq.com","date_timestamp":1666362273000},"message":"Gitlab
+        merged prod (c5fd9a72b75448ff60ba078960fe0ba5e23d7050) to staging-43\n\nGitlab
+        merged prod (07bd1d762138e4b5bebc0f792cd26ef078c0d872) to staging-43\n\nGitlab
+        merged prod (4ac1ba5d2b28caccc0640182d90e2d99a5234584) to staging-43\n\nGitlab
+        merged prod (1c27b214276d2e70d502fdc7c840200faa3d80cf) to staging-43\n\nMerge
+        branch ''ting.tu/scheduling'' (06242fc) into staging-43\n\n pm_trace_id: 10629269\n
+        feature_branch_pipeline_id: 10629269\n source: to-staging\n\n* commit ''06242fcf113290ca0f273e23942d86f2fc803a6b'':\n  update
+        nits\n  Allow partial schedule\n","sha":"c34a29db1311b6945aaa644302a77f9bc30e2d7d"},"repository_url":"https://gitlab.site.io/DataDog/repo.git","repository":{"path":"/DataDog/repo.git","scheme":"https","name":"DataDog/repo","host":"gitlab.site.io","id":"gitlab.site.io/DataDog/repo"},"branch":"staging-43"},"service":"dd-go-metrics-retrieval"},"tags":["source:apm","source:apm"]}},{"id":"AQAAAYP69YODhSYeRwAAAABBWVA2OVlPREFBQmptZ3JJdUtpRmM0S3U","type":"citest","attributes":{"test_level":"test","attributes":{"test_suite":{"fingerprint":"355d882863b0e6d8"},"test":{"suite":"github.com/DataDog/repo/apps/rocky/internal/catalog","full_name":"github.com/DataDog/repo/apps/rocky/internal/catalog.TestHdqDebug","codeowners":["@DataDog/repo"],"service":"dd-go-metrics-retrieval","name":"TestHdqDebug","fingerprint":"7baf20ec99e08277","type":"test","has_parameters":false,"status":"pass"},"os":{"version":"bionic"},"ci":{"pipeline":{"number":1669072,"name":"DataDog/repo","id":"10630527","url":"https://gitlab.site.io/DataDog/repo/pipelines/10630527"},"workspace_path":"/go/src/github.com/DataDog/repo","stage":{"name":"stage-1"},"provider":{"name":"gitlab"},"job":{"name":"test:go:race-bionic
+        1/2","url":"https://gitlab.site.io/DataDog/repo/-/jobs/184817229"}},"start":1666362737539000000,"runtime":{"name":"go","version":"1.19.2"},"language":"go","env":"test","duration":0,"git":{"commit":{"committer":{"date":"2022-10-21T14:24:33+00:00","name":"ci.dd-go","email":"support@datadoghq.com","date_timestamp":1666362273000},"author":{"date":"2022-10-21T14:24:33+00:00","name":"ci.dd-go","email":"support@datadoghq.com","date_timestamp":1666362273000},"message":"Gitlab
+        merged prod (c5fd9a72b75448ff60ba078960fe0ba5e23d7050) to staging-43\n\nGitlab
+        merged prod (07bd1d762138e4b5bebc0f792cd26ef078c0d872) to staging-43\n\nGitlab
+        merged prod (4ac1ba5d2b28caccc0640182d90e2d99a5234584) to staging-43\n\nGitlab
+        merged prod (1c27b214276d2e70d502fdc7c840200faa3d80cf) to staging-43\n\nMerge
+        branch ''ting.tu/scheduling'' (06242fc) into staging-43\n\n pm_trace_id: 10629269\n
+        feature_branch_pipeline_id: 10629269\n source: to-staging\n\n* commit ''06242fcf113290ca0f273e23942d86f2fc803a6b'':\n  update
+        nits\n  Allow partial schedule\n","sha":"c34a29db1311b6945aaa644302a77f9bc30e2d7d"},"repository_url":"https://gitlab.site.io/DataDog/repo.git","repository":{"path":"/DataDog/repo.git","scheme":"https","name":"DataDog/repo","host":"gitlab.site.io","id":"gitlab.site.io/DataDog/repo"},"branch":"staging-43"},"service":"dd-go-metrics-retrieval"},"tags":["source:apm","source:apm"]}}],"meta":{"page":{"after":"eyJhZnRlciI6IkFRQUFBWVA2OVlPRGhTWWVSd0FBQUFCQldWQTJPVmxQUkVGQlFtcHRaM0pKZFV0cFJtTTBTM1UifQ"}},"links":{"next":"https://api.datadoghq.com/api/v2/ci/tests/events?filter%5Bfrom%5D=now-15m&filter%5Bquery%5D=%40test.status%3Apass+AND+-%40language%3Apython&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWVA2OVlPRGhTWWVSd0FBQUFCQldWQTJPVmxQUkVGQlFtcHRaM0pKZFV0cFJtTTBTM1UifQ&page%5Blimit%5D=2&sort=timestamp"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"filter":{"from":"now-15m","query":"@test.status:pass AND -@language:python","to":"now"},"page":{"cursor":"eyJhZnRlciI6IkFRQUFBWVA2OVlPRGhTWWVSd0FBQUFCQldWQTJPVmxQUkVGQlFtcHRaM0pKZFV0cFJtTTBTM1UifQ","limit":2},"sort":"timestamp"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/ci/tests/events/search
+  response:
+    body:
+      string: '{"data":[],"meta":{"page":{"after":"eyJhZnRlciI6IkFRQUFBWVA2OVlVbW5sUEFhd0FBQUFCQldWQTJPVmxWYlVGQlJGWkNWbGw1VTJWdVFWaHZNRm8ifQ"}},"links":{"next":"https://api.datadoghq.com/api/v2/ci/tests/events?filter%5Bfrom%5D=now-15m&filter%5Bquery%5D=%40test.status%3Apass+AND+-%40language%3Apython&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWVA2OVlVbW5sUEFhd0FBQUFCQldWQTJPVmxWYlVGQlJGWkNWbGw1VTJWdVFWaHZNRm8ifQ&page%5Blimit%5D=2&sort=timestamp"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
