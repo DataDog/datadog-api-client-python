@@ -417,7 +417,7 @@ class UsageMeteringApi:
     ) -> HourlyUsageResponse:
         """Get hourly usage by product family.
 
-        Get hourly usage by product family
+        Get hourly usage by product family.
 
         :param filter_timestamp_start: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type filter_timestamp_start: datetime
