@@ -315,6 +315,10 @@ from datadog_api_client.v1.model.monitor_group_search_response_counts import Mon
 from datadog_api_client.v1.model.monitor_group_search_result import MonitorGroupSearchResult
 from datadog_api_client.v1.model.monitor_options import MonitorOptions
 from datadog_api_client.v1.model.monitor_options_aggregation import MonitorOptionsAggregation
+from datadog_api_client.v1.model.monitor_options_scheduling_options import MonitorOptionsSchedulingOptions
+from datadog_api_client.v1.model.monitor_options_scheduling_options_evaluation_window import (
+    MonitorOptionsSchedulingOptionsEvaluationWindow,
+)
 from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
 from datadog_api_client.v1.model.monitor_renotify_status_type import MonitorRenotifyStatusType
 from datadog_api_client.v1.model.monitor_search_count import MonitorSearchCount

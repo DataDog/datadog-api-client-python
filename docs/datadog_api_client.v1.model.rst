@@ -1898,6 +1898,20 @@ monitor\_options\_aggregation
    :members:
    :show-inheritance:
 
+monitor\_options\_scheduling\_options
+-------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_options_scheduling_options
+   :members:
+   :show-inheritance:
+
+monitor\_options\_scheduling\_options\_evaluation\_window
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_options_scheduling_options_evaluation_window
+   :members:
+   :show-inheritance:
+
 monitor\_overall\_states
 ------------------------
 
