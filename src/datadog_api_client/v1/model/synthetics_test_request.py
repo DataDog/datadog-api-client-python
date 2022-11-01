@@ -51,6 +51,7 @@ class SyntheticsTestRequest(ModelNormal):
             "allow_insecure": (bool,),
             "basic_auth": (SyntheticsBasicAuth,),
             "body": (str,),
+            "body_type": (str,),
             "certificate": (SyntheticsTestRequestCertificate,),
             "certificate_domains": ([str],),
             "dns_server": (str,),
@@ -77,6 +78,7 @@ class SyntheticsTestRequest(ModelNormal):
         "allow_insecure": "allow_insecure",
         "basic_auth": "basicAuth",
         "body": "body",
+        "body_type": "bodyType",
         "certificate": "certificate",
         "certificate_domains": "certificateDomains",
         "dns_server": "dnsServer",
@@ -111,6 +113,7 @@ class SyntheticsTestRequest(ModelNormal):
             UnsetType,
         ] = unset,
         body: Union[str, UnsetType] = unset,
+        body_type: Union[str, UnsetType] = unset,
         certificate: Union[SyntheticsTestRequestCertificate, UnsetType] = unset,
         certificate_domains: Union[List[str], UnsetType] = unset,
         dns_server: Union[str, UnsetType] = unset,
@@ -144,6 +147,9 @@ class SyntheticsTestRequest(ModelNormal):
 
         :param body: Body to include in the test.
         :type body: str, optional
+
+        :param body_type: Request body type. Supported values are ``text/plain`` , ``application/json`` , ``text/xml`` , ``text/html`` , ``application/x-www-form-urlencoded`` , ``GraphQL`` , or ``None``.
+        :type body_type: str, optional
 
         :param certificate: Client certificate to use when performing the test request.
         :type certificate: SyntheticsTestRequestCertificate, optional
@@ -213,6 +219,8 @@ class SyntheticsTestRequest(ModelNormal):
             kwargs["basic_auth"] = basic_auth
         if body is not unset:
             kwargs["body"] = body
+        if body_type is not unset:
+            kwargs["body_type"] = body_type
         if certificate is not unset:
             kwargs["certificate"] = certificate
         if certificate_domains is not unset:

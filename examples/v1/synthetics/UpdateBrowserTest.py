@@ -45,6 +45,7 @@ body = SyntheticsBrowserTest(
                 type=SyntheticsBasicAuthWebType.WEB,
                 username="my_username",
             ),
+            body_type="text/plain",
             certificate=SyntheticsTestRequestCertificate(
                 cert=SyntheticsTestRequestCertificateItem(),
                 key=SyntheticsTestRequestCertificateItem(),
