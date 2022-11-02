@@ -19,6 +19,7 @@ class UsageFargateHour(ModelNormal):
     def openapi_types(_):
         return {
             "apm_fargate_count": (int,),
+            "appsec_fargate_count": (int,),
             "avg_profiled_fargate_tasks": (int,),
             "hour": (datetime,),
             "org_name": (str,),
@@ -28,6 +29,7 @@ class UsageFargateHour(ModelNormal):
 
     attribute_map = {
         "apm_fargate_count": "apm_fargate_count",
+        "appsec_fargate_count": "appsec_fargate_count",
         "avg_profiled_fargate_tasks": "avg_profiled_fargate_tasks",
         "hour": "hour",
         "org_name": "org_name",
@@ -38,6 +40,7 @@ class UsageFargateHour(ModelNormal):
     def __init__(
         self_,
         apm_fargate_count: Union[int, UnsetType] = unset,
+        appsec_fargate_count: Union[int, UnsetType] = unset,
         avg_profiled_fargate_tasks: Union[int, UnsetType] = unset,
         hour: Union[datetime, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
@@ -50,6 +53,9 @@ class UsageFargateHour(ModelNormal):
 
         :param apm_fargate_count: The high-water mark of APM ECS Fargate tasks during the given hour.
         :type apm_fargate_count: int, optional
+
+        :param appsec_fargate_count: The Application Security Monitoring ECS Fargate tasks during the given hour.
+        :type appsec_fargate_count: int, optional
 
         :param avg_profiled_fargate_tasks: The average profiled task count for Fargate Profiling.
         :type avg_profiled_fargate_tasks: int, optional
@@ -68,6 +74,8 @@ class UsageFargateHour(ModelNormal):
         """
         if apm_fargate_count is not unset:
             kwargs["apm_fargate_count"] = apm_fargate_count
+        if appsec_fargate_count is not unset:
+            kwargs["appsec_fargate_count"] = appsec_fargate_count
         if avg_profiled_fargate_tasks is not unset:
             kwargs["avg_profiled_fargate_tasks"] = avg_profiled_fargate_tasks
         if hour is not unset:
