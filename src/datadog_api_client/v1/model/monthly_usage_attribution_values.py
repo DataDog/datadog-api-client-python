@@ -23,8 +23,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "apm_fargate_usage": (float,),
             "apm_host_percentage": (float,),
             "apm_host_usage": (float,),
-            "appsec_fargate_percentage": (float,),
-            "appsec_fargate_usage": (float,),
             "appsec_percentage": (float,),
             "appsec_usage": (float,),
             "browser_percentage": (float,),
@@ -68,8 +66,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "apm_fargate_usage": "apm_fargate_usage",
         "apm_host_percentage": "apm_host_percentage",
         "apm_host_usage": "apm_host_usage",
-        "appsec_fargate_percentage": "appsec_fargate_percentage",
-        "appsec_fargate_usage": "appsec_fargate_usage",
         "appsec_percentage": "appsec_percentage",
         "appsec_usage": "appsec_usage",
         "browser_percentage": "browser_percentage",
@@ -114,8 +110,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
         apm_fargate_usage: Union[float, UnsetType] = unset,
         apm_host_percentage: Union[float, UnsetType] = unset,
         apm_host_usage: Union[float, UnsetType] = unset,
-        appsec_fargate_percentage: Union[float, UnsetType] = unset,
-        appsec_fargate_usage: Union[float, UnsetType] = unset,
         appsec_percentage: Union[float, UnsetType] = unset,
         appsec_usage: Union[float, UnsetType] = unset,
         browser_percentage: Union[float, UnsetType] = unset,
@@ -172,12 +166,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param apm_host_usage: The APM host usage by tag(s).
         :type apm_host_usage: float, optional
-
-        :param appsec_fargate_percentage: The percentage of Application Security Monitoring ECS Fargate task usage by tag(s).
-        :type appsec_fargate_percentage: float, optional
-
-        :param appsec_fargate_usage: The Application Security Monitoring ECS Fargate task usage by tag(s).
-        :type appsec_fargate_usage: float, optional
 
         :param appsec_percentage: The percentage of Application Security Monitoring host usage by tag(s).
         :type appsec_percentage: float, optional
@@ -293,10 +281,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["apm_host_percentage"] = apm_host_percentage
         if apm_host_usage is not unset:
             kwargs["apm_host_usage"] = apm_host_usage
-        if appsec_fargate_percentage is not unset:
-            kwargs["appsec_fargate_percentage"] = appsec_fargate_percentage
-        if appsec_fargate_usage is not unset:
-            kwargs["appsec_fargate_usage"] = appsec_fargate_usage
         if appsec_percentage is not unset:
             kwargs["appsec_percentage"] = appsec_percentage
         if appsec_usage is not unset:

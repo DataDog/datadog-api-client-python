@@ -26,7 +26,6 @@ class SyntheticsStep(ModelNormal):
             "allow_failure": (bool,),
             "is_critical": (bool,),
             "name": (str,),
-            "no_screenshot": (bool,),
             "params": (dict,),
             "timeout": (int,),
             "type": (SyntheticsStepType,),
@@ -36,7 +35,6 @@ class SyntheticsStep(ModelNormal):
         "allow_failure": "allowFailure",
         "is_critical": "isCritical",
         "name": "name",
-        "no_screenshot": "noScreenshot",
         "params": "params",
         "timeout": "timeout",
         "type": "type",
@@ -47,7 +45,6 @@ class SyntheticsStep(ModelNormal):
         allow_failure: Union[bool, UnsetType] = unset,
         is_critical: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
-        no_screenshot: Union[bool, UnsetType] = unset,
         params: Union[dict, UnsetType] = unset,
         timeout: Union[int, UnsetType] = unset,
         type: Union[SyntheticsStepType, UnsetType] = unset,
@@ -65,9 +62,6 @@ class SyntheticsStep(ModelNormal):
         :param name: The name of the step.
         :type name: str, optional
 
-        :param no_screenshot: A boolean set to not take a screenshot for the step.
-        :type no_screenshot: bool, optional
-
         :param params: The parameters of the step.
         :type params: dict, optional
 
@@ -83,8 +77,6 @@ class SyntheticsStep(ModelNormal):
             kwargs["is_critical"] = is_critical
         if name is not unset:
             kwargs["name"] = name
-        if no_screenshot is not unset:
-            kwargs["no_screenshot"] = no_screenshot
         if params is not unset:
             kwargs["params"] = params
         if timeout is not unset:
