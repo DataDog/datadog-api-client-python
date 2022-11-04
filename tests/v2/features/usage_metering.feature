@@ -166,23 +166,15 @@ Feature: Usage Metering
   Scenario: GetEstimatedCostByOrg with both start_month and start_date returns "Bad Request" response
     Given new "GetEstimatedCostByOrg" request
     And request contains "view" parameter with value "sub-org"
-    And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "start_month" parameter with value "{{ timeISO('now') }}"
     And request contains "start_date" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @replay-only @team:DataDog/red-zone-revenue-query
-  Scenario: GetEstimatedCostByOrg with start_date returns "OK" response
-    Given new "GetEstimatedCostByOrg" request
-    And request contains "view" parameter with value "sub-org"
-    And request contains "start_date" parameter with value "{{ timeISO('now - 5d') }}"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @skip @team:DataDog/red-zone-revenue-query
   Scenario: GetEstimatedCostByOrg with start_month returns "OK" response
     Given new "GetEstimatedCostByOrg" request
     And request contains "view" parameter with value "sub-org"
-    And request contains "start_month" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "start_month" parameter with value "{{ timeISO('now') }}"
     When the request is sent
     Then the response status is 200 OK
