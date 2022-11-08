@@ -26,6 +26,7 @@ from datadog_api_client.v1.model.synthetics_test_options_monitor_options import 
 from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
 from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
 from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
+from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
 from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
 from datadog_api_client.v1.model.synthetics_test_request_certificate_item import SyntheticsTestRequestCertificateItem
 from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
@@ -45,6 +46,7 @@ body = SyntheticsBrowserTest(
                 type=SyntheticsBasicAuthWebType.WEB,
                 username="my_username",
             ),
+            body_type=SyntheticsTestRequestBodyType.TEXT_PLAIN,
             certificate=SyntheticsTestRequestCertificate(
                 cert=SyntheticsTestRequestCertificateItem(),
                 key=SyntheticsTestRequestCertificateItem(),

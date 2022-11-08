@@ -4005,6 +4005,13 @@ synthetics\_test\_request
    :members:
    :show-inheritance:
 
+synthetics\_test\_request\_body\_type
+-------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_test_request_body_type
+   :members:
+   :show-inheritance:
+
 synthetics\_test\_request\_certificate
 --------------------------------------
 
