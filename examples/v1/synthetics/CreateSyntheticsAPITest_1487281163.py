@@ -16,6 +16,9 @@ from datadog_api_client.v1.model.synthetics_assertion_json_path_target_target im
 from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
 from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
+from datadog_api_client.v1.model.synthetics_assertion_x_path_operator import SyntheticsAssertionXPathOperator
+from datadog_api_client.v1.model.synthetics_assertion_x_path_target import SyntheticsAssertionXPathTarget
+from datadog_api_client.v1.model.synthetics_assertion_x_path_target_target import SyntheticsAssertionXPathTargetTarget
 from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
 from datadog_api_client.v1.model.synthetics_config_variable_type import SyntheticsConfigVariableType
 from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
@@ -47,6 +50,15 @@ body = SyntheticsAPITest(
                     json_path="topKey",
                     operator="isNot",
                     target_value="0",
+                ),
+                type=SyntheticsAssertionType.BODY,
+            ),
+            SyntheticsAssertionXPathTarget(
+                operator=SyntheticsAssertionXPathOperator.VALIDATES_X_PATH,
+                target=SyntheticsAssertionXPathTargetTarget(
+                    x_path="target-xpath",
+                    target_value="0",
+                    operator="contains",
                 ),
                 type=SyntheticsAssertionType.BODY,
             ),
