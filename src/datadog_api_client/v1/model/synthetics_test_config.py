@@ -20,6 +20,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_browser_variable import SyntheticsBrowserVariable
     from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
     from datadog_api_client.v1.model.synthetics_assertion_json_path_target import SyntheticsAssertionJSONPathTarget
+    from datadog_api_client.v1.model.synthetics_assertion_x_path_target import SyntheticsAssertionXPathTarget
 
 
 class SyntheticsTestConfig(ModelNormal):
@@ -47,7 +48,15 @@ class SyntheticsTestConfig(ModelNormal):
     def __init__(
         self_,
         assertions: Union[
-            List[Union[SyntheticsAssertion, SyntheticsAssertionTarget, SyntheticsAssertionJSONPathTarget]], UnsetType
+            List[
+                Union[
+                    SyntheticsAssertion,
+                    SyntheticsAssertionTarget,
+                    SyntheticsAssertionJSONPathTarget,
+                    SyntheticsAssertionXPathTarget,
+                ]
+            ],
+            UnsetType,
         ] = unset,
         config_variables: Union[List[SyntheticsConfigVariable], UnsetType] = unset,
         request: Union[SyntheticsTestRequest, UnsetType] = unset,

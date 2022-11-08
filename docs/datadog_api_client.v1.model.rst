@@ -3368,6 +3368,27 @@ synthetics\_assertion\_type
    :members:
    :show-inheritance:
 
+synthetics\_assertion\_x\_path\_operator
+----------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_x_path_operator
+   :members:
+   :show-inheritance:
+
+synthetics\_assertion\_x\_path\_target
+--------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_x_path_target
+   :members:
+   :show-inheritance:
+
+synthetics\_assertion\_x\_path\_target\_target
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_x_path_target_target
+   :members:
+   :show-inheritance:
+
 synthetics\_basic\_auth
 -----------------------
 
