@@ -122,7 +122,7 @@ class SyntheticsTestOptions(ModelNormal):
             certificates.
         :type accept_self_signed: bool, optional
 
-        :param allow_insecure: Allows loading insecure content for an HTTP request in an API test.
+        :param allow_insecure: Allows loading insecure content for an HTTP request.
         :type allow_insecure: bool, optional
 
         :param check_certificate_revocation: For SSL test, whether or not the test should fail on revoked certificate in stapled OCSP.
@@ -143,7 +143,7 @@ class SyntheticsTestOptions(ModelNormal):
         :param follow_redirects: For API HTTP test, whether or not the test should follow redirects.
         :type follow_redirects: bool, optional
 
-        :param ignore_server_certificate_error: Ignore server certificate error for browser tests.
+        :param ignore_server_certificate_error: Ignore server certificate error.
         :type ignore_server_certificate_error: bool, optional
 
         :param initial_navigation_timeout: Timeout before declaring the initial step as failed (in seconds) for browser tests.
