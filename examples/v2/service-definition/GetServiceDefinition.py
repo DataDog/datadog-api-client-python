@@ -9,7 +9,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = ServiceDefinitionApi(api_client)
     response = api_instance.get_service_definition(
-        service_name="service-Example-Get_a_single_service_definition_returns_OK_response",
+        service_name="service-definition-test",
     )
 
     print(response)

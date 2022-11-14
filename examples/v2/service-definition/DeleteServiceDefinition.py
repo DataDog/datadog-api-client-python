@@ -9,5 +9,5 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = ServiceDefinitionApi(api_client)
     api_instance.delete_service_definition(
-        service_name="service-Example-Delete_a_single_service_definition_returns_OK_response",
+        service_name="service-definition-test",
     )

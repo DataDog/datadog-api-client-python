@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"contacts":[{"contact":"contact@datadoghq.com","name":"Team Email","type":"email"}],"dd-service":"service-Test-Create_or_update_service_definition_returns_CREATED_response-1665504675","dd-team":"my-team","docs":[{"name":"Architecture","provider":"google
-      drive","url":"https://gdrive/mydoc"}],"extensions":{"myorgextension":"extensionvalue"},"integrations":{"opsgenie":{"region":"US","service-id":"123e4567-e89b-12d3-a456-426614174000"},"pagerduty":"https://my-org.pagerduty.com/service-directory/PMyService"},"links":[{"name":"Runbook","type":"runbook","url":"https://my-runbook"}],"repos":[{"name":"Source
+    body: '{"contacts":[{"contact":"contact@datadoghq.com","name":"Team Email","type":"email"}],"dd-service":"service-Test-Create_or_update_service_definition_returns_CREATED_response-1668114884","dd-team":"my-team","docs":[{"name":"Architecture","provider":"google
+      drive","url":"https://gdrive/mydoc"}],"extensions":{"myorgextension":"extensionvalue"},"integrations":{"opsgenie":{"region":"US","service-url":"https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000"},"pagerduty":"https://my-org.pagerduty.com/service-directory/PMyService"},"links":[{"name":"Runbook","type":"runbook","url":"https://my-runbook"}],"repos":[{"name":"Source
       Code","provider":"GitHub","url":"https://github.com/DataDog/schema"}],"schema-version":"v2","tags":["my:tag","service:tag"],"team":"my-team"}'
     headers:
       accept:
@@ -12,10 +12,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/services/definitions
   response:
     body:
-      string: '{"data":[{"attributes":{"meta":{"ingested-schema-version":"v2","ingestion-source":"api","last-modified-time":"2022-10-11T16:11:16.302119241Z","github-html-url":"","warnings":[]},"schema":{"links":[{"url":"https://my-runbook","type":"runbook","name":"Runbook"}],"contacts":[{"contact":"contact@datadoghq.com","type":"email","name":"Team
-        Email"}],"docs":[{"url":"https://gdrive/mydoc","name":"Architecture","provider":"google
-        drive"}],"repos":[{"url":"https://github.com/DataDog/schema","name":"Source
-        Code","provider":"GitHub"}],"tags":["my:tag","service:tag"],"dd-team":"my-team","integrations":{"opsgenie":{"region":"US","service-id":"123e4567-e89b-12d3-a456-426614174000"},"pagerduty":"https://my-org.pagerduty.com/service-directory/PMyService"},"schema-version":"v2","team":"my-team","extensions":{},"dd-service":"service-test-create_or_update_service_definition_returns_created_response-1665504675"}},"type":"service-definition"}]}
+      string: '{"data":[{"type":"service-definition","attributes":{"meta":{"last-modified-time":"2022-11-10T21:14:45.52228008Z","github-html-url":"","ingestion-source":"api","warnings":[],"ingested-schema-version":"v2"},"schema":{"schema-version":"v2","dd-service":"service-test-create_or_update_service_definition_returns_created_response-1668114884","dd-team":"my-team","team":"my-team","contacts":[{"name":"Team
+        Email","type":"email","contact":"contact@datadoghq.com"}],"links":[{"name":"Runbook","type":"runbook","url":"https://my-runbook"}],"repos":[{"name":"Source
+        Code","provider":"GitHub","url":"https://github.com/DataDog/schema"}],"docs":[{"name":"Architecture","provider":"google
+        drive","url":"https://gdrive/mydoc"}],"tags":["my:tag","service:tag"],"integrations":{"pagerduty":"https://my-org.pagerduty.com/service-directory/PMyService","opsgenie":{"service-url":"https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000","region":"US"}},"extensions":{"myorgextension":"extensionvalue"}}}}]}
 
         '
     headers:
@@ -30,7 +30,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/services/definitions/service-test-create_or_update_service_definition_returns_created_response-1665504675
+    uri: https://api.datadoghq.com/api/v2/services/definitions/service-test-create_or_update_service_definition_returns_created_response-1668114884
   response:
     body:
       string: '{"errors":["Not Found"],"error_details":[{}]}

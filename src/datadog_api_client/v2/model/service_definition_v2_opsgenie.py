@@ -24,26 +24,28 @@ class ServiceDefinitionV2Opsgenie(ModelNormal):
 
         return {
             "region": (ServiceDefinitionV2OpsgenieRegion,),
-            "service_id": (str,),
+            "service_url": (str,),
         }
 
     attribute_map = {
         "region": "region",
-        "service_id": "service-id",
+        "service_url": "service-url",
     }
 
-    def __init__(self_, service_id: str, region: Union[ServiceDefinitionV2OpsgenieRegion, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_, service_url: str, region: Union[ServiceDefinitionV2OpsgenieRegion, UnsetType] = unset, **kwargs
+    ):
         """
         Opsgenie integration for the service.
 
         :param region: Opsgenie instance region.
         :type region: ServiceDefinitionV2OpsgenieRegion, optional
 
-        :param service_id: Opsgenie service id.
-        :type service_id: str
+        :param service_url: Opsgenie service url.
+        :type service_url: str
         """
         if region is not unset:
             kwargs["region"] = region
         super().__init__(kwargs)
 
-        self_.service_id = service_id
+        self_.service_url = service_url

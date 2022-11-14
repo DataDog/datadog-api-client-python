@@ -37,7 +37,7 @@ body = ServiceDefinitionV2(
     integrations=ServiceDefinitionV2Integrations(
         opsgenie=ServiceDefinitionV2Opsgenie(
             region=ServiceDefinitionV2OpsgenieRegion.US,
-            service_id="123e4567-e89b-12d3-a456-426614174000",
+            service_url="https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000",
         ),
         pagerduty="https://my-org.pagerduty.com/service-directory/PMyService",
     ),

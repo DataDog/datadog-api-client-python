@@ -9701,12 +9701,12 @@ components:
       properties:
         region:
           $ref: '#/components/schemas/ServiceDefinitionV2OpsgenieRegion'
-        service-id:
-          description: Opsgenie service id.
-          example: 123e4567-e89b-12d3-a456-426614174000
+        service-url:
+          description: Opsgenie service url.
+          example: https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000
           type: string
       required:
-      - service-id
+      - service-url
       type: object
     ServiceDefinitionV2OpsgenieRegion:
       description: Opsgenie instance region.
