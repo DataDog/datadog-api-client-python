@@ -38,13 +38,13 @@ class RUMQueryFilter(ModelNormal):
         """
         The search and filter query settings.
 
-        :param _from: The minimum time for the requested events; supports date, math, and regular timestamps (in milliseconds).
+        :param _from: The minimum time for the requested events; supports date (in `ISO 8601 <https://www.w3.org/TR/NOTE-datetime>`_ format with full date, hours, minutes, and the ``Z`` UTC indicator - seconds and fractional seconds are optional), math, and regular timestamps (in milliseconds).
         :type _from: str, optional
 
         :param query: The search query following the RUM search syntax.
         :type query: str, optional
 
-        :param to: The maximum time for the requested events; supports date, math, and regular timestamps (in milliseconds).
+        :param to: The maximum time for the requested events; supports date (in `ISO 8601 <https://www.w3.org/TR/NOTE-datetime>`_ format with full date, hours, minutes, and the ``Z`` UTC indicator - seconds and fractional seconds are optional), math, and regular timestamps (in milliseconds).
         :type to: str, optional
         """
         if _from is not unset:
