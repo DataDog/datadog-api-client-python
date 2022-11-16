@@ -1,0 +1,66 @@
+interactions:
+- request:
+    body: '{"layout_type":"free","title":"Test-Create_a_new_Dashboard_Report_returns_Unprocessable_Entity_response-1668631884
+      with Profile Metrics Query","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"},"layout":{"height":10,"width":10,"x":10,"y":10}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"uvu-ah7-sa5","title":"Test-Create_a_new_Dashboard_Report_returns_Unprocessable_Entity_response-1668631884
+        with Profile Metrics Query","url":"/dashboard/uvu-ah7-sa5/test-createanewdashboardreportreturnsunprocessableentityresponse-1668631884-with","created_at":"2022-11-16T20:51:24.683079+00:00","modified_at":"2022-11-16T20:51:24.683079+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"layout":{"y":10,"width":10,"x":10,"height":10},"id":5281090738720974}],"layout_type":"free"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"description":"This report summarizes the recent
+      errors, latency, and uptime of our Web Application Backend.","destinations":{"email":{"recipient_addresses":["jane.doe@example.com"]}},"schedule":{"active":true,"frequency":"1d","repeat_at":"13:30","repeat_on_day_of_month":null,"repeat_on_day_of_week":null,"timezone":"America/New_York"},"timeframe":"1w","title":"Summary
+      of recent stability and performance for Web Application Backend"},"type":"dashboard_reports"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/dashboards/uvu-ah7-sa5/reports
+  response:
+    body:
+      string: '{"errors":["Screenboards (Dashboards with a layout_type=free) are not
+        currently supported by the reporting feature. If you would like to schedule
+        reports for this screenboard, please clone this dashboard as a timeboard or
+        grid by picking a new layout via the Datadog app and configure reports on
+        the new dashboard"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 422
+      message: Unprocessable Entity
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/uvu-ah7-sa5
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"uvu-ah7-sa5"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

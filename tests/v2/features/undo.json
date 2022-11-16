@@ -206,6 +206,47 @@
       "type": "safe"
     }
   },
+  "GetDashboardReportConfigsList": {
+    "tag": "Dashboard Reports",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateDashboardReportConfig": {
+    "tag": "Dashboard Reports",
+    "undo": {
+      "operationId": "DeleteDashboardReportConfig",
+      "parameters": [
+        {
+          "name": "dashboard_id",
+          "source": "data.relationships.dashboard.data.id"
+        },
+        {
+          "name": "report_uuid",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteDashboardReportConfig": {
+    "tag": "Dashboard Reports",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetDashboardReportConfig": {
+    "tag": "Dashboard Reports",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateDashboardReportConfig": {
+    "tag": "Dashboard Reports",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListEvents": {
     "tag": "Events",
     "undo": {

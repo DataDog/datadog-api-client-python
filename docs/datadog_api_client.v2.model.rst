@@ -1023,6 +1023,174 @@ dashboard\_list\_update\_items\_response
    :members:
    :show-inheritance:
 
+dashboard\_report
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_attributes
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_attributes
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_create
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_create
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_create\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_create_attributes
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_create\_request
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_create_request
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_destination
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_destination
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_destination\_email
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_destination_email
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_relationships
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_relationships
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_relationships\_dashboard
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_relationships_dashboard
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_relationships\_dashboard\_data
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_relationships_dashboard_data
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_resource\_type
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_resource_type
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_response
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_schedule
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_schedule
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_schedule\_frequency
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_schedule_frequency
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_schedule\_repeat\_at
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_schedule_repeat_at
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_schedule\_repeat\_on\_day\_of\_month
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_schedule_repeat_on_day_of_month
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_schedule\_repeat\_on\_day\_of\_week
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_schedule_repeat_on_day_of_week
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_template\_variables
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_template_variables
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_timeframe
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_timeframe
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_type
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_type
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_update\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_update_attributes
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_update\_request
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_update_request
+   :members:
+   :show-inheritance:
+
+dashboard\_report\_update\_request\_data
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_report_update_request_data
+   :members:
+   :show-inheritance:
+
+dashboard\_reports\_response
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_reports_response
+   :members:
+   :show-inheritance:
+
 dashboard\_type
 ---------------
 

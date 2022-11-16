@@ -50,6 +50,13 @@ dashboard\_lists\_api
    :members:
    :show-inheritance:
 
+dashboard\_reports\_api
+-----------------------
+
+.. automodule:: datadog_api_client.v2.api.dashboard_reports_api
+   :members:
+   :show-inheritance:
+
 events\_api
 -----------
 

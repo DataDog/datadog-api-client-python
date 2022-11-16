@@ -70,6 +70,22 @@
   {
     "parameters": [
       {
+        "name": "dashboard_id",
+        "source": "dashboard.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"description\": \"This report summarizes the recent errors, latency, and uptime of our Web Application Backend.\",\n      \"destinations\": {\n        \"email\": {\n          \"recipient_addresses\": [\n            \"jane.doe@example.com\"\n          ]\n        }\n      },\n      \"schedule\": {\n        \"active\": true,\n        \"frequency\": \"1d\",\n        \"repeat_at\": \"13:30\",\n        \"repeat_on_day_of_month\": null,\n        \"repeat_on_day_of_week\": null,\n        \"timezone\": \"America/New_York\"\n      },\n      \"timeframe\": \"1w\",\n      \"title\": \"Summary of recent stability and performance for Web Application Backend\"\n    },\n    \"type\": \"dashboard_reports\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"dashboard_report\" in the system",
+    "key": "dashboard_report",
+    "tag": "Dashboard Reports",
+    "operationId": "CreateDashboardReportConfig"
+  },
+  {
+    "parameters": [
+      {
         "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"{{ unique }}\",\n      \"customer_impacted\": false\n     },\n     \"type\": \"incidents\"\n  }\n}"
       }
