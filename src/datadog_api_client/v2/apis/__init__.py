@@ -1,6 +1,9 @@
 from datadog_api_client.v2.api.audit_api import AuditApi
 from datadog_api_client.v2.api.authn_mappings_api import AuthNMappingsApi
+from datadog_api_client.v2.api.ci_visibility_pipelines_api import CIVisibilityPipelinesApi
+from datadog_api_client.v2.api.ci_visibility_tests_api import CIVisibilityTestsApi
 from datadog_api_client.v2.api.cloud_workload_security_api import CloudWorkloadSecurityApi
+from datadog_api_client.v2.api.confluent_cloud_api import ConfluentCloudApi
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.api.events_api import EventsApi
 from datadog_api_client.v2.api.incident_services_api import IncidentServicesApi
@@ -18,5 +21,6 @@ from datadog_api_client.v2.api.rum_api import RUMApi
 from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
+from datadog_api_client.v2.api.service_definition_api import ServiceDefinitionApi
 from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
 from datadog_api_client.v2.api.users_api import UsersApi

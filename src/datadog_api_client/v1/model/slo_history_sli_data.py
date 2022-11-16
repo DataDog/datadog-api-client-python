@@ -1,12 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Dict, List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.slo_error_budget_remaining_data import SLOErrorBudgetRemainingData
+    from datadog_api_client.v1.model.slo_history_response_error_with_type import SLOHistoryResponseErrorWithType
 
 
 class SLOHistorySLIData(ModelNormal):
@@ -45,7 +54,22 @@ class SLOHistorySLIData(ModelNormal):
         "uptime": "uptime",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        error_budget_remaining: Union[SLOErrorBudgetRemainingData, UnsetType] = unset,
+        errors: Union[List[SLOHistoryResponseErrorWithType], UnsetType] = unset,
+        group: Union[str, UnsetType] = unset,
+        history: Union[List[List[float]], UnsetType] = unset,
+        monitor_modified: Union[int, UnsetType] = unset,
+        monitor_type: Union[str, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        precision: Union[Dict[str, float], UnsetType] = unset,
+        preview: Union[bool, UnsetType] = unset,
+        sli_value: Union[float, UnsetType] = unset,
+        span_precision: Union[float, UnsetType] = unset,
+        uptime: Union[float, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         An object that holds an SLI value and its associated data. It can represent an SLO's overall SLI value.
         This can also represent the SLI value for a specific monitor in multi-monitor SLOs, or a group in grouped SLOs.
@@ -84,19 +108,31 @@ class SLOHistorySLIData(ModelNormal):
         :param span_precision: The amount of decimal places the SLI value is accurate to for the given from ``&&`` to timestamp.
         :type span_precision: float, optional
 
-        :param uptime: Use ``sli_value`` instead.
+        :param uptime: Use ``sli_value`` instead. **Deprecated**.
         :type uptime: float, optional
         """
+        if error_budget_remaining is not unset:
+            kwargs["error_budget_remaining"] = error_budget_remaining
+        if errors is not unset:
+            kwargs["errors"] = errors
+        if group is not unset:
+            kwargs["group"] = group
+        if history is not unset:
+            kwargs["history"] = history
+        if monitor_modified is not unset:
+            kwargs["monitor_modified"] = monitor_modified
+        if monitor_type is not unset:
+            kwargs["monitor_type"] = monitor_type
+        if name is not unset:
+            kwargs["name"] = name
+        if precision is not unset:
+            kwargs["precision"] = precision
+        if preview is not unset:
+            kwargs["preview"] = preview
+        if sli_value is not unset:
+            kwargs["sli_value"] = sli_value
+        if span_precision is not unset:
+            kwargs["span_precision"] = span_precision
+        if uptime is not unset:
+            kwargs["uptime"] = uptime
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SLOHistorySLIData, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

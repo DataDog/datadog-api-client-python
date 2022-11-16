@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
@@ -158,17 +159,15 @@ class LogsApi:
         content_encoding: Union[ContentEncoding, UnsetType] = unset,
         ddtags: Union[str, UnsetType] = unset,
     ) -> dict:
-        """Send logs.
+        """Send logs. **Deprecated**.
 
         Send your logs to your Datadog platform over HTTP. Limits per HTTP request are:
-
 
         * Maximum content size per payload (uncompressed): 5MB
         * Maximum size for a single log: 1MB
         * Maximum array size if sending multiple logs in an array: 1000 entries
 
         Any log exceeding 1MB is accepted and truncated by Datadog:
-
 
         * For a single log request, the API truncates the log at 1MB and returns a 2xx.
         * For a multi-logs request, the API processes all logs, truncates only logs larger than 1MB, and returns a 2xx.
@@ -177,7 +176,6 @@ class LogsApi:
         Add the ``Content-Encoding: gzip`` header to the request when sending compressed logs.
 
         The status codes answered by the HTTP API are:
-
 
         * 200: OK
         * 400: Bad request (likely an issue in the payload formatting)
@@ -202,4 +200,5 @@ class LogsApi:
 
         kwargs["body"] = body
 
+        warnings.warn("submit_log is deprecated", DeprecationWarning, stacklevel=2)
         return self._submit_log_endpoint.call_with_http_info(**kwargs)

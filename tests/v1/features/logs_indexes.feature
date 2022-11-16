@@ -53,7 +53,7 @@ Feature: Logs Indexes
   Scenario: Update an index returns "Invalid Parameter Error" response
     Given new "UpdateLogsIndex" request
     And request contains "name" parameter from "REPLACE.ME"
-    And body with value {"exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1.0}, "name": "payment"}], "filter": {"query": "source:python"}}
+    And body with value {"daily_limit": 300000000, "disable_daily_limit": false, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1.0}, "name": "payment"}], "filter": {"query": "source:python"}, "num_retention_days": 15}
     When the request is sent
     Then the response status is 400 Invalid Parameter Error
 
@@ -61,7 +61,7 @@ Feature: Logs Indexes
   Scenario: Update an index returns "OK" response
     Given new "UpdateLogsIndex" request
     And request contains "name" parameter from "REPLACE.ME"
-    And body with value {"exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1.0}, "name": "payment"}], "filter": {"query": "source:python"}}
+    And body with value {"daily_limit": 300000000, "disable_daily_limit": false, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1.0}, "name": "payment"}], "filter": {"query": "source:python"}, "num_retention_days": 15}
     When the request is sent
     Then the response status is 200 OK
 

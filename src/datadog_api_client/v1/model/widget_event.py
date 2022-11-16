@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -22,7 +26,7 @@ class WidgetEvent(ModelNormal):
         "tags_execution": "tags_execution",
     }
 
-    def __init__(self, q, *args, **kwargs):
+    def __init__(self_, q: str, tags_execution: Union[str, UnsetType] = unset, **kwargs):
         """
         Event overlay control options.
 
@@ -35,19 +39,8 @@ class WidgetEvent(ModelNormal):
         :param tags_execution: The execution method for multi-value filters.
         :type tags_execution: str, optional
         """
+        if tags_execution is not unset:
+            kwargs["tags_execution"] = tags_execution
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.q = q
-
-    @classmethod
-    def _from_openapi_data(cls, q, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(WidgetEvent, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.q = q
-        return self
+        self_.q = q

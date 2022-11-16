@@ -1,12 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
     ModelSimple,
     cached_property,
 )
+
+from typing import ClassVar
 
 
 class SecurityMonitoringRuleNewValueOptionsLearningDuration(ModelSimple):
@@ -19,15 +22,25 @@ class SecurityMonitoringRuleNewValueOptionsLearningDuration(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "ZERO_DAYS": 0,
-            "ONE_DAY": 1,
-            "SEVEN_DAYS": 7,
-        },
+        0,
+        1,
+        7,
     }
+    ZERO_DAYS: ClassVar["SecurityMonitoringRuleNewValueOptionsLearningDuration"]
+    ONE_DAY: ClassVar["SecurityMonitoringRuleNewValueOptionsLearningDuration"]
+    SEVEN_DAYS: ClassVar["SecurityMonitoringRuleNewValueOptionsLearningDuration"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (int,),
         }
+
+
+SecurityMonitoringRuleNewValueOptionsLearningDuration.ZERO_DAYS = SecurityMonitoringRuleNewValueOptionsLearningDuration(
+    0
+)
+SecurityMonitoringRuleNewValueOptionsLearningDuration.ONE_DAY = SecurityMonitoringRuleNewValueOptionsLearningDuration(1)
+SecurityMonitoringRuleNewValueOptionsLearningDuration.SEVEN_DAYS = (
+    SecurityMonitoringRuleNewValueOptionsLearningDuration(7)
+)

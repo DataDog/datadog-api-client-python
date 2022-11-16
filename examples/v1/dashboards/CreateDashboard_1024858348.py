@@ -31,7 +31,7 @@ body = Dashboard(
         Widget(
             definition=TreeMapWidgetDefinition(
                 title="",
-                type=TreeMapWidgetDefinitionType("treemap"),
+                type=TreeMapWidgetDefinitionType.TREEMAP,
                 requests=[
                     TreeMapWidgetRequest(
                         formulas=[
@@ -44,7 +44,7 @@ body = Dashboard(
                         ],
                         queries=[
                             FormulaAndFunctionEventQueryDefinition(
-                                data_source=FormulaAndFunctionEventsDataSource("logs"),
+                                data_source=FormulaAndFunctionEventsDataSource.LOGS,
                                 name="query1",
                                 search=FormulaAndFunctionEventQueryDefinitionSearch(
                                     query="",
@@ -53,12 +53,12 @@ body = Dashboard(
                                     "*",
                                 ],
                                 compute=FormulaAndFunctionEventQueryDefinitionCompute(
-                                    aggregation=FormulaAndFunctionEventAggregation("count"),
+                                    aggregation=FormulaAndFunctionEventAggregation.COUNT,
                                 ),
                                 group_by=[],
                             ),
                         ],
-                        response_format=FormulaAndFunctionResponseFormat("scalar"),
+                        response_format=FormulaAndFunctionResponseFormat.SCALAR,
                     ),
                 ],
             ),
@@ -70,7 +70,7 @@ body = Dashboard(
             ),
         ),
     ],
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
 )
 
 configuration = Configuration()

@@ -13,7 +13,7 @@ ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 
 body = Monitor(
     name="Example-Create_a_monitor_returns_OK_response",
-    type=MonitorType("log alert"),
+    type=MonitorType.LOG_ALERT,
     query='logs("service:foo AND type:error").index("main").rollup("count").by("source").last("5m") > 2',
     message="some message Notify: @hipchat-channel",
     tags=[

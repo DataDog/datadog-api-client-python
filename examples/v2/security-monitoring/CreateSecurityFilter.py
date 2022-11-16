@@ -20,12 +20,12 @@ body = SecurityFilterCreateRequest(
                     query="source:staging",
                 ),
             ],
-            filtered_data_type=SecurityFilterFilteredDataType("logs"),
+            filtered_data_type=SecurityFilterFilteredDataType.LOGS,
             is_enabled=True,
             name="Example-Create_a_security_filter_returns_OK_response",
             query="service:ExampleCreateasecurityfilterreturnsOKresponse",
         ),
-        type=SecurityFilterType("security_filters"),
+        type=SecurityFilterType.SECURITY_FILTERS,
     ),
 )
 

@@ -65,7 +65,7 @@ Feature: Security Monitoring
   @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
-    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true}
+    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -73,6 +73,15 @@ Feature: Security Monitoring
   Scenario: Create a detection rule with type 'impossible_travel' returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"queries":[{"aggregation":"geo_data","groupByFields":["@usr.id"],"distinctFields":[],"metric":"@network.client.geoip","query":"*"}],"cases":[{"name":"","status":"info","notifications":[]}],"hasExtendedTitle":true,"message":"test","isEnabled":true,"options":{"maxSignalDuration":86400,"evaluationWindow":900,"keepAlive":3600,"detectionMethod":"impossible_travel","impossibleTravelOptions":{"baselineUserLocations":false}},"name":"{{ unique }}","type":"log_detection","tags":[],"filters":[]}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a detection rule with type 'signal_correlation' returns "OK" response
+    Given there is a valid "security_rule" in the system
+    And there is a valid "security_rule_bis" in the system
+    And new "CreateSecurityMonitoringRule" request
+    And body with value {"name":"{{ unique }}_signal_rule", "queries":[{"ruleId":"{{ security_rule.id }}","aggregation":"event_count","correlatedByFields":["host"],"correlatedQueryIndex":1}, {"ruleId":"{{ security_rule_bis.id }}","aggregation":"event_count","correlatedByFields":["host"]}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0 && b > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test signal correlation rule","tags":[],"isEnabled":true, "type": "signal_correlation"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -190,19 +199,22 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response has 3 items
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Get a rule's details returns "Not Found" response
     Given new "GetSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "REPLACE.ME"
+    And request contains "rule_id" parameter with value "abcde-12345"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Get a rule's details returns "OK" response
     Given new "GetSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "REPLACE.ME"
+    And there is a valid "security_rule" in the system
+    And request contains "rule_id" parameter from "security_rule.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "id" has the same value as "security_rule.id"
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Get a security filter returns "Not Found" response
@@ -219,6 +231,20 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @replay-only @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a signal's details returns "Not Found" response
+    Given new "GetSecurityMonitoringSignal" request
+    And request contains "signal_id" parameter with value "AQAAAYNqUBVU4-rffwAAAABBWU5xVUJWVUFBQjJBd3ptCL3QUEm3nt2"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a signal's details returns "OK" response
+    Given new "GetSecurityMonitoringSignal" request
+    And request contains "signal_id" parameter with value "AQAAAYNqUBVU4-rffwAAAABBWU5xVUJWVUFBQjJBd3ptMDdQUnF3QUE"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/k9-cloud-security-platform
   Scenario: Get all security filters returns "OK" response
     Given new "ListSecurityFilters" request
@@ -231,7 +257,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform
   Scenario: List rules returns "OK" response
     Given new "ListSecurityMonitoringRules" request
     When the request is sent
@@ -294,26 +320,30 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Update an existing rule returns "Bad Request" response
     Given new "UpdateSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": [], "metrics": []}], "tags": [], "version": 1}
+    And there is a valid "security_rule" in the system
+    And request contains "rule_id" parameter from "security_rule.id"
+    And body with value {"name":"{{ unique }}", "queries":[{"query":""}],"cases":[{"status":"info"}],"options":{},"message":"Test rule Bad","tags":[],"isEnabled":true}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Update an existing rule returns "Not Found" response
     Given new "UpdateSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": [], "metrics": []}], "tags": [], "version": 1}
+    And request contains "rule_id" parameter with value "abcde-12345"
+    And body with value {"name": "{{ unique }}-NotFound","queries": [{"query": "@test:true","aggregation": "count","groupByFields": [],"distinctFields": [],"metrics": []}],"filters": [],"cases": [{"name": "", "status": "info", "condition": "a > 0", "notifications": []}], "options": {"evaluationWindow": 900, "keepAlive": 3600, "maxSignalDuration": 86400}, "message": "Test rule", "tags": [], "isEnabled": true}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Update an existing rule returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
-    And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"cases": [{"notifications": [], "status": "critical"}], "filters": [{"action": "require"}], "hasExtendedTitle": true, "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}}, "queries": [{"aggregation": "count", "distinctFields": [], "groupByFields": [], "metrics": []}], "tags": [], "version": 1}
+    And there is a valid "security_rule" in the system
+    And request contains "rule_id" parameter from "security_rule.id"
+    And body with value {"name": "{{ unique }}-Updated","queries": [{"query": "@test:true","aggregation": "count","groupByFields": [],"distinctFields": [],"metrics": []}],"filters": [],"cases": [{"name": "", "status": "info", "condition": "a > 0", "notifications": []}], "options": {"evaluationWindow": 900, "keepAlive": 3600, "maxSignalDuration": 86400}, "message": "Test rule", "tags": [], "isEnabled": true}
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}-Updated"
+    And the response "id" has the same value as "security_rule.id"

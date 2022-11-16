@@ -1,12 +1,25 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_monitoring_triage_user import SecurityMonitoringTriageUser
+    from datadog_api_client.v2.model.security_monitoring_signal_archive_reason import (
+        SecurityMonitoringSignalArchiveReason,
+    )
+    from datadog_api_client.v2.model.security_monitoring_signal_incident_ids import SecurityMonitoringSignalIncidentIds
+    from datadog_api_client.v2.model.security_monitoring_signal_state import SecurityMonitoringSignalState
 
 
 class SecurityMonitoringSignalTriageAttributes(ModelNormal):
@@ -54,7 +67,19 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
         "state_update_user": "state_update_user",
     }
 
-    def __init__(self, assignee, incident_ids, state, *args, **kwargs):
+    def __init__(
+        self_,
+        assignee: SecurityMonitoringTriageUser,
+        incident_ids: SecurityMonitoringSignalIncidentIds,
+        state: SecurityMonitoringSignalState,
+        archive_comment: Union[str, UnsetType] = unset,
+        archive_comment_timestamp: Union[int, UnsetType] = unset,
+        archive_comment_user: Union[SecurityMonitoringTriageUser, UnsetType] = unset,
+        archive_reason: Union[SecurityMonitoringSignalArchiveReason, UnsetType] = unset,
+        state_update_timestamp: Union[int, UnsetType] = unset,
+        state_update_user: Union[SecurityMonitoringTriageUser, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Attributes describing a triage state update operation over a security signal.
 
@@ -85,23 +110,20 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
         :param state_update_user: Object representing a given user entity.
         :type state_update_user: SecurityMonitoringTriageUser, optional
         """
+        if archive_comment is not unset:
+            kwargs["archive_comment"] = archive_comment
+        if archive_comment_timestamp is not unset:
+            kwargs["archive_comment_timestamp"] = archive_comment_timestamp
+        if archive_comment_user is not unset:
+            kwargs["archive_comment_user"] = archive_comment_user
+        if archive_reason is not unset:
+            kwargs["archive_reason"] = archive_reason
+        if state_update_timestamp is not unset:
+            kwargs["state_update_timestamp"] = state_update_timestamp
+        if state_update_user is not unset:
+            kwargs["state_update_user"] = state_update_user
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.assignee = assignee
-        self.incident_ids = incident_ids
-        self.state = state
-
-    @classmethod
-    def _from_openapi_data(cls, assignee, incident_ids, state, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SecurityMonitoringSignalTriageAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.assignee = assignee
-        self.incident_ids = incident_ids
-        self.state = state
-        return self
+        self_.assignee = assignee
+        self_.incident_ids = incident_ids
+        self_.state = state

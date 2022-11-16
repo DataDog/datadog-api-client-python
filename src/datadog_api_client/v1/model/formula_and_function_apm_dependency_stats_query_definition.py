@@ -1,12 +1,25 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_data_source import (
+        FormulaAndFunctionApmDependencyStatsDataSource,
+    )
+    from datadog_api_client.v1.model.formula_and_function_apm_dependency_stat_name import (
+        FormulaAndFunctionApmDependencyStatName,
+    )
 
 
 class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
@@ -45,7 +58,20 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
         "stat": "stat",
     }
 
-    def __init__(self, data_source, env, name, operation_name, resource_name, service, stat, *args, **kwargs):
+    def __init__(
+        self_,
+        data_source: FormulaAndFunctionApmDependencyStatsDataSource,
+        env: str,
+        name: str,
+        operation_name: str,
+        resource_name: str,
+        service: str,
+        stat: FormulaAndFunctionApmDependencyStatName,
+        is_upstream: Union[bool, UnsetType] = unset,
+        primary_tag_name: Union[str, UnsetType] = unset,
+        primary_tag_value: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         A formula and functions APM dependency stats query.
 
@@ -79,31 +105,18 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
         :param stat: APM statistic.
         :type stat: FormulaAndFunctionApmDependencyStatName
         """
+        if is_upstream is not unset:
+            kwargs["is_upstream"] = is_upstream
+        if primary_tag_name is not unset:
+            kwargs["primary_tag_name"] = primary_tag_name
+        if primary_tag_value is not unset:
+            kwargs["primary_tag_value"] = primary_tag_value
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.data_source = data_source
-        self.env = env
-        self.name = name
-        self.operation_name = operation_name
-        self.resource_name = resource_name
-        self.service = service
-        self.stat = stat
-
-    @classmethod
-    def _from_openapi_data(cls, data_source, env, name, operation_name, resource_name, service, stat, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(FormulaAndFunctionApmDependencyStatsQueryDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.data_source = data_source
-        self.env = env
-        self.name = name
-        self.operation_name = operation_name
-        self.resource_name = resource_name
-        self.service = service
-        self.stat = stat
-        return self
+        self_.data_source = data_source
+        self_.env = env
+        self_.name = name
+        self_.operation_name = operation_name
+        self_.resource_name = resource_name
+        self_.service = service
+        self_.stat = stat

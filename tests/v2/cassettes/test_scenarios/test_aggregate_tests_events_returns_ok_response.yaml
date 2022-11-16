@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"compute":[{"aggregation":"count","metric":"@test.is_flaky","type":"total"}],"filter":{"from":"now-15m","query":"@language:(python
+      OR go)","to":"now"},"group_by":[{"facet":"@git.branch","limit":10,"sort":{"order":"asc"},"total":false}],"options":{"timezone":"GMT"},"page":{"limit":25}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/ci/tests/analytics/aggregate
+  response:
+    body:
+      string: '{"meta":{"page":{"after":"eyJhZnRlciI6eyJAZ2l0LmJyYW5jaCI6WyJDTElQLTM4MSIsImFsZWphbmRyby50b3JyZXMvbWlncmF0ZS10by1uZXctaG1zLWVuZHBvaW50IiwiYW1vbmdpbC9hZGQtcmF0ZS1saW1pdC1uYW1lLW1ldGFkYXRhLXRvLWFwaXZpZXdlciIsImFzYWQxMTIzL3Jlc3BvbmRlci10eXBlcy1xYS1maXhlcyIsImF3L2RleHN0ci10YWdzLWZvci1rZXkiLCJjcmVhdGVfaW52aXRlX29yZ19hcGkiLCJkYXZlLmhhbmR5L2ZpeC1uby1yZXNvdXJjZWlkIiwiZWRyZXZvL2dpdGRiLW1lbW9yeS1sZWFrIiwiZmlzaGVyL2FkZC1rOHMtbmFtZXNwYWNlcyIsImZsb3JlbnRjbGFycmV0L215cHktZXhjbHVkZSJdfX0"},"elapsed":43,"request_id":"pddv1ChZoVGp4aTdKV1FYQ1ZoM19LUF90eGx3IiwKHB0cQpJ-X_9gd5n7p8wRMAoRGyyFQlDJbjpK5SkSDEclibMc2UXCLboJqw","status":"done"},"data":{"buckets":[{"by":{"@git.branch":"branch1"},"computes":{"c0":345}},{"by":{"@git.branch":"branch2"},"computes":{"c0":309}},{"by":{"@git.branch":"branch2"},"computes":{"c0":30597}},{"by":{"@git.branch":"branch3"},"computes":{"c0":43457}},{"by":{"@git.branch":"branch3"},"computes":{"c0":96}},{"by":{"@git.branch":"branch4"},"computes":{"c0":382}},{"by":{"@git.branch":"branch5"},"computes":{"c0":16891}},{"by":{"@git.branch":"branch6"},"computes":{"c0":93}},{"by":{"@git.branch":"branch7"},"computes":{"c0":46490}},{"by":{"@git.branch":"branch8"},"computes":{"c0":370}}]}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

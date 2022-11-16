@@ -1,6 +1,7 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
@@ -21,7 +22,7 @@ class IdpFormData(ModelNormal):
         "idp_file": "idp_file",
     }
 
-    def __init__(self, idp_file, *args, **kwargs):
+    def __init__(self_, idp_file: file_type, **kwargs):
         """
         Object describing the IdP configuration.
 
@@ -30,17 +31,4 @@ class IdpFormData(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.idp_file = idp_file
-
-    @classmethod
-    def _from_openapi_data(cls, idp_file, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(IdpFormData, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.idp_file = idp_file
-        return self
+        self_.idp_file = idp_file

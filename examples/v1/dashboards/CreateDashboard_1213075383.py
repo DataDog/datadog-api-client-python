@@ -37,17 +37,17 @@ body = Dashboard(
             definition=ToplistWidgetDefinition(
                 title="",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
+                title_align=WidgetTextAlign.LEFT,
                 time=WidgetTime(),
-                type=ToplistWidgetDefinitionType("toplist"),
+                type=ToplistWidgetDefinitionType.TOPLIST,
                 requests=[
                     ToplistWidgetRequest(
                         queries=[
                             FormulaAndFunctionMetricQueryDefinition(
-                                data_source=FormulaAndFunctionMetricDataSource("metrics"),
+                                data_source=FormulaAndFunctionMetricDataSource.METRICS,
                                 name="query1",
                                 query="avg:system.cpu.user{*} by {service}",
-                                aggregator=FormulaAndFunctionMetricAggregation("avg"),
+                                aggregator=FormulaAndFunctionMetricAggregation.AVG,
                             ),
                         ],
                         formulas=[
@@ -55,18 +55,18 @@ body = Dashboard(
                                 formula="query1",
                                 limit=WidgetFormulaLimit(
                                     count=10,
-                                    order=QuerySortOrder("desc"),
+                                    order=QuerySortOrder.DESC,
                                 ),
                             ),
                         ],
-                        response_format=FormulaAndFunctionResponseFormat("scalar"),
+                        response_format=FormulaAndFunctionResponseFormat.SCALAR,
                     ),
                 ],
             ),
         ),
     ],
     template_variables=[],
-    layout_type=DashboardLayoutType("free"),
+    layout_type=DashboardLayoutType.FREE,
     is_read_only=False,
     notify_list=[],
 )

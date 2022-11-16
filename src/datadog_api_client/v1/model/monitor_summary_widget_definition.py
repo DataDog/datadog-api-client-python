@@ -1,12 +1,25 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_color_preference import WidgetColorPreference
+    from datadog_api_client.v1.model.widget_monitor_summary_display_format import WidgetMonitorSummaryDisplayFormat
+    from datadog_api_client.v1.model.widget_monitor_summary_sort import WidgetMonitorSummarySort
+    from datadog_api_client.v1.model.widget_summary_type import WidgetSummaryType
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.monitor_summary_widget_definition_type import MonitorSummaryWidgetDefinitionType
 
 
 class MonitorSummaryWidgetDefinition(ModelNormal):
@@ -55,14 +68,31 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, query, type, *args, **kwargs):
+    def __init__(
+        self_,
+        query: str,
+        type: MonitorSummaryWidgetDefinitionType,
+        color_preference: Union[WidgetColorPreference, UnsetType] = unset,
+        count: Union[int, UnsetType] = unset,
+        display_format: Union[WidgetMonitorSummaryDisplayFormat, UnsetType] = unset,
+        hide_zero_counts: Union[bool, UnsetType] = unset,
+        show_last_triggered: Union[bool, UnsetType] = unset,
+        show_priority: Union[bool, UnsetType] = unset,
+        sort: Union[WidgetMonitorSummarySort, UnsetType] = unset,
+        start: Union[int, UnsetType] = unset,
+        summary_type: Union[WidgetSummaryType, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        title_align: Union[WidgetTextAlign, UnsetType] = unset,
+        title_size: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The monitor summary widget displays a summary view of all your Datadog monitors, or a subset based on a query. Only available on FREE layout dashboards.
 
         :param color_preference: Which color to use on the widget.
         :type color_preference: WidgetColorPreference, optional
 
-        :param count: The number of monitors to display.
+        :param count: The number of monitors to display. **Deprecated**.
         :type count: int, optional
 
         :param display_format: What to display on the widget.
@@ -83,7 +113,7 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
         :param sort: Widget sorting methods.
         :type sort: WidgetMonitorSummarySort, optional
 
-        :param start: The start of the list. Typically 0.
+        :param start: The start of the list. Typically 0. **Deprecated**.
         :type start: int, optional
 
         :param summary_type: Which summary type should be used.
@@ -101,21 +131,31 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
         :param type: Type of the monitor summary widget.
         :type type: MonitorSummaryWidgetDefinitionType
         """
+        if color_preference is not unset:
+            kwargs["color_preference"] = color_preference
+        if count is not unset:
+            kwargs["count"] = count
+        if display_format is not unset:
+            kwargs["display_format"] = display_format
+        if hide_zero_counts is not unset:
+            kwargs["hide_zero_counts"] = hide_zero_counts
+        if show_last_triggered is not unset:
+            kwargs["show_last_triggered"] = show_last_triggered
+        if show_priority is not unset:
+            kwargs["show_priority"] = show_priority
+        if sort is not unset:
+            kwargs["sort"] = sort
+        if start is not unset:
+            kwargs["start"] = start
+        if summary_type is not unset:
+            kwargs["summary_type"] = summary_type
+        if title is not unset:
+            kwargs["title"] = title
+        if title_align is not unset:
+            kwargs["title_align"] = title_align
+        if title_size is not unset:
+            kwargs["title_size"] = title_size
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.query = query
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, query, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(MonitorSummaryWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.query = query
-        self.type = type
-        return self
+        self_.query = query
+        self_.type = type

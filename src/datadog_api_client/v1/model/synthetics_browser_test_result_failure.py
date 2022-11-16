@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_browser_test_failure_code import SyntheticsBrowserTestFailureCode
 
 
 class SyntheticsBrowserTestResultFailure(ModelNormal):
@@ -24,7 +32,12 @@ class SyntheticsBrowserTestResultFailure(ModelNormal):
         "message": "message",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        code: Union[SyntheticsBrowserTestFailureCode, UnsetType] = unset,
+        message: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The browser test failure details.
 
@@ -34,16 +47,8 @@ class SyntheticsBrowserTestResultFailure(ModelNormal):
         :param message: The browser test error message.
         :type message: str, optional
         """
+        if code is not unset:
+            kwargs["code"] = code
+        if message is not unset:
+            kwargs["message"] = message
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsBrowserTestResultFailure, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

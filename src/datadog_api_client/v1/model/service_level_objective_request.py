@@ -1,13 +1,23 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
+    from datadog_api_client.v1.model.slo_threshold import SLOThreshold
+    from datadog_api_client.v1.model.slo_type import SLOType
 
 
 class ServiceLevelObjectiveRequest(ModelNormal):
@@ -39,7 +49,18 @@ class ServiceLevelObjectiveRequest(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, name, thresholds, type, *args, **kwargs):
+    def __init__(
+        self_,
+        name: str,
+        thresholds: List[SLOThreshold],
+        type: SLOType,
+        description: Union[str, none_type, UnsetType] = unset,
+        groups: Union[List[str], UnsetType] = unset,
+        monitor_ids: Union[List[int], UnsetType] = unset,
+        query: Union[ServiceLevelObjectiveQuery, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        **kwargs,
+    ):
         """
         A service level objective object includes a service level indicator, thresholds
         for one or more timeframes, and metadata ( ``name`` , ``description`` , ``tags`` , etc.).
@@ -81,23 +102,18 @@ class ServiceLevelObjectiveRequest(ModelNormal):
         :param type: The type of the service level objective.
         :type type: SLOType
         """
+        if description is not unset:
+            kwargs["description"] = description
+        if groups is not unset:
+            kwargs["groups"] = groups
+        if monitor_ids is not unset:
+            kwargs["monitor_ids"] = monitor_ids
+        if query is not unset:
+            kwargs["query"] = query
+        if tags is not unset:
+            kwargs["tags"] = tags
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.name = name
-        self.thresholds = thresholds
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, name, thresholds, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ServiceLevelObjectiveRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.name = name
-        self.thresholds = thresholds
-        self.type = type
-        return self
+        self_.name = name
+        self_.thresholds = thresholds
+        self_.type = type

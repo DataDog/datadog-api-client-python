@@ -143,6 +143,8 @@ def glom(value, path):
 
     # replace foo[index].bar by foo.index.bar
     path = PATTERN_INDEX.sub(r".\1", path)
+    if not isinstance(value, dict):
+        path = ".".join(snake_case(p) for p in path.split("."))
 
     return g(value, path) if path else value
 
@@ -406,7 +408,7 @@ def api_request(configuration, context, name):
 def request_body(context, data):
     """Set request body."""
     tpl = Template(data).render(**context)
-    context["api_request"]["kwargs"]["body"] = json.loads(tpl)
+    context["api_request"]["kwargs"]["body"] = tpl
 
 
 @given(parsers.parse('body from file "{path}"'))
@@ -416,21 +418,20 @@ def request_body_from_file(context, path, package_name):
     with open(os.path.join(os.path.dirname(__file__), version, "features", path)) as f:
         data = f.read()
     tpl = Template(data).render(**context)
-    context["api_request"]["kwargs"]["body"] = json.loads(tpl)
+    context["api_request"]["kwargs"]["body"] = tpl
 
 
 @given(parsers.parse('request contains "{name}" parameter from "{path}"'))
 def request_parameter(context, name, path):
     """Set request parameter."""
-
-    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = glom(context, path)
+    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = json.dumps(glom(context, path))
 
 
 @given(parsers.parse('request contains "{name}" parameter with value {value}'))
 def request_parameter_with_value(context, name, value):
     """Set request parameter."""
     tpl = Template(value).render(**context)
-    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = json.loads(tpl)
+    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = tpl
 
 
 def build_given(version, operation):
@@ -539,6 +540,10 @@ def execute_request(undo, context, client, api_version):
     """Execute the prepared request."""
     api_request = context["api_request"]
 
+    params_map = getattr(api_request["api"], f'_{api_request["request"].__name__}_endpoint').params_map
+    for k, v in api_request["kwargs"].items():
+        api_request["kwargs"][k] = client.deserialize(v, params_map[k]["openapi_types"], True)
+
     try:
         response = api_request["request"](*api_request["args"], **api_request["kwargs"])
         # Reserialise the response body to JSON to facilitate test assertions
@@ -568,6 +573,10 @@ def execute_request(undo, context, client, api_version):
 def execute_request_with_pagination(undo, context, client, api_version):
     """Execute the prepared paginated request."""
     api_request = context["api_request"]
+
+    params_map = getattr(api_request["api"], f'_{api_request["request"].__name__}_endpoint').params_map
+    for k, v in api_request["kwargs"].items():
+        api_request["kwargs"][k] = client.deserialize(v, params_map[k]["openapi_types"], True)
 
     kwargs = api_request["kwargs"]
     client.configuration.return_http_data_only = True

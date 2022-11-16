@@ -1,12 +1,42 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
+    from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
+    from datadog_api_client.v1.model.widget_formula import WidgetFormula
+    from datadog_api_client.v1.model.timeseries_widget_expression_alias import TimeseriesWidgetExpressionAlias
+    from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
+    from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
+    from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+    from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
+    from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
+        FormulaAndFunctionMetricQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
+        FormulaAndFunctionEventQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_process_query_definition import (
+        FormulaAndFunctionProcessQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_query_definition import (
+        FormulaAndFunctionApmDependencyStatsQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_definition import (
+        FormulaAndFunctionApmResourceStatsQueryDefinition,
+    )
 
 
 class TimeseriesWidgetRequest(ModelNormal):
@@ -61,7 +91,39 @@ class TimeseriesWidgetRequest(ModelNormal):
         "style": "style",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        apm_query: Union[LogQueryDefinition, UnsetType] = unset,
+        audit_query: Union[LogQueryDefinition, UnsetType] = unset,
+        display_type: Union[WidgetDisplayType, UnsetType] = unset,
+        event_query: Union[LogQueryDefinition, UnsetType] = unset,
+        formulas: Union[List[WidgetFormula], UnsetType] = unset,
+        log_query: Union[LogQueryDefinition, UnsetType] = unset,
+        metadata: Union[List[TimeseriesWidgetExpressionAlias], UnsetType] = unset,
+        network_query: Union[LogQueryDefinition, UnsetType] = unset,
+        on_right_yaxis: Union[bool, UnsetType] = unset,
+        process_query: Union[ProcessQueryDefinition, UnsetType] = unset,
+        profile_metrics_query: Union[LogQueryDefinition, UnsetType] = unset,
+        q: Union[str, UnsetType] = unset,
+        queries: Union[
+            List[
+                Union[
+                    FormulaAndFunctionQueryDefinition,
+                    FormulaAndFunctionMetricQueryDefinition,
+                    FormulaAndFunctionEventQueryDefinition,
+                    FormulaAndFunctionProcessQueryDefinition,
+                    FormulaAndFunctionApmDependencyStatsQueryDefinition,
+                    FormulaAndFunctionApmResourceStatsQueryDefinition,
+                ]
+            ],
+            UnsetType,
+        ] = unset,
+        response_format: Union[FormulaAndFunctionResponseFormat, UnsetType] = unset,
+        rum_query: Union[LogQueryDefinition, UnsetType] = unset,
+        security_query: Union[LogQueryDefinition, UnsetType] = unset,
+        style: Union[WidgetRequestStyle, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Updated timeseries widget.
 
@@ -116,16 +178,38 @@ class TimeseriesWidgetRequest(ModelNormal):
         :param style: Define request widget style.
         :type style: WidgetRequestStyle, optional
         """
+        if apm_query is not unset:
+            kwargs["apm_query"] = apm_query
+        if audit_query is not unset:
+            kwargs["audit_query"] = audit_query
+        if display_type is not unset:
+            kwargs["display_type"] = display_type
+        if event_query is not unset:
+            kwargs["event_query"] = event_query
+        if formulas is not unset:
+            kwargs["formulas"] = formulas
+        if log_query is not unset:
+            kwargs["log_query"] = log_query
+        if metadata is not unset:
+            kwargs["metadata"] = metadata
+        if network_query is not unset:
+            kwargs["network_query"] = network_query
+        if on_right_yaxis is not unset:
+            kwargs["on_right_yaxis"] = on_right_yaxis
+        if process_query is not unset:
+            kwargs["process_query"] = process_query
+        if profile_metrics_query is not unset:
+            kwargs["profile_metrics_query"] = profile_metrics_query
+        if q is not unset:
+            kwargs["q"] = q
+        if queries is not unset:
+            kwargs["queries"] = queries
+        if response_format is not unset:
+            kwargs["response_format"] = response_format
+        if rum_query is not unset:
+            kwargs["rum_query"] = rum_query
+        if security_query is not unset:
+            kwargs["security_query"] = security_query
+        if style is not unset:
+            kwargs["style"] = style
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(TimeseriesWidgetRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

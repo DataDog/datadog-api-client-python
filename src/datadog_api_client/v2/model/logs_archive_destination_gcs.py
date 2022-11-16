@@ -1,12 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.logs_archive_integration_gcs import LogsArchiveIntegrationGCS
+    from datadog_api_client.v2.model.logs_archive_destination_gcs_type import LogsArchiveDestinationGCSType
 
 
 class LogsArchiveDestinationGCS(ModelNormal):
@@ -29,7 +38,14 @@ class LogsArchiveDestinationGCS(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, bucket, integration, type, *args, **kwargs):
+    def __init__(
+        self_,
+        bucket: str,
+        integration: LogsArchiveIntegrationGCS,
+        type: LogsArchiveDestinationGCSType,
+        path: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The GCS archive destination.
 
@@ -45,23 +61,10 @@ class LogsArchiveDestinationGCS(ModelNormal):
         :param type: Type of the GCS archive destination.
         :type type: LogsArchiveDestinationGCSType
         """
+        if path is not unset:
+            kwargs["path"] = path
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.bucket = bucket
-        self.integration = integration
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, bucket, integration, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsArchiveDestinationGCS, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.bucket = bucket
-        self.integration = integration
-        self.type = type
-        return self
+        self_.bucket = bucket
+        self_.integration = integration
+        self_.type = type

@@ -1,12 +1,23 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_time_windows import WidgetTimeWindows
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.slo_widget_definition_type import SLOWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_view_mode import WidgetViewMode
 
 
 class SLOWidgetDefinition(ModelNormal):
@@ -43,7 +54,19 @@ class SLOWidgetDefinition(ModelNormal):
         "view_type": "view_type",
     }
 
-    def __init__(self, type, *args, **kwargs):
+    def __init__(
+        self_,
+        type: SLOWidgetDefinitionType,
+        global_time_target: Union[str, UnsetType] = unset,
+        show_error_budget: Union[bool, UnsetType] = unset,
+        slo_id: Union[str, UnsetType] = unset,
+        time_windows: Union[List[WidgetTimeWindows], UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        title_align: Union[WidgetTextAlign, UnsetType] = unset,
+        title_size: Union[str, UnsetType] = unset,
+        view_mode: Union[WidgetViewMode, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Use the SLO and uptime widget to track your SLOs (Service Level Objectives) and uptime on screenboards and timeboards.
 
@@ -77,23 +100,24 @@ class SLOWidgetDefinition(ModelNormal):
         :param view_type: Type of view displayed by the widget.
         :type view_type: str
         """
+        if global_time_target is not unset:
+            kwargs["global_time_target"] = global_time_target
+        if show_error_budget is not unset:
+            kwargs["show_error_budget"] = show_error_budget
+        if slo_id is not unset:
+            kwargs["slo_id"] = slo_id
+        if time_windows is not unset:
+            kwargs["time_windows"] = time_windows
+        if title is not unset:
+            kwargs["title"] = title
+        if title_align is not unset:
+            kwargs["title_align"] = title_align
+        if title_size is not unset:
+            kwargs["title_size"] = title_size
+        if view_mode is not unset:
+            kwargs["view_mode"] = view_mode
         super().__init__(kwargs)
         view_type = kwargs.get("view_type", "detail")
 
-        self._check_pos_args(args)
-
-        self.type = type
-        self.view_type = view_type
-
-    @classmethod
-    def _from_openapi_data(cls, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        view_type = kwargs.get("view_type", "detail")
-
-        self = super(SLOWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.type = type
-        self.view_type = view_type
-        return self
+        self_.type = type
+        self_.view_type = view_type

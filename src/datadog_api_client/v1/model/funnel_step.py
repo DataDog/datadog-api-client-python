@@ -1,6 +1,7 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
@@ -22,7 +23,7 @@ class FunnelStep(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self, facet, value, *args, **kwargs):
+    def __init__(self_, facet: str, value: str, **kwargs):
         """
         The funnel step.
 
@@ -34,19 +35,5 @@ class FunnelStep(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.facet = facet
-        self.value = value
-
-    @classmethod
-    def _from_openapi_data(cls, facet, value, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(FunnelStep, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.facet = facet
-        self.value = value
-        return self
+        self_.facet = facet
+        self_.value = value

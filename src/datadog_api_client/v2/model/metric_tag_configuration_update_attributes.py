@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
 
 
 class MetricTagConfigurationUpdateAttributes(ModelNormal):
@@ -26,7 +34,13 @@ class MetricTagConfigurationUpdateAttributes(ModelNormal):
         "tags": "tags",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        aggregations: Union[MetricCustomAggregations, UnsetType] = unset,
+        include_percentiles: Union[bool, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Object containing the definition of a metric tag configuration to be updated.
 
@@ -34,7 +48,6 @@ class MetricTagConfigurationUpdateAttributes(ModelNormal):
             By default, count and rate metrics require the (time: sum, space: sum) aggregation and
             Gauge metrics require the (time: avg, space: avg) aggregation.
             Additional time & space combinations are also available:
-
 
             * time: avg, space: avg
             * time: avg, space: max
@@ -56,16 +69,10 @@ class MetricTagConfigurationUpdateAttributes(ModelNormal):
         :param tags: A list of tag keys that will be queryable for your metric.
         :type tags: [str], optional
         """
+        if aggregations is not unset:
+            kwargs["aggregations"] = aggregations
+        if include_percentiles is not unset:
+            kwargs["include_percentiles"] = include_percentiles
+        if tags is not unset:
+            kwargs["tags"] = tags
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(MetricTagConfigurationUpdateAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

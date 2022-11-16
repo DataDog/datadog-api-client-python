@@ -1,13 +1,24 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.creator import Creator
+    from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
+    from datadog_api_client.v1.model.slo_threshold import SLOThreshold
+    from datadog_api_client.v1.model.slo_type import SLOType
 
 
 class SLOResponseData(ModelNormal):
@@ -58,7 +69,24 @@ class SLOResponseData(ModelNormal):
         "modified_at",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        configured_alert_ids: Union[List[int], UnsetType] = unset,
+        created_at: Union[int, UnsetType] = unset,
+        creator: Union[Creator, UnsetType] = unset,
+        description: Union[str, none_type, UnsetType] = unset,
+        groups: Union[List[str], UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
+        modified_at: Union[int, UnsetType] = unset,
+        monitor_ids: Union[List[int], UnsetType] = unset,
+        monitor_tags: Union[List[str], UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        query: Union[ServiceLevelObjectiveQuery, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        thresholds: Union[List[SLOThreshold], UnsetType] = unset,
+        type: Union[SLOType, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         A service level objective object includes a service level indicator, thresholds
         for one or more timeframes, and metadata ( ``name`` , ``description`` , ``tags`` , etc.).
@@ -129,16 +157,32 @@ class SLOResponseData(ModelNormal):
         :param type: The type of the service level objective.
         :type type: SLOType, optional
         """
+        if configured_alert_ids is not unset:
+            kwargs["configured_alert_ids"] = configured_alert_ids
+        if created_at is not unset:
+            kwargs["created_at"] = created_at
+        if creator is not unset:
+            kwargs["creator"] = creator
+        if description is not unset:
+            kwargs["description"] = description
+        if groups is not unset:
+            kwargs["groups"] = groups
+        if id is not unset:
+            kwargs["id"] = id
+        if modified_at is not unset:
+            kwargs["modified_at"] = modified_at
+        if monitor_ids is not unset:
+            kwargs["monitor_ids"] = monitor_ids
+        if monitor_tags is not unset:
+            kwargs["monitor_tags"] = monitor_tags
+        if name is not unset:
+            kwargs["name"] = name
+        if query is not unset:
+            kwargs["query"] = query
+        if tags is not unset:
+            kwargs["tags"] = tags
+        if thresholds is not unset:
+            kwargs["thresholds"] = thresholds
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SLOResponseData, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -24,7 +28,13 @@ class AWSAccountDeleteRequest(ModelNormal):
         "role_name": "role_name",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        access_key_id: Union[str, UnsetType] = unset,
+        account_id: Union[str, UnsetType] = unset,
+        role_name: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         List of AWS accounts to delete.
 
@@ -37,16 +47,10 @@ class AWSAccountDeleteRequest(ModelNormal):
         :param role_name: Your Datadog role delegation name.
         :type role_name: str, optional
         """
+        if access_key_id is not unset:
+            kwargs["access_key_id"] = access_key_id
+        if account_id is not unset:
+            kwargs["account_id"] = account_id
+        if role_name is not unset:
+            kwargs["role_name"] = role_name
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(AWSAccountDeleteRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

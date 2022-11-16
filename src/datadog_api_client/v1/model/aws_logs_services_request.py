@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -22,7 +24,7 @@ class AWSLogsServicesRequest(ModelNormal):
         "services": "services",
     }
 
-    def __init__(self, account_id, services, *args, **kwargs):
+    def __init__(self_, account_id: str, services: List[str], **kwargs):
         """
         A list of current AWS services for which Datadog offers automatic log collection.
 
@@ -34,19 +36,5 @@ class AWSLogsServicesRequest(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.account_id = account_id
-        self.services = services
-
-    @classmethod
-    def _from_openapi_data(cls, account_id, services, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(AWSLogsServicesRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.account_id = account_id
-        self.services = services
-        return self
+        self_.account_id = account_id
+        self_.services = services

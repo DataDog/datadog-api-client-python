@@ -11,7 +11,7 @@ from datadog_api_client.v2.model.users_type import UsersType
 
 body = UserCreateRequest(
     data=UserCreateData(
-        type=UsersType("users"),
+        type=UsersType.USERS,
         attributes=UserCreateAttributes(
             name="Datadog API Client Python",
             email="Example-Create_a_user_returns_OK_response@datadoghq.com",

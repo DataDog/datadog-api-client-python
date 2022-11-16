@@ -1,12 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.scatterplot_widget_aggregator import ScatterplotWidgetAggregator
+    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
+    from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
 
 
 class ScatterPlotRequest(ModelNormal):
@@ -42,7 +52,20 @@ class ScatterPlotRequest(ModelNormal):
         "security_query": "security_query",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        aggregator: Union[ScatterplotWidgetAggregator, UnsetType] = unset,
+        apm_query: Union[LogQueryDefinition, UnsetType] = unset,
+        event_query: Union[LogQueryDefinition, UnsetType] = unset,
+        log_query: Union[LogQueryDefinition, UnsetType] = unset,
+        network_query: Union[LogQueryDefinition, UnsetType] = unset,
+        process_query: Union[ProcessQueryDefinition, UnsetType] = unset,
+        profile_metrics_query: Union[LogQueryDefinition, UnsetType] = unset,
+        q: Union[str, UnsetType] = unset,
+        rum_query: Union[LogQueryDefinition, UnsetType] = unset,
+        security_query: Union[LogQueryDefinition, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Updated scatter plot.
 
@@ -76,16 +99,24 @@ class ScatterPlotRequest(ModelNormal):
         :param security_query: The log query.
         :type security_query: LogQueryDefinition, optional
         """
+        if aggregator is not unset:
+            kwargs["aggregator"] = aggregator
+        if apm_query is not unset:
+            kwargs["apm_query"] = apm_query
+        if event_query is not unset:
+            kwargs["event_query"] = event_query
+        if log_query is not unset:
+            kwargs["log_query"] = log_query
+        if network_query is not unset:
+            kwargs["network_query"] = network_query
+        if process_query is not unset:
+            kwargs["process_query"] = process_query
+        if profile_metrics_query is not unset:
+            kwargs["profile_metrics_query"] = profile_metrics_query
+        if q is not unset:
+            kwargs["q"] = q
+        if rum_query is not unset:
+            kwargs["rum_query"] = rum_query
+        if security_query is not unset:
+            kwargs["security_query"] = security_query
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ScatterPlotRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

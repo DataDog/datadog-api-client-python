@@ -15,9 +15,9 @@ body = OpsgenieServiceCreateRequest(
         attributes=OpsgenieServiceCreateAttributes(
             name="Example-Create_a_new_service_object_returns_CREATED_response",
             opsgenie_api_key="00000000-0000-0000-0000-000000000000",
-            region=OpsgenieServiceRegionType("us"),
+            region=OpsgenieServiceRegionType.US,
         ),
-        type=OpsgenieServiceType("opsgenie-service"),
+        type=OpsgenieServiceType.OPSGENIE_SERVICE,
     ),
 )
 

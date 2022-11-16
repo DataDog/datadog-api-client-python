@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -35,7 +39,17 @@ class MetricMetadata(ModelNormal):
         "integration",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        description: Union[str, UnsetType] = unset,
+        integration: Union[str, UnsetType] = unset,
+        per_unit: Union[str, UnsetType] = unset,
+        short_name: Union[str, UnsetType] = unset,
+        statsd_interval: Union[int, UnsetType] = unset,
+        type: Union[str, UnsetType] = unset,
+        unit: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Object with all metric related metadata.
 
@@ -60,16 +74,18 @@ class MetricMetadata(ModelNormal):
         :param unit: Primary unit of the metric such as ``byte`` or ``operation``.
         :type unit: str, optional
         """
+        if description is not unset:
+            kwargs["description"] = description
+        if integration is not unset:
+            kwargs["integration"] = integration
+        if per_unit is not unset:
+            kwargs["per_unit"] = per_unit
+        if short_name is not unset:
+            kwargs["short_name"] = short_name
+        if statsd_interval is not unset:
+            kwargs["statsd_interval"] = statsd_interval
+        if type is not unset:
+            kwargs["type"] = type
+        if unit is not unset:
+            kwargs["unit"] = unit
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(MetricMetadata, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

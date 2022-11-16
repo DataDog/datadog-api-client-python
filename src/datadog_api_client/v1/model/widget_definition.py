@@ -1,6 +1,7 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
@@ -10,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class WidgetDefinition(ModelComposed):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         `Definition of the widget <https://docs.datadoghq.com/dashboards/widgets/>`_.
 
@@ -315,18 +316,6 @@ class WidgetDefinition(ModelComposed):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(WidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
-
     @cached_property
     def _composed_schemas(_):
         # we need this here to make our import statements work
@@ -356,6 +345,7 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
         from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
         from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
+        from datadog_api_client.v1.model.slo_list_widget_definition import SLOListWidgetDefinition
         from datadog_api_client.v1.model.service_map_widget_definition import ServiceMapWidgetDefinition
         from datadog_api_client.v1.model.service_summary_widget_definition import ServiceSummaryWidgetDefinition
         from datadog_api_client.v1.model.sunburst_widget_definition import SunburstWidgetDefinition
@@ -365,6 +355,7 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
         from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
         from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
+        from datadog_api_client.v1.model.topology_map_widget_definition import TopologyMapWidgetDefinition
 
         return {
             "oneOf": [
@@ -388,6 +379,7 @@ class WidgetDefinition(ModelComposed):
                 QueryValueWidgetDefinition,
                 ScatterPlotWidgetDefinition,
                 SLOWidgetDefinition,
+                SLOListWidgetDefinition,
                 ServiceMapWidgetDefinition,
                 ServiceSummaryWidgetDefinition,
                 SunburstWidgetDefinition,
@@ -397,5 +389,6 @@ class WidgetDefinition(ModelComposed):
                 TreeMapWidgetDefinition,
                 ListStreamWidgetDefinition,
                 FunnelWidgetDefinition,
+                TopologyMapWidgetDefinition,
             ],
         }

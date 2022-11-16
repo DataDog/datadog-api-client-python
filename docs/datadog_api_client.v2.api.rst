@@ -15,10 +15,31 @@ authn\_mappings\_api
    :members:
    :show-inheritance:
 
+ci\_visibility\_pipelines\_api
+------------------------------
+
+.. automodule:: datadog_api_client.v2.api.ci_visibility_pipelines_api
+   :members:
+   :show-inheritance:
+
+ci\_visibility\_tests\_api
+--------------------------
+
+.. automodule:: datadog_api_client.v2.api.ci_visibility_tests_api
+   :members:
+   :show-inheritance:
+
 cloud\_workload\_security\_api
 ------------------------------
 
 .. automodule:: datadog_api_client.v2.api.cloud_workload_security_api
+   :members:
+   :show-inheritance:
+
+confluent\_cloud\_api
+---------------------
+
+.. automodule:: datadog_api_client.v2.api.confluent_cloud_api
    :members:
    :show-inheritance:
 
@@ -138,6 +159,13 @@ service\_accounts\_api
 ----------------------
 
 .. automodule:: datadog_api_client.v2.api.service_accounts_api
+   :members:
+   :show-inheritance:
+
+service\_definition\_api
+------------------------
+
+.. automodule:: datadog_api_client.v2.api.service_definition_api
    :members:
    :show-inheritance:
 

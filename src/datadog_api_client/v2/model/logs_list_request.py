@@ -1,12 +1,23 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.logs_query_filter import LogsQueryFilter
+    from datadog_api_client.v2.model.logs_query_options import LogsQueryOptions
+    from datadog_api_client.v2.model.logs_list_request_page import LogsListRequestPage
+    from datadog_api_client.v2.model.logs_sort import LogsSort
 
 
 class LogsListRequest(ModelNormal):
@@ -31,7 +42,14 @@ class LogsListRequest(ModelNormal):
         "sort": "sort",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        filter: Union[LogsQueryFilter, UnsetType] = unset,
+        options: Union[LogsQueryOptions, UnsetType] = unset,
+        page: Union[LogsListRequestPage, UnsetType] = unset,
+        sort: Union[LogsSort, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The request for a logs list.
 
@@ -48,16 +66,12 @@ class LogsListRequest(ModelNormal):
         :param sort: Sort parameters when querying logs.
         :type sort: LogsSort, optional
         """
+        if filter is not unset:
+            kwargs["filter"] = filter
+        if options is not unset:
+            kwargs["options"] = options
+        if page is not unset:
+            kwargs["page"] = page
+        if sort is not unset:
+            kwargs["sort"] = sort
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsListRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

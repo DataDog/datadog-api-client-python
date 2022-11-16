@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_basic_auth_sigv4_type import SyntheticsBasicAuthSigv4Type
 
 
 class SyntheticsBasicAuthSigv4(ModelNormal):
@@ -32,7 +40,16 @@ class SyntheticsBasicAuthSigv4(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, access_key, secret_key, type, *args, **kwargs):
+    def __init__(
+        self_,
+        access_key: str,
+        secret_key: str,
+        type: SyntheticsBasicAuthSigv4Type,
+        region: Union[str, UnsetType] = unset,
+        service_name: Union[str, UnsetType] = unset,
+        session_token: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Object to handle ``SIGV4`` authentication when performing the test.
 
@@ -54,23 +71,14 @@ class SyntheticsBasicAuthSigv4(ModelNormal):
         :param type: The type of authentication to use when performing the test.
         :type type: SyntheticsBasicAuthSigv4Type
         """
+        if region is not unset:
+            kwargs["region"] = region
+        if service_name is not unset:
+            kwargs["service_name"] = service_name
+        if session_token is not unset:
+            kwargs["session_token"] = session_token
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.access_key = access_key
-        self.secret_key = secret_key
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, access_key, secret_key, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsBasicAuthSigv4, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.access_key = access_key
-        self.secret_key = secret_key
-        self.type = type
-        return self
+        self_.access_key = access_key
+        self_.secret_key = secret_key
+        self_.type = type

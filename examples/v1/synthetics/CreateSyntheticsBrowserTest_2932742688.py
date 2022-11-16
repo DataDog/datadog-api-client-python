@@ -28,12 +28,15 @@ body = SyntheticsBrowserTest(
                 example="content-type",
                 name="PROPERTY",
                 pattern="content-type",
-                type=SyntheticsConfigVariableType("text"),
+                type=SyntheticsConfigVariableType.TEXT,
             ),
         ],
         request=SyntheticsTestRequest(
-            method=HTTPMethod("GET"),
+            method=HTTPMethod.GET,
             url="https://datadoghq.com",
+            certificate_domains=[
+                "https://datadoghq.com",
+            ],
         ),
         set_cookie="name:test",
     ),
@@ -46,7 +49,7 @@ body = SyntheticsBrowserTest(
         accept_self_signed=False,
         allow_insecure=True,
         device_ids=[
-            SyntheticsDeviceID("tablet"),
+            SyntheticsDeviceID.TABLET,
         ],
         disable_cors=True,
         follow_redirects=True,
@@ -64,20 +67,23 @@ body = SyntheticsBrowserTest(
         ),
         tick_every=300,
         ci=SyntheticsTestCiOptions(
-            execution_rule=SyntheticsTestExecutionRule("skipped"),
+            execution_rule=SyntheticsTestExecutionRule.SKIPPED,
         ),
+        ignore_server_certificate_error=True,
+        disable_csp=True,
+        initial_navigation_timeout=200,
     ),
     tags=[
         "testing:browser",
     ],
-    type=SyntheticsBrowserTestType("browser"),
+    type=SyntheticsBrowserTestType.BROWSER,
     steps=[
         SyntheticsStep(
             allow_failure=False,
             is_critical=True,
             name="Refresh page",
             params=dict(),
-            type=SyntheticsStepType("refresh"),
+            type=SyntheticsStepType.REFRESH,
         ),
     ],
 )

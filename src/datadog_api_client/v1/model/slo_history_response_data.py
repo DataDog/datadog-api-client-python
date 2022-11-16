@@ -1,12 +1,25 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Dict, List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.slo_history_monitor import SLOHistoryMonitor
+    from datadog_api_client.v1.model.slo_history_sli_data import SLOHistorySLIData
+    from datadog_api_client.v1.model.slo_history_metrics import SLOHistoryMetrics
+    from datadog_api_client.v1.model.slo_threshold import SLOThreshold
+    from datadog_api_client.v1.model.slo_type import SLOType
+    from datadog_api_client.v1.model.slo_type_numeric import SLOTypeNumeric
 
 
 class SLOHistoryResponseData(ModelNormal):
@@ -45,7 +58,20 @@ class SLOHistoryResponseData(ModelNormal):
         "type_id": "type_id",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        from_ts: Union[int, UnsetType] = unset,
+        group_by: Union[List[str], UnsetType] = unset,
+        groups: Union[List[SLOHistoryMonitor], UnsetType] = unset,
+        monitors: Union[List[SLOHistoryMonitor], UnsetType] = unset,
+        overall: Union[SLOHistorySLIData, UnsetType] = unset,
+        series: Union[SLOHistoryMetrics, UnsetType] = unset,
+        thresholds: Union[Dict[str, SLOThreshold], UnsetType] = unset,
+        to_ts: Union[int, UnsetType] = unset,
+        type: Union[SLOType, UnsetType] = unset,
+        type_id: Union[SLOTypeNumeric, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         An array of service level objective objects.
 
@@ -90,16 +116,24 @@ class SLOHistoryResponseData(ModelNormal):
             Ignored in create/update requests.
         :type type_id: SLOTypeNumeric, optional
         """
+        if from_ts is not unset:
+            kwargs["from_ts"] = from_ts
+        if group_by is not unset:
+            kwargs["group_by"] = group_by
+        if groups is not unset:
+            kwargs["groups"] = groups
+        if monitors is not unset:
+            kwargs["monitors"] = monitors
+        if overall is not unset:
+            kwargs["overall"] = overall
+        if series is not unset:
+            kwargs["series"] = series
+        if thresholds is not unset:
+            kwargs["thresholds"] = thresholds
+        if to_ts is not unset:
+            kwargs["to_ts"] = to_ts
+        if type is not unset:
+            kwargs["type"] = type
+        if type_id is not unset:
+            kwargs["type_id"] = type_id
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SLOHistoryResponseData, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

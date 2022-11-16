@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -43,7 +47,9 @@ class WidgetLayout(ModelNormal):
         "y": "y",
     }
 
-    def __init__(self, height, width, x, y, *args, **kwargs):
+    def __init__(
+        self_, height: int, width: int, x: int, y: int, is_column_break: Union[bool, UnsetType] = unset, **kwargs
+    ):
         """
         The layout for a widget on a ``free`` or **new dashboard layout** dashboard.
 
@@ -63,25 +69,11 @@ class WidgetLayout(ModelNormal):
         :param y: The position of the widget on the y (vertical) axis. Should be a non-negative integer.
         :type y: int
         """
+        if is_column_break is not unset:
+            kwargs["is_column_break"] = is_column_break
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.height = height
-        self.width = width
-        self.x = x
-        self.y = y
-
-    @classmethod
-    def _from_openapi_data(cls, height, width, x, y, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(WidgetLayout, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.height = height
-        self.width = width
-        self.x = x
-        self.y = y
-        return self
+        self_.height = height
+        self_.width = width
+        self_.x = x
+        self_.y = y

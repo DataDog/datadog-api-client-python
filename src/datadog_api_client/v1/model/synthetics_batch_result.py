@@ -1,12 +1,23 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
+    from datadog_api_client.v1.model.synthetics_test_execution_rule import SyntheticsTestExecutionRule
+    from datadog_api_client.v1.model.synthetics_status import SyntheticsStatus
+    from datadog_api_client.v1.model.synthetics_test_details_type import SyntheticsTestDetailsType
 
 
 class SyntheticsBatchResult(ModelNormal):
@@ -43,7 +54,20 @@ class SyntheticsBatchResult(ModelNormal):
         "test_type": "test_type",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        device: Union[SyntheticsDeviceID, UnsetType] = unset,
+        duration: Union[float, UnsetType] = unset,
+        execution_rule: Union[SyntheticsTestExecutionRule, UnsetType] = unset,
+        location: Union[str, UnsetType] = unset,
+        result_id: Union[str, UnsetType] = unset,
+        retries: Union[float, UnsetType] = unset,
+        status: Union[SyntheticsStatus, UnsetType] = unset,
+        test_name: Union[str, UnsetType] = unset,
+        test_public_id: Union[str, UnsetType] = unset,
+        test_type: Union[SyntheticsTestDetailsType, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Object with the results of a Synthetics batch.
 
@@ -77,16 +101,24 @@ class SyntheticsBatchResult(ModelNormal):
         :param test_type: Type of the Synthetic test, either ``api`` or ``browser``.
         :type test_type: SyntheticsTestDetailsType, optional
         """
+        if device is not unset:
+            kwargs["device"] = device
+        if duration is not unset:
+            kwargs["duration"] = duration
+        if execution_rule is not unset:
+            kwargs["execution_rule"] = execution_rule
+        if location is not unset:
+            kwargs["location"] = location
+        if result_id is not unset:
+            kwargs["result_id"] = result_id
+        if retries is not unset:
+            kwargs["retries"] = retries
+        if status is not unset:
+            kwargs["status"] = status
+        if test_name is not unset:
+            kwargs["test_name"] = test_name
+        if test_public_id is not unset:
+            kwargs["test_public_id"] = test_public_id
+        if test_type is not unset:
+            kwargs["test_type"] = test_type
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsBatchResult, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

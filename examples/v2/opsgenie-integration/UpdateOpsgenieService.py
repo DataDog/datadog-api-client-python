@@ -20,10 +20,10 @@ body = OpsgenieServiceUpdateRequest(
         attributes=OpsgenieServiceUpdateAttributes(
             name="fake-opsgenie-service-name--updated",
             opsgenie_api_key="00000000-0000-0000-0000-000000000000",
-            region=OpsgenieServiceRegionType("eu"),
+            region=OpsgenieServiceRegionType.EU,
         ),
         id=OPSGENIE_SERVICE_DATA_ID,
-        type=OpsgenieServiceType("opsgenie-service"),
+        type=OpsgenieServiceType.OPSGENIE_SERVICE,
     ),
 )
 

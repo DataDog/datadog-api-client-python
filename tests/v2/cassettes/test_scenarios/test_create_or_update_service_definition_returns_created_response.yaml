@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: '{"contacts":[{"contact":"contact@datadoghq.com","name":"Team Email","type":"email"}],"dd-service":"service-Test-Create_or_update_service_definition_returns_CREATED_response-1668114884","dd-team":"my-team","docs":[{"name":"Architecture","provider":"google
+      drive","url":"https://gdrive/mydoc"}],"extensions":{"myorgextension":"extensionvalue"},"integrations":{"opsgenie":{"region":"US","service-url":"https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000"},"pagerduty":"https://my-org.pagerduty.com/service-directory/PMyService"},"links":[{"name":"Runbook","type":"runbook","url":"https://my-runbook"}],"repos":[{"name":"Source
+      Code","provider":"GitHub","url":"https://github.com/DataDog/schema"}],"schema-version":"v2","tags":["my:tag","service:tag"],"team":"my-team"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/services/definitions
+  response:
+    body:
+      string: '{"data":[{"type":"service-definition","attributes":{"meta":{"last-modified-time":"2022-11-10T21:14:45.52228008Z","github-html-url":"","ingestion-source":"api","warnings":[],"ingested-schema-version":"v2"},"schema":{"schema-version":"v2","dd-service":"service-test-create_or_update_service_definition_returns_created_response-1668114884","dd-team":"my-team","team":"my-team","contacts":[{"name":"Team
+        Email","type":"email","contact":"contact@datadoghq.com"}],"links":[{"name":"Runbook","type":"runbook","url":"https://my-runbook"}],"repos":[{"name":"Source
+        Code","provider":"GitHub","url":"https://github.com/DataDog/schema"}],"docs":[{"name":"Architecture","provider":"google
+        drive","url":"https://gdrive/mydoc"}],"tags":["my:tag","service:tag"],"integrations":{"pagerduty":"https://my-org.pagerduty.com/service-directory/PMyService","opsgenie":{"service-url":"https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000","region":"US"}},"extensions":{"myorgextension":"extensionvalue"}}}}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/services/definitions/service-test-create_or_update_service_definition_returns_created_response-1668114884
+  response:
+    body:
+      string: '{"errors":["Not Found"],"error_details":[{}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

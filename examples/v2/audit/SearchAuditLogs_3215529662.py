@@ -21,7 +21,7 @@ body = AuditLogsSearchEventsRequest(
     page=AuditLogsQueryPageOptions(
         limit=2,
     ),
-    sort=AuditLogsSort("timestamp"),
+    sort=AuditLogsSort.TIMESTAMP_ASCENDING,
 )
 
 configuration = Configuration()

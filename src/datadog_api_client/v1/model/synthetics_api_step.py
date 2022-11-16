@@ -1,12 +1,23 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
+    from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
+    from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
+    from datadog_api_client.v1.model.synthetics_api_step_subtype import SyntheticsAPIStepSubtype
 
 
 class SyntheticsAPIStep(ModelNormal):
@@ -40,7 +51,17 @@ class SyntheticsAPIStep(ModelNormal):
         "subtype": "subtype",
     }
 
-    def __init__(self, name, request, subtype, *args, **kwargs):
+    def __init__(
+        self_,
+        name: str,
+        request: SyntheticsTestRequest,
+        subtype: SyntheticsAPIStepSubtype,
+        allow_failure: Union[bool, UnsetType] = unset,
+        extracted_values: Union[List[SyntheticsParsingOptions], UnsetType] = unset,
+        is_critical: Union[bool, UnsetType] = unset,
+        retry: Union[SyntheticsTestOptionsRetry, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The steps used in a Synthetics multistep API test.
 
@@ -69,27 +90,18 @@ class SyntheticsAPIStep(ModelNormal):
         :param subtype: The subtype of the Synthetic multistep API test step, currently only supporting ``http``.
         :type subtype: SyntheticsAPIStepSubtype
         """
+        if allow_failure is not unset:
+            kwargs["allow_failure"] = allow_failure
+        if extracted_values is not unset:
+            kwargs["extracted_values"] = extracted_values
+        if is_critical is not unset:
+            kwargs["is_critical"] = is_critical
+        if retry is not unset:
+            kwargs["retry"] = retry
         super().__init__(kwargs)
         assertions = kwargs.get("assertions", [])
 
-        self._check_pos_args(args)
-
-        self.assertions = assertions
-        self.name = name
-        self.request = request
-        self.subtype = subtype
-
-    @classmethod
-    def _from_openapi_data(cls, name, request, subtype, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-        assertions = kwargs.get("assertions", [])
-
-        self = super(SyntheticsAPIStep, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.assertions = assertions
-        self.name = name
-        self.request = request
-        self.subtype = subtype
-        return self
+        self_.assertions = assertions
+        self_.name = name
+        self_.request = request
+        self_.subtype = subtype

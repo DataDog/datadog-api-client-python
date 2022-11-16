@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/services/definitions/service-definition-test
+  response:
+    body:
+      string: '{"data":{"type":"service-definition","id":"77ae46b484fcfd92dc568170b1c534fe","attributes":{"meta":{"last-modified-time":"2022-11-14T18:03:35Z","github-html-url":"","ingestion-source":"api","warnings":[],"ingested-schema-version":"v2"},"schema":{"schema-version":"v2","dd-service":"service-definition-test","dd-team":"my-team","team":"super-team","contacts":[{"name":"Team
+        Email","type":"email","contact":"contact@datadoghq.com"}],"links":[{"name":"Runbook","type":"runbook","url":"https://my-runbook"}],"repos":[{"name":"Source
+        Code","provider":"GitHub","url":"https://github.com/DataDog/schema"}],"docs":[{"name":"Architecture","provider":"google
+        drive","url":"https://gdrive/mydoc"}],"tags":["service:tag","my:tag"],"integrations":{"pagerduty":"https://my-org.pagerduty.com/service-directory/PMyService","opsgenie":{"service-url":"https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000","region":"US"}},"extensions":{"myorgextension":"extensionvalue"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

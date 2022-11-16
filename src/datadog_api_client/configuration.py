@@ -221,15 +221,16 @@ class Configuration:
         # Keep track of unstable operations
         self.unstable_operations = _UnstableOperations(
             {
-                "v1.get_slo_history": False,
                 "v1.search_slo": False,
                 "v2.list_events": False,
                 "v2.search_events": False,
                 "v2.create_incident": False,
                 "v2.delete_incident": False,
                 "v2.get_incident": False,
+                "v2.list_incident_attachments": False,
                 "v2.list_incidents": False,
                 "v2.update_incident": False,
+                "v2.update_incident_attachments": False,
                 "v2.create_incident_service": False,
                 "v2.delete_incident_service": False,
                 "v2.get_incident_service": False,
@@ -240,7 +241,6 @@ class Configuration:
                 "v2.get_incident_team": False,
                 "v2.list_incident_teams": False,
                 "v2.update_incident_team": False,
-                "v2.get_estimated_cost_by_org": False,
             }
         )
 

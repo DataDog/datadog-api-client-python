@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -34,7 +38,18 @@ class AzureAccount(ModelNormal):
         "tenant_name": "tenant_name",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        automute: Union[bool, UnsetType] = unset,
+        client_id: Union[str, UnsetType] = unset,
+        client_secret: Union[str, UnsetType] = unset,
+        errors: Union[List[str], UnsetType] = unset,
+        host_filters: Union[str, UnsetType] = unset,
+        new_client_id: Union[str, UnsetType] = unset,
+        new_tenant_name: Union[str, UnsetType] = unset,
+        tenant_name: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Datadog-Azure integrations configured for your organization.
 
@@ -63,16 +78,20 @@ class AzureAccount(ModelNormal):
         :param tenant_name: Your Azure Active Directory ID.
         :type tenant_name: str, optional
         """
+        if automute is not unset:
+            kwargs["automute"] = automute
+        if client_id is not unset:
+            kwargs["client_id"] = client_id
+        if client_secret is not unset:
+            kwargs["client_secret"] = client_secret
+        if errors is not unset:
+            kwargs["errors"] = errors
+        if host_filters is not unset:
+            kwargs["host_filters"] = host_filters
+        if new_client_id is not unset:
+            kwargs["new_client_id"] = new_client_id
+        if new_tenant_name is not unset:
+            kwargs["new_tenant_name"] = new_tenant_name
+        if tenant_name is not unset:
+            kwargs["tenant_name"] = tenant_name
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(AzureAccount, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

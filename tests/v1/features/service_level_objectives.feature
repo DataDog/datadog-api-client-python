@@ -148,8 +148,7 @@ Feature: Service Level Objectives
 
   @generated @skip @team:DataDog/slo-app
   Scenario: Get an SLO's history returns "Bad Request" response
-    Given operation "GetSLOHistory" enabled
-    And new "GetSLOHistory" request
+    Given new "GetSLOHistory" request
     And request contains "slo_id" parameter from "REPLACE.ME"
     And request contains "from_ts" parameter from "REPLACE.ME"
     And request contains "to_ts" parameter from "REPLACE.ME"
@@ -158,8 +157,7 @@ Feature: Service Level Objectives
 
   @generated @skip @team:DataDog/slo-app
   Scenario: Get an SLO's history returns "Not Found" response
-    Given operation "GetSLOHistory" enabled
-    And new "GetSLOHistory" request
+    Given new "GetSLOHistory" request
     And request contains "slo_id" parameter from "REPLACE.ME"
     And request contains "from_ts" parameter from "REPLACE.ME"
     And request contains "to_ts" parameter from "REPLACE.ME"
@@ -169,7 +167,6 @@ Feature: Service Level Objectives
   @team:DataDog/slo-app
   Scenario: Get an SLO's history returns "OK" response
     Given there is a valid "slo" in the system
-    And operation "GetSLOHistory" enabled
     And new "GetSLOHistory" request
     And request contains "slo_id" parameter from "slo.data[0].id"
     And request contains "from_ts" parameter with value {{ timestamp("now - 1d") }}
@@ -195,6 +192,7 @@ Feature: Service Level Objectives
     And request contains "page[number]" parameter with value 0
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.attributes.slos[0].data.attributes.name" is equal to "{{ slo.data[0].name }}"
 
   @team:DataDog/slo-app
   Scenario: Update an SLO returns "Bad Request" response

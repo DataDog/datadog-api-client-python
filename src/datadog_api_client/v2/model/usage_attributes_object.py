@@ -1,12 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.usage_time_series_object import UsageTimeSeriesObject
+    from datadog_api_client.v2.model.hourly_usage_type import HourlyUsageType
 
 
 class UsageAttributesObject(ModelNormal):
@@ -31,7 +40,15 @@ class UsageAttributesObject(ModelNormal):
         "usage_type": "usage_type",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        org_name: Union[str, UnsetType] = unset,
+        product_family: Union[str, UnsetType] = unset,
+        public_id: Union[str, UnsetType] = unset,
+        timeseries: Union[List[UsageTimeSeriesObject], UnsetType] = unset,
+        usage_type: Union[HourlyUsageType, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Usage attributes data.
 
@@ -50,16 +67,14 @@ class UsageAttributesObject(ModelNormal):
         :param usage_type: Usage type that is being measured.
         :type usage_type: HourlyUsageType, optional
         """
+        if org_name is not unset:
+            kwargs["org_name"] = org_name
+        if product_family is not unset:
+            kwargs["product_family"] = product_family
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
+        if timeseries is not unset:
+            kwargs["timeseries"] = timeseries
+        if usage_type is not unset:
+            kwargs["usage_type"] = usage_type
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(UsageAttributesObject, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

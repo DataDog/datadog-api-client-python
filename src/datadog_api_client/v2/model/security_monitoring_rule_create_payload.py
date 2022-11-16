@@ -1,50 +1,17 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelNormal,
+    ModelComposed,
     cached_property,
 )
 
 
-class SecurityMonitoringRuleCreatePayload(ModelNormal):
-    @cached_property
-    def openapi_types(_):
-        from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
-        from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
-        from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
-        from datadog_api_client.v2.model.security_monitoring_rule_query_create import SecurityMonitoringRuleQueryCreate
-        from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
-
-        return {
-            "cases": ([SecurityMonitoringRuleCaseCreate],),
-            "filters": ([SecurityMonitoringFilter],),
-            "has_extended_title": (bool,),
-            "is_enabled": (bool,),
-            "message": (str,),
-            "name": (str,),
-            "options": (SecurityMonitoringRuleOptions,),
-            "queries": ([SecurityMonitoringRuleQueryCreate],),
-            "tags": ([str],),
-            "type": (SecurityMonitoringRuleTypeCreate,),
-        }
-
-    attribute_map = {
-        "cases": "cases",
-        "filters": "filters",
-        "has_extended_title": "hasExtendedTitle",
-        "is_enabled": "isEnabled",
-        "message": "message",
-        "name": "name",
-        "options": "options",
-        "queries": "queries",
-        "tags": "tags",
-        "type": "type",
-    }
-
-    def __init__(self, cases, is_enabled, message, name, options, queries, *args, **kwargs):
+class SecurityMonitoringRuleCreatePayload(ModelComposed):
+    def __init__(self, **kwargs):
         """
         Create a new rule.
 
@@ -70,7 +37,7 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
         :type options: SecurityMonitoringRuleOptions
 
         :param queries: Queries for selecting logs which are part of the rule.
-        :type queries: [SecurityMonitoringRuleQueryCreate]
+        :type queries: [SecurityMonitoringStandardRuleQuery]
 
         :param tags: Tags for generated signals.
         :type tags: [str], optional
@@ -80,27 +47,25 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+    @cached_property
+    def _composed_schemas(_):
+        # we need this here to make our import statements work
+        # we must store _composed_schemas in here so the code is only run
+        # when we invoke this method. If we kept this at the class
+        # level we would get an error because the class level
+        # code would be run when this module is imported, and these composed
+        # classes don't exist yet because their module has not finished
+        # loading
+        from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
+            SecurityMonitoringStandardRuleCreatePayload,
+        )
+        from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload import (
+            SecurityMonitoringSignalRuleCreatePayload,
+        )
 
-        self.cases = cases
-        self.is_enabled = is_enabled
-        self.message = message
-        self.name = name
-        self.options = options
-        self.queries = queries
-
-    @classmethod
-    def _from_openapi_data(cls, cases, is_enabled, message, name, options, queries, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SecurityMonitoringRuleCreatePayload, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.cases = cases
-        self.is_enabled = is_enabled
-        self.message = message
-        self.name = name
-        self.options = options
-        self.queries = queries
-        return self
+        return {
+            "oneOf": [
+                SecurityMonitoringStandardRuleCreatePayload,
+                SecurityMonitoringSignalRuleCreatePayload,
+            ],
+        }

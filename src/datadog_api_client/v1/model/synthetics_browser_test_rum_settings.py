@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -24,7 +28,13 @@ class SyntheticsBrowserTestRumSettings(ModelNormal):
         "is_enabled": "isEnabled",
     }
 
-    def __init__(self, is_enabled, *args, **kwargs):
+    def __init__(
+        self_,
+        is_enabled: bool,
+        application_id: Union[str, UnsetType] = unset,
+        client_token_id: Union[int, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The RUM data collection settings for the Synthetic browser test.
         **Note:** There are 3 ways to format RUM settings:
@@ -47,19 +57,10 @@ class SyntheticsBrowserTestRumSettings(ModelNormal):
         :param is_enabled: Determines whether RUM data is collected during test runs.
         :type is_enabled: bool
         """
+        if application_id is not unset:
+            kwargs["application_id"] = application_id
+        if client_token_id is not unset:
+            kwargs["client_token_id"] = client_token_id
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.is_enabled = is_enabled
-
-    @classmethod
-    def _from_openapi_data(cls, is_enabled, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsBrowserTestRumSettings, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.is_enabled = is_enabled
-        return self
+        self_.is_enabled = is_enabled

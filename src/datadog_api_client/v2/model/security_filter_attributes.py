@@ -1,12 +1,23 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_filter_exclusion_filter_response import (
+        SecurityFilterExclusionFilterResponse,
+    )
+    from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
 
 
 class SecurityFilterAttributes(ModelNormal):
@@ -43,7 +54,17 @@ class SecurityFilterAttributes(ModelNormal):
         "version": "version",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        exclusion_filters: Union[List[SecurityFilterExclusionFilterResponse], UnsetType] = unset,
+        filtered_data_type: Union[SecurityFilterFilteredDataType, UnsetType] = unset,
+        is_builtin: Union[bool, UnsetType] = unset,
+        is_enabled: Union[bool, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        query: Union[str, UnsetType] = unset,
+        version: Union[int, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The object describing a security filter.
 
@@ -68,16 +89,18 @@ class SecurityFilterAttributes(ModelNormal):
         :param version: The version of the security filter.
         :type version: int, optional
         """
+        if exclusion_filters is not unset:
+            kwargs["exclusion_filters"] = exclusion_filters
+        if filtered_data_type is not unset:
+            kwargs["filtered_data_type"] = filtered_data_type
+        if is_builtin is not unset:
+            kwargs["is_builtin"] = is_builtin
+        if is_enabled is not unset:
+            kwargs["is_enabled"] = is_enabled
+        if name is not unset:
+            kwargs["name"] = name
+        if query is not unset:
+            kwargs["query"] = query
+        if version is not unset:
+            kwargs["version"] = version
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SecurityFilterAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

@@ -9,7 +9,6 @@ from datadog_api_client.v2.model.rum_aggregation_function import RUMAggregationF
 from datadog_api_client.v2.model.rum_compute import RUMCompute
 from datadog_api_client.v2.model.rum_compute_type import RUMComputeType
 from datadog_api_client.v2.model.rum_group_by import RUMGroupBy
-from datadog_api_client.v2.model.rum_group_by_total import RUMGroupByTotal
 from datadog_api_client.v2.model.rum_query_filter import RUMQueryFilter
 from datadog_api_client.v2.model.rum_query_options import RUMQueryOptions
 from datadog_api_client.v2.model.rum_query_page_options import RUMQueryPageOptions
@@ -17,9 +16,9 @@ from datadog_api_client.v2.model.rum_query_page_options import RUMQueryPageOptio
 body = RUMAggregateRequest(
     compute=[
         RUMCompute(
-            aggregation=RUMAggregationFunction("pc90"),
+            aggregation=RUMAggregationFunction.PERCENTILE_90,
             metric="@view.time_spent",
-            type=RUMComputeType("total"),
+            type=RUMComputeType.TOTAL,
         ),
     ],
     filter=RUMQueryFilter(
@@ -31,7 +30,7 @@ body = RUMAggregateRequest(
         RUMGroupBy(
             facet="@view.time_spent",
             limit=10,
-            total=RUMGroupByTotal(False),
+            total=False,
         ),
     ],
     options=RUMQueryOptions(

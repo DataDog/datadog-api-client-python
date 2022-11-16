@@ -1,66 +1,19 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelNormal,
+    ModelComposed,
     cached_property,
 )
 
 
-class SecurityMonitoringRuleResponse(ModelNormal):
-    @cached_property
-    def openapi_types(_):
-        from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
-        from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
-        from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
-        from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
-        from datadog_api_client.v2.model.security_monitoring_rule_type_read import SecurityMonitoringRuleTypeRead
-
-        return {
-            "cases": ([SecurityMonitoringRuleCase],),
-            "created_at": (int,),
-            "creation_author_id": (int,),
-            "filters": ([SecurityMonitoringFilter],),
-            "has_extended_title": (bool,),
-            "id": (str,),
-            "is_default": (bool,),
-            "is_deleted": (bool,),
-            "is_enabled": (bool,),
-            "message": (str,),
-            "name": (str,),
-            "options": (SecurityMonitoringRuleOptions,),
-            "queries": ([SecurityMonitoringRuleQuery],),
-            "tags": ([str],),
-            "type": (SecurityMonitoringRuleTypeRead,),
-            "update_author_id": (int,),
-            "version": (int,),
-        }
-
-    attribute_map = {
-        "cases": "cases",
-        "created_at": "createdAt",
-        "creation_author_id": "creationAuthorId",
-        "filters": "filters",
-        "has_extended_title": "hasExtendedTitle",
-        "id": "id",
-        "is_default": "isDefault",
-        "is_deleted": "isDeleted",
-        "is_enabled": "isEnabled",
-        "message": "message",
-        "name": "name",
-        "options": "options",
-        "queries": "queries",
-        "tags": "tags",
-        "type": "type",
-        "update_author_id": "updateAuthorId",
-        "version": "version",
-    }
-
-    def __init__(self, *args, **kwargs):
+class SecurityMonitoringRuleResponse(ModelComposed):
+    def __init__(self, **kwargs):
         """
-        Rule.
+        Create a new rule.
 
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCase], optional
@@ -99,7 +52,7 @@ class SecurityMonitoringRuleResponse(ModelNormal):
         :type options: SecurityMonitoringRuleOptions, optional
 
         :param queries: Queries for selecting logs which are part of the rule.
-        :type queries: [SecurityMonitoringRuleQuery], optional
+        :type queries: [SecurityMonitoringStandardRuleQuery], optional
 
         :param tags: Tags for generated signals.
         :type tags: [str], optional
@@ -115,14 +68,25 @@ class SecurityMonitoringRuleResponse(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
+    @cached_property
+    def _composed_schemas(_):
+        # we need this here to make our import statements work
+        # we must store _composed_schemas in here so the code is only run
+        # when we invoke this method. If we kept this at the class
+        # level we would get an error because the class level
+        # code would be run when this module is imported, and these composed
+        # classes don't exist yet because their module has not finished
+        # loading
+        from datadog_api_client.v2.model.security_monitoring_standard_rule_response import (
+            SecurityMonitoringStandardRuleResponse,
+        )
+        from datadog_api_client.v2.model.security_monitoring_signal_rule_response import (
+            SecurityMonitoringSignalRuleResponse,
+        )
 
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SecurityMonitoringRuleResponse, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
+        return {
+            "oneOf": [
+                SecurityMonitoringStandardRuleResponse,
+                SecurityMonitoringSignalRuleResponse,
+            ],
+        }

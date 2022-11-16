@@ -15,7 +15,7 @@ body = RUMApplicationCreateRequest(
             name="my_new_rum_application",
             type="ios",
         ),
-        type=RUMApplicationCreateType("rum_application_create"),
+        type=RUMApplicationCreateType.RUM_APPLICATION_CREATE,
     ),
 )
 

@@ -1,12 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.agent_check import AgentCheck
+    from datadog_api_client.v1.model.host_meta_install_method import HostMetaInstallMethod
 
 
 class HostMeta(ModelNormal):
@@ -51,7 +60,25 @@ class HostMeta(ModelNormal):
         "win_v": "winV",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        agent_checks: Union[List[AgentCheck], UnsetType] = unset,
+        agent_version: Union[str, UnsetType] = unset,
+        cpu_cores: Union[int, UnsetType] = unset,
+        fbsd_v: Union[List[str], UnsetType] = unset,
+        gohai: Union[str, UnsetType] = unset,
+        install_method: Union[HostMetaInstallMethod, UnsetType] = unset,
+        mac_v: Union[List[str], UnsetType] = unset,
+        machine: Union[str, UnsetType] = unset,
+        nix_v: Union[List[str], UnsetType] = unset,
+        platform: Union[str, UnsetType] = unset,
+        processor: Union[str, UnsetType] = unset,
+        python_v: Union[str, UnsetType] = unset,
+        socket_fqdn: Union[str, UnsetType] = unset,
+        socket_hostname: Union[str, UnsetType] = unset,
+        win_v: Union[List[str], UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Metadata associated with your host.
 
@@ -100,16 +127,34 @@ class HostMeta(ModelNormal):
         :param win_v: An array of Windows versions.
         :type win_v: [str], optional
         """
+        if agent_checks is not unset:
+            kwargs["agent_checks"] = agent_checks
+        if agent_version is not unset:
+            kwargs["agent_version"] = agent_version
+        if cpu_cores is not unset:
+            kwargs["cpu_cores"] = cpu_cores
+        if fbsd_v is not unset:
+            kwargs["fbsd_v"] = fbsd_v
+        if gohai is not unset:
+            kwargs["gohai"] = gohai
+        if install_method is not unset:
+            kwargs["install_method"] = install_method
+        if mac_v is not unset:
+            kwargs["mac_v"] = mac_v
+        if machine is not unset:
+            kwargs["machine"] = machine
+        if nix_v is not unset:
+            kwargs["nix_v"] = nix_v
+        if platform is not unset:
+            kwargs["platform"] = platform
+        if processor is not unset:
+            kwargs["processor"] = processor
+        if python_v is not unset:
+            kwargs["python_v"] = python_v
+        if socket_fqdn is not unset:
+            kwargs["socket_fqdn"] = socket_fqdn
+        if socket_hostname is not unset:
+            kwargs["socket_hostname"] = socket_hostname
+        if win_v is not unset:
+            kwargs["win_v"] = win_v
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(HostMeta, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

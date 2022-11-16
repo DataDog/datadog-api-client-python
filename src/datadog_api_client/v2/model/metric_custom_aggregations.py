@@ -1,6 +1,7 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
@@ -15,7 +16,6 @@ class MetricCustomAggregations(ModelSimple):
         By default, count and rate metrics require the (time: sum, space: sum) aggregation and
         Gauge metrics require the (time: avg, space: avg) aggregation.
         Additional time & space combinations are also available:
-
 
         * time: avg, space: avg
         * time: avg, space: max

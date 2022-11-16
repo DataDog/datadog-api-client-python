@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_browser_test_result_short import SyntheticsBrowserTestResultShort
 
 
 class SyntheticsGetBrowserTestLatestResultsResponse(ModelNormal):
@@ -24,7 +32,12 @@ class SyntheticsGetBrowserTestLatestResultsResponse(ModelNormal):
         "results": "results",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        last_timestamp_fetched: Union[int, UnsetType] = unset,
+        results: Union[List[SyntheticsBrowserTestResultShort], UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Object with the latest Synthetic browser test run.
 
@@ -34,16 +47,8 @@ class SyntheticsGetBrowserTestLatestResultsResponse(ModelNormal):
         :param results: Result of the latest browser test run.
         :type results: [SyntheticsBrowserTestResultShort], optional
         """
+        if last_timestamp_fetched is not unset:
+            kwargs["last_timestamp_fetched"] = last_timestamp_fetched
+        if results is not unset:
+            kwargs["results"] = results
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsGetBrowserTestLatestResultsResponse, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

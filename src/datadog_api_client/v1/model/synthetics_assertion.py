@@ -1,6 +1,7 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
@@ -10,7 +11,7 @@ from datadog_api_client.model_utils import (
 
 
 class SyntheticsAssertion(ModelComposed):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         Object describing the assertions type, their associated operator,
         which property they apply, and upon which target.
@@ -29,18 +30,6 @@ class SyntheticsAssertion(ModelComposed):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsAssertion, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
-
     @cached_property
     def _composed_schemas(_):
         # we need this here to make our import statements work
@@ -52,10 +41,12 @@ class SyntheticsAssertion(ModelComposed):
         # loading
         from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
         from datadog_api_client.v1.model.synthetics_assertion_json_path_target import SyntheticsAssertionJSONPathTarget
+        from datadog_api_client.v1.model.synthetics_assertion_x_path_target import SyntheticsAssertionXPathTarget
 
         return {
             "oneOf": [
                 SyntheticsAssertionTarget,
                 SyntheticsAssertionJSONPathTarget,
+                SyntheticsAssertionXPathTarget,
             ],
         }

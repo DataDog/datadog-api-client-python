@@ -1,12 +1,16 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
 
 
@@ -27,7 +31,14 @@ class UserInvitationDataAttributes(ModelNormal):
         "uuid": "uuid",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        created_at: Union[datetime, UnsetType] = unset,
+        expires_at: Union[datetime, UnsetType] = unset,
+        invite_type: Union[str, UnsetType] = unset,
+        uuid: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Attributes of a user invitation.
 
@@ -43,16 +54,12 @@ class UserInvitationDataAttributes(ModelNormal):
         :param uuid: UUID of the user invitation.
         :type uuid: str, optional
         """
+        if created_at is not unset:
+            kwargs["created_at"] = created_at
+        if expires_at is not unset:
+            kwargs["expires_at"] = expires_at
+        if invite_type is not unset:
+            kwargs["invite_type"] = invite_type
+        if uuid is not unset:
+            kwargs["uuid"] = uuid
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(UserInvitationDataAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Any, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -9,6 +11,8 @@ from datadog_api_client.model_utils import (
     date,
     datetime,
     none_type,
+    unset,
+    UnsetType,
 )
 
 
@@ -37,7 +41,13 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
         "target_value": "targetValue",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        json_path: Union[str, UnsetType] = unset,
+        operator: Union[str, UnsetType] = unset,
+        target_value: Union[Any, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Composed target for ``validatesJSONPath`` operator.
 
@@ -50,16 +60,10 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
         :param target_value: The path target value to compare to.
         :type target_value: bool, date, datetime, dict, float, int, list, str, none_type, optional
         """
+        if json_path is not unset:
+            kwargs["json_path"] = json_path
+        if operator is not unset:
+            kwargs["operator"] = operator
+        if target_value is not unset:
+            kwargs["target_value"] = target_value
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsAssertionJSONPathTargetTarget, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

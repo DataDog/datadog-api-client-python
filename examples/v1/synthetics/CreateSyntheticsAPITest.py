@@ -27,13 +27,13 @@ body = SyntheticsAPITest(
     config=SyntheticsAPITestConfig(
         assertions=[
             SyntheticsAssertionTarget(
-                operator=SyntheticsAssertionOperator("lessThan"),
+                operator=SyntheticsAssertionOperator.LESS_THAN,
                 target=1000,
-                type=SyntheticsAssertionType("responseTime"),
+                type=SyntheticsAssertionType.RESPONSE_TIME,
             ),
         ],
         request=SyntheticsTestRequest(
-            method=HTTPMethod("GET"),
+            method=HTTPMethod.GET,
             url="https://example.com",
         ),
     ),
@@ -44,10 +44,10 @@ body = SyntheticsAPITest(
     name="Example test name",
     options=SyntheticsTestOptions(
         ci=SyntheticsTestCiOptions(
-            execution_rule=SyntheticsTestExecutionRule("blocking"),
+            execution_rule=SyntheticsTestExecutionRule.BLOCKING,
         ),
         device_ids=[
-            SyntheticsDeviceID("laptop_large"),
+            SyntheticsDeviceID.LAPTOP_LARGE,
         ],
         monitor_options=SyntheticsTestOptionsMonitorOptions(),
         restricted_roles=SyntheticsRestrictedRoles(
@@ -62,12 +62,12 @@ body = SyntheticsAPITest(
             is_enabled=True,
         ),
     ),
-    status=SyntheticsTestPauseStatus("live"),
-    subtype=SyntheticsTestDetailsSubType("http"),
+    status=SyntheticsTestPauseStatus.LIVE,
+    subtype=SyntheticsTestDetailsSubType.HTTP,
     tags=[
         "env:production",
     ],
-    type=SyntheticsAPITestType("api"),
+    type=SyntheticsAPITestType.API,
 )
 
 configuration = Configuration()

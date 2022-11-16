@@ -1,12 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.logs_exclusion import LogsExclusion
+    from datadog_api_client.v1.model.logs_filter import LogsFilter
 
 
 class LogsIndexUpdateRequest(ModelNormal):
@@ -31,7 +40,15 @@ class LogsIndexUpdateRequest(ModelNormal):
         "num_retention_days": "num_retention_days",
     }
 
-    def __init__(self, filter, *args, **kwargs):
+    def __init__(
+        self_,
+        filter: LogsFilter,
+        daily_limit: Union[int, UnsetType] = unset,
+        disable_daily_limit: Union[bool, UnsetType] = unset,
+        exclusion_filters: Union[List[LogsExclusion], UnsetType] = unset,
+        num_retention_days: Union[int, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Object for updating a Datadog Log index.
 
@@ -58,19 +75,14 @@ class LogsIndexUpdateRequest(ModelNormal):
             already in this index. It may also affect billing.
         :type num_retention_days: int, optional
         """
+        if daily_limit is not unset:
+            kwargs["daily_limit"] = daily_limit
+        if disable_daily_limit is not unset:
+            kwargs["disable_daily_limit"] = disable_daily_limit
+        if exclusion_filters is not unset:
+            kwargs["exclusion_filters"] = exclusion_filters
+        if num_retention_days is not unset:
+            kwargs["num_retention_days"] = num_retention_days
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.filter = filter
-
-    @classmethod
-    def _from_openapi_data(cls, filter, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsIndexUpdateRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.filter = filter
-        return self
+        self_.filter = filter

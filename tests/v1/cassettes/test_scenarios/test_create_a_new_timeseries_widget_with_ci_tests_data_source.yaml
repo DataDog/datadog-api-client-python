@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","reflow_type":"auto","title":"Test-Create_a_new_timeseries_widget_with_ci_tests_data_source-1661196676
+      with ci_tests datasource","widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"ci_tests","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"test_level:test"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"","type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"ykp-mnk-euu","title":"Test-Create_a_new_timeseries_widget_with_ci_tests_data_source-1661196676
+        with ci_tests datasource","url":"/dashboard/ykp-mnk-euu/test-createanewtimeserieswidgetwithcitestsdatasource-1661196676-with-citests-dat","created_at":"2022-08-22T19:31:16.421905+00:00","modified_at":"2022-08-22T19:31:16.421905+00:00","reflow_type":"auto","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"title":"","legend_layout":"auto","show_legend":true,"time":{},"requests":[{"formulas":[{"formula":"query1"}],"style":{"line_width":"normal","palette":"dog_classic","line_type":"solid"},"display_type":"line","response_format":"timeseries","queries":[{"search":{"query":"test_level:test"},"data_source":"ci_tests","compute":{"aggregation":"count"},"name":"query1","indexes":["*"],"group_by":[]}]}],"type":"timeseries"},"id":5710436152334347}],"layout_type":"ordered"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/ykp-mnk-euu
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"ykp-mnk-euu"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

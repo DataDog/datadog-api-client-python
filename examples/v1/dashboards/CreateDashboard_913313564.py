@@ -23,13 +23,13 @@ body = Dashboard(
                 height=12,
             ),
             definition=IFrameWidgetDefinition(
-                type=IFrameWidgetDefinitionType("iframe"),
+                type=IFrameWidgetDefinitionType.IFRAME,
                 url="https://docs.datadoghq.com/api/latest/",
             ),
         ),
     ],
     template_variables=[],
-    layout_type=DashboardLayoutType("free"),
+    layout_type=DashboardLayoutType.FREE,
     is_read_only=False,
     notify_list=[],
 )

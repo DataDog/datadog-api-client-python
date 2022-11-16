@@ -26,8 +26,8 @@ body = Dashboard(
             definition=ServiceMapWidgetDefinition(
                 title="",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
-                type=ServiceMapWidgetDefinitionType("servicemap"),
+                title_align=WidgetTextAlign.LEFT,
+                type=ServiceMapWidgetDefinitionType.SERVICEMAP,
                 service="",
                 filters=[
                     "env:none",
@@ -37,7 +37,7 @@ body = Dashboard(
         ),
     ],
     template_variables=[],
-    layout_type=DashboardLayoutType("free"),
+    layout_type=DashboardLayoutType.FREE,
     is_read_only=False,
     notify_list=[],
 )

@@ -1,12 +1,24 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_service_summary_display_format import WidgetServiceSummaryDisplayFormat
+    from datadog_api_client.v1.model.widget_size_format import WidgetSizeFormat
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.service_summary_widget_definition_type import ServiceSummaryWidgetDefinitionType
 
 
 class ServiceSummaryWidgetDefinition(ModelNormal):
@@ -58,7 +70,26 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, env, service, span_name, type, *args, **kwargs):
+    def __init__(
+        self_,
+        env: str,
+        service: str,
+        span_name: str,
+        type: ServiceSummaryWidgetDefinitionType,
+        display_format: Union[WidgetServiceSummaryDisplayFormat, UnsetType] = unset,
+        show_breakdown: Union[bool, UnsetType] = unset,
+        show_distribution: Union[bool, UnsetType] = unset,
+        show_errors: Union[bool, UnsetType] = unset,
+        show_hits: Union[bool, UnsetType] = unset,
+        show_latency: Union[bool, UnsetType] = unset,
+        show_resource_list: Union[bool, UnsetType] = unset,
+        size_format: Union[WidgetSizeFormat, UnsetType] = unset,
+        time: Union[WidgetTime, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        title_align: Union[WidgetTextAlign, UnsetType] = unset,
+        title_size: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The service summary displays the graphs of a chosen service in your screenboard. Only available on FREE layout dashboards.
 
@@ -110,25 +141,33 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
         :param type: Type of the service summary widget.
         :type type: ServiceSummaryWidgetDefinitionType
         """
+        if display_format is not unset:
+            kwargs["display_format"] = display_format
+        if show_breakdown is not unset:
+            kwargs["show_breakdown"] = show_breakdown
+        if show_distribution is not unset:
+            kwargs["show_distribution"] = show_distribution
+        if show_errors is not unset:
+            kwargs["show_errors"] = show_errors
+        if show_hits is not unset:
+            kwargs["show_hits"] = show_hits
+        if show_latency is not unset:
+            kwargs["show_latency"] = show_latency
+        if show_resource_list is not unset:
+            kwargs["show_resource_list"] = show_resource_list
+        if size_format is not unset:
+            kwargs["size_format"] = size_format
+        if time is not unset:
+            kwargs["time"] = time
+        if title is not unset:
+            kwargs["title"] = title
+        if title_align is not unset:
+            kwargs["title_align"] = title_align
+        if title_size is not unset:
+            kwargs["title_size"] = title_size
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.env = env
-        self.service = service
-        self.span_name = span_name
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, env, service, span_name, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(ServiceSummaryWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.env = env
-        self.service = service
-        self.span_name = span_name
-        self.type = type
-        return self
+        self_.env = env
+        self_.service = service
+        self_.span_name = span_name
+        self_.type = type

@@ -1,0 +1,575 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/signals/AQAAAYNqUBVU4-rffwAAAABBWU5xVUJWVUFBQjJBd3ptMDdQUnF3QUE
+  response:
+    body:
+      string: '{"data":{"attributes":{"discovery_timestamp":1663935976788,"searchable":{"title":"Generate
+        a fake Signal"},"triggering_log_timestamp":"2022-09-23T12:26:16.788Z","groupByValuesHash":"0e2-32k-1pb-1-AYNqUBVUAAB7Q6xMp4yBGgAF","reducer_signal_id":"0e2-32k-1pb-1-AYNqUBVUAAB7Q6xMp4yBGgAF","tag":{"source":"python","env":"pcf-tealblue","instance-id":"6161818930815280887"},"discovery_hour":462204,"gated":{"network":{"ip":{"list":["8.8.8.8","10.0.4.8","127.0.0.1"]}},"workflow":{"events_matched":200,"rule":{"isDefaultRule":false,"defaultRuleVersion":0,"defaultRuleId":null},"high_cardinality":{"attributes":["@trace_id"],"tags":[]},"first_seen":"2022-09-23T12:26:13.000Z","triage":{"assignee":{"id":-1},"incidentIds":[]},"last_seen":"2022-09-23T12:26:41.000Z"},"triggeringRuleCase":{"status":"info","notifications":[],"name":"","condition":"a>0"},"relatedQuery":{"from":1663935673000,"track":"logs","viewParameters":{"integration_id":"security_monitoring","integration_short_name":"security_investigation"},"to":1663936301000,"queries":{"a":"(source:python)
+        ((*) OR (service:api -(source:staging)) OR (acceptance rule triggered -(does
+        not really match much) -(neither does it)) OR (ayayay query -(does not really
+        match much) -(neither does it)) OR (service:TestUpdateasecurityfilterreturnsOKresponse1631884327
+        -(source:staging)) OR (service:TestDeleteasecurityfilterreturnsNoContentresponse1631884338
+        -(source:staging)) OR (service:TestGetasecurityfilterreturnsOKresponse1631884338
+        -(source:staging)) OR (service:TestDeleteasecurityfilterreturnsNoContentresponse1631884454
+        -(source:staging)) OR (service:TestUpdateasecurityfilterreturnsOKresponse1631884464
+        -(source:staging)) OR (service:TestGetasecurityfilterreturnsOKresponse1631884465
+        -(source:staging)) OR (service:TestDeleteasecurityfilterreturnsNoContentresponse1631884670
+        -(source:staging)) OR (service:TestUpdateasecurityfilterreturnsOKresponse1631884674
+        -(source:staging)) OR (service:TestGetasecurityfilterreturnsOKresponse1631884674
+        -(source:staging)) OR (service:TestGetasecurityfilterreturnsOKresponse1631884714
+        -(source:staging)) OR (service:TestDeleteasecurityfilterreturnsNoContentresponse1631884715
+        -(source:staging)) OR (service:TestUpdateasecurityfilterreturnsOKresponse1631884725
+        -(source:staging)) OR (service:TestPythonDeleteasecurityfilterreturnsNoContentresponse1631886017
+        -(source:staging)) OR (service:TestPythonGetasecurityfilterreturnsOKresponse1631886029
+        -(source:staging)) OR (service:TestPythonUpdateasecurityfilterreturnsOKresponse1631886034
+        -(source:staging)) OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632817310
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632817310
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632817311)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632820231
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632820231
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632820232)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632820436
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632820437
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632820438)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632821203
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632821205
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632821205)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632821494
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632821495
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632821495)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632824855
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632824856
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632824857)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632826434
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632826436
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632826436)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632827408
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632827409
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632827410)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632828993
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632828993
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632828994)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632832892
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632832892
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632832893)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632833158
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632833159
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632833159)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632836449
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632836451
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632836452)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632839530
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632839530
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632839530)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632839555
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632839556
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632839557)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632839754
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632839755
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632839755)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632841163
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632841164
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632841165)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632842479
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632842482
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632842482)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632843068
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632843069
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632843069)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632844019
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632844020
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632844021)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632844135
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632844135
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632844135)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632846637
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632846638
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632846639)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632847599
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632847600
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632847601)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632848092
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632848094
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632848095)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632848450
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632848451
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632848451)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632848885
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632848885
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632848886)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632849681
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632849683
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632849684)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632849896
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632849897
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632849898)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632851126
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632851127
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632851128)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632888517
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632888518
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632888518)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632898979
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632898980
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632898980)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632899193
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632899194
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632899194)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632902893
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632902894
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632902894)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632903483
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632903484
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632903485)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632904028
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632904028
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632904029)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632907319
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632907320
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632907320)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632907341
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632907342
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632907342)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632908400
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632908401
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632908402)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632909893
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632909895
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632909896)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632910740
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632910741
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632910742)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632913811
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632913813
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632913814)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632918181
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632918181
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632918182)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632919352
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632919352
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632919353)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632919567
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632919568
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632919568)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632921868
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632921868
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632921869)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632922202
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632922203
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632922203)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632928250
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632928250
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632928251)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632933845
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632933846
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632933847)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632974965
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632974966
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632974966)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632986086
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632986087
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632986087)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632989757
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632989758
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632989758)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632997311
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632997312
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632997312)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633000142
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633000144
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633000145)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633003795
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633003796
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633003797)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633004068
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633004069
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633004069)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633006704
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633006704
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633006705)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633007542
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633007542
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633007543)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633011104
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633011105
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633011105)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633011244
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633011246
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633011247)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633015449
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633015451
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633015452)
+        OR (service:TestRubyGetasecurityfilterreturnsOKresponse1634150224 -(source:staging))
+        OR (service:TestPythonGetasecurityfilterreturnsOKresponse1635496812 -(source:staging))
+        OR (service:TestGoGetasecurityfilterreturnsOKresponse1636410254 -(source:staging))
+        OR (service:TestCreateasecurityfilterreturnsOKresponse1637063344 -(source:staging))
+        OR (service:TestGetasecurityfilterreturnsOKresponse1637063346 -(source:staging))
+        OR (service:TestUpdateasecurityfilterreturnsOKresponse1637063347) OR (service:TestCreateasecurityfilterreturnsOKresponse1637070528
+        -(source:staging)) OR (service:TestGetasecurityfilterreturnsOKresponse1637070533
+        -(source:staging)) OR (service:TestUpdateasecurityfilterreturnsOKresponse1637070535)
+        OR (service:TestCreateasecurityfilterreturnsOKresponse1637077967 -(source:staging))
+        OR (service:TestGetasecurityfilterreturnsOKresponse1637077969 -(source:staging))
+        OR (service:TestUpdateasecurityfilterreturnsOKresponse1637077970) OR (service:TestCreateasecurityfilterreturnsOKresponse1637078478
+        -(source:staging)) OR (service:TestGetasecurityfilterreturnsOKresponse1637078481
+        -(source:staging)) OR (service:TestUpdateasecurityfilterreturnsOKresponse1637078482)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1637089241
+        -(source:staging)) OR (service:TestGetasecurityfilterreturnsOKresponse1620751633
+        -(source:staging)) OR (service:TestUpdateasecurityfilterreturnsOKresponse1620751634)
+        OR (service:TestCreateasecurityfilterreturnsOKresponse1637141213 -(source:staging))
+        OR (service:TestGetasecurityfilterreturnsOKresponse1637141215 -(source:staging))
+        OR (service:TestUpdateasecurityfilterreturnsOKresponse1637141217) OR (service:TestRubyGetasecurityfilterreturnsOKresponse1637834808
+        -(source:staging)) OR (service:TestPythonGetasecurityfilterreturnsOKresponse1638987050
+        -(source:staging)) OR (service:TestPythonDeleteasecurityfilterreturnsNoContentresponse1638987054
+        -(source:staging)) OR (service:TestPythonUpdateasecurityfilterreturnsOKresponse1638987055
+        -(source:staging)) OR (service:TestPythonCreateasecurityfilterreturnsOKresponse1638987057
+        -(source:staging)) OR (service:TestPythonDeleteasecurityfilterreturnsNoContentresponse1639574360
+        -(source:staging)) OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1640111630
+        -(source:staging)) OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1640112776
+        -(source:staging)) OR (service:TestCreateasecurityfilterreturnsOKresponse1640112926
+        -(source:staging)) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1641598933
+        -(source:staging)) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1642578134
+        -(source:staging)) OR (service:TestExampleGetasecurityfilterreturnsOKresponse1642733138
+        -(source:staging)) OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1642756664
+        -(source:staging)) OR (service:TestTypescriptDeleteasecurityfilterreturnsNoContentresponse1642756664
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1642756664
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1642756664
+        -(source:staging)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1643209589)
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1643950965) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1644339764
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1644382966
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1644656566
+        -(source:staging)) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1644685366
+        -(source:staging)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1645102964)
+        OR (service:ExampleGetasecurityfilterreturnsOKresponse1645131764 -(source:staging))
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1645534965) OR (service:ExampleGetasecurityfilterreturnsOKresponse1645664565
+        -(source:staging)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1647162167)
+        OR (service:ExampleCreateasecurityfilterreturnsOKresponse1647651765 -(source:staging))
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1647954164) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1648170165
+        -(source:staging)) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1648270965
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1648314166
+        -(source:staging)) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1648501364
+        -(source:staging)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1648501364)
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1648587764) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1648818166
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1648832565
+        -(source:staging)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1648990964)
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1649120564) OR (service:ExampleGetasecurityfilterreturnsOKresponse1649192564
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1649667764
+        -(source:staging)) OR (service:TestDeleteasecurityfilterreturnsNoContentresponse1649928918
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1650243764
+        -(source:staging)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1650358964)
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1650531764) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1651410164)
+        OR (service:ExampleGetasecurityfilterreturnsOKresponse1651597364 -(source:staging))
+        OR (service:ExampleGetasecurityfilterreturnsOKresponse1651654964 -(source:staging))
+        OR (service:TestTypescriptDeleteasecurityfilterreturnsNoContentresponse1651867320
+        -(source:staging)) OR (service:TestTypescriptDeleteasecurityfilterreturnsNoContentresponse1651912576
+        -(source:staging)) OR (service:TestTypescriptDeleteasecurityfilterreturnsNoContentresponse1651915972
+        -(source:staging)) OR (service:TestTypescriptDeleteasecurityfilterreturnsNoContentresponse1651943585
+        -(source:staging)) OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1651997988
+        -(source:staging)) OR (service:TestTypescriptDeleteasecurityfilterreturnsNoContentresponse1651997988
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1651997989
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1651997990)
+        OR (service:TestTypescriptDeleteasecurityfilterreturnsNoContentresponse1652008989
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1656001148
+        -(source:staging)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1656001148)
+        OR (service:ExampleCreateasecurityfilterreturnsOKresponse1656001150 -(source:staging))
+        OR (service:ExampleGetasecurityfilterreturnsOKresponse1657253948 -(source:staging))
+        OR (service:ExampleGetasecurityfilterreturnsOKresponse1657469948 -(source:staging))
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1657599548) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1657887548)
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1658175548) OR (first
+        query -(does not really match much) -(neither does it)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1658636349)
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1658909949) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1659140350
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1660119548
+        -(source:staging)))"},"query":"(source:python) ((*) OR (service:api -(source:staging))
+        OR (acceptance rule triggered -(does not really match much) -(neither does
+        it)) OR (ayayay query -(does not really match much) -(neither does it)) OR
+        (service:TestUpdateasecurityfilterreturnsOKresponse1631884327 -(source:staging))
+        OR (service:TestDeleteasecurityfilterreturnsNoContentresponse1631884338 -(source:staging))
+        OR (service:TestGetasecurityfilterreturnsOKresponse1631884338 -(source:staging))
+        OR (service:TestDeleteasecurityfilterreturnsNoContentresponse1631884454 -(source:staging))
+        OR (service:TestUpdateasecurityfilterreturnsOKresponse1631884464 -(source:staging))
+        OR (service:TestGetasecurityfilterreturnsOKresponse1631884465 -(source:staging))
+        OR (service:TestDeleteasecurityfilterreturnsNoContentresponse1631884670 -(source:staging))
+        OR (service:TestUpdateasecurityfilterreturnsOKresponse1631884674 -(source:staging))
+        OR (service:TestGetasecurityfilterreturnsOKresponse1631884674 -(source:staging))
+        OR (service:TestGetasecurityfilterreturnsOKresponse1631884714 -(source:staging))
+        OR (service:TestDeleteasecurityfilterreturnsNoContentresponse1631884715 -(source:staging))
+        OR (service:TestUpdateasecurityfilterreturnsOKresponse1631884725 -(source:staging))
+        OR (service:TestPythonDeleteasecurityfilterreturnsNoContentresponse1631886017
+        -(source:staging)) OR (service:TestPythonGetasecurityfilterreturnsOKresponse1631886029
+        -(source:staging)) OR (service:TestPythonUpdateasecurityfilterreturnsOKresponse1631886034
+        -(source:staging)) OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632817310
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632817310
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632817311)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632820231
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632820231
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632820232)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632820436
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632820437
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632820438)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632821203
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632821205
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632821205)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632821494
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632821495
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632821495)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632824855
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632824856
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632824857)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632826434
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632826436
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632826436)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632827408
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632827409
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632827410)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632828993
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632828993
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632828994)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632832892
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632832892
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632832893)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632833158
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632833159
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632833159)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632836449
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632836451
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632836452)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632839530
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632839530
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632839530)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632839555
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632839556
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632839557)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632839754
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632839755
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632839755)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632841163
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632841164
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632841165)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632842479
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632842482
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632842482)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632843068
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632843069
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632843069)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632844019
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632844020
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632844021)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632844135
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632844135
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632844135)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632846637
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632846638
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632846639)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632847599
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632847600
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632847601)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632848092
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632848094
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632848095)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632848450
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632848451
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632848451)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632848885
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632848885
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632848886)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632849681
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632849683
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632849684)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632849896
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632849897
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632849898)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632851126
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632851127
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632851128)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632888517
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632888518
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632888518)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632898979
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632898980
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632898980)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632899193
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632899194
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632899194)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632902893
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632902894
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632902894)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632903483
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632903484
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632903485)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632904028
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632904028
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632904029)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632907319
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632907320
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632907320)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632907341
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632907342
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632907342)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632908400
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632908401
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632908402)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632909893
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632909895
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632909896)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632910740
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632910741
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632910742)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632913811
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632913813
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632913814)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632918181
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632918181
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632918182)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632919352
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632919352
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632919353)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632919567
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632919568
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632919568)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632921868
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632921868
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632921869)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632922202
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632922203
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632922203)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632928250
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632928250
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632928251)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632933845
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632933846
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632933847)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632974965
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632974966
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632974966)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632986086
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632986087
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632986087)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632989757
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632989758
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632989758)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1632997311
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1632997312
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1632997312)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633000142
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633000144
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633000145)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633003795
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633003796
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633003797)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633004068
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633004069
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633004069)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633006704
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633006704
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633006705)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633007542
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633007542
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633007543)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633011104
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633011105
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633011105)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633011244
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633011246
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633011247)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1633015449
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1633015451
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1633015452)
+        OR (service:TestRubyGetasecurityfilterreturnsOKresponse1634150224 -(source:staging))
+        OR (service:TestPythonGetasecurityfilterreturnsOKresponse1635496812 -(source:staging))
+        OR (service:TestGoGetasecurityfilterreturnsOKresponse1636410254 -(source:staging))
+        OR (service:TestCreateasecurityfilterreturnsOKresponse1637063344 -(source:staging))
+        OR (service:TestGetasecurityfilterreturnsOKresponse1637063346 -(source:staging))
+        OR (service:TestUpdateasecurityfilterreturnsOKresponse1637063347) OR (service:TestCreateasecurityfilterreturnsOKresponse1637070528
+        -(source:staging)) OR (service:TestGetasecurityfilterreturnsOKresponse1637070533
+        -(source:staging)) OR (service:TestUpdateasecurityfilterreturnsOKresponse1637070535)
+        OR (service:TestCreateasecurityfilterreturnsOKresponse1637077967 -(source:staging))
+        OR (service:TestGetasecurityfilterreturnsOKresponse1637077969 -(source:staging))
+        OR (service:TestUpdateasecurityfilterreturnsOKresponse1637077970) OR (service:TestCreateasecurityfilterreturnsOKresponse1637078478
+        -(source:staging)) OR (service:TestGetasecurityfilterreturnsOKresponse1637078481
+        -(source:staging)) OR (service:TestUpdateasecurityfilterreturnsOKresponse1637078482)
+        OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1637089241
+        -(source:staging)) OR (service:TestGetasecurityfilterreturnsOKresponse1620751633
+        -(source:staging)) OR (service:TestUpdateasecurityfilterreturnsOKresponse1620751634)
+        OR (service:TestCreateasecurityfilterreturnsOKresponse1637141213 -(source:staging))
+        OR (service:TestGetasecurityfilterreturnsOKresponse1637141215 -(source:staging))
+        OR (service:TestUpdateasecurityfilterreturnsOKresponse1637141217) OR (service:TestRubyGetasecurityfilterreturnsOKresponse1637834808
+        -(source:staging)) OR (service:TestPythonGetasecurityfilterreturnsOKresponse1638987050
+        -(source:staging)) OR (service:TestPythonDeleteasecurityfilterreturnsNoContentresponse1638987054
+        -(source:staging)) OR (service:TestPythonUpdateasecurityfilterreturnsOKresponse1638987055
+        -(source:staging)) OR (service:TestPythonCreateasecurityfilterreturnsOKresponse1638987057
+        -(source:staging)) OR (service:TestPythonDeleteasecurityfilterreturnsNoContentresponse1639574360
+        -(source:staging)) OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1640111630
+        -(source:staging)) OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1640112776
+        -(source:staging)) OR (service:TestCreateasecurityfilterreturnsOKresponse1640112926
+        -(source:staging)) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1641598933
+        -(source:staging)) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1642578134
+        -(source:staging)) OR (service:TestExampleGetasecurityfilterreturnsOKresponse1642733138
+        -(source:staging)) OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1642756664
+        -(source:staging)) OR (service:TestTypescriptDeleteasecurityfilterreturnsNoContentresponse1642756664
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1642756664
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1642756664
+        -(source:staging)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1643209589)
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1643950965) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1644339764
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1644382966
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1644656566
+        -(source:staging)) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1644685366
+        -(source:staging)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1645102964)
+        OR (service:ExampleGetasecurityfilterreturnsOKresponse1645131764 -(source:staging))
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1645534965) OR (service:ExampleGetasecurityfilterreturnsOKresponse1645664565
+        -(source:staging)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1647162167)
+        OR (service:ExampleCreateasecurityfilterreturnsOKresponse1647651765 -(source:staging))
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1647954164) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1648170165
+        -(source:staging)) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1648270965
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1648314166
+        -(source:staging)) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1648501364
+        -(source:staging)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1648501364)
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1648587764) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1648818166
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1648832565
+        -(source:staging)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1648990964)
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1649120564) OR (service:ExampleGetasecurityfilterreturnsOKresponse1649192564
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1649667764
+        -(source:staging)) OR (service:TestDeleteasecurityfilterreturnsNoContentresponse1649928918
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1650243764
+        -(source:staging)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1650358964)
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1650531764) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1651410164)
+        OR (service:ExampleGetasecurityfilterreturnsOKresponse1651597364 -(source:staging))
+        OR (service:ExampleGetasecurityfilterreturnsOKresponse1651654964 -(source:staging))
+        OR (service:TestTypescriptDeleteasecurityfilterreturnsNoContentresponse1651867320
+        -(source:staging)) OR (service:TestTypescriptDeleteasecurityfilterreturnsNoContentresponse1651912576
+        -(source:staging)) OR (service:TestTypescriptDeleteasecurityfilterreturnsNoContentresponse1651915972
+        -(source:staging)) OR (service:TestTypescriptDeleteasecurityfilterreturnsNoContentresponse1651943585
+        -(source:staging)) OR (service:TestTypescriptCreateasecurityfilterreturnsOKresponse1651997988
+        -(source:staging)) OR (service:TestTypescriptDeleteasecurityfilterreturnsNoContentresponse1651997988
+        -(source:staging)) OR (service:TestTypescriptGetasecurityfilterreturnsOKresponse1651997989
+        -(source:staging)) OR (service:TestTypescriptUpdateasecurityfilterreturnsOKresponse1651997990)
+        OR (service:TestTypescriptDeleteasecurityfilterreturnsNoContentresponse1652008989
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1656001148
+        -(source:staging)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1656001148)
+        OR (service:ExampleCreateasecurityfilterreturnsOKresponse1656001150 -(source:staging))
+        OR (service:ExampleGetasecurityfilterreturnsOKresponse1657253948 -(source:staging))
+        OR (service:ExampleGetasecurityfilterreturnsOKresponse1657469948 -(source:staging))
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1657599548) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1657887548)
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1658175548) OR (first
+        query -(does not really match much) -(neither does it)) OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1658636349)
+        OR (service:ExampleUpdateasecurityfilterreturnsOKresponse1658909949) OR (service:ExampleCreateasecurityfilterreturnsOKresponse1659140350
+        -(source:staging)) OR (service:ExampleGetasecurityfilterreturnsOKresponse1660119548
+        -(source:staging)))"},"samples":[{"eventId":"AQAAAYNqUHKuyVb_mQAAAABBWU5xVUhrY0FBQUVSQy1nN2N2S1VBQUg","content":{"status":"info","service":"python-sample-app-tealblue","tags":["application_name:python-sample-app-tealblue","application_id:dc251c1e-8302-4a43-abdf-ceebb92ca65d","service:python-sample-app-tealblue","cf_instance_ip:10.0.4.8","foo:bar_test:value_tag1:value1_tag2:value2_teeeeeeest:compuuuuuuuuuuute","container_id:0b163cd0-865c-4c88-4154-f690","instance_index:3","uri:python-sample-app-tealblue.apps.tealblue.cf-app.com","source:python","space_name:space-1","bosh_address:10.0.4.8","bosh_az:us-central1-f","bosh_deployment:cf-1d7968619a3587a78a93","bosh_id:c190d27b-0292-44b8-b094-84ff511768ba","bosh_index:0","bosh_ip:10.0.4.8","bosh_job:compute","bosh_name:compute","cf-1d7968619a3587a78a93","cf-1d7968619a3587a78a93-compute","cloudfoundry","compute","created_at:2022-09-19t07:20:02z","deployment:cf-1d7968619a3587a78a93","director:p-bosh","id:c190d27b-0292-44b8-b094-84ff511768ba","index:0","index:c190d27b-0292-44b8-b094-84ff511768ba","instance-id:6161818930815280887","instance-type:n1-highmem-2","instance_group:compute","internal-hostname:vm-92e16ba4-36a5-43d2-5e94-f14239018e5c.c.cf-security-triage-dist-secur.internal","ip:10.0.4.8","job:compute","name:compute/c190d27b-0292-44b8-b094-84ff511768ba","numeric_project_id:734559154119","p-bosh","p-bosh-cf-1d7968619a3587a78a93","p-bosh-cf-1d7968619a3587a78a93-compute","pcf-tealblue","project:cf-security-triage-dist-secur","user_data:_server_:_name_:_vm-92e16ba4-36a5-43d2-5e94-f14239018e5c_registry_:_endpoint_:_://:_:0_dns_:_nameserver_:_8.8.8.8","zone:us-central1-f","env:pcf-tealblue","version:1.0.0"],"timestamp":"2022-09-23T12:26:40.686Z","ingest_size_in_bytes":729,"trace_id":"0","custom":{"network":{"ip":{"list":["8.8.8.8","10.0.4.8","127.0.0.1"]}},"process":{"name":"werkzeug"},"timestamp":1663936000686,"dd":{"service":"python-sample-app-tealblue","span_id":"0"},"filename":"_internal.py","lineno":224.0,"levelname":"INFO"},"source":"python","host":"compute-0-c190d27b-0292-44b8-b094-84ff511768ba","tiebreaker":-917045351,"host_id":8616828918,"message":"2022-09-23
+        12:26:40,686 INFO [werkzeug] [_internal.py:224] [dd.service=python-sample-app-tealblue
+        dd.env=pcf-tealblue dd.version=1.0.0 dd.trace_id=0 dd.span_id=0] - 127.0.0.1
+        - - [23/Sep/2022 12:26:40] \"GET / HTTP/1.1\" 200 -"},"queryIndex":0,"trackKey":{"orgId":321813,"type":"logs"},"id":"AYNqUHkcAAAERC-g7cvKUAAH"}],"queries":[{"distinctFields":[],"aggregationDetails":{"eventsCount":200,"distinctValues":[],"value":200.0},"name":"","metric":null,"aggregation":"count","query":"source:python","groupByPaths":[]}]},"message":"%%%\nGenerate
+        a fake Signal\n%%%","event_tracker_id":"AQAAAYNqUBVU4-rffwAAAABBWU5xVUJWVUFBQjJBd3ptMDdQUnF3QUE","severity":0,"service":["python-sample-app-tealblue"],"event_id":"AYNqUBVUAAB2Awzm07PRqwAA","custom":{"entities":["@network.ip.list:8.8.8.8","@network.ip.list:10.0.4.8","@network.ip.list:127.0.0.1","host:compute-0-c190d27b-0292-44b8-b094-84ff511768ba"],"title":"Generate
+        a fake Signal","workflow":{"triage":{"assignee":{"name":"Unassigned"},"state":"open"},"rule":{"detectionMethod":"threshold","version":1,"type":"Log
+        Detection","name":"Generate a fake Signal","id":"0e2-32k-1pb"}}},"version":53,"size_in_bytes":0,"status":"info","tags":["application_id:dc251c1e-8302-4a43-abdf-ceebb92ca65d","ip:10.0.4.8","container_id:efdf8d23-8c83-42f6-6d01-7a0a","source:python","container_id:0bb93650-07b3-4aad-5ad6-6265","id:c190d27b-0292-44b8-b094-84ff511768ba","numeric_project_id:734559154119","bosh_deployment:cf-1d7968619a3587a78a93","job:compute","bosh_id:c190d27b-0292-44b8-b094-84ff511768ba","bosh_az:us-central1-f","foo:bar_test:value_tag1:value1_tag2:value2_teeeeeeest:compuuuuuuuuuuute","instance_index:3","user_data:_server_:_name_:_vm-92e16ba4-36a5-43d2-5e94-f14239018e5c_registry_:_endpoint_:_://:_:0_dns_:_nameserver_:_8.8.8.8","uri:python-sample-app-tealblue.apps.tealblue.cf-app.com","instance_index:2","index:0","name:compute/c190d27b-0292-44b8-b094-84ff511768ba","application_name:python-sample-app-tealblue","version:1.0.0","created_at:2022-09-19t07:20:02z","index:c190d27b-0292-44b8-b094-84ff511768ba","bosh_address:10.0.4.8","instance_index:1","service:python-sample-app-tealblue","instance_index:0","deployment:cf-1d7968619a3587a78a93","instance-id:6161818930815280887","env:pcf-tealblue","instance-type:n1-highmem-2","zone:us-central1-f","internal-hostname:vm-92e16ba4-36a5-43d2-5e94-f14239018e5c.c.cf-security-triage-dist-secur.internal","bosh_index:0","bosh_job:compute","bosh_ip:10.0.4.8","project:cf-security-triage-dist-secur","bosh_name:compute","cf_instance_ip:10.0.4.8","director:p-bosh","container_id:0b163cd0-865c-4c88-4154-f690","space_name:space-1","instance_group:compute","container_id:bd53178f-e250-443a-6b13-191e"],"timestamp":"2022-09-23T12:26:16.788Z","datadog.index":"signal","host":"compute-0-c190d27b-0292-44b8-b094-84ff511768ba","random_draw":0.6713430866837291,"tiebreaker":-471146625},"type":"signal","id":"AQAAAYNqUBVU4-rffwAAAABBWU5xVUJWVUFBQjJBd3ptMDdQUnF3QUE"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

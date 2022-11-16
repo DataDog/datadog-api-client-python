@@ -1,12 +1,16 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
 
 
@@ -25,7 +29,13 @@ class UsageTopAvgMetricsPagination(ModelNormal):
         "total_number_of_records": "total_number_of_records",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        limit: Union[int, UnsetType] = unset,
+        next_record_id: Union[str, none_type, UnsetType] = unset,
+        total_number_of_records: Union[int, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The metadata for the current pagination.
 
@@ -38,16 +48,10 @@ class UsageTopAvgMetricsPagination(ModelNormal):
         :param total_number_of_records: Total number of records.
         :type total_number_of_records: int, optional
         """
+        if limit is not unset:
+            kwargs["limit"] = limit
+        if next_record_id is not unset:
+            kwargs["next_record_id"] = next_record_id
+        if total_number_of_records is not unset:
+            kwargs["total_number_of_records"] = total_number_of_records
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(UsageTopAvgMetricsPagination, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

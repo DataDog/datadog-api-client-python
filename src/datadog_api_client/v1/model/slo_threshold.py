@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
 
 
 class SLOThreshold(ModelNormal):
@@ -30,7 +38,15 @@ class SLOThreshold(ModelNormal):
         "warning_display": "warning_display",
     }
 
-    def __init__(self, target, timeframe, *args, **kwargs):
+    def __init__(
+        self_,
+        target: float,
+        timeframe: SLOTimeframe,
+        target_display: Union[str, UnsetType] = unset,
+        warning: Union[float, UnsetType] = unset,
+        warning_display: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         SLO thresholds (target and optionally warning) for a single time window.
 
@@ -58,21 +74,13 @@ class SLOThreshold(ModelNormal):
             Ignored in create/update requests.
         :type warning_display: str, optional
         """
+        if target_display is not unset:
+            kwargs["target_display"] = target_display
+        if warning is not unset:
+            kwargs["warning"] = warning
+        if warning_display is not unset:
+            kwargs["warning_display"] = warning_display
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.target = target
-        self.timeframe = timeframe
-
-    @classmethod
-    def _from_openapi_data(cls, target, timeframe, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SLOThreshold, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.target = target
-        self.timeframe = timeframe
-        return self
+        self_.target = target
+        self_.timeframe = timeframe

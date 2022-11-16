@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.dashboard_list_item import DashboardListItem
 
 
 class DashboardListItems(ModelNormal):
@@ -27,7 +35,7 @@ class DashboardListItems(ModelNormal):
         "total",
     }
 
-    def __init__(self, dashboards, *args, **kwargs):
+    def __init__(self_, dashboards: List[DashboardListItem], total: Union[int, UnsetType] = unset, **kwargs):
         """
         Dashboards within a list.
 
@@ -37,19 +45,8 @@ class DashboardListItems(ModelNormal):
         :param total: Number of dashboards in the dashboard list.
         :type total: int, optional
         """
+        if total is not unset:
+            kwargs["total"] = total
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.dashboards = dashboards
-
-    @classmethod
-    def _from_openapi_data(cls, dashboards, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(DashboardListItems, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.dashboards = dashboards
-        return self
+        self_.dashboards = dashboards

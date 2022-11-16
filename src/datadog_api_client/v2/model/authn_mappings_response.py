@@ -1,12 +1,24 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.authn_mapping import AuthNMapping
+    from datadog_api_client.v2.model.authn_mapping_included import AuthNMappingIncluded
+    from datadog_api_client.v2.model.response_meta_attributes import ResponseMetaAttributes
+    from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
+    from datadog_api_client.v2.model.role import Role
 
 
 class AuthNMappingsResponse(ModelNormal):
@@ -28,7 +40,13 @@ class AuthNMappingsResponse(ModelNormal):
         "meta": "meta",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        data: Union[List[AuthNMapping], UnsetType] = unset,
+        included: Union[List[Union[AuthNMappingIncluded, SAMLAssertionAttribute, Role]], UnsetType] = unset,
+        meta: Union[ResponseMetaAttributes, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Array of AuthN Mappings response.
 
@@ -41,16 +59,10 @@ class AuthNMappingsResponse(ModelNormal):
         :param meta: Object describing meta attributes of response.
         :type meta: ResponseMetaAttributes, optional
         """
+        if data is not unset:
+            kwargs["data"] = data
+        if included is not unset:
+            kwargs["included"] = included
+        if meta is not unset:
+            kwargs["meta"] = meta
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(AuthNMappingsResponse, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

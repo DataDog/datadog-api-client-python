@@ -1,13 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_ssl_certificate_issuer import SyntheticsSSLCertificateIssuer
+    from datadog_api_client.v1.model.synthetics_ssl_certificate_subject import SyntheticsSSLCertificateSubject
 
 
 class SyntheticsSSLCertificate(ModelNormal):
@@ -46,7 +55,22 @@ class SyntheticsSSLCertificate(ModelNormal):
         "valid_to": "validTo",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        cipher: Union[str, UnsetType] = unset,
+        exponent: Union[float, UnsetType] = unset,
+        ext_key_usage: Union[List[str], UnsetType] = unset,
+        fingerprint: Union[str, UnsetType] = unset,
+        fingerprint256: Union[str, UnsetType] = unset,
+        issuer: Union[SyntheticsSSLCertificateIssuer, UnsetType] = unset,
+        modulus: Union[str, UnsetType] = unset,
+        protocol: Union[str, UnsetType] = unset,
+        serial_number: Union[str, UnsetType] = unset,
+        subject: Union[SyntheticsSSLCertificateSubject, UnsetType] = unset,
+        valid_from: Union[datetime, UnsetType] = unset,
+        valid_to: Union[datetime, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Object describing the SSL certificate used for a Synthetic test.
 
@@ -86,16 +110,28 @@ class SyntheticsSSLCertificate(ModelNormal):
         :param valid_to: Date until which the SSL certificate is valid.
         :type valid_to: datetime, optional
         """
+        if cipher is not unset:
+            kwargs["cipher"] = cipher
+        if exponent is not unset:
+            kwargs["exponent"] = exponent
+        if ext_key_usage is not unset:
+            kwargs["ext_key_usage"] = ext_key_usage
+        if fingerprint is not unset:
+            kwargs["fingerprint"] = fingerprint
+        if fingerprint256 is not unset:
+            kwargs["fingerprint256"] = fingerprint256
+        if issuer is not unset:
+            kwargs["issuer"] = issuer
+        if modulus is not unset:
+            kwargs["modulus"] = modulus
+        if protocol is not unset:
+            kwargs["protocol"] = protocol
+        if serial_number is not unset:
+            kwargs["serial_number"] = serial_number
+        if subject is not unset:
+            kwargs["subject"] = subject
+        if valid_from is not unset:
+            kwargs["valid_from"] = valid_from
+        if valid_to is not unset:
+            kwargs["valid_to"] = valid_to
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsSSLCertificate, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

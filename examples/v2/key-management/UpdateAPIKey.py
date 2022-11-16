@@ -15,7 +15,7 @@ API_KEY_DATA_ID = environ["API_KEY_DATA_ID"]
 
 body = APIKeyUpdateRequest(
     data=APIKeyUpdateData(
-        type=APIKeysType("api_keys"),
+        type=APIKeysType.API_KEYS,
         id=API_KEY_DATA_ID,
         attributes=APIKeyUpdateAttributes(
             name="Example-Edit_an_API_key_returns_OK_response",

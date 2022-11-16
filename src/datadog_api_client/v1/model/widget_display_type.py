@@ -1,12 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
     ModelSimple,
     cached_property,
 )
+
+from typing import ClassVar
 
 
 class WidgetDisplayType(ModelSimple):
@@ -18,15 +21,21 @@ class WidgetDisplayType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AREA": "area",
-            "BARS": "bars",
-            "LINE": "line",
-        },
+        "area",
+        "bars",
+        "line",
     }
+    AREA: ClassVar["WidgetDisplayType"]
+    BARS: ClassVar["WidgetDisplayType"]
+    LINE: ClassVar["WidgetDisplayType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetDisplayType.AREA = WidgetDisplayType("area")
+WidgetDisplayType.BARS = WidgetDisplayType("bars")
+WidgetDisplayType.LINE = WidgetDisplayType("line")

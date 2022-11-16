@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, List, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.model_utils import (
@@ -1346,7 +1347,7 @@ class UsageMeteringApi:
         sort_dir: Union[UsageSortDirection, UnsetType] = unset,
         sort: Union[UsageSort, UnsetType] = unset,
     ) -> UsageCustomReportsResponse:
-        """Get the list of available daily custom reports.
+        """Get the list of available daily custom reports. **Deprecated**.
 
         Get daily custom reports.
         **Note:** This endpoint will be fully deprecated on December 1, 2022.
@@ -1375,6 +1376,7 @@ class UsageMeteringApi:
         if sort is not unset:
             kwargs["sort"] = sort
 
+        warnings.warn("get_daily_custom_reports is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_hourly_usage_attribution(
@@ -1501,7 +1503,7 @@ class UsageMeteringApi:
         sort_dir: Union[UsageSortDirection, UnsetType] = unset,
         sort: Union[UsageSort, UnsetType] = unset,
     ) -> UsageCustomReportsResponse:
-        """Get the list of available monthly custom reports.
+        """Get the list of available monthly custom reports. **Deprecated**.
 
         Get monthly custom reports.
         **Note:** This endpoint will be fully deprecated on December 1, 2022.
@@ -1530,6 +1532,7 @@ class UsageMeteringApi:
         if sort is not unset:
             kwargs["sort"] = sort
 
+        warnings.warn("get_monthly_custom_reports is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_monthly_usage_attribution(
@@ -1612,7 +1615,7 @@ class UsageMeteringApi:
         self,
         report_id: str,
     ) -> UsageSpecifiedCustomReportsResponse:
-        """Get specified daily custom reports.
+        """Get specified daily custom reports. **Deprecated**.
 
         Get specified daily custom reports.
         **Note:** This endpoint will be fully deprecated on December 1, 2022.
@@ -1625,13 +1628,14 @@ class UsageMeteringApi:
         kwargs: Dict[str, Any] = {}
         kwargs["report_id"] = report_id
 
+        warnings.warn("get_specified_daily_custom_reports is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_specified_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_specified_monthly_custom_reports(
         self,
         report_id: str,
     ) -> UsageSpecifiedCustomReportsResponse:
-        """Get specified monthly custom reports.
+        """Get specified monthly custom reports. **Deprecated**.
 
         Get specified monthly custom reports.
         **Note:** This endpoint will be fully deprecated on December 1, 2022.
@@ -1644,6 +1648,7 @@ class UsageMeteringApi:
         kwargs: Dict[str, Any] = {}
         kwargs["report_id"] = report_id
 
+        warnings.warn("get_specified_monthly_custom_reports is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_specified_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_analyzed_logs(
@@ -1684,7 +1689,7 @@ class UsageMeteringApi:
         offset: Union[int, UnsetType] = unset,
         limit: Union[int, UnsetType] = unset,
     ) -> UsageAttributionResponse:
-        """Get usage attribution.
+        """Get usage attribution. **Deprecated**.
 
         Get usage attribution.
         **Note:** This endpoint will be fully deprecated on December 1, 2022.
@@ -1732,6 +1737,7 @@ class UsageMeteringApi:
         if limit is not unset:
             kwargs["limit"] = limit
 
+        warnings.warn("get_usage_attribution is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_attribution_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_audit_logs(
@@ -2308,9 +2314,9 @@ class UsageMeteringApi:
         end_month: Union[datetime, UnsetType] = unset,
         include_org_details: Union[bool, UnsetType] = unset,
     ) -> UsageSummaryResponse:
-        """Get usage across your multi-org account.
+        """Get usage across your account.
 
-        Get usage across your multi-org account. You must have the multi-org feature enabled.
+        Get all usage across your account.
 
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage beginning in this month.
             Maximum of 15 months ago.
@@ -2338,7 +2344,7 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageSyntheticsResponse:
-        """Get hourly usage for synthetics checks.
+        """Get hourly usage for synthetics checks. **Deprecated**.
 
         Get hourly usage for `synthetics checks <https://docs.datadoghq.com/synthetics/>`_.
         **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
@@ -2355,6 +2361,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_synthetics is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_synthetics_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_synthetics_api(

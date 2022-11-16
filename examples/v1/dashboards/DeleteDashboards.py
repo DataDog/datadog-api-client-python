@@ -18,7 +18,7 @@ body = DashboardBulkDeleteRequest(
         [
             DashboardBulkActionData(
                 id=DASHBOARD_ID,
-                type=DashboardResourceType("dashboard"),
+                type=DashboardResourceType.DASHBOARD,
             ),
         ]
     ),

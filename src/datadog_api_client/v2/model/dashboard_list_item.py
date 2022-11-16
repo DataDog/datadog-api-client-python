@@ -1,13 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.creator import Creator
+    from datadog_api_client.v2.model.dashboard_type import DashboardType
 
 
 class DashboardListItem(ModelNormal):
@@ -63,7 +72,22 @@ class DashboardListItem(ModelNormal):
         "url",
     }
 
-    def __init__(self, id, type, *args, **kwargs):
+    def __init__(
+        self_,
+        id: str,
+        type: DashboardType,
+        author: Union[Creator, UnsetType] = unset,
+        created: Union[datetime, UnsetType] = unset,
+        icon: Union[str, UnsetType] = unset,
+        is_favorite: Union[bool, UnsetType] = unset,
+        is_read_only: Union[bool, UnsetType] = unset,
+        is_shared: Union[bool, UnsetType] = unset,
+        modified: Union[datetime, UnsetType] = unset,
+        popularity: Union[int, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        url: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         A dashboard within a list.
 
@@ -103,21 +127,27 @@ class DashboardListItem(ModelNormal):
         :param url: URL path to the dashboard.
         :type url: str, optional
         """
+        if author is not unset:
+            kwargs["author"] = author
+        if created is not unset:
+            kwargs["created"] = created
+        if icon is not unset:
+            kwargs["icon"] = icon
+        if is_favorite is not unset:
+            kwargs["is_favorite"] = is_favorite
+        if is_read_only is not unset:
+            kwargs["is_read_only"] = is_read_only
+        if is_shared is not unset:
+            kwargs["is_shared"] = is_shared
+        if modified is not unset:
+            kwargs["modified"] = modified
+        if popularity is not unset:
+            kwargs["popularity"] = popularity
+        if title is not unset:
+            kwargs["title"] = title
+        if url is not unset:
+            kwargs["url"] = url
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.id = id
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, id, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(DashboardListItem, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.id = id
-        self.type = type
-        return self
+        self_.id = id
+        self_.type = type

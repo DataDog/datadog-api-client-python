@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.logs_lookup_processor_type import LogsLookupProcessorType
 
 
 class LogsLookupProcessor(ModelNormal):
@@ -34,7 +42,17 @@ class LogsLookupProcessor(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, lookup_table, source, target, type, *args, **kwargs):
+    def __init__(
+        self_,
+        lookup_table: List[str],
+        source: str,
+        target: str,
+        type: LogsLookupProcessorType,
+        default_lookup: Union[str, UnsetType] = unset,
+        is_enabled: Union[bool, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Use the Lookup Processor to define a mapping between a log attribute
         and a human readable value saved in the processors mapping table.
@@ -66,25 +84,15 @@ class LogsLookupProcessor(ModelNormal):
         :param type: Type of logs lookup processor.
         :type type: LogsLookupProcessorType
         """
+        if default_lookup is not unset:
+            kwargs["default_lookup"] = default_lookup
+        if is_enabled is not unset:
+            kwargs["is_enabled"] = is_enabled
+        if name is not unset:
+            kwargs["name"] = name
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.lookup_table = lookup_table
-        self.source = source
-        self.target = target
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, lookup_table, source, target, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsLookupProcessor, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.lookup_table = lookup_table
-        self.source = source
-        self.target = target
-        self.type = type
-        return self
+        self_.lookup_table = lookup_table
+        self_.source = source
+        self_.target = target
+        self_.type = type

@@ -15,10 +15,16 @@ from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAs
 from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
 from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
 from datadog_api_client.v1.model.synthetics_config_variable_type import SyntheticsConfigVariableType
+from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type import (
+    SyntheticsGlobalVariableParseTestOptionsType,
+)
+from datadog_api_client.v1.model.synthetics_global_variable_parser_type import SyntheticsGlobalVariableParserType
+from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
 from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
 from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
 from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
+from datadog_api_client.v1.model.synthetics_variable_parser import SyntheticsVariableParser
 
 body = SyntheticsAPITest(
     config=SyntheticsAPITestConfig(
@@ -27,7 +33,7 @@ body = SyntheticsAPITest(
                 example="content-type",
                 name="PROPERTY",
                 pattern="content-type",
-                type=SyntheticsConfigVariableType("text"),
+                type=SyntheticsConfigVariableType.TEXT,
             ),
         ],
         steps=[
@@ -35,15 +41,25 @@ body = SyntheticsAPITest(
                 allow_failure=True,
                 assertions=[
                     SyntheticsAssertionTarget(
-                        operator=SyntheticsAssertionOperator("is"),
-                        type=SyntheticsAssertionType("statusCode"),
+                        operator=SyntheticsAssertionOperator.IS,
+                        type=SyntheticsAssertionType.STATUS_CODE,
                         target=200,
+                    ),
+                ],
+                extracted_values=[
+                    SyntheticsParsingOptions(
+                        field="server",
+                        name="EXTRACTED_VALUE",
+                        parser=SyntheticsVariableParser(
+                            type=SyntheticsGlobalVariableParserType.RAW,
+                        ),
+                        type=SyntheticsGlobalVariableParseTestOptionsType.HTTP_HEADER,
                     ),
                 ],
                 is_critical=True,
                 name="request is sent",
                 request=SyntheticsTestRequest(
-                    method=HTTPMethod("GET"),
+                    method=HTTPMethod.GET,
                     timeout=10.0,
                     url="https://datadoghq.com",
                 ),
@@ -51,7 +67,7 @@ body = SyntheticsAPITest(
                     count=5,
                     interval=1000.0,
                 ),
-                subtype=SyntheticsAPIStepSubtype("http"),
+                subtype=SyntheticsAPIStepSubtype.HTTP,
             ),
         ],
     ),
@@ -74,11 +90,11 @@ body = SyntheticsAPITest(
         ),
         tick_every=60,
     ),
-    subtype=SyntheticsTestDetailsSubType("multi"),
+    subtype=SyntheticsTestDetailsSubType.MULTI,
     tags=[
         "testing:api",
     ],
-    type=SyntheticsAPITestType("api"),
+    type=SyntheticsAPITestType.API,
 )
 
 configuration = Configuration()

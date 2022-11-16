@@ -24,7 +24,7 @@ body = SecurityMonitoringSignalListRequest(
     page=SecurityMonitoringSignalListRequestPage(
         limit=2,
     ),
-    sort=SecurityMonitoringSignalsSort("timestamp"),
+    sort=SecurityMonitoringSignalsSort.TIMESTAMP_ASCENDING,
 )
 
 configuration = Configuration()

@@ -1,12 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
     ModelSimple,
     cached_property,
 )
+
+from typing import ClassVar
 
 
 class WidgetSizeFormat(ModelSimple):
@@ -18,15 +21,21 @@ class WidgetSizeFormat(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "SMALL": "small",
-            "MEDIUM": "medium",
-            "LARGE": "large",
-        },
+        "small",
+        "medium",
+        "large",
     }
+    SMALL: ClassVar["WidgetSizeFormat"]
+    MEDIUM: ClassVar["WidgetSizeFormat"]
+    LARGE: ClassVar["WidgetSizeFormat"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+WidgetSizeFormat.SMALL = WidgetSizeFormat("small")
+WidgetSizeFormat.MEDIUM = WidgetSizeFormat("medium")
+WidgetSizeFormat.LARGE = WidgetSizeFormat("large")

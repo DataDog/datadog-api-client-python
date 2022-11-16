@@ -1,12 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.organization_billing import OrganizationBilling
+    from datadog_api_client.v1.model.organization_subscription import OrganizationSubscription
 
 
 class OrganizationCreateBody(ModelNormal):
@@ -33,32 +42,29 @@ class OrganizationCreateBody(ModelNormal):
         "subscription": "subscription",
     }
 
-    def __init__(self, name, *args, **kwargs):
+    def __init__(
+        self_,
+        name: str,
+        billing: Union[OrganizationBilling, UnsetType] = unset,
+        subscription: Union[OrganizationSubscription, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Object describing an organization to create.
 
-        :param billing: A JSON array of billing type.
+        :param billing: A JSON array of billing type. **Deprecated**.
         :type billing: OrganizationBilling, optional
 
         :param name: The name of the new child-organization, limited to 32 characters.
         :type name: str
 
-        :param subscription: Subscription definition.
+        :param subscription: Subscription definition. **Deprecated**.
         :type subscription: OrganizationSubscription, optional
         """
+        if billing is not unset:
+            kwargs["billing"] = billing
+        if subscription is not unset:
+            kwargs["subscription"] = subscription
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.name = name
-
-    @classmethod
-    def _from_openapi_data(cls, name, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(OrganizationCreateBody, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.name = name
-        return self
+        self_.name = name

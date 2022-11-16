@@ -1,13 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.usage_attribution_tag_names import UsageAttributionTagNames
+    from datadog_api_client.v1.model.usage_attribution_values import UsageAttributionValues
 
 
 class UsageAttributionBody(ModelNormal):
@@ -36,7 +45,17 @@ class UsageAttributionBody(ModelNormal):
         "values": "values",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        month: Union[datetime, UnsetType] = unset,
+        org_name: Union[str, UnsetType] = unset,
+        public_id: Union[str, UnsetType] = unset,
+        tag_config_source: Union[str, UnsetType] = unset,
+        tags: Union[UsageAttributionTagNames, UnsetType] = unset,
+        updated_at: Union[str, UnsetType] = unset,
+        values: Union[UsageAttributionValues, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Usage Summary by tag for a given organization.
 
@@ -65,16 +84,18 @@ class UsageAttributionBody(ModelNormal):
         :param values: Fields in Usage Summary by tag(s).
         :type values: UsageAttributionValues, optional
         """
+        if month is not unset:
+            kwargs["month"] = month
+        if org_name is not unset:
+            kwargs["org_name"] = org_name
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
+        if tag_config_source is not unset:
+            kwargs["tag_config_source"] = tag_config_source
+        if tags is not unset:
+            kwargs["tags"] = tags
+        if updated_at is not unset:
+            kwargs["updated_at"] = updated_at
+        if values is not unset:
+            kwargs["values"] = values
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(UsageAttributionBody, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

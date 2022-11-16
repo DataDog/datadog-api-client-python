@@ -1,12 +1,30 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
+    from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
+    from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
+    from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
+    from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
+    from datadog_api_client.v1.model.http_method import HTTPMethod
+    from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
+    from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasicAuthWeb
+    from datadog_api_client.v1.model.synthetics_basic_auth_sigv4 import SyntheticsBasicAuthSigv4
+    from datadog_api_client.v1.model.synthetics_basic_auth_ntlm import SyntheticsBasicAuthNTLM
+    from datadog_api_client.v1.model.synthetics_basic_auth_digest import SyntheticsBasicAuthDigest
 
 
 class SyntheticsTestRequest(ModelNormal):
@@ -24,6 +42,7 @@ class SyntheticsTestRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
+        from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
         from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
         from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
         from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
@@ -34,7 +53,9 @@ class SyntheticsTestRequest(ModelNormal):
             "allow_insecure": (bool,),
             "basic_auth": (SyntheticsBasicAuth,),
             "body": (str,),
+            "body_type": (SyntheticsTestRequestBodyType,),
             "certificate": (SyntheticsTestRequestCertificate,),
+            "certificate_domains": ([str],),
             "dns_server": (str,),
             "dns_server_port": (int,),
             "follow_redirects": (bool,),
@@ -59,7 +80,9 @@ class SyntheticsTestRequest(ModelNormal):
         "allow_insecure": "allow_insecure",
         "basic_auth": "basicAuth",
         "body": "body",
+        "body_type": "bodyType",
         "certificate": "certificate",
+        "certificate_domains": "certificateDomains",
         "dns_server": "dnsServer",
         "dns_server_port": "dnsServerPort",
         "follow_redirects": "follow_redirects",
@@ -80,7 +103,41 @@ class SyntheticsTestRequest(ModelNormal):
         "url": "url",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        allow_insecure: Union[bool, UnsetType] = unset,
+        basic_auth: Union[
+            SyntheticsBasicAuth,
+            SyntheticsBasicAuthWeb,
+            SyntheticsBasicAuthSigv4,
+            SyntheticsBasicAuthNTLM,
+            SyntheticsBasicAuthDigest,
+            UnsetType,
+        ] = unset,
+        body: Union[str, UnsetType] = unset,
+        body_type: Union[SyntheticsTestRequestBodyType, UnsetType] = unset,
+        certificate: Union[SyntheticsTestRequestCertificate, UnsetType] = unset,
+        certificate_domains: Union[List[str], UnsetType] = unset,
+        dns_server: Union[str, UnsetType] = unset,
+        dns_server_port: Union[int, UnsetType] = unset,
+        follow_redirects: Union[bool, UnsetType] = unset,
+        headers: Union[SyntheticsTestHeaders, UnsetType] = unset,
+        host: Union[str, UnsetType] = unset,
+        message: Union[str, UnsetType] = unset,
+        metadata: Union[SyntheticsTestMetadata, UnsetType] = unset,
+        method: Union[HTTPMethod, UnsetType] = unset,
+        no_saving_response_body: Union[bool, UnsetType] = unset,
+        number_of_packets: Union[int, UnsetType] = unset,
+        port: Union[int, UnsetType] = unset,
+        proxy: Union[SyntheticsTestRequestProxy, UnsetType] = unset,
+        query: Union[dict, UnsetType] = unset,
+        servername: Union[str, UnsetType] = unset,
+        service: Union[str, UnsetType] = unset,
+        should_track_hops: Union[bool, UnsetType] = unset,
+        timeout: Union[float, UnsetType] = unset,
+        url: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Object describing the Synthetic test request.
 
@@ -93,8 +150,14 @@ class SyntheticsTestRequest(ModelNormal):
         :param body: Body to include in the test.
         :type body: str, optional
 
+        :param body_type: Type of the request body.
+        :type body_type: SyntheticsTestRequestBodyType, optional
+
         :param certificate: Client certificate to use when performing the test request.
         :type certificate: SyntheticsTestRequestCertificate, optional
+
+        :param certificate_domains: By default, the client certificate is applied on the domain of the starting URL for browser tests. If you want your client certificate to be applied on other domains instead, add them in ``certificateDomains``.
+        :type certificate_domains: [str], optional
 
         :param dns_server: DNS server to use for DNS tests.
         :type dns_server: str, optional
@@ -152,16 +215,52 @@ class SyntheticsTestRequest(ModelNormal):
         :param url: URL to perform the test with.
         :type url: str, optional
         """
+        if allow_insecure is not unset:
+            kwargs["allow_insecure"] = allow_insecure
+        if basic_auth is not unset:
+            kwargs["basic_auth"] = basic_auth
+        if body is not unset:
+            kwargs["body"] = body
+        if body_type is not unset:
+            kwargs["body_type"] = body_type
+        if certificate is not unset:
+            kwargs["certificate"] = certificate
+        if certificate_domains is not unset:
+            kwargs["certificate_domains"] = certificate_domains
+        if dns_server is not unset:
+            kwargs["dns_server"] = dns_server
+        if dns_server_port is not unset:
+            kwargs["dns_server_port"] = dns_server_port
+        if follow_redirects is not unset:
+            kwargs["follow_redirects"] = follow_redirects
+        if headers is not unset:
+            kwargs["headers"] = headers
+        if host is not unset:
+            kwargs["host"] = host
+        if message is not unset:
+            kwargs["message"] = message
+        if metadata is not unset:
+            kwargs["metadata"] = metadata
+        if method is not unset:
+            kwargs["method"] = method
+        if no_saving_response_body is not unset:
+            kwargs["no_saving_response_body"] = no_saving_response_body
+        if number_of_packets is not unset:
+            kwargs["number_of_packets"] = number_of_packets
+        if port is not unset:
+            kwargs["port"] = port
+        if proxy is not unset:
+            kwargs["proxy"] = proxy
+        if query is not unset:
+            kwargs["query"] = query
+        if servername is not unset:
+            kwargs["servername"] = servername
+        if service is not unset:
+            kwargs["service"] = service
+        if should_track_hops is not unset:
+            kwargs["should_track_hops"] = should_track_hops
+        if timeout is not unset:
+            kwargs["timeout"] = timeout
+        if url is not unset:
+            kwargs["url"] = url
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsTestRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

@@ -1,12 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.logs_category_processor_category import LogsCategoryProcessorCategory
+    from datadog_api_client.v1.model.logs_category_processor_type import LogsCategoryProcessorType
 
 
 class LogsCategoryProcessor(ModelNormal):
@@ -31,14 +40,21 @@ class LogsCategoryProcessor(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, categories, target, type, *args, **kwargs):
+    def __init__(
+        self_,
+        categories: List[LogsCategoryProcessorCategory],
+        target: str,
+        type: LogsCategoryProcessorType,
+        is_enabled: Union[bool, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Use the Category Processor to add a new attribute (without spaces or special characters in the new attribute name)
         to a log matching a provided search query. Use categories to create groups for an analytical view.
         For example, URL groups, machine groups, environments, and response time buckets.
 
         **Notes** :
-
 
         * The syntax of the query is the one of Logs Explorer search bar.
           The query can be done on any log attribute or tag, whether it is a facet or not.
@@ -64,23 +80,12 @@ class LogsCategoryProcessor(ModelNormal):
         :param type: Type of logs category processor.
         :type type: LogsCategoryProcessorType
         """
+        if is_enabled is not unset:
+            kwargs["is_enabled"] = is_enabled
+        if name is not unset:
+            kwargs["name"] = name
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.categories = categories
-        self.target = target
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, categories, target, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsCategoryProcessor, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.categories = categories
-        self.target = target
-        self.type = type
-        return self
+        self_.categories = categories
+        self_.target = target
+        self_.type = type

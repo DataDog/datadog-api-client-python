@@ -1,12 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
     ModelSimple,
     cached_property,
 )
+
+from typing import ClassVar
 
 
 class ListStreamSource(ModelSimple):
@@ -18,17 +21,27 @@ class ListStreamSource(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "LOGS_STREAM": "logs_stream",
-            "AUDIT_STREAM": "audit_stream",
-            "RUM_ISSUE_STREAM": "rum_issue_stream",
-            "APM_ISSUE_STREAM": "apm_issue_stream",
-            "LOGS_PATTERN_STREAM": "logs_pattern_stream",
-        },
+        "logs_stream",
+        "audit_stream",
+        "rum_issue_stream",
+        "apm_issue_stream",
+        "logs_pattern_stream",
     }
+    LOGS_STREAM: ClassVar["ListStreamSource"]
+    AUDIT_STREAM: ClassVar["ListStreamSource"]
+    RUM_ISSUE_STREAM: ClassVar["ListStreamSource"]
+    APM_ISSUE_STREAM: ClassVar["ListStreamSource"]
+    LOGS_PATTERN_STREAM: ClassVar["ListStreamSource"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+ListStreamSource.LOGS_STREAM = ListStreamSource("logs_stream")
+ListStreamSource.AUDIT_STREAM = ListStreamSource("audit_stream")
+ListStreamSource.RUM_ISSUE_STREAM = ListStreamSource("rum_issue_stream")
+ListStreamSource.APM_ISSUE_STREAM = ListStreamSource("apm_issue_stream")
+ListStreamSource.LOGS_PATTERN_STREAM = ListStreamSource("logs_pattern_stream")

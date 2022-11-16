@@ -31,11 +31,11 @@ body = AuthNMappingUpdateRequest(
             role=RelationshipToRole(
                 data=RelationshipToRoleData(
                     id=ROLE_DATA_ID,
-                    type=RolesType("roles"),
+                    type=RolesType.ROLES,
                 ),
             ),
         ),
-        type=AuthNMappingsType("authn_mappings"),
+        type=AuthNMappingsType.AUTHN_MAPPINGS,
     ),
 )
 

@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.logs_string_builder_processor_type import LogsStringBuilderProcessorType
 
 
 class LogsStringBuilderProcessor(ModelNormal):
@@ -32,7 +40,16 @@ class LogsStringBuilderProcessor(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, target, template, type, *args, **kwargs):
+    def __init__(
+        self_,
+        target: str,
+        template: str,
+        type: LogsStringBuilderProcessorType,
+        is_enabled: Union[bool, UnsetType] = unset,
+        is_replace_missing: Union[bool, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Use the string builder processor to add a new attribute (without spaces or special characters)
         to a log with the result of the provided template.
@@ -41,7 +58,6 @@ class LogsStringBuilderProcessor(ModelNormal):
         The template is defined by both raw text and blocks with the syntax ``%{attribute_path}``.
 
         **Notes** :
-
 
         * The processor only accepts attributes with values or an array of values in the blocks.
         * If an attribute cannot be used (object or array of object),
@@ -68,23 +84,14 @@ class LogsStringBuilderProcessor(ModelNormal):
         :param type: Type of logs string builder processor.
         :type type: LogsStringBuilderProcessorType
         """
+        if is_enabled is not unset:
+            kwargs["is_enabled"] = is_enabled
+        if is_replace_missing is not unset:
+            kwargs["is_replace_missing"] = is_replace_missing
+        if name is not unset:
+            kwargs["name"] = name
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.target = target
-        self.template = template
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, target, template, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsStringBuilderProcessor, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.target = target
-        self.template = template
-        self.type = type
-        return self
+        self_.target = target
+        self_.template = template
+        self_.type = type

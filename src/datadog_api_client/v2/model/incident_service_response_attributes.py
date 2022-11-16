@@ -1,12 +1,16 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
 
 
@@ -29,7 +33,13 @@ class IncidentServiceResponseAttributes(ModelNormal):
         "modified",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        created: Union[datetime, UnsetType] = unset,
+        modified: Union[datetime, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The incident service's attributes from a response.
 
@@ -42,16 +52,10 @@ class IncidentServiceResponseAttributes(ModelNormal):
         :param name: Name of the incident service.
         :type name: str, optional
         """
+        if created is not unset:
+            kwargs["created"] = created
+        if modified is not unset:
+            kwargs["modified"] = modified
+        if name is not unset:
+            kwargs["name"] = name
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(IncidentServiceResponseAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

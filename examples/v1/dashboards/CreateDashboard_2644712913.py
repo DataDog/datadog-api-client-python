@@ -22,14 +22,14 @@ from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 from datadog_api_client.v1.model.widget_time import WidgetTime
 
 body = Dashboard(
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
     title="Example-Create_a_new_dashboard_with_a_query_value_widget_using_the_percentile_aggregator with QVW Percentile Aggregator",
     widgets=[
         Widget(
             definition=QueryValueWidgetDefinition(
                 title_size="16",
                 title="",
-                title_align=WidgetTextAlign("left"),
+                title_align=WidgetTextAlign.LEFT,
                 precision=2,
                 time=WidgetTime(),
                 autoscale=True,
@@ -40,18 +40,18 @@ body = Dashboard(
                                 formula="query1",
                             ),
                         ],
-                        response_format=FormulaAndFunctionResponseFormat("scalar"),
+                        response_format=FormulaAndFunctionResponseFormat.SCALAR,
                         queries=[
                             FormulaAndFunctionMetricQueryDefinition(
                                 query="p90:dist.dd.dogweb.latency{*}",
-                                data_source=FormulaAndFunctionMetricDataSource("metrics"),
+                                data_source=FormulaAndFunctionMetricDataSource.METRICS,
                                 name="query1",
-                                aggregator=FormulaAndFunctionMetricAggregation("percentile"),
+                                aggregator=FormulaAndFunctionMetricAggregation.PERCENTILE,
                             ),
                         ],
                     ),
                 ],
-                type=QueryValueWidgetDefinitionType("query_value"),
+                type=QueryValueWidgetDefinitionType.QUERY_VALUE,
             ),
             layout=WidgetLayout(
                 y=0,

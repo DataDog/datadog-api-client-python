@@ -1,13 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
 
 
 class DowntimeChild(ModelNormal):
@@ -76,7 +84,27 @@ class DowntimeChild(ModelNormal):
         "updater_id",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        active: Union[bool, UnsetType] = unset,
+        canceled: Union[int, none_type, UnsetType] = unset,
+        creator_id: Union[int, UnsetType] = unset,
+        disabled: Union[bool, UnsetType] = unset,
+        downtime_type: Union[int, UnsetType] = unset,
+        end: Union[int, none_type, UnsetType] = unset,
+        id: Union[int, UnsetType] = unset,
+        message: Union[str, UnsetType] = unset,
+        monitor_id: Union[int, none_type, UnsetType] = unset,
+        monitor_tags: Union[List[str], UnsetType] = unset,
+        mute_first_recovery_notification: Union[bool, UnsetType] = unset,
+        parent_id: Union[int, none_type, UnsetType] = unset,
+        recurrence: Union[DowntimeRecurrence, none_type, UnsetType] = unset,
+        scope: Union[List[str], UnsetType] = unset,
+        start: Union[int, UnsetType] = unset,
+        timezone: Union[str, UnsetType] = unset,
+        updater_id: Union[int, none_type, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The downtime object definition of the active child for the original parent recurring downtime. This
         field will only exist on recurring downtimes.
@@ -143,16 +171,38 @@ class DowntimeChild(ModelNormal):
         :param updater_id: ID of the last user that updated the downtime.
         :type updater_id: int, none_type, optional
         """
+        if active is not unset:
+            kwargs["active"] = active
+        if canceled is not unset:
+            kwargs["canceled"] = canceled
+        if creator_id is not unset:
+            kwargs["creator_id"] = creator_id
+        if disabled is not unset:
+            kwargs["disabled"] = disabled
+        if downtime_type is not unset:
+            kwargs["downtime_type"] = downtime_type
+        if end is not unset:
+            kwargs["end"] = end
+        if id is not unset:
+            kwargs["id"] = id
+        if message is not unset:
+            kwargs["message"] = message
+        if monitor_id is not unset:
+            kwargs["monitor_id"] = monitor_id
+        if monitor_tags is not unset:
+            kwargs["monitor_tags"] = monitor_tags
+        if mute_first_recovery_notification is not unset:
+            kwargs["mute_first_recovery_notification"] = mute_first_recovery_notification
+        if parent_id is not unset:
+            kwargs["parent_id"] = parent_id
+        if recurrence is not unset:
+            kwargs["recurrence"] = recurrence
+        if scope is not unset:
+            kwargs["scope"] = scope
+        if start is not unset:
+            kwargs["start"] = start
+        if timezone is not unset:
+            kwargs["timezone"] = timezone
+        if updater_id is not unset:
+            kwargs["updater_id"] = updater_id
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(DowntimeChild, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

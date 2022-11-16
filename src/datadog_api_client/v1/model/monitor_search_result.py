@@ -1,13 +1,24 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.creator import Creator
+    from datadog_api_client.v1.model.monitor_search_result_notification import MonitorSearchResultNotification
+    from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
+    from datadog_api_client.v1.model.monitor_type import MonitorType
 
 
 class MonitorSearchResult(ModelNormal):
@@ -62,7 +73,23 @@ class MonitorSearchResult(ModelNormal):
         "tags",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        classification: Union[str, UnsetType] = unset,
+        creator: Union[Creator, UnsetType] = unset,
+        id: Union[int, UnsetType] = unset,
+        last_triggered_ts: Union[int, none_type, UnsetType] = unset,
+        metrics: Union[List[str], UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        notifications: Union[List[MonitorSearchResultNotification], UnsetType] = unset,
+        org_id: Union[int, UnsetType] = unset,
+        query: Union[str, UnsetType] = unset,
+        scopes: Union[List[str], UnsetType] = unset,
+        status: Union[MonitorOverallStates, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        type: Union[MonitorType, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Holds search results.
 
@@ -108,16 +135,30 @@ class MonitorSearchResult(ModelNormal):
         :param type: The type of the monitor. For more information about ``type`` , see the `monitor options <https://docs.datadoghq.com/monitors/guide/monitor_api_options/>`_ docs.
         :type type: MonitorType, optional
         """
+        if classification is not unset:
+            kwargs["classification"] = classification
+        if creator is not unset:
+            kwargs["creator"] = creator
+        if id is not unset:
+            kwargs["id"] = id
+        if last_triggered_ts is not unset:
+            kwargs["last_triggered_ts"] = last_triggered_ts
+        if metrics is not unset:
+            kwargs["metrics"] = metrics
+        if name is not unset:
+            kwargs["name"] = name
+        if notifications is not unset:
+            kwargs["notifications"] = notifications
+        if org_id is not unset:
+            kwargs["org_id"] = org_id
+        if query is not unset:
+            kwargs["query"] = query
+        if scopes is not unset:
+            kwargs["scopes"] = scopes
+        if status is not unset:
+            kwargs["status"] = status
+        if tags is not unset:
+            kwargs["tags"] = tags
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(MonitorSearchResult, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

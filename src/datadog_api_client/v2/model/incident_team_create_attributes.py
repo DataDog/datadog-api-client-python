@@ -1,6 +1,7 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
@@ -20,7 +21,7 @@ class IncidentTeamCreateAttributes(ModelNormal):
         "name": "name",
     }
 
-    def __init__(self, name, *args, **kwargs):
+    def __init__(self_, name: str, **kwargs):
         """
         The incident team's attributes for a create request.
 
@@ -29,17 +30,4 @@ class IncidentTeamCreateAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.name = name
-
-    @classmethod
-    def _from_openapi_data(cls, name, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(IncidentTeamCreateAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.name = name
-        return self
+        self_.name = name

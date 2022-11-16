@@ -196,7 +196,6 @@ class EventsApi:
 
         **Notes** :
 
-
         *
           If the event you’re querying contains markdown formatting of any kind,
           you may see characters such as ``%`` , ``\\`` , ``n`` in your output.

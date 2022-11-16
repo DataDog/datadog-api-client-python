@@ -1,15 +1,25 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
 class RUMApplicationAttributes(ModelNormal):
+    validations = {
+        "org_id": {
+            "inclusive_maximum": 2147483647,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
@@ -37,17 +47,17 @@ class RUMApplicationAttributes(ModelNormal):
     }
 
     def __init__(
-        self,
-        application_id,
-        created_at,
-        created_by_handle,
-        name,
-        org_id,
-        type,
-        updated_at,
-        updated_by_handle,
-        *args,
-        **kwargs
+        self_,
+        application_id: str,
+        created_at: int,
+        created_by_handle: str,
+        name: str,
+        org_id: int,
+        type: str,
+        updated_at: int,
+        updated_by_handle: str,
+        hash: Union[str, UnsetType] = unset,
+        **kwargs,
     ):
         """
         RUM application attributes.
@@ -79,45 +89,15 @@ class RUMApplicationAttributes(ModelNormal):
         :param updated_by_handle: Handle of the updater user.
         :type updated_by_handle: str
         """
+        if hash is not unset:
+            kwargs["hash"] = hash
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.application_id = application_id
-        self.created_at = created_at
-        self.created_by_handle = created_by_handle
-        self.name = name
-        self.org_id = org_id
-        self.type = type
-        self.updated_at = updated_at
-        self.updated_by_handle = updated_by_handle
-
-    @classmethod
-    def _from_openapi_data(
-        cls,
-        application_id,
-        created_at,
-        created_by_handle,
-        name,
-        org_id,
-        type,
-        updated_at,
-        updated_by_handle,
-        *args,
-        **kwargs
-    ):
-        """Helper creating a new instance from a response."""
-
-        self = super(RUMApplicationAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.application_id = application_id
-        self.created_at = created_at
-        self.created_by_handle = created_by_handle
-        self.name = name
-        self.org_id = org_id
-        self.type = type
-        self.updated_at = updated_at
-        self.updated_by_handle = updated_by_handle
-        return self
+        self_.application_id = application_id
+        self_.created_at = created_at
+        self_.created_by_handle = created_by_handle
+        self_.name = name
+        self_.org_id = org_id
+        self_.type = type
+        self_.updated_at = updated_at
+        self_.updated_by_handle = updated_by_handle

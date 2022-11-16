@@ -1,12 +1,23 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.search_slo_response_data_attributes_facets import (
+        SearchSLOResponseDataAttributesFacets,
+    )
+    from datadog_api_client.v1.model.search_service_level_objective import SearchServiceLevelObjective
 
 
 class SearchSLOResponseDataAttributes(ModelNormal):
@@ -15,38 +26,35 @@ class SearchSLOResponseDataAttributes(ModelNormal):
         from datadog_api_client.v1.model.search_slo_response_data_attributes_facets import (
             SearchSLOResponseDataAttributesFacets,
         )
-        from datadog_api_client.v1.model.service_level_objective import ServiceLevelObjective
+        from datadog_api_client.v1.model.search_service_level_objective import SearchServiceLevelObjective
 
         return {
             "facets": (SearchSLOResponseDataAttributesFacets,),
-            "slo": ([ServiceLevelObjective],),
+            "slos": ([SearchServiceLevelObjective],),
         }
 
     attribute_map = {
         "facets": "facets",
-        "slo": "slo",
+        "slos": "slos",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        facets: Union[SearchSLOResponseDataAttributesFacets, UnsetType] = unset,
+        slos: Union[List[SearchServiceLevelObjective], UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Attributes
 
         :param facets: Facets
         :type facets: SearchSLOResponseDataAttributesFacets, optional
 
-        :param slo: SLOs
-        :type slo: [ServiceLevelObjective], optional
+        :param slos: SLOs
+        :type slos: [SearchServiceLevelObjective], optional
         """
+        if facets is not unset:
+            kwargs["facets"] = facets
+        if slos is not unset:
+            kwargs["slos"] = slos
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SearchSLOResponseDataAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

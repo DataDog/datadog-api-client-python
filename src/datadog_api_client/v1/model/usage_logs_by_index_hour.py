@@ -1,12 +1,16 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
 
 
@@ -33,7 +37,17 @@ class UsageLogsByIndexHour(ModelNormal):
         "retention": "retention",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        event_count: Union[int, UnsetType] = unset,
+        hour: Union[datetime, UnsetType] = unset,
+        index_id: Union[str, UnsetType] = unset,
+        index_name: Union[str, UnsetType] = unset,
+        org_name: Union[str, UnsetType] = unset,
+        public_id: Union[str, UnsetType] = unset,
+        retention: Union[int, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Number of indexed logs for each hour and index for a given organization.
 
@@ -58,16 +72,18 @@ class UsageLogsByIndexHour(ModelNormal):
         :param retention: The retention period (in days) for this index ID.
         :type retention: int, optional
         """
+        if event_count is not unset:
+            kwargs["event_count"] = event_count
+        if hour is not unset:
+            kwargs["hour"] = hour
+        if index_id is not unset:
+            kwargs["index_id"] = index_id
+        if index_name is not unset:
+            kwargs["index_name"] = index_name
+        if org_name is not unset:
+            kwargs["org_name"] = org_name
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
+        if retention is not unset:
+            kwargs["retention"] = retention
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(UsageLogsByIndexHour, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

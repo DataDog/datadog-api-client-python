@@ -1,12 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
     ModelSimple,
     cached_property,
 )
+
+from typing import ClassVar
 
 
 class TargetFormatType(ModelSimple):
@@ -20,16 +23,24 @@ class TargetFormatType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "AUTO": "auto",
-            "STRING": "string",
-            "INTEGER": "integer",
-            "DOUBLE": "double",
-        },
+        "auto",
+        "string",
+        "integer",
+        "double",
     }
+    AUTO: ClassVar["TargetFormatType"]
+    STRING: ClassVar["TargetFormatType"]
+    INTEGER: ClassVar["TargetFormatType"]
+    DOUBLE: ClassVar["TargetFormatType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+TargetFormatType.AUTO = TargetFormatType("auto")
+TargetFormatType.STRING = TargetFormatType("string")
+TargetFormatType.INTEGER = TargetFormatType("integer")
+TargetFormatType.DOUBLE = TargetFormatType("double")

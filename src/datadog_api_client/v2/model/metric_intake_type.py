@@ -1,12 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
     ModelSimple,
     cached_property,
 )
+
+from typing import ClassVar
 
 
 class MetricIntakeType(ModelSimple):
@@ -18,16 +21,24 @@ class MetricIntakeType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "UNSPECIFIED": 0,
-            "COUNT": 1,
-            "RATE": 2,
-            "GAUGE": 3,
-        },
+        0,
+        1,
+        2,
+        3,
     }
+    UNSPECIFIED: ClassVar["MetricIntakeType"]
+    COUNT: ClassVar["MetricIntakeType"]
+    RATE: ClassVar["MetricIntakeType"]
+    GAUGE: ClassVar["MetricIntakeType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (int,),
         }
+
+
+MetricIntakeType.UNSPECIFIED = MetricIntakeType(0)
+MetricIntakeType.COUNT = MetricIntakeType(1)
+MetricIntakeType.RATE = MetricIntakeType(2)
+MetricIntakeType.GAUGE = MetricIntakeType(3)

@@ -15,10 +15,7 @@ MODEL_IMPORT_TPL = "datadog_api_client.{version}.model.{name}"
 PRIMITIVE_TYPES = ["string", "number", "boolean", "integer"]
 
 EDGE_CASES = {}
-replacement_file = (
-    pathlib.Path(__file__).parent
-    / "replacement.json"
-)
+replacement_file = pathlib.Path(__file__).parent / "replacement.json"
 if replacement_file.exists():
     with replacement_file.open() as f:
         EDGE_CASES.update(json.load(f))
@@ -96,7 +93,12 @@ class CustomRenderer(m2r2.RestRenderer):
 
 
 def docstring(text):
-    return m2r2.convert(text.replace("\\n", "\\\\n"), renderer=CustomRenderer())[1:-1].replace("\\ ", " ").replace("\\`", "\\\\`")
+    return (
+        m2r2.convert(text.replace("\\n", "\\\\n"), renderer=CustomRenderer())[1:-1]
+        .replace("\\ ", " ")
+        .replace("\\`", "\\\\`")
+        .replace("\n\n\n", "\n\n")
+    )
 
 
 def _merge_imports(a, b):
@@ -111,10 +113,7 @@ def format_parameters(kwargs, spec, version, replace_values=None):
     imports = defaultdict(set)
 
     parameters_spec = {p["name"]: p for p in spec.get("parameters", [])}
-    if (
-        "requestBody" in spec
-        and "multipart/form-data" in spec["requestBody"]["content"]
-    ):
+    if "requestBody" in spec and "multipart/form-data" in spec["requestBody"]["content"]:
         parent = spec["requestBody"]["content"]["multipart/form-data"]["schema"]
         for name, schema in parent["properties"].items():
             parameters_spec[name] = {
@@ -153,9 +152,7 @@ def get_name_and_imports(schema, version=None, imports=None):
         name = schema.__reference__["$ref"].split("/")[-1]
         if "oneOf" not in schema:
             # do not include parent of oneOf schema
-            imports[
-                MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))
-            ].add(name)
+            imports[MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))].add(name)
 
     return name, imports
 
@@ -176,10 +173,10 @@ def format_data_with_schema(
     imports = imports or defaultdict(set)
     if schema.get("type") not in {"string", "integer", "boolean"} or schema.get("enum"):
         name, imports = get_name_and_imports(schema, version, imports)
+    if schema.get("oneOf"):
+        name = None
     if name:
-        imports[
-            MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))
-        ].add(name)
+        imports[MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))].add(name)
 
     if "enum" in schema and data not in schema["enum"]:
         # Support nullable enums
@@ -192,6 +189,9 @@ def format_data_with_schema(
         parameters = replace_values[data]
         if schema.get("format") in ("int32", "int64"):
             parameters = f"int({parameters})"
+    elif "enum" in schema:
+        parameters = schema["x-enum-varnames"][schema["enum"].index(data)]
+        return f"{name}.{parameters}", imports
     else:
         if schema.get("nullable") and data is None:
             parameters = repr(data)
@@ -322,15 +322,9 @@ def format_data_with_schema_dict(
             imports = _merge_imports(imports, extra_imports)
 
     if not name and "oneOf" not in schema:
-        if (
-            default_name
-            and not schema.get("additionalProperties")
-            and schema.get("properties")
-        ):
+        if default_name and not schema.get("additionalProperties") and schema.get("properties"):
             name = default_name
-            imports[
-                MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))
-            ].add(name)
+            imports[MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))].add(name)
         else:
             name = "dict"
             warnings.warn(f"Unnamed schema {schema} for {data}")
@@ -359,6 +353,9 @@ def format_data_with_schema_dict(
             raise ValueError(f"[{matched}] {data} is not valid for schema {name}")
         elif matched > 1:
             warnings.warn(f"[{matched}] {data} is not valid for schema {name}")
+
+    if not parameters and data:
+        parameters = ", ".join(f'{k}="{v}"' for k, v in data.items())
 
     if name:
         return f"{name}({parameters})", imports

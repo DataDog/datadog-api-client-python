@@ -102,7 +102,6 @@ class RESTClientObject:
                                 (connection, read) timeouts.
         """
         method = method.upper()
-        assert method in ["GET", "HEAD", "DELETE", "POST", "PUT", "PATCH", "OPTIONS"]
 
         if post_params and body:
             raise ApiValueError("body parameter cannot be used with post_params parameter.")
@@ -119,9 +118,9 @@ class RESTClientObject:
 
         try:
             # For `POST`, `PUT`, `PATCH`, `OPTIONS`, `DELETE`
-            if method in ["POST", "PUT", "PATCH", "OPTIONS", "DELETE"]:
+            if method in ("POST", "PUT", "PATCH", "OPTIONS", "DELETE"):
                 # Only set a default Content-Type for POST, PUT, PATCH and OPTIONS requests
-                if (method != "DELETE") and ("Content-Type" not in headers):
+                if method != "DELETE" and "Content-Type" not in headers:
                     headers["Content-Type"] = "application/json"
                 if query_params:
                     url += "?" + urlencode(query_params)
@@ -174,7 +173,7 @@ class RESTClientObject:
                 # Pass a `string` parameter directly in the body to support
                 # other content types than Json when `body` argument is
                 # provided in serialized form
-                elif isinstance(body, str) or isinstance(body, bytes):
+                elif isinstance(body, (str, bytes)):
                     request_body = body
                     r = self.pool_manager.request(
                         method,
@@ -236,7 +235,10 @@ class AsyncRESTClientObject:
     def __init__(self, configuration):
         import aiosonic  # type: ignore
 
-        self._client = aiosonic.HTTPClient()
+        proxy = None
+        if configuration.proxy:
+            proxy = aiosonic.Proxy(configuration.proxy, configuration.proxy_headers)
+        self._client = aiosonic.HTTPClient(proxy=proxy)
 
     async def request(
         self,

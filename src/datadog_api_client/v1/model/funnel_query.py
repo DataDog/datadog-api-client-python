@@ -1,12 +1,19 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.funnel_source import FunnelSource
+    from datadog_api_client.v1.model.funnel_step import FunnelStep
 
 
 class FunnelQuery(ModelNormal):
@@ -27,7 +34,7 @@ class FunnelQuery(ModelNormal):
         "steps": "steps",
     }
 
-    def __init__(self, data_source, query_string, steps, *args, **kwargs):
+    def __init__(self_, data_source: FunnelSource, query_string: str, steps: List[FunnelStep], **kwargs):
         """
         Updated funnel widget.
 
@@ -42,21 +49,6 @@ class FunnelQuery(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.data_source = data_source
-        self.query_string = query_string
-        self.steps = steps
-
-    @classmethod
-    def _from_openapi_data(cls, data_source, query_string, steps, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(FunnelQuery, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.data_source = data_source
-        self.query_string = query_string
-        self.steps = steps
-        return self
+        self_.data_source = data_source
+        self_.query_string = query_string
+        self_.steps = steps

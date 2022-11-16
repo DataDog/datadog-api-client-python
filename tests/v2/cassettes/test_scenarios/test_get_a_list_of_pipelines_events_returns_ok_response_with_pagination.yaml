@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/ci/pipelines/events?filter%5Bfrom%5D=2022-10-21T08%3A44%3A43.365Z&filter%5Bto%5D=2022-10-21T08%3A45%3A13.365Z&page%5Blimit%5D=2
+  response:
+    body:
+      string: '{"data":[{"id":"AgAAAYP5t3tYR3aQMAAAAAAAAAAYAAAAAEFZUDV0M3RZQUFBanF1YktfS2dXdjlOWQAAACQAAAAAMDE4M2Y5YjctN2I1OC00YjQwLWFmNjEtNjllYTUwYjA1YmI3","type":"cipipeline","attributes":{"attributes":{"duration":4000000000,"github":{"conclusion":"success","node_group":"GitHub
+        Actions","html_url":"https://github.com/DataDog/repo8s-resources","run_attempt":"1","app_id":"128890"},"git":{"commit":{"sha":"ac96ab878db8812762c13c4364ec5aa0b14158ce"},"default_branch":"master","repository_url":"https://github.com/DataDog/repo8s-resources.git","repository":{"path":"/DataDog/repo8s-resources.git","scheme":"https","name":"DataDog/repo8s-resources","host":"github.com","id":"github.com/DataDog/repo8s-resources"},"branch":"EDGEBE-4_dummy_test_env"},"ci":{"pipeline":{"name":"Labeler","id":"3296044030-1"},"node":{"labels":["ubuntu-latest"]},"provider":{"instance":"github-actions","name":"github"},"job":{"name":"label","id":"9025708592","url":"https://github.com/DataDog/repo8s-resources/actions/runs/3296044030/jobs/5435245138"},"status":"success"},"start":1666341891000000000},"ci_level":"job","tags":["source:apm","source:apm"]}},{"id":"AgAAAYP5t3dwEybABgAAAAAAAAAYAAAAAEFZUDV0M2R3QUFBbUM3YndwWmRTSnBQWAAAACQAAAAAMDE4M2Y5YjctN2I1OC00YjQwLWFmNjEtNjllYTUwYjA1YmI3","type":"cipipeline","attributes":{"attributes":{"duration":2445000000000,"github":{"conclusion":"success","html_url":"https://github.com/DataDog/repo","run_attempt":"1","event":"workflow_dispatch","app_id":"128890"},"git":{"commit":{"committer":{"date":"2022-10-07T13:30:54Z","name":"GitHub","email":"noreply@github.com","date_timestamp":1665149454000},"author":{"name":"Joe","email":"support@datadoghq.com"},"message":"Upgrade
+        to go1.18.7 (#113)","sha":"12dd44ae0c03bed08f7b790ff10e6cba0b887cd7"},"default_branch":"master","repository_url":"https://github.com/DataDog/repo.git","repository":{"path":"/DataDog/repo.git","scheme":"https","name":"DataDog/repo","host":"github.com","id":"github.com/DataDog/repo"},"branch":"master"},"ci":{"pipeline":{"number":20646,"name":"MacOS
+        Agent tests","id":"3295791228-1","url":"https://github.com/DataDog/repo/actions/runs/3295791228/attempts/1"},"provider":{"instance":"github-actions","name":"github"},"status":"success"},"_top_level":1,"start":1666339449000000000},"ci_level":"pipeline","tags":["source:apm","source:apm"]}}],"meta":{"page":{"after":"eyJhZnRlciI6IkFnQUFBWVA1dDNkd0V5YkFCZ0FBQUFBQUFBQVlBQUFBQUVGWlVEVjBNMlIzUVVGQmJVTTNZbmR3V21SVFNuQlFXQUFBQUNRQUFBQUFNREU0TTJZNVlqY3ROMkkxT0MwMFlqUXdMV0ZtTmpFdE5qbGxZVFV3WWpBMVltSTMifQ"}},"links":{"next":"https://api.datadoghq.com/api/v2/ci/pipelines/events?filter%5Bfrom%5D=2022-10-21T08%3A44%3A43.365Z&filter%5Bto%5D=2022-10-21T08%3A45%3A13.365Z&page%5Bcursor%5D=eyJhZnRlciI6IkFnQUFBWVA1dDNkd0V5YkFCZ0FBQUFBQUFBQVlBQUFBQUVGWlVEVjBNMlIzUVVGQmJVTTNZbmR3V21SVFNuQlFXQUFBQUNRQUFBQUFNREU0TTJZNVlqY3ROMkkxT0MwMFlqUXdMV0ZtTmpFdE5qbGxZVFV3WWpBMVltSTMifQ&page%5Blimit%5D=2"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/ci/pipelines/events?filter%5Bfrom%5D=2022-10-21T08%3A44%3A43.365Z&filter%5Bto%5D=2022-10-21T08%3A45%3A13.365Z&page%5Blimit%5D=2&page%5Bcursor%5D=eyJhZnRlciI6IkFnQUFBWVA1dDNkd0V5YkFCZ0FBQUFBQUFBQVlBQUFBQUVGWlVEVjBNMlIzUVVGQmJVTTNZbmR3V21SVFNuQlFXQUFBQUNRQUFBQUFNREU0TTJZNVlqY3ROMkkxT0MwMFlqUXdMV0ZtTmpFdE5qbGxZVFV3WWpBMVltSTMifQ
+  response:
+    body:
+      string: '{"data":[],"meta":{"page":{"after":"eyJhZnRlciI6IkFnQUFBWVA1dDNPSVIzYVFMZ0FBQUFBQUFBQVlBQUFBQUVGWlVEVjBNMDlKUVVGRVpGcEJWVEpEWjNZNU4yUk9XUUFBQUNRQUFBQUFNREU0TTJZNVlqY3ROMkkxT0MwMFlqUXdMV0ZtTmpFdE5qbGxZVFV3WWpBMVltSTMifQ"}},"links":{"next":"https://api.datadoghq.com/api/v2/ci/pipelines/events?filter%5Bfrom%5D=2022-10-21T08%3A44%3A43.365Z&filter%5Bto%5D=2022-10-21T08%3A45%3A13.365Z&page%5Bcursor%5D=eyJhZnRlciI6IkFnQUFBWVA1dDNPSVIzYVFMZ0FBQUFBQUFBQVlBQUFBQUVGWlVEVjBNMDlKUVVGRVpGcEJWVEpEWjNZNU4yUk9XUUFBQUNRQUFBQUFNREU0TTJZNVlqY3ROMkkxT0MwMFlqUXdMV0ZtTmpFdE5qbGxZVFV3WWpBMVltSTMifQ&page%5Blimit%5D=2"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

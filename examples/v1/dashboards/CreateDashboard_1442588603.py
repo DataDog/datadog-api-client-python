@@ -36,9 +36,9 @@ body = Dashboard(
             definition=DistributionWidgetDefinition(
                 title="APM Stats - Request latency HOP",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
+                title_align=WidgetTextAlign.LEFT,
                 show_legend=False,
-                type=DistributionWidgetDefinitionType("distribution"),
+                type=DistributionWidgetDefinitionType.DISTRIBUTION,
                 xaxis=DistributionWidgetXAxis(
                     max="auto",
                     include_zero=True,
@@ -55,8 +55,8 @@ body = Dashboard(
                     DistributionWidgetRequest(
                         query=FormulaAndFunctionApmResourceStatsQueryDefinition(
                             primary_tag_value="*",
-                            stat=FormulaAndFunctionApmResourceStatName("latency_distribution"),
-                            data_source=FormulaAndFunctionApmResourceStatsDataSource("apm_resource_stats"),
+                            stat=FormulaAndFunctionApmResourceStatName.LATENCY_DISTRIBUTION,
+                            data_source=FormulaAndFunctionApmResourceStatsDataSource.APM_RESOURCE_STATS,
                             name="query1",
                             service="azure-bill-import",
                             group_by=[
@@ -66,7 +66,7 @@ body = Dashboard(
                             primary_tag_name="datacenter",
                             operation_name="universal.http.client",
                         ),
-                        request_type=DistributionWidgetHistogramRequestType("histogram"),
+                        request_type=DistributionWidgetHistogramRequestType.HISTOGRAM,
                         style=WidgetStyle(
                             palette="dog_classic",
                         ),
@@ -81,7 +81,7 @@ body = Dashboard(
             ),
         ),
     ],
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
 )
 
 configuration = Configuration()

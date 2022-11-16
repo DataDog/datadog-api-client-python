@@ -1,12 +1,24 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.incident_response_data import IncidentResponseData
+    from datadog_api_client.v2.model.incident_response_included_item import IncidentResponseIncludedItem
+    from datadog_api_client.v2.model.incident_response_meta import IncidentResponseMeta
+    from datadog_api_client.v2.model.user import User
+    from datadog_api_client.v2.model.incident_attachment_data import IncidentAttachmentData
 
 
 class IncidentsResponse(ModelNormal):
@@ -32,7 +44,13 @@ class IncidentsResponse(ModelNormal):
         "meta",
     }
 
-    def __init__(self, data, *args, **kwargs):
+    def __init__(
+        self_,
+        data: List[IncidentResponseData],
+        included: Union[List[Union[IncidentResponseIncludedItem, User, IncidentAttachmentData]], UnsetType] = unset,
+        meta: Union[IncidentResponseMeta, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Response with a list of incidents.
 
@@ -45,19 +63,10 @@ class IncidentsResponse(ModelNormal):
         :param meta: The metadata object containing pagination metadata.
         :type meta: IncidentResponseMeta, optional
         """
+        if included is not unset:
+            kwargs["included"] = included
+        if meta is not unset:
+            kwargs["meta"] = meta
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.data = data
-
-    @classmethod
-    def _from_openapi_data(cls, data, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(IncidentsResponse, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.data = data
-        return self
+        self_.data = data

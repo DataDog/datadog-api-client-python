@@ -9,12 +9,12 @@ from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
 
 body = SLOBulkDelete(
     id1=[
-        SLOTimeframe("7d"),
-        SLOTimeframe("30d"),
+        SLOTimeframe.SEVEN_DAYS,
+        SLOTimeframe.THIRTY_DAYS,
     ],
     id2=[
-        SLOTimeframe("7d"),
-        SLOTimeframe("30d"),
+        SLOTimeframe.SEVEN_DAYS,
+        SLOTimeframe.THIRTY_DAYS,
     ],
 )
 

@@ -1,12 +1,23 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.alert_graph_widget_definition_type import AlertGraphWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_viz_type import WidgetVizType
 
 
 class AlertGraphWidgetDefinition(ModelNormal):
@@ -37,7 +48,17 @@ class AlertGraphWidgetDefinition(ModelNormal):
         "viz_type": "viz_type",
     }
 
-    def __init__(self, alert_id, type, viz_type, *args, **kwargs):
+    def __init__(
+        self_,
+        alert_id: str,
+        type: AlertGraphWidgetDefinitionType,
+        viz_type: WidgetVizType,
+        time: Union[WidgetTime, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        title_align: Union[WidgetTextAlign, UnsetType] = unset,
+        title_size: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Alert graphs are timeseries graphs showing the current status of any monitor defined on your system.
 
@@ -62,23 +83,16 @@ class AlertGraphWidgetDefinition(ModelNormal):
         :param viz_type: Whether to display the Alert Graph as a timeseries or a top list.
         :type viz_type: WidgetVizType
         """
+        if time is not unset:
+            kwargs["time"] = time
+        if title is not unset:
+            kwargs["title"] = title
+        if title_align is not unset:
+            kwargs["title_align"] = title_align
+        if title_size is not unset:
+            kwargs["title_size"] = title_size
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.alert_id = alert_id
-        self.type = type
-        self.viz_type = viz_type
-
-    @classmethod
-    def _from_openapi_data(cls, alert_id, type, viz_type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(AlertGraphWidgetDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.alert_id = alert_id
-        self.type = type
-        self.viz_type = viz_type
-        return self
+        self_.alert_id = alert_id
+        self_.type = type
+        self_.viz_type = viz_type

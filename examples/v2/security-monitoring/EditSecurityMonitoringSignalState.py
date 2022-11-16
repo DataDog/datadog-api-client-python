@@ -19,8 +19,8 @@ from datadog_api_client.v2.model.security_monitoring_signal_state_update_request
 body = SecurityMonitoringSignalStateUpdateRequest(
     data=SecurityMonitoringSignalStateUpdateData(
         attributes=SecurityMonitoringSignalStateUpdateAttributes(
-            archive_reason=SecurityMonitoringSignalArchiveReason("none"),
-            state=SecurityMonitoringSignalState("open"),
+            archive_reason=SecurityMonitoringSignalArchiveReason.NONE,
+            state=SecurityMonitoringSignalState.OPEN,
         ),
     ),
 )

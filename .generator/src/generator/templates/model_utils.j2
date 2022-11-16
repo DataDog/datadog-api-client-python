@@ -1,5 +1,6 @@
 {% include "api_info.j2" %}
 
+from contextlib import suppress
 from datetime import date, datetime
 import enum
 import inspect
@@ -31,24 +32,6 @@ class UnsetType(enum.Enum):
 
 
 unset: Final = UnsetType.unset
-
-
-def convert_js_args_to_python_args(fn):
-    from functools import wraps
-
-    @wraps(fn)
-    def wrapped_init(_self, *args, **kwargs):
-        """
-        An attribute named `self` received from the api will conflicts with the reserved `self`
-        parameter of a class method. During generation, `self` attributes are mapped
-        to `_self` in models. Here, we name `_self` instead of `self` to avoid conflicts.
-        """
-        spec_property_naming = kwargs.get("_spec_property_naming", False)
-        if spec_property_naming:
-            kwargs = change_keys_js_to_python(kwargs, _self if isinstance(_self, type) else _self.__class__)
-        return fn(_self, *args, **kwargs)
-
-    return wrapped_init
 
 
 class cached_property(object):
@@ -108,10 +91,6 @@ def composed_model_input_classes(cls):
 class OpenApiModel(object):
     """The base class for all OpenAPIModels.
 
-    :var allowed_values: The key is the name of the attribute. The value is a dict
-        with a capitalized key describing the allowed value and an allowed
-        value. These dicts store the allowed enum values.
-    :type allowed_values: dict
     :var attribute_map: The key is attribute name and the value is json
         key in definition.
     :type attribute_map: dict
@@ -132,8 +111,6 @@ class OpenApiModel(object):
     attribute_map: Mapping[str, str] = empty_dict
 
     _nullable = False
-
-    allowed_values: Mapping[str, Mapping[str, Union[str, int]]] = empty_dict
 
     validations: Mapping[str, Mapping[str, int]] = empty_dict
 
@@ -169,13 +146,6 @@ class OpenApiModel(object):
                 self._check_type,
                 configuration=self._configuration,
             )
-        if name in self.allowed_values:
-            try:
-                check_allowed_values(list(self.allowed_values[name].values()), name, value)
-            except ApiValueError:
-                self.__dict__["_data_store"][name] = value
-                self._unparsed = True
-                return
         if name in self.validations:
             check_validations(self.validations[name], name, value, self._configuration)
         self.__dict__["_data_store"][name] = value
@@ -213,20 +183,22 @@ class OpenApiModel(object):
         return super(OpenApiModel, cls).__new__(cls)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _new_from_openapi_data(cls, *args, **kwargs):
+    def _new_from_openapi_data(cls_, *args, **kwargs):
+        kwargs = change_keys_js_to_python(kwargs, cls_)
         if len(args) == 1:
             arg = args[0]
-            if arg is None and is_type_nullable(cls):
+            if arg is None and is_type_nullable(cls_):
                 # The input data is the 'null' value and the type is nullable.
                 return None
 
-            if issubclass(cls, ModelComposed) and allows_single_value_input(cls):
+            if issubclass(cls_, ModelComposed) and allows_single_value_input(cls_):
                 model_kwargs = {}
-                oneof_instance = get_oneof_instance(cls, model_kwargs, kwargs, model_arg=arg)
+                oneof_instance = get_oneof_instance(cls_, model_kwargs, kwargs, model_arg=arg)
                 return oneof_instance
 
-        return cls._from_openapi_data(*args, **kwargs)
+        self = super(OpenApiModel, cls_).__new__(cls_)
+        cls_.__init__(self, *args, **kwargs)
+        return self
 
     def __init__(self, kwargs):
         """
@@ -258,12 +230,6 @@ class OpenApiModel(object):
         self._configuration = _configuration
         self._unparsed = False
 
-    @classmethod
-    def _from_openapi_data(cls, kwargs):
-        self = super(OpenApiModel, cls).__new__(cls)
-        OpenApiModel.__init__(self, kwargs)
-        return self
-
     def _check_pos_args(self, args):
         if args:
             raise ApiTypeError(
@@ -293,7 +259,12 @@ class ModelSimple(OpenApiModel):
     """
     The parent class of models whose type != object in their
     swagger/openapi.
+
+    :var allowed_values: Set of allowed values.
+    :type allowed_values: set
     """
+
+    allowed_values: Collection[Union[str, int]] = frozenset()
 
     required_properties = set(
         [
@@ -311,16 +282,19 @@ class ModelSimple(OpenApiModel):
         self.value = value
         self._check_kw_args(kwargs)
 
-    @classmethod
-    def _from_openapi_data(cls, value, **kwargs):
-        """Helper creating a new instance from a response."""
-        return cls(value, **kwargs)
-
     def __setitem__(self, name, value):
         """Set the value of an attribute using square-bracket notation: `instance[attr] = val`."""
         if name in self.required_properties:
             self.__dict__[name] = value
             return
+
+        if self.allowed_values and name == "value":
+            try:
+                check_allowed_values(self.allowed_values, name, value)
+            except ApiValueError:
+                self.__dict__["_data_store"][name] = value
+                self._unparsed = True
+                return
 
         self.set_attribute(name, value)
 
@@ -337,7 +311,7 @@ class ModelSimple(OpenApiModel):
             return self.get(name)
 
         raise ApiAttributeError(
-            "{0} has no attribute '{1}'".format(type(self).__name__, name), [e for e in [self._path_to_item, name] if e]
+            "{0} has no attribute '{1}'".format(type(self).__name__, name), [e for e in (self._path_to_item, name) if e]
         )
 
     def __contains__(self, name):
@@ -398,7 +372,7 @@ class ModelNormal(OpenApiModel):
             return self.get(name)
 
         raise ApiAttributeError(
-            "{0} has no attribute '{1}'".format(type(self).__name__, name), [e for e in [self._path_to_item, name] if e]
+            "{0} has no attribute '{1}'".format(type(self).__name__, name), [e for e in (self._path_to_item, name) if e]
         )
 
     def __contains__(self, name):
@@ -438,28 +412,13 @@ class ModelNormal(OpenApiModel):
                 and self._configuration.discard_unknown_keys
                 and self.additional_properties_type is None
             ):
-                # discard variable.
+                if self._spec_property_naming:
+                    # If it's returned from the API, store it if we need to send it back
+                    self.__dict__["_data_store"][var_name] = var_value
                 continue
             setattr(self, var_name, var_value)
-            if var_name in self.read_only_vars:
+            if not self._spec_property_naming and var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute.")
-
-    @classmethod
-    def _from_openapi_data(cls, kwargs):
-        self = super(ModelNormal, cls).__new__(cls)
-        OpenApiModel.__init__(self, kwargs)
-        for var_name, var_value in kwargs.items():
-            if (
-                var_name not in self.attribute_map
-                and self._configuration is not None
-                and self._configuration.discard_unknown_keys
-                and self.additional_properties_type is None
-            ):
-                # If it's returned from the API, store it if we need to send it back
-                self.__dict__["_data_store"][var_name] = var_value
-                continue
-            setattr(self, var_name, var_value)
-        return self
 
 
 class ModelComposed(OpenApiModel):
@@ -513,12 +472,6 @@ class ModelComposed(OpenApiModel):
         self._var_name_to_model_instances = composed_info[1]
         self._additional_properties_model_instances = composed_info[2]
 
-    @classmethod
-    def _from_openapi_data(cls, kwargs):
-        self = super(ModelComposed, cls).__new__(cls)
-        ModelComposed.__init__(self, kwargs)
-        return self
-
     def __setitem__(self, name, value):
         """Set the value of an attribute using square-bracket notation: `instance[attr] = val`."""
         if name in self.required_properties:
@@ -563,7 +516,7 @@ class ModelComposed(OpenApiModel):
                 "Values stored for property {0} in {1} differ when looking "
                 "at self and self's composed instances. All values must be "
                 "the same".format(name, type(self).__name__),
-                [e for e in [self._path_to_item, name] if e],
+                [e for e in (self._path_to_item, name) if e],
             )
 
     def __getitem__(self, name):
@@ -572,7 +525,7 @@ class ModelComposed(OpenApiModel):
         if value is self.__unset_attribute_value__:
             raise ApiAttributeError(
                 "{0} has no attribute '{1}'".format(type(self).__name__, name),
-                [e for e in [self._path_to_item, name] if e],
+                [e for e in (self._path_to_item, name) if e],
             )
         return value
 
@@ -729,24 +682,24 @@ def get_simple_class(input_value):
 def check_allowed_values(allowed_values, input_variable, input_values):
     """Raises an exception if the input_values are not allowed.
 
-    :type allowed_values: list
+    :type allowed_values: set
     :param input_variable: The name of the input variable.
     :type input_variable: str
     :param input_values: The values that we are checking to see if they are in
         allowed_values.
     :type input_values: list/str/int/float/date/datetime
     """
-    if isinstance(input_values, list) and not set(input_values).issubset(set(allowed_values)):
-        invalid_values = (", ".join(map(str, set(input_values) - set(allowed_values))),)
+    if isinstance(input_values, list) and not set(input_values).issubset(allowed_values):
+        invalid_values = (", ".join(map(str, set(input_values) - allowed_values)),)
         raise ApiValueError(
             "Invalid values for `%s` [%s], must be a subset of [%s]"
-            % (input_variable, invalid_values, ", ".join(map(str, allowed_values)))
+            % (input_variable, invalid_values, ", ".join(str(v) for v in allowed_values))
         )
-    elif isinstance(input_values, dict) and not set(input_values.keys()).issubset(set(allowed_values)):
-        invalid_values = ", ".join(map(str, set(input_values.keys()) - set(allowed_values)))
+    elif isinstance(input_values, dict) and not set(input_values.keys()).issubset(allowed_values):
+        invalid_values = ", ".join(map(str, set(input_values.keys()) - allowed_values))
         raise ApiValueError(
             "Invalid keys in `%s` [%s], must be a subset of [%s]"
-            % (input_variable, invalid_values, ", ".join(map(str, allowed_values)))
+            % (input_variable, invalid_values, ", ".join(str(v) for v in allowed_values))
         )
     elif not isinstance(input_values, (list, dict)) and input_values not in allowed_values:
         raise ApiValueError(
@@ -933,7 +886,7 @@ def order_response_types(required_types):
             return COERCION_INDEX_BY_TYPE[class_or_instance]
         raise ApiValueError("Unsupported type: %s" % class_or_instance)
 
-    sorted_types = sorted(required_types, key=lambda class_or_instance: index_getter(class_or_instance))
+    sorted_types = sorted(required_types, key=index_getter)
     return sorted_types
 
 
@@ -1038,10 +991,17 @@ def change_keys_js_to_python(input_dict, model_class):
     may have undeclared properties (additionalProperties attribute in the OAS
     document).
     """
-    if not getattr(model_class, "attribute_map", None):
+    if issubclass(model_class, ModelComposed):
+        attribute_map = {}
+        for t in model_class._composed_schemas.get("oneOf", ()):
+            if issubclass(t, OpenApiModel):
+                attribute_map.update(t.attribute_map)
+    elif not getattr(model_class, "attribute_map", None):
         return input_dict
+    else:
+        attribute_map = model_class.attribute_map
     output_dict = {}
-    reversed_attr_map = {value: key for key, value in model_class.attribute_map.items()}
+    reversed_attr_map = {value: key for key, value in attribute_map.items()}
     for javascript_key, value in input_dict.items():
         python_key = reversed_attr_map.get(javascript_key)
         if python_key is None:
@@ -1082,9 +1042,7 @@ def deserialize_primitive(data, klass, path_to_item):
                 # The string should be in iso8601 datetime format.
                 parsed_datetime = parse(data)
                 date_only = (
-                    parsed_datetime.hour == 0
-                    and parsed_datetime.minute == 0
-                    and parsed_datetime.second == 0
+                    parsed_datetime.hour == parsed_datetime.minute == parsed_datetime.second == 0
                     and parsed_datetime.tzinfo is None
                     and 8 <= len(data) <= 10
                 )
@@ -1337,7 +1295,6 @@ def validate_and_convert_types(
             path_to_item,
             configuration,
             spec_property_naming,
-            key_type=False,
             must_convert=True,
             check_type=check_type,
         )
@@ -1355,8 +1312,6 @@ def validate_and_convert_types(
                 path_to_item,
                 configuration,
                 spec_property_naming,
-                key_type=False,
-                must_convert=False,
                 check_type=check_type,
             )
 
@@ -1554,10 +1509,10 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
 
         single_value_input = allows_single_value_input(oneof_class)
 
-        try:
+        with suppress(Exception):
             if not single_value_input:
                 if constant_kwargs.get("_spec_property_naming"):
-                    oneof_instance = oneof_class._from_openapi_data(
+                    oneof_instance = oneof_class(
                         **change_keys_js_to_python(model_kwargs, oneof_class), **constant_kwargs
                     )
                 else:
@@ -1579,8 +1534,6 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                         configuration=constant_kwargs.get("_configuration"),
                     )
                     oneof_instances.append(oneof_instance)
-        except Exception:
-            pass
     if len(oneof_instances) != 1:
         return UnparsedObject(**model_kwargs)
     return oneof_instances[0]
@@ -1596,7 +1549,7 @@ def get_discarded_args(self, composed_instances, model_args):
     # before __init__ was called
     for instance in composed_instances:
         all_keys = set(model_to_dict(instance, serialize=False).keys())
-        js_keys = model_to_dict(instance, serialize=True).keys()
+        js_keys = model_to_dict(instance).keys()
         all_keys.update(js_keys)
         discarded_keys = model_arg_keys - all_keys
         discarded_args.update(discarded_keys)

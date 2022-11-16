@@ -1,7 +1,9 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -20,7 +22,7 @@ class LogsPipelinesOrder(ModelNormal):
         "pipeline_ids": "pipeline_ids",
     }
 
-    def __init__(self, pipeline_ids, *args, **kwargs):
+    def __init__(self_, pipeline_ids: List[str], **kwargs):
         """
         Object containing the ordered list of pipeline IDs.
 
@@ -30,17 +32,4 @@ class LogsPipelinesOrder(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.pipeline_ids = pipeline_ids
-
-    @classmethod
-    def _from_openapi_data(cls, pipeline_ids, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsPipelinesOrder, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.pipeline_ids = pipeline_ids
-        return self
+        self_.pipeline_ids = pipeline_ids

@@ -6,7 +6,7 @@ class {{ name }}(ModelComposed):
     _nullable = True
 {%- endif %}
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, **kwargs):
         """
         {{ model.description|docstring|indent(8) }}
 {%- for attr, definition, schema in get_oneof_parameters(model) %}
@@ -16,18 +16,6 @@ class {{ name }}(ModelComposed):
 {%- endfor %}
         """
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super({{ name }}, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self
 
     @cached_property
     def _composed_schemas(_):

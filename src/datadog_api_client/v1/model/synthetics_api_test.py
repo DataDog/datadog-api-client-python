@@ -1,12 +1,24 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_api_test_config import SyntheticsAPITestConfig
+    from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
+    from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
+    from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
+    from datadog_api_client.v1.model.synthetics_api_test_type import SyntheticsAPITestType
 
 
 class SyntheticsAPITest(ModelNormal):
@@ -50,7 +62,21 @@ class SyntheticsAPITest(ModelNormal):
         "public_id",
     }
 
-    def __init__(self, config, locations, message, name, options, type, *args, **kwargs):
+    def __init__(
+        self_,
+        config: SyntheticsAPITestConfig,
+        locations: List[str],
+        message: str,
+        name: str,
+        options: SyntheticsTestOptions,
+        type: SyntheticsAPITestType,
+        monitor_id: Union[int, UnsetType] = unset,
+        public_id: Union[str, UnsetType] = unset,
+        status: Union[SyntheticsTestPauseStatus, UnsetType] = unset,
+        subtype: Union[SyntheticsTestDetailsSubType, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Object containing details about a Synthetic API test.
 
@@ -89,29 +115,21 @@ class SyntheticsAPITest(ModelNormal):
         :param type: Type of the Synthetic test, ``api``.
         :type type: SyntheticsAPITestType
         """
+        if monitor_id is not unset:
+            kwargs["monitor_id"] = monitor_id
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
+        if status is not unset:
+            kwargs["status"] = status
+        if subtype is not unset:
+            kwargs["subtype"] = subtype
+        if tags is not unset:
+            kwargs["tags"] = tags
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.config = config
-        self.locations = locations
-        self.message = message
-        self.name = name
-        self.options = options
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, config, locations, message, name, options, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SyntheticsAPITest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.config = config
-        self.locations = locations
-        self.message = message
-        self.name = name
-        self.options = options
-        self.type = type
-        return self
+        self_.config = config
+        self_.locations = locations
+        self_.message = message
+        self_.name = name
+        self_.options = options
+        self_.type = type

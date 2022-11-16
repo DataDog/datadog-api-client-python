@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -22,7 +26,7 @@ class LogsQueryOptions(ModelNormal):
         "timezone": "timezone",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self_, time_offset: Union[int, UnsetType] = unset, timezone: Union[str, UnsetType] = unset, **kwargs):
         """
         Global query options that are used during the query.
         Note: You should only supply timezone or time offset but not both otherwise the query will fail.
@@ -33,16 +37,8 @@ class LogsQueryOptions(ModelNormal):
         :param timezone: The timezone can be specified both as an offset, for example: "UTC+03:00".
         :type timezone: str, optional
         """
+        if time_offset is not unset:
+            kwargs["time_offset"] = time_offset
+        if timezone is not unset:
+            kwargs["timezone"] = timezone
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsQueryOptions, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

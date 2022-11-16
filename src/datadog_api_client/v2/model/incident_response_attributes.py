@@ -1,14 +1,27 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Dict, List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
+    from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
+    from datadog_api_client.v2.model.incident_field_attributes_single_value import IncidentFieldAttributesSingleValue
+    from datadog_api_client.v2.model.incident_field_attributes_multiple_value import (
+        IncidentFieldAttributesMultipleValue,
+    )
 
 
 class IncidentResponseAttributes(ModelNormal):
@@ -28,7 +41,6 @@ class IncidentResponseAttributes(ModelNormal):
             "fields": ({str: (IncidentFieldAttributes,)},),
             "modified": (datetime,),
             "notification_handles": ([IncidentNotificationHandle], none_type),
-            "postmortem_id": (str,),
             "public_id": (int,),
             "resolved": (datetime, none_type),
             "time_to_detect": (int,),
@@ -49,7 +61,6 @@ class IncidentResponseAttributes(ModelNormal):
         "fields": "fields",
         "modified": "modified",
         "notification_handles": "notification_handles",
-        "postmortem_id": "postmortem_id",
         "public_id": "public_id",
         "resolved": "resolved",
         "time_to_detect": "time_to_detect",
@@ -68,7 +79,35 @@ class IncidentResponseAttributes(ModelNormal):
         "time_to_resolve",
     }
 
-    def __init__(self, title, *args, **kwargs):
+    def __init__(
+        self_,
+        title: str,
+        created: Union[datetime, UnsetType] = unset,
+        customer_impact_duration: Union[int, UnsetType] = unset,
+        customer_impact_end: Union[datetime, none_type, UnsetType] = unset,
+        customer_impact_scope: Union[str, none_type, UnsetType] = unset,
+        customer_impact_start: Union[datetime, none_type, UnsetType] = unset,
+        customer_impacted: Union[bool, UnsetType] = unset,
+        detected: Union[datetime, none_type, UnsetType] = unset,
+        fields: Union[
+            Dict[
+                str,
+                Union[
+                    IncidentFieldAttributes, IncidentFieldAttributesSingleValue, IncidentFieldAttributesMultipleValue
+                ],
+            ],
+            UnsetType,
+        ] = unset,
+        modified: Union[datetime, UnsetType] = unset,
+        notification_handles: Union[List[IncidentNotificationHandle], none_type, UnsetType] = unset,
+        public_id: Union[int, UnsetType] = unset,
+        resolved: Union[datetime, none_type, UnsetType] = unset,
+        time_to_detect: Union[int, UnsetType] = unset,
+        time_to_internal_response: Union[int, UnsetType] = unset,
+        time_to_repair: Union[int, UnsetType] = unset,
+        time_to_resolve: Union[int, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The incident's attributes from a response.
 
@@ -103,13 +142,10 @@ class IncidentResponseAttributes(ModelNormal):
         :param notification_handles: Notification handles that will be notified of the incident during update.
         :type notification_handles: [IncidentNotificationHandle], none_type, optional
 
-        :param postmortem_id: The UUID of the postmortem object attached to the incident.
-        :type postmortem_id: str, optional
-
         :param public_id: The monotonically increasing integer ID for the incident.
         :type public_id: int, optional
 
-        :param resolved: Timestamp when the incident's state was set to resolved.
+        :param resolved: Timestamp when the incident's state was last changed from active or stable to resolved or completed.
         :type resolved: datetime, none_type, optional
 
         :param time_to_detect: The amount of time in seconds to detect the incident.
@@ -128,19 +164,38 @@ class IncidentResponseAttributes(ModelNormal):
         :param title: The title of the incident, which summarizes what happened.
         :type title: str
         """
+        if created is not unset:
+            kwargs["created"] = created
+        if customer_impact_duration is not unset:
+            kwargs["customer_impact_duration"] = customer_impact_duration
+        if customer_impact_end is not unset:
+            kwargs["customer_impact_end"] = customer_impact_end
+        if customer_impact_scope is not unset:
+            kwargs["customer_impact_scope"] = customer_impact_scope
+        if customer_impact_start is not unset:
+            kwargs["customer_impact_start"] = customer_impact_start
+        if customer_impacted is not unset:
+            kwargs["customer_impacted"] = customer_impacted
+        if detected is not unset:
+            kwargs["detected"] = detected
+        if fields is not unset:
+            kwargs["fields"] = fields
+        if modified is not unset:
+            kwargs["modified"] = modified
+        if notification_handles is not unset:
+            kwargs["notification_handles"] = notification_handles
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
+        if resolved is not unset:
+            kwargs["resolved"] = resolved
+        if time_to_detect is not unset:
+            kwargs["time_to_detect"] = time_to_detect
+        if time_to_internal_response is not unset:
+            kwargs["time_to_internal_response"] = time_to_internal_response
+        if time_to_repair is not unset:
+            kwargs["time_to_repair"] = time_to_repair
+        if time_to_resolve is not unset:
+            kwargs["time_to_resolve"] = time_to_resolve
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.title = title
-
-    @classmethod
-    def _from_openapi_data(cls, title, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(IncidentResponseAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.title = title
-        return self
+        self_.title = title

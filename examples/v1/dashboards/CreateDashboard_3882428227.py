@@ -37,9 +37,9 @@ body = Dashboard(
             definition=DistributionWidgetDefinition(
                 title="Events Platform - Request latency HOP",
                 title_size="16",
-                title_align=WidgetTextAlign("left"),
+                title_align=WidgetTextAlign.LEFT,
                 show_legend=False,
-                type=DistributionWidgetDefinitionType("distribution"),
+                type=DistributionWidgetDefinitionType.DISTRIBUTION,
                 xaxis=DistributionWidgetXAxis(
                     max="auto",
                     include_zero=True,
@@ -58,10 +58,10 @@ body = Dashboard(
                             search=FormulaAndFunctionEventQueryDefinitionSearch(
                                 query="",
                             ),
-                            data_source=FormulaAndFunctionEventsDataSource("events"),
+                            data_source=FormulaAndFunctionEventsDataSource.EVENTS,
                             compute=FormulaAndFunctionEventQueryDefinitionCompute(
                                 metric="@duration",
-                                aggregation=FormulaAndFunctionEventAggregation("min"),
+                                aggregation=FormulaAndFunctionEventAggregation.MIN,
                             ),
                             name="query1",
                             indexes=[
@@ -69,7 +69,7 @@ body = Dashboard(
                             ],
                             group_by=[],
                         ),
-                        request_type=DistributionWidgetHistogramRequestType("histogram"),
+                        request_type=DistributionWidgetHistogramRequestType.HISTOGRAM,
                     ),
                 ],
             ),
@@ -81,7 +81,7 @@ body = Dashboard(
             ),
         ),
     ],
-    layout_type=DashboardLayoutType("ordered"),
+    layout_type=DashboardLayoutType.ORDERED,
 )
 
 configuration = Configuration()

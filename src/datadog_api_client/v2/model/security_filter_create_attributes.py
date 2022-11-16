@@ -1,12 +1,19 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_filter_exclusion_filter import SecurityFilterExclusionFilter
+    from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
 
 
 class SecurityFilterCreateAttributes(ModelNormal):
@@ -31,7 +38,15 @@ class SecurityFilterCreateAttributes(ModelNormal):
         "query": "query",
     }
 
-    def __init__(self, exclusion_filters, filtered_data_type, is_enabled, name, query, *args, **kwargs):
+    def __init__(
+        self_,
+        exclusion_filters: List[SecurityFilterExclusionFilter],
+        filtered_data_type: SecurityFilterFilteredDataType,
+        is_enabled: bool,
+        name: str,
+        query: str,
+        **kwargs,
+    ):
         """
         Object containing the attributes of the security filter to be created.
 
@@ -52,25 +67,8 @@ class SecurityFilterCreateAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.exclusion_filters = exclusion_filters
-        self.filtered_data_type = filtered_data_type
-        self.is_enabled = is_enabled
-        self.name = name
-        self.query = query
-
-    @classmethod
-    def _from_openapi_data(cls, exclusion_filters, filtered_data_type, is_enabled, name, query, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(SecurityFilterCreateAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.exclusion_filters = exclusion_filters
-        self.filtered_data_type = filtered_data_type
-        self.is_enabled = is_enabled
-        self.name = name
-        self.query = query
-        return self
+        self_.exclusion_filters = exclusion_filters
+        self_.filtered_data_type = filtered_data_type
+        self_.is_enabled = is_enabled
+        self_.name = name
+        self_.query = query

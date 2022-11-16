@@ -1,11 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -24,7 +28,13 @@ class UsageAttributionAggregatesBody(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        agg_type: Union[str, UnsetType] = unset,
+        field: Union[str, UnsetType] = unset,
+        value: Union[float, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The object containing the aggregates.
 
@@ -37,16 +47,10 @@ class UsageAttributionAggregatesBody(ModelNormal):
         :param value: The value for a given field.
         :type value: float, optional
         """
+        if agg_type is not unset:
+            kwargs["agg_type"] = agg_type
+        if field is not unset:
+            kwargs["field"] = field
+        if value is not unset:
+            kwargs["value"] = value
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(UsageAttributionAggregatesBody, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

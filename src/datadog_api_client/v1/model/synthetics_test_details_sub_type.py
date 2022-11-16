@@ -1,12 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
     ModelSimple,
     cached_property,
 )
+
+from typing import ClassVar
 
 
 class SyntheticsTestDetailsSubType(ModelSimple):
@@ -19,21 +22,39 @@ class SyntheticsTestDetailsSubType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "HTTP": "http",
-            "SSL": "ssl",
-            "TCP": "tcp",
-            "DNS": "dns",
-            "MULTI": "multi",
-            "ICMP": "icmp",
-            "UDP": "udp",
-            "WEBSOCKET": "websocket",
-            "GRPC": "grpc",
-        },
+        "http",
+        "ssl",
+        "tcp",
+        "dns",
+        "multi",
+        "icmp",
+        "udp",
+        "websocket",
+        "grpc",
     }
+    HTTP: ClassVar["SyntheticsTestDetailsSubType"]
+    SSL: ClassVar["SyntheticsTestDetailsSubType"]
+    TCP: ClassVar["SyntheticsTestDetailsSubType"]
+    DNS: ClassVar["SyntheticsTestDetailsSubType"]
+    MULTI: ClassVar["SyntheticsTestDetailsSubType"]
+    ICMP: ClassVar["SyntheticsTestDetailsSubType"]
+    UDP: ClassVar["SyntheticsTestDetailsSubType"]
+    WEBSOCKET: ClassVar["SyntheticsTestDetailsSubType"]
+    GRPC: ClassVar["SyntheticsTestDetailsSubType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsTestDetailsSubType.HTTP = SyntheticsTestDetailsSubType("http")
+SyntheticsTestDetailsSubType.SSL = SyntheticsTestDetailsSubType("ssl")
+SyntheticsTestDetailsSubType.TCP = SyntheticsTestDetailsSubType("tcp")
+SyntheticsTestDetailsSubType.DNS = SyntheticsTestDetailsSubType("dns")
+SyntheticsTestDetailsSubType.MULTI = SyntheticsTestDetailsSubType("multi")
+SyntheticsTestDetailsSubType.ICMP = SyntheticsTestDetailsSubType("icmp")
+SyntheticsTestDetailsSubType.UDP = SyntheticsTestDetailsSubType("udp")
+SyntheticsTestDetailsSubType.WEBSOCKET = SyntheticsTestDetailsSubType("websocket")
+SyntheticsTestDetailsSubType.GRPC = SyntheticsTestDetailsSubType("grpc")

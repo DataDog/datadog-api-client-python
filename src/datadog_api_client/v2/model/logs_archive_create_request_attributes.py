@@ -1,13 +1,24 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.logs_archive_create_request_destination import LogsArchiveCreateRequestDestination
+    from datadog_api_client.v2.model.logs_archive_destination_azure import LogsArchiveDestinationAzure
+    from datadog_api_client.v2.model.logs_archive_destination_gcs import LogsArchiveDestinationGCS
+    from datadog_api_client.v2.model.logs_archive_destination_s3 import LogsArchiveDestinationS3
 
 
 class LogsArchiveCreateRequestAttributes(ModelNormal):
@@ -35,7 +46,21 @@ class LogsArchiveCreateRequestAttributes(ModelNormal):
         "rehydration_tags": "rehydration_tags",
     }
 
-    def __init__(self, destination, name, query, *args, **kwargs):
+    def __init__(
+        self_,
+        destination: Union[
+            LogsArchiveCreateRequestDestination,
+            LogsArchiveDestinationAzure,
+            LogsArchiveDestinationGCS,
+            LogsArchiveDestinationS3,
+        ],
+        name: str,
+        query: str,
+        include_tags: Union[bool, UnsetType] = unset,
+        rehydration_max_scan_size_in_gb: Union[int, none_type, UnsetType] = unset,
+        rehydration_tags: Union[List[str], UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The attributes associated with the archive.
 
@@ -58,23 +83,14 @@ class LogsArchiveCreateRequestAttributes(ModelNormal):
         :param rehydration_tags: An array of tags to add to rehydrated logs from an archive.
         :type rehydration_tags: [str], optional
         """
+        if include_tags is not unset:
+            kwargs["include_tags"] = include_tags
+        if rehydration_max_scan_size_in_gb is not unset:
+            kwargs["rehydration_max_scan_size_in_gb"] = rehydration_max_scan_size_in_gb
+        if rehydration_tags is not unset:
+            kwargs["rehydration_tags"] = rehydration_tags
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.destination = destination
-        self.name = name
-        self.query = query
-
-    @classmethod
-    def _from_openapi_data(cls, destination, name, query, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsArchiveCreateRequestAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.destination = destination
-        self.name = name
-        self.query = query
-        return self
+        self_.destination = destination
+        self_.name = name
+        self_.query = query

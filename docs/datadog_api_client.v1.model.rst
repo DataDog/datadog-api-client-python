@@ -1898,6 +1898,20 @@ monitor\_options\_aggregation
    :members:
    :show-inheritance:
 
+monitor\_options\_scheduling\_options
+-------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_options_scheduling_options
+   :members:
+   :show-inheritance:
+
+monitor\_options\_scheduling\_options\_evaluation\_window
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_options_scheduling_options_evaluation_window
+   :members:
+   :show-inheritance:
+
 monitor\_overall\_states
 ------------------------
 
@@ -2584,6 +2598,34 @@ scatterplot\_widget\_formula
    :members:
    :show-inheritance:
 
+search\_service\_level\_objective
+---------------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_service_level_objective
+   :members:
+   :show-inheritance:
+
+search\_service\_level\_objective\_attributes
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_service_level_objective_attributes
+   :members:
+   :show-inheritance:
+
+search\_service\_level\_objective\_data
+---------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.search_service_level_objective_data
+   :members:
+   :show-inheritance:
+
+search\_slo\_query
+------------------
+
+.. automodule:: datadog_api_client.v1.model.search_slo_query
+   :members:
+   :show-inheritance:
+
 search\_slo\_response
 ---------------------
 
@@ -2644,6 +2686,20 @@ search\_slo\_response\_meta\_page
 ---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.search_slo_response_meta_page
+   :members:
+   :show-inheritance:
+
+search\_slo\_threshold
+----------------------
+
+.. automodule:: datadog_api_client.v1.model.search_slo_threshold
+   :members:
+   :show-inheritance:
+
+search\_slo\_timeframe
+----------------------
+
+.. automodule:: datadog_api_client.v1.model.search_slo_timeframe
    :members:
    :show-inheritance:
 
@@ -2892,6 +2948,13 @@ slo\_correction\_update\_request\_attributes
    :members:
    :show-inheritance:
 
+slo\_creator
+------------
+
+.. automodule:: datadog_api_client.v1.model.slo_creator
+   :members:
+   :show-inheritance:
+
 slo\_delete\_response
 ---------------------
 
@@ -3001,6 +3064,55 @@ slo\_list\_response\_metadata\_page
 -----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_list_response_metadata_page
+   :members:
+   :show-inheritance:
+
+slo\_list\_widget\_definition
+-----------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_list_widget_definition
+   :members:
+   :show-inheritance:
+
+slo\_list\_widget\_definition\_type
+-----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_list_widget_definition_type
+   :members:
+   :show-inheritance:
+
+slo\_list\_widget\_query
+------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_list_widget_query
+   :members:
+   :show-inheritance:
+
+slo\_list\_widget\_request
+--------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_list_widget_request
+   :members:
+   :show-inheritance:
+
+slo\_list\_widget\_request\_type
+--------------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_list_widget_request_type
+   :members:
+   :show-inheritance:
+
+slo\_overall\_statuses
+----------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_overall_statuses
+   :members:
+   :show-inheritance:
+
+slo\_raw\_error\_budget\_remaining
+----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_raw_error_budget_remaining
    :members:
    :show-inheritance:
 
@@ -3253,6 +3365,27 @@ synthetics\_assertion\_type
 ---------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_type
+   :members:
+   :show-inheritance:
+
+synthetics\_assertion\_x\_path\_operator
+----------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_x_path_operator
+   :members:
+   :show-inheritance:
+
+synthetics\_assertion\_x\_path\_target
+--------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_x_path_target
+   :members:
+   :show-inheritance:
+
+synthetics\_assertion\_x\_path\_target\_target
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_x_path_target_target
    :members:
    :show-inheritance:
 
@@ -3872,6 +4005,13 @@ synthetics\_test\_request
    :members:
    :show-inheritance:
 
+synthetics\_test\_request\_body\_type
+-------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_test_request_body_type
+   :members:
+   :show-inheritance:
+
 synthetics\_test\_request\_certificate
 --------------------------------------
 
@@ -4079,6 +4219,48 @@ toplist\_widget\_request
 ------------------------
 
 .. automodule:: datadog_api_client.v1.model.toplist_widget_request
+   :members:
+   :show-inheritance:
+
+topology\_map\_widget\_definition
+---------------------------------
+
+.. automodule:: datadog_api_client.v1.model.topology_map_widget_definition
+   :members:
+   :show-inheritance:
+
+topology\_map\_widget\_definition\_type
+---------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.topology_map_widget_definition_type
+   :members:
+   :show-inheritance:
+
+topology\_query
+---------------
+
+.. automodule:: datadog_api_client.v1.model.topology_query
+   :members:
+   :show-inheritance:
+
+topology\_query\_data\_source
+-----------------------------
+
+.. automodule:: datadog_api_client.v1.model.topology_query_data_source
+   :members:
+   :show-inheritance:
+
+topology\_request
+-----------------
+
+.. automodule:: datadog_api_client.v1.model.topology_request
+   :members:
+   :show-inheritance:
+
+topology\_request\_type
+-----------------------
+
+.. automodule:: datadog_api_client.v1.model.topology_request_type
    :members:
    :show-inheritance:
 

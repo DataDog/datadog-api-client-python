@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.formula_and_function_event_aggregation import FormulaAndFunctionEventAggregation
 
 
 class FormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
@@ -28,7 +36,13 @@ class FormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
         "metric": "metric",
     }
 
-    def __init__(self, aggregation, *args, **kwargs):
+    def __init__(
+        self_,
+        aggregation: FormulaAndFunctionEventAggregation,
+        interval: Union[int, UnsetType] = unset,
+        metric: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Compute options.
 
@@ -41,19 +55,10 @@ class FormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
         :param metric: Measurable attribute to compute.
         :type metric: str, optional
         """
+        if interval is not unset:
+            kwargs["interval"] = interval
+        if metric is not unset:
+            kwargs["metric"] = metric
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.aggregation = aggregation
-
-    @classmethod
-    def _from_openapi_data(cls, aggregation, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(FormulaAndFunctionEventQueryDefinitionCompute, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.aggregation = aggregation
-        return self
+        self_.aggregation = aggregation

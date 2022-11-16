@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.logs_status_remapper_type import LogsStatusRemapperType
 
 
 class LogsStatusRemapper(ModelNormal):
@@ -28,12 +36,18 @@ class LogsStatusRemapper(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self, sources, type, *args, **kwargs):
+    def __init__(
+        self_,
+        sources: List[str],
+        type: LogsStatusRemapperType,
+        is_enabled: Union[bool, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Use this Processor if you want to assign some attributes as the official status.
 
         Each incoming status value is mapped as follows.
-
 
         * Integers from 0 to 7 map to the Syslog severity standards
         * Strings beginning with ``emerg`` or f (case-insensitive) map to ``emerg`` (0)
@@ -63,21 +77,11 @@ class LogsStatusRemapper(ModelNormal):
         :param type: Type of logs status remapper.
         :type type: LogsStatusRemapperType
         """
+        if is_enabled is not unset:
+            kwargs["is_enabled"] = is_enabled
+        if name is not unset:
+            kwargs["name"] = name
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.sources = sources
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, sources, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsStatusRemapper, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.sources = sources
-        self.type = type
-        return self
+        self_.sources = sources
+        self_.type = type

@@ -5,7 +5,6 @@ Create a detection rule with type 'workload_security' returns "OK" response
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
-from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
 from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
     SecurityMonitoringRuleEvaluationWindow,
 )
@@ -17,16 +16,19 @@ from datadog_api_client.v2.model.security_monitoring_rule_options import Securit
 from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
     SecurityMonitoringRuleQueryAggregation,
 )
-from datadog_api_client.v2.model.security_monitoring_rule_query_create import SecurityMonitoringRuleQueryCreate
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
 from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
+from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
+    SecurityMonitoringStandardRuleCreatePayload,
+)
+from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
 
-body = SecurityMonitoringRuleCreatePayload(
+body = SecurityMonitoringStandardRuleCreatePayload(
     name="Example-Create_a_detection_rule_with_type_workload_security_returns_OK_response",
     queries=[
-        SecurityMonitoringRuleQueryCreate(
+        SecurityMonitoringStandardRuleQuery(
             query="@test:true",
-            aggregation=SecurityMonitoringRuleQueryAggregation("count"),
+            aggregation=SecurityMonitoringRuleQueryAggregation.COUNT,
             group_by_fields=[],
             distinct_fields=[],
             metric="",
@@ -36,20 +38,20 @@ body = SecurityMonitoringRuleCreatePayload(
     cases=[
         SecurityMonitoringRuleCaseCreate(
             name="",
-            status=SecurityMonitoringRuleSeverity("info"),
+            status=SecurityMonitoringRuleSeverity.INFO,
             condition="a > 0",
             notifications=[],
         ),
     ],
     options=SecurityMonitoringRuleOptions(
-        evaluation_window=SecurityMonitoringRuleEvaluationWindow(900),
-        keep_alive=SecurityMonitoringRuleKeepAlive(3600),
-        max_signal_duration=SecurityMonitoringRuleMaxSignalDuration(86400),
+        evaluation_window=SecurityMonitoringRuleEvaluationWindow.FIFTEEN_MINUTES,
+        keep_alive=SecurityMonitoringRuleKeepAlive.ONE_HOUR,
+        max_signal_duration=SecurityMonitoringRuleMaxSignalDuration.ONE_DAY,
     ),
     message="Test rule",
     tags=[],
     is_enabled=True,
-    type=SecurityMonitoringRuleTypeCreate("workload_security"),
+    type=SecurityMonitoringRuleTypeCreate.WORKLOAD_SECURITY,
 )
 
 configuration = Configuration()

@@ -1,12 +1,20 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.slo_history_metrics_series import SLOHistoryMetricsSeries
 
 
 class SLOHistoryMetrics(ModelNormal):
@@ -36,7 +44,18 @@ class SLOHistoryMetrics(ModelNormal):
         "times": "times",
     }
 
-    def __init__(self, denominator, interval, numerator, query, res_type, resp_version, times, *args, **kwargs):
+    def __init__(
+        self_,
+        denominator: SLOHistoryMetricsSeries,
+        interval: int,
+        numerator: SLOHistoryMetricsSeries,
+        query: str,
+        res_type: str,
+        resp_version: int,
+        times: List[float],
+        message: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         A ``metric`` based SLO history response.
 
@@ -68,33 +87,14 @@ class SLOHistoryMetrics(ModelNormal):
         :param times: An array of query timestamps in EPOCH milliseconds.
         :type times: [float]
         """
+        if message is not unset:
+            kwargs["message"] = message
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.denominator = denominator
-        self.interval = interval
-        self.numerator = numerator
-        self.query = query
-        self.res_type = res_type
-        self.resp_version = resp_version
-        self.times = times
-
-    @classmethod
-    def _from_openapi_data(
-        cls, denominator, interval, numerator, query, res_type, resp_version, times, *args, **kwargs
-    ):
-        """Helper creating a new instance from a response."""
-
-        self = super(SLOHistoryMetrics, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.denominator = denominator
-        self.interval = interval
-        self.numerator = numerator
-        self.query = query
-        self.res_type = res_type
-        self.resp_version = resp_version
-        self.times = times
-        return self
+        self_.denominator = denominator
+        self_.interval = interval
+        self_.numerator = numerator
+        self_.query = query
+        self_.res_type = res_type
+        self_.resp_version = resp_version
+        self_.times = times

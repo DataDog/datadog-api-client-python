@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Create_a_metric_monitor_returns_OK_response-1666985646","options":{"scheduling_options":{"evaluation_window":{"day_starts":"04:00","month_starts":1}},"thresholds":{"critical":0.5}},"query":"avg(current_1d):avg:system.load.5{*}
+      > 0.5","type":"metric alert"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/monitor
+  response:
+    body:
+      string: '{"restricted_roles":null,"tags":[],"deleted":null,"query":"avg(current_1d):avg:system.load.5{*}
+        > 0.5","message":"some message Notify: @hipchat-channel","id":101334182,"multi":false,"name":"Test-Create_a_metric_monitor_returns_OK_response-1666985646","created":"2022-10-28T19:34:06.916192+00:00","created_at":1666985646000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2022-10-28T19:34:06.916192+00:00","priority":null,"overall_state_modified":null,"overall_state":"No
+        Data","type":"query alert","options":{"notify_audit":false,"scheduling_options":{"evaluation_window":{"day_starts":"04:00","month_starts":1}},"include_tags":true,"thresholds":{"critical":0.5},"silenced":{},"new_host_delay":300,"notify_no_data":false}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/monitor/101334182
+  response:
+    body:
+      string: '{"deleted_monitor_id":101334182}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

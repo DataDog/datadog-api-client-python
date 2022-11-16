@@ -1,0 +1,80 @@
+interactions:
+- request:
+    body: '{"config":{"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"steps":[{"allowFailure":true,"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"extractedValues":[{"field":"server","name":"EXTRACTED_VALUE","parser":{"type":"raw"},"type":"http_header"}],"isCritical":true,"name":"request
+      is sent","request":{"method":"GET","timeout":10,"url":"https://datadoghq.com"},"retry":{"count":5,"interval":1000},"subtype":"http"}]},"locations":["aws:us-east-2"],"message":"BDD
+      test payload: synthetics_api_test_multi_step_payload.json","name":"Test-Create_a_global_variable_from_test_returns_OK_response-1664374251","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_a_global_variable_from_test_returns_OK_response-1664374251","monitor_priority":5,"retry":{"count":3,"interval":1000},"tick_every":60},"subtype":"multi","tags":["testing:api"],"type":"api"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
+  response:
+    body:
+      string: '{"status":"live","public_id":"nsx-pp5-8tb","tags":["testing:api"],"org_id":321813,"locations":["aws:us-east-2"],"message":"BDD
+        test payload: synthetics_api_test_multi_step_payload.json","deleted_at":null,"name":"Test-Create_a_global_variable_from_test_returns_OK_response-1664374251","monitor_id":92664497,"type":"api","created_at":"2022-09-28T14:10:52.140404+00:00","modified_at":"2022-09-28T14:10:52.140404+00:00","subtype":"multi","config":{"steps":[{"retry":{"count":5,"interval":1000},"name":"request
+        is sent","request":{"url":"https://datadoghq.com","method":"GET","timeout":10},"subtype":"http","allowFailure":true,"assertions":[{"operator":"is","type":"statusCode","target":200}],"isCritical":true,"id":"782-qng-yfe","extractedValues":[{"field":"server","parser":{"type":"raw"},"type":"http_header","name":"EXTRACTED_VALUE"}]}],"configVariables":[{"pattern":"content-type","type":"text","example":"content-type","name":"PROPERTY"}]},"options":{"accept_self_signed":false,"retry":{"count":3,"interval":1000},"min_location_failed":1,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"monitor_priority":5,"monitor_name":"Test-Create_a_global_variable_from_test_returns_OK_response-1664374251","tick_every":60}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"description":"","name":"GLOBAL_VARIABLE_PAYLOAD_TESTCREATEAGLOBALVARIABLEFROMTESTRETURNSOKRESPONSE1664374251","parse_test_options":{"localVariableName":"EXTRACTED_VALUE","type":"local_variable"},"parse_test_public_id":"nsx-pp5-8tb","tags":[],"value":{"secure":false,"value":""}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/variables
+  response:
+    body:
+      string: '{"parse_test_options":{"type":"local_variable","localVariableName":"EXTRACTED_VALUE"},"parse_test_extracted_at":null,"description":"","tags":[],"last_error":null,"is_totp":null,"value":{"secure":false,"value":""},"parse_test_public_id":"nsx-pp5-8tb","parse_test_name":null,"type":"variable","id":"4507df9b-a12d-4dfe-b020-c76d4e96d286","name":"GLOBAL_VARIABLE_PAYLOAD_TESTCREATEAGLOBALVARIABLEFROMTESTRETURNSOKRESPONSE1664374251"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/synthetics/variables/4507df9b-a12d-4dfe-b020-c76d4e96d286
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"public_ids":["nsx-pp5-8tb"]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
+  response:
+    body:
+      string: '{"deleted_tests":[{"deleted_at":"2022-09-28T14:10:58.657679+00:00","public_id":"nsx-pp5-8tb"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

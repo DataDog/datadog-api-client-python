@@ -1,14 +1,26 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
+    from datadog_api_client.v1.model.dashboard_reflow_type import DashboardReflowType
+    from datadog_api_client.v1.model.dashboard_template_variable_preset import DashboardTemplateVariablePreset
+    from datadog_api_client.v1.model.dashboard_template_variable import DashboardTemplateVariable
+    from datadog_api_client.v1.model.widget import Widget
 
 
 class Dashboard(ModelNormal):
@@ -66,7 +78,26 @@ class Dashboard(ModelNormal):
         "url",
     }
 
-    def __init__(self, layout_type, title, widgets, *args, **kwargs):
+    def __init__(
+        self_,
+        layout_type: DashboardLayoutType,
+        title: str,
+        widgets: List[Widget],
+        author_handle: Union[str, UnsetType] = unset,
+        author_name: Union[str, none_type, UnsetType] = unset,
+        created_at: Union[datetime, UnsetType] = unset,
+        description: Union[str, none_type, UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
+        is_read_only: Union[bool, UnsetType] = unset,
+        modified_at: Union[datetime, UnsetType] = unset,
+        notify_list: Union[List[str], none_type, UnsetType] = unset,
+        reflow_type: Union[DashboardReflowType, UnsetType] = unset,
+        restricted_roles: Union[List[str], UnsetType] = unset,
+        template_variable_presets: Union[List[DashboardTemplateVariablePreset], none_type, UnsetType] = unset,
+        template_variables: Union[List[DashboardTemplateVariable], none_type, UnsetType] = unset,
+        url: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         A dashboard is Datadog’s tool for visually tracking, analyzing, and displaying
         key performance metrics, which enable you to monitor the health of your infrastructure.
@@ -86,7 +117,7 @@ class Dashboard(ModelNormal):
         :param id: ID of the dashboard.
         :type id: str, optional
 
-        :param is_read_only: Whether this dashboard is read-only. If True, only the author and admins can make changes to it. Prefer using ``restricted_roles`` to manage write authorization.
+        :param is_read_only: Whether this dashboard is read-only. If True, only the author and admins can make changes to it. Prefer using ``restricted_roles`` to manage write authorization. **Deprecated**.
         :type is_read_only: bool, optional
 
         :param layout_type: Layout type of the dashboard.
@@ -121,23 +152,34 @@ class Dashboard(ModelNormal):
         :param widgets: List of widgets to display on the dashboard.
         :type widgets: [Widget]
         """
+        if author_handle is not unset:
+            kwargs["author_handle"] = author_handle
+        if author_name is not unset:
+            kwargs["author_name"] = author_name
+        if created_at is not unset:
+            kwargs["created_at"] = created_at
+        if description is not unset:
+            kwargs["description"] = description
+        if id is not unset:
+            kwargs["id"] = id
+        if is_read_only is not unset:
+            kwargs["is_read_only"] = is_read_only
+        if modified_at is not unset:
+            kwargs["modified_at"] = modified_at
+        if notify_list is not unset:
+            kwargs["notify_list"] = notify_list
+        if reflow_type is not unset:
+            kwargs["reflow_type"] = reflow_type
+        if restricted_roles is not unset:
+            kwargs["restricted_roles"] = restricted_roles
+        if template_variable_presets is not unset:
+            kwargs["template_variable_presets"] = template_variable_presets
+        if template_variables is not unset:
+            kwargs["template_variables"] = template_variables
+        if url is not unset:
+            kwargs["url"] = url
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.layout_type = layout_type
-        self.title = title
-        self.widgets = widgets
-
-    @classmethod
-    def _from_openapi_data(cls, layout_type, title, widgets, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(Dashboard, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.layout_type = layout_type
-        self.title = title
-        self.widgets = widgets
-        return self
+        self_.layout_type = layout_type
+        self_.title = title
+        self_.widgets = widgets

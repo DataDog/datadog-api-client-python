@@ -23,7 +23,7 @@ body = ApplicationKeyCreateRequest(
                 "dashboards_public_share",
             ],
         ),
-        type=ApplicationKeysType("application_keys"),
+        type=ApplicationKeysType.APPLICATION_KEYS,
     ),
 )
 

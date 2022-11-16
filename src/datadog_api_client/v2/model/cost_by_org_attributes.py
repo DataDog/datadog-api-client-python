@@ -1,13 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
 
 
 class CostByOrgAttributes(ModelNormal):
@@ -31,7 +39,15 @@ class CostByOrgAttributes(ModelNormal):
         "total_cost": "total_cost",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        charges: Union[List[ChargebackBreakdown], UnsetType] = unset,
+        date: Union[datetime, UnsetType] = unset,
+        org_name: Union[str, UnsetType] = unset,
+        public_id: Union[str, UnsetType] = unset,
+        total_cost: Union[float, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Cost attributes data.
 
@@ -50,16 +66,14 @@ class CostByOrgAttributes(ModelNormal):
         :param total_cost: The total cost of products for the month.
         :type total_cost: float, optional
         """
+        if charges is not unset:
+            kwargs["charges"] = charges
+        if date is not unset:
+            kwargs["date"] = date
+        if org_name is not unset:
+            kwargs["org_name"] = org_name
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
+        if total_cost is not unset:
+            kwargs["total_cost"] = total_cost
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(CostByOrgAttributes, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

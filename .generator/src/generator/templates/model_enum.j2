@@ -1,3 +1,4 @@
+from typing import ClassVar
 {%- set default = get_enum_default(model) %}
 
 class {{ name }}(ModelSimple):
@@ -9,12 +10,14 @@ class {{ name }}(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
 {%- for index, value in enumerate(model.enum) %}
-            "{{ model["x-enum-varnames"][index] or value.upper() }}": {{ value|format_value(quotes='"') }},
+        {{ value|format_value(quotes='"') }},
 {%- endfor %}
-        },
     }
+
+{%- for index, value in enumerate(model.enum) %}
+    {{ model["x-enum-varnames"][index] or value.upper() }}: ClassVar["{{ name }}"]
+{%- endfor %}
 
 {% if model.nullable %}
     _nullable = True
@@ -25,3 +28,8 @@ class {{ name }}(ModelSimple):
         return {
             "value": ({{ get_enum_type(model) }},),
         }
+
+
+{%- for index, value in enumerate(model.enum) %}
+{{ name }}.{{ model["x-enum-varnames"][index] or value.upper() }} = {{ name }}({{ value|format_value(quotes='"') }})
+{%- endfor %}

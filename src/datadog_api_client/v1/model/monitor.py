@@ -1,14 +1,26 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import List, TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.creator import Creator
+    from datadog_api_client.v1.model.monitor_options import MonitorOptions
+    from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
+    from datadog_api_client.v1.model.monitor_state import MonitorState
+    from datadog_api_client.v1.model.monitor_type import MonitorType
 
 
 class Monitor(ModelNormal):
@@ -75,7 +87,26 @@ class Monitor(ModelNormal):
         "state",
     }
 
-    def __init__(self, query, type, *args, **kwargs):
+    def __init__(
+        self_,
+        query: str,
+        type: MonitorType,
+        created: Union[datetime, UnsetType] = unset,
+        creator: Union[Creator, UnsetType] = unset,
+        deleted: Union[datetime, none_type, UnsetType] = unset,
+        id: Union[int, UnsetType] = unset,
+        message: Union[str, UnsetType] = unset,
+        modified: Union[datetime, UnsetType] = unset,
+        multi: Union[bool, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        options: Union[MonitorOptions, UnsetType] = unset,
+        overall_state: Union[MonitorOverallStates, UnsetType] = unset,
+        priority: Union[int, none_type, UnsetType] = unset,
+        restricted_roles: Union[List[str], none_type, UnsetType] = unset,
+        state: Union[MonitorState, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Object describing a monitor.
 
@@ -127,21 +158,35 @@ class Monitor(ModelNormal):
         :param type: The type of the monitor. For more information about ``type`` , see the `monitor options <https://docs.datadoghq.com/monitors/guide/monitor_api_options/>`_ docs.
         :type type: MonitorType
         """
+        if created is not unset:
+            kwargs["created"] = created
+        if creator is not unset:
+            kwargs["creator"] = creator
+        if deleted is not unset:
+            kwargs["deleted"] = deleted
+        if id is not unset:
+            kwargs["id"] = id
+        if message is not unset:
+            kwargs["message"] = message
+        if modified is not unset:
+            kwargs["modified"] = modified
+        if multi is not unset:
+            kwargs["multi"] = multi
+        if name is not unset:
+            kwargs["name"] = name
+        if options is not unset:
+            kwargs["options"] = options
+        if overall_state is not unset:
+            kwargs["overall_state"] = overall_state
+        if priority is not unset:
+            kwargs["priority"] = priority
+        if restricted_roles is not unset:
+            kwargs["restricted_roles"] = restricted_roles
+        if state is not unset:
+            kwargs["state"] = state
+        if tags is not unset:
+            kwargs["tags"] = tags
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.query = query
-        self.type = type
-
-    @classmethod
-    def _from_openapi_data(cls, query, type, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(Monitor, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.query = query
-        self.type = type
-        return self
+        self_.query = query
+        self_.type = type

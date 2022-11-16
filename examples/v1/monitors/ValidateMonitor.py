@@ -12,7 +12,7 @@ from datadog_api_client.v1.model.on_missing_data_option import OnMissingDataOpti
 
 body = Monitor(
     name="Example-Validate_a_monitor_returns_OK_response",
-    type=MonitorType("log alert"),
+    type=MonitorType.LOG_ALERT,
     query='logs("service:foo AND type:error").index("main").rollup("count").by("source").last("5m") > 2',
     message="some message Notify: @hipchat-channel",
     tags=[
@@ -31,7 +31,7 @@ body = Monitor(
         no_data_timeframe=None,
         notify_audit=False,
         notify_no_data=False,
-        on_missing_data=OnMissingDataOption("show_and_notify_no_data"),
+        on_missing_data=OnMissingDataOption.SHOW_AND_NOTIFY_NO_DATA,
         renotify_interval=60,
         require_full_window=True,
         timeout_h=24,

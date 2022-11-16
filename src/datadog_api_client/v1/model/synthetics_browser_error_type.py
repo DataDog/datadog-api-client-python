@@ -1,12 +1,15 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
     ModelSimple,
     cached_property,
 )
+
+from typing import ClassVar
 
 
 class SyntheticsBrowserErrorType(ModelSimple):
@@ -18,14 +21,18 @@ class SyntheticsBrowserErrorType(ModelSimple):
     """
 
     allowed_values = {
-        "value": {
-            "NETWORK": "network",
-            "JS": "js",
-        },
+        "network",
+        "js",
     }
+    NETWORK: ClassVar["SyntheticsBrowserErrorType"]
+    JS: ClassVar["SyntheticsBrowserErrorType"]
 
     @cached_property
     def openapi_types(_):
         return {
             "value": (str,),
         }
+
+
+SyntheticsBrowserErrorType.NETWORK = SyntheticsBrowserErrorType("network")
+SyntheticsBrowserErrorType.JS = SyntheticsBrowserErrorType("js")

@@ -1,14 +1,22 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
     none_type,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
 
 
 class DashboardSummaryDefinition(ModelNormal):
@@ -40,7 +48,19 @@ class DashboardSummaryDefinition(ModelNormal):
         "url": "url",
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self_,
+        author_handle: Union[str, UnsetType] = unset,
+        created_at: Union[datetime, UnsetType] = unset,
+        description: Union[str, none_type, UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
+        is_read_only: Union[bool, UnsetType] = unset,
+        layout_type: Union[DashboardLayoutType, UnsetType] = unset,
+        modified_at: Union[datetime, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        url: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Dashboard definition.
 
@@ -71,16 +91,22 @@ class DashboardSummaryDefinition(ModelNormal):
         :param url: URL of the dashboard.
         :type url: str, optional
         """
+        if author_handle is not unset:
+            kwargs["author_handle"] = author_handle
+        if created_at is not unset:
+            kwargs["created_at"] = created_at
+        if description is not unset:
+            kwargs["description"] = description
+        if id is not unset:
+            kwargs["id"] = id
+        if is_read_only is not unset:
+            kwargs["is_read_only"] = is_read_only
+        if layout_type is not unset:
+            kwargs["layout_type"] = layout_type
+        if modified_at is not unset:
+            kwargs["modified_at"] = modified_at
+        if title is not unset:
+            kwargs["title"] = title
+        if url is not unset:
+            kwargs["url"] = url
         super().__init__(kwargs)
-
-        self._check_pos_args(args)
-
-    @classmethod
-    def _from_openapi_data(cls, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(DashboardSummaryDefinition, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        return self

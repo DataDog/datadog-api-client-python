@@ -262,37 +262,42 @@ Feature: Roles
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/team-aaa
+  @team:DataDog/team-aaa
   Scenario: Update a role returns "Bad Request" response
-    Given new "UpdateRole" request
-    And request contains "role_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {}, "id": "00000000-0000-1111-0000-000000000000", "type": "roles"}}
+    Given there is a valid "role" in the system
+    And there is a valid "permission" in the system
+    And new "UpdateRole" request
+    And request contains "role_id" parameter from "role.data.id"
+    And body with value {"data": {"id": "{{ role.data.id }}", "type": "roles", "attributes": {"name" : "{{ role.data.attributes.name }}-updated"}, "relationships": {"permissions": {"data": [{"id": "11111111-dead-beef-dead-ffffffffffff", "type": "{{ permission.type }}"}]}}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/team-aaa
   Scenario: Update a role returns "Bad Role ID" response
     Given there is a valid "role" in the system
+    And there is a valid "permission" in the system
     And new "UpdateRole" request
     And request contains "role_id" parameter from "role.data.id"
-    And body with value {"data": {"id": "00000000-dead-beef-dead-ffffffffffff", "type": "roles", "attributes": {"name" : "{{ role.data.attributes.name }}-updated"}}}
+    And body with value {"data": {"id": "00000000-dead-beef-dead-ffffffffffff", "type": "roles", "attributes": {"name" : "{{ role.data.attributes.name }}-updated"}, "relationships": {"permissions": {"data": [{"type": "{{ permission.type }}", "id": "{{ permission.id }}"}]}}}}
     When the request is sent
     Then the response status is 422 Bad Role ID in Request
 
   @team:DataDog/team-aaa
   Scenario: Update a role returns "Not found" response
-    Given new "UpdateRole" request
+    Given there is a valid "permission" in the system
+    And new "UpdateRole" request
     And request contains "role_id" parameter with value "00000000-dead-beef-dead-ffffffffffff"
-    And body with value {"data": {"id": "00000000-dead-beef-dead-ffffffffffff", "type": "roles", "attributes": {"name" : "updated"}}}
+    And body with value {"data": {"id": "00000000-dead-beef-dead-ffffffffffff", "type": "roles", "attributes": {"name" : "updated"}, "relationships": {"permissions": {"data": [{"type": "{{ permission.type }}", "id": "{{ permission.id }}"}]}}}}
     When the request is sent
     Then the response status is 404 Not found
 
   @team:DataDog/team-aaa
   Scenario: Update a role returns "OK" response
     Given there is a valid "role" in the system
+    And there is a valid "permission" in the system
     And new "UpdateRole" request
     And request contains "role_id" parameter from "role.data.id"
-    And body with value {"data": {"id": "{{ role.data.id }}", "type": "roles", "attributes": {"name" : "{{ role.data.attributes.name }}-updated"}}}
+    And body with value {"data": {"id": "{{ role.data.id }}", "type": "roles", "attributes": {"name" : "{{ role.data.attributes.name }}-updated"}, "relationships": {"permissions": {"data": [{"id": "{{ permission.id }}", "type": "{{ permission.type }}"}]}}}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{ role.data.attributes.name }}-updated"
@@ -301,6 +306,6 @@ Feature: Roles
   Scenario: Update a role returns "Unprocessable Entity" response
     Given new "UpdateRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {}, "id": "00000000-0000-1111-0000-000000000000", "type": "roles"}}
+    And body with value {"data": {"attributes": {}, "id": "00000000-0000-1111-0000-000000000000", "relationships": {"permissions": {"data": [{"type": "permissions"}]}, "users": {"data": []}}, "type": "roles"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity

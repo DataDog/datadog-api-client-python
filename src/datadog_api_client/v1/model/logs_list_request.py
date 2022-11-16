@@ -1,12 +1,21 @@
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
 
+from typing import TYPE_CHECKING, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.logs_sort import LogsSort
+    from datadog_api_client.v1.model.logs_list_request_time import LogsListRequestTime
 
 
 class LogsListRequest(ModelNormal):
@@ -39,7 +48,16 @@ class LogsListRequest(ModelNormal):
         "time": "time",
     }
 
-    def __init__(self, time, *args, **kwargs):
+    def __init__(
+        self_,
+        time: LogsListRequestTime,
+        index: Union[str, UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+        query: Union[str, UnsetType] = unset,
+        sort: Union[LogsSort, UnsetType] = unset,
+        start_at: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Object to send with the request to retrieve a list of logs from your Organization.
 
@@ -66,19 +84,16 @@ class LogsListRequest(ModelNormal):
         :param time: Timeframe to retrieve the log from.
         :type time: LogsListRequestTime
         """
+        if index is not unset:
+            kwargs["index"] = index
+        if limit is not unset:
+            kwargs["limit"] = limit
+        if query is not unset:
+            kwargs["query"] = query
+        if sort is not unset:
+            kwargs["sort"] = sort
+        if start_at is not unset:
+            kwargs["start_at"] = start_at
         super().__init__(kwargs)
 
-        self._check_pos_args(args)
-
-        self.time = time
-
-    @classmethod
-    def _from_openapi_data(cls, time, *args, **kwargs):
-        """Helper creating a new instance from a response."""
-
-        self = super(LogsListRequest, cls)._from_openapi_data(kwargs)
-
-        self._check_pos_args(args)
-
-        self.time = time
-        return self
+        self_.time = time
