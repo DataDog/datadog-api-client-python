@@ -53,6 +53,7 @@ class UsageSummaryResponse(ModelNormal):
             "cspm_azure_host_top99p_sum": (int,),
             "cspm_container_avg_sum": (int,),
             "cspm_container_hwm_sum": (int,),
+            "cspm_gcp_host_top99p_sum": (int,),
             "cspm_host_top99p_sum": (int,),
             "custom_ts_sum": (int,),
             "cws_containers_avg_sum": (int,),
@@ -135,6 +136,7 @@ class UsageSummaryResponse(ModelNormal):
         "cspm_azure_host_top99p_sum": "cspm_azure_host_top99p_sum",
         "cspm_container_avg_sum": "cspm_container_avg_sum",
         "cspm_container_hwm_sum": "cspm_container_hwm_sum",
+        "cspm_gcp_host_top99p_sum": "cspm_gcp_host_top99p_sum",
         "cspm_host_top99p_sum": "cspm_host_top99p_sum",
         "custom_ts_sum": "custom_ts_sum",
         "cws_containers_avg_sum": "cws_containers_avg_sum",
@@ -218,6 +220,7 @@ class UsageSummaryResponse(ModelNormal):
         cspm_azure_host_top99p_sum: Union[int, UnsetType] = unset,
         cspm_container_avg_sum: Union[int, UnsetType] = unset,
         cspm_container_hwm_sum: Union[int, UnsetType] = unset,
+        cspm_gcp_host_top99p_sum: Union[int, UnsetType] = unset,
         cspm_host_top99p_sum: Union[int, UnsetType] = unset,
         custom_ts_sum: Union[int, UnsetType] = unset,
         cws_containers_avg_sum: Union[int, UnsetType] = unset,
@@ -355,6 +358,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param cspm_container_hwm_sum: Shows the sum of the the high-water marks of Cloud Security Posture Management containers over all hours in the current months for all organizations.
         :type cspm_container_hwm_sum: int, optional
+
+        :param cspm_gcp_host_top99p_sum: Shows the 99th percentile of all Cloud Security Posture Management GCP hosts over all hours in the current months for all organizations.
+        :type cspm_gcp_host_top99p_sum: int, optional
 
         :param cspm_host_top99p_sum: Shows the 99th percentile of all Cloud Security Posture Management hosts over all hours in the current months for all organizations.
         :type cspm_host_top99p_sum: int, optional
@@ -566,6 +572,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["cspm_container_avg_sum"] = cspm_container_avg_sum
         if cspm_container_hwm_sum is not unset:
             kwargs["cspm_container_hwm_sum"] = cspm_container_hwm_sum
+        if cspm_gcp_host_top99p_sum is not unset:
+            kwargs["cspm_gcp_host_top99p_sum"] = cspm_gcp_host_top99p_sum
         if cspm_host_top99p_sum is not unset:
             kwargs["cspm_host_top99p_sum"] = cspm_host_top99p_sum
         if custom_ts_sum is not unset:

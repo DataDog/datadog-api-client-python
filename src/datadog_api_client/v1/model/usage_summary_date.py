@@ -50,6 +50,7 @@ class UsageSummaryDate(ModelNormal):
             "cspm_azure_host_top99p": (int,),
             "cspm_container_avg": (int,),
             "cspm_container_hwm": (int,),
+            "cspm_gcp_host_top99p": (int,),
             "cspm_host_top99p": (int,),
             "custom_ts_avg": (int,),
             "cws_container_count_avg": (int,),
@@ -123,6 +124,7 @@ class UsageSummaryDate(ModelNormal):
         "cspm_azure_host_top99p": "cspm_azure_host_top99p",
         "cspm_container_avg": "cspm_container_avg",
         "cspm_container_hwm": "cspm_container_hwm",
+        "cspm_gcp_host_top99p": "cspm_gcp_host_top99p",
         "cspm_host_top99p": "cspm_host_top99p",
         "custom_ts_avg": "custom_ts_avg",
         "cws_container_count_avg": "cws_container_count_avg",
@@ -197,6 +199,7 @@ class UsageSummaryDate(ModelNormal):
         cspm_azure_host_top99p: Union[int, UnsetType] = unset,
         cspm_container_avg: Union[int, UnsetType] = unset,
         cspm_container_hwm: Union[int, UnsetType] = unset,
+        cspm_gcp_host_top99p: Union[int, UnsetType] = unset,
         cspm_host_top99p: Union[int, UnsetType] = unset,
         custom_ts_avg: Union[int, UnsetType] = unset,
         cws_container_count_avg: Union[int, UnsetType] = unset,
@@ -323,6 +326,9 @@ class UsageSummaryDate(ModelNormal):
 
         :param cspm_container_hwm: Shows the high-water mark of Cloud Security Posture Management containers over all hours in the current date for all organizations.
         :type cspm_container_hwm: int, optional
+
+        :param cspm_gcp_host_top99p: Shows the 99th percentile of all Cloud Security Posture Management GCP hosts over all hours in the current date for all organizations.
+        :type cspm_gcp_host_top99p: int, optional
 
         :param cspm_host_top99p: Shows the 99th percentile of all Cloud Security Posture Management hosts over all hours in the current date for all organizations.
         :type cspm_host_top99p: int, optional
@@ -508,6 +514,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["cspm_container_avg"] = cspm_container_avg
         if cspm_container_hwm is not unset:
             kwargs["cspm_container_hwm"] = cspm_container_hwm
+        if cspm_gcp_host_top99p is not unset:
+            kwargs["cspm_gcp_host_top99p"] = cspm_gcp_host_top99p
         if cspm_host_top99p is not unset:
             kwargs["cspm_host_top99p"] = cspm_host_top99p
         if custom_ts_avg is not unset:
