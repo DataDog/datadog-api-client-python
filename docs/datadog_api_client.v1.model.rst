@@ -2535,6 +2535,13 @@ query\_value\_widget\_request
    :members:
    :show-inheritance:
 
+reference\_table\_logs\_lookup\_processor
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.reference_table_logs_lookup_processor
+   :members:
+   :show-inheritance:
+
 response\_meta\_attributes
 --------------------------
 
