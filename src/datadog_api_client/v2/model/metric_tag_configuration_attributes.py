@@ -77,7 +77,7 @@ class MetricTagConfigurationAttributes(ModelNormal):
         :param created_at: Timestamp when the tag configuration was created.
         :type created_at: datetime, optional
 
-        :param include_percentiles: Toggle to turn on/off percentile aggregations for distribution metrics.
+        :param include_percentiles: Toggle to include or exclude percentile aggregations for distribution metrics.
             Only present when the ``metric_type`` is ``distribution``.
         :type include_percentiles: bool, optional
 

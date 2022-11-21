@@ -2241,6 +2241,13 @@ logs\_metric\_update\_attributes
    :members:
    :show-inheritance:
 
+logs\_metric\_update\_compute
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.logs_metric_update_compute
+   :members:
+   :show-inheritance:
+
 logs\_metric\_update\_data
 --------------------------
 

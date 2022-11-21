@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"filter":{"query":"source:Test-Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response-1669060165"}},"id":"Test-Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response-1669060165","type":"logs_metrics"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics
+  response:
+    body:
+      string: '{"data":{"attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response-1669060165"},"group_by":[],"compute":{"path":"@duration","include_percentiles":true,"aggregation_type":"distribution"}},"type":"logs_metrics","id":"Test_Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response_1669060165"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"compute":{"include_percentiles":false}},"type":"logs_metrics"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response_1669060165
+  response:
+    body:
+      string: '{"data":{"attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response-1669060165"},"group_by":[],"compute":{"path":"@duration","include_percentiles":false,"aggregation_type":"distribution"}},"type":"logs_metrics","id":"Test_Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response_1669060165"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response_1669060165
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
