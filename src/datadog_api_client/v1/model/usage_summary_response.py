@@ -85,6 +85,7 @@ class UsageSummaryResponse(ModelNormal):
             "npm_host_top99p_sum": (int,),
             "observability_pipelines_bytes_processed_agg_sum": (int,),
             "online_archive_events_count_agg_sum": (int,),
+            "opentelemetry_apm_host_top99p_sum": (int,),
             "opentelemetry_host_top99p_sum": (int,),
             "profiling_container_agent_count_avg": (int,),
             "profiling_host_count_top99p_sum": (int,),
@@ -168,6 +169,7 @@ class UsageSummaryResponse(ModelNormal):
         "npm_host_top99p_sum": "npm_host_top99p_sum",
         "observability_pipelines_bytes_processed_agg_sum": "observability_pipelines_bytes_processed_agg_sum",
         "online_archive_events_count_agg_sum": "online_archive_events_count_agg_sum",
+        "opentelemetry_apm_host_top99p_sum": "opentelemetry_apm_host_top99p_sum",
         "opentelemetry_host_top99p_sum": "opentelemetry_host_top99p_sum",
         "profiling_container_agent_count_avg": "profiling_container_agent_count_avg",
         "profiling_host_count_top99p_sum": "profiling_host_count_top99p_sum",
@@ -252,6 +254,7 @@ class UsageSummaryResponse(ModelNormal):
         npm_host_top99p_sum: Union[int, UnsetType] = unset,
         observability_pipelines_bytes_processed_agg_sum: Union[int, UnsetType] = unset,
         online_archive_events_count_agg_sum: Union[int, UnsetType] = unset,
+        opentelemetry_apm_host_top99p_sum: Union[int, UnsetType] = unset,
         opentelemetry_host_top99p_sum: Union[int, UnsetType] = unset,
         profiling_container_agent_count_avg: Union[int, UnsetType] = unset,
         profiling_host_count_top99p_sum: Union[int, UnsetType] = unset,
@@ -455,6 +458,9 @@ class UsageSummaryResponse(ModelNormal):
         :param online_archive_events_count_agg_sum: Sum of all online archived events over all hours in the current months for all organizations.
         :type online_archive_events_count_agg_sum: int, optional
 
+        :param opentelemetry_apm_host_top99p_sum: Shows the 99th percentile of APM hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current months for all organizations.
+        :type opentelemetry_apm_host_top99p_sum: int, optional
+
         :param opentelemetry_host_top99p_sum: Shows the 99th percentile of all hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current months for all organizations.
         :type opentelemetry_host_top99p_sum: int, optional
 
@@ -638,6 +644,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["observability_pipelines_bytes_processed_agg_sum"] = observability_pipelines_bytes_processed_agg_sum
         if online_archive_events_count_agg_sum is not unset:
             kwargs["online_archive_events_count_agg_sum"] = online_archive_events_count_agg_sum
+        if opentelemetry_apm_host_top99p_sum is not unset:
+            kwargs["opentelemetry_apm_host_top99p_sum"] = opentelemetry_apm_host_top99p_sum
         if opentelemetry_host_top99p_sum is not unset:
             kwargs["opentelemetry_host_top99p_sum"] = opentelemetry_host_top99p_sum
         if profiling_container_agent_count_avg is not unset:
