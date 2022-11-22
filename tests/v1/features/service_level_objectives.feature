@@ -182,7 +182,7 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/slo-app
+  @replay-only @team:DataDog/slo-app
   Scenario: Search for SLOs returns "OK" response
     Given there is a valid "slo" in the system
     And operation "SearchSLO" enabled
