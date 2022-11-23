@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"name":"Test-Get_all_SLO_corrections_returns_OK_response-1652349016","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
+    body: '{"name":"Test-Get_all_SLO_corrections_returns_OK_response-1668703099","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/slo
   response:
     body:
-      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"f28e523757705ebe972c5ca88a1bbea8","name":"Test-Get_all_SLO_corrections_returns_OK_response-1652349016","created_at":1652349017,"tags":[],"modified_at":1652349017,"type":"metric"}],"error":null}'
+      string: '{"data":[{"id":"60569193a09054f6bc6fa6e87fb43031","name":"Test-Get_all_SLO_corrections_returns_OK_response-1668703099","tags":[],"monitor_tags":[],"thresholds":[{"timeframe":"7d","target":95.0,"target_display":"95.","warning":98.0,"warning_display":"98."}],"type":"metric","type_id":1,"description":"","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"created_at":1668703100,"modified_at":1668703100}],"error":null}
+
+        '
     headers:
       content-type:
       - application/json
@@ -18,7 +20,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"category":"Other","description":"Test Correction","end":1652352616,"slo_id":"f28e523757705ebe972c5ca88a1bbea8","start":1652349016,"timezone":"UTC"},"type":"correction"}}'
+    body: '{"data":{"attributes":{"category":"Other","description":"Test Correction","end":1668706699,"slo_id":"60569193a09054f6bc6fa6e87fb43031","start":1668703099,"timezone":"UTC"},"type":"correction"}}'
     headers:
       accept:
       - application/json
@@ -28,8 +30,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/slo/correction
   response:
     body:
-      string: '{"data":{"type":"correction","id":"edf12dbe-d1d8-11ec-b51e-da7ad0902002","attributes":{"slo_id":"f28e523757705ebe972c5ca88a1bbea8","start":1652349016,"end":1652352616,"description":"Test
-        Correction","category":"Other","timezone":"UTC","created_at":null,"modified_at":null,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":null}}}'
+      string: '{"data":{"type":"correction","id":"3ecd96c6-6696-11ed-9c21-da7ad0902002","attributes":{"slo_id":"60569193a09054f6bc6fa6e87fb43031","start":1668703099,"end":1668706699,"description":"Test
+        Correction","category":"Other","timezone":"UTC","created_at":null,"modified_at":null,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":null}}}
+
+        '
     headers:
       content-type:
       - application/json
@@ -42,20 +46,13 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v1/slo/correction
+    uri: https://api.datadoghq.com/api/v1/slo/correction?offset=1&limit=1
   response:
     body:
-      string: '{"meta":{"page":{"total_filtered_count":9,"total_count":9}},"data":[{"type":"correction","id":"edf12dbe-d1d8-11ec-b51e-da7ad0902002","attributes":{"slo_id":"f28e523757705ebe972c5ca88a1bbea8","start":1652349016,"end":1652352616,"description":"Test
-        Correction","category":"Other","timezone":"UTC","created_at":1652349017,"modified_at":1652349017,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":null}},{"type":"correction","id":"cf7e09fe-cea6-11ec-899d-da7ad0902002","attributes":{"slo_id":"eed4de481c9c5201bc56f99336b648d5","start":1651997635,"end":1652001235,"description":"Test
-        Correction","category":"Other","timezone":"UTC","created_at":1651997638,"modified_at":1651997638,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":null}},{"type":"correction","id":"c867f6b6-cea6-11ec-a259-da7ad0902002","attributes":{"slo_id":"ea2b55d6e0ba5065b4e9a6e2162b7c47","start":1651997623,"end":1652001223,"description":"Test-Typescript-Update_an_SLO_correction_returns_OK_response-1651997623","category":"Deployment","timezone":"UTC","created_at":1651997626,"modified_at":1651997626,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}}}},{"type":"correction","id":"c6d12322-cea6-11ec-8393-da7ad0902002","attributes":{"slo_id":"1fe6393c1f2b5aa4878309af91bb87c4","start":1651997621,"end":1652001221,"description":"Test
-        Correction","category":"Other","timezone":"UTC","created_at":1651997623,"modified_at":1651997623,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":null}},{"type":"correction","id":"c54af67c-cea6-11ec-a84a-da7ad0902002","attributes":{"slo_id":"bb8ac1a0a71d549a92c0401f6c6ed330","start":1651997618,"end":1652001218,"description":"Test
-        Correction","category":"Other","timezone":"UTC","created_at":1651997621,"modified_at":1651997621,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":null}},{"type":"correction","id":"c3c457a8-cea6-11ec-84fc-da7ad0902002","attributes":{"slo_id":"551fb4b5fbc051c88d14225aecc9ac1c","start":1651997615,"end":null,"description":"Test-Typescript-Create_an_SLO_correction_with_rrule_returns_OK_response-1651997615","category":"Scheduled
-        Maintenance","timezone":"UTC","created_at":1651997618,"modified_at":1651997618,"rrule":"FREQ=DAILY;INTERVAL=10;COUNT=5","duration":3600,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":null}},{"type":"correction","id":"c213a3d2-cea6-11ec-9081-da7ad0902002","attributes":{"slo_id":"0a0f064182595b6b919c6f5f31c3204c","start":1651997612,"end":1652001212,"description":"Test-Typescript-Create_an_SLO_correction_returns_OK_response-1651997612","category":"Scheduled
-        Maintenance","timezone":"UTC","created_at":1651997615,"modified_at":1651997615,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":null}},{"type":"correction","id":"db1a997c-c75c-11ec-aabf-da7ad0900002","attributes":{"slo_id":"d89b559b80e35a9793673e500c38e903","start":1651196214,"end":1651199814,"description":"Test-Python-Create_an_SLO_correction_returns_OK_response-1651196214","category":"Scheduled
-        Maintenance","timezone":"UTC","created_at":1651196216,"modified_at":1651196216,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","attributes":{"uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs-spam@datadoghq.com","name":"CI
-        Account","icon":"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro"}}},"modifier":null}},{"type":"correction","id":"c7b20000-c75c-11ec-aabf-da7ad0900002","attributes":{"slo_id":"5ffc7666d8fe54f484312d2703a16a03","start":1651196181,"end":null,"description":"Test-Python-Create_an_SLO_correction_with_rrule_returns_OK_response-1651196181","category":"Scheduled
-        Maintenance","timezone":"UTC","created_at":1651196184,"modified_at":1651196184,"rrule":"FREQ=DAILY;INTERVAL=10;COUNT=5","duration":3600,"creator":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","attributes":{"uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs-spam@datadoghq.com","name":"CI
-        Account","icon":"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro"}}},"modifier":null}}]}'
+      string: '{"data":[{"type":"correction","id":"3ecd96c6-6696-11ed-9c21-da7ad0902002","attributes":{"slo_id":"60569193a09054f6bc6fa6e87fb43031","start":1668703099,"end":1668706699,"description":"Test
+        Correction","category":"Other","timezone":"UTC","created_at":1668703100,"modified_at":1668703100,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":null}}],"meta":{"page":{"total_count":2,"total_filtered_count":1}}}
+
+        '
     headers:
       content-type:
       - application/json
@@ -68,11 +65,13 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/correction/edf12dbe-d1d8-11ec-b51e-da7ad0902002
+    uri: https://api.datadoghq.com/api/v1/slo/correction/3ecd96c6-6696-11ed-9c21-da7ad0902002
   response:
     body:
       string: ''
-    headers: {}
+    headers:
+      content-type:
+      - text/html; charset=utf-8
     status:
       code: 204
       message: No Content
@@ -82,10 +81,12 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/f28e523757705ebe972c5ca88a1bbea8
+    uri: https://api.datadoghq.com/api/v1/slo/60569193a09054f6bc6fa6e87fb43031
   response:
     body:
-      string: '{"data":["f28e523757705ebe972c5ca88a1bbea8"],"error":null}'
+      string: '{"data":["60569193a09054f6bc6fa6e87fb43031"],"error":null}
+
+        '
     headers:
       content-type:
       - application/json

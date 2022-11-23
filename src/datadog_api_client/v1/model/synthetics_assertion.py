@@ -41,10 +41,12 @@ class SyntheticsAssertion(ModelComposed):
         # loading
         from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
         from datadog_api_client.v1.model.synthetics_assertion_json_path_target import SyntheticsAssertionJSONPathTarget
+        from datadog_api_client.v1.model.synthetics_assertion_x_path_target import SyntheticsAssertionXPathTarget
 
         return {
             "oneOf": [
                 SyntheticsAssertionTarget,
                 SyntheticsAssertionJSONPathTarget,
+                SyntheticsAssertionXPathTarget,
             ],
         }

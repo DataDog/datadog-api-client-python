@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
     from datadog_api_client.v1.model.on_missing_data_option import OnMissingDataOption
     from datadog_api_client.v1.model.monitor_renotify_status_type import MonitorRenotifyStatusType
+    from datadog_api_client.v1.model.monitor_options_scheduling_options import MonitorOptionsSchedulingOptions
     from datadog_api_client.v1.model.monitor_threshold_window_options import MonitorThresholdWindowOptions
     from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
     from datadog_api_client.v1.model.monitor_formula_and_function_query_definition import (
@@ -43,6 +44,7 @@ class MonitorOptions(ModelNormal):
         from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
         from datadog_api_client.v1.model.on_missing_data_option import OnMissingDataOption
         from datadog_api_client.v1.model.monitor_renotify_status_type import MonitorRenotifyStatusType
+        from datadog_api_client.v1.model.monitor_options_scheduling_options import MonitorOptionsSchedulingOptions
         from datadog_api_client.v1.model.monitor_threshold_window_options import MonitorThresholdWindowOptions
         from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
         from datadog_api_client.v1.model.monitor_formula_and_function_query_definition import (
@@ -72,6 +74,7 @@ class MonitorOptions(ModelNormal):
             "renotify_occurrences": (int, none_type),
             "renotify_statuses": ([MonitorRenotifyStatusType], none_type),
             "require_full_window": (bool,),
+            "scheduling_options": (MonitorOptionsSchedulingOptions,),
             "silenced": (
                 {
                     str: (
@@ -110,6 +113,7 @@ class MonitorOptions(ModelNormal):
         "renotify_occurrences": "renotify_occurrences",
         "renotify_statuses": "renotify_statuses",
         "require_full_window": "require_full_window",
+        "scheduling_options": "scheduling_options",
         "silenced": "silenced",
         "synthetics_check_id": "synthetics_check_id",
         "threshold_windows": "threshold_windows",
@@ -146,6 +150,7 @@ class MonitorOptions(ModelNormal):
         renotify_occurrences: Union[int, none_type, UnsetType] = unset,
         renotify_statuses: Union[List[MonitorRenotifyStatusType], none_type, UnsetType] = unset,
         require_full_window: Union[bool, UnsetType] = unset,
+        scheduling_options: Union[MonitorOptionsSchedulingOptions, UnsetType] = unset,
         silenced: Union[Dict[str, Union[int, none_type]], UnsetType] = unset,
         synthetics_check_id: Union[str, none_type, UnsetType] = unset,
         threshold_windows: Union[MonitorThresholdWindowOptions, UnsetType] = unset,
@@ -263,6 +268,9 @@ class MonitorOptions(ModelNormal):
             otherwise some evaluations are skipped. Default is false.
         :type require_full_window: bool, optional
 
+        :param scheduling_options: Configuration options for scheduling.
+        :type scheduling_options: MonitorOptionsSchedulingOptions, optional
+
         :param silenced: Information about the downtime applied to the monitor. **Deprecated**.
         :type silenced: {str: (int, none_type,)}, optional
 
@@ -325,6 +333,8 @@ class MonitorOptions(ModelNormal):
             kwargs["renotify_statuses"] = renotify_statuses
         if require_full_window is not unset:
             kwargs["require_full_window"] = require_full_window
+        if scheduling_options is not unset:
+            kwargs["scheduling_options"] = scheduling_options
         if silenced is not unset:
             kwargs["silenced"] = silenced
         if synthetics_check_id is not unset:

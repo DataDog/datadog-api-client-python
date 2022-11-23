@@ -340,7 +340,8 @@ class UsageMeteringApi:
         """Get estimated cost across your account.
 
         Get estimated cost across multi-org and single root-org accounts.
-        Estimated cost data is only available for the current month and previous month.
+        Estimated cost data is only available for the current month and previous month
+        and is delayed by up to 72 hours from when it was incurred.
         To access historical costs prior to this, use the ``/historical_cost`` endpoint.
 
         :param view: String to specify whether cost is broken down at a parent-org level or at the sub-org level. Available views are ``summary`` and ``sub-org``. Defaults to ``summary``.

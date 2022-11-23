@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
+    from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
     from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
     from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
     from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
@@ -24,6 +25,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_basic_auth_sigv4 import SyntheticsBasicAuthSigv4
     from datadog_api_client.v1.model.synthetics_basic_auth_ntlm import SyntheticsBasicAuthNTLM
     from datadog_api_client.v1.model.synthetics_basic_auth_digest import SyntheticsBasicAuthDigest
+    from datadog_api_client.v1.model.synthetics_basic_auth_oauth_client import SyntheticsBasicAuthOauthClient
+    from datadog_api_client.v1.model.synthetics_basic_auth_oauth_rop import SyntheticsBasicAuthOauthROP
 
 
 class SyntheticsTestRequest(ModelNormal):
@@ -41,6 +44,7 @@ class SyntheticsTestRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
+        from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
         from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
         from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
         from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
@@ -51,6 +55,7 @@ class SyntheticsTestRequest(ModelNormal):
             "allow_insecure": (bool,),
             "basic_auth": (SyntheticsBasicAuth,),
             "body": (str,),
+            "body_type": (SyntheticsTestRequestBodyType,),
             "certificate": (SyntheticsTestRequestCertificate,),
             "certificate_domains": ([str],),
             "dns_server": (str,),
@@ -77,6 +82,7 @@ class SyntheticsTestRequest(ModelNormal):
         "allow_insecure": "allow_insecure",
         "basic_auth": "basicAuth",
         "body": "body",
+        "body_type": "bodyType",
         "certificate": "certificate",
         "certificate_domains": "certificateDomains",
         "dns_server": "dnsServer",
@@ -108,9 +114,12 @@ class SyntheticsTestRequest(ModelNormal):
             SyntheticsBasicAuthSigv4,
             SyntheticsBasicAuthNTLM,
             SyntheticsBasicAuthDigest,
+            SyntheticsBasicAuthOauthClient,
+            SyntheticsBasicAuthOauthROP,
             UnsetType,
         ] = unset,
         body: Union[str, UnsetType] = unset,
+        body_type: Union[SyntheticsTestRequestBodyType, UnsetType] = unset,
         certificate: Union[SyntheticsTestRequestCertificate, UnsetType] = unset,
         certificate_domains: Union[List[str], UnsetType] = unset,
         dns_server: Union[str, UnsetType] = unset,
@@ -144,6 +153,9 @@ class SyntheticsTestRequest(ModelNormal):
 
         :param body: Body to include in the test.
         :type body: str, optional
+
+        :param body_type: Type of the request body.
+        :type body_type: SyntheticsTestRequestBodyType, optional
 
         :param certificate: Client certificate to use when performing the test request.
         :type certificate: SyntheticsTestRequestCertificate, optional
@@ -213,6 +225,8 @@ class SyntheticsTestRequest(ModelNormal):
             kwargs["basic_auth"] = basic_auth
         if body is not unset:
             kwargs["body"] = body
+        if body_type is not unset:
+            kwargs["body_type"] = body_type
         if certificate is not unset:
             kwargs["certificate"] = certificate
         if certificate_domains is not unset:

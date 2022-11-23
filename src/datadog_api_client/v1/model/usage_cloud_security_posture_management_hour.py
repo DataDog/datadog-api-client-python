@@ -24,6 +24,7 @@ class UsageCloudSecurityPostureManagementHour(ModelNormal):
             "azure_host_count": (float, none_type),
             "compliance_host_count": (float, none_type),
             "container_count": (float, none_type),
+            "gcp_host_count": (float, none_type),
             "host_count": (float, none_type),
             "hour": (datetime,),
             "org_name": (str,),
@@ -36,6 +37,7 @@ class UsageCloudSecurityPostureManagementHour(ModelNormal):
         "azure_host_count": "azure_host_count",
         "compliance_host_count": "compliance_host_count",
         "container_count": "container_count",
+        "gcp_host_count": "gcp_host_count",
         "host_count": "host_count",
         "hour": "hour",
         "org_name": "org_name",
@@ -49,6 +51,7 @@ class UsageCloudSecurityPostureManagementHour(ModelNormal):
         azure_host_count: Union[float, none_type, UnsetType] = unset,
         compliance_host_count: Union[float, none_type, UnsetType] = unset,
         container_count: Union[float, none_type, UnsetType] = unset,
+        gcp_host_count: Union[float, none_type, UnsetType] = unset,
         host_count: Union[float, none_type, UnsetType] = unset,
         hour: Union[datetime, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
@@ -73,6 +76,9 @@ class UsageCloudSecurityPostureManagementHour(ModelNormal):
         :param container_count: The total number of Cloud Security Posture Management containers during a given hour.
         :type container_count: float, none_type, optional
 
+        :param gcp_host_count: The number of Cloud Security Posture Management GCP hosts during a given hour.
+        :type gcp_host_count: float, none_type, optional
+
         :param host_count: The total number of Cloud Security Posture Management hosts during a given hour.
         :type host_count: float, none_type, optional
 
@@ -95,6 +101,8 @@ class UsageCloudSecurityPostureManagementHour(ModelNormal):
             kwargs["compliance_host_count"] = compliance_host_count
         if container_count is not unset:
             kwargs["container_count"] = container_count
+        if gcp_host_count is not unset:
+            kwargs["gcp_host_count"] = gcp_host_count
         if host_count is not unset:
             kwargs["host_count"] = host_count
         if hour is not unset:

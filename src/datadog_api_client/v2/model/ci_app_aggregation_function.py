@@ -16,7 +16,7 @@ class CIAppAggregationFunction(ModelSimple):
     """
     An aggregation function.
 
-    :param value: Must be one of ["count", "cardinality", "pc75", "pc90", "pc95", "pc98", "pc99", "sum", "min", "max", "avg", "median"].
+    :param value: Must be one of ["count", "cardinality", "pc75", "pc90", "pc95", "pc98", "pc99", "sum", "min", "max", "avg", "median", "latest", "earliest", "most_frequent", "delta"].
     :type value: str
     """
 
@@ -33,6 +33,10 @@ class CIAppAggregationFunction(ModelSimple):
         "max",
         "avg",
         "median",
+        "latest",
+        "earliest",
+        "most_frequent",
+        "delta",
     }
     COUNT: ClassVar["CIAppAggregationFunction"]
     CARDINALITY: ClassVar["CIAppAggregationFunction"]
@@ -46,6 +50,10 @@ class CIAppAggregationFunction(ModelSimple):
     MAX: ClassVar["CIAppAggregationFunction"]
     AVG: ClassVar["CIAppAggregationFunction"]
     MEDIAN: ClassVar["CIAppAggregationFunction"]
+    LATEST: ClassVar["CIAppAggregationFunction"]
+    EARLIEST: ClassVar["CIAppAggregationFunction"]
+    MOST_FREQUENT: ClassVar["CIAppAggregationFunction"]
+    DELTA: ClassVar["CIAppAggregationFunction"]
 
     @cached_property
     def openapi_types(_):
@@ -66,3 +74,7 @@ CIAppAggregationFunction.MIN = CIAppAggregationFunction("min")
 CIAppAggregationFunction.MAX = CIAppAggregationFunction("max")
 CIAppAggregationFunction.AVG = CIAppAggregationFunction("avg")
 CIAppAggregationFunction.MEDIAN = CIAppAggregationFunction("median")
+CIAppAggregationFunction.LATEST = CIAppAggregationFunction("latest")
+CIAppAggregationFunction.EARLIEST = CIAppAggregationFunction("earliest")
+CIAppAggregationFunction.MOST_FREQUENT = CIAppAggregationFunction("most_frequent")
+CIAppAggregationFunction.DELTA = CIAppAggregationFunction("delta")

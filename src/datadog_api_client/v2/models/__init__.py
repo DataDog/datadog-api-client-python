@@ -370,6 +370,7 @@ from datadog_api_client.v2.model.logs_metric_response_filter import LogsMetricRe
 from datadog_api_client.v2.model.logs_metric_response_group_by import LogsMetricResponseGroupBy
 from datadog_api_client.v2.model.logs_metric_type import LogsMetricType
 from datadog_api_client.v2.model.logs_metric_update_attributes import LogsMetricUpdateAttributes
+from datadog_api_client.v2.model.logs_metric_update_compute import LogsMetricUpdateCompute
 from datadog_api_client.v2.model.logs_metric_update_data import LogsMetricUpdateData
 from datadog_api_client.v2.model.logs_metric_update_request import LogsMetricUpdateRequest
 from datadog_api_client.v2.model.logs_metrics_response import LogsMetricsResponse

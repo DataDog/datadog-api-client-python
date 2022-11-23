@@ -1898,6 +1898,20 @@ monitor\_options\_aggregation
    :members:
    :show-inheritance:
 
+monitor\_options\_scheduling\_options
+-------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_options_scheduling_options
+   :members:
+   :show-inheritance:
+
+monitor\_options\_scheduling\_options\_evaluation\_window
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_options_scheduling_options_evaluation_window
+   :members:
+   :show-inheritance:
+
 monitor\_overall\_states
 ------------------------
 
@@ -2518,6 +2532,13 @@ query\_value\_widget\_request
 -----------------------------
 
 .. automodule:: datadog_api_client.v1.model.query_value_widget_request
+   :members:
+   :show-inheritance:
+
+reference\_table\_logs\_lookup\_processor
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.reference_table_logs_lookup_processor
    :members:
    :show-inheritance:
 
@@ -3354,6 +3375,27 @@ synthetics\_assertion\_type
    :members:
    :show-inheritance:
 
+synthetics\_assertion\_x\_path\_operator
+----------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_x_path_operator
+   :members:
+   :show-inheritance:
+
+synthetics\_assertion\_x\_path\_target
+--------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_x_path_target
+   :members:
+   :show-inheritance:
+
+synthetics\_assertion\_x\_path\_target\_target
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_x_path_target_target
+   :members:
+   :show-inheritance:
+
 synthetics\_basic\_auth
 -----------------------
 
@@ -3386,6 +3428,41 @@ synthetics\_basic\_auth\_ntlm\_type
 -----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_ntlm_type
+   :members:
+   :show-inheritance:
+
+synthetics\_basic\_auth\_oauth\_client
+--------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_oauth_client
+   :members:
+   :show-inheritance:
+
+synthetics\_basic\_auth\_oauth\_client\_type
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_oauth_client_type
+   :members:
+   :show-inheritance:
+
+synthetics\_basic\_auth\_oauth\_rop
+-----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_oauth_rop
+   :members:
+   :show-inheritance:
+
+synthetics\_basic\_auth\_oauth\_rop\_type
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_oauth_rop_type
+   :members:
+   :show-inheritance:
+
+synthetics\_basic\_auth\_oauth\_token\_api\_authentication
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_oauth_token_api_authentication
    :members:
    :show-inheritance:
 
@@ -3967,6 +4044,13 @@ synthetics\_test\_request
 -------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_request
+   :members:
+   :show-inheritance:
+
+synthetics\_test\_request\_body\_type
+-------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_test_request_body_type
    :members:
    :show-inheritance:
 

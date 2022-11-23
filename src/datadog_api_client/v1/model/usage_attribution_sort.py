@@ -16,7 +16,7 @@ class UsageAttributionSort(ModelSimple):
     """
     The field to sort by.
 
-    :param value: If omitted defaults to "custom_timeseries_usage". Must be one of ["api_percentage", "snmp_usage", "apm_host_usage", "api_usage", "appsec_usage", "appsec_percentage", "container_usage", "custom_timeseries_percentage", "container_percentage", "apm_host_percentage", "npm_host_percentage", "browser_percentage", "browser_usage", "infra_host_percentage", "snmp_percentage", "npm_host_usage", "infra_host_usage", "custom_timeseries_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "estimated_ingested_logs_usage", "estimated_ingested_logs_percentage", "estimated_indexed_spans_usage", "estimated_indexed_spans_percentage", "estimated_ingested_spans_usage", "estimated_ingested_spans_percentage", "apm_fargate_usage", "apm_fargate_percentage"].
+    :param value: If omitted defaults to "custom_timeseries_usage". Must be one of ["api_percentage", "snmp_usage", "apm_host_usage", "api_usage", "appsec_usage", "appsec_percentage", "container_usage", "custom_timeseries_percentage", "container_percentage", "apm_host_percentage", "npm_host_percentage", "browser_percentage", "browser_usage", "infra_host_percentage", "snmp_percentage", "npm_host_usage", "infra_host_usage", "custom_timeseries_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "estimated_ingested_logs_usage", "estimated_ingested_logs_percentage", "estimated_indexed_spans_usage", "estimated_indexed_spans_percentage", "estimated_ingested_spans_usage", "estimated_ingested_spans_percentage", "apm_fargate_usage", "apm_fargate_percentage", "appsec_fargate_usage", "appsec_fargate_percentage"].
     :type value: str
     """
 
@@ -53,6 +53,8 @@ class UsageAttributionSort(ModelSimple):
         "estimated_ingested_spans_percentage",
         "apm_fargate_usage",
         "apm_fargate_percentage",
+        "appsec_fargate_usage",
+        "appsec_fargate_percentage",
     }
     API_PERCENTAGE: ClassVar["UsageAttributionSort"]
     SNMP_USAGE: ClassVar["UsageAttributionSort"]
@@ -86,6 +88,8 @@ class UsageAttributionSort(ModelSimple):
     ESTIMATED_INGESTED_SPANS_PERCENTAGE: ClassVar["UsageAttributionSort"]
     APM_FARGATE_USAGE: ClassVar["UsageAttributionSort"]
     APM_FARGATE_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    APPSEC_FARGATE_USAGE: ClassVar["UsageAttributionSort"]
+    APPSEC_FARGATE_PERCENTAGE: ClassVar["UsageAttributionSort"]
 
     @cached_property
     def openapi_types(_):
@@ -126,3 +130,5 @@ UsageAttributionSort.ESTIMATED_INGESTED_SPANS_USAGE = UsageAttributionSort("esti
 UsageAttributionSort.ESTIMATED_INGESTED_SPANS_PERCENTAGE = UsageAttributionSort("estimated_ingested_spans_percentage")
 UsageAttributionSort.APM_FARGATE_USAGE = UsageAttributionSort("apm_fargate_usage")
 UsageAttributionSort.APM_FARGATE_PERCENTAGE = UsageAttributionSort("apm_fargate_percentage")
+UsageAttributionSort.APPSEC_FARGATE_USAGE = UsageAttributionSort("appsec_fargate_usage")
+UsageAttributionSort.APPSEC_FARGATE_PERCENTAGE = UsageAttributionSort("appsec_fargate_percentage")

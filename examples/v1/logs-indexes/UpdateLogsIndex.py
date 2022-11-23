@@ -10,6 +10,8 @@ from datadog_api_client.v1.model.logs_filter import LogsFilter
 from datadog_api_client.v1.model.logs_index_update_request import LogsIndexUpdateRequest
 
 body = LogsIndexUpdateRequest(
+    daily_limit=300000000,
+    disable_daily_limit=False,
     exclusion_filters=[
         LogsExclusion(
             filter=LogsExclusionFilter(
@@ -22,6 +24,7 @@ body = LogsIndexUpdateRequest(
     filter=LogsFilter(
         query="source:python",
     ),
+    num_retention_days=15,
 )
 
 configuration = Configuration()

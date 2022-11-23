@@ -30,6 +30,7 @@ class UsageSummaryResponse(ModelNormal):
             "apm_azure_app_service_host_top99p_sum": (int,),
             "apm_fargate_count_avg_sum": (int,),
             "apm_host_top99p_sum": (int,),
+            "appsec_fargate_count_avg_sum": (int,),
             "audit_logs_lines_indexed_agg_sum": (int,),
             "avg_profiled_fargate_tasks_sum": (int,),
             "aws_host_top99p_sum": (int,),
@@ -52,6 +53,7 @@ class UsageSummaryResponse(ModelNormal):
             "cspm_azure_host_top99p_sum": (int,),
             "cspm_container_avg_sum": (int,),
             "cspm_container_hwm_sum": (int,),
+            "cspm_gcp_host_top99p_sum": (int,),
             "cspm_host_top99p_sum": (int,),
             "custom_ts_sum": (int,),
             "cws_containers_avg_sum": (int,),
@@ -83,6 +85,7 @@ class UsageSummaryResponse(ModelNormal):
             "npm_host_top99p_sum": (int,),
             "observability_pipelines_bytes_processed_agg_sum": (int,),
             "online_archive_events_count_agg_sum": (int,),
+            "opentelemetry_apm_host_top99p_sum": (int,),
             "opentelemetry_host_top99p_sum": (int,),
             "profiling_container_agent_count_avg": (int,),
             "profiling_host_count_top99p_sum": (int,),
@@ -111,6 +114,7 @@ class UsageSummaryResponse(ModelNormal):
         "apm_azure_app_service_host_top99p_sum": "apm_azure_app_service_host_top99p_sum",
         "apm_fargate_count_avg_sum": "apm_fargate_count_avg_sum",
         "apm_host_top99p_sum": "apm_host_top99p_sum",
+        "appsec_fargate_count_avg_sum": "appsec_fargate_count_avg_sum",
         "audit_logs_lines_indexed_agg_sum": "audit_logs_lines_indexed_agg_sum",
         "avg_profiled_fargate_tasks_sum": "avg_profiled_fargate_tasks_sum",
         "aws_host_top99p_sum": "aws_host_top99p_sum",
@@ -133,6 +137,7 @@ class UsageSummaryResponse(ModelNormal):
         "cspm_azure_host_top99p_sum": "cspm_azure_host_top99p_sum",
         "cspm_container_avg_sum": "cspm_container_avg_sum",
         "cspm_container_hwm_sum": "cspm_container_hwm_sum",
+        "cspm_gcp_host_top99p_sum": "cspm_gcp_host_top99p_sum",
         "cspm_host_top99p_sum": "cspm_host_top99p_sum",
         "custom_ts_sum": "custom_ts_sum",
         "cws_containers_avg_sum": "cws_containers_avg_sum",
@@ -164,6 +169,7 @@ class UsageSummaryResponse(ModelNormal):
         "npm_host_top99p_sum": "npm_host_top99p_sum",
         "observability_pipelines_bytes_processed_agg_sum": "observability_pipelines_bytes_processed_agg_sum",
         "online_archive_events_count_agg_sum": "online_archive_events_count_agg_sum",
+        "opentelemetry_apm_host_top99p_sum": "opentelemetry_apm_host_top99p_sum",
         "opentelemetry_host_top99p_sum": "opentelemetry_host_top99p_sum",
         "profiling_container_agent_count_avg": "profiling_container_agent_count_avg",
         "profiling_host_count_top99p_sum": "profiling_host_count_top99p_sum",
@@ -193,6 +199,7 @@ class UsageSummaryResponse(ModelNormal):
         apm_azure_app_service_host_top99p_sum: Union[int, UnsetType] = unset,
         apm_fargate_count_avg_sum: Union[int, UnsetType] = unset,
         apm_host_top99p_sum: Union[int, UnsetType] = unset,
+        appsec_fargate_count_avg_sum: Union[int, UnsetType] = unset,
         audit_logs_lines_indexed_agg_sum: Union[int, UnsetType] = unset,
         avg_profiled_fargate_tasks_sum: Union[int, UnsetType] = unset,
         aws_host_top99p_sum: Union[int, UnsetType] = unset,
@@ -215,6 +222,7 @@ class UsageSummaryResponse(ModelNormal):
         cspm_azure_host_top99p_sum: Union[int, UnsetType] = unset,
         cspm_container_avg_sum: Union[int, UnsetType] = unset,
         cspm_container_hwm_sum: Union[int, UnsetType] = unset,
+        cspm_gcp_host_top99p_sum: Union[int, UnsetType] = unset,
         cspm_host_top99p_sum: Union[int, UnsetType] = unset,
         custom_ts_sum: Union[int, UnsetType] = unset,
         cws_containers_avg_sum: Union[int, UnsetType] = unset,
@@ -246,6 +254,7 @@ class UsageSummaryResponse(ModelNormal):
         npm_host_top99p_sum: Union[int, UnsetType] = unset,
         observability_pipelines_bytes_processed_agg_sum: Union[int, UnsetType] = unset,
         online_archive_events_count_agg_sum: Union[int, UnsetType] = unset,
+        opentelemetry_apm_host_top99p_sum: Union[int, UnsetType] = unset,
         opentelemetry_host_top99p_sum: Union[int, UnsetType] = unset,
         profiling_container_agent_count_avg: Union[int, UnsetType] = unset,
         profiling_host_count_top99p_sum: Union[int, UnsetType] = unset,
@@ -283,6 +292,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param apm_host_top99p_sum: Shows the 99th percentile of all distinct APM hosts over all hours in the current months for all organizations.
         :type apm_host_top99p_sum: int, optional
+
+        :param appsec_fargate_count_avg_sum: Shows the average of all Application Security Monitoring ECS Fargate tasks over all hours in the current months for all organizations.
+        :type appsec_fargate_count_avg_sum: int, optional
 
         :param audit_logs_lines_indexed_agg_sum: Shows the sum of all audit logs lines indexed over all hours in the current months for all organizations.
         :type audit_logs_lines_indexed_agg_sum: int, optional
@@ -349,6 +361,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param cspm_container_hwm_sum: Shows the sum of the the high-water marks of Cloud Security Posture Management containers over all hours in the current months for all organizations.
         :type cspm_container_hwm_sum: int, optional
+
+        :param cspm_gcp_host_top99p_sum: Shows the 99th percentile of all Cloud Security Posture Management GCP hosts over all hours in the current months for all organizations.
+        :type cspm_gcp_host_top99p_sum: int, optional
 
         :param cspm_host_top99p_sum: Shows the 99th percentile of all Cloud Security Posture Management hosts over all hours in the current months for all organizations.
         :type cspm_host_top99p_sum: int, optional
@@ -443,6 +458,9 @@ class UsageSummaryResponse(ModelNormal):
         :param online_archive_events_count_agg_sum: Sum of all online archived events over all hours in the current months for all organizations.
         :type online_archive_events_count_agg_sum: int, optional
 
+        :param opentelemetry_apm_host_top99p_sum: Shows the 99th percentile of APM hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current months for all organizations.
+        :type opentelemetry_apm_host_top99p_sum: int, optional
+
         :param opentelemetry_host_top99p_sum: Shows the 99th percentile of all hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current months for all organizations.
         :type opentelemetry_host_top99p_sum: int, optional
 
@@ -514,6 +532,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["apm_fargate_count_avg_sum"] = apm_fargate_count_avg_sum
         if apm_host_top99p_sum is not unset:
             kwargs["apm_host_top99p_sum"] = apm_host_top99p_sum
+        if appsec_fargate_count_avg_sum is not unset:
+            kwargs["appsec_fargate_count_avg_sum"] = appsec_fargate_count_avg_sum
         if audit_logs_lines_indexed_agg_sum is not unset:
             kwargs["audit_logs_lines_indexed_agg_sum"] = audit_logs_lines_indexed_agg_sum
         if avg_profiled_fargate_tasks_sum is not unset:
@@ -558,6 +578,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["cspm_container_avg_sum"] = cspm_container_avg_sum
         if cspm_container_hwm_sum is not unset:
             kwargs["cspm_container_hwm_sum"] = cspm_container_hwm_sum
+        if cspm_gcp_host_top99p_sum is not unset:
+            kwargs["cspm_gcp_host_top99p_sum"] = cspm_gcp_host_top99p_sum
         if cspm_host_top99p_sum is not unset:
             kwargs["cspm_host_top99p_sum"] = cspm_host_top99p_sum
         if custom_ts_sum is not unset:
@@ -622,6 +644,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["observability_pipelines_bytes_processed_agg_sum"] = observability_pipelines_bytes_processed_agg_sum
         if online_archive_events_count_agg_sum is not unset:
             kwargs["online_archive_events_count_agg_sum"] = online_archive_events_count_agg_sum
+        if opentelemetry_apm_host_top99p_sum is not unset:
+            kwargs["opentelemetry_apm_host_top99p_sum"] = opentelemetry_apm_host_top99p_sum
         if opentelemetry_host_top99p_sum is not unset:
             kwargs["opentelemetry_host_top99p_sum"] = opentelemetry_host_top99p_sum
         if profiling_container_agent_count_avg is not unset:

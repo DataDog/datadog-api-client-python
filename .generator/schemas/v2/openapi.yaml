@@ -783,8 +783,8 @@ components:
           type: integer
         timezone:
           default: UTC
-          description: 'Timezone code. Can be specified as an offset, for example:
-            "UTC+03:00".'
+          description: The timezone can be specified as GMT, UTC, an offset from UTC
+            (like UTC+1), or as a Timezone Database identifier (like America/New_York).
           example: GMT
           type: string
       type: object
@@ -1182,6 +1182,10 @@ components:
       - max
       - avg
       - median
+      - latest
+      - earliest
+      - most_frequent
+      - delta
       example: pc90
       type: string
       x-enum-varnames:
@@ -1197,6 +1201,10 @@ components:
       - MAX
       - AVG
       - MEDIAN
+      - LATEST
+      - EARLIEST
+      - MOST_FREQUENT
+      - DELTA
     CIAppCompute:
       description: A compute rule to compute metrics or timeseries.
       properties:
@@ -1476,8 +1484,8 @@ components:
           type: integer
         timezone:
           default: UTC
-          description: 'The timezone can be specified both as an offset, for example:
-            "UTC+03:00".'
+          description: The timezone can be specified as GMT, UTC, an offset from UTC
+            (like UTC+1), or as a Timezone Database identifier (like America/New_York).
           example: GMT
           type: string
       type: object
@@ -2722,7 +2730,8 @@ components:
           type: integer
         timezone:
           default: UTC
-          description: 'The timezone can be specified as an offset, for example: `UTC+03:00`.'
+          description: The timezone can be specified as GMT, UTC, an offset from UTC
+            (like UTC+1), or as a Timezone Database identifier (like America/New_York).
           example: GMT
           type: string
       type: object
@@ -5003,6 +5012,8 @@ components:
       properties:
         aggregation_type:
           $ref: '#/components/schemas/LogsMetricComputeAggregationType'
+        include_percentiles:
+          $ref: '#/components/schemas/LogsMetricComputeIncludePercentiles'
         path:
           description: The path to the value the log-based metric will aggregate on
             (only used if the aggregation type is a "distribution").
@@ -5021,6 +5032,13 @@ components:
       x-enum-varnames:
       - COUNT
       - DISTRIBUTION
+    LogsMetricComputeIncludePercentiles:
+      description: 'Toggle to include or exclude percentile aggregations for distribution
+        metrics.
+
+        Only present when the `aggregation_type` is `distribution`.'
+      example: true
+      type: boolean
     LogsMetricCreateAttributes:
       description: The object describing the Datadog log-based metric to create.
       properties:
@@ -5112,6 +5130,8 @@ components:
       properties:
         aggregation_type:
           $ref: '#/components/schemas/LogsMetricResponseComputeAggregationType'
+        include_percentiles:
+          $ref: '#/components/schemas/LogsMetricComputeIncludePercentiles'
         path:
           description: The path to the value the log-based metric will aggregate on
             (only used if the aggregation type is a "distribution").
@@ -5173,6 +5193,8 @@ components:
     LogsMetricUpdateAttributes:
       description: The log-based metric properties that will be updated.
       properties:
+        compute:
+          $ref: '#/components/schemas/LogsMetricUpdateCompute'
         filter:
           $ref: '#/components/schemas/LogsMetricFilter'
         group_by:
@@ -5180,6 +5202,12 @@ components:
           items:
             $ref: '#/components/schemas/LogsMetricGroupBy'
           type: array
+      type: object
+    LogsMetricUpdateCompute:
+      description: The compute rule to compute the log-based metric.
+      properties:
+        include_percentiles:
+          $ref: '#/components/schemas/LogsMetricComputeIncludePercentiles'
       type: object
     LogsMetricUpdateData:
       description: The new log-based metric properties.
@@ -5256,8 +5284,8 @@ components:
           type: integer
         timezone:
           default: UTC
-          description: 'The timezone can be specified both as an offset, for example:
-            "UTC+03:00".'
+          description: The timezone can be specified as GMT, UTC, an offset from UTC
+            (like UTC+1), or as a Timezone Database identifier (like America/New_York).
           example: GMT
           type: string
       type: object
@@ -5969,7 +5997,7 @@ components:
           format: date-time
           type: string
         include_percentiles:
-          description: 'Toggle to turn on/off percentile aggregations for distribution
+          description: 'Toggle to include or exclude percentile aggregations for distribution
             metrics.
 
             Only present when the `metric_type` is `distribution`.'
@@ -7250,8 +7278,10 @@ components:
       properties:
         from:
           default: now-15m
-          description: The minimum time for the requested events; supports date, math,
-            and regular timestamps (in milliseconds).
+          description: The minimum time for the requested events; supports date (in
+            [ISO 8601](https://www.w3.org/TR/NOTE-datetime) format with full date,
+            hours, minutes, and the `Z` UTC indicator - seconds and fractional seconds
+            are optional), math, and regular timestamps (in milliseconds).
           example: now-15m
           type: string
         query:
@@ -7261,8 +7291,10 @@ components:
           type: string
         to:
           default: now
-          description: The maximum time for the requested events; supports date, math,
-            and regular timestamps (in milliseconds).
+          description: The maximum time for the requested events; supports date (in
+            [ISO 8601](https://www.w3.org/TR/NOTE-datetime) format with full date,
+            hours, minutes, and the `Z` UTC indicator - seconds and fractional seconds
+            are optional), math, and regular timestamps (in milliseconds).
           example: now
           type: string
       type: object
@@ -7278,8 +7310,8 @@ components:
           type: integer
         timezone:
           default: UTC
-          description: 'The timezone can be specified both as an offset, for example:
-            "UTC+03:00".'
+          description: The timezone can be specified as GMT, UTC, an offset from UTC
+            (like UTC+1), or as a Timezone Database identifier (like America/New_York).
           example: GMT
           type: string
       type: object
@@ -9701,12 +9733,12 @@ components:
       properties:
         region:
           $ref: '#/components/schemas/ServiceDefinitionV2OpsgenieRegion'
-        service-id:
-          description: Opsgenie service id.
-          example: 123e4567-e89b-12d3-a456-426614174000
+        service-url:
+          description: Opsgenie service url.
+          example: https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000
           type: string
       required:
-      - service-id
+      - service-url
       type: object
     ServiceDefinitionV2OpsgenieRegion:
       description: Opsgenie instance region.
@@ -10181,6 +10213,7 @@ components:
             user_access_invite: Invite other users to your organization.
             user_access_manage: Disable users, manage user roles, manage SAML-to-role
               mappings, and configure logs restriction queries.
+            user_access_read: View users and their roles and settings.
           tokenUrl: /oauth2/v1/token
       type: oauth2
     apiKeyAuth:
@@ -12061,9 +12094,6 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: List Confluent accounts
       tags:
       - Confluent Cloud
@@ -12092,9 +12122,6 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Add Confluent account
       tags:
       - Confluent Cloud
@@ -12116,9 +12143,6 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Delete Confluent account
       tags:
       - Confluent Cloud
@@ -12142,9 +12166,6 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Get Confluent account
       tags:
       - Confluent Cloud
@@ -12175,9 +12196,6 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Update Confluent account
       tags:
       - Confluent Cloud
@@ -12204,9 +12222,6 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: List Confluent Account resources
       tags:
       - Confluent Cloud
@@ -12238,9 +12253,6 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Add resource to Confluent account
       tags:
       - Confluent Cloud
@@ -12264,9 +12276,6 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Delete resource from Confluent account
       tags:
       - Confluent Cloud
@@ -12292,9 +12301,6 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Get resource from Confluent account
       tags:
       - Confluent Cloud
@@ -12327,9 +12333,6 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Update resource in Confluent account
       tags:
       - Confluent Cloud
@@ -15476,7 +15479,7 @@ paths:
       - apiKeyAuth: []
         appKeyAuth: []
       - AuthZ:
-        - security_monitoring_rules_read
+        - security_monitoring_signals_read
       summary: Get a signal's details
       tags:
       - Security Monitoring
@@ -16490,7 +16493,9 @@ paths:
     get:
       description: 'Get estimated cost across multi-org and single root-org accounts.
 
-        Estimated cost data is only available for the current month and previous month.
+        Estimated cost data is only available for the current month and previous month
+
+        and is delayed by up to 72 hours from when it was incurred.
 
         To access historical costs prior to this, use the `/historical_cost` endpoint.'
       operationId: GetEstimatedCostByOrg
@@ -17019,7 +17024,8 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - user_access_read
       summary: List all users
       tags:
       - Users
@@ -17126,7 +17132,8 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - user_access_read
       summary: Get user details
       tags:
       - Users
@@ -17255,7 +17262,8 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - user_access_read
       summary: Get a user permissions
       tags:
       - Users
