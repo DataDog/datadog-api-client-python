@@ -14,7 +14,6 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.logs_metric_update_compute import LogsMetricUpdateCompute
     from datadog_api_client.v2.model.logs_metric_filter import LogsMetricFilter
     from datadog_api_client.v2.model.logs_metric_group_by import LogsMetricGroupBy
 
@@ -22,25 +21,21 @@ if TYPE_CHECKING:
 class LogsMetricUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.logs_metric_update_compute import LogsMetricUpdateCompute
         from datadog_api_client.v2.model.logs_metric_filter import LogsMetricFilter
         from datadog_api_client.v2.model.logs_metric_group_by import LogsMetricGroupBy
 
         return {
-            "compute": (LogsMetricUpdateCompute,),
             "filter": (LogsMetricFilter,),
             "group_by": ([LogsMetricGroupBy],),
         }
 
     attribute_map = {
-        "compute": "compute",
         "filter": "filter",
         "group_by": "group_by",
     }
 
     def __init__(
         self_,
-        compute: Union[LogsMetricUpdateCompute, UnsetType] = unset,
         filter: Union[LogsMetricFilter, UnsetType] = unset,
         group_by: Union[List[LogsMetricGroupBy], UnsetType] = unset,
         **kwargs,
@@ -48,17 +43,12 @@ class LogsMetricUpdateAttributes(ModelNormal):
         """
         The log-based metric properties that will be updated.
 
-        :param compute: The compute rule to compute the log-based metric.
-        :type compute: LogsMetricUpdateCompute, optional
-
         :param filter: The log-based metric filter. Logs matching this filter will be aggregated in this metric.
         :type filter: LogsMetricFilter, optional
 
         :param group_by: The rules for the group by.
         :type group_by: [LogsMetricGroupBy], optional
         """
-        if compute is not unset:
-            kwargs["compute"] = compute
         if filter is not unset:
             kwargs["filter"] = filter
         if group_by is not unset:

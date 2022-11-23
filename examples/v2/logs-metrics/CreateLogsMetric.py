@@ -17,9 +17,7 @@ body = LogsMetricCreateRequest(
         type=LogsMetricType.LOGS_METRICS,
         attributes=LogsMetricCreateAttributes(
             compute=LogsMetricCompute(
-                aggregation_type=LogsMetricComputeAggregationType.DISTRIBUTION,
-                include_percentiles=True,
-                path="@duration",
+                aggregation_type=LogsMetricComputeAggregationType.COUNT,
             ),
         ),
     ),

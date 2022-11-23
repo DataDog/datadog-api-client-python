@@ -30,7 +30,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.logs_pipeline_processor import LogsPipelineProcessor
     from datadog_api_client.v1.model.logs_geo_ip_parser import LogsGeoIPParser
     from datadog_api_client.v1.model.logs_lookup_processor import LogsLookupProcessor
-    from datadog_api_client.v1.model.reference_table_logs_lookup_processor import ReferenceTableLogsLookupProcessor
     from datadog_api_client.v1.model.logs_trace_remapper import LogsTraceRemapper
 
 
@@ -90,7 +89,6 @@ class LogsPipeline(ModelNormal):
                     LogsPipelineProcessor,
                     LogsGeoIPParser,
                     LogsLookupProcessor,
-                    ReferenceTableLogsLookupProcessor,
                     LogsTraceRemapper,
                 ]
             ],

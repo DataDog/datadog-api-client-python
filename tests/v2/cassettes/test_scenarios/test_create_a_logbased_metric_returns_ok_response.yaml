@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"}},"id":"Test-Create_a_log_based_metric_returns_OK_response-1669044965","type":"logs_metrics"}}'
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"count"}},"id":"Test-Create_a_log_based_metric_returns_OK_response-1652349142","type":"logs_metrics"}}'
     headers:
       accept:
       - application/json
@@ -10,9 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/logs/config/metrics
   response:
     body:
-      string: '{"data":{"attributes":{"filter":{"query":"*"},"group_by":[],"compute":{"path":"@duration","include_percentiles":true,"aggregation_type":"distribution"}},"type":"logs_metrics","id":"Test_Create_a_log_based_metric_returns_OK_response_1669044965"}}
-
-        '
+      string: '{"data":{"attributes":{"filter":{"query":"*"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics","id":"Test_Create_a_log_based_metric_returns_OK_response_1652349142"}}'
     headers:
       content-type:
       - application/json
@@ -25,12 +23,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Create_a_log_based_metric_returns_OK_response_1669044965
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Create_a_log_based_metric_returns_OK_response_1652349142
   response:
     body:
-      string: '{}
-
-        '
+      string: '{}'
     headers:
       content-type:
       - application/json

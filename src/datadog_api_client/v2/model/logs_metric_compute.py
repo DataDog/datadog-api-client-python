@@ -24,22 +24,16 @@ class LogsMetricCompute(ModelNormal):
 
         return {
             "aggregation_type": (LogsMetricComputeAggregationType,),
-            "include_percentiles": (bool,),
             "path": (str,),
         }
 
     attribute_map = {
         "aggregation_type": "aggregation_type",
-        "include_percentiles": "include_percentiles",
         "path": "path",
     }
 
     def __init__(
-        self_,
-        aggregation_type: LogsMetricComputeAggregationType,
-        include_percentiles: Union[bool, UnsetType] = unset,
-        path: Union[str, UnsetType] = unset,
-        **kwargs,
+        self_, aggregation_type: LogsMetricComputeAggregationType, path: Union[str, UnsetType] = unset, **kwargs
     ):
         """
         The compute rule to compute the log-based metric.
@@ -47,15 +41,9 @@ class LogsMetricCompute(ModelNormal):
         :param aggregation_type: The type of aggregation to use.
         :type aggregation_type: LogsMetricComputeAggregationType
 
-        :param include_percentiles: Toggle to include or exclude percentile aggregations for distribution metrics.
-            Only present when the ``aggregation_type`` is ``distribution``.
-        :type include_percentiles: bool, optional
-
         :param path: The path to the value the log-based metric will aggregate on (only used if the aggregation type is a "distribution").
         :type path: str, optional
         """
-        if include_percentiles is not unset:
-            kwargs["include_percentiles"] = include_percentiles
         if path is not unset:
             kwargs["path"] = path
         super().__init__(kwargs)

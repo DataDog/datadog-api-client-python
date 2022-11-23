@@ -44,27 +44,6 @@ class SyntheticsBasicAuth(ModelComposed):
 
         :param workstation: Workstation for the authentication to use when performing the test.
         :type workstation: str, optional
-
-        :param access_token_url: Access token URL to use when performing the authentication.
-        :type access_token_url: str
-
-        :param audience: Audience to use when performing the authentication.
-        :type audience: str, optional
-
-        :param client_id: Client ID to use when performing the authentication.
-        :type client_id: str
-
-        :param client_secret: Client secret to use when performing the authentication.
-        :type client_secret: str
-
-        :param resource: Resource to use when performing the authentication.
-        :type resource: str, optional
-
-        :param scope: Scope to use when performing the authentication.
-        :type scope: str, optional
-
-        :param token_api_authentication: Type of token to use when performing the authentication.
-        :type token_api_authentication: SyntheticsBasicAuthOauthTokenApiAuthentication
         """
         super().__init__(kwargs)
 
@@ -81,8 +60,6 @@ class SyntheticsBasicAuth(ModelComposed):
         from datadog_api_client.v1.model.synthetics_basic_auth_sigv4 import SyntheticsBasicAuthSigv4
         from datadog_api_client.v1.model.synthetics_basic_auth_ntlm import SyntheticsBasicAuthNTLM
         from datadog_api_client.v1.model.synthetics_basic_auth_digest import SyntheticsBasicAuthDigest
-        from datadog_api_client.v1.model.synthetics_basic_auth_oauth_client import SyntheticsBasicAuthOauthClient
-        from datadog_api_client.v1.model.synthetics_basic_auth_oauth_rop import SyntheticsBasicAuthOauthROP
 
         return {
             "oneOf": [
@@ -90,7 +67,5 @@ class SyntheticsBasicAuth(ModelComposed):
                 SyntheticsBasicAuthSigv4,
                 SyntheticsBasicAuthNTLM,
                 SyntheticsBasicAuthDigest,
-                SyntheticsBasicAuthOauthClient,
-                SyntheticsBasicAuthOauthROP,
             ],
         }

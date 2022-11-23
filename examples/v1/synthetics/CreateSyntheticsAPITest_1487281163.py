@@ -19,11 +19,6 @@ from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAsse
 from datadog_api_client.v1.model.synthetics_assertion_x_path_operator import SyntheticsAssertionXPathOperator
 from datadog_api_client.v1.model.synthetics_assertion_x_path_target import SyntheticsAssertionXPathTarget
 from datadog_api_client.v1.model.synthetics_assertion_x_path_target_target import SyntheticsAssertionXPathTargetTarget
-from datadog_api_client.v1.model.synthetics_basic_auth_oauth_client import SyntheticsBasicAuthOauthClient
-from datadog_api_client.v1.model.synthetics_basic_auth_oauth_client_type import SyntheticsBasicAuthOauthClientType
-from datadog_api_client.v1.model.synthetics_basic_auth_oauth_token_api_authentication import (
-    SyntheticsBasicAuthOauthTokenApiAuthentication,
-)
 from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
 from datadog_api_client.v1.model.synthetics_config_variable_type import SyntheticsConfigVariableType
 from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
@@ -98,16 +93,6 @@ body = SyntheticsAPITest(
             proxy=SyntheticsTestRequestProxy(
                 url="https://datadoghq.com",
                 headers=SyntheticsTestHeaders(),
-            ),
-            basic_auth=SyntheticsBasicAuthOauthClient(
-                access_token_url="https://datadog-token.com",
-                audience="audience",
-                client_id="client-id",
-                client_secret="client-secret",
-                resource="resource",
-                scope="yoyo",
-                token_api_authentication=SyntheticsBasicAuthOauthTokenApiAuthentication.HEADER,
-                type=SyntheticsBasicAuthOauthClientType.OAUTH_CLIENT,
             ),
         ),
     ),

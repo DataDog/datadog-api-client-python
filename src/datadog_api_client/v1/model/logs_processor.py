@@ -88,9 +88,6 @@ class LogsProcessor(ModelComposed):
         :param lookup_table: Mapping table of values for the source attribute and their associated target attribute values,
             formatted as `["source_key1,target_value1", "source_key2,target_value2"]`
         :type lookup_table: [str]
-
-        :param lookup_enrichment_table: Name of the Reference Table for the source attribute and their associated target attribute values.
-        :type lookup_enrichment_table: str
         """
         super().__init__(kwargs)
 
@@ -117,7 +114,6 @@ class LogsProcessor(ModelComposed):
         from datadog_api_client.v1.model.logs_pipeline_processor import LogsPipelineProcessor
         from datadog_api_client.v1.model.logs_geo_ip_parser import LogsGeoIPParser
         from datadog_api_client.v1.model.logs_lookup_processor import LogsLookupProcessor
-        from datadog_api_client.v1.model.reference_table_logs_lookup_processor import ReferenceTableLogsLookupProcessor
         from datadog_api_client.v1.model.logs_trace_remapper import LogsTraceRemapper
 
         return {
@@ -136,7 +132,6 @@ class LogsProcessor(ModelComposed):
                 LogsPipelineProcessor,
                 LogsGeoIPParser,
                 LogsLookupProcessor,
-                ReferenceTableLogsLookupProcessor,
                 LogsTraceRemapper,
             ],
         }

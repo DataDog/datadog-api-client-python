@@ -43,7 +43,6 @@ class UsageSummaryDateOrg(ModelNormal):
             "cspm_azure_host_top99p": (int,),
             "cspm_container_avg": (int,),
             "cspm_container_hwm": (int,),
-            "cspm_gcp_host_top99p": (int,),
             "cspm_host_top99p": (int,),
             "custom_ts_avg": (int,),
             "cws_container_count_avg": (int,),
@@ -72,7 +71,6 @@ class UsageSummaryDateOrg(ModelNormal):
             "npm_host_top99p": (int,),
             "observability_pipelines_bytes_processed_sum": (int,),
             "online_archive_events_count_sum": (int,),
-            "opentelemetry_apm_host_top99p": (int,),
             "opentelemetry_host_top99p": (int,),
             "profiling_host_top99p": (int,),
             "public_id": (str,),
@@ -120,7 +118,6 @@ class UsageSummaryDateOrg(ModelNormal):
         "cspm_azure_host_top99p": "cspm_azure_host_top99p",
         "cspm_container_avg": "cspm_container_avg",
         "cspm_container_hwm": "cspm_container_hwm",
-        "cspm_gcp_host_top99p": "cspm_gcp_host_top99p",
         "cspm_host_top99p": "cspm_host_top99p",
         "custom_ts_avg": "custom_ts_avg",
         "cws_container_count_avg": "cws_container_count_avg",
@@ -149,7 +146,6 @@ class UsageSummaryDateOrg(ModelNormal):
         "npm_host_top99p": "npm_host_top99p",
         "observability_pipelines_bytes_processed_sum": "observability_pipelines_bytes_processed_sum",
         "online_archive_events_count_sum": "online_archive_events_count_sum",
-        "opentelemetry_apm_host_top99p": "opentelemetry_apm_host_top99p",
         "opentelemetry_host_top99p": "opentelemetry_host_top99p",
         "profiling_host_top99p": "profiling_host_top99p",
         "public_id": "public_id",
@@ -198,7 +194,6 @@ class UsageSummaryDateOrg(ModelNormal):
         cspm_azure_host_top99p: Union[int, UnsetType] = unset,
         cspm_container_avg: Union[int, UnsetType] = unset,
         cspm_container_hwm: Union[int, UnsetType] = unset,
-        cspm_gcp_host_top99p: Union[int, UnsetType] = unset,
         cspm_host_top99p: Union[int, UnsetType] = unset,
         custom_ts_avg: Union[int, UnsetType] = unset,
         cws_container_count_avg: Union[int, UnsetType] = unset,
@@ -227,7 +222,6 @@ class UsageSummaryDateOrg(ModelNormal):
         npm_host_top99p: Union[int, UnsetType] = unset,
         observability_pipelines_bytes_processed_sum: Union[int, UnsetType] = unset,
         online_archive_events_count_sum: Union[int, UnsetType] = unset,
-        opentelemetry_apm_host_top99p: Union[int, UnsetType] = unset,
         opentelemetry_host_top99p: Union[int, UnsetType] = unset,
         profiling_host_top99p: Union[int, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
@@ -329,9 +323,6 @@ class UsageSummaryDateOrg(ModelNormal):
         :param cspm_container_hwm: Shows the high-water mark of Cloud Security Posture Management containers over all hours in the current date for the given org.
         :type cspm_container_hwm: int, optional
 
-        :param cspm_gcp_host_top99p: Shows the 99th percentile of all Cloud Security Posture Management GCP hosts over all hours in the current date for the given org.
-        :type cspm_gcp_host_top99p: int, optional
-
         :param cspm_host_top99p: Shows the 99th percentile of all Cloud Security Posture Management hosts over all hours in the current date for the given org.
         :type cspm_host_top99p: int, optional
 
@@ -415,9 +406,6 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param online_archive_events_count_sum: Sum of all online archived events over all hours in the current date for the given org.
         :type online_archive_events_count_sum: int, optional
-
-        :param opentelemetry_apm_host_top99p: Shows the 99th percentile of APM hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for the given org.
-        :type opentelemetry_apm_host_top99p: int, optional
 
         :param opentelemetry_host_top99p: Shows the 99th percentile of all hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for the given org.
         :type opentelemetry_host_top99p: int, optional
@@ -525,8 +513,6 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["cspm_container_avg"] = cspm_container_avg
         if cspm_container_hwm is not unset:
             kwargs["cspm_container_hwm"] = cspm_container_hwm
-        if cspm_gcp_host_top99p is not unset:
-            kwargs["cspm_gcp_host_top99p"] = cspm_gcp_host_top99p
         if cspm_host_top99p is not unset:
             kwargs["cspm_host_top99p"] = cspm_host_top99p
         if custom_ts_avg is not unset:
@@ -583,8 +569,6 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["observability_pipelines_bytes_processed_sum"] = observability_pipelines_bytes_processed_sum
         if online_archive_events_count_sum is not unset:
             kwargs["online_archive_events_count_sum"] = online_archive_events_count_sum
-        if opentelemetry_apm_host_top99p is not unset:
-            kwargs["opentelemetry_apm_host_top99p"] = opentelemetry_apm_host_top99p
         if opentelemetry_host_top99p is not unset:
             kwargs["opentelemetry_host_top99p"] = opentelemetry_host_top99p
         if profiling_host_top99p is not unset:

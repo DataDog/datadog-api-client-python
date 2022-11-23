@@ -30,7 +30,6 @@ class UsageHostHour(ModelNormal):
             "host_count": (int,),
             "hour": (datetime,),
             "infra_azure_app_service": (int,),
-            "opentelemetry_apm_host_count": (int,),
             "opentelemetry_host_count": (int,),
             "org_name": (str,),
             "public_id": (str,),
@@ -50,7 +49,6 @@ class UsageHostHour(ModelNormal):
         "host_count": "host_count",
         "hour": "hour",
         "infra_azure_app_service": "infra_azure_app_service",
-        "opentelemetry_apm_host_count": "opentelemetry_apm_host_count",
         "opentelemetry_host_count": "opentelemetry_host_count",
         "org_name": "org_name",
         "public_id": "public_id",
@@ -71,7 +69,6 @@ class UsageHostHour(ModelNormal):
         host_count: Union[int, UnsetType] = unset,
         hour: Union[datetime, UnsetType] = unset,
         infra_azure_app_service: Union[int, UnsetType] = unset,
-        opentelemetry_apm_host_count: Union[int, UnsetType] = unset,
         opentelemetry_host_count: Union[int, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
@@ -125,9 +122,6 @@ class UsageHostHour(ModelNormal):
             (and were NOT running the Datadog Agent).
         :type infra_azure_app_service: int, optional
 
-        :param opentelemetry_apm_host_count: Contains the total number of hosts using APM reported by Datadog exporter for the OpenTelemetry Collector.
-        :type opentelemetry_apm_host_count: int, optional
-
         :param opentelemetry_host_count: Contains the total number of hosts reported by Datadog exporter for the OpenTelemetry Collector.
         :type opentelemetry_host_count: int, optional
 
@@ -165,8 +159,6 @@ class UsageHostHour(ModelNormal):
             kwargs["hour"] = hour
         if infra_azure_app_service is not unset:
             kwargs["infra_azure_app_service"] = infra_azure_app_service
-        if opentelemetry_apm_host_count is not unset:
-            kwargs["opentelemetry_apm_host_count"] = opentelemetry_apm_host_count
         if opentelemetry_host_count is not unset:
             kwargs["opentelemetry_host_count"] = opentelemetry_host_count
         if org_name is not unset:

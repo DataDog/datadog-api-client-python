@@ -61,11 +61,8 @@ Feature: Service Level Objective Corrections
     Given there is a valid "slo" in the system
     And there is a valid "correction" for "slo"
     And new "ListSLOCorrection" request
-    And request contains "offset" parameter with value 1
-    And request contains "limit" parameter with value 1
     When the request is sent
     Then the response status is 200 OK
-    And the response "data" has length 1
 
   @generated @skip @team:DataDog/slo-app
   Scenario: Get an SLO correction for an SLO returns "Bad Request" response

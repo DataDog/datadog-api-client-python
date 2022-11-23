@@ -50,7 +50,7 @@ Feature: Usage Metering
   @replay-only @team:DataDog/red-zone-revenue-query
   Scenario: Get historical cost across your account returns "OK" response
     Given new "GetHistoricalCostByOrg" request
-    And request contains "start_month" parameter with value "{{ timeISO('now - 2M') }}"
+    And request contains "start_month" parameter with value "{{ timeISO('now - 1m') }}"
     And request contains "view" parameter with value "sub-org"
     When the request is sent
     Then the response status is 200 OK

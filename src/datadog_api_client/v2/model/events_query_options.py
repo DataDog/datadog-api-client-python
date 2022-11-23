@@ -34,7 +34,7 @@ class EventsQueryOptions(ModelNormal):
         :param time_offset: The time offset to apply to the query in seconds.
         :type time_offset: int, optional
 
-        :param timezone: The timezone can be specified as GMT, UTC, an offset from UTC (like UTC+1), or as a Timezone Database identifier (like America/New_York).
+        :param timezone: The timezone can be specified as an offset, for example: ``UTC+03:00``.
         :type timezone: str, optional
         """
         if time_offset is not unset:

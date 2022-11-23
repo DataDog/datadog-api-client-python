@@ -134,18 +134,6 @@
   {
     "parameters": [
       {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"id\": \"{{ unique }}\",\n    \"attributes\": {\n      \"filter\": {\n        \"query\": \"source:{{ unique }}\"\n      },\n      \"compute\": {\n        \"aggregation_type\": \"distribution\",\n        \"path\": \"@duration\",\n        \"include_percentiles\": true\n      }\n    },\n    \"type\": \"logs_metrics\"\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"logs_metric_percentile\" in the system",
-    "key": "logs_metric_percentile",
-    "tag": "Logs Metrics",
-    "operationId": "CreateLogsMetric"
-  },
-  {
-    "parameters": [
-      {
         "name": "metric_name",
         "value": "\"{{ unique_alnum }}\""
       },

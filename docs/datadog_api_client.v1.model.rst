@@ -2535,13 +2535,6 @@ query\_value\_widget\_request
    :members:
    :show-inheritance:
 
-reference\_table\_logs\_lookup\_processor
------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.reference_table_logs_lookup_processor
-   :members:
-   :show-inheritance:
-
 response\_meta\_attributes
 --------------------------
 
@@ -3428,41 +3421,6 @@ synthetics\_basic\_auth\_ntlm\_type
 -----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_ntlm_type
-   :members:
-   :show-inheritance:
-
-synthetics\_basic\_auth\_oauth\_client
---------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_oauth_client
-   :members:
-   :show-inheritance:
-
-synthetics\_basic\_auth\_oauth\_client\_type
---------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_oauth_client_type
-   :members:
-   :show-inheritance:
-
-synthetics\_basic\_auth\_oauth\_rop
------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_oauth_rop
-   :members:
-   :show-inheritance:
-
-synthetics\_basic\_auth\_oauth\_rop\_type
------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_oauth_rop_type
-   :members:
-   :show-inheritance:
-
-synthetics\_basic\_auth\_oauth\_token\_api\_authentication
-----------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_oauth_token_api_authentication
    :members:
    :show-inheritance:
 

@@ -3,13 +3,9 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, Union
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
-from datadog_api_client.model_utils import (
-    UnsetType,
-    unset,
-)
 from datadog_api_client.v1.model.slo_correction_list_response import SLOCorrectionListResponse
 from datadog_api_client.v1.model.slo_correction_response import SLOCorrectionResponse
 from datadog_api_client.v1.model.slo_correction_create_request import SLOCorrectionCreateRequest
@@ -110,18 +106,7 @@ class ServiceLevelObjectiveCorrectionsApi:
                 "version": "v1",
                 "servers": None,
             },
-            params_map={
-                "offset": {
-                    "openapi_types": (int,),
-                    "attribute": "offset",
-                    "location": "query",
-                },
-                "limit": {
-                    "openapi_types": (int,),
-                    "attribute": "limit",
-                    "location": "query",
-                },
-            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
                 "content_type": [],
@@ -209,27 +194,14 @@ class ServiceLevelObjectiveCorrectionsApi:
 
     def list_slo_correction(
         self,
-        *,
-        offset: Union[int, UnsetType] = unset,
-        limit: Union[int, UnsetType] = unset,
     ) -> SLOCorrectionListResponse:
         """Get all SLO corrections.
 
         Get all Service Level Objective corrections.
 
-        :param offset: The specific offset to use as the beginning of the returned response.
-        :type offset: int, optional
-        :param limit: The number of SLO corrections to return in the response. Default is 25.
-        :type limit: int, optional
         :rtype: SLOCorrectionListResponse
         """
         kwargs: Dict[str, Any] = {}
-        if offset is not unset:
-            kwargs["offset"] = offset
-
-        if limit is not unset:
-            kwargs["limit"] = limit
-
         return self._list_slo_correction_endpoint.call_with_http_info(**kwargs)
 
     def update_slo_correction(
