@@ -27,6 +27,6 @@ rm -rf ./src/datadog_api_client/v1 ./src/datadog_api_client/v2 src/datadog_api_c
 pre_commit_wrapper generator
 pre_commit_wrapper examples
 pre_commit_wrapper docs
-pre_commit_wrapper autoflake
+pre_commit_wrapper ruff
 pre_commit_wrapper black
 pre_commit_wrapper api-docs
