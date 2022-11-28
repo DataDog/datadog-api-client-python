@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, TYPE_CHECKING, Union
+from typing import Any, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
