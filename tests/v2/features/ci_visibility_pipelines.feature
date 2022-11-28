@@ -17,7 +17,7 @@ Feature: CI Visibility Pipelines
   @team:Datadog/ci-app-backend @team:Datadog/integrations-tools-and-libraries
   Scenario: Aggregate pipelines events returns "OK" response
     Given new "AggregateCIAppPipelineEvents" request
-    And body with value {"compute": [{"aggregation": "pc90", "metric": "@duration", "type": "total"}], "filter": {"from": "now-15m", "query": "@ci.provider.name:github AND @ci.provider.instance:github-actions", "to": "now"}, "group_by": [{ "facet": "@ci.status", "limit": 10, "total": false}], "options": {"timezone": "GMT"}, "page": {"limit": 25}}
+    And body with value {"compute": [{"aggregation": "pc90", "metric": "@duration", "type": "total"}], "filter": {"from": "now-15m", "query": "@ci.provider.name:(gitlab OR github)", "to": "now"}, "group_by": [{ "facet": "@ci.status", "limit": 10, "total": false}], "options": {"timezone": "GMT"}, "page": {"limit": 25}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -30,7 +30,7 @@ Feature: CI Visibility Pipelines
   @team:Datadog/ci-app-backend @team:Datadog/integrations-tools-and-libraries
   Scenario: Get a list of pipelines events returns "OK" response
     Given new "ListCIAppPipelineEvents" request
-    And request contains "filter[query]" parameter with value "@ci.provider.instance:circleci"
+    And request contains "filter[query]" parameter with value "@ci.provider.name:circleci"
     And request contains "filter[from]" parameter with value "{{ timeISO('now - 30m') }}"
     And request contains "filter[to]" parameter with value "{{ timeISO('now') }}"
     And request contains "page[limit]" parameter with value 5
