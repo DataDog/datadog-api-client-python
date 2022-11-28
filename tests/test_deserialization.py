@@ -5,7 +5,7 @@ from datadog_api_client.model_utils import validate_and_convert_types, model_to_
 
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
-from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
+from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
 from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateResponse
 from datadog_api_client.v2.model.logs_archive import LogsArchive
 from datadog_api_client.v2.model.logs_archive_destination import LogsArchiveDestination
@@ -216,12 +216,12 @@ def test_unknown_nested_enum():
         "config": {
             "request": {
                 "url": "https://www.10.0.0.1.xip.io",
-                "method": "A non existent method",
+                "method": "GET",
                 "timeout": 30
             },
             "assertions": [
                 {
-                    "operator": "is",
+                    "operator": "not-an-operator",
                     "type": "statusCode",
                     "target": 200
                 }
@@ -236,9 +236,9 @@ def test_unknown_nested_enum():
         json.loads(body), (SyntheticsAPITest,), ["received_data"], True, True, config
     )
     assert isinstance(deserialized_data, SyntheticsAPITest)
-    assert isinstance(deserialized_data.config.request, SyntheticsTestRequest)
-    assert str(deserialized_data.config.request.method) == "A non existent method"
-    assert deserialized_data.config.request.method._unparsed
+    assert isinstance(deserialized_data.config.assertions[0], SyntheticsAssertion)
+    assert str(deserialized_data.config.assertions[0].operator) == "not-an-operator"
+    assert deserialized_data.config.assertions[0]._unparsed
 
 
 def test_unknown_nested_one_of():
