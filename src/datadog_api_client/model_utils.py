@@ -473,8 +473,9 @@ class ModelComposed(OpenApiModel):
         self._composed_instances = composed_info[0]
         self._var_name_to_model_instances = composed_info[1]
         self._additional_properties_model_instances = composed_info[2]
-        self._unparsed = any(isinstance(composed_instance, UnparsedObject)
-                             for composed_instance in self._composed_instances)
+        self._unparsed = any(
+            isinstance(composed_instance, UnparsedObject) for composed_instance in self._composed_instances
+        )
 
     def __setitem__(self, name, value):
         """Set the value of an attribute using square-bracket notation: `instance[attr] = val`."""
