@@ -30,13 +30,17 @@ class UsageBillableSummaryKeys(ModelNormal):
             "apm_profiler_host_sum": (UsageBillableSummaryBody,),
             "apm_profiler_host_top99p": (UsageBillableSummaryBody,),
             "apm_trace_search_sum": (UsageBillableSummaryBody,),
+            "application_security_fargate_average": (UsageBillableSummaryBody,),
             "application_security_host_sum": (UsageBillableSummaryBody,),
+            "application_security_host_top99": (UsageBillableSummaryBody,),
             "ci_pipeline_indexed_spans_sum": (UsageBillableSummaryBody,),
             "ci_pipeline_maximum": (UsageBillableSummaryBody,),
             "ci_pipeline_sum": (UsageBillableSummaryBody,),
             "ci_test_indexed_spans_sum": (UsageBillableSummaryBody,),
             "ci_testing_maximum": (UsageBillableSummaryBody,),
             "ci_testing_sum": (UsageBillableSummaryBody,),
+            "cloud_cost_management_average": (UsageBillableSummaryBody,),
+            "cloud_cost_management_sum": (UsageBillableSummaryBody,),
             "cspm_container_sum": (UsageBillableSummaryBody,),
             "cspm_host_sum": (UsageBillableSummaryBody,),
             "cspm_host_top99p": (UsageBillableSummaryBody,),
@@ -68,6 +72,7 @@ class UsageBillableSummaryKeys(ModelNormal):
             "iot_top99p": (UsageBillableSummaryBody,),
             "lambda_function_average": (UsageBillableSummaryBody,),
             "lambda_function_sum": (UsageBillableSummaryBody,),
+            "logs_forwarding_sum": (UsageBillableSummaryBody,),
             "logs_indexed_15day_sum": (UsageBillableSummaryBody,),
             "logs_indexed_180day_sum": (UsageBillableSummaryBody,),
             "logs_indexed_30day_sum": (UsageBillableSummaryBody,),
@@ -95,10 +100,14 @@ class UsageBillableSummaryKeys(ModelNormal):
             "rum_sum": (UsageBillableSummaryBody,),
             "rum_units_sum": (UsageBillableSummaryBody,),
             "sensitive_data_scanner_sum": (UsageBillableSummaryBody,),
+            "serverless_apm_sum": (UsageBillableSummaryBody,),
+            "serverless_infra_average": (UsageBillableSummaryBody,),
+            "serverless_infra_sum": (UsageBillableSummaryBody,),
             "serverless_invocation_sum": (UsageBillableSummaryBody,),
             "siem_sum": (UsageBillableSummaryBody,),
             "standard_timeseries_average": (UsageBillableSummaryBody,),
             "synthetics_api_tests_sum": (UsageBillableSummaryBody,),
+            "synthetics_app_testing_maximum": (UsageBillableSummaryBody,),
             "synthetics_browser_checks_sum": (UsageBillableSummaryBody,),
             "timeseries_average": (UsageBillableSummaryBody,),
             "timeseries_sum": (UsageBillableSummaryBody,),
@@ -112,13 +121,17 @@ class UsageBillableSummaryKeys(ModelNormal):
         "apm_profiler_host_sum": "apm_profiler_host_sum",
         "apm_profiler_host_top99p": "apm_profiler_host_top99p",
         "apm_trace_search_sum": "apm_trace_search_sum",
+        "application_security_fargate_average": "application_security_fargate_average",
         "application_security_host_sum": "application_security_host_sum",
+        "application_security_host_top99": "application_security_host_top99",
         "ci_pipeline_indexed_spans_sum": "ci_pipeline_indexed_spans_sum",
         "ci_pipeline_maximum": "ci_pipeline_maximum",
         "ci_pipeline_sum": "ci_pipeline_sum",
         "ci_test_indexed_spans_sum": "ci_test_indexed_spans_sum",
         "ci_testing_maximum": "ci_testing_maximum",
         "ci_testing_sum": "ci_testing_sum",
+        "cloud_cost_management_average": "cloud_cost_management_average",
+        "cloud_cost_management_sum": "cloud_cost_management_sum",
         "cspm_container_sum": "cspm_container_sum",
         "cspm_host_sum": "cspm_host_sum",
         "cspm_host_top99p": "cspm_host_top99p",
@@ -150,6 +163,7 @@ class UsageBillableSummaryKeys(ModelNormal):
         "iot_top99p": "iot_top99p",
         "lambda_function_average": "lambda_function_average",
         "lambda_function_sum": "lambda_function_sum",
+        "logs_forwarding_sum": "logs_forwarding_sum",
         "logs_indexed_15day_sum": "logs_indexed_15day_sum",
         "logs_indexed_180day_sum": "logs_indexed_180day_sum",
         "logs_indexed_30day_sum": "logs_indexed_30day_sum",
@@ -177,10 +191,14 @@ class UsageBillableSummaryKeys(ModelNormal):
         "rum_sum": "rum_sum",
         "rum_units_sum": "rum_units_sum",
         "sensitive_data_scanner_sum": "sensitive_data_scanner_sum",
+        "serverless_apm_sum": "serverless_apm_sum",
+        "serverless_infra_average": "serverless_infra_average",
+        "serverless_infra_sum": "serverless_infra_sum",
         "serverless_invocation_sum": "serverless_invocation_sum",
         "siem_sum": "siem_sum",
         "standard_timeseries_average": "standard_timeseries_average",
         "synthetics_api_tests_sum": "synthetics_api_tests_sum",
+        "synthetics_app_testing_maximum": "synthetics_app_testing_maximum",
         "synthetics_browser_checks_sum": "synthetics_browser_checks_sum",
         "timeseries_average": "timeseries_average",
         "timeseries_sum": "timeseries_sum",
@@ -195,13 +213,17 @@ class UsageBillableSummaryKeys(ModelNormal):
         apm_profiler_host_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         apm_profiler_host_top99p: Union[UsageBillableSummaryBody, UnsetType] = unset,
         apm_trace_search_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
+        application_security_fargate_average: Union[UsageBillableSummaryBody, UnsetType] = unset,
         application_security_host_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
+        application_security_host_top99: Union[UsageBillableSummaryBody, UnsetType] = unset,
         ci_pipeline_indexed_spans_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         ci_pipeline_maximum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         ci_pipeline_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         ci_test_indexed_spans_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         ci_testing_maximum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         ci_testing_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
+        cloud_cost_management_average: Union[UsageBillableSummaryBody, UnsetType] = unset,
+        cloud_cost_management_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         cspm_container_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         cspm_host_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         cspm_host_top99p: Union[UsageBillableSummaryBody, UnsetType] = unset,
@@ -233,6 +255,7 @@ class UsageBillableSummaryKeys(ModelNormal):
         iot_top99p: Union[UsageBillableSummaryBody, UnsetType] = unset,
         lambda_function_average: Union[UsageBillableSummaryBody, UnsetType] = unset,
         lambda_function_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
+        logs_forwarding_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         logs_indexed_15day_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         logs_indexed_180day_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         logs_indexed_30day_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
@@ -260,10 +283,14 @@ class UsageBillableSummaryKeys(ModelNormal):
         rum_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         rum_units_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         sensitive_data_scanner_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
+        serverless_apm_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
+        serverless_infra_average: Union[UsageBillableSummaryBody, UnsetType] = unset,
+        serverless_infra_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         serverless_invocation_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         siem_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         standard_timeseries_average: Union[UsageBillableSummaryBody, UnsetType] = unset,
         synthetics_api_tests_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
+        synthetics_app_testing_maximum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         synthetics_browser_checks_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         timeseries_average: Union[UsageBillableSummaryBody, UnsetType] = unset,
         timeseries_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
@@ -293,8 +320,14 @@ class UsageBillableSummaryKeys(ModelNormal):
         :param apm_trace_search_sum: Response with properties for each aggregated usage type.
         :type apm_trace_search_sum: UsageBillableSummaryBody, optional
 
+        :param application_security_fargate_average: Response with properties for each aggregated usage type.
+        :type application_security_fargate_average: UsageBillableSummaryBody, optional
+
         :param application_security_host_sum: Response with properties for each aggregated usage type.
         :type application_security_host_sum: UsageBillableSummaryBody, optional
+
+        :param application_security_host_top99: Response with properties for each aggregated usage type.
+        :type application_security_host_top99: UsageBillableSummaryBody, optional
 
         :param ci_pipeline_indexed_spans_sum: Response with properties for each aggregated usage type.
         :type ci_pipeline_indexed_spans_sum: UsageBillableSummaryBody, optional
@@ -313,6 +346,12 @@ class UsageBillableSummaryKeys(ModelNormal):
 
         :param ci_testing_sum: Response with properties for each aggregated usage type.
         :type ci_testing_sum: UsageBillableSummaryBody, optional
+
+        :param cloud_cost_management_average: Response with properties for each aggregated usage type.
+        :type cloud_cost_management_average: UsageBillableSummaryBody, optional
+
+        :param cloud_cost_management_sum: Response with properties for each aggregated usage type.
+        :type cloud_cost_management_sum: UsageBillableSummaryBody, optional
 
         :param cspm_container_sum: Response with properties for each aggregated usage type.
         :type cspm_container_sum: UsageBillableSummaryBody, optional
@@ -407,6 +446,9 @@ class UsageBillableSummaryKeys(ModelNormal):
         :param lambda_function_sum: Response with properties for each aggregated usage type.
         :type lambda_function_sum: UsageBillableSummaryBody, optional
 
+        :param logs_forwarding_sum: Response with properties for each aggregated usage type.
+        :type logs_forwarding_sum: UsageBillableSummaryBody, optional
+
         :param logs_indexed_15day_sum: Response with properties for each aggregated usage type.
         :type logs_indexed_15day_sum: UsageBillableSummaryBody, optional
 
@@ -488,6 +530,15 @@ class UsageBillableSummaryKeys(ModelNormal):
         :param sensitive_data_scanner_sum: Response with properties for each aggregated usage type.
         :type sensitive_data_scanner_sum: UsageBillableSummaryBody, optional
 
+        :param serverless_apm_sum: Response with properties for each aggregated usage type.
+        :type serverless_apm_sum: UsageBillableSummaryBody, optional
+
+        :param serverless_infra_average: Response with properties for each aggregated usage type.
+        :type serverless_infra_average: UsageBillableSummaryBody, optional
+
+        :param serverless_infra_sum: Response with properties for each aggregated usage type.
+        :type serverless_infra_sum: UsageBillableSummaryBody, optional
+
         :param serverless_invocation_sum: Response with properties for each aggregated usage type.
         :type serverless_invocation_sum: UsageBillableSummaryBody, optional
 
@@ -499,6 +550,9 @@ class UsageBillableSummaryKeys(ModelNormal):
 
         :param synthetics_api_tests_sum: Response with properties for each aggregated usage type.
         :type synthetics_api_tests_sum: UsageBillableSummaryBody, optional
+
+        :param synthetics_app_testing_maximum: Response with properties for each aggregated usage type.
+        :type synthetics_app_testing_maximum: UsageBillableSummaryBody, optional
 
         :param synthetics_browser_checks_sum: Response with properties for each aggregated usage type.
         :type synthetics_browser_checks_sum: UsageBillableSummaryBody, optional
@@ -523,8 +577,12 @@ class UsageBillableSummaryKeys(ModelNormal):
             kwargs["apm_profiler_host_top99p"] = apm_profiler_host_top99p
         if apm_trace_search_sum is not unset:
             kwargs["apm_trace_search_sum"] = apm_trace_search_sum
+        if application_security_fargate_average is not unset:
+            kwargs["application_security_fargate_average"] = application_security_fargate_average
         if application_security_host_sum is not unset:
             kwargs["application_security_host_sum"] = application_security_host_sum
+        if application_security_host_top99 is not unset:
+            kwargs["application_security_host_top99"] = application_security_host_top99
         if ci_pipeline_indexed_spans_sum is not unset:
             kwargs["ci_pipeline_indexed_spans_sum"] = ci_pipeline_indexed_spans_sum
         if ci_pipeline_maximum is not unset:
@@ -537,6 +595,10 @@ class UsageBillableSummaryKeys(ModelNormal):
             kwargs["ci_testing_maximum"] = ci_testing_maximum
         if ci_testing_sum is not unset:
             kwargs["ci_testing_sum"] = ci_testing_sum
+        if cloud_cost_management_average is not unset:
+            kwargs["cloud_cost_management_average"] = cloud_cost_management_average
+        if cloud_cost_management_sum is not unset:
+            kwargs["cloud_cost_management_sum"] = cloud_cost_management_sum
         if cspm_container_sum is not unset:
             kwargs["cspm_container_sum"] = cspm_container_sum
         if cspm_host_sum is not unset:
@@ -599,6 +661,8 @@ class UsageBillableSummaryKeys(ModelNormal):
             kwargs["lambda_function_average"] = lambda_function_average
         if lambda_function_sum is not unset:
             kwargs["lambda_function_sum"] = lambda_function_sum
+        if logs_forwarding_sum is not unset:
+            kwargs["logs_forwarding_sum"] = logs_forwarding_sum
         if logs_indexed_15day_sum is not unset:
             kwargs["logs_indexed_15day_sum"] = logs_indexed_15day_sum
         if logs_indexed_180day_sum is not unset:
@@ -653,6 +717,12 @@ class UsageBillableSummaryKeys(ModelNormal):
             kwargs["rum_units_sum"] = rum_units_sum
         if sensitive_data_scanner_sum is not unset:
             kwargs["sensitive_data_scanner_sum"] = sensitive_data_scanner_sum
+        if serverless_apm_sum is not unset:
+            kwargs["serverless_apm_sum"] = serverless_apm_sum
+        if serverless_infra_average is not unset:
+            kwargs["serverless_infra_average"] = serverless_infra_average
+        if serverless_infra_sum is not unset:
+            kwargs["serverless_infra_sum"] = serverless_infra_sum
         if serverless_invocation_sum is not unset:
             kwargs["serverless_invocation_sum"] = serverless_invocation_sum
         if siem_sum is not unset:
@@ -661,6 +731,8 @@ class UsageBillableSummaryKeys(ModelNormal):
             kwargs["standard_timeseries_average"] = standard_timeseries_average
         if synthetics_api_tests_sum is not unset:
             kwargs["synthetics_api_tests_sum"] = synthetics_api_tests_sum
+        if synthetics_app_testing_maximum is not unset:
+            kwargs["synthetics_app_testing_maximum"] = synthetics_app_testing_maximum
         if synthetics_browser_checks_sum is not unset:
             kwargs["synthetics_browser_checks_sum"] = synthetics_browser_checks_sum
         if timeseries_average is not unset:
