@@ -37,7 +37,10 @@ def type_to_python_helper(type_, schema, alternative_name=None, in_list=False):
     elif type_ == "boolean":
         return "bool"
     elif type_ == "array":
-        return "[{}]".format(type_to_python(schema["items"], in_list=True))
+        subtype = type_to_python(schema["items"], in_list=True)
+        if schema["items"].get("nullable"):
+             subtype += ", none_type"
+        return "[{}]".format(subtype)
     elif type_ == "object":
         if "additionalProperties" in schema:
             nested_schema = schema["additionalProperties"]
