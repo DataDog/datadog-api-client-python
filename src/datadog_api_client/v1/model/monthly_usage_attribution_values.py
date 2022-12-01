@@ -31,8 +31,20 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "browser_usage": (float,),
             "container_percentage": (float,),
             "container_usage": (float,),
+            "cspm_containers_percentage": (float,),
+            "cspm_containers_usage": (float,),
+            "cspm_hosts_percentage": (float,),
+            "cspm_hosts_usage": (float,),
             "custom_timeseries_percentage": (float,),
             "custom_timeseries_usage": (float,),
+            "cws_containers_percentage": (float,),
+            "cws_containers_usage": (float,),
+            "cws_hosts_percentage": (float,),
+            "cws_hosts_usage": (float,),
+            "dbm_hosts_percentage": (float,),
+            "dbm_hosts_usage": (float,),
+            "dbm_queries_percentage": (float,),
+            "dbm_queries_usage": (float,),
             "estimated_indexed_logs_percentage": (float,),
             "estimated_indexed_logs_usage": (float,),
             "estimated_indexed_spans_percentage": (float,),
@@ -76,8 +88,20 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "browser_usage": "browser_usage",
         "container_percentage": "container_percentage",
         "container_usage": "container_usage",
+        "cspm_containers_percentage": "cspm_containers_percentage",
+        "cspm_containers_usage": "cspm_containers_usage",
+        "cspm_hosts_percentage": "cspm_hosts_percentage",
+        "cspm_hosts_usage": "cspm_hosts_usage",
         "custom_timeseries_percentage": "custom_timeseries_percentage",
         "custom_timeseries_usage": "custom_timeseries_usage",
+        "cws_containers_percentage": "cws_containers_percentage",
+        "cws_containers_usage": "cws_containers_usage",
+        "cws_hosts_percentage": "cws_hosts_percentage",
+        "cws_hosts_usage": "cws_hosts_usage",
+        "dbm_hosts_percentage": "dbm_hosts_percentage",
+        "dbm_hosts_usage": "dbm_hosts_usage",
+        "dbm_queries_percentage": "dbm_queries_percentage",
+        "dbm_queries_usage": "dbm_queries_usage",
         "estimated_indexed_logs_percentage": "estimated_indexed_logs_percentage",
         "estimated_indexed_logs_usage": "estimated_indexed_logs_usage",
         "estimated_indexed_spans_percentage": "estimated_indexed_spans_percentage",
@@ -122,8 +146,20 @@ class MonthlyUsageAttributionValues(ModelNormal):
         browser_usage: Union[float, UnsetType] = unset,
         container_percentage: Union[float, UnsetType] = unset,
         container_usage: Union[float, UnsetType] = unset,
+        cspm_containers_percentage: Union[float, UnsetType] = unset,
+        cspm_containers_usage: Union[float, UnsetType] = unset,
+        cspm_hosts_percentage: Union[float, UnsetType] = unset,
+        cspm_hosts_usage: Union[float, UnsetType] = unset,
         custom_timeseries_percentage: Union[float, UnsetType] = unset,
         custom_timeseries_usage: Union[float, UnsetType] = unset,
+        cws_containers_percentage: Union[float, UnsetType] = unset,
+        cws_containers_usage: Union[float, UnsetType] = unset,
+        cws_hosts_percentage: Union[float, UnsetType] = unset,
+        cws_hosts_usage: Union[float, UnsetType] = unset,
+        dbm_hosts_percentage: Union[float, UnsetType] = unset,
+        dbm_hosts_usage: Union[float, UnsetType] = unset,
+        dbm_queries_percentage: Union[float, UnsetType] = unset,
+        dbm_queries_usage: Union[float, UnsetType] = unset,
         estimated_indexed_logs_percentage: Union[float, UnsetType] = unset,
         estimated_indexed_logs_usage: Union[float, UnsetType] = unset,
         estimated_indexed_spans_percentage: Union[float, UnsetType] = unset,
@@ -197,11 +233,47 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param container_usage: The container usage by tag(s).
         :type container_usage: float, optional
 
+        :param cspm_containers_percentage: The percentage of CSPM container usage by tag(s).
+        :type cspm_containers_percentage: float, optional
+
+        :param cspm_containers_usage: The CSPM container usage by tag(s).
+        :type cspm_containers_usage: float, optional
+
+        :param cspm_hosts_percentage: The percentage of CSPM host usage by by tag(s).
+        :type cspm_hosts_percentage: float, optional
+
+        :param cspm_hosts_usage: The CSPM host usage by tag(s).
+        :type cspm_hosts_usage: float, optional
+
         :param custom_timeseries_percentage: The percentage of custom metrics usage by tag(s).
         :type custom_timeseries_percentage: float, optional
 
         :param custom_timeseries_usage: The custom metrics usage by tag(s).
         :type custom_timeseries_usage: float, optional
+
+        :param cws_containers_percentage: The percentage of Cloud Workload Security container usage by tag(s).
+        :type cws_containers_percentage: float, optional
+
+        :param cws_containers_usage: The Cloud Workload Security container usage by tag(s).
+        :type cws_containers_usage: float, optional
+
+        :param cws_hosts_percentage: The percentage of Cloud Workload Security host usage by tag(s).
+        :type cws_hosts_percentage: float, optional
+
+        :param cws_hosts_usage: The Cloud Workload Security host usage by tag(s).
+        :type cws_hosts_usage: float, optional
+
+        :param dbm_hosts_percentage: The percentage of Database Monitoring host usage by tag(s).
+        :type dbm_hosts_percentage: float, optional
+
+        :param dbm_hosts_usage: The Database Monitoring host usage by tag(s).
+        :type dbm_hosts_usage: float, optional
+
+        :param dbm_queries_percentage: The percentage of Database Monitoring queries usage by tag(s).
+        :type dbm_queries_percentage: float, optional
+
+        :param dbm_queries_usage: The Database Monitoring queries usage by tag(s).
+        :type dbm_queries_usage: float, optional
 
         :param estimated_indexed_logs_percentage: The percentage of estimated live indexed logs usage by tag(s). This field is in private beta.
         :type estimated_indexed_logs_percentage: float, optional
@@ -309,10 +381,34 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["container_percentage"] = container_percentage
         if container_usage is not unset:
             kwargs["container_usage"] = container_usage
+        if cspm_containers_percentage is not unset:
+            kwargs["cspm_containers_percentage"] = cspm_containers_percentage
+        if cspm_containers_usage is not unset:
+            kwargs["cspm_containers_usage"] = cspm_containers_usage
+        if cspm_hosts_percentage is not unset:
+            kwargs["cspm_hosts_percentage"] = cspm_hosts_percentage
+        if cspm_hosts_usage is not unset:
+            kwargs["cspm_hosts_usage"] = cspm_hosts_usage
         if custom_timeseries_percentage is not unset:
             kwargs["custom_timeseries_percentage"] = custom_timeseries_percentage
         if custom_timeseries_usage is not unset:
             kwargs["custom_timeseries_usage"] = custom_timeseries_usage
+        if cws_containers_percentage is not unset:
+            kwargs["cws_containers_percentage"] = cws_containers_percentage
+        if cws_containers_usage is not unset:
+            kwargs["cws_containers_usage"] = cws_containers_usage
+        if cws_hosts_percentage is not unset:
+            kwargs["cws_hosts_percentage"] = cws_hosts_percentage
+        if cws_hosts_usage is not unset:
+            kwargs["cws_hosts_usage"] = cws_hosts_usage
+        if dbm_hosts_percentage is not unset:
+            kwargs["dbm_hosts_percentage"] = dbm_hosts_percentage
+        if dbm_hosts_usage is not unset:
+            kwargs["dbm_hosts_usage"] = dbm_hosts_usage
+        if dbm_queries_percentage is not unset:
+            kwargs["dbm_queries_percentage"] = dbm_queries_percentage
+        if dbm_queries_usage is not unset:
+            kwargs["dbm_queries_usage"] = dbm_queries_usage
         if estimated_indexed_logs_percentage is not unset:
             kwargs["estimated_indexed_logs_percentage"] = estimated_indexed_logs_percentage
         if estimated_indexed_logs_usage is not unset:
