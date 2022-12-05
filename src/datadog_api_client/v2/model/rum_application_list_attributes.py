@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RUMApplicationAttributes(ModelNormal):
+class RUMApplicationListAttributes(ModelNormal):
     validations = {
         "org_id": {
             "inclusive_maximum": 2147483647,
@@ -24,7 +24,6 @@ class RUMApplicationAttributes(ModelNormal):
     def openapi_types(_):
         return {
             "application_id": (str,),
-            "client_token": (str,),
             "created_at": (int,),
             "created_by_handle": (str,),
             "hash": (str,),
@@ -38,7 +37,6 @@ class RUMApplicationAttributes(ModelNormal):
 
     attribute_map = {
         "application_id": "application_id",
-        "client_token": "client_token",
         "created_at": "created_at",
         "created_by_handle": "created_by_handle",
         "hash": "hash",
@@ -53,7 +51,6 @@ class RUMApplicationAttributes(ModelNormal):
     def __init__(
         self_,
         application_id: str,
-        client_token: str,
         created_at: int,
         created_by_handle: str,
         name: str,
@@ -66,13 +63,10 @@ class RUMApplicationAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        RUM application attributes.
+        RUM application list attributes.
 
         :param application_id: ID of the RUM application.
         :type application_id: str
-
-        :param client_token: Client token of the RUM application.
-        :type client_token: str
 
         :param created_at: Timestamp in ms of the creation date.
         :type created_at: int
@@ -108,7 +102,6 @@ class RUMApplicationAttributes(ModelNormal):
         super().__init__(kwargs)
 
         self_.application_id = application_id
-        self_.client_token = client_token
         self_.created_at = created_at
         self_.created_by_handle = created_by_handle
         self_.name = name

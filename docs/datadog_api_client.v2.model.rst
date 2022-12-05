@@ -3389,6 +3389,27 @@ rum\_application\_create\_type
    :members:
    :show-inheritance:
 
+rum\_application\_list
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_application_list
+   :members:
+   :show-inheritance:
+
+rum\_application\_list\_attributes
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_application_list_attributes
+   :members:
+   :show-inheritance:
+
+rum\_application\_list\_type
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_application_list_type
+   :members:
+   :show-inheritance:
+
 rum\_application\_response
 --------------------------
 
